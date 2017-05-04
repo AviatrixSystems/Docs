@@ -19,29 +19,34 @@ Aviatrix for Hybrid Cloud eliminates the complexity of connecting to and across 
 
 ## Business Reasons
 This is a typical list of CIO and enterprise motives that drive the move of enterprise applications to the cloud.
-###New business models
+### New business models
 >•	pay-as-you-go flexibility to expand / reduce IT footprint as needed
 
 >•	untested workloads, “fail-fast, fail-cheap” POC’s
-###New application architectures
+
+### New application architectures
 >•	design new apps for the cloud day1
-###Disaster recovery and high availability
+### Disaster recovery and high availability
 >•	geo-dispersed sites
 
 >•	system redundancy
 
 >•	significantly easier and automated periodic testing
-###Cost savings
+
+### Cost savings
 >•	especially storage costs
+
 >•	limited IT staff and resource growth
+
 >•	temporary spikes in capacity demands
-###International expansion and collaboration
+
+### International expansion and collaboration
 >•	M&A activities resulting in geographically dispersed disparate systems 
 >•	Expansion into new global markets
-###Compelling events
+### Compelling events
 >•	Expiring data center equipment support
 >•	Expiring data center leases
-###Compliance
+### Compliance
 >•	Requirements for local data hosting in the region being served vs centralized 
 
 ## Use Cases
