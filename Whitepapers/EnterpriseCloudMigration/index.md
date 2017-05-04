@@ -70,3 +70,15 @@ Offloading these applications means that IT can reallocate this hardware to appl
 
 ## Technical Challenges
 
+The technical requirements and challenges enterprises face during this journey to the cloud are multi-faceted.
+
+### Latency
+### Throughput
+### Security
+### VPN access
+### Site-to-Cloud/ Cloud-to-Cloud
+### Multi-Vendor
+### Peering
+### Custom network configurations
+### Large data-sets
+### Multi-tenancy
