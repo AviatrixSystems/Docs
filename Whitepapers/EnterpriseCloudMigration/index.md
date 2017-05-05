@@ -1,3 +1,5 @@
+![](./Logo.png)
+
 # Enterprise Cloud Adoption Journey: Technical Challenges
 
 For full documentation visit [aviatrix.com/docs](http://aviatrix.com/docs).
