@@ -50,6 +50,51 @@ This is a typical list of CIO and enterprise motives that drive the move of ente
 >•	Requirements for local data hosting in the region being served vs centralized 
 
 ## Use Cases
+The following use cases represent examples of the above scenarios.
+
+### Use Case #1: Disaster recovery and high availability
+Instances in the cloud are not much different than instances in the data center in terms of failure possibilities.  This includes server/service/VM failures and reboots, zone failures, and multi-zone cloud failures.  To achieve multiple 9s of availability, processes need to be in place for these types of failure mechanisms, including the need to automate everything and do on-going assurance testing on a regular basis. 
+Cloud customers can use hybrid clouds to promote both DR and HA, oftentimes extending DR protection to important, yet previously unprotected systems.
+
+### Use Case #3: Big data, storage and backup/archiving 
+Enterprises have accumulated huge volumes of data, stored in databases, which power the applications that their end users and customers rely on every day. These applications often involve many VMs as part of their architecture, and their databases often hold terabytes worth of data, even though much of that data lays “at rest” for large portions of the time.
+There are two major benefits to getting these applications and their datasets into the cloud. First, a greatly reduced on-premises hardware footprint by reducing both servers and storage. Second, these applications can now benefit from the elasticity of the cloud, by easily adding more compute (for the application) or storage (for the databases) whenever needed.
+
+### Use Case #4:  DevOps/QA/Test 
+Developers need an agile, flexible, dynamic environment for developing and testing software applications. Moving CI/CD applications for development and testing to the cloud has clear benefits, including cost savings and increased time-to-market. These applications are lower-risk, lower performance, mostly self-contained with no dependencies, and good “phase 1” candidates for migration.
+
+### Use Case #5: Home grown (legacy) applications
+HR departments may have large workloads: recruitment management, relocation, benefits administration, human capital management, finance and accounting, SCM/procurement, expense reporting, time management, etc. These applications are used sporadically and have low performance requirements, making them an ideal choice to offload from on-premises and into the cloud.
+Other legacy applications used by finance/legal departments may be used infrequently and have low performance needs, as well as legacy custom stubs for SSO or employee VPN access all would benefit by moving to the cloud.
+Offloading these applications means that IT can reallocate this hardware to applications that require more steady computing power, or decommission the hardware altogether. Either scenario means time and efficiency gains for the IT department, without any noticeable change in performance from end users.
 
 ## Technical Challenges
 
+The technical requirements and challenges enterprises face during this journey to the cloud are multi-faceted.  Enterprise applications represent a significant on premise investment with critical value, and years of development.  Even with a “lift and shift” methodology, organizations may struggle with inherent interdependencies to move them, along with the data, to the public cloud.  One of the CIO’s highest priorities must be to minimize risk when the move is made as these applications usually are mission critical.
+
+### Latency
+The demands on performance and user experiences with cloud based applications can sometimes be subpar, resulting in not only user frustrations but real business financial impacts.  Studies from Google and Amazon found that a half-second delay causes a 20 percent drop in traffic on Google, and a one tenth of a second delay can lower Amazon’s sales by 1 percent.  Latency is not just a nuisance, but also a serious problem for enterprises that move their applications to the cloud.
+The roles of both the Internet and cloud computing complicate latency, with networks broken down into hundreds of components, and layers of virtualization and virtualized network infrastructure.  
+The problem is not necessarily the actual latencies but rather the unpredictability of it.  Many have found that setting up a direct connect to the public cloud, offered by the major cloud providers, is one way to help reduce the clouds unpredictability.
+
+### Throughput
+Cloud performance depends on network performance. While cloud providers like to talk about the latest software offerings, the speed and capacity of the cloud provider’s network will usually be a determining factor for the viability of any cloud-based software application.  The key measure of network performance is throughput – sometime called bandwidth. It is common for cloud providers to offer throughputs of around 0.3 gigabits/second, between data centers.
+What is critical for networks in cloud computing is not only achievable performance, but consistency of performance, which is important when sending large amounts of data between servers.  One of the latest trends is buying network capacity on an incremental basis, just like any other cloud resource.  Other cloud provider direct connect solutions also provide bandwidth improvements for transferring large amounts of data when more capacity is needed.
+
+### Security
+Enterprises must minimize risk migrating applications to the cloud, and the first step is to identify the top security threats.  In the minds of many enterprises, cloud computing and security go hand in hand. Cloud environments face many of the same threats as traditional corporate networks, but due to the vast amount of data stored on cloud servers, providers become an attractive target. 
+Security in the cloud is multi-dimensional and spans everything from simple DoS attacks to complex malicious attacks, data breaches, and security breaches enabled by ‘shadow IT’ projects. 
+Network security groups allow organizations to shield parts of their public cloud from direct outside access -- like a firewall.  Hybrid and multicloud environments present new cloud security challenges and risks as data moves between on premises and the cloud.  For businesses that are using the cloud, identity and access management (IAM) technologies and strategies are important allies in overcoming cloud security challenges
+
+### VPN access
+Companies have a need to enable their mobile employees to securely access the company network via the Internet with a secure VPN solution.  This solution must be easily deployed, managed, and highly scalable.
+
+### Multi-Vendor
+To enable geographically dispersed data redundancy, and other types of redundancy, or to support unique workloads, it is common to buy cloud services from more than one vendor.  While each has its own uniqueness and strengths, the IT organization wants to minimize operational complexities and create inter-cloud connections that are visible, manageable, robust, scalable, and easy to deploy.
+Enterprises need to plan ahead by assuming hybrid IT will be the future and take steps accordingly. Hybrid management systems, integration, workload portability, automation and skills using various public cloud platforms are all important investments to make early in the cloud deployment process.
+
+### Custom network configurations
+
+
+## Summary
+<should say something about how Aviatrix address some of these challenges?>
