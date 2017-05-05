@@ -96,6 +96,8 @@ To enable geographically dispersed data redundancy, and other types of redundanc
 Enterprises need to plan ahead by assuming hybrid IT will be the future and take steps accordingly. Hybrid management systems, integration, workload portability, automation and skills using various public cloud platforms are all important investments to make early in the cloud deployment process.
 
 ### Custom network configurations
+Creating and securely connecting the on-premise datacenter to the cloud resources is often slow and manual. Seamless extension of the private IP address space into the public cloud such that resources in the public cloud are easily accessible, reducing the attack surface, reducing issues with overlapping IP address space is a key challenge facing network engineers.
+Large data center and cloud environments have complex network configurations and settings to satisfy regulatory and internal policies.  Matching the workload compute and storage requirements to the cloud services is not the total solution – mapping of the existing network environment to the cloud network can be very daunting and error prone.  Enterprise workloads may need to be configured for specific sub-networks, VLANs and use of specific IP address ranges as well as physical IP address.
 
 
 ## Summary
