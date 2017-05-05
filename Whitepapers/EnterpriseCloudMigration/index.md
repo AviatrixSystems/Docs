@@ -70,7 +70,7 @@ Offloading these applications means that IT can reallocate this hardware to appl
 
 ## Technical Challenges
 
-The technical requirements and challenges enterprises face during this journey to the cloud are multi-faceted.
+The technical requirements and challenges enterprises face during this journey to the cloud are multi-faceted.  Enterprise applications represent a significant on premise investment with critical value, and years of development.  Even with a “lift and shift” methodology, organizations may struggle with inherent interdependencies to move them, along with the data, to the public cloud.  One of the CIO’s highest priorities must be to minimize risk when the move is made as these applications usually are mission critical.
 
 ### Latency
 ### Throughput
