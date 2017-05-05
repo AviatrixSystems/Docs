@@ -73,9 +73,22 @@ Offloading these applications means that IT can reallocate this hardware to appl
 The technical requirements and challenges enterprises face during this journey to the cloud are multi-faceted.  Enterprise applications represent a significant on premise investment with critical value, and years of development.  Even with a “lift and shift” methodology, organizations may struggle with inherent interdependencies to move them, along with the data, to the public cloud.  One of the CIO’s highest priorities must be to minimize risk when the move is made as these applications usually are mission critical.
 
 ### Latency
+The demands on performance and user experiences with cloud based applications can sometimes be subpar, resulting in not only user frustrations but real business financial impacts.  Studies from Google and Amazon found that a half-second delay causes a 20 percent drop in traffic on Google, and a one tenth of a second delay can lower Amazon’s sales by 1 percent.  Latency is not just a nuisance, but also a serious problem for enterprises that move their applications to the cloud.
+The roles of both the Internet and cloud computing complicate latency, with networks broken down into hundreds of components, and layers of virtualization and virtualized network infrastructure.  
+The problem is not necessarily the actual latencies but rather the unpredictability of it.  Many have found that setting up a direct connect to the public cloud, offered by the major cloud providers, is one way to help reduce the clouds unpredictability.
+
 ### Throughput
+Cloud performance depends on network performance. While cloud providers like to talk about the latest software offerings, the speed and capacity of the cloud provider’s network will usually be a determining factor for the viability of any cloud-based software application.  The key measure of network performance is throughput – sometime called bandwidth. It is common for cloud providers to offer throughputs of around 0.3 gigabits/second, between data centers.
+What is critical for networks in cloud computing is not only achievable performance, but consistency of performance, which is important when sending large amounts of data between servers.  One of the latest trends is buying network capacity on an incremental basis, just like any other cloud resource.  Other cloud provider direct connect solutions also provide bandwidth improvements for transferring large amounts of data when more capacity is needed.
+
 ### Security
+Enterprises must minimize risk migrating applications to the cloud, and the first step is to identify the top security threats.  In the minds of many enterprises, cloud computing and security go hand in hand. Cloud environments face many of the same threats as traditional corporate networks, but due to the vast amount of data stored on cloud servers, providers become an attractive target. 
+Security in the cloud is multi-dimensional and spans everything from simple DoS attacks to complex malicious attacks, data breaches, and security breaches enabled by ‘shadow IT’ projects. 
+Network security groups allow organizations to shield parts of their public cloud from direct outside access -- like a firewall.  Hybrid and multicloud environments present new cloud security challenges and risks as data moves between on premises and the cloud.  For businesses that are using the cloud, identity and access management (IAM) technologies and strategies are important allies in overcoming cloud security challenges
+
 ### VPN access
+Companies have a need to enable their mobile employees to securely access the company network via the Internet with a secure VPN solution.  This solution must be easily deployed, managed, and highly scalable.
+
 ### Site-to-Cloud/ Cloud-to-Cloud
 ### Multi-Vendor
 ### Peering
