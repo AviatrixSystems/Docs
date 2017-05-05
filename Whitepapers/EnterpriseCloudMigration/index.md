@@ -89,12 +89,12 @@ Network security groups allow organizations to shield parts of their public clou
 ### VPN access
 Companies have a need to enable their mobile employees to securely access the company network via the Internet with a secure VPN solution.  This solution must be easily deployed, managed, and highly scalable.
 
-### Site-to-Cloud/ Cloud-to-Cloud
 ### Multi-Vendor
-### Peering
+To enable geographically dispersed data redundancy, and other types of redundancy, or to support unique workloads, it is common to buy cloud services from more than one vendor.  While each has its own uniqueness and strengths, the IT organization wants to minimize operational complexities and create inter-cloud connections that are visible, manageable, robust, scalable, and easy to deploy.
+Enterprises need to plan ahead by assuming hybrid IT will be the future and take steps accordingly. Hybrid management systems, integration, workload portability, automation and skills using various public cloud platforms are all important investments to make early in the cloud deployment process.
+
 ### Custom network configurations
-### Large data-sets
-### Multi-tenancy
+
 
 ## Summary
 <should say something about how Aviatrix address some of these challenges?>
