@@ -98,6 +98,7 @@ Enterprises need to plan ahead by assuming hybrid IT will be the future and take
 ### Custom network configurations
 Creating and securely connecting the on-premise datacenter to the cloud resources is often slow and manual. Seamless extension of the private IP address space into the public cloud such that resources in the public cloud are easily accessible, reducing the attack surface, reducing issues with overlapping IP address space is a key challenge facing network engineers.
 Large data center and cloud environments have complex network configurations and settings to satisfy regulatory and internal policies.  Matching the workload compute and storage requirements to the cloud services is not the total solution – mapping of the existing network environment to the cloud network can be very daunting and error prone.  Enterprise workloads may need to be configured for specific sub-networks, VLANs and use of specific IP address ranges as well as physical IP address.
+It can take weeks to provision secure connectivity, involving complex router configurations managed by network experts and expensive installations. Aviatrix hybrid cloud networking provides a one-click software-only model to set up encrypted connections to public clouds in minutes, with the ability to extend the private IP network to public clouds.
 
 
 ## Summary
