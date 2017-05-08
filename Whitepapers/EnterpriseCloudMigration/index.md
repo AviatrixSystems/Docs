@@ -104,6 +104,6 @@ It can take weeks to provision secure connectivity, involving complex router con
 ## Summary
 The enterprise cloud adoption journey is just that – a journey.  New technical solutions are appearing at an ever-increasing rate, as well as new challenges they bring.  A well thought out migration plan that includes all the aspects of vendor features, performance, security and networking is required.  
 Aviatrix provides an innovative Cloud Networking software solution that simplifies connectivity to the cloud in a secure and scalable way. At Aviatrix, we believe that networking is a foundational element of cloud computing and, should be as dynamic, scalable, and elastic as compute and  storage.
-Aviatrix for Hybrid Cloud eliminates the complexity of connecting to and across public clouds with a simple mesh architecture. Aviatrix is fully integrated with Amazon Web Services (AWS), Microsoft Azure and Google Cloud Platform.
+Aviatrix for Hybrid Cloud eliminates the complexity of connecting to and across public clouds with a simple mesh architecture, and is fully integrated with Amazon Web Services (AWS), Microsoft Azure and Google Cloud Platform.
 
 [**About Aviatrix**](./about.md)
