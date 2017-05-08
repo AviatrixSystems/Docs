@@ -44,9 +44,11 @@ This is a typical list of CIO and enterprise motives that drive the move of ente
 
 ### International expansion and collaboration
 >•	M&A activities resulting in geographically dispersed disparate systems 
+
 >•	Expansion into new global markets
 ### Compelling events
 >•	Expiring data center equipment support
+
 >•	Expiring data center leases
 ### Compliance
 >•	Requirements for local data hosting in the region being served vs centralized 
