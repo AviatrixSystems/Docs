@@ -58,6 +58,9 @@ The following use cases represent examples of the above scenarios.
 Instances in the cloud are not much different than instances in the data center in terms of failure possibilities.  This includes server/service/VM failures and reboots, zone failures, and multi-zone cloud failures.  To achieve multiple 9s of availability, processes need to be in place for these types of failure mechanisms, including the need to automate everything and do on-going assurance testing on a regular basis. 
 Cloud customers can use hybrid clouds to promote both DR and HA, oftentimes extending DR protection to important, yet previously unprotected systems.
 
+### Use Case #2: International expansion
+Businesses that expand internationally may need applications and data to be closer to the new locations.  This could be due to localization requirements, minimizing latencies to apps/data, or compliance reasons.   A new acquisition or merger could result in almost instantly geographically dispersed public clouds that now need to be peered or connected back to other data centers
+
 ### Use Case #3: Big data, storage and backup/archiving 
 Enterprises have accumulated huge volumes of data, stored in databases, which power the applications that their end users and customers rely on every day. These applications often involve many VMs as part of their architecture, and their databases often hold terabytes worth of data, even though much of that data lays “at rest” for large portions of the time.
 There are two major benefits to getting these applications and their datasets into the cloud. First, a greatly reduced on-premises hardware footprint by reducing both servers and storage. Second, these applications can now benefit from the elasticity of the cloud, by easily adding more compute (for the application) or storage (for the databases) whenever needed.
