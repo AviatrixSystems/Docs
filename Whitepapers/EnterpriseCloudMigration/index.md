@@ -86,7 +86,7 @@ What is critical for networks in cloud computing is not only achievable performa
 ### Security
 Enterprises must minimize risk migrating applications to the cloud, and the first step is to identify the top security threats.  In the minds of many enterprises, cloud computing and security go hand in hand. Cloud environments face many of the same threats as traditional corporate networks, but due to the vast amount of data stored on cloud servers, providers become an attractive target. 
 Security in the cloud is multi-dimensional and spans everything from simple DoS attacks to complex malicious attacks, data breaches, and security breaches enabled by ‘shadow IT’ projects. 
-Network security groups allow organizations to shield parts of their public cloud from direct outside access -- like a firewall.  Hybrid and multicloud environments present new cloud security challenges and risks as data moves between on premises and the cloud.  For businesses that are using the cloud, identity and access management (IAM) technologies and strategies are important allies in overcoming cloud security challenges
+Network security groups allow organizations to shield parts of their public cloud from direct outside access -- like a firewall.  Hybrid and multicloud environments present new cloud security challenges and risks as data moves between on premises and the cloud.  For businesses that are using the cloud, identity and access management (IAM) technologies and strategies are important allies in overcoming cloud security challenges.
 
 ### VPN access
 Companies have a need to enable their mobile employees to securely access the company network via the Internet with a secure VPN solution.  This solution must be easily deployed, managed, and highly scalable.
