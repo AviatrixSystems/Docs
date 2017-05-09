@@ -1,1 +1,1 @@
-[Enterprise Cloud Adoption Journey whitepaper](./index.md)
+[Enterprise Cloud Adoption Journey whitepaper](./index.rst)
