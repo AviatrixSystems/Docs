@@ -144,17 +144,7 @@ JUST START TYPING HERE
 --------------------------------
 JUST START TYPING HERE
 
-6 Appendix – Terminating on VGW
-===============================
 
-The Aviatrix transit VPC solution also supports terminating on AWS VGWs
-in the spoke VPC. In this case, the AWS VGWs must be manually setup in
-each spoke VPC.
-
-|image3|
-
-Appendix
-=================
 
 Aviatrix Support
 ----------------
