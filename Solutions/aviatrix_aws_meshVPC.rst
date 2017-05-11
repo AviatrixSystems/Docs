@@ -155,15 +155,6 @@ You then can launch instances in the VPC and access the instances by their priva
 
 
 
-Aviatrix Support
-----------------
-
-Standard: 8x5 Enterprise Phone Support, email support, product-specific
-knowledge-base and user forum is included. For Additional levels of
-support and support offers please visit:
-
-http://www.aviatrix.com/support
-
 .. |image0| image:: media/image1.png
    :width: 3.5in
    :height: 0.5in
