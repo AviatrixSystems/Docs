@@ -167,7 +167,7 @@ http://www.aviatrix.com/support
 .. |image0| image:: media/image1.png
    :width: 3.5in
    :height: 0.5in
-.. |image1| image:: media/image2.png
+.. |image1| image:: media/datacenter-extension.png
    :width: 7.00000in
    :height: 4in
 .. |image2| image:: media/image3.png
