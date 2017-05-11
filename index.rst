@@ -11,6 +11,8 @@ The main documentation for the site is organized into a couple sections:
 * :ref:`aviatrix-for-aws`
 * :ref:`aviatrix-for-azure`
 * :ref:`aviatrix-for-gcp`
+* :ref:`Solutions datasheets`
+* :ref:`Whitepapers`
 
 Information about development is also available:
 
@@ -54,6 +56,16 @@ Information about development is also available:
    :caption: REST API
 
    api/restapi
+
+.. _Solutions:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Solutions Datasheets
+   
+   Solutions/aviatrix_aws_meshVPC
+   Solutions/aviatrix_aws_transitvpc
+   
 
 
 .. disqus::
