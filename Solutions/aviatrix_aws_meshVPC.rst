@@ -143,12 +143,12 @@ https://<Private IP address of Aviatrix Controller>
 =====================
 
 5.1    Onboarding and create a cloud account
---------------------------------
+--------------------------------------------
 Upon login to the controller for the first time, follow the onboarding process to create a cloud account that corresponding to an AWS IAM account. Aviatrix CloudN uses the account IAM credential to execute AWS REST APIs to create VPC and necessary resources. 
 
 
 5.2    Create a VPC and build an encrypted tunnel
---------------------------------
+-------------------------------------------------
 After going through onboarding steps, click Datacenter Extension. Provide a name for the VPC you are about to create, select an AWS region, and click Launch. In a few minutes of time, a VPC, public subnet and private subnet in each AZ of the selected region, IGW and routing tables will be created; an Aviatrix Gateway will be launched and an encrypted tunnel will be created. 
 
 You then can launch instances in the VPC and access the instances by their private IP addresses. 
