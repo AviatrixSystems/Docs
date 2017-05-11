@@ -259,7 +259,7 @@ The Aviatrix transit VPC solution also supports terminating on AWS VGWs
 in the spoke VPC. In this case, the AWS VGWs must be manually setup in
 each spoke VPC.
 
-|image1|
+|image6|
 
 Appendix –Support
 =================
@@ -297,3 +297,8 @@ Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
    :width: 7in
    :height: 4in
    :scale: 150%
+   
+.. |image6| image:: media/image6.png
+   :width: 7in
+   :height: 4in
+   :scale: 150%   
