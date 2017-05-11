@@ -1,28 +1,13 @@
-.. image:: image1.png
-    :width: 400px
-    :height: 80px
-    :scale: 50%
+|image0|
     
-    
+########################    
+Transit Network VPC
+########################
 
-**Transit Network VPC\\AWS Reference Deployment Guide**
-========================================================
+AWS Reference Deployment Guide
+==============================
 
 Last updated: May 10, 2017
-
-**Aviatrix Systems, Inc.**
-
-411 High St
-
-Palo Alto, CA 94301
-
-
-
-http://www.aviatrix.com
-
-Tel: +1 844.262.3100
-
-
 
 1  Overview
 ===========
@@ -36,9 +21,9 @@ This configuration guide provides step by step instruction on how to
 build a highly available AWS Transit VPC. Below is an architecture
 diagram of what a general AWS Transit VPC deployment looks like, where a
 Hub VPC (or Transit VPC) connects many Spoke VPCs to facilitate
-communication between Spoke VPC and on-prem network.
+communication between the Spoke VPCs and on-prem network.
 
-.. image:: image2.png
+|image1|
 
 2  Aviatrix Solution Key Benefits
 =================================
@@ -116,7 +101,7 @@ The instructions in this section will use the following architecture.
 The CIDR and subnets may vary depending on your VPC setup; however, the
 general principals will be the same.
 
-.. image:: image3.png
+|image2|
 
 In this example we have three VPCs: Transit VPC, spoke VPC in US-WEST1
 and spoke VPC in US-EAST1. The corporate data center is located in
@@ -274,7 +259,7 @@ The Aviatrix transit VPC solution also supports terminating on AWS VGWs
 in the spoke VPC. In this case, the AWS VGWs must be manually setup in
 each spoke VPC.
 
-.. image:: image4.png
+|image1|
 
 Appendix –Support
 =================
@@ -298,3 +283,17 @@ service helps customers of all sizes and technical abilities to
 successfully utilize the products and features provided by Amazon Web
 Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
 
+
+.. |image0| image:: media/image1.png
+   :width: 3.5in
+   :height: 0.5in
+   
+.. |image1| image:: media/image4.png
+   :width: 7in
+   :height: 4in
+   :scale: 150%
+
+.. |image2| image:: media/image5.png
+   :width: 7in
+   :height: 4in
+   :scale: 150%
