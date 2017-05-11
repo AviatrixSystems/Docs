@@ -1,7 +1,7 @@
 |image0|
 
 ##########################################################
-**Building a Mesh Cloud Network**
+**Building a Mesh Cloud Network for**
 ##########################################################
 ##########################################################
 **AWS VPCs and Datacenter**
@@ -22,7 +22,7 @@ connectivity and access. The solution requires no new hardware and
 deploys in minutes.
 
 Aviatrix CloudN is a virtual appliance deployed in datacenter.
-Datacenter Extension is a unique technology on CloudN. It allows rapid
+Datacenter Extension is a unique technology on CloudN. It manages your public cloud address space and allows rapid
 scaling of AWS Virtual Private Cloud (VPC) by removing the pain point of
 building secure connections to the VPCs.
 
@@ -115,11 +115,18 @@ on the local network.
 --------------------
 
 You need to have an AWS account to use most of the commands on CloudN.
-Note that CloudN support multiple CloudN cloud accounts with each one
+Note that CloudN support multiple cloud accounts with each one
 associated with a different AWS IAM account, but there needs to be at
 least one to start with.
 
-4.2  Deploy the Aviatrix CloudN Virtual Appliance
+4.2 Plan Cloud Address Space
+----------------------------
+
+CloudN manages your cloud address space. Carve out an unused consective network address space in your datacenter. The CIDR block of this address can be determined by how many VPCs you will need and how big the address space you can allocate. For example, a CIDR block with /16 address range can create as many as 254 VPCs. 
+
+Once you have created all the VPCs from the allocated address space, you can always allocate a new address space and launch a new CloudN virtual appliance.
+
+4.3  Deploy the Aviatrix CloudN Virtual Appliance
 -------------------------------------------------
 
 Reference `the startup
@@ -127,22 +134,24 @@ guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN+Startup+Guide
 to deploy the virtual appliance.
 
 Check and make sure you can access the Aviatrix Controller dashboard and
-login with an administrator account. The default URL for the Aviatrix
+login with an admin account. The default URL for the Aviatrix
 Controller is:
 
-https://<public ip address of Aviatrix Controller>
+https://<Private IP address of Aviatrix Controller>
 
 5 Configuration Steps
 =====================
 
-5.1    ADD YOUR NEW SECTIONS
+5.1    Onboarding and create a cloud account
 --------------------------------
-JUST START TYPING HERE
+Upon login to the controller for the first time, follow the onboarding process to create a cloud account that corresponding to an AWS IAM account. Aviatrix CloudN uses the account IAM credential to execute AWS REST APIs to create VPC and necessary resources. 
 
 
-5.2    ADD YOUR NEW SECTIONS
+5.2    Create a VPC and build an encrypted tunnel
 --------------------------------
-JUST START TYPING HERE
+After going through onboarding steps, click Datacenter Extension. Provide a name for the VPC you are about to create, select an AWS region, and click Launch. In a few minutes of time, a VPC, public subnet and private subnet in each AZ of the selected region, IGW and routing tables will be created; an Aviatrix Gateway will be launched and an encrypted tunnel will be created. 
+
+You then can launch instances in the VPC and access the instances by their private IP addresses. 
 
 
 
@@ -154,15 +163,6 @@ knowledge-base and user forum is included. For Additional levels of
 support and support offers please visit:
 
 http://www.aviatrix.com/support
-
-AWS Support
------------
-
-AWS Support is a one-on-one, fast-response support channel that is
-staffed 24x7x365 with experienced and technical support engineers. The
-service helps customers of all sizes and technical abilities to
-successfully utilize the products and features provided by Amazon Web
-Services. `Learn more <https://aws.amazon.com/premiumsupport/>`__
 
 .. |image0| image:: media/image1.png
    :width: 3.5in
