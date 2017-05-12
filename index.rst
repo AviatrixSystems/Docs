@@ -66,6 +66,12 @@ Information about development is also available:
    Solutions/aviatrix_aws_meshVPC
    Solutions/aviatrix_aws_transitvpc
    
+.. _Whitepapers:
 
-
+.. toctree::
+   :maxdepth: 2
+   :caption: Whitepapers
+   
+   Whitepapers/EnterpriseAppMigration
+   
 .. disqus::
