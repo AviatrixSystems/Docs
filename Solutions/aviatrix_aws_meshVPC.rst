@@ -1,11 +1,10 @@
 |image0|
 
 ##########################################################
-**Building a Mesh Cloud Network for**
+Building a Mesh Cloud Network for AWS VPCs and Datacenter
 ##########################################################
-##########################################################
-**AWS VPCs and Datacenter**
-##########################################################
+
+
 
 AWS Reference Deployment Guide
 ==============================
