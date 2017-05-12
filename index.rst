@@ -11,7 +11,7 @@ The main documentation for the site is organized into a couple sections:
 * :ref:`aviatrix-for-aws`
 * :ref:`aviatrix-for-azure`
 * :ref:`aviatrix-for-gcp`
-* :ref:`Solutions datasheets`
+* :ref:`Solutions`
 * :ref:`Whitepapers`
 
 Information about development is also available:
