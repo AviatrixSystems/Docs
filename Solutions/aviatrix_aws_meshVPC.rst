@@ -152,6 +152,8 @@ After going through onboarding steps, click Datacenter Extension. Provide a name
 
 You then can launch instances in the VPC and access the instances by their private IP addresses. 
 
+Reapt the above step for more VPC with encrypted tunnel creations.
+
 
 
 .. |image0| image:: media/image1.png
