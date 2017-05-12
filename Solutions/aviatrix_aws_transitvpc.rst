@@ -1,7 +1,7 @@
 |image0|
     
 ########################    
-Transit Network VPC
+Transit VPC Implementation Using Aviatrix Solution
 ########################
 
 AWS Reference Deployment Guide
@@ -13,9 +13,8 @@ Last updated: May 10, 2017
 ===========
 
 Aviatrix is a next generation cloud networking solution built from the
-ground up for the public cloud. It simplifies the way you enable site to
-cloud, user to cloud and cloud to cloud secure connectivity and access.
-The Aviatrix solution requires no new hardware and deploys in minutes.
+ground up for the public cloud. For transit VPC design, Aviatrix provides one console for building, managing, monitoring and troubleshooting all aspects of your network connectivity. The console (controller) gives users the ability to implement Transit VPC design with a point-and-click (no CLI) as well as REST API.
+
 
 This configuration guide provides step by step instruction on how to
 build a highly available AWS Transit VPC. Below is an architecture
@@ -28,25 +27,25 @@ communication between the Spoke VPCs and on-prem network.
 2  Aviatrix Solution Key Benefits
 =================================
 
-**Simplicity.** Centrally managed, point and click solution deploys in
+**Simplicity** Centrally managed, point and click solution deploys in
 minutes.
 
-**Highly Available.** Built-in gateway redundancy supports hot standby
+**Highly Available** Built-in gateway redundancy supports hot standby
 and fail over in seconds.
 
-**Cost Saving.** If hub and spoke VPCs are in the same region, encrypted
+**Cost Saving** If hub and spoke VPCs are in the same region, encrypted
 traffic is routed over AWS peering, reducing network bandwidth cost by
 10 times (comparing to AWS Transit VPC solution that goes over Internet
 with VGW for hub and spoke traffic).
 
-**Scalable.** The solution does not require a unique public IP address
+**Scalable** The solution does not require a unique public IP address
 on the hub gateway connecting to each spoke gateway. No limits on the
-number of spoke VPCs can be connected to hub VPC.
+number of spoke VPCs can be connected to hub VPC. Gateways can scale-up, scale-down or scale-out with a few clicks.
 
-**Visibility.** Central dashboard monitors, displays and alerts link
+**Visibility** Central dashboard monitors, displays and alerts link
 status and link latency.
 
-**Additional Benefits.** Stateful firewall at the gateway to enforce
+**Additional Benefits** Stateful firewall at the gateway to enforce
 security policies. OpenVPN based user access allows end to end cloud
 network solution. For more details, visit www.aviatrix.com.
 
