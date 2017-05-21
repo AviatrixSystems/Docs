@@ -1,8 +1,8 @@
 |image0|
-    
-########################    
+
+###################################################
 Transit VPC Implementation Using Aviatrix Solution
-########################
+###################################################
 
 AWS Reference Deployment Guide
 ==============================
@@ -270,7 +270,7 @@ Standard: 8x5 Enterprise Phone Support, email support, product-specific
 knowledge-base and user forum is included. For Additional levels of
 support and support offers please visit:
 
-http://www.aviatrix.com/support 
+http://www.aviatrix.com/support
 
 
 AWS Support
@@ -286,7 +286,7 @@ Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
 .. |image0| image:: media/image1.png
    :width: 3.5in
    :height: 0.5in
-   
+
 .. |image1| image:: media/image4.png
    :width: 7in
    :height: 4in
@@ -296,8 +296,8 @@ Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
    :width: 7in
    :height: 4in
    :scale: 150%
-   
+
 .. |image6| image:: media/image6.png
    :width: 7in
    :height: 4in
-   :scale: 150%   
+   :scale: 150%
