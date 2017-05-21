@@ -13,7 +13,7 @@ The main documentation for the site is organized into a couple sections:
 * :ref:`aviatrix-for-gcp`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
-* :ref:`How-Tos`
+* :ref:`HowTos`
 
 Information about development is also available:
 
@@ -76,7 +76,7 @@ Information about development is also available:
    Whitepapers/EnterpriseAppMigration
 
 
-.. _How-Tos:
+.. _HowTos:
 
 .. tocktree::
    :maxdepth: 2
