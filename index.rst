@@ -82,6 +82,6 @@ Information about development is also available:
    :maxdepth: 2
    :caption: How Tos
 
-   How-Tos/Cluster_Peering_Ref_Design  
+   HowTos/Cluster_Peering_Ref_Design
 
 .. disqus::
