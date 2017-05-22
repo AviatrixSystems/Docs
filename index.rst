@@ -67,7 +67,7 @@ Information about development is also available:
 
    Solutions/aviatrix_aws_meshVPC
    Solutions/aviatrix_aws_transitvpc
-   HowTos/Cluster_Peering_Ref_Design
+   
 
 .. _Whitepapers:
 
@@ -79,7 +79,7 @@ Information about development is also available:
 
 .. _How-tos:
 
-.. tocktree::
+.. toctree::
    :maxdepth: 2
    :caption: How Tos
 
