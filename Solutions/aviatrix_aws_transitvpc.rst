@@ -287,10 +287,10 @@ Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
    :width: 3.5in
    :height: 0.5in
 
-.. |image1| image:: media/image4.png
-   :width: 7in
+.. |image1| image:: media/transit1.png
+   :width: 6in
    :height: 4in
-   :scale: 150%
+   :scale: 100%
 
 .. |image2| image:: media/image5.png
    :width: 7in
