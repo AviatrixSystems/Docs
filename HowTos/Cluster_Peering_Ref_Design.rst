@@ -66,6 +66,8 @@ reaches AWS VPC line rate. Adding more gateways does not improve the performance
 Note if the gateway size is C4.xlarge, more gateways are needed to achieve
 AWS line rate.
 
+For information on how to run multi stream iperf tests, check out our Github project. https://github.com/AviatrixSystems/PerformanceTest/blob/master/PerformanceTest.txt
+
 |image3|
 
 High Availability
