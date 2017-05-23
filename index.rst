@@ -77,7 +77,7 @@ The main documentation for the site is organized into a couple sections:
 
    Whitepapers/EnterpriseAppMigration
 
-.. _How-tos:
+.. _How-to Documents:
 
 .. toctree::
    :maxdepth: 2
