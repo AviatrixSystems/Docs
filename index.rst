@@ -13,7 +13,7 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-gcp`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
-* :ref:`How-tos`
+* :ref:`How-to Documents`
 
 
 .. Information about development is also available:
@@ -81,7 +81,7 @@ The main documentation for the site is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
-   :caption: How Tos
+   :caption: How To Documents
 
    HowTos/Cluster_Peering_Ref_Design
 
