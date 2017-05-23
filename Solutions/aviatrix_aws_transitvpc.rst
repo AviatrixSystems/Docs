@@ -287,7 +287,7 @@ Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
    :width: 3.5in
    :height: 0.5in
 
-.. |image1| image:: media/transit1.png
+.. |image1| image:: media/Transit1.png
    :width: 6in
    :height: 4in
    :scale: 100%
