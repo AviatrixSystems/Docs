@@ -11,6 +11,7 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-aws`
 .. * :ref:`aviatrix-for-azure`
 .. * :ref:`aviatrix-for-gcp`
+* :ref:`Start Up Guides`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
 * :ref:`How-to Documents`
@@ -58,6 +59,15 @@ The main documentation for the site is organized into a couple sections:
 ..    :caption: REST API
 ..
 ..    api/restapi
+
+.. _Start Up Guides:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Start Up Guides
+
+   StartUpGuides/CloudN-Startup-Guide
+   
 
 .. _Solutions:
 
