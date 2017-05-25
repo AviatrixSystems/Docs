@@ -84,5 +84,6 @@ The main documentation for the site is organized into a couple sections:
    :caption: How To Documents
 
    HowTos/Cluster_Peering_Ref_Design
+   HowTos/CloudN-Startup-Guide
 
 .. disqus::
