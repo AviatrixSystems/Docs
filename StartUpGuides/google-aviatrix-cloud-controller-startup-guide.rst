@@ -2,7 +2,7 @@
 |image0|
 
 ===========================================
-Aviatrix GCloud Cloud Connect Startup Guide
+Google GCP Cloud Controller Startup Guide
 ===========================================
 
 Version 10-16-2016

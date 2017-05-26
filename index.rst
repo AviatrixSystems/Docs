@@ -66,9 +66,9 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 2
    :caption: Start Up Guides
 
-   StartUpGuides/CloudN-Startup-Guide
-   StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/aviatrix-cloud-controller-startup-guide
+   StartUpGuides/google-aviatrix-cloud-controller-startup-guide
+   StartUpGuides/CloudN-Startup-Guide
 
 
 .. _Solutions:

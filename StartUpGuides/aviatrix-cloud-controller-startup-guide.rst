@@ -2,7 +2,7 @@
  |image0|
 
 =============================================
- Cloud Gateway AWS Controller Startup Guide
+AWS Cloud Controller Startup Guide
 =============================================
 
 
