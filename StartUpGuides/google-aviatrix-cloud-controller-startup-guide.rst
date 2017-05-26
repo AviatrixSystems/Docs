@@ -1,12 +1,9 @@
 
 |image0|
 
-===============
-Aviatrix GCloud
-===============
-
-Cloud Connect Startup Guide
-===========================
+===========================================
+Aviatrix GCloud Cloud Connect Startup Guide
+===========================================
 
 Version 10-16-2016
 
