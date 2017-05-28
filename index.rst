@@ -11,6 +11,7 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-aws`
 .. * :ref:`aviatrix-for-azure`
 .. * :ref:`aviatrix-for-gcp`
+
 * :ref:`Start Up Guides`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
@@ -97,6 +98,3 @@ The main documentation for the site is organized into a couple sections:
    :caption: How To Documents
 
    HowTos/Cluster_Peering_Ref_Design
-
-
-.. disqus::
