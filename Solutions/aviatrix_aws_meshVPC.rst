@@ -129,7 +129,7 @@ Once you have created all the VPCs from the allocated address space, you can alw
 -------------------------------------------------
 
 Reference `the startup
-guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN+Startup+Guide.pdf>`__
+guide <http://docs.aviatrix.com/en/latest/StartUpGuides/CloudN-Startup-Guide.html>`__
 to deploy the virtual appliance.
 
 Check and make sure you can access the Aviatrix Controller dashboard and
