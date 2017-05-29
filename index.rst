@@ -98,4 +98,4 @@ The main documentation for the site is organized into a couple sections:
    :caption: How To Documents
 
    HowTos/Cluster_Peering_Ref_Design
-   HowTos/FQDN_Whitelist_Ref_Design
+   HowTos/FQDN_Whitelists_Ref_Design
