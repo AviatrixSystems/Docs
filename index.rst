@@ -99,3 +99,4 @@ The main documentation for the site is organized into a couple sections:
 
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
+   HowTos/HowTo_Setup_Okta_for_Aviatrix
