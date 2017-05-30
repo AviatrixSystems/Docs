@@ -1,7 +1,7 @@
 |image0|
 
 #################################################
-    How to Setup Okta for Aviatrix VPN gateway
+    Setup Okta for Aviatrix VPN gateway
 #################################################
 
 Version 10-20-­2016
