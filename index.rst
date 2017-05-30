@@ -13,9 +13,10 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-gcp`
 
 * :ref:`Start Up Guides`
+* :ref:`How-to Documents`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
-* :ref:`How-to Documents`
+
 
 
 .. Information about development is also available:
