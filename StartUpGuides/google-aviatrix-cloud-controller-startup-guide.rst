@@ -2,7 +2,7 @@
 |image0|
 
 ===========================================
-Google GCP Cloud Controller Startup Guide
+Google Cloud Controller Startup Guide
 ===========================================
 
 Version 10-16-2016
