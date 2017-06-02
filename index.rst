@@ -76,14 +76,14 @@ The main documentation for the site is organized into a couple sections:
 .. _How-to Documents:
 
 .. toctree::
-  :maxdepth: 2
-  :caption: How To Documents
+   :maxdepth: 2
+   :caption: How To Documents
 
-  HowTos/Cluster_Peering_Ref_Design
-  HowTos/FQDN_Whitelists_Ref_Design
-  HowTos/HowTo_Setup_Okta_for_Aviatrix
-  HowTos/aviatrix_apis_datacenter_extension
-  
+   HowTos/Cluster_Peering_Ref_Design
+   HowTos/FQDN_Whitelists_Ref_Design
+   HowTos/HowTo_Setup_Okta_for_Aviatrix
+   HowTos/aviatrix_apis_datacenter_extension
+
 .. _Solutions:
 
 .. toctree::
