@@ -1,13 +1,11 @@
 
-|image0|
+
 
 ===========================================
 Google Cloud Controller Startup Guide
 ===========================================
 
-Version 10-16-2016
 
-Copyright © 2014 - 2016 Aviatrix Systems, Inc. All rights reserved.
 
 
 Welcome

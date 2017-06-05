@@ -1,13 +1,11 @@
 
-|image0|
+
 
 =======================================
 Azure Cloud Controller Startup Guide
 =======================================
 
-Version 09-03-2016
 
-Copyright © 2014-2016 Aviatrix Systems, Inc. All rights reserved.
 
 
 
