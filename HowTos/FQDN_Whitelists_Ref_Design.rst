@@ -1,12 +1,10 @@
-|image0|
+
 
 =================================
  FQDN Whitelists Reference Design
 =================================
 
-Version 05-28-2017
 
-Copyright © 2014-2017 Aviatrix Systems, Inc. All rights reserved.
 
 What is the FQDN Whitelists Feature?
 ====================================

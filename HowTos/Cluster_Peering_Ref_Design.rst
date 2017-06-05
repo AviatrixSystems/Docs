@@ -1,12 +1,10 @@
-|image0|
+|
 
 =====================================
 Cluster Peering Reference Design
 =====================================
 
-Version 05-18-2017
 
-Copyright © 2014-2017 Aviatrix Systems, Inc. All rights reserved.
 
 Peering Performance Challenges
 ==============================
@@ -135,9 +133,7 @@ highlighted.
 
 5. Enjoy!
 
-.. |image0| image:: Cluster_Peering_Reference_Design_files/image1.png
-   :width: 3.5in
-   :height: 0.5in
+
 .. |image1| image:: Cluster_Peering_Reference_Design_files/image002.png
    :width: 6.5in
    :height: 2.5in

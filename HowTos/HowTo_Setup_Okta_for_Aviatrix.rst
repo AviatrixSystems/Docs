@@ -1,12 +1,10 @@
-|image0|
+
 
 =========================================
     Setup Okta for Aviatrix VPN gateway
 =========================================
 
-Version 10-20-­2016
 
-Copyright © 2014-­2016 Aviatrix Systems, Inc. All rights reserved.
 
 Aviatrix VPN gateway supports Okta authentication as part of
 multi-­factor authentication for OpenVPN access. Following are the

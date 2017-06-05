@@ -1,12 +1,10 @@
-|image0|
+
 
 =================================================
     Aviatrix APIs for Datacenter Extension
 =================================================
 
-Version 12-09-2016
 
-Copyright © 2014-2016 Aviatrix Systems, Inc. All rights reserved.
 
 Introduction
 ============
@@ -200,7 +198,3 @@ Make sure the license is successfully entered and it returns the license informa
 
 | There are other options you can specify when you use this API to create a VPC/VNet.
 | Refer to the reference document for more details about the options.
-
-.. |image0| image:: How_to_setup_Okta_for_Aviatrix_media/image0.png
-   :width: 3.5in
-   :height: 0.5in
