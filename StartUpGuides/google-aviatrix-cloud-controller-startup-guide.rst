@@ -2,7 +2,7 @@
 
 
 ===========================================
-Google Cloud Controller Startup Guide
+Google 
 ===========================================
 
 
@@ -13,49 +13,6 @@ Welcome
 
 This is a startup guide for launching an Aviatrix Cloud Connect in
 Google GCloud. If you are a first time user, this document is for you.
-
-Aviatrix Cloud Connect (ACC) provides an end-to-end and seamless secure
-cloud connectivity for you. The end-to-end consists of access to the
-GCloud project, inter-project and inter-cloud routing, so that you have
-the same experience you enjoy when you work on-prem (where you do not
-need to be aware of the network infrastructure, things just work!)
-
-Highlights of the Aviatrix Cloud Connect:
-
--  Scalable and highly available Cloud VPN solution:
-
-   -  Remote access for users to connect to cloud directly.
-
-   -  Integrated with google native load balancer, the solution scales
-      to unlimited number of VPN gateways to serve any number of users
-      and bandwidth.
-
-   -  Supports multi factor authentication: DUO, LDAP and Okta.
-
-   -  User profile based access rules that allow administrator to define
-      and enforce access privilege to any resources (network, protocols
-      and ports) in GCloud at the perimeter of your cloud network.
-
-   -  Supports wide range of clients: Windows, OSX, Linux, Chromebook,
-      Android and iOS.
-
-   -  Supports log forwarders Logstash, Splunk, SUMO Logic, rsyslog for
-      remote logging.
-
-   -  Supports Split tunnel and full tunnel mode. Split tunnel mode
-      allows additional CIDRs be pushed to client.
-
-   -  Modular configuration support incremental configuration as your
-      environment scales.
-
-   -  Supports active user dashboard and user browsing activity.
-
-   -  No extra hop to access instances in different VPCs.
-
--  Policy based multi region and multi cloud (AWS, Azure and GCloud)
-   encrypted peering.
-
--  Multi accounts support for different business groups and projects.
 
 The Aviatrix Cloud Connect consists of two components, controller and
 gateway. The gateway is launched from the controller browser console.

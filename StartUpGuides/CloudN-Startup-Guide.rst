@@ -2,7 +2,7 @@
 
 
 =======================================
- Virtual Appliance CloudN Startup Guide
+ Virtual Appliance CloudN
 =======================================
 
 

@@ -12,7 +12,7 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-azure`
 .. * :ref:`aviatrix-for-gcp`
 
-* :ref:`Start Up Guides`
+* :ref:`Getting Started`
 * :ref:`How-to Documents`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
@@ -62,11 +62,11 @@ The main documentation for the site is organized into a couple sections:
 ..
 ..    api/restapi
 
-.. _Start Up Guides:
+.. _Getting Started:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Start Up Guides
+   :caption: Getting Started
 
    StartUpGuides/aviatrix-cloud-controller-startup-guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide

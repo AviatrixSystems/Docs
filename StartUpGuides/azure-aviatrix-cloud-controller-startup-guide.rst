@@ -2,7 +2,7 @@
 
 
 =======================================
-Azure Cloud Controller Startup Guide
+Azure 
 =======================================
 
 
@@ -15,45 +15,6 @@ Welcome
 This is a startup guide for the initial VHD image launch of Aviatrix
 Gateway in Azure. If you are a first time user, this document is for
 you.
-
-Aviatrix Cloud Gateway provides end to end cloud secure networking for
-you, from accessing to VPCs to inter-VPC routing, all done seamlessly
-and securely, so that you can have the same experience you enjoy for
-your on-prem network (where you never have to login to a bastion station
-or use a jump house to hop from environment to environment.)
-
-Highlights of the Aviatrix Cloud Gateway:
-
--  Scalable and highly available user VPN solution.
-
-   -  Supports multi factor authentication: Google 2-step, DUO, LDAP and
-      Okta.
-
-   -  User profile defined dynamic security access rules that allow
-      administrator to determine access privilege to any resources in
-      AWS at the network perimeter.
-
-   -  Supports wide range of clients: Windows, OSX, Linux, Chromebook,
-      Android and iOS.
-
-   -  Supports log forwarders Logstash, SumoLogic, Splunk and remote
-      syslog for complete user and network visibility.
-
-   -  Support Elasticsearch and Kibana on the controller for easy
-      viewing of syslog events.
-
-   -  Supports Split tunnel and full tunnel mode.
-
-   -  No extra hop to access instances in different VPCs.
-
--  Encrypted peering.
-
-   -  Multi-region and multi-cloud for AWS, Azure, Google GCloud, Azure
-      China and Azure ARM.
-
-   -  Transitive encrypted peering
-
--  Supports multi cloud accounts on a single platform.
 
 The Aviatrix Cloud Gateway consists of two components, controller and
 gateway which is launched from the controller browser console. This

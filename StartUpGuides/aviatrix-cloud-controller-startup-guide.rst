@@ -2,7 +2,7 @@
 
 
 =============================================
-AWS Cloud Controller Startup Guide
+AWS 
 =============================================
 
 
@@ -14,48 +14,6 @@ Welcome
 
 This is a startup guide for the initial AWS AMI image launch of Aviatrix
 Cloud Gateway. If you are a first time user, this document is for you.
-
-Aviatrix Cloud Gateway provides end-to-end cloud secure networking for
-you, from accessing VPCs to inter-VPC routing, all done seamlessly
-and securely, so that you can have the same experience you enjoy for
-your on-prem network (where you never have to log in to a bastion station
-or use a jump house to hop from environment to environment.)
-
-Highlights of the Aviatrix Cloud Gateway:
-
--  Scalable and highly available user VPN solution.
-
-   -  Integrated with AWS ELB, the solution scales to unlimited number
-      of users and bandwidth.
-
-   -  Supports multi factor authentication: Google 2-step, DUO, LDAP and
-      Okta.
-
-   -  User profile defined dynamic security access rules that allow
-      administrators to determine access privilege to any resources in
-      AWS at the network perimeter.
-
-   -  Supports wide range of clients: Windows, OSX, Linux, Chromebook,
-      Android and iOS.
-
-   -  Supports log forwarders Logstash, SumoLogic, Splunk and remote
-      syslog for complete user and network visibility.
-
-   -  Supports Elasticsearch and Kibana on the controller for easy
-      viewing of syslog events.
-
-   -  Supports Split tunnel and full tunnel mode.
-
-   -  No extra hop to access instances in different VPCs.
-
--  Encrypted peering.
-
-   -  Multi-region and multi-cloud for AWS, Azure, Google GCloud, Azure
-      China and Azure ARM.
-
-   -  Transitive encrypted peering
-
--  Supports multi cloud accounts on a single platform.
 
 The Aviatrix Cloud Gateway consists of two components, controller and
 gateway which is launched from the controller browser console. This
@@ -82,14 +40,18 @@ setup custom security policy.
 
     **>>>Aviatrix controller is launched with IAM role.**
 
-Before you launch the controller with IAM role, you must first create 2
-IAM roles and its associated policies. Follow `this
-link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+setup+IAM+role+for+Aviatrix.pdf>`__
-to have them setup.
+Launch Aviatrix Controller via CloudFormation 
+=============================================
+
+Aviatrix Controller can be launched from a CloudFormation script. Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region. 
 
 Launch Aviatrix Controller from AWS Marketplace
 ===============================================
 
+Before you launch the controller with IAM role, you must first create 2
+IAM roles and its associated policies. Follow `this
+link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+setup+IAM+role+for+Aviatrix.pdf>`__
+to have them setup.
 Go to https://aws.amazon.com/marketplace, search for “Aviatrix” and
 select the image type you wish to launch.
 
