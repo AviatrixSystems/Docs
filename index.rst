@@ -13,9 +13,10 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-gcp`
 
 * :ref:`Start Up Guides`
+* :ref:`How-to Documents`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
-* :ref:`How-to Documents`
+
 
 
 .. Information about development is also available:
@@ -72,6 +73,16 @@ The main documentation for the site is organized into a couple sections:
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
 
+.. _How-to Documents:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: How To Documents
+
+   HowTos/Cluster_Peering_Ref_Design
+   HowTos/FQDN_Whitelists_Ref_Design
+   HowTos/HowTo_Setup_Okta_for_Aviatrix
+   HowTos/aviatrix_apis_datacenter_extension
 
 .. _Solutions:
 
@@ -90,12 +101,3 @@ The main documentation for the site is organized into a couple sections:
    :caption: Whitepapers
 
    Whitepapers/EnterpriseAppMigration
-
-.. _How-to Documents:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: How To Documents
-
-   HowTos/Cluster_Peering_Ref_Design
-   HowTos/FQDN_Whitelists_Ref_Design

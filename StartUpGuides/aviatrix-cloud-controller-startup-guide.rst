@@ -1,14 +1,12 @@
 
- |image0|
+
 
 =============================================
 AWS Cloud Controller Startup Guide
 =============================================
 
 
- Version 08-21-2016
 
- Copyright © 2014-2016 Aviatrix Systems, Inc. All rights reserved.
 
 
 Welcome

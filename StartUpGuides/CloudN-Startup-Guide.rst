@@ -1,13 +1,10 @@
 
-|image0|
+
 
 =======================================
  Virtual Appliance CloudN Startup Guide
 =======================================
 
- Version 05-23-2017
-
- Copyright © 2014-2017 Aviatrix Systems, Inc. All rights reserved.
 
 
 
