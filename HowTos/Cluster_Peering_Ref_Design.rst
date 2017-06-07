@@ -1,4 +1,6 @@
-|
+.. meta::
+   :description: Cluster peering reference design
+   :keywords: cluster, peering, cluster peering
 
 =====================================
 Cluster Peering Reference Design
