@@ -3,7 +3,7 @@
    :keywords: Docker, swarm, cluster, Avaitrix, swarm cluster
 
 ===========================================
-Docker Swarm Cluster Installation Guide
+Docker Swarm Cluster Installation 
 ===========================================
 
 Introduction
