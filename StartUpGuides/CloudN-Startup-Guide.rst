@@ -16,22 +16,10 @@ This is a startup guide for the initial installation. CloudN is simple
 to install and easy to use. If you are a first time user, this document
 is for you.
 
-There is no separate document as user guide, explanations on how to use
-CloudN is embedded in the CloudN console. You can also find useful
-information on Frequently Asked Questions (FAQs) at the Help tab on the
-console.
-
-In this guide, the terms VPC/VNet Container, Container and VPC/VNet may
-be used interchangeably. In general, a Container is a fully populated
-AWS VPC or Azure VNet with all resources and encrypted tunnel
-established. When a VPC/VNet Container is created, users are ready to
-launch instances/VMs in the VPC/VNet and accessing them using their
-private IP addresses as if they are in the on-prem network.
-
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu.
 
-CloudN Benefits
+Benefits
 ===============
 
 CloudN is a single platform that supports both Amazon AWS and Microsoft
@@ -52,8 +40,7 @@ Key feature list on CloudN:
 
 Deployment
 
--  Deployed anywhere within your datacenter. No need to touch network
-   infrastructure.
+-  Deployed as virtual appliance anywhere within your datacenter. No need to touch network infrastructure.
 
 -  No additional public IP address needed.
 
@@ -61,8 +48,6 @@ Deployment
 
 -  Seamless, transparent and secure by-direction traffic flow between
    all instances/VMs in a VPC/VNet and on-prem resources.
-
--  Time Service to allow CloudN VM sync to a specified NTP time server.
 
 -  Periodic system configuration backup to AWS S3.
 
@@ -74,10 +59,9 @@ Deployment
 -  Runs on VMware and Microsoft Hyper-V hypervisors, Virtual Box, VMware
    Fusion, VMware Workstation
 
--  Can be deployed as both a virtual appliance and dedicated hardware
-   appliance.
-
 VPC/VNet Features
+
+-  Manages your cloud address space. 
 
 -  Dynamically create a VPC with secure connectivity to data center in a
    few minutes.
@@ -87,12 +71,9 @@ VPC/VNet Features
 -  Encrypted VPC/VNet peering between VPC/VNets in the same and
    different regions and across clouds.
 
--  Native AWS VPC peering in the same region.
-
 -  Redundant cloud gateway for high availability support.
 
--  Support ESXi based vmware High Availability (HA) and Fault Tolerance
-   (FT) on local CloudN controller.
+-  Support vmware hyper-V High Availability (HA) cluster deployment.
 
 -  Security policies at the VPC/VNet level with fine granular rules.
 
@@ -104,14 +85,11 @@ VPC/VNet Features
 
 -  LDAP/AD integration with OpenVPN for user authentication.
 
--  Support additional multi factor authentication: Google 2-step, DUO
+-  Support additional multi factor authentication: DUO
    security and OKTA.
 
 -  Support user profile defined access policy for a dynamic access
    control to cloud resources.
-
--  Replace legacy VPC AWS VGW based VPN solution with CloudN for a
-   central point of control and management.
 
 -  Connect to existing (legacy) VPC for peering with any CloudN
    controlled VPC/VNets.
@@ -122,13 +100,6 @@ VPC/VNet Features
 -  Deployed in branch offices or remote data centers to allow direct
    secure connectivity to VPC/VNet without backhauling traffic to
    datacenter.
-
-Instance Features
-
--  Support instance profiling to create template for launching instance
-   from CloudN console.
-
--  Support customer CloudFormation scripts integration for AWS.
 
 IT Managed Self-Service
 
@@ -151,15 +122,7 @@ Monitoring and Troubleshooting
 -  Real time and historic traffic statistics displaying bandwidth
    consumption on a per VPC/VNet bases.
 
--  Cost monitoring through billing alert for a CloudN user account in
-   AWS.
-
--  Support CloudTrail and Splunk integration per CloudN account for AWS
-   API logging.
-
--  Support Splunk logging for CloudN API.
-
--  Support Splunk and logstash forwarder for VPC/VNet user traffic.
+-  Support Splunk, SumoLogic, Elastic Search and rSyslog logging.
 
 -  Monitoring and alert any stopped instances and unassociated EIP to
    reduce costs in AWS.
@@ -758,9 +721,6 @@ CloudN works on VirtualBox only in a bridged mode.
 After downloading and extracting the zip file, copy the folder to a
 location where you can import the virtual machine. For installation,
 follow the steps below.
-
-Installation
-=============
 
 Step 1: From the VirtualBox menu bar, select File > Import Appliance
 
