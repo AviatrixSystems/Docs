@@ -12,12 +12,12 @@
 Welcome
 =======
 
-This is a startup guide for the initial installation. CloudN is simple
+This is a startup guide for the initial installation. CloudN is virtual appliance that is simple
 to install and easy to use. If you are a first time user, this document
 is for you.
 
 CloudN supports REST API that allows third party software integration.
-REST API document can be found at CloudN console Help menu.
+REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
 Benefits
 ===============
