@@ -1,3 +1,6 @@
+.. meta::
+   :description: Datacenter extension API reference design
+   :keywords: datacenter extension, Aviatrix API, Aviatrix
 
 
 =================================================
