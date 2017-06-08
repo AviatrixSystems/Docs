@@ -1,7 +1,6 @@
 .. meta::
    :description: Datacenter extension API reference design
-   :keywords: datacenter extension, Aviatrix API, Aviatrix
-
+   :keywords: datacenter extension, Aviatrix API, Aviatrix, VLAN stretching
 
 =================================================
     Aviatrix APIs for Datacenter Extension
@@ -60,9 +59,9 @@ console.
 
      ::
 
-      https://IP\_Address\_of\_CloudN/v1/api?action=login&username=admin&password=password
+      https://IP_Address_of_CloudN/v1/api?action=login&username=admin&password=password
 
-   Replace IP\_Address\_of\_CloudN with your own IP address of CloudN.
+   Replace IP_Address_of_CloudN with your own IP address of CloudN.
    Replace the values of username and password with the credentials you use to log in the Web console.
 
    It should return a CID upon successful login.
@@ -83,11 +82,11 @@ Note the value of CID for the API calls hereafter.
 
    ::
 
-    https://IP\_Address\_of\_CloudN/v1/api?
-    CID=584b4b57a42f2&action=setup\_customer\_id&customer\_id=carmelodev-1234567898.64
+    https://IP_Address_of_CloudN/v1/api?
+    CID=584b4b57a42f2&action=setup_customer_id&customer_id=carmelodev-1234567898.64
 
 Replace the value of CID with the one in step 1.
-Replace the value of customer\_id with your license.
+Replace the value of customer_id with your license.
 Make sure the license is successfully entered and it returns the license information correctly.
 
     ::
@@ -95,7 +94,7 @@ Make sure the license is successfully entered and it returns the license informa
       {
       "return": true,
       "results": {
-      "license\_list": [
+      "license_list": [
           {
             "Lic-1436678987.59": {
                 "Verified": 0,
@@ -113,21 +112,21 @@ Make sure the license is successfully entered and it returns the license informa
 
 3. Set up the maximum number of VPC/VNet ::
 
-      https://IP\_Address\_of\_CloudN/v1/api?CID=584b4b57a42f2&action=setup\_max\_vpc\_containers&vpc\_num=4
+      https://IP_Address_of_CloudN/v1/api?CID=584b4b57a42f2&action=setup_max_vpc_containers&vpc_num=4
 
 |   Replace the value of CID with the one in step 1.
-|   Replace the value of vpc\_num with the number you desire to set up.
+|   Replace the value of vpc_num with the number you desire to set up.
 
     ::
 
         {
           "return": true,
           "result": {
-            "cidr\_list": [
-            "10.16.32.0\\/19",
-            "10.16.64.0\\/19",
-            "10.16.96.0\\/19",
-            "10.16.128.0\\/19"
+            "cidr_list": [
+            "10.16.32.0\/19",
+            "10.16.64.0\/19",
+            "10.16.96.0\/19",
+            "10.16.128.0\/19"
             ]
           }
         }
@@ -137,9 +136,9 @@ Make sure the license is successfully entered and it returns the license informa
    Before calling the API to set up an account that enables CloudN to access the cloud, gather the account information from the cloud
    provider.
 
-   |   AWS ( cloud\_type = 1 ): Account Number, Access key and Secret Key
-   |   Azure ( cloud\_type = 2 ): Azure Subscription ID
-   |   Azure RM ( cloud\_type = 8 ): Azure Subscription ID, Application Endpoint, Application Client ID and Application Client Secret
+   |   AWS ( cloud_type = 1 ): Account Number, Access key and Secret Key
+   |   Azure ( cloud_type = 2 ): Azure Subscription ID
+   |   Azure RM ( cloud_type = 8 ): Azure Subscription ID, Application Endpoint, Application Client ID and Application Client Secret
 
    This API needs to use POST method of HTTP to send the account information. Use any tool of your preference to send the POST HTTP
    request
@@ -152,17 +151,17 @@ Make sure the license is successfully entered and it returns the license informa
 
     {
       "CID": "584b4b57a42f2",
-      "action": "setup\_account\_profile",
-      "account\_name": "user2",
-      "account\_password": "12345",
-      "account\_email": "user2@123abc.com",
-      "cloud\_type": "1",
-      "aws\_account\_number": "982805288348",
-      "aws\_access\_key": "AKIAIQDAABCPKKKWQA",
-      "aws\_secret\_key": "9ttSESnQvb\\/OlWZKCjyPsbcdYgamthksK2+1G"
+      "action": "setup_account_profile",
+      "account_name": "user2",
+      "account_password": "12345",
+      "account_email": "user2@123abc.com",
+      "cloud_type": "1",
+      "aws_account_number": "982805288348",
+      "aws_access_key": "AKIAIQDAABCPKKKWQA",
+      "aws_secret_key": "9ttSESnQvb\/OlWZKCjyPsbcdYgamthksK2+1G"
     }
 
-  | The above example is to set up an AWS account (cloud\_type is 1 ).
+  | The above example is to set up an AWS account (cloud_type is 1 ).
   | The others are the account information from AWS.
 
 ::
@@ -180,7 +179,7 @@ Make sure the license is successfully entered and it returns the license informa
 
   |  The CIDR of this VPC/VNet can only be one of the available CIDRs you set up in step 3.
 
-  Enter the CIDR as the value of vpc\_net in this API. ::
+  Enter the CIDR as the value of vpc_net in this API. ::
 
     POST https://172.16.150.15/v1/api
 
@@ -188,16 +187,20 @@ Make sure the license is successfully entered and it returns the license informa
 
     {
         "CID": "584b4b57a42f2",
-        "action": "create\_container",
-        "cloud\_type": "1",
-        "account\_name": "user2",
-        "vpc\_name": "dc-us-west-1",
-        "vpc\_reg": "us-west-2",
-        "vpc\_size": "t2.micro",
-        "vpc\_net": "10.16.96.0\\/19"
+        "action": "create_container",
+        "cloud_type": "1",
+        "account_name": "user2",
+        "vpc_name": "dc-us-west-1",
+        "vpc_reg": "us-west-2",
+        "vpc_size": "t2.micro",
+        "vpc_net": "10.16.96.0\/19"
     }
 
 | The result is expected to return after a while.
 
 | There are other options you can specify when you use this API to create a VPC/VNet.
 | Refer to the reference document for more details about the options.
+
+.. |image0| image:: How_to_setup_Okta_for_Aviatrix_media/image0.png
+   :width: 3.5in
+   :height: 0.5in
