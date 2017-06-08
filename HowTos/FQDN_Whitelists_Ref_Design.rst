@@ -1,3 +1,6 @@
+.. meta::
+   :description: FQDN whitelists reference design
+   :keywords: FQDN, whitelist, Aviatrix
 
 
 =================================

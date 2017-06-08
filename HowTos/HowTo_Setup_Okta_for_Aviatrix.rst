@@ -1,3 +1,6 @@
+.. meta::
+   :description: Okta setup for Aviatrix
+   :keywords: Okta, Aviatrix
 
 
 =========================================

@@ -1,3 +1,8 @@
+.. meta::
+   :description: Service chaining reference design
+   :keywords: service chaining
+
+
 ================
 Service Chaining
 ================
