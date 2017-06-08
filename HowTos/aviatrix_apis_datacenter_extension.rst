@@ -3,7 +3,7 @@
    :keywords: datacenter extension, Aviatrix API, Aviatrix, VLAN stretching
 
 =================================================
-    Aviatrix APIs for Datacenter Extension
+    REST API Example: Datacenter Extension
 =================================================
 
 
@@ -11,7 +11,7 @@
 Introduction
 ============
 
-The APIs for Aviatrix CloudN can be alternatively used for the tasks
+The APIs for Aviatrix CloudN can be used for the tasks
 that are done through the Web UI.
 
 The following is an example to utilize the APIs to create a VPC/VNet
