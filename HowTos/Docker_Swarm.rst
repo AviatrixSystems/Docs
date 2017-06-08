@@ -1,3 +1,6 @@
+.. meta::
+   :description: Docker swarm cluster installation
+   :keywords: Docker, swarm, cluster, Avaitrix, swarm cluster
 
 ===========================================
 Docker Swarm Cluster Installation Guide
