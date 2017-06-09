@@ -3,7 +3,7 @@
    :keywords: Encryption, Azure, encryption over azure, ExpressRoute, Aviatrix
 
 ######################################################
-Encryption over Azure ExpressRoute Reference Design
+Encryption over Azure ExpressRoute
 ######################################################
 ======================================================
 
@@ -90,67 +90,67 @@ The configuration workflow is as follows, with major steps highlighted.
 | 2. Create a gateway in a VNet where you like to connect to enterprise datacenter.
 |     Go to Gateway -> Create, make sure:
 
-    -  The gateway is launched in different subnet from the user subnets. In this example, the gateway is deployed on Subnet1.
+      -  The gateway is launched in different subnet from the user subnets. In this example, the gateway is deployed on Subnet1.
 
-    -  The gateway may have VPN access disabled
+      -  The gateway may have VPN access disabled
 
 | 3. (Optional) If HA is enabled, create a backup gateway in the same VNet.
 |     Go to Gateway -> Create, make sure:
 
-    -  The gateway is launched in different subnet from the user subnets. In
-       this example, the gateway is deployed on Subnet1.
+      -  The gateway is launched in different subnet from the user subnets. In
+         this example, the gateway is deployed on Subnet1.
 
-    -  The gateway may have VPN access disabled.
+      -  The gateway may have VPN access disabled.
 
 | 4. Create a connection to the Enterprise datacenter
 |    Go to VPC/VNet -> site2Cloud -> Add, make sure,
 
-   a. Select the VPC/VNet Name where Aviatrix gateway for encryption is
-      launched.
+     a. Select the VPC/VNet Name where Aviatrix gateway for encryption is
+        launched.
 
-   b. If HA is not enabled:
+     b. If HA is not enabled:
 
-      i. At Gateway field, select a gateway launched earlier for
-         encryption.
+        i. At Gateway field, select a gateway launched earlier for
+           encryption.
 
-   c. Else if HA is enabled:
+     c. Else if HA is enabled:
 
-      i.  At Primary Gateway field, select a gateway launched earlier as
-          primary gateway.
+        i.  At Primary Gateway field, select a gateway launched earlier as
+            primary gateway.
 
-      ii. At Backup Gateway field, select a gateway launched earlier as
-          backup gateway.
+        ii. At Backup Gateway field, select a gateway launched earlier as
+            backup gateway.
 
-   d. Input the connection with a unique name, for example,
-      FirstExpressRoute
+     d. Input the connection with a unique name, for example,
+        FirstExpressRoute
 
-   e. At Customer Gateway IP Address, enter the public IP address of the
-      edge router for Enterprise datacenter.
+     e. At Customer Gateway IP Address, enter the public IP address of the
+        edge router for Enterprise datacenter.
 
-   f. At Customer Network, enter network CIDR of the Enterprise
-      datacenter. If there are multiple subnets, enter each one
-      separated with comma.
+     f. At Customer Network, enter network CIDR of the Enterprise
+        datacenter. If there are multiple subnets, enter each one
+        separated with comma.
 
-   g. Check Private Route Encryption:
+     g. Check Private Route Encryption:
 
-      i. At Cloud Subnet fields, enter Subnet2 and Subnet3 in CIDR
-         format. For example, if Subnet2 is 10.10.1.0/24 and Subnet3 is
-         10.10.2.0/24, enter “10.10.1.0/24,10.10.2.0/24”.
+        i. At Cloud Subnet fields, enter Subnet2 and Subnet3 in CIDR
+           format. For example, if Subnet2 is 10.10.1.0/24 and Subnet3 is
+           10.10.2.0/24, enter “10.10.1.0/24,10.10.2.0/24”.
 
 | 5. Generate Enterprise datacenter configuration template
 |    Go to VPC/VNet -> site2Cloud -> List,
 
-   a. Select the connection.
+     a. Select the connection.
 
-   b. Click Download.
+     b. Click Download.
 
-   c. If your remote edge device is not listed in the dropdown menu,
-      simply select an available one in the menu.
+     c. If your remote edge device is not listed in the dropdown menu,
+        simply select an available one in the menu.
 
-   d. Click “Yes, Download” to download a template file that contains
-      the gateway public IP address, VPC CIDR, pre-shared secret and
-      encryption algorithm. Incorporate the information to your remote
-      router/firewall configuration.
+     d. Click “Yes, Download” to download a template file that contains
+        the gateway public IP address, VPC CIDR, pre-shared secret and
+        encryption algorithm. Incorporate the information to your remote
+        router/firewall configuration.
 
 | 6. At the Enterprise datacenter or remote site, configure encryption on the edge device.
 |   Make sure your peer network is Subnet2 and Subnet3, as shown in this example.
