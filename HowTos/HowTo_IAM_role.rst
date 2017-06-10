@@ -3,7 +3,7 @@
    :keywords: IAM, IAM role, IAM role Avaitrix
 
 ###################################
-How to Set Up IAM Role for Aviatrix
+IAM Role
 ###################################
 
 With the support of AWS IAM role, there is no need to enter AWS access
