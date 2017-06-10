@@ -8,14 +8,99 @@
 
 
 
-Aviatrix CloudN is virtual appliance that is deployed in a on-premise datacenter or co-location facility. 
+Aviatrix CloudN is virtual appliance that is deployed on premise. 
 
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
-To learn how CloudN Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
-CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__ 
+How It Works
+============
+
+(It is not necessary to understand how CloudN works in order
+to use it. It is OK if you like to skip this section.)
+
+Mix Layer 2 and Layer 3 Technologies
+------------------------------------
+
+Cloud Enabler or CloudN is an appliance that can be deployed anywhere
+within your enterprise network. It is used by enterprises to create
+VPC/VNets and securely connect to them from the enterprise network.
+Following is a diagram of deploying a CloudN in your enterprise
+datacenter.
+
+|image2|
+
+*Figure 1: CloudN Deployment Diagram*
+
+CloudN uses a mixed Layer 2 and Layer 3 technologies whereas the
+CloudN-local behaves as a Layer 2 bridge and CloudN-remote (launched by
+CloudN-local at VPC/VNet creation time) behaves as a Layer 3 router. The
+design of CloudN-local as a Layer 2 bridge makes it possible to build an
+overlay IPSec tunnel to CloudN-remote without involving edge routers in
+the network. The design of CloudN-remote as a Layer 3 router makes it
+possible for the Container to fully utilize all AWS VPC underlying
+infrastructures and services without requiring any software agent reside
+in any of the instances.
+
+Instances within the VPC/VNet communicate with each other directly and
+transparently without involvement of CloudN-remote. In addition, VMs
+within an Azure VNet communicate with each other directly or through
+CloudN-remote. Accessing instances in the VPC/VNet from on-prem is also
+seamless. From the user’s perspective, what CloudN creates is a standard
+VPC/VNet.
+
+With CloudN you can create a VPC/VNet dynamically and on demand in a few
+minutes of time.
+
+You can now run an application or product in its own Container,
+resulting in a more secure environment than on premise datacenter by
+isolation applications from each other.
+
+CloudN views each VPC/VNet as the smallest autonomous environment, it
+allows you to create security policies to deny any subnet or hosts on
+premise to access any VPC/VNet. For example, you may want to block
+developers from accessing production VPC/VNet. By default,
+inter-VPC/VNet communication is blocked. By using VPC/VNet peering
+capability, you can establish direct secure tunnels among VPC/VNets in
+the same region or across different regions.
+
+A VPC/VNet Container is a VPC/VNet, with (optional) public subnet and
+private subnet in each availability zone, AWS Internet Gateway (IGW),
+routing and CloudN-remote gateway. At the creation time you can also
+specify security policies stored in AWS S3 as CloudFormation Scripts.
+Secure tunnels are automatically established to each Container at
+creation time.
+
+Enterprise users can access instances seamlessly in all private and
+public subnets over the secure tunnel using instance private addresses.
+All instances on private subnets can reach back to enterprise.
+Optionally packets from instances on private subnets can reach Internet
+directly without being first sent back to the enterprise.
+
+Dividing Subnets
+----------------
+
+CloudN works by dividing the subnet where cloudN is deployed into sub
+segments (or smaller subnets). The VPC CIDRs created by cloudN are one
+of the sub segments. The mechanism is illustrated below. VPC in the
+below diagram could be replaced with a VNet.
+
+|image3|
+
+*Figure 2: Dividing Subnets*
+
+Where a local subnet 10.16.0.0/16 has a default gateway 10.16.0.1. The
+subnet is divided into 4 sub segments. The default gateway and CloudN IP
+address fall into one segment. The rest of each segment is mapped to a
+VPC CIDR, in this case, the VPC CIDRs are 10.16.32.0/19, 10.16.64.0/19
+and 10.16.96.0/19. If this subnet 10.16.0.0/16 is reachable from other
+network in the enterprise, then the instances inside each VPC takes
+private IP address as if they are on the local subnet 10.16.0.0/16. For
+users in the enterprise, it is as if they are communicating with hosts
+on the local network.
+
+The same mechanism is applied to Azure to create VNets.
 
 Pre-Installation Check List
 ===========================
@@ -132,10 +217,10 @@ result in duplicate IP addresses.
 
 Each VPC has 1 public subnet and 2 private subnets.
 
-Deploy CloudN as a virtual router 
-------------------------------------
+Deploy CloudN in remote sites
+-----------------------------
 
-You can deploy CloudN as a virtual router and in a remote site to allow the remote site network
+You can deploy CloudN in a remote site to allow the remote site network
 to connect securely and directly to a VPC created by the main datacenter
 deployed cloudN, as shown below.
 
@@ -272,8 +357,6 @@ Download CloudN Images
 CloudN comes with two types of images, OVF and VHD, to support VMware
 hypervisor and Microsoft Hyper-V.
 
-vmware OVF image can be downloaded from `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
-
 CloudN OVF image can be imported and installed on a VMware ESXi 5.0/5.1
 host, VMware Workstation, Fusion and VMware Player. Once you have signed
 up as a Aviatrix customer, follow the instructions to download the zip
@@ -407,6 +490,162 @@ NIC Teaming Support
 
 NIC teaming is only supported for active standby mode.
 
+Running CloudN on Wireless Host
+---------------------------------
+
+CloudN VHD image is packaged with its virtual switch configured with
+External Network Wire. If your host machine has wireless network
+adapter, you need to change the binding of virtual switch to External
+Network Wireless. Highlight the VM, choose settings, choose Network
+Adapters and configure as shown in the picture below.
+
+|image22|
+
+Test Drive on Your Laptop
+-------------------------
+
+CloudN can be installed on your laptop or desktop running on VMware
+Workstation, Fusion and Windows Enterprise 8.1 in NAT mode. You can use
+this deployment for testing and evaluation purpose.
+
+Installation on VMware Workstation is straight forward. Use “Open”
+option to import the OVF file.
+
+Test Drive CloudN in NAT Mode or Hyper-V Internal Network Wire Mode
+---------------------------------------------------------------------
+
+One good configuration to test drive cloudN is to deploy it on your
+laptop on a private subnet in NAT mode (In Hyper-V, the network adapters
+are configured as Internal Network Wire). However, since VMware
+Workstation and Fusion allows only one NAT mode subnet, special
+attention must be given if you have other VMs that shares the subnet.
+Sharing subnet or VLAN with other VMs is not a recommended model in real
+production deployment.
+
+As an example, if your NAT mode subnet is 192.168.10.0/24, you can
+create a maximum 2 VPCs from CloudN deployed on this subnet. Suppose the
+default gateway IP address is 192.168.10.2. CloudN will automatically
+take 192.168.10.3 as its IP address. In addition CloudN reserves IP
+address ranges from 192.168.10.4 to 192.168.10.7. If you have other VMs
+running on this subnet, make sure their IP address fall in the same sub
+segment as CloudN but not overlap with CloudN and its reserved address
+range. Once you launch VPCs from this CloudN, the other VMs on the
+subnet should be able to run SSH, RDP, and SCP (file copy) to any
+instances in VPCs using the instance private IP address seamlessly,
+without any bastion station or landing VPC. Refer to How It Works
+section for more explanations.
+
+If you install CloudN on a NAT subnet, make sure both Ethernet
+interfaces are changed to NAT mode (By default, CloudN is pre-configured
+and shipped with both Network Adapters in Bridged mode). Right click on
+the CloudN VM, click Settings. Change both Network Adapters to NAT mode,
+as shown below for VMware Workstation:
+
+|image23|
+
+Test Drive on MAC with vmware Fusion
+------------------------------------
+
+After downloading the zip file and decompressing it, copy the folder to
+a location, where your Mac can access it. Perform the following steps to
+install CloudN.
+
+Step 1: From the VMware Fusion menu bar, select File > Import.
+
+|image24|
+
+Step 2: The Import Library window appears, along with a dialog box for
+browsing to the location of OVF file.
+
+|image25|
+
+Step 3: Browse to the .ovf file and click open
+
+|image26|
+
+Step 4: Type the name for the imported virtual machine in the Save
+As text box and indicate where to save it.
+
+|image27|
+
+Step 5: After the import is complete, the virtual machine appears in the
+virtual machine library. Click on “Start Up” to start the CloudN virtual
+machine.
+
+|image28|
+
+Step 6: Change Network Adapters to NAT mode
+
+Select the VM, click Settings, click Network Adapter, select “\ **Share
+with my Mac**\ ”, as shown below
+
+|image29|
+
+Test Drive on PC with VMware Workstation
+-----------------------------------------
+
+Click on File -> Open, as shown below.
+
+|image30|
+
+Then open the desired VM.
+
+|image31|
+
+Highlight the VM, right click, select Settings, click on Network
+Adapter, change both Network Adapter to NAT mode as shown below.
+
+|image32|
+
+Test Drive on VirtualBox
+------------------------
+
+CloudN works on VirtualBox only in a bridged mode.
+
+After downloading and extracting the zip file, copy the folder to a
+location where you can import the virtual machine. For installation,
+follow the steps below.
+
+Step 1: From the VirtualBox menu bar, select File > Import Appliance
+
+|image33|
+
+Step 2: Navigate to the CloudN ovf file and click “Next”
+
+|image34|
+
+Step 3: In the next screen, click on “Import” to start the import
+process and wait for it to finish
+
+|image35|
+
+Step 4: CloudN virtual machine installation is finished and it can be
+launched by selecting it and clicking on the “Start” button.
+
+|image36|
+
+Configure Network Interfaces
+----------------------------
+
+CloudN network interfaces should be configured in bridge mode as the NAT
+mode makes it impossible for guests to communicate with each other. In
+addition to this, both interfaces should be allowed to be in promiscuous
+mode. Execute the steps below to satisfy these requirements.
+
+Step 1: Select the CloudN VM and click on “Settings”
+
+|image37|
+
+Step 2: In the settings window, select “Network” and select "Bridged
+Adapter" in the drop down list for the "Attached to" field.
+
+|image38|
+
+Step 3: Click on “Advanced” to reveal advanced configuration options and
+select “Allow All” in the drop down list for “Promiscuous Mode” field.
+Repeat this procedure for “Adapter 2” as well.
+
+|image39|
 
 Booting Up and Initial Configuration
 ====================================
