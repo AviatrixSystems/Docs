@@ -79,6 +79,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 2
    :caption: How To Documents
 
+   HowTos/HowTo_IAM_role
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/HowTo_Setup_Okta_for_Aviatrix
@@ -86,7 +87,6 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Service_Chaining_Ref_Design
    HowTos/Docker_Swarm
    HowTos/EncrOverExpRoute
-   HowTos/HowTo_IAM_role
 
 .. _Solutions:
 
