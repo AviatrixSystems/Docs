@@ -11,15 +11,12 @@ Google
 Welcome
 =======
 
-This is a startup guide for launching an Aviatrix Cloud Connect in
-Google GCloud. If you are a first time user, this document is for you.
+This is a startup guide for launching an Aviatrix Cloud Controller in
+Google GCloud. If you are a first time user, this guide is for you.
 
 The Aviatrix Cloud Connect consists of two components, controller and
 gateway. The gateway is launched from the controller browser console.
-This guide helps you to launch the controller image in GCloud.
-
-For the rest of the document, controller or Aviatrix controller is used
-to refer the controller component of the solution.
+This guide helps you to launch the controller instance in GCloud.
 
 Important note: a GCloud project corresponds to an Aviatrix cloud account
 or an AWS (IAM) account with its own credentials. A network in a GCloud

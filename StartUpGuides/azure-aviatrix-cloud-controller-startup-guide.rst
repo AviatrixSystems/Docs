@@ -12,17 +12,13 @@ Azure
 Welcome
 =======
 
-This is a startup guide for the initial VHD image launch of Aviatrix
-Gateway in Azure. If you are a first time user, this document is for
-you.
+This is a startup guide to launch of Aviatrix
+Controller in Azure. 
 
-The Aviatrix Cloud Gateway consists of two components, controller and
-gateway which is launched from the controller browser console. This
-guide helps you to launch the controller image in Azure. The controller
+The Aviatrix Cloud solution consists of two components, controller and
+gateway. Gateways are launched to specific VNets from the controller browser console. This
+guide helps you to launch the controller VM in Azure. The controller
 image is also available in AWS and GCloud.
-
-For the rest of the document, controller is used to refer the controller
-component of the solution.
 
 Steps to Launch the Controller
 ==============================
