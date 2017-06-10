@@ -3,7 +3,7 @@
    :keywords: datacenter extension, Aviatrix API, Aviatrix, VLAN stretching
 
 =================================================
-    REST API Example: Datacenter Extension
+    REST API Example
 =================================================
 
 
