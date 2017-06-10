@@ -86,6 +86,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Service_Chaining_Ref_Design
    HowTos/Docker_Swarm
    HowTos/EncrOverExpRoute
+   HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
 
 .. _Solutions:
