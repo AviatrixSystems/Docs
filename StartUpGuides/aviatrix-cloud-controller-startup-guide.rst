@@ -9,14 +9,8 @@ AWS
 
 
 
-Welcome
-=======
-
-This is a startup guide for the initial AWS AMI image launch of Aviatrix
-Cloud Controller. If you are a first time user, this guide is for you.
-
-The Aviatrix Cloud solution consists of two components, controller and
-gateway. Gateways are launched in specific VPCs from the controller browser console. This
+The Aviatrix cloud network solution consists of two components, controller and
+gateway, both are AWS instances. Gateways are launched from the controller browser console. This
 guide helps you to launch the controller instance in AWS. The controller
 image is also available in Azure and GCloud.
 
