@@ -3,7 +3,7 @@
    :keywords: Aviatrix account, Azure, Aviatrix Azure account, Aviatrix Azure
 
 ===========================================================
-Setup an Aviatrix Cloud Account for Azure Resource Manager
+Azure ARM
 ===========================================================
 
 1.0 Overview
@@ -143,18 +143,6 @@ At this point you should have the following information.
 +-----------------------------------+---------------+
 | **Application Client Secret**     | From step 3   |
 +-----------------------------------+---------------+
-
-Appendix –Support
-=================
-
-Aviatrix Support
-----------------
-
-Standard: 8x5 Enterprise Phone Support, email support, product-specific
-knowledge-base and user forum is included. For Additional levels of
-support and support offers please visit:
-
-`www.aviatrix.com/support <file:///C:\Work\Documentation\Product%20Docs\www.aviatrix.com\support>`__
 
 .. |image0| image:: AviatrixAccountForAzure_media/image1.png
    :width: 5.20313in
