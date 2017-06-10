@@ -9,19 +9,10 @@ AWS
 
 
 
-Welcome
-=======
-
-This is a startup guide for the initial AWS AMI image launch of Aviatrix
-Cloud Gateway. If you are a first time user, this document is for you.
-
-The Aviatrix Cloud Gateway consists of two components, controller and
-gateway which is launched from the controller browser console. This
-guide helps you to launch the controller image in AWS. The controller
+The Aviatrix cloud network solution consists of two components, controller and
+gateway, both are AWS instances. Gateways are launched from the controller browser console. This
+guide helps you to launch the controller instance in AWS. The controller
 image is also available in Azure and GCloud.
-
-For the rest of the document, controller is used to refer the controller
-component of the solution.
 
 Create an AWS EC2 Account
 =========================
@@ -38,8 +29,6 @@ We strongly recommend you to use an IAM role for security reasons,
 follow instructions during onboarding time of the controller instance to
 setup custom security policy.
 
-    **>>>Aviatrix controller is launched with IAM role.**
-
 Launch Aviatrix Controller via CloudFormation 
 =============================================
 
@@ -52,7 +41,7 @@ Before you launch the controller with IAM role, you must first create 2
 IAM roles and its associated policies. Follow `this
 link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+setup+IAM+role+for+Aviatrix.pdf>`__
 to have them setup.
-Go to https://aws.amazon.com/marketplace, search for “Aviatrix” and
+Then go to https://aws.amazon.com/marketplace, search for “Aviatrix” and
 select the image type you wish to launch.
 
 ::
@@ -73,7 +62,7 @@ click at a region where you wish to launch the controller.
 
 Once you are at AWS EC2 console, follow the steps below:
 
-1.  Select the instance size “t2.medium” of 4GB of memory, which is the minimum instance
+1.  Select the instance size “t2.large” of 4GB of memory, which is the minimum instance
     required.
 
 2.  Select the VPC where the controller will be launched.
