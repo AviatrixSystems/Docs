@@ -4,7 +4,7 @@
 
 
 =========================================
-    Setup Okta for Aviatrix VPN gateway
+    Okta Authentication 
 =========================================
 
 
