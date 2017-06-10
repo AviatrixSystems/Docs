@@ -1,14 +1,14 @@
 .. meta::
    :description: Cluster peering reference design
-   :keywords: cluster, peering, cluster peering, Aviatrix
+   :keywords: cluster, peering, cluster peering, Aviatrix, AWS VPC, Egress control
 
 =====================================
-Cluster Peering Reference Design
+Cluster Peering
 =====================================
 
 
 
-Peering Performance Challenges
+Performance Challenges
 ==============================
 
 Today encrypted peering (IPSEC tunnel) between two VPCs is carried out
