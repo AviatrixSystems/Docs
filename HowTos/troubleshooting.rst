@@ -3,7 +3,7 @@
    :keywords: Avaitrix troubleshooting, upload log, packet capture
 
 ###################################
-Troubleshooting
+Troubleshoot
 ###################################
 
 There are several ways to troubleshoot problems with Aviatrix. 
@@ -29,5 +29,20 @@ Check Site2Cloud tunnel
 -----------------------
 
 Click Site2Cloud on the console. Click Diagnostics. 
-S
 
+Test gateway connectivity
+--------------------------
+
+To test if a gateway can reach certain IP or host, 
+click Troubleshoot->Diagnostics. At Network Connectivity Utility panel, select a gateway. Specify remote host name, port number. The TCP protocol test is reliable. Currently UDP test is not reliable.
+
+Packet capture
+---------------
+
+Click Troubleshoot->Diagnostics. At Packet Capture panel, select a gateway where you wish to do packet capture. You can further filter on Host and Port number. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. You can also specifiy capture time. The pcap file can be viewed by Wireshark. 
+
+DNS error
+----------
+If you see DNS related error on the controller console, check your VPC/VNet DNS setting. It is possible that the controller or gateway does not have connectivity to the DNS server. 
+
+If your DNS server is located on-prem, make sure the VPC/VNet where controller is launched has connection to reach the private DNS server.
