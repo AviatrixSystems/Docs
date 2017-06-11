@@ -81,14 +81,14 @@ The main documentation for the site is organized into a couple sections:
 
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
-   HowTos/troubleshooting
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/aviatrix_apis_datacenter_extension
    HowTos/Service_Chaining_Ref_Design
-   HowTos/Docker_Swarm
+   HowTos/troubleshooting
    HowTos/EncrOverExpRoute
+   HowTos/Docker_Swarm
 
 .. _Solutions:
 
