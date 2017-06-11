@@ -87,8 +87,8 @@ The main documentation for the site is organized into a couple sections:
    HowTos/aviatrix_apis_datacenter_extension
    HowTos/Service_Chaining_Ref_Design
    HowTos/troubleshooting
-   HowTos/Docker_Swarm
    HowTos/EncrOverExpRoute
+   HowTos/Docker_Swarm
 
 .. _Solutions:
 

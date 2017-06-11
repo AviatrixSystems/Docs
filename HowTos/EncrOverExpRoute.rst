@@ -3,7 +3,7 @@
    :keywords: Encryption, Azure, encryption over azure, ExpressRoute, Aviatrix
 
 ######################################################
-Encryption over Azure ExpressRoute
+Encryption over ExpressRoute
 ######################################################
 
 
@@ -41,36 +41,6 @@ Aviatrix gateway can be deployed in a 1:1 redundancy fashion where a
 backup gateway is ready to take over should the primary IPSec tunnel
 goes down due to gateway VM hardware/software failure.
 
-
-The Aviatrix Benefits
-----------------------
-
-Aviatrix gateways are deployed and managed by an Aviatrix Cloud Connect
-Controller (not shown in the diagram) which itself is a cloud instance
-or VM. Some of the benefits are highlighted below:
-
--  The gateway interoperates with third party routing and firewall
-   devices.
-
--  The gateway is launched from the controller web console with a few
-   clicks.
-
--  Aviatrix gateways support 1:1 redundancy for high availability
-   without any additional helper instance or VM. The controller monitors
-   all IPSec tunnel status and automatically re-program the cloud
-   infrastructure routing table and switch to a standby gateway instance
-   when the tunnel goes down.
-
--  The controller provides diagnostic capabilities for troubleshooting
-   the gateway and IPSec tunnel status.
-
--  Cloud VPN capability is integrated with the gateway, which enables
-   individual users at remote sites to connect to VPC/VNet securely and
-   directly without having to hair pining back to headquarter
-   datacenter.
-
--  Extensive logging allows administrators to have complete visibility
-   of network event and user browsing history.
 
 Configuration Workflow
 -----------------------
@@ -135,24 +105,6 @@ The configuration workflow is as follows, with major steps highlighted.
 | 6. At the Enterprise datacenter or remote site, configure encryption on the edge device.
 |   Make sure your peer network is Subnet2 and Subnet3, as shown in this example.
 |
-
-Troubleshooting
----------------
-
-
-To check a tunnel state, go to VPC/VNet -> site2Cloud -> List, click on
-the remote site name, the tunnel status will be displayed in a pop up
-window.
-
-To troubleshoot a tunnel state, go to VPC/VNet -> site2Cloud ->
-Diagnostics.
-
-For support, send email to support@aviatrix.com.
-
-For feature request and feedback, click Make a wish at the bottom of
-each page.
-
-Enjoy!
 
 .. |image0| image:: EncOverExpRoute_media/image1.png
    :width: 5.55625in
