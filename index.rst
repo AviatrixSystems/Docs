@@ -81,6 +81,7 @@ The main documentation for the site is organized into a couple sections:
 
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
+   HowTos/troubleshooting
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/HowTo_Setup_Okta_for_Aviatrix
