@@ -162,3 +162,8 @@ managed by Aviatrix.
 .. |image2| image:: IAM_media/image3.png
    :width: 4.67200in
    :height: 3.33379in
+
+.. add in the disqus tag
+
+.. disqus::
+   

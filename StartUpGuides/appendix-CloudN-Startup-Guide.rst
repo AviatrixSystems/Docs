@@ -8,7 +8,7 @@
 
 
 
-Aviatrix CloudN is virtual appliance that is deployed on premise. 
+Aviatrix CloudN is virtual appliance that is deployed on premise.
 
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
@@ -969,3 +969,8 @@ Enjoy!
 .. |image46| image:: CloudN_Startup_Guide_media/image046.png
    :width: 5.30625in
    :height: 2.97910in
+
+
+.. add in the disqus tag
+
+.. disqus::

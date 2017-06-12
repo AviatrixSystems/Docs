@@ -2,7 +2,7 @@
 
 
 =============================================
-AWS 
+AWS
 =============================================
 
 
@@ -29,10 +29,10 @@ We strongly recommend you to use an IAM role for security reasons,
 follow instructions during onboarding time of the controller instance to
 setup custom security policy.
 
-Launch Aviatrix Controller via CloudFormation 
+Launch Aviatrix Controller via CloudFormation
 =============================================
 
-Aviatrix Controller can be launched from a CloudFormation script. Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region. 
+Aviatrix Controller can be launched from a CloudFormation script. Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
 
 Launch Aviatrix Controller from AWS Marketplace
 ===============================================
@@ -161,3 +161,8 @@ For support, send email to support@aviatrix.com. Enjoy!
 .. |image6| image:: AviatrixCloudControllerStartupGuide_media/image007.png
    :width: 4.61664in
    :height: 4.22847in
+
+
+.. add in the disqus tag
+
+.. disqus::

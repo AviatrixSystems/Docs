@@ -81,3 +81,8 @@ steps highlighted.
 .. |image0| image:: SerChain_media/image1.png
    :width: 6.50000in
    :height: 2.11250in
+
+
+.. add in the disqus tag
+
+.. disqus::

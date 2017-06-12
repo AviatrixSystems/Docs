@@ -8,14 +8,14 @@
 
 
 
-Aviatrix CloudN is virtual appliance that is deployed in a on-premise datacenter or co-location facility. 
+Aviatrix CloudN is virtual appliance that is deployed in a on-premise datacenter or co-location facility.
 
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
 To learn how CloudN Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
-CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__ 
+CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
 
 Pre-Installation Check List
 ===========================
@@ -132,7 +132,7 @@ result in duplicate IP addresses.
 
 Each VPC has 1 public subnet and 2 private subnets.
 
-Deploy CloudN as a virtual router 
+Deploy CloudN as a virtual router
 ------------------------------------
 
 You can deploy CloudN as a virtual router and in a remote site to allow the remote site network
@@ -730,3 +730,8 @@ Enjoy!
 .. |image46| image:: CloudN_Startup_Guide_media/image046.png
    :width: 5.30625in
    :height: 2.97910in
+
+
+.. add in the disqus tag
+
+.. disqus::

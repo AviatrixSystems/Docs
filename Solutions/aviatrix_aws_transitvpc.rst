@@ -301,3 +301,8 @@ Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
    :width: 7in
    :height: 4in
    :scale: 150%
+
+
+.. add in the disqus tag
+
+.. disqus::
