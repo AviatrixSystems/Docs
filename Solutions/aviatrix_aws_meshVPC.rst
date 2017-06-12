@@ -121,7 +121,7 @@ least one to start with.
 4.2 Plan Cloud Address Space
 ----------------------------
 
-CloudN manages your cloud address space. Carve out an unused consective network address space in your datacenter. The CIDR block of this address can be determined by how many VPCs you will need and how big the address space you can allocate. For example, a CIDR block with /16 address range can create as many as 254 VPCs. 
+CloudN manages your cloud address space. Carve out an unused consective network address space in your datacenter. The CIDR block of this address can be determined by how many VPCs you will need and how big the address space you can allocate. For example, a CIDR block with /16 address range can create as many as 254 VPCs.
 
 Once you have created all the VPCs from the allocated address space, you can always allocate a new address space and launch a new CloudN virtual appliance.
 
@@ -143,14 +143,14 @@ https://<Private IP address of Aviatrix Controller>
 
 5.1    Onboarding and create a cloud account
 --------------------------------------------
-Upon login to the controller for the first time, follow the onboarding process to create a cloud account that corresponding to an AWS IAM account. Aviatrix CloudN uses the account IAM credential to execute AWS REST APIs to create VPC and necessary resources. 
+Upon login to the controller for the first time, follow the onboarding process to create a cloud account that corresponding to an AWS IAM account. Aviatrix CloudN uses the account IAM credential to execute AWS REST APIs to create VPC and necessary resources.
 
 
 5.2    Create a VPC and build an encrypted tunnel
 -------------------------------------------------
-After going through onboarding steps, click Datacenter Extension. Provide a name for the VPC you are about to create, select an AWS region, and click Launch. In a few minutes of time, a VPC, public subnet and private subnet in each AZ of the selected region, IGW and routing tables will be created; an Aviatrix Gateway will be launched and an encrypted tunnel will be created. 
+After going through onboarding steps, click Datacenter Extension. Provide a name for the VPC you are about to create, select an AWS region, and click Launch. In a few minutes of time, a VPC, public subnet and private subnet in each AZ of the selected region, IGW and routing tables will be created; an Aviatrix Gateway will be launched and an encrypted tunnel will be created.
 
-You then can launch instances in the VPC and access the instances by their private IP addresses. 
+You then can launch instances in the VPC and access the instances by their private IP addresses.
 
 Reapt the above step for more VPC with encrypted tunnel creations.
 
@@ -169,3 +169,8 @@ Reapt the above step for more VPC with encrypted tunnel creations.
    :width: 7in
    :height: 4in
    :scale: 150%
+
+
+.. add in the disqus tag
+
+.. disqus::
