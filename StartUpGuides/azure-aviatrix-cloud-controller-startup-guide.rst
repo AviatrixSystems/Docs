@@ -2,7 +2,7 @@
 
 
 =======================================
-Azure 
+Azure
 =======================================
 
 
@@ -105,3 +105,8 @@ Enjoy!
 .. |image5| image:: AzureAviatrixCloudControllerStartupGuide_media/image006.png
    :width: 5.15347in
    :height: 2.94563in
+
+
+.. add in the disqus tag
+
+.. disqus::

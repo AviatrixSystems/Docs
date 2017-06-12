@@ -2,7 +2,7 @@
 
 
 ===========================================
-Google 
+Google
 ===========================================
 
 
@@ -183,3 +183,8 @@ Enjoy!
 .. |image3| image:: GoogleAviatrixCloudControllerStartupGuide_media/image004.png
    :width: 4.93125in
    :height: 2.10210in
+
+
+.. add in the disqus tag
+
+.. disqus::
