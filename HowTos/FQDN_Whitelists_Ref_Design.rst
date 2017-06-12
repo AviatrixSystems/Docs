@@ -48,7 +48,7 @@ This features works for HTTP and HTTPS traffic on public IP addresses.
 
 A tag is defined as a list of FQDNs. One or more gateways is attached to
 a tag. Any updates to a tag automatically triggers updates to all
-gateways attached to the tag. Multiple tags can be defined o the
+gateways attached to the tag. Multiple tags can be defined for the
 controller. The domains in the tag are the destinations that are allowed
 for traffic to pass.
 
