@@ -89,6 +89,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/troubleshooting
    HowTos/EncrOverExpRoute
    HowTos/Docker_Swarm
+   HowTos/Cloud_Networking_Ref_Des
 
 .. _Solutions:
 
