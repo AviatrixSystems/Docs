@@ -66,22 +66,20 @@ Step 2. Create Two IAM Roles
 This role will be associated with the Aviatrix Controller. The role name
 MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
--  Go to AWS console -> IAM service -> Roles -> Create New Role -> Set
-   Role Name
+-  Go to AWS console -> IAM service -> Roles -> Create new role 
 
--  Enter a Role Name **aviatrix-role-ec2** . Click “Next Step”.
+- Select AWS Service Role -> Amazon EC2 -> Select
 
--  Select “\ **Amazon EC2**\ ”
+- Search Policy Type **aviatrix-assume-role-policy**, then select this policy. Click "Next Step"
 
--  Select the policy you created in the previous step, in this example,
-   “aviatrix-assume-role-policy”. Click “Next Step”.
+-  Enter Role name **aviatrix-role-ec2** (must be exact) 
 
--  Review the Role, and click on “Create Role”. You should see something
+-  Review the Role, and click on “Create role”. You should see something
    like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-ec2
 
 -  Make a note of the above Role ARN string, it will be used for setup
-   Aviatrix Cloud Account later.
+   Aviatrix Cloud Account later
 
 |image0|
 
