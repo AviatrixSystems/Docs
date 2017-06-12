@@ -3,7 +3,7 @@
    :keywords: Docker, swarm, cluster, Avaitrix, swarm cluster
 
 ===========================================
-Docker Swarm Cluster Installation 
+Docker Swarm Cluster Installation
 ===========================================
 
 Introduction
@@ -168,3 +168,7 @@ allow the access to their ports.
 .. |image0| image:: Docker_media/image1.png
    :width: 6.05140in
    :height: 1.45854in
+
+.. add in the disqus tag
+
+.. disqus::

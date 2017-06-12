@@ -146,3 +146,8 @@ highlighted.
 .. |image3| image:: Cluster_Peering_Reference_Design_files/image004.png
    :width: 6.5in
    :height: 4.0in
+
+
+.. add in the disqus tag
+
+.. disqus::

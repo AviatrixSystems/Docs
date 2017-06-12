@@ -109,3 +109,8 @@ The configuration workflow is as follows, with major steps highlighted.
 .. |image0| image:: EncOverExpRoute_media/image1.png
    :width: 5.55625in
    :height: 3.26548in
+
+
+.. add in the disqus tag
+
+.. disqus::

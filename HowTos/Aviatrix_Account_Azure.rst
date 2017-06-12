@@ -153,3 +153,7 @@ At this point you should have the following information.
 .. |image2| image:: AviatrixAccountForAzure_media/image3.png
    :width: 6.98958in
    :height: 3.02083in
+
+.. add in the disqus tag
+
+.. disqus::   

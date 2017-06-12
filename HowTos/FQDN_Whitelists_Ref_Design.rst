@@ -4,7 +4,7 @@
 
 
 =================================
- FQDN Whitelists 
+ FQDN Whitelists
 =================================
 
 
@@ -83,3 +83,8 @@ design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cl
 .. |image0| image::  FQDN_media/image1.png
    :width: 3.5in
    :height: 0.5in
+
+
+.. add in the disqus tag
+
+.. disqus::
