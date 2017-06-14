@@ -79,7 +79,7 @@ Docker Container Access
 
 To learn how you can use Aviatrix to access containers remotely in the
 cloud, check out this `reference
-design <http://docs.aviatrix.com/HowTos/Docker_Swarm.html>`__.
+design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Container+Access+Reference+Design.pdf>`__.
 
 Environment Stamping
 """"""""""""""""""""""
