@@ -79,6 +79,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 2
    :caption: How To Documents
 
+   HowTos/Quick_Tour   
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
    HowTos/Cluster_Peering_Ref_Design
