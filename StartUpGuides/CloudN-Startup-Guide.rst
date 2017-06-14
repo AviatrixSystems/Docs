@@ -17,6 +17,15 @@ To learn how CloudN Datacenter Extension works and how to build flat full mesh n
 
 CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
 
+Download the Image
+===================
+
+CloudN comes with two types of images, OVF and VHD, to support VMware
+hypervisor and Microsoft Hyper-V.
+
+vmware OVF image can be downloaded from `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
+
+
 Pre-Installation Check List
 ===========================
 
@@ -265,14 +274,6 @@ with an Intel Xeon CPU (E3-1220L V2 @ 2.30GHz).
 
 Installation
 ============
-
-Download CloudN Images
-----------------------
-
-CloudN comes with two types of images, OVF and VHD, to support VMware
-hypervisor and Microsoft Hyper-V.
-
-vmware OVF image can be downloaded from `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
 
 CloudN OVF image can be imported and installed on a VMware ESXi 5.0/5.1
 host, VMware Workstation, Fusion and VMware Player. Once you have signed
