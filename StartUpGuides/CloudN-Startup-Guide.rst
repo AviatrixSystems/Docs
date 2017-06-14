@@ -263,7 +263,7 @@ In test environments, TCP throughput (using iperf tool) in the vicinity
 of 880Mbps has been observed with CloudN running on a VMware ESXi host
 with an Intel Xeon CPU (E3-1220L V2 @ 2.30GHz).
 
-Installation
+Download and Installation
 ============
 
 Download CloudN Images
