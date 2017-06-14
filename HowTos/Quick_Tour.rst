@@ -1,13 +1,13 @@
 .. meta::
    :description: Quick Tour
-   :keywords: Aviatrix Quick Tour, Quick Tour, Aviatrix
+   :keywords: Aviatrix Quick Tour, Aviatrix, remote user VPN, AWS user VPN, OpenVPN, SSL VPN
 
 
 Quick Tour
 ===========
 
-Scale out user VPN Solution
-""""""""""""""""""""""""""""
+Scale out remote user VPN Solution
+""""""""""""""""""""""""""""""""""
 
 No more bastion stations and jump hosts. Provide your employees with the
 ability to seamlessly access instances with private IP addresses by
@@ -15,7 +15,7 @@ using our user VPN capability. To configure Cloud VPN:
 
 1. At Gateway menu, create a gateway with VPN access enabled.
 
-2. (AWS only) Repeat the above step for multiple gateways if ELB is
+2. Repeat the above step for multiple gateways if ELB is
    enabled to create a scale out VPN solution.
 
 3. (Optional) At Open VPN -> Profiles, define VPN user profiles and
@@ -30,7 +30,7 @@ using our user VPN capability. To configure Cloud VPN:
 Encrypted Peering
 """"""""""""""""""
 
-1. At Gateway menu, create a gateway with VPN access disabled in an
+1. At Gateway menu, create a gateway in an
    existing VPC/VNet.
 
 2. Repeat the step 1 for a different VPC/VNet.
@@ -69,8 +69,8 @@ to see how to connect to your on-prem or co-location.
 Site2Cloud Solution
 """"""""""""""""""""
 
-If you need to connect multiple branch offices or sites to a VPC/VNet
-but do not want to replace the edge routers or firewalls already
+If you need to connect to your partner or customer sites to a VPC/VNet
+but do not want to replace the edge routers or firewalls that is already
 deployed at these sites, check out our `Site2Cloud reference
 design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/site2cloud+Solution+reference+design.pdf>`__.
 
@@ -98,13 +98,7 @@ design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/en
 Help
 """""
 
-Under Help menu, check out FAQs and additional reference designs. Send
+Under Help menu, check out FAQs and additional implementation guides. Send
 email to support@aviatrix.com to get immediate support.
-
-Make a wish
-""""""""""""
-
-We value your feedback! Click Make a wish on each page for feature
-request and feedbacks.
 
 .. disqus::
