@@ -1,6 +1,6 @@
 .. meta::
-   :description: Developer's Sandbox Ref Design
-   :keywords: Developer sandbox, sandbox, aviatrix
+   :description: Encrypted Transitive Peering Ref Design
+   :keywords: peering, encrypted peering, transitive peering, encrypted transitive, aviatrix
 
 ====================================
 Encrypted Transitive Peering
