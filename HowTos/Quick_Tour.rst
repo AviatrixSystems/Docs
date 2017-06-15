@@ -74,7 +74,7 @@ Site2Cloud Solution
 If you need to connect to your partner or customer sites to a VPC/VNet
 but do not want to replace the edge routers or firewalls that is already
 deployed at these sites, check out our `Site2Cloud reference
-design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/site2cloud+Solution+reference+design.pdf>`__.
+design <http://docs.aviatrix.com/HowTos/site2cloud.html>`__.
 
 Docker Container Access
 """""""""""""""""""""""""""""""""
