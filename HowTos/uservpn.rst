@@ -53,7 +53,7 @@ VPC ID and its region for the VPC ID field and region in each step.
       please. The target field can be FQDN (DNS names or fully qualified
       domain name).
 
-   b. Go to OpenVPN -> Users to add as many user as you please.
+   b. Go to OpenVPN -> VPN Users to add as many user as you please.
       Associate each user with a profile. Note if no profile is
       associated, user has full access to all resources. When a user is
       added to the database, an email with .ovpn file or .onc (for
