@@ -18,13 +18,15 @@ using our user VPN capability. To configure Cloud VPN:
 2. Repeat the above step for multiple gateways if ELB is
    enabled to create a scale out VPN solution.
 
-3. (Optional) At Open VPN -> Profiles, define VPN user profiles and
+3. (Optional) At OpenVPN -> Profiles, define VPN user profiles and
    access policies for each profile that will be dynamically enforced as
    user connects to the cloud at the network perimeter.
 
-4. At Open VPN -> Users, add VPN users.
+4. At OpenVPN -> VPN Users, add VPN users.
 
-5. For a complete end to end solution, check out this `reference
+5. For single VPC user vpn solution, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
+
+6. For a multi VPC user vpn solution, check out this `reference
    design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
 Encrypted Peering
