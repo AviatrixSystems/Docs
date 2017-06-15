@@ -62,27 +62,27 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    f. Split Tunnel Mode is selected.
 
-      i.  For the Additional CIDRs field under Split Tunnel, enter other
-          VPCs CIDR or other network CIDRs you wish to reach beyond the
-          VPC you are connecting to. In the example shown, you should
-          enter 10.10.0.0/16,10.5.0.0/16,10.80.0.0/16. It is a good idea
-          to do some planning to include future VPCs or network address
-          ranges. (In a case where you never have to worry about
-          connecting to your corporate VPN, you may consider enter the
-          entire private network address range in the Additional CIDRs
-          range field, separating by comma:
-          172.16.0.0/12,10.0.0.0/8,192.168.0.0/16. Doing so afford you
-          not to have to reconfigure the gateway if you need to add more
-          VPCs for networking with different CIDR range in the future.)
-
-      ii. (Optional) For the Nameservers and Search Domain fields under
-          Split Tunnel, enter your private DNS server IP addresses and
-          search domain if you have setup to use DNS names to access
-          instances inside VPCs. Leave it blank if you do not know what
-          they are. If you use AWS Route 53 private hosted zone and
-          records for your host names, make sure the Nameserver is the
-          DNS server of the VPC. In this case, you should enter
-          172.31.0.2
+	|      	i.  For the Additional CIDRs field under Split Tunnel, enter other
+				   VPCs CIDR or other network CIDRs you wish to reach beyond the
+				   VPC you are connecting to. In the example shown, you should
+				   enter 10.10.0.0/16,10.5.0.0/16,10.80.0.0/16. It is a good idea
+				   to do some planning to include future VPCs or network address
+				   ranges. (In a case where you never have to worry about
+				   connecting to your corporate VPN, you may consider enter the
+				   entire private network address range in the Additional CIDRs
+				   range field, separating by comma:
+				   172.16.0.0/12,10.0.0.0/8,192.168.0.0/16. Doing so afford you
+				   not to have to reconfigure the gateway if you need to add more
+				   VPCs for networking with different CIDR range in the future.)
+	|
+	|       ii. (Optional) For the Nameservers and Search Domain fields under
+			    Split Tunnel, enter your private DNS server IP addresses and
+			    search domain if you have setup to use DNS names to access
+			    instances inside VPCs. Leave it blank if you do not know what
+			    they are. If you use AWS Route 53 private hosted zone and
+			    records for your host names, make sure the Nameserver is the
+			    DNS server of the VPC. In this case, you should enter
+                72.31.0.2
 
    g. Enable AWS ELB is selected.
 
@@ -122,18 +122,18 @@ VPC ID and its region for the VPC ID field and region in each step.
    a. Launch a gateway without VPN capability in VPC 172.31.0.0/16. This
       is the routing gateway, make sure:
 
-      i.   At Gateway Field, give it a distinct and convenient name. For
-           example, dev-east-1, or teamKardashian-east-1 for the
-           Kardashian game project.
-
-      ii.  VPN Access is not selected.
-
-      iii. Enable NAT is NOT selected (since step 1 has enabled NAT
-           function for this VPC)
-
-      iv.  Save Template is not selected. (so that you don’t overwrite
-           the hard work of entering the fields of gateways with VPN
-           enabled)
+	|      i.   At Gateway Field, give it a distinct and convenient name. For
+				example, dev-east-1, or teamKardashian-east-1 for the
+				Kardashian game project.
+	|
+	|      ii.  VPN Access is not selected.
+	|
+	|      iii. Enable NAT is NOT selected (since step 1 has enabled NAT
+				function for this VPC)
+	|
+	|      iv.  Save Template is not selected. (so that you don’t overwrite
+				the hard work of entering the fields of gateways with VPN
+				enabled)
 
    b. Repeat the above procedure for VPC 10.80.0.0/16.
 
@@ -160,14 +160,14 @@ VPC ID and its region for the VPC ID field and region in each step.
    b. Go to VPCs -> VPN Access -> Users to add as many user as you
       please.
 
-      i.  When Geo VPN is enabled, VPC ID association is no longer
-          relevant. You can select any VPC ID.
+	 |     	i.  When Geo VPN is enabled, VPC ID association is no longer
+			    relevant. You can select any VPC ID.
 
-      ii. Associate each user with a profile. Note if no profile is
-          associated, user has full access to all resources. When a user
-          is added to the database, an email with .ovpn file or .onc
-          (for Chromebooks) will be sent to the user with detailed
-          instructions.
+	 |     	ii. Associate each user with a profile. Note if no profile is
+			    associated, user has full access to all resources. When a user
+			    is added to the database, an email with .ovpn file or .onc
+			    (for Chromebooks) will be sent to the user with detailed
+			    instructions.
 
 Troubleshooting
 ===============
