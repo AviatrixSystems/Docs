@@ -85,6 +85,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/uservpn
    HowTos/GeoVPN
    HowTos/DevSandbox
+   HowTos/TransPeering
    HowTos/Cloud_Networking_Ref_Des
    HowTos/site2cloud
    HowTos/Cluster_Peering_Ref_Design
