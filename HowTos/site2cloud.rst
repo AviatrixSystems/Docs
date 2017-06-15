@@ -1,10 +1,10 @@
 .. meta::
    :description: Site 2 Cloud
-   :keywords: Site2cloud, site to cloud, aviatrix
+   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn
 
 
 ==============================
-Site to Cloud Reference Design
+Site2coud 
 ==============================
 
 
@@ -162,11 +162,15 @@ highlighted.
    g. Do not select Private Route Encryption. (This feature is for
       overlay encryption on a AWS Direct Connect or Azure Express Route)
 
+   h. Algorithms field is prepopulated with default values. Click the field if you need to customize the algorithms. 
+
+   i. Click OK to create a connection. 
+
 5. Generate remote site configuration template
 
    Go to site2Cloud
 
-   a. Select the connection.
+   a. Select the connection you just created, a EDIT panel will appear.
 
    b. Click Download Configuration.
 
@@ -187,13 +191,6 @@ To check a tunnel state, go to site2Cloud, the tunnel status will be
 displayed in a pop up window.
 
 To troubleshoot a tunnel state, go to site2Cloud -> Diagnostics.
-
-For support, send email to support@aviatrix.com.
-
-For feature request and feedback, click Make a wish at the bottom of
-each page.
-
-Enjoy!
 
 .. |image0| image:: site2cloud_media/image1.png
    :width: 5.03147in
