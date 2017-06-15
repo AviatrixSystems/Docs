@@ -36,6 +36,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Downloads
 
+   Downloads/cloudndownload
    Downloads/samlclient
 
 .. _How-to Documents:

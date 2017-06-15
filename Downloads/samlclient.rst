@@ -3,8 +3,12 @@
    :keywords: SAML, openvpn, SSL VPN, remote user vpn, SAML client. Openvpn with SAML
 
 ###################################
-Aviatrix User VPN Client Download
+VPN Client 
 ###################################
+
+Aviatrix user VPN solution uses OpenVPN as client. OpenVPN supports the broadest range of clients. 
+
+However if you need to authenticate your vpn client by SAML, you must use Aviatrix VPN client. 
 
 Aviatrix VPN Client is built on OpenVPN. It supports SAML authentication from the client itself. Supported client platforms are Windows, MAC and Linux. 
 Consult the vpn client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/Aviatrix+VPN+Client+User+Guide.pdf>`__ for how to use it. 
