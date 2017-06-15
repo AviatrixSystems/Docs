@@ -30,7 +30,7 @@ The main documentation for the site is organized into a couple sections:
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
 
-.. _Download:
+.. _Downloads:
 
 .. toctree::
    :maxdepth: 1
