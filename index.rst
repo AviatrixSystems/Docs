@@ -26,7 +26,7 @@ The main documentation for the site is organized into a couple sections:
 .. .. _aviatrix-for-aws:
 ..
 .. .. toctree::
-..    :maxdepth: 2
+..    :maxdepth: 1
 ..    :caption: Amazon Web Services
 ..
 ..    aws/setup_aws_permissions
@@ -36,7 +36,7 @@ The main documentation for the site is organized into a couple sections:
 .. .. _aviatrix-for-azure:
 ..
 .. .. toctree::
-..    :maxdepth: 2
+..    :maxdepth: 1
 ..    :caption: Microsoft Azure
 ..
 ..    azure/setup_azure_permissions
@@ -46,7 +46,7 @@ The main documentation for the site is organized into a couple sections:
 .. .. _aviatrix-for-gcp:
 ..
 .. .. toctree::
-..    :maxdepth: 2
+..    :maxdepth: 1
 ..    :caption: Google Cloud Platform
 ..
 ..    gcp/setup_gcp_permissions
@@ -57,7 +57,7 @@ The main documentation for the site is organized into a couple sections:
 .. .. _aviatrix-api:
 ..
 .. .. toctree::
-..    :maxdepth: 2
+..    :maxdepth: 1
 ..    :caption: REST API
 ..
 ..    api/restapi
@@ -65,7 +65,7 @@ The main documentation for the site is organized into a couple sections:
 .. _Getting Started:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Getting Started
 
    StartUpGuides/aviatrix-cloud-controller-startup-guide
@@ -76,7 +76,7 @@ The main documentation for the site is organized into a couple sections:
 .. _How-to Documents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: How To Documents
 
    HowTos/Quick_Tour   
@@ -97,7 +97,7 @@ The main documentation for the site is organized into a couple sections:
 .. _Solutions:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Solutions Datasheets
 
    Solutions/aviatrix_aws_meshVPC
@@ -107,7 +107,7 @@ The main documentation for the site is organized into a couple sections:
 .. _Whitepapers:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Whitepapers
 
    Whitepapers/EnterpriseAppMigration
