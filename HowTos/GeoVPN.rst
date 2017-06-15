@@ -4,9 +4,9 @@
 
 
 
-============
-Introduction
-============
+========================
+Geo VPN Reference Design
+========================
 
 If you have a global work force that needs to access the cloud with the
 best user experience, building a cloud network with Geo VPN access
