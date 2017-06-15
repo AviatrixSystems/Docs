@@ -151,20 +151,24 @@ highlighted.
    d. Input the connection with a unique name, for example,
       NewYork-site.
 
-   e. At Customer Gateway IP Address, enter the public IP address of the
+   e. At Remote Gateway IP Address, enter the public IP address of the
       edge router for the remote site.
 
-   f. At Customer Network, enter network CIDR of the remote site. If
+   f. At Remote Subnet, enter network CIDR of the remote/customer site. If
       there are multiple subnets, enter each one separated with comma.
       For example, you may enter “192.168.1.0/24,192.168.2.0/24” without
       the quote.
 
-   g. Do not select Private Route Encryption. (This feature is for
+   g. Pre-shared Key is an optional field. If you leave it blank, Aviatrix will auto generate a pre-shared key. You can paste your own pre-shared key if you prefer. 
+
+   h. Do not select Private Route Encryption. (This feature is for
       overlay encryption on a AWS Direct Connect or Azure Express Route)
 
-   h. Algorithms field is prepopulated with default values. Click the field if you need to customize the algorithms. 
+   i. If you leave Local Subnet blank, Local Subnet will be the VPC/VNet CIDR. You can add more Local Subnet CIDR blocks, separate by comma. Make sure you include the VPC/VNet as well. These Local Subnets are advertised to Remote Subnets that the site2cloud connection can reach. You can change this settings later. 
 
-   i. Click OK to create a connection. 
+   j. Algorithms field is prepopulated with default values. Click the field if you need to customize the algorithms. 
+
+   j. Click OK to create a connection. 
 
 5. Generate remote site configuration template
 
