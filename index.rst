@@ -84,12 +84,12 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Aviatrix_Account_Azure
    HowTos/uservpn
    HowTos/GeoVPN
+   HowTos/Cloud_Networking_Ref_Des
    HowTos/site2cloud
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/aviatrix_apis_datacenter_extension
-   HowTos/Cloud_Networking_Ref_Des
    HowTos/Service_Chaining_Ref_Design
    HowTos/troubleshooting
    HowTos/EncrOverExpRoute

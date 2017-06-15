@@ -1,12 +1,12 @@
 .. meta::
    :description: Geo VPN Reference Design
-   :keywords: Geo VPN, VPN, aviatrix
+   :keywords: Geo VPN, VPN, aviatrix, remote user vpn, openvpn, user vpn
 
 
 
-========================
-Geo VPN Reference Design
-========================
+===========================
+User VPN for Geo Locations
+===========================
 
 If you have a global work force that needs to access the cloud with the
 best user experience, building a cloud network with Geo VPN access
@@ -101,7 +101,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 3. Enable Geo VPN
 
-   a. Go to VPC/VNet -> VPN Access -> Geo VPN, select Enable
+   a. Go to OpenVPN -> Configuration -> Geo VPN, select Enable
 
    b. For Domain Name, enter a public domain name that is registered on
       AWS Route 53 as a public hosted zone. For example, aviatrixvpn.com
@@ -147,17 +147,17 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 5. (Optional) Setup Stateful Firewall rules at VPC
 
-   Go to VPC/VNet -> Security Policies to add any policies for each VPC.
+   Go to Gateway, select a Gateway, click Edit. Click Security Policies to add any policies for each VPC.
 
 6. The above steps complete the network infrastructure setup.
 
 7. Add Users and Profiles
 
-   a. Go to VPCs -> VPN Access -> Profiles to create as many profiles as
+   a. Go to OpenVPN ->  Profiles to create as many profiles as
       you please. The target field can be FQDN (DNS names or fully
       qualified domain name).
 
-   b. Go to VPCs -> VPN Access -> Users to add as many user as you
+   b. Go to OpenVPN -> VPN Users to add as many user as you
       please.
 
       i.  When Geo VPN is enabled, VPC ID association is no longer
@@ -180,12 +180,6 @@ be able to add DNS record. To register a public domain name under your
 account in AWS, go to AWS management console portal. Under Services,
 select Route 53 Management Console. Under Domains, select Registered
 domains, then click Register Domain.
-
-For support, send email to support@aviatrix.com.
-
-For feature request, click Make a wish at the bottom of each page.
-
-Enjoy!
 
 .. |image0| image:: GeoVPN_media/image1.png
 
