@@ -5,7 +5,7 @@
 
 
 =================================
-User VPN Design for Multi VPC
+User VPN Design for Multi VPCs
 =================================
 
 This reference design helps you build an end to end secure cloud
