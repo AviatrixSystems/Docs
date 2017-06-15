@@ -195,7 +195,7 @@ each page.
 
 Enjoy!
 
-.. |image0| image:: Site2Cloud_media/image1.png
+.. |image0| image:: site2cloud_media/image1.png
    :width: 5.03147in
    :height: 2.57917in
 
