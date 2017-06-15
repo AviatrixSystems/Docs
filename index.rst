@@ -84,6 +84,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Aviatrix_Account_Azure
    HowTos/uservpn
    HowTos/GeoVPN
+   HowTos/DevSandbox
    HowTos/Cloud_Networking_Ref_Des
    HowTos/site2cloud
    HowTos/Cluster_Peering_Ref_Design
