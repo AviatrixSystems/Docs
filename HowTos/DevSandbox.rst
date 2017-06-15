@@ -115,14 +115,12 @@ The configuration workflow is as follows, with major steps highlighted.
 5. Add users
 
    If you have not done so, add VPN user John to the cloud network. Go
-   to Open VPN, Use Profile to control which user can access what cloud
+   to OpenVPN, Use Profile to control which user can access what cloud
    instance/application/ports.
 
-6. For support, send email to support@aviatrix.com.
+6. Done. 
 
-7. For feature request, click Make a wish at the bottom of each page.
 
-8. Enjoy!
 
 .. |image0| image:: DevSandbox_media/image1.png
 
