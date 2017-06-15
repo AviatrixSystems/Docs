@@ -13,54 +13,11 @@ The main documentation for the site is organized into a couple sections:
 .. * :ref:`aviatrix-for-gcp`
 
 * :ref:`Getting Started`
+* :ref:`Downloads`
 * :ref:`How-to Documents`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
 
-
-
-.. Information about development is also available:
-..
-.. * :ref:`aviatrix-api`
-..
-.. .. _aviatrix-for-aws:
-..
-.. .. toctree::
-..    :maxdepth: 1
-..    :caption: Amazon Web Services
-..
-..    aws/setup_aws_permissions
-..    aws/ucc_setup_guide_aws
-..    aws/config_aws_vpc_peering
-..
-.. .. _aviatrix-for-azure:
-..
-.. .. toctree::
-..    :maxdepth: 1
-..    :caption: Microsoft Azure
-..
-..    azure/setup_azure_permissions
-..    azure/ucc_setup_guide_azure
-..
-..
-.. .. _aviatrix-for-gcp:
-..
-.. .. toctree::
-..    :maxdepth: 1
-..    :caption: Google Cloud Platform
-..
-..    gcp/setup_gcp_permissions
-..    gcp/ucc_setup_guide_gcp
-..
-..
-..
-.. .. _aviatrix-api:
-..
-.. .. toctree::
-..    :maxdepth: 1
-..    :caption: REST API
-..
-..    api/restapi
 
 .. _Getting Started:
 
@@ -73,6 +30,15 @@ The main documentation for the site is organized into a couple sections:
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
 
+.. _Downloads:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Downloads
+
+   Downloads/cloudndownload
+   Downloads/samlclient
+
 .. _How-to Documents:
 
 .. toctree::
@@ -83,11 +49,11 @@ The main documentation for the site is organized into a couple sections:
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
    HowTos/uservpn
+   HowTos/site2cloud
    HowTos/GeoVPN
-   HowTos/DevSandbox
    HowTos/TransPeering
    HowTos/Cloud_Networking_Ref_Des
-   HowTos/site2cloud
+   HowTos/DevSandbox
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/HowTo_Setup_Okta_for_Aviatrix
