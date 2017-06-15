@@ -92,6 +92,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/EncrOverExpRoute
    HowTos/Docker_Swarm
    HowTos/Cloud_Networking_Ref_Des
+   HowTos/site2cloud
 
 .. _Solutions:
 
