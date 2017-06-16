@@ -63,6 +63,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/EncrOverExpRoute
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
+   HowTos/EnvironmentStamping
 
 .. _Solutions:
 
