@@ -1,9 +1,9 @@
 .. meta::
    :description: Aviatrix User SSL VPN Okta SAML Configuration
-   :keywords: Okta, SAML, user vpn, okta saml, Aviatrix
+   :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
 
 =====================================
-User SSL VPN Okta SAML Configuration
+User VPN with SAML Client on Okta IDP 
 =====================================
 =====================================
 
@@ -11,32 +11,9 @@ User SSL VPN Okta SAML Configuration
 1.  Overview
 ------------
 
-Aviatrix is a next generation cloud networking solution built from the ground up for the public cloud.
-It simplifies the way you enable site to cloud, user to cloud, and cloud to cloud secure connectivity
-and access. The Aviatrix solution requires no new hardware and deploys in minutes.
+Aviatrix user VPN is the only OpenVPN based remote VPN solution that provides a vpn client that supports SAML authentication. 
 
-The Aviatrix solution comprise of two components – Aviatrix Gateway and a Controller.
-
-This start up guide provides step by step instructions on how to deploy the Aviatrix Controller.
-Once the controller is deployed then you can deploy Aviatrix Gateways to connect your users to your
-VPC, VPC to VPC or sites to VPC.
-
-1.1 Aviatrix Features
-----------------------
-
-Aviatrix is a scale out VPC peering solution for AWS, Azure and Google Cloud. It offers encrypted
-peering across regions and clouds and remote access to VPC from any device running OpenVPN clients.
-Aviatrix Gateways offer the following functionality for your cloud:
-
-- Complete replacement for Jump Hosts or Bastion stations to SSH into VPCs – convenience for developers that security teams would approve and is a cloud best practice.
--	VPC Isolation and VPC internetworking– Expand to multiple VPCs, regulate access to VPCs and connect them securely with Private IPs addresses.
--	Encrypted VPC peering across AWS regions and AZs and to Azure VNETs or branch offices – a full mesh encrypted Hybrid Cloud.
--	Geo Aware SSL VPN solution that connects users securely to the nearest VPCs with support for latest SSL ciphers and MFA with Duo, Okta, Google and AD/LDAP.
--	Scale Out solution integrated with ELB and all cloud native services – AWS S3, SQS, SNS, R53, CloudTrail.
--	Ease of deployment making it simple to onboard users or environments with overlapping CIDRs.
--	Access and Event logging for audit and compliance support – log forwarding to Splunk, Logstash and Sumo Logic.
-- 	IAM and Billing Management, Notifications and Triggers across AWS and Azure accounts.
-- 	Guarantees higher network uptime with high availability with failover.
+This guide provides an example on how to use Aviatrix SAML client to authenticate Okta IDP. When SAML client is used, Aviatrix controller acts as the identity service provider (ISP) that redirects browser traffic from client to IDP, in this case, Okta, for authentication. 
 
 2. Pre-Deployment Checklist
 -----------------------------
@@ -184,15 +161,6 @@ This step is usually completed by the Aviatrix admin.
 	
 
 
-4	Appendix –Support
--------------------------
-
-Standard: 8x5 Enterprise Phone Support, email support, product-specific knowledge-base and user forum is included. For Additional levels of support and support offers please visit:
-
-http://www.aviatrix.com/support
-
-
-	
 .. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png
 
 .. |image1| image:: SSL_VPN_Okta_SAML_media/image1.png
