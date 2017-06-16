@@ -66,6 +66,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/UserSSL_VPN_Okta_SAML_Config
    HowTos/CompanionGateway
    HowTos/DataAnalSplunkSumo
+   HowTos/UCC_Release_Notes
 
 .. _Solutions:
 
