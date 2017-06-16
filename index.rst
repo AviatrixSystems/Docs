@@ -47,6 +47,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
+   HowTos/peering
    HowTos/uservpn
    HowTos/site2cloud
    HowTos/DataAnalSplunkSumo

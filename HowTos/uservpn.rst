@@ -4,10 +4,10 @@
 
 
 =================================
-User VPN
+OpenVPN
 =================================
 
-This guide helps you build user vpn solution. If you like to lear how to build a user vpn solution with multiple VPCs, refer to `this link. <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
+This guide helps you build a user vpn solution. If you like to learn how to build a user vpn solution with multiple VPCs, refer to `this link. <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
 Configuration Workflow
 ----------------------
