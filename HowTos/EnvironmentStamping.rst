@@ -144,7 +144,7 @@ The configuration workflow is as follows. It highlights the major steps.
    Users. Use Profile to control which user can access what cloud
    instance/application/ports.
 
-2. Access Instances with Names
+9. Access Instances with Names
 
    When a user connects to management VPC, she can access instances in
    all managed VPCs.
@@ -154,11 +154,11 @@ The configuration workflow is as follows. It highlights the major steps.
    include the domain name. For example, an instance with nickname
    webfrontend should be accessed as webfrontend.mydevops.com
 
-3. For support, send email to support@aviatrix.com.
+10. For support, send email to support@aviatrix.com.
 
-4. For feature request, click Make a wish at the bottom of each page.
+11. For feature request, click Make a wish at the bottom of each page.
 
-5. Enjoy!
+12. Enjoy!
 
 .. |image0| image:: EnvStamping_media/image1.png
    :width: 3.81875in
