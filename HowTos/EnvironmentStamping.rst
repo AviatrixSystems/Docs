@@ -77,30 +77,30 @@ The configuration workflow is as follows. It highlights the major steps.
 
    a. Enable NAT is selected.
 
-   #. VPN Access is selected.
+   b. VPN Access is selected.
 
       i.  VPN CIDR Block must be an address range that is outside of
           management VPC and all other VPCs you intend to create. In
           this example, enter 10.20.0.0/24.
 
-      #. Split Tunnel Mode is “Yes”.
+      ii. Split Tunnel Mode is “Yes”.
 
           1. Additional CIDRs: enter the Access Address Pool CIDR. In
              this example, enter 192.168.0.0/16
 
-          #. (optional) Nameservers: enter the private DNS server of the
+          2. (optional) Nameservers: enter the private DNS server of the
              management VPC if Setup Instance Names is enabled. In this
              example, enter 172.31.0.2
 
-          #. (optional) Search Domains: The private hosted zone domain
+          3. (optional) Search Domains: The private hosted zone domain
              name if Setup Instance Names is enabled. In this example,
              enter mydevops.com
 
-   #. Enable AWS ELB is “Yes”.
+   c. Enable AWS ELB is “Yes”.
 
-   #. Save Template: check to save the template.
+   d. Save Template: check to save the template.
 
-   #. Repeat the above steps to create more VPN gateways to achieve
+   e. Repeat the above steps to create more VPN gateways to achieve
       scalability and resilience.
 
 #. Create a managed VPC pool and its gateways
