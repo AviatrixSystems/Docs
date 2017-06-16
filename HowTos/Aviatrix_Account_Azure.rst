@@ -1,6 +1,6 @@
 .. meta::
    :description: Avaitrix Cloud Account for Azure
-   :keywords: Aviatrix account, Azure, Aviatrix Azure account, Aviatrix Azure
+   :keywords: Aviatrix account, Azure, Aviatrix Azure account credential, API credential
 
 ===========================================================
 Azure ARM
@@ -9,8 +9,10 @@ Azure ARM
 1.0 Overview
 =============
 
+This document helps you to setup API credentials on Azure ARM. 
+ 
 Aviatrix Cloud Controller uses Azure APIs extensively to launch Aviatrix
-gateways, configure encrypted peering and many other capabilities.
+gateways, configure encrypted peering and other features.
 
 In order to use Azure API, you need to first create an Aviatrix Cloud
 Account on the Aviatrix Cloud controller. This cloud account corresponds
