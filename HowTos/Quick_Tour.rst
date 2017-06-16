@@ -95,7 +95,7 @@ instances addresses any more.
 
 At VPC/VNet -> Environment Stamping, go to Read Me First to learn about
 this capability. Check out this `reference
-design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/environment+stamping+reference+design.pdf>`__.
+design <http://docs.aviatrix.com/HowTos/EnvironmentStamping.html>`__.
 
 Help
 """""
