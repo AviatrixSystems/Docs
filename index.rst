@@ -63,6 +63,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
    HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/CreateGCloudAccount
 
 .. _Solutions:
 
