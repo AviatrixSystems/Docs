@@ -36,14 +36,14 @@ The main documentation for the site is organized into a couple sections:
    Downloads/cloudndownload
    Downloads/samlclient
 
-   
+
 .. _How-to Documents:
 
 .. toctree::
    :maxdepth: 1
    :caption: How To Documents
 
-   HowTos/Quick_Tour   
+   HowTos/Quick_Tour
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
@@ -64,6 +64,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
    HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/CompanionGateway
 
 .. _Solutions:
 
