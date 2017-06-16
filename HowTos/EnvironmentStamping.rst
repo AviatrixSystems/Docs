@@ -38,13 +38,13 @@ The configuration workflow is as follows. It highlights the major steps.
 
    a. The VPC ID field is the AWS VPC ID where you launch the management gateway.
 
-   b. The Gateway Name in this example is mgmt-gw.
+   #. The Gateway Name in this example is mgmt-gw.
 
-   c. Enable NAT is not selected.
+   #. Enable NAT is not selected.
 
-   d. VPN Access is not selected.
+   #. VPN Access is not selected.
 
-2. Create an Access Address Pool
+#. Create an Access Address Pool
 
    This Access Address Pool is the address range from which instance
    addresses are mapped to. Accessing instance is done by accessing one
@@ -53,11 +53,11 @@ The configuration workflow is as follows. It highlights the major steps.
 
    a. The Access Address Pool is big enough. In this example, we use 192.168.0.0/16 which gives you 16K unique IP addresses.
 
-   b. Select mgmt-vpc as the gateway choice.
+   #. Select mgmt-vpc as the gateway choice.
 
-   c. Click Set.
+   #. Click Set.
 
-3. (Optional) Setup Instance Names
+#. (Optional) Setup Instance Names
 
    envStamping integrates Route 53 private hosted zone feature to
    enables you to access instances with DNS names and preferred (alias)
@@ -68,7 +68,7 @@ The configuration workflow is as follows. It highlights the major steps.
    Config. Enter a private domain name. For example, mydevops.com. Click
    Enable.
 
-4. Create VPN gateways
+#. Create VPN gateways
 
    Create one or more VPN gateways in the management VPC for users to
    connect to AWS and access instances. In this example, we configure a
@@ -77,52 +77,52 @@ The configuration workflow is as follows. It highlights the major steps.
 
    a. Enable NAT is selected.
 
-   b. VPN Access is selected.
+   #. VPN Access is selected.
 
       i.  VPN CIDR Block must be an address range that is outside of
           management VPC and all other VPCs you intend to create. In
           this example, enter 10.20.0.0/24.
 
-      ii. Split Tunnel Mode is “Yes”.
+      #. Split Tunnel Mode is “Yes”.
 
           1. Additional CIDRs: enter the Access Address Pool CIDR. In
              this example, enter 192.168.0.0/16
 
-          2. (optional) Nameservers: enter the private DNS server of the
+          #. (optional) Nameservers: enter the private DNS server of the
              management VPC if Setup Instance Names is enabled. In this
              example, enter 172.31.0.2
 
-          3. (optional) Search Domains: The private hosted zone domain
+          #. (optional) Search Domains: The private hosted zone domain
              name if Setup Instance Names is enabled. In this example,
              enter mydevops.com
 
-   c. Enable AWS ELB is “Yes”.
+   #. Enable AWS ELB is “Yes”.
 
-   d. Save Template: check to save the template.
+   #. Save Template: check to save the template.
 
-   e. Repeat the above steps to create more VPN gateways to achieve
+   #. Repeat the above steps to create more VPN gateways to achieve
       scalability and resilience.
 
-5. Create a managed VPC pool and its gateways
+#. Create a managed VPC pool and its gateways
 
    This step creates a number of managed VPCs and gateways. If you
    already have existing VPCs, you should use Gateway tab to just create
    gateways. Make sure VPN access is disabled.
 
    a. Go to VPC/VNet -> Environment Stamping -> Manage VPC Pool -> Create
-   b. Pool Name: a name for this VPC pool. Every VPC created in this pool will have a numeric number append to it.
+   #. Pool Name: a name for this VPC pool. Every VPC created in this pool will have a numeric number append to it.
       In this example, enter customer.
-   c. Number of VPCs: the number of VPCs. In this example, enter 3.
-   d. Check Launch Gateway
+   #. Number of VPCs: the number of VPCs. In this example, enter 3.
+   #. Check Launch Gateway
         i. Enable NAT: check this box if you like the gateway to also perform NAT function.
 
-6. Launch customer instances
+#. Launch customer instances
 
    Once VPC and gateways are created, you can launch instances from AWS
    console or your own CloudFormation scripts. The pool of managed VPC
    may already have some instances.
 
-7. Map instance addresses
+#. Map instance addresses
 
    This step scans and maps instance private addresses in managed VPC to
    addresses from Access Address Pool, so that you can access these
@@ -130,21 +130,21 @@ The configuration workflow is as follows. It highlights the major steps.
 
    a. Go to VPC/VNet -> Environment Stamping -> Map Instance Addresses -> Auto Mapping
 
-   b. Management VPC: select the gateway for management VPC. In this example, select mgmt-gw
+   #. Management VPC: select the gateway for management VPC. In this example, select mgmt-gw
 
-   c. Managed VPC: select one gateway from managed VPC. In this example, select customer001. Click Scan & Map.
+   #. Managed VPC: select one gateway from managed VPC. In this example, select customer001. Click Scan & Map.
 
-   d. Repeat the above step for all the remaining gateways in managed VPC.
+   #. Repeat the above step for all the remaining gateways in managed VPC.
 
-   e. Go to VPC/VNet -> Environment Stamping -> Map Instance Addresses -> List to view your instances and their mapped addresses.
+   #. Go to VPC/VNet -> Environment Stamping -> Map Instance Addresses -> List to view your instances and their mapped addresses.
 
-8. Add users
+#. Add users
 
    Add VPN users to the cloud network. Go to VPC/VNet -> VPN Access ->
    Users. Use Profile to control which user can access what cloud
    instance/application/ports.
 
-9. Access Instances with Names
+#. Access Instances with Names
 
    When a user connects to management VPC, she can access instances in
    all managed VPCs.
@@ -154,14 +154,13 @@ The configuration workflow is as follows. It highlights the major steps.
    include the domain name. For example, an instance with nickname
    webfrontend should be accessed as webfrontend.mydevops.com
 
-10. For support, send email to support@aviatrix.com.
+#. For support, send email to support@aviatrix.com.
 
-11. For feature request, click Make a wish at the bottom of each page.
+#. For feature request, click Make a wish at the bottom of each page.
 
-12. Enjoy!
+#. Enjoy!
 
 .. |image0| image:: EnvStamping_media/image1.png
-   :width: 3.81875in
-   :height: 2.88487in
+
 
 .. disqus::
