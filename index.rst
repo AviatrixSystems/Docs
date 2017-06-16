@@ -8,9 +8,6 @@ All Aviatrix documentation can be found here.  If you can't find it here, please
 
 The main documentation for the site is organized into a couple sections:
 
-.. * :ref:`aviatrix-for-aws`
-.. * :ref:`aviatrix-for-azure`
-.. * :ref:`aviatrix-for-gcp`
 
 * :ref:`Getting Started`
 * :ref:`Downloads`
@@ -39,6 +36,7 @@ The main documentation for the site is organized into a couple sections:
    Downloads/cloudndownload
    Downloads/samlclient
 
+   
 .. _How-to Documents:
 
 .. toctree::
@@ -64,7 +62,8 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
-   HowTos/UseSSL_VPN_Okta_SAML_Config
+   HowTos/UserSSL_VPN_Okta_SAML_Config
+   
 
 .. _Solutions:
 
