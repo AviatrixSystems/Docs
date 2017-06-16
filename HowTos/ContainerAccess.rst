@@ -5,7 +5,7 @@
 
 
 ========================================
-Docker Container Access Reference Design
+Docker Container Access 
 ========================================
 
 Introduction

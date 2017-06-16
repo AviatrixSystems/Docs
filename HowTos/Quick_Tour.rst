@@ -50,7 +50,7 @@ If you have a global work force and would like to give your employees
 the best user experience accessing the services in the cloud, Geo VPN is
 the right solution for you. Go to Open VPN -> Geo VPN to enable Geo VPN.
 Check out this `reference
-design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Geo+VPN+Reference+Design.pdf>`__.
+design <http://docs.aviatrix.com/HowTos/GeoVPN.html>`__.
 
 Developer’s Sandbox
 """""""""""""""""""
@@ -58,14 +58,14 @@ Developer’s Sandbox
 If keeping your production environment secure while giving your
 developers’ isolated environment to learn and experiment new
 technologies is a challenge for you, `Developer’s
-Sandbox <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/developer%27s+sandbox.pdf>`__
+Sandbox <http://docs.aviatrix.com/HowTos/DevSandbox.html>`__
 maybe a feature you want to explore.
 
 Transitive Peering
 """"""""""""""""""""
 
 Use `transitive peering reference
-design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Transitive+Peering.pdf>`__
+design <http://docs.aviatrix.com/HowTos/TransPeering.html>`__
 to see how to connect to your on-prem or co-location.
 
 Site2Cloud Solution
@@ -81,7 +81,7 @@ Docker Container Access
 
 To learn how you can use Aviatrix to access containers remotely in the
 cloud, check out this `reference
-design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Container+Access+Reference+Design.pdf>`__.
+design <http://docs.aviatrix.com/HowTos/ContainerAccess.html>`__.
 
 Environment Stamping
 """"""""""""""""""""""
