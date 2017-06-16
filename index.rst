@@ -64,6 +64,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
+   HowTos/UseSSL_VPN_Okta_SAML_Config
 
 .. _Solutions:
 
