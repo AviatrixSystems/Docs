@@ -75,33 +75,33 @@ The configuration workflow is as follows. It highlights the major steps.
    split tunnel mode solution where only cloud bound traffic goes to the
    VPN tunnel. Among all fields you need to enter, make sure:
 
-   a. Enable NAT is selected.
-
-   b. VPN Access is selected.
-
-      i.  VPN CIDR Block must be an address range that is outside of
-          management VPC and all other VPCs you intend to create. In
-          this example, enter 10.20.0.0/24.
-
-      ii. Split Tunnel Mode is “Yes”.
-
-          1. Additional CIDRs: enter the Access Address Pool CIDR. In
-             this example, enter 192.168.0.0/16
-
-          2. (optional) Nameservers: enter the private DNS server of the
-             management VPC if Setup Instance Names is enabled. In this
-             example, enter 172.31.0.2
-
-          3. (optional) Search Domains: The private hosted zone domain
-             name if Setup Instance Names is enabled. In this example,
-             enter mydevops.com
-
-   c. Enable AWS ELB is “Yes”.
-
-   d. Save Template: check to save the template.
-
-   e. Repeat the above steps to create more VPN gateways to achieve
-      scalability and resilience.
+	|   a. Enable NAT is selected.
+	|
+	|   b. VPN Access is selected.
+	|
+	|      i.  VPN CIDR Block must be an address range that is outside of
+	|           management VPC and all other VPCs you intend to create. In
+	|           this example, enter 10.20.0.0/24.
+	|
+	|      ii. Split Tunnel Mode is “Yes”.
+	|
+	|          1. Additional CIDRs: enter the Access Address Pool CIDR. In
+	|             this example, enter 192.168.0.0/16
+	|
+	|          2. (optional) Nameservers: enter the private DNS server of the
+	|             management VPC if Setup Instance Names is enabled. In this
+	|             example, enter 172.31.0.2
+	|
+	|          3. (optional) Search Domains: The private hosted zone domain
+	|             name if Setup Instance Names is enabled. In this example,
+	|             enter mydevops.com
+	|
+	|   c. Enable AWS ELB is “Yes”.
+	|
+	|   d. Save Template: check to save the template.
+	|
+	|   e. Repeat the above steps to create more VPN gateways to achieve
+	|      scalability and resilience.
 
 #. Create a managed VPC pool and its gateways
 
