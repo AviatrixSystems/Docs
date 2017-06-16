@@ -10,9 +10,8 @@ Azure
 
 
 The Aviatrix cloud network solution consists of two components, controller and
-gateway, both are Azure VMs. Gateways are launched in specific VNets from the controller browser console. This
-guide helps you to launch the controller VM in Azure. The controller
-image is also available in AWS and GCloud.
+gateway, both are Azure VMs. Gateways are launched launched from the controller console to specific VNets. This
+guide helps you to launch the controller VM in Azure. Make sure you also subscribe Aviatrix Companion Gateway in this guide. 
 
 Steps to Launch the Controller
 ==============================
@@ -70,6 +69,11 @@ Launch Controller VM from Azure marketplace portal
 12. Go through the login process.
 
 13. Start with onboarding tab at the console.
+
+Subscribe to Aviatrix Companion Gateway
+========================================
+
+In order to launch Aviatrix gateway from the controller, you must also subscribe to Aviatrix Companion Gateway which is free in Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe. 
 
 Onboarding
 ==========
