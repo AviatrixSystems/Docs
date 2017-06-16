@@ -1,5 +1,5 @@
 =======================================
-Aviatrix Cloud Controller Release Notes
+Release Notes
 =======================================
 
 Aviatrix R2.5: Release Notes 
