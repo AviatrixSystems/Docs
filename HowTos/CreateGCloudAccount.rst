@@ -1,23 +1,23 @@
 .. meta::
    :description: Create GCloud Account on Aviatrix Controller
-   :keywords: GCloud, create GCloud, create GCloud account, Aviatrix
+   :keywords: GCloud, create GCloud, create GCloud account, Aviatrix, GCP credentials
 
 
 
 
 ===================================================================
-Prerequisites to Create a GCloud Account on Aviatrix Controller
+GCP Credentials
 ===================================================================
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before creating a cloud account on Aviatrix controller, go through the
-steps below to make sure you have the proper setup.
+Before creating a cloud account for GCloud/GCP on Aviatrix controller, go through the
+steps below to make sure you have the credentials setup for API calls.
 
 
 Step 1: Create a GCloud Account
 -------------------------------
 
-Create a GCloud account (https://cloud.google.com/). Go on to the next
+Create a GCloud or GCP account (https://cloud.google.com/). Go on to the next
 step if you have already done so.
 
 Note that the controller supports multiple accounts with each one

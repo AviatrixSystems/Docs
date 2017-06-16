@@ -46,6 +46,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Quick_Tour   
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
+   HowTos/CreateGCloudAccount
    HowTos/uservpn
    HowTos/site2cloud
    HowTos/GeoVPN
@@ -63,7 +64,6 @@ The main documentation for the site is organized into a couple sections:
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
    HowTos/UserSSL_VPN_Okta_SAML_Config
-   HowTos/CreateGCloudAccount
 
 .. _Solutions:
 
