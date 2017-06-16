@@ -6,7 +6,7 @@
 VPN Client 
 ###################################
 
-Aviatrix user VPN solution uses OpenVPN as client. OpenVPN supports the broadest range of clients. 
+Aviatrix user vpn solution is built on OpenVPN. You can use popular clients such as Tunnelblick. OpenVPN supports the broadest range of clients. 
 
 However if you need to authenticate your vpn client by SAML, you must use Aviatrix VPN client. 
 
