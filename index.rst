@@ -49,6 +49,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/CreateGCloudAccount
    HowTos/uservpn
    HowTos/site2cloud
+   HowTos/DataAnalSplunkSumo
    HowTos/GeoVPN
    HowTos/TransPeering
    HowTos/Cloud_Networking_Ref_Des
@@ -65,7 +66,6 @@ The main documentation for the site is organized into a couple sections:
    HowTos/EnvironmentStamping
    HowTos/UserSSL_VPN_Okta_SAML_Config
    HowTos/CompanionGateway
-   HowTos/DataAnalSplunkSumo
    HowTos/UCC_Release_Notes
 
 .. _Solutions:
