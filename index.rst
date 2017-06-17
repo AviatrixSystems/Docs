@@ -56,7 +56,7 @@ The main documentation for the site is organized into a couple sections:
 
    peering/peering
    peering/TransPeering
-   peering/Cluster_Peering_Ref_Design
+   HowTos/Cluster_Peering_Ref_Design
    peering/EncrOverExpRoute
 
 .. _Site2Cloud:
