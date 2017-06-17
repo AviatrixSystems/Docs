@@ -44,6 +44,7 @@ The main documentation for the site is organized into a couple sections:
    accounts/IAM_role
    accounts/Aviatrix_Account_Azure
    accounts/CreateGCloudAccount
+   accounts/AdminUsers_DuoAuth
    accounts/CompanionGateway
    accounts/Quick_Tour
 
@@ -56,6 +57,7 @@ The main documentation for the site is organized into a couple sections:
    peering/peering
    peering/TransPeering
    peering/Cluster_Peering_Ref_Design
+   peering/EncrOverExpRoute
 
 .. _Site2Cloud:
 
