@@ -67,6 +67,7 @@ The main documentation for the site is organized into a couple sections:
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
    HowTos/CompanionGateway
+   HowTos/AdminUsers_DuoAuth
    HowTos/UCC_Release_Notes
 
 .. _Solutions:
