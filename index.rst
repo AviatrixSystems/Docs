@@ -10,8 +10,16 @@ The main documentation for the site is organized into a couple sections:
 
 
 * :ref:`Getting Started`
+* :ref: `Onboarding`
+* :ref: `Onboarding and Accounts`
+* :ref: `Peering`
+* :ref: `Site2Cloud`
+* :ref: `OpenVPN`
+* :ref: `Advanced Config
+* :ref: `Settings`
+* :ref: `Troubleshoot`
+* :ref: `Rest APIs`
 * :ref:`Downloads`
-* :ref:`How-to Documents`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
 
@@ -27,6 +35,86 @@ The main documentation for the site is organized into a couple sections:
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
 
+.. _Onboarding
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Onboarding and Accounts
+
+   accounts/IAM_role
+   accounts/Aviatrix_Account_Azure
+   accounts/CreateGCloudAccount
+   accounts/CompanionGateway
+   accounts/Quick_Tour
+
+.. _Peering:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Peering
+
+   peering/peering
+   peering/TransPeering
+   peering/Cluster_Peering_Ref_Design
+
+.. _Site2Cloud:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Site2Cloud
+
+   site2cloud/site2cloud
+   site2cloud/EncrOverExpRoute
+
+.. _OpenVPN:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: OpenVPN
+
+   openvpn/uservpn
+   openvpn/Cloud_Networking_Ref_Des
+   openvpn/GeoVPN
+   openvpn/HowTo_Setup_Okta_for_Aviatrix
+   openvpn/UserSSL_VPN_Okta_SAML_Config
+   openvpn/DevSandbox
+
+.. _Advanced Config:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Advanced Config
+
+   advanced/Service_Chaining_Ref_Design
+   advanced/FQDN_Whitelists_Ref_Design
+   advanced/EnvironmentStamping
+   advanced/Docker_Swarm
+   advanced/ContainerAccess
+
+.. _Settings:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Settings
+
+   settings/DataAnalSplunkSumo
+
+.. _Troubleshoot:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Troubleshoot
+
+   troubleshoot/troubleshooting
+
+.. _Rest APIs:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Rest APIs
+
+   restapis/aviatrix_apis_datacenter_extension
+
 .. _Downloads:
 
 .. toctree::
@@ -37,37 +125,14 @@ The main documentation for the site is organized into a couple sections:
    Downloads/samlclient
 
 
-.. _How-to Documents:
+.. _Release Notes:
 
 .. toctree::
    :maxdepth: 1
-   :caption: How To Documents
+   :caption: Release Notes 
 
-   HowTos/Quick_Tour
-   HowTos/HowTo_IAM_role
-   HowTos/Aviatrix_Account_Azure
-   HowTos/CreateGCloudAccount
-   HowTos/peering
-   HowTos/uservpn
-   HowTos/Cloud_Networking_Ref_Des
-   HowTos/GeoVPN
-   HowTos/UserSSL_VPN_Okta_SAML_Config
-   HowTos/site2cloud
-   HowTos/DataAnalSplunkSumo
-   HowTos/TransPeering
-   HowTos/DevSandbox
-   HowTos/Cluster_Peering_Ref_Design
-   HowTos/FQDN_Whitelists_Ref_Design
-   HowTos/HowTo_Setup_Okta_for_Aviatrix
-   HowTos/aviatrix_apis_datacenter_extension
-   HowTos/Service_Chaining_Ref_Design
-   HowTos/troubleshooting
-   HowTos/EncrOverExpRoute
-   HowTos/Docker_Swarm
-   HowTos/ContainerAccess
-   HowTos/EnvironmentStamping
-   HowTos/CompanionGateway
-   HowTos/UCC_Release_Notes
+   releasenotes/UCC_Release_Notes
+   releasenotes/changelog
 
 .. _Solutions:
 
