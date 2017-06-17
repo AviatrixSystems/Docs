@@ -6,7 +6,7 @@ All Aviatrix documentation can be found here.  If you can't find it here, please
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
 
-The main documentation for the site is organized into the following sections:
+While all content is searchable, the site is organized into the following sections:
 
 
 * :ref:`Getting Started`
