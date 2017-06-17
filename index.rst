@@ -34,7 +34,7 @@ The main documentation for the site is organized into the following sections:
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
 
-.. _Onboarding and Accounts
+.. _Onboarding and Accounts:
 
 .. toctree::
    :maxdepth: 1
