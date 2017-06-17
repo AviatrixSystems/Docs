@@ -5,7 +5,7 @@
 
 
 ===========================
-User VPN for Geo Locations
+OpenVPN for Geo Locations
 ===========================
 
 If you have a global work force that needs to access the cloud with the
