@@ -40,7 +40,7 @@ The main documentation for the site is organized into the following sections:
    :maxdepth: 1
    :caption: Onboarding and Accounts
 
-   HowTos/IAM_role
+   HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
    HowTos/AdminUsers_DuoAuth
