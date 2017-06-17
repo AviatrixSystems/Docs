@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-Aviatrix R2.5: Release Notes 
+Aviatrix R2.5: Release Notes
 =============================
 
 Aviatrix is pleased to announce the general availability of the R2.5
@@ -12,7 +12,7 @@ Aviatrix customers who are on Google Cloud are now able to automate
 managing Aviatrix as part of their cloud infrastructure operations
 practice.
 
-1. Security improvements 
+1. Security improvements
 -------------------------
 
 -  Provide security patch to upgrade OpenVPN server to v2.4.2. To apply
@@ -26,7 +26,7 @@ practice.
 -  Additional ciphers for site to cloud tunnels for interoperability. To
    configure, go to Site2Cloud -> “Add New” -> Algorithms.
 
-2. Public cloud specific features 
+2. Public cloud specific features
 ----------------------------------
 
 -  AWS China [available in the UCC version only] ·
@@ -45,16 +45,16 @@ practice.
 -  Python script for Google Cloud Controller HA monitoring and
    restarting: https://github.com/AviatrixSystems/Controller-HA-for-GCP
 
-3. Usability enhancements 
+3. Usability enhancements
 --------------------------
 
 -  Multiple enhancements on User Interface.
 
--  Aviatrix product Doc site is now available at
+-  Aviatrix product Doc site is now available at http://docs.aviatrix.com
 
 -  New browser support: IE 11
 
-4. Administration automation 
+4. Administration automation
 -----------------------------
 
 -  Cloud-init script to accept input parameters to launch Aviatrix
@@ -72,7 +72,7 @@ practice.
    UCC Controller at the time of install to auto-fetch initial
    configuration; available for AWS at this time].
 
-5. Configurable Aviatrix Gateway Failover/HA time 
+5. Configurable Aviatrix Gateway Failover/HA time
 --------------------------------------------------
 
 -  Support configurable health check frequency between Aviatrix
@@ -81,7 +81,7 @@ practice.
    Keepalive. Select “slow” only when your network is unstable and
    gateways send too many status alerts.
 
-6. Logs and troubleshooting 
+6. Logs and troubleshooting
 ----------------------------
 
 -  Aviatrix for Splunk has been published on Splunkbase. To download,
@@ -101,7 +101,7 @@ practice.
    Troubleshot -> Diagnostics -> “Gateway Debug Level” and select the
    appropriate debug level for your gateway
 
-7. New Aviatrix OVF for VMWare 
+7. New Aviatrix OVF for VMWare
 -------------------------------
 
 -  Visit download.aviatrix.com
