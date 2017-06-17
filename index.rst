@@ -19,9 +19,9 @@ The main documentation for the site is organized into a couple sections:
 * :ref: `Settings`
 * :ref: `Troubleshoot`
 * :ref: `Rest APIs`
-* :ref:`Downloads`
-* :ref:`Solutions`
-* :ref:`Whitepapers`
+* :ref: `Downloads`
+* :ref: `Solutions`
+* :ref: `Whitepapers`
 
 
 .. _Getting Started:
