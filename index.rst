@@ -10,7 +10,7 @@ The main documentation for the site is organized into the following sections:
 
 
 * :ref:`Getting Started`
-* :ref:`Onboarding`
+* :ref:`Onboarding and Accounts`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN`
@@ -34,7 +34,7 @@ The main documentation for the site is organized into the following sections:
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
 
-.. _Onboarding
+.. _Onboarding and Accounts
 
 .. toctree::
    :maxdepth: 1
@@ -64,8 +64,8 @@ The main documentation for the site is organized into the following sections:
    :maxdepth: 1
    :caption: Site2Cloud
 
-   site2cloud/site2cloud
-   site2cloud/EncrOverExpRoute
+   HowTos/site2cloud
+   HowTos/EncrOverExpRoute
 
 .. _OpenVPN:
 
