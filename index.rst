@@ -11,11 +11,10 @@ The main documentation for the site is organized into the following sections:
 
 * :ref:`Getting Started`
 * :ref:`Onboarding`
-* :ref:`Onboarding and Accounts`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN`
-* :ref:`Advanced Config
+* :ref:`Advanced Config`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
 * :ref:`Rest APIs`
