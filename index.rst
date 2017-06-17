@@ -6,22 +6,22 @@ All Aviatrix documentation can be found here.  If you can't find it here, please
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
 
-The main documentation for the site is organized into a couple sections:
+The main documentation for the site is organized into the following sections:
 
 
 * :ref:`Getting Started`
-* :ref: `Onboarding`
-* :ref: `Onboarding and Accounts`
-* :ref: `Peering`
-* :ref: `Site2Cloud`
-* :ref: `OpenVPN`
-* :ref: `Advanced Config
-* :ref: `Settings`
-* :ref: `Troubleshoot`
-* :ref: `Rest APIs`
-* :ref: `Downloads`
-* :ref: `Solutions`
-* :ref: `Whitepapers`
+* :ref:`Onboarding`
+* :ref:`Onboarding and Accounts`
+* :ref:`Peering`
+* :ref:`Site2Cloud`
+* :ref:`OpenVPN`
+* :ref:`Advanced Config
+* :ref:`Settings`
+* :ref:`Troubleshoot`
+* :ref:`Rest APIs`
+* :ref:`Downloads`
+* :ref:`Solutions`
+* :ref:`Whitepapers`
 
 
 .. _Getting Started:
