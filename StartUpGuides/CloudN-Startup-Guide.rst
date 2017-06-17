@@ -259,7 +259,7 @@ CloudN is a virtual appliance that runs on a hypervisor. The supported
 hypervisors are VMware hypervisor products, Microsoft Enterprise 8.1
 Hyper-V and Oracle VirtualBox.
 
-By default CloudN is packaged with 2 vCPU, 4GB of memory and 20GB of hard disk (SCSI storage) as part of
+By default CloudN is packaged with 2 vCPU, 4GB of memory and 20GB of hard disk (SCSI storage or hard drive) as part of
 its image make up. You can always reconfigure the VM to take more CPU
 and memory.
 
