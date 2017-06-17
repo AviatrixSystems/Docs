@@ -49,11 +49,12 @@ The main documentation for the site is organized into a couple sections:
    HowTos/CreateGCloudAccount
    HowTos/peering
    HowTos/uservpn
+   HowTos/Cloud_Networking_Ref_Des
+   HowTos/GeoVPN
+   HowTos/UserSSL_VPN_Okta_SAML_Config
    HowTos/site2cloud
    HowTos/DataAnalSplunkSumo
-   HowTos/GeoVPN
    HowTos/TransPeering
-   HowTos/Cloud_Networking_Ref_Des
    HowTos/DevSandbox
    HowTos/Cluster_Peering_Ref_Design
    HowTos/FQDN_Whitelists_Ref_Design
@@ -65,7 +66,6 @@ The main documentation for the site is organized into a couple sections:
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
    HowTos/EnvironmentStamping
-   HowTos/UserSSL_VPN_Okta_SAML_Config
    HowTos/CompanionGateway
    HowTos/UCC_Release_Notes
 

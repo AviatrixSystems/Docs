@@ -3,7 +3,7 @@
    :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
 
 =====================================
-User VPN with SAML Client on Okta IDP 
+OpenVPN with SAML Client on Okta IDP 
 =====================================
 =====================================
 
