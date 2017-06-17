@@ -10,8 +10,8 @@ Azure
 
 
 The Aviatrix cloud network solution consists of two components, controller and
-gateway, both are Azure VMs. Gateways are launched launched from the controller console to specific VNets. This
-guide helps you to launch the controller VM in Azure. Make sure you also subscribe Aviatrix Companion Gateway in this guide. 
+gateway, both are Azure VMs. Gateways are launched from the controller console to specific VNets. This
+guide helps you to launch the controller VM in Azure. Make sure you follow the instructions to also subscribe Aviatrix Companion Gateway described in this guide. 
 
 Steps to Launch the Controller
 ==============================
