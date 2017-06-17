@@ -123,8 +123,8 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Downloads
 
-   HowTos/cloudndownload
-   HowTos/samlclient
+   Downloads/cloudndownload
+   Downloads/samlclient
 
 
 .. _Release Notes:
