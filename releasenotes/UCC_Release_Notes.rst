@@ -2,15 +2,8 @@
 Release Notes
 =======================================
 
-Aviatrix R2.5: Release Notes
+R2.5
 =============================
-
-Aviatrix is pleased to announce the general availability of the R2.5
-software. We have added a number of new features to meet our customers’
-asks around security, usability, administrability and documentation.
-Aviatrix customers who are on Google Cloud are now able to automate
-managing Aviatrix as part of their cloud infrastructure operations
-practice.
 
 1. Security improvements
 -------------------------
@@ -19,7 +12,7 @@ practice.
    the patch, go to Settings->Patches and select OpenVPN 2.4.2
 
 -  New Aviatrix VPN client (v1.3.9) for user VPN (Mac, PC and Unix). To
-   download, go to http://docs.aviatrix.com/Downloads/samlclient.html
+   download, go to `this link. <http://docs.aviatrix.com/Downloads/samlclient.html>`__
 
 -  Hardened password management for “forgot password”.
 
@@ -43,7 +36,7 @@ practice.
    go to Settings -> “Backup & Restore”.
 
 -  Python script for Google Cloud Controller HA monitoring and
-   restarting: https://github.com/AviatrixSystems/Controller-HA-for-GCP
+   restarting. `Follow <https://github.com/AviatrixSystems/Controller-HA-for-GCP>`__
 
 3. Usability enhancements
 --------------------------
@@ -60,8 +53,8 @@ practice.
 -  Cloud-init script to accept input parameters to launch Aviatrix
    Controller on premises.
 
--  Automated Aviatrix Controller deployment in AWS using Cloudformation:
-   http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html
+-  Automated Aviatrix Controller deployment in AWS using `Cloudformation:
+   <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__
 
 -  GW Resizing API “edit\_gw\_config”.
 
