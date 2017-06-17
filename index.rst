@@ -41,12 +41,12 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Onboarding and Accounts
 
-   accounts/IAM_role
-   accounts/Aviatrix_Account_Azure
-   accounts/CreateGCloudAccount
-   accounts/AdminUsers_DuoAuth
-   accounts/CompanionGateway
-   accounts/Quick_Tour
+   HowTos/IAM_role
+   HowTos/Aviatrix_Account_Azure
+   HowTos/CreateGCloudAccount
+   HowTos/AdminUsers_DuoAuth
+   HowTos/CompanionGateway
+   HowTos/Quick_Tour
 
 .. _Peering:
 
@@ -54,10 +54,10 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Peering
 
-   peering/peering
-   peering/TransPeering
+   HowTos/peering
+   HowTos/TransPeering
    HowTos/Cluster_Peering_Ref_Design
-   peering/EncrOverExpRoute
+   HowTos/EncrOverExpRoute
 
 .. _Site2Cloud:
 
@@ -74,12 +74,12 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: OpenVPN
 
-   openvpn/uservpn
-   openvpn/Cloud_Networking_Ref_Des
-   openvpn/GeoVPN
-   openvpn/HowTo_Setup_Okta_for_Aviatrix
-   openvpn/UserSSL_VPN_Okta_SAML_Config
-   openvpn/DevSandbox
+   HowTos/uservpn
+   HowTos/Cloud_Networking_Ref_Des
+   HowTos/GeoVPN
+   HowTos/HowTo_Setup_Okta_for_Aviatrix
+   HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/DevSandbox
 
 .. _Advanced Config:
 
@@ -87,11 +87,11 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Advanced Config
 
-   advanced/Service_Chaining_Ref_Design
-   advanced/FQDN_Whitelists_Ref_Design
-   advanced/EnvironmentStamping
-   advanced/Docker_Swarm
-   advanced/ContainerAccess
+   HowTos/Service_Chaining_Ref_Design
+   HowTos/FQDN_Whitelists_Ref_Design
+   HowTos/EnvironmentStamping
+   HowTos/Docker_Swarm
+   HowTos/ContainerAccess
 
 .. _Settings:
 
@@ -99,7 +99,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Settings
 
-   settings/DataAnalSplunkSumo
+   HowTos/DataAnalSplunkSumo
 
 .. _Troubleshoot:
 
@@ -107,7 +107,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Troubleshoot
 
-   troubleshoot/troubleshooting
+   HowTos/troubleshooting
 
 .. _Rest APIs:
 
@@ -115,7 +115,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Rest APIs
 
-   restapis/aviatrix_apis_datacenter_extension
+   HowTos/aviatrix_apis_datacenter_extension
 
 .. _Downloads:
 
@@ -123,8 +123,8 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Downloads
 
-   Downloads/cloudndownload
-   Downloads/samlclient
+   HowTos/cloudndownload
+   HowTos/samlclient
 
 
 .. _Release Notes:
@@ -133,8 +133,8 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: Release Notes 
 
-   releasenotes/UCC_Release_Notes
-   releasenotes/changelog
+   HowTos/UCC_Release_Notes
+   HowTos/changelog
 
 .. _Solutions:
 
