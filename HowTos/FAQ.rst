@@ -121,7 +121,7 @@ No. Aviatrix Cloud Gateway is a software product that is deployed in
 your own network perimeter.
 
 
-==========
+
 Onboarding
 ==========
 
@@ -171,7 +171,7 @@ For support, send email to
 feature, click Make a wish button at the bottom of each page.
 
 
-=======================
+
 Scale Out VPN Solutions
 =======================
 
@@ -276,7 +276,6 @@ time.
 
 
 
-====================================
 User Profile Based Security Policies
 ====================================
 
@@ -338,7 +337,6 @@ VPN user for security reasons.
 
 
 
-===================
 User Authentication
 ===================
 
@@ -390,7 +388,6 @@ Yes. OKTA with MFA is also supported. Follow the
 
 
 
-====================
 Policy Based Routing
 ====================
 
@@ -418,7 +415,6 @@ accomplish that.
 
 
 
-======================
 Logging and Monitoring
 ======================
 
@@ -454,7 +450,6 @@ notification address. You do not need to enter AWS credentials.
 
 
 
-=================
 Encrypted peering
 =================
 
@@ -483,7 +478,7 @@ gateway names and click Save.
 
 
 
-===============================
+
 Environment Stamping Networking
 ===============================
 
@@ -533,7 +528,7 @@ for workflow steps.
 
 
 
-==============
+
 Administration
 ==============
 
