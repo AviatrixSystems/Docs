@@ -9,7 +9,7 @@ Building a Mesh Cloud Network for AWS VPCs and Datacenter
 AWS Reference Deployment Guide
 ==============================
 
-Last updated: May 10, 2017
+
 
 1  Overview
 ===========
