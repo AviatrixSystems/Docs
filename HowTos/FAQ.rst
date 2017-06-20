@@ -9,7 +9,7 @@ Aviatrix Cloud Gateway Frequently Asked Questions
 
 
 Q1: What can it do for me?
----------------------------
+
 
 Aviatrix Cloud Gateway provides an end to end secure network solution
 for AWS, Azure and Google GCloud. The solution includes an enterprise
@@ -28,7 +28,7 @@ coupled and globally deployed platform built for the cloud from the
 ground up.
 
 Q2: Key benefits?
------------------
+
 
 -  Scalable and highly available user VPN solution.
 
@@ -77,7 +77,7 @@ Q2: Key benefits?
 -  Encryption over AWS Direct Connect and Azure Express Route.
 
 Q3: How do I launch the product?
----------------------------------
+
 
 The product consists of two components, the controller and one or more
 gateways. The gateway is launched from the controller.
@@ -93,7 +93,7 @@ The controller should have an EIP (best practice) address and inbound
 TCP port 443 open for it to work.
 
 Q4: How do I access the controller?
-------------------------------------
+
 
 Once you have launched the instance, you access the Controller instance
 via a web browser.
@@ -105,7 +105,7 @@ address of the controller instance. You are required to change the
 password at your first login.
 
 Q5: How do I secure the controller?
-------------------------------------
+
 
 Only TCP port 443 needs to be opened for inbound traffic to the
 controller. If you wish to reduce the scope of source addresses by
@@ -115,7 +115,7 @@ gateways launched from the controller use its public IP address to
 communicate back to controller.
 
 Q6: Is Aviatrix Cloud Gateway a SaaS offer?
--------------------------------------------
+
 
 No. Aviatrix Cloud Gateway is a software product that is deployed in
 your own network perimeter.
@@ -123,12 +123,12 @@ your own network perimeter.
 
 
 Onboarding
------------
+==========
 
 
 
 Q1: Where do I start?
-----------------------
+
 
 The first time when you login, complete Onboarding process. It takes a
 few steps.
@@ -138,7 +138,7 @@ customer ID provided by Aviatrix to be able to use the product. Contact
 support@aviatrix.com if you do not have a customer ID.
 
 Q2: What is an Aviatrix Cloud Account?
---------------------------------------
+
 
 An Aviatrix Cloud Account is specific and unique on the controller. It
 contains cloud credentials, for example, your AWS IAM Access Key ID and
@@ -150,7 +150,7 @@ example, it can contain credentials for an AWS IAM account, Azure
 account and GCloud account.
 
 Q3: How do I upgrade software?
-------------------------------
+
 
 Click Settings -> Upgrade. This upgrades to the latest release of the
 controller software.
@@ -159,12 +159,12 @@ When a new release becomes available, an alert message appears on
 Dashboard.
 
 Q4: Is there a reference design example?
------------------------------------------
+
 
 Check out multiple Reference Designs under Help menu.
 
 Q5: What is the support model?
-------------------------------
+
 
 For support, send email to
 `support@aviatrix.com <mailto:support@aviatrix.com>`__. To request a
@@ -178,7 +178,7 @@ Scale Out VPN Solutions
 
 
 Q1: How do I launch a VPN gateway?
-----------------------------------
+
 
 Click Gateways -> Create Gateway -> Create
 
@@ -199,7 +199,7 @@ to the page the next time, most of the fields are pre populated. You may
 change any of the fields.
 
 Q2: How do I scale out VPN solution?
-------------------------------------
+
 
 You can launch multiple VPN gateways in the same VPC at the Create
 Gateway time.
@@ -214,13 +214,13 @@ enabled. For example, authentication methods, tunnel modes and PBR
 configurations should be identical.
 
 Q3: How do I setup Okta authentication for VPN?
------------------------------------------------
+
 
 Follow the link: `How to setup Okta for Aviatrix VPN
 gateway <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__
 
 Q4: How do I enable Geo VPN?
-----------------------------
+
 
 If you have global workforce that needs to access the cloud, Geo VPN
 offers a superior solution. Geo VPN enables a VPN user to connect to a
@@ -229,7 +229,7 @@ nearest VPC that hosts Aviatrix VPN gateway.
 To enable Geo VPN, go to VPC/VNet -> VPN Access -> Geo VPN.
 
 Q5: How do I add a VPN user?
-----------------------------
+
 
 After at least one gateway is created, you can add VPN users.
 
@@ -242,12 +242,12 @@ If you like to assign user profile based policies, you need to create
 profiles first, see the next section.
 
 Q6: What user devices are VPN client software supported?
---------------------------------------------------------
+
 
 Windows, MAC, Linux, Chromebook, Android and iOS devices are supported.
 
 Q7: Is NAT capability supported on the gateway?
------------------------------------------------
+
 
 Yes, you can enable NAT function at gateway launch time. When enabled,
 instances on the private subnet can access Internet directly.
@@ -256,7 +256,7 @@ If full tunnel mode is selected, you may want to enable NAT to allow
 instances in the VPC to have direct Internet access.
 
 Q8: Is full tunnel mode supported on the gateway?
--------------------------------------------------
+
 
 Yes, both split tunnel and full tunnel modes are supported. You can
 specify the mode at the gateway launch time.
@@ -269,7 +269,7 @@ network range is carried through the VPN tunnel to the gateway. Any
 Internet bound traffic does not go through the tunnel.
 
 Q9: Can the maximum number of simultaneous connections to VPN gateway be configured?
-------------------------------------------------------------------------------------
+
 
 Yes, you can set the maximum number of connections at the gateway launch
 time.
@@ -282,7 +282,7 @@ User Profile Based Security Policies
 
 
 Q1: What is user profile based security policy?
------------------------------------------------
+
 
 In VPN access, a user is dynamically assigned a virtual IP address when
 connected to a gateway. It is highly desirable to define resource access
@@ -298,7 +298,7 @@ capability allows flexible firewall rules based on the users, instead of
 a source IP address.
 
 Q2: How do I setup profile based security policies?
----------------------------------------------------
+
 
 When a user connects to a VPC, the security policies associated with the
 profile that the user is assigned to are applied to the VPN gateway
@@ -309,13 +309,13 @@ Click VPCs -> VPN Access -> Profiles to create profiles, then click Edit
 Policies to add rules. You can add multiple of them, then click on Save.
 
 Q3: How do I assign a user to a profile?
-----------------------------------------
+
 
 When you create a VPN user at VPCs -> VPN Access -> Users -> Add, you
 can select profile option to assign the user to a specific profile.
 
 Q4: What if I want to change profile policies?
-----------------------------------------------
+
 
 You can change profile policies any time. However, the users who are
 currently active in session will not receive the new policy. The user
@@ -323,7 +323,7 @@ need to disconnect and reconnect to VPN for the new policy to take
 effect.
 
 Q5: How do I change a user’s profile programmatically? 
--------------------------------------------------------
+
 
 The controller provides a REST API which can be invoked to change a
 user’s profile. Refer to API document under Help menu.
@@ -343,7 +343,7 @@ User Authentication
 
 
 Q1: Is DUO multi-factor authentication supported?
--------------------------------------------------
+
 
 Yes. If your enterprise has a DUO account with multi-factor
 authentication, it can be integrated into the VPN solution. From
@@ -363,7 +363,7 @@ are not supported. Send us a request if you like to integrate these
 features.
 
 Q2: How do I configure LDAP authentication?
--------------------------------------------
+
 
 LDAP configuration is part of the Gateway creation when VPN Access is
 enabled. Enter the necessary parameters and click Enable button to
@@ -373,7 +373,7 @@ upload a client certificate in PEM format (This certificate should
 contain a public and private key pair).
 
 Q3: Can I combine LDAP and DUO authentication? 
------------------------------------------------
+
 
 Yes. With both LDAP and DUO authentication methods enabled on a gateway,
 when launching the VPN client, a remote user will have to enter his or
@@ -381,7 +381,7 @@ her LDAP user credentials and then approve the authentication request
 received on a registered mobile device to login to VPN.
 
 Q4: Is OKTA supported?
-----------------------
+
 
 Yes. OKTA with MFA is also supported. Follow the
 `instructions <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__
@@ -395,7 +395,7 @@ Policy Based Routing
 
 
 Q1: How does Policy Based Routing (PBR) work?
----------------------------------------------
+
 
 When PBR is enabled at gateway launch time, all VPN user traffic arrives
 at the gateway will be forwarded to a specified IP address defined as
@@ -422,7 +422,7 @@ Logging and Monitoring
 
 
 Q1: How do I forward syslog events to my Logstash server?
----------------------------------------------------------
+
 
 Click on Settings-> Logging ->LogStash logging and input the required
 parameters to enable forwarding of controller syslog events and all
@@ -431,7 +431,7 @@ gateways syslog and auth log to a Logstash server.
 SUMO Logic, Splunk and rSyslog are also supported.
 
 Q2: What are the monitoring capabilities?
------------------------------------------
+
 
 Active VPN users are displayed on the Dashboard. Click on any username,
 the user VPN connectivity history is displayed.
@@ -439,7 +439,7 @@ the user VPN connectivity history is displayed.
 You can also disconnect a user from the dashboard.
 
 Q3: Is there an Operator account?
----------------------------------
+
 
 Yes, you can create an operator account. This operator account can only
 view dashboard and disconnect an active user from the dashboard.
@@ -457,7 +457,7 @@ Encrypted peering
 
 
 Q1: What can Aviatrix encrypted peering do?
--------------------------------------------
+
 
 Aviatrix encrypted peering builds an encrypted tunnel between two
 VPC/VNet with a single click. The VPC and/or VNet can be across region
@@ -466,7 +466,7 @@ encrypted network. You can enable stateful firewalls on each VPC/VNet to
 add additional security measures.
 
 Q2: How do I configure encrypted peering?
------------------------------------------
+
 
 Step 1: At Gateway menu, create a gateway in one existing VPC/VNet. VPN
 access may be disabled.
@@ -485,7 +485,7 @@ Environment Stamping Networking
 
 
 Q1: What does Environment Stamping networking feature do?
----------------------------------------------------------
+
 
 Environment Stamping (envStamping) takes advantage of the unique nature
 of Virtual Private Cloud (VPC) and offers a deployment architecture that
@@ -506,7 +506,7 @@ VPC instances by connecting to the gateway in the management VPC via
 Aviatrix VPN capability.
 
 Q2: Who should be deploying this model?
----------------------------------------
+
 
 This deployment model allows for infinite scale of deployment, it is
 suitable for SaaS providers, development and testing. With this model,
@@ -520,7 +520,7 @@ from others. Only authorized personal can access customer instances for
 maintenance and troubleshooting.
 
 Q3: What is the workflow to enable this feature?
-------------------------------------------------
+
 
 Refer to this
 `link <http://docs.aviatrix.com/HowTos/EnvironmentStamping.html>`__
@@ -535,14 +535,14 @@ Administration
 
 
 Q1: Can there be multiple admins?
----------------------------------
+
 
 Yes. Username “admin” is the default admin user. But you can create
 multiple users with admin privilege. Check out a reference design under
 Help to learn more about setting up multiple admin users.
 
 Q2: Is there 2FA support to log in to the console?
---------------------------------------------------
+
 
 Yes. In addition to password login, DUO authentication is supported.
 
