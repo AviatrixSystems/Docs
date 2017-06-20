@@ -5,9 +5,7 @@
 ==================================================
 Aviatrix Cloud Gateway Frequently Asked Questions
 ==================================================
-::
 
-----------------------------------------------------------------------------------------------
 
 
 Q1: What can it do for me?
@@ -122,17 +120,11 @@ Q6: Is Aviatrix Cloud Gateway a SaaS offer?
 No. Aviatrix Cloud Gateway is a software product that is deployed in
 your own network perimeter.
 
-::
-
--------------------------------------------------
 
 ==========
 Onboarding
 ==========
 
-::
-
--------------------------------------------------
 
 
 Q1: Where do I start?
@@ -178,17 +170,12 @@ For support, send email to
 `support@aviatrix.com <mailto:support@aviatrix.com>`__. To request a
 feature, click Make a wish button at the bottom of each page.
 
-::
-
--------------------------------------------------
 
 =======================
 Scale Out VPN Solutions
 =======================
 
-::
 
--------------------------------------------------
 
 Q1: How do I launch a VPN gateway?
 ----------------------------------
@@ -287,17 +274,12 @@ Q9: Can the maximum number of simultaneous connections to VPN gateway be configu
 Yes, you can set the maximum number of connections at the gateway launch
 time.
 
-::
 
--------------------------------------------------
 
 ====================================
 User Profile Based Security Policies
 ====================================
 
-::
-
--------------------------------------------------
 
 
 Q1: What is user profile based security policy?
@@ -354,18 +336,12 @@ in again.
 The use case for this feature is to allow administrator to quarantine a
 VPN user for security reasons.
 
-::
-
--------------------------------------------------
 
 
 ===================
 User Authentication
 ===================
 
-::
-
--------------------------------------------------
 
 
 Q1: Is DUO multi-factor authentication supported?
@@ -412,17 +388,13 @@ Q4: Is OKTA supported?
 Yes. OKTA with MFA is also supported. Follow the
 `instructions <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__
 
-::
 
--------------------------------------------------
 
 ====================
 Policy Based Routing
 ====================
 
-::
 
--------------------------------------------------
 
 
 Q1: How does Policy Based Routing (PBR) work?
@@ -444,18 +416,13 @@ Internet bound traffic back to your own firewall device on Prem, or log
 all user VPN traffic to a specific logging device, PBR lets you
 accomplish that.
 
-::
-
--------------------------------------------------
 
 
 ======================
 Logging and Monitoring
 ======================
 
-::
 
--------------------------------------------------
 
 
 Q1: How do I forward syslog events to my Logstash server?
@@ -485,17 +452,13 @@ To create an Operator account, go to Settings -> Accounts -> Add. At the
 account name, type in “Operator” and give it a password and email
 notification address. You do not need to enter AWS credentials.
 
-::
 
--------------------------------------------------
 
 =================
 Encrypted peering
 =================
 
-::
 
--------------------------------------------------
 
 
 Q1: What can Aviatrix encrypted peering do?
@@ -518,17 +481,13 @@ Step 2: Repeat Step 1 with a different VPC ID or VNet Name.
 Step 3: At VPC/VNet Menu -> Encrypted Peering -> Add. Select the two
 gateway names and click Save.
 
-::
 
--------------------------------------------------
 
 ===============================
 Environment Stamping Networking
 ===============================
 
-::
 
--------------------------------------------------
 
 Q1: What does Environment Stamping networking feature do?
 ---------------------------------------------------------
@@ -572,16 +531,12 @@ Refer to this
 `link <http://docs.aviatrix.com/HowTos/EnvironmentStamping.html>`__
 for workflow steps.
 
-::
 
--------------------------------------------------
 
 ==============
 Administration
 ==============
-::
 
--------------------------------------------------
 
 
 Q1: Can there be multiple admins?
