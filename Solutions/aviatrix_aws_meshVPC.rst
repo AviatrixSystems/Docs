@@ -160,7 +160,7 @@ Reapt the above step for more VPC with encrypted tunnel creations.
    :width: 3.5in
    :height: 0.5in
 .. |image1| image:: media/datacenter-extension.png
-   :width: 7.00000in
+   :width: 6.50000in
    :height: 4in
 .. |image2| image:: media/image3.png
    :width: 6.5in
