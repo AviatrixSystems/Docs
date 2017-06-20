@@ -27,7 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Getting Started:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Getting Started
 
    StartUpGuides/aviatrix-cloud-controller-startup-guide
@@ -39,7 +39,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Onboarding and Accounts:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Onboarding and Accounts
 
    HowTos/HowTo_IAM_role
@@ -52,7 +52,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Gateway:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Gateway
 
    HowTos/gateway
@@ -60,7 +60,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Peering:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Peering
 
    HowTos/peering
@@ -71,7 +71,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Site2Cloud:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Site2Cloud
 
    HowTos/site2cloud
@@ -80,7 +80,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _OpenVPN:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: OpenVPN
 
    HowTos/uservpn
@@ -93,7 +93,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Advanced Config:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Advanced Config
 
    HowTos/Service_Chaining_Ref_Design
@@ -105,7 +105,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Settings:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Settings
 
    HowTos/DataAnalSplunkSumo
@@ -113,7 +113,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Troubleshoot:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Troubleshoot
 
    HowTos/troubleshooting
@@ -121,7 +121,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Rest APIs:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Rest APIs
 
    HowTos/aviatrix_apis_datacenter_extension
@@ -129,7 +129,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Downloads:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Downloads
 
    Downloads/cloudndownload
@@ -139,7 +139,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Release Notes:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Release Notes 
 
    HowTos/UCC_Release_Notes
@@ -148,7 +148,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Solutions:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Solutions Datasheets
 
    Solutions/aviatrix_aws_meshVPC
@@ -158,7 +158,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Whitepapers:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Whitepapers
 
    Whitepapers/EnterpriseAppMigration
