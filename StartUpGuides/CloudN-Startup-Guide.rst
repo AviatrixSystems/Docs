@@ -226,12 +226,12 @@ Outbound TCP/UDP Ports
 
 CloudN requires the following TCP/UDP outbound ports open.
 
--  TCP port 443 for all AWS public IP address ranges.
+-  TCP port 443. 
 
--  UDP ports 4500 and 500 for all AWS public IP address ranges.
+-  UDP ports 4500 and 500. 
 
-   If you choose to reduce the scope of above ports, you can limit them
-   to only AWS owned public IP address blocks.
+If you choose to reduce the scope of above ports, you can limit them
+   to only AWS owned public IP address blocks. All AWS public IP addresses can be found in `this link.<https://ip-ranges.amazonaws.com/ip-ranges.json>`__
 
 Since CloudN operates in a client-server mode where the CloudN local
 gateway is the client, there is no restriction or requirement to open
