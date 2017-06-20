@@ -29,6 +29,15 @@ We strongly recommend you to use an IAM role for security reasons,
 follow instructions during onboarding time of the controller instance to
 setup custom security policy.
 
+Subscribe to Aviatrix on AWS Marketplace
+=========================================
+
+You must subscribe to one of the Aviatrix AMIs on AWS marketplace prior to launch the controller. 
+
+Search "aviatrix" on AWS marketplace and accept the terms and conditions to use the software. 
+After subscription, follow the instructions in the next sections to launch the controller. 
+
+
 Launch Aviatrix Controller via CloudFormation
 =============================================
 
