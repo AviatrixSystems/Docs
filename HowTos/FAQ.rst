@@ -7,6 +7,9 @@ Aviatrix Cloud Gateway Frequently Asked Questions
 ####################################################
 
 
+General Questions
+==================
+
 
 Q1: What can it do for me?
 
