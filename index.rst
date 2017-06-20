@@ -11,6 +11,7 @@ While all content is searchable, the site is organized into the following sectio
 
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
+* :ref:`Gateway`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN`
@@ -46,6 +47,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AdminUsers_DuoAuth
    HowTos/CompanionGateway
    HowTos/Quick_Tour
+
+.. _Gateway:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Gateway
+
+   HowTos/gateway
 
 .. _Peering:
 
