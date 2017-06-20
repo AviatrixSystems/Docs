@@ -147,7 +147,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Solutions:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Solutions Datasheets
 
    Solutions/aviatrix_aws_meshVPC
