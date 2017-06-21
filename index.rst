@@ -117,6 +117,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Troubleshoot
 
    HowTos/troubleshooting
+   HowTos/error-msgs
 
 .. _Rest APIs:
 
