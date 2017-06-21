@@ -88,6 +88,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/GeoVPN
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/duo_auth
    HowTos/DevSandbox
 
 .. _Advanced Config:
