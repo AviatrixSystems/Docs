@@ -7,8 +7,8 @@ Frequently Asked Questions
 ####################################################
 
 
-General Questions
-==================
+Aviatrix Cloud Gateway
+======================
 
 
 **Q1: What can it do for me?**
