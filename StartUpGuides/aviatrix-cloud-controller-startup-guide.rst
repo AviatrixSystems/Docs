@@ -48,7 +48,7 @@ Launch Aviatrix Controller from AWS Marketplace
 
 Before you launch the controller with IAM role, you must first create 2
 IAM roles and its associated policies. Follow `this
-link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+setup+IAM+role+for+Aviatrix.pdf>`__
+link <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`__
 to have them setup.
 Then go to https://aws.amazon.com/marketplace, search for “Aviatrix” and
 select the image type you wish to launch.
