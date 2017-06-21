@@ -3,7 +3,7 @@
    :keywords: ucc, faq, frequently asked questions, ucc faq, aviatrix faq
 
 ####################################################
-Aviatrix Cloud Gateway Frequently Asked Questions
+Frequently Asked Questions
 ####################################################
 
 
