@@ -30,7 +30,7 @@ Architecturally, Aviatrix solution is a centrally managed, loosely
 coupled and globally deployed platform built for the cloud from the
 ground up.
 
-**Q2: Key benefits?**
+**Q2: What are the key benefits?**
 
 
 -  Scalable and highly available user VPN solution.
@@ -95,7 +95,7 @@ for “Aviatrix” in marketplace.
 The controller should have an EIP (best practice) address and inbound
 TCP port 443 open for it to work.
 
-Q4: How do I access the controller?
+**Q4: How do I access the controller?**
 
 
 Once you have launched the instance, you access the Controller instance
@@ -325,7 +325,7 @@ currently active in session will not receive the new policy. The user
 need to disconnect and reconnect to VPN for the new policy to take
 effect.
 
-**Q5: How do I change a user’s profile programmatically? **
+**Q5: How do I change a user’s profile programmatically?**
 
 
 The controller provides a REST API which can be invoked to change a
