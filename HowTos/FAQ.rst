@@ -164,7 +164,7 @@ Dashboard.
 **Q4: Is there a reference design example?**
 
 
-Check out multiple Reference Designs under Help menu.
+Check out docs.aviatrix.com.
 
 **Q5: What is the support model?**
 
@@ -183,7 +183,7 @@ Scale Out VPN Solutions
 **Q1: How do I launch a VPN gateway?**
 
 
-Click Gateways -> Create Gateway -> Create
+Click Gateway -> + New Gateway 
 
 The controller launches an Aviatrix gateway instance in
 AWS/Azure/GCloud. The gateway instance must be launched from a public
@@ -229,14 +229,16 @@ If you have global workforce that needs to access the cloud, Geo VPN
 offers a superior solution. Geo VPN enables a VPN user to connect to a
 nearest VPC that hosts Aviatrix VPN gateway.
 
-To enable Geo VPN, go to VPC/VNet -> VPN Access -> Geo VPN.
+To enable Geo VPN, go to OpenVPN -> GEO VPN.
+
+Also check out `this link for help. <http://docs.aviatrix.com/HowTos/GeoVPN.html>`_
 
 **Q5: How do I add a VPN user?**
 
 
 After at least one gateway is created, you can add VPN users.
 
-Click VPCs -> VPN Access -> Users -> Add to add a VPN user.
+Click OpenVPN -> VPN Users -> +Add New.
 
 When a user is added, an email is sent to the user with instructions on
 how to download client software and connect to VPN server.
@@ -308,14 +310,16 @@ profile that the user is assigned to are applied to the VPN gateway
 instance that user logs in. This effectively blocks traffic from
 entering the network.
 
-Click VPCs -> VPN Access -> Profiles to create profiles, then click Edit
+Click OpenVPN -> Profiles -> +New Profile to create profiles, then click Edit
 Policies to add rules. You can add multiple of them, then click on Save.
 
 **Q3: How do I assign a user to a profile?**
 
 
-When you create a VPN user at VPCs -> VPN Access -> Users -> Add, you
+When you create a VPN user at OpenVPN -> VPN Users -> +Add New, you
 can select profile option to assign the user to a specific profile.
+
+You can also attach the user to a profile at a later time. Go to OpenVPN -> Profiles. Click Attach User on a specific Profile and select a user that is added to the VPN gateway.  
 
 **Q4: What if I want to change profile policies?**
 
@@ -360,6 +364,8 @@ left panel Applications, click Protect an Application below. Scroll down
 the application list and select OpenVPN (click Protect this
 Application), the next screen should reveal the credentials you need to
 configure on the Aviatrix controller.
+
+For additional help, follow `this instruction. <http://docs.aviatrix.com/HowTos/duo_auth.html>`_
 
 Currently advanced feature such as Trusted Device and Trusted Networks
 are not supported. Send us a request if you like to integrate these
@@ -471,13 +477,13 @@ add additional security measures.
 **Q2: How do I configure encrypted peering?**
 
 
-	Step 1: At Gateway menu, create a gateway in one existing VPC/VNet. VPN
+	Step 1: Gateway -> +New Gateway in one existing VPC/VNet. VPN
 	access may be disabled.
 
 	Step 2: Repeat Step 1 with a different VPC ID or VNet Name.
 
-	Step 3: At VPC/VNet Menu -> Encrypted Peering -> Add. Select the two
-	gateway names and click Save.
+	Step 3: At Peering -> Encrypted Peering -> +New Peering. Select the two
+	gateway names and click OK.
 
 
 
@@ -541,8 +547,8 @@ Administration
 
 
 Yes. Username “admin” is the default admin user. But you can create
-multiple users with admin privilege. Check out a reference design under
-Help to learn more about setting up multiple admin users.
+multiple users with admin privilege. 
+Follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_ to learn more about setting up multiple admin users.
 
 **Q2: Is there 2FA support to log in to the console?**
 
