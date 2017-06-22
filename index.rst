@@ -66,7 +66,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/peering
    HowTos/TransPeering
    HowTos/Cluster_Peering_Ref_Design
-   HowTos/EncrOverExpRoute
 
 .. _Site2Cloud:
 
