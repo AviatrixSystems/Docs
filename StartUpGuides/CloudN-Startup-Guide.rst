@@ -586,13 +586,9 @@ Onboarding
 After you login to the browser console, click Onboarding to go through a
 few steps of initial setup and start creating the first VPC/VNet.
 
-Once you login, click on Help for Frequently Asked Questions (FAQs). All
-features have descriptions and should be self-explanatory.
+For all feature documentation, go to docs.aviatrix.com
 
 For support issues, send email to support@aviatrix.com.
-
-For feedback and feature request, click Make a wish at the bottom of
-each page.
 
 Enjoy!
 
