@@ -320,20 +320,20 @@ VLAN.
 After the installation is finished, follow these steps to enable
 promiscuous mode on the network adapter (below is an example):
 
-Step 1. Select (Highlight) ESXi host tab where CloudN is hosted (for
+**Step 1**. Select (Highlight) ESXi host tab where CloudN is hosted (for
 example, 192.168.1.34) and click on the Configuration tab
 
 |image11|
 
-Step 2. In the Hardware section, click Networking and then properties
+**Step 2**. In the Hardware section, click Networking and then properties
 
 |image12|
 
-Step 3. Select VM Network adapter for CloudN and click edit
+**Step 3**. Select VM Network adapter for CloudN and click edit
 
 |image13|
 
-Step 4. Click the Security tab, from the Promiscuous Mode dropdown menu,
+**Step 4**. Click the Security tab, from the Promiscuous Mode dropdown menu,
 click the box and select accept and click OK. If you are running ESXi
 5.1 or later, you also need to set Forged Transmit Mode for the port
 group to “Accepted”.
@@ -368,27 +368,27 @@ After downloading the zip file and decompressing it, copy the folder to
 a location where you can import the virtual machine. For installation,
 follow guide below.
 
-Step 1: Import the VHD Image
+**Step 1**: Import the VHD Image
 
 |image16|
 
-Step 2: Locate Folder
+**Step 2**: Locate Folder
 
 |image17|
 
-Step 3: Copy the Virtual Machine
+**Step 3**: Copy the Virtual Machine
 
 |image18|
 
-Step 4: Connect to the Virtual Machine
+**Step 4**: Connect to the Virtual Machine
 
 |image19|
 
-Step 5: Start the Virtual Machine
+**Step 5**: Start the Virtual Machine
 
 |image20|
 
-Step 6: Login into Virtual Machine
+**Step 6**: Login into Virtual Machine
 
 ::
 
@@ -439,7 +439,7 @@ Follow the steps to go through the boot up process. You can type “help”
 at any time to review the steps. Type “?” to view all available
 commands. For each command, type “?” to view syntax and parameters.
 
-Step 1: Setup Interface Address
+**Step 1**: Setup Interface Address
 -------------------------------
 
 CloudN works by dividing the subnet where CloudN is deployed into
@@ -451,7 +451,7 @@ There are two ways to give CloudN its IP adddress: auto-generate by
 CloudN itself or statically assign one.
 
 Statically assign CloudN IP address
-------------------------------------
+***********************************
 
 You can statically assign an IP address to CloudN. Choose this approach
 if you use CloudN to connect to an existing VPC. In the use case where
@@ -472,7 +472,7 @@ download the latest Aviatrix software.
 |image42|
 
 Proxy Configuration
---------------------
+**********************
 
 If there is proxy server for Internet access, you must setup proxy
 configuration on CloudN to pass traffic to proxy correctly. Following is
@@ -498,7 +498,7 @@ Note after proxy configuration is saved, CloudN VM will reboot to have
 the proxy take effect.
 
 Auto-generate CloudN interface IP address
------------------------------------------
+*****************************************
 
 All you need to do here is to provide information related to the subnet
 where CloudN is deployed. CloudN scans the subnet and find an IP address
