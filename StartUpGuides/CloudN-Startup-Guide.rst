@@ -20,10 +20,16 @@ CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway,
 Download the Image
 ===================
 
-CloudN comes with two types of images, OVF and VHD, to support VMware
-hypervisor and Microsoft Hyper-V.
+CloudN comes with OVF, VHD and KVM images, to support VMware
+hypervisor, Microsoft Hyper-V and KVM.
 
-vmware OVF image can be downloaded from `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
+* vmware OVF image can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
+
+
+* KVM image can be downloaded from `KVM image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-kvm-050217.tar.gz>`_
+
+
+* Hyper-V VHD image can be downloaded from `VHD image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-vhd-090216.zip>`_
 
 
 Pre-Installation Check List
