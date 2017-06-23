@@ -48,6 +48,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/CreateGCloudAccount
    HowTos/AdminUsers_DuoAuth
    HowTos/CompanionGateway
+   HowTos/reserve_onprem
    HowTos/Quick_Tour
 
 .. _Gateway:
