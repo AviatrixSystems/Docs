@@ -16,6 +16,7 @@ The VMs launched on a reserved subnet will treat instances in VPC/VNet as if the
 If you have an application that requires the on-prem resource and in the cloud resource to be on the same subnet/VLAN,
 this deployment will satisfy that.  
 
+.. Note:: This feature is available for R2.6 and later. 
 
 
 
