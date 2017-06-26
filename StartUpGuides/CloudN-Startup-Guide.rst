@@ -2,13 +2,13 @@
 
 
 =======================================
- Virtual Appliance ACX
+ Virtual Appliance ACX 
 =======================================
 
 
 
 
-Aviatrix Cloud Interconnect (ACX) is virtual appliance that is deployed in a on-premise datacenter or co-location facility.
+Aviatrix Cloud Interconnect (ACX), also known as CloudN is virtual appliance that is deployed in a on-premise datacenter or co-location facility.
 
 ACX supports REST API that allows third party software integration.
 REST API document can be found at ACX console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__

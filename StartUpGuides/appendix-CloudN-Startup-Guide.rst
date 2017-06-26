@@ -2,19 +2,19 @@
 
 
 ***********************************
-Test Drive CloudN on Your Laptop 
+Test Drive ACX on Your Laptop 
 ***********************************
 
-CloudN can be installed on your laptop and test drive it for evaluation purpose. 
+ACX can be installed on your laptop and test drive it for evaluation purpose. 
 It runs on vmware Workstation, vmware Player, Fusion and virtual box. 
 
-Download CloudN Images
+Download ACX Images
 #######################
 
-Follow `the instruction <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ to download CloudN image.
+Follow `the instruction <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ to download ACX image.
 
 
-Test Drive CloudN in NAT Mode 
+Test Drive ACX in NAT Mode 
 #################################
 
 One good configuration to test drive cloudN is to deploy it on your
@@ -22,22 +22,22 @@ laptop on a private subnet in NAT mode (In Hyper-V, the network adapters
 are configured as Internal Network Wire).
 
 As an example, if your NAT mode subnet is 192.168.10.0/24, you can
-create a maximum 2 VPCs from CloudN deployed on this subnet. Suppose the
-default gateway IP address is 192.168.10.2. You should configure CloudN to 
+create a maximum 2 VPCs from ACX deployed on this subnet. Suppose the
+default gateway IP address is 192.168.10.2. You should configure ACX to 
 take 192.168.10.3 as its IP address. 
 
-In addition CloudN reserves IP
+In addition ACX reserves IP
 address ranges from 192.168.10.4 to 192.168.10.7. (If you have other VMs
 running on this subnet, if their IP address fall in the same sub
-segment as CloudN, you can use one of these VMs as test VM.)
+segment as ACX, you can use one of these VMs as test VM.)
 
-Once you launch VPCs from this CloudN, the other VMs on the
+Once you launch VPCs from this ACX, the other VMs on the
 subnet should be able to run SSH, RDP, and SCP (file copy) to any
 instances in VPCs using the instance private IP address seamlessly,
 without any bastion station or landing VPC. Refer to How It Works
 section for more explanations.
 
-.. Note:: If you install CloudN on a NAT subnet, make sure both Ethernet interfaces are changed to NAT mode (By default, CloudN is pre-configured and shipped with both Network Adapters in Bridged mode). Right click on the CloudN VM, click Settings. Change both Network Adapters to NAT mode, as shown below for VMware Workstation:
+.. Note:: If you install ACX on a NAT subnet, make sure both Ethernet interfaces are changed to NAT mode (By default, ACX is pre-configured and shipped with both Network Adapters in Bridged mode). Right click on the ACX VM, click Settings. Change both Network Adapters to NAT mode, as shown below for VMware Workstation:
 
 |image23|
 
@@ -46,7 +46,7 @@ Test Drive on MAC with vmware Fusion
 
 After downloading the zip file and decompressing it, copy the folder to
 a location, where your Mac can access it. Perform the following steps to
-install CloudN.
+install ACX.
 
 **Step 1**: From the VMware Fusion menu bar, select File > Import.
 
@@ -67,7 +67,7 @@ As text box and indicate where to save it.
 |image27|
 
 **Step 5**: After the import is complete, the virtual machine appears in the
-virtual machine library. Click on “Start Up” to start the CloudN virtual
+virtual machine library. Click on “Start Up” to start the ACX virtual
 machine.
 
 |image28|
@@ -98,7 +98,7 @@ Adapter, change both Network Adapter to NAT mode as shown below.
 Test Drive on VirtualBox
 ------------------------
 
-CloudN works on VirtualBox only in a bridged mode.
+ACX works on VirtualBox only in a bridged mode.
 
 After downloading and extracting the zip file, copy the folder to a
 location where you can import the virtual machine. For installation,
@@ -108,7 +108,7 @@ follow the steps below.
 
 |image33|
 
-**Step 2**: Navigate to the CloudN ovf file and click “Next”
+**Step 2**: Navigate to the ACX ovf file and click “Next”
 
 |image34|
 
@@ -117,7 +117,7 @@ process and wait for it to finish
 
 |image35|
 
-**Step 4**: CloudN virtual machine installation is finished and it can be
+**Step 4**: ACX virtual machine installation is finished and it can be
 launched by selecting it and clicking on the “Start” button.
 
 |image36|
@@ -125,12 +125,12 @@ launched by selecting it and clicking on the “Start” button.
 Configure Network Interfaces
 -----------------------------
 
-CloudN network interfaces should be configured in bridge mode as the NAT
+ACX network interfaces should be configured in bridge mode as the NAT
 mode makes it impossible for guests to communicate with each other. In
 addition to this, both interfaces should be allowed to be in promiscuous
 mode. Execute the steps below to satisfy these requirements.
 
-Step 1: Select the CloudN VM and click on “Settings”
+Step 1: Select the ACX VM and click on “Settings”
 
 |image37|
 
@@ -148,14 +148,14 @@ Repeat this procedure for “Adapter 2” as well.
 Booting Up and Initial Configuration
 #####################################
 
-CloudN supports browser based GUI Interface and REST APIs.
+ACX supports browser based GUI Interface and REST APIs.
 
 After the virtual machine boots up, you must first login into the
 machine while still in hypervisor console.
 
-**CloudN Login User Name: admin**
+**ACX Login User Name: admin**
 
-**CloudN Login Password: Aviatrix123#**
+**ACX Login Password: Aviatrix123#**
 
 After this initial login, if you see the screen below:
 
@@ -172,17 +172,17 @@ commands. For each command, type “?” to view syntax and parameters.
 Step 1: Setup Interface Address
 -------------------------------
 
-CloudN works by dividing the subnet where CloudN is deployed into
+ACX works by dividing the subnet where ACX is deployed into
 sub-segment where each sub-segment becomes the VPC/VNet CIDR in the
-cloud. We recommend you deploy CloudN in its own subnet to maximize the
+cloud. We recommend you deploy ACX in its own subnet to maximize the
 number of VPC/VNets you can create.
 
-Statically assign CloudN IP address
+Statically assign ACX IP address
 ------------------------------------
 
-You can statically assign an IP address to CloudN. Choose this approach
-if you use CloudN to connect to an existing VPC. In the use case where
-CloudN does not create a VPC and build encrypted tunnel, CloudN does not
+You can statically assign an IP address to ACX. Choose this approach
+if you use ACX to connect to an existing VPC. In the use case where
+ACX does not create a VPC and build encrypted tunnel, ACX does not
 need to be deployed on a separate subnet.
 
 Command: setup\_interface\_static\_address
@@ -192,7 +192,7 @@ Syntax: setup\_interface\_static\_address [static\_ip\_address]
 [primary\_dns\_server\_ip\_address]
 [secondary\_dns\_server\_ip\_address] [proxy {true\|false}]
 
-Below is an example where there is no proxy server. In such case, CloudN
+Below is an example where there is no proxy server. In such case, ACX
 will configure the network interfaces, test Internet connectivity and
 download the latest Aviatrix software.
 
@@ -202,7 +202,7 @@ Proxy Configuration
 --------------------
 
 If there is proxy server for Internet access, you must setup proxy
-configuration on CloudN to pass traffic to proxy correctly. Following is
+configuration on ACX to pass traffic to proxy correctly. Following is
 the command
 
 command: setup\_network\_proxy
@@ -221,7 +221,7 @@ Example:
   setup\_network\_proxy save --http\_proxy http://10.30.0.3:3128
   --https\_proxy http://10.30.0.3:3128
 
-Note after proxy configuration is saved, CloudN VM will reboot to have
+Note after proxy configuration is saved, ACX VM will reboot to have
 the proxy take effect.
 
 
@@ -230,14 +230,14 @@ Step 2: Display Interface Address
 
 |image45|
 
-Now you can use the cloudN IP address as URL to access CloudN Manager
-that manages CloudN.
+Now you can use the cloudN IP address as URL to access ACX Manager
+that manages ACX.
 
 Note: The hypervisor console has only limited CLI for initial booting up
 purposes. Once Aviatrix software is downloaded, full commands are
 installed.
 
-User should use the GUI to access CloudN Console.
+User should use the GUI to access ACX Console.
 
 Troubleshooting
 ---------------
@@ -255,14 +255,14 @@ After connectivity issue is resolved, use command
 “download\_cloudn\_software” to continue installation and finish. Or you
 can again type in command setup\_interface\_address.
 
-Use a Browser to Access CloudN
+Use a Browser to Access ACX
 -------------------------------
 
-CloudN has a built in CloudN Console that let you run provisioning from
+ACX has a built in ACX Console that let you run provisioning from
 a browser.
 
 Once IP addressed setup is complete, you can use any browser, type
-https://<IP address of CloudN> and see a Login page.
+https://<IP address of ACX> and see a Login page.
 
 |image46|
 
