@@ -11,7 +11,7 @@
 Introduction
 ============
 
-The APIs for Aviatrix CloudN can be used for the tasks
+The APIs for Aviatrix can be used for the tasks
 that are done through the Web UI.
 
 The following is an example to utilize the APIs to create a VPC/VNet
@@ -19,7 +19,7 @@ under Datacenter Extension.
 
 Datacenter Extension capability manages your cloud address range. It
 creates VPC/VNet, subnets, routing tables and create a IPSec tunnel to
-the virtual appliance (Aviatrix CloudN), so that on-premise VMs and
+the virtual appliance (ACX), so that on-premise VMs and
 servers can communicate with instances in created VPC with packet
 encryption and private IP addresses.
 
@@ -59,9 +59,9 @@ console.
 
      ::
 
-      https://IP_Address_of_CloudN/v1/api?action=login&username=admin&password=password
+      https://IP_Address_of_ACX/v1/api?action=login&username=admin&password=password
 
-   Replace IP_Address_of_CloudN with your own IP address of CloudN.
+   Replace IP_Address_of_ACX with your own IP address of ACX.
    Replace the values of username and password with the credentials you use to log in the Web console.
 
    It should return a CID upon successful login.
@@ -82,7 +82,7 @@ Note the value of CID for the API calls hereafter.
 
    ::
 
-    https://IP_Address_of_CloudN/v1/api?
+    https://IP_Address_of_ACX/v1/api?
     CID=584b4b57a42f2&action=setup_customer_id&customer_id=carmelodev-1234567898.64
 
 Replace the value of CID with the one in step 1.
@@ -112,7 +112,7 @@ Make sure the license is successfully entered and it returns the license informa
 
 3. Set up the maximum number of VPC/VNet ::
 
-      https://IP_Address_of_CloudN/v1/api?CID=584b4b57a42f2&action=setup_max_vpc_containers&vpc_num=4
+      https://IP_Address_of_ACX/v1/api?CID=584b4b57a42f2&action=setup_max_vpc_containers&vpc_num=4
 
 |   Replace the value of CID with the one in step 1.
 |   Replace the value of vpc_num with the number you desire to set up.
@@ -133,7 +133,7 @@ Make sure the license is successfully entered and it returns the license informa
 
 4. Create a User Account
 
-   Before calling the API to set up an account that enables CloudN to access the cloud, gather the account information from the cloud
+   Before calling the API to set up an account that enables ACX to access the cloud, gather the account information from the cloud
    provider.
 
    |   AWS ( cloud_type = 1 ): Account Number, Access key and Secret Key
