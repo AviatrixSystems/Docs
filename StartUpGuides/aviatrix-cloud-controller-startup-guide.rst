@@ -1,13 +1,6 @@
-
-
-
 =============================================
 AWS
 =============================================
-
-
-
-
 
 The Aviatrix cloud network solution consists of two components, controller and
 gateway, both are AWS instances. Gateways are launched from the controller browser console. This
@@ -32,10 +25,10 @@ setup custom security policy.
 Subscribe to Aviatrix on AWS Marketplace
 =========================================
 
-You must subscribe to one of the Aviatrix AMIs on AWS marketplace prior to launch the controller. 
+You must subscribe to one of the Aviatrix AMIs on AWS marketplace prior to launch the controller.
 
-Search "aviatrix" on AWS marketplace and accept the terms and conditions to use the software. 
-After subscription, follow the instructions in the next sections to launch the controller. 
+Search "aviatrix" on AWS marketplace and accept the terms and conditions to use the software.
+After subscription, follow the instructions in the next sections to launch the controller.
 
 
 Launch Aviatrix Controller via CloudFormation
@@ -77,8 +70,8 @@ Once you are at AWS EC2 console, follow the steps below:
 2.  Select the VPC where the controller will be launched.
 
 3.  Subnet. Make sure the subnet you select is a public subnet with IGW
-    as its default gateway, otherwise the controller is not accessible
-    as it does not have public IP address.
+    as its default gateway, otherwise the controller will not be accessible
+    as it won't have a public IP address.
 
 4.  Enable IAM role by selecting “aviatrix-role-ec2” you created
     earlier, as shown below
@@ -102,7 +95,7 @@ Once you are at AWS EC2 console, follow the steps below:
 
     |image4|
 
-    At the SignIn page, log in with username 'admin'. The default
+    At the Sign In page, log in with username 'admin'. The default
     password is the instance’s Private IP address. You can retrieve the
     Private IP address from the AWS console instance panel, as shown
     below.
