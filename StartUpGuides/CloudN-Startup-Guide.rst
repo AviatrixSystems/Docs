@@ -2,25 +2,25 @@
 
 
 =======================================
- Virtual Appliance ACX 
+ Virtual Appliance CloudN 
 =======================================
 
 
 
 
-Aviatrix Cloud Interconnect (ACX), also known as CloudN is virtual appliance that is deployed in a on-premise datacenter or co-location facility.
+Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or co-location facility.
 
-ACX supports REST API that allows third party software integration.
-REST API document can be found at ACX console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
+CloudN supports REST API that allows third party software integration.
+REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
-To learn how ACX Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+To learn how CloudN Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
-ACX can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
+CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
 
 Download the Image
 ===================
 
-ACX comes with OVF, VHD and KVM images, to support VMware
+CloudN comes with OVF, VHD and KVM images, to support VMware
 hypervisor, Microsoft Hyper-V and KVM.
 
 * vmware OVF image can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
@@ -41,7 +41,7 @@ AWS EC2 Account
 If you intend to launch VPC in AWS, you need to have an AWS account.
 
 You need to have an AWS account in order to use most of the commands on
-ACX. Note that ACX support multiple ACX cloud accounts with
+CloudN. Note that CloudN support multiple CloudN cloud accounts with
 each one associated with a different AWS account or IAM account, but
 there needs to be at least one to start with.
 
@@ -75,7 +75,7 @@ IAM User
 
 If you are an IAM user, make sure you have full access to EC2, VPC, S3,
 SQS, SNS and CloudTrail service. Refer to this link on how to setup an
-IAM access policy required by ACX. During the onboarding process, we
+IAM access policy required by CloudN. During the onboarding process, we
 will guide you through on setting up this IAM customer policy.
 
 Microsoft Azure Account
@@ -87,17 +87,17 @@ Azure account. If not, you can skip this step.
 Deployment Positions
 --------------------
 
-You need to identify or create a subnet where ACX is deployed. ACX
-is deployed on a private subnet anywhere on your network. ACX does
+You need to identify or create a subnet where CloudN is deployed. CloudN
+is deployed on a private subnet anywhere on your network. CloudN does
 not take a public IP address. Make sure this subnet is reachable by
 other subnets where traffic is originated from.
 
-ACX should be deployed on a subnet (or VLAN) where ACX is the only
-virtual machine on the VLAN. ACX VM’s IP address is determined by
-ACX software during installation time.
+CloudN should be deployed on a subnet (or VLAN) where CloudN is the only
+virtual machine on the VLAN. CloudN VM’s IP address is determined by
+CloudN software during installation time.
 
 The default gateway for the VLAN should either have the lowest address
-or highest address for the VLAN. For example, if the VLAN where ACX
+or highest address for the VLAN. For example, if the VLAN where CloudN
 is deployed is 10.10.0.0/16, the default gateway IP address for this
 VLAN should be either 10.10.0.1 or 10.10.255.254.
 
@@ -106,17 +106,17 @@ creation of the desired number of VPCs. For example, a network with /16
 prefix can support 15 VPC/VNets with each VPC/VNet contains /24 subnet
 in AWS or Azure.
 
-ACX allocates 4 bits or 16 subnets in each VPC. By default, two
+CloudN allocates 4 bits or 16 subnets in each VPC. By default, two
 subnets, one private and one public subnets are created in each
 available zone. A user can customize and create additional subnets.
 
 Deploy on Subnets larger than /24
 ----------------------------------
 
-If you deploy a ACX in a /23 subnet, only two VPC/VNet can be
+If you deploy a CloudN in a /23 subnet, only two VPC/VNet can be
 created. This VPC/VNet can support 8 subnets.
 
-It is recommended that you deploy ACX in a subnet size between /16
+It is recommended that you deploy CloudN in a subnet size between /16
 and /22. Below is the table that describes the subnet size and the
 maximum number of VPCs.
 
@@ -125,7 +125,7 @@ maximum number of VPCs.
 Deploy on a Class C Subnet
 --------------------------
 
-Deploying ACX in a /24 subnet is a special case. It is handled
+Deploying CloudN in a /24 subnet is a special case. It is handled
 differently from any other size of subnets.
 
 In this case, there is only one public subnet and 2 private subnets with
@@ -134,9 +134,9 @@ each in a different availability zone created for a VPC Container. Up to
 covered in subnet creation, applications that require subnets in each AZ
 would not work. Deploying on /24 subnet is best used for POC projects.
 
-If you have local machines on the subnet where ACX is deployed, you
+If you have local machines on the subnet where CloudN is deployed, you
 need to make sure all local machines including the default gateway and
-ACX are in one sub segmented area, as illustrated below:
+CloudN are in one sub segmented area, as illustrated below:
 
 |image7|
 
@@ -147,50 +147,50 @@ result in duplicate IP addresses.
 
 Each VPC has 1 public subnet and 2 private subnets.
 
-Deploy ACX as a virtual router
+Deploy CloudN as a virtual router
 ------------------------------------
 
-You can deploy ACX as a virtual router and in a remote site to allow the remote site network
+You can deploy CloudN as a virtual router and in a remote site to allow the remote site network
 to connect securely and directly to a VPC created by the main datacenter
 deployed cloudN, as shown below.
 
 |image8|
 
-In this deployment, ACX functions as a router. It is not required
-that ACX is deployed in large subnet segment, it is not even required
-that ACX is deployed in a subnet of its own. What is required is that
-the default gateway of the subnet where ACX is deployed has a static
+In this deployment, CloudN functions as a router. It is not required
+that CloudN is deployed in large subnet segment, it is not even required
+that CloudN is deployed in a subnet of its own. What is required is that
+the default gateway of the subnet where CloudN is deployed has a static
 route configured that routes traffic destined to the VPC CIDR where this
-remote site wish to connect to the ACX.
+remote site wish to connect to the CloudN.
 
 Network Interfaces
 ------------------
 
-ACX local gateway is installed as a VM host with two network
+CloudN local gateway is installed as a VM host with two network
 interfaces. Make sure the two interfaces are on the same VLAN or subnet.
 
-If ACX runs on a VMware Workstation, VMware Fusion or VMware Player,
+If CloudN runs on a VMware Workstation, VMware Fusion or VMware Player,
 you do not need to configure the network interfaces as they are
 pre-configured as part of OVF image, unless you are installing them in
 NAT mode subnet (in which case make sure both Network Adapters are in
 NAT mode)
 
-If ACX runs on VMware ESXi host, follow the instruction in the next
+If CloudN runs on VMware ESXi host, follow the instruction in the next
 chapter to enable promiscuous mode and forged transmit mode for both
 interfaces.
 
-If ACX runs on Microsoft Hyper-V, you do not need to configure the
+If CloudN runs on Microsoft Hyper-V, you do not need to configure the
 network interfaces as they are pre-configured as part of VHD image. Make
 sure that “Enable MAC Address Spoofing” is enabled (explained in the
 installation section)
 
-If ACX runs on VirtualBox, both network interfaces need to be in
+If CloudN runs on VirtualBox, both network interfaces need to be in
 bridge mode. Instructions to do this are available in section 5.7.2
 
 Internet Connectivity
 ---------------------
 
-ACX needs to have Internet connectivity to perform most its
+CloudN needs to have Internet connectivity to perform most its
 functions.
 
 Proxy Settings
@@ -201,12 +201,12 @@ administrator to obtain proxy server IP address, proxy port, and if
 there needs to have username and password for authenticating by the
 proxy.
 
-Binding to ACX Private IP address to a Single NAT Public IP Address
+Binding to CloudN Private IP address to a Single NAT Public IP Address
 ----------------------------------------------------------------------
 
 If your organization has more than one public IP addresses as the NAT
-address, you must bind ACX’s private IP address to one of the public
-IP addresses. That is, ACX will always be translated to one static
+address, you must bind CloudN’s private IP address to one of the public
+IP addresses. That is, CloudN will always be translated to one static
 public IP address for its outbound traffic.
 
 For example, on Cisco ASA, you can configure the following to bind a
@@ -230,7 +230,7 @@ static public IP (209.165.201.10)
 Outbound TCP/UDP Ports
 ----------------------
 
-ACX requires the following TCP/UDP outbound ports open.
+CloudN requires the following TCP/UDP outbound ports open.
 
 -  TCP port 443. 
 
@@ -239,33 +239,33 @@ ACX requires the following TCP/UDP outbound ports open.
 If you choose to reduce the scope of above ports, you can limit them
 to only AWS owned public IP address blocks. All AWS public IP addresses can be found in `this link. <https://ip-ranges.amazonaws.com/ip-ranges.json>`__
 
-Since ACX operates in a client-server mode where the ACX local
+Since CloudN operates in a client-server mode where the CloudN local
 gateway is the client, there is no restriction or requirement to open
 any known TCP/UDP port for inbound traffic.
 
 Time Service
 ------------
 
-ACX uses extensively Amazon Web Service (AWS) APIs and Azure REST
-APIs. These APIs checks timestamp for each API call. ACX is
+CloudN uses extensively Amazon Web Service (AWS) APIs and Azure REST
+APIs. These APIs checks timestamp for each API call. CloudN is
 pre-configured to synchronize its time with Host (please double check on
 the VM advanced option to make sure this is the case.) To ensure correct
-operation of ACX, it is important that the Host where ACX is
+operation of CloudN, it is important that the Host where CloudN is
 installed has correct time.
 
 Most likely enterprise data center syncs VM time to host. However if
-your environment requires you to sync time to an NTP server, ACX
+your environment requires you to sync time to an NTP server, CloudN
 allows you to accomplish that. You can configure this at Settings ->
 Time Service.
 
 Performance Consideration
 -------------------------
 
-ACX is a virtual appliance that runs on a hypervisor. The supported
+CloudN is a virtual appliance that runs on a hypervisor. The supported
 hypervisors are VMware hypervisor products, Microsoft Enterprise 8.1
 Hyper-V and Oracle VirtualBox.
 
-By default ACX is packaged with 2 vCPU, 4GB of memory and 20GB of hard disk (SCSI storage or hard drive) as part of
+By default CloudN is packaged with 2 vCPU, 4GB of memory and 20GB of hard disk (SCSI storage or hard drive) as part of
 its image make up. You can always reconfigure the VM to take more CPU
 and memory.
 
@@ -275,19 +275,19 @@ processors Westmere, Sandybridge, Ivrybridge and Haswell all have AES-NI
 enabled.
 
 In test environments, TCP throughput (using iperf tool) in the vicinity
-of 880Mbps has been observed with ACX running on a VMware ESXi host
+of 880Mbps has been observed with CloudN running on a VMware ESXi host
 with an Intel Xeon CPU (E3-1220L V2 @ 2.30GHz).
 
 Installation
 ============
 
-ACX OVF image can be imported and installed on a VMware ESXi 5.0/5.1
+CloudN OVF image can be imported and installed on a VMware ESXi 5.0/5.1
 host, VMware Workstation, Fusion and VMware Player. Once you have signed
 up as a Aviatrix customer, follow the instructions to download the zip
-file on your PC. ACX OVF image usually takes the name
+file on your PC. CloudN OVF image usually takes the name
 “cloudN-ovf-date” where date is the time when the image was built.
 
-ACX is recommended to run on ESXi 5.0 or later version. However you
+CloudN is recommended to run on ESXi 5.0 or later version. However you
 can install the software on VMware Player, VMware Workstation and Fusion
 for testing and evaluation purposes.
 
@@ -314,13 +314,13 @@ for more detailed instructions.
 Configure Network Adapter Properties
 -------------------------------------
 
-ACX has two network interfaces, both of them need to be on the same
+CloudN has two network interfaces, both of them need to be on the same
 VLAN.
 
 After the installation is finished, follow these steps to enable
 promiscuous mode on the network adapter (below is an example):
 
-**Step 1**. Select (Highlight) ESXi host tab where ACX is hosted (for
+**Step 1**. Select (Highlight) ESXi host tab where CloudN is hosted (for
 example, 192.168.1.34) and click on the Configuration tab
 
 |image11|
@@ -329,7 +329,7 @@ example, 192.168.1.34) and click on the Configuration tab
 
 |image12|
 
-**Step 3**. Select VM Network adapter for ACX and click edit
+**Step 3**. Select VM Network adapter for CloudN and click edit
 
 |image13|
 
@@ -343,25 +343,25 @@ group to “Accepted”.
 For more information on configuring security policies on the network
 switch, please refer to the instructions in `this link <http://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.networking.doc%2FGUID-74E2059A-CC5E-4B06-81B5-3881C80E46CE.html>`_.
 
-For additional ACX on ESXi configuration illustrations, check out
+For additional CloudN on ESXi configuration illustrations, check out
 `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
 Special Notes
 ----------------
 
-ACX does not support NICteaming in active-active mode. When
+CloudN does not support NICteaming in active-active mode. When
 NICteaming is configured, only active-standby mode is supported, as
 shown below where the ESXi host has 4 Ethernet ports and VLAN220 is the
-port group ACX Ethernet ports belong to.
+port group CloudN Ethernet ports belong to.
 
 |image15|
 
-Note that ACX currently does not support vMotion.
+Note that CloudN currently does not support vMotion.
 
 Installation on Windows 8.1 Enterprise Edition
 ----------------------------------------------
 
-ACX VHD image can be deployed on Windows 8.1 Enterprise Edition, or
+CloudN VHD image can be deployed on Windows 8.1 Enterprise Edition, or
 Windows 2012 Server R2 Hyper-V.
 
 After downloading the zip file and decompressing it, copy the folder to
@@ -399,7 +399,7 @@ follow guide below.
 Enable MAC Address Spoofing
 ----------------------------
 
-Both Network Adapters associated with ACX VM should have “Enable MAC
+Both Network Adapters associated with CloudN VM should have “Enable MAC
 Address Spoofing” turn on. This is accomplished by expand Network
 Adapter, select Advanced Feature and check the box “Check MAC Address
 Spoofing”, for each Network Adapter.
@@ -418,14 +418,14 @@ NIC teaming is only supported for active standby mode.
 Booting Up and Initial Configuration
 ====================================
 
-ACX supports browser based GUI Interface and REST APIs.
+CloudN supports browser based GUI Interface and REST APIs.
 
 After the virtual machine boots up, you must first login into the
 machine while still in hypervisor console.
 
-**ACX Login User Name: admin**
+**CloudN Login User Name: admin**
 
-**ACX Login Password: Aviatrix123#**
+**CloudN Login Password: Aviatrix123#**
 
 After this initial login, if you see the screen the screen below.
 
@@ -442,20 +442,20 @@ commands. For each command, type “?” to view syntax and parameters.
 **Step 1**: Setup Interface Address
 -------------------------------
 
-ACX works by dividing the subnet where ACX is deployed into
+CloudN works by dividing the subnet where CloudN is deployed into
 sub-segment where each sub-segment becomes the VPC/VNet CIDR in the
-cloud. We recommend you deploy ACX in its own subnet to maximize the
+cloud. We recommend you deploy CloudN in its own subnet to maximize the
 number of VPC/VNets you can create.
 
-There are two ways to give ACX its IP adddress: auto-generate by
-ACX itself or statically assign one.
+There are two ways to give CloudN its IP adddress: auto-generate by
+CloudN itself or statically assign one.
 
-Statically assign ACX IP address
+Statically assign CloudN IP address
 ***********************************
 
-You can statically assign an IP address to ACX. Choose this approach
-if you use ACX to connect to an existing VPC. In the use case where
-ACX does not create a VPC and build encrypted tunnel, ACX does not
+You can statically assign an IP address to CloudN. Choose this approach
+if you use CloudN to connect to an existing VPC. In the use case where
+CloudN does not create a VPC and build encrypted tunnel, CloudN does not
 need to be deployed on a separate subnet.
 
 Command: setup\_interface\_static\_address
@@ -465,7 +465,7 @@ Syntax: setup\_interface\_static\_address [static\_ip\_address]
 [primary\_dns\_server\_ip\_address]
 [secondary\_dns\_server\_ip\_address] [proxy {true\|false}]
 
-Below is an example where there is no proxy server. In such case, ACX
+Below is an example where there is no proxy server. In such case, CloudN
 will configure the network interfaces, test Internet connectivity and
 download the latest Aviatrix software.
 
@@ -475,7 +475,7 @@ Proxy Configuration
 **********************
 
 If there is proxy server for Internet access, you must setup proxy
-configuration on ACX to pass traffic to proxy correctly. Following is
+configuration on CloudN to pass traffic to proxy correctly. Following is
 the command
 
 command: setup\_network\_proxy
@@ -494,17 +494,17 @@ Example:
   setup\_network\_proxy save --http\_proxy http://10.30.0.3:3128
   --https\_proxy http://10.30.0.3:3128
 
-Note after proxy configuration is saved, ACX VM will reboot to have
+Note after proxy configuration is saved, CloudN VM will reboot to have
 the proxy take effect.
 
-Auto-generate ACX interface IP address
+Auto-generate CloudN interface IP address
 *****************************************
 
 All you need to do here is to provide information related to the subnet
-where ACX is deployed. ACX scans the subnet and find an IP address
+where CloudN is deployed. CloudN scans the subnet and find an IP address
 that is close to the default gateway (for example, if the default
-gateway is 10.10.0.1, ACX will try 10.10.0.2) and is available,
-ACX will then assin itself this IP addres and ACX software will be
+gateway is 10.10.0.1, CloudN will try 10.10.0.2) and is available,
+CloudN will then assin itself this IP addres and CloudN software will be
 downloaded if configuration is successfully.
 
 Command setup\_interface\_address:
@@ -515,12 +515,12 @@ Syntax: setup\_interface\_address [net\_mask]
 
 |image43|
 
-ACX will identify an unused IP address in an iterative fashion and
+CloudN will identify an unused IP address in an iterative fashion and
 assign it to itself. As seen in the above example, the IP address
 generated is 10.88.0.3.
 
-Once the IP address is generated, ACX will start to download the
-latest ACX software.
+Once the IP address is generated, CloudN will start to download the
+latest CloudN software.
 
 …….. snippet…….
 
@@ -533,14 +533,14 @@ Step 2: Display Interface Address
 
 |image45|
 
-Now you can use the cloudN IP address as URL to access ACX Manager
-that manages ACX.
+Now you can use the cloudN IP address as URL to access CloudN Manager
+that manages CloudN.
 
 Note: The hypervisor console has only limited CLI for initial booting up
 purposes. Once Aviatrix software is downloaded, full commands are
 installed.
 
-User should use the GUI to access ACX Console.
+User should use the GUI to access CloudN Console.
 
 Troubleshooting
 ---------------
@@ -558,10 +558,10 @@ After connectivity issue is resolved, use command
 “download\_cloudn\_software” to continue installation and finish. Or you
 can again type in command setup\_interface\_address.
 
-Use a Browser to Access ACX
+Use a Browser to Access CloudN
 ------------------------------
 
-ACX has a built in ACX Console that let you run provisioning from
+CloudN has a built in CloudN Console that let you run provisioning from
 a browser.
 
 Once IP addressed setup is complete, you can use any browser, type
