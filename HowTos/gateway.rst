@@ -20,7 +20,8 @@ When selecting Gateway Size, following the guideline of IPSEC performance based 
 
 -  t2 series throughput is not guaranteed, it can burst up to 130mbps.
 -  m3 seriese are about 300 - 500mbps.
--  c3.2xlarge is about 1Gbps.
+-  m4.xlarge or c4.xlarge is around 500mbps.
+-  c3.2xlarge or m4.2xlarge is about 1Gbps.
 -  c3.4xlarge is about 1.2Gbps. 
 
 if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
