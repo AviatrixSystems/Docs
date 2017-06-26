@@ -23,13 +23,13 @@ Download the Image
 CloudN comes with OVF, VHD and KVM images, to support VMware
 hypervisor, Microsoft Hyper-V and KVM.
 
-* vmware OVF image can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
+* Latest vmware OVF image is CloudN-ovf-051517, it can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
 
 
-* KVM image can be downloaded from `KVM image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-kvm-050217.tar.gz>`_
+* Latest KVM image is CloudN-kvm-050217, it can be downloaded from `KVM image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-kvm-050217.tar.gz>`_
 
 
-* Hyper-V VHD image can be downloaded from `VHD image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-vhd-090216.zip>`_
+* Hyper-V VHD image is CloudN-vhd-090216, it can be downloaded from `VHD image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-vhd-090216.zip>`_
 
 
 Pre-Installation Check List
