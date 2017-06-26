@@ -54,18 +54,14 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    a. Go to Gateway menu and create. Make sure:
 
-   b. At Gateway Name field, give it a distinct and convenient name. For
+   #. At Gateway Name field, give it a distinct and convenient name. For
       example, mgmt-vpn-1
 
-   c. Enable NAT is selected.
+   #. VPN Access is selected.
 
-   d. VPN Access is selected.
+   #. Use the default VPN CIDR Block. 
 
-   e. The VPN CIDR Block must be a subnet that is outside of all your
-      current VPC CIDR range and outside your laptop or device subnet
-      range. In the example above, you may enter 192.168.2.0/24.
-
-   f. Split Tunnel Mode is selected.
+   #. Split Tunnel Mode is selected.
 
     |      i.  In the Additional CIDRs field under Split Tunnel, enter otherVPCs/VNet or any network CIDRs you wish to reach beyond the
                VPC you are connecting to (in this case 172.31.0.0/16 is the
@@ -155,11 +151,8 @@ VPC ID and its region for the VPC ID field and region in each step.
    able to reach all instances (in all VPCs) to which he/she has access
    permission.
 
-6. For support, send email to support@aviatrix.com.
+6. Done.
 
-7. For feature request, click Make a wish at the bottom of each page.
-
-8. Enjoy!
 
 Multiple VPCs in multi regions, split tunnel
 ============================================
@@ -192,18 +185,14 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    a. Go to Gateway menu and click create.
 
-   b. At Gateway Name field, give it a distinct and convenient name. For
+   #. At Gateway Name field, give it a distinct and convenient name. For
       example, mgmt-vpn-1
 
-   c. Enable NAT is selected
+   #. VPN Access is selected.
 
-   d. VPN Access is selected.
+   #. Use default VPN CIDR Block. 
 
-   e. The VPN CIDR Block must be a subnet that is outside your current
-      VPC CIDR range and your laptop or device subnet range. In the
-      example above, you may enter 192.168.2.0/24.
-
-   f. Split Tunnel Mode is selected.
+   #. Split Tunnel Mode is selected.
 
       |      i.  For the Additional CIDRs field under Split Tunnel, enter other
                 VPC/VNet or any network CIDRs you wish to reach beyond the VPC
@@ -226,9 +215,9 @@ VPC ID and its region for the VPC ID field and region in each step.
                 DNS server of the VPC. In this case, you should enter
                 172.31.0.2
 
-   g. Enable AWS ELB is selected.
+   #. Enable AWS ELB is selected.
 
-   h. Save Template is selected. This Template saves you from entering
+   #. Save Template is selected. This Template saves you from entering
       repeated fields if you wish to create more gateways with the same
       configuration.
 
@@ -280,11 +269,7 @@ VPC ID and its region for the VPC ID field and region in each step.
       added to the database, an email with .ovpn file or .onc (for
       Chromebooks) will be sent to the user with detailed instructions.
 
-7. For support, send email to support@aviatrix.com.
-
-8. For feature request, click Make a wish at the bottom of each page.
-
-9. Enjoy!
+7. Done
 
 Multiple VPCs in multi regions, full tunnel, your own firewall
 ==============================================================
@@ -316,22 +301,18 @@ VPC ID and its region for the VPC ID field and region in each step.
 
     a. Go to Gateway menu and click create.
 
-    b. At Gateway Name field, give it a distinct and convenient name.
+    #. At Gateway Name field, give it a distinct and convenient name.
        For example, mgmt-vpn-1
 
-    c. Enable NAT is not selected.
-
-    d. VPN Access is selected.
-
-    e. The VPN CIDR Block must be a subnet that is outside your current
+    #. The VPN CIDR Block must be a subnet that is outside your current
        VPC CIDR range and your laptop or device subnet range. In the
        example above, you may enter 192.168.2.0/24.
 
-    f. Full Tunnel Mode is selected.
+    #. Full Tunnel Mode is selected.
 
-    g. Enable AWS ELB is selected.
+    #. Enable AWS ELB is selected.
 
-    h. Enable Policy Based Routing (PBR) is selected.
+    #. Enable Policy Based Routing (PBR) is selected.
 
       |       i.  Note PBR Subnet must be a subnet that is in the same AZ as
                  the primary subnet (Public Subnet where the gateway is
@@ -393,11 +374,7 @@ VPC ID and its region for the VPC ID field and region in each step.
        added to the database, a email with .ovpn file or .onc (for
        Chromebooks) will be sent to the user with detailed instructions.
 
-8.  For support, send email to support@aviatrix.com.
-
-9.  For feature request, click Make a wish at the bottom of each page.
-
-10. Enjoy!
+8. Done
 
 .. |image0| image:: Cloud_Networking_Ref_Des_media/image1.png
    :width: 3.81875in
