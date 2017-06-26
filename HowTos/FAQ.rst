@@ -23,61 +23,84 @@ where a user access any instance/VM with a private IP address directly.
 No more bastion stations and jump hosts, the solution gives user the
 seamless experience that they enjoy when using the on-prem network.
 
-In addition, Aviatrix Cloud Gateway supports encryption over AWS Direct
+Aviatrix Cloud Gateway supports encryption over AWS Direct
 Connect and Azure Express Route.
+
+In additioin, the product interoperates with any third party IPSEC capable devices, including AWS VGW and Aviatrix's own on-prem virtual appliance CloudN.
 
 Architecturally, Aviatrix solution is a centrally managed, loosely
 coupled and globally deployed platform built for the cloud from the
 ground up.
 
-**Q2: What are the key benefits?**
+**Q2: What are the key features?**
+
+-  Manage all your cloud networking requirements from a central controller. 
+
+-  Peering Features
+
+        -  point and click encrypted peering applied to multi VPCs, multi regions and
+           multi clouds (AWS, Azure and GCloud) enables you to build a partial or full
+           mesh network.
+
+        -  Transitive peering enables you to build a hub and spoke network with ease.
+
+        -  Cluster peering enables you to build encrypted tunnel with a performance
+           that scales to 10Gbps.
+
+-  Site2Cloud Features
+
+        -  Secure connection to remote branch sites and interoperability with
+           legacy router/firewall device.
+
+        -  Encryption over AWS Direct Connect and Azure Express Route.
+
+-  OpenVPN Features
+
+	-  Scalable and highly available OpenVPN solution.
+
+	- Integrated with cloud provider native ELB, the solution scales out to
+   	  unlimited number of users and bandwidth.
+
+	-  Supports multi factor authentication: DUO, LDAP and OKTA.
+
+	-  User profile defined dynamic security access rules that allow
+   	   administrator to determine access privilege of any given user to any
+   	   resources at the network perimeter.
+
+	-  Supports Geo VPN for a global VPN solution deployment where a VPN
+   	   user automatically connects to a nearest VPC.
+
+	-  Supports wide range of clients: Windows, OSX, Linux, Android, iOS,
+   	   and Chromebook.
+
+	-  Supports event logging with SumoLogic, Logstash, Splunk and remote
+   	   syslog server.
+
+	-  Supports Split tunnel and full tunnel mode.
+
+	-  No extra hop to other VPC/VNets.
 
 
--  Scalable and highly available user VPN solution.
+	-  Policy based stateful firewall at the VPC level for both access and
+   	   deny to apps.
 
--  Integrated with cloud provider native ELB, the solution scales out to
-   unlimited number of users and bandwidth.
+	-  Environment Stamping solution for repeatable enterprise SaaS
+   	   deployment.
 
--  Supports multi factor authentication: DUO, LDAP and OKTA.
+	-  Create identical VPC environments with one click for each customer.
 
--  User profile defined dynamic security access rules that allow
-   administrator to determine access privilege of any given user to any
-   resources at the network perimeter.
+	-  Uniquely mapping and addressing instances for CloudOps and developers
+   	   access.
 
--  Supports Geo VPN for a global VPN solution deployment where a VPN
-   user automatically connects to a nearest VPC.
+	-  Integrate AWS Route 53 DNS name service for each accessing.
 
--  Supports wide range of clients: Windows, OSX, Linux, Android, iOS,
-   and Chromebook.
+-  Seucrity Features
+	
+	-  Stateful firewall on each gateway that controls traffic in and out the VPC.
 
--  Supports event logging with SumoLogic, Logstash, Splunk and remote
-   syslog server.
+ 	-  Fully Qualified Domain Name (FQDN) whitelists control Internet bound egress 
+	   traffic from instances on private subnets. 
 
--  Supports Split tunnel and full tunnel mode.
-
--  No extra hop to other VPC/VNets.
-
--  multi VPC, multi region and multi cloud (AWS, Azure and GCloud)
-   encrypted peering enables you to build a full mesh secure network in
-   the cloud with a single click.
-
--  Policy based stateful firewall at the VPC level for both access and
-   deny to apps.
-
--  Environment Stamping solution for repeatable enterprise SaaS
-   deployment.
-
--  Create identical VPC environments with one click for each customer.
-
--  Uniquely mapping and addressing instances for CloudOps and developers
-   access.
-
--  Integrate AWS Route 53 DNS name service for each accessing.
-
--  Secure connection to remote branch sites and interoperability with
-   legacy router/firewall device.
-
--  Encryption over AWS Direct Connect and Azure Express Route.
 
 **Q3: How do I launch the product?**
 
@@ -92,8 +115,7 @@ The controller is available in AWS and Azure marketplace. It is also
 available as a GCloud community image. For marketplace launch, search
 for “Aviatrix” in marketplace.
 
-The controller should have an EIP (best practice) address and inbound
-TCP port 443 open for it to work.
+Follow `Getting Started <http://docs.aviatrix.com/>`_ instructions to launch controller.  
 
 **Q4: How do I access the controller?**
 
@@ -159,7 +181,7 @@ Click Settings -> Upgrade. This upgrades to the latest release of the
 controller software.
 
 When a new release becomes available, an alert message appears on
-Dashboard.
+Dashboard. An email will also be sent to the admin of the controller. 
 
 **Q4: Is there a reference design example?**
 
@@ -170,7 +192,8 @@ Check out docs.aviatrix.com.
 
 
 For support, send email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__. To request a
+`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers with 24x7 support. 
+To request a
 feature, click Make a wish button at the bottom of each page.
 
 
@@ -218,7 +241,8 @@ configurations should be identical.
 
 **Q3: How do I setup Okta authentication for VPN?**
 
-
+Aviatrix vpn gateway integrates seamlessly with Okta. It can authenticate vpn users 
+to Okta service using Okta's OpenVPN pluggin in module. 
 Follow the link: `How to setup Okta for Aviatrix VPN
 gateway <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__
 
@@ -437,7 +461,7 @@ Click on Settings-> Logging ->LogStash logging and input the required
 parameters to enable forwarding of controller syslog events and all
 gateways syslog and auth log to a Logstash server.
 
-SUMO Logic, Splunk and rSyslog are also supported.
+SUMO Logic, Splunk, DataDog and rSyslog are also supported.
 
 **Q2: What are the monitoring capabilities?**
 
@@ -453,8 +477,8 @@ You can also disconnect a user from the dashboard.
 Yes, you can create an operator account. This operator account can only
 view dashboard and disconnect an active user from the dashboard.
 
-To create an Operator account, go to Settings -> Accounts -> Add. At the
-account name, type in “Operator” and give it a password and email
+To create an Operator account, go to Accounts -> Account Users -> +New User. At the
+account name, select read_only and give it a password and email
 notification address. You do not need to enter AWS credentials.
 
 
@@ -553,7 +577,7 @@ Follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.htm
 **Q2: Is there 2FA support to log in to the console?**
 
 
-Yes. In addition to password login, DUO authentication is supported.
+Yes. In addition to password login, DUO authentication and LDAP are supported.
 
 
 			
