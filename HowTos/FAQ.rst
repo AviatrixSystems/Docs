@@ -6,6 +6,12 @@
 Frequently Asked Questions
 ####################################################
 
+Aviatrix product consists of a controller and gateways. When the product is deployed in the 
+public cloud marketplace, what you launch is the controller instance and from controller console you launch gateways. 
+
+When the product is deployed as a virtual appliance in a virtualized datacenter environment, the controller and gateway is bundled into one virtual image, such as OVF and VHD. 
+
+The following FAQ disusses only the cloud deployment scenario. 
 
 Aviatrix Cloud Gateway
 ======================
