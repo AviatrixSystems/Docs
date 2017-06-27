@@ -33,7 +33,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aviatrix-cloud-controller-startup-guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
-   StartUpGuides/CloudN-Startup-Guide
+   StartUpGuides/CloudN-Startup-Guide-Enumerated
    StartUpGuides/appendix-CloudN-Startup-Guide
    HowTos/FAQ
 
@@ -143,7 +143,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Release Notes 
+   :caption: Release Notes
 
    HowTos/UCC_Release_Notes
    HowTos/changelog
