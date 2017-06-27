@@ -1,11 +1,10 @@
-
-
+.. meta::
+   :description: Aviatrix Virtual Appliance CloudN Startup guide
+   :keywords: Aviatrix Cloud Interconnect, ACX, CloudN, datacenter extension 
 
 =======================================
  Virtual Appliance CloudN 
 =======================================
-
-
 
 
 Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or co-location facility.
@@ -18,7 +17,7 @@ To learn how CloudN Datacenter Extension works and how to build flat full mesh n
 CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
 
 Download the Image
-===================
+=======================
 
 CloudN comes with OVF, VHD and KVM images, to support VMware
 hypervisor, Microsoft Hyper-V and KVM.
@@ -33,7 +32,7 @@ hypervisor, Microsoft Hyper-V and KVM.
 
 
 Pre-Installation Check List
-===========================
+=============================
 
 AWS EC2 Account
 ---------------
