@@ -11,7 +11,7 @@ public cloud marketplace, what you launch is the controller instance and from co
 
 When the product is deployed as a virtual appliance in a virtualized datacenter environment, the controller and gateway is bundled into one virtual image, such as OVF and VHD.
 
-The following FAQ disusses only the cloud deployment scenario.
+The following FAQ discusses only the cloud deployment scenario.
 
 Aviatrix Cloud Gateway
 ======================
