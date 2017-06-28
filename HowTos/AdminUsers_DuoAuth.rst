@@ -1,11 +1,12 @@
 .. meta::
    :description: Admin users and Duo Authentication Management
    :keywords: Admin users, Duo authentication, Duo, Aviatrix
+   :github_url: https://github.com/AviatrixSystems/Docs/blob/master/HowTos/AdminUsers_DuoAuth.rst
 
 =============================================
 Admin Users and Duo Sign in
 =============================================
-  
+
 
 
 Objectives
@@ -42,7 +43,7 @@ Note that the default user created from the cloud account can only
 access information specific to its account from the console. The
 default user cannot be changed in the Users page described below.
 
-Configuration Workflow for Admin Users 
+Configuration Workflow for Admin Users
 =======================================
 
 Add a new admin user
@@ -89,7 +90,7 @@ Configuration Workflow for Duo Authentication
 Getting DUO API credentials
 ---------------------------
 
-Follow the `instruction in <http://docs.aviatrix.com/HowTos/duo_auth.html>`_ to setup DUO API credentials on DUO Security website. 
+Follow the `instruction in <http://docs.aviatrix.com/HowTos/duo_auth.html>`_ to setup DUO API credentials on DUO Security website.
 
 Create Duo Authentication
 -------------------------
@@ -139,6 +140,6 @@ when the API failure is occurring.
 
 .. |image7| image:: Duo_media/image8.png
 
-   
-   
-.. disqus::   
+
+
+.. disqus::
