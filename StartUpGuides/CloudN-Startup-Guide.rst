@@ -12,9 +12,15 @@ Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
-To learn how CloudN Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+CloudN performs two major functions. One is to extend 
+your datacenter to multi cloud (ACX).
+Another is to connect encrypted tunnel to an existing VPC/VNet.
+  
+To learn how CloudN Aviatrix Cloud Interconnect (ACX)  works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
-CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
+CloudN can also be used as a virtual router for site2cloud function to work 
+with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway
+for building encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
 
 Download the Image
 =======================
@@ -35,7 +41,7 @@ Pre-Installation Check List
 =============================
 
 AWS EC2 Account
----------------
+----------------
 
 If you intend to launch VPC in AWS, you need to have an AWS account.
 
@@ -83,8 +89,27 @@ Microsoft Azure Account
 If you intend to create VNets in Microsoft Azure, you need to create an
 Azure account. If not, you can skip this step.
 
-Deployment Positions
---------------------
+Deploy CloudN as a virtual router (Aviatrix gateway)
+-----------------------------------------------------
+
+You can deploy CloudN as a virtual router and in a remote site for site2cloud
+function.
+
+|image8|
+
+In this deployment, CloudN functions as a router and it is deployed anywhere inside a datacenter and it does not require a public IP address.
+What is required is that
+the default gateway of the subnet where CloudN is deployed has a static
+route configured that routes traffic destined to the VPC CIDR where this
+remote site wish to connect to the CloudN.
+
+Deploy CloudN for Aviatrix Cloud Interconnect (ACX) function
+-------------------------------------------------------------
+
+Cloud Address Planning and Allocation
+***************************************
+
+When used for ACX function, CloudN manages your entire cloud address space. 
 
 You need to identify or create a subnet where CloudN is deployed. CloudN
 is deployed on a private subnet anywhere on your network. CloudN does
@@ -110,7 +135,7 @@ subnets, one private and one public subnets are created in each
 available zone. A user can customize and create additional subnets.
 
 Deploy on Subnets larger than /24
-----------------------------------
+***********************************
 
 If you deploy a CloudN in a /23 subnet, only two VPC/VNet can be
 created. This VPC/VNet can support 8 subnets.
@@ -122,7 +147,7 @@ maximum number of VPCs.
 |image6|
 
 Deploy on a Class C Subnet
---------------------------
+***************************
 
 Deploying CloudN in a /24 subnet is a special case. It is handled
 differently from any other size of subnets.
@@ -145,22 +170,6 @@ Leaving local machines outside the address range of 192.168.1.0/26 can
 result in duplicate IP addresses.
 
 Each VPC has 1 public subnet and 2 private subnets.
-
-Deploy CloudN as a virtual router
-------------------------------------
-
-You can deploy CloudN as a virtual router and in a remote site to allow the remote site network
-to connect securely and directly to a VPC created by the main datacenter
-deployed cloudN, as shown below.
-
-|image8|
-
-In this deployment, CloudN functions as a router. It is not required
-that CloudN is deployed in large subnet segment, it is not even required
-that CloudN is deployed in a subnet of its own. What is required is that
-the default gateway of the subnet where CloudN is deployed has a static
-route configured that routes traffic destined to the VPC CIDR where this
-remote site wish to connect to the CloudN.
 
 Network Interfaces
 ------------------
@@ -310,8 +319,10 @@ Please refer to the page
 `ESXi Admin <https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.vm\_admin.doc%2FGUID-6C847F77-8CB2-4187-BD7F-E7D3D5BD897B.html>`_
 for more detailed instructions.
 
-Configure Network Adapter Properties
--------------------------------------
+Configure Network Adapter Properties for ACX	
+---------------------------------------------
+
+.. Note:: If you deploy CloudN for site2cloud connectivity, skip this section. 
 
 CloudN has two network interfaces, both of them need to be on the same
 VLAN.
@@ -346,7 +357,7 @@ For additional CloudN on ESXi configuration illustrations, check out
 `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
 Special Notes
-----------------
+**************
 
 CloudN does not support NICteaming in active-active mode. When
 NICteaming is configured, only active-standby mode is supported, as
@@ -395,8 +406,10 @@ follow guide below.
 
   Password: Aviatrix123#
 
-Enable MAC Address Spoofing
-----------------------------
+Enable MAC Address Spoofing for ACX
+------------------------------------
+
+.. Note:: If you deploy CloudN for site2cloud connectivity, skip this section
 
 Both Network Adapters associated with CloudN VM should have “Enable MAC
 Address Spoofing” turn on. This is accomplished by expand Network
@@ -408,8 +421,10 @@ should not be changed.
 
 |image21|
 
-NIC Teaming Support
--------------------
+NIC Teaming Support for ACX
+----------------------------
+
+.. Note:: If you deploy CloudN for site2cloud function, this section does not apply. 
 
 NIC teaming is only supported for active standby mode.
 
@@ -439,7 +454,7 @@ at any time to review the steps. Type “?” to view all available
 commands. For each command, type “?” to view syntax and parameters.
 
 **Step 1**: Setup Interface Address
--------------------------------
+------------------------------------
 
 CloudN works by dividing the subnet where CloudN is deployed into
 sub-segment where each sub-segment becomes the VPC/VNet CIDR in the
@@ -451,11 +466,6 @@ CloudN itself or statically assign one.
 
 Statically assign CloudN IP address
 ***********************************
-
-You can statically assign an IP address to CloudN. Choose this approach
-if you use CloudN to connect to an existing VPC. In the use case where
-CloudN does not create a VPC and build encrypted tunnel, CloudN does not
-need to be deployed on a separate subnet.
 
 Command: setup\_interface\_static\_address
 
@@ -469,6 +479,8 @@ will configure the network interfaces, test Internet connectivity and
 download the latest Aviatrix software.
 
 |image42|
+
+.. Note:: For ACX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed. 
 
 Proxy Configuration
 **********************
@@ -496,8 +508,8 @@ Example:
 Note after proxy configuration is saved, CloudN VM will reboot to have
 the proxy take effect.
 
-Auto-generate CloudN interface IP address
-*****************************************
+Auto-generate CloudN interface IP address (deprecated)
+*******************************************************
 
 All you need to do here is to provide information related to the subnet
 where CloudN is deployed. CloudN scans the subnet and find an IP address
