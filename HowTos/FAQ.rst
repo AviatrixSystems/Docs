@@ -471,35 +471,32 @@ SUMO Logic, Splunk, DataDog and rSyslog are also supported.
 
 **Q2: What are the monitoring capabilities?**
 
+Encrypted tunnel (peering and site2cloud) status is monitored. When a tunnel status changes, an alert email is sent to the controller admin. 
 
 Active VPN users are displayed on the Dashboard. Click on any username,
 the user VPN connectivity history is displayed.
 
 You can also disconnect a user from the dashboard.
 
-**Q3: Is there an Operator account?**
+**Q3: Can alert email be sent to a different email address?**
 
-
-Yes, you can create an operator account. This operator account can only
-view dashboard and disconnect an active user from the dashboard.
-
-To create an Operator account, go to Accounts -> Account Users -> +New User. At the
-account name, select read_only and give it a password and email
-notification address. You do not need to enter AWS credentials.
-
+Yes, you can choose an alternative email address to send alert messages. 
+This is useful if the controller admin is different from the operation team.
 
 
 Encrypted peering
 =================
 
 
-
-
 **Q1: What can Aviatrix encrypted peering do?**
 
 
 Aviatrix encrypted peering builds an encrypted tunnel between two
-VPC/VNet with a single click. The VPC and/or VNet can be across region
+VPC/VNet with a single click. In addition to build the encrypted connection, 
+the controller also program the cloud infrastructure routing table so that
+you don't have to. 
+
+The VPC and/or VNet can be across region
 and across cloud. The solution enables you to build a full mesh
 encrypted network. You can enable stateful firewalls on each VPC/VNet to
 add additional security measures.
@@ -584,6 +581,11 @@ Follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.htm
 
 
 Yes. In addition to password login, DUO authentication and LDAP are supported.
+
+**Q3: Can there be read only account for operation team?**
+
+Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select "read_only" from the drop down menu. This user account will have views to all pages but cannot make changes to any configurations.
+
 
 
 			
