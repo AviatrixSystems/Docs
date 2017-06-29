@@ -2,16 +2,16 @@
    :description: UCC Frequently Asked Questions
    :keywords: ucc, faq, frequently asked questions, ucc faq, aviatrix faq
 
-####################################################
+===========================
 Frequently Asked Questions
-####################################################
+===========================
 
-Aviatrix product consists of a controller and gateways. When the product is deployed in the 
-public cloud marketplace, what you launch is the controller instance and from controller console you launch gateways. 
+Aviatrix product consists of a controller and gateways. When the product is deployed in the
+public cloud marketplace, what you launch is the controller instance and from controller console you launch gateways.
 
-When the product is deployed as a virtual appliance in a virtualized datacenter environment, the controller and gateway is bundled into one virtual image, such as OVF and VHD. 
+When the product is deployed as a virtual appliance in a virtualized datacenter environment, the controller and gateway is bundled into one virtual image, such as OVF and VHD.
 
-The following FAQ disusses only the cloud deployment scenario. 
+The following FAQ discusses only the cloud deployment scenario.
 
 Aviatrix Cloud Gateway
 ======================
@@ -40,7 +40,7 @@ ground up.
 
 **Q2: What are the key features?**
 
--  Manage all your cloud networking requirements from a central controller. 
+-  Manage all your cloud networking requirements from a central controller.
 
 -  Peering Features
 
@@ -101,11 +101,11 @@ ground up.
 	-  Integrate AWS Route 53 DNS name service for each accessing.
 
 -  Seucrity Features
-	
+
 	-  Stateful firewall on each gateway that controls traffic in and out the VPC.
 
- 	-  Fully Qualified Domain Name (FQDN) whitelists control Internet bound egress 
-	   traffic from instances on private subnets. 
+ 	-  Fully Qualified Domain Name (FQDN) whitelists control Internet bound egress
+	   traffic from instances on private subnets.
 
 
 **Q3: How do I launch the product?**
@@ -121,7 +121,7 @@ The controller is available in AWS and Azure marketplace. It is also
 available as a GCloud community image. For marketplace launch, search
 for “Aviatrix” in marketplace.
 
-Follow `Getting Started <http://docs.aviatrix.com/>`_ instructions to launch controller.  
+Follow `Getting Started <http://docs.aviatrix.com/>`_ instructions to launch controller.
 
 **Q4: How do I access the controller?**
 
@@ -187,7 +187,7 @@ Click Settings -> Upgrade. This upgrades to the latest release of the
 controller software.
 
 When a new release becomes available, an alert message appears on
-Dashboard. An email will also be sent to the admin of the controller. 
+Dashboard. An email will also be sent to the admin of the controller.
 
 **Q4: Is there a reference design example?**
 
@@ -198,7 +198,7 @@ Check out docs.aviatrix.com.
 
 
 For support, send email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers with 24x7 support. 
+`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers with 24x7 support.
 To request a
 feature, click Make a wish button at the bottom of each page.
 
@@ -212,7 +212,7 @@ Scale Out VPN Solutions
 **Q1: How do I launch a VPN gateway?**
 
 
-Click Gateway -> + New Gateway 
+Click Gateway -> + New Gateway
 
 The controller launches an Aviatrix gateway instance in
 AWS/Azure/GCloud. The gateway instance must be launched from a public
@@ -247,8 +247,8 @@ configurations should be identical.
 
 **Q3: How do I setup Okta authentication for VPN?**
 
-Aviatrix vpn gateway integrates seamlessly with Okta. It can authenticate vpn users 
-to Okta service using Okta's OpenVPN pluggin in module. 
+Aviatrix vpn gateway integrates seamlessly with Okta. It can authenticate vpn users
+to Okta service using Okta's OpenVPN pluggin in module.
 Follow the link: `How to setup Okta for Aviatrix VPN
 gateway <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__
 
@@ -349,7 +349,7 @@ Policies to add rules. You can add multiple of them, then click on Save.
 When you create a VPN user at OpenVPN -> VPN Users -> +Add New, you
 can select profile option to assign the user to a specific profile.
 
-You can also attach the user to a profile at a later time. Go to OpenVPN -> Profiles. Click Attach User on a specific Profile and select a user that is added to the VPN gateway.  
+You can also attach the user to a profile at a later time. Go to OpenVPN -> Profiles. Click Attach User on a specific Profile and select a user that is added to the VPN gateway.
 
 **Q4: What if I want to change profile policies?**
 
@@ -574,7 +574,7 @@ Administration
 
 
 Yes. Username “admin” is the default admin user. But you can create
-multiple users with admin privilege. 
+multiple users with admin privilege.
 Follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_ to learn more about setting up multiple admin users.
 
 **Q2: Is there 2FA support to log in to the console?**
@@ -588,8 +588,8 @@ Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select 
 
 
 
-			
+
 
 .. |image1| image:: FAQ_media/image1.png
-   
-.. disqus::  
+
+.. disqus::

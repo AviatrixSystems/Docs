@@ -88,15 +88,17 @@ This step is usually done by the Okta Admin.
 |image1|
 
 	7.  SAML Settings
-		a.	Single sign on URL* = https://aviatrix_controller_ip/flask/saml/sso/aviatrix_username
-		b.	Audience URI* = https://aviatrix_controller_ip/flask/saml/sso/aviatrix_username
-		c.	Default RelayState* = https://aviatrix_controller_ip/flask/saml/sso/aviatrix_username
+		a.	Single sign on URL* = https://aviatrix_controller_hostname/flask/saml/sso/aviatrix_username
+		b.	Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
+		c.	Default RelayState* = 
 		d.	Name ID format = Unspecified
 		e.	Application username = Okta username
-		
+
+		These values are also available in the controller OpenVPN->Users page after step 3.4
+
 		|image2|
 		
-		The aviatrix_controller_ip is the public IP address of the Aviatrix controller. The aviatrix_username
+		The aviatrix_controller_hostname is the hostname of the Aviatrix controller(If no DNS is used, this is the public IP). The aviatrix_username
 		is an arbitrary identifier. Note this value as it will be needed when configuring SAML from the Aviatrix controller. 
 		Please contact your Aviatrix admin if you do not have the Aviatrix controller’s public IP address.
 		
