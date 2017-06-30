@@ -13,17 +13,21 @@ Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
-To learn how CloudN Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+CloudN performs two major functions. One is to extend
+your datacenter to multi cloud (ACX).
+Another is to connect encrypted tunnel to an existing VPC/VNet.
 
-CloudN can also be used as a virtual router to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
+To learn how CloudN Aviatrix Cloud Interconnect (ACX) works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+
+CloudN can also be used as a virtual router for site2cloud function to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`__
 
 ----
 
 1. Download the Image
 =======================
 
-CloudN comes with OVF, VHD and KVM images, to support VMware
-hypervisor, Microsoft Hyper-V and KVM.
+    CloudN comes with OVF, VHD and KVM images, to support VMware
+    hypervisor, Microsoft Hyper-V and KVM.
 
 * Latest vmware OVF image is CloudN-ovf-051517, it can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
 
@@ -38,8 +42,12 @@ hypervisor, Microsoft Hyper-V and KVM.
 2. Pre-Installation Check List
 ===============================
 
-2.1. AWS EC2 Account
---------------------
+2.1. AWS EC2 Account for ACX
+----------------------------
+
+.. Note:: If CloudN is deployed for site2cloud function, skip this section. 
+
+...
 
   If you intend to launch VPC in AWS, you need to have an AWS account.
 
@@ -81,14 +89,36 @@ hypervisor, Microsoft Hyper-V and KVM.
       IAM access policy required by CloudN. During the onboarding process, we
       will guide you through on setting up this IAM customer policy.
 
-2.2. Microsoft Azure Account
------------------------------
+2.2. Microsoft Azure Account for ACX
+-------------------------------------
 
-    If you intend to create VNets in Microsoft Azure, you need to create an
-    Azure account. If not, you can skip this step.
+.. Note:: If CloudN is deployed for site2cloud function, skip this section.
 
-2.3 Deployment Positions
--------------------------
+...
+ 
+    To create credentials for Azure, follow `this instructions. <http://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_
+
+2.3. Deploy CloudN as a virtual router (site2cloud function)
+------------------------------------------------------------
+
+    You can deploy CloudN as a virtual router and in a remote site for 
+    site2cloud function.
+
+|image8|
+
+    In this deployment, CloudN functions as a router and it is deployed anywhere inside a datacenter and it does not require a public IP address.
+    What is required is that
+    the default gateway of the subnet where CloudN is deployed has a static
+    route configured that routes traffic destined to the VPC CIDR where this
+    remote site wish to connect to the CloudN.
+
+2.4. Deploy CloudN for Aviatrix Cloud Interconnect (ACX) 
+----------------------------------------------------------
+
+2.4.1. Cloud address planning and allocation
+***********************************************
+
+    When used for ACX function, CloudN manages your entire cloud address space.
 
     You need to identify or create a subnet where CloudN is deployed. CloudN
     is deployed on a private subnet anywhere on your network. CloudN does
@@ -113,7 +143,7 @@ hypervisor, Microsoft Hyper-V and KVM.
     subnets, one private and one public subnets are created in each
     available zone. A user can customize and create additional subnets.
 
-2.3.1. Deploy on Subnets larger than /24
+2.4.2. Deploy on Subnets larger than /24
 ******************************************
 
       If you deploy a CloudN in a /23 subnet, only two VPC/VNet can be
@@ -125,7 +155,7 @@ hypervisor, Microsoft Hyper-V and KVM.
 
       |image6|
 
-2.3.2. Deploy on a Class C Subnet
+2.4.3. Deploy on a Class C Subnet
 **************************************
 
       Deploying CloudN in a /24 subnet is a special case. It is handled
@@ -150,53 +180,26 @@ hypervisor, Microsoft Hyper-V and KVM.
 
       Each VPC has 1 public subnet and 2 private subnets.
 
-2.3.3. Deploy CloudN as a virtual router
-***********************************************
-
-      You can deploy CloudN as a virtual router and in a remote site to allow the remote site network
-      to connect securely and directly to a VPC created by the main datacenter
-      deployed cloudN, as shown below.
-
-      |image8|
-
-      In this deployment, CloudN functions as a router. It is not required
-      that CloudN is deployed in large subnet segment, it is not even required
-      that CloudN is deployed in a subnet of its own. What is required is that
-      the default gateway of the subnet where CloudN is deployed has a static
-      route configured that routes traffic destined to the VPC CIDR where this
-      remote site wish to connect to the CloudN.
-
-2.4. Network Interfaces
+2.5. Network Interfaces
 --------------------------------
 
   CloudN local gateway is installed as a VM host with two network
   interfaces. Make sure the two interfaces are on the same VLAN or subnet.
-
-  If CloudN runs on a VMware Workstation, VMware Fusion or VMware Player,
-  you do not need to configure the network interfaces as they are
-  pre-configured as part of OVF image, unless you are installing them in
-  NAT mode subnet (in which case make sure both Network Adapters are in
-  NAT mode)
 
   If CloudN runs on VMware ESXi host, follow the instruction in the next
   chapter to enable promiscuous mode and forged transmit mode for both
   interfaces.
 
   If CloudN runs on Microsoft Hyper-V, you do not need to configure the
-  network interfaces as they are pre-configured as part of VHD image. Make
-  sure that “Enable MAC Address Spoofing” is enabled (explained in the
-  installation section)
+  network interfaces as they are pre-configured as part of VHD image. 
 
-  If CloudN runs on VirtualBox, both network interfaces need to be in
-  bridge mode. Instructions to do this are available in section 5.7.2
-
-2.5 Internet Connectivity
+2.6. Internet Connectivity
 --------------------------
 
   CloudN needs to have Internet connectivity to perform most its
   functions.
 
-2.6 Proxy Settings
+2.7. Proxy Settings
 -------------------
 
   If there is proxy server on-prem for Internet access, contact IT
@@ -204,7 +207,7 @@ hypervisor, Microsoft Hyper-V and KVM.
   there needs to have username and password for authenticating by the
   proxy.
 
-2.7. Binding to CloudN Private IP address to a Single NAT Public IP Address
+2.8. Binding to CloudN Private IP address to a Single NAT Public IP Address
 ---------------------------------------------------------------------------
 
   If your organization has more than one public IP addresses as the NAT
@@ -230,7 +233,7 @@ hypervisor, Microsoft Hyper-V and KVM.
 
     hostname(config-network-object)# nat (inside,outside) static 209.165.201.10
 
-2.8. Outbound TCP/UDP Ports
+2.9. Outbound TCP/UDP Ports
 ----------------------------------
 
   CloudN requires the following TCP/UDP outbound ports open.
@@ -246,7 +249,7 @@ hypervisor, Microsoft Hyper-V and KVM.
   gateway is the client, there is no restriction or requirement to open
   any known TCP/UDP port for inbound traffic.
 
-2.9. Time Service
+2.10. Time Service
 ---------------------
 
   CloudN uses extensively Amazon Web Service (AWS) APIs and Azure REST
@@ -261,7 +264,7 @@ hypervisor, Microsoft Hyper-V and KVM.
   allows you to accomplish that. You can configure this at Settings ->
   Time Service.
 
-2.10. Performance Consideration
+2.11. Performance Consideration
 -------------------------------------
 
   CloudN is a virtual appliance that runs on a hypervisor. The supported
@@ -316,8 +319,12 @@ for testing and evaluation purposes.
     `ESXi Admin <https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.vm\_admin.doc%2FGUID-6C847F77-8CB2-4187-BD7F-E7D3D5BD897B.html>`_
     for more detailed instructions.
 
-3.1.1  Configure Network Adapter Properties
-*********************************************
+3.1.1.  Configure Network Adapter Properties for ACX
+***************************************************
+
+.. Note:: If you deploy CloudN for site2cloud connectivity, skip this section.
+
+..
 
     CloudN has two network interfaces, both of them need to be on the same
     VLAN.
@@ -351,17 +358,14 @@ for testing and evaluation purposes.
     For additional CloudN on ESXi configuration illustrations, check out
     `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
-3.1.2. Special Notes
-************************
-
-  CloudN does not support NICteaming in active-active mode. When
+.. Note:: CloudN does not support NICteaming in active-active mode. When
   NICteaming is configured, only active-standby mode is supported, as
   shown below where the ESXi host has 4 Ethernet ports and VLAN220 is the
   port group CloudN Ethernet ports belong to.
+..
 
   |image15|
 
-  Note that CloudN currently does not support vMotion.
 
 3.2. Installation on Windows 8.1 Enterprise Edition
 -----------------------------------------------------
@@ -401,8 +405,11 @@ for testing and evaluation purposes.
 
     Password: Aviatrix123#
 
-3.2.1. Enable MAC Address Spoofing
-**************************************
+3.2.1. Enable MAC Address Spoofing for ACX
+*******************************************
+
+.. Note:: If you deploy CloudN for site2cloud function, skip this section.
+..
 
   Both Network Adapters associated with CloudN VM should have “Enable MAC
   Address Spoofing” turn on. This is accomplished by expand Network
@@ -414,12 +421,14 @@ for testing and evaluation purposes.
 
   |image21|
 
-3.2.2. NIC Teaming Support
-*********************************
+3.3. NIC Teaming Support for ACX
+---------------------------------
+
+.. Note:: If you deploy CloudN for site2cloud function, skip this section.
+..
 
   NIC teaming is only supported for active standby mode.
 
-----
 
 4. Booting Up and Initial Configuration
 =========================================
@@ -448,21 +457,11 @@ commands. For each command, type “?” to view syntax and parameters.
 4.1. **Step 1**: Setup Interface Address
 -----------------------------------------
 
-  CloudN works by dividing the subnet where CloudN is deployed into
-  sub-segment where each sub-segment becomes the VPC/VNet CIDR in the
-  cloud. We recommend you deploy CloudN in its own subnet to maximize the
-  number of VPC/VNets you can create.
-
   There are two ways to give CloudN its IP adddress: auto-generate by
   CloudN itself or statically assign one.
 
 4.1.1. Statically assign CloudN IP address
 *******************************************
-
-    You can statically assign an IP address to CloudN. Choose this approach
-    if you use CloudN to connect to an existing VPC. In the use case where
-    CloudN does not create a VPC and build encrypted tunnel, CloudN does not
-    need to be deployed on a separate subnet.
 
     Command: setup\_interface\_static\_address
 
@@ -476,6 +475,8 @@ commands. For each command, type “?” to view syntax and parameters.
     download the latest Aviatrix software.
 
     |image42|
+
+.. Note:: For ACX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed.
 
 4.1.1.1. Proxy Configuration
 ******************************
@@ -534,7 +535,7 @@ commands. For each command, type “?” to view syntax and parameters.
 
     If you see the above message, the download is completed.
 
-4.2 Step 2: Display Interface Address
+4.2. Step 2: Display Interface Address
 ---------------------------------------
 
   |image45|
@@ -548,7 +549,7 @@ commands. For each command, type “?” to view syntax and parameters.
 
   User should use the GUI to access CloudN Console.
 
-4.3 Troubleshooting
+4.3. Troubleshooting
 --------------------
 
   If there is any error messages during installation, it is usually due to
@@ -564,7 +565,7 @@ commands. For each command, type “?” to view syntax and parameters.
   “download\_cloudn\_software” to continue installation and finish. Or you
   can again type in command setup\_interface\_address.
 
-4.4 Use a Browser to Access CloudN
+4.4. Use a Browser to Access CloudN
 ---------------------------------------
 
   CloudN has a built in CloudN Console that let you run provisioning from
