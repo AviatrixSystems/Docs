@@ -15,7 +15,7 @@ REST API document can be found at CloudN console Help menu. For an example of ho
 
 CloudN performs two major functions. One is to extend
 your datacenter to multi cloud (ACX).
-Another is to connect encrypted tunnel to an existing VPC/VNet.
+The other is to build encrypted tunnel to existing VPC/VNets.
 
 To learn how CloudN Aviatrix Cloud Interconnect (ACX) works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
@@ -47,7 +47,7 @@ CloudN can also be used as a virtual router for site2cloud function to work with
 
 .. Note:: If CloudN is deployed for site2cloud function, skip this section. 
 
-...
+..
 
   If you intend to launch VPC in AWS, you need to have an AWS account.
 
@@ -94,7 +94,7 @@ CloudN can also be used as a virtual router for site2cloud function to work with
 
 .. Note:: If CloudN is deployed for site2cloud function, skip this section.
 
-...
+..
  
     To create credentials for Azure, follow `this instructions. <http://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_
 
@@ -172,8 +172,6 @@ CloudN can also be used as a virtual router for site2cloud function to work with
       CloudN are in one sub segmented area, as illustrated below:
 
       |image7|
-
-      *Figure 1: Class C Subnet Deployment*
 
       Leaving local machines outside the address range of 192.168.1.0/26 can
       result in duplicate IP addresses.
@@ -358,11 +356,12 @@ for testing and evaluation purposes.
     For additional CloudN on ESXi configuration illustrations, check out
     `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
-.. Note:: CloudN does not support NICteaming in active-active mode. When
-  NICteaming is configured, only active-standby mode is supported, as
+.. Note:: ACX does not support NICteaming in active-active mode. 
+..
+
+  When NICteaming is configured, only active-standby mode is supported, as
   shown below where the ESXi host has 4 Ethernet ports and VLAN220 is the
   port group CloudN Ethernet ports belong to.
-..
 
   |image15|
 
