@@ -13,9 +13,10 @@ Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or
 CloudN supports REST API that allows third party software integration.
 REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/en/latest/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
-CloudN performs two major functions. One is to extend
-your datacenter to multi cloud (ACX).
-The other is to build encrypted tunnel to existing VPC/VNets.
+CloudN performs two major functions: 
+
+- Extend your datacenter to multi cloud (ACX).
+- Build encrypted tunnel to existing VPC/VNets.
 
 To learn how CloudN Aviatrix Cloud Interconnect (ACX) works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
