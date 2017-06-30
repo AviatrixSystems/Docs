@@ -78,16 +78,12 @@ gateways that perform site to cloud functions.
 The site to cloud configuration workflow is as follows, with major steps
 highlighted.
 
-1. (Optional) Enable HA
-
-   Go to site2Cloud -> Options, select Enable HA, then Save.
-
-#. Create a gateway in a VPC where you like to connect all sites.
+1. Create a gateway in a VPC where you like to connect to sites.
 
    Go to Gateway -> New Gateway. The gateway may have VPN Access
    disabled.
 
-#. (Optional) Create a secondary gateway in the same VPC.
+#. (Optional) Create a secondary gateway in the same VPC for HA.
 
    Go to Gateway -> New Gateway. The gateway may have VPN access
    disabled.
@@ -115,8 +111,10 @@ highlighted.
    #. Input the connection with a unique name, for example,
       NewYork-site.
 
+   #. at Remote Gateway Type, select "AWS VGW" if the remote site is a VPC with AWS VGW VPN gateway; select "Aviatrix" if the remote site is on-prem Aviatrix gateway; select "Generic" if the remote site gateway is a third party router or firewall. 
+
    #. At Remote Gateway IP Address, enter the public IP address of the
-      edge router for the remote site.
+      edge router for the remote site. Note if the Remote Gateway Type is Aviatrix, the Remote Gateway IP address is the public IP address of the site. 
 
    #. At Remote Subnet, enter network CIDR of the remote/customer site. If
       there are multiple subnets, enter each one separated with comma.
@@ -148,7 +146,7 @@ highlighted.
    #. Click “Yes, Download” to download a template file that contains
       the gateway public IP address, VPC CIDR, pre-shared secret and
       encryption algorithm. Incorporate the information to your remote
-      router/firewall configuration.
+      router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
 #. Repeat the above step 4 and step 5 for each additional remote site.
 
