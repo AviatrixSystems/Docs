@@ -6,7 +6,7 @@ Building a Mesh Cloud Network for AWS VPCs and Datacenter
 
 
 
-AWS Reference Deployment Guide
+AWS/Azure Reference Deployment Guide
 ==============================
 
 
@@ -21,14 +21,16 @@ connectivity and access. The solution requires no new hardware and
 deploys in minutes.
 
 Aviatrix CloudN is a virtual appliance deployed in datacenter.
-Datacenter Extension is a unique technology on CloudN. It manages your public cloud address space and allows rapid
+Aviatrix Cloud Interconnect (ACX), also known as Datacenter Extension is a unique technology on CloudN. It manages your public cloud address space and allows rapid
 scaling of AWS Virtual Private Cloud (VPC) by removing the pain point of
 building secure connections to the VPCs.
 
 |image1|
 
-2  Aviatrix Datacenter Extension Key Benefits
+2  ACX Key Benefits
 =============================================
+
+   **Manage Cloud Address Space** No more spreadsheet to manage your cloud address space. 
 
     **Easy to Deploy** Deployed without touching existing network
     infrastructure.
@@ -148,7 +150,7 @@ Upon login to the controller for the first time, follow the onboarding process t
 
 5.2    Create a VPC and build an encrypted tunnel
 -------------------------------------------------
-After going through onboarding steps, click Datacenter Extension. Provide a name for the VPC you are about to create, select an AWS region, and click Launch. In a few minutes of time, a VPC, public subnet and private subnet in each AZ of the selected region, IGW and routing tables will be created; an Aviatrix Gateway will be launched and an encrypted tunnel will be created.
+After going through onboarding steps, click ACX. Provide a name for the VPC you are about to create, select an AWS region, and click Launch. In a few minutes of time, a VPC, public subnet and private subnet in each AZ of the selected region, IGW and routing tables will be created; an Aviatrix Gateway will be launched and an encrypted tunnel will be created.
 
 You then can launch instances in the VPC and access the instances by their private IP addresses.
 
@@ -159,7 +161,7 @@ Reapt the above step for more VPC with encrypted tunnel creations.
 .. |image0| image:: media/image1.png
    :width: 3.5in
    :height: 0.5in
-.. |image1| image:: media/datacenter-extension.png
+.. |image1| image:: media/ACX.png
    :width: 6.50000in
    :height: 4in
 .. |image2| image:: media/image3.png
