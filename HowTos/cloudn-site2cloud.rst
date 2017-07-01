@@ -4,7 +4,7 @@
 
 
 ==============================
-CloudN for Site2coud 
+CloudN for Site2Cloud 
 ==============================
 
 CloudN can be deployed on-prem as a virtual router. 
