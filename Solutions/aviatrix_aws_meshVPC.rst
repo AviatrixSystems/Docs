@@ -30,7 +30,7 @@ building secure connections to the VPCs.
 2  ACX Key Benefits
 =============================================
 
-   **Manage Cloud Address Space** No more spreadsheet to manage your cloud address space. 
+    **Manage Cloud Address Space** No more spreadsheet to manage your cloud address space. 
 
     **Easy to Deploy** Deployed without touching existing network
     infrastructure.
