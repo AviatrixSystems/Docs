@@ -49,10 +49,10 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 Troubleshooting
 ===============
 
-To check a tunnel state, go to site2Cloud, the tunnel status will be
+To check a tunnel state, go to Site2Cloud, the tunnel status will be
 displayed in a pop up window.
 
-To troubleshoot a tunnel state, go to site2Cloud -> Diagnostics.
+To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 
 .. |image0| image:: site2cloud_media/image1.png
    :width: 5.03147in
