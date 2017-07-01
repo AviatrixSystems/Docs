@@ -8,8 +8,8 @@ R2.5
 1. Security improvements
 -------------------------
 
--  Provide security patch to upgrade OpenVPN server to v2.4.2. To apply
-   the patch, go to Settings->Patches and select OpenVPN 2.4.2
+-  Provide security patch to upgrade OpenVPN server to v2.4.3. To apply
+   the patch, go to Settings->Patches and select OpenVPN 2.4.3
 
 -  New Aviatrix VPN client (v1.3.9) for user VPN (Mac, PC and Unix). To
    download, go to `this link. <http://docs.aviatrix.com/Downloads/samlclient.html>`__
