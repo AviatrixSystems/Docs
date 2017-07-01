@@ -12,6 +12,8 @@ This guide helps you to configure Site2Cloud IPSEC tunnels on CloudN that connec
 (CloudN can also connects to any third party router or 
 firewall for IPSEC tunnel.)    
 
+|image8|
+
 
 Configuration Workflow
 ======================
@@ -54,8 +56,9 @@ displayed in a pop up window.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 
-.. |image0| image:: site2cloud_media/image1.png
-   :width: 5.03147in
-   :height: 2.57917in
+.. |image8| image:: site2cloud_media/image009.png
+   :width: 5.08365in
+   :height: 3.25278in
+
 
 .. disqus::

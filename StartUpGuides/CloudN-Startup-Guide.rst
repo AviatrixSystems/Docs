@@ -16,11 +16,11 @@ REST API document can be found at CloudN console Help menu. For an example of ho
 CloudN performs two major functions: 
 
 - Extend your datacenter to multi cloud (ACX).
-- Build encrypted tunnel to existing VPC/VNets.
+- Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
 
 To learn how CloudN Aviatrix Cloud Interconnect (ACX) works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
-CloudN can also be used as a virtual router for site2cloud function to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`__
+CloudN can also be used as a virtual router for Site2Cloud function to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`__
 
 ----
 
@@ -46,7 +46,7 @@ CloudN can also be used as a virtual router for site2cloud function to work with
 2.1. AWS EC2 Account for ACX
 ----------------------------
 
-.. Note:: If CloudN is deployed for site2cloud function, skip this section. 
+.. Note:: If CloudN is deployed for Site2Cloud function, skip this section. 
 
 ..
 
@@ -93,17 +93,17 @@ CloudN can also be used as a virtual router for site2cloud function to work with
 2.2. Microsoft Azure Account for ACX
 -------------------------------------
 
-.. Note:: If CloudN is deployed for site2cloud function, skip this section.
+.. Note:: If CloudN is deployed for Site2Cloud function, skip this section.
 
 ..
  
     To create credentials for Azure, follow `this instructions. <http://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_
 
-2.3. Deploy CloudN as a virtual router (site2cloud function)
+2.3. Deploy CloudN as a virtual router (Site2Cloud function)
 ------------------------------------------------------------
 
     You can deploy CloudN as a virtual router and in a remote site for 
-    site2cloud function.
+    Site2Cloud function.
 
 |image8|
 
@@ -321,7 +321,7 @@ for testing and evaluation purposes.
 3.1.1.  Configure Network Adapter Properties for ACX
 ***************************************************
 
-.. Note:: If you deploy CloudN for site2cloud connectivity, skip this section.
+.. Note:: If you deploy CloudN for Site2Cloud connectivity, skip this section.
 
 ..
 
@@ -408,7 +408,7 @@ for testing and evaluation purposes.
 3.2.1. Enable MAC Address Spoofing for ACX
 *******************************************
 
-.. Note:: If you deploy CloudN for site2cloud function, skip this section.
+.. Note:: If you deploy CloudN for Site2Cloud function, skip this section.
 ..
 
   Both Network Adapters associated with CloudN VM should have “Enable MAC
@@ -424,7 +424,7 @@ for testing and evaluation purposes.
 3.3. NIC Teaming Support for ACX
 ---------------------------------
 
-.. Note:: If you deploy CloudN for site2cloud function, skip this section.
+.. Note:: If you deploy CloudN for Site2Cloud function, skip this section.
 ..
 
   NIC teaming is only supported for active standby mode.
