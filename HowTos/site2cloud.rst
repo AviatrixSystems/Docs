@@ -71,11 +71,7 @@ Before you start make sure you have the latest software by checking the
 Dashboard. If an alert message displays, click Upgrade to download the
 latest software.
 
-Before you begin, you need to decide if you like to enable HA for the
-gateway that connects all the sites. The HA capability applies to all
-gateways that perform site to cloud functions.
-
-The site to cloud configuration workflow is as follows, with major steps
+The Site2Cloud configuration workflow is as follows, with major steps
 highlighted.
 
 1. Create a gateway in a VPC where you like to connect to sites.
@@ -148,15 +144,13 @@ highlighted.
       encryption algorithm. Incorporate the information to your remote
       router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
-#. Repeat the above step 4 and step 5 for each additional remote site.
-
 Troubleshooting
 ===============
 
-To check a tunnel state, go to site2Cloud, the tunnel status will be
+To check a tunnel state, go to Site2Cloud, the tunnel status will be
 displayed in a pop up window.
 
-To troubleshoot a tunnel state, go to site2Cloud -> Diagnostics.
+To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 
 .. |image0| image:: site2cloud_media/image1.png
    :width: 5.03147in

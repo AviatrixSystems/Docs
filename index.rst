@@ -76,6 +76,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Site2Cloud
 
    HowTos/site2cloud
+   HowTos/cloudn-site2cloud
    HowTos/EncrOverExpRoute
 
 .. _OpenVPN:
