@@ -19,6 +19,8 @@ How to upgrade software
 
 At the controller dashboard, a !New alert icon appears when a new software becomes available, click the !New icon to upgrade. Select "UPGRADE TO THE LATEST" to upgrade.
 
+Alternatively, go to Settings -> Upgrade -> UPGRADE TO THE LATEST
+
 Inline and hitless software upgrade
 -----------------------------------
 
