@@ -111,6 +111,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Settings
 
+   HowTos/inline_upgrade
    HowTos/DataAnalSplunkSumo
 
 .. _Troubleshoot:
