@@ -44,7 +44,7 @@ The Site2Cloud on CloudN configuration workflow is very simple.
      #. Enter Remote Subnet CIDR blocks. For example, 10.2.2.0/24
      #. Enter Local Subnet CIDR blocks. For example, 192.168.1.0/24
      #. Click OK. 
-     #. Add a static route on the default gateway where CloudN is deployed to to point to CloudN as teh next hop to reach the remote site. 
+     #. Add a static route on the default gateway where CloudN is deployed to to point to CloudN as the next hop to reach the remote site. 
 
 
 
