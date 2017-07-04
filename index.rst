@@ -112,6 +112,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Settings
 
    HowTos/inline_upgrade
+   HowTos/controller_ha
    HowTos/DataAnalSplunkSumo
 
 .. _Troubleshoot:
