@@ -164,7 +164,7 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 
       In this case, there is only one public subnet and 2 private subnets with
       each in a different availability zone created for a VPC Container. Up to
-      3 VPCs can be launched. Since not every AZ (Availability Zone) is
+      2 VPCs can be launched. Since not every AZ (Availability Zone) is
       covered in subnet creation, applications that require subnets in each AZ
       would not work. Deploying on /24 subnet is best used for POC projects.
 
