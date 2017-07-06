@@ -23,24 +23,28 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    a. Click Gateway. Click +New Gateway. 
 
-   b. In the dropdown, select Cloud Type. 
+   #. In the dropdown, select Cloud Type. 
 
-   c. Provide a unique Gateway Name, such mgmt-gw. 
+   #. Provide a unique Gateway Name, such mgmt-gw. 
 
-   d. Select one account you created earlier and a region, VPC ID, Public Subnet on which the vpn gateway will be launched and user will land.
+   #. Select one account you created earlier and a region, VPC ID, Public Subnet on which the vpn gateway will be launched and user will land.
 
-   e. Select VPN Access. More fields will appear. If you just want a basic user vpn solution without multi-factor authentication, you can skip the rest of the vpn related fields and click OK to launch a vpn gatewway. By default, ELB will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
+   #. Select VPN Access. More fields will appear. If you just want a basic user vpn solution without multi-factor authentication, you can skip the rest of the vpn related fields and click OK to launch a vpn gatewway. By default, ELB will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
 
-   f. Use the default VPN CIDR Block. The VPN CIDR Block is the virtual IP address pool that VPN user will be assigned. 
+   #. Use the default VPN CIDR Block. The VPN CIDR Block is the virtual IP address pool that VPN user will be assigned. 
 
-   g. If you use a DUO or Okta for multi factor authenication, select one of them at Two-step Authentication, more fields will appear. For details on Okta authentication, check out `this link. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__  
+   #. If you use a DUO or Okta for multi factor authenication, select one of them at Two-step Authentication, more fields will appear. For details on Okta authentication, check out `this link. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__  
 
-   h. If you select Split Tunnel Mode, only the VPC CIDR traffic will go through the tunnel. If you specify "Additional CIDRs", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
-   i. ELB is enabled by default. If you disable ELB, your vpn traffic runs on UDP port 1194. When ELB is enabled, your vpn traffic runs on TCP 443. TCP 443 makes it easier to go through corporate firewall.  
+   #. If you select Split Tunnel Mode, only the VPC CIDR traffic will go through the tunnel. If you specify "Additional CIDRs", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
+      
+      Note: If you plan to support Chromebook, you must configure full tunnel
+      mode as Chromebook only supports full tunnel. 
 
-   j.  Click LDAP if vpn user should be authenticated by AD or LDAP server. After you fill up the LDAP fields, make sure you run "Test LDAP Configuration" to test your configuration is valid. 
+   #. ELB is enabled by default. If you disable ELB, your vpn traffic runs on UDP port 1194. When ELB is enabled, your vpn traffic runs on TCP 443. TCP 443 makes it easier to go through corporate firewall.  
 
-   k. If you wish to create more of such vpn gateways (for example, behind ELBsfor load balancing), click Save Template, which will save your LDAP and multi-factor authentication credentials. 
+   #.  Click LDAP if vpn user should be authenticated by AD or LDAP server. After you fill up the LDAP fields, make sure you run "Test LDAP Configuration" to test your configuration is valid. 
+
+   #. If you wish to create more of such vpn gateways (for example, behind ELBsfor load balancing), click Save Template, which will save your LDAP and multi-factor authentication credentials. 
 
 
 2. Add Users and Profiles
