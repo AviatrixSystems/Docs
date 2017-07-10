@@ -433,7 +433,9 @@ for testing and evaluation purposes.
 4. Booting Up and Initial Configuration
 =========================================
 
-CloudN supports browser based GUI Interface and REST APIs.
+This section and the following steps can be automated. Check out `this vmware PowerCli script. <https://github.com/AviatrixSystems/AutoLaunchCloudN>`_
+
+Below description is how you can boot up in a manual way. 
 
 After the virtual machine boots up, you must first login into the
 machine while still in hypervisor console.
