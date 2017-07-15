@@ -21,7 +21,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Rest APIs`
 * :ref:`Downloads`
 * :ref:`Release Notes`
-* :ref:`TechNotes`
+* :ref:`Tech Notes`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
 
