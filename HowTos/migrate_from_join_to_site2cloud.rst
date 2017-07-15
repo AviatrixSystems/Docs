@@ -16,11 +16,11 @@ For ease of reference, we call the VPC where the Join and Site2Cloud VPC gateway
 1. Launch an Aviatrix Controller in AWS or Azure.
 #. From the Controller, launch an Aviatrix gateway in a migrating VPC. 
 #. From the original CloudN where Join function was implemented, delete all participating subnets. After all subnets are deleted, delete the corresponding gateway.
-#. On the default routing gateway where the original CloudN is deployed, remove the routes that points to the original CloudN as the next hop to the migrating VPC. 
+#. On the default routing gateway where the original CloudN is deployed, remove the routes that points to the original CloudN as the next hop to the migrating VPC. (This step is not needed if the new and the original CloudN are the same one.)
 #. On the Aviatrix Cloud Controller, create a Site2Cloud connection on the migrating VPC. Download the configuration template. 
 #. On the new (this new could be the same original) CloudN, import the previously downloaded configuration template. 
 #. Make sure the tunnel comes up. 
-#. On the default routing gateway where the new CloudN is deployed, add a static route that points the new CloudN as the next hop to reach the migrating VPC. 
+#. On the default routing gateway where the new CloudN is deployed, add a static route that points the new CloudN as the next hop to reach the migrating VPC. (This step is not needed is the new and the original CloudN are the same one.) 
 #. The VPC migration from Join function to Site2Cloud is done. 
 #. Repeat the above steps for more migrating VPCs.
 
