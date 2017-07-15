@@ -24,6 +24,5 @@ chances are you have not subscribed to Aviatrix gateway during Azure onboarding 
 
 If you see this error message when launching an AWS gateway, chances are your access key or secret ID is not correct. Re-enter these two fields. If it still does not work, change the credential on AWS console and try again.
 
-::
 
 .. disqus::
