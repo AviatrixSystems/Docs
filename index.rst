@@ -20,6 +20,8 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Troubleshoot`
 * :ref:`Rest APIs`
 * :ref:`Downloads`
+* :ref:`Release Notes`
+* :ref:`TechNotes`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
 
@@ -150,6 +152,14 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/UCC_Release_Notes
    HowTos/changelog
+
+.. _Tech Notes:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tech Notes
+
+   HowTos/migrate_from_join_to_site2cloud
 
 .. _Solutions:
 
