@@ -6,9 +6,7 @@
 CloudN 
 ###################################
 
-To install on vmware ESXi
--------------------------
 
-To install Aviatrix virtual appliance CloudN for Datacenter Extension, download at `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-051517.zip>`__
+To install Aviatrix virtual appliance CloudN, follow the instructions in `Startup Guide <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_
 
 .. disqus::
