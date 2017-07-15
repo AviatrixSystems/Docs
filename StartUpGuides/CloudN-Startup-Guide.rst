@@ -46,7 +46,7 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 2.1. AWS EC2 Account for ACX
 ----------------------------
 
-.. Note:: If CloudN is deployed for Site2Cloud function, skip this section. 
+.. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an EC2 account. Skip this section. 
 
 ..
 
@@ -93,7 +93,7 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 2.2. Microsoft Azure Account for ACX
 -------------------------------------
 
-.. Note:: If CloudN is deployed for Site2Cloud function, skip this section.
+.. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an Azure account. Skip this section.
 
 ..
  
@@ -321,7 +321,7 @@ for testing and evaluation purposes.
 3.1.1.  Configure Network Adapter Properties for ACX
 ***************************************************
 
-.. Note:: If you deploy CloudN for Site2Cloud connectivity, skip this section.
+.. Note:: If you deploy CloudN for Site2Cloud connectivity, CloudN network interfaces are not in promiscuous mode. Skip this section.
 
 ..
 
@@ -408,7 +408,7 @@ for testing and evaluation purposes.
 3.2.1. Enable MAC Address Spoofing for ACX
 *******************************************
 
-.. Note:: If you deploy CloudN for Site2Cloud function, skip this section.
+.. Note:: If you deploy CloudN for Site2Cloud function, MAC Spoofing is not needed. Skip this section.
 ..
 
   Both Network Adapters associated with CloudN VM should have “Enable MAC
@@ -424,10 +424,10 @@ for testing and evaluation purposes.
 3.3. NIC Teaming Support for ACX
 ---------------------------------
 
-.. Note:: If you deploy CloudN for Site2Cloud function, skip this section.
+.. Note:: If you deploy CloudN for Site2Cloud function, active and active NIC team is supported. 
 ..
 
-  NIC teaming is only supported for active standby mode.
+  For ACX, NIC teaming is only supported for active standby mode.
 
 
 4. Booting Up and Initial Configuration
@@ -462,8 +462,8 @@ commands. For each command, type “?” to view syntax and parameters.
   There are two ways to give CloudN its IP adddress: auto-generate by
   CloudN itself or statically assign one.
 
-4.1.1. Statically assign CloudN IP address
-*******************************************
+4.1.1. Statically assign CloudN IP address (Recommended method)
+***************************************************************
 
     Command: setup\_interface\_static\_address
 
@@ -590,6 +590,10 @@ commands. For each command, type “?” to view syntax and parameters.
   through the initial set up and launch your first VPC/VNet.
 
 ----
+
+.. Warning:: Any resources created by the controller, such as Aviatrix gateways, AWS/Azure routing tables, subnets, etc, must be deleted from the controller console. If you delete them directly on AWS console, controllers view of resources will be incorrect which will lead to features not working properly.
+
+..
 
 5. Onboarding
 ===============

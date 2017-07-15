@@ -150,6 +150,10 @@ address for password, as shown below:
 Follow the initial setup process to setup admin email address, password
 and install the latest software. Log in again with your new admin password
 
+.. Warning:: Any resources created by the controller, such as Aviatrix gateways, GCP routing tables, subnets, LB, etc, must be deleted from the controller console. If you delete them directly on AWS console, controllers view of resources will be incorrect which will lead to features not working properly.
+
+..
+
 Onboarding
 ==========
 

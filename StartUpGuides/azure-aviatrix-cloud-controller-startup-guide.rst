@@ -70,6 +70,10 @@ Launch Controller VM from Azure marketplace portal
 
 13. Start with onboarding tab at the console.
 
+.. Warning:: Any resources created by the controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the controller console. If you delete them directly on Azure console, controllers view of resources will be incorrect which will lead to features not working properly.
+
+..
+
 Subscribe to Aviatrix Companion Gateway
 ========================================
 

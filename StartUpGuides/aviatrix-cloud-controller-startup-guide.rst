@@ -36,6 +36,10 @@ DNS Server Connectivity Check
 If the VPC where the controller is deployed in has a custom DNS server (via DHCP option), 
 make sure the controller instance can reach this DNS server. 
 
+.. Warning:: Any resources created by the controller, such as Aviatrix gateways, AWS routing tables, subnets, ELB, etc, must be deleted from the controller console. If you delete them directly on AWS console, controllers view of resources will be incorrect which will lead to features not working properly.  
+
+..
+
 
 Launch Aviatrix Controller via CloudFormation
 =============================================
