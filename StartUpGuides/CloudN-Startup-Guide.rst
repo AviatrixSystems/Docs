@@ -33,7 +33,7 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 * Latest vmware OVF image is CloudN-ovf-061517, it can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-061517.zip>`__
 
 
-* Latest KVM image is CloudN-kvm-050217, it can be downloaded from `KVM image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-kvm-050217.tar.gz>`_
+* Latest KVM image is CloudN-kvm-061517, it can be downloaded from `KVM image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-kvm-061517.tar.gz>`_
 
 
 * Hyper-V VHD image is CloudN-vhd-090216, it can be downloaded from `VHD image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-vhd-090216.zip>`_
