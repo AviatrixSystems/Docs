@@ -16,13 +16,13 @@ Click Gateway at navigation panel. Click New to launch a gateway. To launch a ga
 Select Gateway Size
 -------------------
 
-When selecting Gateway Size, following the guideline of IPSEC performance based on tests done between two gateways:
+When selecting the Gateway Size, note the following the guidelines of IPSEC performance based on tests conducted between two gateways of the same size:
 
--  t2 series throughput is not guaranteed, it can burst up to 130mbps.
--  m3 seriese are about 300 - 500mbps.
--  m4.xlarge or c4.xlarge is around 500mbps.
--  c3.2xlarge or m4.2xlarge is about 1Gbps.
--  c3.4xlarge is about 1.2Gbps. 
+-  t2 series throughput is not guaranteed; it can burst up to 130mbps.
+-  m3 series are in the range 300 - 500mbps
+-  m4.xlarge or c4.xlarge: approximately 500mbps
+-  c3.2xlarge or m4.2xlarge: approximately 1Gbps
+-  c3.4xlarge: approximately 1.2Gbps
 
 if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
 
