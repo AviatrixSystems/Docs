@@ -6,7 +6,7 @@
 Reserve For On-Prem Use
 ==========================
 
-The Datacenter Extension feature works by dividing a VLAN or subnet into sub segments. 
+The Datacenter Cloud InterConnect (DCCX) feature works by dividing a VLAN or subnet into sub segments. 
 Each sub segment becomes a CIDR block for VPC/VNet. If you want to reserve some of the sub segments 
 for on-prem use, i.e., to launch VMs on these subnets, you can do so by reserving some CIDR blocks. 
 
