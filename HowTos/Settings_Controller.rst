@@ -1,21 +1,30 @@
 .. meta::
-   :description: launch a gateway and edit it
-   :keywords: backup, restore, upgrade, license, customer id, system time, email
+   :description: Documentation for System Time, License, Email, 2FA Login
+   :keywords: System Time, NTP, UTC, timezone, sync, License, customer id, Email, 2FA, Duo
 
 ###################################
 Controller
 ###################################
 
-.. _Controller:
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Controller
+System Time 
+-----------------
+CONTENT TO BE UPDATED...
 
-   HowTos/Settings_Controller_Backup_&_Restore
-   HowTos/Settings_Controller_Upgrade
-   HowTos/Settings_Controller_License
-   HowTos/Settings_Controller_System_Time
-   HowTos/Settings_Controller_Email
+
+License 
+-----------------
+CONTENT TO BE UPDATED...
+
+
+Email 
+-----------------
+CONTENT TO BE UPDATED...
+
+
+2FA Login 
+-----------------
+CONTENT TO BE UPDATED...
+
 
 .. disqus::
