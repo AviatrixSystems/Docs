@@ -12,7 +12,7 @@ UPLOAD TRACELOG
 -----------------
 CONTENT TO BE UPDATED...
 
-Please refer to `this link. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
+Please refer to `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
 
 
 
