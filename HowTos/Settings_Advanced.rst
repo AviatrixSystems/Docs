@@ -7,33 +7,17 @@ Advanced
 ###################################
 
 
+-  Tunnel  (TO BE UPDATED...)
 
-Tunnel 
------------------
-CONTENT TO BE UPDATED...
+    Please refer to `this link. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
 
-Please refer to `this link. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
+-  Keepalive  (TO BE UPDATED...)
 
+    Please refer to `this link. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
 
-
-Keepalive 
------------------
-CONTENT TO BE UPDATED...
-
-Please refer to `this link. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
+-  Password Maagement  (TO BE UPDATED...)
 
 
-
-Password Maagement 
------------------
-CONTENT TO BE UPDATED...
-
-
-
-Certificates 
------------------
-CONTENT TO BE UPDATED...
-
-
+-  Certificates  (TO BE UPDATED...)
 
 .. disqus::
