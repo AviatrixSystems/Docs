@@ -6,28 +6,14 @@
 Maintenance
 ###################################
 
+-  Upgrade  (TO BE UPDATED...)
 
+    Please refer to `this link. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
 
--  Upgrade 
+-  Backup & Restore  (TO BE UPDATED...)
 
-CONTENT TO BE UPDATED...
+    Please refer to `this link. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
 
-Please refer to `this link. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
-
-
-
--  Backup & Restore 
-
-CONTENT TO BE UPDATED...
-
-Please refer to `this link. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
-
-
-
--  Patches 
-
-CONTENT TO BE UPDATED...
-
-
+-  Patches  (TO BE UPDATED...)
 
 .. disqus::
