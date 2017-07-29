@@ -124,6 +124,9 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Troubleshoot
 
+   HowTos/Troubleshoot_Logs
+   HowTos/Troubleshoot_Diagnostics
+   HowTos/Troubleshoot_ELB_Status
    HowTos/troubleshooting
    HowTos/error-msgs
 
