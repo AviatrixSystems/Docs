@@ -10,11 +10,13 @@ Maintenance
 Upgrade 
 -----------------
 CONTENT TO BE UPDATED...
+Please refer to `this link. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
 
 
 Backup & Restore 
 -----------------
 CONTENT TO BE UPDATED...
+Please refer to `this link. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
 
 
 Patches 
