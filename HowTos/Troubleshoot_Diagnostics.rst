@@ -8,12 +8,14 @@ Diagnostics
 
 -  Network  (TO BE UPDATED)
 
-    Please refer to `Debug gateway connectivity. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=NETWORK%20CONNECTIVITY%20UTILITY>`__
+    Please refer to `Debug gateway connectivity. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
     
-    Please refer to `Packet capture. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=PACKET%20CAPTURE>`__
+    Please refer to `Packet capture. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
 
 -  Gateway  (TO BE UPDATED)
 
+    Please refer to `Run diagnostics on a gateway. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
+    
 -  VPN_User  (TO BE UPDATED)
 
 -  Cloud  (TO BE UPDATED)
