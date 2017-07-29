@@ -6,19 +6,14 @@
 Diagnostics
 ###################################
 
+-  Network  (TO BE UPDATED)
 
-.. _Diagnostics:
+-  Gateway  (TO BE UPDATED)
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Diagnostics
+-  VPN_User  (TO BE UPDATED)
 
-   HowTos/Troubleshoot_Diagnostics_Network
-   HowTos/Troubleshoot_Diagnostics_Gateway
-   HowTos/Troubleshoot_Diagnostics_VPN_User
-   HowTos/Troubleshoot_Diagnostics_Cloud
-   HowTos/Troubleshoot_Diagnostics_Database
+-  Cloud  (TO BE UPDATED)
 
-
+-  Database  (TO BE UPDATED)
 
 .. disqus::
