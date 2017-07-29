@@ -1,9 +1,9 @@
 .. meta::
-   :description: launch a gateway and edit it
-   :keywords: security policies, Aviatrix, AWS VPC, stateful firewall, UCX, controller, gateway
+   :description: Documentation for Troubleshoot -> Diagnostics -> Network
+   :keywords: CONTROLLER PUBLIC IP, PING UTILITY, TRACEROUTE UTILITY, NETWORK CONNECTIVITY UTILITY, PACKET CAPTURE
 
 ###################################
-Gateway
+Network
 ###################################
 
 
