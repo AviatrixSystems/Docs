@@ -8,24 +8,24 @@ Maintenance
 
 
 
-Upgrade 
------------------
+-  Upgrade 
+
 CONTENT TO BE UPDATED...
 
 Please refer to `this link. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
 
 
 
-Backup & Restore 
------------------
+-  Backup & Restore 
+
 CONTENT TO BE UPDATED...
 
 Please refer to `this link. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
 
 
 
-Patches 
------------------
+-  Patches 
+
 CONTENT TO BE UPDATED...
 
 
