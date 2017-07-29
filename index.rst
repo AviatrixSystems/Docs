@@ -127,7 +127,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Troubleshoot_Logs
    HowTos/Troubleshoot_Diagnostics
    HowTos/Troubleshoot_ELB_Status
-   HowTos/troubleshooting
    HowTos/error-msgs
 
 .. _Rest APIs:
