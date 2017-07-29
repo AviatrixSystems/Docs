@@ -34,12 +34,12 @@ Debug gateway connectivity
 --------------------------
 
 To test if a gateway can reach certain IP or host,
-click Troubleshoot->Diagnostics. At Network Connectivity Utility panel, select a gateway. Specify remote host name, port number. The TCP protocol test is reliable. Currently UDP test is not reliable.
+click Troubleshoot->Diagnostics->Network. At Network Connectivity Utility panel, select a gateway. Specify remote host name, port number. The TCP protocol test is reliable. Currently UDP test is not reliable.
 
 Packet capture
 ---------------
 
-Click Troubleshoot->Diagnostics. At Packet Capture panel, select a gateway where you wish to do packet capture. You can further filter on Host and Port number. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. You can also specifiy capture time. The pcap file can be viewed by Wireshark.
+Click Troubleshoot->Diagnostics->Network. At Packet Capture panel, select a gateway where you wish to do packet capture. You can further filter on Host and Port number. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. You can also specifiy capture time. The pcap file can be viewed by Wireshark.
 
 DNS Error
 ----------
