@@ -183,6 +183,22 @@ Two example logs:
   Gateway=bogusGw hostname=clients2.google.com state=NO\_MATCH
   drop\_reason=NO\_HOSTNAME\_MATCH
 
+AviatrixTunnelStatusChange
+--------------------------
+
+Logs with this prefix come from controller whenever a tunnel status changes.
+old_state means old state of the tunnel, and new_state is the new changed state of tunnel.
+
+Example log:
+------------------
+
+::
+
+  Jul 21 04:28:19 Controller-52.41.237.237 cloudx_cli: 
+  AviatrixTunnelStatusChange: src_gw=Oregon-DevOps-VPC(AWS us-west-2) 
+  dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
+
+
 Log management system configuration
 ====================================
 
