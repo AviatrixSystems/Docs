@@ -215,11 +215,26 @@ Splunk app for Aviatrix can be downloaded from
 Click `here <https://github.com/AviatrixSystems/SplunkforAviatrix>`_ to check
 instructions on Github.
 
+**Sample**
+
+|splunk_sample|
+
+
 Sumo Logic App for Aviatrix
 ---------------------------
 
 Sumo Logic app installation guide is also available on
 `Github <https://github.com/AviatrixSystems/SumoLogicforAviatrix>`_.
 
+**Sample**
+
+|sumo_sample|
+
+.. |splunk_sample| image:: DataAnalSplunkSumo_media/splunk_overview.png
+   :width: 6.50000in
+   :height: 6.55000in
+.. |sumo_sample| image:: DataAnalSplunkSumo_media/sumo_overview.png
+   :width: 6.50500in
+   :height: 6.20500in
 
 .. disqus::
