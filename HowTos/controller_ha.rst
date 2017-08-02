@@ -20,8 +20,8 @@ Since controller carriers configuration data, controller HA function is achieved
 
 When a replace controller is launched, you can restore the configuration data from your cloud storage place. 
 
-(We like to point out that designing a stanby controller that both primary and standby controllers monitor  
-each other's health of through a heart beat mechansim introduces complexity 
+(We like to point out that designing a standby controller that both primary and standby controllers monitor  
+each other's health of through a heart beat mechanism introduces complexity 
 and high probability for false positive switch over, due to scenarios
 such as an accidently blocked security group ports between the two 
 controller instances.)
