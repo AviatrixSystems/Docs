@@ -3,29 +3,34 @@
    :keywords: CloudN, CloudN config drive, Aviatrix
 
 ================================================
-Booting CloudN VM with customized configuration
+Booting CloudN VM with Customized Configuration
 ================================================
 
-Installation on vSphere/VMware Workstation 
--------------------------------------------
+This document provides one method to boot CloudN VM automatically without the initial manual configuration stage for interface address. 
 
-CloudN Download link:
-http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html.
+The method is to use a customized ISO file when launching the virtual machine. 
+
+Note 
+CloudN can be downloaded from `this link: <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_.
+
+Installation on vSphere 
+========================
 
 Create the customized configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order for cloud-init to parse the meta-data and user-data to CloudN
-VM, we need to create an ISO image that will contain both meta-data and
-user-data in ISO9660 format.
+In order to boot CloudN that passes in interface address information, we need to create an ISO image contains both user-data and meta-data 
+in ISO9660 format.
 
-In the following example, we want to have our CloudN to boot up with a
+Creating user-data file
+------------------------
+
+In the following example, CloudN is designed to boot up with a
 static ip address 10.10.0.10, netmask 255.255.0.0, gateway 10.10.0.1 and
 dns-nameservers 8.8.8.8 8.8.4.4. Please note that “#cloud-config” is not
 a comment but a directive to cloud-init.
 
 Sample contents of user-data: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :: 
 
@@ -43,13 +48,12 @@ Sample contents of user-data:
 	    gateway 10.10.0.1
 	    dns-nameservers 8.8.8.8 8.8.4.4
 
-If CloudN VM will be deployed in a proxy environment, we will need to
+If CloudN VM were to be deployed in a proxy environment, we would need to
 include additional proxy settings in the user-data. In the following
 sample, 10.10.0.21 is the IP address of the CloudN VM, 10.28.144.137 is
 the proxy IP address with port 8080.
 
 Sample contents of user-data (with proxy settings): 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -83,28 +87,9 @@ Sample contents of user-data (with proxy settings):
 	https\_proxy=http://10.28.144.137:8080"; echo "export no\_proxy=127.0.0.1,10.10.0.21") >>
 	/etc/apache2/envvars
 
-Sample contents of user-data: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
-
-  #cloud-config
-
-  write\_files:
-  - path: /etc/network/interfaces
-    content: \|
-	auto lo
-	iface lo inet loopback
-	auto eth0
-	iface eth0 inet static
-	address 10.10.0.10
-	netmask 255.255.0.0
-	gateway 10.10.0.1
-	dns-nameservers 8.8.8.8 8.8.4.4
-
-
-Contents meta-data:
-~~~~~~~~~~~~~~~~~~~
+Create meta-data file
+------------------------
 
 ::
 
@@ -113,6 +98,8 @@ Contents meta-data:
 
 Create the ISO
 ~~~~~~~~~~~~~~
+
+After user-data file and meta-data file are created, you can create the ISO by using this following command.
 
 ::
 
@@ -157,9 +144,9 @@ Verify the ISO (optional)
   ubuntu@ubuntu:~$ sudo umount /media/test\_iso
 
 Deploy CloudN VM with the ISO
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We will deploy a CloudN VM with the cloudn-10-10-0-10.iso attached as a
+Now you can deploy a CloudN VM with the cloudn-10-10-0-10.iso attached as a
 CDROM to the VM. During the boot up process, the CloudN will be
 configured with the customized configuration in user-data and meta-data.
 Once the CloudN network is up, it will automatically download the latest
@@ -200,10 +187,10 @@ initialization process.
 |image5|
 
 Installation on Linux KVM
--------------------------
+==========================
 
-We will use the same methods previously described to create the
-cloudn-172-25-0-10.iso to be used in Linux KVM.
+The same methods previously described to create the
+cloudn-172-25-0-10.iso can be applied to KVM virtualization environment.
 
 Contents of user-data: 
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -233,16 +220,16 @@ Contents meta-data:
 
   local-hostname: CloudN-local
 
-Create the ISO
-~~~~~~~~~~~~~~
+Create the ISO Image
+~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
   ubuntu@ubuntu:~ $ genisoimage -o cloudn-172-25-0-10.iso -volid cidata -J
   -r user-data meta-data
 
-Deploy CloudN VM with the ISO
------------------------------
+Deploy CloudN VM with the ISO Image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Copy the CloudN qcow2 image and cloudn-172-25-0-10.iso to the
 /var/lib/libvirt/images.
@@ -263,8 +250,8 @@ Copy the CloudN qcow2 image and cloudn-172-25-0-10.iso to the
 
   -rw-r--r-- 1 root root 374784 Mar 19 22:11 cloudn-172-25-0-10.iso
 
-In this example below, we created a bridge interface “br1” and assign
-eno1 to this “br1”.
+In this example below, a bridge interface “br1” is created and
+eno1 is assigned to this “br1”.
 
 ::
 
