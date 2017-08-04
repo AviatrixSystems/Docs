@@ -163,6 +163,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Tech Notes
 
    HowTos/migrate_from_join_to_site2cloud
+   HowTos/CloudN-config-drive-v1_4
 
 .. _Solutions:
 
