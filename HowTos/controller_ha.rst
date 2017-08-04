@@ -19,10 +19,12 @@ How to backup configuration
   1. Settings -> Maintenance -> Backup & Restore -> Under BACKUP section
   #. Select **Cloud Type**
   #. Select **Account Name**
-  #. (example: If AWS were selected as the cloud type, specify an **S3 bucket name**)
+
+(example: If AWS were selected as the cloud type, specify an **S3 bucket name**)
+
 The first time you enable this feature, the configuration will backed up to your specified location. After this, the configuration data is automatically backed up daily at 12am.
 
-If you want to force an immediate backup (e.g. for a configuration change) you can accomplish this by disable the backup and then re-enabling it again. Note: Only the latest configuration data is stored (no versioning at this time). Each time the configuration is backed up, it overwrites the previous one.
+If you want to force an immediate backup (e.g. for a configuration change) you can accomplish this by disabling the backup and then re-enabling it again. Note: Only the latest configuration data is stored (no versioning at this time). Each time the configuration is backed up, it overwrites the previous one.
 
 How to restore configuration
 --------------------------------
