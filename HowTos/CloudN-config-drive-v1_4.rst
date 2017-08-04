@@ -74,15 +74,14 @@ Sample contents of user-data (with proxy settings):
 	 
 	bootcmd:
 
-	- grep -q \_proxy /etc/environment \|\| (echo
-	"http\_proxy=http://10.28.144.137:8080"; echo
-	"https\_proxy=http://10.28.144.137:8080"; echo
-	"no\_proxy=127.0.0.1,10.10.0.21") >> /etc/environment
+	- grep -q \_proxy /etc/environment \|\| (echo "http\_proxy=http://10.28.144.137:8080"; echo
+	"https\_proxy=http://10.28.144.137:8080"; echo "no\_proxy=127.0.0.1,10.10.0.21") >> 
+	/etc/environment
 
 	- grep -q \_proxy /etc/apache2/envvars \|\| (echo "export
 	http\_proxy=http://10.28.144.137:8080"; echo "export
-	https\_proxy=http://10.28.144.137:8080"; echo "export
-	no\_proxy=127.0.0.1,10.10.0.21") >> /etc/apache2/envvars
+	https\_proxy=http://10.28.144.137:8080"; echo "export no\_proxy=127.0.0.1,10.10.0.21") >>
+	/etc/apache2/envvars
 
 Sample contents of user-data: 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
