@@ -29,6 +29,7 @@ User Interface
 
 - re-organize menu items on Settings. Under Settings -> Maintenance are Upgrade, Backup & Restore and Security Patches. Under Settings -> Controller are System Time, License information, Email settings and controller access method authentication LDAP or DUO configuration.oUnder Settings -> Advanced are tunnel timeout and keepalive configuration, password change and certificate management.  
 
+- Make a wish. Customers can now send feedbacks on UI pages regarding features, usability and make a wish on new requirements and enhancements.   
 
 
 R2.5
