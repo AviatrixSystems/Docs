@@ -8,11 +8,9 @@ R2.6
 Connectivity
 -------------
 
-- TCP port 443 as encrypted tunnel. Aviatrix Virtual Appliance CloudN now offers a TCP based secure tunnel connectivity. With this new capability, you do not need to open outbound UDP port 500 and 4500. The encrypted tunnel runs on TCP 443. To configure, go to Datacenter Extension, select TCP for the field Tunnel Type. UDP based encrypted tunnel is still supported. 
+- Run encrypted on TCP port 443. Aviatrix Virtual Appliance CloudN now offers a TCP based secure tunnel connectivity. With this new capability, you do not need to open outbound UDP port 500 and 4500. The encrypted tunnel runs on TCP 443. To configure, go to Datacenter Extension, select TCP for the field Tunnel Type. UDP based encrypted tunnel is still supported. 
 
 - Reserve on-prem segment. After deciding how many VPCs you wish to configure during on boarding, you can sub divide the segments to reserve some for on prem VM deployment. This allows you launch applications where some part of it (such as database) is on-prem and others parts of it (such as web front end) to be in VPC.  
-
-- Multi public IP support for TCP. Aviatrix CloudN can handle the case where a customer may have multiple public IP addresses from multiple ISPs. This is only supported when TCP option is selected when creating a Datacenter Extension. 
 
 - Google IDP support. Google IDP is now supported IDP for Aviatrix SAML client. 
 
