@@ -3,20 +3,40 @@
    :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, peering, encrypted peering, transitive peering, encrypted transitive, aviatrix
 
 
-==============================
-[TODO NAME]
-==============================
+=====================================================
+How to Build Scalable Transit VPC Architecture in AWS
+=====================================================
 
 
 
-The Problem
-===========
+Introduction
+==============
 
+Aviatrix provides a Transit VPC solution that is centrally managed and simple to deploy, as documented in `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_. The solution requires no CCIE skills for maintenance and troubleshooting. 
 
+This document guides you to build a scalable Transit VPC solution that needs the minimum amount of interaction with on-prem edge router or firewall devices. All you need to start with is some planning. 
 
-Solution: Bring Application to User
+Cloud Address Planning
+=======================
+
+The first step is to work with your on-prem network admin to carve out one or a set of
+consective network address 
+space that is not used anywhere by your company and reserve that as your cloud address space. For example, the address space could be 10.220.0.0/16, 10.221.0.0/16, etc.
+
+Transit VPC to on-prem IPSEC Tunnel
 ====================================
 
+The second step is to use this carved out cloud address space to build just one IPSEC tunnel between your on-prem network and the transit VPC. 
+What you need to do is to specify the local and remote network addresses during building the IPSEC tunnel
+
+Spoke VPC to on-prem IPSEC Tunnel
+=================================
+
+Once you have built the Transit VPC to on-prem IPSEC tunnel, you no 
+longer need to modify edge routers or firewalls for any spoke VPC to 
+on-prem IPSEC tunnels. Aviatrix transitive routing feature 
+takes care of each new spoke VPC when it needs to connect to on-prem. You simply configure a encrypted peering between the spoke VPC to the transit VPC and 
+then configure transitive peering from the spoke VPC to the transit VPC.
 
 
 Configuration Workflow
