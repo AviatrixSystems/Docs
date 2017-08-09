@@ -9,29 +9,47 @@ How to Build Scalable Transit VPC Architecture in AWS
 
 
 
-Introduction
-==============
+1. Solution Overview
+======================
 
-Aviatrix provides a Transit VPC solution that is centrally managed and simple to deploy, as documented in `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_. The solution requires no CCIE skills for maintenance and troubleshooting. 
+Aviatrix provides a Transit VPC solution that is centrally managed and simple to deploy, as documented in `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_. The solution requires no CCIE and crypto skills for maintenance and troubleshooting the network connectivity. 
 
-This document guides you to build a scalable Transit VPC solution that needs the minimum amount of interaction with on-prem edge router or firewall devices. All you need to start with is some planning. 
+One friction in this Transit VPC solution is that each time when a spoke VPC is stood up, the IPSEC tunnel between the transit VPC and on-prem needs to be modified 
+to include the new spoke VPC CIDR. This modification of IPSEC tunnel invovles 
+on-prem network team and can take up a few weeks of time. 
 
-Cloud Address Planning
-=======================
+This document guides you to build a large and scalable Transit VPC network that 
+requires minimum modification to the on-prem edge router or firewall devices. 
 
-The first step is to work with your on-prem network admin to carve out one or a set of
+The idea of this scalable Transit VPC is to configure the IPSEC tunnel once between 
+the transit VPC and on-prem  
+edge router or firewall. Subsequent spoke VPC connectivity to on-prem requires 
+no change to this edge router or firewall. This solution enables CloudOps team to be self sufficient 
+in building and operating the hybrid cloud network.  
+
+2. Cloud Address Planning
+==========================
+
+The first step is to obtain from your network admin the on-prem address 
+space in the most summerized form. For example, the on-prem network 
+network consists of 172.16.0.0/16 and 10.11.0.0/16. 
+
+The next step is to work with your on-prem network admin to carve out 
+one or a set of
 consective network address 
-space that is not used anywhere by your company and reserve that as your cloud address space. For example, the address space could be 10.220.0.0/16, 10.221.0.0/16, etc.
+space that is not used anywhere by your company and reserve 
+that as your cloud address space. For example, 
+the address space could be 10.220.0.0/16, 10.221.0.0/16, etc. All spoke VPC CIDRs 
+will be subset of the reserved cloud address space. 
 
-You also need to obtain from your network admin the on-prem address space. For example, it could be 172.16.0.0/16, 10.10.0.0/16, etc. 
 
-Transit VPC to on-prem IPSEC Tunnel
-====================================
+3. Transit VPC to on-prem IPSEC Tunnel
+========================================
 
 The second step is to use this carved out cloud address space to build just one IPSEC tunnel between your on-prem network and the transit VPC. 
 What you need to do is to specify the local network as the carved out and non-used address space. The remote network addresses should be your on-prem network address. 
 
-Spoke VPC to on-prem IPSEC Tunnel
+4. Spoke VPC to on-prem IPSEC Tunnel
 =================================
 
 Once you have built the Transit VPC to on-prem IPSEC tunnel, you no 
@@ -41,7 +59,7 @@ takes care of each new spoke VPC when it needs to connect to on-prem. You simply
 then configure transitive peering from the spoke VPC to the transit VPC.
 
 
-Configuration Workflow
+5. Configuration Workflow
 ======================
  
 |image0| 
