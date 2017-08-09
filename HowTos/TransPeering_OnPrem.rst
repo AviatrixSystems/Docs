@@ -27,7 +27,7 @@ Transit VPC to on-prem IPSEC Tunnel
 ====================================
 
 The second step is to use this carved out cloud address space to build just one IPSEC tunnel between your on-prem network and the transit VPC. 
-What you need to do is to specify the local and remote network addresses during building the IPSEC tunnel
+What you need to do is to specify the local network as the carved out and non-used address space. The remote network addresses should be your on-prem network address. 
 
 Spoke VPC to on-prem IPSEC Tunnel
 =================================
