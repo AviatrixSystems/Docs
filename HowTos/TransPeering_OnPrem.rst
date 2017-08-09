@@ -103,7 +103,7 @@ highlighted.
    a. At Gateway menu, create a gateway in an existing Cloud VPC/VNet. 
       For example, 10.10.1.0/24.
 
-   #. Repeat the step 1 for a different Cloud VPC/VNet. 
+   #. Repeat the step i for a different Cloud VPC/VNet. 
       For example, 10.10.2.0/24, 10.10.3.0/24.
 
    #. Select "Enable HA" if you wish to build a backup encrypted tunnel for HA. Note that you must first create two respective backup gateways prior to this step. To launch backup gateways, go to Gateway page, select the gateway, click Edit, At "Gateway for High Availability Peering" field, select one public subnet and click Create. 
