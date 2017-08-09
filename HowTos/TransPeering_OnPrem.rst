@@ -21,6 +21,8 @@ Solution: Bring Application to User
 
 Configuration Workflow
 ======================
+ 
+|image0| 
 
 Before you start make sure you have the latest software by checking the
 Dashboard. If an alert message displays, click Upgrade to download the
@@ -141,7 +143,7 @@ displayed in a pop up window.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 
-.. |image0| image:: site2cloud_media/image1.png
+.. |image0| image:: TransPeering_OnPrem_media/TransPeering_OnPrem.PNG
    :width: 5.03147in
    :height: 2.57917in
 
