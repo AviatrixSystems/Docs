@@ -23,6 +23,8 @@ The first step is to work with your on-prem network admin to carve out one or a 
 consective network address 
 space that is not used anywhere by your company and reserve that as your cloud address space. For example, the address space could be 10.220.0.0/16, 10.221.0.0/16, etc.
 
+You also need to obtain from your network admin the on-prem address space. For example, it could be 172.16.0.0/16, 10.10.0.0/16, etc. 
+
 Transit VPC to on-prem IPSEC Tunnel
 ====================================
 
