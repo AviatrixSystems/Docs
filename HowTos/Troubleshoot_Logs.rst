@@ -17,7 +17,7 @@ Please refer to `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooti
 
 
 DISPLAY AVIATRIX COMMAND LOG 
------------------
+-----------------------------
 CONTENT TO BE UPDATED...
 
 

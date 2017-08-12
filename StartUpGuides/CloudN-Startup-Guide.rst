@@ -6,7 +6,7 @@
  Virtual Appliance CloudN
 =======================================
 
-----
+
 
 Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or co-location facility.
 
@@ -319,7 +319,7 @@ for testing and evaluation purposes.
     for more detailed instructions.
 
 3.1.1.  Configure Network Adapter Properties for ACX
-***************************************************
+*************************************************************
 
 .. Note:: If you deploy CloudN for Site2Cloud connectivity, CloudN network interfaces are not in promiscuous mode. Skip this section.
 

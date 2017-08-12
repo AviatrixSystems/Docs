@@ -5,7 +5,7 @@
 ==================================
     Aviatrix Companion Gateway
 ==================================
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 If you need to launch a gateway in Azure ARM, you must subscribe to
 Aviatrix Companion Gateway in Azure Marketplace. This model removes

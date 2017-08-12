@@ -261,9 +261,7 @@ ESXi host to your network device.
 
 	ubuntu@ubuntu:~$
 
-.. |image0| image:: Configuring_CloudN_Examples_media/image001.png
-   :width: 3.5in
-   :height: 0.5in
+
 .. |Drawing1| image:: Configuring_CloudN_Examples_media/Drawing1.png
    :width: 6.50000in
    :height: 4.0in

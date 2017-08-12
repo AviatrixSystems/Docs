@@ -5,7 +5,7 @@
 =====================================
 OpenVPN with SAML Client on Okta IDP 
 =====================================
-=====================================
+
 
 
 1.  Overview
@@ -127,7 +127,7 @@ Look for the section titled “IDP metadata to your SP provider”.
 Note this information. This information will be used to configure the SAML configuration on the Aviatrix controller.
 
 3.3	Launch Aviatrix Gateway
------------------------------
+---------------------------------------------
 
 This step is usually completed by the Aviatrix admin.
 

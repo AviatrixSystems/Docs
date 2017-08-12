@@ -50,7 +50,7 @@ The second step is to use this carved out cloud address space to build just one 
 What you need to do is to specify the local network as the carved out and non-used address space. The remote network addresses should be your on-prem network address. 
 
 4. Spoke VPC to on-prem IPSEC Tunnel
-=================================
+=====================================
 
 Once you have built the Transit VPC to on-prem IPSEC tunnel, you no 
 longer need to modify edge routers or firewalls for any spoke VPC to 
@@ -60,7 +60,7 @@ then configure transitive peering from the spoke VPC to the transit VPC.
 
 
 5. Configuration Workflow
-======================
+==========================
  
 |image0| 
 

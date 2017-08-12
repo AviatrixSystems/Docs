@@ -124,21 +124,7 @@ API Server Check
 This button can be used to troubleshoot Duo API server connectivity
 when the API failure is occurring.
 
-.. |image0| image:: Duo_media/image1.png
 
-.. |image1| image:: Duo_media/image2.png
-
-.. |image2| image:: Duo_media/image3.png
-
-.. |image3| image:: Duo_media/image4.png
-
-.. |image4| image:: Duo_media/image5.png
-
-.. |image5| image:: Duo_media/image6.png
-
-.. |image6| image:: Duo_media/image7.png
-
-.. |image7| image:: Duo_media/image8.png
 
 
 

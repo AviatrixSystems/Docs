@@ -21,12 +21,12 @@ Troubleshoot->Diagnostics->Gateway->Diagnostics, select a gateway to run diagnos
 The diagnostics test if the gateway is reachable and its services are up and running.
 
 Debug peering tunnel status
---------------------
+-----------------------------
 
 Click Peering on the console. click Diag on each peer pair and run various tests.
 
 Debug Site2Cloud tunnel status
------------------------
+---------------------------------
 
 Click Site2Cloud on the console. Click Diagnostics.
 

@@ -8,7 +8,7 @@
 ===================================================================
 GCP Credentials
 ===================================================================
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Before creating a cloud account for GCloud/GCP on Aviatrix controller, go through the
 steps below to make sure you have the credentials setup for API calls.
