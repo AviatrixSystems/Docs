@@ -164,6 +164,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/migrate_from_join_to_site2cloud
    HowTos/CloudN-config-drive-v1_4
+   HowTos/customize_aws_iam_policy
 
 .. _Solutions:
 
