@@ -98,19 +98,19 @@ Enjoy!
 .. |image0| image:: AzureAviatrixCloudControllerStartupGuide_media/image001.png
    :width: 2.90683in
    :height: 0.35000in
-.. |image1| image:: AzureAviatrixCloudControllerStartupGuide_media/image002.png
+.. |image1| image:: AzureAviatrixCloudControllerStartupGuide_media/image02__(2017-08-14).png
    :width: 5.49426in
    :height: 2.99954in
-.. |image2| image:: AzureAviatrixCloudControllerStartupGuide_media/image003.png
+.. |image2| image:: AzureAviatrixCloudControllerStartupGuide_media/image03__(2017-08-14).png
    :width: 5.05625in
    :height: 2.77932in
-.. |image3| image:: AzureAviatrixCloudControllerStartupGuide_media/image004.png
+.. |image3| image:: AzureAviatrixCloudControllerStartupGuide_media/image04__(2017-08-14).png
    :width: 5.40347in
    :height: 2.95863in
-.. |image4| image:: AzureAviatrixCloudControllerStartupGuide_media/image005.png
+.. |image4| image:: AzureAviatrixCloudControllerStartupGuide_media/image05__(2017-08-14).png
    :width: 5.17776in
    :height: 2.97500in
-.. |image5| image:: AzureAviatrixCloudControllerStartupGuide_media/image006.png
+.. |image5| image:: AzureAviatrixCloudControllerStartupGuide_media/image06__(2017-08-14).png
    :width: 5.15347in
    :height: 2.94563in
 
