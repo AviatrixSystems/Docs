@@ -45,8 +45,7 @@ Launch Controller VM from Azure marketplace portal
 
 6.  Create a new security group, add an Inbound Rule for HTTPS port 443
     for Inbound Traffic, Allow, as shown below. Make sure Source is Any,
-    Source Protocol is Any and Source Port range is \*. Destination Port
-    range is 443.
+    Service is HTTPS, Protocol is TCP, Port range is 443 and Action is Allow.
 
     |image3|
 
