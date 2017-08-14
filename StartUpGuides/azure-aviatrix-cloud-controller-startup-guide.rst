@@ -59,7 +59,7 @@ Launch Controller VM from Azure marketplace portal
     |image4|
 
 10. Use a browser to access the controller VM. In this example, it is
-    https://40.114.43.20
+    https://52.173.200.253
 
 11. At the login page, enter admin as username. Initial password is the
     internal IP address of the VM, as shown below.
