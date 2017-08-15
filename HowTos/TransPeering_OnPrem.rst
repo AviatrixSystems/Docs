@@ -191,22 +191,22 @@ c.1.  From the Aviatrix Controller Console
 
 c.2.  Click Site2Cloud -> Add New
 
-===============================                 ===================================================
-  **Setting**                                   **Value**
-===============================                 ===================================================
-  VPC ID/VNet Name                              Choose Transit VPC ID
-  Connection Type                               Unmapped
-  Connection Name                               This name is arbitrary (ex. corpdatacenter)
-  Corporate Data Center                         Aviatrix (in this example)
-  Algorithms                                    Uncheck
-  Encryption over ExpressRoute/DirectConnect    Uncheck
-  Enable HA                                     Uncheck
-  Primary Cloud Gateway                         Choose Transit VPC gateway
-  Remote Gateway IP Address                     Public IP address of On-Prem gateway
-  Pre-shared Key                                Optional
-  Remote Subnet                                 172.16.0.0/16 (in this example)
-  Local Subnet                                  10.0.0.0/8 (in this example)
-===============================                 ===================================================
+===============================     ===================================================
+  **Setting**                       **Value**
+===============================     ===================================================
+  VPC ID/VNet Name                  Choose Transit VPC ID
+  Connection Type                   Unmapped
+  Connection Name                   This name is arbitrary (ex. corpdatacenter)
+  Corporate Data Center             Aviatrix (in this example)
+  Algorithms                        Uncheck
+  Encryption over ExpressRoute      Uncheck
+  Enable HA                         Uncheck
+  Primary Cloud Gateway             Choose Transit VPC gateway
+  Remote Gateway IP Address         Public IP address of On-Prem gateway
+  Pre-shared Key                    Optional
+  Remote Subnet                     172.16.0.0/16 (in this example)
+  Local Subnet                      10.0.0.0/8 (in this example)
+===============================     ===================================================
 
 c.3.  Click button "OK" 
 
