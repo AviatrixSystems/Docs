@@ -62,8 +62,6 @@ then configure transitive peering from the spoke VPC to the transit VPC.
 5. Configuration Workflow
 ==========================
  
-|image0| 
-
 5.1 Pre Configuration Checklist
 -------------------------------
 
