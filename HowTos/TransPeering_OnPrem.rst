@@ -216,7 +216,7 @@ c.5.  Check Vendor, Platform and Software of On-Prem gateway on Corporate Data C
 
       Note: If your terminating device is:
          I.    a On-Prem Aviatrix gateway          -> select "Aviatrix" (in this example)
-         II.   a Cisco ASA                         -> select "ASA" 
+         II.   a Cisco ASA                         -> select "Cisco" 
          III.  a third party router or firewall    -> select "Generic" 
 
 c.6.  Click button "Download Configuration"
