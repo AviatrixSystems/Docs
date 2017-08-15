@@ -64,116 +64,217 @@ then configure transitive peering from the spoke VPC to the transit VPC.
  
 |image0| 
 
-Before you start make sure you have the latest software by checking the
-Dashboard. If an alert message displays, click Upgrade to download the
-latest software.
+5.1 Pre Configuration Checklist
+-------------------------------
 
-The [TODO NAME] configuration workflow is as follows, with major steps
-highlighted.
+Before configuring user VPC peering, make sure the following is
+completed.
 
-1. Establish a site2cloud connection between Transitive Cloud VPC and On-Prem.
+**Pre Configuration Check List**
 
-   a. Create a gateway in a Cloud VPC [i.e. 10.10.0.0/24] where you like to connect to sites.
-   
-      Go to Gateway -> New Gateway. The gateway may have VPN Access disabled.
-   
-   b. (Optional) Create a secondary gateway in the same VPC for HA.
-      
-      Go to Gateway -> New Gateway. The gateway may have VPN access disabled.
+1.  Deploy the Aviatrix Controller
 
-   c. Create a connection to a remote site
+2.  Check VPC Settings
 
-      Go to site2Cloud -> Add New, make sure,
+These prerequisites are explained in detail below.
 
-      Select the VPC/VNet Name where Aviatrix gateway for encryption is launched.
+5.1.1  Deploy the Aviatrix Controller
+-------------------------------------
 
-      I. If HA is not enabled:
+The Aviatrix Controller must be deployed and setup prior to configuring
+VPC and site peering. Please reference the Aviatrix Controller getting
+started guide for AWS on how to deploy the Aviatrix Controller.
 
-         - At Gateway field, select a gateway launched in the earlier step.
+`Aviatrix Controller Getting Started
+Guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/docs/aviatrix_aws_controller_gsg.pdf>`_
 
-      #. Else if HA is enabled:
+Check and make sure you can access the Aviatrix Controller dashboard and
+login with an administrator account. The default URL for the Aviatrix
+Controller is:
 
-         - At Primary Gateway field, select a gateway launched earlier as primary gateway.
+https://<public ip of Aviatrix Controller>
 
-         - At Backup Gateway field, select a gateway launched earlier as backup gateway.
+5.1.2  Check VPC Settings
+-------------------------
 
-   #. Input the connection with a unique name, for example, NewYork-site.
+-   The VPC must have at least one public subnet to deploy the gateway.
+    This means one subnet must be associated with a route table that has
+    an IGW as its default route.
 
-   #. At Remote Gateway Type, 
+-   If your Transit VPC and spoke VPCs are in the same region and you like to
+    route the traffic over AWS peering, go to AWS console and configure
+    the necessary AWS peering between the two VPCs.
 
-      I. select "AWS VGW" if the remote site is a VPC with AWS VGW VPN gateway; 
-      #. select "Aviatrix" if the remote site is on-prem Aviatrix gateway; 
-      #. select "Generic" if the remote site gateway is a third party router or firewall. 
+5.2 Configuration Steps
+-----------------------
 
-   #. At Remote Gateway IP Address, enter the public IP address of the edge router for the remote site. 
-      Note if the Remote Gateway Type is Aviatrix, the Remote Gateway IP address is the public IP address of the site. 
+Make sure the pre-configuration steps in the previous section is
+completed before proceeding.
 
-   #. At Remote Subnet, enter network CIDR of the remote/customer site. 
-      For example, you may enter “192.168.0.0/16".
+The instructions in this section will use the following architecture.
+The CIDR and subnets may vary depending on your VPC setup; however, the
+general principals will be the same.
 
-   #. Pre-shared Key is an optional field. If you leave it blank, Aviatrix will auto generate a pre-shared key. You can paste your own pre-shared key if you prefer. 
+|image0|
 
-   #. Do not select Private Route Encryption. (This feature is for
-      overlay encryption on an AWS Direct Connect or Azure Express Route)
+In this example we have four VPCs: 1 Transit VPC, 3 spoke VPCs. 
+The corporate data center is located in
+California. The system will be configured such that all spoke nodes and
+sites will be able to communicate with each other via the transit VPC.
 
-   #. The Local Subnets are advertised to Remote Subnets that the site2cloud connection can reach.
-      For example, you may enter “10.10.0.0/16".
+5.2.1 Step a – Deploy Gateways
+----------------------------
 
-   #. Algorithms field is pre-populated with default values. Click the field if you need to customize the algorithms. 
+The first step is to deploy Aviatrix gateways in each VPC.
 
-   #. Click OK to create a connection. 
+**Instructions:**
 
-   #. Generate remote site configuration template
+a.1.  Login to the Aviatrix Controller Console
 
-      Go to site2Cloud
+a.2.  Click on Gateway -> Create
 
-      I. Select the connection you just created, an EDIT panel will appear.
+==============     ====================
+**Setting**        **Value**
+==============     ====================
+Cloud Type         Choose AWS
+Account Name       Choose the account name
+Region             Choose the region where your VPC is located
+VPC ID             Choose the VPC
+Gateway Name       This name is arbitrary (ex. gw01)
+Public Subnet      Select a public subnet where the gateway will be deployed
+Gateway Size       t2.micro is fine for testing.
+Enable NAT         Uncheck this box
+VPN Access         Uncheck this box
+==============     ====================
 
-      #. Click Download Configuration.
 
-      #. If your remote site device is not listed in the dropdown menu, simply select an available one on the menu.
+a.3.  Click “Create”. It will take a few minutes for the gateway to 
+      deploy. Do not proceed until the gateway is deployed.
 
-      #. Click “Yes, Download” to download a template file that contains the gateway public IP address, VPC CIDR, pre-shared 
-         secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the 
-         remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click 
-         OK. 
+a.4.  Repeat steps a.2 and a.3 for the additional 3 VPCs in this example.
 
-2. Establish an Encrypted Peering between Cloud VPC and Transitive Cloud VPC.
-   
-   a. At Gateway menu, create a gateway in an existing Cloud VPC/VNet. 
-      For example, 10.10.1.0/24.
+a.5.  Done
 
-   #. Repeat the step i for a different Cloud VPC/VNet. 
-      For example, 10.10.2.0/24, 10.10.3.0/24.
 
-   #. Select "Enable HA" if you wish to build a backup encrypted tunnel for HA. Note that you must first create two respective backup gateways prior to this step. To launch backup gateways, go to Gateway page, select the gateway, click Edit, At "Gateway for High Availability Peering" field, select one public subnet and click Create. 
+5.2.2  Step b – Connect Spoke VPC to Transit VPC
+---------------------------------------------------
 
-   #. At Peering -> Encrypted Peering, click New Peering to peer the gateway on Cloud VPC and the one on Transitive Cloud VPC.
-      For example:
- 
-      I. Aviatrix GW #1 and Aviatrix GW #0
-      #. Aviatrix GW #2 and Aviatrix GW #0
-      #. Aviatrix GW #3 and Aviatrix GW #0
+This step explains how to connect a spoke VPC to the transit VPC.
 
-   #. Note "Over AWS Peering" field currently only works when used in conjunction to transitive peering. When this field is selected, the controller does not program the AWS routing table to points peer VPC CIDR routes to the gateway. 
+**Instructions:**
 
-3. Establish an Encrypted Transitive Peering through Cloud VPC, Transitive Cloud VPC and On-Prem.
+b.1.  From the Aviatrix Controller Console
 
-   a. Create an encrypted transitive peering
+b.2.  Click VPC/VNet -> Encrypted Peering -> Encrypted Peering.
 
-      Go to Peering -> Transitive Peering -> New Peering, make sure:
-      
-      I. At Source VPC drop down menu, select the peering gateway launched in Cloud VPC.
-         For example, Aviatrix GW #1, Aviatrix GW #2 or Aviatrix GW #3
-      
-      #. At Next Hop VPC drop down menu, select the gateway launched in Transitive Cloud VPC.
-         For example, Aviatrix GW #0
-      
-      #. At Destination CIDR, fill in the destination CIDR of the co-location.
-         For example, 192.168.0.0/16. Note this address should be unique across your network.
+b.3.  Click Add
 
-   b. Repeat the above step for more co-locations.
+b.4.  Select the Transit VPC #0 gateway - Aviatrix GW #0 and Spoke VPC #1 gateway - Aviatrix GW #1 
+      for the peering.
 
+      Note: If the two VPCs are in the same region, you can check the box 
+      “over AWS Peering”. This would allow the encrypted peering to route 
+      traffic over native AWS peering, resulting in 10 times bandwidth saving.
+
+b.5.  Click Add
+
+b.6.  Select the Transit VPC #0 gateway - Aviatrix GW #0 and spoke VPC #2 gateway - Aviatrix GW #2 for the 
+      peering and then click Add
+
+b.7.  Repeat steps b.4, b.5 and b.6 for more scalable spoke VPCs as spoke VPC #3 gateway - Aviatrix GW #3 in 
+      this example.
+
+b.8.  Done
+
+
+5.2.3  Step c – Connect Corporate Data Center to Transit VPC
+------------------------------------------------------------
+
+This step explains how to connect the corporate data center to the
+transit VPC
+
+**Instructions:**
+
+c.1.  From the Aviatrix Controller Console
+
+c.2.  Click Site2Cloud -> Add New
+
+===============================  ===================================================
+  **Setting**                    **Value**
+===============================  ===================================================
+  VPC ID/VNet Name               Choose Transit VPC ID
+  Connection Type                Unmapped
+  Connection Name                This name is arbitrary (ex. corpdatacenter)
+  Corporate Data Center          Aviatrix (in this example)
+  Algorithms                     Uncheck
+  Encryption over ExpressRoute   Uncheck
+  /DirectConnect 
+  Enable HA                      Uncheck
+  Primary Cloud Gateway          Choose Transit VPC gateway
+  Remote Gateway IP Address      Public IP address of the terminating device at the corp datacenter
+  Pre-shared Key                 Optional
+  Remote Subnet                  172.16.0.0/16 (in this example)
+  Local Subnet                   10.0.0.0/8 (in this example)
+===============================  ===================================================
+
+c.3.  Click button "OK" 
+
+c.4.  View List, click the row of Transit VPC ID and Connection Name (ex. corpdatacenter) from above.
+
+c.5.  Check Vendor, Platform and Software of On-Prem gateway on Corporate Data Center. 
+
+      Note: If your terminating device is:
+         I.    a On-Prem Aviatrix gateway          -> select "Aviatrix" (in this example)
+         II.   a Cisco ASA                         -> select "ASA" 
+         III.  a third party router or firewall    -> select "Generic" 
+
+c.6.  Click button "Download Configuration"
+
+c.7. If the On-Prem gateway is a Aviatrix CloudN as in this example, go to site2cloud page of CloudN website and 
+     simply import the downloaded configuration file and click OK. 
+
+c.8.  This template file contains the necessary information to configure 
+      the terminating device at the corp data center. Once the terminating 
+      device is configured, the tunnel will automatically come up.
+
+c.9.  Done
+
+5.2.4  Step d – Configure Transitive Routing
+------------------------------------------
+
+This step explains how to configure transitive routing so that every
+spoke and site node can communicate with each other via the transit VPC.
+
+**Instructions:**
+
+d.1.  From the Aviatrix Controller Console
+
+d.2.  Click VPC/VNet -> Encrypted Peering -> Transitive Peering
+
+      d.2.1.  For Spoke VPC #1:
+
+          i.  Click "+ New Peering"
+
+          ii. Source Gateway:    Aviatrix GW #1, 
+              Next Hop VPC:      Aviatrix GW #0 (Transit VPC), 
+              Destination CIDR:  172.16.0.0/16
+              
+          iii. Click "OK"
+
+      d.2.2.  For Spoke VPC #2:
+
+          i.  Click "+ New Peering"
+
+          ii. Source VPC: Aviatrix GW #2, 
+              Next Hop VPC: Aviatrix GW #0 (Transit VPC), 
+              Destination CIDR: 172.16.0.0/16
+
+          iii. Click "OK"
+
+      d.2.3.  Repeat steps d.2.1 for more scalable spoke VPCs as spoke VPC #3 gateway - Aviatrix GW #3 in this 
+              example.
+
+d.3.  Done
 
 Troubleshooting
 ===============
@@ -183,7 +284,7 @@ displayed in a pop up window.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 
-.. |image0| image:: TransPeering_OnPrem_media/TransPeering_OnPrem.PNG
+.. |image0| image:: TransPeering_OnPrem_media/TransPeering_OnPrem_2.PNG
    :width: 5.03147in
    :height: 2.57917in
 
