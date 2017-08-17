@@ -36,4 +36,11 @@ type AVPNC in the terminal to launch the client.
 
 This is tested only on Ubuntu 16 and 14.
 
+
+Development version
+-------------------
+These are preview images for the next release.
+`Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`__, `Mac <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_mac.pkg>`__ , `Linux <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux.tar.gz>`__
+
+
 .. disqus::
