@@ -311,6 +311,18 @@ time.
 
 
 
+Site2Cloud VPN
+=======================
+
+
+
+**Q1: Occasionally my tunnel will show as down since there is no interesting traffic transversing, how do I keep it up?**
+
+
+This problem can be solved by disabling dead peer detection on your edge firewall.
+
+
+
 User Profile Based Security Policies
 ====================================
 
@@ -471,7 +483,7 @@ SUMO Logic, Splunk, DataDog and rSyslog are also supported.
 
 **Q2: What are the monitoring capabilities?**
 
-Encrypted tunnel (peering and site2cloud) status is monitored. When a tunnel status changes, an alert email is sent to the controller admin. 
+Encrypted tunnel (peering and site2cloud) status is monitored. When a tunnel status changes, an alert email is sent to the controller admin.
 
 Active VPN users are displayed on the Dashboard. Click on any username,
 the user VPN connectivity history is displayed.
@@ -480,7 +492,7 @@ You can also disconnect a user from the dashboard.
 
 **Q3: Can alert email be sent to a different email address?**
 
-Yes, you can choose an alternative email address to send alert messages. 
+Yes, you can choose an alternative email address to send alert messages.
 This is useful if the controller admin is different from the operation team.
 
 
@@ -492,9 +504,9 @@ Encrypted peering
 
 
 Aviatrix encrypted peering builds an encrypted tunnel between two
-VPC/VNet with a single click. In addition to build the encrypted connection, 
+VPC/VNet with a single click. In addition to build the encrypted connection,
 the controller also program the cloud infrastructure routing table so that
-you don't have to. 
+you don't have to.
 
 The VPC and/or VNet can be across region
 and across cloud. The solution enables you to build a full mesh
