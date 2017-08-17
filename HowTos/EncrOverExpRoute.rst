@@ -3,7 +3,7 @@
    :keywords: Encryption, Azure, encryption over azure, ExpressRoute, Aviatrix
 
 ######################################################
-Encryption over ExpressRoute
+Encryption over DirectConnect/ExpressRoute
 ######################################################
 
 
@@ -11,7 +11,14 @@ Encryption over ExpressRoute
 The Problem
 ------------
 
-Azur ExpressRoute provides a private routed circuit to Azure VNet. The
+AWS Direct Connect and Azur ExpressRoute provides a private routed circuit to AWS 
+VPC and Azure VNet. 
+
+Avitrix site2cloud feature provides encryption over Direct Connect or ExpressRoute. 
+This document describes how to implement the feature over Express Route. The same
+method applies to AWS. 
+
+The
 VNet VPN gateway that terminates the ExpressRotue connects VNet virtual
 machines with the on-prem servers in a traditional routing domain. While
 Azure ExpressRoute provides a private link between customer’s on-prem
@@ -46,7 +53,7 @@ Configuration Workflow
 -----------------------
 
 Before you start make sure you have the latest software by checking the
-Dashboard. If an alert message displays, click Upgrade to download the
+Dashboard. If an alert message displays, click !New to download the
 latest software.
 
 For the network design, you need to decide if you want to enable HA for
@@ -54,19 +61,15 @@ the gateway.
 
 The configuration workflow is as follows, with major steps highlighted.
 
-| 1. (Optional) Enable HA
-|     Go to VPC/VNet -> site2Cloud -> Options, select Enable HA, then Save.
 
-|
-
-| 2. Create a gateway in a VNet where you like to connect to enterprise datacenter.
+| 1. Create a gateway in a VNet where you like to connect to enterprise datacenter.
 |     Go to Gateway -> Create, make sure:
 
       -  The gateway is launched in different subnet from the user subnets. In this example, the gateway is deployed on Subnet1.
 
       -  The gateway may have VPN access disabled
 
-| 3. (Optional) If HA is enabled, create a backup gateway in the same VNet.
+| 2. (Optional) If HA is enabled, create a backup gateway in the same VNet.
 |     Go to Gateway -> Create, make sure:
 
     -  The gateway is launched in different subnet from the user subnets. In
@@ -74,8 +77,8 @@ The configuration workflow is as follows, with major steps highlighted.
 
     -  The gateway may have VPN access disabled.
 
-| 4. Create a connection to the Enterprise datacenter
-|    Go to VPC/VNet -> site2Cloud -> Add, make sure,
+| 3. Create a connection to the Enterprise datacenter
+|    Go to site2Cloud -> Add New, make sure,
 |
 |   a. Select the VPC/VNet Name where Aviatrix gateway for encryption is launched.
 |   b. If HA is not enabled:
@@ -91,11 +94,11 @@ The configuration workflow is as follows, with major steps highlighted.
 |
 
 
-| 5. Generate Enterprise datacenter configuration template
-|    Go to VPC/VNet -> site2Cloud -> List,
+| 4. Download the configuration template
+|    Go to site2Cloud,
 |
 |   a. Select the connection.
-|   b. Click Download.
+|   b. Click Download Configuration.
 |   c. If your remote edge device is not listed in the dropdown menu, simply select an available one in the menu.
 |   d. Click “Yes, Download” to download a template file that contains
       the gateway public IP address, VPC CIDR, pre-shared secret and
