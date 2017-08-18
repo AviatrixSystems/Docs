@@ -12,7 +12,7 @@ Connectivity
 
 - Reserve on-prem segment for Datacenter Extension feature of CloudN. After deciding how many VPCs you wish to configure during on boarding, you can sub divide the segments to reserve some for on prem VM deployment. This allows you launch applications where some part of it (such as database) is on-prem and others parts of it (such as web front end) to be in VPC.  
 
-- Google IDP support. Google IDP is now supported IDP for Aviatrix SAML client. 
+- Google IDP support. Google IDP is now supported IDP for the Aviatrix SAML VPN solution. 
 
 Security
 ---------
