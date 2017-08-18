@@ -6,6 +6,6 @@
 Aviatrix Controller API
 ===========================
 
-This is the main Aviatrix Controller `API <https://s3-us-west-2.amazonaws.com/restapi.doc/index.htm>`_
+Click `here <https://s3-us-west-2.amazonaws.com/restapi.doc/index.htm>`_ for Aviatrix API documentation. 
 
 .. disqus::
