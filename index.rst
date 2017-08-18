@@ -80,6 +80,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud
    HowTos/cloudn-site2cloud
    HowTos/EncrOverExpRoute
+   HowTos/TransPeering_OnPrem
 
 .. _OpenVPN:
 

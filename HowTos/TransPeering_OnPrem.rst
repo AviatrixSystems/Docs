@@ -18,10 +18,10 @@ One friction in this Transit VPC solution is that each time when a spoke VPC is 
 to include the new spoke VPC CIDR. This modification of IPSEC tunnel invovles 
 on-prem network team and can take up a few weeks of time. 
 
-This document guides you to build a large and scalable Transit VPC network that 
-requires minimum modification to the on-prem edge router or firewall devices. 
+This document guides you to build a large and scalable Transit VPC network over Internet that 
+requires minimum modification to the on-prem edge router or firewall devices. The idea can also be applied to the case where the connectivity between transit VPC and on-prem is over AWS Direct Connect. 
 
-The idea of this scalable Transit VPC is to configure the IPSEC tunnel once between 
+The idea of this scalable Transit VPC solution is to configure the IPSEC tunnel once between 
 the transit VPC and on-prem  
 edge router or firewall. Subsequent spoke VPC connectivity to on-prem requires 
 no change to this edge router or firewall. This solution enables CloudOps team to be self sufficient 
