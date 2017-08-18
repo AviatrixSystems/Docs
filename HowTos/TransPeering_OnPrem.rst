@@ -118,7 +118,7 @@ and a corporate data center. The network will be configured such that all spoke 
 on-prem will be able to communicate with each other via the Transit VPC.
 
 5.2.1 Step a – Deploy Gateways
-----------------------------
+------------------------------
 
 The first step is to deploy Aviatrix gateways in each VPC.
 
@@ -225,7 +225,7 @@ c.8.  This template file contains the necessary information to configure the On-
 c.9.  Done
 
 5.2.4  Step d – Configure Transitive Routing
-------------------------------------------
+--------------------------------------------
 
 This step explains how to configure transitive routing so that every
 spoke and on-prem node can communicate with each other via the transit VPC.

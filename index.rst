@@ -136,6 +136,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Rest APIs
 
    HowTos/aviatrix_apis_datacenter_extension
+   HowTos/Aviatrix_Controller_API
 
 .. _Downloads:
 
