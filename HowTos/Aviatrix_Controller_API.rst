@@ -6,6 +6,6 @@
 Aviatrix Controller API
 ===========================
 
-Follow this link to the main Aviatrix Controller `API <https://https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_
+Click `here <https://s3-us-west-2.amazonaws.com/restapi.doc/index.htm>`_ for Aviatrix API documentation.
 
 .. disqus::
