@@ -1,6 +1,6 @@
 .. meta::
    :description: Aviatrix Virtual Appliance CloudN Startup guide
-   :keywords: Aviatrix Cloud Interconnect, ACX, CloudN, datacenter extension
+   :keywords: Aviatrix Cloud Interconnect, DCCX, CloudN, datacenter extension
 
 =======================================
  Virtual Appliance CloudN
@@ -15,10 +15,10 @@ REST API document can be found at CloudN console Help menu. For an example of ho
 
 CloudN performs two major functions: 
 
-- Extend your datacenter to multi cloud (ACX).
+- Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
 - Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
 
-To learn how CloudN Aviatrix Cloud Interconnect (ACX) works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+To learn how CloudN Aviatrix Datacenter Extension works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
 CloudN can also be used as a virtual router for Site2Cloud function to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`__
 
@@ -34,7 +34,7 @@ Virtual appliance CloudN image can be downloaded from `this link. <http://docs.a
 2. Pre-Installation Check List
 ===============================
 
-2.1. AWS EC2 Account for ACX
+2.1. AWS EC2 Account for Datacenter Extension
 ----------------------------
 
 .. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an EC2 account. Skip this section. 
@@ -81,7 +81,7 @@ Virtual appliance CloudN image can be downloaded from `this link. <http://docs.a
       IAM access policy required by CloudN. During the onboarding process, we
       will guide you through on setting up this IAM customer policy.
 
-2.2. Microsoft Azure Account for ACX
+2.2. Microsoft Azure Account for Datacenter Extension
 -------------------------------------
 
 .. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an Azure account. Skip this section.
@@ -104,13 +104,13 @@ Virtual appliance CloudN image can be downloaded from `this link. <http://docs.a
     route configured that routes traffic destined to the VPC CIDR where this
     remote site wish to connect to the CloudN.
 
-2.4. Deploy CloudN for Aviatrix Cloud Interconnect (ACX) 
+2.4. Deploy CloudN for Aviatrix Datacenter Extension 
 ----------------------------------------------------------
 
 2.4.1. Cloud address planning and allocation
 ***********************************************
 
-    When used for ACX function, CloudN manages your entire cloud address space.
+    When used for datacenter extension (DCCX) function, CloudN manages your entire cloud address space.
 
     You need to identify or create a subnet where CloudN is deployed. CloudN
     is deployed on a private subnet anywhere on your network. CloudN does
@@ -309,7 +309,7 @@ for testing and evaluation purposes.
     `ESXi Admin <https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.vm\_admin.doc%2FGUID-6C847F77-8CB2-4187-BD7F-E7D3D5BD897B.html>`_
     for more detailed instructions.
 
-3.1.1.  Configure Network Adapter Properties for ACX
+3.1.1.  Configure Network Adapter Properties for 
 *************************************************************
 
 .. Note:: If you deploy CloudN for Site2Cloud connectivity, CloudN network interfaces are not in promiscuous mode. Skip this section.
@@ -348,7 +348,7 @@ for testing and evaluation purposes.
     For additional CloudN on ESXi configuration illustrations, check out
     `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
-.. Note:: ACX does not support NICteaming in active-active mode. 
+.. Note:: DCCX does not support NICteaming in active-active mode. 
 ..
 
   When NICteaming is configured, only active-standby mode is supported, as
@@ -396,7 +396,7 @@ for testing and evaluation purposes.
 
     Password: Aviatrix123#
 
-3.2.1. Enable MAC Address Spoofing for ACX
+3.2.1. Enable MAC Address Spoofing for DCCX
 *******************************************
 
 .. Note:: If you deploy CloudN for Site2Cloud function, MAC Spoofing is not needed. Skip this section.
@@ -412,13 +412,13 @@ for testing and evaluation purposes.
 
   |image21|
 
-3.3. NIC Teaming Support for ACX
+3.3. NIC Teaming Support for DCCX
 ---------------------------------
 
 .. Note:: If you deploy CloudN for Site2Cloud function, active and active NIC team is supported. 
 ..
 
-  For ACX, NIC teaming is only supported for active standby mode.
+  For DCCX, NIC teaming is only supported for active standby mode.
 
 
 4. Booting Up and Initial Configuration
@@ -469,7 +469,7 @@ commands. For each command, type “?” to view syntax and parameters.
 
     |image42|
 
-.. Note:: For ACX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed.
+.. Note:: For DCCX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed.
 
 4.1.1.1. Proxy Configuration
 ******************************
