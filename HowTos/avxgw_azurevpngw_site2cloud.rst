@@ -1,4 +1,4 @@
-ite2Cloud between Azure VPN Gateway and Aviatrix Gateway
+Site2Cloud between Azure VPN Gateway and Aviatrix Gateway
 =========================================================
 
 This guide helps you to configure Site2Cloud IPSEC tunnels between an Aviatrix gateway and an Azure "Virtual network gateway"
@@ -107,11 +107,3 @@ To check a tunnel state, go to Site2Cloud, the tunnel status will be
 displayed in a pop up window.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
-
-.. |image8| image:: site2cloud_media/image009.png
-   :width: 5.08365in
-   :height: 3.25278in
-
-
-.. disqus::
-
