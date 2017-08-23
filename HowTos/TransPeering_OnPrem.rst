@@ -4,7 +4,7 @@
 
 
 ========================================================
-How to Builde Simple and Scalable Transit VPC Solution
+How to Build Simple and Scalable Transit VPC Solution
 ========================================================
 
 
