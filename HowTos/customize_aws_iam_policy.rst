@@ -157,7 +157,7 @@ Syntax:
     ],
     "Resource": "*",
     "Condition": {
-      "IpAddress": { "aws:SourceIp": ["AVIATRIX-CONTROLLER-IP/32" ] }
+      "IpAddress": { "aws:SourceIp": ["AVIATRIX-CONTROLLER-IP/32"] }
     }
   }
 
@@ -173,7 +173,7 @@ Example:
      ],
      "Resource": "*",
      "Condition": {
-       "IpAddress": { "aws:SourceIp": ["54.88. 88. 88/32" ] }
+       "IpAddress": { "aws:SourceIp": ["54.88. 88. 88/32"] }
       }
    }
 
@@ -393,7 +393,7 @@ Syntax:
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          " AVIATRIX-CONTROLLER-IP-ADDRESS/32"
+          "AVIATRIX-CONTROLLER-IP-ADDRESS/32"
         ]
       }
     }
@@ -407,7 +407,7 @@ Syntax:
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          " AVIATRIX-CONTROLLER-IP-ADDRESS/32"
+          "AVIATRIX-CONTROLLER-IP-ADDRESS/32"
         ]
       }
     }
@@ -421,7 +421,7 @@ Syntax:
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          " AVIATRIX-CONTROLLER-IP-ADDRESS/32"
+          "AVIATRIX-CONTROLLER-IP-ADDRESS/32"
         ]
       }
     }
