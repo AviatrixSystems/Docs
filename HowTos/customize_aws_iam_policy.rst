@@ -403,7 +403,7 @@ Syntax:
     "Action": [
       "s3:PutObject"
     ],
-    "Resource": "arn:aws:s3::: YOUR-S3-BUCKET-NAME/*",
+    "Resource": "arn:aws:s3:::YOUR-S3-BUCKET-NAME/*",
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
