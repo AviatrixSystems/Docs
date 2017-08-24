@@ -647,7 +647,7 @@ Recommended:
           "iam:UpdateAssumeRolePolicy",
           "sts:AssumeRole"
         ],
-        "Resource": ["arn:aws:iam::188658399999: role/aviatrix-role-app"]
+        "Resource": ["arn:aws:iam::188658399999:role/aviatrix-role-app"]
       }
     ]
   }
@@ -668,7 +668,7 @@ Not Recommended:
         "Condition": {
           "IpAddress": { "aws:SourceIp": ["35.164.224.157/32"] }
         },
-        "Resource": ["arn:aws:iam::188658399999: role/aviatrix-role-app"]
+        "Resource": ["arn:aws:iam::188658399999:role/aviatrix-role-app"]
       }
     ]
   }
