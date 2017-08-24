@@ -393,7 +393,7 @@ Syntax:
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          " AVIATRIX-CONTROLLER-IP-ADDRESS /32"
+          " AVIATRIX-CONTROLLER-IP-ADDRESS/32"
         ]
       }
     }
@@ -403,11 +403,11 @@ Syntax:
     "Action": [
       "s3:PutObject"
     ],
-    "Resource": "arn:aws:s3::: YOUR-S3-BUCKET-NAME /*",
+    "Resource": "arn:aws:s3::: YOUR-S3-BUCKET-NAME/*",
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          " AVIATRIX-CONTROLLER-IP-ADDRESS /32"
+          " AVIATRIX-CONTROLLER-IP-ADDRESS/32"
         ]
       }
     }
@@ -421,7 +421,7 @@ Syntax:
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          " AVIATRIX-CONTROLLER-IP-ADDRESS /32"
+          " AVIATRIX-CONTROLLER-IP-ADDRESS/32"
         ]
       }
     }
@@ -647,7 +647,7 @@ Recommended:
           "iam:UpdateAssumeRolePolicy",
           "sts:AssumeRole"
         ],
-        "Resource": ["arn:aws:iam::188658399999: role/aviatrix-role-app" ]
+        "Resource": ["arn:aws:iam::188658399999: role/aviatrix-role-app"]
       }
     ]
   }
@@ -666,9 +666,9 @@ Not Recommended:
           "sts:AssumeRole"
         ],
         "Condition": {
-          "IpAddress": { "aws:SourceIp": ["35.164.224.157/32" ] }
+          "IpAddress": { "aws:SourceIp": ["35.164.224.157/32"] }
         },
-        "Resource": ["arn:aws:iam::188658399999: role/aviatrix-role-app" ]
+        "Resource": ["arn:aws:iam::188658399999: role/aviatrix-role-app"]
       }
     ]
   }
