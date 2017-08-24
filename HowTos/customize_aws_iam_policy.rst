@@ -173,7 +173,7 @@ Example:
      ],
      "Resource": "*",
      "Condition": {
-       "IpAddress": { "aws:SourceIp": ["54.88. 88. 88/32"] }
+       "IpAddress": { "aws:SourceIp": ["54.88.88.88/32"] }
       }
    }
 
@@ -232,7 +232,7 @@ Example:
     "Condition": {
       "IpAddress": {
         "aws:SourceIp": [
-          "54.88. 88. 88/32"
+          "54.88.88.88/32"
         ]
       }
     },
