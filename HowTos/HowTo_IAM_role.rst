@@ -13,6 +13,8 @@ dynamically obtained security credentials to request access to AWS
 resources. Role-based IAM cloud account helps to reduce the risk of AWS
 credentials being compromised.
 
+This document provides instructions to create the IAM roles and policies. If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ 
+
 To use IAM role, the Aviatrix Controller you launch must have IAM role
 enabled.
 

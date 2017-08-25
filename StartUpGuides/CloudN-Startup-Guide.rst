@@ -1,6 +1,6 @@
 .. meta::
    :description: Aviatrix Virtual Appliance CloudN Startup guide
-   :keywords: Aviatrix Cloud Interconnect, ACX, CloudN, datacenter extension
+   :keywords: Aviatrix Cloud Interconnect, DCCX, CloudN, datacenter extension
 
 =======================================
  Virtual Appliance CloudN
@@ -10,15 +10,15 @@
 
 Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or co-location facility.
 
-CloudN supports REST API that allows third party software integration.
-REST API document can be found at CloudN console Help menu. For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/HowTos/aviatrix_apis_datacenter_extension.html>`__
+CloudN supports REST API that allows further automation and third party software integration.
+REST API document can be found at `this link. <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_ For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
 CloudN performs two major functions: 
 
-- Extend your datacenter to multi cloud (ACX).
+- Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
 - Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
 
-To learn how CloudN Aviatrix Cloud Interconnect (ACX) works and how to build flat full mesh network, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+To learn how CloudN Aviatrix Datacenter Extension works and how to build agile hybrid DevOps environments using public cloud, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
 CloudN can also be used as a virtual router for Site2Cloud function to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`__
 
@@ -27,24 +27,15 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 1. Download the Image
 =======================
 
-    CloudN comes with OVF, VHD and KVM images, to support VMware
-    hypervisor, Microsoft Hyper-V and KVM.
-
-* Latest vmware OVF image is CloudN-ovf-061517, it can be downloaded from `OVF image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-ovf-061517.zip>`__
-
-
-* Latest KVM image is CloudN-kvm-061517, it can be downloaded from `KVM image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-kvm-061517.tar.gz>`_
-
-
-* Hyper-V VHD image is CloudN-vhd-090216, it can be downloaded from `VHD image link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/CloudN-vhd-090216.zip>`_
+Virtual appliance CloudN image can be downloaded from `this link. <http://docs.aviatrix.com/Downloads/cloudndownload.html>`_
 
 ----
 
 2. Pre-Installation Check List
 ===============================
 
-2.1. AWS EC2 Account for ACX
-----------------------------
+2.1. AWS EC2 Account for Datacenter Extension (DCCX)
+-----------------------------------------------------
 
 .. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an EC2 account. Skip this section. 
 
@@ -90,8 +81,8 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
       IAM access policy required by CloudN. During the onboarding process, we
       will guide you through on setting up this IAM customer policy.
 
-2.2. Microsoft Azure Account for ACX
--------------------------------------
+2.2. Microsoft Azure Account for Datacenter Extension
+-------------------------------------------------------
 
 .. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an Azure account. Skip this section.
 
@@ -113,13 +104,13 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
     route configured that routes traffic destined to the VPC CIDR where this
     remote site wish to connect to the CloudN.
 
-2.4. Deploy CloudN for Aviatrix Cloud Interconnect (ACX) 
+2.4. Deploy CloudN for Aviatrix Datacenter Extension 
 ----------------------------------------------------------
 
 2.4.1. Cloud address planning and allocation
 ***********************************************
 
-    When used for ACX function, CloudN manages your entire cloud address space.
+    When used for datacenter extension (DCCX) function, CloudN manages your entire cloud address space.
 
     You need to identify or create a subnet where CloudN is deployed. CloudN
     is deployed on a private subnet anywhere on your network. CloudN does
@@ -208,6 +199,9 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 
 2.8. Binding to CloudN Private IP address to a Single NAT Public IP Address
 ---------------------------------------------------------------------------
+  .. Note:: If you select TCP as tunnel type for either datacenter extension or site2cloud function, the constraints in this section do not apply. 
+  
+  ..
 
   If your organization has more than one public IP addresses as the NAT
   address, you must bind CloudN’s private IP address to one of the public
@@ -239,7 +233,11 @@ CloudN can also be used as a virtual router for Site2Cloud function to work with
 
   -  TCP port 443.
 
-  -  UDP ports 4500 and 500.
+  -  (optional) UDP ports 4500 and 500.
+
+.. Note:: Aviatrix CloudN supports encrypted tunnels over TCP port 443. If you select TCP as the tunnel type for datacenter extension or site2cloud function, no UDP ports 500/4500 are required to be open. The advantage of selecting TCP as the tunnel type is to reduce deployment friction when building hybrid connectivity.  
+
+..
 
   If you choose to reduce the scope of above ports, you can limit them
   to only AWS owned public IP address blocks. All AWS public IP addresses can be found in `this link. <https://ip-ranges.amazonaws.com/ip-ranges.json>`__
@@ -318,7 +316,7 @@ for testing and evaluation purposes.
     `ESXi Admin <https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.vsphere.vm\_admin.doc%2FGUID-6C847F77-8CB2-4187-BD7F-E7D3D5BD897B.html>`_
     for more detailed instructions.
 
-3.1.1.  Configure Network Adapter Properties for ACX
+3.1.1.  Configure Network Adapter Properties for 
 *************************************************************
 
 .. Note:: If you deploy CloudN for Site2Cloud connectivity, CloudN network interfaces are not in promiscuous mode. Skip this section.
@@ -357,7 +355,7 @@ for testing and evaluation purposes.
     For additional CloudN on ESXi configuration illustrations, check out
     `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
-.. Note:: ACX does not support NICteaming in active-active mode. 
+.. Note:: DCCX does not support NICteaming in active-active mode. 
 ..
 
   When NICteaming is configured, only active-standby mode is supported, as
@@ -405,7 +403,7 @@ for testing and evaluation purposes.
 
     Password: Aviatrix123#
 
-3.2.1. Enable MAC Address Spoofing for ACX
+3.2.1. Enable MAC Address Spoofing for DCCX
 *******************************************
 
 .. Note:: If you deploy CloudN for Site2Cloud function, MAC Spoofing is not needed. Skip this section.
@@ -421,13 +419,13 @@ for testing and evaluation purposes.
 
   |image21|
 
-3.3. NIC Teaming Support for ACX
+3.3. NIC Teaming Support for DCCX
 ---------------------------------
 
 .. Note:: If you deploy CloudN for Site2Cloud function, active and active NIC team is supported. 
 ..
 
-  For ACX, NIC teaming is only supported for active standby mode.
+  For DCCX, NIC teaming is only supported for active standby mode.
 
 
 4. Booting Up and Initial Configuration
@@ -478,7 +476,7 @@ commands. For each command, type “?” to view syntax and parameters.
 
     |image42|
 
-.. Note:: For ACX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed.
+.. Note:: For DCCX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed.
 
 4.1.1.1. Proxy Configuration
 ******************************
