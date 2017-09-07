@@ -44,7 +44,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    #.  Click LDAP if vpn user should be authenticated by AD or LDAP server. After you fill up the LDAP fields, make sure you run "Test LDAP Configuration" to test your configuration is valid. 
 
-   #. If you wish to create more of such vpn gateways (for example, behind ELBsfor load balancing), click Save Template, which will save your LDAP and multi-factor authentication credentials. 
+   #. If you wish to create more of such vpn gateways (for example, behind ELBs for load balancing), click Save Template, which will save your LDAP and multi-factor authentication credentials. 
 
 
 2. Add Users and Profiles
