@@ -206,8 +206,8 @@ To enable logging at Aviatrix Controller, go to Settings->Logging page. Once log
 
 Two examples for Remote Syslog and Logstash Forwarder below.
 
-Remote Syslog
--------------
+3.1 Remote Syslog
+------------------
 On the Aviatrix Controller:
   a. Server:	FQDN or IP address of remote syslog server
   #. Port:	Listening port of remote syslog server (6514 by default)
@@ -225,8 +225,8 @@ On the Remote syslog server:
         #. commmandlog.log
         #. syslog
  
-Logstash Forwarder
-------------------
+3.2 Logstash Forwarder
+-----------------------
 On the Aviatrix Controller:
   a. Server Type:	Remote or Local
   #. Server:	FQDN or IP address of logstash server
