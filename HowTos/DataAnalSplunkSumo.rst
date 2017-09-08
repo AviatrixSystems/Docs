@@ -237,7 +237,15 @@ Note:
 If "Local" is selected for "Server Type", Aviatrix Controller itself will be enabled as a logstash server. Before you do this, make sure your controller has at least 30GB of hard disk space. 
 
 On the Logstash console:
-  Log into the web page of your logstash server to access the logs.
+  Log into the web page of your logstash server to access the logs. The Kibana interface is divided into four main sections:
+  a. Discover
+	By default, this page will display all of your most recently received logs. You can filter through and find specific log messages based on Search Queries, then narrow the search results to a specific time range with the Time Filter. 
+  b. Visualize
+	The Visualize page is where you can create, modify, and view your own custom visualizations.
+  c. Dashboard
+	The Dashboard page is where you can create, modify, and view your own custom dashboards. With a dashboard, you can combine multiple visualizations onto a single page, then filter them by providing a search query or by selecting filters by clicking elements in the visualization.
+  d. Settings
+	The Settings page lets you change a variety of things like default values or index patterns.
 
 4. Log management system Apps
 ====================================
