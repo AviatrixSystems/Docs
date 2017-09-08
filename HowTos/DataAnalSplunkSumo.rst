@@ -199,7 +199,35 @@ Example log:
   dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
 
 
-Log management system configuration
+Logging Configuration at Aviatrix Controller
+=============================================
+
+To enable logging at Aviatrix Controller, go to Settings->Logging page.
+
+Two examples for Remote Syslog and Logstash Forwarder below.
+
+Remote Syslog
+-------------
+a. Server:	FQDN or IP address of remote syslog server
+#. Port:	Listening port of remote syslog server (6514 by default)
+#. Cert:	A compressed file in tgz format with both certificates of remote syslog server and CA
+#. Protocol:	TCP or UDP (TCP by default)
+ 
+Logging Management at Logging Servers
+=====================================
+
+To access and manage the logs at logging server side, we have two examples for Remote Syslog and Logstash.
+
+Remote Syslog
+-------------
+1. SSH into the remote syslog server
+#. Go to /var/log/aviatrix directory
+#. Find the directory for desired controller or gateway 
+	a. Directory name for a controller is in a format of Controller-public_IP_of_controller
+	#. Directory name for a gateway is in a format of GW-gateway_name-public_IP_of_gateway
+#. Each controller/gateway directory should have auth.log, commmandlog.log and syslog
+
+Log management system Apps
 ====================================
 
 Aviatrix controller can be configured to forward logs to various log
