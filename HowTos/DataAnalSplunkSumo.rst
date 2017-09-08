@@ -202,7 +202,7 @@ Example log:
 Logging Configuration at Aviatrix Controller
 =============================================
 
-To enable logging at Aviatrix Controller, go to Settings->Logging page.
+To enable logging at Aviatrix Controller, go to Settings->Logging page. Once logging is enabled, both Controller and all gateways will forward logs directly to the logging server.
 
 Two examples for Remote Syslog and Logstash Forwarder below.
 
@@ -210,9 +210,19 @@ Remote Syslog
 -------------
 a. Server:	FQDN or IP address of remote syslog server
 #. Port:	Listening port of remote syslog server (6514 by default)
-#. Cert:	A compressed file in tgz format with both certificates of remote syslog server and CA
+#. Cert:	A compressed file in tgz format with both certificates (.crt format) of remote syslog server and CA
 #. Protocol:	TCP or UDP (TCP by default)
  
+Logstash Forwarder
+------------------
+a. Server Type:	Remote or Local
+#. Server:	FQDN or IP address of logstash server
+#. Port:	Listening port of logstash server (5000 by default)
+#. Trusted CA:	CA certificate (.crt format)
+
+Note:
+If "Local" is selected for "Server Type", Aviatrix Controller itself will be enabled as a logstash server
+
 Logging Management at Logging Servers
 =====================================
 
@@ -222,10 +232,17 @@ Remote Syslog
 -------------
 1. SSH into the remote syslog server
 #. Go to /var/log/aviatrix directory
-#. Find the directory for desired controller or gateway 
-	a. Directory name for a controller is in a format of Controller-public_IP_of_controller
-	#. Directory name for a gateway is in a format of GW-gateway_name-public_IP_of_gateway
-#. Each controller/gateway directory should have auth.log, commmandlog.log and syslog
+#. Find the directory of desired controller or gateway 
+	a. Controller's directory name is in a format of Controller-public_IP_of_controller
+	#. Gateway's directory name is in a format of GW-gateway_name-public_IP_of_gateway
+#. Each controller/gateway directory should have 
+	a. auth.log
+	#. commmandlog.log
+	#. syslog
+
+Logstash 
+--------
+Log into the web page of your logstash server to access the logs
 
 Log management system Apps
 ====================================
