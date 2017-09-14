@@ -100,7 +100,7 @@ ground up.
 
 	-  Integrate AWS Route 53 DNS name service for each accessing.
 
--  Seucrity Features
+-  Security Features
 
 	-  Stateful firewall on each gateway that controls traffic in and out the VPC.
 
