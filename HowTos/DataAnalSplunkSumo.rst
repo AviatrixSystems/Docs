@@ -10,8 +10,8 @@
 
 
 
-Introduction
-============
+1. Introduction
+================
 
 Aviatrix Controller and all its managed gateways can be configured to
 forward logs to well known log management systems, such as Splunk, Sumo
@@ -28,8 +28,8 @@ list of useful Aviatrix logs which can be parsed on Splunk, Sumo Logic
 and other log management systems to display relevant analytics of data
 collected from Aviatrix Controller and gateways.
 
-Aviatrix Log Format for Log Management Systems
-==============================================
+2. Aviatrix Log Format for Log Management Systems
+==================================================
 
 Following types of Aviatrix log keywords can be identified by the Log
 Management System for further analysis:
@@ -199,7 +199,58 @@ Example log:
   dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
 
 
-Log management system configuration
+3. Logging Configuration at Aviatrix Controller
+================================================
+
+To enable logging at Aviatrix Controller, go to Settings->Logging page. Once logging is enabled, both Controller and all gateways will forward logs directly to the logging server.
+
+Two examples for Remote Syslog and Logstash Forwarder below.
+
+3.1 Remote Syslog
+------------------
+On the Aviatrix Controller:
+  a. Server:	FQDN or IP address of remote syslog server
+  #. Port:	Listening port of remote syslog server (6514 by default)
+  #. Cert:	A compressed file in tgz format with both certificates (.crt format) of remote syslog server and CA
+  #. Protocol:	TCP or UDP (TCP by default)
+
+On the Remote syslog server:
+  1. SSH into the remote syslog server
+  #. Go to /var/log/aviatrix directory
+  #. Find the directory of desired controller or gateway
+        a. Controller's directory name is in a format of Controller-public_IP_of_controller
+        #. Gateway's directory name is in a format of GW-gateway_name-public_IP_of_gateway
+  #. Each controller/gateway directory should have
+        a. auth.log
+        #. commmandlog.log
+        #. syslog
+ 
+3.2 Logstash Forwarder
+-----------------------
+On the Aviatrix Controller:
+  a. Server Type:	Remote or Local
+  #. Server:	FQDN or IP address of logstash server
+  #. Port:	Listening port of logstash server (5000 by default)
+  #. Trusted CA:	CA certificate (.crt format)
+
+Note:
+If "Local" is selected for "Server Type", Aviatrix Controller itself will be enabled as a logstash server. Before you do this, make sure your controller has at least 30GB of hard disk space. 
+
+On the Logstash console:
+  Log into the web page of your logstash server to access the logs. 
+
+  The Kibana interface is divided into four main sections:
+  
+  a. Discover
+	By default, this page will display all of your most recently received logs. You can filter through and find specific log messages based on Search Queries, then narrow the search results to a specific time range with the Time Filter. 
+  b. Visualize
+	The Visualize page is where you can create, modify, and view your own custom visualizations.
+  c. Dashboard
+	The Dashboard page is where you can create, modify, and view your own custom dashboards. With a dashboard, you can combine multiple visualizations onto a single page, then filter them by providing a search query or by selecting filters by clicking elements in the visualization.
+  d. Settings
+	The Settings page lets you change a variety of things like default values or index patterns.
+
+4. Log management system Apps
 ====================================
 
 Aviatrix controller can be configured to forward logs to various log
