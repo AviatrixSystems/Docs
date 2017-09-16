@@ -92,6 +92,12 @@ For support, send email to support@aviatrix.com
 There will be an alert message on the Dashboard menu when a new release
 becomes available.
 
+Gateway Troubleshoot
+=====================
+
+If the Controller fail to launch Aviatrix gateway in Azure RM, check out `this troubleshooting guide. <http://docs.aviatrix.com/HowTos/azuregwlaunch.html>`_
+
+
 Enjoy!
 
 .. |image0| image:: AzureAviatrixCloudControllerStartupGuide_media/image001.png

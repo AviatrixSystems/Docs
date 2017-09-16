@@ -1,5 +1,5 @@
 .. meta::
-   :description: Azure gateway launch problem 
+   :description: Azure gateway launch troubleshooting 
    :keywords: Avaitrix troubleshooting, Azure gateway launch failure, subscription problem
 
 ####################################################
