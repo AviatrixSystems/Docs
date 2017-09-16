@@ -130,6 +130,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Troubleshoot_Diagnostics
    HowTos/Troubleshoot_ELB_Status
    HowTos/error-msgs
+   HowTos/azuregwlaunch
 
 .. _Rest APIs:
 
