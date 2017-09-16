@@ -41,10 +41,14 @@ From Controller console, launch gateway again and observe the failure.
   #. Click the resource group created by Aviatrix Controller. The resource group should have a prefix "av-". Click Activity Log. 
   #. Click the error message in red color.  
   #. The specific error message should have a Summary tab and a JSON tab. 
-  #. Click the JSON tab to examine the detailed error message. 
+  #. Click the JSON tab to examine the detailed error message, show as below
+
+|image0| 
 
 4. Get Help from Aviatrix Support
 ---------------------------------
 If you still cannot figure out, email to support@aviatrix.com to get help.
+
+.. |image0| image:: azuregwlaunch_media/azuregwlaunch.png
 
 .. disqus::
