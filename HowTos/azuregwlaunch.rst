@@ -41,7 +41,7 @@ From Controller console, launch gateway again and observe the failure.
   #. Click the resource group created by Aviatrix Controller. The resource group should have a prefix "av-". Click Activity Log. 
   #. Click the error message in red color.  
   #. The specific error message should have a Summary tab and a JSON tab. 
-  #. Click the JSON tab to examine the detailed error message, show as below
+  #. Click the JSON tab to examine the detailed error message, as shown below:
 
 |image0| 
 
