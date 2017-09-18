@@ -92,6 +92,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/uservpn
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
+   HowTos/DNSVPN
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/duo_auth
    HowTos/UserSSL_VPN_Okta_SAML_Config
