@@ -6,14 +6,10 @@
 Maintenance
 ###################################
 
--  Upgrade  (TO BE UPDATED...)
+-  `Inline Software Upgrade. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
 
-    Please refer to `Inline Software Upgrade. <http://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
+-  `Controller HA. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
 
--  Backup & Restore  (TO BE UPDATED...)
-
-    Please refer to `Controller HA. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
-
--  Patches  (TO BE UPDATED...)
+-  Patches
 
 .. disqus::
