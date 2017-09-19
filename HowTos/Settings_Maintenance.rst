@@ -10,6 +10,5 @@ Maintenance
 
 -  `Controller HA. <http://docs.aviatrix.com/HowTos/controller_ha.html>`__
 
--  Patches
 
 .. disqus::
