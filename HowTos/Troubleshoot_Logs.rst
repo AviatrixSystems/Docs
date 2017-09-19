@@ -8,18 +8,9 @@ Logs
 
 
 
-UPLOAD TRACELOG 
------------------
-CONTENT TO BE UPDATED...
+ -  `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
 
-Please refer to `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
-
-
-
-DISPLAY AVIATRIX COMMAND LOG 
------------------------------
-CONTENT TO BE UPDATED...
-
+ - Display Aviatrix Command Log
 
 
 .. disqus::
