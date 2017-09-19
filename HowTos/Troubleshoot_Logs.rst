@@ -10,7 +10,5 @@ Logs
 
  -  `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
 
- - Display Aviatrix Command Log
-
 
 .. disqus::
