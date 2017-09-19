@@ -7,7 +7,5 @@ ELB Status
 ###################################
 
 
-CONTENT TO BE UPDATED...
-
 
 .. disqus::
