@@ -15,11 +15,6 @@ Diagnostics
 -  Gateway
 
     Please refer to `Run diagnostics on a gateway. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
-    
--  VPN_User
 
--  Cloud
-
--  Database
 
 .. disqus::
