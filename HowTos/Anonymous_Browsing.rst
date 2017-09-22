@@ -144,7 +144,7 @@ Region             Choose the region of VPC #2
 VPC ID             Choose the VPC ID of VPC #2 
 Gateway Name       This name is arbitrary (e.g. vpc-02-avx-gw)
 Public Subnet      Select a public subnet where the gateway will be deployed (e.g. 10.2.0.0/24)
-Gateway Size       t2.micro is fine for testing.
+Gateway Size       t2.micro is fine for testing
 Enable NAT         Check this box (IMPORTANT)
 VPN Access         Uncheck this box
 ==============     ============================
