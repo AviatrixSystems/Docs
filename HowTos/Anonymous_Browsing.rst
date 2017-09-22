@@ -115,18 +115,18 @@ a.6.  Click on Gateway -> "New Gateway"
   Gateway Size                      t2.micro is fine for testing.
   Enable NAT                        Uncheck this box
   VPN Access                        Check this box
-  VPN CIDR Block	                  (e.g. 192.168.43.0/24)
+  VPN CIDR Block	            (e.g. 192.168.43.0/24)
   MFA Authentication                Optional
   Max Connections                   100 is fine for testing
   Split Tunnel Mode                 No 
-  Enable ELB	                     Yes
-  ELB Name	                        Leave blank
+  Enable ELB	                    Yes
+  ELB Name	                    Leave blank
   Enable Client Cert. Sharing       No
   Enable PBR                        Check this box
-  PBR Subnet	                     Select the subnet where Aviatrix Peering Gateway is located (e.g. 10.1.0.0/24)
+  PBR Subnet	                    Select the subnet where Aviatrix Peering Gateway is located (e.g. 10.1.0.0/24)
   PBR Default Gateway               Select the private IP of Aviatrix Peering Gateway (e.g. 10.1.0.138)
   NAT Translation Logging           Uncheck this box 
-  Enable LDAP	                     Optional 
+  Enable LDAP	                    Optional 
 ===============================     ===================================================
 
 a.7.  Click “OK”. It will take a few minutes for the gateway to deploy. Do not proceed until the gateway is deployed.
@@ -136,7 +136,7 @@ a.8.  Create Aviatrix Peering Gateway #2 in VPC #2
 a.9.  Click on Gateway -> "New Gateway" 
 
 ==============     ===========================
-  **Setting**      **Value**
+**Setting**        **Value**
 ==============     ===========================
 Cloud Type         Choose AWS
 Account Name       Choose the account name
@@ -209,12 +209,12 @@ b.10. This template file contains the necessary information to configure the new
   Remote Gateway Type               Aviatrix
   Tunnel Type                       UDP
   Algorithms                        check
-  Phase 1 Authentication 	         SHA-1 
-  Phase 2 Authentication 	         HMAC-SHA-1
-  Phase 1 DH Groups  		         2
-  Phase 2 DH Groups  		         2 
-  Phase 1 Encryption 		         AES-256
-  Phase 2 Encryption 		         AES-256
+  Phase 1 Authentication 	    SHA-1 
+  Phase 2 Authentication 	    HMAC-SHA-1
+  Phase 1 DH Groups  		    2
+  Phase 2 DH Groups  		    2 
+  Phase 1 Encryption 		    AES-256
+  Phase 2 Encryption 		    AES-256
   Encryption over DirectConnect     Uncheck
   Enable HA                         Uncheck
   Primary Cloud Gateway             Aviatrix Peering Gateway #2 (e.g. vpc-02-avx-gw)
@@ -224,7 +224,7 @@ b.10. This template file contains the necessary information to configure the new
   Local Subnet                      0.0.0.0/0 
 ===============================     ===================================================
 
-Notes: IP of eth1 of Aviatrix VPN Gateway #1 can be acquired from AWS console
+Notes: IP of eth1 of Aviatrix VPN Gateway can be acquired from AWS console
 
 b.11.  Click button "OK"
 
@@ -247,11 +247,11 @@ c.3.  Click button "+Add New"
 ===============================     ===================================================
   **Setting**                       **Value**
 ===============================     ===================================================
-  VPC ID	                           Choose the VPC ID of VPC #1
+  VPC ID	                    Choose the VPC ID of VPC #1
   LB/Gateway Name                   Choose the ELB in VPC #1
-  User Name 		 	               This name is arbitrary (ex. vpn-user)
-  User Email			               Email address
-  Profile			                  Uncheck is fine for the testing  
+  User Name 		 	    This name is arbitrary (ex. vpn-user)
+  User Email			    Email address
+  Profile			    Uncheck is fine for the testing  
 ===============================     ===================================================
 
 c.4.  Click button "OK" 
