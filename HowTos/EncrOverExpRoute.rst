@@ -105,7 +105,7 @@ The configuration workflow is as follows, with major steps highlighted.
       encryption algorithm. Incorporate the information to your remote
       router/firewall configuration.
 |
-| 6. At the Enterprise datacenter or remote site, configure encryption on the edge device.
+| 5. At the Enterprise datacenter or remote site, configure encryption on the edge device.
 |   Make sure your peer network is Subnet2 and Subnet3, as shown in this example.
 |
 
