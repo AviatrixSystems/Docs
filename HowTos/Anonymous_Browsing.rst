@@ -49,13 +49,13 @@ https://<public ip of Aviatrix Controller>
 2.1.2  Check VPC Settings
 -------------------------
 
--   Create 2 VPC - VPC #1 with CIDR 10.1.0.0/16 and VPC #2 with CIDR 10.2.0.0/16
+-   Create 2 VPCs - VPC #1 with CIDR 10.1.0.0/16 and VPC #2 with CIDR 10.2.0.0/16
 
--   In VPC #1, create 2 public subnet in same Availability Zone - 10.1.0.0/24 and 10.1.1.0/24
+-   In VPC #1, create 2 public subnet in same Availability Zone - 10.1.0.0/24 and 10.1.1.0/24.
     This means both subnet must be associated with a route table that has
     an IGW as its default route.
 
--   In VPC #2, create 1 public subnet - 10.2.0.0/24
+-   In VPC #2, create 1 public subnet - 10.2.0.0/24.
     This means one subnet must be associated with a route table that has
     an IGW as its default route.
  
@@ -81,7 +81,7 @@ The first step is to deploy Aviatrix gateways in each VPC.
 
 a.1.  Login to the Aviatrix Controller Console
 
-a.2   Create Aviatrix S2C GW #1 in VPC #1
+a.2.   Create Aviatrix S2C GW #1 in VPC #1
 
 a.3.  Click on Gateway -> "New Gateway" 
 
@@ -92,10 +92,10 @@ Cloud Type         Choose AWS
 Account Name       Choose the account name
 Region             Choose the region where your VPC is located (ex. VPC #1)
 VPC ID             Choose the VPC (ex. VPC #1) 
-Gateway Name       This name is arbitrary (ex. Aviatrix S2C GW #1)
+Gateway Name       This name is arbitrary (ex. Aviatrix S2C GW #1: vpc-01-avx-gw)
 Public Subnet      Select a public subnet where the gateway will be deployed (ex. 10.1.0.0/24)
 Gateway Size       t2.micro is fine for testing.
-Enable NAT         Uncheck this box
+Enable NAT         Uncheck this box (IMPORTANT)
 VPN Access         Uncheck this box
 ==============     ====================
 
@@ -105,31 +105,31 @@ a.5.  Create Aviatrix VPN GW #1 in VPC #1
 
 a.6.  Click on Gateway -> "New Gateway"
 
-==============     ====================
-**Setting**        **Value**
-==============     ====================
-Cloud Type         Choose AWS
-Account Name       Choose the account name
-Region             Choose the region where your VPC is located (ex. VPC #1)
-VPC ID             Choose the VPC (ex. VPC #1) 
-Gateway Name       This name is arbitrary (ex. Aviatrix VPN GW #1)
-Public Subnet      Select a public subnet where the gateway will be deployed (ex. 10.1.1.0/24)
-Gateway Size       t2.micro is fine for testing.
-Enable NAT         Uncheck this box
-VPN Access         Check this box
-VPN CIDR Block	   (ex. 192.168.44.0/24)
-MFA Authentication Disable is fine for testing
-Max Connections    100 is fine for testing
-Split Tunnel Mode  No (ex. Full Tunnel)
-Enable ELB	   Yes
-ELB Name	   Blank is fine for testing
-Enable Client Certificate Sharing No
-Enable Policy Based Routing(PBR) Check this box
-PBR Subnet	   Select the public subnet where Aviatrix S2C GW #1 is located (ex. 10.1.0.0/24)
-PBR Default Gateway Select the private IP of Aviatrix S2C GW #1 (ex. 10.1.0.138)
-NAT Translation Logging Uncheck this box
-Enable LDAP	   Uncheck this box
-==============     ====================
+===============================     ===================================================
+  **Setting**                       **Value**
+===============================     ===================================================
+  Cloud Type                        Choose AWS
+  Account Name                      Choose the account name
+  Region                            Choose the region where your VPC is located (ex. VPC #1)
+  VPC ID                            Choose the VPC (ex. VPC #1) 
+  Gateway Name                      This name is arbitrary (ex. Aviatrix VPN GW #1: vpc-01-avx-vpn)
+  Public Subnet                     Select a public subnet where the gateway will be deployed (ex. 10.1.1.0/24)
+  Gateway Size                      t2.micro is fine for testing.
+  Enable NAT                        Uncheck this box
+  VPN Access                        Check this box
+  VPN CIDR Block	                  (ex. 192.168.44.0/24)
+  MFA Authentication                Disable is fine for testing
+  Max Connections                   100 is fine for testing
+  Split Tunnel Mode                 No (ex. Full Tunnel)
+  Enable ELB	                     Yes
+  ELB Name	                        Blank is fine for testing
+  Enable Client Cert. Sharing       No
+  Enable PBR                        Check this box
+  PBR Subnet	                     Select the subnet where Aviatrix S2C GW #1 is located (ex. 10.1.0.0/24)
+  PBR Default Gateway               Select the private IP of Aviatrix S2C GW #1 (ex. 10.1.0.138)
+  NAT Translation Logging           Uncheck this box
+  Enable LDAP	                     Uncheck this box
+===============================     ===================================================
 
 a.7.  Click “OK”. It will take a few minutes for the gateway to deploy. Do not proceed until the gateway is deployed.
 
@@ -144,13 +144,12 @@ Cloud Type         Choose AWS
 Account Name       Choose the account name
 Region             Choose the region where your VPC is located (ex. VPC #2)
 VPC ID             Choose the VPC (ex. VPC #2) 
-Gateway Name       This name is arbitrary (ex. Aviatrix S2C GW #2)
+Gateway Name       This name is arbitrary (ex. Aviatrix S2C GW #2: vpc-02-avx-gw)
 Public Subnet      Select a public subnet where the gateway will be deployed (ex. 10.2.0.0/24)
 Gateway Size       t2.micro is fine for testing.
-Enable NAT         Uncheck this box
+Enable NAT         Check this box (IMPORTANT)
 VPN Access         Uncheck this box
 ==============     ====================
-
 
 a.10.  Click “OK”. It will take a few minutes for the gateway to deploy. Do not proceed until the gateway is deployed.
 
@@ -184,7 +183,7 @@ b.3.  Click "+Add New" to establish S2C connection from Aviatrix S2C GW #1 to Av
   Remote Gateway IP Address         Public IP of Remote Gateway (ex. Aviatrix S2C GW #2)
   Pre-shared Key                    Optional
   Remote Subnet                     0.0.0.0/0 (in this example)
-  Local Subnet                      IP of eth1 of Aviatrix VPN GW #1 (in this example)
+  Local Subnet                      IP of eth1 of Aviatrix VPN GW #1 (ie. 10.1.0.190/32)
 ===============================     ===================================================
 
 b.4.  Click button "OK"
@@ -210,29 +209,29 @@ b.10. This template file contains the necessary information to configure the new
   Remote Gateway Type               Aviatrix (in this example)
   Tunnel Type                       UDP
   Algorithms                        check
-  Phase 1 Authentication 	    SHA-1 
-  Phase 2 Authentication 	    HMAC-SHA-1
-  Phase 1 DH Groups  		    2
-  Phase 2 DH Groups  		    2 
-  Phase 1 Encryption 		    AES-256
-  Phase 2 Encryption 		    AES-256
+  Phase 1 Authentication 	         SHA-1 
+  Phase 2 Authentication 	         HMAC-SHA-1
+  Phase 1 DH Groups  		         2
+  Phase 2 DH Groups  		         2 
+  Phase 1 Encryption 		         AES-256
+  Phase 2 Encryption 		         AES-256
   Encryption over DirectConnect     Uncheck
   Enable HA                         Uncheck
   Primary Cloud Gateway             Choose (ex. Aviatrix S2C GW #2)
   Remote Gateway IP Address         Public IP of Remote Gateway (ex. Aviatrix S2C GW #1)
   Pre-shared Key                    (automatically set)
-  Remote Subnet                     IP of eth1 of Aviatrix VPN GW #1 (in this example)
+  Remote Subnet                     IP of eth1 of Aviatrix VPN GW #1 (ie. 10.1.0.190/32)
   Local Subnet                      0.0.0.0/0 (in this example)
 ===============================     ===================================================
 
 Notes: IP of eth1 of Aviatrix VPN GW #1 can be inquired on AWS console
 
-b.10  Click button "OK"
+b.11.  Click button "OK"
 
-b.11  Done
+b.12.  Done
 
 
-2.2.3  Step c – Create a OpenVPN user
+2.2.3  Step c – Create an OpenVPN user
 ------------------------------------------------------------
 
 This step explains how to create a OpenVPN user.
@@ -248,22 +247,20 @@ c.3.  Click button "+Add New"
 ===============================     ===================================================
   **Setting**                       **Value**
 ===============================     ===================================================
-  VPC ID	                    Choose the VPC (ex. VPC #1)
+  VPC ID	                           Choose the VPC (ex. VPC #1)
   LB/Gateway Name                   Choose the ELB in VPC #1
-  User Name 		 	    This name is arbitrary (ex. vpn-user)
-  User Email			    Email address
-  Profile			    Uncheck is fine for the testing  
+  User Name 		 	               This name is arbitrary (ex. vpn-user)
+  User Email			               Email address
+  Profile			                  Uncheck is fine for the testing  
 ===============================     ===================================================
 
 c.4.  Click button "OK" 
 
 c.5.  Check your email to receive an ovpn file
 
-c.6.  Utilize that ovpn to establish OpenVPN connection
+c.6.  Done
 
-c.7.  Done
-
-2.2.4  Step d – Anonymous browsing
+2.2.4  Step d – Start anonymous browsing
 --------------------------------------------
 
 This step explains how to establish an OpenVPN connection and surf network as anonymous.
@@ -276,11 +273,11 @@ d.2.  Establish an OpenVPN connection with the ovpn file which has received in e
 
 d.3.  Confirm the connectivity to public network
 
-d.3.1 Ping to www.google.com
+d.3.1. Ping to www.google.com
 
-d.3.1 Check public IP address (ie. https://www.whatismyip.com/what-is-my-public-ip-address/) 
+d.3.1. Check public IP address (ie. https://www.whatismyip.com/what-is-my-public-ip-address/) 
 
-d.3.2 Check IP location (ie. https://www.iplocation.net/) 
+d.3.2. Check IP location (ie. https://www.iplocation.net/) 
 
 Troubleshooting
 ===============
