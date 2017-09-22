@@ -187,7 +187,7 @@ Gateway #2 (in VPC #2)
 
 b.4.  Click button "OK"
 
-b.5.  View List, click the site2cloud connection created above (e.g. vpc01-s2c-vpc02)
+b.5.  From S2C connection table, select the site2cloud connection created above (e.g. vpc01-s2c-vpc02)
 
 b.6.  Select "Aviatrix" from "Vendor" drop down list
 
