@@ -2,13 +2,37 @@
 Release Notes
 =======================================
 
+R2.7
+==========
+
+Controller 
+-------------------
+
+- Console Responsiveness improvments. Significant improvments in page responsiveness when using controller web console. 
+
+- Support third party signed certificate. You now can import a third party signed certificate to the controller. This should remove the "Not Secure" sign displayed by the browser. To configure, go to Settings -> Advanced -> Certificate -> CERTIFICATE IMPORT. First Enable Certificate Checking. The console will ask you to enter a domain name and generate a CSR file (Certificate Signing Request). Send this CSR to get singed, then import both CA and server certificate. Note if intermediate certifcate is one of the return files, use the intermediate certificate file for CA import. 
+
+
+Connectivity
+-------------------
+
+- Support Site2Cloud tunnel on TCP. In addition to run IPSEC tunnel on UDP protocol, you can now run on TCP 443. This option removes the requirements of having to open site firewall ports on UDP 4500/500. To configure, go to Site2Cloud -> Add New. Select TCP for Tunnel Type selection. 
+
+- Support load balancing UDP based OpenVPN gateways. If your OpenVPN users experience slow terminal or long file transfer time, use UDP based VPN gateway can help. This release allows you to create multiple UDP based VPN gateways and load balance them in a round robin fashion by leveraging AWS Route53. To configure, go to OpenVPN -> Advanced -> UDP Loadbalancer. Note when UDP protocol is used, UDP port 1194 is used. When using from on-prem, firewall port UDP 1194 must be open. 
+
+- Support Designated Gateway. If you are planning to have a large set of tunnels going through a gateway or are hitting AWS route entry limit, this feature is for you. If "Designated Gateway" option is selected at the gateway launch time, the Controller programs 3 route entries based on RFC1918 for the gateway. Controller will not program additional route entries when configure a VPN tunnel that end on the Designated Gateway. Note you currently do not have a Designated Gateway and you are hitting route entry limit, launch a new gateway with Designated Gateway enabled and configure future tunnels from the Designated Gateway. Note there can only be one Designated Gateway per VPC. Designated Gateway only supports Gateway HA.  
+
+- Allocate New EIP. When this option is selected at new gateway launch time, Controller always allocates a new EIP and associated it with the gateway. If this option is unchecked, Controller will first look at the EIP pool that belong to the account: if there is no allocated but unassociated EIP, Controller will allocate a new EIP from AWS and associate it with the gateway, otherwise it will select one EIP from the pool and associate it with the gateway. 
+
+
+
 R2.6
 ===================
 
 Connectivity
 -------------
 
-- Run encrypted on TCP port 443. Aviatrix Virtual Appliance CloudN now offers a TCP based secure tunnel connectivity. With this new capability, you do not need to open outbound UDP port 500 and 4500. The encrypted tunnel runs on TCP 443. To configure, go to Datacenter Extension, select TCP for the field Tunnel Type. UDP based encrypted tunnel is still supported. 
+- Run encrypted tunnel on TCP port 443. Aviatrix Virtual Appliance CloudN now offers a TCP based secure tunnel connectivity. With this new capability, you do not need to open outbound UDP port 500 and 4500. The encrypted tunnel runs on TCP 443. To configure, go to Datacenter Extension, select TCP for the field Tunnel Type. UDP based encrypted tunnel is still supported. 
 
 - Reserve on-prem segment for Datacenter Extension feature of CloudN. After deciding how many VPCs you wish to configure during on boarding, you can sub divide the segments to reserve some for on prem VM deployment. This allows you launch applications where some part of it (such as database) is on-prem and others parts of it (such as web front end) to be in VPC.  
 

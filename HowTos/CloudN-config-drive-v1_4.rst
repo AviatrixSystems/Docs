@@ -1,10 +1,10 @@
 .. meta::
    :description: ClounN Config Drive
-   :keywords: CloudN, CloudN config drive, Aviatrix
+   :keywords: CloudN, CloudN config drive, Aviatrix, hybrid cloud
 
-================================================
-Booting CloudN VM with Customized Configuration
-================================================
+====================================================
+Auto Booting CloudN VM Using ISO File 
+====================================================
 
 This document provides one method to boot CloudN VM automatically without the initial manual configuration stage for interface address. 
 
@@ -13,8 +13,8 @@ The method is to use a customized ISO file when launching the virtual machine.
 Note 
 CloudN can be downloaded from `this link: <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_.
 
-Installation on vSphere 
-========================
+1. Installation on vmware vSphere Client 
+=========================================
 
 Create the customized configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -186,8 +186,8 @@ initialization process.
 
 |image5|
 
-Installation on Linux KVM
-==========================
+2. Installation on Linux KVM
+=============================
 
 The same methods previously described to create the
 cloudn-172-25-0-10.iso can be applied to KVM virtualization environment.
