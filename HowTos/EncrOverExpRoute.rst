@@ -11,7 +11,7 @@ Encryption over DirectConnect/ExpressRoute
 The Problem
 ------------
 
-AWS Direct Connect and Azur ExpressRoute provides a private routed circuit to AWS 
+AWS Direct Connect and Azure ExpressRoute provides a private routed circuit to AWS 
 VPC and Azure VNet. 
 
 Avitrix site2cloud feature provides encryption over Direct Connect or ExpressRoute. 
