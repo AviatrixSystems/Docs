@@ -136,7 +136,7 @@ a.8.  Create Aviatrix Peering Gateway #2 in VPC #2
 a.9.  Click on Gateway -> "New Gateway" 
 
 ==============     ===========================
-**Setting**        **Value**
+  **Setting**      **Value**
 ==============     ===========================
 Cloud Type         Choose AWS
 Account Name       Choose the account name
