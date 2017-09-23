@@ -48,10 +48,9 @@ Sample contents of user-data:
 	    gateway 10.10.0.1
 	    dns-nameservers 8.8.8.8 8.8.4.4
 
-If CloudN VM were to be deployed in a proxy environment, we would need to
-include additional proxy settings in the user-data. In the following
-sample, 10.10.0.21 is the IP address of the CloudN VM, 10.28.144.137 is
-the proxy IP address with port 8080.
+.. Note:: If CloudN VM were to be deployed in a proxy environment, we would need to include additional proxy settings in the user-data. In the following sample, 10.10.0.21 is the IP address of the CloudN VM, 10.28.144.137 is the proxy IP address with port 8080, as shown in the example below. 
+
+..
 
 Sample contents of user-data (with proxy settings): 
 
@@ -211,6 +210,10 @@ Contents of user-data:
      gateway 172.25.0.1
 
   dns-nameservers 8.8.8.8 8.8.4.4
+
+.. Note:: If your enviornment has proxy server for accessing Internet, you need to include that as described in the vmware section.
+
+..
 
 Contents meta-data:
 ~~~~~~~~~~~~~~~~~~~
