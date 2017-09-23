@@ -319,6 +319,8 @@ with the customized cloudn-172-25-0-10.iso
   path=./cloudn-172-25-0-10.iso,device=cdrom --network
   bridge=br1,model=virtio --network bridge=br1,model=virtio --graphics spice
 
+.. Note:: You may need to install virt-viewer package on your Linux machine in order to use the SPICE graphics.
+
 A Virt Viewer windows will pop up to show the installation process of
 CloudN. Once the CloudN login prompt is shown on the Virt Viewer
 console, we can access the https://172.25.0.10 to complete the admin’s
