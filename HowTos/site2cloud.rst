@@ -54,7 +54,7 @@ The first step in deploying application close to user is to build a new
 network architecture as shown in the right side of the diagram above. A
 remote site now connects via IPSec tunnel to a closest Aviatrix gateway
 in a VPC or VNet in a region closest to the site. Different remote sites
-many connect to different Aviatrix gateways. For example, sites in China
+may connect to different Aviatrix gateways. For example, sites in China
 connect to Aviatrix gateways in Azure China region and sites in Europe
 connect to Aviatrix gateway in a VPC in AWS eu-west-1 region.
 
