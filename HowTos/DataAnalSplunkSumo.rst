@@ -90,6 +90,21 @@ Two example logs:
   ***AviatrixUser***:IN= OUT=eth0 SRC=192.168.0.6 DST=10.100.0.2 LEN=66
   TOS=0x00 PREC=0x00 TTL=254 ID=13309 PROTO=UDP SPT=64775 DPT=53 LEN=46
 
+AviatrixLicsenseVPNUsers:
+-------------------------
+
+Logs with this prefix come from the controller. The log contains the 
+information for total active vpn user count from all the VPN GWs managed
+by the controller.
+
+Example log:
+------------
+
+::
+
+  Sep 26 03:14:43 ip-10-40-0-133 cloudxd: AviatrixLicsenseVPNUsers: users=1
+  Sep 26 03:17:53 ip-10-40-0-133 cloudxd: AviatrixLicsenseVPNUsers: users=2
+
 AviatrixRule:
 --------------
 
