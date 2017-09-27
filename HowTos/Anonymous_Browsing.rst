@@ -1,10 +1,10 @@
 .. meta::
-   :description: site2cloud, OpenVPN, Policy Based routing, PBR
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, peering, PBR, Policy Based Routing
+   :description: Anonymous Internet surfing, VPN 
+   :keywords: Site2cloud, site to cloud, OpenVPN, ipsec vpn, tunnel, peering, PBR, Policy Based Routing
 
 
 ========================================================
-How to Build Anonymous Browsing Solution
+Anonymous Internet Surfing Using Aviatrix
 ========================================================
 
 
@@ -12,7 +12,10 @@ How to Build Anonymous Browsing Solution
 1. Solution Overview
 ======================
 
-This document describes a simple setup where an OpenVPN client access Internet from a different public IP address than the ISP public IP address where the client resides.  
+Normally when you surf a Internet website, the source IP address contained in the packets is the public IP address of your Internet Service Provider (ISP).  
+This document describes a simple setup where the source IP address is different from that of your ISP. 
+
+The setup is created by leveraging Aviatrix OpenVPN capability and Site2Cloud feature. You can expand the solution to create a much more sophisticated scheme to span multiple clouds and regions.   
 
 
 2. Configuration Workflow
