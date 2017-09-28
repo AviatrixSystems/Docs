@@ -45,7 +45,7 @@ This demo will involve two web servers hosting a basic website.  The servers wil
 
 This diagram represents the desired configuration:
 
-|image0|
+|image1|
 
 The webdemo hostname has been registered in DNS with an A record pointing to the NLB public IP address.  When a user accesses the demo site (webdemo.aviatrix.com/index.html) from a browser, that request will be handled by the Network Load Balancer  (the :orange:`orange` line in the diagram).  The NLB will choose either the :green:`green` route to the data center or the :blue:`blue` route to the EC2 instance and the selected web server will respond to the user with the contents of the requested file.
 
@@ -287,6 +287,8 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 
 
 .. |image0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/Overview.png
+
+.. |image1| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/overview_with_aviatrix.png
 
 .. |imageAWSVPC0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_vpc/screenshot_start_vpc_wizard_button.png
 
