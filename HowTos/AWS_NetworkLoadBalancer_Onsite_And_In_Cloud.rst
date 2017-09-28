@@ -166,33 +166,9 @@ The Aviatrix Controller provides a single pane of glass to visualize all of your
 
  |imageAvtxDashboard0|
 
-The Controller can be installed anywhere (either in the cloud or on the remote site and in any VPC).  For this demo, we're going to install the Controller in AWS.
+Follow the `installation instructions <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ to get the Controller up and running in AWS.
 
-Aviatrix makes installation very simple with a `CloudFormation script <https://github.com/AviatrixSystems/AWSQuickStart/blob/master/aviatrix-aws-quickstart-controller.json>`_.  Grab a copy of that file and head over to the `CloudFormation dashboard <https://console.aws.amazon.com/cloudformation/home>`_ and click "Create Stack".
-
-Select "Upload a template to Amazon S3" and choose the `aviatrix-aws-quickstart.json` you grabbed from GitHub earlier.  Then, click "Next".
-
-  |imageAWSCF0|
-
-Next, specify a name, VPC, subnet, and keypair to use for the instances that will be created:
-
-  |imageAWSCF1|
-
-In most cases, you can leave the next page with defaults after entering a name.
-
-  |imageAWSCF2|
-
-Click "Create" and wait for the stack to complete (usually in less than 5 minutes).
-
-Once the stack status is in "CREATE_COMPLETE", there are 2 optional tasks:
-   1. associate a EIP with the controller and
-   2. assign a hostname in DNS
-
-All the information you need for the following steps is contained in the Stack's output.  Keep this window open for reference.
-
-  |imageController7|
-
-Next, open a browser and connect to the controller.  Login with the username "admin".  The password is the controller's private IP address.  Follow the prompts to enter your email address and click "Run" when prompted to upgrade the Controller to the latest version.
+Once complete, open a browser and connect to the controller.  Login with the username "admin".  The password is the controller's private IP address.  Follow the prompts to enter your email address and click "Run" when prompted to upgrade the Controller to the latest version.
 
   |imageController0|
 
@@ -212,17 +188,9 @@ Finally, create an Aviatrix Controller account.  You'll use this to login to the
 
 Step 3b: Create a Gateway
 -------------------------
-Next we'll install an Aviatrix Gateway in this VPC.  This will be where our remote site will connect.
+Next, follow the `instructions <http://docs.aviatrix.com/HowTos/gateway.html>`_ to install an Aviatrix Gateway in this VPC.  This will be where our remote site will connect. 
 
-Select the Gateway menu item from the navigation bar on the left:
-
-  |imageGateway0|
-
-And, click on the "+ New Gateway" button at the top.  Select your AWS region and appropriate VPC and subnet.  We'll use just a t2.micro for this Gateway.  Click "OK" and Aviatrix will handle the rest.
-
-  |imageGateway1|
-
-Once the Gateway is up, you should see it appear on the dashboard:
+Once the Gateway is up, you should see it appear on the Controller's dashboard:
 
   |imageGateway2|
   
@@ -314,7 +282,7 @@ Now, the browser, after refresh, shows the welcome message from the remote VM:
 Start Apache back up on the AWS instance (or add port 80 back to the security group):
 
 
-|imageTest0|
+|imageTest4|
 
 
 
@@ -396,7 +364,7 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 
 .. |imageTestTG0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_plus.png
 
-.. |imageTestTG1| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_about_to_add.png
+.. |imageTestTG1| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_ip_about_to_add.png
 
 .. |imageTestTG2| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_remote_ip_added.png
 
