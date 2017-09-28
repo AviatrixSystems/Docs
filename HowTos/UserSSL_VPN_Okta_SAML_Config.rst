@@ -104,9 +104,9 @@ This step is usually done by the Okta Admin.
 		
 		f.	Attribute Statements
 		
-			i.	FirstName -> Unspecified -> user:firstName
-			ii.	LastName -> Unspecified -> user:lastName
-			iii.	Email -> Unspecified -> user:email
+			i.	FirstName -> Unspecified -> ${user.firstName}
+			ii.	LastName -> Unspecified -> ${user.lastName}
+			iii.	Email -> Unspecified -> user.email
 
 |image3|		
 			
