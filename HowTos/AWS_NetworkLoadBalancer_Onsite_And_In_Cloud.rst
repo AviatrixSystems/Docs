@@ -35,9 +35,12 @@ There are numerous examples in these categories that, on the surface, sound stra
 
 And, routing traffic between the cloud and on-premise is critical to higher level services such as load balancing.  Imagine that you have centrally located your AD server in the cloud.  You might also like to place a replica in the corporate offices for redundancy and performance.  Ideally, traffic could be load balanced between the two locations providing a fault-tolerant, faster experience for the user.
 
-Until recently, this task would have been impossible with AWS' built-in load balancers.  Howver, AWS recently released the `Network Load Balancer <http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ that attempts to make it possible.  However, using the NLB will only work if you have DirectConnect between the remote site and the AWS region.  So, for most users this doesn't help.
+Until recently, this task would have been impossible with AWS' built-in load balancers. 
 
-Aviatrix solves this for everyone including AWS customers without DirectConnect.  In this document, we will demonstrate how to go from an empty AWS VPC and a hypervisor at a remote site to a working demo that balances web traffic between the two sites.
+AWS recently released the `Network Load Balancer <http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ that made this 
+possible by adding the ability to specify IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address will only work if you have DirectConnect between the remote site and the AWS region. An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
+
+Aviatrix solves this for AWS customers without DirectConnect.  In this document, we will demonstrate how to go from an empty AWS VPC and a hypervisor at a remote site to a working demo that balances web traffic between the two sites.
 
 Demonstration
 =============
@@ -56,7 +59,7 @@ Prerequisites
 In order to complete the steps in this guide, you'll need:
 
 - An AWS account,
-- An Aviatrix license key
+- An Aviatrix license key. (email to info@aviatrix.com if you don't have one.)
 
 
 Step 1: Create AWS Resources
@@ -198,7 +201,7 @@ Once the Gateway is up, you should see it appear on the Controller's dashboard:
 Step 4: Set up Aviatrix on your remote site
 ===========================================
 
-Our final step is to add an Aviatrix Gateway in our remote site.  For this, Aviatrix provides an appliance that can be downloaded from `here <http://aviatrix.com/download/>`_.  Download the appropriate appliance for your environment and spin up a VM.  Once started, the VM will prompt you to configure it.
+Our final step is to add an Aviatrix Gateway in our remote site.  For this, Aviatrix provides a virtual appliance that can be downloaded from `here <http://aviatrix.com/download/>`_.  Download the appropriate appliance for your environment and spin up a VM.  Once started, the VM will prompt you to configure it.
 
 Step 4a: Configure the Appliance
 --------------------------------
@@ -237,7 +240,7 @@ Once the link is established and the line representing the link turns green, we 
   |imageSite2Cloud4|
 
 
-One last step that we'll need to do is to tell our edge router how to route traffic back to AWS VPC private IP address range.  The steps to make this change will depend on your individual router.  You'll need to route all traffic destined for the AWS VPC private IP range (10.77.0.0/24 in my example) back to the Gateway.
+One last step that we'll need to do is to tell the default gateway on the subnet where Aviatrix gateway is deployed that the next hop IP address is the Aviatrix gateway for routing traffic back to AWS VPC private IP address range.  The steps to make this change will depend on your individual router.  You'll need to route all traffic destined for the AWS VPC private IP range (10.77.0.0/24 in my example) back to the Gateway.
 
 Step 5: Test
 ============
