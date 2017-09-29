@@ -31,7 +31,7 @@ Balance Traffic between AWS and your Datacenter using AWS Network Load Balancer 
 
 Problem Description
 ^^^^^^^^^^^^^^^^^^^
-Operations teams are frequently dealing with infrastructure and services hosted both in the cloud and on-premise.  Some common types of uses casesinclude:
+Operations teams are frequently managing infrastructure and services hosted both in the cloud and on-premise.  Some common examples include:
 
   * DR scenarios,
   * centrally located shared services, and
@@ -39,16 +39,18 @@ Operations teams are frequently dealing with infrastructure and services hosted 
 
 Establishing reliable and secure network connectivity for these hybrid use cases presents a challenge to most teams.
 
-Imagine one specific example: you have distributed a critical internal web application in remote offices around the globe and in AWS.  In order to provide fault-tolerance, you would like to setup a central load balancer that balances traffic between the remote sites and AWS.  Until recently, this task would have been impossible with AWS' built-in load balancers. 
+Imagine one specific example: you have a critical internal web application hosted in remote offices around the globe as well as in AWS.  In order to provide fault-tolerance for the application, you would like to setup a central load balancer that balances traffic between the remote sites and AWS. 
 
 AWS recently released the `Network Load Balancer <http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ that made this 
-possible by adding the ability to specify IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address will only work if you have DirectConnect between the remote site and the AWS region. An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
+possible by adding the ability to specify an IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address outside of AWS will only work if you have DirectConnect between the remote site and the AWS region.  An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
 
-Aviatrix solves this for AWS customers without DirectConnect.  In this document, we will demonstrate how to go from an empty AWS VPC and a hypervisor at a remote site to a working demo that balances web traffic between the two sites.
+Aviatrix solves this for AWS customers without DirectConnect.
+
+In this document, we will demonstrate how to go from an empty AWS VPC and a remote, on-premise hypervisor to a working demo that balances web traffic between the two sites.
 
 Demonstration
 ^^^^^^^^^^^^^
-This demo will involve two web servers hosting a basic website.  The servers will be located in a remote site and also in AWS.  We'll setup AWS' NLB service to listen on port 80 and configure both of these servers as targets.
+This demo will involve two web servers hosting a basic website.  One server will be located in a remote site and one will be hosted in AWS.  We'll set up AWS' NLB service to listen on port 80 and configure both of these servers as targets.
 
 This diagram represents the desired configuration:
 
@@ -288,7 +290,7 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 
 Conclusion
 ----------
-
+Aviatrix makes balancing load between AWS and remote sites easy.  But that's just the beginning.  Aviatrix makes cloud and hybrid networking as simple, dynamic, and disposable as compute and storage.  Read more about Aviatrix `here <http://aviatrix.com/products/>`_.
 
 .. |image0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/Overview.png
 
