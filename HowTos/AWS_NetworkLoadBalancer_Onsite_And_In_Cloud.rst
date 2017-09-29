@@ -17,7 +17,7 @@
    </style>
 
 ================================================================================
-Hybrid Load Balancing
+Hybrid Network Load Balancing (NLB)
 ================================================================================
 
 Balance Traffic between AWS and your Datacenter using AWS Network Load Balancer and Aviatrix Gateway
