@@ -1,6 +1,12 @@
 .. meta::
-   :description: Using the AWS Network Load Balancer to balance loads between the cloud and a remote office or datacenter
+   :description: Using the AWS Network Load Balancer and Aviatrix Gateway to balance loads between the cloud and a remote office or datacenter
    :keywords: NLB, network load balancer, aviatrix, balance workload
+
+.. role:: orange
+
+.. role:: green
+
+.. role:: blue
 
 .. raw:: html
 
@@ -14,6 +20,11 @@
      .green {
        color: #006633;
      }
+
+     h2 {
+       font-size: 1.1em;
+       font-style: italic;
+     }
    </style>
 
 ================================================================================
@@ -24,7 +35,7 @@ Balance Traffic between AWS and your Datacenter using AWS Network Load Balancer 
 ----------------------------------------------------------------------------------------------------
 
 Problem Description
-===================
+^^^^^^^^^^^^^^^^^^^
 Operations teams are frequently dealing with infrastructure and services hosted both in the cloud and on-premise.  A few common use cases for this include:
 
   * DR scenarios,
@@ -43,7 +54,7 @@ possible by adding the ability to specify IP address as a load balancer target, 
 Aviatrix solves this for AWS customers without DirectConnect.  In this document, we will demonstrate how to go from an empty AWS VPC and a hypervisor at a remote site to a working demo that balances web traffic between the two sites.
 
 Demonstration
-=============
+^^^^^^^^^^^^^
 This demo will involve two web servers hosting a basic website.  The servers will be co-located in our corporate data center and also in AWS.  We'll setup the NLB service to listen on port 80 and configure both of these servers as potential targets.
 
 This diagram represents the desired configuration:
@@ -55,19 +66,20 @@ The webdemo hostname has been registered in DNS with an A record pointing to the
 For the purposes of this demo, the contents of `index.html` will differ slightly on each server to include either "Welcome to the Data Center" or "Welcome to AWS".
 
 Prerequisites
-=============
+^^^^^^^^^^^^^
 In order to complete the steps in this guide, you'll need:
 
 - An AWS account,
 - An Aviatrix license key. (email to info@aviatrix.com if you don't have one.)
 
 
+
 Step 1: Create AWS Resources
-============================
+----------------------------
 For AWS, we'll create a new VPC, EC2 instance, and enable the NLB service.
 
 Step 1a: Create VPC
--------------------
+^^^^^^^^^^^^^^^^^^^
 There are a number of ways to create a VPC in AWS.  We'll use the VPC Wizard, available in the `VPC Dashboard <https://console.aws.amazon.com/vpc/home>`_.  Click the `Start VPC Wizard` button to launch the wizard.
  |imageAWSVPC0|
 
@@ -80,7 +92,7 @@ Then, fill out the form that follows providing an appropriate CIDR block and VPC
  |imageAWSVPC2|
 
 Step 1b: Create Web Server Instance
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll create a T2-micro instance running Amazon Linux and Apache to handle the web server role.  The steps we used to create the EC2 instance are shown below:
 
  |imageAWSEC20|
@@ -115,7 +127,7 @@ Now, if we go directly to our EIP in a web browser we should see this:
   |imageAWSEC25|
 
 Step 1c: Configure the Network Load Balancer
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that we are done with direct access to our instance, we can disassociate the EIP and set up the NLB to use this new instance as its target.
 
 In the EC2 Dashboard, select `Load Balancers` and then click the `Create Load Balancer` button.
@@ -145,7 +157,7 @@ In the "IP" field, type in the private IP address of the EC2 instance that was c
 Review the configuration and click `Create`.   Give the Load Balancer a few minutes to move out of the `provisioning` state into `active`.  Once `active`, open a web browser and go to the public DNS name posted with the load balancer details.
  
 Step 2: Configure Remote Site
-=============================
+-----------------------------
 The remote site can be any network not in AWS.  For this demo, I've provisioned an Ubuntu VM with Apache on my laptop's VMware Fusion environment.
 
 On this VM, I've also added a simple `index.html` file::
@@ -160,11 +172,11 @@ On this VM, I've also added a simple `index.html` file::
   </html>
 
 Step 3: Set up Aviatrix in the Cloud
-====================================
+------------------------------------
 Without a DirectConnect connection between the remote site and AWS, you won't be able to add this new VM to the NLB.  However, Aviatrix can overcome this requirement with a few simple steps.
 
 Step 3a: Install and configure the Controller
----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Aviatrix Controller provides a single pane of glass to visualize all of your hybrid cloud networking connections.  An example dashboard looks like this:
 
  |imageAvtxDashboard0|
@@ -190,7 +202,7 @@ Finally, create an Aviatrix Controller account.  You'll use this to login to the
   |imageController6|
 
 Step 3b: Create a Gateway
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Next, follow the `instructions <http://docs.aviatrix.com/HowTos/gateway.html>`_ to install an Aviatrix Gateway in this VPC.  This will be where our remote site will connect. 
 
 Once the Gateway is up, you should see it appear on the Controller's dashboard:
@@ -199,12 +211,12 @@ Once the Gateway is up, you should see it appear on the Controller's dashboard:
   
   
 Step 4: Set up Aviatrix on your remote site
-===========================================
+-------------------------------------------
 
 Our final step is to add an Aviatrix Gateway in our remote site.  For this, Aviatrix provides a virtual appliance that can be downloaded from `here <http://aviatrix.com/download/>`_.  Download the appropriate appliance for your environment and spin up a VM.  Once started, the VM will prompt you to configure it.
 
 Step 4a: Configure the Appliance
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 At the prompt, enter `help` to see the options available.  You'll want to setup a static IP address.  The format of the command is::
 
  > setup_interface_static_address <static_ip> <netmask> <default_gateway> <primary_dns> <secondary_dns> proxy {true|false}
@@ -218,7 +230,7 @@ Once complete, open a browser and browse to the IP address you just configured f
   |imageCloudN1|
 
 Step 4b: Connect the remote site to the cloud
----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In a separate browser window, log back into the AWS Controller.  Click on the `Site2Cloud` icon on the left and click `+ Add New` button at the top.  Select the correct VPC, enter a Connection Name, and change the Remote Gateway Type to Aviatrix.  Finally, provide the edge router IP address for the Remote Gateway IP Address and populate the appropriate Remote Subnet.  Then, click `OK`.
 
   |imageSite2Cloud0|
@@ -243,7 +255,7 @@ Once the link is established and the line representing the link turns green, we 
 One last step that we'll need to do is to tell the default gateway on the subnet where Aviatrix gateway is deployed that the next hop IP address is the Aviatrix gateway for routing traffic back to AWS VPC private IP address range.  The steps to make this change will depend on your individual router.  You'll need to route all traffic destined for the AWS VPC private IP range (10.77.0.0/24 in my example) back to the Gateway.
 
 Step 5: Test
-============
+------------
 First, let's add our remote site to the NLB.  Back in the AWS console, head over to the Target Groups (in the EC2 Dashboard).  Click on the Target Group we created earlier and then click on Targets.  You should have just one IP in the list right now.  Click `Edit` and then click on the `+` icon at the top.
 
 |imageTestTG0|
@@ -307,8 +319,6 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 
 .. |imageAWSEC23| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_EC2_step_6.png
 
-.. |imageAWSEC24| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_ssh_vi_index.png
-
 .. |imageAWSEC25| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_web_browser_view_of_aws_httpd.png
 
 .. |imageAWSNLB0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_nlb/screenshot_nlb_create_load_balancer_button.png
@@ -320,8 +330,6 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 .. |imageAWSNLB3| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_nlb/screenshot_configure_load_balancer_step_2.png
 
 .. |imageAWSNLB4| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_nlb/screenshot_configure_load_balancer_step_3.png
-
-.. |imageRemoteVM0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/remote_screenshots/create_web_server/screenshot_remote_vi_index.png
 
 .. |imageAvtxDashboard0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aviatrix_screenshots/screenshot_aviatrix_dashboard_sample.png
 
@@ -394,13 +402,6 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 .. |imageTest4| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/screenshot_test_sg_http_allowed.png
 
 .. |imageTest5| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/screenshot_test_start_apache_remote.png
-
-.. role:: orange
-          
-.. role:: green
-          
-.. role:: blue
-
 
 .. disqus::
 
