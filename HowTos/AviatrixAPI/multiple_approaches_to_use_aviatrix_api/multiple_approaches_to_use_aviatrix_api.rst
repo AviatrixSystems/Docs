@@ -66,7 +66,7 @@ Examples: Invoke Aviatrix "login" API to get a valid CID
 Syntax:
 
 ```
-    curl  -k  "https://AVIATRIX_CONTROLLER_IP/v1/api?action=login&username=admin&password=MY_PASSWORD"
+curl  -k  "https://AVIATRIX_CONTROLLER_IP/v1/api?action=login&username=admin&password=MY_PASSWORD"
 ```
 
 Example:
@@ -78,32 +78,32 @@ Example:
 
 Example Code:
 
-```
-import requests
 
-# Controller configuration
-base_url = "https://10.67.0.2/v1/api"
-username = "admin"
-password = "MyPassword"
-action = "login"
-CID = ""
+    import requests
 
-# Configuration for "login" API
-payload = {
-    "action": action,
-    "username": username,
-    "password": password
-}
+    # Controller configuration
+    base_url = "https://10.67.0.2/v1/api"
+    username = "admin"
+    password = "MyPassword"
+    action = "login"
+    CID = ""
 
-# Use "requests" module to invoke REST API
-response = requests.get(url=base_url, params=payload, verify=False)
+    # Configuration for "login" API
+    payload = {
+        "action": action,
+        "username": username,
+        "password": password
+    }
 
-# If login successfully
-if True == response.json()["return"]:
-    CID = response.json()["CID"]
-    print("Successfully login to Aviatrix Controller. The valid CID is: " + CID)
+    # Use "requests" module to invoke REST API
+    response = requests.get(url=base_url, params=payload, verify=False)
 
-```
+    # If login successfully
+    if True == response.json()["return"]:
+        CID = response.json()["CID"]
+        print("Successfully login to Aviatrix Controller. The valid CID is: " + CID)
+
+
 
 Execution Result:
 
