@@ -1,29 +1,36 @@
-# Multiple Approaches to Use Aviatrix API
+=======================================
+Multiple Approaches to Use Aviatrix API
+=======================================
 
-
-## Introduction
+Introduction
+------------
 Aviatrix provides REST/RESTful (Representational State Transfer) API to help customers to integrate Aviatrix products or to automate some routine tasks, such as backup-operation for Aviatrix controller, checking active/live VPN users at the current moment for management purpose, etc...
 
 
-## Tools
+Tools
+-----
 In this document, we demonstrate Aviatrix REST API invocation with the following tools.
   01. **Postman**
   02. Linux **curl** command
   03. Python **requests** module/library/package
 
 
-## Value Format (URL Encoding)
+Value Format (URL Encoding)
+---------------------------
 
-### Brief Talk:
+**Brief Talk:**
+
 Sometimes, if the input value contains some special characters, such as '#' or '/' etc...We might need to use some tools to convert the value to a valid format.
 
 
-### Tips:
+**Tips:**
+
 The valid value for '#' is '%23'
 And the valid value for '/' is '%2F'
 
 
-### For example:
+**For example:**
+
 If my Azure ARM Subscription ID is "abc#efg", instead of using...
 
     "arm_subscription_id=abc#efg"
@@ -33,18 +40,24 @@ you need to use the following format instead...
     "arm_subscription_id=abc%23efg"
 
 
-### Tools to convert the value format
-    There are many tools online that can do the job. Just simply google "URL Encoder", and you can encode/convert the special character to the correct format.
+Tools to convert the value format
+---------------------------------
+
+There are many tools online that can do the job. Just simply google "URL Encoder", and you can encode/convert the special character to the correct format.
 
 
-## How Does Aviatrix REST API Work
+How Does Aviatrix REST API Work
+-------------------------------
 In order to invoke the most of Aviatrix API(s), the user must have a valid "CID" (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix "login" API. The examples are provided below.
 Please reference ![Aviatrix-REST-API Documentation](https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm) for the completed Aviatrix REST API list.
 
 
-## Examples:
+Examples:
+---------
 
-### Invoke Aviatrix "login" API to get a valid CID
+Invoke Aviatrix "login" API to get a valid CID
+----------------------------------------------
+
 **Postman**
     |img_01|
 
@@ -94,7 +107,8 @@ Execution Result:
     |img_03|
 
 
-### Examples: Invoke Aviatrix API with a valid CID
+Examples: Invoke Aviatrix API with a valid CID
+----------------------------------------------
 
 **NOTES: **
 The following examples are to demonstrate using Aviatrix API __"setup_account_profile"__ to create __Aviatrix "cloud-account"__.
@@ -143,7 +157,8 @@ Execution Result:
     |img_06|
 
 
-## Conclusion:
+Conclusion:
+-----------
 Aviatrix strives to provide the best Hybrid Cloud solution/technology for the world. Please do not hesitate to contact us if you have any valuable advices in mind. We sincerely appreciate your support and being our loyal customer!
 
 
