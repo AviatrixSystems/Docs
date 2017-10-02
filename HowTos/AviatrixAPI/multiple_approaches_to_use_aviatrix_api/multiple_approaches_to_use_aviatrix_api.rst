@@ -65,7 +65,9 @@ Examples: Invoke Aviatrix "login" API to get a valid CID
 
 Syntax:
 
+```
     curl  -k  "https://AVIATRIX_CONTROLLER_IP/v1/api?action=login&username=admin&password=MY_PASSWORD"
+```
 
 Example:
 
