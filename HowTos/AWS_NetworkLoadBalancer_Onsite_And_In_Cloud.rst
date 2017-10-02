@@ -196,7 +196,7 @@ Once the Gateway is up, you should see it appear on the Controller's dashboard:
 Step 4: Set up Aviatrix on your remote site
 -------------------------------------------
 
-Our final step is to add an Aviatrix Gateway at our remote site.  Aviatrix provides a virtual appliance that can be downloaded from `here <http://aviatrix.com/download/>`_.  Download the appropriate appliance for your environment and spin up a VM.
+Our final step is to add an Aviatrix Gateway at our remote site.  Aviatrix provides a virtual appliance that can be downloaded from `here <http://aviatrix.com/download/>`__.  Download the appropriate appliance for your environment and spin up a VM.
 
 Step 4a: Configure the Appliance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -263,9 +263,11 @@ First, let's open a browser window to the NLB's EIP.  We should see the welcome 
 
 |imageTest2|
 
-Next, let's turn off the web server on remote VM:
+Next, let's turn off the web server on remote VM::
 
-|imageTest0|
+  > sudo systemctl status apache2
+  > sudo systemctl stop apache2
+  > sudo systemctl status apache2
 
 The NLB target group reports the server as `unhealthy` quickly after:
 
@@ -279,6 +281,10 @@ Next, start Apache back up on the remote VM and wait for the target group to sho
 
 |imageTest3|
 
+Wait for the NLB to show the AWS node as `unhealthy`:
+
+|imageTestTG8|
+
 Now, the browser, after refresh, shows the welcome message from the remote VM:
 
 |imageTest2|
@@ -290,30 +296,23 @@ Start Apache back up on the AWS instance (or add port 80 back to the security gr
 
 Conclusion
 ----------
-Aviatrix makes balancing load between AWS and remote sites easy.  But that's just the beginning.  Aviatrix makes cloud and hybrid networking as simple, dynamic, and disposable as compute and storage.  Read more about Aviatrix `here <http://aviatrix.com/products/>`_.
+Aviatrix makes balancing load between AWS and remote sites easy.  But that's just the beginning.  Aviatrix makes cloud and hybrid networking as simple, dynamic, and disposable as compute and storage.  Read more about Aviatrix `here <http://aviatrix.com/products/>`__.
 
 .. |image0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/Overview.png
 
 .. |image1| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/overview_with_aviatrix.png
-
-.. |imageAWSVPC0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_vpc/screenshot_start_vpc_wizard_button.png
 
 .. |imageAWSVPC1| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_vpc/screenshot_vpc_step_1.png
 
 .. |imageAWSVPC2| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_vpc/screenshot_vpc_step_2.png
 
 .. |imageAWSEC20| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_EC2_step_1.png
-                          :width: 525px
 
 .. |imageAWSEC21| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_EC2_step_3.png
 
 .. |imageAWSEC22| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_EC2_step_5.png
 
-.. |imageAWSEC23| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_EC2_step_6.png
-
 .. |imageAWSEC25| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_web_server/screenshot_web_browser_view_of_aws_httpd.png
-
-.. |imageAWSNLB0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_nlb/screenshot_nlb_create_load_balancer_button.png
 
 .. |imageAWSNLB1| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/aws_screenshots/create_nlb/screenshot_nlb_select_load_balancer_type.png
 
@@ -382,6 +381,8 @@ Aviatrix makes balancing load between AWS and remote sites easy.  But that's jus
 .. |imageTestTG6| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_remote_ip_added.png
 
 .. |imageTestTG7| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_unhealthy_remote.png
+
+.. |imageTestTG8| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/tg/screenshot_test_tg_aws_unhealthy.png
 
 .. |imageTest0| image:: AWS_NetworkLoadBalancer_Onsite_And_In_Cloud_media/test_screenshots/screenshot_test_apache_status_then_stop.png
 
