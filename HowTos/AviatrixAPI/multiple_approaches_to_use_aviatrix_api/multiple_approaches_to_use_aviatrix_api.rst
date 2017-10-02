@@ -50,7 +50,7 @@ There are many tools online that can do the job. Just simply google "URL Encoder
 How Does Aviatrix REST API Work
 -------------------------------
 In order to invoke the most of Aviatrix API(s), the user must have a valid "CID" (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix "login" API. The examples are provided below.
-Please reference ![Aviatrix-REST-API Documentation](https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm) for the completed Aviatrix REST API list.
+Please reference `Aviatrix-REST-API Documentation. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.html>`__ for the completed Aviatrix REST API list.
 
 
 Examples: Invoke Aviatrix "login" API to get a valid CID
@@ -58,7 +58,7 @@ Examples: Invoke Aviatrix "login" API to get a valid CID
 
 **Postman**
 
-    |img_01|
+    |image1|
 
 
 **Linux "curl" command**
@@ -69,7 +69,7 @@ Syntax:
 
 Example:
 
-    |img_02|
+    |image2|
 
 
 **Python "requests" module**
@@ -105,7 +105,7 @@ if True == response.json()["return"]:
 
 Execution Result:
 
-    |img_03|
+    |image3|
 
 
 Examples: Invoke Other Aviatrix API with a valid CID
@@ -117,12 +117,12 @@ The following examples are to demonstrate using Aviatrix API __"setup_account_pr
 
 **Postman**
 
-    |img_04|
+    |image4|
 
 
 **Linux "curl" command**
 
-    |img_05|
+    |image5|
 
 
 **Python**
@@ -156,7 +156,7 @@ print(response.json())
 
 Execution Result:
 
-    |img_06|
+    |image6|
 
 
 Conclusion:
@@ -170,21 +170,21 @@ __Copyright © 2017 Aviatrix Systems, Inc. All rights reserved.__
 -----------------------------------------------------------------
 
 
-.. |img_01| img:: ./img_01_postman_login_execution_results.png
+.. |image1| image:: ./img_01_postman_login_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_02| img:: ./img_02_linux_curl_login_execution_results.png
+.. |image2| image:: ./img_02_linux_curl_login_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_03| img:: ./img_03_python_login_execution_results.png
+.. |image3| image:: ./img_03_python_login_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_04| img:: ./img_04_postman_create_account_execution_results.png
+.. |image4| image:: ./img_04_postman_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_05| img:: ./img_05_linux_curl_create_account_execution_results.png
+.. |image5| image:: ./img_05_linux_curl_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_06|: img:: ./img_06_python_create_account_execution_results.png
+.. |image6|: image:: ./img_06_python_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
