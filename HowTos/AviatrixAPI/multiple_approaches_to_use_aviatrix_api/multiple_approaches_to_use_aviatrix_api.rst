@@ -12,8 +12,8 @@ Tools
 
 In this document, we demonstrate Aviatrix REST API invocation with the following tools.
   1. **Postman**
-  2. Linux **curl** command
-  3. Python **requests** module/library/package
+  2. Linux **"curl"** command
+  3. Python **"requests"** module/library/package
 
 
 Value Format (URL Encoding)
