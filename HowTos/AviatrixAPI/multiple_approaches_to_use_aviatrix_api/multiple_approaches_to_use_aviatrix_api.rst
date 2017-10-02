@@ -88,7 +88,7 @@ Python "requests" module
 
 **Example Code:**
 
-::
+.. code-block:: python
 
     import requests
 
@@ -145,7 +145,7 @@ Python
 
 **Example Code:**
 
-::
+.. code-block:: python
 
     import requests
 
