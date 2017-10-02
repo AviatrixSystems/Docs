@@ -170,21 +170,21 @@ __Copyright © 2017 Aviatrix Systems, Inc. All rights reserved.__
 -----------------------------------------------------------------
 
 
-.. |img_01| img:: dir/img_01_postman_login.jpg
+.. |img_01| img:: ./img_01_postman_login_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_02| img:: dir/img_02_curl_login.jpg
+.. |img_02| img:: ./img_02_linux_curl_login_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_03| img:: dir/img_03_python_login_execution_result.jpg
+.. |img_03| img:: ./img_03_python_login_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_04| img:: dir/img_04_postman_create_account.jpg
+.. |img_04| img:: ./img_04_postman_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_05| img:: dir/img_05_curl_create_account.jpg
+.. |img_05| img:: ./img_05_linux_curl_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |img_06|: img:: dir/img_06_python_create_account_execution_result.jpg
+.. |img_06|: img:: ./img_06_python_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
