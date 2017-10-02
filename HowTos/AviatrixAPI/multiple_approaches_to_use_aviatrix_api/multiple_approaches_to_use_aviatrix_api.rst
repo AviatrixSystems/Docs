@@ -170,8 +170,6 @@ Conclusion:
 Aviatrix strives to provide the best Hybrid Cloud solution/technology for the world. Please do not hesitate to contact us if you have any valuable advices in mind. We sincerely appreciate your support and being our loyal customer!
 
 
-__Copyright © 2017 Aviatrix Systems, Inc. All rights reserved.__
-
 
 -----------------------------------------------------------------
 
@@ -191,6 +189,7 @@ __Copyright © 2017 Aviatrix Systems, Inc. All rights reserved.__
 .. |image5| image:: ./img_05_linux_curl_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image6|: image:: ./img_06_python_create_account_execution_results.png
+.. |image6| image:: ./img_06_python_create_account_execution_results.png
     :width: 2.00000 in
     :height: 2.00000 in
+
