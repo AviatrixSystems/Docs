@@ -56,7 +56,7 @@ How Does Aviatrix REST API Work
 -------------------------------
 
 In order to invoke the most of Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix **"login"** API. The examples are provided below.
-Please reference `Aviatrix-REST-API Documentation. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.html>`__ for the completed Aviatrix REST API list.
+Please refer to `Aviatrix-REST-API Documentation. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.html>`__ for the completed Aviatrix REST API list.
 
 
 Examples: Invoke Aviatrix "login" API to get a valid CID
