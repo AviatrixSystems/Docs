@@ -65,9 +65,10 @@ Examples: Invoke Aviatrix "login" API to get a valid CID
 
 Syntax:
 
-```
+::
+
 curl  -k  "https://AVIATRIX_CONTROLLER_IP/v1/api?action=login&username=admin&password=MY_PASSWORD"
-```
+
 
 Example:
 
@@ -78,6 +79,8 @@ Example:
 
 Example Code:
 
+
+::
 
     import requests
 
@@ -113,9 +116,9 @@ Execution Result:
 Examples: Invoke Other Aviatrix API with a valid CID
 ----------------------------------------------
 
-**NOTES: **
-
+.. Note::
 The following examples are to demonstrate using Aviatrix API __"setup_account_profile"__ to create __Aviatrix "cloud-account"__.
+..
 
 **Postman**
 
@@ -131,30 +134,31 @@ The following examples are to demonstrate using Aviatrix API __"setup_account_pr
 
 Example Code:
 
-```
-import requests
+::
 
-# Configuration for "setup_account_profile" API to create AWS IAM Role based account
-payload = {
-    "action": "setup_account_profile",
-    "CID": "B4XvxZYJUTHNaMcK2Nf2",
-    "account_name": "my-AWS-operation-account",
-    "account_password": "!MyPassword",
-    "account_email": "test@aviatrix.com",
-    "cloud_type": "1",
-    "aws_account_number": "123456789999",
-    "aws_iam": "true",
-    "aws_access_key": "XXXXXXXXXXXXXXXXXXXXXX",
-    "aws_secret_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-}
+  import requests
 
-# Use "requests" module to invoke REST API
-response = requests.post(url="https://10.67.0.2/v1/api", data=payload, verify=False)
+  # Configuration for "setup_account_profile" API to create AWS IAM Role based account
+  payload = {
+      "action": "setup_account_profile",
+      "CID": "B4XvxZYJUTHNaMcK2Nf2",
+      "account_name": "my-AWS-operation-account",
+      "account_password": "!MyPassword",
+      "account_email": "test@aviatrix.com",
+      "cloud_type": "1",
+      "aws_account_number": "123456789999",
+      "aws_iam": "true",
+      "aws_access_key": "XXXXXXXXXXXXXXXXXXXXXX",
+      "aws_secret_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  }
 
-# Display return message
-print(response.json())
+  # Use "requests" module to invoke REST API
+  response = requests.post(url="https://10.67.0.2/v1/api", data=payload, verify=False)
 
-```
+  # Display return message
+  print(response.json())
+
+
 
 Execution Result:
 
