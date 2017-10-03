@@ -10,17 +10,19 @@ IPMotion
 Aviatrix IPMotion is a technology that connects the same two subnets between on-prem and in the VPC. The technology 
 is useful in the following use cases:
 
-  * Migrating a on-prem VM to public cloud while preserving its IP address.
+  * Migrating an on-prem VM to public cloud while preserving its IP address.
   * Mission critical application HA to public cloud.
 
-The technology is described in the diagram below. 
+The technology is described in the diagram below, where an on-prem VM with IP address 10.1.0.11 is migrated to AWS
+while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
+as if it still resides on-prem. 
 
  |image0|
 
 Prerequisites
 --------------
 
- - To implement IPMotion, you must first deploy Aviatrix virtual appliance CloudN on a subnet where VM migration takes place.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
+ - To implement IPMotion, you must first deploy Aviatrix virtual appliance CloudN on a subnet where VM migrations take place.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
 
  - Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where CloudN is deployed. 
 
@@ -29,26 +31,26 @@ Once the virtual appliance is deployed, go through on-boarding process.
 Go to IPMotion at the navigation bar and 
 follow the steps below to setup IPMotion.  
 
-1. Specify on-prem subnet IP Address List
+1. Specify on-Prem IP Address List
 -------------------------------------------
 
-The IP address list includes both the list of IP addresses of VMs that will be 
+The IP address list of a subnet includes both the list of IP addresses of VMs that will be 
 migrated and the list of IP addresses of VMs that will remain on-prem 
 but need to communicate with the migrated VMs. 
 
 One simple way to specifiy this address range is to provide the list of 
 all running VMs, since out of this list, 
 some or all VMs will be migrated to cloud. For example, if the running VMs
-are in the range of 172.16.1.10-172.16.1.20, and you plan to move
-all running VMs to cloud, then specify this range.  
+on subnet 172.16.1.0/24 are in the range of 172.16.1.10-172.16.1.20, and you plan to move
+all running VMs to cloud, then specify this range for Step 1.  
 
 Note the larger this list is, the larger gateway instance size needs to be. 
 The reason is that gateway needs to allocate private IP addresses from AWS
 for any on-prem VMs. 
 
-You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is not an IP address not assigned to any VM, you should skip this address and specify: 172.16.1.10,172.16.1.12-172.16.1.20. 
+You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify: 172.16.1.10,172.16.1.12-172.16.1.20. 
 
-Currently the largest number of IP address that a CloudN can handle on a subnet is 210. This number can be expanded in the future release. 
+Currently the largest number of VMs that a CloudN can handle on a subnet is 232 which requires a c4.4xlarge gateway instance size. This number can be expanded in the future release. 
 
 (You can further optimize the list for the on-prem part by specifying only the 
 dependent VMs. 
@@ -63,10 +65,10 @@ then you should enter
 -------------------------------------
 
 This field is about specifying 10 IP addresses that are not being used by 
-any running VMs to be reserved by Aviatrix gateway. For example, 
-if you specify 172.16.1.50-172.16.1.60 as gateway reserved IP address, 
+any running VMs and reserve these addresses for Aviatrix gateway. For example, 
+if you specify 172.16.1.100-172.16.1.110 as gateway reserved IP address, 
 it means that these range of IP addresses are not currently used by any VM on 
-the subnet, they cannot be used during migration phase either. 
+the subnet, they are reserved by Aviatrix during migration phase. 
 
 Note AWS reserves the first 3 IP addresses of a subnet in VPC. 
 For example, if the VPC subnet is 172.16.1.0/24, the first 3 addresses 
@@ -79,7 +81,7 @@ IPMotion method will not work.
 3. Launch IPMotion Gateway
 ----------------------------
 
-This step launches an Aviatrix IPMotion gateway. 
+This step launches an Aviatrix IPMotion gateway and builds an encrypted IPSEC tunnel between the two subnets. 
 Note the gateway size reflects how many on-prem VMs can be supported, as 
 the table shown below.
 
