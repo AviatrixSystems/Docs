@@ -81,7 +81,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloudn-site2cloud
    HowTos/EncrOverExpRoute
    HowTos/TransPeering_OnPrem
-   HowTos/avxgw_azurevpngw_site2cloud   
+   HowTos/avxgw_azurevpngw_site2cloud
 
 .. _OpenVPN:
 
@@ -110,6 +110,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EnvironmentStamping
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
+   HowTos/Migration_From_Marketplace
 
 .. _Settings:
 
