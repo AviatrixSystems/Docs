@@ -4,7 +4,7 @@
 
 
 =================================
-IPmotion Setup Instructions
+IP Motion Setup Instructions
 =================================
 
 Aviatrix IPmotion is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migration an on-prem VM to public cloud while preserving its IP address. It can also be used
@@ -19,14 +19,15 @@ as if it still resides on-prem.
 Prerequisites
 --------------
 
- - To implement IPmotion, you must first deploy Aviatrix virtual appliance CloudN on a subnet where VM migrations take place.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
+ 1. Identify a subnet where you want to migrate VM. For example, this subnet is 10.1.0.0/24.
+ #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 10.1.0.0/16 with a public subnet 10.1.0.0/24.  
 
- - Once the virtual appliance is deployed, go through on-boarding process and create an AWS account. 
+ #. Deploy Aviatrix virtual appliance CloudN on this subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
 
- - Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where CloudN is deployed. 
+ #. Once the virtual appliance is deployed, go through on-boarding process and create an AWS account. 
 
 
-Go to IPmotion at the navigation bar and 
+Go to IPmotion at the navigation bar of the CloudN controller console and 
 follow the steps below to setup IPmotion.  
 
 1. Specify on-Prem IP Address List
@@ -48,8 +49,8 @@ all running VMs to cloud, then specify this range for Step 1 as below.
 
 Note, the format must have a "-" in the list even when there is a single IP address. 
 
-Note the larger this list is, the larger gateway instance size needs to be. 
-The reason is that gateway needs to allocate private IP addresses from AWS
+Note the larger this list is, the larger IPmotion gateway instance size needs to be in the cloud (AWS). 
+The reason is that IPmotion gateway needs to allocate private IP addresses from AWS
 for any on-prem VMs. 
 
 You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify a multiple range separating by a comma: 172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20. 
@@ -59,7 +60,7 @@ You can optimize the list by making sure only the running VMs are being specifie
       172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20
 
 
-Currently the largest number of VMs that a CloudN can handle on a subnet is 232 which requires a c4.4xlarge gateway instance size. This number can be expanded in the future release. 
+Currently the largest number of VMs that a CloudN can handle on a subnet is 232 which requires a c4.4xlarge IPmotion gateway instance size. This number of VMs can be expanded in the future release. 
 
 (You can further optimize the list for the on-prem part by specifying only the 
 dependent VMs. 
@@ -75,12 +76,12 @@ then you should enter
    172.16.1.10-172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70
 
 
-2. Reserve Gateway IP Address List
--------------------------------------
+2. Reserve IPmotion Gateway IP Address List
+--------------------------------------------
 
 This field is about specifying 10 IP addresses that are not being used by 
-any running VMs and reserve these addresses for Aviatrix gateway. For example, 
-if you specify 172.16.1.100-172.16.1.110 as gateway reserved IP address, 
+any running VMs and reserve these addresses for Aviatrix IPmotion gateway. For example, 
+if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP address, 
 it means that these range of IP addresses are not currently used by any VM on 
 the subnet, they are reserved by Aviatrix during migration phase. 
 
@@ -96,7 +97,7 @@ IPmotion method will not work.
 ----------------------------
 
 This step launches an Aviatrix IPmotion gateway and builds an encrypted IPSEC tunnel between the two subnets. 
-Note the gateway size reflects how many on-prem VMs can be supported, as 
+Note the IPmotion gateway size reflects how many on-prem VMs can be supported, as 
 the table shown below.
 
 ===============================    ================================================================================
@@ -124,7 +125,7 @@ c4.8xlarge                         232
 4. IPmotion Move
 ------------------
 
-This step consists of two parts: staging and commit. 
+This step consists of two parts: Staging and Commit. 
 
 Staging
 ^^^^^^^^
