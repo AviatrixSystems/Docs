@@ -1,13 +1,13 @@
 .. meta::
-  :description: IPMotion Ref Design
-  :keywords: AWS Migration, DR, Disaster Recovery, aviatrix, Preserving IP address, IPMotion 
+  :description: IPmotion Ref Design
+  :keywords: AWS Migration, DR, Disaster Recovery, aviatrix, Preserving IP address, IPmotion 
 
 
 =================================
-IPMotion
+IPmotion Setup Instructions
 =================================
 
-Aviatrix IPMotion is a technology that connects the same two subnets between on-prem and in the VPC. The technology 
+Aviatrix IPmotion is a technology that connects the same two subnets between on-prem and in the VPC. The technology 
 is useful in the following use cases:
 
   * Migrating an on-prem VM to public cloud while preserving its IP address.
@@ -22,14 +22,14 @@ as if it still resides on-prem.
 Prerequisites
 --------------
 
- - To implement IPMotion, you must first deploy Aviatrix virtual appliance CloudN on a subnet where VM migrations take place.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
+ - To implement IPmotion, you must first deploy Aviatrix virtual appliance CloudN on a subnet where VM migrations take place.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
 
  - Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where CloudN is deployed. 
 
 
 Once the virtual appliance is deployed, go through on-boarding process. 
-Go to IPMotion at the navigation bar and 
-follow the steps below to setup IPMotion.  
+Go to IPmotion at the navigation bar and 
+follow the steps below to setup IPmotion.  
 
 1. Specify on-Prem IP Address List
 -------------------------------------------
@@ -42,13 +42,24 @@ One simple way to specifiy this address range is to provide the list of
 all running VMs, since out of this list, 
 some or all VMs will be migrated to cloud. For example, if the running VMs
 on subnet 172.16.1.0/24 are in the range of 172.16.1.10-172.16.1.20, and you plan to move
-all running VMs to cloud, then specify this range for Step 1.  
+all running VMs to cloud, then specify this range for Step 1 as below.  
+
+    ::
+
+      172.16.1.10-172.16.1.20
+
+Note, the format must have a "-" in the list even when there is a single IP address. 
 
 Note the larger this list is, the larger gateway instance size needs to be. 
 The reason is that gateway needs to allocate private IP addresses from AWS
 for any on-prem VMs. 
 
-You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify: 172.16.1.10,172.16.1.12-172.16.1.20. 
+You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify a multiple range separating by a comma: 172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20. 
+
+    ::
+     
+      172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20
+
 
 Currently the largest number of VMs that a CloudN can handle on a subnet is 232 which requires a c4.4xlarge gateway instance size. This number can be expanded in the future release. 
 
@@ -59,7 +70,12 @@ For example, the CloudN is deployed on subnet 172.16.1.0/24. On this subnet, IP 
 IP addresses of VMs that are to remain on the subnet but need to 
 communicate with migrated VMs are in the range 172.16.1.50-172.16.1.70
 then you should enter 
-172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70)
+172.16.1.10-172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70)
+
+  ::
+
+   172.16.1.10-172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70
+
 
 2. Reserve Gateway IP Address List
 -------------------------------------
@@ -75,18 +91,18 @@ For example, if the VPC subnet is 172.16.1.0/24, the first 3 addresses
 172.16.1.1, 172.16.1.2 and 172.16.1.3 are reserved by AWS.
 if you have on-prem VMs that uses the first 3 IP addresses (excluding
 default gateway, DNS or any other infrastructure purpose) of a subnet, the 
-IPMotion method will not work. 
+IPmotion method will not work. 
 
 
-3. Launch IPMotion Gateway
+3. Launch IPmotion Gateway
 ----------------------------
 
-This step launches an Aviatrix IPMotion gateway and builds an encrypted IPSEC tunnel between the two subnets. 
+This step launches an Aviatrix IPmotion gateway and builds an encrypted IPSEC tunnel between the two subnets. 
 Note the gateway size reflects how many on-prem VMs can be supported, as 
 the table shown below.
 
 ===============================    ================================================================================
-**IPMotion Gateway Size**           **Max on-prem VMs**
+**IPmotion Gateway Size**           **Max on-prem VMs**
 ===============================    ================================================================================
 t2.micro                           2
 t2.small                           6
@@ -107,7 +123,7 @@ c4.8xlarge                         232
 ===============================    ================================================================================
 
 
-4. IPMotion Move
+4. IPmotion Move
 ------------------
 
 This step consists of two parts: staging and commit. 
@@ -123,15 +139,21 @@ Commit
 ^^^^^^^^
 Commit is to enable the migrated cloud instance to communicate with any on-Prem VM. 
 
-.. Note:: Before you commit an IP address, the on-prem VM must be powered down. 
+.. Note:: Before you commit an IP address, the on-prem VM that has been migrated must be powered down. 
 ..
 
 Hightlight a specific IP address and click the Commit button. 
 
-5. Migrate more VMs
----------------------
+5. Migrate more VMs on the same subnet
+---------------------------------------
 
 Repeat Step 4 to migrate more VMs.
+
+6. Migrate VMs in a different subnet
+-------------------------------------
+
+To migrate a VM in a different subnet, you need to launch a new virtual appliance CloudN on that subnet 
+and repeat all the steps described in this document. 
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
