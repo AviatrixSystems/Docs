@@ -7,7 +7,7 @@
 IP Motion Setup Instructions
 =================================
 
-Aviatrix IPmotion is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migration an on-prem VM to public cloud while preserving its IP address. It can also be used
+Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migration an on-prem VM to public cloud while preserving its IP address. It can also be used
 for mission critical application HA to public cloud. 
 
 The technology is described in the diagram below, where an on-prem VM with IP address 10.1.0.11 is migrated to AWS
