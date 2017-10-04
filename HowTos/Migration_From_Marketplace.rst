@@ -30,7 +30,8 @@ Create an S3 bucket and copy the name on the corresponding field. Click Enable.
 
 ::
 
-  Note: If you already have Backup enabled, please disable and re-enable to make sure the backup is executed. Double check on your S3 bucket that the file has been updated based on the timestamp.
+  Note: If you already have Backup enabled, please disable and re-enable to make sure the backup is executed.
+  Double check on your S3 bucket that the file has been updated based on the timestamp.
 
 Step 2 - Stop the Marketplace instance
 ======================================
@@ -42,7 +43,8 @@ On the AWS console, goto EC2-->Network & Security --> Elastic IPs, and disassoci
 
 ::
 
-  Note: Make sure browser cache is cleared before the next Step, to avoid connecting to an old stale session.
+  Note: Make sure browser cache is cleared before the next Step,
+  to avoid connecting to an old stale session.
 
 Step 4 - Launch BYOL Controller
 ===============================
@@ -79,13 +81,19 @@ Step 9 - Enjoy your new controller
 
 ::
 
-  Optional: After confirming everything is running as per normal, Delete the Aviatrix AWS Marketplace controller instance.
+  Optional: After confirming everything is running as per normal,
+  elete the Aviatrix AWS Marketplace controller instance.
 
+For support, send email to support@aviatrix.com.
 
-.. add in the disqus tag
+For feature request and feedback, click Make a wish at the bottom of
+each page.
+
 
 .. |image1| image:: Migration_From_Marketplace/image1.png
 .. |image2| image:: Migration_From_Marketplace/image2.png
 .. |image3| image:: Migration_From_Marketplace/image3.png
 .. |image4| image:: Migration_From_Marketplace/image4.png
 .. |image5| image:: Migration_From_Marketplace/image5.png
+
+.. disqus::
