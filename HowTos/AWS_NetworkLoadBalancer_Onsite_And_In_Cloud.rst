@@ -42,9 +42,9 @@ Establishing reliable and secure network connectivity for these hybrid use cases
 Imagine one specific example: you have a critical internal web application hosted in remote offices around the globe as well as in AWS.  In order to provide fault-tolerance for the application, you would like to setup a central load balancer that balances traffic between the remote sites and AWS. 
 
 AWS recently released the `Network Load Balancer <http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ that made this 
-possible by adding the ability to specify an IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address outside of AWS will only work if you have DirectConnect between the remote site and the AWS region.  An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
+possible by adding the ability to specify an IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address outside of AWS will only work if you have Direct Connect between the remote site and the AWS region.  An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
 
-Aviatrix solves this for AWS customers without DirectConnect.
+Aviatrix solves this for AWS customers without Direct Connect.
 
 In this document, we will demonstrate how to go from an empty AWS VPC and a remote, on-premise hypervisor to a working demo that balances web traffic between the two sites.
 
@@ -160,7 +160,7 @@ On this VM, I've also added a simple `index.html` file::
 
 Step 3: Set up Aviatrix in the Cloud
 ------------------------------------
-Without a DirectConnect connection between the remote site and AWS, you won't be able to add this new VM to the NLB.  However, Aviatrix can overcome this requirement with a few simple steps.
+Without a Direct Connect connection between the remote site and AWS, you won't be able to add this new VM to the NLB.  However, Aviatrix can overcome this requirement with a few simple steps.
 
 Step 3a: Install and configure the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
