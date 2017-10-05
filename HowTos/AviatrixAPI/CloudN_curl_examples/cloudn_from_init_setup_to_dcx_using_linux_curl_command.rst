@@ -64,7 +64,7 @@ Example List
 
 ::
 
-    curl  -k  "https://10.67.0.2/v1/api?action=add_admin_email_addr&CID=XXXXXXXXXX&admin_email=XXXXXXXXXX@aviatrix.com"
+    curl  -k  "https://10.67.0.2/v1/api?action=add_admin_email_addr&CID=XXXXXXXXXX&admin_email=test@aviatrix.com"
 
 
 .. _example03:
@@ -73,7 +73,7 @@ Example List
 
 ::
 
-    curl  -k  "https://10.67.0.2/v1/api?action=change_password&CID=XXXXXXXXXX&account_name=admin&user_name=admin&old_password=10.67.0.2&password=Aviatrix123!"
+    curl  -k  "https://10.67.0.2/v1/api?action=change_password&CID=XXXXXXXXXX&account_name=admin&user_name=admin&old_password=10.67.0.2&password=Test123!"
 
 
 .. _example04:
@@ -82,7 +82,7 @@ Example List
 
 ::
 
-    curl  -k  "https://10.67.0.2/v1/api?action=login&username=admin&password=Aviatrix123!"
+    curl  -k  "https://10.67.0.2/v1/api?action=login&username=admin&password=Test123!"
 
 
 .. _example05:
@@ -100,7 +100,7 @@ Example List
 
 ::
 
-    curl  -k  "https://10.67.0.2/v1/api?action=setup_max_vpc_containers&CID=XXXXXXXXXX&vpc_num=16"
+    curl  -k  "https://10.67.0.2/v1/api?action=setup_max_vpc_containers&CID=XXXXXXXXXX&vpc_num=4"
 
 
 .. _example07:
@@ -130,10 +130,10 @@ Example List
     curl  -k    --data  "action=setup_account_profile"    
                 --data  "CID=XXXXXXXXXX"    
                 --data  "account_name=my-cloud-account-AWS"    
-                --data  "account_password=MyPassword!"    
-                --data  "account_email=XXXXXXXXXX@aviatrix.com"    
+                --data  "account_password=Test123!"    
+                --data  "account_email=test@aviatrix.com"    
                 --data  "cloud_type=1"    
-                --data  "aws_account_number=XXXXXXXXXX"    
+                --data  "aws_account_number=123456789999"    
                 --data  "aws_iam=false"    
                 --data  "aws_access_key=XXXXXXXXXX"    
                 --data  "aws_secret_key=XXXXXXXXXX"    
@@ -149,8 +149,8 @@ Example List
     curl  -k    --data  "action=setup_account_profile"    
                 --data  "CID=XXXXXXXXXX"    
                 --data  "account_name=my-cloud-account-ARM"    
-                --data  "account_password=MyPassword!"    
-                --data  "account_email=XXXXXXXXXX@aviatrix.com"    
+                --data  "account_password=Test123!"    
+                --data  "account_email=test@aviatrix.com"    
                 --data  "cloud_type=8"    
                 --data  "arm_subscription_id=XXXXXXXXXX"    
                 --data  "arm_application_endpoint=XXXXXXXXXX"    
