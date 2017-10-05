@@ -14,7 +14,7 @@ The technology is described in the diagram below, where an on-prem VM with IP ad
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
-Note the actual migration process is not included in this document. We assume you have tools to migrate an on-prem to public cloud. 
+Note the actual migration process is not included in this document. We assume you have tools to migrate on-prem VMs to public cloud. 
 
  |image0|
 
