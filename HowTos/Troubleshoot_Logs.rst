@@ -10,6 +10,4 @@ Logs
 
  *  `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
 
- * `API <https://github.com/AviatrixSystems/Docs/blob/master/HowTos/AviatrixAPI/multiple_approaches_to_use_aviatrix_api/multiple_approaches_to_use_aviatrix_api.rst>`__ 
-
 .. disqus::
