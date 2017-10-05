@@ -14,6 +14,8 @@ The technology is described in the diagram below, where an on-prem VM with IP ad
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
+Note the actual migration process is not included in this document. We assume you have tools to migrate an on-prem to public cloud. 
+
  |image0|
 
 Prerequisites
@@ -26,6 +28,7 @@ Prerequisites
 
  #. Once the virtual appliance is deployed, go through on-boarding process and create an AWS account. 
 
+>>> For description purpose, a migrated VM that has the same IP address as its on-prem VM is called the migrated EC2 instance.  
 
 Go to IPmotion at the navigation bar of the CloudN controller console and 
 follow the steps below to setup IPmotion.  
@@ -131,19 +134,37 @@ This step consists of two parts: Staging and Commit.
 
 Staging
 ^^^^^^^^
-Staging is the preparation step. After an IP address is moved to Staging, the migrated cloud instance can be booted
-up with the same IP address for testing and staging. Note the cloud instance at this point cannot communicate with VMs on prem.
+Staging is the preparation step. After an IP address is moved to Staging state, 
+you can power up the migrated EC2 instance with the same IP address as the on-prem VM  
+for testing and staging. Note the migrated EC2 instance at this point cannot communicate with on prem.
 
-Highlight a specific IP address and click the Staging button. 
+Highlight a specific IP address in on-prem panel and click the Staging button. 
+
+Undo Staging
+^^^^^^^^^^^^
+If you want to move any IP address in Staging state back to on-prem, select the IP address and click Undo. 
+Note if the migrated EC2 instance is already running, you must terminate the instance from AWS console before
+you can move its IP address back to on-prem state. 
+
 
 Commit
 ^^^^^^^^
-Commit is to enable the migrated cloud instance to communicate with any on-Prem VM. 
+Commit is to enable the migrated EC2 instance to communicate with any on-Prem VM. 
 
-.. Note:: Before you commit an IP address, the on-prem VM that has been migrated must be powered down. 
+.. Note:: Before you commit an IP address, the on-prem VM that has been migrated must be powered down first. Commit the IP address implies that the migrated EC2 instance will be in operation. 
 ..
 
 Hightlight a specific IP address and click the Commit button. 
+
+Undo Commit
+^^^^^^^^^^^
+
+If migration fail after cut over, you can Undo the Commit by 
+selecting the IP address from the cloud panel and click Undo.  
+
+Undo function of Commit is to revert a committed IP address to Staging state. After reverting to Staging state, 
+the communication between the migrated EC2 instance to on-prem is stopped and you can power up the on-prem VM and resume its operation. 
+
 
 5. Test Connectivity
 ---------------------
@@ -153,21 +174,29 @@ Go to CloudN console, Troubleshoot -> Diagnostics -> Netwowrk -> Ping Utility. E
 and click Ping. Make sure the security group of the migrated EC2 has ICMP allowed. Also make sure the 
 migrated EC2 instance responds to Ping request.  
 
-6. Migrate more VMs on the same subnet
+6. Troubleshooting Tips
+-----------------------
+
+- **View Button** click View button on Step 1 or Step 2 at any time to see what state an IP address is at.  
+- **Reset Button** If all things fail and you like to start over, first delete the IPmotion gateway by going to Gateway List, select the gateway and click Delete. After Delete is completed, go to Step 1 and click Reset. You can then start it over by going through Step 1 again.  
+- **Get Support** email support@aviatrix.com for assistance. 
+
+7. Migrate more VMs on the same subnet
 ---------------------------------------
 
 Repeat Step 4 to migrate more VMs on this subnet.
 
-7. Migrate VMs in a different subnet
+8. Migrate VMs in a different subnet
 -------------------------------------
 
 To migrate a VM in a different subnet, you need to launch a new virtual appliance CloudN on that subnet 
 and repeat all the steps described in this document. 
 
 For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.1.0.0/24. Now you plan to migrate subnet 10.1.1.0/24. Follow these steps:
-	- Go to AWS console to create a second subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
-        - Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
-        - Repeat the steps listed in this document.  
+
+- Go to AWS console to create a second subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
+- Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
+- Repeat the steps listed in this document.  
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
