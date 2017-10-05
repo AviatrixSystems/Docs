@@ -1,3 +1,8 @@
+.. meta::
+   :description: CloudN: From Initial-Setup to DataCenterExtension Using Linux curl command
+   :keywords: cloudn, init, setup, curl, dcx, datacenter extension
+   
+   
 ==========================================================================
 CloudN: From Initial-Setup to DataCenterExtension Using Linux curl command
 ==========================================================================
@@ -195,3 +200,4 @@ Example List
 
 |
 
+.. disqus::
