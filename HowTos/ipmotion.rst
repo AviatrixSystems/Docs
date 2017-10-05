@@ -194,7 +194,7 @@ and repeat all the steps described in this document.
 
 For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.1.0.0/24. Now you plan to migrate subnet 10.1.1.0/24. Follow these steps:
 
-- Go to AWS console to create a second subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
+- Go to AWS console to create a second public subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
 - Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
 - Repeat the steps listed in this document.  
 
