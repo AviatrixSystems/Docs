@@ -13,10 +13,11 @@ Aviatrix CloudN virtual appliance that is deployed in a on-premise datacenter or
 CloudN supports REST API that allows further automation and third party software integration.
 REST API document can be found at `this link. <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_ For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
-CloudN performs two major functions: 
+CloudN performs three major functions: 
 
 - Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
 - Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
+- Enable you to migrate on-prem VMs while preserving their IP addresses.
 
 To learn how CloudN Aviatrix Datacenter Extension works and how to build agile hybrid DevOps environments using public cloud, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
@@ -34,8 +35,8 @@ Virtual appliance CloudN image can be downloaded from `this link. <http://docs.a
 2. Pre-Installation Check List
 ===============================
 
-2.1. AWS EC2 Account for Datacenter Extension (DCCX)
------------------------------------------------------
+2.1. AWS EC2 Account for Datacenter Extension and IPmotion
+-----------------------------------------------------------
 
 .. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an EC2 account. Skip this section. 
 
@@ -106,6 +107,8 @@ Virtual appliance CloudN image can be downloaded from `this link. <http://docs.a
 
 2.4. Deploy CloudN for Aviatrix Datacenter Extension 
 ----------------------------------------------------------
+
+If you plan to use CloudN for IPmotion, skip section 2.4
 
 2.4.1. Cloud address planning and allocation
 ***********************************************
@@ -403,8 +406,8 @@ for testing and evaluation purposes.
 
     Password: Aviatrix123#
 
-3.2.1. Enable MAC Address Spoofing for DCCX
-*******************************************
+3.2.1. Enable MAC Address Spoofing for DCCX and IPmotion
+*********************************************************
 
 .. Note:: If you deploy CloudN for Site2Cloud function, MAC Spoofing is not needed. Skip this section.
 ..
@@ -419,8 +422,8 @@ for testing and evaluation purposes.
 
   |image21|
 
-3.3. NIC Teaming Support for DCCX
----------------------------------
+3.3. NIC Teaming Support for DCCX and IPmotion
+------------------------------------------------
 
 .. Note:: If you deploy CloudN for Site2Cloud function, active and active NIC team is supported. 
 ..
@@ -476,7 +479,7 @@ commands. For each command, type “?” to view syntax and parameters.
 
     |image42|
 
-.. Note:: For DCCX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed.
+.. Note:: For DCCX deployment, choose CloudN IP to be next to the default gateway IP address of the VLAN or subnet where CloudN is deployed. This does not apply to IPmotion deployment. 
 
 4.1.1.1. Proxy Configuration
 ******************************
@@ -597,7 +600,7 @@ commands. For each command, type “?” to view syntax and parameters.
 ===============
 
 After you login to the browser console, click Onboarding to go through a
-few steps of initial setup and start creating the first VPC/VNet.
+few steps of initial setup and start using Aviatrix.
 
 For all feature documentation, go to docs.aviatrix.com
 

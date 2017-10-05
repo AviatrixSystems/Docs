@@ -19,7 +19,7 @@ as if it still resides on-prem.
 Prerequisites
 --------------
 
- 1. Identify a subnet where you want to migrate VM. For example, this subnet is 10.1.0.0/24.
+ 1. Identify a subnet where you plan to migrate VMs. For example, the subnet is 10.1.0.0/24.
  #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 10.1.0.0/16 with a public subnet 10.1.0.0/24.  
 
  #. Deploy Aviatrix virtual appliance CloudN on this subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
@@ -47,7 +47,9 @@ all running VMs to cloud, then specify this range for Step 1 as below.
 
       172.16.1.10-172.16.1.20
 
-Note, the format must have a "-" in the list even when there is a single IP address. 
+.. Note:: the on-prem IP address format must have a "-" in the list even when it is a single IP address. Spcifiy multiple list by separting them with a comma. 
+
+..
 
 Note the larger this list is, the larger IPmotion gateway instance size needs to be in the cloud (AWS). 
 The reason is that IPmotion gateway needs to allocate private IP addresses from AWS
@@ -81,7 +83,7 @@ then you should enter
 
 This field is about specifying 10 IP addresses that are not being used by 
 any running VMs and reserve these addresses for Aviatrix IPmotion gateway. For example, 
-if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP address, 
+if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP addresses, 
 it means that these range of IP addresses are not currently used by any VM on 
 the subnet, they are reserved by Aviatrix during migration phase. 
 
@@ -101,24 +103,24 @@ Note the IPmotion gateway size reflects how many on-prem VMs can be supported, a
 the table shown below.
 
 ===============================    ================================================================================
-**IPmotion Gateway Size**           **Max on-prem VMs**
+**IPmotion Gateway Size**           **Max VMs can be migrated**
 ===============================    ================================================================================
-t2.micro                           2
-t2.small                           6
-t2.medium                          15
-m4.large                           18
-m4.xlarge                          56
-m4.2xlarge                         56
-m4.16xlarge                        232
-c3.large                           27
-c3.xlarge                          56
-c3.2xlarge                         56
-c3.4xlarge                         232
-c4.large                           27
-c4.xlarge                          56
-c4.2xlarge                         56
-c4.4xlarge                         232
-c4.8xlarge                         232
+t2.micro                           1
+t2.small                           5
+t2.medium                          14
+m4.large                           17
+m4.xlarge                          55
+m4.2xlarge                         55
+m4.16xlarge                        231
+c3.large                           26
+c3.xlarge                          55
+c3.2xlarge                         55
+c3.4xlarge                         231
+c4.large                           26
+c4.xlarge                          55
+c4.2xlarge                         55
+c4.4xlarge                         231
+c4.8xlarge                         231
 ===============================    ================================================================================
 
 
@@ -143,16 +145,29 @@ Commit is to enable the migrated cloud instance to communicate with any on-Prem 
 
 Hightlight a specific IP address and click the Commit button. 
 
-5. Migrate more VMs on the same subnet
+5. Test Connectivity
+---------------------
+
+After an IP address is committed, you can test connectivity. 
+Go to CloudN console, Troubleshoot -> Diagnostics -> Netwowrk -> Ping Utility. Enter the committed IP address 
+and click Ping. Make sure the security group of the migrated EC2 has ICMP allowed. Also make sure the 
+migrated EC2 instance responds to Ping request.  
+
+6. Migrate more VMs on the same subnet
 ---------------------------------------
 
-Repeat Step 4 to migrate more VMs.
+Repeat Step 4 to migrate more VMs on this subnet.
 
-6. Migrate VMs in a different subnet
+7. Migrate VMs in a different subnet
 -------------------------------------
 
 To migrate a VM in a different subnet, you need to launch a new virtual appliance CloudN on that subnet 
 and repeat all the steps described in this document. 
+
+For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.1.0.0/24. Now you plan to migrate subnet 10.1.1.0/24. Follow these steps:
+	- Go to AWS console to create a second subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
+        - Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
+        - Repeat the steps listed in this document.  
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
