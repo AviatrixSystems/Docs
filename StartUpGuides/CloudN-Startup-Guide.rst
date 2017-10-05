@@ -17,7 +17,7 @@ CloudN performs three major functions:
 
 - Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
 - Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
-- Enable you to migrate on-prem VMs while preserving their IP addresses.
+- Build connectivity that makes it possible to migrate on-prem VMs to cloud while preserving their IP addresses.
 
 To learn how CloudN Aviatrix Datacenter Extension works and how to build agile hybrid DevOps environments using public cloud, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
