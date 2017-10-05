@@ -22,7 +22,7 @@ Prerequisites
   
     1. Option A (static IP): setup_interface_static_address    <static_ip_address>    <net_mask>    <default_gateway_ip_address>    <primary_dns_server_ip_address>    <secondary_dns_server_ip_address>    <proxy {true|false}>
 
-    2. Option B (DHCP): setup_interface_address    <netmask>    <default_gw>    <primary_dns>    <2ndary_dns>    <proxy>
+    2. Option B (DHCP): setup_interface_address    <netmask>    <default_gw>    <primary_dns>    <2ndary_dns>    <proxy {true|false}>
 
 |
 
