@@ -59,6 +59,8 @@ Example List
 
 |image1|
 
+|
+
 .. _example02:
 
 **Example 02: Setup admin email**
@@ -68,6 +70,8 @@ Example List
     curl  -k  "https://10.67.0.2/v1/api?action=add_admin_email_addr&CID=XXXXXXXXXX&admin_email=test@aviatrix.com"
 
 |image2|
+
+|
 
 .. _example03:
 
@@ -79,6 +83,8 @@ Example List
 
 |image3|
 
+|
+
 .. _example04:
 
 **Example 04: Login with new password and get CID**
@@ -88,6 +94,8 @@ Example List
     curl  -k  "https://10.67.0.2/v1/api?action=login&username=admin&password=Test123!"
 
 |image4|
+
+|
 
 .. _example05:
 
@@ -99,6 +107,8 @@ Example List
 
 |image5|
 
+|
+
 .. _example06:
 
 **Example 06: Setup Maximum number of VPC/VNets**
@@ -108,6 +118,8 @@ Example List
     curl  -k  "https://10.67.0.2/v1/api?action=setup_max_vpc_containers&CID=XXXXXXXXXX&vpc_num=4"
 
 |image6|
+
+|
 
 .. _example07:
 
@@ -119,6 +131,8 @@ Example List
 
 |image7|
 
+|
+
 .. _example08:
 
 **Example 08: List Available CIDRs**
@@ -128,6 +142,8 @@ Example List
     curl  -k  "https://10.67.0.2/v1/api?action=list_cidr_of_available_vpcs&CID=XXXXXXXXXX"
 
 |image8|
+
+|
 
 .. _example09:
 
@@ -149,6 +165,8 @@ Example List
 
 |image9|
 
+|
+
 .. _example10:
 
 **Example 10: Create Aviatrix-Cloud-Account (Azure-ARM based)**
@@ -168,6 +186,8 @@ Example List
                 "https://10.67.0.2/v1/api"
 
 |image10|
+
+|
 
 .. _example11:
 
@@ -189,6 +209,8 @@ Example List
               "https://10.67.0.2/v1/api"
 
 |image11|
+
+|
 
 .. _example12:
 
