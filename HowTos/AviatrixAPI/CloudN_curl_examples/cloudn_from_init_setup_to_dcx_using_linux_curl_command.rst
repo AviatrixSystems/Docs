@@ -57,7 +57,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=login&username=admin&password=10.67.0.2"
 
-
+|image1|
 
 .. _example02:
 
@@ -67,6 +67,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=add_admin_email_addr&CID=XXXXXXXXXX&admin_email=test@aviatrix.com"
 
+|image2|
 
 .. _example03:
 
@@ -76,6 +77,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=change_password&CID=XXXXXXXXXX&account_name=admin&user_name=admin&old_password=10.67.0.2&password=Test123!"
 
+|image3|
 
 .. _example04:
 
@@ -85,6 +87,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=login&username=admin&password=Test123!"
 
+|image4|
 
 .. _example05:
 
@@ -94,6 +97,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=setup_customer_id&CID=XXXXXXXXXX&customer_id=XXXXXXXXXX"
 
+|image5|
 
 .. _example06:
 
@@ -103,6 +107,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=setup_max_vpc_containers&CID=XXXXXXXXXX&vpc_num=4"
 
+|image6|
 
 .. _example07:
 
@@ -112,6 +117,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=list_max_vpc_containers&CID=XXXXXXXXXX"
 
+|image7|
 
 .. _example08:
 
@@ -121,6 +127,7 @@ Example List
 
     curl  -k  "https://10.67.0.2/v1/api?action=list_cidr_of_available_vpcs&CID=XXXXXXXXXX"
 
+|image8|
 
 .. _example09:
 
@@ -140,6 +147,7 @@ Example List
                 --data  "aws_secret_key=XXXXXXXXXX"    
                 "https://10.67.0.2/v1/api"
 
+|image9|
 
 .. _example10:
 
@@ -159,6 +167,7 @@ Example List
                 --data  "arm_application_client_secret=XXXXXXXXXX"    
                 "https://10.67.0.2/v1/api"
 
+|image10|
 
 .. _example11:
 
@@ -179,6 +188,7 @@ Example List
               --data  "tunnel_type=tcp"    
               "https://10.67.0.2/v1/api"
 
+|image11|
 
 .. _example12:
 
@@ -204,9 +214,42 @@ Example List
 |
 
 
+.. |image1| image:: ./img_01_login_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image2| image:: ./img_02_setup_admin_email_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image3| image:: ./img_03_change_password_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image4| image:: ./img_04_login_with_new_password_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image5| image:: ./img_05_setup_customer_id_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image6| image:: ./img_06_setup_max_number_of_vpc_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image7| image:: ./img_07_list_max_number_of_vpc_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image8| image:: ./img_08_list_available_cidrs_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image9| image:: ./img_09_create_aws_account_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image10| image:: ./img_10_create_arm_account_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+.. |image11| image:: ./img_11_create_aws_dcx_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
 .. |image12| image:: ./img_12_create_arm_dcx_result.png
     :width: 2.00000 in
     :height: 2.00000 in
-    
+
     
 .. disqus::
