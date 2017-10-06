@@ -58,6 +58,7 @@ Example List
     curl  -k  "https://10.67.0.2/v1/api?action=login&username=admin&password=10.67.0.2"
 
 
+
 .. _example02:
 
 **Example 02: Setup admin email**
@@ -171,7 +172,7 @@ Example List
               --data  "cloud_type=1"    
               --data  "vpc_reg=ca-central-1"    
               --data  "vpc_name=my-dcx-name"    
-              --data  "vpc_net=10.67.88.0/21"    
+              --data  "vpc_net=10.67.128.0/19"    
               --data  "vpc_size=t2.micro"    
               --data  "internet_access=yes"    
               --data  "public_subnet=yes"    
@@ -191,13 +192,21 @@ Example List
               --data  "cloud_type=8"    
               --data  "vpc_reg=West US"    
               --data  "vpc_name=my-arm-dcx"    
-              --data  "vpc_net=10.67.56.0/21"    
+              --data  "vpc_net=10.67.96.0/19"    
               --data  "vpc_size=Standard_D2"    
               --data  "internet_access=yes"    
               --data  "public_subnet=yes"    
               --data  "tunnel_type=tcp"    
               "https://10.67.0.2/v1/api"
 
+|image12|
+
 |
 
+
+.. |image12| image:: ./img_12_create_arm_dcx_result.png
+    :width: 2.00000 in
+    :height: 2.00000 in
+    
+    
 .. disqus::
