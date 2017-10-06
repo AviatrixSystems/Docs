@@ -239,7 +239,7 @@ Example List
 .. |image1| image:: ./img_01_login_result.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image2| image:: ./img_02_setup_admin_email_result.png
+.. |image2| image:: ./img_02_setup_admin_email_result.PNG
     :width: 2.00000 in
     :height: 2.00000 in
 .. |image3| image:: ./img_03_change_password_result.png
