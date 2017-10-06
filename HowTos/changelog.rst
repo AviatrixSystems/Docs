@@ -1,13 +1,14 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 1.4 - August 8 2017
- - Signed Mac application 
+ - Signed Mac application
  - Parallel windows execution fix
 1.3 - June 15 2017
  - Disconnection fixes
  - Timeout fixes
  - Connection profile is diplayed
  - IE support for SAML
+ - Signed Windows application
  
 1.2 - Mar 15 2017
  - HTTPS Version for SAML
