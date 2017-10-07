@@ -1,3 +1,7 @@
+.. meta::
+   :description: Multiple Approaches to Use Aviatrix API
+   :keywords: REST, API, CID, login, cloud account
+
 =======================================
 Multiple Approaches to Use Aviatrix API
 =======================================
@@ -203,3 +207,6 @@ Aviatrix strives to provide the best Hybrid Cloud solution/technology for the wo
     :width: 2.00000 in
     :height: 2.00000 in
 
+
+
+.. disqus::
