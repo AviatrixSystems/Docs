@@ -21,12 +21,17 @@ Note the actual migration process is not included in this document. We assume yo
 Prerequisites
 --------------
 
- 1. Identify a subnet where you plan to migrate VMs. For example, the subnet is 10.1.0.0/24.
- #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 10.1.0.0/16 with a public subnet 10.1.0.0/24.  
+ 1. Identify a subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
+ #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 172.16.0.0/16 with a public subnet 172.16.1.0/24.  
 
  #. Deploy Aviatrix virtual appliance CloudN on this subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
 
  #. Once the virtual appliance is deployed, go through on-boarding process and create an AWS account. 
+
+ #. Take an inventory of IP addresses of all running VMs and unused IP addresses on this subnet, as shown in the example below. 
+
+  |image1|
+
 
 >>> For description purpose, a migrated VM that has the same IP address as its on-prem VM is called the migrated EC2 instance.  
 
@@ -40,11 +45,11 @@ The IP address list of a subnet includes both the list of IP addresses of VMs th
 migrated and the list of IP addresses of VMs that will remain on-prem 
 but need to communicate with the migrated VMs. 
 
-One simple way to specifiy this address range is to provide the list of 
-all running VMs, since out of this list, 
-some or all VMs will be migrated to cloud. For example, if the running VMs
-on subnet 172.16.1.0/24 are in the range of 172.16.1.10-172.16.1.20, and you plan to move
-all running VMs to cloud, then specify this range for Step 1 as below.  
+One simple way to specifiy this address range is to provide the list of IP addresses of 
+all running VMs, excluding CloudN IP address, since out of this list, 
+some or all VMs will be migrated to cloud. For example, as shown in the above diagram, 
+if the running VMs excluding CloudN on subnet 172.16.1.0/24 are in the range of 172.16.1.10-172.16.1.20, 
+and you plan to move all running VMs to cloud, then specify this range for Step 1 as below.  
 
     ::
 
@@ -85,7 +90,9 @@ then you should enter
 --------------------------------------------
 
 This field is about specifying 10 IP addresses that are not being used by 
-any running VMs and reserve these addresses for Aviatrix IPmotion gateway. For example, 
+any running VMs and reserve these addresses for Aviatrix IPmotion gateway. Again as an example displayed in 
+the above diagram, 172.16.1.100-172.16.1.110 are not used by any running VMs, you can reserve this range
+for IPmotion gateway. In another words, 
 if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP addresses, 
 it means that these range of IP addresses are not currently used by any VM on 
 the subnet, they are reserved by Aviatrix during migration phase. 
@@ -200,6 +207,10 @@ For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image1| image:: ipmotion_media/ipmotion-range-display.png
    :width: 5.55625in
    :height: 3.26548in
 
