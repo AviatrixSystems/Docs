@@ -21,8 +21,9 @@ enabled.
 Aviatrix Controller Launched from CloudFormation 
 =================================================
 
-If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their assoicated policies have already been created at the CloudFormation stack creation time. 
-At the Aviatrix cloud account creationg time, simply follow these steps to retrieve the fields 
+If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their assoicated policies have already been created at the CloudFormation stack launch time. 
+When you create an Aviatrix cloud account on Aviatrix Controller console, 
+simply follow these steps to retrieve the fields 
 for "aviatrix-role-app ARN" and "aviatrix-role-ec2 ARN".
 
   - Login to AWS portal
