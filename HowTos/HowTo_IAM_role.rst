@@ -18,8 +18,25 @@ This document provides instructions to create the IAM roles and policies. If you
 To use IAM role, the Aviatrix Controller you launch must have IAM role
 enabled.
 
+Aviatrix Controller Launched from CloudFormation 
+=================================================
+
+If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their assoicated policies have already been created at the CloudFormation stack creation time. 
+At the Aviatrix cloud account creationg time, simply follow these steps to retrieve the fields 
+for "aviatrix-role-app ARN" and "aviatrix-role-ec2 ARN".
+
+  - Login to AWS portal
+  - Go to Services -> IAM -> Roles, you should see two roles have been created, aviatrix-role-app and aviatrix-role-ec2. 
+  - Click role "aviatrix-role-app", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.
+  - Click role "aviatrix-role-ec2", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.   
+  - Done and may skip the rest of the guide.
+
+
 Setup IAM policies and roles for your own account
 ==================================================
+
+If you launched or plan to launch the Aviatrix Controller manually
+with IAM role from AWS marketplace portal, proceed to complete the following steps.
 
 Before you launch an Aviatrix Controller from AWS marketplace, create
 the two necessary IAM roles and its corresponding policies.
