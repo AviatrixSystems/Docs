@@ -180,6 +180,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Solutions/aviatrix_aws_meshVPC
    Solutions/aviatrix_aws_transitvpc
+   HowTos/openvpn_features
 
 
 .. _Whitepapers:
