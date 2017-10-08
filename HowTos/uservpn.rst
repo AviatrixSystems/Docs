@@ -9,7 +9,7 @@ OpenVPN
 
 Aviatrix provides a cloud native feature rich client VPN solution. The solution is based on OpenVPN and is compatible with all OpenVPN client software. 
 In addition, Aviatrix provides its own client software that supports SAML authentication directly from the client. 
-A summary of Aviatrix client VPN solution is described in the diagram below. 
+A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
 
  |image0|
 
