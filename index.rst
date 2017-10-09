@@ -171,6 +171,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/customize_aws_iam_policy
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/ipmotion
+   HowTos/DatadogIntegration
 
 .. _Solutions:
 
