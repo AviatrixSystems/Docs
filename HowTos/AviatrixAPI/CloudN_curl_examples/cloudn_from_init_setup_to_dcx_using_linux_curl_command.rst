@@ -28,7 +28,7 @@ Prerequisites
 
 Tips:
 =====
-If your values contain some special characters which causing the command fails, you can Google and search `"URL Encoder" <https://www.urlencoder.org/>`__, the tool can help you to convert the value into a valid format if you happen to encounter the problem.
+If your value contains some special characters which causing the command fails, you can Google and search `"URL Encoder" <https://www.urlencoder.org/>`__, the tool can help you to convert the value into a valid format if you happen to encounter the problem.
 
 |
 
