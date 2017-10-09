@@ -4,7 +4,7 @@
    
    
 ==========================================================================
-CloudN: From Initial-Setup to DataCenterExtension Using Linux curl command
+CloudN: From Initial-Setup to DataCenterExtension Using Linux "curl" Command
 ==========================================================================
 
 |
