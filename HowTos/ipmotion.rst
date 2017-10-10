@@ -21,10 +21,10 @@ Note the actual migration process is not included in this document. We assume yo
 Prerequisites
 --------------
 
- 1. Identify a subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
+ 1. Identify an on-prem subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
  #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 172.16.0.0/16 with a public subnet 172.16.1.0/24.  
 
- #. Deploy Aviatrix virtual appliance CloudN on this subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. 
+ #. Deploy Aviatrix virtual appliance CloudN on this subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. AWS reserves the first IP addresses on a given subnet, make sure CloudN IP address is not any one of them.
 
  #. Once the virtual appliance is deployed, go through on-boarding process and create an AWS account. 
 
@@ -97,12 +97,9 @@ if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP address
 it means that these range of IP addresses are not currently used by any VM on 
 the subnet, they are reserved by Aviatrix during migration phase. 
 
-Note AWS reserves the first 3 IP addresses of a subnet in VPC. 
-For example, if the VPC subnet is 172.16.1.0/24, the first 3 addresses 
-172.16.1.1, 172.16.1.2 and 172.16.1.3 are reserved by AWS.
-if you have on-prem VMs that uses the first 3 IP addresses (excluding
-default gateway, DNS or any other infrastructure purpose) of a subnet, the 
-IPmotion method will not work. 
+.. Note:: AWS reserves the first 3 IP addresses of a subnet in VPC. For example, if the VPC subnet is 172.16.1.0/24, the first 3 addresses 172.16.1.1, 172.16.1.2 and 172.16.1.3 are reserved by AWS.  if you have on-prem VMs including CloudN that uses the first 3 IP addresses (excluding default gateway, DNS or any other infrastructure purpose) of a subnet, the IPmotion method will not work. 
+
+..
 
 
 3. Launch IPmotion Gateway
@@ -150,8 +147,10 @@ Highlight a specific IP address in on-prem panel and click the Staging button.
 Undo Staging
 ^^^^^^^^^^^^
 If you want to move any IP address in Staging state back to on-prem, select the IP address and click Undo. 
-Note if the migrated EC2 instance is already running, you must terminate the instance from AWS console before
-you can move its IP address back to on-prem state. 
+
+.. Note:: if the migrated EC2 instance is already running, you must terminate the instance from AWS console before you can move its IP address back to on-prem state. 
+
+..
 
 
 Commit
