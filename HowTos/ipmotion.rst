@@ -33,15 +33,20 @@ Prerequisites
   |image1|
 
 
->>> For description purpose, a migrated VM that has the same IP address as its on-prem VM is called the migrated EC2 instance.  
+.. note::
+   For description purpose, a migrated VM that has the same IP address as its on-prem VM is called the migrated EC2 instance.
 
-Go to IPmotion at the navigation bar of the CloudN controller console and 
-follow the steps below to setup IPmotion.  
+Login to the CloudN Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Open a browser and navigate to `https://<cloudN IP address>/`.  Once authenticated, click on `IP Motion` in the left navigation bar.
+
+Follow the steps below to set up `IP Motion` for the selected subnet.
+
 
 1. Specify on-Prem IP Address List
 -------------------------------------------
 
-The IP address list of a subnet includes both the list of IP addresses of VMs that will be 
+The `on-prem IP address list` of a subnet includes both the list of IP addresses of VMs that will be
 migrated and the list of IP addresses of VMs that will remain on-prem 
 but need to communicate with the migrated VMs. 
 
