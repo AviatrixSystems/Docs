@@ -12,6 +12,7 @@ Introduction
 
 Aviatrix provides a REST/RESTful (Representational State Transfer) API to help customers to integrate Aviatrix products or to automate some routine tasks, such as backups for the Aviatrix controller, checking the status of active/live VPN users for management purposes, etc.
 
+|
 
 Tools
 -----
@@ -21,6 +22,7 @@ In this document, we demonstrate Aviatrix REST API invocation with the following
   2. Linux **"curl"** command
   3. Python **"requests"** module/library/package
 
+|
 
 Value Format (URL Encoding)
 ---------------------------
@@ -45,12 +47,14 @@ you need to use the following format instead...
 
     "arm_subscription_id=abc%23efg"
 
+|
 
 Tools to convert the value format
 ---------------------------------
 
 There are many tools online that can do the job. Just simply google **"URL Encoder"**, and you can encode/convert the special character to the correct format.
 
+|
 
 How the Aviatrix REST API Works
 -------------------------------
@@ -58,6 +62,7 @@ How the Aviatrix REST API Works
 In order to invoke most of Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix **"login"** API. The examples are provided below.
 Please refer to `Aviatrix-REST-API Documentation. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.html>`__ for the completed Aviatrix REST API list.
 
+|
 
 Examples: Invoke Aviatrix "login" API to get a valid CID
 --------------------------------------------------------
