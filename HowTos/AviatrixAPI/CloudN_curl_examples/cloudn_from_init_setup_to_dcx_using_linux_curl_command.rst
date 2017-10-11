@@ -12,7 +12,7 @@ CloudN: From Initial-Setup to DataCenterExtension Using Linux "curl" Command
 Description:
 ============
   * Thank you for choosing Aviatrix! This document demonstrates using the Linux "**curl**" command to operate an Aviatrix CloudN instance from Initial-Setup to DataCenterExtension creation. If you prefer using the command line interface over WebUI to work with CloudN, this doc is for you.
-  * We use a controller instance without configuring a valid cert for this demonstration. Therefore, the examples in this document use "-k" parameter when issuing "curl" command in order to bypass the cert check. If you wish, you can configure your own valid cert on your controller.
+  * We used a controller instance without configuring a valid cert for this demonstration. Therefore, the examples in this document use "-k" parameter when issuing a "curl" command in order to bypass the cert check. If you wish, you can configure your own valid cert on your controller.
 
 |
 
