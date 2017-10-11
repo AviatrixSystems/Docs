@@ -25,7 +25,7 @@ In this document, we demonstrate Aviatrix REST API invocation with the following
 Value Format (URL Encoding)
 ---------------------------
 
-Sometimes, if the input value contains some special characters, such as '#' or '/' etc...We might need to use some tools to convert the value to a valid format.
+if the input value contains certain special characters, such as '#' or '/' you may need to convert them to conform to a valid URL:
 
 
 Tip:
