@@ -11,8 +11,8 @@ CloudN: From Initial-Setup to DataCenterExtension Using Linux "curl" Command
 
 Description:
 ============
-  * Thank you for choosing Aviatrix, this document demonstrates using Linux "**curl**" command to operate Aviatrix CloudN instance from Initial-Setup to DataCenterExtension creation. If you prefer using command-line over WebUI to work with CloudN, this doc is for you.
-  * We use a controller instance without configuring a vail cert for this document to demonstrate. Therefore, the examples in this document use "-k" parameter when issuing "curl" command in order to bypass the cert check. If you wish, you can configure your own valid cert on your controller.
+  * Thank you for choosing Aviatrix! This document demonstrates using the Linux "**curl**" command to operate an Aviatrix CloudN instance from Initial-Setup to DataCenterExtension creation. If you prefer using the command line interface over WebUI to work with CloudN, this doc is for you.
+  * We use a controller instance without configuring a valid cert for this demonstration. Therefore, the examples in this document use "-k" parameter when issuing "curl" command in order to bypass the cert check. If you wish, you can configure your own valid cert on your controller.
 
 |
 
@@ -29,7 +29,7 @@ Prerequisites
 
 Tips:
 =====
-If your value contains some special characters which causing the command fails, you can Google and search `"URL Encoder" <https://www.urlencoder.org/>`__, the tool can help you to convert the value into a valid format if you happen to encounter the problem.
+If your value contains some special characters that cause the command to fail, you can search online for `"URL Encoder" <https://www.urlencoder.org/>`__, which is one of many tools that will convert the value into a valid format if you happen to encounter the problem.
 
 |
 
