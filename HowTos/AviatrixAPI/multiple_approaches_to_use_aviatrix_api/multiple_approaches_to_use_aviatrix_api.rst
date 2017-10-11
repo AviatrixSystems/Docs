@@ -10,7 +10,7 @@ Multiple Approaches to Use Aviatrix API
 Introduction
 ------------
 
-Aviatrix provides REST/RESTful (Representational State Transfer) API to help customers to integrate Aviatrix products or to automate some routine tasks, such as backup-operation for Aviatrix controller, checking active/live VPN users at the current moment for management purpose, etc...
+Aviatrix provides a REST/RESTful (Representational State Transfer) API to help customers to integrate Aviatrix products or to automate some routine tasks, such as backups for the Aviatrix controller, checking the status of active/live VPN users for management purposes, etc.
 
 
 Tools
@@ -25,17 +25,13 @@ In this document, we demonstrate Aviatrix REST API invocation with the following
 Value Format (URL Encoding)
 ---------------------------
 
-Brief Talk:
-"""""""""""
-
 Sometimes, if the input value contains some special characters, such as '#' or '/' etc...We might need to use some tools to convert the value to a valid format.
 
 
-Tips:
+Tip:
 """""
 
-The valid value for '#' is '%23'
-And the valid value for '/' is '%2F'
+Use '%23' instead of '#'; use '%2F' instead of '/'
 
 
 For example:
@@ -56,10 +52,10 @@ Tools to convert the value format
 There are many tools online that can do the job. Just simply google **"URL Encoder"**, and you can encode/convert the special character to the correct format.
 
 
-How Does Aviatrix REST API Work
+How the Aviatrix REST API Works
 -------------------------------
 
-In order to invoke the most of Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix **"login"** API. The examples are provided below.
+In order to invoke most of Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix **"login"** API. The examples are provided below.
 Please refer to `Aviatrix-REST-API Documentation. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.html>`__ for the completed Aviatrix REST API list.
 
 
@@ -129,7 +125,7 @@ Examples: Invoke Other Aviatrix API with a valid CID
 ----------------------------------------------------
 
 .. Note::
-The following examples are to demonstrate using Aviatrix API **"setup_account_profile"** to create Aviatrix **"Cloud Account"**.
+The following examples demonstrate using the Aviatrix API **"setup_account_profile"** to create Aviatrix **"Cloud Account"**.
 
 
 Postman
@@ -181,7 +177,7 @@ Python
 
 Conclusion:
 -----------
-Aviatrix strives to provide the best Hybrid Cloud solution/technology for the world. Please do not hesitate to contact us if you have any valuable advices in mind. We sincerely appreciate your support and being our loyal customer!
+At Aviatrix, we believe that networking is a foundational element of cloud computing which should be as dynamic, scalable, and elastic as compute and storage. Please do not hesitate to contact us if you have any feedback.
 
 
 
