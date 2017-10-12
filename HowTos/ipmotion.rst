@@ -181,7 +181,7 @@ the communication between the migrated EC2 instance to on-prem is stopped and yo
 ---------------------
 
 After an IP address is committed, you can test connectivity. 
-Go to CloudN console, Troubleshoot -> Diagnostics -> Netwowrk -> Ping Utility. Enter the committed IP address 
+Go to CloudN console, Troubleshoot -> Diagnostics -> Network -> Ping Utility. Enter the committed IP address
 and click Ping. Make sure the security group of the migrated EC2 has ICMP allowed. Also make sure the 
 migrated EC2 instance responds to Ping request.  
 
