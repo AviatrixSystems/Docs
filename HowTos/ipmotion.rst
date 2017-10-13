@@ -7,7 +7,7 @@
 IP Motion Setup Instructions
 =================================
 
-Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migration an on-prem VM to public cloud while preserving its IP address. It can also be used
+Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to public cloud while preserving its IP address. It can also be used
 for mission critical application HA to public cloud. 
 
 The technology is described in the diagram below, where an on-prem VM with IP address 10.1.0.11 is migrated to AWS
@@ -22,7 +22,7 @@ Prerequisites
 --------------
 
  1. Identify an on-prem subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
- #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 172.16.0.0/16 with a public subnet 172.16.1.0/24.  
+ #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 172.16.0.0/16 with a public subnet 172.16.1.0/24. Note the migrated EC2 instances do not need to take public IP addresses.  
 
  #. Deploy Aviatrix virtual appliance CloudN in the on-premise subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. AWS reserves `five IP addresses <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-sizing-ipv4>`__ on a given subnet, make sure CloudN IP address is not any one of them.
 
@@ -208,6 +208,17 @@ For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.
 - Go to AWS console to create a second public subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
 - Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
 - Repeat the steps listed in this document.  
+
+9. Limitations
+----------------
+
+There are a few known limitations in the current release. 
+
+  - Cannot migrate any on-prem VMs whose IP addresses overlap with AWS reserved IP addresses on a given subnet. AWS reserves the first three IP addresses of a given subnet, if an on-prem VM overlaps with any of these three IP address, this solution cannot migrate this VM. 
+
+  - VPC CIDR cannot be 192.168.0.0/16. In the 192.168.0.0 range, the largest CIDR is 192.168.0.0/17. 
+
+  - The maximum number of on-prem VMs can be migrated per subnet is 231.
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
