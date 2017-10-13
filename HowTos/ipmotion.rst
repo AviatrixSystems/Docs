@@ -14,7 +14,7 @@ The technology is described in the diagram below, where an on-prem VM with IP ad
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
-Note the actual migration process is not included in this document. We assume you have tools to migrate on-prem VMs to public cloud. 
+Note the actual migration process is not included in this document. We assume you have tools, for example, `AWS Migration Hub <https://aws.amazon.com/migration-hub/>`_ to migrate on-prem VMs to public cloud. 
 
  |image0|
 
@@ -209,16 +209,26 @@ For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.
 - Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
 - Repeat the steps listed in this document.  
 
-9. Limitations
+9. Post Migration
+------------------
+
+Once you have migrated a few subnets to a VPC, you have the option to delete Aviatrix IPmotion gateway, delete the Aviatrix on-prem virtual appliance 
+and remove the on-prem subnets that are now empty of any VMs. 
+You can then connect the VPC to on-prem via Aviatrix site2cloud, 
+AWS Direct Connect and other layer 3 connectivities. 
+
+10. Limitations
 ----------------
 
 There are a few known limitations in the current release. 
 
-  - Cannot migrate any on-prem VMs whose IP addresses overlap with AWS reserved IP addresses on a given subnet. AWS reserves the first three IP addresses of a given subnet, if an on-prem VM overlaps with any of these three IP address, this solution cannot migrate this VM. 
+  - Cannot migrate any on-prem VMs whose IP addresses overlap with AWS reserved IP addresses on a given subnet. AWS reserves five IP addresses of a given subnet, if an on-prem VM overlaps with any of these three IP address, this solution cannot migrate this VM. 
 
   - VPC CIDR cannot be 192.168.0.0/16. In the 192.168.0.0 range, the largest CIDR is 192.168.0.0/17. 
 
   - The maximum number of on-prem VMs can be migrated per subnet is 231.
+
+  - Aviatrix IPmotion solution is deployed on a per subnet bases, the maximum throughput per gateway is 1Gbps for IPSec performance.
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
