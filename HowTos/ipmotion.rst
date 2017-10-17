@@ -4,7 +4,7 @@
 
 
 =================================
-IP Motion Setup Instructions
+IPmotion Setup Instructions
 =================================
 
 Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to public cloud while preserving its IP address. It can also be used
