@@ -15,22 +15,20 @@ REST API document can be found at `this link. <http://docs.aviatrix.com/HowTos/A
 
 CloudN performs three major functions: 
 
-- **Datacenter Extension** Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
-- **Site2Cloud** Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
-- **IPmotion** Build connectivity that makes it possible to migrate on-prem VMs to cloud while preserving their IP addresses.
+- **Datacenter Extension** Extend your datacenter to multi cloud (Datacenter Extension or DCCX). Read `How to build agile DevOps document  <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ for instructions.
 
-To learn how CloudN Aviatrix Datacenter Extension works and how to build agile hybrid DevOps environments using public cloud, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
+- **Site2Cloud** Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud). Read `How to build sSite2Cloud  <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`_ for instructions.
 
-CloudN can also be used as a virtual router for Site2Cloud function to work with Aviatrix Cloud Gateway, AWS VGW, Azure VPN Gateway and Google VPN Gateway for building 1-click encrypted tunnels. To learn more on this use case, follow `this link. <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`__
+- **IPmotion** Build connectivity that makes it possible to migrate on-prem VMs to cloud while preserving their IP addresses. Read `How to setup IPmotion  <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ for instructions.
 
-----
+The following guide provides step by step instructions for deploying the virtual appliance. Read carefully as there are specific instructions for each of the above three use cases.
+
 
 1. Download the Image
 =======================
 
-Virtual appliance CloudN image can be downloaded from `this link. <http://docs.aviatrix.com/Downloads/cloudndownload.html>`_
+Virtual appliance CloudN image can be downloaded from `the download link. <http://docs.aviatrix.com/Downloads/cloudndownload.html>`_
 
-----
 
 2. Pre-Installation Check List
 ===============================
