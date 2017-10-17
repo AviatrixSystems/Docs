@@ -26,22 +26,25 @@ Consult the VPN client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-
 *************
 Windows |win|
 *************
-Windows client can be download from `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_win_x64.exe>`__
+Windows client can be download from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_win_x64.exe>`__
 
 At the end of the installation, please install the TUN TAP driver if you haven't done so earlier.
 
 *********
-MAC |mac|
+Mac |mac|
 *********
 
-MAC client can be downloaded from `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__.
+Mac client can be downloaded from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__
+
 If you have installed version 1.4.26 or lower please uninstall before you install the newer version
 
 ***********
 Linux |lux|
 ***********
-For the .deb files use sudo dpkg -i file.deb; sudo apt-get install -f to install
-For the .tar files use tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh
+For the .deb files, if opening them using software center does not work, use sudo dpkg -i file.deb; sudo apt-get install -f (Dependencies)to install
+
+For the .tar files use tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh to install
+
 If the icon is missing from the launcher, type AVPNC in the terminal to launch the app
 
 Debian/Ubuntu
@@ -59,7 +62,8 @@ Zesty/Ubuntu17 - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-downl
 Development version
 *******************
 These are preview images for the next release.
+
 `Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`__, `Mac <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_mac.pkg>`__ , `Linux tar <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux.tar.gz>`__, `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_debian.deb>`__, `Linux tar trusty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux_Q4.tar.gz>`__, `Debian trusty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_debian_Q4.deb>`__, `Linux tar zesty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_zesty.tar.gz>`__, `Debian zesty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_zesty.deb>`__
-Use dpkg -i file.deb to install deb files
+
 
 .. disqus:: 
