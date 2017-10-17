@@ -15,9 +15,9 @@ REST API document can be found at `this link. <http://docs.aviatrix.com/HowTos/A
 
 CloudN performs three major functions: 
 
-- Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
-- Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
-- Build connectivity that makes it possible to migrate on-prem VMs to cloud while preserving their IP addresses.
+- **Datacenter Extension** Extend your datacenter to multi cloud (Datacenter Extension or DCCX).
+- **Site2Cloud** Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud).
+- **IPmotion** Build connectivity that makes it possible to migrate on-prem VMs to cloud while preserving their IP addresses.
 
 To learn how CloudN Aviatrix Datacenter Extension works and how to build agile hybrid DevOps environments using public cloud, read `this document. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`__
 
@@ -38,7 +38,7 @@ Virtual appliance CloudN image can be downloaded from `this link. <http://docs.a
 2.1. AWS EC2 Account for Datacenter Extension and IPmotion
 -----------------------------------------------------------
 
-.. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an EC2 account. Skip this section. 
+.. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an EC2 account. Skip section 2.1. 
 
 ..
 
@@ -238,7 +238,7 @@ If you plan to use CloudN for IPmotion, skip section 2.4
 
   -  (optional) UDP ports 4500 and 500.
 
-.. Note:: Aviatrix CloudN supports encrypted tunnels over TCP port 443. If you select TCP as the tunnel type for datacenter extension or site2cloud function, no UDP ports 500/4500 are required to be open. The advantage of selecting TCP as the tunnel type is to reduce deployment friction when building hybrid connectivity.  
+.. Note:: Aviatrix CloudN supports encrypted tunnels over TCP port 443. If you select TCP as the tunnel type for datacenter extension or site2cloud function, no UDP ports 500/4500 are required to be open. The advantage of selecting TCP as the tunnel type is to reduce deployment friction when building hybrid connectivity. In the current release for IPmotion, only UDP mode is supported. 
 
 ..
 
