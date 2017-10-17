@@ -137,7 +137,7 @@ APIs.
 
     |image1|
 
-Setup IAM policies and roles for a secondary AWS account
+Setup IAM policies and roles for a cross account
 ========================================================
 
 Aviatrix supports multiple AWS account. To launch a gateway for a
