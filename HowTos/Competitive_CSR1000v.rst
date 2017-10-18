@@ -3,14 +3,14 @@
    :keywords: competitive, csr1000v, transit architecture, transit VPC architecture, transit VPC, aviatrix
 
 
-====================================
-Transit VPC architecture - CSR1000v
-====================================
+===============================================
+AWS Global Transit VPC architecture - CSR1000v
+===============================================
 
 Introduction
 ============
 
-This document depicts a typical deployment of CSR1000v on AWS in a Transit VPC architecture.
+This document depicts a typical deployment of CSR1000v on AWS in a Global Transit VPC architecture.
 The limitations encountered on this architecture are explained in a series of videos.
 I hope this document helps you understand the advantages of Aviatrix over the CSR1000v Solution.
 
