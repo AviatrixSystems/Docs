@@ -1,11 +1,11 @@
 .. meta::
    :description: Competitive information about CSR1000v in Transit VPC architecture
-   :keywords: competitive, csr1000v, transit architecture, transit VPC architecture, transit VPC, aviatrix
+   :keywords: AWS Global Transit Network, csr1000v, transit VPC architecture, transit VPC, aviatrix, transitive peering
 
 
-===============================================
-AWS Global Transit VPC architecture - CSR1000v
-===============================================
+=================================================
+Transit VPC Network - CSR1000v vs. Aviatrix
+=================================================
 
 Introduction
 ============
