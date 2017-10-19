@@ -17,10 +17,10 @@ these IAM policies. The customization reduces the scope of resources’
 privileages and helps you meet your organization security requirements.
 
 Please refer to this `IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_Policy_For_Peering.txt>`__ if you only plan on using the following Aviatrix features...
-  1. Gateway creation without ELB
+  1. Gateway creation without ELB(Elastic Load Balancer)
   2. Encrypted-Peering
   3. Transitive-Peering
-  4. Peering-HA
+  4. Peering-HA (High Ability)
   5. Site2Cloud 
   6. Controller Backup & Restore
 
