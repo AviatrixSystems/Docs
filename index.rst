@@ -81,7 +81,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloudn-site2cloud
    HowTos/EncrOverExpRoute
    HowTos/TransPeering_OnPrem
-   HowTos/avxgw_azurevpngw_site2cloud   
+   HowTos/avxgw_azurevpngw_site2cloud
 
 .. _OpenVPN:
 
@@ -96,6 +96,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/duo_auth
    HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
 .. _Advanced Config:
@@ -109,6 +110,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EnvironmentStamping
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
+   HowTos/Migration_From_Marketplace
 
 .. _Settings:
 
@@ -117,9 +119,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Settings
 
    HowTos/Settings_Maintenance
-   HowTos/Settings_Controller
    HowTos/DataAnalSplunkSumo
-   HowTos/Settings_Advanced
 
 .. _Troubleshoot:
 
@@ -129,7 +129,6 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/Troubleshoot_Logs
    HowTos/Troubleshoot_Diagnostics
-   HowTos/Troubleshoot_ELB_Status
    HowTos/error-msgs
    HowTos/azuregwlaunch
 
@@ -170,6 +169,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/migrate_from_join_to_site2cloud
    HowTos/CloudN-config-drive-v1_4
    HowTos/customize_aws_iam_policy
+   HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
+   HowTos/DatadogIntegration
+   HowTos/Competitive_CSR1000v
+   HowTos/ipmotion
+   HowTos/beta_ipmotion
 
 .. _Solutions:
 
@@ -179,6 +183,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Solutions/aviatrix_aws_meshVPC
    Solutions/aviatrix_aws_transitvpc
+   HowTos/openvpn_features
 
 
 .. _Whitepapers:

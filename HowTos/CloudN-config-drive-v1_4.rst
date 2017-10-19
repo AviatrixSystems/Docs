@@ -1,10 +1,10 @@
 .. meta::
    :description: ClounN Config Drive
-   :keywords: CloudN, CloudN config drive, Aviatrix
+   :keywords: CloudN, CloudN config drive, Aviatrix, hybrid cloud
 
-================================================
-Booting CloudN VM with Customized Configuration
-================================================
+====================================================
+Auto Booting CloudN VM Using ISO File 
+====================================================
 
 This document provides one method to boot CloudN VM automatically without the initial manual configuration stage for interface address. 
 
@@ -13,8 +13,8 @@ The method is to use a customized ISO file when launching the virtual machine.
 Note 
 CloudN can be downloaded from `this link: <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_.
 
-Installation on vSphere 
-========================
+1. Installation on vmware vSphere Client 
+=========================================
 
 Create the customized configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,10 +48,9 @@ Sample contents of user-data:
 	    gateway 10.10.0.1
 	    dns-nameservers 8.8.8.8 8.8.4.4
 
-If CloudN VM were to be deployed in a proxy environment, we would need to
-include additional proxy settings in the user-data. In the following
-sample, 10.10.0.21 is the IP address of the CloudN VM, 10.28.144.137 is
-the proxy IP address with port 8080.
+.. Note:: If CloudN VM were to be deployed in a proxy environment, we would need to include additional proxy settings in the user-data. In the following sample, 10.10.0.21 is the IP address of the CloudN VM, 10.28.144.137 is the proxy IP address with port 8080, as shown in the example below. 
+
+..
 
 Sample contents of user-data (with proxy settings): 
 
@@ -186,8 +185,8 @@ initialization process.
 
 |image5|
 
-Installation on Linux KVM
-==========================
+2. Installation on Linux KVM
+=============================
 
 The same methods previously described to create the
 cloudn-172-25-0-10.iso can be applied to KVM virtualization environment.
@@ -211,6 +210,10 @@ Contents of user-data:
      gateway 172.25.0.1
 
   dns-nameservers 8.8.8.8 8.8.4.4
+
+.. Note:: If your enviornment has proxy server for accessing Internet, you need to include that as described in the vmware section.
+
+..
 
 Contents meta-data:
 ~~~~~~~~~~~~~~~~~~~
@@ -315,6 +318,8 @@ with the customized cloudn-172-25-0-10.iso
   CloudN-1 --ram 4096 --vcpus 2 --disk
   path=./cloudn-172-25-0-10.iso,device=cdrom --network
   bridge=br1,model=virtio --network bridge=br1,model=virtio --graphics spice
+
+.. Note:: You may need to install virt-viewer package on your Linux machine in order to use the SPICE graphics.
 
 A Virt Viewer windows will pop up to show the installation process of
 CloudN. Once the CloudN login prompt is shown on the Virt Viewer

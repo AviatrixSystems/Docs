@@ -161,6 +161,8 @@ If no GCloud account has been setup, you will be guided through the
 onboarding process. It takes only a few steps. Once that is done, follow
 the quick tour guide to start launching gateways.
 
+For onboarding instructions on GCloud, click `this link. <http://docs.aviatrix.com/HowTos/CreateGCloudAccount.html>`_
+
 Support
 =======
 

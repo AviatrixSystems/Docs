@@ -46,6 +46,8 @@ Launch Aviatrix Controller via CloudFormation
 
 Aviatrix Controller can be launched from a CloudFormation script. Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
 
+To launch the controller manually, read the next section. 
+
 Launch Aviatrix Controller from AWS Marketplace
 ===============================================
 

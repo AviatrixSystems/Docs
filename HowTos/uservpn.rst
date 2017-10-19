@@ -1,13 +1,21 @@
 .. meta::
   :description: Cloud Networking Ref Design
-  :keywords: cloud networking, aviatrix, Openvpn, SSL vpn, remote vpn 
+  :keywords: cloud networking, aviatrix, Openvpn, SSL vpn, remote vpn, client vpn 
 
 
 =================================
 OpenVPN
 =================================
 
-This guide helps you build a user vpn solution. If you like to learn how to build a user vpn solution with multiple VPCs, refer to `this link. <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
+Aviatrix provides a cloud native feature rich client VPN solution. The solution is based on OpenVPN and is compatible with all OpenVPN client software. 
+In addition, Aviatrix provides its own client software that supports SAML authentication directly from the client. 
+A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+
+ |image0|
+
+
+
+This guide helps you build a basic client vpn solution. If you like to learn how to build a user vpn solution with multiple VPCs, refer to `this link. <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
 Configuration Workflow
 ----------------------
@@ -63,5 +71,8 @@ VPC ID and its region for the VPC ID field and region in each step.
       added to the database, an email with .ovpn file or .onc (for
       Chromebooks) will be sent to the user with detailed instructions.
 
+.. |image0| image:: uservpn_media/AviatrixCloudVPN.png
+   :width: 5.55625in
+   :height: 3.26548in
 
 .. disqus::

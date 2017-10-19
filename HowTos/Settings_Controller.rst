@@ -6,12 +6,12 @@
 Controller
 ###################################
 
--  System Time  (TO BE UPDATED...)
+-  System Time
 
--  License  (TO BE UPDATED...)
+-  License
 
--  Email  (TO BE UPDATED...)
+-  Email
 
--  2FA Login  (TO BE UPDATED...)
+-  2FA Login
 
 .. disqus::

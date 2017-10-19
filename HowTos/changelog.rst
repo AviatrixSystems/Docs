@@ -1,13 +1,28 @@
 Aviatrix VPN Client Changelog
 -----------------------------
-1.4 - August 8 2017
- - Signed Mac application 
+
+1.5 - Oct 16 2017
+ - Mac does not require admin password to run
+ - Mac icon fix
+ - Removed cert warning
+ - Bundled TAP driver for Windows
+ - Improved linux support. Fixed system tray. App mode
+ - Debian installation files
+ - Fixed viewing logs in Linux
+
+ 
+1.4 - Aug 8 2017
+ - Signed Mac application
  - Parallel windows execution fix
-1.3 - June 15 2017
+ 
+ 
+1.3 - Jun 15 2017
  - Disconnection fixes
  - Timeout fixes
  - Connection profile is diplayed
  - IE support for SAML
+ - Signed Windows application
+ 
  
 1.2 - Mar 15 2017
  - HTTPS Version for SAML
@@ -20,6 +35,7 @@ Aviatrix VPN Client Changelog
  - Removed VPN Lockdown
  - Permissions fixes
  - Fixes in logging
+
  
 1.1 - Jan 30 2017
  - Settings window for troubleshooting

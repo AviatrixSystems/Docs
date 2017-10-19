@@ -6,12 +6,12 @@
 Advanced
 ###################################
 
--  Tunnel  (TO BE UPDATED...)
+-  Tunnel
 
--  Keepalive  (TO BE UPDATED...)
+-  Keepalive
 
--  Password Maagement  (TO BE UPDATED...)
+-  Password Maagement
 
--  Certificates  (TO BE UPDATED...)
+-  Certificates
 
 .. disqus::

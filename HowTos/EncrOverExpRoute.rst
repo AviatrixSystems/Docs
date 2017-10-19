@@ -11,10 +11,10 @@ Encryption over DirectConnect/ExpressRoute
 The Problem
 ------------
 
-AWS Direct Connect and Azur ExpressRoute provides a private routed circuit to AWS 
+AWS Direct Connect and Azure ExpressRoute provides a private routed circuit to AWS 
 VPC and Azure VNet. 
 
-Avitrix site2cloud feature provides encryption over Direct Connect or ExpressRoute. 
+Aviatrix site2cloud feature provides encryption over Direct Connect or ExpressRoute. 
 This document describes how to implement the feature over Express Route. The same
 method applies to AWS. 
 
@@ -87,10 +87,10 @@ The configuration workflow is as follows, with major steps highlighted.
 |      i.  At Primary Gateway field, select a gateway launched earlier as primary gateway.
 |      ii.  At Backup Gateway field, select a gateway launched earlier as backup gateway.
 |   d. Input the connection with a unique name, for example, FirstExpressRoute
-|   e. At Customer Gateway IP Address, enter the public IP address of the edge router for Enterprise datacenter.
-|   f. At Customer Network, enter network CIDR of the Enterprise datacenter. If there are multiple subnets, enter each one separated with comma.
-|   g. Check Private Route Encryption:
-|     i. At Cloud Subnet fields, enter Subnet2 and Subnet3 in CIDR format. For example, if Subnet2 is 10.10.1.0/24 and Subnet3 is 10.10.2.0/24, enter “10.10.1.0/24,10.10.2.0/24”.
+|   e. At Remote Gateway IP Address, enter the public IP address of the edge router for Enterprise datacenter.
+|   f. At Remote Network, enter network CIDR of the Enterprise datacenter. If there are multiple subnets, enter each one separated with comma.
+|   g. Check Encryption over ExpressRoute/DirectConnect.
+|   h. At Route Table To Modify field, select the route table(s) associated with subnet2 and subnet3 .
 |
 
 
@@ -105,7 +105,7 @@ The configuration workflow is as follows, with major steps highlighted.
       encryption algorithm. Incorporate the information to your remote
       router/firewall configuration.
 |
-| 6. At the Enterprise datacenter or remote site, configure encryption on the edge device.
+| 5. At the Enterprise datacenter or remote site, configure encryption on the edge device.
 |   Make sure your peer network is Subnet2 and Subnet3, as shown in this example.
 |
 

@@ -1,3 +1,7 @@
+.. meta::
+  :description: AWS Global Transit VPC
+  :keywords: AWS Global Transit Network, Aviatrix site2cloud, Transitive Peering, Openvpn, SSL vpn, remote vpn, client vpn
+
 |image0|
 
 ###################################################
@@ -7,7 +11,8 @@ Transit VPC Implementation Using Aviatrix Solution
 AWS Reference Deployment Guide
 ==============================
 
-Last updated: May 10, 2017
+This document is published by AWS Answers for `AWS Global Transit VPC Network <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ as Partner Offering. 
+
 
 1  Overview
 ===========
@@ -27,8 +32,8 @@ communication between the Spoke VPCs and on-prem network.
 2  Aviatrix Solution Key Benefits
 =================================
 
-**Simplicity** Centrally managed, point and click solution deploys in
-minutes.
+**Simplicity** Centrally managed, software defined routing with point and click 
+solution deploys in minutes.
 
 **Highly Available** Built-in gateway redundancy supports hot standby
 and fail over in seconds.
