@@ -81,8 +81,8 @@ Step 9 - Enjoy your new controller
 
 ::
 
-  Optional: After confirming everything is running as per normal,
-  elete the Aviatrix AWS Marketplace controller instance.
+  Optional: After confirming everything is running correctly,
+  delete the previous Aviatrix AWS Marketplace controller instance.
 
 For support, send email to support@aviatrix.com.
 
