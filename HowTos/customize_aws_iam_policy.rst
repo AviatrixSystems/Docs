@@ -13,11 +13,11 @@ Introduction
 Aviatrix provides the `default
 Aviatrix-AWS-IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__
 for its solution. This document provides examples on how to customize
-these IAM policies. The customization reduces the scope of resources’
-privileages and helps you meet your organization security requirements.
+these IAM policies. The customization reduces the scope of resource
+privileges and helps you meet your organization's security requirements.
 
 Please refer to this `IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_Policy_For_Peering.txt>`__ if you only plan on using the following Aviatrix features...
-  1. Gateway creation without ELB(Elastic Load Balancer)
+  1. Gateway creation without ELB (Elastic Load Balancer)
   2. Encrypted-Peering
   3. Transitive-Peering
   4. Peering-HA (High Ability)
@@ -28,7 +28,7 @@ Please refer to this `IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-do
 When to Modify AWS-IAM-Policy (aviatrix-app-role-policy)
 ========================================================
 
-Before customizing the AWS-IAM-Policy for Aviatrix Controller, follow
+Before customizing the AWS-IAM-Policy for the Aviatrix Controller, follow
 the steps below...
 
 Step 01:
@@ -43,8 +43,8 @@ creation during the AVX controller Onboading process.
 Step 02: 
 ---------
 
-After account creation, administrator can start editing/customizing the
-AWS-IAM-Policy, "aviatrix-app-role-policy" from your AWS-IAM-Policy
+After account creation, as administrator you can start editing/customizing
+the AWS-IAM-Policy, "aviatrix-app-role-policy" from your AWS-IAM-Policy
 section to increase the security level of your AWS
 environment/resources. Please see the following for more reference.
 
@@ -64,7 +64,7 @@ Step 02: Go to IAM service
 Step 03: Click "Policies" and select the policy
 -----------------------------------------------
 
-If you have not created "aviatrix-app-policy", please see the
+If you have not created "aviatrix-app-policy", please see
 `here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`__.
 
 |image3|
@@ -74,15 +74,15 @@ Step 04: Click Edit Policy
 
 |image4|
 
-Now you are ready to edit the policy! Please refer to the examples in
-the later section of this document.
+Now you are ready to edit the policy! Please refer to the examples 
+later in this document.
 
 What Permissions are Required in App Role Policy and Why
 ========================================================
 
 In the App role policy
 (`example <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__),
-it has different “Action” to allow on certain resource. Aviatrix
+it has different “Actions” to allow on certain resource. Your Aviatrix
 controller needs those policies to function.
 
 a. ec2 – to create/delete/list/modify VPCs, Aviatrix gateways, security
