@@ -63,35 +63,36 @@ Please refer to "AWS Server Migration Service – Server Migration to the Cloud 
 `AWS Server Migration Service – Server Migration to the Cloud Made Easy! 
 <https://aws.amazon.com/blogs/apn/aws-server-migration-service-server-migration-to-the-cloud-made-easy/>`_
 
-i) Deploy the Server Migration Connector virtual appliance on On-Premise. 
+- Deploy the Server Migration Connector virtual appliance on On-Premise. 
 
 ===============================    ================================================================================
 **vCenter Example Setting**        **Value**
 ===============================    ================================================================================
 Setup networks                     Configure 10.140.0.0/16 for this testing
-
-ii) Configure the connector on On-Premise. 
+===============================    ================================================================================
+- Configure the connector on On-Premise. 
 
 ===============================    ================================================================================
 **Connector Example Setting**      **Value**
 ===============================    ================================================================================
 AWS Region                         Select "US West (Oregon)" for this testing
+===============================    ================================================================================
 
-iii) Import the server catalog on AWS SMS console
+- Import the server catalog on AWS SMS console
 
 ===============================    ================================================================================
 **AWS SMS Example Setting**        **Value**
 ===============================    ================================================================================
 Replication job ID                 Select the VM which will be migrated to cloud (e.g. VM with ip 10.140.0.45)
-
+===============================    ================================================================================
 
 After completing the previous steps, a user is able to view and launch the migrated AMI in below console:
 
-- AWS -> Migration -> Server Migration Service
+i.) AWS -> Migration -> Server Migration Service
 
 |image1|
 
-- AWS -> Compute -> EC2 -> Launch Instance
+ii.) AWS -> Compute -> EC2 -> Launch Instance
 
 |image2|
 
