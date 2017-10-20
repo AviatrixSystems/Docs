@@ -86,22 +86,32 @@ Step 2. Create Two IAM Roles
 This role will be associated with the Aviatrix Controller. The role name
 MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
--  Go to AWS console -> IAM service -> Roles -> Create new role 
+-  Go to AWS console -> IAM service -> Roles -> Create role 
 
-- Select AWS Service Role -> Amazon EC2 -> Select
+|image3|
 
-- Search Policy Type **aviatrix-assume-role-policy**, then select this policy. Click "Next Step"
+- Select AWS Service -> EC2 -> EC2 -> Next: Permissions
 
--  Enter Role name **aviatrix-role-ec2** (must be exact) 
+|image4|
 
--  Review the Role, and click on “Create role”. You should see something
+- Search Policy **aviatrix-assume-role-policy**, then select this policy. Click "Next Review"
+
+|image5|
+
+-  Enter Role name **aviatrix-role-ec2** (must be exact) then click [Create]
+
+|image6|
+
+-  Search/Check the role. You should see something
    like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-ec2
+   
+|image0|
 
 -  Make a note of the above Role ARN string, it will be used for setup
    Aviatrix Cloud Account later
 
-|image0|
+
 
 2.2 Create an app role
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -180,6 +190,18 @@ managed by Aviatrix.
    :width: 6.50000in
    :height: 3.31806in
 .. |image2| image:: IAM_media/image3.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image3| image:: IAM_media/img_create_assume_role_step_01.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image4| image:: IAM_media/img_create_assume_role_step_02_select_ec2_type_role.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image5| image:: IAM_media/img_create_assume_role_step_03_attach_assume_role_policy.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image6| image:: IAM_media/img_create_assume_role_step_04_get_arn.png
    :width: 4.67200in
    :height: 3.33379in
 
