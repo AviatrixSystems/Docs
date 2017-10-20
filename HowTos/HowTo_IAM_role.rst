@@ -100,8 +100,6 @@ MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
 -  Enter Role name **aviatrix-role-ec2** (must be exact) then click [Create]
 
-|image6|
-
 -  Search/Check the role. You should see something
    like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-ec2
@@ -201,9 +199,7 @@ managed by Aviatrix.
 .. |image5| image:: IAM_media/img_create_assume_role_step_03_attach_assume_role_policy.png
    :width: 4.67200in
    :height: 3.33379in
-.. |image6| image:: IAM_media/img_create_assume_role_step_04_get_arn.png
-   :width: 4.67200in
-   :height: 3.33379in
+
 
 .. add in the disqus tag
 
