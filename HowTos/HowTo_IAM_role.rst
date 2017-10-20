@@ -111,7 +111,7 @@ MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
 
 
-2.2 Create an app role
+2.2 Create "aviatrix-role-app" role
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This role is to be assumed by a granted AWS account. The Aviatrix
