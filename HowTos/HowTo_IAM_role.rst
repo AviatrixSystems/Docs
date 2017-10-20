@@ -192,7 +192,7 @@ managed by Aviatrix.
 .. |image5| image:: IAM_media/img_create_assume_role_step_03_attach_assume_role_policy.png
    :width: 4.67200in
    :height: 3.33379in
-.. |image5| image:: IAM_media/img_create_cross_account_role_step_01.png
+.. |image6| image:: IAM_media/img_create_cross_account_role_step_01.png
    :width: 4.67200in
    :height: 3.33379in
 
