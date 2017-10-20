@@ -120,22 +120,15 @@ controller acquires the “assume role” capability authorized by its
 granted by its own AWS account or other AWS accounts to perform AWS
 APIs.
 
--  Go to AWS console -> IAM service -> Roles -> Create New Role -> Set
-   Role Name
+-  Go to AWS console -> IAM service -> Roles -> Create Role
 
--  Enter a Role Name, in this case **aviatrix-role-app** . Click “Next
-   Step”
+- Select "Another AWS account", and enter your AWS account ID, then Click [Next:Permissions]
 
--  Select “Role for Cross-Account Access”
+|image6|
 
--  Select “\ **Provide access between AWS accounts you own”**
+-  Select **aviatrix-app-policy** IAM policy, then click [Next: Review]
 
--  Enter “Account ID” (your own account ID) and then “Next Step”.
-
--  Select the policy you created in the previous step, in this example,
-   “aviatrix-app-policy”. Click “Next Step”.
-
--  Click on “Create Role”.
+-  Enter a Role Name, in this case **aviatrix-role-app** . Click “Create role”
 
 -  You should see something like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-app
@@ -199,7 +192,9 @@ managed by Aviatrix.
 .. |image5| image:: IAM_media/img_create_assume_role_step_03_attach_assume_role_policy.png
    :width: 4.67200in
    :height: 3.33379in
-
+.. |image5| image:: IAM_media/img_create_cross_account_role_step_01.png
+   :width: 4.67200in
+   :height: 3.33379in
 
 .. add in the disqus tag
 
