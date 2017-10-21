@@ -86,24 +86,32 @@ Step 2. Create Two IAM Roles
 This role will be associated with the Aviatrix Controller. The role name
 MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
--  Go to AWS console -> IAM service -> Roles -> Create new role 
+-  Go to AWS console -> IAM service -> Roles -> Create role 
 
-- Select AWS Service Role -> Amazon EC2 -> Select
+|image3|
 
-- Search Policy Type **aviatrix-assume-role-policy**, then select this policy. Click "Next Step"
+- Select AWS Service -> EC2 -> EC2 -> Next: Permissions
 
--  Enter Role name **aviatrix-role-ec2** (must be exact) 
+|image4|
 
--  Review the Role, and click on “Create role”. You should see something
+- Search Policy **aviatrix-assume-role-policy**, then select this policy. Click "Next Review"
+
+|image5|
+
+-  Enter Role name **aviatrix-role-ec2** (must be exact) then click [Create]
+
+-  Search/Check the role. You should see something
    like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-ec2
+   
+|image0|
 
 -  Make a note of the above Role ARN string, it will be used for setup
    Aviatrix Cloud Account later
 
-|image0|
 
-2.2 Create an app role
+
+2.2 Create "aviatrix-role-app" role
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This role is to be assumed by a granted AWS account. The Aviatrix
@@ -112,22 +120,15 @@ controller acquires the “assume role” capability authorized by its
 granted by its own AWS account or other AWS accounts to perform AWS
 APIs.
 
--  Go to AWS console -> IAM service -> Roles -> Create New Role -> Set
-   Role Name
+-  Go to AWS console -> IAM service -> Roles -> Create Role
 
--  Enter a Role Name, in this case **aviatrix-role-app** . Click “Next
-   Step”
+- Select "Another AWS account", and enter your AWS account ID, then Click [Next:Permissions]
 
--  Select “Role for Cross-Account Access”
+|image6|
 
--  Select “\ **Provide access between AWS accounts you own”**
+-  Select **aviatrix-app-policy** IAM policy, then click [Next: Review]
 
--  Enter “Account ID” (your own account ID) and then “Next Step”.
-
--  Select the policy you created in the previous step, in this example,
-   “aviatrix-app-policy”. Click “Next Step”.
-
--  Click on “Create Role”.
+-  Enter a Role Name, in this case **aviatrix-role-app** . Click “Create role”
 
 -  You should see something like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-app
@@ -180,6 +181,18 @@ managed by Aviatrix.
    :width: 6.50000in
    :height: 3.31806in
 .. |image2| image:: IAM_media/image3.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image3| image:: IAM_media/img_create_assume_role_step_01.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image4| image:: IAM_media/img_create_assume_role_step_02_select_ec2_type_role.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image5| image:: IAM_media/img_create_assume_role_step_03_attach_assume_role_policy.png
+   :width: 4.67200in
+   :height: 3.33379in
+.. |image6| image:: IAM_media/img_create_cross_account_role_step_01.png
    :width: 4.67200in
    :height: 3.33379in
 
