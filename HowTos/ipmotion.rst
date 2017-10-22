@@ -102,7 +102,7 @@ if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP address
 it means that these range of IP addresses are not currently used by any VM on 
 the subnet, they are reserved by Aviatrix during migration phase. 
 
-.. Note:: AWS reserves the first 3 IP addresses of a subnet in VPC. For example, if the VPC subnet is 172.16.1.0/24, the first 3 addresses 172.16.1.1, 172.16.1.2 and 172.16.1.3 are reserved by AWS.  if you have on-prem VMs including CloudN that uses the first 3 IP addresses (excluding default gateway, DNS or any other infrastructure purpose) of a subnet, the IPmotion method will not work. 
+.. Note:: AWS reserves the 5 IP addresses of a subnet in VPC. For example, if the VPC subnet is 172.16.1.0/24, the addresses 172.16.1.0, 172.16.1.1, 172.16.1.2, 172.16.1.3 and 172.16.1.255 are reserved by AWS.  if you have on-prem VMs including CloudN that uses the first 3 IP addresses (excluding default gateway, DNS or any other infrastructure purpose) of a subnet, the IPmotion method will not work. 
 
 ..
 
