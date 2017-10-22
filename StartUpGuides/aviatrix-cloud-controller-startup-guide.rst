@@ -158,6 +158,14 @@ Controller Monitoring
 The controller can be monitored by AWS CloudWatch. We recommend you to configure alarms and actions to 
 reboot the controller when it fails Status Check. 
 
+Feature Highlights
+===================
+
+ - `Inter region peering <http://docs.aviatrix.com/HowTos/peering.html>`_
+
+ - `Global Transit Network <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_
+
+ - `Client VPN or OpenVPN <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 For support, send email to support@aviatrix.com. Enjoy!
 
