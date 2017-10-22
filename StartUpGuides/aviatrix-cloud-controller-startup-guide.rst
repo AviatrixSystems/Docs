@@ -152,6 +152,13 @@ should be self-explanatory.
 An alert message will be displayed on the Dashboard menu when a new
 release becomes available.
 
+Controller Monitoring
+======================
+
+The controller can be monitored by AWS CloudWatch. We recommend you to configure alarms and actions to 
+reboot the controller when it fails Status Check. 
+
+
 For support, send email to support@aviatrix.com. Enjoy!
 
 .. |image0| image:: AviatrixCloudControllerStartupGuide_media/image001.png
