@@ -5,13 +5,13 @@
 |image0|
 
 ###################################################
-Global Transit VPC Implementation 
+AWS Global Transit Network  
 ###################################################
 
 AWS Reference Deployment Guide
 ==============================
 
-This document is published by AWS Answers for `AWS Global Transit VPC Network <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ as Partner Offering. 
+This document is published by AWS Answers for `AWS Global Transit Network <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ as Partner Offering. 
 
 
 1  Overview
@@ -22,7 +22,7 @@ ground up for the public cloud. For transit VPC design, Aviatrix provides one co
 
 
 This configuration guide provides step by step instruction on how to
-build a highly available AWS Transit VPC. Below is an architecture
+build a highly available AWS Global Transit Network. Below is an architecture
 diagram of what a general AWS Transit VPC deployment looks like, where a
 Hub VPC (or Transit VPC) connects many Spoke VPCs to facilitate
 communication between the Spoke VPCs and on-prem network.
