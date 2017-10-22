@@ -261,13 +261,6 @@ spoke and site node can communicate with each other via the transit VPC.
 
 3.  Done
 
-Appendix – Terminating on VGW
-=============================
-
-The Aviatrix transit VPC solution also supports terminating on AWS VGWs
-in the spoke VPC. In this case, the AWS VGWs must be manually setup in
-each spoke VPC.
-
 
 .. |image0| image:: media/image1.png
    :width: 3.5in
