@@ -5,7 +5,7 @@
 |image0|
 
 ###################################################
-Transit VPC Implementation Using Aviatrix Solution
+Global Transit VPC Implementation 
 ###################################################
 
 AWS Reference Deployment Guide
@@ -29,30 +29,26 @@ communication between the Spoke VPCs and on-prem network.
 
 |image1|
 
-2  Aviatrix Solution Key Benefits
-=================================
+2  Comparing with AWS Global Transit Network Solution with CSR1000v 
+====================================================================
 
-**Simplicity** Centrally managed, software defined routing with point and click 
-solution deploys in minutes.
+**Simplicity** No Cisco CCIE, BGP, VRF and IPSEC domain expertise requried. The Aviatrix central controller builds and manages your network with software defined routing and point and click solutions deploying in minutes.
+
+**No Double Egress Charge** Aviatrix supports direct Spoke VPC to Spoke VPC connectivity without going through transit VPC to encure twice the egress network charge. 
+
+**Isolation By Design** AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With Aviatrix solution no connecitvity is established untill you specify.  
 
 **Highly Available** Built-in gateway redundancy supports hot standby
 and fail over in seconds.
 
-**Cost Saving** If hub and spoke VPCs are in the same region, encrypted
-traffic is routed over AWS peering, reducing network bandwidth cost by
-10 times (comparing to AWS Transit VPC solution that goes over Internet
-with VGW for hub and spoke traffic).
-
-**Scalable** The solution does not require a unique public IP address
-on the hub gateway connecting to each spoke gateway. No limits on the
-number of spoke VPCs can be connected to hub VPC. Gateways can scale-up, scale-down or scale-out with a few clicks.
+**Scalable**  No limits on the number of spoke VPCs can be connected to on-prem via hub VPC. Aviatrix Designated Gateway summarizes all routes. Gateways can scale-up, scale-down or scale-out with a few clicks.
 
 **Visibility** Central dashboard monitors, displays and alerts link
 status and link latency.
 
 **Additional Benefits** Stateful firewall at the gateway to enforce
 security policies. OpenVPN based user access allows end to end cloud
-network solution. For more details, visit www.aviatrix.com.
+network solution. For more details, check out docs.aviatrix.com.
 
 3  Pre Configuration Checklist
 ==============================
@@ -76,7 +72,7 @@ VPC and site peering. Please reference the Aviatrix Controller getting
 started guide for AWS on how to deploy the Aviatrix Controller.
 
 `Aviatrix Controller Getting Started
-Guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/docs/aviatrix_aws_controller_gsg.pdf>`_
+<http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
 
 Check and make sure you can access the Aviatrix Controller dashboard and
 login with an administrator account. The default URL for the Aviatrix
@@ -111,6 +107,9 @@ In this example we have three VPCs: Transit VPC, spoke VPC in US-WEST1
 and spoke VPC in US-EAST1. The corporate data center is located in
 California. The system will be configured such that all spoke nodes and
 sites will be able to communicate with each other via the transit VPC.
+
+.. tip:: For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypte Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC.  
+
 
 4.1 Step 1 – Deploy Gateways
 ----------------------------
@@ -149,6 +148,12 @@ VPN Access         Uncheck this box
 
 
 This step explains how to connect a spoke VPC to the transit VPC.
+
+
+::
+  
+  For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypte Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC. 
+
 
 **Instructions:**
 
@@ -262,30 +267,6 @@ Appendix – Terminating on VGW
 The Aviatrix transit VPC solution also supports terminating on AWS VGWs
 in the spoke VPC. In this case, the AWS VGWs must be manually setup in
 each spoke VPC.
-
-|image6|
-
-Appendix –Support
-=================
-
-Aviatrix Support
-----------------
-
-Standard: 8x5 Enterprise Phone Support, email support, product-specific
-knowledge-base and user forum is included. For Additional levels of
-support and support offers please visit:
-
-http://www.aviatrix.com/support
-
-
-AWS Support
------------
-
-AWS Support is a one-on-one, fast-response support channel that is
-staffed 24x7x365 with experienced and technical support engineers. The
-service helps customers of all sizes and technical abilities to
-successfully utilize the products and features provided by Amazon Web
-Services. `Learn more <https://aws.amazon.com/premiumsupport/>`_
 
 
 .. |image0| image:: media/image1.png
