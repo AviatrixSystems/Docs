@@ -37,6 +37,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
    StartUpGuides/appendix-CloudN-Startup-Guide
+   StartUpGuides/aviatrix_aws_transitvpc
    HowTos/FAQ
 
 .. _Onboarding and Accounts:
@@ -182,7 +183,6 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Solutions Datasheets
 
    Solutions/aviatrix_aws_meshVPC
-   Solutions/aviatrix_aws_transitvpc
    HowTos/openvpn_features
 
 
