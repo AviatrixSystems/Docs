@@ -421,6 +421,7 @@ Peer the Gateways
 
    |imageAviatrixGWCreateGCPPeerUp|
 
+
 Complete
 ^^^^^^^^
 That's it.  Your Azure VNet instances can now talk to your GCP instances over a secure tunnel.  You will soon receive an email notification that the tunnel is up.  You'll receive additional notifications if the tunnel goes down.
@@ -429,6 +430,8 @@ That's it.  Your Azure VNet instances can now talk to your GCP instances over a 
 Summary
 -------
 If you peered your Azure account with both AWS and GCP, then you should see something like this on your Aviatrix Controller Dashboard:
+
+   |imageAviatrixDashboardFinal|
 
 Now that you have the accounts established, you can easily add connectivity to other VPCs in either AWS or GCP.  And, of course, you can also connect AWS to GCP.
 
@@ -508,3 +511,5 @@ Now that you have the accounts established, you can easily add connectivity to o
 .. |imageAviatrixGWCreateGCPPeerAddNew| image:: GettingStartedAzureToAWSAndGCP_media/aviatrix/peering_add_new_gcp.png
 
 .. |imageAviatrixGWCreateGCPPeerUp| image:: GettingStartedAzureToAWSAndGCP_media/aviatrix/peering_up_gcp.png
+
+.. |imageAviatrixDashboardFinal| image:: GettingStartedAzureToAWSAndGCP_media/aviatrix/dashboard_with_aws_gcp_peering.png
