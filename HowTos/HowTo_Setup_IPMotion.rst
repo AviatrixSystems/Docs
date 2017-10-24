@@ -21,23 +21,21 @@ to AWS, dependcies of this VM to other on-prems are automatically preserved, thu
 2. Configuration Workflow
 ==========================
 
-The instructions in this section will use the following architecture.
-The CIDR and subnets may vary depending on your VPC setup; however, the
-general principals will be the same.
+The instructions in this section will use the following network diagram.
+The CIDR and subnets may vary depending on your network setup; however, the
+general principle will be the same.
 
 |image0|
 
 
-2.1 Pre Configuration Checklist
+2.1 Prerequisites
 -------------------------------
 
 Before configuring Aviatrix IPMotion Tunnel, make sure the following prerequisites are completed.
 
-**Pre Configuration Check List**
-
 1.  Plan the Cloud Address and create an AWS VPC
 
-2.  Setup AWS Server Migration Service (SMS) to create a migrated AMI
+2.  Setup AWS Server Migration Service (SMS) to create migrated AMIs
 
 3.  Deploy an Aviatrix Virtual Appliance CloudN in On-Premise
 
@@ -47,9 +45,9 @@ These prerequisites are explained in detail below.
 2.1.1  Plan the Cloud Address and create an AWS VPC
 ---------------------------------------------------
 
-The first step is to identify from your network admin the on-prem subnet where you plan to migrate VMs. For example, the subnet is 10.140.0.0/16 where there are two On-Prem VMs 10.140.0.45 and 10.140.0.46. 
+The first step is to identify the on-prem subnet from which you plan to migrate VMs. In this example, the subnet is 10.140.0.0/16 with two On-Prem VMs (10.140.0.45 and 10.140.0.46.) 
 
-Secondly, creating an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that the migrated EC2 instances is not neccessary to take public IP addresses. 
+Secondly, create an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that it is not neccessary for the migrated VMs to have public IP addresses. 
 
 ===============================    ================================================================================
 **AWS Example Setting**            **Value**
@@ -71,24 +69,24 @@ Please refer to "AWS Server Migration Service – Server Migration to the Cloud 
 - Deploy the Server Migration Connector virtual appliance on On-Premise. 
 
 ===============================    ================================================================================
-**vCenter Example Setting**        **Value**
+**vCenter Setting**                **Example**
 ===============================    ================================================================================
-Setup networks                     Configure 10.140.0.0/16 for this testing
+Setup networks                     10.140.0.0/16
 ===============================    ================================================================================
 - Configure the connector on On-Premise. 
 
 ===============================    ================================================================================
-**Connector Example Setting**      **Value**
+**Connector Setting**              **Example**
 ===============================    ================================================================================
-AWS Region                         Select "US West (Oregon)" for this testing
+AWS Region                         US West (Oregon)
 ===============================    ================================================================================
 
 - Import the server catalog on AWS SMS console
 
 ===============================    ================================================================================
-**AWS SMS Example Setting**        **Value**
+**AWS SMS Setting**                **Example**
 ===============================    ================================================================================
-Replication job ID                 Select the VM which will be migrated to cloud (e.g. VM with ip 10.140.0.45)
+Replication job ID                 VM which will be migrated to cloud (e.g. VM with ip 10.140.0.45)
 ===============================    ================================================================================
 
 After completing the previous steps, a user is able to view and launch the migrated AMI in below console:
@@ -104,8 +102,8 @@ ii.) AWS -> Compute -> EC2 -> Launch Instance
 Please confirm the migrated AMI is ready on AWS console. 
 This document will describe how to integrate the migrated AMI with IPMotion feature in 3.2.2 Step b.
 
-2.1.3  Deploy an Aviatrix Virtual Appliance CloudN in On-Premise
-----------------------------------------------------------------
+2.1.3  Deploy an Aviatrix Virtual Appliance CloudN in On-Premise subnet
+-----------------------------------------------------------------------
 
 The Aviatrix Virtual Appliance CloudN must be deployed and setup in the on-prem subnet where you plan to migrate VMs prior to configuring IPMotion. For example, the subnet is 10.140.0.0/16. Please refer to "Virtual Appliance CloudN" on how to deploy the Virtual Appliance CloudN.
 
@@ -138,14 +136,14 @@ Please refer to "IPmotion Setup Instructions" for detail.
 
 a.1.  Login to the Aviatrix Virtual Appliance CloudN
 
-a.2.  Click on IP Motion in the left navigation bar
+a.2.  Click on "IP Motion" in the left navigation bar
 
 a.3.  For section 1> Specify the on-prem IP Address List, enter both the list of IP addresses of VMs that will be migrated and the list of IP addresses of VMs that will remain on-prem. 
 
 ===============================    ================================================================================
-**Example Setting**                **Value**
+**IPMotion Configuration**         **Example**
 ===============================    ================================================================================
-On-prem Subnet IP List             (e.g. 10.140.0.45-10.140.0.46)
+On-prem Subnet IP List             10.140.0.45-10.140.0.46
 ===============================    ================================================================================
 
 a.4.  Click “Specify”.
@@ -153,19 +151,19 @@ a.4.  Click “Specify”.
 a.5.  Click "View" to check those specified IPs and its status.
 
 ===============================    ================================================================================
-**Notes**                          **Status Value**
+**Status Value**                   **Notes**
 ===============================    ================================================================================
-IP be used in On-Prem              ON-PREM
-IP in staging Mode                 IN-CLOUD-STAGING
-IP be used in Cloud                IN-CLOUD
+ON-PREM                            IP of VM in On-Prem  
+IN-CLOUD-STAGING                   IP of VM in staging Mode
+IN-CLOUD                           IP of VM migrated to Cloud
 ===============================    ================================================================================
 
 a.6.  For section 2> Reserve IPmotion Gateway IP Address List, specify 10 IP addresses that are not being used by any running VMs and reserve these addresses for Aviatrix IPmotion gateway.
 
 ================================    ================================================================================
-**Example Setting**                 **Value**
+**IPMotion Configuration**          **Example**
 ================================    ================================================================================
-IPmotion Gateway Reserve IP List    (e.g. 10.140.0.200-10.140.0.210)
+IPmotion Gateway Reserve IP List    10.140.0.200-10.140.0.210
 ================================    ================================================================================
 
 a.7.  Click "View" to check those reserved IPs.
@@ -188,7 +186,7 @@ a.9.  Click “Launch”. It will take a few minutes for the gateway to deploy. 
 
 a.10. Done
 
-.. Note:: Next 2.2.2 Step b – Integrate Aviatrix IPMotion with AWS AMI will explain how to utilize section 4> Let's Move! to combine the planned IP to migrate with the migrated AMI which created by AWS SMS
+.. Note:: Next 2.2.2 Step b – Integrate Aviatrix IPMotion with AWS AMI will explain how to utilize section 4> Let's Move! to coordinate IP migration with the migrated AMI created by AWS SMS
 
 2.2.2 Step b – Integrate Aviatrix IPMotion with AWS AMI
 -------------------------------------------------------
@@ -201,11 +199,11 @@ b.2.  Navigate to section 4> Let's Move!
 
 b.3.  Select the IP of VM which will be migrated to cloud. (e.g. 10.140.0.45)
 
-b.4.  Click "Staging". This is the preparation step for a user to shutdown the On-Prem VM with the selected IP and power up the AWS AMI with that selected IP.
+b.4.  Click "Staging". This is the preparation step for a user to shutdown the On-Prem VM with the selected IP and power up its corresponding cloud VM with the same IP.
 
 b.4.1.  Shutdown the On-Prem VM via vCenter. (e.g. 10.140.0.45)
 
-b.4.2.  Power up the AWS AMI with that selected IP. (e.g. 10.140.0.45)
+b.4.2.  Power up the AWS EC2 instance with that selected IP. (e.g. 10.140.0.45)
 
 b.4.2.1.  Navigate to AWS -> Compute -> EC2 console
 
@@ -242,11 +240,11 @@ b.4.2.6.  Step 4: Add Storage: default settings is fine for testing.
 
 b.4.2.6.  Step 5: Add Tags: default settings is fine for testing.
 
-b.4.2.7.  Step 6: Configure Security Group -> Click "Create a new security group". For this testing topology, adding a rule with Type of "All traffic" and Source of "Custom - 10.140.0.0/16" to allow all traffic between On-Prem VM and Cloud VM. User can depend on your topology to customize the firewall rules.
+b.4.2.7.  Step 6: Configure Security Group -> Click "Create a new security group". For this testing topology, adding a rule with Type of "All traffic" and Source of "Custom - 10.140.0.0/16" to allow all traffic between On-Prem VM and Cloud VM. User can further customize the firewall rules.
 
 |image4|
 
-b.4.2.8.  Step 7: Review Instance Launch -> Click "Launch" It will take a few minutes for the AMI to deploy. Do not proceed until the AMI is deployed.
+b.4.2.8.  Step 7: Review Instance Launch -> Click "Launch" It will take a few minutes for the EC2 instance to deploy. Do not proceed until the EC2 instance is deployed.
 
 b.5.  (Optional) Click "View" of section 1> Specify the on-prem IP Address List to check status. That IP status will change from status "ON-PREM" to "IN-CLOUD-STAGING".
 
