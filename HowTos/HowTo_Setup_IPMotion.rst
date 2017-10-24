@@ -209,7 +209,7 @@ b.4.2.1.  Navigate to AWS -> Compute -> EC2 console
 
 b.4.2.2.  Click "Launch Instance" 
 
-b.4.2.3.  Step 1: Choose an Amazon Machine Image (AMI) -> Click side bar "My AMIs" -> Click "Select" of the AMI which is created by AWAS SMS
+b.4.2.3.  Step 1: Choose an Amazon Machine Image (AMI) -> Click side bar "My AMIs" -> Click "Select" of the AMI which is created by AWS SMS
 
 b.4.2.4.  Step 2: Choose an Instance Type
 
