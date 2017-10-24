@@ -3,9 +3,9 @@
    :keywords: IPMotion, AWS Server Migration Service, AWS Migration Hub
 
 
-========================================================
-Integrate IPMotion and AWS Migration Hub Service
-========================================================
+===================================================================
+Migrating VMs with Aviatrix IPMotion and AWS Migration Hub Service
+===================================================================
 
 
 
