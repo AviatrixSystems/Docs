@@ -12,9 +12,11 @@ Integrate IPMotion and AWS Migration Hub Service
 1. Solution Overview
 ======================
 
-This document explains how to migrate an on-prem VM to AWS while preserving its IP address. The migration tools we use are 
-AWS Migration Hub service and Aviatrix IPmotion. By preserving its IP address of an on-prem VM after migrating
-to AWS, dependcies of this VM to other on-prems are automatically preserved, thus there is no need to . There is no need to updae on-prem security rules, AD, DNS and Load Balancers. 
+This document describes how to migrate an on-prem VM to AWS while preserving its IP address. The migration tools we use are 
+AWS Migration Hub service and Aviatrix IPmotion, where Aviatrix IPmotion feature enables IP address preservation after an VM is migrated to AWS via AWS Server Migration Service. 
+
+By preserving its IP address of an on-prem VM after migrating
+to AWS, dependcies of this VM to other on-prems are automatically preserved, thus there is no need to discover the dependencies for migration purpose. There is no need to updae on-prem security rules, AD, DNS and Load Balancers. 
 
 
 
@@ -31,7 +33,8 @@ general principle will be the same.
 2.1 Prerequisites
 -------------------------------
 
-Before configuring Aviatrix IPMotion Tunnel, make sure the following prerequisites are completed.
+Before setting up Aviatrix IPMotion for migration, make sure 
+the following prerequisites are completed.
 
 1.  Plan the Cloud Address and create an AWS VPC
 
@@ -45,9 +48,9 @@ These prerequisites are explained in detail below.
 2.1.1  Plan the Cloud Address and create an AWS VPC
 ---------------------------------------------------
 
-The first step is to identify the on-prem subnet from which you plan to migrate VMs. In this example, the subnet is 10.140.0.0/16 with two On-Prem VMs (10.140.0.45 and 10.140.0.46.) 
+First identify the on-prem subnet from which you plan to migrate VMs. In this example, the subnet is 10.140.0.0/16 with two On-Prem VMs (10.140.0.45 and 10.140.0.46.) 
 
-Secondly, create an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that it is not neccessary for the migrated VMs to have public IP addresses. 
+Then create an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that it is not neccessary for the migrated VMs to have public IP addresses. 
 
 ===============================    ================================================================================
 **AWS Example Setting**            **Value**

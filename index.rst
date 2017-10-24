@@ -177,6 +177,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Competitive_CSR1000v
    HowTos/ipmotion
    HowTos/beta_ipmotion
+   HowTos/HowTo_Setup_IPMotion
 
 .. _Solutions:
 
