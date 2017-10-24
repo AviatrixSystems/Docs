@@ -1,16 +1,21 @@
 .. meta::
    :description: IPMotion
-   :keywords: IPMotion, AWS Server Migration Service
+   :keywords: IPMotion, AWS Server Migration Service, AWS Migration Hub
 
 
 ========================================================
-Integrate IPMotion and AWS Server Migration Service 
+Integrate IPMotion and AWS Migration Hub Service
 ========================================================
 
 
 
 1. Solution Overview
 ======================
+
+This document explains how to migrate an on-prem VM to AWS while preserving its IP address. The migration tools we use are 
+AWS Migration Hub service and Aviatrix IPmotion. By preserving its IP address of an on-prem VM after migrating
+to AWS, dependcies of this VM to other on-prems are automatically preserved, thus there is no need to . There is no need to updae on-prem security rules, AD, DNS and Load Balancers. 
+
 
 
 2. Configuration Workflow

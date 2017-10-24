@@ -1,14 +1,14 @@
 .. meta::
     :description: Using Aviatrix to Connect Azure to AWS or GCP
-    :keywords: Aviatrix, Azure, AWS, GCP
+    :keywords: Aviatrix, Azure, AWS, GCP, multi cloud
 
 ======================================================================
-Connecting Azure to AWS and GCP
+Multi Cloud: Connecting Azure to AWS and GCP
 ======================================================================
 
 Overview
 --------
-Companies are relying more and more on multiple cloud providers.  However, setting up the connectivity between those providers is difficult.  And, maintaining and monitoring the tunnels is time-consuming and cumbersome to troubleshoot.
+Companies are relying more and more on multiple cloud (multi cloud) providers.  However, setting up the connectivity between those providers is difficult.  And, maintaining and monitoring the tunnels is time-consuming and cumbersome to troubleshoot.
 
 Aviatrix simplifies this by providing simple, point-and-click tunnel creation between cloud providers.  Additionally, Aviatrix gives you a single, centralized location from which to troubleshoot and monitor your connections.
 
