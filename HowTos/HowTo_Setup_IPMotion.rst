@@ -16,7 +16,7 @@ This document describes how to migrate an on-prem VM to AWS while preserving its
 AWS Migration Hub service (AWS Server Migration Service) and Aviatrix IPmotion, where Aviatrix IPmotion feature enables IP address preservation after an VM is migrated to AWS via AWS Server Migration Service. 
 
 By preserving its IP address of an on-prem VM after migrating
-to AWS, dependcies of this VM to other on-prems are automatically preserved, thus there is no need to discover the dependencies for migration purpose. There is no need to updae on-prem security rules, AD, DNS and Load Balancers. 
+to AWS, dependencies of this VM to other on-prems are automatically preserved, thus there is no need to discover the dependencies for migration purpose. There is no need to update on-prem security rules, AD, DNS and Load Balancers. 
 
 
 
