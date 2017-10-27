@@ -51,20 +51,20 @@ Example logs:
 
 ::
 
-  Aug 17 22:07:39 ip-172-31-46-24 cloudx\_cli: ***AviatrixVPNSession***:
+  Aug 17 22:07:39 ip-172-31-46-24 cloudx\_cli: AviatrixVPNSession: 
   User=Splumo, Status=active, Gateway=splunksumo, GatewayIP=52.52.76.149,
-  VPNVirtualIP=192.168.0.6, Login=2016-08-17 22:07:38, Logout=N/A,
+  VPNVirtualIP=192.168.0.6, PublicIP=N/A, Login=2016-08-17 22:07:38, Logout=N/A,
   Duration=N/A, RXbytes=N/A, TXbytes=N/A
 
 **Disconnect log:**
 
 ::
 
-  Aug 17 22:26:37 ip-172-31-46-24 cloudx\_cli: ***AviatrixVPNSession***:
+  Aug 17 22:26:37 ip-172-31-46-24 cloudx\_cli: AviatrixVPNSession: 
   User=Splumo, Status=disconnected, Gateway=splunksumo,
-  GatewayIP=52.52.76.149, VPNVirtualIP=192.168.0.6, Login=2016-08-17
-  22:07:38, Logout=2016-08-17 22:26:37, Duration=0:0:18:59, RXbytes=2.1
-  MB, TXbytes=9.03 MB
+  GatewayIP=52.52.76.149, VPNVirtualIP=192.168.0.6, PublicIP=N/A,
+  Login=2016-08-17 22:07:38, Logout=2016-08-17 22:26:37, Duration=0:0:18:59,
+  RXbytes=2.1 MB, TXbytes=9.03 MB
 
 AviatrixUser:
 --------------
@@ -90,8 +90,8 @@ Two example logs:
   ***AviatrixUser***:IN= OUT=eth0 SRC=192.168.0.6 DST=10.100.0.2 LEN=66
   TOS=0x00 PREC=0x00 TTL=254 ID=13309 PROTO=UDP SPT=64775 DPT=53 LEN=46
 
-AviatrixLicenseUser:
---------------------
+AviatrixLicenseVPNUsers:
+-------------------------
 
 Logs with this prefix come from Controller and can be used to moniter 
 the license usage of active vpn users connected to all vpn gateways.
@@ -101,7 +101,9 @@ One example log:
 
 ::
 
-  Sep 25 23:40:19 ip-10-40-0-133 cloudxd: AviatrixLicenseVPNUsers:users=2
+  Sep 25 23:40:19 ip-10-40-0-133 cloudxd: AviatrixLicsenseVPNUsers: users=2
+
+.. note:: There is a typo in some versions (as noted in above example) that incorrectly shows this entry as `AviatrixLicsenseVPNUsers` instead of `AviatrixLicenseVPNUsers`.
 
 AviatrixRule:
 --------------
@@ -142,12 +144,12 @@ Two example logs:
 
 ::
 
-  May 17 00:23:17 ip-10-0-0-129 gwmon.py: ***AviatrixGwNetStats***:
+  May 17 00:23:17 ip-10-0-0-129 gwmon.py: AviatrixGwNetStats: 
   timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
   public\_ip=52.15.167.148 private\_ip=10.0.0.129 interface=eth0
   total\_rx\_rate=3.47Kb total\_tx\_rate=2.85Kb total\_rx\_tx\_rate=6.32Kb
 
-  May 17 00:28:17 ip-10-0-0-129 gwmon.py: ***AviatrixGwNetStats***:
+  May 17 00:28:17 ip-10-0-0-129 gwmon.py: AviatrixGwNetStats: 
   timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
   public\_ip=52.15.167.148 private\_ip=10.0.0.129 interface=eth0
   total\_rx\_rate=2.40Kb total\_tx\_rate=2.10Kb total\_rx\_tx\_rate=4.49Kb
@@ -164,11 +166,11 @@ Two example logs:
 
 ::
 
-  May 17 00:23:20 ip-10-0-0-129 gwmon.py: ***AviatrixGwSysStats***:
+  May 17 00:23:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
   timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
   cpu\_idle=100 memory\_free=237048 disk\_total=8115168 disk\_free=4665560
 
-  May 17 00:28:20 ip-10-0-0-129 gwmon.py: ***AviatrixGwSysStats***:
+  May 17 00:28:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
   timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
   cpu\_idle=100 memory\_free=237072 disk\_total=8115168 disk\_free=4665560
 
