@@ -187,6 +187,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Solutions/aviatrix_aws_meshVPC
    HowTos/openvpn_features
+   Solutions/build_zerotrust_cloud_network
 
 
 .. _Whitepapers:
