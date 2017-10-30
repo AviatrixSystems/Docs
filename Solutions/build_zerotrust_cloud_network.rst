@@ -40,11 +40,13 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 2. Policy driven connectivity with stateful firewall rules 
 ------------------------------------------------------------
 
- - The connectivity between VPCs and on-prem network should be policy driven. A network solution such as the AWS Global Transit Network with CSR is a nightmare from Zero Trust architecture point of view as all VPCs and on-prem is built into a full mesh network. In contrast,  
+ - The connectivity between VPCs and on-prem network should be policy driven. A network solution such as the AWS Global Transit Network with CSR is a opposite to Zero Trust architecture point of view as all VPCs and on-prem is built into a full mesh network. In contrast,  
  
  - `AWS Global Transit Network with Aviatrix <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_ meets Zero Trust architecture requirements where secure connection is established by organization policy. 
 
  - In addition to policy driven network connections, there must be firewall rules that govern data flow and reduce the connection scope. For example, you should consider place application and database in separate VPCs and setup a stateful firewall rule to only allow traffic initiated from application to access database, no the other way around. `Aviatrix gateway stateful firewall <http://docs.aviatrix.com/HowTos/gateway.html>`_ enforces and logs all network events. 
+
+ - Within a VPC, you can use AWS native security groups assoicated with instances to enforce policies for communications.
 
 
 3. User access with authentication and authorization
