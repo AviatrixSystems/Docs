@@ -50,7 +50,7 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 3. User access with authentication and authorization
 ------------------------------------------------------
 
-- Users access cloud resources must be first authenticated. Certificate only based authentication is a weak solution as certificate can be stolen. Another insecure access method is Jump Host or Bastion stations. Multi factor authentication such as integrating with LDAP/DUO/OKTA and client SAML Single Sign on significantly improves authentication strengths. However authentication alone is not sufficient, 
+- Users access cloud resources must be first authenticated. Certificate only based authentication is a weak solution as certificate can be stolen. Another insecure access method is Jump Host or Bastion stations. Multi factor authentication such as integrating with LDAP/DUO/OKTA and client SAML "Single Sign On" significantly improves authentication strengths. However authentication alone is not sufficient, 
 
 - Users access cloud resources must be authorized. The finer grained control you apply, the less literal movement a user can make even if accessing to the network is attained. With Zero Trust, you should only grant access to the required resources. 
 
