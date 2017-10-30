@@ -27,7 +27,7 @@ How to build a Zero Trust cloud network
 
  - Different business groups should have separate cloud accounts. 
 
- - The more the fine grained accounts the more segmentation goal is achieved.
+ - The more the fine grained accounts the more micro segmentation goal is achieved.
 
  - There should be zero connections among these networks by default. 
 
