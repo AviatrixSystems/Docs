@@ -20,7 +20,7 @@ prevent literal movement and always authenticate and authorize for all data acce
 How to build a Zero Trust cloud network 
 ======================================================
 
-1. Classify Data by Network Segmentation 
+1. Classify data by network segmentation 
 ------------------------------------------
 
  - Separating production data from dev and test is the first step. Give them separate cloud accounts is the best practice to ensure isolation. 
@@ -37,7 +37,7 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 `Aviatrix is a multi account platform <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ that enables you to manage all cloud accounts from a single pane of glass. 
 
 
-2. Policy Driven Connectivity with stateful firewall rules 
+2. Policy driven connectivity with stateful firewall rules 
 ------------------------------------------------------------
 
  - The connectivity between VPCs and on-prem network should be policy driven. A network solution such as the AWS Global Transit Network with CSR is a nightmare from Zero Trust architecture point of view as all VPCs and on-prem is built into a full mesh network. In contrast,  
