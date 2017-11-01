@@ -117,22 +117,22 @@ the table shown below.
 ===============================    ================================================================================
 **IPmotion Gateway Size**           **Max VMs can be migrated**
 ===============================    ================================================================================
-t2.micro                           1
-t2.small                           5
-t2.medium                          14
-m4.large                           17
-m4.xlarge                          55
-m4.2xlarge                         55
-m4.16xlarge                        231
-c3.large                           26
-c3.xlarge                          55
-c3.2xlarge                         55
-c3.4xlarge                         231
-c4.large                           26
-c4.xlarge                          55
-c4.2xlarge                         55
-c4.4xlarge                         231
-c4.8xlarge                         231
+t2.micro                           0
+t2.small                           2
+t2.medium                          9
+m4.large                           8
+m4.xlarge                          41
+m4.2xlarge                         41
+m4.16xlarge                        202
+c3.large                           17
+c3.xlarge                          41
+c3.2xlarge                         41
+c3.4xlarge                         202
+c4.large                           17
+c4.xlarge                          41
+c4.2xlarge                         41
+c4.4xlarge                         202
+c4.8xlarge                         202
 ===============================    ================================================================================
 
 
