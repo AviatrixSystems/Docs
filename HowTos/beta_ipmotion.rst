@@ -3,9 +3,9 @@
   :keywords: AWS Migration, DR, Disaster Recovery, aviatrix, Preserving IP address, IPmotion, ip motion
 
 
-=================================
-IPmotion Beta Instructions
-=================================
+============================================
+IPmotion Early Customer Trial  Instructions
+============================================
 
  1. **Get a trial license** Obtain a customer ID from Aviatrix support. Email to support@aviatrix.com
  #. **Read** `IPmotion Setup Instructions <http://docs.aviatrix.com/HowTos/ipmotion.html>`_
