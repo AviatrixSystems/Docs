@@ -11,7 +11,7 @@ Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets
 for mission critical application HA to public cloud. 
 
 The technology is described in the diagram below, 
-where an on-prem VM with IP address 172.16.0.11 is migrated to AWS
+where an on-prem VM with IP address 172.16.1.11 is migrated to AWS
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
