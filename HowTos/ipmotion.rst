@@ -10,7 +10,8 @@ IPmotion Setup Instructions
 Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to public cloud while preserving its IP address. It can also be used
 for mission critical application HA to public cloud. 
 
-The technology is described in the diagram below, where an on-prem VM with IP address 10.1.0.11 is migrated to AWS
+The technology is described in the diagram below, 
+where an on-prem VM with IP address 172.16.0.11 is migrated to AWS
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
@@ -203,10 +204,10 @@ Repeat Step 4 to migrate more VMs on this subnet.
 To migrate a VM in a different subnet, you need to launch a new virtual appliance CloudN on that subnet 
 and repeat all the steps described in this document. 
 
-For example, suppose you have created a VPC 10.16.0.0/16 and migrated subnet 10.1.0.0/24. Now you plan to migrate subnet 10.1.1.0/24. Follow these steps:
+For example, suppose you have created a VPC 172.16.0.0/16 and migrated subnet 162.16.1.0/24. Now you plan to migrate subnet 172.16.2.0/24. Follow these steps:
 
-- Go to AWS console to create a second public subnet 10.1.1.0/24 in VPC 10.16.0.0/16. 
-- Launch Aviatrix virtual appliance CloudN on subnet 10.1.1.0/24.
+- Go to AWS console to create a second public subnet 172.16.2.0/24 in VPC 172.16.0.0/16. 
+- Launch Aviatrix virtual appliance CloudN on subnet 172.16.2.0/24.
 - Repeat the steps listed in this document.  
 
 9. Post Migration
