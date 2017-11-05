@@ -3,7 +3,7 @@
    :keywords: controller high avalability, controller HA, AWS VPC peering
 
 ###################################
-Controller HA
+Controller Backup and Restore
 ###################################
 
 When deployed in a cloud environment, the Aviatrix controller, is not in the data path as packet processing and encryption is done by the Aviatrix gateways.
