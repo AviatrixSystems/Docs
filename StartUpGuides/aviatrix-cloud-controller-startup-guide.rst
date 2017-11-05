@@ -152,6 +152,10 @@ should be self-explanatory.
 An alert message will be displayed on the Dashboard menu when a new
 release becomes available.
 
+Controller HA
+=============
+
+
 Controller Monitoring
 ======================
 

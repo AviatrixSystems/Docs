@@ -122,6 +122,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Settings
 
    HowTos/controller_backup
+   HowTos/controller_ha
    HowTos/DataAnalSplunkSumo
 
 .. _Troubleshoot:
