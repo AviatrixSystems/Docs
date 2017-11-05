@@ -153,8 +153,9 @@ An alert message will be displayed on the Dashboard menu when a new
 release becomes available.
 
 Controller HA
-=============
+==============
 
+To enable controller HA in AWS, follow `the instructions here. <http://docs.aviatrix.com/HowTos/controller_ha.html>`_
 
 Controller Monitoring
 ======================

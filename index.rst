@@ -123,6 +123,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/controller_backup
    HowTos/controller_ha
+   HowTos/inline_upgrade
    HowTos/DataAnalSplunkSumo
 
 .. _Troubleshoot:
