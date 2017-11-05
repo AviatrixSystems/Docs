@@ -121,7 +121,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Settings
 
-   HowTos/Settings_Maintenance
+   HowTos/controller_backup
    HowTos/DataAnalSplunkSumo
 
 .. _Troubleshoot:
