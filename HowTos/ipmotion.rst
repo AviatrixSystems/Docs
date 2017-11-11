@@ -236,7 +236,7 @@ There are a few known limitations in the current release.
 
   - The maximum number of on-prem VMs can be migrated per subnet is 202.
 
-  - Aviatrix IPmotion solution is deployed on a per subnet bases, the maximum throughput per gateway is 1Gbps for IPSec performance.
+  - Aviatrix IPmotion solution is deployed on a per subnet bases, the maximum throughput per gateway is 1Gbps for IPSec performance. If connecting over private link such as Direct Connect, the performance is higher.  
 
  
 .. |image0| image:: ipmotion_media/ipmotion.png
