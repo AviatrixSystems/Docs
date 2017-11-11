@@ -120,6 +120,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/ipmotion
    HowTos/beta_ipmotion
    HowTos/HowTo_Setup_IPMotion
+   HowTos/design_pattern_ipmotion
 
 .. _Advanced Config:
 
