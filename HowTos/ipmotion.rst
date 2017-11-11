@@ -139,7 +139,7 @@ c4.4xlarge                         202
 c4.8xlarge                         202
 ===============================    ================================================================================
 
-The "Migrate Subnet" is the subnet that has the same CIDR as on-prem migrating subnet. "IPmotion Gateway Subnet" is the subnet where Aviatrix IPmotion gateway is deployed.
+The "Migrate Subnet" is the subnet that has the same CIDR as on-prem migrating subnet. "IPmotion Gateway Subnet" is the subnet where Aviatrix IPmotion gateway is deployed. Consult `Design Pattern <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_ for IPmotion subnet choice. 
 
 4. IPmotion Move
 ------------------
