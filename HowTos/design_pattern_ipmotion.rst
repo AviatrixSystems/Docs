@@ -13,6 +13,7 @@ IPmotion connects an on-prem subnet and a cloud subnet with identical CIDR block
 
 The cloud subnet can be a private subnet or a public subnet in AWS. 
 The connections can be over Internet or private links such as Direct Connect. There maybe multiple cloud subnets in one VPC with each on cloud subnet connects one on-prem subnet. 
+
 1. IPmotion over Internet
 --------------------------
 
