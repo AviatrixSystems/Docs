@@ -213,6 +213,22 @@ Example log:
   AviatrixTunnelStatusChange: src_gw=Oregon-DevOps-VPC(AWS us-west-2) 
   dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
 
+AviatrixCMD
+--------------------------
+
+Logs with this prefix come from controller whenever a CLI command is issued.  It contains
+information on the CLI command that was issued, the results of the execution, and reason
+message if there is a failure.
+
+Example log:
+------------------
+
+::
+
+  Nov 10 01:05:41 ip-172-31-6-24 cloudxd:
+  AviatrixCMD: action=ADD_TIME_SERVER, argv=['--rtn_file', '/run/shm/rtn1809376682',
+  'add_time_server', 'time2.google.com'], result=Success, reason=
+
 
 3. Logging Configuration at Aviatrix Controller
 ================================================
