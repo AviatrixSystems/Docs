@@ -57,6 +57,18 @@ A deployment diagram is shown below.
  |image-multi|
 
 
+4. IPmotion HA
+----------------
+
+The Aviatrix virtual appliance CloudN should be deployed in a vmware HA cluster for on-prem HA protection. 
+
+The IPmotion gateway is monitored by CloudN for gateway health. If the gateway 
+becomes unreachable, CloudN will stop the gateway instance and start it again. 
+The default gateway failure detection and failover time is 3 minutes. 
+You can change this setting 
+by going to CloudN console, Settings -> Advanced -> KeepAlive and change to different setting. 
+
+
 .. |image-internet| image:: ipmotion_media/ipmotion-internet.png
    :width: 5.55625in
    :height: 3.26548in
