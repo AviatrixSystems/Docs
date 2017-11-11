@@ -15,6 +15,8 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN`
+* :ref:`Security`
+* :ref:`IPmotion`
 * :ref:`Advanced Config`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
@@ -92,7 +94,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: OpenVPN
 
-   HowTos/uservpn
+   HowTos/ipmotion
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
    HowTos/DNSVPN
@@ -102,6 +104,24 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
+.. _Security:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Security
+
+   HowTos/FQDN_Whitelists_Ref_Design
+
+.. _IPmotion:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: IPmotion
+
+   HowTos/ipmotion
+   HowTos/beta_ipmotion
+   HowTos/HowTo_Setup_IPMotion
+
 .. _Advanced Config:
 
 .. toctree::
@@ -109,7 +129,6 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Advanced Config
 
    HowTos/Service_Chaining_Ref_Design
-   HowTos/FQDN_Whitelists_Ref_Design
    HowTos/EnvironmentStamping
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
@@ -177,9 +196,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
    HowTos/Competitive_CSR1000v
-   HowTos/ipmotion
-   HowTos/beta_ipmotion
-   HowTos/HowTo_Setup_IPMotion
 
 .. _Solutions:
 

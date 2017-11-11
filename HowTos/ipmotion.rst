@@ -7,7 +7,7 @@
 IPmotion Setup Instructions
 =================================
 
-Aviatrix IPmotion (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to public cloud while preserving its IP address. It can also be used
+`Aviatrix IPmotion <http://aviatrix.com/blog/aws-migration-made-safe-simple/>`_ (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to public cloud while preserving its IP address. It can also be used
 for mission critical application HA to public cloud. 
 
 The technology is described in the diagram below, 
@@ -19,11 +19,15 @@ Note the actual migration process is not included in this document. We assume yo
 
  |image0|
 
-Prerequisites
---------------
+Planning and Prerequisites
+---------------------------
 
  1. Identify an on-prem subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
- #.  Create a AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 172.16.0.0/16 with a public subnet 172.16.1.0/24. Note the migrated EC2 instances do not need to take public IP addresses.  
+ #.  Create a AWS VPC that has the same or larger CIDR block than the migrating subnet. 
+ #.  Determine if the migration is going to take place over Internet or private link such as Direct Connect. Also determine if the migrating subnet should be a private subnet or public subnet. 
+ #.  Create in the VPC a subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC 172.16.0.0/16 with a subnet 172.16.1.0/24. 
+      a. If the migrate subnet is a public subnet, this migrate subnet can also be used as the subnet to launch IPmotion gateway. 
+      #. If the migrate subnet is a private subnet, you need to create a separate subnet in the VPC that is not overlapping with your on-prem network address range for IPmotion gateway instance. If you are migrating over public Internet, the IPmotion gateway subnet needs to be on a public subnet. If you are migrating over private link such as Direct Connect, the IPmotion gateway subnet should be a private subnet point to AWS VGW.  
 
  #. Deploy Aviatrix virtual appliance CloudN in the on-premise subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. AWS reserves `five IP addresses <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-sizing-ipv4>`__ on a given subnet, make sure CloudN IP address is not any one of them. For example on a 172.16.1.0/24 subnet, 172.16.1.0-172.16.1.3 and 172.16.1.255 are reserved. 
 
@@ -111,7 +115,9 @@ the subnet, they are reserved by Aviatrix during migration phase.
 3. Launch IPmotion Gateway
 ----------------------------
 
-This step launches an Aviatrix IPmotion gateway and builds an encrypted IPSEC tunnel between the two subnets. 
+This step launches an Aviatrix IPmotion gateway and builds an tunnel 
+(IPSEC tunnel if the connection is over Internet, direct tunnel if the connection is over Direct Connect.) 
+between the two subnets. 
 Note the IPmotion gateway size reflects how many on-prem VMs can be supported, as 
 the table shown below.
 
@@ -136,6 +142,7 @@ c4.4xlarge                         202
 c4.8xlarge                         202
 ===============================    ================================================================================
 
+The "Migrate Subnet" is the subnet that has the same CIDR as on-prem migrating subnet. "IPmotion Gateway Subnet" is the subnet where Aviatrix IPmotion gateway is deployed.
 
 4. IPmotion Move
 ------------------
