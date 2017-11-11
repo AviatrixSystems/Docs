@@ -80,7 +80,7 @@ You can optimize the list by making sure only the running VMs are being specifie
       172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20
 
 
-Currently the largest number of VMs that a CloudN can handle on a subnet is 231 which requires a c4.4xlarge IPmotion gateway instance size. This number of VMs can be expanded in the future release. 
+Currently the largest number of VMs that a CloudN can handle on a subnet is 202 which requires a c4.4xlarge IPmotion gateway instance size. This number of VMs can be expanded in the future release. 
 
 (You can further optimize the list for the on-prem part by specifying only the 
 dependent VMs. 
@@ -234,7 +234,7 @@ There are a few known limitations in the current release.
 
   - VPC CIDR cannot be 192.168.0.0/16. In the 192.168.0.0 range, the largest CIDR is 192.168.0.0/17. 
 
-  - The maximum number of on-prem VMs can be migrated per subnet is 231.
+  - The maximum number of on-prem VMs can be migrated per subnet is 202.
 
   - Aviatrix IPmotion solution is deployed on a per subnet bases, the maximum throughput per gateway is 1Gbps for IPSec performance.
 

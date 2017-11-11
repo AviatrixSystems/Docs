@@ -40,12 +40,12 @@ Note at the Destination field, you can enter network, IP address or host name. W
 High Availability
 -------------------
 
-There are two types of high availabiity on Aviatrix: "Gateway for High Avalability" and "Gateway for High Availability Peering". 
+There are two types of high availabiity on Aviatrix: "Gateway for High Availability" and "Gateway for High Availability Peering". 
 
 
-"Gateway for High Avalability Peering" is used for "Enable HA" field at Encrypted Peering configuration. 
+"Gateway for High Availability Peering" is used for "Enable HA" field at Encrypted Peering configuration. 
 
-"Gateway for High Avalability" is used when you need HA for a Transitive Peering. 
+"Gateway for High Availability" is used when you need HA for a Transitive Peering. 
 
 Gateway Size
 -------------
