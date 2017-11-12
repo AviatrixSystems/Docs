@@ -15,7 +15,9 @@ where an on-prem VM with IP address 172.16.1.11 is migrated to AWS
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
-Note the actual migration process is not included in this document. We assume you have tools, for example, `AWS Migration Hub <https://aws.amazon.com/migration-hub/>`_ to migrate on-prem VMs to public cloud. 
+Note the actual migration process is not included in this document. We assume you have tools, for example, `AWS Migration Hub <https://aws.amazon.com/migration-hub/>`_ to migrate on-prem VMs to public cloud. We also provide an `example <http://docs.aviatrix.com/HowTos/HowTo_Setup_IPMotion.html>`_ that demonstrates how to migrate a VM by combining AWS Server Migration Service and IPmotion. 
+
+
 
  |image0|
 

@@ -48,7 +48,10 @@ These prerequisites are explained in detail below.
 2.1.1  Plan the Cloud Address and create an AWS VPC
 ---------------------------------------------------
 
+
 First identify the on-prem subnet from which you plan to migrate VMs. In this example, the subnet is 10.140.0.0/16 with two On-Prem VMs (10.140.0.45 and 10.140.0.46.) 
+
+(In this illustration, the cloud subnet is a public subnet. There are other `design patterns <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_ you can follow.)
 
 Then create an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that it is not neccessary for the migrated VMs to have public IP addresses. 
 
