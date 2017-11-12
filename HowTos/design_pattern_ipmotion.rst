@@ -69,6 +69,11 @@ You can change this setting
 by going to CloudN console, Settings -> Advanced -> KeepAlive and change to different setting. 
 
 
+5. Simultaneously migrate multiple VMs on multiple subnets
+------------------------------------------------------------- 
+
+You can simultaneously migrate multiple VMs on multiple subnets. Deploy multiple Aviatrix virtual appliance CloudN, build connections. You can move on-prem IP addresses to Staging state before AWS AMI is ready, as long as you do not power down the on-prem corresponding VM (meaning the on-prem VM is still in operational state.) 
+
 .. |image-internet| image:: ipmotion_media/ipmotion-internet.png
    :width: 5.55625in
    :height: 3.26548in
