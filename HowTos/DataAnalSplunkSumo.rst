@@ -223,6 +223,8 @@ message if there is a failure.
 Example log:
 ------------------
 
+.. highlight:: none
+
 ::
 
   Nov 10 01:05:41 ip-172-31-6-24 cloudxd:
