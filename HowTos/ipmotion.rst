@@ -64,7 +64,7 @@ and you plan to move all running VMs to cloud, then specify this range for Step 
 
       172.16.1.10-172.16.1.20
 
-.. Note:: the on-prem IP address format must have a "-" in the list even when it is a single IP address. Spcifiy multiple list by separting them with a comma. 
+.. Note:: the on-prem IP address format could be a single IP address or a range of IP addresses using a "-" in the list. Spcifiy multiple list by separting them with a comma.  Example: 172.16.1.10-172.16.1.20, 172.16.1.30
 
 ..
 
@@ -72,11 +72,11 @@ Note the larger this list is, the larger IPmotion gateway instance size needs to
 The reason is that IPmotion gateway needs to allocate private IP addresses from AWS
 for any on-prem VMs. 
 
-You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify a multiple range separating by a comma: 172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20. 
+You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify a multiple range separating by a comma: 172.16.1.10,172.16.1.12-172.16.1.20. 
 
     ::
      
-      172.16.1.10-172.16.1.10,172.16.1.12-172.16.1.20
+      172.16.1.10,172.16.1.12-172.16.1.20
 
 
 Currently the largest number of VMs that a CloudN can handle on a subnet is 202 which requires a c4.4xlarge IPmotion gateway instance size. This number of VMs can be expanded in the future release. 
@@ -88,11 +88,11 @@ For example, the CloudN is deployed on subnet 172.16.1.0/24. On this subnet, IP 
 IP addresses of VMs that are to remain on the subnet but need to 
 communicate with migrated VMs are in the range 172.16.1.50-172.16.1.70
 then you should enter 
-172.16.1.10-172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70)
+172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70)
 
   ::
 
-   172.16.1.10-172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70
+   172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70
 
 
 2. Reserve IPmotion Gateway IP Address List
