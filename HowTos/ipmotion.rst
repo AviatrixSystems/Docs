@@ -64,7 +64,7 @@ and you plan to move all running VMs to cloud, then specify this range for Step 
 
       172.16.1.10-172.16.1.20
 
-.. Note:: the on-prem IP address format could be a single IP address or a range of IP addresses using a "-" in the list. Spcifiy multiple list by separting them with a comma.  Example: 172.16.1.10-172.16.1.20, 172.16.1.30
+.. Note:: the on-prem IP address format could be a single IP address or a range of IP addresses using a "-" in the list. Specifiy multiple ranges of IP addresses by separting them with a comma.  Example: 172.16.1.10-172.16.1.20, 172.16.1.30, 172.16.1.120-172.16.1.130
 
 ..
 
