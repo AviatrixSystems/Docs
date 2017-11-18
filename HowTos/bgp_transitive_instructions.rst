@@ -2,6 +2,9 @@
    :description: BGP, transitive peering, Peering
    :keywords: BGP, transitive peering, Aviatrix inter region peering, inter cloud peering
 
+============================================
+Transit Network with BGP Setup Instructions
+===========================================
 
 Introduction
 =============
