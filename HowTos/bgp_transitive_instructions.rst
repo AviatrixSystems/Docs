@@ -6,13 +6,24 @@
 Introduction
 =============
 
+`Aviatrix Services Architecture <http://aviatrix.com/blog/architectural-evolution-networking-public-cloud/>`_ builds automated and scalable network architecture for the cloud, 
+as shown in the diagram below. Key characteristics in architecture: 
+
+ - Spoke VPC to Spoke VPC networking is direct without going through the Transit VPC and is orchestrated by the central controller. 
+ - BGP runs between the gateway in the Transit VPC and AWS VGW to faciliate communication between Spoke VPC and on-prem. The idea is you need to configure on-prem connectivity to VGW once and there is no need again when new Spoke VPC is stood up.  
+
+|image0|
+
 This guide provides instructions on how to enable BGP for a Transit VPC solution. 
 Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect. 
 
 Deploymnet Steps
 =================
 
-1. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network.
+1. Establish BGP between Aviatrix Gateway and VGW in Transit VPC
+-------------------------------------------------------------------
+
+a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network.
 
 #. Launch Aviatrix Gateway in the Transit VPC.
 
@@ -80,7 +91,10 @@ Deploymnet Steps
 
    - View “Remote Subnet”, this is on-prem network obtained through route exchange between.
 
-#. At a Spoke VPC, launch an Aviatrix Gateway.
+2. Connect Spoke VPC to on-prem
+---------------------------------
+
+a. At a Spoke VPC, launch an Aviatrix Gateway.
 
 #. At Controller console, Peering -> Encrypted Peering, create peering between Aviatrix Gateways at spoke VPC and Transit VPC.
 
@@ -92,8 +106,18 @@ Deploymnet Steps
 
    - Destination CIDR: on-prem network displayed at Site2Cloud -> "Remote Subnet"
 
-#. At Controller's Site2Cloud page, select the site2cloud connection created above. At "BGP Advertise Networks" field, append Spoke VPC's CIDR to the list.
+#. At Controller's Site2Cloud page, select the Site2Cloud connection created above by Aviatrix gateway at Transit VPC with BGP. At "BGP Advertised Networks" field, append Spoke VPC's CIDR to the list.
 
-#. Repeat Step 10 - Step 13 for each Spoke VPC connected to Transit VPC.
+#. Repeat the above section for each Spoke VPC connected to Transit VPC.
 
+Release 3.0 Limitations
+========================
+
+1. You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller Advanced -> BGP page. 
+
+#. When a new Spoke VPC is created, you need to edit the advertised network by Aviatrix Gateway. Go to Site2Cloud, select the connection to VGW, enter the complete list for the filed BGP Advertised Networks.
+
+.. |image0| image:: bgp_media/servicearchitecture.png
+   :width: 5.55625in
+   :height: 3.26548in
 .. disqus::
