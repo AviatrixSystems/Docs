@@ -41,6 +41,8 @@ You should a list of gateways the Controller manages. Highlight a gateway and cl
 To configure security policies, select a Base Policy. Base Policy is the always attached as the 
 last rule as a catch all policy. 
 
+Select `Enable Packet Logging` if you want to forward logs to well known log management systems, such as Splunk, Sumo Logic, Elastic Search and remote syslog.
+
 Click Add New, you can specify Source by manually enter a specific CIDR, you can also click the 
 table icon to select one of the tags you created earlier. 
 
