@@ -68,6 +68,8 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 
    - Remote AS Number: "IPSec Tunnel #1"->"Border Gateway Protocol (BGP) Configuration"->"Virtual Private Gateway ASN" from 'Configuration Template'
 
+|image1|
+
    - CGW Inside IP Address: "IPSec Tunnel #1"->"Tunnel Interface Configuration"->"Inside IP Addresses"->"Customer Gateway" from 'Configuration Template'
 
    - VGW Inside IP Address: "IPSec Tunnel #1"->"Tunnel Interface Configuration"->"Inside IP Addresses"->"Virtual Private Gateway" from 'Configuration Template'
@@ -121,6 +123,9 @@ Release 3.0 Limitations
 #. When a new Spoke VPC is created, you need to edit the advertised network by Aviatrix Gateway. Go to Site2Cloud, select the connection to VGW, enter the complete list for the filed BGP Advertised Networks.
 
 .. |image0| image:: bgp_media/servicearchitecture.png
+   :width: 5.55625in
+   :height: 3.26548in
+.. |image1| image:: bgp_media/VGW_ASN.gif
    :width: 5.55625in
    :height: 3.26548in
 .. disqus::
