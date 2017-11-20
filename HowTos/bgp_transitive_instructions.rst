@@ -125,7 +125,9 @@ Release 3.0 Limitations
 .. |image0| image:: bgp_media/servicearchitecture.png
    :width: 5.55625in
    :height: 3.26548in
+
 .. |image1| image:: bgp_media/VGW_ASN.png
    :width: 5.55625in
    :height: 3.26548in
+
 .. disqus::
