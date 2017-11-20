@@ -126,7 +126,7 @@ Release 3.0 Limitations
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image1| image:: bgp_media/VGW_ASN.png
+.. |image1| image:: bgp_media/VGW_ASN.PNG
    :width: 5.55625in
    :height: 3.26548in
 
