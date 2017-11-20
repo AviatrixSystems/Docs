@@ -26,7 +26,7 @@ Deploymnet Steps
 1. Establish BGP between Aviatrix Gateway and VGW in Transit VPC
 -------------------------------------------------------------------
 
-a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network.
+a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network. Follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. 
 
 #. Launch Aviatrix Gateway in the Transit VPC.
 
@@ -126,9 +126,8 @@ a. At a Spoke VPC, launch an Aviatrix Gateway.
 Release 3.0 Limitations
 ========================
 
-1. You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller Advanced -> BGP page. 
+You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller Advanced -> BGP page. 
 
-#. When a new Spoke VPC is created, you need to edit the advertised network by Aviatrix Gateway. Go to Site2Cloud, select the connection to VGW, enter the complete list for the filed BGP Advertised Networks.
 
 .. |image0| image:: bgp_media/servicearchitecture.png
    :width: 5.55625in
