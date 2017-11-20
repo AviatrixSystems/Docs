@@ -10,15 +10,15 @@ Introduction
 =============
 
 `Aviatrix Services Architecture <http://aviatrix.com/blog/architectural-evolution-networking-public-cloud/>`_ builds automated and scalable network architecture for the cloud, 
-as shown in the diagram below. Key characteristics in architecture: 
+as shown in the diagram below. Key characteristics in this architecture: 
 
- - Spoke VPC to Spoke VPC networking is direct without going through the Transit VPC and is orchestrated by the central controller. 
+ - Spoke VPC to Spoke VPC networking is direct without going through the Transit VPC and is orchestrated by the central controller. Spoke VPCs do not run BGP protocol.
  - BGP runs between the gateway in the Transit VPC and AWS VGW to faciliate communication between Spoke VPC and on-prem. The idea is you need to configure on-prem connectivity to VGW once and there is no need again when new Spoke VPC is stood up.  
 
 |image0|
 
 This guide provides instructions on how to enable BGP for a Transit VPC solution. 
-Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect. 
+Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect or Internet. 
 
 Deploymnet Steps
 =================
@@ -26,7 +26,7 @@ Deploymnet Steps
 1. Establish BGP between Aviatrix Gateway and VGW in Transit VPC
 -------------------------------------------------------------------
 
-a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network. Follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. 
+a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network. Follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. For IPSEC configuration, refer to `this doc <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html>`_ for IPSEC over Internet configuration guide.
 
 #. Launch Aviatrix Gateway in the Transit VPC.
 
