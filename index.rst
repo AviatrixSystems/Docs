@@ -198,6 +198,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
    HowTos/Competitive_CSR1000v
+   HowTos/aviatrix_terraform
 
 .. _Solutions:
 
