@@ -7,9 +7,7 @@ Aviatrix Terraform Provider
 ===========================
 Aviatrix terraform provider is used to interact with Aviatrix resources.
 
-The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with the proper credentials before it can be used.
-
-Use the navigation to the left to read about the available resources.
+The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials.
 
 Example Usage
 =============
@@ -28,8 +26,12 @@ Example Usage
 	  # ...
 	}
 
+Resources
+=========
+Use the navigation to the left to read about the available resources, along with their examples. More resources will be added in future.
+
 aviatrix_account
-================
+----------------
 Manages an Aviatrix cloud account.
 
 **Example Usage**
@@ -47,7 +49,7 @@ Manages an Aviatrix cloud account.
 	  account_name = "username"
 	  account_password = "password"
 	  account_email = "abc@xyz.com"
-	  cloud_type = "1"
+	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_iam = "true"
 	  aws_role_arn = "arn:aws:iam::123456789012:role/aviatrix-role-app"
@@ -59,7 +61,7 @@ Manages an Aviatrix cloud account.
 	  account_name = "username"
 	  account_password = "password"
 	  account_email = "abc@xyz.com"
-	  cloud_type = "1"
+	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_access_key = "ABCDEFGHIJKL"
 	  aws_secret_key = "ABCDEFGHIJKLabcdefghijkl"
@@ -67,7 +69,7 @@ Manages an Aviatrix cloud account.
 
 
 aviatrix_gateway
-================
+----------------
 Manages an Aviatrix gateway
 
 **Example Usage**
@@ -90,7 +92,7 @@ Manages an Aviatrix gateway
 	}
 
 aviatrix_tunnel
-===============
+----------------
 Manages an Aviatrix tunnel
 
 **Example Usage**
@@ -108,7 +110,7 @@ Manages an Aviatrix tunnel
 	}
 
 aviatrix_transpeer
-==================
+------------------
 Manages an Aviatrix transitive peering
 
 **Example Usage**
