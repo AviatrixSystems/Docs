@@ -150,7 +150,7 @@ Release 3.0 Limitations
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image5| image:: bgp_media/Pre_shared.PNG
+.. |image5| image:: bgp_media/Pre-shared.PNG
    :width: 5.55625in
    :height: 3.26548in
 
