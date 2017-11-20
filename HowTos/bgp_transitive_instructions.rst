@@ -72,7 +72,11 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 
    - CGW Inside IP Address: "IPSec Tunnel #1"->"Tunnel Interface Configuration"->"Inside IP Addresses"->"Customer Gateway" from 'Configuration Template'
 
+   |image2|
+
    - VGW Inside IP Address: "IPSec Tunnel #1"->"Tunnel Interface Configuration"->"Inside IP Addresses"->"Virtual Private Gateway" from 'Configuration Template'
+
+   |image3|
 
    - Advertise Network: Transit VPC CIDR
   
@@ -82,7 +86,11 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 
    - Remote Gateway IP Address: "IPSec Tunnel #1"->"Tunnel Interface Configuration"->"Outside IP Addresses"->"Virtual Private Gateway" from 'Configuration Template'
 
+   |image4|
+
    - Pre-shared Key: "IPSec Tunnel #1"->"Internet Key Exchange Configuration"->"Pre-Shared Key" from 'Configuration Template'
+
+   |image5|
 
 #. At Controller console, Advanced Config -> BGP:
 
@@ -127,6 +135,22 @@ Release 3.0 Limitations
    :height: 3.26548in
 
 .. |image1| image:: bgp_media/VGW_ASN.PNG
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image2| image:: bgp_media/CGW_IP.PNG
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image3| image:: bgp_media/VGW_IP.PNG
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image4| image:: bgp_media/VGW_Public_IP.PNG
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image5| image:: bgp_media/Pre_shared.PNG
    :width: 5.55625in
    :height: 3.26548in
 
