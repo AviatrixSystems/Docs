@@ -123,6 +123,20 @@ a. At a Spoke VPC, launch an Aviatrix Gateway.
 
 #. Repeat the above section for each Spoke VPC connected to Transit VPC.
 
+Building HA Transport Links
+===========================
+
+There are multiple patterns to build HA in the transport link. AWS VGW can be used to 
+create two Direct Connect links, two IPSEC over Internet links and one Direct Connect and 
+one IPSEC over Internet links. Refer to `this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for details.
+
+BGP Troubleshooting
+===================
+
+Aviatrix BGP is implemented based on Quagga open source software. You can get debugging 
+information at Controller console. Advanced Config -> BGP -> Diagnostic. 
+
+
 Release 3.0 Limitations
 ========================
 
