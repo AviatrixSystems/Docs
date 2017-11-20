@@ -9,18 +9,18 @@ Transit Network with BGP Setup Instructions
 Introduction
 =============
 
-`Aviatrix Services Architecture <http://aviatrix.com/blog/architectural-evolution-networking-public-cloud/>`_ builds automated and scalable network architecture for the cloud, 
-as shown in the diagram below. Key characteristics in this architecture: 
+`Aviatrix Services Architecture <http://aviatrix.com/blog/architectural-evolution-networking-public-cloud/>`_ builds automated and scalable network architecture for the cloud,
+as shown in the diagram below. Key characteristics in this architecture:
 
  - Spoke VPC to Spoke VPC networking is direct without going through the Transit VPC and is orchestrated by the central controller. Spoke VPCs do not run BGP protocol.
- - BGP runs between the gateway in the Transit VPC and AWS VGW to faciliate communication between Spoke VPC and on-prem. The idea is you need to configure on-prem connectivity to VGW once and there is no need again when new Spoke VPC is stood up.  
+ - BGP runs between the gateway in the Transit VPC and AWS VGW to faciliate communication between Spoke VPC and on-prem. The idea is you need to configure on-prem connectivity to VGW once and there is no need again when new Spoke VPC is stood up.
 
 |image0|
 
-This guide provides instructions on how to enable BGP for a Transit VPC solution. 
-Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect or Internet. 
+This guide provides instructions on how to enable BGP for a Transit VPC solution.
+Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect or Internet.
 
-Deploymnet Steps
+Deployment Steps
 =================
 
 1. Establish BGP between Aviatrix Gateway and VGW in Transit VPC
@@ -35,11 +35,11 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
    - Routing: Dynamic
 
    - IP Address: Public IP of Aviatrix Gateway
- 
+
 #. Create AWS VPN Connection in Transit VPC with the following configuration:
 
    - Virtual Private Gateway: VGW in Transit VPC
-  
+
    - Customer Gateway: CGW created above
 
    - Routing Options: Dynamic (requires BGP)
@@ -51,13 +51,13 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 #. Create Site2Cloud tunnel on Aviatrix Gateway to work with AWS VGW with the following configuration:
 
    - VPC ID/VNet Name: Transit VPC ID
-   
+
    - Connection Type: Unmapped
 
    - Connection Name: Any name
 
    - Remote Gateway Type: AWS VGW
- 
+
    - Tunnel Type: UDP
 
    - Algorithms: Deselected
@@ -79,7 +79,7 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
    |image3|
 
    - Advertise Network: Transit VPC CIDR
-  
+
    - Enable HA: Deselected
 
    - Primary Cloud Gateway: Aviatrix Gateway in Transit VPC
@@ -95,12 +95,12 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 #. At Controller console, Advanced Config -> BGP:
 
    - Edit "Local AS Num" if required
-   
+
    - Enable "BGP"
 
 #. At Controller's Site2Cloud page:
 
-   - Make sure site2cloud tunnel is up and working 
+   - Make sure site2cloud tunnel is up and working
 
    - View “Remote Subnet”, this is on-prem network obtained through route exchange between.
 
@@ -126,21 +126,21 @@ a. At a Spoke VPC, launch an Aviatrix Gateway.
 Building HA Transport Links
 ===========================
 
-There are multiple patterns to build HA in the transport link. AWS VGW can be used to 
-create two Direct Connect links, two IPSEC over Internet links and one Direct Connect and 
+There are multiple patterns to build HA in the transport link. AWS VGW can be used to
+create two Direct Connect links, two IPSEC over Internet links and one Direct Connect and
 one IPSEC over Internet links. Refer to `this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for details.
 
 BGP Troubleshooting
 ===================
 
-Aviatrix BGP is implemented based on Quagga open source software. You can get debugging 
-information at Controller console. Advanced Config -> BGP -> Diagnostic. 
+Aviatrix BGP is implemented based on Quagga open source software. You can get debugging
+information at Controller console. Advanced Config -> BGP -> Diagnostic.
 
 
 Release 3.0 Limitations
 ========================
 
-You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller Advanced -> BGP page. 
+You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller Advanced -> BGP page.
 
 
 .. |image0| image:: bgp_media/servicearchitecture.png
