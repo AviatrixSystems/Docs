@@ -5,13 +5,13 @@
 |image0|
 
 ###################################################
-AWS Global Transit Network  
+AWS Global Transit Network
 ###################################################
 
 AWS Reference Deployment Guide
 ==============================
 
-This document is published by AWS Answers for `AWS Global Transit Network <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ as Partner Offering. 
+This document is published by AWS Answers for `AWS Global Transit Network <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ as Partner Offering.
 
 
 1  Overview
@@ -29,28 +29,7 @@ communication between the Spoke VPCs and on-prem network.
 
 |image1|
 
-2  Comparing with AWS Global Transit Network Solution with CSR1000v 
-====================================================================
-
-**Simplicity** No Cisco CCIE, BGP, VRF and IPSEC domain expertise requried. The Aviatrix central controller builds and manages your network with software defined routing and point and click solutions deploying in minutes.
-
-**No Double Egress Charge** Aviatrix supports direct Spoke VPC to Spoke VPC connectivity without going through transit VPC to encure twice the egress network charge. 
-
-**Isolation By Design** AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With Aviatrix solution no connecitvity is established untill you specify.  
-
-**Highly Available** Built-in gateway redundancy supports hot standby
-and fail over in seconds.
-
-**Scalable**  No limits on the number of spoke VPCs can be connected to on-prem via hub VPC. Aviatrix Designated Gateway summarizes all routes. Gateways can scale-up, scale-down or scale-out with a few clicks.
-
-**Visibility** Central dashboard monitors, displays and alerts link
-status and link latency.
-
-**Additional Benefits** Stateful firewall at the gateway to enforce
-security policies. OpenVPN based user access allows end to end cloud
-network solution. For more details, check out docs.aviatrix.com.
-
-3  Pre Configuration Checklist
+2  Pre Configuration Checklist
 ==============================
 
 Before configuring user VPC peering, make sure the following is
@@ -64,7 +43,7 @@ completed.
 
 These prerequisites are explained in detail below.
 
-3.1  Deploy the Aviatrix Controller
+2.1  Deploy the Aviatrix Controller
 -----------------------------------
 
 The Aviatrix Controller must be deployed and setup prior to configuring
@@ -80,7 +59,7 @@ Controller is:
 
 https://<public ip of Aviatrix Controller>
 
-3.2  Check VPC Settings
+2.2  Check VPC Settings
 -----------------------
 
 -   The VPC must have at least one public subnet to deploy the gateway.
@@ -91,7 +70,7 @@ https://<public ip of Aviatrix Controller>
     route the traffic over AWS peering, go to AWS console and configure
     the necessary AWS peering between the two VPCs.
 
-4 Configuration Steps
+3 Configuration Steps
 =====================
 
 Make sure the pre-configuration steps in the previous section is
@@ -108,10 +87,10 @@ and spoke VPC in US-EAST1. The corporate data center is located in
 California. The system will be configured such that all spoke nodes and
 sites will be able to communicate with each other via the transit VPC.
 
-.. tip:: For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypte Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC.  
+.. tip:: For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypted Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC.
 
 
-4.1 Step 1 – Deploy Gateways
+3.1 Step 1 – Deploy Gateways
 ----------------------------
 
 The first step is to deploy Aviatrix gateways in each VPC.
@@ -143,7 +122,7 @@ VPN Access         Uncheck this box
 
 3.  Done
 
-4.2  Step 2 – Connect Spoke VPC to Transit VPC
+3.2  Step 2 – Connect Spoke VPC to Transit VPC
 ---------------------------------------------------
 
 
@@ -151,8 +130,8 @@ This step explains how to connect a spoke VPC to the transit VPC.
 
 
 ::
-  
-  For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypte Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC. 
+
+  For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypte Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC.
 
 
 **Instructions:**
@@ -178,7 +157,7 @@ This step explains how to connect a spoke VPC to the transit VPC.
 
 7.  Done
 
-4.3  Step 3 – Connect Corporate Data Center to Transit VPC
+3.3  Step 3 – Connect Corporate Data Center to Transit VPC
 ----------------------------------------------------------
 
 This step explains how to connect the corporate data center to the
@@ -219,7 +198,7 @@ transit VPC
 
 6.  Done
 
-4.4  Step 4 – Configure Transitive Routing
+3.4  Step 4 – Configure Transitive Routing
 ------------------------------------------
 
 This step explains how to configure transitive routing so that every
@@ -261,20 +240,39 @@ spoke and site node can communicate with each other via the transit VPC.
 
 3.  Done
 
+Appendix -  Comparing Aviatrix Global Transit Network Solution with CSR1000v Solution
+=========================================================================================
+
+Aviatrix Solution has the following benefits compared to CSR1000v:
+
+**Simplicity** No Cisco CCIE, BGP, VRF and IPSEC domain expertise required. The Aviatrix central controller builds and manages your network with software defined routing and point and click solutions deploying in minutes.
+
+**No Double Egress Charge** Aviatrix supports direct Spoke VPC to Spoke VPC connectivity without going through transit VPC which incurs in twice the egress network charges.
+
+**Isolation By Design** AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With Aviatrix solution no connecitvity is established untill you specify.
+
+**Highly Available** Built-in gateway redundancy supports hot standby
+and fail over in seconds.
+
+**Scalable**  No limits on the number of spoke VPCs can be connected to on-prem via hub VPC. Aviatrix Designated Gateway summarizes all routes. Gateways can scale-up, scale-down or scale-out with a few clicks.
+
+**Visibility** Central dashboard monitors, displays and alerts link
+status and link latency.
+
+**Additional Benefits** Stateful firewall at the gateway to enforce
+security policies. OpenVPN based user access allows end to end cloud
+network solution. For more details, check out docs.aviatrix.com.
+
 
 .. |image0| image:: media/image1.png
    :width: 3.5in
    :height: 0.5in
 
-.. |image1| image:: media/Transit1.png
-   :width: 6in
-   :height: 4in
+.. |image1| image:: media/Transit.png
    :scale: 100%
 
-.. |image2| image:: media/image5.png
-   :width: 7in
-   :height: 4in
-   :scale: 150%
+.. |image2| image:: media/DocArchitecture.png
+   :scale: 100%
 
 .. |image6| image:: media/image6.png
    :width: 7in
