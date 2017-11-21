@@ -5,7 +5,7 @@
 ===========================
 Aviatrix Terraform Provider
 ===========================
-Aviatrix terraform provider is used to interact with Aviatrix resources.
+Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `link <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for details on setting up Aviatrix terraform provider on your system.
 
 The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials.
 
