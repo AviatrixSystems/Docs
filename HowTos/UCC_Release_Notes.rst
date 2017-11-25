@@ -2,6 +2,49 @@
 Release Notes
 =======================================
 
+R3.0 (11/282017)
+================
+
+1. Connectivity
+---------------
+
+- Support BGP interoperability between Aviatrix gateway with AWS VGW. For use case details, check out `the Transit Network with BGP Setup Instructions. <http://docs.aviatrix.com/HowTos/bgp_transitive_instructions.html>`_.
+
+- Support IPmotion for AWS migration and DR use case that allows a migrating VM moved to AWS without changing its IP address. For use case and details, check out `this link. <http://docs.aviatrix.com/HowTos/ipmotion.html?highlight=ip%20motion>`_.
+
+- Support Azure ARM in China region.
+
+- Support AWS ENA on Aviatrix gateway. 
+
+2. Security
+-----------
+
+- Support tag based security policies that allow user to associate a CIDR with a name tag and thus are more user friendly. For configuration detail, check `this link. <http://docs.aviatrix.com/HowTos/tag_firewall.html?highlight=tag>`_
+
+- Support AES-GCM crypto algorithm. For IPSEC tunnel connectivity between two Aviatrix gateways, such as Aviatrix peering and IPmotion, the crypto algorithm has been upgraded to AES-GCM.
+
+
+3. Controller
+--------------
+
+- Support customize controller names. To customize, click "You controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
+
+- Support multiple copies for Controller configuration file backup. You can choose to backup multiple copies of configuration file. To do so, go to Settings -> Maintenance -> Backup & Restore and select Multiple Backup. Up to 3 backup files are stored. You can select any one of them to restore. 
+
+
+4. Modular Configuration
+-------------------------
+
+- Allow multiple subnets to be added for transitive peering. Multiple subnets separated by comma can be added once when configuring transitive peering.
+
+5. Troubleshooting
+-------------------
+
+- First release of FlightPath, an AWS EC2 to EC2 connectivity troubleshooting tool. In the first release, EC2 related resources, such as security groups, route table and Network ACLs are displayed side by side for easy visualization and troubleshooting. 
+
+
+
+
 R2.7
 ==========
 
