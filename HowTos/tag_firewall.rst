@@ -11,7 +11,7 @@ Aviatrix gateway security policies is implemented at each gateway, key features 
  * It is a L4 stateful firewall that filters on CIDR, protocol and port. 
  * Each policy is assoicated with "Allow" or "Deny" action.
  * A Base policy for "Allow" or "Deny" for the gateway can be used as a catch all rule.  
- * All security policy events as well as packets can be logged to Splunk, SumoLogic, rSyslog, ELK and Datadog. 
+ * All security policy events as well as packets can be logged to Splunk, SumoLogic, Syslog, ELK and Datadog. 
 
 Starting with release 3.0, A tag mechanism has been introduced to make the security policy specification more user friendly. You can associate an IP address or a subnet with a name tag and use it as a shorthand to specify the source and destination for your security rules.
 
@@ -20,7 +20,7 @@ Starting with release 3.0, A tag mechanism has been introduced to make the secur
 
 You give a tag a name and a list of one or more network addresses. The network address can be a subnet or a host IP address. Security -> Stateful Firewall -> Tag Management -> Add New
 
-A tag is a global resource to the Aviatrix Controller and can be applied to any gateway."
+A tag is a global resource to the Aviatrix Controller and can be applied to any gateway.
 
 2. Edit a Tag
 --------------
