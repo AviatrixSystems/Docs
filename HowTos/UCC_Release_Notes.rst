@@ -27,15 +27,23 @@ R3.0 (12/1/2017)
 3. Controller
 --------------
 
+- User actions on the Controller are now being logged to syslog and can be forwarded to integrated log services.
+
 - Support customize controller names. To customize, click "You controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
 
+- Support on demand backup of the Controller configuration to cloud storage. To configure, go to Settings -> Maintenance -> Backup & Restore -> Backup Now 
+
 - Support multiple copies for Controller configuration file backup. You can choose to backup multiple copies of configuration file. To do so, go to Settings -> Maintenance -> Backup & Restore and select Multiple Backup. Up to 3 backup files are stored. You can select any one of them to restore. 
+
+- Support migrating from AWS Marketplace Utility image to BYOL. For details, check out `this link. <http://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
 
 
 4. Modular Configuration
 -------------------------
 
 - Allow multiple subnets to be added for transitive peering. Multiple subnets separated by comma can be added once when configuring transitive peering.
+
+- Support the ability to delete all subnets at once in Join Function gatewway.
 
 5. Troubleshooting
 -------------------
