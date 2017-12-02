@@ -30,13 +30,13 @@ a. Create a VGW (the VGW is not attached to a VPC) that is used to connect to on
 
 #. Launch Aviatrix Gateway in the Transit VPC. This Aviatrix Gateway in the Transit VPC is the Customer Gateway (CGW) from VGW point of view. 
 
-#. Create Customer Gateway (CGW) in Transit VPC with the following configuration:
+#. At AWS Console, create Customer Gateway (CGW) in Transit VPC with the following configuration:
 
    - Routing: Dynamic
 
    - IP Address: Public IP of Aviatrix Gateway in Transit VPC.
 
-#. Create AWS VPN Connection in Transit VPC with the following configuration:
+#. At AWS Console create AWS VPN Connection in Transit VPC with the following configuration:
 
    - Virtual Private Gateway: VGW in Transit VPC
 
@@ -48,7 +48,7 @@ a. Create a VGW (the VGW is not attached to a VPC) that is used to connect to on
 
 #. Detach VGW from Transit VPC (if it was attached).
 
-#. Create Site2Cloud tunnel on Aviatrix Gateway to work with AWS VGW with the following configuration:
+#. At Aviatrix Controller console, create Site2Cloud tunnel on Aviatrix Gateway to work with AWS VGW with the following configuration:
 
    - VPC ID/VNet Name: Transit VPC ID
 
@@ -92,13 +92,13 @@ a. Create a VGW (the VGW is not attached to a VPC) that is used to connect to on
 
    |image5|
 
-#. At Controller console, Advanced Config -> BGP:
+#. At Aviatrix Controller console, Advanced Config -> BGP:
 
    - Edit "Local AS Num" if required
 
    - Enable "BGP"
 
-#. At Controller's Site2Cloud page:
+#. At Aviatrix Controller's Site2Cloud page:
 
    - Make sure site2cloud tunnel is up and working
 
@@ -107,7 +107,7 @@ a. Create a VGW (the VGW is not attached to a VPC) that is used to connect to on
 2. Connect Spoke VPC to on-prem
 ---------------------------------
 
-a. At a Spoke VPC, launch an Aviatrix Gateway.
+a. Lunch an Aviatrix Gateway in a spoke VPC.
 
 #. At Controller console, Peering -> Encrypted Peering, create peering between Aviatrix Gateways at spoke VPC and Transit VPC.
 
