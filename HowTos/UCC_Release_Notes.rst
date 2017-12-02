@@ -18,7 +18,7 @@ R3.0 (12/1/2017)
 2. Security
 -----------
 
-- **Tag your security policy** Support tag based security policies that allow user to associate a CIDR with a name tag and thus are more user friendly. For configuration detail, check `this link. <http://docs.aviatrix.com/HowTos/tag_firewall.html?highlight=tag>`_
+- **Tag your security policy** to associate a CIDR with a name tag for a scalable and user friendly. For configuration detail, check `this link. <http://docs.aviatrix.com/HowTos/tag_firewall.html?highlight=tag>`_
 
 - **AES-GCM crypto algorithm**. For IPSEC tunnel connectivity between two Aviatrix gateways, such as Aviatrix peering and IPmotion, the crypto algorithm has been upgraded to AES-GCM.
 
@@ -28,7 +28,7 @@ R3.0 (12/1/2017)
 
 - **Audit** user actions on the Controller. All commands from web console or REST API are now logged to syslog and can be forwarded to integrated log services.
 
-- **Name your controller** To customize, click "You controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
+- **Name your controller** for ease of use. Click "Your controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
 
 - **On demand backup** of the Controller configuration to cloud storage. To configure, go to Settings -> Maintenance -> Backup & Restore -> Backup Now 
 
@@ -49,7 +49,7 @@ R3.0 (12/1/2017)
 
 - **FlightPath tool**, an AWS EC2 to EC2 connectivity troubleshooting tool. In the first release, EC2 related resources, such as security groups, route table and Network ACLs are displayed side by side for easy visualization and troubleshooting. 
 
-6. Datacenter Extension Features
+7. Datacenter Extension Features
 ---------------------------------
 
 - **non-RFC1918** on premise network range is now supported. To add, first launch a Datacenter Extension gateway, go to Gateway List, select the gateway and click Edit. At Edit Extended Public CIDR, add one or multiple non-RFC1918 CIDR blocks separated by comma. For example, 100.64.0.0/24,100.64.1.0/24
