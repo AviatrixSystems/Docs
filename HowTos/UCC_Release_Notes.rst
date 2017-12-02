@@ -16,6 +16,7 @@ R3.0 (12/1/2017)
 
 - Support AWS ENA on Aviatrix gateway. 
 
+
 2. Security
 -----------
 
@@ -45,13 +46,19 @@ R3.0 (12/1/2017)
 
 - Support the ability to delete all subnets at once in Join Function gatewway.
 
+- Support the ability
+
 5. Troubleshooting
 -------------------
 
 - First release of FlightPath, an AWS EC2 to EC2 connectivity troubleshooting tool. In the first release, EC2 related resources, such as security groups, route table and Network ACLs are displayed side by side for easy visualization and troubleshooting. 
 
+6. Datacenter Extension Features
+---------------------------------
 
+- Support on-prem network with non-RFC1918 IP ranges. To add, first launch a Datacenter Extension gateway, go to Gateway List, select the gateway and click Edit. At Edit Extended Public CIDR, add one or multiple non-RFC1918 CIDR blocks separated by comma. For example, 100.64.0.0/24,100.64.1.0/24
 
+- Support gateway replacement for Datacenter Extension. Use this capability to repair a gateway in a limbo state. At the Datacenter Extension page, click Replace of specific gateway. 
 
 R2.7
 ==========
