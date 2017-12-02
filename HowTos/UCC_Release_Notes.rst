@@ -8,57 +8,53 @@ R3.0 (12/1/2017)
 1. Connectivity
 ---------------
 
-- Support BGP interoperability between Aviatrix gateway with AWS VGW. For use case details, check out `the Transit Network with BGP Setup Instructions. <http://docs.aviatrix.com/HowTos/bgp_transitive_instructions.html>`_.
+- **BGP** Support BGP interoperability between Aviatrix gateway and AWS VGW. For use case details, check out `the Transit Network with BGP Setup Instructions. <http://docs.aviatrix.com/HowTos/bgp_transitive_instructions.html>`_.
 
-- Support IPmotion for AWS migration and DR use case that allows a migrating VM moved to AWS without changing its IP address. For use case and details, check out `this link. <http://docs.aviatrix.com/HowTos/ipmotion.html?highlight=ip%20motion>`_.
+- **IPmotion** For AWS migration and DR use case that allows on-prem VMs to migrate to AWS without changing their IP addresses. For use case and details, check out `this link. <http://docs.aviatrix.com/HowTos/ipmotion.html?highlight=ip%20motion>`_.
 
-- Support Azure ARM in China region.
-
-- Support AWS ENA on Aviatrix gateway. 
+- **AWS ENA** on Aviatrix gateway. 
 
 
 2. Security
 -----------
 
-- Support tag based security policies that allow user to associate a CIDR with a name tag and thus are more user friendly. For configuration detail, check `this link. <http://docs.aviatrix.com/HowTos/tag_firewall.html?highlight=tag>`_
+- **Tag your security policy** Support tag based security policies that allow user to associate a CIDR with a name tag and thus are more user friendly. For configuration detail, check `this link. <http://docs.aviatrix.com/HowTos/tag_firewall.html?highlight=tag>`_
 
-- Support AES-GCM crypto algorithm. For IPSEC tunnel connectivity between two Aviatrix gateways, such as Aviatrix peering and IPmotion, the crypto algorithm has been upgraded to AES-GCM.
+- **AES-GCM crypto algorithm**. For IPSEC tunnel connectivity between two Aviatrix gateways, such as Aviatrix peering and IPmotion, the crypto algorithm has been upgraded to AES-GCM.
 
 
 3. Controller
 --------------
 
-- User actions on the Controller are now being logged to syslog and can be forwarded to integrated log services.
+- **Audit** user actions on the Controller. All commands from web console or REST API are now logged to syslog and can be forwarded to integrated log services.
 
-- Support customize controller names. To customize, click "You controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
+- **Name your controller** To customize, click "You controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
 
-- Support on demand backup of the Controller configuration to cloud storage. To configure, go to Settings -> Maintenance -> Backup & Restore -> Backup Now 
+- **On demand backup** of the Controller configuration to cloud storage. To configure, go to Settings -> Maintenance -> Backup & Restore -> Backup Now 
 
-- Support multiple copies for Controller configuration file backup. You can choose to backup multiple copies of configuration file. To do so, go to Settings -> Maintenance -> Backup & Restore and select Multiple Backup. Up to 3 backup files are stored. You can select any one of them to restore. 
+- **Backup multiple copies** of Controller configuration file. You can choose to backup multiple copies of configuration file. To do so, go to Settings -> Maintenance -> Backup & Restore and select Multiple Backup. Up to 3 backup files are stored. You can select any one of them to restore. 
 
-- Support migrating from AWS Marketplace Utility image to BYOL. For details, check out `this link. <http://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+- **Migrate licenses** from AWS Marketplace Utility image to BYOL. For details, check out `this link. <http://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
 
 
 4. Modular Configuration
 -------------------------
 
-- Allow multiple subnets to be added for transitive peering. Multiple subnets separated by comma can be added once when configuring transitive peering.
+- **Transitive Peering** supports multiple subnets being configured at the same time. Multiple subnets separated by comma can be added once when configuring transitive peering.
 
-- Support the ability to delete all subnets at once in Join Function gatewway.
-
-- Support the ability
+- Join Function now support the ability to delete all subnets at once in Join Function gatewway.
 
 5. Troubleshooting
 -------------------
 
-- First release of FlightPath, an AWS EC2 to EC2 connectivity troubleshooting tool. In the first release, EC2 related resources, such as security groups, route table and Network ACLs are displayed side by side for easy visualization and troubleshooting. 
+- **FlightPath tool**, an AWS EC2 to EC2 connectivity troubleshooting tool. In the first release, EC2 related resources, such as security groups, route table and Network ACLs are displayed side by side for easy visualization and troubleshooting. 
 
 6. Datacenter Extension Features
 ---------------------------------
 
-- Support on-prem network with non-RFC1918 IP ranges. To add, first launch a Datacenter Extension gateway, go to Gateway List, select the gateway and click Edit. At Edit Extended Public CIDR, add one or multiple non-RFC1918 CIDR blocks separated by comma. For example, 100.64.0.0/24,100.64.1.0/24
+- **non-RFC1918** on premise network range is now supported. To add, first launch a Datacenter Extension gateway, go to Gateway List, select the gateway and click Edit. At Edit Extended Public CIDR, add one or multiple non-RFC1918 CIDR blocks separated by comma. For example, 100.64.0.0/24,100.64.1.0/24
 
-- Support gateway replacement for Datacenter Extension. Use this capability to repair a gateway in a limbo state. At the Datacenter Extension page, click Replace of specific gateway. 
+- **Repair gateway** to replace a gateway in a limbo state. At the Datacenter Extension page, click Replace of specific gateway. 
 
 R2.7
 ==========
