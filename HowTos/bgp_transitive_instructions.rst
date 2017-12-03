@@ -130,6 +130,13 @@ There are multiple patterns to build HA in the transport link. AWS VGW can be us
 create two Direct Connect links, two IPSEC over Internet links and one Direct Connect and
 one IPSEC over Internet links. Refer to `this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for details.
 
+Best Practice 
+===============
+
+- **Plan your cloud address space** when designing a Transit VPC network. Best practice is to allocate a network address space from which the spoke VPC CIDRs are created.  Make sure this network address space is unique and not overlapping with any on-prem network.  For example, allocate 172.34.0.0/16 as your cloud address space. The spoke VPC CIDRs would be 172.34.1.0/24, 172.34.2.0/24, etc.  With this approach, you just need advertise one prefix 172.34.0.0/16 once.  When a new spoke VPC come up, you do not need to modify advertise network at the site2cloud page. 
+
+- **Edit BGP Advertise Network** after BGP has learned the on-prem network prefixes. When creating the Site2Cloud connection, leave the "Advertised Networks" blank. After Site2Cloud connection is created, go to Advanced Config to enable BGP. Go back to Site2Cloud connection, if you see list of subnets under Remote Subnet, it implies BGP has come up. At this point, click the connection to Edit BGP Advertised Networks. Enter the entire cloud address space as suggested above. This approach helps you see the list of the on-prem network prefixes to make sure you do not enter overlapping addresses.  
+
 BGP Troubleshooting
 ===================
 
