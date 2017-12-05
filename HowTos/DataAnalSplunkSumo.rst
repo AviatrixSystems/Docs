@@ -37,6 +37,9 @@ Management System for further analysis:
 AviatrixVPNSession:
 --------------------
 
+This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access" 
+when launching a gateway. 
+
 Logs sent by the Controller contains the information such as VPN user
 name, the VPN gateway IP address and name where the user connects to,
 client virtual IP address, connection duration, total received bytes,
@@ -69,6 +72,9 @@ Example logs:
 AviatrixUser:
 --------------
 
+This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access"
+when launching a gateway.
+
 Logs with this prefix come from each VPN gateway managed by the
 controller. The log contains the information for the TCP session, such
 as Inbound and outbound interface, source IP address, destination IP
@@ -93,6 +99,9 @@ Two example logs:
 AviatrixLicenseVPNUsers:
 -------------------------
 
+This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access"
+when launching a gateway.
+
 Logs with this prefix come from Controller and can be used to moniter 
 the license usage of active vpn users connected to all vpn gateways.
 
@@ -107,6 +116,8 @@ One example log:
 
 AviatrixRule:
 --------------
+
+You need to configure `security policies <http://docs.aviatrix.com/HowTos/gateway.html#security-policy>`_ to see AviatrixRule log.
 
 Logs with this prefix come from each gateway managed by the controller.
 Any packet that triggers the security policy rule will generate a log
@@ -136,7 +147,7 @@ AviatrixGwNetStats:
 --------------------
 
 Logs with this prefix come from each gateway managed by the controller.
-These logs are sampled every 5 minutes, and give details about gateway
+These logs are sampled every 1 minutes, and give details about gateway
 network interface.
 
 Two example logs:
@@ -158,7 +169,7 @@ AviatrixGwSysStats:
 -------------------
 
 Logs with this prefix come from each gateway managed by the controller.
-These logs are sampled every 5 minutes, and give details about gateway
+These logs are sampled every 1 minutes, and give details about gateway
 memory, cpu and disk load.
 
 Two example logs:
@@ -176,6 +187,8 @@ Two example logs:
 
 AviatrixFQDNRule
 ----------------
+
+You need to configure `FQDN Whitelists <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ in order to see these logs. 
 
 Logs with this prefix come from each gateway managed by the controller.
 Domain name filtering can be configured per gateway via controller. And
