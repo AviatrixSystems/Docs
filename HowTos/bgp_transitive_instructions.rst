@@ -18,7 +18,7 @@ as shown in the diagram below. Key characteristics in this architecture:
 |image0|
 
 This guide provides instructions on how to enable BGP for a Transit VPC solution.
-Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect or Internet.
+Aviatrix gateway deployed in Transit VPC exchanges routes with a VGW that connects to on-prem by Direct Connect or Internet. Review the `Best Practice section <http://docs.aviatrix.com/HowTos/bgp_transitive_instructions.html#best-practice>`_ before you proceed. 
 
 Deployment Steps
 =================
@@ -26,17 +26,19 @@ Deployment Steps
 1. Establish BGP between Aviatrix Gateway and VGW in Transit VPC
 -------------------------------------------------------------------
 
-a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable BGP to exchange routes between VGW and on-prem network. Follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. For IPSEC configuration, refer to `this doc <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html>`_ for IPSEC over Internet configuration guide.
+This step launches an Aviatrix gateway in Transit VPC and builds a IPSEC connection to VGW with BGP enabled. 
 
-#. Launch Aviatrix Gateway in the Transit VPC.
+a. At AWS Console create a VGW (the VGW is not attached to a VPC) which we will  use to connect to on-prem over Direct Connect or Internet. For information on how to connect a VGW to Direct Connect, follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. For IPSEC configuration, refer to `this doc <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html>`_ for IPSEC over Internet configuration guide.
 
-#. Create Customer Gateway (CGW) in Transit VPC with the following configuration:
+#. From Aviatrix Controller console, launch an Aviatrix Gateway in the Transit VPC. This Aviatrix Gateway in the Transit VPC is the Customer Gateway (CGW) from VGW point of view. 
+
+#. At AWS Console, create Customer Gateway (CGW) in Transit VPC with the following configuration:
 
    - Routing: Dynamic
 
-   - IP Address: Public IP of Aviatrix Gateway
+   - IP Address: Public IP of Aviatrix Gateway in Transit VPC.
 
-#. Create AWS VPN Connection in Transit VPC with the following configuration:
+#. At AWS Console create AWS VPN Connection in Transit VPC with the following configuration:
 
    - Virtual Private Gateway: VGW in Transit VPC
 
@@ -44,11 +46,11 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 
    - Routing Options: Dynamic (requires BGP)
 
-#. Download configuration template from AWS VPN Connection for "Generic" vendor (Referred as 'Configuration Template' below) .
+#. At AWS Console, download configuration template from AWS VPN Connection for "Generic" vendor (Referred as 'Configuration Template' below) .
 
-#. Detach VGW from Transit VPC (if it was attached).
+#. At AWS Console, detach VGW from Transit VPC (if it was attached).
 
-#. Create Site2Cloud tunnel on Aviatrix Gateway to work with AWS VGW with the following configuration:
+#. At Aviatrix Controller console, create Site2Cloud tunnel on Aviatrix Gateway to work with AWS VGW with the following configuration:
 
    - VPC ID/VNet Name: Transit VPC ID
 
@@ -92,13 +94,13 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 
    |image5|
 
-#. At Controller console, Advanced Config -> BGP:
+#. At Aviatrix Controller console, Advanced Config -> BGP:
 
    - Edit "Local AS Num" if required
 
    - Enable "BGP"
 
-#. At Controller's Site2Cloud page:
+#. At Aviatrix Controller's Site2Cloud page:
 
    - Make sure site2cloud tunnel is up and working
 
@@ -107,7 +109,7 @@ a. Create VGW at Transit VPC for Direct Connect that connects to on-prem. Enable
 2. Connect Spoke VPC to on-prem
 ---------------------------------
 
-a. At a Spoke VPC, launch an Aviatrix Gateway.
+a. At Aviatrix Controller console, lunch an Aviatrix Gateway in a spoke VPC.
 
 #. At Controller console, Peering -> Encrypted Peering, create peering between Aviatrix Gateways at spoke VPC and Transit VPC.
 
@@ -129,6 +131,13 @@ Building HA Transport Links
 There are multiple patterns to build HA in the transport link. AWS VGW can be used to
 create two Direct Connect links, two IPSEC over Internet links and one Direct Connect and
 one IPSEC over Internet links. Refer to `this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for details.
+
+Best Practice 
+===============
+
+- **Plan your cloud address space** when designing a Transit VPC network. Best practice is to allocate a network address space from which the spoke VPC CIDRs are created.  Make sure this network address space is unique and not overlapping with any on-prem network.  For example, allocate 172.34.0.0/16 as your cloud address space. The spoke VPC CIDRs would be 172.34.1.0/24, 172.34.2.0/24, etc.  With this approach, you just need advertise one prefix 172.34.0.0/16 once.  When a new spoke VPC come up, you do not need to modify advertise network at the site2cloud page. 
+
+- **Edit BGP Advertise Network** after BGP has learned the on-prem network prefixes. When creating the Site2Cloud connection, leave the "Advertised Networks" blank. After Site2Cloud connection is created, go to Advanced Config to enable BGP. Go back to Site2Cloud connection, if you see list of subnets under Remote Subnet, it implies BGP has come up. At this point, click the connection to Edit BGP Advertised Networks. Enter the entire cloud address space as suggested above. This approach helps you see the list of the on-prem network prefixes to make sure you do not enter overlapping addresses.  
 
 BGP Troubleshooting
 ===================

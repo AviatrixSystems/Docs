@@ -199,12 +199,17 @@ migrated EC2 instance responds to Ping request.
 - **Reset Button** If all things fail and you like to start over, first delete the IPmotion gateway by going to Gateway List, select the gateway and click Delete. After Delete is completed, go to Step 1 and click Reset. You can then start it over by going through Step 1 again.  
 - **Get Support** email support@aviatrix.com for assistance. 
 
-7. Migrate more VMs on the same subnet
+7. Discover application dependencies
+----------------------------------------
+
+After migrating one VM, you can use Aviatrix IPmotion gateway to discover application dependencies by following `the dependancy map discovery. <http://docs.aviatrix.com/HowTos/ipmotion_dependency_discovery.html>`_ 
+
+8. Migrate more VMs on the same subnet
 ---------------------------------------
 
 Repeat Step 4 to migrate more VMs on this subnet.
 
-8. Migrate VMs in a different subnet
+9. Migrate VMs in a different subnet
 -------------------------------------
 
 To migrate a VM in a different subnet, you need to launch a new virtual appliance CloudN on that subnet 
@@ -216,7 +221,7 @@ For example, suppose you have created a VPC 172.16.0.0/16 and migrated subnet 16
 - Launch Aviatrix virtual appliance CloudN on subnet 172.16.2.0/24.
 - Repeat the steps listed in this document.  
 
-9. Post Migration
+10. Post Migration
 ------------------
 
 Once you have migrated a few subnets to a VPC, you have the option to delete Aviatrix IPmotion gateway, delete the Aviatrix on-prem virtual appliance 
@@ -224,7 +229,7 @@ and remove the on-prem subnets that are now empty of any VMs.
 You can then connect the VPC to on-prem via Aviatrix site2cloud, 
 AWS Direct Connect and other layer 3 connectivities. 
 
-10. Limitations
+11. Limitations
 ----------------
 
 There are a few known limitations in the current release. 
