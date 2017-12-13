@@ -4,17 +4,17 @@
 
 
 ====================================
-Aviatrix OpenVPN Feature Highlights
+Aviatrix OpenVPN® Feature Highlights
 ====================================
 
-This document highlights Aviatrix OpenVPN features. For how to setup Aviatrix OpenVPN
+This document highlights Aviatrix OpenVPN® features. For how to setup Aviatrix OpenVPN®
 for developers and remote workers to access public cloud, consult `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 VPN Management
 ---------------
 
 - **Centrally Managed**  A single panel of glass allows you to manages all vpn users, vpn certificates and vpn user visibilities.  
-- **OpenVPN Compatible** Build on OpenVPN and is compatible with all OpenVPN client software. 
+- **OpenVPN Compatible** Build on OpenVPN® and is compatible with all OpenVPN® client software. 
 - **Split Tunnel** Support split tunnel mode where only specified CIDRs ranges go through the vpn tunnel. 
 - **Full Tunnel** Support full tunnel mode where all user IP sessions including Internet browsing go through the vpn tunnel. 
 - **PKI Managment** Support bring your own (BYOL) PKI management system. 
@@ -40,8 +40,8 @@ Authorization
 Scale Out Performance
 ----------------------
 
-- **TCP based VPN** You can use Aviatrix integrated ELB to load balance multiple Aviatrix vpn gateways. When ELB is used, OpenVPN client software runs on TCP port 443. TCP based VPN requries no corporte firewall when VPN client is on-prem.
-- **UDP based VPN**  You can use Aviatrix integrated AWS Route53 round robin routing to load balance multiple Aviatrix vpn gateways. When Route53 round robin routing is used, OpenVPN client software runs on UDP port 1193. UPD based VPN has improved file transfer performance. 
+- **TCP based VPN** You can use Aviatrix integrated ELB to load balance multiple Aviatrix vpn gateways. When ELB is used, OpenVPN® client software runs on TCP port 443. TCP based VPN requries no corporte firewall when VPN client is on-prem.
+- **UDP based VPN**  You can use Aviatrix integrated AWS Route53 round robin routing to load balance multiple Aviatrix vpn gateways. When Route53 round robin routing is used, OpenVPN® client software runs on UDP port 1193. UPD based VPN has improved file transfer performance. 
 - **Geo VPN** For TCP based VPN, you can use Aviatrix integrated AWS Route53 latency based routing to load balance clients resided in different geographic locations.  
 
 Logging Integration
@@ -55,5 +55,8 @@ Client Software
  
 - **OpenVPN Client Software** All OpenVPN client software are supported. The supported clients are macOS, Windows, iOS, Android, Chromebook, Linux and BSD. 
 - **Aviatrix VPN Client** Aviatrix VPN Client supports macOS, Windows and Linux Debian distribution and BSD distribution. Choose Aviatrix VPN Client if you require SAML authentication directly from vpn client software. 
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. disqus::
