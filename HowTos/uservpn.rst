@@ -4,12 +4,12 @@
 
 
 =================================
-OpenVPN
+OpenVPN®
 =================================
 
-Aviatrix provides a cloud native feature rich client VPN solution. The solution is based on OpenVPN and is compatible with all OpenVPN client software. 
+Aviatrix provides a cloud native feature rich client VPN solution. The solution is based on OpenVPN® and is compatible with all OpenVPN® client software. 
 In addition, Aviatrix provides its own client software that supports SAML authentication directly from the client. 
-A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN® features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
 
  |image0|
 
@@ -43,7 +43,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    #. If you use a DUO or Okta for multi factor authenication, select one of them at Two-step Authentication, more fields will appear. For details on Okta authentication, check out `this link. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__  
 
-   #. If you select Split Tunnel Mode, only the VPC CIDR traffic will go through the tunnel. If you specify "Additional CIDRs", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
+   #. If you select Split Tunnel Mode, only the VPC CIDR traffic will go through the tunnel. If you specify "Additional CIDRs", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN® -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
       
       Note: If you plan to support Chromebook, you must configure full tunnel
       mode as Chromebook only supports full tunnel. 
@@ -61,11 +61,11 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    If a vpn user has no profile associatioin, the user has full access to all resurces. Note you can modify a user profile at any given time.  
 
-   a. (Optionally) Go to OpenVPN -> Profiles to create as many profiles as you
+   a. (Optionally) Go to OpenVPN® -> Profiles to create as many profiles as you
       please. The target field can be FQDN (DNS names or fully qualified
       domain name).
 
-   b. Go to OpenVPN -> VPN Users to add as many user as you please.
+   b. Go to OpenVPN® -> VPN Users to add as many user as you please.
       Associate each user with a profile. Note if no profile is
       associated, user has full access to all resources. When a user is
       added to the database, an email with .ovpn file or .onc (for
@@ -74,5 +74,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 .. |image0| image:: uservpn_media/AviatrixCloudVPN.png
    :width: 5.55625in
    :height: 3.26548in
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. disqus::
