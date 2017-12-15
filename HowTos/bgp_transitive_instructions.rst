@@ -109,7 +109,7 @@ a. At AWS Console create a VGW (the VGW is not attached to a VPC) which we will 
 2. Connect Spoke VPC to on-prem
 ---------------------------------
 
-a. At Aviatrix Controller console, lunch an Aviatrix Gateway in a spoke VPC.
+a. At Aviatrix Controller console, launch an Aviatrix Gateway in a spoke VPC.
 
 #. At Controller console, Peering -> Encrypted Peering, create peering between Aviatrix Gateways at spoke VPC and Transit VPC.
 
