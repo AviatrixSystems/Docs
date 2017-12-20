@@ -1,6 +1,13 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+1.6 - Dec 19 2017
+ - FreeBSD support
+ - Configure reconnection behaviour on network disconnection
+ - Disable TLSv1 for client browser communication
+ - View log issue fix
+
+
 1.5 - Oct 16 2017
  - Mac does not require admin password to run
  - Mac icon fix

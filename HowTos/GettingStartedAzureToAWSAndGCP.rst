@@ -1,14 +1,16 @@
 .. meta::
     :description: Using Aviatrix to Connect Azure to AWS or GCP
-    :keywords: Aviatrix, Azure, AWS, GCP
+    :keywords: Aviatrix, Azure, AWS, GCP, multi cloud
+
+.. _AWS billing: https://console.aws.amazon.com/billing/home?#/account
 
 ======================================================================
-Connecting Azure to AWS and GCP
+Multi Cloud: Connecting Azure to AWS and GCP
 ======================================================================
 
 Overview
 --------
-Companies are relying more and more on multiple cloud providers.  However, setting up the connectivity between those providers is difficult.  And, maintaining and monitoring the tunnels is time-consuming and cumbersome to troubleshoot.
+Companies are relying more and more on multiple cloud (multi cloud) providers.  However, setting up the connectivity between those providers is difficult.  And, maintaining and monitoring the tunnels is time-consuming and cumbersome to troubleshoot.
 
 Aviatrix simplifies this by providing simple, point-and-click tunnel creation between cloud providers.  Additionally, Aviatrix gives you a single, centralized location from which to troubleshoot and monitor your connections.
 
@@ -22,9 +24,9 @@ We'll walk through these steps in the following sections.  Once complete, you ca
 
 Start by logging into the `Azure Portal <https://portal.azure.com>`__.
 
-Step 1. Install Aviatrix ... from the Azure Marketplace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The first step is to install the Aviatrix Controller from the Azure Marketplace.  Select the `Aviatrix Cloud Gateway to AWS and GCP` from the Marketplace.  Configure the new VM to meet your preferences and requirements.  Once ready, launch the new VM and continue to the next step.
+Step 1. Install Aviatrix Controller from the Azure Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The first step is to install the Aviatrix Controller from the Azure Marketplace.  Select the `Aviatrix Cloud Gateway to AWS and GCP` from the Marketplace.  Configure the new VM to meet your preferences and requirements.  Be sure to allow inbound connections on port 443.  Once ready, launch the new VM and continue to the next step.
 
 Step 2. Prepare your Azure Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,6 +36,7 @@ Register Aviatrix with Active Directory
 #######################################
 1. Go to the `Azure Active Directory` (available from the left navigation panel or `More Services`)
 2. Click on `Properties` (available under `Manage` on the left inner naviagation bar)
+
    .. important:: Copy and save the `Directory ID` for later use.  It will be referred to again as the `Application Endpoint`.
 
 3. Click on `App registrations` (available under `Manage` on the left inner naviagation bar)
@@ -76,7 +79,7 @@ Add a Key
   +====================+==================================================+
   | Key description    | Aviatrix                                         |
   +--------------------+--------------------------------------------------+
-  | Expires            | Never                                            |
+  | Expires            | Never expires                                    |
   +--------------------+--------------------------------------------------+
 
 4. Click `Save`
@@ -89,15 +92,17 @@ Add a Key
 
 .. important::  Save this value.  It will be referred to again later in this document as `Application Client Secret`
 
+6. Close the `Keys` window using the `X` in the upper right corner.
+
 Add Required Permissions
 ########################
-1. Select the application registration again (you may already be on it)
+1. Select the `Aviatrix Controller` application registration again (you may already be on it)
 2. Click on the `Required permissions` just above `Keys`
 
    |imageAzureAppRegPermBtn|
 
 3. Click `+ Add` button
-4. Click `Select an API`
+4. Click `Select an API` (on the right)
 5. Find and select `Windows Azure Service Management API`
 
    |imageAzureAppRegPermSelectAPI|
@@ -109,6 +114,7 @@ Add Required Permissions
 
 8. Click `Select`
 9. Click `Done`
+10. Close the `Required Permissions` panel by clicking on the `X` in the upper right corner.
 
 Grant Permissions to Aviatrix Controller
 ########################################
@@ -139,12 +145,14 @@ Grant Permissions to Aviatrix Controller
   |imageAzureSubscriptionIAMAddPerm|
 
 6. Click `Save`
-
+7. Close the `Access control (IAM)` panel by clicking on the `X` in the upper right corner
 
 Step 3. Configure Aviatrix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your Aviatrix Controller should be up and running by now.  Open a browser and navigate to https://<public ip address>/ .
+Your Aviatrix Controller should be up and running by now.  Go back to the Microsoft Azure portal and find the newly created instance.  Open it and copy the `Public IP address`.
+
+Open a browser and navigate to https://<public ip address>/ .  
 
    .. tip:: You may receive a warning about the certificate not matching.  You can safely ignore this and continue to the page.
 
@@ -217,7 +225,7 @@ Before you can automate launching an Aviatrix Gateway, you must first subscribe 
 3. Click on the link at the very bottom titled `Want to deploy programmatically? Get started ➔`
    |imageAzureCompanionGWDeployLink|
 
-4. Then, click on the `Enable` status button.
+4. Click on the `Enable` status button.
    |imageAzureCompanionGWEnableAccess|
 
 5. Click Save
@@ -225,7 +233,7 @@ Before you can automate launching an Aviatrix Gateway, you must first subscribe 
 
 Create Gateway
 ^^^^^^^^^^^^^^
-This controller can now automate creating a Gateway within Azure.
+The controller can now automate creating a Gateway within Azure.  Switch back to the browser tab or window with the Aviatrix Controller.
 
 Click on the `Gateway` in the left navigation bar:
 
@@ -237,9 +245,9 @@ Next, click on the `+ New Gateway` button.  Populate the `Gateway Name` and sele
 
 Click `OK` to create the Gateway automatically.  This will take a few minutes as it creates the instance in the selected region and sets up the appropriate route table entries, etc.
 
-Once complete, click `x Close`.
+Once complete, click `X Close`.
 
-Now you have a Gateway in Azure that can connect to either (or both) AWS cloud or GCP.
+Now you have a Gateway in Azure that can connect to either (or both) AWS or GCP.
 
 AWS
 ---
@@ -268,7 +276,7 @@ Create Account
   | Confirm Password              |                                            |
   +-------------------------------+--------------------------------------------+
   | AWS Account Number            | You can find your account number           |
-  |         | `here <https://console.aws.amazon.com/billing/home?#/account>`__ |
+  |                               | on the `AWS billing`_ page                 |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Leave this unchecked for now.  For         |
   |                               | production use, you'll want to use IAM     |
@@ -288,11 +296,12 @@ Deploy a Gateway in AWS
 
 Head back over to the `Gateways` section in the Aviatrix Controller and click on `+ New Gateway` button.
 
-1. Enter a Gateway name
-2. Select the appropriate values for `Region`, `VPC ID`, and `Public Subnet`.
-3. Keep the default `Gateway Size` at `t2.micro`.
-4. Check `Allocate New EIP` so a new Elastic IP will be allocated on creation.
-5. Click `OK` when ready.  
+1. Select `AWS` for `Cloud Type`
+2. Enter a Gateway name
+3. Select the appropriate values for `Region`, `VPC ID`, and `Public Subnet`.
+4. Keep the default `Gateway Size` at `t2.micro`.
+5. Check `Allocate New EIP` so a new Elastic IP will be allocated on creation.
+6. Click `OK` when ready.  
 
    .. tip:: Create a new VPC for testing.
 
@@ -392,7 +401,7 @@ Once complete, click the `Create` button at the bottom of the form.
 
    |imageAviatrixOnboardGCPCreate|
 
-Deploy a Gateway in AWS
+Deploy a Gateway in GCP
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Head back over to the `Gateways` section in the Aviatrix Controller and click on `+ New Gateway` button.
@@ -421,6 +430,7 @@ Peer the Gateways
 
    |imageAviatrixGWCreateGCPPeerUp|
 
+
 Complete
 ^^^^^^^^
 That's it.  Your Azure VNet instances can now talk to your GCP instances over a secure tunnel.  You will soon receive an email notification that the tunnel is up.  You'll receive additional notifications if the tunnel goes down.
@@ -429,6 +439,8 @@ That's it.  Your Azure VNet instances can now talk to your GCP instances over a 
 Summary
 -------
 If you peered your Azure account with both AWS and GCP, then you should see something like this on your Aviatrix Controller Dashboard:
+
+   |imageAviatrixDashboardFinal|
 
 Now that you have the accounts established, you can easily add connectivity to other VPCs in either AWS or GCP.  And, of course, you can also connect AWS to GCP.
 
@@ -508,3 +520,7 @@ Now that you have the accounts established, you can easily add connectivity to o
 .. |imageAviatrixGWCreateGCPPeerAddNew| image:: GettingStartedAzureToAWSAndGCP_media/aviatrix/peering_add_new_gcp.png
 
 .. |imageAviatrixGWCreateGCPPeerUp| image:: GettingStartedAzureToAWSAndGCP_media/aviatrix/peering_up_gcp.png
+
+.. |imageAviatrixDashboardFinal| image:: GettingStartedAzureToAWSAndGCP_media/aviatrix/dashboard_with_aws_gcp_peering.png
+
+

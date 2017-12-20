@@ -15,6 +15,8 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN`
+* :ref:`Security`
+* :ref:`IPmotion`
 * :ref:`Advanced Config`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
@@ -72,6 +74,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/peering
    HowTos/TransPeering
    HowTos/Cluster_Peering_Ref_Design
+   HowTos/GettingStartedAzureToAWSAndGCP
 
 .. _Site2Cloud:
 
@@ -81,6 +84,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/site2cloud
    HowTos/cloudn-site2cloud
+   HowTos/bgp_transitive_instructions
    HowTos/EncrOverExpRoute
    HowTos/TransPeering_OnPrem
    HowTos/avxgw_azurevpngw_site2cloud
@@ -91,7 +95,6 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: OpenVPN
 
-   HowTos/uservpn
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
    HowTos/DNSVPN
@@ -101,6 +104,27 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
+.. _Security:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Security
+
+   HowTos/tag_firewall
+   HowTos/FQDN_Whitelists_Ref_Design
+
+.. _IPmotion:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: IPmotion
+
+   HowTos/ipmotion
+   HowTos/beta_ipmotion
+   HowTos/HowTo_Setup_IPMotion
+   HowTos/design_pattern_ipmotion
+   HowTos/ipmotion_dependency_discovery
+
 .. _Advanced Config:
 
 .. toctree::
@@ -108,7 +132,6 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Advanced Config
 
    HowTos/Service_Chaining_Ref_Design
-   HowTos/FQDN_Whitelists_Ref_Design
    HowTos/EnvironmentStamping
    HowTos/Docker_Swarm
    HowTos/ContainerAccess
@@ -120,8 +143,10 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Settings
 
-   HowTos/Settings_Maintenance
-   HowTos/DataAnalSplunkSumo
+   HowTos/controller_backup
+   HowTos/controller_ha
+   HowTos/inline_upgrade
+   HowTos/AviatrixLogging
 
 .. _Troubleshoot:
 
@@ -174,8 +199,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
    HowTos/Competitive_CSR1000v
-   HowTos/ipmotion
-   HowTos/beta_ipmotion
+   HowTos/aviatrix_terraform
 
 .. _Solutions:
 
@@ -185,6 +209,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Solutions/aviatrix_aws_meshVPC
    HowTos/openvpn_features
+   Solutions/build_zerotrust_cloud_network
 
 
 .. _Whitepapers:

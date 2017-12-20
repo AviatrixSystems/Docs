@@ -36,9 +36,9 @@ Sample contents of user-data:
 
 	#cloud-config 
 
-	write\_files
+	write_files
 	- path: /etc/network/interfaces
-	  content: \|
+	  content: |
 	    auto lo
 	    iface lo inet loopback
 	    auto eth0
@@ -58,14 +58,14 @@ Sample contents of user-data (with proxy settings):
 
 	#cloud-config
 
-	write\_files:
+	write_files:
 	- path: /etc/sudoers.d/90-proxy
-	  content: \|
+	  content: |
 	   #Aviatrix http/https proxy integration
-	   Defaults env\_keep += "http\_proxy https\_proxy no\_proxy"
+	   Defaults env_keep += "http_proxy https_proxy no_proxy"
 	  
 	- path: /etc/network/interfaces
-	  content: \|
+	  content: |
 	    auto lo
 	    iface lo inet loopback
 	    auto eth0
@@ -77,13 +77,13 @@ Sample contents of user-data (with proxy settings):
 	 
 	bootcmd:
 
-	- grep -q \_proxy /etc/environment \|\| (echo "http\_proxy=http://10.28.144.137:8080"; echo
-	"https\_proxy=http://10.28.144.137:8080"; echo "no\_proxy=127.0.0.1,10.10.0.21") >> 
+	- grep -q _proxy /etc/environment || (echo "http_proxy=http://10.28.144.137:8080"; echo
+	"https_proxy=http://10.28.144.137:8080"; echo "no_proxy=127.0.0.1,10.10.0.21") >> 
 	/etc/environment
 
-	- grep -q \_proxy /etc/apache2/envvars \|\| (echo "export
-	http\_proxy=http://10.28.144.137:8080"; echo "export
-	https\_proxy=http://10.28.144.137:8080"; echo "export no\_proxy=127.0.0.1,10.10.0.21") >>
+	- grep -q _proxy /etc/apache2/envvars || (echo "export
+	http_proxy=http://10.28.144.137:8080"; echo "export
+	https_proxy=http://10.28.144.137:8080"; echo "export no_proxy=127.0.0.1,10.10.0.21") >>
 	/etc/apache2/envvars
 
 
@@ -110,21 +110,21 @@ Verify the ISO (optional)
 
 ::
 
-  ubuntu@ubuntu:~$ sudo mkdir /media/test\_iso
+  ubuntu@ubuntu:~$ sudo mkdir /media/test_iso
 
   ubuntu@ubuntu:~$ sudo mount -o loop cloudn-10-10-0-10.iso
-  /media/test\_iso
+  /media/test_iso
 
   mount: /dev/loop0 is write-protected, mounting read-only
 
-  ubuntu@ubuntu:~$ cat /media/test\_iso/user-data
+  ubuntu@ubuntu:~$ cat /media/test_iso/user-data
 
   #cloud-config
 
-  write\_files:
+  write_files:
   
     - path: /etc/network/interfaces
-      content: \|
+      content: |
 	auto lo
 	iface lo inet loopback
 	auto eth0
@@ -134,13 +134,13 @@ Verify the ISO (optional)
 	gateway 10.10.0.1
 	dns-nameservers 8.8.8.8 8.8.4.4
 	
-  ubuntu@ubuntu:~$ cat /media/test\_iso/meta-data
+  ubuntu@ubuntu:~$ cat /media/test_iso/meta-data
 	
   instance-id: CloudN-local
 	
   local-hostname: CloudN-local
 	
-  ubuntu@ubuntu:~$ sudo umount /media/test\_iso
+  ubuntu@ubuntu:~$ sudo umount /media/test_iso
 
 Deploy CloudN VM with the ISO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,10 +197,10 @@ Contents of user-data:
 
   #cloud-config
 
-  write\_files:
+  write_files:
 
   - path: /etc/network/interfaces
-    content: \|
+    content: |
      auto lo
      iface lo inet loopback
      auto eth0

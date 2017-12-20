@@ -29,23 +29,18 @@ if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http:/
 Security Policy
 --------------------
 
-You can configure L4 stateful security policies on each gateway. 
-To configure, click Gateway tab, click to select the gateway of interest. Click Edit.
-
-
-Note at the Destination field, you can enter network, IP address or host name. When using host name, the IP address of the host name will be resolved when programming the security policy. Host name is not suitable if it is a public web site, such as www.google.com. To filter on public host names, refer to `FQDN Whitelists. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`__
-
+Starting Release 3.0, gateway security policy page has been moved Security -> Stateful Firewall. Check out `this guide. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_
 
 
 High Availability
 -------------------
 
-There are two types of high availabiity on Aviatrix: "Gateway for High Avalability" and "Gateway for High Availability Peering". 
+There are two types of high availabiity on Aviatrix: "Gateway for High Availability" and "Gateway for High Availability Peering". 
 
 
-"Gateway for High Avalability Peering" is used for "Enable HA" field at Encrypted Peering configuration. 
+"Gateway for High Availability Peering" is used for "Enable HA" field at Encrypted Peering configuration. 
 
-"Gateway for High Avalability" is used when you need HA for a Transitive Peering. 
+"Gateway for High Availability" is used when you need HA for a Transitive Peering. 
 
 Gateway Size
 -------------

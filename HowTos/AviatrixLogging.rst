@@ -37,6 +37,9 @@ Management System for further analysis:
 AviatrixVPNSession:
 --------------------
 
+This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access" 
+when launching a gateway. 
+
 Logs sent by the Controller contains the information such as VPN user
 name, the VPN gateway IP address and name where the user connects to,
 client virtual IP address, connection duration, total received bytes,
@@ -51,23 +54,26 @@ Example logs:
 
 ::
 
-  Aug 17 22:07:39 ip-172-31-46-24 cloudx\_cli: ***AviatrixVPNSession***:
+  Aug 17 22:07:39 ip-172-31-46-24 cloudx\_cli: AviatrixVPNSession: 
   User=Splumo, Status=active, Gateway=splunksumo, GatewayIP=52.52.76.149,
-  VPNVirtualIP=192.168.0.6, Login=2016-08-17 22:07:38, Logout=N/A,
+  VPNVirtualIP=192.168.0.6, PublicIP=N/A, Login=2016-08-17 22:07:38, Logout=N/A,
   Duration=N/A, RXbytes=N/A, TXbytes=N/A
 
 **Disconnect log:**
 
 ::
 
-  Aug 17 22:26:37 ip-172-31-46-24 cloudx\_cli: ***AviatrixVPNSession***:
+  Aug 17 22:26:37 ip-172-31-46-24 cloudx\_cli: AviatrixVPNSession: 
   User=Splumo, Status=disconnected, Gateway=splunksumo,
-  GatewayIP=52.52.76.149, VPNVirtualIP=192.168.0.6, Login=2016-08-17
-  22:07:38, Logout=2016-08-17 22:26:37, Duration=0:0:18:59, RXbytes=2.1
-  MB, TXbytes=9.03 MB
+  GatewayIP=52.52.76.149, VPNVirtualIP=192.168.0.6, PublicIP=N/A,
+  Login=2016-08-17 22:07:38, Logout=2016-08-17 22:26:37, Duration=0:0:18:59,
+  RXbytes=2.1 MB, TXbytes=9.03 MB
 
 AviatrixUser:
 --------------
+
+This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access"
+when launching a gateway.
 
 Logs with this prefix come from each VPN gateway managed by the
 controller. The log contains the information for the TCP session, such
@@ -90,8 +96,11 @@ Two example logs:
   ***AviatrixUser***:IN= OUT=eth0 SRC=192.168.0.6 DST=10.100.0.2 LEN=66
   TOS=0x00 PREC=0x00 TTL=254 ID=13309 PROTO=UDP SPT=64775 DPT=53 LEN=46
 
-AviatrixLicenseUser:
---------------------
+AviatrixLicenseVPNUsers:
+-------------------------
+
+This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access"
+when launching a gateway.
 
 Logs with this prefix come from Controller and can be used to moniter 
 the license usage of active vpn users connected to all vpn gateways.
@@ -101,10 +110,14 @@ One example log:
 
 ::
 
-  Sep 25 23:40:19 ip-10-40-0-133 cloudxd: AviatrixLicenseVPNUsers:users=2
+  Sep 25 23:40:19 ip-10-40-0-133 cloudxd: AviatrixLicsenseVPNUsers: users=2
+
+.. note:: There is a typo in some versions (as noted in above example) that incorrectly shows this entry as `AviatrixLicsenseVPNUsers` instead of `AviatrixLicenseVPNUsers`.
 
 AviatrixRule:
 --------------
+
+You need to configure `security policies <http://docs.aviatrix.com/HowTos/gateway.html#security-policy>`_ to see AviatrixRule log.
 
 Logs with this prefix come from each gateway managed by the controller.
 Any packet that triggers the security policy rule will generate a log
@@ -134,7 +147,7 @@ AviatrixGwNetStats:
 --------------------
 
 Logs with this prefix come from each gateway managed by the controller.
-These logs are sampled every 5 minutes, and give details about gateway
+These logs are sampled every 1 minutes, and give details about gateway
 network interface.
 
 Two example logs:
@@ -142,12 +155,12 @@ Two example logs:
 
 ::
 
-  May 17 00:23:17 ip-10-0-0-129 gwmon.py: ***AviatrixGwNetStats***:
+  May 17 00:23:17 ip-10-0-0-129 gwmon.py: AviatrixGwNetStats: 
   timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
   public\_ip=52.15.167.148 private\_ip=10.0.0.129 interface=eth0
   total\_rx\_rate=3.47Kb total\_tx\_rate=2.85Kb total\_rx\_tx\_rate=6.32Kb
 
-  May 17 00:28:17 ip-10-0-0-129 gwmon.py: ***AviatrixGwNetStats***:
+  May 17 00:28:17 ip-10-0-0-129 gwmon.py: AviatrixGwNetStats: 
   timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
   public\_ip=52.15.167.148 private\_ip=10.0.0.129 interface=eth0
   total\_rx\_rate=2.40Kb total\_tx\_rate=2.10Kb total\_rx\_tx\_rate=4.49Kb
@@ -156,7 +169,7 @@ AviatrixGwSysStats:
 -------------------
 
 Logs with this prefix come from each gateway managed by the controller.
-These logs are sampled every 5 minutes, and give details about gateway
+These logs are sampled every 1 minutes, and give details about gateway
 memory, cpu and disk load.
 
 Two example logs:
@@ -164,16 +177,18 @@ Two example logs:
 
 ::
 
-  May 17 00:23:20 ip-10-0-0-129 gwmon.py: ***AviatrixGwSysStats***:
+  May 17 00:23:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
   timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
   cpu\_idle=100 memory\_free=237048 disk\_total=8115168 disk\_free=4665560
 
-  May 17 00:28:20 ip-10-0-0-129 gwmon.py: ***AviatrixGwSysStats***:
+  May 17 00:28:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
   timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
   cpu\_idle=100 memory\_free=237072 disk\_total=8115168 disk\_free=4665560
 
 AviatrixFQDNRule
 ----------------
+
+You need to configure `FQDN Whitelists <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ in order to see these logs. 
 
 Logs with this prefix come from each gateway managed by the controller.
 Domain name filtering can be configured per gateway via controller. And
@@ -210,6 +225,24 @@ Example log:
   Jul 21 04:28:19 Controller-52.41.237.237 cloudx_cli: 
   AviatrixTunnelStatusChange: src_gw=Oregon-DevOps-VPC(AWS us-west-2) 
   dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
+
+AviatrixCMD
+--------------------------
+
+Logs with this prefix come from controller whenever a CLI command is issued.  It contains
+information on the CLI command that was issued, the results of the execution, and reason
+message if there is a failure.
+
+Example log:
+------------------
+
+.. highlight:: none
+
+::
+
+  Nov 10 01:05:41 ip-172-31-6-24 cloudxd:
+  AviatrixCMD: action=ADD_TIME_SERVER, argv=['--rtn_file', '/run/shm/rtn1809376682',
+  'add_time_server', 'time2.google.com'], result=Success, reason=
 
 
 3. Logging Configuration at Aviatrix Controller

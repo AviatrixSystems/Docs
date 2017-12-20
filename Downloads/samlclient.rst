@@ -7,6 +7,8 @@
 .. |mac| image:: AVPNC_img/Mac.png
    
 .. |lux| image:: AVPNC_img/Linux.png
+
+.. |bsd| image:: AVPNC_img/BSD.png
  
 .. |Client| image:: AVPNC_img/Client.png
 
@@ -23,7 +25,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 
 Consult the VPN client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/Aviatrix+VPN+Client+User+Guide.pdf>`__ for how to use it. 
 
-Latest version: 1.5.46 (Oct 16 2017) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Latest version: 1.6.7 - (Dec 19 2017) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
 
 *************
 Windows |win|
@@ -59,8 +61,15 @@ Trusty/Ubuntu14  - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-dow
 Zesty/Ubuntu17 - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_zesty.deb>`__, `Tar file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_zesty.tar.gz>`__
 
 
+*************
+FreeBSD |bsd|
+*************
+FreeBSD client can be downloaded from- `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_FreeBSD.tar.gz>`__
+
+tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh to install
 
 
+*******************
 Development version
 *******************
 These are preview images for the next release.
