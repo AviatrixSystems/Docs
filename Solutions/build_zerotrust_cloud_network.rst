@@ -11,10 +11,10 @@ What is Zero Trust network architecture?
 ========================================
 
 Zero Trust architecture came from the realization that perimeter security solutions such as edge firewalls are not
-sufficient to prevent data breaches. Literal movement inside a network to scan and obtain target data
+sufficient to prevent data breaches. Lateral movement inside a network to scan and obtain target data
 has been the approach in the recent serious attacks. 
 The idea of Zero Trust is to build walls inside the datacenter by network segmentation to 
-prevent literal movement and always authenticate and authorize for all data access.  
+prevent lateral movement and always authenticate and authorize users for all data access.  
 
 
 How to build a Zero Trust cloud network 
