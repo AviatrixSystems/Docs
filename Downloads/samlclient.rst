@@ -65,10 +65,11 @@ Zesty/Ubuntu17 - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-downl
 FreeBSD |bsd|
 *************
 FreeBSD client can be downloaded from- `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_FreeBSD.tar.gz>`__
+
 tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh to install
 
 
-
+*******************
 Development version
 *******************
 These are preview images for the next release.
