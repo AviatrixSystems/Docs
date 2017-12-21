@@ -37,7 +37,7 @@ import sphinx_rtd_theme
 # ones.
 #extensions = []
 
-#extensions = ['sphinxcontrib.disqus']
+extensions = ['sphinxcontrib.disqus']
 
 
 # Add any paths that contain templates here, relative to this directory.
