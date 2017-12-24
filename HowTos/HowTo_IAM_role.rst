@@ -13,23 +13,23 @@ dynamically obtained security credentials to request access to AWS
 resources. Role-based IAM cloud account helps to reduce the risk of AWS
 credentials being compromised.
 
-This document provides instructions to create the IAM roles and policies. If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ 
+This document provides instructions to create the IAM roles and policies. If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_
 
 To use IAM role, the Aviatrix Controller you launch must have IAM role
 enabled.
 
-Aviatrix Controller Launched from CloudFormation 
+Aviatrix Controller Launched from CloudFormation
 =================================================
 
-If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their assoicated policies have already been created at the CloudFormation stack launch time. 
-When you create an Aviatrix cloud account on Aviatrix Controller console, 
-simply follow these steps to retrieve the fields 
+If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their assoicated policies have already been created at the CloudFormation stack launch time.
+When you create an Aviatrix cloud account on Aviatrix Controller console,
+simply follow these steps to retrieve the fields
 for "aviatrix-role-app ARN" and "aviatrix-role-ec2 ARN".
 
   - Login to AWS portal
-  - Go to Services -> IAM -> Roles, you should see two roles have been created, aviatrix-role-app and aviatrix-role-ec2. 
+  - Go to Services -> IAM -> Roles, you should see two roles have been created, aviatrix-role-app and aviatrix-role-ec2.
   - Click role "aviatrix-role-app", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.
-  - Click role "aviatrix-role-ec2", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.   
+  - Click role "aviatrix-role-ec2", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.
   - Done and may skip the rest of the guide.
 
 
@@ -86,7 +86,7 @@ Step 2. Create Two IAM Roles
 This role will be associated with the Aviatrix Controller. The role name
 MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
--  Go to AWS console -> IAM service -> Roles -> Create role 
+-  Go to AWS console -> IAM service -> Roles -> Create role
 
 |image3|
 
@@ -103,7 +103,7 @@ MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 -  Search/Check the role. You should see something
    like this for Role ARN:
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-ec2
-   
+
 |image0|
 
 -  Make a note of the above Role ARN string, it will be used for setup
@@ -112,7 +112,7 @@ MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
 
 2.2 Create "aviatrix-role-app" role
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This role is to be assumed by a granted AWS account. The Aviatrix
 controller acquires the “assume role” capability authorized by its
@@ -199,4 +199,3 @@ managed by Aviatrix.
 .. add in the disqus tag
 
 .. disqus::
-   

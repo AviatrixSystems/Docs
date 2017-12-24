@@ -1,11 +1,11 @@
 .. meta::
    :description: CloudN: From Initial-Setup to DataCenterExtension Using Linux curl command
    :keywords: cloudn, init, setup, curl, dcx, datacenter extension
-   
-   
-==========================================================================
+
+
+=============================================================================
 CloudN: From Initial-Setup to DataCenterExtension Using Linux "curl" Command
-==========================================================================
+=============================================================================
 
 |
 
@@ -20,7 +20,7 @@ Prerequisites
 =============
   * Aviatrix CloudN instance is up and running
   * CloudN has already acquired an IP address by using one of the following CloudN commands...
-  
+
     1. Option A (static IP): setup_interface_static_address    <static_ip_address>    <net_mask>    <default_gateway_ip_address>    <primary_dns_server_ip_address>    <secondary_dns_server_ip_address>    <proxy {true|false}>
 
     2. Option B (DHCP): setup_interface_address    <netmask>    <default_gw>    <primary_dns>    <2ndary_dns>    <proxy {true|false}>
@@ -152,16 +152,16 @@ Example List
 
 ::
 
-    curl  -k    --data  "action=setup_account_profile"    
-                --data  "CID=XXXXXXXXXX"    
-                --data  "account_name=my-cloud-account-AWS"    
-                --data  "account_password=Test123!"    
-                --data  "account_email=test@aviatrix.com"    
-                --data  "cloud_type=1"    
-                --data  "aws_account_number=123456789999"    
-                --data  "aws_iam=false"    
-                --data  "aws_access_key=XXXXXXXXXX"    
-                --data  "aws_secret_key=XXXXXXXXXX"    
+    curl  -k    --data  "action=setup_account_profile"
+                --data  "CID=XXXXXXXXXX"
+                --data  "account_name=my-cloud-account-AWS"
+                --data  "account_password=Test123!"
+                --data  "account_email=test@aviatrix.com"
+                --data  "cloud_type=1"
+                --data  "aws_account_number=123456789999"
+                --data  "aws_iam=false"
+                --data  "aws_access_key=XXXXXXXXXX"
+                --data  "aws_secret_key=XXXXXXXXXX"
                 "https://10.67.0.2/v1/api"
 
 |image9|
@@ -174,16 +174,16 @@ Example List
 
 ::
 
-    curl  -k    --data  "action=setup_account_profile"    
-                --data  "CID=XXXXXXXXXX"    
-                --data  "account_name=my-cloud-account-ARM"    
-                --data  "account_password=Test123!"    
-                --data  "account_email=test@aviatrix.com"    
-                --data  "cloud_type=8"    
-                --data  "arm_subscription_id=XXXXXXXXXX"    
-                --data  "arm_application_endpoint=XXXXXXXXXX"    
-                --data  "arm_application_client_id=XXXXXXXXXX"    
-                --data  "arm_application_client_secret=XXXXXXXXXX"    
+    curl  -k    --data  "action=setup_account_profile"
+                --data  "CID=XXXXXXXXXX"
+                --data  "account_name=my-cloud-account-ARM"
+                --data  "account_password=Test123!"
+                --data  "account_email=test@aviatrix.com"
+                --data  "cloud_type=8"
+                --data  "arm_subscription_id=XXXXXXXXXX"
+                --data  "arm_application_endpoint=XXXXXXXXXX"
+                --data  "arm_application_client_id=XXXXXXXXXX"
+                --data  "arm_application_client_secret=XXXXXXXXXX"
                 "https://10.67.0.2/v1/api"
 
 |image10|
@@ -196,17 +196,17 @@ Example List
 
 ::
 
-    curl  -k  --data  "action=create_container"    
-              --data  "CID=XXXXXXXXXX"    
-              --data  "account_name=my-cloud-account-AWS"    
-              --data  "cloud_type=1"    
-              --data  "vpc_reg=ca-central-1"    
-              --data  "vpc_name=my-dcx-name"    
-              --data  "vpc_net=10.67.128.0/19"    
-              --data  "vpc_size=t2.micro"    
-              --data  "internet_access=yes"    
-              --data  "public_subnet=yes"    
-              --data  "tunnel_type=tcp"    
+    curl  -k  --data  "action=create_container"
+              --data  "CID=XXXXXXXXXX"
+              --data  "account_name=my-cloud-account-AWS"
+              --data  "cloud_type=1"
+              --data  "vpc_reg=ca-central-1"
+              --data  "vpc_name=my-dcx-name"
+              --data  "vpc_net=10.67.128.0/19"
+              --data  "vpc_size=t2.micro"
+              --data  "internet_access=yes"
+              --data  "public_subnet=yes"
+              --data  "tunnel_type=tcp"
               "https://10.67.0.2/v1/api"
 
 |image11|
@@ -219,17 +219,17 @@ Example List
 
 ::
 
-    curl  -k  --data  "action=create_container"    
-              --data  "CID=XXXXXXXXXX"    
-              --data  "account_name=my-cloud-account-ARM"    
-              --data  "cloud_type=8"    
-              --data  "vpc_reg=West US"    
-              --data  "vpc_name=my-arm-dcx"    
-              --data  "vpc_net=10.67.96.0/19"    
-              --data  "vpc_size=Standard_D2"    
-              --data  "internet_access=yes"    
-              --data  "public_subnet=yes"    
-              --data  "tunnel_type=tcp"    
+    curl  -k  --data  "action=create_container"
+              --data  "CID=XXXXXXXXXX"
+              --data  "account_name=my-cloud-account-ARM"
+              --data  "cloud_type=8"
+              --data  "vpc_reg=West US"
+              --data  "vpc_name=my-arm-dcx"
+              --data  "vpc_net=10.67.96.0/19"
+              --data  "vpc_size=Standard_D2"
+              --data  "internet_access=yes"
+              --data  "public_subnet=yes"
+              --data  "tunnel_type=tcp"
               "https://10.67.0.2/v1/api"
 
 |image12|
@@ -274,5 +274,5 @@ Example List
     :width: 2.00000 in
     :height: 2.00000 in
 
-    
+
 .. disqus::
