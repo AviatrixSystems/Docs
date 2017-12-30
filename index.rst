@@ -20,7 +20,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Advanced Config`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
-* :ref:`Rest APIs`
+* :ref:`REST APIs`
 * :ref:`Downloads`
 * :ref:`Release Notes`
 * :ref:`Tech Notes`
@@ -159,11 +159,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/error-msgs
    HowTos/azuregwlaunch
 
-.. _Rest APIs:
+.. _REST APIs:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Rest APIs
+   :caption: REST APIs
 
    HowTos/aviatrix_apis_datacenter_extension
    HowTos/Aviatrix_Controller_API
