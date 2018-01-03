@@ -35,14 +35,14 @@ Authentication Options
 Authorization
 --------------
 
-- **Profile Based Access Control** Each VPN user can be assigned to a profile that is defined by access privileges to network, host, protocol and ports. The access control is dynamically enforced when a VPN user connects to the public cloud via an Aviatrix VPN gateway.  
+- **Profile-Based Access Control** Each VPN user can be assigned to a profile that is defined by access privileges to network, host, protocol and ports. The access control is dynamically enforced when a VPN user connects to the public cloud via an Aviatrix VPN gateway.  
 
 Scale Out Performance
 ----------------------
 
-- **TCP based VPN** You can use Aviatrix integrated ELB to load balance multiple Aviatrix VPN gateways. When ELB is used, OpenVPN® client software runs on TCP port 443. TCP based VPN requries no special corporate firewall rules when VPN client is on-prem.
-- **UDP based VPN**  You can use Aviatrix integrated AWS Route53 round robin routing to load balance multiple Aviatrix VPN gateways. When Route53 round robin routing is used, OpenVPN® client software runs on UDP port 1193. UDP-based VPN has improved file transfer performance. 
-- **Geo VPN** For TCP based VPN, you can use Aviatrix integrated AWS Route53 latency-based routing to load balance clients residing in different geographic locations.  
+- **TCP-based VPN** You can use Aviatrix integrated ELB to load balance multiple Aviatrix VPN gateways. When ELB is used, OpenVPN® client software runs on TCP port 443. TCP-based VPN requires no special corporate firewall rules when VPN client is on-prem.
+- **UDP-based VPN**  You can use Aviatrix integrated AWS Route53 round robin routing to load balance multiple Aviatrix VPN gateways. When Route53 round robin routing is used, OpenVPN® client software runs on UDP port 1193. UDP-based VPN has improved file transfer performance. 
+- **Geo VPN** For TCP-based VPN, you can use Aviatrix integrated AWS Route53 latency-based routing to load balance clients residing in different geographic locations.  
 
 Logging Integration
 -------------------
