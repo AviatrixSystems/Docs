@@ -95,7 +95,7 @@ Once you are at AWS EC2 console, follow the steps below:
 
     |image3|
 
-6.  We recommend you to use an Elastic IP address for the controller.
+6.  Use an Elastic IP address for the controller.
 
 7.  After launching the instance, note down the instance’s Private IP
     address and Public IP.
