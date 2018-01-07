@@ -12,6 +12,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
 * :ref:`Gateway`
+* :ref:`Transit VPC`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN`
@@ -64,6 +65,14 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Gateway
 
    HowTos/gateway
+
+.. _TransitVPC:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Transit VPC
+
+   HowTos/transitvpc_workflow
 
 .. _Peering:
 
