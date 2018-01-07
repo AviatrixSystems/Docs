@@ -79,7 +79,14 @@ You can view the network topology by going to the Dashboard. Click on the Map Vi
 In the Logical View, each gateway is represented by a dot. You can rearrange the initial drawing by moving the dot, 
 zoom in or zoom out, move the graph around. After you are done moving, click the Save icon. 
 
-10. Troubleshoot BGP
+10. Remove Transit GW to VGW Connection
+----------------------------------------
+
+To remove or undo Step 3, click Site2Cloud in the main navigation bar, you should see a Site2Cloud connection from thee Transit GW. Click delete to disconnect the IPSEC tunnel between Transit GW and VGW. 
+
+You can go to Step 3 to build the connection again. 
+
+11. Troubleshoot BGP
 ---------------------
 
 Under `Advanced Config` on the main navigation bar, click BGP. The Transit GW will have BGP Mode as Enabled. 
