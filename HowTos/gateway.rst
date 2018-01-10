@@ -23,6 +23,7 @@ When selecting the Gateway Size, note the following the guidelines of IPSEC perf
 -  m4.xlarge or c4.xlarge: approximately 500mbps
 -  c3.2xlarge or m4.2xlarge: approximately 1Gbps
 -  c3.4xlarge: approximately 1.2Gbps
+-  c4.2xlarge: 1.2Gbps - 1.5Gbps
 
 if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
 
