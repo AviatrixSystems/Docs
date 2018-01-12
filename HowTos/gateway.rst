@@ -16,7 +16,8 @@ Click Gateway at navigation panel. Click New to launch a gateway. To launch a ga
 Select Gateway Size
 -------------------
 
-When selecting the Gateway Size, note the following the guidelines of IPSEC performance based on tests conducted between two gateways of the same size:
+When selecting the Gateway Size, note the following guidelines of IPSEC performance 
+based on iperf tests conducted between two gateways of the same size:
 
 -  t2 series throughput is not guaranteed; it can burst up to 130mbps.
 -  m3 series are in the range 300 - 500mbps
