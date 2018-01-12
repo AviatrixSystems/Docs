@@ -28,11 +28,12 @@ based on iperf tests conducted between two gateways of the same size:
 
 if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
 
-Specify Public DNS Server
---------------------------
+Specify a Reachable DNS Server IP Address
+------------------------------------------
 
-Aviatrix gateway is launched with a default public DNS server 8.8.8.8 to make sure the 
-gateway can access AWS public resources such as SQS for Controller and gateway communication. If you want to change to a different DNS server, select the box for "Specify Public DNS Server" to enter an alternative DNS IP address. 
+Aviatrix gateway is launched with a default public DNS server IP address 8.8.8.8 to 
+make sure the 
+gateway has access to AWS public resources such as SQS for Controller and gateway communication. If you want to change to a different DNS server, select the box for "Specify a Reachable DNS Server IP Address" to enter an alternative DNS IP address. 
 
 Add/Edit Tags
 ---------------
