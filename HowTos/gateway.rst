@@ -28,6 +28,28 @@ based on iperf tests conducted between two gateways of the same size:
 
 if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
 
+Specify Public DNS Server
+--------------------------
+
+Aviatrix gateway is launched with a default public DNS server 8.8.8.8 to make sure the 
+gateway can access AWS public resources such as SQS for Controller and gateway communication. If you want to change to a different DNS server, select the box for "Specify Public DNS Server" to enter an alternative DNS IP address. 
+
+Add/Edit Tags
+---------------
+
+Aviatrix gateway is launched with a default tag name avx-gateway@private-ip-address-of-the-gateway. This option allows you to add additional AWS tags at gateway launch time that you 
+can use for automation scripts.  
+
+Designated Gateway
+--------------------
+
+If a gateway is launched with Designated Gateway enabled, the Aviatrix Controller programs 
+the RFC1918 address ranges in the route table to point to the gateway instance. 
+These routing entries are 
+10.0.0.0/8, 192.168.0.0/16 and 172.16.0.0/12. The Controller will not add additional 
+route entries that is within this RFC1918 range when configuring Transit VPC, site2cloud or encrypted peering. However, if the address range is outside the RFC1918
+the Controller will add these routes to point to the gateway.  
+
 Security Policy
 --------------------
 
