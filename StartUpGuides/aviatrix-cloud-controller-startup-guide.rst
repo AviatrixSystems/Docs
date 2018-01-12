@@ -18,9 +18,7 @@ This AWS account can be a root account, IAM role, IAM administrator
 account or IAM user account with access privileges required by the Aviatrix
 solution.
 
-We strongly recommend you to use an IAM role for security reasons,
-follow instructions during onboarding time of the controller instance to
-setup custom security policy.
+We strongly recommend you to use IAM role for security reasons.
 
 Subscribe to Aviatrix on AWS Marketplace
 =========================================
@@ -30,13 +28,15 @@ You must subscribe to one of the Aviatrix AMIs on AWS marketplace prior to launc
 Search "aviatrix" on AWS marketplace and accept the terms and conditions to use the software.
 After subscription, follow the instructions in the next sections to launch the controller.
 
+If you choose the BYOL image, you need a customer ID (license ID) to use Aviatrix solution. Send an email to support@aviatrix.com to obtain one.
+
 DNS Server Connectivity Check
 ==============================
 
 If the VPC where the controller is deployed in has a custom DNS server (via DHCP option), 
 make sure the controller instance can reach this DNS server. 
 
-.. Warning:: Any resources created by the controller, such as Aviatrix gateways, AWS routing tables, subnets, ELB, etc, must be deleted from the controller console. If you delete them directly on AWS console, the controller's view of resources will be incorrect which will lead to features not working properly.  
+.. Warning:: Any resources created by the controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the controller console. If you delete them directly on AWS console, the controller's view of resources will be incorrect which will lead to features not working properly.  
 
 ..
 
@@ -44,11 +44,13 @@ make sure the controller instance can reach this DNS server.
 Launch Aviatrix Controller via CloudFormation
 =============================================
 
-Aviatrix Controller can be launched from a CloudFormation script. Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
+The recommended way to launch the Controller is by our CloudFormation script. 
+
+Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
 
 To launch the controller manually, read the next section. 
 
-Launch Aviatrix Controller from AWS Marketplace
+Launch Aviatrix Controller Manually 
 ===============================================
 
 Before you launch the controller with IAM role, you must first create 2
@@ -145,12 +147,7 @@ After logging in to the browser console again, go through a few steps of
 onboarding to setup Aviatrix Cloud account which corresponds to AWS,
 Azure or GCloud account.
 
-Under Help menu check out Frequently Asked Questions (FAQs), Reference
-Designs and Release Notes. All features have descriptions embedded and
-should be self-explanatory.
-
-An alert message will be displayed on the Dashboard menu when a new
-release becomes available.
+To create a Global Transit Network, click Transit VPC on the main navigation bar to start.
 
 Controller HA
 ==============
@@ -168,7 +165,7 @@ Feature Highlights
 
  - `Inter region peering <http://docs.aviatrix.com/HowTos/peering.html>`_
 
- - `Global Transit Network <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_
+ - `Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
  - `Client VPN or OpenVPN <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
