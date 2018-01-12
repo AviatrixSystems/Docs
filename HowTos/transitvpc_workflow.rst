@@ -18,7 +18,7 @@ Planning and Prerequisites
 
  1. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW. 
  #. Create a VGW in the same region. The VGW can be either attached to the Transit VPC or detached. This VGW can be connect to on-prem either over Direct Connect or over Internet.  
- #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create Aviatrix account that corresponds to an IAM role. 
+ #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create Aviatrix account that corresponds to an IAM role. For instructions on how to launch an Aviatrix Controller, check out `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
 
 
 Login to the Aviatrix Controller
