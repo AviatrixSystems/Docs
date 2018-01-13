@@ -77,7 +77,7 @@ Once you are at AWS EC2 console, follow the steps below:
 11. After the installation is complete, log in again to the controller by
     typing at the browser:
 
-    https://controller_public_IP
+    https://controller_public_EIP
 
 12. Troubleshooting tips:
 
