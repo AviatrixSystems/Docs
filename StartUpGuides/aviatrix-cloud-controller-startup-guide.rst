@@ -56,7 +56,7 @@ Access the Controller
 =======================
 
 After the Controller instance is in running state in AWS, you can access the Controller
-via a browser by https://Controller_public_EIP", where Controller_public_EIP is the Elastic IP address of the Controller. 
+via a browser by https://Controller_public_EIP, where Controller_public_EIP is the Elastic IP address of the Controller. 
 
 The initial password is the private IP address of the instance. 
 
@@ -69,9 +69,10 @@ Onboarding
 The purpose of onboarding is to help you setup an account on Aviatrix Controller that
 corresponds to an IAM role with policies so that the Controller can launch gateways and build networks using AWS APIs. 
 
-If you launched the Controller via CloudFormation script, follow `this instruction <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#aviatrix-controller-launched-from-cloudformation>`_ to complete account setup.   
+If you launched the Controller via CloudFormation script, the required IAM roles and policies are already setup, follow `this instruction <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#aviatrix-controller-launched-from-cloudformation>`_ to complete account
+creation.    
 
-Note you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account. This is a multi cloud platform.
+Note you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account credentials. This is a multi cloud platform.
 
 To create a Global Transit Network, click Transit VPC on the main navigation bar to start.
 
@@ -79,7 +80,7 @@ Setup for Operations
 =====================
 
 If this Controller is for your production, we strongly recommend you to enable Controller `Backup/Restore feature. <http://docs.aviatrix.com/HowTos/controller_backup.html>`_ 
-This allows you to recover the configurations on the Controller in a disaster situation. 
+This allows you to backup configurations on the Controller to an S3 bucket sothat you can recover the configurations in a disaster situation. 
 
 Controller HA
 ==============
