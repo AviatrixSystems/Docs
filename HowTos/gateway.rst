@@ -10,7 +10,7 @@ Gateway
 Launch a gateway
 -----------------
 
-Click Gateway at navigation panel. Click New to launch a gateway. To launch a gateway with OpenVPN capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
+Click Gateway at navigation panel. Click New to launch a gateway. To launch a gateway with OpenVPN® capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
 
 
 Select Gateway Size
@@ -34,6 +34,21 @@ Specify a Reachable DNS Server IP Address
 Aviatrix gateway is launched with a default public DNS server IP address 8.8.8.8 to 
 make sure the 
 gateway has access to AWS public resources such as SQS for Controller and gateway communication. If you want to change to a different DNS server, select the box for "Specify a Reachable DNS Server IP Address" to enter an alternative DNS IP address. 
+
+Enable NAT
+-------------
+
+Aviatrix gateway performs NAT function when this option is selected. 
+
+Allocate NEW EIP
+-----------------
+
+When this optioin is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When this optino is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. 
+
+VPN Access
+-------------
+
+When this option is selected, Aviatrix gateway is used for SSL VPN termination. It supports OpenVPN® client and Aviatrix client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
 
 Add/Edit Tags
 ---------------
