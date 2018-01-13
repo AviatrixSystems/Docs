@@ -209,7 +209,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/DatadogIntegration
    HowTos/Competitive_CSR1000v
    HowTos/aviatrix_terraform
-   StartupGuides/aws_manual_startup_guide
+   StartUpGuides/aws_manual_startup_guide
 
 .. _Solutions:
 
