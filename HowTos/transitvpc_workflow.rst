@@ -8,10 +8,19 @@ Transit VPC Workflow Instructions
 ===================================
 
 This workflow provides you with a step by step instructions to build a Global Transit Network. 
+It abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not have 
+to go to multiple pages on the Controller console when building the Transit group.
+
+This Global Transit Network consists of a Transit gateway and a set of Spoke gateways, to faciliate communication 
+between Spoke VPC EC2 instances and on-prem network. 
 
 
 .. note::
    For description purpose, gateway and GW are used interchangebly.
+
+The Global Transit Network diagram is described as below. 
+
+|image0|
 
 Planning and Prerequisites
 ---------------------------
@@ -23,7 +32,7 @@ Planning and Prerequisites
 
 Login to the Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Open a browser and navigate to `https://<Controller IP address>/`.  Once authenticated, click on `Transit VPC` in the left navigation bar.
+Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, click on `Transit VPC` in the left navigation bar.
 
 Follow the steps below to set up Transit VPC network.
 
@@ -31,9 +40,13 @@ Follow the steps below to set up Transit VPC network.
 1. Launch a Transit Gateway
 -------------------------------------------
 
+The Transit GW is the hub gateway, it servers to move traffic between a Spoke VPC and on-prem network.
+
 
 2. (Optionally) Enable HA for the Transit Gateway
 --------------------------------------------------
+
+When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in any event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW.  
 
 
 3. Connect the Transit GW to AWS VGW 
@@ -97,7 +110,7 @@ You can also click Diagnostics. Select one of the show commands or type in yours
 see more BGP details. 
 
  
-.. |image0| image:: ipmotion_media/ipmotion.png
+.. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in
    :height: 3.26548in
 
