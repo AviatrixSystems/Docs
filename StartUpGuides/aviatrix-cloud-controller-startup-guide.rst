@@ -64,7 +64,7 @@ Follow the steps to go through an initial setup phase to download the latest sof
 After the latest software is downloaded, re-login again to go through the onboarding process. 
 
 Onboarding
-==========
+===========
 
 The purpose of onboarding is to help you setup an account on Aviatrix Controller that
 corresponds to an IAM role with policies so that the Controller can launch gateways and build networks using AWS APIs. 
