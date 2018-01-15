@@ -105,6 +105,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: OpenVPN
 
+   HowTos/uservpn
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
    HowTos/DNSVPN
