@@ -11,6 +11,8 @@ Aviatrix provides a cloud native feature rich client VPN solution. The solution 
 In addition, Aviatrix provides its own client software that supports SAML authentication directly from the client. 
 A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN® features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
 
+Note that only AWS VPC is drawn in the diagram, but the network diagram applies equally to Azure and Google Cloud.
+
  |image0|
 
 
