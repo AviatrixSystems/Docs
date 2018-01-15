@@ -13,8 +13,8 @@ guide helps you to launch the controller VM in Azure. Make sure you follow the i
 1. Subscribe to Aviatrix Controller
 ====================================
 
-Before you launch the Controller, make sure you subscribe to the companion gateway, you must subscribe to
-the companion gateway on Azure Marketplace. 
+Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/>`_ to subscribe to one Aviatrix image. 
+
 
 2. Subscribe to Aviatrix Companion Gateway
 ===========================================
