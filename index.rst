@@ -67,7 +67,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/gateway
 
-.. _TransitVPC:
+.. _Transit VPC:
 
 .. toctree::
    :maxdepth: 1
