@@ -56,7 +56,7 @@ Access the Controller
 =======================
 
 After the Controller instance is in running state in AWS, you can access the Controller
-via a browser by https://Controller_public_EIP, where Controller_public_EIP is the Elastic IP address of the Controller. 
+via a browser by `https://Controller_public_EIP`, where Controller_public_EIP is the Elastic IP address of the Controller. 
 
 The initial password is the private IP address of the instance. 
 
@@ -85,12 +85,12 @@ This allows you to backup configurations on the Controller to an S3 bucket sotha
 Controller HA
 ==============
 
-To enable controller HA in AWS, follow `the instructions here. <http://docs.aviatrix.com/HowTos/controller_ha.html>`_
+To enable Controller HA in AWS, follow `the instructions here. <http://docs.aviatrix.com/HowTos/controller_ha.html>`_
 
 Controller Monitoring
 ======================
 
-The controller can be monitored by AWS CloudWatch. We recommend you to configure alarms and actions to 
+If Controller HA is not enabled, we recommend you to use AWS CloudWatch to configure alarms and actions to 
 reboot the controller when it fails Status Check. 
 
 Key Use cases
