@@ -61,7 +61,7 @@ Upon further inspection, you’ll notice the complaining instance has a “ssh�
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image2| image:: flightpath_media/securitygroupcheck.png
+.. |image2| image:: flightpath_media/securitygorupcheck.png
    :width: 5.55625in
    :height: 3.26548in
 
