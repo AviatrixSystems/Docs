@@ -53,15 +53,15 @@ Upon further inspection, you’ll notice the complaining instance has a “ssh�
 
 
 
-.. |image0| image:: flightpath_media/FlightPath1
+.. |image0| image:: flightpath_media/FlightPath1.png
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image1| image:: flightpath_media/routetablecheck
+.. |image1| image:: flightpath_media/routetablecheck.png
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image2| image:: flightpath_media/securitygroup
+.. |image2| image:: flightpath_media/securitygroup.png
    :width: 5.55625in
    :height: 3.26548in
 
