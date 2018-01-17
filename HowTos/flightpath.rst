@@ -22,7 +22,7 @@ How to use it
 
 Click FlightPath icon on the onboarding page or Troubleshooting -> FlightPath.
 
-Select on Source side cloud type, account, region, vpc name and one instance. 
+Select on Source side cloud type, account, region, vpc name and click one instance. 
 Do the same for the Destination side. 
 
 Run FightPath Test, a report will appear. The information is arranged in three sections, Security Groups, Route table entries and Network ACL. The Security Group is what is associated with the instance, 
