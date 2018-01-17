@@ -95,7 +95,7 @@ zoom in or zoom out, move the graph around. After you are done moving, click the
 10. Remove Transit GW to VGW Connection
 ----------------------------------------
 
-To remove or undo Step 3, click Site2Cloud in the main navigation bar, you should see a Site2Cloud connection from thee Transit GW. Click delete to disconnect the IPSEC tunnel between Transit GW and VGW. 
+You can remove the BGP and IPSEC connection to VGW via this step. 
 
 You can go to Step 3 to build the connection again. 
 

@@ -169,6 +169,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Troubleshoot_Diagnostics
    HowTos/error-msgs
    HowTos/azuregwlaunch
+   HowTos/flightpath
 
 .. _REST APIs:
 
