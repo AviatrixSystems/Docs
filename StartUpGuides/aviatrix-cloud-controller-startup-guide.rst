@@ -47,10 +47,10 @@ Launch Aviatrix Controller
 
 Controller must be launched on a public subnet of a VPC. 
 
-The recommended way to launch the Controller is by our CloudFormation script. 
+If you select the Aviatrix BYOL AMI, the recommended way to launch the Controller is by our CloudFormation script. 
 Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
 
-To launch the controller manually, follow `this document. <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`_ 
+For all other AMIs, you need to launch the controller manually, follow `this document. <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`_ 
 
 Access the Controller
 =======================
