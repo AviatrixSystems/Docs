@@ -49,7 +49,8 @@ whitelists.
 How does it work?
 =================
 
-This features works for HTTP and HTTPS traffic on public IP addresses.
+This features works for HTTP and HTTPS traffic to public Internet. The function is carried out inline
+without requiring any certificate or keys to decrypt the traffic. 
 
 A tag is defined as a list of FQDNs. One or more gateways is attached to
 a tag. Any updates to a tag automatically triggers updates to all
