@@ -51,6 +51,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Onboarding and Accounts
 
+   HowTos/aviatrix_account
    HowTos/HowTo_IAM_role
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
@@ -106,6 +107,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: OpenVPN
 
    HowTos/uservpn
+   HowTos/openvpn_features
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
    HowTos/DNSVPN
@@ -221,7 +223,6 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Solutions Datasheets
 
    Solutions/aviatrix_aws_meshVPC
-   HowTos/openvpn_features
    Solutions/build_zerotrust_cloud_network
 
 
