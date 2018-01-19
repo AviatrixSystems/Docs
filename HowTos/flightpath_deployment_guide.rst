@@ -68,7 +68,7 @@ To launch the controller manually, follow `this document <http://docs.aviatrix.c
 Access the Controller
 ---------------------------------------------------------------------------
 
-After the Controller instance is in running state in AWS, you can access the Controller via a browser by _https://Controller_public_EIP_, where **Controller_public_EIP** is the Elastic IP address of the Controller.
+After the Controller instance is in running state in AWS, you can access the Controller via a browser by *https://Controller_public_EIP*, where **Controller_public_EIP** is the Elastic IP address of the Controller.
 
 The initial password is the private IP address of the instance.
 
