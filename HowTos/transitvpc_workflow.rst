@@ -42,12 +42,15 @@ Follow the steps below to set up Transit VPC network.
 
 The Transit GW is the hub gateway, it servers to move traffic between a Spoke VPC and on-prem network.
 
+|image1|
+
 
 2. (Optionally) Enable HA for the Transit Gateway
 --------------------------------------------------
 
 When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in any event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW.  
 
+|image2|
 
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
@@ -55,9 +58,12 @@ When HA is enabled, a second Transit GW will be launched. Note both Transit GWs 
 This step builds a site2cloud IPSEC tunnel with VGW and establishes BGP session with VGW to 
 exchange routes between on-prem and the cloud.
 
+|image3|
+
 4. Launch a Spoke Gateway
 -------------------------
 
+|image4|
 
 5. (Optionally) Enable HA for the Spoke Gateway
 ------------------------------------------------
@@ -66,7 +72,9 @@ exchange routes between on-prem and the cloud.
 6. Join a Spoke GW to Transit GW Group
 ---------------------------------------
 
-This step builds a Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertise the Spoke VPC CIDR to VGW via the established BGP session.
+This step attaches a Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertise the Spoke VPC CIDR to VGW via the established BGP session.
+
+|image5|
 
 7. Remove a Spoke GW from a Transit GW Group
 --------------------------------------------
@@ -84,6 +92,8 @@ To delete a Spoke GW, go to Gateway on the main navigation tab, select the gatew
 ---------------------------------------
 
 Repeat step 4 to 6 to add more Spoke VPCs to the Transit GW group.
+
+|image6|
 
 9. View the Network Topology
 -------------------------------------
@@ -114,8 +124,28 @@ see more BGP details.
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image1| image:: ipmotion_media/ipmotion-range-display.png
-   :width: 5.55625in
+.. |image1| image:: transitvpc_workflow_media/transitGw-launch.png
+   :width: 2.55625in
+   :height: 1.0in
+
+.. |image2| image:: transitvpc_workflow_media/TransitGW-HA.png
+   :width: 2.55625in
+   :height: 1.0in
+
+.. |image3| image:: transitvpc_workflow_media/connectVGW.png
+   :width: 2.55625in
+   :height: 1.0in
+
+.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
+   :width: 2.55625in
+   :height: 2.50in
+
+.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
+   :width: 3.55625in
+   :height: 3.26548in
+
+.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
+   :width: 3.55625in
    :height: 3.26548in
 
 .. disqus::
