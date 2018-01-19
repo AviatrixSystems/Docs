@@ -123,7 +123,7 @@ What you need
 
 You do not need to launch Aviatrix gateways to use this tool, but you need to create Aviatrix accounts so that the Controller can use the account credential to execute AWS APIs to retrieve relevant information.
 
-`How to use it <http://docs.aviatrix.com/HowTos/flightpath.html?highlight=flightpath>`__
+`How to use it <http://docs.aviatrix.com/HowTos/flightpath.html>`__
 
 For support, send email to support@aviatrix.com. Enjoy!
 
