@@ -21,8 +21,7 @@ Gateway V2 in Azure marketplace.
 Step 1: Select Aviatrix Companion Gateway V2
 ------------------------------------------
 
-    Go to Azure marketplace
-    (*https://azure.microsoft.com/enIus/marketplace/*) , search
+    Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, search
     “aviatrix”, select [aviatrix-companion-gateway-v2], as shown below:
 
     |image0|
