@@ -36,6 +36,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Getting Started
 
+   StartUpGuides/aviatrix_overview
    StartUpGuides/aviatrix-cloud-controller-startup-guide
    Solutions/aviatrix_aws_transitvpc
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
