@@ -52,9 +52,9 @@ Step 3: Enable subscription
 
     For support, send email to support@aviatrix.com
 
-.. |image0| image:: CompanionGateway_media/img_01_modified.png
-.. |image1| image:: CompanionGateway_media/img_02_modified.png
-.. |image2| image:: CompanionGateway_media/img_03_modified.png
+.. |image0| image:: CompanionGateway_media/img_01_.PNG
+.. |image1| image:: CompanionGateway_media/img_02_.PNG
+.. |image2| image:: CompanionGateway_media/img_03_.PNG
 
 
 .. disqus::
