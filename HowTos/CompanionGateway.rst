@@ -8,7 +8,7 @@
 
 
 If you need to launch a gateway in Azure ARM, you must subscribe to
-Aviatrix Companion Gateway V2 in Azure Marketplace. This model removes
+**Aviatrix Companion Gateway V2** in **Azure Marketplace**. This model removes
 the requirement to download the Aviatrix gateway image into your
 Azure account which typically takes more than 30 minutes, thus
 greatly reduces the deployment time. The Aviatrix Companion Gateway V2
@@ -22,7 +22,7 @@ Step 1: Select Aviatrix Companion Gateway V2
 ------------------------------------------
 
     Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, search
-    “aviatrix”, select [aviatrix-companion-gateway-v2], as shown below:
+    **“aviatrix”**, select **[aviatrix-companion-gateway-v2]**, as shown below:
 
     |image0|
 
@@ -43,7 +43,7 @@ Step 2: Deploy Programmatically
 Step 3: Enable subscription
 ----------------------------
 
-    In the next step, select Enable subscription, click Save, as shown
+    In the next step, select **[Enable subscription], click **[Save]**, as shown
     below:
 
 |image2|
