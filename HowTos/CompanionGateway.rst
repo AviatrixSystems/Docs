@@ -32,7 +32,8 @@ Step 2: Deploy Programmatically
 -----------------------------------
 
     After you click Create Virtual Machine for Aviatrix Companion
-    Gateway V2, click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
+    Gateway V2, 
+    click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
 
 |image1|
 
