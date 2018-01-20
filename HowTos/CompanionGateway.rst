@@ -26,6 +26,8 @@ Step 1: Select Aviatrix Companion Gateway V2
 
     |image0|
 
+|
+
 Step 2: Deploy Programmatically
 -----------------------------------
 
@@ -36,6 +38,8 @@ Step 2: Deploy Programmatically
 
 |image1|
 
+|
+
 Step 3: Enable subscription
 ----------------------------
 
@@ -43,6 +47,8 @@ Step 3: Enable subscription
     below:
 
 |image2|
+
+|
 
     That’s it!
 
