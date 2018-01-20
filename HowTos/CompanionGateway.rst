@@ -55,7 +55,7 @@ Step 3: Enable subscription
 
 .. |image0| image:: CompanionGateway_media/img_01.PNG
 .. |image1| image:: CompanionGateway_media/img_02.PNG
-.. |image2| image:: CompanionGateway_media/img_03.PNG
+.. |image2| image:: CompanionGateway_media/img_03_enable_and_save.PNG
 
 
 
