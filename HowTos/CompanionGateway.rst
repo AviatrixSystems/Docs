@@ -41,7 +41,7 @@ Step 2: Deploy Programmatically
 Step 3: Enable subscription
 ----------------------------
 
-    In the next step, select **[Enable subscription], click **[Save]**, as shown
+    In the next step, select **[Enable subscription]**, click **[Save]**, as shown
     below:
 
 |image2|
