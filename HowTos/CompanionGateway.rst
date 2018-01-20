@@ -32,7 +32,8 @@ Step 2: Deploy Programmatically
 -----------------------------------
 
     After you click Create Virtual Machine for Aviatrix Companion
-    Gateway V2, click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
+    Gateway V2, 
+    click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
 
 |image1|
 
@@ -41,7 +42,7 @@ Step 2: Deploy Programmatically
 Step 3: Enable subscription
 ----------------------------
 
-    In the next step, select **[Enable subscription], click **[Save]**, as shown
+    In the next step, select **[Enable subscription]**, click **[Save]**, as shown
     below:
 
 |image2|
@@ -52,9 +53,10 @@ Step 3: Enable subscription
 
     For support, send email to support@aviatrix.com
 
-.. |image0| image:: CompanionGateway_media/img_01_modified.png
-.. |image1| image:: CompanionGateway_media/img_02_modified.png
-.. |image2| image:: CompanionGateway_media/img_03_modified.png
+.. |image0| image:: CompanionGateway_media/img_01.PNG
+.. |image1| image:: CompanionGateway_media/img_02.PNG
+.. |image2| image:: CompanionGateway_media/img_03_enable_and_save.PNG
+
 
 
 .. disqus::
