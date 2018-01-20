@@ -13,8 +13,7 @@ loadbalancers for TCP VPN gateways. To circumvent this issue, we utilize
 Route53 services of AWS to create a round robin based UDP LoadBalanced
 VPN Gateways.
 
-This feature allows you to combine the features of LoadBalancing of UDP VPN
-Gateways and larger throughput of UDP VPN tunnels.
+.. Note:: UDP based OpenVPN® provides higher packet throughput than TCP based VPN solution. UDP based VPN solution runs on UDP 1194. If you plan to deploy this solution for on-prem users, make sure your corporate firewall is open on UDP 1194 for outbound traffic.  
 
 
 Configuration Workflow
