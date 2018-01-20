@@ -1,14 +1,8 @@
 
 
 ##########################################################
-Building a Mesh Cloud Network for AWS VPCs and Datacenter
+Extending Your vmware Workloads to Public Cloud
 ##########################################################
-
-
-
-AWS/Azure Reference Deployment Guide
-========================================
-
 
 
 1  Overview
