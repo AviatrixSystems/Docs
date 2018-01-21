@@ -38,7 +38,7 @@ We are not a SaaS company, our product runs in your account and environment. We 
 Why Should You Consider Us?
 =============================
 
-Customers find the most compelling value of our product is ease of use, both at configuration time and operation time. Ease of use is easier said than done and networking by nature is complex, how can one achieve that? Here is how we do it:
+Customers find the most compelling value of our product is ease of use, both at configuration time and operation time. Ease of use is easier said than done in networking as it is by nature complex, how can one achieve that? Here is how we do it:
 
 - **Abstraction**  Abstraction is key to achieve ease of use at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefits this abstraction with fewer of them to manage.
 
