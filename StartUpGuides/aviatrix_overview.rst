@@ -92,8 +92,7 @@ User to Cloud Access
 
 Giving developers, contractors and partners around the globe direct access to VPC/VNet is the best way to reduce access latency and improve productivity. How to make it secure, high performance and manageable are key to the solution. 
 
-Aviatrix user to cloud solution is based on OpenVPN®. The feature that customers like the most is `Profile Based Access Control. <http://docs.aviatrix.com/HowTos/openvpn_features.html#authorization>`_ 
-
+Aviatrix user to cloud solution is based on OpenVPN®.  
 The solution solves these problems:
 
  a. **Bastion Station** Bastion Station or Jump Host is a hack and insecure to allow developers to access cloud. Not acceptable. 
@@ -105,6 +104,7 @@ The solution solves these problems:
  #. **SAML Client** We are looking for a OpenVPN® based VPN solution with SAML client support.  
 
 Aviatrix user VPN solution cab be found `on this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
+One feature in the solution that customers like the most is `Profile Based Access Control. <http://docs.aviatrix.com/HowTos/openvpn_features.html#authorization>`_
 
 
 Site to Cloud Connectivity over Internet 
