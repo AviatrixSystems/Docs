@@ -17,8 +17,8 @@ These areas are:
 
 - datacenter to cloud (Transit network solution)  
 - cloud to cloud (Encrypted peering connectivity in a cloud and multi cloud ) 
-- user to cloud (OpenVPN® based SSL VPN solution) 
-- site to cloud (Branch sites to cloud). 
+- user to cloud (OpenVPN® based SSL VPN solution for developers) 
+- site to cloud (Branch and customer sites to cloud) 
 
 We also provide security features for workloads/application in the cloud: 
 
@@ -40,7 +40,7 @@ Why Should You Consider Us?
 
 Customers find the most compelling value of our product is ease of use, both at configuration time and operation time. Ease of use is easier said than done in networking as it is by nature complex, how can one achieve that? Here is how we do it:
 
-- **Abstraction**  Abstraction is key to achieve ease of use at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefits this abstraction with fewer of them to manage.
+- **Abstraction**  Abstraction is key to achieve ease of use at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
 
 - **External Integration** We integrated and developed applications for all popular logging services to forward events, alerts and a turn key dashboard to achieve ease of use at operation time. 
 
@@ -55,7 +55,7 @@ experience when you build an IPSEC tunnel as you would with AWS native peering: 
 Beyond ease of use, Aviatrix solutions solve many problems better than other products in each of the areas. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
 
-We goal is to become your goto tool for all thing cloud networking. 
+Our goal is to become your goto tool for all thing cloud networking. 
 
 
 Datacenter to Cloud: Global Transit Network Solution
