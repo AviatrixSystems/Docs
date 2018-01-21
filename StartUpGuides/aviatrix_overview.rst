@@ -69,7 +69,7 @@ These problems are listed below:
  #. **BGP** The AWS Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to outside.  
  #. **Not Secure** All spoke VPCs in The AWS Global Transit solution have connectivity to each other through BGP route propagation. There is no network segmentation. The blast raduis is my entire cloud network and datacenters. Not acceptable by security team. 
  #. **Reach Route Limit** AWS has route entry limits of 100 per each routing table. Combining the number of VPC CIDRs and the list of on-prem CIDRS, this route limit is fast approaching or already a problem.
- #. **Extra Charge** Traffic from one spoke VPC to another spoke VPC traverses through one transit and sometimes two transit hub, resulting in 2x or 3x egress charge. 
+ #. **Extra Charge** In the CSR based solution, traffic from one spoke VPC to another spoke VPC traverses through one transit and sometimes two transit hub, resulting in 2x or 3x egress charge. 
  #. **Too Complex** The CloudOps is a team of 6 engineers managing 34 AWS services, the skill set and resources it takes to manage the CSR based Transit network is beyond what we want to handle. 
 
 Follow this `self qualification process <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_ to help your team decide if Aviatrix is the right solution for you. 
