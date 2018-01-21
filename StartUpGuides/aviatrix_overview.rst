@@ -42,7 +42,7 @@ Customers find the most compelling value of our product is ease of use, both at 
 
 - **Abstraction**  Abstraction is key to achieve ease of use at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefits this abstraction with fewer of them to manage.
 
-- **Outside Integration** We integrated and developed applications for all popular logging services to forward events, alerts and a turn key dashboard to achieve ease of use at operation time. 
+- **External Integration** We integrated and developed applications for all popular logging services to forward events, alerts and a turn key dashboard to achieve ease of use at operation time. 
 
 - **Centrally Managed** A single pane of glass to manage all your cloud network scatterd in different regions and clouds.
 
@@ -80,7 +80,7 @@ Cloud to Cloud Peering
 
 Aviatrix encrypted peering solution builds IPSEC tunnels to connect two VPC/Vnet. It solves these problems:
 
- a. **Regulation** My industry and regulations require packet in motion to be encrypted. AWS intra peering has not encryption. AWS inter region peering has one shared key. Not acceptable. 
+ a. **Regulation** My industry and regulations require packet in motion to be encrypted. AWS intra peering has no encryption. AWS inter region peering has one shared key. Not acceptable. 
  #. **Reach Route Limit** AWS has route entry limits of 100 per each routing table. Combining the number of VPC CIDRs and the list of on-prem CIDRS, this route limit is fast approaching or already a problem.
  #. **Multi Cloud** My workloads in AWS need connectivity to works loads in Azure or Google. 
  #. **Defense in Depth** My CloudOps tools communicate to instances with data that is not encrypted. I need encryption for traffic between Shared Service VPC to workload VPC.
@@ -90,16 +90,18 @@ Aviatrix peering solution can be found `here. <http://docs.aviatrix.com/HowTos/p
 User to Cloud Access
 ==============================
 
-Giving developers, contractors and partners around the globe direct access to VPC/VNet is the best to 
-reduce access latency and improve productivity. How to make it secure, high performance and manageable are key to the solution. 
+Giving developers, contractors and partners around the globe direct access to VPC/VNet is the best way to reduce access latency and improve productivity. How to make it secure, high performance and manageable are key to the solution. 
 
-Aviatrix user to cloud solution is based on OpenVPN®. Customers like the most is `Profile Based Access Control <http://docs.aviatrix.com/HowTos/openvpn_features.html#authorization>`_ The solution solves these problems:
+Aviatrix user to cloud solution is based on OpenVPN®. The feature that customers like the most is `Profile Based Access Control. <http://docs.aviatrix.com/HowTos/openvpn_features.html#authorization>`_ 
 
- a. **Bastion Station** Bastion Station or Jump Host is hack and insecure to allow developers to access cloud. Not acceptable. 
- #. **Too Many Certs** If each VPC runs a SSL VPN gateway and there are 50 VPCs, each developer needs to carry 50 VPN certificates and knows which certificate to use to access which VPC. Not acceptable. 
- #. **Large Group** We have a over 500 developers, need a VPN solution that scale beyond a single instance. 
- #. **OKTA** We are looking a VPN solution that integrates with OKTA or DUO. 
- #. **Bypass Firewall** We need a VPN solution that runs on TCP port 443 that bypass corporate firewall. #. **Global Workforce** We have developers in multiple geo locations, cannot have them all land in the cloud in the same region. Latency will kill user experience. 
+The solution solves these problems:
+
+ a. **Bastion Station** Bastion Station or Jump Host is a hack and insecure to allow developers to access cloud. Not acceptable. 
+ #. **Too Many Certs** If each VPC runs a SSL VPN gateway and there are 50 VPCs, each developer needs to carry 50 VPN certificates and must learn which certificate to use to access which VPC. Not acceptable. 
+ #. **Large Group** We have over 500 developers, need a VPN solution that scales beyond a single instance. 
+ #. **OKTA** We are looking for a VPN solution that integrates with OKTA or DUO. 
+ #. **Blocked by Firewall** We have a Linux machine in the office that needs to behave like a VPN client. We need a VPN solution that runs on TCP port 443 to allow this machine to go through the corporate firewall. 
+ #. **Global Workforce** We have developers in multiple geo locations, cannot have them all land in the cloud in the same region. Latency will kill user experience. 
  #. **SAML Client** We are looking for a OpenVPN® based VPN solution with SAML client support.  
 
 Aviatrix user VPN solution cab be found `on this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
@@ -112,11 +114,11 @@ If you run a SaaS service that needs to securely move data from your customer si
 your enterprise has hundreds of branch offices that need to connect to the cloud, building secure 
 tunnel to the cloud directly over Internet is the most economical way as you leverage the Internet infrastructure already in place. 
 
-In this space, the cloud provider's native VPN solution falls short by a long shot. Aviatrix site2cloud solution solves these problems:
+In this case, the cloud provider's native VPN solution falls short by a long shot. Aviatrix site2cloud solution solves these problems:
 
- a. **AWS/Azure VPN Gateway Limitation** Native cloud provider VPN solution typically has about 30 connections per VPN gateway. I have more than 30 sites, the native solution is not usable. 
+ a. **AWS/Azure VPN Gateway Limitation** Native cloud provider VPN solution typically can support 30 connections per VPN gateway. I have more than 30 sites, the native solution is not usable. 
  #. **No Manual** I have to configure and manage hundreds or thousands of IPSEC tunnels, the manual way by using traditional vendors such as Cisco ASA and CSR is not possible. 
- #. **Overlapping IP addresses** We run a SaaS operation, the CIDR blocks at your customer sites are not controlled by you. If a customer CIDR block overlaps with your operation VPC CIDR, you have to find a way to NAT the address. The cloud provider native solution is not usable in this case. 
+ #. **Overlapping IP addresses** We run a SaaS operation, the CIDR blocks at your customer sites are not controlled by us. If a customer CIDR block overlaps with our operation VPC CIDR, we have to find a way to NAT the address. The cloud provider native solution is not usable in this case. 
  #. **Encryption Algorithm Mismatch** As SaaS operators, we cannot control what VPN device a customer wishes to use. My end of VPN termination needs to have the flexibility to interoperate with customer equipment. The native solution does not have that flexibility. 
  #. **Too Slow to Onboard a Customer** VPN runs on UDP port 500/4500, my customers have to request corporate firewall ports to open, is there a way to run IPSEC tunnel on TCP 443?
  #. **Traffic Direction Problem** My SaaS service requires traffic to be initiated from cloud to the customer site, AWS VPN gateway cannot support this traffic pattern. We have to setup a separate machine to constantly ping to keep the tunnel up! 
@@ -130,10 +132,10 @@ This solution is about adding security control to private workloads or applicati
 AWS and Azure provide a NAT gateway or NAT service, but it is limited in scope. Traditional firewall is either too complex or too expensive to be deployed per VPC. 
 Aviatrix L7 FQDN filter solves these problems:
 
- a. **Only IP Based Rules** AWS provides security groups for its NAT gateway, but it is IP address based and limits to 50 rules. My application needs to make API calls to Office 365 and that site along resolves to hundreds of changing IP addresses. Adding Security group is not an acceptable solution. 
- #. **Firewall for Each VPC is Too Complex** My cloud instances are workloads and programs, they make API calls to known destinations. Deploying a traditional firewall that requires certs and keys to decrypt every traffic for inspection is too complex and an overkill. 
+ a. **Only IP Based Rules** AWS provides security groups for its NAT gateway, but it is IP address based and limits to 50 rules. My application needs to make API calls to Office 365 and that site along resolves to hundreds of changing IP addresses. Using Security group is not an acceptable solution. 
+ #. **Firewall for Each VPC is Too Complex** My cloud instances are workloads and programs, they make API calls to known destinations. Deploying a traditional firewall that requires certs and keys to decrypt every packet for inspection is too complex and an overkill. 
  #. **Firewall for Each VPC is Too Expensive** Traditional firewall of IDS/IPS is too expensive to be deployed per VPC. 
- #. **Whitelisting** All I need is to be able to white list or black list the know destinations by specifying them as fully qualified domain names (FQDN) for my http and https traffic. Support wild card or regex is a bonus. 
+ #. **Whitelisting** All I need is to be able to white list or black list the well known destinations by specifying them as fully qualified domain names (FQDN) for my http and https traffic. Support wild card or regex is a bonus. 
 
 Follow up with more details on `Aviatrix FQDN filter solution. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
@@ -141,7 +143,7 @@ Gateway inline L4 Stateful Firewall
 ====================================
 
 Whenever there is traffic going through Aviatrix gateway, you can apply IP address based stateful 
-firewall policies. This reduces the need to have to configure security groups of each instances. There is no limit as to how many rules you can apply. Aviatrix solution solves these problems:
+firewall policies. This reduces the need to have to configure security groups of each instances in the VPC for traffic between VPCs. There is no limit as to how many rules you can apply on Aviatrix gateway. Aviatrix solution solves these problems:
 
  a. **Security Rule Limits** An cloud instance's security group has a limit of 50 rules. How do I get around that?
  #. **Enforce Security Policies** Developers don't always follow the best practice when it comes to security, enforcing policies at the gateway takes that worry away. 
