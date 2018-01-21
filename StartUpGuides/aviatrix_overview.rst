@@ -12,7 +12,7 @@ What Do We Do?
 
 Aviatrix is a cloud networking company. 
 
-We focus on solving networking problems in areas relevant to all public clouds. 
+We focus on solving networking problems in areas relevant to public clouds. 
 These areas are: 
 
 - datacenter to cloud (Transit network solution)  
@@ -33,10 +33,10 @@ gateway. Gateways are launched from the controller
 browser console by using your cloud account credentials with cloud provider APIs.
 The Controller image is available in AWS Marketplace, Azure Marketplace and GCloud.
 
+We are not a SaaS company, our product runs in your account and environment. We have no access to your data or credentials. 
+
 Why Should You Consider Us?
 =============================
-
-We are not a SaaS company, our product runs in your account and environment. We have no access to your data or credentials. 
 
 Customers find the most compelling value of our product is ease of use, both at configuration time and operation time. Ease of use is easier said than done and networking by nature is complex, how can one achieve that? Here is how we do it:
 
