@@ -38,7 +38,6 @@ While all content is searchable, the site is organized into the following sectio
 
    StartUpGuides/aviatrix_overview
    StartUpGuides/aviatrix-cloud-controller-startup-guide
-   Solutions/aviatrix_aws_transitvpc
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
@@ -226,6 +225,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
+   Solutions/aviatrix_aws_transitvpc
 
 
 .. _Whitepapers:
