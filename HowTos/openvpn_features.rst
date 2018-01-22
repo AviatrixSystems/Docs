@@ -14,7 +14,7 @@ VPN Management
 ---------------
 
 - **Centrally Managed**  A single pane of glass allows you to manage all VPN users, VPN certificates and VPN user visibility.  
-- **OpenVPN Compatible** Built on OpenVPN® and is compatible with all OpenVPN® client software. 
+- **OpenVPN® Compatible** Built on OpenVPN® and is compatible with all OpenVPN® client software. 
 - **Split Tunnel** Supports split tunnel mode where only specified CIDRs ranges go through the VPN tunnel. 
 - **Full Tunnel** Supports full tunnel mode where all user IP sessions including Internet browsing go through the VPN tunnel. 
 - **PKI Managment** Supports Bring Your Own (BYO) PKI management system. 
@@ -53,7 +53,7 @@ Logging Integration
 Client Software
 ----------------
  
-- **OpenVPN Client Software** All OpenVPN client software is supported. The supported clients are macOS, Windows, iOS, Android, Chromebook, Linux and BSD. 
+- **OpenVPN® Client Software** All OpenVPN® client software is supported. The supported clients are macOS, Windows, iOS, Android, Chromebook, Linux and BSD. 
 - **Aviatrix VPN Client** Aviatrix VPN Client supports macOS, Windows and Linux Debian distribution and BSD distribution. Choose Aviatrix VPN Client if you require SAML authentication directly from VPN client software. 
 
 
