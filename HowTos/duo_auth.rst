@@ -40,6 +40,9 @@ Getting DUO API credentials
     disable push approval authentication.
 
 
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. |image5| image:: Duo_media/image6.png
 
 .. |image6| image:: Duo_media/image7.png
