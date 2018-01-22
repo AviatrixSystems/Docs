@@ -379,6 +379,10 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 8. Done
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. |image0| image:: Cloud_Networking_Ref_Des_media/image1.png
    :width: 3.81875in
    :height: 2.81918in
