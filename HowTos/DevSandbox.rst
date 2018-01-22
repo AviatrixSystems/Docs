@@ -121,6 +121,8 @@ The configuration workflow is as follows, with major steps highlighted.
 6. Done. 
 
 
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: DevSandbox_media/image1.png
 
