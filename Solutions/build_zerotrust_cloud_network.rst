@@ -58,12 +58,15 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 
 - User access activities must be fully audited. Every user initiated TCP session in the cloud network must be logged for audit and inspection. 
 
-`Aviatrix Enterprise OpenVPN Solution <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ is the strongest secure client solution in the marketplace built for the public cloud. 
+`Aviatrix Enterprise OpenVPN® Solution <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ is the strongest secure client solution in the marketplace built for the public cloud. 
 
 4. Summary
 ------------
 
 Zero Trust architecture is "Never trust, always verify", a critical component to enterprise cloud adoption success. Aviatrix provides a rich set of capabilities that enables you to build a Zero Trust network for the public cloud. 
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image2| image:: media/image5.png
