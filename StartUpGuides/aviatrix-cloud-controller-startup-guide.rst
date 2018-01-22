@@ -25,6 +25,7 @@ Subscribe to Aviatrix on AWS Marketplace
 =========================================
 
 You must subscribe to one of the Aviatrix AMIs on AWS marketplace prior to launch the Controller.
+Once you subscribe, return to this page and continue to the next section. 
 
 Search "aviatrix" on AWS marketplace and accept the terms and conditions to use the software.
 After subscription, follow the instructions in the next sections to launch the Controller.
@@ -47,8 +48,14 @@ Launch Aviatrix Controller
 
 Controller must be launched on a public subnet of a VPC. 
 
+Launch from CloudFormation script
+----------------------------------
+
 If you select the Aviatrix BYOL AMI, the recommended way to launch the Controller is by our CloudFormation script. 
-Follow the instruction `here <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
+Follow the instruction `for Aviatrix QuickStart Cloudformation Script  <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
+
+Launch manually
+--------------------
 
 For all other AMIs, you need to launch the controller manually, follow `this document. <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`_ 
 
