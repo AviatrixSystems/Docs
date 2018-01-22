@@ -50,7 +50,7 @@ Aviatrix VPN Client Changelog
  - Bug fixes for hangs
  - In built resources
  - Connection timeout issues fixed 
- - Kill other OpenVPN on start
+ - Kill other OpenVPN® on start
  - Connection status fix
  - VPN lockdown feature	
 
@@ -58,4 +58,7 @@ Aviatrix VPN Client Changelog
 1.0 - Dec 15 2016
  - Initial release
  - HTTP Version
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
