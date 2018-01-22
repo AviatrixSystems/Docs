@@ -42,4 +42,8 @@ Tips: Upgrade to the latest version. Make sure you are running 2.7+
 4. (Optional) Edit DNS LoadBalancer
    a. You can add or delete gateways to the load balancer after it has been created
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. disqus::
