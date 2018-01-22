@@ -16,7 +16,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit VPC`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
-* :ref:`OpenVPN`
+* :ref:`OpenVPN®`
 * :ref:`Security`
 * :ref:`IPmotion`
 * :ref:`Advanced Config`
@@ -100,11 +100,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/TransPeering_OnPrem
    HowTos/avxgw_azurevpngw_site2cloud
 
-.. _OpenVPN:
+.. _OpenVPN®:
 
 .. toctree::
    :maxdepth: 1
-   :caption: OpenVPN
+   :caption: OpenVPN®
 
    HowTos/uservpn
    HowTos/openvpn_features
