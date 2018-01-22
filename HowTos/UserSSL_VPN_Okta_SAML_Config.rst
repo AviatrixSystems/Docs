@@ -162,6 +162,8 @@ This step is usually completed by the Aviatrix admin.
 9.  Done
 	
 
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png
 
