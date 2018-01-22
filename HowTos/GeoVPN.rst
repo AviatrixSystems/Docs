@@ -181,6 +181,10 @@ account in AWS, go to AWS management console portal. Under Services,
 select Route 53 Management Console. Under Domains, select Registered
 domains, then click Register Domain.
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. |image0| image:: GeoVPN_media/image1.png
 
    
