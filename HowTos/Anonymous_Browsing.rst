@@ -298,6 +298,10 @@ displayed at "status" column.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. |image0| image:: Anonymous_Browsing_media/Anonymous_Browsing.PNG
    :width: 5.03147in
    :height: 2.57917in
