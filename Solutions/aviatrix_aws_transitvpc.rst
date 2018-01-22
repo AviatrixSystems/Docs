@@ -260,8 +260,11 @@ and fail over in seconds.
 status and link latency.
 
 **Additional Benefits** Stateful firewall at the gateway to enforce
-security policies. OpenVPN based user access allows end to end cloud
+security policies. OpenVPN® based user access allows end to end cloud
 network solution. For more details, check out docs.aviatrix.com.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image0| image:: media/image1.png
