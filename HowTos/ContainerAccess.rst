@@ -1,6 +1,6 @@
 .. meta::
    :description: Docker Container Access Reference Design
-   :keywords: docker, docker container, docker container access, Aviatrix
+   :keywords: docker, docker container, docker container access, Aviatrix, openvpn
 
 
 
@@ -21,7 +21,7 @@ securely across regions and clouds, a multi-host Docker swarm cluster
 can span across multiple VPC regions and multiple clouds, such as AWS,
 Azure and Google.
 
-Users can use Aviatrix enterprise OpenVPN capability to connect to the
+Users can use Aviatrix enterprise OpenVPN® capability to connect to the
 cloud, then from your desktop access remote containers in a swarm
 cluster in the same manner as accessing instances. VPN users from
 desktop, for example, can use “curl” or run a browser session directly
@@ -226,6 +226,10 @@ For feature request and feedback, click Make a wish at the bottom of
 each page.
 
 Enjoy!
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: ContainerAccessRefDes_media/image1.png
 
