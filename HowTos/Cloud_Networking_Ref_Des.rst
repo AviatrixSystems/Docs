@@ -8,7 +8,7 @@
 
 
 =================================
-OpenVPN Design for Multi VPCs
+OpenVPN® Design for Multi VPCs
 =================================
 
 This reference design helps you build an end to end secure cloud
@@ -139,11 +139,11 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 4. Add Users and Profiles
 
-   a. Go to OpenVPN -> Profiles to create as many profiles as you
+   a. Go to OpenVPN® -> Profiles to create as many profiles as you
       please. The target field can be FQDN (DNS names or fully qualified
       domain name).
 
-   b. Go to OpenVPN -> VPN VPN Users to add as many user as you please.
+   b. Go to OpenVPN® -> VPN VPN Users to add as many user as you please.
       Associate each user with a profile. Note if no profile is
       associated, user has full access to all resources. When a user is
       added to the database, an email with .ovpn file or .onc (for
@@ -262,11 +262,11 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 6. Add Users and Profiles
 
-   a. Go to OpenVPN -> Profiles to create as many profiles as you
+   a. Go to OpenVPN® -> Profiles to create as many profiles as you
       please. The target field can be FQDN (DNS names or fully qualified
       domain name).
 
-   b. Go to OpenVPN -> VPN Users to add as many user as you please.
+   b. Go to OpenVPN® -> VPN Users to add as many user as you please.
       Associate each user with a profile. Note if no profile is
       associated, user has full access to all resources. When a user is
       added to the database, an email with .ovpn file or .onc (for
@@ -367,11 +367,11 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 7.  Add Users and Profiles
 
-    a. Go to OpenVPN -> Profiles to create as many profiles as you
+    a. Go to OpenVPN® -> Profiles to create as many profiles as you
        please. The target field can be FQDN (DNS names or fully
        qualified domain name).
 
-    b. Go to OpenVPN -> VPN Users to add as many user as you please.
+    b. Go to OpenVPN® -> VPN Users to add as many user as you please.
        Associate each user with a profile. Note if no profile is
        associated, user has full access to all resources. When a user is
        added to the database, a email with .ovpn file or .onc (for
