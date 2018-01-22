@@ -47,6 +47,10 @@ enabled. Select “Okta” for “Two-­‐step Authentication” and enter Okta
 
         |image3|
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. |image0| image:: How_to_setup_Okta_for_Aviatrix_media/image0.png
    :width: 3.5in
    :height: 0.5in
