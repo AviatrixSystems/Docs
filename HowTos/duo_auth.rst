@@ -6,7 +6,7 @@
 Duo Authentication
 =============================================
   
-Aviatrix OpenVPN solution provides DUO authentication integration. This document helps you to set up DUO API. For how to configure OpenVPN, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
+Aviatrix OpenVPN® solution provides DUO authentication integration. This document helps you to set up DUO API. For how to configure OpenVPN®, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 Getting DUO API credentials
 ---------------------------
@@ -20,7 +20,7 @@ Getting DUO API credentials
 
     If this is your first time creating a DUO account, Log in to the Duo
     Admin Panel and navigate to Applications. Click Protect an
-    Application and locate OpenVPN in the application list. Click
+    Application and locate OpenVPN® in the application list. Click
     Protect this application to view Integration key, secret key and API
     hostname. This information is needed to configure DUO on the
     controller. For more details, see
