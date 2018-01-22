@@ -16,7 +16,7 @@ there is underlying network connectivity to connect VPCs securely (such
 as using Aviatrix encrypted peering), a swarm cluster can span across
 multiple VPCs and to Azure and Google.
 
-For a reference design on how to use Aviatrix OpenVPN capability to
+For a reference design on how to use Aviatrix OpenVPN® capability to
 remotely access containers in a swarm cluster in the same manner as
 accessing instances from your laptop, for example, being able to use
 “curl” to a container running a web service, check out `this
@@ -164,6 +164,10 @@ Note:
 
 You may need to modify “Security Group” of each instance and manager to
 allow the access to their ports.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: Docker_media/image1.png
    :width: 6.05140in
