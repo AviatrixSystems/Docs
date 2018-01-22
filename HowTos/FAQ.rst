@@ -22,7 +22,7 @@ Aviatrix Cloud Gateway
 
 Aviatrix Cloud Gateway provides an end to end secure network solution
 for AWS, Azure and Google GCloud. The solution includes an enterprise
-OpenVPN access to VPC/VNet, encrypted routing among VPC/VNets and
+OpenVPN® access to VPC/VNet, encrypted routing among VPC/VNets and
 monitoring and logging of link status and latency. The solution enables
 you to build a secure private network spanning one or more public clouds
 where a user access any instance/VM with a private IP address directly.
@@ -60,9 +60,9 @@ ground up.
 
         -  Encryption over AWS Direct Connect and Azure Express Route.
 
--  OpenVPN Features
+-  OpenVPN® Features
 
-	-  Scalable and highly available OpenVPN solution.
+	-  Scalable and highly available OpenVPN® solution.
 
 	- Integrated with cloud provider native ELB, the solution scales out to
    	  unlimited number of users and bandwidth.
@@ -220,7 +220,7 @@ subnet. You need to give it a name (The name is presented as a Gateway
 Name field), this name becomes part of the instance name with a prefix
 CloudOps.
 
-In the Create page, select VPN Access to enable OpenVPN server
+In the Create page, select VPN Access to enable OpenVPN® server
 capability. There is a default VPN CIDR “192.168.43.0/24”. But you can
 change it, make sure the CIDR is outside the existing and future VPC
 CIDR range. This VPN CIDR is where VPN server assign virtual IP address
@@ -248,7 +248,7 @@ configurations should be identical.
 **Q3: How do I setup Okta authentication for VPN?**
 
 Aviatrix vpn gateway integrates seamlessly with Okta. It can authenticate vpn users
-to Okta service using Okta's OpenVPN pluggin in module.
+to Okta service using Okta's OpenVPN® pluggin in module.
 Follow the link: `How to setup Okta for Aviatrix VPN
 gateway <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__
 
@@ -259,7 +259,7 @@ If you have global workforce that needs to access the cloud, Geo VPN
 offers a superior solution. Geo VPN enables a VPN user to connect to a
 nearest VPC that hosts Aviatrix VPN gateway.
 
-To enable Geo VPN, go to OpenVPN -> GEO VPN.
+To enable Geo VPN, go to OpenVPN® -> GEO VPN.
 
 Also check out `this link for help. <http://docs.aviatrix.com/HowTos/GeoVPN.html>`_
 
@@ -268,7 +268,7 @@ Also check out `this link for help. <http://docs.aviatrix.com/HowTos/GeoVPN.html
 
 After at least one gateway is created, you can add VPN users.
 
-Click OpenVPN -> VPN Users -> +Add New.
+Click OpenVPN® -> VPN Users -> +Add New.
 
 When a user is added, an email is sent to the user with instructions on
 how to download client software and connect to VPN server.
@@ -352,16 +352,16 @@ profile that the user is assigned to are applied to the VPN gateway
 instance that user logs in. This effectively blocks traffic from
 entering the network.
 
-Click OpenVPN -> Profiles -> +New Profile to create profiles, then click Edit
+Click OpenVPN® -> Profiles -> +New Profile to create profiles, then click Edit
 Policies to add rules. You can add multiple of them, then click on Save.
 
 **Q3: How do I assign a user to a profile?**
 
 
-When you create a VPN user at OpenVPN -> VPN Users -> +Add New, you
+When you create a VPN user at OpenVPN® -> VPN Users -> +Add New, you
 can select profile option to assign the user to a specific profile.
 
-You can also attach the user to a profile at a later time. Go to OpenVPN -> Profiles. Click Attach User on a specific Profile and select a user that is added to the VPN gateway.
+You can also attach the user to a profile at a later time. Go to OpenVPN® -> Profiles. Click Attach User on a specific Profile and select a user that is added to the VPN gateway.
 
 **Q4: What if I want to change profile policies?**
 
@@ -403,7 +403,7 @@ hostname.
 To obtain Integration Key, Secret key and API hostname, login to DUO
 website as an admin, `www.duo.com <http://www.duo.com>`__, click on the
 left panel Applications, click Protect an Application below. Scroll down
-the application list and select OpenVPN (click Protect this
+the application list and select OpenVPN® (click Protect this
 Application), the next screen should reveal the credentials you need to
 configure on the Aviatrix controller.
 
@@ -599,7 +599,7 @@ Yes. In addition to password login, DUO authentication and LDAP are supported.
 Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select "read_only" from the drop down menu. This user account will have views to all pages but cannot make changes to any configurations.
 
 
-
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image1| image:: FAQ_media/image1.png
