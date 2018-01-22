@@ -107,9 +107,13 @@ Key Use cases
 
  - `Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
- - `Client VPN or OpenVPN <http://docs.aviatrix.com/HowTos/uservpn.html>`_
+ - `Client VPN or OpenVPN® <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 For support, send email to support@aviatrix.com. Enjoy!
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: AviatrixCloudControllerStartupGuide_media/image001.png
    :width: 2.90683in
