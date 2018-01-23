@@ -54,10 +54,10 @@ Launch from CloudFormation script
 If you select the Aviatrix BYOL AMI, the recommended way to launch the Controller is by our CloudFormation script. 
 Follow the instruction `for Aviatrix QuickStart Cloudformation Script  <https://github.com/AviatrixSystems/AWSQuickStart>`__ to launch a controller instance in a selected region.
 
-Launch manually
---------------------
+Launch Utility AMIs manually
+----------------------------
 
-For all other AMIs, you need to launch the controller manually, follow `this document. <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`_ 
+For utility AMIs, you need to `launch the utility AMIs controller manually described in this document. <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`_ 
 
 Access the Controller
 =======================
