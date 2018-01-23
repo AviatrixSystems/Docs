@@ -115,11 +115,13 @@ The configuration workflow is as follows, with major steps highlighted.
 5. Add users
 
    If you have not done so, add VPN user John to the cloud network. Go
-   to OpenVPN, Use Profile to control which user can access what cloud
+   to OpenVPN®, Use Profile to control which user can access what cloud
    instance/application/ports.
 
 6. Done. 
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image0| image:: DevSandbox_media/image1.png

@@ -10,7 +10,7 @@
 
 
 Aviatrix VPN gateway supports Okta authentication as part of
-multi-­factor authentication for OpenVPN access. Following are the
+multi-­factor authentication for OpenVPN® access. Following are the
 steps.
 
 1.0  Log in into your Okta account as **Super Admin.** This allows the privilege to create a Token for API access by Aviatrix gateway.
@@ -41,11 +41,15 @@ enabled. Select “Okta” for “Two-­‐step Authentication” and enter Okta
       `demoaviatrix@aviatrix.com <mailto:demoaviatrix@aviatrix.com>`__
       and “aviatrix.com” as Username Suffix, you should enter
       “demoaviatrix” as your VPN username when prompted for username by
-      OpenVPN Client. If Username Suffix is not provided, you must enter
+      OpenVPN® Client. If Username Suffix is not provided, you must enter
       `demoaviatrix@aviatrix.com, <mailto:demoaviatrix@aviatrix.com>`__
       as shown below.
 
         |image3|
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: How_to_setup_Okta_for_Aviatrix_media/image0.png
    :width: 3.5in

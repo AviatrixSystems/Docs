@@ -75,7 +75,7 @@ R2.7
 3. Scalability
 ---------------
 
-- Support load balancing UDP based OpenVPN gateways. If your OpenVPN users experience slow terminal response or long file transfer time, use UDP based VPN gateway can help. This release allows you to create multiple UDP based VPN gateways and load balance them in a round robin fashion by leveraging AWS Route53. To configure, go to OpenVPN -> Advanced -> UDP Loadbalancer. Note with UDP protocol UDP port 1194 is used. When using from on-prem, firewall port UDP 1194 must be open. 
+- Support load balancing UDP based OpenVPN® gateways. If your OpenVPN® users experience slow terminal response or long file transfer time, use UDP based VPN gateway can help. This release allows you to create multiple UDP based VPN gateways and load balance them in a round robin fashion by leveraging AWS Route53. To configure, go to OpenVPN® -> Advanced -> UDP Loadbalancer. Note with UDP protocol UDP port 1194 is used. When using from on-prem, firewall port UDP 1194 must be open. 
 
 - Support Designated Gateway. If you are planning to have a large set of tunnels going through a gateway or are hitting AWS route entry limit, this feature is for you. If "Designated Gateway" option is selected at the gateway launch time, the Controller programs 3 route entries based on RFC1918 for the gateway. Controller will not program additional route entries when configure a VPN tunnel that end on the Designated Gateway. Note if you currently do not have a Designated Gateway and you are hitting route entry limit, launch a new gateway with Designated Gateway enabled and configure future tunnels from the Designated Gateway. Note there can only be one Designated Gateway per VPC. Designated Gateway only supports Gateway HA.  
 
@@ -86,7 +86,7 @@ R2.7
 
 - Support resizing active Gateway without deleting its peering tunnel. You can resize an active gateway when there peering HA configured. The workflow should be: 1) Settings -> Gateways -> select the gateway, select Edit. 2) Select it desired gateway instance size, click Change. As the result of this function, the gateway will be stopped and tunnel switch to backup tunnel. 3) Go to Settings -> Peering, select the peer and click Force Switchover.  
 
-- Support resizing UDP based OpenVPN gateway instance. 
+- Support resizing UDP based OpenVPN® gateway instance. 
 
 5. NEW REST APIs
 ------------------
@@ -133,8 +133,8 @@ R2.5
 1. Security improvements
 -------------------------
 
--  Provide security patch to upgrade OpenVPN server to v2.4.3. To apply
-   the patch, go to Settings->Patches and select OpenVPN 2.4.3
+-  Provide security patch to upgrade OpenVPN® server to v2.4.3. To apply
+   the patch, go to Settings->Patches and select OpenVPN® 2.4.3
 
 -  New Aviatrix VPN client (v1.3.9) for user VPN (Mac, PC and Unix). To
    download, go to `this link. <http://docs.aviatrix.com/Downloads/samlclient.html>`__
@@ -493,7 +493,7 @@ UserConnect-121516
 
 -  Allow to add VPN users to each individual gateway (with ELB disabled)
    instead of the whole VPC. Select the gateway name from "LB/Gateway
-   Name" list at OpenVPN -> "VPN Users" -> "Add New" to add VPN users to
+   Name" list at OpenVPN® -> "VPN Users" -> "Add New" to add VPN users to
    that gateway.
 
 -  Support migrating the same CloudN from one public IP address to
@@ -526,7 +526,7 @@ UserConnect-121516
 
 -  Allow users to customize the email notification (both email content
    and attachment file name) for VPN client. To configure it, go to
-   OpenVPN -> Configuration -> "User Defined Email Notification" to edit
+   OpenVPN® -> Configuration -> "User Defined Email Notification" to edit
    the file name or email content. The new email format will be used
    when a VPN certificate is issued.
 
@@ -707,7 +707,7 @@ UserConnect-082116
 
    -  Settings -> System Time
 
-   -  OpenVPN -> Profiles -> Edit -> Add New. Users can select subnets
+   -  OpenVPN® -> Profiles -> Edit -> Add New. Users can select subnets
       from VPCs/VNets without typing these CIDRs manually.
 
    -  Gateway -> Click "+" next to the gateway name. Users can display
@@ -754,7 +754,7 @@ UserConnect-072216
    for details.
 
 -  Support AWS Geo VPN to include other cloud type's ELB DNS name. To
-   configure, go to OpenVPN -> Configuration to enable AWS Geo VPN
+   configure, go to OpenVPN® -> Configuration to enable AWS Geo VPN
    first. Then you can add ELB DNS names from other cloud types to Geo
    VPN. With this capability, VPN gateway in Azure and GCloud can be
    included as part of Geo VPN solution.
@@ -1316,12 +1316,15 @@ UserConnect-032315
 
 -  Support user profile based security policies.
 
--  Support scale out and highly available OpenVPN solutions for direct
+-  Support scale out and highly available OpenVPN® solutions for direct
    access to VPCs.
 
 -  Support LDAP integration.
 
 -  Support Windows, MAC OS and Chromebook clients.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. disqus::

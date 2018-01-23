@@ -29,16 +29,20 @@ Aviatrix software upgrade happens inline without taking down the controller.
 In addition, gateway upgrade is hitless, that is, all gateway encrypted tunnels
 stay up without going down. There is no packet loss when upgrading the software.
 
-Upgrade impact on OpenVPN users
+Upgrade impact on OpenVPN® users
 --------------------------------
 
-Most upgrades do not impact connected OpenVPN users. In some cases,
-OpenVPN service needs to be restarted as part of software upgrade, for example,
+Most upgrades do not impact connected OpenVPN® users. In some cases,
+OpenVPN® service needs to be restarted as part of software upgrade, for example,
 upgrade to a new SSL version for security patch.
-in these cases, connected OpenVPN users
+in these cases, connected OpenVPN® users
 will experience an disconnect. They will need to connect again.
 
-When a release affects OpenVPN users, the Release Note will make a note of it.
+When a release affects OpenVPN® users, the Release Note will make a note of it.
 Make sure you read Release Notes before making upgrade.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. disqus::

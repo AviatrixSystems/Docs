@@ -3,7 +3,7 @@
    :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
 
 =====================================
-OpenVPN with SAML Client on Okta IDP 
+OpenVPN® with SAML Client on Okta IDP 
 =====================================
 
 
@@ -11,7 +11,7 @@ OpenVPN with SAML Client on Okta IDP
 1.  Overview
 ------------
 
-Aviatrix user VPN is the only OpenVPN based remote VPN solution that provides a vpn client that supports SAML authentication. 
+Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a vpn client that supports SAML authentication. 
 
 This guide provides an example on how to use Aviatrix SAML client to authenticate Okta IDP. When SAML client is used, Aviatrix controller acts as the identity service provider (ISP) that redirects browser traffic from client to IDP, in this case, Okta, for authentication. 
 
@@ -94,7 +94,7 @@ This step is usually done by the Okta Admin.
 		d.	Name ID format = Unspecified
 		e.	Application username = Okta username
 
-		These values are also available in the controller OpenVPN->Users page after step 3.4
+		These values are also available in the controller OpenVPN®->Users page after step 3.4
 
 		|image2|
 		
@@ -149,7 +149,7 @@ This step is usually completed by the Aviatrix admin.
 This step is usually completed by the Aviatrix admin.
 
 1.	Login to the Aviatrix Controller
-2.	Click OpenVPN -> VPN Users -> Add New
+2.	Click OpenVPN® -> VPN Users -> Add New
 3.	Select the VPC where the above gateway was launched
 4.	Username = aviatrix_username (this is the username that you choose during the Okta SAML configuration)
 5.	User Email = any valid email address (this is where the cert file will be sent
@@ -161,6 +161,8 @@ This step is usually completed by the Aviatrix admin.
 
 9.  Done
 	
+
+OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png

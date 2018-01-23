@@ -242,16 +242,16 @@ b.11.  Click button "OK"
 b.12.  Done
 
 
-2.2.3  Step c – Create an OpenVPN user
+2.2.3  Step c – Create an OpenVPN® user
 ------------------------------------------------------------
 
-This step explains how to create a OpenVPN user.
+This step explains how to create a OpenVPN® user.
 
 **Instructions:**
 
 c.1.  From the Aviatrix Controller Console
 
-c.2.  Click OpenVPN -> VPN Users
+c.2.  Click OpenVPN® -> VPN Users
 
 c.3.  Click button "+Add New"
 
@@ -274,13 +274,13 @@ c.6.  Done
 2.2.4  Step d – Start anonymous browsing
 --------------------------------------------
 
-This step explains how to establish an OpenVPN connection and surf network as anonymous.
+This step explains how to establish an OpenVPN® connection and surf network as anonymous.
 
 **Instructions:**
 
-d.1.  Enable an OpenVPN client tool
+d.1.  Enable an OpenVPN® client tool
 
-d.2.  Establish an OpenVPN connection with the ovpn file which has received in email
+d.2.  Establish an OpenVPN® connection with the ovpn file which has received in email
 
 d.3.  Confirm the connectivity to public network
 
@@ -297,6 +297,10 @@ To check a tunnel state, go to Site2Cloud, the tunnel status will be
 displayed at "status" column.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: Anonymous_Browsing_media/Anonymous_Browsing.PNG
    :width: 5.03147in

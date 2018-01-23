@@ -8,7 +8,7 @@ Controller Backup and Restore
 
 When deployed in a cloud environment, the Aviatrix controller, is not in the data path as packet processing and encryption is done by the Aviatrix gateways.
 
-When the controller is down or out of service, your network will continue to be operational and encrypted tunnels and OpenVPN users stay connected and are not affected. Since most of the data logs are forwarded from the gateways directly, the loss of log information from the controller is minimal. The only impact is that you cannot build new tunnels or add new OpenVPN users.
+When the controller is down or out of service, your network will continue to be operational and encrypted tunnels and OpenVPN® users stay connected and are not affected. Since most of the data logs are forwarded from the gateways directly, the loss of log information from the controller is minimal. The only impact is that you cannot build new tunnels or add new OpenVPN® users.
 
 This loosely coupled relationship between the controller and gateways reduces the impact of the availability of the controller and simplifies your infrastructure. Since the controller stores configuration data, it should be periodically backed up to the appropriate AWS/Azure/Google account. If a replacement controller is launched, you can restore the configuration data from your backup.
 
@@ -34,5 +34,9 @@ How to restore configuration
   #. Click Restore
 
 The new controller will then inherit the configuration data.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. disqus::

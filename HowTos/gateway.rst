@@ -87,4 +87,8 @@ Gateway Size
 
 You can change Gateway Size if need to change gateway throughput. The gateway will restart with a different instance size.
 
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
+
 .. disqus::

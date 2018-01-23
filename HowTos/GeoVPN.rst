@@ -5,7 +5,7 @@
 
 
 ===========================
-OpenVPN for Geo Locations
+OpenVPN® for Geo Locations
 ===========================
 
 If you have a global work force that needs to access the cloud with the
@@ -101,7 +101,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 3. Enable Geo VPN
 
-   a. Go to OpenVPN -> Configuration -> Geo VPN, select Enable
+   a. Go to OpenVPN® -> Configuration -> Geo VPN, select Enable
 
    b. For Domain Name, enter a public domain name that is registered on
       AWS Route 53 as a public hosted zone. For example, aviatrixvpn.com
@@ -153,11 +153,11 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 7. Add Users and Profiles
 
-   a. Go to OpenVPN ->  Profiles to create as many profiles as
+   a. Go to OpenVPN® ->  Profiles to create as many profiles as
       you please. The target field can be FQDN (DNS names or fully
       qualified domain name).
 
-   b. Go to OpenVPN -> VPN Users to add as many user as you
+   b. Go to OpenVPN® -> VPN Users to add as many user as you
       please.
 
 	 |     	i.  When Geo VPN is enabled, VPC ID association is no longer
@@ -180,6 +180,10 @@ be able to add DNS record. To register a public domain name under your
 account in AWS, go to AWS management console portal. Under Services,
 select Route 53 Management Console. Under Domains, select Registered
 domains, then click Register Domain.
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. |image0| image:: GeoVPN_media/image1.png
 

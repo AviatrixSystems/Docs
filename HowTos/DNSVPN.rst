@@ -24,7 +24,7 @@ Tips: Upgrade to the latest version. Make sure you are running 2.7+
 1. Create VPN Gateways from Gateways Page. Make sure you have VPN Enabled and ELB disabled.
 
 2. Create DNS Loadbalancers
-   a. Go to OpenVPN->Advanced->UDP Loadbalancer
+   a. Go to OpenVPN®->Advanced->UDP Loadbalancer
    b. Click "+New" button
    
         i. Select cloud type and account (Currently only supported on AWS)
@@ -36,10 +36,14 @@ Tips: Upgrade to the latest version. Make sure you are running 2.7+
              any gateways, you may not have created non ELB VPN Gateways.
 	      v. Hit "OK" and this creates the UDP LoadBalancer
 3. Add VPN Users.
-   a. Add VPN Users directly to the LoadBalancer by going to OpenVPN->VPN Users page
+   a. Add VPN Users directly to the LoadBalancer by going to OpenVPN®->VPN Users page
    b. In the VPC ID/LB /DNS select the loadbalancer created in Step 2. ("Example:vpn.aviatrix.com")
    c. Populate the username and email fields and the VPN user is created
 4. (Optional) Edit DNS LoadBalancer
    a. You can add or delete gateways to the load balancer after it has been created
+
+
+OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 .. disqus::
