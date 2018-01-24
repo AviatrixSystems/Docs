@@ -56,6 +56,24 @@ Manages an Aviatrix Transit VPC.
 	  ha_subnet = "10.1.0.0/24"
 	}
 
++--------------+-------------------------------------------------------------------+
+| cloud_type   | Enter 1 for AWS cloud type. Transit VPC is supported only in AWS. |
++--------------+-------------------------------------------------------------------+
+| account_name | Enter aviatrix cloud account name.                                |
++--------------+-------------------------------------------------------------------+
+| gw_name      | Enter Gateway name for transit VPC                                |
++--------------+-------------------------------------------------------------------+
+| vpc_id       | VPC ID of transit VPC                                             |
++--------------+-------------------------------------------------------------------+
+| vpc_size     | Gateway size.                                                     |
++--------------+-------------------------------------------------------------------+
+| vpc_net      | VPC subnet where you want to deploy transit VPC GW.               |
++--------------+-------------------------------------------------------------------+
+| ha_subnet    | (Optional) VPC subnet for HA.                                     |
++--------------+-------------------------------------------------------------------+
+| dns_server   | (Optional) IP address for reachable DNS server.                   |
++--------------+-------------------------------------------------------------------+
+
 aviatrix_vgw_conn
 ----------------
 Manages VGW connection
@@ -77,6 +95,20 @@ Manages VGW connection
 	  bgp_local_as_num = "100"
 	  enable_ha = "true"
 	}
+
++------------------+-----------------------------------------+
+| conn_name        | Name for transit VPC to VGW connection. |
++------------------+-----------------------------------------+
+| gw_name          | Transit VPC GW name.                    |
++------------------+-----------------------------------------+
+| vpc_id           | Enter VPC Id of transit VPC.            |
++------------------+-----------------------------------------+
+| bgp_vgw_id       | Enter AWS VGW Id used for connection.   |
++------------------+-----------------------------------------+
+| bgp_local_as_num | Enter BGP Local ASN.                    |
++------------------+-----------------------------------------+
+| enable_ha        | (Optional) Enter true to enable HA.     |
++------------------+-----------------------------------------+
 
 aviatrix_spoke_vpc
 ------------------
@@ -102,6 +134,30 @@ Manages an Aviatrix Spoke VPC
 	  ha_subnet = "10.20.1.0/24"
 	  transit_gw = "transit"
 	}
+
++--------------+-------------------------------------------------------------------+
+| cloud_type   | Enter 1 for AWS cloud type. Transit VPC is supported only in AWS. |
++--------------+-------------------------------------------------------------------+
+| account_name | Enter aviatrix cloud account name.                                |
++--------------+-------------------------------------------------------------------+
+| gw_name      | Enter Gateway name for spoke gateway.                             |
++--------------+-------------------------------------------------------------------+
+| vpc_id       | VPC ID for Spoke gateway.                                         |
++--------------+-------------------------------------------------------------------+
+| vpc_reg      | Gateway size.                                                     |
++--------------+-------------------------------------------------------------------+
+| vpc_size     | Gateway size.                                                     |
++--------------+-------------------------------------------------------------------+
+| vpc_net      | VPC subnet where you want to deploy transit VPC GW.               |
++--------------+-------------------------------------------------------------------+
+| enable_nat   | Enter "true" to enable NAT.                                       |
++--------------+-------------------------------------------------------------------+
+| ha_subnet    | (Optional) VPC subnet for HA.                                     |
++--------------+-------------------------------------------------------------------+
+| dns_server   | (Optional) IP address for reachable DNS server.                   |
++--------------+-------------------------------------------------------------------+
+| transit_gw   | (Optional) Transit Gateway name to join spoke Gateway with.       |
++--------------+-------------------------------------------------------------------+
 
 Sample configuration to create complete transit VPC solution
 ============================================================
@@ -173,5 +229,5 @@ Sample configuration to create complete transit VPC solution
 	  vpc_net = "10.20.0.0/24"
 	  ha_subnet = "10.20.1.0/24"
 	  transit_gw = "transit"
-	  depends_on = ["aviatrix_vgw_conn.test_vgw_conn"]
+	  depends_on = ["aviatrix_transit_vpc.test_transit_gw"]
 	}
