@@ -107,6 +107,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: OpenVPN®
 
    HowTos/uservpn
+   HowTos/openvpn_faq
    HowTos/openvpn_features
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
