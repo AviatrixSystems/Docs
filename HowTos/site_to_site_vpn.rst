@@ -61,9 +61,10 @@ c.  Click on Add New Connection button.
     |image4|
 
 d.  Fill out the details in the Site2Cloud form as shown below. 
-    I. Remote Gateway IP as the public IP of the other Site
-    II. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
-    III. Local Subnet is the CIDRs in the local site.
+
+    1. Remote Gateway IP as the public IP of the other Site
+    2. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
+    3. Local Subnet is the CIDRs in the local site.
 
 |image5|
 
@@ -86,7 +87,7 @@ o.  This will start the IPsec negotiations between both gateways. You should see
 
 Please reach out to info@aviatrix.com if you have any questions.
 
-doc version: 5
+doc version: 6
 
 
 
