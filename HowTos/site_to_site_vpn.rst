@@ -61,9 +61,9 @@ Download and install the Aviatrix Gateways VMs by following instructions in this
     |image4|
 
     d.  Fill out the details in the Site2Cloud form as shown below. 
-        I.      Remote Gateway IP as the public IP of the other Site
-        II.     Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
-        III.    Local Subnet is the CIDRs in the local site.
+        I. Remote Gateway IP as the public IP of the other Site
+        II. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
+        III. Local Subnet is the CIDRs in the local site.
 
     |image5|
 
