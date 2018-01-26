@@ -94,24 +94,24 @@ Please reach out to info@aviatrix.com if you have any questions.
 
 
 
-.. |image1| image:: ./img_01.png
+.. |image1| image:: HowTos/site_to_site_vpn_media/img_01.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image2| image:: ./img_02.png
+.. |image2| image:: HowTos/site_to_site_vpn_media/img_02.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image3| image:: ./img_03.png
+.. |image3| image:: HowTos/site_to_site_vpn_media/img_03.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image4| image:: ./img_04.png
+.. |image4| image:: HowTos/site_to_site_vpn_media/img_04.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image5| image:: ./img_05.png
+.. |image5| image:: HowTos/site_to_site_vpn_media/img_05.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image6| image:: ./img_06.png
+.. |image6| image:: HowTos/site_to_site_vpn_media/img_06.png
     :width: 2.00000 in
     :height: 2.00000 in
-.. |image7| image:: ./img_07.png
+.. |image7| image:: HowTos/site_to_site_vpn_media/img_07.png
     :width: 2.00000 in
     :height: 2.00000 in
