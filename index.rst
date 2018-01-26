@@ -218,6 +218,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Competitive_CSR1000v
    HowTos/aviatrix_terraform
    StartUpGuides/aws_manual_startup_guide
+   HowTos/site_to_site_vpn
 
 .. _Solutions:
 
