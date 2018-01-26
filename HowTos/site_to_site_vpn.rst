@@ -87,7 +87,7 @@ Download and install the Aviatrix Gateways VMs by following instructions in this
 Please reach out to info@aviatrix.com if you have any questions.
 
 
-doc version: 2
+doc version: 3
 
 
 
@@ -95,23 +95,23 @@ doc version: 2
 
 
 .. |image1| image:: site_to_site_vpn_media/img_01.png
-    :width: 6.00000 in
-    :height: 4.00000 in
+    :width: 8.00000 in
+    :height: 6.00000 in
 .. |image2| image:: site_to_site_vpn_media/img_02.png
-    :width: 6.00000 in
-    :height: 1.00000 in
+    :width: 8.00000 in
+    :height: 6.00000 in
 .. |image3| image:: site_to_site_vpn_media/img_03.png
-    :width: 6.00000 in
-    :height: 4.00000 in
+    :width: 8.00000 in
+    :height: 6.00000 in
 .. |image4| image:: site_to_site_vpn_media/img_04.png
-    :width: 6.00000 in
-    :height: 4.00000 in
+    :width: 8.00000 in
+    :height: 6.00000 in
 .. |image5| image:: site_to_site_vpn_media/img_05.png
-    :width: 6.00000 in
-    :height: 4.00000 in
+    :width: 8.00000 in
+    :height: 6.00000 in
 .. |image6| image:: site_to_site_vpn_media/img_06.png
-    :width: 6.00000 in
-    :height: 3.00000 in
+    :width: 8.00000 in
+    :height: 0.00000 in
 .. |image7| image:: site_to_site_vpn_media/img_07.png
-    :width: 6.00000 in
-    :height: 2.00000 in
+    :width: 8.00000 in
+    :height: 0.00000 in
