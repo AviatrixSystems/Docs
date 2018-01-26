@@ -22,7 +22,7 @@ Environment Requirements
 An Aviatrix Site to Site is accomplished by one gateway initialing an IPSec session with the other gateway. For this to work atleast one of the Gateway need to accessible via a public IP address. This can be accomplished by setting up a the public IP addres on the edge router in the premise and configuring NAT from that public IP address to the Aviatrix VM. The only ports that need to be forwarded from the edge router to the VM are UDP ports 500 and 4500. 
 
 
-    |image1|
+|image1|
 
 
 On the other site, the second gateway does not need a public IP assigned to the Aviatrix Gateway. This second Gateway will reach outbound to the first Aviatrix GW (GW1)
@@ -30,9 +30,9 @@ On the other site, the second gateway does not need a public IP assigned to the 
 The last requirement is to configure static routes in the internal routers (default gateway of the Aviatrix VM) in both the sites. This static route should send traffic destined to the other site to the Aviatrix GW as the next hop.
 
 
-    |image2|
+|image2|
 
-    |image3|
+|image3|
 
 
 |
@@ -54,42 +54,39 @@ Download and install the Aviatrix Gateways VMs by following instructions in this
 
 ..
 
-    a. Log into the Web UI of the first Gateway (GW1).
-    b.  Click on Site2Cloud in the navigation pane.
-    c.  Click on Add New Connection button.
+a. Log into the Web UI of the first Gateway (GW1).
+b.  Click on Site2Cloud in the navigation pane.
+c.  Click on Add New Connection button.
 
     |image4|
 
-    d.  Fill out the details in the Site2Cloud form as shown below. 
-        I. Remote Gateway IP as the public IP of the other Site
-        II. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
-        III. Local Subnet is the CIDRs in the local site.
+d.  Fill out the details in the Site2Cloud form as shown below. 
+    I. Remote Gateway IP as the public IP of the other Site
+    II. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
+    III. Local Subnet is the CIDRs in the local site.
 
-    |image5|
+|image5|
 
-    e.  Click OK. You will see the connection listed in the Site2Cloud UI.
-    f.  Click on the connection from the list. You will see “Edit Site2Site” options appear under the list.
+e.  Click OK. You will see the connection listed in the Site2Cloud UI.
+f.  Click on the connection from the list. You will see “Edit Site2Site” options appear under the list.
 
-    |image6|
+|image6|
 
-    g.  Select Aviatrix in the Vendor dropdown.
-    h.  Click on Download Configuration button. This will download a text file (.txt) to your local machine.
-    i.  Log in to Gateway 2’s web UI on the other site (GW2).
-    j.  Go to Site2Cloud page
-    k.  Click on Add New Connection
-    l.  Locate the Import button at the bottom of the screen.
-    m.  Select the text file you downloaded from the other Gateway. This will auto populate the details in the form.
-    n.  Click “OK”
-    o.  This will start the IPsec negotiations between both gateways. You should see the connection status change to “Up” within a few minutes.
+g.  Select Aviatrix in the Vendor dropdown.
+h.  Click on Download Configuration button. This will download a text file (.txt) to your local machine.
+i.  Log in to Gateway 2’s web UI on the other site (GW2).
+j.  Go to Site2Cloud page
+k.  Click on Add New Connection
+l.  Locate the Import button at the bottom of the screen.
+m.  Select the text file you downloaded from the other Gateway. This will auto populate the details in the form.
+n.  Click “OK”
+o.  This will start the IPsec negotiations between both gateways. You should see the connection status change to “Up” within a few minutes.
 
-    |image7|
+|image7|
 
 Please reach out to info@aviatrix.com if you have any questions.
 
-
-doc version: 3
-
-
+doc version: 5
 
 
 
