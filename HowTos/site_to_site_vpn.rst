@@ -59,22 +59,15 @@ Download and install the Aviatrix Gateways VMs by following instructions in this
 a. Log into the Web UI of the first Gateway (GW1).
 #. Click on Site2Cloud in the navigation pane.
 #. Click on Add New Connection button.
-
     |image4|
-
 #. Fill out the details in the Site2Cloud form as shown below. 
-
     i. Remote Gateway IP as the public IP of the other Site
     ii. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
     iii. Local Subnet is the CIDRs in the local site.
-
 |image5|
-
 #. Click OK. You will see the connection listed in the Site2Cloud UI.
 #. Click on the connection from the list. You will see “Edit Site2Site” options appear under the list.
-
 |image6|
-
 #. Select Aviatrix in the Vendor dropdown.
 #. Click on Download Configuration button. This will download a text file (.txt) to your local machine.
 #. Log in to Gateway 2’s web UI on the other site (GW2).
@@ -90,7 +83,7 @@ a. Log into the Web UI of the first Gateway (GW1).
 Please reach out to info@aviatrix.com if you have any questions.
 
 
-doc version: 3
+doc version: 4
 
 
 
