@@ -87,7 +87,7 @@ o.  This will start the IPsec negotiations between both gateways. You should see
 
 Please reach out to info@aviatrix.com if you have any questions.
 
-doc version: 7
+doc version: 8
 
 
 
@@ -99,8 +99,8 @@ doc version: 7
     :width: 8.00000 px
     :height: 6.00000 px
 .. |image3| image:: site_to_site_vpn_media/img_03.png
-    :width: 8.00000 pix
-    :height: 6.00000 pix
+    :width: 8.00000 mm
+    :height: 6.00000 mm
 .. |image4| image:: site_to_site_vpn_media/img_04.png
     :width: 8.00000 in
     :height: 6.00000 in
