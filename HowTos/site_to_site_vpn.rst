@@ -1,3 +1,5 @@
+
+
 .. meta::
    :description: Using Aviatrix to connect from one site to another site with IPsec VPN
    :keywords: site, IPsec, VPN
@@ -87,8 +89,17 @@ o.  This will start the IPsec negotiations between both gateways. You should see
 
 Please reach out to info@aviatrix.com if you have any questions.
 
-version: :warning:
+version: 2
 
+:+1:
+
+:blush:
+
+:ocean:
+
+:mute:
+
+:us:
 
 
 
