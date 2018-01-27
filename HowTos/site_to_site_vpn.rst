@@ -65,8 +65,8 @@ a. Log into the Web UI of the first Gateway (GW1).
 #. Fill out the details in the Site2Cloud form as shown below. 
 
     i. Remote Gateway IP as the public IP of the other Site
-    #. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
-    #. Local Subnet is the CIDRs in the local site.
+    ii. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
+    iii. Local Subnet is the CIDRs in the local site.
 
 |image5|
 
@@ -90,7 +90,7 @@ a. Log into the Web UI of the first Gateway (GW1).
 Please reach out to info@aviatrix.com if you have any questions.
 
 
-doc version: 2
+doc version: 3
 
 
 
