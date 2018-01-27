@@ -6,7 +6,7 @@
 
 
 ======================================================================================
-Using Aviatrix to connect from one site to another site with IPsec VPN
+Using Aviatrix to Build a Site to Site IPsec VPN Connection
 ======================================================================================
 
 Aviatrix gateways can be used to connect one site to and other. This solution requires one Aviatrix gateway in each location that needs to be connected. These on-premise gateways can be deployed as virtual machines on VMware, KVM or Hyper-V.
@@ -18,13 +18,13 @@ Aviatrix gateways can be used to connect one site to and other. This solution re
 Environment Requirements
 ---------------------------------------------------------
 
-An Aviatrix Site to Site is accomplished by one gateway initialing an IPSec session with the other gateway. For this to work atleast one of the Gateway need to accessible via a public IP address. This can be accomplished by setting up a the public IP addres on the edge router in the premise and configuring NAT from that public IP address to the Aviatrix VM. The only ports that need to be forwarded from the edge router to the VM are UDP ports 500 and 4500. 
+An Aviatrix Site to Site IPSEC tunnel is accomplished by one gateway initiating the session with the other gateway. For this to work at least one of the Aviatrix virtual appliance needs to accessible via a public IP address. This can be accomplished by setting up a the public IP addres on the edge router in the on-premise network and configuring NAT from that public IP address to the Aviatrix VM with a 1-1 IP address NAT. The only ports that need to be forwarded from the edge router to the VM are UDP ports 500 and 4500. 
 
 
 |image1|
 
 
-On the other site, the second gateway does not need a public IP assigned to the Aviatrix Gateway. This second Gateway will reach outbound to the first Aviatrix GW (GW1)
+On the other site, the second gateway does not need a public IP assigned to the Aviatrix gateway. This second gateway will reach outbound to the first Aviatrix GW (GW1)
 
 The last requirement is to configure static routes in the internal routers (default gateway of the Aviatrix VM) in both the sites. This static route should send traffic destined to the other site to the Aviatrix GW as the next hop.
 
