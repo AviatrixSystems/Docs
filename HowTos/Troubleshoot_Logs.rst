@@ -8,6 +8,6 @@ Logs
 
 
 
- *  `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html?highlight=Upload%20tracelog>`__
+ *  `Upload tracelog. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
 
 .. disqus::
