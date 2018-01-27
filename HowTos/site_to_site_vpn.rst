@@ -5,9 +5,6 @@
    :keywords: site, IPsec, VPN
 
 
-
-
-
 ======================================================================================
 Using Aviatrix to connect from one site to another site with IPsec VPN
 ======================================================================================
@@ -100,7 +97,6 @@ Download and install the Aviatrix Gateways VMs by following instructions in this
 Please reach out to info@aviatrix.com if you have any questions.
 
 
-doc version: 8
 
 
 
