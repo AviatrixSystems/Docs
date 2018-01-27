@@ -56,34 +56,40 @@ Download and install the Aviatrix Gateways VMs by following instructions in this
 
 ..
 
-    a. Log into the Web UI of the first Gateway (GW1).
-    b. Click on Site2Cloud in the navigation pane.
-    c. Click on Add New Connection button.
+    **a.** Log into the Web UI of the first Gateway (GW1).
+    **b.** Click on Site2Cloud in the navigation pane.
+    **c.** Click on Add New Connection button.
+    
     |image4|
-    d. Fill out the details in the Site2Cloud form as shown below. 
-        i. Remote Gateway IP as the public IP of the other Site
-        ii. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
-        iii. Local Subnet is the CIDRs in the local site.
+    
+    **d.** Fill out the details in the Site2Cloud form as shown below. 
+    |    i. Remote Gateway IP as the public IP of the other Site
+    |    ii. Remote Subnet is the CIRD (or comma separated CIDRs) of the other site
+    |    iii. Local Subnet is the CIDRs in the local site.
+    
 |image5|
-    e. Click OK. You will see the connection listed in the Site2Cloud UI.
-    f. Click on the connection from the list. You will see “Edit Site2Site” options appear under the list.
+
+    **e.** Click OK. You will see the connection listed in the Site2Cloud UI.
+    **f.** Click on the connection from the list. You will see “Edit Site2Site” options appear under the list.
+    
 |image6|
-    g. Select Aviatrix in the Vendor dropdown.
-    h. Click on Download Configuration button. This will download a text file (.txt) to your local machine.
-    i. Log in to Gateway 2’s web UI on the other site (GW2).
-    j. Go to Site2Cloud page
-    k. Click on Add New Connection
-    l. Locate the Import button at the bottom of the screen.
-    m. Select the text file you downloaded from the other Gateway. This will auto populate the details in the form.
-    n. Click “OK”
-    o. This will start the IPsec negotiations between both gateways. You should see the connection status change to “Up” within a few minutes.
+
+    **g.** Select Aviatrix in the Vendor dropdown.
+    **h.** Click on Download Configuration button. This will download a text file (.txt) to your local machine.
+    **i.** Log in to Gateway 2’s web UI on the other site (GW2).
+    **j.** Go to Site2Cloud page
+    **k.** Click on Add New Connection
+    **l.** Locate the Import button at the bottom of the screen.
+    **m.** Select the text file you downloaded from the other Gateway. This will auto populate the details in the form.
+    **n.** Click “OK”
+    **o.** This will start the IPsec negotiations between both gateways. You should see the connection status change to “Up” within a few minutes.
 
 |image7|
 
 Please reach out to info@aviatrix.com if you have any questions.
 
 
-doc version: 6
+doc version: 7
 
 
 
