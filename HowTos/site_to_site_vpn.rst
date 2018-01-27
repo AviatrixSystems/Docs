@@ -89,17 +89,17 @@ o.  This will start the IPsec negotiations between both gateways. You should see
 
 Please reach out to info@aviatrix.com if you have any questions.
 
-version: 2
+version: 3
 
-:+1:
+|+1|
 
-:blush:
+|blush|
 
-:ocean:
+|ocean|
 
-:mute:
+|mute|
 
-:us:
+|us|
 
 
 
