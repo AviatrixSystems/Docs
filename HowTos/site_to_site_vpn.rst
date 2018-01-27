@@ -93,14 +93,14 @@ doc version: 7
 
 
 .. |image1| image:: site_to_site_vpn_media/img_01.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :width: 8.00000 cm
+    :height: 6.00000 cm
 .. |image2| image:: site_to_site_vpn_media/img_02.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :width: 8.00000 px
+    :height: 6.00000 px
 .. |image3| image:: site_to_site_vpn_media/img_03.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :width: 8.00000 pix
+    :height: 6.00000 pix
 .. |image4| image:: site_to_site_vpn_media/img_04.png
     :width: 8.00000 in
     :height: 6.00000 in
