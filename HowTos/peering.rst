@@ -6,13 +6,11 @@
 Peering
 ===========
 
+Encrypted Peering
+""""""""""""""""""
 Aviatrix provides a point and click solution to create an encrypted tunnel between two VPCs. The two VPCs could be in the same region, in different regions (inter region) and in different clouds (inter cloud)
 
 This guide helps you configure an encrypted peering. For cluster peering, refer to `this doc. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
-
-
-Encrypted Peering
-""""""""""""""""""
 
 1. At Gateway menu, create a gateway in an
    existing VPC/VNet.
@@ -24,10 +22,17 @@ Encrypted Peering
 #. At Peering -> Encrypted Peering, click New Peering to peer the two
    gateways.
 
-#. Note "Over AWS Peering" field currently only works when used in conjunction to transitive peering. When this field is selected, the controller does not program the AWS routing table to points peer VPC CIDR routes to the gateway. 
-
 
 #. For a complete end to end solution, check out this `reference
    design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__.
+
+AWS Peering
+""""""""""""""""""
+
+Aviatrix Controller integrates native AWS Peering for both intra region peering and inter 
+region peering, where it is available. Cross accounts peering is also supported. 
+
+To configure, go to Peering at the main navigation menu, click AWS Peering. Select the account, region and VPC. 
+You can choose the build the peering for the entire VPC or select individual route tables. 
 
 .. disqus::
