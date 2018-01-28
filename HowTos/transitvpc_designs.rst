@@ -22,7 +22,7 @@ Transit Group as none of the Spoke VPCs in either group can communicate with eac
 As such, you do not need to spin up multiple Transit Groups for network isolation
 purpose. A diagram is shown below.
 
-For connectivity between Spoke VPCs, choose AWS Peering or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console
+For connectivity between Spoke VPCs, choose `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console
 to setup. 
 
 |image0|
@@ -55,6 +55,21 @@ Alternatively, you can place the high bandwidth application in a separate VPC th
 
 |image3|
 
+Integrating with Egress Firewall
+----------------------------------
+
+Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls.  
+
+If you are running AWS Workspace services for your employees and need a full fledge firewall device, place the 
+firewall appliance in shared service VPC or its own VPC. Treat this VPC as one type of shared service VPC that
+offers egress control for instances in a private subnet of all Spoke VPCs. 
+
+In this case, use Aviatrix `site2cloud feature <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to connect to 
+the firewall appliance, as shown in the diagram below.
+
+|image4|
+
+
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
    :width: 5.55625in
    :height: 3.26548in
@@ -71,9 +86,9 @@ Alternatively, you can place the high bandwidth application in a separate VPC th
    :width: 5.55625in
    :height: 3.2654in
 
-.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :width: 2.55625in
-   :height: 2.50in
+.. |image4| image:: transitvpc_designs_media/egress-firewall.png
+   :width: 5.55625in
+   :height: 3.2654in
 
 .. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
    :width: 3.55625in
