@@ -3,8 +3,10 @@
    :keywords: BGP, transitive peering, Aviatrix inter region peering, inter cloud peering
 
 ##############################################
-Transit Network with BGP Setup Instructions
+Transit Network with BGP Setup Instructions 
 ##############################################
+
+.. Note:: this document becomes obsolate with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to setup a Transit Network. 
 
 Introduction
 =============
