@@ -16,7 +16,7 @@ Transit Groups in a single region or across multiple AWS regions.
 Single Region Transit VPC Design
 ----------------------------------
 
-Aviatrix Transit VPC solution provides default network segmentation, a Spoke VPC has not connectivity to another 
+Aviatrix Transit VPC solution provides default network segmentation, a Spoke VPC has no connectivity to another 
 Spoke VPC via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production Transit 
 Transit Group as none of the Spoke VPCs in either group can communicate with each other. 
 As such, you do not need to spin up multiple Transit Groups for network isolation
