@@ -7,63 +7,6 @@
 Site2Cloud 
 ==============================
 
-
-
-The Problem
-===========
-
-Traditionally enterprises host their IT applications in their own
-datacenter or at a co-location. Remote sites typically connect to the
-datacenter via an Internet based IPSec VPN tunnel or MPLS based private
-network. Such a hub and spoke architecture has been prevalent in the
-last 15 years.
-
-A problem with this deployment architecture is long latency or unstable
-Internet connectivity suffered by remote sites, especially between those
-in different continents. Such problems cause application time out,
-resulting in lost productivity and unhappy user experience. The solution
-to this pain point has been to deploy some form of WAN optimization
-gears in both the remote sites and datacenter to reduce application
-latency and reduce data bandwidth. These gears are complex, expensive
-and not every enterprise can afford them, and in some cases, they don’t
-always work well.
-
-Solution: Bring Application to User
-====================================
-
-With the many regions in the world available brought by public cloud
-providers, such as AWS and Azure, the application latency issue can now
-be solved in a brand new way. By placing applications in a region of
-public cloud that your remote sites are closer to than to the
-datacenter, the long latency issue is eliminated all together. In
-addition, by moving servers to the cloud, you can reduce remote sites
-footprint and the amount of hardware to manage, thus reducing cost for
-ongoing maintenance.
-
-The comparison between the two deployment architecture is described
-below:
-
-|image0|
-
-In the diagram above, remote sites or branch offices connect to
-headquarter datacenter via IPSec tunnels. International sites across
-continents can experience hundreds or more milliseconds in latency and
-in some countries, connectivity to headquarter is unstable at times.
-
-The first step in deploying application close to user is to build a new
-network architecture as shown in the right side of the diagram above. A
-remote site now connects via IPSec tunnel to a closest Aviatrix gateway
-in a VPC or VNet in a region closest to the site. Different remote sites
-may connect to different Aviatrix gateways. For example, sites in China
-connect to Aviatrix gateways in Azure China region and sites in Europe
-connect to Aviatrix gateway in a VPC in AWS eu-west-1 region.
-
-After the new network is deployed, you can now replicate Active
-Directory to VPC/VNet, and deploy applications such as ERP in the cloud
-too. The AD authentication latency and application latency can be
-reduced to tens of milliseconds. In addition, the remotes are simpler
-with fewer hardware equipment to manage.
-
 Configuration Workflow
 ======================
 

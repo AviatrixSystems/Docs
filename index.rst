@@ -97,8 +97,11 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Site2Cloud
 
+ 
+   HowTos/site2cloud_faq
    HowTos/site2cloud
    HowTos/cloudn-site2cloud
+   HowTos/site2cloud_case_study
    HowTos/bgp_transitive_instructions
    HowTos/EncrOverExpRoute
    HowTos/TransPeering_OnPrem
