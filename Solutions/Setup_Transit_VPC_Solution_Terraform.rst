@@ -3,7 +3,7 @@
    :keywords: terraform, terraform provider, api
 
 ============================================================
-Setup Transit VPC Solution using Aviatrix Terraform Provider
+Setup Transit Network using Aviatrix Terraform Provider
 ============================================================
 Aviatrix terraform provider is used to interact with Aviatrix resources. Click `here <http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_. to read more.
 
