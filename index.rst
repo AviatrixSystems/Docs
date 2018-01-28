@@ -78,6 +78,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
    HowTos/transitvpc_designs
+   Solutions/Setup_Transit_VPC_Solution_Terraform
 
 .. _Peering:
 
@@ -231,7 +232,6 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
    Solutions/aviatrix_aws_transitvpc
-   Solutions/Setup_Transit_VPC_Solution_Terraform
 
 
 .. _Whitepapers:

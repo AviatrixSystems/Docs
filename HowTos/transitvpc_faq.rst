@@ -87,6 +87,8 @@ Can Aviatrix Transit VPC be deployed with Terraform template?
 
 Yes, both APIs and Terraform are available for integration. 
 
+For Terraform, check out `this link. <http://docs.aviatrix.com/Solutions/Setup_Transit_VPC_Solution_Terraform.html>`_
+
 Does Aviatrix Transit Network support HA?
 ------------------------------------------
 

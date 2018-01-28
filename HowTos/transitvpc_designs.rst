@@ -1,10 +1,10 @@
 .. meta::
   :description: Global Transit Network
-  :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering
+  :keywords: Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering
 
 
 ===================================
-Transit VPC Design Patterns
+Transit Network Design Patterns
 ===================================
 
 `Aviatrix Transit VPC  <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ provides a workflow
