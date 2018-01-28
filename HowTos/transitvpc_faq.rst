@@ -3,11 +3,23 @@
    :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
 ============================
-Transit VPC FAQs
+Transit Network FAQs
 ============================
 
+Why should I choose Transit architecture?
+-------------------------------------------
 
-How does Aviatrix Transit VPC Solution differ from Cisco CSR based solution?
+Transit architecture is about building connectivity between cloud and on-prem in 
+the most agile manner possible. In the transit architecture, there is one 
+connection (not coounting backup here) between on-prem and 
+and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
+
+The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, 
+each time when you spin up a new VPC or VNet in the cloud. This requires change at the on-prem edge which
+requires a change control process that takes from days to weeks. 
+
+
+How does Aviatrix Transit Network Solution differ from Cisco CSR based solution?
 ------------------------------------------------------------------------------
 
 They differ in the following areas.
@@ -22,10 +34,27 @@ They differ in the following areas.
 
 For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
+How does Aviatrix Transit Network work?
+----------------------------------------
+
+In the transit VPC, the Aviatrix gateway establishes two BGP sessions (for redundancy) to AWS VGW. 
+Routes from on-prem network is propagated to the Aviatrix gateway which forward them to the Aviatrix Controller. 
+The Controller detects route changes and program the Spoke VPCs for updated routes. 
+
+In the direction from Spoke VPC to on-prem network, when a Spoke VPC is attached to the Transit Group, 
+the Controller notifies the Aviatrix gateway in the transit VPC to advertise the new Spoke VPC CIDR to VGW.
+
+Since all Spoke VPC routes are managed by the Aviatrix Controller, a Spoke VPC CIDR is not advertised to any
+other Spoke VPCs, therefore there is no connectivity between them through the transit VPC gateway. 
+
+A Shared Service VPC is essentially one special Spoke VPC. The Shared Service VPC typically host 
+common DevOps tools that needs connectivity to other Spoke VPCs. You can accomplish this connectivity by 
+setting up either native AWS Peering or Aviatrix Encrypted Peering from the Aviatrix Controller. 
+
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
-Follow the `Aviatrix Transit VPC Workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. 
+Follow the `Aviatrix Transit Network Workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. 
 
 Should I deploy one Transit Group for Dev and one for Prod?
 ------------------------------------------------------------
@@ -58,6 +87,14 @@ Can Aviatrix Transit VPC be deployed with Terraform template?
 
 Yes, both APIs and Terraform are available for integration. 
 
+Does Aviatrix Transit Network support HA?
+------------------------------------------
+
+Yes, by default single AZ HA is enabed for all gateways in the Transit Network solution, that is, if a gateway
+keep alive is not received by the Controller for a certain period of time, the Controller will stop and 
+restart the gateway. 
+
+You can enable multi AZ HA during the workflow when launch a Transit VPC gateway or Spoke VPC gateway. 
 
 
 
