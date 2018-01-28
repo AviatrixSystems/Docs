@@ -76,6 +76,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Transit VPC
 
    HowTos/transitvpc_workflow
+   HowTos/transitvpc_designs
 
 .. _Peering:
 

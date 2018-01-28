@@ -11,12 +11,14 @@ This workflow provides you with a step by step instructions to build a Global Tr
 It abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not have 
 to go to multiple pages on the Controller console when building the Transit group.
 
+
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways, to faciliate communication 
 between Spoke VPC EC2 instances and on-prem network. 
 
 
 .. note::
    For description purpose, gateway and GW are used interchangebly.
+   Other than gateway deletion, resources created by this work flow should be deleted within the work flow. 
 
 The Global Transit Network diagram is described as below. 
 
@@ -76,14 +78,16 @@ This step attaches a Aviatrix encrypted peering and transitive peering between t
 
 |image5|
 
+To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6. 
+
 7. Remove a Spoke GW from a Transit GW Group
 --------------------------------------------
 
-This step removes the Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW 
-built in the previous step. The Controller also instructs the Transit GW to stop advertising the Spoke VPC CIDR 
+This step detaches one Aviatrix Spoke VPC from a Transit GW Group. 
+The Controller also instructs the Transit GW to stop advertising the Spoke VPC CIDR 
 to VGW. 
 
-Note the Spoke GW is not deleted and you can go to step 6 to join the Transit GW group again. 
+Note the Spoke GW is not deleted and you can go to step 6 to attach the Transit GW group again. 
 
 To delete a Spoke GW, go to Gateway on the main navigation tab, select the gateway and click Delete. 
 
@@ -105,7 +109,8 @@ zoom in or zoom out, move the graph around. After you are done moving, click the
 10. Remove Transit GW to VGW Connection
 ----------------------------------------
 
-You can remove the BGP and IPSEC connection to VGW via this step. 
+You can remove the BGP and site2cloud IPSEC connection to VGW via this step. Note all Spoke VPCs must be detached from the Transit GW Group 
+before you can remove the Transit GW to VGW connection.
 
 You can go to Step 3 to build the connection again. 
 
