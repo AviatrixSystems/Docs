@@ -13,6 +13,8 @@ to go to multiple pages on the Controller console when building the Transit grou
 
 For design guide, check out `Transit VPC Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
+For more information, check out `Transit VPC FAQs. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
+
 
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways, to faciliate communication 
 between Spoke VPC EC2 instances and on-prem network. 
