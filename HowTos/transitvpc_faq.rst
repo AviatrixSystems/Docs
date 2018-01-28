@@ -20,7 +20,7 @@ They differ in the following areas.
 
  - **Simplicity** In Aviatrix solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP protocol. Simplicity leads to stability. Workflow based step by step instructions help you build out a Transit VPC solution in minutes. 
 
-For a fun reading, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
+For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
@@ -53,6 +53,10 @@ How can I fit a egress firewall into this Transit VPC solution?
 Egress firewall is deployed to provide protection for Internet access by instances in the private subnets. We believe you should not deploy the firewall in the Transit GW VPC. Instead, route Internet bound traffic directly to the firewall appliance from the Spoke VPCs, as shown in the `Egress Control Design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#integrating-with-egress-firewall>`_ 
 
 
+Can Aviatrix Transit VPC be deployed with Terraform template?
+-------------------------------------------------------------
+
+Yes, both APIs and Terraform are available for integration. 
 
 
 
