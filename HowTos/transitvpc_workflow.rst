@@ -16,12 +16,12 @@ For design guide, check out `Transit VPC Design Patterns. <http://docs.aviatrix.
 For more information, check out `Transit VPC FAQs. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
 
 
-This Global Transit Network consists of a Transit gateway and a set of Spoke gateways, to faciliate communication 
+This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
 between Spoke VPC EC2 instances and on-prem network. 
 
 
 .. note::
-   For description purpose, gateway and GW are used interchangebly.
+   For description purpose, gateway and GW are used interchangeably.
    Other than gateway deletion, resources created by this work flow should be deleted within the work flow. 
 
 The Global Transit Network diagram is described as below. 
@@ -78,7 +78,7 @@ exchange routes between on-prem and the cloud.
 6. Join a Spoke GW to Transit GW Group
 ---------------------------------------
 
-This step attaches a Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertise the Spoke VPC CIDR to VGW via the established BGP session.
+This step attaches a Spoke VPC to the Transit GW Group by building a Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertise the Spoke VPC CIDR to VGW via the established BGP session.
 
 |image5|
 

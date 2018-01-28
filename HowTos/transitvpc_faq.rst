@@ -16,7 +16,7 @@ They differ in the following areas.
 
  - **Connectivity Efficiency** In Aviatrix solution, traffic between any two Spoke VPCs are routed directly, instead of going through the Transit GW, as opposed to going through the Transit GW in the CSR case. Decoupling the different traffic steam reduces performance bottleneck and removes single failure point. 
 
- - **Central Controll** In Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud. 
+ - **Central Control** In Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud. 
 
  - **Simplicity** In Aviatrix solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP protocol. Simplicity leads to stability. Workflow based step by step instructions help you build out a Transit VPC solution in minutes. 
 

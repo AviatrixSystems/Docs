@@ -45,7 +45,7 @@ each region, you can build an AWS Peering or `Aviatrix Encrypted Peering <http:/
 
 |image1|
 
-10Gbps Trnasit VPC Design 
+10Gbps Transit VPC Design 
 ---------------------------
 
 If you have applications that need 10Gbps bandwidth, you can place these applications in a VPC
