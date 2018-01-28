@@ -5,7 +5,7 @@
 ============================================================
 Setup Transit VPC Solution using Aviatrix Terraform Provider
 ============================================================
-Aviatrix terraform provider is used to interact with Aviatrix resources. Click `here <http://http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_. to read more.
+Aviatrix terraform provider is used to interact with Aviatrix resources. Click `here <http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_. to read more.
 
 Setup terraform provider
 ========================
