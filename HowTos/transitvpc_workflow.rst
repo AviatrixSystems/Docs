@@ -8,8 +8,10 @@ Transit VPC Workflow Instructions
 ===================================
 
 This workflow provides you with a step by step instructions to build a Global Transit Network. 
-It abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not have 
+The workflow abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not have 
 to go to multiple pages on the Controller console when building the Transit group.
+
+For design guide, check out `Transit VPC Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
 
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways, to faciliate communication 
