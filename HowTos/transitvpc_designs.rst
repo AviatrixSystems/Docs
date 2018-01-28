@@ -22,8 +22,11 @@ Transit Group as none of the Spoke VPCs in either group can communicate with eac
 As such, you do not need to spin up multiple Transit Groups for network isolation
 purpose. A diagram is shown below.
 
-For connectivity between Spoke VPCs, choose `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console
-to setup. 
+For connectivity between Shared Service VPC and Spoke VPCs, and between Spoke VPCs, choose `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console to setup. 
+
+Notice Transit GW is only used for traffic between on-prem and cloud (Spoke VPCs). Cloud to cloud traffic, such as
+Shared Service VPC to Spoke VPCs does not go through the Transit GW. Decouple the different traffic streams 
+reduces the performance bottleneck and removes the single failure point. 
 
 |image0|
 

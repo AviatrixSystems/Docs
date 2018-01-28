@@ -75,6 +75,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Transit VPC
 
+   HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
    HowTos/transitvpc_designs
 
