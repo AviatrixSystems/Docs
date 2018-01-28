@@ -4,7 +4,7 @@
 
 
 ==============================
-Site2Cloud 
+Site2Cloud Instructions
 ==============================
 
 Configuration Workflow
