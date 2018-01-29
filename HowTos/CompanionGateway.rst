@@ -21,15 +21,12 @@ Gateway in Azure marketplace.
 Step 1: Select Aviatrix Companion Gateway
 ------------------------------------------
 
-Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, search
-    **“aviatrix”**
+Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, search **“aviatrix”**
 
-.. warning:: For Aviatrix controller version 3.0.1 or before, please 
-select **[aviatrix-companion-gateway]**. For Aviatrix controller version 3.1 or later, 
-please select **[aviatrix-companion-gateway-v2]**. 
+.. important:: For Aviatrix controller version 3.0.1 or before, please select **[aviatrix-companion-gateway]**. For Aviatrix controller version 3.1 or later, please select **[aviatrix-companion-gateway-v2]**. 
+..
 
 The following screenshots are for Companion Gateway V2
-..
 
     |image0|
 
