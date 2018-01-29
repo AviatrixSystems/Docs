@@ -26,7 +26,7 @@ Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, se
 .. important:: For Aviatrix controller version 3.0.1 or before, please select **[aviatrix-companion-gateway]**.     For Aviatrix controller version 3.1 or later, please select **[aviatrix-companion-gateway-v2]**. 
 ..
 
-(NOTE: The following screenshots are for Companion Gateway V2)
+NOTE: The following screenshots are for Companion Gateway V2
 
     |image0|
 
