@@ -1,6 +1,6 @@
 .. meta::
   :description: Aviatrix Companion Gateway
-  :keywords: gateway, companion gateway, v2, version 2, aviatrix companion gateway, aviatrix
+  :keywords: aviatrix, companion, gateway, v2, version 2
 
 ==================================
 Aviatrix Companion Gateway
