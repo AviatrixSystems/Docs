@@ -3,26 +3,33 @@
   :keywords: gateway, companion gateway, v2, version 2, aviatrix companion gateway, aviatrix
 
 ==================================
-    Aviatrix Companion Gateway V2
+Aviatrix Companion Gateway
 ==================================
 
 
 If you need to launch a gateway in Azure ARM, you must subscribe to
-**Aviatrix Companion Gateway V2** in **Azure Marketplace**. This model removes
+**Aviatrix Companion Gateway** in **Azure Marketplace**. This model removes
 the requirement to download the Aviatrix gateway image into your
 Azure account which typically takes more than 30 minutes, thus
-greatly reduces the deployment time. The Aviatrix Companion Gateway V2
+greatly reduces the deployment time. The Aviatrix Companion Gateway
 in Azure marketplace is free of charge.
 
 The following steps describe how to subscribe Aviatrix Companion
-Gateway V2 in Azure marketplace.
+Gateway in Azure marketplace.
 
 
-Step 1: Select Aviatrix Companion Gateway V2
+Step 1: Select Aviatrix Companion Gateway
 ------------------------------------------
 
-    Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, search
-    **“aviatrix”**, select **[aviatrix-companion-gateway-v2]**, as shown below:
+Go to `Azure Marketplace <https://azure.microsoft.com/enIus/marketplace/>`__, search
+    **“aviatrix”**
+
+.. warning:: For Aviatrix controller version 3.0.1 or before, please 
+select **[aviatrix-companion-gateway]**. For Aviatrix controller version 3.1 or later, 
+please select **[aviatrix-companion-gateway-v2]**. 
+
+The following screenshots are for Companion Gateway V2
+..
 
     |image0|
 
@@ -31,8 +38,7 @@ Step 1: Select Aviatrix Companion Gateway V2
 Step 2: Deploy Programmatically
 -----------------------------------
 
-    After you click Create Virtual Machine for Aviatrix Companion
-    Gateway V2, 
+    After you click Create Virtual Machine for Aviatrix Companion Gateway, 
     click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
 
 |image1|
