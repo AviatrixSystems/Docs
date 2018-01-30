@@ -1,7 +1,7 @@
 Welcome to Aviatrix Docs
 ========================
 
-All Aviatrix product documentation can be found here.  
+All Aviatrix product documentation can be found here.
 If you cannot find what you need, email us at support@aviatrix.com. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on Github" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
 
 .. _main website: http://aviatrix.com
@@ -97,7 +97,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Site2Cloud
 
- 
+
    HowTos/site2cloud_faq
    HowTos/site2cloud
    HowTos/cloudn-site2cloud
@@ -225,6 +225,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aviatrix_terraform
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
+   HowTos/SecuringController
 
 .. _Solutions:
 
