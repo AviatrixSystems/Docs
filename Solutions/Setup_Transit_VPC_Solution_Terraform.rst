@@ -5,7 +5,7 @@
 ============================================================
 Setup Transit Network using Aviatrix Terraform Provider
 ============================================================
-Aviatrix terraform provider is used to interact with Aviatrix resources. Click `here <http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_. to read more.
+Aviatrix terraform provider is used to interact with Aviatrix resources. Click `here <http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_ to read more.
 
 Setup terraform provider
 ========================
@@ -26,7 +26,7 @@ Setup terraform provider
 
 Resources
 =========
-Use the navigation to the left to read about the available resources, along with their examples. More resources will be added in future.
+These are the available resources for creating a transit VPC solution.
 
 aviatrix_transit_vpc
 --------------------
@@ -184,7 +184,7 @@ Sample configuration to create complete transit VPC solution
 	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_iam = "true"
-	  aws_role_arn = "arn:aws:iam::123456789012:role/aviatrix-role-app"
+	  aws_role_app = "arn:aws:iam::123456789012:role/aviatrix-role-app"
 	  aws_role_ec2 = "arn:aws:iam::123456789012:role/aviatrix-role-ec2"
 	}
 
@@ -229,5 +229,5 @@ Sample configuration to create complete transit VPC solution
 	  vpc_net = "10.20.0.0/24"
 	  ha_subnet = "10.20.1.0/24"
 	  transit_gw = "transit"
-	  depends_on = ["aviatrix_transit_vpc.test_transit_gw"]
+	  depends_on = ["aviatrix_vgw_conn.test_vgw_conn"]
 	}

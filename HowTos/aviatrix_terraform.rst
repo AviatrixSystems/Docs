@@ -52,7 +52,7 @@ Manages an Aviatrix cloud account.
 	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_iam = "true"
-	  aws_role_arn = "arn:aws:iam::123456789012:role/aviatrix-role-app"
+	  aws_role_app = "arn:aws:iam::123456789012:role/aviatrix-role-app"
 	  aws_role_ec2 = "arn:aws:iam::123456789012:role/aviatrix-role-ec2"
 	}
 
@@ -173,7 +173,7 @@ Sample configuration to launch a full mesh network on AWS
 	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_iam = "true"
-	  aws_role_arn = "arn:aws:iam::123456789012:role/aviatrix-role-app"
+	  aws_role_app = "arn:aws:iam::123456789012:role/aviatrix-role-app"
 	  aws_role_ec2 = "arn:aws:iam::123456789012:role/aviatrix-role-ec2"
 	}
 
