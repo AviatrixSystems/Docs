@@ -13,7 +13,7 @@ to go to multiple pages on the Controller console when building the Transit grou
 
 For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
-For more information, check out `Transit Network FAQs. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
+For more information, check out `Transit Network FAQ. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
 
 
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
@@ -71,6 +71,9 @@ exchange routes between on-prem and the cloud.
 |image3|
 
 The field "BGP Local AS Number" is the Aviatrix Transit GW AS number that peers with VGW. 
+
+The field "Connection Name" is an identifier for the IPSEC tunnel between VGW and Transit GW. 
+You can see this connection at Site2Cloud page. 
 
 It takes a few minutes for the VPN connection to come up and routes from VGW 
 to be propagated. When the IPSEC tunnel with VGW is up, the Controller admin should receive an email notification.

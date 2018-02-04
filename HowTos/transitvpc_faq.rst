@@ -3,7 +3,7 @@
    :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
 ============================
-Transit Network FAQs
+Transit Network FAQ
 ============================
 
 Why should I choose Transit architecture?
@@ -79,7 +79,8 @@ Currently the Transit solution has a maximum IPSEC throughput of around 1.5Gbps 
 How can I fit a egress firewall into this Transit VPC solution?
 ---------------------------------------------------------------
 
-Egress firewall is deployed to provide protection for Internet access by instances in the private subnets. We believe you should not deploy the firewall in the Transit GW VPC. Instead, route Internet bound traffic directly to the firewall appliance from the Spoke VPCs, as shown in the `Egress Control Design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#integrating-with-egress-firewall>`_ 
+Egress firewall is deployed to provide protection for Internet access by 
+instances in the private subnets. It should not be deployed in the Transit GW VPC. Instead, route Internet bound traffic directly to the firewall appliance from the Spoke VPCs, as shown in the `Egress Control Design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#integrating-with-egress-firewall>`_ 
 
 
 Can Aviatrix Transit VPC be deployed with Terraform template?
@@ -113,8 +114,58 @@ There should be no downtime for traffic between VPCs as cloud to cloud traffic d
 not go through the Transit GW.  
 
 During resizing, traffic will be switched to backup Transit GW if HA is enabled, 
-this will also switch Spoke to Transit traffic if Spoke has HA enabled. 
+this will also switch Spoke to Transit traffic if Spoke VPC has HA enabled. 
+Resizing Transit GW will cause network downtime. 
 
+How do I know which Transit GW a Spoke GW is sending traffic to?
+-----------------------------------------------------------------
+
+You can tell which Transit GW carries the network traffic from a specific 
+Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click 
+Detail. If the list of the Advertised Network includes the Spoke VPC CIDR, this
+Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the 
+backup Transit GW. 
+
+How can I route VPC egress Internet bound traffic to on-prem to go through the corporate firewall?
+---------------------------------------------------------------------------------------------------
+
+If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route points to Transit GW
+and rouet egress Internet traffic to VGW and back to on-prem. Make sure you do not 
+have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
+
+How do I know if the tunnel between VGW and Transit GW is up?
+---------------------------------------------------------------
+
+Go to Site2Cloud, the tunnel status is displayed for each connection. 
+
+How do I find out what routes being propagated from on-prem?
+------------------------------------------------------------
+
+On-prem routes are propagated to VGW which in turn propagated to the Transit GW. 
+There are two ways to see what learned routes are by Transit GW: 
+
+1. Go to Site2Cloud, select the connection you specified at Step 3 during Transit Network Workflow. Scroll down, you will see the Learned Network. Search for a learned routes by typing a specific CIDR. 
+#. Go to Peering -> Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC GW. The Learned Routes will be shown and is searchable. 
+#. Go to Advanced Config -> BGP -> select a Transit GW, click Detail
+
+How do I find out BGP information on Transit GW?
+-------------------------------------------------
+
+Go to Advanced Config -> BGP -> Diagnostics, click the box for Predefined Show List. 
+A list of BGP commands will be displayed. If you turn on debug command, make sure to 
+turn it off when debug is finished to ensure the Transit GW is not flooded with debug
+messaged. Excessive debug messages reduces throughput.
+
+How do I delete a Spoke GW?
+-----------------------------
+
+Go to Gateway page, select the gateway you wish to delete and click Delete. 
+
+An instance in a Spoke VPC cannot communicate with on-prem network, how do I troubleshoot?
+-------------------------------------------------------------------------------------------
+
+There are many reasons why an instance cannot communicate with on-prem network. 
+The following troubleshooting steps may be helpful. 
 
 
 .. |image1| image:: FAQ_media/image1.png
