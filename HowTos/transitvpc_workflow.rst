@@ -51,9 +51,9 @@ The Transit GW must be launched on publis subnet where its assoicated route tabl
 
 |image1|
 
-.. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% when interoperating with VGW. This packet drop does not apply to Spoke GW.  
+.. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% for packet size less than 150 bytes when interoperating with VGW. This packet drop does not apply to Spoke GW.  
 
-You can change the Transit GW size later by follow this instructions.
+You can change the Transit GW size later by follow `this instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
 
 2. (Optionally) Enable HA for the Transit Gateway
 --------------------------------------------------

@@ -97,13 +97,23 @@ You can enable multi AZ HA during the workflow when launch a Transit VPC gateway
 Why is AWS t2 series instance types not recommended for production deployment on Transit GW?
 ---------------------------------------------------------------------------------------------
 
-When a t2 series Transit GW communicate with VGW over IPSEC, there is a 3% packet drop by Transit GW due to an issue with AWS Xen hypervisor and the kernel version GW is using. This will be fixed in the future release. 
+When a t2 series Transit GW communicate with VGW over IPSEC, there is a 3% packet drop for packet size less than 150 bytes by Transit GW due to an issue with AWS Xen hypervisor and the kernel version GW is using. This will be fixed in the future release. 
 
 Note this packet drop issue does not affect Spoke gateways. 
 
 How do I resize Transit GW instance?
 -----------------------------------
 
+Go to Gateway page at the navigation bar, select the Transit GW, click Edit, 
+scroll up to see the options and find Gateway Resize. Select the desired size and click Change. 
+
+Resizing Transit GW requires the gateway instance to be stopped and start again in 
+a different size. There will be network time for traffic between cloud and on-prem.
+There should be no downtime for traffic between VPCs as cloud to cloud traffic does 
+not go through the Transit GW.  
+
+During resizing, traffic will be switched to backup Transit GW if HA is enabled, 
+this will also switch Spoke to Transit traffic if Spoke has HA enabled. 
 
 
 
