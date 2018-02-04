@@ -92,11 +92,18 @@ For Terraform, check out `this link. <http://docs.aviatrix.com/Solutions/Setup_T
 Does Aviatrix Transit Network support HA?
 ------------------------------------------
 
-Yes, by default single AZ HA is enabed for all gateways in the Transit Network solution, that is, if a gateway
-keep alive is not received by the Controller for a certain period of time, the Controller will stop and 
-restart the gateway. 
-
 You can enable multi AZ HA during the workflow when launch a Transit VPC gateway or Spoke VPC gateway. 
+
+Why is AWS t2 series instance types not recommended for production deployment on Transit GW?
+---------------------------------------------------------------------------------------------
+
+When a t2 series Transit GW communicate with VGW over IPSEC, there is a 3% packet drop by Transit GW due to an issue with AWS Xen hypervisor and the kernel version GW is using. This will be fixed in the future release. 
+
+Note this packet drop issue does not affect Spoke gateways. 
+
+How do I resize Transit GW instance?
+-----------------------------------
+
 
 
 
