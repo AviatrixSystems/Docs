@@ -5,9 +5,9 @@
 ===========================
 Aviatrix Terraform Provider
 ===========================
-Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `link <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for details on setting up Aviatrix terraform provider on your system.
+Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `link <https:#github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for details on setting up Aviatrix terraform provider on your system.
 
-The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click this `link <http://docs.aviatrix.com/Solutions/Setup_Transit_VPC_Solution_Terraform.html>`_ to read how to setup transit VPC using terraform.
+The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click this `link <http:#docs.aviatrix.com/Solutions/Setup_Transit_VPC_Solution_Terraform.html>`_ to read how to setup transit VPC using terraform.
 
 Example Usage
 =============
@@ -45,6 +45,15 @@ Manages an Aviatrix cloud account.
 	}
 
 	# Create Aviatrix AWS account with IAM roles
+	# account_name - Aviatrix cloud account name
+	# account_password - Password for default user of account.
+	# account_email - Valid email-id to receive notifications.
+	# cloud_type - Enter 1 for AWS. Only AWS is currently supported.
+	# aws_account_number - AWS account number
+	# aws_iam - Enter true if you want to use IAM role to configure account
+	# aws_role_app - aviatrix-role-app ARN
+	# aws_role_ec2 - aviatrix-role-ec2 ARN
+
 	resource "aviatrix_account" "tempacc" {
 	  account_name = "username"
 	  account_password = "password"
@@ -81,6 +90,14 @@ Manages an Aviatrix gateway
 	  password = "password"
 	}
 
+	# cloud_type - Enter 1 for AWS. Only AWS is currently supported.
+	# account_name - Aviatrix account name to launch GW with.
+	# gw_name - Name of gateway.
+	# vpc_id - AWS VPC ID.
+	# vpc_reg - AWS VPC region.
+	# vpc_size - Gateway instance size
+	# vpc_net - VPC subnet CIDR where you want to launch GW instance
+
 	resource "aviatrix_gateway" "test_gateway1" {
 	  cloud_type = 1
 	  account_name = "devops"
@@ -104,6 +121,8 @@ Manages an Aviatrix tunnel
 	  password = "password"
 	}
 
+	# vpc_name1 - Name of source gateway
+	# vpc_name2 - Name of destination gateway
 	resource "aviatrix_tunnel" "test_tunnel1" {
 	  vpc_name1 = "avtxgw1"
 	  vpc_name2 = "avtxgw2"
@@ -122,10 +141,89 @@ Manages an Aviatrix transitive peering
 	  password = "password"
 	}
 
+	# source - Name of source GW.
+	# nexthop - Name of next hop GW.
+	# reachable_cidr - Destination CIDR.
+
 	resource "aviatrix_transpeer" "test_transpeer" {
 	  source = "avtxuseastgw1"
 	  nexthop = "avtxuseastgw2"
 	  reachable_cidr = "10.152.0.0/16"
+	}
+
+aviatrix_fqdn
+----------------
+Manages FQDN filtering for Aviatrix gateway
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# fqdn_tag - Enter any tag name for FQDN
+	# fqdn_status - (Optional: disabled by default) Enter enabled or disabled, based on whether you want to enable or disable FQDN filtering.
+	# fqdn_mode - (Optional: white by default) Enter white or black,, based on whether you whitelist or blacklist
+	# gw_list - List of gateways, on which you want to filter
+	# domain_list - List of domains for which you want to filter
+	
+	resource "aviatrix_fqdn" "test_fqdn" {
+	  fqdn_tag = "my_tag"
+	  fqdn_status = "enabled"
+	  fqdn_mode = "white"
+	  gw_list = ["gw1", "gw2"]
+	  domain_list = ["*.facebook.com", "*.reddit.com"]
+	}
+
+aviatrix_firewall
+----------------
+Manages L4 stateful firewall policies for Aviatrix gateway
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# gw_name - Gateway name to which you want to apply policy.
+	# base_allow_deny - (Optional: allow by default) Base policy to allow or deny all packets. Valid values: "allow" and "deny".
+	# base_log_enable - (Optional: off by default) Base rule to enable logging or not. Valid values "on" and "off".
+	# policy - Enter policy as list of rules.
+	# 6 fields are required for each rule item: protocol, src_ip, log_enable, dst_ip, allow_deny and port.
+	# Valid values for protocol: "all", "tcp", "udp", "icmp", "sctp", "rdp", "dccp"
+	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" etc.
+	# Valid values for port: a single port or a range of port numbers. e.g.: "25", "25:1024"
+	# Valid values for deny_allow: "allow" and "deny"
+	# Valid values for log_enable: "on" and "off"
+
+	resource "aviatrix_firewall" "test_firewall" {
+	  gw_name = "gw1"
+	  base_allow_deny = "allow"
+	  base_log_enable = "on"
+	  policy = [
+	            {
+	              protocol = "tcp"
+	              src_ip = "10.15.0.224/32"
+	              log_enable = "on"
+	              dst_ip = "10.12.0.172/32"
+	              allow_deny = "deny"
+	              port = "0-65535"
+	            },
+	            {
+	              protocol = "tcp"
+	              src_ip = "10.15.1.224/32"
+	              log_enable = "off"
+	              dst_ip = "10.12.1.172/32"
+	              allow_deny = "deny"
+	              port = "0-65535"
+	            }
+	          ]
 	}
 
 Sample configuration to launch a full mesh network on AWS
