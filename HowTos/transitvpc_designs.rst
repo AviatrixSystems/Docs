@@ -17,7 +17,7 @@ Single Region Transit VPC Design
 ----------------------------------
 
 Aviatrix Transit VPC solution provides default network segmentation, a Spoke VPC has no connectivity to another 
-Spoke VPC via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production Transit 
+Spoke VPC via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production 
 Transit Group as none of the Spoke VPCs in either group can communicate with each other. 
 As such, you do not need to spin up multiple Transit Groups for network isolation
 purpose. A diagram is shown below.
