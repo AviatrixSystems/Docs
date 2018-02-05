@@ -3,7 +3,7 @@
    :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
 ============================
-Transit Network FAQs
+Transit Network FAQ
 ============================
 
 Why should I choose Transit architecture?
@@ -79,7 +79,8 @@ Currently the Transit solution has a maximum IPSEC throughput of around 1.5Gbps 
 How can I fit a egress firewall into this Transit VPC solution?
 ---------------------------------------------------------------
 
-Egress firewall is deployed to provide protection for Internet access by instances in the private subnets. We believe you should not deploy the firewall in the Transit GW VPC. Instead, route Internet bound traffic directly to the firewall appliance from the Spoke VPCs, as shown in the `Egress Control Design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#integrating-with-egress-firewall>`_ 
+Egress firewall is deployed to provide protection for Internet access by 
+instances in the private subnets. It should not be deployed in the Transit GW VPC. Instead, route Internet bound traffic directly to the firewall appliance from the Spoke VPCs, as shown in the `Egress Control Design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#integrating-with-egress-firewall>`_ 
 
 
 Can Aviatrix Transit VPC be deployed with Terraform template?
@@ -92,13 +93,87 @@ For Terraform, check out `this link. <http://docs.aviatrix.com/Solutions/Setup_T
 Does Aviatrix Transit Network support HA?
 ------------------------------------------
 
-Yes, by default single AZ HA is enabed for all gateways in the Transit Network solution, that is, if a gateway
-keep alive is not received by the Controller for a certain period of time, the Controller will stop and 
-restart the gateway. 
-
 You can enable multi AZ HA during the workflow when launch a Transit VPC gateway or Spoke VPC gateway. 
 
+Why is AWS t2 series instance types not recommended for production deployment on Transit GW?
+---------------------------------------------------------------------------------------------
 
+When a t2 series Transit GW communicate with VGW over IPSEC, there is a 3% packet drop for packet size less than 150 bytes by Transit GW due to an issue with AWS Xen hypervisor and the kernel version GW is using. This will be fixed in the future release. 
+
+Note this packet drop issue does not affect Spoke gateways. 
+
+How do I resize Transit GW instance?
+-----------------------------------
+
+Go to Gateway page at the navigation bar, select the Transit GW, click Edit, 
+scroll up to see the options and find Gateway Resize. Select the desired size and click Change. 
+
+Resizing Transit GW requires the gateway instance to be stopped and start again in 
+a different size. There will be network time for traffic between cloud and on-prem.
+There should be no downtime for traffic between VPCs as cloud to cloud traffic does 
+not go through the Transit GW.  
+
+During resizing, traffic will be switched to backup Transit GW if HA is enabled, 
+this will also switch Spoke to Transit traffic if Spoke VPC has HA enabled. 
+Resizing Transit GW will cause network downtime. 
+
+How do I know which Transit GW a Spoke GW is sending traffic to?
+-----------------------------------------------------------------
+
+You can tell which Transit GW carries the network traffic from a specific 
+Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click 
+Detail. If the list of the Advertised Network includes the Spoke VPC CIDR, this
+Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the 
+backup Transit GW. 
+
+How can I route VPC egress Internet bound traffic to on-prem to go through the corporate firewall?
+---------------------------------------------------------------------------------------------------
+
+If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route points to Transit GW
+and rouet egress Internet traffic to VGW and back to on-prem. Make sure you do not 
+have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
+
+How do I know if the tunnel between VGW and Transit GW is up?
+---------------------------------------------------------------
+
+Go to Site2Cloud, the tunnel status is displayed for each connection. 
+
+How do I find out what routes being propagated from on-prem?
+------------------------------------------------------------
+
+On-prem routes are propagated to VGW which in turn propagated to the Transit GW. 
+There are two ways to see what learned routes are by Transit GW: 
+
+1. Go to Site2Cloud, select the connection you specified at Step 3 during Transit Network Workflow. Scroll down, you will see the Learned Network. Search for a learned routes by typing a specific CIDR. 
+#. Go to Peering -> Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC GW. The Learned Routes will be shown and is searchable. 
+#. Go to Advanced Config -> BGP -> select a Transit GW, click Detail
+
+How do I find out BGP information on Transit GW?
+-------------------------------------------------
+
+Go to Advanced Config -> BGP -> Diagnostics, click the box for Predefined Show List. 
+A list of BGP commands will be displayed. If you turn on debug command, make sure to 
+turn it off when debug is finished to ensure the Transit GW is not flooded with debug
+messaged. Excessive debug messages reduces throughput.
+
+How do I delete a Spoke GW?
+-----------------------------
+
+Go to Gateway page, select the gateway you wish to delete and click Delete. 
+
+An instance in a Spoke VPC cannot communicate with on-prem network, how do I troubleshoot?
+-------------------------------------------------------------------------------------------
+
+There are many reasons why an instance cannot communicate with on-prem network. 
+The following troubleshooting steps may be helpful. 
+
+1. Make sure the `connection between VGW and Transit GW <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-know-if-the-tunnel-between-vgw-and-transit-gw-is-up>`_ is up. 
+
+#. Make sure the Spoke VPC where instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
+
+#. Make sure the Spoke GW can reach the on-prem subnet. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and capture packets.  
+
+#. If the above tests pass, you should security group settings on the instance and the destination VM. 
 
 .. |image1| image:: FAQ_media/image1.png
 

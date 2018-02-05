@@ -655,7 +655,6 @@ Recommended:
       {
         "Effect": "Allow",
         "Action": [
-          "iam:UpdateAssumeRolePolicy",
           "sts:AssumeRole"
         ],
         "Resource": ["arn:aws:iam::188658399999:role/aviatrix-role-app"]
@@ -673,7 +672,6 @@ Not Recommended:
       {
         "Effect": "Allow",
         "Action": [
-          "iam:UpdateAssumeRolePolicy",
           "sts:AssumeRole"
         ],
         "Condition": {

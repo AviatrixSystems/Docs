@@ -13,7 +13,7 @@ to go to multiple pages on the Controller console when building the Transit grou
 
 For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
-For more information, check out `Transit Network FAQs. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
+For more information, check out `Transit Network FAQ. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
 
 
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
@@ -32,7 +32,7 @@ Planning and Prerequisites
 ---------------------------
 
  1. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW. 
- #. Create a VGW in the same region. The VGW can be either attached to the Transit VPC or detached. This VGW can be connect to on-prem either over Direct Connect or over Internet.  
+ #. Create a VGW in the same region. The VGW should not be attached to the Transit VPC if you plan to launch Transit GW in the same VPC. This VGW can be attached to a different VPC if this VPC CIDR is different from the Transit VPC where Transit GW is launched. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over Internet.  
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create Aviatrix account that corresponds to an IAM role. For instructions on how to launch an Aviatrix Controller, check out `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
 
 
@@ -47,14 +47,18 @@ Follow the steps below to set up Transit VPC network.
 -------------------------------------------
 
 The Transit GW is the hub gateway, it servers to move traffic between a Spoke VPC and on-prem network.
+The Transit GW must be launched on publis subnet where its assoicated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 |image1|
 
+.. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% for packet size less than 150 bytes when interoperating with VGW. This packet drop does not apply to Spoke GW.  
+
+You can change the Transit GW size later by follow `this instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
 
 2. (Optionally) Enable HA for the Transit Gateway
 --------------------------------------------------
 
-When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in any event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW.  
+When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
 
 |image2|
 
@@ -66,10 +70,29 @@ exchange routes between on-prem and the cloud.
 
 |image3|
 
+The field "BGP Local AS Number" is the Aviatrix Transit GW AS number that peers with VGW. 
+
+The field "Connection Name" is an identifier for the IPSEC tunnel between VGW and Transit GW. 
+You can see this connection at Site2Cloud page. 
+
+It takes a few minutes for the VPN connection to come up and routes from VGW 
+to be propagated. When the IPSEC tunnel with VGW is up, the Controller admin should receive an email notification.
+
+If you login to AWS Console and select service VPC in the region where VGW is, you should see Customer Gateway and VPN Connections have been created. Do not delete or modify them from AWS Console. These resources are deleted 
+when you Disconnect VGW at step 8. 
+
+You can check if routes are properly propagated by going to Advanced Config at 
+navigation bar, select BGP. Select the Transit GW, click details. 
+The Learned Routes should be the list of the routes propagated from VGW. 
+Scroll down to see the total number of learned routes. 
+
 4. Launch a Spoke Gateway
 -------------------------
 
 |image4|
+
+You can enable NAT function on Spoke GW if egress to Internet is intended to 
+go through the Spoke GW. Once NAT is enabled, you can further configure `FQDN whitelists for egress filter. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
 5. (Optionally) Enable HA for the Spoke Gateway
 ------------------------------------------------
