@@ -167,6 +167,11 @@ An instance in a Spoke VPC cannot communicate with on-prem network, how do I tro
 There are many reasons why an instance cannot communicate with on-prem network. 
 The following troubleshooting steps may be helpful. 
 
+1. Make sure the `connection between VGW and Transit GW <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-know-if-the-tunnel-between-vgw-and-transit-gw-is-up>`_ is up. 
+
+#. Make sure the Spoke VPC where instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
+
+#. Make sure the Spoke GW can reach the on-prem subnet. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and capture packets.  
 
 .. |image1| image:: FAQ_media/image1.png
 
