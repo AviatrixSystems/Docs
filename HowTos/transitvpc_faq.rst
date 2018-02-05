@@ -173,6 +173,8 @@ The following troubleshooting steps may be helpful.
 
 #. Make sure the Spoke GW can reach the on-prem subnet. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and capture packets.  
 
+#. If the above tests pass, you should security group settings on the instance and the destination VM. 
+
 .. |image1| image:: FAQ_media/image1.png
 
 .. disqus::
