@@ -11,7 +11,7 @@ Why should I choose Transit architecture?
 
 Transit architecture is about building connectivity between cloud and on-prem in 
 the most agile manner possible. In the transit architecture, there is one 
-connection (not coounting backup here) between on-prem and 
+connection (not counting backup here) between on-prem and 
 and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
 The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, 
