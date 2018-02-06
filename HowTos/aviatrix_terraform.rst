@@ -226,6 +226,27 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	          ]
 	}
 
+aviatrix_upgrade
+----------------
+Upgrades Aviatrix controller to specific release
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# version - (Optional) The release version to which
+	# the controller will be upgraded to. If not specified, it 
+	# automatically will be upgraded to the latest release.
+
+	resource "aviatrix_upgrade" "test_upgrade" {
+	  version = "latest"
+	}
+
 Sample configuration to launch a full mesh network on AWS
 =========================================================
 
