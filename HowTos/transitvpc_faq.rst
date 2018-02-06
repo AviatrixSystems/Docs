@@ -26,7 +26,7 @@ They differ in the following areas.
 
  - **Network Segmentation** In the CSR solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS account or business teams. In contrast, the Spoke VPCs have no connectivity to each other by default. Connectivity is built by design.
 
- - **Connectivity Efficiency** In Aviatrix solution, traffic between any two Spoke VPCs are routed directly, instead of going through the Transit GW, as opposed to going through the Transit GW in the CSR case. Decoupling the different traffic steam reduces performance bottleneck and removes single failure point. 
+ - **Connectivity Efficiency** In Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW in the CSR case. Decoupling the different traffic stream reduces performance bottleneck and removes single failure point. 
 
  - **Central Control** In Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud. 
 

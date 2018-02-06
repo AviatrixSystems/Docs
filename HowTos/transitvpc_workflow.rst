@@ -62,6 +62,9 @@ When HA is enabled, a second Transit GW will be launched. Note both Transit GWs 
 
 |image2|
 
+To disable Transit GW HA, go to Gateway page and delete the Transit GW with -hagw in the name extension. Note if the Transit GW is connected to VGW, you cannot disable Transit GW HA and if there are still Spoke GWs, you cannot disable
+Transit GW HA either. 
+
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
 
