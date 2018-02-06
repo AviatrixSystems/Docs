@@ -12,6 +12,14 @@ Overview
 --------
 This guide will help you get started with Aviatrix in AWS.  If you have not installed an Aviatrix Controller in your environment and you'd like to get set up in AWS this is the right guide for you.
 
+AWS Account
+-----------
+Before you start, you will need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing account.
+
+.. note::
+
+   The Aviatrix Controller supports multiple AWS accounts.
+
 Install Software
 ----------------------
 The easiest way to get started in AWS is to use the `CloudFormation template <https://github.com/AviatrixSystems/AWSQuickStart/blob/master/aviatrix-aws-quickstart.json>`__ available on our `GitHub repository <https://github.com/AviatrixSystems/AWSQuickStart>`__.
@@ -32,9 +40,18 @@ Before you get started, you'll need to accept the terms of the Aviatrix license 
 
  4.  Once accepted, you can return to the AWS console.  We will launch the Controller from the Marketplace.
 
+DNS Server Connectivity Check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server. 
+
 Install the Controller with CloudFormation Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Aviatrix Controller acts as a single pane of glass for all of your Cloud Networking tasks.  Just one Controller is needed and it is typically installed in the cloud.  Once you have a Controller installed, you can provision Gateways and configure security policies, etc.  The steps outlined below install Aviatrix Controller in your AWS account.
+
+.. note::
+
+   You can also launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
+..
 
  1. Download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally.
  2. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
@@ -51,6 +68,11 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
  7. Populate the Stack name and select a VPC, subnet, and a keypair.
 
    |imageCFSpecifyDetails|
+
+.. note::
+
+   The Aviatrix Controller must be launched on a public subnet.
+..
 
  8. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "no" unless you have already created the Aviatrix roles.
  9. Click `Next`
@@ -159,6 +181,10 @@ The next step is to provide the AWS credentials to the Controller so it can orch
   |                               | outputs `AviatrixRoleEC2ARN`               |
   +-------------------------------+--------------------------------------------+
 
+.. tip::
+
+   Each account can use a root account, IAM role, IAM administrator account or IAM user account with access privileges required by the Aviatrix solution. We strongly recommend you to use IAM role for security reasons.
+  
 Once complete, click the `Create` button at the bottom of the form.
 
 |imageCreateAccount|
@@ -169,8 +195,10 @@ Next Steps
 You are now ready to establish connectivity to/from the cloud.  For help getting started with your use case see:
 
 - `User SSL VPN <../HowTos/uservpn.html>`__
-- `Transit Network <#>`__
+- `Transit Network <../HowTos/transitvpc_workflow.html>`__
 - `Egress Security Filter <..HowTos/FQDN_Whitelists_Ref_Design.html>`__
+
+.. Warning:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
 .. |imageAwsMarketplacePage1| image:: ZeroToConnectivityInAWS_media/aws_marketplace_page1.png
 .. |imageAwsMarketplaceContinuetoSubscribe| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1.png
@@ -182,13 +210,27 @@ You are now ready to establish connectivity to/from the cloud.  For help getting
 .. |imageCFComplete| image:: ZeroToConnectivityInAWS_media/cf_complete_outputs.png
 .. |imageCFOutputsWithPassword| image:: ZeroToConnectivityInAWS_media/cf_complete_outputs_private_ip_highlight.png
 .. |imageControllerBrowserWarning| image:: ZeroToConnectivityInAWS_media/controller_browser_warning.png
+   :scale: 50%
+
 .. |imageControllerEnterEmail| image:: ZeroToConnectivityInAWS_media/controller_enter_email.png
+   :scale: 50%
+
 .. |imageControllerChangePassword| image:: ZeroToConnectivityInAWS_media/controller_change_password.png
+   :scale: 50%
+
 .. |imageControllerUpgrade| image:: ZeroToConnectivityInAWS_media/controller_upgrade.png
+   :scale: 50%
+
 .. |imageCFSelectTemplate| image:: ZeroToConnectivityInAWS_media/cf_select_template.png
 .. |imageCFSpecifyDetails| image:: ZeroToConnectivityInAWS_media/cf_specify_details.png
 
 .. |imageAviatrixOnboardNav| image:: ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
+   :scale: 50%
+
 .. |imageOnboardAws| image:: ZeroToConnectivityInAWS_media/onboard_aws.png
+   :scale: 50%
+
 .. |imageEnterCustomerID| image:: ZeroToConnectivityInAWS_media/customerid_enter.png
+   :scale: 25%
+
 .. |imageCreateAccount| image:: ZeroToConnectivityInAWS_media/create_account.png
