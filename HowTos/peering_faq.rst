@@ -21,6 +21,7 @@ encrypted network. You can enable stateful firewalls on each VPC/VNet to
 add additional security measures.
 
 When should I consider using Aviatrix encrypted peering?
+---------------------------------------------------------
 
 Check `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html#cloud-to-cloud-peering>`_
 
