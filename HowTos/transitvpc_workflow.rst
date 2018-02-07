@@ -154,6 +154,8 @@ Learned Networks are network CIDR blocks that BGP learned from VGW. Advertised N
 You can also click Diagnostics. Select one of the show commands or type in yourself if you know the commands to 
 see more BGP details. 
 
+To troubleshooting connectivity between a Spoke VPC instance and a on-prem host, follow `these steps. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_
+
  
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in
