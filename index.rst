@@ -37,7 +37,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Getting Started
 
    StartUpGuides/aviatrix_overview
-   StartUpGuides/ZeroToConnectivityInAWS
+   StartUpGuides/aviatrix-cloud-controller-startup-guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/CloudN-Startup-Guide
