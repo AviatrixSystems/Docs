@@ -156,6 +156,15 @@ see more BGP details.
 
 To troubleshooting connectivity between a Spoke VPC instance and a on-prem host, follow `these steps. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_
 
+12. Disable Transit GW HA
+--------------------------
+
+Go to Gateway page, locate the Transit GW with "-hagw" in the gateway name extension, highlight the 
+gateway and click Delete. 
+
+Note Transit GW and its back up companion are in active/active state, that is, both gateways could 
+be forwarding traffic. To disbale Transit GW HA, it is best practice to make sure there is no traffic 
+going through the backup Transit GW. 
  
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in
