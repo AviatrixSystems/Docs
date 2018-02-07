@@ -36,6 +36,18 @@ Debug gateway connectivity
 To test if a gateway can reach certain IP or host,
 click Troubleshoot->Diagnostics->Network. At Network Connectivity Utility panel, select a gateway. Specify remote host name, port number. The TCP protocol test is reliable. Currently UDP test is not reliable.
 
+Network Traceroute
+-------------------
+
+You can run a traceroute function from a selected Aviatrix gateway to test reachability 
+from this gateway to any destination. Go to Troubleshooting -> Network. Scroll down to TRACEROUTE UTILITY. Enter a destination IP or host name and select a gateway, click Trace Route. The Trace Route
+results should be displayed when the execution finishes. 
+
+.. tip::
+ 
+   You can launch an Aviatrix gateway in a specific VPC and public subnet and uses it as an EC2 instance to test connectivity to a destination host or IP address. For example, launch an Aviatrix gateway in a Spoke VPC (where the Spoke VPC gateway is launched from the `Transit Network Workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_), when you select this test gateway for Trace Route testing, you are effectively testing connectivity going from an EC2 -> Spoke VPC GW -> Transit GW -> VGW -> on-prem network.
+
+
 Packet capture
 ---------------
 
