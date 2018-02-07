@@ -169,9 +169,13 @@ The following troubleshooting steps may be helpful.
 
 1. Make sure the `connection between VGW and Transit GW <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-know-if-the-tunnel-between-vgw-and-transit-gw-is-up>`_ is up. 
 
-#. Make sure the Spoke VPC where instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
+#. Make sure the problem on-prem subnet CIDR has been propagated to Spoke VPC, that is, make sure Spoke VPC where the problem instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
 
-#. Make sure the Spoke GW can reach the on-prem subnet. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and capture packets.  
+#. Launch an Aviatrix Gateway from the Gateway at the navigation bar (this gateway is going to be used as a test EC2 instance). Once this gateway is launched, you can run a traceroute from this gateway (test EC2 instance) to on-prem. When test is done, remember to delete the gateway to conserve consumption. 
+
+#. Do a traceroute from on-prem problem VM or host to the Aviatrix gateway test EC2 launched from the above steps. 
+
+#. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and run packet capture.  
 
 #. If the above tests pass, you should security group settings on the instance and the destination VM. 
 
