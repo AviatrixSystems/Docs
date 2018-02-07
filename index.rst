@@ -86,6 +86,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Peering
 
+   HowTos/peering_faq
    HowTos/peering
    HowTos/TransPeering
    HowTos/Cluster_Peering_Ref_Design
