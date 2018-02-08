@@ -20,7 +20,7 @@ requires a change control process that takes from days to weeks.
 
 
 How does Aviatrix Transit Network Solution differ from Cisco CSR based solution?
-------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 They differ in the following areas.
 
@@ -117,8 +117,8 @@ During resizing, traffic will be switched to backup Transit GW if HA is enabled,
 this will also switch Spoke to Transit traffic if Spoke VPC has HA enabled. 
 Resizing Transit GW will cause network downtime. 
 
-How do I know which Transit GW a Spoke GW is sending traffic to?
------------------------------------------------------------------
+How do I know which Transit GW that a Spoke GW is sending traffic to?
+----------------------------------------------------------------------
 
 You can tell which Transit GW carries the network traffic from a specific 
 Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click 
@@ -177,7 +177,24 @@ The following troubleshooting steps may be helpful.
 
 #. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and run packet capture.  
 
-#. If the above tests pass, you should security group settings on the instance and the destination VM. 
+#. If the above tests pass, you should check security group settings on the instance and the destination VM. 
+
+How do I build encryption over Direct Connect?
+------------------------------------------------
+
+AWS provides native solution to add VPN capability between VGW and on-prem over Direct Connect. This improves security as data in motion is encrypted. Follow `the instructions here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ for this capability. 
+
+We build encryption between Aviatrix Transit GW and VGW and between Transit GW and Spoke GW to 
+provide an end to end encryption protection. 
+
+How do I build redundancy between VGW and on-prem?
+--------------------------------------------------
+
+AWS provides a few native optioins for redundancy between VGW and on-prem. You can build redundant 
+active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
+
+`Read the doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 
+
 
 .. |image1| image:: FAQ_media/image1.png
 
