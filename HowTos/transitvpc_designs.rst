@@ -64,7 +64,7 @@ Using Aviatrix for Egress Control
 If you are using AWS NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control. 
 
 Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls. 
-The function is embeded in the Aviatrix gateway. It is transparent to user instances and requires no agents or certs. 
+The function is embeded in the Aviatrix gateway. It is transparent to user instances and requires no agents nor certs. 
 
 |image5|
 
