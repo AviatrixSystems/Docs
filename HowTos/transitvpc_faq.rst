@@ -193,7 +193,7 @@ How do I build redundancy between VGW and on-prem?
 AWS provides a few native optioins for redundancy between VGW and on-prem. You can build redundant 
 active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
 
-`Read the doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 
+`Read this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 
 
 
 .. |image1| image:: FAQ_media/image1.png
