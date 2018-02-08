@@ -58,10 +58,19 @@ Alternatively, you can place the high bandwidth application in a separate VPC th
 
 |image3|
 
+Using Aviatrix for Egress Control
+----------------------------------
+
+If you are using AWS NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control. 
+
+Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls. 
+The function is embeded in the Aviatrix gateway. It is transparent to user instances and requires no agents or certs. 
+
+|image5|
+
 Integrating with Egress Firewall
 ----------------------------------
 
-Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls.  
 
 If you are running AWS Workspace services for your employees and need a full fledge firewall device, place the 
 firewall appliance in shared service VPC or its own VPC. Treat this VPC as one type of shared service VPC that
@@ -93,8 +102,8 @@ the firewall appliance, as shown in the diagram below.
    :width: 5.55625in
    :height: 3.2654in
 
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :width: 3.55625in
+.. |image5| image:: transitvpc_designs_media/aviatrix-egress.png
+   :width: 5.55625in
    :height: 3.26548in
 
 .. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
