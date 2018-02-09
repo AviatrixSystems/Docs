@@ -16,6 +16,9 @@ Transit Groups in a single region or across multiple AWS regions.
 Single Region Transit VPC Design
 ----------------------------------
 
+The use case for this design is if you have one Direct Connect or 
+Internet to VPC. 
+
 Aviatrix Transit VPC solution provides default network segmentation, a Spoke VPC has no connectivity to another 
 Spoke VPC via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production Transit 
 Transit Group as none of the Spoke VPCs in either group can communicate with each other. 
@@ -28,10 +31,14 @@ Notice Transit GW is only used for traffic between on-prem and cloud (Spoke VPCs
 Shared Service VPC to Spoke VPCs does not go through the Transit GW. Decouple the different traffic streams 
 reduces the performance bottleneck and removes the single failure point. 
 
+.. note::
+
+  A Spoke VPC can be deployed in a different region and different cloud.
+
 |image0|
 
 Multi Regions Transit VPC Design
---------------------------------
+---------------------------------
 
 If you have datacenters in multiple regions and its corresponding AWS regions, you build network redundancy to 
 reach cloud by leveraging AWS VGW termination, 
@@ -83,6 +90,18 @@ the firewall appliance, as shown in the diagram below.
 
 The advantage of this architecture is that traffic to Internet and on-prem is decoupled. Transit GW only carries traffic between on-prem and cloud. 
 
+Integrating with Egress Firewall -2
+------------------------------------
+
+In the above deployment model, each Spoke VPC establishes a site2cloud 
+IPSEC connection to the firwall. Unless there is automation, the process
+of building many IPSEC connections could be time consuming and difficult to manage. 
+
+An alternative and automated way is to connect the firewall to VGW directly, 
+seen the diagram below. This approache requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
+
+|image6|
+
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
    :width: 5.55625in
    :height: 3.26548in
@@ -107,8 +126,8 @@ The advantage of this architecture is that traffic to Internet and on-prem is de
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :width: 3.55625in
+.. |image6| image:: transitvpc_designs_media/egress-firewall2.png
+   :width: 5.55625in
    :height: 3.26548in
 
 .. disqus::

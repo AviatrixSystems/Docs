@@ -9,7 +9,15 @@ OpenVPN®
 
 Aviatrix provides a cloud native feature rich client VPN solution. The solution is based on OpenVPN® and is compatible with all OpenVPN® client software. 
 In addition, Aviatrix provides its own client software that supports SAML authentication directly from the client. 
-A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN® features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+A summary of Aviatrix client VPN solution is described in the diagram below. 
+
+Useful links are as listed below:
+
+`Aviatrix OpenVPN® features <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+
+`OpenVPN® FAQ <http://docs.aviatrix.com/HowTos/openvpn_faq.html>`_
+
+`OpenVPN® design with multi VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_
 
 Note that only AWS VPC is drawn in the diagram, but the network diagram applies equally to Azure and Google Cloud.
 
@@ -17,7 +25,6 @@ Note that only AWS VPC is drawn in the diagram, but the network diagram applies 
 
 
 
-This guide helps you build a basic client vpn solution. If you like to learn how to build a user vpn solution with multiple VPCs, refer to `this link. <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
 Configuration Workflow
 ----------------------
