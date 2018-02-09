@@ -15,6 +15,9 @@ credentials being compromised.
 
 This document provides instructions to create the IAM roles and policies. If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_
 
+.. important::
+   Make sure you read the `cross account section <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-iam-policies-and-roles-for-a-cross-account>`_ if you plan to support multiple AWS accounts on the Aviatrix Controller. 
+
 To use IAM role, the Aviatrix Controller you launch must have IAM role
 enabled.
 
