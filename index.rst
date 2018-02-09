@@ -106,6 +106,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EncrOverExpRoute
    HowTos/TransPeering_OnPrem
    HowTos/avxgw_azurevpngw_site2cloud
+   HowTos/CloudToPfSense
    HowTos/bgp_transitive_instructions
 
 .. _OpenVPN®:
