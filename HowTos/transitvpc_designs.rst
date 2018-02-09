@@ -68,8 +68,8 @@ The function is embeded in the Aviatrix gateway. It is transparent to user insta
 
 |image5|
 
-Integrating with Egress Firewall
-----------------------------------
+Integrating with Egress Firewall -1 
+------------------------------------
 
 
 If you are running AWS Workspace services for your employees and need a full fledge firewall device, place the 
@@ -81,6 +81,7 @@ the firewall appliance, as shown in the diagram below.
 
 |image4|
 
+The advantage of this architecture is that traffic to Internet and on-prem is decoupled. Transit GW only carries traffic between on-prem and cloud. 
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
    :width: 5.55625in

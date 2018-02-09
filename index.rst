@@ -222,7 +222,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/customize_aws_iam_policy
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
-   HowTos/Competitive_CSR1000v
    HowTos/aviatrix_terraform
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn

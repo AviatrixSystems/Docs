@@ -32,6 +32,8 @@ They differ in the following areas.
 
  - **Simplicity** In Aviatrix solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP protocol. Simplicity leads to stability. Workflow based step by step instructions help you build out a Transit VPC solution in minutes. 
 
+ - **Monitoring** Aviatrix solution integrates with Splunk, Sumo, remote Syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
+
 For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
 How does Aviatrix Transit Network work?
