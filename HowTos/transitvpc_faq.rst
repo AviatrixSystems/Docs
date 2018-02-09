@@ -34,6 +34,8 @@ They differ in the following areas.
 
  - **Monitoring** Aviatrix solution integrates with Splunk, Sumo, remote Syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
 
+ - **Scalable** AWS has various limits in its infrastructure, such as route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. Aviatrix solution overcomes that limitation. 
+
 For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
 How does Aviatrix Transit Network work?
