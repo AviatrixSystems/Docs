@@ -190,8 +190,9 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: REST APIs
 
-   HowTos/aviatrix_apis_datacenter_extension
    HowTos/Aviatrix_Controller_API
+   HowTos/aviatrix_terraform
+   HowTos/aviatrix_apis_datacenter_extension
 
 .. _Downloads:
 
@@ -223,7 +224,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/customize_aws_iam_policy
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
-   HowTos/aviatrix_terraform
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
    HowTos/SecuringController
