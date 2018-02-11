@@ -1,6 +1,6 @@
 .. meta::
    :description: Docker swarm cluster installation
-   :keywords: Docker, swarm, cluster, Avaitrix, swarm cluster
+   :keywords: Docker, swarm, cluster, Aviatrix, swarm cluster
 
 ===========================================
 Docker Swarm Cluster Installation
@@ -95,7 +95,7 @@ On the manager/counsul instance:
         “10.0.0.0/24”:
         *docker -H :4000 network create - -subnet=10.0.0.0/24 my-overlay-network*
   |   c. To list the network and you will see the newly created
-        “my-overlay-netork” on each hosting instance joined the swarm
+        “my-overlay-network” on each hosting instance joined the swarm
         cluster
   |      *docker network ls*
 
@@ -105,7 +105,7 @@ On the manager/counsul instance:
 On each container hosting instance:
 
   |   a. ssh into the host
-  |   b. Launch a ubnutu container “test01” within the overlay network “my-overlay-network:
+  |   b. Launch a Ubuntu container “test01” within the overlay network “my-overlay-network:
   |      *sudo docker run -itd --net my-overlay-network --name test01 ubuntu /bin/bash*
   |   c. Find out the overlay IP address for container “test01” assigned by consul. There are at least three ways:
 

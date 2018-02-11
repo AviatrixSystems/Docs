@@ -31,7 +31,7 @@ seamless experience that they enjoy when using the on-prem network.
 
 For an Aviatrix overview, check out `this document. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_ 
 
-In additioin, the product interoperates with any third party IPSEC capable devices, including AWS VGW and Aviatrix's own on-prem virtual appliance CloudN.
+In addition, the product interoperates with any third party IPSEC capable devices, including AWS VGW and Aviatrix's own on-prem virtual appliance CloudN.
 
 Architecturally, Aviatrix solution is a centrally managed, loosely
 coupled and globally deployed platform built for the cloud from the

@@ -275,7 +275,7 @@ If you plan to use CloudN for IPmotion, skip section 2.4
 
   For maximum performance, it is recommended that the host CPU has support
   for Intel AES-NI, instruction set for hardware encryption. Intel
-  processors Westmere, Sandybridge, Ivrybridge and Haswell all have AES-NI
+  processors Westmere, Sandy Bridge, Ivy Bridge and Haswell all have AES-NI
   enabled.
 
   In test environments, TCP throughput (using iperf tool) in the vicinity
@@ -356,7 +356,7 @@ for testing and evaluation purposes.
     For additional CloudN on ESXi configuration illustrations, check out
     `this note <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Configuring_CloudN_Examples.pdf>`_
 
-.. Note:: DCCX does not support NICteaming in active-active mode. 
+.. Note:: DCCX does not support NIC teaming in active-active mode. 
 ..
 
   When NICteaming is configured, only active-standby mode is supported, as
@@ -458,7 +458,7 @@ commands. For each command, type “?” to view syntax and parameters.
 4.1. **Step 1**: Setup Interface Address
 -----------------------------------------
 
-  There are two ways to give CloudN its IP adddress: auto-generate by
+  There are two ways to give CloudN its IP address: auto-generate by
   CloudN itself or statically assign one.
 
 4.1.1. Statically assign CloudN IP address (Recommended method)
@@ -512,7 +512,7 @@ commands. For each command, type “?” to view syntax and parameters.
     where CloudN is deployed. CloudN scans the subnet and find an IP address
     that is close to the default gateway (for example, if the default
     gateway is 10.10.0.1, CloudN will try 10.10.0.2) and is available,
-    CloudN will then assin itself this IP addres and CloudN software will be
+    CloudN will then assign itself this IP address and CloudN software will be
     downloaded if configuration is successfully.
 
     Command setup\_interface\_address:

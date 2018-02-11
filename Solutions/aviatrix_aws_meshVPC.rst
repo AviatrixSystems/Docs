@@ -117,7 +117,7 @@ least one to start with.
 4.2 Plan Cloud Address Space
 ----------------------------
 
-CloudN manages your cloud address space. Carve out an unused consective network address space in your datacenter. The CIDR block of this address can be determined by how many VPCs you will need and how big the address space you can allocate. For example, a CIDR block with /16 address range can create as many as 254 VPCs.
+CloudN manages your cloud address space. Carve out an unused consecutive network address space in your datacenter. The CIDR block of this address can be determined by how many VPCs you will need and how big the address space you can allocate. For example, a CIDR block with /16 address range can create as many as 254 VPCs.
 
 Once you have created all the VPCs from the allocated address space, you can always allocate a new address space and launch a new CloudN virtual appliance.
 
@@ -148,7 +148,7 @@ After going through onboarding steps, click ACX. Provide a name for the VPC you 
 
 You then can launch instances in the VPC and access the instances by their private IP addresses.
 
-Reapt the above step for more VPC with encrypted tunnel creations.
+Repeat the above step for more VPC with encrypted tunnel creations.
 
 
 

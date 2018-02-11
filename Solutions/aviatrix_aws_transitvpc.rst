@@ -131,7 +131,7 @@ This step explains how to connect a spoke VPC to the transit VPC.
 
 ::
 
-  For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypte Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC.
+  For Spoke VPC to Spoke VPC connectivity, you can simply use `Aviatrix Encrypted Peering feature <http://docs.aviatrix.com/HowTos/peering.html>`_. You do not need to route traffic through a transit VPC. Below instruction is primary useful for Spoke VPC to on-prem datacenter connectivity configuration. For demonstration purpose, we include Spoke VPC to Spoke VPC connectivity configuration going through transit VPC.
 
 
 **Instructions:**
@@ -249,7 +249,7 @@ Aviatrix Solution has the following benefits compared to CSR1000v:
 
 **No Double Egress Charge** Aviatrix supports direct Spoke VPC to Spoke VPC connectivity without going through transit VPC which incurs in twice the egress network charges.
 
-**Isolation By Design** AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With Aviatrix solution no connecitvity is established untill you specify.
+**Isolation By Design** AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With Aviatrix solution no connectivity is established until you specify.
 
 **Highly Available** Built-in gateway redundancy supports hot standby
 and fail over in seconds.

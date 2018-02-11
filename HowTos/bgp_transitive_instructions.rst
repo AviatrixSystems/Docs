@@ -6,7 +6,7 @@
 Transit Network with BGP Setup Instructions 
 ##############################################
 
-.. Note:: this document becomes obsolate with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to setup a Transit Network. 
+.. Note:: this document becomes obsolete with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to setup a Transit Network. 
 
 Introduction
 =============
@@ -15,7 +15,7 @@ Introduction
 as shown in the diagram below. Key characteristics in this architecture:
 
  - Spoke VPC to Spoke VPC networking is direct without going through the Transit VPC and is orchestrated by the central controller. Spoke VPCs do not run BGP protocol.
- - BGP runs between the gateway in the Transit VPC and AWS VGW to faciliate communication between Spoke VPC and on-prem. The idea is you need to configure on-prem connectivity to VGW once and there is no need again when new Spoke VPC is stood up.
+ - BGP runs between the gateway in the Transit VPC and AWS VGW to facilitate communication between Spoke VPC and on-prem. The idea is you need to configure on-prem connectivity to VGW once and there is no need again when new Spoke VPC is stood up.
 
 |image0|
 

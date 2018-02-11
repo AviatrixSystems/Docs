@@ -20,9 +20,9 @@ What are the use cases for Site2Cloud?
 
 Here are the popular use cases:
 
- - **SaaS provider to its customer site** If you need to move data contineuously and securely from customer or partner sites to your SaaS service hosted in AWS, Azure or Google, building an encrypted tunnel between the customer site to you is required. 
+ - **SaaS provider to its customer site** If you need to move data continuously and securely from customer or partner sites to your SaaS service hosted in AWS, Azure or Google, building an encrypted tunnel between the customer site to you is required. 
 
- - **Branch offices to cloud** If you have many branch offices that need to access applications hosted in AWS or Azure, using Site2Cloud is the most economicaly way to build secure tunnel. Why pay extra to SD-WAN vendors to go through their "cloud" when you can use your existing Internet connection? 
+ - **Branch offices to cloud** If you have many branch offices that need to access applications hosted in AWS or Azure, using Site2Cloud is the most economically way to build secure tunnel. Why pay extra to SD-WAN vendors to go through their "cloud" when you can use your existing Internet connection? 
 
 Why should I consider using Aviatrix Site2Cloud?
 --------------------------------------------------

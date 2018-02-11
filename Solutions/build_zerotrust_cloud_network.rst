@@ -46,7 +46,7 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 
  - In addition to policy driven network connections, there must be firewall rules that govern data flow and reduce the connection scope. For example, you should consider place application and database in separate VPCs and setup a stateful firewall rule to only allow traffic initiated from application to access database, no the other way around. `Aviatrix gateway stateful firewall <http://docs.aviatrix.com/HowTos/gateway.html>`_ enforces and logs all network events. 
 
- - Within a VPC, you can use AWS native security groups assoicated with instances to enforce policies for communications.
+ - Within a VPC, you can use AWS native security groups associated with instances to enforce policies for communications.
 
 
 3. User access with authentication and authorization

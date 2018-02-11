@@ -11,7 +11,7 @@ Why should I choose Transit architecture?
 
 Transit architecture is about building connectivity between cloud and on-prem in 
 the most agile manner possible. In the transit architecture, there is one 
-connection (not coounting backup here) between on-prem and 
+connection (not counting backup here) between on-prem and 
 and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
 The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, 
@@ -134,7 +134,7 @@ How can I route VPC egress Internet bound traffic to on-prem to go through the c
 ---------------------------------------------------------------------------------------------------
 
 If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route points to Transit GW
-and rouet egress Internet traffic to VGW and back to on-prem. Make sure you do not 
+and route egress Internet traffic to VGW and back to on-prem. Make sure you do not 
 have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
 
 How do I know if the tunnel between VGW and Transit GW is up?
@@ -175,7 +175,7 @@ The following troubleshooting steps may be helpful.
 
 #. Make sure the CIDR of the on-prem problem subnet (where VM or host is not reachable from a Spoke VPC instance) is propagated to Spoke VPC, that is, make sure Spoke VPC where the problem instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
 
-#. Run traceroute by using an Aviatrix gateway as a test EC2. Launch t2.micro instancey Aviatrix Gateway from the `Gateway <http://docs.aviatrix.com/HowTos/gateway.html#gateway>`_ at the navigation bar (this gateway is going to be used as a test EC2 instance). Once this gateway is launched, you can run a `traceroute <http://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ from this gateway (test EC2 instance) to the on-prem problem VM. (When the test is done, remember to delete the gateway to conserve consumption.) 
+#. Run traceroute by using an Aviatrix gateway as a test EC2. Launch t2.micro instance Aviatrix Gateway from the `Gateway <http://docs.aviatrix.com/HowTos/gateway.html#gateway>`_ at the navigation bar (this gateway is going to be used as a test EC2 instance). Once this gateway is launched, you can run a `traceroute <http://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ from this gateway (test EC2 instance) to the on-prem problem VM. (When the test is done, remember to delete the gateway to conserve consumption.) 
 
 #. Do a traceroute from on-prem problem VM or host to the Aviatrix gateway test EC2 launched from the above steps. 
 
@@ -194,7 +194,7 @@ provide an end to end encryption protection.
 How do I build redundancy between VGW and on-prem?
 --------------------------------------------------
 
-AWS provides a few native optioins for redundancy between VGW and on-prem. You can build redundant 
+AWS provides a few native options for redundancy between VGW and on-prem. You can build redundant 
 active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
 
 `Read this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 

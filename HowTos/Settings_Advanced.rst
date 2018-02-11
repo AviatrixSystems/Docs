@@ -10,7 +10,7 @@ Advanced
 
 -  Keepalive
 
--  Password Maagement
+-  Password Management
 
 -  Certificates
 

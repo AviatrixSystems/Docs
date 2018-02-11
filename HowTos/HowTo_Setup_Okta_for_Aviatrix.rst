@@ -36,7 +36,7 @@ enabled. Select “Okta” for “Two-­‐step Authentication” and enter Okta
 
    -  Username Suffix (Optional): In this example, “aviatrix.com” was
       entered. If Username Suffix is provided, users should enter their
-      account ID without the domain name when loggin in from the VPN Client.
+      account ID without the domain name when logging in from the VPN Client.
       For example, if your Okta account is
       `demoaviatrix@aviatrix.com <mailto:demoaviatrix@aviatrix.com>`__
       and “aviatrix.com” as Username Suffix, you should enter

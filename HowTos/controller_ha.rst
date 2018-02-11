@@ -1,6 +1,6 @@
 .. meta::
    :description: controller HA
-   :keywords: controller high avalability, controller HA, AWS VPC peering, auto scaling
+   :keywords: controller high availability, controller HA, AWS VPC peering, auto scaling
 
 ###################################
 Controller HA in AWS
