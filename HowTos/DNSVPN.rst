@@ -29,10 +29,10 @@ Tips: Upgrade to the latest version. Make sure you are running 2.7+
    
         i. Select cloud type and account (Currently only supported on AWS)
         ii. Enter the hosted zone name ( This must exist in your AWS Route53)
-        iii. VPN Service name is a unique identifier fot the Loadbalancer. For example
+        iii. VPN Service name is a unique identifier for the Loadbalancer. For example
              a service name "vpn1" and hosted zone "aviatrix.com" will create a DNS entry
              "vpn.aviatrix.com"
-        iv. Select the Gateways that need to be added to the Loadbalancer. If you dont see
+        iv. Select the Gateways that need to be added to the Loadbalancer. If you don't see
              any gateways, you may not have created non ELB VPN Gateways.
 	      v. Hit "OK" and this creates the UDP LoadBalancer
 3. Add VPN Users.

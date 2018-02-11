@@ -18,7 +18,7 @@ Aviatrix gateways can be used to connect one site to and other. This solution re
 Environment Requirements
 ---------------------------------------------------------
 
-An Aviatrix Site to Site IPSEC tunnel is accomplished by one gateway initiating the session with the other gateway. For this to work at least one of the Aviatrix virtual appliance needs to accessible via a public IP address. This can be accomplished by setting up a the public IP addres on the edge router in the on-premise network and configuring NAT from that public IP address to the Aviatrix VM with a 1-1 IP address NAT. The only ports that need to be forwarded from the edge router to the VM are UDP ports 500 and 4500. 
+An Aviatrix Site to Site IPSEC tunnel is accomplished by one gateway initiating the session with the other gateway. For this to work at least one of the Aviatrix virtual appliance needs to accessible via a public IP address. This can be accomplished by setting up a the public IP address on the edge router in the on-premise network and configuring NAT from that public IP address to the Aviatrix VM with a 1-1 IP address NAT. The only ports that need to be forwarded from the edge router to the VM are UDP ports 500 and 4500. 
 
 
 |image1|

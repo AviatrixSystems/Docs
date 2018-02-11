@@ -26,7 +26,7 @@ Aviatrix VPN Client Changelog
 1.3 - Jun 15 2017
  - Disconnection fixes
  - Timeout fixes
- - Connection profile is diplayed
+ - Connection profile is displayed
  - IE support for SAML
  - Signed Windows application
  

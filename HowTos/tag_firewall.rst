@@ -9,7 +9,7 @@ Tag Based Security Policy
 Aviatrix gateway security policies is implemented at each gateway, key features are:
 
  * It is a L4 stateful firewall that filters on CIDR, protocol and port. 
- * Each policy is assoicated with "Allow" or "Deny" action.
+ * Each policy is associated with "Allow" or "Deny" action.
  * A Base policy for "Allow" or "Deny" for the gateway can be used as a catch all rule.  
  * All security policy events as well as packets can be logged to Splunk, SumoLogic, Syslog, ELK and Datadog. 
 
@@ -61,7 +61,7 @@ To view the policies of gateway, select Policy, highlight a gateway and click Ed
 
 Say you have a group of EC2 instances or a group of AWS Workspace instance. You like to setup policies to allow them to access a database which itself consists of a group of nodes. 
 
-You can create a tag, name it my-app, configure the list of IP addresses assoicated with each instance with a name. You can then create a second tag, name it my-database, configure the list of IP addresses assoicated with each instance with a name. 
+You can create a tag, name it my-app, configure the list of IP addresses associated with each instance with a name. You can then create a second tag, name it my-database, configure the list of IP addresses associated with each instance with a name. 
 
 You then can simply apply one policy at the gateway that says my-app to my-database is allowed. The Controller will automatically push the policies to the gateway. 
 

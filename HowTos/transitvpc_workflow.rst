@@ -47,7 +47,7 @@ Follow the steps below to set up Transit VPC network.
 -------------------------------------------
 
 The Transit GW is the hub gateway, it servers to move traffic between a Spoke VPC and on-prem network.
-The Transit GW must be launched on publis subnet where its assoicated route table has a route 0.0.0.0/0 that points to AWS IGW. 
+The Transit GW must be launched on public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 |image1|
 
@@ -163,7 +163,7 @@ Go to Gateway page, locate the Transit GW with "-hagw" in the gateway name exten
 gateway and click Delete. 
 
 Note Transit GW and its back up companion are in active/active state, that is, both gateways could 
-be forwarding traffic. To disbale Transit GW HA, it is best practice to make sure there is no traffic 
+be forwarding traffic. To disable Transit GW HA, it is best practice to make sure there is no traffic 
 going through the backup Transit GW. 
  
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png

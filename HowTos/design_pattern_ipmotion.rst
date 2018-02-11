@@ -17,7 +17,7 @@ The connections can be over Internet or private links such as Direct Connect. Th
 1. IPmotion over Internet
 --------------------------
 
-IPmotion over Internet is convenient as it requires no additional private link infrastructure such as Direct Connect, all you need is Internet access. This deployment model suits well for applications whose bandwith throughput requirement is less than 1Gbps.
+IPmotion over Internet is convenient as it requires no additional private link infrastructure such as Direct Connect, all you need is Internet access. This deployment model suits well for applications whose bandwidth throughput requirement is less than 1Gbps.
 
 When IPmotion is deployed over Internet, packets are encrypted in flight with IPSEC. 
 
@@ -33,7 +33,7 @@ in the diagram below.
 --------------------------------
 
 IPmotion over private link such as Direct Connect provides consistent bandwidth and 
-latency as well as requlartory compliance for certain industry. 
+latency as well as regulatory compliance for certain industry. 
 
 When IPmotion is deployed over Direct Connect, data is not encrypted in flight.
 
@@ -60,7 +60,7 @@ A deployment diagram is shown below.
 4. IPmotion HA
 ----------------
 
-The Aviatrix virtual appliance CloudN should be deployed in a vmware HA cluster for on-prem HA protection. 
+The Aviatrix virtual appliance CloudN should be deployed in a VMware HA cluster for on-prem HA protection. 
 
 The IPmotion gateway is monitored by CloudN for gateway health. If the gateway 
 becomes unreachable, CloudN will stop the gateway instance and start it again. 

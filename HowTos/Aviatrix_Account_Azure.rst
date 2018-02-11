@@ -1,5 +1,5 @@
 .. meta::
-   :description: Avaitrix Cloud Account for Azure
+   :description: Aviatrix Cloud Account for Azure
    :keywords: Aviatrix account, Azure, Aviatrix Azure account credential, API credential
 
 ===========================================================

@@ -31,7 +31,7 @@ What does Aviatrix FQDN feature do?
 ========================================
 
 Aviatrix Fully Qualified Domain Name (FQDN)
-Whitelisting is a security feature specially designed for workloads in public cloud. It filtersInternet bound egress traffic initiated from workloads in a VPC.
+Whitelisting is a security feature specially designed for workloads in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC.
 
 Aviatrix FQDN Whitelisting filters on HTTP and HTTPS traffic and allows 
 only the destination host

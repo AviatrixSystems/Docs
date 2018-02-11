@@ -15,7 +15,7 @@ How to Build Simple and Scalable Transit VPC Solution
 Aviatrix provides a Transit VPC solution that is centrally managed and simple to deploy, as documented in `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_. The solution requires no CCIE and crypto skills for maintenance and troubleshooting the network connectivity. 
 
 One friction in this Transit VPC solution is that each time when a spoke VPC is stood up, the IPSEC tunnel between the transit VPC and on-prem needs to be modified 
-to include the new spoke VPC CIDR. This modification of IPSEC tunnel invovles 
+to include the new spoke VPC CIDR. This modification of IPSEC tunnel involves 
 on-prem network team and can take up a few weeks of time. 
 
 This document guides you to build a large and scalable Transit VPC network over Internet that 
@@ -31,11 +31,11 @@ in building and operating the hybrid cloud network.
 ==========================
 
 The first step is to obtain from your network admin the on-prem address 
-space in the most summerized form. For example, the on-prem network consists of 172.16.0.0/16. 
+space in the most summarized form. For example, the on-prem network consists of 172.16.0.0/16. 
 
 The next step is to work with your on-prem network admin to carve out 
 one or a set of
-consective network address 
+consecutive network address 
 space that is not used anywhere by your company and reserve 
 that as your cloud address space. For example, 
 the address space could be 10.0.0.0/8. All spoke VPC CIDRs and Transit VPC

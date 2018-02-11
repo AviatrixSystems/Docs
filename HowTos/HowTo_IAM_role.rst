@@ -1,6 +1,6 @@
 .. meta::
    :description: How to Set Up IAM Role for Aviatrix
-   :keywords: IAM, IAM role, IAM role Avaitrix
+   :keywords: IAM, IAM role, IAM role Aviatrix
 
 ###################################
 IAM Role
@@ -24,7 +24,7 @@ enabled.
 Aviatrix Controller Launched from CloudFormation
 =================================================
 
-If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their assoicated policies have already been created at the CloudFormation stack launch time.
+If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their associated policies have already been created at the CloudFormation stack launch time.
 When you create an Aviatrix cloud account on Aviatrix Controller console,
 simply follow these steps to retrieve the fields
 for "aviatrix-role-app ARN" and "aviatrix-role-ec2 ARN".

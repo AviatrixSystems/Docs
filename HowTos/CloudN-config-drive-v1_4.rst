@@ -13,7 +13,7 @@ The method is to use a customized ISO file when launching the virtual machine.
 Note 
 CloudN can be downloaded from `this link: <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_.
 
-1. Installation on vmware vSphere Client 
+1. Installation on VMware vSphere Client 
 =========================================
 
 Create the customized configuration
@@ -211,7 +211,7 @@ Contents of user-data:
 
   dns-nameservers 8.8.8.8 8.8.4.4
 
-.. Note:: If your enviornment has proxy server for accessing Internet, you need to include that as described in the vmware section.
+.. Note:: If your environment has proxy server for accessing Internet, you need to include that as described in the VMware section.
 
 ..
 

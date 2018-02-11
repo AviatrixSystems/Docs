@@ -87,7 +87,7 @@ Setup for Operations
 =====================
 
 If this Controller is for your production, we strongly recommend you to enable Controller `Backup/Restore feature. <http://docs.aviatrix.com/HowTos/controller_backup.html>`_ 
-This allows you to backup configurations on the Controller to an S3 bucket sothat you can recover the configurations in a disaster situation. 
+This allows you to backup configurations on the Controller to an S3 bucket so that you can recover the configurations in a disaster situation. 
 
 Controller HA
 ==============

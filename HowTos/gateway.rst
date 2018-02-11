@@ -43,7 +43,7 @@ Aviatrix gateway performs NAT function when this option is selected.
 Allocate NEW EIP
 -----------------
 
-When this optioin is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When this optino is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. 
+When this option is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When this option is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. 
 
 VPN Access
 -------------
@@ -75,7 +75,7 @@ Starting Release 3.0, gateway security policy page has been moved Security -> St
 High Availability
 -------------------
 
-There are two types of high availabiity on Aviatrix: "Gateway for High Availability" and "Gateway for High Availability Peering". 
+There are two types of high availability on Aviatrix: "Gateway for High Availability" and "Gateway for High Availability Peering". 
 
 
 "Gateway for High Availability Peering" is used for "Enable HA" field at Encrypted Peering configuration. 

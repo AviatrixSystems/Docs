@@ -71,7 +71,7 @@ Using Aviatrix for Egress Control
 If you are using AWS NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control. 
 
 Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls. 
-The function is embeded in the Aviatrix gateway. It is transparent to user instances and requires no agents nor certs. 
+The function is embedded in the Aviatrix gateway. It is transparent to user instances and requires no agents nor certs. 
 
 |image5|
 
@@ -79,7 +79,7 @@ Integrating with Egress Firewall -1
 ------------------------------------
 
 
-If you are running AWS Workspace services for your employees and need a full fledge firewall device, place the 
+If you are running AWS Workspace services for your employees and need a full fledged firewall device, place the 
 firewall appliance in shared service VPC or its own VPC. Treat this VPC as one type of shared service VPC that
 offers egress control for instances in a private subnet of all Spoke VPCs. 
 
@@ -94,11 +94,11 @@ Integrating with Egress Firewall -2
 ------------------------------------
 
 In the above deployment model, each Spoke VPC establishes a site2cloud 
-IPSEC connection to the firwall. Unless there is automation, the process
+IPSEC connection to the firewall. Unless there is automation, the process
 of building many IPSEC connections could be time consuming and difficult to manage. 
 
 An alternative and automated way is to connect the firewall to VGW directly, 
-seen the diagram below. This approache requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
+seen the diagram below. This approach requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
 
 |image6|
 

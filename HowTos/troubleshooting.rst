@@ -1,6 +1,6 @@
 .. meta::
    :description: How to troubleshoot for Aviatrix
-   :keywords: Avaitrix troubleshooting, upload log, packet capture, encrypted peering, AWS VPC
+   :keywords: Aviatrix troubleshooting, upload log, packet capture, encrypted peering, AWS VPC
 
 ###################################
 Troubleshoot
@@ -51,7 +51,7 @@ results should be displayed when the execution finishes.
 Packet capture
 ---------------
 
-Click Troubleshoot->Diagnostics->Network. At Packet Capture panel, select a gateway where you wish to do packet capture. You can further filter on Host and Port number. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. You can also specifiy capture time. The pcap file can be viewed by Wireshark.
+Click Troubleshoot->Diagnostics->Network. At Packet Capture panel, select a gateway where you wish to do packet capture. You can further filter on Host and Port number. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. You can also specify capture time. The pcap file can be viewed by Wireshark.
 
 DNS Error
 ----------
