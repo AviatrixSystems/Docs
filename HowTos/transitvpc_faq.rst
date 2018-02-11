@@ -73,7 +73,7 @@ For multi region, the redundancy is best built over VGW. Check out our `multi re
 I have more than 100 VPCs, how do I overcome AWS route limits?
 ----------------------------------------------------------------
 
-When you deploy Aviatrix Transit VPC solution, all Aviatrix gateways, Transit and Spoke, are deployed with `Designated Gateway Feature <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>_ enabled by default. This allows to manage as many Spoke VPCs as you need.
+When you deploy Aviatrix Transit VPC solution, all Aviatrix gateways, Transit and Spoke, are deployed with `Designated Gateway Feature <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ enabled by default. This allows to manage as many Spoke VPCs as you need.
 
 I have a few high bandwidth applications, how do I deploy them in a Transit solution?
 --------------------------------------------------------------------------------------
