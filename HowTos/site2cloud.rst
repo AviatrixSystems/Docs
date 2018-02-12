@@ -87,6 +87,12 @@ highlighted.
       encryption algorithm. Incorporate the information to your remote
       router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
+Network Device Support
+======================
+
+Specific device support
+    - `pfSense IPsec VPN <CloudToPfSense.html>`__
+
 Troubleshooting
 ===============
 
