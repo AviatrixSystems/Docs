@@ -124,13 +124,18 @@ Create an IPsec tunnel in pfSense
    +-------------------------------+------------------------------------------+
    | Field                         | Expected Value                           |
    +===============================+==========================================+
-   | Disable rekey                 | :orange: `Unchecked`                     |
+   | Disable rekey                 | :orange:`Unchecked`                      |
    +-------------------------------+------------------------------------------+
 
    |imageExamplePfSenseConfiguration|
 
 5. Click `Save`
 6. Add a Phase 2 entry
-7. Test the tunnel is up
+   |imageExamplePfSensePhase2Config|
+
+7. Save the Phase 2 entry
+
+8. Test the tunnel is up
 
 .. |imageExamplePfSenseConfiguration| image:: CloudToPfSense_media/example_config.png
+.. |imageExamplePfSensePhase2Config| image:: CloudToPfSense_media/example_phase2_config.png
