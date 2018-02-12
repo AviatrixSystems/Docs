@@ -26,7 +26,7 @@ Planning and Prerequisites
 
  1. Identify an on-prem subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
  #. Create a AWS VPC that has the same or larger CIDR block than the migrating subnet. 
- #. IPmotion builds an IPSEC tunnel using UDP ports 500 and 4500. Make sure these two UDP ports are open for outbound traffic. Inbound return traffic will also run on these two ports. The prots should be optn to AWS public IP address ranges. 
+ #. IPmotion builds an IPSEC tunnel using UDP ports 500 and 4500. Make sure these two UDP ports are open for outbound traffic. Inbound return traffic will also run on these two ports. The ports should be open to AWS public IP address ranges. 
  #. Consider `Design Patterns <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_ for IPmotion.  
  #. For simplicity, in this guide, we assume the cloud subnet is a public subnet and the migration is over Internet
  #. Deploy Aviatrix virtual appliance CloudN in the on-premise subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. AWS reserves `five IP addresses <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-sizing-ipv4>`__ on a given subnet, make sure CloudN IP address is not any one of them. For example on a 172.16.1.0/24 subnet, 172.16.1.0-172.16.1.3 and 172.16.1.255 are reserved. 
@@ -55,7 +55,7 @@ The `on-prem IP address list` of a subnet includes both the list of IP addresses
 migrated and the list of IP addresses of VMs that will remain on-prem 
 but need to communicate with the migrated VMs. 
 
-One simple way to specifiy this address range is to provide the list of IP addresses of 
+One simple way to specify this address range is to provide the list of IP addresses of 
 all running VMs, excluding CloudN IP address, since out of this list, 
 some or all VMs will be migrated to cloud. For example, as shown in the above diagram, 
 if the running VMs excluding CloudN on subnet 172.16.1.0/24 are in the range of 172.16.1.10-172.16.1.20, 
@@ -65,7 +65,7 @@ and you plan to move all running VMs to cloud, then specify this range for Step 
 
       172.16.1.10-172.16.1.20
 
-.. Note:: the on-prem IP address format could be a single IP address or a range of IP addresses using a "-" in the list. Specifiy multiple ranges of IP addresses by separting them with a comma.  Example: 172.16.1.10-172.16.1.20, 172.16.1.30, 172.16.1.120-172.16.1.130
+.. Note:: the on-prem IP address format could be a single IP address or a range of IP addresses using a "-" in the list. Specify multiple ranges of IP addresses by separating them with a comma.  Example: 172.16.1.10-172.16.1.20, 172.16.1.30, 172.16.1.120-172.16.1.130
 
 ..
 
@@ -173,7 +173,7 @@ Commit is to enable the migrated EC2 instance to communicate with any on-Prem VM
 .. Note:: Before you commit an IP address, the on-prem VM that has been migrated must be powered down first. Commit the IP address implies that the migrated EC2 instance will be in operation. 
 ..
 
-Hightlight a specific IP address and click the Commit button. 
+Highlight a specific IP address and click the Commit button. 
 
 Undo Commit
 ^^^^^^^^^^^
@@ -203,7 +203,7 @@ migrated EC2 instance responds to Ping request.
 7. Discover application dependencies
 ----------------------------------------
 
-After migrating one VM, you can use Aviatrix IPmotion gateway to discover application dependencies by following `the dependancy map discovery. <http://docs.aviatrix.com/HowTos/ipmotion_dependency_discovery.html>`_ 
+After migrating one VM, you can use Aviatrix IPmotion gateway to discover application dependencies by following `the dependency map discovery. <http://docs.aviatrix.com/HowTos/ipmotion_dependency_discovery.html>`_ 
 
 8. Migrate more VMs on the same subnet
 ---------------------------------------

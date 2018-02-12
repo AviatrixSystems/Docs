@@ -25,7 +25,7 @@ image that will be used to instantiate Aviatrix CloudN.
 **Step 1: Creating the Networks**
 
 1.1 From the vSphere Client, select the host and click on Configuration
-   tab. In the Hardward section, select Networking > Add Networking tab
+   tab. In the Hardware section, select Networking > Add Networking tab
    to create a vSwitch with a single vmnic port assigned to it.
 
 |image16|
@@ -76,7 +76,7 @@ physical adapters (vmnic2 and vmnic3 in our example here).
 
 **Step 2: Creating Aviatrix CloudN Virtual Machine**
 
-2.1 At the vSphere Client, click on Flie > Deply OVF Template.
+2.1 At the vSphere Client, click on Flie > Deploy OVF Template.
 
 |image36|
 

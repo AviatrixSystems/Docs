@@ -53,7 +53,7 @@ First identify the on-prem subnet from which you plan to migrate VMs. In this ex
 
 (In this illustration, the cloud subnet is a public subnet. There are other `design patterns <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_ you can follow.)
 
-Then create an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that it is not neccessary for the migrated VMs to have public IP addresses.
+Then create an AWS VPC with a public subnet that has identical CIDR as the on-prem subnet where migration is to take place. For example, create a VPC CIDR 10.140.0.0/16 with a public subnet 10.140.0.0/16 in region Oregon. Note that it is not necessary for the migrated VMs to have public IP addresses.
 
 ===============================    ================================================================================
 **AWS Example Setting**            **Value**
@@ -280,11 +280,11 @@ c.2.  Test bi-directional end-to-end connectivity
 
 c.2.1.  Login to the On-Prem VM (e.g. 10.140.0.46)
 
-c.2.2.  Check ICMP protocal via command "ping 10.140.45"
+c.2.2.  Check ICMP protocol via command "ping 10.140.45"
 
 c.2.3.  Login to the migrated EC2 (e.g. 10.140.0.45)
 
-c.2.4.  Check ICMP protocal via command "ping 10.140.46"
+c.2.4.  Check ICMP protocol via command "ping 10.140.46"
 
 .. Note::  Make sure the security group of the migrated EC2 has ICMP allowed. Also make sure the migrated EC2 instance responds to Ping request.
 

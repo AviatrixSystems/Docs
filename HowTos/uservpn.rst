@@ -9,7 +9,15 @@ OpenVPN®
 
 Aviatrix provides a cloud native feature rich client VPN solution. The solution is based on OpenVPN® and is compatible with all OpenVPN® client software. 
 In addition, Aviatrix provides its own client software that supports SAML authentication directly from the client. 
-A summary of Aviatrix client VPN solution is described in the diagram below, to learn all Aviatrix OpenVPN® features, check out `this document. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+A summary of Aviatrix client VPN solution is described in the diagram below. 
+
+Useful links are as listed below:
+
+`Aviatrix OpenVPN® features <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+
+`OpenVPN® FAQ <http://docs.aviatrix.com/HowTos/openvpn_faq.html>`_
+
+`OpenVPN® design with multi VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_
 
 Note that only AWS VPC is drawn in the diagram, but the network diagram applies equally to Azure and Google Cloud.
 
@@ -17,7 +25,6 @@ Note that only AWS VPC is drawn in the diagram, but the network diagram applies 
 
 
 
-This guide helps you build a basic client vpn solution. If you like to learn how to build a user vpn solution with multiple VPCs, refer to `this link. <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
 Configuration Workflow
 ----------------------
@@ -39,11 +46,11 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    #. Select one account you created earlier and a region, VPC ID, Public Subnet on which the vpn gateway will be launched and user will land.
 
-   #. Select VPN Access. More fields will appear. If you just want a basic user vpn solution without multi-factor authentication, you can skip the rest of the vpn related fields and click OK to launch a vpn gatewway. By default, ELB will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
+   #. Select VPN Access. More fields will appear. If you just want a basic user vpn solution without multi-factor authentication, you can skip the rest of the vpn related fields and click OK to launch a vpn gateway. By default, ELB will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
 
    #. Use the default VPN CIDR Block. The VPN CIDR Block is the virtual IP address pool that VPN user will be assigned. 
 
-   #. If you use a DUO or Okta for multi factor authenication, select one of them at Two-step Authentication, more fields will appear. For details on Okta authentication, check out `this link. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__  
+   #. If you use a DUO or Okta for multi factor authentication, select one of them at Two-step Authentication, more fields will appear. For details on Okta authentication, check out `this link. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__  
 
    #. If you select Split Tunnel Mode, only the VPC CIDR traffic will go through the tunnel. If you specify "Additional CIDRs", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN® -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
       
@@ -61,7 +68,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    A profile is defined by a list of access policies with allow or deny for policy. When a vpn user is connected to vpn gateway, the user's profile is pushed dynamically to the vpn gateway and the user can only access resources defined in the profile. When a vpn user disconnects from the gateway, the policies are deleted.  
 
-   If a vpn user has no profile associatioin, the user has full access to all resurces. Note you can modify a user profile at any given time.  
+   If a vpn user has no profile association, the user has full access to all resources. Note you can modify a user profile at any given time.  
 
    a. (Optionally) Go to OpenVPN® -> Profiles to create as many profiles as you
       please. The target field can be FQDN (DNS names or fully qualified

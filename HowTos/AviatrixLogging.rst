@@ -102,7 +102,7 @@ AviatrixLicenseVPNUsers:
 This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access"
 when launching a gateway.
 
-Logs with this prefix come from Controller and can be used to moniter 
+Logs with this prefix come from Controller and can be used to monitor 
 the license usage of active vpn users connected to all vpn gateways.
 
 One example log:
@@ -310,7 +310,7 @@ Splunk app for Aviatrix can be downloaded from
 `Splunkbase <https://splunkbase.splunk.com/app/3585/>`_.
 
 Click `here <https://github.com/AviatrixSystems/SplunkforAviatrix>`_ to check
-instructions on Github.
+instructions on GitHub.
 
 **Sample**
 
@@ -321,7 +321,7 @@ Sumo Logic App for Aviatrix
 ---------------------------
 
 Sumo Logic app installation guide is also available on
-`Github <https://github.com/AviatrixSystems/SumoLogicforAviatrix>`_.
+`GitHub <https://github.com/AviatrixSystems/SumoLogicforAviatrix>`_.
 
 **Sample**
 

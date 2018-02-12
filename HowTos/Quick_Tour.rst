@@ -61,12 +61,10 @@ technologies is a challenge for you, `Developer’s
 Sandbox <http://docs.aviatrix.com/HowTos/DevSandbox.html>`__
 maybe a feature you want to explore.
 
-Transitive Peering
-""""""""""""""""""""
+AWS Global Transit Network
+"""""""""""""""""""""""""""
 
-Use `transitive peering reference
-design <http://docs.aviatrix.com/HowTos/TransPeering.html>`__
-to see how to connect to your on-prem or co-location.
+Follow `these instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to build an AWS Global Transit Network. 
 
 Site2Cloud Solution
 """"""""""""""""""""

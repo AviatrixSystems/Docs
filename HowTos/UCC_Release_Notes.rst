@@ -42,7 +42,7 @@ R3.0 (12/1/2017)
 
 - **Transitive Peering** supports multiple subnets being configured at the same time. Multiple subnets separated by comma can be added once when configuring transitive peering.
 
-- Join Function now support the ability to delete all subnets at once in Join Function gatewway.
+- Join Function now support the ability to delete all subnets at once in Join Function gateway.
 
 5. Troubleshooting
 -------------------
@@ -64,7 +64,7 @@ R2.7
 
 - Console Responsiveness improvements. Significant improvements in page responsiveness when using controller web console. 
 
-- Support third party signed certificate. You now can import a third party signed certificate to the controller. This should remove the "Not Secure" sign displayed by the browser. To configure, go to Settings -> Advanced -> Certificate -> CERTIFICATE IMPORT. First Enable Certificate Checking. The console will ask you to enter a domain name and generate a CSR file (Certificate Signing Request). Send this CSR to get singed, then import both CA and server certificate. Note if intermediate certifcate is one of the return files, use the intermediate certificate file for CA import. 
+- Support third party signed certificate. You now can import a third party signed certificate to the controller. This should remove the "Not Secure" sign displayed by the browser. To configure, go to Settings -> Advanced -> Certificate -> CERTIFICATE IMPORT. First Enable Certificate Checking. The console will ask you to enter a domain name and generate a CSR file (Certificate Signing Request). Send this CSR to get singed, then import both CA and server certificate. Note if intermediate certificate is one of the return files, use the intermediate certificate file for CA import. 
 
 
 2. Connectivity
@@ -124,7 +124,7 @@ User Interface
 
 - re-organize menu items on Settings. Under Settings -> Maintenance are Upgrade, Backup & Restore and Security Patches. Under Settings -> Controller are System Time, License information, Email settings and controller access method authentication LDAP or DUO configuration.oUnder Settings -> Advanced are tunnel timeout and keepalive configuration, password change and certificate management.  
 
-- Make a wish. Customers can now send feedbacks on UI pages regarding features, usability and make a wish on new requirements and enhancements.   
+- Make a wish. Customers can now send feedback on UI pages regarding features, usability and make a wish on new requirements and enhancements.   
 
 
 R2.5
@@ -641,7 +641,7 @@ UserConnect-101016
    with multiple Splunk servers that many enterprises deploy. To
    configure, go to Settings -> Loggings -> Splunk. Select Import files
    to import a Splunk configuration file. You may also choose Manual
-   Input, in this case each indexer must be listensing on the same port.
+   Input, in this case each indexer must be listening on the same port.
 
 -  Support DataDog agent for both controller and gateways. To enable, go
    to Settings -> Loggings -> DataDog, provide an API Key.

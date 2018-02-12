@@ -11,7 +11,7 @@ Why should I choose Transit architecture?
 
 Transit architecture is about building connectivity between cloud and on-prem in 
 the most agile manner possible. In the transit architecture, there is one 
-connection (not coounting backup here) between on-prem and 
+connection (not counting backup here) between on-prem and 
 and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
 The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, 
@@ -20,17 +20,21 @@ requires a change control process that takes from days to weeks.
 
 
 How does Aviatrix Transit Network Solution differ from Cisco CSR based solution?
-------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 They differ in the following areas.
 
  - **Network Segmentation** In the CSR solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS account or business teams. In contrast, the Spoke VPCs have no connectivity to each other by default. Connectivity is built by design.
 
- - **Connectivity Efficiency** In Aviatrix solution, traffic between any two Spoke VPCs are routed directly, instead of going through the Transit GW, as opposed to going through the Transit GW in the CSR case. Decoupling the different traffic steam reduces performance bottleneck and removes single failure point. 
+ - **Connectivity Efficiency** In Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW in the CSR case. Decoupling the different traffic streams reduces performance bottleneck and removes single failure point. 
 
  - **Central Control** In Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud. 
 
  - **Simplicity** In Aviatrix solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP protocol. Simplicity leads to stability. Workflow based step by step instructions help you build out a Transit VPC solution in minutes. 
+
+ - **Monitoring** Aviatrix solution integrates with Splunk, Sumo, remote Syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
+
+ - **Scalable** AWS has various limits in its infrastructure, such as route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. Aviatrix solution overcomes that limitation. 
 
 For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
@@ -69,7 +73,7 @@ For multi region, the redundancy is best built over VGW. Check out our `multi re
 I have more than 100 VPCs, how do I overcome AWS route limits?
 ----------------------------------------------------------------
 
-When you deploy Aviatrix Transit VPC solution, all Aviatrix gateways, Transit and Spoke, are deployed with `Designated Gateway Feature <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>_ enabled by default. This allows to manage as many Spoke VPCs as you need.
+When you deploy Aviatrix Transit VPC solution, all Aviatrix gateways, Transit and Spoke, are deployed with `Designated Gateway Feature <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ enabled by default. This allows to manage as many Spoke VPCs as you need.
 
 I have a few high bandwidth applications, how do I deploy them in a Transit solution?
 --------------------------------------------------------------------------------------
@@ -117,8 +121,8 @@ During resizing, traffic will be switched to backup Transit GW if HA is enabled,
 this will also switch Spoke to Transit traffic if Spoke VPC has HA enabled. 
 Resizing Transit GW will cause network downtime. 
 
-How do I know which Transit GW a Spoke GW is sending traffic to?
------------------------------------------------------------------
+How do I know which Transit GW that a Spoke GW is sending traffic to?
+----------------------------------------------------------------------
 
 You can tell which Transit GW carries the network traffic from a specific 
 Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click 
@@ -130,7 +134,7 @@ How can I route VPC egress Internet bound traffic to on-prem to go through the c
 ---------------------------------------------------------------------------------------------------
 
 If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route points to Transit GW
-and rouet egress Internet traffic to VGW and back to on-prem. Make sure you do not 
+and route egress Internet traffic to VGW and back to on-prem. Make sure you do not 
 have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
 
 How do I know if the tunnel between VGW and Transit GW is up?
@@ -164,16 +168,37 @@ Go to Gateway page, select the gateway you wish to delete and click Delete.
 An instance in a Spoke VPC cannot communicate with on-prem network, how do I troubleshoot?
 -------------------------------------------------------------------------------------------
 
-There are many reasons why an instance cannot communicate with on-prem network. 
+There are many reasons why an instance in a Spoke VPC cannot communicate with on-prem host or VM. 
 The following troubleshooting steps may be helpful. 
 
 1. Make sure the `connection between VGW and Transit GW <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-know-if-the-tunnel-between-vgw-and-transit-gw-is-up>`_ is up. 
 
-#. Make sure the Spoke VPC where instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
+#. Make sure the CIDR of the on-prem problem subnet (where VM or host is not reachable from a Spoke VPC instance) is propagated to Spoke VPC, that is, make sure Spoke VPC where the problem instance is deployed has `connectivity <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-find-out-what-routes-being-propagated-from-on-prem>`_ to the problem subnet in on-prem network. 
 
-#. Make sure the Spoke GW can reach the on-prem subnet. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and capture packets.  
+#. Run traceroute by using an Aviatrix gateway as a test EC2. Launch t2.micro instance Aviatrix Gateway from the `Gateway <http://docs.aviatrix.com/HowTos/gateway.html#gateway>`_ at the navigation bar (this gateway is going to be used as a test EC2 instance). Once this gateway is launched, you can run a `traceroute <http://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ from this gateway (test EC2 instance) to the on-prem problem VM. (When the test is done, remember to delete the gateway to conserve consumption.) 
 
-#. If the above tests pass, you should security group settings on the instance and the destination VM. 
+#. Do a traceroute from on-prem problem VM or host to the Aviatrix gateway test EC2 launched from the above steps. 
+
+#. You can do a packet capture by going to Troubleshoot -> Diagnostics -> PACKET CAPTURE. Select the right tunnel interface and run packet capture.  
+
+#. If the above tests pass, you should check security group settings on the instance and the destination VM. 
+
+How do I build encryption over Direct Connect?
+------------------------------------------------
+
+AWS provides native solution to add VPN capability between VGW and on-prem over Direct Connect. This improves security as data in motion is encrypted. Follow `the instructions here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ for this capability. 
+
+We build encryption between Aviatrix Transit GW and VGW and between Transit GW and Spoke GW to 
+provide an end to end encryption protection. 
+
+How do I build redundancy between VGW and on-prem?
+--------------------------------------------------
+
+AWS provides a few native options for redundancy between VGW and on-prem. You can build redundant 
+active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
+
+`Read this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 
+
 
 .. |image1| image:: FAQ_media/image1.png
 

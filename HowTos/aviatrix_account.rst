@@ -12,7 +12,7 @@ make APIs calls, for example, to launch an Aviatrix gateway instance, on behalf 
 
 One cloud credential is represented as an Aviatrix account on the Controller. The Controller supports 
 multiple Aviatrix accounts. One Aviatrix account may represent multiple cloud credentials, one from
-each cloud. For exmaple, an Aviatrix account name DevOps can have an IAM role for AWS, Azure ARM credential and GCP credential.
+each cloud. For example, an Aviatrix account name DevOps can have an IAM role for AWS, Azure ARM credential and GCP credential.
 
 For AWS, the account information consists of `IAM roles and policies. <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_
 

@@ -6,7 +6,7 @@ Test Drive CloudN on Your Laptop
 ***********************************
 
 CloudN can be installed on your laptop and test drive it for evaluation purpose. 
-It runs on vmware Workstation, vmware Player, Fusion and virtual box. 
+It runs on VMware Workstation, VMware Player, Fusion and virtual box. 
 
 Download CloudN Images
 #######################
@@ -41,7 +41,7 @@ section for more explanations.
 
 |image23|
 
-Test Drive on MAC with vmware Fusion
+Test Drive on MAC with VMware Fusion
 ------------------------------------
 
 After downloading the zip file and decompressing it, copy the folder to

@@ -16,6 +16,9 @@ Transit Groups in a single region or across multiple AWS regions.
 Single Region Transit VPC Design
 ----------------------------------
 
+The use case for this design is if you have one Direct Connect or 
+Internet to VPC. 
+
 Aviatrix Transit VPC solution provides default network segmentation, a Spoke VPC has no connectivity to another 
 Spoke VPC via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production Transit 
 Transit Group as none of the Spoke VPCs in either group can communicate with each other. 
@@ -28,10 +31,14 @@ Notice Transit GW is only used for traffic between on-prem and cloud (Spoke VPCs
 Shared Service VPC to Spoke VPCs does not go through the Transit GW. Decouple the different traffic streams 
 reduces the performance bottleneck and removes the single failure point. 
 
+.. note::
+
+  A Spoke VPC can be deployed in a different region and different cloud.
+
 |image0|
 
 Multi Regions Transit VPC Design
---------------------------------
+---------------------------------
 
 If you have datacenters in multiple regions and its corresponding AWS regions, you build network redundancy to 
 reach cloud by leveraging AWS VGW termination, 
@@ -58,12 +65,21 @@ Alternatively, you can place the high bandwidth application in a separate VPC th
 
 |image3|
 
-Integrating with Egress Firewall
+Using Aviatrix for Egress Control
 ----------------------------------
 
-Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls.  
+If you are using AWS NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control. 
 
-If you are running AWS Workspace services for your employees and need a full fledge firewall device, place the 
+Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls. 
+The function is embedded in the Aviatrix gateway. It is transparent to user instances and requires no agents nor certs. 
+
+|image5|
+
+Integrating with Egress Firewall -1 
+------------------------------------
+
+
+If you are running AWS Workspace services for your employees and need a full fledged firewall device, place the 
 firewall appliance in shared service VPC or its own VPC. Treat this VPC as one type of shared service VPC that
 offers egress control for instances in a private subnet of all Spoke VPCs. 
 
@@ -72,6 +88,19 @@ the firewall appliance, as shown in the diagram below.
 
 |image4|
 
+The advantage of this architecture is that traffic to Internet and on-prem is decoupled. Transit GW only carries traffic between on-prem and cloud. 
+
+Integrating with Egress Firewall -2
+------------------------------------
+
+In the above deployment model, each Spoke VPC establishes a site2cloud 
+IPSEC connection to the firewall. Unless there is automation, the process
+of building many IPSEC connections could be time consuming and difficult to manage. 
+
+An alternative and automated way is to connect the firewall to VGW directly, 
+seen the diagram below. This approach requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
+
+|image6|
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
    :width: 5.55625in
@@ -93,12 +122,12 @@ the firewall appliance, as shown in the diagram below.
    :width: 5.55625in
    :height: 3.2654in
 
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :width: 3.55625in
+.. |image5| image:: transitvpc_designs_media/aviatrix-egress.png
+   :width: 5.55625in
    :height: 3.26548in
 
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :width: 3.55625in
+.. |image6| image:: transitvpc_designs_media/egress-firewall2.png
+   :width: 5.55625in
    :height: 3.26548in
 
 .. disqus::
