@@ -17,10 +17,10 @@ VPN Management
 - **OpenVPN® Compatible** Built on OpenVPN® and is compatible with all OpenVPN® client software. 
 - **Split Tunnel** Supports split tunnel mode where only specified CIDRs ranges go through the VPN tunnel. 
 - **Full Tunnel** Supports full tunnel mode where all user IP sessions including Internet browsing go through the VPN tunnel. 
-- **PKI Managment** Supports Bring Your Own (BYO) PKI management system. 
+- **PKI Management** Supports Bring Your Own (BYO) PKI management system. 
 - **Force Disconnect** Any admin can force disconnect a VPN user from the controller console. 
 - **Dashboard** View all active VPN users and their connection history from the controller console dashboard.
-- **REST API** Support REST API for all managment activities.
+- **REST API** Support REST API for all management activities.
 
 Authentication Options 
 -----------------------
@@ -29,7 +29,7 @@ Authentication Options
 - **DUO Integration** Authenticates VPN user from Aviatrix gateways in addition to VPN cert authentication.
 - **OKTA Integration** Authenticates VPN user from Aviatrix gateways in addition to VPN cert authentication. 
 - **MFA Integration** Combines LDAP and DUO for multi-factor authentication. 
-- **Shared Certificate** Support a shared certificate arrangment among VPN users. (When this option is is selected, you should enable additional authentication options to ensure secure access.) 
+- **Shared Certificate** Support a shared certificate arrangement among VPN users. (When this option is is selected, you should enable additional authentication options to ensure secure access.) 
 - **Client SAML Integration** Authenticates VPN user directly from Aviatrix VPN client to any IDP via SAML protocol.
 
 Authorization
@@ -48,7 +48,7 @@ Logging Integration
 -------------------
 
 - **VPN User** VPN user connection history and bandwidth usage can be logged to Splunk, SumoLogic, ELK, Remote Syslog and DataDog.
-- **User Activitiy** Each VPN user TCP/UDP session can be logged to Splunk, SumoLogic, ELK, Remote Syslog and DataDog.
+- **User Activity** Each VPN user TCP/UDP session can be logged to Splunk, SumoLogic, ELK, Remote Syslog and DataDog.
 
 Client Software
 ----------------

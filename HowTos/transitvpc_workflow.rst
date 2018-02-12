@@ -47,7 +47,7 @@ Follow the steps below to set up Transit VPC network.
 -------------------------------------------
 
 The Transit GW is the hub gateway, it servers to move traffic between a Spoke VPC and on-prem network.
-The Transit GW must be launched on publis subnet where its assoicated route table has a route 0.0.0.0/0 that points to AWS IGW. 
+The Transit GW must be launched on public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 |image1|
 
@@ -61,6 +61,9 @@ You can change the Transit GW size later by follow `this instructions. <http://d
 When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
 
 |image2|
+
+To disable Transit GW HA, go to Gateway page and delete the Transit GW with -hagw in the name extension. Note if the Transit GW is connected to VGW, you cannot disable Transit GW HA and if there are still Spoke GWs, you cannot disable
+Transit GW HA either. 
 
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
@@ -151,6 +154,17 @@ Learned Networks are network CIDR blocks that BGP learned from VGW. Advertised N
 You can also click Diagnostics. Select one of the show commands or type in yourself if you know the commands to 
 see more BGP details. 
 
+To troubleshooting connectivity between a Spoke VPC instance and a on-prem host, follow `these steps. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_
+
+12. Disable Transit GW HA
+--------------------------
+
+Go to Gateway page, locate the Transit GW with "-hagw" in the gateway name extension, highlight the 
+gateway and click Delete. 
+
+Note Transit GW and its back up companion are in active/active state, that is, both gateways could 
+be forwarding traffic. To disable Transit GW HA, it is best practice to make sure there is no traffic 
+going through the backup Transit GW. 
  
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in

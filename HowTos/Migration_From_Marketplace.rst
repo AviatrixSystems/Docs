@@ -23,7 +23,7 @@ Pre-requisites
 
 Step 1 - Enable Backup
 ======================
-On the Aviatrix Markeplace Controller, goto Settings--> Maintenance and select the Backup & Restore tab.
+On the Aviatrix Marketplace Controller, go to Settings--> Maintenance and select the Backup & Restore tab.
 Create an S3 bucket and copy the name on the corresponding field. Click Enable.
 
 |image1|
@@ -39,7 +39,7 @@ On the AWS console proceed to STOP the Aviatrix AWS Marketplace controller insta
 
 Step 3 - Disassociate EIP
 =========================
-On the AWS console, goto EC2-->Network & Security --> Elastic IPs, and disassociate the EIP from the Aviatrix AWS Marketplace controller instance.
+On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassociate the EIP from the Aviatrix AWS Marketplace controller instance.
 
 ::
 
@@ -54,7 +54,7 @@ Launch new Aviatrix Controller using the BYOL License.
 
 Step 5 - Attach EIP
 ===================
-On the AWS console, goto EC2-->Network & Security --> Elastic IPs, associate the same EIP from step 3 to the new Aviatrix  BYOL Controller.
+On the AWS console, go to EC2-->Network & Security --> Elastic IPs, associate the same EIP from step 3 to the new Aviatrix  BYOL Controller.
 
 Step 6 - Upgrade Controller
 ===========================
@@ -64,7 +64,7 @@ Make sure your Aviatrix Controller is upgraded to version 2.7.378 (or later)
 
 Step 7 - Restore
 ================
-On the Aviatrix Controller, goto Settings--> Maintenance and select the Backup & Restore tab.
+On the Aviatrix Controller, go to Settings--> Maintenance and select the Backup & Restore tab.
 Insert the right S3 bucket name and execute a restore.
 
 |image4|

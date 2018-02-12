@@ -35,11 +35,11 @@ While the VM is being deployed in the selected region, configure the following i
 Register Aviatrix with Active Directory
 #######################################
 1. Go to the `Azure Active Directory` (available from the left navigation panel or `More Services`)
-2. Click on `Properties` (available under `Manage` on the left inner naviagation bar)
+2. Click on `Properties` (available under `Manage` on the left inner navigation bar)
 
    .. important:: Copy and save the `Directory ID` for later use.  It will be referred to again as the `Application Endpoint`.
 
-3. Click on `App registrations` (available under `Manage` on the left inner naviagation bar)
+3. Click on `App registrations` (available under `Manage` on the left inner navigation bar)
 4. Click on the `+ New application registration` along the top
 
     |imageAzureAppRegBtn|

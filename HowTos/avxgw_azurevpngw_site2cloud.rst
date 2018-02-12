@@ -51,7 +51,7 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 
      - Primary Cloud Gateway: Select the gateway created at Step 1
 
-     - Remote Gateway IP Address: Enter the public IP of your virutal network gateway (collected at Step 3)
+     - Remote Gateway IP Address: Enter the public IP of your virtual network gateway (collected at Step 3)
 
      - Pre-shared Key: Enter your own pre-share key or leave it blank so that Controller will generate one
 

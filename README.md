@@ -2,7 +2,7 @@
 This repository contains documentation for Aviatrix written using the [reStructuredText](http://docutils.sourceforge.net/rst.html) format.
 
 # Publishing
-HTML documentation is generatated using [Sphinx](http://www.sphinx-doc.org/).  Shortly after a commit is pushed to this repository, the latest source is turned into HTML files and published to [docs.aviatrix.com](https://docs.aviatrix.com).
+HTML documentation is generated using [Sphinx](http://www.sphinx-doc.org/).  Shortly after a commit is pushed to this repository, the latest source is turned into HTML files and published to [docs.aviatrix.com](https://docs.aviatrix.com).
 
 ## How To Generate
 If you'd like to generate the documentation yourself, follow the steps outlined below.

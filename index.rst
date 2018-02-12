@@ -2,7 +2,7 @@ Welcome to Aviatrix Docs
 ========================
 
 All Aviatrix product documentation can be found here.
-If you cannot find what you need, email us at support@aviatrix.com. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on Github" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
+If you cannot find what you need, email us at support@aviatrix.com. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on GitHub" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
 
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
@@ -86,6 +86,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Peering
 
+   HowTos/peering_faq
    HowTos/peering
    HowTos/TransPeering
    HowTos/Cluster_Peering_Ref_Design
@@ -105,6 +106,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EncrOverExpRoute
    HowTos/TransPeering_OnPrem
    HowTos/avxgw_azurevpngw_site2cloud
+   HowTos/CloudToPfSense
    HowTos/bgp_transitive_instructions
 
 .. _OpenVPN®:
@@ -188,8 +190,9 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: REST APIs
 
-   HowTos/aviatrix_apis_datacenter_extension
    HowTos/Aviatrix_Controller_API
+   HowTos/aviatrix_terraform
+   HowTos/aviatrix_apis_datacenter_extension
 
 .. _Downloads:
 
@@ -221,8 +224,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/customize_aws_iam_policy
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
-   HowTos/Competitive_CSR1000v
-   HowTos/aviatrix_terraform
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
    HowTos/SecuringController
