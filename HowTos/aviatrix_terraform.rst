@@ -178,6 +178,37 @@ Manages FQDN filtering for Aviatrix gateway
 	  domain_list = ["*.facebook.com", "*.reddit.com"]
 	}
 
+aviatrix_firewall_tag
+----------------
+Manages L4 stateful firewall tags
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# firewall_tag - Tag name
+	# cidr_list - List of cidr_tag_name and cidr.
+	# cidr_list - Can be added, updated and removed to update firewall rules.
+
+	resource "aviatrix_firewall_tag" "test_firewall_tag" {
+	  firewall_tag = "test_tag"
+	  cidr_list = [
+	                {
+	                  cidr_tag_name = "a1"
+	                  cidr = "10.1.0.0/24"
+	                },
+	                {
+	                  cidr_tag_name = "b1"
+	                  cidr = "10.2.0.0/24"
+	                }
+	              ]
+	}
+
 aviatrix_firewall
 ----------------
 Manages L4 stateful firewall policies for Aviatrix gateway
@@ -217,9 +248,9 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	            },
 	            {
 	              protocol = "tcp"
-	              src_ip = "10.15.1.224/32"
+	              src_ip = "a1"
 	              log_enable = "off"
-	              dst_ip = "10.12.1.172/32"
+	              dst_ip = "b1"
 	              allow_deny = "deny"
 	              port = "0-65535"
 	            }
@@ -240,7 +271,7 @@ Upgrades Aviatrix controller to specific release
 	}
 
 	# version - (Optional) The release version to which
-	# the controller will be upgraded to. If not specified, it 
+	# the controller will be upgraded to. If not specified, it
 	# automatically will be upgraded to the latest release.
 
 	resource "aviatrix_upgrade" "test_upgrade" {
