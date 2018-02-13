@@ -3,9 +3,9 @@
   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering
 
 
-======================================
-Transit Network Workflow Instructions
-======================================
+=========================================================
+AWS Global Transit Transit Network Workflow Instructions
+=========================================================
 
 This workflow provides you with a step by step instructions to build a Global Transit Network. 
 The workflow abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not have 
