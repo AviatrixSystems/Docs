@@ -8,9 +8,9 @@ AWS
 ==================================================================
 
 
-Overview
---------
 This guide will help you get started with Aviatrix in AWS.  If you have not installed an Aviatrix Controller in your environment and you'd like to get set up in AWS this is the right guide for you.
+
+To learn all Aviatrix solutions, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 AWS Account
 -----------
@@ -55,7 +55,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
    You can also launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
 ..
 
- 3.1. Download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally.
+ 3.1. Download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally. Check out our `instructions on GitHub. <https://github.com/AviatrixSystems/AWSQuickStart#aviatrix---aws-quickstart-script-for-cloudformation>`_
 
  3.2. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 

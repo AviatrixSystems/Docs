@@ -68,12 +68,12 @@ Transit GW HA either.
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
 
-This step builds a site2cloud IPSEC tunnel with VGW and establishes BGP session with VGW to 
-exchange routes between on-prem and the cloud.
+This step builds a site2cloud IPSEC tunnel with VGW and establishes a BGP session with VGW to 
+exchange routes between on-prem and the cloud. Note you just need to select the VGW ID in the drop down menu, Customer gateway will be automatically created as the result of this step. 
 
 |image3|
 
-The field "BGP Local AS Number" is the Aviatrix Transit GW AS number that peers with VGW. 
+The "BGP Local AS Number" field is the Aviatrix Transit GW AS number that peers with VGW. 
 
 The field "Connection Name" is an identifier for the IPSEC tunnel between VGW and Transit GW. 
 You can see this connection at Site2Cloud page. 

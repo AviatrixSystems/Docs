@@ -75,6 +75,13 @@ I have more than 100 VPCs, how do I overcome AWS route limits?
 
 When you deploy Aviatrix Transit VPC solution, all Aviatrix gateways, Transit and Spoke, are deployed with `Designated Gateway Feature <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ enabled by default. This allows to manage as many Spoke VPCs as you need.
 
+Can I launch multiple Transit GW groups from one Controller?
+-------------------------------------------------------------
+
+Yes, you can launch multiple Transit GW groups from one Aviatrix Controller. Go to the 
+Transit Network workflow and start 
+from `Step 1 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch a new Transit GW group. 
+
 I have a few high bandwidth applications, how do I deploy them in a Transit solution?
 --------------------------------------------------------------------------------------
 
