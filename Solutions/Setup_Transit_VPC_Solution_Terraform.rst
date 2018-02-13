@@ -52,7 +52,7 @@ Manages an Aviatrix Transit VPC.
 	  vpc_id = "vpc-abcd1234"
 	  vpc_reg = "us-east-1"
 	  vpc_size = "t2.micro"
-	  vpc_net = "10.1.0.0/24"
+	  subnet = "10.1.0.0/24"
 	  ha_subnet = "10.1.0.0/24"
 	}
 
@@ -67,7 +67,7 @@ Manages an Aviatrix Transit VPC.
 +--------------+-------------------------------------------------------------------+
 | vpc_size     | Gateway size.                                                     |
 +--------------+-------------------------------------------------------------------+
-| vpc_net      | VPC subnet where you want to deploy transit VPC GW.               |
+| subnet      | VPC subnet where you want to deploy transit VPC GW.               |
 +--------------+-------------------------------------------------------------------+
 | ha_subnet    | (Optional) VPC subnet for HA.                                     |
 +--------------+-------------------------------------------------------------------+
@@ -93,7 +93,6 @@ Manages VGW connection
 	  vpc_id = "vpc-abcd1234"
 	  bgp_vgw_id = "vgw-abcd1234"
 	  bgp_local_as_num = "100"
-	  enable_ha = "true"
 	}
 
 +------------------+-----------------------------------------+
@@ -106,8 +105,6 @@ Manages VGW connection
 | bgp_vgw_id       | Enter AWS VGW Id used for connection.   |
 +------------------+-----------------------------------------+
 | bgp_local_as_num | Enter BGP Local ASN.                    |
-+------------------+-----------------------------------------+
-| enable_ha        | (Optional) Enter true to enable HA.     |
 +------------------+-----------------------------------------+
 
 aviatrix_spoke_vpc
@@ -130,7 +127,7 @@ Manages an Aviatrix Spoke VPC
 	  vpc_id = "vpc-defg3456"
 	  vpc_reg = "us-east-1"
 	  vpc_size = "t2.micro"
-	  vpc_net = "10.20.0.0/24"
+	  subnet = "10.20.0.0/24"
 	  ha_subnet = "10.20.1.0/24"
 	  transit_gw = "transit"
 	}
@@ -148,7 +145,7 @@ Manages an Aviatrix Spoke VPC
 +--------------+-------------------------------------------------------------------+
 | vpc_size     | Gateway size.                                                     |
 +--------------+-------------------------------------------------------------------+
-| vpc_net      | VPC subnet where you want to deploy transit VPC GW.               |
+| subnet      | VPC subnet where you want to deploy transit VPC GW.               |
 +--------------+-------------------------------------------------------------------+
 | enable_nat   | (Optional) Enter "true" to enable NAT.                            |
 +--------------+-------------------------------------------------------------------+
@@ -174,7 +171,7 @@ Sample configuration to create complete transit VPC solution
 	provider "aviatrix" {
 	  controller_ip = "w.x.y.z"
 	  username = "admin"
-	  password = "Aviatrix123"
+	  password = "Aviatrix123%23"
 	}
 
 	resource "aviatrix_account" "test_acc" {
@@ -194,25 +191,22 @@ Sample configuration to create complete transit VPC solution
 
 	resource "aviatrix_transit_vpc" "test_transit_gw" {
 	  cloud_type = 1
-	  account_name = "devops"
+	  account_name = "${aviatrix_account.test_acc.id}"
 	  gw_name = "transit"
-	  vpc_id = "vpc-6fdf1e17"
+	  vpc_id = "vpc-abcd1234"
 	  vpc_reg = "us-east-1"
 	  vpc_size = "t2.micro"
-	  vpc_net = "10.1.0.0/24"
-	  ha_subnet = "10.1.0.0/24"
-	  depends_on = ["aviatrix_account.test_acc"]
+	  subnet = "10.20.0.0/24"
+	  ha_subnet = "10.20.1.0/24"
 	}
 
 	# Create VGW connection with transit VPC.
 	resource "aviatrix_vgw_conn" "test_vgw_conn" {
 	  conn_name = "my_conn"
-	  gw_name = "transit"
+	  gw_name = "${aviatrix_transit_vpc.test_transit_gw.id}"
 	  vpc_id = "vpc-abcd1234"
 	  bgp_vgw_id = "vgw-abcd1234"
 	  bgp_local_as_num = "100"
-	  enable_ha = "true"
-	  depends_on = ["aviatrix_transit_vpc.test_transit_gw"]
 	}
 
 	# Launch a spoke VPC, and join with transit VPC.
@@ -221,13 +215,13 @@ Sample configuration to create complete transit VPC solution
 
 	resource "aviatrix_spoke_vpc" "test_spoke" {
 	  cloud_type = 1
-	  account_name = "devops"
+	  account_name = "${aviatrix_account.test_acc.id}"
 	  gw_name = "myspoke"
-	  vpc_id = "vpc-defg3456"
+	  vpc_id = "vpc-defg1234"
 	  vpc_reg = "us-east-1"
 	  vpc_size = "t2.micro"
-	  vpc_net = "10.20.0.0/24"
-	  ha_subnet = "10.20.1.0/24"
-	  transit_gw = "transit"
+	  subnet = "10.21.0.0/24"
+	  ha_subnet = "10.21.1.0/24"
+	  transit_gw = "${aviatrix_transit_vpc.test_transit_gw.id}"
 	  depends_on = ["aviatrix_vgw_conn.test_vgw_conn"]
 	}
