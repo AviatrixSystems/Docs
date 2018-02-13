@@ -5,11 +5,9 @@
 ===========================
 Aviatrix Terraform Provider
 ===========================
-Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `our GitHub link <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_  and `read me instructions <https://github.com/AviatrixSystems/terraform-provider-aviatrix#terraform-provider>`_ for details on setting up Aviatrix terraform provider on your system. 
+Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `link <https:#github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for details on setting up Aviatrix terraform provider on your system.
 
-The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. 
-
-Aviatrix release 3.1 and later provide a guided workflow for `Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ configuration. Click this `link <http://docs.aviatrix.com/Solutions/Setup_Transit_VPC_Solution_Terraform.html>`_ to read how to setup Transit Network using terraform.
+The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click this `link <http:#docs.aviatrix.com/Solutions/Setup_Transit_VPC_Solution_Terraform.html>`_ to read how to setup transit VPC using terraform.
 
 Example Usage
 =============
@@ -250,9 +248,9 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	            },
 	            {
 	              protocol = "tcp"
-	              src_ip = "a1"
+	              src_ip = "test_tag"
 	              log_enable = "off"
-	              dst_ip = "b1"
+	              dst_ip = "10.12.1.172/32"
 	              allow_deny = "deny"
 	              port = "0-65535"
 	            }
