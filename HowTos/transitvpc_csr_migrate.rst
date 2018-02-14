@@ -27,13 +27,15 @@ Aviatrix supports multiple Transit GW groups from one Controller. The below step
 
 2. **Connect Aviatrix Transit GW to VGW** `Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to Aviatrix Transit GW. Make sure you specifiy a different "AS" number for the BGP session of Aviatrix Transit GW connection to VGW. 
 
-3. **Remove a Spoke VPC** Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network, delete the VGW. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
+3. **Remove a Spoke VPC** Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
 
-4. **Attach Spoke VPC to Aviatrix Transit GW** `Follow Step 4, Step 5 and Step 6 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch an Aviatrix GW in this Spoke VPC (with HA as an option) and attach to the Aviatrix Transit GW. 
+4. **Attach Spoke VPC to Aviatrix Transit GW** `Follow Step 4, Step 5 and Step 6 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch an Aviatrix GW in this Spoke VPC (with HA as an option) and attach to the Aviatrix Transit GW. Test connectivity to make sure this Spoke VPC can communicate with on-prem. Note this step is reversable if Spoke VPC fail to connect to on-prem after a period of time (depending on how many routes are being propagated, this could take minutes.) To reverse the step, detach the Spoke VPC from the Aviatrix Transit GW; add the Transit Network tag back to the Spoke VPC will move the Spoke VPC back to CSR solution. 
 
 5. **Repeat the abovev step 3 and 4** Repeat the above 2 steps for the remaining Spoke VPCs. 
 
 6. **Remove Transit hub VGW CSR tag** After all Spoke VPCs have been migrated to Aviatrix Transit GW, remove the VGW Transit Network tag. This effectively detach VGW from CSR. 
+
+The effective operation downtime for each Spoke VPC is the time between Transit Network tag  being removed for the Spoke VPC and the Spoke VPC being attached to Aviatrix Transit GW. It should be a few minutes. 
 
 Note in Aviatrix solution, Spoke VPCs have no connectivities to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
 
