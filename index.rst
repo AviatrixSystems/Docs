@@ -79,6 +79,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_workflow
    HowTos/transitvpc_designs
    HowTos/transitvpc_preview
+   HowTos/transitvpc_csr_migrate
    Solutions/Setup_Transit_VPC_Solution_Terraform
 
 .. _Peering:
