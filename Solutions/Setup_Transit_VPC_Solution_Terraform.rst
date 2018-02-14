@@ -87,6 +87,10 @@ Manages VGW connection
 	  password = "password"
 	}
 
+	# Once this resource is created, VGW can be disconnected
+	# from transit GW by destroying this resource using command:
+	# terraform destroy --target aviatrix_vgw_conn.test_vgw_conn.
+
 	resource "aviatrix_vgw_conn" "test_vgw_conn" {
 	  conn_name = "my_conn"
 	  gw_name = "transit"
@@ -120,6 +124,11 @@ Manages an Aviatrix Spoke VPC
 	  password = "password"
 	}
 
+	# Launch a spoke VPC, and join with transit VPC.
+	# Omit ha_subnet to launch spoke VPC without HA.
+	# ha_subnet can be later added or deleted to enable/disable HA in spoke VPC
+	# Omit transit_gw to launch spoke VPC without attaching with transit GW.
+	# transit_gw can be later added or deleted to attach/detach from spoke VPC
 	resource "aviatrix_spoke_vpc" "test_spoke" {
 	  cloud_type = 1
 	  account_name = "devops"
@@ -201,6 +210,10 @@ Sample configuration to create complete transit VPC solution
 	}
 
 	# Create VGW connection with transit VPC.
+	# Once this resource is created, VGW can be disconnected
+	# from transit GW by destroying this resource using command:
+	# terraform destroy --target aviatrix_vgw_conn.test_vgw_conn.
+
 	resource "aviatrix_vgw_conn" "test_vgw_conn" {
 	  conn_name = "my_conn"
 	  gw_name = "${aviatrix_transit_vpc.test_transit_gw.id}"
@@ -212,6 +225,8 @@ Sample configuration to create complete transit VPC solution
 	# Launch a spoke VPC, and join with transit VPC.
 	# Omit ha_subnet to launch spoke VPC without HA.
 	# ha_subnet can be later added or deleted to enable/disable HA in spoke VPC
+	# Omit transit_gw to launch spoke VPC without attaching with transit GW.
+	# transit_gw can be later added or deleted to attach/detach from spoke VPC
 
 	resource "aviatrix_spoke_vpc" "test_spoke" {
 	  cloud_type = 1
