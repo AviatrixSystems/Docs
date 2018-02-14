@@ -257,6 +257,39 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	          ]
 	}
 
+aviatrix_site2cloud
+----------------
+Manages Aviatrix Site2Cloud connection
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# vpc_id - VPC Id where cloud gateway lies.
+	# conn_name - Site2Cloud connection name
+	# pre_shared_key - (Optional) Valid pre-shared key
+	# remote_gw_type - Remote GW type - generic, aws, azure, avx, sonicwall
+	# tunnel_type - (Optional) tcp or udp
+	# remote_gw_ip - Public IP of remote onprem GW
+	# remote_subnet - Subnet CIDR of remote GW
+	# local_subnet - Subnet CIDR of cloud gateway
+
+	resource "aviatrix_site2cloud" "test_s2c" {
+	  vpc_id = "vpc-abcd1234"
+	  conn_name = "myconn"
+	  remote_gw_type = "generic"
+	  tunnel_type = "udp"
+	  gw_name = "gw1"
+	  remote_gw_ip = "5.5.5.5"
+	  remote_subnet = "10.23.0.0/24"
+	  local_subnet = "10.20.1.0/24"
+	}
+
 aviatrix_upgrade
 ----------------
 Upgrades Aviatrix controller to specific release
