@@ -35,6 +35,7 @@ Aviatrix supports multiple Transit GW groups from one Controller. The below step
 
 6. **Remove Transit hub VGW CSR tag** After all Spoke VPCs have been migrated to Aviatrix Transit GW, remove the VGW Transit Network tag. This effectively detach VGW from CSR. 
 
+Note in Aviatrix solution, Spoke VPCs have no connectivities to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
 
 .. |image1| image:: FAQ_media/image1.png
 
