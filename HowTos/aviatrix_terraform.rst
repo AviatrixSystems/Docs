@@ -258,7 +258,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	}
 
 aviatrix_site2cloud
-----------------
+-------------------
 Manages Aviatrix Site2Cloud connection
 
 **Example Usage**
@@ -288,6 +288,31 @@ Manages Aviatrix Site2Cloud connection
 	  remote_gw_ip = "5.5.5.5"
 	  remote_subnet = "10.23.0.0/24"
 	  local_subnet = "10.20.1.0/24"
+	}
+
+aviatrix_vpn_user
+-----------------
+Manages Aviatrix VPN user
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# vpc_id - VPC Id of Aviatrix VPN gateway
+	# gw_name - Aviatrix VPN gateway name
+	# user_name - VPN user name
+	# user_email - VPN User's email
+
+	resource "aviatrix_vpn_user" "test_vpn_user" {
+	  vpc_id = "vpc-abcd1234"
+	  gw_name = "gw1"
+	  user_name = "user"
+	  user_email = "abc@xyz.com"
 	}
 
 aviatrix_upgrade

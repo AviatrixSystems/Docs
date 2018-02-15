@@ -54,6 +54,7 @@ Manages an Aviatrix Transit VPC.
 	  vpc_size = "t2.micro"
 	  subnet = "10.1.0.0/24"
 	  ha_subnet = "10.1.0.0/24"
+  	  tag_list = ["name:value", "name1:value1", "name2:value2"]
 	}
 
 +--------------+-------------------------------------------------------------------+
@@ -67,11 +68,13 @@ Manages an Aviatrix Transit VPC.
 +--------------+-------------------------------------------------------------------+
 | vpc_size     | Gateway size.                                                     |
 +--------------+-------------------------------------------------------------------+
-| subnet      | VPC subnet where you want to deploy transit VPC GW.               |
+| subnet       | VPC subnet where you want to deploy transit VPC GW.               |
 +--------------+-------------------------------------------------------------------+
 | ha_subnet    | (Optional) VPC subnet for HA.                                     |
 +--------------+-------------------------------------------------------------------+
 | dns_server   | (Optional) IP address for reachable DNS server.                   |
++--------------+-------------------------------------------------------------------+
+| tag_list     | (Optional) List of tags with key/value pairs in string format.    |
 +--------------+-------------------------------------------------------------------+
 
 aviatrix_vgw_conn
@@ -139,6 +142,7 @@ Manages an Aviatrix Spoke VPC
 	  subnet = "10.20.0.0/24"
 	  ha_subnet = "10.20.1.0/24"
 	  transit_gw = "transit"
+	  tag_list = ["name:value", "name1:value1", "name2:value2"]
 	}
 
 +--------------+-------------------------------------------------------------------+
@@ -154,7 +158,7 @@ Manages an Aviatrix Spoke VPC
 +--------------+-------------------------------------------------------------------+
 | vpc_size     | Gateway size.                                                     |
 +--------------+-------------------------------------------------------------------+
-| subnet      | VPC subnet where you want to deploy transit VPC GW.               |
+| subnet       | VPC subnet where you want to deploy transit VPC GW.               |
 +--------------+-------------------------------------------------------------------+
 | enable_nat   | (Optional) Enter "true" to enable NAT.                            |
 +--------------+-------------------------------------------------------------------+
@@ -163,6 +167,8 @@ Manages an Aviatrix Spoke VPC
 | dns_server   | (Optional) IP address for reachable DNS server.                   |
 +--------------+-------------------------------------------------------------------+
 | transit_gw   | (Optional) Transit Gateway name to join spoke Gateway with.       |
++--------------+-------------------------------------------------------------------+
+| tag_list     | (Optional) List of tags with key/value pairs in string format.    |
 +--------------+-------------------------------------------------------------------+
 
 Sample configuration to create complete transit VPC solution
