@@ -31,6 +31,10 @@ Read this `comparison analysis <http://docs.aviatrix.com/StartUpGuides/aviatrix_
 
 In addition, Aviatrix provides a simple point and click user interface for you to build and manage a large deployment. 
 
+How do I configure site2cloud?
+--------------------------------
+
+Follow the instructions `here <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to setup site2cloud. 
 
 .. |image1| image:: FAQ_media/image1.png
 
