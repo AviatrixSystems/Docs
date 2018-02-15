@@ -15,18 +15,18 @@ Aviatrix is a cloud networking company.
 We focus on solving networking problems in areas relevant to public clouds. 
 These areas are: 
 
-- datacenter to cloud (Transit network solution)  
-- cloud to cloud (Encrypted peering connectivity in a cloud and multi cloud ) 
-- user to cloud (OpenVPN® based SSL VPN solution for developers) 
-- site to cloud (Branch and customer sites to cloud) 
+- datacenter to cloud (`AWS Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
+- cloud to cloud (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
+- user to cloud (`OpenVPN® based SSL VPN solution <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
+- site to cloud (`Branch and customer sites to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_) 
 
 We also provide security features for workloads/application in the cloud: 
 
-- gateway inline L4 stateful firewall. 
-- gateway inline L7 FQDN filter for Internet egress traffic.
+- `gateway inline L4 stateful firewall. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_ 
+- `gateway inline L7 FQDN filter for Internet egress traffic. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
-In addition, we have specific network solutions for cloud migration and 
-agile datacenter extension to cloud for vmware workloads. 
+In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
+agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ to cloud for vmware workloads. 
 
 The Aviatrix product consists of two components, controller and
 gateway. Gateways are launched from the controller
@@ -58,8 +58,8 @@ configuration documents are listed at the end of each section.
 Our goal is to become your go-to tool for all thing cloud networking. 
 
 
-Datacenter to Cloud: Global Transit Network Solution
-=====================================================
+Datacenter to Cloud: AWS Global Transit Network 
+=========================================================
 
 Aviatrix Global Transit Network solution solves many problems when connecting datacenters to the growing number of VPCs.
 
