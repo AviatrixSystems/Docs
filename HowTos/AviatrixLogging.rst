@@ -154,16 +154,18 @@ Two example logs:
 ------------------
 
 ::
-
-  May 17 00:23:17 ip-10-0-0-129 gwmon.py: AviatrixGwNetStats: 
-  timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
-  public\_ip=52.15.167.148 private\_ip=10.0.0.129 interface=eth0
-  total\_rx\_rate=3.47Kb total\_tx\_rate=2.85Kb total\_rx\_tx\_rate=6.32Kb
-
-  May 17 00:28:17 ip-10-0-0-129 gwmon.py: AviatrixGwNetStats: 
-  timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
-  public\_ip=52.15.167.148 private\_ip=10.0.0.129 interface=eth0
-  total\_rx\_rate=2.40Kb total\_tx\_rate=2.10Kb total\_rx\_tx\_rate=4.49Kb
+ 
+  2018-02-19T06:51:03.496447+00:00 ip-172-31-58-147 perfmon.py: AviatrixGwNetStats: 
+  timestamp=2018-02-19 06:51:03.496156 name=gg public_ip=35.172.17.198.fifo 
+  private_ip=172.31.58.147 interface=eth0 total_rx_rate=4.48Kb total_tx_rate=3.14Kb
+  total_rx_tx_rate=7.62Kb total_rx_cum=292.43MB total_tx_cum=169.99MB
+  total_rx_tx_cum=462.42MB
+  
+  2018-02-19T05:44:07.491705+00:00 ip-172-31-58-147 perfmon.py: AviatrixGwNetStats:
+  timestamp=2018-02-19 05:44:07.491411 name=gg public_ip=35.172.17.198.fifo 
+  private_ip=172.31.58.147 interface=eth0 total_rx_rate=3.99Kb total_tx_rate=2.84Kb
+  total_rx_tx_rate=6.83Kb total_rx_cum=290.44MB total_tx_cum=168.48MB
+  total_rx_tx_cum=458.92MB
 
 AviatrixGwSysStats:
 -------------------
