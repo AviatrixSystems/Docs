@@ -47,7 +47,7 @@ enabled. Select “Okta” for “Two-­‐step Authentication” and enter Okta
 
         |image3|
 
-4.0 Optonal (Enable MFA)
+4.0 Enable MFA (Optional)
    Since Aviatrix Okta authentication uses API authentication, it uses the default sign on policy of Okta.
    If you have configured Multi factor Authentication in your Okta app (Security->Authentication->Sign On->Default Policy->Add rule->Prompt for factor), then during VPN login, the end user needs to append his 6 digit one time token to the password during authentication.
 
