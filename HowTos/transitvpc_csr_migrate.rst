@@ -23,13 +23,13 @@ connecting it to VGW, then moving Spoke VPC one at a time to Aviatrix Transit GW
 
 Aviatrix supports multiple Transit GW groups from one Controller. The below steps describe migration from one CSR Transit group. The migration process assumes there is a Transit Network tag on Spoke VPC and VGW that connects to CSR. This tag is used to identify a Transit Network.
 
-1. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. 
+1. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. You can consider using a new Transit hub VPC in case the existing Transit hub VPC does not have enough IP addresses to launch new instances. (The Aviatrix Transit GW pair)
 
 2. **Connect Aviatrix Transit GW to VGW** `Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to Aviatrix Transit GW. Make sure you specifiy a different "AS" number for the BGP session of Aviatrix Transit GW connection to VGW. 
 
 3. **Remove a Spoke VPC** Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
 
-4. **Attach Spoke VPC to Aviatrix Transit GW** `Follow Step 4, Step 5 and Step 6 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch an Aviatrix GW in this Spoke VPC (with HA as an option) and attach to the Aviatrix Transit GW. Test connectivity to make sure this Spoke VPC can communicate with on-prem. Note this step is reversable if Spoke VPC fail to connect to on-prem after a period of time (depending on how many routes are being propagated, this could take minutes.) To reverse the step, detach the Spoke VPC from the Aviatrix Transit GW; add the Transit Network tag back to the Spoke VPC will move the Spoke VPC back to CSR solution. 
+4. **Attach Spoke VPC to Aviatrix Transit GW** `Follow Step 4, Step 5 and Step 6 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch an Aviatrix GW in this Spoke VPC (with HA as an option) and attach to the Aviatrix Transit GW. Test connectivity to make sure this Spoke VPC can communicate with on-prem. Note this step is reversable if Spoke VPC fail to connect to on-prem after a period of time (depending on how many routes are being propagated, this could take minutes.) To reverse the step, detach the Spoke VPC from the Aviatrix Transit GW; add the Transit Network tag back to the Spoke VPC will move the Spoke VPC back to CSR solution. Once a Spoke is moved to Aviatrix Transit GW group, the Spoke VPC CIDR will be advertised to from Aviatrix Transit GW to VGW and to on-prem. 
 
 5. **Repeat the abovev step 3 and 4** Repeat the above 2 steps for the remaining Spoke VPCs. 
 
@@ -38,6 +38,8 @@ Aviatrix supports multiple Transit GW groups from one Controller. The below step
 The effective operation downtime for each Spoke VPC is the time between Transit Network tag  being removed for the Spoke VPC and the Spoke VPC being attached to Aviatrix Transit GW. It should be a few minutes. 
 
 Note in Aviatrix solution, Spoke VPCs have no connectivities to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
+
+Another note is Aviatrix GW runs on instances EIP, make sure you have sufficient quota for EIP. You can contact AWS support to request for more EIPs. 
 
 .. |image1| image:: FAQ_media/image1.png
 
