@@ -336,4 +336,16 @@ Sumo Logic app installation guide is also available on
    :width: 6.50500in
    :height: 6.20500in
 
+
+5. Loggly integration via Syslog
+====================================
+
+To configure Loggly integration through an intermediary syslog server relay:
+
+1. Build an rsyslog server relay using a Linux distribution of your choice 
+
+2. Configure Aviatrix to send rsyslog traffic to the relay (section 3.1 above)
+
+3. Follow `this document <https://www.loggly.com/docs/network-devices-and-routers/>`_ to configure the relay to send to Loggly
+
 .. disqus::
