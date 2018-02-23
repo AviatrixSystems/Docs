@@ -98,7 +98,7 @@ The solution solves these problems:
 
  a. **Bastion Station** Bastion Station or Jump Host is a hack and insecure to allow developers to access cloud. Not acceptable. 
  #. **Too Many Certs** If each VPC runs a SSL VPN gateway and there are 50 VPCs, each developer needs to carry 50 VPN certificates and must learn which certificate to use to access which VPC. Not acceptable. 
- #. **Large Group** We have over 500 developers, need a VPN solution that scales beyond a single instance. 
+ #. **Large Group** We have over 500 developers, need a VPN solution that scales beyond a single instance based VPN solution. 
  #. **OKTA** We are looking for a VPN solution that integrates with OKTA or DUO. 
  #. **Blocked by Firewall** We have a Linux machine in the office that needs to behave like a VPN client. We need a VPN solution that runs on TCP port 443 to allow this machine to go through the corporate firewall. 
  #. **Global Workforce** We have developers in multiple geo locations, cannot have them all land in the cloud in the same region. Latency will kill user experience. 
