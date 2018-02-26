@@ -144,7 +144,6 @@ While all content is searchable, the site is organized into the following sectio
    :caption: IPmotion
 
    HowTos/ipmotion
-   HowTos/beta_ipmotion
    HowTos/HowTo_Setup_IPMotion
    HowTos/design_pattern_ipmotion
    HowTos/ipmotion_dependency_discovery
