@@ -1,6 +1,6 @@
 .. meta::
    :description: OpenVPN® FAQ
-   :keywords: Aviatrix OpenVPN, Client VPN, user vpn
+   :keywords: Aviatrix OpenVPN, Client VPN, user vpn, SAML client
 
 ===========================
 Aviatrix OpenVPN® FAQs
