@@ -1,6 +1,6 @@
 .. meta::
    :description: OpenVPN® FAQ
-   :keywords: Aviatrix OpenVPN, Client VPN, user vpn
+   :keywords: Aviatrix OpenVPN, Client VPN, user vpn, SAML client
 
 ===========================
 Aviatrix OpenVPN® FAQs
@@ -264,6 +264,14 @@ Active VPN users are displayed on the Dashboard. Click on any username,
 the user VPN connectivity history is displayed.
 
 You can also disconnect a user from the dashboard.
+
+
+When should I use the Aviatrix VPN client?
+-------------------------------------------
+
+Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ supports SAML authentication.  If you need the VPN client itself to authenticate against an IDP (for example, Okta or Duo), you will need to use the Aviatrix VPN client.
+
+Aviatrix VPN gateway can authenticate a VPN user against OKTA on behalf of a VPN user.  In that case, you don’t need Aviatrix VPN client, existing VPN clients such as Tunnelblick will do.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
