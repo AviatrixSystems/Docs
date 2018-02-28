@@ -73,10 +73,22 @@ exchange routes between on-prem and the cloud. Note you just need to select the 
 
 |image3|
 
-The "BGP Local AS Number" field is the Aviatrix Transit GW AS number that peers with VGW. 
 
-The field "Connection Name" is an identifier for the IPSEC tunnel between VGW and Transit GW. 
-You can see this connection at Site2Cloud page. 
+
+=====================      ==========
+**Setting**                **Value**
+=====================      ==========
+VPC ID                     The Transit VPC ID where Transit GW was launched
+Connection Name            A unique name to identify the connection to VGW 
+BGP Local AS Number        The BGP AS number the Transit GW will use to exchange routes with VGW
+Primary Cloud Gateway      The Transit GW you created in Step 1
+AWS VGW Account Name       The Aviatrix account that VGW is created with. This account could be the same as the account used by Transit GW, or it could be by a different account
+VGW Region                 The AWS region where VGW is created
+VGW ID                     VGW that is created in the VGW Region in the AWS VGW Account
+=====================      ==========
+
+
+Note Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. This is specified by 
 
 It takes a few minutes for the VPN connection to come up and routes from VGW 
 to be propagated. When the IPSEC tunnel with VGW is up, the Controller admin should receive an email notification.
