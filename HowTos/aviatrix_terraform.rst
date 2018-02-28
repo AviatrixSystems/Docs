@@ -315,6 +315,39 @@ Manages Aviatrix VPN user
 	  user_email = "abc@xyz.com"
 	}
 
+aviatrix_aws_peer
+----------------
+Manages an AWS peering
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# account_name1 - Aviatrix account name to associate 1st VPC with.
+	# account_name2 - Aviatrix account name to associate 2nd VPC with.
+	# vpc_id1 - AWS VPC ID for 1st VPC.
+	# vpc_id2 - AWS VPC ID for 2nd VPC.
+	# vpc_reg1 - AWS VPC region for 1st VPC.
+	# vpc_reg2 - AWS VPC region for 2nd VPC.
+	# rtb_list1 - List of AWS route table IDs associated with 1st VPC. Enter ["all"] for all VPC CIDRs
+	# rtb_list2 - List of AWS route table IDs associated with 2nd VPC. Enter ["all"] for all VPC CIDRs
+
+	resource "aviatrix_aws_peer" "test_aws_peer" {
+	  account_name1 = "devops"
+	  account_name2 = "devops"
+	  vpc_id1 = "vpc-abcd1234"
+	  vpc_id2 = "vpc-defg1234"
+	  vpc_reg1 = "us-east-1"
+	  vpc_reg2 = "us-east-1"
+	  rtb_list1 = ["all"]
+	  rtb_list2 = ["rtb-defg1234", "rtb-defg2345"]
+	}
+
 aviatrix_upgrade
 ----------------
 Upgrades Aviatrix controller to specific release
