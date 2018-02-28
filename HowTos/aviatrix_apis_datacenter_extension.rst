@@ -15,7 +15,7 @@ The APIs for Aviatrix can be used for the tasks
 that are done through the Web UI. 
 
 The following is an example to utilize the APIs to create a VPC/VNet
-under Datacenter Extension. For the complete REST API documentation, check out `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`_
+under Datacenter Extension. For the complete REST API documentation, check out `this link. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_
 
 Datacenter Extension capability manages your cloud address range. It
 creates VPC/VNet, subnets, routing tables and create a IPSec tunnel to
