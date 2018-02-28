@@ -334,8 +334,10 @@ Manages an AWS peering
 	# vpc_id2 - AWS VPC ID for 2nd VPC.
 	# vpc_reg1 - AWS VPC region for 1st VPC.
 	# vpc_reg2 - AWS VPC region for 2nd VPC.
-	# rtb_list1 - List of AWS route table IDs associated with 1st VPC. Enter ["all"] for all VPC CIDRs
-	# rtb_list2 - List of AWS route table IDs associated with 2nd VPC. Enter ["all"] for all VPC CIDRs
+	# rtb_list1 - (Optional, by default it peers for all VPC CIDRs)
+	              # Enter list of AWS route table IDs associated with 1st VPC that you want to peer. Enter ["all"] for all VPC CIDRs
+	# rtb_list2 - (Optional, by default it peers for all VPC CIDRs)
+	               # Enter list of AWS route table IDs associated with 2nd VPC that you want to peer. Enter ["all"] for all VPC CIDRs
 
 	resource "aviatrix_aws_peer" "test_aws_peer" {
 	  account_name1 = "devops"
