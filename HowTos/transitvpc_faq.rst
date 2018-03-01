@@ -28,7 +28,7 @@ How Does the Aviatrix Global Transit Solution Differ from Cisco's CSR-Based solu
 
  - **Scalability** AWS has some restrictions in its infrastructure. For instance, the route entry limit of 100 restricts how many on-prem CIDRs and VPC CIDRs can be carried on a transit GW. Aviatrix's solution overcomes that limitation. 
 
-Read more about the differences here:  `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
+Read more about the differences in this blog post:  `How Does Aviatrix Global Transit Solution Differ from the CSR Solution? <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
 How does Aviatrix Transit Network work?
 ----------------------------------------
