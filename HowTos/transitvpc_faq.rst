@@ -6,23 +6,20 @@
 Transit Network FAQ
 ============================
 
-Why should I choose Transit architecture?
+Why Should I Choose Transit Architecture?
 -------------------------------------------
 
-Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the transit architecture, there is one connection (not counting backup here) between on-prem and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
+Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In a transit architecture, there is one connection (not including the backup) between on-prem and a transit VPC. Everything else (the spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
-The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, each time when you spin up a new VPC or VNet in the cloud. This requires change at the on-prem edge which
-requires a change control process that takes from days to weeks. 
+The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that takes days to weeks to complete. 
 
 
-How does Aviatrix Transit Network Solution differ from Cisco CSR based solution?
----------------------------------------------------------------------------------
+How Does the Aviatrix Transit Network Solution Differ from Cisco's CSR-Based solution?
+----------------------------------------------------------------------------------------
 
-They differ in the following areas.
+ - **Network Segmentation** In the CSR-based solution, all spoke VPCs have connectivity to each other through the Transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. In contrast, the spoke VPCs have no connectivity to each other by default. Connectivity is built by design.
 
- - **Network Segmentation** In the CSR solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS account or business teams. In contrast, the Spoke VPCs have no connectivity to each other by default. Connectivity is built by design.
-
- - **Connectivity Efficiency** In Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW in the CSR case. Decoupling the different traffic streams reduces performance bottleneck and removes single failure point. 
+ - **Connectivity Efficiency** With the Aviatrix transit network solution, traffic between any two spoke VPCs are routed directly, as opposed to going through the transit GW as required in the CSR-baseed solution. Decoupling the different traffic streams reduces performance bottleneck and removes single failure point. 
 
  - **Central Control** In Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud. 
 
