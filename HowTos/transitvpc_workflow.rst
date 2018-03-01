@@ -51,6 +51,20 @@ The Transit GW must be launched on public subnet where its associated route tabl
 
 |image1|
 
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Cloud Type                                      Currently Transit GW can only be launched in AWS
+Gateway Name                                    A unique name to identify the Transit GW
+Account Name                                    n `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
+Region                                          One of the AWS regions
+VPC ID                                          The Transit VPC-id
+Public Subnet                                   The public subnet on which Transit GW instance is deployed
+Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
+Specify a Reachable DNS Servier IP Address      Leave it unselected
+Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
+==========================================      ==========
+
 .. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% for packet size less than 150 bytes when interoperating with VGW. This packet drop does not apply to Spoke GW.  
 
 You can change the Transit GW size later by follow `this instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
@@ -105,6 +119,21 @@ Scroll down to see the total number of learned routes.
 -------------------------
 
 |image4|
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Cloud Type                                      Currently Spoke GW can only be launched in AWS
+Gateway Name                                    A unique name to identify the Spoke GW
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
+Region                                          One of the AWS regions
+VPC ID                                          The Spoke VPC-id
+Public Subnet                                   The public subnet where the Spoke GW instance is deployed
+Gateway Size                                    Spoke GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
+Specify a Reachable DNS Servier IP Address      Leave it unselected
+Enable NAT                                      Select the option if the Spoke GW will also be the NAT gateway for the Spoke VPC
+Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
+==========================================      ==========
 
 You can enable NAT function on Spoke GW if egress to Internet is intended to 
 go through the Spoke GW. Once NAT is enabled, you can further configure `FQDN whitelists for egress filter. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
