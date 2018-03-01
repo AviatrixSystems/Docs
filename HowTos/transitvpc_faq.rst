@@ -131,8 +131,7 @@ Go to Site2Cloud, the tunnel status is displayed for each connection.
 How do I find out what routes being propagated from on-prem?
 ------------------------------------------------------------
 
-On-prem routes are propagated to VGW which in turn propagated to the Transit GW. 
-There are two ways to see what learned routes are by Transit GW: 
+On-prem routes are propagated to VGW which in turn propagated to the Transit GW. There are two ways to see what learned routes are by Transit GW: 
 
 1. Go to Site2Cloud, select the connection you specified at Step 3 during Transit Network Workflow. Scroll down, you will see the Learned Network. Search for a learned routes by typing a specific CIDR. 
 #. Go to Peering -> Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC GW. The Learned Routes will be shown and is searchable. 
@@ -141,9 +140,7 @@ There are two ways to see what learned routes are by Transit GW:
 How do I find out BGP information on Transit GW?
 -------------------------------------------------
 
-Go to Advanced Config -> BGP -> Diagnostics, click the box for Predefined Show List. 
-A list of BGP commands will be displayed. If you turn on debug command, make sure to 
-turn it off when debug is finished to ensure the Transit GW is not flooded with debug
+Go to Advanced Config -> BGP -> Diagnostics, click the box for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug
 messaged. Excessive debug messages reduces throughput.
 
 How do I delete a Spoke GW?
@@ -174,14 +171,12 @@ How do I build encryption over Direct Connect?
 
 AWS provides native solution to add VPN capability between VGW and on-prem over Direct Connect. This improves security as data in motion is encrypted. Follow `the instructions here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ for this capability. 
 
-We build encryption between Aviatrix Transit GW and VGW and between Transit GW and Spoke GW to 
-provide an end to end encryption protection. 
+We build encryption between Aviatrix Transit GW and VGW and between Transit GW and Spoke GW to provide an end to end encryption protection. 
 
 How do I build redundancy between VGW and on-prem?
 --------------------------------------------------
 
-AWS provides a few native options for redundancy between VGW and on-prem. You can build redundant 
-active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
+AWS provides a few native options for redundancy between VGW and on-prem. You can build redundant active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
 
 `Read this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 
 
