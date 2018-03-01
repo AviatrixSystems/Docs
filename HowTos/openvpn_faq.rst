@@ -275,6 +275,13 @@ Aviatrix VPN gateway can authenticate a VPN user against OKTA on behalf of a VPN
 
 
 
+What is "Client Certificate Sharing"
+------------------------------------
+
+Enabling this feature allows the same user to be logged in from more than one location at a time.  If this option is disabled and a user logs in from a second location, the first location will be disconnected automatically.
+
+
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
