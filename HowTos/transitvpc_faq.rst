@@ -16,7 +16,8 @@ The alternative to transit architecture (often referred to as "flat" architectur
 How Does the Aviatrix Global Transit Solution Differ from Cisco's CSR-Based Solution?
 ----------------------------------------------------------------------------------------
 
- - **Network Segmentation** In the CSR-based solution, all spoke VPCs have connectivity to each other through the transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. With the Aviatrix solution, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
+ - **Network Segmentation**
+With the CSR-based solution, all spoke VPCs have connectivity to each other through the transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. With the Aviatrix solution, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
 
  - **Connectivity Efficiency** With the Aviatrix transit network solution, traffic between any two spoke VPCs are routed directly, as opposed to going through the transit GW as required in the CSR-baseed solution. Decoupling the different traffic streams reduces performance bottleneck and removes single failure points. 
 
