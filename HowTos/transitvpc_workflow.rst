@@ -38,9 +38,9 @@ Planning and Prerequisites
 
 Login to the Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, click on `Transit VPC` in the left navigation bar.
+Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, click on `Transit Network` in the left navigation bar.
 
-Follow the steps below to set up Transit VPC network.
+Follow the steps below to set up Transit Network.
 
 
 1. Launch a Transit Gateway
