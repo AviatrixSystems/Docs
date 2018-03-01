@@ -11,23 +11,22 @@ Why Should I Choose Transit Architecture?
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In a transit architecture, there is one connection (not including the backup) between on-prem and a transit VPC. Everything else (the spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
-The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that takes days to weeks to complete. 
-
+The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that take several days or weeks to complete. 
 
 How Does the Aviatrix Transit Network Solution Differ from Cisco's CSR-Based solution?
 ----------------------------------------------------------------------------------------
 
- - **Network Segmentation** In the CSR-based solution, all spoke VPCs have connectivity to each other through the Transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. In contrast, the spoke VPCs have no connectivity to each other by default. Connectivity is built by design.
+ - **Network Segmentation** In the CSR-based solution, all spoke VPCs have connectivity to each other through the Transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. In contrast, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
 
- - **Connectivity Efficiency** With the Aviatrix transit network solution, traffic between any two spoke VPCs are routed directly, as opposed to going through the transit GW as required in the CSR-baseed solution. Decoupling the different traffic streams reduces performance bottleneck and removes single failure point. 
+ - **Connectivity Efficiency** With the Aviatrix transit network solution, traffic between any two spoke VPCs are routed directly, as opposed to going through the transit GW as required in the CSR-baseed solution. Decoupling the different traffic streams reduces performance bottleneck and removes single failure points. 
 
- - **Central Control** In Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud. 
+ - **Centralized Control** With the Aviatrix solution, the Aviatrix Cloud Controller is the "single pane of glass" for all networking in the cloud.
 
- - **Simplicity** In Aviatrix solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP protocol. Simplicity leads to stability. Workflow based step by step instructions help you build out a Transit VPC solution in minutes. 
+ - **Simplicity** With Aviatrix, BGP is only deployed between transit GW and VGW. No spoke VPCs run the BGP protocol. This simplicity leads to stability. Workflow-based, step-by-step instructions allows for a transit VPC solution to be built out in minutes. 
 
- - **Monitoring** Aviatrix solution integrates with Splunk, Sumo, remote Syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
+ - **Monitoring** Aviatrix integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
 
- - **Scalable** AWS has various limits in its infrastructure, such as route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. Aviatrix solution overcomes that limitation. 
+ - **Scalability** AWS has some restrictions in its infrastructure. For instance, the route entry limit of 100 restricts how many on-prem CIDRs and VPC CIDRs can be carried on a transit GW. Aviatrix's solution overcomes that limitation. 
 
 For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
