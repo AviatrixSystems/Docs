@@ -9,12 +9,9 @@ Transit Network FAQ
 Why should I choose Transit architecture?
 -------------------------------------------
 
-Transit architecture is about building connectivity between cloud and on-prem in 
-the most agile manner possible. In the transit architecture, there is one 
-connection (not counting backup here) between on-prem and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
+Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the transit architecture, there is one connection (not counting backup here) between on-prem and a transit VPC, everything else (the Spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
-The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, 
-each time when you spin up a new VPC or VNet in the cloud. This requires change at the on-prem edge which
+The alternative (call it flat architecture) to transit architecture is to build one connection, either IPSEC over Internet or Direct Connect, each time when you spin up a new VPC or VNet in the cloud. This requires change at the on-prem edge which
 requires a change control process that takes from days to weeks. 
 
 
@@ -40,19 +37,13 @@ For a fun read, here is a `blog on the differences. <https://www.aviatrix.com/bl
 How does Aviatrix Transit Network work?
 ----------------------------------------
 
-In the transit VPC, the Aviatrix gateway establishes two BGP sessions (for redundancy) to AWS VGW. 
-Routes from on-prem network is propagated to the Aviatrix gateway which forward them to the Aviatrix Controller. 
-The Controller detects route changes and program the Spoke VPCs for updated routes. 
+In the transit VPC, the Aviatrix gateway establishes two BGP sessions (for redundancy) to AWS VGW. Routes from on-prem network is propagated to the Aviatrix gateway which forward them to the Aviatrix Controller. The Controller detects route changes and program the Spoke VPCs for updated routes. 
 
-In the direction from Spoke VPC to on-prem network, when a Spoke VPC is attached to the Transit Group, 
-the Controller notifies the Aviatrix gateway in the transit VPC to advertise the new Spoke VPC CIDR to VGW.
+In the direction from Spoke VPC to on-prem network, when a Spoke VPC is attached to the Transit Group, the Controller notifies the Aviatrix gateway in the transit VPC to advertise the new Spoke VPC CIDR to VGW.
 
-Since all Spoke VPC routes are managed by the Aviatrix Controller, a Spoke VPC CIDR is not advertised to any
-other Spoke VPCs, therefore there is no connectivity between them through the transit VPC gateway. 
+Since all Spoke VPC routes are managed by the Aviatrix Controller, a Spoke VPC CIDR is not advertised to any other Spoke VPCs, therefore there is no connectivity between them through the transit VPC gateway. 
 
-A Shared Service VPC is essentially one special Spoke VPC. The Shared Service VPC typically host 
-common DevOps tools that needs connectivity to other Spoke VPCs. You can accomplish this connectivity by 
-setting up either native AWS Peering or Aviatrix Encrypted Peering from the Aviatrix Controller. 
+A Shared Service VPC is essentially one special Spoke VPC. The Shared Service VPC typically host common DevOps tools that needs connectivity to other Spoke VPCs. You can accomplish this connectivity by setting up either native AWS Peering or Aviatrix Encrypted Peering from the Aviatrix Controller. 
 
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
@@ -115,33 +106,22 @@ Note this packet drop issue does not affect Spoke gateways.
 How do I resize Transit GW instance?
 -----------------------------------
 
-Go to Gateway page at the navigation bar, select the Transit GW, click Edit, 
-scroll up to see the options and find Gateway Resize. Select the desired size and click Change. 
+Go to Gateway page at the navigation bar, select the Transit GW, click Edit, scroll up to see the options and find Gateway Resize. Select the desired size and click Change. 
 
-Resizing Transit GW requires the gateway instance to be stopped and start again in 
-a different size. There will be network time for traffic between cloud and on-prem.
-There should be no downtime for traffic between VPCs as cloud to cloud traffic does 
+Resizing Transit GW requires the gateway instance to be stopped and start again in a different size. There will be network time for traffic between cloud and on-prem. There should be no downtime for traffic between VPCs as cloud to cloud traffic does 
 not go through the Transit GW.  
 
-During resizing, traffic will be switched to backup Transit GW if HA is enabled, 
-this will also switch Spoke to Transit traffic if Spoke VPC has HA enabled. 
-Resizing Transit GW will cause network downtime. 
+During resizing, traffic will be switched to backup Transit GW if HA is enabled, this will also switch Spoke to Transit traffic if Spoke VPC has HA enabled. Resizing Transit GW will cause network downtime. 
 
 How do I know which Transit GW that a Spoke GW is sending traffic to?
 ----------------------------------------------------------------------
 
-You can tell which Transit GW carries the network traffic from a specific 
-Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click 
-Detail. If the list of the Advertised Network includes the Spoke VPC CIDR, this
-Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the 
-backup Transit GW. 
+You can tell which Transit GW carries the network traffic from a specific Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click Detail. If the list of the Advertised Network includes the Spoke VPC CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW. 
 
 How can I route VPC egress Internet bound traffic to on-prem to go through the corporate firewall?
 ---------------------------------------------------------------------------------------------------
 
-If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route points to Transit GW
-and route egress Internet traffic to VGW and back to on-prem. Make sure you do not 
-have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
+If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route points to Transit GW and route egress Internet traffic to VGW and back to on-prem. Make sure you do not have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
 
 How do I know if the tunnel between VGW and Transit GW is up?
 ---------------------------------------------------------------
