@@ -106,7 +106,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloudn-site2cloud
    HowTos/site2cloud_case_study
    HowTos/EncrOverExpRoute
-   HowTos/TransPeering_OnPrem
    HowTos/avxgw_azurevpngw_site2cloud
 
 .. _OpenVPN®:
