@@ -16,27 +16,68 @@ This loosely coupled relationship between the controller and gateways reduces th
 How to backup configuration 
 ---------------------------
 
-  1. Settings -> Maintenance -> Backup & Restore -> Under BACKUP section
-  #. Select **Cloud Type**
-  #. Select **Account Name**
+Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container.  Before you begin, determine where you would like to store the backup and create either the S3 bucket or Azure Container.
 
-(example: If AWS were selected as the cloud type, specify an **S3 bucket name**)
+  #. Login to the Controller
+  #. Click on the `Settings` navigation item
+  #. Click on the `Maintenance` sub item
+  #. Click on the `Backup & Restore` tab
+  #. Under the `BACKUP` section:
 
+     - Select the appropriate `Cloud Type` and `Account Name`
+     - Populate the `S3 Bucket Name` for AWS or `Region`, `Storage Name`, and `Container Name` for Azure
+
+     .. note::
+
+        By default, only the latest configuration data is stored. Each time the configuration is backed up, it overwrites the previous one.
+        If you would like to keep every copy, check the box `Multiple Backup`
+
+  #. Click `Enable`
+
+     |imageBackupAWS|
+  
 The first time you enable this feature, the configuration will backed up to your specified location. After this, the configuration data is automatically backed up daily at 12am.
 
-If you want to force an immediate backup (e.g. for a configuration change) you can accomplish this by disabling the backup and then re-enabling it again. Note: Only the latest configuration data is stored (no versioning at this time). Each time the configuration is backed up, it overwrites the previous one.
 
 How to restore configuration
 --------------------------------
 
-  1. Settings -> Maintenance -> Backup & Restore -> Under RESTORE section
-  #. Select the **Cloud Type** and other credentials to retrieve the backup configuration data. For example, for AWS, you need to specify the **Access Key**, **Secret Key**, **Bucket Name** and **File Name**.
+If you are starting from a new Controller, follow these steps to get started:
+
+#. Login to the Controller with the `admin` username and the default password
+#. Follow the initial steps to get the Controller up and running.
+
+   #. Enter an email address
+   #. Change your admin password
+   #. Enter or skip the proxy configuration
+   #. Allow the upgrade to run
+
+Once you are past the initial configuration steps:
+
+#. Login to the Controller
+  #. Click on the `Settings` navigation item
+  #. Click on the `Maintenance` sub item
+  #. Click on the `Backup & Restore` tab
+  #. Under the `RESTORE` section:
+  
+     - Select the `Cloud Type`
+     - For AWS
+
+       - If you would like to use an existing account, check the box `Use Cloud Account Name` and select the account.  Otherwise, enter an `Access Key` and `Secret Key`
+       - Enter the `Bucket Name` and `File Name` of the file to restore.
+
+     - For Azure
+
+       - Enter the `Subscription ID` and `Certificate Path`
+       - Enter the `Storage Name`, `Container Name`, and `File Name` of the file to restore.
+
   #. Click Restore
 
-The new controller will then inherit the configuration data.
-
+|imageRestoreAWS|
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
-.. disqus::
+.. |imageBackupAWS| image::  controller_backup_media/backup_restore_backup_aws.png
+
+.. |imageRestoreAWS| image::  controller_backup_media/backup_restore_restore_aws.png
