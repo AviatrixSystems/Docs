@@ -56,7 +56,7 @@ The Transit GW must be launched on public subnet where its associated route tabl
 ==========================================      ==========
 Cloud Type                                      Currently Transit GW can only be launched in AWS
 Gateway Name                                    A unique name to identify the Transit GW
-Account Name                                    n `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
 VPC ID                                          The Transit VPC-id
 Public Subnet                                   The public subnet on which Transit GW instance is deployed
