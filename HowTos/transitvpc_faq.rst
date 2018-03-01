@@ -9,9 +9,9 @@ Transit Network FAQ
 Why Should I Choose Transit Architecture?
 -------------------------------------------
 
-Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In a transit architecture, there is one connection (not including the backup) between on-prem and a transit VPC. Everything else (the spoke VPCs to on-prem traffic) is routed through the transit VPC.  
+Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In transit architecture, only a single connection (not including the backup) is needed between on-prem and a transit VPC. Everything else (the spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
-The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that take several days or weeks to complete. 
+The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that can take several days or weeks to complete. 
 
 How Does the Aviatrix Transit Network Solution Differ from Cisco's CSR-Based solution?
 ----------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ How Does the Aviatrix Transit Network Solution Differ from Cisco's CSR-Based sol
 
  - **Simplicity** With Aviatrix, BGP is only deployed between transit GW and VGW. No spoke VPCs run the BGP protocol. This simplicity leads to stability. Workflow-based, step-by-step instructions allows for a transit VPC solution to be built out in minutes. 
 
- - **Monitoring** Aviatrix integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
+ - **Monitoring** Aviatrix integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to all the major central logging services. 
 
  - **Scalability** AWS has some restrictions in its infrastructure. For instance, the route entry limit of 100 restricts how many on-prem CIDRs and VPC CIDRs can be carried on a transit GW. Aviatrix's solution overcomes that limitation. 
 
