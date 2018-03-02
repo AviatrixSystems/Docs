@@ -158,7 +158,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'aviatrix_docs', 'aviatrix_docs Home',
+    (master_doc, 'aviatrix_docs Home', 'aviatrix_docs Home',
      [author], 1)
 ]
 
