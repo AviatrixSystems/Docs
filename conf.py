@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'aviatrix_docs'
-copyright = '2017, Aviatrix Systems, Inc'
+copyright = '2018, Aviatrix Systems, Inc'
 author = 'Aviatrix'
 
 # Options for extensions
@@ -94,9 +94,10 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'nature'
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = 'alabaster'
+html_theme_path = [alabaster.get_html_theme_path()]
+#html_theme = "sphinx_rtd_theme"
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 #html_theme_path = [better_theme_path]
 #html_theme = 'better'
