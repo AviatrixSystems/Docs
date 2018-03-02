@@ -10,15 +10,16 @@ Aviatrix CloudN is a virtual appliance that is deployed in your Nutanix environm
 
 This applicance supports 3 primary use cases:
 
-- `Datacenter Extension <../Solutions/aviatrix_aws_meshVPC.html>`__ - Layer 2 bridge to the cloud (AWS or Azure)
+- `Datacenter Extension <../Solutions/aviatrix_aws_meshVPC.html>`__ - Nutanix VLAN extended to AWS or Azure
 - `Site to Cloud <../HowTos/cloudn-site2cloud.html>`__ - Build encrypted tunnel to existing VPC (AWS) or VNet (Azure)
 - `IPmotion <../HowTos/ipmotion.html>`__ - Migrate on-premise VMs to AWS or Azure while preserving IP addresses
 
 Getting Started
 ===============
-There are 3 steps to getting started:
+There just a few steps to getting started:
 
 #. `Download and add <#step1>`__ the Aviatrix Virtual Appliance image to Nutanix
+#. If you will be using Datacenter Extension (extending Nutanix VLAN to AWS/Azure), create a new VLAN that needs to be extended to AWS. Otherwise skip to the next step.
 #. `Create a new VM <#step2>`__ in Nutanix
 #. Set up `Aviatrix <#step3>`__
 #. Configure Aviatrix for your `Use Case <#step4>`__
@@ -62,7 +63,7 @@ Create a new VM on Nutanix Cluster
 
    |imageNutanixCreateVMAddDisk|
 
-#. Add 2 NICs.  Prior to creating these NICs you must create a separate VLAN for the Gateway.  These 2 NICs should both be in that VLAN.
+#. Add 2 NICs. These 2 NICs should both be in that VLAN you want Aviatrix running on. If you are doing Datacenter Extension (VLAN extension to AWS or Azure), You will need to pick the VLAN you created for this use case.
 
    |imageNutanixCreateVMAddNIC|
 
@@ -106,7 +107,7 @@ Configure Aviatrix for Use Case
 
 #. Follow instructions for your use case:
    
-- `Datacenter Extension <../Solutions/aviatrix_aws_meshVPC.html>`__ - Layer 2 bridge to the cloud (AWS or Azure)
+- `Datacenter Extension <../Solutions/aviatrix_aws_meshVPC.html>`__ - Nutanix VLAN extended to AWS or Azure
 - `Site to Cloud <../HowTos/cloudn-site2cloud.html>`__ - Build encrypted tunnel to existing VPC (AWS) or VNet (Azure)
 - `IPmotion <../HowTos/ipmotion.html>`__ - Migrate on-premise VMs to AWS or Azure while preserving IP addresses
 
