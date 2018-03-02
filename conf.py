@@ -95,7 +95,6 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = "sphinxdoc"
-#html_theme_path = [alabaster.get_html_theme_path()]
 #html_theme = "sphinx_rtd_theme"
 #html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -159,7 +158,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'aviatrix_docs', 'aviatrix_docs Documentation',
+    (master_doc, 'aviatrix_docs', 'aviatrix_docs Home',
      [author], 1)
 ]
 
