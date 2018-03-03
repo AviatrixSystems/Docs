@@ -15,6 +15,8 @@ For design guide, check out `Transit Network Design Patterns. <http://docs.aviat
 
 For more information, check out `Transit Network FAQ. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
 
+For other Aviatrix functions, such as `VPN access for users <http://docs.aviatrix.com/HowTos/uservpn.html>`_ and `VPN access for sites <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_, check out `Aviatrix Overview <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
+
 
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
 between Spoke VPC EC2 instances and on-prem network. 

@@ -31,7 +31,7 @@ agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_mes
 Our product, Aviatrix Secure Networking Platform, consists of two components, controller and
 gateway. Gateways are launched from the controller
 browser console by using your cloud account credentials with cloud provider APIs.
-The Controller image is available in AWS Marketplace, Azure Marketplace and GCloud.
+The Controller image is available in `AWS Marketplace, <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1520115866757&sr=0-1&ref_=srh_res_product_title>`_  `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-cloud-services?tab=Overview>`_ and GCloud.
 
 We are not a SaaS company, our product runs in your account and environment. We have no access to your data or credentials. 
 
