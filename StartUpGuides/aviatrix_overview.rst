@@ -28,8 +28,8 @@ We also provide security features for workloads/application in the cloud:
 In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
 agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ to cloud for vmware workloads. 
 
-How To Find Us?
-================
+Where To Find Us?
+==================
 
 Our product, Aviatrix Secure Networking Platform, consists of two components, controller and
 gateway. Gateways are launched from the controller
