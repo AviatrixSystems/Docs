@@ -29,7 +29,7 @@ This guide helps you configure an encrypted peering. For cluster peering, refer 
 AWS Peering
 """"""""""""""""""
 
-Aviatrix Controller integrates native AWS Peering for both intra region peering and inter 
+Aviatrix Controller integrates native `AWS VPC Peering <https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html>`_ for both intra region peering and inter 
 region peering, where it is available. Cross accounts peering is also supported. 
 
 To configure, go to Peering at the main navigation menu, click AWS Peering. Select the account, region and VPC. 
