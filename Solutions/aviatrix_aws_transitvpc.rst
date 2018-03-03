@@ -1,6 +1,6 @@
 .. meta::
   :description: AWS Global Transit VPC
-  :keywords: AWS Global Transit Network, Aviatrix site2cloud, Transitive Peering, Openvpn, SSL vpn, remote vpn, client vpn
+  :keywords: AWS Global Transit Network, Aviatrix site2cloud, Transitive Peering, Openvpn, SSL vpn, remote vpn, client vpn, CSR1000V
 
 |image0|
 
@@ -15,7 +15,7 @@ This document is published by AWS Answers for `AWS Global Transit Network <https
 
 
 Aviatrix is a next generation cloud networking solution built from the
-ground up for the public cloud. For transit VPC design, Aviatrix provides one console for building, managing, monitoring and troubleshooting all aspects of your network connectivity. The console (controller) gives users the ability to implement Transit VPC design with a point-and-click (no CLI) as well as REST API.
+ground up for the public cloud. For transit VPC design, Aviatrix provides one console for building, managing, monitoring and troubleshooting all aspects of your network connectivity. The console (controller) gives users the ability to implement Transit VPC design with a point-and-click (no CLI), `API <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_ and `Terraform. <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
 
 The configuration guide can be found `at this link. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
