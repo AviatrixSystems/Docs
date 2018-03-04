@@ -77,7 +77,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
 .. note::
 
-   The Aviatrix Controller must be launched on a public subnet.
+   The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. The Aviatrix Controller instance is termination protected. 
 ..
 
  3.8. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "no" unless you have already created the Aviatrix roles.
@@ -88,9 +88,10 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
  3.11. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 3.12. Click `Next`
+ 3.12. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+
+  |imageCFEnableTermProtection|
      
-   |imageCFOptions|
 
  3.13. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
@@ -232,7 +233,8 @@ You are now ready to establish connectivity to/from the cloud.  For help getting
    :scale: 50%
 
 .. |imageCFSelectTemplate| image:: ZeroToConnectivityInAWS_media/cf_select_template.png
-.. |imageCFSpecifyDetails| image:: ZeroToConnectivityInAWS_media/cf_specify_details.png
+.. |imageCFSpecifyDetails| image:: ZeroToConnectivityInAWS_media/cf_specify_details_new.png
+.. |imageCFEnableTermProtection| image:: ZeroToConnectivityInAWS_media/cf_termination_protection.png
 
 .. |imageAviatrixOnboardNav| image:: ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
    :scale: 50%
