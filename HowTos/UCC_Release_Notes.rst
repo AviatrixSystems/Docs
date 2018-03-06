@@ -10,9 +10,18 @@ R3.1 (3/6/2018)
 
 - **AWS Global Transit Network** work flow. The step by step guide to setup `AWS Global Transit Network. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
-- **AWS VPC Peering integration** 1-click ability to `configure native AWS VPC peering <http://docs.aviatrix.com/HowTos/peering.html>`_  for intra region and inter-region VPC communication. 
+- **AWS VPC Peering integration** is a 1-click operation to `configure native AWS VPC peering <http://docs.aviatrix.com/HowTos/peering.html>`_  for intra region and inter-region VPC communication. 
 
-- **BGP dampening** Enabled by default, BGP dampening
+- **BGP dampening** `BGP dampening <http://docs.aviatrix.com/HowTos/advanced_config.html#bgp-dampening>`_ allows you suppress flapping routes.
+
+2. Operations
+--------------
+
+- **Backup to encrypted S3 bucket** allows you to backup Controller configuration to an `encrypted S3 bucket <http://docs.aviatrix.com/HowTos/controller_backup.html#how-to-backup-configuration-with-aws-encrypted-storage>`_. Check out `this link <http://docs.aviatrix.com/HowTos/controller_backup.html#how-to-backup-configuration-with-aws-encrypted-storage>`_ to enable backup and restore feature. 
+
+- **Modular NAT configuration** allows you to enable NAT after a gateway instance is launched. 
+
+
 
 
 R3.0 (12/1/2017)
