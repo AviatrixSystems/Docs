@@ -103,7 +103,7 @@ html_theme = "sphinx_rtd_theme"
 
 #html_theme_path = [better_theme_path]
 #html_theme = 'better'
-#html_style  = 'aviatrix_theme.css'
+html_style  = 'aviatrix_theme.css'
 
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -113,8 +113,8 @@ html_theme = "sphinx_rtd_theme"
 # html_theme_options = {}
 
 # html_logo goes here, lets try this
-html_logo = 'logo-aviatrix-new.png'
-#html_logo =  'aviatrix-logo-final - bold.png'
+#html_logo = 'logo-aviatrix-new.png'
+html_logo =  'aviatrix-logo-final - bold.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
