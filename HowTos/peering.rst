@@ -31,6 +31,7 @@ AWS VPC Peering
 
 Aviatrix Controller integrates native AWS `VPC Peering <https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html>`_ for both intra region peering and inter 
 region peering, where it is available. Cross accounts peering is also supported. 
+We made it simple for AWS VPC Peering by integrating route table programming and integrating requester and acceptor to one step. You can also decide which route table to participate the AWS VPC Peering. 
 
 To configure, go to Peering at the main navigation menu, click AWS Peering (VPC Peering). Select the account, region and VPC. 
 You can choose the build the peering for the entire VPC or select individual route tables. 

@@ -2,6 +2,19 @@
 Release Notes
 =======================================
 
+R3.1 (3/6/2018)
+===============
+
+1. Connectivity
+---------------
+
+- **AWS Global Transit Network** work flow. The step by step guide to setup `AWS Global Transit Network. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+
+- **AWS VPC Peering integration** 1-click ability to `configure native AWS VPC peering <http://docs.aviatrix.com/HowTos/peering.html>`_  for intra region and inter-region VPC communication. 
+
+- **BGP dampening** Enabled by default, BGP dampening
+
+
 R3.0 (12/1/2017)
 ================
 
