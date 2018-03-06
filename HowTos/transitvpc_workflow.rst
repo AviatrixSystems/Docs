@@ -209,7 +209,7 @@ Note Transit GW and its back up companion are in active/active state, that is, b
 be forwarding traffic. To disable Transit GW HA, it is best practice to make sure there is no traffic 
 going through the backup Transit GW. 
 
-13. Launch Aviatrix on AWS Marketplace
+What's next?
 ---------------------------------------
 
 Aviatrix Controller AMIs can be found on AWS Marketplace. 
