@@ -6,14 +6,14 @@
 Transit Network FAQ
 ============================
 
-Why Should I Choose Transit Architecture?
+Why should I choose Transit architecture?
 -------------------------------------------
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In transit architecture, only a single connection (not including the backup) is needed between on-prem and a transit VPC. Everything else (the spoke VPCs to on-prem traffic) is routed through the transit VPC.  
 
 The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that can take several days or weeks to complete. 
 
-How Does the Aviatrix Global Transit Solution Differ from Cisco's CSR-Based Solution?
+How does the Aviatrix Global Transit Solution differ from Cisco's CSR-based solution?
 ----------------------------------------------------------------------------------------
 
  - **Network Segmentation** - With the CSR-based solution, all spoke VPCs have connectivity to each other through the transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. With the Aviatrix solution, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
