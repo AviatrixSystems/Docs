@@ -41,6 +41,11 @@ Since all Spoke VPC routes are managed by the Aviatrix Controller, a Spoke VPC C
 
 A Shared Service VPC is essentially one special Spoke VPC. The Shared Service VPC typically host common DevOps tools that needs connectivity to other Spoke VPCs. You can accomplish this connectivity by setting up either native AWS Peering or Aviatrix Encrypted Peering from the Aviatrix Controller. 
 
+Where can I find Aviatrix Global Transit Network solution?
+-----------------------------------------------------------
+
+Aviatrix Controller is available in `AWS Marketplace. <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=aviatrix&page=1&ref_=nav_search_box>`_
+
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
