@@ -8,7 +8,7 @@ R3.1 (3/6/2018)
 1. Connectivity
 ---------------
 
-- **AWS Global Transit Network** work flow. The step by step guide to setup `AWS Global Transit Network. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+- **AWS Global Transit Network** is a new workflow that provides a step by step guide to setup `AWS Global Transit Network. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
 - **AWS VPC Peering integration** is a 1-click operation to `configure native AWS VPC peering <http://docs.aviatrix.com/HowTos/peering.html>`_ for intra region and inter-region VPC communication. 
 
@@ -29,6 +29,10 @@ R3.1 (3/6/2018)
 - **Gateway Single AZ** is an economic way to improve gateway uptime without running a standby instance. The Aviatrix Controller monitors the gateway's health and when gateway keep alive packets fail to arrive at the Controller, it stops and starts the gateway again. To configure, go to Gateway, select a gateway to Edit, then Enable or Disable Single AZ gateway HA. 
 
 - **Security patches** for CIS-CAT and Meltdown.
+
+- **Terraform provider** is now available for `Transit Network <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
+
+- **Updated Aviatrix APIs** is now organized by functions and easier to `follow. <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_
 
 
 R3.0 (12/1/2017)
