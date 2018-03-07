@@ -17,7 +17,6 @@ For more information, check out `Transit Network FAQ. <http://docs.aviatrix.com/
 
 For other Aviatrix functions, such as `VPN access for users <http://docs.aviatrix.com/HowTos/uservpn.html>`_ and `VPN access for sites <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_, check out `Aviatrix Overview <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
-
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
 between Spoke VPC EC2 instances and on-prem network. 
 
@@ -33,7 +32,8 @@ The Global Transit Network diagram is described as below.
 Planning and Prerequisites
 ---------------------------
 
- 1. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW. 
+ 1. If you have not launched Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
+ #. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW. 
  #. Create a VGW in the same region. The VGW should not be attached to the Transit VPC if you plan to launch Transit GW in the same VPC. This VGW can be attached to a different VPC if this VPC CIDR is different from the Transit VPC where Transit GW is launched. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over Internet.  
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create Aviatrix account that corresponds to an IAM role. For instructions on how to launch an Aviatrix Controller, check out `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
 
@@ -208,6 +208,15 @@ gateway and click Delete.
 Note Transit GW and its back up companion are in active/active state, that is, both gateways could 
 be forwarding traffic. To disable Transit GW HA, it is best practice to make sure there is no traffic 
 going through the backup Transit GW. 
+
+What's next?
+---------------------------------------
+
+Aviatrix Controller AMIs can be found on AWS Marketplace. 
+
+`Aviatrix Controller BYOL AMI. <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1520370707533&sr=0-1&ref_=srh_res_product_title>`_
+
+`Aviatrix Controller 5-tunnel Utility AMI. <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1520370771464&sr=0-7&ref_=srh_res_product_title>`_
  
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in

@@ -24,7 +24,7 @@ based on iperf tests conducted between two gateways of the same size:
 -  m4.xlarge or c4.xlarge: approximately 500mbps
 -  c3.2xlarge or m4.2xlarge: approximately 1Gbps
 -  c3.4xlarge: approximately 1.2Gbps
--  c4.2xlarge: 1.2Gbps - 1.5Gbps
+-  c4.2xlarge or c5.2xlarge: 1.2Gbps - 1.5Gbps
 
 if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
 
@@ -82,11 +82,19 @@ There are two types of high availability on Aviatrix: "Gateway for High Availabi
 
 "Gateway for High Availability" is used when you need HA for a Transitive Peering. 
 
-Gateway Size
--------------
+Gateway Resize 
+---------------
 
 You can change Gateway Size if need to change gateway throughput. The gateway will restart with a different instance size.
 
+NAT
+----
+
+You can enable and disable NAT function after a gateway is launched. 
+NAT function enables instances on private subnet to access Internet. 
+When NAT is enabled, all route tables for private subnets in the VPC 
+are programmed with an route entry that points the gateway as the 
+target for route entry 0.0.0.0/0. 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 

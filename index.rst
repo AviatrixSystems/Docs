@@ -168,6 +168,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/controller_ha
    HowTos/inline_upgrade
    HowTos/AviatrixLogging
+   HowTos/advanced_config
 
 .. _Troubleshoot:
 
