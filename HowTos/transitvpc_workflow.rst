@@ -209,6 +209,17 @@ Note Transit GW and its back up companion are in active/active state, that is, b
 be forwarding traffic. To disable Transit GW HA, it is best practice to make sure there is no traffic 
 going through the backup Transit GW. 
 
+13. Transit Network APIs
+-------------------------
+
+There are multiple resources to help you automate Transit Network setup. 
+
+ - `Transit Network section in API doc <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_.
+
+ - `Terraform example. <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
+
+ - `Python API example for Transit Network <https://github.com/AviatrixSystems/TransitNetworkAPI_python_example>`_
+
 What's next?
 ---------------------------------------
 
