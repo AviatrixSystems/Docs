@@ -212,13 +212,14 @@ going through the backup Transit GW.
 13. Transit Network APIs
 -------------------------
 
-There are multiple resources to help you automate Transit Network setup. 
+There are multiple resources to help you automate Transit Network setup. Noteif you are building a Transit Network following the workflow, you should use the APIs documented below. 
 
- - `Transit Network section in API doc <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_.
+ - `Transit Network section in API doc <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_. 
 
  - `Terraform example. <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
 
  - `Python API example for Transit Network <https://github.com/AviatrixSystems/TransitNetworkAPI_python_example>`_
+
 
 What's next?
 ---------------------------------------
