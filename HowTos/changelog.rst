@@ -1,5 +1,7 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+1.7 - Mar 7 2018
+ - Support for Profile as an attribute feature
 
 1.6 - Dec 19 2017
  - FreeBSD support

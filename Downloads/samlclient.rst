@@ -25,7 +25,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 
 Consult the VPN client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/Aviatrix+VPN+Client+User+Guide.pdf>`__ for how to use it. 
 
-Latest version: 1.6.7 - (Dec 19 2017) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Latest version: 1.7.2 - (Mar 7 2018) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
 
 *************
 Windows |win|
