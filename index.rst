@@ -111,7 +111,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _OpenVPN®:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: OpenVPN®
 
    HowTos/uservpn
@@ -122,7 +122,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/DNSVPN
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/duo_auth
-   HowTos/UserSSL_VPN_Okta_SAML_Config
+   HOwTos/VPN
+   HowTos/VPN_SAML
+       HowTos/UserSSL_VPN_Okta_SAML_Config
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
