@@ -13,7 +13,7 @@ OpenVPN® with SAML Authentication
 
 Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a vpn client that supports SAML authentication. 
 
-This guide provides an example on how to use Aviatrix SAML client to authenticate Okta IDP. When SAML client is used, Aviatrix controller acts as the identity service provider (ISP) that redirects browser traffic from client to IDP, in this case, Okta, for authentication. 
+This guide provides an example on how to use Aviatrix SAML client to authenticate Okta IDP. When SAML client is used, Aviatrix controller acts as the service provider (SP) that redirects browser traffic from client to IDP, in this case, Okta, for authentication. 
 
 2. Pre-Deployment Checklist
 -----------------------------
