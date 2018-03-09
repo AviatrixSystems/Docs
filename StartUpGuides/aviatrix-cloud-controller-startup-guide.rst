@@ -69,7 +69,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
    |imageCFCreate|
 
- 3.6. Select `Upload a template to Amazon S3` and `Browse ...` to find the `aviatrix-aws-quickstart.json` downloaded in step 1.
+ 3.6. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you select.  
 
    |imageCFSelectTemplate-S3|
 
