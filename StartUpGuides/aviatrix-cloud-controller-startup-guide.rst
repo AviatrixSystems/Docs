@@ -27,13 +27,15 @@ Follow the steps below to install Aviatrix Software.
 
 1. Accept the License Terms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Before you get started, you'll need to accept the terms of the Aviatrix license in the AWS Marketplace. If you select BYOL AMI, here are the steps: 
+Before you get started, you'll need to accept the terms of the Aviatrix license in the AWS Marketplace.  
 
- 1.1. Go to the `AWS Marketplace <https://aws.amazon.com/marketplace/pp?sku=zemc6exdso42eps9ki88l9za>`__.
-
- 1.2. Click `Continue to Subscribe`
+ 1.1. If you select BYOL AMI, go to the `AWS Marketplace Aviatrix BYOL <https://aws.amazon.com/marketplace/pp?sku=zemc6exdso42eps9ki88l9za>`_, click `Continue to Subscribe`.
 
    |imageAwsMarketplaceContinuetoSubscribe|
+
+ 1.2  If you select Aviatrix Private Offer or Inter-Region VPC Peering 5 Tunnel, go to `AWS Marketplace Aviatrix Private Offer <https://aws.amazon.com/marketplace/pp/B0155GB0MA>`_, click `Continue to Subscribe`.
+ 
+   |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
 
  1.3.  Click `Manual Launch` and then `Accept Software Terms`.
@@ -55,23 +57,25 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
    You can also launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
 ..
 
- 3.1. Download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally. Check out our `instructions on GitHub. <https://github.com/AviatrixSystems/AWSQuickStart#aviatrix---aws-quickstart-script-for-cloudformation>`_
+ 3.1. If you selected BYOL, download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally. Check out our `instructions on GitHub. <https://github.com/AviatrixSystems/AWSQuickStart#aviatrix---aws-quickstart-script-for-cloudformation>`_
 
- 3.2. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
+ 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation template is different and is located `on Github <https://github.com/AviatrixSystems/AWSMarketplace-5tunnel-CF>`_
 
- 3.3. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+ 3.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
- 3.4. Click `Create new stack` or `Create Stack`
+ 3.4. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+
+ 3.5. Click `Create new stack` or `Create Stack`
 
    |imageCFCreate|
 
- 3.5. Select `Upload a template to Amazon S3` and `Browse ...` to find the `aviatrix-aws-quickstart.json` downloaded in step 1.
+ 3.6. Select `Upload a template to Amazon S3` and `Browse ...` to find the `aviatrix-aws-quickstart.json` downloaded in step 1.
 
    |imageCFSelectTemplate|
 
- 3.6. Click `Next`
+ 3.7. Click `Next`
 
- 3.7. Populate the Stack name and select a VPC, subnet, and a keypair.
+ 3.8. Populate the Stack name and select a VPC, subnet, and a keypair.
 
    |imageCFSpecifyDetails|
 
@@ -80,24 +84,24 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
- 3.8. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "no" unless you have already created the Aviatrix roles.
+ 3.9. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix roles.
 
- 3.9. Click `Next`
+ 3.10. Click `Next`
 
- 3.10. Optionally, add any key/value tags as required
+ 3.11. Optionally, add any key/value tags as required
 
- 3.11. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
+ 3.12. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 3.12. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+ 3.13. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
 
   |imageCFEnableTermProtection|
      
 
- 3.13. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
+ 3.14. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
- 3.14. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
+ 3.15. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
    
    |imageCFComplete|
 
@@ -213,6 +217,7 @@ You are now ready to establish connectivity to/from the cloud.  For help getting
 
 .. |imageAwsMarketplacePage1| image:: ZeroToConnectivityInAWS_media/aws_marketplace_page1.png
 .. |imageAwsMarketplaceContinuetoSubscribe| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1.png
+.. |imageAwsMarketplaceContinuetoSubscribe5tunnel| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1_5tunnel.png
 .. |imageAwsMarketplaceAccept| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step2.png
 .. |imageAwsMarketplaceAcceptTerms| image:: ZeroToConnectivityInAWS_media/aws_marketplace_select_region_and_accept.png
 .. |imageCFCreate| image:: ZeroToConnectivityInAWS_media/cf_create.png
