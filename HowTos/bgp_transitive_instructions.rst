@@ -6,7 +6,7 @@
 Transit Network with BGP Setup Instructions 
 ##############################################
 
-.. Note:: this document becomes obsolete with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to setup a Transit Network. 
+.. Note:: this document becomes obsolete with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__ to setup a Transit Network. 
 
 Introduction
 =============
@@ -30,7 +30,7 @@ Deployment Steps
 
 This step launches an Aviatrix gateway in Transit VPC and builds a IPSEC connection to VGW with BGP enabled. 
 
-a. At AWS Console create a VGW (the VGW is not attached to a VPC) which we will  use to connect to on-prem over Direct Connect or Internet. For information on how to connect a VGW to Direct Connect, follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. For IPSEC configuration, refer to `this doc <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html>`_ for IPSEC over Internet configuration guide.
+a. At AWS Console create a VGW (the VGW is not attached to a VPC) which we will  use to connect to on-prem over Direct Connect or Internet. For information on how to connect a VGW to Direct Connect, follow `the steps <http://docs.aws.amazon.com/directconnect/latest/UserGuide/create-vif.html>`_ for details. For IPSEC configuration, refer to `this doc <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html>`__ for IPSEC over Internet configuration guide.
 
 #. From Aviatrix Controller console, launch an Aviatrix Gateway in the Transit VPC. This Aviatrix Gateway in the Transit VPC is the Customer Gateway (CGW) from VGW point of view. 
 
@@ -132,7 +132,7 @@ Building HA Transport Links
 
 There are multiple patterns to build HA in the transport link. AWS VGW can be used to
 create two Direct Connect links, two IPSEC over Internet links and one Direct Connect and
-one IPSEC over Internet links. Refer to `this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for details.
+one IPSEC over Internet links. Refer to `this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`__ for details.
 
 Best Practice 
 ===============

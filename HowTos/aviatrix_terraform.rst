@@ -5,9 +5,10 @@
 ===========================
 Aviatrix Terraform Provider
 ===========================
-Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `link <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for details on setting up Aviatrix terraform provider on your system.
 
-The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click this `link <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using terraform.
+Aviatrix terraform provider is used to interact with Aviatrix resources. Click this `link <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`__ for details on setting up Aviatrix terraform provider on your system.
+
+The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click this `link <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`__ to read how to setup transit VPC using terraform.
 
 Example Usage
 =============
@@ -179,7 +180,7 @@ Manages FQDN filtering for Aviatrix gateway
 	}
 
 aviatrix_firewall_tag
-----------------
+---------------------
 Manages L4 stateful firewall tags
 
 **Example Usage**
@@ -210,7 +211,7 @@ Manages L4 stateful firewall tags
 	}
 
 aviatrix_firewall
-----------------
+------------------
 Manages L4 stateful firewall policies for Aviatrix gateway
 
 **Example Usage**
@@ -316,7 +317,7 @@ Manages Aviatrix VPN user
 	}
 
 aviatrix_aws_peer
-----------------
+-----------------
 Manages an AWS peering
 
 **Example Usage**

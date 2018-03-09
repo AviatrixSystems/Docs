@@ -78,7 +78,7 @@ Manages an Aviatrix Transit VPC.
 +--------------+-------------------------------------------------------------------+
 
 aviatrix_vgw_conn
-----------------
+-----------------
 Manages VGW connection
 
 **Example Usage**

@@ -116,7 +116,7 @@ When a t2 series Transit GW communicate with VGW over IPSEC, there is a 3% packe
 Note this packet drop issue does not affect Spoke gateways. 
 
 How do I resize Transit GW instance?
------------------------------------
+------------------------------------
 
 Go to Gateway page at the navigation bar, select the Transit GW, click Edit, scroll up to see the options and find Gateway Resize. Select the desired size and click Change. 
 

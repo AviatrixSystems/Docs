@@ -58,10 +58,11 @@ If you are starting from a new Controller, follow these steps to get started:
 Once you are past the initial configuration steps:
 
 #. Login to the Controller
-  #. Click on the `Settings` navigation item
-  #. Click on the `Maintenance` sub item
-  #. Click on the `Backup & Restore` tab
-  #. Under the `RESTORE` section:
+
+   #. Click on the `Settings` navigation item
+   #. Click on the `Maintenance` sub item
+   #. Click on the `Backup & Restore` tab
+   #. Under the `RESTORE` section:
   
      - Select the `Cloud Type`
      - For AWS

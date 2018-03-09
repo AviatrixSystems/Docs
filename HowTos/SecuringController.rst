@@ -118,12 +118,12 @@ Configuration Workflow
 On the Controller
 #. Configure SAML by accessing controller through loadbalancer DNS name. This will generate everything, URLS and certs with respect to DNS name
 
-:NOTE:
-Controller's security group for 443 must allow from Loadbalancer's internal IP address which can be usually VPC CIDR
+.. note::
+
+   Controller's security group for 443 must allow from Loadbalancer's internal IP address which can be usually VPC CIDR
 
 
-:Optional:
-To Block general access:
+(Optional) To Block general access:
 
 1. Create dummy target group pointing to invalid port
    path rule / will be pointing to dummy target group

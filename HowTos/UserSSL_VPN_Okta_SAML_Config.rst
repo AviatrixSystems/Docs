@@ -2,9 +2,9 @@
    :description: Aviatrix User SSL VPN Okta SAML Configuration
    :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
 
-=====================================
+==============================================================================
 OpenVPN® with SAML Client on Okta IDP with Optional Multifactor Authentication 
-=====================================
+==============================================================================
 
 
 
@@ -171,13 +171,13 @@ This step is usually completed by the Aviatrix admin.
 
 
 3.6     Configure Okta for Multifactor Authentication (OPTIONAL)
--------------------------------
+----------------------------------------------------------------
 
 Once you have successfully configured Okta IDP with Aviatrix SP, you can configure Okta for Multifactor Authentication. 
 
-Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`_ from Okta on Multifactor setup.  
+Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`__ from Okta on Multifactor setup.  
 
-See this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Configuring-Duo-Security-734413457>`_ if you're interested in using DUO in particular.
+See this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Configuring-Duo-Security-734413457>`__ if you're interested in using DUO in particular.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

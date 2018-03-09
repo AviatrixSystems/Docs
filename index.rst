@@ -16,7 +16,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
-* :ref:`OpenVPN®`
+* :ref:`OpenVPN® <OpenVPN>`
 * :ref:`Security`
 * :ref:`IPmotion`
 * :ref:`Advanced Config`
@@ -107,7 +107,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EncrOverExpRoute
    HowTos/avxgw_azurevpngw_site2cloud
 
-.. _OpenVPN®:
+.. _OpenVPN:
 
 .. toctree::
    :maxdepth: 2
@@ -121,9 +121,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/DNSVPN
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/duo_auth
-   HOwTos/VPN
    HowTos/VPN_SAML
-       HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/UserSSL_VPN_Okta_SAML_Config
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
