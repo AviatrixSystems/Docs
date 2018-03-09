@@ -105,7 +105,8 @@ html_theme = "sphinx_rtd_theme"
 #html_theme_path = [better_theme_path]
 #html_theme = 'better'
 html_style  = 'aviatrix_theme.css'
-
+# make sure search results for relative urls link to docs.aviatrix.com
+html_use_opensearch = 'https://docs.aviatrix.com'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
