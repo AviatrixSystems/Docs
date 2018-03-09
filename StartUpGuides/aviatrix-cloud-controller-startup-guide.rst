@@ -59,7 +59,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
  3.1. If you selected BYOL, download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally. Check out our `instructions on GitHub. <https://github.com/AviatrixSystems/AWSQuickStart#aviatrix---aws-quickstart-script-for-cloudformation>`_
 
- 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation template is different and is located `on Github <https://github.com/AviatrixSystems/AWSMarketplace-5tunnel-CF>`_
+ 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation template is different and is located `on Github AWSMarketplace-5tunnel-CF. <https://github.com/AviatrixSystems/AWSMarketplace-5tunnel-CF>`_
 
  3.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
