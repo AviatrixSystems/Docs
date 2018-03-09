@@ -139,7 +139,7 @@ Once you have the Aviatrix Controller installed in your AWS account, you will ne
 5. Enter Your Customer ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. tip::
-   If you do not have a Customer ID, please contact info@aviatrix.com to get a trial license.
+   If you do not have a Customer ID, please contact support@aviatrix.com to get a trial license.
    
 5.1. Once logged in to the Controller, click on the `Onboarding` navigation item.
 
