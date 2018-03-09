@@ -57,9 +57,9 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
    If you select neither BYOL or 5-tunnel AMI, currently you need to launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
 ..
 
- 3.1. If you selected BYOL, download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally. Check out our `instructions on GitHub. <https://github.com/AviatrixSystems/AWSQuickStart#aviatrix---aws-quickstart-script-for-cloudformation>`_
+ 3.1. If you selected BYOL, the CloudFormation is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template. 
 
- 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation template is different and is located `on Github AWSMarketplace-5tunnel-CF. <https://github.com/AviatrixSystems/AWSMarketplace-5tunnel-CF>`_
+ 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation  template is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
 
  3.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
@@ -71,7 +71,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
  3.6. Select `Upload a template to Amazon S3` and `Browse ...` to find the `aviatrix-aws-quickstart.json` downloaded in step 1.
 
-   |imageCFSelectTemplate|
+   |imageCFSelectTemplate-S3|
 
  3.7. Click `Next`
 
@@ -238,6 +238,7 @@ You are now ready to establish connectivity to/from the cloud.  For help getting
    :scale: 50%
 
 .. |imageCFSelectTemplate| image:: ZeroToConnectivityInAWS_media/cf_select_template.png
+.. |imageCFSelectTemplate-S3| image:: ZeroToConnectivityInAWS_media/imageCFSelectTemplate-S3.png
 .. |imageCFSpecifyDetails| image:: ZeroToConnectivityInAWS_media/cf_specify_details_new.png
 .. |imageCFEnableTermProtection| image:: ZeroToConnectivityInAWS_media/cf_termination_protection.png
 
