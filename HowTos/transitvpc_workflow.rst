@@ -221,15 +221,15 @@ There are multiple resources to help you automate Transit Network setup. Noteif 
  - `Python API example for Transit Network <https://github.com/AviatrixSystems/TransitNetworkAPI_python_example>`_
 
 
-What's next?
+How to get started on AWS?
 ---------------------------------------
 
 Aviatrix Controller AMIs can be found on AWS Marketplace. 
 
-`Aviatrix Controller BYOL AMI. <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1520370707533&sr=0-1&ref_=srh_res_product_title>`_
-
-`Aviatrix Controller 5-tunnel Utility AMI. <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1520370771464&sr=0-7&ref_=srh_res_product_title>`_
+`Aviatrix Private Offer or Aviatrix Controller 5-tunnel Utility AMI. <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1520370771464&sr=0-7&ref_=srh_res_product_title>`_ can be launched from `the 5-tunnel CloudFormation template <https://github.com/AviatrixSystems/AWSMarketplace-5tunnel-CF>`_.
  
+`Aviatrix Controller BYOL AMI. <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1520370707533&sr=0-1&ref_=srh_res_product_title>`_ can be launched from `the BYOL CloudFormation template <https://github.com/AviatrixSystems/AWSQuickStart>`_
+
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in
    :height: 3.26548in
