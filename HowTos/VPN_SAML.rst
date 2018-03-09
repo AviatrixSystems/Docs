@@ -6,138 +6,192 @@
 OpenVPN® with SAML Authentication 
 =====================================
 
-
-
 1.  Overview
 ------------
 
-Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a vpn client that supports SAML authentication. 
+Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a VPN client that supports SAML authentication. 
 
-This guide provides an example on how to use Aviatrix SAML client to authenticate Okta IDP. When SAML client is used, Aviatrix controller acts as the service provider (SP) that redirects browser traffic from client to IDP, in this case, Okta, for authentication. 
+This step-by-step guide shows you how to use Aviatrix SAML client to authenticate an IDP. When SAML client is used, Aviatrix controller acts as the service provider (SP) that redirects browser traffic from client to the IDP for authentication. 
 
 2. Pre-Deployment Checklist
 -----------------------------
-Before configuring the SAML integration between Aviatrix and Okta, make sure the following is completed.
+Before configuring the SAML integration between Aviatrix and your IDP, make sure the following is completed:
 
-Pre Installation Check List
+	#. `Aviatrix Controller <#pdc-21>`__ is setup and running
+	#. Have a valid `IDP account <#pdc-22>`__ with admin access
+	#. `Download and install <#pdc-23>`__ the Aviatrix SAML client
 
-	1.	Aviatrix Controller is setup and running.
-	2.	Have a valid IDP account with admin access.
-	3.	Download and install the Aviatrix SAML client These prerequisites are explained in detail below.
 
+.. _PDC_21:
 
 2.1 Aviatrix Controller
-------------------------
+#######################
 
-If you haven’t already deployed the Aviatrix controller, follow the below instructions on how to deploy the Aviatrix controller.
-`Instructions here.  <http://docs.aviatrix.com>`_
+If you haven’t already deployed the Aviatrix controller, follow `these instructions <../StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ to deploy the Aviatrix controller.
+
+.. _PDC_22:
 
 2.2 IDP Account
-----------------
+###############
 
-An IDP refers to an identity provider for SAML. These could be any provider that supports a SAML end point like Okta, OneLogin, Google, Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc. (The listed ones were tested). You will require administrator access to the same to create IDP endpoints for SAML.
+An IDP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <../HowTos/UserSSL_VPN_Okta_SAML_Config.html>`__, OneLogin, Google, Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc. (The listed ones were tested). You will require administrator access to create IDP endpoints for SAML.
 
-Example Okta
-`Okta create account <https://www.okta.com/start-with-okta/>`_
+.. _PDC_23:
 
 2.3 Aviatrix VPN Client
------------------------
+#######################
 
-All users must use the Aviatrix VPN client to connect to the system.  Download the client for your OS 
-`here. <http://docs.aviatrix.com/Downloads/samlclient.html>`_
-
+All users must use the Aviatrix VPN client to connect to the system.  Download the client for your OS `here <http://docs.aviatrix.com/Downloads/samlclient.html>`__.
 
 3. Configuration
 ----------------
 
-The integration configuration consists of 4 parts.
+The configuration consists of 4 parts:
 
-	1.	Create an Okta SAML App for Aviatrix
-	2.	Retrieve IDP Metadata
-	3.	Launch Aviatrix Gateway
-	4.	Create Aviatrix SAML SP
-	5.	Create Aviatrix VPN User
+	1. Create `SAML App <#config-31>`__ for Aviatrix
+	2. Retrieve `IDP Metadata <#config-32>`__
+	3. Launch `Aviatrix Gateway <#config-33>`__
+	4. Create `Aviatrix SAML SP <#config-34>`__
+	5. Create `Aviatrix VPN user(s) <#config-35>`__
 
-Please complete the configuration in the following order.
+.. _Config_31:
 
 3.1 Create a SAML App for Aviatrix at the IDP
----------------------------------------------
+#############################################
 
-This step is usually done by the IDP adminstrator
+This step is usually done by the IDP adminstrator.
 
-Create a SAML 2.0 app with the following settings
+Create a SAML 2.0 app with the following settings:
 	
-		a.	App Name = Aviatrix VPN (arbitrary)
-		b.	Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/aviatrix_sp_name
-		c.	Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-		d.	SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/aviatrix_sp_name
-		e.	SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/aviatrix_sp_name
-		c.	Default RelayState* = <empty>
-		d.	Name ID format = Unspecified
-		e.	Application username = Okta username
+#. App Name = Aviatrix VPN (arbitrary)
+#. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/aviatrix_sp_name
+#. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
+#. SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/aviatrix_sp_name
+#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/aviatrix_sp_name
+#. Default RelayState* = <empty>
+#. Name ID format = Unspecified
+#. Application username = Okta username
 
-		These values are also available in the controller OpenVPN®->Advanced->SAML page after step 3.4.
+.. note::
 
-The following SAML attributes are expected. They are case sensitive. Email is the unique identifier for VPN
+   After step 3.4, these values are also available in the controller under the OpenVPN® navigation item.  Then, select `Advanced` and go to the `SAML` tab.
+
+The following SAML attributes are expected: 
 		
-		i.	FirstName 
-		ii.	LastName 
-		iii.	Email
+#. FirstName
+#. LastName
+#. Email (unique identifier for VPN)
+#. (Optional; only if required) Profile
 
-In addition we also support a Profile attribute(if required) discussed in this link			
-	
-	
+.. note::
+
+   These values are case sensitive
+
+.. _Config_32:
+
 3.2  Retrieve IDP metadata
---------------------------------
-After creating the IDP, you need to revtrieve IDP Metadata either in URL or text for from the IDP app.
+##########################
 
+After creating the IDP, you need to revtrieve IDP Metadata either in URL or text from the IDP application created in the previous step.
 
+.. _Config_33:
 
-3.3	Launch Aviatrix Gateway
----------------------------------------------
+3.3 Launch Aviatrix Gateway
+###########################
 
 This step is usually completed by the Aviatrix admin.
 
-	1.	Login to the Aviatrix controller
-	2.	Click Gateway -> Add New
-	3.	Select the appropriate Account, region, vpc, subnet and gateway size
-	4.	Check “VPN Access” and then “Enable SAML”
+#. Login to the Aviatrix controller
+#. Click `Gateway` in the navigation menu
+#. Click `+ New Gateway`
+#. Select the appropriate values for where to provision this Gateway
+#. Check `VPN Access` and then `Enable SAML`
 
 	|image6|
 	
-	5.	Default settings for everything else.
-	
-	6.	Click “OK” to launch the gateway.
-	
-	
-3.4	Create Aviatrix SAML SP (Endpoint)
-------------------------------------------
+#. Leave the default settings for everything else
+#. Click `OK` to launch the gateway
+
+.. _Config_34:
+
+3.4 Create Aviatrix SAML SP (Endpoint)
+######################################
 
 This step is usually completed by the Aviatrix admin.
 
-1.	Login to the Aviatrix Controller
-2.	Click OpenVPN® -> VPN Users -> Advanced -> SAML -> Add New
-3.	Select the VPC where the above gateway was launched
-4.	Name = aviatrix_sp_name (this is the same name that you choose during the IDP configuration)
-5.	IPD Metadata type = Text/URL
-6.	IDP Metadata Text = paste in the IDP metadata URL/Text from the Okta configuration
+#. Login to the Aviatrix Controller
+#. Expand `OpenVPN®` in the navigation menu and click `Advanced`
+#. Stay on the `SAML` tab and click `+ Add New`
 
+   +----------------------------+-----------------------------------------+
+   | Field                      | Description                             |
+   +----------------------------+-----------------------------------------+
+   | Endpoint Name              | aviatrix_sp_name (this is the same name |
+   |                            | that you choose during the IDP          |
+   |                            | configuration)                          |
+   +----------------------------+-----------------------------------------+
+   | IPD Metadata Type          | Text or URL (depending on what was      |
+   |                            | provided by the SAML provider)          |
+   +----------------------------+-----------------------------------------+
+   | IDP Metadata Text/URL      | Paste in the IDP metadata URL/Text      |
+   |                            | copied from the SAML provider           |
+   |                            | configuration                           |
+   +----------------------------+-----------------------------------------+
+   | Entity ID                  | Select `Hostname` or `Custom`           |
+   +----------------------------+-----------------------------------------+
+   | Custom Entity ID           | Only visible if `Entity ID` is `Custom` |
+   +----------------------------+-----------------------------------------+
+   | Custom SAML Request        |                                         |
+   | Template                   |                                         |
+   +----------------------------+-----------------------------------------+
 
-3.5	Test the integration
-----------------------------
+.. _Config_341:
 
-1.	Have an instance of the VPN client running, else it might throw a warning
-2.	Click Test from OpenVPN® -> VPN Users -> Advanced -> SAML -> aviatrix_sp_name
-3.	You should be redirected to the IDP, now you can log in and should be redirected back to the controller
-	
+3.4.1 Test the integration
+##########################
 
-3.5	Create a VPN User
--------------------------
+.. note::
 
-1.	Select the VPC where the above gateway was launched
-2.	Username = Name of the VPN user
-3.	User Email = any valid email address (this is where the cert file will be sent). ALternatively you can download the cert if you dont enter email
-4.	Load the VPN user certificate and try connecting to the VPN. Note that SAML only supports shared certificates. You can share the certificate among VPN users or create more VPN users
+   Have an instance of the VPN client running.  If you do not, it might throw a warning
+
+#. Login to the Aviatrix Controller
+#. Expand `OpenVPN®` in the navigation menu and click `Advanced`
+#. Stay on the `SAML` tab
+#. Select the row that was created in the previous step (`aviatrix_sp_name`)
+#. Click on the `Test` action
+#. You should be redirected to the IDP, now you can log in and should be redirected back to the controller
+
+.. _Config_35:
+
+3.5 Create VPN user(s)
+######################
+
++----------------------------+-----------------------------------------+
+| Field                      | Description                             |
++----------------------------+-----------------------------------------+
+| VPC ID                     | Select the VPC/VNet where the Gateway   |
+|                            | was created                             |
++----------------------------+-----------------------------------------+
+| LB/Gateway Name            | Select the appropriate load balancer    |
+|                            | or gateway                              |
++----------------------------+-----------------------------------------+
+| User Name                  | Name of the VPN user                    |
++----------------------------+-----------------------------------------+
+| User Email                 | Any valid email address (this is where  |
+|                            | the cert file will be sent).            |
+|                            | Alternatively you can download the cert |
+|                            | if you dont enter email                 |
++----------------------------+-----------------------------------------+
+| SAML Endpoint              | Select the SAML endpoint                |
++----------------------------+-----------------------------------------+
+
+.. important::
+
+   Load the VPN user certificate and try connecting to the VPN.
+
+.. note::
+
+   SAML  supports shared certificates.  You can share the certificate among VPN users or create more VPN users.
 
 
 
