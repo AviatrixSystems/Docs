@@ -13,11 +13,12 @@ When the product is deployed as a virtual appliance in a virtualized datacenter 
 
 The following FAQ discusses only the cloud deployment scenario.
 
-Aviatrix Cloud Gateway
-======================
+Aviatrix Secure Cloud Network Platform
+=======================================
 
 
-**Q1: What can it do for me?**
+What can Aviatrix platform do for me?
+--------------------------------------
 
 
 Aviatrix Cloud Gateway provides an end to end secure network solution
@@ -37,8 +38,8 @@ Architecturally, Aviatrix solution is a centrally managed, loosely
 coupled and globally deployed platform built for the cloud from the
 ground up.
 
-**Q2: How do I launch the product?**
-
+How do I launch the product?
+--------------------------------
 
 The product consists of two components, the controller and one or more
 gateways. The gateway is launched from the controller.
@@ -50,9 +51,14 @@ The controller is available in AWS and Azure marketplace. It is also
 available as a GCloud community image. For marketplace launch, search
 for “Aviatrix” in marketplace.
 
-Follow `Getting Started <http://docs.aviatrix.com/>`_ instructions to launch controller.
+Follow `Getting Started on AWS <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch Controller on AWS.
 
-**Q3: How do I access the controller?**
+Follow `Getting Started on Azure <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch Controller on Azure. 
+
+Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch Controller on Google.
+
+How do I access the Controller?
+--------------------------------
 
 
 Once you have launched the instance, you access the Controller instance
@@ -64,7 +70,8 @@ Login with username “admin”. The first time password is the private IP
 address of the controller instance. You are required to change the
 password at your first login.
 
-**Q4: How do I secure the controller?**
+How do I secure the Controller?
+---------------------------------
 
 
 Only TCP port 443 needs to be opened for inbound traffic to the
@@ -74,7 +81,8 @@ addresses, in addition to your own public IP address. This is because
 gateways launched from the controller use its public IP address to
 communicate back to controller.
 
-**Q5: Is Aviatrix Cloud Gateway a SaaS offer?**
+Is Aviatrix Cloud Gateway a SaaS offer?
+------------------------------------------
 
 
 No. Aviatrix Cloud Gateway is a software product that is deployed in
@@ -87,7 +95,8 @@ Onboarding
 
 
 
-**Q1: Where do I start?**
+Where do I start?
+-------------------
 
 
 The first time when you login, complete Onboarding process. It takes a
@@ -97,7 +106,8 @@ If you have a BYOL license or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Contact
 support@aviatrix.com if you do not have a customer ID.
 
-**Q2: What is an Aviatrix Cloud Account?**
+What is an Aviatrix Cloud Account?
+-----------------------------------
 
 
 An Aviatrix Cloud Account is specific and unique on the controller. It
@@ -109,7 +119,8 @@ An Aviatrix Cloud Account can correspond to multiple cloud account. For
 example, it can contain credentials for an AWS IAM account, Azure
 account and GCloud account.
 
-**Q3: How do I upgrade software?**
+How do I upgrade software?
+-------------------------------
 
 
 Click Settings -> Upgrade. This upgrades to the latest release of the
@@ -118,12 +129,13 @@ controller software.
 When a new release becomes available, an alert message appears on
 Dashboard. An email will also be sent to the admin of the controller.
 
-**Q4: Is there a reference design example?**
-
+Is there a reference design example?
+---------------------------------------
 
 Check out docs.aviatrix.com.
 
-**Q5: What is the support model?**
+What is the support model?
+-----------------------------
 
 
 For support, send email to
@@ -137,9 +149,8 @@ Logging and Monitoring
 ======================
 
 
-
-
-**Q1: How do I forward syslog events to my Logstash server?**
+How do I forward syslog events to my Logstash server?
+---------------------------------------------------------
 
 
 Click on Settings-> Logging ->LogStash logging and input the required
@@ -148,7 +159,8 @@ gateways syslog and auth log to a Logstash server.
 
 SUMO Logic, Splunk, DataDog and rSyslog are also supported.
 
-**Q2: What are the monitoring capabilities?**
+What are the monitoring capabilities?
+--------------------------------------
 
 Encrypted tunnel (peering and site2cloud) status is monitored. When a tunnel status changes, an alert email is sent to the controller admin.
 
@@ -157,7 +169,8 @@ the user VPN connectivity history is displayed.
 
 You can also disconnect a user from the dashboard.
 
-**Q3: Can alert email be sent to a different email address?**
+Can alert email be sent to a different email address?
+------------------------------------------------------
 
 Yes, you can choose an alternative email address to send alert messages.
 This is useful if the controller admin is different from the operation team.
@@ -167,19 +180,22 @@ Administration
 ==============
 
 
-**Q1: Can there be multiple admins?**
+Can there be multiple admins?
+--------------------------------
 
 
 Yes. Username “admin” is the default admin user. But you can create
 multiple users with admin privilege.
 Follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_ to learn more about setting up multiple admin users.
 
-**Q2: Is there 2FA support to log in to the console?**
+Is there 2FA support to log in to the console?
+------------------------------------------------
 
 
 Yes. In addition to password login, DUO authentication and LDAP are supported.
 
-**Q3: Can there be read only account for operation team?**
+Can there be read only account for operation team?
+---------------------------------------------------
 
 Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select "read_only" from the drop down menu. This user account will have views to all pages but cannot make changes to any configurations.
 

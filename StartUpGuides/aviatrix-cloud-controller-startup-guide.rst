@@ -54,7 +54,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
 .. note::
 
-   You can also launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
+   If you select neither BYOL or 5-tunnel AMI, currently you need to launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
 ..
 
  3.1. If you selected BYOL, download the `aviatrix-aws-quickstart.json <https://raw.githubusercontent.com/AviatrixSystems/AWSQuickStart/master/aviatrix-aws-quickstart.json>`_ file and save it locally. Check out our `instructions on GitHub. <https://github.com/AviatrixSystems/AWSQuickStart#aviatrix---aws-quickstart-script-for-cloudformation>`_
