@@ -69,7 +69,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
    |imageCFCreate|
 
- 3.6. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you select.  
+ 3.6. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you selected.  
 
    |imageCFSelectTemplate-S3|
 
