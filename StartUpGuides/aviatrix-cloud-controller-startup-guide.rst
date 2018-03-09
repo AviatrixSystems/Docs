@@ -38,11 +38,10 @@ Before you get started, you'll need to accept the terms of the Aviatrix license 
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
 
- 1.3.  Click `Manual Launch` and then `Accept Software Terms`.
+ 1.3.  Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue to the next step in this guide. 
 
     |imageAwsMarketplaceAcceptTerms|
 
- 1.4.  Once accepted, you can return to the AWS console.  We will launch the Controller from the Marketplace.
 
 2. DNS Server Connectivity Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
