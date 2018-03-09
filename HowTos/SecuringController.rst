@@ -3,28 +3,26 @@
    :keywords: Security VPN Management access
 
 
-=============================
-Securing Aviatrix Controller
-=============================
+=====================================
+Securing Aviatrix Controller for SAML 
+=====================================
 
-Best practices dictate that the Aviatrix Controller should not be widely
-accessible from the internet. Access should be limited to (1) management
-range of IPs coming from the Enterprise or the Datacenter, and (2) access
-to/from each of the deployed gateways for general communication/keep-alives.
+Best practices calls for the Aviatrix Controller be not widely
+accessible from the internet. Access on TCP port 443 should be limited to 
 
-However, the exception to that rule is the VPN Access as users need to
-authenticate to the controller from wherever they connect, whether at home
-or the local Starbucks.
+  - management range of IPs coming from the Enterprise or the Datacenter, and 
+  - access to/from each of the deployed gateways for general communication/keep-alives.
+
+
+However, the exception to that rule is when `Aviatrix SAML clients <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_ are 
+used for user VPN access. In this case, the VPN user first contacts the Controller which then redirects user browser traffic to an IDP. This initial traffic runs on TCP port 443 and as vpn users are located in off site locations, the Controller TCP port 443 needs to open to all which may cause security concerns.
+
 
 In order to accommodate for both functions in a secure manner, please follow the
-instructions below to secure your controller.
+instructions below to secure your controller when SAML client is being used.
 
 Pre-requisites
 ======================
-
-Before you start, make sure you have the latest software by checking the
-Dashboard. If an alert message (!New) appears, click !New to download
-the latest software.
 
 We assume you already know how to deploy Aviatrix solution, if you need
 help, check out this `reference
@@ -35,15 +33,15 @@ We also assume that you know how to create resources in the AWS console
 Configuration Workflow
 ======================
 
-#. Go to your AWS console and under EC2->Load Balancer, click on  "Create Load Balancer":
+1. Go to your AWS console and under EC2->Load Balancer, click on  "Create Load Balancer":
 
-  Type: Application Load Balancer
+   Type: Application Load Balancer
 
-  Name: << Insert LB name >>
+   Name: << Insert LB name >>
 
-  Scheme: internet-facing
+   Scheme: internet-facing
 
-  IP address Type: ipv4
+   IP address Type: ipv4
 
 #. Add Listener HTTPS port 443
 
@@ -64,33 +62,34 @@ Configuration Workflow
 
 #. Configure security groups to make it accessible to the world
 
-    Type: ALL TCP
+     Type: ALL TCP
 
-    Protocol: TCP
-
-    Port Range: 0-65535
-
-    Source: 0.0.0.0/0
+     Protocol: TCP
+ 
+     Port Range: 0-65535
+ 
+     Source: 0.0.0.0/0
 
 #. Click next.
 
-#. On the Configure routing page Create a new target group for HTTPS:443	:
+#. On the Configure routing page, create a new target group for HTTPS:443	:
 
-    Target group: New target group
+     Target group: New target group
+ 
+     Name:  << Insert Target group name >>
 
-    Name:  << Insert Target group name >>
+     Protocol: HTTPS
 
-    Protocol: HTTPS
+     Port: 443
 
-    Port: 443
+     Target type: instance
 
-    Target type: instance
+#. Health checks:
 
-#. Heal checks:
 
-    Protocol: HTTPS
+     Protocol: HTTPS
 
-    Path: /
+     Path: /
 
 #. Click next
 
