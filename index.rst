@@ -237,7 +237,7 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
    Solutions/aviatrix_aws_transitvpc
-
+   Solutions/egress_transit_gateway
 
 .. _Whitepapers:
 
