@@ -81,6 +81,12 @@ addresses, in addition to your own public IP address. This is because
 gateways launched from the controller use its public IP address to
 communicate back to controller.
 
+.. Important::
+
+ The Controller security group inbound rules must be open to all when a new gateway is launched as the EIP of the new gateway is unknown prior to launch. You can add that EIP after the gateway is launched for the Controller inbound security rule. 
+
+..
+
 Is Aviatrix Cloud Gateway a SaaS offer?
 ------------------------------------------
 
