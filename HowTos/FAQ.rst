@@ -70,9 +70,13 @@ Login with username “admin”. The first time password is the private IP
 address of the controller instance. You are required to change the
 password at your first login.
 
-How do I secure the Controller?
----------------------------------
+How do I secure the Controller access?
+--------------------------------------
 
+There are several ways to secure your Controller access, as discussed below. 
+
+1. Reduce the access scope
+############################
 
 Only TCP port 443 needs to be opened for inbound traffic to the
 controller. If you wish to reduce the scope of source addresses by
@@ -86,6 +90,36 @@ communicate back to controller.
  The Controller security group inbound rules must be open to all when a new gateway is launched as the EIP of the new gateway is unknown prior to launch. You can add that EIP after the gateway is launched for the Controller inbound security rule. 
 
 ..
+
+If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller. 
+
+2. Use signed certificate
+##########################
+
+Avitrix Controller is shipped with a self-signed certificate, therefore there is a "Note Secure" warning sign shown on your browser console. 
+
+You can change that by importing your own signed certificate. To do so, go to Settings ->Advanced -> Security. At the panel "CERTIFICATE REQUEST - SEND TO CERTIFICATE AUTHORITY", send a CSR (certificate sign request), then follow the instruction to import CA and signed Controller certificate. 
+
+Remove less secure TLS version
+###############################
+
+You can disable access from browser that runs TLSv1 and TLSv1.1 and only support TLSv1.2. To do so, go to Settings ->Advanced -> Security -> TLS VERSIONS SUPPORT. Uncheck TLSv1 and TLSv1.1. 
+
+3. Enable LDAP or DUO second factor to login in
+################################################
+
+In addition to username and password login credentials to the Controller, you can also enable LDAP or DUO authentication. 
+
+To enable LDAP authentication, go to Settings -> Controller -> LDAP Login and fill the form. 
+
+To enable DUO authentication, go to Settings -> Controller -> 2FA Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to setup DUO. 
+
+4. Create Read-only accounts
+#############################
+
+You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup. 
+
+
 
 Is Aviatrix Cloud Gateway a SaaS offer?
 ------------------------------------------
