@@ -100,12 +100,12 @@ Avitrix Controller is shipped with a self-signed certificate, therefore there is
 
 You can change that by importing your own signed certificate. To do so, go to Settings ->Advanced -> Security. At the panel "CERTIFICATE REQUEST - SEND TO CERTIFICATE AUTHORITY", send a CSR (certificate sign request), then follow the instruction to import CA and signed Controller certificate. 
 
-Remove less secure TLS version
-###############################
+3. Remove less secure TLS version
+##################################
 
 You can disable access from browser that runs TLSv1 and TLSv1.1 and only support TLSv1.2. To do so, go to Settings ->Advanced -> Security -> TLS VERSIONS SUPPORT. Uncheck TLSv1 and TLSv1.1. 
 
-3. Enable LDAP or DUO second factor to login in
+4. Enable LDAP or DUO second factor to login in
 ################################################
 
 In addition to username and password login credentials to the Controller, you can also enable LDAP or DUO authentication. 
@@ -114,7 +114,7 @@ To enable LDAP authentication, go to Settings -> Controller -> LDAP Login and fi
 
 To enable DUO authentication, go to Settings -> Controller -> 2FA Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to setup DUO. 
 
-4. Create Read-only accounts
+5. Create Read-only accounts
 #############################
 
 You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup. 
