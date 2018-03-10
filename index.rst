@@ -225,7 +225,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/DatadogIntegration
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
-   HowTos/SecuringController
+   HowTos/controller_security_for_SAML
 
 .. _Solutions:
 
