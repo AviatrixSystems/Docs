@@ -3,9 +3,9 @@
    :keywords: Security VPN Management access
 
 
-=====================================
-Securing Aviatrix Controller for SAML 
-=====================================
+=======================================================
+Aviatrix Controller Security for SAML Client Deployment
+=======================================================
 
 Best practices calls for the Aviatrix Controller be not widely
 accessible from the internet. Access on TCP port 443 should be limited to 
@@ -24,14 +24,12 @@ instructions below to secure your controller when SAML client is being used.
 Pre-requisites
 ======================
 
-We assume you already know how to deploy Aviatrix solution, if you need
-help, check out this `reference
-design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Networking+Reference+Design.pdf>`__.
+ - We assume you already know how to deploy Aviatrix solution, if you need help, check out this `reference design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Networking+Reference+Design.pdf>`__.
 
-We also assume that you know how to create resources in the AWS console
+ - You have deployed Aviatrix SAML client for your user VPN access. 
 
-Configuration Workflow
-======================
+Configuration Workflow when SAML is configured
+===============================================
 
 1. Go to your AWS console and under EC2->Load Balancer, click on  "Create Load Balancer":
 
