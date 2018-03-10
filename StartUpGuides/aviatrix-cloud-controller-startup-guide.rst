@@ -58,7 +58,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 
  3.1. If you selected BYOL, the CloudFormation is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template. 
 
- 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation  template is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
+ 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation template is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template 
 
  3.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
@@ -108,7 +108,7 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Once you have the Aviatrix Controller installed in your AWS account, you will next need to step through a couple of configuration items.
 
-4.1. Open a browser window to https://&lt;AviatrixControllerEIP found in the Outputs&gt;/
+4.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
 
 .. tip::
    You may receive a warning that the connection may not be secure.  This is because the certificate is self-signed by the Controller.  It is safe to continue to the page.
