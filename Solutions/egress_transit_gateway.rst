@@ -4,13 +4,13 @@
 
 
 ======================================================================
-egress Transit VPC / Central NAT Gateway
+Egress Transit VPC / Central NAT Gateway
 ======================================================================
 
 Overview
 --------
 
-When making requests from your AWS or Azure environment to a partner or customer, the receiving server may have a firewall with a whitelist of allowed IP addresses.  If that is the case, it is often better to provide a small set of known IP addresses that you will be making requests from to make it easier on the IT team on the receiving end.
+When making API requests from your AWS or Azure environment to a partner or customer, the receiving server may have a firewall with a whitelist of allowed IP addresses.  If that is the case, it is often better to provide a small set of known IP addresses that you will be making requests from to make it easier on the IT team on the receiving end.
 
 This is especially challenging to do if you have instances or containers in multiple VPCs/VNets spread out across a region (which is often the case as multi-VPC architectures become more prevalent).  Out of the box, you will most likely be required to provide a new IP address for every VPC or VNet.  However, with Aviatrix, you can narrow the outbound VPC traffic to just a handful of IP addresses.
 
@@ -46,8 +46,8 @@ If you have already installed an Aviatrix Controller, you can skip this step.
 
 #. Follow the steps in `this guide <../StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ to install a Controller in a VPC of your choice (a shared services VPC, for example)
 
-egress VPC
-##########
+Create an Aviatrix Gateway in the egress VPCs
+############################################################################
 
 |imageEgressVPC|
 
