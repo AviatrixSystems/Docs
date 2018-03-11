@@ -51,7 +51,7 @@ Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue 
 2. Launch the Controller with CloudFormation Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL link address for the AMI you intend to launch. This URL link address is needed when you create the cloudformation stack in the next step. 
+Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL link address for the AMI you intend to launch. This URL link address is needed when you create the cloudformation stack in the next few steps. 
 
 ============================================                  ================================
 **Controller AMI Name**                                       **CloudFormation Template URL**
