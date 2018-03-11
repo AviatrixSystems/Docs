@@ -51,7 +51,7 @@ Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue 
 2. Launch the Controller with CloudFormation Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL for the AMI you select and used in the next few steps. 
+Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL for the AMI you selected for use in the next few steps. 
 
 ============================================                  ================================
 **AMI Name**                                                  **CloudFormation Template URL**
@@ -90,7 +90,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
- 2.9. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix roles.
+ 2.9. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
  2.10. Click `Next`
 
@@ -104,7 +104,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
      
 .. Warning::
 
-  The Controller instance has Termination Protection enabled. If you need to delete the stack, make sure you first disable the Controller instance Termination Protection at the AWS console.
+  The Controller instance has Termination Protection enabled. If you need to delete the stack, make sure you first disable the Controller instance Termination Protection at the AWS EC2 console.
 
 ..
 
@@ -119,7 +119,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
 3. Connect to the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Once you have the Aviatrix Controller installed in your AWS account, you will next need to step through a few init steps.
+Now that Aviatrix Controller instance has been launched, let's connect to it and go through a few init steps.
 
 3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
 
@@ -182,7 +182,7 @@ Enter the `Customer ID` in the field and click `Save`.
    
 4.4  Create an Cloud Account on the Controller 
 
-Continue the onboarding process, the next step is to provide the AWS credentials to the Controller so it can orchestrate an your behalf.
+Continue the onboarding process, the next step is to provide the AWS credentials to the Controller so it can orchestrate on your behalf.
 
 Fill out the fields as follows:
 
@@ -223,13 +223,16 @@ Once complete, click the `Create` button at the bottom of the form.
 |imageCreateAccount|
 
 
-Next Steps
-^^^^^^^^^^
-You are now ready to establish connectivity to/from the cloud.  For help getting started with your use case see:
+What's Next 
+^^^^^^^^^^^^
 
-- `User SSL VPN <../HowTos/uservpn.html>`__
-- `Transit Network <../HowTos/transitvpc_workflow.html>`__
-- `Egress Security Filter <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
+Congratulations!  
+You are now ready to establish connectivities to/from the cloud. Here are some of the things you can do:
+
+- `Build User SSL VPN <../HowTos/uservpn.html>`__
+- `Build Global Transit Network <../HowTos/transitvpc_workflow.html>`__
+- `Build Egress Security Filter <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
+- `Build your own site to cloud IPSEC connectivity <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
