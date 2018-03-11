@@ -51,10 +51,10 @@ Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue 
 2. Launch the Controller with CloudFormation Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL link address for the AMI you selected for use in the next few steps. 
+Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL link address for the AMI you intend to launch. This URL link address is needed when you create the cloudformation stack in the next step. 
 
 ============================================                  ================================
-**AMI Name**                                                  **CloudFormation Template URL**
+**Controller AMI Name**                                       **CloudFormation Template URL**
 ============================================                  ================================
 Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
 Inter-Region VPC Peering 2 Free Tunnel                        https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
