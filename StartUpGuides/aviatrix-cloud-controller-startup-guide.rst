@@ -1,6 +1,6 @@
 .. meta::
     :description: Install the Aviatrix Controller, 2 Gateways, and setup peering in AWS
-    :keywords: Aviatrix, AWS
+    :keywords: Aviatrix, AWS, Global Transit Network, AWS VPC Peering, VPC Peering, Egress Control, Egress firewall, OpenVPN, SSL VPN
 
 
 ==================================================================
@@ -8,15 +8,13 @@ AWS
 ==================================================================
 
 
-This guide will help you get started with Aviatrix in AWS.  If you have not installed an Aviatrix Controller in your environment and you'd like to get set up in AWS this is the right guide for you.
+This guide helps you get started with Aviatrix in AWS. If you have not installed an Aviatrix Controller in your environment and you'd like to get it set up in AWS this is the right guide for you.
 
-The Aviatrix Controller provides a single pane of glass for all your Cloud Networking tasks. Once you have a Controller installed in a VPC, you can launch Aviatrix gateways and build network connectivities. 
+The Aviatrix Controller provides a single pane of glass for all your cloud connectivity tasks. Once you have a Controller installed in a VPC, you can launch Aviatrix gateways and build your network. 
 
 To learn all Aviatrix solutions, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
-AWS Account
------------
-Before you start, you will need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
+Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
 
 .. Important::
 
@@ -58,7 +56,7 @@ Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte
 ==========================================                   ================================
 **AMI Name**                                                  **CloudFormation Template URL**
 ==========================================                   ================================
-Inter-Region VPC Peering 5 Tunnel License (Private Offer)    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
+Inter-Region VPC Peering 5 Tunnel License                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
 Inter-Region VPC Peering 2 Free Tunnel                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
 SSL VPN Server - 10 users                                    not available yet
 SSL VPN Server - 25 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
