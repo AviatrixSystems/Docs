@@ -126,12 +126,15 @@ Once you have the Aviatrix Controller installed in your AWS account, you will ne
 .. tip::
    You may receive a warning that the connection may not be secure.  This is because the certificate is self-signed by the Controller.  It is safe to continue to the page.
 
+..
+
    |imageControllerBrowserWarning|
 
 3.2. Login with the username `admin`.
 
 .. note::
    Use the `AviatrixControllerPrivateIP` as the password.  The `AviatrixControllerPrivateIP` is found in the Outputs section of the CloudFormation stack.
+..
    
    |imageCFOutputsWithPassword|
 
