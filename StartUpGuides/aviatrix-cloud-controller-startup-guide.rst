@@ -10,71 +10,80 @@ AWS
 
 This guide will help you get started with Aviatrix in AWS.  If you have not installed an Aviatrix Controller in your environment and you'd like to get set up in AWS this is the right guide for you.
 
+The Aviatrix Controller provides a single pane of glass for all your Cloud Networking tasks. Once you have a Controller installed in a VPC, you can launch Aviatrix gateways and build network connectivities. 
+
 To learn all Aviatrix solutions, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 AWS Account
 -----------
-Before you start, you will need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing account.
+Before you start, you will need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
 
-.. note::
+.. Important::
 
-   The Aviatrix Controller supports multiple AWS accounts.
-
-Install Software
-----------------------
+   We require this AWS IAM account has permissions to create AWS IAM roles, IAM policies and attach policies to the IAM roles. 
 
 Follow the steps below to install Aviatrix Software. 
 
-1. Accept the License Terms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Before you get started, you'll need to accept the terms of the Aviatrix license in the AWS Marketplace.  
+1. Subscribe to an Aviatrix AMI from AWS Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- 1.1. If you select BYOL AMI, go to the `AWS Marketplace Aviatrix BYOL <https://aws.amazon.com/marketplace/pp?sku=zemc6exdso42eps9ki88l9za>`_, click `Continue to Subscribe`.
+Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix", you should see a list of Aviatrix marketplace offerings.
 
-   |imageAwsMarketplaceContinuetoSubscribe|
-
- 1.2  If you select Aviatrix Private Offer or Inter-Region VPC Peering 5 Tunnel, go to `AWS Marketplace Aviatrix Private Offer <https://aws.amazon.com/marketplace/pp/B0155GB0MA>`_, click `Continue to Subscribe`.
+For example, if you select Aviatrix Private Offer or Inter-Region VPC Peering 5 Tunnel AMI, select `AWS Marketplace Aviatrix Private Offer <https://aws.amazon.com/marketplace/pp/B0155GB0MA>`_, click `Continue to Subscribe`.
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
-
- 1.3.  Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue to the next step in this guide. 
+Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue to the next step in this guide. 
 
     |imageAwsMarketplaceAcceptTerms|
 
 
-2. DNS Server Connectivity Check
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server. 
+.. Important::
 
-3. Install the Controller with CloudFormation Template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Aviatrix Controller acts as a single pane of glass for all of your Cloud Networking tasks.  Just one Controller is needed and it is installed in a VPC.  Once you have a Controller installed, you can provision Gateways and build network connectivities. The steps outlined below install Aviatrix Controller in your AWS account.
+  We recommend you to launch all AMIs by CloudFormation template provided by Aviatrix, as shown in the following table. 
 
-.. note::
-
-   If you select neither BYOL or 5-tunnel AMI, currently you need to launch the controller `manually <http://docs.aviatrix.com/StartUpGuides/aws_manual_startup_guide.html>`__.
 ..
 
- 3.1. If you selected BYOL, the CloudFormation is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template. 
+.. tip::
 
- 3.2  If you selected Private Offer or Aviatrix Inter-Region VPC Peering 5 Tunnel, the CloudFormation template is stored on S3 with this URL: https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template 
+  If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server. 
 
- 3.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
+..
 
- 3.4. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+2. Launch the Controller with CloudFormation Template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- 3.5. Click `Create new stack` or `Create Stack`
+Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL for the AMI you select and used in the next few steps. 
+
+==========================================                   ================================
+**AMI Name**                                                  **CloudFormation Template URL**
+==========================================                   ================================
+Inter-Region VPC Peering 5 Tunnel License (Private Offer)    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
+Inter-Region VPC Peering 2 Free Tunnel                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
+SSL VPN Server - 10 users                                    not available yet
+SSL VPN Server - 25 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
+SSL VPN Server - 50 users                                    not available yet
+SSL VPN Server - 100 users                                   https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json
+SSL VPN Server Bundle (10 users + 1 peering)                 https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
+Cloud Interconnect BYOL                                      https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
+EC2 FlightPath Tool                                          https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-ec2-flightpath-tool.json 
+==========================================                   ================================
+
+ 2.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
+
+ 2.4. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+
+ 2.5. Click `Create new stack` or `Create Stack`
 
    |imageCFCreate|
 
- 3.6. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you selected.  
+ 2.6. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you selected in the above table.  
 
    |imageCFSelectTemplate-S3|
 
- 3.7. Click `Next`
+ 2.7. Click `Next`
 
- 3.8. Populate the Stack name and select a VPC, subnet, and a keypair.
+ 2.8. Populate the Stack name and select a VPC, subnet, and a keypair.
 
    |imageCFSpecifyDetails|
 
@@ -83,92 +92,98 @@ The Aviatrix Controller acts as a single pane of glass for all of your Cloud Net
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
- 3.9. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix roles.
+ 2.9. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix roles.
 
- 3.10. Click `Next`
+ 2.10. Click `Next`
 
- 3.11. Optionally, add any key/value tags as required
+ 2.11. Optionally, add any key/value tags as required
 
- 3.12. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
+ 2.12. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 3.13. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+ 2.13. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
 
   |imageCFEnableTermProtection|
      
+.. Warning::
 
- 3.14. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
+  The Controller instance has Termination Protection enabled. If you need to delete the stack, make sure you first disable the Controller instance Termination Protection at the AWS console.
+
+..
+
+ 2.14. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
- 3.15. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
+ 2.15. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
    
    |imageCFComplete|
 
-4. Configure the Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Once you have the Aviatrix Controller installed in your AWS account, you will next need to step through a couple of configuration items.
 
-4.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
+3. Connect to the Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Once you have the Aviatrix Controller installed in your AWS account, you will next need to step through a few init steps.
+
+3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
 
 .. tip::
    You may receive a warning that the connection may not be secure.  This is because the certificate is self-signed by the Controller.  It is safe to continue to the page.
 
    |imageControllerBrowserWarning|
 
-4.2. Login with the username `admin`.
+3.2. Login with the username `admin`.
 
 .. note::
    Use the `AviatrixControllerPrivateIP` as the password.  The `AviatrixControllerPrivateIP` is found in the Outputs section of the CloudFormation stack.
    
    |imageCFOutputsWithPassword|
 
-4.3. Enter your email address.  This email will be used for alerts as well as password recovery (if needed).
+3.3. Enter your email address.  This email will be used for alerts as well as password recovery (if needed).
 
    |imageControllerEnterEmail|
 
-4.4. Next, you will be prompted to change the admin password.
+3.4. Next, you will be prompted to change the admin password.
 
    |imageControllerChangePassword|
 
-4.5. If you have an HTTP or HTTPS proxy, enter it on the next page.  Otherwise, click `Skip`.
+3.5. If you have an HTTP or HTTPS proxy, enter it on the next page.  Otherwise, click `Skip`.
 
-4.6. Finally, the Controller will upgrade itself to the latest version after you click on `Run`.
+3.6. Finally, the Controller will upgrade itself to the latest version after you click on `Run`. Wait for a few minutes for the process to finish. 
 
    |imageControllerUpgrade|
 
 .. tip::
    The Controller upgrade takes about 3-5 minutes.  Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
 
-5. Enter Your Customer ID
-^^^^^^^^^^^^^^^^^^^^^^^^^
-.. tip::
-   If you do not have a Customer ID, please contact support@aviatrix.com to get a trial license.
-   
-5.1. Once logged in to the Controller, click on the `Onboarding` navigation item.
+..
+
+4. Onboarding
+^^^^^^^^^^^^^
+
+4.1 Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item.
 
    |imageAviatrixOnboardNav|
 
-5.2. Click the AWS icon.
+4.2 Click the AWS icon.
 
    |imageOnboardAws|
 
-5.3. Enter the `Customer ID` in the field and click `Save`.
+
+4.3  Enter Your Customer ID (Only apply to BYOL AMI)
+
+.. tip::
+
+   This step only applies if you select BYOL AMI. Contact support@aviatrix.com to get a trial license if you do not have one.
+..
+   
+Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
-6. Connect AWS to the Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The next step is to provide the AWS credentials to the Controller so it can orchestrate an your behalf.
+4.4  Create an Cloud Account on the Controller 
 
-6.1. Click on the `Onboarding` navigation item.
+Continue the onboarding process, the next step is to provide the AWS credentials to the Controller so it can orchestrate an your behalf.
 
-   |imageAviatrixOnboardNav|
-
-6.2. Click the AWS icon.
-
-   |imageOnboardAws|
-
-6.3. Fill out the fields as follows:
+Fill out the fields as follows:
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
@@ -188,11 +203,14 @@ The next step is to provide the AWS credentials to the Controller so it can orch
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
   +-------------------------------+--------------------------------------------+
-  | aviatrix-role-app ARN         | Enter the value from the CloudFormation    |
-  |                               | outputs `AviatrixRoleAppARN`               |
+  | aviatrix-role-app ARN         | This field is auto filled.                 |
+  |                               | If not, enter the valude from the          |
+  |                               | CloudFormation output outputs              |
+  |                               | `AviatrixRoleAppARN`                       |
   +-------------------------------+--------------------------------------------+
-  | aviatrix-role-ec2 ARN         | Enter the value from the CloudFormation    |
-  |                               | outputs `AviatrixRoleEC2ARN`               |
+  | aviatrix-role-ec2 ARN         | This filed is auto filled.                 |
+  |                               | If not, enter the value from the           |
+  |                               | CloudFormation outputs `AviatrixRoleEC2ARN`|
   +-------------------------------+--------------------------------------------+
 
 .. tip::
