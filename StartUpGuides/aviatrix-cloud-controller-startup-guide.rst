@@ -53,19 +53,19 @@ Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue 
 
 Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte URL stored in S3. Copy the URL for the AMI you select and used in the next few steps. 
 
-==========================================                   ================================
+============================================                  ================================
 **AMI Name**                                                  **CloudFormation Template URL**
-==========================================                   ================================
-Inter-Region VPC Peering 5 Tunnel License                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
-Inter-Region VPC Peering 2 Free Tunnel                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
-SSL VPN Server - 10 users                                    not available yet
-SSL VPN Server - 25 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
-SSL VPN Server - 50 users                                    not available yet
-SSL VPN Server - 100 users                                   https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json
-SSL VPN Server Bundle (10 users + 1 peering)                 https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
-Cloud Interconnect BYOL                                      https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
-EC2 FlightPath Tool                                          https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-ec2-flightpath-tool.json 
-==========================================                   ================================
+============================================                  ================================
+Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
+Inter-Region VPC Peering 2 Free Tunnel                        https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
+SSL VPN Server - 10 users                                     available soon 
+SSL VPN Server - 25 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
+SSL VPN Server - 50 users                                     available soon
+SSL VPN Server - 100 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json
+SSL VPN Server Bundle (10 users + 1 peering)                  https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
+Cloud Interconnect BYOL                                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
+EC2 FlightPath Tool                                           https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-ec2-flightpath-tool.json 
+============================================                  ================================
 
  2.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
