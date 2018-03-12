@@ -58,9 +58,9 @@ Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte
 ============================================                  ================================
 Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
 Inter-Region VPC Peering 2 Free Tunnel                        https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
-SSL VPN Server - 10 users                                     available soon 
+SSL VPN Server - 10 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-sslvpn-10-users.template 
 SSL VPN Server - 25 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
-SSL VPN Server - 50 users                                     available soon
+SSL VPN Server - 50 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-ssl-vpn-server-50-user.template
 SSL VPN Server - 100 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json
 SSL VPN Server Bundle (10 users + 1 peering)                  https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
 Cloud Interconnect BYOL                                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
