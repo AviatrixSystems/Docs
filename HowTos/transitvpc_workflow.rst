@@ -226,9 +226,8 @@ How to get started on AWS?
 
 Aviatrix Controller AMIs can be found on AWS Marketplace. 
 
-`Aviatrix Private Offer or Aviatrix Controller 5-tunnel Utility AMI. <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1520370771464&sr=0-7&ref_=srh_res_product_title>`_ can be launched from `the 5-tunnel CloudFormation template <https://github.com/AviatrixSystems/AWSMarketplace-5tunnel-CF>`_.
+Try out for 30 days on `Aviatrix Controller Inter-region VPC Peering 5-tunnel License.  <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1520370771464&sr=0-7&ref_=srh_res_product_title>`_ Follow the `Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ to launch the Controller instance and get started. 
  
-`Aviatrix Controller BYOL AMI. <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1520370707533&sr=0-1&ref_=srh_res_product_title>`_ can be launched from `the BYOL CloudFormation template <https://github.com/AviatrixSystems/AWSQuickStart>`_
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in
