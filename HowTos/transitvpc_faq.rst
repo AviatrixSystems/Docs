@@ -11,7 +11,7 @@ Why should I choose Transit architecture?
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In Transit architecture, there is one connection (not including the backup) between on-prem and a Transit VPC. Everything else (the Spoke VPCs to on-prem traffic) is routed through the Transit VPC.  
 
-The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time when you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks. 
+The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks. 
 
 How does the Aviatrix Global Transit Solution differ from Cisco's CSR-based solution?
 ----------------------------------------------------------------------------------------
