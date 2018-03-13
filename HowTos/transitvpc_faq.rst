@@ -143,7 +143,7 @@ How do I find out what routes are being propagated from on-prem?
 
 On-prem routes are propagated to VGW, which in turn are propagated to the Transit GW. There are two ways to see what learned routes are by Transit GW: 
 
-1. Go to Site2Cloud and select the connection you specified at Step 3 during the Transit Network Workflow. Scroll down and you will see the Learned Network. Search for a learned route by typing a specific CIDR. 
+1. Go to Site2Cloud and select the connection you specified at Step 3 during the Transit Network Workflow. Scroll down and you will see the Learned Network. Search for learned routes by typing a specific CIDR. 
 #. Go to Peering -> Transitive Peering. Click the box next to the Destination CIDR column for a specific Spoke VPC GW. The Learned Routes will be shown, and are searchable. 
 #. Go to Advanced Config -> BGP -> select a Transit GW, and click Detail
 
