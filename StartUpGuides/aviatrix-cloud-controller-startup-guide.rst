@@ -67,21 +67,21 @@ Cloud Interconnect BYOL                                       https://s3-us-west
 EC2 FlightPath Tool                                           https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-ec2-flightpath-tool.json 
 ============================================                  ================================
 
- 2.3. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
+ 2.1. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
- 2.4. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+ 2.2. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
 
- 2.5. Click `Create new stack` or `Create Stack`
+ 2.3. Click `Create new stack` or `Create Stack`
 
    |imageCFCreate|
 
- 2.6. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you selected in the above table.  
+ 2.4. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you selected in the above table.  
 
    |imageCFSelectTemplate-S3|
 
- 2.7. Click `Next`
+ 2.5. Click `Next`
 
- 2.8. Populate the Stack name and select a VPC, subnet, and a keypair.
+ 2.6. Populate the Stack name and select a VPC, subnet, and a keypair.
 
    |imageCFSpecifyDetails|
 
@@ -90,15 +90,15 @@ EC2 FlightPath Tool                                           https://s3-us-west
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
- 2.9. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
+ 2.7. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
- 2.10. Click `Next`
+ 2.8. Click `Next`
 
- 2.11. Optionally, add any key/value tags as required
+ 2.9. Optionally, add any key/value tags as required
 
- 2.12. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
+ 2.10. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 2.13. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+ 2.11. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
 
   |imageCFEnableTermProtection|
      
@@ -108,11 +108,11 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
 ..
 
- 2.14. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
+ 2.12. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
- 2.15. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
+ 2.13. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
    
    |imageCFComplete|
 
@@ -121,7 +121,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's connect to it and go through a few init steps.
 
-3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
+ 3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
 
 .. tip::
    You may receive a warning that the connection may not be secure.  This is because the certificate is self-signed by the Controller.  It is safe to continue to the page.
@@ -130,7 +130,7 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
 
    |imageControllerBrowserWarning|
 
-3.2. Login with the username `admin`.
+ 3.2. Login with the username `admin`.
 
 .. note::
    Use the `AviatrixControllerPrivateIP` as the password.  The `AviatrixControllerPrivateIP` is found in the Outputs section of the CloudFormation stack.
@@ -138,17 +138,17 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
    
    |imageCFOutputsWithPassword|
 
-3.3. Enter your email address.  This email will be used for alerts as well as password recovery (if needed).
+ 3.3. Enter your email address.  This email will be used for alerts as well as password recovery (if needed).
 
    |imageControllerEnterEmail|
 
-3.4. Next, you will be prompted to change the admin password.
+ 3.4. Next, you will be prompted to change the admin password.
 
    |imageControllerChangePassword|
 
-3.5. If you have an HTTP or HTTPS proxy, enter it on the next page.  Otherwise, click `Skip`.
+ 3.5. If you have an HTTP or HTTPS proxy, enter it on the next page.  Otherwise, click `Skip`.
 
-3.6. Finally, the Controller will upgrade itself to the latest version after you click on `Run`. Wait for a few minutes for the process to finish. 
+ 3.6. Finally, the Controller will upgrade itself to the latest version after you click on `Run`. Wait for a few minutes for the process to finish. 
 
    |imageControllerUpgrade|
 
@@ -160,18 +160,17 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
 4. Onboarding
 ^^^^^^^^^^^^^
 
-4.1 Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item.
-
-   |imageAviatrixOnboardNav|
-
-4.2 Click the AWS icon.
+4.1 Select AWS 
+--------------
+Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
 
    |imageOnboardAws|
 
 
-4.3  Enter Your Customer ID (Only apply to BYOL AMI)
+4.2  (Only apply to BYOL AMI) Enter Your Customer ID 
+-----------------------------------------------------
 
-.. tip::
+.. Note::
 
    This step only applies if you select BYOL AMI. Contact support@aviatrix.com to get a trial license if you do not have one.
 ..
@@ -180,32 +179,62 @@ Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
-4.4  Create an Cloud Account on the Controller 
+4.3  Setup a Management Account  
+------------------------------------------------
 
-Continue the onboarding process, the next step is to provide the AWS credentials to the Controller so it can orchestrate on your behalf.
+Why do you need a management account on the Controller?
+
+This maybe the most complex concept in the entire product, so apologize for any confusion, 
+and please let us explain. 
+
+The complexity comes from how AWS API works and how AWS manages IAM roles. 
+
+To build connectivity between two VPCs, the Aviatrix Controller launches Aviatrix gateway instances 
+in the respective VPCs, instructs the gateways to build an IPSEC tunnel and modifies AWS route tables 
+in each VPC. 
+
+To accomplish this task, the Controller needs your AWS credentials to issue AWS APIs, for example,  
+to launch the gateway instances and modify route tables, on your behalf. An AWS credential consists of 
+
+ - `The 12 digit AWS account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_
+ - `IAM roles and IAM policies <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_
+
+Each AWS credential is recorded on Aviatrix Controller in a managment account (or account for short). 
+
+If you need to connect two VPCs that are owned by one AWS account, you just need one AWS credential, i.e, one Aviatrix management account. 
+
+If you need to connect two VPCs that are owned by two different AWS accounts, you then need two AWS credentials, therfore two managment accounts.  
+
+.. Tip::
+
+ The managment account is also associated an email address and login password in case you want to login to only manage that one account. 
+
+..
+
+This step creates one managment account that corresponds to one AWS credential. 
 
 Fill out the fields as follows:
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
   +===============================+============================================+
-  | Account Name                  | The login/username for users who will have |
-  |                               | admin access to AWS resources.             |
-  |                               | For example, `AWSOpsTeam`.                 |
+  | Account Name                  | One account corresponds to one AWS account |
+  |                               | credential and the account name is unique  |
+  |                               | on the Controller.                         |
+  |                               | Example name: `AWSOpsTeam`.                |
   +-------------------------------+--------------------------------------------+
   | E-mail                        | The e-mail address for this team.          |
   +-------------------------------+--------------------------------------------+
-  | Password                      | Password for login to the controller.      |
+  | Password                      | Password for login to the Controller.      |
   +-------------------------------+--------------------------------------------+
   | Confirm Password              |                                            |
   +-------------------------------+--------------------------------------------+
-  | AWS Account Number            | You can find your account number           |
-  |                               | on the `AWS billing` page.                 |
+  | AWS Account Number            | The 12 digits AWS account number.          |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
   +-------------------------------+--------------------------------------------+
   | aviatrix-role-app ARN         | This field is auto filled.                 |
-  |                               | If not, enter the valude from the          |
+  |                               | If not, enter the value from the           |
   |                               | CloudFormation output outputs              |
   |                               | `AviatrixRoleAppARN`                       |
   +-------------------------------+--------------------------------------------+
@@ -214,9 +243,9 @@ Fill out the fields as follows:
   |                               | CloudFormation outputs `AviatrixRoleEC2ARN`|
   +-------------------------------+--------------------------------------------+
 
-.. tip::
+.. Note::
 
-   Each account can use a root account, IAM role, IAM administrator account or IAM user account with access privileges required by the Aviatrix solution. We strongly recommend you to use IAM role for security reasons.
+   Each managment account can corresponds to an AWS root account, IAM role, IAM administrator account or IAM user account with access privileges required by the Aviatrix solution. We strongly recommend you to use IAM role for security reasons.
   
 Once complete, click the `Create` button at the bottom of the form.
 
