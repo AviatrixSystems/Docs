@@ -16,31 +16,26 @@ credentials being compromised.
 This document provides instructions to create the IAM roles and policies. If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_
 
 .. important::
-   Make sure you read the `cross account section <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-iam-policies-and-roles-for-a-cross-account>`_ if you plan to support multiple AWS accounts on the Aviatrix Controller. 
+   Make sure you read the `cross account section <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-iam-policies-and-roles-for-a-cross-account>`_ if the AWS account on which the Aviatrix Controller is deployed is different from the AWS account on which Aviatrix gateway instance is launched. 
 
 To use IAM role, the Aviatrix Controller you launch must have IAM role
 enabled.
 
-Aviatrix Controller Launched from CloudFormation
-=================================================
+Aviatrix Controller Launched from CloudFormation 
+==========================================================
 
-If you launched the Aviatrix Controller from `our CloudFormation script  <https://github.com/AviatrixSystems/AWSQuickStart>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their associated policies have already been created at the CloudFormation stack launch time.
-When you create an Aviatrix cloud account on Aviatrix Controller console,
-simply follow these steps to retrieve the fields
-for "aviatrix-role-app ARN" and "aviatrix-role-ec2 ARN".
-
-  - Login to AWS portal
-  - Go to Services -> IAM -> Roles, you should see two roles have been created, aviatrix-role-app and aviatrix-role-ec2.
-  - Click role "aviatrix-role-app", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.
-  - Click role "aviatrix-role-ec2", copy the Role ARN string to fill in the field for "aviatrix-role-app ARN" when creating a cloud account.
-  - Done and may skip the rest of the guide.
+If the Aviatrix Controller is launched from `our CloudFormation template  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their associated policies are created after the CloudFormation stack creation completes.
 
 
-Setup IAM policies and roles for your own account
-==================================================
+If your `management account <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#setup-a-management-account>`_ 
+is the same as the AWS account on which the Controller is deployed, the `aviatrix-role-app ARN` field and the `aviatrix-role-ec2 ARN` are automatically filled and you are done. 
 
-If you launched or plan to launch the Aviatrix Controller manually
-with IAM role from AWS marketplace portal, proceed to complete the following steps.
+
+Setup IAM policies and roles manually on the Controller AWS account
+====================================================================
+
+If you plan to launch the Aviatrix Controller manually
+with IAM roles from AWS marketplace portal, proceed to complete the following steps.
 
 Before you launch an Aviatrix Controller from AWS marketplace, create
 the two necessary IAM roles and its corresponding policies.
@@ -144,23 +139,28 @@ APIs.
 Setup IAM policies and roles for a cross account
 ========================================================
 
-Aviatrix supports multiple AWS account. To launch a gateway for a
-different AWS account, you must create the same IAM policies and roles
-listed above for the second account (or third, fourth, etc.). The only
-difference is that the IAM role in the non-primary account must trust
-the primary account.
+Aviatrix supports multiple AWS accounts. To launch a gateway on an
+AWS account that is different from the AWS account where the Controller is launched, 
+you must create the same IAM policies and roles
+listed above for this gateway account. In addition, follow the steps below to establish 
+trust relationship between the two AWS accounts. 
+
+.. Note::
+
+ The primary AWS account is where the Controller is launched. 
+
+..
 
 **Instructions:**
 
-From the secondary account
+From the non-primary AWS account
 
-1. Create the IAM policies and roles listed above (Setup IAM policies
-   and roles for your own account).
+1. Create the IAM policies and roles listed above (`Setup IAM policies and roles for your own account <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-iam-policies-and-roles-for-your-own-account>`_).
 
-   a. Remember to note the ARN identifier for both roles.
+   a. Remember to note the ARN identifiers for both roles.
 
-2. Grant the primary account access to the aviatrix-role-app in the
-   second account
+2. Grant the primary (Controller) AWS account access to the aviatrix-role-app in the
+   non-primary account
 
    a. AWS console -> IAM service -> Roles > aviatrix-role-app
 
