@@ -17,9 +17,9 @@ How does the Aviatrix Transit Network solution differ from Cisco's CSR-based sol
 ----------------------------------------------------------------------------------------
 They differ in the following areas:
 
- - **Network Segmentation** - With the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
+ - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
 
- - **Connectivity Efficiency** - With the Aviatrix transit network solution, traffic between any two spoke VPCs are routed directly, as opposed to going through the transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottleneck and removes single failure points. 
+ - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points. 
 
  - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
@@ -27,7 +27,7 @@ They differ in the following areas:
 
  - **Monitoring** - The Aviatrix solution integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
 
- - **Scalability** - AWS has various limits in its infrastructure, such as a route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. The Aviatrix solution overcomes that limitation. 
+ - **Scalable** - AWS has various limits in its infrastructure, such as a route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. The Aviatrix solution overcomes that limitation. 
 
 For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
