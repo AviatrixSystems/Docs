@@ -9,26 +9,26 @@ Transit Network FAQ
 Why should I choose Transit architecture?
 -------------------------------------------
 
-Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In transit architecture, only a single connection (not including the backup) is needed between on-prem and a transit VPC. Everything else (the spoke VPCs to on-prem traffic) is routed through the transit VPC.  
+Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In Transit architecture, there is one connection (not including the backup) between on-prem and a Transit VPC. Everything else (the Spoke VPCs to on-prem traffic) is routed through the Transit VPC.  
 
-The alternative to transit architecture (often referred to as "flat" architecture) is to build one connection -- either IPSEC over Internet or Direct Connect -- each time a new VPC or VNet is spun up in the cloud. This requires changes to the on-prem edge, which results in a change control process that can take several days or weeks to complete. 
+The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time when you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks. 
 
 How does the Aviatrix Global Transit Solution differ from Cisco's CSR-based solution?
 ----------------------------------------------------------------------------------------
 
- - **Network Segmentation** - With the CSR-based solution, all spoke VPCs have connectivity to each other through the transit GW, even though these spoke VPCs belong to different AWS accounts or business teams. With the Aviatrix solution, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
+ - **Network Segmentation** - With the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
 
  - **Connectivity Efficiency** - With the Aviatrix transit network solution, traffic between any two spoke VPCs are routed directly, as opposed to going through the transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottleneck and removes single failure points. 
 
- - **Centralized Control** - With the Aviatrix solution, the Aviatrix Cloud Controller is the "single pane of glass" for all networking in the cloud.
+ - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
- - **Simplicity** - With Aviatrix, BGP is only deployed between transit GW and VGW. No spoke VPCs run the BGP protocol. This simplicity leads to stability. Workflow-based, step-by-step instructions allows for a transit VPC solution to be built out in minutes. 
+ - **Simplicity** - In Aviatrix's solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run the BGP protocol. Simplicity leads to stability. Workflow-based, step-by-step instructions help you build out a Transit VPC solution in minutes. 
 
- - **Monitoring** - Aviatrix integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to all popular central logging services. 
+ - **Monitoring** - The Aviatrix solution integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to your favorite central logging service. 
 
- - **Scalability** - AWS has some restrictions in its infrastructure. For instance, the route entry limit of 100 restricts how many on-prem CIDRs and VPC CIDRs can be carried on a transit GW. Aviatrix's solution overcomes that limitation. 
+ - **Scalability** - AWS has various limits in its infrastructure, such as a route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. The Aviatrix solution overcomes that limitation. 
 
-Read more about the differences in this blog post:  `How Does Aviatrix Global Transit Solution Differ from the CSR Solution? <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
+For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
 How does Aviatrix Transit Network work?
 ----------------------------------------
