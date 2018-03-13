@@ -13,8 +13,9 @@ Transit architecture is about building connectivity between cloud and on-prem in
 
 The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks. 
 
-How does the Aviatrix Global Transit Solution differ from Cisco's CSR-based solution?
+How does the Aviatrix Transit Network solution differ from Cisco's CSR-based solution?
 ----------------------------------------------------------------------------------------
+They differ in the following areas:
 
  - **Network Segmentation** - With the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, the spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
 
