@@ -269,6 +269,10 @@ For technical support, email us at support@aviatrix.com
 
 Enjoy!
 
+.. add in the disqus tag
+
+.. disqus::
+
 .. |imageAwsMarketplacePage1| image:: ZeroToConnectivityInAWS_media/aws_marketplace_page1.png
 .. |imageAwsMarketplaceContinuetoSubscribe| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1.png
 .. |imageAwsMarketplaceContinuetoSubscribe5tunnel| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1_5tunnel.png
