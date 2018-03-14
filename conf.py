@@ -38,7 +38,7 @@ import sphinx_rtd_theme
 # ones.
 #extensions = []
 
-#extensions = ['sphinxcontrib.disqus']
+extensions = ['sphinxcontrib.disqus']
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -104,7 +104,7 @@ html_theme = "sphinx_rtd_theme"
 
 #html_theme_path = [better_theme_path]
 #html_theme = 'better'
-html_style  = 'aviatrix_theme.css'
+#html_style  = 'aviatrix_theme.css'
 # make sure search results for relative urls link to docs.aviatrix.com
 html_use_opensearch = 'https://docs.aviatrix.com'
 
