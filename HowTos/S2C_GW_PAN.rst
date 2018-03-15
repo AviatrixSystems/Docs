@@ -61,7 +61,7 @@ Configuration Workflow
 
 |
 | 5. Log into PAN-VM and configure it as following:
- 
+| 
 | 5.1 Go to **Network->Interface->Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
 
 |image0|
@@ -143,9 +143,9 @@ Configuration Workflow
 ===============================     =================================================================
 
 | 5.7 Commit the configuration.
-
+|
 6. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with PAN-VM LAN port as the gateway.
-
+|
 7. Send traffic between VPC1 and VPC2 private subnets. At Aviatrix Controller, go to **Site2Cloud** page to verify the site2cloud connection status. 
 
 |image8|
