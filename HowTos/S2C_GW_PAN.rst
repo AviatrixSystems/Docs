@@ -4,8 +4,9 @@
 
 
 ==============================
-Network Topology
+Site2Cloud Network Topology
 ==============================
+
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Palo Alto Netowrks (PAN) Firewall. To simulate an on-prem PAN Firewall, we use PAN VM at AWS VPC.
 
 Network setup is as following:
@@ -26,8 +27,10 @@ Network setup is as following:
     
     VPC2 Private Subnet CIDR: 10.13.1.0/24
 
+
 Configuration Workflow
 ======================
+
 1. Launch PAN-VM with two network interfaces - One interface serves as WAN port and is in VPC1 public subnet. The other interface serves as LAN port and is in VPC1 private subnet. Collect the public IP address of the WAN port.
 
 2. At Aviatrix Controller, go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC2 public subnet. Collect both public and private IP address of the Gateway.
@@ -60,7 +63,7 @@ Configuration Workflow
 
 |image0|
 
-=================================================================
+===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
   Interface Name                    tunnel.1
@@ -68,7 +71,9 @@ Configuration Workflow
   Security Zone                     Select the layer 3 internal zone from which traffic originates
 ===============================     =================================================================
 
-Note: If the tunnel interface is in a zone different from the one where the traffic will originate, a policy needs to be created to allow the traffic to flow from the source zone to the zone containing the tunnel interface.
+.. note:: 
+
+ If the tunnel interface is in a zone different from the one where the traffic will originate, a policy needs to be created to allow the traffic to flow from the source zone to the zone containing the tunnel interface.
 
 5.2 Go to **Network->Network Profiles->IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters. 
 
@@ -103,7 +108,7 @@ Note: If the tunnel interface is in a zone different from the one where the traf
 
 |image5|
 
-=================================================================
+===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
   Tunnel Interface                  Tunnel interface create at Step 5.1
@@ -115,7 +120,7 @@ At "Proxy IDs" window:
 
 |image6|
 
-=================================================================
+===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
   Local                             VPC1 private subnet CIDR
@@ -127,7 +132,7 @@ At "Proxy IDs" window:
 
 |image7|
 
-=================================================================
+===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
   Destination                       VPC2 private subnet CIDR
@@ -144,44 +149,42 @@ For troubleshooting, go to **Site2Cloud->Diagnostics** and select various comman
 
 |image9|
 
-.. |image0| image::s2c_gw_pan_media/reate_Tunnel_Interface.PNG
+.. |image0| image:: s2c_gw_pan_media/reate_Tunnel_Interface.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image1| image::IKE_Crypto_Profile.PNG 
+.. |image1| image:: s2c_gw_pan_media/IKE_Crypto_Profile.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image2| image::IKE_Gateway_1.PNG
+.. |image2| image:: s2c_gw_pan_media/IKE_Gateway_1.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image3| image::IKE_Gateway_2.PNG
+.. |image3| image:: s2c_gw_pan_media/IKE_Gateway_2.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image4| image::IPSec_Crypto_Profile.PNG
+.. |image4| image:: s2c_gw_pan_media/IPSec_Crypto_Profile.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image5| image::IPSec_Tunnel_1.PNG
+.. |image5| image:: s2c_gw_pan_media/IPSec_Tunnel_1.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image6| image::IPSec_Tunnel_2.PNG
+.. |image6| image:: s2c_gw_pan_media/IPSec_Tunnel_2.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image7| image::Static_Route.PNG
+.. |image7| image:: s2c_gw_pan_media/Static_Route.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image8| image::Verify_S2C.PNG
+.. |image8| image:: s2c_gw_pan_media/Verify_S2C.PNG
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image9| image::Troubleshoot_S2C.PNG
+.. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
    :width: 5.55625in
-   :height: 3.26548in
-
-.. disqus::
+   :height: 3.2654.. disqus::
