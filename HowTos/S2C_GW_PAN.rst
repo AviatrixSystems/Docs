@@ -3,9 +3,9 @@
    :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, PAN
 
 
-======================================================
-Site2Cloud Network Topology (Aviatrix Gateway --- PAN)
-======================================================
+=============================================
+Site2Cloud Network (Aviatrix Gateway --- PAN)
+=============================================
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Palo Alto Netowrks (PAN) Firewall. To simulate an on-prem PAN Firewall, we use a PAN VM at AWS VPC.
 
@@ -13,28 +13,28 @@ Network setup is as following:
 
 **VPC1 (with Aviatrix Gateway)**
 
-    VPC1 CIDR: 10.0.0.0/16
+    *VPC1 CIDR: 10.0.0.0/16*
     
-    VPC1 Public Subnet CIDR: 10.0.1.0/24
+    *VPC1 Public Subnet CIDR: 10.0.1.0/24*
     
-    VPC1 Private Subnet CIDR: 10.0.2.0/24
+    *VPC1 Private Subnet CIDR: 10.0.2.0/24*
 
 **VPC2 (with PAN-VM)**
 
-    VPC2 CIDR: 10.13.0.0/16
+    *VPC2 CIDR: 10.13.0.0/16*
     
-    VPC2 Public Subnet CIDR: 10.13.0.0/24
+    *VPC2 Public Subnet CIDR: 10.13.0.0/24*
     
-    VPC2 Private Subnet CIDR: 10.13.1.0/24
+    *VPC2 Private Subnet CIDR: 10.13.1.0/24*
 
 
 Configuration Workflow
 ======================
 
-1. Launch PAN-VM with two network interfaces - One interface serves as WAN port and is in VPC1 public subnet. The other interface serves as LAN port and is in VPC1 private subnet. Collect the public IP address of the WAN port.
+1. Launch PAN-VM with at least two network interfaces - One interface serves as WAN port and is in VPC2 public subnet. The other interface serves as LAN port and is in VPC2 private subnet. Collect the public IP address of the WAN port.
 
 
-2. At Aviatrix Controller, go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC2 public subnet. Collect both public and private IP address of the Gateway.
+2. At Aviatrix Controller, go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC1 public subnet. Collect both public and private IP address of the Gateway.
 
 
 3. At Aviatrix Controller, go to **site2cloud** and click **Add New** to create a site2cloud connection:
@@ -42,9 +42,9 @@ Configuration Workflow
 ===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
-  VPC ID/VNet Name                  Choose VPC ID of VPC #2
+  VPC ID/VNet Name                  Choose VPC ID of VPC1
   Connection Type                   Unmapped
-  Connection Name                   This name is arbitrary (e.g. avx-pan-s2c)
+  Connection Name                   Arbitrary (e.g. avx-pan-s2c)
   Remote Gateway Type               Generic
   Tunnel Type                       UDP
   Algorithms                        Uncheck this box
@@ -52,12 +52,12 @@ Configuration Workflow
   Enable HA                         Uncheck this box
   Primary Cloud Gateway             Select Aviatrix Gateway created above
   Remote Gateway IP Address         Public IP of PAN-VM WAN port
-  Pre-shared Key                    Optional
-  Remote Subnet                     10.13.1.0/24 (VPC1 private subnet)
-  Local Subnet                      10.0.2.0/24 (VPC2 private subnet)
+  Pre-shared Key                    Optional (auto-generated if not entered)
+  Remote Subnet                     10.13.1.0/24 (VPC2 private subnet)
+  Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
 ===============================     =================================================================
 
-4. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration.
+4. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring PAN-VM.
 
 5. Log into PAN-VM and configure it as following:
 
@@ -125,25 +125,27 @@ At **Proxy IDs** window:
 ===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
-  Local                             VPC1 private subnet CIDR
-  Remote                            VPC2 private subnet CIDR
+  Local                             VPC2 private subnet CIDR
+  Remote                            VPC1 private subnet CIDR
   Protocol                          Any
 ===============================     =================================================================
 
-5.6 Under **Network->Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new route for VPC2 private subnet.
+5.6 Under **Network->Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new route destinating to VPC1 private subnet.
 
 |image7|
 
 ===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
-  Destination                       VPC2 private subnet CIDR
+  Destination                       VPC1 private subnet CIDR
   Interface                         Tunnel interface created at Step 5.1
 ===============================     =================================================================
 
 5.7 Commit the configuration.
 
-6. Send traffic between VPC1 and VPC2 private subnets. At Aviatrix Controller, go to **Site2Cloud** page to verify the site2cloud connection status. 
+6. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with PAN-VM LAN port as the gateway.
+
+7. Send traffic between VPC1 and VPC2 private subnets. At Aviatrix Controller, go to **Site2Cloud** page to verify the site2cloud connection status. 
 
 |image8|
 
