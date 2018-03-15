@@ -33,10 +33,10 @@ Configuration Workflow
 
 1. Launch PAN-VM with at least two network interfaces - One interface serves as WAN port and is in VPC2 public subnet. The other interface serves as LAN port and is in VPC2 private subnet. Collect the public IP address of the WAN port.
 
-
+|
 2. At Aviatrix Controller, go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC1 public subnet. Collect both public and private IP address of the Gateway.
 
-
+|
 3. At Aviatrix Controller, go to **site2cloud** and click **Add New** to create a site2cloud connection:
 
 ===============================     =================================================================
@@ -59,6 +59,7 @@ Configuration Workflow
 
 4. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring PAN-VM.
 
+|
 | 5. Log into PAN-VM and configure it as following:
  
 | 5.1 Go to **Network->Interface->Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
