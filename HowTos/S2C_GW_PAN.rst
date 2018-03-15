@@ -3,9 +3,9 @@
    :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, PAN
 
 
-==============================
-Site2Cloud Network Topology
-==============================
+======================================================
+Site2Cloud Network Topology (Aviatrix Gateway --- PAN)
+======================================================
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Palo Alto Netowrks (PAN) Firewall. To simulate an on-prem PAN Firewall, we use PAN VM at AWS VPC.
 
@@ -111,7 +111,7 @@ Configuration Workflow
 ===============================     =================================================================
   **Setting**                       **Value**
 ===============================     =================================================================
-  Tunnel Interface                  Tunnel interface create at Step 5.1
+  Tunnel Interface                  Tunnel interface created at Step 5.1
   IKE Gateway                       IKE gateway created at Step 5.3
   IPSec Crypto Profile              IPSec crypto profile created at Step 5.4
 ===============================     =================================================================
@@ -149,7 +149,7 @@ For troubleshooting, go to **Site2Cloud->Diagnostics** and select various comman
 
 |image9|
 
-.. |image0| image:: s2c_gw_pan_media/reate_Tunnel_Interface.PNG
+.. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
    :width: 5.55625in
    :height: 3.26548in
 
