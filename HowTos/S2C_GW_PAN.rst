@@ -32,15 +32,13 @@ Configuration Workflow
 ======================
 
 1. Launch PAN-VM with at least two network interfaces - One interface serves as WAN port and is in VPC2 public subnet. The other interface serves as LAN port and is in VPC2 private subnet. Collect the public IP address of the WAN port.
-
 |
 2. At Aviatrix Controller, go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC1 public subnet. Collect both public and private IP address of the Gateway.
-
 |
 3. At Aviatrix Controller, go to **site2cloud** and click **Add New** to create a site2cloud connection:
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+  **Field**                         **Value**
 ===============================     =================================================================
   VPC ID/VNet Name                  Choose VPC ID of VPC1
   Connection Type                   Unmapped
@@ -58,7 +56,6 @@ Configuration Workflow
 ===============================     =================================================================
 
 4. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring PAN-VM.
-
 |
 | 5. Log into PAN-VM and configure it as following:
 | 
@@ -67,7 +64,7 @@ Configuration Workflow
 |image0|
 
 ===============================     =================================================================
-   **Setting**                       **Value**
+   **Field**                        **Value**
 ===============================     =================================================================
    Interface Name                    tunnel.1
    Virtual Router                    Select the existing virtual router
@@ -87,7 +84,7 @@ Configuration Workflow
 |image2|
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+  **Field**                         **Value**
 ===============================     =================================================================
   Interface                         PAN WAN port
   Peer IP Address                   Aviatrix Gateway public IP
@@ -98,7 +95,7 @@ Configuration Workflow
 |image3|
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+  **Field**                         **Value**
 ===============================     =================================================================
   IKE Crypto Profile                Select the profile created at Step 5.2
 ===============================     =================================================================
@@ -112,7 +109,7 @@ Configuration Workflow
 |image5|
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+  **Field**                         **Value**
 ===============================     =================================================================
   Tunnel Interface                  Tunnel interface created at Step 5.1
   IKE Gateway                       IKE gateway created at Step 5.3
@@ -124,7 +121,7 @@ Configuration Workflow
 |image6|
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+  **Field**                         **Value**
 ===============================     =================================================================
   Local                             VPC2 private subnet CIDR
   Remote                            VPC1 private subnet CIDR
@@ -136,7 +133,7 @@ Configuration Workflow
 |image7|
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+  **Field**                         **Value**
 ===============================     =================================================================
   Destination                       VPC1 private subnet CIDR
   Interface                         Tunnel interface created at Step 5.1
@@ -153,7 +150,7 @@ Configuration Workflow
 For troubleshooting, go to **Site2Cloud->Diagnostics** and select various commands from **Action** drop down list. 
 
 |image9|
-|
+
 For support, send email to support@aviatrix.com.
 
 .. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
