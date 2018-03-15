@@ -153,6 +153,8 @@ Configuration Workflow
 For troubleshooting, go to **Site2Cloud->Diagnostics** and select various commands from **Action** drop down list. 
 
 |image9|
+|
+For support, send email to support@aviatrix.com.
 
 .. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
    :width: 5.55625in
@@ -192,6 +194,6 @@ For troubleshooting, go to **Site2Cloud->Diagnostics** and select various comman
 
 .. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
    :width: 5.55625in
-   :height: 3.2654
+   :height: 3.26548in
 
 .. disqus::
