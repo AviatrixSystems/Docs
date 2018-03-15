@@ -187,4 +187,6 @@ For troubleshooting, go to **Site2Cloud->Diagnostics** and select various comman
 
 .. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
    :width: 5.55625in
-   :height: 3.2654.. disqus::
+   :height: 3.2654
+
+.. disqus::
