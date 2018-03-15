@@ -87,7 +87,7 @@ The configuration workflow is as follows, with major steps highlighted.
 |      i.  At Primary Gateway field, select a gateway launched earlier as primary gateway.
 |      ii.  At Backup Gateway field, select a gateway launched earlier as backup gateway.
 |   d. Input the connection with a unique name, for example, FirstExpressRoute
-|   e. At Remote Gateway IP Address, enter the public IP address of the edge router for Enterprise datacenter.
+|   e. At Remote Gateway IP Address, enter the private IP address of the edge router for Enterprise datacenter.
 |   f. At Remote Network, enter network CIDR of the Enterprise datacenter. If there are multiple subnets, enter each one separated with comma.
 |   g. Check Encryption over ExpressRoute/DirectConnect.
 |   h. At Route Table To Modify field, select the route table(s) associated with subnet2 and subnet3 .
@@ -100,7 +100,7 @@ The configuration workflow is as follows, with major steps highlighted.
 |   a. Select the connection.
 |   b. Click Download Configuration.
 |   c. If your remote edge device is not listed in the dropdown menu, simply select an available one in the menu.
-|   d. Click “Yes, Download” to download a template file that contains
+|   d. Click “Download Configuration” to download a template file that contains
       the gateway public IP address, VPC CIDR, pre-shared secret and
       encryption algorithm. Incorporate the information to your remote
       router/firewall configuration.

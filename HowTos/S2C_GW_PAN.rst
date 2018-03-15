@@ -59,29 +59,29 @@ Configuration Workflow
 
 4. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring PAN-VM.
 
-5. Log into PAN-VM and configure it as following:
-
-5.1 Go to **Network->Interface->Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+| 5. Log into PAN-VM and configure it as following:
+ 
+| 5.1 Go to **Network->Interface->Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
 
 |image0|
 
 ===============================     =================================================================
-  **Setting**                       **Value**
+   **Setting**                       **Value**
 ===============================     =================================================================
-  Interface Name                    tunnel.1
-  Virtual Router                    Select the existing virtual router
-  Security Zone                     Select the layer 3 internal zone from which traffic originates
+   Interface Name                    tunnel.1
+   Virtual Router                    Select the existing virtual router
+   Security Zone                     Select the layer 3 internal zone from which traffic originates
 ===============================     =================================================================
 
 .. note:: 
 
  If the tunnel interface is in a zone different from the one where the traffic will originate, a policy needs to be created to allow the traffic to flow from the source zone to the zone containing the tunnel interface.
 
-5.2 Go to **Network->Network Profiles->IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters. 
-
+| 5.2 Go to **Network->Network Profiles->IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters. 
+ 
 |image1|
-
-5.3 Go to **Network->Network Profiles->IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
+ 
+| 5.3 Go to **Network->Network Profiles->IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
 
 |image2|
 
@@ -102,11 +102,11 @@ Configuration Workflow
   IKE Crypto Profile                Select the profile created at Step 5.2
 ===============================     =================================================================
 
-5.4 Under **Network->Network Profiles->IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the site2cloud configuration downloaded at Step 4.
-
+| 5.4 Under **Network->Network Profiles->IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the site2cloud configuration downloaded at Step 4.
+ 
 |image4|
-
-5.5 Under **Network->IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At **General** window:
+ 
+| 5.5 Under **Network->IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At **General** window:
 
 |image5|
 
@@ -118,7 +118,7 @@ Configuration Workflow
   IPSec Crypto Profile              IPSec crypto profile created at Step 5.4
 ===============================     =================================================================
 
-At **Proxy IDs** window:
+| At **Proxy IDs** window:
 
 |image6|
 
@@ -130,7 +130,7 @@ At **Proxy IDs** window:
   Protocol                          Any
 ===============================     =================================================================
 
-5.6 Under **Network->Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new route destinating to VPC1 private subnet.
+| 5.6 Under **Network->Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new route destinating to VPC1 private subnet.
 
 |image7|
 
@@ -141,7 +141,7 @@ At **Proxy IDs** window:
   Interface                         Tunnel interface created at Step 5.1
 ===============================     =================================================================
 
-5.7 Commit the configuration.
+| 5.7 Commit the configuration.
 
 6. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with PAN-VM LAN port as the gateway.
 
