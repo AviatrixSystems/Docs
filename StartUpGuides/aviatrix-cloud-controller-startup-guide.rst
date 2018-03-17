@@ -14,7 +14,7 @@ The Aviatrix Controller provides a single pane of glass for all your network con
 
 This guide walks you through the following steps to launch the Aviatrix Controller and complete the initial setups:
 
- 1. `Subscribe an Aviatrix AMI in AWS Marketplace <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#subscribe-to-an-aviatrix-ami-from-aws-marketplace>`_
+ 1. `Subscribe an Aviatrix AMI from AWS Marketplace <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#subscribe-to-an-aviatrix-ami-from-aws-marketplace>`_
 
  2. `Launch a Controller instance by CloudFormation Template <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
 
