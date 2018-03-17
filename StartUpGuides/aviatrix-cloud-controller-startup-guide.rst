@@ -50,7 +50,7 @@ Once you decide on an AMI, for example, Inter-Region VPC Peering 5 Tunnel AMI, s
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
-Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue to the next step in this guide. 
+Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue to the next step in this guide. Do not launch Controller instance from the marketplace.
 
     |imageAwsMarketplaceAcceptTerms|
 
