@@ -18,9 +18,9 @@ This guide walks you through the following steps to launch the Aviatrix Controll
 
  2. `Launch a Controller instance by CloudFormation Template <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_
 
- 3. `Go through the Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#connect-to-the-controller>`_
+ 3. `Go through the Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#initial-setup>`_
 
- 4. `Create a primary account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding>`_ 
+ 4. `Setup a primary account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding>`_ 
 
 To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
@@ -37,9 +37,9 @@ Let's get started!
 
 Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix", you should see a list of Aviatrix marketplace offerings.
 
- - **Mertered AMI** `Aviatrix Secure Networking Platform PAYG - Metered <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ offers a pay as you go cloud consumption model for all use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+ - **Mertered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ offers a pay as you go cloud consumption model for all use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
 
- - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ offers Cloud2Cloud tunnel utility model for these use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+ - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ offers Cloud2Cloud tunnel utility model for these use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
 
  - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
 
