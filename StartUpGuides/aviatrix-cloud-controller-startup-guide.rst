@@ -18,9 +18,9 @@ This guide walks you through the following steps to launch the Aviatrix Controll
 
  2. `Launch a Controller instance by CloudFormation Template <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_
 
- 3. `Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#connect-to-the-controller>`_
+ 3. `Go through the Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#connect-to-the-controller>`_
 
- 4. `Create Primary Account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding>`_ 
+ 4. `Create a primary account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding>`_ 
 
 To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
@@ -138,7 +138,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
 
 3. Initial Setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's connect to it and go through a few init steps.
 
  3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
@@ -177,8 +177,8 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
 
 ..
 
-4. Create Primary Account 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+4. Create A Primary Account 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 4.1 Select AWS 
 --------------
