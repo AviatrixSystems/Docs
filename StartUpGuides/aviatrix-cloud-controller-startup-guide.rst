@@ -8,7 +8,7 @@ AWS
 ==================================================================
 
 
-This is where your Aviatrix product experience starts. 
+Welcome. This is where your Aviatrix product experience starts. 
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
@@ -37,15 +37,15 @@ Let's get started!
 
 Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix", you should see a list of Aviatrix marketplace offerings.
 
- - **Mertered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ offers a pay as you go cloud consumption model for all use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+ - **Mertered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ offers a pay as you go cloud consumption model for all use cases: `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
 
- - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ offers Cloud2Cloud tunnel utility model for these use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+ - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ offers Cloud2Cloud tunnel utility model for use cases that build IPSEC VPN: `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
 
  - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
 
  - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a trial license. 
 
-Once you decide on a AMI, for example, Inter-Region VPC Peering 5 Tunnel AMI, select `this AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA>`_, click `Continue to Subscribe`.
+Once you decide on an AMI, for example, Inter-Region VPC Peering 5 Tunnel AMI, select the AMI, then click `Continue to Subscribe`.
 
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
@@ -57,7 +57,7 @@ Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue 
 
 .. Important::
 
-  We recommend you to launch all AMIs by CloudFormation template provided by Aviatrix, as shown in the following table. 
+  All AMIs should be launched by CloudFormation template provided by Aviatrix, as described in the next section. 
 
 ..
 
@@ -132,14 +132,14 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
    |imageCFCreateFinal|
 
- 2.13. Once complete, click on the `Outputs` tab.  The values displayed will be needed when configuring AWS account in Aviatrix.
+ 2.13. Once the stack creation completes, click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix.
    
    |imageCFComplete|
 
 
 3. Initial Setup
 ^^^^^^^^^^^^^^^^^^^^
-Now that Aviatrix Controller instance has been launched, let's connect to it and go through a few init steps.
+Now that Aviatrix Controller instance has been launched, let's login and go through a few init steps.
 
  3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
 
@@ -166,9 +166,9 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
 
    |imageControllerChangePassword|
 
- 3.5. If you have an HTTP or HTTPS proxy, enter it on the next page.  Otherwise, click `Skip`.
+ 3.5. If you have an HTTP or HTTPS proxy, enter it on the next page. Otherwise, click `Skip`. 
 
- 3.6. Finally, the Controller will upgrade itself to the latest version after you click on `Run`. Wait for a few minutes for the process to finish. 
+ 3.6. Finally, the Controller will upgrade itself to the latest software version after you click on `Run`. Wait for a few minutes for the process to finish. 
 
    |imageControllerUpgrade|
 
@@ -180,15 +180,14 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
 4. Create A Primary Account 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4.1 Select AWS 
---------------
+ 4.1 Select AWS 
+
 Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
 
    |imageOnboardAws|
 
 
-4.2  (Only apply to BYOL AMI) Enter Your Customer ID 
------------------------------------------------------
+ 4.2  (Only apply to BYOL AMI) Enter Your Customer ID 
 
 .. Note::
 
@@ -199,14 +198,14 @@ Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
-4.3  Setup a Primary Account  
-------------------------------------------------
+ 4.3  Setup a Primary Account  
 
-The Aviatrix primary access account represents two purposes:
+The Aviatrix primary access account contains two sets of information:
 
  1. The AWS account credential on which the Controller is launched on.
- #. A login access credential to the Controller web console.  
+ #. A login access credential to the Controller web console with the account name.  
 
+Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller> if you have questions regarding Aviatrix access account. 
 
 Fill out the fields as follows:
 
@@ -243,6 +242,7 @@ What's Next
 ^^^^^^^^^^^^
 
 Congratulations!  
+
 You are now ready to establish connectivities to/from the cloud. Here are some of the things you can do:
 
 - `Build User SSL VPN <../HowTos/uservpn.html>`__
