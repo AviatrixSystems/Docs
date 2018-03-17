@@ -205,7 +205,7 @@ Enter the `Customer ID` in the field and click `Save`.
 
 The Aviatrix primary access account contains two sets of information:
 
- 1. The AWS account credential on which the Controller is launched on.
+ 1. The Controller instance's AWS account credential.
  #. A login access credential to the Controller web console with the account name.  
 
 Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
@@ -226,8 +226,8 @@ Fill out the fields as follows:
   +-------------------------------+--------------------------------------------+
   | Confirm Password              |                                            |
   +-------------------------------+--------------------------------------------+
-  | AWS Account Number            | The 12 digits AWS account number that the  |
-  |                               | Controller is launched on.                 |
+  | AWS Account Number            | The Controller instance's 12 digit         |
+  |                               | AWS account number.                        |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
   +-------------------------------+--------------------------------------------+
