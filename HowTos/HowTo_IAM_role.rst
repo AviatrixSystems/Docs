@@ -3,54 +3,64 @@
    :keywords: IAM, IAM role, IAM role Aviatrix
 
 ###################################
-IAM Role
+IAM Roles for Secondary Accounts
 ###################################
 
-With the support of AWS IAM role, there is no need to enter AWS access
-key and secret key when creating a cloud account on Aviatrix controller.
-Instead, two IAM roles will be created. Aviatrix controller will use the
-dynamically obtained security credentials to request access to AWS
-resources. Role-based IAM cloud account helps to reduce the risk of AWS
-credentials being compromised.
+When the Aviatrix Controller go through the initial Onboarding process, a `primary access account <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`_ is created. 
+Using the primary access account the Controller can launch gateways and build connectivity in the VPCs 
+that belong to this account. 
 
-This document provides instructions to create the IAM roles and policies. If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_
+If the Controller needs to build connectivity in AWS accounts that are different from the Controller instance's AWS account, secondary access accounts need to be created. 
 
-.. important::
-   Make sure you read the `cross account section <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-iam-policies-and-roles-for-a-cross-account>`_ if the AWS account on which the Aviatrix Controller is deployed is different from the AWS account on which Aviatrix gateway instance is launched. 
+To create a secondary access account on the Controller, you need to first create IAM roles, policies and establish trust relationship to the primary AWS account. 
 
-To use IAM role, the Aviatrix Controller you launch must have IAM role
-enabled.
+Follow the steps below to create IAM roles and policies for the secondary access account. 
 
-Aviatrix Controller Launched from CloudFormation 
-==========================================================
+(If you like to customize the conditions of the policies published by Aviatrix, consult `this link. <http://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_)
 
-If the Aviatrix Controller is launched from `our CloudFormation template  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their associated policies are created 
-for the AWS account that launches the Controller instance after the CloudFormation stack creation completes.
+Setup by CloudFormation template 
+===========================================================================
 
-If you create an Aviatrix cloud account with these credentials, you can start to launch Aviatrix gateways
- and create connectivity with this account. 
+This is the preferred approach. 
 
-The following section provides instructions on how to setup an IAM roles and policies for a different 
-AWS account and establish trust relationship with the initial Controller account 
-such that the Controller can launch Aviatrix gateways on behalf on this different account. 
+1. Login to AWS Management Console with secondary account credential in any region.
+#. Go to `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+#. Click `Create new stack` or `Create Stack`
+
+    |imageCFCreate|
+
+#. Select `Specify an Amazon S3 template` and copy and paste this URL https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-secondary-account-iam.json to the field. 
+
+    |imageCFSelectTemplate-S3|
+
+#. Click `Next`.
+#. Populate the Stack name. For example, Aviatrix-for-marketing. 
+#. Enter the Aviatrix Controller's `AWS account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_. 
+#. Click `Next`.
+#. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`.
+
+    |imageCFEnableTermProtection|
+
+#. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.  When the stack creation completes, the secondary account IAM roles and policies are all set. 
+
+    |imageCFCreateFinal|
+
+#. Done.
 
 
-Setup IAM policies and roles manually on the Controller AWS account
-====================================================================
 
-If you plan to launch the Aviatrix Controller manually
-with IAM roles from AWS marketplace portal, proceed to complete the following steps.
+Setup Manually
+=========================================================================
 
-Before you launch an Aviatrix Controller from AWS marketplace, create
-the two necessary IAM roles and its corresponding policies.
+This is not a recommended approach as it takes longer time and error prone. 
 
-Step 1. Create two IAM custom policies
+1. Create two IAM custom policies
 --------------------------------------
 
 1.1 Create “aviatrix-assume-role-policy”:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Log in in to AWS console with your own account.
+-  Log in in to AWS managment console with secondary AWS account.
 
 -  Go to Services -> IAM -> Policies -> Create Policy -> Create Your Own
    Policy
@@ -79,14 +89,13 @@ Step 1. Create two IAM custom policies
 
 -  Click Create Policy button.
 
-Step 2. Create Two IAM Roles
+2. Create Two IAM Roles
 ----------------------------
 
 2.1 Create “aviatrix-role-ec2” role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This role will be associated with the Aviatrix Controller. The role name
-MUST be exactly “\ **aviatrix-role-ec2**\ ”.
+The role name MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
 -  Go to AWS console -> IAM service -> Roles -> Create role
 
@@ -136,35 +145,15 @@ APIs.
    arn:aws:iam::575xxxxxx729:role/aviatrix-role-app
 
 -  Make a note of the above Role ARN string, it will be used to setup
-   Aviatrix Cloud Account later.
+   Aviatrix access account later.
 
     |image1|
 
-Setup IAM policies and roles for a cross account
-========================================================
+2.3 Establish trust relationship with primary account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aviatrix supports multiple AWS accounts. To launch a gateway on an
-AWS account that is different from the AWS account where the Controller is launched, 
-you must create the same IAM policies and roles
-listed above for this gateway account. In addition, follow the steps below to establish 
-trust relationship between the two AWS accounts. 
-
-.. Note::
-
- The primary AWS account is where the Controller is launched. 
-
-..
-
-**Instructions:**
-
-From the non-primary AWS account
-
-1. Create the IAM policies and roles listed above (`Setup IAM policies and roles for your own account <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-iam-policies-and-roles-for-your-own-account>`_).
-
-   a. Remember to note the ARN identifiers for both roles.
-
-2. Grant the primary (Controller) AWS account access to the aviatrix-role-app in the
-   non-primary account
+Grant the primary (Controller) AWS account access to the aviatrix-role-app in the
+this secondary account
 
    a. AWS console -> IAM service -> Roles > aviatrix-role-app
 
@@ -174,12 +163,10 @@ From the non-primary AWS account
 
       |image2|
 
-   d. Click Update Trust Policy
+   d. Remember you need to enter both primary account number and secondary account number
 
-3. Done
+   e. Click Update Trust Policy
 
-Repeat this procedure for each non-primary AWS account that will be
-managed by Aviatrix.
 
 .. |image0| image:: IAM_media/image1.png
    :width: 6.50000in
@@ -202,6 +189,14 @@ managed by Aviatrix.
 .. |image6| image:: IAM_media/img_create_cross_account_role_step_01.png
    :width: 4.67200in
    :height: 3.33379in
+
+.. |imageCFCreate| image:: IAM_media/cf_create.png
+
+.. |imageCFSelectTemplate-S3| image:: IAM_media/imageCFSelectTemplate-S3.png
+
+.. |imageCFEnableTermProtection| image:: IAM_media/cf_termination_protection.png
+
+.. |imageCFCreateFinal| image:: IAM_media/cf_create_final.png
 
 .. add in the disqus tag
 

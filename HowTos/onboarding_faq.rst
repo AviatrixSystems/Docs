@@ -53,6 +53,18 @@ To setup the primary access account during onboarding time, you just need to ent
 
 Once you setup the primary access account, you can launch Aviatrix gateways in the VPCs that belong to this account. 
 
+
+Why should I use IAM role instead of access key and secret key?
+----------------------------------------------------------------
+
+With the support of AWS IAM role, there is no need to enter AWS access
+key and secret key when creating an access account on an Aviatrix controller.
+Instead, two IAM roles will be created. Aviatrix controller will use the
+dynamically obtained security credentials to request access to AWS
+resources. Role-based IAM cloud account helps to reduce the risk of AWS
+credentials being compromised.
+
+
 Can an Aviatrix Access Account be multi-cloud?
 -----------------------------------------------
 
