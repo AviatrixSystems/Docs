@@ -29,6 +29,8 @@ You create additional secondary Aviatrix access accounts by clicking Accounts at
 Setup A Secondary Access Account for AWS
 -----------------------------------------
 
+Before you setup new account on the Controller, follow the `instructions here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to create IAM roles, policies and establish trust relationship first. 
+
 1. Go to Aviatrix -> Accounts -> Cloud Accounts -> New Account, to create this new secondary account.
 #. Enter a unique account name. For example, marketingOps
 #. Check `AWS`.
