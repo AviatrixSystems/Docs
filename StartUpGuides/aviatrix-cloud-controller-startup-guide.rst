@@ -8,26 +8,45 @@ AWS
 ==================================================================
 
 
-This guide helps you get started with Aviatrix in AWS. If you have not installed an Aviatrix Controller in your environment and you'd like to get it set up in AWS this is the right guide for you.
+Your Aviatrix product experience starts right here. 
 
-The Aviatrix Controller provides a single pane of glass for all your cloud connectivity tasks. Once you have a Controller installed in a VPC, you can launch Aviatrix gateways and build your network. 
+The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
-To learn all Aviatrix solutions, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
+This guide walks you through the following steps to launch the Aviatrix Controller and complete the initial setups:
+
+ 1. `Subscribe an Aviatrix AMI in AWS Marketplace <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#subscribe-to-an-aviatrix-ami-from-aws-marketplace>`_
+
+ 2. `Launch a Controller instance by CloudFormation Template <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_
+
+ 3. `Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#connect-to-the-controller>`_
+
+ 4. `Create Primary Account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding>`_ 
+
+To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
 
 .. Important::
 
-   We require this AWS IAM account has permissions to create AWS IAM roles, IAM policies and attach policies to the IAM roles. 
+   We require this AWS IAM account to have permissions to create AWS IAM roles, IAM policies and launch EC2 instances. 
 
-Follow the steps below to install Aviatrix Software. 
+Let's get started!
 
 1. Subscribe to an Aviatrix AMI from AWS Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix", you should see a list of Aviatrix marketplace offerings.
 
-For example, if you select Aviatrix Private Offer or Inter-Region VPC Peering 5 Tunnel AMI, select `AWS Marketplace Aviatrix Private Offer <https://aws.amazon.com/marketplace/pp/B0155GB0MA>`_, click `Continue to Subscribe`.
+ - **Mertered AMI** `Aviatrix Secure Networking Platform PAYG - Metered <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ offers a pay as you go cloud consumption model for all use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+
+ - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ offers Cloud2Cloud tunnel utility model for these use case, `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+
+ - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
+
+ - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a trial license. 
+
+Once you decide on a AMI, for example, Inter-Region VPC Peering 5 Tunnel AMI, select `this AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA>`_, click `Continue to Subscribe`.
+
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
@@ -56,6 +75,7 @@ Each Aviatrix AMI in AWS marketplace has a corresponding cloudformation tempalte
 ============================================                  ================================
 **Controller AMI Name**                                       **CloudFormation Template URL**
 ============================================                  ================================
+Secure Networking Platform PAYG - Metered                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json
 Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
 Inter-Region VPC Peering 2 Free Tunnel                        https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
 SSL VPN Server - 10 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-sslvpn-10-users.template 
@@ -117,7 +137,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
    |imageCFComplete|
 
 
-3. Connect to the Controller
+3. Initial Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's connect to it and go through a few init steps.
 
@@ -157,8 +177,8 @@ Now that Aviatrix Controller instance has been launched, let's connect to it and
 
 ..
 
-4. Onboarding
-^^^^^^^^^^^^^
+4. Create Primary Account 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 4.1 Select AWS 
 --------------

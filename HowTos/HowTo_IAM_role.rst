@@ -24,11 +24,15 @@ enabled.
 Aviatrix Controller Launched from CloudFormation 
 ==========================================================
 
-If the Aviatrix Controller is launched from `our CloudFormation template  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their associated policies are created after the CloudFormation stack creation completes.
+If the Aviatrix Controller is launched from `our CloudFormation template  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_, both IAM roles "aviatrix-role-app" and "aviatrix-role-ec2" and their associated policies are created 
+for the AWS account that launches the Controller instance after the CloudFormation stack creation completes.
 
+If you create an Aviatrix cloud account with these credentials, you can start to launch Aviatrix gateways
+ and create connectivity with this account. 
 
-If your `management account <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#setup-a-management-account>`_ 
-is the same as the AWS account on which the Controller is deployed, the `aviatrix-role-app ARN` field and the `aviatrix-role-ec2 ARN` are automatically filled and you are done. 
+The following section provides instructions on how to setup an IAM roles and policies for a different 
+AWS account and establish trust relationship with the initial Controller account 
+such that the Controller can launch Aviatrix gateways on behalf on this different account. 
 
 
 Setup IAM policies and roles manually on the Controller AWS account

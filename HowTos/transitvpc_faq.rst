@@ -21,6 +21,10 @@ They differ in the following areas:
 
  - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points. 
 
+ - **Half Egress Charge** - In the Aviatrix solution, VPC to VPC traffic does not go through the Transit GW, resucing the AWS network egress charge by half.  
+
+ - **No unwanted route propagation** - Since Spoke VPCs run BGP in CSR solution, if a Spoke VPC also connects to a partner network via VGW, the partner network routes could propagated to your own on-prem network.
+
  - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
  - **Simplicity** - In Aviatrix's solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run the BGP protocol. Simplicity leads to stability. Workflow-based, step-by-step instructions help you build out a Transit VPC solution in minutes. 
