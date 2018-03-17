@@ -1,4 +1,4 @@
-
+sphinxcontrib-disqus
 ## use v1.5.5 of Sphinx to make disqus work correctly
 sphinx==1.5.5
 

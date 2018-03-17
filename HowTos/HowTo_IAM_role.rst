@@ -118,7 +118,7 @@ MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 
 This role is to be assumed by a granted AWS account. The Aviatrix
 controller acquires the “assume role” capability authorized by its
-“aviatrix-ec2-role” role. It then assumes to this service role that is
+“aviatrix-role-ec2” role. It then assumes to this service role that is
 granted by its own AWS account or other AWS accounts to perform AWS
 APIs.
 
