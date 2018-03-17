@@ -20,7 +20,7 @@ This guide walks you through the following steps to launch the Aviatrix Controll
 
  3. `Go through the Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#initial-setup>`_
 
- 4. `Setup a primary account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding>`_ 
+ 4. `Setup a primary account  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#create-a-primary-account>`_ 
 
 To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
