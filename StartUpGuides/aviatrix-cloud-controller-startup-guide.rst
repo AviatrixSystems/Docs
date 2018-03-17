@@ -199,74 +199,41 @@ Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
-4.3  Setup a Management Account  
+4.3  Setup a Primary Account  
 ------------------------------------------------
 
-Why do you need a management account on the Controller?
+The Aviatrix primary access account represents two purposes:
 
-This maybe the most complex concept in the entire product, so apologize for any confusion, 
-and please let us explain. 
+ 1. The AWS account credential on which the Controller is launched on.
+ #. A login access credential to the Controller web console.  
 
-The complexity comes from how AWS API works and how AWS manages IAM roles. 
-
-To build connectivity between two VPCs, the Aviatrix Controller launches Aviatrix gateway instances 
-in the respective VPCs, instructs the gateways to build an IPSEC tunnel and modifies AWS route tables 
-in each VPC. 
-
-To accomplish this task, the Controller needs your AWS credentials to issue AWS APIs, for example,  
-to launch the gateway instances and modify route tables, on your behalf. An AWS credential consists of 
-
- - `The 12 digit AWS account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_
- - `IAM roles and IAM policies <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_
-
-Each AWS credential is recorded on Aviatrix Controller in a managment account (or account for short). 
-
-If you need to connect two VPCs that are owned by one AWS account, you just need one AWS credential, i.e, one Aviatrix management account. 
-
-If you need to connect two VPCs that are owned by two different AWS accounts, you then need two AWS credentials, therfore two managment accounts.  
-
-.. Tip::
-
- The managment account is also associated an email address and login password in case you want to login to only manage that one account. 
-
-..
-
-This step creates one managment account that corresponds to one AWS credential. 
 
 Fill out the fields as follows:
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
   +===============================+============================================+
-  | Account Name                  | One account corresponds to one AWS account |
-  |                               | credential and the account name is unique  |
-  |                               | on the Controller.                         |
+  | Account Name                  | Enter a name that is unique on the         |
+  |                               | Controller.                                |
   |                               | Example name: `AWSOpsTeam`.                |
   +-------------------------------+--------------------------------------------+
-  | E-mail                        | The e-mail address for this team.          |
+  | E-mail                        | The e-mail address of the admin.           |
   +-------------------------------+--------------------------------------------+
-  | Password                      | Password for login to the Controller.      |
+  | Password                      | Password for login to the Controller using |
+  |                               | the account name specified.                |
   +-------------------------------+--------------------------------------------+
   | Confirm Password              |                                            |
   +-------------------------------+--------------------------------------------+
-  | AWS Account Number            | The 12 digits AWS account number.          |
+  | AWS Account Number            | The 12 digits AWS account number that the  |
+  |                               | Controller is launched on.                 |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
   +-------------------------------+--------------------------------------------+
   | aviatrix-role-app ARN         | This field is auto filled.                 |
-  |                               | If not, enter the value from the           |
-  |                               | CloudFormation output outputs              |
-  |                               | `AviatrixRoleAppARN`                       |
   +-------------------------------+--------------------------------------------+
   | aviatrix-role-ec2 ARN         | This filed is auto filled.                 |
-  |                               | If not, enter the value from the           |
-  |                               | CloudFormation outputs `AviatrixRoleEC2ARN`|
   +-------------------------------+--------------------------------------------+
 
-.. Note::
-
-   Each managment account can corresponds to an AWS root account, IAM role, IAM administrator account or IAM user account with access privileges required by the Aviatrix solution. We strongly recommend you to use IAM role for security reasons.
-  
 Once complete, click the `Create` button at the bottom of the form.
 
 |imageCreateAccount|
