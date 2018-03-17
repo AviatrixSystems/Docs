@@ -51,6 +51,7 @@ There is only one primary access account on the Controller. The primary access a
 
 To setup the primary access account during onboarding time, you just need to enter Controller access credentials (email, password) and the 12 digit AWS account that Controller is launched on.
 
+Once you setup the primary access account, you can launch Aviatrix gateways in the VPCs that belong to this account. 
 
 Can an Aviatrix Access Account be multi-cloud?
 -----------------------------------------------
