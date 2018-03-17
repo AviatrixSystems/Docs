@@ -16,7 +16,7 @@ This guide walks you through the following steps to launch the Aviatrix Controll
 
  1. `Subscribe an Aviatrix AMI in AWS Marketplace <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#subscribe-to-an-aviatrix-ami-from-aws-marketplace>`_
 
- 2. `Launch a Controller instance by CloudFormation Template <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_
+ 2. `Launch a Controller instance by CloudFormation Template <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launch-the-controller-with-cloudformation-template>`_. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
 
  3. `Go through the Initial Setup <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#initial-setup>`_
 
@@ -180,14 +180,16 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 4. Create A Primary Account 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- 4.1 Select AWS 
+4.1 Select AWS 
+---------------
 
 Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
 
    |imageOnboardAws|
 
 
- 4.2  (Only apply to BYOL AMI) Enter Your Customer ID 
+4.2  (Only apply to BYOL AMI) Enter Your Customer ID 
+-----------------------------------------------------
 
 .. Note::
 
@@ -198,14 +200,15 @@ Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
- 4.3  Setup a Primary Account  
+4.3  Setup a Primary Account  
+-----------------------------
 
 The Aviatrix primary access account contains two sets of information:
 
  1. The AWS account credential on which the Controller is launched on.
  #. A login access credential to the Controller web console with the account name.  
 
-Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller> if you have questions regarding Aviatrix access account. 
+Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
 
 Fill out the fields as follows:
 
