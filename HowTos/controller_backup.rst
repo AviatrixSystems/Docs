@@ -139,3 +139,6 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |KMSKeyAddUser| image:: controller_backup_media/KMSKeyAddUser.png
       :scale: 30%
       :align: middle
+
+.. disqus::
+	  
