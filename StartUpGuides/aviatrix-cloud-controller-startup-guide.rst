@@ -210,7 +210,7 @@ The Aviatrix primary access account contains two sets of information:
 
 Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
 
-Fill out the fields as follows:
+Fill out the fields as follows: (The AWS Account number can be found at the Stack Outputs section.)
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
