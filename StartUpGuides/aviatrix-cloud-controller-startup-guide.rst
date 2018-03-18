@@ -70,7 +70,7 @@ Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue 
 2. Launch the Controller with CloudFormation Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each Aviatrix AMI in AWS marketplace is associated with a CloudFormation template. Copy the URL link address for the AMI you intend to launch. This URL link address is needed when you create the CloudFormation stack to launch the Controller instance in the next few steps. 
+Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the URL link address for the AMI you intend to launch.  
 
 ============================================                  ================================
 **Controller AMI Name**                                       **CloudFormation Template URL**
@@ -95,13 +95,13 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
    |imageCFCreate|
 
- 2.4. Select `Specify an Amazon S3 template` and copy and paste the URL based on the AMI you selected in the above table.  
+ 2.4. Select `Specify an Amazon S3 template` and paste the URL link address for the AMI you selected in the above table.  
 
    |imageCFSelectTemplate-S3|
 
  2.5. Click `Next`
 
- 2.6. Populate the Stack name and select a VPC, subnet, and a keypair.
+ 2.6. Populate the Stack name and select a VPC, a public subnet, and a keypair.
 
    |imageCFSpecifyDetails|
 
@@ -141,7 +141,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 ^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's login and go through a few init steps.
 
- 3.1. Open a browser window to https://AviatrixControllerEIP found in the Outputs
+ 3.1. Open a browser window to https://AviatrixControllerEIP, where AviatrixControllerEIP can be found in the Stack Outputs. You can also find the Controller instance EIP by going to AWS EC2 console, click the Controller instance and locate its public IP address. 
 
 .. tip::
    You may receive a warning that the connection may not be secure.  This is because the certificate is self-signed by the Controller.  It is safe to continue to the page.
@@ -153,7 +153,7 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
  3.2. Login with the username `admin`.
 
 .. note::
-   Use the `AviatrixControllerPrivateIP` as the password.  The `AviatrixControllerPrivateIP` is found in the Outputs section of the CloudFormation stack.
+   Use the `AviatrixControllerPrivateIP` as the password.  The `AviatrixControllerPrivateIP` is found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, click the Controller instance and locate its private IP address. 
 ..
    
    |imageCFOutputsWithPassword|
@@ -200,8 +200,8 @@ Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
-4.3  Setup a Primary Account  
------------------------------
+4.3  Setup a Primary Access Account  
+------------------------------------
 
 The Aviatrix primary access account contains two sets of information:
 
