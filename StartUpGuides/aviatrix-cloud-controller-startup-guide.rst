@@ -101,7 +101,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
  2.5. Click `Next`
 
- 2.6. Populate the Stack name and select a VPC, a public subnet, and a keypair.
+ 2.6. Populate the Stack name and select a VPC, a public subnet, and a keypair (Read `this link <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if you do not have one.)
 
    |imageCFSpecifyDetails|
 
@@ -132,7 +132,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
    |imageCFCreateFinal|
 
- 2.13. Once the stack creation completes, click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix.
+ 2.13. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix.
    
    |imageCFComplete|
 
@@ -166,7 +166,9 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 
    |imageControllerChangePassword|
 
- 3.5. If you have an HTTP or HTTPS proxy, enter it on the next page. Otherwise, click `Skip`. 
+ 3.5. Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy for Internet access. 
+
+   |imageproxy-config|
 
  3.6. Finally, the Controller will upgrade itself to the latest software version after you click on `Run`. Wait for a few minutes for the process to finish. 
 
@@ -210,7 +212,7 @@ The Aviatrix primary access account contains two sets of information:
 
 Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
 
-Fill out the fields as follows: (The AWS Account number can be found at the Stack Outputs section.)
+Fill out the fields as follows: (The AWS Account number can be found at the Stack Outputs section or get from `this link. <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.)
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
@@ -280,6 +282,9 @@ Enjoy!
    :scale: 50%
 
 .. |imageControllerChangePassword| image:: ZeroToConnectivityInAWS_media/controller_change_password.png
+   :scale: 50%
+
+.. |imageproxy-config| image:: ZeroToConnectivityInAWS_media/proxy_config.png
    :scale: 50%
 
 .. |imageControllerUpgrade| image:: ZeroToConnectivityInAWS_media/controller_upgrade.png
