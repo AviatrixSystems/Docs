@@ -212,7 +212,7 @@ The Aviatrix primary access account contains two sets of information:
 
 Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
 
-Fill out the fields as follows: (The AWS Account number can be found at the Stack Outputs section or get from `this link. <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.)
+Fill out the fields as follows: (The AWS Account Number can be found at the Stack Outputs section or get from `this link. <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_)
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
@@ -285,7 +285,7 @@ Enjoy!
    :scale: 50%
 
 .. |imageproxy-config| image:: ZeroToConnectivityInAWS_media/proxy_config.png
-   :scale: 50%
+   :scale: 25%
 
 .. |imageControllerUpgrade| image:: ZeroToConnectivityInAWS_media/controller_upgrade.png
    :scale: 50%
@@ -293,7 +293,9 @@ Enjoy!
 .. |imageCFSelectTemplate| image:: ZeroToConnectivityInAWS_media/cf_select_template.png
 .. |imageCFSelectTemplate-S3| image:: ZeroToConnectivityInAWS_media/imageCFSelectTemplate-S3.png
 .. |imageCFSpecifyDetails| image:: ZeroToConnectivityInAWS_media/cf_specify_details_new.png
+
 .. |imageCFEnableTermProtection| image:: ZeroToConnectivityInAWS_media/cf_termination_protection.png
+   :scale: 50%
 
 .. |imageAviatrixOnboardNav| image:: ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
    :scale: 50%
