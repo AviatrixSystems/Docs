@@ -8,7 +8,7 @@ AWS
 ==================================================================
 
 
-Welcome. This is where your Aviatrix product experience starts. 
+Welcome. Your Aviatrix product experience starts here. 
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
