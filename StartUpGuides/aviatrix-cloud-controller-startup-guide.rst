@@ -22,6 +22,8 @@ This guide walks you through the following steps to launch the Aviatrix Controll
 
  4. `Setup a primary account.  <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#create-a-primary-account>`_ 
 
+ 5. `Start your use cases. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#what-s-next>`_
+
 To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
