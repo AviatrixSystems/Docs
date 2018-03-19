@@ -197,6 +197,13 @@ AWS provides a few native options for redundancy between VGW and on-prem. You ca
 
 `Read this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details. 
 
+How do I deploy user VPN use case on Transit Network solution?
+--------------------------------------------------------------
+
+We recommend you to deploy `user VPN <http://docs.aviatrix.com/HowTos/uservpn.html>`_ in a 
+shared service VPC. If this shared servicec VPC has connectivity to all other VPCs, a user can reach any instances in these VPCs as long as his/her profile policy allows. 
+
+
 
 .. |image1| image:: FAQ_media/image1.png
 
