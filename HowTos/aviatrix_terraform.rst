@@ -170,7 +170,7 @@ Manages FQDN filtering for Aviatrix gateway
 	# fqdn_mode - (Optional: white by default) Enter white or black,, based on whether you whitelist or blacklist
 	# gw_list - List of gateways, on which you want to filter
 	# domain_list - List of domains for which you want to filter
-	
+
 	resource "aviatrix_fqdn" "test_fqdn" {
 	  fqdn_tag = "my_tag"
 	  fqdn_status = "enabled"
@@ -378,7 +378,7 @@ Sample configuration to launch a full mesh network on AWS
 ::
 
 	# Sample Aviatrix terraform configuration to create a full mesh network on AWS
-	# This configuration creates a cloud account on Aviatrix controller, 
+	# This configuration creates a cloud account on Aviatrix controller,
 	# launches 3 gateways with the created account and establishes tunnels
 	# between each gateway.
 
@@ -441,3 +441,6 @@ Sample configuration to launch a full mesh network on AWS
 	  vpc_name2 = "avtxgw-${(count.index+1)%3}"
 	  depends_on = ["aviatrix_gateway.test_gw"]
 	}
+
+
+.. disqus::

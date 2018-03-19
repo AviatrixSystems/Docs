@@ -246,3 +246,5 @@ Sample configuration to create complete transit VPC solution
 	  transit_gw = "${aviatrix_transit_vpc.test_transit_gw.id}"
 	  depends_on = ["aviatrix_vgw_conn.test_vgw_conn"]
 	}
+
+.. disqus::	
