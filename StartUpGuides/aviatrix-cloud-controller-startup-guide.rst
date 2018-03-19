@@ -118,7 +118,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
  2.10. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 2.11. We recommed you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+ 2.11. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
 
   |imageCFEnableTermProtection|
      
