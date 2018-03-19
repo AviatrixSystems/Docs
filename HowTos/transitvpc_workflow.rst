@@ -4,7 +4,7 @@
 
 
 =========================================================
-AWS Global Transit Transit Network Workflow Instructions
+AWS Global Transit Network Workflow Instructions
 =========================================================
 
 This workflow provides you with a step by step instructions to build a Global Transit Network. 
