@@ -17,13 +17,9 @@ The Aviatrix Controller provides a single pane of glass for all your network con
 This guide walks you through the following steps to launch the Aviatrix Controller and complete the initial setups:
 
  1. Subscribe an Aviatrix AMI from AWS Marketplace. 
-
  2. Launch a Controller instance by CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
-
  3. Go through the Initial Setup.
-
  4. Setup a primary account.  
-
  5. Start your use case.
 
 To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
@@ -46,7 +42,7 @@ Select the right AMI that meets your use case and subscription preference. This 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
 
-- **Metered AMI** We offer `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ that includes a free 30 day trial and is a pay as you go cloud consumption model for all use cases: 
+- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ includes a 30 day free trial and is a pay as you go cloud consumption model for all use cases: 
    - Next-Gen Transit Network  
    - Encrypted Peering 
    - Remote User VPN (OpenVPN®)  
@@ -55,7 +51,7 @@ Select the right AMI that meets your use case and subscription preference. This 
    - Multicloud Peering 
 
 
-- **Utility AMI** We offer `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ that includes a 30 day free trial and is utility model for use cases that build IPSEC VPN: 
+- **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and is a utility model for use cases that build IPSEC VPN: 
    - Next-Gen Transit Network  
    - Encrypted Peering  
    - Site to Cloud IPSEC VPN 
@@ -65,7 +61,7 @@ Select the right AMI that meets your use case and subscription preference. This 
 - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
 
 
-- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a free 30 day trial license. 
+- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a 30 day free trial license. 
 
 1.2 Subscribe to the selected AMI
 ----------------------------------------
