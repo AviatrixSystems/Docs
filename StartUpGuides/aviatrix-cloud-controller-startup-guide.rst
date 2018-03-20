@@ -32,12 +32,18 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 
    We require this AWS IAM account to have permissions to create AWS IAM roles, IAM policies and launch EC2 instances. 
 
+..
+
 Let's get started!
 
 1. Subscribe to an Aviatrix AMI from AWS Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix", you should see a list of Aviatrix marketplace offerings.
+1.1 Select an AMI  
+------------------------------------------------------------------------------------
+
+Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete the next steps. 
+(Open a new tab on the selected AMI so you can follow along with this guide.)
 
  - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ includes a free 30 day trial and offers a pay as you go cloud consumption model for all use cases: 
 	- Next-Gen Transit Network  
@@ -59,12 +65,21 @@ Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix"
 
  - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a free 30 day trial license. 
 
-Once you decide on an AMI, for example, Inter-Region VPC Peering 5 Tunnel AMI, select the AMI, then click `Continue to Subscribe`.
+1.2 Subscribe to the selected AMI
+----------------------------------------
+
+1.2.1 Continue to Subscribe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For example, if you select Inter-Region VPC Peering 5 Tunnel AMI, click `Continue to Subscribe`.
 
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
-Click `Manual Launch` and then `Accept Software Terms`. Once accepted, continue to the next step in this guide. Do not launch Controller instance from the marketplace.
+1.2.2 Accept Software Terms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click `Manual Launch` and `Accept Software Terms`. Return to this guide and continue. (Do not proceed with install of the Controller instance from the marketplace.)
 
     |imageAwsMarketplaceAcceptTerms|
 
