@@ -4,11 +4,11 @@
 
 
 ==================================================================
-AWS
+AWS Startup Guide
 ==================================================================
 
 
-Welcome. Your Aviatrix product experience starts here. 
+Welcome. Your Aviatrix product experience starts here. Keep this tab open as you go throughthe install steps below. 
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
@@ -55,6 +55,7 @@ Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix"
   
 
  - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
+
 
  - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a free 30 day trial license. 
 
@@ -252,7 +253,7 @@ Fill out the fields as follows: (The AWS Account Number can be found at the Stac
   +-------------------------------+--------------------------------------------+
   | aviatrix-role-app ARN         | This field is auto filled.                 |
   +-------------------------------+--------------------------------------------+
-  | aviatrix-role-ec2 ARN         | This filed is auto filled.                 |
+  | aviatrix-role-ec2 ARN         | This field is auto filled.                 |
   +-------------------------------+--------------------------------------------+
 
 Once complete, click the `Create` button at the bottom of the form.
