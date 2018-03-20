@@ -42,7 +42,7 @@ If you need to connect two VPCs that are owned by one AWS account, you just need
 
 If you need to connect two VPCs that are owned by two different AWS accounts, you then need two AWS credentials, therfore two access accounts.
 
-The access account is also used to access the Controller web console, therefore it is associated an email address and login password in case you want to login to only manage that one account.
+The access account is also used to access the Controller web console, therefore it is associated with an email address and login password in case you want to login to only manage that one account.
 
 What is the Aviatrix Primary Access Account?
 ---------------------------------------------

@@ -172,7 +172,7 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 
    |imageControllerChangePassword|
 
- 3.5. Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy for Internet access. 
+ 3.5. Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy configured for Internet access. 
 
    |imageproxy-config|
 
@@ -185,8 +185,8 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 
 ..
 
-4. Create A Primary Account 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+4. Create A Primary Access Account 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 4.1 Select AWS 
 ---------------
