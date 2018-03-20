@@ -8,7 +8,7 @@ AWS Startup Guide
 ==================================================================
 
 
-Welcome. Your Aviatrix product experience starts here. Keep this tab open as you go through the install steps below. 
+Welcome. Your Aviatrix product experience starts here. Keep this tab open as you go through the install process. The process takes about 25 minutes. Get a cup of coffee and let's get started.   
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
@@ -31,10 +31,8 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 .. Important::
 
    We require this AWS IAM account to have permissions to create AWS IAM roles, IAM policies and launch EC2 instances. 
-
 ..
 
-Let's get started!
 
 1. Subscribe to an Aviatrix AMI from AWS Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,7 +43,7 @@ Let's get started!
 Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
- - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ includes a free 30 day trial and offers a pay as you go cloud consumption model for all use cases: 
+- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ includes a free 30 day trial and offers a pay as you go cloud consumption model for all use cases: 
 	- Next-Gen Transit Network  
         - Encrypted Peering 
         - Remote User VPN (OpenVPN®)  
@@ -53,17 +51,17 @@ Select the right AMI that meets your use case and subscription preference. This 
         - Site to Cloud IPSEC VPN 
         - Multicloud Peering 
 
- - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and offers Cloud2Cloud tunnel utility model for use cases that build IPSEC VPN: 
+- **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and offers Cloud2Cloud tunnel utility model for use cases that build IPSEC VPN: 
         - Next-Gen Transit Network  
 	- Encrypted Peering  
  	- Site to Cloud IPSEC VPN 
         - Multicloud Peering 
   
 
- - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
+- **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
 
 
- - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a free 30 day trial license. 
+- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a free 30 day trial license. 
 
 1.2 Subscribe to the selected AMI
 ----------------------------------------
@@ -101,7 +99,7 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
 
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
-Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the `CloudFormation Template URL link address` for the AMI you intend to launch.  
+Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the `CloudFormation Template URL Link Address` for the AMI you intend to launch.  
 
 ============================================                  ============================================
 **Controller AMI Name**                                       **CloudFormation Template URL Link Address**
@@ -126,7 +124,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
    |imageCFCreate|
 
- 2.4. Select `Specify an Amazon S3 template` and paste the URL link address for the AMI you selected in the above table.  
+ 2.4. Select `Specify an Amazon S3 template` and paste the `CloudFormation Template URL Link Address` for the AMI you selected in the above table.  
 
    |imageCFSelectTemplate-S3|
 
@@ -187,9 +185,7 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 
  3.2. Login with the username `admin`.
 
-.. note::
-   Use the `AviatrixControllerPrivateIP` as the password.  The `AviatrixControllerPrivateIP` is found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, click the Controller instance and locate its private IP address. 
-..
+   For the password field, use the `AviatrixControllerPrivateIP`.  The `AviatrixControllerPrivateIP` can be found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, click the Controller instance and locate its private IP address. 
    
    |imageCFOutputsWithPassword|
 
@@ -264,7 +260,8 @@ Fill out the fields as follows: (The AWS Account Number can be found at the Stac
   | Confirm Password              |                                            |
   +-------------------------------+--------------------------------------------+
   | AWS Account Number            | The Controller instance's 12 digit         |
-  |                               | AWS account number.                        |
+  |                               | AWS account number. It can be found in the |
+  |                               | Stack Outputs section `AccoundId`.         |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
   +-------------------------------+--------------------------------------------+
