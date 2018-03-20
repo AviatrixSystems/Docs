@@ -42,7 +42,7 @@ Let's get started!
 1.1 Select an AMI  
 ------------------------------------------------------------------------------------
 
-Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete the next steps. 
+Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
  - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ includes a free 30 day trial and offers a pay as you go cloud consumption model for all use cases: 
@@ -98,6 +98,8 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
 
 2. Launch the Controller with CloudFormation Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
 Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the URL link address for the AMI you intend to launch.  
 
