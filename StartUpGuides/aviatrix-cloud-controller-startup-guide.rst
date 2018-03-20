@@ -103,7 +103,11 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
  2.5. Click `Next`
 
- 2.6. Populate the Stack name and select a VPC, a public subnet, and a keypair (Read `this link <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if you do not have one.)
+ 2.6. Fill in the following fields: 
+  - the Stack name,
+  - select a VPC, 
+  - a public subnet in that VPC (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_ if you do not know what public subnet is.)  
+  - and a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if you do not have one.)
 
    |imageCFSpecifyDetails|
 
