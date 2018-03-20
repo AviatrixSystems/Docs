@@ -10,7 +10,7 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
-Keep this tab open as you go through the install process. The process takes about 25 minutes, so get a cup of coffee and let's get started.   
+Keep this tab open as you go through the install process. This process takes about 25 minutes, so grab a cup of coffee and let's get started.   
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
@@ -286,10 +286,12 @@ Congratulations!
 
 You are now ready to establish connectivities to/from the cloud. Here are some of the things you can do:
 
+- `Build Net-Gen Transit Network <../HowTos/transitvpc_workflow.html>`__
 - `Build User SSL VPN <../HowTos/uservpn.html>`__
-- `Build Global Transit Network <../HowTos/transitvpc_workflow.html>`__
-- `Build Egress Security Filter <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
-- `Build your own site to cloud IPSEC connectivity <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
+- `Build Egress Security <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
+- `Build Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
+- `Build Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_
+- `Build Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
