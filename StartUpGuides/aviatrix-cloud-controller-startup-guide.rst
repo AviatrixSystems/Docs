@@ -103,7 +103,7 @@ EC2 FlightPath Tool                                           https://s3-us-west
 
  2.5. Click `Next`
 
- 2.6. Fill in the following fields: 
+ 2.6. Fill in the following fields, 
   - the Stack name,
   - select a VPC, 
   - a public subnet in that VPC (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_ if you do not know what public subnet is.)  
