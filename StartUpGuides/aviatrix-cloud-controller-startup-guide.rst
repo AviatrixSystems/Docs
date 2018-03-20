@@ -8,7 +8,7 @@ AWS Startup Guide
 ==================================================================
 
 
-Welcome. Your Aviatrix product experience starts here. Keep this tab open as you go throughthe install steps below. 
+Welcome. Your Aviatrix product experience starts here. Keep this tab open as you go through the install steps below. 
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
 
