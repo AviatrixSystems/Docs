@@ -39,13 +39,24 @@ Let's get started!
 
 Go to `AWS Marketplace <https://aws.amazon.com/marketplace>`_, search "aviatrix", you should see a list of Aviatrix marketplace offerings.
 
- - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ offers a pay as you go cloud consumption model for all use cases: `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_, `Egress FQDN filter <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+ - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ includes a free 30 day trial and offers a pay as you go cloud consumption model for all use cases: 
+	- `Next-Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+        - `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_
+        - `Remote User VPN (OpenVPN®) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ 
+        - `VPC Egress Security <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ 
+        - `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
+        - `Multicloud Peering <http://docs.aviatrix.com/HowTos/peering.html>`_
 
- - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ offers Cloud2Cloud tunnel utility model for use cases that build IPSEC VPN: `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+ - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and offers Cloud2Cloud tunnel utility model for use cases that build IPSEC VPN: 
+        - `Next-Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+	- `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ 
+ 	- `Site to Cloud IPSEC VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
+        - `Multicloud Peering <http://docs.aviatrix.com/HowTos/peering.html>`_
+  
 
  - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
 
- - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a trial license. 
+ - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a free 30 day trial license. 
 
 Once you decide on an AMI, for example, Inter-Region VPC Peering 5 Tunnel AMI, select the AMI, then click `Continue to Subscribe`.
 
