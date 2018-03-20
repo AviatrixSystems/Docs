@@ -101,11 +101,11 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
 
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
-Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the URL link address for the AMI you intend to launch.  
+Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the `CloudFormation Template URL link address` for the AMI you intend to launch.  
 
-============================================                  ================================
-**Controller AMI Name**                                       **CloudFormation Template URL**
-============================================                  ================================
+============================================                  ============================================
+**Controller AMI Name**                                       **CloudFormation Template URL Link Address**
+============================================                  ============================================
 Secure Networking Platform PAYG - Metered                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json
 Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
 Inter-Region VPC Peering 2 Free Tunnel                        https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
@@ -116,7 +116,7 @@ SSL VPN Server - 100 users                                    https://s3-us-west
 SSL VPN Server Bundle (10 users + 1 peering)                  https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
 Cloud Interconnect BYOL                                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
 EC2 FlightPath Tool                                           https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-ec2-flightpath-tool.json 
-============================================                  ================================
+============================================                  ============================================
 
  2.1. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
 
