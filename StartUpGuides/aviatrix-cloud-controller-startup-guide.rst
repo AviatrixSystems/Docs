@@ -45,19 +45,21 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
+
 - **Metered AMI** We offer `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ that includes a free 30 day trial and is a pay as you go cloud consumption model for all use cases: 
-	- Next-Gen Transit Network  
-        - Encrypted Peering 
-        - Remote User VPN (OpenVPN®)  
-        - VPC Egress Security  
-        - Site to Cloud IPSEC VPN 
-        - Multicloud Peering 
+   - Next-Gen Transit Network  
+   - Encrypted Peering 
+   - Remote User VPN (OpenVPN®)  
+   - VPC Egress Security  
+   - Site to Cloud IPSEC VPN 
+   - Multicloud Peering 
+
 
 - **Utility AMI** We offer `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ that includes a 30 day free trial and is utility model for use cases that build IPSEC VPN: 
-        - Next-Gen Transit Network  
-	- Encrypted Peering  
- 	- Site to Cloud IPSEC VPN 
-        - Multicloud Peering 
+   - Next-Gen Transit Network  
+   - Encrypted Peering  
+   - Site to Cloud IPSEC VPN 
+   - Multicloud Peering 
   
 
 - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
