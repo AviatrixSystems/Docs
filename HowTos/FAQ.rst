@@ -136,10 +136,10 @@ The reality
 
 However when deploying a `AWS Global Transit Network solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_, a vendor gateway must be deployed on a public subnet in the Transit VPC. This is true for all vendor appliances on the AWS marketplace. This is
 because the vendor gateway in the Transit VPC establishes IPSEC tunnels with Spoke VPC 
-over public IP address, wheather or not if the Spoke VPC deploys a vendor gateway or VGW. 
+over public IP address, wheather or not the Spoke VPC deploys a vendor gateway or VGW. 
 
 Note that this connectivity between Transit VPC and Spoke VPC, although using public IP addresses 
-as IPSEC tunnel end points, does not imply the traffic between Transit VPC and Spoke VPC goes through the 
+as IPSEC tunnel end points, does not imply that traffic between Transit VPC and Spoke VPC go through the 
 Internet. AWS recognizes that it owns these public IP addresses therefore always
 try to route the traffic through its own backbone network without ever going out to Internet.   
 
