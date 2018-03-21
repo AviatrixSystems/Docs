@@ -122,8 +122,8 @@ You can create read_only accounts for your operations team. They can view and li
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
 ------------------------------------------------------------------------------------------------------
 
-The Concern
-###########
+The customer concerns
+######################
 
 Some organizations have concerns about having public subnets in a VPC. 
 The concern is that if there were a public subnet in a VPC, 
@@ -131,7 +131,7 @@ users may find ways to launch an instance on the public subnet and associate the
 public IP address, thus enabling the instance to access Internet without 
 going through a proper egress firewall (in the cloud or on-prem).
 
-The Must Have 
+The reality 
 ##############
 
 However when deploying a `AWS Global Transit Network solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_, a vendor gateway must be deployed on a public subnet in the Transit VPC. This is true for all vendor appliances on the AWS marketplace. This is
@@ -143,8 +143,8 @@ as IPSEC tunnel end points, does not imply the traffic between Transit VPC and S
 Internet. AWS recognizes that it owns these public IP addresses therefore always
 try to route the traffic through its own backbone network without ever going out to Internet.   
 
-The Solutions
-#############
+The Aviatrix solution
+######################
 
 Aviatrix provides multiple featrues to ensure your Transit Network is secure, as described below.
 
