@@ -18,6 +18,12 @@ The objectives here are:
  - No change to existing VPC infrastructure.
  - Minimum operation downtime.
 
+.. Note::
+
+  This document assumes you have already `launched an Aviatrix Controller <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+
+..
+
 The migrating process starts with launching an Aviatrix Transit GW in the Transit hub VPC, 
 connecting it to VGW, then moving Spoke VPC one at a time to Aviatrix Transit GW. During the process of moving Spoke VPC, traffic should continue to flow to on-prem for both moved and not-yet-moved VPCs. 
 
