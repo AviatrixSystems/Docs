@@ -12,17 +12,17 @@ Welcome. Your Aviatrix product experience starts here.
 
 Keep this tab open as you go through the install process. This process takes about 25 minutes, so grab a cup of coffee and let's get started.   
 
-The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network. 
+The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network for your first use case. 
 
 This guide walks you through the following steps to launch the Aviatrix Controller and complete the initial setups:
 
- 1. Subscribe an Aviatrix AMI from AWS Marketplace. 
- 2. Launch a Controller instance by CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
+ 1. Subscribe to an Aviatrix AMI via AWS Marketplace. 
+ 2. Launch a Controller instance using the provided CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
  3. Go through the Initial Setup.
- 4. Setup a primary account.  
+ 4. Setup a primary account by entering an IAM role-based account.  
  5. Start your use case.
 
-To learn all Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
+To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
 
@@ -43,22 +43,22 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and is a utility model for use cases that build IPSEC VPN: 
-   - Next-Gen Transit Network  
-   - Encrypted Peering  
-   - Site to Cloud IPSEC VPN 
-   - Multicloud Peering 
-
 - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ is a pay as you go cloud consumption model for all use cases: 
-   - Next-Gen Transit Network  
-   - Encrypted Peering 
-   - Remote User VPN (OpenVPN®)  
+   - Next-Generation Transit VPC Network  
    - VPC Egress Security  
-   - Site to Cloud IPSEC VPN 
+   - Remote User VPN (OpenVPN®)  
    - Multicloud Peering 
+   - Encrypted Peering 
+   - Site to Cloud IPSEC VPN 
+   
+- **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
+   - Next-Generation Transit VPC Network  
+   - Remote User VPN (OpenVPN®)  
+   - Multicloud Peering 
+   - Encrypted Peering 
+   - Site to Cloud IPSEC VPN 
 
 - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?qid=1521304828225&sr=0-6&ref_=srh_res_product_title>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?qid=1521304828225&sr=0-5&ref_=srh_res_product_title>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?qid=1521304828225&sr=0-3&ref_=srh_res_product_title>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?qid=1521304828225&sr=0-4&ref_=srh_res_product_title>`_.
-
 
 - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1521304828225&sr=0-2&ref_=srh_res_product_title>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a 30 day free trial license. 
 
@@ -68,22 +68,28 @@ Select the right AMI that meets your use case and subscription preference. This 
 1.2.1 Continue to Subscribe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For example, if you select Inter-Region VPC Peering 5 Tunnel AMI, click `Continue to Subscribe`.
-
+For example, if you select Inter-Region VPC Peering 5 Tunnel AMI, click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
 1.2.2 Accept Software Terms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click `Manual Launch` and `Accept Software Terms`. Return to this guide and continue. (Do not proceed with install of the Controller instance from the marketplace.)
+Click `Manual Launch` and `Accept Software Terms`. Return to this guide and continue. (Do not proceed with install of the Controller instance from the marketplace.) 
 
     |imageAwsMarketplaceAcceptTerms|
+
+1.2.3 Product Support Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. You can choose to sign up later, or edit/remove your details at any time. Click `Register Product Support`
+
+    |imageAwsMarketplacePSC|
 
 
 .. tip::
 
-  If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server. 
+  If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server.  (SWM - how do I know if I have a reachable custom DNS server?)
 
 ..
 
@@ -92,21 +98,21 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
 
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
-Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Copy the `CloudFormation Template URL Link Address` for the AMI you intend to launch.  
+Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Highlight and copy the `CloudFormation Template URL Link Address` for the AMI you intend to launch.  
+
+(SWM - do the below need to be links? its a bit confusing because it makes me want to click instead of copy)
 
 ============================================                  ============================================
 **Controller AMI Name**                                       **CloudFormation Template URL Link Address**
 ============================================                  ============================================
 Secure Networking Platform PAYG - Metered                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json
 Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
-Inter-Region VPC Peering 2 Free Tunnel                        https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-2-free-tunnels.json
 SSL VPN Server - 10 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-sslvpn-10-users.template 
 SSL VPN Server - 25 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
 SSL VPN Server - 50 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-ssl-vpn-server-50-user.template
 SSL VPN Server - 100 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json
 SSL VPN Server Bundle (10 users + 1 peering)                  https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
 Cloud Interconnect BYOL                                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
-EC2 FlightPath Tool                                           https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-ec2-flightpath-tool.json 
 ============================================                  ============================================
 
  2.1. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
