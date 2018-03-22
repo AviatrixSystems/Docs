@@ -37,7 +37,5 @@ your own organization email,
   Enter a Test Email address if you like to test the configuration. 
   Click Save when done.  
 
-The first step of the process is that we check out your code from the repository you have given us.
-If the code is already checked out, we update the copy to the branch that you have specified in your projects configuration. 
 
 .. disqus::
