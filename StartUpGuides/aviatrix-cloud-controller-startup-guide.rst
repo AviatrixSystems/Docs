@@ -19,7 +19,7 @@ This guide walks you through the following steps to launch the Aviatrix Controll
  1. Subscribe to an Aviatrix AMI via AWS Marketplace. 
  2. Launch a Controller instance using the provided CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
  3. Go through the Initial Setup.
- 4. Setup a primary account by entering an IAM role-based account.  
+ 4. Setup a primary access account.  
  5. Start your use case.
 
 To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
