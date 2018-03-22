@@ -39,6 +39,11 @@ Aviatrix solves this problem by updating the route table in the client VPC.  All
 Aviatrix Step-by-Step Deployment Guide for NetApp
 -------------------------------------------------
 
+Overview
+########
+
+|imageNetappHA|
+
 What you will need:
 
 #. A shared services VPC where the Aviatrix central controller will be installed.
@@ -124,9 +129,15 @@ Next, set up a route for traffic for the floating IP addresses through the clien
 #. Click `OK`
 
    |imageAddTransitivePeer|
-
+   
 Validate
 ########
+
+The final architecture will look like this:
+
+|imageFinal|
+
+
 
 
 .. [1] https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-subnet-basics
@@ -135,5 +146,9 @@ Validate
 .. |imageProblem| image:: netapp_floating_ips_media/floating_ip_generic_aws.png
    :scale: 50%
 .. |imageAddPeer| image:: netapp_floating_ips_media/add_peer.png
+   :scale: 50%
+.. |imageFinal| image:: netapp_floating_ips_media/netapp_aviatrix.png
+   :scale: 50%
+.. |imageNetappHA| image:: netapp_floating_ips_media/netapp.png
    :scale: 50%
 .. |imageAddTransitivePeer| image:: netapp_floating_ips_media/add_transitive_peer.png
