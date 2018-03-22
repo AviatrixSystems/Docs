@@ -120,7 +120,8 @@ html_theme_options = {
 
 # html_logo goes here, lets try this
 #html_logo = 'logo-aviatrix-new.png'
-html_logo =  'aviatrix-logo-final - bold.png'
+#html_logo =  'aviatrix-logo-final - bold.png'
+html_logo =  'aviatrix_logo_final_bold.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
