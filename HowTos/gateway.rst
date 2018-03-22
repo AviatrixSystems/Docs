@@ -96,6 +96,22 @@ When NAT is enabled, all route tables for private subnets in the VPC
 are programmed with an route entry that points the gateway as the 
 target for route entry 0.0.0.0/0. 
 
+
+Monitor Gateway Subnet
+-----------------------
+
+This feature allows you to enforce that no unauthorized EC2 instances being luanched on the 
+gateway subnet. Since an Aviatrix gateway must be launched on a public subnet, if you have policies that no
+EC2 instances can be launched on public subnets, this feature addresses that concern. 
+
+When it is enabled, the Controller monitors periodically on the selected subnet where 
+gateway is launched from. If it detects EC2 instances being launched, the Controller sends an alert email
+to admin and immediately stops the instance(s).
+
+You can exclude certain instances by entering instance IDs separated by comma. 
+
+
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
