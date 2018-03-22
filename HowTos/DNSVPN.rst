@@ -1,6 +1,6 @@
 .. meta::
    :description: DNS UDP LoadBalancer Reference Design
-   :keywords: DNS VPN, Route 53, VPN, aviatrix, remote user vpn, openvpn, user vpn
+   :keywords: DNS VPN, Route 53, VPN, aviatrix, remote user vpn, openvpn, user vpn, ELB, ssl vpn
 
 
 
@@ -8,12 +8,12 @@
 UDP LoadBalanced VPN using DNS
 ==============================
 
-This feature is available from version 2.7. AWS does not allow you to create
-loadbalancers for UDP VPN gateways. To circumvent this issue, we utilize
-Route53 services of AWS to create a round robin based UDP LoadBalanced
-VPN Gateways.
+This feature is available from `Aviatrix software version 2.7 <http://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r2-7>`_  and later. AWS Elastics Load Balancing (ELB) does not support  
+UDP traffic. To overcome this, AWS Route53 service is leveraged to direct user VPN traffic to UDP VPN gateways in a round robin algorithm. 
 
-.. Note:: UDP based OpenVPN® provides higher packet throughput than TCP based VPN solution. UDP based VPN solution runs on UDP 1194. If you plan to deploy this solution for on-prem users, make sure your corporate firewall is open on UDP 1194 for outbound traffic.  
+.. Note:: 
+
+ UDP based OpenVPN® provides higher packet throughput than TCP based VPN solution. UDP based VPN solution runs on UDP 1194. If you plan to deploy this solution for on-prem users, make sure your corporate firewall is open on UDP 1194 for outbound traffic.  
 
 
 Configuration Workflow
@@ -27,7 +27,7 @@ Configuration Workflow
    `Enabled ELB` option is No  .
 
 2. Create DNS Loadbalancers
-   a. Go to OpenVPN®->Advanced->UDP Loadbalancer
+   a. Go to OpenVPN® -> Advanced -> UDP Loadbalancer
    b. Click "+New" button
    
         i.   Select cloud type and account (Currently only supported on AWS)
