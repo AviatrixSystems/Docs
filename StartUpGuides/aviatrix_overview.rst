@@ -12,8 +12,8 @@ What Do We Do?
 
 Aviatrix is a cloud networking company. 
 
-We focus on solving networking problems in areas relevant to public clouds. 
-These areas are: 
+We focus on solving networking problems in use cases relevant to public clouds. 
+These use cases are: 
 
 - datacenter to cloud (`Next Gen Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
 - cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
@@ -32,8 +32,8 @@ agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_mes
 Where To Find Us?
 ==================
 
-Our product, Aviatrix Secure Networking Platform, consists of two components, controller and
-gateway. Gateways are launched from the controller
+Our product, Aviatrix Secure Networking Platform, consists of two components, Controller and
+gateway. Gateways are launched from the Controller
 browser console by using your cloud account credentials with cloud provider APIs.
 The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ and `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
 
@@ -56,7 +56,7 @@ experience when networking to any of them or between them.
 Another example, we hide the complexity of building IPSEC so that you have the same 
 experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. 
 
-Beyond ease of use, Aviatrix solutions solve many problems better than other products in each of the areas. This document summarizes these problems. Links to 
+Beyond ease of use, Aviatrix solutions solve many problems better than other products in each of the use cases. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
 
 Our goal is to become your go-to tool for all things cloud networking. 
@@ -152,6 +152,7 @@ firewall policies. This reduces the need to have to configure security groups of
 
  a. **Security Rule Limits** An cloud instance's security group has a limit of 50 rules. How do I get around that?
  #. **Enforce Security Policies** Developers don't always follow the best practice when it comes to security, enforcing policies at the gateway takes that worry away. 
+ #. **Regulation** We cannot use AWS VPC Peering as it does not allow us to apply policies. We need an infrastructure presence that not only provides security but also enforce policies. 
 
 To learn how to setup the L4 firewall, `follow the doc. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_
 

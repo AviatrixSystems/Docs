@@ -93,10 +93,13 @@ follows, with major steps highlighted.
 Network Device Support
 ======================
 
-Aviatrix site2cloud supports all types of on-prem devices that terminate VPN connection. Below describes configuration examples to specific devices. 
+Aviatrix site2cloud supports all types of on-prem firewall and router devices that 
+terminate VPN connection. Below are configuration examples to specific devices. 
 
     - `pfSense IPsec VPN <CloudToPfSense.html>`__
     - `Palo Alto Next-Gen Firewall (PAN) <http://docs.aviatrix.com/HowTos/S2C_GW_PAN.html>`_
+    - `Check Point Firewall <http://docs.aviatrix.com/HowTos/S2C_GW_CP.html>`_
+
 
 Troubleshooting
 ===============
