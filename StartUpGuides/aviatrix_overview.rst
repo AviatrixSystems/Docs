@@ -35,7 +35,7 @@ Where To Find Us?
 Our product, Aviatrix Secure Networking Platform, consists of two components, controller and
 gateway. Gateways are launched from the controller
 browser console by using your cloud account credentials with cloud provider APIs.
-The Controller image is available in `AWS Marketplace, <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?qid=1520115866757&sr=0-1&ref_=srh_res_product_title>`_  `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-cloud-services?tab=Overview>`_ and GCloud.
+The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ and `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
 
 We are not a SaaS company, our product runs in your account and environment. We have no access to your data or credentials. 
 
@@ -59,19 +59,19 @@ experience when you build an IPSEC tunnel as you would with AWS native peering: 
 Beyond ease of use, Aviatrix solutions solve many problems better than other products in each of the areas. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
 
-Our goal is to become your go-to tool for all thing cloud networking. 
+Our goal is to become your go-to tool for all things cloud networking. 
 
 
-Datacenter to Cloud: AWS Global Transit Network 
+Datacenter to Cloud: Aviatrix Next-Gen Transit Network 
 =========================================================
 
-Aviatrix Global Transit Network solution solves many problems when connecting datacenters to the growing number of VPCs.
+Aviatrix Next-Gen Transit Network solution solves many problems when connecting datacenters to a growing number of VPCs.
 
 These problems are listed below:
 
  a. **Change Control** Each time a new VPC is stood up, a change control process has to take place to modify the edge router for Direct Connect or IPSEC over Internet. This is not agile and the risk of errors in configuration is not acceptable.
- #. **BGP** The AWS Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to outside.  
- #. **Not Secure** All spoke VPCs in The AWS Global Transit solution have connectivity to each other through BGP route propagation. There is no network segmentation. The blast radius is my entire cloud network and datacenters. Not acceptable by security team. 
+ #. **BGP** The CSR based Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to outside.  
+ #. **Not Secure** All spoke VPCs in The CSR based Global Transit solution have connectivity to each other through BGP route propagation. There is no network segmentation. The blast radius is my entire cloud network and datacenters. Not acceptable by security team. 
  #. **Reach Route Limit** AWS has route entry limits of 100 per each routing table. Combining the number of VPC CIDRs and the list of on-prem CIDRS, this route limit is fast approaching or already a problem.
  #. **Extra Charge** In the CSR based solution, traffic from one spoke VPC to another spoke VPC traverses through one transit and sometimes two transit hub, resulting in 2x or 3x egress charge. 
  #. **Too Complex** The CloudOps is a team of 6 engineers managing 34 AWS services, the skill set and resources it takes to manage the CSR based Transit network is beyond what we want to handle. 

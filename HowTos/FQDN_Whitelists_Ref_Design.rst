@@ -65,22 +65,25 @@ Before you start make sure you have the latest software by checking the
 Dashboard. If an alert message (New!) appears, click New! To upgrade to
 the latest software.
 
-1. To configure, go to "Advanced Config" -> "FQDN Filter".
+::
 
-2. Create a tag with a name. Click Enable.
+ 1. To configure, go to Security -> FQDN Filter
 
-3. Edit the tag by adding FQDN hostname part of URLs (e.g.
+ 2. Create a tag with a name. Click Enable.
+
+ 3. Edit the tag by adding FQDN hostname part of URLs (e.g.
    www.aviatrix.com, or \*.google.com).
 
-4. Attach Gateway. One or more gateways can be attached to a tag.
+ 4. Attach Gateway. One or more gateways can be attached to a tag.
 
-5. Note: Step 2, 3 and 4 can be done first without enabling the tag.
+ 5. Note: Step 2, 3 and 4 can be done first without enabling the tag.
    Once the tag is enabled, HTTP and HTTPS traffic to these FQDN will be
    allowed, and any destination outside the FQDN will be denied.
 
-6. For support, send email to support@aviatrix.com
 
-7. Enjoy!
+For support, send email to support@aviatrix.com
+
+Enjoy!
 
 .. |image0| image::  FQDN_media/image1.png
    :width: 3.5in
