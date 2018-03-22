@@ -80,7 +80,7 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
     |imageAwsMarketplaceAcceptTerms|
 
 1.2.3 Product Support Connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. You can choose to sign up later, or edit/remove your details at any time. Click `Register Product Support`
 
@@ -89,7 +89,7 @@ Enter your contact information to connect this subscription to Aviatrix's techni
 
 .. tip::
 
-  If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server.  (SWM - how do I know if I have a reachable custom DNS server?)
+  If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server.  
 
 ..
 
@@ -99,8 +99,6 @@ Enter your contact information to connect this subscription to Aviatrix's techni
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
 Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Highlight and copy the `CloudFormation Template URL Link Address` for the AMI you intend to launch.  
-
-(SWM - do the below need to be links? its a bit confusing because it makes me want to click instead of copy)
 
 ============================================                  ============================================
 **Controller AMI Name**                                       **CloudFormation Template URL Link Address**
