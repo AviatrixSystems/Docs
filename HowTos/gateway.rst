@@ -110,6 +110,11 @@ to admin and immediately stops the instance(s).
 
 You can exclude certain instances by entering instance IDs separated by comma. 
 
+To configure, go to Gateway page, highlight a gateway, click Edit. 
+Scroll down to `Monitor Gateway Subnet`. 
+Click `Enable` and then optionally enter excluding instance ID(s). Click OK when finished. 
+
+Click `Disable` to remove all excluding instance ID(s).
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
