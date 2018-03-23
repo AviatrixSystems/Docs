@@ -48,7 +48,112 @@ When this option is selected, Aviatrix gateway allocates a new EIP for the gatew
 VPN Access
 -------------
 
-When this option is selected, Aviatrix gateway is used for SSL VPN termination. It supports OpenVPN® client and Aviatrix client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+When this option is selected, Aviatrix gateway is used for SSL VPN termination. It supports OpenVPN® client and Aviatrix SAML client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
+
+VPN CIDR Block
+---------------
+
+When a VPN user connects to the VPN gateway, the user will be assigned a virtual 
+IP address from a pool of IP addresses. 
+This pool of IP address is defined as VPN CIDR Block. 
+The default IP address pool is 192.168.43.0/24. 
+
+
+The only reason you would want to change this address pool is if 192.168.43.0/24 
+overlaps with your desktop or laptop network address range. For example, if you are on a LAN with a network CIDR 10.0.0.0/24, your desktop IP address will never conflict 
+with your VPN virtual IP address. On the other hand, if your desktop is on a LAN with a network CIDR 192.168.20.0/16, your VPN virtual IP address might conflict with your LAN address. In this case, change the VPN CIDR Block to a different address range, 
+for example, 10.10.0.0/24.
+
+Max Connections
+----------------
+
+Maximum number of active VPN users allowed to be connected to this gateway. The defalt is 100. 
+
+When you change this address, make sure the number is smaller than the VPN CIDR Block. 
+OpenVPN® VPN CIDR Block allocates 2 IP addresses for each connected VPN user. 
+So when the VPN CIDR Block is a /24 network, it supports about 120 users. 
+
+Split Tunnel Mode
+------------------
+
+Split Tunnel Mode is enabled by default. When Split Tunnel mode is enabled, only 
+traffic that is destined to the VPC/VNet CIDR where the VPN gateway is 
+deployed is going into the VPN tunnel when a user is 
+connected to the VPN gateway. 
+
+When Split Tunnel Mode is disabled (Full Tunnel Mode), all laptop traffic, 
+including Internet traffic (such as a visit to www.google.com), 
+is going through the VPN tunnel when a user is connected to the VPN gateway. 
+
+Disabling Split Tunnel Mode should be a deliberate decision as you will be 
+charged all Internet traffic as they are considered egress trafifc by 
+the cloud provider (AWS/Azure/GCP).
+
+
+Additional CIDRs
+----------------
+
+This is an optional parameter. Leave it blank if you do not need it.
+
+When Split Tunnel Mode is enabled, the Additional CIDRs specifies a list of 
+destination CIDR ranges that will also go through the VPN tunnel. 
+This is a useful field when you have `multiple VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
+
+Nameservers
+------------
+
+This is an optional parameter. Leave it blank if you do not need it. 
+
+When Split Tunnel Mode is enabled, you can instruct the VPN gateway to push down
+a list of DNS servers to your desktop, so that a VPN user is connected, it will
+use these DNS servers to resolve domain names. 
+
+Search Domains
+---------------
+
+This is an optional parameter. Leave it blank if you do not need it. 
+
+When Split Tunnel Mode is enabled, Seach Domains let you specify a list of 
+domain names that will use the Nameserver when a specific name is 
+in the destination.
+domain names
+
+Enable ELB
+-----------
+
+Enable ELB is turned on by default. 
+
+When ELB is enabled, the domain name of the cloud provider's 
+load balancer such as AWS ELB will be the connection IP address when a 
+VPN user connects to the VPN gateway. This connection IP address is part of
+the .ovpn cert file the Controller send to the VPN client. Even when you 
+delete all VPN gateways, you can re-launch them without having to reissue 
+new .ovpn cert file. This helps reduce friction to VPN users.  
+
+When ELB is enabled, you can launch multiple VPN gateways behind ELB, thus
+achiving a scale out VPN solution. Note since AWS ELB only supports TCP for 
+load balancing, VPN gateways with ELB enabled run on TCP. 
+
+ELB Name
+--------
+
+This is an optional parameter. Leave it blank if you do no need it. 
+
+The ELB Name is used for GCP only. 
+
+Enable Policy Based Routing (PBR)
+----------------------------------
+
+PBR enables you to route VPN traffic to a different subnet with its default
+gateway. 
+
+By default, all VPN traffic is NATed and send to VPN gateway's eth0 interface. 
+If you want to force the VPN traffic to go out on a different subnet other than 
+VPN gateway eth0 subnet, you can specify a PBR Subnet in the VPC and the 
+PBR Default gateway. 
+
+One use case for this feature is `Anonymous Internet Surfing <http://docs.aviatrix.com/HowTos/Anonymous_Browsing.html>`_.
+
 
 Add/Edit Tags
 ---------------
