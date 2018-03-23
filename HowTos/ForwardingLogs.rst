@@ -15,10 +15,31 @@ Aviatrix supports forwarding logs from the gateway(s) to a central logging serve
 Step-by-step Deployment Guide
 =============================
 
+Solution Overview
+-----------------
+
+In addition to direct integrations with services like Splunk and Sumologic, the Aviatrix Controller supports forwarding logs to another syslog server.
+
+If your logging provider requires that you process the data before it is sent to it, you can forward these logs to a Linux server that will handle the processing and forwarding.  This solution guide will walk you through configuring this.
+
+Steps to complete:
+
+|imageOverview|
+
+#. Create an `EC2 Ubuntu instance <#step1>`__ that will receive logs from all gateways
+#. Configure `rsyslogd <#step2>`__ on the Ubuntu instance
+#. `Configure Aviatrix <#step3>`__ to forward logs your new Ubuntu instance
+#. Update the `security group <#step4>`__ for the Ubuntu instance to allow traffic from each Aviatrix Gateway
+#. Implement `processing logic <#step5>`__ (or use one provided by Aviatrix) to process and forward the logs
+
+.. _step1:
+
 Create an EC2 instance
 ----------------------
 
 #. Create a new EC2 Ubuntu instance to receive logs from the gateways
+
+.. _step2:
 
 rsyslogd
 --------
@@ -34,7 +55,21 @@ rsyslogd
    .. note::
       (see http://www.rsyslog.com/ubuntu-repository/ for more details)
 
-#. Configure rsyslogd to accept messages (see below for details)
+#. Configure rsyslogd to accept messages on your desired port
+
+   #. SSH and login to the EC2 instance
+   #. Check that the /etc/rsyslogd.conf is listening on UDP or TCP port.  Optionally, update the port.
+
+      .. code-block:: shell
+
+         # provides UDP syslog reception
+         $ModLoad imudp
+         $UDPServerRun 10514
+
+      .. note::
+         Use any port you wish here.
+
+.. _step3:
 
 Enable Log Forwarding in Aviatrix Controller
 --------------------------------------------
@@ -63,26 +98,28 @@ Enable Log Forwarding in Aviatrix Controller
 
 #. Click `Enable`
 
+.. _step4:
 
-Configuration Examples
-======================
+Update Security Group of Receiving Instance
+-------------------------------------------
+
+Allow inbound traffic on the selected UDP/TCP port to the EC2 instance you created earlier.
+
+.. _step5:
+
+Implement Processing Logic
+--------------------------
+
+Implement the logic to process the incoming logs and forward to the log service.  A few examples are provided below.
 
 Write Logs to S3
-----------------
+################
 
-#. Login to the Ubuntu EC2 instance created earlier
 #. Install `AWS CLI <https://docs.aws.amazon.com/cli/latest/userguide/installing.html>`__
 
    .. note::
       You may need to install the package ``python-pip`` first
 
-#. Check that the /etc/rsyslogd.conf is listening on UDP or TCP port.  Optionally, update the port.
-
-   .. code-block:: shell
-
-      # provides UDP syslog reception
-      $ModLoad imudp
-      $UDPServerRun 10514
 
 #. Create a directory on the local file system (e.g., /var/log/aviatrix)
 #. Create a new rsyslogd configuration file ``/etc/rsyslog.d/22-aviatrix.conf`` with the following configuration:
@@ -127,7 +164,7 @@ Write Logs to S3
       cd ${DIR}
       for f in $(ls); do
         if [ "$f" != "gateways.log" ]; then
-            aws s3 cp ${DESTDIR}/${new_filename}
+            aws s3 cp ${f} ${DESTDIR}/${new_filename}
             if [ $? -eq 0 ]; then
                 sudo rm -f ${DIR}/$f
             fi
@@ -137,7 +174,7 @@ Write Logs to S3
 #. Create a crontab entry to run this script as often as desired
 
 Datadog
--------
+#######
 
 For Datadog integration, please see `this <https://github.com/AviatrixSystems/ThirdPartyLogIntegration>`__ Github repository.
 
@@ -152,3 +189,4 @@ Use the following `Optional Custom Template`:
      property(name="msg")
      constant(value="\n")
 
+.. |imageOverview| image:: log_forwarder_media/overview.png
