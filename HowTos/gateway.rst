@@ -50,8 +50,18 @@ VPN Access
 
 When this option is selected, Aviatrix gateway is used for SSL VPN termination. It supports OpenVPN® client and Aviatrix SAML client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ 
 
+Enable SAML
+===================
+
+When SAML is enabled, a VPN client/user authenticates to an identify provider 
+(IDP) directly, instead of gateway doing it on behalf of the user. 
+
+In this case, you must use Aviatrix VPN Clients. 
+
+Check out the `details <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_  on how to configure and use Aviatrix VPN Clients for SAML.
+
 VPN CIDR Block
----------------
+===============
 
 When a VPN user connects to the VPN gateway, the user will be assigned a virtual 
 IP address from a pool of IP addresses. 
@@ -64,8 +74,21 @@ overlaps with your desktop or laptop network address range. For example, if you 
 with your VPN virtual IP address. On the other hand, if your desktop is on a LAN with a network CIDR 192.168.20.0/16, your VPN virtual IP address might conflict with your LAN address. In this case, change the VPN CIDR Block to a different address range, 
 for example, 10.10.0.0/24.
 
+MFA Authentication
+=====================
+
+You can select either Duo or Okta for the VPN gateway to authenticate to these 
+two services on behalf of a VPN user. 
+
+In this case, you can use OpenVPN® clients such as Tunnelblick for iOS and OpenVPN for windows. 
+
+For how to configure Duo, check out `How to configure Duo. <http://docs.aviatrix.com/HowTos/duo_auth.html>`_
+
+For how to configure Okta, check out `How to configure Okta. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`_ 
+
+
 Max Connections
-----------------
+=================
 
 Maximum number of active VPN users allowed to be connected to this gateway. The defalt is 100. 
 
@@ -74,7 +97,7 @@ OpenVPN® VPN CIDR Block allocates 2 IP addresses for each connected VPN user.
 So when the VPN CIDR Block is a /24 network, it supports about 120 users. 
 
 Split Tunnel Mode
-------------------
+==================
 
 Split Tunnel Mode is enabled by default. When Split Tunnel mode is enabled, only 
 traffic that is destined to the VPC/VNet CIDR where the VPN gateway is 
@@ -91,7 +114,7 @@ the cloud provider (AWS/Azure/GCP).
 
 
 Additional CIDRs
-----------------
+==================
 
 This is an optional parameter. Leave it blank if you do not need it.
 
@@ -100,7 +123,7 @@ destination CIDR ranges that will also go through the VPN tunnel.
 This is a useful field when you have `multiple VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
 
 Nameservers
-------------
+=============
 
 This is an optional parameter. Leave it blank if you do not need it. 
 
@@ -109,7 +132,7 @@ a list of DNS servers to your desktop, so that a VPN user is connected, it will
 use these DNS servers to resolve domain names. 
 
 Search Domains
----------------
+=================
 
 This is an optional parameter. Leave it blank if you do not need it. 
 
@@ -119,7 +142,7 @@ in the destination.
 domain names
 
 Enable ELB
------------
+============
 
 Enable ELB is turned on by default. 
 
@@ -135,14 +158,22 @@ achiving a scale out VPN solution. Note since AWS ELB only supports TCP for
 load balancing, VPN gateways with ELB enabled run on TCP. 
 
 ELB Name
---------
+==========
 
 This is an optional parameter. Leave it blank if you do no need it. 
 
 The ELB Name is used for GCP only. 
 
+Enable Client Certificate Sharing
+==================================
+
+This is disabled by default. 
+
+By enabling the client certificate sharing, all VPN users share one .ovpn file. You must have MFA (such as DUO + LDAP) configured to make VPN access secure. 
+
+
 Enable Policy Based Routing (PBR)
-----------------------------------
+=====================================
 
 PBR enables you to route VPN traffic to a different subnet with its default
 gateway. 
@@ -154,6 +185,11 @@ PBR Default gateway.
 
 One use case for this feature is `Anonymous Internet Surfing <http://docs.aviatrix.com/HowTos/Anonymous_Browsing.html>`_.
 
+Enable LDAP
+============
+
+When LDAP authentication is enabled, the VPN gateway will act as a LDAP client 
+on behalf of the VPN user to authenticate the VPN user to the LDAP server. 
 
 Add/Edit Tags
 ---------------
