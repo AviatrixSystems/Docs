@@ -7,7 +7,7 @@
 Access Account
 =================================
 
-Aviatrix Controller is a multi cloud platform. The Controller uses your cloud provider API credentials to 
+Aviatrix Controller is a multi cloud and multi account platform. The Controller uses your cloud provider API credentials to 
 make APIs calls, for example, to launch an Aviatrix gateway instance, on behalf of your cloud accounts. 
 
 One cloud credential is represented as an Aviatrix access account on the Controller. The Controller supports 
