@@ -10,20 +10,18 @@ Connect to Floating IP Addresses in Multiple AWS AZs
 Overview
 --------
 
-A subnet cannot span more than one availability zone (AZ) [1]_ in AWS.  Because of this, the IP address assigned to an instance in one AZ cannot be reassigned to another instance in a different AZ.
+A subnet cannot span more than one availability zone (AZ) in AWS [1]_.  Because of this, the IP address assigned to an instance in one AZ cannot be reassigned to another instance in a different AZ.
 
-Applications that require users have a single IP address for connectivity, such as cloud-based NFS and CIFS services, need a way to failover to a different instance when the node fails.  This fault tolerance is key to services like NetApp's ONTAP Cloud.  A single AZ solution does not satisfy users' demands for a guaranteee of an always-on solution.
+Applications that require users have a single IP address for connectivity, such as cloud-based NFS and CIFS services, need a way to failover to a different instance when the node fails.  This fault tolerance is key to services like NetApp's ONTAP Cloud.  A single AZ solution does not satisfy users' demands for a guarantee of an always-on solution.
 
-In order to overcome the AWS limitiation, applications like NetApp and SAP, often rely on "floating" IPs addresses for failover between nodes in different AZs.  Floating IP addresses are outside the range of the VPC CIDR.  Additionally, in order for AWS to route properly, they must not overlap with any CIDR range in the same AWS region.
+In order to overcome the AWS limitation, applications like NetApp Cloud, rely on "floating" IPs addresses for failover between nodes in different AZs.  Floating IP addresses are outside the range of the VPC CIDR.  In order to route to these addresses within AWS, they must not overlap with any CIDR range in the same AWS region.
 
-Clients then connect to the floating IP address rather than the IP address of the node itself.  When a node failure (or even an entire AZ failure) is detected, the floating IP address is "moved" to an instance in another AZ.
-
-NetApp Cloud "moves" the IP address by updating the route table entry(ies) to point the floating IP addresses to the other instance. 
+Clients connect to the floating IP address rather than the IP address of the node itself.  When a node failure (or even an entire AZ failure) is detected, the floating IP address is "moved" to an instance in another AZ.
 
 Problem
 -------
 
-The floating IP solution works well if the client is in the same VPC.  However, if the client is not in the same VPC, AWS routing does not support routing to these IP addresses that are outside of the CIDR range for the VPC.  Those packets will never exit the VPC.
+The floating IP solution works well if the client is in the same VPC as the server.  However, if the client is not in the same VPC, AWS routing does not support routing to these IP addresses that are outside of the CIDR range for the VPC.  Those packets will never exit the VPC.
 
 |imageProblem|
 
@@ -31,7 +29,7 @@ The floating IP solution works well if the client is in the same VPC.  However, 
 Aviatrix Solution
 -----------------
 
-Aviatrix solves this problem by updating the route table in the client VPC.  All packets destined for the floating IP addresses will be delievered to the Aviatrix Gateway.  Once there, the gateway has an internal route table that instructs those packets to go to the Aviatrix gateway in the server VPC.
+Aviatrix solves this problem by handling routing of the floating IP addresses in the client VPC.  All packets destined for the floating IP address(es) will be delivered to the Aviatrix Gateway.  The gateway maintains an internal route table that points those packets to an Aviatrix gateway in the server VPC.
 
 |imageAviatrixSolution|
 
@@ -116,8 +114,8 @@ First, set up a connection for traffic to go between the client and the ONTAP VP
 
    |imageAddPeer|
 
-Route Floating IP addresses to ONTAP VPC
-########################################
+Route Floating IP addresses to the ONTAP VPC
+############################################
 Next, set up a route for traffic for the floating IP addresses through the client gateway to the ONTAP gateway:
 
 #. Login to your Aviatrix Controller
@@ -133,10 +131,11 @@ Next, set up a route for traffic for the floating IP addresses through the clien
 Validate
 ########
 
+Mount a share on an instance in the client VPC and test connectivity.
+
 The final architecture will look like this:
 
 |imageFinal|
-
 
 
 
@@ -144,11 +143,11 @@ The final architecture will look like this:
 .. [2] https://library.netapp.com/ecmdocs/ECMLP2484721/html/GUID-46865CCE-19CE-45C2-BEC4-2FA222CE9537.html#GUID-46865CCE-19CE-45C2-BEC4-2FA222CE9537__SECTION_0428B81160F7479CAC70E140483818F2
 .. |imageAviatrixSolution| image:: netapp_floating_ips_media/floating_ip_aviatrix_solution.png
 .. |imageProblem| image:: netapp_floating_ips_media/floating_ip_generic_aws.png
-   :scale: 50%
+   :scale: 75%
 .. |imageAddPeer| image:: netapp_floating_ips_media/add_peer.png
    :scale: 50%
-.. |imageFinal| image:: netapp_floating_ips_media/netapp_aviatrix.png
-   :scale: 50%
+.. |imageFinal| image:: netapp_floating_ips_media/netapp_plus_aviatrix.png
+   :scale: 75%
 .. |imageNetappHA| image:: netapp_floating_ips_media/netapp.png
-   :scale: 50%
+   :scale: 75%
 .. |imageAddTransitivePeer| image:: netapp_floating_ips_media/add_transitive_peer.png

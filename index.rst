@@ -240,6 +240,7 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/build_zerotrust_cloud_network
    Solutions/aviatrix_aws_transitvpc
    Solutions/egress_transit_gateway
+   Solutions/netapp_sap_floating_ip
 
 .. _Whitepapers:
 
