@@ -50,6 +50,8 @@ Select the right AMI that meets your use case and subscription preference. This 
    - Multicloud Peering 
    - Encrypted Peering 
    - Site to Cloud IPSEC VPN 
+   - FREE - EC2 FlightPath Troubleshooting Tool
+   - FREE – Two Tunnels (Free Forever)
    
 - **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1521304828225&sr=0-8&ref_=srh_res_product_title>`_ includes a 30 day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
    - Next-Generation Transit VPC Network  
