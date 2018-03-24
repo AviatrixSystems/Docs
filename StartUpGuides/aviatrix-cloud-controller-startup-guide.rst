@@ -86,8 +86,6 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
 
 Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. You can choose to sign up later, or edit/remove your details at any time. Click `Register Product Support`
 
-    |imageAwsMarketplacePSC|
-
 
 .. tip::
 

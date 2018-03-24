@@ -7,7 +7,7 @@
 Configuring Aviatrix User SSL VPN
 ===================================
 
-Aviatrix provides a cloud-native and feature-rich client VPN solution. The solution is based on OpenVPN® and is compatible with all OpenVPN® clients.  In addition, Aviatrix provides its own `client that supports SAML authentication <UserSSL_VPN_Okta_SAML_Config.html>`__ directly from the client. 
+Aviatrix provides a cloud native and feature rich client VPN solution. The solution is based on OpenVPN® and is compatible with all OpenVPN® clients.  In addition, Aviatrix provides its own `client that supports SAML authentication <UserSSL_VPN_Okta_SAML_Config.html>`__ directly from the client. 
 
 |image0|
 
