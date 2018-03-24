@@ -10,11 +10,12 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
-Keep this tab open as you go through the install process. This process takes about 25 minutes, so grab a cup of coffee and let's get started.   
+Keep this tab open as you go through the install process.    
 
-The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building your network for your first use case. 
+The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building a Transit Network, remote user VPN and multi-cloud peering. 
 
-This guide walks you through the following steps to launch the Aviatrix Controller and complete the initial setups:
+In this guide, we'll walk you through the first 5 steps. By the end, you'll be 
+ready for your first use case. 
 
   **Step 1** Subscribe to an Aviatrix AMI via AWS Marketplace. 
 
