@@ -22,7 +22,7 @@ This guide walks you through the following steps to launch the Aviatrix Controll
 
   **Step 3** Go through the Initial Setup.
 
-  **Step 4** Setup a primary access account.  
+  **Step 4** Onboarding and setup a primary access account.  
 
   **Step 5** Start your use case.
 
