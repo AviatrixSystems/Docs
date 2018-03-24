@@ -43,7 +43,7 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1521304828225&sr=0-7&ref_=srh_res_product_title>`_ is a pay as you go cloud consumption model for all use cases: 
+- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
