@@ -16,11 +16,15 @@ The Aviatrix Controller provides a single pane of glass for all your network con
 
 This guide walks you through the following steps to launch the Aviatrix Controller and complete the initial setups:
 
- 1. Subscribe to an Aviatrix AMI via AWS Marketplace. 
- 2. Launch a Controller instance using the provided CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
- 3. Go through the Initial Setup.
- 4. Setup a primary access account.  
- 5. Start your use case.
+  **Step 1** Subscribe to an Aviatrix AMI via AWS Marketplace. 
+
+  **Step 2** Launch a Controller instance using the provided CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
+
+  **Step 3** Go through the Initial Setup.
+
+  **Step 4** Setup a primary access account.  
+
+  **Step 5** Start your use case.
 
 To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
@@ -34,13 +38,13 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 ..
 
 
-1. Subscribe to an Aviatrix AMI from AWS Marketplace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1. Subscribe to an Aviatrix AMI 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.1 Select an AMI  
-------------------------------------------------------------------------------------
+----------------------------------------------------------------
 
-Select the right AMI that meets your use case and subscription preference. This will take you to the AWS Marketplace to complete step 1.2 only. 
+Select the right AMI that meets your use case and subscription preference. Click an AMI link will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
 - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
@@ -93,8 +97,8 @@ Enter your contact information to connect this subscription to Aviatrix's techni
 
 ..
 
-2. Launch the Controller with CloudFormation Template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 2. Launch the Controller with CloudFormation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
@@ -167,8 +171,8 @@ Cloud Interconnect BYOL                                       https://s3-us-west
    |imageCFComplete|
 
 
-3. Initial Setup
-^^^^^^^^^^^^^^^^^^^^
+Step 3. Initial Setup
+^^^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's login and go through a few init steps.
 
  3.1. Open a browser window to https://AviatrixControllerEIP, where AviatrixControllerEIP can be found in the Stack Outputs. You can also find the Controller instance EIP by going to AWS EC2 console, click the Controller instance and locate its public IP address. 
@@ -207,8 +211,8 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 
 ..
 
-4. Create A Primary Access Account 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 4. Create A Primary Access Account 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 4.1 Select AWS 
 ---------------
@@ -272,8 +276,8 @@ Once complete, click the `Create` button at the bottom of the form.
 |imageCreateAccount|
 
 
-What's Next 
-^^^^^^^^^^^^
+Step 5. Start a Use Case 
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Congratulations!  
 
