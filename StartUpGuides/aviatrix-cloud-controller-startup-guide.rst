@@ -10,7 +10,10 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
-Keep this tab open as you go through the install process.    
+Keep this tab open as you go through the install process. 
+
+You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
+
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building a Transit Network, remote user VPN, or multi-cloud peering, etc. 
 
