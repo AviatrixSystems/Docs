@@ -294,7 +294,7 @@ Enjoy!
 .. disqus::
 
 .. |4-steps| image:: ZeroToConnectivityInAWS_media/4-steps.png
-   :scale: 25%
+   :scale: 40%
 
 .. |imageAwsMarketplacePage1| image:: ZeroToConnectivityInAWS_media/aws_marketplace_page1.png
 .. |imageAwsMarketplaceContinuetoSubscribe| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1.png
