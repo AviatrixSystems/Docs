@@ -15,17 +15,9 @@ The Aviatrix Controller provides a single pane of glass for all your network con
 In this guide, we'll walk you through the first 4 steps. By the end, you'll be 
 ready for your first use case. 
 
+  |4-steps|
+
 You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
-
-  **Step 1** Subscribe to an Aviatrix AMI via AWS Marketplace. 
-
-  **Step 2** Launch a Controller instance using the provided CloudFormation Template. (Do not launch the Controller instance from AWS EC2 console or Marketplace.)
-
-  **Step 3** Go through the Initial Setup.
-
-  **Step 4** Onboarding and setup a primary access account.  
-
-  **Next** Start your use case.
 
 To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
@@ -300,6 +292,9 @@ Enjoy!
 .. add in the disqus tag
 
 .. disqus::
+
+.. |4-steps| image:: ZeroToConnectivityInAWS_media/4-steps.png
+   :scale: 25%
 
 .. |imageAwsMarketplacePage1| image:: ZeroToConnectivityInAWS_media/aws_marketplace_page1.png
 .. |imageAwsMarketplaceContinuetoSubscribe| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1.png
