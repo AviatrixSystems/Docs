@@ -12,14 +12,14 @@ Welcome. Your Aviatrix product experience starts here.
 
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building a Transit Network, remote user VPN, or multi-cloud peering, etc. 
 
+To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
+
 In this guide, we'll walk you through the first 4 steps. By the end, you'll be 
 ready for your first use case. 
 
   |4-steps|
 
 You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
-
-To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
 
