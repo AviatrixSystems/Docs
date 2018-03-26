@@ -3,9 +3,9 @@
    :keywords: Security VPN Management access
 
 
-=======================================================
-Aviatrix Controller Security for SAML Client Deployment
-=======================================================
+===============================================================
+Aviatrix Controller Security for SAML auth based VPN Deployment
+===============================================================
 
 Best practices calls for the Aviatrix Controller be not widely
 accessible from the internet. Access on TCP port 443 should be limited to 
