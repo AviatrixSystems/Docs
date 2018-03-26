@@ -14,19 +14,19 @@ accessible from the internet. Access on TCP port 443 should be limited to
   - access to/from each of the deployed gateways for general communication/keep-alives.
 
 
-However, the exception to that rule is when `Aviatrix SAML clients <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_ are 
+However, the exception to that rule is when `Aviatrix SAML authentication <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_ is
 used for user VPN access. In this case, the VPN user first contacts the Controller which then redirects user browser traffic to an IDP. This initial traffic runs on TCP port 443 and as vpn users are located in off site locations, the Controller TCP port 443 needs to open to all which may cause security concerns.
 
 
 In order to accommodate for both functions in a secure manner, please follow the
-instructions below to secure your controller when SAML client is being used.
+instructions below to secure your controller when SAML authentication is being used.
 
 Pre-requisites
 ======================
 
  - We assume you already know how to deploy Aviatrix solution, if you need help, check out this `reference design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Networking+Reference+Design.pdf>`__.
 
- - You have deployed Aviatrix SAML client for your user VPN access. 
+ - You have deployed Aviatrix SAML authentication for your user VPN access. 
 
 Configuration Workflow when SAML is configured
 ===============================================
@@ -114,18 +114,23 @@ Configuration Workflow when SAML is configured
 
 
 On the Controller
-#. Configure SAML by accessing controller through loadbalancer DNS name. This will generate everything, URLS and certs with respect to DNS name
+#. Configure SAML by accessing controller through the loadbalancer DNS name. This will generate everything (URLs and certificates) with respect to the DNS name
 
 .. note::
 
-   Controller's security group for 443 must allow from Loadbalancer's internal IP address which can be usually VPC CIDR
+   Controller's security group for 443 must allow from Loadbalancer's internal IP address which can be usually VPC CIDR and also the Gateways public IP
 
 
-(Optional) To Block general access:
+To Block general access:
 
-1. Create dummy target group pointing to invalid port
+1. After the SAML configuration is complete, you can block generall access to your controller
+   Create dummy target group pointing to invalid port
    path rule / will be pointing to dummy target group
    path rule /flask will be pointing to valid target group at HTTPS 443 to controller
+   By doing this only the SAML application is being forwarded by the ELB and is open to the world
+   This ensures that the rest of the controller configuration is open to the admin alone.
+
+  
 
 
 
