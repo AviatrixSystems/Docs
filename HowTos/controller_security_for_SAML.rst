@@ -114,7 +114,7 @@ Configuration Workflow when SAML is configured
 
 
 On the Controller
-#. Configure SAML by accessing controller through the loadbalancer DNS name. This will generate everything (URLs and certificates) with respect to the DNS name
+#. Configure SAML by accessing controller through the loadbalancer's certificate domain name. This will generate everything (URLs for the IDP and VPN user certificates) with respect to the DNS name. If you had configured SAML already, you will need to update the Assertion consumer URLs at the IDP to the domain name of the signed certificate. After you download the VPN user certificate, ensure that the domain name in the #AvaitrixController section is set correctly(If not, update it)
 
 .. note::
 
