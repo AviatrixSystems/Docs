@@ -62,6 +62,10 @@ Follow the steps below to put the Aviatrix Controller behind an AWS ALB:
 
 #. Create a DNS CNAME record pointing your desired name to the load balancer's `DNS name`
 
+   .. note::
+
+      The DNS CNAME record must match the name used in the SSL cert or you will receive a warning in the browser.
+
    .. tip::
 
       Here is an example setting up the entry in Route53:
