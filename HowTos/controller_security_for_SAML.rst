@@ -53,8 +53,8 @@ Configuration Workflow when SAML is configured
 
 #. Click next.
 
-#. For certificate upload from ACM or use your self/CA signed certificates.
-     Note: for self signed certificate select Security Policy: ELBSecurityPolicy-2015-05
+#. For certificate upload from ACM or use your self/CA signed certificates. if you already have a Route53 domain name, an ACM certificate can be requested for your domain and can be easily validated through email. You will need to add a record in your DNS with CNAME pointing the load balancer to match the certificate used for the load balancer.
+     Note: for self signed certificate select Security Policy: ELBSecurityPolicy-2015-05     
 
 #. Click next.
 
