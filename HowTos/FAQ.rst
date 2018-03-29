@@ -100,10 +100,12 @@ Avitrix Controller is shipped with a self-signed certificate, therefore there is
 
 You can change that by importing your own signed certificate. To do so, go to Settings ->Advanced -> Security. At the panel "CERTIFICATE REQUEST - SEND TO CERTIFICATE AUTHORITY", send a CSR (certificate sign request), then follow the instruction to import CA and signed Controller certificate. 
 
-3. Remove less secure TLS version
-##################################
+You can also use an `ALB in front of the Controller <./controller_ssl_using_elb.html>`__.
 
-You can disable access from browser that runs TLSv1 and TLSv1.1 and only support TLSv1.2. To do so, go to Settings ->Advanced -> Security -> TLS VERSIONS SUPPORT. Uncheck TLSv1 and TLSv1.1. 
+3. Remove less secure TLS version(s)
+####################################
+
+You can disable access from browser that runs TLSv1 and TLSv1.1 and only support TLSv1.2. To do so, go to Settings -> Advanced -> Security -> TLS VERSIONS SUPPORT. Uncheck TLSv1 and TLSv1.1. 
 
 4. Enable LDAP or DUO second factor to login in
 ################################################
@@ -117,7 +119,8 @@ To enable DUO authentication, go to Settings -> Controller -> 2FA Login and foll
 5. Create Read-only accounts
 #############################
 
-You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup. 
+You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup.
+
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
 ------------------------------------------------------------------------------------------------------
@@ -148,7 +151,7 @@ The Aviatrix solution
 
 Aviatrix provides multiple featrues to ensure your Transit Network is secure, as described below.
 
- 1. Enable `Gatewazy Subnet Monitoring <http://docs.aviatrix.com/HowTos/gateway.html#monitor-gateway-subnet>`_. When this feature is enabled, the Controller will monitor the selected public subnets periodically. When it detects any instances being launched on these subnets, the Controller will alert the admin and stop the instances. 
+ 1. Enable `Gateway Subnet Monitoring <http://docs.aviatrix.com/HowTos/gateway.html#monitor-gateway-subnet>`_. When this feature is enabled, the Controller will monitor the selected public subnets periodically. When it detects any instances being launched on these subnets, the Controller will alert the admin and stop the instances. 
 
  #. Enable `VPC Egress Firewall`. If you need to optimize application performance, you should consider allowing instances to access Internet directly, rather than backhauling to on-prem. When this feature is enabled, any traffic initiated from instances on the private subnet must go through the inline and in VPC egress whitelists before going out to Internet.  
 
