@@ -98,7 +98,7 @@ Now that you have subscribed to an AMI, you are ready to install the Controller 
 Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Highlight and copy the `CloudFormation Template URL Link Address` for the AMI you intend to launch.  
 
 ============================================                  ============================================
-**Controller AMI Name**                                       **CloudFormation Template URL Link Address**
+**Subscribed Controller AMI**                                 **CloudFormation Template URL Link Address**
 ============================================                  ============================================
 Secure Networking Platform PAYG - Metered                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json
 Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
