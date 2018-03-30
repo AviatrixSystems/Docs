@@ -55,7 +55,7 @@ https://portal.azure.com
 1. From the Azure portal click on “Azure Active Directory” and then “App
    registrations”
 
-2. Click “+ Add”
+2. Click “+ New application registration”
 
    a. Name = Aviatrix Controller
 
@@ -75,7 +75,7 @@ https://portal.azure.com
 
 1. Login to the Azure portal
 
-2. On the bottom left, click More services, search for “Subscriptions”
+2. On the top left, click All services, search for “Subscriptions”
 
 3. Copy the Subscription ID (to notepad or a convenient location)
 
@@ -89,7 +89,7 @@ https://portal.azure.com
 
    |image1|
 
-7. In the User search field, type in “Aviatrix”. The Aviatrix Controller
+7. In the Select search field, type in “Aviatrix”. The Aviatrix Controller
    app should show up. Select this one and click Select towards to the
    bottom.
 
@@ -99,7 +99,7 @@ https://portal.azure.com
 
 ***Get Application Information***
 
-1. From the Azure portal, click More services and search for “Azure
+1. From the Azure portal, click All services and search for “Azure
    Active Directory”.
 
 |    a. Retrieve the **Application** **Endpoint ID**.
@@ -118,7 +118,7 @@ https://portal.azure.com
 |
 |     c. Retrieve the **Application Client Secret**
 |
-|        i.   Click App registration -> Keys
+|        i.   Click App registration -> Settings -> Keys
 |        ii.  Enter in the following
 |            1. Description = Aviatrix
 |            2. Expires = Never expires
