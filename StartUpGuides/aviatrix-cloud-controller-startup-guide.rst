@@ -164,8 +164,8 @@ Cloud Interconnect BYOL                                       https://s3-us-west
    |imageCFComplete|
 
 
-Step 3. Initial Setup
-^^^^^^^^^^^^^^^^^^^^^^
+Step 3. Connect to the Controller 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's login and go through a few init steps.
 
  3.1. Open a browser window to https://AviatrixControllerEIP, where AviatrixControllerEIP can be found in the Stack Outputs. You can also find the Controller instance EIP by going to AWS EC2 console, click the Controller instance and locate its public IP address. 
