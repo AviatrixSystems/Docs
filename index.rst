@@ -108,6 +108,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/avxgw_azurevpngw_site2cloud
    HowTos/S2C_GW_PAN
    HowTos/S2C_GW_CP
+   HowTos/CloudToPfSense
 
 .. _OpenVPN:
 
