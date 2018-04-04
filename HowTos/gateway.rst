@@ -257,6 +257,23 @@ Click `Enable` and then optionally enter excluding instance ID(s). Click OK when
 
 Click `Disable` to remove all excluding instance ID(s).
 
+Gateway status
+--------------
+An Aviatrix gateway could be in any of the following states.
+
++------------+----------------------------------------------------------------+
+| State      | Explanation                                                    |
++============+================================================================+
+| waiting    | This is the initial state of a gateway immediately after the   |
+|            | launch. Gateway will transition to "up" state when controller  |
+|            | starts receiving keepalive messages from the newly launched    |
+|            | gateway over port 443(HTTPS).                                  |
++------------+----------------------------------------------------------------+
+| up         | Gateway is fully functional.                                   |
++------------+----------------------------------------------------------------+
+| down       | Gateway and controller could not communicate with each other   |
+|            | over HTTPS(443).                                               |
++------------+----------------------------------------------------------------+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
