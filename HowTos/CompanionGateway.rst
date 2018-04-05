@@ -35,8 +35,8 @@ NOTE: The following screenshots are for Companion Gateway V2
 Step 2: Deploy Programmatically
 -----------------------------------
 
-    After you click Create Virtual Machine for Aviatrix Companion Gateway, 
-    click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
+    If you don't have Azure subscription yet, follow the Azure guide to create your subscription. 
+    If you already have Azure subscription, click **Want to deploy programmatically? Get started ->** at the bottom of the page, as shown below:
 
 |image1|
 
