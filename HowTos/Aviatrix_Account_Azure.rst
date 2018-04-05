@@ -115,57 +115,57 @@ https://portal.azure.com
 
    A. Retrieve the **Application** **Directory ID**.
 
-      i. Scroll down the Azure Active Directory panel and Click on Properties
+      * Scroll down the Azure Active Directory panel and Click on Properties
 
          |Image02|
 
-      ii. Copy the “Directory ID” (to notepad or a convenient location)
+      * Copy the “Directory ID” (to notepad or a convenient location)
 
    B. Retrieve the **Application ID**.
 
-      i. Scroll up and click App registrations
+      * Scroll up and click App registrations
 
          |Image05|
 
-      ii. Copy the “Application ID”
+      * Copy the “Application ID”
 
    C. Retrieve the **Application Key**.
 
-      i. Click Aviatrix Controller
+      * Click Aviatrix Controller
 
-      ii. Click Settings
+      * Click Settings
 
          |Image06|
 
-      iii. Click Keys
+      * Click Keys
 
          |Image07|
 
-      iv. Enter in the following
+      * Enter in the following
 
-            * Description = Aviatrix
+            i. Description = Aviatrix
 
-            * Expires = Never expires
+            ii. Expires = Never expires
 
-      v. Click Save
+      * Click Save
 
-      vi. Copy the key value (to notepad or a convenient location)
+      * Copy the key value (to notepad or a convenient location)
 
    D. Add **App permissions**.
 
-      i. Click Required permissions -> Add
+      * Click Required permissions -> Add
 
          |Image08|
 
-      ii. Click Select an API -> Click Windows Azure Service Management API and click Select down below
+      * Click Select an API -> Click Windows Azure Service Management API and click Select down below
 
          |Image09|
 
-      iii. Click “Access Azure Service Management as organization user” and click Select
+      * Click “Access Azure Service Management as organization user” and click Select
 
          |Image10|
 
-      iv. Done
+      * Done
 
 2. Done
 
