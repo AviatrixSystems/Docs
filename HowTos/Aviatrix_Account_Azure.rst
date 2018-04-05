@@ -113,59 +113,59 @@ https://portal.azure.com
 
    |Image01|
 
-   i. Retrieve the **Application** **Directory ID**.
+   A. Retrieve the **Application** **Directory ID**.
 
-      a. Scroll down the Azure Active Directory panel and Click on Properties
+      i. Scroll down the Azure Active Directory panel and Click on Properties
 
          |Image02|
 
-      b. Copy the “Directory ID” (to notepad or a convenient location)
+      ii. Copy the “Directory ID” (to notepad or a convenient location)
 
-   ii. Retrieve the **Application ID**.
+   B. Retrieve the **Application ID**.
 
-      a. Scroll up and click App registrations
+      i. Scroll up and click App registrations
 
          |Image05|
 
-      b. Copy the “Application ID”
+      ii. Copy the “Application ID”
 
-   iii. Retrieve the **Application Key**.
+   C. Retrieve the **Application Key**.
 
-      a. Click Aviatrix Controller
+      i. Click Aviatrix Controller
 
-      b. Click Settings
+      ii. Click Settings
 
          |Image06|
 
-      c. Click Keys
+      iii. Click Keys
 
          |Image07|
 
-      d. Enter in the following
+      iv. Enter in the following
 
             * Description = Aviatrix
 
             * Expires = Never expires
 
-      e. Click Save
+      v. Click Save
 
-      f. Copy the key value (to notepad or a convenient location)
+      vi. Copy the key value (to notepad or a convenient location)
 
-   iv. Add **App permissions**.
+   D. Add **App permissions**.
 
-      a. Click Required permissions -> Add
+      i. Click Required permissions -> Add
 
          |Image08|
 
-      b. Click Select an API -> Click Windows Azure Service Management API and click Select down below
+      ii. Click Select an API -> Click Windows Azure Service Management API and click Select down below
 
          |Image09|
 
-      c. Click “Access Azure Service Management as organization user” and click Select
+      iii. Click “Access Azure Service Management as organization user” and click Select
 
          |Image10|
 
-      d. Done
+      iv. Done
 
 2. Done
 
