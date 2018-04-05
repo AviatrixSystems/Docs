@@ -113,7 +113,7 @@ https://portal.azure.com
 
    |Image01|
 
-   A. Retrieve the **Application** **Directory ID**.
+   i. Retrieve the **Application** **Directory ID**.
 
       a. Scroll down the Azure Active Directory panel and Click on Properties
 
@@ -121,7 +121,7 @@ https://portal.azure.com
 
       b. Copy the “Directory ID” (to notepad or a convenient location)
 
-   B. Retrieve the **Application ID**.
+   ii. Retrieve the **Application ID**.
 
       a. Scroll up and click App registrations
 
@@ -129,7 +129,7 @@ https://portal.azure.com
 
       b. Copy the “Application ID”
 
-   C. Retrieve the **Application Key**.
+   iii. Retrieve the **Application Key**.
 
       a. Click Aviatrix Controller
 
@@ -151,7 +151,7 @@ https://portal.azure.com
 
       f. Copy the key value (to notepad or a convenient location)
 
-   D. Add **App permissions**.
+   iv. Add **App permissions**.
 
       a. Click Required permissions -> Add
 
