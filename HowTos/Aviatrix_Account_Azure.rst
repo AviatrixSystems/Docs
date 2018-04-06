@@ -113,61 +113,59 @@ https://portal.azure.com
 
    |Image01|
 
-   A. Retrieve the **Application** **Directory ID**.
+2. Retrieve the **Application** **Directory ID**.
 
-      * Scroll down the Azure Active Directory panel and Click on Properties
+   A. Scroll down the Azure Active Directory panel and Click on Properties
 
-         |Image02|
+   |Image02|
 
-      * Copy the “Directory ID” (to notepad or a convenient location)
+   B. Copy the “Directory ID” (to notepad or a convenient location)
 
-   B. Retrieve the **Application ID**.
+3. Retrieve the **Application ID**.
 
-      * Scroll up and click App registrations
+   A. Scroll up and click App registrations
 
-         |Image05|
+   |Image05|
 
-      * Copy the “Application ID”
+   B. Copy the “Application ID”
 
-   C. Retrieve the **Application Key**.
+4. Retrieve the **Application Key**.
 
-      * Click Aviatrix Controller
+   A. Click Aviatrix Controller
 
-      * Click Settings
+   B. Click Settings
 
-         |Image06|
+   |Image06|
 
-      * Click Keys
+   C. Click Keys
 
-         |Image07|
+   |Image07|
 
-      * Enter in the following
+   D. Enter in the following
 
-            i. Description = Aviatrix
+      * Description = Aviatrix
 
-            ii. Expires = Never expires
+      * Expires = Never expires
 
-      * Click Save
+   E. Click Save
 
-      * Copy the key value (to notepad or a convenient location)
+   F. Copy the key value (to notepad or a convenient location)
 
-   D. Add **App permissions**.
+5. Add **App permissions**.
 
-      * Click Required permissions -> Add
+   A. Click Required permissions -> Add
 
-         |Image08|
+   |Image08|
 
-      * Click Select an API -> Click Windows Azure Service Management API and click Select down below
+   B. Click Select an API -> Click Windows Azure Service Management API and click Select down below
 
-         |Image09|
+   |Image09|
 
-      * Click “Access Azure Service Management as organization user” and click Select
+   C. Click “Access Azure Service Management as organization user” and click Select
 
-         |Image10|
+   |Image10|
 
-      * Done
-
-2. Done
+6. Done
 
 At this point you should have the following information.
 
