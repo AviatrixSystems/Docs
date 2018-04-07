@@ -34,6 +34,8 @@ There are 2 main steps to setting up User VPN connectivity:
 #. `(Optional) Create User Profile(s) <#add-vpn-profiles>`__ and `add policies <#attach-policies-to-a-profile>`__ to those profiles
 #. `Add a user and (optionally) associate users with profiles <#create-vpn-users>`__
 
+You can also `watch a video <https://www.youtube.com/watch?v=bbZFa8kVUQI&t=1s>`_ to learn how to setup remote user VPN. 
+
 Create a VPN Gateway
 ^^^^^^^^^^^^^^^^^^^^
 
