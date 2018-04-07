@@ -54,7 +54,8 @@ For example, we hide the platform differences between AWS, Azure and GCP, so tha
 experience when networking to any of them or between them. 
 
 Another example, we hide the complexity of building IPSEC so that you have the same 
-experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. 
+experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. And we do one better, not only the connectivity is setup, the underlying route entry is 
+configured too so that you have a turn key solution. 
 
 Beyond ease of use, Aviatrix solutions solve many problems better than other products in each of the use cases. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
