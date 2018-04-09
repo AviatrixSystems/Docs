@@ -257,6 +257,10 @@ Click `Enable` and then optionally enter excluding instance ID(s). Click OK when
 
 Click `Disable` to remove all excluding instance ID(s).
 
+Gateway Status
+-----------------
+
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
