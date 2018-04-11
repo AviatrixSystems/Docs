@@ -279,7 +279,7 @@ The algorithm for the Controller is that if less than 2 messages are received in
 For example, with the default medium setting, the gateway down detection time is 
 on average 1 minute. 
 
-The keep alive template is a gloabl configuration on the Controller for all 
+The keep alive template is a global configuration on the Controller for all 
 gateways. To change the keep alive template, go to 
 
 ::
