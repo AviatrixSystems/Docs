@@ -6,7 +6,7 @@
 IAM Roles for Secondary Access Accounts
 #######################################
 
-When the Aviatrix Controller go through the initial Onboarding process, the `primary access account <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`_ is created. 
+When the Aviatrix Controller goes through the initial Onboarding process, the `primary access account <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`_ is created. 
 Using the primary access account the Controller can launch gateways and build connectivity in the VPCs 
 that belong to this account. 
 

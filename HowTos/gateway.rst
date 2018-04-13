@@ -275,6 +275,36 @@ An Aviatrix gateway could be in any of the following states.
 |            | over HTTPS(443).                                               |
 +------------+----------------------------------------------------------------+
 
+Aviatrix gateway sends periodic keep alive messages to the Controller. There are
+3 template parameters to determine when a Controller declares a gateway is in down state. 
+
+===========================      ======================   =====================
+**Keep Alive Templates**         gateway send keepalive   Controller processing    
+===========================      ======================   =====================
+Medium                           every 12 seconds         every 1 minute 
+Fast                             every 3 seconds          every 15 seconds
+Slow                             every 1 minute           every 5 minute
+===========================      ======================   =====================
+
+
+Medium is the default configuration. 
+
+The algorithm for the Controller is that if less than 2 messages are received in the 5 consective processing period, the Controller will declare the gateway down. 
+
+For example, with the default medium setting, the gateway down detection time is 
+on average 1 minute. 
+
+The keep alive template is a global configuration on the Controller for all 
+gateways. To change the keep alive template, go to 
+
+::
+
+  Settings -> Advanced -> Keepalive.
+
+In the drop down menu, select the desired template. 
+
+>>>>>>> upstream/master
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 

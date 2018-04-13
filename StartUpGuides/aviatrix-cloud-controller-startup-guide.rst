@@ -50,7 +50,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - FREE - EC2 FlightPath Troubleshooting Tool
    - FREE – Two Tunnels (Free Forever)
    
-- **Utility AMI** `Aviatrix Inter-Region VPC Peering 5 Tunnel License AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_docs_link_startup_util-5>`_ includes a 30 day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
+- **Private Offer AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1523554442785&sr=0-1&ref_=srh_res_product_title>`_ includes a 30 day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
    - Next-Generation Transit VPC Network  
    - Remote User VPN (OpenVPN®)  
    - Multicloud Peering 
@@ -101,7 +101,7 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
 **Subscribed Controller AMI**                                 **CloudFormation Template URL Link Address**
 ============================================                  ============================================
 Secure Networking Platform PAYG - Metered                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json
-Inter-Region VPC Peering 5 Tunnel License                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
+Secure Networking Platform - Custom                           https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
 SSL VPN Server - 10 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-sslvpn-10-users.template 
 SSL VPN Server - 25 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
 SSL VPN Server - 50 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-ssl-vpn-server-50-user.template

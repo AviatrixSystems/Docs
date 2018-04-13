@@ -1,55 +1,115 @@
 .. meta::
-   :description: Okta setup for Aviatrix
+   :description: Okta Integration in Aviatrix for User SSL VPN authentication
    :keywords: Okta, Aviatrix
 
-
 =========================================
-    Okta Authentication
+Okta Authentication
 =========================================
 
+Overview
+--------
+Aviatrix User VPN Gateway supports Okta authentication as part of multi-factor authentication for OpenVPN® access.
 
+Follow these steps to configure Okta authentication and MFA on a User VPN Gateway in your environment:
 
-Aviatrix VPN gateway supports Okta authentication as part of
-multi-­factor authentication for OpenVPN® access. Following are the
-steps.
+#. Obtain an `API token <#okta-api-token>`__ from your Okta account
+#. Create a new Aviatrix `VPN Gateway <#aviatrix-vpn-gateway>`__
+#. Create `VPN Users <#create-vpn-users>`__ for this Aviatrix Gateway
+#. `Test <#validate>`__ connectivity
 
-1.0  Log in into your Okta account as **Super Admin.** This allows the privilege to create a Token for API access by Aviatrix gateway.
+.. important::
+   Currently, Okta authentication can only be enabled when the Aviatrix Gateway is created.  It cannot be changed after the Gateway has been provisioned.  This will be addressed in a future version.
 
-    1.1 Go to “Security” -­‐> “API” -­‐> “Create Token”. Give the token a
-    name, for example, Aviatrix, and copy the token string. You’ll need
-    the token string for Aviatrix gateway API access to Okta.
+.. _okta_api_token:
+   
+Obtain API Token from Okta
+--------------------------
 
-    |image1|
+Follow the steps outlined in the `Okta documentation <https://developer.okta.com/docs/api/getting_started/getting_a_token>`__ to create a new API token.
 
-2.0  If you have not created users for VPN access, go to “Directory” -­‐> “People” to create an account for VPN user. In this example, the
-account name is `demoaviatrix@aviatrix.com <mailto:demoaviatrix@aviatrix.com>`__
+#. Log in into your Okta account as a **Super Admin.** This allows the privilege to create a Token for API access.
 
-    |image2|
+#. Go to **Security** > **API** and click the `Create Token` button. Give the token a name (for example, Aviatrix).
 
-3.0  At Aviatrix Controller, go to “Gateway” to create a gateway with “VPN Access”
-enabled. Select “Okta” for “Two-­‐step Authentication” and enter Okta related fields as following:
+      .. note::
+         Copy the generated token value. You’ll need this token to allow the Aviatrix Gateway to access Okta.
 
-   -  URL: Your Okta account login URL. (For example,
-      https://aviatrixdt.okta.com)
+      |image1|
 
-   -  Token: Token string copied from Step 1.
+.. _aviatrix_vpn_gateway:
 
-   -  Username Suffix (Optional): In this example, “aviatrix.com” was
-      entered. If Username Suffix is provided, users should enter their
-      account ID without the domain name when logging in from the VPN Client.
-      For example, if your Okta account is
-      `demoaviatrix@aviatrix.com <mailto:demoaviatrix@aviatrix.com>`__
-      and “aviatrix.com” as Username Suffix, you should enter
-      “demoaviatrix” as your VPN username when prompted for username by
-      OpenVPN® Client. If Username Suffix is not provided, you must enter
-      `demoaviatrix@aviatrix.com, <mailto:demoaviatrix@aviatrix.com>`__
-      as shown below.
+Create Aviatrix VPN Gateway
+---------------------------
 
-        |image3|
+#. Follow the steps in `this guide <./uservpn.html>`__ to create a new Aviatrix VPN gateway.
+#. Under `MFA Authentication` select `Okta` from the dropdown options.
 
-4.0 Enable MFA (Optional)
-   Since Aviatrix Okta authentication uses API authentication, it uses the default sign on policy of Okta.
-   If you have configured Multi factor Authentication in your Okta app (Security->Authentication->Sign On->Default Policy->Add rule->Prompt for factor), then during VPN login, the end user needs to append his 6 digit one time token to the password during authentication.
+   |GWOktaMFA|
+
+#. Enter details about your Okta environment:
+
+   +-----------------------+-------------------------------------------------+
+   | Field                 | Description                                     |
+   +=======================+=================================================+
+   | URL                   | Your Okta account login URL. (For example,      |
+   |                       | https://aviatrixtestaccount.okta.com)           |
+   +-----------------------+-------------------------------------------------+
+   | Token                 | The token value you copied earlier              |
+   +-----------------------+-------------------------------------------------+
+   | Username Suffix       | If provided, the VPN username                   |
+   |                       | will be the account ID without the domain name. |
+   |                       |                                                 |
+   |                       | For example, if your Okta account is            |
+   |                       | `demoaviatrix@aviatrix.com` and `aviatrix.com`  |
+   |                       | is your `Username Suffix`, the VPN username     |
+   |                       | be `demoaviatrix`.                              |
+   |                       |                                                 |
+   |                       | If no value is provided for                     |
+   |                       | this field, you must enter the full username    |
+   |                       | including domain name (for example,             |
+   |                       | `demoaviatrix@aviatrix.com`).                   |
+   +-----------------------+-------------------------------------------------+
+
+   |GWOktaAdditionalFields|
+
+.. _create_vpn_users:
+
+Create User(s)
+--------------
+
+#. Login to your Aviatrix Controller
+#. Expand **OpenVPN** and select **VPN Users**
+#. Click **+ Add New** button
+#. Select the VPC (or VNet) where the VPN was created in the previous step
+#. Select the Aviatrix Gateway or Load Balancer
+#. Enter the username.
+
+   .. important::
+      This username must match the username in Okta.
+
+#. (Optional) Enter the user's email where the .ovpn file will be emailed.
+
+   .. note::
+      If an email is not provided, users will need to download their .ovpn file from the Controller.
+
+#. (Optional) Select a profile for this user
+#. Click `OK`
+
+   |AddVPNUser|
+
+.. _validate:
+
+Validate
+--------
+
+#. Use the .ovpn file emailed to your test account or download it from Aviatrix VPN Users
+#. Add the configuration to your VPN client
+#. Connect and login
+
+   .. note::
+      Since Aviatrix Okta authentication uses API authentication, it uses the default sign on policy of Okta.
+      If you have configured Multi factor Authentication in Okta, then during VPN login, the end user needs to append his MFA token to the password during authentication.
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
@@ -71,6 +131,10 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :width: 3.95417in
    :height: 4.14375in
 
-.. add in the disqus tag
+.. |GWOktaMFA| image:: How_to_setup_Okta_for_Aviatrix_media/gw_okta_mfa.png
+
+.. |GWOktaAdditionalFields| image:: How_to_setup_Okta_for_Aviatrix_media/gw_okta_options.png
+
+.. |AddVPNUser| image:: How_to_setup_Okta_for_Aviatrix_media/add_vpn_user.png
 
 .. disqus::
