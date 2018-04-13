@@ -259,21 +259,27 @@ Click `Disable` to remove all excluding instance ID(s).
 
 Gateway status
 --------------
-An Aviatrix gateway could be in any of the following states.
+An Aviatrix gateway could be in any of the following states over its lifetime.
+Gateway status is dictated by the following factors.
 
-+------------+----------------------------------------------------------------+
-| State      | Explanation                                                    |
-+============+================================================================+
-| waiting    | This is the initial state of a gateway immediately after the   |
-|            | launch. Gateway will transition to "up" state when controller  |
-|            | starts receiving keepalive messages from the newly launched    |
-|            | gateway over port 443(HTTPS).                                  |
-+------------+----------------------------------------------------------------+
-| up         | Gateway is fully functional.                                   |
-+------------+----------------------------------------------------------------+
-| down       | Gateway and controller could not communicate with each other   |
-|            | over HTTPS(443).                                               |
-+------------+----------------------------------------------------------------+
+1. State of the gateway as reported by the cloud provider.
+2. Connectivity between controller and gateway over HTTPS (TCP port 443).
+3. Status of critial services running on the gateway.
+
+**WAITING**: This is the initial state of a gateway immediately after the
+launch. Gateway will transition to **UP** state when controller starts
+receiving keepalive messages from the newly launched gateway. If a gateway is
+stuck in this state, examine security policy of the Aviatrix Controller 
+instance and make sure TCP port 443 is opened to traffic originating from 
+gateway public IP address.
+
+**UP**: Gateway is fully functional. All critical services running on the
+gateway are up and gateway and controller are able to exchange messages with
+each other.
+
+**DOWN**: A gateway can be down under the following circumstances.
+
+1. Gateway and controller could not communicate with each other over HTTPS(443).
 
 Aviatrix gateway sends periodic keep alive messages to the Controller. There are
 3 template parameters to determine when a Controller declares a gateway is in down state. 
