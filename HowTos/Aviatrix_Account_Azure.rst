@@ -38,8 +38,8 @@ Setting up Azure permission for Aviatrix involves three main steps.
 
 2. Grant Permissions
 
-3. Get Application Client ID, Application Client Secret and Application
-   Endpoint
+3. Get Application ID, Application Key and Directory
+   ID
 
 **Important:** Complete the follow steps in order.
 
@@ -172,11 +172,11 @@ At this point you should have the following information.
 +-----------------------------------+---------------+
 | **Subscription ID**               | From step 2   |
 +===================================+===============+
-| **Application** **Endpoint ID**   | From step 3   |
+| **Directory** **ID**              | From step 3   |
 +-----------------------------------+---------------+
-| **Application Client ID**         | From step 3   |
+| **Application ID**                | From step 3   |
 +-----------------------------------+---------------+
-| **Application Client Secret**     | From step 3   |
+| **Application Key**               | From step 3   |
 +-----------------------------------+---------------+
 
 
