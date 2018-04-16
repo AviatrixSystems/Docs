@@ -16,12 +16,12 @@ Click Gateway at navigation panel. Click New to launch a gateway. To launch a ga
 Select Gateway Size
 -------------------
 
-When selecting the Gateway Size, note the following guidelines of IPSEC performance 
+When selecting the Gateway Size, note the following guidelines of IPsec performance
 based on iperf tests conducted between two gateways of the same size:
 
--  t2 series throughput is not guaranteed; it can burst up to 130mbps.
--  m3 series are in the range 300 - 500mbps
--  m4.xlarge or c4.xlarge: approximately 500mbps
+-  t2 series throughput is not guaranteed; it can burst up to 130Mbps.
+-  m3 series are in the range 300 - 500Mbps
+-  m4.xlarge or c4.xlarge: approximately 500Mbps
 -  c3.2xlarge or m4.2xlarge: approximately 1Gbps
 -  c3.4xlarge: approximately 1.2Gbps
 -  c4.2xlarge or c5.2xlarge: 1.2Gbps - 1.5Gbps
@@ -90,7 +90,7 @@ For how to configure Okta, check out `How to configure Okta. <http://docs.aviatr
 Max Connections
 =================
 
-Maximum number of active VPN users allowed to be connected to this gateway. The defalt is 100. 
+Maximum number of active VPN users allowed to be connected to this gateway. The default is 100.
 
 When you change this address, make sure the number is smaller than the VPN CIDR Block. 
 OpenVPN® VPN CIDR Block allocates 2 IP addresses for each connected VPN user. 
@@ -109,7 +109,7 @@ including Internet traffic (such as a visit to www.google.com),
 is going through the VPN tunnel when a user is connected to the VPN gateway. 
 
 Disabling Split Tunnel Mode should be a deliberate decision as you will be 
-charged all Internet traffic as they are considered egress trafifc by 
+charged all Internet traffic as they are considered egress traffic by 
 the cloud provider (AWS/Azure/GCP).
 
 
@@ -136,10 +136,7 @@ Search Domains
 
 This is an optional parameter. Leave it blank if you do not need it. 
 
-When Split Tunnel Mode is enabled, Seach Domains let you specify a list of 
-domain names that will use the Nameserver when a specific name is 
-in the destination.
-domain names
+When Split Tunnel Mode is enabled, Search Domains let you specify a list of domain names that will use the Nameserver when a specific name is not in the destination.
 
 Enable ELB
 ============
@@ -154,7 +151,7 @@ delete all VPN gateways, you can re-launch them without having to reissue
 new .ovpn cert file. This helps reduce friction to VPN users.  
 
 When ELB is enabled, you can launch multiple VPN gateways behind ELB, thus
-achiving a scale out VPN solution. Note since AWS ELB only supports TCP for 
+achieving a scale out VPN solution. Note since AWS ELB only supports TCP for 
 load balancing, VPN gateways with ELB enabled run on TCP. 
 
 ELB Name
@@ -257,37 +254,72 @@ Click `Enable` and then optionally enter excluding instance ID(s). Click OK when
 
 Click `Disable` to remove all excluding instance ID(s).
 
-Gateway Status
------------------
+Gateway status
+--------------
+Gateway status is dictated by the following factors.
 
-Aviatrix gateway sends periodic keep alive messages to the Controller. There are
-3 template parameters to determine when a Controller declares a gateway is in down state. 
+-  State of the gateway as reported by the cloud provider.
+-  Connectivity between Controller and gateway over HTTPS (TCP port 443).
+-  Status of critical services running on the gateway.
 
-===========================      ======================   =====================
-**Keep Alive Templates**         gateway send keepalive   Controller processing    
-===========================      ======================   =====================
-Medium                           every 12 seconds         every 1 minute 
-Fast                             every 3 seconds          every 15 seconds
-Slow                             every 1 minute           every 5 minute
-===========================      ======================   =====================
+An Aviatrix Gateway could be in any of the following states over its lifetime.
+
+**WAITING**: This is the initial state of a gateway immediately after the launch. Gateway will transition to **UP** state when controller starts receiving keepalive messages from the newly launched gateway.
+
+**UP**: Gateway is fully functional. All critical services running on the gateway are up and gateway and controller are able to exchange messages with each other.
+
+**DOWN**: A gateway can be down under the following circumstances.
+
+-  Gateway and controller could not communicate with each other over HTTPS(443).
+-  Gateway instance (VM) is not in running state.
+-  Critical services are down on the gateway.
+
+**KEEPALIVE-FAIL**: Controller did not receive expected number of keepalive messages from the gateway during a health check.
+
+**UPGRADE-FAIL**: Gateway could not be upgraded due to some failure encountered during upgrade process. To upgrade the gateway again, go to the section "FORCE UPGRADE" which can be found here.
+
+::
+
+  Troubleshoot -> Diagnostics -> Gateway
+
+
+
+**CONFIG-FAIL**: Gateway could not process a configuration command from the controller successfully. Please contact support@aviatrix.com for assistance.
+
+If a gateway is not in **UP** state, please perform the following steps.
+
+-  Examine security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
+-  Examine security policy of the gateway and make sure that TCP port 443 is opened to traffic originating from controller public IP address. This rule is inserted by Aviatrix controller during gateway creation. Please restore it if  was removed for some reason.
+-  Make sure network ACLs or other firewall rules are not configured to block traffic between controller and gateway over TCP port 443.
+
+
+Gateway keepalives 
+------------------
+As mentioned in the previous section, gateway sends periodic keepalive messages to the Controller. The following templates can be used to control how frequently
+gateways send keepalives and how often controller processes these message, which in turn will determine how quickly controller can detect gateway state changes.
+
+===========================      =======================   =============================
+**Template name**                Gateway sends keepalive   Controller runs health checks
+===========================      =======================   =============================
+Fast                             every 3 seconds           every 15 seconds
+Medium                           every 12 seconds          every 1 minute
+Slow                             every 1 minute            every 5 minute
+===========================      =======================   =============================
 
 
 Medium is the default configuration. 
 
-The algorithm for the Controller is that if less than 2 messages are received in the 5 consective processing period, the Controller will declare the gateway down. 
+A gateway is considered to be in **UP** state if controller receives at least 2 (out of a possible 5) messages from that gateway between two consecutive health checks.
 
-For example, with the default medium setting, the gateway down detection time is 
-on average 1 minute. 
+For example, with medium setting, gateway down detection time, on average, is 1 minute.
 
-The keep alive template is a global configuration on the Controller for all 
-gateways. To change the keep alive template, go to 
+The keep alive template is a global configuration on the Controller for all gateways. To change the keep alive template, go to
 
 ::
 
   Settings -> Advanced -> Keepalive.
 
 In the drop down menu, select the desired template. 
-
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
