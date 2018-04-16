@@ -264,7 +264,7 @@ Gateway status is dictated by the following factors.
 
 An Aviatrix Gateway could be in any of the following states over its lifetime.
 
-**WAITING**: This is the initial state of a gateway immediately after the launch. Gateway will transition to **UP** state when controller starts receiving keepalive messages from the newly launched gateway. If a gateway is stuck in this state, examine security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
+**WAITING**: This is the initial state of a gateway immediately after the launch. Gateway will transition to **UP** state when controller starts receiving keepalive messages from the newly launched gateway.
 
 **UP**: Gateway is fully functional. All critical services running on the gateway are up and gateway and controller are able to exchange messages with each other.
 
@@ -274,6 +274,23 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 -  Gateway instance (VM) is not in running state.
 -  Critical services are down on the gateway.
 
+**KEEPALIVE-FAIL**: Controller did not receive expected number of keepalive messages from the gateway during a health check.
+
+**UPGRADE-FAIL**: Gateway could not be upgraded due to some failure encountered during upgrade process. To upgrade the gateway again, go to the section "FORCE UPGRADE" which can be found here.
+
+::
+
+  Troubleshoot -> Diagnostics -> Gateway
+
+
+
+**CONFIG-FAIL**: Gateway could not process a configuration command from the controller successfully. Please contact support@aviatrix.com for assistance.
+
+If a gateway is not in **UP** state, please perform the following steps.
+
+-  Examine security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
+-  Examine security policy of the gateway and make sure that TCP port 443 is opened to traffic originating from controller public IP address. This rule is inserted by Aviatrix controller during gateway creation. Please restore it if  was removed for some reason.
+-  Make sure network ACLs or other firewall rules are not configured to block traffic between controller and gateway over TCP port 443.
 
 
 Gateway keepalives 
