@@ -259,57 +259,50 @@ Click `Disable` to remove all excluding instance ID(s).
 
 Gateway status
 --------------
-An Aviatrix gateway could be in any of the following states over its lifetime.
 Gateway status is dictated by the following factors.
 
 1. State of the gateway as reported by the cloud provider.
-2. Connectivity between controller and gateway over HTTPS (TCP port 443).
+2. Connectivity between Controller and gateway over HTTPS (TCP port 443).
 3. Status of critial services running on the gateway.
 
-**WAITING**: This is the initial state of a gateway immediately after the
-launch. Gateway will transition to **UP** state when controller starts
-receiving keepalive messages from the newly launched gateway. If a gateway is
-stuck in this state, examine security policy of the Aviatrix Controller 
-instance and make sure TCP port 443 is opened to traffic originating from 
-gateway public IP address.
+An Aviatrix Gateway could be in any of the following states over its lifetime.
 
-**UP**: Gateway is fully functional. All critical services running on the
-gateway are up and gateway and controller are able to exchange messages with
-each other.
+**WAITING**: This is the initial state of a gateway immediately after the launch. Gateway will transition to **UP** state when controller starts receiving keepalive messages from the newly launched gateway. If a gateway is stuck in this state, examine security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
+
+**UP**: Gateway is fully functional. All critical services running on the gateway are up and gateway and controller are able to exchange messages with each other.
 
 **DOWN**: A gateway can be down under the following circumstances.
 
 1. Gateway and controller could not communicate with each other over HTTPS(443).
 
-Aviatrix gateway sends periodic keep alive messages to the Controller. There are
-3 template parameters to determine when a Controller declares a gateway is in down state. 
 
-===========================      ======================   =====================
-**Keep Alive Templates**         gateway send keepalive   Controller processing    
-===========================      ======================   =====================
-Medium                           every 12 seconds         every 1 minute 
-Fast                             every 3 seconds          every 15 seconds
-Slow                             every 1 minute           every 5 minute
-===========================      ======================   =====================
+Gateway keepalives 
+------------------
+As mentioned in the previous section, gateway sends periodic keepalive messages to the Controller. The following templates can be used to control how frequenly
+gateways send keepalives and how often controller processes these message, which in turn will determine how quickly controller can detect gateway state changes.
+
+===========================      =======================   =============================
+**Template name**                Gateway sends keepalive   Controller runs health checks
+===========================      =======================   =============================
+Fast                             every 3 seconds           every 15 seconds
+Medium                           every 12 seconds          every 1 minute
+Slow                             every 1 minute            every 5 minute
+===========================      =======================   =============================
 
 
 Medium is the default configuration. 
 
-The algorithm for the Controller is that if less than 2 messages are received in the 5 consective processing period, the Controller will declare the gateway down. 
+A gateway is considered to be in UP state if controller receives atleast 2 (out of a possible 5) messages from that gateway between two consecutive health checks.
 
-For example, with the default medium setting, the gateway down detection time is 
-on average 1 minute. 
+For example, with medium setting, gateway down detection time, on average, is 1 minute.
 
-The keep alive template is a global configuration on the Controller for all 
-gateways. To change the keep alive template, go to 
+The keep alive template is a global configuration on the Controller for all gateways. To change the keep alive template, go to
 
 ::
 
   Settings -> Advanced -> Keepalive.
 
 In the drop down menu, select the desired template. 
-
->>>>>>> upstream/master
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
