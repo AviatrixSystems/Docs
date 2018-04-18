@@ -2,186 +2,293 @@
    :description: Aviatrix User SSL VPN Okta SAML Configuration
    :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
 
+.. toctree::
+   :numbered:
+
 ==============================================================================
-OpenVPN® with SAML Client on Okta IDP with Optional Multifactor Authentication 
+OpenVPN® with SAML Client on Okta IDP
 ==============================================================================
 
-
-
-1.  Overview
+Overview
 ------------
 
-Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a vpn client that supports SAML authentication. 
+This guide provides an example on how to configure Aviatrix to authenticate against an Okta IDP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Okta) for authentication.
 
-This guide provides an example on how to use Aviatrix SAML client to authenticate Okta IDP. When SAML client is used, Aviatrix controller acts as the identity service provider (ISP) that redirects browser traffic from client to IDP, in this case, Okta, for authentication. 
-
-2. Pre-Deployment Checklist
+Pre-Deployment Checklist
 -----------------------------
-Before configuring the SAML integration between Aviatrix and Okta, make sure the following is completed.
+Before configuring SAML integration between Aviatrix and Okta, make sure the following is completed:
 
-Pre Installation Check List
+#. `Aviatrix Controller <#aviatrix-controller>`__ is setup and running.
+#. Have a valid `Okta account <#okta-account>`__ with admin access.
+#. Download and install the `Aviatrix SAML VPN client <#aviatrix-client>`__.
 
-	1.	Aviatrix Controller is setup and running.
-	2.	Have a valid Okta account with admin access.
-	3.	Download and install the Aviatrix SAML client These prerequisites are explained in detail below.
+.. _aviatrix_controller:
+
+Aviatrix Controller
+####################
+
+If you haven’t already deployed the Aviatrix controller, follow `these detailed instructions <./StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__.
+
+.. _okta_account:
+
+Okta Account
+############
+
+A valid Okta account with admin access is required to configure the integration.
+
+.. _aviatrix_client:
+
+Aviatrix VPN Client
+###################
+
+All users must use the Aviatrix VPN client to connect to the system.  Download the client for your OS `here <http://docs.aviatrix.com/Downloads/samlclient.html>`__.
 
 
-2.1 Aviatrix Controller
-------------------------
+Configuration Steps
+-------------------
 
-If you haven’t already deployed the Aviatrix controller, follow the below instructions on how to deploy the Aviatrix controller.
-`Instructions here.  <http://docs.aviatrix.com>`_
+Follow these steps to configure Aviatrix to authenticate against your Okta IDP:
 
-2.2 Okta Account
-----------------
+#. Create an `Okta SAML App <#okta-saml-app>`__ for Aviatrix
+#. Retrieve `Okta IDP metadata <#okta-idp-metadata>`__
+#. Launch an `Aviatrix Gateway <#aviatrix-gateway>`__
+#. Create Aviatrix `SAML SP Endpoint <#aviatrix-saml-endpoint>`__
+#. `Test the Integration <#test-integration>`__ is Set Up Correctly
+#. Create `Aviatrix VPN User <#aviatrix-vpn-user>`__
+#. `Validate <#validate-entire-process>`__
 
-A valid Okta account with admin access is required to configure the integration. If you don’t already have an Okta account, 
-please create one with the following link from Okta.
-`Okta create account <https://www.okta.com/start-with-okta/>`_
+.. _okta_saml_app:
 
-2.3 Aviatrix VPN Client
------------------------
+Create an Okta SAML App for Aviatrix
+#####################################
 
-All users must use the Aviatrix VPN client to connect to the system.  Download the client for your OS 
-`here. <http://docs.aviatrix.com/Downloads/samlclient.html>`_
+.. note::
 
+   This step is usually done by the Okta Admin.
 
-3. Configuration
-----------------
+#. Login to the Okta Admin portal
+#. Follow `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application.
 
-The integration configuration consists of 4 parts.
+   +----------------+----------------+
+   | Field          | Value          |
+   +================+================+
+   | Platform       | Web            |
+   +----------------+----------------+
+   | Sign on method | SAML 2.0       |
+   +----------------+----------------+
 
-	1.	Create an Okta SAML App for Aviatrix
-	2.	Retrieve OKta IDP metadata
-	3.	Launch Aviatrix Gateway
-	4.	Create Aviatrix SAML SP
-	5.	Create Aviatrix VPN User
+      |image0|
 
-Please complete the configuration in the following order.
+#. General Settings
 
-3.1 Create an Okta SAML App for Aviatrix
------------------------------------------
+   +----------------+-----------------+----------------------------------------+
+   | Field          | Value           | Description                            |
+   +================+=================+========================================+
+   | App name       | Aviatrix        | This can be any value.  It will be     |
+   |                |                 | displayed in Okta only.                |
+   +----------------+-----------------+----------------------------------------+
+   |                | Aviatrix logo:  | Aviatrix logo (optional)               |
+   |                |                 |                                        |
+   | App logo       | | |logoAlias1|_ |                                        |
+   |                | | |logoAlias2|_ |                                        |
+   +----------------+-----------------+----------------------------------------+
+   | App visibility | N/A             | Leave both options unchecked           |
+   +----------------+-----------------+----------------------------------------+
 
-This step is usually done by the Okta Admin.
+      |image1|
 
-	1.	Login to the Okta Admin portal
-	2.	Click “Admin”
-	3.	Click “Applications”
-	4.	Click “Add Application”
-	5.	Click “Create New App”
-	
-		a.	Platform = Web
-		b.	Sign on method = SAML 2.0
+#. SAML Settings
 
-|image0|
-	
-	6.	General Settings
-	
-		a.	App Name = Aviatrix Dev (arbitrary)
+   * General
 
-|image1|
+   +----------------------+----------------------------------------------------+
+   | Field                | Value                                              |
+   +======================+====================================================+
+   | Single sign on URL   | ``https://[host]/flask/saml/sso/[SP Name]``        |
+   +----------------------+----------------------------------------------------+
+   | Audience URI         | ``https://[host]/``                                |
+   | (SP Entity ID)       |                                                    |
+   +----------------------+----------------------------------------------------+
+   | Default RelayState   |                                                    |
+   +----------------------+----------------------------------------------------+
+   | Name ID format       | Unspecified                                        |
+   +----------------------+----------------------------------------------------+
+   | Application username | Okta username                                      |
+   +----------------------+----------------------------------------------------+
 
-	7.  SAML Settings
-		a.	Single sign on URL* = https://aviatrix_controller_hostname/flask/saml/sso/aviatrix_sp_name
-		b.	Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-		c.	Default RelayState* = 
-		d.	Name ID format = Unspecified
-		e.	Application username = Okta username
+   ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
-		These values are also available in the controller OpenVPN®->Users page after step 3.4
+   ``[SP Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
 
-		|image2|
-		
-		The aviatrix_controller_hostname is the hostname of the Aviatrix controller(If no DNS is used, this is the public IP). The aviatrix_sp_name
-		is an arbitrary identifier. Note this value as it will be needed when configuring SAML from the Aviatrix controller. 
-		Please contact your Aviatrix admin if you do not have the Aviatrix controller’s public IP address.
-		
-		f.	Attribute Statements
-		
-			i.	FirstName -> Unspecified -> user.firstName
-			ii.	LastName -> Unspecified -> user.lastName
-			iii.	Email -> Unspecified -> user.email
+   |image2|
 
-|image3|		
-			
-	8.  Done		
-	
-	
-3.2  Retrieve Okta IDP metadata
---------------------------------
-This step is usually completed by the Okta admin.
+   * Attribute Statements
 
-After the above application is created, click on “Sign On” and then “View Setup Instructions”.
+     +----------------+-----------------+--------------------------------------+
+     | Name           | Name format     | Value                                |
+     +================+=================+======================================+
+     | FirstName      | Unspecified     | user.firstName                       |
+     +----------------+-----------------+--------------------------------------+
+     | LastName       | Unspecified     | user.lastName                        |
+     +----------------+-----------------+--------------------------------------+
+     | Email          | Unspecified     | user.email                           |
+     +----------------+-----------------+--------------------------------------+
 
-|image4|
+     |image3|
 
-Look for the section titled “IDP metadata to your SP provider”.
+.. _okta_idp_metadata:
 
-|image5|
-Note this information. This information will be used to configure the SAML configuration on the Aviatrix controller.
+Retrieve Okta IDP metadata
+#####################################
 
-3.3	Launch Aviatrix Gateway
----------------------------------------------
+.. note::
 
-This step is usually completed by the Aviatrix admin.
+   This step is usually completed by the Okta admin.
 
-	1.	Login to the Aviatrix controller
-	2.	Click Gateway -> Add New
-	3.	Select the appropriate Account, region, vpc, subnet and gateway size
-	4.	Check “VPN Access” and then “Enable SAML”
+After the application is created in Okta, go to the `Sign On` tab for the application.  Then, click on the `View Setup Instructions` button.
+
+    |image4|
+
+Look for the section titled `Provide the following IDP metadata to your SP provider`.
+
+    |image5|
+
+.. important::
+
+   Copy the text displayed.  This value will be used to configure the SAML on the Aviatrix controller.
+
+.. _aviatrix_gateway:
+
+Launch Aviatrix VPN Gateway
+###########################
+
+.. note::
+
+   This step is usually completed by the Aviatrix admin.
+
+#. Login to the Aviatrix controller
+#. Click `Gateway` in the left navigation menu
+#. Click the `+ New Gateway` button
+#. Enter a `Gateway Name`
+#. Select the appropriate `Account Name`, `Region`, `VPC ID`, `Public Subnet` and `Gateway Size`
+#. Check `VPN Access`
+#. Check `Enable SAML`
 
 	|image6|
-	
-	5.	Default settings for everything else.
-	
-	6.	Click “OK” to launch the gateway.
-	
-	
-3.4	Create Aviatrix SAML SP (Endpoint)
-------------------------------------------
 
-This step is usually completed by the Aviatrix admin.
+#. For information on the other settings, please refer to `this <./uservpn.html>`__ document
+#. Click `OK` to create the Gateway
 
-1.	Login to the Aviatrix Controller
-2.	Click OpenVPN® -> VPN Users -> Advanced -> SAML -> Add New
-3.	Select the VPC where the above gateway was launched
-4.	Name = aviatrix_sp_name (this is the username that you choose during the Okta SAML configuration)
-5.	IPD Metadata type = Text
-6.	IDP Metadata Text = paste in the IDP metadata from the Okta configuration
+.. _aviatrix_saml_endpoint:
+
+Create Aviatrix SAML Endpoint
+#############################
+
+.. note::
+
+   This step is usually completed by the Aviatrix admin.
+
+#. Login to the Aviatrix Controller
+#. Click `OpenVPN®` in the left navigation menu
+#. Select `Advanced`
+#. Click on the `SAML` tab
+#. Click `+ Add New` button
+
+   |imageControllerNavOpenVPNAdvanced|
+
+   +-------------------------+-------------------------------------------------+
+   | Field                   | Value                                           |
+   +=========================+=================================================+
+   | Endpoint Name           | ``SP Name`` (Use the same name you entered      |
+   |                         | in the Okta Application previously)             |
+   +-------------------------+-------------------------------------------------+
+   | IDP Metadata Type       | Text                                            |
+   +-------------------------+-------------------------------------------------+
+   | IDP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
+   |                         | copied from Okta SAML configuration)            |
+   +-------------------------+-------------------------------------------------+
+   | Entity ID               | Hostname                                        |
+   +-------------------------+-------------------------------------------------+
+
+#. Click `OK`
+
+.. _test_integration:
+
+Test the Integration
+####################
+
+#. Start the Aviatrix VPN Client
+
+   .. note::
+      If you don't start the client, you will receive a warning from the browser in the last step of this process
+
+#. Login to the Aviatrix Controller
+#. Click `OpenVPN®` in the left navigation menu
+#. Select `Advanced`
+#. Click on the `SAML` tab
+#. Click the `Test` button next to the ``SP Name`` created in the previous step
+
+   .. tip::
+
+      You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
+
+#. You should be redirected to Okta.  Login with your test user credentials.
+
+   .. important::
+
+      If everything is configured correctly, once you have authenticated you will be redirected back to the controller and the window will close.
 
 
+.. _create_aviatrix_vpn_user:
 
-3.5	Test the integration
-----------------------------
+Create a VPN User
+#################
 
-1.	Have an instance of the VPN client running, else it might throw a warning
-2.	Click Test from OpenVPN® -> VPN Users -> Advanced -> SAML -> aviatrix_sp_name
-3.	You should be redirected to the IDP, now you can log in and should be redirected back to the controller
-	
+#. Login to the Aviatrix Controller
+#. Click `OpenVPN®` in the left navigation menu
+#. Select `VPN Users`
+#. Click `+ Add New`
+#. Select the `VPC ID` and `LB/Gateway Name` for your SAML Gateway
+#. Enter the Okta username in the `User Name` field
+#. Enter any valid email address in the `User Email` field (this is where the cert file will be sent). Alternatively, you can download the cert if you do not enter an email address.
+#. Select the `SAML Endpoint`
+#. Click `OK`
 
-3.5	Create a VPN User
--------------------------
+.. _validate_entire_process:
 
-1.	Select the VPC where the above gateway was launched
-2.	Username = Name of the VPN user
-3.	User Email = any valid email address (this is where the cert file will be sent). ALternatively you can download the cert if you dont enter email
-4.	Load the VPN user certificate and try connecting to the VPN. Note that SAML only supports shared certificates. You can share the certificate among VPN users or create more VPN users
+Validate
+########
 
-|image7|
+#. Login to the Aviatrix Controller
+#. Click `OpenVPN®` in the left navigation menu
+#. Select `VPN Users`
+#. Download the configuration for your test user created in the previous step
+#. Open the Aviatrix VPN Client application
+#. Click `Load Conf` and select the file downloaded
+#. Click `Connect`
+
+.. note::
+
+   SAML VPN only supports shared certificates. You can share the certificate among VPN users or create more VPN users
 
 
-3.6     Configure Okta for Multifactor Authentication (OPTIONAL)
-----------------------------------------------------------------
+Configure Okta for Multifactor Authentication (OPTIONAL)
+########################################################
 
-Once you have successfully configured Okta IDP with Aviatrix SP, you can configure Okta for Multifactor Authentication. 
+Once you have successfully configured Okta IDP with Aviatrix SP, you can configure Okta for Multifactor Authentication.
 
-Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`__ from Okta on Multifactor setup.  
+Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`__ from Okta on Multifactor setup.
 
 See this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Configuring-Duo-Security-734413457>`__ if you're interested in using DUO in particular.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
+.. |logoAlias1| replace::  Aviatrix logo with red background
+.. _logoAlias1: https://www.aviatrix.com/news/press-kit/logo-aviatrix.png
+
+.. |logoAlias2| replace:: Aviatrix logo with transparent background
+.. _logoAlias2: https://www.aviatrix.com/images/logo-reverse.png
 
 .. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png
 
@@ -199,5 +306,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image7| image:: SSL_VPN_Okta_SAML_media/image7.png
 
+.. |imageControllerNavOpenVPNAdvanced| image:: SSL_VPN_Okta_SAML_media/OpenVPN_Advanced_SAML_AddNew.png
+   :scale: 50%
 
 .. disqus::
