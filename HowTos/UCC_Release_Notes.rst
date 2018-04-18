@@ -2,6 +2,32 @@
 Release Notes
 =======================================
 
+R3.2 (4/18/2018)
+=================
+
+1. Security
+---------------
+
+- **Gateway Subnet Monitoring** monitors the public subnet where Aviatrix gateway is deployed and automatically stops any user instance in the subnet. This feature ensures unwanted instances are not launched on public subnets in a VPC. To configure, go to Gateway -> Edit -> Monitor Gateway Subnets.If you want to exclude certain user instances from being stopped, you can enter their instance IDs. 
+
+2. Operations
+--------------
+
+- **SSL Certificate Import** allows to import your own key and wildcard certificate for Controller HTTPS access. To import the certificate and key, go to Settings -> Advanced -> Security -> Import Method and select "Import Certificate with Key". 
+
+- **Disable Admin User Login** allows to disable Controller login as user "admin". To enable/disable it, go to Settings -> Controller -> Login Customization.
+
+- **Migrate controller** allows you to migrate among different licenses including Metered, Utility and BYOL through Controller backup and restore.
+
+3. Troubleshooting
+-------------------
+
+- **Transit Network** can detect overlapping CIDRs between learned on-prem CIDRs and advertised spoke CIDRs. Controller will display these overlapping CIDRs at Site2Cloud -> Edit page in addition to sending email alerts.
+
+- **Gateway Replacement** allows to replace a problematic gateway but still keep its configuration. To replace the gateway, go to Troubleshoot -> Diagnostics -> Gateway Replace.
+
+- **UCC Controller Public IP Migration** can be used after Controller's public IP is changed. To migrate, go to Troubleshoot -> Diagnostics -> Network -> Migrate.
+
 R3.1 (3/6/2018)
 ===============
 
