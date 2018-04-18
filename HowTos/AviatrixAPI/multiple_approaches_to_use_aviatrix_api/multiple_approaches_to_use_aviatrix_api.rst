@@ -128,32 +128,36 @@ Python "requests" module
 
 PowerShell Example
 """"""""""""""""""""""""
-$params = @{"action"="login";
->> "username"="admin";
->> "password"="password";
->> }
+::
 
-Invoke-WebRequest -Uri $Uri -Method POST -Body $params
-StatusCode        : 200
-StatusDescription : OK
-Content           : {"return":true,"results":"User login:admin in account:admin has been authorized successfully -
+ $params = @{"action"="login";
+ >> "username"="admin";
+ >> "password"="password";
+ >> }
+
+:: 
+
+ Invoke-WebRequest -Uri $Uri -Method POST -Body $params
+ StatusCode        : 200
+ StatusDescription : OK
+ Content           : {"return":true,"results":"User login:admin in account:admin has been authorized successfully -
                     Please check email confirmation.","CID":"RwuXX5KoJsTrOBAjXl9N"}
-RawContent        : HTTP/1.1 200 OK
-                    Pragma: no-cache
-                    X-Frame-Options: DENY
-                    Strict-Transport-Security: max-age=77760000
-                    Content-Length: 158
-                    Cache-Control: no-store
-                    Content-Type: text/json
-                    Date: Tue, 10 Apr 2018 17:...
-Forms             : {}
-Headers           : {[Pragma, no-cache], [X-Frame-Options, DENY], [Strict-Transport-Security, max-age=77760000],
-                    [Content-Length, 158]...}
-Images            : {}
-InputFields       : {}
-Links             : {}
-ParsedHtml        : mshtml.HTMLDocumentClass
-RawContentLength  : 158
+ RawContent        : HTTP/1.1 200 OK
+                     Pragma: no-cache
+                     X-Frame-Options: DENY
+                     Strict-Transport-Security: max-age=77760000
+                     Content-Length: 158
+                     Cache-Control: no-store
+                     Content-Type: text/json
+                     Date: Tue, 10 Apr 2018 17:...
+ Forms             : {}
+ Headers           : {[Pragma, no-cache], [X-Frame-Options, DENY], [Strict-Transport-Security, max-age=77760000],
+                     [Content-Length, 158]...}
+ Images            : {}
+ InputFields       : {}
+ Links             : {}
+ ParsedHtml        : mshtml.HTMLDocumentClass
+ RawContentLength  : 158
 
 
 
@@ -161,7 +165,7 @@ Examples: Invoke Other Aviatrix API with a valid CID
 ----------------------------------------------------
 
 .. Note::
-   The following examples demonstrate using the Aviatrix API **"setup_account_profile"** to create Aviatrix **"Cloud Account"**.
+   The following example demonstrates how to use the Aviatrix API **"setup_account_profile"** to create Aviatrix **"Cloud Account"**.
 
 
 Postman
@@ -212,46 +216,43 @@ Python
 
 PowerShell
 """""""""""
-$paramsaccount = @{"action"="setup_account_profile";
->> "CID"="RwuXX5KoJsTrOBAjXl9N";
->> "account_name"="test_api";
->> "account_password"="xxx";
->> "account_email"="xxx.com";
->> "cloud_type"=1;
->> "aws_account_number"="xxxx";
->> "aws_access_key"="xxxx";
->> "aws_secret_key"="xxxx";
->> }
-Invoke-WebRequest -Uri $Uri -Method Post -Body $paramsaccount
+::
 
-StatusCode        : 200
-StatusDescription : OK
-Content           : {"return":true,"results":"An email confirmation has been sent to lyan@aviatrix.com"}
-RawContent        : HTTP/1.1 200 OK
-                    Pragma: no-cache
-                    X-Frame-Options: DENY
-                    Strict-Transport-Security: max-age=77760000
-                    Content-Length: 84
-                    Cache-Control: no-store
-                    Content-Type: text/json
-                    Date: Tue, 10 Apr 2018 17:1...
-Forms             : {}
-Headers           : {[Pragma, no-cache], [X-Frame-Options, DENY], [Strict-Transport-Security, max-age=77760000],
-                    [Content-Length, 84]...}
-Images            : {}
-InputFields       : {}
-Links             : {}
-ParsedHtml        : mshtml.HTMLDocumentClass
-RawContentLength  : 84
+ $paramsaccount = @{"action"="setup_account_profile";
+ >> "CID"="RwuXX5KoJsTrOBAjXl9N";
+ >> "account_name"="test_api";
+ >> "account_password"="xxx";
+ >> "account_email"="xxx.com";
+ >> "cloud_type"=1;
+ >> "aws_account_number"="xxxx";
+ >> "aws_access_key"="xxxx";
+ >> "aws_secret_key"="xxxx";
+ >> }
 
+::
+ 
+ Invoke-WebRequest -Uri $Uri -Method Post -Body $paramsaccount
 
-Conclusion:
------------
-At Aviatrix, we believe that networking is a foundational element of cloud computing which should be as dynamic, scalable, and elastic as compute and storage. Please do not hesitate to contact us if you have any feedback.
+ StatusCode        : 200
+ StatusDescription : OK
+ Content           : {"return":true,"results":"An email confirmation has been sent to lyan@aviatrix.com"}
+ RawContent        : HTTP/1.1 200 OK
+                     Pragma: no-cache
+                     X-Frame-Options: DENY
+                     Strict-Transport-Security: max-age=77760000
+                     Content-Length: 84
+                     Cache-Control: no-store
+                     Content-Type: text/json
+                     Date: Tue, 10 Apr 2018 17:1...
+ Forms             : {}
+ Headers           : {[Pragma, no-cache], [X-Frame-Options, DENY], [Strict-Transport-Security, max-age=77760000],
+                     [Content-Length, 84]...}
+ Images            : {}
+ InputFields       : {}
+ Links             : {}
+ ParsedHtml        : mshtml.HTMLDocumentClass
+ RawContentLength  : 84
 
-
-
------------------------------------------------------------------
 
 
 .. |image1| image:: ./img_01_postman_login_execution_results.png

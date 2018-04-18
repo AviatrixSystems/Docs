@@ -195,6 +195,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/Aviatrix_Controller_API
    HowTos/aviatrix_terraform
+   HowTos/AviatrixAPI/multiple_approaches_to_use_aviatrix_api/multiple_approaches_to_use_aviatrix_api
    HowTos/aviatrix_apis_datacenter_extension
 
 .. _Downloads:
