@@ -3,7 +3,7 @@
    :keywords: REST, API, CID, login, cloud account
 
 =======================================
-Multiple Approaches to Use Aviatrix API
+Multiple Ways to Use Aviatrix API
 =======================================
 
 
@@ -256,23 +256,11 @@ PowerShell
 
 
 .. |image1| image:: ./img_01_postman_login_execution_results.png
-    :width: 2.00000 in
-    :height: 2.00000 in
 .. |image2| image:: ./img_02_linux_curl_login_execution_results.png
-    :width: 2.00000 in
-    :height: 2.00000 in
 .. |image3| image:: ./img_03_python_login_execution_results.png
-    :width: 2.00000 in
-    :height: 2.00000 in
 .. |image4| image:: ./img_04_postman_create_account_execution_results.png
-    :width: 2.00000 in
-    :height: 2.00000 in
 .. |image5| image:: ./img_05_linux_curl_create_account_execution_results.png
-    :width: 2.00000 in
-    :height: 2.00000 in
 .. |image6| image:: ./img_06_python_create_account_execution_results.png
-    :width: 2.00000 in
-    :height: 2.00000 in
 
 
 
