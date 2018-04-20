@@ -19,14 +19,25 @@ Select Gateway Size
 When selecting the Gateway Size, note the following guidelines of IPsec performance
 based on iperf tests conducted between two gateways of the same size:
 
--  t2 series throughput is not guaranteed; it can burst up to 130Mbps.
--  m3 series are in the range 300 - 500Mbps
--  m4.xlarge or c4.xlarge: approximately 500Mbps
--  c3.2xlarge or m4.2xlarge: approximately 1Gbps
--  c3.4xlarge: approximately 1.2Gbps
--  c4.2xlarge or c5.2xlarge: 1.2Gbps - 1.5Gbps
++----------------------------+-------------------------------------------------+
+| AWS Instance Size          | Expected Throughput                             |
++============================+=================================================+
+| T2 series                  | Not guaranteed; it can burst up to 130Mbps      |
++----------------------------+-------------------------------------------------+
+| M3 series                  | 300 - 500Mbps                                   |
++----------------------------+-------------------------------------------------+
+| m4.xlarge, c4.xlarge       | approximately 500Mbps                           |
++----------------------------+-------------------------------------------------+
+| c3.2xlarge, m4.2xlarge     | approximately 1Gbps                             |
++----------------------------+-------------------------------------------------+
+| c3.4xlarge                 | approximately 1.2Gbps                           |
++----------------------------+-------------------------------------------------+
+| c4.2xlarge, c5.2xlarge     | 1.2Gbps - 1.5Gbps                               |
++----------------------------+-------------------------------------------------+
 
-if you need IPSEC performance beyond 1.2Gbps, refer to `Cluster Peering. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
+.. note::
+
+   If you need IPSec performance beyond 1.2Gbps - 1.5Gbps, refer to `Cluster Peering. <./Cluster_Peering_Ref_Design.html>`__
 
 Specify a Reachable DNS Server IP Address
 ------------------------------------------
