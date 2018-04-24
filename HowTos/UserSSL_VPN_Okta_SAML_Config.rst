@@ -249,7 +249,7 @@ Create a VPN User
 #. Select `VPN Users`
 #. Click `+ Add New`
 #. Select the `VPC ID` and `LB/Gateway Name` for your SAML Gateway
-#. Enter the Okta username in the `User Name` field
+#. Enter a name in the `User Name` field
 #. Enter any valid email address in the `User Email` field (this is where the cert file will be sent). Alternatively, you can download the cert if you do not enter an email address.
 #. Select the `SAML Endpoint`
 #. Click `OK`
@@ -269,7 +269,7 @@ Validate
 
 .. note::
 
-   SAML VPN only supports shared certificates. You can share the certificate among VPN users or create more VPN users
+   SAML VPN supports shared certificates. You can share the certificate among VPN users or create more VPN users
 
 
 Configure Okta for Multifactor Authentication (OPTIONAL)

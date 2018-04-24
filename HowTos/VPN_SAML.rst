@@ -185,15 +185,21 @@ This step is usually completed by the Aviatrix admin.
 | SAML Endpoint              | Select the SAML endpoint                |
 +----------------------------+-----------------------------------------+
 
-.. important::
-
-   Load the VPN user certificate and try connecting to the VPN.
 
 .. note::
 
    SAML  supports shared certificates.  You can share the certificate among VPN users or create more VPN users.
 
 
+3.6 Test VPN Connectivity
+######################
+	Download and install the Aviatrix VPN client for your platform from `here <https://aviatrix-systems-inc-docs.readthedocs-hosted.com/Downloads/samlclient.html>`__
+	Launch the Aviatrix client and load the certificate ("Load config")that you downloaded/received from email on step 3.5
+	Click on "Connect". This should launch the browser instance and prompt you for authentication, if not already logged in. 
+	If the connection is successfull, the client icon should turn green. 
+	You can ensure VPN connectivity by trying to ping the private IP of the gateway you launched or any other instance in the same cloud network
+
+  
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
