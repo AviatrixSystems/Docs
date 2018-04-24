@@ -35,9 +35,9 @@ Refer to `vSEC Gateway for Amazon Web Services Getting Started Guide <http://sup
 2. Create Site2Cloud Connection at Aviatrix Controller
 ======================================================
 
- 2.1 At Aviatrix Controller, go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC1 public subnet. Collect both public and private IP addresses of the Gateway.
+ 2.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC1 public subnet. Collect both public and private IP addresses of the Gateway.
 
- 2.2 At Aviatrix Controller, go to **site2cloud** and click **Add New** to create a site2cloud connection:
+ 2.2 Go to **site2cloud** and click **Add New** to create a site2cloud connection:
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -57,7 +57,7 @@ Refer to `vSEC Gateway for Amazon Web Services Getting Started Guide <http://sup
   Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
 ===============================     =================================================================
 
- 2.3 At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-cp-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring CheckPoint-VM.
+ 2.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-cp-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring CheckPoint-VM.
 
 3. Download and Install SmartConsole
 ====================================
