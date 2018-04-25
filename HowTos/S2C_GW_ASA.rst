@@ -28,7 +28,7 @@ Network setup is as following:
 
  1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect Gateway's public IP addresses (52.8.12.122 in this example).
 
- 1.2 Go to **site2cloud** and click **Add New** to create a site2cloud connection.
+ #. Go to **site2cloud** and click **Add New** to create a site2cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -47,8 +47,7 @@ Network setup is as following:
   Remote Subnet                     10.10.0.0/16 (On-Prem Network CIDR)
   Local Subnet                      10.0.2.0/24 (VPC-AVX private subnet)
 ===============================     =================================================================
-
- 1.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-asa-s2c). 
+ #. Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-asa-s2c). 
      - Select **Cisco** from **Vendor** drop down list 
      - Select **ASA 5500 Series** from **Platform** drop down list
      - Select the proper ASA Software versin from **Software** drop down list depending on your ASA running OS
@@ -58,15 +57,24 @@ Network setup is as following:
      The following is a ASA sample configuration
 
      |image0|
-     |image1|
-     |image2|
 
-2. Troubleshooting and Verifying at Aviatrix Controller
+2. Configure Cisco ASA
+=======================
+
+ 2.1 Either ssh into the ASA or connect to it directly through its console port.
+
+ 2.2 Issue **configure terminal** command in privileged **EXEC** mode to start global configuration mode. The prompt changes to the following :
+
+    hostname(config)#
+
+ 2.3 Enter the CLIs in ASA site2cloud configuration guide downloaded before. Note that you may need to modify these CLIs to fit your ASA configuration.
+
+3. Troubleshooting and Verifying at Aviatrix Controller
 ========================================================
 
- 2.1 At Aviatrix Controller, go to **Site2Cloud** page. Verify the status of the site2cloud connection is up.
+ 3.1 At Aviatrix Controller, go to **Site2Cloud** page. Verify the status of the site2cloud connection is up.
 
- 2.2 At **Site2Cloud - Diagnostics** page, run various diagnostics commands.
+ 3.2 At **Site2Cloud - Diagnostics** page, run various diagnostics commands.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -80,15 +88,7 @@ Network setup is as following:
 
 For support, send email to support@aviatrix.com.
 
-.. |image0| image:: s2c_gw_asa_media/Doc1-0.png
-   :width: 5.55625in
-   :height: 3.26548in
-
-.. |image1| image:: s2c_gw_asa_media/Doc1-1.png
-   :width: 5.55625in
-   :height: 3.26548in
-
-.. |image2| image:: s2c_gw_asa_media/Doc1-2.png
+.. |image0| image:: s2c_gw_asa_media/Doc1.png
    :width: 5.55625in
    :height: 3.26548in
 
