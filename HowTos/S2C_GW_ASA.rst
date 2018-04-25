@@ -26,9 +26,9 @@ Network setup is as following:
 1. Create Site2Cloud Connection at Aviatrix Controller
 ======================================================
 
- 1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect both public and private IP addresses of the Gateway.
+ 1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect Gateway's public IP addresses (52.8.12.122 in this example).
 
- 1.2 Go to **site2cloud** and click **Add New** to create a site2cloud connection:
+ 1.2 Go to **site2cloud** and click **Add New** to create a site2cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -42,12 +42,11 @@ Network setup is as following:
   Encryption over DirectConnect     Uncheck this box
   Enable HA                         Uncheck this box
   Primary Cloud Gateway             Select Aviatrix Gateway created above
-  Remote Gateway IP Address         Public IP of CheckPoint-VM WAN port
+  Remote Gateway IP Address         Public IP of ASA WAN port (66.7.242.225 in this example)
   Pre-shared Key                    Optional (auto-generated if not entered)
   Remote Subnet                     10.10.0.0/16 (On-Prem Network CIDR)
   Local Subnet                      10.0.2.0/24 (VPC-AVX private subnet)
 ===============================     =================================================================
-
 
  1.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-asa-s2c). 
      - Select **Cisco** from **Vendor** drop down list 
@@ -55,6 +54,12 @@ Network setup is as following:
      - Select the proper ASA Software versin from **Software** drop down list depending on your ASA running OS
      - Click **Download Configuration** button to download the ASA site2cloud configuration 
      - Save the configuration file as a reference for configuring your ASA
+     
+     The following is a ASA sample configuration
+
+     |image0|
+     |image1|
+     |image2|
 
 2. Troubleshooting and Verifying at Aviatrix Controller
 ========================================================
@@ -74,5 +79,17 @@ Network setup is as following:
 
 
 For support, send email to support@aviatrix.com.
+
+.. |image0| image:: s2c_gw_asa_media/Doc1-0.png
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image1| image:: s2c_gw_asa_media/Doc1-1.png
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |image2| image:: s2c_gw_asa_media/Doc1-2.png
+   :width: 5.55625in
+   :height: 3.26548in
 
 .. disqus::
