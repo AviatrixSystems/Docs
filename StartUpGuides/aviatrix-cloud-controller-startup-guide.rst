@@ -230,10 +230,9 @@ Enter the `Customer ID` in the field and click `Save`.
 4.3  Setup a Primary Access Account  
 ------------------------------------
 
-The Aviatrix primary access account contains two sets of information:
+The Aviatrix primary access account contains the following information:
 
- 1. The Controller instance's AWS account credential.
- #. A login access credential to the Controller web console with the account name.  
+  - The Controller instance's AWS 12 digit account ID.
 
 Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
 
@@ -246,22 +245,11 @@ Fill out the fields as follows: (The AWS Account Number can be found at the Stac
   |                               | Controller.                                |
   |                               | Example name: `AWSOpsTeam`.                |
   +-------------------------------+--------------------------------------------+
-  | E-mail                        | The e-mail address of the admin.           |
-  +-------------------------------+--------------------------------------------+
-  | Password                      | Password for login to the Controller using |
-  |                               | the account name specified.                |
-  +-------------------------------+--------------------------------------------+
-  | Confirm Password              |                                            |
-  +-------------------------------+--------------------------------------------+
   | AWS Account Number            | The Controller instance's 12 digit         |
   |                               | AWS account number. It can be found in the |
   |                               | Stack Outputs section `AccoundId`.         |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
-  +-------------------------------+--------------------------------------------+
-  | aviatrix-role-app ARN         | This field is auto filled.                 |
-  +-------------------------------+--------------------------------------------+
-  | aviatrix-role-ec2 ARN         | This field is auto filled.                 |
   +-------------------------------+--------------------------------------------+
 
 Once complete, click the `Create` button at the bottom of the form.
