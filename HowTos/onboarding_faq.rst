@@ -49,7 +49,9 @@ What is the Aviatrix Primary Access Account?
 
 There is only one primary access account on the Controller. The primary access account's AWS account credential is the one that the Controller is launched and it is already setup during the Controller instance launch time with CloudFormation template.   
 
-To setup the primary access account during onboarding time, you just need to enter Controller access credentials (email, password) and the 12 digit AWS account that Controller is launched on.
+To setup the primary access account during onboarding time, you just need to enter the 12 digit AWS account that Controller is launched on. 
+
+(For release 3.1 and earlier you also need to enter the Controller access credentials (email, password)).
 
 Once you setup the primary access account, you can launch Aviatrix gateways in the VPCs that belong to this account. 
 
