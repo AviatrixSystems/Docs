@@ -28,7 +28,7 @@ Network setup is as following:
 
  1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect Gateway's public IP addresses (52.8.12.122 in this example).
 
- #. Go to **site2cloud** and click **Add New** to create a site2cloud connection.
+ 1.2 Go to **site2cloud** page and click **Add New** to create a site2cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -47,14 +47,15 @@ Network setup is as following:
   Remote Subnet                     10.10.0.0/16 (On-Prem Network CIDR)
   Local Subnet                      10.0.2.0/24 (VPC-AVX private subnet)
 ===============================     =================================================================
- #. Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-asa-s2c). 
+ 
+ 1.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-asa-s2c). 
      - Select **Cisco** from **Vendor** drop down list 
      - Select **ASA 5500 Series** from **Platform** drop down list
      - Select the proper ASA Software versin from **Software** drop down list depending on your ASA running OS
      - Click **Download Configuration** button to download the ASA site2cloud configuration 
      - Save the configuration file as a reference for configuring your ASA
      
-     The following is a ASA sample configuration
+     The following is a ASA sample configuration based on the site2cloud configuration above.
 
      |image0|
 
