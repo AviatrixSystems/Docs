@@ -9,7 +9,7 @@ How to Connect Office to Multiple AWS VPCs with AWS Peering
 
 This document describes a common use case where a customer 
 needs  
-to connect her on-prem office to connect to a group of VPCs securely so that developers can 
+to connect her on-prem office to a group of VPCs securely so that developers can 
 connect to the instances in VPC and work on applications. 
 
 
@@ -17,8 +17,7 @@ In this case, the customer does not want to build an IPSEC tunnel to each VPC, n
 
 |simpletransit|
 
-Fortunately since traffic is always initiated from on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel and 
-multiple AWS Peerings.  
+Fortunately since traffic is always initiated from on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel by leveraging Aviatrix Site2Cloud feature and AWS Peering.  
 
 Below are the steps to configure. 
 
