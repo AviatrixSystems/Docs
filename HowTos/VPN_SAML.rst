@@ -34,7 +34,7 @@ If you haven’t already deployed the Aviatrix controller, follow `these instruc
 2.2 IDP Account
 ###############
 
-An IDP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <../HowTos/UserSSL_VPN_Okta_SAML_Config.html>`__, OneLogin, Google, Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc. (The listed ones were tested). You will require administrator access to create IDP endpoints for SAML.
+An IDP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <./UserSSL_VPN_Okta_SAML_Config.html>`__, OneLogin, `Google <./UserSSL_VPN_Google_SAML_Config.html>`__, Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc. (The listed ones were tested). You will require administrator access to create IDP endpoints for SAML.
 
 .. _PDC_23:
 
@@ -192,7 +192,7 @@ This step is usually completed by the Aviatrix admin.
 
 
 3.6 Test VPN Connectivity
-######################
+#########################
 	Download and install the Aviatrix VPN client for your platform from `here <https://aviatrix-systems-inc-docs.readthedocs-hosted.com/Downloads/samlclient.html>`__
 	Launch the Aviatrix client and load the certificate ("Load config")that you downloaded/received from email on step 3.5
 	Click on "Connect". This should launch the browser instance and prompt you for authentication, if not already logged in. 

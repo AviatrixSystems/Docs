@@ -127,6 +127,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/duo_auth
    HowTos/VPN_SAML
    HowTos/UserSSL_VPN_Okta_SAML_Config
+   HowTos/UserSSL_VPN_Google_SAML_Config
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
