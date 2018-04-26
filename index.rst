@@ -232,6 +232,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
    HowTos/controller_security_for_SAML
+   HowTos/simpletransit
 
 .. _Solutions:
 
