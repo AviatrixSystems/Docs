@@ -8,24 +8,19 @@ How to Connect Office to Multiple AWS VPCs with AWS Peering
 =================================================================
 
 This document describes a common use case where a customer 
-has a group of VPCs and 
-would like to connect them to on-prem office so that developers can 
-securely access the instances in VPC and work on applications. As there is no
-server on-prem, traffic is always initiated from the office to VPCs.
+needs  
+to connect her on-prem office to connect to a group of VPCs securely so that developers can 
+connect to the instances in VPC and work on applications. 
 
 
 In this case, the customer does not want to build an IPSEC tunnel to each VPC, nor does she want to build a full blown `Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
 
 |simpletransit|
 
-Fortunately since traffic is always initiated from on-prem office, there is a simple solution to connect many VPCs with one single IPSEC tunnel and 
+Fortunately since traffic is always initiated from on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel and 
 multiple AWS Peerings.  
 
 Below are the steps to configure. 
-
-
-.. note::
-   For description purpose, gateway and GW are used interchangeably.
 
 
 Planning and Prerequisites
@@ -38,7 +33,7 @@ Planning and Prerequisites
 1. Launch a gateway in the transit VPC
 -------------------------------------------
 
-go to Gateway page to launch a gateway in the transit VPC that servers to move traffic between a Spoke VPC and on-prem network.
+Go to Gateway page to launch a gateway in the transit VPC that servers to move traffic between a Spoke VPC and on-prem network.
 The gateway must be launched on a public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 .. important::
@@ -59,6 +54,8 @@ Specify a Reachable DNS Servier IP Address      Leave it unselected
 Enable NAT				        check
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
+
+Below is a screen shot, note NAT is enabled.
 
 |transit-gw-launch|
 
@@ -87,6 +84,8 @@ Remote Subnet                                   the on-prem office CIDR list sep
 Local Subnet                                    all spoke VPC CIDR list separated by comma
 Save Template                                   leave it unchecked
 ==========================================      ==========
+
+Below is a screen shot, note the local subnet is a list of all Spoke VPC CIDRs. 
 
 |transit-to-on-prem|
 
@@ -117,13 +116,13 @@ The AWS Peering will be established and the routing tables will be programmed by
 5. Congratulations!
 ------------------------------------------------
 
-Now you can test connectivity by initiating a "Ping" or "SSH" to an EC2 instance in a Spoke VPC. 
+Now you can test connectivity by initiating a "Ping" or "SSH" from office host machine or your laptop to an EC2 instance in a Spoke VPC. 
 
 
 6. Add More Spoke VPCs
 ---------------------------------------
 
-Each time you add a new Spoke VPC, you need to edit the site2cloud tunnel to include the new Spoke VPC CIDR in the remote CIDR field, as shown below. Similarly, you need to edit your on-prem device to include the new Spoke VPC. 
+Each time you add a new Spoke VPC, you need to edit the site2cloud tunnel to include the new Spoke VPC CIDR in the remote CIDR field, as shown below. Similarly, you may need to edit your on-prem device to include the new Spoke VPC. 
 
 
 |edit-transit-to-onprem-for-spoke2|
@@ -132,7 +131,7 @@ Each time you add a new Spoke VPC, you need to edit the site2cloud tunnel to inc
 .. |simpletransit| image:: simpletransit_media/simpletransit.png
    :scale: 50%
 
-.. |transit-gw-launch| image:: simpletransit_media/simple-transit-on-prem-gw-launch.png
+.. |transit-gw-launch| image:: simpletransit_media/simple-transit-gw-launch.png
    :scale: 50%
 
 .. |transit-to-on-prem| image:: simpletransit_media/transit-to-on-prem.png
