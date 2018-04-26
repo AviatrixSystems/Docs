@@ -4,7 +4,7 @@
 
 
 =================================================================
-How to Connect Office to Multiple AWS VPCs Leveraging AWS Peering
+How to Connect Office to Multiple AWS VPCs with AWS Peering
 =================================================================
 
 This document describes a common use case where a customer 
