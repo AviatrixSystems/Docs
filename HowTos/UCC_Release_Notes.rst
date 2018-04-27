@@ -28,6 +28,12 @@ R3.2 (4/18/2018)
 
 - **UCC Controller Public IP Migration** can be used after Controller's public IP is changed. To migrate, go to Troubleshoot -> Diagnostics -> Network -> Migrate.
 
+4. REST API
+------------
+
+- 50 REST APIs have been added to the Controller. For details, refer to `API Doc <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_
+ 
+
 R3.1 (3/6/2018)
 ===============
 
