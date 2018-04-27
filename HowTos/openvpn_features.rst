@@ -7,8 +7,7 @@
 Aviatrix OpenVPN® Feature Highlights
 ====================================
 
-This document highlights Aviatrix OpenVPN® features. For how to setup Aviatrix OpenVPN®
-for developers and remote workers to access public cloud, consult `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
+This document highlights Aviatrix OpenVPN® features. For how to instructions, consult `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 VPN Management
 ---------------
