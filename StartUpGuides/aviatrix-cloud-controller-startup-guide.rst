@@ -24,9 +24,7 @@ Click a link to learn specific features of our use cases:
 
 `Multicloud Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
 
-The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building a Transit Network, remote user VPN, or multi-cloud peering, etc. 
-
-To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
+The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. The first thing you need to do is to launch the Controller instance. 
 
 In this guide, we'll walk you through the first 4 steps. By the end, you'll be 
 ready for your first use case. 
