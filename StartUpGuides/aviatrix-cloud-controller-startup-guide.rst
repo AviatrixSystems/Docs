@@ -10,6 +10,20 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
+Click a link to learn specific features of our use cases:
+  
+`Remote User VPN <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
+
+`Next Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
+
+`VPC Egress Security <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
+
+`Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
+
+`Encrypted Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
+
+`Multicloud Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
+
 The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. Once you have a Controller instance launched in a VPC, you can start building a Transit Network, remote user VPN, or multi-cloud peering, etc. 
 
 To learn about all the Aviatrix use cases, read the `Aviatrix overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
