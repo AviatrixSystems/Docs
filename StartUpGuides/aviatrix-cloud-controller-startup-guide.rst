@@ -10,7 +10,7 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
-Click a link to learn specific features of your use cases:
+Click a link to learn more about your use case:
   
 `Remote User VPN <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
 
