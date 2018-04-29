@@ -9,7 +9,7 @@
 
 
 
-Why FQDN Whitelists feature are needed?
+Why is FQDN Whitelists feature needed?
 ========================================
 
 Aviatrix Security Policy feature is enabled at a gateway for a stateful
@@ -50,11 +50,14 @@ How does it work?
 =================
 
 This features works for HTTP and HTTPS traffic to public Internet. The function is carried out inline
-without requiring any certificate or keys to decrypt the traffic. 
+without requiring any certificate or keys to decrypt the traffic.
 
-A tag is defined as a list of FQDNs. One or more gateways is attached to
-a tag. Any updates to a tag automatically triggers updates to all
-gateways attached to the tag. Multiple tags can be defined for the
+A tag is defined as a list of FQDNs and it is created and managed on the Controller 
+console. One or more gateways is attached to
+a tag. Each gateway can be attached to one tag. Any updates to a tag on the Controller automatically triggers updates to all
+gateways attached to the tag. 
+
+Multiple tags can be defined for the
 controller. The domains in the tag are the destinations that are allowed
 for traffic to pass.
 
@@ -64,6 +67,10 @@ Configuration Workflow
 Before you start make sure you have the latest software by checking the
 Dashboard. If an alert message (New!) appears, click New! To upgrade to
 the latest software.
+
+.. important::
+
+  The VPC you want to apply FQDN filter must have an `Aviatrix gateway launched <http://docs.aviatrix.com/HowTos/gateway.html>`_ with `NAT enabled <http://docs.aviatrix.com/HowTos/gateway.html#enable-nat>`_. 
 
 ::
 
