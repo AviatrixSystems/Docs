@@ -27,6 +27,9 @@ import sphinx_rtd_theme
 #def setup(app):
 #    app.add_stylesheet('aviatrix_theme.css')
 
+def setup(app):
+    app.add_javascript("drift.js")
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
