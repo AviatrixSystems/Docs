@@ -12,15 +12,11 @@
 Why is FQDN Whitelists feature needed?
 ========================================
 
-Aviatrix Security Policy feature is enabled at a gateway for a stateful
-firewall filter at layer 4 level. You specify an action for each rule,
-allow or deny, for each packet as it passes through the gateway. The
-rules are based on network, IP addresses, protocol and ports. This
-feature is useful to firewalling different private networks.
+|fqdn|
 
-For Internet bound egress traffic, specifying at IP address level is not
+For Internet bound egress traffic, specifying outbound policy at IP address level is not
 sufficient as the domain names of a site can be translated to many
-different IP addresses. The egress filtering needs to happen at Layer 7. 
+different IP addresses. AWS NAT gateway's security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7. 
 
 On the other hand, workloads in AWS are mostly applications where it is deterministic which 
 outbound APIs the application program calls. For example, the application runs API queries to
@@ -92,10 +88,8 @@ For support, send email to support@aviatrix.com
 
 Enjoy!
 
-.. |image0| image::  FQDN_media/image1.png
-   :width: 3.5in
-   :height: 0.5in
-
+.. |fqdn| image::  FQDN_Whitelists_Ref_Design_media//fqdn.png
+   :scale: 50%
 
 .. add in the disqus tag
 
