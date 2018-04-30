@@ -68,6 +68,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Gateway
 
    HowTos/gateway
+   Solutions/gateway_ha
 
 .. _Transit Network:
 

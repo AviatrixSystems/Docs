@@ -3,7 +3,7 @@
    :keywords: HA, gateway, active-active, active-standby
 
 ===========================================================================
-Aviatrix Gateway HA
+Gateway and Tunnel HA Options
 ===========================================================================
 
 Overview
