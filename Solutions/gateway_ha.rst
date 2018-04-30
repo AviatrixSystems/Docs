@@ -29,6 +29,9 @@ As the recovery time decreases, there may be additional costs to consider.  `Sin
 
 .. _gwha_single_az:
 
+HA Options
+----------
+
 Single AZ Gateway
 #################
 
