@@ -1,0 +1,176 @@
+.. meta::
+   :description: Aviatrix Gateway HA Options
+   :keywords: HA, gateway, active-active, active-standby
+
+===========================================================================
+Aviatrix Gateway HA
+===========================================================================
+
+Overview
+--------
+
+The Aviatrix Controller monitors your cloud networking deployment, detects problems, and handles failover resolution automatically.  There are 3 options to choose from when deploying Aviatrix in a highly available architecture:
+
++--------------------------------------------------+---------------------------+
+| HA Option                                        | Recovery Time ``*``       |
++==================================================+===========================+
+| `Single AZ Gateway <#gwha-single-az>`__          | 4-5 minutes               |
++--------------------------------------------------+---------------------------+
+| `Backup Gateway <#gwha-backup-gw>`__             | 1-2 minutes               |
++--------------------------------------------------+---------------------------+
+| `Backup Gateway and Tunnel(s) <#gwha-option3>`__ | 1-2 seconds               |
++--------------------------------------------------+---------------------------+
+
+``*`` Recovery times vary based on many factors including the number of tunnels established.
+
+These options give you the flexiblity to select the one that meets your requirements for recovery time.  For production environments, a quicker recovery time is typically very important.  But, for development environments, a longer delay is acceptable.  With Aviatrix HA, you can mix and match these options in your deployment to meet your needs.
+
+As the recovery time decreases, there may be additional costs to consider.  `Single AZ` has no additional costs.  `Backup Gateway` will incur additional EC2 instance charges (for the additional gateway provisioned).  `Backup Gateway and Tunnel(s)` will incur additional EC2 costs and additional tunnel costs.
+
+.. _gwha_single_az:
+
+Single AZ Gateway
+#################
+
+.. note::
+
+   The recovery time for this option is approximately 4-5 minutes.
+
+|imageGwSingleAZ|  |imageTimer5min|
+
+
+The gateway is actively monitored by the Controller.  If there is a problem with the gateway or tunnel(s):
+
+#. A new gateway is provisioned in the same availability zone
+#. Any configured tunnels are established from the new gateway to their respective terminating gateway
+#. An email notification is sent to the administrator
+
+.. _gwha_backup_gw:
+
+Backup Gateway
+##############
+
+.. note::
+
+   The recovery time for this option is approximately 1-2 minutes.
+
+|imageGwBackup|         |imageTimer2min|
+
+A backup gateway in a different availability zone is created when this option is enabled.  There are no tunnels terminating with the backup gateway and it does not have its own EIP.
+
+If a problem with the primary gateway or connected tunnel(s) is detected:
+
+#. The EIP is moved to the backup gateway from the active.
+#. Tunnels currently connected to the primary gateway are rebuilt on the backup gateway.
+#. An email notification is sent to the administrator.
+
+.. _gwha_option3:
+
+Backup Gateway and Tunnel(s)
+############################
+
+.. note::
+
+   The recovery time for this option is approximately 1-2 seconds
+
+|imageGwBackupTunnel| |imageTimer2sec|
+
+This is similar to the "backup gateway" option except that the backup gateway has its own EIP and active tunnel(s).  The backup gateway and tunnels are provisioned when HA is enabled for this gateway.
+
+If a problem with the primary gateway or connected tunnel(s) is detected:
+
+#. Update the routing table in the VPC/VNet so the target for routes is the backup gateway.
+#. An email notification is sent to the administrator.
+
+
+Deployment Guide
+----------------
+
+Deploying your desired HA model is simple.  Follow these steps to enable HA on your gateway:
+
+#. Login to the Controller
+#. Click on the `Gateway` navigation item
+#. Select the gateway in the table and click the `Edit` link in the upper right
+
+   |imageEditGW|
+
+#. Follow the steps below for the desired HA option
+
+   * **Single AZ HA**
+
+     Click the `Enable` button below `Gateway Single AZ HA`
+
+     |imageEnableSingleAZ|
+
+   * **Backup Gateway HA**
+
+     #. Scroll to `Gateway for High Availability`
+     #. Select the subnet where the backup gateway should be deployed
+
+        .. tip::
+
+           Select a availability zone that is different from where your primary gateway is installed.
+
+     #. Click the `Enable HA` button
+
+     |imageEnableBackupGW|
+
+   * **Backup Gateway and Tunnel HA**
+
+     #. Scroll to `Gateway for High Availability Peering`
+     #. Select the subnet where the backup gateway should be deployed
+
+        .. tip::
+
+           Select a availability zone that is different from where your primary gateway is installed.
+
+     #. Click the `+Create` button
+
+     |imageEnableBackupGWAndTunnel|
+
+.. |imageEnableBackupGWAndTunnel| image:: gateway_ha_media/controller_edit_backup_gw_tunnel.png
+   :scale: 50%
+
+.. |imageEnableBackupGW| image:: gateway_ha_media/controller_edit_backup_gw.png
+   :scale: 50%
+
+.. |imageEnableSingleAZ| image:: gateway_ha_media/controller_edit_singleaz.png
+   :scale: 50%
+
+.. |imageEditGW| image:: gateway_ha_media/controller_gateway_page.png
+   :scale: 50%
+
+.. |imageCostEC2| image:: gateway_ha_media/cost_ec2.png
+   :height: 75px
+   :width: 75px
+
+.. |imageCostNoEC2| image:: gateway_ha_media/cost_noec2.png
+   :height: 75px
+   :width: 75px
+
+.. |imageCostAviatrix| image:: gateway_ha_media/cost_aviatrix.png
+   :height: 75px
+   :width: 75px
+
+.. |imageCostNoAviatrix| image:: gateway_ha_media/cost_noaviatrix.png
+   :height: 75px
+   :width: 75px
+
+.. |imageTimer2Sec| image:: gateway_ha_media/timer_2sec.png
+   :height: 75px
+   :width: 75px
+
+.. |imageTimer2Min| image:: gateway_ha_media/timer_2min.png
+   :height: 75px
+   :width: 75px
+
+.. |imageTimer5Min| image:: gateway_ha_media/timer_5min.png
+   :height: 75px
+   :width: 75px
+   :align: top
+
+.. |imageGwSingleAZ| image:: gateway_ha_media/singleaz_gateway.png
+
+.. |imageGwBackup| image:: gateway_ha_media/backup_gateway.png
+
+.. |imageGwBackupTunnel| image:: gateway_ha_media/backup_gateway_and_tunnel.png
