@@ -29,6 +29,19 @@ Application Directory ID to create an Aviatrix Cloud Account with step by
 step instructions. There are 3 sections, make sure you go through all of
 them.
 
+Or you may refer to this video:
+
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/LHqF-yyze7M" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+
+|
+
+
 2.0 Azure Permission Setup for Aviatrix
 ========================================
 
