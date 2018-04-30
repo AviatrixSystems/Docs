@@ -273,8 +273,26 @@ Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ supports SAML authentic
 
 Aviatrix VPN gateway can authenticate a VPN user against OKTA on behalf of a VPN user.  In that case, you don’t need Aviatrix VPN client, any OpenVPN® clients software such as Tunnelblick can be supported.
 
+Are multiple profiles supported by the Aviatrix VPN client?
+-----------------------------------------------------------
 
+Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ allows you to load and switch between one or more VPN profiles.
 
+Load multiple configurations:
+
+#. Open the client
+#. Click on the `Advanced` button
+#. Select the `Profile` tab
+#. Click `Add` button
+#. Enter a name for the new profile
+#. Select the configuration file
+
+Switch to a different configuration:
+
+#. Open the client
+#. Click `Connect` button.  A drop down will appear.
+#. Select the profile from the list
+   
 What is "Client Certificate Sharing"
 ------------------------------------
 
