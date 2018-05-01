@@ -299,8 +299,8 @@ Phase 2 DH Groups            2, 1, 5, 14, 15, 16, 17, 18
 Phase 2 Encryption           AES-256-CBC, AES-192-CBC, AES-128-CBC, AES-128-GCM-64, AES-128-GCM-96, AES-128-GCM-128, 3DES
 =======================      ==========
 
-SSL VPN encryption algorithm: AES-256-CBC. 
-SSL VPN authentication algorithm: SHA512
+SSL VPN encryption algorithm is AES-256-CBC. 
+SSL VPN authentication algorithm is SHA512.
 
 
 
