@@ -283,6 +283,27 @@ Can there be read only account for operation team?
 
 Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select "read_only" from the drop down menu. This user account will have views to all pages but cannot make changes to any configurations.
 
+Is Aviatrix FIPS 140-2 compliant?
+----------------------------------
+
+Aviatrix supports both IPSEC and SSL with encryption algorithms that are FIPS 140-2 compliant. 
+
+=======================      ==========
+**IPSEC algorithms**         **Value**
+=======================      ==========
+Phase 1 Authentication       SHA-1, SHA-512, SHA-384, SHA-256
+Phase 1 DH Groups            2, 1, 5, 14, 15, 16, 17, 18
+Phase 1 Encryption           AES-256-CBC, AES-192-CBC, AES-128-CBC, 3DES
+Phase 2 Authentication       HMAC-SHA-1, HMAC-SHA-512, HMAC-SHA-384, HMAC-SHA-256
+Phase 2 DH Groups            2, 1, 5, 14, 15, 16, 17, 18
+Phase 2 Encryption           AES-256-CBC, AES-192-CBC, AES-128-CBC, AES-128-GCM-64, AES-128-GCM-96, AES-128-GCM-128, 3DES
+=======================      ==========
+
+SSL VPN encryption algorithm: AES-256-CBC. 
+SSL VPN authentication algorithm: SHA512
+
+
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
