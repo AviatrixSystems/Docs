@@ -18,7 +18,7 @@ The Aviatrix Controller monitors your cloud networking deployment, detects probl
 +--------------------------------------------------+---------------------------+
 | `Backup Gateway <#gwha-backup-gw>`__             | 1-2 minutes               |
 +--------------------------------------------------+---------------------------+
-| `Backup Gateway and Tunnel(s) <#gwha-option3>`__ | 1-2 seconds               |
+| `Backup Gateway and Tunnel(s) <#gwha-option3>`__ | ~30 seconds               |
 +--------------------------------------------------+---------------------------+
 
 ``*`` Recovery times vary based on many factors including the number of tunnels established.
@@ -26,6 +26,11 @@ The Aviatrix Controller monitors your cloud networking deployment, detects probl
 These options give you the flexiblity to select the one that meets your requirements for recovery time.  For production environments, a quicker recovery time is typically very important.  But, for development environments, a longer delay is acceptable.  With Aviatrix HA, you can mix and match these options in your deployment to meet your needs.
 
 As the recovery time decreases, there may be additional costs to consider.  `Single AZ` has no additional costs.  `Backup Gateway` will incur additional EC2 instance charges (for the additional gateway provisioned).  `Backup Gateway and Tunnel(s)` will incur additional EC2 costs and additional tunnel costs.
+
+How is a Gateway or Tunnel Determined to be Down?
+-------------------------------------------------
+
+See more details `here <../HowTos/gateway.html#gateway-keepalives>`__.
 
 .. _gwha_single_az:
 
@@ -76,7 +81,7 @@ Backup Gateway and Tunnel(s)
 
    The recovery time for this option is approximately 1-2 seconds
 
-|imageGwBackupTunnel| |imageTimer2sec|
+|imageGwBackupTunnel| |imageTimer30sec|
 
 This is similar to the "backup gateway" option except that the backup gateway has its own EIP and active tunnel(s).  The backup gateway and tunnels are provisioned when HA is enabled for this gateway.
 
@@ -159,7 +164,7 @@ Deploying your desired HA model is simple.  Follow these steps to enable HA on y
    :height: 75px
    :width: 75px
 
-.. |imageTimer2Sec| image:: gateway_ha_media/timer_2sec.png
+.. |imageTimer30Sec| image:: gateway_ha_media/timer_30sec.png
    :height: 75px
    :width: 75px
 
