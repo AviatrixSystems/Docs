@@ -68,28 +68,74 @@ the latest software.
 
   The VPC you want to apply FQDN filter must have an `Aviatrix gateway launched <http://docs.aviatrix.com/HowTos/gateway.html>`_ with `NAT enabled <http://docs.aviatrix.com/HowTos/gateway.html#enable-nat>`_. 
 
-::
+Step 1. Add a new tag
+---------------------
 
- 1. To configure, go to Security -> FQDN Filter
+Go Security -> FQDN, click New Tag, as shown below:
 
- 2. Create a tag with a name. Click Enable.
+|fqdn-new-tag|
 
- 3. Edit the tag by adding FQDN hostname part of URLs (e.g.
-   www.aviatrix.com, or \*.google.com).
+Click "+New Tag", and enter a name for the tag, for example, prod-whitelist, as shown below:
 
- 4. Attach Gateway. One or more gateways can be attached to a tag.
+|fqdn-add-new-tag| 
 
- 5. Note: Step 2, 3 and 4 can be done first without enabling the tag.
-   Once the tag is enabled, HTTP and HTTPS traffic to these FQDN will be
-   allowed, and any destination outside the FQDN will be denied.
+Step 2. Add URL list to the new tag
+-----------------------------------
+
+Enable the new tag and click Edit, as shown below:
+
+|fqdn-enable-edit|
+
+Click "+Add New" to add each URL, wild card is allowed, as shown below:
+
+|fqdn-add-domain-names|
+
+Step 3. Attach to gateways
+
+Click "Attach Gateway" to attach a gateway to the tag. 
+
+When a gateway is attached to a tag, in the tag will be pushed for 
+enforcement (whitelist or blacklist), as shown below. 
+
+|fqdn-attach-spoke1|
+
+Repeat Step 3 if you have more gateways that should be attached to this tag. 
+
+|fqdn-attach-spoke2|
+
+Add more tags
+-------------
+
+Repeat from Step 1 to create more tags and attach different gateways. 
+Note each gateway can only be attached to one tag. 
+
 
 
 For support, send email to support@aviatrix.com
 
 Enjoy!
 
-.. |fqdn| image::  FQDN_Whitelists_Ref_Design_media//fqdn.png
+.. |fqdn| image::  FQDN_Whitelists_Ref_Design_media/fqdn.png
    :scale: 50%
+
+.. |fqdn-new-tag| image::  FQDN_Whitelists_Ref_Design_media/fqdn-new-tag.png
+   :scale: 50%
+
+.. |fqdn-add-new-tag| image::  FQDN_Whitelists_Ref_Design_media/fqdn-add-new-tag.png
+   :scale: 50%
+
+.. |fqdn-enable-edit| image::  FQDN_Whitelists_Ref_Design_media/fqdn-enable-edit.png
+   :scale: 50%
+
+.. |fqdn-add-domain-names| image::  FQDN_Whitelists_Ref_Design_media/fqdn-add-domain-names.png
+   :scale: 50%
+
+.. |fqdn-attach-spoke1| image::  FQDN_Whitelists_Ref_Design_media/fqdn-attach-spoke1.png
+   :scale: 50%
+
+.. |fqdn-attach-spoke2| image::  FQDN_Whitelists_Ref_Design_media/fqdn-attach-spoke2.png
+   :scale: 50%
+
 
 .. add in the disqus tag
 
