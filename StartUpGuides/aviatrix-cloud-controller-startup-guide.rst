@@ -62,7 +62,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - FREE - EC2 FlightPath Troubleshooting Tool
    - FREE – Two Tunnels (Free Forever)
    
-- **Private Offer AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1523554442785&sr=0-1&ref_=srh_res_product_title>`_ includes a 14-day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
+- **Private Offer AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ includes a 14-day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
    - Next-Generation Transit VPC Network  
    - Remote User VPN (OpenVPN®)  
    - Multicloud Peering 
