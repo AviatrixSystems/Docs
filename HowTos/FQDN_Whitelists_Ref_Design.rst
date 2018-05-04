@@ -60,13 +60,9 @@ for traffic to pass.
 Configuration Workflow
 ======================
 
-Before you start make sure you have the latest software by checking the
-Dashboard. If an alert message (New!) appears, click New! To upgrade to
-the latest software.
-
 .. important::
 
-  The VPC you want to apply FQDN filter must have an `Aviatrix gateway launched <http://docs.aviatrix.com/HowTos/gateway.html>`_ with `NAT enabled <http://docs.aviatrix.com/HowTos/gateway.html#enable-nat>`_. 
+ The VPC you want to apply FQDN filter must have an `Aviatrix gateway launched <http://docs.aviatrix.com/HowTos/gateway.html>`_ with `NAT enabled <http://docs.aviatrix.com/HowTos/gateway.html#enable-nat>`_ before starting the following steps. 
 
 Step 1. Add a new tag
 ---------------------
