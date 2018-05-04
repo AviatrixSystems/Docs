@@ -87,6 +87,7 @@ Click "+Add New" to add each URL, wild card is allowed, as shown below:
 |fqdn-add-domain-names|
 
 Step 3. Attach to gateways
+---------------------------
 
 Click "Attach Gateway" to attach a gateway to the tag. 
 
