@@ -10,7 +10,9 @@ Aviatrix Overview
 What Do We Do?
 ================
 
-Aviatrix is a cloud networking company. 
+Aviatrix is a cloud networking company. We believe encryption for data in transit is 
+the new fundamental for all network connectivities. All data we connect is 
+encrypted, either via IPSEC or SSL, over Internet or private links. 
 
 We focus on solving networking problems in use cases relevant to public clouds. 
 These use cases are: 
