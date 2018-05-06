@@ -15,7 +15,9 @@ the new fundamental for all network connectivities. All data we connect is
 encrypted, either via IPSEC or SSL, over Internet or private links. 
 
 We focus on solving networking problems in use cases relevant to public clouds. 
-These use cases are: 
+These use cases are shown as below: 
+
+|aviatrix_overview|
 
 - datacenter to cloud (`Next Gen Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
 - cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
@@ -27,6 +29,7 @@ We also provide security features for workloads/application in the cloud:
 
 - `Gateway inline L4 stateful firewall. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_ 
 - `VPC Egress Security. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
+
 
 In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
 agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ to cloud for vmware workloads. 
@@ -173,9 +176,8 @@ Not all your workloads require the bandwidth and latency that calls for a Direct
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
-.. |image0| image:: AviatrixCloudControllerStartupGuide_media/image001.png
-   :width: 2.90683in
-   :height: 0.35000in
+.. |aviatrix_overview| image:: aviatrix_overview_media/aviatrix_overview.png
+   :scale: 50%
 .. |image1| image:: AviatrixCloudControllerStartupGuide_media/image002.png
    :width: 4.80625in
    :height: 3.21803in
