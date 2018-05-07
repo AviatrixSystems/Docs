@@ -64,6 +64,7 @@ Zesty/Ubuntu17 and Ubuntu18 - `Debian file <https://s3-us-west-2.amazonaws.com/a
 
    To solve a DNS issue might happen on Ubuntu 17 or 18, please issue the below command before executing Aviatrx VPN client #sudo apt-get install resolvconf
 
+
 *************
 FreeBSD |bsd|
 *************
