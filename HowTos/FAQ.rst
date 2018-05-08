@@ -303,6 +303,21 @@ SSL VPN encryption algorithm is AES-256-CBC.
 SSL VPN authentication algorithm is SHA512.
 
 
+What is the difference between IKEv1 and IKEv2?
+------------------------------------------------
+
+Internet Key Exchange (IKE) protocol is the control plane to IPSEC data encryption. 
+Its responsibility is in setting up security association that allow two parties 
+to send data securely. 
+
+There is no difference in data encryption algorithm and data encryption strength 
+itself between IKEv1 and IKEv2. 
+
+The primary difference between IKEv1 and IKEv2 is it takes fewer messages to 
+establish the security association in IKEv2. 
+
+There are a couple of other differences regarding IKEv2 has a better support for mobile devices which does not apply to site to site VPN where Aviatrix is being used. 
+
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
