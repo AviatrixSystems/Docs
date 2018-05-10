@@ -160,8 +160,8 @@ VPC ID and its region for the VPC ID field and region in each step.
    b. Go to OpenVPN® -> VPN Users to add as many user as you
       please.
 
-	 |     	i.  When Geo VPN is enabled, VPC ID association is no longer
-			    relevant. You can select any VPC ID.
+	 |     	i.  When Geo VPN is enabled, you should see the GeoVPN DNS name in the dropdown.
+				Add VPN users to the Geo VPN DNS to create the VPN users
 
 	 |     	ii. Associate each user with a profile. Note if no profile is
 			    associated, user has full access to all resources. When a user
