@@ -122,6 +122,18 @@ Write Logs to S3
 
 
 #. Create a directory on the local file system (e.g., /var/log/aviatrix)
+
+   .. code-block:: shell
+
+      sudo mkdir /var/log/aviatrix
+
+#. Change the ownership of this directory to allow the rsyslogd user to write files to this directory
+
+   .. code-block:: shell
+
+      sudo chown syslog:adm /var/log/aviatrix
+      sudo chmod 750 /var/log/aviatrix
+
 #. Create a new rsyslogd configuration file ``/etc/rsyslog.d/22-aviatrix.conf`` with the following configuration:
 
    .. code-block:: shell
@@ -164,7 +176,7 @@ Write Logs to S3
       cd ${DIR}
       for f in $(ls); do
         if [ "$f" != "gateways.log" ]; then
-            aws s3 cp ${f} ${DESTDIR}/${new_filename}
+            aws s3 cp ${DESTDIR}/${new_filename}
             if [ $? -eq 0 ]; then
                 sudo rm -f ${DIR}/$f
             fi
