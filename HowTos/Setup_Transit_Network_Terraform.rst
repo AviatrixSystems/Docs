@@ -160,7 +160,7 @@ Manages an Aviatrix Spoke VPC
 +--------------+-------------------------------------------------------------------+
 | subnet       | VPC subnet where you want to deploy transit VPC GW.               |
 +--------------+-------------------------------------------------------------------+
-| enable_nat   | (Optional) Enter "yes" to enable NAT.                            |
+| enable_nat   | (Optional) Enter "yes" to enable NAT.                             |
 +--------------+-------------------------------------------------------------------+
 | ha_subnet    | (Optional) VPC subnet for HA.                                     |
 +--------------+-------------------------------------------------------------------+
