@@ -16,7 +16,10 @@ Why is FQDN Whitelists feature needed?
 
 For Internet bound egress traffic, specifying outbound policy at IP address level is not
 sufficient as the domain names of a site can be translated to many
-different IP addresses. AWS NAT gateway's security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7. 
+different IP addresses. 
+
+AWS NAT gateway does not offer security group function, 
+it relies on security groups by each instance.  AWS NAT instance's security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7. 
 
 On the other hand, workloads in AWS are mostly applications where it is deterministic which 
 outbound APIs the application program calls. For example, the application runs API queries to
