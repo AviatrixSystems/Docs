@@ -176,7 +176,7 @@ Write Logs to S3
       cd ${DIR}
       for f in $(ls); do
         if [ "$f" != "gateways.log" ]; then
-            aws s3 cp ${DESTDIR}/${new_filename}
+            aws s3 cp ${DIR}/$f ${DESTDIR}/${new_filename}
             if [ $? -eq 0 ]; then
                 sudo rm -f ${DIR}/$f
             fi
