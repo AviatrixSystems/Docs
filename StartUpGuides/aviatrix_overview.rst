@@ -145,7 +145,7 @@ This solution is about adding security control to private workloads or applicati
 AWS and Azure provide a NAT gateway or NAT service, but it is limited in scope. Traditional firewall is either too complex or too expensive to be deployed per VPC. 
 Aviatrix L7 FQDN filter solves these problems:
 
- a. **No IP Based Rules** AWS NAT Gateway has no inbound/outbound policies. I have to configure security groups in each instance that needs Internet access. 
+ a. **No policies** AWS NAT Gateway has no inbound/outbound policies. I have to configure security groups in each instance that needs Internet access. 
  #. **Only IP Based Rules** AWS NAT instance provides security groups, but it is IP address based and limits to 50 rules. My application needs to make API calls to Office 365 and that site along resolves to hundreds of changing IP addresses. Using Security group is not an acceptable solution. 
  #. **Firewall for Each VPC is Too Complex** My cloud instances are workloads and programs, they make API calls to known destinations. Deploying a traditional firewall that requires certs and keys to decrypt every packet for inspection is too complex and an overkill. 
  #. **Firewall for Each VPC is Too Expensive** Traditional firewall of IDS/IPS is too expensive to be deployed per VPC. 
