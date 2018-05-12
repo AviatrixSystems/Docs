@@ -35,7 +35,7 @@ After you go through the onboarding process and create the primary access accoun
 you can create additional or secondary Aviatrix access accounts on the Controller. This will allow you 
 to launch gateways and build connectivity across different AWS accounts.  
 
-To configure, click Accounts at the navigation bar on the left side of the Controller web console. 
+To configure, 
 
 1. Go to Aviatrix -> Accounts -> Cloud Accounts -> New Account, to create this new secondary account.
 #. Enter a unique account name. For example, marketingOps
