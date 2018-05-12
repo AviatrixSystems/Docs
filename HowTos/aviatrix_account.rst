@@ -14,7 +14,7 @@ One cloud credential is represented as an Aviatrix access account on the Control
 multiple Aviatrix accounts. One Aviatrix account may represent multiple cloud credentials, one from
 each cloud. For example, an Aviatrix account name DevOps can have an IAM role for AWS, Azure ARM credential and GCP credential.
 
-Aviatrix software release prior to 3.2, in addition to cloud provider API credentials, an access account also contains email and login information to allow the access account to login to the Controller. 
+(For Aviatrix software release prior to 3.2, in addition to cloud provider API credentials, an access account also contains email and login information to allow the access account to login to the Controller.) 
 
 Starting from release 3.2, access account for AWS only consists of the 12 digit account ID. 
 
@@ -37,16 +37,12 @@ to launch gateways and build connectivity across different AWS accounts.
 
 To configure, click Accounts at the navigation bar on the left side of the Controller web console. 
 
-Before you setup new account on the Controller, follow the `instructions here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to create IAM roles, policies and establish trust relationship first. 
-
 1. Go to Aviatrix -> Accounts -> Cloud Accounts -> New Account, to create this new secondary account.
 #. Enter a unique account name. For example, marketingOps
 #. Check `AWS`.
-#. Enter the secondary account's `AWS account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
+#. Follow `Readme first <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to setup IAM roles, policies and establish a trust relationship with the primary account. 
+#. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
 #. Check `IAM role-based`.
-#. Follow `the instructions <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to setup IAM roles, policies and establish a trust relationship with the primary account. 
-#. Aviatrix-role-app ARN field should be auto filled.
-#. Aviatrix-role-ec2 ARN field should be auto filled.
 #. Click `OK`.
 #. The new secondary account should be created.
 #. Now you can create connectivity between two VPCs in different AWS accounts.
