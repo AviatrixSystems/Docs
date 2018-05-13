@@ -14,13 +14,19 @@ One cloud credential is represented as an Aviatrix access account on the Control
 multiple Aviatrix accounts. One Aviatrix account may represent multiple cloud credentials, one from
 each cloud. For example, an Aviatrix account name DevOps can have an IAM role for AWS, Azure ARM credential and GCP credential.
 
-(For Aviatrix software release prior to 3.2, in addition to cloud provider API credentials, an access account also contains email and login information to allow the access account to login to the Controller.) 
 
 Starting from release 3.2, access account for AWS only consists of the 12 digit account ID. 
 
 For Azure, the account information consists of `Azure ARM credentials. <http://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_
 
 For GCP (Google Cloud), the account information consists of `GCP credentials. <http://docs.aviatrix.com/HowTos/CreateGCloudAccount.html>`_
+
+The Aviatrix account structure is shown in the diagram below, where admin is the
+default user for the primary access account. 
+
+|account_structure|
+
+For adding more admin users, refer to `this doc. <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_
 
 Setup primary access account for AWS cloud
 ----------------------------------------------------
@@ -47,9 +53,8 @@ To configure,
 #. The new secondary account should be created.
 #. Now you can create connectivity between two VPCs in different AWS accounts.
 
-.. |image0| image:: uservpn_media/AviatrixCloudVPN.png
-   :width: 5.55625in
-   :height: 3.26548in
+.. |account_structure| image:: adminusers_media/account_structure.png
+   :scale: 50%
 
 
 .. disqus::
