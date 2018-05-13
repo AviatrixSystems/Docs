@@ -49,7 +49,7 @@ This is the preferred approach.
 
 
 
-Setup Manually
+Setup Secondary Account IAM Manually
 =========================================================================
 
 This is not a recommended approach as it takes longer time and error prone. 
@@ -151,6 +151,10 @@ APIs.
 
 2.3 Establish trust relationship with primary account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   If you are using this manual process to setup primary access account (Controller's account), you do not need to establish a trust relationship. Skip this step. 
 
 Grant the primary (Controller) AWS account access to the aviatrix-role-app in the
 this secondary account
