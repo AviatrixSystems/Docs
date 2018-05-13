@@ -26,7 +26,7 @@ default user for the primary access account.
 
 |account_structure|
 
-For adding more admin users, refer to `this doc. <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_
+To add more admin users, refer to `this doc. <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_
 
 Setup primary access account for AWS cloud
 ----------------------------------------------------
