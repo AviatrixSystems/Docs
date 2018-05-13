@@ -43,15 +43,17 @@ to launch gateways and build connectivity across different AWS accounts.
 
 To configure, 
 
-1. Go to Aviatrix -> Accounts -> Cloud Accounts -> New Account, to create this new secondary account.
-#. Enter a unique account name. For example, marketingOps
-#. Check `AWS`.
-#. Follow `Readme first <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to setup IAM roles, policies and establish a trust relationship with the primary account. 
-#. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
-#. Check `IAM role-based`.
-#. Click `OK`.
-#. The new secondary account should be created.
-#. Now you can create connectivity between two VPCs in different AWS accounts.
+
+ 1. Go to Aviatrix -> Accounts -> Access Accounts -> +New Account, to create this new secondary account.
+ #. Enter a unique account name. For example, marketingOps
+ #. Check `AWS`.
+ #. Check `IAM role-based`.
+ #. Follow `Readme first <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to run a CloudFormation script that setups IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
+ #. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
+ #. Click `OK`.
+ #. The new secondary account should be created.
+ #. Now you can create connectivity between two VPCs in different AWS accounts.
+
 
 .. |account_structure| image:: adminusers_media/account_structure.png
    :scale: 50%
