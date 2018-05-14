@@ -259,9 +259,9 @@ Two examples for Remote Syslog and Logstash Forwarder below.
 On the Aviatrix Controller:
   a. Server:	FQDN or IP address of remote syslog server
   #. Port:	Listening port of remote syslog server (6514 by default)
-  #. Cert:	A compressed file in tgz format with both certificates (.crt format) of remote syslog server and CA
+  #. Cert:	A compressed file in tgz format with both certificates (.crt format) of remote syslog server and CA. For example, a compressed file which is named certs.tgz includes (1) ca.pem, (2) rsyslog-crt.pem, and (3) rsyslog-key.pem
   #. Protocol:	TCP or UDP (TCP by default)
-
+  
 On the Remote syslog server:
   1. SSH into the remote syslog server
   #. Go to /var/log/aviatrix directory
