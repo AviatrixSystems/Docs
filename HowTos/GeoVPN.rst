@@ -4,182 +4,133 @@
 
 
 
-===========================
-OpenVPN® for Geo Locations
-===========================
+===================================================
+VPN Access Gateway Selection by Geolocation of User
+===================================================
 
-If you have a global work force that needs to access the cloud with the
+Overview
+========
+
+If you have a global workforce that needs to access the cloud with the
 best user experience, building a cloud network with Geo VPN access
-capability is the right solution for you. Geo VPN combines our scale out
+capability is the right solution for you.
+
+The geolocation VPN feature combines the Aviatrix scale out
 VPN solution with latency based routing to dynamically route VPN users
 to the nearest VPN access gateway based on the latency between the user
 and the gateways.
 
-In this reference design we also enable split tunnel mode, that is, only
-traffic destined to the cloud go through the SSL VPN tunnel. If a user
-does general browsing to Internet or watch movies from Hulu, traffic
-should be routed via WI-FI to ISP to Internet. You do not wish to pay
-AWS for this type of compute and network costs.
+VPN Access Details
+==================
 
-You may combine this reference design with other capabilities and
-reference designs to build out a network that meets your requirements.
+An example deployment in AWS is shown below.  In this configuration, there are two VPN access gateways: one in us-west-2 and another in eu-central-1.  Each VPN access gateway is fronted by a load balancer in AWS.
 
-Network Diagram
-===============
+|imageArchitecture|
 
-The network diagram is shown below, where there are two sets of VPN
-access gateways, one in us-west-2 and another in eu-central-1. When a
-VPN user access the cloud, the network returns a VPN server IP address
-(the ELB DNS name) based on which region is closer to the user.
+Let's look at the difference between standard VPN access service and VPN access service with the Geolocation feature enabled:
 
-|image0|
+Standard VPN Service (without geolocation feature enabled)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Without the Geolocation feature enabled, when a user connects to the VPN service, they will connect to one of the two regions' VPN gateway.  Each gateway is independently administered meaning users need a separate configuration profile for each region they will access.
+
+In this configuration, an EU-based user would be given a configuration profile for the eu-central-1 load balancer.  And, a US-based user will be provided with a us-west-2 configuration profile.  If either user relocates or travels to the opposite region, they will need a separate configuration profile in that region and they will need to manually switch the active configuration profile.
+
+|imageWithoutGeoVPN|
+
+Geolocation VPN Service
++++++++++++++++++++++++
+
+With the Geolocation feature enabled, when a user connects to the VPN service, they are directed to a Route 53 or Azure DNS entry that uses a latency-based routing policy to choose between the available regions.
+
+In this configuration, both the EU-based user and the US-based user would be given the same configuration profile.  This configuration profile will select the closest region automatically using a latency-based routing policy defined on the DNS record.
+
+|imageWithGeoVPN|
 
 Configuration Workflow
 ======================
 
-Tips: Upgrade to the latest software if there is an alert message on the
-controller dashboard. Mouse over the labels to get help. The description
-in each step does not include all fields. Make sure you have the correct
-VPC ID and its region for the VPC ID field and region in each step.
+#. Create a `VPN gateway <./uservpn.html>`__ in each region
 
-1. Create a VPN gateway cluster in VPC 172.31.0.0/16.
+   .. important::
+      Enable ELB on each gateway that will be associated with the Geo VPN feature.
 
-   Go to Gateway menu and click create. Make sure:
+   .. tip::
+      You must create at least one gateway to enable Geo VPN.  You can add more gateways to the pool at any time.
 
-   a. At Gateway Name field, give it a distinct and convenient name. For
-      example, vpn-west2-1.
+#. Once you have at least one VPN gateway created with ELB enabled, you are ready to the enable Geo VPN feature.  Click on **OpenVPN** in the navigation menu, and select **Advanced**.
 
-   b. Enter VPC ID for 172.31.0.0/16
+#. Click on the **Geo VPN** tab
 
-   c. Enable NAT is selected
+#. Select the `Cloud Type` and click on the `Disabled` status to Enable the Geo VPN feature.
 
-   d. VPN Access is selected.
+   |imageEnable|
 
-   e. The VPN CIDR Block must be a subnet that is outside of all your
-      current and future VPC CIDR range. In the example above, you may
-      enter 192.168.2.0/24 (say you’ll never plan to configure a VPC in
-      the 192.168.0.0/16 range).
+#. Populate the fields:
 
-   f. Split Tunnel Mode is selected.
+   +------------------------+----------------------------------------------+
+   | Field                  | Description                                  |
+   +========================+==============================================+
+   | Account Name           | Select the cloud account where the DNS domain|
+   |                        | is hosted.                                   |
+   +------------------------+----------------------------------------------+
+   | Domain Name            | The hosted domain name.                      |
+   |                        |                                              |
+   |                        | .. important::                               |
+   |                        |    This domain name must be hosted by AWS    |
+   |                        |    Route53 or Azure DNS in the selected      |
+   |                        |    account.                                  |
+   +------------------------+----------------------------------------------+
+   | VPN Service Name       | The hostname that users will connect to.     |
+   |                        | A DNS record will be created for this name   |
+   |                        | in the specified domain name.                |
+   +------------------------+----------------------------------------------+
+   | ELB DNS Name           | Select the first ELB name to attach to this  |
+   |                        | Geo VPN name.  You can add others after      |
+   |                        | this feature is enabled.                     |
+   +------------------------+----------------------------------------------+
 
-	|      	i.  For the Additional CIDRs field under Split Tunnel, enter other
-				   VPCs CIDR or other network CIDRs you wish to reach beyond the
-				   VPC you are connecting to. In the example shown, you should
-				   enter 10.10.0.0/16,10.5.0.0/16,10.80.0.0/16. It is a good idea
-				   to do some planning to include future VPCs or network address
-				   ranges. (In a case where you never have to worry about
-				   connecting to your corporate VPN, you may consider enter the
-				   entire private network address range in the Additional CIDRs
-				   range field, separating by comma:
-				   172.16.0.0/12,10.0.0.0/8,192.168.0.0/16. Doing so afford you
-				   not to have to reconfigure the gateway if you need to add more
-				   VPCs for networking with different CIDR range in the future.)
-	|
-	|       ii. (Optional) For the Nameservers and Search Domain fields under
-			    Split Tunnel, enter your private DNS server IP addresses and
-			    search domain if you have setup to use DNS names to access
-			    instances inside VPCs. Leave it blank if you do not know what
-			    they are. If you use AWS Route 53 private hosted zone and
-			    records for your host names, make sure the Nameserver is the
-			    DNS server of the VPC. In this case, you should enter
-                72.31.0.2
+   |imageEnablePopulate|
 
-   g. Enable AWS ELB is selected.
+#. Click `OK`
 
-   h. Save Template is selected. This Template saves you from entering
-      repeated fields if you wish to create more gateways with the same
-      configuration.
+   |imageComplete|
 
-   i. Repeat Steps a-g to create more gateways with VPN enabled. You may
-      select different AZs for the Public Subnet field so that your
-      gateways are load balanced between AZs.
+   .. note::
 
-2. Create a VPN gateway cluster in VPC 10.80.0.0/16
+      If enabling Geo VPN fails, make sure the Domain Name you enter is a
+      registered name under AWS Route 53 in a public hosted zone. In addition,
+      this Domain name must be hosted in the account that you have access
+      privilege. If the domain name is hosted by another account, you will not
+      be able to add DNS record.
 
-   Repeat the procedures in step 1 to create a second VPN gateway
-   cluster in eu-central-1
+#. For each additional region, repeat these steps:
 
-3. Enable Geo VPN
+   #. Click `+ Add New`
+   #. Select the `ELB DNS Name`
+   #. Click `OK`
 
-   a. Go to OpenVPN® -> Configuration -> Geo VPN, select Enable
+   |imageAddAdditionalELB|
 
-   b. For Domain Name, enter a public domain name that is registered on
-      AWS Route 53 as a public hosted zone. For example, aviatrixvpn.com
+.. tip::
 
-   c. Enter any name you like for VPN Service Name, for example, OpsVPN.
-      The VPN Service Name combines with Domain Name forms the Geo VPN
-      server name.
+   Add encrypted peering to connect regions.
 
-   d. Select one ELB from the drop down menu for ELB DNS Name. Click OK.
+Add Users
++++++++++
 
-   e. Click Add to add the second ELB from the drop down menu.
+Once you have Geo VPN enabled, you can add users.  Follow these steps to add users:
 
-   f. If you have more ELB VPN gateway clusters in the future, you can
-      add more later.
+#. Click **OpenVPN** navigation menu item
+#. Click **VPN Users**
+#. Click the **+ Add New** button
+#. In the `VPC ID / DNS Name` drop down, select the Geo VPN VPN service name created in the previous steps
+#. Populate the `User Name` and optionally the `User Email`
+#. Click **OK**
 
-4. Build encrypted routing networks to reach other VPCs.
+   |imageAddVPNUser|
 
-   a. Launch a gateway without VPN capability in VPC 172.31.0.0/16. This
-      is the routing gateway, make sure:
 
-	|      i.   At Gateway Field, give it a distinct and convenient name. For
-				example, dev-east-1, or teamKardashian-east-1 for the
-				Kardashian game project.
-	|
-	|      ii.  VPN Access is not selected.
-	|
-	|      iii. Enable NAT is NOT selected (since step 1 has enabled NAT
-				function for this VPC)
-	|
-	|      iv.  Save Template is not selected. (so that you don’t overwrite
-				the hard work of entering the fields of gateways with VPN
-				enabled)
-
-   b. Repeat the above procedure for VPC 10.80.0.0/16.
-
-   c. Repeat the above procedure for VPC 10.10.0.0/16, 10.5.0.0/16.
-      Select Enable NAT if you want instances in these 3 VPCs to be able
-      to reach Internet directly.
-
-   d. Configure encrypted peering. Go to VPCs menu and Encrypted Peering
-      -> Add. Note each VPC is represented by one or more gateways. Make
-      sure you want to peer between two gateways without VPN capability.
-
-5. (Optional) Setup Stateful Firewall rules at VPC
-
-   Go to Gateway, select a Gateway, click Edit. Click Security Policies to add any policies for each VPC.
-
-6. The above steps complete the network infrastructure setup.
-
-7. Add Users and Profiles
-
-   a. Go to OpenVPN® ->  Profiles to create as many profiles as
-      you please. The target field can be FQDN (DNS names or fully
-      qualified domain name).
-
-   b. Go to OpenVPN® -> VPN Users to add as many user as you
-      please.
-
-	 |     	i.  When Geo VPN is enabled, you should see the GeoVPN DNS name in the dropdown.
-				Add VPN users to the Geo VPN DNS to create the VPN users
-
-	 |     	ii. Associate each user with a profile. Note if no profile is
-			    associated, user has full access to all resources. When a user
-			    is added to the database, an email with .ovpn file or .onc
-			    (for Chromebooks) will be sent to the user with detailed
-			    instructions.
-
-Troubleshooting
-===============
-
-If Enabling Geo VPN fails, make sure the Domain Name you enter is a
-registered name under AWS Route 53 in a public hosted zone. In addition,
-this Domain name must be hosted in the account that you have access
-privilege. If the domain name is hosted by another account, you will not
-be able to add DNS record. To register a public domain name under your
-account in AWS, go to AWS management console portal. Under Services,
-select Route 53 Management Console. Under Domains, select Registered
-domains, then click Register Domain.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
@@ -187,5 +138,22 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image0| image:: GeoVPN_media/image1.png
 
-   
+.. |imageArchitecture| image:: GeoVPN_media/architecture_overview.png
+
+.. |imageWithoutGeoVPN| image:: GeoVPN_media/architecture_without_geovpn.png
+
+.. |imageWithGeoVPN| image:: GeoVPN_media/architecture_with_geovpn.png
+
+.. |imageEnable| image:: GeoVPN_media/enable_geovpn.png
+
+.. |imageEnablePopulate| image:: GeoVPN_media/enable_geovpn_populate.png
+
+.. |imageAddAdditionalELB| image:: GeoVPN_media/add_additional_elb.png
+
+.. |imageAddAdditionalELBComplete| image:: GeoVPN_media/add_additional_elb_complete.png
+
+.. |imageComplete| image:: GeoVPN_media/geovpn_complete.png
+
+.. |imageAddVPNUser| image:: GeoVPN_media/add_vpn_user.png
+
 .. disqus::
