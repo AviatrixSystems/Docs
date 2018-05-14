@@ -71,7 +71,7 @@ Select the right AMI that meets your use case and subscription preference. Click
 
 - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?ref=_ptnr_docs_link_startup_user010>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?ref=_ptnr_docs_link_startup_user025>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?ref=_ptnr_docs_link_startup_user050>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?ref=_ptnr_docs_link_startup_user100>`_.
 
-- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a 30 day free trial license. 
+- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a 14 day free trial license. 
 
 1.2 Subscribe to the selected AMI
 ----------------------------------------
