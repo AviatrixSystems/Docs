@@ -107,7 +107,7 @@ Step 2. Launch the Controller with CloudFormation
 
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
-Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link takes to the CloudFormation page with pre-loaded template.   
+Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link below takes to the CloudFormation page with the pre-loaded template.   
 
  - `Secure Networking Platform PAYG - Metered <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json>`_
 
@@ -129,7 +129,9 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
 
  2.2. Once login, you should be already in the CloudFormation page. Change to the region where you would like to install the Aviatrix Controller. Note the CloudFormation is already loaded.
 
- 2.3. Click `Next`
+ 2.3. Click `Next` as shown below:
+
+ |cft-next|
 
  2.4. Fill in the following fields, 
   - the Stack name,
@@ -330,6 +332,9 @@ Enjoy!
    :scale: 50%
 
 .. |imageEnterCustomerID| image:: ZeroToConnectivityInAWS_media/customerid_enter.png
+   :scale: 25%
+
+.. |cft-next| image:: ZeroToConnectivityInAWS_media/cft-next.png
    :scale: 25%
 
 .. |imageCreateAccount| image:: ZeroToConnectivityInAWS_media/create_account.png
