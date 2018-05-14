@@ -127,7 +127,9 @@ tunnel to the cloud directly over Internet is the most economical way as you lev
 
 In this case, the cloud provider's native VPN solution falls short by a long shot. Aviatrix site2cloud solution solves these problems:
 
- a. **AWS/Azure VPN Gateway Limitation** Native cloud provider VPN solution typically can support 30 connections per VPN gateway. I have more than 30 sites, the native solution is not usable. 
+ a. **AWS VPN Gateway Limitation** AWS VPN gateway supports 10 connections per VPC. I have more than 10 sites, the native solution is not usable. 
+ #. **Azure VPN Gateway Limitation** Azure VPN gateway supports only 1 VPN connection for IKEv1. My office firewall device only supports IKEv1.
+ #. **No Visibility** Cloud provider's VPN gateway is a blackbox, there is no visibility for troubleshooting. 
  #. **No Manual** I have to configure and manage hundreds or thousands of IPSEC tunnels, the manual way by using traditional vendors such as Cisco ASA and CSR is not possible. 
  #. **Overlapping IP addresses** We run a SaaS operation, the CIDR blocks at your customer sites are not controlled by us. If a customer CIDR block overlaps with our operation VPC CIDR, we have to find a way to NAT the address. The cloud provider native solution is not usable in this case. 
  #. **Encryption Algorithm Mismatch** As SaaS operators, we cannot control what VPN device a customer wishes to use. My end of VPN termination needs to have the flexibility to interoperate with customer equipment. The native solution does not have that flexibility. 
@@ -143,7 +145,8 @@ This solution is about adding security control to private workloads or applicati
 AWS and Azure provide a NAT gateway or NAT service, but it is limited in scope. Traditional firewall is either too complex or too expensive to be deployed per VPC. 
 Aviatrix L7 FQDN filter solves these problems:
 
- a. **Only IP Based Rules** AWS provides security groups for its NAT gateway, but it is IP address based and limits to 50 rules. My application needs to make API calls to Office 365 and that site along resolves to hundreds of changing IP addresses. Using Security group is not an acceptable solution. 
+ a. **No policies** AWS NAT Gateway has no inbound/outbound policies. I have to configure security groups in each instance that needs Internet access. 
+ #. **Only IP Based Rules** AWS NAT instance provides security groups, but it is IP address based and limits to 50 rules. My application needs to make API calls to Office 365 and that site along resolves to hundreds of changing IP addresses. Using Security group is not an acceptable solution. 
  #. **Firewall for Each VPC is Too Complex** My cloud instances are workloads and programs, they make API calls to known destinations. Deploying a traditional firewall that requires certs and keys to decrypt every packet for inspection is too complex and an overkill. 
  #. **Firewall for Each VPC is Too Expensive** Traditional firewall of IDS/IPS is too expensive to be deployed per VPC. 
  #. **Whitelisting** All I need is to be able to white list or black list the well known destinations by specifying them as fully qualified domain names (FQDN) for my http and https traffic. Support wild card or regex is a bonus. 

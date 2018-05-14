@@ -12,7 +12,7 @@ Admin Users and Duo Sign in
 Objectives
 ===========
 
-This document describes a reference design using Aviatrix Cloud
+This document describes a reference design using Aviatrix Controller
 console’s user management and Duo authentication capability to
 manage multiple users with admin privilege.
 
@@ -27,21 +27,19 @@ device from DUO service in addition to username and password at the
 user log in time.
 
 The following diagram illustrates the user relationship in a typical
-cloud Ops department. In this example, the Ops team has created two
-cloud accounts. A cloud account is associated with one or more
+cloud Ops department. In this example, the Ops team has created three
+secondary access accounts. An access account is associated with one or more
 distinct cloud provider’s API credentials. Typically, a cloud
 account corresponds to an IAM account of a distinct AWS and/or Azure
 account with a credit card.
 
 A default user “admin” is created by the system. In the picture
-below, admin has created two cloud accounts, each with a default
-user names bearing the cloud account name. Additional users in admin
-and cloud account are added by the admin or admin users.
+below, admin has created three secondary access accounts. 
+Additional users in admin
+and access account are added by the admin or admin users.
 
+|account_structure|
 
-Note that the default user created from the cloud account can only
-access information specific to its account from the console. The
-default user cannot be changed in the Users page described below.
 
 Configuration Workflow for Admin Users
 =======================================
@@ -51,12 +49,8 @@ Add a new admin user
 
 The page can be found at Accounts -> Account Users -> +New User.
 
-After the first cloud account is created, additional admin
-users can be added from this page. The page can only be accessed by
-the admin or an admin user. Initially, the default users will be
-displayed. Once a new admin user is added, it will be added to the
-list. Only the new users added by this page can be changed or
-deleted.
+After the primary access account is created during onboarding, additional admin
+users can be added from this page. 
 
 
 When an admin user is created, changed, or deleted, an
@@ -124,7 +118,8 @@ API Server Check
 This button can be used to troubleshoot Duo API server connectivity
 when the API failure is occurring.
 
-
+.. |account_structure| image:: adminusers_media/account_structure.png
+   :scale: 50%
 
 
 

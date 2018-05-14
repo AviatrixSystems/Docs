@@ -10,7 +10,7 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
-Click a link below to learn more about your use case, you can also read an `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
+Click a link below to learn your use case or read an `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_  
   
 `Remote User VPN <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
 
@@ -71,7 +71,7 @@ Select the right AMI that meets your use case and subscription preference. Click
 
 - **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `10 User VPN Server <https://aws.amazon.com/marketplace/pp/B076HZP38D?ref=_ptnr_docs_link_startup_user010>`_, `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?ref=_ptnr_docs_link_startup_user025>`_, `50 User VPN Server <https://aws.amazon.com/marketplace/pp/B0775F2NS5?ref=_ptnr_docs_link_startup_user050>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?ref=_ptnr_docs_link_startup_user100>`_.
 
-- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a 30 day free trial license. 
+- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a 14 day free trial license. 
 
 1.2 Subscribe to the selected AMI
 ----------------------------------------
@@ -107,36 +107,33 @@ Step 2. Launch the Controller with CloudFormation
 
 Now that you have subscribed to an AMI, you are ready to install the Controller instance.
 
-Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Highlight and copy the `CloudFormation Template URL Link Address` for the AMI you intend to launch.  
+Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link below takes you to the CloudFormation page with the pre-loaded template.   
 
-============================================                  ============================================
-**Subscribed Controller AMI**                                 **CloudFormation Template URL Link Address**
-============================================                  ============================================
-Secure Networking Platform PAYG - Metered                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json
-Secure Networking Platform - Custom                           https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template
-SSL VPN Server - 10 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-sslvpn-10-users.template 
-SSL VPN Server - 25 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json
-SSL VPN Server - 50 users                                     https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-ssl-vpn-server-50-user.template
-SSL VPN Server - 100 users                                    https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json
-SSL VPN Server Bundle (10 users + 1 peering)                  https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json
-Cloud Interconnect BYOL                                       https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template 
-============================================                  ============================================
+ - `Secure Networking Platform PAYG - Metered <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json>`_
 
- 2.1. In the AWS console, change to the region where you would like to install the Aviatrix Controller.
+ - `Secure Networking Platform - Custom <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template>`_
 
- 2.2. Once in the correct region, go to the `CloudFormation <https://console.aws.amazon.com/cloudformation/home>`_ service.
+ - `SSL VPN Server - 10 users <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-sslvpn-10-users.template>`_
 
- 2.3. Click `Create new stack` or `Create Stack`
+ - `SSL VPN Server - 25 users <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json>`_
 
-   |imageCFCreate|
+ - `SSL VPN Server - 50 users <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-ssl-vpn-server-50-user.template>`_
 
- 2.4. Select `Specify an Amazon S3 template` and paste the `CloudFormation Template URL Link Address` for the AMI you selected in the above table.  
+ - `SSL VPN Server - 100 users <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json>`_
 
-   |imageCFSelectTemplate-S3|
+ - `SSL VPN Server Bundle (10 users + 1 peering) <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json>`_
 
- 2.5. Click `Next`
+ - `Cloud Interconnect BYOL <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template>`_
 
- 2.6. Fill in the following fields, 
+ 2.1. If you have not logged in, you will be prompted to login to AWS console. 
+
+ 2.2. Once login, you should be already in the CloudFormation page. Change to the region where you would like to install the Aviatrix Controller. Note the CloudFormation is already loaded.
+
+ 2.3. Click `Next` as shown below:
+
+ |cft-next|
+
+ 2.4. Fill in the following fields, 
   - the Stack name,
   - select a VPC in the drop down menu, 
   - select a public subnet in that VPC (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_ if you do not know what public subnet is.)  
@@ -149,15 +146,15 @@ Cloud Interconnect BYOL                                       https://s3-us-west
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
- 2.7. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
+ 2.5. Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
- 2.8. Click `Next`
+ 2.6. Click `Next`
 
- 2.9. Optionally, add any key/value tags as required
+ 2.7. Optionally, add any key/value tags as required
 
- 2.10. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
+ 2.8. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 2.11. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+ 2.9. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
 
   |imageCFEnableTermProtection|
      
@@ -167,11 +164,11 @@ Cloud Interconnect BYOL                                       https://s3-us-west
 
 ..
 
- 2.12. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
+ 2.10. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
- 2.13. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix.
+ 2.11. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix.
    
    |imageCFComplete|
 
@@ -335,6 +332,9 @@ Enjoy!
    :scale: 50%
 
 .. |imageEnterCustomerID| image:: ZeroToConnectivityInAWS_media/customerid_enter.png
+   :scale: 25%
+
+.. |cft-next| image:: ZeroToConnectivityInAWS_media/cft-next.png
    :scale: 25%
 
 .. |imageCreateAccount| image:: ZeroToConnectivityInAWS_media/create_account.png

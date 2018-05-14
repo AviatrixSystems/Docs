@@ -23,10 +23,10 @@ What is an Aviatrix access account on the Controller?
 
 An Aviatrix access account (or account for short) represents the following information:
 
-  1. The AWS account credential that the Controller uses to launch Aviatrix gateway in that AWS account.
-  #. Login access credential to the Controller (for release 3.1 and earlier).
+  - The cloud provider account (for example, AWS) credential that the Controller uses to launch Aviatrix gateway in that cloud account.
 
 Why do I need AWS account credential?
+---------------------------------------
 
 To build connectivity between two VPCs, the Aviatrix Controller launches Aviatrix gateway instances
 in the respective VPCs, instructs the gateways to build an IPSEC tunnel and modifies AWS route tables
