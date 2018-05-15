@@ -53,6 +53,7 @@ The Transit GW must be launched on public subnet where its associated route tabl
 
 |image1|
 
+
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
@@ -86,6 +87,10 @@ Transit GW HA either.
 
 This step builds a site2cloud IPSEC tunnel with VGW and establishes a BGP session with VGW to 
 exchange routes between on-prem and the cloud. Note you just need to select the VGW ID in the drop down menu, Customer gateway will be automatically created as the result of this step. 
+
+.. important::
+
+ We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if VGW and Transit GWs are in different VPCs. 
 
 |image3|
 
@@ -242,12 +247,12 @@ Try out for 30 days on `Aviatrix Controller Inter-region VPC Peering 5-tunnel Li
    :height: 1.0in
 
 .. |image3| image:: transitvpc_workflow_media/connectVGW.png
-   :width: 2.55625in
-   :height: 1.0in
+   :width: 3.55625in
+   :height: 3.26548in
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :width: 2.55625in
-   :height: 2.50in
+   :width: 3.55625in
+   :height: 3.26548in
 
 .. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
    :width: 3.55625in
