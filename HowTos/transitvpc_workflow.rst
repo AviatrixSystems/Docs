@@ -247,19 +247,15 @@ Try out for 30 days on `Aviatrix Controller Inter-region VPC Peering 5-tunnel Li
    :height: 1.0in
 
 .. |image3| image:: transitvpc_workflow_media/connectVGW.png
-   :width: 3.55625in
-   :height: 3.26548in
+   :scale: 50%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :width: 3.55625in
-   :height: 3.26548in
+   :scale: 50%
 
 .. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :width: 3.55625in
-   :height: 3.26548in
+   :scale: 50%
 
 .. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :width: 3.55625in
-   :height: 3.26548in
+   :scale: 50%
 
 .. disqus::
