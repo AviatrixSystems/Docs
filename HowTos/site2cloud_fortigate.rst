@@ -31,7 +31,7 @@ Aviatrix Configuration
 Add a Site2Cloud tunnel in Aviatrix Controller
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  FortiGate does not support an SHA-1 authentication so you must check the **Algorithms** checkbox and configure the values appropriately.
+Follow the steps in `this </HowTos/site2cloud.html>`__ guide.
 
 .. tip::
 
