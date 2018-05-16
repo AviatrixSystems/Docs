@@ -24,9 +24,13 @@ Click a link below to learn your use case or read an `Aviatrix Overview. <http:/
 
 `Multicloud Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
 
-The Aviatrix Controller provides a single pane of glass for all your network connectivity tasks. The first thing you need to do is to launch the Controller instance. 
+The Aviatrix Controller provides a single pane of glass for all your secure networking tasks. You can run the Controller in your own VPC or let Aviatrix manage it in `our hosted service <https://www.aviatrix.com/trial/>`_.
 
-In this guide, we'll walk you through the first 4 steps. By the end, you'll be 
+The following guide applies to running the Controller in your own enviornment. 
+
+The first thing you need to do is to launch the Controller instance. 
+
+We'll walk you through 4 steps. By the end, you'll be 
 ready for your first use case. 
 
   |4-steps|
@@ -52,7 +56,7 @@ Step 1. Subscribe to an Aviatrix AMI
 Select the right AMI that meets your use case and subscription preference. Click an AMI link will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
+- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases, 2 free tunnels included: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
@@ -62,7 +66,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - FREE - EC2 FlightPath Troubleshooting Tool
    - FREE – Two Tunnels (Free Forever)
    
-- **Private Offer AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ includes a 14-day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
+- **Utility AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ includes a 14-day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
    - Next-Generation Transit VPC Network  
    - Remote User VPN (OpenVPN®)  
    - Multicloud Peering 
