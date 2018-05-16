@@ -109,7 +109,7 @@ VGW ID                     VGW that is created in the VGW Region in the AWS VGW 
 =====================      ==========
 
 
-Note Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. This is specified by 
+Note Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. 
 
 It takes a few minutes for the VPN connection to come up and routes from VGW 
 to be propagated. When the IPSEC tunnel with VGW is up, the Controller admin should receive an email notification.
