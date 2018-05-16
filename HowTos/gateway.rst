@@ -228,14 +228,24 @@ Starting Release 3.0, gateway security policy page has been moved Security -> St
 
 
 High Availability
--------------------
+------------------------------
 
 There are two types of high availability on Aviatrix: "Gateway for High Availability" and "Gateway for High Availability Peering". 
 
+Gateway for High Availability
+------------------------------
 
-"Gateway for High Availability Peering" is used for "Enable HA" field at Encrypted Peering configuration. 
+If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need gateway HA function, you should select this option. 
 
-"Gateway for High Availability" is used when you need HA for a Transitive Peering. 
+If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow,
+you do not need to come to this page.
+
+Gateway for High Availability Peering
+--------------------------------------
+
+If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. 
+
+If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow, you do not need to come to this page. 
 
 Gateway Resize 
 ---------------
