@@ -230,10 +230,15 @@ Starting Release 3.0, gateway security policy page has been moved Security -> St
 High Availability
 ------------------------------
 
-There are two types of high availability on Aviatrix: "Gateway for High Availability" and "Gateway for High Availability Peering". 
+There are 3 types of high availability on Aviatrix: "Gateway for High Availability", "Gateway for High Availability Peering" and Single AZ HA. 
 
 Gateway for High Availability
 ------------------------------
+
+When this option is selected, a backup gateway instance will be deployed in a different AZ if available. 
+This backup gateway keeps its configuration in sync with the primary 
+gateway, but the configuration does not take effect until the primary gateway
+fails over to backup gateway. 
 
 If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need gateway HA function, you should select this option. 
 
@@ -243,9 +248,18 @@ you do not need to come to this page.
 Gateway for High Availability Peering
 --------------------------------------
 
+When this option is selected, a backup gateway instance will be deployed in a different AZ if available. This
+backup gateway keeps backup VPN tunnels up, ready for fail over. 
+
 If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. 
 
 If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow, you do not need to come to this page. 
+
+Gateway Single AZ HA
+---------------------
+
+When enabled, the Controller monitors the health of the gateway and restart the
+gateway if it becomes unreachable. No secondary gateway is launched in this case. 
 
 Gateway Resize 
 ---------------
