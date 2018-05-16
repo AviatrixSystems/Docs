@@ -211,6 +211,11 @@ Configure IPv4 Policy
 
 In **Policy & Objects**, select **IPv4 Policy**.  Create 2 new IPv4 policies.  One for outbound traffic from FortiGate (`Shared_With_AWS`) to Aviatrix (`AWS_Cloud`).  And, another for inbound traffic from Aviatrix (`AWS_Cloud`) gateway to FortiGate (`Shared_With_AWS`).
 
+.. note::
+
+   Be sure to select **accept** for `action` and select **all** for `service`
+
+   |imageIPv4Policy|
 
 Add a Static Route
 ++++++++++++++++++
@@ -236,3 +241,5 @@ Once complete, test the communiation using the tunnel
 .. |imageSection4| image:: site2cloud_fortigate_media/FG_section4.png
 .. |imageSection5| image:: site2cloud_fortigate_media/FG_section5.png
 .. |imageStaticRoute| image:: site2cloud_fortigate_media/FG_static_route.png
+.. |imageIPv4Policy| image:: site2cloud_fortigate_media/FG_ipv4_policy_outbound.png
+
