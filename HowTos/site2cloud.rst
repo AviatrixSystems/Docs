@@ -1,94 +1,157 @@
 .. meta::
    :description: Site 2 Cloud
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel
+   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, cisco, fortigate, pfsense, palo alto
 
+.. raw:: html
+
+   <style>
+    /* override table no-wrap */
+   .wy-table-responsive table td, .wy-table-responsive table th {
+       white-space: normal !important;
+   }
+   </style>
 
 ==============================
 Site to Cloud VPN Instructions
 ==============================
 
+Overview
+========
+
+Aviatrix supports connectivity between its Gateways in the cloud and on-premise routers using a feature called `Site2Cloud`.  This document outlines how to get a connectivity established between an Aviatrix Gateway in AWS, Azure, or GCP and your on-premise router or firewall.
+
 Configuration Workflow
 ======================
 
-Before you start make sure you have the latest software by checking the
-Dashboard. If an alert message displays, click Upgrade to download the
-latest software.
+Create Site2Cloud Connection
+----------------------------
 
-The Site to Cloud VPN (or Site2Cloud for short) configuration workflow is as 
-follows, with major steps highlighted.
+#. Login to your Aviatrix Controller.
+#. Select the Site2Cloud navigation item on the left navigation bar.
+#. Click on `+ Add New` near the top of the `Site2Cloud` tab.
+#. Under `Add a New Connection`, enter the following:
+   
+   +-------------------------------+------------------------------------------+
+   | Field                         | Descruotuib                              |
+   +===============================+==========================================+
+   | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel |
+   |                               | will terminate in the cloud.             |
+   +-------------------------------+------------------------------------------+
+   | Connection Type               | `Unmapped` unless there is an            |
+   |                               | overlapping CIDR block.                  |
+   +-------------------------------+------------------------------------------+
+   | Connection Name               | Name this connection.  This connection   |
+   |                               | represents the connectivity to the       |
+   |                               | edge device.                             |
+   +-------------------------------+------------------------------------------+
+   | Remote Gateway Type           | `Generic`, `AWS VGW`, `Azure VPN`,       |
+   |                               | `Aviatrix`, or `SonicWall`.              |
+   |                               | See below for additional details.        |
+   +-------------------------------+------------------------------------------+
+   | Tunnel Type                   | `UDP` or `TCP`                           |
+   |                               | .. note::                                |
+   |                               | `TCP` tunnel type requires an            |
+   |                               | Aviatrix Gateway on the other side.      |
+   +-------------------------------+------------------------------------------+
+   | Algorithms                    | Defaults will be used if unchecked.      |
+   |                               | See below for more details.              |
+   +-------------------------------+------------------------------------------+
+   | Encryption over ExpressRoute/ | An additional field will be displayed    |
+   | DirectConnect                 | if checked.                              |
+   +-------------------------------+------------------------------------------+
+   | Route Tables to Modify        | Only displayed if Encrypting over        |
+   |                               | DirectConnect/ExpressRoute.              |
+   |                               | Select the specific routes to encrypt    |
+   +-------------------------------+------------------------------------------+
+   | Enable HA                     | Additional fields are displayed when     |
+   |                               | checked                                  |
+   +-------------------------------+------------------------------------------+
+   | Primary Cloud Gateway         | Select the Gateway where the tunnel will |
+   |                               | terminate in this VPC.                   |
+   +-------------------------------+------------------------------------------+
+   | Remote Gateway IP Address     | IP address of the device.                |
+   +-------------------------------+------------------------------------------+
+   | Pre-shared Key                | Optional.  Enter the pre-shared key for  |
+   |                               | this connection.  If nothing is entered  |
+   |                               | one will be generated for you.           |
+   +-------------------------------+------------------------------------------+
+   | Remote Subnet                 | Enter the CIDR representing the network  |
+   |                               | behind the edge device that this tunnel  |
+   |                               | supports.                                |
+   +-------------------------------+------------------------------------------+
+   | Local Subnet                  | The CIDR block that should be advertised |
+   |                               | on pfSense for the cloud network (will   |
+   |                               | default to the VPC CIDR block)           |
+   +-------------------------------+------------------------------------------+
+   
+#. Click `OK`
 
 
-::
+Configuration Details
+---------------------
 
- 1. Create a gateway in a VPC where you like to connect to sites.
+.. _remote_gateway_type:
 
-   Go to Gateway -> New Gateway. The gateway may have VPN Access
-   disabled.
+Remote Gateway Type
++++++++++++++++++++
 
- 2. (Optional) Create a secondary gateway in the same VPC for HA.
+   +-------------------------------+------------------------------------------+
+   | Type                          | Description                              |
+   +===============================+==========================================+
+   | Generic                       | Use this option for most third-party     |
+   |                               | routers and firewalls.                   |
+   +-------------------------------+------------------------------------------+
+   | AWS VGW                       | For terminating on a AWS Virtual Private |
+   |                               | Gateway, select this option.             |
+   +-------------------------------+------------------------------------------+
+   | Azure VPN                     | For terminating on Azure VPN Services    |
+   +-------------------------------+------------------------------------------+
+   | Aviatrix                      | When terminating on an Aviatrix CloudN   |
+   |                               | on-premise gateway.                      |
+   +-------------------------------+------------------------------------------+
+   | SonicWall                     |                                          |
+   +-------------------------------+------------------------------------------+
 
-   Go to Gateway -> New Gateway. The gateway may have VPN access
-   disabled.
+Algorithms
+++++++++++
 
- 3. Create a connection to a remote site
+If the `Algorithms` checkbox is unchecked, the default values will be used.  If it is checked, you can set any of the fields defined below.
 
-   Go to site2Cloud -> Add New, make sure,
+   +-------------------------------+
+   | Field                         |
+   +===============================+
+   | Phase 1 Autheentication       |
+   +-------------------------------+
+   | Phase 1 DH Groups             |
+   +-------------------------------+
+   | Phase 1 Encryption            |
+   +-------------------------------+
+   | Phase 2 Autheentication       |
+   +-------------------------------+
+   | Phase 2 DH Groups             |
+   +-------------------------------+
+   | Phase 2 Encryption            |
+   +-------------------------------+
 
-   a. Select the VPC/VNet Name where Aviatrix gateway for encryption is
-      launched.
+Remote and Local Subnet(s)
+++++++++++++++++++++++++++
 
-   b. If HA is not enabled:
+Enter the subnet(s) using a comma to delimit more than one CIDR.
 
-      i. At Gateway field, select a gateway launched in the earlier
-         step.
+If you leave the local subnet field blank, the default value is the VPC/VNet CIDR.  If you enter a value, make sure you include the VPC/VNet as well.
 
-   c. Else if HA is enabled:
+These Local Subnets are advertised to Remote Subnets that the site2cloud connection can reach.
 
-      i.  At Primary Gateway field, select a gateway launched earlier as
-          primary gateway.
+You can change these settings later.
 
-      ii. At Backup Gateway field, select a gateway launched earlier as
-          backup gateway.
+Download Configuration
+----------------------
 
-   d. Input the connection with a unique name, for example,
-      NewYork-site.
+You can generate remote site configuration template.  To do this, select **Site2Cloud** from the navigation menu and select the connection you just created.
 
-   e. at Remote Gateway Type, select "AWS VGW" if the remote site is a VPC with AWS VGW VPN gateway; select "Aviatrix" if the remote site is on-prem Aviatrix gateway; select "Generic" if the remote site gateway is a third party router or firewall. 
+Select the remote site device from the dropdowns provided.  If your remote site device is not listed in the dropdown menu, simply select an available one in the menu or use the **Generic**/**Vendor Independent** template.
 
-   f. At Remote Gateway IP Address, enter the public IP address of the
-      edge router for the remote site. Note if the Remote Gateway Type is Aviatrix, the Remote Gateway IP address is the public IP address of the site. 
-
-   g. At Remote Subnet, enter network CIDR of the remote/customer site. If
-      there are multiple subnets, enter each one separated with comma.
-      For example, you may enter “192.168.1.0/24,192.168.2.0/24” without
-      the quote.
-
-   h. Pre-shared Key is an optional field. If you leave it blank, Aviatrix will auto generate a pre-shared key. You can paste your own pre-shared key if you prefer. 
-
-   i. Do not select Private Route Encryption. (This feature is for
-      overlay encryption on a AWS Direct Connect or Azure Express Route)
-
-   j. If you leave Local Subnet blank, Local Subnet will be the VPC/VNet CIDR. You can add more Local Subnet CIDR blocks, separate by comma. Make sure you include the VPC/VNet as well. These Local Subnets are advertised to Remote Subnets that the site2cloud connection can reach. You can change this settings later. 
-
-   k. Algorithms field is prepopulated with default values. Click the field if you need to customize the algorithms. 
-
- 4. Click OK to create a connection. 
-
- 5. Generate remote site configuration template
-
-   Go to site2Cloud
-
-   a. Select the connection you just created, a EDIT panel will appear.
-
-   b. Click Download Configuration.
-
-   c. If your remote site device is not listed in the dropdown menu,
-      simply select an available one in the menu.
-
-   d. Click “Yes, Download” to download a template file that contains
-      the gateway public IP address, VPC CIDR, pre-shared secret and
-      encryption algorithm. Incorporate the information to your remote
-      router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
+This template file that contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
 Network Device Support
 ======================
@@ -96,19 +159,18 @@ Network Device Support
 Aviatrix site2cloud supports all types of on-prem firewall and router devices that 
 terminate VPN connection. Below are configuration examples to specific devices. 
 
-    - `pfSense IPsec VPN <CloudToPfSense.html>`__
-    - `Palo Alto Next-Gen Firewall (PAN) <http://docs.aviatrix.com/HowTos/S2C_GW_PAN.html>`_
-    - `Check Point Firewall <http://docs.aviatrix.com/HowTos/S2C_GW_CP.html>`_
-    - `Cisco ASA <http://docs.aviatrix.com/HowTos/S2C_GW_ASA.html>`_
-
+    - `pfSense IPsec VPN <./CloudToPfSense.html>`__
+    - `Palo Alto Next-Gen Firewall (PAN) <./S2C_GW_PAN.html>`__
+    - `Check Point Firewall <./S2C_GW_CP.html>`__
+    - `Cisco ASA <./S2C_GW_ASA.html>`__
+    - `FortiGate <./site2cloud_fortigate.html>`__
 
 Troubleshooting
 ===============
 
-To check a tunnel state, go to Site2Cloud, the tunnel status will be
-displayed in a pop up window.
+To check a tunnel state, go to Site2Cloud, the tunnel status appear next to the connection.
 
-To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
+Diagnostics and troubleshooting options are available in the **Diagnostics** tab.  You must first select the connection, and then select an **Action**, followed by **OK**.
 
 .. |image0| image:: site2cloud_media/image1.png
    :width: 5.03147in

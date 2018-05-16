@@ -1,5 +1,5 @@
 .. meta::
-   :description: Connect a pfSense firewall to Site2Cloud in Aviatrix
+   :description: Site2Cloud (Aviatrix Gateway - pfSense)
    :keywords: pfsense, aviatrix, site2cloud
 
 .. role:: orange
@@ -13,7 +13,7 @@
    </style>
 
 =====================================================================
-Connecting a pfSense Firewall to the Cloud Using Aviatrix Site2Cloud
+Site2Cloud (Aviatrix Gateway - pfSense)
 =====================================================================
 
 Overview
