@@ -53,6 +53,7 @@ The Transit GW must be launched on public subnet where its associated route tabl
 
 |image1|
 
+
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
@@ -87,6 +88,10 @@ Transit GW HA either.
 This step builds a site2cloud IPSEC tunnel with VGW and establishes a BGP session with VGW to 
 exchange routes between on-prem and the cloud. Note you just need to select the VGW ID in the drop down menu, Customer gateway will be automatically created as the result of this step. 
 
+.. important::
+
+ We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if VGW and Transit GWs are in different VPCs. 
+
 |image3|
 
 
@@ -104,7 +109,7 @@ VGW ID                     VGW that is created in the VGW Region in the AWS VGW 
 =====================      ==========
 
 
-Note Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. This is specified by 
+Note Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. 
 
 It takes a few minutes for the VPN connection to come up and routes from VGW 
 to be propagated. When the IPSEC tunnel with VGW is up, the Controller admin should receive an email notification.
@@ -226,7 +231,7 @@ How to get started on AWS?
 
 Aviatrix Controller AMIs can be found on AWS Marketplace. 
 
-Try out for 30 days on `Aviatrix Controller Inter-region VPC Peering 5-tunnel License.  <https://aws.amazon.com/marketplace/pp/B0155GB0MA?qid=1520370771464&sr=0-7&ref_=srh_res_product_title>`_ Follow the `Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ to launch the Controller instance and get started. 
+Try out our `Aviatrix Secure Networking Platform PAYG - Metered  <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1526426957554&sr=0-3&ref_=srh_res_product_title>`_ with two free tunnels. Follow the `Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ to launch the Controller instance and get started. 
  
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
@@ -242,19 +247,15 @@ Try out for 30 days on `Aviatrix Controller Inter-region VPC Peering 5-tunnel Li
    :height: 1.0in
 
 .. |image3| image:: transitvpc_workflow_media/connectVGW.png
-   :width: 2.55625in
-   :height: 1.0in
+   :scale: 50%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :width: 2.55625in
-   :height: 2.50in
+   :scale: 50%
 
 .. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :width: 3.55625in
-   :height: 3.26548in
+   :scale: 50%
 
 .. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :width: 3.55625in
-   :height: 3.26548in
+   :scale: 50%
 
 .. disqus::
