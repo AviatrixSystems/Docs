@@ -17,7 +17,7 @@ CloudN performs three major functions:
 
 - **Datacenter Extension** Extend your datacenter to multi cloud (Datacenter Extension or DCCX). Read `How to build agile DevOps document  <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ for instructions.
 
-- **Site2Cloud** Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud). Read `How to build sSite2Cloud  <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`_ for instructions.
+- **Site2Cloud** Build encrypted tunnel to existing VPC/VNets (on-prem gateway for Site2Cloud). Read `How to build Site2Cloud  <http://docs.aviatrix.com/HowTos/cloudn-site2cloud.html>`_ for instructions.
 
 - **IPmotion** Build connectivity that makes it possible to migrate on-prem VMs to cloud while preserving their IP addresses. Read `How to setup IPmotion  <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ for instructions.
 
