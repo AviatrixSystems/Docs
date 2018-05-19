@@ -27,7 +27,7 @@ This is the recommended approach.
  #. If you have not logged in, you will be prompted to login to AWS  with secondary account.
  #. Once login, you should be already in the CloudFormation page. Note the CloudFormation is already loaded.
  #. Click `Next`.
- #. Populate the Stack name. For example, Aviatrix-for-marketing. 
+ #. You can change the default Stack name. For example, Aviatrix-prod-account. 
  #. Enter the Aviatrix Controller's `AWS account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_. 
  #. Click `Next`.
  #. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`.
