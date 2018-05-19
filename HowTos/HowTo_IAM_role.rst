@@ -23,7 +23,7 @@ Setup by CloudFormation template
 
 This is the recommended approach. 
 
- 1. Click the `Secondary account link <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-secondary-account-iam.json>`_ to create secondary account credential and build trust to the Controller account. 
+ 1. Click the `Secondary account link <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=SecondaryAccountName&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-secondary-account-iam.json>`_ to create secondary account credential and build trust to the Controller account. 
  #. If you have not logged in, you will be prompted to login to AWS  with secondary account.
  #. Once login, you should be already in the CloudFormation page. Note the CloudFormation is already loaded.
  #. Click `Next`.
