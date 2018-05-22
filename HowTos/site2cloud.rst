@@ -18,7 +18,7 @@ Site to Cloud VPN Instructions
 Overview
 ========
 
-Aviatrix supports connectivity between its Gateways in the cloud and on-premise routers using a feature called `Site2Cloud`, as shown below.  This document outlines how to get a connectivity established between an Aviatrix Gateway in AWS, Azure, or GCP and your on-premise router or firewall.
+Aviatrix supports connectivity between its Gateways in the cloud and on-premise routers using a feature called `Site2Cloud`, as shown below.  This document outlines how to get connectivity established between an Aviatrix Gateway in AWS, Azure, or GCP and your on-premise router or firewall.
 
 |site2cloud|
 
