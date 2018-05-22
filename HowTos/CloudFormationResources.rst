@@ -15,8 +15,11 @@ Aviatrix has developed a Custom Resource to facilitate automation of Aviatrix co
 
 Use this guide to set up your AWS account with the necessary components to automate Aviatrix from your CloudFormation templates. 
 
-#. Install an `Aviatrix Controller <../StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ if you don't already have one.
-#. Prepare your `AWS account <#cfr-prepare-aws>`__
+Deployment Guide
+----------------
+
+#. `Install an Aviatrix Controller <../StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ if you don't already have one
+#. `Prepare your AWS account <#cfr-prepare-aws>`__ with components necessary to connect to your Aviatrix Controller from CloudFormation templates
 #. Use the Aviatrix Custom Resources in a `CloudFormation template <#cfr-use>`__
    
    
@@ -78,7 +81,7 @@ Upload code for Lambda Function
 
 CloudFormation's Lambda resource requires that the `code` be obtained from a .zip file stored in an S3 bucket in the same region as the CloudFormation template. 
 
-#. Download the handler code `here <https://s3.amazonaws.com/aviatrix-custom-resources/aviatrix_gateway_lambda.zip>`__.
+#. Download the handler code `here <https://s3.amazonaws.com/aviatrix-custom-resources/aviatrix_custom_resources.zip>`__.
 #. Upload this .zip file to an S3 bucket of your choice.
 
 .. note::
@@ -144,17 +147,44 @@ The ``AWS::CloudFormation::CustomResource`` requires that a ``ServiceToken`` pro
 How to Use this Custom Resource
 ###############################
 
+Arguments to the resource should be provided in the CFT resource `Properties` object.  There are 3 required properties to allow the Lambda script to access the Controller at the top level:
+
++---------------------------------------+--------------------------------------+
+| Field                                 | Description                          |
++=======================================+======================================+
+| AviatrixControllerPasswordSecretKeyId | Enter the `Secret Key` that you used |
+|                                       | to store the password in AWS Secrets |
+|                                       | Manager.                             |
+|                                       |                                      |
+|                                       | |imageASMKey|                        |
++---------------------------------------+--------------------------------------+
+| AviatrixControllerHost                | The host name (or IP address) of     |
+|                                       | your Aviatrix Controller.            |
++---------------------------------------+--------------------------------------+
+| AviatrixControllerUser                | The username of the Aviatrix         |
+|                                       | Controller.                          |
++---------------------------------------+--------------------------------------+
+
 |imageCFTExample|
 
 Reference
 ##########
+
+* `Aviatrix Gateway <#cfcr-ref-gw>`__
+* `Attach/Detach FQDN Filter to Gateway <#cfcr-ref-fqdn-gw>`__
+* `FQDN Filter Tag <#cfcr-ref-fqdn>`__
+
+.. _cfcr_ref_gw:
 
 Aviatrix Gateway
 ++++++++++++++++
 
 This resource allows you to create Aviatrix Gateways.
 
-**Arguments**
+**Properties**
+
+.. note::
+   These properties must be in an **args** object inside the resource's `Properties` object.
 
 +------------------+----------+------------------------------------------------+
 | Name             | Required | Description                                    |
@@ -219,7 +249,82 @@ This sample shows how to create a User SSL VPN gateway.
             }
         }
 
-        
+.. _cfcr_ref_fqdn_gw:
+
+Attach/Detach FQDN Filter to Gateway
+++++++++++++++++++++++++++++++++++++
+
+This resource allows you to attach FQDN filter tags to an Aviatrix Gateway.
+
+**Properties**
+
+.. note::
+   These properties must be in an **args** object inside the resource's `Properties` object.
+
++------------------+----------+------------------------------------------------+
+| Name             | Required | Description                                    |
++==================+==========+================================================+
+| gw_name          | Yes      | Name of the gateway this tag will be attached  |
++------------------+----------+------------------------------------------------+
+| tag_name         | Yes      | The name of the existing FQDN filter tag to    |
+|                  |          | attach to the given gateway.                   |
++------------------+----------+------------------------------------------------+
+
+.. _cfcr_ref_fqdn:
+
+FQDN Filter Tag
+++++++++++++++++
+
+This resource allows you to create FQDN filter tags.
+
+**Properties**
+
+.. note::
+   These properties must be in an **args** object inside the resource's `Properties` object.
+
++------------------+----------+------------------------------------------------+
+| Name             | Required | Description                                    |
++==================+==========+================================================+
+| tag_name         | Yes      | The name of the existing FQDN filter tag to    |
+|                  |          | attach to the given gateway.                   |
++------------------+----------+------------------------------------------------+
+| domains          | Yes      | An array of domain definitions for this fitler |
+|                  |          | For example: [ "*.google.com",                 |
+|                  |          | "*.aviatrix.com" ]                             |
++------------------+----------+------------------------------------------------+
+| enable           | No       | Enable the FQDN filter?  Default is disabled   |
+|                  |          | Value can be 1 or true to enable.              |
++------------------+----------+------------------------------------------------+
+
+**Example**
+
+This sample shows how to create a new FQDN filter called `production` that is enabled and filters for domains `"*.ubuntu.com", "ubuntu.com", "aviatrix.com", "*.aviatrix.com", "*.example.com"`.
+
+    .. code-block:: json
+
+        {
+            "AWSTemplateFormatVersion": "2010-09-09",
+            "Resources": {
+                "AviatrixFQDNFilter": {
+                    "Type": "Custom::AviatrixFQDNFilter",
+                    "Properties": {
+                        "AviatrixControllerPasswordSecretKeyId": "aviatrix_controller_admin_password",
+                        "AviatrixControllerHost": "controller.aviatrix.demo",
+                        "AviatrixControllerUser": "admin",
+                        "args": {
+                          "tag_name": "production",
+                            "domains": [ "*.ubuntu.com", "ubuntu.com", "aviatrix.com", "*.aviatrix.com", "*.example.com" ],
+                          "enable": true
+                        },
+                        "ServiceToken": "arn:aws:lambda:us-east-1:00000000000:function:AviatrixFQDNFilterHandler",
+                        "Await": true
+                    }
+                }
+            }
+        }
+
+
+
 .. |imageStoreNewSecret| image:: CloudFormationResources_media/aws_asm_store_new.png
 
 .. |imageSecretType| image:: CloudFormationResources_media/aws_asm_select_secret_type.png
@@ -241,6 +346,9 @@ This sample shows how to create a User SSL VPN gateway.
 
 .. |imageCFTExample| image:: CloudFormationResources_media/code_example.png
    :width: 600px
+
+.. |imageASMKey| image:: CloudFormationResources_media/asm_secret_key_name.png
+   :width: 300px
 
 .. |linkAliasAPI| replace::  Aviatrix REST API
 .. _linkAliasAPI: https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_connect_container
