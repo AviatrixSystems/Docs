@@ -35,7 +35,7 @@ Create Site2Cloud Connection
 #. Under `Add a New Connection`, enter the following:
    
    +-------------------------------+------------------------------------------+
-   | Field                         | Descruotuib                              |
+   | Field                         | Description                              |
    +===============================+==========================================+
    | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel |
    |                               | will terminate in the cloud.             |
