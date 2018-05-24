@@ -137,6 +137,7 @@ In this case, the cloud provider's native VPN solution falls short by a long sho
  #. **Too Slow to Onboard a Customer** VPN runs on UDP port 500/4500, my customers have to request corporate firewall ports to open, is there a way to run IPSEC tunnel on TCP 443?
  #. **Traffic Direction Problem** My SaaS service requires traffic to be initiated from cloud to the customer site, AWS VPN gateway cannot support this traffic pattern. We have to setup a separate machine to constantly ping to keep the tunnel up! 
  #. **Downtime Problem** Some appliances forces all IPSEC tunnels to reset and go down when a new tunnel is being established, which affects business continuity and is not acceptable when the number of sites go beyond 10.     
+ #. **Skill Problem** We don't have a team of CCIEs to handle the load. 
 
 To learn how to setup Aviatrix site2cloud, follow up with `this link. <http://docs.aviatrix.com/HowTos/site2cloud.html>`_
 
