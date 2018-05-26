@@ -51,11 +51,11 @@ gateway has access to AWS public resources such as SQS for Controller and gatewa
 Enable NAT
 -------------
 
-Aviatrix gateway performs NAT function when this option is selected. All VPC routing tables for 
+Aviatrix gateway performs Source NAT (SNAT) function when this option is selected. All VPC routing tables for 
 private subnets are automatically programmed with 0.0.0.0/0 points to the gateway.
 
-The function can be enabled at gateway launch time, it can also be launched after the gateway is launched. To enable NAT after the gateway is launched, go to the Gateway page, highlight the
-desired gateway, click Edit, Scroll down to NAT and click Enable. 
+The function can be enabled at gateway launch time, it can also be launched after the gateway is launched. To enable SNAT after the gateway is launched, go to the Gateway page, highlight the
+desired gateway, click Edit, Scroll down to SNAT and click Enable. 
 
 Allocate NEW EIP
 -----------------
