@@ -275,6 +275,11 @@ When NAT is enabled, all route tables for private subnets in the VPC
 are programmed with an route entry that points the gateway as the 
 target for route entry 0.0.0.0/0. 
 
+DNAT
+-----
+
+Destination NAT (DNAT) allow you to change the destination to a virtual address range. 
+
 
 Monitor Gateway Subnet
 -----------------------
