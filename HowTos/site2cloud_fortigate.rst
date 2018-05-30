@@ -234,6 +234,21 @@ Test
 
 Once complete, test the communiation using the tunnel
 
+Troubleshooting
+---------------
+
+**Error Message**
+
+``failed to get valid proposal``
+
+``no suitable proposal found``
+
+**Solution**
+
+Check that the Phase 1 authentication, encryption, and DH groups match on both sides
+
+
+
 .. |imageNewVPN| image:: site2cloud_fortigate_media/FG_NewVPN.png
 .. |imageSection1| image:: site2cloud_fortigate_media/FG_section1.png
 .. |imageSection2| image:: site2cloud_fortigate_media/FG_section2.png
