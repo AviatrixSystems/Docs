@@ -141,6 +141,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/tag_firewall
    HowTos/FQDN_Whitelists_Ref_Design
+   HowTos/fqdn_discovery
 
 .. _IPmotion:
 
