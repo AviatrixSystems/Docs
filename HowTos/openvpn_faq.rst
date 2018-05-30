@@ -293,16 +293,31 @@ Switch to a different configuration:
 #. Click `Connect` button.  A drop down will appear.
 #. Select the profile from the list
    
-What is "Client Certificate Sharing"
-------------------------------------
+What is "Client Certificate Sharing"?
+-------------------------------------
 
 Enabling this feature allows the same user to be logged in from more than one location at a time.  If this option is disabled and a user logs in from a second location, the first location will be disconnected automatically.
 
+
+How do I change the idle timeout?
+---------------------------------
+
+#. Login to your Aviatrix Controller
+#. Expand OpenVPN navigation menu and select **Edit Config**
+#. Select the VPC/VNet (or DNS Name) and the Gateway
+#. Scroll to the **Modify VPN Configuration** section
+#. Set the `Name` drop down to **Idle timeout**
+#. Change the `Status` to **Enabled**
+#. Set the `Value (seconds)` to the desired timeout value
+#. Click **OK**
+
+|imageIdleTimeout|
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image1| image:: FAQ_media/image1.png
+.. |imageIdleTimeout| image:: FAQ_media/idle_timeout.png
 
 .. disqus::
