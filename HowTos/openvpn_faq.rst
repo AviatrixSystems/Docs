@@ -313,11 +313,21 @@ How do I change the idle timeout?
 
 |imageIdleTimeout|
 
+Where do I find the log for the Aviatrix Client?
+-------------------------------------------------
 
+#. Open the Aviatrix VPN Client
+#. Click on the **Advanced** button
+#. Click on the **Advanced** tab
+#. Click on the **View** button next to the `View the log file` label
+
+|imageClientLog|
+   
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image1| image:: FAQ_media/image1.png
 .. |imageIdleTimeout| image:: FAQ_media/idle_timeout.png
+.. |imageClientLog| image:: FAQ_media/aviatrix_client_get_log.png
 
 .. disqus::
