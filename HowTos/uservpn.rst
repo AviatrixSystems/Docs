@@ -77,7 +77,13 @@ Create a VPN Gateway
 
    #. Use the default `VPN CIDR Block <http://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_ . The VPN CIDR Block is the virtual IP address pool that VPN user will be assigned. 
 
-   #. If you use a DUO or Okta for multi factor authentication, select one of them at Two-step Authentication, more fields will appear. For details on Okta authentication, check out `this link. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`__  
+   #. If you use Duo or Okta for multi factor authentication, select one of them at Two-step Authentication, more fields will appear.
+
+      .. note::
+         For details on configuring Okta authentication, see `this link <HowTo_Setup_Okta_for_Aviatrix.html>`__.
+
+      .. note::
+         For details on configuring Duo authentication, see `this link <duo_auth.html>`__.
 
    #. If you select `Split Tunnel Mode <http://docs.aviatrix.com/HowTos/gateway.html#split-tunnel-mode>`_ , only the VPC CIDR traffic will go through the tunnel. If you specify "`Additional CIDRs <http://docs.aviatrix.com/HowTos/gateway.html#additional-cidrs>`_", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN® -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
       
