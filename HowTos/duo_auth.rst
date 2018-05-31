@@ -102,6 +102,33 @@ Validate
 
 You will need one Aviatrix VPN user to test.  Validate that a VPN user is able to connect after receiving the push notification (or after entering a valid Passcode).
 
+Using **Push Mode** of ``auto``
++++++++++++++++++++++++++++++++
+
+#. Connect your VPN client to the VPN gateway
+
+   .. note::
+      You should receive a push notification from Duo.
+
+#. Open the Duo Mobile app and select `Confirm` for the pending request
+
+   .. note::
+      Once you confirm the request, the VPN client should proceed to authenticate the user
+
+#. Verify you are connected and can access resources in the cloud
+
+Using **Push Mode** of ``token``
+++++++++++++++++++++++++++++++++
+
+#. Connect your VPN client to the VPN gateway
+
+   .. note::
+      You should receive a prompt to authenticate.  If you do not receive a prompt, make sure ``auth-user-pass`` option is in the .ovpn configuration file.
+
+#. Open the Duo Mobile app and get the latest passcode
+#. In the VPN user/password prompt, enter any value for the username field and enter the passcode from Duo Mobile app for the password
+#. Verify you are connected and can access resources in the cloud
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
