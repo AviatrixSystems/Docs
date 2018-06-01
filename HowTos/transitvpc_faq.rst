@@ -209,6 +209,10 @@ Does Transit Network support Azure VNet?
 Starting from Release 3.3, you can launch a Spoke gateway in Azure VNet. Best practice is to 
 setup the Azure VNet the same way you usually do with AWS VPC: two types of subnets, public subnets and private subnets with respective routing tables, where Spoke gateway is launched in public subnet. 
 
+.. tip::
+
+ Note in Azure there is no explicit concept for public subnet. The idea here is to setup separate subnets and respective routing tables for Aviatrix gateway and user VMs. For convenience, we use the term "public subnet" to describe the subnet where Aviatrix Spoke gateway is launched. 
+
 Such separation of subnets and routing tables provides you with the flexibility if you plan 
 to use Spoke gateway also for FQDN functions. 
 
