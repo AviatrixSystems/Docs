@@ -7,7 +7,7 @@
  FQDN Discovery 
 =================================
 
-Discover how Aviatrix can help you discover what destinations your apps are visiting, coming soon in release 3.3!
+Discover what Internet sites your apps visit, coming soon in release 3.3!
 
 |discovered_sites|
 
