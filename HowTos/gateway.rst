@@ -223,8 +223,13 @@ If a gateway is launched with Designated Gateway enabled, the Aviatrix Controlle
 the RFC1918 address ranges in the route table to point to the gateway instance. 
 These routing entries are 
 10.0.0.0/8, 192.168.0.0/16 and 172.16.0.0/12. The Controller will not add additional 
-route entries that is within this RFC1918 range when configuring Transit VPC, site2cloud or encrypted peering. However, if the address range is outside the RFC1918
-the Controller will add these routes to point to the gateway.  
+route entries that is within this RFC1918 range when configuring Transit VPC, site2cloud or encrypted peering. 
+
+Starting from release 3.3, you can add additional CIDRs that is outside of RFC 1918 to be 
+programmed by the Controller to all route tables in the VPC to point to the gateway. Enter list of
+CIDRs separated by comma. 
+
+Note a Spoke gateway created by the `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ is automatically a designated gateway. 
 
 Security Policy
 --------------------
