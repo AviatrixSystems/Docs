@@ -54,8 +54,13 @@ Enable NAT
 Aviatrix gateway performs Source NAT (SNAT) function when this option is selected. All VPC routing tables for 
 private subnets are automatically programmed with 0.0.0.0/0 points to the gateway.
 
-The function can be enabled at gateway launch time, it can also be launched after the gateway is launched. To enable SNAT after the gateway is launched, go to the Gateway page, highlight the
-desired gateway, click Edit, Scroll down to SNAT and click Enable. 
+The function can be enabled at gateway launch time, it can also be enabled after the gateway is launched. 
+
+For example, you may already have a NAT gateway configured for the VPC, to minimize downtime, follow the steps below:
+
+ 1. Launch a gateway without SNAT option selected. 
+ #. Go to AWS Console to remove the existing 0.0.0.0/0 route entry from the route table. 
+ #. Go to the Gateway page, highlight the desired gateway, click Edit, Scroll down to SNAT and click Enable. 
 
 Allocate NEW EIP
 -----------------
@@ -266,8 +271,8 @@ Gateway Resize
 
 You can change Gateway Size if need to change gateway throughput. The gateway will restart with a different instance size.
 
-NAT
-----
+Modular NAT
+------------
 
 You can enable and disable NAT function after a gateway is launched. 
 NAT function enables instances on private subnet to access Internet. 
