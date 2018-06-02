@@ -216,6 +216,17 @@ setup the Azure VNet the same way you usually do with AWS VPC: two types of subn
 Such separation of subnets and routing tables provides you with the flexibility if you plan 
 to use Spoke gateway also for FQDN functions. 
 
+Why do I receive BGP overlapping address alert email?
+-------------------------------------------------------
+
+When Aviatrix Controller detects on-prem propagated routes overlaps or is a superset of Spoke VPC 
+CIDR ranges, it sends an email to admin, alerting a potential mis-configuration. Such email is 
+sent once when a route change event occurs, for example, when BGP routes are flapping. 
+
+The feature is enabled by default. If you wish not to receive the alert email, you can disable it. 
+
+Go to Advanced Config -> BGP -> Overlapping Alert Email. Click to disable. 
+
 
 
 .. |image1| image:: FAQ_media/image1.png
