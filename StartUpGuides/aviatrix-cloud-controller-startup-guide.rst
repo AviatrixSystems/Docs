@@ -113,17 +113,17 @@ Now that you have subscribed to an AMI, you are ready to install the Controller 
 
 Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link below takes you to the CloudFormation page with the pre-loaded template.   
 
- - `Secure Networking Platform PAYG - Metered <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json>`_
+ - `Secure Networking Platform PAYG - Metered <https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metering-controller.json>`_
 
- - `Secure Networking Platform - Custom <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template>`_
+ - `Secure Networking Platform - Custom <https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-5tunnel.template>`_
 
- - `SSL VPN Server - 25 users <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json>`_
+ - `SSL VPN Server - 25 users <https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-25-users.json>`_
 
- - `SSL VPN Server - 100 users <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json>`_
+ - `SSL VPN Server - 100 users <https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-sslvpn-100-users.json>`_
 
- - `SSL VPN Server Bundle (10 users + 1 peering) <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json>`_
+ - `SSL VPN Server Bundle (10 users + 1 peering) <https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-sslvpnbundle.json>`_
 
- - `Cloud Interconnect BYOL <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template>`_
+ - `Cloud Interconnect BYOL <https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/avx-awsmp-BYOL.template>`_
 
  2.1. If you have not logged in, you will be prompted to login to AWS console. 
 
@@ -136,7 +136,7 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
  2.4. Fill in the following fields, 
   - the Stack name,
   - select a VPC in the drop down menu, 
-  - select a public subnet in that VPC (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_ if you do not know what public subnet is.)  
+  - select a public subnet in that VPC (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
   - and a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if this field is blank.)
 
    |imageCFSpecifyDetails|
@@ -243,9 +243,9 @@ The Aviatrix primary access account contains the following information:
 
   - The Controller instance's AWS 12 digit account ID.
 
-Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`_ if you have questions regarding Aviatrix access account. 
+Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`__ if you have questions regarding Aviatrix access account.
 
-Fill out the fields as follows: (The AWS Account Number can be found at the Stack Outputs section or get from `this link. <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_)
+Fill out the fields as follows: (The AWS Account Number can be found at the Stack Outputs section or get from `this link. <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`__)
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
