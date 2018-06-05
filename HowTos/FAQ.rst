@@ -75,8 +75,8 @@ How do I secure the Controller access?
 
 There are several ways to secure your Controller access, as discussed below. 
 
-1. Reduce the access scope
-############################
+1. Enable Controller Security Group Management
+###############################################
 
 Only TCP port 443 needs to be opened for inbound traffic to the
 controller. If you wish to reduce the scope of source addresses by
@@ -85,13 +85,13 @@ addresses, in addition to your own public IP address. This is because
 gateways launched from the controller use its public IP address to
 communicate back to controller.
 
-.. Important::
+You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
 
- The Controller security group inbound rules must be open to all when a new gateway is launched as the EIP of the new gateway is unknown prior to launch. You can add that EIP after the gateway is launched for the Controller inbound security rule. 
 
-..
+Go to Settings -> Controller -> Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, click Enable. 
 
-If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller. 
+
+(If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller.) 
 
 2. Use signed certificate
 ##########################
@@ -120,6 +120,13 @@ To enable DUO authentication, go to Settings -> Controller -> 2FA Login and foll
 #############################
 
 You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup.
+
+6. Remove admin account login
+###############################
+
+"admin" account login can be disabled and instead use account user. 
+
+To disable admin login to the Controller, go to Settings -> Controller -> Login Customizatioin. Click Disable. 
 
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
@@ -190,11 +197,11 @@ If you have a BYOL license or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Contact
 support@aviatrix.com if you do not have a customer ID.
 
-What is an Aviatrix Cloud Account?
------------------------------------
+What is an Aviatrix Access Account?
+-------------------------------------
 
 
-An Aviatrix Cloud Account is specific and unique on the controller. It
+An Aviatrix Access Account is specific and unique on the controller. It
 contains cloud credentials, for example, your AWS IAM Access Key ID and
 Secret Key. The controller uses these credential to launch Aviatrix
 gateways by using cloud APIs.
