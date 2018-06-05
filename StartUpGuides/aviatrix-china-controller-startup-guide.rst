@@ -4,7 +4,7 @@
 
 
 ==================================================================
-AWS Startup Guide
+AWS China Startup Guide
 ==================================================================
 
 
@@ -26,7 +26,7 @@ Click a link below to learn your use case or read an `Aviatrix Overview. <http:/
 
 The Aviatrix Controller provides a single pane of glass for all your secure networking tasks. You can run the Controller in your own VPC or let Aviatrix manage it in `our hosted service <https://www.aviatrix.com/trial/>`_.
 
-The following guide applies to running the Controller in your own environment. 
+The following guide applies to running the Controller in your own environment in China. 
 
 The first thing you need to do is to launch the Controller instance. 
 
