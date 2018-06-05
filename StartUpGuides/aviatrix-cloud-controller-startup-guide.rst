@@ -1,5 +1,5 @@
 .. meta::
-    :description: Install the Aviatrix Controller, 2 Gateways, and setup peering in AWS
+    :description: Install the Aviatrix Controller in AWS
     :keywords: Aviatrix, AWS, Global Transit Network, AWS VPC Peering, VPC Peering, Egress Control, Egress firewall, OpenVPN, SSL VPN
 
 
