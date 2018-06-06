@@ -252,4 +252,3 @@ Enjoy!
 .. |imageproxy-config| image:: china-controller_media/proxy_config.png
    :scale: 25%
 
-
