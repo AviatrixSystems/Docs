@@ -36,8 +36,8 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 
 .. Important::
 
-    - IAM role is not supported in the current release in China. 
-    - Ningxia region is not supported in the current release in China. 
+    - IAM role is not supported in the current release 3.3 in China. 
+    - Net-Gen Transit Network <../HowTos/transitvpc_workflow.html>`_ is not supported in the current release 3.3
     - We require this AWS IAM account to have permissions to create AWS access key, secret id, policies and launch EC2 instances. 
     - The Controller instance must be launched on a public subnet in a VPC. 
 ..
