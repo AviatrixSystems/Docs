@@ -138,7 +138,7 @@ Step 9. Initial Login
 Step 10. Create A Primary Access Account 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4.1 Select AWS China
+10.1 Select AWS China
 --------------------
 
 Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
@@ -146,7 +146,7 @@ Once logged back in to the Controller, you should be on the `Onboarding` page or
    |aws-china|
 
 
-4.2  Enter Your Customer ID 
+10.2  Enter Your Customer ID 
 -----------------------------------------------------
 
 .. Note::
@@ -158,16 +158,10 @@ Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
    
-4.3  Setup a Primary Access Account  
+10.3  Setup an Access Account  
 ------------------------------------
 
-The Aviatrix primary access account contains the following information:
-
-  - The Controller instance's AWS 12 digit account ID.
-
-Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`__ if you have questions regarding Aviatrix access account.
-
-Fill out the fields as follows: (The AWS Account Number can be found at the Stack Outputs section or get from `this link. <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`__)
+Check out `this link <http://docs.aviatrix.com/HowTos/accesskey.html>`_ for fill in the following information.
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
@@ -176,16 +170,17 @@ Fill out the fields as follows: (The AWS Account Number can be found at the Stac
   |                               | Controller.                                |
   |                               | Example name: `AWSOpsTeam`.                |
   +-------------------------------+--------------------------------------------+
-  | AWS Account Number            | The Controller instance's 12 digit         |
-  |                               | AWS account number. It can be found in the |
-  |                               | Stack Outputs section `AccoundId`.         |
+  | AWS China Account Number      | The IAM user account's 12 digit            |
+  |                               | AWS account number.                        |
   +-------------------------------+--------------------------------------------+
-  | IAM role-based                | Check this box.                            |
+  | AWS China Access Key ID       | The IAM user account's access key id.      |
+  +-------------------------------+--------------------------------------------+
+  | AWS China Secret Key          | The IAM user account's secret key.         |
   +-------------------------------+--------------------------------------------+
 
-Once complete, click the `Create` button at the bottom of the form.
+Once complete, click the `Create` button at the bottom of the form, as shown below.
 
-|imageCreateAccount|
+|create-account|
 
 
 Next: Start a Use Case 
@@ -225,6 +220,9 @@ Enjoy!
    :scale: 40%
 
 .. |add-storage| image:: china-controller_media/add-storage.png
+   :scale: 40%
+
+.. |create-account| image:: china-controller_media/create-account.png
    :scale: 40%
 
 .. |imageControllerUpgrade-china| image:: china-controller_media/imageControllerUpgrade-china.png
