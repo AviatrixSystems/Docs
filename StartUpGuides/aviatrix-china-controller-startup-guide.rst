@@ -36,8 +36,8 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 
 .. Important::
 
-    - IAM role is not supported in the current release 3.3 in China. 
-    - Net-Gen Transit Network <../HowTos/transitvpc_workflow.html>`_ is not supported in the current release 3.3
+    - IAM role is not supported in the current release 3.3 in AWS China. 
+    - Next-Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ is not supported in the current release 3.3 in AWS China.
     - We require this AWS IAM account to have permissions to create AWS access key, secret id, policies and launch EC2 instances. 
     - The Controller instance must be launched on a public subnet in a VPC. 
 ..
@@ -131,7 +131,8 @@ Step 9. Initial Login
    |imageControllerUpgrade-china|
 
 .. tip::
-   The Controller upgrade takes about 3-5 minutes.  Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
+
+   Since the Aviatrix software is hosted in United States, loading software to the Controller from AWS China could take significantly longer time, from tens of minutes to up to an hour. Our experiences have been that if you upgrade software during the early morning hours time in China (2am to 7am China time) the download is faster. Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
 
 ..
 
@@ -161,7 +162,7 @@ Enter the `Customer ID` in the field and click `Save`.
 10.3  Setup an Access Account  
 ------------------------------------
 
-Check out `this link <http://docs.aviatrix.com/HowTos/accesskey.html>`_ for fill in the following information.
+Check out `this link <http://docs.aviatrix.com/HowTos/accesskey.html>`_ to fill in the following information.
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
