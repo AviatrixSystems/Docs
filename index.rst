@@ -60,6 +60,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/CompanionGateway
    HowTos/reserve_onprem
    HowTos/Quick_Tour
+   HowTos/accesskey
+  
 
 .. _Gateway:
 

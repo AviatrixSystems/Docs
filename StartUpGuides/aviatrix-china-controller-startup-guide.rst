@@ -118,15 +118,15 @@ Step 9. Initial Login
 
    |imageControllerEnterEmail|
 
- 3.4. Next, you will be prompted to change the admin password.
+ 9.4. Next, you will be prompted to change the admin password.
 
    |imageControllerChangePassword|
 
- 3.5. Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy configured for Internet access. 
+ 9.5. Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy configured for Internet access. 
 
    |imageproxy-config|
 
- 3.6. Finally, the Controller will upgrade itself to the latest software version after you click on `Run`. Wait for a few minutes for the process to finish. 
+ 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. Wait for a few minutes for the process to finish. 
 
    |imageControllerUpgrade-china|
 
@@ -135,15 +135,15 @@ Step 9. Initial Login
 
 ..
 
-Step 4. Create A Primary Access Account 
+Step 10. Create A Primary Access Account 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4.1 Select AWS 
----------------
+4.1 Select AWS China
+--------------------
 
 Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
 
-   |imageOnboardAws|
+   |aws-china|
 
 
 4.2  Enter Your Customer ID 
@@ -227,13 +227,16 @@ Enjoy!
 .. |add-storage| image:: china-controller_media/add-storage.png
    :scale: 40%
 
+.. |imageControllerUpgrade-china| image:: china-controller_media/imageControllerUpgrade-china.png
+   :scale: 50%
+
 .. |imageControllerBrowserWarning| image:: ../ZeroToConnectivityInAWS_media/controller_browser_warning.png
    :scale: 50%
 
 .. |imageAviatrixOnboardNav| image:: ../ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
    :scale: 50%
 
-.. |imageOnboardAws| image:: ../ZeroToConnectivityInAWS_media/onboard_aws.png
+.. |aws-china| image:: china-controller_media/aws-china.png
    :scale: 50%
 
 .. |imageEnterCustomerID| image:: ../ZeroToConnectivityInAWS_media/customerid_enter.png
@@ -251,5 +254,4 @@ Enjoy!
 .. |imageproxy-config| image:: ../ZeroToConnectivityInAWS_media/proxy_config.png
    :scale: 25%
 
-.. |imageControllerUpgrade| image:: china-controller_media/controller_upgrade-china.png
-   :scale: 50%
+
