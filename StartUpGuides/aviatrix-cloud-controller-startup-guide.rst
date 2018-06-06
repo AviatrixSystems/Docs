@@ -331,7 +331,7 @@ Enjoy!
 .. |imageOnboardAws| image:: ZeroToConnectivityInAWS_media/onboard_aws.png
    :scale: 50%
 
-.. |imageEnterCustomerID| image:: ZeroToConnectivityInAWS_media/customerid_enter.png
+.. |imageEnterCustomerID| image:: ../ZeroToConnectivityInAWS_media/customerid_enter.png
    :scale: 25%
 
 .. |cft-next| image:: ZeroToConnectivityInAWS_media/cft-next.png
