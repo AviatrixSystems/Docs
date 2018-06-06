@@ -14,7 +14,7 @@ Click `here <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ 
 
  1. At Gateway menu, create a gateway in an existing VPC, make sure the option Designated Gateway is selected.
 
- 2. (Optional) If your VPC CIDR is outside RFC 1918 range (10.0.0.0/8, 172.16.0.0/12 and 192.168.0.0/16), you should expand the Designated Gateway coverage by editing the Designated Gateway. Highlight the gateway you just created and click Edit. Follow the `instructions <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ to add additional CIDR ranges.
+ 2. (Optional) If your VPC CIDR is outside RFC 1918 range (10.0.0.0/8, 172.16.0.0/12 and 192.168.0.0/16), you should expand the Designated Gateway coverage by editing the Designated Gateway. Highlight the gateway you just created and click Edit. Scroll down to find "Edit Designated Gateway" section, follow the instructions to add additional CIDR ranges.
 
  3. Repeat the step 1 and step 2 for a different VPC/VNet.
 
