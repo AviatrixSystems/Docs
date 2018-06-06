@@ -21,6 +21,8 @@ For Azure, the account information consists of `Azure ARM credentials. <http://d
 
 For GCP (Google Cloud), the account information consists of `GCP credentials. <http://docs.aviatrix.com/HowTos/CreateGCloudAccount.html>`_
 
+For AWS China, please refer `Account with Access Key <http://docs.aviatrix.com/HowTos/accesskey.html>`_
+
 The Aviatrix account structure is shown in the diagram below, where admin is the
 default user for the primary access account. 
 
