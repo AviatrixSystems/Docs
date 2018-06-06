@@ -228,28 +228,28 @@ Enjoy!
 .. |imageControllerUpgrade-china| image:: china-controller_media/imageControllerUpgrade-china.png
    :scale: 50%
 
-.. |imageControllerBrowserWarning| image:: ../ZeroToConnectivityInAWS_media/controller_browser_warning.png
+.. |imageControllerBrowserWarning| image:: china-controller_media/controller_browser_warning.png
    :scale: 50%
 
-.. |imageAviatrixOnboardNav| image:: ../ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
+.. |imageAviatrixOnboardNav| image:: china-controller_media/aviatrix_onboard_nav.png
    :scale: 50%
 
 .. |aws-china| image:: china-controller_media/aws-china.png
    :scale: 50%
 
-.. |imageEnterCustomerID| image:: ../ZeroToConnectivityInAWS_media/customerid_enter.png
+.. |imageEnterCustomerID| image:: china-controller_media/customerid_enter.png
    :scale: 25%
 
 
-.. |imageCreateAccount| image:: ../ZeroToConnectivityInAWS_media/create_account.png
+.. |imageCreateAccount| image:: china-controller_media/create_account.png
 
-.. |imageControllerEnterEmail| image:: ../ZeroToConnectivityInAWS_media/controller_enter_email.png
+.. |imageControllerEnterEmail| image:: china-controller_media/controller_enter_email.png
    :scale: 50%
 
-.. |imageControllerChangePassword| image:: ../ZeroToConnectivityInAWS_media/controller_change_password.png
+.. |imageControllerChangePassword| image:: china-controller_media/controller_change_password.png
    :scale: 50%
 
-.. |imageproxy-config| image:: ../ZeroToConnectivityInAWS_media/proxy_config.png
+.. |imageproxy-config| image:: china-controller_media/proxy_config.png
    :scale: 25%
 
 
