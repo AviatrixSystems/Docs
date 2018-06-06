@@ -28,7 +28,7 @@ The following guide applies to running the Controller in your own environment in
 
 The first thing you need to do is to launch the Controller instance. 
 
-We'll walk you through 2 steps. By the end, you'll be 
+We'll walk you through the following steps. By the end, you'll be 
 ready for your first use case. 
 
 

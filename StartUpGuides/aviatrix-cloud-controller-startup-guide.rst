@@ -303,16 +303,16 @@ Enjoy!
 .. |imageCFCreateFinal| image:: ZeroToConnectivityInAWS_media/cf_create_final.png
 .. |imageCFComplete| image:: ZeroToConnectivityInAWS_media/cf_complete_outputs.png
 .. |imageCFOutputsWithPassword| image:: ZeroToConnectivityInAWS_media/cf_complete_outputs_private_ip_highlight.png
-.. |imageControllerBrowserWarning| image:: ZeroToConnectivityInAWS_media/controller_browser_warning.png
+.. |imageControllerBrowserWarning| image:: ../ZeroToConnectivityInAWS_media/controller_browser_warning.png
    :scale: 50%
 
-.. |imageControllerEnterEmail| image:: ZeroToConnectivityInAWS_media/controller_enter_email.png
+.. |imageControllerEnterEmail| image:: ../ZeroToConnectivityInAWS_media/controller_enter_email.png
    :scale: 50%
 
-.. |imageControllerChangePassword| image:: ZeroToConnectivityInAWS_media/controller_change_password.png
+.. |imageControllerChangePassword| image:: ../ZeroToConnectivityInAWS_media/controller_change_password.png
    :scale: 50%
 
-.. |imageproxy-config| image:: ZeroToConnectivityInAWS_media/proxy_config.png
+.. |imageproxy-config| image:: ../ZeroToConnectivityInAWS_media/proxy_config.png
    :scale: 25%
 
 .. |imageControllerUpgrade| image:: ZeroToConnectivityInAWS_media/controller_upgrade.png
