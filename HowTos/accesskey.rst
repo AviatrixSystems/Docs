@@ -4,7 +4,7 @@
 
 
 =====================================
-How to Setup Account with Access Key
+Account with Access Key
 =====================================
 
 This document describes how to setup Aviatrix access account by using IAM user access key and secret id, instead of IAM roles. 
