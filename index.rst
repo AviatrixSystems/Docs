@@ -96,6 +96,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/TransPeering
    HowTos/Cluster_Peering_Ref_Design
    HowTos/GettingStartedAzureToAWSAndGCP
+   HowTos/peering_over_routelimit
 
 .. _Site2Cloud:
 
