@@ -37,7 +37,8 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 .. Important::
 
     - IAM role is not supported in the current release 3.3 in AWS China. 
-    - Next-Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ is not supported in the current release 3.3 in AWS China.
+    - Next-Gen Transit Network is not supported in the current release 3.3 in AWS China.
+    - AWS Ningxia region is not supported in the current release 3.3 in AWS China. 
     - We require this AWS IAM account to have permissions to create AWS access key, secret id, policies and launch EC2 instances. 
     - The Controller instance must be launched on a public subnet in a VPC. 
 ..
@@ -126,15 +127,16 @@ Step 9. Initial Login
 
    |imageproxy-config|
 
- 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. Wait for a few minutes for the process to finish. 
+ 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. The process can take up from minutes to hours. Read the tip below fore you proceed. 
 
    |imageControllerUpgrade-china|
 
 .. tip::
 
-   Since the Aviatrix software is hosted in United States, loading software to the Controller from AWS China could take significantly longer time, from tens of minutes to up to an hour. Our experiences have been that if you upgrade software during the early morning hours time in China (2am to 7am China time) the download is faster. Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
+   Since the Aviatrix software is hosted in AWS us-west-2, loading software to the Controller from AWS China could take significantly longer time, from tens of minutes to up to an hour. Our experiences have been that if you upgrade software during the early morning hours in China (2am to 7am China time) the download is faster. Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
 
 ..
+
 
 Step 10. Create A Primary Access Account 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
