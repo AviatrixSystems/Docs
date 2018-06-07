@@ -4,7 +4,7 @@
 
 
 =================================
- FQDN Discovery 
+ Egress Discover  
 =================================
 
 Discover what Internet sites your apps visit, coming soon in release 3.3!

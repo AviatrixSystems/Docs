@@ -4,12 +4,12 @@
 
 
 =================================
- FQDN Whitelists
+ Egress Control Filter 
 =================================
 
 
 
-Why is FQDN Whitelists feature needed?
+Why is egress control filter needed?
 ========================================
 
 |fqdn|
