@@ -227,7 +227,9 @@ route entries that is within this RFC1918 range when configuring Transit VPC, si
 
 Starting from release 3.3, you can program additional CIDRs outside of RFC 1918  
 into all route tables in the VPC to point to the gateway. Enter list of
-CIDRs separated by comma. 
+CIDRs separated by comma, as shown below.
+
+|edit-designated-gateway| 
 
 Note a Spoke gateway created by the `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ is automatically a designated gateway. 
 
@@ -379,5 +381,7 @@ In the drop down menu, select the desired template.
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
+.. |edit-designated-gateway| image:: gateway_media/edit-designated-gateway.png
+   :scale: 50%
 
 .. disqus::
