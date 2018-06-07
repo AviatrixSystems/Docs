@@ -183,6 +183,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AviatrixLogging
    HowTos/alert_and_email
    HowTos/advanced_config
+   HowTos/AdminUsers_LDAP
 
 .. _Troubleshoot:
 
