@@ -124,7 +124,7 @@ Step 9. Initial Login
 
    |imageproxy-config|
 
- 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. The process can take up from minutes to hours. Read the tip below fore you proceed. 
+ 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. The process can take up minutes to hours. Read the tip below fore you proceed. 
 
    |imageControllerUpgrade-china|
 
@@ -161,7 +161,7 @@ Enter the `Customer ID` in the field and click `Save`.
 10.3  Setup an Access Account  
 ------------------------------------
 
-Check out `this link <http://docs.aviatrix.com/HowTos/accesskey.html>`_ to fill in the following information.
+Follow the instructions in `how to create IAM user and policy <http://docs.aviatrix.com/HowTos/accesskey.html>`_ to fill in the fields below.
 
   +-------------------------------+--------------------------------------------+
   | Field                         | Expected Value                             |
