@@ -36,9 +36,6 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 
 .. Important::
 
-    - IAM role is not supported in the current release 3.3 in AWS China. 
-    - Next-Gen Transit Network is not supported in the current release 3.3 in AWS China.
-    - AWS Ningxia region is not supported in the current release 3.3 in AWS China. 
     - We require this AWS IAM account to have permissions to create AWS access key, secret id, policies and launch EC2 instances. 
     - The Controller instance must be launched on a public subnet in a VPC. 
 ..
@@ -193,7 +190,6 @@ Congratulations!
 
 You are now ready to establish connectivities to/from the cloud. Here are some of the things you can do:
 
-- `Build Net-Gen Transit Network <../HowTos/transitvpc_workflow.html>`__
 - `Build User SSL VPN <../HowTos/uservpn.html>`__
 - `Build Egress Security <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
 - `Build Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
@@ -205,6 +201,16 @@ You are now ready to establish connectivities to/from the cloud. Here are some o
 For technical support, email us at support@aviatrix.com
 
 Enjoy!
+
+
+Release Notes
+^^^^^^^^^^^^^^^
+
+    - IAM role is not supported in the current release 3.3 in AWS China. 
+    - Next-Gen Transit Network is not supported in the current release 3.3 in AWS China.
+    - AWS Ningxia region is not supported in the current release 3.3 in AWS China. 
+    - Native AWS Peering is not supported in the current release 3.3 in AWS China. 
+
 
 .. add in the disqus tag
 
