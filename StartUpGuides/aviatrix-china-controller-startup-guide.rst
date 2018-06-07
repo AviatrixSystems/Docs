@@ -36,7 +36,7 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 
 .. Important::
 
-    - We require this AWS IAM account to have permissions to create AWS access key, secret id, policies and launch EC2 instances. 
+    - We require this AWS IAM account to have permissions to create AWS access key, secret access key, IAM policies and launch EC2 instances. 
     - The Controller instance must be launched on a public subnet in a VPC. 
 ..
 
