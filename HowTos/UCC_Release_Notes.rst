@@ -2,6 +2,57 @@
 Release Notes
 =======================================
 
+R3.3 (6/10/2018)
+=================
+
+1. Security
+------------
+
+- **Egress FQDN Discovery** enables you to discover what Internet sites (URLs) your Apps in a VPC visit. When enabled on an Aviatrix NAT gateway, the gateways monitors and displays all the destination FQDN names from EC2 instances in the VPC, which helps you build whitelist for FQDN filter. This is a standlaone feature, meaning you can use it even for curiosity purpose. To configure `Egress FQDN Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_, go to Security -> Egress Control. Follow Step 1 and Step 2. To turn it off, simply click Stop button. Note FQDN Discovery and FQDN Filter are mutually exclusive on a given gateway.  
+
+- **Egress FQDN View Log** provides you with a quick way to view gateway FQDN logs when you are curious to view some immediate results. Select a gateway with FQDN enabled, click Download, a compressed log file should be downloaded. Note to log for monitoring and auditing purpose, you should consider a `Logging Integration <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_.
+
+- **AWS Constroller Security Group Management** manages the Controller instance Security Groups to only allow TCP port 443 from Aviatrix gateway EIP. To enable this feature, go to Settings -> Controller -> Security Group Management, select the primary access account that launches the Controller, click Enable. For information, `read this link. <http://docs.aviatrix.com/HowTos/FAQ.html#enable-controller-security-group-management>`_ 
+
+2. Connectivity
+----------------
+
+- **Azure Spoke Gateway** is now supported in the Transit Network workflow. To configure, follow the Transit Network workflow `Step 4 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch a Spoke gateway in Azure. 
+
+- **Multi-CIDR VPC support** is now available if your VPC has multiple CIDR ranges. 
+
+- **Destination NAT** on a gateway allows you to change your destination IP address prior to routing. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to DNAT, click Edit/Add. Enter virtual address (mapped), real address, the protocol and port range are the scope of DNAT condition. Click `here <http://docs.aviatrix.com/HowTos/gateway.html#dnat>`_ for more information.  
+- **Configurable Designated Gateway CIDR Range** allows you to add additional CIDRs that are outside of RFC1918. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to "Edit Designated Gateway" to add additional CIDR list separated by comma. This feature is useful if your VPC CIDRs are outside of RFC1918. Click `the link here <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ for more information.
+
+- **AWS China Support**. Both Controller and gateway can be launched in AWS China. Follow the `AWS China Controller Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-china-controller-startup-guide.html>`_ to get started. 
+
+3. Ease of Use
+---------------
+
+- **Modular Remote User VPN** enables you to configure or modify all VPN parameters after the VPN gateway is launched. We recommend you not to select any Advanced Option when launching a VPN gateway and configure any specific parameter at later time.  
+
+- **Workflow for all Use Cases**. Major Aviatrix use cases now have a workflow to guide you through. 
+
+- **Azure Companion Gateway** is no longer needed to be subscribed. The subscription step has been removed. 
+
+4. Operations
+--------------
+
+- **In Product Chat** is now available. This is an experimental feature, it should be used for simple questions or asking to buy more Aviatrix licenses. For proper technical support, continue to use email support@aviatrix.com where tickets are managed and tracked. 
+
+- **Source Category** is supported in Sumo Logic specification. To configure, go to Settings -> Logging -> SUMOLOGIC Logging.
+
+- **Source Address** is added in FQDN logs. This enables you to see which EC2 instance send packets to a target hostname. 
+
+- **Access Account Name** is now searchable. 
+
+- **New REST APIs** are available for all features in 3.3.
+
+- **List Spoke Gateways** allows you to easily see what are the Spoke gateways are attached to a selected Transit gateway. To view, scroll down to Step 9 at Transit Network workflow, select a Transit GW and view the attached Spoke gateways. 
+
+
+
+
 R3.2 (4/18/2018)
 =================
 

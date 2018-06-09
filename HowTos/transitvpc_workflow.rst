@@ -130,7 +130,7 @@ Scroll down to see the total number of learned routes.
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Cloud Type                                      Currently Spoke GW can only be launched in AWS
+Cloud Type                                      Spoke GW can be launched in AWS and Azure
 Gateway Name                                    A unique name to identify the Spoke GW
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
