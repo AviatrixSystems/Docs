@@ -4,7 +4,7 @@
 
 
 =================================
- Egress View Log 
+ Egress FQDN View Log 
 =================================
 
 FQDN View Log allows you to immediately view what hostnames and sites that have been blocked 
