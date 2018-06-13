@@ -1,5 +1,5 @@
 =========================================================
-Site2Cloud between Azure VPN Gateway and Aviatrix Gateway
+Site2Cloud (Aviatrix Gateway - Azure VPN Gateway)
 =========================================================
 
 This guide helps you to configure Site2Cloud IPSEC tunnels between an Aviatrix gateway and an Azure "Virtual network gateway"
