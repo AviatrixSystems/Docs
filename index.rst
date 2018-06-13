@@ -111,6 +111,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud_case_study
    HowTos/EncrOverExpRoute
    HowTos/avxgw_azurevpngw_site2cloud
+   HowTos/site2cloud_aviatrix
    HowTos/S2C_GW_PAN
    HowTos/S2C_GW_CP
    HowTos/S2C_GW_ASA

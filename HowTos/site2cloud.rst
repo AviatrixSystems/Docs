@@ -78,15 +78,55 @@ Create Site2Cloud Connection
    |                               | this connection.  If nothing is entered  |
    |                               | one will be generated for you.           |
    +-------------------------------+------------------------------------------+
-   | Remote Subnet                 | Enter the CIDR representing the network  |
-   |                               | behind the edge device that this tunnel  |
-   |                               | supports.                                |
+
+Connection Type: Unmapped
++++++++++++++++++++++++++
+
+For unmapped connections, the following two fields will be displayed:
+
    +-------------------------------+------------------------------------------+
-   | Local Subnet                  | The CIDR block that should be advertised |
-   |                               | on pfSense for the cloud network (will   |
-   |                               | default to the VPC CIDR block)           |
+   | Field                         | Description                              |
+   +===============================+==========================================+
+   | Remote Subnet                 | Enter the CIDR representing the remote   |
+   |                               | network.                                 |
    +-------------------------------+------------------------------------------+
+   | Local Subnet                  | The CIDR block of the local VPC/VNet     |
+   |                               | subnet.  If left blank, Aviatrix will    |
+   |                               | use the full VPC/VNet CIDR.              |
+   +-------------------------------+------------------------------------------+
+
+   .. tip::
+      The remote and local subnet fields can contain multiple values.  Use a comma (,) to separate the values.
+
    
+Connection Type: Mapped
++++++++++++++++++++++++++
+
+For mapped connections, the following four fields will be displayed:
+
+   +-------------------------------+------------------------------------------+
+   | Field                         | Description                              |
+   +===============================+==========================================+
+   | Remote Subnet(Real)           | Enter the real CIDR of the               |
+   |                               | remote network.                          |
+   +-------------------------------+------------------------------------------+
+   | Remote Subnet(Virtual)        | Enter a virtual CIDR that will represent |
+   |                               | the real subnet.                         |
+   +-------------------------------+------------------------------------------+
+   | Local Subnet(Real)            | The real CIDR block of the local VPC/VNet|
+   |                               | subnet.  If left blank, Aviatrix will    |
+   |                               | the full VPC/VNet CIDR.                  |
+   +-------------------------------+------------------------------------------+
+   | Local Subnet(Virtual)         | Enter a vritual CIDR that will represent |
+   |                               | the real subnet.                         |
+   +-------------------------------+------------------------------------------+
+
+   .. tip::
+      The remote and local subnet fields can contain multiple values.  Use a comma (,) to separate the values.
+
+   .. tip::
+      If you use multiple values for the real subnets, you must use an equal number of subnets in the virtual field.
+
 #. Click `OK`
 
 
