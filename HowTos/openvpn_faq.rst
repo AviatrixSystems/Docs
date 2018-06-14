@@ -209,13 +209,7 @@ features.
 How do I configure LDAP authentication?
 ----------------------------------------
 
-
-LDAP configuration is part of the Gateway creation when VPN Access is
-enabled. Enter the necessary parameters and click Enable button to
-enable LDAP authentication for VPN clients. If your LDAP server is
-configured to demand client certificates for incoming TLS connections,
-upload a client certificate in PEM format (This certificate should
-contain a public and private key pair).
+See details `here <./VPNUsers_LDAP.html>`__.
 
 Can I combine LDAP and DUO authentication?
 -------------------------------------------

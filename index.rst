@@ -131,6 +131,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
    HowTos/DNSVPN
+   HowTos/VPNUsers_LDAP
    HowTos/HowTo_Setup_Okta_for_Aviatrix
    HowTos/duo_auth
    HowTos/VPN_SAML
