@@ -203,7 +203,7 @@ For technical support, email us at support@aviatrix.com
 Enjoy!
 
 
-Release Notes
+Limitations
 ^^^^^^^^^^^^^^^
 
     - IAM role is not supported in the current release 3.3 in AWS China. 
