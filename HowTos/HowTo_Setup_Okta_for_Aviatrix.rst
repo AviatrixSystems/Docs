@@ -2,8 +2,17 @@
    :description: Okta Integration in Aviatrix for User SSL VPN authentication
    :keywords: Okta, Aviatrix
 
+.. raw:: html
+
+   <style>
+    /* override table no-wrap */
+   .wy-table-responsive table td, .wy-table-responsive table th {
+       white-space: normal !important;
+   }
+   </style>
+
 =========================================
-Okta Authentication
+Okta Authentication with Okta API Token
 =========================================
 
 Overview
