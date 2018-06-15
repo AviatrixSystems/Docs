@@ -296,7 +296,7 @@ Enabling this feature allows the same user to be logged in from more than one lo
 How to fix Aviatrix VPN times out too quickly?
 ----------------------------------------------
 
-### How do I change the idle timeout? ###
+- How do I change the idle timeout?
 
 #. Login to your Aviatrix Controller
 #. Expand OpenVPN navigation menu and select **Edit Config**
@@ -312,13 +312,12 @@ How to fix Aviatrix VPN times out too quickly?
 .. note::
 
   We have a known issue "Aviatrix VPN times out too quickly", but it is fixed in the releases after UCC 3.2. If you are using a VPN gateway which was created before release UCC 3.2 and would like to solve this issue, please first follow the above steps for "idle timeout" and then disable it as below:
-
 #. Set the `Name` drop down to **Idle timeout**
 #. Change the `Status` to **Disabled**
 #. Click **OK**
 
 
-### How do I change the Renegotiation interval? ###
+- How do I change the Renegotiation interval? 
 
 #. Login to your Aviatrix Controller
 #. Expand OpenVPN navigation menu and select **Edit Config**
@@ -332,7 +331,6 @@ How to fix Aviatrix VPN times out too quickly?
 .. note::
 
   We have a known issue "Aviatrix VPN times out too quickly", but it is fixed in the releases after UCC 3.2. If you are using a VPN gateway which was created before release UCC 3.2 and would like to solve this issue, please first follow the above steps for "Renegotiation interval" and then disable it as below:
-
 #. Set the `Name` drop down to **Renegotiation interval**
 #. Change the `Status` to **Disabled**
 #. Click **OK**
