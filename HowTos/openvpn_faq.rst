@@ -293,8 +293,10 @@ What is "Client Certificate Sharing"?
 Enabling this feature allows the same user to be logged in from more than one location at a time.  If this option is disabled and a user logs in from a second location, the first location will be disconnected automatically.
 
 
-How do I change the idle timeout?
----------------------------------
+How to fix Aviatrix VPN times out too quickly?
+----------------------------------------------
+
+### How do I change the idle timeout?
 
 #. Login to your Aviatrix Controller
 #. Expand OpenVPN navigation menu and select **Edit Config**
@@ -306,6 +308,33 @@ How do I change the idle timeout?
 #. Click **OK**
 
 |imageIdleTimeout|
+
+.. note::
+
+We have a known issue "Aviatrix VPN times out too quickly", but it is fixed in the releases after UCC 3.2. If you are using a VPN gateway which was created before release UCC 3.2 and would like to solve this issue, please first follow the above steps for "idle timeout" and then disable it as below:
+
+#. Set the `Name` drop down to **Idle timeout**
+#. Change the `Status` to **Disabled**
+#. Click **OK**
+
+### How do I change the Renegotiation interval?
+
+#. Login to your Aviatrix Controller
+#. Expand OpenVPN navigation menu and select **Edit Config**
+#. Select the VPC/VNet (or DNS Name) and the Gateway
+#. Scroll to the **Modify VPN Configuration** section
+#. Set the `Name` drop down to **Renegotiation interval**
+#. Change the `Status` to **Enabled**
+#. Set the `Value (seconds)` to the desired timeout value
+#. Click **OK**
+
+.. note::
+
+We have a known issue "Aviatrix VPN times out too quickly", but it is fixed in the releases after UCC 3.2. If you are using a VPN gateway which was created before release UCC 3.2 and would like to solve this issue, please first follow the above steps for "Renegotiation interval" and then disable it as below:
+
+#. Set the `Name` drop down to **Renegotiation interval**
+#. Change the `Status` to **Disabled**
+#. Click **OK**
 
 Where do I find the log for the Aviatrix Client?
 -------------------------------------------------
