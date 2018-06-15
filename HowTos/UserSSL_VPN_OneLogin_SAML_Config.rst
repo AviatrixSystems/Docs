@@ -69,7 +69,10 @@ We will use the string you select for the SAML application name to generate a UR
       Replace **<your controller ip or host name>** with the actual host name or IP address of your controller and **<aviatrix_onelogin>** with the string you chose to refer to the SAML application.
    
 #. Login to OneLogin as an administrator
-#. Add a new App
+#. Add a new App (**Apps* > **Add Apps**)
+
+   |imageOLAddAppsMenu|
+   
 #. Search for `SAML Test Connector`
 
    |imageOLNewAppSearch|
@@ -170,3 +173,4 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageOLNewAppParams| image:: onelogin_saml_media/onelogin_parameters.png
 .. |imageAvtxTestSAML| image:: onelogin_saml_media/avtx_saml_endpoint_test.png
 .. |imageAvtxSAMLEndpoint| image:: onelogin_saml_media/avtx_saml_endpoint.png
+.. |imageOLAddAppsMenu| image:: onelogin_saml_media/onelogin_select_add_apps.png
