@@ -41,10 +41,10 @@ Multi Regions Transit VPC Design
 ---------------------------------
 
 If you have datacenters in multiple regions and its corresponding AWS regions, you build network redundancy to 
-reach cloud by leveraging AWS VGW termination, 
+reach cloud by leveraging AWS VGW termination. 
 
 In the diagram below, there are two Transit Groups, one in each region. The VGW has Direct Connect or Internet to
-one datacenter, the same VGW is also used as a backup connectivity over Internet from the second datacenter. 
+one datacenter, the same VGW is also used as a backup connectivity over Internet from the second datacenter. In case a datacenter loses connectivity to VGW, the backup link can take over and route through the alternate route. 
 
 Note one Aviatrix Controller manages both Transit Groups. If you need connectivity between any two Spoke VPCs in 
 each region, you can build an AWS Peering or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
