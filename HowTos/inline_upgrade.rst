@@ -48,7 +48,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 How to update AWS-IAM-Policy
 ----------------------------------------
 
-After upgrading a controller software, please also keep your AWS IAM Policies updated to the latest.
+Please also keep your AWS IAM Policies updated to the latest (preferably before upgrading controller software).
 
 Step 01: Login to your AWS GUI console
 
@@ -74,7 +74,7 @@ Step 04: Click Edit Policy
 
 Step 05: Click tab "JSON"
 
-Step 06: Update Policy: copy and paste the policy text from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__and then click button "Review policy" and button "Save changes".
+Step 06: Update Policy: copy and paste the policy text from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__ and then click button "Review policy" and button "Save changes".
 
 B. Update “aviatrix-app-policy”:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
