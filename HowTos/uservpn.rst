@@ -98,9 +98,8 @@ Users can be added manually or sync'd from an existing LDAP server.
 
 Create VPN Users
 ################
-If creating users, manually follow the steps below.
 
-#. Click `+ Add New`
+1. Click `+ Add New`
 #. Select the `VPC ID` where this user should be attached.  The associated load balancer will appear in the `LB/Gateweay Name`
 #. Enter the `User Name` and `User Email`
 #. Click `OK`
