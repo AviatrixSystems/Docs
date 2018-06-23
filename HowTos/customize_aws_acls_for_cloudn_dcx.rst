@@ -1,6 +1,6 @@
 .. meta::
-   :description: Customize AWS ACLs for CloudN DCCX
-   :keywords: AWS, Aviatrix Cloud Interconnect, DCCX, CloudN, datacenter extension
+   :description: Customize AWS ACLs for CloudN Datacenter Extension Gateway
+   :keywords: AWS, Aviatrix Cloud Interconnect, CloudN, datacenter extension gateway
 
 
 =========================================================================
@@ -10,7 +10,7 @@ Customize AWS ACLs Inbound/Outbound Rules for Datacenter Extension Gateway
 Introduction
 ============
 
-This document provides the minimized Network ACLs Requirements for Datacenter Extension Gateway. The customization reduces the scope of AWS ACLs Inbound and Outbound rules 
+This document provides the minimum Network ACLs Requirements for Datacenter Extension Gateway. The customization reduces the scope of AWS ACLs Inbound and Outbound rules 
 and helps you meet your organization's security requirements.
 
 
