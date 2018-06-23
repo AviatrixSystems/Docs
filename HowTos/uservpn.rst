@@ -133,13 +133,11 @@ Detailed audit logs are maintained and available in various logging platforms.
    :scale: 50%
 
 .. |imageSelectVPNAccess| image:: uservpn_media/select_vpn_access.png
-   :scale: 50%
 
 .. |imageOpenVPNProfiles| image:: uservpn_media/openvpn_profiles.png
    :scale: 50%
 
 .. |imageOpenVPNUsers| image:: uservpn_media/openvpn_users.png
-   :scale: 50%
 
 .. |imageAddNewProfile| image:: uservpn_media/add_new_profile.png
    :scale: 50%
