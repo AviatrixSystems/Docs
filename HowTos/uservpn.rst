@@ -28,20 +28,19 @@ Configuration Workflow
 
    This document assumes you have set up an Aviatrix Controller.  Please see `this guide <../StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ for more details.
 
-There are 2 main steps to setting up User VPN connectivity:
+There are 2 steps to setting up User VPN connectivity:
 
 #. `Create a VPN Gateway <#create-a-vpn-gateway>`__
-#. `(Optional) Create User Profile(s) <#add-vpn-profiles>`__ and `add policies <#attach-policies-to-a-profile>`__ to those profiles
-#. `Add a user and (optionally) associate users with profiles <#create-vpn-users>`__
+#. `Add a user <#create-vpn-users>`__
 
-You can also `watch a video <https://www.youtube.com/watch?v=bbZFa8kVUQI&t=1s>`_ to learn how to setup remote user VPN. 
+You can also `watch a video <https://www.youtube.com/watch?v=bbZFa8kVUQI&t=1s>`_ to learn how to setup remote user VPN. The video is not up to date as the product graphics has changed, but the idea remains the same. 
 
 Create a VPN Gateway
 ^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-   The description in the steps below provides critical fields you need to select; it may not include all fields.
+   The description in the steps below provides critical fields to get you started. You can make changes to setup advanced features such as `MFA <https://docs.aviatrix.com/HowTos/gateway.html#mfa-authentication>`_ and profile based access later.  
 
 #. Login to the Aviatrix Controller
 #. Launch a gateway with VPN capability
@@ -72,32 +71,11 @@ Create a VPN Gateway
 
       .. note::
 
-         If you just want a basic user VPN solution without multi-factor authentication, you can skip the rest of the VPN related fields.
+         Leave the Advanced Options unselected as you can configure it later.
 
-
-   #. Use the default `VPN CIDR Block <http://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_ . The VPN CIDR Block is the virtual IP address pool that VPN user will be assigned. 
-
-   #. If you use Duo or Okta for multi factor authentication, select one of them at Two-step Authentication, more fields will appear.
-
-      .. note::
-         For details on configuring Okta authentication, see `this link <HowTo_Setup_Okta_for_Aviatrix.html>`__.
-
-      .. note::
-         For details on configuring Duo authentication, see `this link <duo_auth.html>`__.
-
-   #. If you select `Split Tunnel Mode <http://docs.aviatrix.com/HowTos/gateway.html#split-tunnel-mode>`_ , only the VPC CIDR traffic will go through the tunnel. If you specify "`Additional CIDRs <http://docs.aviatrix.com/HowTos/gateway.html#additional-cidrs>`_", then these and the VPC CIDR will go through the vpn tunnel. You can modify Split tunnel settings later when more VPCs are created. (Go to OpenVPN® -> Edit Config -> MODIFY SPLIT TUNNEL to make changes. Make sure you specify all the CIDRs, separated by comma.) You can leave Nameservers and Search Domains blank if you don't have one.  
       
-      .. note::
-
-         If you plan to support Chromebook, you must configure full tunnel mode as Chromebook only supports full tunnel. 
-
    #. By default, `ELB <http://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_  will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
 
-      .. important::
-
-         If you disable ELB, your vpn traffic runs on UDP port 1194. When ELB is enabled, your vpn traffic runs on TCP 443. TCP 443 makes it easier to go through corporate firewall.  
-
-   #.  Click `LDAP <http://docs.aviatrix.com/HowTos/gateway.html#enable-ldap>`_ if VPN user should be authenticated by AD or LDAP server. After you fill up the LDAP fields, make sure you run `Test LDAP Configuration` to test your configuration is valid. 
 
    #. If you wish to create more of such VPN gateways (for example, behind ELBs for load balancing), click `Save Template`, which will save your LDAP and multi-factor authentication credentials. 
 
@@ -107,43 +85,6 @@ Create a VPN Gateway
 
          Once you click `OK`, the Gateway will be provisioned and all the configuration will be applied.  This will take a minute or two.
 
-(Optional) Add VPN Profiles
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A `VPN user profile <http://docs.aviatrix.com/HowTos/openvpn_faq.html#what-is-user-profile-based-security-policy>`_ is defined by a list of access policies with allow or deny rules.  When a VPN user is connected to a VPN gateway, the user's profile is pushed dynamically to the VPN gateway and the user can only access resources defined in the profile.  When a VPN user disconnects from the gateway, the policies are deleted.  
-
-.. important::
-
-   If a VPN user has no profile association, the user has full access to all resources.
-
-#. Login to the Aviatrix Controller
-#. Expand OpenVPN® on the left navigation bar
-#. Select `Profiles`
-
-   |imageOpenVPNProfiles|
-
-Create a New Profile
-####################
-#. Click `+ New Profile`
-#. Enter a `Profile Name`
-#. Select the appropriate `Base Policy`
-#. Click `OK`
-
-   |imageAddNewProfile|
-
-Attach Policies to a Profile
-############################
-Once you have created one or more profiles, you will need to attach policies to the profile(s).  There can be any number of policies that apply to each profile.
-
-#. Click the `Edit/View` button next to the profile name
-
-   |imageEditViewProfile|
-
-#. In the table, click `+ Add New` to create a new policy.
-#. Select the `Protocol`, `Target` CIDR block, `Port`, and `Action`
-#. Click `Save`
-
-   |imageAddProfilePolicy|
 
 VPN Users
 ^^^^^^^^^
@@ -162,7 +103,6 @@ If creating users, manually follow the steps below.
 #. Click `+ Add New`
 #. Select the `VPC ID` where this user should be attached.  The associated load balancer will appear in the `LB/Gateweay Name`
 #. Enter the `User Name` and `User Email`
-#. (Optional) If associating this user with an existing profile, check the checkmark next to `Profile` and select the appropriate `Profile Name`.
 #. Click `OK`
 
    .. note::
