@@ -22,7 +22,7 @@ Aviatrix User VPN Gateway supports Okta authentication as part of multi-factor a
 Follow these steps to configure Okta authentication and MFA on a User VPN Gateway in your environment:
 
 #. Obtain an `API token <#okta-api-token>`__ from your Okta account
-#. Create a new Aviatrix `VPN Gateway <#aviatrix-vpn-gateway>`__
+#. Setup `Okta authentication  <#setup-okta>`__
 #. Create `VPN Users <#create-vpn-users>`__ for this Aviatrix Gateway
 #. `Test <#validate>`__ connectivity
 
@@ -45,9 +45,9 @@ Follow the steps outlined in the `Okta documentation <https://developer.okta.com
 
       |image1|
 
-.. _aviatrix_vpn_gateway:
+.. _setup_okta:
 
-Create Aviatrix VPN Gateway
+Setup Okta Authentication
 ---------------------------
 
 #. Follow the steps in `this guide <./uservpn.html>`__ to create a new Aviatrix VPN gateway.
