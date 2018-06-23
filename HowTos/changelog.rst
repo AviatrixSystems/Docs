@@ -1,7 +1,17 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+
+1.8 - Jun 22 2018
+ - Windows VPN Service to run the client without Admin access
+ - Graceful VPN exit on windows(8.0 and above) disconnect 
+ - Add platform, GUI version and peer info
+ - Add resolvconf dependency for Ubuntu18
+ - Fix some connection issues on Mac
+
+
 1.7 - Mar 7 2018
  - Support for Profile as an attribute feature
+
 
 1.6 - Dec 19 2017
  - FreeBSD support

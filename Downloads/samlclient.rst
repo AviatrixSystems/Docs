@@ -25,7 +25,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 
 Consult the VPN client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/Aviatrix+VPN+Client+User+Guide.pdf>`__ for how to use it. 
 
-Latest version: 1.7.2 - (Mar 7 2018) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Latest version: 1.8.7 - (Jun 22 2018) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
 
 *************
 Windows |win|
@@ -59,10 +59,6 @@ Ubuntu 16/Generic - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-do
 Trusty/Ubuntu14  - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian_Q4.deb>`__, `Tar file <https://s3-us-west-2.amazonaws.com/avi atrix-download/AviatrixVPNClient/AVPNC_linux_Q4.tar.gz>`__, 
 
 Zesty/Ubuntu17 and Ubuntu18 - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_zesty.deb>`__, `Tar file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_zesty.tar.gz>`__
-
-.. note::
-
-   To solve a DNS issue might happen on Ubuntu 17 or 18, please issue the below command before executing Aviatrx VPN client #sudo apt-get install resolvconf
 
 
 *************
