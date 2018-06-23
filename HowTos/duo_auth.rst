@@ -50,10 +50,10 @@ Connect Aviatrix VPN with Duo
 -----------------------------
 
 .. note::
-   Currently, you can only connect Aviatrix VPN Gateway with Duo at gateway creation time.
+   You can setup DUO at both Aviatrix VPN Gateway launch time and after Aviatrix VPN gateway is launched. We highly recommend you configure DUO after the VPN gateway is launched.
 
 #. Follow the `steps to create <uservpn.html#create-a-vpn-gateway>`__ a new Aviatrix Gateway
-#. Select **Duo** from the **MFA Authentication** drop down
+#. After the gateway is launched, at the Controller console, go to OpenVPN® -> Edit Config -> MODIFY AUTHENTICATION. Select DUO at the drop down menu.   
 #. Populate **Integration Key**, **Secret Key**, and **API Hostname** from the values provided by Duo application details
 #. Update the **Push Mode**
 
@@ -92,8 +92,7 @@ Connect Aviatrix VPN with Duo
    |                           | username, any value is acceptable.            |
    +---------------------------+-----------------------------------------------+
 
-#. Continue with the steps to create the Aviatrix VPN Gateway
-#. Click **OK** to create the gateway
+#. Click **Modify** to have the action take effect.
 
    |imageAviatrixDuo|
 
