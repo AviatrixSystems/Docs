@@ -27,7 +27,7 @@ Follow these steps to configure Okta authentication and MFA on a User VPN Gatewa
 #. `Test <#validate>`__ connectivity
 
 .. important::
-   Currently, Okta authentication can only be enabled when the Aviatrix Gateway is created.  It cannot be changed after the Gateway has been provisioned.  This will be addressed in a future version.
+   Okta authentication can be enabled both at the Aviatrix gateway launch time and after the Aviatrix gateway is launched. We highly recommend you configure Okta after the gateway is launched. 
 
 .. _okta_api_token:
    
@@ -51,7 +51,7 @@ Create Aviatrix VPN Gateway
 ---------------------------
 
 #. Follow the steps in `this guide <./uservpn.html>`__ to create a new Aviatrix VPN gateway.
-#. Under `MFA Authentication` select `Okta` from the dropdown options.
+#. When you are ready to configure Okta, login to the Controller. At the main navigation bar, go to OpenVPN® -> Edit Config -> MODIFY AUTHENTICATION. From the dropdwon option, select `Okta`.
 
    |GWOktaMFA|
 
@@ -61,7 +61,7 @@ Create Aviatrix VPN Gateway
    | Field                 | Description                                     |
    +=======================+=================================================+
    | URL                   | Your Okta account login URL. (For example,      |
-   |                       | https://aviatrixtestaccount.okta.com)           |
+   |                       | https://aviatrixtest.okta.com)                  |
    +-----------------------+-------------------------------------------------+
    | Token                 | The token value you copied earlier              |
    +-----------------------+-------------------------------------------------+
@@ -69,14 +69,14 @@ Create Aviatrix VPN Gateway
    |                       | will be the account ID without the domain name. |
    |                       |                                                 |
    |                       | For example, if your Okta account is            |
-   |                       | `demoaviatrix@aviatrix.com` and `aviatrix.com`  |
-   |                       | is your `Username Suffix`, the VPN username     |
-   |                       | be `demoaviatrix`.                              |
+   |                       | `demoaviatrix@aviatrixtest.com` and             |
+   |                       | `aviatrixtest.com` is your `Username Suffix`,   |
+   |                       | the VPN username should be `demoaviatrix`.      |
    |                       |                                                 |
    |                       | If no value is provided for                     |
    |                       | this field, you must enter the full username    |
    |                       | including domain name (for example,             |
-   |                       | `demoaviatrix@aviatrix.com`).                   |
+   |                       | `demoaviatrix@aviatrixtest.com`).               |
    +-----------------------+-------------------------------------------------+
 
    |GWOktaAdditionalFields|
