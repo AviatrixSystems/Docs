@@ -65,7 +65,7 @@ Create a VPN Gateway
 
       |imageCreateGateway|
 
-   #. Select `VPN Access`. More fields will appear.
+   #. Select `VPN Access`. Leave the Advanced Options unselected.
 
       |imageSelectVPNAccess|
 
