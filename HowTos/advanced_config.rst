@@ -31,10 +31,23 @@ BGP dampening feature can be used to suppress flapping routes. It is disabled by
 BGP Diagnostics
 ################
 
-Aviatrix BGP is implemented by using Quagga. 
+Aviatrix BGP is implemented by using `Quagga <https://www.quagga.net/>`__. 
 
-To troubleshoot BGP problems, go to Advanced Config -> BGP -> Diagnostics.
+To troubleshoot BGP problems, go to
 
-You can either type in Quagga commands or use the calender box to select one of the many Quagga commands. 
+**Advanced Config** > **BGP** > **Diagnostics**
+
+You can either type in `Quagga commands <https://www.nongnu.org/quagga/docs/docs-multi/BGP.html#BGP>`__ or use the |imageGrid| to select one of the pre-defined commands. 
+
+Overlapping Alert Email
+#######################
+
+Aviatrix, by default, will alert you if you add a spoke that overlaps with your on-premise network (or, if you start advertising a network from on-premise that overlaps with a spoke).  However, there are some cases where you expect overlaps and the alert emails are not helpful.  For these cases, you can disable the overlap checking.  To do this go to
+
+**Advanced Config > **BGP** > **Overlapping Alert Email**
+
+Toggle the switch to **Disabled** to disable overlap checking.
+
+.. |imageGrid| image:: advanced_config_media/grid.png
 
 .. disqus::
