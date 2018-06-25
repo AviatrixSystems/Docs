@@ -148,6 +148,7 @@ Detailed audit logs are maintained and available in various logging platforms.
    :scale: 50%
 
 .. |imageAddNewVPNUser| image:: uservpn_media/add_new_vpn_user.png
+   :scale: 50%
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
