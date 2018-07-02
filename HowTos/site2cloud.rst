@@ -52,9 +52,11 @@ Create Site2Cloud Connection
    |                               | See below for additional details.        |
    +-------------------------------+------------------------------------------+
    | Tunnel Type                   | `UDP` or `TCP`                           |
+   |                               |                                          |
    |                               | .. note::                                |
-   |                               | `TCP` tunnel type requires an            |
-   |                               | Aviatrix Gateway on the other side.      |
+   |                               |    `TCP` tunnel type requires an Aviatrix|
+   |                               |    gateway on both sides.                |
+   |                               |                                          |
    +-------------------------------+------------------------------------------+
    | Algorithms                    | Defaults will be used if unchecked.      |
    |                               | See below for more details.              |
