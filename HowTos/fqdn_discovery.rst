@@ -7,7 +7,11 @@
  Egress FQDN Discovery 
 =================================
 
-Discover what Internet sites your apps visit, available in release 3.3.
+Discover what Internet sites your apps visit before you configure `Egress FQDN Filter <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+
+.. tip::
+
+ If you already know the sites you apps visit, you can skip this step. 
 
 Go to Security -> Egress Control -> Egress FQDN Discovery. Select a gateway from the drop down menu (The gateway needs to have `SNAT <https://docs.aviatrix.com/HowTos/gateway.html?highlight=SNAT#enable-nat>`_ enabled), click Start. The monitoring will start, click Show at any time to see the captured destination sites. Click Stop to stop the entire Discovery process.
 

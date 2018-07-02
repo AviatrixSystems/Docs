@@ -96,6 +96,7 @@ Aviatrix encrypted peering solution builds IPSEC tunnels to connect two VPC/Vnet
  #. **Multi Cloud** My workloads in AWS need connectivity to works loads in Azure or Google. 
  #. **Defense in Depth** My CloudOps tools communicate to instances with data that is not encrypted. I need encryption for traffic between Shared Service VPC to workload VPC.
  #. **Require 10Gbps Encrypted Throughput** I need encryption for all data in motion and I need the performance to be up to 10Gbps.
+ #. **Policy** We need to enforce stateful policies between two VPC connections. AWS native peering does not support policies. 
 
 Aviatrix peering solution can be found `here. <http://docs.aviatrix.com/HowTos/peering.html>`_
 
