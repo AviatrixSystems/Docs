@@ -219,19 +219,35 @@ can use for automation scripts.
 Designated Gateway
 --------------------
 
-If a gateway is launched with Designated Gateway enabled, the Aviatrix Controller programs 
-the RFC1918 address ranges in the route table to point to the gateway instance. 
-These routing entries are 
-10.0.0.0/8, 192.168.0.0/16 and 172.16.0.0/12. The Controller will not add additional 
-route entries that is within this RFC1918 range when configuring Transit VPC, site2cloud or encrypted peering. 
+If a gateway is launched with the **Designated Gateway** feature enabled, the Aviatrix Controller will insert an entry for each address space defined by RFC1918:
 
-Starting from release 3.3, you can program additional CIDRs outside of RFC 1918  
-into all route tables in the VPC to point to the gateway. Enter list of
-CIDRs separated by comma, as shown below.
+   * 10.0.0.0/8,
+   * 192.168.0.0/16, and
+   * 172.16.0.0/12
+
+The target of each of these entries will point to the Aviatrix Gateway instance.
+
+Once enabled, Transit VPC, Site2Cloud and Encrypted Peering connections will no longer add additional route entries to the route table if the destination range is within one of these RFC1918 ranges.  Instead, the Aviatrix Gateway will maintain the route table internally and will handle routing for these ranges.
+
+.. note::
+   The Designated Gateway feature is automatically enabled on spoke gateways created by the `Transit Network workflow <./transitvpc_workflow.html>`__.
+
+Starting with `release 3.3 <./UCC_Release_Notes.html#r3-3-6-10-2018>`__, you can configure the CIDR range(s) inserted by the Aviatrix Controller when the Designated Gateway feature is enabled.  To do this, follow these steps:
+
+#. Login to your Aviatrix Controller
+#. Go to the **Gateway** page
+#. Select the designated gateway to modify from the list and click **Edit**
+
+   .. note::
+      You must enable the Designated Gateway feature at gateway creation time
+
+#. Scroll down to the section labeled **Edit Designated Gateway**
+#. Enter the list of CIDR range(s) (separate multiple values with a comma) in the **Additional CIDRs** field
+#. Click **Save**
 
 |edit-designated-gateway| 
 
-Note a Spoke gateway created by the `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ is automatically a designated gateway. 
+Once complete, your route table(s) will be updated with the CIDR range(s) provided.
 
 Security Policy
 --------------------
