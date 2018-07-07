@@ -259,6 +259,7 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/aviatrix_aws_transitvpc
    Solutions/egress_transit_gateway
    Solutions/netapp_sap_floating_ip
+   Solutions/egress_nat_pool
 
 .. _Whitepapers:
 
