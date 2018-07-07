@@ -227,8 +227,22 @@ The feature is enabled by default. If you wish not to receive the alert email, y
 
 Go to Advanced Config -> BGP -> Overlapping Alert Email. Click to disable. 
 
+How to summarize Spoke VPC CIDR ranges?
+-----------------------------------------
 
+If you have a large number of Spoke gateways attached to a Transit GW that 
+you are concerned about exceeding the route limit a VGW can carry (100), 
+you can summarize the Spoke VPC CIDRs. 
 
-.. |image1| image:: FAQ_media/image1.png
+Go to Site2Cloud, click on the connection that identifies the Transit GW and VGW. (This connection is automatically created when you complete `Step 3 at the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. The Connection Name you entered should be displayed as a Site2Cloud connection at this page.)
+
+After you click on the connection, scroll down to "Manual BGP Advertised Network List", as shown below. Enter the summarized CIDR ranges and click Change BGP Manual Spoke Advertisement. You can enter a list of CIDRs separated by comma. 
+
+|bgp_summarize|
+
+To disable this feature, simply remove the list to make the entry empty and then click Change BGP Manual Spoke Advertisement. 
+
+.. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
+   :scale: 50%   
 
 .. disqus::
