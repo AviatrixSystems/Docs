@@ -67,10 +67,10 @@ as shown below.
 
 
 .. |edit-secondary-ip| image:: egress_nat_pool_media/edit-secondary-ip.png
-   :scale: 80%
+   :scale: 30%
 
 .. |edit-dnat| image:: egress_nat_pool_media/edit-dnat.png
-   :scale: 80%
+   :scale: 30%
 
 
 .. disqus::
