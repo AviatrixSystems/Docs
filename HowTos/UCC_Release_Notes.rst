@@ -26,6 +26,8 @@ R3.3 (6/10/2018)
 
 - **AWS China Support**. Both Controller and gateway can be launched in AWS China. Follow the `AWS China Controller Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-china-controller-startup-guide.html>`_ to get started. 
 
+- **Spoke CIDRs Summarization support** allows you to reduce the number of routes advertised by Aviatrix Transit GW to VGW, to overcome the VGW limit of carrying a maximum of 100 routes. Click `here <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_ for configuration details.  
+
 3. Ease of Use
 ---------------
 

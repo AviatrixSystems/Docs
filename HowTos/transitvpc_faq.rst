@@ -243,6 +243,6 @@ After you click on the connection, scroll down to "Manual BGP Advertised Network
 To disable this feature, simply remove the list to make the entry empty and then click Change BGP Manual Spoke Advertisement. 
 
 .. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
-   :scale: 50%   
+   :scale: 100%   
 
 .. disqus::
