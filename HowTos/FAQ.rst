@@ -325,6 +325,7 @@ establish the security association in IKEv2.
 
 There are a couple of other differences regarding IKEv2 has a better support for mobile devices which does not apply to site to site and site to cloud VPN where Aviatrix is being used. 
 
+AWS only supports IKEv1 on VGW. 
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
