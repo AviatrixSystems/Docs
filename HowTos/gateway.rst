@@ -261,7 +261,9 @@ High Availability
 There are 3 types of high availability on Aviatrix: "Gateway for High Availability", "Gateway for High Availability Peering" and Single AZ HA. 
 
 Gateway for High Availability
-------------------------------
+------------------------------------------
+
+This feature has been deprecated. It is listed here for backward compatibility reason. 
 
 When this option is selected, a backup gateway instance will be deployed in a different AZ if available. 
 This backup gateway keeps its configuration in sync with the primary 
@@ -294,7 +296,7 @@ Gateway Resize
 
 You can change Gateway Size if need to change gateway throughput. The gateway will restart with a different instance size.
 
-Modular NAT
+Source NAT
 ------------
 
 You can enable and disable NAT function after a gateway is launched. 
@@ -303,8 +305,8 @@ When NAT is enabled, all route tables for private subnets in the VPC
 are programmed with an route entry that points the gateway as the 
 target for route entry 0.0.0.0/0. 
 
-DNAT
------
+Destination NAT
+----------------
 
 Destination NAT (DNAT) allow you to change the destination to a virtual address range. 
 
@@ -394,6 +396,46 @@ The keep alive template is a global configuration on the Controller for all gate
   Settings -> Advanced -> Keepalive.
 
 In the drop down menu, select the desired template. 
+
+Edit Secondary IPs
+-------------------
+
+This feature allows you to add `secondary IP addresses <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html>`_ to the gateway instance. The format to enter the field is, for example,
+
+:: 
+
+  172.32.0.20 (for single secondary IP address)
+  172.32.0.20-172.32.0.22 (for a multiple consecutive secondary IP addresses)
+  172.32.0.20,172.32.0.22-172.32.0.25 (for a multiple non consecutive secondary IP addresses)
+
+The main use case for this feature is to enable you to configure source NAT function that maps to multiple IP addresses, instead of a single one. When used for this purpose, 
+you need to go to AWS console to first allocate an `EIP <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-eips.html>`_, then `associate each secondary IP with an 
+EIP <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#using-instance-addressing-eips-associating>`_ to complete the function. 
+
+This feature is currently available for AWS.
+
+Use VPC/VNet DNS Server
+------------------------
+
+When enabled, this feature removes the default DNS server for the Aviatrix gateway and instructs the gateway to use the VPC DNS server configured in VPC DHCP option. 
+
+When disabled, the Aviatrix gateway will revert to use its built-in (default) DNS server. 
+
+Here is one example use case to enable this feature:
+
+If you enable `Logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ on the 
+Aviatrix Controller, all Aviatrix gateways forward their log information to the 
+configured log server. But if the log server is deployed on-prem with a private DNS name, 
+the Aviatrix gateway's default DNS server cannot resolve 
+the domain name of the private log server. By enabling the VPC DNS server, the gateway will start
+to use VPC DNS server which should resolve the private DNS name of the log server.  
+
+.. note::
+
+  when enabling this feature, we check to make sure the gateway can indeed 
+  reach the VPC/VNet DNS server; if not, this command will return error. 
+
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
