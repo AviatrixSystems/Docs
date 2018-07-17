@@ -9,11 +9,9 @@
 Create site2cloud connection between two VPCs and run Customized SNAT on Aviatrix gateway
 ===========================================================================================
 
-This tech note demonstrates how to create a site2cloud connection between two VPCs by using VGW and Aviatrix gateway. Aviatrix gateway also serves as a Source NAT device and translates source IP of traffic initiated from peering VPC to a arbitrary IP address.
-
+This tech note demonstrates how to create a site2cloud connection between two VPCs by using VGW and Aviatrix gateway. Aviatrix gateway also serves as a Source NAT device and translates source IP of traffic initiated from peering VPC to an IP address selected by users.
 
 |
-
 
 Environment Requirements
 ---------------------------------------------------------
@@ -22,18 +20,18 @@ There are two VPCs as illustrated in the diagram below. VPC-1 CIDR is 10.0.0.0/1
 
 |image1|
 
-
 We will also configure customized SNAT at Aviatrix gateway, which translates the source IP of traffic initiated from VPC-1 (10.0.0.0/16) to an user selected IP address (192.168.1.10 in this example). In this way, VPC-2 VMs will see all packets from VPC-2 with the same source IP address (192.168.1.10)
 
 |
-
 
 Steps to Configure site2cloud Connection and SNAT
 ---------------------------------------------------------
 
 + **Step 1: Install Aviatrix gateway in VPC-2.**
 
-Download and install the Aviatrix Gateways by following instructions in this `document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`__
+Download and install the Aviatrix Gateways by following instructions in this `document <http://docs.aviatrix.com/HowTos/gateway.html>`__ 
+
+Don't select "Enable SNAT" when creating the new gateway in VPC-2.
 
 
 
@@ -64,7 +62,6 @@ Target           VGW ID
 
 + **Step 4: Configure Customized SNAT at Aviatrix gateway**
 
-Update VPC-1 route tables to allow traffic destinating to VPC-2 (172.19.0.0/16) takes the VGW as "Target":
 
 **a.** Log into the Controller and go to "Gateway" page.
 
@@ -79,6 +76,7 @@ Update VPC-1 route tables to allow traffic destinating to VPC-2 (172.19.0.0/16) 
 **d.** Select "Customized SNAT".
 
 **e.** Configure the following SNAT rule.
+
 ==================   ==================================
   **Field**          **Value**
 ==================   ==================================
