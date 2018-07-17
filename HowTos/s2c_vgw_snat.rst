@@ -1,0 +1,130 @@
+
+
+.. meta::
+   :description: Create site2cloud connection with VGW and run customized SNAT on gateway
+   :keywords: site2cloud, VGW, SNAT
+
+
+===========================================================================================
+Create site2cloud connection between two VPCs and run Customized SNAT on Aviatrix gateway
+===========================================================================================
+
+This tech note demonstrates how to create a site2cloud connection between two VPCs by using VGW and Aviatrix gateway. Aviatrix gateway also serves as a Source NAT device and translates source IP of traffic initiated from peering VPC to a arbitrary IP address.
+
+
+|
+
+
+Environment Requirements
+---------------------------------------------------------
+
+There are two VPCs as illustrated in the diagram below. VPC-1 CIDR is 10.0.0.0/16 and VPC-2 CIDR is 172.19.0.0/16. The site2cloud connection is between a VGW in VPC-1 and an Aviatrix gateway in VPC-2. 
+
+|image1|
+
+
+We will also configure customized SNAT at Aviatrix gateway, which translates the source IP of traffic initiated from VPC-1 (10.0.0.0/16) to an user selected IP address (192.168.1.10 in this example). In this way, VPC-2 VMs will see all packets from VPC-2 with the same source IP address (192.168.1.10)
+
+|
+
+
+Steps to Configure site2cloud Connection and SNAT
+---------------------------------------------------------
+
++ **Step 1: Install Aviatrix gateway in VPC-2.**
+
+Download and install the Aviatrix Gateways by following instructions in this `document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`__
+
+
+
++ **Step 2: Create Site2Cloud between a VGW in VPC-1 and Aviatrix gateway in VPC-2**
+
+
+.. Note:: In the Aviatrix terminology, Site2Cloud is the name of the feature that enables connections from one site (or datacenter) to other sites (including cloud environments).
+
+..
+
+Please follow instructions in this `document <http://docs.aviatrix.com/HowTos/site2cloud_awsvgw.html>`__ to create the site2cloud connection.
+
+
+
++ **Step 3: Update VPC-1 Route Tables at AWS portal**
+
+Update VPC-1 route tables to allow traffic destinating to VPC-2 (172.19.0.0/16) takes the VGW as "Target":
+
+
+==============   ==================================
+  **Field**      **Value**
+==============   ==================================
+Destination      172.19.0.0/16
+Target           VGW ID
+==============   ==================================
+
+
+
++ **Step 4: Configure Customized SNAT at Aviatrix gateway**
+
+Update VPC-1 route tables to allow traffic destinating to VPC-2 (172.19.0.0/16) takes the VGW as "Target":
+
+**a.** Log into the Controller and go to "Gateway" page.
+
+**b.** Select the Aviatrix gateway created in VPC-2.
+
+
+|image2|
+
+
+**c.** Click "Edit" button and go to "Source NAT" section.
+
+**d.** Select "Customized SNAT".
+
+**e.** Configure the following SNAT rule.
+==================   ==================================
+  **Field**          **Value**
+==================   ==================================
+Source CIDR          VPC-1 CIDR (10.0.0.0/16)
+Source Port          Leave it blank
+Destination CIDR     VPC-2 CIDR (172.19.0.0/16)
+Destination Port     Leave it blank
+Protocol	     all
+Interface            eth0
+Mark                 Leave it blank
+SNAT IPs             User selected IP (192.168.1.10)
+SNAT Port            Leave it blank
+==================   ==================================
+
+
+|image3|
+
+
+**f.** Click "Save" and "Enable SNAT" buttons
+
+
+Test site2cloud Connection and SNAT
+---------------------------------------------------------
+
+**a.** Go to "site2cloud" page and verify the site2cloud connection status is "Up".
+
+|image4|
+
+**b.** Pings from an Ubuntu VM in VPC-1 to another Ubuntu VM in VPC-2.
+
+**c.** Turn on "tcpdump icmp -n" at the Ubuntu VM in VPC-2. Verify the source IP of the pings is 192.168.1.10.
+ 
+
+.. |image1| image:: s2c_vgw_snat_media/s2c-snat.png
+    :width: 8.00000 in
+    :height: 6.00000 in
+
+.. |image2| image:: s2c_vgw_snat_media/s2c-snat-1.PNG
+    :width: 8.00000 in
+    :height: 6.00000 in
+
+.. |image3| image:: s2c_vgw_snat_media/s2c-snat-2.PNG
+    :width: 8.00000 in
+    :height: 6.00000 in
+
+.. |image4| image:: s2c_vgw_snat_media/s2c-snat-3.PNG
+    :width: 8.00000 in
+    :height: 6.00000 in
+.. disqus::    
