@@ -256,6 +256,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site_to_site_vpn
    HowTos/controller_security_for_SAML
    HowTos/simpletransit
+   HowTos/s2c_vgw_snat
 
 .. _Solutions:
 
