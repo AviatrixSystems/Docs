@@ -49,8 +49,8 @@ On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassoc
   Note: Make sure browser cache is cleared before the next Step,
   to avoid connecting to an old stale session.
 
-Step 4 - Launch BYOL Controller
-===============================
+Step 4 - Launch Metered/BYOL Controller
+======================================
 Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`_ to subscribe to the Aviatrix AMI.
 
 |image2|
