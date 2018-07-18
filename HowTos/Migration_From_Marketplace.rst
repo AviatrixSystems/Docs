@@ -78,7 +78,8 @@ On the on-boarding page, enter the customer id provided by your Aviatrix Sales A
 
 |image5|
 
-  Note: You may need to re-enter your BYOL Customer ID after controller restore operation. We also suggest that you backup the latest configuration by clicking the Backup Now button at Settings-->Maintenance-->Backup & Restore tab.
+  Note: You may need to re-enter your BYOL Customer ID after controller restore operation. We also suggest that you backup
+  the latest configuration by clicking the Backup Now button at Settings-->Maintenance-->Backup & Restore tab.
 
 Step 9 - Enjoy your new controller
 ======================================
