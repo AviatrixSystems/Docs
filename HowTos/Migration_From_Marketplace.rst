@@ -20,7 +20,7 @@ Pre-requisites
 1. Existing Aviatrix AWS Marketplace instance deployed.
 #. We highly recommend migrating to Metered AMI as it is more flexible and scalable as your business needs change over time.
 #. For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager to acquire the appropriate BYOL License.
-#. All Aviatrix controller should be running 3.1 (or later).
+#. All Aviatrix controller should be running 3.2 (or later).
 
 Step 1 - Enable Backup
 ======================
@@ -77,6 +77,8 @@ Step 8 - Install License
 On the on-boarding page, enter the customer id provided by your Aviatrix Sales Account Manager.
 
 |image5|
+
+  Note: You may need to re-enter your BYOL Customer ID after controller restore operation. We also suggest that you backup the latest configuration by clicking the Backup Now button at Settings-->Maintenance-->Backup & Restore tab.
 
 Step 9 - Enjoy your new controller
 ======================================
