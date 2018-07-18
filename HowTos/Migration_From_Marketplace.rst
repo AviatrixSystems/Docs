@@ -24,7 +24,7 @@ Pre-requisites
 
 Step 1 - Enable Backup
 ======================
-On the existing Aviatrix Marketplace Controller, go to Settings-->Maintenance-->Upgrade tab and make sure you are running the latest version. If it is not the latest version, please perform Dry Run and upgrade the controller by following our `Inline Software Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`. 
+On the existing Aviatrix Marketplace Controller, go to Settings-->Maintenance-->Upgrade tab and make sure you are running the latest version. If it is not the latest version, please perform Dry Run and upgrade the controller by following our `Inline Software Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
 Next, go to Settings--> Maintenance and select the Backup & Restore tab.
 Create an S3 bucket in your AWS account and copy the name on the corresponding field. Click Enable.
@@ -51,7 +51,7 @@ On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassoc
 
 Step 4 - Launch BYOL Controller
 ===============================
-Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>` to subscribe to the Aviatrix AMI.
+Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`_ to subscribe to the Aviatrix AMI.
 
 |image2|
 
