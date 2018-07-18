@@ -111,18 +111,15 @@ Test site2cloud Connection and SNAT
  
 
 .. |image1| image:: s2c_vgw_snat_media/s2c-snat.png
-    :width: 8.00000 in
-    :height: 6.00000 in
-
+   :scale: 80%
+   
 .. |image2| image:: s2c_vgw_snat_media/s2c-snat-1.PNG
-    :width: 8.00000 in
-    :height: 6.00000 in
+   :scale: 80%
 
 .. |image3| image:: s2c_vgw_snat_media/s2c-snat-2.PNG
-    :width: 8.00000 in
-    :height: 6.00000 in
+   :scale: 80%
 
 .. |image4| image:: s2c_vgw_snat_media/s2c-snat-3.PNG
-    :width: 8.00000 in
-    :height: 6.00000 in
+   :scale: 80%
+
 .. disqus::    

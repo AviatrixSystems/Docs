@@ -18,7 +18,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN® <OpenVPN>`
 * :ref:`Security`
-* :ref:`IPmotion`
+* :ref:`UsefulTools`
 * :ref:`Advanced Config`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
@@ -28,6 +28,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Tech Notes`
 * :ref:`Solutions`
 * :ref:`Whitepapers`
+* :ref:`IPmotion`
 
 
 .. _Getting Started:
@@ -152,16 +153,13 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/fqdn_discovery
    HowTos/fqdn_viewlog
 
-.. _IPmotion:
+.. _UsefulTools:
 
 .. toctree::
    :maxdepth: 1
-   :caption: IPmotion
+   :caption: Useful Tools 
 
-   HowTos/ipmotion
-   HowTos/HowTo_Setup_IPMotion
-   HowTos/design_pattern_ipmotion
-   HowTos/ipmotion_dependency_discovery
+   HowTos/vpc_tracker
 
 .. _Advanced Config:
 
@@ -231,6 +229,17 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/UCC_Release_Notes
    HowTos/changelog
+
+.. _IPmotion:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: IPmotion
+
+   HowTos/ipmotion
+   HowTos/HowTo_Setup_IPMotion
+   HowTos/design_pattern_ipmotion
+   HowTos/ipmotion_dependency_discovery
 
 .. _Tech Notes:
 
