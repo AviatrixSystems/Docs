@@ -109,6 +109,19 @@ Add more tags
 Repeat from Step 1 to create more tags and attach different gateways. 
 Note each gateway can only be attached to one tag. 
 
+Exception Rule
+===============
+
+Exception rule is a system wide mode. 
+
+When Exception Rule is enabled, packets passing through the gateway without SNI field are 
+allowed to pass. This usually happens when an application uses hard coded destination 
+IP address for HTTPS connection instead of domain names. This could be a security loop hole.
+
+When Exception Rule is disabled, packets passing through the gateway without SNI field 
+are dropped unless the specific destination IP address of the 
+packet is listed in the Whitelist. The use case could be certain old application uses 
+hard coded destination IP address to access outside services.  
 
 
 For support, send email to support@aviatrix.com
