@@ -26,10 +26,12 @@ Step 1 - Enable Backup
 ======================
 On the existing Aviatrix Marketplace Controller, go to Settings-->Maintenance-->Upgrade tab and make sure you are running the latest version. If it is not the latest version, please perform Dry Run and upgrade the controller by following our `Inline Software Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
+|image1|
+
 Next, go to Settings--> Maintenance and select the Backup & Restore tab.
 Create an S3 bucket in your AWS account and copy the name on the corresponding field. Click Enable.
 
-|image1|
+|image2|
 
 ::
 
@@ -52,8 +54,6 @@ On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassoc
 Step 4 - Launch Metered/BYOL Controller
 ======================================
 Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`_ to subscribe to the Aviatrix AMI.
-
-|image2|
 
 Step 5 - Attach EIP
 ===================
@@ -93,10 +93,10 @@ Step 9 - Enjoy your new controller
 For support, send email to support@aviatrix.com.
 
 
-.. |image1| image:: Migration_From_Marketplace/image1.png
-.. |image2| image:: Migration_From_Marketplace/image2.png
-.. |image3| image:: Migration_From_Marketplace/image3.png
-.. |image4| image:: Migration_From_Marketplace/image4.png
-.. |image5| image:: Migration_From_Marketplace/image5.png
+.. |image1| image:: Migration_From_Marketplace/image1-3.3.png
+.. |image2| image:: Migration_From_Marketplace/image2-3.3.png
+.. |image3| image:: Migration_From_Marketplace/image3-3.3.png
+.. |image4| image:: Migration_From_Marketplace/image4-3.3.png
+.. |image5| image:: Migration_From_Marketplace/image5-3.3.png
 
 .. disqus::
