@@ -61,7 +61,7 @@ On the AWS console, go to EC2-->Network & Security --> Elastic IPs, associate th
 
 Step 6 - Upgrade Controller
 ===========================
-Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at Settings-->Maintenance-->Upgrade tab. Please note that Aviatrix only supports controller backup and restore within the same software version.
+Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at Settings-->Maintenance-->Upgrade tab. Please note that Aviatrix only supports controller backup and restore within the same software version. In this example, the previous controller is upgraded to the latest 3.3.402 at the time of this writing. The following screenshot shows that the new controller is running the latest 3.3.402 as well.
 
 |image3|
 
