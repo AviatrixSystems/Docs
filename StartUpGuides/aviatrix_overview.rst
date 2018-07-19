@@ -48,11 +48,11 @@ We also offer a `hosted service <https://www.aviatrix.com/trial/>`_ where we ope
 Why Should You Consider Us?
 =============================
 
-Customers find the most compelling value of our product is ease of use, both at configuration time and operation time. Ease of use is easier said than done in networking as it is by nature complex, how can one achieve that? Here is how we do it:
+Customers find the most compelling value of our product is simplicity, both at configuration time and operation time. Simplicity is easier said than done in networking as it is by nature complex, how can one achieve that? Here is how we do it:
 
-- **Abstraction**  Abstraction is key to achieve ease of use at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
+- **Abstraction**  Abstraction is key to achieve simplicity at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
 
-- **External Integration** We integrated and developed applications for all popular logging services to forward events, alerts and a turn key dashboard to achieve ease of use at operation time. 
+- **External Integration** We integrated and developed applications for all popular logging services to forward events, alerts and a turn key dashboard to achieve simplicity at operation time. 
 
 - **Centrally Managed** A single pane of glass to manage all your cloud network scattered in different regions and clouds.
 
@@ -63,7 +63,7 @@ Another example, we hide the complexity of building IPSEC so that you have the s
 experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. And we do one better, not only the connectivity is setup, the underlying route entry is 
 configured too so that you have a turn key solution. 
 
-Beyond ease of use, Aviatrix solutions solve many problems better than other products in each of the use cases. This document summarizes these problems. Links to 
+Beyond simplicity, Aviatrix solutions solve many problems better than other products in each of the use cases. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
 
 Our goal is to become your go-to tool for all things cloud networking. 
