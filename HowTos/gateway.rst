@@ -406,7 +406,6 @@ This feature allows you to add `secondary IP addresses <https://docs.aws.amazon.
 
   172.32.0.20 (for single secondary IP address)
   172.32.0.20-172.32.0.22 (for a multiple consecutive secondary IP addresses)
-  172.32.0.20,172.32.0.22-172.32.0.25 (for a multiple non consecutive secondary IP addresses)
 
 The main use case for this feature is to enable you to configure source NAT function that maps to multiple IP addresses, instead of a single one. When used for this purpose, 
 you need to go to AWS console to first allocate an `EIP <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-eips.html>`_, then `associate each secondary IP with an 
