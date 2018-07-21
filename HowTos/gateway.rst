@@ -12,6 +12,10 @@ Launch a gateway
 
 Click Gateway at navigation panel. Click New to launch a gateway. To launch a gateway with OpenVPN® capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
 
+Public Subnet
+--------------
+
+Aviatrix gateway must be launched on a public subnet. 
 
 Select Gateway Size
 -------------------
