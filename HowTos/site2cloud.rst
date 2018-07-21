@@ -204,10 +204,10 @@ Select the remote site device from the dropdowns provided.  If your remote site 
 
 This template file that contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
-DPD Configuration
--------------------
+Dead Peer Detection
+--------------------
 
-DPD stands for Dead Peer Detection. It is a standard mechanism between IPSEC tunnels to 
+Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPSEC tunnels to 
 send periodic messages to ensure the remote site is up. 
 
 By default DPD detection is enabled. 
