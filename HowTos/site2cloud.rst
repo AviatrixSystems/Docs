@@ -189,14 +189,36 @@ These Local Subnets are advertised to Remote Subnets that the site2cloud connect
 
 You can change these settings later.
 
+Edit Connection
+=================
+
+Once a connection is created, you can download the configuration or edit parameters. 
+To do this, select **Site2Cloud** from the navigation menu and select the connection you just created.
+
 Download Configuration
 ----------------------
 
-You can generate remote site configuration template.  To do this, select **Site2Cloud** from the navigation menu and select the connection you just created.
+You can generate remote site configuration template. 
 
 Select the remote site device from the dropdowns provided.  If your remote site device is not listed in the dropdown menu, simply select an available one in the menu or use the **Generic**/**Vendor Independent** template.
 
 This template file that contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
+
+DPD Detection
+-----------------
+
+By default DPD detection is enabled. 
+
+Manual BGP Advertised Network List
+-----------------------------------
+
+By default, Aviatrix Transit GW advertises individual Spoke VPC CIDRs to VGW. You can 
+override that by manually entering the intended CIDR list to advertise to VGW. 
+
+To enable it, simply enter the field with a list of CIDR blocks separated by comma, 
+then click "Change BGP Manual Spoke Advertisement". 
+
+To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
 
 Network Device Support
 ======================
