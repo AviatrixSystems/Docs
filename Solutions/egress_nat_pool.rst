@@ -10,18 +10,38 @@ How to Setup Egress NAT to a Pool of IP Addresses
 Aviatrix supports NAT function where the gateway replaces a packet's source IP address with 
 the gateway's source IP address. When forwarded packets leave the gateway, the source IP address is always the address of the gateway. 
 
-This document describes how to translate the source IP address of forwarded packets to a 
-pool of IP addresses of the Aviatrix gateway by using secondary IP address properties of the 
-gateway instance.  
+This document describes how to configure for a specific scenario. The scenario is 
+described as follows. 
+
+ - When a packet enters the gateway, the packet's TCP destination port needs to be changed to a different port number. (Destination port translation.)
+ - Based on the original destination port, the packet's source address needs to be changed to a specific source address. (Source address translation.)
 
 Follow the steps below to setup.
 
-Step 1. Setup Secondary IP addresses
+Step 1. Mark and Map Destination Port
+-----------------------------------------
+
+Go to Gateway page, click on the gateway you wish to configure. Click Edit.
+
+Scroll down to "Destination NAT", click Add/Edit DNAT
+
+ 1. Click Add/Edit DNAT
+ #. Click Add New
+ #. Enter Destination port, protocol, Mark and DNAT port.
+ #. Click Save
+ #. Repeat step 1 for multiple entries. 
+ #. Click Update to commit. 
+
+|dnat-port-mapping|
+
+Step 2. Add Multiple IP addresses
 -------------------------------------
+
+This action creates secondary IP addresses on the selected gateway instance. Note these IP addresses must be in one consecutive list.
 
 Go to Gateway page, click on the gateway you wish to configure. Click Edit. 
 
-Scroll down to "Edit Secondary IP", enter one or more secondary IP addresses to the gateway. You must enter them in a segment format. 
+Scroll down to "Edit Multiple IPs", enter one or more secondary IP addresses to the gateway. You must enter them in a segment format. 
 
 Example 1: 172.32.0.201-172.32.0.201 
 
@@ -33,14 +53,24 @@ Note the number of secondary IP addresses are `limited <https://docs.aws.amazon.
 
 For example, if the gateway instance size is t2.micro, it can support only one secondary IP address. 
 
-Step 2. Enable SNAT
---------------------
+Step 3. Configure SNAT
+-----------------------
 
-Continue on the Edit page, scroll to SNAT. Select `Secondary IP`.
+Continue on the Edit page, scroll to SNAT. Select `Customized SNAT`.
 
-This will enable the gateway with NAT function that can translate to the secondary IP addresses specified in the previous step. 
+ 1. Select Customized SNAT
+ #. Click Add New
+ #. Enter Mark configured in Step 1; enter SNAT IP from Step 2
+ #. Click Save
+ #. Repeat the above steps for more entries.
+ #. Click Enable SNAT to commit.
 
-Step 3. Associate EIPs
+As shown below, 
+
+|SNAT-customiz|
+
+
+Step 4. Associate EIPs
 -----------------------
 
 Go to AWS Console, Services -> EC2 -> Elastic IPs -> Allocate new address. 
@@ -51,18 +81,6 @@ Repeat the above steps for all secondary IP addresses.
 
 Done.
 
-(Optional) Step 4. Map Destination Port
------------------------------------------
-
-If you also like to map the destination port pre routing, you can use DNAT at the Edit Gateway page to config. 
-
- 1. Enter the fields 
- #. Click Save
- #. Click Update
-
-as shown below.
-
-|edit-dnat|
 
 
 
@@ -70,6 +88,12 @@ as shown below.
    :scale: 30%
 
 .. |edit-dnat| image:: egress_nat_pool_media/edit-dnat.png
+   :scale: 30%
+
+.. |dnat-port-mapping| image:: egress_nat_pool_media/dnat-port-mapping.png
+   :scale: 30%
+
+.. |SNAT-customiz| image:: egress_nat_pool_media/SNAT-customiz.png
    :scale: 30%
 
 
