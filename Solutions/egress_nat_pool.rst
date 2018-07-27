@@ -27,7 +27,7 @@ Step 2. Add Multiple IP addresses
 
 This action creates secondary IP addresses on the selected gateway instance. Note these IP addresses must be in one consecutive list. This secondary IP address should not include the primary IP address of the gateway.
 
-Go to Gateway page, click on the gateway you wish to configure. Click Edit.
+Go to Gateway page, click on the gateway launched in Step 1. Click Edit.
 
 Scroll down to "Edit Multiple IPs", enter one or more secondary IP addresses to the gateway. You must enter them in a segment format.
 
