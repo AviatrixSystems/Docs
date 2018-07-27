@@ -22,8 +22,27 @@ Go to Gateway page, click New Gateway to launch a gateway. Do not check "Enable 
 
 Make sure you select a gateway size that supports multiple secondary IPs. Click `here <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI>`_ for more information. 
 
+Step 2. Add Multiple IP addresses
+-------------------------------------
 
-Step 2. Mark and Map Destination Port
+This action creates secondary IP addresses on the selected gateway instance. Note these IP addresses must be in one consecutive list. This secondary IP address should not include the primary IP address of the gateway.
+
+Go to Gateway page, click on the gateway you wish to configure. Click Edit.
+
+Scroll down to "Edit Multiple IPs", enter one or more secondary IP addresses to the gateway. You must enter them in a segment format.
+
+Example 1: 172.32.0.201-172.32.0.201
+
+Example 2: 192.168.8.10-192.168.8.16
+
+|edit-secondary-ip|
+
+Note the number of secondary IP addresses are `limited <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI>`_ to the gateway instance size.
+
+For example, if the gateway instance size is t2.micro, it can support only one secondary IP address.
+
+
+Step 3. Mark and Map Destination Port
 -----------------------------------------
 
 This action instructs the gateway to translate the destination port and also mark the associated TCP session.
@@ -41,24 +60,6 @@ Scroll down to "Destination NAT", click Add/Edit DNAT
 
 |dnat-port-mapping|
 
-Step 3. Add Multiple IP addresses
--------------------------------------
-
-This action creates secondary IP addresses on the selected gateway instance. Note these IP addresses must be in one consecutive list. This secondary IP address should not include the primary IP address of the gateway. 
-
-Go to Gateway page, click on the gateway you wish to configure. Click Edit. 
-
-Scroll down to "Edit Multiple IPs", enter one or more secondary IP addresses to the gateway. You must enter them in a segment format. 
-
-Example 1: 172.32.0.201-172.32.0.201 
-
-Example 2: 192.168.8.10-192.168.8.16
-
-|edit-secondary-ip|
-
-Note the number of secondary IP addresses are `limited <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI>`_ to the gateway instance size. 
-
-For example, if the gateway instance size is t2.micro, it can support only one secondary IP address. 
 
 Step 4. Configure SNAT
 -----------------------
@@ -69,7 +70,7 @@ Continue on the Edit page, scroll to SNAT. Select `Customized SNAT`.
 
  1. Select Customized SNAT
  #. Click Add New
- #. Enter Mark configured in Step 2; enter one SNAT IP from Step 3
+ #. Enter Mark configured in Step 3; enter one SNAT IP from Step 2
  #. Click Save
  #. Repeat the above steps for more entries.
  #. Click Enable SNAT to commit.
