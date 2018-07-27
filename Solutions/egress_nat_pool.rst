@@ -15,7 +15,15 @@ described as follows.
 
 Follow the steps below to setup for the scenario.
 
-Step 1. Mark and Map Destination Port
+Step 1. Launch a gateway
+-------------------------
+
+Go to Gateway page, click New Gateway to launch a gateway. Do not check "Enable SNAT".
+
+Make sure you select a gateway size that supports multiple secondary IPs. Click `here <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI>`_ for more information. 
+
+
+Step 2. Mark and Map Destination Port
 -----------------------------------------
 
 This action instructs the gateway to translate the destination port and also mark the associated TCP session.
@@ -33,7 +41,7 @@ Scroll down to "Destination NAT", click Add/Edit DNAT
 
 |dnat-port-mapping|
 
-Step 2. Add Multiple IP addresses
+Step 3. Add Multiple IP addresses
 -------------------------------------
 
 This action creates secondary IP addresses on the selected gateway instance. Note these IP addresses must be in one consecutive list. This secondary IP address should not include the primary IP address of the gateway. 
@@ -52,7 +60,7 @@ Note the number of secondary IP addresses are `limited <https://docs.aws.amazon.
 
 For example, if the gateway instance size is t2.micro, it can support only one secondary IP address. 
 
-Step 3. Configure SNAT
+Step 4. Configure SNAT
 -----------------------
 
 This action changes the packet's source IP address based on the "Mark" configured in Step 1. 
@@ -61,7 +69,7 @@ Continue on the Edit page, scroll to SNAT. Select `Customized SNAT`.
 
  1. Select Customized SNAT
  #. Click Add New
- #. Enter Mark configured in Step 1; enter one SNAT IP from Step 2
+ #. Enter Mark configured in Step 2; enter one SNAT IP from Step 3
  #. Click Save
  #. Repeat the above steps for more entries.
  #. Click Enable SNAT to commit.
@@ -71,7 +79,7 @@ As shown below,
 |SNAT-customiz|
 
 
-Step 4. Associate EIPs
+Step 5. Associate EIPs
 -----------------------
 
 Go to AWS Console, Services -> EC2 -> Elastic IPs -> Allocate new address. 
