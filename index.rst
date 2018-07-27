@@ -160,6 +160,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Useful Tools 
 
    HowTos/vpc_tracker
+   HowTos/create_vpc
 
 .. _Advanced Config:
 
