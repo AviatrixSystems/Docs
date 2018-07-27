@@ -17,6 +17,12 @@ Public Subnet
 
 Aviatrix gateway must be launched on a public subnet. 
 
+A public subnet in AWS VPC is defined as 
+a subnet whose associated route table has a default route entry that points to IGW. To learn 
+more about VPC and subnets, check out `this link. <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_.
+
+If you do not have a VPC with public subnet, you can use our "Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool to create a VPC with fully populated public and private subnet in each AZ. 
+
 Select Gateway Size
 -------------------
 
