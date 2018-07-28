@@ -2,16 +2,6 @@
    :description: Site2Cloud (Aviatrix Gateway - Meraki MX64)
    :keywords: meraki, aviatrix, site2cloud
 
-.. role:: orange
-
-.. raw:: html
-
-   <style>
-     .orange {
-       color: #FFB366;
-     }
-   </style>
-
 =====================================================================
 Site2Cloud (Aviatrix Gateway - Meraki MX64)
 =====================================================================
