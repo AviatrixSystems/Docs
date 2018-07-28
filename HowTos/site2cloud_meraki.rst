@@ -110,7 +110,7 @@ Configuring Site-to-site VPN in Meraki MX64
 
    |meraki04|
 
-8. Send traffic from on-prem Meraki MX64 internal network to Aviatrix Gateway VPCi. Verify that VPN Status is green under Non-Meraki peer tab. 
+8. Send traffic from on-prem Meraki MX64 internal network to Aviatrix Gateway VPC. Verify that VPN Status is green under Non-Meraki peer tab. 
 
    |meraki05|
 
