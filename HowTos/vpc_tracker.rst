@@ -6,7 +6,7 @@
 VPC Tracker
 ###################################
 
-VPC Tracker is a tool that collects and help you manage your network CIDR ranges. 
+VPC Tracker is a tool that collects and helps you manage your network CIDR ranges at a central place.  
 
 
 .. |edit-designated-gateway| image:: gateway_media/edit-designated-gateway.png
