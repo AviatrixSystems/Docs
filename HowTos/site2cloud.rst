@@ -131,13 +131,12 @@ For mapped connections, the following four fields will be displayed:
 
    .. note::
       1:1 mapping is supported as long as both sides are configured properly.  For example, you can configure:
-      Remote Subnet(Real): 10.1.7.10/32
-      Remote Subnet(Virtual): 172.16.7.10/32
 
-      Local Subnet(Real): 10.1.7.15/32
-      Local Subnet(Virtual): 192.168.7.45/32
-
-      This configuration also supports multiple values (using ,)
+      | Remote Subnet(Real): 10.1.7.10/32      
+      | Remote Subnet(Virtual): 172.16.7.10/32
+      |
+      | Local Subnet(Real): 10.1.7.15/32
+      | Local Subnet(Virtual): 192.168.7.45/32
 
 #. Click `OK`
 
