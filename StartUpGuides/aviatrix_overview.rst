@@ -34,7 +34,7 @@ We also provide security features for workloads/application in the cloud:
 In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
 agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ to cloud for vmware workloads. 
 
-Where To Launch Aviatrix?
+How To Launch Aviatrix?
 =========================
 
 Our product, Aviatrix Secure Networking Platform, consists of two components, Controller and
