@@ -243,6 +243,8 @@ terminate VPN connection. Below are configuration examples to specific devices.
     - `Check Point Firewall <./S2C_GW_CP.html>`__
     - `Cisco ASA <./S2C_GW_ASA.html>`__
     - `FortiGate <./site2cloud_fortigate.html>`__
+    - `Cisco Meraki <./site2cloud_meraki.html>`__
+    - `Cisco ISR <./S2C_GW_IOS.html>`__
 
 Troubleshooting
 ===============

@@ -12,9 +12,36 @@ R3.4 (8/5/2018)
 
 - **Egress FQDN Import and Export** allows you to download and upload the rules in an FQDN tag in a text file format. This helps you manage large set of rules of multiple tags. For example, you can upload the text file downloaded from `FQDN Discover <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_. You can also download rules from one tag and upload to a different tag to save time from typing. For details, check out `FQDN Export <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#export>`_ and `FQDN Import <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#import>`_
 
+- **FQDN Azure support** is now available. The configuration is the same as for AWS. 
+
+- **FQDN Exception Rule** gives an option to block SSL request that has SNI field missing. For example, if an application use IP address directly in its HTTPS request, disable Exception Rule will block the request, unless the IP address is configured as a rule in the tag. 
+
 - **Network Address Translation** is significantly expanded to support many new use cases. For example, gateway can now do network translation to a pool of IP addresses, a customized IP addresses and session based translation. This enables gateway to perform complex and customized network address translation requirements. For an example use case, check out `this solution guide. <https://docs.aviatrix.com/Solutions/egress_nat_pool.html>`_
 
 
+2. Useful Tools
+----------------
+
+- **VPC Tracker** is a tool that gives you an at a glance view of all your network CIDR ranges of all your cloud accounts in all regions. No gateways launch is required, just add `secondary access accounts on the Controller <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_, the Controller will retrieve all information for you. The VPC Tracker is also displayed on the Controller Dashboard. You have the option to turn it off. To view all VPC CIDRs, go to "Useful Tools" at the main navigation menu, click "VPC Tracker". To learn more, read the `VPC Tracker <https://docs.aviatrix.com/HowTos/vpc_tracker.html>`_.
+
+- **Create VPC** is a tool that creates an AWS VPC with a public subnet and private subnet in each AZ, a public route table, private route table and IGW in a specified account and region. 
+
+3. Connectivity
+----------------
+
+- **AWS NLB Support for Aviatrix OpenVPN® gateways** allows you to display the remote users' public IP address when they are connected to the gateway. 
+
+- **Configurable Dead Peer Detection (DPD)** provides the flexibility to work with third security appliance when building the `Site2Cloud <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ tunnels. 
+
+- **Use Your Own DNS** allows the gateway to use the DNS server configured in the VPC DHCP options.One use case is for Aviatrix gateways to export logs to a private Splunk Server that would like to have its DNS name configured on the `Logging setup <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_. For more information, read `the guide. <https://docs.aviatrix.com/HowTos/gateway.html#use-vpc-vnet-dns-server>`_ 
+
+
+4. Operation
+-------------
+
+- **Controller HA in AWS** is simplified and now supports all types of AMIs in addition to BYOL. Follow the `instructions <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ to enable HA. 
+
+- **Deployment Scale** is improved. A Controller of t2.large instance can support 500 Aviatrix gateways.  
 
 R3.3 (6/10/2018)
 =================
