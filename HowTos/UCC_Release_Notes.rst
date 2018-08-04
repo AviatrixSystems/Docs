@@ -12,9 +12,7 @@ R3.4 (8/5/2018)
 
 - **Egress FQDN Import and Export** allows you to download and upload the rules in an FQDN tag in a text file format. This helps you manage large set of rules of multiple tags. For example, you can upload the text file downloaded from `FQDN Discover <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_. You can also download rules from one tag and upload to a different tag to save time from typing. For details, check out `FQDN Export <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#export>`_ and `FQDN Import <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#import>`_
 
-- **SNAT with Multiple IP Addresses** expands the source NAT feature to allow you to NAT to a pool of IP addresses. These IP addresses are the gateway's secondary IP addresses. Note currently you need to associate them with EIP on the AWS console to complete the configuration.   
-
-- **Customized SNAT** 
+- **Network Address Translation** is significantly expanded to support many new use cases. For example, gateway can now do network translation to a pool of IP addresses, a customized IP addresses and session based translation. This enables gateway to perform complex and customized network address translation requirements. For an example use case, check out `this solution guide. <https://docs.aviatrix.com/Solutions/egress_nat_pool.html>`_
 
 
 
