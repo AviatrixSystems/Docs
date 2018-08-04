@@ -170,7 +170,6 @@ Enjoy!
    :scale: 50%
 
 .. |fqdn-add-domain-names| image::  FQDN_Whitelists_Ref_Design_media/fqdn-add-domain-names.png
-   :scale: 50%
 
 .. |fqdn-attach-spoke1| image::  FQDN_Whitelists_Ref_Design_media/fqdn-attach-spoke1.png
    :scale: 50%
