@@ -318,17 +318,16 @@ target for route entry 0.0.0.0/0.
 Three modes of Source NAT are supported:
 
 1. Single IP
-^^^^^^^^^^^^^
+==============
 
 When "Single IP" is selected, the gateway's primary IP address is used as source address for source NAT function. This is the simplest and default mode when you enable NAT at gateway launch time. 
 
 2. Multiple IPs
-^^^^^^^^^^^^^^^^
-
+=================
 When "Multiple IPs" is selected, the gateway translates the source address to the pool of the multiple IPs in a round robin fashion. The multiple IPs are the secondary IP addresses of the gateway that you need to `setup <https://docs.aviatrix.com/HowTos/gateway.html#edit-secondary-ips>`_ first. 
 
 3. Customized SNAT
-^^^^^^^^^^^^^^^^^^^
+====================
 
 When "Customized SNAT" is selected, the gateway can translate source IP address ranges to different SNAT address and ports, as shown below. Check out `this link <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-4-configure-snat>`_ for detailed explanation.  
 
