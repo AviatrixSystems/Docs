@@ -32,13 +32,16 @@ What does Aviatrix FQDN feature do?
 Aviatrix Fully Qualified Domain Name (FQDN)
 Whitelisting is a security feature specially designed for workloads in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC.
 
-Aviatrix FQDN Whitelisting filters on HTTP and HTTPS traffic and allows 
+Starting from release 3.4, Aviatrix FQDN Whitelisting filters on any TCP and UDP traffic 
+including HTTP, HTTPS and SFTP traffic and allows 
 only the destination host
 names (whitelist) specified in the list to pass and drop all other
 destinations. Each host name is specified as fully qualified domain
 name. For example, if you only allow Internet bound traffic to
 `www.salesforce.com <http://www.salesforce.com>`__, you can list the
-domain name in the whitelist. It also supports wild card, such as \*. In
+domain name in the whitelist. 
+
+For HTTP/HTTPS (TCP port 80/443), FQDN feature also supports wild card, such as \*. In
 this example, you can specify \*.salesforce.com to allow traffic to any
 domain names that ends salesforce.com.
 
@@ -50,6 +53,8 @@ How does it work?
 
 This features works for HTTP and HTTPS traffic to public Internet. The function is carried out inline
 without requiring any certificate or keys to decrypt the traffic.
+
+Starting from release 3.4, non HTTP/HTTPS traffic can also be filtered based on domain names. Use cases are secure file transfer (SFTP) to external sites, secure login in (SSH) to external sites. 
 
 A tag is defined as a list of FQDNs and it is created and managed on the Controller 
 console. One or more gateways is attached to
