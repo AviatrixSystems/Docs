@@ -90,7 +90,8 @@ Enable the new tag and click Edit, as shown below:
 
 |fqdn-enable-edit|
 
-Click "+Add New" to add each URL, wild card is allowed, as shown below:
+Click "+Add New" to add each URL, wild card is allowed for HTTP/HTTPS (TCP 443), as shown below.
+(Action "Update" means to save the rules in the tag and if gateways are attached to the tag, "Update" applies the rules to the gateways.)
 
 |fqdn-add-domain-names|
 
@@ -128,6 +129,29 @@ are dropped unless the specific destination IP address of the
 packet is listed in the Whitelist. The use case could be certain old application uses 
 hard coded destination IP address to access outside services.  
 
+Export
+==============
+
+This feature is available in Release 3.4 and later. 
+
+Export allows you to download the configured FQDN rules on a per tag bases, 
+in a human readable text file format, as shown in the example below:
+
+|export| 
+
+Import
+========
+
+This feature is available in Release 3.4 and later. 
+
+Import allows you to upload a text file that contains FQDN rules to a specific tag. 
+The text file can be: 
+
+ 1. The downloaded file from `FQDN Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_
+ #. The download file from Export from a different tag. 
+ #. A text file in the format compatible to Export. 
+
+
 
 For support, send email to support@aviatrix.com
 
@@ -154,6 +178,8 @@ Enjoy!
 .. |fqdn-attach-spoke2| image::  FQDN_Whitelists_Ref_Design_media/fqdn-attach-spoke2.png
    :scale: 50%
 
+.. |export| image::  FQDN_Whitelists_Ref_Design_media/export.png
+   :scale: 50%
 
 .. add in the disqus tag
 
