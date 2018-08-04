@@ -23,29 +23,14 @@ Setup by CloudFormation template
 
 This is the recommended approach. 
 
- 1. Click the `Secondary account link <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=SecondaryAccountName&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aviatrix-secondary-account-iam.json>`_ to create secondary account credential and build trust to the Controller account. 
- #. If you have not logged in, you will be prompted to login to AWS  with secondary account.
- #. Once login, you should be already in the CloudFormation page. Note the CloudFormation is already loaded.
- #. Click `Next`.
- #. You can change the default Stack name. For example, Aviatrix-prod-account. 
- #. Enter the Aviatrix Controller's `AWS account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_. 
- #. Click `Next`.
- #. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`.
-
-    |imageCFEnableTermProtection|
-
- #. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.  When the stack creation completes, the secondary account IAM roles and policies are all set. 
-
-    |imageCFCreateFinal|
-
- #. Done.
+Follow `the instructions <https://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-additional-access-account-for-aws-cloud>`_ to setup. 
 
 
 
 Setup Secondary Account IAM Manually
 =========================================================================
 
-This is not a recommended approach as it takes longer time and error prone. 
+**This is not a recommended approach as it takes longer time and error prone.** 
 
 1. Create two IAM custom policies
 --------------------------------------
