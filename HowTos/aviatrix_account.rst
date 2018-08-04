@@ -40,7 +40,7 @@ Setup additional access account for AWS cloud
 ------------------------------------------------------
 
 After you go through the onboarding process and create the primary access account, 
-you can create additional or secondary Aviatrix access accounts on the Controller. This will allow you 
+you can create additional or secondary Aviatrix access accounts on the Controller. This allows you 
 to launch gateways and build connectivity across different AWS accounts.  
 
 To configure, 
@@ -49,13 +49,18 @@ To configure,
  1. Go to Aviatrix -> Accounts -> Access Accounts -> +New Account, to create this new secondary account.
  #. Enter a unique account name. For example, marketingOps
  #. Check `AWS`.
- #. Check `IAM role-based`.
- #. Follow `Readme first <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ to run a CloudFormation script that setups IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
+ #. Check `IAM role-based` (enabled by default).
+ #. Click **this CloudFormation Script** that takes to AWS Console and run CloudFormation script to setup IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
  #. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
  #. Click `OK`.
  #. The new secondary account should be created.
  #. Now you can create connectivity between two VPCs in different AWS accounts.
 
+The above steps is shown below:
+
+
+.. |secondary_account| image:: adminusers_media/secondary_account.png
+   :scale: 50%
 
 .. |account_structure| image:: adminusers_media/account_structure.png
    :scale: 50%

@@ -8,21 +8,21 @@ R3.4 (8/5/2018)
 1. Security
 -----------
 
-- **Egress FQDN for non HTTP/HTTPS traffic** expands the popular FQDN feature to allow you to control traffic for SFTP, SSH and any other TCP/UDP port using domain names. The new FQDN is backward compatible and auto populate the default protocol and port number (TCP/443) when you configure. For details, check out `Egress Control Filter <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+- **Egress FQDN for non HTTP/HTTPS traffic** expands the popular FQDN feature to allow you to control traffic for SFTP, SSH and any other TCP/UDP port using domain names. The new FQDN is backward compatible and auto populates the default protocol and port number (TCP/443) when you configure. For details, check out `Egress Control Filter <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
 
-- **Egress FQDN Import and Export** allows you to download and upload the rules in an FQDN tag in a text file format. This helps you manage large set of rules of multiple tags. For example, you can upload the text file downloaded from `FQDN Discover <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_. You can also download rules from one tag and upload to a different tag to save time from typing. For details, check out `FQDN Export <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#export>`_ and `FQDN Import <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#import>`_
+- **Egress FQDN Import and Export** allows you to download and upload the rules of a FQDN tag in a text file format. This helps you manage large set of rules of multiple tags. For example, you may upload the text file downloaded from `FQDN Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_. You may also download rules from one tag and upload to a different tag to save time from typing. For details, check out `FQDN Export <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#export>`_ and `FQDN Import <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#import>`_.
 
 - **FQDN Azure support** is now available. The configuration is the same as for AWS. 
 
-- **FQDN Exception Rule** gives an option to block SSL request that has SNI field missing. For example, if an application use IP address directly in its HTTPS request, disable Exception Rule will block the request, unless the IP address is configured as a rule in the tag. 
+- **FQDN Exception Rule** provides an option to block SSL request that does not have SNI field. For example, if an application use hard coded destination IP address in its HTTPS request, disabling Exception Rule will block the request, unless the IP address is configured as a rule in the tag. 
 
-- **Network Address Translation** is significantly expanded to support many new use cases. For example, gateway can now do network translation to a pool of IP addresses, a customized IP addresses and session based translation. This enables gateway to perform complex and customized network address translation requirements. For an example use case, check out `this solution guide. <https://docs.aviatrix.com/Solutions/egress_nat_pool.html>`_
+- **Network Address Translation** is significantly expanded to support combinations of SNAT, DNAT nad flexible rules for new use cases. For example, gateway can now do network translation to a pool of IP addresses, a customized IP addresses and session based translation. This enables gateway to perform complex and customized network address translation requirements. For an example use case, check out `this solution guide. <https://docs.aviatrix.com/Solutions/egress_nat_pool.html>`_
 
 
 2. Useful Tools
 ----------------
 
-- **VPC Tracker** is a tool that gives you an at a glance view of all your network CIDR ranges of all your cloud accounts in all regions. No gateways launch is required, just add `secondary access accounts on the Controller <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_, the Controller will retrieve all information for you. The VPC Tracker is also displayed on the Controller Dashboard. You have the option to turn it off. To view all VPC CIDRs, go to "Useful Tools" at the main navigation menu, click "VPC Tracker". To learn more, read the `VPC Tracker <https://docs.aviatrix.com/HowTos/vpc_tracker.html>`_.
+- **VPC Tracker** is a tool that provides a "at a glance" view of cloud network CIDR ranges of all your cloud accounts in all regions. No gateway launch required, just add `secondary access accounts on the Controller <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_, the Controller will retrieve all information for you. The VPC Tracker is also displayed on the Controller Dashboard. You have the option to turn it off. To view all VPC CIDRs, go to "Useful Tools" at the main navigation menu, click "VPC Tracker". To learn more, read the `VPC Tracker <https://docs.aviatrix.com/HowTos/vpc_tracker.html>`_.
 
 - **Create VPC** is a tool that creates an AWS VPC with a public subnet and private subnet in each AZ, a public route table, private route table and IGW in a specified account and region. 
 
