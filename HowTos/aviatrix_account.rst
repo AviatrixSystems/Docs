@@ -58,6 +58,7 @@ To configure,
 
 The above steps is shown below:
 
+|secondary_account|
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
    :scale: 50%
