@@ -315,10 +315,34 @@ When NAT is enabled, all route tables for private subnets in the VPC
 are programmed with an route entry that points the gateway as the 
 target for route entry 0.0.0.0/0. 
 
+Three modes of Source NAT are supported:
+
+1. Single IP
+~~~~~~~~~~~~~~
+
+When "Single IP" is selected, the gateway's primary IP address is used as source address for source NAT function. This is the simplest and default mode when you enable NAT at gateway launch time. 
+
+2. Multiple IPs
+~~~~~~~~~~~~~~~~
+
+When "Multiple IPs" is selected, the gateway translates the source address to the pool of the multiple IPs in a round robin fashion. The multiple IPs are the secondary IP addresses of the gateway that you need to `setup <https://docs.aviatrix.com/HowTos/gateway.html#edit-secondary-ips>`_ first. 
+
+3. Customized SNAT
+~~~~~~~~~~~~~~~~~~~
+
+When "Customized SNAT" is selected, the gateway can translate source IP address ranges to different SNAT address and ports, as shown below. Check out `this link <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-4-configure-snat>`_ for detailed explanation.  
+
+|SNAT-customize|
+
+
 Destination NAT
 ----------------
 
 Destination NAT (DNAT) allow you to change the destination to a virtual address range. 
+
+There are multiple optional parameters you can configure to meet your requirement. Follow `this example <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-3-mark-and-map-destination-port>`_ to see how DNAT can be used, as shown below:
+
+|dnat-port-mapping| 
 
 
 Monitor Gateway Subnet
@@ -450,5 +474,11 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |edit-designated-gateway| image:: gateway_media/edit-designated-gateway.png
    :scale: 50%
+
+.. |SNAT-customize| image:: gateway_media/SNAT-customize.png
+   :scale: 30%
+
+.. |dnat-port-mapping| image:: gateway_media/dnat-port-mapping.png
+   :scale: 30%
 
 .. disqus::

@@ -2,6 +2,21 @@
 Release Notes
 =======================================
 
+R3.4 (8/5/2018)
+================
+
+1. Security
+-----------
+
+- **Egress FQDN for non HTTP/HTTPS traffic** expands the popular FQDN feature to allow you to control traffic for SFTP, SSH and any other TCP/UDP port using domain names. The new FQDN is backward compatible and auto populate the default protocol and port number (TCP/443) when you configure. For details, check out `Egress Control Filter <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+
+- **Egress FQDN Import and Export** allows you to download and upload the rules in an FQDN tag in a text file format. This helps you manage large set of rules of multiple tags. For example, you can upload the text file downloaded from `FQDN Discover <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_. You can also download rules from one tag and upload to a different tag to save time from typing. For details, check out `FQDN Export <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#export>`_ and `FQDN Import <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#import>`_
+
+- **SNAT with Multiple IP Addresses** expands the source NAT feature to allow you to NAT to a pool of IP addresses. These IP addresses are the gateway's secondary IP addresses. Note currently you need to associate them with EIP on the AWS console to complete the configuration.   
+
+- **Customized SNAT** 
+
+
 
 R3.3 (6/10/2018)
 =================
