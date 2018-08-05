@@ -38,16 +38,19 @@ Architecturally, Aviatrix solution is a centrally managed, loosely
 coupled and globally deployed platform built for the cloud from the
 ground up.
 
+
 How do I launch the product?
 --------------------------------
 
-The product consists of two components, the controller and one or more
+The product consists of two components, the Controller and one or more
 gateways. The gateway is launched from the controller.
 
-The controller provides a central console for all provisioning,
+The Controller provides a central console for all provisioning,
 monitoring and upgrades of the services.
 
-The controller is available in AWS and Azure marketplace. It is also
+The Controller can be launched and managed by Aviatrix as a `Hosted Service <https://www.aviatrix.com/trial/>`_.
+
+The Controller is also available in AWS and Azure marketplace. It is also
 available as a GCloud community image. For marketplace launch, search
 for “Aviatrix” in marketplace.
 
@@ -57,18 +60,28 @@ Follow `Getting Started on Azure <http://docs.aviatrix.com/StartUpGuides/azure-a
 
 Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch Controller on Google.
 
+What are the environment requirements for Aviatrix product?
+-----------------------------------------------------------------
+
+Aviatrix Controller and gateways are deployed on public subnets with public IP addresses for Internet access, as shown below.
+
+|deployment|
+
+
+
 How do I access the Controller?
 --------------------------------
 
 
-Once you have launched the instance, you access the Controller instance
-via a web browser.
+If your Controller is launched as AMI from marketplace, you access the Controller instance via a web browser.
 
 https://public\_IP\_address\_of\_the\_controller\_instance
 
 Login with username “admin”. The first time password is the private IP
 address of the controller instance. You are required to change the
 password at your first login.
+
+If you are using Aviatrix Hosted Service (AHS), following the instructions sent to you to access. 
 
 How do I secure the Controller access?
 --------------------------------------
@@ -332,5 +345,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |image1| image:: FAQ_media/image1.png
+
+.. |deployment| image:: FAQ_media/deployment.png
+   :scale: 50%
 
 .. disqus::
