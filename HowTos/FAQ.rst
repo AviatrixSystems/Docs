@@ -347,6 +347,6 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |image1| image:: FAQ_media/image1.png
 
 .. |deployment| image:: FAQ_media/deployment.png
-   :scale: 50%
+   :scale: 30%
 
 .. disqus::
