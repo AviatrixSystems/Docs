@@ -60,7 +60,7 @@ Follow `Getting Started on Azure <http://docs.aviatrix.com/StartUpGuides/azure-a
 
 Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch Controller on Google.
 
-What are the environment requirements for Aviatrix product?
+What are the deployment requirements for Aviatrix product?
 -----------------------------------------------------------------
 
 Aviatrix Controller and gateways are deployed on public subnets with public IP addresses for Internet access, as shown below.
