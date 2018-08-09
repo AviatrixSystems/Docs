@@ -45,10 +45,8 @@ Manages an Aviatrix cloud account.
 	  password = "password"
 	}
 
-	# Create Aviatrix AWS account with IAM roles
+	# Create Aviatrix AWS access account with IAM roles
 	# account_name - Aviatrix cloud account name
-	# account_password - Password for default user of account.
-	# account_email - Valid email-id to receive notifications.
 	# cloud_type - Enter 1 for AWS. Only AWS is currently supported.
 	# aws_account_number - AWS account number
 	# aws_iam - Enter true if you want to use IAM role to configure account
@@ -57,8 +55,6 @@ Manages an Aviatrix cloud account.
 
 	resource "aviatrix_account" "tempacc" {
 	  account_name = "username"
-	  account_password = "password"
-	  account_email = "abc@xyz.com"
 	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_iam = "true"
@@ -66,11 +62,9 @@ Manages an Aviatrix cloud account.
 	  aws_role_ec2 = "arn:aws:iam::123456789012:role/aviatrix-role-ec2"
 	}
 
-	# Or you can create Aviatrix AWS account with access_key/secret key
+	# Or you can create Aviatrix AWS access account with access_key/secret key
 	resource "aviatrix_account" "tempacc" {
 	  account_name = "username"
-	  account_password = "password"
-	  account_email = "abc@xyz.com"
 	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_access_key = "ABCDEFGHIJKL"
