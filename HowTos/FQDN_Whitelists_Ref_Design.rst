@@ -151,6 +151,21 @@ The text file can be:
  #. The download file from Export from a different tag. 
  #. A text file in the format compatible to Export. 
 
+How to Troubleshoot FQDN Problems
+===================================
+
+If you have problems with FQDN on a specific gateway, follow the instructions below to troubleshoot:
+
+ 1. Make sure the gateway has NAT function enabled. 
+ #. Make sure the corresponding AWS or Azure route table has the route entry 0.0.0.0/0 points to the gateway instance.
+ #. To verify the above two steps are setup properly, disable FQDN function of the problem gateway by detaching it from the associated tag, and run a ping test to www.yahoo.com, to make sure Internet egress works. 
+ #. Attach the problem gateway to the tag. Make sure the tag has Enabled button on. Make sure the Whitelist or Blacklist is selected as intended. 
+ #. Check the tag to make sure it has the intended URL configured. 
+ #. Run a "wget" test from a private instance in the VPC to an URL configured in the tag. 
+ #. Use "Step 4" at Egress FQDN View Log, select the problem gateway and download the log. Review the log file and analyze if the intended URL is in the log entry, why it is being accepted or denied. 
+ #. Note if a tag has "White list" option selected, all URL in the tag will be accepted. On the other hand, if a tag has a "Black list" option selected, all URL in the tag will be dropped. 
+ #. If none of the above works, try Disable and Enable the tag again. This will restart the FQDN function on all attached gateways. 
+ #. If all above steps failed, get help from aviatrix support team and upload `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_. 
 
 
 For support, send email to support@aviatrix.com
