@@ -149,11 +149,11 @@ Add Attribute Mappings
    | User attribute in the      | Maps to this string value or user       |
    | application                | attribute in the AWS SSO                |
    +============================+=========================================+
-   | FirstName                  | ${dir:firstname}                        |
+   | FirstName                  | ${user:givenName}                       |
    +----------------------------+-----------------------------------------+
-   | LastName                   | ${dir:lastname}                         |
+   | LastName                   | ${user:familyName}                      |
    +----------------------------+-----------------------------------------+
-   | Email                      | ${dir:email}                            |
+   | Email                      | ${user:email}                           |
    +----------------------------+-----------------------------------------+
 
 #. Click **Save changes**
