@@ -67,7 +67,7 @@ Once you are past the initial configuration steps:
      - Select the `Cloud Type`
      - For AWS
 
-       - If you would like to use an existing account, (Note: Make sure you create one Access Account only with the EXACT Access Account Name that was used in your previous controller.) check the box `Use Cloud Account Name` and select the account.  Otherwise, enter an `Access Key` and `Secret Key`
+       - If you would like to use an existing account, please make sure you create one Access Account only with the EXACT Access Account Name that was used in your previous controller. Check the box `Use Cloud Account Name` and select the account.  Otherwise, enter an `Access Key` and `Secret Key`
        - Enter the `Bucket Name` and `File Name` of the file to restore.
 
      - For Azure
