@@ -16,7 +16,7 @@ R3.4 (8/5/2018)
 
 - **FQDN Exception Rule** provides an option to block SSL request that does not have SNI field. For example, if an application use hard coded destination IP address in its HTTPS request, disabling Exception Rule will block the request, unless the IP address is configured as a rule in the tag. 
 
-- **Network Address Translation** is significantly expanded to support combinations of SNAT, DNAT nad flexible rules for new use cases. For example, gateway can now do network translation to a pool of IP addresses, a customized IP addresses and session based translation. This enables gateway to perform complex and customized network address translation requirements. For an example use case, check out `this solution guide. <https://docs.aviatrix.com/Solutions/egress_nat_pool.html>`_
+- **Network Address Translation** is significantly expanded to support combinations of SNAT, DNAT with flexible rules to enable new use cases. For example, gateway can now do network translation to a pool of IP addresses, a customized IP addresses and session based translation. This enables gateway to perform complex and customized network address translation requirements. For an example use case, check out `this solution guide. <https://docs.aviatrix.com/Solutions/egress_nat_pool.html>`_
 
 
 2. Useful Tools
