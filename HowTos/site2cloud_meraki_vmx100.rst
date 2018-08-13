@@ -65,7 +65,7 @@ Add a Site2Cloud tunnel in Aviatrix Controller
   |                               | this connection.  If nothing is entered  |
   |                               | one will be generated for you.           |
   +-------------------------------+------------------------------------------+
-  | Remote Subnet                 | Enter the VPC2 Subnet representing the   |
+  | Remote Subnet                 | Enter the VPC2 CIDR representing the     |
   |                               | network behind the Meraki vMX100 that    |
   |                               | this tunnel supports.                    |
   +-------------------------------+------------------------------------------+
@@ -116,10 +116,11 @@ Configuring Site-to-site VPN in Meraki vMX100
 
    |meraki_vmx07|
 
-.. |meraki01| image:: site2cloud_meraki_vmx100_media/meraki_vmx01.png
-.. |meraki02| image:: site2cloud_meraki_vmx100_media/meraki_vmx02.png
-.. |meraki03| image:: site2cloud_meraki_vmx100_media/meraki_vmx03.png
-.. |meraki04| image:: site2cloud_meraki_vmx100_media/meraki_vmx04.png
-.. |meraki05| image:: site2cloud_meraki_vmx100_media/meraki_vmx05.png
-.. |meraki05| image:: site2cloud_meraki_vmx100_media/meraki_vmx06.png
-.. |meraki05| image:: site2cloud_meraki_vmx100_media/meraki_vmx07.png
+.. |meraki_vmx01| image:: site2cloud_meraki_vmx100_media/meraki_vmx01.png
+.. |meraki_vmx02| image:: site2cloud_meraki_vmx100_media/meraki_vmx02.png
+.. |meraki_vmx03| image:: site2cloud_meraki_vmx100_media/meraki_vmx03.png
+.. |meraki_vmx04| image:: site2cloud_meraki_vmx100_media/meraki_vmx04.png
+.. |meraki_vmx05| image:: site2cloud_meraki_vmx100_media/meraki_vmx05.png
+.. |meraki_vmx06| image:: site2cloud_meraki_vmx100_media/meraki_vmx06.png
+.. |meraki_vmx07| image:: site2cloud_meraki_vmx100_media/meraki_vmx07.png
+.. |meraki_vmx08| image:: site2cloud_meraki_vmx100_media/meraki_vmx08.png
