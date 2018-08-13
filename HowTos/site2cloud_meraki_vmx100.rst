@@ -116,6 +116,11 @@ Configuring Site-to-site VPN in Meraki vMX100
 
    |meraki_vmx07|
 
+9. Login to Aviatrix Controller UI, browse to Site2Cloud page to confirm the connection is UP. 
+
+   |meraki_vmx08|
+
+
 .. |meraki_vmx01| image:: site2cloud_meraki_vmx100_media/meraki_vmx01.png
 .. |meraki_vmx02| image:: site2cloud_meraki_vmx100_media/meraki_vmx02.png
 .. |meraki_vmx03| image:: site2cloud_meraki_vmx100_media/meraki_vmx03.png
