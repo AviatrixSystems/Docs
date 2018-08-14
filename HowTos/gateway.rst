@@ -329,10 +329,23 @@ When "Multiple IPs" is selected, the gateway translates the source address to th
 3. Customized SNAT
 ====================
 
-When "Customized SNAT" is selected, the gateway can translate source IP address ranges to different SNAT address and ports, as shown below. Check out `this link <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-4-configure-snat>`_ for detailed explanation.  
+When "Customized SNAT" is selected, the gateway can translate source IP address ranges to different SNAT address and ports, as shown below. Check out `this link <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-4-configure-snat>`_ for an example configuration.  
 
 |SNAT-customize|
 
+===========================      =======================   
+**Field**                        Value  
+===========================      ======================= 
+Src CIDR                         This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.          
+Src Port                         This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.         
+Dst CIDR                         This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.          
+Dst Port                         This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
+Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
+Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
+Mark                             This is a qualifier condition that specifies a tag or mark of a TCP session where the rule applies. When left blank, this field is not used.
+SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
+SNAT Port                         This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect. 
+===========================      =======================   
 
 Destination NAT
 ----------------
@@ -343,6 +356,19 @@ There are multiple optional parameters you can configure to meet your requiremen
 
 |dnat-port-mapping| 
 
+===========================      =======================
+**Field**                        Value
+===========================      =======================
+Source CIDR                      This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
+Source Port                      This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
+Destination CIDR                 This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
+Destination Port                 This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
+Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
+Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
+Mark                             This is a rule field that specifies a tag or mark of a TCP session when all qualifier conditions meet. When left blank, this field is not used.
+DNAT IPs                         This is a rule field that specifies the translated destination IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
+DNAT Port                         This is a rule field that specifies the translated destination port when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
+===========================      =======================
 
 Monitor Gateway Subnet
 -----------------------
