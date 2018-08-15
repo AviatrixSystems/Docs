@@ -49,25 +49,24 @@ Don't select "Enable SNAT" when creating the new gateways in these VPCs.
 
 Go to **Site2Cloud** page and click **Add New** button. Enter the following fields. 
 
-
-==========================================   =====================================================
-  **Field**                                   **Value**
-==========================================   =====================================================
-VPC ID/VNet Name                             Enter VPC2 VPC ID 
-Connection Type                              Select **Unmapped**
-Connection Name                              Enter any name here
-Remote Gateway Type                          Select **Aviatrix**
-Tunnel Type                                  Select **UDP**
-Algorithms                                   Leave it blank
-Encryption over ExpressRoute/DirectConnect   Leave it blank
-Registered                                   Leave it blank
-Enable HA                                    Leave it blank
-Primary Cloud Gateway                        Select Aviatrix Gateway in VPC2
-Remote Gateway IP Address                    Enter the public IP of Aviatrix Gateway in VPC1
-Pre-shared Key                               Leave it blank (Pre-shared key will be auto-generated)
-Remote Subnet                                Enter VPC1 CIDR (10.3.0.0/16 in this case)
-Local Subnet                                 Leave it blank (VPC2 CIDR will be used by default)
-==========================================   ======================================================
+===========================================   =====================================================
+  **Field**                                    **Value**
+===========================================   =====================================================
+VPC ID/VNet Name                              Enter VPC2 VPC ID                                    
+Connection Type                               Select **Unmapped**                                  
+Connection Name                               Enter any name here
+Remote Gateway Type                           Select **Aviatrix**
+Tunnel Type                                   Select **UDP**
+Algorithms                                    Leave it blank
+Encryption over ExpressRoute/DirectConnect    Leave it blank
+Registered                                    Leave it blank
+Enable HA                                     Leave it blank
+Primary Cloud Gateway                         Select Aviatrix Gateway in VPC2
+Remote Gateway IP Address                     Enter the public IP of Aviatrix Gateway in VPC1
+Pre-shared Key                                Leave it blank (Pre-shared key will be auto-generated)
+Remote Subnet                                 Enter VPC1 CIDR (10.3.0.0/16 in this case)
+Local Subnet                                  Leave it blank (VPC2 CIDR will be used by default)
+===========================================   ======================================================
 
 
 + **Step 3: Download the sample configuration from the Site2Cloud created in Step 2**
@@ -98,10 +97,9 @@ Import the sample configuration downloaded from Step 3.
 
 Go to **Site2Cloud** page and click **Add New** button. Enter the following fields.
 
-
-==========================================   =====================================================
+==========================================   ======================================================
   **Field**                                   **Value**
-==========================================   =====================================================
+==========================================   ======================================================
 VPC ID/VNet Name                             Enter VPC2 VPC ID
 Connection Type                              Select **Mapped**
 Connection Name                              Enter any name here
