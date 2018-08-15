@@ -247,7 +247,7 @@ How to move a Spoke gateway to a different AZ?
 
 Follow the following steps:
 
- 1. `Detach the Spoke gateway https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-a-spoke-gw-from-a-transit-gw-group>`_ from the Transit Network.
+ 1. `Detach the Spoke gateway https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-a-spoke-gw-from-a-transit-gw-group>`_ from the Transit Network group.
  #. Delete the Spoke gateway.
  #. Launch a new Spoke gateway in the desired AZ following the Transit Network solution workflow. 
  #. `Attach <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ the Spoke gateway.  
