@@ -34,7 +34,7 @@ Configuration Workflow
         ii.  Enter the hosted zone name ( This must exist prior in your AWS Route53)
         iii. VPN Service name is a unique identifier for the Loadbalancer. For example
              a service name "vpn1" and hosted zone "aviatrix.com" will create a DNS entry
-             "vpn.aviatrix.com"
+             "vpn1.aviatrix.com"
         iv.  Select the Gateways that need to be added to the Loadbalancer. If you don't see
              any gateways, you properly have created VPN Gateways with ELB enabled (which will
              load balance TCP based VPN gateway; or you have created a non VPN gateway. (You did not
