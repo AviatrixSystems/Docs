@@ -10,9 +10,8 @@ Site2Cloud with NAT to fix overlapping VPC subnets
 ===========================================================================================
 
 This document provides a reference design for solving issues in reaching VMs in two overlapping subnets within two different VPCs.
-  
-|
 
+|
 Environment Description
 ---------------------------------------------------------
 
@@ -34,7 +33,6 @@ To solve this overlapping subnet issue, we need to create two site2cloud connect
 Detailed configuration steps are illustrated below.
 
 |
-
 Steps to Configure site2cloud Connections
 ---------------------------------------------------------
 
@@ -49,9 +47,9 @@ Don't select "Enable SNAT" when creating the new gateways in these VPCs.
 
 Go to **Site2Cloud** page and click **Add New** button. Enter the following fields. 
 
-===========================================   =====================================================
+===========================================   ======================================================
   **Field**                                    **Value**
-===========================================   =====================================================
+===========================================   ======================================================
 VPC ID/VNet Name                              Enter VPC2 VPC ID                                    
 Connection Type                               Select **Unmapped**                                  
 Connection Name                               Enter any name here
@@ -84,7 +82,7 @@ Software                    Select **1.0**
 
 Save the donwloaded sample configuration locally at your PC. 
 
-+ **step 4: Import the sample configuration downloaded from Step 3**
++ **Step 4: Import the sample configuration downloaded from Step 3**
 
 Go to **Site2Cloud** page and click **Add New** button. 
 
@@ -139,7 +137,7 @@ Software                    Select **1.0**
 
 Save the donwloaded sample configuration locally at your PC.
 
-+ **step 7: Import the sample configuration downloaded from Step 6**
++ **Step 7: Import the sample configuration downloaded from Step 6**
 
 Go to **Site2Cloud** page and click **Add New** button.
 
