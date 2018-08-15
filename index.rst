@@ -263,6 +263,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/controller_security_for_SAML
    HowTos/simpletransit
    HowTos/s2c_vgw_snat
+   HowTos/s2c_overlapping_subnets
 
 .. _Solutions:
 

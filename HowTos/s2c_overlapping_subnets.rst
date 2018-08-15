@@ -1,7 +1,7 @@
 
 
 .. meta::
-   :description: Two site2cloud connections among three VPCs with two VPCs having overlapping subnets 
+   :description: Site2Cloud with NAT to fix overlapping VPC subnets 
    :keywords: site2cloud, DNAT, mapped, overlapping subnets
 
 
