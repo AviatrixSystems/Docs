@@ -242,6 +242,16 @@ After you click on the connection, scroll down to "Manual BGP Advertised Network
 
 To disable this feature, simply remove the list to make the entry empty and then click Change BGP Manual Spoke Advertisement. 
 
+How to move a Spoke gateway to a different AZ?
+----------------------------------------------
+
+Follow the following steps:
+
+ 1. `Detach the Spoke gateway https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-a-spoke-gw-from-a-transit-gw-group>`_ from the Transit Network.
+ #. Delete the Spoke gateway.
+ #. Launch a new Spoke gateway in the desired AZ following the Transit Network solution workflow. 
+ #. `Attach <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ the Spoke gateway.  
+
 .. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
    :scale: 30%   
 
