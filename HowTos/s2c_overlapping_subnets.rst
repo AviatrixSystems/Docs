@@ -68,7 +68,6 @@ Remote Subnet                                 Enter VPC1 CIDR (10.3.0.0/16 in th
 Local Subnet                                  Leave it blank (VPC2 CIDR will be used by default)
 ===========================================   ======================================================
 
-
 + **Step 3: Download the sample configuration from the Site2Cloud created in Step 2**
 
 After the site2cloud connection is created in Step 2, select this connection at **Site2Cloud** page. 
@@ -120,9 +119,9 @@ Local Subnet(Virtual)                        Enter VPC2 CIDR again (172.29.0.0/1
 
 .. note::
 
-**a.** For Remote Subnet, we want to map the real subnet CIDR (10.3.0.0/16) to the virtual subnet CIDR (10.49.0.0/16). The masks of both real and virtual subnets have to be the same (/16 in this case). The IP addresses in real and virtual subnets are one-to-one mapping by translating 10.3.x.y to 10.49.x.y. For example, for VPC2 VM to reach 10.3.1.100 in VPC3, VPC2 VM needs to use IP address 10.49.1.100.
+  **a.** For Remote Subnet, we want to map the real subnet CIDR (10.3.0.0/16) to the virtual subnet CIDR (10.49.0.0/16). The masks of both real and virtual subnets have to be the same (/16 in this case). The IP addresses in real and virtual subnets are one-to-one mapping by translating 10.3.x.y to 10.49.x.y. For example, for VPC2 VM to reach 10.3.1.100 in VPC3, VPC2 VM needs to use IP address 10.49.1.100.
 
-**b.** For Local Subnet, we don't need to map the real subnet CIDR (172.29.0.0/16) to a different virtual subnet CIDR because 172.29.0.0/16 in VPC2 doesn't conflict with any subnet in VPC1 and VPC3. So we use 172.29.0.0/16 for both Real Local Subnet and Virtual Local Subnet.
+  **b.** For Local Subnet, we don't need to map the real subnet CIDR (172.29.0.0/16) to a different virtual subnet CIDR because 172.29.0.0/16 in VPC2 doesn't conflict with any subnet in VPC1 and VPC3. So we use 172.29.0.0/16 for both Real Local Subnet and Virtual Local Subnet.
 
 + **Step 6: Download the sample configuration from the Site2Cloud created in Step 5**
 
