@@ -148,11 +148,16 @@ the cloud provider (AWS/Azure/GCP).
 Additional CIDRs
 ==================
 
-This is an optional parameter. Leave it blank if you do not need it.
+This is an optional parameter. The VPC CIDR where VPN gateway is 
+deployed is the default CIDR that VPN gateway pushes to the VPN client. Leave it blank if you do not need it.
 
 When Split Tunnel Mode is enabled, the Additional CIDRs specifies a list of 
 destination CIDR ranges that will also go through the VPN tunnel. 
+
 This is a useful field when you have `multiple VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
+
+Enter all network ranges in CIDR blocks separated by comma. 
+
 
 Nameservers
 =============
