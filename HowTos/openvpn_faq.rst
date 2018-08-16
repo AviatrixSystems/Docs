@@ -347,20 +347,19 @@ Where do I find the log for the Aviatrix Client?
 
 |imageClientLog|
 
-Why is my VPN client not able to access a new VPC I just created?
+Why can't my VPN client access a newly created VPC?
 ------------------------------------------------------------------
 
 If you are using Split Tunnel mode, it is very likely that the new VPC CIDR is not part of CIDR ranges that Aviatrix VPN gateway pushes down to the client when the VPN client connects. To fix it, 
 follow these steps:
 
  1. At the main navigation menu, go to OpenVPN® -> Edit Config 
- #. Scroll down to MODIFY SPLIT TUNNEL, select yes to Split Tunnel Mode
- #. At `Additional CIDRs <https://docs.aviatrix.com/HowTos/gateway.html#additional-cidrs>`_, enter all CIDRs that you want the VPN client to access including the VPC CIDR where VPN gateway is deployed. 
- # (Optional) Click Save Template if you intend to launch multiple VPN gateways behind NLB. 
+ #. Scroll down to MODIFY SPLIT TUNNEL, select yes to Split Tunnel Mode.
+ #. At `Additional CIDRs <https://docs.aviatrix.com/HowTos/gateway.html#additional-cidrs>`_, enter the list of CIDR blocks including the new VPC CIDR that you wish the VPN client to access. 
  #. When complete, click Modify for the configuration to take effect. 
  #. Disconnect the VPN client and connect again, the new CIDR should take effect. 
    
-OpenVPN is a registered trademark of OpenVPN Inc.
+OpenVPN® is a registered trademark of OpenVPN Inc.
 
 
 .. |image1| image:: FAQ_media/image1.png
