@@ -156,7 +156,9 @@ destination CIDR ranges that will also go through the VPN tunnel.
 
 This is a useful field when you have `multiple VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
 
-Enter all network ranges in CIDR blocks separated by comma. 
+Enter all network ranges in CIDR blocks separated by comma, as shown below:
+
+|additional_cidr|
 
 
 Nameservers
@@ -509,6 +511,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 30%
 
 .. |dnat-port-mapping| image:: gateway_media/dnat-port-mapping.png
+   :scale: 30%
+
+.. |additional_cidr| image:: gateway_media/additional_cidr.png
    :scale: 30%
 
 .. disqus::
