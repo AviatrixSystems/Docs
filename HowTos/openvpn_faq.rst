@@ -358,6 +358,13 @@ follow these steps:
  #. At `Additional CIDRs <https://docs.aviatrix.com/HowTos/gateway.html#additional-cidrs>`_, enter the list of CIDR blocks including the new VPC CIDR that you wish the VPN client to access. 
  #. When complete, click Modify for the configuration to take effect. 
  #. Disconnect the VPN client and connect again, the new CIDR should take effect. 
+
+How to turn off NAT with OpenVPN® gateway?
+----------------------------------------------
+
+Aviatrix OpenVPN® gateway performs NAT function for the user VPN traffic, effectively masking out the VPN client's virtual IP address assigned by gateway from the `VPN CIDR Block <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. This does not affect profile based policy enforcement as the landing vpn gateway has the information of the virtual IP address before NAT is performed and enforces policies based on user identification. 
+
+If you do want to preserve the virtual IP address after the client packet leaves the gateway, you can do by enabling `PBR function <https://docs.aviatrix.com/HowTos/gateway.html#enable-policy-based-routing-pbr>`_. 
    
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
