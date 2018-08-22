@@ -34,7 +34,7 @@ If you haven’t already deployed the Aviatrix controller, follow `these instruc
 2.2 IDP Account
 ###############
 
-An IDP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <./UserSSL_VPN_Okta_SAML_Config.html>`__, `OneLogin <./UserSSL_VPN_OneLogin_SAML_Config.html>`__, `Google <./UserSSL_VPN_Google_SAML_Config.html>`__, `AWS SSO <./UserSSL_VPN_AWS_SSO_SAML_Config.html>`__, Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc. (The listed ones were tested). You will require administrator access to create IDP endpoints for SAML.
+An IDP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <./UserSSL_VPN_Okta_SAML_Config.html>`__, `OneLogin <./UserSSL_VPN_OneLogin_SAML_Config.html>`__, `Google <./UserSSL_VPN_Google_SAML_Config.html>`__, `AWS SSO <./UserSSL_VPN_AWS_SSO_SAML_Config.html>`__, `Azure AD <./UserSSL_VPN_Azure_AD_SAML_Config.html>`__, Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc. (The listed ones were tested). You will require administrator access to create IDP endpoints for SAML.
 
 .. _PDC_23:
 

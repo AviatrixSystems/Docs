@@ -20,7 +20,7 @@ There are two VPCs as illustrated in the diagram below. VPC-1 CIDR is 10.0.0.0/1
 
 |image1|
 
-We will also configure customized SNAT at Aviatrix gateway, which translates the source IP of traffic initiated from VPC-1 (10.0.0.0/16) to an user selected IP address (192.168.1.10 in this example). In this way, VPC-2 VMs will see all packets from VPC-2 with the same source IP address (192.168.1.10)
+We will also configure customized SNAT at Aviatrix gateway, which translates the source IP of traffic initiated from VPC-1 (10.0.0.0/16) to an user selected IP address (192.168.1.10 in this example). In this way, VPC-2 VMs will see all packets from VPC-1 with the same source IP address (192.168.1.10)
 
 |
 
