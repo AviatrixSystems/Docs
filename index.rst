@@ -153,7 +153,9 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Security
 
+ 
    HowTos/tag_firewall
+   HowTos/fqdn_faq
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/fqdn_discovery
    HowTos/fqdn_viewlog
