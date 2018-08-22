@@ -87,6 +87,19 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_csr_migrate
    HowTos/Setup_Transit_Network_Terraform
 
+.. _Security:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Security
+
+
+   HowTos/tag_firewall
+   HowTos/fqdn_faq
+   HowTos/FQDN_Whitelists_Ref_Design
+   HowTos/fqdn_discovery
+   HowTos/fqdn_viewlog
+
 .. _Peering:
 
 .. toctree::
@@ -148,18 +161,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
 
-.. _Security:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Security
-
- 
-   HowTos/tag_firewall
-   HowTos/fqdn_faq
-   HowTos/FQDN_Whitelists_Ref_Design
-   HowTos/fqdn_discovery
-   HowTos/fqdn_viewlog
 
 .. _UsefulTools:
 
