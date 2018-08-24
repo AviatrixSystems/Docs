@@ -42,6 +42,8 @@ Step 2 - Stop the Marketplace instance
 ======================================
 On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
 
+Note if the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
+
 Step 3 - Disassociate EIP
 =========================
 On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassociate the EIP from the existing Aviatrix AWS Marketplace controller instance.
