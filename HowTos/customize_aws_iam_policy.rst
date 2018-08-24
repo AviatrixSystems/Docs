@@ -26,9 +26,6 @@ You can remove some of the policy rules by using this `IAM-Policy <https://s3-us
 
 
 
-Note
--------------------------------------------------------------------------
-
 .. Note:: Other features such as TransitNetwork or VPN, etc.. will require the default IAM policy.
 ..
 
