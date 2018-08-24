@@ -2,8 +2,10 @@
 Launch Aviatrix Controller Manually 
 ===============================================
 
-This guide walks you through how to launch the Controller manually from 
-AWS Marketplace. Refer to `AWS Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ for a complete information. 
+Aviatrix Controller should be launched by CloudFormation script following the 
+`AWS Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ for a complete information. 
+
+The method below has been deprecated. It is kept here for record only. 
 
 Before you launch the controller with IAM role, you must first create 2
 IAM roles and its associated policies. Follow `this
