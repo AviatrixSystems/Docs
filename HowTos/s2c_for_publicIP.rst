@@ -14,7 +14,7 @@ traffic to a partner network in the cloud (AWS/Azure/GCP).
 However due to concerns for overlapping CIDR blocks to the customer network, the customer side enforces a policy that the destination IP address must be a public IP address regardless if the partner network is in the RFC 1918 range. 
 
 For example, the VPC instance IP address that the on-prem machine 
-should send data to is 172.32.0.43, but the on-prem machine must instead send data to a public IP address 53.34.19.23 (or even 100.100.100.100). The scenario is shown in the diagram below. 
+should send data to is 172.32.0.243, but the on-prem machine must instead send data to a public IP address 53.34.19.23 (or even 100.100.100.100). The scenario is shown in the diagram below. 
 
 |site2cloud-publicIP|
 
