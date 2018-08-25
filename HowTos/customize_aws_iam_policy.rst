@@ -26,7 +26,7 @@ You can remove some of the policy rules by using this `IAM-Policy <https://s3-us
 
 
 
-.. Note:: Other features such as TransitNetwork or VPN, etc.. will require the default IAM policy.
+.. Note:: Most features (such as Transit Network, VPN with ELB/NLB, etc) not stated above will require the default IAM policy.
 ..
 
 
