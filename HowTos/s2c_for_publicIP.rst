@@ -1,0 +1,76 @@
+
+
+.. meta::
+   :description: Create site2cloud connection with VGW and run customized DNAT on gateway
+   :keywords: site2cloud, VGW, SNAT, DNAT, Public IP
+
+
+===========================================================================================
+Site2Cloud to a Public IP Address 
+===========================================================================================
+
+This document addresses the scenario where a customer on-prem firewall device needs to route encrypted 
+traffic to a partner network in the cloud (AWS/Azure/GCP). 
+However due to concerns for overlapping CIDR blocks to the customer network, the customer side enforces a policy that the destination IP address must be a public IP address regardless if the partner network is in the RFC 1918 range. 
+
+For example, the VPC instance IP address that the on-prem machine 
+should send data to is 172.32.0.43, but the on-prem machine must instead send data to a public IP address 53.34.19.23 (or even 100.100.100.100). The scenario is shown in the diagram below. 
+
+|site2cloud-publicIP|
+
+This problem can be solved by combining `Site2Cloud <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ feature and `DNAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_ feature. 
+
+Below are the configuration steps. 
+
+Step 1: Follow the Site2Cloud workflow to launch a gateway 
+-----------------------------------------------------------
+
+Login to the Controller console, go to Site2Cloud. Follow step 1 to launch a gateway in the VPC 172.32.0.0/16. In this example the gateway name is Spoke1. 
+
+(You can follow the `gateway launch instructions in this <http://docs.aviatrix.com/HowTos/gateway.html>`_. Leave optional parameters unchecked.) 
+
+Step 2: Follow the Site2Cloud workflow to Create a Site2Cloud tunnel
+-----------------------------------------------------------------------
+
+Click "+Add New". Fill the form and click OK. 
+
+Note the Local Subnet field is the real or fake public IP address. If there are multiple instances in VPC that needs to be addressed, enter multiple such IP addresses separate them by comma.
+
+|site2cloud-publicIP-config|
+
+Step 3: Download the Configuration Template
+---------------------------------------------
+
+Click on the connection just created, the Edit page pops up. Select the Vendor (Generic) and click Download Configuration. This will download a text file with configuration information. 
+
+Send the text file to your customer-X so they'll configure their end. 
+
+Step 4: Configure DNAT
+-----------------------
+
+This step is to configure the gateway to translate the destination IP address 53.34.19.23 to the real private IP address 172.32.0.242.
+
+At the main navigation bar, click Gateway. Highlight the gateway, in this case, Spoke1, click Edit. 
+
+Scroll down to Destination NAT. Follow the instructions `here <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_ to configure, as shown below. 
+
+|dnat-config|
+
+
+Step 5. Test site2cloud Connection and DNAT
+---------------------------------------------------------
+
+Go to "site2cloud" page and verify the site2cloud connection status is "Up".
+
+Test connectivity from on-prem host to the EC2 instance. For example, ping 53.34.19.23 from on-prem host machine. The ping should reach 172.32.0.243.  
+
+.. |site2cloud-publicIP| image:: s2c_for_publicIP_media/site2cloud-publicIP.png
+   :scale: 30%
+   
+.. |site2cloud-publicIP-config| image:: s2c_for_publicIP_media/site2cloud-publicIP-config.png
+   :scale: 30%
+
+.. |dnat-config| image:: s2c_for_publicIP_media/dnat-config.png
+   :scale: 30%
+
+.. disqus::    

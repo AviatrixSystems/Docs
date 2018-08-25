@@ -268,6 +268,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/simpletransit
    HowTos/s2c_vgw_snat
    HowTos/s2c_overlapping_subnets
+   HowTos/s2c_for_publicIP
 
 .. _Solutions:
 
