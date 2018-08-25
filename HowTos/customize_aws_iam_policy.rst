@@ -24,6 +24,13 @@ You can remove some of the policy rules by using this `IAM-Policy <https://s3-us
   5. Site2Cloud 
   6. Controller Backup & Restore
 
+
+
+.. Note:: Most features (such as Transit Network, VPN with ELB/NLB, etc) not stated above will require the default IAM policy.
+..
+
+
+
 The next few sections provide examples on how to restrict policy rule scopes.
 
 
