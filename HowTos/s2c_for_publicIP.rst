@@ -22,14 +22,26 @@ This problem can be solved by combining `Site2Cloud <https://docs.aviatrix.com/H
 
 Below are the configuration steps. 
 
-Step 1: Follow the Site2Cloud workflow to launch a gateway 
+Step 1: Determine the public IP address
+----------------------------------------
+
+As this public IP address is what the on-prem host sees, it should not change. There are a couple of ways to determine it.
+
+You can allocate an EIP in the VPC for this public IP address. Make sure you don't associate this EIP to any instance.
+
+Alternatively, if the EC2 instance that on-prem hosts need to send data to has an EIP, 
+you can use that EIP. 
+
+You can also try a reserved public IP address range, for example, 100.100.x.x range, if the customer does not object. 
+
+Step 2: Follow the Site2Cloud workflow to launch a gateway 
 -----------------------------------------------------------
 
 Login to the Controller console, go to Site2Cloud. Follow step 1 to launch a gateway in the VPC 172.32.0.0/16. In this example the gateway name is Spoke1. 
 
 (You can follow the `gateway launch instructions in this <http://docs.aviatrix.com/HowTos/gateway.html>`_. Leave optional parameters unchecked.) 
 
-Step 2: Follow the Site2Cloud workflow to Create a Site2Cloud tunnel
+Step 3: Follow the Site2Cloud workflow to Create a Site2Cloud tunnel
 -----------------------------------------------------------------------
 
 Click "+Add New". Fill the form and click OK. 
@@ -38,14 +50,14 @@ Note the Local Subnet field is the real or fake public IP address. If there are 
 
 |site2cloud-publicIP-config|
 
-Step 3: Download the Configuration Template
+Step 4: Download the Configuration Template
 ---------------------------------------------
 
 Click on the connection just created, the Edit page pops up. Select the Vendor (Generic) and click Download Configuration. This will download a text file with configuration information. 
 
 Send the text file to your customer-X so they'll configure their end. 
 
-Step 4: Configure DNAT
+Step 5: Configure DNAT
 -----------------------
 
 This step is to configure the gateway to translate the destination IP address 53.34.19.23 to the real private IP address 172.32.0.242.
@@ -57,7 +69,7 @@ Scroll down to Destination NAT. Follow the instructions `here <https://docs.avia
 |dnat-config|
 
 
-Step 5. Test site2cloud Connection and DNAT
+Step 6. Test site2cloud Connection and DNAT
 ---------------------------------------------------------
 
 Go to "site2cloud" page and verify the site2cloud connection status is "Up".
