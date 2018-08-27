@@ -34,6 +34,8 @@ Windows client can be download from `this link <https://s3-us-west-2.amazonaws.c
 
 At the end of the installation, please install the TUN TAP driver if you haven't done so earlier.
 
+Please note that the client uses the default browser, and Microsoft Edge is not supported
+
 *********
 Mac |mac|
 *********
