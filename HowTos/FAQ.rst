@@ -103,6 +103,7 @@ You can use the Controller Security Management feature to automatically manage t
 
 Go to Settings -> Controller -> Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, click Enable. 
 
+When this feature is enabled, the Controller will immediately create 4 security groups. Since each security group can support 50 security rules, the Controller can support up to 200 gateways. 
 
 (If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller.) 
 
