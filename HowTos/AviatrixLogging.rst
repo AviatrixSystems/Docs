@@ -17,6 +17,9 @@ Aviatrix Controller and all its managed gateways can be configured to
 forward logs to well known log management systems, such as Splunk, Sumo
 Logic, Elastic Search and remote syslog.
 
+Starting from Release 4.0, Aviatrix Controller and gateways support netflow for session 
+analysis and span port for packet logging. 
+
 In addition to standard information on syslog, Aviatrix also provides
 capability for user VPN connections, VPN user TCP sessions, security
 rule violation statistics, Gateway stats and FQDN filter violations.
