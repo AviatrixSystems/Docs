@@ -348,4 +348,11 @@ To configure Loggly integration through an intermediary syslog server relay:
 
 3. Follow `this document <https://www.loggly.com/docs/network-devices-and-routers/>`_ to configure the relay to send to Loggly
 
+6. Netflow and Span port support
+=================================
+
+Starting from Release 4.0, Aviatrix Controller and gateways support netflow and span port. 
+
+
+
 .. disqus::
