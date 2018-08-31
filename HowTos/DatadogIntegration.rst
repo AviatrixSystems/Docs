@@ -16,7 +16,7 @@ Prerequisites
 -------------
 In order to complete the steps in this guide, you'll need:
 
-- An Aviatrix License Key (CustomerID)
+- An Aviatrix Hosted Service (AHS) Account, AWS Marketplace AMI, Azure account or an Aviatrix License Key (CustomerID)
 
 .. tip::
      email info@aviatrix.com if you don't have a license key
