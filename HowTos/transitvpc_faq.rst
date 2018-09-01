@@ -242,17 +242,49 @@ After you click on the connection, scroll down to "Manual BGP Advertised Network
 
 To disable this feature, simply remove the list to make the entry empty and then click Change BGP Manual Spoke Advertisement. 
 
+
 How to move a Spoke gateway to a different AZ?
 ----------------------------------------------
 
 Follow the following steps:
 
- 1. `Detach the Spoke gateway https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-a-spoke-gw-from-a-transit-gw-group>`_ from the Transit Network group.
+ 1. `Detach the Spoke gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-a-spoke-gw-from-a-transit-gw-group>`_ from the Transit Network group.
  #. Delete the Spoke gateway.
  #. Launch a new Spoke gateway in the desired AZ following the Transit Network solution workflow. 
  #. `Attach <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ the Spoke gateway.  
 
+What is the prerequisite to summarize Spoke VPC CIDRs?
+-------------------------------------------------------
+
+If you see the error below when configuring Spoke VPC CIDR manual summarization, your
+Transit network is not ready for summarization.
+
+|bgp_summarize_error|
+
+The prerequisite for manual advertising is that all traffic from Spoke to Transit must be either on primary gateway path or backup gateway path. 
+
+Before fixing the error, click Peering page at the main navigation bar. In the example shown below, 
+spoke1 primary gateway is in Active state, however spoke2-hagw is in Active state. 
+
+|spoke_to_transit_inconsistent|
+
+This inconsistency can be fixed by force switch spoke2 VPC to use primary gateway, as shown below.
+
+|force_switchover_spoke2|
+
+Before you can summarize Spoke VPC CIDRs, you must make sure Spoke gateways all use either primary gateway or all use backup gateway if backup is enabled. For example, in the following screen shot, 
+Spoke  
+
 .. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
+   :scale: 30%   
+
+.. |bgp_summarize_error| image:: transitvpc_faq_media/bgp_summarize_error.png
+   :scale: 30%   
+
+.. |force_switchover_spoke2| image:: transitvpc_faq_media/force_switchover_spoke2.png
+   :scale: 30%   
+
+.. |spoke_to_transit_inconsistent| image:: transitvpc_faq_media/spoke_to_transit_inconsistent.png
    :scale: 30%   
 
 .. disqus::
