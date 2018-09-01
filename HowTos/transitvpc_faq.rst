@@ -66,10 +66,15 @@ I have two regions and two Direct Connects, how do I build a multi region Transi
 
 For multi region, the redundancy is best built over VGW. Check out our `multi region design <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#multi-regions-transit-vpc-design>`_
 
-I have more than 100 VPCs, how do I overcome AWS route limits?
-----------------------------------------------------------------
+I have more than 100 VPCs, how do I overcome AWS route limits (100)?
+--------------------------------------------------------------------
 
-When you deploy Aviatrix Transit VPC solution, all Aviatrix gateways, Transit and Spoke, are deployed with `Designated Gateway Feature <http://docs.aviatrix.com/HowTos/gateway.html#designated-gateway>`_ enabled by default. This allows to manage as many Spoke VPCs as you need.
+When `AWS VGW carries more than 100 routes <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_, its BGP session will crash unexpectedly, resulting in your network outage. 
+
+Make sure your on-prem edge router summarize advertised routes to VGW to as few as possible. 
+
+In addition, you must configure `Spoke VPC route summarization <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_ so that Transit GW advertise as few routes to VGW as possible. As long as you can control the number of total routes on VGW not to exceed 100, the Transit Network can support as many Spoke VPCs as you need. 
+
 
 Can I launch multiple Transit GW groups from one Controller?
 -------------------------------------------------------------
@@ -234,6 +239,8 @@ If you have a large number of Spoke gateways attached to a Transit GW that
 you are concerned about exceeding the route limit a VGW can carry (100), 
 you can summarize the Spoke VPC CIDRs. 
 
+Before you configure summarization, make sure your Transit network meet the `prerequisite <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#what-is-the-prerequisite-to-summarize-spoke-vpc-cidrs>`_
+
 Go to Site2Cloud, click on the connection that identifies the Transit GW and VGW. (This connection is automatically created when you complete `Step 3 at the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. The Connection Name you entered should be displayed as a Site2Cloud connection at this page.)
 
 After you click on the connection, scroll down to "Manual BGP Advertised Network List", as shown below. Enter the summarized CIDR ranges and click Change BGP Manual Spoke Advertisement. You can enter a list of CIDRs separated by comma. 
@@ -256,7 +263,7 @@ Follow the following steps:
 What is the prerequisite to summarize Spoke VPC CIDRs?
 -------------------------------------------------------
 
-If you see the error below when configuring Spoke VPC CIDR manual summarization, your
+If you see the error below when configuring `Spoke VPC CIDR manual summarization <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_, your
 Transit network is not ready for summarization.
 
 |bgp_summarize_error|
