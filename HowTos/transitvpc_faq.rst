@@ -71,9 +71,11 @@ I have more than 100 VPCs, how do I overcome AWS route limits (100)?
 
 When `AWS VGW carries more than 100 routes <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_, its BGP session will crash unexpectedly, resulting in your network outage. 
 
-Make sure your on-prem edge router summarize advertised routes to VGW to as few as possible. 
+Make sure your on-prem edge router summarizes advertised routes to VGW to as few as possible. 
 
 In addition, you must configure `Spoke VPC route summarization <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_ so that Transit GW advertise as few routes to VGW as possible. As long as you can control the number of total routes on VGW not to exceed 100, the Transit Network can support as many Spoke VPCs as you need. 
+
+Aviatrix Controller sends out alert/warning messages when it determines that the total routes carried by VGW exceeds 80. This is to alert you to start reducing routes carried by VGW to avoid potential network outage. This alert message is sent each time there is a route VGW advertised from VGW to Transit GW. 
 
 
 Can I launch multiple Transit GW groups from one Controller?
