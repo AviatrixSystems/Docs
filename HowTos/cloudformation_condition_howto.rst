@@ -19,7 +19,7 @@ series instance when a user select such instance type. If the user input is not 
 The code to define a condition that tests if the input parameter is t2.large, t2.xlarge or 
 t2.2xlarge is as follows.
 
-.. code-block:: 
+:: 
 
    "Conditions": {
         "AviatrixIAMRoleNotExist": {
@@ -46,7 +46,7 @@ condition returns True.
 
 The code to use the condition to specify the CPU Credit type is as follows:
 
-.. code-block::
+:: 
   
       "CreditSpecification": {
           "Fn::If" : [
