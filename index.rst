@@ -27,7 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Release Notes`
 * :ref:`Tech Notes`
 * :ref:`Solutions`
-* :ref:`Whitepapers`
+* :ref:`Good To Know`
 * :ref:`IPmotion`
 
 
@@ -282,10 +282,10 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/netapp_sap_floating_ip
    Solutions/egress_nat_pool
 
-.. _Whitepapers:
+.. _Good To Know:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Whitepapers
+   :caption: Good To Know
 
-   Whitepapers/EnterpriseAppMigration
+   HowTos/inter_region_latency
