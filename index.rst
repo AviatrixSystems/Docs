@@ -287,6 +287,7 @@ While all content is searchable, the site is organized into the following sectio
 .. toctree::
    :maxdepth: 1
    :caption: Good To Know
+
    HowTos/inter_region_latency
    HowTos/cloudformation_condition_howto
 
