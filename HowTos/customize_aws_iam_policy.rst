@@ -578,6 +578,63 @@ NOTE:
 We do not recommend using AWS-resource-IP checking mechanism to modify
 AWS-SQS API permissions.
 
+
+7. Restricting operations using AWS Resource Tag
+----------------------------------------
+
+The following example(s) demonstrate using IAM Policy to limit 
+IAM user/role to be able to operate only on instances that have a customized AWS Resource Tag.
+
+Syntax:
+~~~~~~~
+::
+
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "ec2:StartInstances",
+                  "ec2:StopInstances",
+                  "ec2:TerminateInstances"
+              ],
+              "Resource": "*",
+              "Condition": {
+                  "StringEqualsIgnoreCase": {
+                      "ec2:ResourceTag/KEY_OF_RESOURCE_TAG": "VALUE_OF_RESOURCE_TAG"
+                  }
+              }
+          }
+      ]
+  }
+
+
+Example:
+~~~~~~~~
+::
+
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "ec2:StartInstances",
+                  "ec2:StopInstances",
+                  "ec2:TerminateInstances"
+              ],
+              "Resource": "*",
+              "Condition": {
+                  "StringEqualsIgnoreCase": {
+                      "ec2:ResourceTag/Aviatrix-Created-Resource": "*Do-Not-Delete*"
+                  }
+              }
+          }
+      ]
+  }
+
+
 EC2 Role Policy Examples
 ========================
 
@@ -596,17 +653,24 @@ EC2 instance’s role.
 ::
 
   {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action":[
-          "sts:AssumeRole"
-        ],
-        "Resource": "*"
-      }
-    ]
-  }	
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "sts:AssumeRole"
+              ],
+              "Resource": "arn:aws:iam::*:role/aviatrix-*"
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "aws-marketplace:MeterUsage"
+              ],
+              "Resource": "*"
+          }
+      ]
+  }
 
 
 2: Example of EC2 Role Policy with More Specific Resource field
