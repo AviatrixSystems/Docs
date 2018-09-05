@@ -93,7 +93,7 @@ Select the right AMI that meets your use case and subscription preference. Click
 1.2.1 Continue to Subscribe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For example, if you select Inter-Region VPC Peering 5 Tunnel AMI, click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
+For example, if you select Metered AMI, click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
    |imageAwsMarketplaceContinuetoSubscribe5tunnel|
 
