@@ -39,8 +39,11 @@ Build an Aviatrix Transit Network with multiple spokes
 
 4. **Repeat the above step 3 and 4** Repeat the above 2 steps for the remaining Spoke VPCs. 
 
-Note in Aviatrix solution, Spoke VPCs have no connectivity to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
+.. Note::
 
+In Aviatrix solution, Spoke VPCs have no connectivity to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
+
+..
 
 In this example, Meraki vMX100 is already deployed in us-west-2 (Oregon) region in VPC with 10.10.0.0/16. The following is the configuration for vMX100 in AWS VPC.
 
