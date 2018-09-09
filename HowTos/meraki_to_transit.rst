@@ -118,7 +118,7 @@ Validate connectivity
 
   |meraki_avxtransit13|
 
-5. If you have high number of spokes (over 90) in your deployment, we recommend that you enable `Manual Summarization <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_ to reduce the number of advertised networks. This is needed due to an AWS BGP route limitation. Please see `How do I troubleshoot BGP connection issues over VPN? <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_ for more details.
+5. If you have high number of spokes in your deployment, we recommend that you enable `Manual Summarization <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_ to reduce the number of advertised networks. This is needed due to an AWS BGP route limitation. Please see `How do I troubleshoot BGP connection issues over VPN? <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_ for more details.
 
 6. In order to summarize Spoke CDIRs, you will select the Site2Cloud connection for the Aviatrix Transit Network. Enter the summarized route in the "Manual BGP Advertised Network Lis" and click "Change BGP Manual Spoke Advertisement".
 
