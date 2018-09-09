@@ -31,7 +31,7 @@ The objectives here are:
 
 Build an Aviatrix Transit Network with multiple spokes
 ------------------------------------------------------
-1. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. You can consider using a new Transit hub VPC in case the existing Transit hub VPC does not have enough IP addresses to launch new instances. (The Aviatrix Transit GW pair)
+1. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. You can consider using a new Transit hub VPC in case the existing Transit hub VPC does not have enough IP addresses to launch new instances (The Aviatrix Transit GW pair).
 
 2. **Connect Aviatrix Transit GW to VGW** `Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to Aviatrix Transit GW. Make sure you specifiy a different "AS" number for the BGP session of Aviatrix Transit GW connection to VGW. 
 
@@ -39,7 +39,7 @@ Build an Aviatrix Transit Network with multiple spokes
 
 4. **Repeat the above step 3 and 4** Repeat the above 2 steps for the remaining Spoke VPCs. 
 
-Note in Aviatrix solution, Spoke VPCs have no connectivities to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
+Note in Aviatrix solution, Spoke VPCs have no connectivity to each other by default. If a Spoke VPC needs connectivity to another Spoke VPC, for example, the shared service VPC, configure `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console. 
 
 
 In this example, Meraki vMX100 is already deployed in us-west-2 (Oregon) region in VPC with 10.10.0.0/16.
