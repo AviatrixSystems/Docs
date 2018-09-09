@@ -2,9 +2,9 @@
    :description: Instructions on how to connect Meraki vMX100 to Aviatrix Transit Network
    :keywords: AWS Global Transit Network
 
-=============================================================
-Connecting Meraki vMX100 Network to Aviatrix Transit Network
-=============================================================
+=====================================================
+Connecting Meraki Network to Aviatrix Transit Network
+=====================================================
 
 This document assumes that you have deployed a Meraki vMX100 in AWS that has full meshed to all your branch offices using Meraki MX products. 
 In this technical note, we will outline the steps to have end to end connectivity from your Meraki network to your AWS Global Transit Network using Aviatrix solution. At the end of configuration, your on-prem client will be able to access an EC2 instance in a Spoke VPC.
