@@ -54,12 +54,13 @@ Here is the configuration for the MX64 at on-prem.
 Launch an Aviatrix gateway in the same VPC as vMX100
 ----------------------------------------------------
 1. Login to Aviatrix Controller UI and click Gateway at the navigation panel.
-2. Click New to launch a gateway with the following settings.
-   - Gateway Name = vMX-AvxGW
-   - Access Account Name = Select the same AWS account where the vMX100 is deployed
-   - Region = us-west-2 (Oregon)
-   - VPC ID = Select the same VPC where vMX100 is deployed
-   - Public Subnet = Select the same subnet where vMX100 is deployed
+2. Click New to launch a gateway with the following settings:
+   
+ - Gateway Name = vMX-AvxGW
+ - Access Account Name = Select the same AWS account where the vMX100 is deployed
+ - Region = us-west-2 (Oregon)
+ - VPC ID = Select the same VPC where vMX100 is deployed
+ - Public Subnet = Select the same subnet where vMX100 is deployed
 
 3. Click OK to create the gateway.
 
