@@ -110,12 +110,19 @@ Validate connectivity
   |meraki_avxtransit10|
   |meraki_avxtransit11|
 
-3. If you have over a 100 spokes in your deployment, we recommend that you enable `Manual Summarization <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_ to reduce the number of advertised networks. This is needed due to an AWS BGP route limitation. Please see `How do I troubleshoot BGP connection issues over VPN? <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_ for more details.
-
-4. In order to summarize Spoke CDIRs, you will select the Site2Cloud connection for the Aviatrix Transit Network. Enter the summarized route in the "Manual BGP Advertised Network Lis" and click "Change BGP Manual Spoke Advertisement".
+3. In this example here, I have 3 EC2 instances in each Spoke VPC (10.32.102.81 in private subnet, 10.50.0.5 in public subnet, 10.63.100.97 in private subnet). My on-prem client is 10.28.144.19. The following screenshot shows the end to end connectivity from on-prem to each spoke.
 
   |meraki_avxtransit12|
+  
+4. Here is a logical view of the networks from Aviatrix Controller UI.
 
+  |meraki_avxtransit13|
+
+5. If you have high number of spokes (over 90) in your deployment, we recommend that you enable `Manual Summarization <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_ to reduce the number of advertised networks. This is needed due to an AWS BGP route limitation. Please see `How do I troubleshoot BGP connection issues over VPN? <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_ for more details.
+
+6. In order to summarize Spoke CDIRs, you will select the Site2Cloud connection for the Aviatrix Transit Network. Enter the summarized route in the "Manual BGP Advertised Network Lis" and click "Change BGP Manual Spoke Advertisement".
+
+  |meraki_avxtransit14|
 
 .. |meraki_avxtransit01| image:: meraki_to_transit_media/meraki_avxtransit01.png
 .. |meraki_avxtransit02| image:: meraki_to_transit_media/meraki_avxtransit02.png
@@ -129,5 +136,8 @@ Validate connectivity
 .. |meraki_avxtransit10| image:: meraki_to_transit_media/meraki_avxtransit10.png
 .. |meraki_avxtransit11| image:: meraki_to_transit_media/meraki_avxtransit11.png
 .. |meraki_avxtransit12| image:: meraki_to_transit_media/meraki_avxtransit12.png
+.. |meraki_avxtransit12| image:: meraki_to_transit_media/meraki_avxtransit13.png
+.. |meraki_avxtransit12| image:: meraki_to_transit_media/meraki_avxtransit14.png
+
 
 .. disqus::
