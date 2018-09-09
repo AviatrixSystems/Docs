@@ -136,8 +136,8 @@ Validate connectivity
 .. |meraki_avxtransit10| image:: meraki_to_transit_media/meraki_avxtransit10.png
 .. |meraki_avxtransit11| image:: meraki_to_transit_media/meraki_avxtransit11.png
 .. |meraki_avxtransit12| image:: meraki_to_transit_media/meraki_avxtransit12.png
-.. |meraki_avxtransit12| image:: meraki_to_transit_media/meraki_avxtransit13.png
-.. |meraki_avxtransit12| image:: meraki_to_transit_media/meraki_avxtransit14.png
+.. |meraki_avxtransit13| image:: meraki_to_transit_media/meraki_avxtransit13.png
+.. |meraki_avxtransit14| image:: meraki_to_transit_media/meraki_avxtransit14.png
 
 
 .. disqus::
