@@ -123,6 +123,9 @@ Validate connectivity
 6. In order to summarize Spoke CDIRs, you will select the Site2Cloud connection for the Aviatrix Transit Network. Enter the summarized route in the "Manual BGP Advertised Network Lis" and click "Change BGP Manual Spoke Advertisement".
 
   |meraki_avxtransit14|
+  
+
+In summary, we can connect an existing Meraki network to Aviatrix Transit Network to leverage the agility, automation and other benefits of using Aviatrix solution. 
 
 .. |meraki_avxtransit01| image:: meraki_to_transit_media/meraki_avxtransit01.png
 .. |meraki_avxtransit02| image:: meraki_to_transit_media/meraki_avxtransit02.png
