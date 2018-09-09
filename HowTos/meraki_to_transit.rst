@@ -91,12 +91,12 @@ Adjust security groups and update AWS route tables
 --------------------------------------------------
 1. Go to AWS console and select us-west-2 (Oregon) region.
 2. Go to EC2 Dashboard and click on the vMX100 instance.
-3. Click on the Security Group for the vMX100 and add Allow Inbound traffic from 10.10.0.0/16, 10.28.0.0/16 and 10.32.0.0/11. Leave the default Outbound Allow All.
+3. Click on the Security Group for the vMX100 and add Allow Inbound traffic from 10.10.0.0/16, 10.28.0.0/16 and 10.32.0.0/11. Let the default Outbound Allow All.
 
   |meraki_avxtransit07|
 
 4. Select EC2 Aviatrix GW instance and click on its Security Group.
-5. Add Allow Inbound traffic from 10.10.0.0/16, 10.28.0.0/16 and 10.32.0.0/11. Leave the default Outbound Allow All.
+5. Add Allow Inbound traffic from 10.10.0.0/16, 10.28.0.0/16 and 10.32.0.0/11. Let the default Outbound Allow All.
 
   |meraki_avxtransit08|
 
