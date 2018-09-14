@@ -57,11 +57,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/onboarding_faq
    HowTos/aviatrix_account
    HowTos/HowTo_IAM_role
+   HowTos/iam_policies
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
    HowTos/AdminUsers_DuoAuth
    HowTos/CompanionGateway
-   HowTos/reserve_onprem
    HowTos/Quick_Tour
    HowTos/accesskey
   
@@ -269,6 +269,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_overlapping_subnets
    HowTos/s2c_for_publicIP
    HowTos/meraki_to_transit
+   HowTos/reserve_onprem
 
 .. _Solutions:
 
