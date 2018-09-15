@@ -287,7 +287,6 @@ This backup gateway keeps its configuration in sync with the primary
 gateway, but the configuration does not take effect until the primary gateway
 fails over to backup gateway. 
 
-If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need gateway HA function, you should select this option. 
 
 If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow,
 you do not need to come to this page.
@@ -299,6 +298,8 @@ When this option is selected, a backup gateway instance will be deployed in a di
 backup gateway keeps backup VPN tunnels up, ready for fail over. 
 
 If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. 
+
+If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need HA function, you should select this option. This option will try to load balance the traffic from different route tables to primary and backup gateways. 
 
 If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow, you do not need to come to this page. 
 
