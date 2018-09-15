@@ -291,10 +291,6 @@ fails over to backup gateway.
 
 When using Terraform, this option is described by parameter "HASubnet" by resource gateway.
 
-
-If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow,
-you do not need to come to this page.
-
 Gateway for High Availability Peering
 --------------------------------------
 
