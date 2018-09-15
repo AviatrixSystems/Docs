@@ -280,7 +280,9 @@ There are 3 types of high availability on Aviatrix: "Gateway for High Availabili
 Gateway for High Availability
 ------------------------------------------
 
-This feature has been deprecated. It is listed here for backward compatibility reason. 
+::
+
+  This feature has been deprecated. It is listed here for backward compatibility reason. 
 
 When this option is selected, a backup gateway instance will be deployed in a different AZ if available. 
 This backup gateway keeps its configuration in sync with the primary 
@@ -296,8 +298,7 @@ you do not need to come to this page.
 Gateway for High Availability Peering
 --------------------------------------
 
-When this option is selected, a backup gateway instance will be deployed in a different AZ if available. This
-backup gateway keeps backup VPN tunnels up, ready for fail over. 
+When this option is selected, a backup gateway instance will be deployed in a different AZ if available. This backup gateway keeps backup VPN tunnels up, ready for fail over. 
 
 If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. 
 
@@ -305,7 +306,9 @@ If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.c
 
 If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow, you do not need to come to this page. 
 
-When using Terraform, this option is described by parameter "PeeringHASubnet" by resource gateway.
+::
+
+  When using Terraform, this option is described by parameter "PeeringHASubnet" by resource gateway.
 
 Gateway Single AZ HA
 ---------------------
@@ -313,7 +316,9 @@ Gateway Single AZ HA
 When enabled, the Controller monitors the health of the gateway and restart the
 gateway if it becomes unreachable. No secondary gateway is launched in this case. 
 
-When using Terraform, this option is described by parameter "SingleAZ" by resource gateway.
+::
+
+  When using Terraform, this option is described by parameter "SingleAZ" by resource gateway.
 
 Gateway Resize 
 ---------------
