@@ -294,9 +294,9 @@ When using Terraform, this option is described by parameter "HASubnet" by resour
 Gateway for High Availability Peering
 --------------------------------------
 
-When this option is selected, a backup gateway instance will be deployed in a different AZ if available. This backup gateway keeps backup VPN tunnels up, ready for fail over. 
+When this option is selected, a backup gateway instance will be deployed in a different AZ if available. 
 
-If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. 
+If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. This backup gateway keeps backup VPN tunnels up, ready for fail over.
 
 If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need HA function, you should select this option. This option will try to load balance the traffic from different route tables to primary and backup gateways. 
 
