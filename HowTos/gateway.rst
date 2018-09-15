@@ -287,6 +287,8 @@ This backup gateway keeps its configuration in sync with the primary
 gateway, but the configuration does not take effect until the primary gateway
 fails over to backup gateway. 
 
+When using Terraform, this option is described by parameter "HASubnet" by resource gateway.
+
 
 If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow,
 you do not need to come to this page.
@@ -303,11 +305,15 @@ If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.c
 
 If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow, you do not need to come to this page. 
 
+When using Terraform, this option is described by parameter "PeeringHASubnet" by resource gateway.
+
 Gateway Single AZ HA
 ---------------------
 
 When enabled, the Controller monitors the health of the gateway and restart the
 gateway if it becomes unreachable. No secondary gateway is launched in this case. 
+
+When using Terraform, this option is described by parameter "SingleAZ" by resource gateway.
 
 Gateway Resize 
 ---------------
