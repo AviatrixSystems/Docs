@@ -176,6 +176,11 @@ To learn what are the resources are provided, check out `Aviatrix Terraform Prov
 
 To learn more examples, read on `Setup Aviatrix Transit Network with Terraform <https://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_.
 
+9. Contribute to the Community
+--------------------------------
+
+Aviatrix terraform provider is an `open source project <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_. All reviews, comments and contributions are welcome.
+
 
 Enjoy!
 
