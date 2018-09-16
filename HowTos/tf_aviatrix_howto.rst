@@ -85,12 +85,12 @@ Line 3 can also be made permanent: Edit ~/.bash_profile by appending line "expor
   $ make fmt
   $ make build
 
-4.4 Activate the provider by adding the following to ~/.terraformrc
+4.4 Activate the provider by adding the following to ~/.terraformrc. If the file ~/.terraform does not exist, you need to create one by adding the text below.
 
 ::
 
   providers {
-    "aviatrix" = "/Users/sxw/go/bin/terraform-provider-aviatrix"
+    "aviatrix" = "$GOPATH/bin/terraform-provider-aviatrix"
   }
 
 5. Prepare Aviatrix Controller
