@@ -172,7 +172,7 @@ With this log set to TRACE, you should see TRACE and ERROR when running terrafor
 8. More Examples
 -----------------
 
-To learn what are the resources are provides, check out `Aviatrix Terraform Provider <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
+To learn what are the resources are provided, check out `Aviatrix Terraform Provider <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
 
 To learn more examples, read on `Setup Aviatrix Transit Network with Terraform <https://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_.
 
