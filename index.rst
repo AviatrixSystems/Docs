@@ -270,6 +270,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_for_publicIP
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
+   HowTos/tf_aviatrix_howto
 
 .. _Solutions:
 
