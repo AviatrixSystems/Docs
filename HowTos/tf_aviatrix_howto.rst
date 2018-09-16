@@ -41,7 +41,7 @@ Type the following command to allow terraform to be executed anywhere.
 
 ::
 
-  source ~/.bash_prifle
+  $ source ~/.bash_prifle
 
 To verify, go to home or any directory and type "terraform --version", you should see the same outputs. 
 
