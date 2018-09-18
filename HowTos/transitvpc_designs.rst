@@ -75,8 +75,8 @@ The function is embedded in the Aviatrix gateway. It is transparent to user inst
 
 |image5|
 
-Integrating with Egress Firewall -1
-------------------------------------
+Integrating with Third Party Firewall
+-----------------------------------------
 
 If you are running AWS Workspace services for your employees and need a full fledged firewall device, you can connect the firewall device to VGW directly, shown in the diagram below. This approach requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
 
@@ -100,6 +100,17 @@ The advantage of this architecture is that traffic to Internet and on-prem is de
 The drawback in this architecture is that each Spoke VPC needs to establish a site2cloud
 IPSEC connection to the firewall which is not optimized to handle potentially large scale of VPN tunnels. Unless there is automation, the process
 of building many IPSEC connections could be time consuming and difficult to manage. The performance load on the firewall device to handle VPN tunnels can significantly impact its ability to perform IDS/IPS functions. 
+
+SD-WAN Integration
+--------------------
+
+If you have multiple sites to connect to the cloud, you can use an Aviatrix gateway to terminate the many site2cloud to branch offices, and connect this gateway to the VGW in the Transit VPC. 
+
+Alternatively, you can use a SD-WAN termination point in the VPC to connect to the branches. 
+
+Both options can be described in the diagram below. 
+
+|sd-wan|
 
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
@@ -127,6 +138,10 @@ of building many IPSEC connections could be time consuming and difficult to mana
    :height: 3.26548in
 
 .. |image6| image:: transitvpc_designs_media/egress-firewall2.png
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |sd-wan| image:: transitvpc_designs_media/sd-wan.png
    :width: 5.55625in
    :height: 3.26548in
 
