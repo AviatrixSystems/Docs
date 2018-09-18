@@ -1,3 +1,13 @@
+.. meta::
+   :description: External PKI for OpenVPN Certificates
+   :keywords: PKI, OpenVPN, Certificates, SSL
+
+######################################################
+External PKI for OpenVPN Certificates
+######################################################
+
+
+
 **How to deploy a Certificate-based SSL VPN Server**
 
 Aviatrix OpenVPN solution provides certificate based SSL VPN user
@@ -49,8 +59,6 @@ Please note Uploading the certificate files (ca.crt, server.key,
 server.crt crl uri) again will not update the certificates on gateways
 that are already deployed.
 
-**
-**
 
 **Client OVPN file**
 
@@ -71,14 +79,14 @@ client key and save the file.
 
 <cert>
 
-*CLIENT-CERT *                       << Replace your client certificate
+CLIENT-CERT                        << Replace your client certificate
 here
 
 </cert>
 
 <key>
 
-*CLIENT-KEY*                          << Replace your client key here
+CLIENT-KEY                          << Replace your client key here
 
 </key>
 
@@ -108,8 +116,7 @@ connect to your SSL OpenVPN gateway.
 The common name field in the certificate will be used by the controller
 to identify the user
 
-**
-**
+
 
 **Sample scripts**
 
@@ -138,3 +145,7 @@ controller (OpenVPN->VPN Users). Username should match the common Name
 field in the client certificate. Note that you cannot add email here
 during user addition since certificates are generated externally. You
 can now associate these users to profiles under OpenVPN->Profiles.
+
+.. add in the disqus tag
+
+.. disqus::
