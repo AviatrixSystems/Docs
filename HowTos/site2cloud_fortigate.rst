@@ -303,8 +303,8 @@ Troubleshooting
 Check that the Phase 1 authentication, encryption, and DH groups match on both sides
 
 
-.. note::
-  If you are experiencing low IPsec throughput, you may want to configure two commands on the Fortigate.
+**Low IPsec throughput**
+If you are experiencing low IPsec throughput, you may want to configure two commands on the Fortigate.
 
   config system global
   set ipsec-asic-offload disable
