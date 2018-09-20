@@ -92,6 +92,33 @@ At "Gateway for High Availability Peering", select a public subnet in the drop d
 For FQDN function, the primary gateway and backup gateway load balance the 
 Internet bound traffic from different subnets based on route table. 
 
+How does FQDN and Stateful firewall work together?
+----------------------------------------------------
+
+There are some caveats in release 3.4 when configuring `stateful firewall <https://docs.aviatrix.com/HowTos/tag_firewall.html>`_ and `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+
+A non HTTP/HTTPS traffic means any TCP/UDP/ICMP traffic excluding TCP port 80/443. 
+
+When stateful firewall and FQDN are both enabled, stateful firewall rules are executed before FQDN for non HTTP/HTTPS traffic. 
+
+=================================    =====================================    ======================================
+Service                              Stateful firewall base rule Deny All     Stateful firewall base rule Allow All
+=================================    =====================================    ======================================
+FQDN Whitelist for HTTP/HTTPS        Work independently.                      Work independently. 
+FQDN Whitelist for non HTTP/HTTPS    Do not work independently, see Note 1    Do not Work independently, see Note 2  
+=================================    =====================================    ======================================
+
+Note 1:
+
+  There are two options to work around the issue: 
+     - Option 1: for non HTTP/HTTPS traffic, do not use FQDN Whitelist. Use Stateful firewall instead.  
+     - Option 2: On the stateful firewall page, change the base rule to "Allow all" (do not change individual rules). This is because the FQDN is executed after stateful firewall for non HTTP/HTTPS traffic, therefore even if you specify "Allow all" as base rule, the FQDN whitelist will only permit the rules specified both in stateful firewall and FQDN. FQDN Whitelist has an implicit "DROP ALL" as its last rule.  
+
+Note 2:
+  
+  This is an expected behavior. If statefule firewall rule base is "Allow all", the individual rules are "Deny" and FQDN is a whitelist, FQDN's last implicit rule "DROP ALL" will effectively make the gateway to be a "Deny all" for any destinations the stateful firewall does not specify. 
+  
+
 For support, send email to support@aviatrix.com
 
 Enjoy!
