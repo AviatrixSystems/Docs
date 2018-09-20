@@ -97,7 +97,7 @@ How does FQDN and Stateful firewall work together?
 
 There are some caveats in release 3.4 when configuring `stateful firewall <https://docs.aviatrix.com/HowTos/tag_firewall.html>`_ and `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
 
-A non HTTP/HTTPS traffic means any TCP/UDP/ICMP traffic excluding TCP port 80/443. 
+(A non HTTP/HTTPS traffic means any TCP/UDP/ICMP traffic excluding TCP port 80/443.) 
 
 When stateful firewall and FQDN are both enabled, stateful firewall rules are executed before FQDN for non HTTP/HTTPS traffic. 
 
