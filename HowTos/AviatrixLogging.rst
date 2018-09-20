@@ -41,15 +41,15 @@ collected from Aviatrix Controller and gateways.
 Following types of Aviatrix log keywords can be identified by the Log
 Management System for further analysis:
 
-- `AviatrixVPNSession <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixvpnsession>`_
-- `AviatrixUser <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixuser>`_
-- `AviatrixLicenseVPNUsers <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixlicensevpnusers>`_ 
-- `AviatrixRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixrule>`_
-- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixgwnetstats>`_
-- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixgwsysstats>`_
-- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfqdnrule>`_
-- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixtunnelstatuschange>`_
-- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixcmd>`_
+- `AviatrixVPNSession <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id1>`_
+- `AviatrixUser <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id2>`_
+- `AviatrixLicenseVPNUsers <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id4>`_ 
+- `AviatrixRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id6>`_
+- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
+- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
+- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
+- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
+- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
 
 Below are the details of each log keyword. 
 
