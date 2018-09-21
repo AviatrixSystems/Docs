@@ -25,7 +25,7 @@ import sphinx_rtd_theme
 #from better import better_theme_path
 
 def setup(app):
-   app.add_stylesheet('custom.css')
+    app.add_stylesheet('css/custom.css')
 
 def setup(app):
     app.add_javascript("drift.js")
