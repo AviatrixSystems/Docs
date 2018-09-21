@@ -25,9 +25,6 @@ import sphinx_rtd_theme
 #from better import better_theme_path
 
 def setup(app):
-    app.add_stylesheet('css/custom.css')
-
-def setup(app):
     app.add_javascript("drift.js")
 
 # -- General configuration ------------------------------------------------
@@ -108,6 +105,11 @@ html_theme = "sphinx_rtd_theme"
 #html_theme_path = [better_theme_path]
 #html_theme = 'better'
 #html_style  = 'aviatrix_theme.css'
+
+def setup(app):
+    app.add_stylesheet('css/custom.css')
+
+
 # make sure search results for relative urls link to docs.aviatrix.com
 html_use_opensearch = 'https://docs.aviatrix.com'
 
