@@ -24,8 +24,8 @@ import sphinx_rtd_theme
 
 #from better import better_theme_path
 
-#def setup(app):
-#    app.add_stylesheet('aviatrix_theme.css')
+def setup(app):
+   app.add_stylesheet('custom.css')
 
 def setup(app):
     app.add_javascript("drift.js")
