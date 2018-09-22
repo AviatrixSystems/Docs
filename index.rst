@@ -198,6 +198,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/alert_and_email
    HowTos/advanced_config
    HowTos/AdminUsers_LDAP
+   HowTos/netflow
 
 .. _Troubleshoot:
 
