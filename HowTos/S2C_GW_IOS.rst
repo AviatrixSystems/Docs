@@ -4,7 +4,7 @@
 
 
 =================================================
-Site2Cloud (Aviatrix Gateway -- Cisco IOS Router)
+Aviatrix Gateway to Cisco IOS Router
 =================================================
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Cisco IOS router.

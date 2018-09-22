@@ -4,7 +4,7 @@
 
 
 =============================================
-Site2Cloud (Aviatrix Gateway --- PAN)
+Aviatrix Gateway to Palo Alto Firewall (PAN)
 =============================================
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Palo Alto Netowrks (PAN) Firewall. To simulate an on-prem PAN Firewall, we use a PAN VM at AWS VPC.

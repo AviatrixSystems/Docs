@@ -3,7 +3,7 @@
    :keywords: meraki, aviatrix, site2cloud
 
 =====================================================================
-Site2Cloud (Aviatrix Gateway - Meraki MX64)
+Aviatrix Gateway to Meraki MX64
 =====================================================================
 
 Overview

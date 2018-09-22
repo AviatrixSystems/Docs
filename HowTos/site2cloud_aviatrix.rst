@@ -3,7 +3,7 @@
    :keywords: aviatrix, site2cloud
 
 =====================================================================
-Site2Cloud (Aviatrix Gateway - Aviatrix Gateway)
+Aviatrix Gateway to  Aviatrix Gateway
 =====================================================================
 
 Overview

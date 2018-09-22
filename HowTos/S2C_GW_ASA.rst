@@ -4,7 +4,7 @@
 
 
 ============================================
-Site2Cloud (Aviatrix Gateway -- Cisco ASA)
+Aviatrix Gateway to Cisco ASA
 ============================================
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Cisco ASA Firewall.

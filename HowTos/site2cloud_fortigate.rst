@@ -3,7 +3,7 @@
    :keywords: fortigate, aviatrix, site2cloud
 
 =====================================================================
-Site2Cloud (Aviatrix Gateway - FortiGate)
+Aviatrix Gateway to FortiGate
 =====================================================================
 
 Overview

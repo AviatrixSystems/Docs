@@ -3,7 +3,7 @@
    :keywords: meraki, aviatrix, site2cloud
 
 =====================================================================
-Site2Cloud (Aviatrix Gateway - Meraki vMX100)
+Aviatrix Gateway to Meraki vMX100
 =====================================================================
 
 Overview
