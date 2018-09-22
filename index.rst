@@ -122,9 +122,6 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/site2cloud_faq
    HowTos/site2cloud
-   HowTos/cloudn-site2cloud
-   HowTos/site2cloud_case_study
-   HowTos/EncrOverExpRoute
    HowTos/avxgw_azurevpngw_site2cloud
    HowTos/site2cloud_aviatrix
    HowTos/site2cloud_awsvgw
@@ -136,6 +133,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud_fortigate
    HowTos/site2cloud_meraki
    HowTos/site2cloud_meraki_vmx100
+   HowTos/cloudn-site2cloud
+   HowTos/site2cloud_case_study
+   HowTos/EncrOverExpRoute
 
 .. _OpenVPN:
 
