@@ -27,7 +27,7 @@ Before configuring SAML integration between Aviatrix and Google, make sure the f
 Aviatrix Controller
 ####################
 
-If you haven’t already deployed the Aviatrix controller, follow `these detailed instructions <./StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__.
+If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
 
 .. _gsaml_google_account:
 
