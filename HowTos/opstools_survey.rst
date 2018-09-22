@@ -17,8 +17,8 @@ For example, Chef can run on TCP port 4321, 80, 443, 9683, 9463, 9090, 8000, 898
 
 |survey|
 
-Understandably encryption implemented on each application adds complexity as the DevOps 
-admin must deal with certificates and keys, and if you deploy a set of them, it is becoming unmanageable. 
+Understandably implementing encryption for each tool adds complexity as a DevOps 
+admin must deal with certificates and keys, and if you deploy a set of them, it becomes unmanageable. 
 
 Check with your DevOps team and understand the running environment and risk. 
 
