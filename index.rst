@@ -296,4 +296,5 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/inter_region_latency
    HowTos/cloudformation_condition_howto
+   HowTos/opstools_survey
 
