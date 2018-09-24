@@ -288,12 +288,14 @@ Example log:
   Connection Name: vgw-bgp-ha
   VGW Id: vgw-0942b724a5150bc6a
 
-AviatrixGuarDuty
+AviatrixGuardDuty
 -------------------
 
-Log message with this prefix comes from the Controller whenever it receives alert message from AWS GuarDuty. 
+Log message with this prefix comes from the Controller whenever it receives alert message from AWS GuardDuty. 
 
 Example log:
+
+::
 
   2018-09-23T00:00:50.369963-07:00 ip-172-31-89-197 cloudxd: AviatrixGuardDuty: Account [aws], Region [us-east-1], Instance ID [i-0a675b03fafedd3f2], at 2018-09-23T02:05:35Z, 163.172.7.97 is performing SSH brute force attacks against i-0a675b03fafedd3f2.  Please tighten instance security group to avoid UnauthorizedAccess:EC2/SSHBruteForce threat.
  
