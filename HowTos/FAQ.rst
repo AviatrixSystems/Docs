@@ -105,6 +105,10 @@ Go to Settings -> Controller -> Security Group Management, select the `primary a
 
 When this feature is enabled, the Controller will immediately create 4 security groups. Since each security group can support 50 security rules, the Controller can support up to 200 gateways. 
 
+::
+
+  After this feature is enabled, you can now edit the security rules that are outside gateways public IP addresses to limit the source address range. 
+
 (If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller.) 
 
 2. Use signed certificate
