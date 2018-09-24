@@ -50,9 +50,9 @@ Management System for further analysis:
 - `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
 - `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
 - `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
-- `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgpoverlapcidr>`_
+- `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
-- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixguardduty>`_
+- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 
 Below are the details of each log keyword. 
 
