@@ -67,7 +67,6 @@ generated for each VPN connection. One is when the connection is
 established, the other when it’s disconnected.
 
 Example logs:
--------------
 
 **Connect Log:**
 
@@ -102,7 +101,6 @@ for each packet that passes through the VPN connection from the client
 to the destination.
 
 Two example logs:
------------------
 
 ::
 
@@ -125,7 +123,6 @@ Logs with this prefix come from Controller and can be used to monitor
 the license usage of active vpn users connected to all vpn gateways.
 
 One example log:
------------------
 
 ::
 
@@ -146,7 +143,6 @@ interface, MAC address, TTL value, protocol name, source IP address,
 destination IP address and packet length.
 
 Two example logs:
---------------------
 
 ::
 
@@ -170,7 +166,6 @@ These logs are sampled every 1 minutes, and give details about gateway
 network interface.
 
 Two example logs:
-------------------
 
 ::
  
@@ -194,7 +189,6 @@ These logs are sampled every 1 minutes, and give details about gateway
 memory, cpu and disk load.
 
 Two example logs:
-------------------
 
 ::
 
@@ -219,7 +213,6 @@ allowed with state as MATCHED, otherwise it will be discarded with state
 as NO\_MATCH.
 
 Two example logs:
-------------------
 
 ::
 
@@ -239,7 +232,6 @@ Logs with this prefix come from controller whenever a tunnel status changes.
 old_state means old state of the tunnel, and new_state is the new changed state of tunnel.
 
 Example log:
-------------------
 
 ::
 
@@ -255,7 +247,6 @@ information on the CLI command that was issued, the results of the execution, an
 message if there is a failure.
 
 Example log:
-------------------
 
 .. highlight:: none
 
@@ -264,6 +255,36 @@ Example log:
   Nov 10 01:05:41 ip-172-31-6-24 cloudxd:
   AviatrixCMD: action=ADD_TIME_SERVER, argv=['--rtn_file', '/run/shm/rtn1809376682',
   'add_time_server', 'time2.google.com'], result=Success, reason=
+
+AviatrixBGPOverlapCIDR
+------------------------
+
+Log message with this prefix comes from the Controller whenever it detects overlapping CIDRs between on-prem learned and Spoke VPC CIDRs. 
+
+Example log:
+
+::
+  
+  2018-09-24T20:28:58.330708+00:00 ip-172-31-23-128 cloudxd: AviatrixBGPOverlapCIDR: Time Detected: 2018-09-24 20:28:58.329881
+ 
+  Spoke/Manual CIDRs ['10.0.0.0/8'] have a conflict with BGP Learned CIDRs [u'10.2.0.0/16', u'30.2.0.0/16'] in VPC vpc-782bb21f on connection vgw-bgp-ha.
+
+AviatrixBGPRouteLimitThreshold
+--------------------------------
+
+Log message with this prefix comes from the Controller whenever it detects total BGP routes
+exceed the 80 routes. (AWS VGW has a total 100 route limit.)
+
+Example log:
+
+::
+  
+  2018-09-24T20:24:50.600144+00:00 ip-172-31-23-128 cloudxd: AviatrixBGPRouteLimitThreshold: This message is alerting you that the VGW listed below currently has 89 routes, which is approaching the VGW route limits (100). You can reduce the number of routes on VGW both from on-prem side and on Aviatrix Transit gateway by enabling Route Summarization feature.
+ 
+  Time Detected: 2018-09-24 20:24:50.599822
+ 
+  Connection Name: vgw-bgp-ha
+  VGW Id: vgw-0942b724a5150bc6a
 
 
 3. Logging Configuration at Aviatrix Controller
