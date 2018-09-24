@@ -52,6 +52,7 @@ Management System for further analysis:
 - `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
 - `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgpoverlapcidr>`_
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
+- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixguardduty>`_
 
 Below are the details of each log keyword. 
 
