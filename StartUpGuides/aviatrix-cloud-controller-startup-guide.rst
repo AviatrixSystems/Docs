@@ -64,7 +64,6 @@ Select the right AMI that meets your use case and subscription preference. Click
    - Encrypted Peering 
    - Site to Cloud IPSEC VPN 
    - FREE - EC2 FlightPath Troubleshooting Tool
-   - FREE – Two Tunnels (Free Forever)
    
 - **Metered Networking as a Service** `Aviatrix Secure Networking as a Service - Metered Service <https://aws.amazon.com/marketplace/pp/B07D411SV9?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases, 2 free tunnels included: 
    - Next-Generation Transit VPC Network  
@@ -74,7 +73,6 @@ Select the right AMI that meets your use case and subscription preference. Click
    - Encrypted Peering 
    - Site to Cloud IPSEC VPN 
    - FREE - EC2 FlightPath Troubleshooting Tool
-   - FREE – Two Tunnels (Free Forever)
    
 - **Utility AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ includes a 14-day free trial and is a utility model for use cases that build IPSEC and SSL VPN: 
    - Next-Generation Transit VPC Network  
