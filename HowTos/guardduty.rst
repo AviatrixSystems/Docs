@@ -10,7 +10,7 @@
 Coming soon in release 3.5, Aviatrix Controller integrates with `AWS GuardDuty <https://aws.amazon.com/guardduty/>`_ to provide you the IDS protection on a per account and region bases. 
 
 Amazon GuardDuty continuesly monitors an account's AWS environment and reports findings. 
-GuardDuty sifts through CloudTrail logs, VPC Flow logs and DNS logs to assess risk and generate findings. 
+GuardDuty sifts through CloudTrail logs, VPC Flow logs and DNS logs to assess risk and generate findings. To learn more on GuardDuty, read `Amazon GuardDuty FAQ <https://aws.amazon.com/guardduty/faqs/>`_.
 
 Configuration
 --------------
