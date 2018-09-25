@@ -25,7 +25,7 @@ Integration
 
 Following is the integration functions. 
 
- - Aviatrix Controller does nightly polling to Amazon GuardDuty findings. 
+ - Aviatrix Controller polls periodically Amazon GuardDuty findings. 
  - Findings from Amazon GuardDuty are `logged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_ to the Controller syslog. (Syslog can be exported to `Aviatrix supported Logging services <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_.)
  - Findings from Amazon GuardDuty are displayed in Alert Bell on the Controller console.  
  - If a finding is about an Aviatrix gateway being attacked by an IP address, this IP address is blocked by the gateway through an automatically programmed Stateful firewall rule. 
