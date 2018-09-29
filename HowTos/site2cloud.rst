@@ -216,13 +216,18 @@ This template file that contains the gateway public IP address, VPC CIDR, pre-sh
 Dead Peer Detection
 --------------------
 
+This field is not applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. 
+
 Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPSEC tunnels to 
 send periodic messages to ensure the remote site is up. 
 
 By default DPD detection is enabled. 
 
+
 Manual BGP Advertised Network List
 -----------------------------------
+
+This field is only applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
 
 By default, Aviatrix Transit GW advertises individual Spoke VPC CIDRs to VGW. You can 
 override that by manually entering the intended CIDR list to advertise to VGW. 
@@ -231,6 +236,28 @@ To enable it, simply enter the field with a list of CIDR blocks separated by com
 then click "Change BGP Manual Spoke Advertisement". 
 
 To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
+
+Advertise Transit VPC Network CIDR(s)
+--------------------------------------
+
+This field is only applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+
+By default, Aviatrix Transit GW does not advertise Transit VPC CIDR. 
+
+When this field is enabled, Aviatrix Transit GW advertise the Transit VPC CIDR and and also programms AWS route entries.
+
+If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to 
+Spoke VPCs and on-prem network. 
+
+Connected Transit
+--------------------
+
+This field is only applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+
+By default, Aviatrix Spoke VPCs do not have routing established to communicate 
+with each other via Transit. They are completely segmented. 
+
+If you like to have all Spoke VPCs to establish connectivity via Transit GW, you can achieve that by enabling "Connected Transit" mode. 
 
 Network Device Support
 ======================
