@@ -21,16 +21,18 @@ different IP addresses.
 AWS NAT gateway does not offer security group function, 
 it relies on security groups by each instance.  AWS NAT instance's security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7. 
 
-On the other hand, workloads in AWS are mostly applications where it is deterministic which 
+On the other hand, workloads in AWS are mostly applications or programs where it is deterministic which 
 outbound APIs the application program calls. For example, the application runs API queries to
 www.salesforce.com for data retrieving; the application also runs API queries to www.google.com for app authentication. In these cases, making sure only these sites are allowed for egress 
 traffic is sufficient from security point of view. Note this is very different from on-prem situation where end user traffic and application traffic are mingled together, you may need a full fledged firewall for Internet bound traffic.
+
+Another use case is for PCI DSS compliance. PCI DSS specifies that if you handle any payment and sensitive data, there must be firewall policy enforcement at the egress. In the cloud, the logical egress point is per VPC.  
 
 What does Aviatrix FQDN feature do?
 ========================================
 
 Aviatrix Fully Qualified Domain Name (FQDN)
-Whitelisting is a security feature specially designed for workloads in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC.
+Whitelisting is a security service feature specially designed for workloads in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC. This service is centrally managed by the Controller and distributedly executed by an Aviatrix gateway instance in the VPC. 
 
 Starting from release 3.4, Aviatrix FQDN Whitelisting filters on any TCP and UDP traffic 
 including HTTP, HTTPS and SFTP traffic and allows 
@@ -51,7 +53,7 @@ whitelists.
 How does it work?
 =================
 
-This features works for HTTP and HTTPS traffic to public Internet. The function is carried out inline
+This service works for HTTP and HTTPS traffic to public Internet. The function is carried out inline
 without requiring any certificate or keys to decrypt the traffic.
 
 Starting from release 3.4, non HTTP/HTTPS traffic can also be filtered based on domain names. Use cases are secure file transfer (SFTP) to external sites, secure login in (SSH) to external sites. 
