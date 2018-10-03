@@ -131,7 +131,7 @@ Next, set up a route for traffic for the floating IP addresses through the clien
 Add Floating IP routes to ONTAP Controllers
 ###########################################
 
-In the NetApp Cloud Manager, be sure to select the subnet(s) where the Aviatrix Gateway(s) is installed when modifying [route tables](http://docs.netapp.com/occm/index.jsp?topic=%2Fcom.netapp.doc.onc-cloud-mgr-ug-330%2FGUID-7DD84149-4A73-4A1D-84FF-31F096781EF4.html).
+In the NetApp Cloud Manager, be sure to select the subnet(s) where the Aviatrix Gateway(s) is installed when `modifying AWS route tables <http://docs.netapp.com/occm/index.jsp?topic=%2Fcom.netapp.doc.onc-cloud-mgr-ug-330%2FGUID-7DD84149-4A73-4A1D-84FF-31F096781EF4.html>`__ with the routes to the floating IPs.
 
 Validate
 ########
