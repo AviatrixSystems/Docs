@@ -65,6 +65,10 @@ Setup additional access account using Terraform
 If you use Terraform to create more access account, you need to run the 
 CloudFormation script on each secondary account first, then use Terraform account resource to create the account. 
 
+::  
+
+  Follow the above section, but only execute step 5. 
+
 The CloudFormation is necessary to create IAM roles, policies and establish trust relationship with the primary account (The account where Controller is launched.)
 
 
