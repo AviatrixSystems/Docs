@@ -114,8 +114,8 @@ First, set up a connection for traffic to go between the client and the ONTAP VP
 
    |imageAddPeer|
 
-Route Floating IP addresses to the ONTAP VPC
-############################################
+Route Floating IP routes from client to the ONTAP VPC
+########################################################
 Next, set up a route for traffic for the floating IP addresses through the client gateway to the ONTAP gateway:
 
 #. Login to your Aviatrix Controller
@@ -127,7 +127,12 @@ Next, set up a route for traffic for the floating IP addresses through the clien
 #. Click `OK`
 
    |imageAddTransitivePeer|
-   
+
+Add Floating IP routes to ONTAP Controllers
+###########################################
+
+In the NetApp Cloud Manager, be sure to select the subnet(s) where the Aviatrix Gateway(s) is installed when modifying [route tables](http://docs.netapp.com/occm/index.jsp?topic=%2Fcom.netapp.doc.onc-cloud-mgr-ug-330%2FGUID-7DD84149-4A73-4A1D-84FF-31F096781EF4.html).
+
 Validate
 ########
 
