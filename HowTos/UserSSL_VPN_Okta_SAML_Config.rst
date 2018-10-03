@@ -157,6 +157,8 @@ Look for the section titled `Provide the following IDP metadata to your SP provi
 
    Copy the text displayed.  This value will be used to configure the SAML on the Aviatrix controller.
 
+You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ 
+
 .. _aviatrix_gateway:
 
 Launch Aviatrix VPN Gateway
