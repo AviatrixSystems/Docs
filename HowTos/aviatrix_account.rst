@@ -59,6 +59,13 @@ The above diagram is described in the following steps.
  #. The new secondary account should be created.
  #. Now you can create connectivity between two VPCs in different AWS accounts.
 
+Setup additional access account using Terraform
+-------------------------------------------------
+
+If you use Terraform to create more access account, you need to run the 
+CloudFormation script on each secondary account first, then use Terraform account resource to create the account. 
+
+The CloudFormation is necessary to create IAM roles, policies and establish trust relationship with the primary account (The account where Controller is launched.)
 
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
