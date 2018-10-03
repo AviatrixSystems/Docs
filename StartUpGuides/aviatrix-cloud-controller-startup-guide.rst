@@ -53,7 +53,7 @@ Step 1. Subscribe to an Aviatrix AMI
 1.1 Select an AMI  
 ----------------------------------------------------------------
 
-Select the right AMI that meets your use case and subscription preference. Click an AMI link will take you to the AWS Marketplace to complete step 1.2 only. 
+Select the right AMI that meets your use case and subscription preference. Clicking on an AMI link will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
 - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases, 2 free tunnels included: 
