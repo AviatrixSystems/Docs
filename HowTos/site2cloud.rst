@@ -244,10 +244,10 @@ This field is only applicable to Site2Cloud connection established by `Transit N
 
 By default, Aviatrix Transit GW does not advertise Transit VPC CIDR. 
 
-When this field is enabled, Aviatrix Transit GW advertise the Transit VPC CIDR and and also programms AWS route entries.
+When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC CIDR to VGW. The Controller programs the 3 RFC1918 routes in AWS route table to point to the Transit GW. It also programs the learned routes from VGW into the AWS route table. 
 
-If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to 
-Spoke VPCs and on-prem network. 
+If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
+
 
 Connected Transit
 --------------------
