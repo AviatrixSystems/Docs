@@ -168,8 +168,20 @@ Manages FQDN filtering for Aviatrix gateway
 	  fqdn_status = "enabled"
 	  fqdn_mode = "white"
 	  gw_list = ["gw1", "gw2"]
-	  domain_list = ["*.facebook.com", "*.reddit.com"]
-	}
+	  domain_list = [
+          {
+           fqdn = "facebook.com"
+           proto = "tcp"
+           port = "443"
+          },
+          {
+           fqdn = "reddit.com"
+           proto = "tcp"
+           port = "443"
+          }	
+        ]
+
+
 
 aviatrix_firewall_tag
 ---------------------
@@ -307,6 +319,69 @@ Manages Aviatrix VPN user
 	  user_name = "user"
 	  user_email = "abc@xyz.com"
 	}
+
+
+aviatrix_profile
+----------------
+Manages VPN user Profiles
+
+**Example Usage**
+::
+
+	provider "aviatrix" {
+	  controller_ip = "1.2.3.4"
+	  username = "admin"
+	  password = "password"
+	}
+
+	# name - Enter any name for the profile 
+	# base_rule - Enter allow_all or deny_all, based on whether you want a white list or black list
+	# users - List of VPN users to attach to this profile
+	# policy - List of policies for the profile.
+           Each policy has the following attribute
+              action - ("allow"/"deny") (should be the opposite of the base rule for correct behaviour)
+              proto - ("all"/"tcp"/"udp"/"icmp"/"sctp"/"rdp"/"dccp") -protocol to allow or deny
+              port - Port to be allowed or denied
+              target - CIDR to be allowed or denied
+
+	resource "aviatrix_profile" "test_profile1" {
+	  name = "my_profile"
+	  base_rule = "allow_all"
+	  users = ["user1", "user2"]
+	  policy = [
+          {
+           action = "deny"
+           proto = "tcp"
+           port = "443"
+           target = "10.0.0.0/32"
+          },
+          {
+           action = "deny"
+           proto = "tcp"
+           port = "443"
+           target = "10.0.0.1/32"
+          }	
+        ]
+
+	resource "aviatrix_profile" "test_profile2" {
+	  name = "my_profile"
+	  base_rule = "deny_all"
+	  users = ["user1", "user2"]
+	  policy = [
+          {
+           action = "allow"
+           proto = "tcp"
+           port = "443"
+           target = "10.0.0.0/32"
+          },
+          {
+           action = "allow"
+           proto = "tcp"
+           port = "443"
+           target = "10.0.0.1/32"
+          }	
+        ]
+
 
 aviatrix_aws_peer
 -----------------
