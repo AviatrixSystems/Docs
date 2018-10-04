@@ -11,6 +11,11 @@ AWS Global Transit Network
 AWS Reference Deployment Guide
 ==============================
 
+This document describes a transit network built with static routes. The 
+solution has been deprecated. 
+
+For Aviatrix Next-Gen Transit Network, refer to `this document. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+
 This document is published by AWS Answers for `AWS Global Transit Network <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ as Partner Offering.
 
 
