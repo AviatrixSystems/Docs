@@ -284,6 +284,13 @@ This inconsistency can be fixed by force switch spoke2 VPC to use primary gatewa
 Before you can summarize Spoke VPC CIDRs, you must make sure Spoke gateways all use either primary gateway or all use backup gateway if backup is enabled. For example, in the following screen shot, 
 Spoke  
 
+How to build Spoke to Spoke connectivity via Transit?
+------------------------------------------------------
+
+Starting from release 3.5, Transit network supports `Connected mode. <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_ where Spoke to Spoke connectivity is built automatically. 
+
+
+
 .. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
    :scale: 30%   
 

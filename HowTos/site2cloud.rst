@@ -232,7 +232,10 @@ This field is only applicable to Site2Cloud connection established by `Transit N
 By default, Aviatrix Transit GW advertises individual Spoke VPC CIDRs to VGW. You can 
 override that by manually entering the intended CIDR list to advertise to VGW. 
 
-To enable it, simply enter the field with a list of CIDR blocks separated by comma, 
+This feature is critical to limit the total number of routes carried by VGW (maximum is 100). 
+
+To enable it, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit. 
+Scroll down to "Manual BGP Advertised Network List", simply enter the field with a list of CIDR blocks separated by comma, 
 then click "Change BGP Manual Spoke Advertisement". 
 
 To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
@@ -248,6 +251,9 @@ When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC CID
 
 If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
 
+To enable this option, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
+Scroll down to "Advertise Transit VPC Network CIDR(s)" to enable. 
+
 
 Connected Transit
 --------------------
@@ -258,6 +264,9 @@ By default, Aviatrix Spoke VPCs do not have routing established to communicate
 with each other via Transit. They are completely segmented. 
 
 If you like to have all Spoke VPCs to establish connectivity via Transit GW, you can achieve that by enabling "Connected Transit" mode. 
+
+To enable this option, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
+Scroll down to "Connected Transit" to enable.
 
 Network Device Support
 ======================
