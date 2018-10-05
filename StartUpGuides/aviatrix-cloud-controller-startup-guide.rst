@@ -74,7 +74,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - Site to Cloud IPSEC VPN 
    - FREE - EC2 FlightPath Troubleshooting Tool
    
-- **Utility AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ is a utility model for use cases that build IPSEC: 
+- **Utility AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ is a utility model for use cases that build IPSEC: (Contact Aviatrix sales to launch Custom AMI.)
    - Next-Generation Transit VPC Network  
    - Multicloud Peering 
    - Encrypted Peering 

@@ -23,8 +23,6 @@ To update by replacing the current one with the latest default policy, follow th
 1. Update Primary Account IAM Policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you enable AWS GuardDuty <https://docs.aviatrix.com/HowTos/guardduty.html>`_, the Controller's IAM policy needs to be updated. 
-
  a. login to your `Primary Account <https://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`_ on AWS Console (typically this is the account you launch your Controller), 
  #. At Services, go to IAM 
  #. Click Policies
@@ -42,6 +40,10 @@ If you enable AWS GuardDuty <https://docs.aviatrix.com/HowTos/guardduty.html>`_,
 Currently there is no need to update `Secondary Access Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-additional-access-account-for-aws-cloud>`_ IAM policies. 
 
 
+3. Aviatrix Services and IAM Policies
+--------------------------------------
+
+If you enable `Amazon GuardDuty <https://docs.aviatrix.com/HowTos/guardduty.html>`_, the Controller's IAM policy needs to be updated. 
 
 
 
