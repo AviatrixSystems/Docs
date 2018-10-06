@@ -7,7 +7,11 @@
  Netflow Integration 
 =================================
 
-Coming soon in release 3.5, Aviatrix Controller and gateways can forward `Netflow <https://en.wikipedia.org/wiki/NetFlow>`_ logs to your designated service point. Netflow V5 is supported. 
+Starting in release 3.5, Aviatrix Controller and gateways can forward `Netflow <https://en.wikipedia.org/wiki/NetFlow>`_ logs to your designated service point. Netflow V5 is supported. 
+
+To enable, click Settings on the main navigation bar, click Logging, scroll down to NETFLOW AGENT.
+
+Input the IP address and the port number of the destination Netflow service and click Enable. All gateways will have Netflow enabled. 
 
 
 

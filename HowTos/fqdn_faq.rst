@@ -97,7 +97,7 @@ Internet bound traffic from different subnets based on route table.
 How does FQDN and Stateful firewall work together?
 ----------------------------------------------------
 
-There are some caveats in release 3.4 when configuring `stateful firewall <https://docs.aviatrix.com/HowTos/tag_firewall.html>`_ and `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+There are some caveats in release 3.4 when configuring `stateful firewall <https://docs.aviatrix.com/HowTos/tag_firewall.html>`_ and `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_. Note the below caveats have been fixed for `release 3.5 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_.
 
 (A non HTTP/HTTPS traffic means any TCP/UDP/ICMP traffic excluding TCP port 80/443.) 
 

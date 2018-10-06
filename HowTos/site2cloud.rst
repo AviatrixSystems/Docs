@@ -258,15 +258,18 @@ Scroll down to "Advertise Transit VPC Network CIDR(s)" to enable.
 Connected Transit
 --------------------
 
-This field is only applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
-
 By default, Aviatrix Spoke VPCs do not have routing established to communicate 
 with each other via Transit. They are completely segmented. 
 
-If you like to have all Spoke VPCs to establish connectivity via Transit GW, you can achieve that by enabling "Connected Transit" mode. 
+If you like to build a full mesh network where Spoke VPCs communicate with each other via Transit GW, you can achieve that by enabling "Connected Transit" mode. All connections are encrypted. 
 
 To enable this option, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
 Scroll down to "Connected Transit" to enable.
+
+Note all Spokes should be either in HA mode or non HA mode. A mixed deployment where some Spokes have 
+HA enabled while other don't works in a normal environment, but does not work
+when a failover happens on a HA enabled Spoke. 
+
 
 Network Device Support
 ======================

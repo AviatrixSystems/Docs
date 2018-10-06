@@ -2,6 +2,43 @@
 Release Notes
 =======================================
 
+R3.5 (10/7/2018)
+=================
+
+1. Security
+------------
+
+- **Amazon GuardDuty Integration** adds enforcement functions to Amazon GuardDuty IDS and continuous monitoring service. For example, malicious probes found by GuardDuty can be blocked at the VPC network level automatically orchestrated by Aviatrix Controller. Read `Amazon GuardDuty Integration <https://docs.aviatrix.com/HowTos/guardduty.html>`_ to learn how GuardDuty and Aviatrix integration help securing your AWS deployment. 
+
+- **Egress FQDN multi tag support** allows you to attach multiple FQDN tags to a gateway. This function simplifies the FQDN rule management. For example, you can create a common base tag of rules for all VPCs and additional tags for specific VPCs. 
+
+- **Integrated Egress FQDN and NAT function** simplifies deploying FQDN service. Aviatrix Controller automatically replaces the existing AWS NAT Gateway route entry in AWS route table, if there is any, with Aviatrix gateway entry to minimize downtime and simplify deployment when launching FQDN service.     
+
+- **Egress FQDN and Stateful Firewall interoperability** allows both services to operate together. You can use base Deny All for all your IP address based rules and still use Whielist FQDN for host name based rules at the same time. 
+
+2. Transit Network
+--------------------
+
+- **Connected Transit** enables all Spoke VPCs to communicate with each other with encryption via the Transit GW in a Transit Network deployment. This effectively builds a full mesh encrypted Transit network without building individual tunnels between Spoke VPCs. Read `Connect Transit <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_ for how to enable this function.  
+
+- **Advertise Transit VPC CIDR** improves flexibility of Transit Network. Now an instance in Transit VPC can communicate with either Spoke and on-prem via Transit GW. For example, you can launch an Aviatrix SSL VPN gateway in the Transit VPC. Read `Advertise Transit VPC CIDR <https://docs.aviatrix.com/HowTos/site2cloud.html#advertise-transit-vpc-network-cidr-s>`_ for more details. 
+
+3. Operations
+--------------
+
+- **Netflow support** enables you to record and log all TCP/UDP sessions flowing through all Aviatrix gateways.This adds more visibility to your network in addition to the existing log forwarding functions for Splunk, SumoLogic, Remote Syslog, DataDog and Logstash. Read `Netflow Integration <https://docs.aviatrix.com/HowTos/netflow.html#netflow-integration>`_ for more details.   
+
+- **Alert Belll** is a new multi purpose alerting function displayed on the Aviatrix Controller Console. For example, Aviatrix Controller periodically scans your AWS route tables and alerts you if there is any blackhole entry in your AWS route table that needs to be cleaned up as best practice. GuardDuty findings are also recorded by Alert Bell. 
+
+- **VPC Tracker** has been expanded to include network CIDRs discovered on your Azure accounts, Site2Cloud remote CIDRs and Transit Network on-prem CIDRs. For details, check out `VPC Tracker <https://docs.aviatrix.com/HowTos/vpc_tracker.html>`_.
+
+- **Create Azure VNet** allows you to create a fully populated Azure VNet from Aviatrix Controller console. 
+
+- **Specify an EIP** lets you specify an unassociated EIP in your allocated EIP pool at the gateway launch time. This helps you control what EIP to use for an Aviatrix gateway. 
+
+- **Aviatrix resource tags support** gives you the option to reduce the Aviatrix required IAM policy scope by restricting actions on these tagged resource. All resources created by the Aviatrix Controller has an identifiable AWS tag. The key value pair of the tag is `Aviatrix-Created-Resource:Do-Not-Delete-Aviatrix-Created-Resource`. 
+
+
 R3.4 (8/5/2018)
 ================
 
