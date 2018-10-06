@@ -32,7 +32,7 @@ Planning and Prerequisites
 
  1. If you have not launched Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
  #. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW. 
- #. Create a VGW. The VGW should not be attached to the Transit VPC if you plan to launch Transit GW in the same VPC. This VGW can be attached to a different VPC if this VPC CIDR is different from the Transit VPC where Transit GW is launched or in a different region and account. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over Internet.  
+ #. Create a VGW or reuse an existing VGW. The VGW should not be attached to the Transit VPC if you plan to launch Transit GW in the same VPC. This VGW can be attached to a different VPC if this VPC CIDR is different from the Transit VPC where Transit GW is launched or in a different region and account. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over Internet.  
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create Aviatrix account that corresponds to an IAM role. For instructions on how to launch an Aviatrix Controller, check out `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
 
 
@@ -83,10 +83,17 @@ Transit GW HA either.
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
 
-This step builds a site2cloud IPSEC tunnel with VGW and establishes a BGP session with VGW to 
-exchange routes between on-prem and the cloud. Note you just need to select the VGW ID in the drop down menu, Customer gateway will be automatically created as the result of this step. 
+Before executing this step, a VGW must have already been created. 
+
+Select the VGW ID in the drop down menu, Customer gateway will be automatically created as the result of this step. 
+
+This step automatically builds a site2cloud IPSEC tunnel with VGW and establishes a BGP session with VGW to
+exchange routes between on-prem and the cloud.
+
 
 .. important::
+
+ You are responsible for building the connection between VGW and on-prem. The connection is either over Internet, over Direct Connect or both. 
 
  We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if VGW and Transit GWs are in different VPCs. 
 
