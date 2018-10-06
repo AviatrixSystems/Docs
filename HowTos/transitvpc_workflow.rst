@@ -8,8 +8,6 @@ AWS Global Transit Network Workflow Instructions
 =========================================================
 
 This workflow provides you with a step by step instructions to build a Global Transit Network. 
-The workflow abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not have 
-to go to multiple pages on the Controller console when building the Transit group.
 
 For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
@@ -187,8 +185,7 @@ zoom in or zoom out, move the graph around. After you are done moving, click the
 10. Remove Transit GW to VGW Connection
 ----------------------------------------
 
-You can remove the BGP and site2cloud IPSEC connection to VGW via this step. Note all Spoke VPCs must be detached from the Transit GW Group 
-before you can remove the Transit GW to VGW connection.
+You can Transit GW connection to VGW via this step.  
 
 You can go to Step 3 to build the connection again. 
 
@@ -233,6 +230,18 @@ Aviatrix Controller AMIs can be found on AWS Marketplace.
 
 Try out our `Aviatrix Secure Networking Platform PAYG - Metered  <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1526426957554&sr=0-3&ref_=srh_res_product_title>`_ with two free tunnels. Follow the `Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ to launch the Controller instance and get started. 
  
+Extras
+-----------
+
+The above workflow abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not go to multiple pages on the Controller console when building the Transit network.
+
+After you have built the Transit GW and Spokes, you can view the connection between Transit GW and VGW on the Site2Cloud page. You can also see the Spoke to Transit GW connections on the Peering page. 
+
+.. Important::
+
+  Stay on the Transit Network page for any Spoke gateway and Transit GW actions, such as attach a Spoke, detach a Spoke, Connect to VGW and Disconnect to VGW. Do not go to any other pages for these actions. For deleting a Spoke gateway or Transit gateway, go to the Gateway page, select the gateway and delete. 
+
+  
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
    :width: 5.55625in
