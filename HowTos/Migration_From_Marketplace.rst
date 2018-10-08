@@ -11,8 +11,12 @@ Introduction
 
 Many customers start by trying our AWS Marketplace image that allows you to deploy 10 VPN Users or 5 Peering Tunnels.
 Those images are not flexible and cannot be extended beyond it's initial license.
-In order to exceed this limitations, the customer needs to move to a Metered AMI or BYOL License model.
-This document outlines all the steps necessary to execute the migration.
+In order to exceed this limitations, the customer needs to move to a Metered AMI or BYOL License model. 
+This document outlines all the steps necessary to execute the migration. 
+
+::
+
+  Note: This document also applies to migrating from an old controller to a new controller AMI.
 
 
 Pre-requisites
@@ -40,9 +44,11 @@ Create an S3 bucket in your AWS account and copy the name on the corresponding f
 
 Step 2 - Stop the Marketplace instance
 ======================================
-On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
+::
 
-Note if the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
+  Note: If the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
+
+On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
 
 Step 3 - Disassociate EIP
 =========================
@@ -95,7 +101,6 @@ On the on-boarding page, enter the customer id provided by your Aviatrix Sales A
 
 Step 9 - Enjoy your new controller
 ======================================
-
 
 ::
 
