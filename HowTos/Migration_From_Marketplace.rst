@@ -57,6 +57,16 @@ Step 4 - Launch Metered/BYOL Controller
 ======================================
 Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`_ to subscribe to the Aviatrix AMI.
 
+  #. Go to AWS Marketplace and search for the Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) AMI.
+  #. Launch the selected BYOL AMI in the same VPC and subnet as the existing controller.
+  #. Select t2.large instance type (minimum requirement)
+     - Auto-assign Public IP set to disable.
+     - Storage = 20GB
+     - IAM role = aviatrix-role-ec2
+     - Enable termination protection = checked
+     - T2/T3 unlimited = Enable 
+  #. Assign the same Security Group on the existing controller to this NEW controller.
+
 Step 5 - Attach EIP
 ===================
 On the AWS console, go to EC2-->Network & Security --> Elastic IPs, associate the same EIP from step 3 to the new Aviatrix  Metered/BYOL Controller.
