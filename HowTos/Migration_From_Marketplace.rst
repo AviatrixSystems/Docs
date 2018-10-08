@@ -16,7 +16,7 @@ This document outlines all the steps necessary to execute the migration.
 
 ::
 
-  Note: This document also applies to migrating from an old controller to a new controller AMI.
+  Note: This document also applies to migrating from an old controller to a new controller AMI within the same BYOL or Metered subscription.
 
 
 Pre-requisites
@@ -46,7 +46,7 @@ Step 2 - Stop the Marketplace instance
 ======================================
 ::
 
-  Note: If the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
+Note: If the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
 
 On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
 
