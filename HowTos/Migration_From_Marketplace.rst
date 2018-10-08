@@ -39,8 +39,8 @@ Create an S3 bucket in your AWS account and copy the name on the corresponding f
 
 ::
 
-  Note: If you already have Backup enabled, please disable and re-enable to make sure the backup is executed.
-  Double check on your S3 bucket that the file has been updated based on the timestamp.
+  Note: If you already have Backup enabled, click Backup Now or disable and re-enable to make sure the backup is executed.
+  Confirm in your S3 bucket that the backup bfile has been updated with the latest timestamp.
 
 Step 2 - Stop the Marketplace instance
 ======================================
