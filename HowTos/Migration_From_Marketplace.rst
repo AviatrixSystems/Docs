@@ -11,8 +11,12 @@ Introduction
 
 Many customers start by trying our AWS Marketplace image that allows you to deploy 10 VPN Users or 5 Peering Tunnels.
 Those images are not flexible and cannot be extended beyond it's initial license.
-In order to exceed this limitations, the customer needs to move to a Metered AMI or BYOL License model.
-This document outlines all the steps necessary to execute the migration.
+In order to exceed this limitations, the customer needs to move to a Metered AMI or BYOL License model. 
+This document outlines all the steps necessary to execute the migration. 
+
+::
+
+  Note: This document also applies to migrating from an old controller to a new controller AMI within the same BYOL or Metered subscription.
 
 
 Pre-requisites
@@ -35,14 +39,16 @@ Create an S3 bucket in your AWS account and copy the name on the corresponding f
 
 ::
 
-  Note: If you already have Backup enabled, please disable and re-enable to make sure the backup is executed.
-  Double check on your S3 bucket that the file has been updated based on the timestamp.
+  Note: If you already have Backup enabled, click Backup Now or disable and re-enable to make sure the backup is executed.
+  Confirm in your S3 bucket that the backup file has been updated with the latest timestamp.
 
 Step 2 - Stop the Marketplace instance
 ======================================
-On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
+::
 
-Note if the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
+Note: If the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
+
+On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
 
 Step 3 - Disassociate EIP
 =========================
@@ -56,6 +62,16 @@ On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassoc
 Step 4 - Launch Metered/BYOL Controller
 ======================================
 Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`_ to subscribe to the Aviatrix AMI.
+
+  #. Go to AWS Marketplace and search for the Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) AMI.
+  #. Launch the selected BYOL AMI in the same VPC and subnet as the existing controller.
+  #. Select t2.large instance type (minimum requirement)
+    - Auto-assign Public IP set to disable.
+    - Storage = 20GB
+    - IAM role = aviatrix-role-ec2
+    - Enable termination protection = checked
+    - T2/T3 unlimited = Enable 
+  4. Assign the same Security Group on the existing controller to this NEW controller.
 
 Step 5 - Attach EIP
 ===================
@@ -85,7 +101,6 @@ On the on-boarding page, enter the customer id provided by your Aviatrix Sales A
 
 Step 9 - Enjoy your new controller
 ======================================
-
 
 ::
 
