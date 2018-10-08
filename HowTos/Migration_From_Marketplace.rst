@@ -71,7 +71,7 @@ Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please ref
     - IAM role = aviatrix-role-ec2
     - Enable termination protection = checked
     - T2/T3 unlimited = Enable 
-  #. Assign the same Security Group on the existing controller to this NEW controller.
+  4. Assign the same Security Group on the existing controller to this NEW controller.
 
 Step 5 - Attach EIP
 ===================
