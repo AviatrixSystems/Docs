@@ -14,10 +14,9 @@
 ================
 
 Aviatrix Controller and all its managed gateways can be configured to
-forward logs to well known log management systems. Out of box integration is supported
-for the following logging service or systems. 
+forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence would need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
 
- - Splunk 
+ - Splunk Enterprise
  - Sumo Logic
  - Elastic Search
  - DataDog
@@ -354,6 +353,16 @@ On the Logstash console:
 	The Dashboard page is where you can create, modify, and view your own custom dashboards. With a dashboard, you can combine multiple visualizations onto a single page, then filter them by providing a search query or by selecting filters by clicking elements in the visualization.
   d. Settings
 	The Settings page lets you change a variety of things like default values or index patterns.
+
+3.3 Splunk Logging
+-------------------
+On the Aviatrix Controller:
+  a. How to configure:	Manual Input or Import File
+  #. Splunk Server:	FQDN or IP address of Splunk Enterprise Server
+  #. Splunk Server Listening Port:	Listening port of Splunk Enterprise Server
+
+Note:
+If "Import File" is selected for "How to configure", please provide the Splunk configuration file. 
 
 4. Log management system Apps
 ====================================
