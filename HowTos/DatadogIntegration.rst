@@ -16,11 +16,6 @@ Prerequisites
 -------------
 In order to complete the steps in this guide, you'll need:
 
-- An Aviatrix License Key (CustomerID)
-
-.. tip::
-     email info@aviatrix.com if you don't have a license key
-
 - A Datadog account and API Key
 
 .. tip::
