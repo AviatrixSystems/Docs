@@ -31,7 +31,7 @@ Notice Transit GW is only used for traffic between on-prem and cloud (Spoke VPCs
 Shared Service VPC to Spoke VPCs does not go through the Transit GW. Decouple the different traffic streams 
 reduces the performance bottleneck and removes the single failure point. 
 
-.. note::
+.. Tip::
 
   A Spoke VPC can be deployed in a different region and different cloud.
 
