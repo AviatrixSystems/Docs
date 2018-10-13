@@ -52,6 +52,13 @@ each region, you can build an AWS Peering or `Aviatrix Encrypted Peering <http:/
 
 |image1|
 
+Connected Transit Design
+-------------------------
+
+If you like to build a Transit network where all Spoke VPCs are connected via Transit GW, you can accomplish that by enabling "Connected Transit" property for the Transit GW. When Connected Transit is enabled, you do not need to build additional tunnels between shared service VPC to other VPCs. The diagram is shown below:
+
+|connected_transit|
+
 10Gbps Transit VPC Design 
 ---------------------------
 
@@ -142,6 +149,10 @@ Both options can be described in the diagram below.
    :height: 3.26548in
 
 .. |sd-wan| image:: transitvpc_designs_media/sd-wan.png
+   :width: 5.55625in
+   :height: 3.26548in
+
+.. |connected_transit| image:: transitvpc_designs_media/connected_transit.png
    :width: 5.55625in
    :height: 3.26548in
 
