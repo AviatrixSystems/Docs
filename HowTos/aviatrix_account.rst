@@ -45,15 +45,16 @@ to launch gateways and build connectivity across different AWS accounts.
 
 The configuration steps are shown below:
 
-|secondary_account|
+|access_account_35|
 
 The above diagram is described in the following steps.
 
- 1. Go to Aviatrix -> Accounts -> Access Accounts -> +New Account, to create this new secondary account.
- #. Enter a unique account name. For example, marketingOps
+ 1. Go to Aviatrix -> Accounts -> Access Accounts 
+ #. +New Account, to create this new secondary account.
+ #. Enter a unique account name. For example, BU-Group-3
  #. Check `AWS`.
  #. Check `IAM role-based` (enabled by default).
- #. Click **this CloudFormation Script** that takes to AWS Console and run CloudFormation script to setup IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
+ #. Click **Launch CloudFormation Script** that takes to AWS Console and run CloudFormation script to setup IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
  #. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
  #. Click `OK`.
  #. The new secondary account should be created.
@@ -78,5 +79,7 @@ The CloudFormation is necessary to create IAM roles, policies and establish trus
 .. |account_structure| image:: adminusers_media/account_structure.png
    :scale: 50%
 
+.. |access_account_35| image:: adminusers_media/access_account_35.png
+   :scale: 50%
 
 .. disqus::
