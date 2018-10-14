@@ -29,6 +29,7 @@ DNAT function in VGW                      not available
 SNAT function in VGW                      not available   
 NAT Gateway policies                      not available
 VPN connections per VPC                   10
+VPN traffic initiation                    from on-prem    traffic must be initiated from on-prem to establish VPN tunnel with VGW
 DXGW cross accounts                       not available
 VIF per Direct Connect                    50
 NLB for UDP traffic                       not available
