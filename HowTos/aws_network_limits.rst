@@ -7,7 +7,7 @@
 AWS Network Limits and Limitations
 ===========================================================================================
 
-It is good to know about the AWS network limits both for planning and troubleshooting: you can build your network architecture that allows you to overcome these limits; it saves you time of troubleshooting 
+It is good to know about the AWS network limits both for planning and troubleshooting: you can build your architecture that allows you to overcome these limits; it saves you time of troubleshooting 
 when there is a failure or downtime in your network. 
 
 For example, AWS VGW carries a hard limit of 100 BGP routes in total. When the BGP prefixes exceed 100, VGW randomly reset BGP session, leading to unpredictable potential network downtime. 
@@ -16,7 +16,7 @@ AWS publishes a VPC limits at `this link. <https://docs.aws.amazon.com/vpc/lates
 
 In addition to limits, there are limitations in functionality. 
 
-Below is a list of commonly seen network limits and limitations interested by network engineers.  
+Below is a list of commonly asked limits and limitations by network engineers.  
 
 
 ========================================  =============== =====================
