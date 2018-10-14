@@ -33,7 +33,7 @@ reduces the performance bottleneck and removes the single failure point.
 
 .. Tip::
 
-  A Spoke VPC can be deployed in a different region and different cloud.
+  A Spoke network can be deployed in a different region and different cloud (AWS and Azure).
 
 |image0|
 
