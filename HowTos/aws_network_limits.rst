@@ -20,7 +20,7 @@ Below is a list of commonly asked limits and limitations by network engineers.
 
 
 ========================================  =============== =====================
-Functions and Types                       Limits  	  Comments   
+Functions                                 Limits  	  Comments   
 ========================================  =============== =====================
 VPC Peering Limit per VPC                 125             default limit is 50. Constrained also by route limit of 100
 VPC Route entries in a route table        100             default is 50. Performance impact on 100 routes. 
