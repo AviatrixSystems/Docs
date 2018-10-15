@@ -25,6 +25,7 @@ Functions                                 Limits  	  Comments
 VPC Peering Limit per VPC                 125             default limit is 50. Constrained also by route limit of 100
 VPC Route entries in a route table        100             default is 50. Performance impact on 100 routes. 
 BGP prefix total on VGW                   100             exceeding the limit results in random BGP resets 
+VGW instance size scaling                 reset BGP       trigger a BGP downtime 
 DNAT function in VGW                      not available   
 SNAT function in VGW                      not available   
 NAT Gateway policies                      not available
