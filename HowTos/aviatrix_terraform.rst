@@ -321,8 +321,8 @@ Manages Aviatrix VPN user
 	}
 
 
-aviatrix_profile
-----------------
+aviatrix_vpn_profile
+--------------------
 Manages VPN user Profiles
 
 **Example Usage**
@@ -344,7 +344,7 @@ Manages VPN user Profiles
               port - Port to be allowed or denied
               target - CIDR to be allowed or denied
 
-	resource "aviatrix_profile" "test_profile1" {
+	resource "aviatrix_vpn_profile" "test_profile1" {
 	  name = "my_profile"
 	  base_rule = "allow_all"
 	  users = ["user1", "user2"]
@@ -363,7 +363,7 @@ Manages VPN user Profiles
           }	
         ]
 
-	resource "aviatrix_profile" "test_profile2" {
+	resource "aviatrix_vpn_profile" "test_profile2" {
 	  name = "my_profile"
 	  base_rule = "deny_all"
 	  users = ["user1", "user2"]
