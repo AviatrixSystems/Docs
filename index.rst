@@ -58,6 +58,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aviatrix_account
    HowTos/HowTo_IAM_role
    HowTos/iam_policies
+   HowTos/customize_aws_iam_policy
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
    HowTos/AdminUsers_DuoAuth
@@ -261,7 +262,6 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Tech Notes
 
    HowTos/CloudN-config-drive-v1_4
-   HowTos/customize_aws_iam_policy
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
    StartUpGuides/aws_manual_startup_guide
