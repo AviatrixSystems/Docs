@@ -120,7 +120,7 @@ h. iam – to support role based IAM account
 How to reduce APP Role Policy 
 ==============================
 
-1: Default APP Role Based Policy
+1. Default APP Role Based Policy
 --------------------------------
 
 Click
@@ -131,7 +131,19 @@ field from a wildcard ‘*’ to a more specific resource ARN can limit the
 service the assumed role can do. The examples are described in the later
 sections.
 
-2: Use Condition to Allow Service Requests from Certain IP Addresses
+2. Use Aviatrix Tags To Limit Resource Deleting Policy Scope
+-------------------------------------------------------------
+
+Aviatrix Controller automatically creates a tag when it creates resources, such as gateways, security groups and route entries. The tag has the syntax as follows:
+
+:: 
+
+  aviatrix tag key = "Aviatrix-Created-Resource"
+  aviatrix tag value = "Do-Not-Delete-Aviatrix-Created-Resource"
+
+You can use the above tag as a condition to reduce the IAM app policy for deleting instances. The example IAM policy can be found `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_customized_IAM_app_policy.txt>`_
+
+3. Use Condition to Allow Service Requests from Certain IP Addresses
 --------------------------------------------------------------------
 
 User can add “Condition” field to deny all requests not initiated from
@@ -211,7 +223,7 @@ AWS-API permissions, such as ...
 | etc...
 | not only for "ec2:RunInstances".
 
-3. Launch instances(Aviatrix-Gateway) on a specific subnet only from Aviatrix-Controller
+4. Launch instances(Aviatrix-Gateway) on a specific subnet only from Aviatrix-Controller
 ----------------------------------------------------------------------------------------
 
 Syntax:
@@ -265,7 +277,7 @@ Example:
     ]
   }
 
-4: Launching instances on specific VPC(s)
+5. Launching instances on specific VPC(s)
 -----------------------------------------
 
 The policy can be modified to limit running gateways on certain VPCs
@@ -375,7 +387,7 @@ Example
     ]
   }
 
-5: AWS S3 Permissions/Policies
+6. AWS S3 Permissions/Policies
 ------------------------------
 
 The following S3 IAM-Policy examples demonstrate allowing AWS API which
@@ -507,7 +519,7 @@ Example:
     }
   }
 
-6. AWS-Simple-Queue Permissions/Policies
+7. AWS-Simple-Queue Permissions/Policies
 ----------------------------------------
 
 The following example(s) demonstrate allowing the IAM User/Role to
@@ -579,7 +591,7 @@ We do not recommend using AWS-resource-IP checking mechanism to modify
 AWS-SQS API permissions.
 
 
-7. Restricting operations using AWS Resource Tag
+8. Restricting operations using AWS Resource Tag
 ----------------------------------------
 
 The following example(s) demonstrate using IAM Policy to limit 
