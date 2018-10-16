@@ -36,7 +36,7 @@ R3.5 (10/7/2018)
 
 - **Specify an EIP** lets you specify an unassociated EIP in your allocated EIP pool at the gateway launch time. This helps you control what EIP to use for an Aviatrix gateway. 
 
-- **Aviatrix resource tags support** gives you the option to reduce the Aviatrix required IAM policy scope by restricting actions on these tagged resource. All resources created by the Aviatrix Controller has an identifiable AWS tag. The key value pair of the tag is `Aviatrix-Created-Resource:Do-Not-Delete-Aviatrix-Created-Resource`. 
+- **Aviatrix resource tags support** gives you the option to reduce the Aviatrix required IAM policy scope by restricting actions on these tagged resource. All resources created by the Aviatrix Controller has an identifiable AWS tag. The key value pair of the tag is `Aviatrix-Created-Resource:Do-Not-Delete-Aviatrix-Created-Resource`. Follow information in this `section <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html#use-aviatrix-tags-to-limit-resource-deleting-policy-scope>`_ to limit the aviatrix-app-policy. An example IAM policy with Aviatrix tag can be found `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_customized_IAM_app_policy.txt>`_
 
 
 R3.4 (8/5/2018)
