@@ -17,7 +17,14 @@ Okta Authentication with Okta API Token
 
 Overview
 --------
-Aviatrix User VPN Gateway supports Okta authentication as part of multi-factor authentication for OpenVPN® access.
+
+There are two methods to authenticate a VPN user against Okta: Okta API Token or `Aviatrix VPN SAML Client. <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
+
+Okta API Token is a method where the Aviatrix VPN gateway authenticates against Okta on behalf of VPN clients using 
+the standard Okta API. When this method is used, you can continue to use native OpenVPN® client such as Tunnelblick 
+while enjoying MFA authentication. 
+
+This document shows you how to setup authentication using Okta API Token. 
 
 Follow these steps to configure Okta authentication and MFA on a User VPN Gateway in your environment:
 
