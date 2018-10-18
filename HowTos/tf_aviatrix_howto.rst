@@ -117,7 +117,7 @@ to build on Windows, run
   go fmt
   go install
  
-4.4 Activate the provider by adding the following to ~/.terraformrc. If the file ~/.terraform does not exist, you need to create one by adding the text below.
+4.4 Activate the provider by adding the following to ~/.terraformrc. If the file ~/.terraformrc does not exist, you need to create one by adding the text below.
 
 ::
 
