@@ -1,6 +1,16 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+1.9 - Oct 18 2018
+ - Mac - Add an option to override manually set DNS
+ - Mac - Fixed an issue that gave "cannot assign requested address" error while switching between Wifi networks on full tunnel
+ - Mac - Upgraded openvpn to 2.4.3
+ - Prevent new connections while disconnecting
+ - Windows - Fixed a log rotation error
+ - Windows - Install tap driver on silent install
+ - Alert if localhost.aviatrix.com does not resolve to 127.0.0.1 (Eg: DD-WRT)
+ - Handle private DNS/Full tunnel disconnects better
+
 1.8 - Jun 22 2018
  - Windows VPN Service to run the client without Admin access
  - Graceful VPN exit on windows(8.0 and above) disconnect 
