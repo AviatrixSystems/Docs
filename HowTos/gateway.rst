@@ -304,7 +304,7 @@ If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/Ho
 
 ::
 
-  When using Terraform, this option is described by parameter "PeeringHASubnet" by resource gateway.
+  When using Terraform, this option is described by parameter "public_subnet" by resource gateway.
 
 Gateway Single AZ HA
 ---------------------
@@ -314,7 +314,7 @@ gateway if it becomes unreachable. No secondary gateway is launched in this case
 
 ::
 
-  When using Terraform, this option is described by parameter "SingleAZ" by resource gateway.
+  When using Terraform, this option is described by parameter "single_az_ha" by resource gateway.
 
 Gateway Resize 
 ---------------
