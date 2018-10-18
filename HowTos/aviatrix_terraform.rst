@@ -479,8 +479,6 @@ Sample configuration to launch a full mesh network on AWS
 
 	resource "aviatrix_account" "test_acc" {
 	  account_name = "devops"
-	  account_password = "Aviatrix123"
-	  account_email = "abc@xyz.com"
 	  cloud_type = 1
 	  aws_account_number = "123456789012"
 	  aws_iam = "true"
