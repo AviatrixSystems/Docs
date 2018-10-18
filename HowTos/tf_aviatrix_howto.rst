@@ -15,7 +15,7 @@ It is assumed that terraform is already set up. If so, skip steps 1 and 2
 
 Terraform is delivered as a zip file in binary. Click `this link <https://www.terraform.io/downloads.html>`_, select your respective OS and simply download the package as you would for any software.  
 
-For Mac, terraform is also present in `Homebrew <https://brew.sh/>`. Perform "brew install terraform" to install terraform( Skip step 2 if done this way)
+For Mac, terraform is also present in `Homebrew <https://brew.sh/>`_. Perform "brew install terraform" to install terraform( Skip step 2 if done this way)
 
 Once it is downloaded, double click to unzip the file. The executable file terraform should be 
 in your Downloads folder. (We use this as an example in this document) 
@@ -60,7 +60,8 @@ Aviatrix terraform provider requires you to download Go, the software that the t
 Follow the instructions listed `here <https://golang.org/doc/install>`_ to download and install Go, as shown below:
 
 |go_install|
-For Mac, Go is also present in `Homebrew <https://brew.sh/>`. Perform "brew install go" to install go
+
+For Mac, Go is also present in `Homebrew <https://brew.sh/>_`. Perform "brew install go" to install go
 
 
 4. Download and Build Aviatrix Terraform Provider
@@ -78,6 +79,7 @@ Example for Unix/Linux
   $ export GOPATH=$HOME/go
 
 Line 3 can also be made permanent: Edit ~/.bash_profile by appending line "export GOPATH=$HOME/go", and then run a command "source ~/.bash_profile" for the GOPATH path to take effect.
+
 For windows, GOPATH and other environment variables can be edited from System Properties. 
 
 
