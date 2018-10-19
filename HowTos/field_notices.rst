@@ -2,6 +2,10 @@
 Field Notices
 =======================================
 
+.. Note::
+
+ This field notice is provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
+
 Field Notice 0001 
 -----------------------------------------------------------------------------
 **SSL UserVPN with SAML function might fail with Chrome v70**
@@ -18,12 +22,8 @@ Customers deploying SSL UserVPN with SAML authentication are requested to upgrad
 Support:
 For further information, or to open a support ticket, please visit https://www.aviatrix.com/support/.  
  
-Note:
-This field notice is provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. Please use the information in this field notice at your own risk. The information in this field notice
-will be updated as we learn more.
  
- 
-Field Notice 0002: 
+Field Notice 0002 
 -------------------
 **Route update propagation inconsistency from on-premise networks affecting 3.5 releases prior to 3.5.362 for Transit Network**
  
@@ -38,9 +38,6 @@ Customers deploying Transit Network are requested to upgrade to 3.5.362 or later
  
 Support:
 For further information or to open a support ticket, please visit https://www.aviatrix.com/support/.
- 
-Note:
-This field notice is provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. Please use the information in this field notice at your own risk. The information in this field notice will be updated as we learn more.
  
 ========================================================================================
 
