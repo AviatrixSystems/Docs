@@ -289,7 +289,7 @@ This backup gateway keeps its configuration in sync with the primary
 gateway, but the configuration does not take effect until the primary gateway
 fails over to backup gateway. 
 
-When using Terraform, this option is described by parameter "HASubnet" by resource gateway.
+When using Terraform, this option is described by parameter "ha_subnet" by resource gateway.
 
 Gateway for High Availability Peering
 --------------------------------------
