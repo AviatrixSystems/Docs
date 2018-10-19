@@ -243,6 +243,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/UCC_Release_Notes
    HowTos/changelog
+   HowTos/field_notices
 
 .. _IPmotion:
 
