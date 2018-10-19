@@ -2,17 +2,17 @@
 Field Notices
 =======================================
 
-Field Notice 0001: 
+Field Notice 0001 
 -----------------------------------------------------------------------------
 **SSL UserVPN with SAML function might fail with Chrome v70**
  
-Problem:
+Problem
 Remote users connecting via SSL UserVPN functionality authenticated through SAML cannot establish session.
  
-Description:
+Description
 Aviatrix controllers and gateways provide SSL UserVPN service with authentication through SAML as described in `this doc <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_. Google Chrome v70 has altered the behavior of an element in HTML (they add an extra whitespace). This affects our product’s ability to interface with the SAML id providers and breaks the authentication process, resulting in remoteVPN users not being able to connect to your network. We have notified Google about this issue.
  
-Solution:
+Solution
 Customers deploying SSL UserVPN with SAML authentication are requested to upgrade to 3.5.362 or later, if they are running 3.3 or later release. Please follow the instructions here to perform the software upgrade. For software version prior to 3.3, please reach out to us at support@aviatrix.com. Another workaround to restore the service to your users is to use Firefox as their default browser.
   
 Support:
