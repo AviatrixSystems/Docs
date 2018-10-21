@@ -299,4 +299,5 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloudformation_condition_howto
    HowTos/opstools_survey
    HowTos/aws_network_limits
+   HowTos/arm_inter_region_latency
 
