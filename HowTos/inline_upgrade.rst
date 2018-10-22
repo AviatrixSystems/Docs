@@ -10,6 +10,11 @@ Aviatrix software is released frequently every 6 - 8 weeks.
 
 When upgrading a controller software, all gateways are upgraded with the new software at the same time. This is done by controller pushing new software to gateways directly and automatically once requested.
 
+.. note::
+   
+   We strongly recommend that you take a backup before you start the upgrade process. Please follow the directions `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`__.
+
+
 How to upgrade software
 ------------------------
 
