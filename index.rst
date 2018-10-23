@@ -243,6 +243,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/UCC_Release_Notes
    HowTos/changelog
+   HowTos/field_notices
 
 .. _IPmotion:
 
@@ -295,6 +296,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Good To Know
 
    HowTos/inter_region_latency
+   HowTos/arm_inter_region_latency
    HowTos/cloudformation_condition_howto
    HowTos/opstools_survey
    HowTos/aws_network_limits
