@@ -8,7 +8,7 @@
 UDP LoadBalanced VPN using DNS
 ==============================
 
-This feature is available from `Aviatrix software version 2.7 <http://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r2-7>`_  and later. AWS Elastics Load Balancing (ELB) does not support  
+This feature is available from `Aviatrix software version 2.7 <http://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r2-7>`_  and later. AWS Elastic Load Balancing (ELB) does not support  
 UDP traffic. To overcome this, AWS Route53 service is leveraged to direct user VPN traffic to UDP VPN gateways in a round robin algorithm. 
 
 .. Note:: 
