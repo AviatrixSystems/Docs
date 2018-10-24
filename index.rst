@@ -275,6 +275,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
    HowTos/tf_aviatrix_howto
+   HowTos/connect_transit_network_clusters
 
 .. _Solutions:
 
