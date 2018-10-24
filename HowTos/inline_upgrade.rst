@@ -26,6 +26,16 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Click `Dry Run` to make sure controller and gateway are in contact and allowed to download our software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups, VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Click `Upgrade to the latest` to upgrade your software to the latest version
 
+.. note::
+   
+     To reduce issues related to upgrade, starting version 3.3, the controller will let you upgrade only to the next maintenance release. For example, from 3.3.x, you can only upgrade to 3.4 first and can then upgrade again to get to 3.5. If you are running a version earlier than 3.3, please upgrade to next higher version first and repeat till you get to 3.3, using the “Upgrade to a Custom Release” function. If you are running version 3.3 or later, you can upgrade using the “Upgrade to the Latest” method as mentioned above – but note that you might have to upgrade multiple times to get to the latest release.
+
+     Example: A controller running 3.1 can go to the latest release(lets say, 3.5) using the following steps:
+      - Backup. Upgrade to 3.2 using “Upgrade to a Custom Release”
+      - Backup. Upgrade to 3.3 using “Upgrade to a Custom Release”
+      - Backup. Upgrade to 3.4 using “Upgrade to the Latest”
+      - Backup. Upgrade to 3.5 using “Upgrade to the Latest”
+
    |imageUpgrade|
    
 .. note::

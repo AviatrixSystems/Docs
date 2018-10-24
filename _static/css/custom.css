@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+body {
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.84em;
+    color: #404040;
+    background: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+    font-family: "Open Sans", sans-serif;
+}
+p {
+    font-size: 15px;
+}
 .wy-nav-content-wrap, .wy-nav-content {
     background: #FFF !important;
 }
@@ -19,18 +36,44 @@
     background: #F4F4F4 !important;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
 }
-.wy-menu-vertical ul {
-    margin-left: 10px;
-}
-.wy-menu-vertical header, .wy-menu-vertical p.caption {
+.wy-menu-vertical p.caption {
     color: #2b9d90 !important;
+    cursor: pointer;
 }
+.wy-menu-vertical p.caption:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f054";
+    padding-right: 5px;
+    width: 15px;
+}
+.wy-menu-vertical p.caption.active:before {
+    content: "\f078";
+}
+.wy-menu-vertical p.caption + ul {
+    display: none;
+}
+.wy-menu-vertical p.caption.active + ul {
+    display: block;
+}
+.wy-menu-vertical ul {
+    margin-left: 0;
+}
+
 .wy-menu-vertical a {
     color: #444 !important;
+    padding: 5px 20px 5px 40px !important;
+    font-size: 13px;
 }
 .wy-menu-vertical a:hover {
-    background: none !important;
     color: #ee7700 !important;
+}
+.wy-menu-vertical > ul > li > a:hover {
+    background: none !important;
 }
 .rst-versions .rst-current-version {
     color: #2b9d90 !important;
