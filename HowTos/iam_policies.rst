@@ -18,6 +18,11 @@ create new route entries and build networks.
 
 As more features are added by Aviatrix Controller for each release, the IAM Access Policy may need to be updated to allow the Controller to launch new services. 
 
+
+.. Note:: Please note that both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies. Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
+..
+
+
 To update by replacing the current one with the latest default policy, follow these steps:
 
 1. Update Primary Account IAM Policies
