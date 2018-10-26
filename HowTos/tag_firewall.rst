@@ -6,7 +6,7 @@
 Tag Based Security Policy
 ###################################
 
-Aviatrix gateway security policies is implemented at each gateway, key features are:
+Aviatrix gateway security policies are implemented at each gateway, key features are:
 
  * It is a L4 stateful firewall that filters on CIDR, protocol and port. 
  * Each policy is associated with "Allow" or "Deny" action.
