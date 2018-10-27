@@ -186,6 +186,6 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageAvtxTestButton| image:: awssso_saml_media/avtx_test_button.png
 .. |imageAppMetadata| image:: awssso_saml_media/application_metadata_save.png
 .. |add_saml_endpoint| image:: awssso_saml_media/add_saml_endpoint.png
-   :scale: 50%%
+   :scale: 30%%
 .. |attribute_mapping| image:: awssso_saml_media/attribute_mapping.png
-   :scale: 50%%
+   :scale: 30%%
