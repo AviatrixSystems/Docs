@@ -34,6 +34,10 @@ You can remove some of the policy rules by using this `IAM-Policy <https://s3-us
 The next few sections provide examples on how to restrict policy rule scopes.
 
 
+.. Note:: Please note that both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies. Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
+..
+
+
 When to Modify AWS-IAM-Policy (aviatrix-app-role-policy)
 ========================================================
 
