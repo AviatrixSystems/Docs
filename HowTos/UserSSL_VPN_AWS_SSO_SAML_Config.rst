@@ -172,7 +172,7 @@ Validate
 --------
 
 .. tip::
-   Be sure to assign users to the new application in AWS Signle Sign-on service prior to validating.  If you do not assign your test user to the Aviatrix User VPN application, you will receive an error.
+   Be sure to assign users to the new application in AWS Signle Sign-on service prior to validating.  You can use AWS SSO Directory service under AWS SSO page to assign users. If you do not assign your test user to the Aviatrix User VPN application, you will receive an error.
 
 You can quickly validate that the configuration is complete by clicking on the **Test** button next to the SAML endpoint.
 
