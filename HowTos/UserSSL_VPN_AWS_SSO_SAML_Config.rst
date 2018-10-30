@@ -6,7 +6,7 @@
    :numbered:
 
 ==============================================================================
-OpenVPN® with SAML Client on AWS SSO IdP
+OpenVPN® with SAML Authentication on AWS SSO IdP
 ==============================================================================
 
 Overview

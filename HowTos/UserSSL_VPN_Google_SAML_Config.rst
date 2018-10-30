@@ -6,7 +6,7 @@
    :numbered:
 
 ==============================================================================
-OpenVPN® with SAML Client on Google IDP
+OpenVPN® with SAML Authentication on Google IDP
 ==============================================================================
 
 Overview

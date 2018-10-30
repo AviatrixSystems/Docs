@@ -6,7 +6,7 @@
    :numbered:
 
 ==============================================================================
-OpenVPN® with SAML Client on OneLogin IdP
+OpenVPN® with SAML Authentication on OneLogin IdP
 ==============================================================================
 
 Overview
