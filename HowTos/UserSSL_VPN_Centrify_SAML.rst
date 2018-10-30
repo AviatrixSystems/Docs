@@ -59,9 +59,7 @@ Configuration Steps:
 	|image5|
 	
    .. note::
-      You can also use URL method if you have configured signed
-	  certificates for the Aviatrix Controller, but not for the initial
-	  self-signed certificate.
+      You can also use URL method if you have configured signed certificates for the Aviatrix Controller, but not for the initial self-signed certificate.
 
 #. Configure the following SAML attributes (Email is the unique identifier)
 
