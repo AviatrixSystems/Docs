@@ -311,7 +311,8 @@ Manages Aviatrix VPN user
 	# vpc_id - VPC Id of Aviatrix VPN gateway
 	# gw_name - Aviatrix VPN gateway name
 	# user_name - VPN user name
-	# user_email - VPN User's email
+	# user_email - (Optional) VPN User's email
+        # saml_endpoint` - (Optional)This is the name of the SAML endpoint to which the user is to be associated. This is required if adding user to a SAML gateway/LB.
 
 	resource "aviatrix_vpn_user" "test_vpn_user" {
 	  vpc_id = "vpc-abcd1234"

@@ -13,8 +13,7 @@
 1. Introduction
 ================
 
-Aviatrix Controller and all its managed gateways can be configured to
-forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence would need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
+Aviatrix Controller and all its managed gateways can be configured to forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them would need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
 
  - Splunk Enterprise
  - Sumo Logic

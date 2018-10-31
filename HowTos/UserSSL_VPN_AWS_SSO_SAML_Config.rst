@@ -6,7 +6,7 @@
    :numbered:
 
 ==============================================================================
-OpenVPN® with SAML Client on AWS SSO IdP
+OpenVPN® with SAML Authentication on AWS SSO IdP
 ==============================================================================
 
 Overview
@@ -19,7 +19,7 @@ Pre-Deployment Checklist
 Before configuring SAML integration between Aviatrix and AWS SSO, make sure the following is completed:
 
 #. `Aviatrix Controller <#awsssosaml-aviatrix-controller>`__ is setup and running.
-#. Have a valid `AWS account <#awsssosaml-aws-account>`__ with AWS SSO enabled.
+#. Have a valid `AWS account <#awsssosaml-aws-account>`__ with `AWS SSO <https://aws.amazon.com/single-sign-on/>`_ enabled.
 #. Download and install the `Aviatrix SAML VPN client <#awsssosaml-aviatrix-client>`__.
 
 .. _awsssosaml_aviatrix_controller:
@@ -27,14 +27,18 @@ Before configuring SAML integration between Aviatrix and AWS SSO, make sure the 
 Aviatrix Controller
 ####################
 
-If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ and start with a Metered AMI.
 
 .. _awsssosaml_aws_account:
 
 AWS Account with AWS SSO Enabled
 ################################
 
-Enable AWS SSO on your AWS account before continuing with the configuration.
+Enable AWS SSO on your AWS account before continuing with the configuration. 
+
+  .. tip::
+
+    If your AWS account is a consolidated account, you cannot set up SSO. SSO can only be enabled with a master account. 
 
 .. _awsssosaml_aviatrix_client:
 
@@ -90,6 +94,7 @@ Aviatrix Controller SAML Endpoint
 #################################
 
 #. Login to your Aviatrix Controller
+#. Enable SAML. Go to OpenVPN® -> Edit Config -> MODIFY AUTHENTICATION. Select SAML. Skip this step if you have already done so. 
 #. Expand **OpenVPN**, select **Advanced** in the navigation menu
 #. Go to the **SAML** tab
 #. Click **+ Add New** button
@@ -98,7 +103,7 @@ Aviatrix Controller SAML Endpoint
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
    +----------------------------+-----------------------------------------+
-   | Endpoint Name              | Pick                                    |
+   | Endpoint Name              | aviatrix_awssso                         |
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+
@@ -112,7 +117,8 @@ Aviatrix Controller SAML Endpoint
    | Template                   |                                         |
    +----------------------------+-----------------------------------------+
 
-   |imageAvtxSAMLEndpoint|
+   |add_saml_endpoint|
+
 
 #. Remove the XML element ``<samlp:NameIDPolicy>..</samlp:NameIDPolicy>``
 
@@ -156,13 +162,17 @@ Add Attribute Mappings
    | Email                      | ${user:email}                           |
    +----------------------------+-----------------------------------------+
 
+As shown below:
+
+  |attribute_mapping|
+
 #. Click **Save changes**
 
 Validate
 --------
 
 .. tip::
-   Be sure to assign users to the new application in AWS Signle Sign-on service prior to validating.  If you do not assign your test user to the Aviatrix User VPN application, you will receive an error.
+   Be sure to assign users to the new application in AWS Signle Sign-on service prior to validating.  You can use AWS SSO Directory service under AWS SSO page to assign users. If you do not assign your test user to the Aviatrix User VPN application, you will receive an error.
 
 You can quickly validate that the configuration is complete by clicking on the **Test** button next to the SAML endpoint.
 
@@ -173,5 +183,9 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageCopyURL| image:: awssso_saml_media/copy_metadata_file_url.png
 .. |imageAvtxSAMLEndpoint| image:: awssso_saml_media/avx_controller_saml.png
 .. |imageSPMetadataURL| image:: awssso_saml_media/sp_metadata_button.png
-.. |imageAppMetadata| image:: awssso_saml_media/application_metadata_save.png
 .. |imageAvtxTestButton| image:: awssso_saml_media/avtx_test_button.png
+.. |imageAppMetadata| image:: awssso_saml_media/application_metadata_save.png
+.. |add_saml_endpoint| image:: awssso_saml_media/add_saml_endpoint.png
+   :scale: 30%%
+.. |attribute_mapping| image:: awssso_saml_media/attribute_mapping.png
+   :scale: 30%%

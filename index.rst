@@ -159,6 +159,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/UserSSL_VPN_OneLogin_SAML_Config
    HowTos/UserSSL_VPN_AWS_SSO_SAML_Config
    HowTos/UserSSL_VPN_Azure_AD_SAML_Config
+   HowTos/UserSSL_VPN_Centrify_SAML
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
    HowTos/External_PKI_for_OpenVPN_Certificates

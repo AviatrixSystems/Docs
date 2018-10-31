@@ -18,6 +18,8 @@ Configuration
 To enable GuardDuty Integration, login to Aviatrix Controller, on the left side of
 the navigation bar, go to Security -> GuardDuty, as shown below. 
 
+If you have already enabledd GuarDuty on AWS Console, the Controller will detect, pull the information and proceed.  
+
 |guardduty_config|
 
 Integration and Enforcements
@@ -35,10 +37,10 @@ as listed below.
 
 
 .. |guardduty_config| image::  guardduty_media/guardduty_config.png
-   :scale: 50%
+   :scale: 30%
 
 .. |guardduty_acl| image::  guardduty_media/guardduty_acl.png
-   :scale: 50%
+   :scale: 30%
 
 
 .. add in the disqus tag

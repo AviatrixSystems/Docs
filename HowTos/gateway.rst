@@ -388,6 +388,15 @@ DNAT IPs                         This is a rule field that specifies the transla
 DNAT Port                         This is a rule field that specifies the translated destination port when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
 ===========================      =======================
 
+Network Mapping 
+-----------------
+
+Networking mapping is a destination address translation scheme where the destination address range is one to one mapped to 
+a virtual address range. A configuration example can be shown below, where "Real Destination CIDR" 10.10.10.0/24 is mapped to 
+"Virtual Destination CIDR" 100.100.10.0/24.  
+
+|network_mapping|
+
 Monitor Gateway Subnet
 -----------------------
 
@@ -525,6 +534,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 30%
 
 .. |additional_cidr| image:: gateway_media/additional_cidr.png
+   :scale: 30%
+
+.. |network_mapping| image:: gateway_media/network_mapping.png
    :scale: 30%
 
 .. disqus::

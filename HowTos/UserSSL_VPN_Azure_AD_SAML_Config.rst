@@ -12,7 +12,7 @@
 
 
 ==============================================================================
-OpenVPN® with SAML Client on Azure AD IdP
+OpenVPN® with SAML Authentication on Azure AD IdP
 ==============================================================================
 
 Overview

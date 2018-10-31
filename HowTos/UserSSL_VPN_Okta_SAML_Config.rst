@@ -6,7 +6,7 @@
    :numbered:
 
 ==============================================================================
-OpenVPN® with SAML Client on Okta IDP
+OpenVPN® with SAML Authentication on Okta IDP
 ==============================================================================
 
 Overview

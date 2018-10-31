@@ -74,7 +74,7 @@ Create a VPN Gateway
          Leave the Advanced Options unselected as you can configure it later.
 
       
-   #. By default, `ELB <http://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_  will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
+   #. By default, `NLB <http://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_  will be enabled, meaning you can create more vpn gateways that are load balanced by the ELB. (ELB will be automatically created by Aviatrix.)
 
 
    #. If you wish to create more of such VPN gateways (for example, behind ELBs for load balancing), click `Save Template`. 
