@@ -183,12 +183,91 @@ Configure Aviatrix
 Test
 ----
 
-Once complete, test the communiation using the tunnel
+Once complete, test the communication using the tunnel
 
 Troubleshooting
 ---------------
 
 Wait 2-3 minutes for the tunnel to come up.  If it does not come Up within that time, check the IP addresses to confirm they are accurate.  Additional troubleshooting is available in the **Diagnositics** tab.
+
+Appendix: Enable HA
+-------------------
+
+You can enable HA for Aviatrix site2cloud connection to AWS VGW. Please add following extra steps to the configuration.
+
+Create Aviatrix HA Gateway
+++++++++++++++++++++++++++
+
+Before creating site2cloud connection, following `this <https://docs.aviatrix.com/Solutions/gateway_ha.html>`__ guide's
+**Backup Gateway and Tunnel HA** section to create Aviatrix HA gateway in the same VPC.
+
+From AWS console, create a new VPN connection between VGW and Aviatrix HA Gateway
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#. Create a new Customer Gateway for Aviatrix HA Gateway:
+
+   +------------------------------+-------------------------------------------+
+   | Field                        | Description                               |
+   +------------------------------+-------------------------------------------+
+   | Name                         | Enter any name here                       |
+   +------------------------------+-------------------------------------------+
+   | Routing                      | Select **Static**                         |
+   +------------------------------+-------------------------------------------+
+   | IP Address                   | Enter the Aviatrix HA Gateway's public IP |
+   +------------------------------+-------------------------------------------+
+
+#. Create a new VPN connection for Aviatrix HA Gateway:
+
+   +------------------------------+-------------------------------------------+
+   | Field                        | Description                               |
+   +------------------------------+-------------------------------------------+
+   | Name                         | Enter any name here                       |
+   +------------------------------+-------------------------------------------+
+   | Virtual Private Gateway      | Select the same VGW using for primary     |
+   |                              | VPN connection                            |
+   +------------------------------+-------------------------------------------+
+   | Customer Gateway             | Select CGW your just created for HA       |
+   +------------------------------+-------------------------------------------+
+   | Routing Options              | Select **Static**                         |
+   +------------------------------+-------------------------------------------+
+   | Static IP Prefixes           | Enter the CIDR(s) of the VPC where the    |
+   |                              | HA Aviatrix Gateway resides.              |
+   +------------------------------+-------------------------------------------+
+   | Tunnel Options               | Leave blank/default                       |
+   +------------------------------+-------------------------------------------+
+
+#. Download Configuration for this new VPN connection just like you did earlier for the primary VPN connection.
+
+Create Aviatrix Site2Cloud Connection with HA
++++++++++++++++++++++++++++++++++++++++++++++
+
+From Aviatrix Controller UI -> Site2Cloud page, click **+ Add New**, under **Add a New Connection**, make sure **Enable HA** is checked.
+
+Additional fields are displayed when checked.
+
+.. note::
+
+   VPN information for backup need to be obtained from the downloaded configuration
+   of AWS VPN connection between VGW and Aviatrix HA Gateway. Follow the same steps
+   you did for primary connection.
+
++-----------------------------------+------------------------------------------+
+| Field                             | Description                              |
++===================================+==========================================+
+| Backup Gateway                    | Select the Aviatrix HA Gateway you just  |
+|                                   | created                                  |
++-----------------------------------+------------------------------------------+
+| Remote Gateway IP Address(Backup) | Enter the value that matches the value   |
+|                                   | `Tunnel Interface Configuration`         |
+|                                   | > **Outside IP Addresses**               |
+|                                   | > **Virtual Private Gateway**            |
++-----------------------------------+------------------------------------------+
+| Pre-shared Key(Backup)            | Enter the value that matches the value   |
+|                                   | `Internet Key Exchange Configuration`    |
+|                                   | > **Pre-Shared Key**                     |
++-----------------------------------+------------------------------------------+
+
+Other fields should be filled as instructed in above section **Configure Aviatrix**.
 
 .. |gw2vgw| image:: s2c_vgw_media/gw_to_vgw.png
    :scale: 50%
@@ -200,4 +279,6 @@ Wait 2-3 minutes for the tunnel to come up.  If it does not come Up within that 
 .. |avxphase1config| image:: s2c_vgw_media/avx_phase_1_config.png
 .. |avxphase2config| image:: s2c_vgw_media/avx_phase_2_config.png
 .. |tunnelconfig| image:: s2c_vgw_media/tunnelconfig.png
-                          
+
+.. disqus::
+
