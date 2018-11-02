@@ -75,7 +75,7 @@ For example, you may already have a NAT gateway configured for the VPC, to minim
 Allocate NEW EIP
 -----------------
 
-When this option is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When this option is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. 
+If this option is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When the Aviatrix gateway is deleted, Controller will release this EIP. If this option is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. When the Aviatrix gateway is deleted, Controller will return this EIP to your AWS account without releasing it.
 
 VPN Access
 -------------
