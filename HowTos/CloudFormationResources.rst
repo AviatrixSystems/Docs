@@ -6,6 +6,11 @@
 Managing Aviatrix Resources in CloudFormation
 ==========================================================
 
+.. note::
+
+This functionality is not officially supported by Aviatrix. This is a community supported effort. And this document is our contribution to this community supported effort.
+
+
 Overview
 --------
 
