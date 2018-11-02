@@ -99,6 +99,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/fqdn_discovery
    HowTos/fqdn_viewlog
+   HowTos/nat_only_outbound_traffic
    HowTos/guardduty
 
 .. _Peering:
