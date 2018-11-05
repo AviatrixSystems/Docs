@@ -70,8 +70,13 @@ Configuration Details
    | Group Membership DN     | LDAP                                            |
    | (Optional)              | `search <https://ldap.com/ldap-filters/>`__     |
    |                         | filter.  This value must be entered in the      |
-   |                         | form of a query.  For example:                  |
-   |                         | ``memberOf=cn=vpn_users,DC=example,DC=com``     |
+   |                         | form of a query.  For example:\                 |
+   |                         |                                                 |
+   |                         | *for Linux OpenLDAP:\                           |
+   |                         | ``memberOf=cn=vpn_users,DC=example,DC=com``\    |
+   |                         |                                                 |
+   |                         | *for Windows Active Directory:\                 |
+   |                         | ``cn=vpn_users,DC=example,DC=com``\             |
    +-------------------------+-------------------------------------------------+
    | LDAP User (Optional)    | This field is only used when clicking on the    |
    |                         | `Test LDAP Configuration` button.  It will use  |
