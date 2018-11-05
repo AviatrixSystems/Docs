@@ -89,6 +89,10 @@ If you are running AWS Workspace services for your employees and need a full fle
 
 |image6|
 
+.. tip::
+
+   Additional details on this architecture can be found `here <transit_plus_security_vpc.html>`__.
+
 
 Integrating with Egress Firewall -2 
 ------------------------------------
@@ -107,6 +111,11 @@ The advantage of this architecture is that traffic to Internet and on-prem is de
 The drawback in this architecture is that each Spoke VPC needs to establish a site2cloud
 IPSEC connection to the firewall which is not optimized to handle potentially large scale of VPN tunnels. Unless there is automation, the process
 of building many IPSEC connections could be time consuming and difficult to manage. The performance load on the firewall device to handle VPN tunnels can significantly impact its ability to perform IDS/IPS functions. 
+
+.. tip::
+
+   Additional details on this architecture can be found `here <transit_plus_security_vpc.html>`__.
+
 
 SD-WAN Integration
 --------------------
