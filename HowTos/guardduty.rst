@@ -15,12 +15,15 @@ GuardDuty sifts through CloudTrail logs, VPC Flow logs and DNS logs to assess ri
 Configuration
 --------------
 
-To enable GuardDuty Integration, login to Aviatrix Controller, on the left side of
-the navigation bar, go to Security -> GuardDuty, as shown below. 
+To enable GuardDuty Integration, login to Aviatrix Controller, on the left side of the navigation bar, go to **Security** > **Guard Duty**, as shown below. 
 
-If you have already enabledd GuarDuty on AWS Console, the Controller will detect, pull the information and proceed.  
+If you have already enabledd GuardDuty on AWS Console, the Controller will detect, pull the information and proceed.  
 
 |guardduty_config|
+
+.. note::
+
+   Additional permissions must be granted in the Aviatrix IAM policies for each account where this feature is enabled.  You may need to `update IAM policies <iam_policies.html>`__ prior to enabling this feature.
 
 Integration and Enforcements
 -------------------------------
@@ -29,7 +32,7 @@ Aviatrix Controller provides additional monitoring, logging and enforcement serv
 as listed below. 
 
  - Aviatrix Controller polls periodically Amazon `GuardDuty findings <https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html>`_. 
- - Findings from Amazon GuardDuty are `logged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_ to the Controller syslog. (Syslog can be exported to `Aviatrix supported Logging services <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_.)
+ - Findings from Amazon GuardDuty are `logged <AviatrixLogging.html#id13>`__ to the Controller syslog. (Syslog can be exported to `Aviatrix supported Logging services <AviatrixLogging.html>`__.)
  - Findings from Amazon GuardDuty are displayed in Alert Bell on the Controller console.  
  - In addition, if a finding is about instances in a VPC being probed by a malicious IP address, this IP address is blocked by the Controller automatically programming the Network ACL of the VPC, as shown below. 
 
