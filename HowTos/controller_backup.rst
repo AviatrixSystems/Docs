@@ -44,7 +44,7 @@ If you want to force an immediate backup (e.g. for a configuration change) you c
 
 .. note::
 
-   It is recommended to turn on 'Multiple Backup' option. If the backup is already 'Enabled', go ahead and 'Disable' it and then turn on the 'Multiple Backup' option and then 'Enable' it
+   It is recommended to turn on 'Multiple Backup' option. If the backup is already 'Enabled', go ahead and 'Disable' it and then turn on the 'Multiple Backup' option and then 'Enable' the backup again.
 
 
 
