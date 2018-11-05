@@ -42,6 +42,12 @@ Selecting "Multiple Backup" checkbox, will enable the controller to backup up to
 
 If you want to force an immediate backup (e.g. for a configuration change) you can accomplish this by clicking on the "Backup Now" button. If multiple backups are not enabled, each time the configuration is backed up, the backup up file will be overwritten. Otherwise, the oldest backed up will be overwritten.
 
+.. note::
+
+   It is recommended to turn on 'Multiple Backup' option. If the backup is already 'Enabled', go ahead and 'Disable' it and then turn on the 'Multiple Backup' option and then 'Enable' it
+
+
+
 How to restore configuration
 --------------------------------
 
