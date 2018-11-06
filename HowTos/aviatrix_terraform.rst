@@ -233,7 +233,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	# policy - Enter policy as list of rules.
 	# 6 fields are required for each rule item: protocol, src_ip, log_enable, dst_ip, allow_deny and port.
 	# Valid values for protocol: "all", "tcp", "udp", "icmp", "sctp", "rdp", "dccp"
-	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" etc.
+	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" are etc (Name of the "aviatrix_firewall_tag" resource created earlier). 
 	# Valid values for port: a single port or a range of port numbers. e.g.: "25", "25:1024"
 	# Valid values for deny_allow: "allow" and "deny"
 	# Valid values for log_enable: "on" and "off"
@@ -249,7 +249,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	              log_enable = "on"
 	              dst_ip = "10.12.0.172/32"
 	              allow_deny = "deny"
-	              port = "0-65535"
+	              port = "0:65535"
 	            },
 	            {
 	              protocol = "tcp"
@@ -257,7 +257,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	              log_enable = "off"
 	              dst_ip = "10.12.1.172/32"
 	              allow_deny = "deny"
-	              port = "0-65535"
+	              port = "0:65535"
 	            }
 	          ]
 	}
