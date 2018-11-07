@@ -20,24 +20,34 @@ Overview
 
 Aviatrix Controller HA in AWS leverages auto scaling group and Lambda function to perform monitoring, launching a new controller and restoring configuration when the active controller instance become unreachable.
 
-When a new controller is launched, the existing controller is terminated by auto scaling group and its EIP is associated to the controller. Existing configuration files are restored which gives you a seamless experience when failover happens.
+When a new controller is launched, the existing controller is terminated and its EIP is associated to the newly launched controller.  Existing configuration is restored resulting in a seamless experience when failover happens.
 
 Prerequisites
 -------------
 
 * Existing AVX Controller.  If you have not yet launched an AVX Controller, please follow `this guide </StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__.
 
-  * Aviatrix version must be >= 3.4.  If older than 3.4, please `upgrade <inline_upgrade.html#how-to-upgrade-software>`__.
+  * Aviatrix version must be **>= 3.4**.  If older than 3.4, please `upgrade <inline_upgrade.html#how-to-upgrade-software>`__.
   * Enable Controller `Backup <controller_backup.html>`__.
-  * AMI ID **aviatrix_cloud_services_gateway_043018_YYYY-xxxxxx** or later. If you are on an older AMI, please refer `here <Migration_From_Marketplace.html>`__. to migrate to the latest controller AMI first.
+  * AMI **aviatrix_cloud_services_gateway_043018_YYYY-xxxxxx** or later. If you are on an older AMI, please refer `here <Migration_From_Marketplace.html>`__. to migrate to the latest controller AMI first.
 
 * Controller's VPC should have one or more public subnets, preferrably in different AZs for HA across multiple AZ.
 
 * S3 bucket for backups
 
+Controller HA Details
+---------------------
+
+Aviatrix Controller HA operates by relying on an AWS Auto Scaling Group.  This ASG has a desired capacity of 1.  If the Controller EC2 instance is stopped or terminated, it will be automatically re-deployed by the ASG.
+
+An AWS Lambda script is notified via SNS when new instances are launched by the Auto Scaling Group.  This script handles configuration using a recent Controller backup file.  The Aviatrix Controller manages these backups once `enabled <controller_backup.html>`__.
+
+Restoring the Aviatrix Controller from a newly built instance requires access to the S3 bucket to retrieve the latest backup file.  In order to do this, the newly built EC2 Controller instance must be granted permission to read files in the bucket.  The simplest method of doing this is via an `IAM user with programmatic access to the S3 bucket <#create-iam-user>`__.
 
 Steps to Enable Controller HA
 -----------------------------
+
+.. _create_iam_user:
 
 Create IAM User
 ###############
