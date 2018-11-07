@@ -27,10 +27,9 @@ Prerequisites
 
 * Existing AVX Controller.  If you have not yet launched an AVX Controller, please follow `this guide </StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__.
 
-  * Copy the **Name** tag of AVX Controller EC2 Instance
-  * Version must be >= 3.4.  If older than 3.4, please `upgrade <inline_upgrade.html#how-to-upgrade-software>`__.
+  * Aviatrix version must be >= 3.4.  If older than 3.4, please `upgrade <inline_upgrade.html#how-to-upgrade-software>`__.
   * Enable Controller `Backup <controller_backup.html>`__.
-  * Existing controller must have at least AMI ID aviatrix_cloud_services_gateway_043018_BYOL-xxxxxx. If you are on an older AMI ID, please refer here to migrate to the latest controller AMI ID first.
+  * AMI ID **aviatrix_cloud_services_gateway_043018_YYYY-xxxxxx** or later. If you are on an older AMI, please refer `here <Migration_From_Marketplace.html>`__. to migrate to the latest controller AMI first.
 
 * Controller's VPC should have one or more public subnets, preferrably in different AZs for HA across multiple AZ.
 
