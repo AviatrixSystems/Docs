@@ -276,23 +276,25 @@ Manages Aviatrix Site2Cloud connection
 	}
 
 	# vpc_id - VPC Id where cloud gateway lies.
-	# conn_name - Site2Cloud connection name
+	# connection_name - Site2Cloud connection name
+        # connection_type = "unmapped" or "mapped"
 	# pre_shared_key - (Optional) Valid pre-shared key
-	# remote_gw_type - Remote GW type - generic, aws, azure, avx, sonicwall
+	# remote_gateway_type - Remote GW type - generic, aws, azure, avx, sonicwall
 	# tunnel_type - (Optional) tcp or udp
-	# remote_gw_ip - Public IP of remote onprem GW
-	# remote_subnet - Subnet CIDR of remote GW
-	# local_subnet - Subnet CIDR of cloud gateway
+	# remote_gateway_ip - Public IP of remote onprem GW
+	# remote_subnet_cidr - Subnet CIDR of remote GW
+	# local_subnet_cidr - (Optional) Subnet CIDR of cloud gateway
 
 	resource "aviatrix_site2cloud" "test_s2c" {
 	  vpc_id = "vpc-abcd1234"
-	  conn_name = "myconn"
-	  remote_gw_type = "generic"
+	  connection_name = "myconn"
+          connection_type = "unmapped"
+	  remote_gateway_type = "generic"
 	  tunnel_type = "udp"
-	  gw_name = "gw1"
-	  remote_gw_ip = "5.5.5.5"
-	  remote_subnet = "10.23.0.0/24"
-	  local_subnet = "10.20.1.0/24"
+	  primary_cloud_gateway_name = "gw1"
+	  remote_gateway_ip = "5.5.5.5"
+	  remote_subnet_cidr = "10.23.0.0/24"
+	  local_subnet_cidr = "10.20.1.0/24"
 	}
 
 aviatrix_vpn_user
