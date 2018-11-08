@@ -9,7 +9,7 @@ TGW Orchestrator Plan
 
 TGW Orchestrator Plan workflow provides a step by step instruction to create a AWS TGW and Route Domains.
 
-1. Create AWS TGW
+1. Attach VPC to TGW
 -------------------------------------------
 
 
@@ -25,22 +25,8 @@ AWS Side AS Numbert                             Default AS number is 64512. This
 .. important:: At Aviatrix TGW Orchestrator Beta release time, the access account that launches the TGW must use access key and secret key for API credentials. IAM role does not work at this time. 
 
 
-2. Create Security Domain
+2. Detach VPC from TGW
 --------------------------------------------------
-
-
-3. (Optional) Enable Aviatrix Transit Gateway Interface to TGW 
----------------------------------------------------------------
-
-
-4. (Optional) Disable Aviatrix Transit Gateway Interface to TGW
-------------------------------------------------------------------
-
-5. Delete Security Domain
----------------------------
-
-6. Delete AWS TGW
-------------------
 
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
