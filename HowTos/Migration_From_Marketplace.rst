@@ -69,7 +69,7 @@ Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartU
    .. note::
       For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager to acquire the appropriate BYOL license.
       
-   .. important::
+   .. attention::
       Make sure you already have subscribed the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__  for detail.
 
 Step 5 - Associate EIP
@@ -84,12 +84,27 @@ Make sure your new Aviatrix Controller is upgraded to same version (latest) by v
 
 |image3|
 
-Step 7 - Restore
+Step 7 - Setup Aviatrix Customer ID
+================
+On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
+Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
+
+|image6|
+
+Step 8 - Restore
 ================
 On the new Aviatrix Controller, go to **Settings** > **Maintenance** and select the **Backup & Restore tab**.
 Insert the details about your S3 bucket name and execute a restore.
 
 |image4|
+
+
+Step 9 - Setup Aviatrix Customer ID Again
+================
+On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
+Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
+
+|image6|
 
 .. tip::
    Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace controller instance.
@@ -99,5 +114,6 @@ Insert the details about your S3 bucket name and execute a restore.
 .. |image3| image:: Migration_From_Marketplace/image3-3.3.png
 .. |image4| image:: Migration_From_Marketplace/image4-3.3.png
 .. |image5| image:: Migration_From_Marketplace/image5-3.3.png
+.. |image6| image:: Migration_From_Marketplace/image6.png
 
 .. disqus::
