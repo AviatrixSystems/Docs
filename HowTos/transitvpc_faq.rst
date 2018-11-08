@@ -289,6 +289,32 @@ How to build Spoke to Spoke connectivity via Transit?
 
 Starting from release 3.5, Transit network supports `Connected mode. <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_ where Spoke to Spoke connectivity is built automatically. 
 
+How does Spoke gateway and VPC private DNS work together?
+----------------------------------------------------------
+
+All Aviatrix gateways use a well known public DNS server for its hostname resolutions. This is necessary as the gateway must 
+access services such as AWS SQS to retrieve messages from the Controller and the accessibility cannot depend on underline connectivity.
+This is true even when a VPC has private DNS configured via its DHCP options, that is, while all EC2 instances use the private DNS
+to resolve hostnames, Aviatrix gateways use a well known public DNS for its own hostname resolution needs. 
+
+On the other hand, Aviatrix also provides a feature `"Use VPC/VNet DNS Server" <https://docs.aviatrix.com/HowTos/gateway.html#use-vpc-vnet-dns-server>`_ which allows you to force the Aviatrix gateways to use a private DNS server. This is useful in certain usecases, for example, the organizations' Splunk server is hosted on prem with a private IP address. Another usecase is when Aviatrix Egress FQDN is enabled for non HTTP/HTTPS ports, the Aviatrix gateway must use the VPC's DHCP option in order to accurately obtain the IP address 
+of a given hostname. 
+
+There is a caveat when the "Use VPC/VNet DNS Server" is applied to a Spoke gateway where the custom DNS server is on-prem or is only reachable through the IPSEC tunnels. 
+
+If the Spoke gateway has HA enabled, it will have a issue when "Use VPC/VNet DNS Server" feature is applied to the primary Spoke gateway. After the initial 
+configuration, the system should work as intended. However if a primary Spoke gateway fail over to backup gateway, and 
+the system attempts to fail back again, it will have problem. 
+
+The reason is that 
+the Aviatrix primary gateway, after the first fail over, has lost connectivity to the private DNS since the tunnel is down. However 
+the primary gateway must first obtain messages from the AWS SQS sent by the Controller to execute and reestablish the tunnel. 
+Therefore the Spoke gateway will be stuck and the tunnel will remain down. The situation can be resolved by disabling the "Use VPC/VNet DNS Server" on the Spoke gateway. 
+
+As a rule of thumb, in a Transit Network, if you like to have the Aviatrix gateways use a private DNS server, this DNS server must be 
+reachable regardless of the network tunnel status. 
+ 
+
 
 
 .. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
