@@ -68,6 +68,9 @@ Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartU
 
    .. note::
       For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager to acquire the appropriate BYOL license.
+      
+   .. important::
+      Make sure you already have subscribed the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__  for detail.
 
 Step 5 - Associate EIP
 ======================
