@@ -7,8 +7,8 @@
 TGW Orchestrator FAQ
 =========================================================
 
-What is TGW Orchestrator?
---------------------------
+What is Aviatrix TGW Orchestrator?
+-----------------------------------
 
 TGW Orchestrator serves three purposes:
 
@@ -31,6 +31,16 @@ In the deployment, the VPC in the Aviatrix Edge domain is a Spoke VPC from TGW p
 from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed in Spoke VPCs except in the Transit VPC. 
 
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
+
+Why should I use Aviatrix TGW Orchestrator?
+--------------------------------------------
+
+Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. 
+
+- **Simplification** The Orchestrator programs and updates both VPC route tables and TGW route tables so you don't have to. 
+- **Abstraction** The Orchestrator abstracts the route domain and route propagation concepts in TGW that allows you to create network segmentation by policy and intent. 
+- **Extension** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
+- **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
 
 What is a Security Domain?
 ---------------------------
