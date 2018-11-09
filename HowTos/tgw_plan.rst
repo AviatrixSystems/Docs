@@ -55,15 +55,32 @@ Connect to Security Domains                     This is a multi select field. Hi
 3. (Optional) Enable Aviatrix Transit Gateway Interface to TGW 
 ---------------------------------------------------------------
 
+This step designates an Aviatrix Transit GW to TGW. This is required when you like to connect any Spoke VPC to on-prem over Direct Connect or Internet. 
+
+Before you configure this step, make sure you have launched an Aviatrix Transit GW by following `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, Step 1, 2 and 3. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS.
+Gateway Namen                                   Select a Transit GW from the drop down menu. 
+==========================================      ==========
+
 
 4. (Optional) Disable Aviatrix Transit Gateway Interface to TGW
 ------------------------------------------------------------------
 
+This step removes the designation of an Aviatrix Transit GW from TGW Orchestrator. 
+
 5. Delete Security Domain
 ---------------------------
 
+This step delete a security domain created in Step 2. 
+
 6. Delete AWS TGW
 ------------------
+
+This step delete the TGW created in Step 1. 
 
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
