@@ -16,10 +16,6 @@ TGW Orchestrator serves three purposes:
  #. Creates security boundaries between groups of VPCs via Route Domains or Security Domains. 
  #. Out-of-the-box integration that allows customers with Direct Connect to utilize TGW for connecting on-prem to VPCs. 
 
-.. note::
-
-  Route Domain and Security Domain are terms used interchangeably. It is concept that describes a group of VPCs with the same trust relationship and can communicate with each other.
-
 The TGW Orchestrator is illustrated in the diagram below.
 
 |tgw_overview|
@@ -35,6 +31,39 @@ In the deployment, the VPC in the Aviatrix Edge domain is a Spoke VPC from TGW p
 from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed in Spoke VPCs except in the Transit VPC. 
 
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
+
+What is a Security Domain?
+---------------------------
+
+Security Domain is a concept that builds upon AWS Route Domain concept. A security domain consists of a group of VPCs that communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
+
+Aviatrix Controller programs and updates both VPC route tables and TGW route tables to keep the configuration in sync..
+
+Two security domains are by default not connected, i.e., a VPC in one domain does not have connectivity to another VPC in a different domain. You can specify a policy to connect the two domains so that VPCs in each domain can communicate with each other. 
+
+Aviatrix Controller programs and updates the TGW route table, route propagation and VPC route table to keep the configuration in sync. 
+
+What is the Default_Domain?
+---------------------------
+
+When a TGW is created by the Aviatrix Controller, the Default_Domain is created and a route table corresponding to the Default_Domain is created on TGW. If you do not plan on building any network segmentation, you can use Default_Domain for inter VPC and hybrid communications. 
+
+What is a Shared_Service_Domain?
+-----------------------------------
+
+When a TGW is created by the Aviatrix Controller, the Shared_Service_Domain is created and a route table corresponding to the Shared_Service_Domain is created on TGW. 
+
+You can attach VPC to this domain and host your shared service instances such as your DevOps tools. 
+
+Shared_Service_Domain is always connected to Default_Domain.
+
+What is the Aviatrix_Edge_Domain?
+----------------------------------
+
+When a TGW is created by the Aviatrix Controller, the Aviatrix_Edge_Domain is created and a route table corresponding to the Aviatrix_Edge_Domain is created on TGW. 
+
+Aviatrix_Edge_Domain is always connected to the Shared_Service Domain and the Default_Domain.
+
 
 How to deploy TGW Orchestrator?
 --------------------------------
