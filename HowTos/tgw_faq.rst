@@ -86,6 +86,12 @@ TGW Orchestrator is deployed in a few stages.
  - View
  - Test
 
+What are the TGW Orchestrator deployment scenarios?
+------------------------------------------------------
+
+Check out some `design patterns <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html>`_ that address your requirements. 
+
+
 
 
 
