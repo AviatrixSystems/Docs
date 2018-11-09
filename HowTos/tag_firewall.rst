@@ -1,6 +1,6 @@
 .. meta::
-   :description: Tag based security policy
-   :keywords: Tag based security policy, stateful firewall, Aviatrix gateway, AWS
+   :description: Stateful firewall 
+   :keywords: iptables, stateful firewall
 
 ###################################
 Tag Based Security Policy

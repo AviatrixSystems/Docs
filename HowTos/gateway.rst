@@ -6,6 +6,14 @@
 Gateway
 ###################################
 
+.. raw:: html
+
+   <style>
+    /* override table no-wrap */
+   .wy-table-responsive table td, .wy-table-responsive table th {
+       white-space: normal !important;
+   }
+   </style>
 
 Launch a gateway
 -----------------
@@ -75,7 +83,7 @@ For example, you may already have a NAT gateway configured for the VPC, to minim
 Allocate NEW EIP
 -----------------
 
-When this option is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When this option is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. 
+If this option is selected, Aviatrix gateway allocates a new EIP for the gateway from AWS. When the Aviatrix gateway is deleted, Controller will release this EIP. If this option is unchecked, the gateway select one allocated but unassociated EIP from the AWS account from which the gateway is launched. When the Aviatrix gateway is deleted, Controller will return this EIP to your AWS account without releasing it.
 
 VPN Access
 -------------
@@ -519,6 +527,8 @@ to use VPC DNS server which should resolve the private DNS name of the log serve
 
   when enabling this feature, we check to make sure the gateway can indeed 
   reach the VPC/VNet DNS server; if not, this command will return error. 
+
+`A caveat is noted <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-does-spoke-gateway-and-vpc-private-dns-work-together>`_ when this feature is applied to a Transit Network. 
 
 
 

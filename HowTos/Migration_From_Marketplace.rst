@@ -3,117 +3,117 @@
    :keywords: Marketplace, migration, licensing, Aviatrix, AWS
 
 ==============================================================================
-  Migration from AWS Marketplace Licensing Model to Metered/BYOL Licensing Model
+Migrating from one Aviatrix Controller AMI to another
 ==============================================================================
 
 Introduction
 ============
 
-Many customers start by trying our AWS Marketplace image that allows you to deploy 10 VPN Users or 5 Peering Tunnels.
-Those images are not flexible and cannot be extended beyond it's initial license.
-In order to exceed this limitations, the customer needs to move to a Metered AMI or BYOL License model. 
-This document outlines all the steps necessary to execute the migration. 
+This document outlines all the steps necessary to migrate from one Aviatrix Controller AMI to another.
 
-::
-
-  Note: This document also applies to migrating from an old controller to a new controller AMI within the same BYOL or Metered subscription.
+.. tip::
+   This document applies to migrating from an old controller to a new controller AMI within the same subscription or moving from one subscription to another.
 
 
-Pre-requisites
-==============
-1. Existing Aviatrix AWS Marketplace instance deployed.
-#. We highly recommend migrating to Metered AMI as it is more flexible and scalable as your business needs change over time.
-#. For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager to acquire the appropriate BYOL License.
-#. All Aviatrix controller should be running 3.2 (or later).
+Prerequisites
+=============
+
+* Existing Aviatrix Controller instance deployed
+* Aviatrix Controller running latest version of software
+
+  #. Login to your existing Aviatrix Controller
+  #. Navigate to **Settings** > **Maintenance** > **Upgrade tab**
+  #. Make sure you are running the latest version. If it is not the latest version, please `upgrade <inline_upgrade.html>`__ before proceeding.
+
+     |image1|
+
+* An S3 bucket in the AWS account linked to your Aviatrix Controller (will be used for backups).
 
 Step 1 - Enable Backup
 ======================
-On the existing Aviatrix Marketplace Controller, go to Settings-->Maintenance-->Upgrade tab and make sure you are running the latest version. If it is not the latest version, please perform Dry Run and upgrade the controller by following our `Inline Software Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
-|image1|
+.. tip::
+   If you already have backup enabled, click **Backup Now** to make sure you have the latest backup.
+   Once complete, confirm in your S3 bucket that the backup file has been updated with the latest timestamp.
 
-Next, go to Settings--> Maintenance and select the Backup & Restore tab.
-Create an S3 bucket in your AWS account and copy the name on the corresponding field. Click Enable.
+#. Login to your existing Aviatrix Controller
+#. Navigate to **Settings** > **Maintenance** > **Backup & Restore tab**
+#. Click **Enable**
 
 |image2|
 
-::
+Step 2 - Stop the current Aviatrix Controller instance
+======================================================
 
-  Note: If you already have Backup enabled, click Backup Now or disable and re-enable to make sure the backup is executed.
-  Confirm in your S3 bucket that the backup file has been updated with the latest timestamp.
+.. note::
+   If the Controller has `HA enabled <controller_ha.html#enable-controller-ha>`__, you must first `disable the Controller HA <controller_ha.html#disable-controller-ha>`__.
 
-Step 2 - Stop the Marketplace instance
-======================================
-::
-
-Note: If the Controller has `HA enabled <https://docs.aviatrix.com/HowTos/controller_ha.html#enable-controller-ha>`_, you must first `disable the Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#disable-controller-ha>`_
-
-On the AWS console proceed to STOP the existing Aviatrix AWS Marketplace controller instance.
+On the AWS console proceed to **Stop** the existing Aviatrix Controller instance.
 
 Step 3 - Disassociate EIP
 =========================
-On the AWS console, go to EC2-->Network & Security --> Elastic IPs, and disassociate the EIP from the existing Aviatrix AWS Marketplace controller instance.
 
-::
+On the AWS console, go to **EC2** > **Network & Security** > **Elastic IPs**.  Disassociate the EIP from the existing Aviatrix AWS Marketplace controller instance.
 
-  Note: Make sure browser cache is cleared before the next Step,
-  to avoid connecting to an old stale session.
+.. note::
+   Make sure browser cache is cleared before the next step to avoid connecting to an old stale session.
 
-Step 4 - Launch Metered/BYOL Controller
-======================================
-Launch new Aviatrix Controller using the Metered AMI or BYOL License. Please refer to our `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`_ to subscribe to the Aviatrix AMI.
+Step 4 - Launch new Aviatrix Controller
+=======================================
 
-  #. Go to AWS Marketplace and search for the Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) AMI.
-  #. Launch the selected BYOL AMI in the same VPC and subnet as the existing controller.
-  #. Select t2.large instance type (minimum requirement)
-    - Auto-assign Public IP set to disable.
-    - Storage = 20GB
-    - IAM role = aviatrix-role-ec2
-    - Enable termination protection = checked
-    - T2/T3 unlimited = Enable 
-  4. Assign the same Security Group on the existing controller to this NEW controller.
+Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__ for steps.
 
-Step 5 - Attach EIP
-===================
-On the AWS console, go to EC2-->Network & Security --> Elastic IPs, associate the same EIP from step 3 to the new Aviatrix  Metered/BYOL Controller.
+   .. tip::
+      We highly recommend migrating to Metered AMI as it is more flexible and scalable as your business needs change over time.
+
+   .. note::
+      For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager to acquire the appropriate BYOL license.
+      
+   .. attention::
+      Make sure you already have subscribed the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__  for detail.
+
+Step 5 - Associate EIP
+======================
+
+On the AWS console, go to **EC2** > **Network & Security** > **Elastic IPs**, associate the same EIP from step 3 to the new Aviatrix Controller.
 
 Step 6 - Upgrade Controller
 ===========================
-Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at Settings-->Maintenance-->Upgrade tab. Please note that Aviatrix only supports controller backup and restore within the same software version. In this example, the previous controller is upgraded to the latest 3.3.402 at the time of this writing. The following screenshot shows that the new controller is running the latest 3.3.402 as well.
+
+Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at **Settings** > **Maintenance** > **Upgrade tab**. Please note that Aviatrix only supports controller backup and restore within the same software version. In this example, the previous controller is upgraded to the latest 3.3.402 at the time of this writing. The following screenshot shows that the new controller is running the latest 3.3.402 as well.
 
 |image3|
 
-Step 7 - Restore
+Step 7 - Setup Aviatrix Customer ID
 ================
-On the new Aviatrix Controller, go to Settings--> Maintenance and select the Backup & Restore tab.
-Insert the right S3 bucket name and execute a restore.
+On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
+Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
+
+|image6|
+
+Step 8 - Restore
+================
+On the new Aviatrix Controller, go to **Settings** > **Maintenance** and select the **Backup & Restore tab**.
+Insert the details about your S3 bucket name and execute a restore.
 
 |image4|
 
-Step 8 - Install License
-=========================
-On the on-boarding page, enter the customer id provided by your Aviatrix Sales Account Manager.
 
-|image5|
+Step 9 - Setup Aviatrix Customer ID Again
+================
+On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
+Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
 
-  Note: You may need to re-enter your BYOL Customer ID after controller restore operation. We also suggest that you backup
-  the latest configuration by clicking the Backup Now button at Settings-->Maintenance-->Backup & Restore tab.
+|image6|
 
-Step 9 - Enjoy your new controller
-======================================
-
-::
-
-  Optional: After confirming everything is running correctly,
-  delete the previous Aviatrix AWS Marketplace controller instance.
-
-For support, send email to support@aviatrix.com.
-
+.. tip::
+   Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace controller instance.
 
 .. |image1| image:: Migration_From_Marketplace/image1-3.3.png
 .. |image2| image:: Migration_From_Marketplace/image2-3.3.png
 .. |image3| image:: Migration_From_Marketplace/image3-3.3.png
 .. |image4| image:: Migration_From_Marketplace/image4-3.3.png
 .. |image5| image:: Migration_From_Marketplace/image5-3.3.png
+.. |image6| image:: Migration_From_Marketplace/image6.png
 
 .. disqus::

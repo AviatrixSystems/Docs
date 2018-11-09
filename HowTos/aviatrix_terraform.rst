@@ -233,7 +233,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	# policy - Enter policy as list of rules.
 	# 6 fields are required for each rule item: protocol, src_ip, log_enable, dst_ip, allow_deny and port.
 	# Valid values for protocol: "all", "tcp", "udp", "icmp", "sctp", "rdp", "dccp"
-	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" etc.
+	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" are etc (Name of the "aviatrix_firewall_tag" resource created earlier). 
 	# Valid values for port: a single port or a range of port numbers. e.g.: "25", "25:1024"
 	# Valid values for deny_allow: "allow" and "deny"
 	# Valid values for log_enable: "on" and "off"
@@ -249,7 +249,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	              log_enable = "on"
 	              dst_ip = "10.12.0.172/32"
 	              allow_deny = "deny"
-	              port = "0-65535"
+	              port = "0:65535"
 	            },
 	            {
 	              protocol = "tcp"
@@ -257,7 +257,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	              log_enable = "off"
 	              dst_ip = "10.12.1.172/32"
 	              allow_deny = "deny"
-	              port = "0-65535"
+	              port = "0:65535"
 	            }
 	          ]
 	}
@@ -276,23 +276,25 @@ Manages Aviatrix Site2Cloud connection
 	}
 
 	# vpc_id - VPC Id where cloud gateway lies.
-	# conn_name - Site2Cloud connection name
+	# connection_name - Site2Cloud connection name
+        # connection_type = "unmapped" or "mapped"
 	# pre_shared_key - (Optional) Valid pre-shared key
-	# remote_gw_type - Remote GW type - generic, aws, azure, avx, sonicwall
+	# remote_gateway_type - Remote GW type - generic, aws, azure, avx, sonicwall
 	# tunnel_type - (Optional) tcp or udp
-	# remote_gw_ip - Public IP of remote onprem GW
-	# remote_subnet - Subnet CIDR of remote GW
-	# local_subnet - Subnet CIDR of cloud gateway
+	# remote_gateway_ip - Public IP of remote onprem GW
+	# remote_subnet_cidr - Subnet CIDR of remote GW
+	# local_subnet_cidr - (Optional) Subnet CIDR of cloud gateway
 
 	resource "aviatrix_site2cloud" "test_s2c" {
 	  vpc_id = "vpc-abcd1234"
-	  conn_name = "myconn"
-	  remote_gw_type = "generic"
+	  connection_name = "myconn"
+          connection_type = "unmapped"
+	  remote_gateway_type = "generic"
 	  tunnel_type = "udp"
-	  gw_name = "gw1"
-	  remote_gw_ip = "5.5.5.5"
-	  remote_subnet = "10.23.0.0/24"
-	  local_subnet = "10.20.1.0/24"
+	  primary_cloud_gateway_name = "gw1"
+	  remote_gateway_ip = "5.5.5.5"
+	  remote_subnet_cidr = "10.23.0.0/24"
+	  local_subnet_cidr = "10.20.1.0/24"
 	}
 
 aviatrix_vpn_user

@@ -27,6 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Tech Notes`
 * :ref:`Solutions`
 * :ref:`Good To Know`
+* :ref:`TGW Orchestrator`
 * :ref:`IPmotion`
 
 
@@ -86,6 +87,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_designs
    HowTos/transitvpc_csr_migrate
    HowTos/Setup_Transit_Network_Terraform
+   HowTos/transit_plus_security_vpc
 
 .. _Security:
 
@@ -99,6 +101,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/fqdn_discovery
    HowTos/fqdn_viewlog
+   HowTos/nat_only_outbound_traffic
    HowTos/guardduty
 
 .. _Peering:
@@ -290,3 +293,13 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/opstools_survey
    HowTos/aws_network_limits
 
+.. _TGW Orchestrator:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: TGW Orchestrator
+
+   HowTos/tgw_faq
+   HowTos/tgw_plan
+   HowTos/tgw_build
+   HowTos/tgw_design_patterns
