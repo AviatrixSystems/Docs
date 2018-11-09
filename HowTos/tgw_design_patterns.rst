@@ -14,12 +14,20 @@ If you just want a full mesh connectivity between VPCs and on-prem, you do not n
 
 |default_domain_design|
 
+Default_Domain Design with Distributed Egress Control
+-------------------------------------------------------
+
+You can build the Default_Domain to support Aviatrix distributed Egress FQDN in each VPC, as shown below. 
+
+|default_egress|
 
 
-.. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
-   :scale: 30%
+
 
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
+   :scale: 30%
+
+.. |default_egress| image:: tgw_design_patterns_media/default_egress.png
    :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
