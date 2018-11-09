@@ -14,7 +14,7 @@ TGW Orchestrator serves three purposes:
 
  1. Orchestrates VPC to VPC connectivities via AWS TGW. 
  #. Creates security boundaries between groups of VPCs via Route Domains or Security Domains. 
- #. Out-of-box integration that allows customers with Direct Connect to utilize TGW for connecting on-prem to VPCs. 
+ #. Out-of-the-box integration that allows customers with Direct Connect to utilize TGW for connecting on-prem to VPCs. 
 
 .. note::
 

@@ -7,7 +7,9 @@
 TGW Orchestrator Build
 =========================================================
 
-TGW Orchestrator Buildn workflow is a step instruction to attach a VPC to a AWS TGW and Route Domain.
+TGW Orchestrator Build workflow is a one step instruction to attach  VPC to  AWS TGW and Route Domain.
+
+For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_overview.html>`_.
 
 1. Attach VPC to TGW
 -------------------------------------------

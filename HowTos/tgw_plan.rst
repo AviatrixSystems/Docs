@@ -9,6 +9,8 @@ TGW Orchestrator Plan
 
 TGW Orchestrator Plan workflow provides a step by step instruction to create a AWS TGW and Route Domains.
 
+For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_overview.html>`_.
+
 1. Create AWS TGW
 -------------------------------------------
 
