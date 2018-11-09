@@ -76,16 +76,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/gateway
    Solutions/gateway_ha
 
-.. _TGW Orchestrator:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: TGW Orchestrator
-
-   HowTos/tgw_overview
-   HowTos/tgw_plan
-   HowTos/tgw_build
-
 .. _Transit Network:
 
 .. toctree::
@@ -303,3 +293,12 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/opstools_survey
    HowTos/aws_network_limits
 
+.. _TGW Orchestrator:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: TGW Orchestrator
+
+   HowTos/tgw_overview
+   HowTos/tgw_plan
+   HowTos/tgw_build
