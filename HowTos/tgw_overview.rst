@@ -4,8 +4,11 @@
 
 
 =========================================================
-TGW Orchestrator Overview
+TGW Orchestrator FAQ
 =========================================================
+
+What is TGW Orchestrator?
+--------------------------
 
 TGW Orchestrator serves three purposes:
 
@@ -32,6 +35,18 @@ In the deployment, the VPC in the Aviatrix Edge domain is a Spoke VPC from TGW p
 from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed in Spoke VPCs except in the Transit VPC. 
 
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
+
+How to deploy TGW Orchestrator?
+--------------------------------
+
+TGW Orchestrator is deployed in a few stages. 
+
+ - `Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_
+ - `Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_
+ - List
+ - View
+ - Test
+
 
 
 
