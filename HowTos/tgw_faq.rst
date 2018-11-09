@@ -13,7 +13,7 @@ What is Aviatrix TGW Orchestrator?
 TGW Orchestrator serves three purposes:
 
  1. Orchestrates VPC to VPC connectivities via AWS TGW. 
- #. Creates security boundaries between groups of VPCs via Route Domains or Security Domains. 
+ #. Creates security boundaries between groups of VPCs via Route Domains or Security Domains to achieve network segmentation.. 
  #. Out-of-the-box integration that allows customers with Direct Connect to utilize TGW for connecting on-prem to VPCs. 
 
 The TGW Orchestrator is illustrated in the diagram below.
