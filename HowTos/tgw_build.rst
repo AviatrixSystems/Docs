@@ -1,13 +1,13 @@
 .. meta::
-  :description: TGW Plan
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network
+  :description: TGW Build
+  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network, TGW Build
 
 
 =========================================================
-TGW Orchestrator Plan
+TGW Orchestrator Build
 =========================================================
 
-TGW Orchestrator Plan workflow provides a step by step instruction to create a AWS TGW and Route Domains.
+TGW Orchestrator Buildn workflow is a step instruction to attach a VPC to a AWS TGW and Route Domain.
 
 1. Attach VPC to TGW
 -------------------------------------------
@@ -16,17 +16,20 @@ TGW Orchestrator Plan workflow provides a step by step instruction to create a A
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. 
-Region                                          One of the AWS regions
-TGW Name                                        The name of the TGW
-AWS Side AS Numbert                             Default AS number is 64512. This field currently is not used.
+Region                                          Select a region where TGW resides.
+VPC Account                                     An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. 
+VPC Name                                        Select a VPC in the VPC Account.
+TGW Account                                     Select an access account where TGW resides. 
+TGW Name                                        The name of the TGW in the TGW Account. 
+Security Domain Name                            Select from a drop down menu domain. Note when Aviatrix_Edge_Domain is selected, you are asked to select an Aviatrix Transit GW created in the `Plan stage Step 3 https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gateway-interface-to-tgw>`_.
 ==========================================      ==========
 
-.. important:: At Aviatrix TGW Orchestrator Beta release time, the access account that launches the TGW must use access key and secret key for API credentials. IAM role does not work at this time. 
 
 
 2. Detach VPC from TGW
 --------------------------------------------------
+
+This step detaches a VPC from a TGW and Domain. 
 
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
