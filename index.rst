@@ -13,7 +13,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
 * :ref:`Gateway`
-* :ref:`TGW Orchestrator`
 * :ref:`Transit Network`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
@@ -28,6 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Tech Notes`
 * :ref:`Solutions`
 * :ref:`Good To Know`
+* :ref:`TGW Orchestrator`
 * :ref:`IPmotion`
 
 
