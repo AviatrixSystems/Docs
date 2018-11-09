@@ -21,7 +21,7 @@ VPC Account                                     An `Aviatrix account <http://doc
 VPC Name                                        Select a VPC in the VPC Account.
 TGW Account                                     Select an access account where TGW resides. 
 TGW Name                                        The name of the TGW in the TGW Account. 
-Security Domain Name                            Select from a drop down menu domain. Note when Aviatrix_Edge_Domain is selected, you are asked to select an Aviatrix Transit GW created in the `Plan stage Step 3 https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gateway-interface-to-tgw>`_.
+Security Domain Name                            Select from a drop down menu domain. Note when Aviatrix_Edge_Domain is selected, you are asked to select an Aviatrix Transit GW created in the `Plan stage Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gateway-interface-to-tgw>`_.
 ==========================================      ==========
 
 
