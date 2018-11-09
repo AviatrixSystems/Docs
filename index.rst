@@ -302,3 +302,4 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_faq
    HowTos/tgw_plan
    HowTos/tgw_build
+   HowTos/tgw_design_patterns
