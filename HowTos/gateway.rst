@@ -528,6 +528,8 @@ to use VPC DNS server which should resolve the private DNS name of the log serve
   when enabling this feature, we check to make sure the gateway can indeed 
   reach the VPC/VNet DNS server; if not, this command will return error. 
 
+`A caveat is noted <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-does-spoke-gateway-and-vpc-private-dns-work-together>`_ when this feature is applied to a Transit Network. 
+
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
