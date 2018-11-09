@@ -7,8 +7,8 @@
 TGW Orchestrator FAQ
 =========================================================
 
-What is Aviatrix TGW Orchestrator?
------------------------------------
+What is the Aviatrix TGW Orchestrator?
+---------------------------------------
 
 TGW Orchestrator serves three purposes:
 
