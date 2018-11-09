@@ -19,7 +19,7 @@ If you just want a full mesh connectivity between VPCs and on-prem, you do not n
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
    :scale: 30%
 
-.. |default_domain_design| image:: tgw_overview_media/default_domain_design.png
+.. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
    :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
