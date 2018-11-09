@@ -12,6 +12,15 @@ TGW Orchestrator Plan workflow provides a step by step instruction to create a A
 1. Create AWS TGW
 -------------------------------------------
 
+This step creates a TGW in a specified region with a specified AWS account, it also creates a Shared_Service_Domain and Aviatrix_Edge_Domain. 
+
+The Default_Domain is automatically created when a TGW is created. 
+
+The Shared_Service_Domain is meant for VPCs that deploy common tools, such as DevOps tools, logging tools and monitoring tools. 
+
+The Aviatrix_Edge_Domain is meant for a Transit VPC where Aviatrix gateways are deployed to connect on-prem over Direct Connect/Internet or other region TGW clusters. 
+
+The Default_Domain is automatically connected to both Shared_Service_Domain and Aviatrix_Edge_Domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -27,6 +36,20 @@ AWS Side AS Numbert                             Default AS number is 64512. This
 
 2. Create Security Domain
 --------------------------------------------------
+
+This step allows you to create a custom Route Domain, or a Security Domain, where instances in VPCs attached to this domain can 
+communicate with either through associated TGW. In addition, at domain creation time you can also specify the other domains this
+domain can connect with. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS.
+Region                                          One of the AWS regions
+TGW Name                                        The name of the TGW
+Security Domain Name                            Specify a unique domain name. For example, Dev_Domain..
+Connect to Security Domains                     This is a multi select field. Highlight one or a few from the drop down menu. 
+==========================================      ==========
 
 
 3. (Optional) Enable Aviatrix Transit Gateway Interface to TGW 
