@@ -82,6 +82,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: TGW Orchestrator
 
+   HowTos/tgw_overview
    HowTos/tgw_plan
    HowTos/tgw_build
 
