@@ -20,7 +20,7 @@ The TGW Orchestrator is illustrated in the diagram below.
 
 |tgw_overview|
 
-In the above diagram, AWS VPCs are grouped into three domains: Dev domain, Prod domain, Shared Service domain and 
+In the above diagram, AWS VPCs are grouped into four domains: Dev domain, Prod domain, Shared Service domain and 
 Aviatrix Edge domain. Each VPC in the same domain can communicate with each other via TGW. VPCs in Prod domain cannot communicate 
 with VPCs in Dev Domain, while all VPCs in Dev domain and Prod domain can communicate with Shared service domain and Aviatrix 
 Edge domain. 
@@ -42,12 +42,22 @@ Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW s
 - **Extension** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
 
+How does Aviatrix TGW Orchestrator compliment AWS TGW service?
+---------------------------------------------------------------
+
+- **Dynamic Route Propagation** AWS TGW propagates VPC routes and IPSEC VPN routes to the TGW route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix TGW Orchestrator dynamically update route entries in the VPC route tables. 
+
+- **Policy Abstraction** AWS TGW provides capability to allow two TGW route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Aviatrix TGW Orchestrator builds on that and allows customers to define policies that form a security boundary. 
+
+- **Direct Connect Support** AWS TGW provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Aviatrix TGW Orchestrator, Direct Connect customers can immediately benefit TGW service.  
+
+
 What is a Security Domain?
 ---------------------------
 
 Security Domain is a concept that builds upon AWS Route Domain concept. A security domain consists of a group of VPCs that communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
 
-Aviatrix Controller programs and updates both VPC route tables and TGW route tables to keep the configuration in sync..
+Aviatrix Controller dynamically programs and updates both VPC route tables and TGW route tables to keep the configuration in sync..
 
 Two security domains are by default not connected, i.e., a VPC in one domain does not have connectivity to another VPC in a different domain. You can specify a policy to connect the two domains so that VPCs in each domain can communicate with each other. 
 
