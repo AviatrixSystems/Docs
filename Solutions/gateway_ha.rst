@@ -14,11 +14,11 @@ The Aviatrix Controller monitors your cloud networking deployment, detects probl
 +--------------------------------------------------+---------------------------+
 | HA Option                                        | Recovery Time ``*``       |
 +==================================================+===========================+
+| `Backup Gateway and Tunnel(s) <#gwha-option3>`__ | ~30 seconds               |
++--------------------------------------------------+---------------------------+
 | `Single AZ Gateway <#gwha-single-az>`__          | 4-5 minutes               |
 +--------------------------------------------------+---------------------------+
-| `Backup Gateway <#gwha-backup-gw>`__             | 1-2 minutes               |
-+--------------------------------------------------+---------------------------+
-| `Backup Gateway and Tunnel(s) <#gwha-option3>`__ | ~30 seconds               |
+| `Backup Gateway(deprecated) <#gwha-backup-gw>`__ | 1-2 minutes               |
 +--------------------------------------------------+---------------------------+
 
 ``*`` Recovery times vary based on many factors including the number of tunnels established.
@@ -32,10 +32,28 @@ How is a Gateway or Tunnel Determined to be Down?
 
 See more details `here <../HowTos/gateway.html#gateway-keepalives>`__.
 
-.. _gwha_single_az:
+.. _gwha_option3:
 
 HA Options
 ----------
+
+Backup Gateway and Tunnel(s)
+############################
+
+.. note::
+
+   The recovery time for this option is approximately 30 seconds
+
+|imageGwBackupTunnel| |imageTimer30sec|
+
+The backup gateway has its own EIP and active tunnel(s).  The backup gateway and tunnels are provisioned when HA is enabled for this gateway.
+
+If a problem with the primary gateway or connected tunnel(s) is detected:
+
+#. Update the routing table in the VPC/VNet so the target for routes is the backup gateway.
+#. An email notification is sent to the administrator.
+
+.. _gwha_single_az:
 
 Single AZ Gateway
 #################
@@ -61,6 +79,7 @@ Backup Gateway
 .. note::
 
    The recovery time for this option is approximately 1-2 minutes.
+   This feature has been deprecated. Not recommended for new customers.
 
 |imageGwBackup|         |imageTimer2min|
 
@@ -70,24 +89,6 @@ If a problem with the primary gateway or connected tunnel(s) is detected:
 
 #. The EIP is moved to the backup gateway from the active.
 #. Tunnels currently connected to the primary gateway are rebuilt on the backup gateway.
-#. An email notification is sent to the administrator.
-
-.. _gwha_option3:
-
-Backup Gateway and Tunnel(s)
-############################
-
-.. note::
-
-   The recovery time for this option is approximately 1-2 seconds
-
-|imageGwBackupTunnel| |imageTimer30sec|
-
-This is similar to the "backup gateway" option except that the backup gateway has its own EIP and active tunnel(s).  The backup gateway and tunnels are provisioned when HA is enabled for this gateway.
-
-If a problem with the primary gateway or connected tunnel(s) is detected:
-
-#. Update the routing table in the VPC/VNet so the target for routes is the backup gateway.
 #. An email notification is sent to the administrator.
 
 
@@ -104,25 +105,6 @@ Deploying your desired HA model is simple.  Follow these steps to enable HA on y
 
 #. Follow the steps below for the desired HA option
 
-   * **Single AZ HA**
-
-     Click the `Enable` button below `Gateway Single AZ HA`
-
-     |imageEnableSingleAZ|
-
-   * **Backup Gateway HA**
-
-     #. Scroll to `Gateway for High Availability`
-     #. Select the subnet where the backup gateway should be deployed
-
-        .. tip::
-
-           Select a availability zone that is different from where your primary gateway is installed.
-
-     #. Click the `Enable HA` button
-
-     |imageEnableBackupGW|
-
    * **Backup Gateway and Tunnel HA**
 
      #. Scroll to `Gateway for High Availability Peering`
@@ -135,6 +117,25 @@ Deploying your desired HA model is simple.  Follow these steps to enable HA on y
      #. Click the `+Create` button
 
      |imageEnableBackupGWAndTunnel|
+
+   * **Single AZ HA**
+
+     Click the `Enable` button below `Gateway Single AZ HA`
+
+     |imageEnableSingleAZ|
+
+   * **Backup Gateway HA(deprecated)**
+
+     #. Scroll to `Gateway for High Availability`
+     #. Select the subnet where the backup gateway should be deployed
+
+        .. tip::
+
+           Select a availability zone that is different from where your primary gateway is installed.
+
+     #. Click the `Enable HA` button
+
+     |imageEnableBackupGW|
 
 .. |imageEnableBackupGWAndTunnel| image:: gateway_ha_media/controller_edit_backup_gw_tunnel.png
    :scale: 50%
