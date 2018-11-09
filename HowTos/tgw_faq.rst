@@ -58,7 +58,7 @@ What is the Default_Domain?
 
 When a TGW is created by the Aviatrix Controller, the Default_Domain is created and a route table corresponding to the Default_Domain is created on TGW. If you do not plan on building any network segmentation, you can use Default_Domain for inter VPC and hybrid communications. 
 
-What is a Shared_Service_Domain?
+What is the Shared_Service_Domain?
 -----------------------------------
 
 When a TGW is created by the Aviatrix Controller, the Shared_Service_Domain is created and a route table corresponding to the Shared_Service_Domain is created on TGW. 
