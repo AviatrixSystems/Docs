@@ -10,7 +10,7 @@ TGW Orchestrator Design Patterns
 Default_Domain Design
 --------------------------
 
-If you just want a full mesh connectivity between VPCs and on-prem, you do not need to create any more domains. Just the built-in Default_Domain and Aviatrix_Edge_Domain for the full deployment, as shown below. 
+If you just want a full mesh connectivity between VPCs and on-prem, you do not need to create any more domains. Simply use the built-in Default_Domain and Aviatrix_Edge_Domain for the full deployment, as shown below. 
 
 |default_domain_design|
 
