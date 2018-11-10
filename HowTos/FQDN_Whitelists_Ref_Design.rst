@@ -13,10 +13,6 @@ For questions, check out `Egress FQDN FAQ <https://docs.aviatrix.com/HowTos/fqdn
 Configuration Workflow
 ======================
 
-.. important::
-
- The VPC you want to apply FQDN filter must have an `Aviatrix gateway launched <http://docs.aviatrix.com/HowTos/gateway.html>`_ with `NAT enabled <http://docs.aviatrix.com/HowTos/gateway.html#enable-nat>`_ before starting the following steps. 
-
 Step 1. Add a new tag
 ---------------------
 

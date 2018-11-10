@@ -55,7 +55,7 @@ communicate with other through associated TGW. In addition, at domain creation t
 domain can connect with. 
 
 If you are unsure about creating your own domains at this moment, skip this step. Instead use the built_in Default_Domain for 
-deployment model, as shown `here.<https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#default-domain-design>`_
+deployment model, as shown `here. <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#default-domain-design>`_
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -64,7 +64,7 @@ Account Name                                    An `Aviatrix account <http://doc
 Region                                          One of the AWS regions
 TGW Name                                        The name of the TGW
 Security Domain Name                            Specify a unique domain name. For example, Dev_Domain..
-Connect to Security Domains                     This is a multi select field. Highlight one or a few from the drop down menu. 
+Connect to Security Domains                     This is a multi select field. Highlight one or a few from the drop down menu. If this domain requires hybrid connection, select Aviatrix_Edge_Domain. If this domain requires Shared_Service_Domain, select Shared_Service_Domain.
 ==========================================      ==========
 
 

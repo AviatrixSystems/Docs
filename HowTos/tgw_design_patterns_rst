@@ -7,27 +7,45 @@
 TGW Orchestrator Design Patterns
 =========================================================
 
-Default_Domain Design
+Full mesh network design
 --------------------------
 
-If you just want a full mesh connectivity between VPCs and on-prem, you do not need to create any more domains. Simply use the built-in Default_Domain and Aviatrix_Edge_Domain for the full deployment, as shown below. 
+If you like to build a full mesh network that allows all VPCs and on-prem to communicate with each other, you do not need to create any custom Security Domains. Simply use the built-in Default_Domain and Aviatrix_Edge_Domain for the deployment, as shown below. 
 
 |default_domain_design|
 
-Default_Domain Design with Distributed Egress Control
--------------------------------------------------------
+At Plan page Step 2, select "Full mesh network". 
 
-You can build the Default_Domain to support Aviatrix distributed Egress FQDN in each VPC, as shown below. 
+
+Fully Isolated network design
+------------------------------
+
+If you like to build a fully isolated network where no VPC can communicate with each other except to the shared service VPC and on-prem, you need to create a Security Domain for each VPC and connect each domain to the Shared_Service_Domain. 
+
+|fully_isolated_network_design|
+
+In this network design, you need to create a custom Security Domain for each VPC. 
+
+At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains".. Repeat this step for each VPC. 
+
+
+Full mesh network with Distributed Egress Control Design
+----------------------------------------------------------
+
+You may expand the full mesh network to include Aviatrix distributed Egress FQDN in each VPC, as shown below.
 
 |default_egress|
 
-
-
+Follow the instructions for `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to deploy egress control funct
+ion.
 
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
    :scale: 30%
 
 .. |default_egress| image:: tgw_design_patterns_media/default_egress.png
+   :scale: 30%
+
+.. |fully_isolated_network_design| image:: tgw_design_patterns_media/fully_isolated_network.png
    :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
