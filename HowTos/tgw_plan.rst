@@ -7,20 +7,31 @@
 TGW Orchestrator Plan
 =========================================================
 
-TGW Orchestrator Plan workflow provides a step by step instruction to create a AWS TGW and Route Domains.
+TGW Orchestrator Plan is the first stage in deploying a Transit Network using TGW. 
 
 For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
+In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
+from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group?
+
+If you have not decided, no worries, move forward with the Default_Domain. You can always modify your plan.   
+
+
+TGW Orchestrator Plan workflow provides a step by step instruction setup your policies.
+
+
 1. Create AWS TGW
 -------------------------------------------
+
+In order to use TGW service, you must first create one. 
 
 This step creates a TGW in a specified region with a specified AWS account, it also creates a Shared_Service_Domain and Aviatrix_Edge_Domain. 
 
 The Default_Domain is automatically created when a TGW is created. 
 
-The Shared_Service_Domain is meant for VPCs that deploy common tools, such as DevOps tools, logging tools and monitoring tools. 
+The Shared_Service_Domain is intended for VPCs that deploy common tools, such as DevOps tools, logging tools and monitoring tools, it is created when a TGW is created. 
 
-The Aviatrix_Edge_Domain is meant for a Transit VPC where Aviatrix gateways are deployed to connect on-prem over Direct Connect/Internet or other region TGW clusters. 
+The Aviatrix_Edge_Domain is designated for a Transit VPC where Aviatrix gateways are deployed to connect on-prem over Direct Connect/Internet or other region TGW clusters. 
 
 The Default_Domain is automatically connected to both Shared_Service_Domain and Aviatrix_Edge_Domain.
 
@@ -40,8 +51,11 @@ AWS Side AS Numbert                             Default AS number is 64512. This
 --------------------------------------------------
 
 This step allows you to create a custom Route Domain, or a Security Domain, where instances in VPCs attached to this domain can 
-communicate with either through associated TGW. In addition, at domain creation time you can also specify the other domains this
+communicate with other through associated TGW. In addition, at domain creation time you can also specify the other domains this
 domain can connect with. 
+
+If you are unsure about creating your own domains at this moment, skip this step. Instead use the built_in Default_Domain for 
+deployment model, as shown `here.<https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#default-domain-design>`_
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -57,9 +71,11 @@ Connect to Security Domains                     This is a multi select field. Hi
 3. (Optional) Enable Aviatrix Transit Gateway Interface to TGW 
 ---------------------------------------------------------------
 
-This step designates an Aviatrix Transit GW to TGW. This is required when you like to connect any Spoke VPC to on-prem over Direct Connect or Internet. 
+This step designates an Aviatrix Transit GW to be used in conjunction with TGW. This is required when you like to connect any Spoke VPC to on-prem over Direct Connect or Internet. 
 
-Before you configure this step, make sure you have launched an Aviatrix Transit GW by following `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, Step 1, 2 and 3. 
+.. tip::
+
+  Before you configure this step, make sure you have launched an Aviatrix Transit GW by following `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, Step 1, 2 and 3. 
 
 ==========================================      ==========
 **Setting**                                     **Value**
