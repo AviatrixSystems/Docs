@@ -51,6 +51,15 @@ How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 
 - **Direct Connect Support** AWS TGW provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Aviatrix TGW Orchestrator, Direct Connect customers can immediately benefit TGW service.  
 
+How does TGW Orchestrator work with Transit Network?
+-----------------------------------------------------
+
+TGW Orchestrator leverages the Aviatrix Transit Network workflow for the hybrid connectivity function to on-prem datacenter and branches. It enables TGW Orchestrator to connect with on-prem over Direct Connect or Internet. 
+
+TGW Orchestrator can also be used as a stand alone function for orchestrating VPC to VPC connections.  
+
+When using TGW Orchestrator for hybrid connectivity, no gateways are deployed in the Spoke VPCs for hybrid function. 
+
 
 What is a Security Domain?
 ---------------------------
