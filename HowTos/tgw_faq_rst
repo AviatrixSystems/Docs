@@ -45,7 +45,7 @@ Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW s
 How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 ---------------------------------------------------------------
 
-- **Dynamic Route Propagation** AWS TGW propagates VPC routes and IPSEC VPN routes to the TGW route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix TGW Orchestrator dynamically update route entries in the VPC route tables. 
+- **Dynamic Route Propagation** AWS TGW propagates VPC CIDR and IPSEC VPN routes to the TGW route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix TGW Orchestrator dynamically update route entries in the VPC route tables. 
 
 - **Policy Abstraction** AWS TGW provides capability to allow two TGW route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Aviatrix TGW Orchestrator builds on that and allows customers to define policies that form a security boundary. 
 
