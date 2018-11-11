@@ -64,32 +64,46 @@ When using TGW Orchestrator for hybrid connectivity, no gateways are deployed in
 What is a Security Domain?
 ---------------------------
 
-Security Domain is a concept that builds upon AWS Route Domain concept. A security domain consists of a group of VPCs that communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
+Security Domain is an abstraction that builds upon AWS Route Domain concept. One or more Spoke VPCs are attached 
+to a security domain.
 
-Aviatrix Controller dynamically programs and updates both VPC route tables and TGW route tables to keep the configuration in sync..
+VPCs attached to a security domain can communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
 
-Two security domains are by default not connected, i.e., a VPC in one domain does not have connectivity to another VPC in a different domain. You can specify a policy to connect the two domains so that VPCs in each domain can communicate with each other. 
+Aviatrix Controller dynamically programs and updates both VPC route tables and TGW route tables so that instances in different 
+Spoke VPCs in the same domain can communicate with each other.  
 
-Aviatrix Controller programs and updates the TGW route table, route propagation and VPC route table to keep the configuration in sync. 
+Two security domains are by default not connected, i.e., a Spoke VPC attached to one domain has no connectivity to another 
+Spoke VPC attached to a different domain. You can specify a connection policy to connect the two domains so that VPCs in each domain can communicate with each other. 
+
+Aviatrix Controller dynamically programs and updates the TGW route tables, route propagation and Spoke VPC route tables so that
+instances in different Spoke VPCs of different connected security domains can communicate with each other.  
+
+What is a Connection Policy?
+-----------------------------
+
+A connection policy specifies the connection relationship of one Security Domain to others. If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via TGW. 
 
 What is the Default_Domain?
 ---------------------------
 
-When a TGW is created by the Aviatrix Controller, the Default_Domain is created and a route table corresponding to the Default_Domain is created on TGW. If you do not plan on building any network segmentation, you can use Default_Domain for inter VPC and hybrid communications. 
+When a TGW is created by the Aviatrix Controller, the Default_Domain is created and a route table corresponding to the Default_Domain is created on TGW. If you do not plan on building any network segmentation, you can use Default_Domain for inter Spoke VPC and hybrid communications. 
 
 What is the Shared_Service_Domain?
 -----------------------------------
 
 When a TGW is created by the Aviatrix Controller, the Shared_Service_Domain is created and a route table corresponding to the Shared_Service_Domain is created on TGW. 
 
-You can attach VPC to this domain and host your shared service instances such as your DevOps tools. 
+You can attach a Spoke VPC to this domain and host your shared service instances such as your DevOps tools. 
 
-Shared_Service_Domain is always connected to Default_Domain.
+Shared_Service_Domain is always connected to Default_Domain and Aviatrix_Edge_Domain.
 
 What is the Aviatrix_Edge_Domain?
 ----------------------------------
 
 When a TGW is created by the Aviatrix Controller, the Aviatrix_Edge_Domain is created and a route table corresponding to the Aviatrix_Edge_Domain is created on TGW. 
+
+Aviatrix_Edge_Domain is designated for connecting VPCs managed by TGW Orchestrator to on-prem network. There must be one VPC 
+attached to this domain. In the VPC, an Aviatrix Transit GW is deployed and used for data traffic forwarding between Spoke VPCs and on-prem network. 
 
 Aviatrix_Edge_Domain is always connected to the Shared_Service Domain and the Default_Domain.
 
