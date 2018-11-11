@@ -26,7 +26,7 @@ TGW Orchestrator Plan workflow provides a step by step instruction to define and
 In order to use TGW service, you must first create a TGW. 
 
 This step creates a TGW in a specified region with a specified AWS account, the Aviatrix Controller also automatically creates 
-the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#/What-is-the-Default-Domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#/What-is-the-Shared-Service-Domain>`_ and the Aviatrix_Edge_Domain. 
+the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_. 
 
 
 ==========================================      ==========
