@@ -266,6 +266,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/reserve_onprem
    HowTos/tf_aviatrix_howto
    HowTos/connect_transit_network_clusters
+   HowTos/spoke_skip_rfc1918
 
 .. _Solutions:
 
