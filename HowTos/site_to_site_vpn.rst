@@ -101,26 +101,19 @@ Please reach out to info@aviatrix.com if you have any questions.
 
 
 .. |image1| image:: site_to_site_vpn_media/img_01.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :scale: 30%
 .. |image2| image:: site_to_site_vpn_media/img_02.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :scale: 30%
 .. |image3| image:: site_to_site_vpn_media/img_03.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :scale: 30%
 .. |image4| image:: site_to_site_vpn_media/img_04.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :scale: 30%
 .. |image5| image:: site_to_site_vpn_media/img_05.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :scale: 30%
 .. |image6| image:: site_to_site_vpn_media/img_06.png
-    :width: 8.00000 in
-    :height: 0.00000 in
+    :scale: 30%
 .. |image7| image:: site_to_site_vpn_media/img_07.png
-    :width: 8.00000 in
-    :height: 0.00000 in
+    :scale: 30%
 
 
 .. disqus::    
