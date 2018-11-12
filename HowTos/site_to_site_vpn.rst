@@ -103,8 +103,7 @@ Please reach out to info@aviatrix.com if you have any questions.
 .. |image1| image:: site_to_site_vpn_media/img_01.png
     :scale: 30%
 .. |image2| image:: site_to_site_vpn_media/img_02.png
-    :width: 8.00000 in
-    :height: 6.00000 in
+    :scale: 30%
 .. |image3| image:: site_to_site_vpn_media/img_03.png
     :width: 8.00000 in
     :height: 6.00000 in
