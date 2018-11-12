@@ -12,7 +12,8 @@ Deploying Spoke without Programming RFC1918 Routes
 When an Aviatrix Controller deploys a Spoke gateway, it programs RFC1918 routes automatically into the AWS 
 route tables. 
 
-However there are cases where the RFC1918 routes have been programmed to point to other instances, therefore the
+However there are cases where the RFC1918 routes was already programmed to point to non Aviatrix instances, 
+therefore the
 normal workflow does not work and requires some exception handling via APIs. 
 
 This tech note demonstrates how to deploy an Aviatrix spoke without programming RFC1918 routes in its VPC by using
