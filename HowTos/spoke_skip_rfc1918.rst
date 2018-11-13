@@ -6,8 +6,15 @@
 
 
 ===========================================================================================
-Deploying Spoke without RFC1918 Routes Programming
+Deploying Spoke without Programming RFC1918 Routes 
 ===========================================================================================
+
+When an Aviatrix Controller deploys a Spoke gateway, it programs RFC1918 routes automatically into the AWS 
+route tables. 
+
+However there are cases where the RFC1918 routes was already programmed to point to non Aviatrix instances, 
+therefore the
+normal workflow does not work and requires some exception handling via APIs. 
 
 This tech note demonstrates how to deploy an Aviatrix spoke without programming RFC1918 routes in its VPC by using
 Aviatrix APIs.
@@ -34,7 +41,8 @@ The following steps use Aviatrix API to deploy a spoke attaching to transit netw
 Steps to Deploy A Spoke Skipping RFC1918 Route Programming
 -----------------------------------------------------------
 
-+ **Step 1: Login to Controller with Valid Username and Password**
+Step 1: Login to Controller with Valid Username and Password
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example Request:
 
@@ -54,7 +62,8 @@ Example Response:
     }
 
 
-+ **Step 2: Launch an Aviatrix Spoke Gateway Using API with Option skip_rfc1918**
+Step 2: Launch an Aviatrix Spoke Gateway Using API with Option skip_rfc1918
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With option skip_rfc1918 set to "yes", This new spoke gateway will not program RFC1918 routes to its VPC's route tables.
 
@@ -75,7 +84,8 @@ Example Response:
     }
 
 
-+ **Step 3: Program Specific Routes for On-Prem Networks**
+Step 3: Program Specific Routes for On-Prem Networks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using Aviatrix API to program specific routes for On-Prem networks point to the new spoke gateway we just created.
 
@@ -100,7 +110,8 @@ Example Response:
     }
 
 
-+ **Step 4: Attach Spoke to Transit Gateway**
+Step 4: Attach Spoke to Transit Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can either use controller UI or API to complete this step. Here the API method is given as below:
 
@@ -124,11 +135,13 @@ Now you have completed deploying the spoke to transit network without programmin
 
 |image2|
 
-+ **Step 5: Attach more Spokes to Transit Gateway**
+Step 5: Attach more Spokes to Transit Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have more spokes need to attach to transit gateway in this way, repeat step 2-4.
 
-+ **Step 6: Update of On-Prem Networks**
+Step 6: Update of On-Prem Networks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Whenever any new On-Prem networks (in RFC1918 scope) added, you need to use the API of above step 3 to program new routes
 into the spoke's VPC. If any On-Prem network is removed, you need to use the following API to delete the specific route
