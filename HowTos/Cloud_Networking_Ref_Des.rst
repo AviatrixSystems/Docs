@@ -62,7 +62,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    #. VPN Access is selected.
 
-   #. Use the default VPN CIDR Block. 
+   #. Use the default VPN CIDR Block.
 
    #. Split Tunnel Mode is selected.
 
@@ -193,7 +193,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    #. VPN Access is selected.
 
-   #. Use default VPN CIDR Block. 
+   #. Use default VPN CIDR Block.
 
    #. Split Tunnel Mode is selected.
 
@@ -383,13 +383,13 @@ VPC ID and its region for the VPC ID field and region in each step.
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
-.. |image0| image:: Cloud_Networking_Ref_Des_media/image1.png
+.. |image0| image:: Cloud_Networking_Ref_Des_media/OneRegionVPC_reference.png
    :width: 3.81875in
    :height: 2.81918in
-.. |image1| image:: Cloud_Networking_Ref_Des_media/image2.png
+.. |image1| image:: Cloud_Networking_Ref_Des_media/MultiRegionVPC_reference.png
    :width: 3.61127in
    :height: 2.59580in
-.. |image2| image:: Cloud_Networking_Ref_Des_media/image3.png
+.. |image2| image:: Cloud_Networking_Ref_Des_media/FullTunnelVPC_reference.png
    :width: 3.81875in
    :height: 2.80898in
 
