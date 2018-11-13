@@ -103,6 +103,6 @@ with major steps highlighted.
 
 6. Enjoy!
 
-.. |image0| image:: TransitivePeering_media/image1.png
+.. |image0| image:: TransitivePeering_media/EncryptedTransitivePeering_reference.png
 
 .. disqus::
