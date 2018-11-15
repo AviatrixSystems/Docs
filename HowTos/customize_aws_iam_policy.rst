@@ -35,30 +35,36 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 ..
 
 
+|
+
 
 IAM Policies/Permissions Required for Each Aviatrix Feature
 ===========================================================
 
-IAM Policy for AWS Accounts that Own Aviatrix Transit Gateways & VGW
---------------------------------------------------------------------
+**IAM Policy for AWS Accounts that Own Aviatrix Transit Gateways & VGWs**
 
 .. raw:: html
 
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-transit-gateways.txt" height="300px" width="100%"></iframe>
 
 
+|
 
-IAM Policy for AWS Accounts that Own Aviatrix Spoke Gateways
-------------------------------------------------------------
+
+**IAM Policy for AWS Accounts that Own Aviatrix Spoke Gateways**
 
 .. raw:: html
 
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-spoke-gateways.txt" height="300px" width="100%"></iframe>
 
 
+|
+
 
 The next few sections provide examples on how to restrict policy rule scopes.
 
+
+|
 
 
 When to Modify AWS-IAM-Policy (aviatrix-app-role-policy)
