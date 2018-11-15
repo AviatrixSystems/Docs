@@ -16,7 +16,7 @@ for its solution. This document provides examples on how to customize
 these IAM policies. The customization reduces the scope of resource
 privileges and helps you meet your organization's security requirements.
 
-You can remove some of the policy rules by using this `IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_Policy_For_Peering.txt>`__ if you only plan on using the following Aviatrix features...
+You can remove some of the policy rules by using this `default IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_Policy_For_Peering.txt>`__ if you only plan on using the following Aviatrix features...
   1. Gateway creation without ELB (Elastic Load Balancer)
   2. Encrypted-Peering
   3. Transitive-Peering
@@ -26,16 +26,39 @@ You can remove some of the policy rules by using this `IAM-Policy <https://s3-us
 
 
 
-.. Note:: Most features (such as Transit Network, VPN with ELB/NLB, etc) not stated above will require the default IAM policy.
+.. Note:: Most features (such as VPN with ELB/NLB, etc) not stated above, we recommend using the default IAM policy to avoid some issues.
 ..
+
+
+
+.. Note:: Please note that both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies. Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
+..
+
+
+
+IAM Policies/Permissions Required for Each Aviatrix Feature
+===========================================================
+
+IAM Policy for AWS Accounts that Own Aviatrix Transit Gateways & VGW
+--------------------------------------------------------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-transit-gateways.txt" height="300px" width="100%"></iframe>
+
+
+
+IAM Policy for AWS Accounts that Own Aviatrix Spoke Gateways
+------------------------------------------------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-spoke-gateways.txt" height="300px" width="100%"></iframe>
 
 
 
 The next few sections provide examples on how to restrict policy rule scopes.
 
-
-.. Note:: Please note that both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies. Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
-..
 
 
 When to Modify AWS-IAM-Policy (aviatrix-app-role-policy)
