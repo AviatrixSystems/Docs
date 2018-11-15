@@ -38,10 +38,11 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 |
 
 
-IAM Policies/Permissions Required for Each Aviatrix Feature
+IAM Policies Required for Aviatrix Use Cases
 ===========================================================
 
-**IAM Policy for AWS Accounts that Own Aviatrix Transit Gateways & VGWs**
+IAM Policy for Aviatrix Transit Gateway & VGW
+--------------------------------------------------
 
 .. raw:: html
 
@@ -51,7 +52,8 @@ IAM Policies/Permissions Required for Each Aviatrix Feature
 |
 
 
-**IAM Policy for AWS Accounts that Own Aviatrix Spoke Gateways**
+IAM Policy for Aviatrix Transit VPC Spoke gateway
+--------------------------------------------------
 
 .. raw:: html
 

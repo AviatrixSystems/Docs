@@ -26,7 +26,7 @@ TGW Orchestrator Plan workflow provides a step by step instruction to define and
 In order to use TGW service, you must first create a TGW. 
 
 This step creates a TGW in a specified region with a specified AWS account, the Aviatrix Controller also automatically creates 
-the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_. 
+the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_ and the corresponding TGW route tables. . 
 
 
 ==========================================      ==========
@@ -43,16 +43,17 @@ AWS Side AS Numbert                             Default AS number is 64512. This
   At Aviatrix TGW Orchestrator Beta release time, the access account that launches the TGW must use access key and secret key for API credentials. IAM role does not work at this time. 
 
 
-2. Plan Your Deployment
+2. (Optional) Create a New Security Domain
 --------------------------------------------------
 
-The default selection is to build a `full mesh network. <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_ If this is your choice, no action is required, move to the next step. 
+This section include step 2 & 3 to plan a segmented network. 
 
-If you plan to build a segmented network, select the "Build a Segmented Network". More fields will be popped up to fill. 
+If you plan to build a full mesh network <<https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
 
-When planning for a segmented network, you need to create Security Domains where Spoke VPCs in a Security Domain can communicate with each other. Spoke VPCs in different Security Domains cannot communicate with each other unless you specify a policy to connect the two domains. 
+If you plan to build a segmented network, this step creates a new Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ . 
 
-This step defines and creates a new custom `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_, it also specifies connection policy to other domains. 
+(When planning for a segmented network, you need to create Security Domains where Spoke VPCs in a Security Domain can communicate with each other. Spoke VPCs in different Security Domains cannot communicate with each other unless you specify a policy to connect the two domains.) 
+
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -61,18 +62,30 @@ Account Name                                    An `Aviatrix account <http://doc
 Region                                          One of the AWS regions
 TGW Name                                        The name of the TGW
 Security Domain Name                            Specify a unique domain name. For example, Dev_Domain.
-Connect to Security Domains                     This is a multi select field. Highlight one or a few from the drop down menu. If this domain requires hybrid connection, select Aviatrix_Edge_Domain. If this domain requires Shared_Service_Domain, select Shared_Service_Domain. If there are custom defined Security Domains this new domain needs to connect to, select those Security Domains too.
 ==========================================      ==========
 
+3. (Optional) Build Your Domain Connection Policies
+----------------------------------------------------
 
-.. tip::
+This step specifies the connection relationship of one domain to others. Two connected domains imply that VPCs in 
+each domain can communicate with each other despite the fact that they are in different domains.
 
-   The field "Connect to Security Domains" specifies a policy of this newly created Security Domain to all other Security Domains. Select multiple fields if applicable.  
 
-3. (Optional) Enable Aviatrix Transit GW for Hybrid Connection  
+4. (Optional) Setup Aviatrix Transit GW for TGW Hybrid Connection  
+------------------------------------------------------------------
+
+This section includes Step 4, 5 & 6. It sets up Hybrid connection to on-prem datacenter over 
+Direct Connect or Internet. 
+
+If your deployment does not require Hybrid connection, skip this section. 
+
+Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
+return to this section and continue to the next step. 
+
+5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
 ---------------------------------------------------------------
 
-This step designates an Aviatrix Transit GW to be used in conjunction with TGW. This is required when you like to connect any Spoke VPC to on-prem over Direct Connect or Internet. 
+This step designates an Aviatrix Transit GW to be used in conjunction with TGW. 
 
 .. tip::
 
@@ -85,8 +98,10 @@ Account Name                                    An `Aviatrix account <http://doc
 Gateway Namen                                   Select a Transit GW from the drop down menu. 
 ==========================================      ==========
 
+6. (Optional) Attach Aviatrix Transit GW to TGW
+------------------------------------------------------------------
 
-4. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
+6. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
 
 This step removes the designation of an Aviatrix Transit GW from TGW Orchestrator. 
