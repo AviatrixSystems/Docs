@@ -37,6 +37,7 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 |
 
+
 Aviatrix IAM Policy Explained
 ================================
 
@@ -63,7 +64,10 @@ SQS permission is required as Aviatrix Controller uses SQS message queue to comm
                 "sqs:TagQueue"
             ],
             "Resource": "*"
-        },
+        }
+
+
+|
 
 
 IAM Policies Required for Aviatrix Use Cases
