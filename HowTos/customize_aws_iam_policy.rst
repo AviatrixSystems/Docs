@@ -621,11 +621,10 @@ Example:
     "Resource": "arn:aws:sqs:*:888888666666:aviatrix-*"
   }
 
-NOTE: 
-~~~~~~
+.. Warning:: We do not recommend using AWS-resource-IP checking mechanism to modify AWS-SQS API permissions.
+..
 
-We do not recommend using AWS-resource-IP checking mechanism to modify
-AWS-SQS API permissions.
+
 
 
 8. Restricting operations using AWS Resource Tag
