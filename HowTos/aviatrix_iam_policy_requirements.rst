@@ -116,7 +116,7 @@ SQS permission is required as Aviatrix Controller uses SQS messages queue to com
 ------------------------------------------
 
 * Aviatrix VPN feature requires the following (and gateway creation) permissions if the user chooses to create NLB/ELB along with the VPN gateway creation.
-* For "iam:CreateServiceLinkedRole": A service-linked role is a unique type of IAM role that is linked directly to an AWS service. Service-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf. Hence, the service linked role is required to confirm that you allow Elastic Load Balancing to make calls to other services. See the following AWS documentations for more informaiton.
+* For "iam:CreateServiceLinkedRole": A service-linked role is a unique type of IAM role that is linked directly to an AWS service. Service-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf. Hence, the service linked role is required to confirm that you allow Elastic Load Balancing to make calls to other services. See the following AWS documentations for more information.
     + `AWS Doc 1 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#service-linked-role-permissions>`__    
     + `AWS Doc 2 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#create-service-linked-role>`__    
     + `AWS Doc 3 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html#required-permissions-v2>`__    
