@@ -37,6 +37,29 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 |
 
+
+IAM Policies Required for Aviatrix Use Cases
+===========================================================
+
+IAM Policy for Aviatrix Transit Gateway & VGW
+--------------------------------------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-transit-gateways.txt" height="300px" width="100%"></iframe>
+
+
+|
+
+
+IAM Policy for Aviatrix Transit VPC Spoke gateway
+--------------------------------------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-spoke-gateways.txt" height="300px" width="100%"></iframe>
+
+
 The next few sections provide examples on how to restrict policy rule scopes.
 
 
