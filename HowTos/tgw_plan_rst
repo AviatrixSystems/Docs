@@ -101,7 +101,8 @@ Gateway Namen                                   Select a Transit GW from the dro
 6. (Optional) Attach Aviatrix Transit GW to TGW
 ------------------------------------------------------------------
 
-6. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
+
+7. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
 
 This step removes the designation of an Aviatrix Transit GW from TGW Orchestrator. 

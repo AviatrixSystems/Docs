@@ -37,6 +37,34 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 |
 
+Aviatrix IAM Policy Explained
+================================
+
+1. SQS requirement
+--------------------
+
+SQS permission is required as Aviatrix Controller uses SQS message queue to communicate with the gateways. 
+
+::
+
+      {
+            "Effect": "Allow",
+            "Action": [
+                "sqs:AddPermission",
+                "sqs:ChangeMessageVisibility",
+                "sqs:CreateQueue",
+                "sqs:DeleteMessage",
+                "sqs:DeleteQueue",
+                "sqs:PurgeQueue",
+                "sqs:ReceiveMessage",
+                "sqs:RemovePermission",
+                "sqs:SendMessage",
+                "sqs:SetQueueAttributes",
+                "sqs:TagQueue"
+            ],
+            "Resource": "*"
+        },
+
 
 IAM Policies Required for Aviatrix Use Cases
 ===========================================================
