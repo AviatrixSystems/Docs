@@ -31,7 +31,12 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 
 
-.. Note:: Please note that both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies. Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
+.. Note:: Both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies.
+..
+
+
+
+.. Note:: Ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
 ..
 
 
