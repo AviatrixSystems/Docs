@@ -124,7 +124,7 @@ This step removes the designation of an Aviatrix Transit GW from TGW Orchestrato
 
 This step delete a security domain created in Step 2. 
 
-6. Delete AWS TGW
+10. Delete AWS TGW
 ------------------
 
 This step delete the TGW created in Step 1. 
