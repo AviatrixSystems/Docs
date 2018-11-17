@@ -31,39 +31,16 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 
 
-.. Note:: Please note that both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies. Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
+.. Note:: Both the Aviatrix Controllers and the Aviatrix Gateways need access to the IAM policies.
+..
+
+
+
+.. Note:: Ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
 ..
 
 
 |
-
-Aviatrix IAM Policy Explained
-================================
-
-1. SQS requirement
---------------------
-
-SQS permission is required as Aviatrix Controller uses SQS message queue to communicate with the gateways. 
-
-::
-
-      {
-            "Effect": "Allow",
-            "Action": [
-                "sqs:AddPermission",
-                "sqs:ChangeMessageVisibility",
-                "sqs:CreateQueue",
-                "sqs:DeleteMessage",
-                "sqs:DeleteQueue",
-                "sqs:PurgeQueue",
-                "sqs:ReceiveMessage",
-                "sqs:RemovePermission",
-                "sqs:SendMessage",
-                "sqs:SetQueueAttributes",
-                "sqs:TagQueue"
-            ],
-            "Resource": "*"
-        },
 
 
 IAM Policies Required for Aviatrix Use Cases
@@ -86,9 +63,6 @@ IAM Policy for Aviatrix Transit VPC Spoke gateway
 .. raw:: html
 
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/transit-network/aviatrix-iam-policy-for-aws-accounts-own-aviatrix-spoke-gateways.txt" height="300px" width="100%"></iframe>
-
-
-|
 
 
 The next few sections provide examples on how to restrict policy rule scopes.
@@ -647,11 +621,10 @@ Example:
     "Resource": "arn:aws:sqs:*:888888666666:aviatrix-*"
   }
 
-NOTE: 
-~~~~~~
+.. Warning:: We do not recommend using AWS-resource-IP checking mechanism to modify AWS-SQS API permissions.
+..
 
-We do not recommend using AWS-resource-IP checking mechanism to modify
-AWS-SQS API permissions.
+
 
 
 8. Restricting operations using AWS Resource Tag
