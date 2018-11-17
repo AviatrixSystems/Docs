@@ -10,6 +10,19 @@ TGW Orchestrator Design Patterns
 Many design patterns exist to deploy your network with Aviatrix TGW Orchestrator. Here are some 
 examples. 
 
+Dev & Prod isolated design
+---------------------------
+
+If you like to build network segmentation between Dev/QA VPCs and Production VPCs, but requiring shared service VPC and
+on-prem to reach each VPC, consider the diagram below.
+diagram below.
+
+|dev_prod_design|
+
+In this network design, you need to create a two custom Security Domains, Dev_Domain and Prod_Domain.
+
+At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains". Apply this step for both Dev_Domain and Prod_Domain.
+
 All-in-cloud with Multi Security Domains
 -----------------------------------------
 
@@ -47,20 +60,6 @@ In this network design, you need to create a custom Security Domain for each VPC
 At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains". Repeat this step for each VPC. 
 
 If this design does not scale for you, consider `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ where all VPCs are by default isolated to each other. 
-
-Dev & Prod isolated design
----------------------------
-
-If you like to build network segmentation between Dev/QA VPCs and Production VPCs, but requiring shared service VPC and 
-on-prem to reach each VPC, consider the diagram below.
-diagram below. 
-
-|dev_prod_design| 
-
-In this network design, you need to create a two custom Security Domains, Dev_Domain and Prod_Domain. 
-
-At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains". Apply this step for both Dev_Domain and Prod_Domain.
-
 
 Integrating with Distributed Egress Control Design
 ----------------------------------------------------------
