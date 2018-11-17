@@ -31,7 +31,7 @@ an all-in-cloud segmented network, as shown below.
 
 |all-in-cloud| 
 
-Connecting TGW in Multi Regions
+Connecting TGWs in Multi Regions
 ---------------------------------
 
 You can use Aviatrix Transit GW to connect TGW in multi regions, as shown below. 
