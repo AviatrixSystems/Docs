@@ -48,9 +48,9 @@ AWS Side AS Numbert                             Default AS number is 64512. This
 
 This section include step 2 & 3 to plan a segmented network. 
 
-If you plan to build a full mesh network <<https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
+If you plan to build a `full mesh network <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
 
-If you plan to build a segmented network, this step creates a new Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ . 
+If you plan to build a segmented network, this step creates a new `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ . 
 
 (When planning for a segmented network, you need to create Security Domains where Spoke VPCs in a Security Domain can communicate with each other. Spoke VPCs in different Security Domains cannot communicate with each other unless you specify a policy to connect the two domains.) 
 
@@ -70,14 +70,19 @@ Security Domain Name                            Specify a unique domain name. Fo
 This step specifies the connection relationship of one domain to others. Two connected domains imply that VPCs in 
 each domain can communicate with each other despite the fact that they are in different domains.
 
+Highlight a domain on the left panel and click Add, the domain will appears to the right, as shown below. 
 
-4. (Optional) Setup Aviatrix Transit GW for TGW Hybrid Connection  
+
+|connect_domain|
+
+
+4. (Optional) Setup Aviatrix Transit GW  
 ------------------------------------------------------------------
 
-This section includes Step 4, 5 & 6. It sets up Hybrid connection to on-prem datacenter over 
+This section includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
 Direct Connect or Internet. 
 
-If your deployment does not require Hybrid connection, skip this section. 
+If your deployment does not require on-prem connection, skip this section. 
 
 Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
 return to this section and continue to the next step. 
@@ -101,6 +106,8 @@ Gateway Namen                                   Select a Transit GW from the dro
 6. (Optional) Attach Aviatrix Transit GW to TGW
 ------------------------------------------------------------------
 
+This step attaches Aviatrix Transit VPC to TGW
+
 
 7. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
@@ -118,20 +125,8 @@ This step delete a security domain created in Step 2.
 This step delete the TGW created in Step 1. 
 
 
-.. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
-   :width: 5.55625in
-   :height: 3.26548in
-
-.. |image1| image:: transitvpc_workflow_media/transitGw-launch.png
-   :width: 2.55625in
-   :height: 1.0in
-
-.. |image2| image:: transitvpc_workflow_media/TransitGW-HA.png
-   :width: 2.55625in
-   :height: 1.0in
-
-.. |image3| image:: transitvpc_workflow_media/connectVGW.png
-   :scale: 50%
+.. |connect_domain| image:: tgw_plan_media/connect_domain.png
+   :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
    :scale: 50%

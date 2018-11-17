@@ -13,8 +13,8 @@ What is the Aviatrix TGW Orchestrator feature?
 TGW Orchestrator feature serves three purposes:
 
  1. Orchestrates VPC to VPC connectivities via AWS TGW. 
- #. Creates security boundaries between groups of VPCs via Route Domains or Security Domains to achieve network segmentation.. 
- #. Out-of-the-box integration that allows customers with Direct Connect to utilize TGW for connecting on-prem to VPCs. 
+ #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
+ #. Out-of-the-box integration of TGW and Direct Connect and Internet to re-use what has been built. 
 
 The TGW Orchestrator is illustrated in the diagram below.
 
@@ -37,7 +37,7 @@ Why should I use Aviatrix TGW Orchestrator?
 
 Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. 
 
-- **Simplification** The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. . 
+- **Simplification** The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. 
 - **Segmentation** The Orchestrator abstracts the route domain and route propagation concepts in TGW that allows you to create network segmentation by policy and intent. 
 - **Hybrid** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
@@ -49,9 +49,11 @@ How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 
 - **Policy Abstraction** AWS TGW provides capability to allow two TGW route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Aviatrix TGW Orchestrator builds on that and allows customers to define policies that form a security boundary. 
 
+- **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnosis. 
+
 - **Direct Connect Support** AWS TGW provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Aviatrix TGW Orchestrator, Direct Connect customers can immediately benefit TGW service.  
 
-How does TGW Orchestrator work with Transit Network?
+How does TGW Orchestrator work with Transit VPC?
 -----------------------------------------------------
 
 TGW Orchestrator leverages the Aviatrix Transit Network workflow for the hybrid connectivity function to on-prem datacenter and branches. It enables TGW Orchestrator to connect with on-prem over Direct Connect or Internet. 
@@ -64,16 +66,16 @@ When using TGW Orchestrator for hybrid connectivity, no gateways are deployed in
 What is a Security Domain?
 ---------------------------
 
-Security Domain is an abstraction that builds upon AWS Route Domain concept. One or more Spoke VPCs are attached 
-to a security domain.
+Security Domain is an abstraction that builds upon AWS Route Domain concept. One or more Spoke VPCs are members in  
+a security domain.
 
-VPCs attached to a security domain can communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
+VPCs in a security domain can communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
 
 Aviatrix Controller dynamically programs and updates both VPC route tables and TGW route tables so that instances in different 
 Spoke VPCs in the same domain can communicate with each other.  
 
-Two security domains are by default not connected, i.e., a Spoke VPC attached to one domain has no connectivity to another 
-Spoke VPC attached to a different domain. You can specify a connection policy to connect the two domains so that VPCs in each domain can communicate with each other. 
+Two security domains are not connected, i.e., a Spoke VPC in one domain has no connectivity to another 
+Spoke VPC in a different domain. Connection policy must be specified to connect the two domains so that VPCs in each domain can communicate with each other. 
 
 Aviatrix Controller dynamically programs and updates the TGW route tables, route propagation and Spoke VPC route tables so that
 instances in different Spoke VPCs of different connected security domains can communicate with each other.  
@@ -82,6 +84,25 @@ What is a Connection Policy?
 -----------------------------
 
 A connection policy specifies the connection relationship of one Security Domain to others. If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via TGW. 
+
+In the example below, both Dev_Domain and Prod_Domain have connection policy to Shared_Service_Domain. Dev_Domain and Prod_Domain are not connected. Instances of a VPC in Dev_Domain can communicate with instances of a VPC in Shared_Service_Domain. But instances of a VPC in Dev_Domain cannot communicate with instances of a VPC in Prod_Domain. 
+
+|domain_policy_diagram|
+
+What are the benefits of using Security Domains and Connection Policies?
+--------------------------------------------------------------------------
+
+Using Security Domains and Connection Policies allow you to identify groups of VPCs with the same requirements from 
+networking point of view and then apply connection policies at the group level. This avoids having to individually 
+specify connections at VPC level. The Aviatrix Controller takes care of route programming of all route tables. 
+
+One analogy to think of a Security Domain is datacenter VLANs and hosts connecting to the VLAN. 
+
+In the Aviatrix Security Domain concept, a security domain is a VLAN, a host is VPC plugging in to the VLAN. 
+Hosts in the same VLAN can communicate with each other. If two VLANs are defined by policy to be connected, the 
+hosts in different VLAN can communicate with each other. 
+
+ 
 
 What is the Default_Domain?
 ---------------------------
@@ -111,13 +132,16 @@ Aviatrix_Edge_Domain is always connected to the Shared_Service Domain and the De
 How to deploy TGW Orchestrator?
 --------------------------------
 
-TGW Orchestrator is deployed in a few stages. 
+TGW Orchestrator is deployed in two stages. 
 
- - `Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_
- - `Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_
- - List
- - View
- - Test
+ - `Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_: Define and setup Security Domains and Connection Policies.
+ - `Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_: Attach a VPC to TGW and Security Domain.
+
+In addition, you can 
+
+ - List: List what is programmed in the TGW route table for a given Security Domain. 
+ - View: View what has been configured for Security Domains and Connection Policies. 
+ - Test: instance to instance end-to-end Troubleshoot. 
 
 What are the TGW Orchestrator deployment scenarios?
 ------------------------------------------------------
@@ -131,13 +155,8 @@ Check out some `design patterns <https://docs.aviatrix.com/HowTos/tgw_design_pat
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
    :scale: 30%
 
-.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :scale: 50%
+.. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png
+   :scale: 30%
 
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :scale: 50%
-
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :scale: 50%
 
 .. disqus::
