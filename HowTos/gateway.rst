@@ -530,6 +530,14 @@ to use VPC DNS server which should resolve the private DNS name of the log serve
 
 `A caveat is noted <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-does-spoke-gateway-and-vpc-private-dns-work-together>`_ when this feature is applied to a Transit Network. 
 
+Insane Mode Encryption 
+------------------------
+
+This is currently in Beta. Contact sales@aviatrix.com for signing up for a Beta. 
+
+Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPSEC performance between two single AWS instances or between a single AWS instance and on-prem Aviatrix appliance. 
+
+
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
