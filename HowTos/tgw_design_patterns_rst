@@ -7,6 +7,24 @@
 TGW Orchestrator Design Patterns
 =========================================================
 
+Many design patterns exist to deploy your network with Aviatrix TGW Orchestrator. Here are some 
+examples. 
+
+All-in-cloud with Multi Security Domains
+-----------------------------------------
+
+If you are only concerned about VPC to VPC segmentation, you can deploy Aviatrix Controller for 
+an all-in-cloud segmented network, as shown below. 
+
+|all-in-cloud| 
+
+Connecting TGW in Multi Regions
+---------------------------------
+
+You can use Aviatrix Transit GW to connect TGW in multi regions, as shown below. 
+
+|multi-region|
+
 Full mesh network design
 --------------------------
 
@@ -55,6 +73,22 @@ deployment is expanded to include Egress FQDN support, as shown below.
 Follow the instructions for `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to deploy egress control funct
 ion.
 
+High Performance Transit - Insane Mode
+---------------------------------------
+
+Deploy an Aviatrix hardware appliance on-prem to achieve 10Gbps Transit Network throughput. 
+Added benefit is that traffic over Direct Connect is encrypted. 
+
+|insane-mode|
+
+Secure Transit with DMZ Firewalls
+-----------------------------------
+
+Firewalls can be deployed in the Transit VPC for a centralized Ingress and Egress security solution, 
+as shown below. . 
+
+|transit-DMZ|
+
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
    :scale: 30%
 
@@ -67,13 +101,16 @@ ion.
 .. |dev_prod_design| image:: tgw_design_patterns_media/dev_prod_design.png
    :scale: 30%
 
-.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :scale: 50%
+.. |all-in-cloud| image:: tgw_design_patterns_media/all-in-cloud.png
+   :scale: 30%
 
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :scale: 50%
+.. |multi-region| image:: tgw_design_patterns_media/multi-region.png
+   :scale: 30%
 
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :scale: 50%
+.. |insane-mode| image:: tgw_design_patterns_media/insane-mode.png
+   :scale: 30%
+
+.. |transit-DMZ| image:: tgw_design_patterns_media/transit-DMZ.png
+   :scale: 30%
 
 .. disqus::

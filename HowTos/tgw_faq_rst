@@ -66,8 +66,10 @@ When using TGW Orchestrator for hybrid connectivity, no gateways are deployed in
 What is a Security Domain?
 ---------------------------
 
-Security Domain is an abstraction that builds upon AWS Route Domain concept. One or more Spoke VPCs are members in  
+Security Domain is an abstraction that builds upon AWS TGW route table concept. One or more Spoke VPCs are members in  
 a security domain.
+
+|security_domain|
 
 VPCs in a security domain can communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
 
@@ -89,6 +91,9 @@ In the example below, both Dev_Domain and Prod_Domain have connection policy to 
 
 |domain_policy_diagram|
 
+Aviatrix Controller programs all VPC route tables and TGW route tables so that two Security Domains with a 
+connection policy can communicate with each other automatically. 
+
 What are the benefits of using Security Domains and Connection Policies?
 --------------------------------------------------------------------------
 
@@ -96,7 +101,8 @@ Using Security Domains and Connection Policies allow you to identify groups of V
 networking point of view and then apply connection policies at the group level. This avoids having to individually 
 specify connections at VPC level. The Aviatrix Controller takes care of route programming of all route tables. 
 
-One analogy to think of a Security Domain is datacenter VLANs and hosts connecting to the VLAN. 
+One analogy to think of a Security Domain is datacenter VLAN/Subnets and hosts connecting to the 
+VLAN/Subnet. 
 
 In the Aviatrix Security Domain concept, a security domain is a VLAN, a host is VPC plugging in to the VLAN. 
 Hosts in the same VLAN can communicate with each other. If two VLANs are defined by policy to be connected, the 
@@ -157,6 +163,9 @@ Check out some `design patterns <https://docs.aviatrix.com/HowTos/tgw_design_pat
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
+   :scale: 30%
+
+.. |security_domain| image:: tgw_overview_media/security_domain.png
    :scale: 30%
 
 .. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png
