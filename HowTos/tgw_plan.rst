@@ -108,13 +108,18 @@ Gateway Namen                                   Select a Transit GW from the dro
 
 This step attaches Aviatrix Transit VPC to TGW
 
+7. (Optional) Detach Aviatrix Transit GW from TGW
+----------------------------------------------------
 
-7. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
+
+
+
+8. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
 
 This step removes the designation of an Aviatrix Transit GW from TGW Orchestrator. 
 
-5. Delete Security Domain
+9. Delete Security Domain
 ---------------------------
 
 This step delete a security domain created in Step 2. 
