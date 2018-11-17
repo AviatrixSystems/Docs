@@ -143,6 +143,10 @@ In addition, you can
  - View: View what has been configured for Security Domains and Connection Policies. 
  - Test: instance to instance end-to-end Troubleshoot. 
 
+For example, you can view TGW, Security Domains and Connection Policies at the View page. 
+
+|tgw_view|
+
 What are the TGW Orchestrator deployment scenarios?
 ------------------------------------------------------
 
@@ -158,5 +162,7 @@ Check out some `design patterns <https://docs.aviatrix.com/HowTos/tgw_design_pat
 .. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png
    :scale: 30%
 
+.. |tgw_view| image:: tgw_overview_media/tgw_view.png
+   :scale: 30%
 
 .. disqus::
