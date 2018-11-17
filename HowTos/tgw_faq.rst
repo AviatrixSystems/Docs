@@ -73,14 +73,12 @@ a security domain.
 
 VPCs in a security domain can communicate with each other via TGW. Each security domain has a corresponding route table on TGW. 
 
-Aviatrix Controller dynamically programs and updates both VPC route tables and TGW route tables so that instances in different 
+Aviatrix Controller dynamically programs and updates both VPC route tables so that instances in different 
 Spoke VPCs in the same domain can communicate with each other.  
 
 Two security domains are not connected, i.e., a Spoke VPC in one domain has no connectivity to another 
 Spoke VPC in a different domain. Connection policy must be specified to connect the two domains so that VPCs in each domain can communicate with each other. 
 
-Aviatrix Controller dynamically programs and updates the TGW route tables, route propagation and Spoke VPC route tables so that
-instances in different Spoke VPCs of different connected security domains can communicate with each other.  
 
 What is a Connection Policy?
 -----------------------------
