@@ -62,6 +62,38 @@ TGW Orchestrator can also be used as a stand alone function for orchestrating VP
 
 When using TGW Orchestrator for hybrid connectivity, no gateways are deployed in the Spoke VPCs for hybrid function. 
 
+How does TGW Orchestrator compare with Transit VPC?
+-----------------------------------------------------
+
+`Aviatrix Transit VPC or Transit Network <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+provides a workflow to build network architecture where VPCs connect with on-prem via a Transit VPC gateway. 
+
+TGW Orchestrator leverages the Transit Network for the hybrid connectivity where an Aviatrix Transit GW is deployed in the Transit VPC. In the TGW Orchestrator deployment, Aviatrix gateways are not deployed in the Spoke VPC, 
+it uses the native TGW attachment capability. 
+
+A more detailed comparison is as below. 
+
+====================================            ====================              ===================
+**Features**                                    **TGW Orchestrator**              **Transit Network**
+====================================            ====================              ===================
+Aviatrix gateway in Spoke VPC                   No                                Yes 
+Overcome VPC route entry limit (100)            Yes                               Yes
+Spoke VPC HA support                            Yes                               Yes
+Need Aviatrix Transit GW                        Yes                               Yes
+Full Mesh network                               Yes                               Yes
+Fully isolated network                          Yes                               Yes
+Segmented network                               Yes                               No
+Spoke to Transit Encryption                     No                                Yes
+Transit to on-prem Encryption                   Yes                               Yes
+Spoke to Transit performance                    Max 50Gbps                        Max 20Gbps
+Spoke VPC route table update                    Yes                               Yes
+Transit to On-prem performance                  10Gbps                            10Gbps
+Flow logs                                       VPC Flow logs                     Netflow 
+Monitoring                                      AWS TGW                           Aviatrix Controller
+Troubleshooting                                 Flightpath                        Flightpath
+Cost                                            $0.16/VPC attachment              $0.16/Tunnel
+====================================            ====================              ===================
+
 
 What is a Security Domain?
 ---------------------------
