@@ -533,7 +533,7 @@ to use VPC DNS server which should resolve the private DNS name of the log serve
 Insane Mode Encryption 
 ------------------------
 
-This is currently in Beta. Contact sales@aviatrix.com for signing up for a Beta. 
+This is currently in Beta. Contact sales@aviatrix.com to participate in the Beta. 
 
 Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPSEC performance between two single AWS instances or between a single AWS instance and on-prem Aviatrix appliance. 
 
