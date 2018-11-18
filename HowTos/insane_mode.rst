@@ -48,7 +48,7 @@ and beyond, leveraging the multiple CPU cores in a single instance, VM or host.
 What are the use cases for Insane Mode?
 ----------------------------------------
 
-- 10Gbps Transit performance
+ - 10Gbps Transit performance
  - Encryption over Direct Connect
  - Overcome VGW performance limit and 100 route limit
 
