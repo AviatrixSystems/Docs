@@ -99,6 +99,10 @@ run a BGP session to propagate on-prem routes to the Transit VPC. IPSEC tunnels 
 
 |insane_datacenter|
 
+One deployment layout is described as below. 
+
+|datacenter_layout|
+
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
@@ -118,6 +122,9 @@ At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc
    :scale: 30%
 
 .. |insane_datacenter| image:: insane_mode_media/insane_datacenter.png
+   :scale: 30%
+
+.. |datacenter_layout| image:: insane_mode_media/datacenter_layout.png
    :scale: 30%
 
 .. |image1| image:: transitvpc_designs_media/multiRegions.png
