@@ -84,7 +84,7 @@ iperf3 TCP streams       MTU size            C5.9xlarge
 What is the Aviatrix hardware appliance?
 ------------------------------------------
 
-Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacenter. It works with the Aviatrix gateway and has the following use cases.
+Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacenter. It works with the Aviatrix gateway.
 
 The Aviatrix appliance CloudN specification:
 
