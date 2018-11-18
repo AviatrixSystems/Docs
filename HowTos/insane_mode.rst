@@ -9,8 +9,12 @@ High Performance Transit Network - Insane Mode
 
 This document discusses Aviatrix High Performance Transit Network and answers related questions.
 
-Why is VGW IPSEC performance capped at 1.25Gbsp?
+Why is Transit VPC performance capped at 1.25Gbsp?
 ------------------------------------------------
+
+In the current Transit VPC solution, the throughput is capped at 1.25Gbps regardless if you have a 10Gbps 
+Direct Connect (DX) link. The reason is that in the Transit VPC deployment there is
+an IPSEC session between VGW and Transit gateway and VGW has a performance limitation.
 
 AWS VGW IPSEC has a published performance of `1.25Gbps <https://aws.amazon.com/vpc/faqs/>`_. The truth is AWS 
 is not alone, all cloud providers have that performance cap, in fact, all software based IPSEC VPN solutions
