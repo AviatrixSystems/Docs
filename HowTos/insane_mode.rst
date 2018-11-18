@@ -10,7 +10,7 @@ High Performance Transit Network - Insane Mode
 This document discusses Aviatrix High Performance Transit Network and answers related questions.
 
 Why is Transit VPC performance capped at 1.25Gbsp?
-------------------------------------------------
+---------------------------------------------------
 
 In the current Transit VPC solution, the throughput is capped at 1.25Gbps regardless if you have a 10Gbps 
 Direct Connect (DX) link. The reason is that in the Transit VPC deployment there is
@@ -88,13 +88,19 @@ Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacente
 
 The Aviatrix appliance CloudN specification:
 
-=====================    ==================   =================
-Aviatrix CloudN          Specification        Notes   
-=====================    ==================   =================
+=====================    ================================              =================
+Aviatrix CloudN          Specification                                 Notes   
+=====================    ================================              =================
 Dimension                1U rack mount        
-10Gbps Ethernet ports    2                    LAN prot and WAN port
-1Gbps Ethernet port      1                    Management port
-=====================    ==================   =================
+Server                   HPE ProLiant DL360 Gen10 Server 
+CPU                      12 cores
+Memory                   32GB
+PCIe                     3.0
+10Gbps Ethernet ports    2                                             1 LAN prot and 1 WAN port
+1Gbps Ethernet port      4                                             1 Management port
+=====================    ================================              =================
+
+More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-proliant-dl360-gen10-server.1010007891.html>`_
 
 How to deploy Aviatrix hardware appliance?
 -------------------------------------------
