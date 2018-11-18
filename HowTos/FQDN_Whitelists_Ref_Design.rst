@@ -96,6 +96,19 @@ The text file can be:
  #. The download file from Export from a different tag. 
  #. A text file in the format compatible to Export. 
 
+Edit Source
+==============
+
+Edit Source is available in Release 4.0 and later. 
+
+Edit Source allows you to control which source IP in the VPC is qualified for a specific tag. The source IP 
+can be a subnet CIDR or host IP addresses. 
+
+Edit Source assumes you have already attached a gateway to a tag. A configuration example is shown in the 
+illustration below. 
+
+
+
 For support, send email to support@aviatrix.com
 
 Enjoy!
