@@ -45,6 +45,13 @@ all CPU cores to be used for performance scaling with the CPU resources, as show
 With Aviatrix Insane Mode tunneling, IPSEC encryption can achieve 10Gbps, 25Gbps 
 and beyond, leveraging the multiple CPU cores in a single instance, VM or host. 
 
+What are the use cases for Insane Mode?
+----------------------------------------
+
+- 10Gbps Transit performance
+ - Encryption over Direct Connect
+ - Overcome VGW performance limit and 100 route limit
+
 How can I deploy Aviatrix Insane Mode?
 ----------------------------------------
 
@@ -74,10 +81,6 @@ What is the Aviatrix hardware appliance?
 ------------------------------------------
 
 Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacenter. It works with the Aviatrix gateway and has the following use cases.
-
- - 10Gbps Transit performance
- - Encryption over Direct Connect
- - Overcome VGW performance limit and 100 route limit
 
 The Aviatrix appliance CloudN specification:
 
