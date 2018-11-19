@@ -130,6 +130,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/avxgw_azurevpngw_site2cloud
    HowTos/site2cloud_aviatrix
    HowTos/site2cloud_awsvgw
+   HowTos/site2cloud_oracledrg
    HowTos/S2C_GW_PAN
    HowTos/S2C_GW_CP
    HowTos/S2C_GW_ASA
