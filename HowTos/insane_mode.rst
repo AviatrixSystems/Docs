@@ -76,8 +76,8 @@ Insane mode is available on AWS for C5 series.
 iperf3 TCP streams       MTU size            C5.9xlarge
 =====================    ==================  ==============
 1                        1500                2.04Gbps
-16                       1500                8.21s
-1                        9000 (Jumbo frame)  4.96s
+16                       1500                8.21
+1                        9000 (Jumbo frame)  4.96
 16                       9000                12
 =====================    ==================  ==============
 
@@ -93,8 +93,8 @@ Aviatrix CloudN          Specification                                 Notes
 =====================    ================================              =================
 Dimension                1U rack mount        
 Server                   HPE ProLiant DL360 Gen10 Server 
-CPU                      12 cores
-Memory                   32GB
+CPU                      8 cores
+Memory                   16GB
 PCIe                     3.0
 10Gbps Ethernet ports    2                                             1 LAN prot and 1 WAN port
 1Gbps Ethernet port      4                                             1 Management port
