@@ -266,14 +266,14 @@ Additional fields are displayed when checked. All other fields should have the s
 
 
 .. |gw2drg| image:: s2c_drg_media/gw2drg.png
-.. |vcn_route_table| image:: s2c_drg_media/vcn_route_table.png
-.. |vcn_security_rule_ingress| image:: s2c_drg_media/vcn_security_rule_ingress.png
-.. |vcn_security_rule_egress| image:: s2c_drg_media/vcn_security_rule_egress.png
-.. |cpe| image:: s2c_drg_media/cpe.png
-.. |ipsec_connection| image:: s2c_drg_media/ipsec_connection.png
-.. |ipsec_info| image:: s2c_drg_media/ipsec_info.png
-.. |s2c_config| image:: s2c_drg_media/s2c_config.png
-.. |s2c_status| image:: s2c_drg_media/s2c_status.png
+.. |vcn_route_table| image:: s2c_drg_media/vcn_route_table.PNG
+.. |vcn_security_rule_ingress| image:: s2c_drg_media/vcn_security_rule_ingress.PNG
+.. |vcn_security_rule_egress| image:: s2c_drg_media/vcn_security_rule_egress.PNG
+.. |cpe| image:: s2c_drg_media/cpe.PNG
+.. |ipsec_connection| image:: s2c_drg_media/ipsec_connection.PNG
+.. |ipsec_info| image:: s2c_drg_media/ipsec_info.PNG
+.. |s2c_config| image:: s2c_drg_media/s2c_config.PNG
+.. |s2c_status| image:: s2c_drg_media/s2c_status.PNG
 .. |gw2drg-ha| image:: s2c_drg_media/gw2drg-ha.png
 
 .. disqus::
