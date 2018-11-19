@@ -24,7 +24,7 @@ This document describes how to configure an IPSec tunnel between an Aviatrix Gat
 Deployment Guide
 ----------------
 
-For this use case, we will create an IPSec connection from DRG first and then configure site2cloud connection at Aviatrix Controller.
+For this use case, we will create an IPSec connection from DRG first and then configure a site2cloud connection at Aviatrix Controller.
 
 Create an IPSec Connection from DRG
 ++++++++++++++++++++++++++++++++++++
@@ -58,9 +58,11 @@ Create an IPSec Connection from DRG
 
    |vcn_route_table|
 
+
 #. Login to your Oracle Cloud Console and create security rules
 
-    We will edit the security list associated with your VCN subnets and add new rules for traffic coming from Aviatrix Gateway's VPC.
+    We will edit the security list associated with your VCN subnets. We need to add two new rules - one ingress rule for
+    traffic coming from Aviatrix Gateway's VPC and one egress rule for traffic destinating to Aviatrix Gateway's VPC.
 
       #. Under **Core Infrastructure**, go to **Networking** and click **Virtual Cloud Networks**
       #. Click your VCN
@@ -141,8 +143,9 @@ Create an IPSec Connection from DRG
 
       |ipsec_connection|
 
+
    #. Once the IPSec connection enters **Available** state, click the **Action** icon (three dots), and then click **Tunnel Information**.
-      Please copy the **IP Address** of the VPN headend and the **Shared Secret**.
+      Please copy the **IP Address** of the VPN headend and the **Shared Secret** for configuring site2cloud connection at Aviatrix Controller.
 
       |ipsec_info|
 
@@ -150,32 +153,34 @@ Create an IPSec Connection from DRG
 
 #. Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  Use this table for specific field values
 
-   +-------------------------------+-------------------------------------------------------------+
-   | Field                         | Description                                                 |
-   +===============================+=============================================================+
-   | VPC ID/VNet Name              | Select the Aviatrix Gateway's VPC                           |
-   +-------------------------------+-------------------------------------------------------------+
-   | Connection Type               | Unmapped                                                    |
-   +-------------------------------+-------------------------------------------------------------+
-   | Connection Name               | A descriptive name for the site2cloud connection            |
-   +-------------------------------+-------------------------------------------------------------+
-   | Remote Gateway Type           | Oracle                                                      |
-   +-------------------------------+-------------------------------------------------------------+
-   | Tunnel Type                   | UDP                                                         |
-   +-------------------------------+-------------------------------------------------------------+
-   | Encryption over ExpressRoute/ | Unchecked                                                   |
-   | DirectConnect                 |                                                             |
-   +-------------------------------+-------------------------------------------------------------+
-   | Primary Cloud Gateway         | Select the desired Aviatrix Gateway                         |
-   +-------------------------------+-------------------------------------------------------------+
-   | Remote Gateway IP Address     | Enter the IP Address copied from Oracle IPSec connection    |
-   +-------------------------------+-------------------------------------------------------------+
-   | Pre-shared Key                | Enter the shared secret copied from Oracle IPSec connection |
-   +-------------------------------+-------------------------------------------------------------+
-   | Remote Subnet                 | Enter Oracle VCN's CIDR                                     |
-   +-------------------------------+-------------------------------------------------------------+
-   | Local Subnet                  | Enter Aviatrix Gateway's VPC CIDR (Or leave it blank)       |
-   +-------------------------------+-------------------------------------------------------------+
+   +-------------------------------+-----------------------------------------------------------------+
+   | Field                         | Description                                                     |
+   +===============================+=================================================================+
+   | VPC ID/VNet Name              | Select the Aviatrix Gateway's VPC                               |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Connection Type               | Unmapped                                                        |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Connection Name               | A descriptive name for the site2cloud connection                |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Remote Gateway Type           | Oracle                                                          |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Tunnel Type                   | UDP                                                             |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Encryption over ExpressRoute/ | Unchecked                                                       |
+   | DirectConnect                 |                                                                 |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Enable HA                     | Unchecked                                                       |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Primary Cloud Gateway         | Select the desired Aviatrix Gateway                             |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Remote Gateway IP Address     | Enter the **IP Address** copied from Oracle IPSec connection    |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Pre-shared Key                | Enter the **Shared Secret** copied from Oracle IPSec connection |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Remote Subnet                 | Enter Oracle VCN's CIDR (10.1.1.0/24 in this example)           |
+   +-------------------------------+-----------------------------------------------------------------+
+   | Local Subnet                  | Enter Aviatrix Gateway's VPC CIDR (Or leave it blank)           |
+   +-------------------------------+-----------------------------------------------------------------+
 
    |s2c_config|
    
@@ -184,7 +189,7 @@ Test
 
 Once complete, test the communication using the tunnel by sending traffic between instances in Aviatrix Gateway' VPC and Oracle VCN.
 
-Login Aviatrix Controller and go to **Site2Cloud** page. Verify the site2cloud connection created above is in "Up" in **Status**
+Login Aviatrix Controller and go to **Site2Cloud** page. Verify the site2cloud connection created above is "Up" in **Status**.
 
 
 |s2c_status|
@@ -212,7 +217,7 @@ Before creating site2cloud connection, following `this <https://docs.aviatrix.co
 From Oracle Cloud console, create a second IPSec connection between the same DRG and Aviatrix HA Gateway
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#. Create a new Customer Gateway for Aviatrix HA Gateway:
+#. Create a new CPE at Oracle Cloud Console for Aviatrix HA Gateway:
 
      +------------------------------+----------------------------------------------------+
      | Field                        | Description                                        |
@@ -226,7 +231,7 @@ From Oracle Cloud console, create a second IPSec connection between the same DRG
      | Tags                         | Optional                                           |
      +------------------------------+----------------------------------------------------+
 
-#. Create a new IPSec connection for Aviatrix HA Gateway:
+#. Create a new IPSec connection at Oracle Cloud Console for Aviatrix HA Gateway:
 
      +-----------------------------------------+--------------------------------------------------------+
      | Field                                   | Description                                            |
