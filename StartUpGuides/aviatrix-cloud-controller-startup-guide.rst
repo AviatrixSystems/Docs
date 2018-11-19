@@ -175,7 +175,7 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
 
    |imageCFCreateFinal|
 
- 2.11. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix.
+ 2.11. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
    
    |imageCFComplete|
 
