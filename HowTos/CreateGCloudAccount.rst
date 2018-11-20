@@ -46,9 +46,15 @@ Enable Compute Engine API on the selected project,
    left to Google Cloud Platform signage, click the 3 bars. A drop down
    menu will appear.
 
-2. Select API Manager, at Google Cloud APIs, select Compute Engine API.
+2. Select APIs and Services, at Dashboard, click on Enable APIs and Services
 
-3. click Enable.
+|image3|
+
+3. On the Search box, input Compute Engine API and select it from search result
+
+|image2|
+
+4. click Enable.
 
 Step 4: Enable GCloud Messaging Service
 -------------------------------------------
@@ -62,11 +68,11 @@ To enable Pub/Sub on the selected project,
    left to Google Cloud Platform signage, click the 3 bars. A drop down
    menu will appear.
 
-2. Select API Manager, at Google Cloud APIs, click more to expand.
+2. Select APIs and Services, at Dashboard, click on Enable APIs and Services
 
-select Cloud Pub/Sub API, as shown below, then click Enable.
+3. On the Search box, input Cloud Pub/Sub API and select it from search result
 
-|image0|
+4. click Enable.
 
 Step 5: Create Credential File
 ----------------------------------
@@ -106,5 +112,9 @@ For additional support, send email to support@aviatrix.com
 .. |image0| image:: GCloud_media/image1.png
 
 .. |image1| image:: GCloud_media/image2.png
+
+.. |image2| image:: GCloud_media/gcloud-api-library-search.png
+
+.. |image3| image:: GCloud_media/gcloud-enable-apis-and-services.png
 
 .. disqus::
