@@ -193,6 +193,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/advanced_config
    HowTos/AdminUsers_LDAP
    HowTos/netflow
+   HowTos/cloudwatch
 
 .. _Troubleshoot:
 
