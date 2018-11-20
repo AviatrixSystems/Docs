@@ -19,7 +19,8 @@ This documentation explains how and why AWS IAM permissions are needed by Aviatr
 1. SQS requirement
 --------------------
 
-SQS permission is required as Aviatrix Controller uses SQS messages queue to communicate with the gateways. 
+SQS permission is required as Aviatrix Controller uses SQS messages queue to communicate with the gateways. This 
+permission applies to all use cases where there is an Aviatrix gateway. 
 
 ::
 
@@ -50,15 +51,20 @@ SQS permission is required as Aviatrix Controller uses SQS messages queue to com
 2. Aviatrix Gateway deployment requirement
 -------------------------------------------
 
-* Aviatrix gateway deployment requires permissions from the following categories:
+The Aviatrix gateway deployment requirement applies to all use cases where an Aviatrix gateway needs to be launched. 
+
+Aviatrix gateway deployment requires permissions from the following categories:
     + Security Group
     + Keypair
     + NetworkInterface
     + EIP
     + IAM
-* Security Group: Aviatrix creates Security Group to associate Aviatrix gateways and provide security at the protocol and port access level.
-* IAM: Avaitrix will check if the user's IAM role has the correct configuration or not. If not, Aviatrix will help and fix the issue during gateway creation.
-* For the permission, "ec2:ModifyInstanceCreditSpecification": If your gateway type/size is under AWS T2-secries category (t2.medium, t2.large, etc..) Aviatrix software will try to enable the AWS feature, T2-Unlimited for you. Here is more detail from AWS Doc if you’re interested. This is an optional feature which is not required and won’t impact your gateway operations. You can still manually enable this feature manually later from AWS console.
+
+- Security Group: Aviatrix creates Security Group to associate Aviatrix gateways and provide security at the protocol and port access level.
+
+-  IAM: Avaitrix will check if the user's IAM role has the correct configuration or not. If not, Aviatrix will help and fix the issue during gateway creation.
+
+-  For the permission, "ec2:ModifyInstanceCreditSpecification": If your gateway type/size is under AWS T2-secries category (t2.medium, t2.large, etc..) Aviatrix software will try to enable the AWS feature, T2-Unlimited for you. Here is more detail from AWS Doc if you’re interested. This is an optional feature which is not required and won’t impact your gateway operations. You can still manually enable this feature manually later from AWS console.
 
 ::
 
@@ -197,7 +203,7 @@ An Aviatrix gateway needs to be in STOP state before modifying the instance type
 6. Aviatrix Transit Gatewaty requirement
 ------------------------------------------
 
-Aviatrix TransitNetwork feature requires the following permissions to create AWS Customer Gateway before creating an AWS VPN connection to connect Aviatrix Transit Gateway to AWS VGW.
+Aviatrix TransitNetwork feature requires the following additional permissions to create AWS Customer Gateway before creating an AWS VPN connection to connect Aviatrix Transit Gateway to AWS VGW.
 
 ::
 
