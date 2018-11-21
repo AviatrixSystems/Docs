@@ -146,20 +146,20 @@ Result & Output:
 
 
 .. |image1| image:: ./cloudwatch_media/img_01_aviatrix_cloudwatch_iam_role.png
-    :width: 6.00000 in
-    :height: 4.00000 in
+    :width: 7.50000 in
+    :height: 6.50000 in
 
 .. |image2| image:: ./cloudwatch_media/img_02_start_adding_trust_relationships_to_role.png
-    :width: 5.00000 in
-    :height: 4.00000 in
+    :width: 7.00000 in
+    :height: 6.00000 in
 
 .. |image3| image:: ./cloudwatch_media/img_03_trust_relationships_syntax_example.png
-    :width: 5.00000 in
-    :height: 4.00000 in
+    :width: 7.00000 in
+    :height: 5.50000 in
 
 .. |image4| image:: ./cloudwatch_media/img_04_attach_aws_iam_policy_to_the_iam_role.png
-    :width: 6.50000 in
-    :height: 4.50000 in
+    :width: 7.00000 in
+    :height: 5.00000 in
 
 .. |image5| image:: ./cloudwatch_media/img_05_enable_aviatrix_cloudwatch.png
     :width: 8.00000 in
