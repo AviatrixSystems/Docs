@@ -103,11 +103,11 @@ Result & Output:
     
 .. |image8| image:: ./cloudwatch_media/img_08_troubleshoot_V2.png
     :width: 7.00000 in
-    :height: 6.00000 in
+    :height: 3.50000 in
     
 .. |image9| image:: ./cloudwatch_media/img_09_copy_role_ARN.png
     :width: 7.00000 in
-    :height: 4.00000 in
+    :height: 5.00000 in
 
 
 
