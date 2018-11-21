@@ -89,7 +89,7 @@ Result & Output:
     :width: 7.00000 in
     :height: 5.50000 in
 
-.. |image5| image:: ./cloudwatch_media/img_05_enable_aviatrix_cloudwatch_V2.PNG
+.. |image5| image:: ./cloudwatch_media/img_05_enable_aviatrix_cloudwatch_V3.PNG
     :width: 7.00000 in
     :height: 5.50000 in
 
