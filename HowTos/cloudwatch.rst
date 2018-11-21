@@ -81,14 +81,14 @@ Starting in release 4.0, Aviatrix Controller and gateway syslog can be exported 
 
 
 
-Prerequsite 01: Aivatrix IAM Role "aviatrix-role-app"
+Prerequisite 01: Aivatrix IAM Role "aviatrix-role-app"
 ---------------------------------------------------------
 
 .. Note:: In order for Aviatrix controllers and gateways in other AWS accounts to send/update logs to the collector's AWS account, the collector's AWS account must meet the following 3 requirements:
 
-        1. Having an IAM role. `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-app-role>`__
+        1. Having an IAM role. `See instructions here if you don't have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-app-role>`__
         
-        2. Specifying permissions for Aviatrix Controllers' and Gateways' AWS accounts.
+        2. Adding Trust-Relationships for Aviatrix Controllers' and Gateways' AWS accounts.
         
         3. Attaching AWS IAM policy to the role
 ..
@@ -99,23 +99,23 @@ Prerequsite 01: Aivatrix IAM Role "aviatrix-role-app"
         |image1|
 
 
-    **Step 02: Add Trust-Relationships**
+    **Step 02: Add Trust-Relationships for controllers and gateways**
 
         |image2|
 
         |image3|
 
-    **Step 03: Attach AWS IAM policy to the role**
+    **Step 03: Attach AWS IAM policy "CloudWatchAgentServerPolicy" to the role**
 
         |image4|
 
 |
 
 
-Prerequsite 02: Aivatrix IAM Role "aviatrix-role-ec2"
+Prerequisite 02: Aivatrix IAM Role "aviatrix-role-ec2"
 ---------------------------------------------------------
 
-.. Note:: If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
+.. Note:: If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
 ..
 
 
@@ -128,8 +128,8 @@ Enable Aviatrix CloudWatch
         |image5|
 
 .. Note:: 
-    ARN of IAM role: Specify the ARN of the IAM role in the collector's AWS account.
-    Region: Specify which region you wish to store your logs.
+    * ARN of IAM role: Specify the ARN of the IAM role in the collector's AWS account.
+    * Region: Specify which region you wish to store your logs.
 ..    
 
 
