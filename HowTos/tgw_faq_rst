@@ -99,7 +99,9 @@ Cost                                            $0.16/VPC attachment            
 What is a Security Domain?
 ---------------------------
 
-Security Domain is an abstraction that builds upon AWS TGW route table concept. One or more Spoke VPCs are members in  
+Security Domain is an Aviatrix enforced network of VPC members, where VPCs in the Security Domain can communicate with each other, and VPCs not in the security domain cannot communicate with VPCs in the Security Domain.
+
+Aviatrix Security Domain is an abstraction builds upon AWS TGW route table concept. One or more Spoke VPCs are members in  
 a security domain.
 
 |security_domain|
@@ -116,7 +118,11 @@ Spoke VPC in a different domain. Connection policy must be specified to connect 
 What is a Connection Policy?
 -----------------------------
 
-A connection policy specifies the connection relationship of one Security Domain to others. If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via TGW. 
+A connection policy is an Aviatrix enforced cross Security Domain connectivity rules. 
+
+A connection policy builds upon the TGW route table propagation concept, it specifies the 
+connection relationship of one Security Domain to others. 
+If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via TGW. 
 
 In the example below, both Dev_Domain and Prod_Domain have connection policy to Shared_Service_Domain. Dev_Domain and Prod_Domain are not connected. Instances of a VPC in Dev_Domain can communicate with instances of a VPC in Shared_Service_Domain. But instances of a VPC in Dev_Domain cannot communicate with instances of a VPC in Prod_Domain. 
 
