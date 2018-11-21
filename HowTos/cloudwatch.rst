@@ -68,7 +68,7 @@ Result & Output:
         |image7|
 
 
-    AWS CloudWatch Agent status:
+    To view Aviatrix Controller's and Gateways' CloudWatch Service Status:
 
         |image8|
 
