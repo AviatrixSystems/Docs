@@ -38,7 +38,11 @@ In order for Aviatrix controllers and gateways in different AWS accounts to send
 
 |
 
+    **d: Retrieve the ARN of the IAM Role**
 
+        |image9|
+
+|
 
 Step 2 Enable CloudWatch log on the Controller
 ----------------------------------------------------
@@ -64,28 +68,28 @@ Result & Output:
         |image7|
 
 
-    AWS CloudWatch Agent status:
+    To view Aviatrix Controller's and Gateways' CloudWatch Service Status:
 
         |image8|
 
 
-.. |image1| image:: ./cloudwatch_media/img_01_aviatrix_cloudwatch_iam_role.png
+.. |image1| image:: ./cloudwatch_media/img_01_aviatrix_cloudwatch_iam_role_V2.PNG
     :width: 7.00000 in
     :height: 5.00000 in
 
-.. |image2| image:: ./cloudwatch_media/img_02_start_adding_trust_relationships_to_role.png
+.. |image2| image:: ./cloudwatch_media/img_02_start_adding_trust_relationships_to_role_V2.PNG
     :width: 7.00000 in
     :height: 5.50000 in
 
-.. |image3| image:: ./cloudwatch_media/img_03_trust_relationships_syntax_example.png
+.. |image3| image:: ./cloudwatch_media/img_03_trust_relationships_syntax_example_V2.PNG
     :width: 7.00000 in
     :height: 5.50000 in
 
-.. |image4| image:: ./cloudwatch_media/img_04_attach_aws_iam_policy_to_the_iam_role.png
+.. |image4| image:: ./cloudwatch_media/img_04_attach_aws_iam_policy_to_the_iam_role_V2.png
     :width: 7.00000 in
     :height: 5.50000 in
 
-.. |image5| image:: ./cloudwatch_media/img_05_enable_aviatrix_cloudwatch.png
+.. |image5| image:: ./cloudwatch_media/img_05_enable_aviatrix_cloudwatch_V3.PNG
     :width: 7.00000 in
     :height: 5.50000 in
 
@@ -93,14 +97,17 @@ Result & Output:
     :width: 7.00000 in
     :height: 5.50000 in
 
-.. |image7| image:: ./cloudwatch_media/img_07_aws_cloudwatch_result_02.png
+.. |image7| image:: ./cloudwatch_media/img_07_aws_cloudwatch_result_02_V2.PNG
     :width: 7.00000 in
     :height: 5.50000 in
     
-.. |image8| image:: ./cloudwatch_media/img_08_troubleshoot.png
+.. |image8| image:: ./cloudwatch_media/img_08_troubleshoot_V2.png
     :width: 7.00000 in
-    :height: 6.00000 in
-
+    :height: 3.50000 in
+    
+.. |image9| image:: ./cloudwatch_media/img_09_copy_role_ARN.png
+    :width: 7.00000 in
+    :height: 5.00000 in
 
 
 
