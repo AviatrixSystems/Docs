@@ -73,17 +73,22 @@ Starting in release 4.0, Aviatrix Controller and gateway syslog can be exported 
       .. |image-cloudwatch| image:: cloudwatch_media/cloudwatch.png
 
 
-|
 
 
-Prerequsite 01: Aivatrix IAM Role , "aviatrix-role-app"
+
+
+
+
+
+
+Prerequsite 01: Aivatrix IAM Role "aviatrix-role-app"
 ---------------------------------------------------------
 
 .. Note:: In order for Aviatrix controllers and gateways in other AWS accounts to send/update logs to the collector's AWS account, the collector's AWS account must meet the following 3 requirements:
 
-        1. Having an IAM role (highly recommend naming the role as "aviatrix-role-app") `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
+        1. Having an IAM role. `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-app-role>`__
         
-        2. Specifying permissions for Aviatrix Controllers' and Gateways' AWS accounts. (AWS terminology: Adding Trust-Relationships)
+        2. Specifying permissions for Aviatrix Controllers' and Gateways' AWS accounts.
         
         3. Attaching AWS IAM policy to the role
 ..
@@ -107,7 +112,7 @@ Prerequsite 01: Aivatrix IAM Role , "aviatrix-role-app"
 |
 
 
-Prerequsite 02: Aivatrix IAM Role, "aviatrix-role-ec2"
+Prerequsite 02: Aivatrix IAM Role "aviatrix-role-ec2"
 ---------------------------------------------------------
 
 .. Note:: If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
@@ -141,7 +146,7 @@ Result & Output:
         |image7|
 
 
-    AWS CloudWatch Agent should be running on controller and all gateways. Shown as the following:
+    AWS CloudWatch Agent status:
 
         |image8|
 
