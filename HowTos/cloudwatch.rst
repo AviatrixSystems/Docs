@@ -101,7 +101,7 @@ Result & Output:
     :width: 7.00000 in
     :height: 5.50000 in
     
-.. |image8| image:: ./cloudwatch_media/img_08_troubleshoot.png
+.. |image8| image:: ./cloudwatch_media/img_08_troubleshoot_V2.png
     :width: 7.00000 in
     :height: 6.00000 in
     
