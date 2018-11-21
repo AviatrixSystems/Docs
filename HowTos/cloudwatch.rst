@@ -107,7 +107,7 @@ Result & Output:
     
 .. |image9| image:: ./cloudwatch_media/img_09_copy_role_ARN.png
     :width: 7.00000 in
-    :height: 6.00000 in
+    :height: 4.00000 in
 
 
 
