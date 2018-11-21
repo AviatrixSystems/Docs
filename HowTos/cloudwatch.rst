@@ -9,121 +9,39 @@
 
 Starting in release 4.0, Aviatrix Controller and gateway syslog can be exported to AWS `CloudWatch <https://aws.amazon.com/cloudwatch/features/>`_ Logs.
 
+Step 1: Prepare on the Collector account for Aviatrix logs
+---------------------------------------------------------------------------------------
 
-..
-      Prerequisites on CloudWatch IAM role:
-      --------------------------------------
+In order for Aviatrix controllers and gateways in different AWS accounts to send/update logs to the collector's AWS account, follow the instructions below to setup IAM role and policies on the collector's AWS account.
 
-      Aviatrix CloudWatch integration assumes 
-
-      1. The AWS account where the logs will be stored must have the following IAM policy configured. 
-      enabled, and it must have built a IAM trust relationship with all the AWS accounts of the Aviatrix Controller 
-      and gateways. 
-
-      In addition all AWS accounts of the Aviatrix Controller and gateways 
-
-      1. Add CloudWatchAgentServer policy:
-
-               {
-                  "Effect": "Allow",
-                  "Action": [
-                      "cloudwatch:PutMetricData",
-                      "ec2:DescribeTags",
-                      "logs:PutLogEvents",
-                      "logs:DescribeLogStreams",
-                      "logs:DescribeLogGroups",
-                      "logs:CreateLogStream",
-                      "logs:CreateLogGroup"
-                  ],
-                  "Resource": "*"
-              },
-              {
-                  "Effect": "Allow",
-                  "Action": [
-                      "ssm:GetParameter"
-                  ],
-                  "Resource": "arn:aws:ssm:*:*:parameter/AmazonCloudWatch-*"
-              }
-
-      2. Edit Trust Relationship to monitoring Aviatrix Controller and gateway accounts:
-              {
-                "Version": "2012-10-17",
-                "Statement": [
-                  {
-                    "Effect": "Allow",
-                    "Principal": {
-                      "AWS": [
-                        "arn:aws:iam::xxxxxxxxxxxx:root",
-                         or "arn:aws:iam::xxxxxxxxxxxx:role/aviatrix-role-ec2",
-                        "arn:aws:iam::yyyyyyyyyyyy:root"
-                      ]
-                    },
-                    "Action": "sts:AssumeRole"
-                  }
-                ]
-              }
-
-      To enable, click Settings on the main navigation bar, click Logging, scroll down to CloudWatch AGENT.
-
-      Input the CloudWatch role ARN and the AWS region of the CloudWatch Logs service and click Enable. All AWS controller and gateways will have CloudWatch enabled. 
-
-      |image-cloudwatch|
-
-
-      .. |image-cloudwatch| image:: cloudwatch_media/cloudwatch.png
-
-
-
-
-
-
-
-
-
-
-Prerequisite 1: Aivatrix IAM Role "aviatrix-role-app"
----------------------------------------------------------
-
-.. Note:: In order for Aviatrix controllers and gateways in other AWS accounts to send/update logs to the collector's AWS account, the collector's AWS account must meet the following 3 requirements:
-
-        1. Having an IAM role. `See instructions here if you don't have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-app-role>`__
+        1. Go to AWS console, create an  IAM role with a name aviatrix-role-cloudwatch. 
+   
+        2. Adding Trust-Relationships for Aviatrix Controllers' and all gateways' AWS accounts. 
         
-        2. Adding Trust-Relationships for Aviatrix Controllers' and Gateways' AWS accounts.
-        
-        3. Attaching AWS IAM policy to the role
-..
+        3. Attaching AWS IAM Cloudwatch policy to the role aviatrix-role-cloudwatch.
 
-
-    **Step 01: Have an IAM role ready**
+    **a: Create an IAM role aviatrix-role-cloudwatch**, make sure the role name is "aviatrix-role-cloudwatch".
+               
     
         |image1|
 
 
-    **Step 02: Add Trust-Relationships for controllers and gateways**
+    **b: Add Trust-Relationships for controllers and gateways**
 
         |image2|
 
         |image3|
 
-    **Step 03: Attach AWS IAM policy "CloudWatchAgentServerPolicy" to the role**
+    **c: Attach AWS IAM policy for "CloudWatchAgentServerPolicy" to the role**
 
         |image4|
 
 |
 
 
-Prerequisite 2: Aivatrix IAM Role "aviatrix-role-ec2"
----------------------------------------------------------
 
-.. Note:: If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
-..
-
-
-|
-
-
-Enable Aviatrix CloudWatch
---------------------------
+Step 2 Enable CloudWatch log on the Controller
+----------------------------------------------------
 
         |image5|
 
