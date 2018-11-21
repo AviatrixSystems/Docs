@@ -86,8 +86,11 @@ Prerequsite 01: Aivatrix IAM Role , "aviatrix-role-app"
     **Description:**
         In order for Aviatrix controllers and gateways in other AWS accounts to send/update logs to the collector's AWS account, 
         the collector's AWS account must meet the following 3 requirements:
-        1. Having an IAM role (highly recommend naming the role as "aviatrix-role-app") `See instructions here if you don't already have the role. <https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>`__
+        
+        1. Having an IAM role (highly recommend naming the role as "aviatrix-role-app") `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
+        
         2. Specifying permissions for Aviatrix Controllers' and Gateways' AWS accounts. (AWS terminology: Adding Trust-Relationships)
+        
         3. Attaching AWS IAM policy to the role
 
     **Step 01: Have an IAM role ready****
@@ -112,7 +115,7 @@ Prerequsite 02: Aivatrix IAM Role, "aviatrix-role-ec2"
 ---------------------------------------------------------
 
     **Description:**
-        If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't already have the role. <https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>`__
+        If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't already have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
 
 
 |
