@@ -81,7 +81,7 @@ Starting in release 4.0, Aviatrix Controller and gateway syslog can be exported 
 
 
 
-Prerequisite 01: Aivatrix IAM Role "aviatrix-role-app"
+Prerequisite 1: Aivatrix IAM Role "aviatrix-role-app"
 ---------------------------------------------------------
 
 .. Note:: In order for Aviatrix controllers and gateways in other AWS accounts to send/update logs to the collector's AWS account, the collector's AWS account must meet the following 3 requirements:
@@ -112,7 +112,7 @@ Prerequisite 01: Aivatrix IAM Role "aviatrix-role-app"
 |
 
 
-Prerequisite 02: Aivatrix IAM Role "aviatrix-role-ec2"
+Prerequisite 2: Aivatrix IAM Role "aviatrix-role-ec2"
 ---------------------------------------------------------
 
 .. Note:: If your Aviatrix controllers and gateways are IAM role based EC2 instances, then those instances must attach the Aivatrix IAM Role, "aviatrix-role-ec2". `See instructions here if you don't have the role. <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-role-ec2-role>`__
