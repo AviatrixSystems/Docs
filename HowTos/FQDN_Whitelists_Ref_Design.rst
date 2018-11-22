@@ -108,10 +108,12 @@ One use case for example, is if you have two private subnets in a VPC, one deplo
 one for prod instances. With Edit Source feature, the dev instances can have a different TAGs than
 the prod instances.
 
-|source-edit|
+Edit Source assumes you have already attached a gateway to a tag. 
 
-Edit Source assumes you have already attached a gateway to a tag. A configuration example is shown in the 
-illustration below. 
+To go to the Edit Source page, click "Edit Source" at Egress FQDN Filter on a specific tag and follow
+the example in the illustration below. 
+
+|source-edit|
 
 
 
