@@ -14,6 +14,8 @@ How to Build Simple and Scalable Transit VPC Solution
 
 Aviatrix provides a Transit VPC solution that is centrally managed and simple to deploy, as documented in `this link. <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_. The solution requires no CCIE and crypto skills for maintenance and troubleshooting the network connectivity. 
 
+The document below is obsolete. Refer to `this doc for the next gen transit solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+
 One friction in this Transit VPC solution is that each time when a spoke VPC is stood up, the IPSEC tunnel between the transit VPC and on-prem needs to be modified 
 to include the new spoke VPC CIDR. This modification of IPSEC tunnel involves 
 on-prem network team and can take up a few weeks of time. 
