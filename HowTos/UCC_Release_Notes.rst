@@ -2,6 +2,28 @@
 Release Notes
 =======================================
 
+R4.0 (11/26/2018)
+=================
+
+1. Security
+-------------
+
+- **FQDN Source Filter** enhances egress FQDN function by allowing source IP filtering on any tag and gateway. An given tag can have different source IP filtering applying to different gateways. This provides fine grained configuration control. To configure, click Edit Source on an existing tag and select a gateway to edit. For details, read `Edit Source <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#edit-source>`_.  
+
+2. Next Gen Transit Network
+-----------------------------
+
+- **AWS TGW Orchestrator** is a feature that extends the Aviatrix Transit Network to integrate with AWS TGW for building the next generation transit network. Key capabilities include cloud native support in the Spoke VPC; out-of-box integration with Direct Connect and Internet VPN. For details, check out `Aviatrix TGW Orchestrator FAQ <<https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
+
+- **Insane Mode Encryption Beta** allows you to deploy Aviatrix hardware appliance and build 10Gbps encryption performance between on-prem and Transit VPC. Contact sales@aviatrix.com to be part of the beta program and learn more at <https://docs.aviatrix.com/HowTos/insane_mode.html>`_. 
+
+3. Operations
+--------------
+
+- **AWS CloudWatch Log Integration** exports the Aviatrix Controller and gateways logs to AWS ClouddWatch Log. If you are already using AWS CloudWatch log service, enable this feature to consolidate the logs from Aviatrix Controller and gateways to the same service. For details, read `AWS CloudWatch Integration <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_. 
+
+
+
 R3.5 (10/7/2018)
 =================
 
