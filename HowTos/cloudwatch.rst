@@ -9,6 +9,15 @@
 
 Starting in release 4.0, Aviatrix Controller and gateway syslog can be exported to AWS `CloudWatch <https://aws.amazon.com/cloudwatch/features/>`_ Logs.
 
+.. Note:: 
+    * Only AWS gateway and controller are supported. Other cloud types are not supported.
+    * AWS gateways created from an access account with AWS secret key and  access key are not supported.
+..
+
+
+|
+
+
 Step 1: Prepare on the Collector account for Aviatrix logs
 ---------------------------------------------------------------------------------------
 
