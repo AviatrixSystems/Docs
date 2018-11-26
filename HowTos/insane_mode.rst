@@ -67,7 +67,7 @@ The diagram below illustrates the high performance encryption between Transit VP
 
 |insane_transit|
 
-What instance sizes can achieve 10Gbps IPSEC?
+Instance sizes and IPSEC Performance 
 ---------------------------------------------
 
 Insane mode is available on AWS for C5 series.
