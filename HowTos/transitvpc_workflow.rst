@@ -46,7 +46,7 @@ Follow the steps below to set up Transit Network.
 1. Launch a Transit Gateway
 -------------------------------------------
 
-The Transit GW is the hub gateway, it servers to move traffic between a Spoke VPC and on-prem network.
+The Transit GW is the hub gateway, it serves to move traffic between a Spoke VPC and on-prem network.
 The Transit GW must be launched on public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 |image1|
@@ -192,7 +192,7 @@ zoom in or zoom out, move the graph around. After you are done moving, click the
 10. Remove Transit GW to VGW Connection
 ----------------------------------------
 
-You can Transit GW connection to VGW via this step.  
+You can remove Transit GW connection to VGW via this step.  
 
 You can go to Step 3 to build the connection again. 
 
