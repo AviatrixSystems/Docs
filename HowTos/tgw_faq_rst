@@ -65,41 +65,20 @@ When using TGW Orchestrator for hybrid connectivity, no gateways are deployed in
 How does TGW Orchestrator compare with Transit VPC?
 -----------------------------------------------------
 
-`Aviatrix Transit VPC or Transit Network <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
-provides a workflow to build network architecture where VPCs connect with on-prem via a Transit VPC gateway. 
+TGW Orchestrator can be deployed with some Spoke VPCs run Aviatrix gateways. When is the right use case to run Aviatrix Spoke gateway?
 
-TGW Orchestrator leverages the Transit Network for the hybrid connectivity where an Aviatrix Transit GW is deployed in the Transit VPC. In the TGW Orchestrator deployment, Aviatrix gateways are not deployed in the Spoke VPC, 
-it uses the native TGW attachment capability. 
-
-A more detailed comparison is as below. 
-
-====================================            ====================              ===================
-**Features**                                    **TGW Orchestrator**              **Transit Network**
-====================================            ====================              ===================
-Aviatrix gateway in Spoke VPC                   No                                Yes 
-Overcome VPC route entry limit (100)            Yes                               Yes
-all-in-cloud VPC to VPC connectivity            Yes                               No
-Spoke VPC HA support                            Yes                               Yes
-Need Aviatrix Transit GW                        Yes                               Yes
-Full Mesh network                               Yes                               Yes
-Fully isolated network                          Yes                               Yes
-Segmented network                               Yes                               No
-Spoke to Transit Encryption                     No                                Yes
-Transit to on-prem Encryption                   Yes                               Yes
-Spoke to Transit performance                    Max 50Gbps                        Max 20Gbps
-Spoke VPC route table update                    Yes                               Yes
-Transit to On-prem performance                  10Gbps                            10Gbps
-Flow logs                                       VPC Flow logs                     Netflow 
-Monitoring                                      AWS TGW                           Aviatrix Controller
-Troubleshooting                                 Flightpath                        Flightpath
-Cost                                            $0.16/VPC attachment              $0.16/Tunnel
-====================================            ====================              ===================
+ 1. If you need packet in flight to be encrypted, launch Aviatrix gateway in the Spoke VPC. 
+ #. If you need various NAT function between Spoke and Transit VPC, use Aviatrix gateway in the Spoke VPC. 
+ #. If you need to connect a Azure VNet as Spoke, use Aviatrix gateway in the Spoke VPC. 
+ #. If you need to obtain Netflow and log information from the Spoke and Transit, use Aviatrix gateway. 
 
 
 What is a Security Domain?
 ---------------------------
 
-Security Domain is an abstraction that builds upon AWS TGW route table concept. One or more Spoke VPCs are members in  
+Security Domain is an Aviatrix enforced network of VPC members, where VPCs in the Security Domain can communicate with each other, and VPCs not in the security domain cannot communicate with VPCs in the Security Domain.
+
+Aviatrix Security Domain is an abstraction builds upon AWS TGW route table concept. One or more Spoke VPCs are members in  
 a security domain.
 
 |security_domain|
@@ -116,7 +95,11 @@ Spoke VPC in a different domain. Connection policy must be specified to connect 
 What is a Connection Policy?
 -----------------------------
 
-A connection policy specifies the connection relationship of one Security Domain to others. If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via TGW. 
+A connection policy is an Aviatrix enforced cross Security Domain connectivity rules. 
+
+A connection policy builds upon the TGW route table propagation concept, it specifies the 
+connection relationship of one Security Domain to others. 
+If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via TGW. 
 
 In the example below, both Dev_Domain and Prod_Domain have connection policy to Shared_Service_Domain. Dev_Domain and Prod_Domain are not connected. Instances of a VPC in Dev_Domain can communicate with instances of a VPC in Shared_Service_Domain. But instances of a VPC in Dev_Domain cannot communicate with instances of a VPC in Prod_Domain. 
 

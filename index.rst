@@ -88,6 +88,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_csr_migrate
    HowTos/Setup_Transit_Network_Terraform
    HowTos/transit_plus_security_vpc
+   HowTos/insane_mode
 
 .. _Security:
 
@@ -129,6 +130,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/avxgw_azurevpngw_site2cloud
    HowTos/site2cloud_aviatrix
    HowTos/site2cloud_awsvgw
+   HowTos/site2cloud_oracledrg
    HowTos/S2C_GW_PAN
    HowTos/S2C_GW_CP
    HowTos/S2C_GW_ASA
@@ -191,6 +193,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/advanced_config
    HowTos/AdminUsers_LDAP
    HowTos/netflow
+   HowTos/cloudwatch
 
 .. _Troubleshoot:
 

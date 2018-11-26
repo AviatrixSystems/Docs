@@ -66,7 +66,8 @@ Configuration Details
    +-------------------------+-------------------------------------------------+
    | Use TLS to connect to   | When checked, STARTTLS is used to connect with  |
    | LDAP server             | the LDAP server. NOTE: LDAP Over SSL is not     |
-   |                         | supported (port 636).                           |
+   |                         | supported (port 636). You'd have to provide a   |
+   |                         | FQDN for the LDAP server if TLS is turned on.   |
    +-------------------------+-------------------------------------------------+
    | Client Certificate      | Only visible if `Use TLS to connect ...` is     |
    |                         | checked.                                        |
