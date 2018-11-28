@@ -94,7 +94,7 @@ Server                   HPE ProLiant DL360 Gen10 Server
 CPU                      8 cores
 Memory                   16GB
 PCIe                     3.0
-10Gbps Ethernet ports    2                                             1 LAN prot and 1 WAN port
+10Gbps Ethernet ports    2                                             1 LAN port and 1 WAN port
 1Gbps Ethernet port      4                                             1 Management port
 =====================    ================================              =================
 
