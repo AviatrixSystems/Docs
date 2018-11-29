@@ -121,7 +121,7 @@ Manages an Aviatrix tunnel
 	  vpc_name2 = "avtxgw2"
 	}
 
-aviatrix_transpeer
+aviatrix_trans_peer
 ------------------
 Manages an Aviatrix transitive peering
 
@@ -138,7 +138,7 @@ Manages an Aviatrix transitive peering
 	# nexthop - Name of next hop GW.
 	# reachable_cidr - Destination CIDR.
 
-	resource "aviatrix_transpeer" "test_transpeer" {
+	resource "aviatrix_trans_peer" "test_transpeer" {
 	  source = "avtxuseastgw1"
 	  nexthop = "avtxuseastgw2"
 	  reachable_cidr = "10.152.0.0/16"
