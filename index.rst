@@ -87,6 +87,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_plan
    HowTos/tgw_build
    HowTos/tgw_design_patterns
+   HowTos/tgw_csr_migrate
 
 .. _Transit Network:
 
