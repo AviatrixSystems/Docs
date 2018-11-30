@@ -118,7 +118,7 @@ Note 1:
 
 Note 2:
   
-  This is an expected behavior. If statefule firewall rule base is "Allow all", the individual rules are "Deny" and FQDN is a whitelist, FQDN's last implicit rule "DROP ALL" will effectively make the gateway to be a "Deny all" for any destinations the stateful firewall does not specify. 
+  This is an expected behavior. If stateful firewall rule base is "Allow all", the individual rules are "Deny" and FQDN is a whitelist, FQDN's last implicit rule "DROP ALL" will effectively make the gateway to be a "Deny all" for any destinations the stateful firewall does not specify. 
   
 
 For support, send email to support@aviatrix.com
