@@ -186,6 +186,13 @@ the instances easily, TGW and its attachments can all be changed without making 
 Aviatrix TGW Orchestrator manages the entire life cycle of network, including Security Domains, all TGWs and 
 attachments should be created and managed by the Orchestrator.    
 
+I plan to isolate create a Dev Domain and Prod Domain, but there is one VPC in Dev that needs to connect to Prod. What should I do?
+------------------------
+
+Since you can create as many security domains as you need, you can create one domain  
+and connect this domain to your Prod domain, and if needed, also to the Dev domain. Simply attach the
+special VPC to this domain, it will have connectivity to Prod domain. 
+
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
