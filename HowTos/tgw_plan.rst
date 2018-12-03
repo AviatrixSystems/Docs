@@ -38,10 +38,6 @@ TGW Name                                        The name of the TGW
 AWS Side AS Numbert                             Default AS number is 64512. This field currently is not used.
 ==========================================      ==========
 
-.. important:: 
-
-  At Aviatrix TGW Orchestrator Beta release time, the access account that launches the TGW must use access key and secret key for API credentials. IAM role does not work at this time. 
-
 
 2. (Optional) Create a New Security Domain
 --------------------------------------------------
