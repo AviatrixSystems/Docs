@@ -7,6 +7,10 @@
 AWS Global Transit Network Workflow Instructions
 =========================================================
 
+.. important::
+
+ If you intend to build the next gen transit network with Aviatrix TGW Orchestrator, your starting point is `this link. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. You need this document for the hybrid connections during `Plan phase. <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_
+
 This workflow provides you with a step by step instructions to build a Global Transit Network. 
 
 For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
