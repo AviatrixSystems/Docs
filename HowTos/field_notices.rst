@@ -42,6 +42,26 @@ For further information or to open a support ticket, please visit https://www.av
 ========================================================================================
 
 
+Field Notice 0003 (2018/12/1)
+-------------------
+**RFC1918 route propagation from TGW to on-premise networks affecting 4.0 releases prior to 4.0.580 for TGW Hybrid Connection**
+ 
+Problem:
+BGP Route propagation of RFC1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) could affect the on-premise networks if the on-prem is advertising the same RFC1918 routes.
+ 
+Description:
+Aviatrix controllers and gateways use BGP to summarize and propagate the network routes. Due to an unexpected software change, software releases prior to 4.0.580 are affected and will forward the RFC1918 routes to VGW. This issue has been addressed in 4.0.580 and all customers who have deployed TGW and are running any release prior to 4.0.580 are advised to upgrade to 4.0.580 or later, immediately. 
+ 
+Solution:
+Customers deploying TGW are requested to upgrade to 4.0.580 or later. Please follow the instructions `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html#how-to-upgrade-software>`__ to perform the software upgrade. After upgrading to 4.0.580 or later, please go to TGW Orchestrator > Plan > Step 7 to detach Aviatrix Transit GW from TGW and re-attach Aviatrix Transit GW to TGW in Step 6.
+
+ 
+Support:
+For further information or to open a support ticket, please visit https://www.aviatrix.com/support/.
+ 
+========================================================================================
+
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
