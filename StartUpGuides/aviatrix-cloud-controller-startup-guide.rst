@@ -131,6 +131,9 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
  - `SSL VPN Server Bundle (10 users + 1 peering) <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-sslvpnbundle.json?ref=_ptnr_docs_cta_10users1peering_step2>`_
 
  - `Cloud Interconnect BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template?ref=_ptnr_docs_cta_byol_step2>`_
+ 
+ - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template?ref=_ptnr_docs_cta_vpn_metered_step2>`_
+ 
 
  2.1. If you have not logged in, you will be prompted to login to AWS console. 
 
