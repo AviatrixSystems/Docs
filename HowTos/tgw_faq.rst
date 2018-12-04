@@ -81,7 +81,7 @@ AWS CloudFormation for `TransitGateway <https://docs.aws.amazon.com/AWSCloudForm
 
 They are all awesome, but these constructs are not enough to run your production network. 
 
-For example, TGW does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to TGW, what happens when a new VLAN or Subnet is stood on-prem. Who is going to notify you?
+For example, TGW does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to TGW, what happens when a new VLAN or Subnet is stood up on-prem. Who is going to notify you?
 
 Modern distributed network either requires BGP to dynamically propagate the routes or a controller that dynamically update the routes. Either approach, it is the only way to guarantee the network actually functions. At Aviatrix, we choose a software defined approach with our Controller. Unless you plan to develop a controller like ours, you should consider using a product. 
 
