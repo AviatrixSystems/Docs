@@ -95,7 +95,7 @@ This step designates an Aviatrix Transit GW to be used in conjunction with TGW.
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS.
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. This account is for launching Transit gateway. It does not need to be the same account as TGW creator. 
 Gateway Namen                                   Select a Transit GW from the drop down menu. 
 ==========================================      ==========
 
