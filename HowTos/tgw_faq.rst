@@ -12,7 +12,7 @@ What is the Aviatrix TGW Orchestrator feature?
 
 TGW Orchestrator feature serves three purposes:
 
- 1. Orchestrates VPC to VPC connectivities via AWS TGW. 
+ 1. Orchestrates VPC to VPC and on-prem to VPCconnectivities via AWS TGW. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
  #. Out-of-the-box integration of TGW and Direct Connect and Internet to re-use what has been built. 
 
@@ -45,7 +45,7 @@ Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW s
 How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 ---------------------------------------------------------------
 
-- **Dynamic Route Propagation** AWS TGW propagates VPC CIDR and IPSEC VPN routes to the TGW route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix TGW Orchestrator dynamically update route entries in the VPC route tables. 
+- **Dynamic Route Propagation** Using Aviatrix Orchestrator is the only guaranteed way to ensure your on-prem routes are properly propagated to Spoke VPCs. AWS TGW propagates VPC CIDR and IPSEC VPN routes to the TGW route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix TGW Orchestrator dynamically update route entries in the VPC route tables. 
 
 - **Policy Abstraction** AWS TGW provides capability to allow two TGW route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Aviatrix TGW Orchestrator builds on that and allows customers to define policies that form a security boundary. 
 
@@ -71,6 +71,20 @@ TGW Orchestrator can be deployed with some Spoke VPCs run Aviatrix gateways. Whe
  #. If you need various NAT function between Spoke and Transit VPC, use Aviatrix gateway in the Spoke VPC. 
  #. If you need to connect a Azure VNet as Spoke, use Aviatrix gateway in the Spoke VPC. 
  #. If you need to obtain Netflow and log information from the Spoke and Transit, use Aviatrix gateway. 
+
+AWS released both CloudFormation and Terraform support for TGW, why should I use Aviatrix Orchestrator?
+--------------------------------------------------------------------------------------------------------
+
+Let's not confuse constructs with products. 
+
+AWS CloudFormation for `TransitGateway <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html>`_ is a resource construct for TGW, so is the `Terraform example. <https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_route_table.html>`_ 
+
+They are all awesome, but these constructs are not enough to run your production network. 
+
+For example, TGW does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to TGW, what happens when a new VLAN or Subnet is stood on-prem. Who is going to notify you?
+
+Modern distributed network either requires BGP to dynamically propagate the routes or a controller that dynamically update the routes. Either approach, it is the only way to guarantee the network actually functions. At Aviatrix, we choose a software defined approach with our Controller. Unless you plan to develop a controller like ours, you should consider using a product. 
+
 
 
 What is a Security Domain?
