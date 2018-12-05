@@ -132,9 +132,9 @@ Please collect information requested below and provide to Aviatrix. The Beta app
 ================  ==================  ===========  ===============  ==================  =====================  ==================================
 CloudN Interface  Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
 ================  ==================  ===========  ===============  ==================  =====================  ==================================
-WAN                                                Not Required     Not Required        Not Required
-LAN                                                Not Required     Not Required        Not Required
-MGMT                                                                                                           Management port for CloudN
+1- WAN                                             Not Required     Not Required        Not Required
+2- LAN                                             Not Required     Not Required        Not Required
+3- MGMT                                                                                                        Management port for CloudN
                                                                                                                configuration and software upgrade
 ================  ==================  ===========  ===============    ================  =====================  ==================================
 
