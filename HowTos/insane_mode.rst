@@ -161,6 +161,7 @@ Aviatrix will pre-configure the IP addresses, subnet masks and default gateway o
    :height: 3.265480in
 
 .. |InsaneBeta| image:: insane_mode_media/InsaneBeta.png
-   :scale: 30%
+   :width: 5.55625in
+   :height: 3.265480in
 
 .. disqus::
