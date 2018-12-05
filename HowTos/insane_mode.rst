@@ -129,14 +129,13 @@ Deployment topology for Aviatrix CloudN beta testing is as following:
 
 Please collect information requested below and provide to Aviatrix. The Beta application form can be downloaded `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_
 
-================  ==================  ===========  ===============  ==================  =====================  ==================================
+================  ==================  ===========  ===============  ==================  =====================  =============================================================
 CloudN Interface  Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
-================  ==================  ===========  ===============  ==================  =====================  ==================================
+================  ==================  ===========  ===============  ==================  =====================  =============================================================
 1- WAN                                             Not Required     Not Required        Not Required
 2- LAN                                             Not Required     Not Required        Not Required
-3- MGMT                                                                                                        Management port for CloudN
-                                                                                                               configuration and software upgrade
-================  ==================  ===========  ===============    ================  =====================  ==================================
+3- MGMT                                                                                                        Management port for CloudN configuration and software upgrade
+================  ==================  ===========  ===============    ================  =====================  =============================================================
 
 Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
 
