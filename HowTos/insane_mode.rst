@@ -127,18 +127,18 @@ Deployment topology for Aviatrix CloudN beta testing is as following:
 
 |InsaneBeta|
 
-Please fulfill the form below and provide to Aviatrix:
+Please collect information requested below and provide to Aviatrix. The Beta application form can be downloaded `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_
 
-================    ================================    ===============    ==================================
-CloudN Interface    Private IP Address & Subnet Mask    Default Gateway    Notes
-================    ================================    ===============    ==================================
-WAN                                                     Not Required
-LAN                                                     Not Required
-MGMT                                                                       Management port for CloudN
-                                                                           configuration and software upgrade
-================    ================================    ===============    ==================================
+================  ==================  ===========  ===============  ==================  =====================  ==================================
+CloudN Interface  Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
+================  ==================  ===========  ===============  ==================  =====================  ==================================
+WAN                                                Not Required     Not Required        Not Required
+LAN                                                Not Required     Not Required        Not Required
+MGMT                                                                                                           Management port for CloudN
+                                                                                                               configuration and software upgrade
+================  ==================  ===========  ===============    ================  =====================  ==================================
 
-Aviatrix will pre-configure the IP addresses, subnet masks and default gateway on CloudN before shipping the unit.
+Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
