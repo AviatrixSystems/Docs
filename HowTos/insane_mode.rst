@@ -87,10 +87,10 @@ Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacente
 The Aviatrix appliance CloudN specification:
 
 =====================    ================================              =================
-Aviatrix CloudN          Specification                                 Notes   
+Aviatrix CloudN          Specification                                 Notes
 =====================    ================================              =================
-Dimension                1U rack mount        
-Server                   HPE ProLiant DL360 Gen10 Server 
+Dimension                1U rack mount
+Server                   HPE ProLiant DL360 Gen10 Server
 CPU                      8 cores
 Memory                   16GB
 PCIe                     3.0
@@ -120,7 +120,25 @@ How to configure Insane Mode for Transit VPC?
 
 At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ select "Insane Mode Encryption". 
 
+Beta Testing Check List
+-----------------------
 
+Deployment topology for Aviatrix CloudN beta testing is as following:
+
+|InsaneBeta|
+
+Please fulfill the form below and provide to Aviatrix:
+
+================    ================================    ===============    ==================================
+CloudN Interface    Private IP Address & Subnet Mask    Default Gateway    Notes
+================    ================================    ===============    ==================================
+WAN                                                     Not Required
+LAN                                                     Not Required
+MGMT                                                                       Management port for CloudN
+                                                                           configuration and software upgrade
+================    ================================    ===============    ==================================
+
+Aviatrix will pre-configure the IP addresses, subnet masks and default gateway on CloudN before shipping the unit.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
@@ -142,5 +160,7 @@ At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc
    :width: 5.55625in
    :height: 3.265480in
 
+.. |InsaneBeta| image:: insane_mode_media/InsaneBeta.png
+   :scale: 30%
 
 .. disqus::
