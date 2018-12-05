@@ -38,10 +38,6 @@ TGW Name                                        The name of the TGW
 AWS Side AS Numbert                             Default AS number is 64512. This field currently is not used.
 ==========================================      ==========
 
-.. important:: 
-
-  At Aviatrix TGW Orchestrator Beta release time, the access account that launches the TGW must use access key and secret key for API credentials. IAM role does not work at this time. 
-
 
 2. (Optional) Create a New Security Domain
 --------------------------------------------------
@@ -99,7 +95,7 @@ This step designates an Aviatrix Transit GW to be used in conjunction with TGW.
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS.
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. This account is for launching Transit gateway. It does not need to be the same account as TGW creator. 
 Gateway Namen                                   Select a Transit GW from the drop down menu. 
 ==========================================      ==========
 

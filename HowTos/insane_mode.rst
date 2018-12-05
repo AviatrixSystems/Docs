@@ -67,19 +67,17 @@ The diagram below illustrates the high performance encryption between Transit VP
 
 |insane_transit|
 
-What instance sizes can achieve 10Gbps IPSEC?
+Instance sizes and IPSEC Performance 
 ---------------------------------------------
 
 Insane mode is available on AWS for C5 series.
 
-=====================    ==================  ============== 
-iperf3 TCP streams       MTU size            C5.9xlarge
-=====================    ==================  ==============
-1                        1500                2.04Gbps
-16                       1500                8.21
-1                        9000 (Jumbo frame)  4.96
-16                       9000                12
-=====================    ==================  ==============
+==================  ==============  ==============
+ MTU size            C5.9xlarge      C5.18xlarge
+==================  ==============  ==============
+1500                8.21Gbps        9Gbps
+9000                12Gbps          22Gbps
+==================  ==============  ==============
 
 What is the Aviatrix hardware appliance?
 ------------------------------------------
@@ -89,14 +87,14 @@ Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacente
 The Aviatrix appliance CloudN specification:
 
 =====================    ================================              =================
-Aviatrix CloudN          Specification                                 Notes   
+Aviatrix CloudN          Specification                                 Notes
 =====================    ================================              =================
-Dimension                1U rack mount        
-Server                   HPE ProLiant DL360 Gen10 Server 
+Dimension                1U rack mount
+Server                   HPE ProLiant DL360 Gen10 Server
 CPU                      8 cores
 Memory                   16GB
 PCIe                     3.0
-10Gbps Ethernet ports    2                                             1 LAN prot and 1 WAN port
+10Gbps Ethernet ports    2                                             1 LAN port and 1 WAN port
 1Gbps Ethernet port      4                                             1 Management port
 =====================    ================================              =================
 
@@ -122,7 +120,25 @@ How to configure Insane Mode for Transit VPC?
 
 At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ select "Insane Mode Encryption". 
 
+Beta Testing Check List
+-----------------------
 
+Deployment topology for Aviatrix CloudN beta testing is as following:
+
+|InsaneBeta|
+
+Please fulfill the form below and provide to Aviatrix:
+
+================    ================================    ===============    ==================================
+CloudN Interface    Private IP Address & Subnet Mask    Default Gateway    Notes
+================    ================================    ===============    ==================================
+WAN                                                     Not Required
+LAN                                                     Not Required
+MGMT                                                                       Management port for CloudN
+                                                                           configuration and software upgrade
+================    ================================    ===============    ==================================
+
+Aviatrix will pre-configure the IP addresses, subnet masks and default gateway on CloudN before shipping the unit.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
@@ -144,5 +160,8 @@ At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc
    :width: 5.55625in
    :height: 3.265480in
 
+.. |InsaneBeta| image:: insane_mode_media/InsaneBeta.png
+   :width: 5.55625in
+   :height: 3.265480in
 
 .. disqus::

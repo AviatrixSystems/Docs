@@ -13,6 +13,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
 * :ref:`Gateway`
+* :ref:`TGW Orchestrator`
 * :ref:`Transit Network`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
@@ -75,6 +76,18 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/gateway
    Solutions/gateway_ha
+
+.. _TGW Orchestrator:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: TGW Orchestrator
+
+   HowTos/tgw_faq
+   HowTos/tgw_plan
+   HowTos/tgw_build
+   HowTos/tgw_design_patterns
+   HowTos/tgw_csr_migrate
 
 .. _Transit Network:
 
@@ -293,6 +306,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/inter_region_latency
    HowTos/arm_inter_region_latency
+   HowTos/gcp_inter_region_latency
    HowTos/cloudformation_condition_howto
    HowTos/opstools_survey
    HowTos/aws_network_limits

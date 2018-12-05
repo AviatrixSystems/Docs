@@ -56,7 +56,7 @@ Step 1. Subscribe to an Aviatrix AMI
 Select the right AMI that meets your use case and subscription preference. Clicking on an AMI link will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases, 2 free tunnels included: 
+- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
@@ -65,7 +65,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - Site to Cloud IPSEC VPN 
    - FREE - EC2 FlightPath Troubleshooting Tool
    
-- **Metered Networking as a Service** `Aviatrix Secure Networking as a Service - Metered Service <https://aws.amazon.com/marketplace/pp/B07D411SV9?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases, 2 free tunnels included: 
+- **Metered Networking as a Service** `Aviatrix Secure Networking as a Service - Metered Service <https://aws.amazon.com/marketplace/pp/B07D411SV9?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
@@ -131,6 +131,9 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
  - `SSL VPN Server Bundle (10 users + 1 peering) <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-sslvpnbundle.json?ref=_ptnr_docs_cta_10users1peering_step2>`_
 
  - `Cloud Interconnect BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template?ref=_ptnr_docs_cta_byol_step2>`_
+ 
+ - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template?ref=_ptnr_docs_cta_vpn_metered_step2>`_
+ 
 
  2.1. If you have not logged in, you will be prompted to login to AWS console. 
 

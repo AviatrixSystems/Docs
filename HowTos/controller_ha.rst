@@ -128,4 +128,13 @@ You can disable Controller HA by deleting the Controller HA CloudFormation stack
 
 Login to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack. 
 
+
+FAQ
+---
+* Can two controllers in two different regions be linked such that they can detect if one or the other is down. Is this possible?
+	Our Controller HA script leverages EC2 auto scaling. EC2 auto scaling doesn’t support cross regions but it does support cross AZs. The script will automatically bring up a new Controller in case the existing Controller enters unhealthy state.
+
+* Could a controller in a different region be used to restore saved configuration in case of disaster recovery? Will the change in controller’s IP cause any issues?
+	A controller can be manually launched from a different region and the backed up configuration can be restored on it. The controller’s new EIP shouldn’t cause any issue unless SAML VPN authentication is being used. (All peering tunnels will still work). In that case, SAML VPN client will need reach the controller IP address. If FQDN hostname is used for the controller for SAML, then it should work after changing the Route 53 to resolve to the correct EIP in the different region.
+
 .. disqus::

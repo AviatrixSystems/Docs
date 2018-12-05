@@ -3,6 +3,15 @@
    :keywords: FQDN, whitelist, Aviatrix, Egress Control, AWS VPC
 
 
+.. raw:: html
+
+   <style>
+    /* override table no-wrap */
+   .wy-table-responsive table td, .wy-table-responsive table th {
+       white-space: normal !important;
+   }
+   </style>
+
 =================================
  Egress FQDN FAQ 
 =================================
@@ -118,12 +127,26 @@ Note 1:
 
 Note 2:
   
-  This is an expected behavior. If statefule firewall rule base is "Allow all", the individual rules are "Deny" and FQDN is a whitelist, FQDN's last implicit rule "DROP ALL" will effectively make the gateway to be a "Deny all" for any destinations the stateful firewall does not specify. 
-  
+  This is an expected behavior. If stateful firewall rule base is "Allow all", the individual rules are "Deny" and FQDN is a whitelist, FQDN's last implicit rule "DROP ALL" will effectively make the gateway to be a "Deny all" for any destinations the stateful firewall does not specify. 
 
-For support, send email to support@aviatrix.com
+What happens if I enable FQDN and there are route tables that have an existing default route?
+---------------------------------------------------------------------------------------------
 
-Enjoy!
+When enabling egress filtering on a VPC, each subnet's route table is reviewed.  If there is an existing default route (0.0.0.0/0) in the route table, the following logic is used:
+
+  +----------------------+-----------------------------------------------------+
+  | Target               | Aviatrix action                                     |
+  +======================+=====================================================+
+  | **igw-***            | Ignore this route table                             |
+  +----------------------+-----------------------------------------------------+
+  | anything other than  | Update the **Target** to point to the AVX GW ENI    |
+  | **igw-***            | and remember the current value of **Target**.       |
+  |                      | (see note below)                                    |
+  +----------------------+-----------------------------------------------------+
+
+  .. note::
+     If the Gateway is detached from the VPC (via the egress configuration page), the route table will be updated with the original values.
+
 
 .. |fqdn| image::  FQDN_Whitelists_Ref_Design_media/fqdn.png
    :scale: 50%

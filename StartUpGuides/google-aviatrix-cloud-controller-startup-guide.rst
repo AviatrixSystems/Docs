@@ -77,7 +77,7 @@ At the top screen, click “[+] CREATE IMAGE”, make sure:
 
 -  At Cloud Storage file, paste in the following text string:
 
-   **aviatrix100/aviatrix-cloud-services-gateway-092716-byol.tar.gz**
+   **aviatrix200/aviatrix-cloud-services-gateway-111517-byol.tar.gz**
 
 -  Click create, as shown below.
 
