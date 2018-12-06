@@ -101,7 +101,7 @@ In my environment, Aviatrix will be within a PCI CDE environment, do you have a 
 
 Aviatrix does not need to be PCI compliant or provide a PCI AOC.
  
-Below is a good article that will help you understand why you are not eligible for PCI compliance:
+Below is a good article that will help you understand why we are not eligible for PCI compliance:
  
 https://www.proofport.com/blog/who-needs-aoc-and-why
  
