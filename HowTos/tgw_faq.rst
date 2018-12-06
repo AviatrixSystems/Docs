@@ -213,7 +213,7 @@ Check out some `design patterns <https://docs.aviatrix.com/HowTos/tgw_design_pat
 Can I change my plan or VPC attachment on TGW Orchestrator?
 ------------------------------------------------------------
 
-Yes, all stages (Plan, Build, List, View and Test) are modular. You are change your design any time. 
+Yes, all stages (Plan, Build, List, View and Test) are modular. You can change your design any time. 
 
 I already have a TGW and some VPCs attached to it, how do I migrate?
 ----------------------------------------------------------------------
@@ -224,8 +224,8 @@ the instances easily, TGW and its attachments can all be changed without making 
 Aviatrix TGW Orchestrator manages the entire life cycle of network, including Security Domains, all TGWs and 
 attachments should be created and managed by the Orchestrator.    
 
-I plan to isolate create a Dev Domain and Prod Domain, but there is one VPC in Dev that needs to connect to Prod. What should I do?
-------------------------
+I plan to isolate a Dev Domain and Prod Domain, but there is one VPC in Dev that needs to connect to Prod. What should I do?
+-----------------------------------------------------------------------------------------------------------------------------
 
 Since you can create as many security domains as you need, you can create one domain  
 and connect this domain to your Prod domain, and if needed, also to the Dev domain. Simply attach the
