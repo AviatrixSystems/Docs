@@ -32,6 +32,7 @@ from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed i
 
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
 
+
 Why should I use Aviatrix TGW Orchestrator?
 --------------------------------------------
 
@@ -41,6 +42,29 @@ Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW s
 - **Segmentation** The Orchestrator abstracts the route domain and route propagation concepts in TGW that allows you to create network segmentation by policy and intent. 
 - **Hybrid** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
+
+How does CSR based Transit VPC solution compare with TGW?
+----------------------------------------------------------
+
+TGW significantly simplifies building VPC connections. But TGW itself is not a functional solution for hybrid connection. 
+For example, TGW does not propagate routes to Spoke VPCs, which means using TGW alone does not offer an functional hybrid
+solution. 
+
+The example below illustrates the how CSR based Transit VPC provides an end-to-end solution while TGW alone leaves Spoke VPC route table all empty. 
+
+|tgw_transit_vpc_compare|
+
+While you may think you can gather the on-prem routes and program the Spoke VPC tables, it is not so simple. The on-prem routes
+change from time to time as new networks are added or removed, which means you need a reliable way to monitor the route changes, handle exceptions, dealing with errors and duplicate routes -- essentially a function carried by BGP or an orchestrator. 
+
+Why should I use Aviatrix TGW Orchestrator to build a transit network architecture?
+-------------------------------------------------------------------------------------
+
+Aviatrix TGW Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
+shows how CSR Transit VPC, TGW and Aviatrix Orchestrator compare for route propagation function. 
+
+|tgw_transit_orchestrator_compare|
+
 
 How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 ---------------------------------------------------------------
@@ -219,6 +243,12 @@ special VPC to this domain, it will have connectivity to Prod domain.
    :scale: 30%
 
 .. |tgw_view| image:: tgw_overview_media/tgw_view.png
+   :scale: 30%
+
+.. |tgw_transit_vpc_compare| image:: tgw_overview_media/tgw_transit_vpc_compare.png
+   :scale: 30%
+
+.. |tgw_transit_orchestrator_compare| image:: tgw_overview_media/tgw_transit_orchestrator_compare.png
    :scale: 30%
 
 .. disqus::
