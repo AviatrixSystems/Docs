@@ -46,7 +46,7 @@ Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW s
 How does CSR based Transit VPC solution compare with TGW?
 ----------------------------------------------------------
 
-TGW significantly simplifies building VPC connections. But TGW itself is not a functional solution for hybrid connection. 
+TGW significantly simplifies building VPC connections. But TGW itself is functionally incomplete for hybrid connection. 
 For example, TGW does not propagate routes to Spoke VPCs, which means using TGW alone does not offer a functional hybrid
 solution. 
 
