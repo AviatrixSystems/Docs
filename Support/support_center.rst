@@ -24,7 +24,7 @@ Tips & Tricks
 * Connectivity Issues? `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_ to the rescue!!
 * Aviatrix Controller supports a `comprehensive set of API <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_ to enable automation
 * Got questions for Support Team? Send an email to support@aviatrix.com
-* Want premium support? Reach out to sales@aviatrix.com and ask for Platinum Support!!
+* Want 24x7x365 support? Reach out to sales@aviatrix.com and ask for Platinum Support!!
 * Changing IAM policies could cause issues. Please check out these links - `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_
 * IAM Policies: Keep them updated!! All gateways and controller need them, and in all accounts (if you have more than one)
 * Gateways created before 3.5 release do not have "T2/T3 Unlimited" setting turned on by default. Try turning it on through AWS Console for improved burst rates.
