@@ -78,12 +78,16 @@ Aviatrix Next-Gen Transit Network solution solves many problems when connecting 
 
 These problems are listed below:
 
- a. **Change Control** Each time a new VPC is stood up, a change control process has to take place to modify the edge router for Direct Connect or IPSEC over Internet. This is not agile and the risk of errors in configuration is not acceptable.
+ a. **AWS Transit Gateway** AWS just released Transit Gateway (TGW), I need to migrate my current CSR based Transit VPC solution.
+ #. **Change Control** Each time a new VPC is stood up, a change control process has to take place to modify the edge router for Direct Connect or IPSEC over Internet. This is not agile and the risk of errors in configuration is not acceptable.
  #. **BGP** The CSR based Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to outside.  
  #. **Not Secure** All spoke VPCs in The CSR based Global Transit solution have connectivity to each other through BGP route propagation. There is no network segmentation. The blast radius is my entire cloud network and datacenters. Not acceptable by security team. 
- #. **Reach Route Limit** AWS has route entry limits of 100 per each routing table. Combining the number of VPC CIDRs and the list of on-prem CIDRS, this route limit is fast approaching or already a problem.
+ #. **Reach Route Limit** AWS has route entry limits of 100 per each routing table. Combining the number of VPC CIDRs and the list of on-prem CIDRs, this route limit is fast approaching or already a problem.
  #. **Extra Charge** In the CSR based solution, traffic from one spoke VPC to another spoke VPC traverses through one transit and sometimes two transit hub, resulting in 2x or 3x egress charge. 
  #. **Too Complex** The CloudOps is a team of 6 engineers managing 34 AWS services, the skill set and resources it takes to manage the CSR based Transit network is beyond what we want to handle. 
+ #. **10Gbps Transit** My current Transit network performance is capped at 1.25Gbps, our network requires much higher bandwidth. 
+ #. **Transit DMZ** Our security posture requires a firewall device at the Transit VPC edge, but we don't like the idea of building IPSEC tunnels between networking device and firewalls. 
+
 
 Follow this `self qualification process <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_ to help your team decide if Aviatrix is the right solution for you. 
 For how to setup the solution, follow up with `this doc. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_  
