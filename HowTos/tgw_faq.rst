@@ -4,7 +4,7 @@
 
 
 =========================================================
-TGW Orchestrator Feature FAQ
+Transit Gateway (TGW) Orchestrator Feature FAQ
 =========================================================
 
 What is the Aviatrix TGW Orchestrator feature?
@@ -15,6 +15,7 @@ TGW Orchestrator feature serves three purposes:
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS TGW. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
  #. Out-of-the-box integration of TGW and Direct Connect and Internet to re-use what has been built. 
+ #. Provides a high performance and feature rich hybrid network for connecting to on-prem.
 
 The TGW Orchestrator is illustrated in the diagram below.
 
@@ -54,6 +55,13 @@ The example below illustrates the how CSR based Transit VPC provides an end-to-e
 
 |tgw_transit_vpc_compare|
 
+The missing function of TGW is listed as below:
+
+ - Not able to propagate routes from on-prem to the Spoke VPCs.
+ - Not able to connect with Direct Connect. 
+ - The TGW VPN has 100 route limits. 
+ - TGW route table cannot summarize routes to advertise to TGW VPN. 
+
 While you may think you can gather the on-prem routes and program the Spoke VPC tables, it is not so simple. The on-prem routes
 change from time to time as new networks are added or removed, which means you need a reliable way to monitor the route changes, handle exceptions, dealing with errors and duplicate routes -- essentially a function carried by BGP or an orchestrator. 
 
@@ -63,7 +71,23 @@ Why should I use Aviatrix TGW Orchestrator to build a transit network architectu
 Aviatrix TGW Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
 shows how CSR Transit VPC, TGW and Aviatrix Orchestrator compare for route propagation function. 
 
+
 |tgw_transit_orchestrator_compare|
+
+What value does Aviatrix gateway provide in the TGW Orchestrator?
+------------------------------------------------------------------
+
+Aviatrix gateway deployed at the edge/transit VPC provides the following values:
+
+ - Ensure the correctness of connectivity by monitoring and dynamically programming on-prem network address ranges to Spoke VPCs route tables. 
+ - Avoid network outage by detecting and alerting overlapping and conflicting network address ranges between on-prem and all VPCs. 
+ - Avoids AWS VGW or TGW VPN 100 route limits by summarizing Spoke VPC CIDRs advertisements to on-prem network.
+ - Provides traffic visibility by supporting Netflow logs between on-prem network and all VPCs. 
+ - Provides stateful firewall to enforce policy between on-prem network and all VPCs. 
+ - Out-of-box integration to support Direct Connect. 
+ - Connects multi-region TGW deployment.
+ - Supports Transit DMZ architecture by inserting third party firewalls at the edge/transit VPC.  
+ - Supports 10Gbps Transit network throughput.  
 
 
 How does Aviatrix TGW Orchestrator compliment AWS TGW service?
@@ -76,6 +100,12 @@ How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 - **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnosis. 
 
 - **Direct Connect Support** AWS TGW provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Aviatrix TGW Orchestrator, Direct Connect customers can immediately benefit TGW service.  
+
+- **Traffic Visibility** Netflow log support for traffic between on-prem and all VPCs.
+
+- **Stateful Firewall** Enforce security policy for all traffic between on-prem and all VPCs.
+
+- **10Gbps Transit** Support 10Gbps Transit network throughput. 
 
 How does TGW Orchestrator work with Transit VPC?
 -----------------------------------------------------
@@ -108,7 +138,6 @@ They are all awesome, but these constructs are not enough to run your production
 For example, TGW does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to TGW, what happens when a new VLAN or Subnet is stood up on-prem. Who is going to notify you?
 
 Modern distributed network either requires BGP to dynamically propagate the routes or a controller that dynamically update the routes. Either approach, it is the only way to guarantee the network actually functions. At Aviatrix, we choose a software defined approach with our Controller. Unless you plan to develop a controller like ours, you should consider using our product. 
-
 
 
 What is a Security Domain?
