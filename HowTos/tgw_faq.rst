@@ -44,51 +44,6 @@ Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW s
 - **Hybrid** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
 
-How does CSR based Transit VPC solution compare with TGW?
-----------------------------------------------------------
-
-TGW significantly simplifies building VPC connections. But TGW itself is functionally incomplete for hybrid connection. 
-For example, TGW does not propagate routes to Spoke VPCs, which means using TGW alone does not offer a functional hybrid
-solution. 
-
-The example below illustrates the how CSR based Transit VPC provides an end-to-end solution while TGW alone leaves Spoke VPC route table all empty. 
-
-|tgw_transit_vpc_compare|
-
-The missing function of TGW is listed as below:
-
- - Not able to propagate routes from on-prem to the Spoke VPCs.
- - Not able to connect with Direct Connect. 
- - The TGW VPN has 100 route limits. 
- - TGW route table cannot summarize routes to advertise to TGW VPN. 
-
-While you may think you can gather the on-prem routes and program the Spoke VPC tables, it is not so simple. The on-prem routes
-change from time to time as new networks are added or removed, which means you need a reliable way to monitor the route changes, handle exceptions, dealing with errors and duplicate routes -- essentially a function carried by BGP or an orchestrator. 
-
-Why should I use Aviatrix TGW Orchestrator to build a transit network architecture?
--------------------------------------------------------------------------------------
-
-Aviatrix TGW Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
-shows how CSR Transit VPC, TGW and Aviatrix Orchestrator compare for route propagation function. 
-
-
-|tgw_transit_orchestrator_compare|
-
-What value does Aviatrix gateway provide in the TGW Orchestrator?
-------------------------------------------------------------------
-
-Aviatrix gateway deployed at the edge/transit VPC provides the following values:
-
- - Ensure the correctness of connectivity by monitoring and dynamically programming on-prem network address ranges to Spoke VPCs route tables. 
- - Avoid network outage by detecting and alerting overlapping and conflicting network address ranges between on-prem and all VPCs. 
- - Avoids AWS VGW or TGW VPN 100 route limits by summarizing Spoke VPC CIDRs advertisements to on-prem network.
- - Provides traffic visibility by supporting Netflow logs between on-prem network and all VPCs. 
- - Provides stateful firewall to enforce policy between on-prem network and all VPCs. 
- - Out-of-box integration to support Direct Connect. 
- - Connects multi-region TGW deployment.
- - Supports Transit DMZ architecture by inserting third party firewalls at the edge/transit VPC.  
- - Supports 10Gbps Transit network throughput.  
-
 
 How does Aviatrix TGW Orchestrator compliment AWS TGW service?
 ---------------------------------------------------------------
@@ -260,6 +215,50 @@ Since you can create as many security domains as you need, you can create one do
 and connect this domain to your Prod domain, and if needed, also to the Dev domain. Simply attach the
 special VPC to this domain, it will have connectivity to Prod domain. 
 
+How does CSR based Transit VPC solution compare with TGW?
+----------------------------------------------------------
+
+TGW significantly simplifies building VPC connections. But TGW itself is functionally incomplete for hybrid connection.
+For example, TGW does not propagate routes to Spoke VPCs, which means using TGW alone does not offer a functional hybrid
+solution.
+
+The example below illustrates the how CSR based Transit VPC provides an end-to-end solution while TGW alone leaves Spoke VPC route table all empty.
+
+|tgw_transit_vpc_compare|
+
+The missing function of TGW is listed as below:
+
+ - Not able to propagate routes from on-prem to the Spoke VPCs.
+ - Not able to connect with Direct Connect.
+ - The TGW VPN has 100 route limits.
+ - TGW route table cannot summarize routes to advertise to TGW VPN.
+
+While you may think you can gather the on-prem routes and program the Spoke VPC tables, it is not so simple. The on-prem routes
+change from time to time as new networks are added or removed, which means you need a reliable way to monitor the route changes, handle exceptions, dealing with errors and duplicate routes -- essentially a function carried by BGP or an orchestrator.
+
+Why should I use Aviatrix TGW Orchestrator to build a transit network architecture?
+-------------------------------------------------------------------------------------
+
+Aviatrix TGW Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
+shows how CSR Transit VPC, TGW and Aviatrix Orchestrator compare for route propagation function.
+
+
+|tgw_transit_orchestrator_compare|
+
+What value does Aviatrix gateway provide in the TGW Orchestrator?
+------------------------------------------------------------------
+
+Aviatrix gateway deployed at the edge/transit VPC provides the following values:
+
+ - Ensure the correctness of connectivity by monitoring and dynamically programming on-prem network address ranges to Spoke VPCs route tables.
+ - Avoid network outage by detecting and alerting overlapping and conflicting network address ranges between on-prem and all VPCs.
+ - Avoids AWS VGW or TGW VPN 100 route limits by summarizing Spoke VPC CIDRs advertisements to on-prem network.
+ - Provides traffic visibility by supporting Netflow logs between on-prem network and all VPCs.
+ - Provides stateful firewall to enforce policy between on-prem network and all VPCs.
+ - Out-of-box integration to support Direct Connect.
+ - Connects multi-region TGW deployment.
+ - Supports Transit DMZ architecture by inserting third party firewalls at the edge/transit VPC.
+ - Supports 10Gbps Transit network throughput.
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
