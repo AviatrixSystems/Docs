@@ -7,11 +7,11 @@
 AWS Transit Gateway Limits
 ===========================================================================================
 
-AWS recently announced Transit Gateway, a service that significantly simplifies VPC connections and consolidates the edge. 
+AWS recently announced Transit Gateway (TGW), a service that significantly simplifies VPC connections and consolidates the edge. 
 
-It is good to know Transit Gateway limits and functional limitations both for planning and operation. 
+It is good to know TGW limits and functional limitations both for planning and operation. 
 
-For example, while TGW route table can carry thousands of routes, Transit Gateway (TGW) VPN has the same hard limit 
+For example, while TGW route table can carry thousands of routes, TGW VPN has the same hard limit 
 of 100 BGP routes as the classic VGW VPN. When the BGP prefixes exceed 100, TGW VPN randomly resets BGP session, 
 leading to unpredictable network outage. 
 
@@ -25,10 +25,10 @@ Below is a list of commonly asked limits and limitations by network engineers.
 ===================================================                  =============== =====================
 Functions                                                            Limits  	     Comments   
 ===================================================                  =============== =====================
-Propagating on-prem routes to Spoke VPC route table                  not supported   VPC owner's responsibility
+Propagating on-prem routes to Spoke VPC route table                  not supported   VPC owner's responsibility. Learn more `here <https://docs.aviatrix.com/HowTos/tgw_faq.html#why-should-i-use-aviatrix-tgw-orchestrator-to-build-a-transit-network-architecture>`_
 Direct Connect support on TGW                                        not supported   publicly announced in the roadmap
 Inter region TGW connectivity                                        not supported
-TGW VPN Static                                                       not supported   if you connect to classic VGW using static, you need to change to BGP.
+TGW VPN Static                                                       not supported   if you connect to classic VGW using static routes, you need to change to BGP.
 TGW VPN BGP prefix total                                             100             TGW does not summarize Spoke VPC CIDRs routes. The total route limit is aggregated routes from both on-prem and Spoke VPCs. 
 Spoke VPC Route entries in a route table                             100             default is 50. Performance impact on 100 routes. 
 TGW VPN scaling                                                      reset BGP       Traffic goes down to zero before coming back up with higher throughput.  
