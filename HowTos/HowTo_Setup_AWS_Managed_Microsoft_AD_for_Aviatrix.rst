@@ -17,10 +17,10 @@ Please note that the following steps, most of them we are following `AWS Managed
 
 |image9|
 
-Follow these steps to configure AWS AD and LDAP configuration in your environment:
+Follow these steps to configure AWS AD configuration in your environment and verify LDAP connection.
 
-#. Setting Up Your Base `AWS Managed Microsoft AD <#setup_AWS_AD>`__ in AWS
-#. Verify AWS AD Is Operational by `using AD Explorer <#Verify_AWS_AD_AD_Explorer>`__
+#. Setting Up Your Base AWS Managed Microsoft AD in AWS
+#. Verify AWS AD Is Operational by using AD Explorer
 #. Verify AWS AD Is Operational by a Aviatrix Controller with LDAP login verification.
 #. Verify AWS AD Is Operational by a Aviatrix OpenVPN Server with LDAP login verification.
 
@@ -29,43 +29,46 @@ Prerequisites
 In order to complete the steps in this guide, you'll need:
 
 1. AWS Account
-2. A Controller has already onboarded above AWS account
+2. An Aviatrix Controller which has already onboarded above AWS account
 
-.. _setup_AWS_AD:
-Setting Up Your Base AWS Managed Microsoft AD Test Lab in AWS
+
+Setting Up Your Base AWS Managed Microsoft AD in AWS
 -------------------------------------------------------------
 
-Step a: Set Up Your AWS Environment for AWS Managed Microsoft AD
+Step A: Set Up Your AWS Environment for AWS Managed Microsoft AD
 ####################
 https://docs.aws.amazon.com/directoryservice/latest/admin-guide/microsoftadbasestep1.html
 
-Step b: Create Your AWS Managed Microsoft AD Directory in AWS
+Step B: Create Your AWS Managed Microsoft AD Directory in AWS
 ####################
 https://docs.aws.amazon.com/en_us/directoryservice/latest/admin-guide/microsoftadbasestep2.html
 
 Create Your AWS Managed Microsoft AD directory
 In this example, following domain and dns are created
+
 Domain Name: aws-ad.aviatrixtest.com
 Two domain Name servers are created by AWS AD: 172.31.28.253, 172.31.14.48
 |image0|
 |image4|
 
-Step c: Deploy an EC2 Instance to Manage AWS Managed Microsoft AD
+Step C: Deploy an EC2 Instance to Manage AWS Managed Microsoft AD
 ####################
 
 Follow these steps to configure Microsoft AD of your Windows Server EC2 Instance
+
 1. Deploy an EC2 Instance to Manage AWS Managed Microsoft AD `Check Detail Here <https://docs.aws.amazon.com/directoryservice/latest/admin-guide/microsoftadbasestep3.html>`__
+
 2. Manually Join a Windows Instance `Check Detail Here <https://docs.aws.amazon.com/directoryservice/latest/admin-guide/join_windows_instance.html>`__
 
 .. note::
-TIPS: Using the following from a command prompt on the instance for above
-%SystemRoot%\system32\control.exe ncpa.cpl  => Make sure two domain controller IP is in your dns setup
-%SystemRoot%\system32\control.exe sysdm.cpl   ==> Join domain
+   TIPS: Using the these commands from a command prompt on the instance for above
+   %SystemRoot%\system32\control.exe ncpa.cpl  => Make sure two domain controller IP is in your dns setup
+   %SystemRoot%\system32\control.exe sysdm.cpl   ==> Join domain
 
 |image3|
 |image6|
 
-Step d: Configure LDAP
+Step D: Configure LDAP
 After login to EC2 Instnace with AD authentication (aws-ad.aviatrixtest.com\Admin), configure another user "aduser" to AWS AD domain
 
 |image7|
@@ -74,6 +77,7 @@ After login to EC2 Instnace with AD authentication (aws-ad.aviatrixtest.com\Admi
 Verify AWS AD Is Operational by using AD Explorer
 --------------------------
 You can download Microsoft AD Explorer from this `link <https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer>`__
+
 Verify LDAP information for example Bind DN and Base DN and store them for further Aviatrix Controller and OpenVPN LDAP authentication.
 
 |image2|
