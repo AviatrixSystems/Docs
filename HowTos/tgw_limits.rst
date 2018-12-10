@@ -30,7 +30,7 @@ Functions                                                            Limits  	  
 Propagating on-prem routes to Spoke VPC route table                  not supported   VPC owner's responsibility. Learn more `here <https://docs.aviatrix.com/HowTos/tgw_faq.html#why-should-i-use-aviatrix-tgw-orchestrator-to-build-a-transit-network-architecture>`_
 Direct Connect support on TGW                                        not supported   publicly announced in the roadmap
 Inter region TGW connectivity                                        not supported
-TGW VPN Static                                                       not supported   if you connect to classic VGW using static routes, you need to change to BGP.
+TGW VPN Static                                                       manual          In addition to updating Spoke VPC route table, you need to make sure TGW route table is configured for on-prem routes..
 TGW VPN BGP prefix total                                             100             TGW does not summarize Spoke VPC CIDRs routes. The total route limit is aggregated routes from both on-prem and Spoke VPCs. 
 Spoke VPC Route entries in a route table                             100             default is 50. Performance impact on 100 routes. 
 TGW VPN scaling                                                      reset BGP       Traffic goes down to zero before coming back up with higher throughput.  
