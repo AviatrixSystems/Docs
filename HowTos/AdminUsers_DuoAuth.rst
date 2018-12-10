@@ -73,9 +73,14 @@ user is added or deleted by the special username admin.
 Change admin user’s password
 ----------------------------
 
-Again, the admin user’s password can be changed at the same page. An
+Thee admin user’s password can be changed at the same page. An
 email notification is sent to the admin’s email address after the
 change is successfully done.
+
+Disable admin login
+--------------------
+
+If you like to disable admin login for security reasons, go to Settings -> Controller -> Login Customization. Click Disable to disable admin login. 
 
 
 Configuration Workflow for Duo Authentication
