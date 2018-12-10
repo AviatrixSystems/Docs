@@ -15,7 +15,8 @@ For example, while TGW route table can carry thousands of routes, TGW VPN has th
 of 100 BGP routes as the classic VGW VPN. When the BGP prefixes exceed 100, TGW VPN randomly resets BGP session, 
 leading to unpredictable network outage. 
 
-TGW VPN makes the route limit a more serious problem as TGW route table does not summarize Spoke VPC CIDRs when propagating them to on-prem, unlike the Transit VPC CSR solution or Aviatrix solution. As you migrate Transit VPC to TGW, you should be aware of the new route budget. For exampple, if you have 50 Spoke VPCs, your on-prem BGP prefixes should be less than 50. 
+TGW VPN makes the route limit a more serious problem as TGW route table does not summarize Spoke VPC CIDRs when propagating them to on-prem. Unlike the Transit VPC CSR solution or Aviatrix solution where the instance based gateway can summarize
+the Spoke VPC CIDRs. As you migrate Transit VPC to TGW, you should be aware of the new route budget. For exampple, if you have 50 Spoke VPCs, your on-prem BGP prefixes should be less than 50. 
 If you are already using Cisco CSR to summarize Spoke VPC CIDRs to avoid the route limit, migrating to native TGW will not work.  
 
 AWS publishes Transit Gateway limits at `this link. <https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html>`_
