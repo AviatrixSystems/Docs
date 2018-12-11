@@ -54,8 +54,6 @@ If you plan to build a segmented network, this step creates a new `Security Doma
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS.
-Region                                          One of the AWS regions
 TGW Name                                        The name of the TGW
 Security Domain Name                            Specify a unique domain name. For example, Dev_Domain.
 ==========================================      ==========
@@ -83,7 +81,9 @@ If your deployment does not require on-prem connection, skip this section.
 Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
 return to this section and continue to the next step. 
 
-For Aviatrix Transit GW to support Hybrid connection, your transit VPC need to have at least /26 CIDR space untouched, i.e., not assigned to any subnets. Aviatrix Transit GW will use this space to create floating subnets in the next step. 
+.. Note::
+
+ For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW will use this space to create floating subnets in the next step. 
 
 
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
