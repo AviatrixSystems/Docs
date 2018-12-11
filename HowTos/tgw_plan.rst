@@ -42,11 +42,11 @@ AWS Side AS Numbert                             Default AS number is 64512. This
 2. (Optional) Create a New Security Domain
 --------------------------------------------------
 
-This section include step 2 & 3 to plan a segmented network. 
+This section includes step 2 & 3 to plan a segmented network. 
 
 If you plan to build a `full mesh network <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
 
-If you plan to build a segmented network, this step creates a new `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ . 
+If you plan to build a segmented network, use this section to create a new `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ and design connection policies. 
 
 (When planning for a segmented network, you need to create Security Domains where Spoke VPCs in a Security Domain can communicate with each other. Spoke VPCs in different Security Domains cannot communicate with each other unless you specify a policy to connect the two domains.) 
 
@@ -62,7 +62,8 @@ Security Domain Name                            Specify a unique domain name. Fo
 ----------------------------------------------------
 
 This step specifies the connection relationship of one domain to others. Two connected domains imply that VPCs in 
-each domain can communicate with each other despite the fact that they are in different domains.
+each domain can communicate with each other despite the fact that they are in different domains. Aviatrix Controller takes
+care of both VPC route table and TGW route table programming and updates. 
 
 Highlight a domain on the left panel and click Add, the domain will appears to the right, as shown below. 
 
@@ -83,7 +84,7 @@ return to this section and continue to the next step.
 
 .. Note::
 
- For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW will use this space to create floating subnets in the next step. 
+ For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. 
 
 
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
