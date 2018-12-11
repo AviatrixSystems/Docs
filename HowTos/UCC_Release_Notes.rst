@@ -13,9 +13,9 @@ R4.0 (11/26/2018)
 2. Next Gen Transit Network
 -----------------------------
 
-- **AWS TGW Orchestrator** is a feature that extends the Aviatrix Transit Network to integrate with AWS TGW for building the next generation transit network. Key capabilities include cloud native support in the Spoke VPC; out-of-box integration with Direct Connect and Internet VPN. For details, check out `Aviatrix TGW Orchestrator FAQ <<https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
+- **AWS TGW Orchestrator** is a feature that extends the Aviatrix Transit Network to AWS Transit Gateway support for building the next generation transit network. Key capabilities include cloud native support in the Spoke VPC; out-of-box integration with Direct Connect and Internet VPN. For details, check out `Aviatrix TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
-- **Insane Mode Encryption Beta** allows you to deploy Aviatrix hardware appliance and build 10Gbps encryption performance between on-prem and Transit VPC. Contact sales@aviatrix.com to be part of the beta program and learn more at <https://docs.aviatrix.com/HowTos/insane_mode.html>`_. 
+- **Insane Mode Beta** allows you to deploy Aviatrix hardware appliance and build 10Gbps Transit network. Contact sales@aviatrix.com to be part of the beta program and learn the use cases for `Insane Mode  <https://docs.aviatrix.com/HowTos/insane_mode.html>`_. 
 
 3. Operations
 --------------
