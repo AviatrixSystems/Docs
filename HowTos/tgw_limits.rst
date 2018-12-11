@@ -41,7 +41,6 @@ Inter region TGW connectivity                                        not support
 TGW VPN Static                                                       manual          In addition to updating Spoke VPC route table, you need to make sure TGW route table is configured for on-prem routes..
 TGW VPN BGP prefix total                                             100             TGW does not summarize Spoke VPC CIDRs routes. The total route limit is aggregated routes from both on-prem and Spoke VPCs. 
 Spoke VPC Route entries in a route table                             100             default is 50. Performance impact on 100 routes. 
-TGW VPN scaling                                                      reset BGP       Traffic goes down to zero before coming back up with higher throughput.  
 ===================================================                  =============== =====================
 
 
