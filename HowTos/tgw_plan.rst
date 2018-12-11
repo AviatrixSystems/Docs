@@ -12,9 +12,14 @@ TGW Orchestrator Plan is the first stage in deploying a Transit Network using TG
 For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
-from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group?
+from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates TGW and TGW route tables in AWS. There is no charge either by AWS or Aviatrix.
 
-If you have not decided, no worries, proceed to build a full mesh network. You can modify your plan later.   
+
+If you have not decided, no worries, proceed to build a full mesh network by using the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_. 
+
+.. tip::
+
+ You can modify your plan at any time. Simply return to the Plan page and create security domains and changing connection policies.  
 
 
 TGW Orchestrator Plan workflow provides a step by step instruction to define and setup your policies.
