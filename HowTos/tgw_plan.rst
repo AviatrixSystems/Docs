@@ -83,6 +83,9 @@ If your deployment does not require on-prem connection, skip this section.
 Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
 return to this section and continue to the next step. 
 
+For Aviatrix Transit GW to support Hybrid connection, your transit VPC need to have at least /26 CIDR space untouched, i.e., not assigned to any subnets. Aviatrix Transit GW will use this space to create floating subnets in the next step. 
+
+
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
 ---------------------------------------------------------------
 
