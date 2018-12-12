@@ -23,7 +23,7 @@ For example, while TGW route table can carry thousands of routes, TGW VPN has th
 of 100 BGP routes as the classic VGW VPN. When the BGP prefixes exceed 100, TGW VPN randomly resets BGP session, 
 leading to unpredictable network outage. 
 
-TGW VPN makes the route limit a more serious problem as TGW route table does not summarize Spoke VPC CIDRs when propagating them to on-prem. Unlike the Transit VPC CSR solution or Aviatrix solution where the instance based gateway can summarize
+TGW VPN makes the route limit a more serious problem as TGW route table does not summarize Spoke VPC CIDRs when propagating them to on-prem. This is unlike the Transit VPC CSR solution or Aviatrix solution where the instance based gateway can summarize
 the Spoke VPC CIDRs. As you migrate Transit VPC to TGW, you should be aware of the new route budget. For exampple, if you have 50 Spoke VPCs, your on-prem BGP prefixes should be less than 50. 
 If you are already using Cisco CSR to summarize Spoke VPC CIDRs to avoid the route limit, migrating to native TGW will not work.  
 
@@ -38,7 +38,7 @@ Functions                                                            Limits  	  
 Propagating on-prem routes to Spoke VPC route table                  not supported   VPC owner's responsibility. Learn more `here <https://docs.aviatrix.com/HowTos/tgw_faq.html#why-should-i-use-aviatrix-tgw-orchestrator-to-build-a-transit-network-architecture>`_
 Direct Connect support on TGW                                        not supported   publicly announced in the roadmap
 Inter region TGW connectivity                                        not supported
-TGW VPN Static                                                       manual          In addition to updating Spoke VPC route table, you need to make sure TGW route table is configured for on-prem routes..
+TGW VPN Static                                                       manual          In addition to updating Spoke VPC route table, you need to update TGW route table for on-prem routes.
 TGW VPN BGP prefix total                                             100             TGW does not summarize Spoke VPC CIDRs routes. The total route limit is aggregated routes from both on-prem and Spoke VPCs. 
 Spoke VPC Route entries in a route table                             100             default is 50. Performance impact on 100 routes. 
 ===================================================                  =============== =====================
