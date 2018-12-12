@@ -41,7 +41,7 @@ Configuration Details
    | Status                  | Select `Enabled` to enable LDAP login on the    |
    |                         | Controller.                                     |
    +-------------------------+-------------------------------------------------+
-   | LDAP Server             | Enter the IP or hostname of the LDAP    |
+   | LDAP Server             | Enter the IP or hostname of the LDAP            |
    |                         | / AD server.                                    |
    +-------------------------+-------------------------------------------------+
    | LDAP Port               | UDP Port 389 is the standard port for both      |
