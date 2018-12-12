@@ -25,7 +25,7 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Click `Maintenance`
 #. Click `Dry Run` to make sure controller and gateway are in contact and allowed to download our software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups, VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Click `Upgrade to the latest` to upgrade your software to the latest version
-#. Follow the directions in this document to upgrade your IAM policies in all accounts
+#. Follow the directions in this document to update your IAM policies in all accounts
 
 .. note::
    
