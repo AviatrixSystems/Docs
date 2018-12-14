@@ -19,7 +19,7 @@ Tips & Tricks
 * Got questions for Support Team? Send an email to support@aviatrix.com
 * Want 24x7x365 support? Reach out to sales@aviatrix.com and ask for Platinum Support!!
 
-Controller:
+**Controller:**
 
 * `Aviatrix Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ does not support HA in multiple regions, but works across multiple AZ's
 * `Controller upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ does not affect your tunnels. Please keep them at > t2.large and please don't encrypt the root devices!!
@@ -32,7 +32,7 @@ Controller:
 * Gateways created before 3.5 release do not have "T2/T3 Unlimited" setting turned on by default. Try turning it on through AWS Console for improved burst rates.
 
 
-OpenVPN Gateway:
+**OpenVPN Gateway:**
 
 * Tunneblick VPN Client might show a warning about "comp-lzo" being deprecated when connecting to Aviatrix OpenVPN Gateway. You can safely ignore this message. We have kept this option in for backward compatibility
 * Aviatrix VPN Client needs to be able to resolve localhost.aviatrix.com to 127.0.0.1. DD-WRT router is known to have an issue resolving this, so your VPN connection might fail. Please take a look at this `link <https://forum.dd-wrt.com/phpBB2/viewtopic.php?p=1064711>`_ for a workaround.
@@ -41,7 +41,8 @@ OpenVPN Gateway:
 * Make sure that there is no overlap between the local subnet of the computer running the VPN Client and the VPN CIDR Block. `Link <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_
 
 
-Logging:
+**Logging:**
 
 * 4.0 Release supports `Logging to AWS Cloudwatch <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_. Check it out!!
 * Syslogs are on not viewable on Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, rsyslog.
+* Splunk Cloud is not supported yet. Only Splunk Enterprise is supported at this time.
