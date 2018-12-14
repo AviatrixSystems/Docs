@@ -137,7 +137,7 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
 
  2.1. If you have not logged in, you will be prompted to login to AWS console. 
 
- 2.2. Once login, you should be already in the CloudFormation page. Change to the region where you would like to install the Aviatrix Controller. Note the CloudFormation is already loaded.
+ 2.2. **Change to the Region** where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
 
  2.3. Click `Next` as shown below:
 
