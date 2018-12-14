@@ -42,6 +42,7 @@ Tips & Tricks
 * Be default, split VPN clients can only reach the VPC that the OpenVPN gateway is deployed. If you want them to reach other VPC's, please add them to "VPN CIDR" - `instructions <https://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html#multiple-vpcs-in-multi-regions-split-tunnel>`_
 * In a Transit solution, note that traffic between spokes is not allowed and hence your clients will not be able to reach other spoke VPC's - checkout "`Connected Mode <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_". Also traffic from `Transit VPC <https://docs.aviatrix.com/HowTos/site2cloud.html#advertise-transit-vpc-network-cidr-s>`_ is also not advertised by default. 
 * Using profiles to manage access? If you are assigning multiple profiles to same users - make sure they have the same base policies (allow all or deny all).
+* Sometimes the clients might take some time to connect due to ELB's load - check the logs on the client.
 
 **Transit Solution:**
 
