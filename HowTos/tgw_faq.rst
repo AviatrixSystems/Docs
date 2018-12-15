@@ -40,7 +40,7 @@ Why should I use Aviatrix TGW Orchestrator?
 Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. Aviatrix Controller makes TGW based Transit 
 architecture deployable by overcome `TGW limitations <https://docs.aviatrix.com/HowTos/aws_network_limits.html>`_. 
 
-- **Functional Completeness** Aviatrix makes AWS Transit Gateway functionally deployable. The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. 
+- **Functional Completeness** Aviatrix makes AWS Transit Gateway functionally deployable. The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. Read `this answer <https://docs.aviatrix.com/HowTos/tgw_faq.html#why-should-i-use-aviatrix-tgw-orchestrator-to-build-a-transit-network-architecture>`_ for more details.
 - **Segmentation** The Orchestrator abstracts the route domain and route propagation concepts in TGW that allows you to create network segmentation by policy and intent. 
 - **Scaling** Aviatrix solution overcomes TGW route limits to scale the hybrid deployment to hundreds/thousands of VPCs. . 
 - **Hybrid** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
@@ -186,10 +186,21 @@ TGW Orchestrator is deployed in two stages.
 In addition, you can 
 
  - List: List what is programmed in the TGW route table for a given Security Domain. 
- - View: View what has been configured for Security Domains and Connection Policies. 
+ - View: View what VPC members are attached to Security Domains and Connection Policies. 
  - Test: instance to instance end-to-end Troubleshoot. 
 
-For example, you can view TGW, Security Domains and Connection Policies at the View page. 
+What can be displayed at the View page?
+-----------------------------------
+
+View page provides the following information:
+
+ - ALL TGWs created by the Controller.
+ - All Security Domains under a TGW.
+ - All VPC members in a Security Domain.
+ - For a given Security Domain, what other domains it connects to. 
+ - All VPC attachments to a TGW.
+ - For a given VPC, what other VPCs in other domains it connects to. 
+
 
 |tgw_view|
 
