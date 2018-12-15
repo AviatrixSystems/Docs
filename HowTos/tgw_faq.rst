@@ -37,10 +37,12 @@ Aviatrix Transit GW serves as hub connecting to Azure and GCP network.
 Why should I use Aviatrix TGW Orchestrator?
 --------------------------------------------
 
-Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. 
+Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. Aviatrix Controller makes TGW based Transit 
+architecture deployable by overcome `TGW limitations <https://docs.aviatrix.com/HowTos/aws_network_limits.html>`_. 
 
-- **Simplification** The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. 
+- **Functional Completeness** Aviatrix makes AWS Transit Gateway functionally deployable. The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. 
 - **Segmentation** The Orchestrator abstracts the route domain and route propagation concepts in TGW that allows you to create network segmentation by policy and intent. 
+- **Scaling** Aviatrix solution overcomes TGW route limits to scale the hybrid deployment to hundreds/thousands of VPCs. . 
 - **Hybrid** The Orchestrator extends the TGW capability to include Direct Connect support for connecting to on-prem datacenter. 
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
 
@@ -93,6 +95,8 @@ They are all awesome, but these constructs are not enough to run your production
 For example, TGW does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to TGW, what happens when a new VLAN or Subnet is stood up on-prem. Who is going to notify you?
 
 Modern distributed network either requires BGP to dynamically propagate the routes or a controller that dynamically update the routes. Either approach, it is the only way to guarantee the network actually functions. At Aviatrix, we choose a software defined approach with our Controller. Unless you plan to develop a controller like ours, you should consider using our product. 
+
+Learn more about TGW limitations from `this link <https://docs.aviatrix.com/HowTos/aws_network_limits.html>`_.
 
 
 What is a Security Domain?
