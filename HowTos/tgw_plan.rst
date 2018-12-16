@@ -44,14 +44,19 @@ AWS Side AS Numbert                             Default AS number is 64512. This
 ==========================================      ==========
 
 
+--------------------------------------------------------------------------------------------------------------------
+
+
 2. (Optional) Create a New Security Domain
 --------------------------------------------------
 
 This section includes step 2 & 3 to plan a segmented network. 
 
-If you plan to build a `full mesh network <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
+If you plan to build a `default network (full mesh) <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
 
-If you plan to build a segmented network, use this section to create a new `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ and design connection policies. 
+You can make changes to your network segmentation at any time, simply come back to this page. 
+
+If you plan to build a segmented network, use this section to create a new `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ and setup `connection policies <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_. 
 
 (When planning for a segmented network, you need to create Security Domains where Spoke VPCs in a Security Domain can communicate with each other. Spoke VPCs in different Security Domains cannot communicate with each other unless you specify a policy to connect the two domains.) 
 
@@ -75,6 +80,8 @@ Highlight a domain on the left panel and click Add, the domain will appears to t
 
 |connect_domain|
 
+-----------------------------------------------------------------------------------------------------------------------
+
 
 4. (Optional) Setup Aviatrix Transit GW  
 ------------------------------------------------------------------
@@ -95,11 +102,13 @@ return to this section and continue to the next step.
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
 ---------------------------------------------------------------
 
-This step designates an Aviatrix Transit GW to be used in conjunction with TGW. 
+This step designates an Aviatrix Transit GW to be used in conjunction with TGW. It creates a second interface on the Aviatrix Transit GW for sending and receiving packets from TGW. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from TGW. 
+
 
 .. tip::
 
   Before you configure this step, make sure you have launched an Aviatrix Transit GW by following `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, Step 1, 2 and 3. 
+
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -111,12 +120,16 @@ Gateway Namen                                   Select a Transit GW from the dro
 6. (Optional) Attach Aviatrix Transit GW to TGW
 ------------------------------------------------------------------
 
-This step attaches Aviatrix Transit VPC to TGW
+This step attaches the Aviatrix Edge VPC to the TGW and thus allows the Aviatrix Transit GW to send and receive packets from TGW. 
+Note there is no IPSEC tunnel between TGW and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the TGW.
+
+
+------------------------------------------------------------------------------------------------
 
 7. (Optional) Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 
-
+Step 7, 8, 9 and 10 are for all delete functions.   
 
 
 8. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
