@@ -255,7 +255,7 @@ Why should I use Aviatrix TGW Orchestrator to build a transit network architectu
 -------------------------------------------------------------------------------------
 
 Aviatrix TGW Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
-shows how CSR Transit VPC, TGW and Aviatrix Orchestrator compare for route propagation function.
+shows how CSR Transit VPC, TGW and Aviatrix Orchestrator compare for route propagation function. As can be seen, in the CSR Transit VPC case, CSR propagates on-prem routes to Spoke VPC via BGP to VGW; TGW has no route propagation to Spoke VPC; Aviatrix Controller propagates routes to Spoke VPC through a software defined mechanism. 
 
 
 |tgw_transit_orchestrator_compare|
