@@ -29,24 +29,24 @@ Subnets' VPC Route Tables (RTBL) are also displayed at the diagram.
 The VPC1's traffic will flow through TGW and PAN firewall before going to Internet. We want to verify the data
 path in different scenarios and observe the following behaviors:
 
-1. With both VPC's private subnets (Subnet_1 and Subnet_3) attached to TGW, TGW forwards VPC1's
-Internet traffic from all three EC2 instances to PAN1. This is because PAN1's private subnet is at the top of
-the TGW's attachment list. TGW won't load balance the traffic between the two PAN firewalls.
+1. With both Subnet_1 and Subnet_3 attached to TGW, TGW forwards VPC1's Internet traffic from all three EC2
+instances to PAN1. This is because PAN1's private subnet (Subnet_1) is at the top of the TGW's attachment list.
+TGW won't load balance the traffic between the two PAN firewalls.
 
-#. Stop PAN1 at AWS Console. VPC1's Internet traffic is blocked. TGW won't detect PAN1's health state and fail
-over from PAN1 to PAN2.
+2. Stop PAN1 at AWS Console. VPC1's Internet traffic is blocked. TGW can't detect PAN1's health state and fail
+over to PAN2 accordingly.
 
-#. Restart PAN1 at AWS Console. VPC1's Internet traffic will resume by going through PAN1.
+3. Restart PAN1 at AWS Console. VPC1's Internet traffic will resume by going through PAN1.
 
-#. Stop PAN1 at AWS Console again. To resume the VPC1's traffic, we need to detach PAN1's private subnet (Subnet_1)
+4. Stop PAN1 at AWS Console again. To resume the VPC1's traffic, we need to detach PAN1's private subnet (Subnet_1)
 from TGW. After it, VPC1's traffic can flow through TGW and PAN2 before going to Internet.
 
-#. Restart PAN1 at AWS Console and re-attach PAN1's private subnet (Subnet_1) to TGW. After it, VPC1's traffic
+5. Restart PAN1 at AWS Console and re-attach PAN1's private subnet (Subnet_1) to TGW. After it, VPC1's traffic
 still flows through PAN2. TGW won't redirect the traffic to PAN1.
 
 
 .. |tgw_egress| image:: tgw_egress_media/tgw_egress.png
-   :scale: 60%
+   :scale: 70%
 
 .. add in the disqus tag
 
