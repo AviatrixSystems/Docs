@@ -17,11 +17,11 @@ How does the Aviatrix Transit Network solution differ from Cisco's CSR-based sol
 ----------------------------------------------------------------------------------------
 They differ in the following areas:
 
- - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
+ - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
 
  - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points. 
 
- - **Half Egress Charge** - In the Aviatrix solution, VPC to VPC traffic does not go through the Transit GW, resucing the AWS network egress charge by half.  
+ - **Half Egress Charge** - In the Aviatrix solution, VPC to VPC traffic does not go through the Transit GW, reducing the AWS network egress charge by half.  
 
  - **No unwanted route propagation** - Since Spoke VPCs run BGP in CSR solution, if a Spoke VPC also connects to a partner network via VGW, the partner network routes could propagated to your own on-prem network.
 
