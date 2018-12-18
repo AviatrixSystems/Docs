@@ -88,6 +88,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_build
    HowTos/tgw_design_patterns
    HowTos/tgw_csr_migrate
+   HowTos/tgw_egress_vpc
+   HowTos/tgw_route_limit
 
 .. _Transit Network:
 
@@ -285,8 +287,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/connect_transit_network_clusters
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
-   HowTos/tgw_egress_vpc
-   HowTos/tgw_route_limit
 
 .. _Solutions:
 
