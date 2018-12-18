@@ -3,9 +3,9 @@
   :keywords: AWS TGW, TGW orchestrator, Egress VPC, PAN Firewall
 
 
-=========================================================
-TGW Egress VPC with multi AZ PAN Firewalls
-=========================================================
+=============================================================
+TGW Egress VPC Firewall Limitation Test Validation
+=============================================================
 
 Introduction
 --------------
