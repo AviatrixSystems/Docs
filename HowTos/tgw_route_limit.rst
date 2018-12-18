@@ -10,7 +10,7 @@ AWS Transit Gateway (TGW) Route Limit
 Introduction
 ---------------
 
-While AWS Transit Gateway (TGW) carries thousands of routes in the TGW route table, TGW VPN has the same 100 route limit as
+While an AWS Transit Gateway (TGW) carries thousands of routes in the TGW route table, TGW VPN has the same 100 route limit as
 the VGW VPN. 
 
 Test Validation
