@@ -4,12 +4,23 @@
 
 
 =========================================================
-TGW Egress VPC with Two PAN Firewalls
+TGW Egress VPC with multi AZ PAN Firewalls
 =========================================================
 
-AWS TGW allows spoke VPCs to send Internet traffic through firewalls deployed in attached egress VPC.
+Introduction
+--------------
 
-This tech note uses the following setup to test TGW with two PAN firewalls in egress VPC.
+This document demonstrates that native TGW does not support multi AZ deployment for a centralized egress firewall. 
+
+AWS TGW allows spoke VPCs to send Internet bound traffic through firewall instance deployed in attached egress VPC. 
+However TGW 
+is not aware of the state of each firewall in different AZ in the egress VPC, therefore not able to switch over to 
+a different firewall instance when one fails.
+
+Test Validation
+----------------
+
+The test setup is described in the following.
 
 VPC1 is a Spoke VPC attached to TGW. There are three EC2 instances serving as Internet traffic sources.
 
@@ -26,14 +37,14 @@ Subnets' VPC Route Tables (RTBL) are also displayed at the diagram.
 
 |tgw_egress|
 
-The VPC1's traffic will flow through TGW and PAN firewall before going to Internet. We want to verify the data
-path in different scenarios and observe the following behaviors:
+The VPC1's traffic will flow through TGW and PAN firewall before going to Internet. We verified the data
+path in different scenarios and observed the following behaviors:
 
 1. With both Subnet_1 and Subnet_3 attached to TGW, TGW forwards VPC1's Internet traffic from all three EC2
 instances to PAN1. This is because PAN1's private subnet (Subnet_1) is at the top of the TGW's attachment list.
-TGW won't load balance the traffic between the two PAN firewalls.
+TGW does not load balance traffic between the two PAN firewalls.
 
-2. Stop PAN1 at AWS Console. VPC1's Internet traffic is blocked. TGW can't detect PAN1's health state and fail
+2. Stop PAN1 at AWS Console. VPC1's Internet traffic is blocked. TGW does not detect PAN1's health state and does not fail
 over to PAN2 accordingly.
 
 3. Restart PAN1 at AWS Console. VPC1's Internet traffic will resume by going through PAN1.
@@ -43,6 +54,12 @@ from TGW. After it, VPC1's traffic can flow through TGW and PAN2 before going to
 
 5. Restart PAN1 at AWS Console and re-attach PAN1's private subnet (Subnet_1) to TGW. After it, VPC1's traffic
 still flows through PAN2. TGW won't redirect the traffic to PAN1.
+
+Summary
+---------
+
+Although TGW allows Internet bound traffic to be forwarded to firewall instances in an egress VPC, multi-AZ deployment for
+such firewall service is not supported. 
 
 
 .. |tgw_egress| image:: tgw_egress_media/tgw_egress.png
