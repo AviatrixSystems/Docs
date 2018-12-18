@@ -7,12 +7,18 @@
 TGW Egress VPC with multi AZ PAN Firewalls
 =========================================================
 
+Introduction
+--------------
+
 This document demonstrates that native TGW does not support multi AZ deployment for a centralized egress firewall. 
 
 AWS TGW allows spoke VPCs to send Internet bound traffic through firewall instance deployed in attached egress VPC. 
 However TGW 
 is not aware of the state of each firewall in different AZ in the egress VPC, therefore not able to switch over to 
 a different firewall instance when one fails.
+
+Test Validation
+----------------
 
 The test setup is described in the following.
 
@@ -48,6 +54,12 @@ from TGW. After it, VPC1's traffic can flow through TGW and PAN2 before going to
 
 5. Restart PAN1 at AWS Console and re-attach PAN1's private subnet (Subnet_1) to TGW. After it, VPC1's traffic
 still flows through PAN2. TGW won't redirect the traffic to PAN1.
+
+Summary
+---------
+
+Although TGW allows Internet bound traffic to be forwarded to firewall instances in an egress VPC, multi-AZ deployment for
+such firewall services is not supported. 
 
 
 .. |tgw_egress| image:: tgw_egress_media/tgw_egress.png
