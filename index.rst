@@ -286,6 +286,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
    HowTos/tgw_egress_vpc
+   HowTos/tgw_route_limit
 
 .. _Solutions:
 
