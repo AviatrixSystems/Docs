@@ -1,13 +1,22 @@
 .. meta::
   :description: TGW Route Limit
-  :keywords: AWS TGW, TGW orchestrator, VPN, Cisco CSR, Route
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, VPN, Cisco CSR, Route
 
 
 =========================================================
-TGW Route Limit
+AWS Transit Gateway (TGW) Route Limit
 =========================================================
 
-In this tech note, we want to test the route limitation of AWS Transit Gateway (TGW).
+Introduction
+---------------
+
+While AWS Transit Gateway (TGW) carries thousands of routes in the TGW route table, TGW VPN has the same 100 route limit as
+the VGW VPN. 
+
+Test Validation
+----------------
+
+In this tech note, we test the route limitation of AWS Transit Gateway (TGW).
 
 With the following setup, we launch a Cisco CSR 1000v as Customer Gateway and use it to attach a VPN connection
 to the TGW. TGW and CSR also run BGP between them. The detailed steps are `here <https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpn-attachments.html>`_.
@@ -45,6 +54,12 @@ BGP connection becomes idle after these messages.
    BGP state = Idle
 
 This test indicates that TGW has the same BGP total prefix limitation (100) as VGW.
+
+Summary
+----------
+
+TGW VPN has a total 100 BGP prefix. In addition TGW cannot summarize Spoke VPC routes. 
+
 
 .. |tgw_route_limit| image:: tgw_route_limit_media/tgw_route_limit.png
    :scale: 70%
