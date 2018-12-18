@@ -16,9 +16,7 @@ the VGW VPN.
 Test Validation
 ----------------
 
-In this tech note, we test the route limitation of AWS Transit Gateway (TGW).
-
-With the following setup, we launch a Cisco CSR 1000v as Customer Gateway and use it to attach a VPN connection
+In the following setup, we launch a Cisco CSR 1000v as Customer Gateway and use it to attach a VPN connection
 to the TGW. TGW and CSR also run BGP between them. The detailed steps are `here <https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpn-attachments.html>`_.
 
 |tgw_route_limit|
