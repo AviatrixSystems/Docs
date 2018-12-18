@@ -96,7 +96,8 @@ return to this section and continue to the next step.
 
 .. Note::
 
- For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. 
+ For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. To add
+ additional IPv4 CIDR blocks to your VPC, please follow `these rules <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-resize>`_. For configuration, please refer to `these instructions <https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#add-ipv4-cidr>`_.
 
 
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
