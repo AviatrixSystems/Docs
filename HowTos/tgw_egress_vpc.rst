@@ -59,7 +59,7 @@ Summary
 ---------
 
 Although TGW allows Internet bound traffic to be forwarded to firewall instances in an egress VPC, multi-AZ deployment for
-such firewall services is not supported. 
+such firewall service is not supported. 
 
 
 .. |tgw_egress| image:: tgw_egress_media/tgw_egress.png
