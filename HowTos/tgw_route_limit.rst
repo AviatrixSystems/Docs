@@ -23,15 +23,13 @@ to the TGW. TGW and CSR also run BGP between them. The detailed steps are `here 
 
 |tgw_route_limit|
 
-After the VPN tunnel is created between TGW and CSR, run the following command at CSR to verify the BGP peer connection:
+After the VPN tunnel is created between TGW and CSR, run the following command at CSR to verify the BGP peer connection, where 169.254.11.233 is the TGW's BGP ID.:
 
 ::
 
  ip-10-10-0-106#show ip bgp neighbors 169.254.11.233 | include BGP state
    BGP state = Established
 
-
-.. Note:: 169.254.11.233 is TGW's BGP ID
 
 Turn on BGP debug on CSR and then configure CSR to advertise 101 routes to TGW through BGP. CSR shows the following BGP
 debug messages:
@@ -44,7 +42,7 @@ debug messages:
  *Dec 18 00:29:28.213: BGP: ses global 169.254.11.233 (0x7F36A1AF6C60:1) Reset (BGP Notification received).
  *Dec 18 00:29:28.213: BGP: 169.254.11.233 went from Established to Closing
 
-These messages show that TGW exceeds its route limit (100) and sends a BGP reset message to CSR.
+The above messages show that when TGW exceeds its route limit (100) and it sends a BGP reset message to CSR.
 
 BGP connection becomes idle after these messages.
 
