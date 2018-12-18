@@ -48,6 +48,7 @@ Tips & Tricks
 **Transit Solution:**
 
 * Explore "`Connected Mode <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_" if you want all spoke VPC's to talk to each other. Preqrequisites: all spokes need to be similar (either have/not have HA), all of them must be on HA or non-HA connections when connected mode is being turned on.
+* Please make sure that you have at least four /28 subnets worth of address space in the VPC before you launch the transit solution
 
 **Logging:**
 
