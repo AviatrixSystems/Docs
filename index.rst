@@ -29,6 +29,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Solutions`
 * :ref:`Good To Know`
 * :ref:`IPmotion`
+* :ref:`Support Center`
 
 
 .. _Getting Started:
@@ -314,3 +315,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aws_network_limits
    HowTos/tgw_limits
    HowTos/opstools_survey
+
+.. _Support Center:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Support Center
+
+   Support/support_center
