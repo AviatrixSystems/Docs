@@ -88,7 +88,7 @@ Create a VPN Gateway
 
 VPN Users
 ^^^^^^^^^
-Users can be added manually or sync'd from an existing LDAP server.
+Users can be added manually or authenticated with an existing LDAP server.
 
 #. Login to the Aviatrix Controller
 #. Expand OpenVPN® on the left navigation bar
