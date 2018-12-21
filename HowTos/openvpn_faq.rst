@@ -365,6 +365,12 @@ How to turn off NAT with OpenVPN® gateway?
 Aviatrix OpenVPN® gateway performs NAT function for the user VPN traffic, effectively masking out the VPN client's virtual IP address assigned by gateway from the `VPN CIDR Block <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. This does not affect profile based policy enforcement as the landing vpn gateway has the information of the virtual IP address before NAT is performed and enforces policies based on user identification. 
 
 If you do want to preserve the virtual IP address after the client packet leaves the gateway, you can do by enabling `PBR function <https://docs.aviatrix.com/HowTos/gateway.html#enable-policy-based-routing-pbr>`_. 
+
+What IP Address is used for NAT'ing the VPN Clients?
+-------------------------------------------------------
+
+If the destination is another instance within the cloud provider, then OpenVPN gateway’s private IP address is used to NAT the OpenVPN Client's traffic. But if the destination is outside the clour provider(the Internet), then the public IP address of the OpenVPN Gateway is used.
+
    
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
