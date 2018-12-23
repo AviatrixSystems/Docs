@@ -184,6 +184,9 @@ This step delete the TGW created in Step 1.
 .. |connect_domain_2| image:: tgw_plan_media/connect_domain_2.png
    :scale: 30%
 
+.. |new_domain| image:: tgw_plan_media/new_domain.png
+   :scale: 30%
+
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
    :scale: 50%
 
