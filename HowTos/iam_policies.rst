@@ -39,6 +39,7 @@ Steps
 #. Replace the entire text by the latest policy in `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__
 #. Click **Review policy** to make sure there is no syntax error. 
 #. Click **Save changes** to apply the new aviatrix-app-policy.
+#. It may take a few minutes for the policy to take effect. 
 
 
 .. disqus::
