@@ -42,7 +42,7 @@ Security Domain Name                            Select from a drop down menu dom
 This step detaches a VPC from a TGW and Domain. 
 
 
-.. |prod_vpc_attach| image:: tgw_plan_media/prod_vpc_attach.png
+.. |prod_vpc_attach| image:: tgw_build_media/prod_vpc_attach.png
    :scale: 30%
 
 .. disqus::
