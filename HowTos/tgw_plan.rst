@@ -7,15 +7,27 @@
 TGW Orchestrator Plan
 =========================================================
 
-TGW Orchestrator Plan is the first stage in deploying a Transit Network using TGW. 
+
+TGW Orchestrator Plan is the first stage in deploying a Transit Network using TGW. After you go through the Plan 
+stage configuration, you can proceed to the `Build stage <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ 
+to attach VPCs. 
 
 For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
+
+The plan stage consists of three sections:
+
+ - Create AWS TGW. This is the only must do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS TGW and three connected Security Domains are created.  
+
+ - Create Segmented Network. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
+
+ - Create Hybrid Connection. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC and build hybrid connection to on-prem. If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete. 
+
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
 from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates TGW and TGW route tables in AWS. There is no charge either by AWS or Aviatrix.
 
 
-If you have not decided, no worries, proceed to build a full mesh network by using the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_. 
+If you have not decided on network segmentation, no worries, proceed to build a full mesh network by using the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_. 
 
 .. tip::
 
@@ -31,7 +43,11 @@ TGW Orchestrator Plan workflow provides a step by step instruction to define and
 In order to use TGW service, you must first create a TGW. 
 
 This step creates a TGW in a specified region with a specified AWS account, the Aviatrix Controller also automatically creates 
-the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_ and the corresponding TGW route tables. . 
+the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_ and the corresponding TGW route tables. 
+
+|create_tgw|
+
+Note the three domains are connected, implying if you attach VPC to the Default Domain or Shared Service Domain, the VPCs can communicate with each other and can access on-prem through the Aviatrix Edge Domain.  
 
 
 ==========================================      ==========
@@ -43,6 +59,7 @@ TGW Name                                        The name of the TGW
 AWS Side AS Numbert                             Default AS number is 64512. This field currently is not used.
 ==========================================      ==========
 
+After TGW is created, you can validate by going to `View page <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-can-be-displayed-at-the-view-page>`_ and see what has been created. 
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -58,8 +75,10 @@ You can make changes to your network segmentation at any time, simply come back 
 
 If you plan to build a segmented network, use this section to create a new `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ and setup `connection policies <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_. 
 
-(When planning for a segmented network, you need to create Security Domains where Spoke VPCs in a Security Domain can communicate with each other. Spoke VPCs in different Security Domains cannot communicate with each other unless you specify a policy to connect the two domains.) 
 
+In the example below, a new domain called prod_domain is created. 
+
+|new_domain|
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -75,10 +94,18 @@ This step specifies the connection relationship of one domain to others. Two con
 each domain can communicate with each other despite the fact that they are in different domains. Aviatrix Controller takes
 care of both VPC route table and TGW route table programming and updates. 
 
-Highlight a domain on the left panel and click Add, the domain will appears to the right, as shown below. 
+Highlight a domain on the left panel and click Add, the domain will appears to the right. 
+
+In the example shown below, the intention is to connect the newly created prod_domain in Step 2 to the Aviatrix_Edge_Domain so that VPCs in the prod_domain can communicate with on-prem servers and hosts. 
 
 
-|connect_domain|
+|connect_domain_1|
+
+Continue from the above example, you can connect prod_domain to Shared_Service_Domain, as shown below. 
+
+|connect_domain_2|
+
+Click the View page to see what has been created.  
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -148,8 +175,13 @@ This step delete a security domain created in Step 2.
 
 This step delete the TGW created in Step 1. 
 
+.. |create_tgw| image:: tgw_plan_media/create_tgw.png
+   :scale: 30%
 
-.. |connect_domain| image:: tgw_plan_media/connect_domain.png
+.. |connect_domain_1| image:: tgw_plan_media/connect_domain_1.png
+   :scale: 30%
+
+.. |connect_domain_2| image:: tgw_plan_media/connect_domain_2.png
    :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
