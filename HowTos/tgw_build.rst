@@ -13,6 +13,12 @@ TGW Orchestrator Build workflow is a one step instruction to attach  VPC to  AWS
 
 For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
+Before you can attach VPCs, you must have at least completed `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_ in Plan page. 
+
+For example, you can attach a VPC to prod_domain created at the Plan page, as shown below. 
+
+|prod_vpc_attach|
+
 1. Attach VPC to TGW
 -------------------------------------------
 
@@ -36,28 +42,7 @@ Security Domain Name                            Select from a drop down menu dom
 This step detaches a VPC from a TGW and Domain. 
 
 
-.. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
-   :width: 5.55625in
-   :height: 3.26548in
-
-.. |image1| image:: transitvpc_workflow_media/transitGw-launch.png
-   :width: 2.55625in
-   :height: 1.0in
-
-.. |image2| image:: transitvpc_workflow_media/TransitGW-HA.png
-   :width: 2.55625in
-   :height: 1.0in
-
-.. |image3| image:: transitvpc_workflow_media/connectVGW.png
-   :scale: 50%
-
-.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :scale: 50%
-
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :scale: 50%
-
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :scale: 50%
+.. |prod_vpc_attach| image:: tgw_plan_media/prod_vpc_attach.png
+   :scale: 30%
 
 .. disqus::

@@ -120,7 +120,7 @@ This section includes Step 4, 5 & 6. It sets up connection to on-prem datacenter
 Direct Connect or Internet. 
 
 If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
-connection, return to this Step 4 to setup. 
+connection, return to this section and start with Step 4 to setup. 
 
 Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
 return to this section and continue to the next step. 
@@ -166,13 +166,13 @@ Note there is no IPSEC tunnel between TGW and the Aviatrix Transit GW, the Aviat
 |transit_complete|
 
 After you finish Step 4, 5 and 6, your hybrid connection setup is complete. In the above example, 
-if you have any attached Spoke VPCs attached to the prod_domain, EC2 instances should be able to communicate with 
+if you have any Spoke VPCs attached to the prod_domain, EC2 instances should be able to communicate with 
 on-prem. (Make sure instance security groups and any on-prem firewalls are configured properly.)
 
 
 ------------------------------------------------------------------------------------------------
 
-This section are all delete functions. 
+This section consists of delete functions. 
 
 7. (Optional) Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
