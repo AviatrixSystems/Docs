@@ -15,9 +15,6 @@ For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatri
 
 Before you can attach VPCs, you must have at least completed `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_ in Plan page. 
 
-For example, you can attach a VPC to prod_domain created at the Plan page, as shown below. 
-
-|prod_vpc_attach|
 
 1. Attach VPC to TGW
 -------------------------------------------
@@ -35,6 +32,9 @@ Security Domain Name                            Select from a drop down menu dom
 ==========================================      ==========
 
 
+For example, you can attach a VPC to prod_domain created at the Plan page, as shown below. 
+
+|prod_vpc_attach|
 
 2. Detach VPC from TGW
 --------------------------------------------------
