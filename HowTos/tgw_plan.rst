@@ -105,7 +105,10 @@ Continue from the above example, you can connect prod_domain to Shared_Service_D
 
 |connect_domain_2|
 
-Click the View page to see what has been created.  
+Click the View page under TGW Orchestrator and click each expandable circles to see what has been created, 
+as shown below.  
+
+|plan_view|
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -185,6 +188,9 @@ This step delete the TGW created in Step 1.
    :scale: 30%
 
 .. |new_domain| image:: tgw_plan_media/new_domain.png
+   :scale: 30%
+
+.. |plan_view| image:: tgw_plan_media/plan_view.png
    :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
