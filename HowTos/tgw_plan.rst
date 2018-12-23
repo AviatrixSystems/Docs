@@ -16,11 +16,11 @@ For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatri
 
 The plan stage consists of three sections:
 
- - Create AWS TGW. This is the only must do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS TGW and three connected Security Domains are created.  
+ - **Create AWS TGW**. This is the only must do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS TGW and three connected Security Domains are created.  
 
- - Create Segmented Network. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
+ - **Create Segmented Network**. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
 
- - Create Hybrid Connection. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC and build hybrid connection to on-prem. If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete. 
+ - **Create Hybrid Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC and build hybrid connection to on-prem. If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. 
 
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
@@ -119,21 +119,29 @@ as shown below.
 This section includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
 Direct Connect or Internet. 
 
-If your deployment does not require on-prem connection, skip this section. 
+If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
+connection, return to this Step 4 to setup. 
 
 Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
 return to this section and continue to the next step. 
 
-.. Note::
+The example below shows what is accomplished when you complete Step 4, where a pair of Aviatrix Transit Gateways have been launched and connected to VGW.  
 
- For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. To add
- additional IPv4 CIDR blocks to your VPC, please follow `these rules <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-resize>`_. For configuration, please refer to `these instructions <https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#add-ipv4-cidr>`_.
+|transit_gw|
+
+
+
+.. important::
+
+ For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. If your transit VPC does not spare /26 CIDR range, you can either `create a new VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ or add more CIDRs by following `these rules <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-resize>`_. For configuration, please refer to `these instructions <https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#add-ipv4-cidr>`_.
 
 
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
 ---------------------------------------------------------------
 
-This step designates an Aviatrix Transit GW to be used in conjunction with TGW. It creates a second interface on the Aviatrix Transit GW for sending and receiving packets from TGW. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from TGW. 
+The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to TGW. The networking between TGW and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
+
+This step designates an Aviatrix Transit GW to be used in conjunction with TGW. It creates a second Ethernet interface on the Aviatrix Transit GW for sending and receiving packets from TGW. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from TGW. 
 
 
 .. tip::
@@ -152,10 +160,19 @@ Gateway Namen                                   Select a Transit GW from the dro
 ------------------------------------------------------------------
 
 This step attaches the Aviatrix Edge VPC to the TGW and thus allows the Aviatrix Transit GW to send and receive packets from TGW. 
-Note there is no IPSEC tunnel between TGW and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the TGW.
+
+Note there is no IPSEC tunnel between TGW and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the TGW, as shown in the diagram below. 
+
+|transit_complete|
+
+After you finish Step 4, 5 and 6, your hybrid connection setup is complete. In the above example, 
+if you have any attached Spoke VPCs attached to the prod_domain, EC2 instances should be able to communicate with 
+on-prem. (Make sure instance security groups and any on-prem firewalls are configured properly.)
 
 
 ------------------------------------------------------------------------------------------------
+
+This section are all delete functions. 
 
 7. (Optional) Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
@@ -191,6 +208,12 @@ This step delete the TGW created in Step 1.
    :scale: 30%
 
 .. |plan_view| image:: tgw_plan_media/plan_view.png
+   :scale: 30%
+
+.. |transit_gw| image:: tgw_plan_media/transit_gw.png
+   :scale: 30%
+
+.. |transit_complete| image:: tgw_plan_media/transit_complete.png
    :scale: 30%
 
 .. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
