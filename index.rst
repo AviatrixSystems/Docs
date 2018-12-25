@@ -15,6 +15,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Gateway`
 * :ref:`TGW Orchestrator`
 * :ref:`Transit Network`
+* :ref:`Transit DMZ`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN® <OpenVPN>`
@@ -105,6 +106,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Setup_Transit_Network_Terraform
    HowTos/transit_plus_security_vpc
    HowTos/insane_mode
+
+.. _Transit DMZ
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Transit DMZ
+
+   HowTos/transit_dmz_faq
 
 .. _Security:
 
