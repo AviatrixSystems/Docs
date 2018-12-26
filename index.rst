@@ -114,6 +114,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Transit DMZ
 
    HowTos/transit_dmz_faq
+   HowTos/transit_dmz_workflow
 
 .. _Security:
 
