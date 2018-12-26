@@ -37,7 +37,26 @@ Is Transit DMZ a bump in the wire for all traffic?
 
 For the 4.1 release, Transit DMZ can only intercepts traffic between north and south (on-prem and VPCs) and Egress and Ingress traffic. Transit DMZ does not see east west traffic (between two VPCs).
 
+How does Transit DMZ actually work?
+------------------------------------
 
+Transit DMZ relies completely on the AWS VPC network infrastructure to work. There is no IPSEC tunnel between the Aviatrix gateways and the firewall appliances. 
+
+Here is how Transit DMZ works:
+
+ 1. The companion gateways establishes BGP with downstream device, such as VGW, CloudN or a third party router.
+ #. The learned routes from the companion gateway via BGP is forwarded to the Controller. 
+ #. The Controller then distributes the routes to all Spoke VPCs and the main gateways. 
+ #. From a Spoke VPC point of view, its transit gateway is the main gateway even though the main gateway runs no BGP. 
+
+The Aviatrix Controller monitors the health of the instance based firewall appliances by AWS APIs. When it detects one
+firewall instance become not in running state, it triggers an HA failover to direct both the main gateway and the 
+companion gateway to point the routes to the backup firewall instance. 
+
+How should the firewall be deployed?
+-------------------------------------
+
+A firewall typically has multiple interfaces. The firewall interfaces do not need to be deployed in the same subnet as main gateway or companion gateway. The Aviatrix Controller needs to know the Ethernet interfaces of the firewall that interact with the main gateway. The same is true for the companion gateway.  
 
 .. |transit_dmz| image:: transit_dmz_media/transit_dmz.png
    :scale: 30%
