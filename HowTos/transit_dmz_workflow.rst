@@ -45,7 +45,7 @@ through  main gateway without a firewall appliance.
 
 .. tip::
 
-  Test end to end traffic between Spoke VPC to on-prem before you execute the step where you insert the Firewall device.
+  Test end to end traffic between Spoke VPC to on-prem before you execute the next step where you insert the Firewall device.
 
 
 4. Insert Firewalls to Transit DMZ
