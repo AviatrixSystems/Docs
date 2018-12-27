@@ -42,6 +42,11 @@ How does Transit DMZ actually work?
 
 Transit DMZ relies completely on the AWS VPC network infrastructure to work. There is no IPSEC tunnel between the Aviatrix gateways and the firewall appliances. 
 
+Transit DMZ deploys two sets of Aviatrix Transit GWs in the Transit VPC. They are called main gateways and companion gateways. Main gateways are used to interface with the Spoke VPC (with or without TGW) while companion gateways are 
+used to interface with on-prem side (via VGW, CloudN or third party appliance), as shown in the diagram below. 
+
+|main_companion_gw|
+
 Here is how Transit DMZ works:
 
  1. The companion gateways establishes BGP with downstream device, such as VGW, CloudN or a third party router.
@@ -56,10 +61,17 @@ companion gateway to point the routes to the backup firewall instance.
 How should the firewall be deployed?
 -------------------------------------
 
-A firewall typically has multiple interfaces. The firewall interfaces do not need to be deployed in the same subnet as main gateway or companion gateway. The Aviatrix Controller needs to know the Ethernet interfaces of the firewall that interact with the main gateway. The same is true for the companion gateway.  
+A firewall typically has multiple interfaces. In order to deploy EC2 based firewall appliances, 
+you need to create or allocate at least two subnets in the Transit VPC. One subnet for the firewall interface that 
+works forwards packet to the main gateways, another subnet for the firewall interface that forwards packet to the companion gateway. 
+
+Aviatrix Controller will create VPC route tables to associate the firewall subnets and create necessary route entries 
+for packet forwarding. 
 
 .. |transit_dmz| image:: transit_dmz_media/transit_dmz.png
    :scale: 30%
 
+.. |main_companion_gw| image:: transit_dmz_media/main_companion_gw.png
+   :scale: 30%
 
 .. disqus::
