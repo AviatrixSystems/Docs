@@ -65,7 +65,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - Site to Cloud IPSEC VPN 
    - FREE - EC2 FlightPath Troubleshooting Tool
    
-- **Metered Networking as a Service** `Aviatrix Secure Networking as a Service - Metered Service <https://aws.amazon.com/marketplace/pp/B07D411SV9?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
+- **(Hosted by Aviatrix) Metered Networking as a Service** `Aviatrix Secure Networking as a Service - Metered Service <https://aws.amazon.com/marketplace/pp/B07D411SV9?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
@@ -80,7 +80,7 @@ Select the right AMI that meets your use case and subscription preference. Click
    - Encrypted Peering 
    - Site to Cloud IPSEC VPN 
 
-- **Utility User VPN AMI** We offer a range of `OpenVPN® User Access <http://docs.aviatrix.com/HowTos/uservpn.html>`_ AMIs. You can choose `25 User VPN Server <https://aws.amazon.com/marketplace/pp/B076JR3PL6?ref=_ptnr_docs_link_startup_user025>`_, `100 User VPN Server <https://aws.amazon.com/marketplace/pp/B0773DJZ9R?ref=_ptnr_docs_link_startup_user100>`_.
+- **Aviatrix User VPN - Metered** `Aviatrix User VPN - Metered <https://aws.amazon.com/marketplace/pp/B07JXBVRM5?qid=1545886993814&sr=0-3&ref_=srh_res_product_title>`_ is a pay as you go cloud consumption model for remote user VPN use case as well as all others. 
 
 - **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a customer ID. 
 
@@ -123,12 +123,6 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
  - `Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
 
  - `Secure Networking Platform - Custom <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template?ref=_ptnr_docs_cta_custom_step2>`_
-
- - `SSL VPN Server - 25 users <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-sslvpn-25-users.json?ref=_ptnr_docs_cta_25users_step2>`_
-
- - `SSL VPN Server - 100 users <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-sslvpn-100-users.json?ref=_ptnr_docs_cta_100users_step2>`_
-
- - `SSL VPN Server Bundle (10 users + 1 peering) <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-sslvpnbundle.json?ref=_ptnr_docs_cta_10users1peering_step2>`_
 
  - `Cloud Interconnect BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template?ref=_ptnr_docs_cta_byol_step2>`_
  

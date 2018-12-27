@@ -30,7 +30,7 @@ For companion gateway, go to Transit Network -> Setup, go through Step 1, 2 (for
 2. Enable Transit GW for DMZ Connection
 ------------------------------------------
 
-In this step, the Aviatrix Controller creates the following resources for each main gateway and companion gateway::
+In this step, the Aviatrix Controller creates the following resources for each main gateway and companion gateway:
 
  - Ethernet interface eth2 on the gateway instance. 
  - a subnet with "dmz-egress" as suffix in its name in the transit VPC. 
@@ -55,7 +55,10 @@ through  main gateway without a firewall appliance.
 4. Insert Firewalls to Transit DMZ
 --------------------------------------
 
-Before you execute this step, you should launch instance based firewall appliances in the subnet created Step 2. 
+Before you execute this step, you should launch instance based firewall appliances in the subnet created at 
+Step 2 by the Aviatrix Controller. (The subnet should have "dmz-egress" as suffix in its name.)
+
+
 
 
 .. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
