@@ -53,7 +53,7 @@ through  main gateway without a firewall appliance.
   Test end to end traffic between Spoke VPC to on-prem before you execute the next step where you insert the Firewall device.
 
 
-4. Insert Firewalls Function in Transit DMZ
+4. Insert Firewall Function in Transit DMZ
 ---------------------------------------------
 
 Before you execute this step, you should create or allocate two subnets in the Transit VPC, one subnet to interface with the main gateway and another to interface with the companion gateway, as shown in the diagram below. 
