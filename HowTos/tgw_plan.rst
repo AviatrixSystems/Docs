@@ -216,13 +216,4 @@ This step delete the TGW created in Step 1.
 .. |transit_complete| image:: tgw_plan_media/transit_complete.png
    :scale: 30%
 
-.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
-   :scale: 50%
-
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
-   :scale: 50%
-
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
-   :scale: 50%
-
 .. disqus::

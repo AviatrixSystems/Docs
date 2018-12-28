@@ -14,9 +14,11 @@ The objectives here are:
 
  - No change to any on-prem network.   
  - No change to the connectivity between AWS VGW and on-prem. (either over DX or over Internet or both)
- - Re-use AWS VGW deployed in Transit hub VPC.
+ - Re-use AWS VGW deployed in CSR based Transit hub VPC if possible.
  - No change to existing VPC infrastructure.
  - Minimum operation downtime.
+
+There are a couple of patterns during the migration phase, consider the one that meets your requirements. 
 
 .. Note::
 
@@ -32,9 +34,17 @@ proceed. The security domains can be added and modified at any time.
 
 2. **Create Security Domains** If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. Follow `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_ to build connection policies. If you do not intend to build custom security domains, skip this section. 
 
-3. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. You can consider using a new Transit hub VPC in case the existing Transit hub VPC does not have enough IP addresses to launch new instances. (The Aviatrix Transit GW pair)
+3. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. For best practice, create a new Transit hub VPC to deploy the Aviatrix Transit GW. 
 
-4. **Connect Aviatrix Transit GW to VGW** `Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to Aviatrix Transit GW. Make sure you specify a different "AS" number for the BGP session of Aviatrix Transit GW connection to VGW. Also note that if Transit GW and VGW are in the same account and same VPC, VGW must be detached from the VPC. 
+4a. **Reuse VGW: Connect Aviatrix Transit GW to VGW** `Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to Aviatrix Transit GW. Make sure you specify a different "AS" number for the BGP session of Aviatrix Transit GW connection to VGW. Also note that if Transit GW and VGW are in the same account and same VPC, VGW must be detached from the VPC. 
+
+A diagram for this migration path is shown below:
+
+|tgw_csr_migrate_pattern1|
+
+4b. **Connect Aviatrix Transit GW to a new VGW** There are certain situations where you need CSR during migration phase for packet forwarding. In such scenarios, create a new VGW and connect it CSR as a Spoke VPC to CSR Transit, as shown in the diagram below. After all Spoke VPCs are migrated, you then remove the CSR connection and connect the VGW to on-prem. During migration, the network pattern is shown as below:
+
+|tgw_csr_migrate_pattern2|
 
 5. **Remove a Spoke VPC** Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
 
@@ -48,6 +58,10 @@ proceed. The security domains can be added and modified at any time.
 The effective operation downtime for each Spoke VPC is the time between Transit Network tag  being removed for the Spoke VPC and the Spoke VPC being attached to Aviatrix Transit GW. It should be a few minutes. 
 
 
-.. |image1| image:: FAQ_media/image1.png
+.. |tgw_csr_migrate_pattern1| image:: tgw_csr_migrate_media/tgw_csr_migrate_pattern1.png
+   :scale: 30%
+
+.. |tgw_csr_migrate_pattern2| image:: tgw_csr_migrate_media/tgw_csr_migrate_pattern2.png
+   :scale: 30%
 
 .. disqus::
