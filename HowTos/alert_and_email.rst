@@ -25,6 +25,8 @@ If you like the alert messages to be sent to a different email,
   go to Settings -> Controller -> STATUS CHANGE EVENT EMAIL, 
   fill in a new email address and click Save. 
 
+|change_alert_email|
+
 How to change source of email notification 
 -------------------------------------------
 
@@ -37,5 +39,7 @@ your own organization email,
   Enter a Test Email address if you like to test the configuration. 
   Click Save when done.  
 
+.. |change_alert_email| image:: alert_and_email_media/change_alert_email.png
+   :scale: 30%
 
 .. disqus::
