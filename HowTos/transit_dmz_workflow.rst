@@ -28,7 +28,7 @@ For main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (
 
 For companion gateway, go to Transit Network -> Setup, go through Step 1, 2 (for HA) and 3. Step 3 is necessary since companion gateway interfaces with VGW, on-prem CloudN or a third party device. 
 
-2. Enable Transit GW for DMZ Connection
+2. Prepare Transit GW for DMZ Function
 ------------------------------------------
 
 In this step, the Aviatrix Controller creates the following resources for each main gateway and companion gateway:
@@ -41,7 +41,7 @@ In this step, the Aviatrix Controller creates the following resources for each m
 
   You need to execute this step two times: one for the main gateway and one for the companion gateway. (The HA is automatically taken care of.) 
 
-3. Enable Transit VPC as DMZ
+3. Enable Transit DMZ
 ------------------------------
 
 In this step, the Aviatrix Controller associates the main gateway with the companion gateways. Once this step is 
@@ -53,8 +53,8 @@ through  main gateway without a firewall appliance.
   Test end to end traffic between Spoke VPC to on-prem before you execute the next step where you insert the Firewall device.
 
 
-4. Insert Firewalls to Transit DMZ
---------------------------------------
+4. Insert Firewalls Function in Transit DMZ
+---------------------------------------------
 
 Before you execute this step, you should create or allocate two subnets in the Transit VPC, one subnet to interface with the main gateway and another to interface with the companion gateway, as shown in the diagram below. 
 
@@ -78,6 +78,26 @@ Firewall Name                                   A name that is referenced by the
 
 If firewall HA is required, repeat Step 4 for the backup firewall instance. 
 
+5. Remove Firewall Function
+----------------------------
+
+This step is the opposite of Step 4.
+
+This step removes the operation of firewall instance. After this step is executed, packets are passed through
+between the two Aviatrix gateways. 
+
+6. Disable Transit DMZ
+---------------------------------
+
+This step is the opposite of Step 3. 
+
+This step disables the main gateway and companion gateway relationship. Packets can no longer be 
+passed through. You lose end to end packet forwarding. 
+
+7. Remove Transit GW DMZ Function
+-------------------------------------
+
+This step is the opposite of Step 2. 
 
 .. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
    :scale: 30%
