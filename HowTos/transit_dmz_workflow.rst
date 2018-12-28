@@ -7,6 +7,7 @@
 Transit DMZ Workflow
 =========================================================
 
+For more background information, read `Transit DMZ FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.
 
 1. Launch two sets of Aviatrix Transit Gateways
 ------------------------------------------------
@@ -55,14 +56,33 @@ through  main gateway without a firewall appliance.
 4. Insert Firewalls to Transit DMZ
 --------------------------------------
 
-Before you execute this step, you should launch instance based firewall appliances in the subnet created at 
-Step 2 by the Aviatrix Controller. (The subnet should have "dmz-egress" as suffix in its name.)
+Before you execute this step, you should create or allocate two subnets in the Transit VPC, one subnet to interface with the main gateway and another to interface with the companion gateway, as shown in the diagram below. 
 
+|main_companion_subnets|
 
+After the two subnets become available, launch firewall instance. 
+
+If firewall HA is required, repeat for the backup firewall instance. (both creating subnets and launch firewall instances.)
+
+Then execute Step 4 by filling the following information. 
+ 
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Transit VPC ID                                  The Transit VPC ID for the Transit DMZ deployment. .
+Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable. 
+Firewall main interface ENI                     The firewall EC2 instance ENI interface to the main gateway.y
+Firewall companion interface ENI                The firewall EC2 instance ENI interface to the companion gateway.
+Firewall Name                                   A name that is referenced by the Aviatrix Controller.
+==========================================      ==========
+
+If firewall HA is required, repeat Step 4 for the backup firewall instance. 
 
 
 .. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
    :scale: 30%
 
+.. |main_companion_subnets| image:: transit_dmz_media/main_companion_subnets.png
+   :scale: 30%
 
 .. disqus::

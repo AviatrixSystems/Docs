@@ -63,7 +63,9 @@ How should the firewall be deployed?
 
 A firewall typically has multiple interfaces. In order to deploy EC2 based firewall appliances, 
 you need to create or allocate at least two subnets in the Transit VPC. One subnet for the firewall interface that 
-works forwards packet to the main gateways, another subnet for the firewall interface that forwards packet to the companion gateway. 
+works forwards packet to the main gateways, another subnet for the firewall interface that forwards packet to the companion gateway, as shown in the diagram below.
+
+|main_companion_subnets|. 
 
 Aviatrix Controller will create VPC route tables to associate the firewall subnets and create necessary route entries 
 for packet forwarding. 
@@ -72,6 +74,9 @@ for packet forwarding.
    :scale: 30%
 
 .. |main_companion_gw| image:: transit_dmz_media/main_companion_gw.png
+   :scale: 30%
+
+.. |main_companion_subnets| image:: transit_dmz_media/main_companion_subnets.png
    :scale: 30%
 
 .. disqus::
