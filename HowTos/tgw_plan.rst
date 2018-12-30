@@ -121,6 +121,10 @@ Direct Connect or Internet.
 If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
 connection, return to this section and start with Step 4 to setup. 
 
+.. important::
+
+ For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. If your transit VPC does not spare /26 CIDR range, you can either `create a new VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ or add more CIDRs by following `these rules <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-resize>`_. For configuration, please refer to `these instructions <https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#add-ipv4-cidr>`_.
+
 Simple Transit Network
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -136,11 +140,6 @@ Transit DMZ
 ~~~~~~~~~~~~~
 
 If you plan to deploy Transit DMZ, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
-
-
-.. important::
-
- For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. If your transit VPC does not spare /26 CIDR range, you can either `create a new VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ or add more CIDRs by following `these rules <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-resize>`_. For configuration, please refer to `these instructions <https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#add-ipv4-cidr>`_.
 
 
 5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
