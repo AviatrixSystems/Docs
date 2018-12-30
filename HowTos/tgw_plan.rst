@@ -121,13 +121,21 @@ Direct Connect or Internet.
 If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
 connection, return to this section and start with Step 4 to setup. 
 
+Simple Transit Network
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
 return to this section and continue to the next step. 
+
 
 The example below shows what is accomplished when you complete Step 4, where a pair of Aviatrix Transit Gateways have been launched and connected to VGW.  
 
 |transit_gw|
 
+Transit DMZ
+~~~~~~~~~~~~~
+
+If you plan to deploy Transit DMZ, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
 
 
 .. important::
