@@ -105,6 +105,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_csr_migrate
    HowTos/Setup_Transit_Network_Terraform
    HowTos/transit_plus_security_vpc
+   HowTos/transitgw_external
    HowTos/insane_mode
 
 .. _Transit DMZ

@@ -87,6 +87,22 @@ Transit GW HA either.
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
 
+Starting from Release 4.1, there are three options to connect to Transit GW with BGP:
+
+ - AWS VGW
+ - External (or 3rd Party) Router/Firewall
+ - Aviatrix hardware appliance CloudN
+
+"External (or 3rd Party) Router/Firewall" option allows you to build BGP and IPSEC tunnel directly to on-prem or 
+in the cloud device. It bypasses AWS VGW or Azure VPN gateway, thus overcomes the route limit by these native
+services. Follow the instruction in this link to complete Step 3. 
+
+"Aviatrix hardware appliance" allows you to build BGP and IPSEC tunnel directly to on-prem Aviatrix hardware
+appliance. It achieves 10Gbps IPSEC performance and bypasses AWS VGW or Azure VPN gateway, thus overcomes both the 
+performance limit and route limit by these native services. Follow the instruction in this link to complete Step 3. 
+
+The instruction below is for Transit GW to connect to AWS VGW. 
+
 Before executing this step, a VGW must have already been created. 
 
 Select the VGW ID in the drop down menu, Customer gateway will be automatically created as the result of this step. 
