@@ -97,7 +97,7 @@ passed through. You lose end to end packet forwarding.
 7. Remove Transit GW DMZ Function
 -------------------------------------
 
-This step is the opposite of Step 2. 
+This step is the opposite of Step 2. Make sure you execute this step for both main gateway and the companion gateway.
 
 .. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
    :scale: 30%

@@ -53,7 +53,7 @@ When connecting over the Internet, as shown below, follow the instructions in th
 How to configure?
 --------------------
 
-The configuration is the `Step 3 in the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, when you select the option "External Device". We assume you have already completed Step 1 and Step 2. Follow the instructions below.
+The configuration is the `Step 3 in the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, when you select the option "External Device". We assume you have already completed `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ and `Step 2 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#optionally-enable-ha-for-the-transit-gateway>`_. Follow the instructions below.
 
 1. Fill the parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +71,7 @@ Primary Cloud Gateway      The Transit GW you created in `Step 1 <https://docs.a
 Remote Gateway Type        Select one device type. Select Generic if the external device is not in the drop down. 
 Algorithm                  Optional parameters. Leave it unselected if you don't know.
 Enable HA                  Select HA if there are two external devices. 
-Over DirectConnect         Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. When this option is selected, BGP and IPSEC run over private IP addresses.e
+Over DirectConnect         Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
 External Device IP         IP address of the external device
 Pre-shared Key             Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 =====================      ==========
@@ -87,6 +87,11 @@ At the left navigation bar, go to Site2Cloud, click on the connection you create
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP. . 
+
+4. Disconnect the external device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To disconnect, go to Transit Network -> Setup, at `Step 8 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_, select the Transit GW in the drop down menu, click Disconnect.
 
 
 .. |transitgw_dx| image:: transitgw_external_media/transitgw_dx.png

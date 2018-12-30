@@ -112,12 +112,11 @@ as shown below.
 
 -----------------------------------------------------------------------------------------------------------------------
 
+This section includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
+Direct Connect or Internet. 
 
 4. (Optional) Setup Aviatrix Transit GW  
 ------------------------------------------------------------------
-
-This section includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
-Direct Connect or Internet. 
 
 If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
 connection, return to this section and start with Step 4 to setup. 
@@ -159,7 +158,7 @@ Gateway Namen                                   Select a Transit GW from the dro
 6. (Optional) Attach Aviatrix Transit GW to TGW
 ------------------------------------------------------------------
 
-This step attaches the Aviatrix Edge VPC to the TGW and thus allows the Aviatrix Transit GW to send and receive packets from TGW. 
+This step attaches the Aviatrix Edge VPC to the TGW and the Aviatrix Edge Domain, thus allowing the Aviatrix Transit GW to send and receive packets from TGW. 
 
 Note there is no IPSEC tunnel between TGW and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the TGW, as shown in the diagram below. 
 
@@ -177,8 +176,7 @@ This section consists of delete functions.
 7. (Optional) Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 
-Step 7, 8, 9 and 10 are for all delete functions.   
-
+This step is the opposite of Step 6.
 
 8. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
