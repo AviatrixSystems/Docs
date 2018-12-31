@@ -82,6 +82,7 @@ TGW Orchestrator can be deployed with some Spoke VPCs run Aviatrix gateways. Whe
  #. If you need various NAT function between Spoke and Transit VPC, use Aviatrix gateway in the Spoke VPC. 
  #. If you need to connect a Azure VNet as Spoke, use Aviatrix gateway in the Spoke VPC. 
  #. If you need to obtain Netflow and log information from the Spoke and Transit, use Aviatrix gateway. 
+ #. If you want to build a fully isolated Transit network where there is no inter VPC connectivity by default. 
 
 AWS released both CloudFormation and Terraform support for TGW, why should I use Aviatrix Orchestrator?
 --------------------------------------------------------------------------------------------------------
