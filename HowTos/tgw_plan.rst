@@ -180,6 +180,10 @@ on-prem. (Make sure instance security groups and any on-prem firewalls are confi
 
 This section consists of delete functions. 
 
+.. note::
+
+ To delete an Aviatrix Transit GW attached to a TGW, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance. 
+
 7. (Optional) Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 
@@ -188,7 +192,8 @@ This step is the opposite of Step 6.
 8. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
 
-This step removes the designation of an Aviatrix Transit GW from TGW Orchestrator. 
+This step deletes the eth1 interface and other resources associated with the  Aviatrix Transit GW 
+from TGW Orchestrator. 
 
 9. Delete Security Domain
 ---------------------------
