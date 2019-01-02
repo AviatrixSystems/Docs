@@ -58,3 +58,17 @@ Tips & Tricks
 * Syslogs are on not viewable on Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, rsyslog.
 * Splunk Cloud is not supported yet. Only Splunk Enterprise is supported at this time.
 * Starting release 4.0, there is a daily connectivity check from all Aviatrix Gateways and Controller to the syslog server, when rsyslog is enabled. If any of the devices cannot reach the server successfully, an email is sent out to the admin with the Subject:"Failed to connect to Remote Syslog Server"
+
+
+**AWS Infrastructure:**
+
+* **Disk resize for Gateway:**
+
+  * Login to AWS console and locate the Aviatrix gateway instance
+  * Click on Root device: /dev/sda1 and then click on EBS ID vol-xxxxxxxxxx.
+  * With the volume selected, click Action > Modify Volume to change the Disk Size
+  * Click OK to start the resize process. Please make sure you wait until the State of the volume is "in-use - completed (100%)".
+  * Select the Aviatrix gateway instance in EC2 page. Click Reboot for the disk space to take effect. This will cause down time (< 5 minutes) due to the reboot process.
+  * Confirm the gateway is in running state in AWS console.
+  * Login to your controller to run gateway diagnostics and submit to us. Please also upload the gateway `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ to us.
+  
