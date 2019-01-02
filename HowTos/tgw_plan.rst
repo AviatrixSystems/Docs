@@ -112,7 +112,7 @@ as shown below.
 
 -----------------------------------------------------------------------------------------------------------------------
 
-This section includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
+This section is for hybrid connection, it includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
 Direct Connect or Internet. 
 
 4. (Optional) Setup Aviatrix Transit GW  
