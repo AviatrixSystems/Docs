@@ -113,7 +113,7 @@ Create VPN Users
 Download VPN User Certificate
 ###############################
 
-Once the VPN user is created, you can download the VPN certificate to your desktop, as shown 
+You can also download the VPN user certificate to your desktop, as shown 
 below. Load this certificate configuration file to your OpenVPN® client on your desktop. You should
 be able to connect then.
 
