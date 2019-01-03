@@ -73,3 +73,6 @@ Tips & Tricks
   * Confirm the gateway is in running state in AWS console.
   * Login to your controller to run gateway diagnostics and submit to us. Please also upload the gateway `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ to us.
   
+<!-- Start of aviatrix Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=f2e7c1d1-d0fb-454b-892b-e5d94f5e39dc"> </script>
+<!-- End of aviatrix Zendesk Widget script -->
