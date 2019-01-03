@@ -110,6 +110,15 @@ Create VPN Users
 
    |imageAddNewVPNUser|
 
+Download VPN User Certificate
+###############################
+
+Once the VPN user is created, you can download the VPN certificate to your desktop, as shown 
+below. Load this certificate configuration file to your OpenVPN® client on your desktop. You should
+be able to connect then.
+
+|download_vpnfile| 
+
 Conclusion
 ----------
 You now have a working Aviatrix VPN Gateway.  Users can connect and gain access to their cloud resources.
@@ -149,6 +158,9 @@ Detailed audit logs are maintained and available in various logging platforms.
 
 .. |imageAddNewVPNUser| image:: uservpn_media/add_new_vpn_user.png
    :scale: 50%
+
+.. |download_vpnfile| image:: uservpn_media/download_vpnfile.png
+   :scale: 30%
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
