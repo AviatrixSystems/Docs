@@ -7,6 +7,8 @@
 Transit DMZ Workflow
 =========================================================
 
+Transit DMZ is available for Release 4.1 and later. 
+
 For more background information, read `Transit DMZ FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.
 
 1. Launch two sets of Aviatrix Transit Gateways
@@ -15,6 +17,10 @@ For more background information, read `Transit DMZ FAQ <https://docs.aviatrix.co
 This step launches two Aviatrix gateways in the transit VPC, main gateway and companion gateway. If you require 
 multi AZ HA, you should deploy two main gateways and two companion gateways. 
 
+.. tip::
+
+  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. This will create two public subnets and two private subnets each with /28 CIDR range in two AZs 
+
 The main gateway(s) interfaces with Spoke VPC gateways or TGW, while the companion gateway(s) interface with VGW or 
 on-prem devices. The diagram below describes the naming convention of the two gateways.  
 
@@ -22,7 +28,7 @@ on-prem devices. The diagram below describes the naming convention of the two ga
 
 .. important::
   
-  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.medium or t3.medium. In addition, the Transit VPC should have unused subnet space for additional /28 subnets that Transit DMZ creates. 
+  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.medium or t3.medium. In addition, if you **did not** use Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as the tip shown above, make sure the Transit VPC have unused subnet space for additional /28 subnets that Transit DMZ creates. 
 
 Main gateway
 ~~~~~~~~~~~~~
@@ -66,13 +72,18 @@ through  main gateway without a firewall appliance.
 4. Insert Firewall Function in Transit DMZ
 ---------------------------------------------
 
-Before you execute this step, you should create or allocate two subnets in the Transit VPC, one subnet to interface with the main gateway and another to interface with the companion gateway, as shown in the diagram below. 
+The firewall instance typically requires multiple Ethernet interfaces. In this solution, firewall instances requires one interface to the main gateway and another to the companion gateway, 
+as shown below.
 
 |main_companion_subnets|
 
-After the two subnets become available, launch firewall instance. 
+.. tip::
 
-If firewall HA is required, repeat for the backup firewall instance. (both creating subnets and launch firewall instances.)
+  Use the two private subnets in the transit VPC created by the Useful tool in the early step to be the Firewall main interface subnet and Firewall companion interface subnet. 
+
+Launch the firewall instance from AWS Console. 
+
+If firewall HA is required, repeat for the backup firewall instance. 
 
 Then execute Step 4 by filling the following information. 
  
