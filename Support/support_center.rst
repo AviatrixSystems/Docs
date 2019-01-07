@@ -74,3 +74,7 @@ Tips & Tricks
   * Confirm the gateway is in running state in AWS console.
   * Login to your controller to run gateway diagnostics and submit to us. Please also upload the gateway `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ to us.
   
+
+**Terraform:**
+
+* Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ has multiple branches. Please make sure that you pick the branch which matches with the version of your the software release on your Aviatrix Controller. The latest release is supported with the mainline. For example: UserConnect-3.5 branch if you are using Version 3.5 on Controller.
