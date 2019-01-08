@@ -7,7 +7,7 @@
 Prerequisites for a Transit Network in AWS
 ==========================================
 
-Setting up a transit network in AWS is simple with `Aviatrix's Transit Network Workflow <./HowTos/transitvpc_workflow.html>`__.  Before getting started with this workflow, make sure you have the following:
+Setting up a transit network in AWS is simple with `Aviatrix's Transit Network Workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.  Before getting started with this workflow, make sure you have the following:
 
 #. **Transit VPC**
 
