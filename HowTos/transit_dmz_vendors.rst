@@ -4,7 +4,7 @@
 
 
 =========================================================
-Transit DMZ Vendor Integration
+Vendor Integration
 =========================================================
 
 Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. . 
