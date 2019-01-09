@@ -116,6 +116,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/transit_dmz_faq
    HowTos/transit_dmz_workflow
+   HowTos/transit_dmz_vendors
 
 .. _Security:
 
