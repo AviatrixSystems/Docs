@@ -61,7 +61,7 @@ Here are the steps for setting up SFC in a preview release.
 
 ::
   
-  scp -i guest_private_key.pem guest@gateway_private_ip_address:/home/guest/bucket_name/.
+  scp -i guest_private_key.pem file_to_be_uploaded guest@gateway_private_ip_address:/home/guest/bucket_name/.
 
 What are the known limitations of the preview release?
 ------------------------------------------------------
