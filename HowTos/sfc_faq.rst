@@ -50,7 +50,7 @@ How to setup SFC with preview release?
 
 Here are the steps for setting up SFC in a preview release.
 
- 1. Custom upgrade to preview.
+ 1. Custom upgrade to 4.1-sfc-preview.
  #. At the Aviatrix Controller console, create an AWS account with access key and secret key (NOT with IAM roles.)
  #. Launch an Aviatrix gateway in this account in a VPC.
  #. Go to AWS console VPC page to create a VPC endpoint for S3 with the VPC where the gateway was launched.  
