@@ -6,11 +6,11 @@
 Aviatrix Terraform Provider
 ===========================
 
-Aviatrix terraform provider is used to interact with Aviatrix resources. 
+Aviatrix Terraform Provider is used to interact with Aviatrix resources.
 
 Read the `Aviatrix Terraform Provider Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_ to setup the environment.
 
-The provider allows you to manage Aviatrix resources like account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click this `link <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using terraform.
+The provider allows you to manage Aviatrix resources such as account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click `here <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using Terraform.
 
 Example Usage
 =============
@@ -31,7 +31,7 @@ Example Usage
 
 Resources
 =========
-Use the navigation to the left to read about the available resources, along with their examples. More resources will be added in future.
+Use the navigation pane on the left to read about the available resources, along with their examples. More resources will be added in the future.
 
 aviatrix_account
 ----------------
@@ -178,7 +178,7 @@ Manages FQDN filtering for Aviatrix gateway
            fqdn = "reddit.com"
            proto = "tcp"
            port = "443"
-          }	
+          }
         ]
 
 
@@ -233,7 +233,7 @@ Manages L4 stateful firewall policies for Aviatrix gateway
 	# policy - Enter policy as list of rules.
 	# 6 fields are required for each rule item: protocol, src_ip, log_enable, dst_ip, allow_deny and port.
 	# Valid values for protocol: "all", "tcp", "udp", "icmp", "sctp", "rdp", "dccp"
-	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" are etc (Name of the "aviatrix_firewall_tag" resource created earlier). 
+	# Valid values for src_ip and dst_ip: CIDRs separated by comma e.g.: "10.30.0.0/16,10.45.0.0/20", or tag names such "HR" or "marketing" are etc (Name of the "aviatrix_firewall_tag" resource created earlier).
 	# Valid values for port: a single port or a range of port numbers. e.g.: "25", "25:1024"
 	# Valid values for deny_allow: "allow" and "deny"
 	# Valid values for log_enable: "on" and "off"
@@ -337,7 +337,7 @@ Manages VPN user Profiles
 	  password = "password"
 	}
 
-	# name - Enter any name for the profile 
+	# name - Enter any name for the profile
 	# base_rule - Enter allow_all or deny_all, based on whether you want a white list or black list
 	# users - List of VPN users to attach to this profile
 	# policy - List of policies for the profile.
@@ -363,7 +363,7 @@ Manages VPN user Profiles
            proto = "tcp"
            port = "443"
            target = "10.0.0.1/32"
-          }	
+          }
         ]
 
 	resource "aviatrix_vpn_profile" "test_profile2" {
@@ -382,7 +382,7 @@ Manages VPN user Profiles
            proto = "tcp"
            port = "443"
            target = "10.0.0.1/32"
-          }	
+          }
         ]
 
 
