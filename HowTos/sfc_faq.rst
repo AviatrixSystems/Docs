@@ -15,7 +15,7 @@ Aviatrix Secure File Copy is a tool that allows you to copy files between on-pre
 What are the benefits of Secure File Copy?
 ----------------------------------------------------------------------------
 
-The biggest benefit of Secure File Copy (SFC) is its ability for you to have control over 
+The key benefit of Secure File Copy (SFC) is its ability for you to have control over 
 the data transfer in and out of AWS S3 bucket. 
 
 If you upload files to S3 over Direct Connect, you have to use Direct Connect Public VIF which 
@@ -34,7 +34,8 @@ SFC works by launch an Aviatrix gateway in a VPC that has private connection to 
 Through SFC, an S3 bucket is mounted as a local directory to the Aviatrix gateway with the same
 name as the bucket. An VPC endpoint is created to serve S3 so that data objects transferring is private within the AWS network and free of charge. File copying from on-prem to the gateway directory is transferred to the S3 bucket. 
 
-With this approach, you can specify policies such as only allowing the VPC endpoint to access S3 buckets. 
+With this approach, you can specify policies such as only allowing the VPC endpoint to access S3 buckets. Since only the mounted S3 buckets on Aviatrix gateway can be used for file transferring, SFC 
+effectively locks down which S3 buckets and from where data can be transferred.  
 
 SFC also works in a VPC that connects over Internet with IPSEC. 
 
