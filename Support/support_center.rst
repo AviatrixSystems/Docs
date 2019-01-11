@@ -59,6 +59,7 @@ Tips & Tricks
       * For “mktg” user you can associate with, “marketing” and “sales” profiles – which provides access to the marketing and sales VPC’s. You can share “marketing” user’s .ovpn file with all marketing employees
       * You can attach all profiles to “admin” user– which provides access to all VPCs. You can share “admins” user’s .ovpn file with all admins
 
+    * Microsoft Edge does not behave well with SAML authentication process when it is set as the default browser. Please try setting your default browser to Firefox or Chrome.
 
 **Transit Solution:**
 
