@@ -10,7 +10,11 @@ Secure File Copy FAQ
 What is Secure File Copy?
 ---------------------------
 
-Aviatrix Secure File Copy is a tool that allows you to copy files between on-prem and AWS S3 in a secure and managed manner. 
+Do your developers would like leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure
+manner?
+
+Aviatrix Secure File Copy is a tool that allows your developers to copy files between on-prem  
+while enabling you to control which S3 buckets and from where the file can be copied. 
 
 What are the benefits of Secure File Copy?
 ----------------------------------------------------------------------------
@@ -19,7 +23,7 @@ The key benefit of Secure File Copy (SFC) is its ability for you to have control
 the data transfer in and out of AWS S3 bucket. 
 
 If you upload files to S3 over Direct Connect, you have to use Direct Connect Public VIF which 
-means you must open your firewall to all AWS public services. An end user can upload to her own
+means you must open your firewall to all AWS public services. An end user can upload to his own
 S3 account and bucket, leading to data leakage. 
 
 Same issue of data leakage occurs if you upload files to S3 over public Internet.  
