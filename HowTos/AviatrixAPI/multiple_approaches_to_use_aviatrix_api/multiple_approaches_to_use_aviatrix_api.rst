@@ -85,7 +85,7 @@ Linux "curl" command
         --url https://10.67.0.2/v1/api \
         --form action=login \
         --form 'username=admin' \
-        --form 'password=Oij54138!'
+        --form 'password=MyPassword#'
 
     {
         "return":true,
