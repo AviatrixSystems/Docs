@@ -81,7 +81,20 @@ Linux "curl" command
 
 ::
 
-    curl  -k  "https://AVIATRIX_CONTROLLER_IP/v1/api?action=login&username=admin&password=MY_PASSWORD"
+    ubuntu@ip-10-1-1-2:/$ curl -k --request POST \
+        --url https://10.67.0.2/v1/api \
+        --form action=login \
+        --form 'username=admin' \
+        --form 'password=Oij54138!'
+
+    {
+        "return":true,
+        "results":"User login:admin in account:admin has been authorized successfully on controller 10.67.0.2
+                   - Please check email confirmation.",
+        "CID":"ntFqLV4NNr63sTmxp42S"
+    }
+
+    ubuntu@ip-10-1-1-2:/$ 
 
 
 **Example:**
@@ -113,7 +126,7 @@ Python "requests" module
     }
 
     # Use "requests" module to invoke REST API
-    response = requests.get(url=base_url, params=payload, verify=False)
+    response = requests.post(url=base_url, data=payload, verify=False)
 
     # If login successfully
     if True == response.json()["return"]:
