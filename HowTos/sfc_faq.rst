@@ -10,8 +10,7 @@ Secure File Copy FAQ
 What is Secure File Copy?
 ---------------------------
 
-Do your developers would like leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure
-manner?
+Would your developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner?
 
 Aviatrix Secure File Copy is a tool that allows your developers to copy files between on-prem  
 while enabling you to control which S3 buckets and from where the file can be copied. 
