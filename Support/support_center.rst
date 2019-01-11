@@ -46,6 +46,19 @@ Tips & Tricks
 * Sometimes the clients might take some time to connect due to ELB's load - check the logs on the client.
 * In the case of a full tunnel deployment, if an OpenVPN Gateway is edited to toggle the "Use VPC/VNet DNS Server" setting, please follow it by clicking on  OpenVPN/EditConfig/ReloadDHCPConfiguration to let the changes take effect. Note that this will restart the OpenVPN processes on the gateway, affecting all the connected clients.
 * You can use `REST API <https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_get_vpn_ssl_ca_configuration>`_ to download vpn configuration for your users and save it on a shared folder, if you do not want to send them via email.
+* **SAML:**
+
+  * **Our recommended design** is to let your VPN users connect into your cloud environment through one gateway and use the peering between VPC’s to provide access to your VPN Client’s into your other VPC’s. We recommend using VPN profiles to control/limit access to other VPC’s as you see fit.
+  * **SAML and User on Controller:** Once you enable SAML auth for an OpenVPN gateway, you need to create a dummy user on the controller to create a .ovpn file – you can share this user’s .ovpn file with all of your users. As the second authentication is through SAML, this should provide good security. This is per VPC+ELB/GW setup. If you have more than one such deployed VPC+ELB/GW setups, you would need a .ovpn file for each of those setups.
+  * **Multiple Simultaneous Sessions from Client:** Currently we do not support multiple VPN sessions from the same pc via the Aviatrix VPN Client. We only support SAML auth via our `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_
+  * **Profile from IdP:** If a custom attribute “Profile” is added in IdP and passed to Aviatrix during authentication, Aviatrix controller can attach the Profile provided by the IdP to the VPN user. Currently we only allow one profile value to be passed via SAML auth. This will override any local settings on the controller.
+  * **Multiple Profiles for each User:** If you want to have more than one profile, you can create a user on the controller and attach one or more profiles to this user. Please make sure that all the base policies are the same if you do use multiple profiles per user. You can share this users .ovpn file with the set of users you would want to have these Profiles associated. Please note that, for these users if the controller receives a Profile value during the SAML auth from the IdP – that will override the settings on the Controller. For example, you can create four users – “general”, “dev”, “mktg”, “admin”.
+
+    * You can associate no profiles with “general” user and share the .ovpn file for the “general” user with all your OpenVPN users who would have profiles set at the IdP
+    * For “dev” user you can associate with, say, “developer” profile – which provides access to the developer vpc. You can share “dev” user’s .ovpn file with all developers
+    * For “mktg” user you can associate with, “marketing” and “sales” profiles – which provides access to the marketing and sales VPC’s. You can share “marketing” user’s .ovpn file with all marketing employees
+    * You can attach all profiles to “admin” user– which provides access to all VPCs. You can share “admins” user’s .ovpn file with all admins
+
 
 **Transit Solution:**
 
