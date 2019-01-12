@@ -68,11 +68,11 @@ attachment between the PAN and its attached TGW. Both PANs advertise a default r
 
     - At AWS Console, check Transit Gateway Route Tables for TGW1 and TGW2. For each route advertised by PANs (0.0.0.0/0 and 10.201.0.0/16), there are four attachments. These four attachments are the four IPSec tunnels from both PAN1 and PAN2. TGW will use ECMP to distribute traffic among these four IPSec tunnels. One sample TGW route table is as below:
 
-    |tgw-pan-ecmp1|
+|tgw-pan-ecmp1|
 
     - At PAN portal, check both PANs' route tables. Taking PAN1 as an example, traffic destinating to VPC1 CIDR (10.200.0.0/16) has two next hops. These two next hops are TGW1 IP addresses for terminating the two IPSec tunnesl between PAN1 and TGW1. Same thing for traffic destinating to VPC3 CIDR (10.202.0.0.16). The image below is route table from PAN1. Please note that "E" flag highlighted indicates ECMP is running among the two tunnels.
 
-    |tgw-pan-ecmp2|
+|tgw-pan-ecmp2|
 
     - Run traffic monitor at PAN. Send pings between VPC1 and VPC3 and verify ICMP packets flowing through PAN1/PAN2.
 
@@ -92,7 +92,7 @@ Summary
 ---------
 
 Running ECMP between TGW and multiple firewall instances cannot guarantee the returning traffic will go through the same firewall instance as the
-initiating traffic. As such, the ECMP based solution cannot be used to load balance traffic between multiple firewall instances between on-prem and cloud. n
+initiating traffic. As such, the ECMP based solution cannot be used to load balance traffic between multiple firewall instances between on-prem and cloud.
 
 The technical reason behind it is that the two sets of ECMP running between firewall and TGW and between firewall and on-prem have no coordination among them. The ECMP decision to determine 
 the next hop are made independently, resulting in the situation when the return traffic does not always goes through the same firewall instance as the initiating traffic. 
