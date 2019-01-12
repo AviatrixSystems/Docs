@@ -92,6 +92,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_csr_migrate
    HowTos/tgw_egress_vpc
    HowTos/tgw_route_limit
+   HowTos/tgw_pan_ecmp
 
 .. _Transit Network:
 
