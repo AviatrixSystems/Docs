@@ -105,10 +105,10 @@ the next hop are made independently, resulting in the situation when the return 
 .. |tgw-pan-ecmp| image:: tgw_pan_ecmp_media/tgw-pan-ecmp.png
    :scale: 60%
 
-.. |tgw-pan-ecmp1| image:: tgw_pan_ecmp_media/tgw-pan-ecmp1.png
+.. |tgw-pan-ecmp1| image:: tgw_pan_ecmp_media/tgw-pan-ecmp1.PNG
    :scale: 60%
 
-.. |tgw-pan-ecmp2| image:: tgw_pan_ecmp_media/tgw-pan-ecmp2.png
+.. |tgw-pan-ecmp2| image:: tgw_pan_ecmp_media/tgw-pan-ecmp2.PNG
    :scale: 60%
 
 .. add in the disqus tag
