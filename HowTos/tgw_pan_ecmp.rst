@@ -28,9 +28,9 @@ AZ-a and PAN2 is in AZ-b.
 
 Both PANs have three interfaces and all three interfaces have EIPs associated:
 
-- eth0: Management interface dedicated for remote access to PAN's portal
-- eth1: Public IP used for creating Customer Gateway with TGW1
-- eth2: Public IP used for creating Customer Gateway with TGW2
+    - eth0: Management interface dedicated for remote access to PAN's portal
+    - eth1: Public IP used for creating Customer Gateway with TGW1
+    - eth2: Public IP used for creating Customer Gateway with TGW2
 
 |tgw-pan-ecmp|
 
@@ -42,8 +42,8 @@ Our configuration steps are as following:
 
 3. Update the route tables of VPC1 and VPC3:
 
-- VPC1: Traffic destinating to VPC3 CIDR -> TGW1-ID
-- VPC3: Traffic destinating to VPC1 CIDR -> TGW2-ID
+    - VPC1: Traffic destinating to VPC3 CIDR -> TGW1-ID
+    - VPC3: Traffic destinating to VPC1 CIDR -> TGW2-ID
 
 4. Create two VPN Transit Gateway Attachments at TGW1. One attachment uses PAN1-eth1 as Customer Gateway and the
 other attachment uses PAN2-eth1 as Customer Gateway. Both attachments require BGP running between PANs and TGW1.
@@ -59,24 +59,24 @@ attachment between the PAN and its attached TGW. Both PANs advertise a default r
 
 7. Verify ECMP is running between TGWs and PANs.
 
-- At AWS Console, check Transit Gateway Route Tables for TGW1 and TGW2. For each route advertised by PANs
-(0.0.0.0/0 and 10.201.0.0/16), there are four attachments. These four attachments are the four IPSec tunnels
-from both PAN1 and PAN2. TGW will use ECMP to distribute traffic among these four IPSec tunnels. One sample
-TGW route table is as below:
+    - At AWS Console, check Transit Gateway Route Tables for TGW1 and TGW2. For each route advertised by PANs
+    (0.0.0.0/0 and 10.201.0.0/16), there are four attachments. These four attachments are the four IPSec tunnels
+    from both PAN1 and PAN2. TGW will use ECMP to distribute traffic among these four IPSec tunnels. One sample
+    TGW route table is as below:
 
-|tgw-pan-ecmp1|
+    |tgw-pan-ecmp1|
 
-- At PAN portal, check both PANs' route tables. Taking PAN1 as an example, traffic destinating to VPC1 CIDR
-(10.200.0.0/16) has two next hops. These two next hops are TGW1 IP addresses for terminating the two IPSec tunnesl
-between PAN1 and TGW1. Same thing for traffic destinating to VPC3 CIDR (10.202.0.0.16). The image below is route
-table from PAN1. Please note that "E" flag highlighted indicates ECMP is running among the two tunnels.
+    - At PAN portal, check both PANs' route tables. Taking PAN1 as an example, traffic destinating to VPC1 CIDR
+    (10.200.0.0/16) has two next hops. These two next hops are TGW1 IP addresses for terminating the two IPSec tunnesl
+    between PAN1 and TGW1. Same thing for traffic destinating to VPC3 CIDR (10.202.0.0.16). The image below is route
+    table from PAN1. Please note that "E" flag highlighted indicates ECMP is running among the two tunnels.
 
-|tgw-pan-ecmp2|
+    |tgw-pan-ecmp2|
 
-- Run traffic monitor at PAN. Send pings between VPC1 and VPC3 and verify ICMP packets flowing through PAN1/PAN2.
+    - Run traffic monitor at PAN. Send pings between VPC1 and VPC3 and verify ICMP packets flowing through PAN1/PAN2.
 
 After bringing up the setup, we run wget at VPC1 EC2 to browse the HTTP server running at VPC3 EC2 and observe the
- following behaviors:
+following behaviors:
 
 1. Stop PAN2 at AWS Console and only keep PAN1 running. wget from VPC1 to VPC3 always succeed.
 
