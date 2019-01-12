@@ -4,7 +4,7 @@
 
 
 =======================================================================
-TGW ECMP from DMZ Firewall Limitation Test Validation 
+TGW ECMP for DMZ Deployment  Limitation Test Validation 
 =======================================================================
 
 Introduction
