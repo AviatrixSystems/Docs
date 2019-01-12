@@ -72,11 +72,11 @@ attachment between the PAN and its attached TGW. Both PANs advertise a default r
 
     - At PAN portal, check both PANs' route tables. Taking PAN1 as an example, traffic destinating to VPC1 CIDR (10.200.0.0/16) has two next hops. These two next hops are TGW1 IP addresses for terminating the two IPSec tunnesl between PAN1 and TGW1. Same thing for traffic destinating to VPC3 CIDR (10.202.0.0.16). The image below is route table from PAN1. Please note that "E" flag highlighted indicates ECMP is running among the two tunnels.
 
+|tgw-pan-ecmp2|
 
     - Run traffic monitor at PAN. Send pings between VPC1 and VPC3 and verify ICMP packets flowing through PAN1/PAN2.
 
 
-|tgw-pan-ecmp2|
 
 After bringing up the setup, we run wget at VPC1 EC2 to browse the HTTP server running at VPC3 EC2 and observe the
 following behaviors:
@@ -100,16 +100,16 @@ The technical reason behind it is that the two sets of ECMP running between fire
 the next hop are made independently, resulting in the situation when the return traffic does not always goes through the same firewall instance as the initiating traffic. 
 
 .. |dmz_with_ecmp| image:: tgw_pan_ecmp_media/dmz_with_ecmp.png
-   :scale: 60%
+   :scale: 30%
 
 .. |tgw-pan-ecmp| image:: tgw_pan_ecmp_media/tgw-pan-ecmp.png
-   :scale: 60%
+   :scale: 30%
 
 .. |tgw-pan-ecmp1| image:: tgw_pan_ecmp_media/tgw-pan-ecmp1.PNG
-   :scale: 60%
+   :scale: 30%
 
 .. |tgw-pan-ecmp2| image:: tgw_pan_ecmp_media/tgw-pan-ecmp2.PNG
-   :scale: 60%
+   :scale: 30%
 
 .. add in the disqus tag
 
