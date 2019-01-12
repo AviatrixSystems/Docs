@@ -18,7 +18,7 @@ The question is can TGW ECMP be used to deploy a transit DMZ as shown in the dia
 
 |dmz_with_ecmp|
 
-If the above deployment is feasible, customers can inspect traffic between on-prem and cloud and effectively build a scale out DMZ architecture. 
+If the above deployment were feasible, customers could inspect traffic between on-prem and cloud and effectively build a scale out DMZ architecture. 
 
 Test Validation
 ----------------
