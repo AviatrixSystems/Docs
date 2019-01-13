@@ -70,7 +70,8 @@ The diagram below illustrates the high performance encryption between Transit VP
 Instance sizes and IPSEC Performance 
 ---------------------------------------------
 
-Insane mode is available on AWS for C5 series.
+Insane mode is available on AWS for C5 series. For more performance test results and how to
+tune your environment to get the best performance, check out `this document. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
 ==================  ==============  ==============
  MTU size            C5.9xlarge      C5.18xlarge
