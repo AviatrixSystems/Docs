@@ -19,7 +19,7 @@ multi AZ HA, you should deploy two main gateways and two companion gateways.
 
 .. tip::
 
-  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. This will create two public subnets and two private subnets each with /28 CIDR range in two AZs 
+  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. Select the option "Aviatrix Transit VPC". 
 
 The main gateway(s) interfaces with Spoke VPC gateways or TGW, while the companion gateway(s) interface with VGW or 
 on-prem devices. The diagram below describes the naming convention of the two gateways.  
