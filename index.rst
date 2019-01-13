@@ -108,6 +108,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_plus_security_vpc
    HowTos/transitgw_external
    HowTos/insane_mode
+   HowTos/insane_mode_perf
 
 .. _Transit DMZ
 
