@@ -93,11 +93,36 @@ Use the information provided in the configuration file to configure the on-prem 
 
 To disconnect, go to Transit Network -> Setup, at `Step 8 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_, select the Transit GW in the drop down menu, click Disconnect.
 
+Appendix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
+Cisco ISR/ASR router configuration:
+
+|transitgw_phase1|
+
+|transitgw_phase2|
+
+|transitgw_tunnel|
+
+|transitgw_bgp|
 
 .. |transitgw_dx| image:: transitgw_external_media/transitgw_dx.png
    :scale: 30%
 
 .. |transitgw_internet| image:: transitgw_external_media/transitgw_internet.png
    :scale: 30%
+
+.. |transitgw_phase1| image:: transitgw_external_media/transitgw_phase1.png
+   :scale: 50%
+
+.. |transitgw_phase2| image:: transitgw_external_media/transitgw_phase2.png
+   :scale: 50%
+
+.. |transitgw_tunnel| image:: transitgw_external_media/transitgw_tunnel.png
+   :scale: 50%
+
+.. |transitgw_bgp| image:: transitgw_external_media/transitgw_bgp.png
+   :scale: 50%
 
 .. disqus::
