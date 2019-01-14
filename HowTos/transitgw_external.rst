@@ -113,16 +113,16 @@ Cisco ISR/ASR router configuration:
 .. |transitgw_internet| image:: transitgw_external_media/transitgw_internet.png
    :scale: 30%
 
-.. |transitgw_phase1| image:: transitgw_external_media/transitgw_phase1.png
-   :scale: 50%
+.. |transitgw_phase1| image:: transitgw_external_media/transitgw_phrase1.png
+   :scale: 70%
 
-.. |transitgw_phase2| image:: transitgw_external_media/transitgw_phase2.png
-   :scale: 50%
+.. |transitgw_phase2| image:: transitgw_external_media/transitgw_phrase2.png
+   :scale: 70%
 
 .. |transitgw_tunnel| image:: transitgw_external_media/transitgw_tunnel.png
-   :scale: 50%
+   :scale: 70%
 
 .. |transitgw_bgp| image:: transitgw_external_media/transitgw_bgp.png
-   :scale: 50%
+   :scale: 70%
 
 .. disqus::
