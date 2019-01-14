@@ -6,7 +6,10 @@
 Error Messages
 ###################################
 
-1. 
+This document records Aviatrix error messages, possible root causes and solutions.
+
+
+-----------------------------------------------------------------------------------
 
 ::
 
@@ -16,13 +19,16 @@ If you see this error message when you launch an Azure ARM gateway,
 chances are you have not subscribed to Aviatrix gateway during Azure onboarding process. Either go back to onboarding page and follow the instructions there, or click `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+subscribe+to+Aviatrix+companion+gateway.pdf>`__ for guidance.  
 
 
-2. 
+---------------------------------------------------------------------------------
 
 ::
 
 **Error message:** `Error: Exception CloudxErrExt Context:message:EC2ResponseError: 401 Unauthorized AuthFailureAWS was not able to validate the provided access credentialsf67841bc-cb94-4cfd-a990-05d27d11f540`
 
-If you see this error message when launching an AWS gateway, chances are your access key or secret ID is not correct. Re-enter these two fields. If it still does not work, change the credential on AWS console and try again.
+If you see this error message when launching an AWS gateway, the potential root causes are:
+
+ - If you used AWS IAM roles for the Aviatrix account, it is likely that your IAM role policies are not up to date. Follow `this link <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update both IAM policies on both your primary account and secondary account.
+ - If you used AWS access key and secret ID for the Aviatrix account, it is possible that this pair of credential is incorrect. Re-enter these two fields. 
 
 
 .. disqus::
