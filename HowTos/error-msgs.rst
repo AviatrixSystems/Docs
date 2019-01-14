@@ -35,7 +35,7 @@ If you see this error message when launching an AWS gateway, the potential root 
 
 ::
 
-  Detach before you delete AWS TGW. To detach Aviatrix Transit GW vpc-873db7e2 using "TGW Orchestrator > Plan > Step 7".
+  **Error message** Detach before you delete AWS TGW. To detach Aviatrix Transit GW vpc-873db7e2 using "TGW Orchestrator > Plan > Step 7".
 
 This error message says you must first detach the Aviatrix Transit GW from the TGW before you can delete the gateway. 
 
