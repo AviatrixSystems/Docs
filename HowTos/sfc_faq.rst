@@ -10,15 +10,18 @@ Secure File Copy FAQ
 What is Secure File Copy?
 ---------------------------
 
-Would your developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner?
+AWS Storage Gateway supports the NFS/SMB file interface with S3. But there are times the use case is different. 
 
-Would your customers need to send data to AWS S3 buckets but you need to apply control to the activities?
+One example. Would your developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner?
+
+Another example. Would your customers need to send data to AWS S3 buckets but you need to apply control to the activities?
 
 Aviatrix Secure File Copy is a tool that allows your developers to copy files between on-prem  
 while enabling you to control which S3 buckets and from where the file can be copied. 
 
 What are the benefits of Secure File Copy?
 ----------------------------------------------------------------------------
+
 
 The key benefit of Secure File Copy (SFC) is its ability for you to have control over 
 the data transfer in and out of AWS S3 bucket. 
