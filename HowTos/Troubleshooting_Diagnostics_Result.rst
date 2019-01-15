@@ -1,359 +1,356 @@
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-|                                                                                                |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "controller": {                                                                                |                                       |                                                                          |
-|     "SumoLogic Collector": "Not running",                                                      |                                       |                                                                          |
-|     "Database": "Up",                                                                          |                                       |                                                                          |
-|     "logstash-forwarder": "Not running",                                                       |                                       |                                                                          |
-|     "Rsyslog Status": "Not running",                                                           |                                       |                                                                          |
-|     "CloudWatch Service": "Not running",                                                       |                                       |                                                                          |
-|     "splunkd": "Not running",                                                                  |                                       |                                                                          |
-|     "Connectivity": "Up",                                                                      |                                       |                                                                          |
-|     "SSH": {                                                                                   |                                       |                                                                          |
-|         "port": {                                                                              |                                       |                                                                          |
-|             "22": "Down"                                                                       |                                       |                                                                          |
-|         },                                                                                     |                                       |                                                                          |
-|         "service": "Up"                                                                        |                                       |                                                                          |
-|     },                                                                                         |                                       |                                                                          |
-|     "datadog-agent": "Not running",                                                            |                                       |                                                                          |
-|     "Public IP": "Pass",                                                                       |                                       |                                                                          |
-|     "PKI": "Pass",                                                                             |                                       |                                                                          |
-|     "rsyslogd": "Running"                                                                      |                                       |                                                                          |
-| }                                                                                              |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Netflow Service": "Not running",                                                              |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Files not found": [                                                                           |                                       |                                                                          |
-|     "/etc/openvpn/utils.py",                                                                   |                                       |                                                                          |
-|     ... (the rest is omitted.)                                                                 |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "logstash-forwarder": "Not running",                                                           | To Indicate logstash logging          | Not running: Service is disabledLogstash Integration:                    |
-|                                                                                                | service status                        | https://docs.aviatrix.com/HowTos/AviatrixLogging.html#logstash           |
-|                                                                                                |                                       | -forwarder                                                               |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "DNS resolution": "Pass",                                                                      | Indicates whether the DNS resolution  | If Result is not Passed, check whether the DNS resolution is             |
-|                                                                                                | is enabled for this Gateway           |  supported for the VPC that GW                                           |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Hostname-filter Report": [                                                                    |                                       |                                                                          |
-|     "{\n",                                                                                     |                                       |                                                                          |
-|     "  \"smtp.gmail.com\": {\n",                                                               |                                       |                                                                          |
-|     "    \"ip_list\": [\n",                                                                    |                                       |                                                                          |
-|     "      \"74.125.126.109\", \n",                                                            |                                       |                                                                          |
-|     "      \"74.125.126.108\", \n",                                                            |                                       |                                                                          |
-|     "      \"173.194.194.109\", \n",                                                           |                                       |                                                                          |
-|     "      \"173.194.205.109\"\n",                                                             |                                       |                                                                          |
-|     "    ], \n",                                                                               |                                       |                                                                          |
-|     "    \"thread_state\": \"ALIVE\"\n",                                                       |                                       |                                                                          |
-|     "  }\n",                                                                                   |                                       |                                                                          |
-|     "}"                                                                                        |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Rsyslog Status": "Disabled",                                                                  |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "ipset rules": [                                                                               |                                       |                                                                          |
-|     "Name: avx_hnf_ipset_d_accept\n",                                                          |                                       |                                                                          |
-|     "Type: hash:ip,port\n",                                                                    |                                       |                                                                          |
-|     "Revision: 5\n",                                                                           |                                       |                                                                          |
-|     "Header: family inet hashsize ... (the rest is omitted.)                                   |                                       |                                                                          |
-|     "Size in memory: 4564\n",                                                                  |                                       |                                                                          |
-|     "References: 1\n",                                                                         |                                       |                                                                          |
-|     "Number of entries: 36\n",                                                                 |                                       |                                                                          |
-|     "Members:\n",                                                                              |                                       |                                                                          |
-|     "64.233.181.108,tcp:25 comment \"smtp.gmail.com\"\n",                                      |                                       |                                                                          |
-|     "108.177.111.109,tcp:25 comment \"smtp.gmail.com\"\n",                                     |                                       |                                                                          |
-|     "108.177.121.108,tcp:25 comment \"smtp.gmail.com\"\n",                                     |                                       |                                                                          |
-|     "173.194.198.109,tcp:25 comment \"smtp.gmail.com\"\n",                                     |                                       |                                                                          |
-|     "209.85.144.109,tcp:25 comment \"smtp.gmail.com\"\n"                                       |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "SpanPort Service": {                                                                          |                                       |                                                                          |
-|     "port": "unknown",                                                                         |                                       |                                                                          |
-|     "service": "Down"                                                                          |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "iptables nat rules": [                                                                        | NAT Detail Configuration              | - For Engineering Debugging                                              |
-|     "-P PREROUTING ACCEPT\n",                                                                  |                                       |                                                                          |
-|     "-P INPUT ACCEPT\n",                                                                       |                                       |                                                                          |
-|     "-P OUTPUT ACCEPT\n",                                                                      |                                       |                                                                          |
-|     "-P POSTROUTING ACCEPT\n",                                                                 |                                       |                                                                          |
-|     "-N CLOUDN-LOG-natVPN\n",                                                                  |                                       |                                                                          |
-|     "-N CLOUDX-SNAT\n",                                                                        |                                       |                                                                          |
-|     "-A POSTROUTING -s 192.168.43.0/24 -j CLOUDN-LOG-natVPN\n",                                |                                       |                                                                          |
-|     "-A POSTROUTING -m addrtype --src-type LOCAL -j ACCEPT\n",                                 |                                       |                                                                          |
-|     "-A POSTROUTING -m policy --dir out --pol ipsec -j ACCEPT\n",                              |                                       |                                                                          |
-|     "-A POSTROUTING -j CLOUDX-SNAT\n",                                                         |                                       |                                                                          |
-|     "-A CLOUDN-LOG-natVPN -j LOG --log-prefix \"AviatrixUser: \"\n",                           |                                       |                                                                          |
-|     "-A CLOUDN-LOG-natVPN -j MASQUERADE\n",                                                    |                                       |                                                                          |
-|     "-A CLOUDX-SNAT -o eth0 -j MASQUERADE\n"                                                   |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Hostname-filter Status": [                                                                    | Hostname-filter Status                | When it is disabled                                                      |
-|     "● avx-hostname-filter.service - Aviatrix Hostname Filter\n",                              |                                       |                                                                          |
-|     "   Loaded: loaded (/lib/systemd/syste... (the rest is omitted.)                           |                                       |                                                                          |
-|     "   Active: active (running) since Thu 2019-01-03 07:58:13 UTC; 4h 57min ago\n",           |                                       |                                                                          |
-|     " Main PID: 13445 (python)\n",                                                             |                                       |                                                                          |
-|     "    Tasks: 2 (limit: 1149)\n",                                                            |                                       |                                                                          |
-|     "   CGroup: /system.slice/avx-hostname-filter.service\n",                                  |                                       |                                                                          |
-|     "           └─13445 python /home/ubuntu/... (the rest is omitted.)                         |                                       |                                                                          |
-|     "\n",                                                                                      |                                       |                                                                          |
-|     "                                                                                          |                                       |                                                                          |
-|     "Jan 03 12:35:34 ip-10-10-20-108 hostname_ ... (the rest is omitted.)                      |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Hostname-filter Status": [                                                                    |                                       |                                                                          |
-|     "● avx-hostname-filter.service - Aviatrix Hostname Filter\n",                              |                                       |                                                                          |
-|     "   Loaded: loaded (/lib/systemd/system/a ... (the rest is omitted.)                       |                                       |                                                                          |
-|     "   Active: failed (Result: exit-code) sin... (the rest is omitted.)                       |                                       |                                                                          |
-|     "  Process: 8736 ExecStartPost=/bin/sh -c ... (the rest is omitted.)                       |                                       |                                                                          |
-|     "  Process: 8735 ExecStart=/home/ubuntu/cl... (the rest is omitted.)                       |                                       |                                                                          |
-|     " Main PID: 8735 (code=exited, status=1/FAILURE)\n",                                       |                                       |                                                                          |
-|     "\n",                                                                                      |                                       |                                                                          |
-|     "Dec 19 13:23:33 ip-10-10-0-182 systemd[1]... (the rest is omitted.)                       |                                       |                                                                          |
-|     ... (the rest is omitted.)                                                                 |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "iptables rules": [                                                                            | Firewall Detail Configuration         | - For Engineering Debugging                                              |
-|     "-P INPUT ACCEPT\n",                                                                       |                                       |                                                                          |
-|     "-P FORWARD ACCEPT\n",                                                                     |                                       |                                                                          |
-|     "-P OUTPUT ACCEPT\n",                                                                      |                                       |                                                                          |
-|     "-N AVX-FILTER-BASE-LOG-ACCEPT\n",                                                         |                                       |                                                                          |
-|     "-N AVX-FILTER-BASE-LOG-DROP\n",                                                           |                                       |                                                                          |
-|     "-N AVX-FILTER-CHAIN\n",                                                                   |                                       |                                                                          |
-|     "-N AVX-FILTER-MATCH-LOG-ACCEPT\n",                                                        |                                       |                                                                          |
-|     "-N AVX-FILTER-MATCH-LOG-DROP\n",                                                          |                                       |                                                                          |
-|     "-N CLOUDN-AVX-NFQ\n",                                                                     |                                       |                                                                          |
-|     "-N RULE-LOG-ACCEPT\n",                                                                    |                                       |                                                                          |
-|     "-N RULE-LOG-DROP\n",                                                                      |                                       |                                                                          |
-|     ... (the rest is omitted.)                                                                 |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "ifconfig display": [                                                                          | Major Interface Detail                | - There should be very limit number of TX and RX errors/dropped          |
-|     "eth0: flags=4163<UP,BROADCAST,... (the rest is omitted.)                                  |                                       | - If there are a lot of TX errors or dropped, it indicates that          |
-|     "        inet 10.10.10.72  netm... (the rest is omitted.)                                  |                                       | there's mismatch                                                         |
-|     "        inet6 fe80::8a4:d3ff:f... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        ether 0a:a4:d3:1b:df:0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        RX packets 326021  byt... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        RX errors 0  dropped 0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        TX packets 185361  byt... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        TX errors 0  dropped 0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "\n",                          ... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "lo: flags=4169<UP,LOOPBACK,RUN... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        inet 127.0.0.1  netmas... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        inet6 ::1  prefixlen 1... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        loop  txqueuelen 1000 ... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        RX packets 396  bytes ... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        RX errors 0  dropped 0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        TX packets 396  bytes ... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        TX errors 0  dropped 0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "\n",                          ... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "tun0: flags=4305<UP,POINTOPOIN... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        inet 192.168.43.1  net... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        inet6 fe80::30ff:994a:... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        unspec 00-00-00-00-00-... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        RX packets 0  bytes 0 ... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        RX errors 0  dropped 0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        TX packets 4  bytes 30... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "        TX errors 0  dropped 0... (the rest is omitted.)                                  |                                       |                                                                          |
-|     "\n"                                                                                       |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "top disk usage": [                                                                            | Disk Usage                            | The maximum size of /usr should be lower than 6G, please contact         |
-|     "4.7G\t/usr\n",                                                                            |                                       | support@aviatrix.com if you see abnormal usage in a folder               |
-|     "2.3G\t/usr/share\n",                                                                      |                                       |                                                                          |
-|     "1.3G\t/var\n",                                                                            |                                       |                                                                          |
-|     "1.2G\t/usr/share/doc\n",                                                                  |                                       |                                                                          |
-|     "1.1G\t/usr/src\n",                                                                        |                                       |                                                                          |
-|     "1.1G\t/usr/lib\n",                                                                        |                                       |                                                                          |
-|                                                                                                |                                       |                                                                          |
-|                                                                                                |                                       |                                                                          |
-|     ... (the rest is omitted.)                                                                 |                                       |                                                                          |
-|                                                                                                |                                       |                                                                          |
-|                                                                                                |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "MsgQueue": {                                                                                  | MsgQueue Status                       | ApproximateNumberOfMessages indicates how many messages in the Queue.    |
-|     "ApproximateNumberOfMessagesNotVisible": "0",                                              |                                       | If this value is not 0, it means there's issue on the AWS SQS Service,   |
-|     "ContentBasedDeduplication": "false",                                                      |                                       | please check your IAM policy (update to latest from docs.aviatrix.com)   |
-|     "MessageRetentionPeriod": "345600",                                                        |                                       | and also check if this sqs queue is still in your AWS SQS Service        |
-|     "ApproximateNumberOfMessagesDelayed": "0",                                                 |                                       |                                                                          |
-|     "MaximumMessageSize": "262144",                                                            |                                       |                                                                          |
-|     "CreatedTimestamp": "1545101799",                                                          |                                       |                                                                          |
-|     "ApproximateNumberOfMessages": "0",                                                        |                                       |                                                                          |
-|     "ReceiveMessageWaitTimeSeconds": "0",                                                      |                                       |                                                                          |
-|     "DelaySeconds": "0",                                                                       |                                       |                                                                          |
-|     "FifoQueue": "true",                                                                       |                                       |                                                                          |
-|     "VisibilityTimeout": "30",                                                                 |                                       |                                                                          |
-|     "LastModifiedTimestamp": "1545101878",                                                     |                                       |                                                                          |
-|     "QueueArn": "arn:aws:sqs:us-west-2:xxxxxx:aviatrix-34-214-20-16.fifo"                      |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "supervisorctl status": [                                                                      | Supervisor Status                     | Except local_launch is always EXITED, rest service should be in Running  |
-|     "gwmon                            RUNNING   pid 2857, uptime 5:25:55\n",                   |                                       | Status, please contact support@aviatrix.com if you see an                |
-|     "local_launch                     EXITED    Dec 18 02:58 AM\n",                            |                                       | abnormal status                                                          |
-|     "openvpn                          RUNNING   pid 5430, uptime 5:20:42\n",                   |                                       |                                                                          |
-|     "perfmon                          RUNNING   pid 2876, uptime 5:25:53\n",                   |                                       |                                                                          |
-|     "sw-wdt4perfmon                   RUNNING   pid 2894, uptime 5:25:51\n",                   |                                       |                                                                          |
-|     "time_action                      RUNNING   pid 2816, uptime 5:25:56\n"                    |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "IKE daemon": {                                                                                | Checking IKE daemon status and        | - 500/4500/service should be all Up- For Engineering Debugging           |
-|     "port": {                                                                                  | port status                           |                                                                          |
-|         "500": "Up",                                                                           |                                       |                                                                          |
-|         "4500": "Up"                                                                           |                                       |                                                                          |
-|     },                                                                                         |                                       |                                                                          |
-|     "service": "Up"                                                                            |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "SumoLogic Collector": "Not running",                                                          | To Indicate SumoLogic logging         | Not running: Service is disabledSumoLogic Integration:                   |
-|                                                                                                | service status                        | https://docs.aviatrix.com/HowTos/AviatrixLogging.html#sumo-logic-app-    |
-|                                                                                                |                                       | for-aviatrix                                                             |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Upload": "Pass",                                                                              | Controller send upload                |                                                                          |
-|                                                                                                | files to gateway                      |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Datadog Service": "Not running",                                                              | To Indicate Datadog logging           | Not running: Service is disabledDatadog Integration:                     |
-|                                                                                                | service status                        | https://docs.aviatrix.com/HowTos/DatadogIntegration.html                 |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "iptables mangle rules": [                                                                     | Firewall Detail                       | - For Engineering Debugging                                              |
-|     "-P PREROUTING ACCEPT\n",                                                                  | Configuration                         |                                                                          |
-|     "-P INPUT ACCEPT\n",                                                                       |                                       |                                                                          |
-|     "-P FORWARD ACCEPT\n",                                                                     |                                       |                                                                          |
-|     "-P OUTPUT ACCEPT\n",                                                                      |                                       |                                                                          |
-|     "-P POSTROUTING ACCEPT\n",                                                                 |                                       |                                                                          |
-|     "-N MSSCLAMPING\n",                                                                        |                                       |                                                                          |
-|     "-A FORWARD -j MSSCLAMPING\n",                                                             |                                       |                                                                          |
-|     "-A MSSCLAMPING -p tcp -m tcp --tcp-flags SYN,RST ... (the rest is omitted.)               |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "HTTPS": {                                                                                     | The Keepalive ports for the           | Port 443 should be always reachable, it shows unreachable,               |
-|     "port": {                                                                                  | keepalive between Controller          | please check security group or firewall rule of GW.                      |
-|         "443": [                                                                               | and Gateway                           |                                                                          |
-|             "up",                                                                              |                                       | It should open this port to Controller's public IP                       |
-|             "reachable"                                                                        |                                       |                                                                          |
-|         ]                                                                                      |                                       |                                                                          |
-|     },                                                                                         |                                       |                                                                          |
-|     "service": "Up"                                                                            |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "HTTPS GET": "Pass",                                                                           | HTTPS Test to the                     | This shows "Pass" if GW can communicate with Controller without          |
-|                                                                                                | Controller                            | issue.When It shows "Fail" please check both Controller and Gateway      |
-|                                                                                                |                                       | security group                                                           |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "CloudWatch Service": "Not running",                                                           | The status of AWS CloudWatch          | See AWS CloudWatch Integration:                                          |
-|                                                                                                | Service                               | https://docs.aviatrix.com/HowTos/cloudwatch.html                         |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "top mem processes": [                                                                         | Memory and CPU usage                  | - The memory of process (first column) is changing dynamiclly            |
-|     "20.2  0.1 398548   432 /lib/systemd/systemd-journald\n",                                  |                                       | and the overall usage should be lower than 50%- For Engineering          |
-|     " 4.6  0.0 454976  1761 /usr/sbin/apache2 -k start\n",                                     |                                       | Debugging                                                                |
-|     " 4.3  0.1 807656  2857 python -W ... (the rest is omitted.)                               |                                       |                                                                          |
-|     " 2.8  0.0  90920  2876 python -W ... (the rest is omitted.)                               |                                       |                                                                          |
-|     " 2.6  0.0  84700  2816 python -W ... (the rest is omitted.)                               |                                       |                                                                          |
-|     " 2.2  0.0 457688  5299 /usr/sbin/apache2 -k start\n",                                     |                                       |                                                                          |
-|     " 2.1  0.0  65268  1992 /usr/bin/p ... (the rest is omitted.)                              |                                       |                                                                          |
-|     " 2.1  0.0 457688  5297 /usr/sbin/apache2 -k start\n",                                     |                                       |                                                                          |
-|     " 1.9  0.0 548016  1183 /usr/lib/snapd/snapd\n",                                           |                                       |                                                                          |
-|     " 1.8  0.0 457452  5300 /usr/sbin/apache2 -k start\n"                                      |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "splunkd": "Not running",                                                                      | To Indicate splunk logging            | Not running: Service is disabledSplunk Integration:                      |
-|                                                                                                | service status                        | https://docs.aviatrix.com/HowTos/AviatrixLogging.html#                   |
-|                                                                                                |                                       | splunk-logging                                                           |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "VPN Service": {                                                                               | Openvpn Service Status                | When VPN GW is created, port 943 (with source IP 0.0.0.0/0) is           |
-|     "port": {                                                                                  |                                       | required for Aviatrix OpenVPN gateway with ELB                           |
-|         "943": [                                                                               |                                       |                                                                          |
-|             "up",                                                                              |                                       |                                                                          |
-|             "reachable"                                                                        |                                       |                                                                          |
-|         ]                                                                                      |                                       |                                                                          |
-|     },                                                                                         |                                       |                                                                          |
-|     "service": "Down"                                                                          |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "ip link display": [                                                                           | IP Link Status                        | - For Engineering Debugging                                              |
-|     "1: lo: <LOOPBACK,MULTICAST,UP,LOWER_UP> mtu 65536 qdisc noqueue... (the rest is omitted.) |                                       |                                                                          |
-|     "    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n",                             |                                       |                                                                          |
-|     "2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_co... (the rest is omitted.) |                                       |                                                                          |
-|     "    link/ether 0a:a4:d3:1b:df:0e brd ff:ff:ff:ff:ff:ff\n",                                |                                       |                                                                          |
-|     "3: cxm0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN m... (the rest is omitted.) |                                       |                                                                          |
-|     "    link/ether b2:61:0b:3f:69:a3 brd ff:ff:ff:ff:ff:ff\n",                                |                                       |                                                                          |
-|     "13: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qd... (the rest is omitted.) |                                       |                                                                          |
-|     "    link/none \n"                                                                         |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "route": [                                                                                     | General Routing Table Status          | - For Engineering Debugging                                              |
-|     "Kernel IP routing table\n",                                                               |                                       |                                                                          |
-|     "Destination     Gateway         Genmask         Flags Metric Ref    Use Iface\n",         |                                       |                                                                          |
-|     "0.0.0.0         10.10.10.1      0.0.0.0         UG    0      0        0 eth0\n",          |                                       |                                                                          |
-|     "10.10.10.0      0.0.0.0         255.255.255.0   U     0      0        0 eth0\n",          |                                       |                                                                          |
-|     "192.168.43.0    192.168.43.2    255.255.255.0   UG    0      0        0 tun0\n",          |                                       |                                                                          |
-|     "192.168.43.2    0.0.0.0         255.255.255.255 UH    0      0        0 tun0\n"           |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "FQDN service": [                                                                              | FQDN Egress Control Status            | When FQDN egress control is enabled, it will shows related               |
-|     "● avx-nfq.service - Aviatrix NFQ\n",                                                      |                                       | log here.                                                                |
-|     "   Loaded: loaded (/lib/systemd/system/avx-nf... (the rest is omitted.)                   |                                       | When it is disabled, the status is inactive                              |
-|     "   Active: active (running) since Wed 2018-12... (the rest is omitted.)                   |                                       |                                                                          |
-|     " Main PID: 8495 (avx-nfq)\n",                                                             |                                       |                                                                          |
-|     "    Tasks: 1 (limit: 1149)\n",                                                            |                                       |                                                                          |
-|     "   CGroup: /system.slice/avx-nfq.service\n",                                              |                                       |                                                                          |
-|     "           └─8495 /home/ubuntu/cloudx-aws/nfq-module/avx-nfq\n",                          |                                       |                                                                          |
-|     "\n",                                                                                      |                                       |                                                                          |
-|     "Dec 19 13:23:30 ip-10-10-0-182 avx-nfq[8495]:... (the rest is omitted.)                   |                                       |                                                                          |
-|    ... (the rest is omitted.)                                                                  |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "SSH": {                                                                                       | SSH port for diagnostic               | Port 22 should be always reachable, it shows unreachable,                |
-|     "port": {                                                                                  | and configuration                     | please check security group or firewall rule of GW.It should             |
-|         "22": [                                                                                |                                       | open this port to Controller's public IP                                 |
-|             "up",                                                                              |                                       |                                                                          |
-|             "reachable"                                                                        |                                       |                                                                          |
-|         ]                                                                                      |                                       |                                                                          |
-|     },                                                                                         |                                       |                                                                          |
-|     "service": "Up"                                                                            |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Auth Config": [                                                                               |                                       |                                                                          |
-|     {                                                                                          |                                       |                                                                          |
-|         "cfg": "Pass",                                                                         |                                       |                                                                          |
-|         "method": "LDAP auth"                                                                  |                                       |                                                                          |
-|     }                                                                                          |                                       |                                                                          |
-| ],                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "VPN config": "Pass",                                                                          |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "DNS Service": {                                                                               | DNS Service Status                    |                                                                          |
-|     "/etc/resolvconf/resolv.conf.d/head": [                                                    |                                       |                                                                          |
-|         "nameserver 8.8.8.8\n"                                                                 |                                       |                                                                          |
-|     ],                                                                                         |                                       |                                                                          |
-|     "/etc/hosts": [                                                                            |                                       |                                                                          |
-|         "127.0.0.1 localhost\n",                                                               |                                       |                                                                          |
-|         "\n",                                                                                  |                                       |                                                                          |
-|         "::1 ip6-localhost ip6-loopback\n",                                                    |                                       |                                                                          |
-|         "fe00::0 ip6-localnet\n",                                                              |                                       |                                                                          |
-|         "ff00::0 ip6-mcastprefix\n",                                                           |                                       |                                                                          |
-|         "ff02::1 ip6-allnodes\n",                                                              |                                       |                                                                          |
-|         "ff02::2 ip6-allrouters\n",                                                            |                                       |                                                                          |
-|         "ff02::3 ip6-allhosts\n",                                                              |                                       |                                                                          |
-|         "ip-10-10-10-72\n",                                                                    |                                       |                                                                          |
-|         "ip-10-10-10-72\n",                                                                    |                                       |                                                                          |
-|         "10.10.10.72 ip-10-10-10-72\n"                                                         |                                       |                                                                          |
-|     ],                                                                                         |                                       |                                                                          |
-|     "/etc/hostname": [                                                                         |                                       |                                                                          |
-|         "ip-10-10-10-72\n"                                                                     |                                       |                                                                          |
-|     ],                                                                                         |                                       |                                                                          |
-|     "/etc/systemd/resolved.conf": [                                                            |                                       |                                                                          |
-|         "\n",                                                                                  |                                       |                                                                          |
-|         "[Resolve]\n",                                                                         |                                       |                                                                          |
-|         "DNS=8.8.8.8\n"                                                                        |                                       |                                                                          |
-|     ],                                                                                         |                                       |                                                                          |
-|     "/etc/resolv.conf": [                                                                      |                                       |                                                                          |
-|         "\n",                                                                                  |                                       |                                                                          |
-|         "nameserver 8.8.8.8\n",                                                                |                                       |                                                                          |
-|         "nameserver 10.10.0.2\n",                                                              |                                       |                                                                          |
-|         "search us-west-2.compute.internal\n"                                                  |                                       |                                                                          |
-|     ]                                                                                          |                                       |                                                                          |
-| },                                                                                             |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
-| "Server Cert": "good"                                                                          |                                       |                                                                          |
-+------------------------------------------------------------------------------------------------+---------------------------------------+--------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "controller": {                                                                                |                                                                            |
+|     "SumoLogic Collector": "Not running",                                                      |                                                                            |
+|     "Database": "Up",                                                                          |                                                                            |
+|     "logstash-forwarder": "Not running",                                                       |                                                                            |
+|     "Rsyslog Status": "Not running",                                                           |                                                                            |
+|     "CloudWatch Service": "Not running",                                                       |                                                                            |
+|     "splunkd": "Not running",                                                                  |                                                                            |
+|     "Connectivity": "Up",                                                                      |                                                                            |
+|     "SSH": {                                                                                   |                                                                            |
+|         "port": {                                                                              |                                                                            |
+|             "22": "Down"                                                                       |                                                                            |
+|         },                                                                                     |                                                                            |
+|         "service": "Up"                                                                        |                                                                            |
+|     },                                                                                         |                                                                            |
+|     "datadog-agent": "Not running",                                                            |                                                                            |
+|     "Public IP": "Pass",                                                                       |                                                                            |
+|     "PKI": "Pass",                                                                             |                                                                            |
+|     "rsyslogd": "Running"                                                                      |                                                                            |
+| }                                                                                              |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Netflow Service": "Not running",                                                              |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Files not found": [                                                                           |                                                                            |
+|     "/etc/openvpn/utils.py",                                                                   |                                                                            |
+|     ... (the rest is omitted.)                                                                 |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "logstash-forwarder": "Not running",                                                           | To Indicate logstash logging service status                                |
+|                                                                                                | - Not running: Service is disabledLogstash Integration:                    |
+|                                                                                                | - https://docs.aviatrix.com/HowTos/AviatrixLogging.html#logstash-forwarder |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "DNS resolution": "Pass",                                                                      | Indicates whether the DNS resolution is enabled for this Gateway           |
+|                                                                                                | - If Result is not Passed, check whether the DNS resolution is             |
+|                                                                                                |  supported for the VPC that GW                                             |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Hostname-filter Report": [                                                                    |                                                                            |
+|     "{\n",                                                                                     |                                                                            |
+|     "  \"smtp.gmail.com\": {\n",                                                               |                                                                            |
+|     "    \"ip_list\": [\n",                                                                    |                                                                            |
+|     "      \"74.125.126.109\", \n",                                                            |                                                                            |
+|     "      \"74.125.126.108\", \n",                                                            |                                                                            |
+|     "      \"173.194.194.109\", \n",                                                           |                                                                            |
+|     "      \"173.194.205.109\"\n",                                                             |                                                                            |
+|     "    ], \n",                                                                               |                                                                            |
+|     "    \"thread_state\": \"ALIVE\"\n",                                                       |                                                                            |
+|     "  }\n",                                                                                   |                                                                            |
+|     "}"                                                                                        |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Rsyslog Status": "Disabled",                                                                  |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "ipset rules": [                                                                               |                                                                            |
+|     "Name: avx_hnf_ipset_d_accept\n",                                                          |                                                                            |
+|     "Type: hash:ip,port\n",                                                                    |                                                                            |
+|     "Revision: 5\n",                                                                           |                                                                            |
+|     "Header: family inet hashsize ... (the rest is omitted.)                                   |                                                                            |
+|     "Size in memory: 4564\n",                                                                  |                                                                            |
+|     "References: 1\n",                                                                         |                                                                            |
+|     "Number of entries: 36\n",                                                                 |                                                                            |
+|     "Members:\n",                                                                              |                                                                            |
+|     "64.233.181.108,tcp:25 comment \"smtp.gmail.com\"\n",                                      |                                                                            |
+|     "108.177.111.109,tcp:25 comment \"smtp.gmail.com\"\n",                                     |                                                                            |
+|     "108.177.121.108,tcp:25 comment \"smtp.gmail.com\"\n",                                     |                                                                            |
+|     "173.194.198.109,tcp:25 comment \"smtp.gmail.com\"\n",                                     |                                                                            |
+|     "209.85.144.109,tcp:25 comment \"smtp.gmail.com\"\n"                                       |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "SpanPort Service": {                                                                          |                                                                            |
+|     "port": "unknown",                                                                         |                                                                            |
+|     "service": "Down"                                                                          |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "iptables nat rules": [                                                                        | NAT Detail Configuration                                                   |
+|     "-P PREROUTING ACCEPT\n",                                                                  | - For Engineering Debugging                                                |
+|     "-P INPUT ACCEPT\n",                                                                       |                                                                            |
+|     "-P OUTPUT ACCEPT\n",                                                                      |                                                                            |
+|     "-P POSTROUTING ACCEPT\n",                                                                 |                                                                            |
+|     "-N CLOUDN-LOG-natVPN\n",                                                                  |                                                                            |
+|     "-N CLOUDX-SNAT\n",                                                                        |                                                                            |
+|     "-A POSTROUTING -s 192.168.43.0/24 -j CLOUDN-LOG-natVPN\n",                                |                                                                            |
+|     "-A POSTROUTING -m addrtype --src-type LOCAL -j ACCEPT\n",                                 |                                                                            |
+|     "-A POSTROUTING -m policy --dir out --pol ipsec -j ACCEPT\n",                              |                                                                            |
+|     "-A POSTROUTING -j CLOUDX-SNAT\n",                                                         |                                                                            |
+|     "-A CLOUDN-LOG-natVPN -j LOG --log-prefix \"AviatrixUser: \"\n",                           |                                                                            |
+|     "-A CLOUDN-LOG-natVPN -j MASQUERADE\n",                                                    |                                                                            |
+|     "-A CLOUDX-SNAT -o eth0 -j MASQUERADE\n"                                                   |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Hostname-filter Status": [                                                                    | Hostname-filter Status                                                     |
+|     "● avx-hostname-filter.service - Aviatrix Hostname Filter\n",                              |                                                                            |
+|     "   Loaded: loaded (/lib/systemd/system/a ... (the rest is omitted.)                       |                                                                            |
+|     "   Active: failed (Result: exit-code) sin... (the rest is omitted.)                       |                                                                            |
+|     "  Process: 8736 ExecStartPost=/bin/sh -c ... (the rest is omitted.)                       |                                                                            |
+|     "  Process: 8735 ExecStart=/home/ubuntu/cl... (the rest is omitted.)                       |                                                                            |
+|     " Main PID: 8735 (code=exited, status=1/FAILURE)\n",                                       |                                                                            |
+|     "\n",                                                                                      |                                                                            |
+|     "Dec 19 13:23:33 ip-10-10-0-182 systemd[1]... (the rest is omitted.)                       |                                                                            |
+|     ... (the rest is omitted.)                                                                 |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "iptables rules": [                                                                            | Firewall Detail Configuration                                              |
+|     "-P INPUT ACCEPT\n",                                                                       | - For Engineering Debugging                                                |
+|     "-P FORWARD ACCEPT\n",                                                                     |                                                                            |
+|     "-P OUTPUT ACCEPT\n",                                                                      |                                                                            |
+|     "-N AVX-FILTER-BASE-LOG-ACCEPT\n",                                                         |                                                                            |
+|     "-N AVX-FILTER-BASE-LOG-DROP\n",                                                           |                                                                            |
+|     "-N AVX-FILTER-CHAIN\n",                                                                   |                                                                            |
+|     "-N AVX-FILTER-MATCH-LOG-ACCEPT\n",                                                        |                                                                            |
+|     "-N AVX-FILTER-MATCH-LOG-DROP\n",                                                          |                                                                            |
+|     "-N CLOUDN-AVX-NFQ\n",                                                                     |                                                                            |
+|     "-N RULE-LOG-ACCEPT\n",                                                                    |                                                                            |
+|     "-N RULE-LOG-DROP\n",                                                                      |                                                                            |
+|     ... (the rest is omitted.)                                                                 |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "ifconfig display": [                                                                          | Major Interface Detail                                                     |
+|     "eth0: flags=4163<UP,BROADCAST,... (the rest is omitted.)                                  | - There should be very limit number of TX and RX errors/dropped            |
+|     "        inet 10.10.10.72  netm... (the rest is omitted.)                                  | - If there are a lot of TX errors or dropped, it indicates that            |
+|     "        inet6 fe80::8a4:d3ff:f... (the rest is omitted.)                                  | there's mismatch                                                           |
+|     "        ether 0a:a4:d3:1b:df:0... (the rest is omitted.)                                  |                                                                            |
+|     "        RX packets 326021  byt... (the rest is omitted.)                                  |                                                                            |
+|     "        RX errors 0  dropped 0... (the rest is omitted.)                                  |                                                                            |
+|     "        TX packets 185361  byt... (the rest is omitted.)                                  |                                                                            |
+|     "        TX errors 0  dropped 0... (the rest is omitted.)                                  |                                                                            |
+|     "\n",                          ... (the rest is omitted.)                                  |                                                                            |
+|     "lo: flags=4169<UP,LOOPBACK,RUN... (the rest is omitted.)                                  |                                                                            |
+|     "        inet 127.0.0.1  netmas... (the rest is omitted.)                                  |                                                                            |
+|     "        inet6 ::1  prefixlen 1... (the rest is omitted.)                                  |                                                                            |
+|     "        loop  txqueuelen 1000 ... (the rest is omitted.)                                  |                                                                            |
+|     "        RX packets 396  bytes ... (the rest is omitted.)                                  |                                                                            |
+|     "        RX errors 0  dropped 0... (the rest is omitted.)                                  |                                                                            |
+|     "        TX packets 396  bytes ... (the rest is omitted.)                                  |                                                                            |
+|     "        TX errors 0  dropped 0... (the rest is omitted.)                                  |                                                                            |
+|     "\n",                          ... (the rest is omitted.)                                  |                                                                            |
+|     "tun0: flags=4305<UP,POINTOPOIN... (the rest is omitted.)                                  |                                                                            |
+|     "        inet 192.168.43.1  net... (the rest is omitted.)                                  |                                                                            |
+|     "        inet6 fe80::30ff:994a:... (the rest is omitted.)                                  |                                                                            |
+|     "        unspec 00-00-00-00-00-... (the rest is omitted.)                                  |                                                                            |
+|     "        RX packets 0  bytes 0 ... (the rest is omitted.)                                  |                                                                            |
+|     "        RX errors 0  dropped 0... (the rest is omitted.)                                  |                                                                            |
+|     "        TX packets 4  bytes 30... (the rest is omitted.)                                  |                                                                            |
+|     "        TX errors 0  dropped 0... (the rest is omitted.)                                  |                                                                            |
+|     "\n"                                                                                       |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "top disk usage": [                                                                            | Disk Usage                                                                 |
+|     "4.7G\t/usr\n",                                                                            | - The maximum size of /usr should be lower than 6G, please contact         |
+|     "2.3G\t/usr/share\n",                                                                      | support@aviatrix.com if you see abnormal usage in a folder                 |
+|     "1.3G\t/var\n",                                                                            |                                                                            |
+|     "1.2G\t/usr/share/doc\n",                                                                  |                                                                            |
+|     "1.1G\t/usr/src\n",                                                                        |                                                                            |
+|     "1.1G\t/usr/lib\n",                                                                        |                                                                            |
+|                                                                                                |                                                                            |
+|     ... (the rest is omitted.)                                                                 |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "MsgQueue": {                                                                                  | MsgQueue Status                                                            |
+|     "ApproximateNumberOfMessagesNotVisible": "0",                                              | - ApproximateNumberOfMessages indicates how many messages in the Queue.    |
+|     "ContentBasedDeduplication": "false",                                                      | If this value is not 0, it means there's issue on the AWS SQS Service,     |
+|     "MessageRetentionPeriod": "345600",                                                        | please check your IAM policy (update to latest from docs.aviatrix.com)     |
+|     "ApproximateNumberOfMessagesDelayed": "0",                                                 | and also check if this sqs queue is still in your AWS SQS Service          |
+|     "MaximumMessageSize": "262144",                                                            |                                                                            |
+|     "CreatedTimestamp": "1545101799",                                                          |                                                                            |
+|     "ApproximateNumberOfMessages": "0",                                                        |                                                                            |
+|     "ReceiveMessageWaitTimeSeconds": "0",                                                      |                                                                            |
+|     "DelaySeconds": "0",                                                                       |                                                                            |
+|     "FifoQueue": "true",                                                                       |                                                                            |
+|     "VisibilityTimeout": "30",                                                                 |                                                                            |
+|     "LastModifiedTimestamp": "1545101878",                                                     |                                                                            |
+|     "QueueArn": "arn:aws:sqs:us-west-2:xxxxxx:aviatrix-34-214-20-16.fifo"                      |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "supervisorctl status": [                                                                      | Supervisor Status                                                          |
+|     "gwmon                            RUNNING   pid 2857, uptime 5:25:55\n",                   | - Except local_launch is always EXITED, rest service should be in Running  |
+|     "local_launch                     EXITED    Dec 18 02:58 AM\n",                            | Status, please contact support@aviatrix.com if you see an                  |
+|     "openvpn                          RUNNING   pid 5430, uptime 5:20:42\n",                   | abnormal status                                                            |
+|     "perfmon                          RUNNING   pid 2876, uptime 5:25:53\n",                   |                                                                            |
+|     "sw-wdt4perfmon                   RUNNING   pid 2894, uptime 5:25:51\n",                   |                                                                            |
+|     "time_action                      RUNNING   pid 2816, uptime 5:25:56\n"                    |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "IKE daemon": {                                                                                | Checking IKE daemon status and port status                                 |
+|     "port": {                                                                                  | - 500/4500/service should be all Up- For Engineering Debugging             |
+|         "500": "Up",                                                                           |                                                                            |
+|         "4500": "Up"                                                                           |                                                                            |
+|     },                                                                                         |                                                                            |
+|     "service": "Up"                                                                            |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "SumoLogic Collector": "Not running",                                                          | To Indicate SumoLogic logging service status                               |
+|                                                                                                | - Not running: Service is disabledSumoLogic Integration:                   |
+|                                                                                                | - https://docs.aviatrix.com/HowTos/AviatrixLogging.html#sumo-logic-app-    |
+|                                                                                                | for-aviatrix                                                               |
+|                                                                                                |                                                                            |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Upload": "Pass",                                                                              | Controller send upload files to gateway                                    |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Datadog Service": "Not running",                                                              | To Indicate Datadog logging service status                                 |
+|                                                                                                | - Not running: Service is disabledDatadog Integration:                     |
+|                                                                                                | https://docs.aviatrix.com/HowTos/DatadogIntegration.html                   |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "iptables mangle rules": [                                                                     | Firewall Detail Configuration                                              |
+|     "-P PREROUTING ACCEPT\n",                                                                  | - For Engineering Debugging                                                |
+|     "-P INPUT ACCEPT\n",                                                                       |                                                                            |
+|     "-P FORWARD ACCEPT\n",                                                                     |                                                                            |
+|     "-P OUTPUT ACCEPT\n",                                                                      |                                                                            |
+|     "-P POSTROUTING ACCEPT\n",                                                                 |                                                                            |
+|     "-N MSSCLAMPING\n",                                                                        |                                                                            |
+|     "-A FORWARD -j MSSCLAMPING\n",                                                             |                                                                            |
+|     "-A MSSCLAMPING -p tcp -m tcp --tcp-flags SYN,RST ... (the rest is omitted.)               |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "HTTPS": {                                                                                     | The Keepalive ports for the keepalive between Controller and Gateway       |
+|     "port": {                                                                                  | - Port 443 should be always reachable, it shows unreachable,               |
+|         "443": [                                                                               | - please check security group or firewall rule of GW.                      |
+|             "up",                                                                              | It should open this port to Controller's public IP                         |
+|             "reachable"                                                                        |                                                                            |
+|         ]                                                                                      |                                                                            |
+|     },                                                                                         |                                                                            |
+|     "service": "Up"                                                                            |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "HTTPS GET": "Pass",                                                                           | HTTPS Test to the Controller                                               |
+|                                                                                                | - This shows "Pass" if GW can communicate with Controller without          |
+|                                                                                                | issue. When It shows "Fail" please check both Controller and Gateway       |
+|                                                                                                | security group                                                             |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "CloudWatch Service": "Not running",                                                           | The status of AWS CloudWatch Service                                       |
+|                                                                                                | - See AWS CloudWatch Integration:                                          |
+|                                                                                                | https://docs.aviatrix.com/HowTos/cloudwatch.html                           |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "top mem processes": [                                                                         | Memory and CPU usage                                                       |
+|     "20.2  0.1 398548   432 /lib/systemd/systemd-journald\n",                                  | - The memory of process (first column) is changing dynamiclly              |
+|     " 4.6  0.0 454976  1761 /usr/sbin/apache2 -k start\n",                                     | and the overall usage should be lower than 50%- For Engineering            |
+|     " 4.3  0.1 807656  2857 python -W ... (the rest is omitted.)                               | Debugging                                                                  |
+|     " 2.8  0.0  90920  2876 python -W ... (the rest is omitted.)                               |                                                                            |
+|     " 2.6  0.0  84700  2816 python -W ... (the rest is omitted.)                               |                                                                            |
+|     " 2.2  0.0 457688  5299 /usr/sbin/apache2 -k start\n",                                     |                                                                            |
+|     " 2.1  0.0  65268  1992 /usr/bin/p ... (the rest is omitted.)                              |                                                                            |
+|     " 2.1  0.0 457688  5297 /usr/sbin/apache2 -k start\n",                                     |                                                                            |
+|     " 1.9  0.0 548016  1183 /usr/lib/snapd/snapd\n",                                           |                                                                            |
+|     " 1.8  0.0 457452  5300 /usr/sbin/apache2 -k start\n"                                      |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "splunkd": "Not running",                                                                      | To Indicate splunk logging service status                                  |
+|                                                                                                | - Not running: Service is disabledSplunk Integration:                      |
+|                                                                                                | https://docs.aviatrix.com/HowTos/AviatrixLogging.html#                     |
+|                                                                                                | splunk-logging                                                             |
+|                                                                                                |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "VPN Service": {                                                                               |                                                                            |
+|     "port": {                                                                                  | Openvpn Service Status                                                     |
+|         "943": [                                                                               | - When VPN GW is created, port 943 (with source IP 0.0.0.0/0) is           |
+|             "up",                                                                              | required for Aviatrix OpenVPN gateway with ELB                             |
+|             "reachable"                                                                        |                                                                            |
+|         ]                                                                                      |                                                                            |
+|     },                                                                                         |                                                                            |
+|     "service": "Down"                                                                          |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "ip link display": [                                                                           | IP Link Status                                                             |
+|     "1: lo: <LOOPBACK,MULTICAST,UP,LOWER_UP> mtu 65536 qdisc noqueue... (the rest is omitted.) | - For Engineering Debugging                                                |
+|     "    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n",                             |                                                                            |
+|     "2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_co... (the rest is omitted.) |                                                                            |
+|     "    link/ether 0a:a4:d3:1b:df:0e brd ff:ff:ff:ff:ff:ff\n",                                |                                                                            |
+|     "3: cxm0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN m... (the rest is omitted.) |                                                                            |
+|     "    link/ether b2:61:0b:3f:69:a3 brd ff:ff:ff:ff:ff:ff\n",                                |                                                                            |
+|     "13: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qd... (the rest is omitted.) |                                                                            |
+|     "    link/none \n"                                                                         |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "route": [                                                                                     | General Routing Table Status                                               |
+|     "Kernel IP routing table\n",                                                               | - For Engineering Debugging                                                |
+|     "Destination     Gateway         Genmask         Flags Metric Ref    Use Iface\n",         |                                                                            |
+|     "0.0.0.0         10.10.10.1      0.0.0.0         UG    0      0        0 eth0\n",          |                                                                            |
+|     "10.10.10.0      0.0.0.0         255.255.255.0   U     0      0        0 eth0\n",          |                                                                            |
+|     "192.168.43.0    192.168.43.2    255.255.255.0   UG    0      0        0 tun0\n",          |                                                                            |
+|     "192.168.43.2    0.0.0.0         255.255.255.255 UH    0      0        0 tun0\n"           |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "FQDN service": [                                                                              | FQDN Egress Control Status                                                 |
+|     "● avx-nfq.service - Aviatrix NFQ\n",                                                      | - When FQDN egress control is enabled, it will shows related               |
+|     "   Loaded: loaded (/lib/systemd/system/avx-nf... (the rest is omitted.)                   | log here.                                                                  |
+|     "   Active: active (running) since Wed 2018-12... (the rest is omitted.)                   | When it is disabled, the status is inactive                                |
+|     " Main PID: 8495 (avx-nfq)\n",                                                             |                                                                            |
+|     "    Tasks: 1 (limit: 1149)\n",                                                            |                                                                            |
+|     "   CGroup: /system.slice/avx-nfq.service\n",                                              |                                                                            |
+|     "           └─8495 /home/ubuntu/cloudx-aws/nfq-module/avx-nfq\n",                          |                                                                            |
+|     "\n",                                                                                      |                                                                            |
+|     "Dec 19 13:23:30 ip-10-10-0-182 avx-nfq[8495]:... (the rest is omitted.)                   |                                                                            |
+|    ... (the rest is omitted.)                                                                  |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "SSH": {                                                                                       | SSH port for diagnostic and configuration                                  |
+|     "port": {                                                                                  | - Port 22 should be always reachable, it shows unreachable,                |
+|         "22": [                                                                                | please check security group or firewall rule of GW.It should               |
+|             "up",                                                                              | open this port to Controller's public IP                                   |
+|             "reachable"                                                                        |                                                                            |
+|         ]                                                                                      |                                                                            |
+|     },                                                                                         |                                                                            |
+|     "service": "Up"                                                                            |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Auth Config": [                                                                               |                                                                            |
+|     {                                                                                          |                                                                            |
+|         "cfg": "Pass",                                                                         |                                                                            |
+|         "method": "LDAP auth"                                                                  |                                                                            |
+|     }                                                                                          |                                                                            |
+| ],                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "VPN config": "Pass",                                                                          |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "DNS Service": {                                                                               | DNS Service Status                                                         |
+|     "/etc/resolvconf/resolv.conf.d/head": [                                                    |                                                                            |
+|         "nameserver 8.8.8.8\n"                                                                 |                                                                            |
+|     ],                                                                                         |                                                                            |
+|     "/etc/hosts": [                                                                            |                                                                            |
+|         "127.0.0.1 localhost\n",                                                               |                                                                            |
+|         "\n",                                                                                  |                                                                            |
+|         "::1 ip6-localhost ip6-loopback\n",                                                    |                                                                            |
+|         "fe00::0 ip6-localnet\n",                                                              |                                                                            |
+|         "ff00::0 ip6-mcastprefix\n",                                                           |                                                                            |
+|         "ff02::1 ip6-allnodes\n",                                                              |                                                                            |
+|         "ff02::2 ip6-allrouters\n",                                                            |                                                                            |
+|         "ff02::3 ip6-allhosts\n",                                                              |                                                                            |
+|         "ip-10-10-10-72\n",                                                                    |                                                                            |
+|         "ip-10-10-10-72\n",                                                                    |                                                                            |
+|         "10.10.10.72 ip-10-10-10-72\n"                                                         |                                                                            |
+|     ],                                                                                         |                                                                            |
+|     "/etc/hostname": [                                                                         |                                                                            |
+|         "ip-10-10-10-72\n"                                                                     |                                                                            |
+|     ],                                                                                         |                                                                            |
+|     "/etc/systemd/resolved.conf": [                                                            |                                                                            |
+|         "\n",                                                                                  |                                                                            |
+|         "[Resolve]\n",                                                                         |                                                                            |
+|         "DNS=8.8.8.8\n"                                                                        |                                                                            |
+|     ],                                                                                         |                                                                            |
+|     "/etc/resolv.conf": [                                                                      |                                                                            |
+|         "\n",                                                                                  |                                                                            |
+|         "nameserver 8.8.8.8\n",                                                                |                                                                            |
+|         "nameserver 10.10.0.2\n",                                                              |                                                                            |
+|         "search us-west-2.compute.internal\n"                                                  |                                                                            |
+|     ]                                                                                          |                                                                            |
+| },                                                                                             |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| "Server Cert": "good"                                                                          |                                                                            |
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
