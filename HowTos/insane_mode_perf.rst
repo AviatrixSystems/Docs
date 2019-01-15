@@ -38,7 +38,7 @@ Aviatrix gateways at the Spoke VPC and Transit VPC are c5.4xlarge instance size.
 1. MTU = 9000 Bytes 
 =====================
 
-For Jumbo Frame Size of 9000 bytes, the test result is shown as below. 
+For Jumbo Frame Size of 9000 bytes, the test result against different end-to-end latencies and TCP streams is shown as below. 
 
 |insane_perf_jumbo|
 
