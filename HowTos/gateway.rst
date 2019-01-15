@@ -421,6 +421,7 @@ to admin and immediately stops the instance(s).
 You can exclude certain instances by entering instance IDs separated by commas.
 
 To configure:
+
 #. Go to **Gateway** page
 #. Highlight a gateway, click **Edit**.
 #. Scroll down to **Monitor Gateway Subnet**.
