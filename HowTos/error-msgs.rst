@@ -13,7 +13,7 @@ This document records Aviatrix error messages, possible root causes and solution
 
 ::
 
-**Error message** 'Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal ..... and configure programmatic deployment for the Marketplace item or create it there for the first time'
+[Aviatrix Error] Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal ..... and configure programmatic deployment for the Marketplace item or create it there for the first time
 
 If you see this error message when you launch an Azure ARM gateway,
 chances are you have not subscribed to Aviatrix gateway during Azure onboarding process. Either go back to onboarding page and follow the instructions there, or click `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+subscribe+to+Aviatrix+companion+gateway.pdf>`__ for guidance.  
@@ -23,7 +23,7 @@ chances are you have not subscribed to Aviatrix gateway during Azure onboarding 
 
 ::
 
-**Error message** `Error: Exception CloudxErrExt Context:message:EC2ResponseError: 401 Unauthorized AuthFailureAWS was not able to validate the provided access credentialsf67841bc-cb94-4cfd-a990-05d27d11f540`
+[Aviatrix Error]  Exception CloudxErrExt Context:message:EC2ResponseError: 401 Unauthorized AuthFailureAWS was not able to validate the provided access credentialsf67841bc-cb94-4cfd-a990-05d27d11f540
 
 If you see this error message when launching an AWS gateway, the potential root causes are:
 
@@ -35,9 +35,17 @@ If you see this error message when launching an AWS gateway, the potential root 
 
 ::
 
-  **Error message** Detach before you delete AWS TGW. To detach Aviatrix Transit GW vpc-873db7e2 using "TGW Orchestrator > Plan > Step 7".
+  [Aviatrix Error]  Detach before you delete AWS TGW. To detach Aviatrix Transit GW vpc-873db7e2 using "TGW Orchestrator > Plan > Step 7".
 
 This error message says you must first detach the Aviatrix Transit GW from the TGW before you can delete the gateway. 
 
+--------------------------------------------------------------------------------------
+
+::
+
+  [Aviatrix Error] VPC creation failed with error EC2ResponseError: 400 Bad Request VpcLimitExceededThe maximum number of VPCs has been reached
+
+
+You may have exceeded AWS VPC limits on this account. You can file a support ticket to increase the limit. 
 
 .. disqus::
