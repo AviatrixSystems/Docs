@@ -57,8 +57,9 @@ Repeat Step 3 if you have more gateways that should be attached to this tag.
 Add more tags
 -------------
 
-Repeat from Step 1 to create more tags and attach different gateways. 
-Note each gateway can only be attached to one tag. 
+Repeat from Step 1 to create more tags and attach to the same gateway or different gateways.
+However, if multiple tags are attached to the same gateway, then mode (Whitelist or BlackList) must be identical.
+
 
 Exception Rule
 ===============
