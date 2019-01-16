@@ -177,9 +177,9 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
    |imageCFComplete|
    
 
-.. important:: 
+.. note:: 
 
-  Cloudformation stack deletion will not remove EIP or IAM resources (2 IAM roles & 2 IAM policies) which were aquired during stack creation. Users need to manually remove theses resources if they desire to.
+  Cloudformation stack deletion will not remove EIP or IAM resources (2 IAM roles & 2 IAM policies) which were aquired during stack creation. Users need to manually remove theses resources if they desire to do so.
 
 ..
 
