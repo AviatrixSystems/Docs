@@ -127,7 +127,8 @@ establish BGP connection.
 .. note::
    ASN number of Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
    ASN number (7224 in this example). Without it, Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
-   advertised by ASR/ISR back to Aviatrix Transit GW.
+   advertised by ASR/ISR back to Aviatrix Transit GW. With the same ASN number, Aviatrix Transit GW will drop the
+   route to Transit VPC CIDR.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
 Cisco ISR/ASR router configuration:
