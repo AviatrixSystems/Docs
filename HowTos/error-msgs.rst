@@ -48,4 +48,38 @@ This error message says you must first detach the Aviatrix Transit GW from the T
 
 You may have exceeded AWS VPC limits on this account. You can file a support ticket to increase the limit. 
 
+------------------------------------------------------------------------------------
+
+::
+
+  Error: [Aviatrix Error] Failed to launch vpc virginia-client due to Failed to create instance. Error code: Unsupported, message: Your requested instance type (c5.2xlarge) is not supported in your requested Availability Zone (us-east-1e). Please retry your request by not specifying an Availability Zone or choosing us-east-1b, us-east-1d, us-east-1a, us-east-1f, us-east-1c.. Could be the Gateway size c5.2xlarge is not supported in the region us-east-1
+
+This instance size is not supported in the AZ you selected. Select a different one. 
+
+------------------------------------------------------------------------------------
+
+::
+
+  Error: [Aviatrix Error] Failed to allocate EIP, The maximum number of addresses has been reached.
+
+You have reached your AWS EIP limit. Release some of your unallocated EIPs from the AWS EC2 Console or submit a support ticket to AWS to increase the limit. 
+
+-----------------------------------------------------------------
+
+:: 
+
+ Error: [Aviatrix Error] Peerings detected. Please delete them before terminating the gateway. 
+
+You should go to Peering page to delete all peerings on the gateway before you 
+can delete the gateway. 
+
+--------------------------------------------------------------
+
+::
+
+ Error: [Aviatrix Error] Only C5 instances are allowed when Insane Mode is enabled.
+
+Insane Mode only supports AWS C5 series. For performance, check `this link <https://docs.aviatrix.com/HowTos/insane_mode.html#instance-sizes-and-ipsec-performance>`_.
+
+
 .. disqus::

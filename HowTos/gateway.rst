@@ -540,7 +540,7 @@ Insane Mode Encryption
 
 This is currently in Beta. Contact sales@aviatrix.com to participate in the Beta.
 
-When this option is selected, Aviatrix Controller will look for a spare /25 subnet segment to create a new subnet. 
+When this option is selected, Aviatrix Controller will look for a spare /25 subnet segment to create a new subnet. The instance sizes that support Insane Mode are c5 series and m5 series. 
 
 Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPSEC performance between two single Aviatrix gateway instances or between a single Aviatrix gateway instance and on-prem Aviatrix appliance.
 
