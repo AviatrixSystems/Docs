@@ -93,8 +93,15 @@ Use the information provided in the configuration file to configure the on-prem 
 
 To disconnect, go to Transit Network -> Setup, at `Step 8 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_, select the Transit GW in the drop down menu, click Disconnect.
 
-Appendix
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Appendix 1: Transit Connection to Cisco ISR/ASR over Internet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is the topology used for the sample configuration below:
+
+|External-Device-Internet|
+
+Since over Internet, Aviatrix Transit GW and Cisco ISR/ASR use the other's public IP to create IPSec tunnel and establish BGP
+connection.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
 Cisco ISR/ASR router configuration:
@@ -107,11 +114,40 @@ Cisco ISR/ASR router configuration:
 
 |transitgw_bgp|
 
+Appendix 2: Transit Connection to Cisco ISR/ASR over Direct Connect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is the topology used for the sample configuration below:
+
+|External-Device-DX|
+
+Since over Direct Connect, Aviatrix Transit GW and Cisco ISR/ASR use the other's private IP to create IPSec tunnel and
+establish BGP connection.
+
+.. note::
+   ASN number of Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
+   ASN number (7224 in this example). Without it, Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
+   advertised by ASR/ISR back to Aviatrix Transit GW.
+
+The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
+Cisco ISR/ASR router configuration:
+
+|transitgw_phase1_dx|
+
+|transitgw_phase2_dx|
+
+|transitgw_tunnel_dx|
+
+|transitgw_bgp_dx|
+
 .. |transitgw_dx| image:: transitgw_external_media/transitgw_dx.png
    :scale: 30%
 
 .. |transitgw_internet| image:: transitgw_external_media/transitgw_internet.png
    :scale: 30%
+
+.. |External-Device-Internet| image:: transitgw_external_media/External-Device-Internet.png
+   :scale: 50%
 
 .. |transitgw_phase1| image:: transitgw_external_media/transitgw_phrase1.png
    :scale: 70%
@@ -123,6 +159,21 @@ Cisco ISR/ASR router configuration:
    :scale: 70%
 
 .. |transitgw_bgp| image:: transitgw_external_media/transitgw_bgp.png
+   :scale: 70%
+
+.. |External-Device-DX| image:: transitgw_external_media/External-Device-DX.png
+   :scale: 50%
+
+.. |transitgw_phase1_dx| image:: transitgw_external_media/transitgw_phrase1_dx.png
+   :scale: 70%
+
+.. |transitgw_phase2_dx| image:: transitgw_external_media/transitgw_phrase2_dx.png
+   :scale: 70%
+
+.. |transitgw_tunnel_dx| image:: transitgw_external_media/transitgw_tunnel_dx.png
+   :scale: 70%
+
+.. |transitgw_bgp_dx| image:: transitgw_external_media/transitgw_bgp_dx.png
    :scale: 70%
 
 .. disqus::
