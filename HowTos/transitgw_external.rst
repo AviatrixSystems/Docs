@@ -10,8 +10,8 @@ Aviatrix Transit Gateway to External Devices
 Starting from Release 4.1, there are three options to connect to Transit GW with BGP:
 
  - AWS VGW
- - External (or 3rd Party) Router/Firewall
  - Aviatrix hardware appliance CloudN
+ - External (or 3rd Party) Router/Firewall
 
 This document provides instructions on how to connect Aviatrix Transit GW to external router/firewall devices.
 
