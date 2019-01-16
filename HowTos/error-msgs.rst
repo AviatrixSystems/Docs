@@ -81,5 +81,12 @@ can delete the gateway.
 
 Insane Mode only supports AWS C5 series. For performance, check `this link <https://docs.aviatrix.com/HowTos/insane_mode.html#instance-sizes-and-ipsec-performance>`_.
 
+--------------------------------------------------------------------
+
+::
+
+  Error: [Aviatrix Error] Login failed
+
+Your password is probably not correct. 
 
 .. disqus::
