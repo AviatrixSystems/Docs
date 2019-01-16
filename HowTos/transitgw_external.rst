@@ -164,10 +164,10 @@ Cisco ISR/ASR router configuration:
 .. |External-Device-DX| image:: transitgw_external_media/External-Device-DX.png
    :scale: 50%
 
-.. |transitgw_phase1_dx| image:: transitgw_external_media/transitgw_phrase1_dx.png
+.. |transitgw_phase1_dx| image:: transitgw_external_media/transitgw_phase1_dx.png
    :scale: 70%
 
-.. |transitgw_phase2_dx| image:: transitgw_external_media/transitgw_phrase2_dx.png
+.. |transitgw_phase2_dx| image:: transitgw_external_media/transitgw_phase2_dx.png
    :scale: 70%
 
 .. |transitgw_tunnel_dx| image:: transitgw_external_media/transitgw_tunnel_dx.png
