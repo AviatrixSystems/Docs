@@ -3,14 +3,14 @@
   :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
-=========================================================
-AWS Transit Gateway (TGW) Orchestrator Feature FAQ
-=========================================================
+============================================================
+Aviatrix AWS Transit Gateway (TGW) Orchestrator Feature FAQ
+============================================================
 
-What is the AWSx TGW  Orchestrator feature?
------------------------------------------------
+What is the Aviatrix AWS Transit Gateway (TGW)  Orchestrator feature?
+------------------------------------------------------------------------
 
-AWS Transit Gateway (TGW)W Orchestrator feature serves three purposes:
+Aviatrix AWS Transit Gateway (TGW) Orchestrator feature serves three purposes:
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS TGW. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
@@ -34,10 +34,10 @@ from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed i
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
 
 
-Why should I use Aviatrix TGW Orchestrator?
+Why should I use AWS  TGW Orchestrator?
 --------------------------------------------
 
-Aviatrix TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. Aviatrix Controller makes TGW based Transit 
+AWS TGW Orchestrator simplifies, abstracts and extends the latest AWS TGW service. Aviatrix Controller makes TGW based Transit 
 architecture deployable by overcome `TGW limitations <https://docs.aviatrix.com/HowTos/aws_network_limits.html>`_. 
 
 - **Functional Completeness** Aviatrix makes AWS Transit Gateway functionally deployable. The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. Read `this answer <https://docs.aviatrix.com/HowTos/tgw_faq.html#why-should-i-use-aviatrix-tgw-orchestrator-to-build-a-transit-network-architecture>`_ for more details.
@@ -47,8 +47,8 @@ architecture deployable by overcome `TGW limitations <https://docs.aviatrix.com/
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
 
 
-How does Aviatrix TGW Orchestrator compliment AWS TGW service?
----------------------------------------------------------------
+How does Aviatrix Transit Gateway (TGW)  Orchestrator compliment AWS TGW service?
+-----------------------------------------------------------------------------
 
 - **Dynamic Route Propagation** Using Aviatrix Orchestrator is the only guaranteed way to ensure your on-prem routes are properly propagated to Spoke VPCs. AWS TGW propagates VPC CIDR and IPSEC VPN routes to the TGW route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix TGW Orchestrator dynamically update route entries in the VPC route tables. 
 
