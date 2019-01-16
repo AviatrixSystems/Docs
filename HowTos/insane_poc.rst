@@ -7,14 +7,14 @@
 Insane Mode POC Instructions
 ===============================================
 
-This document describes steps for testing functionality and performance with Insane Mode. 
+This document describes steps for testing functionality and performance with Insane Mode. For more information on Insane Mode, check out `this document. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
 Preparation
 ---------------------------------------------------
 
  a. Custom upgrade to preview release. Settings -> Maintenance -> Upgrade -> UPGRADE TO CUSTOM RELEASE, enter preview for the "Release Version" field. 
 
- #. Update IAM policies. It's likely the Aviatrix required IAM policies are out of date. Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update IAM policies Controller account and all gateways accounts. 
+ #. Update IAM policies. It's likely the Aviatrix required IAM policies are out of date. Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update IAM policies for Controller account and all gateways accounts. 
 
 1. Test Spoke to Spoke Performance
 ------------------------------------
@@ -30,6 +30,10 @@ This phase test performance between two instances in two different Spoke VPCs. T
  #. Test performance. Launch two Linux instances (the instance size should be comparable to the gateway size. For example, they should all be C5.2xlarge) in each Spoke VPC. Open security groups of the instances to allow for inbound traffic from the other Spoke VPC. Note you can launch the instances in public subnet in the Spoke VPC, or use `Aviatrix User VPN feature <https://docs.aviatrix.com/HowTos/uservpn.html>`_ to access the instance on the private subnet. When you run iperf test, you should run them with private IP addresses. 
 
   For example, the server Linux instance has IP address 10.10.10.109 and the client Linux instance has IP address 10.12.11.100. The client instance should run "iperf3 -c 10.10.10.109 -P 8" where P represents the number of TCP streams and where 10.10.10.109 represents the private IP address of the server Linux instance. .  
+
+.. tip::
+
+  You can discover MTU sizes of your network by go to Troubleshoot -> Network -> GATEWAY UTILITY, select a gateway and enter a destination IP address, click Trace Path. 
 
 2. Test Transit VPC to on-prem Performance
 --------------------------------------------
