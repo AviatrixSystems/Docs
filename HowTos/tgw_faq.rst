@@ -4,13 +4,13 @@
 
 
 =========================================================
-Transit Gateway (TGW) Orchestrator Feature FAQ
+AWS Transit Gateway (TGW) Orchestrator Feature FAQ
 =========================================================
 
-What is the Aviatrix TGW Orchestrator feature?
+What is the AWSx TGW  Orchestrator feature?
 -----------------------------------------------
 
-TGW Orchestrator feature serves three purposes:
+AWS Transit Gateway (TGW)W Orchestrator feature serves three purposes:
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS TGW. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
