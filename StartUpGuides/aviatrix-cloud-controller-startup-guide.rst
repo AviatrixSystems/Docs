@@ -175,6 +175,13 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
  2.11. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
    
    |imageCFComplete|
+   
+
+.. important:: 
+
+  Cloudformation stack deletion will not remove EIP or IAM resources (2 IAM roles & 2 IAM policies) which were aquired during stack creation. Users need to manually remove theses resources if they desire to.
+
+..
 
 
 Step 3. Connect to the Controller 
