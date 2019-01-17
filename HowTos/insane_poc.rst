@@ -16,6 +16,11 @@ Preparation
 
  #. Update IAM policies. It's likely the Aviatrix required IAM policies are out of date. Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update IAM policies for Controller account and all gateways accounts. 
 
+.. tip::
+
+  Use Aviatrix Useful Tools to create a new VPC. For Transit VPC, select Aviatrix Transit VPC option. 
+
+
 1. Test Spoke to Spoke Performance
 ------------------------------------
 
