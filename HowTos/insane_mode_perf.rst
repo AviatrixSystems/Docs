@@ -46,15 +46,20 @@ For Jumbo Frame Size of 9000 bytes, the TCP throughput against different end-to-
 2. MTU = 1500 Bytes
 ====================
 
-If MTU is 1500 bytes, it significantly affects the performance. We test the scenario where the
-latency is 25ms. 
-
-|throughput_1500_25ms|
+Coming soon.
 
 How to Tune Performance
 -----------------------
 
-Coming soon. 
+1. Check MTU size
+=================
+
+Use Trace Path. Go to Troubleshoot -> Diagnostics -> Network. Select a gateway and destination IP address, click Trace Path. It should display MTU of the devices along the path. 
+
+2. Tune TCP window size
+========================
+
+For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
 
 .. |insane_perf_setup| image:: insane_mode_perf_media/insane_perf_setup.png
    :scale: 30%

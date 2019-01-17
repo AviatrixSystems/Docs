@@ -8,6 +8,14 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+------------------------------------------------------------------------------------
+
+:: 
+
+ Error: Failed to create TGW Infra-TGW in us-east-1 - An error occurred (UnauthorizedOperation) when calling the CreateTransitGateway operation: You are not authorized to perform this operation.
+
+Most likely you need to update IAM policies. Follow the instructions `here. <https://docs.aviatrix.com/HowTos/iam_policies.html>`_
+
 
 -----------------------------------------------------------------------------------
 
@@ -47,6 +55,14 @@ This error message says you must first detach the Aviatrix Transit GW from the T
 
 
 You may have exceeded AWS VPC limits on this account. You can file a support ticket to increase the limit. 
+
+------------------------------------------------------------------------------------
+
+::
+
+ Error: [Aviatrix Error] Failed to deliver msg to gw virginia-client: HTTPSConnectionPool(host='54.164.197.97', port=443): Max retries exceeded with url: /cloudxaws/launch.py?action=gateway_diag (Caused by ConnectTimeoutError(, 'Connection to 54.164.197.97 timed out. (connect timeout=10)'))
+
+The gateway instance is either stopped or a security group rule of the gateway instance was added that prevents the Controller to reach to the gateway. 
 
 ------------------------------------------------------------------------------------
 
