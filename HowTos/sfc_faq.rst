@@ -10,11 +10,12 @@ Secure File Copy FAQ
 What is Secure File Copy?
 ---------------------------
 
-AWS Storage Gateway supports the NFS/SMB file interface with S3. But there are times the use case is different. 
+AWS Storage Gateway supports the NFS/SMB file interface with S3, it is useful when you want to use S3 as if
+it is a NFS or SMB file systems. But there are times the use case is different. 
 
-One example. Would your developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner?
+For example. Developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner. Since S3 is a public service, you must use public VIF to terminate the Direct Connect, this implies all on-prem users can upload to any S3 buckets. 
 
-Another example. Would your customers need to send data to AWS S3 buckets but you need to apply control to the activities?
+Another example. Your customers need to send data to AWS S3 buckets but you need to apply control to the activities as to which user and which buckets are available to upload objects.
 
 Aviatrix Secure File Copy is a tool that allows your developers to copy files between on-prem  
 while enabling you to control which S3 buckets and from where the file can be copied. 
