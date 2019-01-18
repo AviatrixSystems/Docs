@@ -4,7 +4,7 @@
 
 
 =============================================================
-TGW Egress VPC Firewall Limitation Test Validation
+Transit Gateway Egress VPC Firewall Limitation Test Validation
 =============================================================
 
 Introduction
