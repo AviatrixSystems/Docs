@@ -10,7 +10,7 @@ Aviatrix Terraform Provider is used to interact with Aviatrix resources.
 
 Read the `Aviatrix Terraform Provider Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_ to setup the environment.
 
-The provider allows you to manage Aviatrix resources such as account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. Click `here <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using Terraform.
+The provider allows you to manage Aviatrix resources such as account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. For Aviatrix Transit Network deployment, please click `here <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using Terraform.
 
 Example Usage
 =============
