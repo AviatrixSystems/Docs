@@ -10,6 +10,23 @@ This document records Aviatrix error messages, possible root causes and solution
 
 ------------------------------------------------------------------------------------
 
+::
+
+  Error: [Aviatrix Error] Peerings detected. Please delete them before terminating the gateway.
+
+Go to Peering page to delete the peer first.
+
+-----------------------------------------------------------------------------------
+
+::
+
+  Error: [Aviatrix Error] Detach virginia-spoke-1 from virginia-transit in Transit Network page...
+
+The peering relationship was most likely established by Transit Network workflow attaching a Spoke VPC to the Transit Gateway, therefore you should detach the Spoke VPC from the Transit VPC to delete the peering.
+
+
+------------------------------------------------------------------------------------
+
 :: 
 
  Error: Failed to create TGW Infra-TGW in us-east-1 - An error occurred (UnauthorizedOperation) when calling the CreateTransitGateway operation: You are not authorized to perform this operation.
