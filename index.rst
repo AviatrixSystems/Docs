@@ -13,7 +13,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
 * :ref:`Gateway`
-* :ref:`TGW Orchestrator`
+* :ref:`Transit Gateway Orchestrator`
 * :ref:`Transit Network`
 * :ref:`Transit DMZ`
 * :ref:`Peering`
@@ -79,11 +79,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/gateway
    Solutions/gateway_ha
 
-.. _TGW Orchestrator:
+.. _Transit Gateway Orchestrator:
 
 .. toctree::
    :maxdepth: 1
-   :caption: TGW Orchestrator
+   :caption: Transit Gateway Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
