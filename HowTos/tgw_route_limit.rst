@@ -4,7 +4,7 @@
 
 
 =========================================================
-AWS TGW Route Limit Test Validation
+AWS Transit Gateway Route Limit Test Validation
 =========================================================
 
 Introduction

@@ -1,14 +1,14 @@
 .. meta::
   :description: TGW Plan
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 =========================================================
-TGW Orchestrator Plan
+Transit Gateway Orchestrator Plan
 =========================================================
 
 
-TGW Orchestrator Plan is the first stage in deploying a Transit Network using TGW. After you go through the Plan 
+AWS Transit Gateway (TGW) Orchestrator Plan is the first stage in deploying a Transit Network using TGW. After you go through the Plan 
 stage configuration, you can proceed to the `Build stage <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ 
 to attach VPCs. 
 

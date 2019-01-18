@@ -1,6 +1,6 @@
 .. meta::
   :description: TGW Egress VPC
-  :keywords: AWS TGW, TGW orchestrator, Egress VPC, PAN Firewall
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Egress VPC, PAN Firewall
 
 
 =============================================================

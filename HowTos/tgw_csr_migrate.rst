@@ -3,7 +3,7 @@
    :keywords: AWS Transit Gateway, TGW, CSR Migration
 
 ==============================================================
-Migrating a CSR Transit to Aviatrix TGW Orchestrator
+Migrating a CSR Transit to Transit Gateway Orchestrator
 ==============================================================
 
 This document assumes that you have deployed a `CSR Transit solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ with Transit hub CSR instances and VGWs 

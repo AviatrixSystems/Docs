@@ -1,15 +1,15 @@
 .. meta::
   :description: TGW Build
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network, TGW Build
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, TGW Build
 
 
 =========================================================
-TGW Orchestrator Build
+Transit Gateway Orchestrator Build
 =========================================================
 
-At Build stage, you attach VPCs to a TGW and security domain. Each VPC can only be attached to one security domain. 
+At Build stage, you attach VPCs to an AWS Transit Gateway (TGW) and security domain. Each VPC can only be attached to one security domain. 
 
-TGW Orchestrator Build workflow is a one step instruction to attach  VPC to  AWS TGW and security domain.
+AWS Transit Gateway (TGW) Orchestrator Build workflow is a one step instruction to attach  VPC to  AWS TGW and security domain.
 
 For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 

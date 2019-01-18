@@ -1,6 +1,6 @@
 .. meta::
   :description: TGW Orchestrator Overview
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 ============================================================
