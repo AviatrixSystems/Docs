@@ -4,7 +4,7 @@
 
 
 ============================================================
-Transit Gateway Orchestrator Feature FAQ
+AWS Transit Gateway Orchestrator FAQ
 ============================================================
 
 What is the Aviatrix AWS Transit Gateway (TGW)  Orchestrator feature?
