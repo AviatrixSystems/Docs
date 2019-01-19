@@ -127,21 +127,26 @@ connection, return to this section and start with Step 4 to setup.
 
   Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
 
-Simple Transit Network
-~~~~~~~~~~~~~~~~~~~~~~~~
+4.1 Simple Transit Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
-return to this section and continue to the next step. 
-
-
-The example below shows what is accomplished when you complete Step 4, where a pair of Aviatrix Transit Gateways have been launched and connected to VGW.  
+Simple Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to VGW which connects to on-prem, as shown in the diagram below. 
 
 |transit_gw|
 
-Transit DMZ
-~~~~~~~~~~~~~
+Step 4.1 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Transit Network workflow Step 1, 2 and 3. 
 
-If you plan to deploy Transit DMZ, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
+When complete, return to this section and continue to Step 5 in this workflow to Enable Aviatrix Transit GW for Hybrid Connection. 
+
+
+4.2 Transit DMZ
+~~~~~~~~~~~~~~~~~
+
+If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Transit DMZ workflow Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
+
+|transit_dmz|
+
+When complete, the next two steps, Step 5 and Step 6 in this work should have already been executed for the Main gateway, i.e., you can skip the next two steps. 
 
 
 5. Enable Aviatrix Transit GW for Hybrid Connection
@@ -150,11 +155,6 @@ If you plan to deploy Transit DMZ, follow the `Transit DMZ workflow <https://doc
 The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to Transit Gateway. The networking between Transit Gateway and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
 
 This step designates an Aviatrix Transit GW to be used in conjunction with Transit Gateway. It creates a second Ethernet interface on the Aviatrix Transit GW for sending and receiving packets from Transit Gateway. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from Transit Gateway. 
-
-
-.. tip::
-
-  Before you configure this step, make sure you have launched an Aviatrix Transit GW by following `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, Step 1, 2 and 3. 
 
 
 ==========================================      ==========
@@ -223,6 +223,9 @@ This step delete the Transit Gateway created in Step 1.
    :scale: 30%
 
 .. |transit_gw| image:: tgw_plan_media/transit_gw.png
+   :scale: 30%
+
+.. |transit_dmz| image:: tgw_plan_media/transit_dmz.png
    :scale: 30%
 
 .. |transit_complete| image:: tgw_plan_media/transit_complete.png

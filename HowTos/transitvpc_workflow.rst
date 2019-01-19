@@ -90,16 +90,29 @@ Transit GW HA either.
 Starting from Release 4.1, there are three options to connect to Transit GW with BGP:
 
  - AWS VGW
- - External Device
  - Aviatrix hardware appliance CloudN
+ - External Device
+
+as shown below. 
+
+|transit_to_onprem|
+
+3.1 External Device
+^^^^^^^^^^^^^^^^^^^^^
 
 "External Device" option allows you to build BGP and IPSEC tunnel directly to on-prem or 
 in the cloud device. It bypasses AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcomes the route limit by these native
 services. Follow the instruction in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ to complete Step 3. 
 
+3.2 Aviatrix Appliance CloudN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 "Aviatrix hardware appliance" allows you to build BGP and IPSEC tunnel directly to on-prem Aviatrix hardware
 appliance. It achieves 10Gbps IPSEC performance and bypasses AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcomes both the 
 performance limit and route limit by these native services. Follow the instruction in this link to complete Step 3. 
+
+3.3 AWS VGW
+^^^^^^^^^^^^^^
 
 The instruction below is for Transit GW to connect to AWS VGW. 
 
@@ -292,6 +305,9 @@ After you have built the Transit GW and Spokes, you can view the connection betw
    :scale: 50%
 
 .. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
+   :scale: 50%
+
+.. |transit_to_onprem| image:: transitvpc_workflow_media/transit_to_onprem.png
    :scale: 50%
 
 .. disqus::
