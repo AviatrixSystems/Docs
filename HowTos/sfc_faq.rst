@@ -1,17 +1,17 @@
 .. meta::
-  :description: Secure File Copy FAQ	
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network, Firewall, DMZ, Cloud DMZ
+  :description: Secure File Copy to S3 FAQ	
+  :keywords: AWS Storage gateway, AWS Transit Gateway, AWS TGW, scp, winscp, secure file copy
 
 
 =========================================================
-Secure File Copy FAQ
+Secure File Copy to AWS S3 FAQ
 =========================================================
 
-What is Secure File Copy?
----------------------------
+What is Secure File Copy to AWS S3?
+------------------------------------
 
-AWS Storage Gateway supports the NFS/SMB file interface with S3, it is useful when you want to use S3 as if
-it is a NFS or SMB file systems. But there are times the use case is different. 
+AWS Storage Gateway supports the NFS/SMB file interface, volume interface and tape interface to S3, it is useful 
+when you want to use S3 as if it is a NFS or SMB file system. But there are times the use case is different. 
 
 For example. Developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner. Since S3 is a public service, you must use public VIF to terminate the Direct Connect, this implies all on-prem users can upload to any S3 buckets. 
 
@@ -24,7 +24,7 @@ What are the benefits of Secure File Copy?
 ----------------------------------------------------------------------------
 
 
-The key benefit of Secure File Copy (SFC) is its ability for you to have control over 
+The key benefit of Secure File Copy (SFC) to AWS S3 is its ability for you to have control over 
 the data transfer in and out of AWS S3 bucket. 
 
 If you upload files to S3 over Direct Connect, you have to use Direct Connect Public VIF which 
@@ -66,7 +66,7 @@ Here are the steps for setting up SFC in a preview release.
  #. Go to AWS console VPC page to create a VPC endpoint for S3 with the VPC where the gateway was launched.  
  #. At the Aviatrix Controller Console, go to Useful Tools -> Secure File Copy. Select the gateway name and enter the name of the S3 bucket where you need to transfer file to. Leave all other options alone and click OK. 
  #. Open the security group inbound rules of the gateway instance from AWS Console to allow TCP port 22 from the on-prem network address range. 
- #. Upload a file by using the scp commands with the following syntax. (Ask Aviatrix team for the private key.)
+ #. Upload a file by using the scp commands with the following syntax. (contact support@aviatrix.com for the private key.)
 
 ::
   
