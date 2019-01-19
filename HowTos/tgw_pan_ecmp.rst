@@ -4,17 +4,17 @@
 
 
 =======================================================================
-TGW ECMP for DMZ Deployment  Limitation Test Validation 
+Transit Gateway ECMP for DMZ Deployment  Limitation Test Validation 
 =======================================================================
 
 Introduction
 --------------
 
-This document demonstrates that using TGW ECMP functions to deploy multiple (or multi-AZ) 
+This document demonstrates that using AWS Transit Gateway ECMP functions to deploy multiple (or multi-AZ) 
 firewalls for traffic inspection between on-prem and cloud does not work. 
 
-TGW VPN supports ECMP protocol that can load balance traffic across multiple VPN tunnels. 
-The question is can TGW ECMP be used to deploy a transit DMZ as shown in the diagram below?
+AWS Transit Gateway VPN supports ECMP protocol that can load balance traffic across multiple VPN tunnels. 
+The question is can Transit Gateway ECMP be used to deploy a transit DMZ as shown in the diagram below?
 
 |dmz_with_ecmp|
 
@@ -25,9 +25,9 @@ Test Validation
 
 The test setup uses PAN as the example firewall and is described in the following.
 
-VPC1 is a Spoke VPC attached to TGW1. An EC2 instance in VPC1 serves as the HTTP client.
+VPC1 is a Spoke VPC attached to Transit Gateway. An EC2 instance in VPC1 serves as the HTTP client.
 
-VPC3 is another Spoke VPC attached TGW2. VPC3 simulates on-prem data center with an EC2 instance serving as the
+VPC3 is another Spoke VPC attached Transit Gateway. VPC3 simulates on-prem data center with an EC2 instance serving as the
 HTTP server. TGW-2 simulates an on-prem router, which also runs ECMP with the two PANs in VPC2.
 
 VPC2 is a Transit VPC and has two Available Zones (AZs). Each AZ has one PAN firewall to ensure HA. PAN1 is in
@@ -61,12 +61,12 @@ other attachment uses PAN2-eth2 as Customer Gateway. Both attachments require BG
 BGP ASN numbers for both Customer Gateways are the same (64999 in this test).
 
 6. Configure PAN1 and PAN2 to bring up IPSec tunnels with TGW1 and TGW2. There are two IPSec tunnels for each
-attachment between the PAN and its attached TGW. Both PANs advertise a default route (0.0.0.0/0) and VPC2 CIDR
+attachment between the PAN and its attached Transit Gateway. Both PANs advertise a default route (0.0.0.0/0) and VPC2 CIDR
 (10.201.0.0/16) through BGP to TGW1 and TGW2.
 
-7. Verify ECMP is running between TGWs and PANs.
+7. Verify ECMP is running between Transit Gateway and PANs.
 
-    - At AWS Console, check Transit Gateway Route Tables for TGW1 and TGW2. For each route advertised by PANs (0.0.0.0/0 and 10.201.0.0/16), there are four attachments. These four attachments are the four IPSec tunnels from both PAN1 and PAN2. TGW will use ECMP to distribute traffic among these four IPSec tunnels. One sample TGW route table is as below:
+    - At AWS Console, check Transit Gateway Route Tables for TGW1 and TGW2. For each route advertised by PANs (0.0.0.0/0 and 10.201.0.0/16), there are four attachments. These four attachments are the four IPSec tunnels from both PAN1 and PAN2. Transit Gateway will use ECMP to distribute traffic among these four IPSec tunnels. One sample Transit Gateway route table is as below:
 
 |tgw-pan-ecmp1|
 
@@ -93,10 +93,10 @@ initiating TCP connection.
 Summary
 ---------
 
-Running ECMP between TGW and multiple firewall instances cannot guarantee the returning traffic will go through the same firewall instance as the
+Running ECMP between Transit Gateway and multiple firewall instances cannot guarantee the returning traffic will go through the same firewall instance as the
 initiating traffic. As such, the ECMP based solution cannot be used to load balance traffic between multiple firewall instances between on-prem and cloud.
 
-The technical reason behind it is that the two sets of ECMP running between firewall and TGW and between firewall and on-prem have no coordination among them. The ECMP decision to determine 
+The technical reason behind it is that the two sets of ECMP running between firewall and Transit Gateway and between firewall and on-prem have no coordination among them. The ECMP decision to determine 
 the next hop are made independently, resulting in the situation when the return traffic does not always goes through the same firewall instance as the initiating traffic. 
 
 .. |dmz_with_ecmp| image:: tgw_pan_ecmp_media/dmz_with_ecmp.png
