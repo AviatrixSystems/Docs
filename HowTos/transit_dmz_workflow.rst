@@ -21,6 +21,10 @@ multi AZ HA, you should deploy one main gateway and one backup main gateway,  on
 
   Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. Select the option "Aviatrix Transit VPC". 
 
+.. Note::
+
+  Transit gateway for the Transit DMZ deployment requires gateway instance size to be at least t2.small as it requires 3 Ethernet interfaces. 
+
 The main gateway(s) interfaces with Spoke VPC gateways or TGW, while the companion gateway(s) interface with VGW or 
 on-prem devices. The diagram below describes the naming convention of the two gateways.  
 

@@ -130,7 +130,7 @@ connection, return to this section and start with Step 4 to setup.
 4.1 Simple Transit Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Simple Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to VGW which connects to on-prem, as shown in the diagram below. 
+Simple Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to on-prem in the three, as shown in the diagram below: AWS VGW, External Device or Aviatrix Appliance CloudN. 
 
 |transit_gw|
 

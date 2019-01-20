@@ -67,7 +67,7 @@ VPC ID/VNet Name           The Transit VPC ID where Transit GW was launched.
 Connection Name            A unique name to identify the connection to external device. 
 BGP Local AS Number        The BGP AS number the Transit GW will use to exchange routes with external device.
 BGP Remote AS Number       The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
-Primary Cloud Gateway      The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. 
+Primary Cloud Gateway      The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
 Remote Gateway Type        Select one device type. Select Generic if the external device is not in the drop down. 
 Algorithm                  Optional parameters. Leave it unselected if you don't know.
 Enable HA                  Select HA if there are two external devices. 
