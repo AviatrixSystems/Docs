@@ -1,3 +1,22 @@
+.. meta::
+   :description: The Service Description of Troubleshoot Diagnostic result
+   :keywords: Aviatrix troubleshooting, Diagnostic, Diagnostic Result, gateway, reachable
+
+###################################
+Troubleshoot - Diagnostic Result
+###################################
+
+This page explains the major items to examaine while doing a Run diagnostics on a gateway.
+
+.. tip::
+ 
+   You can run a Diagnostics by go to Troubleshoot->Diagnostics->Gateway->Diagnostics, select a gateway to run diagnostics. Click run. When it finishes, click Show to display on the console. Click Submit to send the diagnostics result to Aviatrix support team.
+The diagnostics test if the gateway is reachable and its services are up and running.
+
+
+Diagnostic Result
+---------------
+
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Diagnostic Output                                                                      | Service Description                                                                                                                                                                                                 |
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,7 +111,7 @@
 |     "-A CLOUDX-SNAT -o eth0 -j MASQUERADE\n"                                           |                                                                                                                                                                                                                     |
 | ],                                                                                     |                                                                                                                                                                                                                     |
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| "Hostname-filter Status": [                                                            | Indicates Hostname-filter service status                                                                                                                                                                                       |
+| "Hostname-filter Status": [                                                            | Indicates Hostname-filter service status                                                                                                                                                                            |
 |     "● avx-hostname-filter.service - Aviatrix Hostname Filter\n",                      |  - Default: inactive                                                                                                                                                                                                |
 |     "   Loaded: loaded (/lib/systemd/system/a ... (the rest is omitted.)               |                                                                                                                                                                                                                     |
 |     "   Active: inactive (dead)\n"                                                     |                                                                                                                                                                                                                     |
@@ -311,8 +330,8 @@
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | "VPN config": "Pass",                                                                  | Indicates the SSLVPN confguration status. Expected value: Pass                                                                                                                                                      |
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| "DNS Service": {                                                                       | Indicates DNS service status and related configuration on the gateway.                                                                                                                                                                                                 |
-|     "/etc/resolvconf/resolv.conf.d/head": [                                            |                                                                                                                                                                                  |
+| "DNS Service": {                                                                       | Indicates DNS service status and related configuration on the gateway.                                                                                                                                              |
+|     "/etc/resolvconf/resolv.conf.d/head": [                                            |                                                                                                                                                                                                                     |
 |         "nameserver 8.8.8.8\n"                                                         |                                                                                                                                                                                                                     |
 |     ],                                                                                 |                                                                                                                                                                                                                     |
 |     "/etc/hosts": [                                                                    |                                                                                                                                                                                                                     |
@@ -346,3 +365,5 @@
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | "Server Cert": "good"                                                                  |                                                                                                                                                                                                                     |
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. disqus::
