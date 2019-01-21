@@ -15,6 +15,8 @@ Diagnostics
 -  Gateway
 
     Please refer to `Run diagnostics on a gateway. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
+    
+    Please refer to `Service Description of Diagnostic Result <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`__
 
 
 .. disqus::
