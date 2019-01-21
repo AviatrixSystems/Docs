@@ -37,16 +37,16 @@ on-prem devices. The diagram below describes the naming convention of the two ga
 1.1 Main gateway
 ~~~~~~~~~~~~~~~~~
 
- a. For main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (for HA) to launch the gateway(s).  
+ a. For main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (for HA) to launch the main gateway(s).  
 
- b.  If TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ for the main gateway.   
+ b.  If TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ to enable main gateway to be part of TGW orchestrator and attach the main gateway to TGW. If TGW Orchestrator is not used, skip step b.    
 
 1.2 Companion gateway
 ~~~~~~~~~~~~~~~~~~~~~~
 
  a. For companion gateway, go to Transit Network -> Setup, go through Step 1, 2 (for HA) to launch the gateway(s).
 
- b. Connect the companion gateway by executing `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. This step is  necessary since companion gateway interfaces with VGW, on-prem CloudN or a third party device. 
+ b. Connect the companion gateway to on-prem by executing `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. This step is necessary since companion gateway interfaces with one of the three options: AWS VGW, Aviatrix hardware appliance  CloudN or an external device.  
 
 2. Prepare Transit GW for DMZ Function
 ------------------------------------------

@@ -8,6 +8,14 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+-----------------------------------------------------------------------------------
+
+::
+
+ [Aviatrix Error] Primary gateway virginia-transit is not up. Bring up the Primary gateway and try again.
+
+Most likely your gateway is in a stopped state. Go to AWS Console to start the gateway instance. 
+
 ------------------------------------------------------------------------------------
 
 ::

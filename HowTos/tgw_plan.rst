@@ -127,8 +127,8 @@ connection, return to this section and start with Step 4 to setup.
 
   Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
 
-4.1 Simple Transit Network
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.1 Non DMZ Transit Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Simple Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to on-prem in the three, as shown in the diagram below: AWS VGW, External Device or Aviatrix Appliance CloudN. 
 
@@ -169,7 +169,9 @@ Gateway Namen                                   Select a Transit GW from the dro
 
 This step attaches the Aviatrix Edge VPC to the Transit Gateway and the Aviatrix Edge Domain, thus allowing the Aviatrix Transit GW to send and receive packets from Transit Gateway. 
 
-Note there is no IPSEC tunnel between Transit Gateway and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the Transit Gateway, as shown in the diagram below. 
+.. Note::
+ 
+ There is no IPSEC tunnel between Transit Gateway and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the Transit Gateway, as shown in the diagram below. Such setup allows Aviatrix edge VPC to leverage the high performance provided by AWS Transit Gateway. 
 
 |transit_complete|
 

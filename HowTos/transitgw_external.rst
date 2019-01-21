@@ -60,28 +60,32 @@ The configuration is the `Step 3 in the Transit Network workflow <https://docs.a
 
 Fill the parameters and click OK.
 
-=====================      ==========
-**Setting**                **Value**
-=====================      ==========
-VPC ID/VNet Name           The Transit VPC ID where Transit GW was launched.
-Connection Name            A unique name to identify the connection to external device. 
-BGP Local AS Number        The BGP AS number the Transit GW will use to exchange routes with external device.
-BGP Remote AS Number       The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
-Primary Cloud Gateway      The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
-Remote Gateway Type        Select one device type. Select Generic if the external device is not in the drop down. 
-Algorithm                  Optional parameters. Leave it unselected if you don't know.
-Enable HA                  Select HA if there are two external devices. 
-Over DirectConnect         Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
-External Device IP         IP address of the external device
-Pre-shared Key             Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
-=====================      ==========
+=========================      ==========
+**Setting**                    **Value**
+=========================      ==========
+VPC ID/VNet Name               The Transit VPC ID where Transit GW was launched.
+Connection Name                A unique name to identify the connection to external device. 
+BGP Local AS Number            The BGP AS number the Transit GW will use to exchange routes with external device.
+BGP Remote AS Number           The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
+Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
+Remote Gateway Type            Select one device type. Select Generic if the external device is not in the drop down. 
+Algorithm                      Optional parameters. Leave it unselected if you don't know.
+Enable HA                      Select HA if there are two external devices. 
+Over DirectConnect             Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
+External Device IP             IP address of the external device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
+Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
+Local Tunnel IP address        Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
+Remote Tunnel IP address       Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+=========================      ==========
 
 2. Download the configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the configuration is done, a connection is created. Download the configuration file. 
 
-At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name", click Download Configuration. 
+At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name", click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
+
+|download_config_external|
 
 3. Configure the external device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,5 +180,8 @@ Cisco ISR/ASR router configuration:
 
 .. |transitgw_bgp_dx| image:: transitgw_external_media/transitgw_bgp_dx.png
    :scale: 70%
+
+.. |download_config_external| image:: transitgw_external_media/download_config_external.png
+   :scale: 20%
 
 .. disqus::
