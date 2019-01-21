@@ -101,8 +101,9 @@ as shown below.
 ^^^^^^^^^^^^^^^^^^^^^
 
 "External Device" option allows you to build BGP and IPSEC tunnel directly to on-prem or 
-in the cloud device. It bypasses AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcomes the route limit by these native
-services. Follow the instruction in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_ to complete this Step. 
+in the cloud device. It bypasses AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcomes the route limit by these native services. For more information, read more `here. <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ 
+
+Follow the instruction in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_  to complete this Step. 
 
 3.2 Aviatrix Appliance CloudN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
