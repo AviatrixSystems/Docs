@@ -32,7 +32,7 @@ on-prem devices. The diagram below describes the naming convention of the two ga
 
 .. important::
   
-  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.medium or t3.medium. In addition, if you **did not** use Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as the tip shown above, make sure the Transit VPC have unused subnet space for additional /28 subnets that Transit DMZ creates. 
+  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.small. In addition, if you **did not** use Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as the tip shown above, make sure the Transit VPC have unused subnet space for additional /28 subnets that Transit DMZ creates. 
 
 1.1 Main gateway
 ~~~~~~~~~~~~~~~~~

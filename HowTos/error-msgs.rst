@@ -8,6 +8,14 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+----------------------------------------------------------------------------------
+
+::
+
+  Error: [Aviatrix Error] BGP connection can only be deleted from Transit Network page.
+
+Site2Cloud connection established from `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ can only be deleted by the `delete section <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_ in the workflow. 
+
 -----------------------------------------------------------------------------------
 
 ::
