@@ -1,14 +1,14 @@
 .. meta::
   :description: TGW Plan
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network
+  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 =========================================================
-TGW Orchestrator Plan
+Transit Gateway Orchestrator Plan
 =========================================================
 
 
-TGW Orchestrator Plan is the first stage in deploying a Transit Network using TGW. After you go through the Plan 
+AWS Transit Gateway (TGW) Orchestrator Plan is the first stage in deploying a Transit Network using Transit Gateway. After you go through the Plan 
 stage configuration, you can proceed to the `Build stage <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ 
 to attach VPCs. 
 
@@ -16,15 +16,14 @@ For background information, refer to `TGW Orchestrator FAQ <https://docs.aviatri
 
 The plan stage consists of three sections:
 
- - **Create AWS TGW**. This is the only must do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS TGW and three connected Security Domains are created.  
+ - **Create AWS Transit Gateway**. This is the only must do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS Transit Gateway and three connected Security Domains are created.  
 
  - **Create Segmented Network**. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
 
- - **Create Hybrid Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC and build hybrid connection to on-prem. If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. 
-
+ - **Create Hybrid Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC and build hybrid connection to on-prem. If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
-from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates TGW and TGW route tables in AWS. There is no charge either by AWS or Aviatrix.
+from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates Transit Gateway and Transit Gateway route tables in AWS. There is no charge either by AWS or Aviatrix.
 
 
 If you have not decided on network segmentation, no worries, proceed to build a full mesh network by using the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_. 
@@ -34,16 +33,16 @@ If you have not decided on network segmentation, no worries, proceed to build a 
  You can modify your plan at any time. Simply return to the Plan page and create security domains and changing connection policies.  
 
 
-TGW Orchestrator Plan workflow provides a step by step instruction to define and setup your policies.
+Transit Gateway Orchestrator Plan workflow provides a step by step instruction to define and setup your policies.
 
 
 1. Create AWS TGW
 -------------------------------------------
 
-In order to use TGW service, you must first create a TGW. 
+In order to use Transit Gateway service, you must first create a Transit Gateway. 
 
-This step creates a TGW in a specified region with a specified AWS account, the Aviatrix Controller also automatically creates 
-the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_ and the corresponding TGW route tables. 
+This step creates a Transit Gateway in a specified region with a specified AWS account, the Aviatrix Controller also automatically creates 
+the `Default_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_, the `Shared_Service_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_ and the `Aviatrix_Edge_Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-aviatrix-edge-domain>`_ and the corresponding Transit Gateway route tables. 
 
 |create_tgw|
 
@@ -55,19 +54,18 @@ Note the three domains are connected, implying if you attach VPC to the Default 
 ==========================================      ==========
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. 
 Region                                          One of the AWS regions
-TGW Name                                        The name of the TGW
+TGW Name                                        The name of the Transit Gateway
 AWS Side AS Numbert                             Default AS number is 64512. This field currently is not used.
 ==========================================      ==========
 
-After TGW is created, you can validate by going to `View page <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-can-be-displayed-at-the-view-page>`_ and see what has been created. 
+After Transit Gateway is created, you can validate by going to `View page <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-can-be-displayed-at-the-view-page>`_ and see what has been created. 
 
 --------------------------------------------------------------------------------------------------------------------
 
-
-2. (Optional) Create a New Security Domain
---------------------------------------------------
-
 This section includes step 2 & 3 to plan a segmented network. 
+
+2. Create a New Security Domain
+--------------------------------------------------
 
 If you plan to build a `default network (full mesh) <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
 
@@ -83,16 +81,16 @@ In the example below, a new domain called prod_domain is created.
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-TGW Name                                        The name of the TGW
+TGW Name                                        The name of the Transit Gateway
 Security Domain Name                            Specify a unique domain name. For example, Dev_Domain.
 ==========================================      ==========
 
-3. (Optional) Build Your Domain Connection Policies
+3. Build Your Domain Connection Policies
 ----------------------------------------------------
 
 This step specifies the connection relationship of one domain to others. Two connected domains imply that VPCs in 
 each domain can communicate with each other despite the fact that they are in different domains. Aviatrix Controller takes
-care of both VPC route table and TGW route table programming and updates. 
+care of both VPC route table and Transit Gateway route table programming and updates. 
 
 Highlight a domain on the left panel and click Add, the domain will appears to the right. 
 
@@ -105,7 +103,7 @@ Continue from the above example, you can connect prod_domain to Shared_Service_D
 
 |connect_domain_2|
 
-Click the View page under TGW Orchestrator and click each expandable circles to see what has been created, 
+Click the View page under Transit Gateway Orchestrator and click each expandable circles to see what has been created, 
 as shown below.  
 
 |plan_view|
@@ -115,7 +113,7 @@ as shown below.
 This section is for hybrid connection, it includes Step 4, 5 & 6. It sets up connection to on-prem datacenter over 
 Direct Connect or Internet. 
 
-4. (Optional) Setup Aviatrix Transit GW  
+4. Setup Aviatrix Transit GW  
 ------------------------------------------------------------------
 
 If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
@@ -125,49 +123,55 @@ connection, return to this section and start with Step 4 to setup.
 
  For Aviatrix Transit GW to support Hybrid connection, the transit VPC needs to have a spare /26 CIDR space, i.e., not assigned to any subnets. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step. If your transit VPC does not spare /26 CIDR range, you can either `create a new VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ or add more CIDRs by following `these rules <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-resize>`_. For configuration, please refer to `these instructions <https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#add-ipv4-cidr>`_.
 
-Simple Transit Network
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. tip::
 
-Step 4 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Step 1, 2 and 3. When complete, 
-return to this section and continue to the next step. 
+  Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
 
+4.1 Non DMZ Transit Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The example below shows what is accomplished when you complete Step 4, where a pair of Aviatrix Transit Gateways have been launched and connected to VGW.  
+Simple Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to on-prem in the three, as shown in the diagram below: AWS VGW, External Device or Aviatrix Appliance CloudN. 
 
 |transit_gw|
 
-Transit DMZ
-~~~~~~~~~~~~~
+Step 4.1 is to take a detour to setup Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Transit Network workflow Step 1, 2 and 3. 
 
-If you plan to deploy Transit DMZ, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
+When complete, return to this section and continue to Step 5 in this workflow to Enable Aviatrix Transit GW for Hybrid Connection. 
 
 
-5. (Optional) Enable Aviatrix Transit GW for Hybrid Connection
+4.2 Transit DMZ
+~~~~~~~~~~~~~~~~~
+
+If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Transit DMZ workflow Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
+
+|transit_dmz|
+
+When complete, the next two steps, Step 5 and Step 6 in this work should have already been executed for the Main gateway, i.e., you can skip the next two steps. 
+
+
+5. Enable Aviatrix Transit GW for Hybrid Connection
 ---------------------------------------------------------------
 
-The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to TGW. The networking between TGW and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
+The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to Transit Gateway. The networking between Transit Gateway and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
 
-This step designates an Aviatrix Transit GW to be used in conjunction with TGW. It creates a second Ethernet interface on the Aviatrix Transit GW for sending and receiving packets from TGW. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from TGW. 
-
-
-.. tip::
-
-  Before you configure this step, make sure you have launched an Aviatrix Transit GW by following `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, Step 1, 2 and 3. 
+This step designates an Aviatrix Transit GW to be used in conjunction with Transit Gateway. It creates a second Ethernet interface on the Aviatrix Transit GW for sending and receiving packets from Transit Gateway. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from Transit Gateway. 
 
 
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. This account is for launching Transit gateway. It does not need to be the same account as TGW creator. 
+Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. This account is for launching Transit gateway. It does not need to be the same account as Transit Gateway creator. 
 Gateway Namen                                   Select a Transit GW from the drop down menu. 
 ==========================================      ==========
 
-6. (Optional) Attach Aviatrix Transit GW to TGW
+6. Attach Aviatrix Transit GW to TGW
 ------------------------------------------------------------------
 
-This step attaches the Aviatrix Edge VPC to the TGW and the Aviatrix Edge Domain, thus allowing the Aviatrix Transit GW to send and receive packets from TGW. 
+This step attaches the Aviatrix Edge VPC to the Transit Gateway and the Aviatrix Edge Domain, thus allowing the Aviatrix Transit GW to send and receive packets from Transit Gateway. 
 
-Note there is no IPSEC tunnel between TGW and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the TGW, as shown in the diagram below. 
+.. Note::
+ 
+ There is no IPSEC tunnel between Transit Gateway and the Aviatrix Transit GW, the Aviatrix GW behaves as an EC2 instance in a Spoke VPC (The Aviatrix edge VPC) attached to the Transit Gateway, as shown in the diagram below. Such setup allows Aviatrix edge VPC to leverage the high performance provided by AWS Transit Gateway. 
 
 |transit_complete|
 
@@ -182,18 +186,18 @@ This section consists of delete functions.
 
 .. note::
 
- To delete an Aviatrix Transit GW attached to a TGW, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance. 
+ To delete an Aviatrix Transit GW attached to a Transit Gateway, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance. 
 
-7. (Optional) Detach Aviatrix Transit GW from TGW
+7. Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 
 This step is the opposite of Step 6.
 
-8. (Optional) Disable Aviatrix Transit GW for Hybrid Connection
+8. Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
 
 This step deletes the eth1 interface and other resources associated with the  Aviatrix Transit GW 
-from TGW Orchestrator. 
+from Transit Gateway Orchestrator. 
 
 9. Delete Security Domain
 ---------------------------
@@ -203,7 +207,7 @@ This step delete a security domain created in Step 2.
 10. Delete AWS TGW
 ------------------
 
-This step delete the TGW created in Step 1. 
+This step delete the Transit Gateway created in Step 1. 
 
 .. |create_tgw| image:: tgw_plan_media/create_tgw.png
    :scale: 30%
@@ -221,6 +225,9 @@ This step delete the TGW created in Step 1.
    :scale: 30%
 
 .. |transit_gw| image:: tgw_plan_media/transit_gw.png
+   :scale: 30%
+
+.. |transit_dmz| image:: tgw_plan_media/transit_dmz.png
    :scale: 30%
 
 .. |transit_complete| image:: tgw_plan_media/transit_complete.png

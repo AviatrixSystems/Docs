@@ -1,14 +1,14 @@
 .. meta::
-   :description: instructions on migrating from CSR to Aviatrix TGW
-   :keywords: AWS Transit Gateway, TGW, CSR Migration
+   :description: instructions on migrating from CSR to Aviatrix Transit Gateway
+   :keywords: Transit Gateway, AWS Transit Gateway, TGW, CSR Migration
 
 ==============================================================
-Migrating a CSR Transit to Aviatrix TGW Orchestrator
+Migrating a CSR Transit to Transit Gateway Orchestrator
 ==============================================================
 
 This document assumes that you have deployed a `CSR Transit solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ with Transit hub CSR instances and VGWs 
 in Spoke VPCs. The steps
-below provide instructions to migrate a live CSR deployment to Aviatrix with TGW orchestrator.  
+below provide instructions to migrate a live CSR deployment to Aviatrix with Transit Gateway orchestrator.  
 
 The objectives here are:
 
@@ -30,7 +30,7 @@ Before the migration process starts,  plan on what security domains you need to 
 proceed. The security domains can be added and modified at any time. 
 
 
-1. **Launch a TGW** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_.
+1. **Launch a Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_.
 
 2. **Create Security Domains** If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. Follow `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_ to build connection policies. If you do not intend to build custom security domains, skip this section. 
 
@@ -48,7 +48,7 @@ A diagram for this migration path is shown below:
 
 5. **Remove a Spoke VPC** Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
 
-6. **Attach Spoke VPC to TGW** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ to attach a VPC to the corresponding security domain. 
+6. **Attach Spoke VPC to Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ to attach a VPC to the corresponding security domain. 
 
 
 7. Repeat the above step 5 and step 6 for the remaining Spoke VPCs. 

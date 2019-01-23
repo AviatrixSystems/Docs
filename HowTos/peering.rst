@@ -12,27 +12,24 @@ Aviatrix provides a point and click solution to create an encrypted tunnel betwe
 
 This guide helps you configure an encrypted peering. For cluster peering, refer to `this doc. <http://docs.aviatrix.com/HowTos/Cluster_Peering_Ref_Design.html>`__
 
-::
+ 1. At Gateway menu, create a gateway in an existing VPC/VNet.
 
- 1. At Gateway menu, create a gateway in an
-   existing VPC/VNet.
+ #. Repeat the step 1 for a different VPC/VNet.
 
- 2. Repeat the step 1 for a different VPC/VNet.
-
- 3. To enable Peering HA, go to Peering -> Encrypted Peering -> New peering, 
-    select the two gateways launched in the previous two steps. 
+ #. To enable Peering HA, go to Peering -> Encrypted Peering -> New peering, select the two gateways launched in the previous two steps. 
 
     select "Enable HA" if you wish to build a backup encrypted tunnel for HA. 
     Note that you must first create two respective backup gateways prior to this step. 
 
-    To launch backup gateways, go to Gateway page, select the gateway, click Edit, 
-    At "Gateway for High Availability Peering" field, select one public subnet 
-    and click Create. 
+    To launch backup gateways, go to Gateway page, select the gateway, click Edit, At "Gateway for High Availability Peering" field, select one public subnet and click Create. 
 
- 4. Go to Peering -> Encrypted Peering, click New Peering to peer the two
-   gateways.
+ #. Go to Peering -> Encrypted Peering, click New Peering to peer the two gateways.
 
-For a complete end to end solution, check out this `reference design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_.
+
+.. Note::
+
+ If the two gateways have `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ enabled, the Controller automatically creates an AWS VPC Peering (PCX) and establishes high performance encrypted peering between the two gateways. 
+  
 
 AWS VPC Peering
 """"""""""""""""""

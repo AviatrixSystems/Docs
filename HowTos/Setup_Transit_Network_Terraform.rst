@@ -5,13 +5,13 @@
 ============================================================
 Setup Transit Network using Aviatrix Terraform Provider
 ============================================================
-Aviatrix terraform provider is used to interact with Aviatrix resources. 
+Aviatrix Terraform Provider is used to interact with Aviatrix resources.
 
-You can read `Aviatrix Terraform Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_  to learn the steps on setting the environment. 
+You can read the `Aviatrix Terraform Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_  to learn the steps on setting up the environment.
 
 Click `here <http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_ to find more supported resources.
 
-Setup terraform provider
+Setup Terraform Provider
 ========================
 
 ::
@@ -251,4 +251,4 @@ Sample configuration to create complete transit VPC solution
 	  depends_on = ["aviatrix_vgw_conn.test_vgw_conn"]
 	}
 
-.. disqus::	
+.. disqus::

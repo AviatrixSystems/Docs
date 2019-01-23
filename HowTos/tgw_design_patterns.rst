@@ -1,10 +1,10 @@
 .. meta::
   :description: TGW Orchestrator Overview
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network
+  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 =========================================================
-TGW Orchestrator Design Patterns
+Transit Gateway Orchestrator Design Patterns
 =========================================================
 
 Many design patterns exist to deploy your network with Aviatrix TGW Orchestrator. Here are some 

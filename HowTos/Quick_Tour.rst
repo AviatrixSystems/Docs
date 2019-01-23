@@ -74,27 +74,6 @@ but do not want to replace the edge routers or firewalls that is already
 deployed at these sites, check out our `Site2Cloud reference
 design <http://docs.aviatrix.com/HowTos/site2cloud.html>`__.
 
-Docker Container Access
-"""""""""""""""""""""""""""""""""
-
-To learn how you can use Aviatrix to access containers remotely in the
-cloud, check out this `reference
-design <http://docs.aviatrix.com/HowTos/ContainerAccess.html>`__.
-
-Environment Stamping
-""""""""""""""""""""""
-
-If you wish to provide a differentiated and more secure SaaS services to
-your enterprise customers, Environment Stamping solution is the right
-one for you. Environment Stamping enables you to deploy identical and
-repeatable VPCs environment while providing unique access to all
-instances in VPC. Never have to manage VPC CIDRs, security policies and
-instances addresses any more.
-
-At VPC/VNet -> Environment Stamping, go to Read Me First to learn about
-this capability. Check out this `reference
-design <http://docs.aviatrix.com/HowTos/EnvironmentStamping.html>`__.
-
 Help
 """""
 

@@ -13,7 +13,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
 * :ref:`Gateway`
-* :ref:`TGW Orchestrator`
+* :ref:`Transit Gateway Orchestrator`
 * :ref:`Transit Network`
 * :ref:`Transit DMZ`
 * :ref:`Peering`
@@ -79,11 +79,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/gateway
    Solutions/gateway_ha
 
-.. _TGW Orchestrator:
+.. _Transit Gateway Orchestrator:
 
 .. toctree::
    :maxdepth: 1
-   :caption: TGW Orchestrator
+   :caption: Transit Gateway Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
@@ -92,6 +92,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_csr_migrate
    HowTos/tgw_egress_vpc
    HowTos/tgw_route_limit
+   HowTos/tgw_pan_ecmp
 
 .. _Transit Network:
 
@@ -107,6 +108,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_plus_security_vpc
    HowTos/transitgw_external
    HowTos/insane_mode
+   HowTos/insane_mode_perf
 
 .. _Transit DMZ
 
@@ -116,6 +118,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/transit_dmz_faq
    HowTos/transit_dmz_workflow
+   HowTos/transit_dmz_vendors
 
 .. _Security:
 
@@ -205,6 +208,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/vpc_tracker
    HowTos/create_vpc
+   HowTos/sfc_faq
 
 .. _Settings:
 
@@ -299,6 +303,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/connect_transit_network_clusters
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
+   HowTos/insane_poc
 
 .. _Solutions:
 

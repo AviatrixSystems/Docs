@@ -146,6 +146,11 @@ You can create read_only accounts for your operations team. They can view and li
 
 To disable admin login to the Controller, go to Settings -> Controller -> Login Customizatioin. Click Disable. 
 
+7. Encrypt Controller EBS Volume
+##################################
+
+Follow the `instructions here <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller EBS Volueme. 
+
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
 ------------------------------------------------------------------------------------------------------
@@ -194,7 +199,7 @@ Is Aviatrix Cloud Gateway a SaaS offer?
 ------------------------------------------
 
 
-No. Aviatrix Cloud Gateway is a software product that is deployed in
+No. The Aviatrix Controller and gateways are software product that is deployed in
 your own network perimeter.
 
 
@@ -344,6 +349,13 @@ establish the security association in IKEv2.
 There are a couple of other differences regarding IKEv2 has a better support for mobile devices which does not apply to site to site and site to cloud VPN where Aviatrix is being used. 
 
 AWS only supports IKEv1 on VGW. 
+
+How to encrypt Aviatrix Controller and gateway EBS volume?
+------------------------------------------------------------
+
+You can follow the `instructions here  <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller and gateway EBS volume.
+
+For automation, you can reference our `python script on github repository. <https://github.com/AviatrixSystems/EBS-encryption>`_   
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

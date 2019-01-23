@@ -34,6 +34,10 @@ The following AWS components should be created when setting up the transit VPC:
 * One subnet with **rt-transit-pub** attached.
 * (Optional - HA) One subnet with **rt-transit-pub** attached in a different AZ.
 
+.. tip::
+
+  Use `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ to create a transit VPC. Make sure the option "Aviatrix Transit VPC" is selected. 
+
 Virtual Private Gateway (VGW)
 ##############################
 

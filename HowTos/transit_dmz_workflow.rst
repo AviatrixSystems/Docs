@@ -1,6 +1,6 @@
 .. meta::
   :description: Transit DMZn
-  :keywords: AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
 
 =========================================================
@@ -15,11 +15,15 @@ For more background information, read `Transit DMZ FAQ <https://docs.aviatrix.co
 ------------------------------------------------
 
 This step launches two Aviatrix gateways in the transit VPC, main gateway and companion gateway. If you require 
-multi AZ HA, you should deploy two main gateways and two companion gateways. 
+multi AZ HA, you should deploy one main gateway and one backup main gateway,  one companion gateway and one backup companion gateway. 
 
 .. tip::
 
-  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. This will create two public subnets and two private subnets each with /28 CIDR range in two AZs 
+  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. Select the option "Aviatrix Transit VPC". 
+
+.. Note::
+
+  Transit gateway for the Transit DMZ deployment requires gateway instance size to be at least t2.small as it requires 3 Ethernet interfaces. 
 
 The main gateway(s) interfaces with Spoke VPC gateways or TGW, while the companion gateway(s) interface with VGW or 
 on-prem devices. The diagram below describes the naming convention of the two gateways.  
@@ -28,21 +32,21 @@ on-prem devices. The diagram below describes the naming convention of the two ga
 
 .. important::
   
-  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.medium or t3.medium. In addition, if you **did not** use Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as the tip shown above, make sure the Transit VPC have unused subnet space for additional /28 subnets that Transit DMZ creates. 
+  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.small. In addition, if you **did not** use Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as the tip shown above, make sure the Transit VPC have unused subnet space for additional /28 subnets that Transit DMZ creates. 
 
-Main gateway
-~~~~~~~~~~~~~
+1.1 Main gateway
+~~~~~~~~~~~~~~~~~
 
- a. For main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (for HA) to launch the gateway(s).  
+ a. For main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (for HA) to launch the main gateway(s).  
 
- b.  If TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ for the main gateway.   
+ b.  If TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ to enable main gateway to be part of TGW orchestrator and attach the main gateway to TGW. If TGW Orchestrator is not used, skip step b.    
 
-Companion gateway
-~~~~~~~~~~~~~~~~~~~
+1.2 Companion gateway
+~~~~~~~~~~~~~~~~~~~~~~
 
  a. For companion gateway, go to Transit Network -> Setup, go through Step 1, 2 (for HA) to launch the gateway(s).
 
- b. Connect the companion gateway by executing `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. This step is  necessary since companion gateway interfaces with VGW, on-prem CloudN or a third party device. 
+ b. Connect the companion gateway to on-prem by executing `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. This step is necessary since companion gateway interfaces with one of the three options: AWS VGW, Aviatrix hardware appliance  CloudN or an external device.  
 
 2. Prepare Transit GW for DMZ Function
 ------------------------------------------

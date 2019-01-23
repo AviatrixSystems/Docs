@@ -10,8 +10,8 @@ Aviatrix Transit Gateway to External Devices
 Starting from Release 4.1, there are three options to connect to Transit GW with BGP:
 
  - AWS VGW
- - External (or 3rd Party) Router/Firewall
  - Aviatrix hardware appliance CloudN
+ - External (or 3rd Party) Router/Firewall
 
 This document provides instructions on how to connect Aviatrix Transit GW to external router/firewall devices.
 
@@ -60,28 +60,32 @@ The configuration is the `Step 3 in the Transit Network workflow <https://docs.a
 
 Fill the parameters and click OK.
 
-=====================      ==========
-**Setting**                **Value**
-=====================      ==========
-VPC ID/VNet Name           The Transit VPC ID where Transit GW was launched.
-Connection Name            A unique name to identify the connection to external device. 
-BGP Local AS Number        The BGP AS number the Transit GW will use to exchange routes with external device.
-BGP Remote AS Number       The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
-Primary Cloud Gateway      The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. 
-Remote Gateway Type        Select one device type. Select Generic if the external device is not in the drop down. 
-Algorithm                  Optional parameters. Leave it unselected if you don't know.
-Enable HA                  Select HA if there are two external devices. 
-Over DirectConnect         Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
-External Device IP         IP address of the external device
-Pre-shared Key             Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
-=====================      ==========
+=========================      ==========
+**Setting**                    **Value**
+=========================      ==========
+VPC ID/VNet Name               The Transit VPC ID where Transit GW was launched.
+Connection Name                A unique name to identify the connection to external device. 
+BGP Local AS Number            The BGP AS number the Transit GW will use to exchange routes with external device.
+BGP Remote AS Number           The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
+Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
+Remote Gateway Type            Select one device type. Select Generic if the external device is not in the drop down. 
+Algorithm                      Optional parameters. Leave it unselected if you don't know.
+Enable HA                      Select HA if there are two external devices. 
+Over DirectConnect             Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
+External Device IP             IP address of the external device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
+Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
+Local Tunnel IP address        Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
+Remote Tunnel IP address       Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+=========================      ==========
 
 2. Download the configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the configuration is done, a connection is created. Download the configuration file. 
 
-At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name", click Download Configuration. 
+At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name", click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
+
+|download_config_external|
 
 3. Configure the external device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,11 +97,91 @@ Use the information provided in the configuration file to configure the on-prem 
 
 To disconnect, go to Transit Network -> Setup, at `Step 8 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_, select the Transit GW in the drop down menu, click Disconnect.
 
+Appendix 1: Transit Connection to Cisco ISR/ASR over Internet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is the topology used for the sample configuration below:
+
+|External-Device-Internet|
+
+Since over Internet, Aviatrix Transit GW and Cisco ISR/ASR use the other's public IP to create IPSec tunnel and establish BGP
+connection.
+
+The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
+Cisco ISR/ASR router configuration:
+
+|transitgw_phase1|
+
+|transitgw_phase2|
+
+|transitgw_tunnel|
+
+|transitgw_bgp|
+
+Appendix 2: Transit Connection to Cisco ISR/ASR over Direct Connect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is the topology used for the sample configuration below:
+
+|External-Device-DX|
+
+Since over Direct Connect, Aviatrix Transit GW and Cisco ISR/ASR use the other's private IP to create IPSec tunnel and
+establish BGP connection.
+
+.. note::
+   ASN number of Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
+   ASN number (7224 in this example). Without it, Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
+   advertised by ASR/ISR back to Aviatrix Transit GW. With the same ASN number, Aviatrix Transit GW will drop the
+   route to Transit VPC CIDR.
+
+The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
+Cisco ISR/ASR router configuration:
+
+|transitgw_phase1_dx|
+
+|transitgw_phase2_dx|
+
+|transitgw_tunnel_dx|
+
+|transitgw_bgp_dx|
 
 .. |transitgw_dx| image:: transitgw_external_media/transitgw_dx.png
    :scale: 30%
 
 .. |transitgw_internet| image:: transitgw_external_media/transitgw_internet.png
    :scale: 30%
+
+.. |External-Device-Internet| image:: transitgw_external_media/External-Device-Internet.png
+   :scale: 50%
+
+.. |transitgw_phase1| image:: transitgw_external_media/transitgw_phrase1.png
+   :scale: 70%
+
+.. |transitgw_phase2| image:: transitgw_external_media/transitgw_phrase2.png
+   :scale: 70%
+
+.. |transitgw_tunnel| image:: transitgw_external_media/transitgw_tunnel.png
+   :scale: 70%
+
+.. |transitgw_bgp| image:: transitgw_external_media/transitgw_bgp.png
+   :scale: 70%
+
+.. |External-Device-DX| image:: transitgw_external_media/External-Device-DX.png
+   :scale: 50%
+
+.. |transitgw_phase1_dx| image:: transitgw_external_media/transitgw_phase1_dx.png
+   :scale: 70%
+
+.. |transitgw_phase2_dx| image:: transitgw_external_media/transitgw_phase2_dx.png
+   :scale: 70%
+
+.. |transitgw_tunnel_dx| image:: transitgw_external_media/transitgw_tunnel_dx.png
+   :scale: 70%
+
+.. |transitgw_bgp_dx| image:: transitgw_external_media/transitgw_bgp_dx.png
+   :scale: 70%
+
+.. |download_config_external| image:: transitgw_external_media/download_config_external.png
+   :scale: 20%
 
 .. disqus::
