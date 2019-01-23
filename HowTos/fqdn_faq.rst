@@ -106,7 +106,7 @@ Vendor support                                  Yes                             
 ==========================================      =============================================================                                           =============
 
 
-How to Troubleshoot FQDN Problems
+How to Troubleshoot FQDN Problems?
 ===================================
 
 If you have problems with FQDN on a specific gateway, follow the instructions below to troubleshoot:
