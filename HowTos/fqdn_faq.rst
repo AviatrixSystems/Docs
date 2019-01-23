@@ -86,12 +86,24 @@ At "Gateway for High Availability Peering", select a public subnet in the drop d
 For FQDN function, the primary gateway and backup gateway load balance the
 Internet bound traffic from different subnets based on route table.
 
-How does Aviatrix Egress FQDN compare with a Squid Solution?
+How does Aviatrix Egress FQDN compare with Squid Solution?
 ==============================================================
 
-Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. 
+Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. Below is a more comprehensive comparison between Aviatrix FQDN and Squid. 
 
-
+==========================================      =============================================================                                           =============
+**Functions**                                     **Aviatrix FQDN**                                                                                      **Squid***
+==========================================      =============================================================                                           =============
+HTTP and HTTPS FQDN filter                      Yes                                                                                                     Yes
+non HTTP/HTTPS FQDN filter                      Yes                                                                                                     No
+Multi AZ High Availability                      Yes (load balanced)                                                                                     No
+Centrally Managed                               Yes                                                                                                     No
+Egress Discovery                                `Yes <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_                                           No 
+Rest API support                                Yes                                                                                                     No
+Terraform support                               Yes                                                                                                     No
+Out-of-box log integration                      Yes                                                                                                     No
+Vendor support                                  Yes                                                                                                     No 
+==========================================      =============================================================                                           =============
 
 
 How to Troubleshoot FQDN Problems
