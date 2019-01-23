@@ -92,7 +92,7 @@ How does Aviatrix Egress FQDN compare to Squid Solution?
 Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. Below is a more comprehensive comparison between Aviatrix FQDN and Squid. 
 
 ==========================================      =============================================================                                           =============
-**Functions**                                     **Aviatrix FQDN**                                                                                      **Squid***
+**Functions**                                     **Aviatrix FQDN**                                                                                      **Squid**
 ==========================================      =============================================================                                           =============
 HTTP and HTTPS FQDN filter                      Yes                                                                                                     Yes
 non HTTP/HTTPS FQDN filter                      Yes                                                                                                     No
