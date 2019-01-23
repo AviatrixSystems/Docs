@@ -86,7 +86,7 @@ At "Gateway for High Availability Peering", select a public subnet in the drop d
 For FQDN function, the primary gateway and backup gateway load balance the
 Internet bound traffic from different subnets based on route table.
 
-How does Aviatrix Egress FQDN compare with Squid Solution?
+How does Aviatrix Egress FQDN compare to Squid Solution?
 ==============================================================
 
 Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. Below is a more comprehensive comparison between Aviatrix FQDN and Squid. 
