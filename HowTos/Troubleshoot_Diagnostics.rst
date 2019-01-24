@@ -56,6 +56,7 @@ This section displays the current public IP of the controller.
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
@@ -108,6 +109,7 @@ Select a gateway in the drop down menu and click Replace.
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
@@ -127,6 +129,7 @@ This tool allows you to search VPN connection log on a particular VPN gateway wi
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
@@ -168,6 +171,7 @@ This feature provides the following operations that can be applied to a VNet:
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
@@ -184,6 +188,7 @@ This section allows you to view database tables and restart server for functiona
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
@@ -194,6 +199,7 @@ This feature allows you to view the services status of the controller and gatewa
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
@@ -204,6 +210,7 @@ This section provides the ability to view BGP configurations for diagnostic or a
 
 
 .. raw:: html
+
    <hr width="%80"/>
 
 
