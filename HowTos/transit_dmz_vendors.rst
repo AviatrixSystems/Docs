@@ -9,11 +9,37 @@ Vendor Integration
 
 Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. . 
 
-Palo Alto Firewall 
--------------------
+Palo Alto VM Series  
+-----------------------------
 
 In the release 4.1, the supported firewall vendor is Palo Alto VM-Series Firewall in AWS. For how to configure
 PAN, refer to `this guide. <https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/set-up-the-vm-series-firewall-on-aws/deploy-the-vm-series-firewall-on-aws/launch-the-vm-series-firewall-on-aws.html#ide07b93a2-ccb3-4c69-95fe-96e3328b8514>`_
+
+Follow the following steps to enable PAN API programming.
+
+1. Enable Ping
+~~~~~~~~~~~~~~~~~~
+
+Make sure PAN management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address. 
+
+2. Add an Administrator for API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+At the PAN Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as 
+shown below. 
+
+|pan_admin|
+
+3. Edit API Administrator Role Profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For the profile role created in the previous step, edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries 
+the PAN interfaces. 
+
+|pan_role_profile|
+
+4. API calls
+~~~~~~~~~~~~~~~~
 
 The integrated functions by the Controller are the followings:
 
@@ -61,7 +87,10 @@ Example of PAN API used:
 .. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
    :scale: 30%
 
-.. |main_companion_subnets| image:: transit_dmz_media/main_companion_subnets.png
+.. |pan_admin| image:: transit_dmz_vendors_media/pan_admin.png
+   :scale: 30%
+
+.. |pan_role_profile| image:: transit_dmz_vendors_media/pan_role_profile.png
    :scale: 30%
 
 .. disqus::
