@@ -44,6 +44,7 @@ This tool allows controller to perform a ping test to a specific host in order t
 Controller IP Migration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 .. important:: User MUST execute this feature after re-associating a new public IP for the controller through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
 ..
 
@@ -88,6 +89,7 @@ By default, controller will roll back all the operations (gateway, EIP, security
 
 Gateway IP Migration
 ~~~~~~~~~~~~~~~~~~~~~~
+
 
 .. important:: User MUST execute this feature after re-associating a new public IP for the gateway through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
 ..
@@ -140,7 +142,8 @@ Account Diagnostics
 
 This feature checks if the access accounts have the correct configuration to meet controller's requirements.
 
-.. Note:: This operation might take a couple minutes to be finished if you have multiple access accounts. Currently, this feature only supports AWS based access accounts.
+
+.. note:: This operation might take a couple minutes to be finished if you have multiple access accounts. Currently, this feature only supports AWS based access accounts.
 ..
 
 
