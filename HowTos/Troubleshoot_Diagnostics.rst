@@ -55,6 +55,11 @@ Controller Public IP
 This section displays the current public IP of the controller.
 
 
+|
+************************************************************
+|
+
+
 Gateway
 ---------
 
@@ -104,6 +109,11 @@ Select a gateway in the drop down menu and click Replace.
     Please refer to `Service Description of Diagnostic Result <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`__
 
 
+|
+************************************************************
+|
+
+
 VPN User
 ----------
 
@@ -117,6 +127,11 @@ VPN User History Search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This tool allows you to search VPN connection log on a particular VPN gateway with filtering feature.
+
+
+|
+************************************************************
+|
 
 
 Cloud
@@ -157,6 +172,11 @@ This feature provides the following operations that can be applied to a VNet:
     13. Dissociate a subnet from a route table
 
 
+|
+************************************************************
+|
+
+
 Database
 ----------
 
@@ -169,16 +189,31 @@ This section allows you to view database tables and restart server for functiona
 ..
 
 
+|
+************************************************************
+|
+
+
 Services
 ----------
 
 This feature allows you to view the services status of the controller and gateways. Moreover, it provides the ability to restart the services if there is an indication showing a particular service is not working properly.
 
 
+|
+************************************************************
+|
+
+
 BGP
 -----
 
 This section provides the ability to view BGP configurations for diagnostic or any purposes.
+
+
+|
+************************************************************
+|
 
 
 System Resources
