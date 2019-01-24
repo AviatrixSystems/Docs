@@ -44,8 +44,7 @@ This tool allows controller to perform a ping test to a specific host in order t
 Controller IP Migration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: 
-User MUST execute this feature after re-associating a new public IP for the controller through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
+.. important:: User MUST execute this feature after re-associating a new public IP for the controller through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
 ..
 
 
@@ -56,7 +55,7 @@ This section displays the current public IP of the controller.
 
 
 |
-************************************************************
+* * *
 |
 
 
@@ -90,8 +89,7 @@ By default, controller will roll back all the operations (gateway, EIP, security
 Gateway IP Migration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: 
-User MUST execute this feature after re-associating a new public IP for the gateway through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
+.. important:: User MUST execute this feature after re-associating a new public IP for the gateway through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
 ..
 
 
@@ -110,7 +108,7 @@ Select a gateway in the drop down menu and click Replace.
 
 
 |
-************************************************************
+***
 |
 
 
@@ -130,7 +128,7 @@ This tool allows you to search VPN connection log on a particular VPN gateway wi
 
 
 |
-************************************************************
+*****
 |
 
 
@@ -142,8 +140,7 @@ Account Diagnostics
 
 This feature checks if the access accounts have the correct configuration to meet controller's requirements.
 
-.. Note:: 
-This operation might take a couple minutes to be finished if you have multiple access accounts. Currently, this feature only supports AWS based access accounts.
+.. Note:: This operation might take a couple minutes to be finished if you have multiple access accounts. Currently, this feature only supports AWS based access accounts.
 ..
 
 
@@ -173,7 +170,7 @@ This feature provides the following operations that can be applied to a VNet:
 
 
 |
-************************************************************
+- - -
 |
 
 
@@ -190,7 +187,7 @@ This section allows you to view database tables and restart server for functiona
 
 
 |
-************************************************************
+---------------------------------------
 |
 
 
