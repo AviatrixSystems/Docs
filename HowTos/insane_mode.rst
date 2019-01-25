@@ -125,7 +125,7 @@ For a single Aviatrix Appliance without HA, below is a deployment diagram.
 
 And the sample configuration on an ISR is as follows.
 
-|ISR-Sample-Config|
+|ISR-sample-Config|
 
 For a duo Aviatrix Appliance for high availability, below is a deployment diagram.
 
@@ -178,7 +178,7 @@ Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and 
 .. |deployment_ha| image:: insane_mode_media/deployment_ha.png
    :scale: 30%
 
-.. |ISR-Sample-Config| image:: insane_mode_media/ISR-Sample-Config.png
+.. |ISR-sample-Config| image:: insane_mode_media/ISR-sample-Config.png
    :scale: 30%
 
 .. |image1| image:: transitvpc_designs_media/multiRegions.png
