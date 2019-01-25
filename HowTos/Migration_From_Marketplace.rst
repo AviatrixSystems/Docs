@@ -23,11 +23,12 @@ Prerequisites
 
   #. Login to your existing Aviatrix Controller
   #. Navigate to **Settings** > **Maintenance** > **Upgrade tab**
-  #. Make sure you are running the latest version. If it is not the latest version, please `upgrade <inline_upgrade.html>`__ before proceeding.
+  #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <inline_upgrade.html>`__ before proceeding.
 
      |image1|
 
 * An S3 bucket in the AWS account linked to your Aviatrix Controller (will be used for backups).
+* Your IAM policy must be updated in all your AWS accounts. Please refer the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`__ to update your IAM policies.
 
 Step 1 - Enable Backup
 ======================
@@ -67,7 +68,7 @@ Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartU
       We highly recommend migrating to Metered AMI as it is more flexible and scalable as your business needs change over time.
 
    .. note::
-      For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager to acquire the appropriate BYOL license.
+      For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license.
       
    .. attention::
       Make sure you already have subscribed the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__  for detail.
@@ -80,11 +81,11 @@ On the AWS console, go to **EC2** > **Network & Security** > **Elastic IPs**, as
 Step 6 - Upgrade Controller
 ===========================
 
-Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at **Settings** > **Maintenance** > **Upgrade tab**. Please note that Aviatrix only supports controller backup and restore within the same software version. In this example, the previous controller is upgraded to the latest 3.3.402 at the time of this writing. The following screenshot shows that the new controller is running the latest 3.3.402 as well.
+Login to the new controller and perform the initialization. Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at **Settings** > **Maintenance** > **Upgrade tab**. Please note that Aviatrix only supports controller backup and restore within the same software version. In this example, the previous controller is upgraded to the latest 3.3.402 at the time of this writing. The following screenshot shows that the new controller is running the latest 3.3.402 as well.
 
 |image3|
 
-Step 7 - Setup Aviatrix Customer ID
+Step 7 - Setup Aviatrix Customer ID (Not required if you are migrating to a Metered AMI controller)
 ================
 On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
 Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
@@ -99,7 +100,7 @@ Insert the details about your S3 bucket name and execute a restore.
 |image4|
 
 
-Step 9 - Setup Aviatrix Customer ID Again
+Step 9 - Setup Aviatrix Customer ID Again (Not required if you are migrating to a Metered AMI controller)
 ================
 On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
 Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
