@@ -111,9 +111,21 @@ run a BGP session to propagate on-prem routes to the Transit VPC. IPSEC tunnels 
 
 |insane_datacenter|
 
-One deployment layout is described as below. 
+
+A logical deployment layout is described as below. 
 
 |datacenter_layout|
+
+Reference Deployment Diagrams
+----------------------------------
+
+For a single Aviatrix Appliance without HA, below is a deployment diagram.
+
+|deployment|
+
+For a duo Aviatrix Appliance for high availability, below is a deployment diagram.
+
+|deployment_ha|
 
 
 How to configure Insane Mode for Transit VPC?
@@ -154,6 +166,12 @@ Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and 
    :scale: 30%
 
 .. |datacenter_layout| image:: insane_mode_media/datacenter_layout.png
+   :scale: 30%
+
+.. |deployment| image:: insane_mode_media/deployment.png
+   :scale: 30%
+
+.. |deployment_ha| image:: insane_mode_media/deployment_ha.png
    :scale: 30%
 
 .. |image1| image:: transitvpc_designs_media/multiRegions.png
