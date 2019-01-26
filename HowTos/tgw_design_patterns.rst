@@ -7,7 +7,7 @@
 Transit Gateway Orchestrator Design Patterns
 =========================================================
 
-Many design patterns exist to deploy your network with Aviatrix TGW Orchestrator. Here are some 
+Many design patterns exist to deploy your network with AWS Transit Gateway Orchestrator. Here are some 
 examples. 
 
 Dev & Prod isolated design
@@ -31,10 +31,11 @@ an all-in-cloud segmented network, as shown below.
 
 |all-in-cloud| 
 
-Connecting TGWs in Multi Regions
----------------------------------
+Connecting Transit Gateways in Multi Regions Multi Cloud
+-----------------------------------------------------------
 
-You can use Aviatrix Transit GW to connect TGW in multi regions, as shown below. 
+You can use Aviatrix Transit GWs to connect AWS Transit Gateways in multi regions and multi 
+cloud deployment, as shown below. 
 
 |multi-region|
 

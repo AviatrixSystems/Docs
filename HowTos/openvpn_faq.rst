@@ -37,15 +37,11 @@ If you have multiple VPCs, launching a VPN gateway in each VPC and create VPN us
 How do I scale out VPN solution?
 -------------------------------------
 
-You can launch multiple VPN gateways in the same VPC at the Create
-Gateway time.
+You can launch multiple `VPN gateways <https://docs.aviatrix.com/HowTos/uservpn.html>`_ in the same VPC. 
+By default the first VPN gateway in a VPC is launched with a NLB. Subsequent VPN gateways in the same VPC
+are automatically associated with the same NLB, enabling a scale out VPN solution, where the NBL load balances incoming VPN user sessions.    
 
-While launching a gateway, select yes for “Enable AWS ELB”. This will
-automatically create an AWS ELB (for the first gateway) and register the
-gateway with the newly created load balancer. VPN traffic will be load
-balanced across these multiple gateways.
-
-It is required to have consistent gateway configuration when ELB is
+It is required to have consistent gateway configuration when NLB is
 enabled. For example, authentication methods, tunnel modes and PBR
 configurations should be identical.
 
