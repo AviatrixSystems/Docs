@@ -22,6 +22,8 @@ Follow the following steps to enable PAN API programming.
 
 Make sure PAN management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address. 
 
+|pan_ping|
+
 2. Add an Administrator for API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -35,6 +37,8 @@ shown below.
 
 For the profile role created in the previous step, edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries 
 the PAN interfaces. 
+
+Go to Device -> Setup -> Management Interface Settings, as shown below.
 
 |pan_role_profile|
 
@@ -91,6 +95,9 @@ Example of PAN API used:
    :scale: 30%
 
 .. |pan_role_profile| image:: transit_dmz_vendors_media/pan_role_profile.png
+   :scale: 30%
+
+.. |pan_ping| image:: transit_dmz_vendors_media/pan_ping.png
    :scale: 30%
 
 .. disqus::
