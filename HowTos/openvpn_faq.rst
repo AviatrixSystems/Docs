@@ -1,6 +1,6 @@
 .. meta::
    :description: OpenVPN® FAQ
-   :keywords: Aviatrix OpenVPN, Client VPN, OpenVPN, SAML client
+   :keywords: Aviatrix OpenVPN, Client VPN, OpenVPN, SAML client, Remote User VPN
 
 ===========================
 Aviatrix OpenVPN® FAQs
@@ -111,6 +111,10 @@ the gateway, including Internet bound traffic.
 Split tunnel means only traffic destined to the VPC and any additional
 network range is carried through the VPN tunnel to the gateway. Any
 Internet bound traffic does not go through the tunnel.
+
+To enable full tunnel mode, go to Edit Config -> MODIFY SPLIT TUNNEL, select No, as shown below.
+
+|full_tunnel|
 
 Can the maximum number of simultaneous connections to VPN gateway be configured?
 --------------------------------------------------------------------------------------
@@ -374,10 +378,12 @@ If the destination is another instance within the cloud provider, then OpenVPN g
    
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
-
 .. |image1| image:: FAQ_media/image1.png
 .. |imageIdleTimeout| image:: FAQ_media/idle_timeout.png
 .. |imageClientLog| image:: FAQ_media/aviatrix_client_get_log.png
 .. |imageRenegotiationInterval| image:: FAQ_media/renegotiation_interval.png
+
+.. |full_tunnel| image:: FAQ_media/full_tunnel.png
+   :scale: 30%
 
 .. disqus::
