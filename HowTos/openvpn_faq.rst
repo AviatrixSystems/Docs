@@ -141,6 +141,10 @@ be configured as deny all or allow all during profile creation. This
 capability allows flexible firewall rules based on the users, instead of
 a source IP address.
 
+The security policy is dynamically pushed to the landing VPN gateway when a VPN user connects.. 
+It is only active when a VPN user is connected. When a VPN user disconnects, 
+the security policy is deleted from the VPN gateway.  
+
 How do I setup profile based security policies?
 --------------------------------------------------
 
@@ -151,7 +155,9 @@ instance that user logs in. This effectively blocks traffic from
 entering the network.
 
 Click OpenVPN® -> Profiles -> +New Profile to create profiles, then click Edit
-Policies to add rules. You can add multiple of them, then click on Save.
+Policies to add rules. You can add multiple of them, click Save. Click Update for the rules to take effect.
+
+|profile_config|
 
 How do I assign a user to a profile?
 -------------------------------------
@@ -161,6 +167,8 @@ When you create a VPN user at OpenVPN® -> VPN Users -> +Add New, you
 can select profile option to assign the user to a specific profile.
 
 You can also attach the user to a profile at a later time. Go to OpenVPN® -> Profiles. Click Attach User on a specific Profile and select a user that is added to the VPN gateway.
+
+|assign_user_to_profile|
 
 What if I want to change profile policies?
 -------------------------------------------
@@ -271,8 +279,10 @@ Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ supports SAML authentic
 
 Aviatrix VPN gateway can authenticate a VPN user against OKTA on behalf of a VPN user.  In that case, you don’t need Aviatrix VPN client, any OpenVPN® clients software such as Tunnelblick can be supported.
 
-Are multiple profiles supported by the Aviatrix VPN client?
------------------------------------------------------------
+Are multiple VPN configuration profiles supported by the Aviatrix VPN client?
+--------------------------------------------------------------------------------
+
+Note this is about the OpenVPN® configuration file that is installed on end user machines. 
 
 Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ allows you to load and switch between one or more VPN profiles.
 
@@ -384,6 +394,12 @@ OpenVPN® is a registered trademark of OpenVPN Inc.
 .. |imageRenegotiationInterval| image:: FAQ_media/renegotiation_interval.png
 
 .. |full_tunnel| image:: FAQ_media/full_tunnel.png
+   :scale: 30%
+
+.. |profile_config| image:: FAQ_media/profile_config.png
+   :scale: 30%
+
+.. |assign_user_to_profile| image:: FAQ_media/assign_user_to_profile.png
    :scale: 30%
 
 .. disqus::

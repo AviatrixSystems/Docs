@@ -36,6 +36,12 @@ Authorization
 
 - **Profile-Based Access Control** Each VPN user can be assigned to a profile that is defined by access privileges to network, host, protocol and ports. The access control is dynamically enforced when a VPN user connects to the public cloud via an Aviatrix VPN gateway.  
 
+For more description, refer to `this link. <https://docs.aviatrix.com/HowTos/openvpn_faq.html#what-is-user-profile-based-security-policy>`_
+
+For how to create user profiles and access policies, refer to `this link. <https://docs.aviatrix.com/HowTos/openvpn_faq.html#how-do-i-setup-profile-based-security-policies>`_.
+
+For how to assign VPN users to profiles, refer to `this link. <https://docs.aviatrix.com/HowTos/openvpn_faq.html#how-do-i-assign-a-user-to-a-profile>`_.
+
 Scale Out Performance
 ----------------------
 
