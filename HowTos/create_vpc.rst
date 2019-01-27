@@ -15,7 +15,7 @@ Go to Useful Tools at the main navigation on the left panel, select Create a VPC
 
 .. tip::
 
-  Select the option Aviatrix Transit VPC if you deploy the Next Gen Transit Network. Four private subnets and corresponding route tables will be automatically created. 
+  Select the option Aviatrix Transit VPC if you deploy the Next Gen Transit Network. All necessary subnets and route tables will be fully populated. 
  
 
 
