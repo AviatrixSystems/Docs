@@ -10,12 +10,7 @@ Diagnostics
 Network
 ---------
 
-This section provides tools to test network connectivities of controller and gateways.
-
-    * Please refer to `Debug gateway connectivity. <https://docs.aviatrix.com/HowTos/troubleshooting.html#debug-gateway-connectivity>`__
-
-    * Please refer to `Packet capture. <https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture>`__
-
+This section provides tools to test network connectivity of controller and gateways.
 
 Gateway Utility
 ~~~~~~~~~~~~~~~~~
