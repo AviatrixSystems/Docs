@@ -43,8 +43,10 @@ Diagnostic Result
 | }                                                                                            |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates Netflow service status.                                                            |
-|  - Default: Not running                                                                      |
+|Indicates Controller status.                                                                  |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
+|                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Netflow Output**           |                                                                |
 +-----------------------------+----------------------------------------------------------------+
@@ -53,8 +55,10 @@ Diagnostic Result
 | "Netflow Service": "Not running",                                                            |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates Netflow service status.                                                            |
+|Indicates Netflow service status.                                                             |
 |  - Default: Not running                                                                      |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Utility Output**           |                                                                |
@@ -70,6 +74,8 @@ Diagnostic Result
 |N/A                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |**LogStash Output**          |                                                                |
 +-----------------------------+----------------------------------------------------------------+    
 |::                                                                                            |
@@ -82,6 +88,8 @@ Diagnostic Result
 | - Related Link `LogStash Integration`_.                                                      |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |**DNS Resolution Output**    |                                                                |
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
@@ -90,10 +98,15 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates if the gateway can resolve public domain names.                                     |
-| - Expected value: Pass                                                                       |
-| - If the result is Fail, check whether the DNS resolution is enabled for the VPC where this  |
-|   for the VPC where this gateway resides, gateway's security group and                       |
-|   VPC inbound and outbound ACL.                                                              |
+| > Expected value: Pass                                                                       |
+|                                                                                              |
+| > If the result is Fail, check whether the DNS resolution is enabled for the VPC where this  |
+|                                                                                              |
+| for the VPC where this gateway resides, gateway's security group and                         |
+|                                                                                              |
+| VPC inbound and outbound ACL.                                                                |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Hostname-filter Output**   |                                                                |
@@ -118,6 +131,8 @@ Diagnostic Result
 |Indicates the Hostname filter configuration.                                                  |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |**Rsyslog Output**           |                                                                |
 +-----------------------------+----------------------------------------------------------------+    
 |::                                                                                            |
@@ -128,8 +143,10 @@ Diagnostic Result
 |Indicates the Remote Syslog feature is enabled.                                               |
 | - Related Link `Remote Syslog Integration`_.                                                 |
 |                                                                                              |
-+-----------------------------+----------------------------------------------------------------+    
-|**ipsec Output**             |                                                                |
++-----------------------------+----------------------------------------------------------------+
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+ 
+|**ipset Output**             |                                                                |
 +-----------------------------+----------------------------------------------------------------+    
 |::                                                                                            |
 |                                                                                              |
@@ -153,6 +170,8 @@ Diagnostic Result
 |N/A                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |**SpanPort Output**          |                                                                |
 +-----------------------------+----------------------------------------------------------------+    
 |::                                                                                            |
@@ -164,6 +183,8 @@ Diagnostic Result
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
 |Currently not used.                                                                           |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**iptables nat Output**      |                                                                |
@@ -187,11 +208,13 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
-| Indicates NAT configuration.                                                                 |
+|Indicates NAT configuration.                                                                  |
 |  - mainly used for debugging                                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-|**iptables nat Output**      |                                                                |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
+|**Hostname-filter Status**   |                                                                |
 +-----------------------------+----------------------------------------------------------------+    
 |::                                                                                            |
 |                                                                                              |
@@ -201,8 +224,10 @@ Diagnostic Result
 |     "   Active: inactive (dead)\n"                                                           |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
-| Indicates Hostname-filter service status                                                     |
+|Indicates Hostname-filter service status                                                      |
 |  - Default: inactive                                                                         |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**iptables  Output**         |                                                                |
@@ -225,8 +250,10 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
-| Indicates Stateful firewall configuration                                                    |
+|Indicates Stateful firewall configuration                                                     |
 |  - mainly used for debugging                                                                 |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**ifconfig Output**          |                                                                |
@@ -265,13 +292,17 @@ Diagnostic Result
 |  ],                                                                                          |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
-|  Indicates gateway's interfaces.                                                             |
-|   - There should be very limit number of TX and RX errors/dropped.                           |
-|   - If there are a lot of TX errors or dropped in tun0, it may be due to authentication      |
-|     mismatch on the tunnel.                                                                  |
+|Indicates gateway's interfaces.                                                               |
+|  > There should be very limit number of TX and RX errors/dropped.                            |
+|                                                                                              |    
+|  > If there are a lot of TX errors or dropped in tun0, it may be due to authentication       |
+|                                                                                              |    
+|  mismatch on the tunnel.                                                                     |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
-|**Disk usage  Output**       |                                                                |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
+|**Disk Usage Output**       |                                                                 |
 +-----------------------------+----------------------------------------------------------------+    
 |::                                                                                            |
 |                                                                                              |
@@ -287,9 +318,12 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
-| Indicates disk usage on the gateway.                                                         |
-|  - The maximum size of /usr should be lower than 6G, please contact support@aviatrix.com if  |
-|     you see abnormal usage in a folder.                                                      |
+|Indicates disk usage on the gateway.                                                          |
+|  > The maximum size of /usr should be lower than 6G, please contact                          |
+|                                                                                              |
+|  support@aviatrix.com if you see abnormal usage in a folder.                                 |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**MsgQueue Output**          |                                                                |
@@ -314,17 +348,25 @@ Diagnostic Result
 | },                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates AWS SQS message queue status.                                                      |
-|  - ApproximateNumberOfMessages indicates the number of pending messages in the queue.        |
-|    Expected value is 0.                                                                      |
+|Indicates AWS SQS message queue status.                                                       |
+|  > ApproximateNumberOfMessages indicates the number of pending messages                      |
 |                                                                                              |
-|  - If this value is not 0, it means there's issue on the AWS SQS Service, please update      |
-|    your IAM policy (refer to `IAM Policy`_. and check if the DNS resolution                  |
-|    passed on the gateway.) You may also check if this SQS queue is still in your AWS         |
-|    SQS Service.                                                                              |
+|  in the queue.                                                                               |
+|                                                                                              |    
+|  > Expected value is 0.                                                                      |
+|                                                                                              |
+|  > If this value is not 0, it means there's issue on the AWS SQS Service, please update      |
+|                                                                                              |    
+|  your IAM policy (refer to `IAM Policy`_. and check if the DNS resolution                    |
+|                                                                                              |    
+|  passed on the gateway.) You may also check if this SQS queue is still in your AWS           |
+|                                                                                              |    
+|  SQS Service.                                                                                |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-|**supervisorctl Output**     |                                                                |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
+|**Supervisorctl Output**     |                                                                |
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
@@ -338,8 +380,10 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the supervisor status.                                                             |
+|Indicates the supervisor status.                                                              |
 |  - All services should be in RUNNING state except local_launch.                              |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**IKE daemon Output**        |                                                                |
@@ -355,8 +399,10 @@ Diagnostic Result
 | },                                                                                           |    
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates IKE daemon service and port status                                                 |
+|Indicates IKE daemon service and port status                                                  |
 |  - Default: Up for all                                                                       |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**SumoLogic Output**         |                                                                |
@@ -366,9 +412,11 @@ Diagnostic Result
 | "SumoLogic Collector": "Not running",                                                        |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates SumoLogic logging service status.                                                  |
+|Indicates SumoLogic logging service status.                                                   |
 |  - Default: Not running                                                                      |
 |  - Related Link `Sumologic Integration`_.                                                    |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Upload Output**            |                                                                |
@@ -378,10 +426,14 @@ Diagnostic Result
 | "Upload": "Pass",                                                                            |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates that Aviatrix controller is able to upload files to the gateway.                   |
-|  - Expected value: Pass                                                                      |
-|  - If fail, please check the port 443 is open in both security group and VPC ACL between     |
-|    controller and the gateway instance in AWS console.                                       |
+|Indicates that Aviatrix controller is able to upload files to the gateway.                    |
+|  > Expected value: Pass                                                                      |
+|                                                                                              |    
+|  > If fail, please check the port 443 is open in both security group and VPC ACL between     |
+|                                                                                              |    
+|  controller and the gateway instance in AWS console.                                         |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Datadog Output**           |                                                                |
@@ -391,9 +443,11 @@ Diagnostic Result
 | "Datadog Service": "Not running",                                                            |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates Datadog logging service status.                                                    |
+|    Indicates Datadog logging service status.                                                 |
 |  - Default: Not running                                                                      |
 |  - Related Link `Datadog Integratin`_.                                                       |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**iptables mangle Output**   |                                                                |
@@ -412,8 +466,10 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates iptables mangle configuration.                                                     |
+|Indicates iptables mangle configuration.                                                      |
 |  - For debugging purpose                                                                     |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**HTTPS Output**             |                                                                |
@@ -432,24 +488,33 @@ Diagnostic Result
 | },                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the HTTPS status and reachability on the gateway.                                  |
-|  - Expected value: Up and reachable                                                          |
-|  - If Fail, please make sure the gateway has its security group port 443 open to the         |
-|    controller's EIP in AWS console.                                                          |
+|Indicates the HTTPS status and reachability on the gateway.                                   | 
+|   > Expected value: Up and reachable                                                         |
+|                                                                                              |
+|   > If Fail, please make sure the gateway has its security group port 443 open to the        |
+|                                                                                              |
+|   controller's EIP in AWS console.                                                           |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**HTTPS Get Output**         |                                                                |
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
+|                                                                                              |
 | "HTTPS GET": "Pass",                                                                         |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates connectivity for HTTPS request from gateway to the controller.                     |
-|  - Expected value: Pass if GW can communicate with Controller without issue. When It shows   |
-|    "Fail" please check both Controller and Gateway security group                            |
+|Indicates connectivity for HTTPS request from gateway to the controller.                      |
+|  > Expected value: Pass if GW can communicate with Controller without issue.                 |
 |                                                                                              |
-|  - If Fail, please make sure the controller has its security group port 443 open to the      |
-|    gateway's EIP in AWS console.                                                             |
+|  When It shows "Fail" please check both Controller and Gateway security group                |
+|                                                                                              |
+|  > If Fail, please make sure the controller has its security group port 443 open to the      |
+|                                                                                              |
+|  gateway's EIP in AWS console.                                                               |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**CloudWatch Output**        |                                                                |
@@ -459,34 +524,11 @@ Diagnostic Result
 | "CloudWatch Service": "Not running",                                                         |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the AWS CloudWatch service status.                                                 |
+|Indicates the AWS CloudWatch service status.                                                  |
 |  - Default: Not running                                                                      |
 |  - Related Link `Cloudwatch How To`_.                                                        | 
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-|**Top Memory Output**        |                                                                |
-+-----------------------------+----------------------------------------------------------------+
-|::                                                                                            |
-|                                                                                              |
-| "top mem processes": [                                                                       |
-|     "20.2  0.1 398548   432 /lib/systemd/systemd-journald\n",                                |
-|                                                                                              |
-|     " 4.6  0.0 454976  1761 /usr/sbin/apache2 -k start\n",                                   |
-|     " 4.3  0.1 807656  2857 python -W ... (the rest is omitted.)                             |
-|     " 2.8  0.0  90920  2876 python -W ... (the rest is omitted.)                             |    
-|     " 2.6  0.0  84700  2816 python -W ... (the rest is omitted.)                             |
-|     " 2.2  0.0 457688  5299 /usr/sbin/apache2 -k start\n",                                   |
-|     " 2.1  0.0  65268  1992 /usr/bin/p ... (the rest is omitted.)                            |
-|     " 2.1  0.0 457688  5297 /usr/sbin/apache2 -k start\n",                                   |    
-|     " 1.9  0.0 548016  1183 /usr/lib/snapd/snapd\n",                                         |
-|     " 1.8  0.0 457452  5300 /usr/sbin/apache2 -k start\n"                                    |
-| ],                                                                                           |
-|                                                                                              |
-+-----------------------------+----------------------------------------------------------------+
-| Indicates the memory and CPU usage of the gateway.                                           |
-|  - The memory usage of processes (first column) is changing dynamiclly and the overall       |
-|    usage should be lower than 50%                                                            |
-|  - Mainly used for debugging                                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Top Memory Output**        |                                                                |
@@ -508,47 +550,28 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the memory and CPU usage of the gateway.                                           |
-|  - The memory usage of processes (first column) is changing dynamiclly and the overall       |
-|    usage should be lower than 50%                                                            |
-|  - Mainly used for debugging                                                                 |
+|Indicates the memory and CPU usage of the gateway.                                            |
+|  > The memory usage of processes (first column) is changing dynamiclly and the overall       |
+|                                                                                              |
+|  usage should be lower than 50%                                                              |
+|                                                                                              |
+|  > Mainly used for debugging                                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-|**Top Memory Output**        |                                                                |
-+-----------------------------+----------------------------------------------------------------+
-|::                                                                                            |
-|                                                                                              |
-| "top mem processes": [                                                                       |
-|     "20.2  0.1 398548   432 /lib/systemd/systemd-journald\n",                                |
-|                                                                                              |
-|     " 4.6  0.0 454976  1761 /usr/sbin/apache2 -k start\n",                                   |
-|     " 4.3  0.1 807656  2857 python -W ... (the rest is omitted.)                             |
-|     " 2.8  0.0  90920  2876 python -W ... (the rest is omitted.)                             |    
-|     " 2.6  0.0  84700  2816 python -W ... (the rest is omitted.)                             |
-|     " 2.2  0.0 457688  5299 /usr/sbin/apache2 -k start\n",                                   |
-|     " 2.1  0.0  65268  1992 /usr/bin/p ... (the rest is omitted.)                            |
-|     " 2.1  0.0 457688  5297 /usr/sbin/apache2 -k start\n",                                   |    
-|     " 1.9  0.0 548016  1183 /usr/lib/snapd/snapd\n",                                         |
-|     " 1.8  0.0 457452  5300 /usr/sbin/apache2 -k start\n"                                    |
-| ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the memory and CPU usage of the gateway.                                           |
-|  - The memory usage of processes (first column) is changing dynamiclly and the overall       |
-|    usage should be lower than 50%                                                            |
-|  - Mainly used for debugging                                                                 |
-|                                                                                              |
-+-----------------------------+----------------------------------------------------------------+
-|**Splunk Memory Output**     |                                                                |
+|**Splunk  Output**           |                                                                |
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
 | "splunkd": "Not running",                                                                    |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates Splunk logging service status.                                                     |
+|Indicates Splunk logging service status.                                                      |
 |  - Default: Not running                                                                      |
 |  - Related Link `splunk Integration`_.                                                       |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**VPN Service Output**       |                                                                |
@@ -568,12 +591,18 @@ Diagnostic Result
 | },                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates OpenVPN service status.                                                            |
-|  - Status is down if the gateway is non SSLVPN gateway                                       |
-|  - For SSLVPN gateway with ELB enabled, port 943 should be UP and the gateway's security     |
-|    group has default port 943 open to 0.0.0.0/0 to accept remote user connection.            |
-|  - For SSLVPN gateway with ELB disabled, port 1194 should be UP and the gateway's security   |
-|    group has default port 1194 open to 0.0.0.0/0 to accept remote user connection.           |
+|Indicates OpenVPN service status.                                                             |
+|  > Status is down if the gateway is non SSLVPN gateway                                       |
+|                                                                                              |
+|  > For SSLVPN gateway with ELB enabled, port 943 should be UP and the gateway's security     |
+|                                                                                              |
+|  group has default port 943 open to 0.0.0.0/0 to accept remote user connection.              |
+|                                                                                              |
+|  > For SSLVPN gateway with ELB disabled, port 1194 should be UP and the gateway's security   |
+|                                                                                              |
+|  group has default port 1194 open to 0.0.0.0/0 to accept remote user connection.             |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**IP Link Output**           |                                                                |
@@ -592,8 +621,10 @@ Diagnostic Result
 | ],                                                                                           |    
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the ip link status of the gateway.                                                 |
+|Indicates the ip link status of the gateway.                                                  |
 |  - Status should be UP.                                                                      |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**Route Output**             |                                                                |
@@ -610,7 +641,9 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the route table on the gateway.                                                    |
+|Indicates the route table on the gateway.                                                     |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**FQDN Output**              |                                                                |
@@ -632,9 +665,11 @@ Diagnostic Result
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the FQDN Egress Control status                                                     |
+|Indicates the FQDN Egress Control status                                                      |
 |  - Status is active when FQDN egress control is enabled.                                     |
 |  - Status is inactive when FQDN egress control is disabled or failed.                        |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**SSH Output**               |                                                                |
@@ -653,13 +688,15 @@ Diagnostic Result
 | },                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the SSH port status on the gateway.                                                |
+|Indicates the SSH port status on the gateway.                                                 |
 |  - Required for gateway diagnostics to function properly.                                    |
 |  - Default: Up and reachable.                                                                |
 |  - If Fail or unreachable, the gateway diagnostics will not produce useful results           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-|**SSH Output**               |                                                                |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
+|**Auth Output**              |                                                                |
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
@@ -671,7 +708,9 @@ Diagnostic Result
 | ],                                                                                           |    
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the authentication method configured on the VPN gateway.                           |
+|Indicates the authentication method configured on the VPN gateway.                            |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**VPN Status Output**        |                                                                |
@@ -681,7 +720,9 @@ Diagnostic Result
 | "VPN config": "Pass",                                                                        |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates the VPN confguration status. Expected value: Pass                                  |
+|Indicates the VPN confguration status. Expected value: Pass                                   |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |**DNS Output**               |                                                                |
@@ -722,17 +763,19 @@ Diagnostic Result
 | },                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| Indicates DNS service status and related configuration on the gateway.                       |
+|Indicates DNS service status and related configuration on the gateway.                        |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-|**VPN Status Output**        |                                                                |
+|                                                                                              |
++-----------------------------+----------------------------------------------------------------+
+|**Server Cert Output**       |                                                                |
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
 | "Server Cert": "good"                                                                        |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
-| N/A                                                                                          |
+|N/A                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 
