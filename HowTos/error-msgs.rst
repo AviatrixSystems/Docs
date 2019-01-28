@@ -8,6 +8,14 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+---------------------------------------------------------------------------------
+
+::
+
+  Error: Exception CloudxErrExt Context:message:Failed to assume role to your aviatrix-role-app. The policy associated with the role must include AssumeRole.  class:CloudxErrExt cloud_type:[1] account_name:[GreatCall_DevOps_Account]
+
+It is likely that the Controller was launched not by the CloudFormation script provided by Aviatrix. Follow the `Aviatrix Controller Startup guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+
 ----------------------------------------------------------------------------------
 
 ::
