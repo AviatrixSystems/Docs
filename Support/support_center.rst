@@ -76,6 +76,11 @@ Tips & Tricks
   * Starting release 4.0, there is a daily connectivity check from all Aviatrix Gateways and Controller to the syslog server, when rsyslog is enabled. If any of the devices cannot reach the server successfully, an email is sent out to the admin with the Subject:"Failed to connect to Remote Syslog Server"
 
 
+**Site2Cloud:**
+
+  * If the tunnel is not coming up, make sure there is interesting traffic from either or both sides of the tunnels.
+  * Ports 500 and 4500 have to be allowed, if you have a firewall, for IPSec tunnels to be established.
+
 **AWS Infrastructure:**
 
 * **Disk resize for Gateway:**

@@ -44,6 +44,7 @@ Spoke VPC Route entries in a route table                             100        
 ===================================================                  =============== =====================
 
 
+Check out how Transit Gateway Orchestrator solves `these issues. <https://docs.aviatrix.com/HowTos/tgw_faq.html>`>_
 
 .. |survey| image:: opstools_survey_media/survey.png
    :scale: 30%
