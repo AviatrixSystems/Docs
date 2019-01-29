@@ -154,7 +154,7 @@ Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root
 8. Encrypt gateway EBS Volume
 ###############################
 
-Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85fl>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
+Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
 
 
 
