@@ -6,7 +6,9 @@
 Transit Network with BGP Setup Instructions 
 ##############################################
 
-.. Note:: this document becomes obsolete with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__ to setup a Transit Network. 
+.. Important:: 
+
+  this document is obsolete with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__ to setup a Transit Network. 
 
 Introduction
 =============
