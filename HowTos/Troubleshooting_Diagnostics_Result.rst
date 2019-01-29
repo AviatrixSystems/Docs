@@ -56,7 +56,7 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Netflow service status.                                                             |
-|  - Default: Not running                                                                      |
+|  > Default: Not running                                                                      |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -84,8 +84,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Logstash logging service status.                                                    |
-| - Default: Not running                                                                       |
-| - Related Link `LogStash Integration`_.                                                      |
+| > Default: Not running                                                                       |
+|                                                                                              |
+| > Related Link `LogStash Integration`_.                                                      |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -98,9 +99,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates if the gateway can resolve public domain names.                                     |
-| - Expected value: Pass                                                                       |
+| > Expected value: Pass                                                                       |
 |                                                                                              |
-| - If the result is Fail, check whether the DNS resolution is enabled for the VPC where this  |
+| > If the result is Fail, check whether the DNS resolution is enabled for the VPC where this  |
 |                                                                                              |
 | for the VPC where this gateway resides, gateway's security group and                         |
 |                                                                                              |
@@ -141,7 +142,7 @@ Diagnostic Result
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the Remote Syslog feature is enabled.                                               |
-| - Related Link `Remote Syslog Integration`_.                                                 |
+| > Related Link `Remote Syslog Integration`_.                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -209,7 +210,7 @@ Diagnostic Result
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
 |Indicates NAT configuration.                                                                  |
-|  - mainly used for debugging                                                                 |
+|  > mainly used for debugging                                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -219,13 +220,13 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "Hostname-filter Status": [                                                                  |
-|     " avx-hostname-filter.service - Aviatrix Hostname Filter\n",                            |
+|     " avx-hostname-filter.service - Aviatrix Hostname Filter\n",                             |
 |     "   Loaded: loaded (/lib/systemd/system/a ... (the rest is omitted.)                     |
 |     "   Active: inactive (dead)\n"                                                           |
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Hostname-filter service status                                                      |
-|  - Default: inactive                                                                         |
+|  > Default: inactive                                                                         |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -251,7 +252,7 @@ Diagnostic Result
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Stateful firewall configuration                                                     |
-|  - mainly used for debugging                                                                 |
+|  > mainly used for debugging                                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -293,9 +294,9 @@ Diagnostic Result
 |                                                                                              |    
 +-----------------------------+----------------------------------------------------------------+
 |Indicates gateway's interfaces.                                                               |
-|  - There should be very limit number of TX and RX errors/dropped.                            |
+|  > There should be very limit number of TX and RX errors/dropped.                            |
 |                                                                                              |    
-|  - If there are a lot of TX errors or dropped in tun0, it may be due to authentication       |
+|  > If there are a lot of TX errors or dropped in tun0, it may be due to authentication       |
 |                                                                                              |    
 |  mismatch on the tunnel.                                                                     |
 |                                                                                              |    
@@ -349,13 +350,13 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates AWS SQS message queue status.                                                       |
-|  - ApproximateNumberOfMessages indicates the number of pending messages                      |
+|  > ApproximateNumberOfMessages indicates the number of pending messages                      |
 |                                                                                              |
 |  in the queue.                                                                               |
 |                                                                                              |    
-|  - Expected value is 0.                                                                      |
+|  > Expected value is 0.                                                                      |
 |                                                                                              |
-|  - If this value is not 0, it means there's issue on the AWS SQS Service, please update      |
+|  > If this value is not 0, it means there's issue on the AWS SQS Service, please update      |
 |                                                                                              |    
 |  your IAM policy (refer to `IAM Policy`_. and check if the DNS resolution                    |
 |                                                                                              |    
@@ -381,7 +382,7 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the supervisor status.                                                              |
-|  - All services should be in RUNNING state except local_launch.                              |
+|  > All services should be in RUNNING state except local_launch.                              |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -400,7 +401,7 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates IKE daemon service and port status                                                  |
-|  - Default: Up for all                                                                       |
+|  > Default: Up for all                                                                       |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -413,8 +414,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates SumoLogic logging service status.                                                   |
-|  - Default: Not running                                                                      |
-|  - Related Link `Sumologic Integration`_.                                                    |
+|  > Default: Not running                                                                      |
+|                                                                                              |
+|  > Related Link `Sumologic Integration`_.                                                    |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -427,9 +429,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates that Aviatrix controller is able to upload files to the gateway.                    |
-|  - Expected value: Pass                                                                      |
+|  > Expected value: Pass                                                                      |
 |                                                                                              |    
-|  - If fail, please check the port 443 is open in both security group and VPC ACL between     |
+|  > If fail, please check the port 443 is open in both security group and VPC ACL between     |
 |                                                                                              |    
 |  controller and the gateway instance in AWS console.                                         |
 |                                                                                              |
@@ -444,8 +446,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 | Indicates Datadog logging service status.                                                    |
-|  - Default: Not running                                                                      |
-|  - Related Link `Datadog Integratin`_.                                                       |
+|  > Default: Not running                                                                      |
+|                                                                                              |
+|  > Related Link `Datadog Integratin`_.                                                       |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -467,7 +470,7 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates iptables mangle configuration.                                                      |
-|  - For debugging purpose                                                                     |
+|  > For debugging purpose                                                                     |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -489,9 +492,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the HTTPS status and reachability on the gateway.                                   | 
-|   - Expected value: Up and reachable                                                         |
+|   > Expected value: Up and reachable                                                         |
 |                                                                                              |
-|   - If Fail, please make sure the gateway has its security group port 443 open to the        |
+|   > If Fail, please make sure the gateway has its security group port 443 open to the        |
 |                                                                                              |
 |   controller's EIP in AWS console.                                                           |
 |                                                                                              |
@@ -506,11 +509,11 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates connectivity for HTTPS request from gateway to the controller.                      |
-|  - Expected value: Pass if GW can communicate with Controller without issue.                 |
+|  > Expected value: Pass if GW can communicate with Controller without issue.                 |
 |                                                                                              |
 |  When It shows "Fail" please check both Controller and Gateway security group                |
 |                                                                                              |
-|  - If Fail, please make sure the controller has its security group port 443 open to the      |
+|  > If Fail, please make sure the controller has its security group port 443 open to the      |
 |                                                                                              |
 |  gateway's EIP in AWS console.                                                               |
 |                                                                                              |
@@ -525,8 +528,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the AWS CloudWatch service status.                                                  |
-|  - Default: Not running                                                                      |
-|  - Related Link `Cloudwatch How To`_.                                                        | 
+|  > Default: Not running                                                                      |
+|                                                                                              |
+|  > Related Link `Cloudwatch How To`_.                                                        | 
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -551,11 +555,11 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the memory and CPU usage of the gateway.                                            |
-|  - The memory usage of processes (first column) is changing dynamiclly and the overall       |
+|  > The memory usage of processes (first column) is changing dynamiclly and the overall       |
 |                                                                                              |
 |  usage should be lower than 50%                                                              |
 |                                                                                              |
-|  - Mainly used for debugging                                                                 |
+|  > Mainly used for debugging                                                                 |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -568,8 +572,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Splunk logging service status.                                                      |
-|  - Default: Not running                                                                      |
-|  - Related Link `splunk Integration`_.                                                       |
+|  > Default: Not running                                                                      |
+|                                                                                              |
+|  > Related Link `splunk Integration`_.                                                       |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -592,13 +597,13 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates OpenVPN service status.                                                             |
-|  - Status is down if the gateway is non SSLVPN gateway                                       |
+|  > Status is down if the gateway is non SSLVPN gateway                                       |
 |                                                                                              |
-|  - For SSLVPN gateway with ELB enabled, port 943 should be UP and the gateway's security     |
+|  > For SSLVPN gateway with ELB enabled, port 943 should be UP and the gateway's security     |
 |                                                                                              |
 |  group has default port 943 open to 0.0.0.0/0 to accept remote user connection.              |
 |                                                                                              |
-|  - For SSLVPN gateway with ELB disabled, port 1194 should be UP and the gateway's security   |
+|  > For SSLVPN gateway with ELB disabled, port 1194 should be UP and the gateway's security   |
 |                                                                                              |
 |  group has default port 1194 open to 0.0.0.0/0 to accept remote user connection.             |
 |                                                                                              |
@@ -622,7 +627,7 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the ip link status of the gateway.                                                  |
-|  - Status should be UP.                                                                      |
+|  > Status should be UP.                                                                      |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -651,7 +656,7 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "FQDN service": [                                                                            |
-|     " avx-nfq.service - Aviatrix NFQ\n",                                                    |
+|     " avx-nfq.service - Aviatrix NFQ\n",                                                     |
 |                                                                                              |
 |     "   Loaded: loaded (/lib/systemd/system/avx-nf... (the rest is omitted.)                 |
 |     "   Active: active (running) since Wed 2018-12... (the rest is omitted.)                 |
@@ -666,8 +671,9 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the FQDN Egress Control status                                                      |
-|  - Status is active when FQDN egress control is enabled.                                     |
-|  - Status is inactive when FQDN egress control is disabled or failed.                        |
+|  > Status is active when FQDN egress control is enabled.                                     |
+|                                                                                              |
+|  > Status is inactive when FQDN egress control is disabled or failed.                        |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
@@ -689,9 +695,11 @@ Diagnostic Result
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates the SSH port status on the gateway.                                                 |
-|  - Required for gateway diagnostics to function properly.                                    |
-|  - Default: Up and reachable.                                                                |
-|  - If Fail or unreachable, the gateway diagnostics will not produce useful results           |
+|  > Required for gateway diagnostics to function properly.                                    |
+|                                                                                              |
+|  > Default: Up and reachable.                                                                |
+|                                                                                              |
+|  > If Fail or unreachable, the gateway diagnostics will not produce useful results           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
