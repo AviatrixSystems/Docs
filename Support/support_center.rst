@@ -102,6 +102,10 @@ Tips & Tricks
       * From AWS Console, create a new EIP (Continuing the example: call this EIP-new)
       * From Aviatrix Controller, go to “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Migration” and pick the Gateway that you want to pick the EIP from and enter this new-EIP and click on OK. (Pick GatewayA and enter EIP-new. This will release EIPA)
       * On the Aviatrix Controller, on the same page, pick the Gateway that you want to receive the old EIP and enter the old-EIP. (Example: Pick Gateway B and enter EIPA. This will release EIPB)
+      
+* **Encrypting an EBS Volume on a Gateway**
+
+  * AWS does not allow EBS encryption during instance launch time. Some instructions `here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_. Link to an open source script as a reference to automate the process: https://github.com/AviatrixSystems/EBS-encryption
 
 
 **Terraform:**
