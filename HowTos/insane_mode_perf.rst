@@ -35,18 +35,23 @@ The performance test is conducted between a c5.4xlarge instance in the Spoke VPC
 
 Aviatrix gateways at the Spoke VPC and Transit VPC are c5.4xlarge instance size. Both Spoke VPC gateway and Transit VPC gateway have Insane Mode enabled. 
 
-1. MTU = 9000 Bytes 
-=====================
+1. MTU = 9000 Bytes, C5.4xlarge 
+=================================
 
 For Jumbo Frame Size of 9000 bytes, the TCP throughput against different end-to-end latencies and the number of TCP streams is shown as below. 
 
 |insane_perf_jumbo|
 
 
-2. MTU = 1500 Bytes
-====================
+2. MTU = 1500 Bytes, C5.4xlarge
+=================================
 
-Coming soon.
+|throughput_1500_25ms|
+
+3. MTU = 1500 Bytes, C5n.2xlarge
+=================================
+
+Coming soon...
 
 How to Tune Performance
 -----------------------
