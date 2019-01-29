@@ -149,7 +149,7 @@ To disable admin login to the Controller, go to Settings -> Controller -> Login 
 7. Encrypt Controller EBS Volume
 ##################################
 
-Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_ to encrypt the Controller EBS Volueme after the Controller is launched. 
+Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_ to encrypt the Controller EBS Volume after the Controller is launched. 
 
 8. Encrypt gateway EBS Volume
 ###############################
