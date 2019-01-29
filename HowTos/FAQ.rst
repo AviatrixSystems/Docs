@@ -149,7 +149,7 @@ To disable admin login to the Controller, go to Settings -> Controller -> Login 
 7. Encrypt Controller EBS Volume
 ##################################
 
-Follow the `instructions here <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller EBS Volueme. 
+Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85fl>`_ to encrypt the Controller EBS Volueme. 
 
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
