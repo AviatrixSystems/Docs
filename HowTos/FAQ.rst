@@ -149,7 +149,13 @@ To disable admin login to the Controller, go to Settings -> Controller -> Login 
 7. Encrypt Controller EBS Volume
 ##################################
 
-Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85fl>`_ to encrypt the Controller EBS Volueme. 
+Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_ to encrypt the Controller EBS Volueme after the Controller is launched. 
+
+8. Encrypt gateway EBS Volume
+###############################
+
+Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85fl>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
+
 
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
