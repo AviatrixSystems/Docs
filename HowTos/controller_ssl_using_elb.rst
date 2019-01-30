@@ -102,3 +102,7 @@ Follow the steps below to put the Aviatrix Controller behind an AWS ALB:
 
 .. |imageArchitecture| image:: controller_ssl_elb_media/highlevel.png
    :scale: 50%
+
+
+.. note::
+   Please note that HA is not supported on the Controller as documented `here <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, if it is deployed behind an ELB
