@@ -44,8 +44,6 @@ gateway. Gateways are launched from the Controller
 browser console by using your cloud account credentials with cloud provider APIs.
 The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ and `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
 
-We also offer a `hosted service <https://www.aviatrix.com/trial/>`_ where we operate and manage the Controller for you. 
-
 
 Why Should You Consider Us?
 =============================

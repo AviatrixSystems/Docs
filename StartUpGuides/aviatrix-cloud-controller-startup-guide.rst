@@ -24,7 +24,7 @@ Click a link below to learn your use case or read an `Aviatrix Overview. <http:/
 
 `Multicloud Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
 
-The Aviatrix Controller provides a single pane of glass for all your secure networking tasks. You can run the Controller in your own VPC or let Aviatrix manage it in `our hosted service <https://www.aviatrix.com/trial/>`_.
+The Aviatrix Controller provides a single pane of glass for all your secure networking tasks. You can run the Controller in your own VPC.
 
 The following guide applies to running the Controller in your own environment. 
 
@@ -57,15 +57,6 @@ Select the right AMI that meets your use case and subscription preference. Click
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
 - **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
-   - Next-Generation Transit VPC Network  
-   - VPC Egress Security  
-   - Remote User VPN (OpenVPN®)  
-   - Multicloud Peering 
-   - Encrypted Peering 
-   - Site to Cloud IPSEC VPN 
-   - FREE - EC2 FlightPath Troubleshooting Tool
-   
-- **(Hosted by Aviatrix) Metered Networking as a Service** `Aviatrix Secure Networking as a Service - Metered Service <https://aws.amazon.com/marketplace/pp/B07D411SV9?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
