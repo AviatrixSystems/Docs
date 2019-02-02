@@ -14,9 +14,9 @@ R4.1 (2/9/2019)
 
 - **AWS Transit Gateway DMZ** is a Bring Your Own Firewall architecture that seamlessly integrates virtual firewall appliances into the edge of the Next Gen Transit Network. By decoupling firewall functions from the network functions, the architecture allows a scalable firewall deployment that filters traffic between on-prem and cloud. Check out `Transit Gateway FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ to learn more. For configuration, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_..
 
-- **Palo Alto VM-Series Integration** integrates the firewall route updating and health monitoring into the Aviatrix Controller for the AWS Transit Gateway DMZ deployment. The Controller monitors and applies VM-series APIs to the appliance, thus simplifies the operations. For details, read <https://docs.aviatrix.com/HowTos/transit_dmz_vendors.html>`_.`
+- **Palo Alto VM-Series Integration** integrates the firewall route updating and health monitoring into the Aviatrix Controller for the AWS Transit Gateway DMZ deployment. The Controller monitors and applies VM-series APIs to the appliance, thus simplifies the operations. For details, read `<https://docs.aviatrix.com/HowTos/transit_dmz_vendors.html>`_.
 
-- **External Device support for Transit** allows you to build the Next Gena Transit Network without the constrain of the 100 route limits by AWS VGW. By establishing the IPSEC tunnel directly to your on-prem router over Direct Connect or Internet, VGW no longer carries the routes from on-prem and Spoke VPCs. To configure, follow the `Transit gateway to external device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. For example configuration, check out the configuration examples for `on-prem ISR/ASR <https://docs.aviatrix.com/HowTos/transitgw_external.html#appendix-2-transit-connection-to-cisco-isr-asr-over-direct-connect>`_. 
+- **External Device support for Transit** allows you to build the Next Gena Transit Network without the constrain of the 100 route limits by AWS VGW. By establishing the IPSEC tunnel directly to your on-prem router over Direct Connect or Internet, VGW no longer carries the routes from on-prem and Spoke VPCs. To configure, follow the `Transit gateway to external device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. Check out the configuration examples for `on-prem ISR/ASR <https://docs.aviatrix.com/HowTos/transitgw_external.html#appendix-2-transit-connection-to-cisco-isr-asr-over-direct-connect>`_. 
 
 - **Insane Mode Encryption** breaks the 1.25Gbps Transit VPC performance limit and allows you to scale your transit network to 10Gbps while with encryption. Follow `Insane Mode <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn more.
 
@@ -34,6 +34,10 @@ R4.1 (2/9/2019)
 
 - **Flightpath With Expert Diagnostics** adds expert diagnostics capability to the popular `Flightpath tool <https://docs.aviatrix.com/HowTos/flightpath.html>`_. Flightpath reduces the stress of everyday troubleshooting by pulling together multiple AWS service pages to a single page with side by side display of source and destination information. With the new expert diagnostics, the Aviatrix Controller checks if there are any obvious configuration errors in instance security group rules, VPC route table entries, TGW route table entries and VPC network ACLs. Note this tools is heuristic and cannot replace human experience and judgment. 
 
+- **Trace Path** is a tool to discover MTU size of devices along the network path. This is useful to help understand if the network devices support Jumbo Frame sizes when you deploy Insane Mode. To use, go to Troubleshoot -> Diagnostics -> Network -> GATEWAY UTILITY. Select the Aviatrix gateway name, outgoing interface, destination IP address or host name, and click Trace Path. 
+
+- **Packet Capture Enhancement** allows you to see the tunnel interfaces with the gateways names for easy identification. To use, go to Troubleshoot -> Diagnostics -> Network -> PACKET CAPTURE. Select a gateway, Interface, optionally select Host, Port, Duration and Packet length. Click Start to start capturing packets, click Stop to stop the packet capturing.  Click Download to download the PCAP file that can be analyzed with Wireshark tools. 
+
 4. Security
 -----------
 
@@ -45,12 +49,14 @@ R4.1 (2/9/2019)
 
 - **Create a VPC** has a new enhancement that allows you to specify "Aviatrix Transit VPC" as an option. This is the best practice for deploying the Next Gen Transit Network, as it creates sufficient number of subnet and route tables. To create, go to Useful Tools -> Create a VPC, select the option "Aviatrix Transit VPC".
 
-- **AWS Transit Gateway Audit** is a new function for  AWS Transit Gateway Orchestrator that monitors and alerts an out of band change to AWS Transit Gateway (TGW) related resource, such as route table, route entry, route propagation attribute, VPC attachment and detachment. The out of band change refers to any configuration change that is not initiated from the Aviatrix Controller. To enable, go to the Controller console, TGW Orchestrator -> Audit turn on the auditing capability for each Transit Gateway.   
+- **AWS Transit Gateway Audit** is a new function for  AWS Transit Gateway Orchestrator that monitors and alerts any out of band changes to AWS Transit Gateway (TGW) related resource, such as route table, route entry, route propagation attribute, VPC attachment and detachment. The out of band change refers to any configuration change that is not initiated from the Aviatrix Controller. To enable, go to the Controller console, TGW Orchestrator -> Audit turn on the auditing capability for each Transit Gateway.   
 
 
 - **Display and Download Audit Log** displays on the Aviatrix Controller console who and when accessed the Aviatrix Controller and what commands have been issued. To display audit log, go to Troubleshoot -> Logs -> Display Audit. To filter, type in the search panel and click Display Audit again. To download the log file, click Download Audit. Note all logs are also stored in the syslog that you can export to external log services. 
 
-- **Splunk Integration Enhancement** allows you to customize Splunk index for inputs.conf for improved later analysis. 
+- **Splunk Integration Enhancement** allows you to customize Splunk index for inputs.conf improving  log analysis visibility. 
+
+- **Gateway Certificate Import** allows you to import third party signed certificate into Aviatrix gateways. To import, go to Settings -> Advanced -> Security -> IMPORT CERTIFICATE WITH KEY. Select the gateway, upload the CA Certificate and click OK.  
 
 
 
