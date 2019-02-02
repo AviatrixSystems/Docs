@@ -70,6 +70,12 @@ works forwards packet to the main gateways, another subnet for the firewall inte
 Aviatrix Controller will create VPC route tables to associate the firewall subnets and create necessary route entries 
 for packet forwarding. 
 
+How to setup Transit DMZ?
+-----------------------------
+
+Follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ 
+for a step by step guide to setup. 
+
 .. |transit_dmz| image:: transit_dmz_media/transit_dmz.png
    :scale: 30%
 

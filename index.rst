@@ -98,7 +98,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit VPC 
+   :caption: Transit VPC/VNet 
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow

@@ -2,6 +2,58 @@
 Release Notes
 =======================================
 
+R4.1 (2/9/2019)
+===============
+
+1. Networking
+---------------
+
+- **Transit Gateway Peering** establishes encrypted tunnels that connect inter region and inter cloud networks by transit gateways. This allows you to build a software defined, fully connected global transit network with multiple transit clusters. The spoke VPC/VNet CIDRs and on-prem routes are automatically propagated throughout the network. To configure, follow the `Transit Gateway Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ instructions.
+
+- **Azure Transit Gateway Preview** allows you to launch a transit gateway in Azure and build a transit network in Azure the same way for AWS. For configuration instructions, follow the `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+
+- **AWS Transit Gateway DMZ** is a Bring Your Own Firewall architecture that seamlessly integrates virtual firewall appliances into the edge of the Next Gen Transit Network. By decoupling firewall functions from the network functions, the architecture allows a scalable firewall deployment that filters traffic between on-prem and cloud. Check out `Transit Gateway FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ to learn more. For configuration, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_..
+
+- **Palo Alto VM-Series Integration** integrates the firewall route updating and health monitoring into the Aviatrix Controller for the AWS Transit Gateway DMZ deployment. The Controller monitors and applies VM-series APIs to the appliance, thus simplifies the operations. For details, read <https://docs.aviatrix.com/HowTos/transit_dmz_vendors.html>`_.`
+
+- **External Device support for Transit** allows you to build the Next Gena Transit Network without the constrain of the 100 route limits by AWS VGW. By establishing the IPSEC tunnel directly to your on-prem router over Direct Connect or Internet, VGW no longer carries the routes from on-prem and Spoke VPCs. To configure, follow the `Transit gateway to external device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. For example configuration, check out the configuration examples for `on-prem ISR/ASR <https://docs.aviatrix.com/HowTos/transitgw_external.html#appendix-2-transit-connection-to-cisco-isr-asr-over-direct-connect>`_. 
+
+- **Insane Mode Encryption** breaks the 1.25Gbps Transit VPC performance limit and allows you to scale your transit network to 10Gbps while with encryption. Follow `Insane Mode <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn more.
+
+- **Aviatrix Hardware Appliance CloudN** is the on-prem appliance that enables the Insane Mode Encryption for the Next Gen Transit Network. For details, check out `Aviatrix hardware appliance CloudN <https://docs.aviatrix.com/HowTos/insane_mode.html>`_.
+
+2. OpenVPN®
+--------------
+
+- **OpenVPN® User Tracking** enables you to quickly correlate a destination IP address access to the specific VPN user. If you select Destination IPs and enter a list of IP addresses, the Aviatrix Controller console returns the list of the VPN user names that communicated with the IP address. If you select Username and enter VPN user names, the console returns all destination IP addresses the user visited. You can further filter on time span and selected VPN gateways. To use the feature, go to Troubleshoot -> Diagnostics -> VPN User. If your VPN configuration is Full Tunnel mode (as opposed to the default Split Tunnel mode), this tool enables the administrator to have complete visibility of your end user activities including Internet browsing.
+
+- **OpenVPN® User Diagnostics** improves the speed to troubleshoot if a VPN user has connection problem. Simply enter the user name and discover the errors. To use, go to Troubleshoot -> Diagnostics -> VPN User, enter the VPN user name and click Go.
+
+3. Troubleshoot
+----------------
+
+- **Flightpath With Expert Diagnostics** adds expert diagnostics capability to the popular `Flightpath tool <https://docs.aviatrix.com/HowTos/flightpath.html>`_. Flightpath reduces the stress of everyday troubleshooting by pulling together multiple AWS service pages to a single page with side by side display of source and destination information. With the new expert diagnostics, the Aviatrix Controller checks if there are any obvious configuration errors in instance security group rules, VPC route table entries, TGW route table entries and VPC network ACLs. Note this tools is heuristic and cannot replace human experience and judgment. 
+
+4. Security
+-----------
+
+- **Port Range Configuration on Egress FQDN** allows you to configure TCP/UDP port range for non HTTP/HTTPS ports in a single policy and simplifies the configurations. The maximum port range span is 100 per policy. To configure, go to Security -> Egress Control.  
+
+
+5. Operations
+---------------
+
+- **Create a VPC** has a new enhancement that allows you to specify "Aviatrix Transit VPC" as an option. This is the best practice for deploying the Next Gen Transit Network, as it creates sufficient number of subnet and route tables. To create, go to Useful Tools -> Create a VPC, select the option "Aviatrix Transit VPC".
+
+- **AWS Transit Gateway Audit** is a new function for  AWS Transit Gateway Orchestrator that monitors and alerts an out of band change to AWS Transit Gateway (TGW) related resource, such as route table, route entry, route propagation attribute, VPC attachment and detachment. The out of band change refers to any configuration change that is not initiated from the Aviatrix Controller. To enable, go to the Controller console, TGW Orchestrator -> Audit turn on the auditing capability for each Transit Gateway.   
+
+
+- **Display and Download Audit Log** displays on the Aviatrix Controller console who and when accessed the Aviatrix Controller and what commands have been issued. To display audit log, go to Troubleshoot -> Logs -> Display Audit. To filter, type in the search panel and click Display Audit again. To download the log file, click Download Audit. Note all logs are also stored in the syslog that you can export to external log services. 
+
+- **Splunk Integration Enhancement** allows you to customize Splunk index for inputs.conf for improved later analysis. 
+
+
+
 R4.0 (11/26/2018)
 =================
 

@@ -8,7 +8,24 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+--------------------------------------------------------------------------------
+
+::
+
+ [Aviatrix Error] Failed to deliver msg to gw oregon-spoke1-server: HTTPSConnectionPool(host='54.203.52.208', port=443): Max retries exceeded with url: /cloudxaws/launch.py?action=gateway_diag (Caused by ConnectTimeoutError(, 'Connection to 54.203.52.208 timed out. (connect timeout=10)')) 
+
+It's possible the named gateway is stopped or a security group rule blocked access from the Controller. 
+
 ---------------------------------------------------------------------------------
+
+::
+
+  Error: [Aviatrix Error] For rule:[{u'port': u'22-220', u'fqdn': u'www.amazon.com', u'proto': u'tcp'}] port[22-220] range must be within the caped limit of:100. 
+Syntax:[port | fromport-toport]. Range "fromport" to "toport" inclusive.
+
+The maximum port range is 100. 
+
+---------------------------------------------------
 
 ::
 
