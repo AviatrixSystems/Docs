@@ -32,7 +32,7 @@ R4.1 (2/9/2019)
 3. Troubleshoot
 ----------------
 
-- **Flightpath With Expert Diagnostics** adds expert diagnostics capability to the popular `Flightpath tool <https://docs.aviatrix.com/HowTos/flightpath.html>`_. Flightpath reduces the stress of everyday troubleshooting by pulling together multiple AWS service pages to a single page with side by side display of source and destination information. With the new expert diagnostics, the Aviatrix Controller checks if there are any obvious configuration errors in instance security group rules, VPC route table entries, TGW route table entries and VPC network ACLs. Note this tools is heuristic and cannot replace human experience and judgment. 
+- **Flightpath With Expert Diagnostics** adds expert diagnostics capability to the popular `Flightpath tool <https://docs.aviatrix.com/HowTos/flightpath.html>`_. Flightpath reduces the stress of everyday troubleshooting by pulling together multiple AWS service pages to a single page with side by side display of source and destination information. With the new expert diagnostics, the Aviatrix Controller checks if there are any obvious configuration errors in instance security group rules, VPC route table entries, TGW route table entries and VPC network ACLs. Note this tool is heuristic and cannot replace human experience and judgment. 
 
 - **Trace Path** is a tool to discover MTU size of devices along the network path. This is useful to help understand if the network devices support Jumbo Frame sizes when you deploy Insane Mode. To use, go to Troubleshoot -> Diagnostics -> Network -> GATEWAY UTILITY. Select the Aviatrix gateway name, outgoing interface, destination IP address or host name, and click Trace Path. 
 
