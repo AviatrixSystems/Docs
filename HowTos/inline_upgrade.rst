@@ -25,8 +25,9 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Click `Maintenance`
 #. Click `Dry Run` to make sure controller and gateway are in contact and allowed to download our software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups, VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Click `Upgrade to the latest` to upgrade your software to the latest version
-#. Follow the directions in this document to update your IAM policies in all accounts
+#. Follow the directions listed below in this document to update your IAM policies in all accounts
 #. Take a backup by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
+#. If you are using terraform, please use the appropriate branch from https://github.com/AviatrixSystems/terraform-provider-aviatrix. For more information please go to https://github.com/AviatrixSystems/terraform-provider-aviatrix#controller-version
 
 .. note::
    
