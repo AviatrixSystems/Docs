@@ -267,11 +267,17 @@ the user VPN connectivity history is displayed.
 
 You can also disconnect a user from the dashboard.
 
+Does Aviatrix OpenVPN® solution support SAML client?
+-----------------------------------------------------
+
+Yes. Aviatrix VPN client is the only OpenVPN® based client software that support SAML 
+authentication from the client software itself. Read `here <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_ to learn more. 
+
 
 When should I use the Aviatrix VPN client?
 -------------------------------------------
 
-Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ supports SAML authentication from the VPN client itself.  If you need the VPN client itself to authenticate against an IDP (for example, Okta or Duo), you will need to use the Aviatrix VPN client.
+Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ supports SAML authentication from the VPN client itself.  If you need the VPN client itself to authenticate against an IDP (for example, Okta, Google, AWS SSO and Azure AD), you will need to use the Aviatrix VPN client.
 
 Aviatrix VPN gateway can authenticate a VPN user against OKTA on behalf of a VPN user.  In that case, you don’t need Aviatrix VPN client, any OpenVPN® clients software such as Tunnelblick can be supported.
 
