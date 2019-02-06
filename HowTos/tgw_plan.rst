@@ -149,7 +149,7 @@ If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workfl
 When complete, the next two steps, Step 5 and Step 6 in this work should have already been executed for the Main gateway, i.e., you can skip the next two steps. 
 
 
-5. Prepare Aviatrix Transit GW to attach to TGW
+5. Prepare Aviatrix Transit GW for TGW Attachment
 ---------------------------------------------------------------
 
 The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to Transit Gateway. The networking between Transit Gateway and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
