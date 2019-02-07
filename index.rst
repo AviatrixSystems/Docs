@@ -259,7 +259,6 @@ While all content is searchable, the site is organized into the following sectio
    Downloads/cloudndownload
    Downloads/samlclient
 
-
 .. _Release Notes:
 
 .. toctree::
@@ -270,7 +269,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/changelog
    HowTos/Aviatrix_IAM_Policy_Release_Notes
    HowTos/field_notices
-
 
 .. _IPmotion:
 
