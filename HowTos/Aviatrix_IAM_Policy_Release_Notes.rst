@@ -16,9 +16,6 @@ Aviatrix IAM Policy - Release Notes
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
 
 
-|
-
-
 `Latest Version of "aviatrix-assume-role-policy" <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__
 
 
@@ -35,6 +32,11 @@ R4.1 (2/9/2019)
 
 aviatrix-app-policy
 ---------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2019-02-09-controller-version-4.1/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
+
 
 New IAM Permissions for Transit Network: 
 """"""""""""""""""""""""""""""""""""""""""
@@ -69,16 +71,16 @@ New IAM Permissions for Controller & Gateway Volumes Encryption:
         "ec2:DetachVolume"
 
 
-4.1 aviatrix-app-policy:
-
-
-.. raw:: html
-
-    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2019-02-09-controller-version-4.1/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
+|
 
 
 aviatrix-assume-role-policy
 -----------------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-assume-role-policy/2019-02-09-controller-version-4.1/iam_assume_role_policy.txt" height="150px" width="100%"></iframe>
+
 
 New IAM Permissions for Secure File Transfer: 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -86,15 +88,6 @@ New IAM Permissions for Secure File Transfer:
 ::
 
 "s3:GetBucketLocation"
-
-
-
-4.1 aviatrix-assume-role-policy:
-
-
-.. raw:: html
-
-    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-assume-role-policy/2019-02-09-controller-version-4.1/iam_assume_role_policy.txt" height="150px" width="100%"></iframe>
 
 
 |
@@ -106,6 +99,11 @@ R4.0 (11/26/2018)
 
 aviatrix-app-policy
 ---------------------
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2018-11-26-controller-version-4.0/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
+
 
 New IAM Permissions for AWS TGW: 
 """""""""""""""""""""""""""""""""
@@ -143,14 +141,6 @@ New IAM Permissions for AWS TGW:
     "ram:EnableSharingWithAwsOrganization"
 
 
-4.0 aviatrix-app-policy:
-
-
-.. raw:: html
-
-    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2018-11-26-controller-version-4.0/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
-
-
 |
 |
 
@@ -163,6 +153,11 @@ aviatrix-app-policy
 
 New IAM Permissions for S2C & Directconnect: 
 """"""""""""""""""""""""""""""""""""""""""""""
+
+.. raw:: html
+
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2018-10-07-controller-version-3.5/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
+
 
 ::
 
@@ -182,14 +177,6 @@ New IAM Permissions for New IAM Permissions for GuardDuty:
     "guardduty:CreateDetector"
     "guardduty:DeleteDetector"
     "guardduty:UpdateDetector"
-
-
-3.5 aviatrix-app-policy:
-
-
-.. raw:: html
-
-    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2018-10-07-controller-version-3.5/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
 
 
 |
