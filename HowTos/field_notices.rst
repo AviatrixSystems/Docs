@@ -11,13 +11,13 @@ Field Notice 0004 (2019/2/6)
 
 **New Site2Cloud connections will not pass traffic for Aviatrix Systems running software prior to 4.0.691**
  
-Problem: AWS has introduced some changes in VGW/CGW which are having some unintended consequences around setting up new VPN Connections. Existing VPN connections will not be affected. The new Site2Cloud connections will not pass traffic, even though they may be reported as being “UP”
+Problem: AWS introduced changes in VGW IPSEC VPN recently which broke VPN traffic passing. Existing VPN connections will not be affected. Customers who establishes a new `Transit VPC to VGW <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ connections will not pass traffic, even though they may be reported as being “UP”. 
  
-Description: Aviatrix Software uses SHA256 to setup Site2Cloud connections with AWS’s VGW/CGW. Due to changes that were made by AWS recently, we discovered during the week of Feb 4th 2019 that new VPN Connections to VGW/CGW were not transmitting traffic. We have discussed this issue with AWS’s technical support team. AWS has recommended that we use SHA1 instead of SHA256 for the Phase 2 part of IPSec configuration. They have acknowledged the issue and are looking to address it. Meanwhile, our engineering team has changed to use SHA1 per AWS recommendation and has released a new build 4.0.691 to address this issue.
+Description: Aviatrix Software uses SHA256 to setup IPSEC VPN connections with AWS VGW. Due to changes that made by AWS recently, we discovered during the week of Feb 4th 2019 that new VPN Connections to VGW IPSEC tunnel were not passing traffic. We have submitted a support ticket with AWS technical support team. AWS has recommended that we use SHA1 instead of SHA256 for the Phase 2 part of IPSec configuration. They have acknowledged the issue and are looking to address the problem. Meanwhile, Aviatrix engineering team made updates based on AWS recommendation and has released a new build 4.0.691 to address this issue.
  
 Solution: Customers running into this issue are requested to upgrade their Aviatrix system to 4.0.691 or later using the instructions `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html#how-to-upgrade-software>`__. After upgrading, follow these directions:
 
-  * For a new connect ion to VGW in Transit Network scenario, customers should go to Controller GUI/Transit Network/Setup and go to Step 8 and disconnect the VGW and reconnect again via Step 3
+  * For a new connection to VGW in Transit Network scenario, customers should login to the Controller, go to Transit Network -> Setup and go to `Step 8 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_ to disconnect the VGW and reconnect again via `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_.
   * For a standalone Site2Cloud connection, rebuild the connection through Controller GUI/Site2Cloud and avoid using SHA256 for Phase 2.
  
 Please test your network connections and if you continue to face further issues after going through the above steps, please open a ticket by sending an email to support@aviatrix.com 
