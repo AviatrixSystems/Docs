@@ -269,6 +269,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/UCC_Release_Notes
    HowTos/changelog
    HowTos/field_notices
+   HowTos/Aviatrix_IAM_Policy_Release_Notes
 
 .. _IPmotion:
 
