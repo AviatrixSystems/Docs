@@ -10,6 +10,7 @@ Aviatrix IAM Policy - Release Notes
 
 `Latest Version of "aviatrix-app-policy" <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__
 
+
 .. raw:: html
 
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt" height="200px" width="100%"></iframe>
@@ -20,9 +21,10 @@ Aviatrix IAM Policy - Release Notes
 
 `Latest Version of "aviatrix-assume-role-policy" <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__
 
+
 .. raw:: html
 
-    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt" height="200px" width="100%"></iframe>
+     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt" height="200px" width="100%"></iframe>
 
 
 |
@@ -44,7 +46,6 @@ New IAM Permissions for Transit Network:
 "ec2:AssociateRouteTable"
 "ec2:DisassociateRouteTable
 "ec2:ReplaceRouteTableAssociation"
-
 "ec2:EnableVgwRoutePropagation"
 "ec2:DisableVgwRoutePropagation"
 
@@ -70,6 +71,7 @@ New IAM Permissions for Controller & Gateway Volumes Encryption:
 
 4.1 aviatrix-app-policy:
 
+
 .. raw:: html
 
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2019-02-09-controller-version-4.1/IAM_access_policy_for_CloudN.txt" height="200px" width="100%"></iframe>
@@ -89,6 +91,7 @@ New IAM Permissions for Secure File Transfer:
 
 
 4.1 aviatrix-assume-role-policy:
+
 
 .. raw:: html
 
@@ -112,7 +115,6 @@ New IAM Permissions for AWS TGW:
 
 "ram:Get*"
 "ram:List*"
-
 "ec2:AssociateTransitGatewayRouteTable"
 "ec2:AcceptTransitGatewayVpcAttachment"
 "ec2:CreateTransitGateway"
@@ -131,7 +133,6 @@ New IAM Permissions for AWS TGW:
 "ec2:ModifyTransitGatewayVpcAttachment"
 "ec2:RejectTransitGatewayVpcAttachment"
 "ec2:ReplaceTransitGatewayRoute"
-
 "ram:CreateResourceShare"
 "ram:DeleteResourceShare"
 "ram:UpdateResourceShare"
@@ -144,6 +145,7 @@ New IAM Permissions for AWS TGW:
 
 
 4.0 aviatrix-app-policy:
+
 
 .. raw:: html
 
@@ -184,6 +186,7 @@ New IAM Permissions for New IAM Permissions for GuardDuty:
 
 
 3.5 aviatrix-app-policy:
+
 
 .. raw:: html
 
