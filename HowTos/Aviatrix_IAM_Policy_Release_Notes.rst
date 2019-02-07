@@ -16,6 +16,9 @@ Aviatrix IAM Policy - Release Notes
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
 
 
+|
+
+
 `Latest Version of "aviatrix-assume-role-policy" <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__
 
 
@@ -30,8 +33,8 @@ Aviatrix IAM Policy - Release Notes
 R4.1 (2/9/2019)
 =================
 
-aviatrix-app-policy
----------------------
+aviatrix-app-policy (R4.1)
+----------------------------
 
 .. raw:: html
 
@@ -74,8 +77,8 @@ New IAM Permissions for Controller & Gateway Volumes Encryption:
 |
 
 
-aviatrix-assume-role-policy
------------------------------
+aviatrix-assume-role-policy (R4.1)
+------------------------------------
 
 .. raw:: html
 
@@ -97,8 +100,8 @@ New IAM Permissions for Secure File Transfer:
 R4.0 (11/26/2018)
 ===================
 
-aviatrix-app-policy
----------------------
+aviatrix-app-policy (R4.0)
+----------------------------
 
 .. raw:: html
 
@@ -148,8 +151,8 @@ New IAM Permissions for AWS TGW:
 R3.5 (10/7/2018)
 ==================
 
-aviatrix-app-policy
----------------------
+aviatrix-app-policy (R3.5)
+----------------------------
 
 New IAM Permissions for S2C & Directconnect: 
 """"""""""""""""""""""""""""""""""""""""""""""
