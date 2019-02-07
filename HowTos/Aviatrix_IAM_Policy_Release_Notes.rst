@@ -154,13 +154,13 @@ R3.5 (10/7/2018)
 aviatrix-app-policy (R3.5)
 ----------------------------
 
-Feature: S2C & Directconnect: 
-"""""""""""""""""""""""""""""""
-
 .. raw:: html
 
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2018-10-07-controller-version-3.5/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
 
+
+Feature: S2C & Directconnect: 
+"""""""""""""""""""""""""""""""
 
 ::
 
