@@ -41,8 +41,8 @@ aviatrix-app-policy (R4.1)
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2019-02-09-controller-version-4.1/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
 
 
-New IAM Permissions for Transit Network: 
-""""""""""""""""""""""""""""""""""""""""""
+Feature: Transit Network: 
+"""""""""""""""""""""""""""
 
 ::
 
@@ -55,8 +55,8 @@ New IAM Permissions for Transit Network:
     "ec2:DisableVgwRoutePropagation"
 
 
-New IAM Permissions for Controller & Gateway Volumes Encryption:
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Feature: Controller & Gateway Volumes Encryption:
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 ::
 
@@ -85,8 +85,8 @@ aviatrix-assume-role-policy (R4.1)
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-assume-role-policy/2019-02-09-controller-version-4.1/iam_assume_role_policy.txt" height="150px" width="100%"></iframe>
 
 
-New IAM Permissions for Secure File Transfer: 
-"""""""""""""""""""""""""""""""""""""""""""""""
+Feature: Secure File Transfer: 
+""""""""""""""""""""""""""""""""
 
 ::
 
@@ -108,8 +108,8 @@ aviatrix-app-policy (R4.0)
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-iam-policies/aviatrix-app-policy/2018-11-26-controller-version-4.0/IAM_access_policy_for_CloudN.txt" height="150px" width="100%"></iframe>
 
 
-New IAM Permissions for AWS TGW: 
-"""""""""""""""""""""""""""""""""
+Feature:  AWS TGW: 
+""""""""""""""""""""
 
 ::
 
@@ -154,8 +154,8 @@ R3.5 (10/7/2018)
 aviatrix-app-policy (R3.5)
 ----------------------------
 
-New IAM Permissions for S2C & Directconnect: 
-""""""""""""""""""""""""""""""""""""""""""""""
+Feature: S2C & Directconnect: 
+"""""""""""""""""""""""""""""""
 
 .. raw:: html
 
@@ -167,8 +167,8 @@ New IAM Permissions for S2C & Directconnect:
     "directconnect:Describe*
 
 
-New IAM Permissions for New IAM Permissions for GuardDuty:
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Feature: GuardDuty:
+"""""""""""""""""""""
 
 ::
 
