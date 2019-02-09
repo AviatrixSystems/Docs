@@ -136,6 +136,13 @@ connection policy can communicate with each other automatically.
 What are the benefits of using Security Domains and Connection Policies?
 --------------------------------------------------------------------------
 
+The key use case for building Security Domains is to segment traffic between VPCs, sometimes also called east west traffic. 
+
+The benefits are:
+
+ - Native Service. It leverages AWS Transit Gateway route domain and route domain propagation constructs.
+ - Zero performance impact. Comparing to deploy a firewall instance, this approach has zero network performance impact. 
+
 Using Security Domains and Connection Policies allow you to identify groups of VPCs with the same requirements from 
 networking point of view and then apply connection policies at the group level. This avoids having to individually 
 specify connections at VPC level. The Aviatrix Controller takes care of route programming of all route tables. 

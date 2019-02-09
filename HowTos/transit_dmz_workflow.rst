@@ -83,7 +83,7 @@ as shown below.
 
 .. tip::
 
-  Use the two private subnets in the transit VPC created by the Useful tool in the early step to be the Firewall main interface subnet and Firewall companion interface subnet. 
+  Use the two private subnets Private-FW-north-az and Private-FW-south-az in the transit VPC created by the Useful tool in the early step to create firewall interfaces for traffic inspection between on-prem and cloud. 
 
 Launch the firewall instance from AWS Console. 
 

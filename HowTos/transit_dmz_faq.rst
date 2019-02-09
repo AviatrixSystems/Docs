@@ -10,7 +10,7 @@ Transit DMZ FAQ
 What is Transit DMZ?
 -----------------------
 
-Transit DMZ is a security feature for the Next Gen Transit network. With Transit DMZ, you can centrally deploy instance based
+Transit DMZ is a cloud networking feature for the Next Gen Transit network. With Transit DMZ, you can centrally deploy instance based
 firewall virtual appliances to protect traffic between on-prem and VPCs, and VPC Egress and Ingress. Transit DMZ is 
 implemented at the edge VPC as shown below, where a pair of firewalls are deployed between two pairs of Aviatrix Transit GWs at the Transit VPC edge. 
 
@@ -32,10 +32,10 @@ Since Transit DMZ is independent from how a Spoke VPC is connected, it works wit
 Transit VPC where a Spoke VPC deploys Aviatrix gateways and the Native TGW Spoke VPCs 
 where no Aviatrix gateway is deployed in the Spoke VPC. 
 
-Is Transit DMZ a bump in the wire for all traffic?
+Can Transit DMZ inspect all traffic?
 ---------------------------------------------------
 
-For the 4.1 release, Transit DMZ can only intercepts traffic between north and south (on-prem and VPCs) and Egress and Ingress traffic. Transit DMZ does not see east west traffic (between two VPCs).
+For the 4.1 release, Transit DMZ can only intercepts traffic between north and south (on-prem and VPCs) and Egress and Ingress traffic. Transit DMZ does not see east west traffic (between two VPCs). We recommend you to use `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-are-the-benefits-of-using-security-domains-and-connection-policies>`_ to segment traffic between east west traffic. 
 
 How does Transit DMZ actually work?
 ------------------------------------
@@ -61,9 +61,7 @@ companion gateway to point the routes to the backup firewall instance.
 How should the firewall be deployed?
 -------------------------------------
 
-A firewall typically has multiple interfaces. In order to deploy EC2 based firewall appliances, 
-you need to create or allocate at least two subnets in the Transit VPC. One subnet for the firewall interface that 
-works forwards packet to the main gateways, another subnet for the firewall interface that forwards packet to the companion gateway, as shown in the diagram below.
+A firewall typically has multiple interfaces.  
 
 |main_companion_subnets| 
 
