@@ -12,7 +12,7 @@ guide helps you to launch the controller VM in Azure. Make sure you follow the i
 
 .. Important::
 
-  We advise you not to deploy a Controller in GCP. The preferred approach is to launch the Controller from AWS Marketplace as an metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi account and multi region capable. Launching a controller in AWS is preferred even if you only deploy gateways in GCP. This is because AWS provides a metered charging mechanism, a true pay as you go (without up front commitment nor contract negotiation) payment system that has the least friction.
+  We suggest you not to deploy a Controller in Azure. The preferred approach is to launch the Controller from AWS Marketplace as an metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi account and multi region capable. Launching a controller in AWS is preferred even if you only deploy gateways in Azure. This is because AWS provides a metered charging mechanism, a true pay as you go (without up front commitment nor contract negotiation) payment system that has the least friction.
 
 1. Subscribe to Aviatrix Controller
 ====================================
