@@ -23,7 +23,7 @@ Traditionally, centrally deployed instance based firewall appliances require IPS
 features that you want them to perform. 
 
 Transit DMZ decouples networking functions and security functions. There is no IPSEC tunnels between the Aviatrix 
-Transit GW and the firewall appliances, thus simplifying firewall deployment and allowing them to scale independently.  
+Transit GW and the firewall appliances, thus simplifying firewall deployment, maximizing firewall appliance performance and allowing them to scale independently.  
 
 Can Transit DMZ work with Transit VPC?
 ---------------------------------------

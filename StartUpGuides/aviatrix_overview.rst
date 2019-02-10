@@ -77,6 +77,7 @@ Aviatrix Next-Gen Transit Network solution solves many problems when connecting 
 These problems are listed below:
 
  a. **AWS Transit Gateway** AWS just released Transit Gateway (TGW), I need to migrate my current CSR based Transit VPC solution.
+ #. **Transit Solution for Azure** We have multiple Azure VNETs now, need to form a transit network and connect them to on-prem and to AWS Transit network.
  #. **Change Control** Each time a new VPC is stood up, a change control process has to take place to modify the edge router for Direct Connect or IPSEC over Internet. This is not agile and the risk of errors in configuration is not acceptable.
  #. **BGP** The CSR based Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to outside.  
  #. **Not Secure** All spoke VPCs in The CSR based Global Transit solution have connectivity to each other through BGP route propagation. There is no network segmentation. The blast radius is my entire cloud network and datacenters. Not acceptable by security team. 

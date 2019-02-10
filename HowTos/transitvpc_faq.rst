@@ -17,15 +17,15 @@ How does the Aviatrix Transit Network solution differ from Cisco's CSR-based sol
 ----------------------------------------------------------------------------------------
 They differ in the following areas:
 
- - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design.
+ - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
- - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs are routed directly, as opposed to going through the Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points.
+ - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix Next Gen Transit integrates with AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use TGW native service to connect the Spoke VPCs. 
 
- - **Half Egress Charge** - In the Aviatrix solution, VPC to VPC traffic does not go through the Transit GW, reducing the AWS network egress charge by half.
+ - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design. With the TGW integration, you can customize the `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ to meet your segmentation requirements.
+
+ - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs can be routed via TGW or directly, as opposed to going through the instance based Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points.
 
  - **No unwanted route propagation** - Since Spoke VPCs run BGP in CSR solution, if a Spoke VPC also connects to a partner network via VGW, the partner network routes could be propagated to your own on-prem network.
-
- - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
  - **Simplicity** - In Aviatrix's solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP. Simplicity leads to stability. Workflow-based, step-by-step instructions help you build out a Transit VPC solution in minutes.
 
@@ -35,16 +35,19 @@ They differ in the following areas:
 
 For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
-How does Aviatrix Transit Network work?
-----------------------------------------
+How does Aviatrix Next Gen Transit Network work?
+-------------------------------------------------
 
-In the transit VPC, the Aviatrix gateway establishes two BGP sessions (for redundancy) to AWS VGW. Routes from on-prem network is propagated to the Aviatrix gateway which forward them to the Aviatrix Controller. The Controller detects route changes and program the Spoke VPCs for updated routes.
+In the transit VPC, the Aviatrix gateway establishes two BGP sessions (for redundancy) to AWS VGW or on-prem router. Routes from on-prem network is propagated to the Aviatrix gateway which forward them to the Aviatrix Controller. The Controller detects route changes and program the Spoke VPCs for updated routes.
+
+When AWS Transit Gateway (TGW) is deployed for connecting Spoke VPCs, the Aviatrix Controller also programs the TGW route tables entries from the on-prem routes.
 
 In the direction from Spoke VPC to on-prem network, when a Spoke VPC is attached to the Transit Group, the Controller notifies the Aviatrix gateway in the transit VPC to advertise the new Spoke VPC CIDR to VGW.
 
 Since all Spoke VPC routes are managed by the Aviatrix Controller, a Spoke VPC CIDR is not advertised to any other Spoke VPCs, therefore there is no connectivity between them through the transit VPC gateway.
 
-A Shared Service VPC is essentially one special Spoke VPC. The Shared Service VPC typically host common DevOps tools that needs connectivity to other Spoke VPCs. You can accomplish this connectivity by setting up either native AWS Peering or Aviatrix Encrypted Peering from the Aviatrix Controller.
+For Azure networks, Aviatrix Transit Gateway connects directly to the on-prem router over Direct Connect or Internet. Azure Spoke VNETs should deploy Aviatrix Gateways.
+
 
 Where can I find Aviatrix Global Transit Network solution?
 -----------------------------------------------------------
@@ -54,47 +57,66 @@ Aviatrix Controller is available in `AWS Marketplace. <https://aws.amazon.com/ma
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
-Follow the `Aviatrix Transit Network Workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+Follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
 
 Should I deploy one Transit Group for Dev and one for Prod?
 ------------------------------------------------------------
 
-If your reason for two Transit hubs is security and smaller blast radius, you need not to when using Aviatrix solution. By design, none of Spoke VPCs can talk to each other. Check out the `Single region design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#single-region-transit-vpc-design>`_
+If your reason for two Transit hubs is security and smaller blast radius, you need not to when using Aviatrix solution. Simply create two Security Domains in your deployment. 
 
 I have two regions and two Direct Connects, how do I build a multi region Transit solution?
 -------------------------------------------------------------------------------------------------
 
-For multi region, the redundancy is best built over VGW. Check out our `multi region design <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#multi-regions-transit-vpc-design>`_
+Starting from release 4.1, `inter region transit network <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#connecting-transit-gateways-in-multi-regions-multi-cloud>`_ can be connected directly. Follow the instructions `here <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#transit-gateway-peering>`_. 
 
 I have more than 100 VPCs, how do I overcome AWS route limits (100)?
 --------------------------------------------------------------------
 
 When `AWS VGW carries more than 100 routes <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_, its BGP session will crash unexpectedly, resulting in your network outage.
 
-Make sure your on-prem edge router summarizes advertised routes to VGW to as few as possible.
+Azure network has similar limitations, the following techniques work for both cloud providers.
 
-In addition, you must configure `Spoke VPC route summarization <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_ so that Transit GW advertise as few routes to VGW as possible. As long as you can control the number of total routes on VGW not to exceed 100, the Transit Network can support as many Spoke VPCs as you need.
+These are the options Aviatrix solution provides:
+
+1. Summarizing Spoke VPC Routes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable `Spoke VPC route summarization <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_ so that Transit GW advertise as few routes to VGW as possible. As long as you can control the number of total routes on VGW not to exceed 100, the Transit Network can support as many Spoke VPCs as you need.
 
 Aviatrix Controller sends out alert/warning messages when it determines that the total routes carried by VGW exceeds 80. This is to alert you to start reducing routes carried by VGW to avoid potential network outage. This alert message is sent each time there is a route VGW advertised from VGW to Transit GW.
+
+2. By Pass VGW
+~~~~~~~~~~~~~~~~
+
+To permanently solve the route limit problem and not having to worry about summarizing routes at all and ever, use `External Device Option <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ to connect to on-prem directly over Direct Connect or Internet. 
 
 
 Can I launch multiple Transit GW groups from one Controller?
 -------------------------------------------------------------
 
-Yes, you can launch multiple Transit GW groups from one Aviatrix Controller. Go to the
-Transit Network workflow and start
-from `Step 1 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch a new Transit GW group.
+Yes, you can launch multiple Transit GW groups from one Aviatrix Controller. 
+Simply start at `Transit Gateway Plan stage <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_ to create a new TGW in a different region or the same region.
 
 I have a few high bandwidth applications, how do I deploy them in a Transit solution?
 --------------------------------------------------------------------------------------
 
-Currently the Transit solution has a maximum IPSEC throughput of around 1.5Gbps from the Transit GW. To support applications that require higher bandwidth, check out `this design pattern. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-trnasit-vpc-design>`_
+Aviatrix's `Insane Mode solution <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ provides 10Gbps Transit network throughput. 
+
 
 How can I fit a egress firewall into this Transit VPC solution?
 ---------------------------------------------------------------
 
-Egress firewall is deployed to provide protection for Internet access by
-instances in the private subnets. It should not be deployed in the Transit GW VPC. Instead, route Internet bound traffic directly to the firewall appliance from the Spoke VPCs, as shown in the `Egress Control Design. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#integrating-with-egress-firewall>`_
+There are two types of requirements.
+
+1. Egress Control Policies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your compliance requires egress policies and you have currently implemented AWS NAT gateways, consider using `Aviatrix Egress Control <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, it is most efficient way to provide FQDN filter for all TCP/UDP protocols.  
+
+2. Bring your own Firewall
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your security team requires inline IDS/IPS firewall function, consider `Transit DMZ architecture <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ which maximize the firewall appliance performance by decoupling networking and security. 
 
 
 Can Aviatrix Transit VPC be deployed with Terraform template?
