@@ -1,6 +1,6 @@
 .. meta::
   :description: TGW Egress VPC
-  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Egress VPC, PAN Firewall
+  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Egress VPC, Palo Alto Networks Firewall
 
 
 =============================================================
@@ -10,11 +10,11 @@ Transit Gateway Egress VPC Firewall Limitation Test Validation
 Introduction
 --------------
 
-This document demonstrates that native Transit Gateway does not support multi AZ deployment for a centralized egress firewall. 
+This document demonstrates that native Transit Gateway does not support multi AZ deployment for a centralized egress firewall.
 
-AWS Transit Gateway allows spoke VPCs to send Internet bound traffic through firewall instance deployed in attached egress VPC. 
-However Transit Gateway 
-is not aware of the state of each firewall in different AZ in the egress VPC, therefore not able to switch over to 
+AWS Transit Gateway allows spoke VPCs to send Internet bound traffic through firewall instance deployed in attached egress VPC.
+However Transit Gateway
+is not aware of the state of each firewall in different AZ in the egress VPC, therefore not able to switch over to
 a different firewall instance when one fails.
 
 Test Validation
@@ -29,7 +29,7 @@ are in AZ_a. Subnet_3 (private subnet) and Subnet_4 (public subnet) are in AZ_b.
 Subnet_3 in AZ_b) are attached to the Transit Gateway. Subnet_1 is at the top of the Transit Gateway attachment list due to AZ_a is ahead
 of AZ_b in alphabetical order.
 
-Each AZ has one PAN firewall. For PAN1, its eth1/1 interface is at Subnet_2 (public subnet) and its eth1/2
+Each AZ has one Palo Alto Networks (PAN) firewall instance. For PAN1, its eth1/1 interface is at Subnet_2 (public subnet) and its eth1/2
 interface is at Subnet_1 (private subnet). For PAN2, its eth1/1 interface is at Subnet_4 (public subnet) and
 its eth1/2 interface is at Subnet_3.
 
@@ -37,7 +37,7 @@ Subnets' VPC Route Tables (RTBL) are also displayed at the diagram.
 
 |tgw_egress|
 
-The VPC1's traffic will flow through Transit Gateway and PAN firewall before going to Internet. We verified the data
+The VPC1's traffic will flow through Transit Gateway and Palo Alto Networks firewall before going to Internet. We verified the data
 path in different scenarios and observed the following behaviors:
 
 1. With both Subnet_1 and Subnet_3 attached to Transit Gateway, Transit Gateway forwards VPC1's Internet traffic from all three EC2
@@ -59,7 +59,7 @@ Summary
 ---------
 
 Although Transit Gateway allows Internet bound traffic to be forwarded to firewall instances in an egress VPC, multi-AZ deployment for
-such firewall service is not supported. 
+such firewall service is not supported.
 
 
 .. |tgw_egress| image:: tgw_egress_media/tgw_egress.png
@@ -68,4 +68,3 @@ such firewall service is not supported.
 .. add in the disqus tag
 
 .. disqus::
-

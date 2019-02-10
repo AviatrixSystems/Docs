@@ -7,36 +7,36 @@
 Vendor Integration
 =========================================================
 
-Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. . 
+Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. .
 
-Palo Alto VM Series  
+Palo Alto VM Series
 -----------------------------
 
-In the release 4.1, the supported firewall vendor is Palo Alto VM-Series Firewall in AWS. For how to configure
-PAN, refer to `this guide. <https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/set-up-the-vm-series-firewall-on-aws/deploy-the-vm-series-firewall-on-aws/launch-the-vm-series-firewall-on-aws.html#ide07b93a2-ccb3-4c69-95fe-96e3328b8514>`_
+In the release 4.1, the supported firewall vendor is Palo Alto Networks VM-Series Firewall in AWS. For how to configure
+Palo Alto Networks, refer to `this guide. <https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/set-up-the-vm-series-firewall-on-aws/deploy-the-vm-series-firewall-on-aws/launch-the-vm-series-firewall-on-aws.html#ide07b93a2-ccb3-4c69-95fe-96e3328b8514>`_
 
-Follow the following steps to enable PAN API programming.
+Follow the following steps to enable Palo Alto Networks API programming.
 
 1. Enable Ping
 ~~~~~~~~~~~~~~~~~~
 
-Make sure PAN management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address. 
+Make sure Palo Alto Networks management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address.
 
 |pan_ping|
 
 2. Add an Administrator for API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the PAN Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as 
-shown below. 
+At the Palo Alto Networks Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as
+shown below.
 
 |pan_admin|
 
 3. Edit API Administrator Role Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the profile role created in the previous step, edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries 
-the PAN interfaces. 
+For the profile role created in the previous step, edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries
+the Palo Alto Network interfaces.
 
 Go to Device -> Setup -> Management Interface Settings, as shown below.
 
@@ -47,10 +47,10 @@ Go to Device -> Setup -> Management Interface Settings, as shown below.
 
 The integrated functions by the Controller are the followings:
 
- - The Controller monitors the health of PAN software by using PAN API and performs switch over based on the API return status. 
- - The Controller dynamically programs PAN route tables for any new propagated new routes discovered both from new Spoke VPCs and new on-prem routes. 
+ - The Controller monitors the health of Palo Alto Network software by using the VM-series API and performs switch over based on the API return status.
+ - The Controller dynamically programs Palo Alto Network route tables for any new propagated new routes discovered both from new Spoke VPCs and new on-premise routes.
 
-Example of PAN API used:
+Example of Palo Alto Networks API used:
 
 1. get key:
 
