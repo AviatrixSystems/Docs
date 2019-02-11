@@ -15,42 +15,28 @@ It is assumed that Terraform is already set up. If so, skip steps 1 and 2.
 
 Terraform is delivered as a zip file in binary. Click `here <https://www.terraform.io/downloads.html>`_, select your respective OS and simply download the package as you would for any software.
 
-For Mac, Terraform is also present in `Homebrew <https://brew.sh/>`_. Perform "brew install terraform" to install Terraform (Skip step 2 if done this way).
+For Mac, Terraform is also present in `Homebrew <https://brew.sh/>`_. Perform ``brew install terraform`` to install Terraform (Skip step 2 if done this way).
 
 Once it is downloaded, double click to unzip the file. The executable file terraform should be
 in your Downloads folder. (This will be used as an example in this document)
 
-For Unix systems, open a terminal, type the command "Downloads/terraform --version", and you should see output similar to the following image:
+For Unix systems, open a terminal, type the command ``./Downloads/terraform --version``, and you should see output similar to the following image:
 
 |setup_tf|
 
-For Windows, the command is "terraform.exe --version"
+For Windows, the command is ``terraform.exe --version``
 
 
-2. Setup Execution Path
+2. Setup Execution Path (only when not using package manager)
 ------------------------------
 
-Because the Terraform binary file is only located in your Downloads directory, in order for you to execute the commands from anywhere,
-you must setup the execution path.
+If you are running the Terraform binary file after simply downloading it, you will need to execute it using the full path.
 
-In the home directory, open the file ".bash_profile" for editing.
+Assuming it's downloaded into your ``$HOME/Downloads`` directory, run
 
-Append this line to the end of the file
-
-Unix example:
 ::
-  export PATH=$PATH:$HOME/Downloads
 
-
-Type the following command to allow Terraform to be executed anywhere.
-
-Unix example:
-::
-  $ source ~/.bash_profile
-
-To verify, go to home or any directory and type "terraform --version"; you should see the same output as before.
-
-For Windows, PATH and other environment variables can be edited from System Properties.
+  $ ~/Downloads/terraform
 
 3. Download and Install Go
 ----------------------------------
@@ -61,7 +47,7 @@ Follow the instructions listed `here <https://golang.org/doc/install>`_ to downl
 
 |go_install|
 
-For Mac, Go is also present in `Homebrew <https://brew.sh/>`_. Perform "brew install go" to install Go.
+For Mac, Go is also present in `Homebrew <https://brew.sh/>`_. Perform `brew install go` to install Go.
 
 
 4. Download and Build Aviatrix Terraform Provider
