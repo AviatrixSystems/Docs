@@ -2,15 +2,15 @@
 Release Notes
 =======================================
 
-R4.1 (2/9/2019)
-===============
+R4.1.913 (2/9/2019)
+=====================
 
 1. Networking
 ---------------
 
 - **Transit Gateway Peering** establishes encrypted tunnels that connect inter region and inter cloud networks by transit gateways. This allows you to build a software defined, fully connected global transit network with multiple transit clusters. The spoke VPC/VNet CIDRs and on-prem routes are automatically propagated throughout the network. To configure, follow the `Transit Gateway Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ instructions.
 
-- **Azure Transit Gateway Preview** allows you to launch a transit gateway in Azure and build a transit network in Azure the same way for AWS. For configuration instructions, follow the `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+- **Azure Transit Gateway** allows you to launch a transit gateway in Azure and build a transit network in Azure the same way for AWS. For configuration instructions, follow the `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. "Connected Transit Mode" and "Advertise Transit VNET CIDR" are not supported in 4.1.
 
 - **AWS Transit Gateway DMZ** is a Bring Your Own Firewall architecture that seamlessly integrates virtual firewall appliances into the edge of the Next Gen Transit Network. By decoupling firewall functions from the network functions, the architecture allows a scalable firewall deployment that filters traffic between on-prem and cloud. Check out `Transit Gateway FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ to learn more. For configuration, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_..
 

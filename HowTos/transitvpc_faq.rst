@@ -3,7 +3,7 @@
    :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
 ============================
-Transit Network FAQ
+Transit VPC/VNET FAQ
 ============================
 
 Why should I choose Transit architecture?
