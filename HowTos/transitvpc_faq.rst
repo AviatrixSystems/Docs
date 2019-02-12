@@ -6,25 +6,13 @@
 Transit VPC/VNET FAQ
 ============================
 
+
 Why should I choose Transit architecture?
 -------------------------------------------
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit VPC. Everything else (the Spoke VPCs to on-prem traffic) is routed through the Transit VPC.
 
 The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks.
-
-How does Aviatrix Next Gen Transit Network work?
--------------------------------------------------
-
-In the transit VPC, the Aviatrix gateway establishes two BGP sessions (for redundancy) to AWS VGW or on-prem router. Routes from on-prem network is propagated to the Aviatrix gateway which forward them to the Aviatrix Controller. The Controller detects route changes and program the Spoke VPCs for updated routes.
-
-When AWS Transit Gateway (TGW) is deployed for connecting Spoke VPCs, the Aviatrix Controller also programs the TGW route tables entries from the on-prem routes.
-
-In the direction from Spoke VPC to on-prem network, when a Spoke VPC is attached to the Transit Group, the Controller notifies the Aviatrix gateway in the transit VPC to advertise the new Spoke VPC CIDR to VGW.
-
-Since all Spoke VPC routes are managed by the Aviatrix Controller, a Spoke VPC CIDR is not advertised to any other Spoke VPCs, therefore there is no connectivity between them through the transit VPC gateway.
-
-For Azure networks, Aviatrix Transit Gateway connects directly to the on-prem router over Direct Connect or Internet. Azure Spoke VNETs should deploy Aviatrix Gateways.
 
 
 Where can I find Aviatrix Global Transit Network solution?
@@ -96,13 +84,6 @@ If your compliance requires egress policies and you have currently implemented A
 
 If your security team requires inline IDS/IPS firewall function, consider `Transit DMZ architecture <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ which maximize the firewall appliance performance by decoupling networking and security. 
 
-
-Can Aviatrix Transit VPC be deployed with Terraform template?
--------------------------------------------------------------
-
-Yes, both APIs and Terraform are available for integration.
-
-For Terraform, check out `this link. <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
 
 What are the automation methods for Transit Network?
 -----------------------------------------------------
