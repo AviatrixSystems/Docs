@@ -103,6 +103,8 @@ Firewall Name                                   A name that is referenced by the
 
 If firewall HA is required, repeat Step 4 for the backup firewall instance. 
 
+If your firewall appliance is Palo Alto VM-Series, you can automate route updates by following the instructions in `Vendor Integration <https://docs.aviatrix.com/HowTos/transit_dmz_vendors.html>`_.
+
 5. Remove Firewall Function
 ----------------------------
 
