@@ -14,12 +14,6 @@ Transit architecture is about building connectivity between cloud and on-prem in
 
 The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks.
 
-
-Where can I find Aviatrix Global Transit Network solution?
------------------------------------------------------------
-
-Aviatrix Controller is available in `AWS Marketplace. <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=aviatrix&page=1&ref_=nav_search_box>`_
-
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
