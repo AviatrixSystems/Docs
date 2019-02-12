@@ -69,8 +69,8 @@ I have a few high bandwidth applications, how do I deploy them in a Transit solu
 Aviatrix's `Insane Mode solution <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ provides 10Gbps Transit network throughput. 
 
 
-How can I fit a egress firewall into this Transit VPC solution?
----------------------------------------------------------------
+How can I fit a egress firewall into the Next Gen Transit solution?
+----------------------------------------------------------------------
 
 There are two types of requirements.
 
