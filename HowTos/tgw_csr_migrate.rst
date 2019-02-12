@@ -3,7 +3,7 @@
    :keywords: Transit Gateway, AWS Transit Gateway, TGW, CSR Migration
 
 ==============================================================
-Migrating a CSR Transit to Transit Gateway Orchestrator
+Migrating a CSR Transit to Next Gen Transit for AWS
 ==============================================================
 
 This document assumes that you have deployed a `CSR Transit solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_ with Transit hub CSR instances and VGWs 
