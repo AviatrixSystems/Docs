@@ -102,10 +102,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
-   HowTos/transitvpc_designs
-   HowTos/transitvpc_csr_migrate
    HowTos/Setup_Transit_Network_Terraform
-   HowTos/transit_plus_security_vpc
    HowTos/transitgw_external
    HowTos/insane_mode
    HowTos/insane_mode_perf
