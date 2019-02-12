@@ -13,28 +13,6 @@ Transit architecture is about building connectivity between cloud and on-prem in
 
 The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks.
 
-How does the Aviatrix Transit Network solution differ from Cisco's CSR-based solution?
-----------------------------------------------------------------------------------------
-They differ in the following areas:
-
- - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
-
- - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix Next Gen Transit integrates with AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use TGW native service to connect the Spoke VPCs. 
-
- - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design. With the TGW integration, you can customize the `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ to meet your segmentation requirements.
-
- - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs can be routed via TGW or directly, as opposed to going through the instance based Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points.
-
- - **No unwanted route propagation** - Since Spoke VPCs run BGP in CSR solution, if a Spoke VPC also connects to a partner network via VGW, the partner network routes could be propagated to your own on-prem network.
-
- - **Simplicity** - In Aviatrix's solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP. Simplicity leads to stability. Workflow-based, step-by-step instructions help you build out a Transit VPC solution in minutes.
-
- - **Monitoring** - The Aviatrix solution integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to your favorite central logging service.
-
- - **Scalable** - AWS has various limits in its infrastructure, such as a route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. The Aviatrix solution overcomes that limitation.
-
-For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
-
 How does Aviatrix Next Gen Transit Network work?
 -------------------------------------------------
 
@@ -336,6 +314,27 @@ Therefore the Spoke gateway will be stuck and the tunnel will remain down. The s
 As a rule of thumb, in a Transit Network, if you like to have the Aviatrix gateways use a private DNS server, this DNS server must be
 reachable regardless of the network tunnel status.
 
+How does the Aviatrix Transit Network solution differ from Cisco's CSR-based solution?
+----------------------------------------------------------------------------------------
+They differ in the following areas:
+
+ - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
+
+ - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix Next Gen Transit integrates with AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use TGW native service to connect the Spoke VPCs.
+
+ - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design. With the TGW integration, you can customize the `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ to meet your segmentation requirements.
+
+ - **Connectivity Efficiency** - In the Aviatrix solution, traffic between any two Spoke VPCs can be routed via TGW or directly, as opposed to going through the instance based Transit GW as required by the CSR-based solution. Decoupling the different traffic streams reduces performance bottlenecks and removes single failure points.
+
+ - **No unwanted route propagation** - Since Spoke VPCs run BGP in CSR solution, if a Spoke VPC also connects to a partner network via VGW, the partner network routes could be propagated to your own on-prem network.
+
+ - **Simplicity** - In Aviatrix's solution, BGP is only deployed between Transit GW and VGW. No Spoke VPCs run BGP. Simplicity leads to stability. Workflow-based, step-by-step instructions help you build out a Transit VPC solution in minutes.
+
+ - **Monitoring** - The Aviatrix solution integrates with Splunk, Sumo, remote syslog, ELK and DataDog to forward events from gateways to your favorite central logging service.
+
+ - **Scalable** - AWS has various limits in its infrastructure, such as a route entry limit of 100. This limits how many on-prem CIDRs and VPC CIDRs can be carried on a Transit GW. The Aviatrix solution overcomes that limitation.
+
+For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
 
 
