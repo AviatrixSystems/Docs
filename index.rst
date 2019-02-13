@@ -82,7 +82,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit Gateway Orchestrator
+   :caption: Next Gen Transit for AWS
 
    HowTos/tgw_faq
    HowTos/tgw_plan
@@ -93,28 +93,27 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_egress_vpc
    HowTos/tgw_route_limit
    HowTos/tgw_pan_ecmp
+   HowTos/transitgw_external
+   HowTos/insane_mode
+   HowTos/insane_mode_perf
+   HowTos/transitvpc_workflow
 
 .. _Transit Network:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit VPC and VNet 
+   :caption: Next Gen Transit for Azure 
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
-   HowTos/transitvpc_designs
-   HowTos/transitvpc_csr_migrate
    HowTos/Setup_Transit_Network_Terraform
-   HowTos/transit_plus_security_vpc
    HowTos/transitgw_external
-   HowTos/insane_mode
-   HowTos/insane_mode_perf
 
 .. _Transit DMZ
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit Gateway DMZ
+   :caption: Transit DMZ
 
    HowTos/transit_dmz_faq
    HowTos/transit_dmz_workflow

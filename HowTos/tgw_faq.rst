@@ -4,20 +4,20 @@
 
 
 ============================================================
-AWS Transit Gateway Orchestrator FAQ
+Next Gen Transit for AWS  FAQ
 ============================================================
 
-What is the Aviatrix AWS Transit Gateway (TGW)  Orchestrator feature?
-------------------------------------------------------------------------
-
-AWS Transit Gateway (TGW) Orchestrator feature serves three purposes:
+What is the Next Gen Transit for AWS?
+---------------------------------------
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS Transit Gateway. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
- #. Out-of-the-box integration of AWS Transit Gateway  and Direct Connect and Internet to re-use what has been built. 
- #. Provides a high performance and feature rich hybrid network for connecting to on-prem.
+ #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
+ #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and feature rich hybrid network for connecting to on-prem.
+ #. Support Bring Your Own Firewall to the edge VPC for inline traffic inspection (`Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.)
+ #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs Azure Spokes VNet.
 
-The AWS Transit Gateway  Orchestrator is illustrated in the diagram below.
+The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
 
 |tgw_overview|
 
@@ -33,8 +33,13 @@ from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed i
 
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
 
+What is the Aviatrix TGW Orchestrator?
+-----------------------------------------
 
-Why should I use Transit Gateway  Orchestrator?
+Aviatrix TGW Orchestrator builds the Next Gen Transit Network that includes TGW attached Spoke VPCs.
+
+
+Why should I use Transit Gateway Orchestrator?
 -------------------------------------------------
 
 AWS Transit Gateway Orchestrator simplifies, abstracts and extends the latest AWS Transit Gateway service. Aviatrix Controller makes Transit Gateway based Transit 
@@ -73,8 +78,10 @@ Transit Gateway Orchestrator can also be used as a stand alone function for orch
 
 When using Transit Gateway Orchestrator for hybrid connectivity, no gateways are deployed in the Spoke VPCs for hybrid function. 
 
-How does Transit Gateway Orchestrator compare with Transit VPC?
+How does the Next Gen Transit compare with Transit VPC?
 ----------------------------------------------------------------
+
+Transit VPC refers to transit deployment model where an Aviatrix gateway is deployed in a Spoke VPC. this is now called advanced mode in the Next Gen Transit. 
 
 Transit Gateway Orchestrator can be deployed with some Spoke VPCs run Aviatrix gateways. When is the right use case to run Aviatrix Spoke gateway?
 
@@ -89,7 +96,7 @@ There is AWS CloudFormation and Terraform support for Transit Gateway, why shoul
 
 AWS CloudFormation for `TransitGateway <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html>`_ is a resource construct for Transit Gateway, so is the `Terraform example. <https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_route_table.html>`_ 
 
-They are all awesome, but these constructs are not enough to run your production network. 
+They are all awesome, but these constructs may not be sufficient to run your network. 
 
 For example, Transit Gateway does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to Transit Gateway, what happens when a new VLAN or Subnet is stood up on-prem. Who is going to notify you?
 

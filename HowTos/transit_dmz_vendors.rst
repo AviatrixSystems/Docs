@@ -42,6 +42,24 @@ Go to Device -> Setup -> Management Interface Settings, as shown below.
 
 |pan_role_profile|
 
+5. Configure on the Aviatrix Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Login to the Aviatrix Controller, go to Transit DMZ -> Vendor Integration. Configure the following parameters.
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Transit VPC ID                                  The Transit VPC ID for the Transit DMZ deployment. .
+Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable.
+Firewall Name (Optional)                        A name to remember.  
+Firewall Vendor Type                            Select PAN
+Firewall Login User Name                        firewall login name for API calls from the Controller. 
+Firewall Login Password                         firewall login password for API calls. 
+Firewall Management IP Address                  The public IP address of the firewall management interface for API calls from the Aviatrix Controller
+Firewall Route Table (Optional)                 Specify the firewall route table you wish the Controller to program. If left unspecified, the Controller programs the firewall's default route table.            
+==========================================      ==========
+
 4. API calls
 ~~~~~~~~~~~~~~~~
 
