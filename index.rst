@@ -113,7 +113,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit Gateway DMZ
+   :caption: Transit DMZ
 
    HowTos/transit_dmz_faq
    HowTos/transit_dmz_workflow
