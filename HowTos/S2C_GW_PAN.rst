@@ -7,7 +7,7 @@
 Aviatrix Gateway to Palo Alto Firewall
 =============================================
 
-This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Palo Alto Networks (PAN) Firewall. To simulate an on-prem PAN Firewall, we use a PAN VM at AWS VPC.
+This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
 
 Network setup is as following:
 
@@ -49,13 +49,13 @@ Configuration Workflow
      Encryption over DirectConnect     Uncheck this box
      Enable HA                         Uncheck this box
      Primary Cloud Gateway             Select Aviatrix Gateway created above
-     Remote Gateway IP Address         Public IP of PAN VM Series WAN port
+     Remote Gateway IP Address         Public IP of Palo Alto Networks VM Series WAN port
      Pre-shared Key                    Optional (auto-generated if not entered)
      Remote Subnet                     10.13.1.0/24 (VPC2 private subnet)
      Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
    ===============================     =========================================
 
-#. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring PAN-VM.
+#. At Aviatrix Controller, go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from **Vendor** drop down list and click **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring Palo Alto Network VM.
 
 #. Log into Palo Alto Networks VM Series and configure it as following:
 
@@ -87,7 +87,7 @@ Configuration Workflow
       ===============================     =========================================
         **Field**                         **Value**
       ===============================     =========================================
-        Interface                         PAN WAN port
+        Interface                         Palo Alto Networks WAN port
         Peer IP Address                   Aviatrix Gateway public IP
         Pre-shared Key                    Key from site2cloud configuration downloaded at Step 4
         Peer Identification               IP Address & Aviatrix Gateway private IP
@@ -142,7 +142,7 @@ Configuration Workflow
 
    #. Commit the configuration.
 
-#. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with PAN-VM LAN port as the gateway.
+#. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with Palo Alto Networks VM LAN port as the gateway.
 
 
 #. Send traffic between VPC1 and VPC2 private subnets. At Aviatrix Controller, go to **Site2Cloud** page to verify the site2cloud connection status.
