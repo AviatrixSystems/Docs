@@ -9,7 +9,7 @@ Vendor Integration
 
 Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. .
 
-Palo Alto VM Series
+Palo Alto Networks VM-Series
 -----------------------------
 
 In the release 4.1, the supported firewall vendor is Palo Alto Networks VM-Series Firewall in AWS. For how to configure
@@ -52,12 +52,12 @@ Login to the Aviatrix Controller, go to Transit DMZ -> Vendor Integration. Confi
 ==========================================      ==========
 Transit VPC ID                                  The Transit VPC ID for the Transit DMZ deployment. .
 Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable.
-Firewall Name (Optional)                        A name to remember.  
+Firewall Name (Optional)                        A name to remember.
 Firewall Vendor Type                            Select PAN
-Firewall Login User Name                        firewall login name for API calls from the Controller. 
-Firewall Login Password                         firewall login password for API calls. 
+Firewall Login User Name                        firewall login name for API calls from the Controller.
+Firewall Login Password                         firewall login password for API calls.
 Firewall Management IP Address                  The public IP address of the firewall management interface for API calls from the Aviatrix Controller
-Firewall Route Table (Optional)                 Specify the firewall route table you wish the Controller to program. If left unspecified, the Controller programs the firewall's default route table.            
+Firewall Route Table (Optional)                 Specify the firewall route table you wish the Controller to program. If left unspecified, the Controller programs the firewall's default route table.
 ==========================================      ==========
 
 4. API calls
