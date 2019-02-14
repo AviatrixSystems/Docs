@@ -42,7 +42,7 @@ path in different scenarios and observed the following behaviors:
 
 1. With both Subnet_1 and Subnet_3 attached to Transit Gateway, Transit Gateway forwards VPC1's Internet traffic from all three EC2
 instances to PAN1. This is because PAN1's private subnet (Subnet_1) is at the top of the Transit Gateway's attachment list.
-Transit Gateway does not load balance traffic between the two PAN firewalls.
+Transit Gateway does not load balance traffic between the two firewalls.
 
 2. Stop PAN1 at AWS Console. VPC1's Internet traffic is blocked. Transit Gateway does not detect PAN1's health state and does not fail
 over to PAN2 accordingly.
