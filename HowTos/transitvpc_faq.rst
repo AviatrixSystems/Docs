@@ -17,7 +17,9 @@ The alternative to Transit architecture (often referred to as "flat" architectur
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
-Follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
+For Next Gen Transit Network for AWS deployment, follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
+
+For Next Gen Transit Network for Azure deployment, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
 
 Should I deploy one Transit Group for Dev and one for Prod?
 ------------------------------------------------------------
