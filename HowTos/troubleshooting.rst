@@ -16,10 +16,10 @@ On the controller console left side menu, click Troubleshoot, click Logs, select
 Run diagnostics on a gateway
 ----------------------------
 
-Troubleshoot->Diagnostics->Gateway->Diagnostics, select a gateway to run diagnostics. Click run. When it finishes, click Show to display on the console. Click Submit to send the diagnostics result to Aviatrix support team.
-
-The diagnostics test if the gateway is reachable and its services are up and running. 
+Troubleshoot->Diagnostics->Gateway->Diagnostics, select a gateway to run diagnostics. Click run. When it finishes, click Show to display on the console. The diagnostics test if the gateway is reachable and its services are up and running. 
 Please refer to `Service Description of Diagnostic Result <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`__.
+
+If you could not determine the root cause based on the diagnostics, click Submit to send the diagnostics result to Aviatrix support team.
 
 Debug peering tunnel status
 -----------------------------
