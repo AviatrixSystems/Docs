@@ -11,6 +11,7 @@ What is the Next Gen Transit for AWS?
 ---------------------------------------
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS Transit Gateway. 
+ #. Automate AWS Resource Access Manager (RAM) for multi account support. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
  #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and feature rich hybrid network for connecting to on-prem.
@@ -47,6 +48,7 @@ architecture deployable by overcome `Transit Gateway limitations <https://docs.a
 
 - **Functional Completeness** Aviatrix makes AWS Transit Gateway functionally deployable. The Orchestrator programs and updates both VPC route tables and TGW route tables so the routes are dynamically propagated to the Spoke VPCs. Read `this answer <https://docs.aviatrix.com/HowTos/tgw_faq.html#why-should-i-use-aviatrix-tgw-orchestrator-to-build-a-transit-network-architecture>`_ for more details.
 - **Segmentation** The Orchestrator abstracts the route domain and route propagation concepts in Transit Gateway that allows you to create network segmentation by policy and intent. 
+- **Multi Account** The Orchestrator automates the AWS Resource Access Manager (RAM) to allow you to manage multi account VPC attachments to TGW.
 - **Scaling** Aviatrix solution overcomes Transit Gateway route limits to scale the hybrid deployment to hundreds/thousands of VPCs. . 
 - **Hybrid** The Orchestrator extends the Transit Gateway capability to include Direct Connect support for connecting to on-prem datacenter. 
 - **Multi Cloud Architecture** Aviatrix Controller creates and manages a multi cloud global transit architecture with a single pane of glass. 
@@ -59,7 +61,9 @@ How does Transit Gateway (TGW)  Orchestrator compliment AWS Transit Gateway serv
 
 - **Policy Abstraction** AWS Transit Gateway provides capability to allow two Transit Gateway route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Transit Gateway Orchestrator builds on that and allows customers to define policies that form a security boundary. 
 
-- **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnosis. 
+- **Multi Account Support** Automate the RAM resource sharing process to seamlessly manage multi account VPC attachment. 
+
+- **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnostics capabilities. 
 
 - **Direct Connect Support** AWS Transit Gateway provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Transit Gateway Orchestrator, Direct Connect customers can immediately benefit Transit Gateway service.  
 

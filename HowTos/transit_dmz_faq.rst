@@ -11,7 +11,7 @@ What is Transit DMZ?
 -----------------------
 
 Transit DMZ is a cloud networking feature for the Next Gen Transit network. With Transit DMZ, you can centrally deploy instance based
-firewall virtual appliances to protect traffic between on-prem and VPCs, and VPC Egress and Ingress. Transit DMZ is 
+firewall virtual appliances to protect traffic between on-prem and VPCs, VPC to VPC (East-West) and VPC Egress and Ingress. Transit DMZ is 
 implemented at the edge VPC as shown below, where a pair of firewalls are deployed between two pairs of Aviatrix Transit GWs at the Transit VPC edge. 
 
 |transit_dmz| 
@@ -31,6 +31,8 @@ Can Transit DMZ work with Transit VPC?
 Since Transit DMZ is independent from how a Spoke VPC is connected, it works with both the 
 Transit VPC where a Spoke VPC deploys Aviatrix gateways and the Native TGW Spoke VPCs 
 where no Aviatrix gateway is deployed in the Spoke VPC. 
+
+The starting point for the Next Gen Transit Network for AWS is `here. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_
 
 Can Transit DMZ inspect all traffic?
 ---------------------------------------------------

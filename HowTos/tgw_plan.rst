@@ -20,7 +20,7 @@ The plan stage consists of three sections:
 
  - **Create Segmented Network**. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
 
- - **Create Hybrid, multi region or multi cloud Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC and build hybrid connection to on-prem. If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
+ - **Create Hybrid, multi region or multi cloud Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC, build hybrid connection to on-prem, other Aviatrix Transit gateway cluster, or deploy Transit DMZ . If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
 from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates Transit Gateway and Transit Gateway route tables in AWS. There is no charge either by AWS or Aviatrix.
@@ -116,8 +116,8 @@ Direct Connect or Internet.
 4. Setup Aviatrix Transit GW  
 ------------------------------------------------------------------
 
-If your deployment does not require on-prem connection, skip this section. Later if you need to build hybrid 
-connection, return to this section and start with Step 4 to setup. 
+If your deployment does not require on-prem connection or to another Transit gateway, skip this section. Later when the 
+requirement changes, return to this section and start with Step 4 to setup. 
 
 .. important::
 
@@ -146,7 +146,7 @@ If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workfl
 
 |transit_dmz|
 
-When complete, the next two steps, Step 5 and Step 6 in this work should have already been executed for the Main gateway, i.e., you can skip the next two steps. 
+When complete, the next two steps, Step 5 and Step 6 in this workflow (the next two steps) should have already been executed for the Main gateway, i.e., you can skip the next two steps. 
 
 
 5. Prepare Aviatrix Transit GW for TGW Attachment
