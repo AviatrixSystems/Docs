@@ -68,14 +68,16 @@ Exception Rule is a system-wide mode.
 
 By default, the Exception Rule is enabled. (The Exception rule box should be checked.)
 
+|exception_rule|
+
 When Exception Rule is enabled, packets passing through the gateway without an SNI field are
 allowed to pass. This usually happens when an application uses hard-coded destination
-IP address for HTTPS connection instead of domain names. This could be a security loophole.
+IP address for HTTPS connection instead of domain names.
 
 When Exception Rule is disabled (uncheck the box), packets passing through the gateway without SNI field
 are dropped unless the specific destination IP address of the
 packet is listed in the Whitelist. The use case could be that certain old applications use
-hard coded destination IP address to access outside services.
+hard coded destination IP address to access external services.
 
 .. Note::
 
@@ -131,30 +133,34 @@ For support, send email to support@aviatrix.com
 Enjoy!
 
 .. |fqdn| image::  FQDN_Whitelists_Ref_Design_media/fqdn.png
-   :scale: 50%
+   :scale: 30%
 
 .. |fqdn-new-tag| image::  FQDN_Whitelists_Ref_Design_media/fqdn-new-tag.png
-   :scale: 50%
+   :scale: 30%
 
 .. |fqdn-add-new-tag| image::  FQDN_Whitelists_Ref_Design_media/fqdn-add-new-tag.png
-   :scale: 50%
+   :scale: 30%
 
 .. |fqdn-enable-edit| image::  FQDN_Whitelists_Ref_Design_media/fqdn-enable-edit.png
-   :scale: 50%
+   :scale: 30%
 
 .. |fqdn-add-domain-names| image::  FQDN_Whitelists_Ref_Design_media/fqdn-add-domain-names.png
+   :scale: 30%
 
 .. |fqdn-attach-spoke1| image::  FQDN_Whitelists_Ref_Design_media/fqdn-attach-spoke1.png
-   :scale: 50%
+   :scale: 30%
 
 .. |fqdn-attach-spoke2| image::  FQDN_Whitelists_Ref_Design_media/fqdn-attach-spoke2.png
-   :scale: 50%
+   :scale: 30%
 
 .. |source-edit| image::  FQDN_Whitelists_Ref_Design_media/source-edit.png
    :scale: 30%
 
 .. |export| image::  FQDN_Whitelists_Ref_Design_media/export.png
-   :scale: 50%
+   :scale: 30%
+
+.. |exception_rule| image::  FQDN_Whitelists_Ref_Design_media/exception_rule.png
+   :scale: 30%
 
 .. add in the disqus tag
 
