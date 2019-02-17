@@ -66,14 +66,22 @@ Exception Rule
 
 Exception Rule is a system-wide mode.
 
+By default, the Exception Rule is enabled. (The Exception rule box should be checked.)
+
 When Exception Rule is enabled, packets passing through the gateway without an SNI field are
 allowed to pass. This usually happens when an application uses hard-coded destination
 IP address for HTTPS connection instead of domain names. This could be a security loophole.
 
-When Exception Rule is disabled, packets passing through the gateway without SNI field
+When Exception Rule is disabled (uncheck the box), packets passing through the gateway without SNI field
 are dropped unless the specific destination IP address of the
-packet is listed in the Whitelist. The use case could be certain old application uses
+packet is listed in the Whitelist. The use case could be that certain old applications use
 hard coded destination IP address to access outside services.
+
+.. Note::
+
+  When you run `Egress FQDN Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_, the Exception Rule must be enabled to ensure all packets are passed through the gateway and logged.
+
+
 
 Export
 ==============
