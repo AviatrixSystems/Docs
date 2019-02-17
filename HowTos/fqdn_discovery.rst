@@ -24,7 +24,7 @@ instead points to the Aviatrix gateway.
 
 .. Important::
 
-  During Discovery step, the `Exception Rule <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exception-rule>`_ must be enabled (the box should be checked which is the default settings.)
+  During Discovery step, the `Exception Rule <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exception-rule>`_ must be enabled (the box should be checked which is the default setting.)
 
 Stop
 ------
