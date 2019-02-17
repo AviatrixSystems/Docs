@@ -10,9 +10,9 @@ The Aviatrix cloud network solution consists of two components, controller and c
 gateway, both are Azure VMs. Gateways are launched from the controller console to specific VNets. This
 guide helps you to launch the controller VM in Azure. Make sure you follow the instructions to also subscribe Aviatrix Companion Gateway described in this guide. 
 
-.. Important::
+.. Note::
 
-  We suggest you not to deploy a Controller in Azure. The preferred approach is to launch the Controller from AWS Marketplace as an metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi account and multi region capable. Launching a controller in AWS is preferred even if you only deploy gateways in Azure. This is because AWS provides a metered charging mechanism, a true pay as you go (without up front commitment nor contract negotiation) payment system that has the least friction.
+  We suggest you consider to deploy the Controller in AWS. The preferred approach is to launch the Controller from AWS Marketplace as an metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS maybe a good idea even if you only deploy gateways in Azure, as AWS provides a pay as you go (without up front commitment nor contract negotiation) metered payment system that has the least friction. However if Azure is your choice to deploy the Controller, no worries, proceed to the following sections.
 
 1. Subscribe to Aviatrix Controller
 ====================================

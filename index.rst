@@ -94,6 +94,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/insane_mode
    HowTos/insane_mode_perf
    HowTos/transitvpc_workflow
+   HowTos/transitvpc_faq
 
 .. _Transit Network:
 
@@ -101,9 +102,8 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Next Gen Transit for Azure 
 
-   HowTos/transitvpc_faq
-   HowTos/transitvpc_workflow
    HowTos/nextgentransit_for_azure
+   HowTos/transitvpc_workflow
    HowTos/transitgw_external
    HowTos/Setup_Transit_Network_Terraform
 
