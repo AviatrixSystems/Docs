@@ -90,9 +90,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_design_patterns
    HowTos/transit_gateway_peering
    HowTos/tgw_csr_migrate
-   HowTos/tgw_egress_vpc
-   HowTos/tgw_route_limit
-   HowTos/tgw_pan_ecmp
    HowTos/transitgw_external
    HowTos/insane_mode
    HowTos/insane_mode_perf
@@ -106,8 +103,9 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
-   HowTos/Setup_Transit_Network_Terraform
+   HowTos/nextgentransit_for_azure
    HowTos/transitgw_external
+   HowTos/Setup_Transit_Network_Terraform
 
 .. _Transit DMZ
 
@@ -302,6 +300,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
    HowTos/insane_poc
+   HowTos/tgw_route_limit
+   HowTos/tgw_pan_ecmp
+   HowTos/tgw_egress_vpc
 
 .. _Solutions:
 
