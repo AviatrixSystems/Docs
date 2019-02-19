@@ -95,6 +95,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/insane_mode_perf
    HowTos/transitvpc_workflow
    HowTos/transitvpc_faq
+   HowTos/transitvpc_designs
 
 .. _Transit Network:
 
