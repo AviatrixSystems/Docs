@@ -448,7 +448,7 @@ Diagnostic Result
 | Indicates Datadog logging service status.                                                    |
 |  > Default: Not running                                                                      |
 |                                                                                              |
-|  > Related Link `Datadog Integratin`_.                                                       |
+|  > Related Link `Datadog Integration`_.                                                      |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
