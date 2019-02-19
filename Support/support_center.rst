@@ -20,6 +20,7 @@ Tips & Tricks
 * Want 24x7x365 support? Reach out to sales@aviatrix.com and ask for Platinum Support!!
 
 **Controller:**
+---------------
 
   * `Aviatrix Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ does not support HA in multiple regions, but works across multiple AZ's. More information `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/blob/master/README.md>`_
   * `Controller upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ does not affect your tunnels. Please keep them at > t2.large and please don't encrypt the root devices!!
@@ -35,9 +36,18 @@ Tips & Tricks
 
 
 **OpenVPN Gateway:**
+--------------------
 
   * Tunneblick VPN Client might show a warning about "comp-lzo" being deprecated when connecting to Aviatrix OpenVPN Gateway. You can safely ignore this message. We have kept this option in for backward compatibility
   * Aviatrix VPN Client needs to be able to resolve localhost.aviatrix.com to 127.0.0.1. DD-WRT router is known to have an issue resolving this, so your VPN connection might fail. Please take a look at this `link <https://forum.dd-wrt.com/phpBB2/viewtopic.php?p=1064711>`_ for a workaround.
+  * If you encounter "Permission Denied" error while starting Aviatrix VPN Client on Microsoft Windows, you can fix this by running it with administrator role. Here's steps for Windows 10.
+    
+	* From Start Menu, find Aviatrix VPN Client. Right-click and select Open File Location.
+	* Right-click the program and go to Properties.
+	* On the Properties window, click the Compatibility tab.
+	* Under the Compatibility mode section, check the "Run as administrator" checkbox.
+	* Click the OK button to save the settings and start the program again.
+
   * Looking for an easy LDAP solution? Check out `AWS's LDAP <https://aws.amazon.com/directoryservice/faqs/>`_. 
   * Deploy your Aviatrix OpenVPN Gateway's behind an ELB so you can scale up when needed and don't have to worry about losing IP address and having to reissue certificates.
   * Make sure that there is no overlap between the local subnet of the computer running the VPN Client and the VPN CIDR Block. `Link <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_
@@ -63,6 +73,7 @@ Tips & Tricks
     * Microsoft Edge does not behave well with SAML authentication process when it is set as the default browser. Please try setting your default browser to Firefox or Chrome.
 
 **Transit Solution:**
+---------------------
 
   * Explore "`Connected Mode <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_" if you want all spoke VPC's to talk to each other. Preqrequisites: all spokes need to be similar (either have/not have HA), all of them must be on HA or non-HA connections when connected mode is being turned on.
   * Please make sure that you have at least four /28 subnets worth of address space in the VPC before you launch the transit solution
@@ -70,6 +81,7 @@ Tips & Tricks
   * Unable to reach from Spoke to On-Prem? `Troubleshoot guidelines <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_ 
 
 **Logging:**
+------------
 
   * 4.0 Release supports `Logging to AWS Cloudwatch <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_. Check it out!!
   * Syslogs are on not viewable on Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, rsyslog.
@@ -79,11 +91,13 @@ Tips & Tricks
 
 
 **Site2Cloud:**
+---------------
 
   * If the tunnel is not coming up, make sure there is interesting traffic from either or both sides of the tunnels.
   * Ports 500 and 4500 have to be allowed, if you have a firewall, for IPSec tunnels to be established.
 
 **AWS Infrastructure:**
+-----------------------
 
 * **Disk resize for Gateway:**
 
@@ -111,5 +125,6 @@ Tips & Tricks
 
 
 **Terraform:**
+--------------
 
 * Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ has multiple branches. Please make sure that you pick the branch which matches with the version of your the software release on your Aviatrix Controller. The latest release is supported with the mainline. For example: UserConnect-3.5 branch if you are using Version 3.5 on Controller.
