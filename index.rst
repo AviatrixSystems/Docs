@@ -331,6 +331,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aws_network_limits
    HowTos/tgw_limits
    HowTos/opstools_survey
+   HowTos/multi_cloud_region_affinity_and_latency
 
 .. _Support Center:
 
