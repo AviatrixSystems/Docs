@@ -38,9 +38,13 @@ Below is a table that suggests the two best regions in Azure or GCP for a few gi
 |                        | West US 2 (Washington), 10.781ms  | us-west2 (California), 27.705ms        |
 +------------------------+-----------------------------------+----------------------------------------+
 
-* `AWS Region and Location Mapping <https://docs.aws.amazon.com/general/latest/gr/rande.html>`__
-* `ARM Region and Location Mapping <https://azure.microsoft.com/en-us/global-infrastructure/locations/>`__
-* `GCP Region and Location Mapping <https://cloud.google.com/compute/docs/regions-zones/>`__
+
+References:
+-------------
+
+    * `AWS Region and Location Mapping <https://docs.aws.amazon.com/general/latest/gr/rande.html>`__
+    * `ARM Region and Location Mapping <https://azure.microsoft.com/en-us/global-infrastructure/locations/>`__
+    * `GCP Region and Location Mapping <https://cloud.google.com/compute/docs/regions-zones/>`__
 
 
 
