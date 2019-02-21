@@ -9,6 +9,10 @@
 Connecting Two Aviatrix Transit Clusters
 ===========================================================================================
 
+.. Important::
+
+  This document is obsolete. Starting from Release 4.1, connecting multiple Transit Gateway clusters should be done via `Transit Peering feature <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+
 This tech note demonstrates how to connect two Aviatrix Transit Network clusters by using an additional Aviatrix gateway
 in one Transit Network cluster and creating a site2cloud connection between that Aviatrix gateway and
 the VGW in the other Transit Network cluster.
