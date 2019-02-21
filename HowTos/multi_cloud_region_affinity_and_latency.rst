@@ -18,6 +18,9 @@ It turns out Azure East US 1 has better latency, at 12ms. The next best region i
 
 Below is a table that suggests the two best regions in Azure or GCP for a few given AWS regions. 
 
+The way to read is the table is for a given region, say AWS us-east-1, the best Azure affinity region is Azure East US 1 with a 1.87ms latency to AWS us-east-1. 
+The second best Azure affinity region is Azure East US 2 with a 6.01ms latency to AWS us-east-1.
+
 +--------------------------+------------------------------------+---------------------------------------+
 | **AWS Region**           | **Azure Affinity Region Latency**  | **GCP Affinity Regions Latency**      |
 +--------------------------+------------------------------------+---------------------------------------+

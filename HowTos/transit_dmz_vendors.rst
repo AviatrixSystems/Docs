@@ -57,7 +57,7 @@ Firewall Vendor Type                            Select PAN
 Firewall Login User Name                        firewall login name for API calls from the Controller.
 Firewall Login Password                         firewall login password for API calls.
 Firewall Management IP Address                  The public IP address of the firewall management interface for API calls from the Aviatrix Controller
-Firewall Route Table (Optional)                 Specify the firewall route table you wish the Controller to program. If left unspecified, the Controller programs the firewall's default route table.
+Firewall Virtual Router name (Optional)         Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.
 ==========================================      ==========
 
 4. API calls
