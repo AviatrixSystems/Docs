@@ -2,6 +2,18 @@
 Release Notes
 =======================================
 
+R4.1.946 (Patch release of 4.1 on 2/21/2019)
+===============================================
+
+Notable field found bug fixes:
+ 
+ - Disable OPTIONS HTTP method to pass security scan. 
+ - Detach or delete spoke gateway when the gateway instance has been deleted from AWS console. 
+ - Allow editing manual summarization CIDR when spoke CIDR are either in primary or backup gateway. 
+ 
+
+ 
+
 R4.1.914 (2/9/2019)
 =====================
 
