@@ -33,8 +33,6 @@ ready for your first use case.
 
 You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
 
-Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.   Create a new account or login to an existing IAM account.
-
 .. Important::
 
     - We require this AWS IAM account to have permissions to create AWS IAM roles, IAM policies and launch EC2 instances. 
