@@ -166,7 +166,7 @@ Now that Aviatrix Controller instance has been launched, let's login and go thro
 
 ..
 
-Step 4. Create A Primary Access Account 
+Step 4. Complete Onboarding 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 4.1 Select AWS 
