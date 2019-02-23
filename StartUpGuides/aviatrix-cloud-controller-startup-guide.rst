@@ -7,10 +7,8 @@
 AWS Startup Guide
 ==================================================================
 
-Welcome. 
-
 This guide walks you through the 3 steps to launch the controller instance. 
-When complete, you'll be ready for your first use case. 
+When complete, you'll be ready to deploy use cases. 
 
   |3-step|
 
@@ -201,7 +199,7 @@ Once logged back in to the Controller, you should be on the `Onboarding` page or
 
 .. Note::
 
-   This step only applies if you select BYOL AMI. Contact support@aviatrix.com to get a trial license if you do not have one.
+   This step appears if you select BYOL AMI. Contact support@aviatrix.com to get a trial license if you do not have one.
 ..
    
 Enter the `Customer ID` in the field and click `Save`.
@@ -243,11 +241,11 @@ Next: Start a Use Case
 
 Congratulations!  
 
-You are now ready to establish connectivities to/from the cloud. Here are some of the things you can do:
+You are now ready to deploy use cases. Here are some of the things you can do:
 
 - `Build Net-Gen Transit Network for AWS <https://docs.aviatrix.com/HowTos/tgw_plan.html>`__
-- `Build User SSL VPN <../HowTos/uservpn.html>`__
 - `Build Egress Security <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
+- `Build User SSL VPN <../HowTos/uservpn.html>`__
 - `Build Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
 - `Build Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_
 - `Build Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_

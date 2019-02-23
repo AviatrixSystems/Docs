@@ -7,9 +7,11 @@
 Transit DMZ Workflow
 =========================================================
 
-Transit DMZ is available for Release 4.1 and later. 
+Transit DMZ is part of the Next Gen Transit Network for AWS architecture for firewall deployment, it is the hybrid section of the `Next Gen Transit
+workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
 
 For more background information, read `Transit DMZ FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.
+
 
 1. Launch two sets of Aviatrix Transit Gateways
 ------------------------------------------------
