@@ -74,7 +74,7 @@ Enter your contact information to connect this subscription to Aviatrix's techni
 Step 2. Launch the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that you have subscribed to an AMI, you are ready to install the Controller instance.
+Now that you have subscribed to an AMI, you are ready to launch the Controller instance.
 
 Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link below will take you to the CloudFormation page with the pre-loaded template.   
 
