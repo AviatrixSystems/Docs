@@ -21,9 +21,7 @@ You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup gu
 
 .. Important::
 
-    - We require this AWS IAM account to have permissions to create AWS IAM roles, IAM policies and launch EC2 instances. 
     - The Controller instance must be launched on a public subnet in a VPC. 
-    - All AMIs should be launched by CloudFormation template provided by Aviatrix, as described in the next section.
 ..
 
 
@@ -37,19 +35,8 @@ Select the right AMI that meets your use case and subscription preference. Click
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
 - (Recommended) **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
-   - Next-Generation Transit VPC Network  
-   - VPC Egress Security  
-   - Remote User VPN (OpenVPN®)  
-   - Multicloud Peering 
-   - Encrypted Peering 
-   - Site to Cloud IPSEC VPN 
-   - FREE - EC2 FlightPath Troubleshooting Tool
    
 - **Utility AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ is a utility model for use cases that build IPSEC: (Contact Aviatrix sales to launch Custom AMI.)
-   - Next-Generation Transit VPC Network  
-   - Multicloud Peering 
-   - Encrypted Peering 
-   - Site to Cloud IPSEC VPN 
 
 - **Aviatrix User VPN - Metered** `Aviatrix User VPN - Metered <https://aws.amazon.com/marketplace/pp/B07JXBVRM5?qid=1545886993814&sr=0-3&ref_=srh_res_product_title>`_ is a pay as you go cloud consumption model for remote user VPN use case as well as all others. 
 
@@ -72,8 +59,8 @@ Click `Manual Launch` and `Accept Software Terms`. Return to this guide and cont
 
     |imageAwsMarketplaceAcceptTerms|
 
-1.2.3 Product Support Connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.2.3 (Optional) Product Support Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. You can choose to sign up later, or edit/remove your details at any time. Click `Register Product Support`
 
@@ -91,7 +78,7 @@ Now that you have subscribed to an AMI, you are ready to install the Controller 
 
 Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link below takes you to the CloudFormation page with the pre-loaded template.   
 
- - `Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
+ - (Recommended) `Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
 
  - `Secure Networking Platform - Custom <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template?ref=_ptnr_docs_cta_custom_step2>`_
 
@@ -129,30 +116,14 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
 
  2.8. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 2.9. (Optional) We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
-
-  |imageCFEnableTermProtection|
-     
-.. Warning::
-
-  The Controller instance has Termination Protection enabled. If you need to delete the stack, make sure you first disable the Controller instance Termination Protection at the AWS EC2 console.
-
-..
-
- 2.10. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
+ 2.9. Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
- 2.11. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
+ 2.10. Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
    
    |imageCFComplete|
    
-
-.. note:: 
-
-  Starting 01/15/2019, Aviatrix Quickstart Cloudformation stack deletions will not remove EIP or IAM resources (2 IAM roles & 2 IAM policies) which were aquired during stack creations. Users need to manually remove theses resources if they wish to do so.
-
-..
 
 
 Step 3. Connect to the Controller 
@@ -275,7 +246,7 @@ Enjoy!
 .. disqus::
 
 .. |4-steps| image:: ZeroToConnectivityInAWS_media/4-steps.png
-   :scale: 40%
+   :scale: 30%
 
 .. |imageAwsMarketplacePage1| image:: ZeroToConnectivityInAWS_media/aws_marketplace_page1.png
 .. |imageAwsMarketplaceContinuetoSubscribe| image:: ZeroToConnectivityInAWS_media/aws_marketplace_step1.png
@@ -288,32 +259,32 @@ Enjoy!
 .. |imageCFComplete| image:: ZeroToConnectivityInAWS_media/cf_complete_outputs.png
 .. |imageCFOutputsWithPassword| image:: ZeroToConnectivityInAWS_media/cf_complete_outputs_private_ip_highlight.png
 .. |imageControllerBrowserWarning| image:: ZeroToConnectivityInAWS_media/controller_browser_warning.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageControllerEnterEmail| image:: ZeroToConnectivityInAWS_media/controller_enter_email.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageControllerChangePassword| image:: ZeroToConnectivityInAWS_media/controller_change_password.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageproxy-config| image:: ZeroToConnectivityInAWS_media/proxy_config.png
    :scale: 25%
 
 .. |imageControllerUpgrade| image:: ZeroToConnectivityInAWS_media/controller_upgrade.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageCFSelectTemplate| image:: ZeroToConnectivityInAWS_media/cf_select_template.png
 .. |imageCFSelectTemplate-S3| image:: ZeroToConnectivityInAWS_media/imageCFSelectTemplate-S3.png
 .. |imageCFSpecifyDetails| image:: ZeroToConnectivityInAWS_media/cf_specify_details_new.png
 
 .. |imageCFEnableTermProtection| image:: ZeroToConnectivityInAWS_media/cf_termination_protection.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageAviatrixOnboardNav| image:: ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageOnboardAws| image:: ZeroToConnectivityInAWS_media/onboard_aws.png
-   :scale: 50%
+   :scale: 30%
 
 .. |imageEnterCustomerID| image:: ZeroToConnectivityInAWS_media/customerid_enter.png
    :scale: 25%
