@@ -10,20 +10,6 @@ AWS Startup Guide
 
 Welcome. Your Aviatrix product experience starts here. 
 
-Click a link below to learn your use case or read an `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_  
-  
-`Remote User VPN <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
-
-`Next Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
-
-`VPC Egress Security <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
-
-`Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
-
-`Encrypted Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
-
-`Multicloud Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
-
 The first thing you need to do is to launch the Controller instance. 
 
 We'll walk you through 4 steps. By the end, you'll be 
@@ -50,7 +36,7 @@ Step 1. Subscribe to an Aviatrix AMI
 Select the right AMI that meets your use case and subscription preference. Clicking on an AMI link will take you to the AWS Marketplace to complete step 1.2 only. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
+- (Recommended) **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
    - Next-Generation Transit VPC Network  
    - VPC Egress Security  
    - Remote User VPN (OpenVPN®)  
@@ -275,6 +261,8 @@ You are now ready to establish connectivities to/from the cloud. Here are some o
 - `Build Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
 - `Build Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_
 - `Build Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_
+
+-  `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
