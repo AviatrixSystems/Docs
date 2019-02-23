@@ -12,7 +12,7 @@ Welcome. Your Aviatrix product experience starts here.
 
 The first thing you need to do is to launch the Controller instance. 
 
-We'll walk you through 4 steps. By the end, you'll be 
+We'll walk you through the 4 steps. By the end, you'll be 
 ready for your first use case. 
 
   |4-steps|
@@ -129,7 +129,7 @@ Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. Th
 
  2.8. Optionally, select an IAM Role if your currently logged in user does not have permission to create instances.
 
- 2.9. We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
+ 2.9. (Optional) We recommend you to enable stack termination protection during stack creation time to prevent accidental deletion, as shown below, then click `Next`
 
   |imageCFEnableTermProtection|
      
