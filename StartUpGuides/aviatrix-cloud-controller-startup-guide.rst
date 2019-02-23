@@ -24,10 +24,6 @@ Click a link below to learn your use case or read an `Aviatrix Overview. <http:/
 
 `Multicloud Peering <http://docs.aviatrix.com/HowTos/peering_faq.html>`_
 
-The Aviatrix Controller provides a single pane of glass for all your secure networking tasks. You can run the Controller in your own VPC.
-
-The following guide applies to running the Controller in your own environment. 
-
 The first thing you need to do is to launch the Controller instance. 
 
 We'll walk you through 4 steps. By the end, you'll be 
