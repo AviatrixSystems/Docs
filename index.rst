@@ -121,7 +121,7 @@ While all content is searchable, the site is organized into the following sectio
 .. _Security:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Security
 
 
