@@ -49,17 +49,6 @@ Click `Accept Terms`. **Return to this guide and continue**. (Do not proceed to 
 
     |imageAwsMarketplaceAcceptTerms|
 
-1.4 (Optional) Product Support Connection
--------------------------------------------
-
-Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. 
-
-
-.. tip::
-
-  If the VPC where the Controller is deployed in has a custom DNS server (via DHCP option), make sure the Controller instance can reach this DNS server.  
-
-..
 
 Step 2. Launch the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
