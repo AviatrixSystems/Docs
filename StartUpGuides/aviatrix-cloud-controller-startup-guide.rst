@@ -7,7 +7,6 @@
 AWS Startup Guide
 ==================================================================
 
-
 Welcome. 
 
 This guide walks you through the 3 steps to launch the controller instance. 
@@ -17,14 +16,11 @@ When complete, you'll be ready for your first use case.
 
 You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
 
-.. Important::
-
-    - The Controller instance must be launched on a public subnet in a VPC. 
-..
-
 
 Step 1. Subscribe to an Aviatrix AMI 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have already subscribed an AMI on AWS Marketplace, skip this step and proceed to Step 2.
 
 1.1 Select an AMI  
 ----------------------------------------------------------------
@@ -32,35 +28,33 @@ Step 1. Subscribe to an Aviatrix AMI
 Clicking on an AMI link below will take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- (Recommended) **Metered AMI** `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ is a pay as you go cloud consumption model for all use cases: 
+- (**Recommended**) `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ supports all use cases. 
+
+- `Aviatrix User VPN - Metered <https://aws.amazon.com/marketplace/pp/B07JXBVRM5?qid=1545886993814&sr=0-3&ref_=srh_res_product_title>`_ supports all use cases. 
    
-- **Utility AMI** `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ is a utility model for use cases that build IPSEC: (Contact Aviatrix sales to launch Custom AMI.)
+- `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ (Contact sales@aviatrix.com))
 
-- **Aviatrix User VPN - Metered** `Aviatrix User VPN - Metered <https://aws.amazon.com/marketplace/pp/B07JXBVRM5?qid=1545886993814&sr=0-3&ref_=srh_res_product_title>`_ is a pay as you go cloud consumption model for remote user VPN use case as well as all others. 
 
-- **BYOL AMI** `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_ offers BYOL license for all use cases. Contact support@aviatrix.com for a customer ID. 
+- `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_. Contact support@aviatrix.com for a customer ID. 
 
 1.2 Subscribe to the selected AMI
 ----------------------------------------
 
-1.2.1 Continue to Subscribe
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 For example, if you select Metered AMI, click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
-   |imageAwsMarketplaceContinuetoSubscribe5tunnel|
+   |subscribe|
 
-1.2.2 Accept Software Terms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.3 Accept Terms
+-----------------------------
 
-Click `Manual Launch` and `Accept Software Terms`. Return to this guide and continue. (Do not proceed with install of the Controller instance from the marketplace.) 
+Click `Accept Terms`. **Return to this guide and continue**. (Do not proceed to Continue to Configuration)) 
 
     |imageAwsMarketplaceAcceptTerms|
 
-1.2.3 (Optional) Product Support Connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.4 (Optional) Product Support Connection
+-------------------------------------------
 
-Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. You can choose to sign up later, or edit/remove your details at any time. Click `Register Product Support`
+Enter your contact information to connect this subscription to Aviatrix's technical support system and obtain a free upgrade to 24x7x365 support. 
 
 
 .. tip::
@@ -72,40 +66,37 @@ Enter your contact information to connect this subscription to Aviatrix's techni
 Step 2. Launch the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that you have subscribed to an AMI, you are ready to launch the Controller instance.
+Aviatrix AMI is launched with a companion Cloudformation template. Clicking the subscribed AMI link below will take you to the CloudFormation page on AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
 
-Each Aviatrix AMI in AWS marketplace has a companion CloudFormation template. The template is used to launch the Controller instance. Clicking the subscribed AMI link below will take you to the CloudFormation page with the pre-loaded template.   
+ - (**Recommended**) `Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
 
- - (Recommended) `Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
+ - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template?ref=_ptnr_docs_cta_vpn_metered_step2>`_
 
  - `Secure Networking Platform - Custom <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template?ref=_ptnr_docs_cta_custom_step2>`_
 
  - `Cloud Interconnect BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template?ref=_ptnr_docs_cta_byol_step2>`_
- 
- - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template?ref=_ptnr_docs_cta_vpn_metered_step2>`_
- 
 
-2.1. Login to AWS Console
+2.1 Login to AWS Console
 ---------------------------
 
 If you have not logged in, you will be prompted to login to AWS console. 
 
-2.2. Change to the region
+2.2 Change to the region
 ---------------------------
 
 Change to the region  where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
 
-2.3. Click `Next` 
+2.3 Click `Next` 
 ----------------------
 
  |cft-next|
 
-2.4. Fill in the following fields 
+2.4 Fill in the following fields 
 -----------------------------------
 
   - the Stack name,
   - select a VPC in the drop down menu, 
-  - select a public subnet in that VPC (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
+  - select a **public subnet in that VPC** (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
   - and a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if this field is blank.)
 
    |imageCFSpecifyDetails|
@@ -115,24 +106,24 @@ Change to the region  where you would like to install the Aviatrix Controller on
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
-2.5. Select instance size
+2.5 Select instance size
 --------------------------
 
 Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
-2.6. Click `Next`
+2.6 Click `Next`
 ------------------
 
 Click Next.
 
-2.7. Click acknowledge
+2.7 Click acknowledge
 -------------------------
 
 Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
-2.10. Check stack output
+2.8 Check stack output
 -------------------------
 
 Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
@@ -145,7 +136,7 @@ Step 3. Onboarding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that Aviatrix Controller instance has been launched, let's login and go through the onboarding process. 
 
-3.1. Access the Controller
+3.1 Access the Controller
 ---------------------------
 
 Open a browser window to https://AviatrixControllerEIP, where AviatrixControllerEIP can be found in the Stack Outputs. You can also find the Controller instance EIP by going to AWS EC2 console, click the Controller instance and locate its public IP address. 
@@ -157,35 +148,35 @@ Open a browser window to https://AviatrixControllerEIP, where AviatrixController
 
    |imageControllerBrowserWarning|
 
-3.2. Login with the username `admin`
+3.2 Login with the username `admin`
 -------------------------------------
 
    For the password field, use the `AviatrixControllerPrivateIP`.  The `AviatrixControllerPrivateIP` can be found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, click the Controller instance and locate its private IP address. 
    
    |imageCFOutputsWithPassword|
 
-3.3. Enter your email address 
+3.3 Enter your email address 
 -------------------------------------
 
 This email will be used for alerts as well as password recovery (if needed).
 
    |imageControllerEnterEmail|
 
-3.4. Change password
+3.4 Change password
 -----------------------
 
 Next, you will be prompted to change the admin password.
 
    |imageControllerChangePassword|
 
-3.5. Skip proxy setting 
+3.5 Skip proxy setting 
 -------------------------
 
 Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy configured for Internet access. 
 
    |imageproxy-config|
 
-3.6. Click Run
+3.6 Click Run
 ----------------
 
 Finally, the Controller will upgrade itself to the latest software version after you click on `Run`. Wait for a few minutes for the process to finish. 
@@ -254,7 +245,7 @@ Congratulations!
 
 You are now ready to establish connectivities to/from the cloud. Here are some of the things you can do:
 
-- `Build Net-Gen Transit Network <../HowTos/transitvpc_workflow.html>`__
+- `Build Net-Gen Transit Network for AWS <https://docs.aviatrix.com/HowTos/tgw_plan.html>`__
 - `Build User SSL VPN <../HowTos/uservpn.html>`__
 - `Build Egress Security <../HowTos/FQDN_Whitelists_Ref_Design.html>`__
 - `Build Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
@@ -272,6 +263,9 @@ Enjoy!
 .. add in the disqus tag
 
 .. disqus::
+
+.. |subscribe| image:: ZeroToConnectivityInAWS_media/subscribe.png
+   :scale: 50%
 
 .. |3-step| image:: ZeroToConnectivityInAWS_media/3-step.png
    :scale: 50%
@@ -293,16 +287,16 @@ Enjoy!
    :scale: 30%
 
 .. |imageControllerEnterEmail| image:: ZeroToConnectivityInAWS_media/controller_enter_email.png
-   :scale: 30%
+   :scale: 50%
 
 .. |imageControllerChangePassword| image:: ZeroToConnectivityInAWS_media/controller_change_password.png
-   :scale: 30%
+   :scale: 50%
 
 .. |imageproxy-config| image:: ZeroToConnectivityInAWS_media/proxy_config.png
-   :scale: 25%
+   :scale: 50%
 
 .. |imageControllerUpgrade| image:: ZeroToConnectivityInAWS_media/controller_upgrade.png
-   :scale: 30%
+   :scale: 50%
 
 .. |imageCFSelectTemplate| image:: ZeroToConnectivityInAWS_media/cf_select_template.png
 .. |imageCFSelectTemplate-S3| image:: ZeroToConnectivityInAWS_media/imageCFSelectTemplate-S3.png
@@ -312,13 +306,13 @@ Enjoy!
    :scale: 30%
 
 .. |imageAviatrixOnboardNav| image:: ZeroToConnectivityInAWS_media/aviatrix_onboard_nav.png
-   :scale: 30%
+   :scale: 50%
 
 .. |imageOnboardAws| image:: ZeroToConnectivityInAWS_media/onboard_aws.png
-   :scale: 30%
+   :scale: 50%
 
 .. |imageEnterCustomerID| image:: ZeroToConnectivityInAWS_media/customerid_enter.png
-   :scale: 25%
+   :scale: 50%
 
 .. |cft-next| image:: ZeroToConnectivityInAWS_media/cft-next.png
    :scale: 25%
