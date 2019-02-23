@@ -8,12 +8,10 @@ AWS Startup Guide
 ==================================================================
 
 
-Welcome. Your Aviatrix product experience starts here. 
+Welcome. 
 
-The first thing you need to do is to launch the Controller instance. 
-
-We'll walk you through 3 steps. By the end, you'll be 
-ready for your first use case. 
+This guide walks you through the 3 steps to launch the controller instance. 
+When complete, you'll be ready for your first use case. 
 
   |3-step|
 
