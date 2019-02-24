@@ -186,11 +186,6 @@ Once logged back in to the Controller, you should be on the `Onboarding` page or
 3.8  (Only apply to BYOL AMI) Enter Your Customer ID 
 --------------------------------------------------------
 
-.. Note::
-
-   This step appears if you select BYOL AMI. Contact support@aviatrix.com to get a trial license if you do not have one.
-..
-   
 Enter the `Customer ID` in the field and click `Save`.
 
    |imageEnterCustomerID|
