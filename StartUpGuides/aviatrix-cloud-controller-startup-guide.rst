@@ -7,7 +7,7 @@
 AWS Startup Guide
 ==================================================================
 
-**Welcome to Aviatrix!** We are going to take you through the 3 steps to launch the Controller instance. 
+Welcome to getting started on AWS! This guide takes you through the 3 steps to launch the Controller instance. 
 When complete, you'll be ready to deploy use cases. 
 
   |3-step|
@@ -241,7 +241,7 @@ You are now ready to deploy use cases. Here are some of the things you can do:
 
 -  `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
-.. Warning:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
+.. Important:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
 For technical support, email us at support@aviatrix.com
 
