@@ -27,10 +27,9 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Downloads`
 * :ref:`Release Notes`
 * :ref:`Tech Notes`
-* :ref:`Solutions`
 * :ref:`Good To Know`
-* :ref:`IPmotion`
 * :ref:`Support Center`
+* :ref:`IPmotion`
 
 
 .. _Getting Started:
@@ -267,17 +266,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/changelog
    HowTos/field_notices
 
-.. _IPmotion:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: IPmotion
-
-   HowTos/ipmotion
-   HowTos/HowTo_Setup_IPMotion
-   HowTos/design_pattern_ipmotion
-   HowTos/ipmotion_dependency_discovery
-
 .. _Tech Notes:
 
 .. toctree::
@@ -301,22 +289,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
    HowTos/insane_poc
-   HowTos/tgw_route_limit
-   HowTos/tgw_pan_ecmp
-   HowTos/tgw_egress_vpc
-
-.. _Solutions:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Solutions Datasheets
-
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
    Solutions/aviatrix_aws_transitvpc
    Solutions/egress_transit_gateway
    Solutions/netapp_sap_floating_ip
    Solutions/egress_nat_pool
+   HowTos/tgw_route_limit
+   HowTos/tgw_pan_ecmp
+   HowTos/tgw_egress_vpc
 
 .. _Good To Know:
 
@@ -347,3 +328,14 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_center_site2cloud
    Support/support_center_aws_infrastructure
    Support/support_center_terraform
+
+.. _IPmotion:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: IPmotion
+
+   HowTos/ipmotion
+   HowTos/HowTo_Setup_IPMotion
+   HowTos/design_pattern_ipmotion
+   HowTos/ipmotion_dependency_discovery
