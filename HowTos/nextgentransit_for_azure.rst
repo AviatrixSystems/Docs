@@ -61,10 +61,11 @@ CloudOps engineers without extensive networking background are able to build and
 How do I deploy it?
 --------------------------------------------------------------------
 
-The Aviatrix Controller is available in Azure Marketplace. Follow the `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ to launch the Controller. Once the Controller is launched, follow 
-the onboarding steps to setup Azure API credentials so that the Controller can launch gateways on behalf of the Azure account. 
-When onboarding is complete, select the use case Next-Gen Transit Network 
-and follow the `workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to start building the transit network.   
+The Aviatrix Controller is available in Azure Marketplace. 
+
+ 1. Follow the `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ to launch the Controller. 
+ #. Follow the onboarding steps to setup Azure API credentials so that the Controller can launch gateways on behalf of the Azure account. 
+ #. Select the use case Next-Gen Transit Network and follow the `workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to start building the transit network.   
 
 
 .. |nextgentransit_for_azure| image:: nextgentransit_for_azure_media/nextgentransit_for_azure.png
