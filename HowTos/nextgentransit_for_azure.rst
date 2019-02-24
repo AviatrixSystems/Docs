@@ -23,24 +23,26 @@ remote Spoke VNet through the two connected Transit Gateways, as shown below.
 
 |multiregion_azure|
 
-Why do I need it?
---------------------
+Why do I need Aviatrix Next Gen Transit for Azure?
+------------------------------------------------------
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit Hub VNet. Everything else (the Spoke VNet to on-prem traffic) is routed through the Transit Hub VNet.
 
 The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Express Route, each time you spin up a new VNet in Azure. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks.
 
-Azure provides certain hub-and-spoke capabilities with limitations. For example, the Azure native hub-and-spoke can only be deployed in the
-same region. Two hubs cannot be inter connected. 
+Azure provides certain hub-and-spoke capabilities with limitations. Here are some examples. 
 
-For Next Gen Transit Network for AWS deployment, follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
+ - The Azure native hub-and-spoke can only be deployed in the same region. A spoke VNet in one region cannot connect to the hub in the different region.
+ - Two hubs cannot be inter connected. 
+ - Spoke VNets connecting to the same hub cannot communicate with each other through the hub.
+ - There is no encryption between spoke and hub and on-prem.
+ - Azure native networking has different capabilities and semantics than AWS native networking. What skills your operations team has invested in AWS does not apply to Azure. You must invest in Azure also. Aviatrix provides a single pane of glass to unify cloud networking for all cloud providers.
 
-For Next Gen Transit Network for Azure deployment, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
 
-The benefits of the Aviatrix Next Gen Transit for Azure
+The Benefits of the Aviatrix Next Gen Transit for Azure
 -------------------------------------------------------------------
 
- - **Simplicity** The Aviatrix Controller provides an abstraction layer and workflow to build the Transit network. You do not need to program any Azure route tables or manage the route entries.
+ - **Simplicity** The Aviatrix Controller provides an abstraction layer and workflow to build the Transit network. You do not need to program any Azure route tables, manage the route entries or understand the significant details about Azure networking.
  - **Multi Subscriptions Support** The Controller provides a single pane of glass to manages the entire cloud network of multiple Azure subscriptions. 
  - **Logging Service Integration** Out of box integration with Splunk, Sumo Logic, DataDog, ELK, remote syslog and Netflow.
  - **Visibility** View connectivity status, network latency and traffic statistics from a central dashboard. 
