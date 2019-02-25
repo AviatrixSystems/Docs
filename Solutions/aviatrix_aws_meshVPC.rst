@@ -10,7 +10,7 @@ Extending Your vmware Workloads to Public Cloud
 
 Aviatrix Systems provides the next generation cloud networking solution
 built from the ground up for the public cloud. Aviatrix simplifies the
-way you enable site to cloud, user to cloud and cloud to cloud secure
+way you enable `site to cloud <https://www.aviatrix.com/learning/cloud-security-operations/site-to-cloud-vpn/>`_, user to cloud and cloud to cloud secure
 connectivity and access. The solution requires no new hardware and
 deploys in minutes.
 
