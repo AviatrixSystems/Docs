@@ -79,11 +79,6 @@ are dropped unless the specific destination IP address of the
 packet is listed in the Whitelist. The use case could be that certain old applications use
 hard coded destination IP address to access external services.
 
-.. Note::
-
-  When you run `Egress FQDN Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_, the Exception Rule must be enabled to ensure all packets are passed through the gateway and logged.
-
-
 
 Export
 ==============
