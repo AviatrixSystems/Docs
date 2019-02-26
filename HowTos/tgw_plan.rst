@@ -123,6 +123,7 @@ requirement changes, return to this section and start with Step 4 to setup.
 .. tip::
 
   Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
+  If you would like to continue to use your existing transit VPC and it is too small (not enough of /28 unused segments), use AWS Edit VPC CIDR feature to create a new /24 subnet for the Aviatrix Transit Gateway in TGW use case. . 
 
 4.1 Non DMZ Transit Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
