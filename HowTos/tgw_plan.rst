@@ -56,7 +56,7 @@ Note the three domains are connected, implying if you attach VPC to the Default 
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. 
 Region                                          One of the AWS regions
 TGW Name                                        The name of the AWS Transit Gateway
-AWS Side AS Numbert                             Default AS number is 64512. This field currently is not used.
+AWS Side AS Number                             Default AS number is 64512. This field currently is not used.
 ==========================================      ==========
 
 After AWS Transit Gateway is created, you can validate by going to `View page <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-can-be-displayed-at-the-view-page>`_ and see what has been created. 
@@ -93,7 +93,7 @@ This step specifies the connection relationship of one domain to others. Two con
 each domain can communicate with each other despite the fact that they are in different domains. Aviatrix Controller takes
 care of both VPC route table and AWS Transit Gateway route table programming and updates. 
 
-Highlight a domain on the left panel and click Add, the domain will appears to the right. 
+Highlight a domain on the left panel and click Add, the domain will appear to the right. 
 
 In the example shown below, the intention is to connect the newly created prod_domain in Step 2 to the Aviatrix_Edge_Domain so that VPCs in the prod_domain can communicate with on-prem servers and hosts. 
 
