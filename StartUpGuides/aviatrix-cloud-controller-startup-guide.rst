@@ -20,18 +20,18 @@ Step 1. Subscribe to an Aviatrix AMI
 
 If you have already subscribed an AMI on AWS Marketplace, skip this step and proceed to Step 2.
 
-1.1 Select an AMI  
+1.1 Subscribe to the AMI  
 ----------------------------------------------------------------
 
-Clicking the AMI link below will take you to the AWS Marketplace to complete step 1.1 and 1.2. 
+Click the AMI link below to take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
 `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ . 
 
-1.2 Subscribe to the selected AMI
+1.2 Continue to Subscribe 
 ----------------------------------------
 
-For example, if you select Metered AMI, click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
+Click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
    |subscribe|
 
@@ -46,26 +46,29 @@ Click `Accept Terms`. **Return to this guide and continue**. (Do not proceed to 
 Step 2. Launch the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1 Click CloudFormation Link
+--------------------------------
+
 Click link below to take you to the CloudFormation page on AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
 
 `CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
 
-2.1 Login to AWS Console
+2.2 Login to AWS Console
 ---------------------------
 
 If you have not logged in, you will be prompted to login to AWS console. 
 
-2.2 Change to the region
+2.3 Change to the region
 ---------------------------
 
 Change to the region  where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
 
-2.3 Click `Next` 
+2.4 Click `Next` 
 ----------------------
 
  |cft-next|
 
-2.4 Fill in the following fields 
+2.5 Fill in the following fields 
 -----------------------------------
 
   - the Stack name,
@@ -80,24 +83,24 @@ Change to the region  where you would like to install the Aviatrix Controller on
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
-2.5 Select instance size
+2.6 Select instance size
 --------------------------
 
 Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
-2.6 Click `Next`
+2.7 Click `Next`
 ------------------
 
 Click Next.
 
-2.7 Click acknowledge
+2.8 Click acknowledge
 -------------------------
 
 Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
 
    |imageCFCreateFinal|
 
-2.8 Check stack output
+2.9 Check stack output
 -------------------------
 
 Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
