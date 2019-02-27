@@ -29,6 +29,8 @@ R4.2 (coming soon)
 3. Operation
 -------------
 
+- **Controller SAML Authentication** Aviatrix administrators can authenticate to the Controller by SAML authentication.
+
 - **Alert for New Release** sends email to the Controller admin email address to alert you when a major release becomes available. 
 
 - **Aviatrix Gateway EBS Volume Encryption** allows you to encrypt the gateway EBS volume after the gateway is launched. 
