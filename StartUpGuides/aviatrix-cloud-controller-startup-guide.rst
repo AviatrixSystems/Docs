@@ -23,17 +23,10 @@ If you have already subscribed an AMI on AWS Marketplace, skip this step and pro
 1.1 Select an AMI  
 ----------------------------------------------------------------
 
-Clicking on an AMI link below will take you to the AWS Marketplace to complete step 1.1 and 1.2. 
+Clicking the AMI link below will take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-- (**Recommended**) `Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ supports all use cases. 
-
-- `Aviatrix User VPN - Metered <https://aws.amazon.com/marketplace/pp/B07JXBVRM5?qid=1545886993814&sr=0-3&ref_=srh_res_product_title>`_ supports all use cases. 
-   
-- `Aviatrix Secure Networking Platform - Custom AMI <https://aws.amazon.com/marketplace/pp/B0155GB0MA?ref=_ptnr_web_cta_docs_custom-ami>`_ (Contact sales@aviatrix.com))
-
-
-- `Aviatrix for Cloud Interconnect, Cloud Peering and VPN (BYOL) <https://aws.amazon.com/marketplace/pp/B0155GAZ1C?ref=_ptnr_docs_link_startup_byol>`_. Contact support@aviatrix.com for a customer ID. 
+`Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ . 
 
 1.2 Subscribe to the selected AMI
 ----------------------------------------
@@ -53,15 +46,9 @@ Click `Accept Terms`. **Return to this guide and continue**. (Do not proceed to 
 Step 2. Launch the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Aviatrix AMI is launched with a companion Cloudformation template. Clicking the subscribed AMI link below will take you to the CloudFormation page on AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
+Click link below to take you to the CloudFormation page on AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
 
- - (**Recommended**) `Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
-
- - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template?ref=_ptnr_docs_cta_vpn_metered_step2>`_
-
- - `Secure Networking Platform - Custom <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template?ref=_ptnr_docs_cta_custom_step2>`_
-
- - `Cloud Interconnect BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template?ref=_ptnr_docs_cta_byol_step2>`_
+`CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
 
 2.1 Login to AWS Console
 ---------------------------
@@ -241,6 +228,17 @@ You are now ready to deploy use cases. Here are some of the things you can do:
 For technical support, email us at support@aviatrix.com
 
 Enjoy!
+
+Other Aviatrix Products
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to Metered AMI, we offer a few others, as shown below. Subscribe them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
+
+ - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template?ref=_ptnr_docs_cta_vpn_metered_step2>`_
+
+ - `Secure Networking Platform - Custom <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template?ref=_ptnr_docs_cta_custom_step2>`_
+
+ - `Cloud Interconnect BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template?ref=_ptnr_docs_cta_byol_step2>`_
 
 .. add in the disqus tag
 

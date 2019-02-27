@@ -2,6 +2,43 @@
 Release Notes
 =======================================
 
+R4.2 (coming soon)
+======================
+
+1. Networking
+----------------
+
+- **AWS Transit Gateway Egress Security Domain** allows you create a Security Domain with Egress Attribute to allow central egress control filter or firewalling. Aviatrix Controller automatically updates both VPC route table and AWS Transit Gateway route table when a VPC is attached or detached to the AWS Transit Gateway so you don't have to. Use cases are single IP address egress whitelisting and central firewalling. 
+
+- **Transit DMZ for Egress Traffic Inspection** provides the capability to inspect egress bound traffic in a central DMZ VPC or security VPC.   
+
+- **Transit DMZ for East-West Traffic Inspection** allows you to inspect VPC to VPC traffic through a central DMZ VPC or security VPC. 
+
+- **BGP Filtering From Learned Routes** allows you to selectively propagate on-prem routes to Spoke VPCs. When applied to the Aviatrix Transit Gateway, all spoke VPCs are filtered by the same rules. 
+
+- **Spoke VPC CIDR Customization** allows you to specify what to program to a Spoke VPC route tables and ignore any learned routes from on-prem.
+
+2. Multi Cloud
+----------------
+
+- **GCP Spoke Gateway** allows you to launch a GCP gateway in the Aviatrix Next Gen Transit Network workflow.
+
+- **GCP FQDN support** allows you to apply Aviatrix FQDN Egress Control to an Aviatrix GCP gateway. 
+
+
+3. Operation
+-------------
+
+- **Alert for New Release** sends email to the Controller admin email address to alert you when a major release becomes available. 
+
+- **Aviatrix Gateway EBS Volume Encryption** allows you to encrypt the gateway EBS volume after the gateway is launched. 
+
+- **Connectivity test** From the Aviatrix Controller you can launch two test instances and run a ping test in under two minutes time.
+
+4. Security
+-------------
+- **FQDN AZ Affinity Load Balancing**  
+
 R4.1.946 (Patch release of 4.1 on 2/21/2019)
 ===============================================
 
