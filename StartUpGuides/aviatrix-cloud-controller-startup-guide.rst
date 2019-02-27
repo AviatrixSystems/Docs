@@ -172,15 +172,7 @@ Once logged back in to the Controller, you should be on the `Onboarding` page or
 
    |imageOnboardAws|
 
-
-3.8  (Only apply to BYOL AMI) Enter Your Customer ID 
---------------------------------------------------------
-
-Enter the `Customer ID` in the field and click `Save`.
-
-   |imageEnterCustomerID|
-   
-3.9  Setup a primary access account  
+3.8  Setup a primary access account  
 --------------------------------------
 
 The Aviatrix primary access account contains the following information:
