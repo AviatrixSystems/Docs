@@ -24,23 +24,25 @@ Make sure Palo Alto Networks management interface has ping enabled and the insta
 
 |pan_ping|
 
-2. Add an Administrator for API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-At the Palo Alto Networks Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as
-shown below.
-
-|pan_admin|
-
-3. Edit API Administrator Role Profile
+2. Create API Administrator Role Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the profile role created in the previous step, edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries
+Create a new role profile and name it Aviatrix-API-Role. Edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries
 the Palo Alto Network interfaces.
 
 Go to Device -> Setup -> Management Interface Settings, as shown below.
 
 |pan_role_profile|
+
+
+3. Add an Administrator for API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+At the Palo Alto Networks Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as
+shown below. Use the profile created in previous step.
+
+|pan_admin|
+
 
 5. Configure on the Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
