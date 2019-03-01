@@ -6,23 +6,9 @@
 AWS Infrastructure
 ===========================================================================
 
-Overview
---------
 
-The Aviatrix Support Center goal is to be a central repository for known issues, solutions, workarounds and common design principles for our customers. Please look at our `Official Support Page <http://www.aviatrix.com/support>`_ for more information.
-
-
-
-Tips & Tricks
--------------
-
-* Got questions for Support Team? Send an email to support@aviatrix.com
-* Want 24x7x365 support? Reach out to sales@aviatrix.com and ask for Platinum Support!!
-
-**AWS Infrastructure:**
------------------------
-
-* **Disk resize for Gateway:**
+Disk resize for Gateway
+^^^^^^^^^^^^^^^^^^^^^^^
 
   * Login to AWS console and locate the Aviatrix gateway instance
   * Click on Root device: /dev/sda1 and then click on EBS ID vol-xxxxxxxxxx.
@@ -32,7 +18,8 @@ Tips & Tricks
   * Confirm the gateway is in running state in AWS console.
   * Login to your controller to run gateway diagnostics and submit to us. Please also upload the gateway `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ to us.
   
-* **Saving an EIP on a Gateway:**
+Saving an EIP on a Gateway
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   * When creating a new Gateway the default option for “Allocate New EIP” is on – this would mean that the Aviatrix Controller would check out a new EIP from AWS Infrastructure. If this gateway is deleted, the Controller will release this EIP to the AWS Infrastructure. If you expect to keep the EIP in future, it is recommended that "Allocate New EIP" option is unchecked and an available EIP is picked during the Gateway creating process.
   * If you are having issues with the Gateway and would like a new Gateway to replace the existing one and with the same EIP, the best way to do this is to via “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Gateway Replace” 
@@ -42,7 +29,8 @@ Tips & Tricks
       * From Aviatrix Controller, go to “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Migration” and pick the Gateway that you want to pick the EIP from and enter this new-EIP and click on OK. (Pick GatewayA and enter EIP-new. This will release EIPA)
       * On the Aviatrix Controller, on the same page, pick the Gateway that you want to receive the old EIP and enter the old-EIP. (Example: Pick Gateway B and enter EIPA. This will release EIPB)
       
-* **Encrypting an EBS Volume on Controller/Gateway**
+Encrypting an EBS Volume on Controller/Gateway
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   * AWS does not allow EBS encryption during instance launch time. Follow instructions for `Controller <https://docs.aviatrix.com/HowTos/FAQ.html#encrypt-controller-ebs-volume>`_ and `Gateway <https://docs.aviatrix.com/HowTos/FAQ.html#encrypt-gateway-ebs-volume>`_
 
