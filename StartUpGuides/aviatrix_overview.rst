@@ -41,7 +41,7 @@ What Features Are Supported in Which Cloud?
 
 ==========================================      ==========  =============   ========
 **Feature**                                     **AWS**     **Azure**       **GCP**
-==========================================      ==========  =============   =========
+==========================================      ==========  =============   ========
 Marketplace Launch                              Yes         Yes             No (Community Image)
 Multi Accounts                                  Yes         Yes             Yes
 
@@ -59,11 +59,11 @@ Advanced NAT                                    Yes         Yes             Yes
 Remote Access User VPN                          Yes         Yes             Yes
 Site to Cloud VPN                               Yes         Yes             Yes
 
-Insane Mode Encryption                          Yes         No               No
+Insane Mode Encryption                          Yes         No              No
 
 Logging Service Integration                     Yes         Yes             Yes
 FlightPath Expert Diagnostics                   Yes         No              No
-==========================================      ==========  =============   =========
+==========================================      ==========  =============   ========
 
 
 How To Launch Aviatrix?
