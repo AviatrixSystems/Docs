@@ -36,6 +36,36 @@ agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_mes
 
 You can automate Aviatrix deployment by `REST APIs <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_ and `Terraform configurations <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
 
+What Features Are Supported in Which Cloud?
+-----------------------------------------------
+
+==========================================      ==========  =============   ========
+**Feature**                                     **AWS**     **Azure**       **GCP**
+==========================================      ==========  =============   =========
+Marketplace Launch                              Yes         Yes             No (Community Image)
+Multi Accounts                                  Yes         Yes             Yes
+
+Next Gen Transit Network Spoke                  Yes         Yes             Yes
+Next Gen Transit Network Edge                   Yes         Yes             No
+Transit DMZ (Firewall in the cloud)             Yes         No              No
+Transit Peering                                 Yes         Yes             No
+
+Native Peering                                  Yes         No              N/A
+
+FQDN Egress Control                             Yes         Yes             Yes
+Stateful Firewall                               Yes         Yes             Yes
+Advanced NAT                                    Yes         Yes             Yes
+
+Remote Access User VPN                          Yes         Yes             Yes
+Site to Cloud VPN                               Yes         Yes             Yes
+
+Insane Mode Encryption                          Yes         No               No
+
+Logging Service Integration                     Yes         Yes             Yes
+FlightPath Expert Diagnostics                   Yes         No              No
+==========================================      ==========  =============   =========
+
+
 How To Launch Aviatrix?
 =========================
 
