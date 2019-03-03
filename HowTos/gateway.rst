@@ -547,12 +547,12 @@ Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher 
 For more infor, read `this document <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn all about Aviatrix Insane Mode
 for high performance Transit Network.
 
-Customizing Spoke VPC Routes
+Customize Spoke VPC Routes
 ------------------------------
 
 Coming soon. 
 
-Filtering Routes to Spoke VPC
+Filter Routes to Spoke VPC
 ------------------------------
 
 Coming soon. 
