@@ -1,5 +1,5 @@
 .. meta::
-  :description: Transit DMZn
+  :description: Transit DMZ
   :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
 
@@ -7,10 +7,16 @@
 Vendor Integration
 =========================================================
 
-Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. .
+Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. 
 
-Palo Alto Networks VM-Series
------------------------------
+Launch Palo Alto Networks VM-Series Instance
+----------------------------------------------
+
+Starting release 4.2, you can launch the VM-Series from the Aviatrix Controller console and all interfaces 
+setup. 
+
+Palo Alto Networks VM-Series Configuration
+--------------------------------------------
 
 In the release 4.1, the supported firewall vendor is Palo Alto Networks VM-Series Firewall in AWS. For how to configure
 Palo Alto Networks, refer to `this guide. <https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/set-up-the-vm-series-firewall-on-aws/deploy-the-vm-series-firewall-on-aws/launch-the-vm-series-firewall-on-aws.html#ide07b93a2-ccb3-4c69-95fe-96e3328b8514>`_
