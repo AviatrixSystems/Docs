@@ -72,8 +72,9 @@ After at least one gateway is created, you can add VPN users.
 
 Click OpenVPN® -> VPN Users -> +Add New.
 
-When a user is added, an email is sent to the user with instructions on
-how to download client software and connect to VPN server.
+When a user is added, an email is sent to the user with instructions on how to download client software and connect to VPN server. You can customize this email by updating the settings at "OpenVPN -> Advanced -> Email". You could also use your own SMTP server to send these emails out by following `these instructions <https://docs.aviatrix.com/HowTos/alert_and_email.html#how-to-change-source-of-email-notification>`_
+
+If you prefer to not share the .ovpn file with your users via email, do not enter the email address when you add a VPN user. You can then download the .ovpn file from OpenVPN -> VPN Users -> Select VPN User and then download the file and share it with your VPN user via your prefererrd file share mechanism.
 
 If you like to assign user profile based policies, you need to create
 profiles first, see the next section.
