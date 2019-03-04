@@ -215,6 +215,11 @@ System Resources
 This feature allows you to set the threshold for notifications when disk/memory of controller/gateway has reach certain percentage of the total usage. The default behavior is to alert administrators when the usage reaches to 95% or higher.
 
 
+Connectivity Test
+--------------------
+
+When you select the Source Network and Destination Network, Aviatrix Controller will spin up two instances 
+and run a ping test. 
 
 
 
