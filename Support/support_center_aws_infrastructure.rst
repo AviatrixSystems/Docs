@@ -38,10 +38,6 @@ Encrypting an EBS Volume on Controller/Gateway
 IAM Roles/Policies
 ^^^^^^^^^^^^^^^^^^
 
-* The Aviatrix Controller and its Gateways need access to AWS's resources to function as designed. This access is granted and managed through IAM roles and policies. More information: `requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html
->`_, `policies <https://docs.aviatrix.com/HowTos/iam_policies.html
->`_, `using them <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html
->`_ and `guidelines to customize <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html
->`_
+* The Aviatrix Controller and its Gateways need access to AWS's resources to function as designed. This access is granted and managed through IAM roles and policies. For more information please refer to `requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `policies  <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `how to use them <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_ and `guidelines to customize <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_
 * AWS has an IAM corner case - if an EC@ instance had an IAM role attached and then the role was deleted and added again, that EC2 instance's roles and policies will not function in a predictable way. If you have deleted and added Aviatrix IAM roles, it might be good to detach the roles from your Controllers and Gateways and attach them again.
 * Aviatrix IAM policies might be updated - please make it a point to update them when you `update the software on Aviatrix system <https://docs.aviatrix.com/HowTos/inline_upgrade.html >`_
