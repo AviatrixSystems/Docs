@@ -161,14 +161,14 @@ Manages FQDN filtering for Aviatrix gateway
 	# fqdn_status - (Optional: disabled by default) Enter enabled or disabled, based on whether you want to enable or disable FQDN filtering.
 	# fqdn_mode - (Optional: white by default) Enter white or black,, based on whether you whitelist or blacklist
 	# gw_list - List of gateways, on which you want to filter
-	# domain_list - List of domains for which you want to filter
+	# domain_names - List of domains for which you want to filter
 
 	resource "aviatrix_fqdn" "test_fqdn" {
 	  fqdn_tag = "my_tag"
 	  fqdn_status = "enabled"
 	  fqdn_mode = "white"
 	  gw_list = ["gw1", "gw2"]
-	  domain_list = [
+	  domain_names = [
           {
            fqdn = "facebook.com"
            proto = "tcp"
