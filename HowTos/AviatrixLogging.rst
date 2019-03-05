@@ -363,6 +363,15 @@ On the Aviatrix Controller:
 Note:
 If "Import File" is selected for "How to configure", please provide the Splunk configuration file. 
 
+3.4 Sumo Logic
+-------------------
+On the Aviatrix Controller:
+   a. Access ID : ID of SumoLogic server
+   b. Access Key: Access key of SumoLogic server
+Steps to `upgrade <http://docs.aviatrix.com/HowTos/sumologic_upgrade.html>`_
+Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
+
+
 4. Log management system Apps
 ====================================
 
