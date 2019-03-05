@@ -137,14 +137,14 @@ How to configure Insane Mode for Transit VPC?
 
 At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ select "Insane Mode Encryption". 
 
-Beta Testing Check List
------------------------
+Pre-deployment Check List
+----------------------------
 
-Deployment topology for Aviatrix CloudN beta testing is as following:
+Deployment topology for Aviatrix CloudN is as following:
 
 |InsaneBeta|
 
-Please collect information requested below and provide to Aviatrix. The Beta application form can be downloaded `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_
+Please collect information requested below and provide to Aviatrix. The Application form can be downloaded `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_
 
 ================  ==================  ===========  ===============  ==================  =====================  =============================================================
 CloudN Interface  Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
