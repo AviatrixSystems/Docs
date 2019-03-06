@@ -54,8 +54,8 @@ The above diagram is described in the following steps.
  #. Enter a unique account name. For example, BU-Group-3
  #. Check `AWS`.
  #. Check `IAM role-based` (enabled by default).
- #. Click **Launch CloudFormation Script** that takes to AWS Console and run CloudFormation script to setup IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
  #. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
+ #. Click **Launch CloudFormation Script** that takes to AWS Console and run CloudFormation script to setup IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
  #. Click `OK`.
  #. The new secondary account should be created.
  #. Now you can create connectivity between two VPCs in different AWS accounts.
