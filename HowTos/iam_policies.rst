@@ -41,5 +41,19 @@ Steps
 #. Click **Save changes** to apply the new aviatrix-app-policy.
 #. It may take a few minutes for the policy to take effect. 
 
+Check IAM Policy Status
+-------------------------
+
+The `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_ is updated sometimes for new services offered by Aviatrix. 
+
+You can view if your IAM policy needs to be 
+updated by going to Settings -> Advanced -> AWS IAM Policy Update.
+
+You can also check individual account IAM policy status by selecting the account and click Check. 
+
+To update IAM policy, follow the instruction `here. <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_
+
+
+
 
 .. disqus::

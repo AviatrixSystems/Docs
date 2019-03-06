@@ -30,7 +30,7 @@ Follow `the instructions <https://docs.aviatrix.com/HowTos/aviatrix_account.html
 Setup Secondary Account IAM Manually
 =========================================================================
 
-**This is not a recommended approach as it takes longer time and error prone.** 
+**This is not a recommended approach as it takes longer time and is error prone.** 
 
 1. Create two IAM custom policies
 --------------------------------------
