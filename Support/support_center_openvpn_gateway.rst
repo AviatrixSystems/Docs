@@ -26,6 +26,7 @@ Miscellaneous
 ^^^^^^^^^^^^^
 
 * How to delete a Network Load Balancer which is created by Aviatrix? 
+
   * An ELB will be automatically deleted by the Aviatrix Controller if all the gateways behind it are deleted and if there are no more users attached to it. The last resort to delete an ELB is delete it from Troubleshoot > ELB.
 
 * Tunneblick VPN Client might show a warning about "comp-lzo" being deprecated when connecting to Aviatrix OpenVPN Gateway. You can safely ignore this message. We have kept this option in for backward compatibility
