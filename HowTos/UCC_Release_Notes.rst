@@ -8,8 +8,6 @@ R4.2 (coming soon)
 1. Networking
 ----------------
 
-- **AWS Transit Gateway Egress Security Domain** allows you create a Security Domain with Egress Attribute to allow central egress control filter or firewalling. Aviatrix Controller automatically updates both VPC route table and AWS Transit Gateway route table when a VPC is attached or detached to the AWS Transit Gateway so you don't have to. Use cases are single IP address egress whitelisting and central firewalling. 
-
 - **Transit DMZ for Egress Traffic Inspection** provides the capability to inspect egress bound traffic in a central DMZ VPC or security VPC.   
 
 - **Transit DMZ for East-West Traffic Inspection** allows you to inspect VPC to VPC traffic through a central DMZ VPC or security VPC. 
