@@ -47,7 +47,7 @@ Follow the instructions listed `here <https://golang.org/doc/install>`_ to downl
 
 |go_install|
 
-For Mac, Go is also present in `Homebrew <https://brew.sh/>`_. Perform ``brew install go`` to install Go.
+For Mac, Go is also present in `Homebrew <https://brew.sh/>`_. Perform `brew install go` to install Go.
 
 
 4. Download and Build Aviatrix Terraform Provider
@@ -65,7 +65,7 @@ Example for Unix/Linux:
   $ export GOPATH=$HOME/go
 
 Line 3 can also be made permanent:
-Edit ~/.bash_profile by appending line "export GOPATH=$HOME/go", and then run the command ``source ~/.bash_profile`` for the GOPATH path to take effect.
+Edit ~/.bash_profile by appending line "export GOPATH=$HOME/go", and then run a command "source ~/.bash_profile" for the GOPATH path to take effect.
 
 For Windows, GOPATH and other environment variables can be edited from System Properties.
 
@@ -160,19 +160,19 @@ the below text into the file. Be sure to modify the parameters to suit your envi
 6. Run the Terraform Configuration
 -----------------------------------
 
-In the directory where the Terraform configuration file resides, run ``terraform init`` command to prepare the new configuration file.
+In the directory where the Terraform configuration file resides, run "terraform init" command to prepare the new configuration file.
 
 ::
 
   $ terraform init
 
-Then run ``terraform plan`` command to see what will be executed.
+Then run "terraform plan" command to see what will be executed.
 
 ::
 
   $ terraform plan
 
-Finally, run ``terraform apply`` command to launch the gateway.
+Finally, run "terraform apply" command to launch the gateway.
 
 ::
 
@@ -183,7 +183,7 @@ When the above command finishes, you can login to your Aviatrix Controller conso
 7. Simple Troubleshooting
 --------------------------
 
-A simple Terraform debug method is to set TF_LOG level in ~/.bash_profile, as shown in the below example (remember to run command ``source ~/.bash_profile`` after editing .bash_profile):
+A simple Terraform debug method is to set TF_LOG level in ~/.bash_profile, as shown in the below example (remember to run command "source ~/.bash_profile" after editing .bash_profile):
 
 ::
 
