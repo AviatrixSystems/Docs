@@ -29,4 +29,5 @@ Topics
 - `Site2Cloud <https://docs.aviatrix.com/Support/support_center_site2cloud.html>`_
 - `AWS Infrastructure <https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html>`_
 - `Terraform <https://docs.aviatrix.com/Support/support_center_terraform.html>`_
+- `Security: Egress FQDN Control and Firewall <https://docs.aviatrix.com/Support/support_center_egress_firewall.html>`_
 
