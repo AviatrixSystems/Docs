@@ -47,7 +47,10 @@ Check IAM Policy Status
 The `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_ is updated sometimes for new services offered by Aviatrix. 
 
 You can view if your IAM policy needs to be 
-updated by going to Settings -> Advanced -> AWS IAM Policy Update.
+updated by going to Settings -> Advanced -> AWS IAM Policy Update. The Aviatrix Controller polls all
+AWS accounts upon each release to see if there is new IAM policy available that you need to 
+update for your accounts. Note if you do not run any new features, chances are you do not need to
+update the IAM policies. 
 
 You can also check individual account IAM policy status by selecting the account and click Check. 
 
