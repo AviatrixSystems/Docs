@@ -328,6 +328,7 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_center_site2cloud
    Support/support_center_aws_infrastructure
    Support/support_center_terraform
+   Support/support_center_egress_firewall
 
 .. _IPmotion:
 
