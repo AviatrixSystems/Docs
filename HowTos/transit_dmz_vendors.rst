@@ -12,6 +12,24 @@ Aviatrix Transit DMZ works with any firewall instances. However API level integr
 Launch Palo Alto Networks VM-Series Instance
 ----------------------------------------------
 
+You can launch Palo Alto Networks VM-Series from the Aviatrix Controller. Make sure you have subscribed the 
+the AMI. 
+
+Enter the fields below and click Launch. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Cloud Type                                      Select AWS.
+Instance Name                                   Give the VM-Series instance a name.
+Account Name                                    The account name for the transit VPC.
+Region                                          One of the AWS regions
+VPC ID                                          The VPC for the Transit DMZ deployment.
+Firewall Image                                  Select a Firewall AMI to launch. 
+TGW Name                                        The name of the AWS Transit Gateway
+AWS Side AS Number                              Default AS number is 64512. This field currently is not used.
+==========================================      ==========
+
 Starting release 4.2, you can launch the VM-Series from the Aviatrix Controller console and all interfaces 
 setup. 
 

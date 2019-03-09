@@ -8,6 +8,14 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+------------------------------------------------------------------------------------
+
+::
+ 
+ Error: [Aviatrix Error] Peerings detected. Please delete them before terminating the gateway.
+
+Go to Peering page to delete the peering first before you can delete the gateway. 
+
 --------------------------------------------------------------------------------
 
 ::
