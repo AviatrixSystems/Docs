@@ -21,6 +21,7 @@ Which branch of Terraform Aviatrix Provider Resource should I use?
 ----------------------------------------------------------------------
 
 Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for the Terraform Aviatrix Provider Resource has multiple branches. Please make sure that you pick the branch which matches with the version of the software release on your Aviatrix Controller. The latest release is supported with the master branch. Here is the supported list
+
   * Aviatrix Controller Release 3.5: Use the `Github UserConnect-3.5 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-3.5>`_
   * Aviatrix Controller Release 4.0: Use the `Github UserConnect-4.0 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.0>`_ 
   * Aviatrix Controller Release 4.1: Use the `Github master branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master>`_ 
