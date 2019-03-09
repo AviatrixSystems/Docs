@@ -266,11 +266,13 @@ Additional fields are displayed when checked.
 |                                   | `Internet Key Exchange Configuration`    |
 |                                   | > **Pre-Shared Key**                     |
 +-----------------------------------+------------------------------------------+
+.. |presharedkey|
 
 Other fields should be filled as instructed in above section **Configure Aviatrix**.
 
 .. |gw2vgw| image:: s2c_vgw_media/gw_to_vgw.png
    :scale: 50%
+.. |presharedkey| image:: s2c_vgw_media/presharedkey.png
 
 .. |awscg| image:: s2c_vgw_media/aws_cg.png
 .. |awsvpn| image:: s2c_vgw_media/aws_vpn.png
