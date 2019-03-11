@@ -19,7 +19,7 @@ implemented at the edge VPC as shown below, where a pair of firewalls are deploy
 How is Transit DMZ different from the traditional deployment of firewalls in the cloud?
 ----------------------------------------------------------------------------------------
 
-Traditionally, centrally deployed instance based firewall appliances require IPSEC tunnels to send traffic from VPCs to these appliances. This increases the complexity of managing the firewalls and reduces performances for the security
+Traditionally, centrally deployed instance based firewall appliances require IPSEC tunnels and BGP to send traffic from VPCs to these appliances. This increases the complexity of managing the firewalls and reduces performances for the security
 features that you want them to perform. 
 
 Transit DMZ decouples networking functions and security functions. There is no IPSEC tunnels between the Aviatrix 
@@ -37,7 +37,13 @@ The starting point for the Next Gen Transit Network for AWS is `here. <https://d
 Can Transit DMZ inspect all traffic?
 ---------------------------------------------------
 
-For the 4.1 release, Transit DMZ can only intercepts traffic between north and south (on-prem and VPCs) and Egress and Ingress traffic. Transit DMZ does not see east west traffic (between two VPCs). We recommend you to use `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-are-the-benefits-of-using-security-domains-and-connection-policies>`_ to segment traffic between east west traffic. 
+Transit DMZ intercepts traffic between north and south (on-prem and VPCs), east-west (VPC to VPC) and  
+Egress and Ingress traffic.  
+
+Can Transit DMZ work with Aviatrix InsaneMode Encryption?
+----------------------------------------------------------
+
+Yes.
 
 How does Transit DMZ actually work?
 ------------------------------------
