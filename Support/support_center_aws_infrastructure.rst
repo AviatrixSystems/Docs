@@ -40,6 +40,7 @@ Why are IAM Roles/Policies important?
 ----------------------------------------------------------
 
 * The Aviatrix Controller and its Gateways need access to AWS's resources and to function as designed. Any loss in this access privileges could cause unpredictable behavior and performance of your network. This access is granted and managed through IAM roles and policies. For more information please refer the following documents
+
   * `IAM Policy Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_
   * `IAM Policies  <https://docs.aviatrix.com/HowTos/iam_policies.html>`_
   * `How to use IAM Roles and Policies <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_
