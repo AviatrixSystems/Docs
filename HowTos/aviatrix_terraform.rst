@@ -6,7 +6,7 @@
 Aviatrix Terraform Provider
 ===========================
 
-Aviatrix Terraform Provider is used to interact with Aviatrix resources.
+Aviatrix `Terraform <https://www.aviatrix.com/learning/cloud-routing-networking/terraform-and-infrastructure-as-code/>`_ Provider is used to interact with Aviatrix resources.
 
 Read the `Aviatrix Terraform Provider Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_ to setup the environment.
 

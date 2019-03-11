@@ -7,7 +7,7 @@
 AWS Inter Region Latency
 ===========================================================================================
 
-AWS supports 15 regions (excluding China regions) for its services. Understanding latency between 
+AWS supports 15 regions (excluding China regions) for its services. Understanding `latency <https://www.aviatrix.com/learning/glossary/network-latency.php>`_ between 
 the regions is important as performance starts to have noticeable degradation when the latency is
 more than 150 - 200ms between a client and server or between two servers in two different regions. 
 

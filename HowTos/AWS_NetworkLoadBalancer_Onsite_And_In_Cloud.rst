@@ -26,7 +26,7 @@
 Hybrid Network Load Balancing (NLB)
 ================================================================================
 
-Balance Traffic between AWS and your Datacenter using AWS Network Load Balancer and Aviatrix Gateway
+Balance Traffic between AWS and your Datacenter using AWS `Network Load Balancer <https://www.aviatrix.com/learning/glossary/network-load-balancing.php>`_ and Aviatrix Gateway
 ----------------------------------------------------------------------------------------------------
 
 Problem Description
@@ -41,8 +41,7 @@ Establishing reliable and secure network connectivity for these hybrid use cases
 
 Imagine one specific example: you have a critical internal web application hosted in remote offices around the globe as well as in AWS.  In order to provide fault-tolerance for the application, you would like to setup a central load balancer that balances traffic between the remote sites and AWS. 
 
-AWS recently released the `Network Load Balancer <http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ that made this 
-possible by adding the ability to specify an IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address outside of AWS will only work if you have Direct Connect between the remote site and the AWS region.  An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
+AWS recently released the Network Load Balancer that made this possible by adding the ability to specify an IP address as a load balancer target, in addition to instances.  However, using the NLB to forward traffic to a target IP address outside of AWS will only work if you have Direct Connect between the remote site and the AWS region.  An IPSEC tunnel built between AWS VGW and on-prem site does not work since in this case traffic is always initiated from the VPC. So, for most users this doesn't help.
 
 Aviatrix solves this for AWS customers without Direct Connect.
 

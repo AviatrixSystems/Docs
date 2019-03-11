@@ -107,7 +107,7 @@ VPN CIDR Block
 ===============
 
 When a VPN user connects to the VPN gateway, the user will be assigned a virtual IP address from a pool of IP addresses.
-This pool of IP addresses is defined as the VPN CIDR Block.
+This pool of IP addresses is defined as the `VPN <https://www.aviatrix.com/learning/glossary/cidr.php>`_ CIDR Block.
 The default IP address pool is 192.168.43.0/24.
 
 

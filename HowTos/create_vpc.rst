@@ -6,8 +6,7 @@
 Create a VPC
 ###################################
 
-Use this tool to create a VPC that consists of public subnet and private subnet in two AZs 
-and IGW in the region and account of your choice. 
+Use this tool to create a `VPC <https://www.aviatrix.com/learning/glossary/vpc.php>`_ that consists of public subnet and private subnet in two AZs and IGW in the region and account of your choice. 
 
 The VPC CIDR range is from /16 to /24.
 
