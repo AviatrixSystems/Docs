@@ -64,7 +64,7 @@ Here are the steps for setting up SFC in a preview release.
  #. At the Aviatrix Controller console, create an AWS account with access key and secret key (NOT with IAM roles.)
  #. Launch an Aviatrix gateway in this account in a VPC.
  #. Go to AWS console VPC page to create a VPC endpoint for S3 with the VPC where the gateway was launched.  
- #. At the Aviatrix Controller Console, go to Useful Tools -> Secure File Copy. Select the gateway name and enter the name of the S3 bucket where you need to transfer file to. Leave all other options alone and click OK. 
+ #. At the Aviatrix Controller Console, go to Useful Tools -> Secure File Copy. Select the gateway name and enter the name of the S3 bucket where you need to transfer file to. Leave all other options on default value and click OK. 
  #. Open the security group inbound rules of the gateway instance from AWS Console to allow TCP port 22 from the on-prem network address range. 
  #. Upload a file by using the scp commands with the following syntax. (contact support@aviatrix.com for the private key.)
 
