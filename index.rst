@@ -222,6 +222,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AdminUsers_LDAP
    HowTos/netflow
    HowTos/cloudwatch
+   HowTos/Controller_Login_SAML_Config
 
 .. _Troubleshoot:
 

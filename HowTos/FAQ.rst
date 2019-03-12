@@ -156,6 +156,10 @@ Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root
 
 Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
 
+9. Enable Controller SAML Login
+################################
+
+You can enable `SAML authentication for Controller login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
 
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
