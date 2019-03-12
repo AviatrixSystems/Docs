@@ -23,15 +23,21 @@ Enter the fields below and click Launch.
 Cloud Type                                      Select AWS.
 Instance Name                                   Give the VM-Series instance a name.
 Account Name                                    The account name for the transit VPC.
-Region                                          One of the AWS regions
-VPC ID                                          The VPC for the Transit DMZ deployment.
-Firewall Image                                  Select a Firewall AMI to launch. 
-TGW Name                                        The name of the AWS Transit Gateway
-AWS Side AS Number                              Default AS number is 64512. This field currently is not used.
+Region                                          One of the AWS region.
+VPC ID                                          The VPC to launch the firewall instance.
+Firewall Image                                  Select one of the Palo Alto VM-Series AMI to launch.
+Management Subnet                               VM-Series management interface, must be a public subnet with EIP. 
+Egress Subnet                                   VM-Series instance for Internet, must be a public subnet with EIP. 
+Main Interface Subnet                           VM-Series instance interface for Aviatrix Main gateway. 
+Companion Interface Subnet                      VM-Series instance interface for Aviatrix Companion gateway. 
 ==========================================      ==========
 
-Starting release 4.2, you can launch the VM-Series from the Aviatrix Controller console and all interfaces 
-setup. 
+.. Tip::
+
+  After the instance is launched, it will be listed in the same page. Wait for 15 minutes after you launch the VM-Series instance before you login to instance to setup the password. To login to the instance, click the skewer button to download the pem file for the instance.  
+
+|download_pem_file|
+
 
 Palo Alto Networks VM-Series Configuration
 --------------------------------------------
