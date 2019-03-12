@@ -21,7 +21,7 @@ multi AZ HA, you should deploy one main gateway and one backup main gateway,  on
 
 .. tip::
 
-  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. Select the option "Aviatrix Transit VPC". 
+  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. Select the option "Aviatrix Transit VPC". If you would like to continue to use your existing transit VPC and it is too small (not enough of /28 unused segments), use AWS Edit VPC CIDR feature to create a new /24 subnet. 
 
 .. Note::
 
