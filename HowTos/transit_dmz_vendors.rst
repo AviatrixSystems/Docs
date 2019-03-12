@@ -144,6 +144,9 @@ Example of Palo Alto Networks API used:
 .. |pan_admin| image:: transit_dmz_vendors_media/pan_admin.png
    :scale: 30%
 
+.. |download_pem_file| image:: transit_dmz_vendors_media/download_pem_file.png
+   :scale: 30%
+
 .. |pan_role_profile| image:: transit_dmz_vendors_media/pan_role_profile.png
    :scale: 30%
 
