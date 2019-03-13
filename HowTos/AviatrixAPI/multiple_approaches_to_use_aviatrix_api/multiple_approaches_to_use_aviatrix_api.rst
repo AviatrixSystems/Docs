@@ -74,6 +74,12 @@ Postman
     |image1|
 
 
+.. Tip:: You may disable Postman SSL certificate verification for simple testing. See the follow screenshot.
+..
+
+    |image7|
+
+
 Linux "curl" command
 """"""""""""""""""""
 
@@ -274,7 +280,7 @@ PowerShell
 .. |image4| image:: ./img_04_postman_create_account_execution_results.png
 .. |image5| image:: ./img_05_linux_curl_create_account_execution_results.png
 .. |image6| image:: ./img_06_python_create_account_execution_results.png
-
+.. |image6| image:: ./img_07_postman_disable_ssl.png
 
 
 .. disqus::
