@@ -16,7 +16,7 @@ Step 1. Create IAM Policy
 
 Login to AWS console, click IAM, click Policies, click Create Policy, click JSON. Delete the example JSON text. 
 
-Copy and paste `the Aviatrix AWS China policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix-aws-china_iam_policy.txt>`_ to create a new IAM policy, as shown below. Give policy a name, aviatrix-role-app. 
+Copy and paste `the Aviatrix AWS policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_ to create a new IAM policy, as shown below. Give policy a name, aviatrix-role-app. 
 
 |create-policy|
 
