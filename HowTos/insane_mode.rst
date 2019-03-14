@@ -131,6 +131,10 @@ For a duo Aviatrix Appliance for high availability, below is a deployment diagra
 
 |deployment_ha|
 
+For redundant DX deployment, below is a diagram. 
+
+|deployment_dual_dx|
+
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
@@ -176,6 +180,9 @@ Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and 
    :scale: 30%
 
 .. |deployment_ha| image:: insane_mode_media/deployment_ha.png
+   :scale: 30%
+
+.. |deployment_dual_dx| image:: insane_mode_media/deployment_dual_dx.png
    :scale: 30%
 
 .. |ISR-sample-config| image:: insane_mode_media/ISR-sample-config.png
