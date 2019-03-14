@@ -286,7 +286,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
    HowTos/tf_aviatrix_howto
-   HowTos/connect_transit_network_clusters
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
    HowTos/insane_poc
