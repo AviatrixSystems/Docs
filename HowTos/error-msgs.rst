@@ -184,8 +184,12 @@ Insane Mode only supports AWS C5 series. For performance, check `this link <http
 
 ::
 
-  Error: [Aviatrix Error] Login failed
+    Error: [Aviatrix Error] Primary transit gateway insane2-main is not active gateway. Please force switchover gateway back to primary before enabling Connected Transit Mode.
 
-Your password is probably not correct. 
+Your primary Aviatrix Transit Gateway is not the active one. Please follow the steps below to switchover from backup Transit Gateway to primary Transit Gateway:
+
+- For DMZ Main Transit Gateway, go to "Transit DMZ" -> "Advanced". At "Main gateway" section, click "Switchover" button and make sure "HA Status" of primary Main Gateway is in "Active" state.
+
+- For Transit Gateway with BGP connections, go to "Troubleshoot" -> "Diagnostics" -> "BGP", click "Switch Over" button along with backup Transit Gateway (gateway name with "hagw" postfix).
 
 .. disqus::

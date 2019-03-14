@@ -71,6 +71,8 @@ FreeBSD client can be downloaded from- `this link <https://s3-us-west-2.amazonaw
 tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh to install
 
 
+Note: Currently we do not support Fedora
+
 *******************
 Development version
 *******************
