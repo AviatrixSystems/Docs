@@ -119,7 +119,8 @@ A logical deployment layout is described as below.
 Reference Deployment Diagrams
 ----------------------------------
 
-For a single Aviatrix Appliance without HA, below is a deployment diagram.
+Single Aviatrix CloudN Appliance 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |deployment|
 
@@ -127,11 +128,13 @@ And the sample configuration on an ISR is as follows.
 
 |ISR-sample-config|
 
-For a duo Aviatrix Appliance for high availability, below is a deployment diagram.
+Aviatrix CloudN Appliance with HA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |deployment_ha|
 
-For redundant DX deployment, below is a diagram. 
+Redundant DX Deployment 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |deployment_dual_dx|
 
