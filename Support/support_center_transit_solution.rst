@@ -22,6 +22,6 @@ For TGW based transit solution to support Hybrid connection, the `transit VPC ne
 How do I troubleshoot Spoke to On-prem connection issues?
 --------------------------------------------------------------------------------------------
 
-Here are some `Troubleshoot guidelines <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_ 
+Here are some `Troubleshooting guidelines <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_ 
 
 It is recommended that all spokes have HA pairs. When a switchover occurs to transit HA, only spokes with HA will remain connected, the non-HA spokes will lose connectivity and be black-holed.
