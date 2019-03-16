@@ -60,7 +60,7 @@ AviatrixVPNSession:
 This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access" 
 when launching a gateway. 
 
-Logs sent by the Controller contains the information such as VPN user
+Logs with this prefix come from the Controller and contain  information such as VPN user
 name, the VPN gateway IP address and name where the user connects to,
 client virtual IP address, connection duration, total received bytes,
 total transmitted bytes, and login and logout time. Two logs will be
