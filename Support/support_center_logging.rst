@@ -26,7 +26,7 @@ Syslogs are not viewable on Controller. Please deploy an external service such a
 Is Splunk Cloud supported?
 -------------------------------------
 
-At this time, we only support Splunk Enterprise 
+At this time, we support Splunk Enterprise but not Splunk Cloud
 
 How do I use a Sumologic collector which is deployed behind an Aviatrix Egress Control Gateway?
 ---------------------------------------------------------------------------------------------------------------
