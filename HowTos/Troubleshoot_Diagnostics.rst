@@ -219,7 +219,7 @@ Connectivity Test
 --------------------
 
 When you select the Source Network and Destination Network, Aviatrix Controller will spin up two instances 
-and run a ping test. 
+and run a connectivity test. After the test completes, you can re-run the test. There is only one pair of test end point is valid at any given time. If you want to test a different end points, delete the current and launch a new pair. 
 
 
 
