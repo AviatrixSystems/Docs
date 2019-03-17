@@ -318,6 +318,8 @@ Is there 2FA support to log in to the console?
 
 Yes. In addition to password login, DUO authentication and LDAP are supported.
 
+Starting from Release 4.2, SAML authentication is supported to login to the Controller console. 
+
 Can there be read only account for operation team?
 ---------------------------------------------------
 
@@ -340,6 +342,7 @@ Phase 2 Encryption           AES-256-CBC, AES-192-CBC, AES-128-CBC, AES-128-GCM-
 =======================      ==========
 
 SSL VPN encryption algorithm is AES-256-CBC. 
+
 SSL VPN authentication algorithm is SHA512.
 
 
@@ -361,10 +364,11 @@ There are a couple of other differences regarding IKEv2 has a better support for
 How to encrypt Aviatrix Controller and gateway EBS volume?
 ------------------------------------------------------------
 
-You can follow the `instructions here  <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller and gateway EBS volume.
+You can follow the `instructions here  <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller.
 
 For automation, you can reference our `python script on github repository. <https://github.com/AviatrixSystems/EBS-encryption>`_   
 
+Starting Release 4.2, Aviatrix gateway EBS volume can be encrypted from the Controller console. 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
