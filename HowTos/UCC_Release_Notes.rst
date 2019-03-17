@@ -8,13 +8,14 @@ R4.2 (coming soon)
 1. Networking
 ----------------
 
-- **Transit DMZ for Egress Traffic Inspection** provides the capability to inspect egress bound traffic in a central DMZ VPC or security VPC.   
+- **Transit DMZ for Egress Traffic Inspection** provides the networking capability to route Internet bound egress traffic from Spoke VPCs to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "Egress through Firewall".  
 
-- **Transit DMZ for East-West Traffic Inspection** allows you to inspect VPC to VPC traffic through a central DMZ VPC or security VPC. 
+- **Transit DMZ for East-West Traffic Inspection** provides the networking capability to route VPC to VPC traffic to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "East-West Traffic Inspection".
 
-- **BGP Filtering From Learned Routes** allows you to selectively propagate on-prem routes to Spoke VPCs. When applied to the Aviatrix Transit Gateway, all spoke VPCs are filtered by the same rules. 
+- **BGP Filtering From Learned Routes** allows you to selectively propagate on-prem routes to Spoke VPCs. When applied to the Aviatrix Transit Gateway, all spoke VPCs are filtered by the same rules. One use case of this feature is for a Spoke VPC that is cus
+tomer facing and you do not wish your customer to access all your on-prem network CIDRs. For more details, refer to `this link. <https://docs.aviatrix.com/HowTos/gateway.html#filter-routes-to-spoke-vpc>`_
 
-- **Spoke VPC CIDR Customization** allows you to specify what to program to a Spoke VPC route tables and ignore any learned routes from on-prem.
+- **Spoke VPC CIDR Customization** allows you to specify what to program to a Spoke VPC route tables and ignore any learned routes propagated from on-prem. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. To learn more, refer to `this link. <https://docs.aviatrix.com/HowTos/gateway.html#customize-spoke-vpc-routes>`_
 
 2. Multi Cloud
 ----------------
@@ -31,13 +32,14 @@ R4.2 (coming soon)
 
 - **Alert for New Release** sends email to the Controller admin email address to alert you when a major release becomes available. 
 
-- **Aviatrix Gateway EBS Volume Encryption** allows you to encrypt the gateway EBS volume after the gateway is launched. 
+- **Aviatrix Gateway EBS Volume Encryption** allows you to encrypt the AWS gateway EBS volume after the gateway is launched. Learn more at this `link. <https://docs.aviatrix.com/HowTos/gateway.html#encrypt-ebs-volume>`_ 
 
-- **Connectivity test** From the Aviatrix Controller you can launch two test instances and run a ping test in under two minutes time.
+- **Connectivity test** From the Aviatrix Controller you can launch two test instances and run a connectivity test in under two minutes time. One use case is to test connectivity two Spoke VPCs attached to Aviatrix Transit Gateway or AWS Transit Gateway. To use, go to the Controller console, Troubleshoot -> Diag
+nostics -> Network Validation.
 
 4. Security
 -------------
-- **FQDN AZ Affinity Load Balancing**  
+- **FQDN AZ Affinity Load Balancing** is an optimization to avoid cross AZ traffic charge. If you have two private route tables where each route table is associated with subnets in a separate AZ, the Aviatrix Controller programs the default route (0.0.0.0) in each route table to point to the Aviatrix gateway deployed in the that AZ. Note if you have more than two private route tables and more than two AZs of subnets, cross AZ traffic is still not avoidable for some private subnets.  
 
 R4.1.946 (Patch release of 4.1 on 2/21/2019)
 ===============================================

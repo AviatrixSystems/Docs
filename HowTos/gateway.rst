@@ -550,17 +550,26 @@ for high performance Transit Network.
 Encrypt EBS Volume
 ---------------------
 
-This only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to Encrypt Volume, click Encrypt. 
+This feature only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to Encrypt Volume, click Encrypt. Note the encrypting  action takes up to 15 minutes. 
 
 Customize Spoke VPC Routes
 ------------------------------
 
-Coming soon. 
+This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. 
+It overrides any on-prem propagated network CIDRs. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. 
+
+When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables are customized. 
+
+When it is enabled on an Spoke gateway, only that gateway VPC route table is applied. This feature does not apply to AWS Transit Gateway (TGW)  attached Spoke VPCs.
 
 Filter Routes to Spoke VPC
 ------------------------------
 
-Coming soon. 
+This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The list of comma separated CIDRs entered in the input field will be filtered out. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
+
+When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will filter on the configured routes. 
+
+When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs. 
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
