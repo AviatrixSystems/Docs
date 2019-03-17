@@ -12,7 +12,11 @@ Aviatrix Controller Login with SAML Authentication
 1.  Overview
 ------------
 
-This guide provides an example on how to configure Aviatrix Controller to authenticate.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Okta) for authentication.
+This guide provides an example on how to configure Aviatrix Controller to authenticate to an IDP.  When SAML is 
+used for Controller access authentication, your Aviatrix controller acts as the 
+Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Okta) for authentication.
+
+For Okta specific example, follow the instructions in `Aviatrix Controller Login on Okta IDP <https://docs.aviatrix.com/HowTos/Controller_Login_Okta_SAML_Config.html>`_.
 
 2. Pre-Deployment Checklist
 -----------------------------
@@ -65,7 +69,7 @@ Create a SAML 2.0 app with the following settings:
 #. Name ID format = Unspecified
 #. Application username = IDP username
 
-.. note::
+.. important::
 
    After step 3.3, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
 
@@ -120,7 +124,8 @@ After creating the IDP, you need to retrieve IDP Metadata either in URL or text 
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Hostname                                        |
    +-------------------------+-------------------------------------------------+
-   | Access                  | Use either Admin or read-only                   |
+   | Access                  | Select admin.                                   |
+   |                         | read_only is not supported in this release.     |.
    |                         |                                                 |
    +-------------------------+-------------------------------------------------+
 
@@ -161,8 +166,6 @@ After creating the IDP, you need to retrieve IDP Metadata either in URL or text 
           If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
 
 
-
-OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |logoAlias1| replace::  Aviatrix logo with red background
 .. _logoAlias1: https://www.aviatrix.com/news/press-kit/logo-aviatrix.png

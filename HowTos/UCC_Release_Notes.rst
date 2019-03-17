@@ -27,7 +27,7 @@ R4.2 (coming soon)
 3. Operation
 -------------
 
-- **Controller SAML Authentication** Aviatrix administrators can authenticate to the Controller by SAML authentication.
+- **Controller SAML Authentication** Aviatrix administrators can authenticate to the Controller by SAML authentication on an IDP. Follow the `instructions <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_ to setup authentication with SAML. 
 
 - **Alert for New Release** sends email to the Controller admin email address to alert you when a major release becomes available. 
 

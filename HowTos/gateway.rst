@@ -547,6 +547,11 @@ Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher 
 For more infor, read `this document <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn all about Aviatrix Insane Mode
 for high performance Transit Network.
 
+Encrypt EBS Volume
+---------------------
+
+This only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to Encrypt Volume, click Encrypt. 
+
 Customize Spoke VPC Routes
 ------------------------------
 
