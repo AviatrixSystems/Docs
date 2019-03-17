@@ -328,7 +328,7 @@ Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select 
 Is Aviatrix FIPS 140-2 compliant?
 ----------------------------------
 
-Aviatrix supports both IPSEC and SSL with encryption algorithms that are FIPS 140-2 compliant. 
+FIPS 140-2 approved crypto functions can be found in `this link. <https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402annexa.pdf>`_. According to this document, the following algorithms that are supported on Aviatrix are FIPS 140-2 compliant. 
 
 =======================      ==========
 **IPSEC algorithms**         **Value**
