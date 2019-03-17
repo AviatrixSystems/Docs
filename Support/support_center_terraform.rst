@@ -31,7 +31,7 @@ What if my Terraform scripts are timing out?
 
 If you run into timeout issues, please use the IP address of the controller instead of the hostname of the controller and let us know if that helps. Please open a ticket by sending an email to support@aviatrix.com
 
-Terraform sends all the operations to the controller at the same time, so if you see any issues during large operations - try serializing the operations by setting the value for parallelism to 1. More information at  https://www.terraform.io/docs/commands/apply.html#parallelism-n
+Terraform sends all the operations to the controller at the same time, so if you see any issues during large operations - try serializing the operations by setting the value for parallelism to 1. More information at  https://www.terraform.io/docs/commands/apply.html#parallelism-n. Please do let us know if you run into this issue, by sending an email to support@aviatrix.com
 
 
 How do I debug Terraform issues?
