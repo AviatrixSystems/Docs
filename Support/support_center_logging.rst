@@ -47,3 +47,13 @@ Aviatrix controller will send an email alert to the admin when a tunnel or gatew
 * `SumoLogic Alerts <https://help.sumologic.com/Dashboards-and-Alerts/Alerts/03-Create-a-Real-Time-Alert>`_
 * `Datadog Alerts <https://docs.datadoghq.com/monitors/>`_
 * `Cloudwatch Alarms <https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html>`_.
+
+
+How can I get my logs into AWS S3 Bucket?
+--------------------------------------------------------------------------
+
+There are a few ways to get your logs into S3 bucket. Here are a couple
+  * Send `logs to rsyslog and then onto S3 <https://docs.aviatrix.com/HowTos/ForwardingLogs.html>`_
+  * Send `logs to Cloudwatch <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_ and then `onto S3 <https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3Export.html>`_ 
+
+
