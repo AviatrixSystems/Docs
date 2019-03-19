@@ -44,31 +44,31 @@ Transit Cconnection to Cisco Router over the internet.
    :width: 7.00000 in
    :height: 5.00000 in
 .. |image3| image:: ./S2C_TGW_CiscoRouter_media/cisco3.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
 .. |image4| image:: ./S2C_TGW_CiscoRouter_media/cisco4.png
    :width: 7.00000 in
    :height: 5.00000 in
 .. |image5| image:: ./S2C_TGW_CiscoRouter_media/cisco5.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
 .. |image6| image:: ./S2C_TGW_CiscoRouter_media/cisco6.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
 .. |image7| image:: ./S2C_TGW_CiscoRouter_media/cisco7.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
 .. |image8| image:: ./S2C_TGW_CiscoRouter_media/cisco8.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
 .. |image9| image:: ./S2C_TGW_CiscoRouter_media/cisco9.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
 .. |image10| image:: ./S2C_TGW_CiscoRouter_media/cisco10.png
-   :width: 7.00000 in
+   :width: 12.00000 in
    :height: 5.00000 in
-.. |image10| image:: ./S2C_TGW_CiscoRouter_media/cisco11.png
-   :width: 7.00000 in
+.. |image11| image:: ./S2C_TGW_CiscoRouter_media/cisco11.png
+   :width: 12.00000 in
    :height: 5.00000 in
 
 
