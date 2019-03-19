@@ -67,52 +67,11 @@ Example for Unix/Linux:
 Line 3 can also be made permanent:
 Edit ~/.bash_profile by appending line "export GOPATH=$HOME/go", and then run the command ``source ~/.bash_profile`` for the GOPATH path to take effect.
 
-For Windows, GOPATH and other environment variables can be edited from System Properties.
+For Windows, GOPATH and other environment variables can be edited from System Properties. Also note that you might have to either reboot your windows machine or at least close the currend cmd window and open a new one to ensure that the environment variables are set. You can check by running "echo %GOPATH%"
 
 
-4.2 Download the `Aviatrix Terraform Provider repo <https://github.com/golang/go/wiki/SettingGOPATH>`_:
+4.2 For **downloading, building and setting up the Aviatrix Terraform Provider,** please follow `these instructions <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_
 
-::
-
-  $ mkdir -p $GOPATH/src/github.com/terraform-providers
-  $ cd $GOPATH/src/github.com/terraform-providers
-  $ git clone https://github.com/AviatrixSystems/terraform-provider-aviatrix
-
-To clone on Windows:
-
-::
-
-  mkdir %GOPATH%\src\github.com\terraform-providers\terraform-provider-aviatrix
-  cd %GOPATH%\src\github.com\terraform-providers\terraform-provider-aviatrix
-  git clone https://github.com/AviatrixSystems/terraform-provider-aviatrix
-
-
-
-4.3 Build the Provider:
-
-::
-
-  $ cd $GOPATH/src/github.com/terraform-providers/terraform-provider-aviatrix
-  $ make fmt
-  $ make build
-
-to build on Windows, run:
-
-::
-
-  cd %GOPATH%\src\github.com\terraform-providers\terraform-provider-aviatrix
-  go fmt
-  go install
-
-4.4 Activate the Provider by adding the following to ~/.terraformrc. If the file ~/.terraformrc does not exist, you need to create one by adding the text below:
-
-::
-
-  providers {
-    "aviatrix" = "$GOPATH/bin/terraform-provider-aviatrix"
-  }
-
-For Windows, the file should be at '%APPDATA%\terraform.rc'. Do not change $GOPATH to %GOPATH%
 
 
 5. Prepare Aviatrix Controller
