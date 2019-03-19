@@ -19,9 +19,9 @@ R4.2 (coming soon)
 2. Multi Cloud
 ----------------
 
-- **GCP Spoke Gateway** allows you to launch a GCP gateway in the Aviatrix Next Gen Transit Network workflow.
+- **GCP Spoke Gateway** allows you to launch a GCP gateway in the Aviatrix Next Gen Transit Network workflow. To launch, follow `the Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to launch a GCP Spoke gateway. 
 
-- **GCP FQDN support** allows you to apply Aviatrix FQDN Egress Control to an Aviatrix GCP gateway. 
+- **GCP FQDN support** allows you to apply Aviatrix FQDN Egress Control to an Aviatrix GCP gateway. Follow `the instructions for FQDN Control <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to get started.
 
 
 3. Operation
@@ -33,8 +33,7 @@ R4.2 (coming soon)
 
 - **Aviatrix Gateway EBS Volume Encryption** allows you to encrypt the AWS gateway EBS volume after the gateway is launched. Learn more at this `link. <https://docs.aviatrix.com/HowTos/gateway.html#encrypt-ebs-volume>`_ 
 
-- **Connectivity test** From the Aviatrix Controller you can launch two test instances and run a connectivity test in under two minutes time. One use case is to test connectivity two Spoke VPCs attached to Aviatrix Transit Gateway or AWS Transit Gateway. To use, go to the Controller console, Troubleshoot -> Diag
-nostics -> Network Validation.
+- **Connectivity test** From the Aviatrix Controller you can launch two test instances and run a connectivity test in under two minutes time. One use case is to test connectivity two Spoke VPCs attached to Aviatrix Transit Gateway or AWS Transit Gateway. To use, go to the Controller console, Troubleshoot -> Diagnostics -> Network Validation.
 
 4. Security
 -------------
