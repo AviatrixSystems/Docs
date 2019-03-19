@@ -140,7 +140,7 @@ Click **Single sign-on** below **Manage**
 
 #. Enter **user.mail** for **User Identifier**
 #. Click **View and edit all other user attributes**
-#. Add the following **SAML Token Attributes**
+#. Add the following **SAML Token Attributes** (please find the right values from your Azure user details to match firstname, lastname and email). You can also add "Profle" and send the profile name of a VPN profile - at this time,we only support attaching one profile per user via SAML
 
    +------------------+-----------------------------------------+------------+
    | NAME             | VALUE                                   | NAMESPACE  |
@@ -151,6 +151,7 @@ Click **Single sign-on** below **Manage**
    +------------------+-----------------------------------------+------------+
    | Email            | user.mail                               | (blank)    |
    +------------------+-----------------------------------------+------------+
+ 
 
    |imageUserAttrs|
    
