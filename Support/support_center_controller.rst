@@ -32,7 +32,7 @@ Miscellaneous
 Does Aviatrix support High Availability?
 ------------------------------------------
 
-We have HA built into our system - for Gateway HA, please check out https://docs.aviatrix.com/Solutions/gateway_ha.html. Our Transit HA also has HA designed in https://docs.aviatrix.com/HowTos/transitvpc_workflow.html. 
+We have HA built into our system through `Gateway HA <https://docs.aviatrix.com/Solutions/gateway_ha.html>`_ and `Transit HA <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
 `Aviatrix Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ does not support HA in multiple regions, but works across multiple AZ's. More information `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/blob/master/README.md>`_
 
