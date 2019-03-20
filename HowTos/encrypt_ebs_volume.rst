@@ -17,7 +17,7 @@ This feature is used to encrypt your gateway EBS volume.
 Prerequisite
 --------------
 
-You need to add below rules in to into your IAM role policies (aviatrix-app-policy). 
+You need to add below rules into your IAM role policies ("aviatrix-app-policy"). 
 
 
         { 
@@ -49,14 +49,15 @@ You need to add below rules in to into your IAM role policies (aviatrix-app-poli
 
         - Step2: Select "Roles", then double click the role name "aviatrix-role-app." 
 
-        |image_2_select AviatrixAppPolicyEnditPolicy|
+        |image_2_selectAviatrixAppPolicyEnditPolicy|
          
         - Step3:  Click "JSON", then put the rules into the JSON file.  Then click "Review policy". 
-        |image_3_selectJSON AddRulesClickReviewPolicy|
+        |image_3_selectJSONAddRulesClickReviewPolicy|
 
         - Step4: Click "Save changes" to finish the prerequisite. 
-        |image_4_save Changes|
+        |image_4_saveChanges|
 
+         Then you already added the IAM rules.
 
 How to encrypt gateway EBS volume via Aviatrix controller?  
 -----------------------------------------------------------
@@ -93,15 +94,15 @@ How to encrypt gateway EBS volume via Aviatrix controller?
     You can see that the gateway EBS volume was encrypted. Also, the previous nonencrypted volume will be kept.
 
 
-.. |image_1_IAMRolesClickAviatrixroleapp| image:: Encrypt_Volume_media/image_1_IAMRolesClickAviatrixroleapp.png
-.. |image_2_selectAviatrixAppPolicyEnditPolicy| image:: Encrypt_Volume_media/image_2_selectAviatrixAppPolicyEnditPolicy.png
-.. |image_3_selectJSONAddRulesClickReviewPolicy| image:: Encrypt_Volume_media/image_3_selectJSONAddRulesClickReviewPolicy.png
-.. |image_4_saveChanges| image:: Encrypt_Volume_media/image_4_saveChanges.png
+.. |image_1_IAMRolesClickAviatrixroleapp| image:: Encrypt_Volume_media/image_1_IAMRolesClickAviatrixroleapp.PNG
+.. |image_2_selectAviatrixAppPolicyEnditPolicy| image:: Encrypt_Volume_media/image_2_selectAviatrixAppPolicyEnditPolicy.PNG
+.. |image_3_selectJSONAddRulesClickReviewPolicy| image:: Encrypt_Volume_media/image_3_selectJSONAddRulesClickReviewPolicy.PNG
+.. |image_4_saveChanges| image:: Encrypt_Volume_media/image_4_saveChanges.PNG
 
-.. |image_11_selectGwEdit| image:: Encrypt_Volume_media/image_11_selectGwEdit.png
-.. |image_12_checkStatus| image:: Encrypt_Volume_media/image_12_checkStatus.png
-.. |image_13_scrollDownToEncryptVolume| image:: Encrypt_Volume_media/image_13_scrollDownToEncryptVolume.png
-.. |image_14_checkEncryptResult| image:: Encrypt_Volume_media/image_14_checkEncryptResult.png
-.. |image_15_checkEncryptResultOnAws| image:: Encrypt_Volume_media/image_15_checkEncryptResultOnAws.png
+.. |image_11_selectGwEdit| image:: Encrypt_Volume_media/image_11_selectGwEdit.PNG
+.. |image_12_checkStatus| image:: Encrypt_Volume_media/image_12_checkStatus.PNG
+.. |image_13_scrollDownToEncryptVolume| image:: Encrypt_Volume_media/image_13_scrollDownToEncryptVolume.PNG
+.. |image_14_checkEncryptResult| image:: Encrypt_Volume_media/image_14_checkEncryptResult.PNG
+.. |image_15_checkEncryptResultOnAws| image:: Encrypt_Volume_media/image_15_checkEncryptResultOnAws.PNG
 
 .. disqus::
