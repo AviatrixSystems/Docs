@@ -102,13 +102,13 @@ as shown below.
 
 |transit_to_onprem|
 
-==========================================      ================  ===============  ==================
-**Transit Gateway Connect Type**                 **Performance**   **HA**           Deployment notes
-==========================================      ================  ===============  ==================
-AWS VGW                                         1.25Gbps          Active/Active    VGW should be detached. Use the `instruction here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ to build encryption between VGW and on-prem router. 
-External Device                                 1.25Gbps          Active/Standby   VGW should be attached. Aviatrix Transit Gateway establishes BGP + IPSEC with on-prem router. 
-CloudN                                          10Gbps            Active/Standby   VGW should be attached. Aviatrix Transit Gateway established BGP + IPSEC with on-prem CloudN.
-==========================================      ================  ===============  ==================
+==========================================      ================  ===============  ===============   ==================
+**Transit Gateway Connect Type**                 **Performance**   **HA**           Route Limit       Deployment notes
+==========================================      ================  ===============  ===============   ==================
+AWS VGW                                         1.25Gbps          Active/Active    100                VGW should be detached. Use the `instruction here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ to build encryption between VGW and on-prem router. 
+External Device                                 1.25Gbps          Active/Standby   Unlimited          VGW should be attached. Aviatrix Transit Gateway establishes BGP + IPSEC with on-prem router. 
+CloudN                                          10Gbps            Active/Standby   Unlimited          VGW should be attached. Aviatrix Transit Gateway established BGP + IPSEC with on-prem CloudN.
+==========================================      ================  ===============  ===============   ==================
 
 3.1 External Device
 ^^^^^^^^^^^^^^^^^^^^^
