@@ -70,8 +70,7 @@ Transit Connection to Cisco Router over the internet.
     :width: 12.00000 in
     :height: 5.00000 in
 .. |image12| image:: ./S2C_TGW_CiscoRouter_media/cisco12.png
-    :width: 12.00000 in
-    :height: 5.00000 in
+    :width: 100%
 
 
-
+.. disqus::
