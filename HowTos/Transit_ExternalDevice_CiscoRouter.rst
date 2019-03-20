@@ -1,5 +1,5 @@
 =========================================================
-Transit Cconnection to Cisco Router over the internet.
+Transit Connection to Cisco Router over the internet.
 =========================================================
 
 1. From the Controller go to Transit Network -> Setup -> Launch a Transit VPC GW.
@@ -17,24 +17,27 @@ Transit Cconnection to Cisco Router over the internet.
    select generic and Download Configuration and configure on the router accordingly.
 
    |image3|
+   The following is a sample configuration based on the site2cloud configuration above.
+   |image4|
+
 4. configure the Cisco router as follows:
     a. ISAKMP configuration and IPSEC configuration
 
-   |image4|
    |image5|
+   |image6|
 
     b. Interface and Tunnel Configuration
-   |image6|
    |image7|
-    c. BGP configuration.
    |image8|
+    c. BGP configuration.
+   |image9|
     Note: The tunnel IP addresses are configured accordingly with the configuration file downloaded from above.
 5. After configuring the router the tunnel should change the status from down to up.
-   |image9|
+   |image10|
 6. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and enter the Transit GW name
    and select any Command from the predefined Show list to verify the BGP Routes.
-   |image10|
    |image11|
+   |image12|
 
 
 .. |image1| image:: ./S2C_TGW_CiscoRouter_media/cisco1.png
@@ -68,6 +71,9 @@ Transit Cconnection to Cisco Router over the internet.
    :width: 12.00000 in
    :height: 5.00000 in
 .. |image11| image:: ./S2C_TGW_CiscoRouter_media/cisco11.png
+   :width: 12.00000 in
+   :height: 5.00000 in
+.. |image12| image:: ./S2C_TGW_CiscoRouter_media/cisco12.png
    :width: 12.00000 in
    :height: 5.00000 in
 
