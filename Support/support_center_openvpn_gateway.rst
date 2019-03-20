@@ -91,6 +91,15 @@ How can I scale my VPN user setup?
 Deploy your Aviatrix OpenVPN Gateway's behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB, when needed, and don't have to worry about losing IP address and having to reissue certificates to all of your VPN users.
 
 
+How can the OpenVPN made Highly Available?
+-----------------------------------------------
+
+We have HA built into our OpenVPN system. By default the OpenVPN gateways are deployed behind a `Load Balancer <https://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_ in AWS. When you deploy additional OpenVPN gateways in the same VPC, they are deployed behind the same ELB, so the system becomes HA and resilient to any failures.
+
+Here are `instructions <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_ to use LB with UDP OpenVPN sessions.
+
+
+
 What is the recommended VPN CIDR Block (default is 192.168.43.0/24)?
 ------------------------------------------------------------------------------
 
