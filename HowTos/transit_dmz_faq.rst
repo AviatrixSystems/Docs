@@ -82,6 +82,15 @@ How to setup Transit DMZ?
 Follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ 
 for a step by step guide to setup. 
 
+How to enable East-West Inspection for encrypted transit?
+----------------------------------------------------------
+
+If you deploy the transit solution with Spoke VPC deployed with Aviatrix gateways, 
+follow the two steps below to enable East-West (VPC to VPC) traffic inspection by Transit DMZ. 
+
+ - Enable Connected Transit Mode. Go to Transit Network -> Advanced Config -> Edit Transit to enable Connected Transit.
+ - Enable East-West Traffic Inspection. Go to Transit DMZ -> Advanced, click the Skewer of the Transit DMZ display, scroll down to East-West Traffic Inspection. Click Enable. 
+
 .. |transit_dmz| image:: transit_dmz_media/transit_dmz.png
    :scale: 30%
 
