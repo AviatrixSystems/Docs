@@ -16,6 +16,8 @@ R4.2.634 (3/19/2019)
 
 - **Spoke VPC CIDR Customization** allows you to specify what to program to a Spoke VPC route tables and ignore any learned routes propagated from on-prem. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. To learn more, refer to `this link. <https://docs.aviatrix.com/HowTos/gateway.html#customize-spoke-vpc-routes>`_
 
+- **Palo Alto VM-Series instance launch** can be done from the Aviatrix Controller console. This simplifies the VM-Series integration into Transit DMZ. To launch, go to Transit DMZ -> Preparation, follow the instructions to launch VM-Series instance. Note you must first subscribe the VM-Series AMI from AWS Marketplace. 
+
 2. Multi Cloud
 ----------------
 
