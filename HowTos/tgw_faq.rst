@@ -16,7 +16,7 @@ What is the Next Gen Transit for AWS?
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
  #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and feature rich hybrid network for connecting to on-prem.
  #. Support Bring Your Own Firewall to the edge VPC for inline traffic inspection (`Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.)
- #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs Azure Spokes VNet.
+ #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs and Azure Spokes VNet.
 
 The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
 
@@ -291,6 +291,24 @@ Aviatrix gateway deployed at the edge/transit VPC provides the following values:
  - Connects multi-region Transit Gateway deployment.
  - Supports Transit DMZ architecture by inserting third party firewalls at the edge/transit VPC.
  - Supports 10Gbps Transit network throughput.
+
+When a VPC is attached to a TGW, why can't I simply program the default route in VPC route table to point to the TGW?
+----------------------------------------------------------------------------------------------------------------------
+
+In some cases, you absolutely can. For example, if you have a group of VPCs that need to be connected to each other, 
+you can attach each VPC to the same TGW route table with propagation enabled. Then program each VPC route table 
+with the default route (0.0.0.0/0) to point to TGW.
+
+But in other cases you may not. Using the above example, if there is public subnet in a Spoke VPC, then you cannot simply 
+program each route table with the default route pointing to TGW, as a public subnet already must have its default route
+point to IGW. 
+
+Even a Spoke VPC route table for private subnet may already have the default route point to an AWS NAT gateway. This 
+is quite a common situation and it happens, you cannot program the default route to TGW. 
+
+However in the above example scenarios, you maybe able to program RFC 1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)
+routes of the Spoke VPCs to point to TGW. This is a viable solution you can use to address the issues mentioned above and
+works in a lot of situations.
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
