@@ -18,3 +18,7 @@ Should I use Black lists or White lists for Egress FQDN Control?
 White lists should specifically be used for access to applications or access to servers. If you are browsing the WEB/internet, then you should be using black lists since a lot of webpages refer or load content from other websites, or use Discovery feature to discover the websites you are surfing and use that to configure your white lists https://docs.aviatrix.com/HowTos/fqdn_discovery.html
 
 
+Which policies are executed first - egress or firewall?
+----------------------------------------------------------------------------
+
+The policies for 80/443 are executed first followed by the other policies
