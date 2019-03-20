@@ -49,18 +49,6 @@ Restoring the Aviatrix Controller from a newly built instance requires access to
 Steps to Enable Controller HA
 -----------------------------
 
-.. _create_iam_user:
-
-Create IAM User
-###############
-
-This procedure relies on an existing IAM user that has access to the S3 bucket where your backups reside.
-
-.. tip::
-   Aviatrix recommends a new user that is granted access to the backup S3 bucket only.
-
-Be sure to select **Programmatic access** for **Access type** when creating the user.  Save the **Access key ID** and **Secret access key** for later use.
-
 Launch CloudFormation Stack
 ###########################
 
@@ -86,14 +74,6 @@ Launch CloudFormation Stack
    +-------------------------------+------------------------------------------+
    | Enter S3 Bucket which will be | Name of S3 bucket that stores the        |
    | used to store backup files.   | backup files from the AVX Controller.    |
-   +-------------------------------+------------------------------------------+
-   | Enter AWS Access Key with     | Access key ID for the IAM user above     |
-   | permission to access S3       |                                          |
-   | bucket.                       |                                          |
-   +-------------------------------+------------------------------------------+
-   | Enter AWS Secret Key with     | Secret access key for the IAM user       |
-   | permission to access S3       |                                          |
-   | bucket.                       |                                          |
    +-------------------------------+------------------------------------------+
    | Enter an email to receive     | Enter an email address that will be      |
    | notifications for autoscaling | notified whenever a new Controller is    |

@@ -248,6 +248,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/AviatrixAPI/multiple_approaches_to_use_aviatrix_api/multiple_approaches_to_use_aviatrix_api
    HowTos/aviatrix_apis_datacenter_extension
 
+.. _Terraform:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Terraform
+
+   HowTos/tf_aviatrix_howto
+   HowTos/aviatrix_terraform
+
 .. _Downloads:
 
 .. toctree::
@@ -285,7 +294,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_for_publicIP
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
-   HowTos/tf_aviatrix_howto
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
    HowTos/insane_poc
