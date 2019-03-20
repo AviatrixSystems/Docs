@@ -56,17 +56,16 @@ Transit Connection to Cisco Router over the internet.
    :width: 12.00000 in
    :height: 5.00000 in
 .. |image6| image:: ./S2C_TGW_CiscoRouter_media/cisco6.png
-   :width: 12.00000 in
-   :height: 5.00000 in
+   :width: 100%
 .. |image7| image:: ./S2C_TGW_CiscoRouter_media/cisco7.png
-   :width: 12.00000 in
-   :height: 5.00000 in
+    :width: 7.00000 in
+    :height: 5.50000 in
 .. |image8| image:: ./S2C_TGW_CiscoRouter_media/cisco8.png
-   :width: 12.00000 in
-   :height: 5.00000 in
+    :width: 7.00000 in
+    :height: 5.50000 in
 .. |image9| image:: ./S2C_TGW_CiscoRouter_media/cisco9.png
-   :width: 12.00000 in
-   :height: 5.00000 in
+   :width: 80%
+   :height: 80%
 .. |image10| image:: ./S2C_TGW_CiscoRouter_media/cisco10.png
    :width: 12.00000 in
    :height: 5.00000 in
