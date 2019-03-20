@@ -31,12 +31,12 @@ Example Usage
 
 Resources
 =========
-The complete documentation for all the resources are available `here <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master/website/docs/r> 
+The complete documentation for all the resources are available `here <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master/website/docs/r>`_ 
 
 
 Data Sources
 ============
-The complete documentation for all the data sources are available `here <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master/website/docs/d> 
+The complete documentation for all the data sources are available `here <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master/website/docs/d>`_ 
 
 
 
