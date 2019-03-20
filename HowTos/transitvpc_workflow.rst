@@ -95,12 +95,20 @@ Transit GW HA either.
 Although the title says to connect to AWS VGW, Starting from Release 4.1, there are three options to connect to Transit GW with BGP to on-prem network. Choose one option that meets your network requirements.  
 
  - AWS VGW (This is the default setting.)
- - Aviatrix hardware appliance CloudN
  - External Device (over Direct Connect or over Internet)
+ - Aviatrix hardware appliance CloudN
 
 as shown below. 
 
 |transit_to_onprem|
+
+==========================================      ================  ===============  ==================
+**Transit Gateway Connect Type**                 **Performance**   **HA**           Deployment notes
+==========================================      ================  ===============  ==================
+AWS VGW                                         1.25Gbps          Active/Active    VGW should be detached. Use the `instruction here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ to build encryption between VGW and on-prem router. 
+External Device                                 1.25Gbps          Active/Standby   VGW should be attached. Aviatrix Transit Gateway establishes BGP + IPSEC with on-prem router. 
+CloudN                                          10Gbps            Active/Standby   VGW should be attached. Aviatrix Transit Gateway established BGP + IPSEC with on-prem CloudN.
+==========================================      ================  ===============  ==================
 
 3.1 External Device
 ^^^^^^^^^^^^^^^^^^^^^
