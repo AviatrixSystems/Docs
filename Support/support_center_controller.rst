@@ -36,3 +36,11 @@ We have HA built into our system through `Gateway HA <https://docs.aviatrix.com/
 
 `Aviatrix Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ does not support HA in multiple regions, but works across multiple AZ's. More information `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/blob/master/README.md>`_
 
+
+Does Controller send alerts when Gateway status changes?
+--------------------------------------------------------------------
+
+Aviatrix Controller monitors the gateways and tunnels and whenever there is a state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an invalid email address.
+
+As an alternative, you can also set Cloudwatch Event Alerts in AWS to be alerted when Gateway/Controller Instances are Started or Stopped.
+
