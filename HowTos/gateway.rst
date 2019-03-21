@@ -565,7 +565,8 @@ When it is enabled on an Spoke gateway, only that gateway VPC route table is app
 Filter Routes to Spoke VPC
 ------------------------------
 
-This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The list of comma separated CIDRs entered in the input field will be filtered out. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
+This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The filtered out list of CIDRs should be entered as input. This list of
+CIDRs should be comma separated. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
 
 When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will filter on the configured routes. 
 
