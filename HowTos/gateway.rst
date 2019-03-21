@@ -550,7 +550,7 @@ for high performance Transit Network.
 Encrypt EBS Volume
 ---------------------
 
-This feature only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to Encrypt Volume, click Encrypt. Note the encrypting  action takes up to 15 minutes. 
+This feature only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to Encrypt Volume, click Encrypt. Note the encrypting  action takes up to 15 minutes. `more detail <https://docs.aviatrix.com/HowTos/encrypt_ebs_volume.html>`_
 
 Customize Spoke VPC Routes
 ------------------------------

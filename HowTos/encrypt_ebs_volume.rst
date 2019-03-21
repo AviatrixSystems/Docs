@@ -49,55 +49,51 @@ How to add IAM rules?
 
 |image_1_IAMRolesClickAviatrixroleapp|
 
-|
 
 **Step2: Select "Roles", then double click the role name "aviatrix-role-app."** 
 
 |image_2_selectAviatrixAppPolicyEnditPolicy|
 
-|
 
 **Step3:  Click "JSON", then put the rules into the JSON file.  Then click "Review policy".**
 
 |image_3_selectJSONAddRulesClickReviewPolicy|
 
-|
 
 **Step4: Click "Save changes" to finish the prerequisite.**
 
 |image_4_saveChanges|
 
-|
 
 **Step5: Then you already added the IAM rules.**
+
+|
+
+|
 
 How to encrypt gateway EBS volume via Aviatrix controller?  
 -----------------------------------------------------------
 
 **Step1: Go to your Aviatrix controller page, and select "Gateway" page.**
 
-|
 
 **Step2: Select the gateway which you want to encrypt, then click "Edit" button.**
 
 |image_11_selectGwEdit|
 
-|
 
 **Step3: Check the current status of Gateway EBS volume.**
 
 |image_12_checkStatus|
 
-|
 
 **Step4: Scroll dowm to "Encrypt Volume" and Click "Encrypt" button to encrypt the EBS. Please wait for the encryption process complete.** 
 
 |image_13_scrollDownToEncryptVolume|
 
-.. note::
-*The controller will use Default* **"AWS Managed Keys"** *to encrypt your EBS volume.*
 
-*Otherwise, you can use your* **"Customer Managed Key ID"** *to encrypt the gateway EBS volume.* `How to create AWS Customer Managed Key ID?  <http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-keys-api>`_
+.. note::
+   The controller will use Default **"AWS Managed Keys"** to encrypt your EBS volume. Otherwise, you can use your* **"Customer Managed Key ID"** to encrypt the gateway EBS volume. `How to create AWS Customer Managed Key ID?  <http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-keys-api>`_
 
 |
 
@@ -105,14 +101,14 @@ How to encrypt gateway EBS volume via Aviatrix controller?
 
 |image_14_checkEncryptResult|
 
-|
 
 **Step6: You can check the result on your AWS console. It's on EC2 -> Volume page.**
 
 |image_15_checkEncryptResultOnAws|
 
+
 .. note::
-*You can see that the gateway EBS volume was encrypted. Also, the previous unencrypted volume will be kept.*
+   You can see that the gateway EBS volume was encrypted. Also, the previous unencrypted volume will be kept.
 
 |
 
