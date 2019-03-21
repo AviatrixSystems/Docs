@@ -20,8 +20,7 @@ Transit Connection to Cisco Router over the internet.
    The following is a sample configuration based on the site2cloud configuration above.
    |image4|
 
-4. configure the Cisco router as follows:
-   a.Apply the following IOS configuration to your router:
+4. Apply the following IOS configuration to your router:
 
    |image5|
     Note: The tunnel IP addresses are configured accordingly with the configuration file downloaded from above.
