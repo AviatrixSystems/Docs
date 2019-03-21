@@ -25,6 +25,8 @@ Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-av
   * Aviatrix Controller Release 3.5: Use the `Github UserConnect-3.5 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-3.5>`_
   * Aviatrix Controller Release 4.0: Use the `Github UserConnect-4.0 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.0>`_ 
   * Aviatrix Controller Release 4.1: Use the `Github master branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master>`_ 
+  * Aviatrix Controller Release 4.2: Use the `Github master branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master>`_ 
+
 
 What if my Terraform scripts are timing out?
 ----------------------------------------------------------------------
