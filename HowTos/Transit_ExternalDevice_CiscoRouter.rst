@@ -8,7 +8,7 @@ Transit Connection to Cisco Router over the internet.
 
 2. Connect the transit VPC GW to the Cisco Router. Go to Transit Network -> Setup -> Connect to VGW/External Device.
    select External Device and input the following parameters.
-      a. BGP Local AS number:   ASN of the transit VPC GW
+      a. BGP Local AS number: ASN of the transit VPC GW
       b. BGP Remote AS number: ASN of the Cisco CSR
       c. Remote Gateway IP Address: Cisco WAN Public ip.
 
@@ -21,23 +21,17 @@ Transit Connection to Cisco Router over the internet.
    |image4|
 
 4. configure the Cisco router as follows:
-    a. ISAKMP configuration and IPSEC configuration
+   a.Apply the following IOS configuration to your router:
 
    |image5|
-   |image6|
-
-    b. Interface and Tunnel Configuration
-   |image7|
-   |image8|
-    c. BGP configuration.
-   |image9|
     Note: The tunnel IP addresses are configured accordingly with the configuration file downloaded from above.
 5. After configuring the router the tunnel should change the status from down to up.
-   |image10|
-6. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and enter the Transit GW name
-   and select any Command from the predefined Show list to verify the BGP Routes.
-   |image11|
-   |image12|
+   |image6|
+6. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the
+   dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
+
+   |image7|
+   |image8|
 
 
 .. |image1| image:: ./S2C_TGW_CiscoRouter_media/cisco1.png
@@ -53,24 +47,12 @@ Transit Connection to Cisco Router over the internet.
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image5| image:: ./S2C_TGW_CiscoRouter_media/cisco5.png
-    :width: 12.00000 in
-    :height: 5.00000 in
+   :width: 100%
 .. |image6| image:: ./S2C_TGW_CiscoRouter_media/cisco6.png
     :width: 100%
 .. |image7| image:: ./S2C_TGW_CiscoRouter_media/cisco7.png
     :width: 100%
 .. |image8| image:: ./S2C_TGW_CiscoRouter_media/cisco8.png
-    :width: 100%
-.. |image9| image:: ./S2C_TGW_CiscoRouter_media/cisco9.png
-    :width: 100%
-.. |image10| image:: ./S2C_TGW_CiscoRouter_media/cisco10.png
-    :width: 12.00000 in
-    :height: 5.00000 in
-.. |image11| image:: ./S2C_TGW_CiscoRouter_media/cisco11.png
-    :width: 12.00000 in
-    :height: 5.00000 in
-.. |image12| image:: ./S2C_TGW_CiscoRouter_media/cisco12.png
-    :width: 100%
 
 
 .. disqus::
