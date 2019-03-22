@@ -25,6 +25,15 @@ features that you want them to perform.
 Transit DMZ decouples networking functions and security functions. There is no IPSEC tunnels between the Aviatrix 
 Transit GW and the firewall appliances, thus simplifying firewall deployment, maximizing firewall appliance performance and allowing them to scale independently.  
 
+What is the problem with deploying firewall instances with ECMP?
+------------------------------------------------------------------
+
+AWS Transit Gateway (TGW) supports VPN with ECMP load balancing. With is capability, you can launch multiple firewall instances in a load balanced fashion 
+for Egress Inspection and VPC to VPC traffic inspection. The problem with this deployment is performance. The IPSEC tunnel limits each firewall instance
+to be capped at 1Gbps. When this architecture is deployed for VPC to VPC inspection, traffic goes through VGW (the other end of the IPSEC tunnel) twice, 
+further reducing its throughput to 400Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is 
+much lower than what firewall instances can do without IPSEC tunnel. 
+
 Can Transit DMZ work with Transit VPC?
 ---------------------------------------
 
