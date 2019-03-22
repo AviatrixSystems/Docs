@@ -142,3 +142,12 @@ How can I customize the email that is sent out when a new VPN user is added?
 --------------------------------------------------------------------------------------------
 
 You can customize the message of the email and the filename of the .ovpn file by following the instructions `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html?highlight=openvpn%20email#how-do-i-add-a-vpn-user>`_.  We will enhance this feature in future to allow you to customize the subject as well, stay tuned. 
+
+
+My Mac is not picking up the DNS server setting when connected?
+-------------------------------------------------------------------------
+
+The OpenVPN gateway will push the DNS setting to the vpn clients (by default for full tunnel and when configured for split-tunnel). If the Mac has the DNS configured manually, then it cannot be overwritten by the VPN Client. We have a couple of workarounds for this issue
+
+* Turn on the "Allow override of manually set DNS" option in the VPN Client / Advanced / Advanced
+* Change the DNS setting on your Mac so that it will be picked up from the DHCP server
