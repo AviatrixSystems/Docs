@@ -64,15 +64,16 @@ Create a SAML 2.0 app with the following settings that are based on the <aviatri
 #. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
 #. SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/<aviatrix_sp_name>
 #. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<aviatrix_sp_name>
-#. Default RelayState* =
+#. Default RelayState* = <empty>
 
 .. important::
 
    After step 3.3, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
 
    ``aviatrix_sp_name`` is ``controller`` for controller login
+   
+   RelayState is currently not used by the Aviatrix SP
 
-   the Default RelayState bust blank
    
 
 The following SAML attributes are expected:
