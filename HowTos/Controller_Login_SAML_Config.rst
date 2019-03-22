@@ -58,31 +58,28 @@ Follow these steps to configure Aviatrix to authenticate against your Okta IDP:
 
 This step is usually done by the IDP adminstrator.
 
-Create a SAML 2.0 app with the following settings:
+Create a SAML 2.0 app with the following settings that are based on the <aviatrix_sp_name> which is 'controller' for controller login:
 
-#. App Name = Aviatrix VPN (arbitrary)
-#. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/aviatrix_sp_name
+#. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<aviatrix_sp_name>
 #. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-#. SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/aviatrix_sp_name
-#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/aviatrix_sp_name
-#. Default RelayState* = https://aviatrix_controller_hostname/#/dashboard
-#. Name ID format = Unspecified
-#. Application username = IDP username
+#. SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/<aviatrix_sp_name>
+#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<aviatrix_sp_name>
+#. Default RelayState* =
 
 .. important::
 
    After step 3.3, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
 
-   ``aviatrix_sp_name`` must be ``controller``. Otherwise there will be an "SP is not present" error when authenticating.
+   ``aviatrix_sp_name`` is ``controller`` for controller login
 
-   ``https://aviatrix_controller_hostname/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
+   the Default RelayState bust blank
+   
 
 The following SAML attributes are expected:
 
 #. FirstName
 #. LastName
 #. Email (unique identifier for SAML)
-#. (Optional; only if required) Profile
 
 .. note::
 
