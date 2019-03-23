@@ -555,7 +555,7 @@ This feature only applies to AWS gateway. When enabled, the gateway EBS volume i
 Customize Spoke VPC Routes
 ------------------------------
 
-This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. 
+This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. When a CIDR is configured in this field, automatic route propagation to the Spoke(s) VPC will be disabled. 
 It overrides any on-prem propagated network CIDRs. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. 
 
 When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables are customized. 
