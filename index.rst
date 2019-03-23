@@ -305,7 +305,7 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/egress_nat_pool
    HowTos/tgw_route_limit
    HowTos/tgw_pan_ecmp
-   HowTos/tgw_egress_vpc
+   HowTos/aws_transit_gateway_orchestrator
 
 .. _Good To Know:
 
