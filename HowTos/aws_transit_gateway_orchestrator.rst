@@ -10,10 +10,9 @@ AWS Transit Gateway Orchestrator
 The AWS Transit Gateway (TGW) Orchestrator is a feature in Aviatrix Controller. It provides a point-and-click workflow to build a transit 
 network and manages all network routing updates. The Orchestrator runs AWS APIs and uses building blocks such as
 AWS Transit Gateway, Transit Gateway route tables and VPC route tables, to automate the transit network deployment. In addition, 
-the Orchestrator extends the AWS native service to include multi cloud support and a scale out architecture for firewall deployment. Whatever 
-requirements you had in mind, the Orchestrator got you covered.
+the Orchestrator extends the AWS native service to include multi cloud support and a scale out architecture for firewall deployment. 
 
-Here is what you can do with the Orchestrator. 
+Whatever requirements you had in mind, the Orchestrator got you covered. And here is what you can do with the Orchestrator. 
 
 1. Build a Basic Transit Network
 ------------------------------------
@@ -62,7 +61,8 @@ By deploying multiple Aviatrix Transit Gateways, you can build a full mesh cloud
 
  - **Azure** Connect Azure transit network with the AWS transit network.
  - **GCP** Connect GCP transit network with the AWS transit network. 
- - **InsaneMode Performance** Encrypted cloud backbone with InsaneMode high performance throughput and spin up in minutes.
+ - **InsaneMode Performance** Encrypted cloud backbone with InsaneMode high performance throughput.
+ - **Agility** Spin up your cloud backbone in minutes. No contract, no wait for months. 
 
 |cloud_backbone|
 
