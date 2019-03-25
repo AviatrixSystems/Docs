@@ -21,7 +21,7 @@ Here is what you can do with the Orchestrator.
 Use the Orchestrator to build a basic transit network with the following benefits:
 
  - **Point-and-Click** Point-and-Click workflow is simple to follow and easy to deploy.  
- - **Multi Account** Support cross accounts VPC attachments to TGW with a single pane of glass. 
+ - **Multi Account** Support up to three cross accounts VPC attachments to TGW with a single pane of glass. 
  - **Route Propagation** The Orchestrator periodically polls TGW route table to monitor route changes from on-prem and automatically programs Spoke VPC route tables. 
  - **Direct Connect** TGW Direct Connect Gateway (DXGW) support.
  - **Internet VPN** TGW VPN support.
@@ -41,6 +41,7 @@ Layering on the basic transit network, you can use the Orchestrator to add netwo
  - **Isolation** Create network isolation by defining multiple Security Domains where VPCs in one domain cannot communicate with VPCs in another domain.
  - **Policy** Create network connection of isolated segments by defining connection policies that allow one domain to communicate with another domain.
  - **Route Propagation** Build network segmentation by creating multiple TGW route tables and automatically updates all TGW  route table propagations. 
+ - **Unlimited Multi Account** Support unlimited cross accounts VPC attachments to TGW with a single pane of glass.
 
 |with_security_domain|
 
@@ -61,6 +62,7 @@ By deploying multiple Aviatrix Transit Gateways, you can build a full mesh cloud
 
  - **Azure** Connect Azure transit network with the AWS transit network.
  - **GCP** Connect GCP transit network with the AWS transit network. 
+ - **InsaneMode Performance** Encrypted cloud backbone with InsaneMode high performance throughput and spin up in minutes.
 
 |cloud_backbone|
 
