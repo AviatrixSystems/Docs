@@ -20,15 +20,16 @@ Here is what you can do with the Orchestrator.
 
 Use the Orchestrator to build a basic transit network with the following benefits:
 
- - Point-and-Click workflow is simple to follow and easy to deploy.  
- - Support cross accounts VPC attachments to TGW with a single pane of glass. 
- - The Orchestrator periodically polls TGW route table to monitor route changes from on-prem and automatically programs Spoke VPC route tables. 
- - TGW Direct Connect Gateway (DXGW) support.
- - TGW VPN support.
- - Support up to 100 routes (Per AWS VPN route table and DXGW route table limits).
- - Graphic view of TGW VPC attachments.
- - List view of TGW route table entries and VPC route table entries.
- - Continuous monitoring the configuration consistency and alerting for out-of-band changed. 
+ - **Point-and-Click** Point-and-Click workflow is simple to follow and easy to deploy.  
+ - **Multi Account** Support cross accounts VPC attachments to TGW with a single pane of glass. 
+ - **Route Propagation** The Orchestrator periodically polls TGW route table to monitor route changes from on-prem and automatically programs Spoke VPC route tables. 
+ - **Direct Connect** TGW Direct Connect Gateway (DXGW) support.
+ - **Internet VPN** TGW VPN support.
+ - **100 Routes** Support up to 100 routes (Per AWS VPN route table and DXGW route table limits).
+ - **View** Graphic view of TGW VPC attachments.
+ - **List** List view of TGW route table entries and VPC route table entries.
+ - **Monitoring** Continuous monitoring the configuration consistency and alerting for out-of-band changed. 
+ - **Terraform** Terraform Generator that exports what you have configured. Use it for replication and expansion. 
 
 |basic|
 
@@ -37,9 +38,9 @@ Use the Orchestrator to build a basic transit network with the following benefit
 
 Layering on the basic transit network, you can use the Orchestrator to add network segmentation:
 
- - Create network isolation by defining multiple Security Domains where VPCs in one domain cannot communicate with VPCs in another domain.
- - Create network connection of isolated segments by defining connection policies that allow one domain to communicate with another domain.
- - Build network segmentation by creating multiple TGW route tables and automatically updates all TGW  route table propagations. 
+ - **Isolation** Create network isolation by defining multiple Security Domains where VPCs in one domain cannot communicate with VPCs in another domain.
+ - **Policy** Create network connection of isolated segments by defining connection policies that allow one domain to communicate with another domain.
+ - **Route Propagation** Build network segmentation by creating multiple TGW route tables and automatically updates all TGW  route table propagations. 
 
 |with_security_domain|
 
@@ -48,8 +49,8 @@ Layering on the basic transit network, you can use the Orchestrator to add netwo
 
 By deploying an Aviatrix Transit Gateway, you can use the Orchestrator to extend the deployment to include multi cloud Spokes. 
 
- - Connect Azure VNets as Spokes to the AWS transit network. 
- - Connect GCP VPCs as Spokes to the AWS transit network.
+ - **Azure** Connect Azure VNets as Spokes to the AWS transit network. 
+ - **GCP** Connect GCP VPCs as Spokes to the AWS transit network.
 
 |multi_cloud|
 
@@ -58,8 +59,8 @@ By deploying an Aviatrix Transit Gateway, you can use the Orchestrator to extend
 
 By deploying multiple Aviatrix Transit Gateways, you can build a full mesh cloud backbone.
 
- - Connect Azure transit network with the AWS transit network.
- - Connect GCP transit network with the AWS transit network. 
+ - **Azure** Connect Azure transit network with the AWS transit network.
+ - **GCP** Connect GCP transit network with the AWS transit network. 
 
 |cloud_backbone|
 
