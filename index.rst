@@ -306,6 +306,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_route_limit
    HowTos/tgw_pan_ecmp
    HowTos/aws_transit_gateway_orchestrator
+   HowTos/firewall_network
 
 .. _Good To Know:
 
