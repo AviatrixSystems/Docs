@@ -89,7 +89,10 @@ At the left navigation bar, go to Site2Cloud, click on the connection you create
 
 3. Configure the external device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Steps to `Configure Cisco Router <http://docs.aviatrix.com/HowTos/S2C_TGW_CiscoRouter.html>`_
+Steps to
+`1.Configure Cisco Router <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_CiscoRouter.html>`_
+`2.Configure Cisco ASA <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_CiscoASA.html>`_
+
 
 Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP. . 
 

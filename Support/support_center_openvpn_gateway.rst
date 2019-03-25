@@ -91,6 +91,15 @@ How can I scale my VPN user setup?
 Deploy your Aviatrix OpenVPN Gateway's behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB, when needed, and don't have to worry about losing IP address and having to reissue certificates to all of your VPN users.
 
 
+How can the OpenVPN made Highly Available?
+-----------------------------------------------
+
+We have HA built into our OpenVPN system. By default the OpenVPN gateways are deployed behind a `Load Balancer <https://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_ in AWS. When you deploy additional OpenVPN gateways in the same VPC, they are deployed behind the same ELB, so the system becomes HA and resilient to any failures.
+
+Here are `instructions <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_ to use LB with UDP OpenVPN sessions.
+
+
+
 What is the recommended VPN CIDR Block (default is 192.168.43.0/24)?
 ------------------------------------------------------------------------------
 
@@ -133,3 +142,12 @@ How can I customize the email that is sent out when a new VPN user is added?
 --------------------------------------------------------------------------------------------
 
 You can customize the message of the email and the filename of the .ovpn file by following the instructions `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html?highlight=openvpn%20email#how-do-i-add-a-vpn-user>`_.  We will enhance this feature in future to allow you to customize the subject as well, stay tuned. 
+
+
+My Mac is not picking up the DNS server setting when connected?
+-------------------------------------------------------------------------
+
+The OpenVPN gateway will push the DNS setting to the vpn clients (by default for full tunnel and when configured for split-tunnel). If the Mac has the DNS configured manually, then it cannot be overwritten by the VPN Client. We have a couple of workarounds for this issue
+
+* Turn on the "Allow override of manually set DNS" option in the VPN Client / Advanced / Advanced
+* Change the DNS setting on your Mac so that it will be picked up from the DHCP server

@@ -59,7 +59,6 @@ How to add IAM rules?
 
 |image_3_selectJSONAddRulesClickReviewPolicy|
 
-
 **Step4: Click “Save changes” to finish editing aviatrix-app-policy**
 
 |image_4_saveChanges|
@@ -81,7 +80,6 @@ How to encrypt gateway EBS volume via Aviatrix controller?
 
 |image_12_checkStatus|
 
-
 **Step4: Scroll down to "Encrypt Volume" and Click "Encrypt" button to encrypt the EBS. Please wait for the encryption process to complete.** 
 
 |image_13_scrollDownToEncryptVolume|
@@ -96,11 +94,9 @@ How to encrypt gateway EBS volume via Aviatrix controller?
 
 |image_14_checkEncryptResult|
 
-
 **Step6: You can check the result on your AWS console. It's on EC2 -> Volume page.**
 
 |image_15_checkEncryptResultOnAws|
-
 
 .. note::
    You can see that the gateway EBS volume was encrypted. Also, the previous unencrypted volume will be kept.

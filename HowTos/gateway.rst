@@ -555,8 +555,7 @@ This feature only applies to AWS gateway. When enabled, the gateway EBS volume i
 Customize Spoke VPC Routes
 ------------------------------
 
-This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. 
-It overrides any on-prem propagated network CIDRs. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. 
+This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. When a CIDR is inserted in this field, automatic route propagation to the Spoke(s) VPC will be disabled, overriding  propagated CIDRs from other spokes, transit gateways and on-prem network. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. 
 
 When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables are customized. 
 
@@ -565,7 +564,11 @@ When it is enabled on an Spoke gateway, only that gateway VPC route table is app
 Filter Routes to Spoke VPC
 ------------------------------
 
-This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The list of comma separated CIDRs entered in the input field will be filtered out. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
+This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The unwanted list of CIDRs should be entered as input. This list of
+CIDRs should be comma separated. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
+
+The list of the filtered out CIDRs can be a super set of on-prem learned routes. For example, if the on-prem learned routes are 100.10.0.0/24 and 100.10.1.0/24, 
+you can enter 100.10.0.0/16 to filter out both routes. 
 
 When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will filter on the configured routes. 
 
