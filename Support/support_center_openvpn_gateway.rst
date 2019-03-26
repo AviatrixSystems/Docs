@@ -69,7 +69,7 @@ Aviatrix VPN Client needs to  have a successful name resolution for “localhost
   * Mac/Linux: add “127.0.0.1  localhost.aviatrix.com” to /etc/hosts. You would need a sudo access for this
   * Windows: add “127.0.0.1  localhost.aviatrix.com” to C:\Windows\System32\Drivers\etc\hosts file. Please open your editor/notepad with “run as administrator” (edited)
 
-
+Another option is to set the DNS server to a different one - we recommend that you test it with 8.8.8.8 to make sure that the Aviatrix Client works well.
 
 Any known issue with DD-WRT routers?
 -----------------------------------------------
