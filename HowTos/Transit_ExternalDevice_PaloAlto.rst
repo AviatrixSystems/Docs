@@ -22,12 +22,10 @@ Transit Connection to Palo Alto over the internet.
    |image4|
 
 4. Log into Palo Alto Networks VM Series and configure it as following:
-   a.Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following
-     parameters.
-   a.Go to **Network > Interface
-
+   a.Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+ 
       |image5|
-> Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+
       ===============================     ======================================
       **Field**                           **Value**
       ===============================     ======================================
@@ -73,8 +71,8 @@ Transit Connection to Palo Alto over the internet.
       ===============================     =========================================
         IKE Crypto Profile                Select the profile created at Step 4.b
       ===============================     =========================================
-   d.Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec
-     crypto profile (IKEv1 Phase-2). These parameters should match on the site2cloud configuration downloaded at Step 4.
+      
+   d. Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the site2cloud configuration downloaded at Step 4.
 
       |image10|
 
@@ -89,6 +87,7 @@ Transit Connection to Palo Alto over the internet.
         IKE Gateway                       IKE gateway created at Step 4.c
         IPSec Crypto Profile              IPSec crypto profile created at Step 4.d
       ===============================     =========================================
+      
    f. Under **Network > Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new
       route destinating to VPC1 private subnet.
 
@@ -108,7 +107,7 @@ Transit Connection to Palo Alto over the internet.
  1. Go to Network > Virtual Routers Default > BGP > peer group
     click add give any name(e.g bgppeering) and then click on the left bottom to add BGP peer
     |image13|
- 2.Peer is created as follows by giving sample name dummy:
+ 2 .Peer is created as follows by giving sample name dummy:
     Created name: Name of the BGP peer (e.g.dummy)
     Local address:
            Interface -> tunnel interface
@@ -116,13 +115,13 @@ Transit Connection to Palo Alto over the internet.
     Peer address:
            Address -> remote tunnel address
     |image14|
- 3.Click on the peer created  and click OK
+ 3. Click on the peer created  and click OK
     |image15|
- 4.After everything is created the output looks like below:
+ 4. After everything is created the output looks like below:
    Router ID is taken from the config file downloaded.(it should be the IP address of the tunnel created )
     |image16|
 
- 5.Next click on redistribution rules and do the following:
+ 5. Next click on redistribution rules and do the following:
    Click on export rule -> general -> add -> select bgppeering(sample bgp peer group ) created above.
     |image17|
     Before selecting match create a rule as follows:
@@ -132,20 +131,17 @@ Transit Connection to Palo Alto over the internet.
     |image18|
     Click on Match->Address prefix box  -> add -> (previously added ipv4 subnet) -> click on OK
     |image19|
- 6.After the BGP route has been advertised it shows like the following image.
+ 6. After the BGP route has been advertised it shows like the following image.
    Go to Network -> More runtime stats -> BGP -> RIB out.
     |image20|
- 7.Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
+ 7. Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
    Steps to create the Management profile and attach it to the interface:
-
-  Steps to create the Management profile and attach it to the interface:
      Click on Network profiles->. Interface management -> create the interface as below by giving a name and selecting
      ping and attach it to the tunnel.
     |image21|
 
 
- 8.Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the
-   dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
+ 8. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
 
     |image22|
 
