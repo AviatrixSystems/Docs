@@ -32,8 +32,8 @@ Can I use an SSL Certificate from AWS ACM?
 You can place your `controller behind an ELB in AWS <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_ and use your certificate from AWS ACM. Remember to increase the `default ELB idle connection timeout <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#connection-idle-timeout>`_ from 60 seconds to at least 300 seconds.
 
 
-How do I backup my Aviatrix System?
--------------------------------------
+How do I backup my Aviatrix configuration?
+------------------------------------------
 
 Please checkout `backup functionality <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ on your Aviatrix controller. 
 
@@ -51,7 +51,7 @@ How can I customize Controller GUI?
 
 How can I troubleshoot connectivity issues?
 --------------------------------------------
-Please refer to `How to use Aviatrix FlightPath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!! Please check out  `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!!
+Please refer to `How to use Aviatrix FlightPath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!! For more details, please check out  `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!!
 
 
 Does Aviatrix support High Availability?
