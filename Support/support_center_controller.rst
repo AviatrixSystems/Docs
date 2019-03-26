@@ -51,13 +51,13 @@ How can I customize Controller GUI?
 
 How can I troubleshoot connectivity issues?
 --------------------------------------------
-Please check out  `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!!
+Please refer to `How to use Aviatrix FlightPath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!! Please check out  `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!!
 
 
 Does Aviatrix support High Availability?
 ------------------------------------------
 
-We have HA built into our system through `Gateway HA <https://docs.aviatrix.com/Solutions/gateway_ha.html>`_ and `Transit HA <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+We have HA built into our system through `Transit HA <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, `Single AZ HA <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_ and the now deprecated `Gateway HA <https://docs.aviatrix.com/Solutions/gateway_ha.html>`_. 
 
 `Aviatrix Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ does not support HA in multiple regions, but works across multiple AZ's. More information `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/blob/master/README.md>`_
 
@@ -65,7 +65,7 @@ We have HA built into our system through `Gateway HA <https://docs.aviatrix.com/
 Does Controller send alerts when Gateway status changes?
 --------------------------------------------------------------------
 
-Aviatrix Controller monitors the gateways and tunnels and whenever there is a state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an invalid email address.
+Aviatrix Controller monitors the gateways and tunnels and whenever there is a tunnel or gateway state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an email address that you don't monitor.
 
 As an alternative, you can also set Cloudwatch Event Alerts in AWS to be alerted when Gateway/Controller Instances are Started or Stopped.
 
