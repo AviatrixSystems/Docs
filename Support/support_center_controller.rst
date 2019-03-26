@@ -32,8 +32,8 @@ Can I use an SSL Certificate from AWS ACM?
 You can place your `controller behind an ELB in AWS <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_ and use your certificate from AWS ACM. Remember to increase the `default ELB idle connection timeout <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#connection-idle-timeout>`_ from 60 seconds to at least 300 seconds.
 
 
-How do I backup my Aviatrix System?
--------------------------------------
+How do I backup my Aviatrix configuration?
+------------------------------------------
 
 Please checkout `backup functionality <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ on your Aviatrix controller. 
 
@@ -51,13 +51,13 @@ How can I customize Controller GUI?
 
 How can I troubleshoot connectivity issues?
 --------------------------------------------
-Please check out  `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!!
+Please refer to `How to use Aviatrix FlightPath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!! For more details, please check out  `Aviatrix Flightpath <https://docs.aviatrix.com/HowTos/flightpath_deployment_guide.html>`_!!
 
 
 Does Aviatrix support High Availability?
 ------------------------------------------
 
-We have HA built into our system through `Gateway HA <https://docs.aviatrix.com/Solutions/gateway_ha.html>`_ and `Transit HA <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+We have HA built into our system through `Transit HA <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and `Single AZ HA <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_. The `Gateway HA <https://docs.aviatrix.com/Solutions/gateway_ha.html>`_ is now deprecated. 
 
 `Aviatrix Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ does not support HA in multiple regions, but works across multiple AZ's. More information `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/blob/master/README.md>`_
 
@@ -65,7 +65,7 @@ We have HA built into our system through `Gateway HA <https://docs.aviatrix.com/
 Does Controller send alerts when Gateway status changes?
 --------------------------------------------------------------------
 
-Aviatrix Controller monitors the gateways and tunnels and whenever there is a state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an invalid email address.
+Aviatrix Controller monitors the gateways and tunnels and whenever there is a tunnel or gateway state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an email address that you don't monitor.
 
 As an alternative, you can also set Cloudwatch Event Alerts in AWS to be alerted when Gateway/Controller Instances are Started or Stopped.
 
