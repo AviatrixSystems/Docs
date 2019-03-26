@@ -17,15 +17,17 @@ Transit Connection to Palo Alto over the internet.
    Select generic and Download Configuration and configure on the router accordingly.
 
    |image3|
+
    The following is a sample configuration based on the site2cloud configuration above.
    |image4|
 
 4. Log into Palo Alto Networks VM Series and configure it as following:
-
-   a.Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+   a.Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following
+     parameters.
+   a.Go to **Network > Interface
 
       |image5|
-
+> Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
       ===============================     ======================================
       **Field**                           **Value**
       ===============================     ======================================
@@ -133,8 +135,9 @@ Transit Connection to Palo Alto over the internet.
  6.After the BGP route has been advertised it shows like the following image.
    Go to Network -> More runtime stats -> BGP -> RIB out.
     |image20|
- 7.Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic
-   out.
+ 7.Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
+   Steps to create the Management profile and attach it to the interface:
+
   Steps to create the Management profile and attach it to the interface:
      Click on Network profiles->. Interface management -> create the interface as below by giving a name and selecting
      ping and attach it to the tunnel.
@@ -146,72 +149,73 @@ Transit Connection to Palo Alto over the internet.
 
     |image22|
 
-.. |image1| image:: ./Transit_ExtyernalDevice_PaloAlto_media/1.png
+.. |image1| image:: ./Transit_ExternalDevice_PaloAlto_media/1.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image2| image:: ./Transit_ExtyernalDevice_PaloAlto_media/2.png
+.. |image2| image:: ./Transit_ExternalDevice_PaloAlto_media/2.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image3| image:: ./Transit_ExtyernalDevice_PaloAlto_media/3.png
+.. |image3| image:: ./Transit_ExternalDevice_PaloAlto_media/3.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image4| image:: ./Transit_ExtyernalDevice_PaloAlto_media/4.png
+.. |image4| image:: ./Transit_ExternalDevice_PaloAlto_media/4.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image5| image:: ./Transit_ExtyernalDevice_PaloAlto_media/5.png
+.. |image5| image:: ./Transit_ExternalDevice_PaloAlto_media/5.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image6| image:: ./Transit_ExternalDevice_PaloAlto_media/6.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image7| image:: ./Transit_ExternalDevice_PaloAlto_media/7.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image8| image:: ./Transit_ExternalDevice_PaloAlto_media/8.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image9| image:: ./Transit_ExternalDevice_PaloAlto_media/9.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image10| image:: ./Transit_ExternalDevice_PaloAlto_media/10.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image11| image:: ./Transit_ExternalDevice_PaloAlto_media/11.png
+    :width: 5.55625in
+    :height: 3.26548in
+.. |image12| image:: ./Transit_ExternalDevice_PaloAlto_media/12.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image6| image:: ./Transit_ExtyernalDevice_PaloAlto_media/6.png
+.. |image13| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp1.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image7| image:: ./Transit_ExtyernalDevice_PaloAlto_media/7.png
+.. |image14| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp2.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image8| image:: ./Transit_ExtyernalDevice_PaloAlto_media/8.png
+.. |image15| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp3.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image9| image:: ./Transit_ExtyernalDevice_PaloAlto_media/9.png
+.. |image16| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp4.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image10| image:: ./Transit_ExtyernalDevice_PaloAlto_media/10.png
+.. |image17| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp5.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image11| image:: ./Transit_ExtyernalDevice_PaloAlto_media/11.png
+.. |image18| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp6.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image12| image:: ./Transit_ExtyernalDevice_PaloAlto_media/12.png
+.. |image19| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp7.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image13| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp1.png
+.. |image20| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp8.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image14| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp2.png
+.. |image21| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp9.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image15| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp3.png
+.. |image22| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp10.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image16| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp4.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image17| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp5.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image18| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp6.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image19| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp7.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image20| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp8.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image21| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp9.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image22| image:: ./Transit_ExtyernalDevice_PaloAlto_media/bgp10.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+
 
 
 
