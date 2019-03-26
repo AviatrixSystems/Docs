@@ -20,7 +20,7 @@ Site2Cloud connections depend on the third party onsite router/firewall providin
 Can Site2Cloud connection be terminated on an Aviatrix OpenVPN Gateway?
 ----------------------------------------------------------------------------------
 
-Site2Cloud connections can surely be terminated on an Aviatrix OpenVPN Gateway, but it is our recommendation to not terminate on an OpenVPN Gateway as the OpenVPN Gateways tend to offer services to many of your user services which need a high uptime and are sensitive to changes in IP addresses - any changes in IP Addresses could require the .ovpn files to all of your end users. Running Site2Cloud on a different gateway, allows you to keep your network more stable. We also recommend OpenVPN gateways to be launched behind an ELB, to allow for easy scaling and to allow for saving the IP address. The ELB deployment could also complicate the Site2Cloud connection due to the ELB-IPaddress Gateway-IPaddress being different.
+Terminating a Site2Cloud connection on an Aviatrix OpenVPN gateway is not our best practice even though it’s possible. Please note that Aviatrix does not incur extra charge for having multiple gateways as we only charge based on the connected OpenVPN users and the number of IPSec tunnel built.  
 
 
 How do I connect my onprem router to VGW for Site2Connection?
