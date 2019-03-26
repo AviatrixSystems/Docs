@@ -6,6 +6,27 @@
 Controller
 ===========================================================================
 
+What are the minimum requirements for an instance to run the Aviatrix Controller Software?
+---------------------------------------------------------------------------------------------------
+
+We strongly recommend that the instance be at least t2.large and have at least 20GB of Storage to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
+ 
+If you have less than 20GB of Storage on your controller, please follow these steps to increase your disk space:
+
+1. Make a backup of your controller. (https://docs.aviatrix.com/HowTos/controller_backup.html)
+2. Login to AWS console and locate the Aviatrix controller instance.
+3. Click on Root device: /dev/sda1 and then click on EBS ID vol-xxxxxxxxxx.
+4. With the volume selected, click Action > Modify Volume to change the Size 20.
+5. Click OK to start the resize process. Please make sure you wait until the State of the volume is "in-use - completed (100%)".
+6. Select the Aviatrix controller instance in EC2 page. Click Reboot for the disk space to take effect.
+7. Confirm the controller is in running state in AWS console.
+8. Login to your controller to sanity test.
+9. Take a backup again, by following instructions at https://docs.aviatrix.com/HowTos/controller_backup.html
+
+Note that rebooting the controller will not impact your IPsec tunnels as it's not in the data path. Please send email to support@aviatrix.com, if you have any question.
+
+
+
 Why are IAM policies important?
 ---------------------------------
 
