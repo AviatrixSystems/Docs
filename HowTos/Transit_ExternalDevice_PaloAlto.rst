@@ -19,16 +19,15 @@ Transit Connection to Palo Alto over the internet.
    |image3|
 
    The following is a sample configuration based on the site2cloud configuration above.
-
    |image4|
 
 4. Log into Palo Alto Networks VM Series and configure it as following:
-
    a.Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following
      parameters.
+   a.Go to **Network > Interface
 
       |image5|
-
+> Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
       ===============================     ======================================
       **Field**                           **Value**
       ===============================     ======================================
@@ -138,6 +137,8 @@ Transit Connection to Palo Alto over the internet.
     |image20|
  7.Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
    Steps to create the Management profile and attach it to the interface:
+
+  Steps to create the Management profile and attach it to the interface:
      Click on Network profiles->. Interface management -> create the interface as below by giving a name and selecting
      ping and attach it to the tunnel.
     |image21|
@@ -214,6 +215,7 @@ Transit Connection to Palo Alto over the internet.
 .. |image22| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp10.png
     :width: 7.00000 in
     :height: 5.00000 in
+
 
 
 
