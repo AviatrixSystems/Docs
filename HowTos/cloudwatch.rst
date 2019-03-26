@@ -25,9 +25,9 @@ In order for Aviatrix controllers and gateways in different AWS accounts to send
 
         1. Go to AWS console, create an  IAM role with a name aviatrix-role-cloudwatch. 
    
-        2. (Optional for multi accounts) Adding Trust-Relationships for Aviatrix Controllers' and all gateways' AWS accounts. If you are already using CloudWatch for logs from all your AWS accounts, you may have already built the trust relationship between accounts. If this is the case, skip this step. 
+        2. Add Trust-Relationships for Aviatrix Controllers' and all gateways' AWS accounts. If you are already using CloudWatch for logs from all your AWS accounts, you may have already built the trust relationship between accounts. If this is the case, skip this step. 
         
-        3. Attaching AWS IAM Cloudwatch policy to the role aviatrix-role-cloudwatch.
+        3. Attach AWS IAM Cloudwatch policy to the role aviatrix-role-cloudwatch.
 
     **a: Create an IAM role aviatrix-role-cloudwatch**, make sure the role name is "aviatrix-role-cloudwatch".
                
@@ -36,7 +36,6 @@ In order for Aviatrix controllers and gateways in different AWS accounts to send
 
 
     **b: Add Trust-Relationships for controllers and gateways AWS accounts**
-         Skip this step if this is a single or same account Cloud Watch setup. 
 
         |image2|
 

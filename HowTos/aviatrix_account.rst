@@ -68,7 +68,7 @@ CloudFormation script on each secondary account first, then use Terraform accoun
 
 ::  
 
-  Follow the above section, but only execute step 5. 
+  Follow the above section, but only execute step 7 to run the CloudFormation script that creates IAM roles, policies and build trust relationship to the primary account (the Controller account). 
 
 The CloudFormation is necessary to create IAM roles, policies and establish trust relationship with the primary account (The account where Controller is launched.)
 
