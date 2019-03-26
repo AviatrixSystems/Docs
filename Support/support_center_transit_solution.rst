@@ -15,7 +15,10 @@ Explore "`Connected Mode <https://docs.aviatrix.com/HowTos/site2cloud.html#conne
 How much IP address space do I need in my VPC to launch a transit solution?
 --------------------------------------------------------------------------------------------
 
-Please make sure that you have at least four /28 subnets worth of address space in the VPC before you launch the transit solution
+To ensure you have enough subnets for various Aviatrix solutions (TGW, Transit DMZ), we highly recommend you to use Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
+  If you would like to continue to use your existing transit VPC and it is too small (not enough of /28 unused segments), use AWS Edit VPC CIDR feature to create a new /24 subnet for the Aviatrix Transit Gateway in TGW use case. 
+
+If you do not want to use our Create a VPC feature at our controller, please make sure that you have at least four /28 subnets worth of address space in the VPC before you launch the transit solution
 
 For TGW based transit solution to support Hybrid connection, the `transit VPC needs to have a spare /26 CIDR space. <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_. Aviatrix Transit GW uses the spare space to create 4 subnets in the next step.
 
