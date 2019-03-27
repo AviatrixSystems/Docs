@@ -128,7 +128,11 @@ requirement changes, return to this section and start with Step 4 to setup.
 4.1 Non DMZ Transit Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Simple Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to on-prem in the three, as shown in the diagram below: AWS VGW, External Device or Aviatrix Appliance CloudN. 
+Non DMZ Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to on-prem in the following scenarios, 
+
+ - AWS VGW
+ - External Device over Direct Connect or Internet
+ - Aviatrix Appliance CloudN. 
 
 |transit_gw|
 
@@ -144,7 +148,9 @@ If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workfl
 
 |transit_dmz|
 
-When complete, the next two steps, Step 5 and Step 6 in this workflow (the next two steps) should have already been executed for the Main gateway, i.e., you can skip the next two steps. 
+When complete, you are done! 
+
+(The next two steps, Step 5 and Step 6 in this workflow (the next two steps) should have already been executed for the Main gateway, i.e., you can skip the next two steps.) 
 
 
 5. Prepare Aviatrix Transit GW for TGW Attachment
