@@ -24,8 +24,8 @@ Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-av
 
   * Aviatrix Controller Release 3.5: Use the `Github UserConnect-3.5 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-3.5>`_
   * Aviatrix Controller Release 4.0: Use the `Github UserConnect-4.0 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.0>`_ 
-  * Aviatrix Controller Release 4.1: Use the `Github master branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.1>`_ 
-  * Aviatrix Controller Release 4.2: Use the `Github master branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.2>`_ 
+  * Aviatrix Controller Release 4.1: Use the `Github UserConnect-4.1 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.1>`_ 
+  * Aviatrix Controller Release 4.2: Use the `Github UserConnect-4.2 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.2>`_ 
 
 If you were using the master branch in the past, please move to the right release based branch as listed above to avoid incompatibility issues. 
 
