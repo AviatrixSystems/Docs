@@ -34,7 +34,7 @@ Companion Interface Subnet                      VM-Series instance interface for
 
 .. Tip::
 
-  After the instance is launched, it will be listed in the same page. Wait for 15 minutes after you launch the VM-Series instance before you login to instance to setup the password. To login to the instance, click the skewer button to download the pem file for the instance.  
+  After the instance is launched, it will be listed in the same page. Wait for 15 minutes after you launch the VM-Series instance before you login to instance to setup the password. To login to the instance, click the skewer button to download the pem file for the instance. Note eth1 is management interface, eth0 is egress interface, eth2 and eth3 are north and south interfaces. 
 
 |download_pem_file|
 
