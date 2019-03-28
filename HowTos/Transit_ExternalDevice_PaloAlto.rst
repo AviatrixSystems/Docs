@@ -1,13 +1,35 @@
 =========================================================
 Transit Connection to Palo Alto over the internet.
 =========================================================
+This document describes how to build Transit connection between Aviatrix Transit Gateway and Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
+
+Network setup is as following:
+
+VPC1 (with Aviatrix Transit Gateway)
+
+        VPC1 CIDR: 10.5.0.0/16
+
+        VPC1 Public Subnet CIDR: 10.5.3.0/24
+
+        VPC1 Private Subnet CIDR: 10.5.2.0/24
+
+VPC2 (with Palo Alto Networks VM-series)
+
+        VPC2 CIDR: 10.0.0.0/16
+
+        VPC2 Public Subnet CIDR: 10.0.0.0/24
+
+        VPC2 Private Subnet CIDR: 10.0.1.0/24
+
+Sample subnet advertised with the help of BGP - 192.168.0.24/32(loopback interface on PaloAlto)
+
+Configuration WorkFlow:
 
 1. From the Controller go to Transit Network -> Setup -> Launch a Transit VPC GW.
 
    |image1|
 
-2.Connect the transit VPC GW to Palo Alto. Go to Transit Network -> Setup -> Connect to VGW/External Device.
-   select External Device and input the following parameters.
+2.Connect the transit VPC GW to Palo Alto. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
       a. BGP Local AS number: ASN of the transit VPC GW
       b. BGP Remote AS number: ASN of the Palo Alto
       c. Remote Gateway IP Address: Palo Alto WAN interface public IP.
@@ -66,6 +88,7 @@ Transit Connection to Palo Alto over the internet.
       ===============================     =========================================
 
       |image9|
+
       ===============================     =========================================
         **Field**                         **Value**
       ===============================     =========================================
@@ -87,16 +110,17 @@ Transit Connection to Palo Alto over the internet.
         IKE Gateway                       IKE gateway created at Step 4.c
         IPSec Crypto Profile              IPSec crypto profile created at Step 4.d
       ===============================     =========================================
+        Note: There is no need to configure proxy-id
       
    f. Under **Network > Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new
-      route destinating to VPC1 private subnet.
+      route destinating to private subnet CIDR of the remote network.
 
       |image12|
 
       ===============================     =================================================================
         **Field**                         **Value**
       ===============================     =================================================================
-        Destination                       private subnet CIDR of the remote network.
+        Destination                       private subnet CIDR of the remote network(here VPC1 private subnet).
         Interface                         Tunnel interface created at Step 4.a
       ===============================     =================================================================
 
@@ -104,10 +128,10 @@ Transit Connection to Palo Alto over the internet.
 
 
 5. Steps to configure BGP:
- 1. Go to Network > Virtual Routers Default > BGP > peer group
+ a. Go to Network > Virtual Routers Default > BGP > peer group
     click add give any name(e.g bgppeering) and then click on the left bottom to add BGP peer
     |image13|
- 2 .Peer is created as follows by giving sample name dummy:
+ b.Peer is created as follows by giving sample name dummy:
     Created name: Name of the BGP peer (e.g.dummy)
     Local address:
            Interface -> tunnel interface
@@ -115,13 +139,13 @@ Transit Connection to Palo Alto over the internet.
     Peer address:
            Address -> remote tunnel address
     |image14|
- 3. Click on the peer created  and click OK
+ c. Click on the peer created  and click OK
     |image15|
- 4. After everything is created the output looks like below:
+ d. After everything is created the output looks like below:
    Router ID is taken from the config file downloaded.(it should be the IP address of the tunnel created )
     |image16|
 
- 5. Next click on redistribution rules and do the following:
+ e. Next click on redistribution rules and do the following:
    Click on export rule -> general -> add -> select bgppeering(sample bgp peer group ) created above.
     |image17|
     Before selecting match create a rule as follows:
@@ -131,17 +155,18 @@ Transit Connection to Palo Alto over the internet.
     |image18|
     Click on Match->Address prefix box  -> add -> (previously added ipv4 subnet) -> click on OK
     |image19|
- 6. After the BGP route has been advertised it shows like the following image.
+ f. After the BGP route has been advertised it shows like the following image.
    Go to Network -> More runtime stats -> BGP -> RIB out.
     |image20|
- 7. Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
+ g. Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
    Steps to create the Management profile and attach it to the interface:
      Click on Network profiles->. Interface management -> create the interface as below by giving a name and selecting
      ping and attach it to the tunnel.
     |image21|
 
+6. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with Palo Alto Networks VM LAN port as the gateway.
 
- 8. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
+7. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
 
     |image22|
 
