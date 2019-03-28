@@ -153,13 +153,14 @@ Deployment topology for Aviatrix CloudN is as following:
 
 Please collect information requested below and provide to Aviatrix. The Application form can be downloaded `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_
 
-================  ==================  ===========  ===============  ==================  =====================  =============================================================
-CloudN Interface  Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
-================  ==================  ===========  ===============  ==================  =====================  =============================================================
-1- WAN                                             Not Required     Not Required        Not Required
-2- LAN                                             Not Required     Not Required        Not Required
-3- MGMT                                                                                                        Management port for CloudN configuration and software upgrade
-================  ==================  ===========  ===============  ==================  =====================  =============================================================
+=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
+CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
+=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
+1- WAN                                                  Not Required     Not Required        Not Required
+2- LAN                                                  Not Required     Not Required        Not Required
+3- MGMT                                                                                                             Management port for CloudN configuration and software upgrade
+4- HPE iLO (optional)                                                    Not Required        Not Required           HP Integrated Lights-Out
+=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
 
 Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
 
