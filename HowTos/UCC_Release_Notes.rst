@@ -2,6 +2,17 @@
 Release Notes
 =======================================
 
+R4.2.740 (Patch release of 4.2 on 3/31/2019)
+===============================================
+
+Notable bug fixes:
+ 
+ - When attaching a VPC with CIDR 192.168.0.0/16, the system crashes.
+ - When on-prem advertises 0.0.0.0/0, spoke gateways in the transit deployment could lose connectivity to the Controller. 
+ - FQDN process crashes when certain invalid or corrupted packets are received.
+ - Datadog for gateway in ARM does not work. Fix is a workaround to disable Datadog in ARM.
+ - InsaneMode BGP session goes down after phase-2 negotiation.
+
 R4.2.634 (3/19/2019)
 ======================
 
