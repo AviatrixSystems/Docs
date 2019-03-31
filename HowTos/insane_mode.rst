@@ -151,7 +151,7 @@ Deployment topology for Aviatrix CloudN is as following:
 
 |InsaneBeta|
 
-Please collect information requested below and provide to Aviatrix. The Application form can be downloaded `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_
+Please collect information requested below and provide to Aviatrix. Click the link `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_ to download the application form.
 
 =====================  ==================  ===========  ===============  ==================  =====================  =============================================================
 CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
