@@ -162,3 +162,19 @@ If the Mac has the DNS configured manually, then it cannot be overwritten by the
 
 * Turn on the "Allow override of manually set DNS" option in the VPN Client / Advanced / Advanced
 * Change the DNS setting on your Mac so that it will be picked up from the DHCP server
+
+
+How do I create a new gateway behind my existing ELB/OpenVPN Gateway?
+-------------------------------------------------------------------------
+
+Go to "Controller/Gateway/+NewGateway"
+  * provide a gateway name
+  * pick the same vpc as your first gateway
+  * you can pick a subnet in a different AZ for more reliability
+  * turn on "VPN Access"
+  * turn on "Advanced Options"
+  * pick the same "authentication" and use the same auth information as your existing gateway (you can find this information from "Controller/OpenVPN/EditConfig/Authentication") [CK] For ELB, it has to use the same authentication method if you need multiple OpenVPN gateways for redundancy.
+  * use exactly the same configuration as the first gateway
+  * Click on OK
+
+
