@@ -30,7 +30,7 @@ The scenario is described in the following diagram, where VPC-2 represents a on-
 The Solution
 ------------------
 
-The solution is to build a site2cloud IPSEC tunnel between VPC-1 and VPC-2 and apply both source NAT (SNAT) and destination NAT (DNAT) on VPC-1 gateway. The packet is demonstrated as below: 
+The solution is to build a site2cloud IPSEC tunnel between VPC-1 and VPC-2 and apply both source NAT (SNAT) and destination NAT (DNAT) on VPC-1 gateway. The packet flow is demonstrated as below: 
 
  1. instance-1 sends a packet to instance-2 with virtual destination IP address, say it is 172.16.0.43. From instance-1's point of view, the destination instance is 172.16.0.43.
  #. When the packet arrives at the VPC-1 gateway, the gateway does DNAT on the packet to translate the virtual destination IP address to 10.17.7.81 which is the instance-2 IP address.
