@@ -144,7 +144,6 @@ You are responsible for building the connection between VGW and on-prem. The con
 
 We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if VGW and Transit GWs are in different VPCs. 
 
-Currently, only one connection is support on a give transit gateway/vpc, regardless of any of three options above is chosen.
 
 |image3|
 
