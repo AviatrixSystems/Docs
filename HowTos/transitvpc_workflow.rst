@@ -140,14 +140,13 @@ exchange routes between on-prem and the cloud.
 
 .. important::
 
-You are responsible for building the connection between VGW and on-prem. The connection is either over Internet, over Direct Connect or both. 
+  You are responsible for building the connection between VGW and on-prem. The connection is either over Internet, over Direct Connect or both. 
 
-We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if VGW and Transit GWs are in different VPCs. 
+  We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if VGW and Transit GWs are in different VPCs. 
 
-Currently, only one connection is support on a give transit gateway/vpc, regardless of any of three options above is chosen.
+  Currently, only one connection is supported on a specific transit gateway/vpc, regardless of any of three options above is chosen.
 
 |image3|
-
 
 =====================      ==========
 **Setting**                **Value**
