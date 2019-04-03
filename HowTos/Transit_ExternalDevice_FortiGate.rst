@@ -1,7 +1,7 @@
 =========================================================
 Transit Connection to FortiGate over the internet.
 =========================================================
-1. From the Controller go to Transit Network -> Setup -> Launch a Transit VPC GW.
+1.From the Controller go to Transit Network -> Setup -> Launch a Transit VPC GW.
 
    |image1|
 
@@ -11,7 +11,7 @@ Transit Connection to FortiGate over the internet.
       c. Remote Gateway IP Address: Palo Alto WAN interface public IP.
    |image2|
 
-3. Download the configuration by going to Site2Cloud -> Click on the Connection.
+3.Download the configuration by going to Site2Cloud -> Click on the Connection.
    Select generic and Download Configuration and configure on the router accordingly.
 
    |image3|
@@ -19,7 +19,7 @@ Transit Connection to FortiGate over the internet.
    The following is a sample configuration based on the site2cloud configuration above.
    |image4|
 
-4. Login into FortiGate and configure it as following.
+4.Login into FortiGate and configure it as following.
 
    4.a In the VPN menu, select IPsec Tunnels.
 
@@ -211,24 +211,33 @@ Transit Connection to FortiGate over the internet.
 
 
      In **Monitor** > **IPSec Monitor**, select the Aviatrix tunnel, and click **Bring Up**.
-
+     
      The tunnel status should change to up as shown below
      
      |image18|
 
 
-
 5.Configure BGP:
 
   Click -> Network -> BGP
+  
   Configure as below:
+  
   RouterID : Tunnel IPaddress taken from the configuration file downloaded at step3
+  
   Neighbors: Remote tunnel ip address and ASN
+  
   Networks: All the networks needs to be advertised via BGP (here 10.3.0.0 is the local network of FortiGate)
 
-6. Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
+
+
+6.Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
+
+
  |image19|
+
  |image20|
+
 
 .. |image1| image:: ./Transit_ExternalDevice_FortiGate/1.png
     :width: 7.00000 in
