@@ -219,15 +219,14 @@ Transit Connection to FortiGate over the internet.
 
 5.Configure BGP:
 
-  Click -> Network -> BGP
-  
-  Configure as below:
-  
-  RouterID : Tunnel IPaddress taken from the configuration file downloaded at step3
-  
-  Neighbors: Remote tunnel ip address and ASN
-  
-  Networks: All the networks needs to be advertised via BGP (here 10.3.0.0 is the local network of FortiGate)
+    Click -> Network -> BGP
+    Configure as below:
+    
+    RouterID : Tunnel IPaddress taken from the configuration file downloaded at step3
+    
+    Neighbors: Remote tunnel ip address and ASN
+    
+    Networks: All the networks needs to be advertised via BGP (here 10.3.0.0 is the local network of FortiGate)
 
 
 
