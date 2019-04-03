@@ -80,6 +80,7 @@ Transit Connection to FortiGate over the internet.
    +-------------------------------+------------------------------------------+
 
    |image7|
+   
    **Phase 1 Proposal**
 
    .. important::
@@ -200,7 +201,7 @@ Transit Connection to FortiGate over the internet.
   4.f Add a Static Route
 
 
-    In **Network** > **Static Routes**, add a new static route for traffic destined to `AWS_Cloud` to use the VPN tunnel.
+    In **Network** > **Static Routes**, add a new static route for traffic destined to remote network(e.g., here it is **any** i.e, 0.0.0.0/0.0.0.0) to use the VPN tunnel.
 
      |image17|
 
@@ -212,7 +213,8 @@ Transit Connection to FortiGate over the internet.
      In **Monitor** > **IPSec Monitor**, select the Aviatrix tunnel, and click **Bring Up**.
 
      The tunnel status should change to up as shown below
-     |image 18|
+     
+     |image18|
 
 
 
@@ -283,12 +285,6 @@ Transit Connection to FortiGate over the internet.
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image20| image:: ./Transit_ExternalDevice_FortiGate/20.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image21| image:: ./Transit_ExternalDevice_FortiGate/21.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image22| image:: ./Transit_ExternalDevice_FortiGate/22.png
     :width: 7.00000 in
     :height: 5.00000 in
 
