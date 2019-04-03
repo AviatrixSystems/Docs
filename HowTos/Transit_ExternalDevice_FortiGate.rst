@@ -20,6 +20,7 @@ Transit Connection to FortiGate over the internet.
    |image4|
 
 4. Login into FortiGate and configure it as following.
+
    4.a In the VPN menu, select IPsec Tunnels.
 
    4.b click + Create New
@@ -30,10 +31,11 @@ Transit Connection to FortiGate over the internet.
    +-------------------------------+------------------------------------------+
    | Field                         | Expected Value                           |
    +===============================+==========================================+
-   | Name                          | Any name                               |
+   | Name                          | Any name                                 |
    +-------------------------------+------------------------------------------+
    | Template Type                 | Custom                                   |
    +-------------------------------+------------------------------------------+
+   
    |image5|
 
    **Network**
@@ -59,7 +61,9 @@ Transit Connection to FortiGate over the internet.
    +-------------------------------+------------------------------------------+
    | Dead Peer Detection           | On Demand                                |
    +-------------------------------+------------------------------------------+
+   
    |image6|
+   
    **Authentication**
 
    +-------------------------------+------------------------------------------+
@@ -104,6 +108,7 @@ Transit Connection to FortiGate over the internet.
    +-------------------------------+------------------------------------------+
 
    |image9|
+   
    **XAUTH**
 
    +-------------------------------+------------------------------------------+
@@ -167,8 +172,8 @@ Transit Connection to FortiGate over the internet.
 
    #. Click `OK`
 
-  4.d Click -> Network -> Interfaces -> Click on the Tunnelcreated above (e.g. aviatrix-gatew)->
-      assign the IP address from the configuration file downloaded  at step 3
+  4.d Click -> Network -> Interfaces -> Click on the Tunnelcreated above (e.g. aviatrix-gatew)-> assign the IP address from the configuration file downloaded  at step 3
+      
       |image14|
 
   4.e Configure IPv4 Policy
@@ -251,8 +256,7 @@ Transit Connection to FortiGate over the internet.
     :width: 5.55625in
     :height: 3.26548in
 .. |image10| image:: ./Transit_ExternalDevice_FortiGate/10.png
-    :width: 5.55625in
-    :height: 3.26548in
+    :width: 100%
 .. |image11| image:: ./Transit_ExternalDevice_FortiGate/11.png
     :width: 5.55625in
     :height: 3.26548in
@@ -266,11 +270,9 @@ Transit Connection to FortiGate over the internet.
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image15| image:: ./Transit_ExternalDevice_FortiGate/15.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+    :width: 100%
 .. |image16| image:: ./Transit_ExternalDevice_FortiGate/16.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+    :width: 100%
 .. |image17| image:: ./Transit_ExternalDevice_FortiGate/17.png
     :width: 7.00000 in
     :height: 5.00000 in
