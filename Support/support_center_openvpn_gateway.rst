@@ -176,5 +176,17 @@ Go to "Controller/Gateway/+NewGateway"
   * pick the same "authentication" and use the same auth information as your existing gateway (you can find this information from "Controller/OpenVPN/EditConfig/Authentication") [CK] For ELB, it has to use the same authentication method if you need multiple OpenVPN gateways for redundancy.
   * use exactly the same configuration as the first gateway
   * Click on OK
+  
+  
+How can I resolve my private VPC Instance's name when connecting via remote VPN?
+-------------------------------------------------------------------------------------
+ 
+Our recommended approach is for you to advertise your VPC Instance Names via your domain registrar. For example, if you have an instance with a private ip of 10.10.5.6 - you can register it with your domain registrar as myinstance.example.com (assuming you own example.com) to resolve it to 10.10.5.6. This would allow the instance to be reachable via any public DNS server and not be dependant on having the "right" DNS setting.
+ 
+OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote user can be configured to connect to this gateway via VPN Client either through a full tunnel or a split tunnel
+
+  * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote users's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
+  * For split tunnel, the DNS server settings are not pushed, by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provider multiple DNS servers separated by commas
+ 
 
 
