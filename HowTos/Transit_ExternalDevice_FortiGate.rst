@@ -226,8 +226,9 @@ Transit Connection to FortiGate over the internet.
     
     Neighbors: Remote tunnel ip address and ASN
     
-    Networks: All the networks needs to be advertised via BGP (here 10.3.0.0 is the local network of FortiGate)
-
+    Networks: All the networks needs to be advertised via BGP (here 10.0.3.0 is the local network of FortiGate)
+ 
+    |image21|
 
 
 6.Go to Transit Network -> Advanced Config on the Controller and Click on Diagnostics and select the GW name from the dropdown list and select Show Ip bgp Command from the predefined Show list to verify the BGP Routes.
@@ -295,7 +296,8 @@ Transit Connection to FortiGate over the internet.
 .. |image20| image:: ./Transit_ExternalDevice_FortiGate/20.png
     :width: 7.00000 in
     :height: 5.00000 in
-
+.. |image21| image:: ./Transit_ExternalDevice_FortiGate/bgp.png
+    :width: 100%
 
 
 
