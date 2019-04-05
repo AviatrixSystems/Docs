@@ -64,7 +64,7 @@ Tunneblick VPN Client might show a warning about "comp-lzo" being deprecated whe
 Why is my VPN client failing to connect with this error: “Network is unreachable for DNS resolution”?
 -------------------------------------------------------------------------------------------------------
 
-Aviatrix VPN Client needs to  have a successful name resolution for “localhost.aviatrix.com” to a local address 127.0.0.1. Some DNS servers do not allow this, resulting in the Aviatrix VPN Client failing to connect, displaying this error. If your dns server is resolving other domains, but failing to resolve localhost.aviatrix.com ("nslookup localhost.aviatrix.com" doesn’t return 127.0.0.1), you can employ a simple workaround of adding “localhost.aviatrix.com” pointing to “127.0.0.1” in the hosts file.
+Aviatrix VPN Client needs to  have a successful name resolution for “localhost.aviatrix.com” to a local address 127.0.0.1. We need a publicly resolvable FQDN to use the browser to communicate on signed TLS. Some DNS servers do not allow this, resulting in the Aviatrix VPN Client failing to connect, displaying this error. If your dns server is resolving other domains, but failing to resolve localhost.aviatrix.com ("nslookup localhost.aviatrix.com" doesn’t return 127.0.0.1), you can employ a simple workaround of adding “localhost.aviatrix.com” pointing to “127.0.0.1” in the hosts file.
  
   * Mac/Linux: add “127.0.0.1  localhost.aviatrix.com” to /etc/hosts. You would need a sudo access for this
   * Windows: add “127.0.0.1  localhost.aviatrix.com” to C:\Windows\System32\Drivers\etc\hosts file. Please open your editor/notepad with “run as administrator” (edited)
