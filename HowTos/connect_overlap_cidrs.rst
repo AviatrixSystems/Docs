@@ -81,7 +81,7 @@ Normally you'll need to download configuration, but in this example since both e
 Step 3: Configure DNAT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This step is to configure the gateway to translate the destination IP address 53.34.19.23 to the real private IP address 172.32.0.242, before routing happens.
+This step is to configure the gateway to translate the destination IP address 172.16.0.43 to the real private IP address 10.17.7.81, before routing happens.
 
 At the main navigation bar, click Gateway. Highlight the gateway, in this case, the VPC-1 gateway, click Edit. 
 
@@ -93,9 +93,10 @@ Step 4: Configure SNAT
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This step is to translate the packet source IP address after routing happens. In this example, 
-the address is translated from 10.17.4.149 to 192.168.4.43.
+the address is translated from 10.17.7.81 to 172.16.0.43 for packets going from on-prem (VPC-2) to VPC-1, 
+and 10.17.4.179 to 192.168.4.43 for packets going from VPC-1 to on-prem (VPC-2).
 
-For the same VPC-1 gateway, configure SNAT as shown below. Notice we entered "Dst CIDR" as qualifier to reduce the scope of the rule as a good practice. And the reason that the 
+For the same VPC-1 gateway, configure SNAT as shown below. Notice we entered "Dst CIDR" as qualifier to reduce the scope of the rule as a good practice. And the reason that 
 the address is 10.17.7.81/32 is that the destination has already been translated after the DNAT 
 rule before routing happens.
 
