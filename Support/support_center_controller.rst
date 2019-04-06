@@ -90,3 +90,16 @@ Aviatrix Controller monitors the gateways and tunnels and whenever there is a tu
 
 As an alternative, you can also set Cloudwatch Event Alerts in AWS to be alerted when Gateway/Controller Instances are Started or Stopped.
 
+What are blackholes on Alert Bell?
+--------------------------------------------------------------------
+
+Blackhole route(s) usually means that the route in your AWS route table points to a non-existed AWS resource.
+Besides, a route pointing to an EC2 with the stopped state will have this blackhole state.
+
+The blackhole definition on AWS website: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html
+route.state - The state of a route in the route table (active | blackhole). The blackhole state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, the specified NAT instance has been terminated, and so on).
+
+Here is more info for Aviatrix Alert Bell function: https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+Alert Bell is a new multi purpose alerting function displayed on the Aviatrix Controller Console. For example, Aviatrix Controller periodically scans your AWS route tables and alerts you if there is any blackhole entry in your AWS route table that needs to be cleaned up as best practice. GuardDuty findings are also recorded by Alert Bell.
+
+You can decide to remove the blackholes in AWS portal if it is not needed.
