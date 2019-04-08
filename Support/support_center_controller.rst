@@ -10,6 +10,8 @@ What are the minimum requirements for an instance to run the Aviatrix Controller
 ---------------------------------------------------------------------------------------------------
 
 We strongly recommend that the instance be at least t2.large and have at least 20GB of Storage to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
+
+If you have enabled `Controller HA functionality <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, please disable before initiating the following process. And do not forget to enable Controller HA after you finished with the disk size upgrade process.
  
 If you have less than 20GB of Storage on your controller, please follow these steps to increase your disk space:
 
