@@ -19,15 +19,21 @@ Benefits of FireNet Deployment Model
  - **Vendor Integration** Launch Palo Alto Networks VM-Series from the Aviatrix Controller console to simplify deployment. 
  - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when on-prem route changes or VPC attachment changes. 
 
-FireNet Deployment Model 1
-------------------------------
+FireNet Deployment Model 1 - Transit VPC
+---------------------------------------------------
 
-FireNet is currently supported for AWS Transit Gateway (TGW), as shown below. 
+FireNet supports AWS Transit Gateway (TGW), as shown below. 
 
 |firenet_transit|
 
+FireNet Deployment Model 2 - Insane Mode
+----------------------------------------------
 
-FireNet Deployment Model 2 (Future release)
+FireNet supports AWS Transit (TGW) with Insane Mode,  
+
+|firenet_insane|
+
+FireNet Deployment Model 3 (Future release)
 ----------------------------------------------
 
 In the future release, the hybrid deployment can be using native AWS Direct Connect Gateway. 
@@ -50,6 +56,9 @@ much lower than what firewall instances can do without IPSEC tunnel.
    :scale: 30%
 
 .. |firenet_transit| image:: firewall_network_media/firenet_transit.png
+   :scale: 30%
+
+.. |firenet_insane| image:: firewall_network_media/firenet_insane.png
    :scale: 30%
 
 .. |main_companion_gw| image:: transit_dmz_media/main_companion_gw.png
