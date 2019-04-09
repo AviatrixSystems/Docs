@@ -28,7 +28,7 @@ The policies for 80/443 are executed first followed by the other policies
 How can I overcome the character limit in REST API and Terraform while adding a lot of FQDN Rules for a FQDN Egress Control Tag?
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-There is a character limit while using FQDN Egress Control REST API(https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_set_fqdn_filter_tag_domain_names), which might limit you to about 100 FQDN rules. You can use the following workaround to load a file with FQDN Rules. The size of the file cannot be upto 65280 bytes. We recommend that you keep your FQDN rules to less than 500-750 per Tag.
+There is a character limit while using `FQDN Egress Control REST API <https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_set_fqdn_filter_tag_domain_names>`_, which might limit you to about 100 FQDN rules. You can use the following workaround to load a file with FQDN Rules. The size of the file cannot be upto 65280 bytes. We recommend that you keep your FQDN rules to less than 500-750 per Tag.
  
 
 ::
