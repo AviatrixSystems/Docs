@@ -178,7 +178,7 @@ Aviatrix Controller automatically creates a tag when it creates resources, such 
   aviatrix tag key = "Aviatrix-Created-Resource"
   aviatrix tag value = "Do-Not-Delete-Aviatrix-Created-Resource"
 
-You can use the above tag as a condition to reduce the IAM app policy for deleting instances. The example IAM policy can be found `here. <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_customized_IAM_app_policy.txt>`_
+Click `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_customized_IAM_app_policy.txt>`_ to download a complete IAM policy that reduces the IAM app policy for deleting instanceis.
 
 3. Use Condition to Allow Service Requests from Certain IP Addresses
 --------------------------------------------------------------------
