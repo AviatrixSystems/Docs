@@ -27,3 +27,20 @@ How do I connect my onprem router to VGW for Site2Connection?
 ----------------------------------------------------------------------------------
 
 Please follow the directions on AWS Console at https://docs.aws.amazon.com/vpc/latest/adminguide/Welcome.html for detailed instructions. You could also look at https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#DevicesTested for more information. 
+
+
+
+How do I connect my onsite router, which does not support BGP, to connect to my transit gateway via AWS's VGW?
+---------------------------------------------------------------------------------------------------------------------
+
+If your onsite router does not support BGP, please follow the following steps to connect to VGW on AWS Console;
+
+ * Create new "VPN Connection" on AWS console
+ * For "Customer Gateway" pick "new" and use your onsite router's public ip address
+ * Skip "BGP ASN"
+ * Set the "routing options" to "static"
+ * Enter all of your onsite CIDR's at "Static IP Prefixes"
+ * Click on "Create VPN Connection"
+ * At the Site-to-Site VPN connection page at AWS portal, select the vpn connection you created just now and click on "Download Configuration" to download the appropriate configuration. Follow the steps in this document to setup your tunnel on your onsite router.
+ 
+You would have to manually set the "remote subnets" in your onsite router to the on cloud CIDR's that you want the router to access. Your onprem CIDR's that you configured above, will be propogated by the VGW to the transit gateway via BGP and they will make it to all of your Spoke Gateways.
