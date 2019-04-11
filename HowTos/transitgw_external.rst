@@ -100,7 +100,7 @@ Steps to
 
 4. `Configure FortiGate <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_FortiGate.html>`_
 
-5. `Configure FortiGate <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_JuniperSRX.html>`_
+5. `Configure JuniperSRX <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_JuniperSRX.html>`_
 
 
 
