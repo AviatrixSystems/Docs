@@ -24,7 +24,7 @@ Transit Connection to JuniperSRX over the internet.
 
  .. raw:: html
 
-    <iframe src="./Transit_ExternalDevice_JuniperSRX_media/juniperSRX.docx" height="300px" width="100%"></iframe>
+    <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/docs/JuniperSRX+(1).txt" height="300px" width="100%"></iframe>
 
     Note: The tunnel IP addresses are configured accordingly with the configuration file downloaded from above.
 
