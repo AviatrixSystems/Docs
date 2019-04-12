@@ -198,16 +198,7 @@ Transit Connection to FortiGate over the internet.
 
        Be sure to select **accept** for `action` and select **all** for `service`
 
-  4.f Add a Static Route
-
-
-    In **Network** > **Static Routes**, add a new static route for traffic destined to remote network(e.g., here it is **any** i.e, 0.0.0.0/0.0.0.0) to use the VPN tunnel.
-
-     |image17|
-
-
-
-  4.g  Bring Up IPSec Monitor
+  4.f  Bring Up IPSec Monitor
 
 
      In **Monitor** > **IPSec Monitor**, select the Aviatrix tunnel, and click **Bring Up**.
@@ -284,9 +275,6 @@ Transit Connection to FortiGate over the internet.
     :width: 100%
 .. |image16| image:: ./Transit_ExternalDevice_FortiGate/16.png
     :width: 100%
-.. |image17| image:: ./Transit_ExternalDevice_FortiGate/17.png
-    :width: 7.00000 in
-    :height: 5.00000 in
 .. |image18| image:: ./Transit_ExternalDevice_FortiGate/18.png
     :width: 7.00000 in
     :height: 5.00000 in
