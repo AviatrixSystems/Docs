@@ -74,28 +74,6 @@ Create the VPN Connection
 
 #. Select the VPN you just created and click the **Download Configuration** button along the top.  At the dialog, select **Generic** for the `Vendor`, **Generic** for the `Platform` and **Vendor Agnostic** for the `Software`
 
-#. Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  Use this table for specific field values
-
-   +-------------------------------+------------------------------------------+
-   | Field                         | Description                              |
-   +===============================+==========================================+
-   | VPC ID/VNet Name              | Select **Gateway A** VPC or VNet from the|
-   |                               | drop down.                               |
-   +-------------------------------+------------------------------------------+
-   | Remote Gateway Type           | Aviatrix                                 |
-   +-------------------------------+------------------------------------------+
-   | Registered                    | Leave unchecked                          |
-   +-------------------------------+------------------------------------------+
-   | Primary Cloud Gateway         | Select **Gateway A** from the list       |
-   +-------------------------------+------------------------------------------+
-   | Remote Gateway IP Address     | Enter the public IP address of           |
-   |                               | **Gateway B**.                           |
-   +-------------------------------+------------------------------------------+
-   | Pre-shared Key                | Leave blank and Aviatrix will generate   |
-   +-------------------------------+------------------------------------------+
-
-#. Once complete, select the newly created tunnel in the list
-#. Select **Aviatrix** for `Vendor`, **UCC** for `Platform` and **1.0** for `Software`.
 #. Click **Download Configuration**.  You will use this file to create the other side of the tunnel.
 
    |awsdownloadvpnconfig|
@@ -119,50 +97,6 @@ Configure Aviatrix
    | Algorithms                    | Checked                                  |
    +-------------------------------+------------------------------------------+
 
-#. Open the configuration file from the previous section.  Scroll to the **#1: Internet Key Exchange Configuration** section.
-
-   **Phase 1 Configuration**
-
-   +-------------------------------+------------------------------------------+
-   | Field                         | Description                              |
-   +===============================+==========================================+
-   | Phase 1 Authentication        | Select the value that matches the value  |
-   |                               | `Internet Key Exchange Configuration`    |
-   |                               | > **Authentication Algorithm**           |
-   +-------------------------------+------------------------------------------+
-   | Phase 1 DH Groups             | Select the value that matches the value  |
-   |                               | `Internet Key Exchange Configuration`    |
-   |                               | > **Diffie-Hellman**                     |
-   +-------------------------------+------------------------------------------+
-   | Phase 1 Encryption            | Select the value that matches the value  |
-   |                               | `Internet Key Exchange Configuration`    |
-   |                               | > **Encryption Algorithm**               |
-   +-------------------------------+------------------------------------------+
-
-   |avxphase1config|
-
-#. Open the configuration file from the previous section.  Scroll to the **#2: IPSec Configuration** section.
-
-   **Phase 2 Configuration**
-
-   +-------------------------------+------------------------------------------+
-   | Field                         | Description                              |
-   +===============================+==========================================+
-   | Phase 2 Authentication        | Select the value that matches the value  |
-   |                               | `IPSec Configuration`                    |
-   |                               | > **Authentication Algorithm**           |
-   +-------------------------------+------------------------------------------+
-   | Phase 2 DH Groups             | Select the value that matches the value  |
-   |                               | `IPSec Configuration`                    |
-   |                               | > **Perfect Forward Secrecy**            |
-   +-------------------------------+------------------------------------------+
-   | Phase 2 Encryption            | Select the value that matches the value  |
-   |                               | `IPSec Configuration`                    |
-   |                               | > **Encryption Algorithm**               |
-   +-------------------------------+------------------------------------------+
-
-   |avxphase2config|
-
 #. Populate the remaining fields.
 
    +-------------------------------+------------------------------------------+
@@ -176,6 +110,13 @@ Configure Aviatrix
    | Pre-shared Key                | Enter the value that matches the value   |
    |                               | `Internet Key Exchange Configuration`    |
    |                               | > **Pre-Shared Key**                     |
+   +-------------------------------+------------------------------------------+
+   | Remote Subnet                 | Enter the value that matches the value   |
+   |                               | `Inside IP Address`                      |
+   |                               | > **Virtual Private Gateway**            |
+   |                               | comma, the remote VPC CIDR               |
+   |                               | Note, the remote VPC CIDR represents     |
+   |                               | the VPC where VGW resides.               | 
    +-------------------------------+------------------------------------------+
 
    |tunnelconfig|
@@ -281,6 +222,7 @@ Other fields should be filled as instructed in above section **Configure Aviatri
 .. |avxphase1config| image:: s2c_vgw_media/avx_phase_1_config.png
 .. |avxphase2config| image:: s2c_vgw_media/avx_phase_2_config.png
 .. |tunnelconfig| image:: s2c_vgw_media/tunnelconfig.png
+   :scale: 30%
 
 .. disqus::
 
