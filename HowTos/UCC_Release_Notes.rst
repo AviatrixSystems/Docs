@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R4.2.764 (Patch release of 4.2 on 4/14/2019)
+=============================================
+
+ - Missing parameters for "skip_rfc1918" for Azure support.
+ - Missing parameters for "skipp_rfc1918" for GCP support. 
+ - Bug fix for Transit Peering in handling BGP manual route summary.
+
 R4.2.740 (Patch release of 4.2 on 3/31/2019)
 ===============================================
 
