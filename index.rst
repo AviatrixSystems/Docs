@@ -166,6 +166,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud_fortigate
    HowTos/site2cloud_meraki
    HowTos/site2cloud_meraki_vmx100
+   HowTos/S2C_GW_JuniperSRX
    HowTos/cloudn-site2cloud
    HowTos/site2cloud_case_study
    HowTos/EncrOverExpRoute
