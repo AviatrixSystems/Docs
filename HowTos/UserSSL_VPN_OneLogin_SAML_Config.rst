@@ -161,13 +161,41 @@ Aviatrix Controller SAML Endpoint
 
    |imageAvtxSAMLEndpoint|
 
-Validate
---------
+Test the Integration
+--------------------
 
 You can quickly validate that the configuration is complete by clicking on the **Test** button next to the SAML endpoint.
 
 |imageAvtxTestSAML|
-   
+
+.. _create_aviatrix_vpn_user:
+
+Create a VPN User
+#################
+
+#. Login to the Aviatrix Controller
+#. Click `OpenVPN®` in the left navigation menu
+#. Select `VPN Users`
+#. Click `+ Add New`
+#. Select the `VPC ID` and `LB/Gateway Name` for your SAML Gateway
+#. Enter a name in the `User Name` field
+#. Enter any valid email address in the `User Email` field (this is where the cert file will be sent). Alternatively, you can download the cert if you do not enter an email address.
+#. Select the `SAML Endpoint`
+#. Click `OK`
+
+.. _validate_entire_process:
+
+Validate
+########
+
+#. Login to the Aviatrix Controller
+#. Click `OpenVPN®` in the left navigation menu
+#. Select `VPN Users`
+#. Download the configuration for your test user created in the previous step
+#. Open the Aviatrix VPN Client application
+#. Click `Load Conf` and select the file downloaded
+#. Click `Connect`
+
 .. |imageOLNewAppSearch| image:: onelogin_saml_media/onelogin_new_app_search.png
 .. |imageOLNewAppStep1| image:: onelogin_saml_media/onelogin_new_app_step1.png
 .. |imageOLNewAppParams| image:: onelogin_saml_media/onelogin_parameters.png
