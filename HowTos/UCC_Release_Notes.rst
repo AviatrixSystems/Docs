@@ -2,6 +2,22 @@
 Release Notes
 =======================================
 
+R4.3 (Coming Soon)
+
+1. Networking
+--------------
+
+ - **Firewall Network** Scale out firewall network
+ - **C5n Instance for InsaneMode
+ - **Transit Peering with InsaneMode
+ - **Filter Spoke VPC certain subnets** Supports the ability to exclude certain VPC subnets from advertising to transit gateway.
+ 
+2. Operation
+-------------
+
+ - **SumoLogic Ephemeral Collector**
+ - **Datadog version 6 support**
+
 R4.2.764 (Patch release of 4.2 on 4/14/2019)
 =============================================
 
