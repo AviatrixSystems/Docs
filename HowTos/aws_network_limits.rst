@@ -34,7 +34,7 @@ VPN traffic initiation                    from on-prem    traffic must be initia
 DXGW cross accounts                       not available
 VIF per Direct Connect                    50
 NLB for UDP traffic                       not available
-Inter region peering MTU size             1500 bytes
+Inter region peering MTU size             1500 bytes      unlike intra region peering, there is no jumbo frame support, therefore inter region performance is maxed out at 5Gbps.
 Outgoing SMTP traffic on port 25          throttled       you can send request to lift the throttle.
 ========================================  =============== =====================
 
