@@ -143,21 +143,20 @@ the information such as gateway IP address, inbound and outbound
 interface, MAC address, TTL value, protocol name, source IP address,
 destination IP address and packet length.
 
-Two example logs:
+An example for a deny rule event is shown below. The log event prefix is  "AvxRl gw1 D:", where 
+the gateway name is gw1, "D" represents Drop. 
 
 ::
 
-  syslog:Aug  4 21:46:28 ip-10-31-0-47 kernel: \[ 1111.107393\]
-  ***AviatrixRule*** 10.31.0.47 A:IN=eth0 OUT=tun0
-  MAC=0a:06:c3:e3:d0:4f:0a:d2:ef:22:68:61:08:00 SRC=52.40.185.222
-  DST=192.168.43.6 LEN=40 TOS=0x00 PREC=0x00 TTL=62 ID=798 DF PROTO=TCP
-  SPT=443 DPT=56505 WINDOW=231 RES=0x00 ACK FIN URGP=0
+ 2019-04-10T23:33:47.217018+00:00 ip-10-240-0-44 kernel: [ 4976.320353] AvxRl gw1 D:IN=eth0 OUT=eth0 MAC=02:bd:e5:4f:d0:e2:02:d8:14:81:fc:48:08:00 SRC=10.240.1.60 DST=10.230.1.23 LEN=84 TOS=0x00 PREC=0x00 TTL=63 ID=45312 DF PROTO=ICMP TYPE=8 CODE=0 ID=2833 SEQ=1
 
-  syslog:Aug  4 21:46:32 ip-10-31-0-47 kernel: \[ 1115.091011\]
-  ***AviatrixRule*** 10.31.0.47 A:IN=eth0 OUT=tun0
-  MAC=0a:06:c3:e3:d0:4f:0a:d2:ef:22:68:61:08:00 SRC=98.136.189.19
-  DST=192.168.43.6 LEN=334 TOS=0x00 PREC=0x00 TTL=40 ID=5452 DF PROTO=TCP
-  SPT=443 DPT=56203 WINDOW=368 RES=0x00 ACK PSH URGP=0
+Another example for a accept rule event is shown below. The log event prefix is "AvxRl StatefulGW2 A:", 
+where the gateway name is StatefulGW2, "A" represents Accept.  
+
+::
+
+ 2019-04-10T23:34:47.602166+00:00 ip-10-240-0-44 kernel: [ 5036.705845] AvxRl StatfulGW2 A:IN=eth0 OUT=eth0 MAC=02:bd:e5:4f:d0:e2:02:d8:14:81:fc:48:08:00 SRC=10.240.1.60 DST=10.230.1.23 LEN=84 TOS=0x00 PREC=0x00 TTL=63 ID=48453 DF PROTO=ICMP TYPE=8 CODE=0 ID=2834 SEQ=1
+
 
 AviatrixGwNetStats:
 --------------------
