@@ -161,6 +161,19 @@ Aviatrix Gateway EBS volume can be encrypted after it is launched following `the
 
 You can enable `SAML authentication for Controller login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
 
+What are the events Aviatrix Controller monitors?
+---------------------------------------------------
+
+ 1. VPN tunnel status. Alert when it goes down and alert when it comes back up.
+ #. Gateway health status. Alert when gateway goes to down state. Alert when it comes back up.
+ #. Overlap network CIDR range. Alert when BGP routes overlap. 
+ #. Route limit. Alert when BGP route limits reach a threshold. 
+ #. TGW Auditor. Continuously monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
+ #. IAM policy. Alert when account IAM policy is not up to date. 
+ #. Guard Duty integration. Alert and block malicious IP addresses.
+ #. Blackhole route. Alert when VPC route table has in active routes.  
+ 
+
 
 How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
 ------------------------------------------------------------------------------------------------------

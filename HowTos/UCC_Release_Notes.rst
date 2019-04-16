@@ -8,8 +8,8 @@ R4.3 (Coming Soon)
 --------------
 
  - **Firewall Network** Scale out firewall network
- - **C5n Instance for InsaneMode
- - **Transit Peering with InsaneMode
+ - **C5n Instance** for InsaneMode
+ - **Transit Peering** with InsaneMode
  - **Filter Spoke VPC certain subnets** Supports the ability to exclude certain VPC subnets from advertising to transit gateway.
  
 2. Operation
