@@ -168,10 +168,11 @@ What are the events Aviatrix Controller monitors?
  #. Gateway health status. Alert when gateway goes to down state. Alert when it comes back up.
  #. Overlap network CIDR range. Alert when BGP routes overlap. 
  #. Route limit. Alert when BGP route limits reach a threshold. 
- #. TGW Auditor. Continuously monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
+ #. TGW Auditor. Monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
  #. IAM policy. Alert when account IAM policy is not up to date. 
  #. Guard Duty integration. Alert and block malicious IP addresses.
  #. Blackhole route. Alert when VPC route table has in active routes.  
+ #. Public subnet. Alert when there are unwanted instances launched on specific public subnets. 
  
 
 
