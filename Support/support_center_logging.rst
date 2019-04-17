@@ -53,6 +53,7 @@ How can I get my logs into AWS S3 Bucket?
 --------------------------------------------------------------------------
 
 There are a few ways to get your logs into S3 bucket. Here are a couple
+
   * Send `logs to rsyslog and then onto S3 <https://docs.aviatrix.com/HowTos/ForwardingLogs.html>`_
   * Send `logs to Cloudwatch <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_ and then `onto S3 <https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3Export.html>`_ 
 
