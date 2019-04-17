@@ -57,3 +57,10 @@ There are a few ways to get your logs into S3 bucket. Here are a couple
   * Send `logs to Cloudwatch <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_ and then `onto S3 <https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3Export.html>`_ 
 
 
+ 
+How can I upgrade/downgrade to a specific Sumo agent version in Aviatrix Controller/Gateways?
+-----------------------------------------------------------------------------------------------------
+
+When SumoLogic is first enabled, the Controller installs the latest Sumo agent on all the Aviatrix Gateways and the Controller. Any new gateway created later, will get the latest SumoLogic Agent available at that time. A second disable/enable of Sumo Logging will not upgrade the agents that are already installed.
+ 
+From release 4.2 onwards, we allow you to upgrade/downgrade the Sumo Collector Agent that has been installed in the Aviatrix Controller and Gateways, from the SumoLogic Web UI. Please allow enough time for this upgrade to be completed - SumoLogic's Web UI will confirm once the upgrade is completed. If you create any new gateways after this process, you would have to adjust it's agent through SumoLogic's Web UI
