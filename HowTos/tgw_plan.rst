@@ -150,7 +150,7 @@ If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workfl
 
 When complete, you are done! 
 
-(The next two steps, Step 5 and Step 6 in this workflow (the next two steps) should have already been executed for the Main gateway, i.e., you can skip the next two steps.) 
+(The next two steps, Step 5 and Step 6 in this workflow should have already been executed for the Main gateway, i.e., you can skip the next two steps.) 
 
 
 5. Prepare Aviatrix Transit GW for TGW Attachment
