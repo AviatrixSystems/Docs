@@ -43,3 +43,13 @@ How do I debug Terraform issues?
 If you run into issues with Terraform, please turn on debug logs by doing ``export TF_LOG=TRACE`` on your terminal and then running your terraform scripts again. Please share the output with our support team at support@aviatrix.com
 
 
+How can I launch a new Aviatrix Controller with Terraform?
+----------------------------------------------------------------------
+ 
+Launching a new controller typically involves multiple steps as described `here <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. We do support setting up, launching and initializing an `Aviatrix Controller from Terrafrom <https://github.com/AviatrixSystems/terraform-modules>`_. Here are the steps involved:
+
+ * `Setup IAM roles and policies <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_
+ * `Launch a Controller from AMI <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-build>`_
+ * `Initialize the Aviatrix Controller <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-initialize>`_
+ 
+ 
