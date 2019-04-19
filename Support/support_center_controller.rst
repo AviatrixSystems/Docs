@@ -107,7 +107,7 @@ Alert Bell is a new multi purpose alerting function displayed on the Aviatrix Co
 You can decide to remove the blackholes in AWS portal if it is not needed.
 
 
-How can I check and track configuration changes and run audiot on my Aviatrix System?
+How can I check and track configuration changes and run audit on my Aviatrix System?
 --------------------------------------------------------------------------------------
 
 You have a couple ways to run audits on the Aviatrix System:
