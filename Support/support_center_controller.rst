@@ -105,3 +105,14 @@ Here is more info for Aviatrix Alert Bell function: https://docs.aviatrix.com/Ho
 Alert Bell is a new multi purpose alerting function displayed on the Aviatrix Controller Console. For example, Aviatrix Controller periodically scans your AWS route tables and alerts you if there is any blackhole entry in your AWS route table that needs to be cleaned up as best practice. GuardDuty findings are also recorded by Alert Bell.
 
 You can decide to remove the blackholes in AWS portal if it is not needed.
+
+
+How can I check and track configuration changes and run audiot on my Aviatrix System?
+--------------------------------------------------------------------------------------
+
+You have a couple ways to run audits on the Aviatrix System:
+
+ * You can view and download audit logs from "Controller GUI > Troubleshoot > Logs > Display Logs > Display Audit Logs" and "Download Audit Logs". More information `here <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html?highlight=audit#operations>`_
+ * If you have `external logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ enabled, you can search for "AviatrixCMD" on your logging system. More information `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
+ 
+ 
