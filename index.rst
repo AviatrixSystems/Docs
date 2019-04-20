@@ -114,6 +114,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Firewall Network (FireNet)
 
+   HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
 
 .. _Transit DMZ:
@@ -316,7 +317,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_route_limit
    HowTos/tgw_pan_ecmp
    HowTos/aws_transit_gateway_orchestrator
-   HowTos/firewall_network
    HowTos/aviatrix_insanemode
 
 .. _Good To Know:
