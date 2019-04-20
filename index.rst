@@ -15,6 +15,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Gateway`
 * :ref:`Transit Gateway Orchestrator`
 * :ref:`Transit Network`
+* :ref:`Firewall Network`
 * :ref:`Transit DMZ`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
@@ -107,7 +108,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitgw_external
    HowTos/Setup_Transit_Network_Terraform
 
-.. _Transit DMZ
+.. _Firewall Network:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Firewall Network (FireNet)
+
+   HowTos/firewall_network_workflow
+
+.. _Transit DMZ:
 
 .. toctree::
    :maxdepth: 1
