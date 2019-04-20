@@ -21,8 +21,10 @@ VPC to VPC (East West) traffic, VPC to Internet (Egress) traffic, VPC to on-prem
 In addition, FireNet allows to scale your firewall deployment to multi AZ and multi instances.
 
 
-What are the Benefits of FireNet Deployment Model
+What are the Benefits of FireNet Deployment Model?
 ----------------------------------------------------------------------------------------
+
+For enterprises that wish to deploy firewall in AWS, Aviatrix’s FireNet deployment model provides the best performance and automation.
 
  - **Full Traffic Inspection** With FireNet, North South (on-prem and cloud), East West (VPC to VPC) and Internet bound egress traffic can be inspected by firewall instances.
  - **No IPSEC Tunnels** No IPSEC tunnels connecting to firewall instances as opposed to ECMP VPN deployment model, maximizing each firewall instance throughput.
