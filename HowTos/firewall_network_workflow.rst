@@ -25,7 +25,7 @@ If you have not already done so, follow the Go link to subscribe the VM-Series i
 
 This step creates a Firewall Domain
 
-4. Launch FireNet Gateway
+4. Launch Aviatrix FireNet Gateway
 ------------------------------------------
 
 This step leverage the Transit Network workflow to launch one or two Aviatrix gateway for FireNet. 
@@ -33,14 +33,14 @@ This step leverage the Transit Network workflow to launch one or two Aviatrix ga
 If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches HA gateway (the second gateway) in a different AZ.
 
 
-5. Enable the FireNet Gateway
+5. Enable Aviatrix FireNet Gateway
 ---------------------------------------------
 
 This step configures the gateway launched in Step 2 for FireNet function. If you have HA enabled, it
 automatically sets up the second gateway for FireNet.
 
-6. Attach FireNet gateway to TGW Firewall Domain
--------------------------------------------------
+6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
+-------------------------------------------------------------
 
 This step requires you have already created a Security Domain with Firewall attribute enabled.
 
