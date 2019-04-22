@@ -95,8 +95,8 @@ Server                   HPE ProLiant DL360 Gen10 Server
 CPU                      8 cores
 Memory                   16GB
 PCIe                     3.0
-10Gbps Ethernet ports    2                                             1 LAN port and 1 WAN port
-1Gbps Ethernet port      4                                             1 Management port
+10Gbps Ethernet ports    2                                             1 LAN port and 1 WAN port Media:SFP+
+1Gbps Ethernet port      4                                             1 Management port RJ45 Copper
 =====================    ================================              =================
 
 More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-proliant-dl360-gen10-server.1010007891.html>`_
@@ -163,6 +163,10 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary
 =====================  ==================  ===========  ===============  ==================  =====================  =============================================================
 
 Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
+
+Internet Access
+---------
+CloudN appliance requires outbout internet access on the management port to be able to reach the controller. 
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
