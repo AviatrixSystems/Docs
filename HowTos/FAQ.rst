@@ -161,6 +161,12 @@ Aviatrix Gateway EBS volume can be encrypted after it is launched following `the
 
 You can enable `SAML authentication for Controller login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
 
+10. Securing Controller when using SAML for VPN User Authentication
+######################################################################
+
+This scenario is explained in detail `here <https://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_
+
+
 What are the events Aviatrix Controller monitors?
 ---------------------------------------------------
 

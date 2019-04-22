@@ -166,11 +166,11 @@ Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and 
 
 Internet Access
 ---------
-CloudN appliance requires outbout internet access on the management port to be able to reach the controller. 
+CloudN appliance requires outbound internet access on the management port to be able to communicate with the controller. 
 
 BGP Requirement
 ---------
-BGP between LAN port of the appliance and the on-prem router is required for route propagation. 
+BGP is required between LAN port of the appliance and the on-prem router for route propagation.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
