@@ -102,6 +102,8 @@ Steps to
 
 5. `Configure JuniperSRX <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_JuniperSRX.html>`_
 
+6. `Configure pfSense <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_pfSense.html>`_
+
 
 
 Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP. . 
