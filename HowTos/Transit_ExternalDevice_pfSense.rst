@@ -154,6 +154,4 @@ Transit Connection to pfSense over the internet.
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image14| image:: ./Transit_ExternalDevice_pfsense/14.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-
+    :width: 100%
