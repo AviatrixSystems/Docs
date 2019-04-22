@@ -20,7 +20,7 @@ Select "Aviatrix Transit VPC" option when creating a security VPC.
 
 This step leverage the Transit Network workflow to launch one or two Aviatrix gateway for FireNet. 
 
-If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches the second gateway in a different AZ.
+If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches HA gateway (the second gateway) in a different AZ.
 
 3. Subscribe to AWS Marketplace
 --------------------------------------
@@ -31,14 +31,24 @@ If you have not already done so, follow the Go link to subscribe the VM-Series i
 4. Enable the FireNet Gateway
 ---------------------------------------------
 
-This step setup the gateway launched in Step 2 for FireNet function. If you have HA enabled, it
-automatically setup the second gateway for FireNet.
+This step configures the gateway launched in Step 2 for FireNet function. If you have HA enabled, it
+automatically sets up the second gateway for FireNet.
 
 
 5a. Launch and Associate Firewall Instance
 --------------------------------------------
 
-This step launches a VM-Series and associate it with one of the FireNet gateway. 
+This step launches a VM-Series and associate it with one of the FireNet gateway. Note the VM-Series and the FireNet gateway must be in the same AZ.
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Transit VPC ID                                  The Transit VPC ID for the Transit DMZ deployment. .
+Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable.
+Firewall main interface ENI                     The firewall EC2 instance ENI interface to the main gateway.y
+Firewall companion interface ENI                The firewall EC2 instance ENI interface to the companion gateway.
+Firewall Name                                   A name that is referenced by the Aviatrix Controller.
+==========================================      ==========
 
 Repeat this step to launch a second firewall instance to associate with the second FireNet gateway. 
 Or repeat this step to launch more firewall instances to associate with either FireNet gateway.

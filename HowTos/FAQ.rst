@@ -193,7 +193,8 @@ The reality
 
 However when deploying a `AWS Global Transit Network solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_, a vendor gateway must be deployed on a public subnet in the Transit VPC. This is true for all vendor appliances on the AWS marketplace. This is
 because the vendor gateway in the Transit VPC establishes IPSEC tunnels with Spoke VPC 
-over public IP address, wheather or not the Spoke VPC deploys a vendor gateway or VGW. 
+over public IP address, whether or not the Spoke VPC deploys a vendor gateway or VGW. Another reason is the vendor
+gateway requires SSH access to configure its VPN tunnels. 
 
 Note that this connectivity between Transit VPC and Spoke VPC, although using public IP addresses 
 as IPSEC tunnel end points, does not imply that traffic between Transit VPC and Spoke VPC go through the 
@@ -203,15 +204,17 @@ try to route the traffic through its own backbone network without ever going out
 The Aviatrix solution
 ######################
 
-Aviatrix provides multiple featrues to ensure your Transit Network is secure, as described below.
+An Aviatrix gateway instance has strict security groups. It only opens to the Controller on TCP port 443 and port 22 (for Controller to reach the gateway for diagnostics purpose.) 
 
- 1. Enable `Gateway Subnet Monitoring <http://docs.aviatrix.com/HowTos/gateway.html#monitor-gateway-subnet>`_. When this feature is enabled, the Controller will monitor the selected public subnets periodically. When it detects any instances being launched on these subnets, the Controller will alert the admin and stop the instances. 
+In addition, Aviatrix provides multiple features to ensure your Transit Network is secure, as described below.
+
+ 1. If you use AWS Transit Gateway (TGW) to build a transit network, the Aviatrix gateway is only launched in the transit VPC, all spoke VPCs have no Aviatrix gateway.  
+
+ #. Enable `Gateway Subnet Monitoring <http://docs.aviatrix.com/HowTos/gateway.html#monitor-gateway-subnet>`_. When this feature is enabled, the Controller will monitor the selected public subnets periodically. When it detects any instances being launched on these subnets, the Controller will alert the admin and stop the instances. 
 
  #. Enable `VPC Egress Firewall`. If you need to optimize application performance, you should consider allowing instances to access Internet directly, rather than backhauling to on-prem. When this feature is enabled, any traffic initiated from instances on the private subnet must go through the inline and in VPC egress whitelists before going out to Internet.  
 
  #. Enable `Remote User VPN`. If you need to optimize developer experience (less latency, higher bandwidth), you should consider allowing users to access instances in VPC directly with SSL VPN. When this feature is enabled, all user traffic is tracked and logged for audit and tracking purpose. 
-
- #. Build `Zero Trust` Network. `Aviatrix Next-Gen Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-does-the-aviatrix-transit-network-solution-differ-from-cisco-s-csr-based-solution>`_ is a network connectivity by design solution that ensures Spoke VPCs that belong to different BUs or projects do not have connectivity by default. 
 
  #. Secure the Controller. Follow the guidelines `here <http://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure the Controller access. 
 
