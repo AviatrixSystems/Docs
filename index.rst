@@ -67,7 +67,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/CompanionGateway
    HowTos/Quick_Tour
    HowTos/accesskey
-  
+
 
 .. _Gateway:
 
@@ -101,7 +101,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Next Gen Transit for Azure 
+   :caption: Next Gen Transit for Azure
 
    HowTos/nextgentransit_for_azure
    HowTos/transitvpc_workflow
@@ -213,7 +213,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Useful Tools 
+   :caption: Useful Tools
 
    HowTos/vpc_tracker
    HowTos/create_vpc
@@ -267,6 +267,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/tf_aviatrix_howto
    HowTos/aviatrix_terraform
+   HowTos/tf_export
 
 .. _Downloads:
 
