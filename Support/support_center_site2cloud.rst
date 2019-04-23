@@ -28,7 +28,10 @@ How do I connect my onprem router to VGW for Site2Connection?
 
 Please follow the directions on AWS Console at https://docs.aws.amazon.com/vpc/latest/adminguide/Welcome.html for detailed instructions. You could also look at https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#DevicesTested for more information. 
 
+How do I create a Site2Cloud connection with Customized SNAT and DNAT to virtual ip addresses?
+----------------------------------------------------------------------------------------------
 
+If you need to translate a source ip address and/or a destination ip address to different ip addresses due to your on-premise requirements, please follow the instructions at `Site2Cloud with Customized SNAT and DNAT to a virtual ip address <https://docs.aviatrix.com/HowTos/s2c_snat_dnat1.html>`_.
 
 How do I connect my onsite router, which does not support BGP, to connect to my transit gateway via AWS's VGW?
 ---------------------------------------------------------------------------------------------------------------------
