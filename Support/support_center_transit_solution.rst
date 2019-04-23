@@ -28,3 +28,11 @@ How do I troubleshoot Spoke to On-prem connection issues?
 Here are some `Troubleshooting guidelines <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_ 
 
 It is recommended that all spokes have HA pairs. When a switchover occurs to transit HA, only spokes with HA will remain connected, the non-HA spokes will lose connectivity and be black-holed.
+
+
+How can I switch between primary link and backup link?
+--------------------------------------------------------------------------------------------
+
+For peering links, you can find the active links by going to "Controller > Peering > Encrypted Peering" and search for "active" by typing in the textbox next to the looking glass. For any non-transit connections (like spoke to shared-services) you can switchover right here by clicking on the "Switch Over". For some Transit connections (such as transit gateway to spoke gateway), you can also switchover right here if your Transit network did not enable Connected Transit or Manual BGP Advertised Network List.
+ 
+If your Transit network is enabled with Connected Transit or Manual BGP Advertised Network List, you would have to go to " Troubleshoot > Diagnostics > BGP" and click on the "Switch Over" on the gateway which is currently active that you want to switch over from. For example, if you want to have all active links on primary gateway, you will click on the "Switch Over" on the hagw connection.
