@@ -114,11 +114,13 @@ Validate the connectivity
 1. At Cloud-EC2 instance, ping to the virtual ip address 172.27.254.100. Turn on "tcpdump icmp -n" at Onprem-EC2 instance to verify the source IP of the icmp ping.
 
 |s2c_snat_dnat1_08|
+
 |s2c_snat_dnat1_09|
 
 2. At Onprem-EC2 instance, ping to the virtual ip address 10.123.51.100. Turn on "tcpdump icmp -n" at Cloud-EC2 instance to verify the source IP of the icmp ping.
 
 |s2c_snat_dnat1_10|
+
 |s2c_snat_dnat1_11|
 
 .. |s2c_snat_dnat1_01| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_01.png
@@ -134,4 +136,3 @@ Validate the connectivity
 .. |s2c_snat_dnat1_11| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_11.png
 
 .. disqus::
-
