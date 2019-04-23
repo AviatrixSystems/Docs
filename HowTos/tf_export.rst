@@ -61,6 +61,12 @@ Step 2
   Under the **Exporter** column, click the **Download TF** button for the corresponding
   resource(s) you want to export.
 
+  .. note::
+
+    If you have multiple resources or want to manage your entire infrastructure through Terraform,
+    you may export your entire current configuration by clicking the **Download All** button
+    located in the top right corner of the page.
+
   In our case, we will select *vpn_profile* and download the zip file.
 
   |how_to_export|
@@ -101,7 +107,7 @@ Step 5
   |import_profile|
 
 Step 6
-  Congratulations! Your *vpn_profiles* have been successfully been imported into
+  Congratulations! Your *vpn_profile(s)* have been successfully imported into
   Terraform and can now be easily managed through code.
 
   You may verify that configured files are the same as our Controller configuration
@@ -109,32 +115,91 @@ Step 6
   and the Controller state. You may use ``terraform show`` to see your state.
 
   |verify_import1|
+
   |verify_import2|
 
+Addendum
+---------------------------
+Now managing your *vpn_profile(s)* is as simple as modifying your exported ``vpn_profile.tf``
+file and doing ``terraform plan`` to see your changes, and ``terraform apply`` to
+implement those changes. Changes can range from modifying existing profiles, removing them or
+adding new ones.
+
+As seen below, continuing from our above example, we are changing *vpn_profile_1* and removing one of the policies, and
+adding a new profile in ``vpn_profile.tf``.
+
+|edit_profile_tf1|
+
+|edit_profile_tf2|
+
+Going back to Terminal, by simply doing a ``terraform plan`` (1st picture), we see that Terraform detects
+the changes we want to make. If we are satisfied with these changes, we can go ahead and do
+``terraform apply`` (2nd picture).
+
+|terraform_apply_edit1|
+
+|terraform_apply_edit2|
+
+We can again verify these new changes by doing a ``terraform plan`` to catch deltas
+between our new state and the Controller state, as well as a ``terraform show`` to view
+the state.
+
+|terraform_apply_verify1|
+
+|terraform_apply_verify2|
+
+We can also go to the Controller and confirm that a new profile, *profile Name3*, has indeed
+been created, and the edit to *profile Name1* has been implemented.
+
+|terraform_apply_verify3|
+
+|terraform_apply_verify4|
+
+The steps described in the **Addendum** can be applied and used for management of any supported resource
+in their respective ``.tf`` file(s).
 
 .. Image Gallery References
 .. |profile1_in_controller| image:: tf_export_media/profile1_in_controller.png
-   :scale: 30%
+   :scale: 100%
 .. |profile2_in_controller| image:: tf_export_media/profile2_in_controller.png
-   :scale: 30%
+   :scale: 100%
 
 .. |how_to_export| image:: tf_export_media/how_to_export.png
-   :scale: 30%
+   :scale: 100%
 
 .. |profile1_tf| image:: tf_export_media/profile1_tf.png
-   :scale: 30%
+   :scale: 100%
 .. |profile2_tf| image:: tf_export_media/profile2_tf.png
-   :scale: 30%
+   :scale: 100%
 
 .. |provider_tf| image:: tf_export_media/provider_tf.png
-   :scale: 30%
+   :scale: 100%
 
 .. |import_profile| image:: tf_export_media/import_profile.png
-   :scale: 30%
+   :scale: 100%
 
 .. |verify_import1| image:: tf_export_media/verify_import1.png
-   :scale: 30%
+   :scale: 100%
 .. |verify_import2| image:: tf_export_media/verify_import2.png
-   :scale: 30%
+   :scale: 100%
+
+.. |edit_profile_tf1| image:: tf_export_media/edit_profile_tf1.png
+   :scale: 100%
+.. |edit_profile_tf2| image:: tf_export_media/edit_profile_tf2.png
+   :scale: 100%
+
+.. |terraform_apply_edit1| image:: tf_export_media/terraform_apply_edit1.png
+   :scale: 100%
+.. |terraform_apply_edit2| image:: tf_export_media/terraform_apply_edit2.png
+   :scale: 100%
+
+.. |terraform_apply_verify1| image:: tf_export_media/terraform_apply_verify1.png
+   :scale: 100%
+.. |terraform_apply_verify2| image:: tf_export_media/terraform_apply_verify2.png
+   :scale: 100%
+.. |terraform_apply_verify3| image:: tf_export_media/terraform_apply_verify3.png
+   :scale: 100%
+.. |terraform_apply_verify4| image:: tf_export_media/terraform_apply_verify4.png
+   :scale: 100%
 
 .. disqus::
