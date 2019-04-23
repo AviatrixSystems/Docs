@@ -160,46 +160,46 @@ in their respective ``.tf`` file(s).
 
 .. Image Gallery References
 .. |profile1_in_controller| image:: tf_export_media/profile1_in_controller.png
-   :scale: 100%
+   :width: 100%
 .. |profile2_in_controller| image:: tf_export_media/profile2_in_controller.png
-   :scale: 100%
+   :width: 100%
 
 .. |how_to_export| image:: tf_export_media/how_to_export.png
-   :scale: 100%
+   :width: 100%
 
 .. |profile1_tf| image:: tf_export_media/profile1_tf.png
-   :scale: 100%
+   :width: 100%
 .. |profile2_tf| image:: tf_export_media/profile2_tf.png
-   :scale: 100%
+   :width: 100%
 
 .. |provider_tf| image:: tf_export_media/provider_tf.png
-   :scale: 100%
+   :width: 100%
 
 .. |import_profile| image:: tf_export_media/import_profile.png
-   :scale: 100%
+   :width: 100%
 
 .. |verify_import1| image:: tf_export_media/verify_import1.png
-   :scale: 100%
+   :width: 100%
 .. |verify_import2| image:: tf_export_media/verify_import2.png
-   :scale: 100%
+   :width: 100%
 
 .. |edit_profile_tf1| image:: tf_export_media/edit_profile_tf1.png
-   :scale: 100%
+   :width: 100%
 .. |edit_profile_tf2| image:: tf_export_media/edit_profile_tf2.png
-   :scale: 100%
+   :width: 100%
 
 .. |terraform_apply_edit1| image:: tf_export_media/terraform_apply_edit1.png
-   :scale: 100%
+   :width: 100%
 .. |terraform_apply_edit2| image:: tf_export_media/terraform_apply_edit2.png
-   :scale: 100%
+   :width: 100%
 
 .. |terraform_apply_verify1| image:: tf_export_media/terraform_apply_verify1.png
-   :scale: 100%
+   :width: 100%
 .. |terraform_apply_verify2| image:: tf_export_media/terraform_apply_verify2.png
-   :scale: 100%
+   :width: 100%
 .. |terraform_apply_verify3| image:: tf_export_media/terraform_apply_verify3.png
-   :scale: 100%
+   :width: 100%
 .. |terraform_apply_verify4| image:: tf_export_media/terraform_apply_verify4.png
-   :scale: 100%
+   :width: 100%
 
 .. disqus::
