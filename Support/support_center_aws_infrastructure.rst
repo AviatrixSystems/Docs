@@ -52,5 +52,5 @@ Why are IAM Roles/Policies important?
 What do I do if my gateway instance is identified for retirement by AWS?
 ---------------------------------------------------------------------------
  
-AWS will inform you when one of your instances is scheduled for retirement if the underlying hardware has issues or is being upgraded. Usually a start/stop from AWS console will migrate the instance to newer hardware. Please check here for more information - https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/. Also, please open a support ticket with AWS for more information
+AWS will inform you when one of your instances is scheduled for retirement if the underlying hardware has issues or is being upgraded. Usually a start/stop from AWS console will migrate the instance to newer hardware. Please check `here for more information <https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/>`_. Also, please open a support ticket with AWS for more information
  
