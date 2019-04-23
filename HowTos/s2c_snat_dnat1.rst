@@ -5,9 +5,9 @@
    :keywords: site2cloud, VGW, SNAT, DNAT
 
 
-===========================================================================================
-Site2Cloud With Customized SNAT 
-===========================================================================================
+=========================================================================================
+Site2Cloud with Customized SNAT and DNAT to a virtual ip address
+=========================================================================================
 
 This technical note provides a step-by-step configuration on Aviatrix controller that will address the following requirements:
 
