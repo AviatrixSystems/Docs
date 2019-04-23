@@ -4,7 +4,6 @@
    :description: Create Site2Cloud connection to VGW with customized SNAT and DNAT on gateway
    :keywords: site2cloud, VGW, SNAT, DNAT
 
-
 =========================================================================================
 Site2Cloud with Customized SNAT and DNAT to a virtual ip address
 =========================================================================================
@@ -21,8 +20,6 @@ This technical note provides a step-by-step configuration on Aviatrix controller
 
 5. The EC2 instance will see the traffic from on-premise as coming from 172.27.254.100.
 
-|
-
 In this example, we will use 2 Aviatrix gateways to simulate the cloud VPC and on-premise network.
 
  - Cloud VPC: 172.31.72.0/24
@@ -38,11 +35,8 @@ We will configure customized SNAT and DNAT at Aviatrix gateway demo1-ptp-cloud, 
 
 We also need to configure the relevant SNAT and DNAT to meet the requirement in which traffic initiated from Onprem-EC2 will reach the Cloud-EC2 using the 10.123.51.100. Traffic from on-premise will be seen as coming from 172.27.254.100.
 
-|
-
 Create Aviatrix gateways
 ------------------------
-
 1. Create Aviatrix gateway in Cloud VPC
 
  - Follow the instructions in this `document <http://docs.aviatrix.com/HowTos/gateway.html>`__ to create an Aviatrix gateway (we use demo1-ptp-cloud as the gateway name and us-east-2 region in this example) in the Cloud VPC (172.31.72.0/24) without selecting "Enable SNAT".
@@ -109,7 +103,6 @@ Configure Customized SNAT and DNAT at Aviatrix gateway
 
 Validate the connectivity
 -------------------------
-
 1. At Cloud-EC2 instance, ping to the virtual ip address 172.27.254.100. Turn on "tcpdump icmp -n" at Onprem-EC2 instance to verify the source IP of the icmp ping.
 
 |s2c_snat_dnat1_08|
