@@ -19,7 +19,6 @@ This technical note provides a step-by-step configuration on Aviatrix controller
 4. The remote on-prem device will access the EC2 instance in the VPC using the 10.123.51.100 instead of the actual 172.31.72.13. 
 
 5. The EC2 instance will see the traffic from on-premise as coming from 172.27.254.100.
-|
 
 In this example, we will use 2 Aviatrix gateways to simulate the cloud VPC and on-premise network.
 
@@ -35,7 +34,6 @@ In the diagram below, both Aviatrix gateways (demo1-ptp-cloud and demo1-ptp-onpr
 We will configure customized SNAT and DNAT at Aviatrix gateway demo1-ptp-cloud, which translates the source IP of traffic initiated from Cloud-EC2 172.31.72.13 to an user defined IP address (10.123.51.100 in this example). In this way, Onprem-EC2 will see all packets from Cloud-EC2 with the source IP address (10.123.51.100) when the Cloud-EC2 attempts to access the virtual ip address 172.27.254.100.
 
 We also need to configure the relevant SNAT and DNAT to meet the requirement in which traffic initiated from Onprem-EC2 will reach the Cloud-EC2 using the 10.123.51.100. Traffic from on-premise will be seen as coming from 172.27.254.100.
-|
 
 Create Aviatrix gateways
 ------------------------
