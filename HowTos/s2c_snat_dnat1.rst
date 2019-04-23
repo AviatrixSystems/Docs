@@ -15,16 +15,14 @@ This technical note provides a step-by-step configuration on Aviatrix controller
 
 2. The EC2 instance will only use a virtual ip address 172.27.254.100 when it needs to access the remote on-premise device.
 
-3. The remote on-premise device will see the EC2 instance traffic as coming from 10.123.51.100 instead of the actual 172.31.72.13 or the virtual ip address 172.27.254.100.
+3. The remote on-premise device will see the EC2 instance traffic as coming from 10.123.51.100 instead of the actual 172.31.72.13.
 
-4. The remote on-prem device will access the EC2 instance in the VPC using the 10.123.51.100 instead of the actual 172.31.72.13 or the virtual ip address 172.27.254.100. 
+4. The remote on-prem device will access the EC2 instance in the VPC using the 10.123.51.100 instead of the actual 172.31.72.13. 
 
-: 
+5. The EC2 instance will see the traffic from on-premise as coming from 172.27.254.100.
 
 |
 
-Environment Requirements
-------------------------
 In this example, we will use 2 Aviatrix gateways to simulate the cloud VPC and on-premise network.
 
 Cloud VPC: 172.31.72.0/24
@@ -115,8 +113,13 @@ Validate the connectivity
 
 1. At Cloud-EC2 instance, ping to the virtual ip address 172.27.254.100. Turn on "tcpdump icmp -n" at Onprem-EC2 instance to verify the source IP of the icmp ping.
 
+|s2c_snat_dnat1_08|
+|s2c_snat_dnat1_09|
+
 2. At Onprem-EC2 instance, ping to the virtual ip address 10.123.51.100. Turn on "tcpdump icmp -n" at Cloud-EC2 instance to verify the source IP of the icmp ping.
 
+|s2c_snat_dnat1_10|
+|s2c_snat_dnat1_11|
 
 .. |s2c_snat_dnat1_01| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_01.png
 .. |s2c_snat_dnat1_02| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_02.png
@@ -125,4 +128,10 @@ Validate the connectivity
 .. |s2c_snat_dnat1_05| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_05.png
 .. |s2c_snat_dnat1_06| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_06.png
 .. |s2c_snat_dnat1_07| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_07.png
+.. |s2c_snat_dnat1_08| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_08.png
+.. |s2c_snat_dnat1_09| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_09.png
+.. |s2c_snat_dnat1_10| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_10.png
+.. |s2c_snat_dnat1_11| image:: s2c_snat_dnat1_media/s2c_snat_dnat1_11.png
+
+.. disqus::
 
