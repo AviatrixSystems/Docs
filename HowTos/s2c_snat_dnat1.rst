@@ -25,19 +25,18 @@ This technical note provides a step-by-step configuration on Aviatrix controller
 
 In this example, we will use 2 Aviatrix gateways to simulate the cloud VPC and on-premise network.
 
-Cloud VPC: 172.31.72.0/24
-Cloud-EC2: 172.31.72.13/32
-
-Onprem VPC:10.23.75.0/24 (simulating on-premise internal network)
-Onprem-EC2: 10.23.75.7/32 (simulating on-premise device)
+ - Cloud VPC: 172.31.72.0/24
+ - Cloud-EC2: 172.31.72.13/32
+ - Onprem VPC:10.23.75.0/24 (simulating on-premise internal network)
+ - Onprem-EC2: 10.23.75.7/32 (simulating on-premise device)
 
 In the diagram below, both Aviatrix gateways (demo1-ptp-cloud and demo1-ptp-onprem) will build a Site2Cloud to a VGW.
 
 |s2c_snat_dnat1_01|
 
-We will configure customized SNAT and DNAT at Aviatrix gateway demo1-ptp-cloud, which translates the source IP of traffic initiated from Cloud-EC2 172.31.72.13 to an user defined IP address (10.123.51.100 in this example). In this way, Onprem-EC2 will see all packets from Cloud-EC2 with the same source IP address (10.123.51.100) when the Cloud-EC2 attempts to access the virtual ip address 172.27.254.100.
+We will configure customized SNAT and DNAT at Aviatrix gateway demo1-ptp-cloud, which translates the source IP of traffic initiated from Cloud-EC2 172.31.72.13 to an user defined IP address (10.123.51.100 in this example). In this way, Onprem-EC2 will see all packets from Cloud-EC2 with the source IP address (10.123.51.100) when the Cloud-EC2 attempts to access the virtual ip address 172.27.254.100.
 
-Conversely, we also need to configure the relevant SNAT and DNAT to meet the requirement in which traffic initiated from Onprem-EC2 will reach the Cloud-EC2 using the 10.123.51.100.
+We also need to configure the relevant SNAT and DNAT to meet the requirement in which traffic initiated from Onprem-EC2 will reach the Cloud-EC2 using the 10.123.51.100. Traffic from on-premise will be seen as coming from 172.27.254.100.
 
 |
 
@@ -76,17 +75,17 @@ Create a Site2Cloud connection between Aviatrix GW and VGW
 
   |s2c_snat_dnat1_03|
 
-8. Since we are using another Aviatrix gateway demo1-ptp-onprem to simulate the on-premise device, click on the Site-to-Site VPN Connections at the left panel and click "Create VPN Connection" to create an IPsec tunnel to demo1-ptp-onprem EIP with static route 10.23.75.0/24. If you are connecting the actual remote device to the VGW, you will create the VPN connection with the remote device public IP.
+8. Since we are using another Aviatrix gateway demo1-ptp-onprem to simulate the on-premise device, click on the Site-to-Site VPN Connections at the left panel in AWS portal. Click "Create VPN Connection" to create an IPsec tunnel to demo1-ptp-onprem EIP with static route 10.23.75.0/24. If you are connecting the actual remote device to the VGW, you will create the VPN connection with the remote device public IP.
 
-9. Repeat step 4 through 7 for the new VPN connection created in step 8. 
+9. Repeat step 4 through 7 for the new VPN connection created in step 8. The following screenshots show Site2Cloud configuration that simulate the on-premise network.
 
   |s2c_snat_dnat1_04|
 
   |s2c_snat_dnat1_05|
 
 
-Configure Customized SNAT at Aviatrix gateway
----------------------------------------------
+Configure Customized SNAT and DNAT at Aviatrix gateway
+------------------------------------------------------
 1. Log into the Controller and go to "Gateway" page.
 
 2. Select the Aviatrix gateway demo1-ptp-cloud previously created.
