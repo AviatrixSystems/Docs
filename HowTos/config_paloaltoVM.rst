@@ -102,6 +102,13 @@ Click Commit. Once Commit is complete, you should see the Link State turn green 
 
 Now the VM-Series has its Allow All policy setup. 
 
+7. Setup API access 
+----------------------
+
+In order for Aviatrix Controller to automatically update firewall instance route tables, monitor firewall instance health and manage instance failover, you need to setup API access permissions. 
+
+
+
 
 
 .. |access_key| image:: config_paloaltoVM_media/access_key.png

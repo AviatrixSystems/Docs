@@ -53,16 +53,41 @@ This step requires you have already created a Security Domain with Firewall attr
 This step launches a VM-Series and associate it with one of the FireNet gateway. Note the VM-Series and the 
 associated FireNet gateway must be in the same AZ.
 
-Repeat this step to launch a second firewall instance to associate with the second FireNet gateway. 
+7a.1 Launch and Associate
+##########################
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+VPC ID                                          The Security VPC created in Step 1.
+Gateway Name                                    The primary FireNet gateway.
+Firewall Instance Name                          The name that will be displayed on AWS Console.
+Firewall Image                                  The AWS AMI that you have subscribed in Step 2.
+Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
+Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
+==========================================      ==========
+
+7a.2 Launch and Associate More
+#################################
+
+Repeat Step 7a.1 to launch the second firewall instance to associate with the HA FireNet gateway. 
 Or repeat this step to launch more firewall instances to associate with either FireNet gateway.
 
-It takes about 15 minutes to get the VM-Series up and running. After the VM-Series instance is up and running, follow the instructions here to configure an "Allow All" policy for a quick Proof of Concept setup. 
+7a.3 Example Setup for "Allow All" Policy
+###########################################
+
+After a firewall instance is launched, wait for 15 minutes to come up. 
+
+You can follow `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to build
+a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
+to firewall instance. 
 
 
 7b. Associate an Existing Firewall Instance
 --------------------------------------------
 
-This step is alternative step to 5a. If you already launched VM-Series from AWS Console, you can still
+This step is alternative step to Step 7a. If you already launched VM-Series from AWS Console, you can still
 associate it with the FireNet gateway. 
 
 
