@@ -108,10 +108,8 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
 
 
 
-.. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
+.. |firewall_domain| image:: firewall_network_workflow_media/firewall_domain.png
    :scale: 30%
 
-.. |main_companion_subnets| image:: transit_dmz_media/main_companion_subnets.png
-   :scale: 30%
 
 .. disqus::
