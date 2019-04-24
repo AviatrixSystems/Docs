@@ -4,7 +4,7 @@
 
 
 =========================================================
-Setup Palo Alto VM-Series for POC
+Example Config for Palo Alto VM-Series
 =========================================================
 
 In this document, we provide an example to setup the VM-Series for you to validate that packets are indeed
@@ -107,7 +107,15 @@ Now the VM-Series has its Allow All policy setup.
 
 In order for Aviatrix Controller to automatically update firewall instance route tables, monitor firewall instance health and manage instance failover, you need to setup API access permissions. 
 
+Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
+8. Read to go!
+---------------
+
+Now your firewall instance is ready to receive packets! 
+
+The next step is specify which Security Domain needs packet inspection by defining a connection policy that connects to
+the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
 
 
 
