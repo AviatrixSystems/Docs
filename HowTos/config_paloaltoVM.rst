@@ -7,14 +7,14 @@
 Setup Palo Alto VM-Series for POC
 =========================================================
 
-In this document, we provide an example to setup the VM-Series such that you can quickly validate traffic inspection 
-for VPC to VPC traffic.  
+In this document, we provide an example to setup the VM-Series for you to validate that packets are indeed
+sent to the VM-Series for VPC to VPC traffic inspection.
 
 Aviatrix Firewall Network (FireNet) workflow launches VM-Series at `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ After the launch complete, the console displays the
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file 
 for SSH access to the instance. 
 
-Below are the steps to setup an initial configuration around VM-Series for an "Allow ALL" policy. 
+Below are the steps to setup an "Allow ALL" policy. 
 
 1. Download VM-Series Access Key
 ----------------------------------
@@ -61,8 +61,11 @@ Login with Username "admin". Password is the password you set at the previous st
 Once login, click Network tab, you should see a list of ethernet interfaces. Click ethernet1/1 and 
 configure as the following screenshot. 
 
- - Select "layer3" for Interface Type
+ - Click Network tab
+ - Click ethernet1/1
  - Click Config tab.
+ - Select "layer3" for Interface Type
+ - Click Config
  - Select default for Virtual Router at Config tab
  - Click New Zone for Security Zone to create a WAN zone. 
  - At the next pop up screen, name the new zone "WAN" and click OK 
@@ -89,8 +92,8 @@ Click Commit. Once Commit is complete, you should see the Link State turn green 
 6. Configure Allow All Policies
 ---------------------------------
 
-Click Policies tab. Click +Add at the bottom left corner to create a new policy. 
-
+ - Click Policies tab.
+ - Click +Add at the bottom left corner to create a new policy.
  - Click General tab. Name the policy Allow-all.
  - Click Source tab. Select Any for both panels.
  - Click Destination tab. Select Any for both panels.
