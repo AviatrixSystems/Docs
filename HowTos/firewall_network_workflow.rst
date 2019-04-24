@@ -25,12 +25,18 @@ Do not launch the firewall instance from AWS Console as you launch it in the fol
 3. Create a Firewall Domain
 -----------------------------
 
-This step creates a Firewall Domain
+This step creates a Security Domain with Firewall Domain option. 
+
+Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one as shown below.
+
+|firewall_domain|
 
 4. Launch Aviatrix FireNet Gateway
 ------------------------------------------
 
-This step leverage the Transit Network workflow to launch one or two Aviatrix gateway for FireNet. 
+This step leverage the Transit Network workflow to launch one or two Aviatrix gateway for FireNet deployment. 
+
+The minimum Aviatrix gateway instance size for FireNet deployment is C5.xlarge as it requires `4 interfaces. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-minimum-gateway-instance-size-for-firenet-deployment>`_
 
 If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches HA gateway (the second gateway) in a different AZ.
 
@@ -39,7 +45,7 @@ If your deployment requires 2-AZ HA, go through Transit Network -> Setup to laun
 ---------------------------------------------
 
 This step configures the gateway launched in Step 2 for FireNet function. If you have HA enabled, it
-automatically sets up the second gateway for FireNet.
+automatically sets up the HA gateway for FireNet deployment.
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
 -------------------------------------------------------------
@@ -94,7 +100,12 @@ associate it with the FireNet gateway.
 8. Specify Security Domain for Firewall Inspection
 -----------------------------------------------------
 
-This step requires you have already created a Security Domain with Firewall attribute enabled. 
+The method to specify a Spoke VPC that needs inspection is to define a connection policy of the Security Domain where the  Spoke VPC is a member to the Firewall Domain.
+
+For example, if you wish to inspect traffic between on-prem to VPC, connect Aviatrix Edge Domain to the 
+Firewall Domain. This means on-prem traffic to any Spoke VPC is routed to firewall first and then it is forwarded
+to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-prem is routed to firewall first and then forwarded to on-prem. 
+
 
 
 .. |main_companion_gw| image:: transit_dmz_workflow_media/main_companion_gw.png
