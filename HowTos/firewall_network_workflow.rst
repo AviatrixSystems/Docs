@@ -44,7 +44,7 @@ If your deployment requires 2-AZ HA, go through Transit Network -> Setup to laun
 5. Enable Aviatrix FireNet Gateway
 ---------------------------------------------
 
-This step configures the gateway launched in Step 2 for FireNet function. If you have HA enabled, it
+This step configures the gateway launched in Step 4 for FireNet function. If you have HA enabled, it
 automatically sets up the HA gateway for FireNet deployment.
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
