@@ -20,6 +20,8 @@ Select "Aviatrix Transit VPC" option when creating a security VPC.
 
 If you have not already done so, follow the Go link to subscribe the VM-Series in AWS Marketplace.
 
+Do not launch the firewall instance from AWS Console as you launch it in the following steps. . 
+
 3. Create a Firewall Domain
 -----------------------------
 
@@ -48,10 +50,13 @@ This step requires you have already created a Security Domain with Firewall attr
 7a. Launch and Associate Firewall Instance
 --------------------------------------------
 
-This step launches a VM-Series and associate it with one of the FireNet gateway. Note the VM-Series and the FireNet gateway must be in the same AZ.
+This step launches a VM-Series and associate it with one of the FireNet gateway. Note the VM-Series and the 
+associated FireNet gateway must be in the same AZ.
 
 Repeat this step to launch a second firewall instance to associate with the second FireNet gateway. 
 Or repeat this step to launch more firewall instances to associate with either FireNet gateway.
+
+It takes about 15 minutes to get the VM-Series up and running. After the VM-Series instance is up and running, follow the instructions here to configure an "Allow All" policy for a quick Proof of Concept setup. 
 
 
 7b. Associate an Existing Firewall Instance
