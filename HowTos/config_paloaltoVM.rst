@@ -63,9 +63,8 @@ configure as the following screenshot.
 
  - Click Network tab
  - Click ethernet1/1
- - Click Config tab.
  - Select "layer3" for Interface Type
- - Click Config
+ - Click Config tab in the pop up Ethernet Interface window.
  - Select default for Virtual Router at Config tab
  - Click New Zone for Security Zone to create a WAN zone. 
  - At the next pop up screen, name the new zone "WAN" and click OK 
@@ -74,7 +73,7 @@ configure as the following screenshot.
 
 Continue, 
 
- - Select IPV4 tab
+ - Select IPV4 tab in the pop up Ethernet Interface window.
  - Select DHCP Client
  - Uncheck "Automatically create default route pointing to default gateway provided by server, as shown below
 
