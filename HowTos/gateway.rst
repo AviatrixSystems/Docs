@@ -576,12 +576,25 @@ When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will
 
 When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs. 
 
-Transit Peers as to-Onprem Backup
+Customize Advertised Spoke VPC CIDRs
+--------------------------------------
+
+This feature enables you to selectively exclude some VPC CIDRs from being advertised to on-prem. 
+
+One use case is if you have Spoke VPCs that have multiple CIDR blocks, among which some of them are overlapping. If 
+you attach these Spoke VPCs, Aviatrix Controller will reject as there are overlapping CIDRs. By excluding the 
+overlapping CIDRs, you will be able to attach the Spoke VPCs. 
+
+Transit Peers As Backup to Onprem 
 -----------------------------------
 
 When this feature is enabled on a Transit Gateway, every one of its remote Transit Peers does not advertise to its on-prem network all the Spoke VPCs and on-prem routes learned by this Transit Gateway, except when the link to the on-prem 
 goes down at which point one of the remote Transit Peer starts to advertise to its on-prem network all the Spoke VPCs 
 and on-prem routes learned by this Transit Gateway. 
+
+One use case is a connected multi sites on-prem network, where each site is connected to the cloud via
+Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In such case, each Transit Gateway 
+learns all Spoke VPCs and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC has a redundant route to on-prem.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
