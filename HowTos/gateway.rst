@@ -576,6 +576,13 @@ When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will
 
 When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs. 
 
+Transit Peers as to-Onprem Backup
+-----------------------------------
+
+When this feature is enabled on a Transit Gateway, every one of its remote Transit Peers does not advertise to its on-prem network all the Spoke VPCs and on-prem routes learned by this Transit Gateway, except when the link to the on-prem 
+goes down at which point one of the remote Transit Peer starts to advertise to its on-prem network all the Spoke VPCs 
+and on-prem routes learned by this Transit Gateway. 
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
