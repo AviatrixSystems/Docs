@@ -18,7 +18,7 @@ cloud, as shown in the diagram below.
 FireNet significantly simplifies firewall instances deployment, allows the firewall instances to inspect 
 VPC to VPC (East West) traffic, VPC to Internet (Egress) traffic, VPC to on-prem (North South) traffic. 
 
-In addition, FireNet allows to scale your firewall deployment to multi AZ and multi instances.
+In addition, FireNet allows you to scale firewall deployment to multi AZ and multi instances in active/active state.
 
 
 What are the Benefits of FireNet Deployment Model?
