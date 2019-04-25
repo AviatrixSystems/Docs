@@ -56,6 +56,8 @@ This step requires you have already created a Security Domain with Firewall attr
 7a. Launch and Associate Firewall Instance
 --------------------------------------------
 
+This is recommended approach. 
+
 This step launches a VM-Series and associate it with one of the FireNet gateway. Note the VM-Series and the 
 associated FireNet gateway must be in the same AZ.
 

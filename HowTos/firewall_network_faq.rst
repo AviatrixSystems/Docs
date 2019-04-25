@@ -43,10 +43,41 @@ Firewall Network is the new iteration from Transit DMZ. FireNet decouples the fi
 path between on-prem and Aviatrix Transit VPC, yet provides the same traffic inspection functions and more 
 scale out capabilities. 
 
-What are the limitation of FireNet?
+How Does Aviatrix Security Domains work with FireNet?
+--------------------------------------------------------
+
+Aviatrix `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ builds on the 
+AWS Transit Gateway (TGW) route domain concepts. It provides isolation and segmentation between VPCs. With Aviatrix Security Domains, you can create a group of VPCs with similar security requirements.
+
+There are situations where additional security measure, such as packet inspection, is required, that is, you need
+to deploy firewall for certain VPCs. FireNet provides the network solution that simplifies firewall deployment and scale. 
+
+ 1. Deploy the Aviatrix FireNet in a special Security Domain with Firewall Domain attribute. 
+ #. If a Security Domain has a connection policy to the Firewall Domain, then traffic going in and out of the each VPC member in that Security Domain will first be forwarded to the Firewall for inspection. In another words, the connection policy specifies which domain (or a group of VPCs) will be inspected by firewall. 
+ #. VPC to VPC traffic in the same Security Domain is not inspected. 
+
+What are the use cases for FireNet?
+-------------------------------------
+
+Example 1. VPC with PCI data
+##############################
+
+If you have a VPC that deploys applications that host Personal Information or PCI data and your compliance requries
+packet inspection, you can create a Security Domain where this VPC is attached. Specify a connection policy for this 
+Security Domain to connect to Firewall Domain. All packets to and from this VPC will be inspected. 
+
+Example 2. Production VPCs
+###########################
+
+You may decide to inspect all traffic from the production data, and the production data resides in multiple VPCs. In this case you can create a Security Domain that all these VPCs attached to it. Then use connection policy to connect this 
+domain to the firewall domain. 
+
+What are the limitations of FireNet?
 -------------------------------------
 
 In Release 4.3, FireNet only supports the AWS Transit Gateway (TGW) deployment scenario. It does not support the encrypted transit deployment scenario. 
+
+For the most cases, There can only be one Firewall Domain in a TGW. 
 
 How does FireNet compare with ECMP/VPN based firewall deployment?
 -------------------------------------------------------------------
@@ -74,6 +105,7 @@ interfaces:
  - eth2 as firewall instance interface
  - eth3 as the second FireNet gateway interface
 
+
 How does FireNet work?
 -----------------------
 
@@ -91,6 +123,9 @@ associated firewall instance it should forward the traffic to.
 
 How to enable Egress inspection on FireNet?
 ---------------------------------------------
+
+By default, FireNet inspect traffic between North South (on-prem and VPC) and East West (VPC to VPC). To enable
+Egress traffic (Internet bound) inspection, 
 
 Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress through Firewall" and click Enable.
 
