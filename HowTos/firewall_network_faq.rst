@@ -46,7 +46,7 @@ scale out capabilities.
 What are the limitation of FireNet?
 -------------------------------------
 
-In Release 4.3, FireNet only supports the AWS Transit Gateway (TGW) deployment scenario. It does not support in the encrypted transit deployment scenario. 
+In Release 4.3, FireNet only supports the AWS Transit Gateway (TGW) deployment scenario. It does not support the encrypted transit deployment scenario. 
 
 How does FireNet compare with ECMP/VPN based firewall deployment?
 -------------------------------------------------------------------
@@ -87,6 +87,18 @@ If hash calculation determines the firewall instance is associated with the HA F
 
 When HA FireNet gateway receives the packet, it performs the exactly same hash calculation and decide which 
 associated firewall instance it should forward the traffic to. 
+
+
+How to enable Egress inspection on FireNet?
+---------------------------------------------
+
+Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress through Firewall" and click Enable.
+
+Is there an example guide to setup Palo Alto VM-Series policies?
+------------------------------------------------------------------
+
+Yes. Follow `Example Config for Palo Alto VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to 
+setup an "ALLOW ALL" policy for test validation.
 
 
 
