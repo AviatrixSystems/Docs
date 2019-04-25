@@ -73,12 +73,12 @@ Instance sizes and IPSEC Performance
 Insane mode is available on AWS for C5 series. For more performance test results and how to
 tune your environment to get the best performance, check out `this document. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
-==================  ===============  ==============  ==============
- MTU size           C5.2xlarge       C5.9xlarge      C5.18xlarge
-==================  ===============  ==============  ==============
-1500                5Gbps            8.21Gbps        9Gbps
-9000                10Gbps           12Gbps          22Gbps
-==================  ===============  ==============  ==============
+==================  ===============  ==============  ==============  ==============
+ MTU size           C5.2xlarge       C5.9xlarge      C5.18xlarge     C5n.18xlarge
+==================  ===============  ==============  ==============  ==============
+1500                5Gbps            8.21Gbps        9Gbps           15Gbps
+9000                10Gbps           12Gbps          22Gbps          30Gbps
+==================  ===============  ==============  ==============  ==============
 
 What is the Aviatrix hardware appliance?
 ------------------------------------------
