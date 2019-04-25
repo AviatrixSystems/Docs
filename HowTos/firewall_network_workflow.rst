@@ -34,7 +34,7 @@ Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one as show
 4. Launch Aviatrix FireNet Gateway
 ------------------------------------------
 
-This step leverage the Transit Network workflow to launch one or two Aviatrix gateway for FireNet deployment. 
+This step leverage the Transit Network workflow to launch one Aviatrix gateway for FireNet deployment. 
 
 The minimum Aviatrix gateway instance size for FireNet deployment is C5.xlarge as it requires `4 interfaces. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-minimum-gateway-instance-size-for-firenet-deployment>`_
 
