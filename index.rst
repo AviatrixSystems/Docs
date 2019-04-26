@@ -116,6 +116,8 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
+   HowTos/config_paloaltoVM
+   HowTos/paloalto_API_setup
 
 .. _Transit DMZ:
 
