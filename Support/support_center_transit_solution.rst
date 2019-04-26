@@ -37,7 +37,7 @@ For peering links, you can find the active links by going to "Controller > Peeri
  
 If your Transit network is enabled with Connected Transit or Manual BGP Advertised Network List, you would have to go to " Troubleshoot > Diagnostics > BGP" and click on the "Switch Over" on the gateway which is currently active that you want to switch over from. For example, if you want to have all active links on primary gateway, you will click on the "Switch Over" on the hagw connection.
 
-Why can the traffic from a new subnet added to the attached VPC to AWS Transit Gateway reach the on-premise network?
+Why can't the traffic from a new subnet added to the attached VPC to AWS Transit Gateway reach the on-premise network?
 --------------------------------------------------------------------------------------------
 
 In a NextGen Transit for AWS solution (i.e. AWS Transit Gateway), you may find that EC2 instance in a new subnet created in a new AZ will not be able to reach on-premise network or another Spoke VPC, or vice versa. This could be due to the lack of proper route programming in the AWS VPC. The following scenarios will require the VPC to be detached and re-attached to TGW so that Aviatrix controller will perform the necessary programming in AWS infrastructure.
@@ -48,4 +48,6 @@ In a NextGen Transit for AWS solution (i.e. AWS Transit Gateway), you may find t
 If you are creating a new subnet in the existing AZ in which the VPC already attached to the TGW **AND** the newly created subnet is associated with the existing route table, it will not require VPC detachment and reattachment to the TGW.
 
 The above limitations exist in software version 4.3 and prior releases. In our future release, we will be able to support the above scenarios without detaching and re-attaching the VPC to TGW.
+
+
 
