@@ -131,24 +131,35 @@ An Aviatrix gateway may have a single or multiple interfaces depending on the ty
 | (created in GW page)  |                                |                                                        |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 | Spoke                 | eth0                           | Main interface                                         |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-XXXXXXXX                   | (Optional) VTI to the Aviatrix Transit gateway         |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 | Transit               | eth0                           | Main interface                                         |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN              |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-YYYYYYYY (to Gateway_Name) | VTI to each Spoke gateway                              |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 | Transit for TGW only  | eth0                           | Main interface                                         |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | eth1                           | Interface connecting to AWS Transit GW                 |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN              |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Transit peering gateway         |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 | Transit DMZ           | eth0                           | Main interface                                         |
-| (Main)                | eth1                           | (Optional) Interface connecting to AWS Transit Gateway |
+| (Main)                +--------------------------------+--------------------------------------------------------+
+|                       | eth1                           | (Optional) Interface connecting to AWS Transit Gateway |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | eth2                           | Interface connecting to Firewall instance              |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Spoke gateway                   |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 | Transit DMZ           | eth0                           | Main interface                                         |
-| (Companion)           | eth2                           | Interface connecting to Firewall instance              |
+| (Companion            +--------------------------------+--------------------------------------------------------+
+|                       | eth2                           | Interface connecting to Firewall instance              |
+|                       +--------------------------------+--------------------------------------------------------+
 |                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN              |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 
