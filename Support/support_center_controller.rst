@@ -122,7 +122,7 @@ Which Aviatrix gateway interface to perform packet capture on?
 An Aviatrix gateway may have a single or multiple interfaces depending on the type of gateway used for a network deployment. Therefore, it will be helpful if a user knows which interface to perform the packet capture when troubleshooting a network connectivity or packet flow issue. Please note that all interfaces on the Aviatrix gateway are automatically created based on the features enabled.
 
 +-----------------------+--------------------------------+--------------------------------------------------------+
-| Gateway Type          | Interface                      | Description      			                              |
+| Gateway Type          | Interface                      | Description      			                  |
 +=======================+================================+========================================================+
 | SSLVPN                | eth0                           | Main interface                                         | 
 |                       | tun0                           | Interface created for OpenVPN connection               |
