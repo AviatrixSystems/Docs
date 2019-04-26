@@ -69,4 +69,4 @@ There is a character limit while using `FQDN Egress Control REST API <https://s3
   print(response.json())
   ----------
   
-  Next: Check on your controller if the Egress FQDN Filter tag has been updated.
+  Next: Check on your controller to verify that the Egress FQDN Filter tag has been updated.
