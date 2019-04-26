@@ -53,5 +53,9 @@ There is a character limit while using `FQDN Egress Control REST API <https://s3
   print(response.json())
  
 
+  The format of the data file is: "fqdn,protocol,port". Here's an example:
+  *.yahoo.com,tcp,443
+  google.com,tcp,443
+
 
 
