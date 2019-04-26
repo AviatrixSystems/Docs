@@ -121,46 +121,47 @@ Which Aviatrix gateway interface to perform packet capture on?
 
 An Aviatrix gateway may have a single or multiple interfaces depending on the type of gateway used for a network deployment. Therefore, it will be helpful if a user knows which interface to perform the packet capture when troubleshooting a network connectivity or packet flow issue. Please note that all interfaces on the Aviatrix gateway are automatically created based on the features enabled.
 
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Gateway Type          | Interface                      | Description      			                  |
-+=======================+================================+========================================================+
-| SSLVPN                | eth0                           | Main interface                                         | 
-|                       | tun0                           | Interface created for OpenVPN connection               |
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Regular               | eth0                           | Main interface                                         | 
-| (created in GW page)  |                                |                                                        |
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Spoke                 | eth0                           | Main interface                                         |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-XXXXXXXX                   | (Optional) VTI to the Aviatrix Transit gateway         |
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Transit               | eth0                           | Main interface                                         |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN              |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-YYYYYYYY (to Gateway_Name) | VTI to each Spoke gateway                              |
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Transit for TGW only  | eth0                           | Main interface                                         |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | eth1                           | Interface connecting to AWS Transit GW                 |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN              |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Transit peering gateway         |
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Transit DMZ           | eth0                           | Main interface                                         |
-| (Main)                +--------------------------------+--------------------------------------------------------+
-|                       | eth1                           | (Optional) Interface connecting to AWS Transit Gateway |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | eth2                           | Interface connecting to Firewall instance              |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Spoke or Transit peering gateway|
-+-----------------------+--------------------------------+--------------------------------------------------------+
-| Transit DMZ           | eth0                           | Main interface                                         |
-| (Companion)           +--------------------------------+--------------------------------------------------------+
-|                       | eth2                           | Interface connecting to Firewall instance              |
-|                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-XXXXXXXX                   | (Optional) VTI to the VGW, external device or CloudN   |
-+-----------------------+--------------------------------+--------------------------------------------------------+
++-----------------------+--------------------------------+---------------------------------------------------------+
+|**Gateway Type**       |**Interface**                   |**Description**                                          |
++=======================+================================+=========================================================+
+| SSLVPN                | eth0                           | Main interface                                          | 
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun0                           | Interface created for OpenVPN connection                |
++-----------------------+--------------------------------+---------------------------------------------------------+
+| Regular               | eth0                           | Main interface                                          | 
+| (created in GW page)  |                                |                                                         |
++-----------------------+--------------------------------+---------------------------------------------------------+
+| Spoke                 | eth0                           | Main interface                                          |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-XXXXXXXX                   | (Optional) VTI to the Aviatrix Transit gateway          |
++-----------------------+--------------------------------+---------------------------------------------------------+
+| Transit               | eth0                           | Main interface                                          |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN               |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-YYYYYYYY (to Gateway_Name) | VTI to each Spoke gateway                               |
++-----------------------+--------------------------------+---------------------------------------------------------+
+| Transit for TGW only  | eth0                           | Main interface                                          |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | eth1                           | Interface connecting to AWS Transit GW                  |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-XXXXXXXX                   | VTI to the VGW, external device or CloudN               |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Transit peering gateway          |
++-----------------------+--------------------------------+---------------------------------------------------------+
+| Transit DMZ           | eth0                           | Main interface                                          |
+| (Main)                +--------------------------------+---------------------------------------------------------+
+|                       | eth1                           | (Optional) Interface connecting to AWS Transit Gateway  |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | eth2                           | Interface connecting to Firewall instance               |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Spoke or Transit peering gateway |
++-----------------------+--------------------------------+---------------------------------------------------------+
+| Transit DMZ           | eth0                           | Main interface                                          |
+| (Companion)           +--------------------------------+---------------------------------------------------------+
+|                       | eth2                           | Interface connecting to Firewall instance               |
+|                       +--------------------------------+---------------------------------------------------------+
+|                       | tun-XXXXXXXX                   | (Optional) VTI to the VGW, external device or CloudN    |
++-----------------------+--------------------------------+---------------------------------------------------------+
 
 In order to perform a packet capture, go to Troubleshoot > Diagnostics > Network page and scroll down to Packet Capture section. Select the target gateway and the interface you want to capture the packet and all other relevant fields. The packet capture will run for a maximum of 120 seconds or manually stop the packet capture process.
