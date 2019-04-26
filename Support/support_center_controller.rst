@@ -154,13 +154,13 @@ An Aviatrix gateway may have a single or multiple interfaces depending on the ty
 |                       +--------------------------------+--------------------------------------------------------+
 |                       | eth2                           | Interface connecting to Firewall instance              |
 |                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Spoke gateway                   |
+|                       | tun-YYYYYYYY (to Gateway_Name) | (Optional) VTI to each Spoke or Transit peering gateway|
 +-----------------------+--------------------------------+--------------------------------------------------------+
 | Transit DMZ           | eth0                           | Main interface                                         |
 | (Companion)           +--------------------------------+--------------------------------------------------------+
 |                       | eth2                           | Interface connecting to Firewall instance              |
 |                       +--------------------------------+--------------------------------------------------------+
-|                       | tun-XXXXXXXX                   | (Optional) VTI to the Aviatrix Transit gateway         |
+|                       | tun-XXXXXXXX                   | (Optional) VTI to the VGW, external device or CloudN   |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 
 In order to perform a packet capture, go to Troubleshoot > Diagnostics > Network page and scroll down to Packet Capture section. Select the target gateway and the interface you want to capture the packet and all other relevant fields. The packet capture will run for a maximum of 120 seconds or manually stop the packet capture process.
