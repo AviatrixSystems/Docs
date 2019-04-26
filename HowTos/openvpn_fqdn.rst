@@ -106,6 +106,9 @@ a.5.  Refer Aviatrix FQDN documents to set up Egress Filter rules and enable Egr
 `Egress FQDN Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_
 `Egress FQDN View Log <https://docs.aviatrix.com/HowTos/fqdn_viewlog.html>`_
 
+.. note::
+
+   For HA topology, please refer `Aviatrix Single AZ HA <https://docs.aviatrix.com/Solutions/gateway_ha.html#deployment-guide>`_
 2.2.b Deploy Aviatrix OpenVPN Gateway
 ------------------------------
 
