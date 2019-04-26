@@ -109,6 +109,7 @@ a.5.  Refer Aviatrix FQDN documents to set up Egress Filter rules and enable Egr
 .. note::
 
    For HA topology, please refer `Aviatrix Single AZ HA <https://docs.aviatrix.com/Solutions/gateway_ha.html#deployment-guide>`_
+   
 2.2.b Deploy Aviatrix OpenVPN Gateway
 ------------------------------
 
@@ -158,7 +159,8 @@ b.3.  Click “OK”. It will take a few minutes for the gateway to deploy. Do n
 
    1. This solution needs the function "Full Tunnel Mode" be enabled on Aviatrix OpenVPN Gateway.
    2. For Aviatrix OpenVPN GW scalability topology, any new Aviatrix OpenVPN gateways need to be added in the same AZ.
-
+   3. PBR function and other OpenVPN functions can be modified on the page "OpenVPN® -> Edit Config" after Aviatrix OpenVPN GW is launced. `Aviatrix OpenVPN® FAQs <https://docs.aviatrix.com/HowTos/openvpn_faq.html>`_
+   
 2.2.c Create an OpenVPN® user
 ------------------------------------------------------------
 
