@@ -33,29 +33,40 @@ There is a character limit while using `FQDN Egress Control REST API <https://s3
 
 ::
 
-  Syntax:
-  # Generate CID using instructions at https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
-  CID = “……” 
+  First: Prepare your data file("test_file" in this example) for your Egress Control Rules. Format is "FQDN,protocol,port". Here's an example:
+    *.yahoo.com,tcp,443
+    google.com,tcp,443
+
+  Next: Make sure that you have an Egress Filter Tag created on the controller. "Controller UI > Security > Egress Control > New Tag". "newtag2" for this example
+
+  Next: Using REST API, login to you controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
+    curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
+
+  Next: Copy the following python code into a file, lets say, egress-rules.py. Update the CID value from the above command, the url and run it:
+
+  ----------
+  #!/usr/local/bin/python3
+  import requests
+  import os
+  
+  CID = "aL4H34aPWnS738TmHsGV"
   fqdn_file = "test_file"
   tag_name = "newtag2"
+  url="https://1.1.2.55/v1/api"
+  
   print("import FQDN config file")
   myfile = {
               "import_file":open(fqdn_file, "rb")
            }
-   
+  
   payload = {
       "action": "import_fqdn_filter_tag_domain_names_from_file",
       "CID": CID,
       "tag_name": tag_name
   }
- 
+  
   response = requests.post(url=url, files=myfile ,data=payload, verify=False)
   print(response.json())
- 
-
-  The format of the data file is: "fqdn,protocol,port". Here's an example:
-  *.yahoo.com,tcp,443
-  google.com,tcp,443
-
-
-
+  ----------
+  
+  Next: Check on your controller if the Egress FQDN Filter tag has been updated.
