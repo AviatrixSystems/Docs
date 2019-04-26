@@ -156,7 +156,8 @@ b.3.  Click “OK”. It will take a few minutes for the gateway to deploy. Do n
 
 .. note::
 
-   This solution needs the function "Full Tunnel Mode" be enabled on Aviatrix OpenVPN Gateway.
+   1. This solution needs the function "Full Tunnel Mode" be enabled on Aviatrix OpenVPN Gateway.
+   2. For Aviatrix OpenVPN GW scalability topology, any new Aviatrix OpenVPN gateways need to be added in the same AZ.
 
 2.2.c Create an OpenVPN® user
 ------------------------------------------------------------
