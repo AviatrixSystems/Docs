@@ -7,16 +7,24 @@ R4.3 (Coming Soon)
 1. Networking
 --------------
 
- - **Firewall Network** Scale out firewall network
+ - **Firewall Network (FireNet)** is the new iteration of Transit DMZ for deploying firewall in the cloud. FireNet provides the simplicity, scalability and automation for an optimal network architecture for firewall deployment. Check out the `FireNet FAQ <https://docs.aviatrix.com/HowTos/firewall_network_faq.html> to learn more. Follow `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to start deploying. 
+ - **Transit Peering InsaneMode** allows you to build high performance encrypted connection between AWS regions over AWS private Peering network infrastructure. To configure, first launch the Aviatrix Transit Gateway with InsaneMode enabled, Transit Peering InsaneMode will be automatically enabled when you configure `Transit Gateway Peering. <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ This feature is only available for AWS deployment.
+ - **User Accelerator Preview** integrates AWS Global Accelerator with Aviatrix User VPN to reduce user access latency. 
+ - **Azure Native Peering** supports VNET to VNET native peering in the same Azure subscription. Cross subscription is not supported. To configure, go to Peering -> Azure Peering. 
  - **C5n Instance** for InsaneMode
- - **Transit Peering** with InsaneMode
- - **Filter Spoke VPC certain subnets** Supports the ability to exclude certain VPC subnets from advertising to transit gateway.
+
+2. Routing Policies
+---------------------
+ - **Customize Advertised Spoke VPC CIDRs** Supports the ability to exclude certain VPC subnets from advertising to transit gateway. One use case is if you have Spoke VPCs that have partial overlapping VPC CIDRs, by excluding the overlapping CIDRs, you can attach your VPC to Aviatrix Transit Gateway without error. This feature is only available for encrypted transit solution. To configure, select the Spoke gateway at Gateway page, click Edit, scroll down to  
+ - **Transit Peers as Backup to On-prem local route** is a routing policy for Transit Gateway with the configuration to instruct all remote Transit Gateway peers not to advertise to their on-prem routes that are learned from the Transit Gateway with the configuration, except when the configured Transit Gateway loses connectivity to its on-prem. One use case is for a connected on-prem network with multiple datacenters where each datacenter is connected to a Transit Gateway and where the Aviatrix Transit Gateways form a mesh backbone. With this policy enabled, datacenters do not learn and advertise conflicting cloud routes to each other. To configure, select the Transit Gateway at the Gateway page, click Edit. Scroll down to "Transit Peers As Backup to On-prem", click Enable.  
  
 2. Operation
 -------------
 
+ - **Terraform Exporter** is a tool to learn and build your deployment with Terraform starting from your Aviatrix Controller Console. For example, use Aviatrix Console to deploy a VPN gateway, add a VPN user. You can then download from the Console the Terraform .tf file and instructions. From this point on, you can add more users directly by editing the Terraform file. Great for Terraform beginners and teams who wish to migrate to use code to manage network infrastructure. To download the resources already configured via Console, go to Useful Tools -> Export to Terraform. Check out `this example guide <https://docs.aviatrix.com/HowTos/tf_export.html>` to learn how to use the tool, check out `this link
  - **SumoLogic Ephemeral Collector**
- - **Datadog version 6 support**
+ - **Datadog version 6 support** If you have already configured Datadog, you can upgrade to version 6 by disable and enable again. To configure, go to Settings -> Logging -> Datadog Agent
+ - **Multiple Endpoints for SAML Login to Controller** allows read_only user to login via SAML authentication. To configure, Settings -> Controller -> SAML Login, to add more endpoint. Check out `this doc <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_ for instructions.
 
 R4.2.764 (Patch release of 4.2 on 4/14/2019)
 =============================================

@@ -7,13 +7,14 @@
 Firewall Network (FireNet)  Workflow
 =========================================================
 
+For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
 
 1. Create a Security VPC
 ------------------------------------------------
 
 We recommend you to use the Aviatrix Useful Tool to create a VPC for FireNet deployment. 
 
-Select "Aviatrix Transit VPC" option when creating a security VPC. 
+Select "Aviatrix FireNet VPC" option when creating a security VPC. 
 
 2. Subscribe to AWS Marketplace
 --------------------------------------
@@ -36,7 +37,7 @@ Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one as show
 
 This step leverage the Transit Network workflow to launch one Aviatrix gateway for FireNet deployment. 
 
-The minimum Aviatrix gateway instance size for FireNet deployment is C5.xlarge as it requires `4 interfaces. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-minimum-gateway-instance-size-for-firenet-deployment>`_
+C5x.large is the minimum Aviatrix gateway instance size for FireNet deployment as it requires `4 interfaces. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-minimum-gateway-instance-size-for-firenet-deployment>`_
 
 If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches HA gateway (the second gateway) in a different AZ.
 
@@ -52,16 +53,20 @@ automatically sets up the HA gateway for FireNet deployment.
 
 This step requires you have already created a Security Domain with Firewall attribute enabled.
 
+When this step is completed, you have built the network infrastructure for FireNet deployment.
+
+|gw_launch|
+
 
 7a. Launch and Associate Firewall Instance
 --------------------------------------------
 
-This is recommended approach. 
+This approach is recommended if this is the first Firewall instance to be attached to the gateway. 
 
 This step launches a VM-Series and associate it with one of the FireNet gateway. Note the VM-Series and the 
 associated FireNet gateway must be in the same AZ.
 
-7a.1 Launch and Associate
+7a.1 Launch and Attach
 ##########################
 
 ==========================================      ==========
@@ -74,6 +79,7 @@ Firewall Image                                  The AWS AMI that you have subscr
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
+Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page. 
 ==========================================      ==========
 
 7a.2 Launch and Associate More
@@ -113,5 +119,7 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
 .. |firewall_domain| image:: firewall_network_workflow_media/firewall_domain.png
    :scale: 30%
 
+.. |gw_launch| image:: firewall_network_workflow_media/gw_launch.png
+   :scale: 30%
 
 .. disqus::

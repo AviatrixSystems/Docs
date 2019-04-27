@@ -22,6 +22,8 @@ If you have not done so, follow the instructions in `here <https://docs.aviatrix
 
 Repeat to launch more Transit GWs. 
 
+Starting from Release 4.3, InsaneMode is supported on Transit Gateway Peering. Enable Transit Gateway Peering InsaneMode by launching the gateway with InsaneMode. 
+
 .. tip::
 
   The Aviatrix Transit GWs are typically launched during the workflow of TGW Orchestrator, Transit Network or Transit DMZ. If the transit cluster does not need to connect to on-prem, skip `the step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ that connects to VGW/CloudN/External Device. 

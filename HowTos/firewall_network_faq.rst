@@ -103,7 +103,7 @@ interfaces:
  - eth0 as management interface
  - eth1 as TGW interface
  - eth2 as firewall instance interface
- - eth3 as the second FireNet gateway interface
+ - eth3 as the HA FireNet gateway interface
 
 
 How does FireNet work?
@@ -119,6 +119,11 @@ If hash calculation determines the firewall instance is associated with the HA F
 
 When HA FireNet gateway receives the packet, it performs the exactly same hash calculation and decide which 
 associated firewall instance it should forward the traffic to. 
+
+How to configure FireNet?
+---------------------------
+
+Follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to deploy firewall in the cloud. 
 
 
 How to enable Egress inspection on FireNet?

@@ -105,8 +105,9 @@ rule before routing happens.
 Step 5. Test site2cloud Connection
 ---------------------------------------------------------
 
-From instance-1, you should be able to ping instance-2 by "ping 172.16.0.43".
+Make sure your instances Security Groups inbound rules are configured properly.
 
+From instance-1, you should be able to ping instance-2 by "ping 172.16.0.43".
 From instance-2, you should be able to ping instance-1 by "ping 192.168.0.43"
 
 Done.
