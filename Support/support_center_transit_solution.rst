@@ -49,5 +49,6 @@ If you are creating a new subnet in the existing AZ in which the VPC already att
 
 The above limitations exist in software version 4.3 and prior releases. In our future release, we will be able to support the above scenarios without detaching and re-attaching the VPC to TGW.
 
+How can I migrate from Aviatrix Transit Network solution to AWS Transit Gateway deployment?
 
-
+If you have an existing Aviatrix Global Transit Network in production, you may refer to `Migrating an Aviatrix Global Transit Network to Next Gen Transit for AWS <https://docs.aviatrix.com/HowTos/avx_tgw_migration.html>`_.
