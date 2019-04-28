@@ -20,7 +20,7 @@ The objectives here are:
 
 Prior to migration, you may plan on the `security domains <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ and their `connection policy <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. If you are not sure and is in need to transition, you can add or modify the security domains at any time later.
 
-1. **Create AWS Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_.
+1. **Create AWS Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_ in TGW Orchestrator > Plan page.
 
 2. **Create Security Domains** If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. If you do not intend to build custom security domains, skip this step.
 
