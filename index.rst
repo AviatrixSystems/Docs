@@ -209,6 +209,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Anonymous_Browsing
    HowTos/DevSandbox
    HowTos/External_PKI_for_OpenVPN_Certificates
+   HowTos/user_accelerator
 
 
 .. _UsefulTools:
