@@ -44,7 +44,7 @@ A quick summary of the migration is shown in the following diagram.
 |avx_tgw_migration01|
 
 
-.. |avx_tgw_migration01| image:: avx_tgw_migrate_media/avx_tgw_migration01.png
+.. |avx_tgw_migration01| image:: avx_tgw_migration_media/avx_tgw_migration01.png
    :scale: 30%
 
 .. disqus::
