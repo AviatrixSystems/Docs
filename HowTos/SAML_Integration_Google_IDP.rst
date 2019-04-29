@@ -170,6 +170,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
 
 .. note::
    Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
+   `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
 
 #. Click `OK`
 

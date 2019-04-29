@@ -220,6 +220,9 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
    |                         | Refer to `IdP-specific Integration <#idp-integration>`__    |
    +-------------------------+-------------------------------------------------+
 
+.. note::
+  `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
+
 #. Click `OK`
 
 .. _Config_35:

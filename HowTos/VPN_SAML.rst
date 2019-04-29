@@ -231,6 +231,9 @@ After creating the IDP, you need to retrieve IDP Metadata either in URL or text 
    |                            | Refer to `IDP-specific Integration <#idp-integration>`__ |
    +----------------------------+-----------------------------------------+
 
+.. note::
+  `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
+
 .. _Config_35:
 
 3.5 Test the Integration
