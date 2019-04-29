@@ -30,6 +30,7 @@ For enterprises that wish to deploy firewall in AWS, Aviatrix’s FireNet deploy
  - **Full Traffic Inspection** With FireNet, North South (on-prem and cloud), East West (VPC to VPC) and Internet bound egress traffic can be inspected by firewall instances.
  - **No IPSEC Tunnels** No IPSEC tunnels connecting to firewall instances as opposed to ECMP VPN deployment model, maximizing each firewall instance throughput.
  - **No SNAT** No SNAT function required to be performed by firewall instances for east west traffic inspection as opposed to the ECMP VPN deployment model, resulting in instances in Spoke VPCs having complete visibility of source traffic.
+ - **No BGP** Firewall does not need to run BGP. All routes programming is done by the Controller through Palo Alto APIs.
  - **Scale Out** Multiple firewall instances can be deployed as a group to meet the demand of increasing workload. 
 
  - **Policy Driven** Policy driven workflow allows you to customize which VPCs traffic should be inspected. 
