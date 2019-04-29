@@ -6,18 +6,18 @@
    :numbered:
 
 ==============================================================================
-Okta IDP for SAML Integration
+Okta IdP for SAML Integration
 ==============================================================================
 
 Overview
 ------------
 
-This guide provides an example on how to configure Okta as an IDP for an Aviatrix SAML SP (endpoint). When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Okta) for authentication.
+This guide provides an example on how to configure Okta as an IdP for an Aviatrix SAML SP (endpoint). When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., Okta) for authentication.
 
 Visit one of the following links based on your use case:
 
-  If integrating Okta IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating Okta IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
+  If integrating Okta IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
+  If integrating Okta IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
 
 Before configuring SAML integration between Aviatrix and Okta, make sure you have a valid Okta account with administrator access.
 
@@ -25,11 +25,11 @@ Before configuring SAML integration between Aviatrix and Okta, make sure you hav
 Configuration Steps
 -------------------
 
-Follow these steps to configure Aviatrix to authenticate against your Okta IDP:
+Follow these steps to configure Aviatrix to authenticate against your Okta IdP:
 
 Step 1. Create an `Okta SAML App <#okta-saml-app>`__ for Aviatrix
 
-Step 2. Retrieve `Okta IDP metadata <#okta-idp-metadata>`__
+Step 2. Retrieve `Okta IdP metadata <#okta-idp-metadata>`__
 
 Step 3. Update `Aviatrix SP Endpoint <#okta-update-saml-endpoint>`__ in the Aviatrix Controller
 
@@ -120,7 +120,7 @@ Create an Okta SAML App for Aviatrix
 
 .. _okta_idp_metadata:
 
-Retrieve Okta IDP metadata
+Retrieve Okta IdP metadata
 ##########################
 
 .. note::
@@ -131,13 +131,13 @@ Retrieve Okta IDP metadata
 
     |image4|
 
-#. Look for the section titled `Provide the following IDP metadata to your SP provider`.
+#. Look for the section titled `Provide the following IdP metadata to your SP provider`.
 
     |image5|
 
 .. important::
 
-   Copy the *IDP metadata text* displayed.  This value will be used to configure the Aviatrix SP Endpoint.
+   Copy the *IdP metadata text* displayed.  This value will be used to configure the Aviatrix SP Endpoint.
 
 
 .. _okta_update_saml_endpoint:
@@ -148,12 +148,12 @@ Update Aviatrix SP Endpoint
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Okta IDP provides IDP Metadata through text obtained in `Retrieve Okta IDP metadata (Step 2) <#okta-idp-metadata>`_.
+   Okta IdP provides IdP Metadata through text obtained in `Retrieve Okta IdP metadata (Step 2) <#okta-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
-#. If integrating Okta IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
-#. If integrating Okta IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
+#. If integrating Okta IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
+#. If integrating Okta IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
@@ -161,9 +161,9 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    | Endpoint Name           | ``[SP Name]`` (Use the same name you entered    |
    |                         | in the Okta Application previously)             |
    +-------------------------+-------------------------------------------------+
-   | IDP Metadata Type       | Text                                            |
+   | IdP Metadata Type       | Text                                            |
    +-------------------------+-------------------------------------------------+
-   | IDP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
+   | IdP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
    |                         | copied from `Okta SAML configuration <#okta-idp-metadata>`_)            |
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Select `Hostname`                               |
@@ -184,11 +184,11 @@ Test the Integration
 
 Continue with testing the integration by visiting one of the following links based on your use case:
 
-1. If integrating Okta IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+1. If integrating Okta IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
   #. Click `Settings` in the left navigation menu
   #. Select `Controller`
   #. Click on the `SAML Login` tab
-2. If integrating Okta IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+2. If integrating Okta IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
   #. Stay on the `SAML` tab
 
@@ -197,7 +197,7 @@ You can quickly validate that the configuration is complete by clicking on the *
 Configure Okta for Multifactor Authentication (OPTIONAL)
 ########################################################
 
-Once you have successfully configured Okta IDP with Aviatrix SP, you can configure Okta for Multifactor Authentication.
+Once you have successfully configured Okta IdP with Aviatrix SP, you can configure Okta for Multifactor Authentication.
 
 Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`__ from Okta on Multifactor setup.
 

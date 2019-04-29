@@ -6,29 +6,29 @@
    :numbered:
 
 ==============================================================================
-Google IDP for SAML Integration
+Google IdP for SAML Integration
 ==============================================================================
 
 Overview
 ------------
 
-This guide provides an example on how to configure Aviatrix to authenticate against a Google IDP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Google) for authentication.
+This guide provides an example on how to configure Aviatrix to authenticate against a Google IdP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., Google) for authentication.
 
 Visit one of the following links based on your use case:
 
-  If integrating Google IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating Google IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
+  If integrating Google IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
+  If integrating Google IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
 
 Before configuring SAML integration between Aviatrix and Google, make sure you have a valid Google account with administrator access.
 
 Configuration Steps
 -------------------
 
-Follow these steps to configure Aviatrix to authenticate against your Google IDP:
+Follow these steps to configure Aviatrix to authenticate against your Google IdP:
 
 Step 1. Create a `Google SAML Application <#google-saml-app1>`__ for Aviatrix
 
-Step 2. Retrieve `Google IDP metadata <#google-idp-metadata>`__
+Step 2. Retrieve `Google IdP metadata <#google-idp-metadata>`__
 
 Step 3. Continue Creating `Google SAML Application <#google-saml-app2>`__ for Aviatrix
 
@@ -55,14 +55,14 @@ Create a Google SAML App for Aviatrix
 
 .. _google_idp_metadata:
 
-Retrieve Google IDP metadata
+Retrieve Google IdP metadata
 ############################
 
-   Scroll down to `Option 2`.  Click the `Download` button next to the `IDP metadata` label.
+   Scroll down to `Option 2`.  Click the `Download` button next to the `IdP metadata` label.
 
    |imageStep2|
 
-   The IDP metadata text will be used to configure the Aviatrix SP Endpoint.
+   The IdP metadata text will be used to configure the Aviatrix SP Endpoint.
 
 
 .. _google_saml_app2:
@@ -140,12 +140,12 @@ Update Aviatrix SP Endpoint
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Google IDP provides IDP Metadata through text obtained in `Retrieve Google IDP metadata (Step 2) <google-idp-metadata>`_.
+   Google IdP provides IdP Metadata through text obtained in `Retrieve Google IdP metadata (Step 2) <google-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
-#. If integrating Google IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
-#. If integrating Google IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
+#. If integrating Google IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
+#. If integrating Google IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
 
    |imageControllerNavOpenVPNAdvanced|
 
@@ -155,10 +155,10 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    | Endpoint Name           | ``SP Name`` (Use the same name you entered      |
    |                         | in the Google Application previously)           |
    +-------------------------+-------------------------------------------------+
-   | IDP Metadata Type       | Text                                            |
+   | IdP Metadata Type       | Text                                            |
    +-------------------------+-------------------------------------------------+
-   | IDP Metadata Text       | ``Value Copied from Google`` (Paste the value   |
-   |                         | from `Google IDP Metadata file <#google-idp-metadata>`_`)                            |
+   | IdP Metadata Text       | ``Value Copied from Google`` (Paste the value   |
+   |                         | from `Google IdP Metadata file <#google-idp-metadata>`_`)                            |
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Hostname                                        |
    +-------------------------+-------------------------------------------------+
@@ -181,11 +181,11 @@ Test the Integration
 
 Continue with testing the integration by visiting one of the following links based on your use case:
 
-1. If integrating Google IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+1. If integrating Google IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
   #. Click `Settings` in the left navigation menu
   #. Select `Controller`
   #. Click on the `SAML Login` tab
-2. If integrating Google IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+2. If integrating Google IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
   #. Stay on the `SAML` tab
 

@@ -6,29 +6,29 @@
    :numbered:
 
 ==============================================================================
-Centrify IDP for SAML Integration
+Centrify IdP for SAML Integration
 ==============================================================================
 
 Overview
 ------------
 
-This guide provides an example on how to configure Aviatrix to authenticate against Centrify IDP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (SP) that redirects browser traffic from client to IDP for authentication.
+This guide provides an example on how to configure Aviatrix to authenticate against Centrify IdP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (SP) that redirects browser traffic from client to IdP for authentication.
 
 Visit one of the following links based on your use case:
 
-  If integrating Centrify IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating Centrify IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
+  If integrating Centrify IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
+  If integrating Centrify IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
 
 Before configuring SAML integration between Aviatrix and Centrify, make sure you have a valid Centrify account with administrator access.
 
 Configuration Steps
 -------------------
 
-Follow these steps to configure Aviatrix to authenticate against your Azure AD IDP:
+Follow these steps to configure Aviatrix to authenticate against your Azure AD IdP:
 
 Step 1. Retrieve `Aviatrix SP Metadata <#centrify-saml-sp-metadata>`__ from the Aviatrix Controller
 Step 2. Create a `Centrify SAML Application <#centrify-saml-app>`__ for Aviatrix
-Step 3. Retrieve `Centrify IDP metadata <#centrify-idp-metadata>`__
+Step 3. Retrieve `Centrify IdP metadata <#centrify-idp-metadata>`__
 Step 4. Update `Aviatrix SP Endpoint <#centrify-update-saml-endpoint>`__ in the Aviatrix Controller
 Step 5. `Test the Integration <#centrify-test-integration>`__ is Set Up Correctly
 
@@ -42,8 +42,8 @@ Later on in the guide, the SP SAML endpoint will be updated.
 
 Follow one of the links below according to your use case:
 
-#. If integrating Centrify IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
-#. If integrating Centrify IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
+#. If integrating Centrify IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
+#. If integrating Centrify IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
 
 For Centrify, right click the **SP Metadata** button next to the SAML endpoint and save the file.
 
@@ -54,7 +54,7 @@ For Centrify, right click the **SP Metadata** button next to the SAML endpoint a
    |image4|
 
    .. tip::
-      Copy the above metadata as text. It will be pasted into the Centrify IDP in the later steps.
+      Copy the above metadata as text. It will be pasted into the Centrify IdP in the later steps.
 
     .. note::
        You can also use URL method if you have configured signed certificates for the Aviatrix Controller, but not for the initial self-signed certificate.
@@ -112,12 +112,12 @@ Create a Centrify SAML App for Aviatrix
 
 	|image8|
 
-#. Configure the next pages if you require them, "Linked applications","Provisioning", "App Gateway" if you require them. Click “Save”. The SAML configuration at the IDP is now complete
+#. Configure the next pages if you require them, "Linked applications","Provisioning", "App Gateway" if you require them. Click “Save”. The SAML configuration at the IdP is now complete
 
 
 .. _centrify_idp_metadata:
 
-Retrieve Centrify IDP metadata
+Retrieve Centrify IdP metadata
 ##############################
 
 #. Copy the metadata URL from the Trust page.
@@ -132,12 +132,12 @@ Update Aviatrix SP Endpoint
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Centrify IDP provides IDP Metadata through URL obtained in `Retrieve Centrify IDP metadata (Step 3) <#centrify-idp-metadata>`_.
+   Centrify IdP provides IdP Metadata through URL obtained in `Retrieve Centrify IdP metadata (Step 3) <#centrify-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
-#. If integrating Centrify IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
-#. If integrating Centrify IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
+#. If integrating Centrify IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
+#. If integrating Centrify IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
 
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
@@ -146,7 +146,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+
-   | IDP Metadata Text/URL      | Paste in the **Issuer URL** obtained    |
+   | IdP Metadata Text/URL      | Paste in the **Issuer URL** obtained    |
    |                            | from the `Centrify app <#centrify-idpimetadata>`_.                  |
    +----------------------------+-----------------------------------------+
    | Entity ID                  | Select `Hostname`                       |
@@ -168,11 +168,11 @@ Test the Integration
 
 Continue with testing the integration by visiting one of the following links based on your use case:
 
-1. If integrating Centrify IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+1. If integrating Centrify IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
   #. Click `Settings` in the left navigation menu
   #. Select `Controller`
   #. Click on the `SAML Login` tab
-2. If integrating Centrify IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+2. If integrating Centrify IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
   #. Stay on the `SAML` tab
 

@@ -6,7 +6,7 @@
    :numbered:
 
 ==============================================================================
-AWS SSO IDP for SAML Integration
+AWS SSO IdP for SAML Integration
 ==============================================================================
 
 Overview
@@ -16,8 +16,8 @@ This guide provides an example on how to configure Aviatrix to authenticate agai
 
 Visit one of the following links based on your use case:
 
-  If integrating AWS SSO IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating AWS SSP IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
+  If integrating AWS SSO IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
+  If integrating AWS SSP IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
 
 Before configuring SAML integration between Aviatrix and AWS SSO, make sure you have a valid AWS account with administrator access.
 
@@ -28,11 +28,11 @@ Before configuring SAML integration between Aviatrix and AWS SSO, make sure you 
 Configuration Steps
 -------------------
 
-Follow these steps to configure Aviatrix to authenticate against your AWS SSO IDP:
+Follow these steps to configure Aviatrix to authenticate against your AWS SSO IdP:
 
 Step 1. Retrieve `Aviatrix SP Metadata <#awssso-saml-sp-metadata>`__ from the Aviatrix Controller
 Step 2. Create an `AWS SSO SAML Application <#awssso-saml-app1>`__ for Aviatrix
-Step 3. Retrieve `AWS SSO IDP metadata <#awssso-idp-metadata>`__
+Step 3. Retrieve `AWS SSO IdP metadata <#awssso-idp-metadata>`__
 Step 4. Continue Creating `AWS SSO SAML Application <#awssso-saml-app2>`__ for Aviatrix
 Step 5. Update `Aviatrix SP Endpoint <#awssso-update-saml-endpoint>`__ in the Aviatrix Controller
 Step 6. `Test the Integration <#awssso-test-integration>`__ is Set Up Correctly
@@ -47,15 +47,15 @@ Later on in the guide, the SP SAML endpoint will be updated.
 
 Follow one of the links below according to your use case:
 
-#. If integrating AWS SSO IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
-#. If integrating AWS SSO IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-1>`_
+#. If integrating AWS SSO IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
+#. If integrating AWS SSO IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-1>`_
 
 For AWS SSO, right click the **SP Metadata** button next to the SAML endpoint and save the file.
 
    |imageSPMetadataURL|
 
 .. tip::
-   Save this XML file to your local machine. It will be uploaded to the AWS SSO IDP in the later steps.
+   Save this XML file to your local machine. It will be uploaded to the AWS SSO IdP in the later steps.
 
 
 .. _awssso_saml_app1:
@@ -90,10 +90,10 @@ We will use the string you select for the SAML application name to generate a UR
 
 .. _awssso_idp_metadata:
 
-Retrieve AWS SSO IDP metadata
+Retrieve AWS SSO IdP metadata
 #############################
 
-Copy the **AWS SSO IDP metadata file** URL. This URL will be provided to the Aviatrix SP endpoint later on.
+Copy the **AWS SSO IdP metadata file** URL. This URL will be provided to the Aviatrix SP endpoint later on.
 
    |imageCopyURL|
 
@@ -140,13 +140,13 @@ Update Aviatrix SP Endpoint
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   AWS SSO IDP provides IDP Metadata through URL obtained in `Retrieve AWS SSO IDP metadata (Step 3) <#awssso-idp-metadata>`_.
-   AWS SSO IDP requires a custom SAML request template.
+   AWS SSO IdP provides IdP Metadata through URL obtained in `Retrieve AWS SSO IdP metadata (Step 3) <#awssso-idp-metadata>`_.
+   AWS SSO IdP requires a custom SAML request template.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
-#. If integrating AWS SSO IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
-#. If integrating AWS SSO IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
+#. If integrating AWS SSO IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
+#. If integrating AWS SSO IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
 
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
@@ -155,7 +155,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+
-   | IDP Metadata Text/URL      | Paste in the                            |
+   | IdP Metadata Text/URL      | Paste in the                            |
    |                            | **AWS SSO SAML metadata file URL**      |
    |                            | copied earlier from  `AWS SSO dashboard <#awssso-idp-metadata>`_.  |
    +----------------------------+-----------------------------------------+
@@ -170,7 +170,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    |add_saml_endpoint|
 
 
-#. Remove the XML element ``<samlp:NameIDPolicy>..</samlp:NameIDPolicy>``
+#. Remove the XML element ``<samlp:NameIdPolicy>..</samlp:NameIdPolicy>``
 
    .. note::
       This is required to connect with AWS SSO.  If you don't do this, you will receive an error message when testing.
@@ -193,11 +193,11 @@ Test the Integration
 
 Continue with testing the integration by visiting one of the following links based on your use case:
 
-1. If integrating AWS SSO IDP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+1. If integrating AWS SSO IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
   #. Click `Settings` in the left navigation menu
   #. Select `Controller`
   #. Click on the `SAML Login` tab
-2. If integrating AWS SSO IDP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+2. If integrating AWS SSO IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
   #. Stay on the `SAML` tab
 
