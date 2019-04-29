@@ -44,7 +44,7 @@ Step 4. `Test the Integration <#azuread-test-integration>`__ is Set Up Correctly
 Create an Azure AD SAML App for Aviatrix
 ########################################
 
-Before you start, pick a short name to be used for the SAML application name ``[SP Name]``.  In the notes below we will refer to this as **aviatrix_azuread**.  But, it can be any string.
+Before you start, pick a short name to be used for the SAML application name ``[Endpoint Name]``.  In the notes below we will refer to this as **aviatrix_azuread**.  But, it can be any string.
 
 We will use the string you select for the SAML application name to generate a URL for Azure AD to connect with Aviatrix.  This URL is defined below as **SP_ACS_URL**.  This URL should be constructed as:
 
@@ -52,7 +52,7 @@ We will use the string you select for the SAML application name to generate a UR
 
 .. tip::
 
-  Replace **<<<your controller ip or host name>>>** with the actual host name or IP address of your controller and **<<<aviatrix_azuread>>>** with the ``[SP Name]`` you chose to refer to the SAML application.
+  Replace **<<<your controller ip or host name>>>** with the actual host name or IP address of your controller and **<<<aviatrix_azuread>>>** with the ``[Endpoint Name]`` you chose to refer to the SAML application.
 
 **Connect to Azure**
 
@@ -172,7 +172,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
    +============================+=========================================+
-   | Endpoint Name              | ``[SP Name]``                                    |
+   | Endpoint Name              | ``[Endpoint Name]``                     |
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | Text                                    |
    +----------------------------+-----------------------------------------+

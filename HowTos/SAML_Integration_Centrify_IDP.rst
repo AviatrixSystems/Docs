@@ -142,7 +142,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
    +----------------------------+-----------------------------------------+
-   | Endpoint Name              | ``[SP Name]``                           |
+   | Endpoint Name              | ``[Endpoint Name]``                     |
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+

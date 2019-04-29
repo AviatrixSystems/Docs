@@ -66,7 +66,7 @@ Create an AWS SSO SAML Application (Part 1)
 
    This step is usually done by the AWS SSO Admin.
 
-Before you start, pick a short name to be used for the SAML application name ``[SP Name]``.  In the notes below we will refer to this as **aviatrix_awssso**.  But, it can be any string.
+Before you start, pick a short name to be used for the SAML application name ``[Endpoint Name]``.  In the notes below we will refer to this as **aviatrix_awssso**.  But, it can be any string.
 
 We will use the string you select for the SAML application name to generate a URL for AWS SSO to connect with Aviatrix.  This URL is defined below as **SP_ACS_URL**.  This URL should be constructed as:
 
@@ -74,7 +74,7 @@ We will use the string you select for the SAML application name to generate a UR
 
 .. tip::
 
-  Replace **<<<your controller ip or host name>>>** with the actual host name or IP address of your controller and **<<<aviatrix_awssso>>>** with the ``[SP Name]`` you chose to refer to the SAML application.
+  Replace **<<<your controller ip or host name>>>** with the actual host name or IP address of your controller and **<<<aviatrix_awssso>>>** with the ``[Endpoint Name]`` you chose to refer to the SAML application.
 
 #. Login to your AWS console
 #. Go to the AWS Single Sign-On service
@@ -151,7 +151,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
    +----------------------------+-----------------------------------------+
-   | Endpoint Name              | ``[SP Name]``                           |
+   | Endpoint Name              | ``[Endpoint Name]``                     |
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+

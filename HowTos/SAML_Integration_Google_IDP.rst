@@ -94,11 +94,11 @@ Continue Creating Google SAML App for Aviatrix
    +----------------------+----------------------------------------------------+
    | Field                | Value                                              |
    +======================+====================================================+
-   | ACS URL              | ``https://[host]/flask/saml/sso/[SP Name]``        |
+   | ACS URL              | ``https://[host]/flask/saml/sso/[Endpoint Name]``        |
    +----------------------+----------------------------------------------------+
    | Entity ID            | ``https://[host]/``                                |
    +----------------------+----------------------------------------------------+
-   | Start URL            | ``https://[host]/flask/saml/sso/[SP Name]``        |
+   | Start URL            | ``https://[host]/flask/saml/sso/[Endpoint Name]``        |
    +----------------------+----------------------------------------------------+
    | Signed Response      | Checked                                            |
    +----------------------+----------------------------------------------------+
@@ -109,7 +109,7 @@ Continue Creating Google SAML App for Aviatrix
 
    ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
-   ``[SP Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
 
    |imageStep4|
 
@@ -152,7 +152,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
    +=========================+=================================================+
-   | Endpoint Name           | ``SP Name`` (Use the same name you entered      |
+   | Endpoint Name           | ``Endpoint Name`` (Use the same name you entered |
    |                         | in the Google Application previously)           |
    +-------------------------+-------------------------------------------------+
    | IdP Metadata Type       | Text                                            |

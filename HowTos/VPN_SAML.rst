@@ -15,16 +15,16 @@ This document shows you how to setup VPN authentication using Aviatrix SAML clie
 
 Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a VPN client with SAML authentication capability.
 
-This step-by-step guide shows you how to use Aviatrix SAML client to authenticate an IdP. When SAML client is used, Aviatrix controller acts as the service provider (SP) that redirects browser traffic from client to the IdP for authentication.
+This step-by-step guide shows you how to use Aviatrix SAML client to authenticate an IDP. When SAML client is used, Aviatrix controller acts as the service provider (SP) that redirects browser traffic from client to the IDP for authentication.
 
-For different IdP's, there will be links to each individual IdP integration.
+For different IDP's, there will be links to each individual IDP integration.
 
 2. Pre-Deployment Checklist
 -----------------------------
-Before configuring the SAML integration between Aviatrix and your IdP, make sure the following is completed:
+Before configuring the SAML integration between Aviatrix and your IDP, make sure the following is completed:
 
 	#. `Aviatrix Controller <#pdc-21>`__ is setup and running
-	#. Have a valid `IdP account <#pdc-22>`__ with admin access
+	#. Have a valid `IDP account <#pdc-22>`__ with admin access
 	#. `Download and install <#pdc-23>`__ the Aviatrix SAML client
 
 
@@ -37,13 +37,13 @@ If you haven’t already deployed the Aviatrix controller, follow `these instruc
 
 .. _PDC_22:
 
-2.2 IdP Account
+2.2 IDP Account
 ###############
 
-An IdP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <./SAML_Integration_Okta_IdP.html>`__,
-`OneLogin <./SAML_Integration_OneLogin_IdP.html>`__, `Google <./SAML_Integration_Google_IdP.html>`__,
-`AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__, and `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__.
-You will require administrator access to create IdP endpoints for SAML. Check `IdP-specific SAML Integration <#idp-integration>`__ to see a list of guides for supported IdP's
+An IDP refers to an identity provider for SAML. This could be any provider that supports a SAML end point like `Okta <./SAML_Integration_Okta_IDP.html>`__,
+`OneLogin <./SAML_Integration_OneLogin_IDP.html>`__, `Google <./SAML_Integration_Google_IDP.html>`__,
+`AWS SSO <./SAML_Integration_AWS_SSO_IDP.html>`__, and `Azure AD <./SAML_Integration_Azure_AD_IDP.html>`__.
+You will require administrator access to create IDP endpoints for SAML. Check `IDP-specific SAML Integration <#idp-integration>`__ to see a list of guides for supported IDP's
 
 
 .. _PDC_23:
@@ -59,9 +59,9 @@ All users must use the Aviatrix VPN client to connect to the system.  Download t
 The configuration consists of 8 parts:
 
   1. Create `temporary Aviatrix SP Endpoint <#config-31>`__ for Aviatrix
-  2. Create `SAML IdP App <#config-32>`__ with specific IdP
-  3. Retrieve `IdP Metadata <#config-33>`__ from IdP
-  4. Update `Aviatrix SP Endpoint <#config-34>`__ with IdP metadata
+  2. Create `SAML IDP App <#config-32>`__ with specific IDP
+  3. Retrieve `IDP Metadata <#config-33>`__ from IDP
+  4. Update `Aviatrix SP Endpoint <#config-34>`__ with IDP metadata
   5. `Test SAML Integration <#config-35>`__`
   6. Launch `Aviatrix Gateway <#config-36>`__
   7. Create `Aviatrix VPN user(s) <#config-37>`__
@@ -76,8 +76,8 @@ The configuration consists of 8 parts:
 
    This step is usually completed by the Aviatrix admin.
    This endpoint will be updated later on in the guide, at this step, we will be using placeholder values.
-   Choose an endpoint name for ``aviatrix_sp_name`` which will be used throughout the guide.
-   This guide will use ``aviatrix_saml_controller`` as an example for ``aviatrix_sp_name``
+   Choose an endpoint name for your Aviatrix SAML endpoint which will be used throughout the guide.
+   This guide will use ``aviatrix_saml_controller`` as an example for the endpoint name.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
@@ -92,14 +92,13 @@ The configuration consists of 8 parts:
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
    +=========================+=================================================+
-   | Endpoint Name           | ``aviatrix_sp_name`` (this is the same name     |
-   |                         | that you chose above)                           |
+   | Endpoint Name           | Enter a unique identifier for the service provider     |
    +-------------------------+-------------------------------------------------+
    | IPD Metadata Type       | Text or URL (depending on what was              |
    |                         | provided by the SAML provider)                  |
    |                         | For now, choose URL                             |
    +-------------------------+-------------------------------------------------+
-   | IdP Metadata Text/URL   | IdP metadata URL/Text copied from the SAML      |
+   | IDP Metadata Text/URL   | IDP metadata URL/Text copied from the SAML      |
    |                         | provider configuration                          |
    |                         | For now, put in a placeholder URL,              |
    |                         | such as "https://www.google.com"                |
@@ -109,27 +108,27 @@ The configuration consists of 8 parts:
    | Access                  | Select admin or read_only access                |
    +-------------------------+-------------------------------------------------+
    | Custom SAML Request     | For now leave blank, depending on your specific |
-   | Template                | IdP, you may have to check this option          |
+   | Template                | IDP, you may have to check this option          |
    +-------------------------+-------------------------------------------------+
 
 #. Click `OK`
-#. Depending on your IdP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
+#. Depending on your IDP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
 
 - Right click **SP Metadata** button next to the SAML endpoint and save file to your local machine.
 - Click **SP Metadata** button, and copy the SP metadata as text
 
 .. _Config_32:
 
-3.2 Create a SAML App for Aviatrix with the IdP
+3.2 Create a SAML App for Aviatrix with the IDP
 ###############################################
 
 .. note::
 
-   This step is usually done by the IdP administrator.
+   This step is usually done by the IDP administrator.
    This sections shows only generalized process for creating a SAML application.
-   Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
+   Refer to the `IDP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IDP.
 
-Create a SAML 2.0 app with the IdP Provider. The following settings are based on the <aviatrix_sp_name>:
+Create a SAML 2.0 app with the IDP Provider. The following settings are based on the <aviatrix_sp_name>:
 
 #. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<aviatrix_sp_name>
 #. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
@@ -137,7 +136,7 @@ Create a SAML 2.0 app with the IdP Provider. The following settings are based on
 #. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<aviatrix_sp_name>
 #. Default RelayState* = <empty>
 #. Name ID format = Unspecified
-#. Application username = IdP username
+#. Application username = IDP username
 
 .. important::
 
@@ -158,37 +157,37 @@ The following SAML attributes are expected:
 
 .. _Idp_Integration:
 
-**IdP-specific SAML App Integration**
+**IDP-specific SAML App Integration**
 
 .. note::
 
-  You will require administrator access to create IdP endpoints for SAML.
+  You will require administrator access to create IDP endpoints for SAML.
 
-These are guides with specific IdP's that were tested to work with Aviatrix SAML integration:
+These are guides with specific IDP's that were tested to work with Aviatrix SAML integration:
 
-#. `AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__
-#. `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__
-#. `Centrify <./SAML_Integration_Centrify_IdP.html>`__
-#. `Google <./SAML_Integration_Google_IdP.html>`__
-#. `Okta <./SAML_Integration_Okta_IdP.html>`__
-#. `OneLogin <./SAML_Integration_OneLogin_IdP.html>`__
+#. `AWS SSO <./SAML_Integration_AWS_SSO_IDP.html>`__
+#. `Azure AD <./SAML_Integration_Azure_AD_IDP.html>`__
+#. `Centrify <./SAML_Integration_Centrify_IDP.html>`__
+#. `Google <./SAML_Integration_Google_IDP.html>`__
+#. `Okta <./SAML_Integration_Okta_IDP.html>`__
+#. `OneLogin <./SAML_Integration_OneLogin_IDP.html>`__
 
-Other tested IdP's include:
+Other tested IDP's include:
 Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc.
 
 .. _Config_33:
 
-3.3  Retrieve IdP metadata
+3.3  Retrieve IDP metadata
 ##########################
 
-After creating the IdP, you need to retrieve IdP Metadata either in URL or text from the IdP application created in the previous step.
+After creating the IDP, you need to retrieve IDP Metadata either in URL or text from the IDP application created in the previous step.
 
-#. AWS SSO  - provides IdP metadata URL, needs a custom SAML request template, and will need to provide SP metadata file from Aviatrix
-#. Azure AD - provides IdP metadata URL and needs a custom SAML request template
-#. Centrify - provides IdP metadata URL and will need to provide SP metadata text from Aviatrix
-#. Google   - provides IdP metadata text
-#. Okta     - provides IdP metadata text
-#. OneLogin - provides IdP metadata URL
+#. AWS SSO  - provides IDP metadata URL, needs a custom SAML request template, and will need to provide SP metadata file from Aviatrix
+#. Azure AD - provides IDP metadata URL and needs a custom SAML request template
+#. Centrify - provides IDP metadata URL and will need to provide SP metadata text from Aviatrix
+#. Google   - provides IDP metadata text
+#. Okta     - provides IDP metadata text
+#. OneLogin - provides IDP metadata URL
 
 
 .. _Config_34:
@@ -199,7 +198,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 .. note::
 
   This step is usually completed by the Aviatrix admin.
-  Take note of the IdP Metadata type along with Text/URL your IdP provides, and if you need a custom SAML request template in the previous section
+  Take note of the IDP Metadata type along with Text/URL your IDP provides, and if you need a custom SAML request template in the previous section
 
 
 #. Login to the Aviatrix Controller
@@ -209,13 +208,12 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
    +----------------------------+-----------------------------------------+
    | Field                      | Description                             |
    +----------------------------+-----------------------------------------+
-   | Endpoint Name              | ``aviatrix_sp_name`` (this is the same name |
-   |                            | that you chose during step 3.1)         |
+   | Endpoint Name              | Unique name that you chose in step 3.1        |
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | Text or URL (depending on what was      |
    |                            | provided by the SAML provider)          |
    +----------------------------+-----------------------------------------+
-   | IdP Metadata Text/URL      | Paste in the IdP metadata URL/Text      |
+   | IDP Metadata Text/URL      | Paste in the IDP metadata URL/Text      |
    |                            | copied from the SAML provider           |
    |                            | configuration                           |
    +----------------------------+-----------------------------------------+
@@ -225,9 +223,9 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
    +----------------------------+-----------------------------------------+
    | Access                     | Select admin or read_only access        |
    +----------------------------+-----------------------------------------+
-   | Custom SAML Request        | Depending on your specific IdP,         |
+   | Custom SAML Request        | Depending on your specific IDP,         |
    | Template                   | you may have to check this option.      |
-   |                            | Refer to `IdP-specific Integration <#idp-integration>`__ |
+   |                            | Refer to `IDP-specific Integration <#idp-integration>`__ |
    +----------------------------+-----------------------------------------+
 
 .. _Config_35:
@@ -242,9 +240,9 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Login to the Aviatrix Controller
 #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
 #. Stay on the `SAML` tab
-#. Select the row that was created in the previous step (`aviatrix_sp_name`)
+#. Select the row that was created in the previous step (that includes your endpoint name)
 #. Click on the `Test` action
-#. You should be redirected to the IdP, now you can log in and should be redirected back to the controller
+#. You should be redirected to the IDP, now you can log in and should be redirected back to the controller
 
 
 .. _Config_36:

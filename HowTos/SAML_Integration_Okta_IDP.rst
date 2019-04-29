@@ -82,7 +82,7 @@ Create an Okta SAML App for Aviatrix
    +----------------------+----------------------------------------------------+
    | Field                | Value                                              |
    +======================+====================================================+
-   | Single sign on URL   | ``https://[host]/flask/saml/sso/[SP Name]``        |
+   | Single sign on URL   | ``https://[host]/flask/saml/sso/[Endpoint Name]``  |
    +----------------------+----------------------------------------------------+
    | Audience URI         | ``https://[host]/``                                |
    | (SP Entity ID)       |                                                    |
@@ -96,7 +96,7 @@ Create an Okta SAML App for Aviatrix
 
    ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
-   ``[SP Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[SP Name]``
+   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[Endpoint Name]``
 
    |image2|
 
@@ -158,7 +158,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
    +=========================+=================================================+
-   | Endpoint Name           | ``[SP Name]`` (Use the same name you entered    |
+   | Endpoint Name           | ``[Endpoint Name]`` (Use the same name you entered    |
    |                         | in the Okta Application previously)             |
    +-------------------------+-------------------------------------------------+
    | IdP Metadata Type       | Text                                            |
