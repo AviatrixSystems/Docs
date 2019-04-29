@@ -32,7 +32,7 @@ Note that rebooting the controller will not impact your IPsec tunnels as it's no
 Why are IAM policies important?
 ---------------------------------
 
-During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 & aviatrix-role-app) are created and two associated IAM policies(aviatrix-assume-role-policy & aviatrix-app-policy) are also created. These roles and policies allow the Controller to use AWS APIs to launch gateway instances, create new route entries and build networks and hence very important to keep your network operational. Please check out `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ and `IAM for Secondary Access Accounts <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html?highlight=iam>`_. After a software upgrade, please do update your IAM policies using the instructions in the above links - these updates have to be done for all accounts that have the Controller and the gateway. 
+During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 & aviatrix-role-app) are created and two associated IAM policies(aviatrix-assume-role-policy & aviatrix-app-policy) are also created. These roles and policies allow the Controller to use AWS APIs to launch gateway instances, create new route entries and build networks and hence very important to keep your network operational. Please check out `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ and `IAM for Secondary Access Accounts <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_. After a software upgrade, please do update your IAM policies using the instructions in the above links - these updates have to be done for all accounts that have the Controller and the gateway. 
 
 
 Why should I upgrade my Controller Software?
@@ -62,7 +62,7 @@ Please checkout `backup functionality <https://docs.aviatrix.com/HowTos/controll
 
 * If you have a "."/period character in the S3 bucket name, please ensure you are running software version 4.0.685 or later.)
 * We strongly recommend the "Multiple Backup" setting to be turned Controller/Settings/Maintenance/Backup&Restore. After turning this option - click on Disable and then Enable and then click on "Backup Now" and check in your S3 bucket to make sur e that the backup function is successful.
-* We support `backup using AWS encrypted storage <https://docs.aviatrix.com/HowTos/controller_backup.html?highlight=backup%20restore#how-to-backup-configuration-with-aws-encrypted-storage>`_
+* We support `backup using AWS encrypted storage <https://docs.aviatrix.com/HowTos/controller_backup.html#how-to-backup-configuration-with-aws-encrypted-storage>`_
 * Please do not use AWS's AMI to take snapshots - this is not a valid backup mechanism and will not work
 
 
@@ -112,7 +112,7 @@ How can I check and track configuration changes and run audit on my Aviatrix Sys
 
 You have a couple ways to run audits on the Aviatrix System:
 
- * You can view and download audit logs from "Controller GUI > Troubleshoot > Logs > Display Logs > Display Audit Logs" and "Download Audit Logs". More information `here <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html?highlight=audit#operations>`_
+ * You can view and download audit logs from "Controller GUI > Troubleshoot > Logs > Display Logs > Display Audit Logs" and "Download Audit Logs". More information `here <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#operations>`_
  * If you have `external logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ enabled, you can search for "AviatrixCMD" on your logging system. More information `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
 
 
