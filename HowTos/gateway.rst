@@ -576,14 +576,18 @@ When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will
 
 When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs. 
 
-Customize Advertised Spoke VPC CIDRs
+Filter Advertised Spoke VPC CIDRs
 --------------------------------------
 
-This feature enables you to selectively exclude some VPC CIDRs from being advertised to on-prem. 
+This route policy enables you to selectively exclude some VPC CIDRs from being advertised to on-prem. 
 
 One use case is if you have Spoke VPCs that have multiple CIDR blocks, among which some of them are overlapping. If 
 you attach these Spoke VPCs, Aviatrix Controller will reject as there are overlapping CIDRs. By excluding the 
 overlapping CIDRs, you will be able to attach the Spoke VPCs. 
+
+When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be exclude. 
+
+When this policy is applied to an Aviatrix Spoke gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem.
 
 Transit Peers As Backup to Onprem 
 -----------------------------------
