@@ -95,7 +95,7 @@ Follow these steps to configure Aviatrix to authenticate against IdP:
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Select `Hostname` for now                       |
    +-------------------------+-------------------------------------------------+
-   | Access                  | Select admin or read_only access                |
+   | Access                  | Select admin or read-only access                |
    +-------------------------+-------------------------------------------------+
    | Custom SAML Request     | For now leave blank, depending on your specific |
    | Template                | IdP, you may have to check this option          |
@@ -121,13 +121,15 @@ Follow these steps to configure Aviatrix to authenticate against IdP:
    This sections shows only a generalized process for creating a SAML application.
    Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
 
-Create a SAML 2.0 app with the IdP Provider. The following settings are based on the <endpoint_name>:
+Create a SAML 2.0 app with the IdP Provider. Enter the endpoint name you chose where it says <endpoint_name>
 
 #. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<endpoint_name>
 #. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-#. SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/<endpoint_name>
-#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<endpoing_name>
+#. SP Metadata URL = https://aviatrix_controller_hostname/flask/metadata/<endpoint_name>
+#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<endpoint_name>
 #. Default RelayState* = <empty>
+
+|image3-2|
 
 .. important::
 
@@ -271,6 +273,8 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 .. |image3-1-1| image:: Controller_Login_SAML_media/image3-1-1.png
 
 .. |image3-1-2| image:: Controller_Login_SAML_media/image3-1-2.png
+
+.. |image3-2| image:: Controller_Login_SAML_media/image3-2.png
 
 .. |image3-5| image:: Controller_Login_SAML_media/image1.png
 

@@ -105,7 +105,7 @@ The configuration consists of 8 parts:
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Select `Hostname` for now                       |
    +-------------------------+-------------------------------------------------+
-   | Access                  | Select admin or read_only access                |
+   | Access                  | Select admin or read-only access                |
    +-------------------------+-------------------------------------------------+
    | Custom SAML Request     | For now leave blank, depending on your specific |
    | Template                | IDP, you may have to check this option          |
@@ -131,15 +131,16 @@ The configuration consists of 8 parts:
    This sections shows only generalized process for creating a SAML application.
    Refer to the `IDP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IDP.
 
-Create a SAML 2.0 app with the IDP Provider. The following settings are based on the <aviatrix_sp_name>:
+Create a SAML 2.0 app with the IdP Provider. Enter the endpoint name you chose in the previous step where it says <endpoint_name>
 
-#. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<aviatrix_sp_name>
+#. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<endpoint_name>
 #. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-#. noteta URL = https://aviatrix_controller_hostname/flask/saml/metadata/<aviatrix_sp_name>
-#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<aviatrix_sp_name>
+#. SP Metadata URL = https://aviatrix_controller_hostname/flask/metadata/<endpoint_name>
+#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<endpoint_name>
 #. Default RelayState* = <empty>
-#. Name ID format = Unspecified
 #. Application username = IDP username
+
+|image3-2|
 
 .. important::
 
@@ -224,7 +225,7 @@ After creating the IDP, you need to retrieve IDP Metadata either in URL or text 
    +----------------------------+-----------------------------------------+
    | Custom Entity ID           | Only visible if `Entity ID` is `Custom` |
    +----------------------------+-----------------------------------------+
-   | Access                     | Select admin or read_only access        |
+   | Access                     | Select admin or read-only access        |
    +----------------------------+-----------------------------------------+
    | Custom SAML Request        | Depending on your specific IDP,         |
    | Template                   | you may have to check this option.      |
@@ -317,6 +318,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |image3-1-1| image:: SSL_VPN_SAML_media/image3-1-1.png
 
 .. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.png
+
+.. |image3-2| image:: SS:_VPN_SAML_media/image3-2.png
 
 .. |image3-6| image:: SSL_VPN_SAML_media/image3-6.png
 

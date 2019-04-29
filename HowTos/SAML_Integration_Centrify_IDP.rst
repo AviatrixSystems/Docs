@@ -151,7 +151,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +----------------------------+-----------------------------------------+
    | Entity ID                  | Select `Hostname`                       |
    +----------------------------+-----------------------------------------+
-   | Access                     | Select admin or read_only access        |
+   | Access                     | Select admin or read-only access        |
    +----------------------------+-----------------------------------------+
    | Custom SAML Request        | Unchecked                               |
    | Template                   |                                         |
