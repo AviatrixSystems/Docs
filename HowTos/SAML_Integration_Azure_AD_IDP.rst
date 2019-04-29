@@ -187,6 +187,9 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    | Template                   |                                         |
    +----------------------------+-----------------------------------------+
 
+.. note::
+   Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
+
    |imageAvtxUpdateSAMLEndpoint|
 
 #. Copy the following into the **Custom SAML Request Template** field:

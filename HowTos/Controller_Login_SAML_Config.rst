@@ -101,6 +101,9 @@ Follow these steps to configure Aviatrix to authenticate against IdP:
    | Template                | IdP, you may have to check this option          |
    +-------------------------+-------------------------------------------------+
 
+.. note::
+   Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
+
 #. Click `OK`
 #. Depending on your IdP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
 
@@ -138,7 +141,7 @@ The following SAML attributes are expected:
 #. FirstName
 #. LastName
 #. Email (unique identifier for SAML)
-
+note
 .. note::
 
    These values are case sensitive

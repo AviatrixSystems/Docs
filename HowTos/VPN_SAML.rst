@@ -111,6 +111,9 @@ The configuration consists of 8 parts:
    | Template                | IDP, you may have to check this option          |
    +-------------------------+-------------------------------------------------+
 
+.. note::
+   Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
+
 #. Click `OK`
 #. Depending on your IDP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
 
@@ -132,7 +135,7 @@ Create a SAML 2.0 app with the IDP Provider. The following settings are based on
 
 #. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<aviatrix_sp_name>
 #. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-#. SP Metadata URL = https://aviatrix_controller_hostname/flask/saml/metadata/<aviatrix_sp_name>
+#. noteta URL = https://aviatrix_controller_hostname/flask/saml/metadata/<aviatrix_sp_name>
 #. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<aviatrix_sp_name>
 #. Default RelayState* = <empty>
 #. Name ID format = Unspecified
