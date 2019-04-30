@@ -165,3 +165,18 @@ An Aviatrix gateway may have a single or multiple interfaces depending on the ty
 +-----------------------+--------------------------------+--------------------------------------------------------+
 
 In order to perform a packet capture, go to Troubleshoot > Diagnostics > Network page and scroll down to Packet Capture section. Select the target gateway and the interface you want to capture the packet and all other relevant fields. The packet capture will run for a maximum of 120 seconds or manually stop the packet capture process.
+
+
+
+
+ 
+Why are my Gateways reported as down?
+--------------------------------------------------------------
+
+The Aviatrix Controller depends on `Gateway keepalive messages <https://docs.aviatrix.com/HowTos/gateway.html#gateway-keepalives>`_ from the Gateways to determine the `Gateway status <https://docs.aviatrix.com/HowTos/gateway.html#gateway-status>`_. The default configuration for Gateway keepalives is set to "medium" - which means that the Gateway will be sending a keepalive to the Controller every 12 seconds and the Controller runs a health check on the Gateway every 60 seconds. The Gateway is considered to be "UP" if the Controller receives 2 or more message between two consecutive health checks.
+ 
+Sometimes due to Cloud Infrastructure and/or Network issues, there is a temporary glitch in network connectivity which could lead to the Gateway being marked as "Down" and the Controller sending an alert email. If you do receive such a message, please check the status of the tunnels on the Gateway and run `Diagnostics on the Gateway <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_.
+
+The Gateway could also be reported as "Down" due to the Controller's Security Group not being open to the Gateway’s EIP. To restrict the Security Groups on the Controller to allow traffic from all Gateways automatically, you can turn on the `Controller Security Group Management <https://docs.aviatrix.com/HowTos/FAQ.html#enable-controller-security-group-management>`_ feature at "Controller UI > Settings > Controller > Security Group Management"
+
+Please also note that a Gateway "Down" state does not necessarily mean IPsec or OpenVPN service is down - it only means that the Controller has not received the keepalive messages from the Gateway and that could be due to a few reasons as mentioned above.
