@@ -144,7 +144,8 @@ Create a SAML 2.0 app with the IdP Provider. Enter the endpoint name you chose i
 
 .. important::
 
-   After step 3.4, these values are also available in the controller under the OpenVPN® navigation item.  Then, select `Advanced` and go to the `SAML` tab.
+  After step 3.1, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
+  Click on the button for the respective value, and copy the URL on the new page.
 
    RelayState is currently not used by the Aviatrix SP
 

@@ -133,7 +133,8 @@ Create a SAML 2.0 app with the IdP Provider. Enter the endpoint name you chose w
 
 .. important::
 
-   After step 3.4, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
+   After step 3.1, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
+   Click on the button for the respective value, and copy the URL on the new page.
 
    RelayState is currently not used by the Aviatrix SP
 
@@ -224,6 +225,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 .. note::
   `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
+
 
 #. Click `OK`
 
