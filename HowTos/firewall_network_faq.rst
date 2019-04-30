@@ -20,6 +20,16 @@ VPC to VPC (East West) traffic, VPC to Internet (Egress) traffic, VPC to on-prem
 
 In addition, FireNet allows you to scale firewall deployment to multi AZ and multi instances in active/active state.
 
+How does FireNet compare with the native deployment in AWS Transit Gateway?
+------------------------------------------------------------------------------
+
+The comparison is illustrated in the diagram below. 
+
+|firenet_compare_with_native|
+
+AWS Transit Gateway connects to firewall by using its built in VPN function. It requires to run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to 
+ensure both source and destination initiated traffic lands on the same firewall instance.  
+
 
 What are the Benefits of FireNet Deployment Model?
 ----------------------------------------------------------------------------------------
@@ -168,6 +178,9 @@ In the future release, the hybrid deployment can be using native AWS Direct Conn
 
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
+   :scale: 30%
+
+.. |firenet_compare_with_native| image:: firewall_network_faq_media/firenet_compare_with_native.png
    :scale: 30%
 
 .. |firenet| image:: firewall_network_media/firenet.png
