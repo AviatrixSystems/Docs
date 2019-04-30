@@ -120,6 +120,10 @@ Result & Output:
 
 
 
+**Note:**
+Logs from CloudWatch can be exported to S3 buckets. Please follow `AWS Documentation <https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3Export.html>`_
+
+
 
 .. add in the disqus tag
 
