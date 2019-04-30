@@ -131,23 +131,22 @@ The configuration consists of 8 parts:
    This sections shows only generalized process for creating a SAML application.
    Refer to the `IDP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IDP.
 
-Create a SAML 2.0 app with the IdP Provider. Enter the endpoint name you chose in the previous step where it says <endpoint_name>
+Create a SAML 2.0 app with the IdP Provider with the following values.
 
-#. Assertion Consumer Service URL* = https://aviatrix_controller_hostname/flask/saml/sso/<endpoint_name>
-#. Audience URI(Entity ID)* = https://aviatrix_controller_hostname/
-#. SP Metadata URL = https://aviatrix_controller_hostname/flask/metadata/<endpoint_name>
-#. SP Login URL = https://aviatrix_controller_hostname/flask/saml/login/<endpoint_name>
+#. Assertion Consumer Service URL*
+#. Audience URI(Entity ID)*
+#. SP Metadata URL
+#. SP Login URL
 #. Default RelayState* = <empty>
 #. Application username = IDP username
 
-|image3-2|
-
 .. important::
 
-  After step 3.1, these values are also available in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
-  Click on the button for the respective value, and copy the URL on the new page.
-
+   You can find these values in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
+   Click on the button for the respective value, and copy the URL on the new page.
    RelayState is currently not used by the Aviatrix SP
+
+|image3-2|
 
 
 The following SAML attributes are expected:
