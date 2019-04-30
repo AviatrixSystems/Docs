@@ -190,3 +190,8 @@ OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote use
  
 
 
+How can I have my laptop reconnect if the user VPN session gets disconnected?
+-------------------------------------------------------------------------------------
+
+Most of the VPN clients have a setting to reconnect when they discover that the session has been disconnected. On Aviatrix VPN client, please check out "Menu > Advanced > Advanced > Reconnect on disconnection"
+
