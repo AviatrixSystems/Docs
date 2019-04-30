@@ -30,6 +30,8 @@ The comparison is illustrated in the diagram below.
 AWS Transit Gateway connects to firewall by using its built in VPN function. It requires to run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to 
 ensure both source and destination initiated traffic lands on the same firewall instance.  
 
+In addition, since native deployment requires IPSec VPN which limits its performance to 1Gbps, and in this scenario the per firewall instance can only perform at 500Mbps since VPN function is traversed twice. 
+
 
 What are the Benefits of FireNet Deployment Model?
 ----------------------------------------------------------------------------------------
