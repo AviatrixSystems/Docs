@@ -195,3 +195,9 @@ How can I have my laptop reconnect if the user VPN session gets disconnected?
 
 Most of the VPN clients have a setting to reconnect when they discover that the session has been disconnected. On Aviatrix VPN client, please check out "Menu > Advanced > Advanced > Reconnect on disconnection"
 
+
+How long will the user VPN session be connected when my laptop is in sleep or loses network connection?
+--------------------------------------------------------------------------------------------------------------
+
+If the user VPN session is setup to use TCP(default setting with ELB), the session will be torn down anywhere from 4-6 minutes after the server stops receiving any traffic from the client. Our keepalives timeout after 4 minutes and most of the TCP sessions timeout based on the client's OS settings.
+ 
