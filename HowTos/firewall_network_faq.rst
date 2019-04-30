@@ -100,7 +100,7 @@ for Egress Inspection and VPC to VPC traffic inspection.
 
 One problem with this deployment is performance. The IPSEC tunnel limits each firewall instance
 to be capped at 1Gbps. When this architecture is deployed for VPC to VPC inspection, traffic goes through VGW (the other end of the IPSEC tunnel) twice,
-further reducing its throughput to 400Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is
+further reducing its throughput to 500Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is
 much lower than what firewall instances can do without IPSEC tunnel.
 
 Another problem is for east west traffic inspection, firewall instance must NAT the source address, otherwise the return traffic is not guaranteed to go through the same firewall instance. This is because ECMP 
@@ -152,6 +152,17 @@ Is there an example guide to setup Palo Alto VM-Series policies?
 
 Yes. Follow `Example Config for Palo Alto VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to 
 setup an "ALLOW ALL" policy for test validation.
+
+How do I test FireNet connectivity without deploying firewall instance?
+-------------------------------------------------------------------------
+
+You can test connectivity without deploying any firewall instance. When FireNet gateway has no firewall instance 
+attached to it for the data path, the FireNet gateway loops the received packet and forward to destination.
+
+Follow the FireNet workflow to complete Step 1, 2, 3, 4, 5, 6 and 8. 
+
+If you have instance in VPC/Domain and another instance in a different VPC/Domain, and you specify connection policy between the Domains and one Domain to connect to Firewall Domain, then you should be able to ping the 
+two instances. 
 
 
 
