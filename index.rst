@@ -238,6 +238,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/netflow
    HowTos/cloudwatch
    HowTos/Controller_Login_SAML_Config
+   HowTos/controller_certificate
 
 .. _Troubleshoot:
 
