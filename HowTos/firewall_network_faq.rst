@@ -49,6 +49,11 @@ For enterprises that wish to deploy firewall in AWS, Aviatrix’s FireNet deploy
  - **Vendor Integration** Launch Palo Alto Networks VM-Series from the Aviatrix Controller console to simplify deployment. 
  - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when on-prem route changes or VPC attachment changes. 
 
+Is FireNet solution recommended by Palo Alto Networks?
+-------------------------------------------------------
+
+Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloaltonetworks.com/partners/alliance>`_ Palo Alto has published the `joint solution brief. <https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/technology-solutions-briefs/palo-alto-networks-and-aviatrix.pdf>`_
+
 How is Firewall Network different from Transit DMZ?
 ------------------------------------------------------
 
