@@ -229,7 +229,7 @@ Aviatrix Controller does not have an ability to read a CSV file to import users 
  
   CID = "Uj8rE7cJsoENKS7wltkm"   #update with your CID look to
   vpn_users_file = "vpn-users.csv"
-  url="https://your-controllers-ip/fqdn/v1/api"
+  url="https://your-controllers-ip-or-fqdn/v1/api"
  
   # first line should have the data needed for the rest api - vpc_id, lb_name, username, user_email, profile_name with open(vpn_users_file, mode='r') as csv_file:
   
