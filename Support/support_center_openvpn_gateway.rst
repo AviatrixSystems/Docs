@@ -201,3 +201,71 @@ How long will the user VPN session be connected when my laptop is in sleep or lo
 
 If the user VPN session is setup to use TCP(default setting with ELB), the session will be torn down anywhere from 4-6 minutes after the server stops receiving any traffic from the client. Our keepalives timeout after 4 minutes and most of the TCP sessions timeout based on the client's OS settings.
  
+
+How can I use a CSV file to do bulk import of vpn users?
+--------------------------------------------------------------------------------------------------------------
+
+Aviatrix Controller does not have an ability to read a CSV file to import users at this time. But since we already support REST API() and Terraform() it is very easy to import multiple vpn users. Here is an example using python and REST API
+
+::
+
+  First: Prepare your data file("vpn-users.csv" in this example) for your VPN uses. Format is "vpc_id, lb_name, username, user_email, profile_name". The first line is needed. The first three args are required. Email and profile are optional. If you do not want to use them, please delete them from the csv header line and update the python file as well - remove the lines from the payload. Here's an example, the first header line is required:
+  
+    vpc_id,lb_name,username,user_email,profile_name
+    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test1,test1@example.com,test-fqdn
+    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test2,test2@example.com,test-fqdn
+    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test3,test3@example.com,test-fqdn
+    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test4,test4@example.com,test-fqdn
+ 
+  Next: Using REST API, login to you controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
+  curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
+ 
+  Next: Copy the following python code into a file, lets say, import-vpn-users.py. Update the CID value from the above command, and run it:
+ 
+  #!/usr/local/bin/python3
+  import requests
+  import os
+  import csv
+ 
+  CID = "Uj8rE7cJsoENKS7wltkm"   #update with your CID look to
+  vpn_users_file = "vpn-users.csv"
+  url="https://your-controllers-ip/fqdn/v1/api"
+ 
+  # first line should have the data needed for the rest api - vpc_id, lb_name, username, user_email, profile_name with open(vpn_users_file, mode='r') as csv_file:
+  
+    csv_reader = csv.DictReader(csv_file)
+    line_count = 0
+    for row in csv_reader:
+        # skipping first line as it has the headers
+        if line_count == 0:
+            line_count += 1
+        line_count += 1
+ 
+        payload = {
+            "action": "add_vpn_user",
+            "CID": CID,
+            "vpc_id": row["vpc_id"],
+            "lb_name": row["lb_name"],
+            "username": row["username"],
+            "user_email": row["user_email"],
+            "profile_name": row["profile_name"]
+        }
+ 
+        response = requests.post(url=url, data=payload, verify=False)
+        print(response.json())
+ 
+  # printing all vpn users configured on this controller
+  payload = {
+    "action": "list_vpn_users",
+    "CID": CID
+  }
+ 
+  response = requests.post(url=url, data=payload, verify=False)
+  parsed = json.loads(json.dumps(response.json()))
+  print("--------------------------")
+  print("id, email, vpc_id, lb_name")
+  print("--------------------------")
+  for items in parsed['results']:
+      print(f"{items['_id']}, {items['email']}, {items['vpc_id']}, {items['lb_name']}")
+  print("--------------------------")
+  
