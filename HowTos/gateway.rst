@@ -544,7 +544,7 @@ When this option is selected, Aviatrix Controller will look for a spare /26 subn
 
 Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPSEC performance between two single Aviatrix gateway instances or between a single Aviatrix gateway instance and on-prem Aviatrix appliance.
 
-For more infor, read `this document <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn all about Aviatrix Insane Mode
+For more info, read `this document <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn all about Aviatrix Insane Mode
 for high performance Transit Network.
 
 Encrypt EBS Volume
