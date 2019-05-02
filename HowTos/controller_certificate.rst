@@ -17,16 +17,58 @@ There are two methods to accomplish this:
 Import Certificate with Key
 -----------------------------
 
+This is the preferred approach. Simply import ca.crt, server.crt and server.key to the Controller and 
+you are done. In this method, the private key file server.key must match the server.crt. 
+
 Generate CSR and Import Certificate
 -------------------------------------
 
+In this approach, you generate a .csr file, get it signed, and then import to the controller. 
 
-.. |imageBackupAWS| image::  controller_backup_media/backup_restore_backup_aws.png
+Step 1. Generate the CSR file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|gen_csr|
+
+After this step is executed, the csr is downloaded to your local host. A new pop up window should
+appear to ask for CA cert. You should take this csr to a sign 
+authority to get it signed and in return, you get two files: ca cert and server cert. 
+
+Step 2. Import CA cert
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When you obtain the CA cert, import/upload to the new pop up window, as shown below. 
+
+|ca.crt|
+
+Step 3. Import Server cert
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After CA cert is imported, a new pop up window appears for you to upload the server certificate, 
+as shown below. 
+
+|server_crt|
+
+If everything works, you now have a signed cert on the Controller!
+
+
+
+
+
+
+
+.. |gen_csr| image::  controller_certificate_media/gen_csr.png
+    :scale: 30%
+
+.. |ca.crt| image::  controller_certificate_media/ca.crt.png
+    :scale: 30%
+
+.. |server_crt| image::  controller_certificate_media/server_crt.png
+    :scale: 30%
 
 .. |imageRestoreAWS| image::  controller_backup_media/backup_restore_restore_aws.png
 
 .. |S3Create| image:: controller_backup_media/S3Create.png
-    :scale: 30%
 .. |S3Properties| image:: controller_backup_media/S3Properties.png
     :scale: 30%
 .. |S3SelectDefaultEncryption| image:: controller_backup_media/S3SelectDefaultEncryption.png
