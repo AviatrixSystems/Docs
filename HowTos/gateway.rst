@@ -561,6 +561,8 @@ When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables
 
 When it is enabled on an Spoke gateway, only that gateway VPC route table is applied. This feature does not apply to AWS Transit Gateway (TGW)  attached Spoke VPCs.
 
+To disable this feature, empty the field and click Save. The on-prem learned routes will be propagated in to the Spoke VPC routes. 
+
 Filter Routes to Spoke VPC
 ------------------------------
 
