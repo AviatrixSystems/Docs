@@ -13,8 +13,8 @@ R4.3.1230 (5/5/2019)
  - **User Accelerator Preview** integrates AWS Global Accelerator with Aviatrix User VPN to reduce user access latency. 
  - **Azure Native Peering** supports VNET to VNET native peering in the same Azure subscription. Cross subscription is not supported. To configure, go to Peering -> Azure Peering. 
  - **C5n Instance** is now supported. With C5n.18xlarge, InsaneMode IPSEC performance reaches 25Gbps. 
- - **Select Subnets for TGW Attachment** provides in REST API the flexibility to select which subnet to attach to AWS Transit Gateway (TGW). 
- - **Reuse Azure Resource Group** provides in REST API the ability to reuse the VNET resource group when launching an Azure gateway. 
+ - **Select Subnets for TGW Attachment** provides by REST API the flexibility to select which subnet to attach to AWS Transit Gateway (TGW). 
+ - **Reuse Azure Resource Group** provides by REST API the ability to reuse the VNET resource group when launching an Azure gateway. 
 
 2. Routing Policies
 ---------------------
