@@ -90,6 +90,7 @@ timeout happens, TCP packets from VPC1 to VPC3 go through PAN1 or PAN2, but the 
 are distributed to a different Palo Alto Network instances by the other ECMP interface. The other Palo Alto Network instance will drop the returning packets due to missing
 initiating TCP connection.
 
+
 Summary
 ---------
 
