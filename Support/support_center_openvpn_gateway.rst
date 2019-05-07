@@ -269,3 +269,9 @@ Aviatrix Controller does not have an ability to read a CSV file to import users 
       print(f"{items['_id']}, {items['email']}, {items['vpc_id']}, {items['lb_name']}")
   print("--------------------------")
   
+
+
+How can I limit the duration on my vpn user's sessions?
+------------------------------------------------------------
+
+"Idle-timeout" option is off by default. As long as the client's computer is up and running, we do not disconnect the user vpn session. If this option is enabled, the server will disconnect any user sessions, which have not had any traffic for the duration it is set to. Please look `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html#how-to-fix-aviatrix-vpn-times-out-too-quickly>`_ for more information.
