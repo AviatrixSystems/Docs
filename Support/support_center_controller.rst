@@ -180,3 +180,9 @@ Sometimes due to Cloud Infrastructure and/or Network issues, there is a temporar
 The Gateway could also be reported as "Down" due to the Controller's Security Group not being open to the Gateway’s EIP. To restrict the Security Groups on the Controller to allow traffic from all Gateways automatically, you can turn on the `Controller Security Group Management <https://docs.aviatrix.com/HowTos/FAQ.html#enable-controller-security-group-management>`_ feature at "Controller UI > Settings > Controller > Security Group Management"
 
 Please also note that a Gateway "Down" state does not necessarily mean IPsec or OpenVPN service is down - it only means that the Controller has not received the keepalive messages from the Gateway and that could be due to a few reasons as mentioned above.
+
+
+What is the preferred way for generating a CSR and uploading a Signed CA Certificate to the Aviatrix Controller?
+------------------------------------------------------------------------------------------------------------------------
+
+The recommended way is to generate a CSR and have it signed by your CA and then upload the signed cert, ca cert and the key at "Controller Web Interface > Settings > Advanced > Security > Import Method > Import Certificate with the Key". `Instructions to generate CSR <https://support.comodoca.com/Com_KnowledgeDetailPage?Id=kA01N000000zFU6>`_
