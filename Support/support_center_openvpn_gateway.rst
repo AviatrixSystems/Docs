@@ -275,3 +275,9 @@ How can I limit the duration on my vpn user's sessions?
 ------------------------------------------------------------
 
 "Idle-timeout" option is off by default. As long as the client's computer is up and running, we do not disconnect the user vpn session. If this option is enabled, the server will disconnect any user sessions, which have not had any traffic for the duration it is set to. Please look `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html#how-to-fix-aviatrix-vpn-times-out-too-quickly>`_ for more information.
+
+
+How can I force my VPN users to authorize at every interval?
+------------------------------------------------------------
+
+Renegotiation interval is off by default and if you enable it, the client will be challenged to authorize at every interval you have configured it to. Please look `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html#how-to-fix-aviatrix-vpn-times-out-too-quickly>`_ for more information.
