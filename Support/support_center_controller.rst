@@ -186,3 +186,15 @@ What is the preferred way for generating a CSR and uploading a Signed CA Certifi
 ------------------------------------------------------------------------------------------------------------------------
 
 The recommended way is to generate a CSR and have it signed by your CA and then upload the signed cert, ca cert and the key at "Controller Web Interface > Settings > Advanced > Security > Import Method > Import Certificate with the Key". `Instructions to generate CSR <https://support.comodoca.com/Com_KnowledgeDetailPage?Id=kA01N000000zFU6>`_
+
+
+
+Why is having a reachable DNS server important for Avaitrix Controller?
+----------------------------------------------------------------------------------------------------
+ 
+When an Aviatrix Controller is launched, by default it will pick up the DNS used in the VPC DHCP Options and the default AWS DHCP is using AmazonProvidedDNS. If VPC DHCP Options are not set, it will use the AWS's Default DNS server (ex: 10.1.0.2 if VPC CIDR is 10.1.0.0/16).
+
+If you have a DNS server configured in DHCP options, please make sure that it can resolve public FQDNs. The Aviatrix Controller depends on this service to run as designed and will run into unexpected problems if it cannot resolve publiic FQDNs
+ 
+If you using AWS's VPC DNS Service, please do make sure that "enableDnsSupport" is turned on - else, AWS will not provide DNS services in the VPC (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html, https://docs.aws.amazon.com/glue/latest/dg/set-up-vpc-dns.html)
+
