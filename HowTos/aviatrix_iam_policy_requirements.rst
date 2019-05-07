@@ -14,6 +14,9 @@ Introduction
 
 This documentation explains how and why AWS IAM permissions are needed by Aviatrix.
 
+.. Note:: Since Aviatrix IAM Policy, **aviatrix-app-policy** has reached the max-character-limitation. In order to provide simplicity, we have combined some of IAM permissions. And this document provides exact AWS APIs being invoked by Aviatrix features.
+..
+
 
 
 1. SQS requirement
@@ -118,39 +121,78 @@ Aviatrix gateway deployment requires permissions from the following categories:
 |
 
 
-3. VPN Gateway & LoadBalance requirement
-------------------------------------------
+6. Aviatrix TransitNetwork & TGW-Orchestrator requirement
+-----------------------------------------------------------
 
-* Aviatrix VPN feature requires the following (and gateway creation) permissions if the user chooses to create NLB/ELB along with the VPN gateway creation.
-* For "iam:CreateServiceLinkedRole": A service-linked role is a unique type of IAM role that is linked directly to an AWS service. Service-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf. Hence, the service linked role is required to confirm that you allow Elastic Load Balancing to make calls to other services. See the following AWS documentations for more information.
-    + `AWS Doc 1 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#service-linked-role-permissions>`__    
-    + `AWS Doc 2 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#create-service-linked-role>`__    
-    + `AWS Doc 3 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html#required-permissions-v2>`__    
+Aviatrix TransitNetwork feature requires the following additional permissions to create AWS Customer Gateway before creating an AWS VPN connection to connect Aviatrix Transit Gateway to AWS VGW.
 
 ::
 
         {
             "Effect": "Allow",
             "Action": [
-                "elasticloadbalancing:Describe*",
-                "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
-                "elasticloadbalancing:AttachLoadBalancerToSubnets",
-                "elasticloadbalancing:ConfigureHealthCheck",
-                "elasticloadbalancing:CreateLoadBalancer*",
-                "elasticloadbalancing:DeleteLoadBalancer*",
-                "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
-                "elasticloadbalancing:ModifyLoadBalancerAttributes",
-                "elasticloadbalancing:SetLoadBalancerPoliciesForBackendServer",
-                "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
-                "elasticloadbalancing:CreateTargetGroup",
-                "elasticloadbalancing:DescribeTargetGroups",
-                "elasticloadbalancing:DeleteTargetGroup",
-                "elasticloadbalancing:CreateListener",
-                "elasticloadbalancing:DescribeListeners",
-                "elasticloadbalancing:DeleteListener",
-                "elasticloadbalancing:RegisterTargets",
-                "elasticloadbalancing:DeregisterTargets",
-                "iam:CreateServiceLinkedRole"
+                "ec2:CreateCustomerGateway",                                     
+                "ec2:DeleteCustomerGateway",                                     
+                "ec2:CreateVpnConnection",                                       
+                "ec2:DeleteVpnConnection",                                       
+                "ec2:CreateVpcPeeringConnection",                                
+                "ec2:AcceptVpcPeeringConnection",                                
+                "ec2:DeleteVpcPeeringConnection",                                
+                "ec2:EnableVgwRoutePropagation",                                 
+                "ec2:DisableVgwRoutePropagation"                                 
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",                                                   
+            "Action": [
+                "ec2:AssociateTransitGatewayRouteTable",
+                "ec2:AcceptTransitGatewayVpcAttachment",
+                "ec2:CreateTransitGateway",
+                "ec2:CreateTransitGatewayRoute",
+                "ec2:CreateTransitGatewayRouteTable",
+                "ec2:CreateTransitGatewayVpcAttachment",
+                "ec2:DeleteTransitGateway",
+                "ec2:DeleteTransitGatewayRoute",
+                "ec2:DeleteTransitGatewayRouteTable",
+                "ec2:DeleteTransitGatewayVpcAttachment",
+                "ec2:DisableTransitGatewayRouteTablePropagation",
+                "ec2:DisassociateTransitGatewayRouteTable",
+                "ec2:EnableTransitGatewayRouteTablePropagation",
+                "ec2:ExportTransitGatewayRoutes",
+                "ec2:ModifyTransitGatewayVpcAttachment",
+                "ec2:RejectTransitGatewayVpcAttachment",
+                "ec2:ReplaceTransitGatewayRoute",
+
+                "ec2:EnableRoutePropagation"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",                                                   
+            "Action": [
+                "ram:CreateResourceShare",
+                "ram:DeleteResourceShare",
+                "ram:UpdateResourceShare",
+                "ram:AssociateResourceShare",
+                "ram:DisassociateResourceShare",
+                "ram:TagResource",
+                "ram:UntagResource",
+                "ram:AcceptResourceShareInvitation",
+                "ram:EnableSharingWithAwsOrganization"
+            ],
+            "Resource": "*"
+        },
+        {                                                                                    
+            "Effect": "Allow",
+            "Action": [
+                "directconnect:CreateDirectConnectGateway",
+                "directconnect:CreateDirectConnectGatewayAssociation",
+                "directconnect:CreateDirectConnectGatewayAssociationProposal",
+                "directconnect:DeleteDirectConnectGateway",
+                "directconnect:DeleteDirectConnectGatewayAssociation",
+                "directconnect:DeleteDirectConnectGatewayAssociationProposal",
+                "directconnect:AcceptDirectGatewayAssociationProposal"
             ],
             "Resource": "*"
         }
@@ -200,20 +242,39 @@ An Aviatrix gateway needs to be in STOP state before modifying the instance type
 |
 
 
-6. Aviatrix Transit Gatewaty requirement
+6. VPN Gateway & LoadBalance requirement
 ------------------------------------------
 
-Aviatrix TransitNetwork feature requires the following additional permissions to create AWS Customer Gateway before creating an AWS VPN connection to connect Aviatrix Transit Gateway to AWS VGW.
+* Aviatrix VPN feature requires the following (and gateway creation) permissions if the user chooses to create NLB/ELB along with the VPN gateway creation.
+* For "iam:CreateServiceLinkedRole": A service-linked role is a unique type of IAM role that is linked directly to an AWS service. Service-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf. Hence, the service linked role is required to confirm that you allow Elastic Load Balancing to make calls to other services. See the following AWS documentations for more information.
+    + `AWS Doc 1 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#service-linked-role-permissions>`__    
+    + `AWS Doc 2 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#create-service-linked-role>`__    
+    + `AWS Doc 3 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html#required-permissions-v2>`__    
 
 ::
 
         {
             "Effect": "Allow",
             "Action": [
-                "ec2:CreateCustomerGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:CreateVpnConnection",
-                "ec2:DeleteVpnConnection"
+                "elasticloadbalancing:Describe*",
+                "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+                "elasticloadbalancing:AttachLoadBalancerToSubnets",
+                "elasticloadbalancing:ConfigureHealthCheck",
+                "elasticloadbalancing:CreateLoadBalancer*",
+                "elasticloadbalancing:DeleteLoadBalancer*",
+                "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
+                "elasticloadbalancing:ModifyLoadBalancerAttributes",
+                "elasticloadbalancing:SetLoadBalancerPoliciesForBackendServer",
+                "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+                "elasticloadbalancing:CreateTargetGroup",
+                "elasticloadbalancing:DescribeTargetGroups",
+                "elasticloadbalancing:DeleteTargetGroup",
+                "elasticloadbalancing:CreateListener",
+                "elasticloadbalancing:DescribeListeners",
+                "elasticloadbalancing:DeleteListener",
+                "elasticloadbalancing:RegisterTargets",
+                "elasticloadbalancing:DeregisterTargets",
+                "iam:CreateServiceLinkedRole"
             ],
             "Resource": "*"
         }
@@ -222,19 +283,35 @@ Aviatrix TransitNetwork feature requires the following additional permissions to
 |
 
 
-7. AWS Peering requirement
-----------------------------
+7. VPN with AWS-Global-Accelerator
+-------------------------------------------
 
-In order to create AWS Peering, the following permissions are needed.
+In order to enable VPN with AWS-Global-Accelerator feature, the following permissions are needed.
 
 ::
 
-        {
+        {                                                                                 
             "Effect": "Allow",
             "Action": [
-                "ec2:CreateVpcPeeringConnection",
-                "ec2:AcceptVpcPeeringConnection",
-                "ec2:DeleteVpcPeeringConnection"
+                "globalaccelerator:*"                                                     
+                "globalaccelerator:CreateAccelerator",
+                "globalaccelerator:CreateEndpointGroup",
+                "globalaccelerator:CreateListener",
+                "globalaccelerator:DeleteAccelerator",
+                "globalaccelerator:DeleteEndpointGroup",
+                "globalaccelerator:DeleteListener",
+                "globalaccelerator:DescribeAccelerator",
+                "globalaccelerator:DescribeAcceleratorAttributes",
+                "globalaccelerator:DescribeEndpointGroup",
+                "globalaccelerator:DescribeListener",
+                "globalaccelerator:GetWaiter",
+                "globalaccelerator:ListAccelerators",
+                "globalaccelerator:ListEndpointGroups",
+                "globalaccelerator:ListListeners",
+                "globalaccelerator:UpdateAccelerator",
+                "globalaccelerator:UpdateAcceleratorAttributes",
+                "globalaccelerator:UpdateEndpointGroup",
+                "globalaccelerator:UpdateListener"
             ],
             "Resource": "*"
         }
@@ -270,7 +347,7 @@ In order to enable Guardduty feature, the following permissions are needed.
 
 
 9. Aviatrix Gateway Single AZ HA requirement
---------------------------------------------
+----------------------------------------------
 
 In order to enable Aviatrix Gateway Single AZ HA feature, the following permission is needed.
 
@@ -290,7 +367,7 @@ In order to enable Aviatrix Gateway Single AZ HA feature, the following permissi
 
 
 10. Controller Backup & Restore requirement
--------------------------------------------
+---------------------------------------------
 
 In order to enable Controller Backup & Restore feature, the following permissions are needed.
 
@@ -306,3 +383,109 @@ In order to enable Controller Backup & Restore feature, the following permission
             ],
             "Resource": "*"
         }
+
+
+|
+  
+  
+11. EBS Volume Encryption requirement
+-------------------------------------------
+
+In order to enable EBS Volume Encryption feature, the following permissions are needed.
+
+::
+
+        {                                                     
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",                      
+                "ec2:StopInstances",                          
+                "ec2:StartInstances",                                                  
+                "ec2:DescribeVolumes",
+                "ec2:CreateVolume",
+                "ec2:DeleteVolume",
+                "ec2:AttachVolume",
+                "ec2:DetachVolume",
+                "ec2:DescribeSnapshots",
+                "ec2:CopySnapshot",
+                "ec2:CreateSnapshot",
+                "ec2:DeleteSnapshot"
+            ],
+            "Resource": "*"
+        }
+
+
+|
+  
+
+12. AWS Peering requirement
+-----------------------------
+
+In order to create AWS Peering, the following permissions are needed.
+
+::
+
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateVpcPeeringConnection",
+                "ec2:AcceptVpcPeeringConnection",
+                "ec2:DeleteVpcPeeringConnection"
+            ],
+            "Resource": "*"
+        }
+
+
+|
+  
+  
+13. IAM Policy Scanning requirement
+-------------------------------------------
+
+In order to enable IAM Policy Scanning feature, the following permissions are needed.
+
+::
+
+        {                              
+            "Effect": "Allow",
+            "Action": [
+                "iam:List*",
+                "iam:Get*",
+                "iam:DeletePolicyVersion",
+                "iam:CreatePolicyVersion"
+            ],
+
+            "Resource": "arn:aws:iam::*:policy/aviatrix-*"
+        }
+
+
+|
+  
+  
+14. UDP Load-Balancer requirement
+-------------------------------------------
+
+In order to enable UDP Load-Balancer feature, the following permissions are needed.
+
+::
+
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53:ChangeResourceRecordSets"                  
+            ],
+            "Resource": "*"
+        }
+
+
+|
+  
+
+
+
+
+
+
+
+
+
