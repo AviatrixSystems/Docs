@@ -70,3 +70,19 @@ There is a character limit while using `FQDN Egress Control REST API <https://s3
   ----------
   
   Next: Check on your controller to verify that the Egress FQDN Filter tag has been updated.
+
+
+What is the DNS dependency for Egress Control?
+---------------------------------------------------
+
+By default, the DNS server on the Gateways are set to 8.8.8.8, except when you have manually edited the Gateway (Controller UI > Gateway > Edit) to "Enable VPC DNS" to pick up VPC'S DNS settings (ether through DHCP Option or the default AWS VPC DNS Server)
+ 
+When the egress control is enabled:
+
+  * If you set rules only for 80/443 ports: when you enable the egress fqdn list, the gateway will check if it has access to the DNS before it will turn on the FQDN filter. If it cannot access the DNS server, it will fail this enable operation.
+  * If you set rules for non-80/443: the controller will replace the gateway default DNS (8.8.8.8) - with the Server from DHCP Options or DNS VPC Server. If the gateway cannot reach this new DNS, the enable operation on the FQDN Egress Control would fail.
+ 
+If you run into these issues, please try:
+
+  * Run `diagnostics on the gateway <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ and look for `"DNS Resolution" tag <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
+  * Go to "Controller Web Interface > Troublshoot > Diagnostics > Network > Gateway Utility" and pick the gateway and try to ping to an FQDN and see if the name to IP resolution happens.
