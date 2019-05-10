@@ -105,4 +105,5 @@ Follow the steps below to put the Aviatrix Controller behind an AWS ALB:
 
 
 .. note::
-  If you have enabled controller HA, you can point your Auto Scaling Group to Target Group of your ELB for auto registration in the event of a filover. However, please note that Max value should be always 1. Having more than 1 active controller for any given set of services is not supported as documented `here <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, if it is deployed behind an ELB
+  If you have enabled controller HA, you can point your Auto Scaling Group to Target Group of your ELB for auto registration in the event of a failover. 
+  However, please note that Max value should be always 1. Having more than 1 active controller for any given set of services is not supported as documented `here <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, if it is deployed behind an ELB
