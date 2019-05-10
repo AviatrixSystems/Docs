@@ -189,7 +189,7 @@ The recommended way is to generate a CSR and have it signed by your CA and then 
 
 
 
-Why is having a reachable DNS server important for Avaitrix Controller?
+Why is having a reachable DNS server important for Aviatrix Controller?
 ----------------------------------------------------------------------------------------------------
  
 When an Aviatrix Controller is launched, by default it will pick up the DNS used in the VPC DHCP Options and the default AWS DHCP is using AmazonProvidedDNS. If VPC DHCP Options are not set, it will use the AWS's Default DNS server (ex: 10.1.0.2 if VPC CIDR is 10.1.0.0/16).
