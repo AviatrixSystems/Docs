@@ -10,7 +10,7 @@ Aviatrix Overview
 What Do We Do?
 ================
 
-Aviatrix is a cloud native networking company. Unlike any other vendors on the market, 
+Aviatrix is a cloud native networking company. Unlike any other network vendors, 
 our product understands the cloud provider's native construct and leverages them 
 to provide you turn key networking solutions. 
 
@@ -234,7 +234,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 50%
 
 .. |aviatrix_backbone| image:: aviatrix_overview_media/aviatrix_backbone.png
-   :scale: 50%
+   :scale: 30%
 
 .. |image1| image:: AviatrixCloudControllerStartupGuide_media/image002.png
    :width: 4.80625in
