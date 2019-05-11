@@ -10,9 +10,9 @@ Aviatrix Overview
 What Do We Do?
 ================
 
-Aviatrix is a cloud native networking company. Unlike any other network vendors, 
-our product understands the cloud provider's native construct and leverages them 
-to provide you turn key networking solutions. 
+Aviatrix is a cloud native networking company. Unlike any other networking vendors, 
+our software understands the cloud provider's native construct and leverages them 
+to provide you turn key solutions. 
 
 |aviatrix_backbone|
 
@@ -84,7 +84,7 @@ Customers find the most compelling value of our product is simplicity, both at c
 
 - **Abstraction**  Abstraction is key to achieve simplicity at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
 
-- **Service Extension** We integrated and developed applications for popular logging services to forward events, alerts and a turn key dashboard to achieve simplicity at operation time. Traditional virtualized firewall appliance can be optimally deployed by Aviatrix.  
+- **Service Extension** As part of the product offering, we provide service integration to Splunk, SumoLogic, Datadog, Duo, Okta, SAML IDPs and firewall appliance deployment.  
 
 - **Centrally Managed** A single pane of glass to manage all your cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
 
