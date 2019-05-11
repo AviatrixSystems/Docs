@@ -10,16 +10,17 @@ Aviatrix Overview
 What Do We Do?
 ================
 
-Aviatrix is a cloud networking company. We believe encryption for data in transit is 
-the new fundamental for all network connectivities. All data we connect is 
-encrypted, either via IPSEC or SSL, over Internet or private links. 
+Aviatrix is a cloud native networking company. Unlike any other vendors on the market, 
+our product understands the cloud provider's native construct and leverages them 
+to provide you turn key networking solutions. 
+
+|aviatrix_backbone|
 
 We focus on solving networking problems in use cases relevant to public clouds. 
 These use cases are shown as below: 
 
-|aviatrix_overview|
-
 - datacenter to cloud (`Next Gen Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
+- Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
 - cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
 - user to cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
 - site to cloud VPN (`Branch and customer sites to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_) 
@@ -47,6 +48,7 @@ Multi Accounts                                  Yes         Yes             Yes
 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes
 Next Gen Transit Network Edge                   Yes         Yes             No
+Firewall Network                                Yes         No              No
 Transit DMZ (Firewall in the cloud)             Yes         No              No
 Transit Peering                                 Yes         Yes             No
 
@@ -82,9 +84,9 @@ Customers find the most compelling value of our product is simplicity, both at c
 
 - **Abstraction**  Abstraction is key to achieve simplicity at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
 
-- **External Integration** We integrated and developed applications for all popular logging services to forward events, alerts and a turn key dashboard to achieve simplicity at operation time. 
+- **Service Extension** We integrated and developed applications for popular logging services to forward events, alerts and a turn key dashboard to achieve simplicity at operation time. Traditional virtualized firewall appliance can be optimally deployed by Aviatrix.  
 
-- **Centrally Managed** A single pane of glass to manage all your cloud network scattered in different regions and clouds.
+- **Centrally Managed** A single pane of glass to manage all your cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
 
 For example, we hide the platform differences between AWS, Azure and GCP, so that you have the same
 experience when networking to any of them or between them. 
@@ -115,11 +117,20 @@ These problems are listed below:
  #. **Extra Charge** In the CSR based solution, traffic from one spoke VPC to another spoke VPC traverses through one transit and sometimes two transit hub, resulting in 2x or 3x egress charge. 
  #. **Too Complex** The CloudOps is a team of 6 engineers managing 34 AWS services, the skill set and resources it takes to manage the CSR based Transit network is beyond what we want to handle. 
  #. **10Gbps Transit** My current Transit network performance is capped at 1.25Gbps, our network requires much higher bandwidth. 
- #. **Transit DMZ** Our security posture requires a firewall device at the Transit VPC edge, but we don't like the idea of building IPSEC tunnels between networking device and firewalls. 
 
+Follow this `self qualification process <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_ to help your team decide if Aviatrix is the right solution for you.
+For how to setup the solution, follow up with `this doc. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
-Follow this `self qualification process <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_ to help your team decide if Aviatrix is the right solution for you. 
-For how to setup the solution, follow up with `this doc. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_  
+Bring Firewall to Cloud: Aviatrix Firewall Network
+=============================================================
+
+Here are the challenges of deploying firewall in the cloud. 
+
+ a. **Complexity** Our security posture requires a firewall appliance for VPC to VPC traffic inspection, but we don't like the idea of building IPSEC tunnels between networking device and firewalls. 
+ #. **Functionality** We need VPC to VPC traffic inspection, but traffic cannot be source NATed.
+ #. **Performance** With centralized firewall deployment, a single firewall appliance is not sufficient to meet the performance requirement. 
+
+Read `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ for more details.
 
 Cloud to Cloud Peering
 ============================
@@ -189,6 +200,7 @@ Aviatrix L7 FQDN filter solves these problems:
  #. **Firewall for Each VPC is Too Complex** My cloud instances are workloads and programs, they make API calls to known destinations. Deploying a traditional firewall that requires certs and keys to decrypt every packet for inspection is too complex and an overkill. 
  #. **Firewall for Each VPC is Too Expensive** Traditional firewall of IDS/IPS is too expensive to be deployed per VPC. 
  #. **Whitelisting** All I need is to be able to white list or black list the well known destinations by specifying them as fully qualified domain names (FQDN) for my http and https traffic. Support wild card or regex is a bonus. 
+ #. **Only for HTTP/HTTPS** Azure's Firewall service does not support FQDN filtering on SSH and SFTP services.
 
 Follow up with more details on `Aviatrix FQDN filter solution. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
@@ -220,6 +232,10 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |aviatrix_overview| image:: aviatrix_overview_media/aviatrix_overview.png
    :scale: 50%
+
+.. |aviatrix_backbone| image:: aviatrix_overview_media/aviatrix_backbone.png
+   :scale: 50%
+
 .. |image1| image:: AviatrixCloudControllerStartupGuide_media/image002.png
    :width: 4.80625in
    :height: 3.21803in
