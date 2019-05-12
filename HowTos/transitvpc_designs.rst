@@ -87,12 +87,13 @@ Integrating with Third Party Firewall
 
 If you are running AWS Workspace services for your employees and need a full fledged firewall device, you can connect the firewall device to VGW directly, shown in the diagram below. This approach requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
 
-|image6|
+Note in this design, it is not necessary that you run a BGP session with the external firewall appliance. It is sufficient if the VGW is configured with static routes with remote site to be 0.0.0.0/0. Also note that the firewall appliance could be an external security service. 
 
 .. tip::
 
    Additional details on this architecture can be found `here <transit_plus_security_vpc.html>`__.
 
+|image6|
 
 Integrating with Egress Firewall -2
 ------------------------------------
