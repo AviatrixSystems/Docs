@@ -21,7 +21,7 @@
 Why is Egress Control Filter needed?
 ========================================
 
-|fqdn|
+|fqdn_overview|
 
 For Internet bound egress traffic, specifying outbound policy at IP address level is not
 sufficient as the domain names of a site can be translated to many
@@ -41,9 +41,9 @@ What does the Aviatrix FQDN feature do?
 ========================================
 
 Aviatrix Fully Qualified Domain Name (FQDN)
-Whitelisting is a security service feature specially designed for workloads in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC. This service is centrally managed by the Controller and distributedly executed by an Aviatrix gateway instance in the VPC.
+is a security service specifically designed for workloads or applications in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC. This service is centrally managed by the Controller and executed by an Aviatrix gateway instance in the VPC in the distributed architecture..
 
-Starting from release 3.4, Aviatrix FQDN Whitelisting filters on any TCP and UDP traffic
+Aviatrix FQDN filters any TCP and UDP traffic
 including HTTP, HTTPS and SFTP traffic. The filtering function allows
 only the destination host
 names (whitelist) specified in the list to pass and drop all other
@@ -63,7 +63,7 @@ How does it work?
 
 The function is transparent to individual instances and is carried out inline without requiring any certificate or keys to decrypt the traffic.
 
-Starting from release 3.4, non-HTTP/HTTPS traffic can also be filtered based on domain names. Use cases are secure file transfer (SFTP) to external sites, secure login in (SSH) to external sites.
+non-HTTP/HTTPS traffic can also be filtered based on exact domain names. Use cases are secure file transfer (SFTP) to external sites, secure login in (SSH) to external sites.
 
 A tag is defined as a list of FQDNs and it is created and managed on the Controller
 console. One or more gateways may be attached to
@@ -166,6 +166,9 @@ When enabling egress filtering on a VPC, each subnet's route table is reviewed. 
   .. note::
      If the Gateway is detached from the VPC (via the egress configuration page), the route table will be updated with the original values.
 
+
+.. |fqdn_overview| image::  FQDN_Whitelists_Ref_Design_media/fqdn_overview.png
+   :scale: 30%
 
 .. |fqdn| image::  FQDN_Whitelists_Ref_Design_media/fqdn.png
    :scale: 50%
