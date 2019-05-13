@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R4.3.1258 (Patch release of 4.3 on 5/13/2019)
+=============================================
+
+ - **User Selected Subnet Attachment to TGW** allows you to customize the subnet/AZ of a VPC to attach to TGW. To configure, go to TGW Orchestrator -> Build. Select Advanced and multi select the subnets. For MAC, multi select is "Command + highlight". For Windows, multi select is "Control + highlight".
+ - Bug fix for transit gateway peering. 
+ - Bug fix for Datadog upgrade for Azure gateway. 
+
 R4.3.1230 (5/5/2019)
 =====================
 
