@@ -29,6 +29,7 @@ VPC Name                                        Select a VPC in the VPC Account.
 TGW Account                                     Select an access account where AWS Transit Gateway resides. 
 TGW Name                                        The name of the AWS Transit Gateway in the AWS Transit Gateway Account. 
 Security Domain Name                            Select from a drop down menu domain. 
+Advanced (Optional)                             Available in Releases 4.3 and later. When selected, a drop down menu of VPC subnets appears for you to multi select subnets/AZs should be attached to the VPC. For a MAC keyboard, use Command key and select. For a Window's machine keyboard, use Control key and select. When not selected, Aviatrix Controller automatically select a subnet representing each AZ for the VPC attachment. 
 ==========================================      ==========
 
 
