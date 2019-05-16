@@ -147,8 +147,8 @@ At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc
 Pre-deployment Check List
 ----------------------------
 
-Aviatrix configures and updates the software before shipping the appliance 
-Deployment topology for Aviatrix CloudN is as following:
+Aviatrix support team configures and updates the software before shipping the appliance. 
+Deployment topology for Aviatrix CloudN is as follows:
 
 |InsaneBeta|
 
