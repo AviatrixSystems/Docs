@@ -147,11 +147,12 @@ At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc
 Pre-deployment Check List
 ----------------------------
 
+Aviatrix configures and updates the software before shipping the appliance 
 Deployment topology for Aviatrix CloudN is as following:
 
 |InsaneBeta|
 
-Please collect information requested below and provide to Aviatrix. Click the link `here <https://s3.amazonaws.com/abetterchance/InsaneBeta.docx>`_ to download the application form.
+Please collect information requested below and provide to Aviatrix. Click the link `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_ to download the application form.
 
 =====================  ==================  ===========  ===============  ==================  =====================  =============================================================
 CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
@@ -165,11 +166,11 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary
 Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
 
 Internet Access
----------
+------------------
 CloudN appliance does not require public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
 
 BGP Requirement
----------
+------------------
 BGP is required between LAN port of the appliance and the on-prem router for route propagation.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
