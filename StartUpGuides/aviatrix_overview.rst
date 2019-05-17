@@ -11,7 +11,7 @@ What Do We Do?
 ================
 
 Aviatrix is a cloud native networking company. Unlike any other networking vendors, 
-our software understands the cloud provider's native construct and leverages them 
+our software understands the cloud provider's native construct. This allows us to program the native constructs and integrate them into our software
 to provide you turn key solutions. 
 
 |aviatrix_backbone|
@@ -86,7 +86,7 @@ Customers find the most compelling value of our product is simplicity, both at c
 
 - **Service Extension** As part of the product offering, we provide service integration to Splunk, SumoLogic, Datadog, Duo, Okta, SAML IDPs and firewall appliance deployment.  
 
-- **Centrally Managed** A single pane of glass to manage all your cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
+- **Centrally Managed** A single pane of glass to manage all your cloud accounts and cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
 
 For example, we hide the platform differences between AWS, Azure and GCP, so that you have the same
 experience when networking to any of them or between them. 
@@ -95,7 +95,7 @@ Another example, we hide the complexity of building IPSEC so that you have the s
 experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. And we do one better, not only the connectivity is setup, the underlying route entry is 
 configured too so that you have a turn key solution. 
 
-Beyond simplicity, Aviatrix solutions solve many problems better than other products in each of the use cases. This document summarizes these problems. Links to 
+Beyond simplicity, Aviatrix solutions solve many problems better than other products in each use case. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
 
 Our goal is to become your go-to tool for all things cloud networking. 
