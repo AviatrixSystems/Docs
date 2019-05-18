@@ -2,6 +2,29 @@
 Release Notes
 =======================================
 
+R4.6 (Coming Soon)
+=====================
+
+1. Networking
+----------------
+
+ - **AWS Transit Gateway Orchestrator for VPN Integration**
+ - **AWS Transit Gateway Orchestrator for Direct Connect Integration**
+
+2. Multi Cloud
+----------------
+
+ - **AWS GovCloud Encrypted Transit**
+ - **AWS Transit Gateway Orchestrator for GovCloud**
+ - **AWS Native Peering for GovCloud**
+ - **Backup & Restore for GovCloud**
+
+3. Operation
+-------------
+ - **Security Patch status display**
+
+
+
 R4.3.1262 (Patch release of 4.3 on 5/13/2019)
 =============================================
 
