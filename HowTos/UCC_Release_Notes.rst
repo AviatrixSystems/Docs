@@ -22,6 +22,7 @@ R4.6 (Coming Soon)
 3. Operation
 -------------
  - **Security Patch status display**
+ - **FIPS 140-2 Compliant module**
 
 
 
