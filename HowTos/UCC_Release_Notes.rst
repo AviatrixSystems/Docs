@@ -169,7 +169,7 @@ R4.1.914 (2/9/2019)
 4. Security
 -----------
 
-- **Port Range Configuration on Egress FQDN** allows you to configure TCP/UDP port range for non HTTP/HTTPS ports in a single policy and simplifies the configurations. The maximum port range span is 100 per policy. To configure, go to Security -> Egress Control.  
+- **Port Range Configuration on Egress FQDN** allows you to configure TCP/UDP port range for non HTTP/HTTPS ports in a single policy and simplifies the configurations. The maximum port range span is 100 per policy. Configure multiple rules to support larger port range. To configure, go to Security -> Egress Control.  
 
 
 5. Operations
