@@ -24,6 +24,11 @@ R4.6 (Coming Soon)
  - **Security Patch status display**
  - **FIPS 140-2 Compliant module**
 
+R4.3.1275 (Patch release of 4.3 on 5/20/2019)
+
+ - Bug fix for Transit Gateway External Device connection option where on-prem end point uses local link address 169.254.0.0/16.
+ - Bug fix for FQDN HTTP protocol handling. 
+ - Bug fix for Transit Peering switch over.
 
 
 R4.3.1262 (Patch release of 4.3 on 5/13/2019)
