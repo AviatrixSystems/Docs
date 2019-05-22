@@ -10,6 +10,7 @@ R4.6 (Coming Soon)
 
  - **AWS Transit Gateway Orchestrator for VPN Integration**
  - **AWS Transit Gateway Orchestrator for Direct Connect Integration**
+ - **Support multiple Firewall Network domains attached for the same TGW. The use case is to separate VPC to VPC inspection from egress/ingress inspection.
 
 2. Multi Cloud
 ----------------
