@@ -2,6 +2,37 @@
 Release Notes
 =======================================
 
+R4.6 (Coming Soon)
+=====================
+
+1. Networking
+-------------------
+
+ - **AWS Transit Gateway Orchestrator for VPN Integration**
+ - **AWS Transit Gateway Orchestrator for Direct Connect Integration**
+ - **Support multiple Firewall Network domains attached for the same TGW**. The use case is to separate VPC to VPC inspection from egress/ingress inspection.
+
+2. Multi Cloud
+----------------
+
+ - **AWS GovCloud Encrypted Transit**
+ - **AWS Transit Gateway Orchestrator for GovCloud**
+ - **AWS Native Peering for GovCloud**
+ - **Backup & Restore for GovCloud**
+
+3. Operation
+-------------
+ - **Security Patch status display**
+ - **FIPS 140-2 Compliant module**
+
+R4.3.1275 (Patch release of 4.3 on 5/20/2019)
+===============================================
+
+ - Bug fix for Transit Gateway External Device connection option where on-prem end point uses local link address 169.254.0.0/16.
+ - Bug fix for FQDN HTTP protocol handling. 
+ - Bug fix for Transit Peering switch over.
+
+
 R4.3.1262 (Patch release of 4.3 on 5/13/2019)
 =============================================
 
@@ -14,7 +45,7 @@ R4.3.1230 (5/5/2019)
 =====================
 
 1. Networking
---------------
+----------------
 
  - **Firewall Network (FireNet)** is the new iteration of Transit DMZ for deploying firewall in the cloud. FireNet provides the simplicity, scalability and automation for an optimal network architecture for firewall deployment. Check out the `FireNet FAQ <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ to learn more. Follow `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to start deploying. 
  - **Transit Peering InsaneMode** allows you to build high performance encrypted connection across AWS regions over AWS private Peering network infrastructure. To configure, first launch the Aviatrix Transit Gateway with InsaneMode enabled, Transit Peering InsaneMode will be automatically enabled when you configure `Transit Gateway Peering. <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ This feature is only available for AWS deployment.
@@ -145,7 +176,7 @@ R4.1.914 (2/9/2019)
 4. Security
 -----------
 
-- **Port Range Configuration on Egress FQDN** allows you to configure TCP/UDP port range for non HTTP/HTTPS ports in a single policy and simplifies the configurations. The maximum port range span is 100 per policy. To configure, go to Security -> Egress Control.  
+- **Port Range Configuration on Egress FQDN** allows you to configure TCP/UDP port range for non HTTP/HTTPS ports in a single policy and simplifies the configurations. The maximum port range span is 100 per policy. Configure multiple rules to support larger port range. To configure, go to Security -> Egress Control.  
 
 
 5. Operations

@@ -13,11 +13,21 @@ VPN users to the nearest AWS CloudFront access point and traverse the AWS backbo
 
 Note when this feature is enabled, VPN user source address is masked out by AWS. 
 
+To configure, 
+
+ 1. you first `launch VPN gateway <https://docs.aviatrix.com/HowTos/uservpn.html>`_ by following the instructions. 
+ #. After VPN is setup, an AWS NLB should be displayed on the left side panel, highlight it and click Add. Then click OK, as shown below.
+
+|user_accelerator|
+
+ 3. From this point on, you can add VPN users which will use the new User Accelerator. 
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
-.. |image0| image:: GeoVPN_media/image1.png
+.. |user_accelerator| image:: user_accelerator_media/user_accelerator.png
+   :scale: 30%
 
 .. |imageArchitecture| image:: GeoVPN_media/architecture_overview.png
 
