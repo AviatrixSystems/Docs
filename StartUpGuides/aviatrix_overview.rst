@@ -40,32 +40,32 @@ You can automate Aviatrix deployment by `REST APIs <https://s3-us-west-2.amazona
 What Features Are Supported in Which Cloud?
 -----------------------------------------------
 
-==========================================      ==========  =============   ========
-**Feature**                                     **AWS**     **Azure**       **GCP**
-==========================================      ==========  =============   ========
-Marketplace Launch                              Yes         Yes             No (Community Image)
-Multi Accounts                                  Yes         Yes             Yes
+==========================================      ==========  =============   ======================                 =================
+**Feature**                                     **AWS**     **Azure**       **GCP**                                **AWS GovCloud**
+==========================================      ==========  =============   ======================                 =================
+Marketplace Launch                              Yes         Yes             No (Community Image)                   Yes
+Multi Accounts                                  Yes         Yes             Yes                                    Yes
 
-Next Gen Transit Network Spoke                  Yes         Yes             Yes
-Next Gen Transit Network Edge                   Yes         Yes             No
-Firewall Network                                Yes         No              No
-Transit DMZ (Firewall in the cloud)             Yes         No              No
-Transit Peering                                 Yes         Yes             No
+Next Gen Transit Network Spoke                  Yes         Yes             Yes                                    Yes
+Next Gen Transit Network Edge                   Yes         Yes             No			                   Yes
+Firewall Network                                Yes         No              No                                     No
+Transit DMZ (Firewall in the cloud)             Yes         No              No                                     No
+Transit Peering                                 Yes         Yes             No                                     Yes
 
-Native Peering                                  Yes         No              N/A
+Native Peering                                  Yes         No              N/A                                    Yes
 
-FQDN Egress Control                             Yes         Yes             Yes
-Stateful Firewall                               Yes         Yes             Yes
-Advanced NAT                                    Yes         Yes             Yes
+FQDN Egress Control                             Yes         Yes             Yes                                    Yes
+Stateful Firewall                               Yes         Yes             Yes                                    Yes
+Advanced NAT                                    Yes         Yes             Yes                                    Yes
 
-Remote Access User VPN                          Yes         Yes             Yes
-Site to Cloud VPN                               Yes         Yes             Yes
+Remote Access User VPN                          Yes         Yes             Yes                                    Yes
+Site to Cloud VPN                               Yes         Yes             Yes                                    Yes
 
-Insane Mode Encryption                          Yes         No              No
+Insane Mode Encryption                          Yes         No              No                                     No
 
-Logging Service Integration                     Yes         Yes             Yes
-FlightPath Expert Diagnostics                   Yes         No              No
-==========================================      ==========  =============   ========
+Logging Service Integration                     Yes         Yes             Yes                                    Yes
+FlightPath Expert Diagnostics                   Yes         No              No                                     Yes
+==========================================      ==========  =============   ======================                 =================
 
 
 How To Launch Aviatrix?
