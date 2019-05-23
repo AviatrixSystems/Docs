@@ -86,14 +86,3 @@ If you run into these issues, please try:
 
   * Run `diagnostics on the gateway <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ and look for `"DNS Resolution" tag <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
   * Go to "Controller Web Interface > Troublshoot > Diagnostics > Network > Gateway Utility" and pick the gateway and try to ping to an FQDN and see if the name to IP resolution happens.
-  
-  
-How can I create an Egress Control Aviatrix Gateway in Azure?
--------------------------------------------------------------------
-
-Azure's subnets by default have an internet gateway associated. So the process is slightly different from AWS. Here are the steps:
-
-1. Create a subnet for your VNET. Do NOT associate any route table to this subnet. This will be your public subnet. This subnet will be used when creating the Aviatrix gateway.
-2. Create a second subnet for user instances. Create a route table and associate it with this second subnet. This will act as a private subnet like in AWS.
-3. Launch Aviatrix Gateway in the first public subnet created in Step 1. If you need an HA, you can create it in the same subnet.
-

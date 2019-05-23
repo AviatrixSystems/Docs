@@ -186,10 +186,10 @@ FireNet supports AWS Transit (TGW) with Insane Mode,
 
 |firenet_insane|
 
-FireNet Deployment Model 3 (Release 4.6 available by 5/30/2019)
-------------------------------------------------------------------
+FireNet Deployment Model 3 (Future release)
+----------------------------------------------
 
-In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect Gateway. 
+In the future release, the hybrid deployment can be using native AWS Direct Connect Gateway. 
 
 
 |firenet|
