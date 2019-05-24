@@ -51,7 +51,7 @@ Step 2. Launch the Controller with CloudFormation
 
 Click link below to take you to the CloudFormation page on AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
 
-`CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json?ref=_ptnr_docs_cta_meter_step2>`_
+`CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json>`_
 
 2.2 Login to AWS Console
 ---------------------------
