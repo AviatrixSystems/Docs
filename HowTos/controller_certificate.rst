@@ -7,7 +7,7 @@ Controller Certificate Management
 ###################################
 
 Aviatrix Controller uses a self-signed certificate by default. That is why you see "Not Secure" 
-at the browser. You can make it more by importing signed certificate. 
+at the browser. You can make it secure by importing signed certificate. 
 
 There are two methods to accomplish this: 
 

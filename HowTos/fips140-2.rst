@@ -1,0 +1,43 @@
+.. meta::
+   :description: FIPS 140-2
+   :keywords: FIPS 140-2  
+
+###################################
+FIPS 140-2 Module
+###################################
+
+Staring Release 4.6, Aviatrix supports FIPS 140-2 crypto module.
+
+To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
+
+
+
+
+
+.. |gen_csr| image::  controller_certificate_media/gen_csr.png
+    :scale: 30%
+
+.. |ca.crt| image::  controller_certificate_media/ca.crt.png
+    :scale: 30%
+
+.. |server_crt| image::  controller_certificate_media/server_crt.png
+    :scale: 30%
+
+.. |imageRestoreAWS| image::  controller_backup_media/backup_restore_restore_aws.png
+
+.. |S3Create| image:: controller_backup_media/S3Create.png
+.. |S3Properties| image:: controller_backup_media/S3Properties.png
+    :scale: 30%
+.. |S3SelectDefaultEncryption| image:: controller_backup_media/S3SelectDefaultEncryption.png
+      :scale: 25%
+.. |S3SelectEncryption| image:: controller_backup_media/S3SelectEncryption.png
+      :scale: 25%
+.. |KMSKeyCreate| image:: controller_backup_media/KMSKeyCreate.png
+      :scale: 30%
+      :align: middle
+.. |KMSKeyAddUser| image:: controller_backup_media/KMSKeyAddUser.png
+      :scale: 30%
+      :align: middle
+
+.. disqus::
+	  
