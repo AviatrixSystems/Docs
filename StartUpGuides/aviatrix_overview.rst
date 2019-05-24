@@ -11,7 +11,7 @@ What Do We Do?
 ================
 
 Aviatrix is a cloud native networking company. Unlike any other networking vendors, 
-our software understands the cloud provider's native construct and leverages them 
+our software understands the cloud provider's native construct. This allows us to program the native constructs and integrate them into our software
 to provide you turn key solutions. 
 
 |aviatrix_backbone|
@@ -40,32 +40,32 @@ You can automate Aviatrix deployment by `REST APIs <https://s3-us-west-2.amazona
 What Features Are Supported in Which Cloud?
 -----------------------------------------------
 
-==========================================      ==========  =============   ========
-**Feature**                                     **AWS**     **Azure**       **GCP**
-==========================================      ==========  =============   ========
-Marketplace Launch                              Yes         Yes             No (Community Image)
-Multi Accounts                                  Yes         Yes             Yes
+==========================================      ==========  =============   ======================                 =================
+**Feature**                                     **AWS**     **Azure**       **GCP**                                **AWS GovCloud**
+==========================================      ==========  =============   ======================                 =================
+Marketplace Launch                              Yes         Yes             No (Community Image)                   Yes
+Multi Accounts                                  Yes         Yes             Yes                                    Yes
 
-Next Gen Transit Network Spoke                  Yes         Yes             Yes
-Next Gen Transit Network Edge                   Yes         Yes             No
-Firewall Network                                Yes         No              No
-Transit DMZ (Firewall in the cloud)             Yes         No              No
-Transit Peering                                 Yes         Yes             No
+Next Gen Transit Network Spoke                  Yes         Yes             Yes                                    Yes
+Next Gen Transit Network Edge                   Yes         Yes             No			                   Yes
+Firewall Network                                Yes         No              No                                     No
+Transit DMZ (Firewall in the cloud)             Yes         No              No                                     No
+Transit Peering                                 Yes         Yes             No                                     Yes
 
-Native Peering                                  Yes         No              N/A
+Native Peering                                  Yes         No              N/A                                    Yes
 
-FQDN Egress Control                             Yes         Yes             Yes
-Stateful Firewall                               Yes         Yes             Yes
-Advanced NAT                                    Yes         Yes             Yes
+FQDN Egress Control                             Yes         Yes             Yes                                    Yes
+Stateful Firewall                               Yes         Yes             Yes                                    Yes
+Advanced NAT                                    Yes         Yes             Yes                                    Yes
 
-Remote Access User VPN                          Yes         Yes             Yes
-Site to Cloud VPN                               Yes         Yes             Yes
+Remote Access User VPN                          Yes         Yes             Yes                                    Yes
+Site to Cloud VPN                               Yes         Yes             Yes                                    Yes
 
-Insane Mode Encryption                          Yes         No              No
+Insane Mode Encryption                          Yes         No              No                                     No
 
-Logging Service Integration                     Yes         Yes             Yes
-FlightPath Expert Diagnostics                   Yes         No              No
-==========================================      ==========  =============   ========
+Logging Service Integration                     Yes         Yes             Yes                                    Yes
+FlightPath Expert Diagnostics                   Yes         No              No                                     Yes
+==========================================      ==========  =============   ======================                 =================
 
 
 How To Launch Aviatrix?
@@ -86,7 +86,7 @@ Customers find the most compelling value of our product is simplicity, both at c
 
 - **Service Extension** As part of the product offering, we provide service integration to Splunk, SumoLogic, Datadog, Duo, Okta, SAML IDPs and firewall appliance deployment.  
 
-- **Centrally Managed** A single pane of glass to manage all your cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
+- **Centrally Managed** A single pane of glass to manage all your cloud accounts and cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
 
 For example, we hide the platform differences between AWS, Azure and GCP, so that you have the same
 experience when networking to any of them or between them. 
@@ -95,7 +95,7 @@ Another example, we hide the complexity of building IPSEC so that you have the s
 experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. And we do one better, not only the connectivity is setup, the underlying route entry is 
 configured too so that you have a turn key solution. 
 
-Beyond simplicity, Aviatrix solutions solve many problems better than other products in each of the use cases. This document summarizes these problems. Links to 
+Beyond simplicity, Aviatrix solutions solve many problems better than other products in each use case. This document summarizes these problems. Links to 
 configuration documents are listed at the end of each section.  
 
 Our goal is to become your go-to tool for all things cloud networking. 
