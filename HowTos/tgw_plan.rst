@@ -207,7 +207,7 @@ Detach Aviatrix Transit GW from TGW
 
 This step is the opposite of Step 6.
 
-Disable Aviatrix Transit GW for Hybrid Connection
+Disable Aviatrix Transit GW for TGW function
 ------------------------------------------------------------------
 
 This step deletes the eth1 interface and other resources associated with the  Aviatrix Transit GW 
