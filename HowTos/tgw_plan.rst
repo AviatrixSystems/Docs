@@ -192,23 +192,33 @@ This section consists of delete functions.
 
  To delete an Aviatrix Transit GW attached to a AWS Transit Gateway, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance. 
 
-7. Detach Aviatrix Transit GW from TGW
+Setup AWS Transit Gateway VPN Connection
+-------------------------------------------
+
+This section is for VPN Connection. 
+
+Setup AWS Transit Gateway Direct Connect
+------------------------------------------
+
+This section is for TGW DXGW connection.
+
+Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 
 This step is the opposite of Step 6.
 
-8. Disable Aviatrix Transit GW for Hybrid Connection
+Disable Aviatrix Transit GW for Hybrid Connection
 ------------------------------------------------------------------
 
 This step deletes the eth1 interface and other resources associated with the  Aviatrix Transit GW 
 from AWS Transit Gateway Orchestrator. 
 
-9. Delete Security Domain
+Delete Security Domain
 ---------------------------
 
 This step delete a security domain created in Step 2. 
 
-10. Delete AWS TGW
+Delete AWS TGW
 ------------------
 
 This step delete the AWS Transit Gateway created in Step 1. 
