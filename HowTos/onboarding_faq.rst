@@ -74,6 +74,61 @@ An Aviatrix Cloud Account can correspond to multiple cloud account. For
 example, it can contain credentials for an AWS IAM account, Azure
 account and GCloud account.
 
+How do we apply Azure role-based access control to Aviatrix Azure account?
+--------------------------------------------------------------------------
+1. Add Aviatrix Resource Role through Powershell
+ 
+avx_rbac_role.json:
+
+{
+    "Name": "Aviatrix Resource Role",
+    "IsCustom": true,
+    "Description": "Aviatrix Resource Action",
+    "Actions": [
+        "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/read",
+        "Microsoft.Compute/*/read",
+        "Microsoft.Compute/availabilitySets/*",
+        "Microsoft.Compute/virtualMachines/*",
+        "Microsoft.Insights/*",
+       "Microsoft.Network/*/read",
+        "Microsoft.Network/publicIPAddresses/*",
+        "Microsoft.Network/networkInterfaces/*",
+        "Microsoft.Network/networkSecurityGroups/*",
+        "Microsoft.Network/loadBalancers/*",
+        "Microsoft.Network/routeTables/*",
+        "Microsoft.Network/virtualNetworks/*",
+        "Microsoft.Storage/storageAccounts/*",
+        "Microsoft.Storage/storageAccounts/register/action",
+        "Microsoft.Resources/*/read",
+        "Microsoft.Resourcehealth/healthevent/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/tags/*",
+        "Microsoft.Resources/marketplace/purchase/action",
+        "Microsoft.Resources/subscriptions/resourceGroups/*"
+    ],
+    "NotActions": [],
+    "AssignableScopes": [
+        "/subscriptions/xyz/"
+    ]
+}
+ 
+In Powershell, perform the following:
+ 
+    edit avx_rbac_role.json
+             copy and paste above Aviatrix RBAC role
+            Save the file
+ 
+    New-AzRoleDefinition -InputFile avx_rbac_role.json
+ 
+ 
+2. Add role assignment in Azure portal
+ 
+In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment->Select Aviatrix Resource Role as Role -> Select Service Principle-> Save
+
+ 
+3. Use the Service Principle to create Azure ARM account in Aviatrix portal
+
+
 How do I upgrade software?
 ---------------------------
 
