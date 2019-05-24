@@ -10,6 +10,8 @@ Staring Release 4.6, Aviatrix supports FIPS 140-2 crypto module.
 
 To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
+When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2.
+
 
 
 
