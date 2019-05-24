@@ -180,7 +180,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Azure AD - provides IdP metadata URL and needs a custom SAML request template
 #. Centrify - provides IdP metadata URL and will need to provide SP metadata text from Aviatrix
 #. Google   - provides IdP metadata text
-#. Okta     - provides IdP metadata text or Idp metadata URL
+#. Okta     - provides IdP metadata URL
 #. OneLogin - provides IdP metadata URL
 
 .. _Config_34:
