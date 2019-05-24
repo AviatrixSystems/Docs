@@ -131,13 +131,13 @@ After the application is created in Okta, go to the `Sign On` tab for the applic
 
 Option 1: IdP metatdata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#. Copy the URL from the `Identity Provider metadata` link. This value will be used to configure the Aviatrix SP Endpoint.
+#. Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
   |image4|
 
 Option 2: Idp metadata Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#. Click on the `View Setup Instructions` button.
+#. Click on the *View Setup Instructions* button.
 
     |image5|
 
