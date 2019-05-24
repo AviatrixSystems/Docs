@@ -125,15 +125,25 @@ Retrieve Okta IdP metadata
 
 .. note::
 
-   This step is usually completed by the Okta admin.
+   This step is usually completed by the Okta admin. Okta provides both an IdP metadata URL and Idp metadata text, you choose either option.
 
-#. After the application is created in Okta, go to the `Sign On` tab for the application.  Then, click on the `View Setup Instructions` button.
+After the application is created in Okta, go to the `Sign On` tab for the application.
 
-    |image4|
+Option 1: IdP metatdata URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Copy the URL from the `Identity Provider metadata` link. This value will be used to configure the Aviatrix SP Endpoint.
+
+  |image4|
+
+Option 2: Idp metadata Text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Click on the `View Setup Instructions` button.
+
+    |image5|
 
 #. Look for the section titled `Provide the following IdP metadata to your SP provider`.
 
-    |image5|
+    |image6|
 
 .. important::
 
@@ -148,7 +158,7 @@ Update Aviatrix SP Endpoint
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Okta IdP provides IdP Metadata through text obtained in `Retrieve Okta IdP metadata (Step 2) <#okta-idp-metadata>`_.
+   Okta IdP provides IdP Metadata through text or URL obtained in `Retrieve Okta IdP metadata (Step 2) <#okta-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
@@ -163,8 +173,11 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +-------------------------+-------------------------------------------------+
    | IdP Metadata Type       | Text                                            |
    +-------------------------+-------------------------------------------------+
-   | IdP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
-   |                         | copied from `Okta SAML configuration <#okta-idp-metadata>`_)            |
+   | IdP Metadata Text/URL   | ``Text copied from Oka`` (IdP metadata text)    |
+   |                         |                     OR                          |
+   |                         | ``URL copied from Okta`` (IdP metadata URL)     |
+   |                         |                                                 |
+   |                         | Paste metadata copied from `Okta SAML configuration <#okta-idp-metadata>`_ |
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Select `Hostname`                               |
    +-------------------------+-------------------------------------------------+
