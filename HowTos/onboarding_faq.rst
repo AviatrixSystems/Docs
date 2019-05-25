@@ -76,7 +76,7 @@ account and GCloud account.
 
 How do we apply Azure role-based access control to Aviatrix Azure account?
 --------------------------------------------------------------------------
-1. Add Aviatrix Resource Role through Powershell
+Step 1. Add Aviatrix Resource Role through Powershell
  
 
 ::
@@ -117,19 +117,17 @@ How do we apply Azure role-based access control to Aviatrix Azure account?
  
 In Powershell, perform the following:
  
-    edit avx_rbac_role.json
-             copy and paste above Aviatrix RBAC role
-            Save the file
- 
-    New-AzRoleDefinition -InputFile avx_rbac_role.json
+1. Edit avx_rbac_role.json, copy and paste above Aviatrix RBAC role. Save the file
+
+2. New-AzRoleDefinition -InputFile avx_rbac_role.json
  
  
-2. Add role assignment in Azure portal
+Step2. Add role assignment in Azure portal
  
 In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment->Select Aviatrix Resource Role as Role -> Select Service Principle-> Save
 
  
-3. Use the Service Principle to create Azure ARM account in Aviatrix portal
+Step3. Use the Service Principle to create Azure ARM account in Aviatrix portal
 
 
 How do I upgrade software?
