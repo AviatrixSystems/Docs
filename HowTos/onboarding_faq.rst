@@ -78,9 +78,12 @@ How do we apply Azure role-based access control to Aviatrix Azure account?
 --------------------------------------------------------------------------
 1. Add Aviatrix Resource Role through Powershell
  
-avx_rbac_role.json:
 
-{
+::
+
+  avx_rbac_role.json:
+
+  {
     "Name": "Aviatrix Resource Role",
     "IsCustom": true,
     "Description": "Aviatrix Resource Action",
@@ -110,7 +113,7 @@ avx_rbac_role.json:
     "AssignableScopes": [
         "/subscriptions/xyz/"
     ]
-}
+  }
  
 In Powershell, perform the following:
  
