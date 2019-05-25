@@ -186,21 +186,75 @@ on-prem. (Make sure instance security groups and any on-prem firewalls are confi
 
 ------------------------------------------------------------------------------------------------
 
-This section consists of delete functions. 
-
-.. note::
-
- To delete an Aviatrix Transit GW attached to a AWS Transit Gateway, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance. 
+This section consists of TGW native VPN and Direct Connect functions. 
 
 Setup AWS Transit Gateway VPN Connection
 -------------------------------------------
 
-This section is for VPN Connection. 
+This section configures a native VPN connection from TGW. It takes two steps: first configure, then download the configuration. 
+
+Step 7 Setup VPN Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step creates a VPN connection in TGW `Default_Domain. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+AWS Transit Gateway Name                        The name of a TGW created by `TGW Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_ by Aviatrix Controller
+Connection Name                                 A unique name for the VPN connection
+Remote Public IP                                Remote site public IP address
+Dynamic (BGP) or Static                         Use BGPP to connect to remote site or static IP
+Remote CIDRs                                    When Static is selected, enter a list of CIDRs separated by comma. 
+Remote AS Number                                When dynamic is selected, enter the AS number of the remote site. 
+==========================================      ==========
+
+Step 8 Download VPN Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Refresh the screen to see the newly created VPN connection.
+
+If Static VPN is configured, you must go to AWS Console -> VPC -> Site-to-Site VPN Connections to download the
+configuration file. 
+
+If Dynamic VPN is configured, click the Download to download the configuration.
 
 Setup AWS Transit Gateway Direct Connect
 ------------------------------------------
 
-This section is for TGW DXGW connection.
+This section configures a native Direct Connect from TGW. This step can take more than 10 minutes for the connection to 
+be ready.
+
+Step 7 Setup Direct Connect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step assumes that you have created Direct Connect Gateway and Transit Virtual Interface from AWS Console.
+
+.. Note ::
+
+  You may need to `update the Controller IAM policies <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ for this function. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+AWS Transit Gateway Name                        The name of a TGW created by `TGW Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_
+Direct Connect Gateway Account Name             The Aviatrix Access Account name that created AWS Direct Connect Gateway
+AWS Direct Connect Gateway                      The AWS Direct Connect Gateway you created from AWS Console
+Allowed Prefix                                  A list of comma separated CIDRs for DXGW to advertise to remote (on-prem)
+==========================================      ==========
+
+Step 8 Update Direct Connect Network Prefix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use this step to update the "Allowed Prefix" to advertise to on-prem.
+
+--------------------------------------------------------------------------------------
+
+This section consists of delete functions.
+
+.. note::
+
+ To delete an Aviatrix Transit GW attached to a AWS Transit Gateway, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance.
 
 Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------

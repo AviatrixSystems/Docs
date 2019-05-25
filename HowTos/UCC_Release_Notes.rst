@@ -8,7 +8,7 @@ R4.6 (Coming Soon)
 1. Networking
 -------------------
 
- - **AWS Transit Gateway Orchestrator for VPN Integration**
+ - **AWS Transit Gateway Orchestrator for VPN Integration** brings native TGW VPN connection to the Aviatrix Controller Orchestrator. One use case is for TGW VPN to connect to on-prem. To configure, follow the TGW Plan workflow. 
  - **AWS Transit Gateway Orchestrator for Direct Connect Integration**
  - **Support multiple Firewall Network domains attached for the same TGW**. The use case is to separate VPC to VPC inspection from egress/ingress inspection.
 
