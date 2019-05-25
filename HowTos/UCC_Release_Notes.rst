@@ -8,22 +8,22 @@ R4.6 (Coming Soon)
 1. Networking
 -------------------
 
- - **AWS Transit Gateway Orchestrator for VPN Integration** brings native TGW VPN connection to the Aviatrix Controller Orchestrator. One use case is for TGW VPN to connect to on-prem. To configure, follow the TGW Plan workflow. 
- - **AWS Transit Gateway Orchestrator for Direct Connect Integration**
- - **Support multiple Firewall Network domains attached for the same TGW**. The use case is to separate VPC to VPC inspection from egress/ingress inspection.
+ - **AWS Transit Gateway Orchestrator for VPN Integration** brings native TGW VPN connection to the Aviatrix Controller Orchestrator. One use case is for TGW VPN to connect to on-prem. To configure, follow the `TGW Plan workflow for VPN <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aws-transit-gateway-vpn-connection>`_. 
+ - **AWS Transit Gateway Orchestrator for Direct Connect Integration** brings native TGW DXGW cocnnection to the Aviatrix Controller Orchestrator. One use case is for TGW DXGW to connect to on-prem. To configure, follow the `TGW Plan workflow for Direct Connect <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aws-transit-gateway-direct-connect>`_.`
+ - **Support multiple Firewall Network domains attached for the same TGW**. The use case is to separate VPC to VPC inspection from egress/ingress inspection. There is no User Interface change. To configure, follow the `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
 
 2. Multi Cloud
 ----------------
 
- - **AWS GovCloud Encrypted Transit**
- - **AWS Transit Gateway Orchestrator for GovCloud**
- - **AWS Native Peering for GovCloud**
- - **Backup & Restore for GovCloud**
+ - **AWS GovCloud Encrypted Transit** allows you to setup and operate an end-to-end encryption in a transit network. To configure, follow the `Encrypted Transit Network workflow. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+ - **AWS Transit Gateway Orchestrator for GovCloud** allows you to setup and operate AWS Transit Gateway based transit network. To learn more, follow the `AWS Transit Gateway Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
+ - **AWS Native Peering for GovCloud** supports AWS native peering in GovCloud. To configure, follow `this link. <https://docs.aviatrix.com/HowTos/peering.html#aws-vpc-peering>`_
+ - **Backup & Restore for GovCloud** is the best practice to operate Aviatrix solution. Make sure you enable this feature. 
 
 3. Operation
 -------------
- - **Security Patch status display**
- - **FIPS 140-2 Compliant module**
+ - **FIPS 140-2 Compliant module** allows you to install and operate FIPS 140-2 Crypto Module for SSL library. To learn more, check out `this document. <https://docs.aviatrix.com/HowTos/fips140-2.html>`_
+ - **Security Patch status display** enhances the Security Patch function by displaying the patch status. 
 
 R4.3.1275 (Patch release of 4.3 on 5/20/2019)
 ===============================================
