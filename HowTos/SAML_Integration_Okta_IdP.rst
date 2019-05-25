@@ -127,17 +127,12 @@ Retrieve Okta IdP metadata
 
    This step is usually completed by the Okta admin.
 
-#. After the application is created in Okta, go to the `Sign On` tab for the application.  Then, click on the `View Setup Instructions` button.
+#. After the application is created in Okta, go to the `Sign On` tab for the application.
 
-    |image4|
+#. Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
-#. Look for the section titled `Provide the following IdP metadata to your SP provider`.
+  |image4|
 
-    |image5|
-
-.. important::
-
-   Copy the *IdP metadata text* displayed.  This value will be used to configure the Aviatrix SP Endpoint.
 
 
 .. _okta_update_saml_endpoint:
@@ -148,7 +143,7 @@ Update Aviatrix SP Endpoint
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Okta IdP provides IdP Metadata through text obtained in `Retrieve Okta IdP metadata (Step 2) <#okta-idp-metadata>`_.
+   Okta IdP provides IdP Metadata through text or URL obtained in `Retrieve Okta IdP metadata (Step 2) <#okta-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
@@ -163,8 +158,7 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +-------------------------+-------------------------------------------------+
    | IdP Metadata Type       | Text                                            |
    +-------------------------+-------------------------------------------------+
-   | IdP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
-   |                         | copied from `Okta SAML configuration <#okta-idp-metadata>`_)            |
+   | IdP Metadata Text/URL   | ``URL copied from Okta`` (IdP metadata URL)     |
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Select `Hostname`                               |
    +-------------------------+-------------------------------------------------+
