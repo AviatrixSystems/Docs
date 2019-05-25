@@ -23,14 +23,30 @@ In addition, FireNet allows you to scale firewall deployment to multi AZ and mul
 How does FireNet compare with the native deployment in AWS Transit Gateway?
 ------------------------------------------------------------------------------
 
-The comparison is illustrated in the diagram below. 
+There are two native deployments: TGW VPN to connect to firewall or TGW VPC attachment to connect to firewall. 
 
-|firenet_compare_with_native|
+The three different deployment model is illustrated in the diagram below. 
 
-AWS Transit Gateway connects to firewall by using its built in VPN function. It requires to run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to 
-ensure both source and destination initiated traffic lands on the same firewall instance.  
+|firewall_deploy|
 
-In addition, since native deployment requires IPSec VPN which limits its performance to 1Gbps, and in this scenario the per firewall instance can only perform at 500Mbps since VPN function is traversed twice. 
+If AWS Transit Gateway connects to firewall by using its built in VPN function. It requires to run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to
+ensure both source and destination initiated traffic lands on the same firewall instance. Further more, since native deployment requires IPSec VPN which limits its performance to 1Gbps, and in this scenario the per firewall instance can only perform at 500Mbps since VPN function is traversed twice.
+
+A more detailed functional comparison is described in the table below. 
+
+=========================================       ==================================      ==============================    =================================
+**Firewall Deployment Functions**               **Firewall in VPN deployment**          **Firewall in VPC attachment**    **Firewall in Aviatrix FireNet**
+=========================================       ==================================      ==============================    =================================
+On-prem to VPC traffic inspection               Yes                                     Yes                               Yes
+VPC to VPC traffic inspection                   Yes (requires SNAT)                     Yes                               Yes
+Egress traffic inspection                       Yes                                     Yes                               Yes
+Per firewall performance                        500Mpps                                 Up to 6Gbps                       Up to 6Gbsp
+Multiple firewalls (scale out)                  Yes                                     No (Active/Standby)               Yes
+Integrated solution                             Yes                                     No (requires external script)     Yes        
+Solution complexity                             High                                    Medium                            Low
+Centrally managed                               Yes                                     No (requires external script)     Yes
+Multi vendor support                            Yes                                     Yes                               Yes
+=========================================       ==================================      ==============================    =================================
 
 
 What are the Benefits of FireNet Deployment Model?
@@ -53,6 +69,11 @@ Is FireNet solution recommended by Palo Alto Networks?
 -------------------------------------------------------
 
 Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloaltonetworks.com/partners/alliance>`_ Palo Alto has published the `joint solution brief. <https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/technology-solutions-briefs/palo-alto-networks-and-aviatrix.pdf>`_
+
+Does FireNet work with other firewall appliances?
+--------------------------------------------------
+
+Yes. FireNet solution has been validated to work with Checkpoint and FortiGate. 
 
 How is Firewall Network different from Transit DMZ?
 ------------------------------------------------------
@@ -198,7 +219,7 @@ In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
 
-.. |firenet_compare_with_native| image:: firewall_network_faq_media/firenet_compare_with_native.png
+.. |firewall_deploy| image:: firewall_network_faq_media/firewall_deploy.png
    :scale: 30%
 
 .. |firenet| image:: firewall_network_media/firenet.png
