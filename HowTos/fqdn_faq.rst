@@ -21,7 +21,7 @@
 Why is Egress Control Filter needed?
 ========================================
 
-|fqdn_overview|
+|egress_overview|
 
 For Internet bound egress traffic, specifying outbound policy at IP address level is not
 sufficient as the domain names of a site can be translated to many
@@ -167,7 +167,7 @@ When enabling egress filtering on a VPC, each subnet's route table is reviewed. 
      If the Gateway is detached from the VPC (via the egress configuration page), the route table will be updated with the original values.
 
 
-.. |fqdn_overview| image::  FQDN_Whitelists_Ref_Design_media/fqdn_overview.png
+.. |egress_overview| image::  FQDN_Whitelists_Ref_Design_media/egress_overview.png
    :scale: 30%
 
 .. |fqdn| image::  FQDN_Whitelists_Ref_Design_media/fqdn.png
