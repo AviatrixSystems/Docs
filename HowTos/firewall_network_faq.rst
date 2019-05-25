@@ -20,8 +20,8 @@ VPC to VPC (East West) traffic, VPC to Internet (Egress) traffic, VPC to on-prem
 
 In addition, FireNet allows you to scale firewall deployment to multi AZ and multi instances in active/active state.
 
-How does FireNet compare with the native deployment in AWS Transit Gateway?
-------------------------------------------------------------------------------
+How does Aviatrix FireNet compare with the native deployment in AWS Transit Gateway?
+--------------------------------------------------------------------------------------
 
 There are two native deployments: TGW VPN to connect to firewall or TGW VPC attachment to connect to firewall. 
 
