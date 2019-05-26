@@ -81,6 +81,21 @@ Added benefit is that traffic over Direct Connect is encrypted.
 
 |insane-mode|
 
+Firewall Network
+------------------
+
+Simplifying and scale your firewall deployment with Aviatrix Firewall Network solution.
+For more information, check out `Firewall Network FAQ <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+
+|firewall_network|
+
+TGW Native Hybrid Network
+----------------------------
+
+Aviatrix supports TGW VPN and TGW Direct Connect for connecting to remote site or on-prem network, as shown in the diagram below. 
+
+|firenet|
+
 Secure Transit with DMZ Firewalls
 -----------------------------------
 
@@ -111,6 +126,12 @@ as shown below. .
    :scale: 30%
 
 .. |transit-DMZ| image:: tgw_design_patterns_media/transit-DMZ.png
+   :scale: 30%
+
+.. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
+   :scale: 30%
+
+.. |firenet| image:: firewall_network_media/firenet.png
    :scale: 30%
 
 .. disqus::
