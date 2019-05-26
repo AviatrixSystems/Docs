@@ -193,6 +193,13 @@ Follow the FireNet workflow to complete Step 1, 2, 3, 4, 5, 6 and 8.
 If you have instance in VPC/Domain and another instance in a different VPC/Domain, and you specify connection policy between the Domains and one Domain to connect to Firewall Domain, then you should be able to ping the 
 two instances. 
 
+What is the scale out performance for FireNet?
+------------------------------------------------
+
+We have run iperf3 TCP performance test on the FireNet with the default Palo Alto VM-Series instance size m4.xlarge. 
+As shown in the chart below, the FireNet throughput scales as more VM-Series are attached to the FireNet gateway.
+
+|firewall_network_perf|
 
 
 
@@ -225,6 +232,9 @@ In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect
 .. |firewall_deploy| image:: firewall_network_faq_media/firewall_deploy.png
    :scale: 30%
 
+.. |firewall_network_perf| image:: firewall_network_faq_media/firewall_network_perf.png
+   :scale: 30%
+
 .. |firenet| image:: firewall_network_media/firenet.png
    :scale: 30%
 
@@ -234,10 +244,6 @@ In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect
 .. |firenet_insane| image:: firewall_network_media/firenet_insane.png
    :scale: 30%
 
-.. |main_companion_gw| image:: transit_dmz_media/main_companion_gw.png
-   :scale: 30%
 
-.. |main_companion_subnets| image:: transit_dmz_media/main_companion_subnets.png
-   :scale: 30%
 
 .. disqus::
