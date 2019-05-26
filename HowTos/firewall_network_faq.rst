@@ -75,6 +75,9 @@ Does FireNet work with other firewall appliances?
 
 Yes. FireNet solution has been validated to work with Checkpoint and FortiGate. 
 
+Click `here <https://drive.google.com/file/d/1uP77VMbTusAZFHRp0i3PKBP-lh-GAMqz/view>`_ for Checkpoint instructions.
+Click `here <https://docs.google.com/document/d/1SK6Yp9qPtyqsCbZInGf_1ofATJcqqFqTHhm5vv_qx9w/edit>`_ for FortiGate instructions.
+
 How is Firewall Network different from Transit DMZ?
 ------------------------------------------------------
 

@@ -14,15 +14,22 @@ Follow the following steps to enable Palo Alto Networks API programming.
 
 Make sure Palo Alto Networks management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address.
 
+At the Palo Alto VM-Series console, 
+
+ a. Click Device
+ #. Click Interfaces
+ #. Click Management
+ #. Make sure the setup is as following screenshot. 
+
 |pan_ping|
 
 2. Create API Administrator Role Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a new role profile and name it Aviatrix-API-Role. Edit the profile to enable Report, Configuration, Operation Requests and Commit for the tab XML API. This allows the Aviatrix Controller to update the relevant route entries
-the Palo Alto Network interfaces.
-
-Go to Device -> Setup -> Management Interface Settings, as shown below.
+ a. Create a new role profile and name it Aviatrix-API-Role: Go to Device -> Admin Roles -> +Add
+ #. Click XML/REST API
+ #. Click Report, Configuration, Operation Requests and Commit
+ #. Click Commit.
 
 |pan_role_profile|
 
@@ -30,7 +37,7 @@ Go to Device -> Setup -> Management Interface Settings, as shown below.
 3. Add an Administrator for API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the Palo Alto Networks Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as
+At the VM-Series Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as
 shown below. Use the profile created in previous step.
 
 |pan_admin|
@@ -39,7 +46,7 @@ shown below. Use the profile created in previous step.
 5. Configure on the Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Login to the Aviatrix Controller, go to Firewall Network -> Vendor Integration. Configure the following parameters.
+Login to the Aviatrix Controller, go to Firewall Network -> Vendor Integration. Configure the following parameters and click Save.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -48,7 +55,7 @@ Transit VPC ID                                  The Transit VPC ID for the Trans
 Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable.
 Firewall Name (Optional)                        A name to remember.
 Firewall Vendor Type                            Select PAN
-Firewall Login User Name                        firewall login name for API calls from the Controller.
+Firewall Login User Name                        firewall login name for API calls from the Controller. For example, admin-API, as shown in the screen shot.
 Firewall Login Password                         firewall login password for API calls.
 Firewall Management IP Address                  The public IP address of the firewall management interface for API calls from the Aviatrix Controller
 Firewall Virtual Router name (Optional)         Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.

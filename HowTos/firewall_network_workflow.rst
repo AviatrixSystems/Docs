@@ -48,12 +48,17 @@ If your deployment requires 2-AZ HA, go through Transit Network -> Setup to laun
 This step configures the gateway launched in Step 4 for FireNet function. If you have HA enabled, it
 automatically sets up the HA gateway for FireNet deployment.
 
+.. tip ::
+
+  If you do not see any gateways in the drop down menu, refresh the browser to load.
+
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
 -------------------------------------------------------------
 
 This step requires you have already created a Security Domain with Firewall attribute enabled.
 
-When this step is completed, you have built the network infrastructure for FireNet deployment.
+When this step is completed, you have built the network infrastructure for FireNet deployment. This step may take a few minutes. 
+
 
 |gw_launch|
 
@@ -86,12 +91,12 @@ Attach (Optional)                               By selecting this option, the fi
 #################################
 
 Repeat Step 7a.1 to launch the second firewall instance to associate with the HA FireNet gateway. 
-Or repeat this step to launch more firewall instances to associate with either FireNet gateway.
+Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
 
 7a.3 Example Setup for "Allow All" Policy
 ###########################################
 
-After a firewall instance is launched, wait for 15 minutes to come up. 
+After a firewall instance is launched, wait for 15 minutes for it to come up. 
 
 You can follow `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to build
 a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
@@ -101,8 +106,11 @@ to firewall instance.
 7b. Associate an Existing Firewall Instance
 --------------------------------------------
 
-This step is alternative step to Step 7a. If you already launched VM-Series from AWS Console, you can still
+This step is the alternative step to Step 7a. If you already launched VM-Series from AWS Console, you can still
 associate it with the FireNet gateway. 
+
+If firewall instance is by a vendor other than Palo Alto Network, for example, Checkpoint or Fortinet, you should launch the firewall 
+instances from AWS Console and associate them to the Aviatrix FireNet gateway. The `Management Interface Subnet` may be the same as the `Egress Interface Subnet`
 
 
 8. Specify Security Domain for Firewall Inspection

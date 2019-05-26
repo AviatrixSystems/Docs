@@ -20,8 +20,8 @@ R4.6 (Coming Soon)
  - **AWS Native Peering for GovCloud** supports AWS native peering in GovCloud. To configure, follow `this link. <https://docs.aviatrix.com/HowTos/peering.html#aws-vpc-peering>`_
  - **Backup & Restore for GovCloud** is the best practice to operate Aviatrix solution. Make sure you enable this feature. 
 
-3. Operation
--------------
+3. Compliance
+--------------
  - **FIPS 140-2 Compliant module** allows you to install and operate FIPS 140-2 Crypto Module for SSL library. To learn more, check out `this document. <https://docs.aviatrix.com/HowTos/fips140-2.html>`_
  - **Security Patch status display** enhances the Security Patch function by displaying the patch status. 
 
