@@ -55,7 +55,7 @@ Transit VPC ID                                  The Transit VPC ID for the Trans
 Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable.
 Firewall Name (Optional)                        A name to remember.
 Firewall Vendor Type                            Select PAN
-Firewall Login User Name                        firewall login name for API calls from the Controller. For example, admin-API, as shown in the screen shot.
+Firewall Login User Name                        firewall login name for API calls from the Controller. For example, admin-api, as shown in the screen shot.
 Firewall Login Password                         firewall login password for API calls.
 Firewall Management IP Address                  The public IP address of the firewall management interface for API calls from the Aviatrix Controller
 Firewall Virtual Router name (Optional)         Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.
