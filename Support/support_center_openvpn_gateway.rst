@@ -281,3 +281,15 @@ How can I force my VPN users to authorize at every interval?
 ------------------------------------------------------------
 
 Renegotiation interval is off by default and if you enable it, the client will be challenged to authorize at every interval you have configured it to. Please look `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html#how-to-fix-aviatrix-vpn-times-out-too-quickly>`_ for more information.
+
+
+How can I resolve my VPC Instance FQDN Names when connecting via remote VPN?
+--------------------------------------------------------------------------------
+
+Our recommended approach is for you to advertise your FQDN's via public DNS(you should be able to tie your instance's private ip address to a public dns name), if you cannot do that, you can use your VPC's DNS server to let your clients resolve the names.
+ 
+OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote user can be configured to connect to this gateway via VPN Client either through a full tunnel or a split tunnel
+
+  * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote users's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
+  * For split tunnel, the DNS server settings are not pushed, by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provider multiple DNS servers separated by commas
+ 
