@@ -81,3 +81,11 @@ How can I send my logs to AlertLogic?
 ------------------------------------------
  
 We do not support sending logs to AlertLogic directly. AlertLogic supports rsyslog if you deploy their remote collector in your network as mentioned at this `link <https://docs.alertlogic.com/prepare/collect-syslog-no-agent.htm>`_. Please configure "Aviatrix Console > Settings > Logging > Remote Syslog" and send logs to AlertLogic's local collector on port 514. This collector should be forwarding these logs to AlertLogic's web logging service.
+
+
+Can I upgrade the Sumo agent in my Controller and Gateways?
+------------------------------------------------------------
+
+We inlude a Sumo agent in our software but it might not be the latest. Aviatrix release 4.3 and later will let you update this agent from your Sumo Web Interface.
+Go to - Manage Data > Collection > Collection ==>Upgrade Collectors link in the page > Update All/individual collector from the "Upgrade Collectors" collectors
+Or, by clicking individual collector and doing upgrade/downgrade
