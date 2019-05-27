@@ -8,6 +8,27 @@ Error Messages
 
 This document records Aviatrix error messages, possible root causes and solutions.
 
+---------------------------------------------------------------------------------------
+
+::
+
+  [Aviatrix Error] Egress-FireNet-oregon enables East-west inspection. It conflicts with tgw-0af3e281d06d363d4 existing firewall policy. If there are multiple Firewall domains or Transit DMZ that enable traffic inspection, please make sure egress_domain is completely isolated from the other firewall domain.
+
+This is probably caused by two firewall domains both wanting to inspect the same VPC traffic. Only one firewall domain
+can inspect east-west traffic and another inspects egress. 
+
+You can fix this by going to Firewall Network -> Advanced. Select the firewall domain, disable "Traffic Inspection, 
+and enable "Egress through Firewall". Then go back and execute Step 6 in Firewall Network workflow. 
+
+
+-------------------------------------------------------------------------------------
+
+::
+
+  [Aviatrix Error] Only VPN BGP is supported. Go to AWS Console -> VPC -> Site-to-Site VPN Connections to download the configuration file.
+
+TGW VPN configuration download is not supported from Aviatrix Controller console. You can download the configuration by going to AWS Console -> VPC -> Site-to-Site VPN Connections to download the configuration file. Once the file is downloaded, use the information in the file to configure the remote end of IPSec VPN. 
+
 ------------------------------------------------------------------------------------
 
 ::

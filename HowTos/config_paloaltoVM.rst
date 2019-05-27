@@ -21,7 +21,7 @@ Below are the steps to setup an "Allow ALL" policy.
 
 After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed, you'll see the Download button as below. Click the button to download the .pem file.
 
-If you get a download error, usually it means the VM-Series is not ready. Wait until it is ready and try again.
+If you get a download error, usually it means the VM-Series is not ready. Wait until it is ready, refresh the browser and then try again.
 
 |access_key|
 
@@ -108,14 +108,33 @@ Click Commit. Once Commit is complete, you should see the Link State turn green 
 
 Now the VM-Series has its Allow All policy setup. 
 
-7. Setup API access 
+7. Configure NAT for egress
+------------------------------
+
+If you also like to enable NAT to test egress, follow these steps. 
+
+ a. Click Policies
+ b. Click NAT
+ c. Click +Add
+ d. Click General tab, give it a name
+ e. Click Original Packet. At Source Zone, click +Add, select "LAN". At Destination Zone, select WAN. At Destination Interface, select Ethernet1/1, as shown below.
+
+ |nat_original_packet| 
+
+ f. Click Translated Packet. At Translation Type, select "Dynamic IP And Port". At Address Type, select "Interface Address". At Interface, select "ethernet1/1", as shown below. 
+
+ |nat_translated_packet|
+
+ d. Click "Commit"!
+
+8. Setup API access 
 ----------------------
 
 In order for Aviatrix Controller to automatically update firewall instance route tables, monitor firewall instance health and manage instance failover, you need to setup API access permissions. 
 
 Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
-8. Read to go!
+9. Read to go!
 ---------------
 
 Now your firewall instance is ready to receive packets! 
@@ -127,7 +146,7 @@ For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through. . 
 
-9. View Traffic Log
+10. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to firewall instance by login to VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where the Security Domains 
@@ -140,6 +159,12 @@ You can view if traffic is forwarded to firewall instance by login to VM-Series 
    :scale: 30%
 
 .. |ipv4| image:: config_paloaltoVM_media/ipv4.png
+   :scale: 30%
+
+.. |nat_original_packet| image:: config_paloaltoVM_media/nat_original_packet.png
+   :scale: 30%
+
+.. |nat_translated_packet| image:: config_paloaltoVM_media/nat_translated_packet.png
    :scale: 30%
 
 .. disqus::
