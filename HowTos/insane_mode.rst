@@ -87,17 +87,17 @@ Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacente
 
 The Aviatrix appliance CloudN specification:
 
-=====================    ================================              =================
-Aviatrix CloudN          Specification                                 Notes
-=====================    ================================              =================
+=====================    =======================================              =================
+Aviatrix CloudN          Specification                                        Notes
+=====================    =======================================              =================
 Dimension                1U rack mount
-Server                   HPE ProLiant DL360 Gen10 Server
-CPU                      8 cores
-Memory                   16GB
+Server                   HPE ProLiant DL360 Gen10 Xeon Gold 6130
+CPU                      16 cores
+Memory                   64GB
 PCIe                     3.0
-10Gbps Ethernet ports    2 x SFP+                                          1 LAN port and 1 WAN port 
-1Gbps Ethernet port      RJ45                                              1 Management port
-=====================    ================================              =================
+10Gbps Ethernet ports    2 x SFP+                                             1 LAN port and 1 WAN port 
+1Gbps Ethernet port      RJ45                                                 1 Management port
+=====================    =======================================              =================
 
 More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-proliant-dl360-gen10-server.1010007891.html>`_
 
