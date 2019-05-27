@@ -198,3 +198,8 @@ If you have a DNS server configured in DHCP options, please make sure that it ca
  
 If you using AWS's VPC DNS Service, please do make sure that "enableDnsSupport" is turned on - else, AWS will not provide DNS services in the VPC (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html, https://docs.aws.amazon.com/glue/latest/dg/set-up-vpc-dns.html)
 
+
+How can I increase the idle timeout when my Aviatrix Controller is deployed behind an ELB, to avoid frequent logins?
+----------------------------------------------------------------------------------------------------------------------
+
+If the Aviatrix controller is behind an ELB, you can go to the AWS portal, Load Balancers page. Select the ELB that you use for the controller and Edit attributes to increase the Idle timeout. We recommend at least 360 seconds. The default is 60 seconds. Please check out https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#connection-idle-timeout for more information.
