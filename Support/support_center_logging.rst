@@ -77,3 +77,7 @@ In Aviatrix release 4.3, we have introduced an option for you to configure Sumo 
 If you already have SumoLogic enabled, you would have to disable/add "Vephemeral=true"/enable to have Aviatrix Gateway Collectors to be created with ephemrel flag. Please note that any existing gateways/collectors in Sumo are still registered as non-ephemeral. If you want all gateways to be registered as ephemeral collectors - you would have to disable sumo on Aviatrix Controller and then delete all the Aviatrix Gateway Collectors on your SumoLogic Web UI and then enable SumoLogging with the flag on the Controller.
  
 
+How can I send my logs to AlertLogic?
+------------------------------------------
+ 
+We do not support sending logs to AlertLogic directly. AlertLogic supports rsyslog if you deploy their remote collector in your network as mentioned at this `link <https://docs.alertlogic.com/prepare/collect-syslog-no-agent.htm>`_. Please configure "Aviatrix Console > Settings > Logging > Remote Syslog" and send logs to AlertLogic's local collector on port 514. This collector should be forwarding these logs to AlertLogic's web logging service.
