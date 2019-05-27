@@ -26,7 +26,8 @@ Syslogs are not viewable on Controller. Please deploy an external service such a
 Is Splunk Cloud supported?
 -------------------------------------
 
-At this time, we support Splunk Enterprise but not Splunk Cloud
+We currently only support logging into Splunk Enterprise and do not support logging into Splunk Cloud directly. As a workaround, you can deploy a Splunk Heavy Forwarder and set it as the destination on Avaitrix for all the logs. You can then have the Splunk Heavy Forwarder send the logs into Splunk Cloud.
+
 
 How do I use a Sumologic collector which is deployed behind an Aviatrix Egress Control Gateway?
 ---------------------------------------------------------------------------------------------------------------
