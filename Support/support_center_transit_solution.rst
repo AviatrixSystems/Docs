@@ -53,3 +53,9 @@ How can I migrate from Aviatrix Transit Network solution to AWS Transit Gateway 
 --------------------------------------------------------------------------------------------
 
 If you have an existing Aviatrix Global Transit Network in production, you may refer to `Migrating an Aviatrix Global Transit Network to Next Gen Transit for AWS <https://docs.aviatrix.com/HowTos/avx_tgw_migration.html>`_.
+
+
+If I add an additional CIDR to my spoke VPC, do I need to do anything with my Aviatrix Transit Network?
+---------------------------------------------------------------------------------------------------------
+ 
+The Aviatrix Spoke Gateway needs to learn and advertise this additional CIDR to the Aviatrix Transit Gateway. Please go to "Aviatrix Console > Transit Network > Setup" and detach this Spoke Gateway from the Transit Gateway and then attach it back again.
