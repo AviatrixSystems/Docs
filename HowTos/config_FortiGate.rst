@@ -103,6 +103,8 @@ For simplicity, you can configure the FW to send all RFC 1918 packets to LAN por
 
 In this example, we configure all traffic for 172.16.0.0/12 to be sent out of LAN interace.
 
+Go to Network -> Static Routes -> Create new
+
 In the Edit dialoge, you need to enter the following:
 
 - Enter destiantion route in the "Destination" box
@@ -114,14 +116,14 @@ In the Edit dialoge, you need to enter the following:
 |editStaticRoute|
 
 6. Configure basic traffic policy to allow traffic
-----------------------------------------------------------------
+-----------------------------------------------------------
 
 In this step we will need to configure a basic traffic security policy that allows traffic to pass through the firewall. Give that aviatrix gateways will only forward internal traffic to LAN port of the Firewall, 
 we can simply base our policy on packets that are being recieved on the LAN interface. 
 
-In the Edit Policy dialoge, you need to enter the following:
 
-- Go to Policy & Objects -> IPv4 Policy -> Edit
+ Go to Policy & Objects -> IPv4 Policy -> Create New / Edit. In the Edit Policy dialoge, you need to enter the following:
+
 - Name: Configure any name for this policy
 - Incoming Interface: LAN
 - Outgoing Interface: LAN
