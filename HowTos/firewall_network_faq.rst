@@ -222,9 +222,29 @@ FireNet Deployment Model 3 (Release 4.6 available by 5/30/2019)
 
 In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect Gateway. 
 
-
 |firenet|
 
+FireNet Deployment Model 4 
+----------------------------------
+
+Connect to on-prem with AWS DXGW and use Aviatrix Edge gateway to connect to multiple regions.
+
+|multi_region_firewall|
+
+FireNet Deployment Model 5
+----------------------------------
+
+Connect to on-prem with Aviatrix Edge gateway for both hybrid and multi regions.
+
+|multi_region_aviatrix_edge|
+
+FireNet Deployment Model 6
+----------------------------
+
+You can deploy multiple Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Egress
+inspection.
+
+|multi_firewall|
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
@@ -232,7 +252,16 @@ In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect
 .. |firewall_deploy| image:: firewall_network_faq_media/firewall_deploy.png
    :scale: 30%
 
+.. |multi_region_firewall| image:: firewall_network_faq_media/multi_region_firewall.png
+   :scale: 30%
+
+.. |multi_region_aviatrix_edge| image:: firewall_network_faq_media/multi_region_aviatrix_edge.png
+   :scale: 30%
+
 .. |firewall_network_perf| image:: firewall_network_faq_media/firewall_network_perf.png
+   :scale: 30%
+
+.. |multi_firewall| image:: firewall_network_faq_media/multi_firewall.png
    :scale: 30%
 
 .. |firenet| image:: firewall_network_media/firenet.png
