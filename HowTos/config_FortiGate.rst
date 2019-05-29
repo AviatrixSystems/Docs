@@ -118,11 +118,13 @@ In the Edit dialoge, you need to enter the following:
 6. Configure basic traffic policy to allow traffic
 -----------------------------------------------------------
 
-In this step we will need to configure a basic traffic security policy that allows traffic to pass through the firewall. Give that aviatrix gateways will only forward internal traffic to LAN port of the Firewall, 
-we can simply base our policy on packets that are being recieved on the LAN interface. 
+In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that aviatrix gateways will only forward traffic from TGW to LAN port of the Firewall, 
+we can simply set our policy condition to match any packet that is going in/out of LAN interface. 
 
 
- Go to Policy & Objects -> IPv4 Policy -> Create New / Edit. In the Edit Policy dialoge, you need to enter the following:
+ Go to Policy & Objects -> IPv4 Policy -> Create New / Edit
+ 
+ In the Edit Policy dialoge, you need to enter the following:
 
 - Name: Configure any name for this policy
 - Incoming Interface: LAN
@@ -133,9 +135,12 @@ we can simply base our policy on packets that are being recieved on the LAN inte
 - Service: ALL
 - Action: Accept
 
+After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements. 
+
+
 |editPolicy|
 
-8. Ready to go!
+7. Ready to go!
 ---------------
 
 Now your firewall instance is ready to receive packets! 
@@ -147,7 +152,7 @@ For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through. . 
 
-9. View Traffic Log
+8. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to firewall instance by going to FortiView 
