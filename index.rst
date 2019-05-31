@@ -118,6 +118,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/firewall_network_workflow
    HowTos/config_paloaltoVM
    HowTos/config_FortiGate.rst
+   HowTos/config_Checkpoint.rst
    HowTos/paloalto_API_setup
 
 .. _Transit DMZ:
