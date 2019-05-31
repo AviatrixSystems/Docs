@@ -149,12 +149,12 @@ To disable admin login to the Controller, go to Settings -> Controller -> Login 
 7. Encrypt Controller EBS Volume
 ##################################
 
-Follow the `instructions here <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_ to encrypt the Controller EBS Volume after the Controller is launched. 
+Follow the `instructions here <https://github.com/AviatrixSystems/EBS-encryption>`_ to encrypt the Controller EBS Volume after the Controller is launched. 
 
 8. Encrypt gateway EBS Volume
 ###############################
 
-Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://medium.com/tensult/encryption-of-ebs-root-volumes-41e9627eb85f>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
+Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://docs.aviatrix.com/HowTos/encrypt_ebs_volume.html?highlight=volume>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
 
 9. Enable Controller SAML Login
 ################################
