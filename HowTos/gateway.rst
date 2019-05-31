@@ -206,9 +206,10 @@ load balancing, VPN gateways with ELB enabled run on TCP.
 ELB Name
 ==========
 
-This is an optional parameter. Leave it blank if you do no need it.
+ELB Name is generated automatically if it is left blank.
+If it is left blank and there is already a load balancer in the specified VPC, it will choose that load balancer's name.
 
-The ELB Name is used for GCP only.
+You can set the ELB name if there is no existing ELB in the specified VPC.
 
 Enable Client Certificate Sharing
 ==================================
@@ -555,13 +556,13 @@ This feature only applies to AWS gateway. When enabled, the gateway EBS volume i
 Customize Spoke VPC Routes
 ------------------------------
 
-This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. When a CIDR is inserted in this field, automatic route propagation to the Spoke(s) VPC will be disabled, overriding  propagated CIDRs from other spokes, transit gateways and on-prem network. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes. 
+This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. When a CIDR is inserted in this field, automatic route propagation to the Spoke(s) VPC will be disabled, overriding  propagated CIDRs from other spokes, transit gateways and on-prem network. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes.
 
-When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables are customized. 
+When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables are customized.
 
 When it is enabled on an Spoke gateway, only that gateway VPC route table is applied. This feature does not apply to AWS Transit Gateway (TGW)  attached Spoke VPCs.
 
-To disable this feature, empty the field and click Save. The on-prem learned routes will be propagated in to the Spoke VPC routes. 
+To disable this feature, empty the field and click Save. The on-prem learned routes will be propagated in to the Spoke VPC routes.
 
 Filter Routes to Spoke VPC
 ------------------------------
@@ -569,37 +570,37 @@ Filter Routes to Spoke VPC
 This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The unwanted list of CIDRs should be entered as input. This list of
 CIDRs should be comma separated. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
 
-The list of the filtered out CIDRs can be a super set of on-prem learned routes. For example, if the on-prem learned routes are 100.10.0.0/24 and 100.10.1.0/24, 
+The list of the filtered out CIDRs can be a super set of on-prem learned routes. For example, if the on-prem learned routes are 100.10.0.0/24 and 100.10.1.0/24,
 you can enter 100.10.0.0/16 to filter out both routes.
 
 If the filtered out CIDR is a subnet of on-prem learned CIDR, the filtered CIDR won't work.
 
-When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will filter on the configured routes. 
+When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will filter on the configured routes.
 
-When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs. 
+When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs.
 
 Filter Advertised Spoke VPC CIDRs
 --------------------------------------
 
-This route policy enables you to selectively exclude some VPC CIDRs from being advertised to on-prem. 
+This route policy enables you to selectively exclude some VPC CIDRs from being advertised to on-prem.
 
-One use case is if you have Spoke VPCs that have multiple CIDR blocks, among which some of them are overlapping. If 
-you attach these Spoke VPCs, Aviatrix Controller will reject as there are overlapping CIDRs. By excluding the 
-overlapping CIDRs, you will be able to attach the Spoke VPCs. 
+One use case is if you have Spoke VPCs that have multiple CIDR blocks, among which some of them are overlapping. If
+you attach these Spoke VPCs, Aviatrix Controller will reject as there are overlapping CIDRs. By excluding the
+overlapping CIDRs, you will be able to attach the Spoke VPCs.
 
-When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be exclude. 
+When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be exclude.
 
 When this policy is applied to an Aviatrix Spoke gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem.
 
-Transit Peers As Backup to Onprem 
+Transit Peers As Backup to Onprem
 -----------------------------------
 
-When this feature is enabled on a Transit Gateway, every one of its remote Transit Peers does not advertise to its on-prem network all the Spoke VPCs and on-prem routes learned by this Transit Gateway, except when the link to the on-prem 
-goes down at which point one of the remote Transit Peer starts to advertise to its on-prem network all the Spoke VPCs 
-and on-prem routes learned by this Transit Gateway. 
+When this feature is enabled on a Transit Gateway, every one of its remote Transit Peers does not advertise to its on-prem network all the Spoke VPCs and on-prem routes learned by this Transit Gateway, except when the link to the on-prem
+goes down at which point one of the remote Transit Peer starts to advertise to its on-prem network all the Spoke VPCs
+and on-prem routes learned by this Transit Gateway.
 
 One use case is a connected multi sites on-prem network, where each site is connected to the cloud via
-Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In such case, each Transit Gateway 
+Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In such case, each Transit Gateway
 learns all Spoke VPCs and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC has a redundant route to on-prem.
 
 
