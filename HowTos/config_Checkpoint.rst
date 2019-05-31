@@ -25,11 +25,12 @@ Checkpoint’s documentation should be consulted for configuration of security p
 
 1. Setup Firewall Network (FireNet)
 ---------------------------------------
-Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also setup the subnets that you will need for launching your Checkpointinstance.
+Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also setup the subnets that you will need for launching your Checkpoint instance.
 
 2. Deploy Checkpoint Instance from AWS Marketplace
 ----------------------------------------------------
 2a. Chose your subscription model (BYOL vs PAYG). For more information on this topic, please check page 11 of the Check Point `documentation <http://dl3.checkpoint.com/paid/eb/ebb444ce93242cf3f80f76637678906b/CP_R77.30_SecurityGateway_AmazonVPC_GettingStartedGuide.pdf?HashKey=1559349126_ed97c19f0055aaa62bf0bd69ba4e42ac&xtn=.pdf>`_.
+
 2b. Go to aws.amazon.com/marketplace and search for the chosen instance model/version in AWS Marketplaceand “Continue to Subscribe”
 
 |image1|
@@ -46,9 +47,12 @@ information in the CloudFormation stack, then jump to step 2.p
 2e. Let’s start with the R77.30 deployment. Click on the upper right corner button “Continue to Configuration” and on the next page, choose “Amazon Machine Image” as fulfillment option,
 choose the proper region and click on “Launch”;
 
-2f. On the next page, “Choose Action” should be set to “Launch through EC2” and then click on “Launch”;
-2g. Now, choose your instance size. For this deployment we are going to need at least 3 network interfaces: management, lan and egress, which can only be accomplished by at least a c4.xlarge;
+2f. On the next page, “Choose Action” should be set to “Launch through EC2” and then click on “Launch”.
+
+2g. Now, choose your instance size. For this deployment we are going to need at least 3 network interfaces: management, lan and egress, which can only be accomplished by at least a c4.xlarge.
+
 2h. On the instance details page, the most relevant setting that are general for any deployment is the subnet selection for the ENIs eth0 and eth1. You will configure eth2 later via AWS Console and the Gaia Portal. The CloudFormation template in R80 does not solve this problem yet.
+
 2i. If you have followed all the steps on the Firewall page, then your subnet selection should follow this logic.
   ▪ Eth0 as the egress interface should be placed in the subnet FireNet-vpc-Public-FW-ingress-egress.
 
@@ -62,8 +66,8 @@ choose the proper region and click on “Launch”;
 
 |image4|
 
-2k. Then click on “Next: Add storage” – the default setting should be fine;
-2l. Then click on “Next: Add Tags” – if you use tags in your environment, this is the time;
+2k. Then click on “Next: Add storage” – the default setting should be fine.
+2l. Then click on “Next: Add Tags” – if you use tags in your environment, this is the time.
 2m. Then click on “Next: Configure Security Group” – by default you are going to see SSH, HTTPS and the entire TCP port range open to the world. You can then click on “Review and Launch” or (OPTIONAL) you can isolate the instance public interfaces with the following three rules:
   ▪ All inbound traffic allowed for your own public IP (you will have to SSH to the instance and connect to it from the SmartDashboard)
 
@@ -113,7 +117,7 @@ choose the proper region and click on “Launch”;
 
   ▪ (OPTIONAL) Set the Domain name and IPv4 addresses for the DNS servers – if you leave only .2, all your instance DNS traffic will be kept within the FireNet VPC.
 
-  ▪ In Date and Time Settings, set the date and time manually OR if you prefer you can use the VPC NTP server (169.254.169.123). Click Next;
+  ▪ In Date and Time Settings, set the date and time manually OR if you prefer you can use the VPC NTP server (169.254.169.123). Click Next.
 
   ▪ In Installation Type, select Security Gateway and Security Management. Click Next.
 
@@ -127,9 +131,12 @@ choose the proper region and click on “Launch”;
   ▪ If the Help Check Point Improve Software Updates window opens, click Yes or No. In a few minutes, you can use the WebUI to configure your stand-alone server.
 
 
-3e. Now you need to add an extra interface to the Check Point instance via `via AWS Console <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#create_eni>`_. . This is going to be your eth2 and it should be associated with the subnet FireNet-vpc-Public-gateway-and-firewall-mgmt. You need to keep eth2 in the same AZ as the other interfaces;
+3e. Now you need to add an extra interface to the Check Point instance via `via AWS Console <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#create_eni>`_. . This is going to be your eth2 and it should be associated with the subnet FireNet-vpc-Public-gateway-and-firewall-mgmt. You need to keep eth2 in the same AZ as the other interfaces.
+
 3f. Also, don’t forget to disable “Source/dest. Check” as explained `here <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check>`_.
+
 3g. Now that you have the new ENI created and configured, please `attach <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#attach_eni_running_stopped>`_. it to the CloudGuard instance. Please notice that while doing a  `hot attach <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#best-practices-for-configuring-network-interfaces>`_.it is possible that the instance will not recognize it immediately, so a stop/start of the instance might be necessary to address it.
+
 3h. Please log back into the Gaia portal and go to Network Management, Network Interfaces, select eth2 and click on “Edit”. In the popup window, check Enable and also ‘Obtain IPv4 address automatically’. The eth2 IP should be the
 same as the one seen in AWS Console. The screen shot below is from R80.10, but the step should be the same on R77.30, just a slightly different layout.
 
@@ -154,11 +161,12 @@ same as the one seen in AWS Console. The screen shot below is from R80.10, but t
 |image14|
 5c.The last step is to register the new eth2 that was manually added via attachment to your SmartConsole topology: click on the upper-high-left menu button, select Manage, Network Objects.
 |image15|
-Then find the referred gateway in the list and click on Edit:
+Then find the referred gateway in the list and click on Edit.
 |image16|
 5d. On the next screen, please click on Topology and then on “Get…” and “Interfaces…”. Just select eth2 and hit “Accept”.
 |image17|
-5e. (OPTIONAL) On this same screen you can update the “Network Type” of interfaces eth0 and eth2 to “External” and enable “Anti-Spoofing” in the Topology tab under the “Edit” section;
+5e. (OPTIONAL) On this same screen you can update the “Network Type” of interfaces eth0 and eth2 to “External” and enable “Anti-Spoofing” in the Topology tab under the “Edit” section.
+
 5f. That is it – the next steps will refer the R80.10 SmartConsole instead, but they are pretty much the same thing: the basic policy can be accessed via Security Policies and then Policy.
 |image18|
 5g. As per the topology page, it can be reached via Gateways & Servers and a double-click on the gateway itself. Then click on Network Management, Get Interfaces
@@ -175,7 +183,7 @@ the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/f
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain.
 
-Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through. .
+Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through.
 
 7. View Traffic Log
 ----------------------
@@ -185,9 +193,11 @@ Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping th
 7b. On the R80.10 SmartConsole, go to Logs & Monitor instead.
 |image22|
 7c. Now, we added a third interface as currently our dashboard requires 3 separate interfaces, but CloudGuard will use eth0 for both management and egress traffic by default. If you would like to move the Gaia management interface to eth2, please use this `link <https://sc1.checkpoint.com/documents/R80.20_GA/WebAdminGuides/EN/CP_R80.20_Installation_and_Upgrade_Guide/html_frameset.htm?topic=documents/R80.20_GA/WebAdminGuides/EN/CP_R80.20_Installation_and_Upgrade_Guide/205119>`_.as a reference.
+
 7d. Great. You are now good to repeat this process to add more instances to talk to the active gateway and also to the backup gateway. The difference regarding the backup gateway attachment is that the subnets will likely be in a different AZ.
 You can view if traffic is forwarded to firewall instance by going to FortiView
-8e. For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+
+7e. For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 
 .. |image1| image:: ./config_Checkpoint_media/image1.png
