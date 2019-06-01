@@ -73,10 +73,9 @@ Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloa
 Does FireNet work with other firewall appliances?
 --------------------------------------------------
 
-Yes. FireNet solution has been validated to work with Checkpoint and FortiGate. 
+Yes. FireNet solution has been validated to work with `Checkpoint <https://docs.aviatrix.com/HowTos/config_Checkpoint.html>`_ and 
+`FortiGate <https://docs.aviatrix.com/HowTos/config_FortiGate.html>`_. 
 
-Click `here <https://drive.google.com/file/d/1uP77VMbTusAZFHRp0i3PKBP-lh-GAMqz/view>`_ for Checkpoint instructions.
-Click `here <https://docs.google.com/document/d/1SK6Yp9qPtyqsCbZInGf_1ofATJcqqFqTHhm5vv_qx9w/edit>`_ for FortiGate instructions.
 
 How is Firewall Network different from Transit DMZ?
 ------------------------------------------------------
@@ -217,7 +216,7 @@ FireNet supports AWS Transit (TGW) with Insane Mode,
 
 |firenet_insane|
 
-FireNet Deployment Model 3 (Release 4.6 available by 5/30/2019)
+FireNet Deployment Model 3 
 ------------------------------------------------------------------
 
 In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect Gateway. 
