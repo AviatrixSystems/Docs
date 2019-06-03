@@ -65,7 +65,7 @@ How does Transit Gateway (TGW)  Orchestrator compliment AWS Transit Gateway serv
 
 - **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnostics capabilities. 
 
-- **Direct Connect Support** AWS Transit Gateway provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Transit Gateway Orchestrator, Direct Connect customers can immediately benefit Transit Gateway service.  
+- **Hybrid and Multi-cloud Support** AWS Transit Gateway does not offer Direct Connect for on-prem connectivity in all regions Direct Connect. With Transit Gateway Orchestrator, Direct Connect customers can immediately benefit Transit Gateway service. Further, Aviaitrix allows customers to bridge multiple Transit Gateways together in different or same regions. 
 
 - **Traffic Visibility** Netflow log support for traffic between on-prem and all VPCs.
 
@@ -309,6 +309,16 @@ is quite a common situation and it happens, you cannot program the default route
 However in the above example scenarios, you maybe able to program RFC 1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)
 routes of the Spoke VPCs to point to TGW. This is a viable solution you can use to address the issues mentioned above and
 works in a lot of situations.
+
+Can Aviaitrix controller orchestrate VPN attachments or into Transit Gateway
+----------------------------------------------------------------------------------------------------------------------
+Yes. Aviatrix controller allows you setup a VPN attachment from the controller directly. 
+
+Can Aviaitrix controller orchestrate Direct Connect into Transit Gateway
+----------------------------------------------------------------------------------------------------------------------
+Yes. If you would like to connect  your direct connect directly into Transit Gateway, Aviatrix controller allows you to configure an association between Direct Connect Gateway and AWS Tranist Gateway inside the controller. 
+
+
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
