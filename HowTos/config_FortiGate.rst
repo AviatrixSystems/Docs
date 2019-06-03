@@ -16,7 +16,7 @@ Setup details
 The instance will have to be launched in Firewall Network VPC and appropriate subnets based on the availibity zone. Each FW instance will have 3 interfaces that will have the following roles:
 
 Eth0 → Management Interface
-Etn1 → Transit Gateways traffic
+Eth1 → Transit Gateways traffic
 Eth2 → Internet ingress/egress traffic
 
 1. Setup Firewall Network (FireNet)
@@ -26,8 +26,8 @@ Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepar
 2. Deploy Fortigate Instance from AWS Marketplace
 ----------------------------------------------------
 
-Launch Fortigate from AWS Marketplace, with appropriate subscription level. The type of subscription and/or version does not affect the fucntionaly from Aviatrix
-perspective. However, it may affect steps outline from FG's UI.
+Launch Fortigate from AWS Marketplace, with appropriate subscription level. The type of subscription and/or version does not affect the functionality from Aviatrix
+perspective. However, it may affect steps outline from FortiGate's UI.
 
 Launch Fortinet FortiGate Next-Generation Firewall from AWS Marketplace with following details:
 
@@ -48,7 +48,7 @@ Launch Fortinet FortiGate Next-Generation Firewall from AWS Marketplace with fol
  
  - “WAN” Port (Eth1)
 
-  Subnet: Designated Egress Public Subnet. This interface will be used for Egress/Ingress to and from the internet. Therefore, it is either going to be talking to a load balancer or internet gateway .If you created this subnet using Aviatrix VPC creator, the subnet is named in this format: 
+  Subnet: Designated Egress Public Subnet. This interface will be used for Egress/Ingress to and from the internet. Therefore, it is either going to be talking to a load balancer or Internet gateway. If you created this subnet using Aviatrix VPC creator, the subnet is named in this format: 
 
     *<VPC Name>-Public-FW-ingress-egress-<AvailabilityZone>*
 
@@ -65,7 +65,7 @@ Launch Fortinet FortiGate Next-Generation Firewall from AWS Marketplace with fol
   Note: If you need further clarification on FireNet subnets, please see this link:  `FireNet Subnets <https://www.lucidchart.com/publicSegments/view/f0bbe123-cbf7-4339-88df-a51eee2da631/image.pdf>`_ 
 
 
-- Using AWS console assing an Elastic IP address to Management and WAN interfaces (Eth0 and Eth2) 
+- Using AWS console, assign an Elastic IP address to Management and WAN interfaces (Eth0 and Eth2) 
 
 
 
@@ -98,16 +98,16 @@ Go to Network -> State Routes to create A Static Route -> click on "Create New"
 
 |createStaticRoute|
 
-Packets to and from TGW VPCs, as well as on-premises, will be hairpinned off of the LAN interface. As such, we will need to configure appropate route ranges that you expect traffic for packets that need to be forward back to TGW. 
+Packets to and from TGW VPCs, as well as on-premises, will be hairpinned off of the LAN interface. As such, we will need to configure appropriate route ranges that you expect traffic for packets that need to be forward back to TGW. 
 For simplicity, you can configure the FW to send all RFC 1918 packets to LAN port, which sends the packets back to TGW. 
 
 In this example, we configure all traffic for 172.16.0.0/12 to be sent out of LAN interace.
 
 Go to Network -> Static Routes -> Create new
 
-In the Edit dialoge, you need to enter the following:
+In the Edit dialog, you need to enter the following:
 
-- Enter destiantion route in the "Destination" box
+- Enter destination route in the "Destination" box
 - In the "Gateway" box, you will need to enter IP address of Eth2 interface of Aviatrix gateway that this firewall will be attached to
 - Interface will be LAN port
 - Configure appropriate admin distance if you expect overlapping routes that need to be prioritized
@@ -118,7 +118,7 @@ In the Edit dialoge, you need to enter the following:
 6. Configure basic traffic policy to allow traffic
 -----------------------------------------------------------
 
-In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that aviatrix gateways will only forward traffic from TGW to LAN port of the Firewall, 
+In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from TGW to LAN port of the Firewall, 
 we can simply set our policy condition to match any packet that is going in/out of LAN interface. 
 
 
