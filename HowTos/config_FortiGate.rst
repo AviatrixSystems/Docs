@@ -15,9 +15,9 @@ Setup details
 --------------
 The instance will have to be launched in Firewall Network VPC and appropriate subnets based on the availibity zone. Each FW instance will have 3 interfaces that will have the following roles:
 
-Eth0 → Management Interface
-Eth1 → Transit Gateways traffic
-Eth2 → Internet ingress/egress traffic
+- Eth0 → Management Interface
+- Eth1 → Transit Gateways traffic
+- Eth2 → Internet ingress/egress traffic
 
 1. Setup Firewall Network (FireNet)
 ---------------------------------------
@@ -29,7 +29,9 @@ Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepar
 Launch Fortigate from AWS Marketplace, with appropriate subscription level. The type of subscription and/or version does not affect the functionality from Aviatrix
 perspective. However, it may affect steps outline from FortiGate's UI.
 
-Launch Fortinet FortiGate Next-Generation Firewall from AWS Marketplace with following details:
+Below, you will find launch configuration details that will be needed for firewall network. All other options can be left on default or modifed as required:
+- Step 2: Choose an Instance Type: Chose any appropriate instance type
+- Step 3: Configure Instance Details
 
 - Select “FireNet VPC” for the VPC
 - Primary interface (Eth0): Assign this interfate to a public subnet of the FireNet VPC that is designated for management. If you created this subnet using Aviatrix VPC creator, the subnet is named in this format: 
@@ -37,8 +39,6 @@ Launch Fortinet FortiGate Next-Generation Firewall from AWS Marketplace with fol
     *<VPC Name>-Public-gateway-and-firewall-mgmt-<AvailabilityZone>*
 
 - Disable public IP association during launch
-
-|Network Interface and Subnet Information|
 
 3. Configure Dataplane interfaces
 ------------------------------------------
