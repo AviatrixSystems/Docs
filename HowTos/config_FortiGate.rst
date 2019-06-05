@@ -29,16 +29,20 @@ Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepar
 Launch Fortigate from AWS Marketplace, with appropriate subscription level. The type of subscription and/or version does not affect the functionality from Aviatrix
 perspective. However, it may affect steps outline from FortiGate's UI.
 
-Below, you will find launch configuration details that will be needed for firewall network. All other options can be left on default or modifed as required:
+- Step 1: Chose appropriate image from Marketplace
 - Step 2: Choose an Instance Type: Chose any appropriate instance type
-- Step 3: Configure Instance Details
+- Step 3: Configure Instance Details. Below, you will find launch configuration details that will be needed for firewall network. All other options can be left on default or modifed as required. 
 
-- Select “FireNet VPC” for the VPC
-- Primary interface (Eth0): Assign this interfate to a public subnet of the FireNet VPC that is designated for management. If you created this subnet using Aviatrix VPC creator, the subnet is named in this format: 
+|launch-step-2|
+
+Note: Primary interface (Eth0): Assign this interfate to a public subnet of the FireNet VPC that is designated for management. If you created this subnet using Aviatrix VPC creator, the subnet is named in this format: 
 
     *<VPC Name>-Public-gateway-and-firewall-mgmt-<AvailabilityZone>*
 
-- Disable public IP association during launch
+- Step 4/5: Configure as appropriate
+- Step 6: Configure Security Group for management interface
+
+
 
 3. Configure Dataplane interfaces
 ------------------------------------------
@@ -160,6 +164,8 @@ You can view if traffic is forwarded to firewall instance by going to FortiView
 |showTraffic|
 
 
+.. |launch-step-2| image:: config_FortiGate_media/launch-step-2.png
+   :scale: 40%
 .. |login| image:: config_FortiGate_media/login.png
    :scale: 40%
 .. |Interfaces.png| image:: config_FortiGate_media/Interfaces.png.png
