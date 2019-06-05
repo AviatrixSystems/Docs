@@ -204,9 +204,9 @@ This step creates a VPN connection in TGW `Default_Domain. <https://docs.aviatri
 AWS Transit Gateway Name                        The name of a TGW created by `TGW Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_ by Aviatrix Controller
 Connection Name                                 A unique name for the VPN connection
 Remote Public IP                                Remote site public IP address
-Dynamic (BGP) or Static                         Use BGPP to connect to remote site or static IP
+Dynamic (BGP) or Static                         Use BGP to connect to remote site or static IP
 Remote CIDRs                                    When Static is selected, enter a list of CIDRs separated by comma. 
-Remote AS Number                                When dynamic is selected, enter the AS number of the remote site. 
+Remote AS Number                                When Dynamic is selected, enter the AS number of the remote site. 
 ==========================================      ==========
 
 Step 8 Download VPN Configuration
