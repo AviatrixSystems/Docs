@@ -164,7 +164,7 @@ An Aviatrix gateway may have a single or multiple interfaces depending on the ty
 |                       | tun-XXXXXXXX                   | (Optional) VTI to the VGW, external device or CloudN   |
 +-----------------------+--------------------------------+--------------------------------------------------------+
 
-In order to perform a packet capture, go to Troubleshoot > Diagnostics > Network page and scroll down to Packet Capture section. Select the target gateway and the interface you want to capture the packet and all other relevant fields. The packet capture will run for a maximum of 120 seconds or manually stop the packet capture process.
+In order to perform a packet capture, go to Troubleshoot > Diagnostics > Network page and scroll down to Packet Capture section. Select the target gateway and the interface you want to capture the packet and all other relevant fields. By default, the packet capture will run for 60 seconds when no duration is configured. The maximum packet capture duration is 240 seconds and you may manually stop the process at any time.
 
 
 
