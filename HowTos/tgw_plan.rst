@@ -83,7 +83,10 @@ In the example below, a new domain called prod_domain is created.
 **Setting**                                     **Value**
 ==========================================      ==========
 TGW Name                                        The name of the AWS Transit Gateway
-Security Domain Name                            Specify a unique domain name. For example, Dev_Domain.
+Security Domain Name                            Specify a unique domain name. For example, Dev_Domain
+Firewall Domain                                 Check this box if this domain is for Aviatrix Firewall Network.
+Native Egress Domain                            Check this box if this domain is for non Aviatrix Firewall Network based central Internet bound traffic
+Native Firewall Domain                          Check this box if this domain is for non Aviatrix Firewall Network based firewall traffic inspection
 ==========================================      ==========
 
 3. Build Your Domain Connection Policies
