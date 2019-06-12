@@ -17,12 +17,12 @@ R4.7 (Coming Soon)
 2. Insane Mode Enhancement
 ----------------------------
 
- - **Insane Mode Dynamic Bandwidth Adjustment** significantly reduces Insane Mode tunnel switch over probability by automatically removing the failed encryption lane from the load balancing pool while keeping the remaining encryption lane to continue to forward the traffic. After the failed lane is brought back up, it is then added back to the load balancing pool. Only when 50% of the lanes fail should the Controller declare the tunnel down and switch over to the backup tunnel.  
+ - **Insane Mode Dynamic Bandwidth Adjustment** significantly reduces Insane Mode tunnel switch over probability by automatically removing the failed encryption lane from the load balancing pool while keeping the remaining encryption lanes to continue to forward the traffic. After the failed lane is brought back up, it is then added back to the load balancing pool. Only when 50% of the lanes fail should the Controller declare the tunnel down and switch over to the backup tunnel.  
 
 3. FQDN Enhancement
 ---------------------------------
 
- - **Performance Enhancement** to handle traffic burst. FQDN and system memory pool is significantly increased to handle large burst traffic. 
+ - **Performance Enhancement** to handle traffic burst. FQDN and system memory pool are significantly increased to handle large burst traffic. 
 
 
 R4.6.587 (5/29/2019)
