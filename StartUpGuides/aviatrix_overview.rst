@@ -49,7 +49,6 @@ Multi Accounts                                  Yes         Yes             Yes 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes                                    Yes
 Next Gen Transit Network Edge                   Yes         Yes             No			                   Yes
 Firewall Network                                Yes         No              No                                     No
-Transit DMZ (Firewall in the cloud)             Yes         No              No                                     No
 Transit Peering                                 Yes         Yes             No                                     Yes
 
 Native Peering                                  Yes         No              N/A                                    Yes
