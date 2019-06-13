@@ -15,7 +15,7 @@ What is the Next Gen Transit for AWS?
  #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
  #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and feature rich hybrid network for connecting to on-prem.
- #. Support Bring Your Own Firewall to the edge VPC for inline traffic inspection (`Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.)
+ #. Support Bring Your Own Firewall to TGW deployment for inline traffic inspection (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_) 
  #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs and Azure Spokes VNet.
 
 The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
@@ -63,9 +63,9 @@ How does Transit Gateway (TGW)  Orchestrator compliment AWS Transit Gateway serv
 
 - **Multi Account Support** Automate the RAM resource sharing process to seamlessly manage multi account VPC attachment. 
 
-- **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnostics capabilities. 
+- **Troubleshooting** Flightpath allows a single pane of glass for troubleshooting connectivity with expert diagnostics capabilities. 
 
-- **Hybrid and Multi-cloud Support** AWS Transit Gateway does not offer Direct Connect for on-prem connectivity in all regions Direct Connect. With Transit Gateway Orchestrator, Direct Connect customers can immediately benefit Transit Gateway service. Further, Aviaitrix allows customers to bridge multiple Transit Gateways together in different or same regions. 
+- **Hybrid and Multi-cloud Support** Native AWS Transit Gateway VPN and Direct Connect support. Further, Aviaitrix allows customers to bridge multiple Transit Gateways together in different and public clouds. 
 
 - **Traffic Visibility** Netflow log support for traffic between on-prem and all VPCs.
 

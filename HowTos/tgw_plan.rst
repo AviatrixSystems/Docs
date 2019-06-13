@@ -191,6 +191,9 @@ on-prem. (Make sure instance security groups and any on-prem firewalls are confi
 
 This section consists of TGW native VPN and Direct Connect functions. 
 
+Since TGW does not propagate learned routes from DXGW or VPN to Spoke VPCs, Aviatrix Controller solves 
+this problem by periodically polls the TGW route table and program the learned routes to attached Spoke VPCs.
+
 Setup AWS Transit Gateway VPN Connection
 -------------------------------------------
 
