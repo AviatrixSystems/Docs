@@ -8,9 +8,13 @@ FIPS 140-2 Module
 
 Staring Release 4.6, Aviatrix supports FIPS 140-2 crypto module.
 
+The Aviatrix Certificate number is #3475 which you can find from the `NIST site <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
+
 To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
 When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2.
+
+
 
 
 
