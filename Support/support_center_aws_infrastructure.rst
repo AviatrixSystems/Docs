@@ -54,3 +54,9 @@ What do I do if my gateway instance is identified for retirement by AWS?
  
 AWS will inform you when one of your instances is scheduled for retirement if the underlying hardware has issues or is being upgraded. Usually a start/stop from AWS console will migrate the instance to newer hardware. Please check `here for more information <https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/>`_. Also, please open a support ticket with AWS for more information
  
+
+How can I monitor the destination ports and ip addresses for instances in my VPC?
+---------------------------------------------------------------------------------------
+
+Aviatrix provides a `Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_ function to do this. But you could also consider `AWS's flowlogs <https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html>`_ functionality on a vpc which will capture all incoming and outgoing traffic out of the vpc and will log either into S3 or into CloudWatch. Please follow the directions `here <https://aws.amazon.com/blogs/aws/vpc-flow-logs-log-and-view-network-traffic-flows/>`_ and capture these logs. Capturing the outgoing port and IP address information will help you craft better Egress Control Policies.
+ 
