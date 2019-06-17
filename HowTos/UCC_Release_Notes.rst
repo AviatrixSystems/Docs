@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R4.7 (Coming Soon)
+R4.7.377 (6/16/2019)
 =====================
 
 1. AWS Transit Gateway Orchestrator
