@@ -14,6 +14,8 @@ R4.7 (Coming Soon)
 
  - **Customize Spoke VPC Route Table** allows you to program route entries in Spoke VPC route table that points to TGW as target. By default, Aviatrix Orchestrator programs RFC 1918 routes in the VPC route table to point to TGW, any routes that are outside of this range is dynamically programmed into the VPC route table. When you enable this feature, all dynamic route propagation will be stopped. One use case is if you simply want to program the default route to point to TGW. Another use case is if you do not wish Aviatrix Orchestrator to program any VPC routes, in which case you should enter 0.0.0.0/32 for the "Customizing Spoke VPC Rotues" field. To configure, enter a list of comma separated CIDRs at `Attach VPC to TGW <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ during TGW Orchestrator Build. 
 
+ - **Customize TGW VPN Creation** with additional parameters, such as inside_ip_cidr and pre_shared_key. For more information, checkout the API `Attach Native VPN to TGW <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_.
+
 2. Insane Mode Enhancement
 ----------------------------
 
