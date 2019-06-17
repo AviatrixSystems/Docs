@@ -293,3 +293,22 @@ OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote use
   * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote users's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
   * For split tunnel, the DNS server settings are not pushed, by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provider multiple DNS servers separated by commas
  
+
+Which ports should I have open in my firewall to allow OpenVPN users to come in?
+-----------------------------------------------------------------------------------------
+
+If you have deployed a TCP based Aviatrix OpenVPN Gateways behind an AWS ElasticLoadBalancer (this is the default in Aviatrix Console), please allow
+
+  * IP Address: AWS Load Balancers' public IP
+  * Port: 443
+
+If you have deployed a UDP based OpenVPN Gateway (i.e. without an ELB enabled)
+
+  * IP: Aviatrix OpenVPN Gateway's public IP
+  * Port: 1194
+
+If you are using SAML authentication for your OpenVPN users, please also allow the following:
+
+  * IP: Aviatrix Controller's public IP 
+  * Port: 443
+
