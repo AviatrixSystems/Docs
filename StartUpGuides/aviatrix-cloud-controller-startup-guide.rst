@@ -14,6 +14,10 @@ When complete, you'll be ready to deploy use cases.
 
 You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
 
+.. important ::
+
+ Aviatrix Controller must be launched by a cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from AWS Console. 
+
 
 Step 1. Subscribe to an Aviatrix AMI 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
