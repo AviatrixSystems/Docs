@@ -20,6 +20,7 @@ How to upgrade software
 
 Upgrades are done from the Controller UI.  To check for an available update and perform an upgrade, follow these steps:
 
+#. Follow the directions listed below in this document to update your IAM policies in all accounts, before starting the upgrade process
 #. Login to your Controller
 #. Expand `Settings` navigation menu item
 #. Click `Maintenance`
@@ -30,7 +31,6 @@ Upgrades are done from the Controller UI.  To check for an available update and 
     #. Upgrading from a release>=3.3.x: Aviatrix Controller will enforce incremental upgrades, so please click on "Upgrade to the Latest". You might have to go through multiple upgrades before you reach the latest release. Follow the directions in next note when you upgrade to release 4.0
     #. If upgrading from a release<4.0: Once you upgrade to 4.0, please go to "Aviatrix Console > Troubleshoot > Diagnostics > Services" and click on "Restart Cloudxd" - please click on it only one time, wait for a minute, close your browser and start a new https connection to Aviatrix Console.
     
-#. Follow the directions listed below in this document to update your IAM policies in all accounts
 #. Take a backup by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. If you are using terraform, please use the appropriate branch from https://github.com/AviatrixSystems/terraform-provider-aviatrix. For more information please go to https://github.com/AviatrixSystems/terraform-provider-aviatrix#controller-version
 
