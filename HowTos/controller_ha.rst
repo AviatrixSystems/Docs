@@ -33,7 +33,7 @@ Prerequisites
 
 * Controller's VPC should have one or more public subnets, preferrably in different AZs for HA across multiple AZ.
 
-*To use Controller HA with an ELB refer to `here <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_
+* To use Controller HA with an ELB refer to `here <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_
 
 * S3 bucket for backups
 
