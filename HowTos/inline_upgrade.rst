@@ -25,6 +25,11 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Click `Maintenance`
 #. Click `Dry Run` to make sure controller and gateway are in contact and allowed to download our software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups, VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Click `Upgrade to the latest` to upgrade your software to the latest version
+
+    #. If upgrading from a release<3.3.x: Please upgrade to the next immediate release by entering the right version in "Upgrade to custom release" - the correct order is: 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3
+    #. Upgrading from a release>=3.3.x: Aviatrix Controller will enforce incremental upgrades, so please click on "Upgrade to the Latest". You might have to go through multiple upgrades before you reach the latest release. Follow the directions in next note when you upgrade to release 4.0
+    #. If upgrading from a release<4.0: Once you upgrade to 4.0, please go to "Aviatrix Console > Troubleshoot > Diagnostics > Services" and click on "Restart Cloudxd" - please click on it only one time, wait for a minute, close your browser and start a new https connection to Aviatrix Console.
+    
 #. Follow the directions listed below in this document to update your IAM policies in all accounts
 #. Take a backup by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. If you are using terraform, please use the appropriate branch from https://github.com/AviatrixSystems/terraform-provider-aviatrix. For more information please go to https://github.com/AviatrixSystems/terraform-provider-aviatrix#controller-version
