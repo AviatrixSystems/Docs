@@ -166,23 +166,23 @@ This action instructs the gateway to translate the destination address from a IP
 
 To configure:
 
-  5.1 Go to Gateway page, click on the Transit Primary Gateway. Click Edit.
+  5.1. Go to Gateway page, click on the Transit Primary Gateway. Click Edit.
 
-  5.2 Scroll down to “Destination NAT”, click Add/Edit DNAT
+  5.2. Scroll down to “Destination NAT”, click Add/Edit DNAT
 
-  5.3 Click Add/Edit DNAT
+  5.3. Click Add/Edit DNAT
 
-  5.4 Click Add New
+  5.4. Click Add New
 
-  5.5 Enter fields for Destination CIDR, protocol, Interface (select the one with VGW) and DNAT IPs as below example.
+  5.5. Enter fields for Destination CIDR, protocol, Interface (select the one with VGW) and DNAT IPs as below example.
  
     |DNAT_TRANSIT_PRIMARY|
 
-  5.6 Click Save
+  5.6. Click Save
 
-  5.7 Repeat steps 5.4, 5.5, and 5.6 for multiple entries.
+  5.7. Repeat steps 5.4, 5.5, and 5.6 for multiple entries.
 
-  5.8 Click Update to commit.
+  5.8. Click Update to commit.
 
 
 Step 6. Attach spoke VPCs to an AWS Transit Gateway (TGW)
@@ -194,7 +194,7 @@ Step 6. Attach spoke VPCs to an AWS Transit Gateway (TGW)
 Step 7. Verify traffic flow
 -------------------------
 
-  7.1 SNAT
+  7.1. SNAT
   
     - Traffic from Spoke VPC 10.1.0.0/16 to On-Prem
     
@@ -204,7 +204,7 @@ Step 7. Verify traffic flow
     
       |SNAT_10_2|
 
-  7.2 DNAT
+  7.2. DNAT
   
     - Traffic from On-Prem to Spoke VPC 10.1.0.0/16
     
@@ -214,7 +214,7 @@ Step 7. Verify traffic flow
     
       |DNAT_99_2|
 
-  7.3 SNAT failover to Transit HA gateway
+  7.3. SNAT (failover to Transit HA gateway)
   
     - Traffic from Spoke VPC 10.1.0.0/16 to On-Prem
     
@@ -224,7 +224,7 @@ Step 7. Verify traffic flow
 
       |SNAT_FAILOVER_10_2|
 
-  7.4 DNAT failover to Transit HA gateway
+  7.4. DNAT (failover to Transit HA gateway)
 
     - Traffic from On-Prem to Spoke VPC 10.1.0.0/16
     
