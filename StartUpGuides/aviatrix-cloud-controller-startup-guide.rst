@@ -169,6 +169,8 @@ Finally, the Controller will upgrade itself to the latest software version after
 
 ..
 
+If you wish to run a custom version, consult the Aviatrix support team before attempting it. 
+
 3.7  Select AWS
 -------------------
 
