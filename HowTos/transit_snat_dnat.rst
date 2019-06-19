@@ -116,7 +116,7 @@ Step 4. Configure Aviatrix Customized SNAT function on both Transit Primary Gate
 
   - https://docs.aviatrix.com/HowTos/gateway.html#customized-snat
 
-This action changes the packet’s source IP address from Spoke VPCs in Cloud to On-Prem to make it routable back later.
+This action changes the packet’s source IP address from Spoke VPCs in Cloud to a IP which belongs to On-Prem routable CIDR.
 
   ::
 
