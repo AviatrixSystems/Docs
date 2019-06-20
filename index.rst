@@ -120,6 +120,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_FortiGate.rst
    HowTos/config_Checkpoint.rst
    HowTos/paloalto_API_setup
+   HowTos/config_Barracuda.rst
 
 .. _Transit DMZ:
 
