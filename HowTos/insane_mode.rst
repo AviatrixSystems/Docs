@@ -80,7 +80,23 @@ tune your environment to get the best performance, check out `this document. <ht
 9000                10Gbps           12Gbps          22Gbps          30Gbps
 ==================  ===============  ==============  ==============  ==============
 
-What is the Aviatrix hardware appliance?
+How does Insane Mode work?
+-----------------------------
+
+When a gateway is launched with `Insane Mode enabled <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_, 
+a new /26 public subnet is created where the Insane Mode gateway is launched on.
+
+Insane Mode builds high performance encryption tunnel over private network links. The private network links are 
+Direct Connect (DX) and AWS Peering (PCX). 
+
+For Insane Mode between two gateways, between Transit GW and Spoke gateway, or between Transit GW and Transit GW (Transit Peering), Aviatrix Controller automatically creates the underlying AWS Peering connection and builds the tunnels over it. 
+
+Since Insane Mode tunnels are over private network links, the VPC route architecture is described as below, 
+where EC2 instances associated route entry to the remote site point to Aviatrix gateway, and the Aviatrix gateway instance associated route entry to remote site points to PCX or VGW. 
+
+|insane_routing|
+
+Aviatrix hardware appliance
 ------------------------------------------
 
 Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacenter. It works with the Aviatrix gateway.
@@ -199,6 +215,9 @@ BGP is required between LAN port of the appliance and the on-prem router for rou
    :scale: 30%
 
 .. |ISR-sample-config| image:: insane_mode_media/ISR-sample-config.png
+   :scale: 30%
+
+.. |insane_routing| image:: insane_mode_media/insane_routing.png
    :scale: 30%
 
 .. |image1| image:: transitvpc_designs_media/multiRegions.png

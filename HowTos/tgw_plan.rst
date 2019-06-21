@@ -183,12 +183,12 @@ This step attaches the Aviatrix Edge VPC to the AWS Transit Gateway and the Avia
 
 In this step, route entries are added to the two created private subnet route table as described in the table below.
 
-==========================================      ===============     ================
-**subnet**                                      **route table**     **route entry**
-==========================================      ===============     ================
--tgw-egress (for eth1)                          -tgw-egress         0.0.0.0/0 -> TGW
--tgw-ingress                                    -tgw-ingress        0.0.0.0/0 -> eth1
-==========================================      ===============     ================
+==========================================      ===============     ==================    =================
+**subnet**                                      **route table**     **route entry**       **description**
+==========================================      ===============     ==================    =================
+-tgw-egress (for eth1)                          -tgw-egress         0.0.0.0/0 -> TGW      for traffic from Aviatrix Transit GW to TGW
+-tgw-ingress                                    -tgw-ingress        0.0.0.0/0 -> eth1     for traffic from TGW to Aviatrix Transit GW
+==========================================      ===============     ==================    =================
 
 .. Note::
  

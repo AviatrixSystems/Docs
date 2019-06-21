@@ -541,7 +541,9 @@ to use VPC DNS server which should resolve the private DNS name of the log serve
 Insane Mode Encryption
 ------------------------
 
-When this option is selected, Aviatrix Controller will look for a spare /26 subnet segment to create a new subnet. The instance sizes that support Insane Mode are c5 series and m5 series.
+When this option is selected, Aviatrix Controller will look for a spare /26 subnet segment to create a new public 
+subnet "-insane" 
+and launch the gateway on this subnet. The instance sizes that support Insane Mode are c5 series and m5 series.
 
 Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPSEC performance between two single Aviatrix gateway instances or between a single Aviatrix gateway instance and on-prem Aviatrix appliance.
 
