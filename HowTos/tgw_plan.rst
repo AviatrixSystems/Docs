@@ -161,7 +161,12 @@ When complete, you are done!
 
 The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to AWS Transit Gateway. The networking between AWS Transit Gateway and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
 
-This step designates an Aviatrix Transit GW to be used in conjunction with AWS Transit Gateway. It creates a second Ethernet interface on the Aviatrix Transit GW for sending and receiving packets from AWS Transit Gateway. It also creates two subnets and two respective route tables in the edge VPC to route packets to and from AWS Transit Gateway. 
+This step designates an Aviatrix Transit GW to be used in conjunction with AWS Transit Gateway. 
+It creates a second Ethernet interface eth1 on the Aviatrix Transit GW for sending and receiving packets from AWS Transit Gateway. 
+It also creates two subnets, -tgw-ingress and -tgw-egress  and two respective route tables in the edge VPC to route packets to and from AWS Transit Gateway. 
+
+|prepare_tgw_attach|
+
 
 
 ==========================================      ==========
@@ -175,6 +180,15 @@ Gateway Namen                                   Select a Transit GW from the dro
 ------------------------------------------------------------------
 
 This step attaches the Aviatrix Edge VPC to the AWS Transit Gateway and the Aviatrix Edge Domain, thus allowing the Aviatrix Transit GW to send and receive packets from AWS Transit Gateway. 
+
+In this step, route entries are added to the two created private subnet route table as described in the table below.
+
+==========================================      ===============     ================
+**subnet**                                      **route table**     **route entry**
+==========================================      ===============     ================
+-tgw-egress (for eth1)                          -tgw-egress         0.0.0.0/0 -> TGW
+-tgw-ingress                                    -tgw-ingress        0.0.0.0/0 -> eth1
+==========================================      ===============     ================
 
 .. Note::
  
@@ -265,7 +279,7 @@ This section consists of delete functions.
 Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 
-This step is the opposite of Step 6.
+This step is the opposite of Step 6. It removes the private subnet route entries respectively. 
 
 Disable Aviatrix Transit GW for TGW function
 ------------------------------------------------------------------
@@ -306,5 +320,9 @@ This step delete the AWS Transit Gateway created in Step 1.
 
 .. |transit_complete| image:: tgw_plan_media/transit_complete.png
    :scale: 30%
+
+.. |prepare_tgw_attach| image:: tgw_plan_media/prepare_tgw_attach.png
+   :scale: 30%
+
 
 .. disqus::
