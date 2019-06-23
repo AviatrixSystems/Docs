@@ -146,6 +146,10 @@ interfaces:
  - eth2 as firewall instance interface
  - eth3 as the HA FireNet gateway interface
 
+The private interfaces on FireNet gateway is described as below.
+
+|private_interfaces|
+
 
 How does FireNet work?
 -----------------------
@@ -272,6 +276,8 @@ inspection.
 .. |firenet_insane| image:: firewall_network_media/firenet_insane.png
    :scale: 30%
 
+.. |private_interfaces| image:: firewall_network_workflow_media/private_interfaces.png
+   :scale: 30%
 
 
 .. disqus::

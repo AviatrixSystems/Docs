@@ -16,6 +16,16 @@ We recommend you to use the Aviatrix Useful Tool to create a VPC for FireNet dep
 
 Select "Aviatrix FireNet VPC" option when creating a security VPC. 
 
+==========================================      =================
+**Aviatrix FireNet VPC Public Subnet**          **Descriptione**
+==========================================      =================
+-Public-gateway-and-firewall-mgmt-AZ-a          A /28 public subnet in AZ a for  FireNet gateway and firewall instance management interface.
+-Public-gateway-and-firewall-mgmt-AZ-b          A /28 public subnet in AZ b for FireNet HA gateway and firewall instance management interface. 
+-Public-FW-ingress-egress-AZ-a                  A /28 public subnet in AZ a for firewall instance's egress interface.
+-Public-FW-ingress-egress-AZ-b                  A /28 public subnet in AZ b for  firewall instance's egress interface. 
+==========================================      =================
+
+
 2. Subscribe to AWS Marketplace
 --------------------------------------
 
@@ -39,7 +49,10 @@ This step leverage the Transit Network workflow to launch one Aviatrix gateway f
 
 C5x.large is the minimum Aviatrix gateway instance size for FireNet deployment as it requires `4 interfaces. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-minimum-gateway-instance-size-for-firenet-deployment>`_
 
-If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches HA gateway (the second gateway) in a different AZ.
+If your deployment requires 2-AZ HA, go through Transit Network -> Setup to launch one Aviatrix gateway and enable HA which effectively launches HA gateway (the second gateway) in a different AZ. If you select public subnet "-Public-gateway-and-firewall-mgmt-AZ-a" for the primary FireNet gateway, 
+you should select public subnet "-Public-gateway-and-firewall-mgmt-AZ-b" for the second AZ FireNet gateway.
+
+Do not check Insane Mode Encryption.
 
 
 5. Enable Aviatrix FireNet Gateway
@@ -52,15 +65,48 @@ automatically sets up the HA gateway for FireNet deployment.
 
   If you do not see any gateways in the drop down menu, refresh the browser to load.
 
+In this step, Aviatrix Controller creates 3 more Ethernet interfaces with associated subnets on the FireNet gateways. 
+
+|private_interfaces|
+
+If FireNet gateway HA is enabled, HA gateway shares the same route table as the primary for eth1 interface. 
+
+The new subnets created by the Controller at this steps are listed below.
+
+==========================================         =================
+**Aviatrix FireNet VPC Private Subnet**            **Descriptione**
+==========================================         =================
+-gw-tgw-egress                                     for FireNet gateway eth1 
+-gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
+-gw-tgw-ingress                                    for TGW to eth1 of FireNet gateway 
+-gw-dmz-firewall                                   for FireNet gateway
+-gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
+-gw-dmz-exchange                                   for FireNet gateway eth3
+-gw-hagw-dmz-exchange                              for FireNet HA gateway eth3
+==========================================         =================
+
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
 -------------------------------------------------------------
 
 This step requires you have already created a Security Domain with Firewall attribute enabled.
 
-When this step is completed, you have built the network infrastructure for FireNet deployment. This step may take a few minutes. 
+When this step is completed, you have built the network infrastructure for FireNet deployment. This step may take a few minutes.
 
 
 |gw_launch|
+
+This step programs the relative route tables, described as below.
+
+==========================================   =====================       =================                 
+**Aviatrix FireNet VPC route table**         ** key route entry**        **Descriptione**
+==========================================   =====================       =================
+-gw-tgw-egress                               0.0.0.0/0 -> tgw            for FireNet gateway and HA gateway eth1 to TGW 
+-gw-tgw-ingress                              0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway and ha gateway 
+-gw-dmz-firewall                             0.0.0.0/0 -> eth2           for firewall instance to eth2 of FireNet gateway
+-gw-hagw-dmz-firewall                        0.0.0.0/0 -> eth2           for firewall instance to eth2 of FireNet HA gateway 
+-gw-dmz-exchange                             0.0.0.0/0 -> eth1           for eth3 of FireNet gateway to eth1 of HA gateway 
+-gw-hagw-dmz-exchange                        0.0.0.0/0 -> eth1           for eth3 of FireNet HA gateway to eth1 of primary gateway 
+==========================================   =====================       =================
 
 
 7a. Launch and Associate Firewall Instance
@@ -128,6 +174,9 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
    :scale: 30%
 
 .. |gw_launch| image:: firewall_network_workflow_media/gw_launch.png
+   :scale: 30%
+
+.. |private_interfaces| image:: firewall_network_workflow_media/private_interfaces.png
    :scale: 30%
 
 .. disqus::
