@@ -78,6 +78,9 @@ eth2                                               Allow ALL (Do not change)    
 eth3                                               Allow ALL (Do not change)                        Private interface for traffic to FireNet HA gateway
 ==========================================         ==============================================   =================
 
+.. important::
+
+  Please do not change the security group inbound and outbound rules on eth1, eth2 and eth3 of a FireNet gateway.
 
 If FireNet gateway HA is enabled, HA gateway shares the same route table as the primary for eth1 interface. 
 
@@ -95,9 +98,6 @@ The new subnets created by the Controller at this steps are listed below.
 -gw-hagw-dmz-exchange                              for FireNet HA gateway eth3
 ==========================================         =================
 
-.. important::
-
-  Please do not change the security group inbound and outbound rules on eth1, eth2 and eth3 of a FireNet gateway.
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
 -------------------------------------------------------------

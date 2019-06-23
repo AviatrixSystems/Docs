@@ -73,8 +73,8 @@ Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloa
 Does FireNet work with other firewall appliances?
 --------------------------------------------------
 
-Yes. FireNet solution has been validated to work with `Checkpoint <https://docs.aviatrix.com/HowTos/config_Checkpoint.html>`_ and 
-`FortiGate <https://docs.aviatrix.com/HowTos/config_FortiGate.html>`_. 
+Yes. FireNet solution has been validated to work with `Checkpoint <https://docs.aviatrix.com/HowTos/config_Checkpoint.html>`_, 
+`FortiGate <https://docs.aviatrix.com/HowTos/config_FortiGate.html>`_ and `Barracuda CloudGen Firewall <https://docs.aviatrix.com/HowTos/config_Barracuda.html>`_.. 
 
 
 How is Firewall Network different from Transit DMZ?
@@ -179,6 +179,13 @@ Egress traffic (Internet bound) inspection,
 
 Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress through Firewall" and click Enable.
 
+How to make Ingress inspection to work on FireNet?
+-----------------------------------------------------
+
+If the FireNet deployment is for both Egress and Ingress traffic, 
+you need to SNAT on the firewall instance to its LAN or Trusted Interface IP (eth2 interface). 
+The rule is for source IP address that comes from NLB or a vendor load balancer such as F5 private IP address, it is translated to firewall interface eth2 private IP address.
+
 Is there an example guide to setup Palo Alto VM-Series policies?
 ------------------------------------------------------------------
 
@@ -220,29 +227,29 @@ FireNet supports AWS Transit (TGW) with Insane Mode,
 
 |firenet_insane|
 
-FireNet Deployment Model 3 
+FireNet Deployment Model 3 - Native TGW integration
 ------------------------------------------------------------------
 
 In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect Gateway. 
 
 |firenet|
 
-FireNet Deployment Model 4 
-----------------------------------
+FireNet Deployment Model 4 - Multi Region Transit with Native TGW integration 
+---------------------------------------------------------------------------------
 
 Connect to on-prem with AWS DXGW and use Aviatrix Edge gateway to connect to multiple regions.
 
 |multi_region_firewall|
 
-FireNet Deployment Model 5
-----------------------------------
+FireNet Deployment Model 5 - Multi Region Transit with Aviatrix Edge
+------------------------------------------------------------------------
 
 Connect to on-prem with Aviatrix Edge gateway for both hybrid and multi regions.
 
 |multi_region_aviatrix_edge|
 
-FireNet Deployment Model 6
-----------------------------
+FireNet Deployment Model 6 - Multi Firewall Networks 
+--------------------------------------------------------
 
 You can deploy multiple Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Egress
 inspection.
