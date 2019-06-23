@@ -69,6 +69,16 @@ In this step, Aviatrix Controller creates 3 more Ethernet interfaces with associ
 
 |private_interfaces|
 
+==========================================         ==============================================   =================
+**FireNet gateway instance interfaces**            **Inbound Security Group Rule**                  **Description***
+==========================================         ==============================================   =================
+eth0                                               Allow SSH and HTTPS from Aviatrix Controller     Public interface for communication with Controller
+eth1                                               Allow ALL (Do not change)                        Private interface for traffic to/from TGW
+eth2                                               Allow ALL (Do not change)                        Private interface for traffic to/from firewall instances
+eth3                                               Allow ALL (Do not change)                        Private interface for traffic to FireNet HA gateway
+==========================================         ==============================================   =================
+
+
 If FireNet gateway HA is enabled, HA gateway shares the same route table as the primary for eth1 interface. 
 
 The new subnets created by the Controller at this steps are listed below.
@@ -84,6 +94,10 @@ The new subnets created by the Controller at this steps are listed below.
 -gw-dmz-exchange                                   for FireNet gateway eth3
 -gw-hagw-dmz-exchange                              for FireNet HA gateway eth3
 ==========================================         =================
+
+.. important::
+
+  Please do not change the security group inbound and outbound rules on eth1, eth2 and eth3 of a FireNet gateway.
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
 -------------------------------------------------------------
@@ -132,6 +146,18 @@ Egress Interface Subnet                         Select the subnet whose name con
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page. 
 ==========================================      ==========
+
+Note Palo instance has 3 interfaces as described below.
+
+==========================================         ===============================          ================================
+**Palo Alto VM instance interfaces**               **Descriptione**                         **Inbound Security Group Rule**
+==========================================         ===============================          ================================
+eth0                                               Egress or Untrusted interface            Allow ALL 
+eth1                                               Management interface                     Allow SSH, HTTPS, ICMP
+eth2                                               LAN or Trusted interface                 Allow ALL (Do not change)
+==========================================         ===============================          ================================
+
+Note firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
 7a.2 Launch and Associate More
 #################################
