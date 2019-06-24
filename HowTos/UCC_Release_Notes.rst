@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R4.7.419 (Patch release of 4.7 on 6/24/2019)
+===============================================
+
+ - bug fix for "Customize Spoke VPC advertising CIDR".
+ - error checking for TGW VPN configuration parameters.
+
+
 R4.7.378 (6/16/2019)
 =====================
 
