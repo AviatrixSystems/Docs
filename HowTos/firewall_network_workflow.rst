@@ -112,7 +112,7 @@ When this step is completed, you have built the network infrastructure for FireN
 This step programs the relative route tables, described as below.
 
 ==========================================   =====================       =================                 
-**Aviatrix FireNet VPC route table**         ** key route entry**        **Descriptione**
+**Aviatrix FireNet VPC route table**         **key route entry**         **Descriptione**
 ==========================================   =====================       =================
 -gw-tgw-egress                               0.0.0.0/0 -> tgw            for FireNet gateway and HA gateway eth1 to TGW 
 -gw-tgw-ingress                              0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway and ha gateway 
@@ -149,13 +149,13 @@ Attach (Optional)                               By selecting this option, the fi
 
 Note Palo instance has 3 interfaces as described below.
 
-==========================================         ===============================          ================================
-**Palo Alto VM instance interfaces**               **Descriptione**                         **Inbound Security Group Rule**
-==========================================         ===============================          ================================
-eth0                                               Egress or Untrusted interface            Allow ALL 
-eth1                                               Management interface                     Allow SSH, HTTPS, ICMP
-eth2                                               LAN or Trusted interface                 Allow ALL (Do not change)
-==========================================         ===============================          ================================
+========================================================         ===============================          ================================
+**Palo Alto VM instance interfaces**                             **Descriptione**                         **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
+eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP
+eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
 
 Note firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
