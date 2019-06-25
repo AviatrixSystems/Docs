@@ -112,8 +112,13 @@ Here are `instructions <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_ to use L
 What is the recommended VPN CIDR Block (default is 192.168.43.0/24)?
 ------------------------------------------------------------------------------
 
-Make sure that there is no overlap between the local subnet of the computer running the VPN Client and the VPN CIDR Block. `Link <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. Also make sure that you have enough ip address space to support all of you VPN users since we use 2 IP addresses per user - the default vpn cidr, 192.168.43.0/24 should be good for ~64 users. Pick a larger subnet for more users.
+Make sure that there is no overlap between the local subnet of the computer running the VPN Client and the VPN CIDR Block. `Link <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. Also make sure that you have enough ip address space to support all of you VPN users since we use 4 IP addresses per user - the default vpn cidr, 192.168.43.0/24 should be good for ~60 users. Pick a larger subnet for more users.
+ 
+If you were to use 192.168.42.0/23, you can have upto 120 users connect to a single OpenVPN Gateway. Note that this is per gateway - so if you have 4 OpenVPN Gateways behind an ELB, each of them will have the same CIDR allowing 120 users each. The IP Addresses of the VPN Users will be NAT'ed by the OpenVPN Gateway so the traffic would look like it originated from the OpenVPN Gateway.
+ 
+Please look `here <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_ for more information on VPN CIDR Block.
 
+ 
 
 How does a vpn client access resources from different VPCs when connecting to OpenVPN gateway?
 -------------------------------------------------------------------------------------------------
