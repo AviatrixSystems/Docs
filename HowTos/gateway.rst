@@ -135,8 +135,8 @@ Max Connections
 Maximum number of active VPN users allowed to be connected to this gateway. The default is 100.
 
 When you change this address, make sure the number is smaller than the VPN CIDR block.
-OpenVPN® VPN CIDR Block allocates 2 IP addresses for each connected VPN user;
-when the VPN CIDR Block is a /24 network, it supports about 120 users.
+OpenVPN® VPN CIDR Block allocates 4 IP addresses for each connected VPN user;
+when the VPN CIDR Block is a /24 network, it supports about 60 users.
 
 Split Tunnel Mode
 ==================
