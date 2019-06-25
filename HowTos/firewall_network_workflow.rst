@@ -17,7 +17,7 @@ We recommend you to use the Aviatrix Useful Tool to create a VPC for FireNet dep
 Select "Aviatrix FireNet VPC" option when creating a security VPC. 
 
 ==========================================      =================
-**Aviatrix FireNet VPC Public Subnet**          **Descriptione**
+**Aviatrix FireNet VPC Public Subnet**          **Description**
 ==========================================      =================
 -Public-gateway-and-firewall-mgmt-AZ-a          A /28 public subnet in AZ a for  FireNet gateway and firewall instance management interface.
 -Public-gateway-and-firewall-mgmt-AZ-b          A /28 public subnet in AZ b for FireNet HA gateway and firewall instance management interface. 
@@ -70,7 +70,7 @@ In this step, Aviatrix Controller creates 3 more Ethernet interfaces with associ
 |private_interfaces|
 
 ==========================================         ==============================================   =================
-**FireNet gateway instance interfaces**            **Inbound Security Group Rule**                  **Description***
+**FireNet gateway instance interfaces**            **Inbound Security Group Rule**                  **Description**
 ==========================================         ==============================================   =================
 eth0                                               Allow SSH and HTTPS from Aviatrix Controller     Public interface for communication with Controller
 eth1                                               Allow ALL (Do not change)                        Private interface for traffic to/from TGW
@@ -87,7 +87,7 @@ If FireNet gateway HA is enabled, HA gateway shares the same route table as the 
 The new subnets created by the Controller at this steps are listed below.
 
 ==========================================         =================
-**Aviatrix FireNet VPC Private Subnet**            **Descriptione**
+**Aviatrix FireNet VPC Private Subnet**            **Description**
 ==========================================         =================
 -gw-tgw-egress                                     for FireNet gateway eth1 
 -gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
@@ -112,7 +112,7 @@ When this step is completed, you have built the network infrastructure for FireN
 This step programs the relative route tables, described as below.
 
 ==========================================   =====================       =================                 
-**Aviatrix FireNet VPC route table**         **key route entry**         **Descriptione**
+**Aviatrix FireNet VPC route table**         **key route entry**         **Description**
 ==========================================   =====================       =================
 -gw-tgw-egress                               0.0.0.0/0 -> tgw            for FireNet gateway and HA gateway eth1 to TGW 
 -gw-tgw-ingress                              0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway and ha gateway 
@@ -150,7 +150,7 @@ Attach (Optional)                               By selecting this option, the fi
 Note Palo instance has 3 interfaces as described below.
 
 ========================================================         ===============================          ================================
-**Palo Alto VM instance interfaces**                             **Descriptione**                         **Inbound Security Group Rule**
+**Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
 eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP
