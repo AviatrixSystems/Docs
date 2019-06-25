@@ -208,7 +208,7 @@ If the Aviatrix controller is behind an ELB, you can go to the AWS portal, Load 
 How can I move my controller from one AWS account to another AWS account
 --------------------------------------------------------------------------
 
-1. Backup old controller configuration to an S3 bucket using these `directions <(https://docs.aviatrix.com/HowTos/controller_backup.html>`_. //FileName created should look like: CloudN_xxx_config.enc
+1. Backup old controller configuration to an S3 bucket using these `instructions  <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. //FileName created should look like: CloudN_xxx_config.enc
 2. In the target account, create a new controller, running the same Aviatrix Software Version as the old controller using `these directions <https://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html#how-to-launch-aviatrix>`_
 3. Build the "Trust-Relationship" between all gateway (AWS) accounts and new controller's AWS account using these `directions <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#establish-trust-relationship-with-primary-account>`_. NOTE: Make sure that you repeat this step for every gateway's (AWS) account
 4. Login to new controller and run "Aviatrix Console/Settings/Maintenance/Backup&Restore/Restore" and enter AccessKey & SecretKey (which have the permissions to access the S3 bucket located in the same AWS account of your old controller), BucketName, FileName
