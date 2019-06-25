@@ -60,15 +60,17 @@ Go to Controller Console -> Site2Cloud.
 
 Click "+Add New". Fill the form and click OK. Select "Unmapped" for Connection Type field.
 
-2.1 VPC-1 gateway side
+2.1 VPC-1 gateway-1 side
 #########################
 
 For VPC-1 gateway side, the Local Subnet field should be 192.168.0.43/32, and the Remote Subnet field should be 10.17.7.81/32, as shown below.
 
 |vpc1_to_vpc2_ipsec|
 
-2.2 VPC-2 gateway side
-########################
+2.2 VPC-2 gateway-2 side
+##########################
+
+on the VPC gateway-2 side, the IPSEC is a standard configuration.
 
 For VPC-2 gateway side, the Local Subnet field should be 10.17.7.81/32, and the Remote Subnet field should be 192.168.0.43/32, as shown below.
 
@@ -78,8 +80,8 @@ Wait for the tunnel to come up.
 
 Normally you'll need to download configuration, but in this example since both ends of the network are on VPC, you can simply configure each site2cloud tunnel. Make sure the Pre-shared Keys are the same for both ends. In the above example, we used "Aviatrix101#" as our pre-shared key.
 
-Step 3: Configure DNAT
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 3: Configure DNAT on gateway-1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This step is to configure the gateway to translate the destination IP address 172.16.0.43 to the real private IP address 10.17.7.81, before routing happens.
 
@@ -89,8 +91,8 @@ Scroll down to Destination NAT. Follow the instructions `here <https://docs.avia
 
 |dnat|
 
-Step 4: Configure SNAT
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 4: Configure SNAT on gateway-1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This step is to translate the packet source IP address after routing happens. In this example, 
 the address is translated from 10.17.7.81 to 172.16.0.43 for packets going from on-prem (VPC-2) to VPC-1, 
