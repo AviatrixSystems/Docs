@@ -53,3 +53,9 @@ Launching a new controller typically involves multiple steps as described `here 
  * `Initialize the Aviatrix Controller <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-initialize>`_
  
  
+How can I create my IAM roles and policies in AWS using Terraform?
+---------------------------------------------------------------------
+
+You can use our `terraform iam_roles module <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_ to create the Aviatrix IAM roles required to connect your Aviatrix Controller to an existing AWS account. This should be run in the account where you are installing the Controller and any additional accounts that will be connected to the Controller. This performs a similar role as the CloudFormation script does in "Controller UI > Accounts > Access Accounts > New Account > Select AWS > Select IAM-role-based > Launch CloudFormation Script" - it does not create the account, only creates the IAM roles/profiles like this CloudFormation script. Similar to what is mentioned `here <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_.
+
+
