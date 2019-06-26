@@ -149,7 +149,7 @@ Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping th
 10. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to firewall instance by login to VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connectted to Firewall Network Security Domain
+You can view if traffic is forwarded to firewall instance by login to VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
 
 
 .. |access_key| image:: config_paloaltoVM_media/access_key.png
