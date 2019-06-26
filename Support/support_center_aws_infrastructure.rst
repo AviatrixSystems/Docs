@@ -60,3 +60,28 @@ How can I monitor the destination ports and ip addresses for instances in my VPC
 
 Aviatrix provides a `Discovery <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_ function to do this. But you could also consider `AWS's flowlogs <https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html>`_ functionality on a vpc which will capture all incoming and outgoing traffic out of the vpc and will log either into S3 or into CloudWatch. Please follow the directions `here <https://aws.amazon.com/blogs/aws/vpc-flow-logs-log-and-view-network-traffic-flows/>`_ and capture these logs. Capturing the outgoing port and IP address information will help you craft better Egress Control Policies.
  
+
+
+ 
+How can I debug IAM related issues? (IAM Debug Playbook)
+-----------------------------------------------------------
+ 
+`IAM roles and policies <https://docs.aviatrix.com/Support/support_center_controller.html#why-are-iam-policies-important>`_ are essential for the Aviatrix System to function as designed. Please follow the following steps to identify and address any IAM issues
+ 
+* If you are using "AWS Organizations" to centrally manage & govern your policies across accounts, please follow the following to check on the policies to make sure you have the right permissions.
+
+  * Check "Service Controller Policies" for "Root": Go to "AWS Console > AWS Organizations > Organize Account" and click on "Root" on the left panel, followed by a click on "Service Control Policies" on the right panel. Check all attached "Service Control Policies".
+  * Check "Service Controller Policies" for "Organization Unit": Go to "AWS Console > AWS Organizations > Organize Account > Find" and click on the "Oranization Unit" (which the account belongs to) on the left panel > Click on "Service control policies" on the right panel. Check all attached "Service Control Policies"
+  * Check "Service Controller Policies" for the account: Go to "AWS Console > AWS Organizations > Account > Find" and click on the account from the list. Click on "Service Control Policies" on the right panel. Check all attached "Service Control Policies".
+* Go to "Aviatrix Console > Settings > Advanced > AWS IAM Policy Update > Update Account IAM Policy" and make sure to pick one account at a time and click on "Check" - if the "Status=Up-to-date" then you do not need any updates, else you would have to update the polices(https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies). Repeat this check for all accounts that were added to Aviatrix Controller
+* Go to "Aviatrix Console > Troubleshoot > Diagnostics > Cloud > Account Diagnostics" and click on "OK" - this will identify any IAM issues you might have
+* Go to ""AWS Console > IAM > Roles" and search for "aviatrix".
+
+  * Click on "aviatrix-role-app" and make sure that "aviatrix-app-policy" is attached to this role. For all Gateways that are on a different account than the Controller, please make sure that both its own account and the Controller's account are attached in the "Trust Relationships" tab. Update the "aviatrix-app-policy" if needed by following the directions at https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies
+  * Click on "aviatrix-role-ec2" and make sure that "aviatrix-assume-role-policy" is attached to it. Please update it following the directions at https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies
+  * Repeat the above for all accounts that are registered inside the Aviatrix Controller at "Aviatrix Console > Accounts > Access Accounts"
+* Please go to "AWS Console > EC2" and confirm that all of your Aviatrix Controllers and Gateways have "aviatrix-role-ec2" associated. If any of them do not have this attached, please attach them
+* If the above do not address your IAM related issues, please go to AWS Console and detach " aviatrix-role-ec2" role from the Controller instance - by attaching the "none" role and then reattaching the "aviatrix-role-ec2" role again.
+* If you have edited the Aviatrix roles(aviatrix-role-app, aviatrix-role-ec2) and policies(aviatrix-app-policy, aviatrix-assume-role-policy) - please make sure that you have followed the instructions for requirements(https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html) and for cutomization(https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html)
+* If you follow the AWS Organizations(https://aws.amazon.com/organizations/) for Central governance and management across AWS accounts, please work with your network security team or AWS for further support on how to provide the right access for Aviatrix Network System of Controllers and Gateways.
+* Repeat the "Aviatrix Console > Settings > Advanced > AWS IAM Policy Update > Update Account IAM Policy > Check" and "Aviatrix Console > Troubleshoot > Diagnostics > Cloud > Account Diagnostics" for all accounts for a final check.
