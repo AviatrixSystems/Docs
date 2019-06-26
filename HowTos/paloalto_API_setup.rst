@@ -38,7 +38,7 @@ At the Palo Alto VM-Series console,
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the VM-Series Console, go to Device -> Administrators -> +Add, to add an administrator for Role Based access as
-shown below. Use the profile created in previous step.
+shown below. Use the profile created in previous step. Remember to click Commit.
 
 |pan_admin|
 
