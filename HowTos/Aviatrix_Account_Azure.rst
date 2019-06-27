@@ -181,29 +181,22 @@ At this point you should have the following information.
    :width: 5.65600in
    :height: 2.39763in
 .. |image03| image:: AviatrixAccountForAzure_media/Image03.png
-   :width: 6.98958in
-   :height: 3.02083in
+   :width: 100%
 .. |image04| image:: AviatrixAccountForAzure_media/Image04.png
-   :width: 5.20313in
-   :height: 1.50209in
+   :width: 100%
 .. |image05| image:: AviatrixAccountForAzure_media/az-ad-list-all-apps-05.PNG
    :width: 5.65600in
    :height: 2.39763in
 .. |image06| image:: AviatrixAccountForAzure_media/Image06.png
-   :width: 6.98958in
-   :height: 3.02083in
+   :width: 100%
 .. |image07| image:: AviatrixAccountForAzure_media/Image07.png
-   :width: 5.20313in
-   :height: 1.50209in
+   :width: 100%
 .. |image08| image:: AviatrixAccountForAzure_media/Image08.png
-   :width: 5.65600in
-   :height: 2.39763in
+   :width: 100%
 .. |image09| image:: AviatrixAccountForAzure_media/Image09.png
-   :width: 6.98958in
-   :height: 3.02083in
+   :width: 100%
 .. |image10| image:: AviatrixAccountForAzure_media/Image10.png
-   :width: 5.20313in
-   :height: 1.50209in
+   :width: 100%
 .. |image11| image:: AviatrixAccountForAzure_media/az-ad-sub-role-11.PNG
    :width: 5.65600in
    :height: 2.39763in
@@ -215,11 +208,9 @@ At this point you should have the following information.
    :height: 3.02083in
    
 .. |image14| image:: AviatrixAccountForAzure_media/Image14.png
-   :width: 6.98958in
-   :height: 3.02083in
+   :width: 100%
 .. |image15| image:: AviatrixAccountForAzure_media/Image15.png
-   :width: 6.98958in
-   :height: 3.02083in
+   :width: 100%
 
 
 .. add in the disqus tag
