@@ -317,3 +317,10 @@ If you are using SAML authentication for your OpenVPN users, please also allow t
   * IP: Aviatrix Controller's public IP 
   * Port: 443
 
+
+Is Aviatrix VPN Client supported on Windows running in a proxy environment?
+------------------------------------------------------------------------------
+
+Our client is not supported in a proxy environment, but please try the following command, it has worked for one of our customers
+
+  * netsh winhttp import proxy source=ie
