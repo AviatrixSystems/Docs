@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R4.7.450 (coming soon, a patch release of 4.7)
+================================================
+
+ - **Palo Alto VM-Series Bootstrap function support** allows firewall instance to retrieve initial VM-Series configuration and policies stored in S3 bucket. 
+ - **Palo Alto VM-Series Panorama integration** allows firewall instances to be managed by Panorama. 
+ - **EIP Allocation for Transit Gateway** allows a Transit Gateway to be associated with an already allocated EIP. 
+
 R4.7.419 (Patch release of 4.7 on 6/24/2019)
 ===============================================
 
@@ -15,7 +22,7 @@ R4.7.378 (6/16/2019)
 1. AWS Transit Gateway Orchestrator
 -------------------------------------
 
- - **AWS TGW Egress Domain** allows you to create a central egress network architecture without requiring to launch Aviatrix FireNet gateway. Aviatrix Orchestrator programs the necessary Spoke VPC route tables and TGW route tables to make sure Internet bound traffic from Spoke VPCs are forwarded to the VPC in egress domain. One use case for native egress domain is to reduce the number of EIPs you may have to whitelist to accessing third party SaaS service. In the egress domain, you can deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or a virtual appliance to handle Internet bound traffic. Note in this network architecture, there is no built in scale out and redundancy as it is the case for Aviatrix Firewall Network. To configure, select "Native Egress Domain" when `creating a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ at the TGW Orchestrator Plan. 
+ - **AWS TGW Egress/Ingress Domain** allows you to create a central egress network architecture without requiring to launch Aviatrix FireNet gateway. Aviatrix Orchestrator programs the necessary Spoke VPC route tables and TGW route tables to make sure Internet bound traffic from Spoke VPCs are forwarded to the VPC in egress domain. One use case for native egress domain is to reduce the number of EIPs you may have to whitelist to accessing third party SaaS service. In the egress domain, you can deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or a virtual appliance to handle Internet bound traffic. Note in this network architecture, there is no built in scale out and redundancy as it is the case for Aviatrix Firewall Network. To configure, select "Native Egress/Ingress Domain" when `creating a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ at the TGW Orchestrator Plan. 
 
  - **AWS TGW Firewall Domain** provides the firewall network architecture without requiring to launch Aviatrix FireNet gateway. Aviatrix Orchestrator programs the necessary Spoke VPC route tables and TGW route tables to make sure traffic that requires inspection is forwarded to the firewall security domain. One use case is to run a virtual appliance for packet inspection. Note in this network architecture, there is no built in scale out and redundancy as it is the case for Aviatrix Firewall Network architecture. To configure, select "Native Firewall Domain" when `creating a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ at the TGW Orchestrator Plan.
 
@@ -124,7 +131,7 @@ R4.2.634 (3/19/2019)
 1. Networking
 ----------------
 
-- **Transit DMZ for Egress Traffic Inspection** provides the networking capability to route Internet bound egress traffic from Spoke VPCs to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "Egress through Firewall".  
+- **Transit DMZ for Egress/Ingress Traffic Inspection** provides the networking capability to route Internet bound egress traffic from Spoke VPCs to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "Egress through Firewall".  
 
 - **Transit DMZ for East-West Traffic Inspection** provides the networking capability to route VPC to VPC traffic to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "East-West Traffic Inspection".
 
