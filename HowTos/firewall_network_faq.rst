@@ -248,11 +248,14 @@ Connect to on-prem with Aviatrix Edge gateway for both hybrid and multi regions.
 
 |multi_region_aviatrix_edge|
 
-FireNet Deployment Model 6 - Multi Firewall Networks 
+FireNet Deployment Model 6 - Two Firewall Networks 
 --------------------------------------------------------
 
-You can deploy multiple Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Egress
+You can deploy two Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Ingress/Egress
 inspection.
+
+When Ingress inspection is deployed, make sure you enable SNAT on the firewall instance to source NAT the private 
+IP address of NLB or a third party load balancer the IP address of LAN (or Trusted) interface of the FireNet. 
 
 |multi_firewall|
 
