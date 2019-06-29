@@ -46,7 +46,10 @@ shown below. Use the profile created in previous step. Remember to click Commit.
 5. Configure on the Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Login to the Aviatrix Controller, go to Firewall Network -> Vendor Integration. Configure the following parameters and click Save.
+5.1 Managing VM-Series Directly
+----------------------------------
+
+Login to the Aviatrix Controller, go to Firewall Network -> Vendor Integration -> Firewall. Configure the following parameters and click Save.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -60,6 +63,11 @@ Firewall Login Password                         firewall login password for API 
 Firewall Management IP Address                  The public IP address of the firewall management interface for API calls from the Aviatrix Controller
 Firewall Virtual Router name (Optional)         Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.
 ==========================================      ==========
+
+5.2 Managing VM-Series by Panorama
+------------------------------------
+
+If you use Panorama to manage the VM-Series, go to Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following. 
 
 4. API calls
 ~~~~~~~~~~~~~~~~
