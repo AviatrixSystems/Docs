@@ -145,6 +145,9 @@ Management Interface Subnet.                    Select the subnet whose name con
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page. 
+Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified. 
+IAM Role                                        In advanced mode, create an IAM Role on the AWS account that launched the FireNet gateway. Create a policy to attach to the role. The policy is to allow access to "Bootstrap Bucket".
+Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. 
 ==========================================      ==========
 
 Note Palo instance has 3 interfaces as described below.

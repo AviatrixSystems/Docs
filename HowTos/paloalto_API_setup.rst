@@ -54,7 +54,7 @@ Login to the Aviatrix Controller, go to Firewall Network -> Vendor Integration -
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Transit VPC ID                                  The Transit VPC ID for the Transit DMZ deployment. .
+FireNet VPC ID                                  The FireNet VPC ID for the Firewall Network deployment.
 Firewall instance ID                            The firewall EC2 instance ID. Aviatrix Controller monitors the health of this instance and determines fail over when it becomes unreachable.
 Firewall Name (Optional)                        A name to remember.
 Firewall Vendor Type                            Select PAN
@@ -67,7 +67,21 @@ Firewall Virtual Router name (Optional)         Specify the firewall virtual Rou
 5.2 Managing VM-Series by Panorama
 ------------------------------------
 
-If you use Panorama to manage the VM-Series, go to Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following. 
+If you use Panorama to manage the VM-Series, any dynamic route updates will be sent to Panorama. Go to Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+FireNet VPC ID                                  The FireNet VPC ID for the Firewall Network deployment.
+FireNet Gateway                                 The FireNet gateway name.
+Vendor Type                                     Select Palo Alto Panorama.
+Management IP Address                           The public IP address of the Panorama instance.
+Login User Name                                 Panorama login name for API calls from the Controller. For example, admin-api, as shown in the screen shot.
+Login Password                                  Panorama login password for API calls.
+Template Name                                   Panorama template for each FireNet gateway. (If FireNet gateway HA is configured, there should be two templates)
+Template Stack Name                             Panorama template stack for each FireNet gateway.((If FireNet gateway HA is configured, there should be two template stacks)
+Router name (Optional)                          Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.
+==========================================      ==========
 
 4. API calls
 ~~~~~~~~~~~~~~~~
