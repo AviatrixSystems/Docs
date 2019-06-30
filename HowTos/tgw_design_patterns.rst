@@ -10,6 +10,10 @@ AWS Transit Gateway Orchestrator Design Patterns
 Many design patterns exist to deploy your network with AWS Transit Gateway Orchestrator. Here are some 
 examples. 
 
+.. important::
+
+  While the design pattern diagrams use a single symbol to represent the Aviatrix gateways, all designs can be implemented with multi-AZ high availability.
+
 Dev & Prod isolated design
 ---------------------------
 
