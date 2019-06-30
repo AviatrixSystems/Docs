@@ -23,6 +23,14 @@ In this network design, you need to create a two custom Security Domains, Dev_Do
 
 At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains". Apply this step for both Dev_Domain and Prod_Domain.
 
+Dev & Prod isolated design with TGW Direct Connect or VPN
+------------------------------------------------------------
+
+Aviatrix integrates native TGW Direct Connect and VPN to connect to on-prem while allowing you 
+to connect to multiple cloud as Spoke VPCs. 
+
+|tgw_hybrid|
+
 All-in-cloud with Multi Security Domains
 -----------------------------------------
 
@@ -38,6 +46,14 @@ You can use Aviatrix Transit GWs to connect AWS Transit Gateways in multi region
 cloud deployment, as shown below. 
 
 |multi-region|
+
+TGW Orchestrator for cross region and multi cloud spoke
+----------------------------------------------------------
+
+You can extend the TGW to a different region with transit peering and then spokes in a different
+cloud.
+
+|multi_cloud_transit_peering|
 
 Full mesh network design
 --------------------------
@@ -140,7 +156,14 @@ as shown below. .
 .. |firenet| image:: firewall_network_media/firenet.png
    :scale: 30%
 
+
 .. |tgw_multi_sites| image:: tgw_design_patterns_media/tgw_multi_sites.png
+   :scale: 30%
+
+.. |tgw_hybrid| image:: tgw_design_patterns_media/tgw_hybrid.png
+   :scale: 30%
+
+.. |multi_cloud_transit_peering| image:: tgw_design_patterns_media/multi_cloud_transit_peering.png
    :scale: 30%
 
 .. disqus::
