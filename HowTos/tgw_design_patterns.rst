@@ -58,9 +58,15 @@ If you like to build a fully isolated network where no VPC can communicate with 
 
 In this network design, you need to create a custom Security Domain for each VPC. 
 
-At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains". Repeat this step for each VPC. 
-
 If this design does not scale for you, consider `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ where all VPCs are by default isolated to each other. 
+
+Fully Isolated network with multi sites VPN
+---------------------------------------------
+
+You can use TGW native VPN capability to connect to multi sites VPN. Since VPN connection is in Default Security Domain, you need to build connection policy
+for each VPC domain.
+
+|tgw_multi_sites|
 
 Integrating with Distributed Egress Control Design
 ----------------------------------------------------------
@@ -132,6 +138,9 @@ as shown below. .
    :scale: 30%
 
 .. |firenet| image:: firewall_network_media/firenet.png
+   :scale: 30%
+
+.. |tgw_multi_sites| image:: tgw_design_patterns_media/tgw_multi_sites.png
    :scale: 30%
 
 .. disqus::
