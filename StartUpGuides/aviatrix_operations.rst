@@ -7,13 +7,30 @@
 Aviatrix Operations Overview
 =============================================
 
-This document summarizes operations features that Aviatrix solution provides. 
+This document summarizes operations services provided by Aviatrix solution. 
 
 |aviatrix_dashboard|
 
-1. Visibility
+1. Manageability
+------------------
+
+ - **Multi Accounts** Single pane of glass to manage all your cloud accounts for networking and networking security. 
+ - **Multi Cloud** Single pane of glass to manage all your public cloud deployment for networking and networking security.
+ - **RBAC** Role Based Access Control allows you to manage multi accounts with fine grain access control for large organizations.
+ - **Technical Documentation** In product links to well documented and agile publishing technical documentation site. 
+ - **Tech Notes** A wealth of Tech Notes that provides examples for use case specific configurations.
+ - **Design Patterns** A wealth of Design Patterns that addresses architectural requirements for all deployments. 
+
+
+2. Automation
 ----------------
 
+ - **REST API** All functions support REST API.
+ - **Terraform** Aviatrix provides its own Terraform Provider for Aviatrix created resources.  
+ - **Examples** Terraform examples are presented for various use cases.
+
+3. Visibility
+----------------
 
  - **Geographic Map** Dashboard provides a geographical view of network topology under management. It also displays real time latency between any two nodes of deployed Aviatrix gateways. When a network connection is down, the connection turns to red color.
  - **Traffic Metrics** All Controller and gateway network traffic metrics are logged and displayed in time series.
@@ -23,7 +40,7 @@ This document summarizes operations features that Aviatrix solution provides.
  - **Egress FQDN Discovery** When this mode is enabled, Aviatrix gateway monitors every egress bound HTTP/HTTPS traffic, discovers the destination domain names and generates a report. This provides you the visibility of what APIs calls your EC2 applications are making. You can then use this visibility and turn it into FQDN filter policies.  
 
 
-2. Monitoring
+4. Monitoring
 ----------------
 
  - **Tunnel Status** Encrypted tunnels status are monitored. When a tunnel status is changed, the event is logged and alerted to the administrator. 
@@ -33,7 +50,7 @@ This document summarizes operations features that Aviatrix solution provides.
  - **VPC Tracker** Instead of using an Excel sheet, use this tool to keep track all your network CIDRs and prevent duplicate network address ranges. 
  - **Alert Bell** Controller monitors the route table black hole, stopped instance, etc and displays a warning on the alert bell. 
 
-3. Logging
+5. Logging
 -------------
 
 Controller and gateways can export logged data to the following services:
@@ -47,15 +64,16 @@ Controller and gateways can export logged data to the following services:
  - **Netflow**
 
 
-4. Troubleshooting
+6. Troubleshooting
 ---------------------
  - **Flightpath** Single pane of glass that displays information on Security Groups, VPC route entries, Network ACL, TGW Route table in a side by side presentation for both source and destination. In addition, expert diagnostics that identifies the faulty setup in these resources. 
  - **Trace Route & Trace Path** Use this tool to help identify route path. 
  - **Packet Capture** Capture packets on any gateway and download the resulting PCAP file for analysis on Wireshark.
  - **Network Validation** This tool can be used to test end to end connectivity. Instead of going to cloud provider console to launch instances, this tool automatically launches two instances and test connectivity for you.  
  - **Resource Lists** Lists are in use cases that retrieves in real time the cloud provider route entries. 
+ - **Trace Log** Customer can upload trace log to Aviatrix for in depth analysis of the events that lead to the issues. 
 
-5. High Availability
+7. High Availability
 ----------------------
 
  - **Controller Backup/Restore** All configurations are backed up to S3 daily and can be restored to a new Controller in the event that the existing Controller becomes unavailable. 
@@ -63,7 +81,7 @@ Controller and gateways can export logged data to the following services:
  - **Active/Active Gateways** Aviatrix Gateways can be deployed Active/Active in multi-AZ and forwards traffic with ECMP. 
 
 
-6. Compliance
+8. Compliance
 --------------
 
  - FIPS 140-2 compliant with certificate `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
