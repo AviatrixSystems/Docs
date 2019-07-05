@@ -18,8 +18,10 @@ Aviatrix Controller and all its managed gateways can be configured to forward lo
  - Splunk Enterprise
  - Sumo Logic
  - Elastic Search
- - DataDog
+ - Datadog
  - Remote syslog
+ - AWS CloudWatch
+ - Netflow
 
 
 In addition to standard information on syslog, Aviatrix also provides
