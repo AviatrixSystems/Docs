@@ -27,6 +27,7 @@ This document summarizes operations services provided by Aviatrix solution.
 
  - **REST API** All functions support REST API.
  - **Terraform** Aviatrix provides its own Terraform Provider for Aviatrix created resources.  
+ - **Cloud Formation** Aviatrix provides Cloud Formation Scripts for AWS Controller launch and multi account creation. 
  - **Examples** Terraform examples are presented for various use cases.
 
 3. Visibility
