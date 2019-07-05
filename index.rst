@@ -46,6 +46,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/CloudN-Startup-Guide
    StartUpGuides/appendix-CloudN-Startup-Guide
    StartUpGuides/aviatrix-china-controller-startup-guide
+   StartUpGuides/aviatrix_operations 
 
    HowTos/FAQ
 
