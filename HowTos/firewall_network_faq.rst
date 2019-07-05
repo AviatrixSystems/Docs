@@ -211,6 +211,11 @@ As shown in the chart below, the FireNet throughput scales as more VM-Series are
 
 |firewall_network_perf|
 
+Are there any design patterns for Firewall Network deployment?
+----------------------------------------------------------------
+
+Yes, please refer to the `Firewall Network Design Patterns. <https://docs.aviatrix.com/HowTos/firewall_network_design_patterns.html>`_
+
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%

@@ -8,42 +8,42 @@ Firewall Network Design Patterns
 =========================================================
 
 
-FireNet Deployment Model 1 - Hybrid with TGW
+Hybrid with TGW
 ---------------------------------------------------
 
 FireNet supports AWS Transit Gateway (TGW), as shown below. 
 
 |firenet_transit|
 
-FireNet Deployment Model 2 - Hybrid with Insane Mode
+Hybrid with Insane Mode
 --------------------------------------------------------
 
 FireNet supports AWS Transit (TGW) with Insane Mode,  
 
 |firenet_insane|
 
-FireNet Deployment Model 3 - Native TGW integration
+Native TGW integration
 ------------------------------------------------------------------
 
 In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect Gateway. 
 
 |firenet|
 
-FireNet Deployment Model 4 - Multi Region Transit with Native TGW integration 
+Multi Region Transit with Native TGW integration 
 ---------------------------------------------------------------------------------
 
 Connect to on-prem with AWS DXGW and use Aviatrix Edge gateway to connect to multiple regions.
 
 |multi_region_firewall|
 
-FireNet Deployment Model 5 - Multi Region Transit with Aviatrix Edge
+Multi Region Transit with Aviatrix Edge
 ------------------------------------------------------------------------
 
 Connect to on-prem with Aviatrix Edge gateway for both hybrid and multi regions.
 
 |multi_region_aviatrix_edge|
 
-FireNet Deployment Model 6 - Two Firewall Networks 
+Two Firewall Networks 
 --------------------------------------------------------
 
 You can deploy two Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Ingress/Egress
@@ -54,7 +54,7 @@ IP address of NLB or a third party load balancer the IP address of LAN (or Trust
 
 |multi_firewall|
 
-FireNet Deployment Model 7 - Ingress/Egress Traffic Inspection
+Ingress/Egress Traffic Inspection
 -----------------------------------------------------------------
 
 |firenet_ingress_egress|
