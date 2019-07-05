@@ -117,6 +117,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
+   HowTos/firewall_network_design_patterns
    HowTos/config_paloaltoVM
    HowTos/config_FortiGate.rst
    HowTos/config_Checkpoint.rst
