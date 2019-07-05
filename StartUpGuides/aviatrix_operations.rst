@@ -36,7 +36,7 @@ This document summarizes operations services provided by Aviatrix solution.
  - **Geographic Map** Dashboard provides a geographical view of network topology under management. It also displays real time latency between any two nodes of deployed Aviatrix gateways. When a network connection is down, the connection turns to red color.
  - **Traffic Metrics** All Controller and gateway network traffic metrics are logged and displayed in time series.
  - **User Activities** Active VPN users and where they connect from is displayed. VPN user session history is logged and displayed.
- - **AWS Transit Gateway (TGW) Orchestrator View** A graphical view of displays what Security Domain and Connection Policies that have been configured. You can find for a given VPC, what other VPCs connect to it. 
+ - **AWS Transit Gateway (TGW) Orchestrator View** A graphical view that displays what Security Domain and Connection Policies that have been configured. You can find for a given VPC, what other VPCs connect to it. 
  - **AWS Transit Gateway (TGW) Orchestrator List** Multi panel tables list, in real time, the Spoke VPC route table and TGW route table. 
  - **Egress FQDN Discovery** When this mode is enabled, Aviatrix gateway monitors every egress bound HTTP/HTTPS traffic, discovers the destination domain names and generates a report. This provides you the visibility of what APIs calls your EC2 applications are making. You can then use this visibility and turn it into FQDN filter policies.  
 
