@@ -156,11 +156,105 @@ Note Palo instance has 3 interfaces as described below.
 **Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
-eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP
+eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
 eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
+
+Examples for advanced fields:
+-----------------------------
+
+IAM role
+########
+
+Create a IAM role "aviatrix-s3-role", with "aviatrix-s3-policy" as follows:
+
+::
+
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "s3:ListBucket"
+                ],
+                "Resource": [
+                    "arn:aws:s3:::*"
+                ]
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "s3:GetObject"
+                ],
+                "Resource": [
+                    "arn:aws:s3:::*"
+                ]
+            }
+        ]
+    }
+
+Bootstrap bucket structure
+##########################
+
+In S3, at top level create bucket for bootstrap, give it a name, for example "panvm_bucket", with following structure:
+
+::
+
+    panvm_bucket/
+      config/
+        init-cfg.txt
+        bootstrap.xml(Optional)
+      content/
+      license/
+      software/
+
+|panvm_bucket|
+
+Example for creating bootstrap init-cfg.txt for panorama managed firewall:
+
+1. Generate Auth Key in Panorama
+
+In Panorama CLI, create auth key, remember the key value.
+
+::
+
+    admin@Panorama> request bootstrap vm-auth-key generate lifetime 8760
+
+    VM auth key 0123456789 generated. Expires at: 2020/05/28 12:28:24
+
+    admin@Panorama>
+
+
+2. create init-cfg.txt file
+
+::
+
+    type=dhcp-client
+    ip-address=
+    default-gateway=
+    netmask=
+    ipv6-address=
+    ipv6-default-gateway=
+    hostname=FW
+    vm-auth-key=0123456789                                 ---> auth key created in Paranoma
+    panorama-server=3.216.229.15                           ---> paranoma public IP
+    panorama-server-2=
+    tplname=FireNet_cal_2_stack                            ---> template stack name, NOT TEMPLATE NAME
+    dgname=firenet_global                                  ---> device group name
+    dns-primary=
+    dns-secondary=
+    op-command-modes=jumbo-frame,mgmt-interface-swap       ---> mgmt-interface-swap is MUST
+    dhcp-send-hostname=yes
+    dhcp-send-client-id=yes
+    dhcp-accept-server-hostname=yes
+    dhcp-accept-server-domain=yes
+
+
+3.  create bootstrap.xml: export from existing PAN firewall
+This step is optional, if firewall is managed by Panorama, this step can be omitted.
 
 7a.2 Launch and Associate More
 #################################
@@ -206,6 +300,9 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
    :scale: 30%
 
 .. |private_interfaces| image:: firewall_network_workflow_media/private_interfaces.png
+   :scale: 30%
+
+.. |panvm_bucket| image:: firewall_network_workflow_media/panvm_bucket.png
    :scale: 30%
 
 .. disqus::

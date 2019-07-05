@@ -67,7 +67,84 @@ Firewall Virtual Router name (Optional)         Specify the firewall virtual Rou
 5.2 Managing VM-Series by Panorama
 ------------------------------------
 
-If you use Panorama to manage the VM-Series, any dynamic route updates will be sent to Panorama. Go to Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following. 
+If you use Panorama to manage the VM-Series, any dynamic route updates will be sent to Panorama.
+
+Before integrate Panorama with Aviatrix Controller, you need launch and configure Panorama first. The step is as follows:
+
+a. Launch Panorama
+^^^^^^^^^^^^^^^^^^^^^^
+
+Launch Panorama from AWS portal, ssh in to set UI password, same as PAN firewall.
+
+Change Panorama management interface security group, to allow 3978 port. This is the port used by Panorama and firewall to exchange information.
+
+Install license in Panorama, without correct license, it won't work.
+
+b. Upgrade Panorama Panorama
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Upgrade Panorama Panorama must be the same software version as its managed firewalls.
+
+Current Newly launched firewall are version 9.0.1, but Panorama version is 8.1.2. So user must manual upgrade Panorama to version 9.0.0+.
+
+Go to Panorama --> Dynamic Updates, click "Check Now", select latest version in "Applications and Threats", downland and install.
+
+Go to Panorama --> Software, select desired version, download and install. After install, Panorama will reboot. This will take a few minutes.
+
+c. Add Firewall to Managed Devices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. important::
+
+  Only PAN bundle 2 works with Panorama.
+
+
+Go to firewall, in dashboard, find the Serial #
+
+Go to Panorama --> Managed Devices --> Summary, click "Add", paste the firewall's Serial # here, save and commit.
+
+d. Configure Firewall
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Port 3978 also need to be allowed on firewall side. After 4.7, newly launched firewall through AVX controller will handle this, but for existing firewalls, user need to do it by himself.
+
+Login to Firewall, go to Device --> Setup --> Management, edit "Panorama Settings", add public IP of Panorama, save and commit.
+
+Go back to Panorama --> Managed Devices --> Summary, check the device should show "Connected".
+
+e. Create Templates and Template Stack
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Template and template stack is used to configure Network properties, such as interfaces, zones, route tables. This is the one that we need to monitor and update through API.
+
+Create template for each group of firewalls, i.e., create one for FireNet primary gateway, one for FireNet backup gateway.
+
+Configure template, add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), route table. Please do not name route table as "default" since this may conflict with firewall its own default route table.
+
+Create template stack. Template stack is a bundle to bound template with managed devices. When creating, select templates (can be multiple) and devices. So create 1 template stack for each group of firewalls,
+one for primary FireNet gateway, one for backup FireNet gateway. Remember template stack name. Commit and push.
+
+f. Create Device Group
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Device Group is used to manage all the firewall policies
+
+Go to Panorama --> Device Groups, click "Add" to create a new device group. Add the template created from previous step.
+check the Devices that belong to this device group if there are any, remember the device group name, for example "west2-firenet-primary".
+
+add allow-all policy to the newly created device group.
+
+add egress-nat policy if firewalls plan to add in this device group is going to be used to pass egress traffic.
+
+Commit and push.
+
+After this step, firewall is managed by Panorama. All configure need to be done in Panorama, should not do it in firewall console.
+
+g. Create admin role and user
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Same as firewall, create admin role with XML API permission, create admin user with the admin role.
+
+After you have setup and configured your Panorama, go to Aviatrix Controller -> Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -80,8 +157,30 @@ Login User Name                                 Panorama login name for API call
 Login Password                                  Panorama login password for API calls.
 Template Name                                   Panorama template for each FireNet gateway. (If FireNet gateway HA is configured, there should be two templates)
 Template Stack Name                             Panorama template stack for each FireNet gateway.((If FireNet gateway HA is configured, there should be two template stacks)
-Router name (Optional)                          Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.
+Router name (Optional)                          Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the Panorama template's first router.
 ==========================================      ==========
+
+.. Note::
+
+    Panorama manager need to be configured separately for primary and backup FireNet gateway, because different template names are used.
+
+    Panorama can be configured even if no firewall associated with gateway. But in this case, the egress subnet is not decided,
+    therefore egress route cannot be added. Once the first firewall is launched and in sync with Panorama,
+    the egress route will be automatically added.
+
+    If any firewall for a FireNet gateway is already integrated with Controller as PAN, need to remove that configuration,
+    before configure Panorama
+
+    After configure Panorama, all additional firewalls associated with same gateway will be assumed to be controlled by Panorama,
+    no further configuration needed.
+
+    For a newly launched firewall, after it completely comes up and connects with Panorama, you need to do "commit and push"
+    from Panorama once to sync firewall and Panorama.
+
+    If all firewalls are disassociated, Panorama configure still kept, unless user remove that configuration.
+
+    If Panorama is configured, the associated firewall will show vendor as "Palo Alto Panorama". Click "Show" will use the same access account and password to access firewall, to retrieve route information.
+    To enable this, user need to configure admin role and user (same name and password as configured for Panorama itself) for the template in Panorama.
 
 4. API calls
 ~~~~~~~~~~~~~~~~
