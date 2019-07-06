@@ -7,7 +7,7 @@
 Aviatrix Operations Overview
 =============================================
 
-This document summarizes operations services provided by Aviatrix solution. 
+This document summarizes 10 operation services provided by Aviatrix solution. 
 
 |aviatrix_dashboard|
 
