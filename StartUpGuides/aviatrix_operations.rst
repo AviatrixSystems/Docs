@@ -14,6 +14,7 @@ This document summarizes 10 operation services provided by Aviatrix solution.
 1. Manageability
 ------------------
 
+ - **Simplicity** Point-and-Click work flow based instructions are designed for each use case and are easy to follow. Network CCIE are not required to deploy and manage the network. 
  - **Multi Accounts** Single pane of glass to manage all your cloud accounts for networking and networking security. 
  - **Multi Cloud** Single pane of glass to manage all your public cloud deployment for networking and networking security.
  - **RBAC** Role Based Access Control allows you to manage multi accounts with fine grain access control for large organizations.
