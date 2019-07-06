@@ -92,7 +92,7 @@ Controller and gateways can export logged data to the following services:
 9. Technical Support
 ----------------------
 
- - **support@aviatrix.com** Having a technical problem? No fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions.
+ - **support@aviatrix.com** Having a technical problem? No fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24x7 support for Platinum customers.
  - **Solution Architects** Aviatrix solution architects can help you design your cloud network deployment that is simple to manage, scalable and secure. 
 
 
