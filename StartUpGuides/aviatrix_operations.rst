@@ -85,10 +85,15 @@ Controller and gateways can export logged data to the following services:
 8. Compliance
 --------------
 
- - FIPS 140-2 compliant with certificate `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
- - Supports SAML authentication to login to the Controller. 
- - Support LDAP authentication to login to the Controller. 
+ - **FIPS 140-2 Certificate** Aviatrix has achieved FIPS 140-2 compliance with certificate `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
+ - **SAML Authentication** Supports SAML authentication to login to the Controller. 
+ - **LDAP** Support LDAP authentication to login to the Controller. 
  
+9. Technical Support
+----------------------
+
+ - **support@aviatrix.com** Having a technical problem? No fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions.
+ - **Solution Architects** Aviatrix solution architects can help you design your cloud network deployment that is simple to manage, scalable and secure. 
 
 
 .. |aviatrix_dashboard| image:: aviatrix_operations_media/aviatrix_dashboard.png
