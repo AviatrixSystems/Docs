@@ -95,6 +95,12 @@ Controller and gateways can export logged data to the following services:
  - **support@aviatrix.com** Having a technical problem? No fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24x7 support for Platinum customers.
  - **Solution Architects** Aviatrix solution architects can help you design your cloud network deployment that is simple to manage, scalable and secure. 
 
+10. Flexible Consumption Model
+--------------------------------
+ - **Pay as You Consume** No contract negotiation, no lengthy PO process and no shelfware. Aviatrix provides the cloud consumption model with multi dimensional Metered AMI for instant consumption and need based scaling.
+ - **Private Offers** Aviatrix provides Private Offers AMI that has the same benefit as the Metered AMI but with customized pricing.  
+ - **BYOL License** Aviatrix provides subscription based long term contracts for organizations that seek predictable and budget based consumption model. 
+
 
 .. |aviatrix_dashboard| image:: aviatrix_operations_media/aviatrix_dashboard.png
    :scale: 30%
