@@ -167,8 +167,9 @@ Assuming you have existing individually managed VM-Series by the Aviatrix Contro
 a. Remove firewall integration as PAN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If any firewall for a FireNet gateway is already integrated with Controller with PAN as the Vendor typpe, you need to remove that configuration
-from Controller->Firewall Network->Vendor Integration->Firewall, before configure Panorama from Vendor Integration->Firewall Manager(Panorama).
+If any firewall for a FireNet gateway is already integrated with Controller with PAN as the Vendor type, you need to remove that configuration. 
+
+To do so, go to Controller->Firewall Network->Vendor Integration->Firewall, select the Transit VPC ID, Firewall Instance ID. For the Firewall Vendor Type, select "Generic". This effectively remove the Controller integration. 
 
 b. Remove firewall configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
