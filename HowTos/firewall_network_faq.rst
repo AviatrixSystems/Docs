@@ -216,6 +216,15 @@ Are there any design patterns for Firewall Network deployment?
 
 Yes, please refer to the `Firewall Network Design Patterns. <https://docs.aviatrix.com/HowTos/firewall_network_design_patterns.html>`_
 
+Can VM-Series be launched with Bootstrap integration?
+-------------------------------------------------------
+
+Yes. When you launch a VM-Series from Aviatrix Controller console, you can select the option to launch the VM-Series instance with bootstrap information. 
+
+Can Firewall Network work with Panorama?
+------------------------------------------
+
+Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%

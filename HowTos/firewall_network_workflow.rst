@@ -162,8 +162,10 @@ eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted 
 
 Note firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
-Examples for advanced fields:
------------------------------
+Example Configuration for Bootstrap 
+---------------------------------------
+
+When `launch a VM-Series instance <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_, click "Advanced", this is the option to integrate bootstrap information to launch the instance and setup the initial policies.
 
 IAM role
 ########
