@@ -219,7 +219,7 @@ Yes, please refer to the `Firewall Network Design Patterns. <https://docs.aviatr
 Can VM-Series be launched with Bootstrap integration?
 -------------------------------------------------------
 
-Yes. When you launch a VM-Series from Aviatrix Controller console, you can select the option to launch the VM-Series instance with bootstrap information. 
+Yes. When you launch a VM-Series from Aviatrix Controller console, you can select the option to launch the VM-Series instance with `bootstrap information. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#example-configuration-for-bootstrap>`_
 
 Can Firewall Network work with Panorama?
 ------------------------------------------

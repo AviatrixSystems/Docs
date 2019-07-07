@@ -19,6 +19,7 @@ This document summarizes 10 operation services provided by Aviatrix solution.
  - **Multi Cloud** Single pane of glass to manage all your public cloud deployment for networking and networking security.
  - **RBAC** Role Based Access Control allows you to manage multi accounts with fine grain access control for large organizations.
  - **Technical Documentation** In product links to well documented and agile publishing technical documentation site. 
+ - **FAQs** A wealth of FAQs that answers commonly asked questions in problem space, benefits and useful links. 
  - **Tech Notes** A wealth of Tech Notes that provides examples for use case specific configurations.
  - **Design Patterns** A wealth of Design Patterns that addresses architectural requirements for all deployments. 
 

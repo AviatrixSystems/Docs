@@ -262,15 +262,11 @@ This step is optional, if firewall is managed by Panorama, this step can be omit
 
   Only PAN bundle 2 works with Panorama.
 
-  For Panorama managed firewalls, You need to prepare panorama first then launch firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
+  For Panorama managed firewalls, You need to prepare panorama first then launch firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply one time "commit and push" from Panorama console to sync firewall instance and Panorama.
 
-.. Note::
+.. Tip::
 
-    For a newly launched Panorama managed firewall, after it completely comes up and connects with Panorama, you need to do "commit and push"
-    from Panorama once to sync firewall and Panorama.
-
-    For VM-Series firewalls plan to integrate with Aviatrix Controller directly, you can export the first firewall's
-    configuration to bootstrap.xml, create IAM role and Bootstrap bucket structure as indicated above,
+    If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and S3 bucket name to save time of firewall manual initial configuration.
 
 
