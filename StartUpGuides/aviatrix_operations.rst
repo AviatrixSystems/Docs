@@ -18,6 +18,7 @@ This document summarizes 10 operation services provided by Aviatrix solution.
  - **Multi Accounts** Single pane of glass to manage all your cloud accounts for networking and networking security. 
  - **Multi Cloud** Single pane of glass to manage all your public cloud deployment for networking and networking security.
  - **RBAC** Role Based Access Control allows you to manage multi accounts with fine grain access control for large organizations.
+ - **Hitless Software Upgrade** Aviatrix software upgrades does not require Controller nor gateway to reboot. The upgrade process takes a few minutes and does not cause any network downtime or packet loss. 
  - **Technical Documentation** In product links to well documented and agile publishing technical documentation site. 
  - **FAQs** A wealth of FAQs that answers commonly asked questions in problem space, benefits and useful links. 
  - **Tech Notes** A wealth of Tech Notes that provides examples for use case specific configurations.
@@ -88,13 +89,16 @@ Controller and gateways can export logged data to the following services:
 --------------
 
  - **FIPS 140-2 Certificate** Aviatrix has achieved FIPS 140-2 compliance with certificate `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
+ - **Security Patch** Any impacting vulnerability issues are immediately addressed by applying "Hot Fix".
  - **SAML Authentication** Supports SAML authentication to login to the Controller. 
  - **LDAP** Support LDAP authentication to login to the Controller. 
  
-9. Technical Support
-----------------------
+9. Software and Technical Support
+------------------------------------
 
  - **support@aviatrix.com** Having a technical problem? No fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24x7 support for Platinum customers.
+ - **Fast Release Cycle** New software releases become available in every 6 - 8 weeks time. A new software release automatically generates notification email to the Controller admin team.
+ - **Hot Fix** Any show stopper or operation impacting problem are immediately addressed by "Hot Fix" patches. 
  - **Solution Architects** Aviatrix solution architects can help you design your cloud network deployment that is simple to manage, scalable and secure. 
 
 10. Flexible Consumption Model
