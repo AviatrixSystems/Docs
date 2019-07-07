@@ -67,9 +67,9 @@ Firewall Virtual Router name (Optional)         Specify the firewall virtual Rou
 5.2 Managing VM-Series by Panorama
 ------------------------------------
 
-If you use Panorama to manage the VM-Series, any dynamic route updates will be sent to Panorama.
+If Panorama is used to manage the VM-Series, any dynamic route updates initiated by Aviatrix Controller are sent to Panorama.
 
-Before integrate Panorama with Aviatrix Controller, you need launch and configure Panorama first. The step is as follows:
+Before you integrate Panorama with Aviatrix Controller, you need to first launch and configure Panorama. The steps are as follows:
 
 a. Launch Panorama
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -80,12 +80,13 @@ Change Panorama management interface security group, to allow 3978 port. This is
 
 Install license in Panorama, without correct license, it won't work.
 
-b. Upgrade Panorama Panorama
+b. Upgrade Panorama 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Upgrade Panorama Panorama must be the same software version as its managed firewalls.
+Panorama must be on the same software version as its managed firewalls.
 
-Current Newly launched firewall are version 9.0.1, but Panorama version is 8.1.2. So user must manual upgrade Panorama to version 9.0.0+.
+Current a newly launched firewall instance is on version 9.0.1, but Panorama instance version is on 8.1.2. So once you have launched 
+a Panorama instance, upgrade it to version 9.0.0+ by following the instructions below..
 
 Go to Panorama --> Dynamic Updates, click "Check Now", select latest version in "Applications and Threats", downland and install.
 
@@ -94,34 +95,39 @@ Go to Panorama --> Software, select desired version, download and install. After
 c. Create Templates and Template Stack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Template and template stack is used to configure Network properties, such as interfaces, zones, route tables. This is the one that we need to monitor and update through API.
+Template and template stack are used to configure Network properties, such as interfaces, zones, route tables. This is the one that we need to monitor and update through API.
 
-Create template for each group of firewalls, i.e., create one for FireNet primary gateway, one for FireNet backup gateway.
+ 1. **Create Template**
+      You should create template for each firewall group:  create one for FireNet primary gateway, one for FireNet backup gateway.
 
-Configure template, add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), route table. Please do not name route table as "default" since this may conflict with firewall its own default route table.
+ #. **Configure Template**
+      Add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), route table. Do not name route table as "default" since this may conflict with firewall its own default route table.
 
-Create template stack. Template stack is a bundle to bound template with managed devices. When creating, select templates (can be multiple) and devices. So create 1 template stack for each group of firewalls,
-one for primary FireNet gateway, one for backup FireNet gateway. Remember template stack name. Commit and push.
+ #. **Create Template Stack**
+      Template stack is a bundle to bound template with managed devices. When creating, select templates (can be multiple) and devices. For example,  create one template stack for each firewall group, one for primary FireNet gateway, one for backup FireNet gateway. Remember template stack name. Commit and push.
 
 d. Create Device Group
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Device Group is used to manage all the firewall policies
+Device Group is used to manage all the firewall policies.
 
-Go to Panorama --> Device Groups, click "Add" to create a new device group. Add the template created from previous step.
-remember the device group name, for example "west2-firenet-primary".
+ 1. **Add Device Group**
+      Go to Panorama --> Device Groups, click "Add" to create a new device group. Add the template created from previous step. Remember the device group name, for example "west2-firenet-primary".
 
-add allow-all policy to the newly created device group.
+ #. **Add Example Policy**
+      Add "allow-all" policy to the just created device group.
 
-add egress-nat policy if firewalls plan to add in this device group is going to be used to pass egress traffic.
+ #. **Add Egress Policy** (Optional)
+      If you plan to deploy Egress inspection, add egress-nat policy.
 
-Commit and push.
+ #. **Commit The Change**
+       Commit and push.
 
-After this step, firewall is managed by Panorama. All configure need to be done in Panorama, should not do it in firewall console.
+After the above steps, VM-Series instances are managed by Panorama. All configuration should be done through the Panorama console.
 
 e. Create admin role and user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Same as firewall, create admin role with XML API permission, create admin user with the admin role.
+This is the same as for individually managed VM-Series. Create admin role with XML API permission, create admin user with the admin role.
 
 After you have setup and configured your Panorama, go to Aviatrix Controller -> Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following.
 
@@ -141,37 +147,32 @@ Router name (Optional)                          Specify the firewall virtual Rou
 
 .. Note::
 
-    Panorama manager need to be configured separately for primary and backup FireNet gateway, because different template names are used.
+    - Panorama manager need to be configured separately for primary and backup FireNet gateway, because each is associated with a different template name.  
 
-    Panorama can be configured even if no firewall associated with gateway. But in this case, the egress subnet is not decided,
-    therefore egress route cannot be added. Once the first firewall is launched and in sync with Panorama,
-    the egress route will be automatically added.
+    - Panorama can be configured even when there is no VM-Series associated with a FireNet gateway. However in such case, the egress subnet is not decided, therefore egress route cannot be added. Once the first VM-Series instance is launched and is in sync with Panorama, the egress route will be automatically added.
 
-    If any firewall for a FireNet gateway is already integrated with Controller as PAN, need to remove that configuration,
-    before configure Panorama
+    - If any VM-Series for a FireNet gateway is already managed by the Controller, you need to remove that configuration, before configure Panorama. See the migration instruction in the next section. 
 
-    After configure Panorama, all additional firewalls associated with same gateway will be assumed to be controlled by Panorama,
-    no further configuration needed.
+    - After Panorama is setup, any additional VM-Series associated with same gateway will be controlled by Panorama, no further configuration on the VM-Series is needed.
 
-    If all firewalls are disassociated, Panorama configure still kept, unless user remove that configuration.
+    - When all VM-Series are disassociated from a FireNet gateway, Panorama still maintains the configuration, unless user removes the configuration from Panorama.
 
-    If Panorama is configured, the associated firewall will show vendor as "Palo Alto Panorama". Click "Show" will use the same access account and password to access firewall, to retrieve route information.
-    To enable this, user need to configure admin role and user (same name and password as configured for Panorama itself) for the template in Panorama.
+    - When Panorama is configured, the associated  will show vendor as "Palo Alto Panorama". Click "Show" will use the same access account and password to access firewall and retrieve route information.  To enable this, you need to configure admin role and user (same name and password as configured for Panorama itself) in the template in Panorama.
 
-Migration from existing VM-Series integrated firewall to Panorama
+Migrating from individually managed VM-Series to Panorama
 #################################################################
 
-Assuming you have follow above instructions to prepare your Panorama. After that, you need to do the following:
+Assuming you have existing individually managed VM-Series by the Aviatrix Controller and have prepared your Panorama, follow the instructions below to migrate individually managed firewall (or VM-Series) to be managed by Panorama.. 
 
-a. Unconfig firewall integration as PAN
+a. Remove firewall integration as PAN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If any firewall for a FireNet gateway is already integrated with Controller as PAN, need to remove that configuration
-from Controller->Firewall Network->Vendor Integration->Firewall, before configure Panorama from Vendor Integration->Firewall Manager(Panorama)
+If any firewall for a FireNet gateway is already integrated with Controller with PAN as the Vendor typpe, you need to remove that configuration
+from Controller->Firewall Network->Vendor Integration->Firewall, before configure Panorama from Vendor Integration->Firewall Manager(Panorama).
 
-b. Unconfig firewall configuration
+b. Remove firewall configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-From your firewall console, unconfig interfaces, zone, virtual router, polices, api admin role and api administrator.
+From your firewall console, remove interfaces, zone, virtual router, polices, api admin role and api administrator.
 
 c. Add Firewall to Managed Devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
