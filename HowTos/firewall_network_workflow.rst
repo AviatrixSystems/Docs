@@ -256,6 +256,22 @@ In Panorama CLI, create auth key, remember the key value.
 3.  create bootstrap.xml: export from existing PAN firewall
 This step is optional, if firewall is managed by Panorama, this step can be omitted.
 
+.. important::
+
+  Only PAN bundle 2 works with Panorama.
+
+  For Panorama managed firewalls, You need to prepare panorama first then launch firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
+
+.. Note::
+
+    For a newly launched Panorama managed firewall, after it completely comes up and connects with Panorama, you need to do "commit and push"
+    from Panorama once to sync firewall and Panorama.
+
+    For VM-Series firewalls plan to integrate with Aviatrix Controller directly, you can export the first firewall's
+    configuration to bootstrap.xml, create IAM role and Bootstrap bucket structure as indicated above,
+    then launch additional firewalls with IAM role and S3 bucket name to save time of firewall manual initial configuration.
+
+
 7a.2 Launch and Associate More
 #################################
 
