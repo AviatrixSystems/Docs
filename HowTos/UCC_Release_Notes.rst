@@ -2,12 +2,13 @@
 Release Notes
 =======================================
 
-R4.7.450 (coming soon, a patch release of 4.7)
+R4.7.473 (a patch release of 4.7)
 ================================================
 
- - **Palo Alto VM-Series Bootstrap function support** allows firewall instance to retrieve initial VM-Series configuration and policies stored in S3 bucket. 
- - **Palo Alto VM-Series Panorama integration** allows firewall instances to be managed by Panorama. 
- - **EIP Allocation for Transit Gateway** allows a Transit Gateway to be associated with an already allocated EIP. 
+ - **Palo Alto VM-Series Bootstrap function support** allows firewall instance to retrieve initial VM-Series configuration and policies stored in S3 bucket. The use case is to improve automation by allowing the VM-Series to load the initial policy configuration. For more information, refer to `VM-Series Bootstrap integration. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#example-configuration-for-bootstrap>`_
+ - **Palo Alto VM-Series Panorama integration** allows firewall instances to be managed by Panorama. The use case is to have Panorama to centrally manage all firewall deployment both on-prem and in the cloud. For more information, refer to `Panorama integration. <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
+ - **EIP Allocation for Transit Gateway** allows a Transit Gateway to be associated with an already allocated EIP. The use case is to manage the Aviatrix gateway EIP the same way you would manage your EC2 deployment EIPs, as they are all in the same pool. 
+ - **Insane Mode Gateway Resizing** allows you to resize Insane Mode gateway after it is launched. This provides the flexibility of to manage instance cost when running Insane Mode. 
 
 R4.7.419 (Patch release of 4.7 on 6/24/2019)
 ===============================================
