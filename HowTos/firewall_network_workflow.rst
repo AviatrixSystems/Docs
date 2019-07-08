@@ -260,8 +260,6 @@ This step is optional, if firewall is managed by Panorama, this step can be omit
 
 .. important::
 
-  Only PAN bundle 2 works with Panorama.
-
   For Panorama managed firewalls, You need to prepare panorama first then launch firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply one time "commit and push" from Panorama console to sync firewall instance and Panorama.
 
 .. Tip::
