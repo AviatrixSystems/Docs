@@ -205,7 +205,7 @@ In S3, at top level create bucket for bootstrap, give it a name, for example "pa
 
 ::
 
-    panvm_bucket/
+    panvm-bucket/
       config/
         init-cfg.txt
         bootstrap.xml(Optional)
