@@ -14,7 +14,7 @@ Aviatrix is a cloud native networking company. Unlike any other networking vendo
 our software understands the cloud provider's native construct. This allows us to program the native constructs and integrate them into our software
 to provide you turn key solutions. 
 
-|aviatrix_backbone|
+|FullMesh_overview|
 
 We focus on solving networking problems in use cases relevant to public clouds. 
 These use cases are shown as below: 
@@ -233,6 +233,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 50%
 
 .. |aviatrix_backbone| image:: aviatrix_overview_media/aviatrix_backbone.png
+   :scale: 30%
+
+.. |FullMesh_overview| image:: aviatrix_overview_media/FullMesh_overview.png
    :scale: 30%
 
 .. |image1| image:: AviatrixCloudControllerStartupGuide_media/image002.png
