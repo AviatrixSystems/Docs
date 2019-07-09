@@ -1,5 +1,13 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+1.10.16 - Jul 9 2019
+ - Security fix for backend communication
+ - Fixed Windows log rotation errors
+ - Added an option to hide connnection window
+ - Added an option to hide notifications
+ - Fixed Mac dnsResponder not restarting to remove cached DNS
+ - Updated bundled tap driver
+
 
 1.9 - Oct 18 2018
  - Mac - Add an option to override manually set DNS
@@ -10,6 +18,7 @@ Aviatrix VPN Client Changelog
  - Windows - Install tap driver on silent install
  - Alert if localhost.aviatrix.com does not resolve to 127.0.0.1 (Eg: DD-WRT)
  - Handle private DNS/Full tunnel disconnects better
+
 
 1.8 - Jun 22 2018
  - Windows VPN Service to run the client without Admin access
