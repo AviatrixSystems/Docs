@@ -236,7 +236,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 30%
 
 .. |FullMesh_overview| image:: aviatrix_overview_media/FullMesh_overview.png
-   :scale: 30%
+   :scale: 50%
 
 .. |image1| image:: AviatrixCloudControllerStartupGuide_media/image002.png
    :width: 4.80625in
