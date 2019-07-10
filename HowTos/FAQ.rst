@@ -351,6 +351,11 @@ Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select 
 Is Aviatrix FIPS 140-2 compliant?
 ----------------------------------
 
+Yes. Aviatrix has achieved FIPS 140-2 compliant status with certificate number `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_ as listed at NIST site. 
+
+What are the FIPS 140-2 compliant algorithms?
+------------------------------------------------
+
 FIPS 140-2 approved crypto functions can be found in `this link. <https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402annexa.pdf>`_. According to this document, the following algorithms that are supported on Aviatrix are FIPS 140-2 compliant. 
 
 =======================      ==========
@@ -393,7 +398,18 @@ For automation, you can reference our `python script on github repository. <http
 
 Starting Release 4.2, Aviatrix gateway EBS volume can be encrypted from the Controller console. 
 
+How to launch the Controller by Terraform?
+---------------------------------------------
+
+Terraform for Controller launch is supported as a community project on github on `this Aviatrix repo. <https://github.com/AviatrixSystems/terraform-modules>`_
+
+Do you have the CloudFormation source code for launch the Controller?
+-------------------------------------------------------------------------
+
+Yes, the source repository for Controller launch can be found on github at `here. <https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates>`_
+
 OpenVPN is a registered trademark of OpenVPN Inc.
+
 
 
 .. |image1| image:: FAQ_media/image1.png
