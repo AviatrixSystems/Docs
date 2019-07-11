@@ -276,7 +276,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 .. |image3-2| image:: Controller_Login_SAML_media/image3-2.png
 
-.. |image3-5| image:: Controller_Login_SAML_media/image1.png
+.. |image3-5| image:: Controller_Login_SAML_media/image3-5.png
 
 .. |image3-6| image:: Controller_Login_SAML_media/image3-6.png
 
