@@ -319,7 +319,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.png
 
-.. |image3-2| image:: SS:_VPN_SAML_media/image3-2.png
+.. |image3-2| image:: SSL_VPN_SAML_media/image3-2.png
 
 .. |image3-6| image:: SSL_VPN_SAML_media/image3-6.png
 
