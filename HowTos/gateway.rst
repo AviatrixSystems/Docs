@@ -432,9 +432,9 @@ To configure:
 
 Click **Disable** to remove all excluding instance ID(s).
 
-Gateway status
+Gateway State
 --------------
-Gateway status is dictated by the following factors.
+Gateway state is dictated by the following factors.
 
 -  State of the gateway as reported by the cloud provider.
 -  Connectivity between Controller and gateway over HTTPS (TCP port 443).
@@ -452,7 +452,7 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 -  Gateway instance (VM) is not in running state.
 -  Critical services are down on the gateway.
 
-**KEEPALIVE-FAIL**: Controller did not receive expected number of keepalive messages from the gateway during a health check.
+**CHECK**: Controller did not receive expected number of keepalive messages from the gateway during a health check. This is usually caused by the controller security group port 443 not being open to the gateway's EIP.
 
 **UPGRADE-FAIL**: Gateway could not be upgraded due to some failure encountered during upgrade process. To upgrade the gateway again, go to the section "FORCE UPGRADE" which can be found here.
 
