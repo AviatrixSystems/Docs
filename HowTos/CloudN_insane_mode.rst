@@ -16,7 +16,7 @@ Step 1. Deployment  Architecture
 
 The first step is to understand how routing works in this use case, as demonstrated in the diagram below.
 
-|insane_mode_howto|. 
+|insane_mode_howto| 
 
 The key ideas for this scenario are:
 
@@ -48,7 +48,7 @@ Step 2. Pre-deployment Request Form
 ------------------------------------
 
 After you understand the deployment architecture and decide to move forward for this deployment, the next step is to fill the `CloudN
-Appliance Request Form. <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_.   
+Appliance Request Form. <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_   
 
 Aviatrix support team configures CloudN appliance based on your input in the Request Form, then 
 ship the appliance.  Deployment topology for Aviatrix CloudN is as follows:
@@ -157,6 +157,9 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
    :scale: 30%
 
 .. |insane_mode_howto| image:: insane_mode_media/insane_mode_howto.png
+   :scale: 30%
+
+.. |InsaneBeta| image:: insane_mode_media/InsaneBeta.png
    :scale: 30%
 
 .. disqus::
