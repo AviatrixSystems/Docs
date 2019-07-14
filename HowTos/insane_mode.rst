@@ -4,7 +4,7 @@
 
 
 ===============================================
-High Performance Transit Network - Insane Mode
+Insane Mode Encryption FAQ
 ===============================================
 
 This document discusses Aviatrix High Performance Transit Network and answers related questions.
@@ -38,8 +38,8 @@ CPU core, regardless how many CPU cores and memory you provide.
 This is true not only for IPSEC, but also for all tunneling protocols, such as GRE and IPIP.
 
 
-Aviatrix high performance Insane Mode Encryption
---------------------------------------------------
+What is Aviatrix high performance Insane Mode Encryption?
+-----------------------------------------------------------
 
 Aviatrix Insane Mode tunneling techniques establishes multiple tunnels between the two virtual routers, thus allowing
 all CPU cores to be used for performance scaling with the CPU resources, as shown below. 
@@ -59,7 +59,7 @@ What are the use cases for Insane Mode?
 How can I deploy Aviatrix Insane Mode?
 ----------------------------------------
 
-Aviatrix Insane mode is integrated into the Transit Network solution to provide 10Gbps performance between on-prem and Transit VPC with encryption. For VPC to VPC, Insane mode can achieve 20Gbps. 
+Aviatrix Insane mode is integrated into the Transit Network solution to provide 10Gbps performance between on-prem and Transit VPC with encryption. For VPC to VPC, Insane mode can achieve 25 - 30Gbps. 
 
 Insane mode can also be deployed in a flat (as opposed to Transit VPC) architecture for 10Gbps encryption. 
 
@@ -67,7 +67,7 @@ The diagram below illustrates the high performance encryption between Transit VP
 
 |insane_transit|
 
-Instance sizes and IPSEC Performance 
+What are the performance benchmarks? 
 ---------------------------------------------
 
 Insane mode is available on AWS for C5 series and C5n series. For more performance test results and how to
@@ -96,8 +96,8 @@ where EC2 instances associated route entry to the remote site point to Aviatrix 
 
 |insane_routing|
 
-Aviatrix hardware appliance
-------------------------------------------
+What is the Aviatrix hardware appliance CloudN?
+--------------------------------------------------
 
 Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacenter. It works with the Aviatrix gateway.
 
