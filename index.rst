@@ -92,11 +92,12 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_gateway_peering
    HowTos/tgw_csr_migrate
    HowTos/transitgw_external
-   HowTos/insane_mode
-   HowTos/insane_mode_perf
    HowTos/transitvpc_workflow
    HowTos/transitvpc_faq
-   HowTos/transitvpc_designs
+   HowTos/transitvpc_design
+   HowTos/insane_mode
+   HowTos/CloudN_insane_mode
+   HowTos/insane_mode_perf
 
 .. _Transit Network:
 

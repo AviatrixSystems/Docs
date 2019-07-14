@@ -132,62 +132,12 @@ A logical deployment layout is described as below.
 
 |datacenter_layout|
 
-Reference Deployment Diagrams
-----------------------------------
-
-Single Aviatrix CloudN Appliance 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|deployment|
-
-And the sample configuration on an ISR is as follows.
-
-|ISR-sample-config|
-
-Aviatrix CloudN Appliance with HA
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|deployment_ha|
-
-Redundant DX Deployment 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|deployment_dual_dx|
-
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
 
 At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ select "Insane Mode Encryption". 
 
-Pre-deployment Check List
-----------------------------
-
-Aviatrix support team configures and updates the software before shipping the appliance. 
-Deployment topology for Aviatrix CloudN is as follows:
-
-|InsaneBeta|
-
-Please collect information requested below and provide to Aviatrix. Click the link `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_ to download the application form.
-
-=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
-CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
-=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
-1- WAN                                                  Not Required     Not Required        Not Required
-2- LAN                                                  Not Required     Not Required        Not Required
-3- MGMT                                                                                                             Management port for CloudN configuration and software upgrade
-4- HPE iLO (optional)                                                    Not Required        Not Required           HP Integrated Lights-Out
-=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
-
-Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
-
-Internet Access
-------------------
-CloudN appliance does not require public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
-
-BGP Requirement
-------------------
-BGP is required between LAN port of the appliance and the on-prem router for route propagation.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
