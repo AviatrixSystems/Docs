@@ -4,7 +4,7 @@
 
 
 ===============================================
-Insane Mode for Hybrid Configuration Checklist
+Insane Mode CloudN Deployment Checklist
 ===============================================
 
 When Insane Mode is applied to improve encryption performance between on-prem and cloud, you need to deploy Aviatrix hardware appliance CloudN. Making this use case work requires edge router configurations. This document lists the checklist you should follow in 
@@ -42,13 +42,13 @@ Redundant DX Deployment
 
 |deployment_dual_dx|
 
-Step 2. Pre-deployment Check List
------------------------------------
+Step 2. Pre-deployment Request Form 
+------------------------------------
 
 After you understand the deployment architecture and decide to move forward for this deployment, the next step is to fill the `CloudN
 Appliance Request Form. <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_.   
 
-Aviatrix support team configures CloudN appliance based your input in the Request Form, then package the hardware and 
+Aviatrix support team configures CloudN appliance based on your input in the Request Form, then 
 ship the appliance.  Deployment topology for Aviatrix CloudN is as follows:
 
 |InsaneBeta|
@@ -73,7 +73,7 @@ CloudN appliance does not require public IP address, but the management port req
 ~~~~~~~~~~~~~~~~~~~~~~~
 BGP is required between LAN port of the appliance and the on-prem router for route propagation.
 
-Step 3. Configuration Check List
+Step 3. Deployment Check List
 -----------------------------------
 
 3.1 Before Powering Up CloudN
@@ -81,7 +81,7 @@ Step 3. Configuration Check List
 Before powering up CloudN, make sure 
  
  a. CloudN WAN cable, LAN cable and Management cable are properly plugged in to ASR and switches.
- #. Check the interface of ASR to CloudN WAN interface, make sure Proxy ARP is enabled. 
+ #. Check the interface of ASR to CloudN WAN interface, make sure Proxy ARP is enabled (ip proxy-arp). 
  #. ASR DX (Direct Connect) interface should only advertise CloudN WAN interface subnet network to VGW
  #. ASR LAN (Datacenter facing) interface does not advertise Transit VPC CIDR to datacenter.
  #. ASR to CloudN LAN interface advertises datacenter networks.
@@ -114,8 +114,13 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
  #. CloudN Neighbor IP Address is the ASR to CloudN LAN interface IP address
  #. After configuration, download the configure file and import to CloudN.
  #. If there is HA, import to CloudN HA.
- #. Check on CloudN,  Site2Cloud tunnel up. BGP learned routes.
- #. Check on Controller, site2cloud and BGP status.
+
+3.5 Troubleshooting Tips
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ a. Check on CloudN Console. Go to Site2Cloud, make sure the tunnel is up. 
+ #. Check on CloudN Console, Go to Troubleshoot -> Diagnostics -> BGP, make sure tunnel is up. Check BGP learned routes.
+ #. Check on Controller. Go to Controller -> Site2Cloud, , site2cloud and BGP status.
  
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
