@@ -100,7 +100,7 @@ After you power up CloudN, first test the CloudN interfaces are alive and connec
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  a. Login to the CloudN console. Open a browser console and type: https://CloudN_Mgmt_IP_Address
- #. Login with username "admin" and password "the Aviatrix 123!" (You can change the password later)
+ #. Login with username "admin" and password "Aviatrix 123#" (You can change the password later)
  #. Upgrade CloudN to the latest.
 
 3.4 Configure Insane Moode
