@@ -117,7 +117,7 @@ PCIe                     3.0
 
 More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-proliant-dl360-gen10-server.1010007891.html>`_
 
-How to deploy Aviatrix hardware appliance?
+What is the deployment logical diagram?
 -------------------------------------------
 
 Datacenter deployment is shown in the diagram below with redundancy, where R1 and R2 are two edge routers that connect to VGW over 
@@ -131,6 +131,11 @@ run a BGP session to propagate on-prem routes to the Transit VPC. IPSEC tunnels 
 A logical deployment layout is described as below. 
 
 |datacenter_layout|
+
+How to deploy Insane Mode for hybrid connectivity?
+----------------------------------------------------
+
+Follow the `Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_ to deploy CloudN in your datacenter. 
 
 
 How to configure Insane Mode for Transit VPC?
