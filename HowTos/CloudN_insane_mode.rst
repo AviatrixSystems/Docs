@@ -14,17 +14,19 @@ successfully deploying Insane Mode for hybrid connection.
 Step 1. Deployment  Architecture 
 ---------------------------------------
 
-The first step is to understand how routing works in this use case. 
+The first step is to understand how routing works in this use case, as demonstrated in the diagram below.
+
+|insane_mode_howto|. 
 
 The key ideas for this scenario are:
 
  -  The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertise CloudN WAN subnet network and VGW advertises the Transit VPC CIDR.
  -  CloudN runs a BGP session to Aviatrix Transit Gateway where Aviatrix Transit Gateway advertises all Spoke VPC CIDRs and CloudN advertises on-prem network. 
 
-Below are the common deployment diagrams. 
+Following are a few common deployment architecture. 
 
 Single Aviatrix CloudN Appliance 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |deployment|
 
@@ -154,12 +156,7 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
 .. |insane_routing| image:: insane_mode_media/insane_routing.png
    :scale: 30%
 
-.. |image1| image:: transitvpc_designs_media/multiRegions.png
-   :width: 5.55625in
-   :height: 3.265480in
-
-.. |InsaneBeta| image:: insane_mode_media/InsaneBeta.png
-   :width: 5.55625in
-   :height: 3.265480in
+.. |insane_mode_howto| image:: insane_mode_media/insane_mode_howto.png
+   :scale: 30%
 
 .. disqus::
