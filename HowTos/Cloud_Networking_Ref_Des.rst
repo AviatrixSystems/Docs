@@ -166,6 +166,9 @@ different VPC.
 
 |image1|
 
+In this example, Aviatrix encrypted peering is used for connecting to remote VPCs. You can also use AWS peering to 
+to accomplish the task. 
+
 Assume you have created 4 VPCs. You like to use the VPC with CIDR
 172.31.0.0/16 in us-west-2 to host gateways where users connect to.
 After a user connects to this VPC via SSL VPN, she should be able to
@@ -317,19 +320,17 @@ VPC ID and its region for the VPC ID field and region in each step.
 
     #. Enable Policy Based Routing (PBR) is selected.
 
-      |       i.  Note PBR Subnet must be a subnet that is in the same AZ as
+            i.  Note PBR Subnet must be a subnet that is in the same AZ as
                  the primary subnet (Public Subnet where the gateway is
                  launched). Enter the AWS subnet default gateway for PBR
                  Default Gateway field. For example, if PBR Subnet is
                  172.31.48.0/20, the default Gateway field is 172.31.48.1.
-      |
-      |       ii. (optionally) you can enable NAT Translation Logging to log
+      
+            ii. (optionally) you can enable NAT Translation Logging to log
                  every user’s each activity to every server and site. This is
                  useful to auditing and compliance.
-|
-|     i. Save Template is selected. This Template saves you from entering
-       repeated fields if you wish to create more gateways with the same
-       configuration.
+
+            iii. Save Template is selected. This Template saves you from entering repeated fields if you wish to create more gateways with the same configuration.
 
 2.  Repeat Step 1 to create more gateways with VPN enabled. You may
     select different AZs for the Public Subnet field.
@@ -379,6 +380,20 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 8. Done
 
+Use AWS Transit Gateway to Access Multiple VPCs in One Region
+==============================================================
+
+You can use AWS Transit Gateway (TGW) allow remote users to connect to multiple VPCs in the same region, as shown below.
+
+|vpn_with_tgw_one_region|
+
+User VPN Solution for Multi Cloud
+====================================
+
+With Avitrix multi cloud support, you can build a global VPN solution that spans to multi cloud. 
+
+|vpn_tgw_multi_cloud|
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
@@ -393,5 +408,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :width: 3.81875in
    :height: 2.80898in
 
+.. |vpn_with_tgw_one_region| image:: Cloud_Networking_Ref_Des_media/vpn_with_tgw_one_region.png
+   :scale: 30%
+.. |vpn_tgw_multi_cloud| image:: Cloud_Networking_Ref_Des_media/vpn_tgw_multi_cloud.png
+   :scale: 30%
 
 .. disqus::
