@@ -2,7 +2,15 @@
 Release Notes
 =======================================
 
-R4.7.473 (a patch release of 4.7)
+R4.7.494
+================
+
+ - **Spoke VPC Gateway Attach Behavior** is modified such that when a spoke gateway is attached to the Aviatrix Transit GW, RFC 1918 routes are programmed. Conversely when a Spoke VPC gateway is detached from the Aviatrix Transit GW, all learned routes are deleted. Such behavior change simplifies migration process from Aviatrix Encrypted Transit architecture to AWS Transit Gateway (TGW) based transit architecture. Backward compatibility is ensured.
+ - **Azure Gateway Launch** no longer creates a new resource, instead it now re-uses VNET resource. The use case is customers already created a resource group when creating a VNET. 
+ - **Add Aviatrix Tag for Cross Account VPC Attachment** allows you to identify in the TGW route table Aviatrix attachment resource when the Spoke VPC is in a different AWS account.  
+ - Bug fix that removes the unnecessary restarts of BGP process after software upgrades.  
+
+R4.7.473 
 ================================================
 
  - **Palo Alto VM-Series Bootstrap function support** allows firewall instance to retrieve initial VM-Series configuration and policies stored in S3 bucket. The use case is to improve automation by allowing the VM-Series to load the initial policy configuration. For more information, refer to `VM-Series Bootstrap integration. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#example-configuration-for-bootstrap>`_
@@ -10,7 +18,7 @@ R4.7.473 (a patch release of 4.7)
  - **EIP Allocation for Transit Gateway** allows a Transit Gateway to be associated with an already allocated EIP. The use case is to manage the Aviatrix gateway EIP the same way you would manage your EC2 deployment EIPs, as they are all in the same pool. 
  - **Insane Mode Gateway Resizing** allows you to resize Insane Mode gateway after it is launched. This provides the flexibility of to manage instance cost when running Insane Mode. 
 
-R4.7.419 (Patch release of 4.7 on 6/24/2019)
+R4.7.419 
 ===============================================
 
  - bug fix for "Customize Spoke VPC advertising CIDR".
