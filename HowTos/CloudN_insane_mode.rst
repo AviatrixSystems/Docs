@@ -97,7 +97,7 @@ Before powering up CloudN, make sure
 After you power up CloudN, first test the CloudN interfaces are alive and connected properly by doing the following tests.  
 
  a. From ASR,  ping CloudN LAN interface, WAN interface and Mgmt interface.
- #. CloudN mgmt interface can ping Internet (From CloudN UI console?)
+ #. CloudN mgmt interface can ping Internet (From CloudN clish console)
 
 3.3 Upgrade CloudN to the Latest Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,6 +123,7 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
 
  a. Check on CloudN Console. Go to Site2Cloud, make sure the tunnel is up. 
  #. Check on CloudN Console, Go to Troubleshoot -> Diagnostics -> BGP, make sure tunnel is up. Check BGP learned routes.
+ #. Check on Controller. Go to Transit Network -> Advanced Config -> BGP, make sure BGP is learning routes. Also Diagnostics to execute BGP commands.
  #. Check on Controller. Go to Controller -> Site2Cloud, , site2cloud and BGP status.
  
 
