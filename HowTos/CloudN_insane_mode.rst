@@ -20,8 +20,9 @@ The first step is to understand how routing works in this use case, as demonstra
 
 The key ideas for this scenario are:
 
- -  The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertise CloudN WAN subnet network and VGW advertises the Transit VPC CIDR.
- -  CloudN runs a BGP session to Aviatrix Transit Gateway where Aviatrix Transit Gateway advertises all Spoke VPC CIDRs and CloudN advertises on-prem network. 
+ -  The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertises CloudN WAN subnet network and VGW advertises the Transit VPC CIDR.
+ -  CloudN LAN interface runs a BGP session to the edge router where the edge router advertises on-prem network address range to CloudN LAN interface.
+ -  CloudN WAN interface runs a BGP session to Aviatrix Transit Gateway in the Transit VPC where Aviatrix Transit Gateway advertises all Spoke VPC CIDRs to CloudN and CloudN advertises on-prem network to the Aviatrix Transit Gateway. 
 
 Following are a few common deployment architecture. 
 
