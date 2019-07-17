@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
   :description: Cloud Networking Ref Design
   :keywords: cloud networking, aviatrix, Openvpn, SSL vpn, remote vpn, client vpn 
 
@@ -100,8 +100,8 @@ Create VPN Users
 ################
 
 1. Click `+ Add New`
-#. Select the `VPC ID` where this user should be attached.  The associated load balancer will appear in the `LB/Gateweay Name`
-#. Enter the `User Name` and `User Email`
+#. Select the `VPC ID` where this user should be attached.  The associated load balancer will appear in the `LB/Gateway Name`
+#. Enter the `User Name` and `User Email`. The User Name must match the user name of your DUO account. The User Email is optional.
 #. Click `OK`
 
    .. note::
