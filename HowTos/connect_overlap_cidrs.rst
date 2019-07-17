@@ -13,9 +13,12 @@ The Scenario
 ------------------
 
 This tech note illustrates an example solution to a specific use case. In this use case, customer needs to connect certain 
-on-prem hosts (or subnets) to some EC2 instances in a VPC over an IPSEC tunnel over Internet, but 
+on-prem hosts to certain EC2 instances in a VPC over an IPSEC tunnel over Internet, but 
 the on-prem network range overlaps with
-the VPC CIDR range, and the requirement from the customer is that no NAT function will be performed on the customer side. 
+the VPC CIDR range, and the requirement from the customer is that no NAT function will be performed on the customer side. In addition, traffic can be
+initiated from either side. 
+
+Note this solution works for specific hosts and EC2 instances on each side. 
 
 The scenario is described in the following diagram, where VPC-2 represents a on-prem environment.
 
@@ -32,13 +35,13 @@ The Solution
 
 The solution is to build a site2cloud IPSEC tunnel between VPC-1 and VPC-2 and apply both source NAT (SNAT) and destination NAT (DNAT) on VPC-1 gateway. The packet flow is demonstrated as below: 
 
- 1. instance-1 sends a packet to instance-2 with virtual destination IP address, say it is 172.16.0.43. From instance-1's point of view, the destination instance is 172.16.0.43.
- #. When the packet arrives at the VPC-1 gateway, the gateway does DNAT on the packet to translate the virtual destination IP address to 10.17.7.81 which is the instance-2 IP address.
+ 1. instance-1 sends a packet to instance-2 with virtual destination IP address, say it is 172.16.0.43. From instance-1's point of view, the destination instance is a virtual address 172.16.0.43.
+ #. When the packet arrives at the VPC-1 gateway, the gateway does DNAT on the packet to translate the virtual destination IP address to 10.17.7.81 which is the instance-2 physical IP address.
  #. The gateway at VPC-1 then translates the packet source IP address (10.17.4.179) to a virtual source IP address, say it is 192.168.0.43.
- #. The packet then arrives at VPC-2 with destination IP address 10.17.7.81 and source IP address 192.168.0.43. From instance-2's point of view, instance-1's address is 192.168.0.43.
- #. When instance-2 sends a packet to instance-1, the destination is 192.168.0.43. 
- #.  When the packet arrives at the VPC-1 gateway over the IPSEC tunnel, VPC-1 gateway translates its destination IP address from 192.168.0.43 to 10.17.4.179. 
- #. The VPC-1 gateway then translates the source IP address of the packet from 10.17.7.81 to 172.16.0.43.
+ #. The packet then arrives at VPC-2 with destination IP address 10.17.7.81 and source IP address 192.168.0.43. From instance-2's point of view, instance-1's address is a virtual IP address 192.168.0.43.
+ #. When instance-2 sends a packet to instance-1, the destination is the virtual IP address 192.168.0.43. 
+ #.  When the packet arrives at the VPC-1 gateway over the IPSEC tunnel, VPC-1 gateway translates its destination IP address from a virtual address 192.168.0.43 to 10.17.4.179. 
+ #. The VPC-1 gateway then translates the source IP address of the packet from 10.17.7.81 to virtual address 172.16.0.43.
 
 
 The Configuration Steps
