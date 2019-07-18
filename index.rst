@@ -68,7 +68,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/CompanionGateway
    HowTos/Quick_Tour
    HowTos/accesskey
-
+   HowTos/account_audit
 
 .. _Gateway:
 
