@@ -90,6 +90,7 @@ Before powering up CloudN, make sure
  #. ASR to CloudN LAN interface advertises datacenter networks.
  #. VGW is attached to the Transit VPC. 
  #. AWS Transit VPC Route Propagation is enabled. 
+ #. If there is an edge firewall in front of the edge router, make sure the firewall opens UDP port 500 and UDP port 4500 for traffic from the CloudN WAN Interface. CloudN builds an IPSEC tunnel between CloudN WAN interface and Aviatrix Transit Gateway. BGP session between the two interfaces are inside the tunnel. 
 
 3.2 Power up CloudN
 ~~~~~~~~~~~~~~~~~~~~~~~
