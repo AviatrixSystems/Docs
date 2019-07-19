@@ -51,6 +51,9 @@ This document summarizes 10 operation services provided by Aviatrix solution.
  - **Gateway Status** Gateway health is monitored. If a gateway is unreachable, the gateway is restarted for recovery.
  - **IAM Roles & Policies** Account IAM Roles and Policies are monitored to make sure they are attached to the accounts and the policies are correct. If anomaly is detected, the event is logged and alerted. 
  - **AWS Transit Gateway (TGW) Orchestrator Audit** Aviatrix Controller periodically checks the consistency between what you intend to configure on Security Domains and Connection Policies and what is reflected on AWS TGW route tables. If discrepancy is discovered, the event is logged and alerted.
+ - **BGP Route Conflict Monitoring** All network routes are monitored and whenever Controller detects conflicting routes, it logs the event and sends email alerts to the admin user and Aviatrix support team.
+ - **Account Audit** Controllers audits periodically all access accounts it manages to make sure there is no accidental deletion of IAM roles and policies. When Controller detects errors it logs the event and sends email alert to the admin user and Aviatrix support team. 
+ - **Gateway Disk/Memory Monitor** When Aviatrix gateway disk/memory reaches 95%, Controller logs the event and sends email alert to the admin user and Aviatrix support team.
  - **VPC Tracker** Instead of using an Excel sheet, use this tool to keep track all your network CIDRs and prevent duplicate network address ranges. 
  - **Alert Bell** Controller monitors the route table black hole, stopped instance, etc and displays a warning on the alert bell. 
 
