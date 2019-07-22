@@ -33,7 +33,7 @@ The key solution steps are:
  1. Allocate two 1-1 mapped corresponding virtual address spaces for on-prem network and spoke-VPC. For example, allocate the virtual network 100.105.0.0/15 on-prem network, and 100.101.0.0/16 for the spoke-VPC virtual VPC CIDR. These two virtual address spaces must not overlap with any on-prem nor cloud address spaces. 
  #. Launch an Aviatrix gateway in the spoke-vpc.
  #. Builds an IPSEC tunnel between spoke-vpc and VGW: 
-        a. Go to AWS Console for VPC service. Use the same VGW that is used for Aviatrix Transit solution to create an IPSEC tunnel to spoke-vpc with static routes 100.101.0.0/16 configured, as shown below
+        a. Go to AWS Console for VPC service. Use the same VGW that is used for Aviatrix Transit solution to create an IPSEC tunnel to spoke-vpc with static routes 100.101.0.0/16 configured, as shown below. Then download the VPN configuration file.
 
    |vgw_config| 
 
