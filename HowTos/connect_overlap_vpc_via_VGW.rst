@@ -37,7 +37,7 @@ The key solution steps are:
 
    |vgw_config| 
 
-	#. On the spoke-vpc side, go to Controller console, Site2Cloud, add new. Make sure the remote subnet list include 10.20.0.0/16 and 100.105.0.0/16. The local subnet is 100.101.0.0/16, the virtual address of the spoke-VPC, as shown in the screenshot below.
+	b. On the spoke-vpc side, go to Controller console, Site2Cloud, add new. Make sure the remote subnet list include 10.20.0.0/16 and 100.105.0.0/16. The local subnet is 100.101.0.0/16, the virtual address of the spoke-VPC, as shown in the screenshot below.
 
    |site2cloud|
 
