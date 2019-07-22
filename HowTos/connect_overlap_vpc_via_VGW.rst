@@ -43,13 +43,13 @@ The key solution steps are:
 
  4. Performs both SNAT and DNAT functions on the Aviatrix gateway: 
         a. Go to Controller console, click Gateway. Select the Aviatrix gateway for spoke-vpc. Click Edit, and scroll down to find Destination NAT .
-	#. Translates the cloud virtual destination address to its real address for each instance in the VPC.
-        #. Mark the session with a number that is easy to remember. In this example, it is 119.
-        #. Scroll up to find Source NAT. Translate the marked session to any on-prem virtual source address, as shown in the screenshot below. 
+	b. Translates the cloud virtual destination address to its real address for each instance in the VPC.
+        c. Mark the session with a number that is easy to remember. In this example, it is 119.
+        d. Scroll up to find Source NAT. Translate the marked session to any on-prem virtual source address, as shown in the screenshot below. 
  
      |nat_config| 
 
-       #. Repeat the NAT configuration for each cloud instance. 
+       e. Repeat the NAT configuration for each cloud instance. 
  #. Done
 
 Since VGW runs a BGP session to on-prem for normal Transit network, the spoke-vpc virtual CIDR 100.101.0.0/16 should be propagated to on-prem. From on-prem, the destination IP address takes the range 100.101.0.0/16.
