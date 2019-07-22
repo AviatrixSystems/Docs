@@ -41,7 +41,7 @@ The key solution steps are:
 
    |site2cloud|
 
- #. Performs both SNAT and DNAT functions on the Aviatrix gateway: 
+ 4. Performs both SNAT and DNAT functions on the Aviatrix gateway: 
         a. Go to Controller console, click Gateway. Select the Aviatrix gateway for spoke-vpc. Click Edit, and scroll down to find Destination NAT .
 	#. Translates the cloud virtual destination address to its real address for each instance in the VPC.
         #. Mark the session with a number that is easy to remember. In this example, it is 119.
