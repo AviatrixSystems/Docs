@@ -6,7 +6,7 @@
 
 
 ===========================================================================================
-Connect Overlap VPC to On-prem  
+Connect Overlapping VPC to On-prem  
 ===========================================================================================
 
 The Problem 
@@ -58,13 +58,13 @@ Since VGW runs a BGP session to on-prem for normal Transit network, the spoke-vp
    :scale: 30%
 
 .. |vgw_config| image:: connect_overlap_vpc_via_VGW_medium/vgw_config.png
-   :scale: 50%
+   :scale: 30%
 
    
 .. |site2cloud| image:: connect_overlap_vpc_via_VGW_medium/site2cloud.png
-   :scale: 50%
+   :scale: 30%
 
 .. |nat_config| image:: connect_overlap_vpc_via_VGW_medium/nat_config.png
-   :scale: 50%
+   :scale: 30%
 
 .. disqus::    
