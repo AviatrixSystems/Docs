@@ -6,6 +6,29 @@ Field Notices
 
  This field notice is provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+
+Field Notice 0005 (2019/07/22)
+--------------------------------
+
+**Aviatrix VPN Client Connection Issues with SAML authentication**
+
+Problem: Due to unforeseen circumstances, one of our certificates was revoked, breaking the Aviatrix VPN Client functionality with SAML authentication method
+
+Workaround: Customers who are not using SAML for user authentication are not impacted and continue to use Aviatrix VPN Client or any OpenVPN compatible VPN clients such as Tunnelblick.
+
+Solution: Please download the latest Aviatrix VPN Client from https://docs.aviatrix.com/Downloads/samlclient.html#development-version (version 2.0.3 or higher). Please trust the certificate.
+   - Mac/Safari: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Show Details, Visit the Website, Visit Website, Password, Update Settings
+   - Mac/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
+   - Win/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
+   - Win/Firefox: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Accept the Risk and Continue
+
+If you continue to have issues, please clear your browser cache and restart your browser (https://support.google.com/chrome/answer/2392709, https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox)
+
+If you can upgrade to the latest Controller release (4.7.498 or higher), then your remote VPN users will not have to go through the extra step of trusting the certificate after upgrading their Aviatrix VPN Client.
+
+
+
+
 Field Notice 0004 (2019/2/6)
 --------------------------------
 
