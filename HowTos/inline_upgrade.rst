@@ -62,9 +62,10 @@ Upgrade impact on OpenVPN® users
 
 Most upgrades do not impact connected OpenVPN® users. In some cases, OpenVPN® service needs to be restarted as part of software upgrade, for example, upgrade to a new SSL version for security patch. In these cases, connected OpenVPN® users will be disconnected and will need to connect again.
 
+Upgrading from release 4.3 and up will not result in openvpn restart - so existing openvpn connections will not be dropped
+
 When a release affects OpenVPN® users, the Release Note will make a note of it.
 Make sure you read Release Notes before applying an upgrade.
-
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
