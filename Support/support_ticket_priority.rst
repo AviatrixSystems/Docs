@@ -10,8 +10,12 @@ Overview
 --------
 Aviatrix offers 2 types of support plans; Standard and Platinum. Please refer to our `Official Support SLA <http://www.aviatrix.com/support/service-level-agreement.php>`_ for more information.
 
-Whenever Aviatrix customer has a technical question or issue, he/she may submit a support ticket to support@aviatrix.com or via our `Aviatrix Support Web Portal <http://aviatrix.zendesk.com>`_ . 
-
+Whenever Aviatrix customer has a technical question or issue, he/she may create a support ticket
+  - by sending an email to support@aviatrix.com, or 
+  - via our `Aviatrix Support Web Portal <http://aviatrix.zendesk.com>`_. 
+  
+   .. note::
+      | For Platinum support subscription that covers 7x24x365, please reach out to sales@aviatrix.com.
 
 Ticket Priority Guidelines
 --------------------------
