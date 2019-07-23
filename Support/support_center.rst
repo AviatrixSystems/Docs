@@ -9,14 +9,12 @@ Aviatrix Support Center
 Overview
 --------
 
-The Aviatrix Support Center goal is to be a central repository for known issues, solutions, workarounds and common design principles for our customers. Please look at our `Official Support Page <http://www.aviatrix.com/support>`_ for more information.
+The Aviatrix Support Center goal is to be a central repository for known issues, solutions, workarounds and common design principles for our customers. Please look at our `Official Support Page <http://www.aviatrix.com/support>`_ for more information. 
 
+How to create a support case
+----------------------------
 
-Tips & Tricks
--------------
-
-* Got questions for Support Team? Send an email to support@aviatrix.com. Please refer to `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_
-* Want 24x7x365 support? Reach out to sales@aviatrix.com and ask for Platinum Support!!
+Please refer to `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_.
 
 
 Topics
