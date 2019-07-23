@@ -15,11 +15,15 @@ If Aviatrix customer has a technical question or issue, he/she may submit a supp
 
 Ticket Priority Guidelines
 --------------------------
-Priority 1: Production system down (Email subject should include “P1”)
+Priority 1: Production system down (Email subject should include “P1” keyword)
 
 Priority 2: System working, degraded functionality
 
 Priority 3: General questions, requests, comments 
+
+   .. note::
+   
+      | When a Priority 1 ticket is submitted by a customer with Aviatrix Platinum support subscription, our support personnel will be paged and the ticket submitter will be contacted at our earliest availability within an hour (see `Official Support SLA <http://www.aviatrix.com/support/service-level-agreement.php>`_).
 
 
 Detailed Description
