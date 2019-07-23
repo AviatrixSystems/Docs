@@ -11,15 +11,6 @@ Overview
 
 The Aviatrix Support Center goal is to be a central repository for known issues, solutions, workarounds and common design principles for our customers. Please look at our `Official Support Page <http://www.aviatrix.com/support>`_ for more information. 
 
-Contact Aviatrix Support
-------------------------
-Aviatrix customers who need technical assistance can contact our support team
- - at support@aviatrix.com, or 
- - via our `Aviatrix Support Web Portal <http://aviatrix.zendesk.com>`_. 
-  
-Please also refer to `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_ for more details.
-
-
 Topics
 -------------
 
@@ -32,3 +23,13 @@ Topics
 - `Terraform <https://docs.aviatrix.com/Support/support_center_terraform.html>`_
 - `Security: Egress FQDN Control and Firewall <https://docs.aviatrix.com/Support/support_center_egress_firewall.html>`_
 - `IPSec <https://docs.aviatrix.com/Support/support_center_ipsec.html>`_
+
+
+Contact Aviatrix Support
+------------------------
+
+Aviatrix customers who need technical assistance can contact our support team
+ - at support@aviatrix.com, or 
+ - via our `Aviatrix Support Web Portal <http://aviatrix.zendesk.com>`_. 
+  
+Please also refer to `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_ for more details.
