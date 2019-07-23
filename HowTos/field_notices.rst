@@ -26,7 +26,7 @@ Please trust the certificate using the following instrustions:
 
 If you continue to have issues, please clear your browser cache and restart your browser (`clear cache in Google <https://support.google.com/chrome/answer/2392709>`_, `clear cache in Firefox <https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox>`_)
 
-If you can upgrade to the latest Controller release (4.7.498 or higher), then your remote VPN users will not have to go through the extra step of trusting the certificate after upgrading their Aviatrix VPN Client.
+If you can upgrade to the latest Controller release (4.7.501 or higher), then your remote VPN users will not have to go through the extra step of trusting the certificate after upgrading their Aviatrix VPN Client.
 
 
 
