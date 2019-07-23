@@ -31,15 +31,14 @@ Priority 2: System working, degraded functionality
 Priority 3: General questions, requests, comments 
 
 Detailed Description
---------------------
-
+^^^^^^^^^^^^^^^^^^^^
 **Priority 1 (Critical business impact)**
 
 * Definition: Priority 1 selection indicates that customer is unable to use the software application, resulting in a critical impact on business operations. This condition requires immediate resolution. 
 
 * Key Deliverables – Priority 1 service involves reacting to the customer’s emergency situation by immediately providing an appropriate resource. Unless another agreement is in place, Priority 1 issues will be serviced on a continual effort basis until the Priority 1 condition has been resolved. Resolution of Priority 1 conditions may include temporary relief, enabling the customer’s business to operate until a more comprehensive solution is provided. 
 
-NOTE: A Critical Situation does not automatically imply Priority 1. The problem’s associated business impact determines the priority. 
+NOTE: A critical situation does not automatically imply Priority 1. The problem’s associated business impact determines the priority. 
 
 **Priority 2 (Limited business impact)**
 
