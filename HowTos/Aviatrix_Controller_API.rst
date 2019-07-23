@@ -6,6 +6,6 @@
 Aviatrix APIs
 ===========================
 
-Click `this link <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_ for Aviatrix API documentation. 
+Click `this link <https://api.aviatrix.com/?version=latest>`_ for Aviatrix API documentation. 
 
 .. disqus::

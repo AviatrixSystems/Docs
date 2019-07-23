@@ -35,7 +35,7 @@ We also provide security features for workloads/application in the cloud:
 In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
 agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ to cloud for vmware workloads. 
 
-You can automate Aviatrix deployment by `REST APIs <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_ and `Terraform configurations <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
+You can automate Aviatrix deployment by `REST APIs <https://api.aviatrix.com/?version=latest>`_ and `Terraform configurations <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
 
 What Features Are Supported in Which Cloud?
 -----------------------------------------------
