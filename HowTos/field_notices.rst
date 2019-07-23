@@ -22,7 +22,7 @@ Solution: Please download the latest Aviatrix VPN Client from https://docs.aviat
    - Win/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
    - Win/Firefox: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Accept the Risk and Continue
 
-If you continue to have issues, please clear your browser cache and restart your browser (https://support.google.com/chrome/answer/2392709, https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox)
+If you continue to have issues, please clear your browser cache and restart your browser (`clear cache in Google <https://support.google.com/chrome/answer/2392709>`_, `clear cache in Firefox <https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox>`_)
 
 If you can upgrade to the latest Controller release (4.7.498 or higher), then your remote VPN users will not have to go through the extra step of trusting the certificate after upgrading their Aviatrix VPN Client.
 
