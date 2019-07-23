@@ -16,7 +16,7 @@ Problem: Due to unforeseen circumstances, one of our certificates was revoked, b
 
 Workaround: Customers who are not using SAML for user authentication are not impacted and continue to use Aviatrix VPN Client or any OpenVPN compatible VPN clients such as Tunnelblick.
 
-Solution: Please download the latest Aviatrix VPN Client from https://docs.aviatrix.com/Downloads/samlclient.html#development-version (version 2.0.3 or higher). Please trust the certificate.
+Solution: Please download the latest Aviatrix VPN Client from `here <https://docs.aviatrix.com/Downloads/samlclient.html#development-version>`_ (version 2.0.3 or higher). Please trust the certificate.
    - Mac/Safari: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Show Details, Visit the Website, Visit Website, Password, Update Settings
    - Mac/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
    - Win/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
