@@ -14,10 +14,10 @@ The Aviatrix Support Center goal is to be a central repository for known issues,
 Contact Aviatrix Support
 ------------------------
 Aviatrix customers who need technical assistance can contact our support team
-- at support@aviatrix.com, or 
-- via our `Aviatrix Support Web Portal <http://aviatrix.zendesk.com>`_. 
+ - at support@aviatrix.com, or 
+ - via our `Aviatrix Support Web Portal <http://aviatrix.zendesk.com>`_. 
   
-Please refer to `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_.
+Please also refer to `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_ for more details.
 
 
 Topics
