@@ -14,20 +14,22 @@ Field Notice 0005 (2019/07/22)
 
 Problem: Due to unforeseen circumstances, one of our certificates was revoked, breaking the Aviatrix VPN Client functionality with SAML authentication method. Customers who are not using SAML for user authentication are not impacted and continue to use Aviatrix VPN Client or any OpenVPN compatible VPN clients such as Tunnelblick.
 
-Solution: Please download the latest Aviatrix VPN Client from `here <https://docs.aviatrix.com/Downloads/samlclient.html>`_ (version 2.0.3 or higher). Here are the direct links: `Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`_, `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_mac.pkg>`_, `Ubuntu 16 debian <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_debian.deb>`_, `Ubuntu 16 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_linux.tar.gz>`_, `Ubuntu 14 
-debian <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_debian_Q4.deb>`_, `Ubuntu 14 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_linux_Q4.tar.gz>`_, `Ubuntu 18/17 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_linux.tar.gz>`_,  `Ubuntu 18/17 zesty <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_zesty.tar.gz>`_, `FreeBSD <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_FreeBSD.tar.gz>`_
+Recommended Solution:
 
-Please trust the certificate using the following instrustions:
+  * Upgrade Controller to the latest release (4.7.501 or higher) using these `instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_
+  * Inform your remote vpn users to upgrade their Aviatrix VPN Clients (2.0.3 or higher) from `here <https://docs.aviatrix.com/Downloads/samlclient.html>`_. Please note that Mac/Safari and Win/IE are not supported
 
- * Mac/Safari: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Show Details, Visit the Website, Visit Website, Password, Update Settings
- * Mac/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
- * Win/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
- * Win/Firefox: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Accept the Risk and Continue
+Alternate Solution: Only if you cannot upgrade Aviatrix Controller to 4.7.501 or higher.
 
-If you continue to have issues, please clear your browser cache and restart your browser (`clear cache in Google <https://support.google.com/chrome/answer/2392709>`_, `clear cache in Firefox <https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox>`_)
-
-If you can upgrade to the latest Controller release (4.7.501 or higher), then your remote VPN users will not have to go through the extra step of trusting the certificate after upgrading their Aviatrix VPN Client.
-
+  * Please have your remote vpn users upgrade their Aviatrix VPN Client (2.0.3 or higher) from `here <https://docs.aviatrix.com/Downloads/samlclient.html>`_
+  * When they start a remote VPN session, after the authention is successful they should see a message that looks like “Could not contact the VPN Client …“. Please ask your users to trust the certificate using the following instructions:
+  
+      * Mac/Safari: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Show Details, Visit the Website, Visit Website, Password, Update Settings
+      * Mac/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
+      * Win/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
+      * Win/Firefox: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Accept the Risk and Continue
+      
+  * If they continue to have issues, please have them clear their browser cache and restart their browser (`clear cache in Google <https://support.google.com/chrome/answer/2392709>`_, `clear cache in Firefox <https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox>`_)
 
 
 
