@@ -14,7 +14,10 @@ Field Notice 0005 (2019/07/22)
 
 Problem: Due to unforeseen circumstances, one of our certificates was revoked, breaking the Aviatrix VPN Client functionality with SAML authentication method. Customers who are not using SAML for user authentication are not impacted and continue to use Aviatrix VPN Client or any OpenVPN compatible VPN clients such as Tunnelblick.
 
-Solution: Please download the latest Aviatrix VPN Client from `here <https://docs.aviatrix.com/Downloads/samlclient.html#development-version>`_ (version 2.0.3 or higher). Please trust the certificate.
+Solution: Please download the latest Aviatrix VPN Client from `here <https://docs.aviatrix.com/Downloads/samlclient.html>`_ (version 2.0.3 or higher). Here are the direct links: `Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`_, `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_mac.pkg>`_, `Ubuntu 16 debian <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_debian.deb>`_, `Ubuntu 16 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_linux.tar.gz>`_, `Ubuntu 14 
+debian <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_debian_Q4.deb>`_, `Ubuntu 14 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_linux_Q4.tar.gz>`_, `Ubuntu 18/17 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_linux.tar.gz>`_,  `Ubuntu 18/17 zesty <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_zesty.tar.gz>`_, `FreeBSD <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.0.3/AVPNC_FreeBSD.tar.gz>`_
+
+Please trust the certificate.
 
  * Mac/Safari: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Show Details, Visit the Website, Visit Website, Password, Update Settings
  * Mac/Chrome: Click on Connect in the Aviatrix VPN Client, Sign into SAML/IdP, OK, Advanced, Proceed to localhost.aviatrix.com
