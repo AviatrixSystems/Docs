@@ -26,6 +26,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 Consult the VPN client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/Aviatrix+VPN+Client+User+Guide.pdf>`__ for how to use it. 
 
 Latest version: 2.0.3 - (Jul 23 2019) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Please ask your Aviatrix Administrator to upgrade the Aviatrix Controller to version 4.7.501 + to prevent seeing certificate errors -`Ref. <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_ 
 
 *************
 Windows |win|
@@ -34,7 +35,7 @@ Windows client can be download from `this link <https://s3-us-west-2.amazonaws.c
 
 At the end of the installation, please install the TUN TAP driver if you haven't done so earlier.
 
-Please note that the client uses the default browser, and Microsoft Edge is not supported
+Please note that the client uses the default browser, and Microsoft Edge/IE is not supported
 
 *********
 Mac |mac|
@@ -43,6 +44,7 @@ Mac |mac|
 Mac client can be downloaded from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__. Please make sure that you are running macOS 10.12(Sierra) or higher.
 
 If you have installed version 1.4.26 or lower please uninstall before you install the newer version
+Please note that the client uses the default browser, and Safari is not supported (will show cert warnings)
 
 ***********
 Linux |lux|
