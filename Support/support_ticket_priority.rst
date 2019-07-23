@@ -15,11 +15,9 @@ If Aviatrix customer has a technical question or issue, he/she may submit a supp
 
 Ticket Priority Guidelines
 --------------------------
-Priority 1: Production system down (Email subject should include “P1” keyword)
-
-Priority 2: System working, degraded functionality
-
-Priority 3: General questions, requests, comments 
+* Priority 1: Production system down (Email subject should include “P1” keyword)
+* Priority 2: System working, degraded functionality
+* Priority 3: General questions, requests, comments (Default priority if not specified)
 
    .. note::
    
