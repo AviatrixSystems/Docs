@@ -32,12 +32,10 @@ You may also need to click on Troubleshoot->Diagnostics->Services->Restart cloud
 
 4.Credentials were refreshed, but the refreshed credentials are still expired    
 -----------------------------------------------------------------------------------------------
-This is likely a boto issue https://github.com/boto/botocore/issues/869
+This is a boto issue https://github.com/boto/boto3/issues/1751 
 Ensure the IAM role is correct
 https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt
-You may also need to click on Troubleshoot->Diagnostics->Services->Restart cloudxd from the controller
-If that does not work, you may need to reboot your controller 
-
+You will need to detach the aviatrix-role-ec2 IAM role and re-attach it back to the Aviatrix controller instance to fix the issue
 
 5. access_key
 ----------------
