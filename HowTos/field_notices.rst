@@ -12,7 +12,7 @@ Field Notice 0005 (2019/07/22)
 
 **Aviatrix VPN Client Connection Issues with SAML authentication**
 
-Problem: Due to unforeseen circumstances, one of our certificates that we use in our Aviatrix VPN Client software became invalid, breaking the Aviatrix VPN Client functionality with SAML authentication method. Customers who are not using SAML for user authentication are not impacted and continue to use Aviatrix VPN Client or any OpenVPN compatible VPN clients such as Tunnelblick.
+Problem: Due to unforeseen circumstances, one certificate that we use in our Aviatrix VPN Client software became invalid, breaking the Aviatrix VPN Client functionality with SAML authentication method. Customers who are not using SAML for user authentication are not impacted and continue to use Aviatrix VPN Client or any OpenVPN compatible VPN clients such as Tunnelblick.
 
 Recommended Solution:
 
