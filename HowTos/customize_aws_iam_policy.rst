@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Customize AWS-IAM-Policy
    :keywords: AWS, IAM-Policy, Aviatrix
 
@@ -126,9 +126,9 @@ later in this document.
 What Permissions are Required in App Role Policy and Why
 ========================================================
 
-In the App role policy
+The App role policy
 (`example <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__),
-it has different “Actions” to allow on certain resource. Your Aviatrix
+has different “Actions” to allow on certain resources. Your Aviatrix
 controller needs those policies to function.
 
 a. ec2 – to create/delete/list/modify VPCs, Aviatrix gateways, security
@@ -147,7 +147,7 @@ d. sqs – to create/delete/list/send/get SQS and SQS messages for
 e. sns – to create/delete/list/subscribe/unsubscribe SNS and SNS topic
    for gateway HA feature
 
-f. route53 – to create/delete/list hosted zone, and change resource
+f. route53 – to create/delete/list hosted zone, and change the resource
    record for GeoVPN feature
 
 g. cloudwatch – to put/delete alarm for Aviatrix gateway HA feature
@@ -171,7 +171,7 @@ sections.
 2. Use Aviatrix Tags To Limit Resource Deleting Policy Scope
 -------------------------------------------------------------
 
-Aviatrix Controller automatically creates a tag when it creates resources, such as gateways, security groups and route entries. The tag has the syntax as follows:
+The Aviatrix Controller automatically creates a tag when it creates resources, such as gateways, security groups and route entries. The tag has the syntax as follows:
 
 :: 
 
@@ -183,7 +183,7 @@ Click `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_custo
 3. Use Condition to Allow Service Requests from Certain IP Addresses
 --------------------------------------------------------------------
 
-User can add “Condition” field to deny all requests not initiated from
+A user can add a “Condition” field to deny all requests not initiated from
 the Aviatrix Controller IP address or a range of CIDRs. The following
 policy only allows service requests from IP address 192.0.2.0/24, or
 54.31.45.88/32, or 203.0.113.0/24.
@@ -247,7 +247,7 @@ Example:
 NOTE:
 ~~~~~
 
-The method of specifying IP address of AWS instance(s) can apply to many
+The method of specifying the IP address of AWS instance(s) can apply to many
 AWS-API permissions, such as ...
 
 | "ec2:Describe*",
@@ -560,8 +560,8 @@ Example:
 ----------------------------------------
 
 The following example(s) demonstrate allowing the IAM User/Role to
-access AWS-Simple-Queue object(s) only to the queues that the names
-start with the string "aviatrix".
+access AWS-Simple-Queue object(s) only to the queues with names
+starting with the string "aviatrix".
 
 Syntax:
 ~~~~~~~
@@ -621,7 +621,7 @@ Example:
     "Resource": "arn:aws:sqs:*:888888666666:aviatrix-*"
   }
 
-.. Warning:: We do not recommend using AWS-resource-IP checking mechanism to modify AWS-SQS API permissions.
+.. Warning:: We do not recommend using the AWS-resource-IP checking mechanism to modify AWS-SQS API permissions.
 ..
 
 
@@ -694,9 +694,9 @@ behalf.
 
 This policy allows action “AssumeRole” to ALL roles.
 
-The default EC2 role policy allows AWS EC2 instance to assume to any
+The default EC2 role policy allows an AWS EC2 instance to assume to any
 role. By changing the “Resource” field from a wildcard * to a more
-specific account number, role name or prefix of role name can limit the
+specific account number, the role name or prefix of role name can limit the
 EC2 instance’s role.
 ::
 

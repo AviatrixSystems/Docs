@@ -1,4 +1,4 @@
-
+﻿
 .. meta::
    :description: Aviatrix IAM Policy Requirements
    :keywords: AWS, IAM, Policy, Aviatrix, Requirement
@@ -22,7 +22,7 @@ This documentation explains how and why AWS IAM permissions are needed by Aviatr
 1. SQS requirement
 --------------------
 
-SQS permission is required as Aviatrix Controller uses SQS messages queue to communicate with the gateways. This 
+SQS permission is required as the Aviatrix Controller uses an SQS messages queue to communicate with the gateways. This 
 permission applies to all use cases where there is an Aviatrix gateway. 
 
 ::
@@ -63,11 +63,11 @@ Aviatrix gateway deployment requires permissions from the following categories:
     + EIP
     + IAM
 
-- Security Group: Aviatrix creates Security Group to associate Aviatrix gateways and provide security at the protocol and port access level.
+- Security Group: Aviatrix creates a Security Group to associate Aviatrix gateways and provide security at the protocol and port access level.
 
--  IAM: Avaitrix will check if the user's IAM role has the correct configuration or not. If not, Aviatrix will help and fix the issue during gateway creation.
+-  IAM: Aviatrix will check if the user's IAM role has the correct configuration or not. If not, Aviatrix will help and fix the issue during gateway creation.
 
--  For the permission, "ec2:ModifyInstanceCreditSpecification": If your gateway type/size is under AWS T2-secries category (t2.medium, t2.large, etc..) Aviatrix software will try to enable the AWS feature, T2-Unlimited for you. Here is more detail from AWS Doc if you’re interested. This is an optional feature which is not required and won’t impact your gateway operations. You can still manually enable this feature manually later from AWS console.
+-  For the permission, "ec2:ModifyInstanceCreditSpecification": If your gateway type/size is under AWS T2-series category (t2.medium, t2.large, etc..) Aviatrix software will try to enable the AWS feature, T2-Unlimited for you. Here is more detail from AWS Doc if you’re interested. This is an optional feature which is not required and won’t impact your gateway operations. You can still manually enable this feature manually later from AWS console.
 
 ::
 
@@ -204,7 +204,7 @@ Aviatrix TransitNetwork feature requires the following additional permissions to
 4. Peering requirement
 ------------------------
 
-Aviatrix features such that Transit Network, Encrypted Peering, Transitive Peering, etc... will require the following permissions.
+Aviatrix features such as Transit Network, Encrypted Peering, Transitive Peering, etc... will require the following permissions.
 
 ::
 
@@ -286,7 +286,7 @@ An Aviatrix gateway needs to be in STOP state before modifying the instance type
 7. VPN with AWS-Global-Accelerator
 -------------------------------------------
 
-In order to enable VPN with AWS-Global-Accelerator feature, the following permissions are needed.
+In order to enable VPN with the AWS-Global-Accelerator feature, the following permissions are needed.
 
 ::
 
@@ -323,7 +323,7 @@ In order to enable VPN with AWS-Global-Accelerator feature, the following permis
 8. Guardduty requirement
 ---------------------------
 
-In order to enable Guardduty feature, the following permissions are needed.
+In order to enable the Guardduty feature, the following permissions are needed.
 
 ::
 
@@ -349,7 +349,7 @@ In order to enable Guardduty feature, the following permissions are needed.
 9. Aviatrix Gateway Single AZ HA requirement
 ----------------------------------------------
 
-In order to enable Aviatrix Gateway Single AZ HA feature, the following permission is needed.
+In order to enable the Aviatrix Gateway Single AZ HA feature, the following permission is needed.
 
 ::
 
@@ -369,7 +369,7 @@ In order to enable Aviatrix Gateway Single AZ HA feature, the following permissi
 10. Controller Backup & Restore requirement
 ---------------------------------------------
 
-In order to enable Controller Backup & Restore feature, the following permissions are needed.
+In order to enable the Controller Backup & Restore feature, the following permissions are needed.
 
 ::
 
@@ -391,7 +391,7 @@ In order to enable Controller Backup & Restore feature, the following permission
 11. EBS Volume Encryption requirement
 -------------------------------------------
 
-In order to enable EBS Volume Encryption feature, the following permissions are needed.
+In order to enable the EBS Volume Encryption feature, the following permissions are needed.
 
 ::
 
@@ -421,7 +421,7 @@ In order to enable EBS Volume Encryption feature, the following permissions are 
 12. AWS Peering requirement
 -----------------------------
 
-In order to create AWS Peering, the following permissions are needed.
+In order to create an AWS Peering, the following permissions are needed.
 
 ::
 
@@ -442,7 +442,7 @@ In order to create AWS Peering, the following permissions are needed.
 13. IAM Policy Scanning requirement
 -------------------------------------------
 
-In order to enable IAM Policy Scanning feature, the following permissions are needed.
+In order to enable the IAM Policy Scanning feature, the following permissions are needed.
 
 ::
 
@@ -465,7 +465,7 @@ In order to enable IAM Policy Scanning feature, the following permissions are ne
 14. UDP Load-Balancer requirement
 -------------------------------------------
 
-In order to enable UDP Load-Balancer feature, the following permissions are needed.
+In order to enable the UDP Load-Balancer feature, the following permissions are needed.
 
 ::
 
