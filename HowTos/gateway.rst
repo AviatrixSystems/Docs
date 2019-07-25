@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: launch a gateway and edit it
    :keywords: security policies, Aviatrix, AWS VPC, stateful firewall, UCX, controller, gateway
 
@@ -77,7 +77,7 @@ The function can be enabled at gateway launch time, or any time afterwards.
 
 For example, you may already have a NAT gateway configured for the VPC. To minimize downtime, follow the steps below:
 
- 1. Launch a gateway without SNAT option selected.
+ 1. Launch a gateway without the SNAT option selected.
  #. Go to AWS Console to remove the existing 0.0.0.0/0 route entry from the route table.
  #. Go to the Gateway page, highlight the desired gateway, click Edit, Scroll down to SNAT and click Enable.
 
@@ -96,7 +96,7 @@ When this option is selected, the Aviatrix gateway will used for SSL VPN termina
 Enable SAML
 ===================
 
-When SAML is enabled, a VPN client/user authenticates to an identify provider
+When SAML is enabled, a VPN client/user authenticates to an identity provider
 (IDP) directly, instead of the gateway doing it on behalf of the user.
 
 In this case, you must use Aviatrix VPN Clients.
@@ -135,7 +135,7 @@ Max Connections
 Maximum number of active VPN users allowed to be connected to this gateway. The default is 100.
 
 When you change this address, make sure the number is smaller than the VPN CIDR block.
-OpenVPN® VPN CIDR Block allocates 4 IP addresses for each connected VPN user;
+The OpenVPN® VPN CIDR Block allocates 4 IP addresses for each connected VPN user;
 when the VPN CIDR Block is a /24 network, it supports about 60 users.
 
 Split Tunnel Mode
@@ -150,8 +150,8 @@ When Split Tunnel Mode is disabled (Full Tunnel Mode), all laptop traffic,
 including Internet traffic (such as a visit to www.google.com),
 is going through the VPN tunnel when a user is connected to the VPN gateway.
 
-Disabling Split Tunnel Mode should be a deliberate decision as you will be
-charged all Internet traffic as they are considered egress traffic by
+Disabling Split Tunnel Mode should be a deliberate decision. You will be
+charged for all Internet traffic as they are considered egress traffic by
 the cloud provider (AWS/Azure/GCP).
 
 
@@ -166,7 +166,7 @@ destination CIDR ranges that will also go through the VPN tunnel.
 
 This is a useful field when you have `multiple VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
 
-Enter all network ranges in CIDR blocks separated by comma, as shown below:
+Enter all network ranges in CIDR blocks separated by commas, as shown below:
 
 |additional_cidr|
 
@@ -195,8 +195,8 @@ Enable ELB
 When ELB is enabled, the domain name of the cloud provider's
 load balancer, such as AWS ELB, will be the connection IP address when a
 VPN user connects to the VPN gateway. This connection IP address is part of
-the .ovpn cert file the Controller send to the VPN client. Even when you
-delete all VPN gateways, you can re-launch them without having to reissue
+the .ovpn cert file the Controller sends to the VPN client. Even when you
+delete all VPN gateways, you can re-launch them without having to reissue a
 new .ovpn cert file. This helps reduce friction to VPN users.
 
 When ELB is enabled, you can launch multiple VPN gateways behind ELB, thus
@@ -298,7 +298,7 @@ Gateway for High Availability
 When this option is selected, a backup gateway instance will be deployed in a different AZ if available.
 This backup gateway keeps its configuration in sync with the primary
 gateway, but the configuration does not take effect until the primary gateway
-fails over to backup gateway.
+fails over to the backup gateway.
 
 ::
 
@@ -332,7 +332,7 @@ gateway if it becomes unreachable. No secondary gateway is launched in this case
 Gateway Resize
 ---------------
 
-You can change Gateway Size if need to change gateway throughput. The gateway will restart with a different instance size.
+You can change Gateway Size if needed to change gateway throughput. The gateway will restart with a different instance size.
 
 To configure, click Gateway on the left navigation panel, select the desired gateway, click Edit. Scroll down to "Gateway Resize" and in the drop down menu,
 select the new gateway instance size. Click "Change". The gateway instance will be stopped and restarted again with the new instance size.
@@ -343,7 +343,7 @@ Source NAT
 You can enable and disable NAT function after a gateway is launched.
 NAT function enables instances on private subnet to access the Internet.
 When NAT is enabled, all route tables for private subnets in the VPC
-are programmed with an route entry that points the gateway as the
+are programmed with a route entry that points the gateway as the
 target for route entry 0.0.0.0/0.
 
 Three modes of Source NAT are supported:
@@ -374,8 +374,8 @@ Dst Port                         This is a qualifier condition that specifies a 
 Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
 Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
 Mark                             This is a qualifier condition that specifies a tag or mark of a TCP session where the rule applies. When left blank, this field is not used.
-SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
-SNAT Port                         This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
+SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
+SNAT Port                         This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
 ===========================      =======================
 
 Destination NAT
@@ -413,11 +413,11 @@ a virtual address range. A configuration example can be shown below, where "Real
 Monitor Gateway Subnet
 -----------------------
 
-This feature allows you to enforce that no unauthorized EC2 instances being launched on the
+This feature allows you to enforce that no unauthorized EC2 instances are being launched on the
 gateway subnet. Since an Aviatrix gateway must be launched on a public subnet, if you have policies that no
 EC2 instances can be launched on public subnets, this feature addresses that concern.
 
-When it is enabled, the Controller monitors periodically on the selected subnet where
+When it is enabled, the Controller periodically monitors the selected subnet where
 gateway is launched from. If it detects EC2 instances being launched, the Controller sends an alert email
 to admin and immediately stops the instance(s).
 
@@ -442,19 +442,19 @@ Gateway state is dictated by the following factors.
 
 An Aviatrix Gateway could be in any of the following states over its lifetime.
 
-**WAITING**: This is the initial state of a gateway immediately after the launch. Gateway will transition to **UP** state when controller starts receiving keepalive messages from the newly launched gateway.
+**WAITING**: This is the initial state of a gateway immediately after the launch. The gateway will transition to **UP** state when the controller starts receiving keepalive messages from the newly launched gateway.
 
-**UP**: Gateway is fully functional. All critical services running on the gateway are up and gateway and controller are able to exchange messages with each other.
+**UP**: The gateway is fully functional. All critical services running on the gateway are up and the gateway and the controller are able to exchange messages with each other.
 
 **DOWN**: A gateway can be down under the following circumstances.
 
--  Gateway and controller could not communicate with each other over HTTPS(443).
--  Gateway instance (VM) is not in running state.
+-  The Gateway and the controller could not communicate with each other over HTTPS(443).
+-  The Gateway instance (VM) is not in running state.
 -  Critical services are down on the gateway.
 
-**CHECK**: Controller did not receive expected number of keepalive messages from the gateway during a health check. This is usually caused by the controller security group port 443 not being open to the gateway's EIP.
+**CHECK**: The Controller did not receive expected number of keepalive messages from the gateway during a health check. This is usually caused by the controller security group port 443 not being open to the gateway's EIP.
 
-**UPGRADE-FAIL**: Gateway could not be upgraded due to some failure encountered during upgrade process. To upgrade the gateway again, go to the section "FORCE UPGRADE" which can be found here.
+**UPGRADE-FAIL**: The gateway could not be upgraded due to some failure encountered during the upgrade process. To upgrade the gateway again, go to the section "FORCE UPGRADE" which can be found here.
 
 ::
 
@@ -466,8 +466,8 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 
 If a gateway is not in **UP** state, please perform the following steps.
 
--  Examine security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
--  Examine security policy of the gateway and make sure that TCP port 443 is opened to traffic originating from controller public IP address. This rule is inserted by Aviatrix controller during gateway creation. Please restore it if  was removed for some reason.
+-  Examine the security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
+-  Examine the security policy of the gateway and make sure that TCP port 443 is opened to traffic originating from controller public IP address. This rule is inserted by the Aviatrix controller during gateway creation. Please restore it if  was removed for some reason.
 -  Make sure network ACLs or other firewall rules are not configured to block traffic between controller and gateway over TCP port 443.
 
 
@@ -529,7 +529,7 @@ Aviatrix Controller, all Aviatrix gateways forward their log information to the
 configured log server. But if the log server is deployed on-prem with a private DNS name,
 the Aviatrix gateway's default DNS server cannot resolve
 the domain name of the private log server. By enabling the VPC DNS server, the gateway will start
-to use VPC DNS server which should resolve the private DNS name of the log server.
+to use the VPC DNS server which should resolve the private DNS name of the log server.
 
 .. note::
 
@@ -541,7 +541,7 @@ to use VPC DNS server which should resolve the private DNS name of the log serve
 Insane Mode Encryption
 ------------------------
 
-When this option is selected, Aviatrix Controller will look for a spare /26 subnet segment to create a new public 
+When this option is selected, the Aviatrix Controller will look for a spare /26 subnet segment to create a new public 
 subnet "-insane" 
 and launch the gateway on this subnet. The instance sizes that support Insane Mode are c5 series and m5 series.
 
@@ -587,7 +587,7 @@ Filter Advertised Spoke VPC CIDRs
 This route policy enables you to selectively exclude some VPC CIDRs from being advertised to on-prem.
 
 One use case is if you have Spoke VPCs that have multiple CIDR blocks, among which some of them are overlapping. If
-you attach these Spoke VPCs, Aviatrix Controller will reject as there are overlapping CIDRs. By excluding the
+you attach these Spoke VPCs, the Aviatrix Controller will reject them as there are overlapping CIDRs. By excluding the
 overlapping CIDRs, you will be able to attach the Spoke VPCs.
 
 When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be exclude.
@@ -598,10 +598,10 @@ Transit Peers As Backup to Onprem
 -----------------------------------
 
 When this feature is enabled on a Transit Gateway, every one of its remote Transit Peers does not advertise to its on-prem network all the Spoke VPCs and on-prem routes learned by this Transit Gateway, except when the link to the on-prem
-goes down at which point one of the remote Transit Peer starts to advertise to its on-prem network all the Spoke VPCs
+goes down at which point one of the remote Transit Peers starts to advertise to its on-prem network all the Spoke VPCs
 and on-prem routes learned by this Transit Gateway.
 
-One use case is a connected multi sites on-prem network, where each site is connected to the cloud via
+One use case is a connected multi site on-prem network, where each site is connected to the cloud via
 Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In such case, each Transit Gateway
 learns all Spoke VPCs and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC has a redundant route to on-prem.
 
