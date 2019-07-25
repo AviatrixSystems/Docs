@@ -7,7 +7,7 @@
 Account with Access Key
 =====================================
 
-This document describes how to setup Aviatrix access account by using IAM user access key and secret id, instead of IAM roles. 
+This document describes how to setup an Aviatrix access account by using an IAM user access key and secret id, instead of IAM roles. 
 
 This approach is applicable to AWS China as Aviatrix does not support IAM role yet. 
 
@@ -37,7 +37,7 @@ Next you need to attach the created policy to this IAM user, as shown below.
 Step 4. Setup Access Key and Secret Access Key
 -------------------------------------------------
 
-Finally create a access key and secret key to be used by Aviatrix access account for this IAM user.  
+Finally create an access key and secret key to be used by the Aviatrix access account for this IAM user.  
 
 |accesskey|
 

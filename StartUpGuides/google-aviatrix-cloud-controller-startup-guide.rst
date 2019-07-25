@@ -1,4 +1,4 @@
-
+﻿
 
 
 ===========================================
@@ -7,19 +7,19 @@ Google Startup Guide
 
 
 
-The Aviatrix cloud network solution consists of two components, controller and
-gateway, both are GCloud instances. The gateway is launched from the controller browser console.
+The Aviatrix cloud network solution consists of two components, the controller and
+gateway, both of which are GCloud instances. The gateway is launched from the controller browser console.
 This guide helps you to launch the controller instance in GCloud.
 
-Note a GCloud project corresponds to an Aviatrix cloud account
+Note that a GCloud project corresponds to an Aviatrix cloud account
 or an AWS (IAM) account with its own credentials. A network in a GCloud
 project is logically equivalent to a VPC in AWS, but with a few
-significant differences, for example, a network in GCloud project can
+significant differences. For example, a network in GCloud project can
 have disparate subnets and a subnet can connect across regions.
 
 .. Important::
 
-  We advise you not to deploy a Controller in GCP. The preferred approach is to launch the Controller from AWS Marketplace as an metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi account and multi region capable. Launching a controller in AWS is preferred even if you only deploy gateways in GCP. This is because AWS provides a metered charging mechanism, a true pay as you go (without up front commitment nor contract negotiation) payment system that has the least friction. 
+  We advise you not to deploy a Controller in GCP. The preferred approach is to launch the Controller from AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi account and multi region capable. Launching a controller in AWS is preferred even if you only deploy gateways in GCP. This is because AWS provides a metered charging mechanism, a true pay-as-you-go (without up front commitment nor contract negotiation) payment system that has the least friction. 
 
 
 Prerequisite
@@ -28,8 +28,8 @@ Prerequisite
 Get a Customer ID from Aviatrix
 -------------------------------
 
-Currently Aviatrix Controller for GCloud is only available via community
-image for BYOL license. Send email to info@aviatrix.com or
+Currently, the Aviatrix Controller for GCloud is only available via community
+image for BYOL license. Send an email to info@aviatrix.com or
 support@aviatrix.com with your organization name to request a customer
 ID. We offer a 30 day free trial license.
 
@@ -51,14 +51,14 @@ least one to start with.
 Create a GCloud Project
 -----------------------
 
-log in to your GCloud account and go to project page:
+Log in to your GCloud account and go to the project page:
 https://console.cloud.google.com/project
 
 Create a project. Go on to the next step if you have already created
-one. Note the project ID will be used in referencing to this project by
+one. Note that the project ID will be used in referencing to this project by
 Aviatrix controller.
 
-(As an example, we created a project Aviatrix-UCC, the project ID is
+(As an example, we created a project called Aviatrix-UCC, the project ID is
 aviatrix-ucc-1214)
 
 Copy Aviatrix Controller Image to Your Project
@@ -69,7 +69,7 @@ project where you want to launch your controller. Click the 3 bars at
 the top left corner. At the drop down menu, select Compute Engine, then
 select Images.
 
-At the top screen, click “[+] CREATE IMAGE”, make sure:
+At the top screen, click “[+] CREATE IMAGE”, make sure to:
 
 -  Select the project where you want to launch your Aviatrix Controller.
 
@@ -93,10 +93,10 @@ At the top screen, click “[+] CREATE IMAGE”, make sure:
 This step creates a network in the project created in the previous step.
 
 When a new project is created, a default network is created. You may
-skip this step if do not need to customize the network address range by
+skip this step if you do not need to customize the network address range by
 creating a new network, or go on to the next step if you have done so.
 
-Note Aviatrix Controller handles a GCloud network like a VPC in AWS.
+Note that the Aviatrix Controller handles a GCloud network like a VPC in AWS.
 Whenever a network configuration is mentioned for GCloud, the term VPC
 is used. (The VNet is used for Azure.)
 
@@ -146,8 +146,8 @@ After the instance is created, click the controller instance name, and
 note its External IP address and Internal IP address. Go to
 https://External_IP_of_the_controller
 
-At the login prompt, type admin for username, type the internal IP
-address for password, as shown below:
+At the login prompt, type admin for username and type the internal IP
+address for the password, as shown below:
 
 |image3|
 

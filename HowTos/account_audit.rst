@@ -7,7 +7,7 @@
 Account Audit Info & Remedy
 =================================
 
-Aviatrix Controller periodically checks the accounts it manages to make sure they are intact:
+The Aviatrix Controller periodically checks the accounts it manages to make sure they are intact:
 
  1. If the Controller instance's IAM role aviatrix-role-ec2 has been deleted. 
  #. If the Controller instance's IAM role aviatrix-role-app has been deleted.

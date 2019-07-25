@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Admin users and Duo Authentication Management
    :keywords: Admin users, Duo authentication, Duo, Aviatrix
    :github_url: https://github.com/AviatrixSystems/Docs/blob/master/HowTos/AdminUsers_DuoAuth.rst
@@ -14,17 +14,17 @@ Objectives
 
 This document describes a reference design using Aviatrix Controller
 console’s user management and Duo authentication capability to
-manage multiple users with admin privilege.
+manage multiple users with admin privileges.
 
 As the cloud Ops team continues to expand to manage more cloud
 deployments, it is often required to give each member in the team
-her own username and password with admin privilege. In addition to
-username and password for log in credentials, a 2FA authentication
+her own username and password with admin privilege. In addition to a
+username and password for login credentials, a 2FA authentication
 can be added for enhanced security to manage cloud controller. DUO
 authentication is one of the supported methods. When enabled, it
 requires the user to accept a push message on the user’s mobile
 device from DUO service in addition to username and password at the
-user log in time.
+user login time.
 
 The following diagram illustrates the user relationship in a typical
 cloud Ops department. In this example, the Ops team has created three
@@ -55,9 +55,9 @@ users can be added from this page.
 
 When an admin user is created, changed, or deleted, an
 email is sent to the admin’s email address as a record for
-bookkeeping purpose. After the user is added, the user can log into
+bookkeeping purposes. After the user is added, the user can log in to
 the console with the specified user name and password. The user then
-has full access to the console like the admin. When the user login to the console, the admin username will be displayed on the top of the right hand corner.
+has full access to the console like the admin. When the user logs in to the console, the admin username will be displayed in the top right hand corner.
 
 
 Delete an admin user
@@ -73,7 +73,7 @@ user is added or deleted by the special username admin.
 Change admin user’s password
 ----------------------------
 
-Thee admin user’s password can be changed at the same page. An
+The admin user’s password can be changed at the same page. An
 email notification is sent to the admin’s email address after the
 change is successfully done.
 
@@ -89,7 +89,7 @@ Configuration Workflow for Duo Authentication
 Getting DUO API credentials
 ---------------------------
 
-Follow the `instruction in <http://docs.aviatrix.com/HowTos/duo_auth.html>`_ to setup DUO API credentials on DUO Security website.
+Follow the `instruction in <http://docs.aviatrix.com/HowTos/duo_auth.html>`_ to setup DUO API credentials on the DUO Security website.
 
 Create Duo Authentication
 -------------------------
@@ -103,7 +103,7 @@ supported.
 Once it is created successfully, the Duo push login applies to all
 users, including user admin. Every user (listed in settings -> Manage
 Accounts -> Users) who wishes to login to the system must have a
-matching user name in DUO account.
+matching user name in their DUO account.
 
 Remove Duo Authentication
 -------------------------

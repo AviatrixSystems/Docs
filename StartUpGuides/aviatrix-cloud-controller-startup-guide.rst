@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
     :description: Install the Aviatrix Controller in AWS
     :keywords: Aviatrix, AWS, Global Transit Network, AWS VPC Peering, VPC Peering, Egress Control, Egress firewall, OpenVPN, SSL VPN
 
@@ -16,7 +16,7 @@ You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup gu
 
 .. important ::
 
- Aviatrix Controller must be launched by a cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from AWS Console. 
+The Aviatrix Controller must be launched by a cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from AWS Console. 
 
 
 Step 1. Subscribe to an Aviatrix AMI 
@@ -53,7 +53,7 @@ Step 2. Launch the Controller with CloudFormation
 2.1 Click CloudFormation Link
 --------------------------------
 
-Click link below to take you to the CloudFormation page on AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
+Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
 
 `CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json>`_
 
@@ -84,7 +84,7 @@ Change to the region  where you would like to install the Aviatrix Controller on
 
 .. note::
 
-   The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch Aviatrix Controller, select the default setting **New** for IAM Role Creation. If Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
+   The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch an Aviatrix Controller, select the default setting **New** for IAM Role Creation. If an Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
 2.6 Select instance size
@@ -132,7 +132,7 @@ Open a browser window to https://AviatrixControllerEIP, where AviatrixController
 3.2 Login with the username `admin`
 -------------------------------------
 
-   For the password field, use the `AviatrixControllerPrivateIP`.  The `AviatrixControllerPrivateIP` can be found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, click the Controller instance and locate its private IP address. 
+   For the password field, use the `AviatrixControllerPrivateIP`.  The `AviatrixControllerPrivateIP` can be found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, clicking the Controller instance and locating its private IP address. 
    
    |imageCFOutputsWithPassword|
 
@@ -174,7 +174,7 @@ If you wish to run a custom version, consult the Aviatrix support team before at
 3.7  Select AWS
 -------------------
 
-Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
+Once logged back into the Controller, you should be on the `Onboarding` page. You can also do this by clicking "Onboarding` on the navigation item. Then click the AWS icon. 
 
    |imageOnboardAws|
 
@@ -224,7 +224,7 @@ You are now ready to deploy use cases. Here are some of the things you can do:
 
 -  `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
-.. Important:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
+.. Important:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on an AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
 For technical support, email us at support@aviatrix.com
 
@@ -233,7 +233,7 @@ Enjoy!
 Other Aviatrix Products
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to Metered AMI, we offer a few others, as shown below. Subscribe them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
+In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
 
  - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template>`_
 
