@@ -22,11 +22,11 @@ have that performance cap.
 
 Why is that?
 
-Most virtual routers or software based routers are built with general purpose CPUs. Despite the vast CPU technology advancement, why does not IPSEC performance scale further?
+Most virtual routers or software based routers are built with general purpose CPUs. Despite the vast CPU technology advancement, why doesn't IPSEC performance scale further?
 
-It turns out the problem lies in the nature of tunneling, a common technique in networking to connect two end points. 
+It turns out the problem lies in the nature of tunneling, a common technique in networking to connect two endpoints. 
 
-When two general purpose server or virtual machine based routes  are connected by an IPSEC tunnel, 
+When two general purpose server or virtual machine based routes are connected by an IPSEC tunnel, 
 there is one UDP or ESP session going between the two machines, as shown below. 
 
 |tunnel_diagram|
@@ -89,7 +89,7 @@ a new /26 public subnet is created where the Insane Mode gateway is launched on.
 Insane Mode builds high performance encryption tunnel over private network links. The private network links are 
 Direct Connect (DX) and AWS Peering (PCX). 
 
-For Insane Mode between two gateways, between Transit GW and Spoke gateway, or between Transit GW and Transit GW (Transit Peering), Aviatrix Controller automatically creates the underlying AWS Peering connection and builds the tunnels over it. 
+For Insane Mode between two gateways, between an Transit GW and a Spoke gateway, or between a Transit GW and a Transit GW (Transit Peering), the Aviatrix Controller automatically creates the underlying AWS Peering connection and builds the tunnels over it. 
 
 Since Insane Mode tunnels are over private network links, the VPC route architecture is described as below, 
 where EC2 instances associated route entry to the remote site point to Aviatrix gateway, and the Aviatrix gateway instance associated route entry to remote site points to PCX or VGW. 
@@ -120,8 +120,8 @@ More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https:/
 What is the deployment logical diagram?
 -------------------------------------------
 
-Datacenter deployment is shown in the diagram below with redundancy, where R1 and R2 are two edge routers that connect to VGW over 
-DX. R3 and R4 are two routers connect to inside the datacenter. Aviatrix CloudN also runs a BGP session with R3 and
+Datacenter deployment is shown in the diagram below with redundancy, where R1 and R2 are two edge routers that connected to VGW over 
+DX. R3 and R4 are two routers connect to the inside of the datacenter. Aviatrix CloudN also runs a BGP session with R3 and
 R4 to collect datacenter routes. VGW is only used to terminate DX. Aviatrix gateway and on-prem appliance CloudN 
 run a BGP session to propagate on-prem routes to the Transit VPC. IPSEC tunnels are also built between the two. 
 
