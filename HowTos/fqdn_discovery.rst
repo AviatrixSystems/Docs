@@ -18,18 +18,18 @@ Go to Security -> Egress Control -> Egress FQDN Discovery. Select a gateway from
 Start 
 ------
 
-When you click "Start" button, the Controller will automatically enable SNAT function on the gateway. 
+When you click the "Start" button, the Controller will automatically enable SNAT function on the gateway. 
 The Controller looks for all private subnets in the VPC and replace any 0.0.0.0/0 -> AWS NAT Gateway to 
 instead points to the Aviatrix gateway. 
 
 .. Important::
 
-  During Discovery step, the `Exception Rule <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exception-rule>`_ must be enabled (the box should be checked which is the default setting.)
+  During the Discovery step, the `Exception Rule <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exception-rule>`_ must be enabled (the box should be checked which is the default setting.)
 
 Stop
 ------
 
-When you click "Stop" button, the VPC private route table entry for the default route (0.0.0.0/0) will be
+When you click the "Stop" button, the VPC private route table entry for the default route (0.0.0.0/0) will be
 restored to its previous setting.  
 
 Show
@@ -40,10 +40,10 @@ While the Discovery is in progress, click "Show" at any time to see the captured
 Download
 ---------
 
-Click the "Download" during or after the Discovery, the destination list will be downloaded. You can later 
+Click the "Download" button during or after the Discovery, the destination list will be downloaded. You can later 
 import the list to configure the `FQDN Filter. <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
-Note if a gateway is already attached to a FQDN tag, you cannot run the Discovery process, but you can view FQDN results immediately by going to Step 4 "Egress FQDN View Log".
+Note that if a gateway is already attached to a FQDN tag, you cannot run the Discovery process, but you can view FQDN results immediately by going to Step 4 "Egress FQDN View Log".
 
 
 |discovered_sites|

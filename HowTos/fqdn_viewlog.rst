@@ -7,10 +7,10 @@
  Egress FQDN View Log 
 =================================
 
-FQDN View Log allows you to immediately view what hostnames and sites that have been blocked 
-or passed on the `FQDN gateway. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ Select the gateway and download the text file for FQDN log. 
+The FQDN View Log allows you to immediately view what hostnames and sites that have been blocked 
+or passed on the `FQDN gateway. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ Select the gateway and download the text file for the FQDN log. 
 
-For audit and compliance, we recommend you to use one of our integrated `logging tools <http://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_
+For audit and compliance, we recommend that you to use one of our integrated `logging tools <http://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_
 
 
 .. |discovered_sites| image::  fqdn_discovery_media/discovered_sites.png
