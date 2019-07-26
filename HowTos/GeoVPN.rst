@@ -27,12 +27,12 @@ An example deployment in AWS is shown below.  In this configuration, there are t
 
 |imageArchitecture|
 
-Let's look at the difference between standard VPN access service and VPN access service with the Geolocation feature enabled:
+Let's look at the difference between a standard VPN access service and VPN access service with the Geolocation feature enabled:
 
 Standard VPN Service (without geolocation feature enabled)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Without the Geolocation feature enabled, when a user connects to the VPN service, they will connect to one of the two regions' VPN gateway.  Each gateway is independently administered meaning users need a separate configuration profile for each region they will access.
+Without the Geolocation feature enabled, when a user connects to the VPN service, they will connect to one of the two regions' VPN gateway.  Each gateway is independently administered, meaning users need a separate configuration profile for each region they will access.
 
 In this configuration, an EU-based user would be given a configuration profile for the eu-central-1 load balancer.  And, a US-based user will be provided with a us-west-2 configuration profile.  If either user relocates or travels to the opposite region, they will need a separate configuration profile in that region and they will need to manually switch the active configuration profile.
 
@@ -58,9 +58,9 @@ Configuration Workflow
    .. tip::
       You must create at least one gateway to enable Geo VPN.  You can add more gateways to the pool at any time.
 
-#. Once you have at least one VPN gateway created with ELB enabled, you are ready to the enable Geo VPN feature.  Click on **OpenVPN** in the navigation menu, and select **Advanced**.
+#. Once you have at least one VPN gateway created with ELB enabled, you are ready to proceed to the enable Geo VPN feature.  Click on **OpenVPN** in the navigation menu and select **Advanced**.
 
-#. Click on the **Geo VPN** tab
+#. Click on the **Geo VPN** tab.
 
 #. Select the `Cloud Type` and click on the `Disabled` status to Enable the Geo VPN feature.
 
@@ -121,7 +121,7 @@ Add Users
 
 Once you have Geo VPN enabled, you can add users.  Follow these steps to add users:
 
-#. Click **OpenVPN** navigation menu item
+#. Click the **OpenVPN** navigation menu item
 #. Click **VPN Users**
 #. Click the **+ Add New** button
 #. In the `VPC ID / DNS Name` drop down, select the Geo VPN VPN service name created in the previous steps

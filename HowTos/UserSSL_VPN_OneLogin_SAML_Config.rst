@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix User SSL VPN with OneLogin SAML Configuration
    :keywords: OneLogin, SAML, user vpn, Aviatrix, OpenVPN
 
@@ -58,7 +58,7 @@ Follow these steps to configure Aviatrix to authenticate against your OneLogin I
 OneLogin SAML App
 #################
 
-Before you start, pick a short name to be used for the SAML application name.  In the notes below we will refer to this as **aviatrix_onelogin**.  But, it can be any string.
+Before you start, pick a short name to be used for the SAML application name.  In the notes below we will refer to this as **aviatrix_onelogin**.  But it can be any string.
 
 We will use the string you select for the SAML application name to generate a URL for OneLogin to connect with Aviatrix.  This URL is defined below as **SP_ACS_URL**.  This URL should be constructed as:
 
@@ -173,7 +173,7 @@ You can quickly validate that the configuration is complete by clicking on the *
 Create a VPN User
 #################
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Click `OpenVPN®` in the left navigation menu
 #. Select `VPN Users`
 #. Click `+ Add New`
@@ -188,7 +188,7 @@ Create a VPN User
 Validate
 ########
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Click `OpenVPN®` in the left navigation menu
 #. Select `VPN Users`
 #. Download the configuration for your test user created in the previous step

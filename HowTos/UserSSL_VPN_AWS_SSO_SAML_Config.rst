@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix User SSL VPN with AWS SSO SAML Configuration
    :keywords: AWS SSO, AWSSSO, SAML, user vpn, Aviatrix, OpenVPN
 
@@ -18,9 +18,9 @@ Pre-Deployment Checklist
 -----------------------------
 Before configuring SAML integration between Aviatrix and AWS SSO, make sure the following is completed:
 
-#. `Aviatrix Controller <#awsssosaml-aviatrix-controller>`__ is setup and running.
-#. Have a valid `AWS account <#awsssosaml-aws-account>`__ with `AWS SSO <https://aws.amazon.com/single-sign-on/>`_ enabled.
-#. Download and install the `Aviatrix SAML VPN client <#awsssosaml-aviatrix-client>`__.
+#. The `Aviatrix Controller <#awsssosaml-aviatrix-controller>`__ is setup and running.
+#. You have a valid `AWS account <#awsssosaml-aws-account>`__ with `AWS SSO <https://aws.amazon.com/single-sign-on/>`_ enabled.
+#. You have downloaded and installed the `Aviatrix SAML VPN client <#awsssosaml-aviatrix-client>`__.
 
 .. _awsssosaml_aviatrix_controller:
 
@@ -136,7 +136,7 @@ Aviatrix Controller SAML Endpoint
 AWS SSO Custom SAML Application (Part 2)
 ########################################
 
-Return back to the AWS SSO console
+Return to the AWS SSO console
 
 #. Scroll to **Application metadata**
 #. **Browse...** to the **SP Metadata** file saved in the previous step
@@ -172,7 +172,7 @@ Validate
 --------
 
 .. tip::
-   Be sure to assign users to the new application in AWS Signle Sign-on service prior to validating.  You can use AWS SSO Directory service under AWS SSO page to assign users. If you do not assign your test user to the Aviatrix User VPN application, you will receive an error.
+   Be sure to assign users to the new application in AWS Single Sign-on service prior to validating.  You can use AWS SSO Directory service under AWS SSO page to assign users. If you do not assign your test user to the Aviatrix User VPN application, you will receive an error.
 
 You can quickly validate that the configuration is complete by clicking on the **Test** button next to the SAML endpoint.
 

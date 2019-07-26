@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Admin users and Duo Authentication Management
    :keywords: Admin users, Duo authentication, Duo, Aviatrix
 
@@ -15,7 +15,7 @@
 Duo Authentication
 =============================================
   
-Aviatrix OpenVPN® solution provides Duo authentication integration. This document helps you set up Duo to connect with Aviatrix. For more information on how to configure OpenVPN®, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
+The Aviatrix OpenVPN® solution provides Duo authentication integration. This document helps you set up Duo to connect with Aviatrix. For more information on how to configure OpenVPN®, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 You need to first have a DUO account setup.  If you do not have one, please see `https://www.duosecurity.com/product <http://www.duosecurity.com/product>`__
 

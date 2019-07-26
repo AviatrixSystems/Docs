@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix User SSL VPN with Centrify Configuration
    :keywords: AWS SSO, Centrify, SAML, user vpn, Aviatrix, OpenVPN
 
@@ -18,9 +18,9 @@ Pre-Deployment Checklist
 -----------------------------
 Before configuring SAML integration between Aviatrix and AWS SSO, make sure the following is completed:
 
-#. Aviatrix Controller is setup and running. Follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ to launch the controller
-#. Have centrify up and running with administrator access
-#. Download and install the `Aviatrix VPN client <#awsssosaml-aviatrix-client>`__.
+#. The Aviatrix Controller is setup and running. Follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ to launch the controller
+#. You have centrify up and running with administrator access
+#. You have downloaded and installed the `Aviatrix VPN client <#awsssosaml-aviatrix-client>`__.
 
 
 Configuration Steps:
@@ -40,7 +40,7 @@ Configuration Steps:
 	|image1|
 	
 	Now go to your Aviatrix Controller. Create a new SAML endpoint from
-	OpenVPN as paste the URL into the Metadata URL field. Give an Endpoint
+	OpenVPN as paste the URL into the Metadata URL field. Give an endpoint
 	name and click “OK”
 	
 	|image2|
@@ -97,15 +97,15 @@ Configuration Steps:
 	.
 #. Configure the next pages if you require them, "Linked applications","Provisioning", "App Gateway" if you require them. Click “Save”. The SAML configuration at the IDP is now complete
 
-#. Test the SAML integration. Go back to your Aviatrix controller, Go to OpenVPN->Advanced->SAMl tab. Click test for the SAML endpoint.
+#. Test the SAML integration. Go back to your Aviatrix controller and go to OpenVPN->Advanced->SAMl tab. Click test for the SAML endpoint.
 
 	|image9|
 	
-	You should get redirected to the Centrify and it may ask for credentials, if you are already logged it redirects you back to the controller page
+	You should get redirected to the Centrify and it may ask for credentials, if you are already logged it redirects you back to the Controller page.
 	
 	|image10|
 	
-	Ignore the warning since you may not have a VPN client already running
+	Ignore the warning since you may not have a VPN client already running.
 	
 #. To test the VPN integration, you need to perform 3 steps at the aviatrix controller
 
@@ -113,9 +113,9 @@ Configuration Steps:
 	
 	b. Create a VPN Gateway in the Gateway page. Check "VPN Enabled" and "SAML Enabled"
 	
-	c. Add a VPN user in the OpenVPN->VPN users page. To the SAML VPN gateway with the respective endpoint. Certificate is emailed or can be downloaded here
+	c. Add a VPN user in the OpenVPN->VPN users page to the SAML VPN gateway with the respective endpoint. The certificate is emailed or can be downloaded here
 
-#. Test VPN connectivity by installing the Aviatrix VPN client. Load the VPN certificate and click connect. The browser should open up and login at Centrify. The client then automatically connects to the VPN Gateway. Test connectivity by doing a ping to the private IP of the gateway.
+#. Test VPN connectivity by installing the Aviatrix VPN client. Load the VPN certificate and click connect. The browser should open up, login at Centrify. The client then automatically connects to the VPN Gateway. Test connectivity by doing a ping to the private IP of the gateway.
 
 .. |image0| image:: centrify_media/image1.jpg
 
