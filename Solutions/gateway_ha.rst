@@ -23,7 +23,7 @@ The Aviatrix Controller monitors your cloud networking deployment, detects probl
 
 ``*`` Recovery times vary based on many factors including the number of tunnels established.
 
-These options give you the flexiblity to select the one that meets your requirements for recovery time.  For production environments, a quicker recovery time is typically very important.  But, for development environments, a longer delay is acceptable.  With Aviatrix HA, you can mix and match these options in your deployment to meet your needs.
+These options give you the flexibility to select the one that meets your requirements for recovery time.  For production environments, a quicker recovery time is typically very important.  But, for development environments, a longer delay is acceptable.  With Aviatrix HA, you can mix and match these options in your deployment to meet your needs.
 
 As the recovery time decreases, there may be additional costs to consider.  `Single AZ` has no additional costs.  `Backup Gateway` will incur additional EC2 instance charges (for the additional gateway provisioned).  `Backup Gateway and Tunnel(s)` will incur additional EC2 costs and additional tunnel costs.
 
