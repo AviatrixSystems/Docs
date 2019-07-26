@@ -1,4 +1,4 @@
-
+﻿
 
 
 =======================================
@@ -6,13 +6,13 @@ Azure Startup Guide
 =======================================
 
 
-The Aviatrix cloud network solution consists of two components, controller and 
-gateways, both are Azure VMs. Gateways are launched from the controller console to specific VNets. This
-guide helps you to launch the controller VM in Azure. Make sure you follow the instructions to also subscribe Aviatrix Companion Gateway described in this guide. 
+The Aviatrix cloud network solution consists of two components, the controller and 
+gateways, both of which are Azure VMs. Gateways are launched from the controller console to specific VNets. This
+guide helps you to launch the controller VM in Azure. Make sure you follow the instructions to also subscribe to the Aviatrix Companion Gateway described in this guide. 
 
 .. Note::
 
-  We suggest you consider to deploy the Controller in AWS. The preferred approach is to launch the Controller from AWS Marketplace as an metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS maybe a good idea even if you only deploy gateways in Azure, as AWS provides a pay as you go (without up front commitment nor contract negotiation) metered payment system that has the least friction. However if Azure is your choice to deploy the Controller, no worries, proceed to the following sections.
+  We suggest you consider to deploy the Controller in AWS. The preferred approach is to launch the Controller from AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS may be a good idea even if you only deploy gateways in Azure, as AWS provides a pay-as-you-go (without up front commitment nor contract negotiation) metered payment system that has the least friction. However if Azure is your choice to deploy the Controller, no worries, proceed to the following sections.
 
 1. Subscribe to Aviatrix Controller
 ====================================
@@ -25,7 +25,7 @@ Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketpla
 
 Aviatrix companion gateway needs to be subscribed as programmable. 
 
-In order to launch Aviatrix gateway from the controller, you must also subscribe to Aviatrix Companion Gateway which is free in Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
+In order to launch Aviatrix gateway from the controller, you must also subscribe to Aviatrix Companion Gateway which is free in the Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
 
 
 3. Launch the Controller
@@ -48,12 +48,12 @@ a.  Launch from marketplace, select the license type and click Create
 
 #.  Select Create at the next screen.
 
-#.  At Basics column, fill in the VM name, user name, password and
+#.  At Basics column, fill in the VM name, username, password and
     Resource group, click OK.
 
-#.  At Choose a size, select the VM size, click Select.
+#.  At Choose a size, select the VM size and click Select.
 
-#.  At Settings, Click Network security group (This is a critical
+#.  At Settings, click Network security group (This is a critical
     configuration step)
 
     |image2|
@@ -91,7 +91,7 @@ a.  Launch from marketplace, select the license type and click Create
 5. Access the Controller
 =========================
 
-After the Controller instance is in running state in AWS, you can access the Controller
+After the Controller instance is in a running state in AWS, you can access the Controller
 via a browser by `https://Controller_public_IP`, where Controller_public_IP is the static public IP address of the Controller.
 
 The initial password is the private IP address of the instance.

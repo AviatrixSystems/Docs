@@ -42,7 +42,7 @@ Step 3: Enable Compute Engine API
 
 Enable Compute Engine API on the selected project,
 
-1. go to your Google Cloud Platform console, at the upper left corner
+1. Go to your Google Cloud Platform console, at the upper left corner
    left to Google Cloud Platform signage, click the 3 bars. A drop down
    menu will appear.
 
@@ -59,7 +59,7 @@ Enable Compute Engine API on the selected project,
 Step 4: Enable GCloud Messaging Service
 -------------------------------------------
 
-Aviatrix controller uses GCloud Pub/Sub messaging service to communicate
+The Aviatrix controller uses GCloud Pub/Sub messaging services to communicate
 with the gateways.
 
 To enable Pub/Sub on the selected project,
@@ -79,7 +79,7 @@ Step 5: Create Credential File
 
 When you create a cloud account for GCloud, you are asked to upload a
 GCloud Project Credentials file. Below are the steps to download the
-credential file from Google Developer Console.
+credential file from the Google Developer Console.
 
 1. Open the `Credential
    page <http://console.developers.google.com/project/_/apiui/credential>`__

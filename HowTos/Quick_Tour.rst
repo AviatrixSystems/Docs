@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Quick Tour
    :keywords: Aviatrix Quick Tour, Aviatrix, remote user VPN, AWS user VPN, OpenVPN, SSL VPN
 
@@ -47,7 +47,7 @@ Geo VPN
 """"""""
 
 If you have a global work force and would like to give your employees
-the best user experience accessing the services in the cloud, Geo VPN is
+the best user experience in accessing the services in the cloud, Geo VPN is
 the right solution for you. Go to Open VPN -> Geo VPN to enable Geo VPN.
 Check out this `reference
 design <http://docs.aviatrix.com/HowTos/GeoVPN.html>`__.
@@ -56,10 +56,10 @@ Developer’s Sandbox
 """""""""""""""""""
 
 If keeping your production environment secure while giving your
-developers’ isolated environment to learn and experiment new
+developers an isolated environment to learn and experiment with new
 technologies is a challenge for you, `Developer’s
 Sandbox <http://docs.aviatrix.com/HowTos/DevSandbox.html>`__
-maybe a feature you want to explore.
+may be a feature you want to explore.
 
 AWS Global Transit Network
 """""""""""""""""""""""""""
@@ -77,8 +77,8 @@ design <http://docs.aviatrix.com/HowTos/site2cloud.html>`__.
 Help
 """""
 
-Under Help menu, check out FAQs and additional implementation guides. Send
-email to support@aviatrix.com to get immediate support.
+Under the Help menu, check out FAQs and additional implementation guides. Send
+an email to support@aviatrix.com to get immediate support.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
