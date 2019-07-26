@@ -5,7 +5,7 @@
 ============================================================
 Setup Transit Network using Aviatrix Terraform Provider
 ============================================================
-Aviatrix Terraform Provider is used to interact with Aviatrix resources.
+The Aviatrix Terraform Provider is used to interact with Aviatrix resources.
 
 You can read the `Aviatrix Terraform Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_  to learn the steps on setting up the environment.
 

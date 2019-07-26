@@ -13,7 +13,7 @@ Global Transit Network Workflow Instructions (AWS/Azure)
 
 This workflow provides you with step by step instructions to build a Global Transit Network. 
 
-While the instructions below reference AWS, it applies to Azure for preview starting release 4.1. 
+While the instructions below reference AWS, they apply to Azure for preview starting release 4.1. 
 
 For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
@@ -26,8 +26,8 @@ between Spoke VPC EC2 instances and on-prem network.
 
 
 .. note::
-   For description purpose, gateway and GW are used interchangeably.
-   Other than gateway deletion, resources created by this work flow should be deleted within the work flow. 
+   For description purposes, gateway and GW are used interchangeably.
+   Other than gateway deletion, resources created by this workflow should be deleted within the work flow. 
 
 The Global Transit Network diagram is described as below. 
 
@@ -86,13 +86,13 @@ When HA is enabled, a second Transit GW will be launched. Note both Transit GWs 
 
 |image2|
 
-To disable Transit GW HA, go to Gateway page and delete the Transit GW with -hagw in the name extension. Note if the Transit GW is connected to VGW, you cannot disable Transit GW HA and if there are still Spoke GWs, you cannot disable
+To disable Transit GW HA, go to the Gateway page and delete the Transit GW with -hagw in the name extension. Note: If the Transit GW is connected to VGW, you cannot disable Transit GW HA and if there are still Spoke GWs, you cannot disable
 Transit GW HA either. 
 
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
 
-Although the title says to connect to AWS VGW, Starting from Release 4.1, there are three options to connect to Transit GW with BGP to on-prem network. Choose one option that meets your network requirements.  
+Although the title says to connect to AWS VGW, starting from Release 4.1, there are three options to connect to a Transit GW with BGP to an on-prem network. Choose one option that meets your network requirements.  
 
  - AWS VGW (This is the default setting.)
  - External Device (over Direct Connect or over Internet)
@@ -121,7 +121,7 @@ Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitg
 3.2 Aviatrix Appliance CloudN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-"Aviatrix Hardware Appliance CloudN" allows you to build a BGP and IPSEC tunnel directly to on-prem Aviatrix hardware
+"Aviatrix Hardware Appliance CloudN" allows you to build a BGP and IPSEC tunnel directly to an on-prem Aviatrix hardware
 appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming both the 
 performance limit and route limit by these native services. Follow the instruction in this link to complete Step 3. 
 
