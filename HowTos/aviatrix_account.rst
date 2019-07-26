@@ -7,7 +7,7 @@
 Access Account
 =================================
 
-Aviatrix Controller is a multi cloud and multi accounts platform. The Controller uses your cloud provider API credentials to 
+The Aviatrix Controller is a multi cloud and multi accounts platform. The Controller uses your cloud provider API credentials to 
 make APIs calls, for example, to launch an Aviatrix gateway instance, on behalf of your cloud accounts. 
 
 One cloud credential is represented as an Aviatrix access account on the Controller. The Controller supports 
@@ -15,7 +15,7 @@ multiple Aviatrix accounts. One Aviatrix account may represent multiple cloud cr
 each cloud. For example, an Aviatrix account name DevOps can have an IAM role for AWS, Azure ARM credential and GCP credential.
 
 
-Starting from release 3.2, access account for AWS only consists of the 12 digit account ID. 
+Starting from release 3.2, an access account for AWS only consists of the 12 digit account ID. 
 
 For Azure, the account information consists of `Azure ARM credentials. <http://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_
 
@@ -55,7 +55,7 @@ The above diagram is described in the following steps.
  #. Check `AWS`.
  #. Check `IAM role-based` (enabled by default).
  #. Enter the secondary account's `AWS 12 digit account number <https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html>`_.
- #. Click **Launch CloudFormation Script** that takes to AWS Console and run CloudFormation script to setup IAM roles, policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
+ #. Click **Launch CloudFormation Script** that takes you to the AWS Console and run CloudFormation script to setup IAM roles and policies and establish a trust relationship with the primary account. When finished, return to this page and proceed to the next step. 
  #. Click `OK`.
  #. The new secondary account should be created.
  #. Now you can create connectivity between two VPCs in different AWS accounts.
@@ -63,14 +63,14 @@ The above diagram is described in the following steps.
 Setup additional access account using Terraform
 -------------------------------------------------
 
-If you use Terraform to create more access account, you need to run the 
+If you use Terraform to create more access accounts, you need to run the 
 CloudFormation script on each secondary account first, then use Terraform account resource to create the account. 
 
 ::  
 
   Follow the above section, but only execute step 7 to run the CloudFormation script that creates IAM roles, policies and build trust relationship to the primary account (the Controller account). 
 
-The CloudFormation is necessary to create IAM roles, policies and establish trust relationship with the primary account (The account where Controller is launched.)
+The CloudFormation is necessary to create IAM roles, policies and establish a trust relationship with the primary account (The account where Controller is launched.)
 
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
