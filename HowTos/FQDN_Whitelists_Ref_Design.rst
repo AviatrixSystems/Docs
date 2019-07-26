@@ -15,12 +15,12 @@ Configuration Workflow
 
 .. tip ::
 
- The instruction below assumes there is already an Aviatrix gateway running in the VPC where you wish to deploy FQDN filter. If not, follow the Egress Control workflow to first launch a gateway.
+ The instructions below assume there is already an Aviatrix gateway running in the VPC where you wish to deploy FQDN filter. If not, follow the Egress Control workflow to first launch a gateway.
 
 Step 1. Add a new tag
 ---------------------
 
-Go Security -> Egress Control, click New Tag, as shown below:
+Go Security -> Egress Control and click New Tag, as shown below:
 
 |fqdn-new-tag|
 
@@ -57,8 +57,8 @@ Repeat Step 3 if you have more gateways that should be attached to this tag.
 Add more tags
 -------------
 
-Repeat from Step 1 to create more tags and attach to the same gateway or different gateways.
-However, if multiple tags are attached to the same gateway, then mode (Whitelist or BlackList) must be identical.
+Repeat from Step 1 to create more tags and attach them to the same gateway or different gateways.
+However, if multiple tags are attached to the same gateway, then the mode (Whitelist or BlackList) must be identical.
 
 
 Exception Rule
