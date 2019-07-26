@@ -7,12 +7,12 @@
 Vendor Integration
 =========================================================
 
-Aviatrix Transit DMZ works with any firewall instances. However API level integration allows the DMZ solution to provide significantly improved automation. 
+Aviatrix Transit DMZ works with any firewall instances. However, API level integration allows the DMZ solution to provide significantly improved automation. 
 
 Launch Palo Alto Networks VM-Series Instance
 ----------------------------------------------
 
-You can launch Palo Alto Networks VM-Series from the Aviatrix Controller. Make sure you have subscribed the 
+You can launch a Palo Alto Networks VM-Series from the Aviatrix Controller. Make sure you have subscribed to the 
 the AMI. 
 
 Enter the fields below and click Launch. 
@@ -50,7 +50,7 @@ Follow the following steps to enable Palo Alto Networks API programming.
 1. Enable Ping
 ~~~~~~~~~~~~~~~~~~
 
-Make sure Palo Alto Networks management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address.
+Make sure that the Palo Alto Networks management interface has ping enabled and the instance's security group has ICMP policy open to the Aviatrix Controller's public IP address.
 
 |pan_ping|
 
@@ -95,7 +95,7 @@ Firewall Virtual Router name (Optional)         Specify the firewall virtual Rou
 4. API calls
 ~~~~~~~~~~~~~~~~
 
-The integrated functions by the Controller are the followings:
+The integrated functions by the Controller are the following:
 
  - The Controller monitors the health of Palo Alto Network software by using the VM-series API and performs switch over based on the API return status.
  - The Controller dynamically programs Palo Alto Network route tables for any new propagated new routes discovered both from new Spoke VPCs and new on-premise routes.
