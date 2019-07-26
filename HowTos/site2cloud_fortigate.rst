@@ -96,7 +96,7 @@ Under **Policy & Objects** > **Addresses**, create 2 new addresses:
 Create an IPsec tunnel on FortiGate
 +++++++++++++++++++++++++++++++++++
 
-#. Login to your FortiGate dashboard.
+#. Log in to your FortiGate dashboard.
 #. In the `VPN` menu, select `IPsec Tunnels`.
 #. Click `+ Create New`
 #. Populate the fields according to your preferences. 
@@ -275,19 +275,19 @@ In **Network** > **Static Routes**, add a new static route for traffic destined 
 |imageStaticRoute|
 
 .. note::
-   If `Named Address` is disabled.  Be sure you enabled `Static Route Configuration` on the Address configuration.
+   If `Named Address` is disabled, be sure that you enabled `Static Route Configuration` on the Address configuration.
 
    |imageAddressStaticConfig|
 
 Bring Up IPSec Monitor
 ++++++++++++++++++++++
 
-In **Monitor** > **IPSec Monitor**, select the Aviatrix tunnel, and click **Bring Up**.
+In **Monitor** > **IPSec Monitor**, select the Aviatrix tunnel and click **Bring Up**.
 
 Test
 ----
 
-Once complete, test the communiation using the tunnel
+Once complete, test the communication using the tunnel
 
 Troubleshooting
 ---------------

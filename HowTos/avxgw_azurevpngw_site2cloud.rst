@@ -13,10 +13,10 @@ latest software.
 
 The Site2Cloud on CloudN configuration workflow is very simple.  
 
-1. At Aviatrix Controller, go to "Gateway" page to create one non-vpn gateway.
+1. At the Aviatrix Controller, go to "Gateway" page to create one non-vpn gateway.
 
 
-#. At Azure portal, go to "Virtual network gateways" page. Fill in the following information to create a new virtual network gateway:
+#. At the Azure portal, go to "Virtual network gateways" page. Fill in the following information to create a new virtual network gateway:
 
      - Name: Enter an Azure VPN gateway name (e.g. Azure-VPN-GW)
 
@@ -33,7 +33,7 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 #. Once the virtual network gateway is provisioned, record its public IP address
 
 
-#. At Aviatrix Controller, go to "Site2Cloud" page. Fill in the following information to create a site2cloud connection:
+#. At the Aviatrix Controller, go to "Site2Cloud" page. Fill in the following information to create a site2cloud connection:
 
      - VPC ID/VNet Name: Select the VPC/VNet where your Aviatrix gateway is created at Step 1
 
@@ -53,13 +53,13 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 
      - Remote Gateway IP Address: Enter the public IP of your virtual network gateway (collected at Step 3)
 
-     - Pre-shared Key: Enter your own pre-share key or leave it blank so that Controller will generate one
+     - Pre-shared Key: Enter your own pre-shared key or leave it blank so that Controller will generate one
 
-     - Remote Subnet: Enter the CIDR of the VNet, in which your virtual network gateway is created at Step 2
+     - Remote Subnet: Enter the CIDR of the VNet in which your virtual network gateway is created at Step 2
 
-     - Local Subnet: Enter the CIDR of the VPC/VNet, in which your Aviatrix gateway is created at Step 1
+     - Local Subnet: Enter the CIDR of the VPC/VNet in which your Aviatrix gateway is created at Step 1
 
-#. Once the site2cloud connection is created, select the same connection at "Site2Cloud" page. Select the following values for each specific field and click "Download Configuration" button.
+#. Once the site2cloud connection is created, select the same connection at the "Site2Cloud" page. Select the following values for each specific field and click "Download Configuration" button.
 
      - Vendor: Generic
 
@@ -75,7 +75,7 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 
      - Cloud Network(s) from "Subnets" section of "#3: Tunnel Interface Configuration"
 
-#. At Azure portal, go to "Local network gateways" page. Enter the following information to create a local network gateway:
+#. At the Azure portal, go to the "Local network gateways" page. Enter the following information to create a local network gateway:
 
      - Name: Enter a local gateway name (e.g. AVX-GW)
 
@@ -107,8 +107,8 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 Troubleshooting
 ===============
 
-To check a tunnel state, go to Site2Cloud, the tunnel status will be
-displayed in a pop up window.
+To check a tunnel state, go to Site2Cloud. The tunnel status will be
+displayed in a popup window.
 
 To troubleshoot a tunnel state, go to Site2Cloud -> Diagnostics.
 

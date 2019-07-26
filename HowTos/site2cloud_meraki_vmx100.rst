@@ -10,7 +10,7 @@ Overview
 --------
 This document describes how to create an IPsec tunnel between an Aviatrix Gateway and a Meraki vMX100 using Aviatrix Site2Cloud.
 
-Network setup is as following:
+The network setup is as following:
 
 **VPC1 (with Aviatrix Gateway)**
 
@@ -27,7 +27,7 @@ Network setup is as following:
 
 Add a Site2Cloud tunnel in Aviatrix Controller
 -----------------------------------------------
-1. Login to your Aviatrix Controller.
+1. Log in to your Aviatrix Controller.
 2. Select the Site2Cloud navigation item on the left navigation bar.
 3. Click on `+ Add New` near the top of the `Site2Cloud` tab.
 4. Under `Add a New Connection`, enter the following:
@@ -77,14 +77,14 @@ Add a Site2Cloud tunnel in Aviatrix Controller
 
 5. Click `OK`
 
-6. Click on this newly created Site2Cloud connection and select Vendor Aviatrix to `Download Configuration` so that you can copy and paste the preshared-key into Meraki configuration later.
+6. Click on this newly created Site2Cloud connection and select vendor "Aviatrix" to `Download Configuration` so that you can copy and paste the pre-shared key into the Meraki configuration later.
 
 Configuring Site-to-site VPN in Meraki vMX100
 ---------------------------------------------
 
 1. Login to your Meraki dashboard.
 
-2. In the `Security appliance` menu, select `Site-to-site VPN` under `Configure` section.
+2. In the `Security appliance` menu, select `Site-to-site VPN` under the `Configure` section.
 
    |meraki_vmx01|
 
@@ -92,7 +92,7 @@ Configuring Site-to-site VPN in Meraki vMX100
 
    |meraki_vmx02|
 
-4. Click on Custom in the IPsec Policies to create a custom policy that matches Aviatrix Site2Cloud configuration that was previously downloaded.
+4. Click on Custom in the IPsec Policies to create a custom policy that matches the Aviatrix Site2Cloud configuration that was previously downloaded.
 
    |meraki_vmx03|
 
@@ -104,7 +104,7 @@ Configuring Site-to-site VPN in Meraki vMX100
 
    |meraki_vmx04|
 
-8. At the AWS console, please allow UDP port 500 and 4500 from public ip of Aviatrix gateway in the vMX100's security group. For testing purpose, you may want to allow ICMP traffic from its local network 10.10.0.0/16 as well.
+8. At the AWS console, please allow UDP port 500 and 4500 from the public ip of Aviatrix gateway in the vMX100's security group. For testing purposes, you may want to allow ICMP traffic from its local network 10.10.0.0/16 as well.
 
    |meraki_vmx05|
 
@@ -112,11 +112,11 @@ Configuring Site-to-site VPN in Meraki vMX100
 
    |meraki_vmx06|
 
-8. Send traffic from Meraki vMX100 VPC2 internal network to Aviatrix gateway VPC1. Verify that VPN Status is green under Non-Meraki peer tab. 
+8. Send traffic from the Meraki vMX100 VPC2 internal network to Aviatrix gateway VPC1. Verify that the VPN Status is green under the Non-Meraki peer tab. 
 
    |meraki_vmx07|
 
-9. Login to Aviatrix Controller UI, browse to Site2Cloud page to confirm the connection is UP. 
+9. Log in to the Aviatrix Controller UI and browse to the Site2Cloud page to confirm that the connection is UP. 
 
    |meraki_vmx08|
 

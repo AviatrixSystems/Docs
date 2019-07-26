@@ -2,9 +2,9 @@
 Aviatrix Gateway to Juniper SRX
 ============================================
 
-This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and JuniperSRX Firewall.
+This document describes how to build an IPSec tunnel based site2cloud connection between an Aviatrix Gateway and a JuniperSRX Firewall.
 
-Network setup is as following:
+The network setup is as following:
 
 **VPC-multicloudvpc1 (with Aviatrix Gateway)**
 
@@ -22,12 +22,12 @@ Network setup is as following:
 
     *On-prem Private Network CIDR: 10.0.2.0/24*
 
-1. Create Site2Cloud Connection at Aviatrix Controller
+1. Create a Site2Cloud Connection at the Aviatrix Controller
 ======================================================
 
  1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-multicloudvpc1. Collect Gateway's public IP addresses (3.213.233.93 in this example).
    |image1|
- 1.2 Go to **site2cloud** page and click **Add New** to create a site2cloud connection.
+ 1.2 Go to the **site2cloud** page and click **Add New** to create a site2cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -46,13 +46,13 @@ Network setup is as following:
   Remote Subnet                     10.0.2.0/16 (On-Prem Private Network CIDR)
   Local Subnet                      10.1.2.0/24 (VPC-multicloudvpc1 private subnet)
 ===============================     =================================================================
-1.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-SRX-S2C).
-     - Select **Generic** from **Vendor** drop down list
-     - Click **Download Configuration** button to download the SRX site2cloud configuration
-     - Save the configuration file as a reference for configuring your Juniper SRX
+1.3 Go to the **site2cloud** page. From the site2cloud connection table, select the connection created above (e.g. avx-SRX-S2C).
+     - Select **Generic** from the **Vendor** drop down list.
+     - Click the **Download Configuration** button to download the SRX site2cloud configuration.
+     - Save the configuration file as a reference for configuring your Juniper SRX.
      |image2|
 
-     The following is a SRX sample configuration based on the site2cloud configuration above.
+     The following is an SRX sample configuration based on the site2cloud configuration above.
 
      |image3|
 
@@ -64,13 +64,13 @@ Network setup is as following:
     <iframe src="https://s3-us-west-2.amazonaws.com/aviatrix-download/docs/srx_site2cloud.txt" height="300px" width="100%"></iframe>
 
 
-3. Troubleshooting and Verifying at Aviatrix Controller
+3. Troubleshooting and Verifying at the Aviatrix Controller
 ========================================================
 
- 3.1 At Aviatrix Controller, go to **Site2Cloud** page. Verify the status of the site2cloud connection is up.
+ 3.1 At the Aviatrix Controller, go to the **Site2Cloud** page. Verify that the status of the Site2Cloud connection is up.
      |image4|
 
- 3.2 At **Site2Cloud - Diagnostics** page, run various diagnostics commands.
+ 3.2 At the **Site2Cloud - Diagnostics** page, run various diagnostics commands.
 
 ===============================     =================================================================
   **Field**                         **Value**
