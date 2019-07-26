@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
     :description: Using Aviatrix to Connect Azure to AWS or GCP
     :keywords: Aviatrix, Azure, AWS, GCP, multi cloud
 
@@ -156,7 +156,7 @@ Open a browser and navigate to https://<public ip address>/ .
 
    .. tip:: You may receive a warning about the certificate not matching.  You can safely ignore this and continue to the page.
 
-When you arrive at the login prompt, login with the Username `admin`.  The password is the private IP address of the Azure instance.
+When you arrive at the login prompt, log in with the Username `admin`.  The password is the private IP address of the Azure instance.
 
    .. tip:: The Private IP address can be found on the instance page by clicking on the `Networking` navigation link.
 

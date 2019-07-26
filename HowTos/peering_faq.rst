@@ -11,12 +11,12 @@ What does Aviatrix encrypted peering do?
 -----------------------------------------
 
 Aviatrix encrypted peering builds an encrypted tunnel between two
-VPC/VNet with a single click. In addition to build the encrypted connection,
-the controller also program the cloud infrastructure routing table so that
+VPC/VNet with a single click. In addition to building the encrypted connection,
+the Controller also programs the cloud infrastructure routing table so that
 you don't have to.
 
-The VPC and/or VNet can be across region
-and across cloud. The solution enables you to build an
+The VPC and/or VNet can be across regions
+and across the cloud. The solution enables you to build an
 encrypted network. You can enable stateful firewalls on each VPC/VNet to
 add additional security measures.
 

@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Cluster peering reference design
    :keywords: cluster, peering, cluster peering, Aviatrix, AWS VPC, Egress control
 
@@ -15,12 +15,12 @@ Today encrypted peering (IPSEC tunnel) between two VPCs is carried out
 by two gateways (EC2 instance based), one in each VPC. This limits IPSEC
 tunnel packet throughput to the throughput of a single instance. For
 example, AWS C4.4xlarge provides up to 1.5Gbps for an iperf test with
-TCP. There is no solution for use cases that requires more than that
+TCP. There is no solution for use cases that require more than that
 throughput with one gateway instance.
 
-AWS infrastructure has its own performance limitation. Traffic leaving a
+AWS infrastructure has its own performance limitations. Traffic leaving a
 VPC has a bandwidth limit of 5Gbps for one direction and 10Gbps for
-bi-directional. This limitation applies to both intra-region VPC traffic
+bi-directional traffic. This limitation applies to both intra-region VPC traffic
 and Internet bound traffic.
 
 For example, running an iperf test between two instances in two VPCs in the same
@@ -37,7 +37,7 @@ below.
 
 Aviatrix supports both inter-region cluster peering and intra-region
 cluster peering. In the first case, the encrypted cluster peering is
-over the Internet through IGW. In the second case, the encrypted cluster
+over the Internet through an IGW. In the second case, the encrypted cluster
 peering is over native AWS peering.
 
 The deployment diagrams are described below for both cases.
@@ -56,15 +56,15 @@ Performance Benchmark and Analysis
 ==================================
 
 Below is the performance benchmark for cluster peering using the iperf tool.
-The results are collected with encryption over AWS peering in a same
+The results are collected with encryption over AWS peering in the same
 region. The Aviatrix Gateway size is C4.8xlarge. The demux gateway size
 is C4.8xlarge.
 
-As the results shown, with 4 or 5 gateways in a cluster, performance
-reaches AWS VPC line rate. Adding more gateways does not improve the performance.
+As the results show, with 4 or 5 gateways in a cluster, performance
+reaches the AWS VPC line rate. Adding more gateways does not improve the performance.
 
-Note if the gateway size is C4.xlarge, more gateways are needed to achieve
-AWS line rate.
+Note that if the gateway size is C4.xlarge, more gateways are needed to achieve
+the AWS line rate.
 
 For information on how to run multi stream iperf tests, check out our GitHub project. https://github.com/AviatrixSystems/PerformanceTest/blob/master/PerformanceTest.txt
 
@@ -73,14 +73,14 @@ For information on how to run multi stream iperf tests, check out our GitHub pro
 High Availability
 =================
 
-The AWS Controller monitors the health of the peering gateways and demux gateway.
+The AWS Controller monitors the health of the peering gateways and the demux gateway.
 When heartbeat information from any gateway fails, the Controller will restart
 the failing gateways. The detection to failover is under 30 seconds.
 
 Configuration Workflow
 ======================
 
-Before you start make sure you have the latest software by checking the
+Before you start, make sure you have the latest software by checking the
 Dashboard. If an alert message (New !) appears, click New! to download
 the latest software.
 
@@ -88,7 +88,7 @@ We assume you already know how to deploy the Aviatrix solution, if you need
 help, check out this `reference
 design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Networking+Reference+Design.pdf>`__.
 
-The Cluster Peering work flow is as follows, with major steps
+The Cluster Peering workflow is as follows, with major steps
 highlighted.
 
 1. Create a gateway in VPC-1
@@ -97,8 +97,8 @@ highlighted.
 
 2. Create 2 more gateways in VPC-1
 
-   Repeat the above step to create 2 more gateways in VPC-1. Note all
-   gateways instances must be in the same subnet.
+   Repeat the above step to create 2 more gateways in VPC-1. Note that all
+   gateway instances must be in the same subnet.
 
 3. Create a cluster in VPC-1
 
@@ -108,14 +108,14 @@ highlighted.
 
 4. Repeat the above 3 steps for VPC-2
 
-5. Create Cluster Encrypted Peering
+5. Create a Cluster Encrypted Peering
 
     Go to Peering -> Cluster Encrypted Peering -> Cluster Peering ->
     +New Peering, enter the two clusters you created in the previous
     steps.
 
     **Special Notes**. Select “Over AWS Peering” if the two VPCs are in
-    the same region. Note when this option is selected, you must have
+    the same region. Note that when this option is selected, you must have
     AWS peering routing PCX programmed in the routing table **only** for
     the subnet where cluster gateway instances are deployed. You must
     **NOT** program PCX for routing tables whose associated subnets are
@@ -124,14 +124,14 @@ highlighted.
 1. Once peering configuration is completed, you can view it in
    dashboard. Cluster peering is drawn with a thicker green line.
 
-2. Note if you wish to add more gateways once a cluster peering has been
+2. Note if that you wish to add more gateways once a cluster peering has been
    created, you need to unpeer the cluster peering first. Add more
    gateways in each VPC, then create cluster peering again.
 
 3. You can create multiple clusters in a VPC. A gateway may also belong
    to different clusters.
 
-4. For support, send email to support@aviatrix.com.
+4. For support, send an email to support@aviatrix.com.
 
 5. Enjoy!
 
