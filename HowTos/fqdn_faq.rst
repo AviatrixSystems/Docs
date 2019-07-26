@@ -23,17 +23,16 @@ Why is Egress Control Filter needed?
 
 |egress_overview|
 
-For Internet bound egress traffic, specifying outbound policy at IP address level is not
+For Internet bound egress traffic, specifying outbound policy at the IP address level is not
 sufficient as the domain names of a site can be translated to many
 different IP addresses.
 
-AWS NAT gateway does not offer security group function;
-it relies on security groups by each instance.  AWS NAT instances' security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7.
+An AWS NAT gateway does not offer security group function;
+it relies on security groups by each instance. An AWS NAT instance's security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7.
 
 On the other hand, workloads in AWS are mostly applications or programs where it is deterministic which
-outbound APIs the application program calls. For example, an application runs API queries to
-*www.salesforce.com* for data retrieving and runs API queries to *www.google.com* for app authentication. In these cases, making sure that only these sites are allowed for egress
-traffic is sufficient from security point of view. Note this is very different from on-prem situations where end user traffic and application traffic are mingled together; you may need a full fledged firewall for Internet bound traffic.
+outbound APIs the application program calls. For example, an application runs API queries to *www.salesforce.com* for data retrieving and runs API queries to *www.google.com* for app authentication. In these cases, making sure that only these sites are allowed for egress
+traffic is sufficient from a security point of view. Note that this is very different from on-prem situations where end user traffic and application traffic are mingled together; you may need a full fledged firewall for Internet bound traffic.
 
 Another use case is for PCI DSS compliance. PCI DSS specifies that if you handle any payment and sensitive data, there must be firewall policy enforcement at the egress. In the cloud, the logical egress point is per VPC.
 
@@ -41,7 +40,7 @@ What does the Aviatrix FQDN feature do?
 ========================================
 
 Aviatrix Fully Qualified Domain Name (FQDN)
-is a security service specifically designed for workloads or applications in public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC. This service is centrally managed by the Controller and executed by an Aviatrix gateway instance in the VPC in the distributed architecture..
+is a security service specifically designed for workloads or applications in the public cloud. It filters Internet bound egress traffic initiated from workloads in a VPC. This service is centrally managed by the Controller and executed by an Aviatrix gateway instance in the VPC in the distributed architecture..
 
 Aviatrix FQDN filters any TCP and UDP traffic
 including HTTP, HTTPS and SFTP traffic. The filtering function allows
@@ -54,7 +53,7 @@ name. For example, if you only allow Internet bound traffic to
 `www.salesforce.com <http://www.salesforce.com>`__, you can list the
 domain name www.salesforce.com in the whitelist.
 
-For HTTP/HTTPS (TCP port 80/443), FQDN feature also supports wild card, such as \*. In
+For HTTP/HTTPS (TCP port 80/443), FQDN feature also supports wild cards, such as \*. In
 this example, you can specify \*.salesforce.com to allow traffic to any
 domain names that ends in "salesforce.com".
 
@@ -63,7 +62,7 @@ How does it work?
 
 The function is transparent to individual instances and is carried out inline without requiring any certificate or keys to decrypt the traffic.
 
-non-HTTP/HTTPS traffic can also be filtered based on exact domain names. Use cases are secure file transfer (SFTP) to external sites, secure login in (SSH) to external sites.
+Non-HTTP/HTTPS traffic can also be filtered based on exact domain names. Use cases are secure file transfer (SFTP) to external sites, secure login in (SSH) to external sites.
 
 A tag is defined as a list of FQDNs and it is created and managed on the Controller
 console. One or more gateways may be attached to
@@ -76,15 +75,15 @@ for traffic to pass.
 
 For configuration details, refer to `this doc. <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
-How to Enable HA for FQDN gateways?
+How do I Enable HA for FQDN gateways?
 ===================================
 
 Go to Gateway page, highlight the gateway, and click Edit.
 
-At "Gateway for High Availability Peering", select a public subnet in the drop down menu, click create. A backup gateway with the name extension -hagw will be created. Note this takes a few minutes of time.
+At "Gateway for High Availability Peering", select a public subnet in the drop down menu, click create. A backup gateway with the name extension -hagw will be created. Note that this takes a few minutes of time.
 
 For FQDN function, the primary gateway and backup gateway load balance the
-Internet bound traffic from different subnets based on route table.
+Internet bound traffic from different subnets based on a route table.
 
 How does Aviatrix Egress FQDN compare to Squid Solution?
 ==============================================================
@@ -106,23 +105,23 @@ Vendor support                                  Yes                             
 ==========================================      =============================================================                                           =============
 
 
-How to Troubleshoot FQDN Problems?
+How do I Troubleshoot FQDN Problems?
 ===================================
 
 If you have problems with FQDN on a specific gateway, follow the instructions below to troubleshoot:
 
- 1. Make sure the corresponding AWS or Azure route table has the route entry 0.0.0.0/0 points to the gateway instance.
- #. To verify the above step is setup properly, disable FQDN function of the problem gateway by detaching it from the associated tag, and run a ping test to www.yahoo.com from an instance in the private subnet, to make sure Internet egress works.
+ 1. Make sure the corresponding AWS or Azure route table has the route entry 0.0.0.0/0 which points to the gateway instance.
+ #. To verify that the above step is set up properly, disable the FQDN function of the problem gateway by detaching it from the associated tag, and run a ping test to www.yahoo.com from an instance in the private subnet to make sure Internet egress works.
  #. Attach the problem gateway to the tag. Make sure the tag has Enabled button on. Make sure the Whitelist or Blacklist is selected as intended.
  #. Check the tag to make sure it has the intended URL configured.
- #. Run a "wget" test from a private instance in the VPC to an URL configured in the tag.
+ #. Run a "wget" test from a private instance in the VPC to a URL configured in the tag.
  #. Use "Step 4" at Egress FQDN View Log, select the problem gateway and download the log. Review the log file and analyze if the intended URL is in the log entry, why it is being accepted or denied.
- #. Note if a tag has "White list" option selected, all URL in the tag will be accepted. On the other hand, if a tag has a "Black list" option selected, all URL in the tag will be dropped.
- #. If none of the above works, try Disable and Enable the tag again. This will restart the FQDN function on all attached gateways.
- #. If all above steps failed, get help from aviatrix support team and upload `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_.
+ #. Note: if a tag has "White list" option selected, all URL in the tag will be accepted. On the other hand, if a tag has a "Black list" option selected, all URL in the tag will be dropped.
+ #. If none of the above work, try to Disable and Enable the tag again. This will restart the FQDN function on all attached gateways.
+ #. If all above steps failed, get help from the Aviatrix support team and upload `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_.
 
 
-How does FQDN and Stateful Firewall work together?
+How do FQDN and Stateful Firewall work together?
 ----------------------------------------------------
 
 There are some caveats in release 3.4 when configuring `Stateful Firewall <https://docs.aviatrix.com/HowTos/tag_firewall.html>`_ and `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_. Note the below caveats have been fixed for `release 3.5 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_.

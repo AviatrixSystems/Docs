@@ -25,8 +25,8 @@ Configure
 
 |source_nat_fields|
 
-#. Select **Customized SNAT** radio button
-#. Click **+ Add New** button
+#. Select the **Customized SNAT** radio button
+#. Click the **+ Add New** button
 #. Enter the values in the fields as follows:
 
    +-----------------------+-------------------------------------------------+
@@ -53,7 +53,7 @@ Configure
 
    .. tip::
 
-      To find the Private IP address of the gateway, scroll to the top and click the three lines next to **Gateway Detail**
+      To find the Private IP address of the gateway, scroll to the top and click the three lines next to **Gateway Detail**.
       
       |get_private_ip|
 

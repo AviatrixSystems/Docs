@@ -13,7 +13,7 @@ Aviatrix gateway security policies are implemented at each gateway, key features
  * A Base policy for "Allow" or "Deny" for the gateway can be used as a catch all rule.  
  * All security policy events as well as packets can be logged to Splunk, SumoLogic, Syslog, ELK and Datadog. 
 
-Starting with release 3.0, A tag mechanism has been introduced to make the security policy specification more user friendly. You can associate an IP address or a subnet with a name tag and use it as a shorthand to specify the source and destination for your security rules.
+Starting with release 3.0, a tag mechanism has been introduced to make the security policy specification more user friendly. You can associate an IP address or a subnet with a name tag and use it as a shorthand to specify the source and destination for your security rules.
 
 1. Define a Tag
 ----------------
@@ -25,7 +25,7 @@ A tag is a global resource to the Aviatrix Controller and can be applied to any 
 2. Edit a Tag
 --------------
 
-Once a tag is created, you can Edit the tag. 
+Once a tag is created, you can edit the tag. 
 
 Editing is about adding a name to a CIDR address (network address or host address). 
 Multiple Name<->CIDR pair can be added. When you are done Editing, click Update to take effect. 
@@ -37,7 +37,7 @@ Click Security -> Stateful Firewall -> Policy
 
 You should see a list of gateways that the Controller manages. Highlight a gateway and click Edit.
 
-To configure security policies, select a Base Policy. Base Policy is the always attached as the 
+To configure security policies, select a Base Policy. Base Policy is always attached as the 
 last rule as a catch all policy. 
 
 Select `Enable Packet Logging` if you want to forward logs to well known log management systems, such as Splunk, Sumo Logic, Elastic Search and remote syslog.
@@ -59,9 +59,9 @@ To view the policies of gateway, select Policy, highlight a gateway and click Ed
 5. Example Use Case
 ---------------------
 
-Say you have a group of EC2 instances or a group of AWS Workspace instance. You like to setup policies to allow them to access a database which itself consists of a group of nodes. 
+Say you have a group of EC2 instances or a group of AWS Workspace instance. You would like to set up policies to allow them to access a database which itself consists of a group of nodes. 
 
-You can create a tag, name it my-app, configure the list of IP addresses associated with each instance with a name. You can then create a second tag, name it my-database, configure the list of IP addresses associated with each instance with a name. 
+You can create a tag, name it my-app and configure the list of IP addresses associated with each instance with a name. You can then create a second tag, name it my-database, and configure the list of IP addresses associated with each instance with a name. 
 
 You then can simply apply one policy at the gateway that says my-app to my-database is allowed. The Controller will automatically push the policies to the gateway. 
 
