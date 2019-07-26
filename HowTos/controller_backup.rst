@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: controller HA
    :keywords: controller high availability, controller HA, AWS VPC peering
 
@@ -6,7 +6,7 @@
 Controller Backup and Restore
 ###################################
 
-When deployed in a cloud environment, the Aviatrix controller, is not in the data path as packet processing and encryption is done by the Aviatrix gateways.
+When deployed in a cloud environment, the Aviatrix controller is not in the data path as packet processing and encryption is done by the Aviatrix gateways.
 
 When the controller is down or out of service, your network will continue to be operational and encrypted tunnels and OpenVPN® users stay connected and are not affected. Since most of the data logs are forwarded from the gateways directly, the loss of log information from the controller is minimal. The only impact is that you cannot build new tunnels or add new OpenVPN® users.
 
@@ -18,7 +18,7 @@ How to backup configuration
 
 Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container.  Before you begin, determine where you would like to store the backup and create either the S3 bucket or Azure Container.
 
-  #. Login to the Controller
+  #. Log in to the Controller
   #. Click on the `Settings` navigation item
   #. Click on the `Maintenance` sub item
   #. Click on the `Backup & Restore` tab
@@ -38,13 +38,13 @@ Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container.
   
 The first time you enable this feature, the configuration will backed up to your specified location. After this, the configuration data is automatically backed up daily at 12am.
 
-Selecting "Multiple Backup" checkbox, will enable the controller to backup up to a maximum 3 rotating backups. Each backup filename will contain date and time of when the backup is made. Additionally, the backup without any date and time in the filename contains a copy of the latest backup.
+Selecting the "Multiple Backup" checkbox will enable the controller to backup up to a maximum of 3 rotating backups. Each backup filename will contain the date and time of when the backup is made. Additionally, the backup without any date and time in the filename contains a copy of the latest backup.
 
 If you want to force an immediate backup (e.g. for a configuration change) you can accomplish this by clicking on the "Backup Now" button. If multiple backups are not enabled, each time the configuration is backed up, the backup up file will be overwritten. Otherwise, the oldest backed up will be overwritten.
 
 .. note::
 
-   It is recommended to turn on 'Multiple Backup' option. If the backup is already 'Enabled', go ahead and 'Disable' it and then turn on the 'Multiple Backup' option and then 'Enable' the backup again.
+   It is recommended that you turn on the 'Multiple Backup' option. If the backup is already 'Enabled', go ahead and 'Disable' it, turn on the 'Multiple Backup' option and then 'Enable' the backup again.
 
 
 
@@ -53,7 +53,7 @@ How to restore configuration
 
 If you are starting from a new Controller, follow these steps to get started:
 
-#. Login to the Controller with the `admin` username and the default password
+#. Log in to the Controller with the `admin` username and the default password
 #. Follow the initial steps to get the Controller up and running.
 
    #. Enter an email address
@@ -111,15 +111,15 @@ AWS S3 allows uploaded backup files to be encrypted in the server side for more 
 
 4. If AWS-KMS with Custom KMS ARN is selected, additional configuration will be needed:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    a. Create Custom Encryption Key by going to IAM->Encryption Keys->Create Key
+    a. Create a Custom Encryption Key by going to IAM->Encryption Keys->Create Key
 
     |KMSKeyCreate|
 
-    b. copy the custom Key KMS ARN to the S3 encryption property configuration
+    b. Copy the custom Key KMS ARN to the S3 encryption property configuration
 
     .. note::
 
-        Make sure that the custom encryption key and the S3 bucket are in the same region
+        Make sure that the custom encryption key and the S3 bucket are in the same region.
 
     c. If IAM user is used for onboarding authentication, add user "aviatrix-role-app" into the key
 

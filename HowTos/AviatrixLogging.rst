@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Data Analytics with Aviatrix Logs -Splunk and Sumo
    :keywords: Splunk, Sumo, aviatrix logs, data analytics
 
@@ -13,7 +13,7 @@
 1. Introduction
 ================
 
-Aviatrix Controller and all its managed gateways can be configured to forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them would need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
+The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them  need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
 
  - Splunk Enterprise
  - Sumo Logic
@@ -28,9 +28,9 @@ In addition to standard information on syslog, Aviatrix also provides
 capability for user VPN connections, VPN user TCP sessions, security
 rule violation statistics, Gateway stats and FQDN filter violations.
 
-Log Management System can be used to sift through the Aviatrix logs and
+The Log Management System can be used to sift through the Aviatrix logs and
 get the meaningful trend charts that helps monitor the network
-connectivity and user VPN sessions. The following sections provides a
+connectivity and user VPN sessions. The following sections provide a
 list of useful Aviatrix logs which can be parsed on Splunk, Sumo Logic
 and other log management systems to display relevant analytics of data
 collected from Aviatrix Controller and gateways.
@@ -38,7 +38,7 @@ collected from Aviatrix Controller and gateways.
 2. Aviatrix Log Format for Log Management Systems
 ==================================================
 
-Following types of Aviatrix log keywords can be identified by the Log
+The following types of Aviatrix log keywords can be identified by the Log
 Management System for further analysis:
 
 - `AviatrixVPNSession <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id1>`_
@@ -67,7 +67,7 @@ name, the VPN gateway IP address and name where the user connects to,
 client virtual IP address, connection duration, total received bytes,
 total transmitted bytes, and login and logout time. Two logs will be
 generated for each VPN connection. One is when the connection is
-established, the other when it’s disconnected.
+established, the other when it is disconnected.
 
 Example logs:
 
@@ -98,7 +98,7 @@ when launching a gateway.
 
 Logs with this prefix come from each VPN gateway managed by the
 controller. The log contains the information for the TCP session, such
-as Inbound and outbound interface, source IP address, destination IP
+as inbound and outbound interface, source IP address, destination IP
 address, TTL value, protocol name, and packet length. The log record is
 for each packet that passes through the VPN connection from the client
 to the destination.
@@ -122,7 +122,7 @@ AviatrixLicenseVPNUsers:
 This log is for gateways that have `VPN enabled <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_. To enable VPN, check "VPN Access"
 when launching a gateway.
 
-Logs with this prefix come from Controller and can be used to monitor 
+Logs with this prefix come from the Controller and can be used to monitor 
 the license usage of active vpn users connected to all vpn gateways.
 
 One example log:
@@ -131,7 +131,7 @@ One example log:
 
   Sep 25 23:40:19 ip-10-40-0-133 cloudxd: AviatrixLicsenseVPNUsers: users=2
 
-.. note:: There is a typo in some versions (as noted in above example) that incorrectly shows this entry as `AviatrixLicsenseVPNUsers` instead of `AviatrixLicenseVPNUsers`.
+.. note:: There is a typo in some versions (as noted in the above example) that incorrectly shows this entry as `AviatrixLicsenseVPNUsers` instead of `AviatrixLicenseVPNUsers`.
 
 AviatrixRule:
 --------------
@@ -152,7 +152,7 @@ the gateway name is gw1, "D" represents Drop.
 
  2019-04-10T23:33:47.217018+00:00 ip-10-240-0-44 kernel: [ 4976.320353] AvxRl gw1 D:IN=eth0 OUT=eth0 MAC=02:bd:e5:4f:d0:e2:02:d8:14:81:fc:48:08:00 SRC=10.240.1.60 DST=10.230.1.23 LEN=84 TOS=0x00 PREC=0x00 TTL=63 ID=45312 DF PROTO=ICMP TYPE=8 CODE=0 ID=2833 SEQ=1
 
-Another example for a accept rule event is shown below. The log event prefix is "AvxRl StatefulGW2 A:", 
+Another example for an accept rule event is shown below. The log event prefix is "AvxRl StatefulGW2 A:", 
 where the gateway name is StatefulGW2, "A" represents Accept.  
 
 ::
@@ -164,7 +164,7 @@ AviatrixGwNetStats:
 --------------------
 
 Logs with this prefix come from each gateway managed by the controller.
-These logs are sampled every 1 minutes, and give details about gateway
+These logs are sampled every minute and give details about gateway
 network interface.
 
 Two example logs:
@@ -187,7 +187,7 @@ AviatrixGwSysStats:
 -------------------
 
 Logs with this prefix come from each gateway managed by the controller.
-These logs are sampled every 1 minutes, and give details about gateway
+These logs are sampled every minutes and give details about gateway
 memory, cpu and disk load.
 
 Two example logs:
@@ -211,7 +211,7 @@ Logs with this prefix come from each gateway managed by the controller.
 Domain name filtering can be configured per gateway via controller. And
 every time a gateway tries to access a domain name, it will check if the
 domain name passes the configured filters. If it does, access will be
-allowed with state as MATCHED, otherwise it will be discarded with state
+allowed with the state as MATCHED, otherwise it will be discarded with state
 as NO\_MATCH.
 
 Two example logs:
@@ -230,7 +230,7 @@ Two example logs:
 AviatrixTunnelStatusChange
 --------------------------
 
-Logs with this prefix come from controller whenever a tunnel status changes.
+Logs with this prefix come from the controller whenever a tunnel status changes.
 old_state means old state of the tunnel, and new_state is the new changed state of tunnel.
 
 Example log:
@@ -244,9 +244,9 @@ Example log:
 AviatrixCMD
 --------------------------
 
-Logs with this prefix come from controller whenever a CLI command is issued.  It contains
+Logs with this prefix come from the controller whenever a CLI command is issued.  It contains
 information on the CLI command that was issued, the results of the execution, and reason
-message if there is a failure.
+a message if there is a failure.
 
 Example log:
 
@@ -261,7 +261,7 @@ Example log:
 AviatrixBGPOverlapCIDR
 ------------------------
 
-Log message with this prefix comes from the Controller whenever it detects overlapping CIDRs between on-prem learned and Spoke VPC CIDRs. 
+Log messages with this prefix come from the Controller whenever it detects overlapping CIDRs between on-prem learned and Spoke VPC CIDRs. 
 
 Example log:
 
@@ -274,7 +274,7 @@ Example log:
 AviatrixBGPRouteLimitThreshold
 --------------------------------
 
-Log message with this prefix comes from the Controller whenever it detects total BGP routes
+Log messages with this prefix come from the Controller whenever it detects that total BGP routes
 exceed the 80 routes. (AWS VGW has a total 100 route limit.)
 
 Example log:
@@ -291,7 +291,7 @@ Example log:
 AviatrixGuardDuty
 -------------------
 
-Log message with this prefix comes from the Controller whenever it receives alert message from AWS GuardDuty. 
+Log messages with this prefix come from the Controller whenever it receives an alert message from AWS GuardDuty. 
 
 Example log:
 
@@ -306,15 +306,15 @@ Example log:
 3. Logging Configuration at Aviatrix Controller
 ================================================
 
-To enable logging at Aviatrix Controller, go to Settings->Logging page. Once logging is enabled, both Controller and all gateways will forward logs directly to the logging server.
+To enable logging at the Aviatrix Controller, go to Settings->Logging page. Once logging is enabled, both the Controller and all gateways will forward logs directly to the logging server.
 
-Two examples for Remote Syslog and Logstash Forwarder below.
+Two examples for Remote Syslog and Logstash Forwarder follow below.
 
 3.1 Remote Syslog
 ------------------
 On the Aviatrix Controller:
-  a. Server:	FQDN or IP address of remote syslog server
-  #. Port:	Listening port of remote syslog server (6514 by default)
+  a. Server:	FQDN or IP address of the remote syslog server
+  #. Port:	Listening port of the remote syslog server (6514 by default)
   #. Cert:	A compressed file in tgz format with both certificates (.crt format) of remote syslog server and CA. For example, a compressed file which is named certs.tgz includes (1) ca.pem, (2) rsyslog-crt.pem, and (3) rsyslog-key.pem
   #. Protocol:	TCP or UDP (TCP by default)
   
@@ -338,7 +338,7 @@ On the Aviatrix Controller:
   #. Trusted CA:	CA certificate (.crt format)
 
 Note:
-If "Local" is selected for "Server Type", Aviatrix Controller itself will be enabled as a logstash server. Before you do this, make sure your controller has at least 30GB of hard disk space. 
+If "Local" is selected for "Server Type", the Aviatrix Controller itself will be enabled as a logstash server. Before you do this, make sure your controller has at least 30GB of hard disk space. 
 
 On the Logstash console:
   Log into the web page of your logstash server to access the logs. 
@@ -376,7 +376,7 @@ Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 4. Log management system Apps
 ====================================
 
-Aviatrix controller can be configured to forward logs to various log
+The Aviatrix controller can be configured to forward logs to various log
 management systems. Aviatrix also provides apps with prebuilt dashboards
 for popular log management systems like Splunk and Sumo Logic.
 
@@ -397,7 +397,7 @@ instructions on GitHub.
 Sumo Logic App for Aviatrix
 ---------------------------
 
-Sumo Logic app installation guide is also available on
+The Sumo Logic app installation guide is also available on
 `GitHub <https://github.com/AviatrixSystems/SumoLogicforAviatrix>`_.
 
 **Sample**

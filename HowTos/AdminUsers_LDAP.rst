@@ -24,7 +24,7 @@ Configuration Details
 ---------------------
 
 .. note::
-   This step must be done by an existing Aviatrix Controller admin user
+   This step must be done by an existing Aviatrix Controller admin user.
 
 #. Login to your Controller
 #. Go to the **Settings** navigation menu item
@@ -82,7 +82,7 @@ Configuration Details
 Considerations
 ---------------
 
-* LDAP authentication requires local user accounts be created on the Controller.  The username configured in the `Account Users` must match the username in LDAP/AD.
+* LDAP authentication requires that local user accounts be created on the Controller.  The username configured in the `Account Users` must match the username in LDAP/AD.
 
 * Once enabled, local user accounts will no longer be active.  That is, if there is a user created in the Controller that does not match a user in LDAP, they will no longer be able to login to the Controller.
 

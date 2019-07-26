@@ -14,7 +14,7 @@ The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csr
 
 To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
-When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2.
+When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module.
 
 
 
