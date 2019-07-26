@@ -10,7 +10,7 @@ Transit DMZ FAQ
 What is Transit DMZ?
 -----------------------
 
-Transit DMZ is a cloud networking feature for the Next Gen Transit network. With Transit DMZ, you can centrally deploy instance based
+Transit DMZ is a cloud networking feature for the Next Gen Transit network. With a Transit DMZ, you can centrally deploy instance based
 firewall virtual appliances to protect traffic between on-prem and VPCs, VPC to VPC (East-West) and VPC Egress and Ingress. Transit DMZ is 
 implemented at the edge VPC as shown below, where a pair of firewalls are deployed between two pairs of Aviatrix Transit GWs at the Transit VPC edge. 
 
@@ -22,17 +22,17 @@ How is Transit DMZ different from the traditional deployment of firewalls in the
 Traditionally, centrally deployed instance based firewall appliances require IPSEC tunnels and BGP to send traffic from VPCs to these appliances. This increases the complexity of managing the firewalls and reduces performances for the security
 features that you want them to perform. 
 
-Transit DMZ decouples networking functions and security functions. There is no IPSEC tunnels between the Aviatrix 
+Transit DMZ decouples networking functions and security functions. There are no IPSEC tunnels between the Aviatrix 
 Transit GW and the firewall appliances, thus simplifying firewall deployment, maximizing firewall appliance performance and allowing them to scale independently.  
 
 What is the problem with deploying firewall instances with ECMP?
 ------------------------------------------------------------------
 
-AWS Transit Gateway (TGW) supports VPN with ECMP load balancing. With is capability, you can launch multiple firewall instances in a load balanced fashion 
+AWS Transit Gateway (TGW) supports VPN with ECMP load balancing. With this capability, you can launch multiple firewall instances in a load balanced fashion 
 for Egress Inspection and VPC to VPC traffic inspection. The problem with this deployment is performance. The IPSEC tunnel limits each firewall instance
 to be capped at 1Gbps. When this architecture is deployed for VPC to VPC inspection, traffic goes through VGW (the other end of the IPSEC tunnel) twice, 
 further reducing its throughput to 400Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is 
-much lower than what firewall instances can do without IPSEC tunnel. 
+much lower than what firewall instances can do without an IPSEC tunnel. 
 
 Can Transit DMZ work with Transit VPC?
 ---------------------------------------
@@ -71,8 +71,8 @@ Here is how Transit DMZ works:
  #. The Controller then distributes the routes to all Spoke VPCs and the main gateways. 
  #. From a Spoke VPC point of view, its transit gateway is the main gateway even though the main gateway runs no BGP. 
 
-The Aviatrix Controller monitors the health of the instance based firewall appliances by AWS APIs. When it detects one
-firewall instance become not in running state, it triggers an HA failover to direct both the main gateway and the 
+The Aviatrix Controller monitors the health of the instance based firewall appliances by AWS APIs. When it detects that one
+firewall instance is no longer in a running state, it triggers an HA failover to direct both the main gateway and the 
 companion gateway to point the routes to the backup firewall instance. 
 
 How should the firewall be deployed?
@@ -82,7 +82,7 @@ A firewall typically has multiple interfaces.
 
 |main_companion_subnets| 
 
-Aviatrix Controller will create VPC route tables to associate the firewall subnets and create necessary route entries 
+The Aviatrix Controller will create VPC route tables to associate the firewall subnets and create necessary route entries 
 for packet forwarding. 
 
 How to setup Transit DMZ?
@@ -94,7 +94,7 @@ for a step by step guide to setup.
 How to enable East-West Inspection for encrypted transit?
 ----------------------------------------------------------
 
-If you deploy the transit solution with Spoke VPC deployed with Aviatrix gateways, 
+If you deploy the transit solution with a Spoke VPC deployed with Aviatrix gateways, 
 follow the two steps below to enable East-West (VPC to VPC) traffic inspection by Transit DMZ. 
 
  - Enable Connected Transit Mode. Go to Transit Network -> Advanced Config -> Edit Transit to enable Connected Transit.
