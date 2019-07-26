@@ -7,7 +7,7 @@
 AWS Transit Gateway Orchestrator Design Patterns
 =========================================================
 
-Many design patterns exist to deploy your network with AWS Transit Gateway Orchestrator. Here are some 
+Many design patterns exist to deploy your network with the AWS Transit Gateway Orchestrator. Here are some 
 examples. 
 
 .. important::
@@ -17,13 +17,13 @@ examples.
 Dev & Prod isolated design
 ---------------------------
 
-If you like to build network segmentation between Dev/QA VPCs and Production VPCs, but requiring shared service VPC and
+If you like to build network segmentation between Dev/QA VPCs and Production VPCs, but require shared service VPC and
 on-prem to reach each VPC, consider the diagram below.
 diagram below.
 
 |dev_prod_design|
 
-In this network design, you need to create a two custom Security Domains, Dev_Domain and Prod_Domain.
+In this network design, you need to create two custom Security Domains, Dev_Domain and Prod_Domain.
 
 At the Plan page Step 2, select "Create Custom Security Domain" and fill in the information. Make sure you multi select Shared_Service_Domain and Aviatrix_Edge_Domain for "Connect to Security Domains". Apply this step for both Dev_Domain and Prod_Domain.
 
@@ -72,13 +72,13 @@ At Plan page Step 2, select "Full mesh network".
 Fully Isolated network design
 ------------------------------
 
-If you like to build a fully isolated network where no VPC can communicate with each other except to the shared service VPC and on-prem, you need to create a Security Domain for each VPC and connect each domain to the Shared_Service_Domain. 
+If you would like to build a fully isolated network where no VPC can communicate with each other except to the shared service VPC and on-prem, you need to create a Security Domain for each VPC and connect each domain to the Shared_Service_Domain. 
 
 |fully_isolated_network_design|
 
 In this network design, you need to create a custom Security Domain for each VPC. 
 
-If this design does not scale for you, consider `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ where all VPCs are by default isolated to each other. 
+If this design does not scale for you, consider the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ where all VPCs are by default isolated to each other. 
 
 Fully Isolated network with multi sites VPN
 ---------------------------------------------
@@ -96,8 +96,7 @@ deployment is expanded to include Egress FQDN support, as shown below.
 
 |default_egress|
 
-Follow the instructions for `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to deploy egress control funct
-ion.
+Follow the instructions for `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to deploy egress control function.
 
 High Performance Transit - Insane Mode
 ---------------------------------------
@@ -110,7 +109,7 @@ Added benefit is that traffic over Direct Connect is encrypted.
 Firewall Network
 ------------------
 
-Simplifying and scale your firewall deployment with Aviatrix Firewall Network solution.
+Simplify and scale your firewall deployment with Aviatrix Firewall Network solution.
 For more information, check out `Firewall Network FAQ <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 |firewall_network|

@@ -13,19 +13,19 @@ Starting from Release 4.1, there are three options to connect to Transit GW with
  - Aviatrix hardware appliance CloudN
  - External (or 3rd Party) Router/Firewall
 
-This document provides instructions on how to connect Aviatrix Transit GW to external router/firewall devices.
+This document provides instructions on how to connect the Aviatrix Transit GW to external router/firewall devices.
 
-What are the use cases for connecting to external router?
+What are the use cases for connecting to an external router?
 -----------------------------------------------------------
 
- - **Overcome AWS VGW 100 route limit** Typically Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to external device, VGW is bypassed. 
+ - **Overcome AWS VGW 100 route limit** Typically, an Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to an external device, the VGW is bypassed. 
 
- - **Azure Transit Network** This feature allows Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
+ - **Azure Transit Network** This feature allows an Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
 
 How does it work? 
 ------------------
 
-Aviatrix Transit GW runs a BGP session to external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding. 
+The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding. 
 
 The mechanism works for AWS Direct Connect, Azure Express Route or Internet. 
 
@@ -83,7 +83,7 @@ Remote Tunnel IP address       Optional parameter. This field is for the tunnel 
 
 After the configuration is done, a connection is created. Download the configuration file. 
 
-At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name", click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
+At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name" and click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
 
 |download_config_external|
 
@@ -106,7 +106,7 @@ Steps to
 
 
 
-Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP. . 
+Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP.  
 
 4. Disconnect the external device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +120,7 @@ The following is the topology used for the sample configuration below:
 
 |External-Device-Internet|
 
-Since over Internet, Aviatrix Transit GW and Cisco ISR/ASR use the other's public IP to create IPSec tunnel and establish BGP
+Since over Internet, Aviatrix Transit GW and Cisco ISR/ASR use each other's public IP to create an IPSec tunnel and establish a BGP
 connection.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
@@ -141,13 +141,13 @@ The following is the topology used for the sample configuration below:
 
 |External-Device-DX|
 
-Since over Direct Connect, Aviatrix Transit GW and Cisco ISR/ASR use the other's private IP to create IPSec tunnel and
+Since over Direct Connect, the Aviatrix Transit GW and Cisco ISR/ASR use each other's private IP to create an IPSec tunnel and
 establish BGP connection.
 
 .. note::
-   ASN number of Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
-   ASN number (7224 in this example). Without it, Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
-   advertised by ASR/ISR back to Aviatrix Transit GW. With the same ASN number, Aviatrix Transit GW will drop the
+   The ASN number of the Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
+   ASN number (7224 in this example). Without it, the Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
+   advertised by ASR/ISR back to the Aviatrix Transit GW. With the same ASN number, Aviatrix Transit GW will drop the
    route to Transit VPC CIDR.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding

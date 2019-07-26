@@ -7,7 +7,7 @@
 Insane Mode Encryption Performance 
 ===============================================
 
-This document discusses Aviatrix Insane Mode (or InsaneMode) performance test benchmarks, parameters that affect performance and how you can turn your environment for best performance. 
+This document discusses Aviatrix Insane Mode (or InsaneMode) performance test benchmarks, parameters that affect performance and how you can tune your environment for best performance. 
 
 For more information on Aviatrix Insane Mode, check out `this link. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
@@ -31,7 +31,7 @@ Key variables that affect performance are:
 Performance Test Results
 ---------------------------
 
-The performance test is conducted between a c5.4xlarge instance in the Spoke VPC and on-prem host machine over a 10Gbps Direct Connect between Transit VPC and on-prem datacenter (Equinix co-lo). The physical latency is 5ms. Additional latency is injected into the data path to simulate the latency impact to the end to end throughput. 
+The performance test is conducted between a c5.4xlarge instance in the Spoke VPC and on-prem host machine over a 10Gbps Direct Connect between the Transit VPC and an on-prem datacenter (Equinix co-lo). The physical latency is 5ms. Additional latency is injected into the data path to simulate the latency impact to the end to end throughput. 
 
 Aviatrix gateways at the Spoke VPC and Transit VPC are c5.4xlarge instance size. Both Spoke VPC gateway and Transit VPC gateway have Insane Mode enabled. 
 

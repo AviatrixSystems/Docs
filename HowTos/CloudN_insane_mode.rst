@@ -7,7 +7,7 @@
 Insane Mode CloudN Deployment Checklist
 ===============================================
 
-When Insane Mode is applied to improve encryption performance between on-prem and cloud, you need to deploy Aviatrix hardware appliance CloudN. Making this use case work requires edge router configurations. This document lists the checklist you should follow in 
+When Insane Mode is applied to improve encryption performance between on-prem and cloud, you need to deploy the Aviatrix hardware appliance CloudN. Making this use case work requires edge router configurations. This document lists the checklist you should follow in 
 successfully deploying Insane Mode for hybrid connection. 
 
 
@@ -20,7 +20,7 @@ The first step is to understand how routing works in this use case, as demonstra
 
 The key ideas for this scenario are:
 
- -  The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertises CloudN WAN subnet network and VGW advertises the Transit VPC CIDR.
+ -  The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertises a CloudN WAN subnet network and the VGW advertises the Transit VPC CIDR.
  -  CloudN LAN interface runs a BGP session to the edge router where the edge router advertises on-prem network address range to CloudN LAN interface.
  -  CloudN WAN interface runs a BGP session to Aviatrix Transit Gateway in the Transit VPC where Aviatrix Transit Gateway advertises all Spoke VPC CIDRs to CloudN and CloudN advertises on-prem network to the Aviatrix Transit Gateway. 
 
@@ -48,11 +48,11 @@ Redundant DX Deployment
 Step 2. Pre-deployment Request Form 
 ------------------------------------
 
-After you understand the deployment architecture and decide to move forward for this deployment, the next step is to fill the `CloudN
+After you understand the deployment architecture and decide to move forward for this deployment, the next step is to fill out the `CloudN
 Appliance Request Form. <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_   
 
-Aviatrix support team configures CloudN appliance based on your input in the Request Form, then 
-ship the appliance.  Deployment topology for Aviatrix CloudN is as follows:
+The Aviatrix support team configures a CloudN appliance based on your input in the Request Form, then 
+ships the appliance.  Deployment topology for Aviatrix CloudN is as follows:
 
 |InsaneBeta|
 
@@ -70,34 +70,34 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary
 
 2.1 Internet Access
 ~~~~~~~~~~~~~~~~~~~~~~~~
-CloudN appliance does not require public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
+A CloudN appliance does not require a public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
 
 2.2 BGP Requirement
 ~~~~~~~~~~~~~~~~~~~~~~~
-BGP is required between LAN port of the appliance and the on-prem router for route propagation.
+BGP is required between the LAN port of the appliance and the on-prem router for route propagation.
 
-Step 3. Deployment Check List
+Step 3. Deployment Checklist
 -----------------------------------
 
 3.1 Before Powering Up CloudN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before powering up CloudN, make sure 
  
- a. CloudN WAN cable, LAN cable and Management cable are properly plugged in to ASR and switches.
+ a. The CloudN WAN cable, LAN cable and Management cable are properly plugged in to ASR and switches.
  #. Check the interface of ASR to CloudN WAN interface, make sure Proxy ARP is enabled (ip proxy-arp). 
  #. ASR DX (Direct Connect) interface should only advertise CloudN WAN interface subnet network to VGW
  #. ASR LAN (Datacenter facing) interface does not advertise Transit VPC CIDR to datacenter.
  #. ASR to CloudN LAN interface advertises datacenter networks.
- #. VGW is attached to the Transit VPC. 
+ #. The VGW is attached to the Transit VPC. 
  #. AWS Transit VPC Route Propagation is enabled. 
- #. If there is an edge firewall in front of the edge router, make sure the firewall opens UDP port 500 and UDP port 4500 for traffic from the CloudN WAN Interface. CloudN builds an IPSEC tunnel between CloudN WAN interface and Aviatrix Transit Gateway. BGP session between the two interfaces are inside the tunnel. 
+ #. If there is an edge firewall in front of the edge router, make sure the firewall opens UDP port 500 and UDP port 4500 for traffic from the CloudN WAN Interface. CloudN builds an IPSEC tunnel between CloudN WAN interface and Aviatrix Transit Gateway. The BGP session between the two interfaces is inside the tunnel. 
 
 3.2 Power up CloudN
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-After you power up CloudN, first test the CloudN interfaces are alive and connected properly by doing the following tests.  
+After you power up CloudN, first test that the CloudN interfaces are alive and connected properly by doing the following tests.  
 
- a. From ASR,  ping CloudN LAN interface, WAN interface and Mgmt interface.
+ a. From ASR,  ping the CloudN LAN interface, WAN interface and Mgmt interface.
  #. CloudN mgmt interface can ping Internet (From CloudN clish console)
 
 3.3 Upgrade CloudN to the Latest Software
@@ -110,12 +110,12 @@ After you power up CloudN, first test the CloudN interfaces are alive and connec
 3.4 Configure Insane Moode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure to select all the correction options.
+From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure to select all the correct options.
 
 .. 
 
  a. CloudN IP Address is the CloudN WAN IP address
- #. CloudN Neighbor IP Address is the ASR to CloudN LAN interface IP address
+ #. CloudN Neighbor IP Address is the ASR to the 	CloudN LAN interface IP address
  #. After configuration, download the configure file and import to CloudN.
  #. If there is HA, import to CloudN HA.
 
@@ -123,9 +123,9 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  a. Check on CloudN Console. Go to Site2Cloud, make sure the tunnel is up. 
- #. Check on CloudN Console, Go to Troubleshoot -> Diagnostics -> BGP, make sure tunnel is up. Check BGP learned routes.
- #. Check on Controller. Go to Transit Network -> Advanced Config -> BGP, make sure BGP is learning routes. Also Diagnostics to execute BGP commands.
- #. Check on Controller. Go to Controller -> Site2Cloud, , site2cloud and BGP status.
+ #. Check on CloudN Console, Go to Troubleshoot -> Diagnostics -> BGP, make sure the tunnel is up. Check BGP learned routes.
+ #. Check on the Controller. Go to Transit Network -> Advanced Config -> BGP, make sure BGP is learning routes. Also check Diagnostics to execute BGP commands.
+ #. Check on the Controller. Go to Controller -> Site2Cloud, site2cloud and BGP status.
  
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
