@@ -7,7 +7,7 @@
 Aviatrix Transit Gateway to External Devices 
 =========================================================
 
-Starting from Release 4.1, there are three options to connect to Transit GW with BGP:
+Starting from Release 4.1, there are three options to connect to a Transit GW with BGP:
 
  - AWS VGW
  - Aviatrix hardware appliance CloudN
@@ -18,7 +18,7 @@ This document provides instructions on how to connect the Aviatrix Transit GW to
 What are the use cases for connecting to an external router?
 -----------------------------------------------------------
 
- - **Overcome AWS VGW 100 route limit** Typically, an Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to an external device, the VGW is bypassed. 
+ - **Overcoming the AWS VGW 100 route limit** Typically, an Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to an external device, the VGW is bypassed. 
 
  - **Azure Transit Network** This feature allows an Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
 
@@ -120,7 +120,7 @@ The following is the topology used for the sample configuration below:
 
 |External-Device-Internet|
 
-Since over Internet, Aviatrix Transit GW and Cisco ISR/ASR use each other's public IP to create an IPSec tunnel and establish a BGP
+Since over Internet,  an Aviatrix Transit GW and Cisco ISR/ASR use each other's public IP to create an IPSec tunnel and establish a BGP
 connection.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
