@@ -7,10 +7,10 @@
 Example Config for Palo Alto VM-Series
 =========================================================
 
-In this document, we provide an example to setup the VM-Series for you to validate that packets are indeed
+In this document, we provide an example to set up the VM-Series for you to validate that packets are indeed
 sent to the VM-Series for VPC to VPC traffic inspection.
 
-Aviatrix Firewall Network (FireNet) workflow launches VM-Series at `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ After the launch complete, the console displays the
+The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ After the launch is complete, the console displays the
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file 
 for SSH access to the instance. 
 
@@ -32,7 +32,7 @@ For Metered AMI, open a terminal and run the following command.
 
 .. tip ::
 
- Once you download the .pem file, change the file permission to 600. If you are asked to enter Password during the login, the VM-Series is still not ready. Wait and try again. It usually takes up to 15 minutes for VM-Series to be ready. When VM-Series is ready, you will not be asked for Password any more.  
+ Once you download the .pem file, change the file permission to 600. If you are asked to enter a password during the login, the VM-Series is still not ready. Wait and try again. It usually takes up to 15 minutes for the VM-Series to be ready. When the VM-Series is ready, you will not be asked for a password anymore.  
 
 
 ::
@@ -65,7 +65,7 @@ Login with Username "admin". Password is the password you set at the previous st
 4. Configure VM-Series ethernet1/1 and WAN Zone
 -------------------------------------------------
 
-Once login, click Network tab, you should see a list of ethernet interfaces. Click ethernet1/1 and 
+Once logged in, click on the Network tab and you should see a list of ethernet interfaces. Click ethernet1/1 and 
 configure as the following screenshot. 
 
  - Click Network tab
@@ -111,7 +111,7 @@ Now the VM-Series has its Allow All policy setup.
 7. Configure NAT for egress
 ------------------------------
 
-If you also like to enable NAT to test egress, follow these steps. 
+If you would also like to enable NAT to test egress, follow these steps. 
 
  a. Click Policies
  b. Click NAT
@@ -130,7 +130,7 @@ If you also like to enable NAT to test egress, follow these steps.
 8. Setup API access 
 ----------------------
 
-In order for Aviatrix Controller to automatically update firewall instance route tables, monitor firewall instance health and manage instance failover, you need to setup API access permissions. 
+In order for the Aviatrix Controller to automatically update firewall instance route tables, monitor the firewall instance health and manage instance failover, you need to setup API access permissions. 
 
 Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
@@ -139,17 +139,17 @@ Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_set
 
 Now your firewall instance is ready to receive packets! 
 
-The next step is specify which Security Domain needs packet inspection by defining a connection policy that connects to
+The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
 the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
 
-Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through. . 
+Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.  
 
 10. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to firewall instance by login to VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
+You can view if traffic is forwarded to the firewall instance by logging in to VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
 
 
 .. |access_key| image:: config_paloaltoVM_media/access_key.png
