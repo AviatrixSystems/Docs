@@ -26,7 +26,7 @@ Select one Transit GW to view details.
 BGP Dampening
 ##############
 
-BGP dampening feature can be used to suppress flapping routes. It is disabled by default. Currently you cannot configure dampening parameters. 
+The BGP dampening feature can be used to suppress flapping routes. It is disabled by default. Currently you cannot configure dampening parameters. 
 
 BGP Diagnostics
 ################

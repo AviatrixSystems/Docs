@@ -6,19 +6,19 @@
 Emails and Alert Configuration 
 ###################################
 
-Aviatrix Controller sends alert emails for events such as:
+The Aviatrix Controller sends alert emails for events such as:
 
  - Tunnel status change
  - Gateway status change
 
-By default, the alert email is sent to admin of the Controller. The email can be an individual email address or an email alias of a team. 
+By default, the alert email is sent to the admin of the Controller. The email can be an individual email address or an email alias of a team. 
 
 By default, the source email address is info@aviatrix.com. 
 
 How to change alert email configuration
 ----------------------------------------
 
-If you like the alert messages to be sent to a different email, 
+If you would like the alert messages to be sent to a different email, 
 
 ::
 
