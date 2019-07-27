@@ -9,7 +9,7 @@ Aviatrix Gateway to Cisco IOS Router
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Cisco IOS router.
 
-Network setup is as following:
+The network setup is as follows:
 
 **VPC-AVX (with Aviatrix Gateway)**
 
@@ -24,7 +24,7 @@ Network setup is as following:
 
  1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect Gateway's public IP addresses (52.4.65.172 in this example).
 
- 1.2 Go to **site2cloud** page and click **Add New** to create a site2cloud connection.
+ 1.2 Go to the **Site2Cloud** page and click **Add New** to create a Site2Cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -44,9 +44,9 @@ Network setup is as following:
   Local Subnet                      10.100.0.0/24 (VPC-AVX CIDR)
 ===============================     =================================================================
  
- 1.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-ios-s2c). 
+ 1.3 Go to the **site2cloud** page. From the Site2Cloud connection table, select the connection created above (e.g. avx-ios-s2c). 
      - Select **Generic** from **Vendor** drop down list 
-     - Click **Download Configuration** button to download the **Generic** site2cloud configuration 
+     - Click the **Download Configuration** button to download the **Generic** site2cloud configuration 
      - Save the configuration file as a reference for configuring your Cisco IOS router
      
      The following is a sample configuration based on the site2cloud configuration above.
@@ -65,11 +65,11 @@ Network setup is as following:
 3. Troubleshooting and Verifying at Aviatrix Controller
 ========================================================
 
- 3.1 At Aviatrix Controller, go to **Site2Cloud** page. Verify the status of the site2cloud connection is up.
+ 3.1 At the Aviatrix Controller, go to the **Site2Cloud** page. Verify that the status of the site2cloud connection is up.
 
      |image2|
 
- 3.2 At **Site2Cloud - Diagnostics** page, run various diagnostics commands.
+ 3.2 At the **Site2Cloud - Diagnostics** page, run various diagnostics commands.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -81,7 +81,7 @@ Network setup is as following:
 ===============================     =================================================================
 
 
-For support, send email to support@aviatrix.com.
+For support, send an email to support@aviatrix.com.
 
 .. |image0| image:: s2c_gw_ios_media/s2c_sample_config.png
    :width: 5.55625in
