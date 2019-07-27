@@ -15,7 +15,7 @@ This document records Aviatrix error messages, possible root causes and solution
   [Aviatrix Error] Egress-FireNet-oregon enables East-west inspection. It conflicts with tgw-0af3e281d06d363d4 existing firewall policy. If there are multiple Firewall domains or Transit DMZ that enable traffic inspection, please make sure egress_domain is completely isolated from the other firewall domain.
 
 This is probably caused by two firewall domains both wanting to inspect the same VPC traffic. Only one firewall domain
-can inspect east-west traffic and another inspects egress. 
+can inspect east-west traffic the other inspects egress. 
 
 You can fix this by going to Firewall Network -> Advanced. Select the firewall domain, disable "Traffic Inspection, 
 and enable "Egress through Firewall". Then go back and execute Step 6 in Firewall Network workflow. 
@@ -27,7 +27,7 @@ and enable "Egress through Firewall". Then go back and execute Step 6 in Firewal
 
   [Aviatrix Error] Only VPN BGP is supported. Go to AWS Console -> VPC -> Site-to-Site VPN Connections to download the configuration file.
 
-TGW VPN configuration download is not supported from Aviatrix Controller console. You can download the configuration by going to AWS Console -> VPC -> Site-to-Site VPN Connections to download the configuration file. Once the file is downloaded, use the information in the file to configure the remote end of IPSec VPN. 
+TGW VPN configuration downloading is not supported from the Aviatrix Controller console. You can download the configuration by going to the AWS Console -> VPC -> Site-to-Site VPN Connections to download the configuration file. Once the file is downloaded, use the information in the file to configure the remote end of the IPSec VPN. 
 
 ------------------------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ It is likely that the Controller was launched not by the CloudFormation script p
 
   Error: [Aviatrix Error] BGP connection can only be deleted from Transit Network page.
 
-Site2Cloud connection established from `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ can only be deleted by the `delete section <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_ in the workflow. 
+A Site2Cloud connection established from `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ can only be deleted by the `delete section <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_ in the workflow. 
 
 -----------------------------------------------------------------------------------
 
@@ -76,7 +76,7 @@ Site2Cloud connection established from `Transit Network workflow <https://docs.a
 
  [Aviatrix Error] Primary gateway virginia-transit is not up. Bring up the Primary gateway and try again.
 
-Most likely your gateway is in a stopped state. Go to AWS Console to start the gateway instance. 
+It is likely your gateway is in a stopped state. Go to AWS Console to start the gateway instance. 
 
 ------------------------------------------------------------------------------------
 
@@ -93,7 +93,7 @@ Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.htm
   [Aviatrix Error] oregon-transit with size t2.micro only support 2 interfaces. Cannot create DMZ interface. Please increase gateway size (suggest t3.medium) 
 
 Transit DMZ deployment requires 3 Ethernet interfaces. t2.micro has only 2. 
-At the Aviatrix Controller console, go to Gateway. highlight  the transit gateway with the size error, click Edit. Scroll down to Gateway Resize. In the drop down menu, select t2.small or a more powerful instance size. For instance size charts, refer to `this AWS guide <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>`_.
+At the Aviatrix Controller console, go to Gateway. Highlight  the transit gateway with the size error, click Edit. Scroll down to Gateway Resize. In the drop down menu, select t2.small or a more powerful instance size. For instance size charts, refer to `this AWS guide <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>`_.
 
 ------------------------------------------------------------------------------------
 
@@ -109,7 +109,7 @@ Go to Peering page to delete the peer first.
 
   Error: [Aviatrix Error] Detach virginia-spoke-1 from virginia-transit in Transit Network page...
 
-The peering relationship was most likely established by Transit Network workflow attaching a Spoke VPC to the Transit Gateway, therefore you should detach the Spoke VPC from the Transit VPC to delete the peering.
+The peering relationship was most likely established by the Transit Network workflow attaching a Spoke VPC to the Transit Gateway, therefore you should detach the Spoke VPC from the Transit VPC to delete the peering.
 
 
 ------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ The peering relationship was most likely established by Transit Network workflow
 
  Error: Failed to create TGW Infra-TGW in us-east-1 - An error occurred (UnauthorizedOperation) when calling the CreateTransitGateway operation: You are not authorized to perform this operation.
 
-Most likely you need to update IAM policies. Follow the instructions `here. <https://docs.aviatrix.com/HowTos/iam_policies.html>`_
+It is likely you need to update IAM policies. Follow the instructions `here. <https://docs.aviatrix.com/HowTos/iam_policies.html>`_
 
 
 -----------------------------------------------------------------------------------
@@ -128,7 +128,7 @@ Most likely you need to update IAM policies. Follow the instructions `here. <htt
 [Aviatrix Error] Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal ..... and configure programmatic deployment for the Marketplace item or create it there for the first time
 
 If you see this error message when you launch an Azure ARM gateway,
-chances are you have not subscribed to Aviatrix gateway during Azure onboarding process. Either go back to onboarding page and follow the instructions there, or click `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+subscribe+to+Aviatrix+companion+gateway.pdf>`__ for guidance.  
+chances are you have not subscribed to the Aviatrix gateway during Azure onboarding process. Either go back to the onboarding page and follow the instructions there, or click `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+subscribe+to+Aviatrix+companion+gateway.pdf>`__ for guidance.  
 
 
 ---------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ chances are you have not subscribed to Aviatrix gateway during Azure onboarding 
 If you see this error message when launching an AWS gateway, the potential root causes are:
 
  - If you used AWS IAM roles for the Aviatrix account, it is likely that your IAM role policies are not up to date. Follow `this link <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update both IAM policies on both your primary account and secondary account.
- - If you used AWS access key and secret ID for the Aviatrix account, it is possible that this pair of credential is incorrect. Re-enter these two fields. 
+ - If you used AWS access key and secret ID for the Aviatrix account, it is possible that this pair of credentials is incorrect. Re-enter these two fields. 
 
 
 ------------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ You may have exceeded AWS VPC limits on this account. You can file a support tic
 
  Error: [Aviatrix Error] Failed to deliver msg to gw virginia-client: HTTPSConnectionPool(host='54.164.197.97', port=443): Max retries exceeded with url: /cloudxaws/launch.py?action=gateway_diag (Caused by ConnectTimeoutError(, 'Connection to 54.164.197.97 timed out. (connect timeout=10)'))
 
-The gateway instance is either stopped or a security group rule of the gateway instance was added that prevents the Controller to reach to the gateway. 
+The gateway instance is either stopped or a security group rule of the gateway instance was added that prevents the Controller from reaching to the gateway. 
 
 ------------------------------------------------------------------------------------
 
@@ -211,7 +211,7 @@ Your primary Aviatrix Transit Gateway is not the active one. Please follow the s
 
 - For DMZ Main Transit Gateway, go to "Transit DMZ" -> "Advanced". At "Main gateway" section, click "Switchover" button and make sure "HA Status" of primary Main Gateway is in "Active" state.
 
-- For Transit Gateway with BGP connections, go to "Troubleshoot" -> "Diagnostics" -> "BGP", click "Switch Over" button along with backup Transit Gateway (gateway name with "hagw" postfix).
+- For a Transit Gateway with BGP connections, go to "Troubleshoot" -> "Diagnostics" -> "BGP", click "Switch Over" button along with backup Transit Gateway (gateway name with "hagw" postfix).
 
 --------------------------------------------------------------------
 
@@ -219,7 +219,7 @@ Your primary Aviatrix Transit Gateway is not the active one. Please follow the s
 
     Error: [Aviatrix Error] Gateway instance create failed Reason:Quota 'IN_USE_ADDRESSES' exceeded. Limit: 8.0 in region us-central1.
 
-You may have exceeded GCP IN_USE_ADDRESSES limits on this account. By default in GCP, the In-use IP address of a region is 8 (Different GCP project has different quotas limit setting), you can ask for a new quota limit by following `this GCP instruction <https://cloud.google.com/compute/quotas#request_quotas>`_.
+You may have exceeded GCP IN_USE_ADDRESSES limits on this account. By default in GCP, the in-use IP address of a region is 8 (Different GCP project has different quotas limit setting), you can ask for a new quota limit by following `this GCP instruction <https://cloud.google.com/compute/quotas#request_quotas>`_.
 
 
 .. disqus::
