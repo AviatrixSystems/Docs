@@ -41,6 +41,37 @@ Does site2cloud support HA?
 
 Yes. Enable HA when configuring site2cloud connection. 
 
+Are there configuration examples with other devices?
+-------------------------------------------------------------------
+
+Aviatrix site2cloud supports all types of on-prem firewall and router devices that
+terminate VPN connection. Below are configuration examples to specific devices.
+
+    - `Azure VPN Gateway <./avxgw_azurevpngw_site2cloud.html>`_
+    - `AWS VGW <./site2cloud_awsvgw.html>`_
+    - `pfSense IPsec VPN <./CloudToPfSense.html>`__
+    - `Palo Alto Next-Gen Firewall (PAN) <./S2C_GW_PAN.html>`__
+    - `Check Point Firewall <./S2C_GW_CP.html>`__
+    - `Cisco ASA <./S2C_GW_ASA.html>`__
+    - `FortiGate <./site2cloud_fortigate.html>`__
+    - `Cisco Meraki MX64 <./site2cloud_meraki.html>`__
+    - `Cisco ISR <./S2C_GW_IOS.html>`__
+    - `Cisco Meraki vMX100 <./site2cloud_meraki_vmx100.html>`_
+    - `Aviatrix Gateway <./site2cloud_aviatrix.html>`_
+
+Are there any tech notes on solving overlapping IP addresses?
+-----------------------------------------------------------------
+
+Here are a few documents in the Tech Notes session that demonstrate how you can solve some of them.
+
+  - `Site2Cloud with customized SNAT <https://docs.aviatrix.com/HowTos/s2c_vgw_snat.html>`_.
+  - `Site2Cloud for overlapping IP addresses <https://docs.aviatrix.com/HowTos/s2c_overlapping_subnets.html>`_.
+  - `Site2Cloud to public IP addresses <https://docs.aviatrix.com/HowTos/s2c_for_publicIP.html>`_.
+  - `How to build site to site connection <https://docs.aviatrix.com/HowTos/site_to_site_vpn.html>`_
+  - `Connecting offices to multiple VPCs using AWS Peering <https://docs.aviatrix.com/HowTos/simpletransit.html>`_
+  - `Connect Networks with Overlap CIDRs <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs.html>`_
+  - `Connect Overlapping VPC to On-prem <https://docs.aviatrix.com/HowTos/connect_overlap_vpc_via_VGW.html>`_
+
 .. |image1| image:: FAQ_media/image1.png
 
 .. disqus::

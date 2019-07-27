@@ -303,6 +303,8 @@ Here are a few documents in the Tech Notes session that demonstrate how you can 
   - `Site2Cloud to public IP addresses <https://docs.aviatrix.com/HowTos/s2c_for_publicIP.html>`_.
   - `How to build site to site connection <https://docs.aviatrix.com/HowTos/site_to_site_vpn.html>`_
   - `Connecting offices to multiple VPCs using AWS Peering <https://docs.aviatrix.com/HowTos/simpletransit.html>`_
+  - `Connect Networks with Overlap CIDRs <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs.html>`_
+  - `Connect Overlapping VPC to On-prem <https://docs.aviatrix.com/HowTos/connect_overlap_vpc_via_VGW.html>`_
 
 
 Troubleshooting
