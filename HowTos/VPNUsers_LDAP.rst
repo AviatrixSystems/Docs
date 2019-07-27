@@ -18,7 +18,7 @@ LDAP Configuration for Authenticating VPN Users
 Overview
 --------
 
-Aviatrix provides integration with an LDAP/AD server for authentication of users logging into the VPN services.  This guide guides you through the configuration steps.
+Aviatrix provides integration with an LDAP/AD server for the authentication of users logging into the VPN services.  This guide walks you through the configuration steps.
 
 Configuration Details
 ---------------------

@@ -33,16 +33,16 @@ There are 2 steps to setting up User VPN connectivity:
 #. `Create a VPN Gateway <#create-a-vpn-gateway>`__
 #. `Add a user <#create-vpn-users>`__
 
-You can also `watch a video <https://www.youtube.com/watch?v=bbZFa8kVUQI&t=1s>`_ to learn how to setup remote user VPN. The video is not up to date as the product graphics has changed, but the idea remains the same. 
+You can also `watch a video <https://www.youtube.com/watch?v=bbZFa8kVUQI&t=1s>`_ to learn how to setup remote user VPN. The video is not up to date as the product graphics have changed, but the idea remains the same. 
 
 Create a VPN Gateway
 ^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-   The description in the steps below provides critical fields to get you started. You can make changes to setup advanced features such as `MFA <https://docs.aviatrix.com/HowTos/gateway.html#mfa-authentication>`_ and profile based access later.  
+   The description in the steps below provides critical fields to get you started. You can make changes to set up advanced features such as `MFA <https://docs.aviatrix.com/HowTos/gateway.html#mfa-authentication>`_ and profile based access later.  
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Launch a gateway with VPN capability
 
    #. In the left navigation bar, click `Gateway`
@@ -90,7 +90,7 @@ VPN Users
 ^^^^^^^^^
 Users can be added manually or authenticated with an existing LDAP server.
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Expand OpenVPN® on the left navigation bar
 #. Select `VPN Users`
 
@@ -106,7 +106,7 @@ Create VPN Users
 
    .. note::
 
-      When a user is added to the database, an email with .ovpn file or .onc (for Chromebooks) will be sent to the user with detailed instructions.
+      When a user is added to the database, an email with an .ovpn file or .onc (for Chromebooks) will be sent to the user with detailed instructions.
 
    |imageAddNewVPNUser|
 

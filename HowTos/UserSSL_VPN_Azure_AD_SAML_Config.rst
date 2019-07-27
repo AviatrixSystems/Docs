@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix User SSL VPN with Azure AD SAML Configuration
    :keywords: Azure AD, Azure Active Directory, SAML, user vpn, Aviatrix, OpenVPN
 
@@ -24,9 +24,9 @@ Pre-Deployment Checklist
 -----------------------------
 Before configuring SAML integration between Aviatrix and Azure AD, make sure the following is completed:
 
-#. `Aviatrix Controller <#azureadsaml-aviatrix-controller>`__ is setup and running.
-#. Have an `Azure account <#azureadsaml-azure-account>`__.
-#. Download and install the `Aviatrix SAML VPN client <#azureadsaml-aviatrix-client>`__.
+#. An `Aviatrix Controller <#azureadsaml-aviatrix-controller>`__ is setup and running.
+#. You have an `Azure account <#azureadsaml-azure-account>`__.
+#. You have downloaded and installed the `Aviatrix SAML VPN client <#azureadsaml-aviatrix-client>`__.
 
 .. _azureadsaml_aviatrix_controller:
 
@@ -172,7 +172,7 @@ Click **Save**
 Aviatrix Controller SAML Endpoint
 #################################
 
-#. Login to your Aviatrix Controller
+#. Log in to your Aviatrix Controller
 #. Expand **OpenVPN**, select **Advanced** in the navigation menu
 #. Go to the **SAML** tab
 #. Click **+ Add New** button
