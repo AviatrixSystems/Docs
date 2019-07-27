@@ -6,7 +6,7 @@
 Create a VPC
 ###################################
 
-Use this tool to create a `VPC <https://www.aviatrix.com/learning/glossary/vpc.php>`_ that consists of public subnet and private subnet in two AZs and IGW in the region and account of your choice. 
+Use this tool to create a `VPC <https://www.aviatrix.com/learning/glossary/vpc.php>`_ that consists of a public subnet and a private subnet in two AZs and an IGW in the region and account of your choice. 
 
 The VPC CIDR range is from /16 to /24.
 
@@ -19,7 +19,7 @@ Go to Useful Tools at the main navigation on the left panel, select Create a VPC
 Aviatrix Transit VPC
 ----------------------
 
-When "Aviatrix Transit VPC" option is selected, Create a VPC creates the following AWS VPC subnets.
+When the "Aviatrix Transit VPC" option is selected, Create a VPC creates the following AWS VPC subnets.
 
 ==========================================      ===================
 **Subnet name**                                 **Suggested usage**
