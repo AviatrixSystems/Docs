@@ -7,12 +7,12 @@ Controller Certificate Management
 ###################################
 
 Aviatrix Controller uses a self-signed certificate by default. That is why you see "Not Secure" 
-at the browser. You can make it secure by importing signed certificate. 
+at the browser. You can make it secure by importing a signed certificate. 
 
 There are two methods to accomplish this: 
 
- - Import Certificate with Key  
- - Generate CSR and Import Certificate
+ - Import a Certificate with Key  
+ - Generate CSR and Import a Certificate
 
 Import Certificate with Key
 -----------------------------
@@ -30,9 +30,9 @@ Step 1. Generate the CSR file
 
 |gen_csr|
 
-After this step is executed, the csr is downloaded to your local host. A new pop up window should
+After this step is executed, the csr is downloaded to your local host. A new popup window should
 appear to ask for CA cert. You should take this csr to a sign 
-authority to get it signed and in return, you get two files: ca cert and server cert. 
+authority to get it signed and in return, you will get two files: ca cert and server cert. 
 
 Step 2. Import CA cert
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -49,7 +49,7 @@ as shown below.
 
 |server_crt|
 
-If everything works, you now have a signed cert on the Controller!
+If everything works, you now have a signed certificate on the Controller!
 
 
 
