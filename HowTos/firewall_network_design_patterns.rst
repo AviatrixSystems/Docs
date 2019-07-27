@@ -39,7 +39,7 @@ Connect to on-prem with AWS DXGW and use Aviatrix Edge gateway to connect to mul
 Multi Region Transit with Aviatrix Edge
 ------------------------------------------------------------------------
 
-Connect to on-prem with Aviatrix Edge gateway for both hybrid and multi regions.
+Connect to on-prem with an Aviatrix Edge gateway for both hybrid and multi regions.
 
 |multi_region_aviatrix_edge|
 

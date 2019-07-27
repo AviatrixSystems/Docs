@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
   :description: Firewall Network
   :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
@@ -6,7 +6,7 @@
 
 1. This document complements the existing deployment guide that was designed to help you to associate a Palo Alto VM-Series. We are going to assume that you have completed all the steps from 1 to 6 before launching this firewall instance. Step 7a is not necessary as it is Palo Alto VM-Series specific.
 
-2. Currently we do not have a full integration between the Aviatrix dashboard and the Barracuda CloudGen Firewall, which means that you will not be able to update the firewall routing table via API, as it is currently possible with the Palo Alto VM-Series.
+2. Currently we do not have full integration between the Aviatrix dashboard and the Barracuda CloudGen Firewall, which means that you will not be able to update the firewall routing table via API, as it is currently possible with the Palo Alto VM-Series.
 
 
 =========================================================
@@ -20,7 +20,7 @@ This setup will include basic “allow-all”  policies to serve as initial conf
 
 1. Setup Firewall Network (FireNet)
 ---------------------------------------
-Complete steps 1-5 of Firewall Network Workflow in the Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also setup the subnets that you will need later for launching Barracuda Firewall instance.
+Complete steps 1-5 of Firewall Network Workflow in the Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also setup the subnets that you will need later for launching a Barracuda Firewall instance.
 
 2. Deploy the Barracuda CloudGen Firewall Instance from the AWS Marketplace
 ----------------------------------------------------
@@ -145,7 +145,7 @@ Click Lock.
 
 Click + in the Additional IP table. The Additional IP window opens.
 
--Additional IP, the private IP address configured for the network interface in step 1.
+- In Additional IP, add the private IP address configured for the network interface in step 1.
 
 -Reply to Ping, select Yes.
 
@@ -167,13 +167,13 @@ Click Lock.
 
 In the left menu, click Routing.
 
-Click + in the IPv4 Routing Table to add an gateway route.
+Click + in the IPv4 Routing Table to add a gateway route.
 
 -Target Network address will be a summary of your VPCs or all private addresses.
 
 -Route Type, select gateway.
 
--Gateway, add the private IP of the eth2 interace of your primary Aviatrix FireNet Gateway.
+-Gateway, add the private IP of the eth2 interface of your primary Aviatrix FireNet Gateway.
 
 -Trust Level, select Trusted.
 
@@ -228,12 +228,12 @@ Click Send Changes and Activate.
 
 Now your firewall instance is ready to receive packets!
 
-The next step is specify which Security Domain needs packet inspection by defining a connection policy that connects to
+The next step is specifying which Security Domain needs packet inspection by defining a connection policy that connects to
 the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow.
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain.
 
-Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through. .
+Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through. 
 
 7. View Traffic Log
 ----------------------
