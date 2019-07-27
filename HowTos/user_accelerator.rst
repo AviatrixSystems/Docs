@@ -8,15 +8,15 @@
 VPN User Accelerator 
 ===================================================
 
-VPN User Accelerator leverages `AWS Global Accelerator <https://aws.amazon.com/global-accelerator/>`_ to connect
+The VPN User Accelerator leverages the `AWS Global Accelerator <https://aws.amazon.com/global-accelerator/>`_ to connect
 VPN users to the nearest AWS CloudFront access point and traverse the AWS backbone to the VPN gateway. 
 
-Note when this feature is enabled, VPN user source address is masked out by AWS. 
+Note: when this feature is enabled, the VPN user source address is masked out by AWS. 
 
 To configure, 
 
- 1. you first `launch VPN gateway <https://docs.aviatrix.com/HowTos/uservpn.html>`_ by following the instructions. 
- #. After VPN is setup, an AWS NLB should be displayed on the left side panel, highlight it and click Add. Then click OK, as shown below.
+ 1. you first `launch a VPN gateway <https://docs.aviatrix.com/HowTos/uservpn.html>`_ by following the instructions. 
+ #. After the VPN is setup, an AWS NLB should be displayed on the left side panel, highlight it and click Add. Then click OK, as shown below.
 
 |user_accelerator|
 
