@@ -119,7 +119,7 @@ For mapped connections, the following four fields will be displayed:
    |                               | subnet.  If left blank, Aviatrix will    |
    |                               | the full VPC/VNet CIDR.                  |
    +-------------------------------+------------------------------------------+
-   | Local Subnet(Virtual)         | Enter a vritual CIDR that will represent |
+   | Local Subnet(Virtual)         | Enter a virtual CIDR that will represent |
    |                               | the real subnet.                         |
    +-------------------------------+------------------------------------------+
 
@@ -155,7 +155,7 @@ Remote Gateway Type
    | Generic                       | Use this option for most third-party     |
    |                               | routers and firewalls.                   |
    +-------------------------------+------------------------------------------+
-   | AWS VGW                       | For terminating on a AWS Virtual Private |
+   | AWS VGW                       | For terminating on an AWS Virtual Private |
    |                               | Gateway, select this option.             |
    +-------------------------------+------------------------------------------+
    | Azure VPN                     | For terminating on Azure VPN Services    |
@@ -174,13 +174,13 @@ If the `Algorithms` checkbox is unchecked, the default values will be used.  If 
    +-------------------------------+
    | Field                         |
    +===============================+
-   | Phase 1 Autheentication       |
+   | Phase 1 Authentication       |
    +-------------------------------+
    | Phase 1 DH Groups             |
    +-------------------------------+
    | Phase 1 Encryption            |
    +-------------------------------+
-   | Phase 2 Autheentication       |
+   | Phase 2 Authentication       |
    +-------------------------------+
    | Phase 2 DH Groups             |
    +-------------------------------+
@@ -211,7 +211,7 @@ You can generate remote site configuration template.
 
 Select the remote site device from the dropdowns provided.  If your remote site device is not listed in the dropdown menu, simply select an available one in the menu or use the **Generic**/**Vendor Independent** template.
 
-This template file that contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
+This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
 Dead Peer Detection
 --------------------
@@ -234,8 +234,8 @@ override that by manually entering the intended CIDR list to advertise to VGW.
 
 This feature is critical to limit the total number of routes carried by VGW (maximum is 100). 
 
-To enable it, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit. 
-Scroll down to "Manual BGP Advertised Network List", simply enter the field with a list of CIDR blocks separated by comma, 
+To enable it, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ and click to edit. 
+Scroll down to "Manual BGP Advertised Network List" and simply enter the field with a list of CIDR blocks separated by commas, 
 then click "Change BGP Manual Spoke Advertisement". 
 
 To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
@@ -247,7 +247,7 @@ This field is only applicable to Site2Cloud connection established by `Transit N
 
 By default, Aviatrix Transit GW does not advertise Transit VPC `CIDR <https://www.aviatrix.com/learning/glossary/cidr.php>`_.
 
-When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC CIDR to VGW. The Controller programs the 3 RFC1918 routes in AWS route table to point to the Transit GW. It also programs the learned routes from VGW into the AWS route table. 
+When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC CIDR to VGW. The Controller programs the 3 RFC1918 routes in the AWS route table to point to the Transit GW. It also programs the learned routes from VGW into the AWS route table. 
 
 If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
 
@@ -261,7 +261,7 @@ Connected Transit
 By default, Aviatrix Spoke VPCs do not have routing established to communicate 
 with each other via Transit. They are completely segmented. 
 
-If you like to build a full mesh network where Spoke VPCs communicate with each other via Transit GW, you can achieve that by enabling "Connected Transit" mode. All connections are encrypted. 
+If you would like to build a full mesh network where Spoke VPCs communicate with each other via Transit GW, you can achieve that by enabling "Connected Transit" mode. All connections are encrypted. 
 
 To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
 Scroll down to "Connected Transit" to enable.
@@ -269,7 +269,7 @@ Scroll down to "Connected Transit" to enable.
 For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
 
 Note all Spokes should be either in HA mode or non HA mode. A mixed deployment where some Spokes have 
-HA enabled while other don't works in a normal environment, but does not work
+HA enabled while others don't work in a normal environment, but does not work
 when a failover happens on a HA enabled Spoke. 
 
 
@@ -310,7 +310,7 @@ Here are a few documents in the Tech Notes session that demonstrate how you can 
 Troubleshooting
 ===============
 
-To check a tunnel state, go to Site2Cloud, the tunnel status appear next to the connection.
+To check a tunnel state, go to Site2Cloud. The tunnel status appears next to the connection.
 
 Diagnostics and troubleshooting options are available in the **Diagnostics** tab.  You must first select the connection, and then select an **Action**, followed by **OK**.
 

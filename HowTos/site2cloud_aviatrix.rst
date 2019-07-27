@@ -16,7 +16,7 @@ This document describes how to configure an IPsec tunnel between an Aviatrix Gat
    #. You have overlapping CIDR blocks but need to peer two VPCs
    #. The two Aviatrix Gateways are not part of the same Controller (i.e., one is at your customer and the other one is in your environment)
 
-   If you don't have one of these use cases, you can likely use Aviatrix Encrtyped Peering
+   If you don't have one of these use cases, you can likely use Aviatrix Encrypted Peering
 
 Deployment Guide
 ----------------
@@ -64,9 +64,9 @@ Configure Tunnel from Gateway B to Gateway A
 Test
 ----
 
-Once complete, test the communiation using the tunnel
+Once complete, test the communication using the tunnel
 
 Troubleshooting
 ---------------
 
-Wait 2-3 minutes for the tunnel to come up.  If it does not come Up within that time, check the IP addresses to confirm they are accurate.  Additional troubleshooting is available in the **Diagnositics** tab.
+Wait 2-3 minutes for the tunnel to come up.  If it does not come up within that time, check the IP addresses to confirm they are accurate.  Additional troubleshooting is available in the **Diagnostics** tab.

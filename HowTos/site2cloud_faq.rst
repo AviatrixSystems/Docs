@@ -10,10 +10,10 @@ What does Site2Cloud do?
 --------------------------
 
 Site2Cloud builds an encrypted connection between two sites over the Internet, 
-in a easy to use and template driven manner, its workflow is similar to how AWS VGW or Azure VPN.  
+in an easy to use and template driven manner. Its workflow is similar to AWS VGW or Azure VPN.  
 
 On one end of the tunnel is an Aviatrix gateway. On the other end could be a on-prem router, firewall or 
-another public cloud VPC/VNet where Aviatrix Controller does not manage.  
+another public cloud VPC/VNet where the Aviatrix Controller does not manage.  
 
 What are the use cases for Site2Cloud?
 ----------------------------------------
@@ -22,7 +22,7 @@ Here are the popular use cases:
 
  - **SaaS provider to its customer site** If you need to move data continuously and securely from customer or partner sites to your SaaS service hosted in AWS, Azure or Google, building an encrypted tunnel between the customer site to you is required. 
 
- - **Branch offices to cloud** If you have many branch offices that need to access applications hosted in AWS or Azure, using Site2Cloud is the most economically way to build secure tunnel. Why pay extra to SD-WAN vendors to go through their "cloud" when you can use your existing Internet connection? 
+ - **Branch offices to cloud** If you have many branch offices that need to access applications hosted in AWS or Azure, using Site2Cloud is the most economical way to build a secure tunnel. Why pay extra to SD-WAN vendors to go through their "cloud" when you can use your existing Internet connection? 
 
 Why should I consider using Aviatrix Site2Cloud?
 --------------------------------------------------
@@ -34,12 +34,12 @@ In addition, Aviatrix provides a simple point and click user interface for you t
 How do I configure site2cloud?
 --------------------------------
 
-Follow the instructions `here <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to setup site2cloud. 
+Follow the instructions `here <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to set up site2cloud. 
 
 Does site2cloud support HA?
 ----------------------------
 
-Yes. Enable HA when configuring site2cloud connection. 
+Yes. Enable HA when configuring a site2cloud connection. 
 
 Are there configuration examples with other devices?
 -------------------------------------------------------------------

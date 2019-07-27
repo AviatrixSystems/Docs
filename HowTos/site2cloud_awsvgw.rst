@@ -36,7 +36,7 @@ Create the VPN Connection
    #. You have a VGW created and attached to a VPC
    #. You have an Aviatrix Gateway provisioned in a different VPC.  You will need this gateway's public IP address for the steps below.
 
-#. Login to your AWS `VPC Dashboard <https://console.aws.amazon.com/vpc/home>`__ in the region where your VGW is located
+#. Log in to your AWS `VPC Dashboard <https://console.aws.amazon.com/vpc/home>`__ in the region where your VGW is located
 #. Create a new `Customer Gateway <https://console.aws.amazon.com/vpc/home#CreateCustomerGateway>`__
 
    |awscg|
@@ -130,18 +130,18 @@ Once complete, test the communication using the tunnel
 Troubleshooting
 ---------------
 
-Wait 2-3 minutes for the tunnel to come up.  If it does not come Up within that time, check the IP addresses to confirm they are accurate.  Additional troubleshooting is available in the **Diagnositics** tab.
+Wait 2-3 minutes for the tunnel to come up.  If it does not come up within that time, check the IP addresses to confirm that they are accurate.  Additional troubleshooting is available in the **Diagnostics** tab.
 
 Appendix: Enable HA
 -------------------
 
-You can enable HA for Aviatrix site2cloud connection to AWS VGW. Please add following extra steps to the configuration.
+You can enable HA for Aviatrix site2cloud connection to AWS VGW. Please add the following extra steps to the configuration.
 
 Create Aviatrix HA Gateway
 ++++++++++++++++++++++++++
 
-Before creating site2cloud connection, following `this <https://docs.aviatrix.com/Solutions/gateway_ha.html>`__ guide's
-**Backup Gateway and Tunnel HA** section to create Aviatrix HA gateway in the same VPC.
+Before creating a Site2Cloud connection, follow `this <https://docs.aviatrix.com/Solutions/gateway_ha.html>`__ guide's
+**Backup Gateway and Tunnel HA** section to create an Aviatrix HA gateway in the same VPC.
 
 From AWS console, create a new VPN connection between VGW and Aviatrix HA Gateway
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -178,7 +178,7 @@ From AWS console, create a new VPN connection between VGW and Aviatrix HA Gatewa
    | Tunnel Options               | Leave blank/default                       |
    +------------------------------+-------------------------------------------+
 
-#. Download Configuration for this new VPN connection just like you did earlier for the primary VPN connection.
+#. Download the configuration for this new VPN connection just like you did earlier for the primary VPN connection.
 
 Create Aviatrix Site2Cloud Connection with HA
 +++++++++++++++++++++++++++++++++++++++++++++
@@ -189,7 +189,7 @@ Additional fields are displayed when checked.
 
 .. note::
 
-   VPN information for backup need to be obtained from the downloaded configuration
+   VPN information for backup needs to be obtained from the downloaded configuration
    of AWS VPN connection between VGW and Aviatrix HA Gateway. Follow the same steps
    you did for primary connection.
 
