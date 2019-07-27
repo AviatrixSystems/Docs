@@ -11,7 +11,7 @@ all your VPC network addresses allocations.
 
 No gateway launches are required. Just add all your `other AWS accounts <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_ on the Controller, and VPC Tracker will retrieve the information. 
 
-Currently, VPC Tracker can record network CIDRs in AWS, Azure, Site2Cloud remote network CIDRs and Transit Network on-prem CIDRs.
+Currently, VPC Tracker can record network CIDRs in AWS, Azure, Site2Cloud remote network CIDRs and Transit Network on-prem CIDRs. All VPCs with at least 1 instance will be displayed
 
 VPC Tracker auto updates once a day and will only list VPC's which have at least one instance deployed in them. You can conduct an on-demand update by clicking the refresh button. 
 
