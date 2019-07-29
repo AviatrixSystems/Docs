@@ -34,7 +34,7 @@ R5.0 (Coming in August)
 R4.7.501 (7/22/2019)
 =======================
 
- - **Software update for Field Notice 0005** as described in `this document  <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_. This software updates applies to all customers who use Aviatrix Client VPN software for SAML authentication. If you use Aviatrix Client VPN software for non SAML authentication, you are not affected by the issues described in the Field Notice 0005.
+ - **Software update for Field Notice 0005** as described in `this document  <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_. This software update applies to all customers who use Aviatrix Client VPN software for SAML authentication, and both Aviatrix Client VPN software and Controller are required to upgrade. If you use Aviatrix Client VPN software for non SAML authentication, you are not affected by the issues described in the Field Notice 0005.
 
 
 R4.7.494 (7/14/2019)
