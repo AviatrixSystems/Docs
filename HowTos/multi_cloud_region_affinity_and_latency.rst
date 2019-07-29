@@ -8,17 +8,17 @@ Multi Cloud Region Affinity and Latency
 ===========================================================================================
 
 AWS, Azure and GCP all are available in many regions. If you need to expand your cloud deployment to a different cloud, you
-should consider region affinity, that is, select a region of the second cloud that is closest to your current region deployment. 
+should consider region affinity, that is, selecting a region of the second cloud that is closest to your current region deployment. 
 
 This is a good idea even if you do not need inter cloud connectivity at the moment, because you may need it later and nothing
 beats minimum latency when it comes to networking and application performance. 
 
 For example, if your AWS deployment is in us-east-2 (Ohio), you may think Azure Central US (Illinois) is a good region to deploy.
-It turns out Azure East US 1 has better latency, at 12ms. The next best region is Azure East US 2, with 16ms latency. 
+It turns out that Azure East US 1 has better latency, at 12ms. The next best region is Azure East US 2, with 16ms latency. 
 
 Below is a table that suggests the two best regions in Azure or GCP for a few given AWS regions. 
 
-The way to read is the table is for a given region, say AWS us-east-1, the best Azure affinity region is Azure East US 1 with a 1.87ms latency to AWS us-east-1. 
+The way to read the table is for a given region, say AWS us-east-1, the best Azure affinity region is Azure East US 1 with a 1.87ms latency to AWS us-east-1. 
 The second best Azure affinity region is Azure East US 2 with a 6.01ms latency to AWS us-east-1.
 
 +--------------------------+------------------------------------+---------------------------------------+
