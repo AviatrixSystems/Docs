@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix SAML Client download
    :keywords: SAML, openvpn, SSL VPN, remote user vpn, SAML client. Openvpn with SAML
    
@@ -32,7 +32,7 @@ Please ask your Aviatrix Administrator to upgrade the Aviatrix Controller to ver
 *************
 Windows |win|
 *************
-Windows client can be download from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_win_x64.exe>`__
+The Windows client can be downloaded from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_win_x64.exe>`__
 
 At the end of the installation, please install the TUN TAP driver if you haven't done so earlier.
 
@@ -42,15 +42,14 @@ Please note that the client uses the default browser, and Microsoft Edge/IE is n
 Mac |mac|
 *********
 
-Mac client can be downloaded from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__. Please make sure that you are running macOS 10.12(Sierra) or higher.
+The Mac client can be downloaded from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__. Please make sure that you are running macOS 10.12(Sierra) or higher.
 
-If you have installed version 1.4.26 or lower please uninstall before you install the newer version
-Please note that the client uses the default browser, and Safari is not supported (will show cert warnings)
+If you have installed version 1.4.26 or lower, please uninstall before you install the newer version. Please note that the client uses the default browser, and Safari is not supported (will show cert warnings)
 
 ***********
 Linux |lux|
 ***********
-For the .deb files, if opening them using software center does not work, use sudo dpkg -i file.deb; sudo apt-get install -f (Dependencies)to install
+For the .deb files, if opening them using software center does not work, use sudo dpkg -i file.deb; sudo apt-get install -f (Dependencies) to install
 
 For the .tar files use tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh to install
 
