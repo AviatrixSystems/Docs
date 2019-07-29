@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Datacenter extension API reference design
    :keywords: datacenter extension, Aviatrix API, Aviatrix, VLAN stretching
 
@@ -14,13 +14,13 @@ Introduction
 The APIs for Aviatrix can be used for the tasks
 that are done through the Web UI. 
 
-The following is an example to utilize the APIs to create a VPC/VNet
+The following is an example of utilizing the APIs to create a VPC/VNet
 under Datacenter Extension. For the complete REST API documentation, check out `this link. <https://api.aviatrix.com/?version=latest>`_
 
 Datacenter Extension capability manages your cloud address range. It
-creates VPC/VNet, subnets, routing tables and create a IPSec tunnel to
+creates VPC/VNet, subnets, routing tables and creates an IPSec tunnel to
 the virtual appliance (ACX), so that on-premise VMs and
-servers can communicate with instances in created VPC with packet
+servers can communicate with instances in the created VPC with packet
 encryption and private IP addresses.
 
 Workflow for Datacenter Extension
@@ -48,7 +48,7 @@ Use the APIs to Create a VPC/VNet
 =================================
 
 The APIs in this section are to demonstrate how to use them to accomplish the steps described above.
-The data used here is for the purpose of demonstration only. Replace the values in your case.
+The data used here is for demonstration purposes only. Replace the values in your case.
 
 For more information, refer to “Cloud Services Gateway Controller API
 reference” for details. You can retain a copy of this document under
@@ -74,7 +74,7 @@ console.
         "CID": "584b4b57a42f2"
         }
 
-Note the value of CID for the API calls hereafter.
+Note the value of the CID for the API calls hereafter.
 
 2. Enter the license
 
