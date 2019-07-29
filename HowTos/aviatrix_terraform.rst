@@ -46,7 +46,7 @@ Sample configuration to launch a full mesh network on AWS
 ::
 
 	# Sample Aviatrix terraform configuration to create a full mesh network on AWS
-	# This configuration creates a cloud account on Aviatrix controller,
+	# This configuration creates a cloud account on the Aviatrix controller,
 	# launches 3 gateways with the created account and establishes tunnels
 	# between each gateway.
 
