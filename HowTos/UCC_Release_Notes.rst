@@ -2,6 +2,41 @@
 Release Notes
 =======================================
 
+R5.0 (Coming in August)
+=========================
+
+1. Multi Cloud
+-----------------
+
+ - **Azure Transit with Native Spoke VNet Support**
+ - **Azure Transit Insane Mode Support**
+ - **Azure Transit for Active/Active ECMP Backbone**
+ - **GCP Transit Gateway Support**
+ - **Oracle Cloud (OCI) Spoke Gateway Support**
+
+2. Networking
+----------------
+
+ - **AWS Multi Site Transit** allows the Aviatrix Transit Gateway to connect to multiple remote site, either with dynamic routing or static routing. 
+ - **IKEv2 support for Site2Cloud connections**
+ - **IPv6 Support** 
+ - **Insane Mode over Internet**
+ - **User VPN Support two way communication** between client and cloud instances.
+ 
+3. Operations
+---------------
+
+ - **Role Based Access Control**
+ - **Access Account Auditing**
+ - **Bulk Input of VPN Users** Allow onboarding VPN users in volume.
+
+
+R4.7.501 (7/22/2019)
+=======================
+
+ - **Software update for Field Notice 0005** as described in `this document  <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_. This software updates applies to all customers who use Aviatrix Client VPN software for SAML authentication. If you use Aviatrix Client VPN software for non SAML authentication, you are not affected by the issues described in the Field Notice 0005.
+
+
 R4.7.494 (7/14/2019)
 ======================
 
