@@ -17,7 +17,7 @@ In this case, the customer does not want to build an IPSEC tunnel to each VPC, n
 
 |simpletransit|
 
-Fortunately since traffic is always initiated from on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel by leveraging Aviatrix Site2Cloud feature and AWS Peering.  
+Fortunately since traffic is always initiated from the on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel by leveraging Aviatrix Site2Cloud feature and AWS Peering.  
 
 Below are the steps to configure. 
 
@@ -25,14 +25,14 @@ Below are the steps to configure.
 Planning and Prerequisites
 ---------------------------
 
- 1. If you have not launched Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
+ 1. If you have not launched an Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process. 
 
 
 1. Launch a gateway in the transit VPC
 -------------------------------------------
 
-Go to Gateway page to launch a gateway in the transit VPC that servers to move traffic between a Spoke VPC and on-prem network.
+Go to the Gateway page to launch a gateway in the transit VPC that servers to move traffic between a Spoke VPC and on-prem network.
 The gateway must be launched on a public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 .. important::
@@ -54,7 +54,7 @@ Enable NAT				        check
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
 
-Below is a screen shot, note NAT is enabled.
+Below is a screenshot of the setup. Note that NAT is enabled.
 
 |transit-gw-launch|
 
@@ -84,14 +84,14 @@ Local Subnet                                    all spoke VPC CIDR list separate
 Save Template                                   leave it unchecked
 ==========================================      ==========
 
-Below is a screen shot, note the local subnet is a list of all Spoke VPC CIDRs. 
+Below is a screenshot of the setup. Note that the local subnet is a list of all Spoke VPC CIDRs. 
 
 |transit-to-on-prem|
 
 3. Download the Configuration Template 
 ---------------------------------------
 
-After the above site2cloud connection is created, select the connection. Select a Vendor Generic if the on-prem 
+After the above Site2Cloud connection is created, select the connection. Select a Vendor Generic if the on-prem 
 firewall device is not Aviatrix nor Cisco. Click Download Configuration.
 
 
@@ -102,7 +102,7 @@ After you download the IPSEC configuration template, use the template to configu
 4. Connect Spoke to Transit
 ----------------------------
 
-Once the site2cloud tunnel is up, now it's time to use AWS Peering to build connectivity between 
+Once the site2cloud tunnel is up, it's time to use AWS Peering to build connectivity between 
 a Spoke VPC and the transit VPC. 
 
 Go to Peering -> AWS Peering, click New Peering. Select a spoke VPC and the transit VPC, and click OK. 

@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: ClounN Config Drive
    :keywords: CloudN, CloudN config drive, Aviatrix, hybrid cloud
 
@@ -8,9 +8,9 @@ Auto Booting CloudN VM Using ISO File
 
 This document provides one method to boot CloudN VM automatically without the initial manual configuration stage for interface address. 
 
-The method is to use a customized ISO file when launching the virtual machine. 
+This method uses a customized ISO file when launching the virtual machine. 
 
-Note 
+Note: 
 CloudN can be downloaded from `this link: <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_.
 
 1. Installation on VMware vSphere Client 
@@ -19,7 +19,7 @@ CloudN can be downloaded from `this link: <http://docs.aviatrix.com/StartUpGuide
 Create the customized configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to boot CloudN that passes in interface address information, we need to create an ISO image contains both user-data and meta-data 
+In order to boot CloudN that passes in interface address information, we need to create an ISO image containing both user-data and meta-data 
 in ISO9660 format.
 
 Creating user-data file
@@ -27,7 +27,7 @@ Creating user-data file
 
 In the following example, CloudN is designed to boot up with a
 static ip address 10.10.0.10, netmask 255.255.0.0, gateway 10.10.0.1 and
-dns-nameservers 8.8.8.8 8.8.4.4. Please note that “#cloud-config” is not
+dns-nameservers 8.8.8.8 and 8.8.4.4. Please note that “#cloud-config” is not
 a comment but a directive to cloud-init.
 
 Sample contents of user-data: 
@@ -98,7 +98,7 @@ Create meta-data file
 Create the ISO
 ~~~~~~~~~~~~~~
 
-After user-data file and meta-data file are created, you can create the ISO by using this following command.
+After the user-data file and meta-data file are created, you can create the ISO by using this following command.
 
 ::
 
@@ -211,7 +211,7 @@ Contents of user-data:
 
   dns-nameservers 8.8.8.8 8.8.4.4
 
-.. Note:: If your environment has proxy server for accessing Internet, you need to include that as described in the VMware section.
+.. Note: If your environment has proxy server for accessing Internet, you need to include that as described in the VMware section.
 
 ..
 
@@ -321,7 +321,7 @@ with the customized cloudn-172-25-0-10.iso
 
 .. Note:: You may need to install virt-viewer package on your Linux machine in order to use the SPICE graphics.
 
-A Virt Viewer windows will pop up to show the installation process of
+A Virt Viewer window will pop up to show the installation process of
 CloudN. Once the CloudN login prompt is shown on the Virt Viewer
 console, we can access the https://172.25.0.10 to complete the admin’s
 email and password initialization process.
@@ -332,7 +332,7 @@ email and password initialization process.
 
 |image8|
 
-When you close the Virt Viewer window, the CloudN VM is still running
+When you close the Virt Viewer window, the CloudN VM will continue running
 and you will notice that the “Domain creation completed” on the terminal
 that you executed virt-install command earlier.
 

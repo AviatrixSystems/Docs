@@ -9,40 +9,40 @@
 Site2Cloud With Customized SNAT 
 ===========================================================================================
 
-This tech note demonstrates how to create a site2cloud connection between two VPCs by using VGW and Aviatrix gateway. Aviatrix gateway also serves as a Source NAT device and translates source IP of traffic initiated from peering VPC to an IP address selected by users.
+This tech note demonstrates how to create a site2cloud connection between two VPCs by using a VGW and an Aviatrix gateway. The Aviatrix gateway also serves as a Source NAT device and translates source IP of traffic initiated from peering VPC to an IP address selected by users.
 
 |
 
 Environment Requirements
 ---------------------------------------------------------
 
-There are two VPCs as illustrated in the diagram below. VPC-1 CIDR is 10.0.0.0/16 and VPC-2 CIDR is 172.19.0.0/16. The site2cloud connection is between a VGW in VPC-1 and an Aviatrix gateway in VPC-2. 
+There are two VPCs as illustrated in the diagram below. VPC-1's CIDR is 10.0.0.0/16 and VPC-2's CIDR is 172.19.0.0/16. The site2cloud connection is between a VGW in VPC-1 and an Aviatrix gateway in VPC-2. 
 
 |image1|
 
-We will also configure customized SNAT at Aviatrix gateway, which translates the source IP of traffic initiated from VPC-1 (10.0.0.0/16) to an user selected IP address (192.168.1.10 in this example). In this way, VPC-2 VMs will see all packets from VPC-1 with the same source IP address (192.168.1.10)
+We will also configure customized SNAT at Aviatrix gateway, which translates the source IP of traffic initiated from VPC-1 (10.0.0.0/16) to a user selected IP address (192.168.1.10 in this example). In this way, VPC-2 VMs will see all packets from VPC-1 with the same source IP address (192.168.1.10)
 
 |
 
-Steps to Configure site2cloud Connection and SNAT
+Steps to Configure Site2Cloud Connection and SNAT
 ---------------------------------------------------------
 
-+ **Step 1: Install Aviatrix gateway in VPC-2.**
++ **Step 1: Install an Aviatrix gateway in VPC-2.**
 
-Download and install the Aviatrix Gateways by following instructions in this `document <http://docs.aviatrix.com/HowTos/gateway.html>`__ 
+Download and install the Aviatrix Gateways by following the instructions in this `document <http://docs.aviatrix.com/HowTos/gateway.html>`__ 
 
 Don't select "Enable SNAT" when creating the new gateway in VPC-2.
 
 
 
-+ **Step 2: Create Site2Cloud between a VGW in VPC-1 and Aviatrix gateway in VPC-2**
++ **Step 2: Create a Site2Cloud connection between a VGW in VPC-1 and Aviatrix gateway in VPC-2**
 
 
 .. Note:: In the Aviatrix terminology, Site2Cloud is the name of the feature that enables connections from one site (or datacenter) to other sites (including cloud environments).
 
 ..
 
-Please follow instructions in this `document <http://docs.aviatrix.com/HowTos/site2cloud_awsvgw.html>`__ to create the site2cloud connection.
+Please follow the instructions in this `document <http://docs.aviatrix.com/HowTos/site2cloud_awsvgw.html>`__ to create the site2cloud connection.
 
 
 
@@ -101,7 +101,7 @@ SNAT Port            Leave it blank
 Test site2cloud Connection and SNAT
 ---------------------------------------------------------
 
-**a.** Go to "site2cloud" page and verify the site2cloud connection status is "Up".
+**a.** Go to the "Site2Cloud" page and verify that the Site2Cloud connection status is "Up".
 
 |image4|
 

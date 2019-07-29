@@ -18,16 +18,16 @@ Follow the steps below to setup for the scenario.
 Step 1. Launch a gateway
 -------------------------
 
-Go to Gateway page, click New Gateway to launch a gateway. Do not check "Enable SNAT".
+Go to the Gateway page and click New Gateway to launch a gateway. Do not check "Enable SNAT".
 
 Make sure you select a gateway size that supports multiple secondary IPs. Click `here <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI>`_ for more information. 
 
 Step 2. Add Multiple IP addresses
 -------------------------------------
 
-This action creates secondary IP addresses on the selected gateway instance. Note these IP addresses must be in one consecutive list. This secondary IP address should not include the primary IP address of the gateway.
+This action creates secondary IP addresses on the selected gateway instance. Note that these IP addresses must be in one consecutive list. This secondary IP address should not include the primary IP address of the gateway.
 
-Go to Gateway page, click on the gateway launched in Step 1. Click Edit.
+Go to Gateway page and click on the gateway launched in Step 1. Click Edit.
 
 Scroll down to "Edit Multiple IPs", enter one or more secondary IP addresses to the gateway. You must enter them in a segment format.
 
@@ -47,7 +47,7 @@ Step 3. Mark and Map Destination Port
 
 This action instructs the gateway to translate the destination port and also mark the associated TCP session.
 
-Go to Gateway page, click on the gateway you wish to configure. Click Edit.
+Go to Gateway page and click on the gateway you wish to configure. Click Edit.
 
 Scroll down to "Destination NAT", click Add/Edit DNAT
 
