@@ -9,7 +9,7 @@ Aviatrix Support Center
 Overview
 --------
 
-The Aviatrix Support Center goal is to be a central repository for known issues, solutions, workarounds and common design principles for our customers. Please look at our `Official Support Page <http://www.aviatrix.com/support>`_ for more information. 
+The goal of the Aviatrix Support Center is to be a central repository for known issues, solutions, workarounds and common design principles for our customers. Please look at our `Official Support Page <http://www.aviatrix.com/support>`_ for more information. 
 
 Topics
 -------------

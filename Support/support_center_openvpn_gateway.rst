@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix Support Center
    :keywords: Aviatrix, Support, Support Center
 
@@ -10,7 +10,7 @@ OpenVPN Gateway
 What is the recommended design for Aviatrix OpenVPN Solution?
 ---------------------------------------------------------------
 
-**Our recommended design** is to let your VPN users connect into your cloud environment through an Aviatrix OpenVPN gateway, one or more behind a load balancer, and use the peering between VPC’s to allow access to your VPN Client’s into your other VPC’s. We recommend using VPN profiles to control/limit access to other VPC’s as you see fit.
+**Our recommended design** is to let your VPN users connect into your cloud environment through an Aviatrix OpenVPN gateway, with one or more behind a load balancer, and use the peering between VPCs to allow access to your VPN Clients into your other VPCs. We recommend using VPN profiles to control/limit access to other VPC’s as you see fit.
 
 
 How do I generate an .ovpn file for my SAML VPN users?
@@ -40,16 +40,16 @@ You can add a custom attribute “Profile” in your IdP and the value will be p
 Can I assign multiple profiles to the same users?
 ------------------------------------------------------------
 
-You can assign multiple profiles to a VPN user - but, please make sure that they all have the same base policies (allow all or deny all).
+You can assign multiple profiles to a VPN user, but please make sure that they all have the same base policies (allow all or deny all).
 
 
 What is the recommended default browser for Aviatrix OpenVPN with SAML Authentication?
 --------------------------------------------------------------------------------------------
 
-Microsoft Edge does not behave well with SAML authentication process when it is set as the default browser. Please try setting your default browser to Firefox or Chrome.
+Microsoft Edge does not work well with the SAML authentication process when it is set as the default browser. Please try setting your default browser to Firefox or Chrome.
 
 
-How to delete a Network Load Balancer which is created by Aviatrix? 
+How do I delete a Network Load Balancer created by Aviatrix? 
 ---------------------------------------------------------------------------------------------------
 
 An ELB will be automatically deleted by the Aviatrix Controller if all the gateways behind it are deleted and if there are no more users attached to it. The last resort to delete an ELB is delete it from Troubleshoot > ELB. Please refrain from deleting an ELB from the AWS portal for any ELB created by Aviatrix controller.
@@ -64,7 +64,7 @@ Tunneblick VPN Client might show a warning about "comp-lzo" being deprecated whe
 Why is my VPN client failing to connect with this error: “Network is unreachable for DNS resolution”?
 -------------------------------------------------------------------------------------------------------
 
-Aviatrix VPN Client needs to  have a successful name resolution for “localhost.aviatrix.com” to a local address 127.0.0.1. We need a publicly resolvable FQDN to use the browser to communicate on signed TLS. Some DNS servers do not allow this, resulting in the Aviatrix VPN Client failing to connect, displaying this error. If your dns server is resolving other domains, but failing to resolve localhost.aviatrix.com ("nslookup localhost.aviatrix.com" doesn’t return 127.0.0.1), you can employ a simple workaround of adding “localhost.aviatrix.com” pointing to “127.0.0.1” in the hosts file.
+The Aviatrix VPN Client needs to  have a successful name resolution for “localhost.aviatrix.com” to a local address 127.0.0.1. We need a publicly resolvable FQDN to use the browser to communicate on signed TLS. Some DNS servers do not allow this, resulting in the Aviatrix VPN Client failing to connect, displaying this error. If your dns server is resolving other domains, but failing to resolve localhost.aviatrix.com ("nslookup localhost.aviatrix.com" doesn’t return 127.0.0.1), you can employ a simple workaround of adding “localhost.aviatrix.com” pointing to “127.0.0.1” in the hosts file.
  
   * Mac/Linux: add “127.0.0.1  localhost.aviatrix.com” to /etc/hosts. You would need a sudo access for this
   * Windows: add “127.0.0.1  localhost.aviatrix.com” to C:\Windows\System32\Drivers\etc\hosts file. Please open your editor/notepad with “run as administrator” (edited)
@@ -74,15 +74,15 @@ Another option is to set the DNS server to a different one - we recommend that y
 Any known issue with DD-WRT routers?
 -----------------------------------------------
 
-Aviatrix VPN Client needs to be able to resolve localhost.aviatrix.com to 127.0.0.1. DD-WRT router is known to have an issue resolving this, so your VPN connection might fail. Please take a look at this `link <https://forum.dd-wrt.com/phpBB2/viewtopic.php?p=1064711>`_ for a workaround.
+Aviatrix VPN Client needs to be able to resolve localhost.aviatrix.com to 127.0.0.1. The DD-WRT router is known to have an issue resolving this, so your VPN connection might fail. Please take a look at this `link <https://forum.dd-wrt.com/phpBB2/viewtopic.php?p=1064711>`_ for a workaround.
 
 
 What should I do if Aviatrix VPN Client displays "Permission Denied" error?
 --------------------------------------------------------------------------
 
-If you encounter "Permission Denied" error while starting Aviatrix VPN Client on Microsoft Windows, you can fix this by running it with administrator role. Here are the steps for Windows 10:
+If you encounter a "Permission Denied" error while starting Aviatrix VPN Client on Microsoft Windows, you can fix this by running it with an administrator role. Here are the steps for Windows 10:
     
-  * From Start Menu, find Aviatrix VPN Client. Right-click and select Open File Location.
+  * From Start Menu, find the Aviatrix VPN Client. Right-click and select Open File Location.
   * Right-click the program and go to Properties.
   * On the Properties window, click the Compatibility tab.
   * Under the Compatibility mode section, check the "Run as administrator" checkbox.
@@ -98,13 +98,13 @@ Check out `AWS's LDAP <https://aws.amazon.com/directoryservice/faqs/>`_
 How can I scale my VPN user setup?
 ---------------------------------------------------
 
-Deploy your Aviatrix OpenVPN Gateway's behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB, when needed, and don't have to worry about losing IP address and having to reissue certificates to all of your VPN users. Alternatively, you may choose to use `Aviatrix UDP LoadBalanced VPN using DNS <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_
+Deploy your Aviatrix OpenVPN Gateways behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB, when needed and not have to worry about losing an IP address and having to reissue certificates to all of your VPN users. Alternatively, you may choose to use `Aviatrix UDP LoadBalanced VPN using DNS <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_
 .
 
 How can the OpenVPN made Highly Available?
 -----------------------------------------------
 
-We have HA built into our OpenVPN system. By default the OpenVPN gateways are deployed behind a `Load Balancer <https://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_ in AWS. When you deploy additional OpenVPN gateways in the same VPC, they are deployed behind the same ELB, so the system becomes HA and resilient to any failures.
+We have HA built into our OpenVPN system. By default, the OpenVPN gateways are deployed behind a `Load Balancer <https://docs.aviatrix.com/HowTos/gateway.html#enable-elb>`_ in AWS. When you deploy additional OpenVPN gateways in the same VPC, they are deployed behind the same ELB, so the system becomes HA and resilient to any failures.
 
 Here are `instructions <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_ to use LB with UDP OpenVPN sessions.
 
@@ -112,9 +112,9 @@ Here are `instructions <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_ to use L
 What is the recommended VPN CIDR Block (default is 192.168.43.0/24)?
 ------------------------------------------------------------------------------
 
-Make sure that there is no overlap between the local subnet of the computer running the VPN Client and the VPN CIDR Block. `Link <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. Also make sure that you have enough ip address space to support all of you VPN users since we use 4 IP addresses per user - the default vpn cidr, 192.168.43.0/24 should be good for ~60 users. Pick a larger subnet for more users.
+Make sure that there is no overlap between the local subnet of the computer running the VPN Client and the VPN CIDR Block. `Link <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. Also make sure that you have enough ip address space to support all of your VPN users since we use 4 IP addresses per user - the default vpn cidr, 192.168.43.0/24, should be good for ~60 users. Pick a larger subnet for more users.
  
-If you were to use 192.168.42.0/23, you can have upto 120 users connect to a single OpenVPN Gateway. Note that this is per gateway - so if you have 4 OpenVPN Gateways behind an ELB, each of them will have the same CIDR allowing 120 users each. The IP Addresses of the VPN Users will be NAT'ed by the OpenVPN Gateway so the traffic would look like it originated from the OpenVPN Gateway.
+If you were to use 192.168.42.0/23, you can have up to 120 users connect to a single OpenVPN Gateway. Note that this is per gateway - so if you have 4 OpenVPN Gateways behind an ELB, each of them will have the same CIDR allowing 120 users each. The IP Addresses of the VPN Users will be NAT'ed by the OpenVPN Gateway so the traffic would look like it originated from the OpenVPN Gateway.
  
 Please look `here <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_ for more information on VPN CIDR Block.
 
@@ -126,10 +126,10 @@ How does a vpn client access resources from different VPCs when connecting to Op
 Be default, split VPN clients can only reach the VPC that the OpenVPN gateway is deployed. If you want them to reach other VPC's, please add them to "VPN CIDR" - `instructions <https://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html#multiple-vpcs-in-multi-regions-split-tunnel>`_
 
 
-If OpenVPN gateway is created in a Spoke Gateway VPC in Transit Network, can my VPN users access other Spoke's resources?
+If an OpenVPN gateway is created in a Spoke Gateway VPC in a Transit Network, can my VPN users access the other Spoke's resources?
 ---------------------------------------------------------------------------------------------------------------
 
-In a Transit solution, note that traffic between spokes is not allowed by default and hence your clients will not be able to reach other spoke VPC's - checkout "`Connected Mode <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_". Also traffic from `Transit VPC <https://docs.aviatrix.com/HowTos/site2cloud.html#advertise-transit-vpc-network-cidr-s>`_ is also not advertised by default.
+In a Transit solution, note that traffic between spokes is not allowed by default and hence your clients will not be able to reach other spoke VPCs - check out "`Connected Mode <https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit>`_". Also traffic from `Transit VPC <https://docs.aviatrix.com/HowTos/site2cloud.html#advertise-transit-vpc-network-cidr-s>`_ is also not advertised by default.
 
 We recommend that you deploy OpenVPN on a separate Gateway to take advantage of the Load Balancer for scalability.
 
@@ -155,7 +155,7 @@ By default, when you add the email address to a user, they will receive the VPN 
 How can I customize the email that is sent out when a new VPN user is added?
 --------------------------------------------------------------------------------------------
 
-You can customize the message of the email and the filename of the .ovpn file by following the instructions `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html?highlight=openvpn%20email#how-do-i-add-a-vpn-user>`_.  We will enhance this feature in future to allow you to customize the subject as well, stay tuned. 
+You can customize the message of the email and the filename of the .ovpn file by following the instructions `here <https://docs.aviatrix.com/HowTos/openvpn_faq.html?highlight=openvpn%20email#how-do-i-add-a-vpn-user>`_.  We will enhance this feature in the future to allow you to customize the subject as well, stay tuned. 
 
 
 My Mac is not picking up the DNS server setting when connected?
@@ -186,11 +186,11 @@ Go to "Controller/Gateway/+NewGateway"
 How can I resolve my private VPC Instance's name when connecting via remote VPN?
 -------------------------------------------------------------------------------------
  
-Our recommended approach is for you to advertise your VPC Instance Names via your domain registrar. For example, if you have an instance with a private ip of 10.10.5.6 - you can register it with your domain registrar as myinstance.example.com (assuming you own example.com) to resolve it to 10.10.5.6. This would allow the instance to be reachable via any public DNS server and not be dependant on having the "right" DNS setting.
+Our recommended approach is for you to advertise your VPC Instance Names via your domain registrar. For example, if you have an instance with a private ip of 10.10.5.6, you can register it with your domain registrar as myinstance.example.com (assuming you own example.com) to resolve it to 10.10.5.6. This would allow the instance to be reachable via any public DNS server and not be dependent on having the "right" DNS setting.
  
 OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote user can be configured to connect to this gateway via VPN Client either through a full tunnel or a split tunnel
 
-  * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote users's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
+  * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote user's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
   * For split tunnel, the DNS server settings are not pushed, by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provider multiple DNS servers separated by commas
  
 
@@ -291,11 +291,11 @@ Renegotiation interval is off by default and if you enable it, the client will b
 How can I resolve my VPC Instance FQDN Names when connecting via remote VPN?
 --------------------------------------------------------------------------------
 
-Our recommended approach is for you to advertise your FQDN's via public DNS(you should be able to tie your instance's private ip address to a public dns name), if you cannot do that, you can use your VPC's DNS server to let your clients resolve the names.
+Our recommended approach is for you to advertise your FQDNs via public DNS(you should be able to tie your instance's private ip address to a public dns name), if you cannot do that, you can use your VPC's DNS server to let your clients resolve the names.
  
 OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote user can be configured to connect to this gateway via VPN Client either through a full tunnel or a split tunnel
 
-  * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote users's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
+  * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote user's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
   * For split tunnel, the DNS server settings are not pushed, by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provider multiple DNS servers separated by commas
  
 
@@ -321,6 +321,6 @@ If you are using SAML authentication for your OpenVPN users, please also allow t
 Is Aviatrix VPN Client supported on Windows running in a proxy environment?
 ------------------------------------------------------------------------------
 
-Our client is not supported in a proxy environment, but please try the following command, it has worked for one of our customers
+Our client is not supported in a proxy environment, but please try the following command. It has worked for one of our customers
 
   * netsh winhttp import proxy source=ie
