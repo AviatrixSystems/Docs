@@ -59,7 +59,7 @@ To view the policies of gateway, select Policy, highlight a gateway and click Ed
 5. Example Use Case
 ---------------------
 
-Say you have a group of EC2 instances or a group of AWS Workspace instance. You would like to set up policies to allow them to access a database which itself consists of a group of nodes. 
+Say you have a group of EC2 instances or a group of AWS Workspace instances. You would like to set up policies to allow them to access a database which itself consists of a group of nodes. 
 
 You can create a tag, name it my-app and configure the list of IP addresses associated with each instance with a name. You can then create a second tag, name it my-database, and configure the list of IP addresses associated with each instance with a name. 
 

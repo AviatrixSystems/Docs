@@ -26,7 +26,7 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 
 
-.. Note:: Most features (such as VPN with ELB/NLB, etc) not stated above, we recommend using the default IAM policy to avoid some issues.
+.. Note:: Most features (such as VPN with ELB/NLB, etc) are not stated above, we recommend using the default IAM policy to avoid some issues.
 ..
 
 
@@ -89,7 +89,7 @@ creation during the AVX controller Onboading process.
 Step 02: 
 ---------
 
-After account creation, as administrator you can start editing/customizing
+After account creation, as an administrator, you can start editing/customizing
 the AWS-IAM-Policy, "aviatrix-app-role-policy" from your AWS-IAM-Policy
 section to increase the security level of your AWS
 environment/resources. Please see the following for more reference.
@@ -178,7 +178,7 @@ The Aviatrix Controller automatically creates a tag when it creates resources, s
   aviatrix tag key = "Aviatrix-Created-Resource"
   aviatrix tag value = "Do-Not-Delete-Aviatrix-Created-Resource"
 
-Click `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_customized_IAM_app_policy.txt>`_ to download a complete IAM policy that reduces the IAM app policy for deleting instanceis.
+Click `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/aviatrix_customized_IAM_app_policy.txt>`_ to download a complete IAM policy that reduces the IAM app policy for deleting instances.
 
 3. Use Condition to Allow Service Requests from Certain IP Addresses
 --------------------------------------------------------------------
@@ -210,8 +210,7 @@ policy only allows service requests from IP address 192.0.2.0/24, or
 	  }
 	}
 
-We can also use "Allow" instead of using "Deny" in "Effect" element/key,
-and both ways have the same behavior. See the following...
+We can also use "Allow" instead of using "Deny" in the "Effect" element/key. Both ways have the same behavior. See the following...
 
 Syntax:
 ~~~~~~~
@@ -260,7 +259,7 @@ AWS-API permissions, such as ...
 | etc...
 | not only for "ec2:RunInstances".
 
-4. Launch instances(Aviatrix-Gateway) on a specific subnet only from Aviatrix-Controller
+4. Launch instances(Aviatrix-Gateway) on a specific subnet only from the Aviatrix Controller
 ----------------------------------------------------------------------------------------
 
 Syntax:
@@ -318,9 +317,9 @@ Example:
 -----------------------------------------
 
 The policy can be modified to limit running gateways on certain VPCs
-only. In the following examples, we limit the role to launch Aviatrix
+only. In the following examples, we limit the role to launch an Aviatrix
 Gateway on AWS account 177688881379, region us-west-2, and vpc-873db7e2
-and vpc-fda23c98. Note, we can use wildcard “*” to replace region,
+and vpc-fda23c98. Note: we can use wildcard “*” to replace region,
 account number, or VPC ID.
 ::
 
@@ -427,9 +426,8 @@ Example
 6. AWS S3 Permissions/Policies
 ------------------------------
 
-The following S3 IAM-Policy examples demonstrate allowing AWS API which
-is to write/PutObject AVX-Controller-Backup configuration file to a
-specified AWS-S3-Bucket and the command is issued only by your AVX
+The following S3 IAM-Policy examples demonstrate allowing an AWS API to write/PutObject AVX-Controller-Backup configuration file to a
+specified AWS-S3-Bucket. The command is issued only by your AVX
 controller.
 
 Syntax:
@@ -696,7 +694,7 @@ This policy allows action “AssumeRole” to ALL roles.
 
 The default EC2 role policy allows an AWS EC2 instance to assume to any
 role. By changing the “Resource” field from a wildcard * to a more
-specific account number, the role name or prefix of role name can limit the
+specific account number, the role name or prefix of the role name can limit the
 EC2 instance’s role.
 ::
 

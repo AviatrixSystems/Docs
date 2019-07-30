@@ -8,12 +8,12 @@ Example Config for FortiGate VM in AWS
 =========================================================
 
 The goal of this document is to provide a step by step guide to launch and configure one or more Fortigate Next Generation Firewall instances to be integrated with Aviatrix Firewall Network. 
-This setup will include basic “allow-all”  policies to serve as initial configuration to validate intended traffic is passing through the firewall instance. 
+This setup will include basic “allow-all”  policies to serve as initial configuration to validate that intended traffic is passing through the firewall instance. 
 Fortinet’s documentation should be consulted for the configuration of security policies and features.
 
 Setup details
 --------------
-The instance will have to be launched in Firewall Network VPC and appropriate subnets based on the availability zone. Each FW instance will have 3 interfaces that will have the following roles:
+The instance will have to be launched in a Firewall Network VPC and appropriate subnets based on the availability zone. Each FW instance will have 3 interfaces that will have the following roles:
 
 - Eth0 → Management Interface
 - Eth1 → Transit Gateways traffic
@@ -21,7 +21,7 @@ The instance will have to be launched in Firewall Network VPC and appropriate su
 
 1. Setup Firewall Network (FireNet)
 ---------------------------------------
-Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your Fortigate instance. 
+Complete steps 1-5 of the Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your Fortigate instance. 
 
 2. Deploy Fortigate Instance from AWS Marketplace
 ----------------------------------------------------
@@ -47,7 +47,7 @@ Note: Primary interface (Eth0): Assign this interface to a public subnet of the 
 3. Configure Dataplane interfaces
 ------------------------------------------
 
-- Using AWS console, create two additional Network Interfaces in AWS console with following subnet association (Naming is optional):
+- Using the AWS console, create two additional Network Interfaces in the AWS console with the following subnet association (Naming is optional):
  
  
  - “WAN” Port (Eth1)
@@ -69,20 +69,20 @@ Note: Primary interface (Eth0): Assign this interface to a public subnet of the 
   Note: If you need further clarification on FireNet subnets, please see this link:  `FireNet Subnets <https://www.lucidchart.com/publicSegments/view/f0bbe123-cbf7-4339-88df-a51eee2da631/image.pdf>`_ 
 
 
-- Using AWS console, assign an Elastic IP address to Management and WAN interfaces (Eth0 and Eth2) 
+- Using the AWS console, assign an Elastic IP address to Management and WAN interfaces (Eth0 and Eth2) 
 
 
 
 4. Login to Firewall and configure interfaces 
 ------------------------------------------------
 
-- Using a web browser, connect to management IP of the instance with HTTPS. You should see a login prompt as seen below, continue to login.
+- Using a web browser, connect to the management IP of the instance with HTTPS. You should see a login prompt as seen below, continue to login.
 
 |login|
 
 ::
 
-  At the time of this writing, default login for Fortigate is admin as username and instance ID is the password
+  At the time of this writing, default login for Fortigate is admin as username and instance ID as the password
 
 - To configure both Port1 and Port2, go to "Interfaces" tab:
 
@@ -112,8 +112,8 @@ Go to Network -> Static Routes -> Create new
 In the Edit dialog, you need to enter the following:
 
 - Enter the destination route in the "Destination" box.
-- In the "Gateway" box, you will need to enter the IP address of Eth2 interface of Aviatrix gateway that this firewall will be attached to.
-- Interface will be LAN port.
+- In the "Gateway" box, you will need to enter the IP address of the Eth2 interface of the Aviatrix gateway that this firewall will be attached to.
+- Interface will be the LAN port.
 - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
 - Enter comments as necessary.
 

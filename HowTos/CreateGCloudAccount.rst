@@ -10,8 +10,8 @@ GCP Credentials
 ===================================================================
 
 
-Before creating a cloud account for GCloud/GCP on Aviatrix controller, go through the
-steps below to make sure you have the credentials setup for API calls.
+Before creating a cloud account for GCloud/GCP on the Aviatrix controller, go through the
+steps below to make sure you have the credentials set up for API calls.
 
 
 Step 1: Create a GCloud Account
@@ -27,7 +27,7 @@ least one to start with.
 Step 2: Create a GCloud Project
 ---------------------------------
 
-Login to your GCloud account and go to project page:
+Login to your GCloud account and go to the project page:
 https://console.cloud.google.com/project
 
 Create a project. Go on to the next step if you have already created
@@ -64,7 +64,7 @@ with the gateways.
 
 To enable Pub/Sub on the selected project,
 
-1. go to your Google Cloud Platform console, at the upper left corner
+1. Go to your Google Cloud Platform console, at the upper left corner
    left to Google Cloud Platform signage, click the 3 bars. A drop down
    menu will appear.
 
@@ -72,7 +72,7 @@ To enable Pub/Sub on the selected project,
 
 3. On the Search box, input Cloud Pub/Sub API and select it from search result
 
-4. click Enable.
+4. Click Enable.
 
 Step 5: Create Credential File
 ----------------------------------
@@ -97,7 +97,7 @@ credential file from the Google Developer Console.
 5. Click Create. The credential file will be downloaded to your local
    computer.
 
-6. Upload the Project Credential file to Aviatrix controller at GCloud
+6. Upload the Project Credential file to the Aviatrix controller at the GCloud
    account create page.
 
 Troubleshooting Tips
@@ -107,7 +107,7 @@ If cloud account creation fails, check the error message at the Aviatrix
 controller console and try again with the steps provided in this
 document.
 
-For additional support, send email to support@aviatrix.com
+For additional support, send an email to support@aviatrix.com
 
 .. |image0| image:: GCloud_media/image1.png
 

@@ -12,7 +12,7 @@ Admin Users and Duo Sign in
 Objectives
 ===========
 
-This document describes a reference design using Aviatrix Controller
+This document describes a reference design using the Aviatrix Controller
 console’s user management and Duo authentication capability to
 manage multiple users with admin privileges.
 
@@ -80,7 +80,7 @@ change is successfully done.
 Disable admin login
 --------------------
 
-If you like to disable admin login for security reasons, go to Settings -> Controller -> Login Customization. Click Disable to disable admin login. 
+If you need to disable admin login for security reasons, go to Settings -> Controller -> Login Customization. Click Disable to disable admin login. 
 
 
 Configuration Workflow for Duo Authentication

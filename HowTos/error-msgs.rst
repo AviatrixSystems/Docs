@@ -35,7 +35,7 @@ TGW VPN configuration downloading is not supported from the Aviatrix Controller 
  
  Error: [Aviatrix Error] Peerings detected. Please delete them before terminating the gateway.
 
-Go to Peering page to delete the peering first before you can delete the gateway. 
+You must go to the Peering page to delete the peering first before you can delete the gateway. 
 
 --------------------------------------------------------------------------------
 
@@ -93,7 +93,7 @@ Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.htm
   [Aviatrix Error] oregon-transit with size t2.micro only support 2 interfaces. Cannot create DMZ interface. Please increase gateway size (suggest t3.medium) 
 
 Transit DMZ deployment requires 3 Ethernet interfaces. t2.micro has only 2. 
-At the Aviatrix Controller console, go to Gateway. Highlight  the transit gateway with the size error, click Edit. Scroll down to Gateway Resize. In the drop down menu, select t2.small or a more powerful instance size. For instance size charts, refer to `this AWS guide <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>`_.
+At the Aviatrix Controller console, go to Gateway. Highlight the transit gateway with the size error, click Edit. Scroll down to Gateway Resize. In the drop down menu, select t2.small or a more powerful instance size. For instance size charts, refer to `this AWS guide <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>`_.
 
 ------------------------------------------------------------------------------------
 
@@ -128,7 +128,7 @@ It is likely you need to update IAM policies. Follow the instructions `here. <ht
 [Aviatrix Error] Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal ..... and configure programmatic deployment for the Marketplace item or create it there for the first time
 
 If you see this error message when you launch an Azure ARM gateway,
-chances are you have not subscribed to the Aviatrix gateway during Azure onboarding process. Either go back to the onboarding page and follow the instructions there, or click `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+subscribe+to+Aviatrix+companion+gateway.pdf>`__ for guidance.  
+chances are you have not subscribed to the Aviatrix gateway during the Azure onboarding process. Either go back to the onboarding page and follow the instructions there, or click `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/How+to+subscribe+to+Aviatrix+companion+gateway.pdf>`__ for guidance.  
 
 
 ---------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ chances are you have not subscribed to the Aviatrix gateway during Azure onboard
 If you see this error message when launching an AWS gateway, the potential root causes are:
 
  - If you used AWS IAM roles for the Aviatrix account, it is likely that your IAM role policies are not up to date. Follow `this link <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update both IAM policies on both your primary account and secondary account.
- - If you used AWS access key and secret ID for the Aviatrix account, it is possible that this pair of credentials is incorrect. Re-enter these two fields. 
+ - If you used an AWS access key and secret ID for the Aviatrix account, it is possible that this pair of credentials is incorrect. Re-enter these two fields. 
 
 
 ------------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ You may have exceeded AWS VPC limits on this account. You can file a support tic
 
  Error: [Aviatrix Error] Failed to deliver msg to gw virginia-client: HTTPSConnectionPool(host='54.164.197.97', port=443): Max retries exceeded with url: /cloudxaws/launch.py?action=gateway_diag (Caused by ConnectTimeoutError(, 'Connection to 54.164.197.97 timed out. (connect timeout=10)'))
 
-The gateway instance is either stopped or a security group rule of the gateway instance was added that prevents the Controller from reaching to the gateway. 
+The gateway instance is either stopped or a security group rule of the gateway instance was added that prevents the Controller from reaching the gateway. 
 
 ------------------------------------------------------------------------------------
 

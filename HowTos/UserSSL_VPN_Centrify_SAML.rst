@@ -12,7 +12,7 @@ OpenVPN® with SAML Authentication on Centrify IDP
 Overview
 ------------
 
-This guide provides an example on how to configure Aviatrix to authenticate against Centrify IDP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (SP) that redirects browser traffic from client to IDP for authentication.
+This guide provides an example on how to configure Aviatrix to authenticate against Centrify IDP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (SP) that redirects browser traffic from the client to IDP for authentication.
 
 Pre-Deployment Checklist
 -----------------------------
@@ -59,7 +59,7 @@ Configuration Steps:
 	|image5|
 	
    .. note::
-      You can also use URL method if you have configured signed certificates for the Aviatrix Controller, but not for the initial self-signed certificate.
+      You can also use the URL method if you have configured signed certificates for the Aviatrix Controller, but not for the initial self-signed certificate.
 
 #. Configure the following SAML attributes (Email is the unique identifier)
 
@@ -107,7 +107,7 @@ Configuration Steps:
 	
 	Ignore the warning since you may not have a VPN client already running.
 	
-#. To test the VPN integration, you need to perform 3 steps at the aviatrix controller
+#. To test the VPN integration, you need to perform 3 steps at the Aviatrix Controller
 
 	a. Configure cloud account at Accounts->access account
 	
@@ -115,7 +115,7 @@ Configuration Steps:
 	
 	c. Add a VPN user in the OpenVPN->VPN users page to the SAML VPN gateway with the respective endpoint. The certificate is emailed or can be downloaded here
 
-#. Test VPN connectivity by installing the Aviatrix VPN client. Load the VPN certificate and click connect. The browser should open up, login at Centrify. The client then automatically connects to the VPN Gateway. Test connectivity by doing a ping to the private IP of the gateway.
+#. Test VPN connectivity by installing the Aviatrix VPN client. Load the VPN certificate and click connect. The browser should open up. Login at Centrify. The client then automatically connects to the VPN Gateway. Test connectivity by doing a ping to the private IP of the gateway.
 
 .. |image0| image:: centrify_media/image1.jpg
 
