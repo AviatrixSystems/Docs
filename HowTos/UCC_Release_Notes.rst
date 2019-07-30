@@ -10,7 +10,7 @@ R5.0 (Coming in August)
 
  - **Azure Transit with Native Spoke VNet Support**
  - **Azure Transit Insane Mode Support**
- - **Azure Transit for Active/Active ECMP Backbone**
+ - **AWS, Azure and GCP ActiveMesh Transit Backbone**
  - **GCP Transit Gateway Support**
  - **Oracle Cloud (OCI) Spoke Gateway Support**
 
@@ -28,7 +28,8 @@ R5.0 (Coming in August)
 
  - **Role Based Access Control**
  - **Access Account Auditing**
- - **Bulk Input of VPN Users** Allow onboarding VPN users in volume.
+ - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
+ - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state. 
 
 
 R4.7.501 (7/22/2019)
