@@ -12,22 +12,22 @@ network and manages all network routing updates. The Orchestrator runs AWS APIs 
 AWS Transit Gateway, Transit Gateway route tables and VPC route tables, to automate the transit network deployment. In addition, 
 the Orchestrator extends the AWS native service to include multi cloud support and a scale out architecture for firewall deployment. 
 
-Whatever requirements you had in mind, the Orchestrator got you covered. And here is what you can do with the Orchestrator. 
+Whatever requirements you have in mind, the Orchestrator has you covered. Here is what you can do with the Orchestrator. 
 
 1. Build a Basic Transit Network
 ------------------------------------
 
 Use the Orchestrator to build a basic transit network with the following benefits:
 
- - **Point-and-Click** Point-and-Click workflow is simple to follow and easy to deploy.  
- - **Multi Account** Support up to three cross accounts VPC attachments to TGW with a single pane of glass. 
- - **Route Propagation** The Orchestrator periodically polls TGW route table to monitor route changes from on-prem and automatically programs Spoke VPC route tables. 
+ - **Point-and-Click** The point-and-click workflow is simple to follow and easy to deploy.  
+ - **Multi Account** Supports up to three cross accounts VPC attachments to TGW with a single pane of glass. 
+ - **Route Propagation** The Orchestrator periodically polls the TGW route table to monitor route changes from on-prem and automatically programs Spoke VPC route tables. 
  - **Direct Connect** TGW Direct Connect Gateway (DXGW) support.
  - **Internet VPN** TGW VPN support.
- - **100 Routes** Support up to 100 routes (Per AWS VPN route table and DXGW route table limits).
+ - **100 Routes** Supports up to 100 routes (Per AWS VPN route table and DXGW route table limits).
  - **View** Graphic view of TGW VPC attachments.
  - **List** List view of TGW route table entries and VPC route table entries.
- - **Monitoring** Continuous monitoring the configuration consistency and alerting for out-of-band changed. 
+ - **Monitoring** Continuous monitoring of the configuration consistency and alerting for out-of-band changes. 
  - **Terraform** Terraform Generator that exports what you have configured. Use it for replication and expansion. 
 
 |basic|
@@ -39,8 +39,8 @@ Layering on the basic transit network, you can use the Orchestrator to add netwo
 
  - **Isolation** Create network isolation by defining multiple Security Domains where VPCs in one domain cannot communicate with VPCs in another domain.
  - **Policy** Create network connection of isolated segments by defining connection policies that allow one domain to communicate with another domain.
- - **Route Propagation** Build network segmentation by creating multiple TGW route tables and automatically updates all TGW  route table propagations. 
- - **Unlimited Multi Account** Support unlimited cross accounts VPC attachments to TGW with a single pane of glass.
+ - **Route Propagation** Builds network segmentation by creating multiple TGW route tables and automatically updates all TGW  route table propagations. 
+ - **Unlimited Multi Account** Support unlimited cross account VPC attachments to TGW with a single pane of glass.
 
 |with_security_domain|
 
