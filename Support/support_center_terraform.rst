@@ -9,7 +9,7 @@ Terraform
 What are the requirements to use Terraform with Aviatrix System?
 ----------------------------------------------------------------------
 
-We are constantly improving and enhancing our Terraform support, so we request you to stay with the latest Aviatrix software and use the corresponding Terraform Aviatrix Provider Resource from our Github repository. Please do update the provider resource as we are frequently updating it. 
+We are constantly improving and enhancing our Terraform support, so we request that you to stay with the latest Aviatrix software and use the corresponding Terraform Aviatrix Provider Resource from our Github repository. Please update the provider resource as we are frequently updating it. 
 
 Please note the below requirements for the Aviatrix Terraform Provider:
 
@@ -46,7 +46,7 @@ If you run into issues with Terraform, please turn on debug logs by doing ``expo
 How can I launch a new Aviatrix Controller with Terraform?
 ----------------------------------------------------------------------
  
-Launching a new controller typically involves multiple steps as described `here <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. We do support setting up, launching and initializing an `Aviatrix Controller from Terrafrom <https://github.com/AviatrixSystems/terraform-modules>`_. Here are the steps involved:
+Launching a new controller typically involves multiple steps as described `here <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. We do support setting up, launching and initializing an `Aviatrix Controller from Terraform <https://github.com/AviatrixSystems/terraform-modules>`_. Here are the steps involved:
 
  * `Setup IAM roles and policies <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_
  * `Launch a Controller from AMI <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-build>`_
@@ -56,6 +56,6 @@ Launching a new controller typically involves multiple steps as described `here 
 How can I create my IAM roles and policies in AWS using Terraform?
 ---------------------------------------------------------------------
 
-You can use our `terraform iam_roles module <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_ to create the Aviatrix IAM roles required to connect your Aviatrix Controller to an existing AWS account. This should be run in the account where you are installing the Controller and any additional accounts that will be connected to the Controller. This performs a similar role as the CloudFormation script does in "Controller UI > Accounts > Access Accounts > New Account > Select AWS > Select IAM-role-based > Launch CloudFormation Script" - it does not create the account, only creates the IAM roles/profiles like this CloudFormation script. Similar to what is mentioned `here <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_.
+You can use our `terraform iam_roles module <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_ to create the Aviatrix IAM roles required to connect your Aviatrix Controller to an existing AWS account. This should be run in the account where you are installing the Controller and any additional accounts that will be connected to the Controller. This performs a similar role as the CloudFormation script does in "Controller UI > Accounts > Access Accounts > New Account > Select AWS > Select IAM-role-based > Launch CloudFormation Script" - it does not create the account, but rather creates the IAM roles/profiles like this CloudFormation script. Similar to what is mentioned `here <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_.
 
 

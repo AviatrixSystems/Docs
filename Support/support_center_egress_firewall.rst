@@ -42,7 +42,7 @@ There is a character limit while using `FQDN Egress Control REST API <https://s3
   Next: Using REST API, login to you controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
     curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
 
-  Next: Copy the following python code into a file, lets say, egress-rules.py. Update the CID value from the above command, the url and run it:
+  Next: Copy the following python code into a file, let's say, egress-rules.py. Update the CID value from the above command, the url and run it:
 
   ----------
   #!/usr/local/bin/python3
