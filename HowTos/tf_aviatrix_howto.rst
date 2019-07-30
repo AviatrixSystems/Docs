@@ -67,7 +67,7 @@ Example for Unix/Linux:
 Line 3 can also be made permanent:
 Edit ~/.bash_profile by appending line "export GOPATH=$HOME/go", and then run the command ``source ~/.bash_profile`` for the GOPATH path to take effect.
 
-For Windows, GOPATH and other environment variables can be edited from System Properties. Also note that you might have to either reboot your windows machine or at least close the currend cmd window and open a new one to ensure that the environment variables are set. You can check by running "echo %GOPATH%"
+For Windows, GOPATH and other environment variables can be edited from System Properties. Also note that you might have to either reboot your windows machine or at least close the current cmd window and open a new one to ensure that the environment variables are set. You can check by running "echo %GOPATH%"
 
 
 4.2 For **downloading, building and setting up the Aviatrix Terraform Provider,** please follow `these instructions <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_
@@ -81,7 +81,7 @@ Follow the `Aviatrix Controller Startup Guide <https://docs.aviatrix.com/StartUp
 
 Once Onboarding is completed, a `primary account <https://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`_ should be created. This primary account will be used to launch a gateway.
 
-Create a Terraform configuration file, for example, "aviatrix_gateway_test.tf", copy and paste the
+Create a Terraform configuration file, for example, "aviatrix_gateway_test.tf", copy and paste
 the below text into the file. Be sure to modify the parameters to suit your environment accordingly.
 
 ::
@@ -119,19 +119,19 @@ the below text into the file. Be sure to modify the parameters to suit your envi
 6. Run the Terraform Configuration
 -----------------------------------
 
-In the directory where the Terraform configuration file resides, run ``terraform init`` command to prepare the new configuration file.
+In the directory where the Terraform configuration file resides, run the ``terraform init`` command to prepare the new configuration file.
 
 ::
 
   $ terraform init
 
-Then run ``terraform plan`` command to see what will be executed.
+Then run the ``terraform plan`` command to see what will be executed.
 
 ::
 
   $ terraform plan
 
-Finally, run ``terraform apply`` command to launch the gateway.
+Finally, run the ``terraform apply`` command to launch the gateway.
 
 ::
 
