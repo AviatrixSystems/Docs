@@ -7,7 +7,7 @@
 Aviatrix Terraform: Export
 ===========================================================================================
 
-This document will walk you through how the Aviatrix's Terraform Export feature works.
+This document will walk you through how the Aviatrix Terraform Export feature works.
 It is assumed that the user has experience using Terraform, and has the Aviatrix Terraform
 Provider set up.
 
@@ -27,7 +27,7 @@ configurations (resources) into Terraform files (``.tf``) and import them into t
 Terraform environment, facilitating an easy transition to using Terraform to manage
 their infrastructure.
 
-**DISCLAIMER :** Export functionality is only available on Controller v4.3+ and is
+**DISCLAIMER :** Export functionality is only available on Controller v4.3+, is
 currently in beta and does not support every resource and its complete functionality.
 
 Example:
@@ -155,7 +155,7 @@ been created, and the edit to *profile Name1* has been implemented.
 
 |terraform_apply_verify4|
 
-The steps described in the **Addendum** can be applied and used for management of any supported resource
+The steps described in the **Addendum** can be applied and used for the management of any supported resource
 in their respective ``.tf`` file(s).
 
 .. Image Gallery References
