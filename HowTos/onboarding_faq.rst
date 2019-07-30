@@ -11,7 +11,7 @@ Where do I start?
 -------------------
 
 
-The first time when you login, complete Onboarding process. It takes a
+The first time you log in, complete the Onboarding process. It takes a
 few steps.
 
 If you have a BYOL license or use a community image, you need to have a
@@ -61,7 +61,7 @@ Why should I use IAM role instead of access key and secret key?
 
 With the support of AWS IAM role, there is no need to enter an AWS access
 key and secret key when creating an access account on an Aviatrix controller.
-Instead, two IAM roles will be created. The Aviatrix controller will use the
+Instead, two IAM roles will be created. The Aviatrix Controller will use the
 dynamically obtained security credentials to request access to AWS
 resources. A role-based IAM cloud account helps to reduce the risk of AWS
 credentials being compromised.
@@ -74,7 +74,7 @@ An Aviatrix Cloud Account can correspond to multiple cloud accounts. For
 example, it can contain credentials for an AWS IAM account, Azure
 account and GCloud account.
 
-How do we apply Azure role-based access control to Aviatrix Azure account?
+How do we apply Azure role-based access control to an Aviatrix Azure account?
 --------------------------------------------------------------------------
 Step 1. Add Aviatrix Resource Role through Powershell
  
@@ -122,12 +122,12 @@ In Powershell, perform the following:
 2. New-AzRoleDefinition -InputFile avx_rbac_role.json
  
  
-Step2. Add role assignment in Azure portal.
+Step2. Add a role assignment in the Azure portal.
  
 In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment->Select Aviatrix Resource Role as Role -> Select Service Principle-> Save
 
  
-Step3. Use the Service Principle to create an Azure ARM account in Aviatrix portal
+Step3. Use the Service Principle to create an Azure ARM account in the Aviatrix portal
 
 
 How do I upgrade software?
@@ -147,10 +147,10 @@ Check out docs.aviatrix.com.
 What is the support model?
 ----------------------------
 
-For support, send email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers with 24x7 support.
+For support, send an email to
+`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers 24/7 support.
 To request a
-feature, click Make a wish button at the bottom of each page.
+feature, click the Make a wish button at the bottom of each page.
 
 In my environment, Aviatrix will be within a PCI CDE environment, do you have a SOC2 or PCI AOC you would be able to share?
 ------------------------------------------------------------------------------------------------------------------------------

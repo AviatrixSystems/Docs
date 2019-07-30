@@ -37,7 +37,7 @@ instances in VPCs using the instance private IP address seamlessly,
 without any bastion station or landing VPC. Refer to How It Works
 section for more explanations.
 
-.. Note:: If you install CloudN on a NAT subnet, make sure both Ethernet interfaces are changed to NAT mode (By default, CloudN is pre-configured and shipped with both Network Adapters in Bridged mode). Right click on the CloudN VM, click Settings. Change both Network Adapters to NAT mode, as shown below for VMware Workstation:
+.. Note:: If you install CloudN on a NAT subnet, make sure both Ethernet interfaces are changed to NAT mode (By default, CloudN is pre-configured and shipped with both Network Adapters in Bridged mode). Right click on the CloudN VM, click Settings. Change both Network Adapters to NAT mode, as shown below for the VMware Workstation:
 
 |image23|
 
@@ -150,7 +150,7 @@ Booting Up and Initial Configuration
 
 CloudN supports a browser based GUI Interface and REST APIs.
 
-After the virtual machine boots up, you must first log in into the
+After the virtual machine boots up, you must first log in to the
 machine while still in hypervisor console.
 
 **CloudN Login User Name: admin**
@@ -233,7 +233,7 @@ Step 2: Display Interface Address
 Now you can use the cloudN IP address as the URL to access the CloudN Manager
 that manages CloudN.
 
-Note: The hypervisor console has only limited CLI for initial booting up
+Note: The hypervisor console has only limited CLI for the initial booting up
 purposes. Once Aviatrix software is downloaded, full commands are
 installed.
 
@@ -242,8 +242,8 @@ The user should use the GUI to access the CloudN Console.
 Troubleshooting
 ---------------
 
-If there are any error messages during installation, they are usually due to
-lack of Internet connectivity, incorrect DNS server IP address or
+If there are any error messages during installation, they are usually due to a
+lack of Internet connectivity, an incorrect DNS server IP address or
 unopened firewall ports. Type “?” to see all the commands that help you
 troubleshoot.
 
@@ -258,7 +258,7 @@ can again type in the command setup\_interface\_address.
 Use a Browser to Access CloudN
 -------------------------------
 
-CloudN has a built in CloudN Console that let you run provisioning from
+CloudN has a built in CloudN Console that lets you run provisioning from
 a browser.
 
 Once IP address setup is complete, you can use any browser to type

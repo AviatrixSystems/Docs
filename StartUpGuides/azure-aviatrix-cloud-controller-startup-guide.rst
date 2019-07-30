@@ -12,20 +12,20 @@ guide helps you to launch the controller VM in Azure. Make sure you follow the i
 
 .. Note::
 
-  We suggest you consider to deploy the Controller in AWS. The preferred approach is to launch the Controller from AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS may be a good idea even if you only deploy gateways in Azure, as AWS provides a pay-as-you-go (without up front commitment nor contract negotiation) metered payment system that has the least friction. However if Azure is your choice to deploy the Controller, no worries, proceed to the following sections.
+  We suggest you consider deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS may be a good idea even if you only deploy gateways in Azure, as AWS provides a pay-as-you-go (without up front commitment nor contract negotiation) metered payment system that has the least friction. However if Azure is your choice to deploy the Controller, no worries, proceed to the following sections.
 
-1. Subscribe to Aviatrix Controller
+1. Subscribe to the Aviatrix Controller
 ====================================
 
 Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/>`_ to subscribe to one Aviatrix image. 
 
 
-2. Subscribe to Aviatrix Companion Gateway
+2. Subscribe to an Aviatrix Companion Gateway
 ===========================================
 
-Aviatrix companion gateway needs to be subscribed as programmable. 
+The Aviatrix companion gateway needs to be subscribed as programmable. 
 
-In order to launch Aviatrix gateway from the controller, you must also subscribe to Aviatrix Companion Gateway which is free in the Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
+In order to launch an Aviatrix gateway from the controller, you must also subscribe to the Aviatrix Companion Gateway, which is free in the Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
 
 
 3. Launch the Controller
@@ -75,16 +75,16 @@ a.  Launch from marketplace, select the license type and click Create
 #. Use a browser to access the controller VM. In this example, it is
     https://52.173.200.253
 
-#. At the login page, enter admin as username. Initial password is the
+#. At the login page, enter admin as the username. The Initial password is the
     internal IP address of the VM, as shown below.
 
     |image5|
 
 #. Go through the login process.
 
-#. Start with onboarding tab at the console.
+#. Start with the onboarding tab at the console.
 
-.. Warning:: Any resources created by the controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the controller console. If you delete them directly on Azure console, controllers view of resources will be incorrect which will lead to features not working properly.
+.. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller console. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
 ..
 
@@ -101,19 +101,19 @@ After the latest software is downloaded, re-login again to go through the onboar
 
 4. Onboarding
 ==============
-The purpose of onboarding is to help you setup an account on Aviatrix Controller that
-corresponds to Azure account with policies so that the Controller can launch gateways using Azure
-API.
+The purpose of onboarding is to help you setup an account on the Aviatrix Controller that
+corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
+APIs.
 
 Follow the `instructions <http://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_ here to 
 create an Aviatrix account that corresponds to your Azure account credential. 
 
-Note you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account credentials. This is a multi cloud platform.
+Note: you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account credentials. This is a multi cloud platform.
 
 5. Gateway Troubleshoot
 ========================
 
-If the Controller fail to launch Aviatrix gateway in Azure RM, check out `this troubleshooting guide. <http://docs.aviatrix.com/HowTos/azuregwlaunch.html>`_
+If the Controller fails to launch an Aviatrix gateway in Azure RM, check out `this troubleshooting guide. <http://docs.aviatrix.com/HowTos/azuregwlaunch.html>`_
 
 
 Enjoy!

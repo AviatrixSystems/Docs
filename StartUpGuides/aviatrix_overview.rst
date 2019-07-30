@@ -223,7 +223,7 @@ Current cloud migration practice is complex and time consuming. The root case is
 Extending Workloads to Cloud
 ==============================
 
-Not all your workloads require the bandwidth and latency that calls for a Direct Connect transport. For your Dev and QA or many applications, an existing Internet connectivity is sufficient. Even better, Aviatrix provides a unique solution that you do not even need to make changes to the edge router. `Learn how this solution works. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_
+Not all your workloads require the bandwidth and latency that calls for a Direct Connect transport. For your Dev and QA or many applications, an existing Internet connectivity is sufficient. Even better, Aviatrix provides a unique solution in which you do not even need to make changes to the edge router. `Learn how this solution works. <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

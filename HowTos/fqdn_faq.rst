@@ -27,8 +27,8 @@ For Internet bound egress traffic, specifying outbound policy at the IP address 
 sufficient as the domain names of a site can be translated to many
 different IP addresses.
 
-An AWS NAT gateway does not offer security group function;
-it relies on security groups by each instance. An AWS NAT instance's security group does not have enough entries to support the large set of IP address list. The egress filtering needs to happen at Layer 7.
+An AWS NAT gateway does not offer security group functions;
+it relies on security groups by each instance. An AWS NAT instance's security group does not have enough entries to support the large set of IP address lists. The egress filtering needs to happen at Layer 7.
 
 On the other hand, workloads in AWS are mostly applications or programs where it is deterministic which
 outbound APIs the application program calls. For example, an application runs API queries to *www.salesforce.com* for data retrieving and runs API queries to *www.google.com* for app authentication. In these cases, making sure that only these sites are allowed for egress
@@ -116,7 +116,7 @@ If you have problems with FQDN on a specific gateway, follow the instructions be
  #. Check the tag to make sure it has the intended URL configured.
  #. Run a "wget" test from a private instance in the VPC to a URL configured in the tag.
  #. Use "Step 4" at Egress FQDN View Log, select the problem gateway and download the log. Review the log file and analyze if the intended URL is in the log entry, why it is being accepted or denied.
- #. Note: if a tag has "White list" option selected, all URL in the tag will be accepted. On the other hand, if a tag has a "Black list" option selected, all URL in the tag will be dropped.
+ #. Note: if a tag has the "White list" option selected, all URLs in the tag will be accepted. On the other hand, if a tag has a "Black list" option selected, all URLs in the tag will be dropped.
  #. If none of the above work, try to Disable and Enable the tag again. This will restart the FQDN function on all attached gateways.
  #. If all above steps failed, get help from the Aviatrix support team and upload `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_.
 
@@ -141,7 +141,7 @@ Note 1:
 
   There are two options to work around the issue:
      - Option 1: For non-HTTP/HTTPS traffic, do not use FQDN Whitelist. Use Stateful Firewall instead.
-     - Option 2: On the Stateful Firewall page, change the base rule to "Allow all" (do not change individual rules). This is because the FQDN is executed after Stateful Firewall for non HTTP/HTTPS traffic, therefore even if you specify "Allow all" as base rule, the FQDN whitelist will only permit the rules specified both in Stateful Firewall and FQDN. FQDN Whitelist has an implicit "DROP ALL" as its last rule.
+     - Option 2: On the Stateful Firewall page, change the base rule to "Allow all" (do not change individual rules). This is because the FQDN is executed after Stateful Firewall for non HTTP/HTTPS traffic, therefore even if you specify "Allow all" as the base rule, the FQDN whitelist will only permit the rules specified both in Stateful Firewall and FQDN. FQDN Whitelist has an implicit "DROP ALL" as its last rule.
 
 Note 2:
 

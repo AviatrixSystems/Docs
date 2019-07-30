@@ -8,7 +8,7 @@
 
 
 
-Aviatrix CloudN virtual appliance that is deployed in an on-premise datacenter or co-location facility.
+The Aviatrix CloudN virtual appliance is deployed in an on-premise datacenter or co-location facility.
 
 CloudN supports REST API that allows for further automation and third party software integration.
 REST API documentation can be found at `this link. <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_ For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/HowTos/aviatrix_apis_datacenter_extension.html>`__
@@ -83,7 +83,7 @@ The virtual appliance CloudN image can be downloaded from `the download link. <h
 2.2. Microsoft Azure Account for Datacenter Extension
 -------------------------------------------------------
 
-.. Note:: If CloudN is deployed for Site2Cloud function, you do not need to setup an Azure account. Skip this section.
+.. Note:: If CloudN is deployed for Site2Cloud function, you do not need to set up an Azure account. Skip this section.
 
 ..
  
@@ -114,7 +114,7 @@ If you plan to use CloudN for IPmotion, skip section 2.4
     When used for datacenter extension (DCCX) function, CloudN manages your entire cloud address space.
 
     You need to identify or create a subnet where CloudN is deployed. CloudN
-    is deployed on a private subnet anywhere on your network. CloudN does
+    is deployed on a private subnet anywhere on your network. The CloudN does
     not take a public IP address. Make sure this subnet is reachable by
     other subnets where traffic is originated from.
 
@@ -554,7 +554,7 @@ commands. For each command, type “?” to view syntax and parameters.
 --------------------
 
   If there is any error messages during installation, it is usually due to a
-  lack of Internet connectivity, incorrect DNS server IP address or
+  lack of Internet connectivity, an incorrect DNS server IP address or
   unopened firewall ports. Type “?” to see all the commands that help you
   troubleshoot.
 
@@ -590,7 +590,7 @@ commands. For each command, type “?” to view syntax and parameters.
 
 ----
 
-.. Warning:: Any resources created by the controller, such as Aviatrix gateways, AWS/Azure routing tables, subnets, etc, must be deleted from the controller console. If you delete them directly on AWS console, controllers view of resources will be incorrect which will lead to features not working properly.
+.. Warning:: Any resources created by the Controller, such as Aviatrix gateways, AWS/Azure routing tables, subnets, etc, must be deleted from the controller console. If you delete them directly on the AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.
 
 ..
 
