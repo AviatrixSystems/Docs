@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix NEXT GEN TRANSIT with customized SNAT and DNAT features
    :keywords: VGW, SNAT, DNAT, Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
@@ -7,7 +7,7 @@
 Aviatrix NEXT GEN TRANSIT with customized SNAT and DNAT features
 =========================================================================================
 
-This technical note provides a step-by-step configuration on Aviatrix controller that will address the following requirements:
+This technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
 
 1. Spoke VPCs in Cloud need to communicate with On-Prem
 
@@ -42,13 +42,13 @@ Scenario:
 
   1. Traffic from Cloud to On-Prem
 
-    - When a packet which is sent from Spoke VPCs in Cloud enters Aviatrix Transit Gateway, the packet’s source address needs to be changed to a IP that On-Prem is routable. (Source address translation)
+    - When a packet which is sent from Spoke VPCs in Cloud enters Aviatrix Transit Gateway, the packet’s source address needs to be changed to an IP that On-Prem is routable. (Source address translation)
 
   2. Traffic from On-Prem to Cloud
 
-    - When a packet which is sent from On-Prem enters Aviatrix Transit Gateway, the packet’s destination address needs to be changed from a IP within On-Prem routeable CIDR to a IP belong to a service in Spoke VPCs in Cloud. (Destination address translation)
+    - When a packet which is sent from On-Prem enters Aviatrix Transit Gateway, the packet’s destination address needs to be changed from an IP within On-Prem routable CIDR to an IP belonging to a service in Spoke VPCs in Cloud. (Destination address translation)
 
-Follow the steps below to setup for the scenario.
+Follow the steps below to set up for the scenario.
 
 Step 1. Prerequisite
 -------------------------
@@ -57,11 +57,11 @@ Step 1. Prerequisite
 
   - https://docs.aviatrix.com/HowTos/inline_upgrade.html
 
-1.2. Prepare a IP mapping table for SNAT and DNAT configuration.
+1.2. Prepare an IP mapping table for SNAT and DNAT configuration.
 
   SNAT configuration
 
-    - Prepare two On-Prem routeable IPs (one for Aviatrix Transit Gateway; one for Aviatrix Transit HA Gateway if needed)
+    - Prepare two On-Prem routable IPs (one for Aviatrix Transit Gateway; one for Aviatrix Transit HA Gateway if needed)
 
     ::
 
@@ -71,9 +71,9 @@ Step 1. Prerequisite
 
   DNAT configuration
 
-    - Prepare a list of IP mapping table for On-Prem routable CIDR to a service in Spoke VPCs corresponding to your topology
+    - Prepare a list of IP mapping tables for On-Prem routable CIDR to a service in Spoke VPCs corresponding to your topology
 
-    - A service might be a IP belong to Load Balancer or EIP
+    - A service might be an IP belonging to Load Balancer or EIP
 
     ::
 
@@ -84,14 +84,14 @@ Step 1. Prerequisite
 Step 2. Build Aviatrix NEXT GEN TRANSIT FOR AWS
 -------------------------
 
-  - follow the steps 1, 2, 3, 4, 4.1, 5, and 6 in the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
+  - follow steps 1, 2, 3, 4, 4.1, 5, and 6 in the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
 
 Step 3. Perform Manual BGP Advertised Network List feature on the tunnel between Aviatrix Transit GW and AWS VGW
 -------------------------
 
   - https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list
 
-This action will advertise On-Prem routable CIDR to On-Prem via BGP session.
+This action will advertise the On-Prem routable CIDR to On-Prem via BGP session.
 
   ::
 
@@ -100,11 +100,11 @@ This action will advertise On-Prem routable CIDR to On-Prem via BGP session.
 
 To configure:
 
-  3.1. Go to Site2Cloud page, click on the tunnel between Aviatrix Transit Gateway and AWS VGW
+  3.1. Go to the Site2Cloud page and click on the tunnel between Aviatrix Transit Gateway and AWS VGW
   
-  3.2. Scroll down to Manual BGP Advertised Network List
+  3.2. Scroll down to the Manual BGP Advertised Network List
   
-  3.3. Enter the value of On-Prem routable CIDR
+  3.3. Enter the value of the On-Prem routable CIDR
   
     - for example: 99.0.0.0/8
   
@@ -116,7 +116,7 @@ Step 4. Configure Aviatrix Customized SNAT function on both Transit Primary Gate
 
   - https://docs.aviatrix.com/HowTos/gateway.html#customized-snat
 
-This action changes the packet’s source IP address from Spoke VPCs in Cloud to a IP which belongs to On-Prem routable CIDR.
+This action changes the packet’s source IP address from Spoke VPCs in the Cloud to an IP which belongs to an On-Prem routable CIDR.
 
   ::
 
@@ -146,17 +146,17 @@ To configure:
 
   4.9. Go to Gateway page, click on the Transit HA Gateway. Click Edit.
 
-  4.10. Repeat the above steps to configure Customized SNAT for Transit HA Gateway as below example.
+  4.10. Repeat the above steps to configure Customized SNAT for Transit HA Gateway as shown in the example below.
   
     |SNAT_TRANSIT_HA|
 
 
-Step 5. Configure Aviatrix Customized DNAT function on Transit Primary Gateway
+Step 5. Configure Aviatrix Customized DNAT function on the Transit Primary Gateway
 -------------------------
 
   - https://docs.aviatrix.com/HowTos/gateway.html#destination-nat
 
-This action instructs the gateway to translate the destination address from a IP within On-Prem routeable CIDR to a IP belong to a service in Spoke VPCs in Cloud.
+This action instructs the gateway to translate the destination address from an IP within the On-Prem routable CIDR to an IP belong to a service in Spoke VPCs in Cloud.
 
   ::
 
@@ -166,7 +166,7 @@ This action instructs the gateway to translate the destination address from a IP
 
 To configure:
 
-  5.1. Go to Gateway page, click on the Transit Primary Gateway. Click Edit.
+  5.1. Go to the Gateway page, click on the Transit Primary Gateway. Click Edit.
 
   5.2. Scroll down to “Destination NAT”, click Add/Edit DNAT
 
