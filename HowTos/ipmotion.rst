@@ -7,15 +7,14 @@
 IPmotion Setup Instructions
 =================================
 
-`Aviatrix IPmotion <http://aviatrix.com/blog/aws-migration-made-safe-simple/>`_ (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to public cloud while preserving its IP address. It can also be used
-for mission critical application HA to public cloud. 
+`Aviatrix IPmotion <http://aviatrix.com/blog/aws-migration-made-safe-simple/>`_ (IP Motion) is a technology that connects the same two subnets between on-prem and in the VPC. The technology is useful when migrating an on-prem VM to a public cloud while preserving its IP address. It can also be used for mission critical application HA to public cloud. 
 
 The technology is described in the diagram below, 
 where an on-prem VM with IP address 172.16.1.11 is migrated to AWS
 while preserving its IP address. After migration, any on-prem VMs can continue to communicate with this migrated VM
 as if it still resides on-prem. 
 
-Note the actual migration process is not included in this document. We assume you have tools, for example, `AWS Migration Hub <https://aws.amazon.com/migration-hub/>`_ to migrate on-prem VMs to public cloud. We also provide an `example <http://docs.aviatrix.com/HowTos/HowTo_Setup_IPMotion.html>`_ that demonstrates how to migrate a VM by combining AWS Server Migration Service and IPmotion. 
+Note that the actual migration process is not included in this document. We assume you have the necessary tools, for example, `AWS Migration Hub <https://aws.amazon.com/migration-hub/>`_ to migrate on-prem VMs to public cloud. We also provide an `example <http://docs.aviatrix.com/HowTos/HowTo_Setup_IPMotion.html>`_ that demonstrates how to migrate a VM by combining AWS Server Migration Service and IPmotion. 
 
 
 
@@ -25,13 +24,13 @@ Planning and Prerequisites
 ---------------------------
 
  1. Identify an on-prem subnet where you plan to migrate VMs. For example, the subnet is 172.16.1.0/24.
- #. Create a AWS VPC that has the same or larger CIDR block than the migrating subnet. 
+ #. Create an AWS VPC that has the same or larger CIDR block than the migrating subnet. 
  #. IPmotion builds an IPSEC tunnel using UDP ports 500 and 4500. Make sure these two UDP ports are open for outbound traffic. Inbound return traffic will also run on these two ports. The ports should be open to AWS public IP address ranges. 
  #. Consider `Design Patterns <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_ for IPmotion.  
  #. For simplicity, in this guide, we assume the cloud subnet is a public subnet and the migration is over Internet
- #. Deploy Aviatrix virtual appliance CloudN in the on-premise subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. AWS reserves `five IP addresses <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-sizing-ipv4>`__ on a given subnet, make sure CloudN IP address is not any one of them. For example on a 172.16.1.0/24 subnet, 172.16.1.0-172.16.1.3 and 172.16.1.255 are reserved. 
+ #. Deploy Aviatrix virtual appliance CloudN in the on-premise subnet.  Read `this document <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ on how to deploy the virtual appliance. AWS reserves `five IP addresses <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-sizing-ipv4>`__ on a given subnet, make sure that the CloudN IP address is not any one of them. For example, in a 172.16.1.0/24 subnet, 172.16.1.0-172.16.1.3 and 172.16.1.255 are reserved. 
 
- #. Once the virtual appliance is deployed, go through on-boarding process and create an AWS account. 
+ #. Once the virtual appliance is deployed, go through the on-boarding process and create an AWS account. 
 
  #. Take an inventory of IP addresses of all running VMs and unused IP addresses on this subnet, as shown in the example below. 
 
@@ -57,7 +56,7 @@ but need to communicate with the migrated VMs.
 
 One simple way to specify this address range is to provide the list of IP addresses of 
 all running VMs, excluding CloudN IP address, since out of this list, 
-some or all VMs will be migrated to cloud. For example, as shown in the above diagram, 
+some or all VMs will be migrated to the cloud. For example, as shown in the above diagram, 
 if the running VMs excluding CloudN on subnet 172.16.1.0/24 are in the range of 172.16.1.10-172.16.1.20, 
 and you plan to move all running VMs to cloud, then specify this range for Step 1 as below.  
 
@@ -69,11 +68,11 @@ and you plan to move all running VMs to cloud, then specify this range for Step 
 
 ..
 
-Note the larger this list is, the larger IPmotion gateway instance size needs to be in the cloud (AWS). 
-The reason is that IPmotion gateway needs to allocate private IP addresses from AWS
+Note that the larger this list is, the larger IPmotion gateway instance size needs to be in the cloud (AWS). 
+The reason is that the IPmotion gateway needs to allocate private IP addresses from AWS
 for any on-prem VMs. 
 
-You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify a multiple range separating by a comma: 172.16.1.10,172.16.1.12-172.16.1.20. 
+You can optimize the list by making sure only the running VMs are being specified. For the above example, if 172.16.1.11 is an IP address not assigned to any VM, you should skip this address and specify a multiple range separated by a comma: 172.16.1.10,172.16.1.12-172.16.1.20. 
 
     ::
      
@@ -84,9 +83,9 @@ Currently the largest number of VMs that a CloudN can handle on a subnet is 202 
 
 (You can further optimize the list for the on-prem part by specifying only the 
 dependent VMs. 
-For example, the CloudN is deployed on subnet 172.16.1.0/24. On this subnet, IP addresses of VMs that are planed to be migrated are 
+For example, the CloudN is deployed on subnet 172.16.1.0/24. On this subnet, the IP addresses of VMs that are going to be migrated are 
 172.16.1.10, 172.16.1.15-172.16.1.20. 
-IP addresses of VMs that are to remain on the subnet but need to 
+The IP addresses of VMs that are to remain on the subnet but need to 
 communicate with migrated VMs are in the range 172.16.1.50-172.16.1.70
 then you should enter 
 172.16.1.10,172.16.1.15-172.16.1.20,172.16.1.50-172.16.1.70)
@@ -100,14 +99,14 @@ then you should enter
 --------------------------------------------
 
 This field is about specifying 10 IP addresses that are not being used by 
-any running VMs and reserve these addresses for Aviatrix IPmotion gateway. Again as an example displayed in 
+any running VMs and reserving these addresses for Aviatrix IPmotion gateway. Again as an example displayed in 
 the above diagram, 172.16.1.100-172.16.1.110 are not used by any running VMs, you can reserve this range
-for IPmotion gateway. In another words, 
-if you specify 172.16.1.100-172.16.1.110 as IPmotion gateway reserved IP addresses, 
-it means that these range of IP addresses are not currently used by any VM on 
-the subnet, they are reserved by Aviatrix during migration phase. 
+for the IPmotion gateway. In other words, 
+if you specify 172.16.1.100-172.16.1.110 as the IPmotion gateway reserved IP addresses, 
+it means that this range of IP addresses is not currently used by any VM on 
+the subnet, and is reserved by Aviatrix during migration phase. 
 
-.. Note:: AWS reserves the 5 IP addresses of a subnet in VPC. For example, if the VPC subnet is 172.16.1.0/24, the addresses 172.16.1.0, 172.16.1.1, 172.16.1.2, 172.16.1.3 and 172.16.1.255 are reserved by AWS.  if you have on-prem VMs including CloudN that uses the first 3 IP addresses (excluding default gateway, DNS or any other infrastructure purpose) of a subnet, the IPmotion method will not work. 
+.. Note:: AWS reserves the 5 IP addresses of a subnet in VPC. For example, if the VPC subnet is 172.16.1.0/24, the addresses 172.16.1.0, 172.16.1.1, 172.16.1.2, 172.16.1.3 and 172.16.1.255 are reserved by AWS. If you have on-prem VMs including CloudN that uses the first 3 IP addresses (excluding default gateway, DNS or any other infrastructure purpose) of a subnet, the IPmotion method will not work. 
 
 ..
 
@@ -115,10 +114,10 @@ the subnet, they are reserved by Aviatrix during migration phase.
 3. Launch IPmotion Gateway
 ----------------------------
 
-This step launches an Aviatrix IPmotion gateway and builds an tunnel 
+This step launches an Aviatrix IPmotion gateway and builds a tunnel 
 (IPSEC tunnel if the connection is over Internet, direct tunnel if the connection is over Direct Connect.) 
 between the two subnets. 
-Note the IPmotion gateway size reflects how many on-prem VMs can be supported, as 
+Note that the IPmotion gateway size reflects how many on-prem VMs can be supported, as 
 the table shown below.
 
 ===============================    ================================================================================
@@ -142,7 +141,7 @@ c4.4xlarge                         202
 c4.8xlarge                         202
 ===============================    ================================================================================
 
-The "Migrate Subnet" is the subnet that has the same CIDR as on-prem migrating subnet. "IPmotion Gateway Subnet" is the subnet where Aviatrix IPmotion gateway is deployed. Consult `Design Pattern <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_ for IPmotion subnet choice. 
+The "Migrate Subnet" is the subnet that has the same CIDR as on-prem migrating subnet. "IPmotion Gateway Subnet" is the subnet where Aviatrix IPmotion gateway is deployed. Consult `Design Pattern <http://docs.aviatrix.com/HowTos/design_pattern_ipmotion.html>`_  for IPmotion subnet choice. 
 
 4. IPmotion Move
 ------------------
@@ -151,11 +150,11 @@ This step consists of two parts: Staging and Commit.
 
 Staging
 ^^^^^^^^
-Staging is the preparation step. After an IP address is moved to Staging state, 
+Staging is the preparation step. After an IP address is moved to the Staging state, 
 you can power up the migrated EC2 instance with the same IP address as the on-prem VM  
-for testing and staging. Note the migrated EC2 instance at this point cannot communicate with on prem.
+for testing and staging. Note that the migrated EC2 instance at this point cannot communicate with on prem.
 
-Highlight a specific IP address in on-prem panel and click the Staging button. 
+Highlight a specific IP address in the on-prem panel and click the Staging button. 
 
 Undo Staging
 ^^^^^^^^^^^^
@@ -170,7 +169,7 @@ Commit
 ^^^^^^^^
 Commit is to enable the migrated EC2 instance to communicate with any on-Prem VM. 
 
-.. Note:: Before you commit an IP address, the on-prem VM that has been migrated must be powered down first. Commit the IP address implies that the migrated EC2 instance will be in operation. 
+.. Note:: Before you commit an IP address, the on-prem VM that has been migrated must be powered down first. Committing the IP address implies that the migrated EC2 instance will be in operation. 
 ..
 
 Highlight a specific IP address and click the Commit button. 
@@ -178,10 +177,10 @@ Highlight a specific IP address and click the Commit button.
 Undo Commit
 ^^^^^^^^^^^
 
-If migration fail after cut over, you can Undo the Commit by 
+If migration fails after cut over, you can Undo the Commit by 
 selecting the IP address from the cloud panel and click Undo.  
 
-Undo function of Commit is to revert a committed IP address to Staging state. After reverting to Staging state, 
+The Undo function of Commit reverts a committed IP address to Staging state. After reverting to Staging state, 
 the communication between the migrated EC2 instance to on-prem is stopped and you can power up the on-prem VM and resume its operation. 
 
 
@@ -189,21 +188,21 @@ the communication between the migrated EC2 instance to on-prem is stopped and yo
 ---------------------
 
 After an IP address is committed, you can test connectivity. 
-Go to CloudN console, Troubleshoot -> Diagnostics -> Network -> Ping Utility. Enter the committed IP address
-and click Ping. Make sure the security group of the migrated EC2 has ICMP allowed. Also make sure the 
+Go to the CloudN console, Troubleshoot -> Diagnostics -> Network -> Ping Utility. Enter the committed IP address
+and click Ping. Make sure the security group of the migrated EC2 has ICMP allowed. Also make sure that the 
 migrated EC2 instance responds to Ping request.  
 
 6. Troubleshooting Tips
 -----------------------
 
-- **View Button** click View button on Step 1 or Step 2 at any time to see what state an IP address is at.  
-- **Reset Button** If all things fail and you like to start over, first delete the IPmotion gateway by going to Gateway List, select the gateway and click Delete. After Delete is completed, go to Step 1 and click Reset. You can then start it over by going through Step 1 again.  
+- **View Button** click the View button on Step 1 or Step 2 at any time to see what state an IP address is at.  
+- **Reset Button** If all things fail and you would like to start over, first delete the IPmotion gateway by going to the Gateway List, select the gateway and click Delete. After deletion is completed, go to Step 1 and click Reset. You can then start it over by going through Step 1 again.  
 - **Get Support** email support@aviatrix.com for assistance. 
 
 7. Discover application dependencies
 ----------------------------------------
 
-After migrating one VM, you can use Aviatrix IPmotion gateway to discover application dependencies by following `the dependency map discovery. <http://docs.aviatrix.com/HowTos/ipmotion_dependency_discovery.html>`_ 
+After migrating one VM, you can use the Aviatrix IPmotion gateway to discover application dependencies by following `the dependency map discovery. <http://docs.aviatrix.com/HowTos/ipmotion_dependency_discovery.html>`_ 
 
 8. Migrate more VMs on the same subnet
 ---------------------------------------
@@ -225,7 +224,7 @@ For example, suppose you have created a VPC 172.16.0.0/16 and migrated subnet 16
 10. Post Migration
 ------------------
 
-Once you have migrated a few subnets to a VPC, you have the option to delete Aviatrix IPmotion gateway, delete the Aviatrix on-prem virtual appliance 
+Once you have migrated a few subnets to a VPC, you have the option to delete the Aviatrix IPmotion gateway, delete the Aviatrix on-prem virtual appliance 
 and remove the on-prem subnets that are now empty of any VMs. 
 You can then connect the VPC to on-prem via Aviatrix site2cloud, 
 AWS Direct Connect and other layer 3 connectivities. 
@@ -235,7 +234,7 @@ AWS Direct Connect and other layer 3 connectivities.
 
 There are a few known limitations in the current release. 
 
-  - Cannot migrate any on-prem VMs whose IP addresses overlap with AWS reserved IP addresses on a given subnet. AWS reserves five IP addresses of a given subnet, if an on-prem VM overlaps with any of these three IP address, this solution cannot migrate this VM. 
+  - Cannot migrate any on-prem VMs whose IP addresses overlap with AWS reserved IP addresses on a given subnet. AWS reserves five IP addresses of a given subnet if an on-prem VM overlaps with any of these three IP address, this solution cannot migrate this VM. 
 
   - VPC CIDR cannot be 192.168.0.0/16. In the 192.168.0.0 range, the largest CIDR is 192.168.0.0/17. 
 
