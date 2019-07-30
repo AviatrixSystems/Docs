@@ -49,7 +49,7 @@ The BGP connection becomes idle after these messages.
  ip-10-10-0-106#show ip bgp neighbors 169.254.11.233 | include BGP state
    BGP state = Idle
 
-This test indicates a that TGW has the same BGP total prefix limitation (100) as a VGW.
+This test indicates that TGW has the same BGP total prefix limitation (100) as a VGW.
 
 Summary
 ----------

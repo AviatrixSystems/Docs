@@ -44,7 +44,7 @@ it is impossible to gain access to other VPCs, thus significantly reducing attac
  
  - `AWS Global Transit Network with Aviatrix <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_ meets Zero Trust architecture requirements where secure connection is established by organization policy. 
 
- - In addition to policy driven network connections, there must be firewall rules that govern data flow and reduce the connection scope. For example, you should consider place application and database in separate VPCs and setup a stateful firewall rule to only allow traffic initiated from application to access the database, not the other way around. `Aviatrix gateway stateful firewall <http://docs.aviatrix.com/HowTos/gateway.html>`_ enforces and logs all network events. 
+ - In addition to policy driven network connections, there must be firewall rules that govern data flow and reduce the connection scope. For example, you should consider placing application and database in separate VPCs and setting up a stateful firewall rule to only allow traffic initiated from application to access the database, not the other way around. `Aviatrix gateway stateful firewall <http://docs.aviatrix.com/HowTos/gateway.html>`_ enforces and logs all network events. 
 
  - Within a VPC, you can use AWS native security groups associated with instances to enforce policies for communications.
 
@@ -52,7 +52,7 @@ it is impossible to gain access to other VPCs, thus significantly reducing attac
 3. User access with authentication and authorization
 ------------------------------------------------------
 
-- Users access cloud resources must be first authenticated. Certificate-only based authentication is a weak solution as a certificate can be stolen. Another insecure access method is Jump Host or Bastion stations. Multi factor authentication such as integrating with LDAP/DUO/OKTA and client SAML "Single Sign On" significantly improves authentication strengths. However, authentication alone is not sufficient, 
+- User access to cloud resources must be first authenticated. Certificate-only based authentication is a weak solution as a certificate can be stolen. Another insecure access method is Jump Host or Bastion stations. Multi factor authentication such as integrating with LDAP/DUO/OKTA and client SAML "Single Sign On" significantly improves authentication strengths. However, authentication alone is not sufficient, 
 
 - A User's access cloud resources must be authorized. The finer grained control you apply, the less lateral movement a user can make even if access to the network is attained. With Zero Trust, you should only grant access to the required resources. 
 

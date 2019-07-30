@@ -42,18 +42,18 @@ Scenario:
 
   1. Traffic from Cloud to On-Prem
 
-    - When a packet which is sent from Spoke VPCs in Cloud enters Aviatrix Transit Gateway, the packet’s source address needs to be changed to an IP that On-Prem is routable. (Source address translation)
+    - When a packet sent from Spoke VPCs in Cloud enters the Aviatrix Transit Gateway, the packet’s source address needs to be changed to an IP that On-Prem is routable. (Source address translation)
 
   2. Traffic from On-Prem to Cloud
 
-    - When a packet which is sent from On-Prem enters Aviatrix Transit Gateway, the packet’s destination address needs to be changed from an IP within On-Prem routable CIDR to an IP belonging to a service in Spoke VPCs in Cloud. (Destination address translation)
+    - When a packet sent from On-Prem enters the Aviatrix Transit Gateway, the packet’s destination address needs to be changed from an IP within the On-Prem routable CIDR to an IP belonging to a service in Spoke VPCs in Cloud. (Destination address translation)
 
 Follow the steps below to set up for the scenario.
 
 Step 1. Prerequisite
 -------------------------
 
-1.1. Upgrade Aviatrix Controller to at least version UserConnect-4.7.386
+1.1. Upgrade the Aviatrix Controller to at least version UserConnect-4.7.386
 
   - https://docs.aviatrix.com/HowTos/inline_upgrade.html
 
@@ -61,7 +61,7 @@ Step 1. Prerequisite
 
   SNAT configuration
 
-    - Prepare two On-Prem routable IPs (one for Aviatrix Transit Gateway; one for Aviatrix Transit HA Gateway if needed)
+    - Prepare two On-Prem routable IPs (one for the Aviatrix Transit Gateway; one for the Aviatrix Transit HA Gateway if needed)
 
     ::
 
@@ -71,7 +71,7 @@ Step 1. Prerequisite
 
   DNAT configuration
 
-    - Prepare a list of IP mapping tables for On-Prem routable CIDR to a service in Spoke VPCs corresponding to your topology
+    - Prepare a list of IP mapping tables for the On-Prem routable CIDR to a service in Spoke VPCs corresponding to your topology
 
     - A service might be an IP belonging to Load Balancer or EIP
 
@@ -86,7 +86,7 @@ Step 2. Build Aviatrix NEXT GEN TRANSIT FOR AWS
 
   - follow steps 1, 2, 3, 4, 4.1, 5, and 6 in the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
 
-Step 3. Perform Manual BGP Advertised Network List feature on the tunnel between Aviatrix Transit GW and AWS VGW
+Step 3. Perform a Manual BGP Advertised Network List feature on the tunnel between Aviatrix Transit GW and AWS VGW
 -------------------------
 
   - https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list
@@ -121,14 +121,14 @@ This action changes the packet’s source IP address from Spoke VPCs in the Clou
   ::
 
     Example: 
-    Transit Primary Gateway: traffic from spoke VPCs 10.1.0.0/16 and 10.2.0.0/16 translate to IP 99.0.0.1
-    Transit HA Gateway: traffic from spoke VPCs 10.1.0.0/16 and 10.2.0.0/16 translate to IP 99.0.0.2
+    Transit Primary Gateway: traffic from spoke VPCs 10.1.0.0/16 and 10.2.0.0/16 translates to IP 99.0.0.1
+    Transit HA Gateway: traffic from spoke VPCs 10.1.0.0/16 and 10.2.0.0/16 translates to IP 99.0.0.2
 
 To configure:
 
-  4.1. Go to Gateway page, click on the Transit Primary Gateway first. Click Edit.
+  4.1. Go to the Gateway page, click on the Transit Primary Gateway first. Click Edit.
 
-  4.2. Continue on the Edit page, scroll to SNAT. Select Customized SNAT.
+  4.2. Continue on to the Edit page, scroll to SNAT. Select Customized SNAT.
 
   4.3. Select Customized SNAT
 
@@ -166,7 +166,7 @@ This action instructs the gateway to translate the destination address from an I
 
 To configure:
 
-  5.1. Go to the Gateway page, click on the Transit Primary Gateway. Click Edit.
+  5.1. Go to the Gateway page and click on the Transit Primary Gateway. Click Edit.
 
   5.2. Scroll down to “Destination NAT”, click Add/Edit DNAT
 
