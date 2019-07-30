@@ -31,34 +31,19 @@ Key variables that affect performance are:
 Performance Test Results
 ---------------------------
 
-The performance test is conducted between a c5.4xlarge instance in the Spoke VPC and on-prem host machine over a 10Gbps Direct Connect between the Transit VPC and an on-prem datacenter (Equinix co-lo). The physical latency is 5ms. Additional latency is injected into the data path to simulate the latency impact to the end to end throughput. 
+The performance test is conducted between a c5n.4xlarge instance in the Spoke VPC and on-prem host machine over a 10Gbps Direct Connect between the Transit VPC and an on-prem datacenter (Equinix co-lo). The physical latency is 5ms. Additional latency is injected into the data path to simulate the latency impact to the end to end throughput. 
 
-Aviatrix gateways at the Spoke VPC and Transit VPC are c5.4xlarge instance size. Both Spoke VPC gateway and Transit VPC gateway have Insane Mode enabled. 
 
-Additional performance tests were done for the new c5n.4xlarge. The c5n.4xlarge has significant performance improvements.
-
-1. MTU = 9000 Bytes, C5.4xlarge 
+1. MTU = 9000 Bytes, C5n.4xlarge
 =================================
 
-For Jumbo Frame Size of 9000 bytes, the TCP throughput against different end-to-end latencies and the number of TCP streams is shown as below. 
+|c5n_throughput_9000B|
 
-|insane_perf_jumbo|
-
-
-2. MTU = 1500 Bytes, C5.4xlarge
-=================================
-
-|throughput_1500_25ms|
-
-3. MTU = 1500 Bytes, C5n.4xlarge
+2. MTU = 1500 Bytes, C5n.4xlarge
 =================================
 
 |c5n_throughput_1500B|
 
-4. MTU = 9000 Bytes, C5n.4xlarge
-=================================
-
-|c5n_throughput_9000B|
 
 How to Tune Performance
 -----------------------
