@@ -362,7 +362,7 @@ Diagnostic Result
 |                                                                                              |    
 |  passed on the gateway.) You may also check if this SQS queue is still in your AWS           |
 |                                                                                              |    
-|  SQS Service.                                                                                |
+|  SQS Service or the IAM policy is correctly attached on the Gateway.                         |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
