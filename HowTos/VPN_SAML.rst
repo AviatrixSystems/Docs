@@ -70,7 +70,7 @@ The configuration consists of 8 parts:
 .. _Config_31:
 
 3.1 Create a temporary Aviatrix SP Endpoint
-#########################################
+###########################################
 
 .. note::
 
@@ -88,34 +88,34 @@ The configuration consists of 8 parts:
 
    |image3-1-1|
 
-   |image3-1-2|
-
-
-
-SP Metadata
-   |imagespmetadata| 
-   
-   +-------------------------+-------------------------------------------------+
-   | Field                   | Value                                           |
-   +=========================+=================================================+
+      
+   +-------------------------+--------------------------------------------------------+
+   | Field                   | Value                                                  |
+   +=========================+========================================================+
    | Endpoint Name           | Enter a unique identifier for the service provider     |
-   +-------------------------+-------------------------------------------------+
-   | IPD Metadata Type       | Text or URL (depending on what was              |
-   |                         | provided by the SAML provider)                  |
-   |                         | For now, choose URL                             |
-   +-------------------------+-------------------------------------------------+
-   | IdP Metadata Text/URL   | IdP metadata URL/Text copied from the SAML      |
-   |                         | provider configuration                          |
-   |                         | For now, put in a placeholder URL,              |
-   |                         | such as "https://www.google.com"                |
-   +-------------------------+-------------------------------------------------+
-   | Entity ID               | Select `Hostname` for now                       |
-   +-------------------------+-------------------------------------------------+
-   | Access                  | Select admin or read-only access                |
-   +-------------------------+-------------------------------------------------+
-   | Custom SAML Request     | For now leave blank, depending on your specific |
-   | Template                | IdP, you may have to check this option          |
-   +-------------------------+-------------------------------------------------+
+   +-------------------------+--------------------------------------------------------+
+   | IPD Metadata Type       | Text or URL (depending on what was                     |
+   |                         | provided by the SAML provider)                         |
+   |                         | For now, choose URL                                    |
+   +-------------------------+--------------------------------------------------------+
+   | IdP Metadata Text/URL   | IdP metadata URL/Text copied from the SAML             |
+   |                         | provider configuration                                 |
+   |                         | For now, put in a placeholder URL,                     |
+   |                         | such as "https://www.google.com"                       |
+   +-------------------------+--------------------------------------------------------+
+   | Entity ID               | Select `Hostname` for now                              |
+   +-------------------------+--------------------------------------------------------+
+   | Access                  | Select admin or read-only access                       |
+   +-------------------------+--------------------------------------------------------+
+   | Custom SAML Request     | For now leave blank, depending on your specific        |
+   | Template                | IdP, you may have to check this option                 |
+   +-------------------------+--------------------------------------------------------+
+   
+   |image3-1-2|
+   
+   SP Metadata looks like
+
+   |imagespmetadata| 
 
 .. note::
    Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
@@ -215,28 +215,28 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
 #. Stay on the `SAML` tab and click `+ Add New`
 
-   +----------------------------+-----------------------------------------+
-   | Field                      | Description                             |
-   +----------------------------+-----------------------------------------+
-   | Endpoint Name              | Unique name that you chose in step 3.1        |
-   +----------------------------+-----------------------------------------+
-   | IPD Metadata Type          | Text or URL (depending on what was      |
-   |                            | provided by the SAML provider)          |
-   +----------------------------+-----------------------------------------+
-   | IdP Metadata Text/URL      | Paste in the IdP metadata URL/Text      |
-   |                            | copied from the SAML provider           |
-   |                            | configuration                           |
-   +----------------------------+-----------------------------------------+
-   | Entity ID                  | Select `Hostname` or `Custom`           |
-   +----------------------------+-----------------------------------------+
-   | Custom Entity ID           | Only visible if `Entity ID` is `Custom` |
-   +----------------------------+-----------------------------------------+
-   | Access                     | Select admin or read-only access        |
-   +----------------------------+-----------------------------------------+
-   | Custom SAML Request        | Depending on your specific IdP,         |
-   | Template                   | you may have to check this option.      |
+   +----------------------------+----------------------------------------------------------+
+   | Field                      | Description                                              |
+   +----------------------------+----------------------------------------------------------+
+   | Endpoint Name              | Unique name that you chose in step 3.1                   |
+   +----------------------------+----------------------------------------------------------+
+   | IPD Metadata Type          | Text or URL (depending on what was                       |
+   |                            | provided by the SAML provider)                           |
+   +----------------------------+----------------------------------------------------------+
+   | IdP Metadata Text/URL      | Paste in the IdP metadata URL/Text                       |
+   |                            | copied from the SAML provider                            |
+   |                            | configuration                                            |
+   +----------------------------+----------------------------------------------------------+
+   | Entity ID                  | Select `Hostname` or `Custom`                            |
+   +----------------------------+----------------------------------------------------------+
+   | Custom Entity ID           | Only visible if `Entity ID` is `Custom`                  |
+   +----------------------------+----------------------------------------------------------+
+   | Access                     | Select admin or read-only access                         |
+   +----------------------------+----------------------------------------------------------+
+   | Custom SAML Request        | Depending on your specific IdP,                          |
+   | Template                   | you may have to check this option.                       |
    |                            | Refer to `IdP-specific Integration <#IdP-integration>`__ |
-   +----------------------------+-----------------------------------------+
+   +----------------------------+----------------------------------------------------------+
 
 .. note::
   `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
@@ -323,12 +323,12 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image3-1-1| image:: SSL_VPN_SAML_media/image3-1-1.png
 
-.. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.PNG
+.. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.png
 
 .. |image3-2| image:: SSL_VPN_SAML_media/image3-2.png
 
 .. |image3-6| image:: SSL_VPN_SAML_media/image3-6.png
 
-c image:: SSL_VPN_SAML_media/SPMetadata.png
+.. |imagespmetadata| image:: SSL_VPN_SAML_media/SPMetadata.png
 
 .. disqus::
