@@ -80,15 +80,21 @@ The configuration consists of 8 parts:
    This guide will use ``aviatrix_saml_controller`` as an example for the endpoint name.
 
 #. Login to the Aviatrix Controller
-#. Click `Settings` in the left navigation menu
-#. Select `Controller`
-#. Click on the `SAML Login` tab
-#. Click `+ Add New` button
+#. Click `OpenVPN®` in the left navigation menu 
+#. Select `Advanced`
+#. Click on the `SAML` tab 
+#. click `+ Add New`
+
 
    |image3-1-1|
 
    |image3-1-2|
 
+
+
+SP Metadata
+   |imagespmetadata| 
+   
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
    +=========================+=================================================+
@@ -317,11 +323,12 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image3-1-1| image:: SSL_VPN_SAML_media/image3-1-1.png
 
-.. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.png
+.. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.PNG
 
 .. |image3-2| image:: SSL_VPN_SAML_media/image3-2.png
 
 .. |image3-6| image:: SSL_VPN_SAML_media/image3-6.png
 
+c image:: SSL_VPN_SAML_media/SPMetadata.png
 
 .. disqus::
