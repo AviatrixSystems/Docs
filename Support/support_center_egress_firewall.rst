@@ -15,7 +15,7 @@ When you are using multiple Egress Filters and/or Security Policies on the same 
 Should I use Black lists or White lists for Egress FQDN Control?
 ----------------------------------------------------------------------------
 
-White lists should specifically be used for access to applications or access to servers. If you are browsing the WEB/internet, then you should be using black lists since a lot of webpages refer or load content from other websites, or use Discovery feature to discover the websites you are surfing and use that to configure your white lists https://docs.aviatrix.com/HowTos/fqdn_discovery.html
+White lists should specifically be used for access to applications or access to servers. If you are browsing the WEB/internet, then you should be using black lists since a lot of webpages refer or load content from other websites, or use the Discovery feature to discover the websites you are surfing and use that to configure your white lists https://docs.aviatrix.com/HowTos/fqdn_discovery.html
 
 
 Which policies are executed first - egress or firewall?
@@ -39,10 +39,10 @@ There is a character limit while using `FQDN Egress Control REST API <https://s3
 
   Next: Make sure that you have an Egress Filter Tag created on the controller. "Controller UI > Security > Egress Control > New Tag". "newtag2" for this example
 
-  Next: Using REST API, login to you controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
+  Next: Using REST API, login to your controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
     curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
 
-  Next: Copy the following python code into a file, let's say, egress-rules.py. Update the CID value from the above command, the url and run it:
+  Next: Copy the following python code into a file, let's say, egress-rules.py. Update the CID value from the above command, input the url and run it:
 
   ----------
   #!/usr/local/bin/python3
@@ -80,7 +80,7 @@ By default, the DNS server on the Gateways are set to 8.8.8.8, except when you h
 When the egress control is enabled:
 
   * If you set rules only for 80/443 ports: when you enable the egress fqdn list, the gateway will check if it has access to the DNS before it will turn on the FQDN filter. If it cannot access the DNS server, it will fail this enable operation.
-  * If you set rules for non-80/443: the controller will replace the gateway default DNS (8.8.8.8) - with the Server from DHCP Options or DNS VPC Server. If the gateway cannot reach this new DNS, the enable operation on the FQDN Egress Control would fail.
+  * If you set rules for non-80/443: the controller will replace the gateway default DNS (8.8.8.8) - with the Server from DHCP Options or DNS VPC Server. If the gateway cannot reach this new DNS, the enable operation on the FQDN Egress Control will fail.
  
 If you run into these issues, please try:
 
@@ -95,5 +95,5 @@ Azure's subnets by default have an internet gateway associated. So the process i
 
 1. Create a subnet for your VNET. Do NOT associate any route table to this subnet. This will be your public subnet. This subnet will be used when creating the Aviatrix gateway.
 2. Create a second subnet for user instances. Create a route table and associate it with this second subnet. This will act as a private subnet like in AWS.
-3. Launch Aviatrix Gateway in the first public subnet created in Step 1. If you need an HA, you can create it in the same subnet.
+3. Launch an Aviatrix Gateway in the first public subnet created in Step 1. If you need an HA, you can create it in the same subnet.
 

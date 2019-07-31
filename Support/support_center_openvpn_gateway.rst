@@ -28,18 +28,18 @@ Currently we do not support multiple VPN sessions from the same PC via the Aviat
 Which VPN Clients are supported with SAML authentication?
 -----------------------------------------------------------------
 
-At this time, we  support SAML authentication for our VPN clients only for our `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_
+At this time, we support SAML authentication for our VPN clients only for our `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_
 
-When using Okta Authentication with Okta API Token, what is the suggested Okta App administrator role to Token.
+When using Okta Authentication with Okta API Token, what is the suggested Okta App administrator role to Token?
 -----------------------------------------------------------------
 
 You can refer to this link about OKTA `App administrator role permission table <https://help.okta.com/en/prod/Content/Topics/Security/Administrators.htm?cshid=Security_Administrators#Security_Administrators>`_.
-You will need Super Admin or Read-Only Admin to allows the privilege to create a Token for API access.
+You will need Super Admin or Read-Only Admin to allow the privilege to create a Token for API access.
 
 Can I set a profile for my VPN user via SAML?
 -----------------------------------------------------------------
 
-You can add a custom attribute “Profile” in your IdP and the value will be passed to the Aviatrix OpenVPN gateway during authentication. Aviatrix controller will then attach the Profile provided by the IdP to the VPN user. Currently we only allow one profile value to be passed via SAML auth. This will override any local settings on the controller for this user.
+You can add a custom attribute “Profile” in your IdP and the value will be passed to the Aviatrix OpenVPN gateway during authentication. The Aviatrix controller will then attach the Profile provided by the IdP to the VPN user. Currently we only allow one profile value to be passed via SAML auth. This will override any local settings on the controller for this user.
 
 
 Can I assign multiple profiles to the same users?
@@ -57,7 +57,7 @@ Microsoft Edge does not work well with the SAML authentication process when it i
 How do I delete a Network Load Balancer created by Aviatrix? 
 ---------------------------------------------------------------------------------------------------
 
-An ELB will be automatically deleted by the Aviatrix Controller if all the gateways behind it are deleted and if there are no more users attached to it. The last resort to delete an ELB is delete it from Troubleshoot > ELB. Please refrain from deleting an ELB from the AWS portal for any ELB created by Aviatrix controller.
+An ELB will be automatically deleted by the Aviatrix Controller if all the gateways behind it are deleted and if there are no more users attached to it. The last resort to delete an ELB is delete it from Troubleshoot > ELB. Please refrain from deleting an ELB from the AWS portal for any ELBs created by the Aviatrix controller.
 
 
 Should I be worried about Tunnelblick VPN Client's warning message about "comp-lzo"?
@@ -69,7 +69,7 @@ Tunneblick VPN Client might show a warning about "comp-lzo" being deprecated whe
 Why is my VPN client failing to connect with this error: “Network is unreachable for DNS resolution”?
 -------------------------------------------------------------------------------------------------------
 
-The Aviatrix VPN Client needs to  have a successful name resolution for “localhost.aviatrix.com” to a local address 127.0.0.1. We need a publicly resolvable FQDN to use the browser to communicate on signed TLS. Some DNS servers do not allow this, resulting in the Aviatrix VPN Client failing to connect, displaying this error. If your dns server is resolving other domains, but failing to resolve localhost.aviatrix.com ("nslookup localhost.aviatrix.com" doesn’t return 127.0.0.1), you can employ a simple workaround of adding “localhost.aviatrix.com” pointing to “127.0.0.1” in the hosts file.
+The Aviatrix VPN Client needs to have a successful name resolution for “localhost.aviatrix.com” to a local address 127.0.0.1. We need a publicly resolvable FQDN to use the browser to communicate on signed TLS. Some DNS servers do not allow this, resulting in the Aviatrix VPN Client failing to connect, displaying this error. If your dns server is resolving other domains, but failing to resolve localhost.aviatrix.com ("nslookup localhost.aviatrix.com" doesn’t return 127.0.0.1), you can employ a simple workaround of adding “localhost.aviatrix.com” pointing to “127.0.0.1” in the hosts file.
  
   * Mac/Linux: add “127.0.0.1  localhost.aviatrix.com” to /etc/hosts. You would need a sudo access for this
   * Windows: add “127.0.0.1  localhost.aviatrix.com” to C:\Windows\System32\Drivers\etc\hosts file. Please open your editor/notepad with “run as administrator” (edited)
@@ -103,7 +103,7 @@ Check out `AWS's LDAP <https://aws.amazon.com/directoryservice/faqs/>`_
 How can I scale my VPN user setup?
 ---------------------------------------------------
 
-Deploy your Aviatrix OpenVPN Gateways behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB, when needed and not have to worry about losing an IP address and having to reissue certificates to all of your VPN users. Alternatively, you may choose to use `Aviatrix UDP LoadBalanced VPN using DNS <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_
+Deploy your Aviatrix OpenVPN Gateways behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB when needed and not have to worry about losing an IP address and having to reissue certificates to all of your VPN users. Alternatively, you may choose to use `Aviatrix UDP LoadBalanced VPN using DNS <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_
 .
 
 How can the OpenVPN made Highly Available?
@@ -142,7 +142,7 @@ We recommend that you deploy OpenVPN on a separate Gateway to take advantage of 
 Why do my VPN clients take longer to connect, sometimes?
 --------------------------------------------------------------------
 
-Sometimes the clients might take some time to connect due to ELB's load - check the logs on the client. Temporary network connectivity issue, DNS resolution on your PC and other factors may contribute to this slow connection issue.
+Sometimes the clients might take some time to connect due to ELB's load - check the logs on the client. Temporary network connectivity issues, DNS resolution on your PC and other factors may contribute to this slow connection issue.
 
 
 Why are my DNS settings changes not taking effect?
@@ -154,7 +154,7 @@ In the case of a full tunnel deployment, if an OpenVPN Gateway is edited to togg
 How can I send the VPN config files to my users?
 ------------------------------------------------------
 
-By default, when you add the email address to a user, they will receive the VPN config file (.ovpn) via email. If you do not want to share these files via email, please do not enter the email address for the vpn users. You can then download these files, one at a time from the Controller, UI per user. You can use our `REST API <https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_get_vpn_ssl_ca_configuration>`_ - and then share it via your preferred mechanism with your VPN user. The REST API allows you to scale up if you deploy it via automation.
+By default, when you add the email address to a user, they will receive the VPN config file (.ovpn) via email. If you do not want to share these files via email, please do not enter the email address for the vpn users. You can then download these files one at a time from the Controller UI per user. You can use our `REST API <https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_get_vpn_ssl_ca_configuration>`_ - and then share it via your preferred mechanism with your VPN user. The REST API allows you to scale up if you deploy it via automation.
 
 
 How can I customize the email that is sent out when a new VPN user is added?
@@ -185,7 +185,7 @@ Go to "Controller/Gateway/+NewGateway"
   * turn on "Advanced Options"
   * pick the same "authentication" and use the same auth information as your existing gateway (you can find this information from "Controller/OpenVPN/EditConfig/Authentication") [CK] For ELB, it has to use the same authentication method if you need multiple OpenVPN gateways for redundancy.
   * use exactly the same configuration as the first gateway
-  * Click on OK
+  * click on OK
   
   
 How can I resolve my private VPC Instance's name when connecting via remote VPN?
@@ -196,14 +196,14 @@ Our recommended approach is for you to advertise your VPC Instance Names via you
 OpenVPN Gateways are deployed with a default DNS server of 8.8.8.8. A remote user can be configured to connect to this gateway via VPN Client either through a full tunnel or a split tunnel
 
   * For full tunnel, the DNS server from the OpenVPNGateway is pushed to the remote user's computer. You can change from the default 8.8.8.8 to the VPC's DNS server by going to "Controller > Gateways > Select Gateway > Edit > Use VPC/VNet DNS Server > Enable". You can control this through "DHCP Options Sets" in your AWS VPC settings. After making this change, please make sure to go to "Controller > OpenVPN > Edit Config > Pick ELB/Gateway > Reload DHCP Configuration and click on the red button" for the OpenVPN software to pick these settings. Please validate by reconnecting your VPN client.
-  * For split tunnel, the DNS server settings are not pushed, by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provider multiple DNS servers separated by commas
+  * For split tunnel, the DNS server settings are not pushed by default. You can configure this setting from "Controller > OpenVPN > Edit Config > Modify Split Tunnel > Yes > Nameservers". You can provide multiple DNS servers separated by commas
  
 
 
 How can I have my laptop reconnect if the user VPN session gets disconnected?
 -------------------------------------------------------------------------------------
 
-Most of the VPN clients have a setting to reconnect when they discover that the session has been disconnected. On Aviatrix VPN client, please check out "Menu > Advanced > Advanced > Reconnect on disconnection"
+Most of the VPN clients have a setting to reconnect when they discover that the session has been disconnected. On the Aviatrix VPN client, please check out "Menu > Advanced > Advanced > Reconnect on disconnection"
 
 
 How long will the user VPN session be connected when my laptop is in sleep or loses network connection?
@@ -215,11 +215,11 @@ If the user VPN session is setup to use TCP(default setting with ELB), the sessi
 How can I use a CSV file to do bulk import of vpn users?
 --------------------------------------------------------------------------------------------------------------
 
-Aviatrix Controller does not have an ability to read a CSV file to import users at this time. But since we already support REST API() and Terraform() it is very easy to import multiple vpn users. Here is an example using python and REST API
+The Aviatrix Controller does not have the ability to read a CSV file to import users at this time. But since we already support REST API() and Terraform() it is very easy to import multiple vpn users. Here is an example using python and REST API
 
 ::
 
-  First: Prepare your data file("vpn-users.csv" in this example) for your VPN uses. Format is "vpc_id, lb_name, username, user_email, profile_name". The first line is needed. The first three args are required. Email and profile are optional. If you do not want to use them, please delete them from the csv header line and update the python file as well - remove the lines from the payload. Here's an example, the first header line is required:
+  First: Prepare your data file("vpn-users.csv" in this example) for your VPN users. Format is "vpc_id, lb_name, username, user_email, profile_name". The first line is needed. The first three args are required. Email and profile are optional. If you do not want to use them, please delete them from the csv header line and update the python file as well - remove the lines from the payload. Here's an example, the first header line is required:
   
     vpc_id,lb_name,username,user_email,profile_name
     vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test1,test1@example.com,test-fqdn
@@ -227,7 +227,7 @@ Aviatrix Controller does not have an ability to read a CSV file to import users 
     vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test3,test3@example.com,test-fqdn
     vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test4,test4@example.com,test-fqdn
  
-  Next: Using REST API, login to you controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
+  Next: Using REST API, login to your controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
   curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
  
   Next: Copy the following python code into a file, lets say, import-vpn-users.py. Update the CID value from the above command, and run it:

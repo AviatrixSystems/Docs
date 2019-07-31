@@ -11,23 +11,23 @@ How do I increase the size of the disk on my Gateway?
 -------------------------------------------------------
 Follow these instructions to increase the size of your instance's disk.
 
-* Login to AWS console and locate the Aviatrix gateway instance
+* Login to the AWS console and locate the Aviatrix gateway instance
 * Click on Root device: /dev/sda1 and then click on EBS ID vol-xxxxxxxxxx link
 * With the volume selected, click Action > "Modify Volume" to change the Disk Size
-* Increase the value in the Size field. Click OK to start the resize process. Please make sure you wait until the State of the volume is "in-use - completed (100%)"
-* Select the Aviatrix gateway instance in EC2 page. Click Reboot for the disk space to take effect. This will cause down time (< 5 minutes) due to the reboot process
-* Confirm that the gateway is in running state in AWS console
+* Increase the value in the Size field. Click OK to start the resize process. Please make sure you wait until the state of the volume is "in-use - completed (100%)"
+* Select the Aviatrix gateway instance in the EC2 page. Click Reboot for the disk space to take effect. This will cause downtime (< 5 minutes) due to the reboot process
+* Confirm that the gateway is in a running state in AWS console
 * Login to your controller to run gateway diagnostics and submit to us. Please also upload the gateway `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_
   
 How do I save an EIP used for a Gateway?
 -------------------------------------------------------
 
-* When creating a new Gateway the default option for “Allocate New EIP” is "on" – this would mean that the Aviatrix Controller would check out a new EIP from AWS Infrastructure. If this gateway is deleted, the Controller will release this EIP to the AWS Infrastructure. If you expect to keep the EIP in future, it is recommended that the "Allocate New EIP" option is unchecked and an available EIP is picked during the Gateway creating process.
-* If you are having issues with the Gateway and would like a new Gateway to replace the existing one and with the same EIP, the best way to do this is to via “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Gateway Replace” 
+* When creating a new Gateway, the default option for “Allocate New EIP” is "on" – this would mean that the Aviatrix Controller would check out a new EIP from AWS Infrastructure. If this gateway is deleted, the Controller will release this EIP to the AWS Infrastructure. If you expect to keep the EIP in future, it is recommended that the "Allocate New EIP" option is unchecked and an available EIP is picked during the Gateway creating process.
+* If you are having issues with the Gateway and would like a new Gateway to replace the existing one and with the same EIP, the best way to do this is via “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Gateway Replace” 
 * If you want to transfer the EIP from one Aviatrix Gateway to another one, please follow the following steps (Example: GatewayA-EIPA, GatewayB-EIPB. Move EIPA to GatewayB) **Note: Only supported in releases 4.0 and up. Using this for release 3.5 and lower will result in the loss of the EIP:** 
  
   * From the AWS Console, create a new EIP (Continuing the example: call this EIP-new)
-  * From the Aviatrix Controller, go to “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Migration,” pick the Gateway that you want to pick the EIP from and enter this new-EIP and click on OK. (Pick GatewayA and enter EIP-new. This will release EIPA)
+  * From the Aviatrix Controller, go to “Controller GUI / Troubleshoot / Diagnostics / Gateway Tab / Migration,” pick the Gateway that you want to pick the EIP from, enter this new-EIP and click on OK. (Pick GatewayA and enter EIP-new. This will release EIPA)
   * On the Aviatrix Controller, on the same page, pick the Gateway that you want to receive the old EIP and enter the old-EIP. (Example: Pick Gateway B and enter EIPA. This will release EIPB)
       
 How can I encrypt an EBS Volume on Controller/Gateway?
@@ -52,7 +52,7 @@ Why are IAM Roles/Policies important?
 What do I do if my gateway instance is identified for retirement by AWS?
 ---------------------------------------------------------------------------
  
-AWS will inform you when one of your instances is scheduled for retirement if the underlying hardware has issues or is being upgraded. Usually a start/stop from AWS console will migrate the instance to newer hardware. Please check `here for more information <https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/>`_. Also, please open a support ticket with AWS for more information
+AWS will inform you when one of your instances is scheduled for retirement if the underlying hardware has issues or is being upgraded. Usually a start/stop from the AWS console will migrate the instance to newer hardware. Please check `here for more information <https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/>`_. Also, please open a support ticket with AWS for more information
  
 
 How can I monitor the destination ports and ip addresses for instances in my VPC?
@@ -77,11 +77,11 @@ How can I debug IAM related issues? (IAM Debug Playbook)
 * Go to "Aviatrix Console > Troubleshoot > Diagnostics > Cloud > Account Diagnostics" and click on "OK" - this will identify any IAM issues you might have
 * Go to ""AWS Console > IAM > Roles" and search for "aviatrix".
 
-  * Click on "aviatrix-role-app" and make sure that "aviatrix-app-policy" is attached to this role. For all Gateways that are on a different account than the Controller, please make sure that both its own account and the Controller's account are attached in the "Trust Relationships" tab. Update the "aviatrix-app-policy" if needed by following these `instructions <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_.
+  * Click on "aviatrix-role-app" and make sure that "aviatrix-app-policy" is attached to this role. For each Gateway that is on a different account than the Controller, please make sure that both its own account and the Controller's account are attached in the "Trust Relationships" tab. Update the "aviatrix-app-policy" if needed by following these `instructions <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_.
   * Click on "aviatrix-role-ec2" and make sure that "aviatrix-assume-role-policy" is attached to it. Please update it following the `instructions <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_.
   * Repeat the above for all accounts that are registered inside the Aviatrix Controller at "Aviatrix Console > Accounts > Access Accounts"
 * Please go to "AWS Console > EC2" and confirm that all of your Aviatrix Controllers and Gateways have "aviatrix-role-ec2" associated. If any of them do not have this attached, please attach them
-* If the above do not address your IAM related issues, please go to AWS Console and detach " aviatrix-role-ec2" role from the Controller instance - by attaching the "none" role and then reattaching the "aviatrix-role-ec2" role again.
+* If the above does not address your IAM related issues, please go to the AWS Console and detach " aviatrix-role-ec2" role from the Controller instance - by attaching the "none" role and then reattaching the "aviatrix-role-ec2" role again.
 * If you have edited the Aviatrix roles(aviatrix-role-app, aviatrix-role-ec2) and policies(aviatrix-app-policy, aviatrix-assume-role-policy) - please make sure that you have followed the `instructions for requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_ and for `customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_.
 * If you use `AWS Organizations <https://aws.amazon.com/organizations/>`_ for Central governance and management across AWS accounts, please work with your network security team or AWS for further support on how to provide the right access for Aviatrix Network System of Controllers and Gateways.
 * Repeat the "Aviatrix Console > Settings > Advanced > AWS IAM Policy Update > Update Account IAM Policy > Check" and "Aviatrix Console > Troubleshoot > Diagnostics > Cloud > Account Diagnostics" for all accounts for a final check.
