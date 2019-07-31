@@ -7,7 +7,7 @@
  Egress Control Filter
 =================================
 
-For questions, check out `Egress FQDN FAQ <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or learn more about `FQDN here <https://www.aviatrix.com/learning/glossary/fqdn.php>>`_.
+For questions, check out `Egress FQDN FAQ <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or learn more about `FQDN here <https://www.aviatrix.com/learning/glossary/fqdn.php>`_.
 
 
 Configuration Workflow
