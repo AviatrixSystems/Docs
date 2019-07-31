@@ -128,6 +128,8 @@ Using **Push Mode** of ``token``
 #. In the VPN user/password prompt, enter any value for the username field and enter the passcode from Duo Mobile app for the password
 #. Verify you are connected and can access resources in the cloud
 
+Currently, token authentication with DUO is broken. Selecting token will enable auto authentication. This bug is expected to be fixed in a later release.
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
