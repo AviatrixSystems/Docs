@@ -30,6 +30,11 @@ Which VPN Clients are supported with SAML authentication?
 
 At this time, we  support SAML authentication for our VPN clients only for our `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_
 
+When using Okta Authentication with Okta API Token, what is the suggested Okta App administrator role to Token.
+-----------------------------------------------------------------
+
+You can refer to this link about OKTA `App administrator role permission table <https://help.okta.com/en/prod/Content/Topics/Security/Administrators.htm?cshid=Security_Administrators#Security_Administrators>`_.
+You will need Super Admin or Read-Only Admin to allows the privilege to create a Token for API access.
 
 Can I set a profile for my VPN user via SAML?
 -----------------------------------------------------------------
