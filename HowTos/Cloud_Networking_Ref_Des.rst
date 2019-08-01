@@ -55,41 +55,14 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 1. Launch a gateway with VPN capability in VPC 172.31.0.0/16.
 
-   a. Go to the Gateway menu and create. Make sure:
+   a. Go to the Gateway menu and create a gateway. 
 
-   #. At the Gateway Name field, give it a distinct and convenient name. For
+   b. At the Gateway Name field, give it a distinct and convenient name. For
       example, mgmt-vpn-1
 
-   #. Select VPN Access.
+   c. Select VPN Access. Selecting features in the Advanced Options section is not required. Selecting "Split Tunnel Mode" is not required.
 
-   #. Use the default VPN CIDR Block.
-
-   #. Select Split Tunnel Mode.
-
-    |      i.  In the Additional CIDRs field under Split Tunnel, enter otherVPCs/VNet or any network CIDRs you wish to reach beyond the
-               VPC you are connecting to (in this case 172.31.0.0/16 is the
-               connecting VPC). In the example shown, you should enter
-               10.10.0.0/16,10.5.0.0/16,10.80.0.0/16. It is a good idea to do
-               some planning to include future VPCs or network address
-               ranges. (In a case where you never have to worry about
-               connecting to your corporate VPN, you may consider entering the
-               entire private network address range in the Additional CIDRs
-               range field, separated by comma:
-               172.16.0.0/12,10.0.0.0/8,192.168.0.0/16. Doing so affords you
-               not to have to reconfigure the gateway if you need to add more
-               VPCs for networking with different CIDR range in the future.)
-    |
-    |      ii. (Optional) For the Nameservers and Search Domain field under
-              Split Tunnel, enter your DNS server IP addresses and search
-              domain if you have the setup to use DNS names to access instances
-              inside VPCs. Leave it blank if you do not know what they are.
-              If you use AWS Route 53 private zone records for your host
-              names, make sure the Nameserver is the DNS server of the VPC.
-              In this case, you should enter 172.31.0.2
-
-   g. Enable AWS ELB is selected.
-
-   h. Save Template is selected. This Template saves you from entering
+   h. Select Save Template, if you wish to do so. This Template saves you from entering
       repeated fields if you wish to create more gateways with the same
       configuration.
 
@@ -99,43 +72,15 @@ VPC ID and its region for the VPC ID field and region in each step.
 
 3. Configure AWS peering.
 
-   a. Enter the AWS console and select the region in which the VPCs were
-      created. Select “Services”->”VPC”->”Peering Connections”. Click
-      “Create VPC Peering Connection” button to make AWS peering. In
-      this case, we need to make the following three AWS peering
-      connections. All these peering connections should have one peer at
-      the VPC terminating your SSL VPN connections (VPC1 in this case).
+   a. Go to Peering --> AWS Peering. Click "New Peering."
 
-    |      i.   pcx-xxxxxxx1: VPC1 (CIDR 172.31.0.0/16) <-> VPC2 (CIDR
-               10.10.0.0/16)
+   b. For Peer1, select the Account Name, Region, and VPC ID of one of the gateways created.
 
-    |      ii.  pcx-xxxxxxx2: VPC1 (CIDR 172.31.0.0/16) <-> VPC3 (CIDR
-               10.5.0.0/16)
+   c. Do the same for Peer2.
 
-    |      iii. pcx-xxxxxxx3: VPC1 (CIDR 172.31.0.0/16) <-> VPC4 (CIDR
-               10.80.0.0.16)
+   d. Click OK. If the new peering does not show up under the list of peerings below the popup, click the refresh button.
 
-   b. Modify the route tables of each VPC to add routes to its peer’s
-      subnets. In this case, the following route(s) should be added to
-      each VPC’s route table:
-
-    |      i.   VPC1 (172.31.0.0/16) route table:
-
-          |             1. Destination 10.10.0.0/16 -> Target pcx-xxxxxxx1
-          |             2. Destination 10.5.0.0/16 -> Target pcx-xxxxxxx2
-          |             3. Destination 10.80.0.0/16 -> Target pcx-xxxxxxx3
-
-    |      ii.  VPC2 (10.10.0.0/16) route table:
-
-          |             1. Destination 172.31.0.0/16 -> Target pcx-xxxxxxx1
-
-    |      iii. VPC3 (10.5.0.0/16) route table:
-
-          |             1. Destination 172.31.0.0/16 -> Target pcx-xxxxxxx2
-
-    |      iv.  VPC4 (10.80.0.0/16) route table:
-
-          |             1. Destination 172.31.0.0/16 -> Target pcx-xxxxxxx3
+   e. Repeat the above steps as many times as necessary for the gateways you created.
 
 4. Add Users and Profiles
 
@@ -168,7 +113,7 @@ different VPC.
 
 In this example, Aviatrix encrypted peering is used for connecting to remote VPCs. You can also use AWS peering to accomplish the task. 
 
-Assume you have created 4 VPCs. You like to use the VPC with CIDR
+Assume you have created 4 VPCs. You would like to use the VPC with CIDR
 172.31.0.0/16 in us-west-2 to host gateways where users connect to.
 After a user connects to this VPC via SSL VPN, she should be able to
 access any instances in the other VPCs as long as her profile allows,
@@ -182,7 +127,7 @@ ISP instead of SSL VPN tunnel.
 Configuration Workflow
 ----------------------
 
-Tips: Mouse over the fields to see its definition. The description in
+Tips: Mouse over the fields to see their definitions. The description in
 each step does not include all fields. Make sure you have the correct
 VPC ID and its region for the VPC ID field and region in each step.
 
@@ -190,7 +135,7 @@ VPC ID and its region for the VPC ID field and region in each step.
 
    a. Go to Gateway menu and click create.
 
-   #. At Gateway Name field, give it a distinct and convenient name. For
+   #. At the Gateway Name field, give it a distinct and convenient name. For
       example, mgmt-vpn-1
 
    #. Select VPN Access.
