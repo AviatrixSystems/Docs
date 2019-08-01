@@ -21,7 +21,8 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 
 #. Ensure that all gateways are in green/up status. If not, please check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
-#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com. 
+#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com.
+#. Please make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process
 
 
 How to upgrade software
@@ -41,6 +42,7 @@ Upgrades are done from the Controller UI.  To check for an available update and 
     #. Upgrading from a release>=3.3.x: The Aviatrix Controller will enforce incremental upgrades, so please click on "Upgrade to the Latest". You might have to go through multiple upgrades before you reach the latest release. Follow the directions in the next note when you upgrade to release 4.0
     #. If upgrading from a release<4.0: Once you upgrade to 4.0, please go to "Aviatrix Console > Troubleshoot > Diagnostics > Services" and click on "Restart Cloudxd" - please click on it only one time, wait for a minute, close your browser and start a new https connection to Aviatrix Console. This is only needed if your controller is based on 14.04 AMI. This will not be required for later AMI's.
     
+#. Please go to “”AviatrixConsole/Settings/Maintenance/Upgrade/GatewayUpgradeStatus” and check that all gateways have been upgraded - “Current Version” on all gateways should match the version you have upgraded to. Please flip through additional pages if you have more than 20 gateways.
 #. Make a backup after the upgrade by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. If you are using terraform, please use the appropriate branch from https://github.com/AviatrixSystems/terraform-provider-aviatrix. For more information please go to https://github.com/AviatrixSystems/terraform-provider-aviatrix#controller-version
 
