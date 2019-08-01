@@ -52,7 +52,7 @@ This document summarizes 10 operation services provided by Aviatrix Solutions.
  - **IAM Roles & Policies** Account IAM Roles and Policies are monitored to make sure they are attached to the accounts and the policies are correct. If an anomaly is detected, the event is logged and alerted. 
  - **AWS Transit Gateway (TGW) Orchestrator Audit** The Aviatrix Controller periodically checks the consistency between what you intend to configure on Security Domains and Connection Policies and what is reflected on AWS TGW route tables. If a discrepancy is discovered, the event is logged and alerted.
  - **BGP Route Conflict Monitoring** All network routes are monitored and whenever the Controller detects conflicting routes, it logs the event and sends email alerts to the admin user and Aviatrix support team.
- - **Account Audit** The Controllers periodically audit all access accounts it manages to make sure there is no accidental deletion of IAM roles and policies. When the Controller detects errors, it logs the event and sends email alert to the admin user and Aviatrix support team. 
+ - **Account Audit** The Controller periodically audits all access accounts it manages to make sure there is no accidental deletion of IAM roles and policies. When the Controller detects errors, it logs the event and sends an email alert to the admin user and the Aviatrix support team. 
  - **Gateway Disk/Memory Monitor** When Aviatrix gateway disk/memory reaches 95%, the Controller logs the event and sends an email alert to the admin user and the Aviatrix support team.
  - **VPC Tracker** Instead of using an Excel sheet, use this tool to keep track of all your network CIDRs and prevent duplicate network address ranges. 
  - **Alert Bell** Controller monitors the route table black hole, stops the instance, etc and displays a warning on the alert bell. 
@@ -94,21 +94,21 @@ The Controller and gateways can export logged data to the following services:
  - **FIPS 140-2 Certificate** Aviatrix has achieved FIPS 140-2 compliance with certificate `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
  - **Security Patch** Any impacting vulnerability issues are immediately addressed by applying "Hot Fix".
  - **SAML Authentication** Supports SAML authentication to login to the Controller. 
- - **LDAP** Support LDAP authentication to login to the Controller. 
+ - **LDAP** Supports LDAP authentication to login to the Controller. 
  
 9. Software and Technical Support
 ------------------------------------
 
- - **support@aviatrix.com** Technical problem? Have no fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24x7 support for Platinum customers.
+ - **support@aviatrix.com** Technical problem? Have no fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24/7 support for Platinum customers.
  - **Fast Release Cycle** New software releases become available every 6 - 8 weeks. A new software release automatically generates notification email to the Controller admin team.
- - **Hot Fix** Any show stopper or operation impacting problems are immediately addressed by "Hot Fix" patches. 
+ - **Hot Fix** Any showstoppers or operation impacting problems are immediately addressed by "Hot Fix" patches. 
  - **Solution Architects** Aviatrix solution architects can help you design your cloud network deployment to be simple to manage, scalable and secure. 
 
 10. Flexible Consumption Model
 --------------------------------
  - **Pay as You Consume** No contract negotiation, no lengthy PO process and no shelfware. Aviatrix provides a cloud consumption model with multi dimensional Metered AMI for instant consumption and need based scaling.
- - **Private Offers** Aviatrix provides Private Offers AMI that has the same benefit as the Metered AMI but with customized pricing.  
- - **BYOL License** Aviatrix provides subscription based long term contracts for organizations that seek predictable and budget based consumption model. 
+ - **Private Offers** Aviatrix provides a Private Offers AMI that has the same benefit as the Metered AMI but with customized pricing.  
+ - **BYOL License** Aviatrix provides subscription based long term contracts for organizations that seek a predictable and budget based consumption model. 
 
 
 .. |aviatrix_dashboard| image:: aviatrix_operations_media/aviatrix_dashboard.png

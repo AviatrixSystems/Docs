@@ -165,7 +165,7 @@ Finally, the Controller will upgrade itself to the latest software version after
    |imageControllerUpgrade|
 
 .. tip::
-   The Controller upgrade takes about 3-5 minutes.  Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
+   The Controller upgrade takes about 3-5 minutes.  Once complete, the login prompt will appear.  Use the username `admin` and your new password to login.
 
 ..
 

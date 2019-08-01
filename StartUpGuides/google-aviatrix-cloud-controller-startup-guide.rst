@@ -111,9 +111,9 @@ create subnets.
 Launch the Aviatrix Controller
 ==============================
 
-At GCloud console,
+At the GCloud console,
 
--  select the project that you just copied the Aviatrix controller image
+-  Select the project that you just copied the Aviatrix controller image
    to. Click the 3 bars.
 
 -  At the drop down menu, select the Aviatrix controller image, click
@@ -151,7 +151,7 @@ address for the password, as shown below:
 
 |image3|
 
-Follow the initial setup process to setup admin email address, password
+Follow the initial setup process to set up an admin email address and password
 and install the latest software. Log in again with your new admin password
 
 .. Warning:: Any resources created by the controller, such as Aviatrix gateways, GCP routing tables, subnets, LB, etc, must be deleted from the controller console. If you delete them directly on AWS console, controllers view of resources will be incorrect which will lead to features not working properly.
