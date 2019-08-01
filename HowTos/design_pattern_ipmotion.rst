@@ -12,7 +12,7 @@ This guide describes different design patterns, it assumes you have read `IPmoti
 IPmotion connects an on-prem subnet and a cloud subnet with identical CIDR block, it is flexible to deploy. 
 
 The cloud subnet can be a private subnet or a public subnet in AWS. 
-The connections can be over Internet or private links such as Direct Connect. There maybe multiple cloud subnets in one VPC with each on-cloud subnet connecting to one on-prem subnet. 
+The connections can be over Internet or private links such as Direct Connect. There may be multiple cloud subnets in one VPC with each on-cloud subnet connecting to one on-prem subnet. 
 
 1. IPmotion over Internet
 --------------------------
