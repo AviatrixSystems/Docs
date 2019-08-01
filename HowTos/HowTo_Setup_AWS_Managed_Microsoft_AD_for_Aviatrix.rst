@@ -21,8 +21,8 @@ Follow these steps to configure the AWS AD configuration in your environment and
 
 #. Setting Up Your Base AWS Managed Microsoft AD in AWS
 #. Verify AWS AD Is Operational by using AD Explorer
-#. Verify AWS AD Is Operational by a Aviatrix Controller with LDAP login verification.
-#. Verify AWS AD Is Operational by a Aviatrix OpenVPN Server with LDAP login verification.
+#. Verify AWS AD Is Operational by an Aviatrix Controller with LDAP login verification.
+#. Verify AWS AD Is Operational by an Aviatrix OpenVPN Server with LDAP login verification.
 
 Prerequisites
 -------------
@@ -69,7 +69,7 @@ Follow these steps to configure Microsoft AD of your Windows Server EC2 Instance
 |image6|
 
 Step D: Configure LDAP
-after logging in to the EC2 Instance with AD authentication (aws-ad.aviatrixtest.com\Admin), configure another user "aduser" to AWS AD domain.
+After logging in to the EC2 Instance with AD authentication (aws-ad.aviatrixtest.com\Admin), configure another user "aduser" to AWS AD domain.
 
 |image7|
 
@@ -85,7 +85,7 @@ Verify LDAP information, for example Bind DN and Base DN, and store them for fur
 
 
 .. _Verify_AWS_AD_AVX_CTRL:
-Verify AWS AD Is Operational by a Aviatrix Controller with LDAP login verification.
+Verify AWS AD Is Operational by an Aviatrix Controller with LDAP login verification.
 --------------------------
 In the Aviatrix Controller GUI, go to Setting > Controller > LDAP Login.
 Input the LDAP information from `AD Explorer <#Verify_AWS_AD_AD_Explorer>`__ and verify LDAP connection.

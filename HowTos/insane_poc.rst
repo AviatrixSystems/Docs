@@ -26,13 +26,13 @@ Preparation
 
 This phase tests performance between two instances in two different Spoke VPCs. The two Spoke VPCs are connected by two Aviatrix gateways launched in Insane Mode.
 
- a. Launch a Spoke gateway. Go to Transit Network -> Setup, scroll down to `Step 4 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch a Spoke gateway. Select "Insane Mode Encryption". Select a C5 instance size. (See `this table <https://docs.aviatrix.com/HowTos/insane_mode.html#instance-sizes-and-ipsec-performance>`_ for performance guidance.) The "Public Subnet" field should be auto populated as the Aviatrix Controller looks for a unused /28 CIDR segment in the VPC to create a subnet and launch the Insane mode gateway. 
+ a. Launch a Spoke gateway. Go to Transit Network -> Setup, scroll down to `Step 4 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch a Spoke gateway. Select "Insane Mode Encryption". Select a C5 instance size. (See `this table <https://docs.aviatrix.com/HowTos/insane_mode.html#instance-sizes-and-ipsec-performance>`_ for performance guidance.) The "Public Subnet" field should be auto populated as the Aviatrix Controller looks for an unused /28 CIDR segment in the VPC to create a subnet and launch the Insane Mode gateway. 
 
  #. Launch another Spoke gateway. Repeat the above step for the second Spoke gateway. 
 
  #. Build an encrypted tunnel between the two gateways. Go to Peering -> Encrypted Peering -> Add New. Select the two gateways and click OK. 
 
- #. Test performance. Launch two Linux instances (the instance size should be comparable to the gateway size. For example, they should all be C5.2xlarge) in each Spoke VPC. Open security groups of the instances to allow for inbound traffic from the other Spoke VPC. Note you can launch the instances in public subnet in the Spoke VPC, or use `Aviatrix User VPN feature <https://docs.aviatrix.com/HowTos/uservpn.html>`_ to access the instance on the private subnet. When you run iperf test, you should run them with private IP addresses. 
+ #. Test performance. Launch two Linux instances (the instance size should be comparable to the gateway size. For example, they should all be C5.2xlarge) in each Spoke VPC. Open security groups of the instances to allow for inbound traffic from the other Spoke VPC. Note: you can launch the instances in a public subnet in the Spoke VPC, or use `Aviatrix User VPN feature <https://docs.aviatrix.com/HowTos/uservpn.html>`_ to access the instance on the private subnet. When you run an iperf test, you should run them with private IP addresses. 
 
   For example, the server Linux instance has IP address 10.10.10.109 and the client Linux instance has IP address 10.12.11.100. The client instance should run "iperf3 -c 10.10.10.109 -P 8" where P represents the number of TCP streams and where 10.10.10.109 represents the private IP address of the server Linux instance.   
 

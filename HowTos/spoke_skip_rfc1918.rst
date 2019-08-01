@@ -36,7 +36,7 @@ instance of On-Prem.
 
 |
 
-The following steps use an Aviatrix API to deploy a spoke attaching to transit network but skipping RFC1918 routes programming.
+The following steps use an Aviatrix API to deploy a spoke attaching to a transit network but skipping RFC1918 routes programming.
 
 Steps to Deploy A Spoke Skipping RFC1918 Route Programming
 -----------------------------------------------------------
@@ -65,7 +65,7 @@ Example Response:
 Step 2: Launch an Aviatrix Spoke Gateway Using API with Option skip_rfc1918
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With option skip_rfc1918 set to "yes", This new spoke gateway will not program RFC1918 routes to its VPC's route tables.
+With option skip_rfc1918 set to "yes", this new spoke gateway will not program RFC1918 routes to its VPC's route tables.
 
 Example Request:
 
@@ -137,7 +137,7 @@ Now you have completed deployment of the spoke to the transit network without pr
 Step 5: Attach more Spokes to Transit Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have more spokes that you need to attach to transit gateway in this way, repeat step 2-4.
+If you have more spokes that you need to attach to a transit gateway in this way, repeat steps 2-4.
 
 Step 6: Update of On-Prem Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
