@@ -10,7 +10,7 @@ Aviatrix Controller Security for SAML auth based VPN Deployment
 Best practices call for the Aviatrix Controller to be not widely
 accessible from the internet. Access on TCP port 443 should be limited to 
 
-  - management range of IPs coming from the Enterprise or the Datacenter, and 
+  - the management range of IPs coming from the Enterprise or the Datacenter, and 
   - access to/from each of the deployed gateways for general communication/keep-alives.
 
 
@@ -53,12 +53,12 @@ Configuration Workflow when SAML is configured
 
 #. Click next.
 
-#. For certificate upload from ACM or use your self/CA signed certificates. if you already have a Route53 domain name, an ACM certificate can be requested for your domain and can be easily validated through email. You will need to add a record in your DNS with CNAME pointing the load balancer to match the certificate used for the load balancer.
+#. For certificate upload from ACM, use your self/CA signed certificates. If you already have a Route53 domain name, an ACM certificate can be requested for your domain and can be easily validated through email. You will need to add a record in your DNS with CNAME pointing the load balancer to match the certificate used for the load balancer.
      Note: for self signed certificate select Security Policy: ELBSecurityPolicy-2015-05     
 
 #. Click next.
 
-#. Configure security groups to make it accessible to the world
+#. Configure security groups to make it accessible to the world.
 
      Type: ALL TCP
 
@@ -91,7 +91,7 @@ Configuration Workflow when SAML is configured
 
 #. Click next
 
-#. On the Register target page select the Aviatrix Controller instance and click "add to register"
+#. On the Register target page, select the Aviatrix Controller instance and click "add to register"
 
 #. Click on next to go to the review page
 
@@ -124,8 +124,8 @@ On the Controller
 To block general access:
 
 1. After the SAML configuration is complete, you can block general access to your controller.
-   Create a dummy target group pointing to invalid port
-   path rule / will be pointing to dummy target group
+   Create a dummy target group pointing to an invalid port
+   path rule / will be pointing to an dummy target group
    path rule /flask will be pointing to valid target group at HTTPS 443 to controller.
    By doing this only the SAML application is being forwarded by the ELB and is open to the world
    This ensures that the rest of the controller configuration is open to the admin alone.

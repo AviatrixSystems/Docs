@@ -25,7 +25,7 @@ Checkpoint’s documentation should be consulted for configuration of security p
 
 1. Setup Firewall Network (FireNet)
 ---------------------------------------
-Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also setup the subnets that you will need for launching your Checkpoint instance.
+Complete steps 1-5 of Firewall Network Workflow in the Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your Checkpoint instance.
 
 2. Deploy Checkpoint Instance from AWS Marketplace
 ----------------------------------------------------
@@ -183,7 +183,7 @@ the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/f
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain.
 
-Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping the other instance. The ping should go through.
+Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.
 
 7. View Traffic Log
 ----------------------

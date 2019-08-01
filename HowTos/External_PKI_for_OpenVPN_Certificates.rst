@@ -44,8 +44,8 @@ production environment
 
 4. Click Import to complete the process.
 
-5. Go to the Gateway pag and click +New Gateway to create a new gateway. This
-   new gateway will be created with those certificates and key imported.
+5. Go to the Gateway page and click +New Gateway to create a new gateway. This
+   new gateway will be created with those certificates and keys imported.
    Please refer to http://docs.aviatrix.com/HowTos/uservpn.html on how
    to create a gateway.
 

@@ -29,8 +29,8 @@ The three different deployment model is illustrated in the diagram below.
 
 |firewall_deploy|
 
-If AWS Transit Gateway connects to a firewall by using its built in VPN function, it must run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to
-ensure that both source and destination initiated traffic lands on the same firewall instance. Furthermore, since native deployment requires IPSec VPN which limits its performance to 1Gbps, in this scenario the per firewall instance can only perform at 500Mbps since VPN function is traversed twice.
+If an AWS Transit Gateway connects to a firewall by using its built in VPN function, it must run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to
+ensure that both source and destination initiated traffic lands on the same firewall instance. Furthermore, since native deployment requires an IPSec VPN which limits its performance to 1Gbps, in this scenario the per firewall instance can only perform at 500Mbps since the VPN function is traversed twice.
 
 A more detailed functional comparison is described in the table below. 
 
@@ -65,7 +65,7 @@ For enterprises that wish to deploy a firewall in AWS, Aviatrix’s FireNet depl
  - **Vendor Integration** Launch Palo Alto Networks VM-Series from the Aviatrix Controller console to simplify deployment. 
  - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when on-prem route changes or VPC attachment changes. 
 
-Is FireNet solution recommended by Palo Alto Networks?
+Is the FireNet solution recommended by Palo Alto Networks?
 -------------------------------------------------------
 
 Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloaltonetworks.com/partners/alliance>`_ Palo Alto has published the `joint solution brief. <https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/technology-solutions-briefs/palo-alto-networks-and-aviatrix.pdf>`_
@@ -118,7 +118,7 @@ What are the limitations of FireNet?
 
 In Release 4.3, FireNet only supports the AWS Transit Gateway (TGW) deployment scenario. It does not support the encrypted transit deployment scenario. 
 
-For most cases, There can only be one Firewall Domain in a TGW. 
+For most cases, there can only be one Firewall Domain in a TGW. 
 
 How does FireNet compare with ECMP/VPN based firewall deployment?
 -------------------------------------------------------------------
@@ -162,7 +162,7 @@ forward the packet to one of the associated firewall instances or forward to the
 
 If the hash calculation determines the firewall instance is associated with the HA FireNet gateway, it forwards the packet to the HA FireNet gateway through its eth3 interface. 
 
-When the HA FireNet gateway receives the packet, it performs exactly the same hash calculation and decide which 
+When the HA FireNet gateway receives the packet, it performs exactly the same hash calculation and decides which 
 associated firewall instance it should forward the traffic to. 
 
 How do I configure FireNet?
@@ -174,7 +174,7 @@ Follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_
 How do I enable Egress inspection on FireNet?
 ---------------------------------------------
 
-By default, FireNet inspect traffic between North South (on-prem and VPC) and East West (VPC to VPC). To enable
+By default, FireNet inspects traffic between North South (on-prem and VPC) and East West (VPC to VPC). To enable
 Egress traffic (Internet bound) inspection: 
 
 Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress through Firewall" and click Enable.

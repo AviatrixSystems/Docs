@@ -124,7 +124,7 @@ Aviatrix gateway deployment requires permissions from the following categories:
 6. Aviatrix TransitNetwork & TGW-Orchestrator requirement
 -----------------------------------------------------------
 
-Aviatrix TransitNetwork feature requires the following additional permissions to create AWS Customer Gateway before creating an AWS VPN connection to connect Aviatrix Transit Gateway to AWS VGW.
+The Aviatrix TransitNetwork feature requires the following additional permissions to create an AWS Customer Gateway before creating an AWS VPN connection to connect an Aviatrix Transit Gateway to an AWS VGW.
 
 ::
 
@@ -225,7 +225,7 @@ Aviatrix features such as Transit Network, Encrypted Peering, Transitive Peering
 5. Gateway Resizing requirement
 ---------------------------------
 
-An Aviatrix gateway needs to be in STOP state before modifying the instance type/size.
+An Aviatrix gateway needs to be in the STOP state before the instance type/size is modified.
 
 ::
 
@@ -245,7 +245,7 @@ An Aviatrix gateway needs to be in STOP state before modifying the instance type
 6. VPN Gateway & LoadBalance requirement
 ------------------------------------------
 
-* Aviatrix VPN feature requires the following (and gateway creation) permissions if the user chooses to create NLB/ELB along with the VPN gateway creation.
+* Aviatrix VPN feature requires the following (and gateway creation) permissions if the user chooses to create an NLB/ELB along with the VPN gateway creation.
 * For "iam:CreateServiceLinkedRole": A service-linked role is a unique type of IAM role that is linked directly to an AWS service. Service-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf. Hence, the service linked role is required to confirm that you allow Elastic Load Balancing to make calls to other services. See the following AWS documentations for more information.
     + `AWS Doc 1 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#service-linked-role-permissions>`__    
     + `AWS Doc 2 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#create-service-linked-role>`__    
@@ -286,7 +286,7 @@ An Aviatrix gateway needs to be in STOP state before modifying the instance type
 7. VPN with AWS-Global-Accelerator
 -------------------------------------------
 
-In order to enable VPN with the AWS-Global-Accelerator feature, the following permissions are needed.
+In order to enable a VPN with the AWS-Global-Accelerator feature, the following permissions are needed.
 
 ::
 

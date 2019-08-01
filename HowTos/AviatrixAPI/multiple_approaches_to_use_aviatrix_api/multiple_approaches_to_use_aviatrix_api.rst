@@ -60,7 +60,7 @@ There are many tools online that can do the job. Just simply google **"URL Encod
 How the Aviatrix REST API Works
 -------------------------------
 
-In order to invoke most of the Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purpose. Moreover, a valid CID can be acquired through Aviatrix **"login"** API. The examples are provided below.
+In order to invoke most of the Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purposes. Moreover, a valid CID can be acquired through the Aviatrix **"login"** API. The examples are provided below.
 Please refer to the `Aviatrix-REST-API Documentation. <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`__ for the completed Aviatrix REST API list.
 
 |
@@ -182,11 +182,11 @@ PowerShell Example
 
 
 
-Examples: Invoke Other Aviatrix API with a valid CID
+Examples: Invoke Other Aviatrix APIs with a valid CID
 ----------------------------------------------------
 
 .. Note::
-   The following example demonstrates how to use the Aviatrix API **"setup_account_profile"** to create Aviatrix **"Cloud Account"**.
+   The following example demonstrates how to use the Aviatrix API **"setup_account_profile"** to create an Aviatrix **"Cloud Account"**.
 
 
 Postman
