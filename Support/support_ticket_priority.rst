@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix Support Ticket Priority Guidelines
    :keywords: Aviatrix, Support, Support Center, Priority
 
@@ -8,7 +8,7 @@ Aviatrix Support Ticket Submission & Priority Guidelines
 
 Overview
 --------
-Aviatrix offers 2 types of support plans; Standard and Platinum. Please refer to our `Official Support SLA <http://www.aviatrix.com/support/service-level-agreement.php>`_ for more information.
+Aviatrix offers 2 types of support plans: Standard and Platinum. Please refer to our `Official Support SLA <http://www.aviatrix.com/support/service-level-agreement.php>`_ for more information.
 
 Aviatrix customers may create a support ticket via
   - an email to support@aviatrix.com, or 
@@ -44,7 +44,8 @@ NOTE: A critical situation does not automatically imply Priority 1. The problem�
 
 * Priority 2 Conditions
 
-  Issue affects customer’s ability to meet near–term deadlines Component returning error or not responding
+  Issue affects customer’s ability to meet near–term deadlines 
+  Component returning error or not responding
   Degraded performance is negatively impacting business operations Acceptable workaround may exist
   Issue is specific to one or a few users. 
 

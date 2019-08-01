@@ -11,19 +11,19 @@ What are the minimum requirements for an instance to run the Aviatrix Controller
 
 We strongly recommend that the instance be at least t2.large and have at least 20GB of storage to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
 
-The controller needs to be able to resolve all DNS queries, download software, communicate with the gateways over port 443, redirect inbound SAML VPN connection (if used). The same goes with the gateways in regards to DNS queries and sending keepalive back to controller. The Aviatrix controller must have an EIP even if it's behind an ELB for all necessary communication to work. However you may access the UI using its private IP for operation.
+The controller needs to be able to resolve all DNS queries, download software, communicate with the gateways over port 443, redirect inbound SAML VPN connection (if used). The same goes with the gateways in regards to DNS queries and sending keepalive back to the controller. The Aviatrix controller must have an EIP even if it is behind an ELB for all necessary communication to work. However, you may access the UI using its private IP for operation.
 
-If you have enabled `Controller HA functionality <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, please disable before initiating the following process. And do not forget to enable Controller HA after you finished with the disk size upgrade process.
+If you have enabled `Controller HA functionality <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, please disable before initiating the following process. And do not forget to enable Controller HA after you finish with the disk size upgrade process.
  
 If you have less than 20GB of Storage on your controller, please follow these steps to increase your disk space:
 
 1. Make a backup of your controller. (https://docs.aviatrix.com/HowTos/controller_backup.html)
-2. Login to AWS console and locate the Aviatrix controller instance.
+2. Login to the AWS console and locate the Aviatrix controller instance.
 3. Click on Root device: /dev/sda1 and then click on EBS ID vol-xxxxxxxxxx.
 4. With the volume selected, click Action > Modify Volume to change the size to 20.
-5. Click OK to start the resize process. Please make sure you wait until the State of the volume is "in-use - completed (100%)".
+5. Click OK to start the resize process. Please make sure you wait until the state of the volume is "in-use - completed (100%)".
 6. Select the Aviatrix controller instance in EC2 page. Click Reboot for the disk space to take effect.
-7. Confirm the controller is in running state in AWS console.
+7. Confirm that the controller is in running state in AWS console.
 8. Login to your controller to sanity test.
 9. Take a backup again, by following instructions at https://docs.aviatrix.com/HowTos/controller_backup.html
 
@@ -34,7 +34,7 @@ Note that rebooting the controller will not impact your IPsec tunnels as it's no
 Why are IAM policies important?
 ---------------------------------
 
-During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 & aviatrix-role-app) are created and two associated IAM policies(aviatrix-assume-role-policy & aviatrix-app-policy) are also created. These roles and policies allow the Controller to use AWS APIs to launch gateway instances, create new route entries and build networks and hence very important to keep your network operational. Please check out `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ and `IAM for Secondary Access Accounts <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_. After a software upgrade, please update your IAM policies using the instructions in the above links - these updates have to be done for all accounts that have the Controller and the gateway. 
+During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 & aviatrix-role-app) are created and two associated IAM policies(aviatrix-assume-role-policy & aviatrix-app-policy) are also created. These roles and policies allow the Controller to use AWS APIs to launch gateway instances, create new route entries and build networks and are hence very important to keeping your network operational. Please check out `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ and `IAM for Secondary Access Accounts <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_. After a software upgrade, please update your IAM policies using the instructions in the above links - these updates have to be done for all accounts that have the Controller and the gateway. 
 
 
 Why should I upgrade my Controller Software?
@@ -63,7 +63,7 @@ How do I backup my Aviatrix configuration?
 Please checkout `backup functionality <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ on your Aviatrix controller. 
 
 * If you have a "."/period character in the S3 bucket name, please ensure you are running software version 4.0.685 or later.)
-* We strongly recommend the "Multiple Backup" setting to be turnedon at Controller/Settings/Maintenance/Backup&Restore. After turning this option on - click on Disable and then Enable and then click on "Backup Now." Check in your S3 bucket to make sure that the backup function is successful.
+* We strongly recommend the "Multiple Backup" setting to be turned on at Controller/Settings/Maintenance/Backup&Restore. After turning this option on - click on Disable and then Enable and then click on "Backup Now." Check in your S3 bucket to make sure that the backup function is successful.
 * We support `backup using AWS encrypted storage <https://docs.aviatrix.com/HowTos/controller_backup.html#how-to-backup-configuration-with-aws-encrypted-storage>`_
 * Please do not use the AWS's AMI to take snapshots - this is not a valid backup mechanism and will not work
 
@@ -90,17 +90,17 @@ We have HA built into our system through `Transit HA <https://docs.aviatrix.com/
 Does Controller send alerts when Gateway status changes?
 --------------------------------------------------------------------
 
-Aviatrix Controller monitors the gateways and tunnels and whenever there is a tunnel or gateway state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an email address that you don't monitor.
+The Aviatrix Controller monitors the gateways and tunnels and whenever there is a tunnel or gateway state change, it will send an email to the admin of the system. You can always override the admin email by updating "ControllerUi/Settings/Controller/Email/StatusChangeEventEmail". If you do not want to see these emails, you can set it to an email address that you don't monitor.
 
 As an alternative, you can also set Cloudwatch Event Alerts in AWS to be alerted when Gateway/Controller Instances are Started or Stopped.
 
 What are blackholes on Alert Bell?
 --------------------------------------------------------------------
 
-Blackhole route(s) usually means that the route in your AWS route table points to a non-existed AWS resource.
+Blackhole route(s) usually means that the route in your AWS route table points to a non-existant AWS resource.
 Besides, a route pointing to an EC2 with the stopped state will have this blackhole state.
 
-The blackhole definition on AWS website: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html
+The blackhole definition on the AWS website: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html
 route.state - The state of a route in the route table (active | blackhole). The blackhole state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, the specified NAT instance has been terminated, and so on).
 
 Here is more info for the Aviatrix Alert Bell function: https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
@@ -191,7 +191,7 @@ The recommended way is to generate a CSR and have it signed by your CA and then 
 
 
 
-Why is having a reachable DNS server important for Aviatrix Controller?
+Why is having a reachable DNS server important for the Aviatrix Controller?
 ----------------------------------------------------------------------------------------------------
  
 When an Aviatrix Controller is launched, by default it will pick up the DNS used in the VPC DHCP Options and the default AWS DHCP is using AmazonProvidedDNS. If VPC DHCP Options are not set, it will use the AWS's Default DNS server (ex: 10.1.0.2 if VPC CIDR is 10.1.0.0/16).
@@ -204,14 +204,14 @@ If you are using AWS's VPC DNS Service, please do make sure that "enableDnsSuppo
 How can I increase the idle timeout when my Aviatrix Controller is deployed behind an ELB, to avoid frequent logins?
 ----------------------------------------------------------------------------------------------------------------------
 
-If the Aviatrix controller is behind an ELB, you can go to the AWS portal, Load Balancers page. Select the ELB that you use for the controller and Edit attributes to increase the Idle timeout. We recommend at least 360 seconds. The default is 60 seconds. Please check out https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#connection-idle-timeout for more information.
+If the Aviatrix controller is behind an ELB, you can go to the AWS portal's Load Balancers page. Select the ELB that you use for the controller and Edit the attributes to increase the Idle timeout. We recommend at least 360 seconds. The default is 60 seconds. Please check out https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#connection-idle-timeout for more information.
 
 
-How can I move my controller from one AWS account to another AWS account
+How can I move my controller from one AWS account to another AWS account?
 --------------------------------------------------------------------------
 
-1. Backup old controller configuration to an S3 bucket using these `instructions  <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. FileName created should look like: CloudN_xxx_config.enc
+1. Backup the old controller configuration to an S3 bucket using these `instructions  <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. FileName created should look like: CloudN_xxx_config.enc
 2. In the target account, create a new controller, running the same Aviatrix Software Version as the old controller using `these directions <https://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html#how-to-launch-aviatrix>`_
-3. Build the "Trust-Relationship" between all gateway (AWS) accounts and new controller's AWS account using these `directions <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#establish-trust-relationship-with-primary-account>`_. NOTE: Make sure that you repeat this step for every gateway's (AWS) account
-4. Login to new controller and run "Aviatrix Console/Settings/Maintenance/Backup&Restore/Restore" and enter AccessKey & SecretKey (which have the permissions to access the S3 bucket located in the same AWS account of your old controller), BucketName, FileName
-5. After restore process is finished, check that new controller can access/configure all the gateways from old controller.
+3. Build the "Trust-Relationship" between all gateway (AWS) accounts and the new controller's AWS account using these `directions <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#establish-trust-relationship-with-primary-account>`_. NOTE: Make sure that you repeat this step for every gateway's (AWS) account
+4. Login to the new controller and run "Aviatrix Console/Settings/Maintenance/Backup&Restore/Restore" . Enter the AccessKey & SecretKey (which have the permissions to access the S3 bucket located in the same AWS account of your old controller), BucketName, FileName
+5. After restore process is finished, check that the new controller can access/configure all the gateways from old controller.

@@ -21,7 +21,7 @@ We are happy to report that starting with release 4.0  we support `Logging to AW
 Are syslogs viewable on Controller?
 -------------------------------------
 
-Syslogs are not viewable on the Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, or rsyslog. Also, syslogs from gateways are not collected at the Controller and are sent directly from the gateways to the Controller
+Syslogs are not viewable on the Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, or rsyslog. Also, syslogs from gateways are not collected at the Controller and are sent directly from the gateways to the Controller.
 
 Is Splunk Cloud supported?
 -------------------------------------
@@ -32,7 +32,7 @@ We currently only support logging into Splunk Enterprise and do not support logg
 How do I use a Sumologic collector which is deployed behind an Aviatrix Egress Control Gateway?
 ---------------------------------------------------------------------------------------------------------------
 
-If you are deploying SumoLogic Collector behind an Aviatrix Egress Control Gateway, you might want to look at this `Link <https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/Enabling-SNI-in-a-Collector-to-Support-Transparent-Proxy>`_ to enable SNI and then you can set up a filter to let traffic from *.sumologic.com to pass through.
+If you are deploying a SumoLogic Collector behind an Aviatrix Egress Control Gateway, you might want to look at this `Link <https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/Enabling-SNI-in-a-Collector-to-Support-Transparent-Proxy>`_ to enable SNI and then you can set up a filter to let traffic from *.sumologic.com to pass through.
 
 How do I know if the rsyslog is running well? Will I get an email?
 --------------------------------------------------------------------------
@@ -63,9 +63,9 @@ There are a few ways to get your logs into an S3 bucket. Here are a couple:
 How can I upgrade/downgrade to a specific Sumo agent version in Aviatrix Controller/Gateways?
 -----------------------------------------------------------------------------------------------------
 
-When SumoLogic is first enabled, the Controller installs the latest Sumo agent on all the Aviatrix Gateways and the Controller. Any new gateway created later, will get the latest SumoLogic Agent available at that time. A second disable/enable of Sumo Logging will not upgrade the agents that are already installed.
+When SumoLogic is first enabled, the Controller installs the latest Sumo agent on all the Aviatrix Gateways and the Controller. Any new gateway created later will get the latest SumoLogic Agent available at that time. A second disable/enable of Sumo Logging will not upgrade the agents that are already installed.
  
-From release 4.2 onwards, we allow you to upgrade/downgrade the Sumo Collector Agent that has been installed in the Aviatrix Controller and Gateways, from the SumoLogic Web UI(Collection>SelectCollector>Edit>ChangeVersion>PickVersion). Please allow enough time for this upgrade to be completed - SumoLogic's Web UI will confirm once the upgrade is completed. If you create any new gateways after this process, you would have to adjust its agent through SumoLogic's Web UI
+From release 4.2 onwards, we allow you to upgrade/downgrade the Sumo Collector Agent that has been installed in the Aviatrix Controller and Gateways, from the SumoLogic Web UI(Collection>SelectCollector>Edit>ChangeVersion>PickVersion). Please allow enough time for this upgrade to be completed - SumoLogic's Web UI will confirm once the upgrade is completed. If you create any new gateways after this process, you will have to adjust its agent through SumoLogic's Web UI
 
 
 How can I turn on ephemeral mode on SumoLogic for Aviatrix Gateways?
@@ -75,7 +75,7 @@ SumoLogic's ephemeral feature allows the collectors to be expired and removed if
  
 In Aviatrix release 4.3, we have introduced an option for you to configure Sumo attributes ("Additional Configurations(Optional) key=value pairs"). You can add "Vephemeral=true" in this field to turn on this feature while you enable SumoLogic Logging.
  
-If you already have SumoLogic enabled, you would have to disable/add "Vephemeral=true"/enable to have Aviatrix Gateway Collectors to be created with ephemrel flag. Please note that any existing gateways/collectors in Sumo are still registered as non-ephemeral. If you want all gateways to be registered as ephemeral collectors - you would have to disable sumo on the Aviatrix Controller, delete all the Aviatrix Gateway Collectors on your SumoLogic Web UI and then enable SumoLogging with the flag on the Controller.
+If you already have SumoLogic enabled, you would have to disable/add "Vephemeral=true"/enable to have Aviatrix Gateway Collectors be created with the ephemeral flag. Please note that any existing gateways/collectors in Sumo are still registered as non-ephemeral. If you want all gateways to be registered as ephemeral collectors - you would have to disable sumo on the Aviatrix Controller, delete all the Aviatrix Gateway Collectors on your SumoLogic Web UI and then enable SumoLogging with the flag on the Controller.
  
 
 How can I send my logs to AlertLogic?
