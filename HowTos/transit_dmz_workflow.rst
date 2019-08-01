@@ -39,7 +39,9 @@ on-prem devices. The diagram below describes the naming convention of the two ga
 1.1 Main gateway
 ~~~~~~~~~~~~~~~~~
 
- a. For the main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (required for HA) to launch the main gateway(s). The main gateway size should be t2.small and larger. 
+ a. For the main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (required for HA) to launch the main gateway(s). The main gateway size should be t2.small and larger.
+
+Note: If you plan to create HA gateways for both the main and companion gateways and launch a firewall instance in DMZ, we recommend that you have more than the default number of 5 EIPs available in the region. If you need to increase the number of EIPs available, fill out AWS's request form.
 
  b.  If the TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ to enable main gateway to be part of TGW orchestrator and attach the main gateway to the TGW. If the TGW Orchestrator is not used, skip step b.    
 
