@@ -13,6 +13,15 @@ When upgrading a controller's software, all gateways are upgraded with the new s
 .. note::
    
    We strongly recommend that you make a backup before you start the upgrade process. Please follow the directions `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`__.
+   
+Pre-upgrade Checklist:
+-----------------------
+
+Here are a few steps that we suggest you go through before the actual upgrade. If you are scheduling the upgrade during a maintenance window, you can execute these before the maintenance window, so you can make best use of your downtime.
+
+#. Ensure that all gateways are in green/up status. If not, please check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions
+#. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
+#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com. 
 
 
 How to upgrade software
