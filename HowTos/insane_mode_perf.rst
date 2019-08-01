@@ -39,10 +39,20 @@ The performance test is conducted between a c5n.4xlarge instance in the Spoke VP
 
 |c5n_throughput_9000B|
 
-2. MTU = 1500 Bytes, C5n.4xlarge
-=================================
+2. MTU = 1500 Bytes, C5n.4xlarge, on-prem to spoke instance through Transit instance
+======================================================================================
+
+The test result below is for the end to end encryption performance. Note the Transit gateway does 
+encryption and decryption twice, hence the performance is around 1Gbps. 
 
 |c5n_throughput_1500B|
+
+3. MTU = 1500 Bytes, C5n.4xlarge, instance to instance 
+===============================================================
+
+The test result below is for the instance to instance over AWS Peering. 
+
+|throughput_1500B_peering|
 
 
 How to Tune Performance
@@ -72,6 +82,9 @@ For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~spark
    :scale: 30%
 
 .. |c5n_throughput_9000B| image:: insane_mode_perf_media/c5n_throughput_9000B.png
+   :scale: 30%
+
+.. |throughput_1500B_peering| image:: insane_mode_perf_media/throughput_1500B_peering.png
    :scale: 30%
 
 .. disqus::
