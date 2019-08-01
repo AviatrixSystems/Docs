@@ -72,7 +72,7 @@ Scroll down to Destination NAT. Follow the instructions `here <https://docs.avia
 Step 6. Test the Site2Cloud Connection and DNAT
 ---------------------------------------------------------
 
-Go to "site2cloud" page and verify the site2cloud connection status is "Up".
+Go to the "Site2Cloud" page and verify that the site2cloud connection status is "Up".
 
 Test connectivity from on-prem host to the EC2 instance. For example, ping 53.34.19.23 from an on-prem host machine. The ping should reach 172.32.0.243.  
 

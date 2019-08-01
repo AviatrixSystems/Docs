@@ -68,7 +68,7 @@ Local Subnet                                  Leave it blank (VPC2 CIDR will be 
 
 + **Step 3: Download the sample configuration from the Site2Cloud created in Step 2**
 
-After the site2cloud connection is created in Step 2, select this connection at **Site2Cloud** page. 
+After the Site2Cloud connection is created in Step 2, select this connection at the **Site2Cloud** page. 
 
 Enter the following fields and click **Download Configuration** button 
 
@@ -92,7 +92,7 @@ Import the sample configuration downloaded from Step 3.
 
 + **Step 5:  Create a mapped Site2Cloud at Aviatrix Gateway in VPC2 for the connection to VPC3**
 
-Go to **Site2Cloud** page and click the **Add New** button. Enter the following fields.
+Go to the **Site2Cloud** page and click the **Add New** button. Enter the following fields.
 
 ==========================================   ======================================================
   **Field**                                   **Value**

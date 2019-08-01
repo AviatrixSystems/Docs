@@ -23,7 +23,7 @@ The objectives here are:
 .. Note::
 
   This document assumes you have already `launched an Aviatrix Controller <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
-  Aviatrix GW uses an EIP, make sure you have sufficient quota space for an EIP. You can contact AWS support to request for more EIPs. 
+  An Aviatrix GW uses an EIP, so make sure you have sufficient quota space for an EIP. You can contact AWS support to request more EIPs. 
   Aviatrix supports multiple Transit GW groups from one Controller. In this example, we will only use one Transit GW group with HA enabled. 
 
 ..
@@ -56,7 +56,7 @@ Here is the configuration for the MX64 at on-prem.
 
 Launch an Aviatrix gateway in the same VPC as vMX100
 ----------------------------------------------------
-1. Login to Aviatrix Controller UI and click Gateway at the navigation panel.
+1. Login to the Aviatrix Controller UI and click Gateway at the navigation panel.
 2. Click New to launch a gateway with the following settings:
    
  - Gateway Name = vMX-AvxGW
@@ -77,7 +77,7 @@ Create a Site2Cloud connection between an Aviatrix GW and a VGW
   |meraki_avxtransit04|
 
 4. Select the VPN connection that you just created and click "Download Configuration" to download the "Generic" configuration.
-5. At Aviatrix Controller UI, click Site2Cloud at the navigation panel.
+5. At the Aviatrix Controller UI, click Site2Cloud at the navigation panel.
 6. Click "Add New" to configure the Site2Cloud connection to the same VGW that is already connected to Aviatrix Transit Networks.
 
   |meraki_avxtransit05|
@@ -107,7 +107,7 @@ Adjust security groups and update AWS route tables
 
 Validate connectivity
 ---------------------
-1. At Aviatrix Controller UI, click Site2Cloud at navigation panel.
+1. At the Aviatrix Controller UI, click Site2Cloud at navigation panel.
 2. Select Site2Cloud connection for the Aviatrix Transit Network. You should observe that both IPsec tunnels to VGW are UP. There will be 2 learned routes from VGW (10.10.0.0/16, 10.28.0.0/16) and 3 advertised networks from spokes (10.32.0.0/16, 10.50.0.0/16, 10.63.0.0/16). 
 
   |meraki_avxtransit10|

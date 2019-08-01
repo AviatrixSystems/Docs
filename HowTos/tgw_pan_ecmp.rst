@@ -27,7 +27,7 @@ The test setup uses Palo Alto Networks (PAN) as the example firewall and is desc
 
 VPC1 is a Spoke VPC attached to a Transit Gateway. An EC2 instance in VPC1 serves as the HTTP client.
 
-VPC3 is another Spoke VPC attached Transit Gateway. VPC3 simulates on-prem data center with an EC2 instance serving as the
+VPC3 is another Spoke VPC attached Transit Gateway. VPC3 simulates an on-prem data center with an EC2 instance serving as the
 HTTP server. TGW-2 simulates an on-prem router, which also runs ECMP with the two Palo Alto Network instances in VPC2.
 
 VPC2 is a Transit VPC and has two Available Zones (AZs). Each AZ has one Palo Alto Networks firewall to ensure HA. PAN1 is in
@@ -70,7 +70,7 @@ attachment between the PAN and its attached Transit Gateway. Both PANs advertise
 
 |tgw-pan-ecmp1|
 
-    - At the Palo Alto Networks portal, check both Palo Alto Networks' route tables. Taking PAN1 as an example, traffic destinating to VPC1 CIDR (10.200.0.0/16) has two next hops. These two next hops are TGW1 IP addresses for terminating the two IPSec tunnels between PAN1 and TGW1. Same thing for traffic destinating to VPC3 CIDR (10.202.0.0.16). The image below is route table from PAN1. Please note that "E" flag highlighted indicates ECMP is running among the two tunnels.
+    - At the Palo Alto Networks portal, check both Palo Alto Networks' route tables. Taking PAN1 as an example, traffic destinating to VPC1's CIDR (10.200.0.0/16) has two next hops. These two next hops are TGW1 IP addresses for terminating the two IPSec tunnels between PAN1 and TGW1. Same thing for traffic destinating to VPC3's CIDR (10.202.0.0.16). The image below is route table from PAN1. Please note that the highlighted "E" flag indicates ECMP is running among the two tunnels.
 
 |tgw-pan-ecmp2|
 
@@ -97,7 +97,7 @@ Running ECMP between Transit Gateway and multiple firewall instances cannot guar
 initiating traffic. As such, the ECMP based solution cannot be used to load balance traffic between multiple firewall instances between on-prem and cloud.
 
 The technical reason behind it is that the two sets of ECMP running between firewall and Transit Gateway and between firewall and on-prem have no coordination among them. The ECMP decisions to determine
-the next hop are made independently, resulting in the situation when the return traffic does not always goes through the same firewall instance as the initiating traffic.
+the next hop are made independently, resulting in the situation when the return traffic does not always go through the same firewall instance as the initiating traffic.
 
 .. |dmz_with_ecmp| image:: tgw_pan_ecmp_media/dmz_with_ecmp.png
    :scale: 30%
