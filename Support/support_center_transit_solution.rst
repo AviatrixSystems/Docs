@@ -16,7 +16,7 @@ How much IP address space do I need in my VPC to launch a transit solution?
 --------------------------------------------------------------------------------------------
 
 To ensure you have enough subnets for various Aviatrix solutions (TGW, Transit DMZ), we highly recommend you to use Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
-  If you would like to continue to use your existing transit VPC and it is too small (not enough /28 unused segments), use AWS Edit VPC CIDR feature to create a new /24 subnet for the Aviatrix Transit Gateway in TGW use case. 
+  If you would like to continue to use your existing transit VPC and it is too small (not enough /28 unused segments), use the AWS Edit VPC CIDR feature to create a new /24 subnet for the Aviatrix Transit Gateway in TGW use case. 
 
 If you do not want to use our Create a VPC feature at our controller, please make sure that you have at least four /28 subnets worth of address space in the VPC before you launch the transit solution
 
@@ -33,7 +33,7 @@ It is recommended that all spokes have HA pairs. When a switchover occurs to the
 How can I switch between primary link and backup link?
 --------------------------------------------------------------------------------------------
 
-For peering links, you can find the active links by going to "Controller > Peering > Encrypted Peering" and searching for "active" by typing in the textbox next to the looking glass. For any non-transit connections (like spoke to shared-services) you can switchover right here by clicking on the "Switch Over". For some Transit connections (such as transit gateway to spoke gateway), you can also switchover right here if your Transit network did not enable Connected Transit or `Manual BGP Advertised Network List <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_.
+For peering links, you can find the active links by going to "Controller > Peering > Encrypted Peering" and searching for "active" by typing in the textbox next to the magnifying glass. For any non-transit connections (like spoke to shared-services) you can switchover right here by clicking on the "Switch Over". For some Transit connections (such as transit gateway to spoke gateway), you can also switchover right here if your Transit network did not enable Connected Transit or `Manual BGP Advertised Network List <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_.
  
 If your Transit network is enabled with Connected Transit or `Manual BGP Advertised Network List <https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list>`_, you would have to go to " Troubleshoot > Diagnostics > BGP" and click on the "Switch Over" on the gateway which is currently active that you want to switch over from. For example, if you want to have all active links on primary gateway, you will click on the "Switch Over" on the hagw connection.
 

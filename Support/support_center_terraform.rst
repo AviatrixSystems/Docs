@@ -20,7 +20,7 @@ Please note the below requirements for the Aviatrix Terraform Provider:
 Which branch of Terraform Aviatrix Provider Resource should I use?
 ----------------------------------------------------------------------
 
-Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for the Terraform Aviatrix Provider Resource has multiple branches. Please make sure that you pick the branch which matches with the version of the software release on your Aviatrix Controller. The latest release is supported with the master branch. Here is the supported list
+Our `Github repository <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_ for the Terraform Aviatrix Provider Resource has multiple branches. Please make sure that you pick the branch that matches with the version of the software release on your Aviatrix Controller. The latest release is supported with the master branch. Here is the supported list
 
   * Aviatrix Controller Release 3.5: Use the `Github UserConnect-3.5 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-3.5>`_
   * Aviatrix Controller Release 4.0: Use the `Github UserConnect-4.0 branch <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/UserConnect-4.0>`_ 
@@ -34,7 +34,7 @@ What if my Terraform scripts are timing out?
 
 If you run into timeout issues, please use the IP address of the controller instead of the hostname of the controller and let us know if that helps. Please open a ticket by sending an email to support@aviatrix.com
 
-Terraform sends all the operations to the controller at the same time, so if you see any issues during large operations - try serializing the operations by setting the value for parallelism to 1. More information at  https://www.terraform.io/docs/commands/apply.html#parallelism-n. Please do let us know if you run into this issue, by sending an email to support@aviatrix.com
+Terraform sends all the operations to the controller at the same time, so if you see any issues during large operations, try serializing the operations by setting the value for parallelism to 1. More information at  https://www.terraform.io/docs/commands/apply.html#parallelism-n. Please do let us know if you run into this issue, by sending an email to support@aviatrix.com
 
 
 How do I debug Terraform issues?
