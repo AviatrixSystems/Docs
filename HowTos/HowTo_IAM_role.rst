@@ -30,7 +30,7 @@ Follow `the instructions <https://docs.aviatrix.com/HowTos/aviatrix_account.html
 Setup Secondary Account IAM Manually
 =========================================================================
 
-**This is not a recommended approach as it takes longer time and is error prone.** 
+**This is not a recommended approach as it takes a longer time and is error prone.** 
 
 1. Create two IAM custom policies
 --------------------------------------
@@ -49,7 +49,7 @@ Setup Secondary Account IAM Manually
 
 -  Click Valid Policy to validate the policy.
 
--  Click Create Policy button.
+-  Click the Create Policy button.
 
 1.2 Create “aviatrix-app-policy”:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +104,7 @@ The role name MUST be exactly “\ **aviatrix-role-ec2**\ ”.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This role is to be assumed by a granted AWS account. The Aviatrix
-controller acquires the “assume role” capability authorized by its
+Controller acquires the “assume role” capability authorized by its
 “aviatrix-role-ec2” role. It then assumes to this service role that is
 granted by its own AWS account or other AWS accounts to perform AWS
 APIs.
@@ -141,7 +141,7 @@ this secondary account.
 
    b. Click Trust Relationships > Edit Trust Relationship
 
-   c. Edit the trust relationship as follow
+   c. Edit the trust relationship as follows
 
       |image2|
 

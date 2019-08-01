@@ -48,8 +48,8 @@ The `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/I
 
 You can view if your IAM policy needs to be 
 updated by going to Settings -> Advanced -> AWS IAM Policy Update. The Aviatrix Controller polls all
-AWS accounts upon each release to see if there is new IAM policy available that you need to 
-update for your accounts. Note if you do not run any new features, chances are you do not need to
+AWS accounts upon each release to see if there is a new IAM policy available that you need to 
+update for your accounts. Note: if you do not run any new features, chances are you do not need to
 update the IAM policies. 
 
 You can also check individual account IAM policy status by selecting the account and clicking Check. 

@@ -17,7 +17,7 @@ In this case, the customer does not want to build an IPSEC tunnel to each VPC, n
 
 |simpletransit|
 
-Fortunately since traffic is always initiated from the on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel by leveraging Aviatrix Site2Cloud feature and AWS Peering.  
+Fortunately since traffic is always initiated from the on-prem office as there are no servers in the office, there is a simple solution to connect many VPCs with one single IPSEC tunnel by leveraging the Aviatrix Site2Cloud feature and AWS Peering.  
 
 Below are the steps to configure. 
 
@@ -25,7 +25,7 @@ Below are the steps to configure.
 Planning and Prerequisites
 ---------------------------
 
- 1. If you have not launched an Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
+ 1. If you have not launched an Aviatrix Controller, start with the `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process. 
 
 

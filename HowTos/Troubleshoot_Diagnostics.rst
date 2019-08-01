@@ -21,13 +21,13 @@ This section provides 3 tools (traceroute, ping and tracepath) to test network c
 Network Connectivity Utility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Network Connectivity (nc) tool allows you to test if the controller/gateway is able to reach a host with specified protocol and port number.
+The Network Connectivity (nc) tool allows you to test if the controller/gateway is able to reach a host with a specified protocol and port number.
 
 
 Packet Capture
 ~~~~~~~~~~~~~~~~
 
-This tool enables a gateway to capture the forwarding packets for a period of time with specified host, port, network interface, and packet length.
+This tool enables a gateway to capture the forwarding packets for a period of time with the specified host, port, network interface, and packet length.
 
 
 Controller Utility
@@ -92,7 +92,7 @@ Gateway IP Migration
 Gateway Replace
 ~~~~~~~~~~~~~~~~~
 
-This feature allows you to replace a gateway by launching a new gateway and restore the configuration and operation in the event that a gateway becomes inoperational and you have exhausted all other ways to recover. Contact support@aviatrix.com 
+This feature allows you to replace a gateway by launching a new gateway and restoring the configuration and operation in the event that a gateway becomes inoperational and you have exhausted all other ways to recover. Contact support@aviatrix.com 
 before you use this feature. 
 
 Select a gateway in the drop down menu and click Replace. 
@@ -143,7 +143,7 @@ This feature checks if the access accounts have the correct configuration to mee
 VPC Diagnostics with Resources Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The diagnostic result of this feature provides the information of specified VPC/VNet, such as DHCP options, Subnets, ACLs, route tables, security groups and VM instances configurations.
+The diagnostic result of this feature provides the information of a specified VPC/VNet, such as DHCP options, Subnets, ACLs, route tables, security groups and VM instances configurations.
 
 
 VNet Route Diagnostics
@@ -219,7 +219,7 @@ Connectivity Test
 --------------------
 
 When you select the Source Network and Destination Network, the Aviatrix Controller will spin up two instances 
-and run a connectivity test. After the test completes, you can re-run the test. There is only one pair of test end point is valid at any given time. If you want to test a different end points, delete the current and launch a new pair. 
+and run a connectivity test. After the test completes, you can re-run the test. There is only one pair of test endpoints that is valid at any given time. If you want to test a different endpoint, delete the current pair and launch a new pair. 
 
 
 

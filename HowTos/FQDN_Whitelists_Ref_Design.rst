@@ -45,7 +45,7 @@ Step 3. Attach to gateways
 
 Click "Attach Gateway" to attach a gateway to the tag.
 
-When a gateway is attached to a tag, in the tag will be pushed for
+When a gateway is attached to a tag, the gateway in the tag will be pushed for
 enforcement (whitelist or blacklist), as shown below:
 
 |fqdn-attach-spoke1|
@@ -72,7 +72,7 @@ By default, the Exception Rule is enabled. (The Exception rule box should be che
 
 When Exception Rule is enabled, packets passing through the gateway without an SNI field are
 allowed to pass. This usually happens when an application uses hard-coded destination
-IP address for HTTPS connection instead of domain names.
+IP addresses for HTTPS connection instead of domain names.
 
 When Exception Rule is disabled (uncheck the box), packets passing through the gateway without SNI field
 are dropped unless the specific destination IP address of the
@@ -85,7 +85,7 @@ Export
 
 This feature is available in Release 3.4 and later.
 
-Export allows you to download the configured FQDN rules on a per tag bases,
+Export allows you to download the configured FQDN rules on a per tag basis,
 in a human-readable text file format, as shown in the example below:
 
 |export|
@@ -111,7 +111,7 @@ Edit Source allows you to control which source IP in the VPC is qualified for a 
 can be a subnet CIDR or host IP addresses. This provides fine-grained configuration.
 
 For example, one use case is if you have two private subnets in a VPC: one deploys dev instances and another
-deploys prod instances. With Edit Source feature, the dev instances can have a different tags than
+deploys prod instances. With the Edit Source feature, the dev instances can have different tags than
 the prod instances.
 
 Edit Source assumes you already attached a gateway to a tag.
@@ -123,7 +123,7 @@ the example in the illustration below:
 
 
 
-For support, send email to support@aviatrix.com
+For support, send an email to support@aviatrix.com
 
 Enjoy!
 

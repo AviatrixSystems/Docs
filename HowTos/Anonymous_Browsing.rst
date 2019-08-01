@@ -12,8 +12,8 @@ Anonymous Internet Surfing
 1. Solution Overview
 ======================
 
-Normally when you surf an Internet website, the website administrator can easily identify where the user is located. This is done by identifying the source IP address contained in the packets (public IP address assigned to your location).  Sometimes, business needs arise when your employee's internet browsing and online research needs to be anonymous or needs to appear to originate from some other place. For example, when analysis of competitors is required or when avoiding countries' firewalls for better performance and access.
-This document describes how to set up anonymous browsing from client machine by routing internet traffic through an AWS-based gateway in a different region.
+Normally when you surf an Internet website, the website administrator can easily identify where the user is located. This is done by identifying the source IP address (public IP address assigned to your location) contained in the packets.  Sometimes, business needs arise when your employee's internet browsing and online research needs to be anonymous or needs to appear to originate from some other place. For example, when analysis of competitors is required or when avoiding countries' firewalls for better performance and access.
+This document describes how to set up anonymous browsing from a client machine by routing internet traffic through an AWS-based gateway in a different region.
 
 2. Configuration Workflow
 ==========================
@@ -77,7 +77,7 @@ The first step is to deploy Aviatrix gateways in each VPC.
 
 **Instructions:**
 
-a.1.  Login to the Aviatrix Controller Console
+a.1.  Log in to the Aviatrix Controller Console
 
 a.2.   Create Aviatrix Peering Gateway #1 in Subnet1 of VPC #1 (in Region 1)
 
@@ -198,13 +198,13 @@ Gateway #2 (in VPC #2).
 
 b.4.  Click button "OK"
 
-b.5.  From the S2C connection table, select the site2cloud connection created above (e.g. vpc01-s2c-vpc02)
+b.5.  From the S2C connection table, select the Site2Cloud connection created above (e.g. vpc01-s2c-vpc02)
 
 b.6.  Select "Aviatrix" from "Vendor" drop down list
 
 b.7.  Click button "Download Configuration" then save it
 
-b.8.  Click "+Add New" to establish Site2Cloud connection from Aviatrix Peering Gateway #2
+b.8.  Click "+Add New" to establish a Site2Cloud connection from Aviatrix Peering Gateway #2
 
 b.9.  Choose VPC ID of VPC #2 from "VPC ID/VNet Name" drop down list. Click button "Import" to upload
 the downloaded configuration saved in Step b.7.

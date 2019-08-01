@@ -27,7 +27,7 @@ The network setup is as following:
 
  1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-multicloudvpc1. Collect Gateway's public IP addresses (3.213.233.93 in this example).
    |image1|
- 1.2 Go to the **site2cloud** page and click **Add New** to create a site2cloud connection.
+ 1.2 Go to the **Site2Cloud** page and click **Add New** to create a Site2Cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -46,13 +46,13 @@ The network setup is as following:
   Remote Subnet                     10.0.2.0/16 (On-Prem Private Network CIDR)
   Local Subnet                      10.1.2.0/24 (VPC-multicloudvpc1 private subnet)
 ===============================     =================================================================
-1.3 Go to the **site2cloud** page. From the site2cloud connection table, select the connection created above (e.g. avx-SRX-S2C).
+1.3 Go to the **Site2Cloud** page. From the Site2Cloud connection table, select the connection created above (e.g. avx-SRX-S2C).
      - Select **Generic** from the **Vendor** drop down list.
-     - Click the **Download Configuration** button to download the SRX site2cloud configuration.
+     - Click the **Download Configuration** button to download the SRX Site2Cloud configuration.
      - Save the configuration file as a reference for configuring your Juniper SRX.
      |image2|
 
-     The following is an SRX sample configuration based on the site2cloud configuration above.
+     The following is an SRX sample configuration based on the Site2Cloud configuration above.
 
      |image3|
 
@@ -76,7 +76,7 @@ The network setup is as following:
   **Field**                         **Value**
 ===============================     =================================================================
   VPC ID/VNet Name                  VPC- multicloudvpc1 (Aviatrix Gateway VPC) ID
-  Connection                        Name of site2cloud connection created at Step 2
+  Connection                        Name of the Site2Cloud connection created at Step 2
   Gateway                           Name of Aviatrix Gateway
   Action                            One of the supported diagnostics commands
 ===============================     =================================================================

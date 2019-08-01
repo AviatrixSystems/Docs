@@ -74,7 +74,7 @@ Add a Site2Cloud tunnel in Aviatrix Controller
 
 5. Click `OK`
 
-6. Click on this newly created Site2Cloud connection and select Vendor Aviatrix to `Download Configuration` so that you can copy and paste the preshared-key into your Meraki configuration later.
+6. Click on this newly created Site2Cloud connection and select Vendor Aviatrix to `Download Configuration` so that you can copy and paste the pre-shared key into your Meraki configuration later.
 
 Configuring Site-to-site VPN in Meraki MX64
 -------------------------------------------
@@ -88,7 +88,7 @@ Configuring Site-to-site VPN in Meraki MX64
 
    |meraki02|
 
-4. Click on Custom in the IPsec Policies to create a custom policy that matches Aviatrix Site2Cloud configuration that was previously downloaded.
+4. Click on Custom in the IPsec Policies to create a custom policy that matches the Aviatrix Site2Cloud configuration that was previously downloaded.
 
    |meraki03|
 
@@ -100,7 +100,7 @@ Configuring Site-to-site VPN in Meraki MX64
 
    |meraki04|
 
-8. Send traffic from the on-prem Meraki MX64 internal network to the Aviatrix Gateway VPC. Verify that VPN Status is green under Non-Meraki peer tab. 
+8. Send traffic from the on-prem Meraki MX64 internal network to the Aviatrix Gateway VPC. Verify that VPN Status is green under the Non-Meraki peer tab. 
 
    |meraki05|
 

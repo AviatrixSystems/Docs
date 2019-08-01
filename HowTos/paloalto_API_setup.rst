@@ -74,11 +74,11 @@ Before you integrate Panorama with the Aviatrix Controller, you need to first la
 a. Launch Panorama
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Launch Panorama from AWS portal, SSH in to set UI password, which is the same as the PAN firewall.
+Launch Panorama from the AWS portal and SSH in to set the UI password, which is the same as the PAN firewall.
 
-Change Panorama management interface security group, to allow 3978 port. This is the port used by Panorama and firewall to exchange information.
+Change the Panorama management interface security group to allow port 3978. This is the port used by Panorama and the firewall to exchange information.
 
-Install license in Panorama, without correct license, it won't work.
+Install a license in Panorama. Without the correct license, it won't work.
 
 b. Upgrade Panorama 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,22 +86,22 @@ b. Upgrade Panorama
 Panorama must be on the same software version as its managed firewalls.
 
 Currently, a newly launched firewall instance is on version 9.0.1, but the Panorama instance version is on 8.1.2. So once you have launched 
-a Panorama instance, upgrade it to version 9.0.0+ by following the instructions below..
+a Panorama instance, upgrade it to version 9.0.0+ by following the instructions below.
 
-Go to Panorama --> Dynamic Updates, click "Check Now", select latest version in "Applications and Threats", downland and install.
+Go to Panorama --> Dynamic Updates, click "Check Now", select the latest version in "Applications and Threats", download and install.
 
-Go to Panorama --> Software, select desired version, download and install. After install, Panorama will reboot. This will take a few minutes.
+Go to Panorama --> Software, select the desired version, download and install. After installation, Panorama will reboot. This will take a few minutes.
 
 c. Create Templates and Template Stack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Template and template stack are used to configure Network properties, such as interfaces, zones, route tables. This is the one that we need to monitor and update through API.
+Template and template stack are used to configure Network properties, such as interfaces, zones, and route tables. This is the one that we need to monitor and update through API.
 
  1. **Create Template**
-      You should create a template for each firewall group:  create one for FireNet primary gateway, one for FireNet backup gateway.
+      You should create a template for each firewall group: One for the FireNet primary gateway and one for FireNet backup gateway.
 
  #. **Configure Template**
-      Add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), route table. Do not name route table as "default" since this may conflict with firewall its own default route table.
+      Add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), and a route table. Do not name the route table as "default" since this may conflict with the firewall's default route table.
 
  #. **Create Template Stack**
       A Template stack is a bundle to bound template with managed devices. When creating, select templates (can be multiple) and devices. For example,  create one template stack for each firewall group, one for primary FireNet gateway, one for backup FireNet gateway. Remember the template stack name. Commit and push.
@@ -127,9 +127,9 @@ After the above steps, VM-Series instances are managed by Panorama. All configur
 
 e. Create admin role and user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is the same as for individually managed VM-Series. Create admin role with XML API permission, create admin user with the admin role.
+This is the same as for individually managed VM-Series. Create an admin role with XML API permission and create an admin user with the admin role.
 
-After you have set up and configured your Panorama, go to Aviatrix Controller -> Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following.
+After you have set up and configured your Panorama, go to the Aviatrix Controller -> Firewall Network -> Vendor Integration -> Firewall Manager (Panorama) and configure the following.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -153,7 +153,7 @@ Router name (Optional)                          Specify the firewall virtual Rou
 
     - If any VM-Series for a FireNet gateway is already managed by the Controller, you need to remove that configuration, before configure Panorama. See the migration instructions in the next section. 
 
-    - After Panorama is setup, any additional VM-Series associated with same gateway will be controlled by Panorama, no further configuration on the VM-Series is needed.
+    - After Panorama is setup, any additional VM-Series associated with same gateway will be controlled by Panorama and no further configuration on the VM-Series is needed.
 
     - When all VM-Series are disassociated from a FireNet gateway, Panorama still maintains the configuration, unless the user removes the configuration from Panorama.
 
@@ -185,7 +185,7 @@ Go to Panorama --> Managed Devices --> Summary, click "Add", paste the firewall'
 d. Configure Firewall
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Port 3978 also needs to be allowed on firewall side. After 4.7, newly launched firewalls through AVX controller will handle this, but for existing firewalls, the user need to do it by himself/herself.
+Port 3978 also needs to be allowed on the firewall side. After 4.7, newly launched firewalls through the AVX controller will handle this, but for existing firewalls, the user need to do it by himself/herself.
 
 Log in to Firewall, go to Device --> Setup --> Management, edit "Panorama Settings", add the public IP of Panorama, save and commit.
 
@@ -194,16 +194,16 @@ Go back to Panorama --> Managed Devices --> Summary, check the device should sho
 e. Add device into desired template stack and Device Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to Panorama --> Template, select the desired template stack, check the firewall from device list.
+Go to Panorama --> Template, select the desired template stack and check the firewall from the device list.
 
-Go to Panorama --> Device Group, select the desired group, check the firewall from device list.
+Go to Panorama --> Device Group, select the desired group and check the firewall from the device list.
 
 Commit and push.
 
 f. Integrate Panorama with Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to Aviatrix Controller->Firewall Network->Vendor Integration->Firewall Manager (Panorama), fill out all the required information and save.
+Go to the Aviatrix Controller->Firewall Network->Vendor Integration->Firewall Manager (Panorama), fill out all the required information and save.
 
 This step can also be done right after step a.
 

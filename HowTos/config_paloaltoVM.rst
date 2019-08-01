@@ -134,7 +134,7 @@ In order for the Aviatrix Controller to automatically update firewall instance r
 
 Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
-9. Read to go!
+9. Ready to go!
 ---------------
 
 Now your firewall instance is ready to receive packets! 
@@ -149,7 +149,7 @@ Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the 
 10. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
+You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
 
 
 .. |access_key| image:: config_paloaltoVM_media/access_key.png
