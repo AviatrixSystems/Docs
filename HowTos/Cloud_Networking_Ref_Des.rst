@@ -320,7 +320,8 @@ VPC ID and its region for the VPC ID field and region in each step.
        Associate each user with a profile. Note: if no profile is
        associated, the user has full access to all resources. When a user is
        added to the database, an email with a .ovpn file or .onc (for
-       Chromebooks) will be sent to the user with detailed instructions.
+       Chromebooks) will be sent to the user with detailed instructions. Alternatively,
+       you can go to Controller -> VPN users -> Download to download the .ovpn file directly. 
 
 8. Done
 
