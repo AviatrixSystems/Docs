@@ -1,8 +1,15 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+
+
+2.1.3 - Aug 1 2019
+ - Security fixes
+
+
 2.0.3 - Jul 23 2019
  - Fix for localhost cert being revoked (Please upgrade Aviatrix controller to version 4.7.501+ for the fix)
  - Backward compatible with older controller via self signed cert
+
 
 1.10.16 - Jul 9 2019
  - Security fix for backend communication
