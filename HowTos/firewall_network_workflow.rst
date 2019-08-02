@@ -267,6 +267,9 @@ This step is optional: if the firewall is managed by Panorama, this step can be 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
 
+.. Tip::
+
+Aviaitrix launches the Palo Alto Networks' VM-Series with default instance size of m4.xlarge. VM-Series offers different Models with different performance offering that is dependant on the instance size. You can increase the instance size as needed to match the desired series and performance. 
 
 7a.2 Launch and Associate More
 #################################
