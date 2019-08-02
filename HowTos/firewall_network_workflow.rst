@@ -270,7 +270,7 @@ This step is optional: if the firewall is managed by Panorama, this step can be 
 .. Tip::
 
     Aviaitrix launches the Palo Alto Networks' VM-Series with default instance size of m4.xlarge. 
-    VM-Series offers different Models with different performance offerings that are dependant on the instance size. 
+    VM-Series offers different models with different performance offerings that are dependant on the instance size. 
     You can increase the instance size as needed to match the desired series and performance. For more information, refer to Palo Alto Networks documentation
 
 
