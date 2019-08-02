@@ -47,8 +47,8 @@ encryption and decryption twice, hence the performance is around 1Gbps.
 
 |c5n_throughput_1500B|
 
-3. MTU = 1500 Bytes, C5n.4xlarge, instance to instance 
-===============================================================
+3. MTU = 1500 Bytes, C5n.4xlarge, instance to instance directly 
+=================================================================
 
 The test result below is for the instance to instance over AWS Peering. 
 
