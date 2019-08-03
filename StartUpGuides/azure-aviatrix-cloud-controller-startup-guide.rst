@@ -88,7 +88,7 @@ a.  Launch from marketplace, select the license type and click Create
 
 ..
 
-5. Access the Controller
+4. Access the Controller
 =========================
 
 After the Controller instance is in a running state in AWS, you can access the Controller
@@ -99,7 +99,7 @@ The initial password is the private IP address of the instance.
 Follow the steps to go through an initial setup phase to download the latest software.
 After the latest software is downloaded, re-login again to go through the onboarding process.
 
-4. Onboarding
+5. Onboarding
 ==============
 The purpose of onboarding is to help you setup an account on the Aviatrix Controller that
 corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
@@ -110,7 +110,7 @@ create an Aviatrix account that corresponds to your Azure account credential.
 
 Note: you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account credentials. This is a multi cloud platform.
 
-5. Gateway Troubleshoot
+6. Gateway Troubleshoot
 ========================
 
 If the Controller fails to launch an Aviatrix gateway in Azure RM, check out `this troubleshooting guide. <http://docs.aviatrix.com/HowTos/azuregwlaunch.html>`_
