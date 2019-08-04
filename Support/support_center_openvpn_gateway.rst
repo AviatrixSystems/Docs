@@ -336,10 +336,11 @@ How can Aviatrix VPN Client and a VPN configuration file(.ovpn file) be pushed t
 
 We do not have an API or a programmatic way to push the Aviatrix VPN Client app and configurations, but here is a workflow you can automate:
 
-  * You can push the Aviatrix VPN Client with any of your current App push tools for each of the platform. In Windows, an unattended install can be done by “AVPNC_win_x64.exe /SILENT”.
-  * You can use `Aviatrix REST API <https://api.aviatrix.com/?version=latest>`_ to generate the .ovpn file for each user - look at `OpenVPN/VPNUsers/Download/Get VPN Configuration <https://api.aviatrix.com/?version=latest#01323fe0-91d9-42da-a3ad-23a6616bfdc7>`_. Regarding the configuration
-  * You would also need the ".AviProf.conf" file for Macs in home directory and for Windows you need "%APPDATA%/AviProf.conf"
-    * Please look at your own AviProf.conf file to figure out the format, it is a simple json file
-    * Regarding the encoded strings per profile in the above AviProf.conf - it is a base64encode of the fullpath+.ovpn file. You would have to generate it. (On Mac: "base64 --encode" or "base64 --decode")
-    * If you deploy a profile with `certificate sharing <https://docs.aviatrix.com/HowTos/openvpn_features.html#authentication-options>`_, and deploy in a directory path which identical for all users, then you can build and deploy the same ".AviProf.conf" for all your users.
+* You can push the Aviatrix VPN Client with any of your current App push tools for each of the platform. In Windows, an unattended install can be done by “AVPNC_win_x64.exe /SILENT”.
+* You can use `Aviatrix REST API <https://api.aviatrix.com/?version=latest>`_ to generate the .ovpn file for each user - look at `OpenVPN/VPNUsers/Download/Get VPN Configuration <https://api.aviatrix.com/?version=latest#01323fe0-91d9-42da-a3ad-23a6616bfdc7>`_. Regarding the configuration
+* You would also need the ".AviProf.conf" file for Macs in home directory and for Windows you need "%APPDATA%/AviProf.conf"
+
+  * Please look at your own AviProf.conf file to figure out the format, it is a simple json file
+  * Regarding the encoded strings per profile in the above AviProf.conf - it is a base64encode of the fullpath+.ovpn file. You would have to generate it. (On Mac: "base64 --encode" or "base64 --decode")
+  * If you deploy a profile with `certificate sharing <https://docs.aviatrix.com/HowTos/openvpn_features.html#authentication-options>`_, and deploy in a directory path which identical for all users, then you can build and deploy the same ".AviProf.conf" for all your users.
 
