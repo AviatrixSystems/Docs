@@ -107,6 +107,7 @@ Squid is a popular open source software that can be configured to do transparent
 ==========================================      =============================================================                                           =============
 **Functions**                                     **Aviatrix FQDN**                                                                                      **Squid**
 ==========================================      =============================================================                                           =============
+Requires instance configuration                 No                                                                                                      No
 HTTP and HTTPS FQDN filter                      Yes                                                                                                     Yes
 non HTTP/HTTPS FQDN filter                      Yes                                                                                                     No
 Multi AZ High Availability                      Yes (load balanced)                                                                                     No
