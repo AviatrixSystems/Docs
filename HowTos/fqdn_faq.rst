@@ -75,8 +75,8 @@ for traffic to pass.
 
 For configuration details, refer to `this doc. <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
-How do I Enable HA for FQDN gateways?
-===================================
+How do I Enable 2 AZ HA for FQDN gateways?
+============================================
 
 Go to Gateway page, highlight the gateway, and click Edit.
 
@@ -84,6 +84,20 @@ At "Gateway for High Availability Peering", select a public subnet in the drop d
 
 For FQDN function, the primary gateway and backup gateway load balance the
 Internet bound traffic from different subnets based on a route table.
+
+How do I enable 3 AZ HA for FQDN gateways?
+============================================
+
+Her are the steps to enable 3 AZ HA FQDN gateways:
+
+ 1. Launch an Aviatrix gateway in AZ1
+ #. Launch an Aviatrix gateway in AZ2
+ #. Launch an Aviatrix gateway in AZ3
+ #. Attach the same FQDN tag to each gateway launched in the above steps.
+ #. Enable the FQDN tag. 
+
+Following the above instructions, Aviatrix Controller will try to load balance the route tables to point to the gateways with AZ affinity. 
+When a gateway fails, the Controller will reprogram the VPC route table to redistribute the traffic to the remaining gateways. 
 
 How does Aviatrix Egress FQDN compare to Squid Solution?
 ==============================================================
@@ -120,32 +134,6 @@ If you have problems with FQDN on a specific gateway, follow the instructions be
  #. If none of the above work, try to Disable and Enable the tag again. This will restart the FQDN function on all attached gateways.
  #. If all above steps failed, get help from the Aviatrix support team and upload `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_.
 
-
-How do FQDN and Stateful Firewall work together?
-----------------------------------------------------
-
-There are some caveats in release 3.4 when configuring `Stateful Firewall <https://docs.aviatrix.com/HowTos/tag_firewall.html>`_ and `FQDN <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_. Note the below caveats have been fixed for `release 3.5 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_.
-
-(A non HTTP/HTTPS traffic means any TCP/UDP/ICMP traffic excluding TCP port 80/443.)
-
-When Stateful Firewall and FQDN are both enabled, Stateful Firewall rules are executed before FQDN for non HTTP/HTTPS traffic.
-
-=================================    =====================================    ======================================
-Service                              Stateful Firewall base rule Deny All     Stateful Firewall base rule Allow All
-=================================    =====================================    ======================================
-FQDN Whitelist for HTTP/HTTPS        Work independently.                      Work independently.
-FQDN Whitelist for non HTTP/HTTPS    Do not work independently, see Note 1    Do not Work independently, see Note 2
-=================================    =====================================    ======================================
-
-Note 1:
-
-  There are two options to work around the issue:
-     - Option 1: For non-HTTP/HTTPS traffic, do not use FQDN Whitelist. Use Stateful Firewall instead.
-     - Option 2: On the Stateful Firewall page, change the base rule to "Allow all" (do not change individual rules). This is because the FQDN is executed after Stateful Firewall for non HTTP/HTTPS traffic, therefore even if you specify "Allow all" as the base rule, the FQDN whitelist will only permit the rules specified both in Stateful Firewall and FQDN. FQDN Whitelist has an implicit "DROP ALL" as its last rule.
-
-Note 2:
-
-  This is an expected behavior. If Stateful Firewall rule base is "Allow all", the individual rules are "Deny" and FQDN is a whitelist, then FQDN's last implicit rule "DROP ALL" will effectively make the gateway to be a "Deny all" for any destinations the Stateful Firewall does not specify.
 
 What happens if I enable FQDN and there are route tables that have an existing default route?
 ---------------------------------------------------------------------------------------------
