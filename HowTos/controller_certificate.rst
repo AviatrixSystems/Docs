@@ -17,7 +17,7 @@ There are two methods to accomplish this:
 Import Certificate with Key
 -----------------------------
 
-This is the preferred approach. Simply import ca.crt, server.crt and server.key to the Controller and 
+This is the **preferred approach** compared to the next approach detailed below. Simply import ca.crt, server.crt and server.key to the Controller and 
 you are done. In this method, the private key file server.key must match the server.crt. 
 
 Generate CSR and Import Certificate
