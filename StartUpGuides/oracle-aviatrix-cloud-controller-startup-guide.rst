@@ -12,13 +12,14 @@ guide helps you to launch the gateway in OCI. Make sure you follow the instructi
 
 .. Note::
 
-  Currently we only support deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI
-   by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
-   The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS can also enable you to deploy gateways in OCI,
+Currently we only support deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI
+by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS can also enable you to deploy gateways in OCI,
 
 
 1. Prepare your account in OCI
-==============================
+==============================:w
+
 
 Create an OCI account
 -----------------------
@@ -30,8 +31,7 @@ Set up your account
 --------------------
 
 Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy.
-
-`Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_
+For more detail, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_
 
 
 2. Access the Controller
@@ -108,20 +108,10 @@ Enjoy!
 
 
 .. |oci_user| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_user.png
-   :width: 2.90683in
-   :height: 0.35000in
-.. |oci_tenancy| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_tenancy.PNG
-   :width: 5.49426in
-   :height: 2.99954in
-.. |oci_compartment| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_compartment.PNG
-   :width: 5.05625in
-   :height: 2.77932in
+.. |oci_tenancy| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_tenancy.png
+.. |oci_compartment| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_compartment.png
 .. |oci_api_key| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_api_key.png
-   :width: 2.90683in
-   :height: 0.35000in
-.. |oci_account| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_account.PNG
-   :width: 5.40347in
-   :height: 2.95863in
+.. |oci_account| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_account.png
 
 
 .. add in the disqus tag
