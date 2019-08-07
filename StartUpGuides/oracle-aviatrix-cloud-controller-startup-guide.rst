@@ -12,13 +12,12 @@ guide helps you to launch the gateway in OCI. Make sure you follow the instructi
 
 .. Note::
 
-Currently we only support deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI
-by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
-The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS can also enable you to deploy gateways in OCI,
+  Currently we only support deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+  The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS can also enable you to deploy gateways in OCI,
 
 
 1. Prepare your account in OCI
-==============================:w
+==============================
 
 
 Create an OCI account
