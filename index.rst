@@ -43,7 +43,8 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aviatrix-cloud-controller-startup-guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
-   StartUpGuides/aviatrix_operations 
+   StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide
+   StartUpGuides/aviatrix_operations
    StartUpGuides/CloudN-Startup-Guide
    StartUpGuides/appendix-CloudN-Startup-Guide
    StartUpGuides/aviatrix-china-controller-startup-guide
