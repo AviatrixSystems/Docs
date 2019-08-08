@@ -215,3 +215,46 @@ How can I move my controller from one AWS account to another AWS account?
 3. Build the "Trust-Relationship" between all gateway (AWS) accounts and the new controller's AWS account using these `directions <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#establish-trust-relationship-with-primary-account>`_. NOTE: Make sure that you repeat this step for every gateway's (AWS) account
 4. Login to the new controller and run "Aviatrix Console/Settings/Maintenance/Backup&Restore/Restore" . Enter the AccessKey & SecretKey (which have the permissions to access the S3 bucket located in the same AWS account of your old controller), BucketName, FileName
 5. After restore process is finished, check that the new controller can access/configure all the gateways from old controller.
+
+
+How can I import a CA signed cert into my controller through REST API?
+--------------------------------------------------------------------------
+
+Here is a sample script to import a CA signed cert:
+
+::
+
+  # Description:
+  #    This script demonstrates using Aviatrix REST API, "import_new_https_certs"
+
+  # Instruction(s):
+  #    + Please  replace  the content from line 11 to 23 with your own data
+
+  import requests
+
+  controller_hostname = '1.2.3.4'  # This can be the public IP or domain name of the Aviatrix controller
+  api_endpoint_url = 'https://' + controller_hostname + '/v1/api'
+
+  # File paths in local machine
+  path_to_input_file_01 = './my-ca-cert.csr'       # assuming this file is in the same folder as this python script is
+  path_to_input_file_02 = './my-server-cert.crt'
+  path_to_input_file_03 = './my-private-key.key'
+
+
+  body_payload = {
+      'action': 'import_new_https_certs',
+      'CID': 'Rzz61dB94uaYwpJX6dWn',  # Please provide your valid CID here
+      'gateway_name': 'abg-us-east-1-spoke-s-rateshop-aviatrix-ubuntu'  # Comment out this parameter if this API is invoked against the Aviatrix controller
+  }
+
+  # Notes:
+  #    + 'ca_cert', 'server_cert' and 'private_key' are actually the body-param names
+
+  file_list = {
+      'ca_cert': ('file_name_to_be_saved_in_server_01.cert', open(file=path_to_input_file_01, mode='rb'), 'application/vnd.ms-excel', {'Expires': '0'}),
+      'server_cert': ('file_name_to_be_saved_in_server_02.cert', open(file=path_to_input_file_02, mode='rb'), 'application/vnd.ms-excel', {'Expires': '0'}),
+      'private_key': ('file_name_to_be_saved_in_server_03.pem', open(file=path_to_input_file_03, mode='rb'), 'application/vnd.ms-excel', {'Expires': '0'})
+  }
+
+  response = requests.post(url=api_endpoint_url, data=body_payload, files=file_list, verify=False)
+  print(response.text)
