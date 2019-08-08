@@ -12,6 +12,10 @@ The Aviatrix Certificate number is #3475 which you can find from the `NIST site 
 
 The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/security-policies/140sp3475.pdf>`_
 
+Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied , 
+
+To apply FIPS patch go to the Controller Console, Settings -> Maintainence -> Security Patches -> Click FIPS 140-2  
+
 To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
 When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module.
