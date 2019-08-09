@@ -110,7 +110,7 @@ https://portal.azure.com
 
 **Get Application Information**
 
-1. From the Azure portal, click All services and search for “Azure Active Directory”.
+1. From the Azure portal, click All services and search for “Azure Active Directory”. Click “App registrations” and then the application to see the Application (client) ID and Directory (tenant) ID.
 
    |Image01|
 
