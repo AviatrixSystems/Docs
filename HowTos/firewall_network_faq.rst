@@ -211,6 +211,15 @@ As shown in the chart below, the FireNet throughput scales as more VM-Series are
 
 |firewall_network_perf|
 
+What is the maximum performance FireNet can achieve?
+-------------------------------------------------------
+
+Currently FireNet can achieve 20Gbps throughput with Jumbo frame size in AWS. 
+
+The chart below describes the test case where Palo Alto VM-Series runs C5.xlarge instance size.
+
+|firewall_network_perf_c5xlarge|
+
 Are there any design patterns for Firewall Network deployment?
 ----------------------------------------------------------------
 
@@ -239,6 +248,9 @@ Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.c
    :scale: 30%
 
 .. |firewall_network_perf| image:: firewall_network_faq_media/firewall_network_perf.png
+   :scale: 30%
+
+.. |firewall_network_perf_c5xlarge| image:: firewall_network_faq_media/firewall_network_perf_c5xlarge.png
    :scale: 30%
 
 .. |multi_firewall| image:: firewall_network_faq_media/multi_firewall.png
