@@ -118,7 +118,9 @@ What are the limitations of FireNet?
 
 In Release 4.3, FireNet only supports the AWS Transit Gateway (TGW) deployment scenario. It does not support the encrypted transit deployment scenario. 
 
-For most cases, there can only be one Firewall Domain in a TGW. 
+You can have multiple Firewall Domains. However a Security Domain cannot be connected to two 
+Firewall Domains except the case when one is for Ingress/Egress and another is for East-West and North-South inspection.
+
 
 How does FireNet compare with ECMP/VPN based firewall deployment?
 -------------------------------------------------------------------
