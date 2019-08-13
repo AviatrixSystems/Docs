@@ -10,14 +10,14 @@ R5.0 (Coming in August)
 
  - **Azure Transit with Native Spoke VNet Support**
  - **Azure Transit Insane Mode Support**
- - **AWS, Azure and GCP ActiveMesh Transit Backbone**
+ - **AWS, Azure and ActiveMesh Transit Backbone (Beta)**
  - **GCP Transit Gateway Support**
  - **Oracle Cloud (OCI) Spoke Gateway Support**
 
 2. Networking
 ----------------
 
- - **AWS Multi Site Transit** allows the Aviatrix Transit Gateway to connect to multiple remote site, either with dynamic routing or static routing. 
+ - **AWS Multi Site Transit** allows the Aviatrix Transit Gateway to connect to multiple remote site, either with dynamic routing or static routing (Beta). 
  - **IKEv2 support for Site2Cloud connections**
  - **IPv6 Support** 
  - **Insane Mode over Internet**
@@ -26,7 +26,6 @@ R5.0 (Coming in August)
 3. Operations
 ---------------
 
- - **Role Based Access Control**
  - **Access Account Auditing**
  - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
  - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state. 
