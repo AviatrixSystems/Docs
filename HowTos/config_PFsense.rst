@@ -1,3 +1,13 @@
+.. meta::
+   :description: Example Config for PFsense VM in AWS
+   :keywords: PFsense, AWS Transit Gateway, AWS TGW, TGW Orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
+
+
+==============================================
+Example Config for PFsense VM in AWS
+==============================================
+
+
 **A few important notes before we launch the instance:**
 
 *1* This document complements the existing deployment guide that was designed to help you to associate a Palo Alto VM-Series. We are going to assume that you have completed all the steps from 1 to 6 before launching this firewall instance. Step 7a is not necessary as it is Palo Alto VM-Series specific.
@@ -80,6 +90,11 @@
 7c.29	Great. You are now good to repeat this process to add more instances to talk to the main gateway and also to the backup gateway. The difference regarding the backup gateway attachment is that the subnets will be in a different AZ;
 
 7c.30	For more information on the Firewall network solution, please refer to this
+
+
+
+.. disqus::
+
 
 
 .. |image1| image:: ./config_PFsense_media/image1.png
