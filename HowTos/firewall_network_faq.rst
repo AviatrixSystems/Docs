@@ -216,7 +216,7 @@ As shown in the chart below, the FireNet throughput scales as more VM-Series are
 What is the maximum performance FireNet can achieve?
 -------------------------------------------------------
 
-Currently FireNet can achieve 20Gbps throughput with Jumbo frame size in AWS. 
+Currently for East-West (VPC to VPC) and North-South (on-prem to VPC) traffic inspection, FireNet can achieve 20Gbps throughput with Jumbo frame size in AWS. 
 
 The chart below describes the test case where Palo Alto VM-Series runs C5.xlarge instance size.
 

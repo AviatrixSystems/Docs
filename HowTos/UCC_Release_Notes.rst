@@ -30,6 +30,11 @@ R5.0 (Coming in August)
  - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
  - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state. 
 
+R4.7.581 (8/11/2019)
+=======================
+
+ - **Transit peering for two transit gateways in the same VPC** removes the constraint that Transit Peering can only take place on two Aviatrix Transit Gateway in two different VPCs. The use case is if you have deployed two individual transit networks in the same VPC, now you can connect them by implementing Transit Gateway Peering. 
+
 
 R4.7.501 (7/22/2019)
 =======================
