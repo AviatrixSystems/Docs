@@ -123,7 +123,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_paloaltoVM
    HowTos/config_FortiGate.rst
    HowTos/config_Checkpoint.rst
-   HowTos/config_PFsense.rst
+   HowTos/config_PFsense
    HowTos/paloalto_API_setup
    HowTos/config_Barracuda.rst
 
