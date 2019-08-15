@@ -9,7 +9,7 @@ Global Transit Network Workflow Instructions (AWS/Azure)
 
 .. important::
 
- If you intend to deploy the Next Gen transit network for AWS, your starting point is `this link. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For Azure Transit, this document is your starting point.
+ If you intend to deploy the transit network AWS Transit Gateway (TGW), your starting point is `this link. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building end to end encrypted Transit, this document is your starting point.
 
 This workflow provides you with step by step instructions to build a Global Transit Network. 
 
