@@ -71,7 +71,7 @@ Region                                          One of the AWS regions
 VPC ID                                          The Transit VPC-id
 Public Subnet                                   The public subnet on which Transit GW instance is deployed
 Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
-Specify a Reachable DNS Server IP Address      Leave it unselected
+Specify a Reachable DNS Server IP Address       Leave it unselected
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
 
@@ -177,6 +177,10 @@ Scroll down to see the total number of learned routes.
 4. Launch a Spoke Gateway
 -------------------------
 
+.. Note::
+
+ If you are building Azure transit solution and do not require traffic encryption between Spoke VNet and Transit VNet, skip Step 4&5 and go to Step 6b to attach Spoke VNet directly. 
+
 |image4|
 
 ==========================================      ==========
@@ -209,6 +213,23 @@ This step attaches a Spoke VPC to the Transit GW Group by building an Aviatrix e
 |image5|
 
 To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6. 
+
+6b. Attach Azure ARM Spoke VNet via native peering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Available from release 5.0, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
+
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Cloud Type                                      Azure
+Transit Gateway Name                            A unique name to identify the Transit GW
+Spoke VNet Account Name                         An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to a subscription in Azure
+Region                                          Spoke VNet region
+Spoke VNet Name                                 The Spoke VNet Name
+==========================================      ==========
+ 
 
 7. Remove a Spoke GW from a Transit GW Group
 --------------------------------------------
