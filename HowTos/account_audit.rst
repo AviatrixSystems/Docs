@@ -4,7 +4,7 @@
 
 
 =================================
-Account Audit Info & Remedy
+Account Audit 
 =================================
 
 The Aviatrix Controller periodically checks the accounts it manages to make sure they are intact:

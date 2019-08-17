@@ -79,6 +79,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/gateway
    Solutions/gateway_ha
+   HowTos/gateway_audit
 
 .. _Transit Gateway Orchestrator:
 
