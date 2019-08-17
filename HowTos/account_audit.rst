@@ -9,8 +9,20 @@ Account Audit
 
 The Aviatrix Controller periodically checks the accounts it manages to make sure they are intact:
 
- 1. If the Controller instance's IAM role aviatrix-role-ec2 has been deleted. 
- #. If the Controller instance's IAM role aviatrix-role-app has been deleted.
+ 1. The Controller instance's IAM role aviatrix-role-ec2 is attached to the instance. 
+ #. The Controller instance's IAM role aviatrix-role-app exists.
+ #. An access account IAM role aviatrix-role-ec2 exists.
+ #. An access account IAM role aviatrix-role-app exists.
+ #. An access account IAM role aviatrix-role-ec2 has associated policies.
+ #. An access account IAM role aviatrix-role-app has associated policies.
+ #. An access account has trust relationship to the primary account (the Controller's AWS account).
+
+If any of the above condition fails, the Controller sends out alert email and logs the event. 
+
+Note the event requires immediate attention and it can lead to catastrophic operation outage. Go through the above
+conditions to repair the configuration.
+
+If you need help, email to support@aviatrix.com.
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
    :scale: 50%
