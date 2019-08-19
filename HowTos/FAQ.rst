@@ -408,6 +408,17 @@ Do you have the CloudFormation source code for launch the Controller?
 
 Yes, the source repository for Controller launch can be found on github at `here. <https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates>`_
 
+How does the user VPN charge work for Metered AMI in AWS Marketplace?
+-----------------------------------------------------------------------
+
+If you subscribe to `Aviatrix Secure Networking Platform PAYG - Metered <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1566186364777&sr=0-1&ref_=srh_res_product_title>`_, the user VPN cost is $0.03/hour/connection. 
+$0.03 is counted each hour when the VPN user is connected to the Aviatrix VPN gateway. Once the VPN user disconnects, the metering for that session stops. 
+
+Aviatrix Controller reports to AWS Marketplace engine every hour the number of live VPN sessions in the last hour. Note when a VPN user connects, 
+the session is counted for the next hour.
+
+
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 

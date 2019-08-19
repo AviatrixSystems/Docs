@@ -22,11 +22,22 @@ R5.0 (Coming in August)
  - **IPv6 Support** 
  - **Insane Mode over Internet**
  - **User VPN Support two way communication** between client and cloud instances.
+
+3. Security
+------------
  
-3. Operations
+ - **FQDN Applies to Private Domain Names** allows you to apply FQDN filter on Domain Names that resolve to private IP addresses. The use case is if you have host names that are on the private network and you need to apply whitelist filter. This is a global capability that applies to all FQDN tags. To enable, go to Egress Control -> Egress FQDN Filter, click "Enable Private Network Filter".
+ - **Multi Wildcard for FQDN** allows the FQDN gateway to match more relaxed expressions, such as a-*.b*.com.
+ - **FireNet for GovCloud** is available. Follow the instructions for `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to get started.
+ 
+4. Operations
 ---------------
 
- - **Access Account Auditing**
+ - **Access Account Audit** continuously monitors the health of Controller and individual access account. The Controller sends email alert to the admin user and logs the event when errors in the account setting are detected.  
+ - **Gateway Audit** continuously monitors the status of gateway cloud credentials. For AWS, this credential is the gateway's IAM roles and policies. The Controller sends email alert to the admin user and logs the event when errors of gateway cloud credentials are detected. To view the health of the gateway, go to Gateway page and check the field Cloud Credentials.
+ - **Logs display the source IP address when a user login** to improve visibility. 
+ - **Logs display the latest at the top of the screen** for ease of use. The logs include Site2Cloud diagnostics messages and command log messages.
+ - **Export VPC Tracker to XML** allows you to download in Excel form all VPCs the Controller retrieves. To download, go to Useful Tools -> VPC Tracker, click the refresh button and then click Export to CSV.
  - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
  - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state. 
 
