@@ -45,6 +45,7 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Please go to “”AviatrixConsole/Settings/Maintenance/Upgrade/GatewayUpgradeStatus” and check that all gateways have been upgraded - “Current Version” on all gateways should match the version you have upgraded to. Please flip through additional pages if you have more than 20 gateways. If any gateway failed, please run `diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ and a `forced upgrade <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_. If needed, please open a ticket with diags and `tracelogs  <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_.
 #. Make a backup after the upgrade by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. If you are using terraform, please use the appropriate branch from https://github.com/AviatrixSystems/terraform-provider-aviatrix. For more information please go to https://github.com/AviatrixSystems/terraform-provider-aviatrix#controller-version
+#. If you are using Aviatrix VPN Client, please consider upgrading to the `latest release <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
 
 .. note::
    
