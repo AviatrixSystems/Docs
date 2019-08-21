@@ -219,9 +219,13 @@ To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6.
 
 Available in release 5.0 and later, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
 
+|azure_native_transit|
+
 .. Note::
 
-  The Spoke VNet must be in the same subscription or a different subscription but in the same AD as the Transit VNet subscription. If the Spoke VNet is in the different subscription than that of the Transit VNet, follow the instruction `here <https://docs.microsoft.com/en-us/azure/virtual-network/create-peering-different-subscriptions>, complete Step 5 to 10 each each subscription.
+  The Spoke VNet must be in the same subscription or a different subscription but in the same AD as the Transit VNet subscription. If the Spoke VNet is in the different subscription than that of the Transit VNet, follow the instruction `in this link  <https://docs.microsoft.com/en-us/azure/virtual-network/create-peering-different-subscriptions>`_, and complete Step 5 to 10 for each subscription to build trust relationship. 
+
+  Do not perform peering function on the Azure portal.
 
 
 ==========================================      ==========
@@ -347,6 +351,9 @@ After you have built the Transit GW and Spokes, you can view the connection betw
    :scale: 50%
 
 .. |transit_to_onprem| image:: transitvpc_workflow_media/transit_to_onprem.png
+   :scale: 30%
+
+.. |azure_native_transit| image:: transitvpc_workflow_media/azure_native_transit.png
    :scale: 30%
 
 .. disqus::
