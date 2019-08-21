@@ -33,6 +33,7 @@ R5.0 (Coming in August)
 4. Operations
 ---------------
 
+ - **New REST API site** visit `api.aviatrix.com <https://api.aviatrix.com/?version=latest>`_ to see our brand new API doc site!
  - **Access Account Audit** continuously monitors the health of Controller and individual access account. The Controller sends email alert to the admin user and logs the event when errors in the account setting are detected.  
  - **Gateway Audit** continuously monitors the status of gateway cloud credentials. For AWS, this credential is the gateway's IAM roles and policies. The Controller sends email alert to the admin user and logs the event when errors of gateway cloud credentials are detected. To view the health of the gateway, go to Gateway page and check the field Cloud Credentials.
  - **Logs display the source IP address when a user login** to improve visibility. 

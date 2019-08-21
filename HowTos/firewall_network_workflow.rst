@@ -92,7 +92,7 @@ The new subnets created by the Controller at this steps are listed below.
 -gw-tgw-egress                                     for FireNet gateway eth1 
 -gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
 -gw-tgw-ingress                                    for TGW to eth1 of FireNet gateway 
--gw-dmz-firewall                                   for FireNet gateway
+-gw-dmz-firewall                                   for FireNet gateway ethh2
 -gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
 -gw-dmz-exchange                                   for FireNet gateway eth3
 -gw-hagw-dmz-exchange                              for FireNet HA gateway eth3
@@ -298,6 +298,25 @@ associate it with the FireNet gateway.
 
 If the firewall instance is by a vendor other than Palo Alto Network, for example, Checkpoint or Fortinet, you should launch the firewall 
 instances from the AWS Console and associate them to the Aviatrix FireNet gateway. The `Management Interface Subnet` may be the same as the `Egress Interface Subnet`
+
+7c. Launch & Associate Aviatrix FQDN gateway
+------------------------------------------------
+
+This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+VPC ID                                          The Security VPC created in Step 1.
+Gateway Name                                    The primary FireNet gateway.
+FQDN Gateway Subnet                             The public subnet on which Aviatrix FQDN gateway will be launched.
+FQDN Gateway Size                               The Aviatrix FQDN gateway instance size, starting from t2.micro.
+FQDN Gateway Name                               The Aviatrix FQDN gateway name. Note you cannot change the name once the gateway instance is launched. 
+Attach                                          Attach this FQDN gateway to the primary FireNet gateway.
+==========================================      ==========
+
+
+
 
 
 8. Specify Security Domain for Firewall Inspection
