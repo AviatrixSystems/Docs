@@ -3,13 +3,13 @@
   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
-=========================================================
-Global Transit Network Workflow Instructions (AWS/Azure)
-=========================================================
+==============================================================
+Global Transit Network Workflow Instructions (AWS/Azure/GCP)
+==============================================================
 
 .. important::
 
- If you intend to deploy the transit network AWS Transit Gateway (TGW), your starting point is `this link. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building end to end encrypted Transit, this document is your starting point.
+ If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP or Transit network with Azure Native Peering, this document is your starting point.
 
 This workflow provides you with step by step instructions to build a Global Transit Network. 
 
@@ -217,7 +217,11 @@ To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6.
 6b. Attach Azure ARM Spoke VNet via native peering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Available from release 5.0, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
+Available in release 5.0 and later, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
+
+.. Note::
+
+  The Spoke VNet must be in the same subscription or a different subscription but in the same AD as the Transit VNet subscription. If the Spoke VNet is in the different subscription than that of the Transit VNet, follow the instruction `here <https://docs.microsoft.com/en-us/azure/virtual-network/create-peering-different-subscriptions>, complete Step 5 to 10 each each subscription.
 
 
 ==========================================      ==========
