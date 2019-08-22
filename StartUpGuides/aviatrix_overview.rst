@@ -14,7 +14,7 @@ Aviatrix is a cloud native networking company. Unlike any other networking vendo
 Aviatrix software platform understands the cloud provider's native construct. This allows us to program the native constructs and integrate them into our software
 to provide you with turn key solutions. 
 
-|FullMesh_overview|
+|aviatrix_overview||
 
 We focus on solving networking problems in use cases relevant to public clouds. 
 These use cases are shown as below: 
