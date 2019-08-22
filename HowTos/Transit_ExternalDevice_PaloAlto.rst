@@ -146,9 +146,6 @@ Configuration WorkFlow:
     |image16|
 
  e. Next click on redistribution rules and do the following:
-   Click on export rule -> general -> add -> select bgppeering(sample bgp peer group ) created above.
-    |image17|
-    Before selecting match create a rule as follows:
     Network -> default -> BGP -> Redistribution Rules -> Click on Add
     Select ipv4 and give the subnet which you want to redistribute(e.g., here Loopback interface is redistributed)like
     below image
@@ -216,9 +213,6 @@ Configuration WorkFlow:
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image16| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp4.png
-    :width: 7.00000 in
-    :height: 5.00000 in
-.. |image17| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp5.png
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image18| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp6.png
