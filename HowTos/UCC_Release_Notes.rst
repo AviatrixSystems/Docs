@@ -18,7 +18,7 @@ R5.0 (coming in soon)
 ----------------
 
  - **AWS Multi Site Transit** allows the Aviatrix Transit Gateway to connect to multiple remote site, either with dynamic routing or static routing (Beta). 
- - **IKEv2 support for Site2Cloud connections**
+ - **IKEv2 support for Site2Cloud connections** expands site2cloud function to support IPSEC IKEv2.
  - **IPv6 Support** 
  - **Insane Mode over Internet**
  - **User VPN Support two way communication** between client and cloud instances.
