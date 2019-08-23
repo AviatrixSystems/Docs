@@ -23,12 +23,11 @@ How to use it
 Click on the FlightPath icon on the onboarding page or Troubleshooting -> FlightPath.
 
 Select the Source side cloud type, account, region, vpc name and click one instance. 
-Do the same for the Destination side. 
+Optionally, Do the same for the Destination side. 
 
 Run a FlightPath Test. A report will appear. The information is arranged in three sections: Security Groups, Route table entries and Network ACL. The Security Group is what is associated with the instance, and both the route table and the Network ACL are associated with the subnet that the instance is deployed. 
 
 
-.. Note:: If you just need to check information on one instance, for example, check Internet reachability on an instance on a private subnet, select any instance in the Destination field, as it does not matter in this case. 
 
 Example
 --------
