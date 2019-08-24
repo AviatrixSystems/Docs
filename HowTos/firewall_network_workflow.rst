@@ -302,7 +302,9 @@ instances from the AWS Console and associate them to the Aviatrix FireNet gatewa
 7c. Launch & Associate Aviatrix FQDN gateway
 ------------------------------------------------
 
-This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment. 
+This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
+
+|fqdn_in_firenet| 
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -340,6 +342,9 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
    :scale: 30%
 
 .. |panvm_bucket| image:: firewall_network_workflow_media/panvm_bucket.png
+   :scale: 30%
+
+.. |fqdn_in_firenet| image:: firewall_network_workflow_media/fqdn_in_firenet.png
    :scale: 30%
 
 .. disqus::

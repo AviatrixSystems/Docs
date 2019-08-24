@@ -8,42 +8,42 @@ Firewall Network Design Patterns
 =========================================================
 
 
-Hybrid with TGW
+1. Hybrid with TGW
 ---------------------------------------------------
 
 FireNet supports AWS Transit Gateway (TGW), as shown below. 
 
 |firenet_transit|
 
-Hybrid with Insane Mode
+2. Hybrid with Insane Mode
 --------------------------------------------------------
 
 FireNet supports AWS Transit (TGW) with Insane Mode,  
 
 |firenet_insane|
 
-Native TGW integration
+3. Native TGW integration
 ------------------------------------------------------------------
 
 In the Release 4.6, the hybrid deployment can be using native AWS Direct Connect Gateway. 
 
 |firenet|
 
-Multi Region Transit with Native TGW integration 
+4. Multi Region Transit with Native TGW integration 
 ---------------------------------------------------------------------------------
 
 Connect to on-prem with AWS DXGW and use Aviatrix Edge gateway to connect to multiple regions.
 
 |multi_region_firewall|
 
-Multi Region Transit with Aviatrix Edge
+5. Multi Region Transit with Aviatrix Edge
 ------------------------------------------------------------------------
 
 Connect to on-prem with an Aviatrix Edge gateway for both hybrid and multi regions.
 
 |multi_region_aviatrix_edge|
 
-Two Firewall Networks 
+6. Two Firewall Networks 
 --------------------------------------------------------
 
 You can deploy two Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Ingress/Egress
@@ -54,10 +54,15 @@ IP address of NLB or a third party load balancer the IP address of LAN (or Trust
 
 |multi_firewall|
 
-Ingress/Egress Traffic Inspection
+7. Ingress/Egress Traffic Inspection
 -----------------------------------------------------------------
 
 |firenet_ingress_egress|
+
+8. Aviatrix FQDN in FireNet for Egress Control
+-------------------------------------------------
+
+|fqdn_in_firenet|
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
@@ -92,5 +97,7 @@ Ingress/Egress Traffic Inspection
 .. |private_interfaces| image:: firewall_network_workflow_media/private_interfaces.png
    :scale: 30%
 
+.. |fqdn_in_firenet| image:: firewall_network_workflow_media/fqdn_in_firenet.png
+   :scale: 30%
 
 .. disqus::
