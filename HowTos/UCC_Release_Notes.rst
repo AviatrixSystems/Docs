@@ -9,19 +9,17 @@ R5.0 (coming in soon)
 -----------------
 
  - **Azure Transit with Native Spoke VNet Support** Allows you to build a transit solution without launching an Aviatrix gateway in the Spoke VNet. The solution leverages the Azure native peering capability for the traffic between Spoke VNet and Transit VNet, it also leverages the Controller to propagate learned routes directly to Spoke VNet. Follow the `Transit Network Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to get started by launching an Aviatrix Transit GW. Attach a Spoke VNet at `Step 6b <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_. 
- - **Azure Transit Insane Mode Support**
- - **AWS, Azure and ActiveMesh Transit Backbone (Beta)**
- - **GCP Transit Gateway Support**
- - **Oracle Cloud (OCI) Spoke Gateway Support**
+ - **Azure Transit Insane Mode Support** expands our `Insane Mode Encryption Service <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to Azure networks. The support include Insane Mode encryption over Express Route, Insane Mode for VNet to VNet encrypted peering and Transit Peering connections. Launch an Azure gateway with Insane Mode enabled to get started. 
+ - **GCP Transit Gateway Support** expands our `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to Google GCP. Follow the `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ instruction to get started. 
+ - **Oracle Cloud (OCI) Spoke Gateway Support** expands our Transit Network Solution to OCI Spoke gateways. 
 
 2. Networking
 ----------------
 
- - **AWS Multi Site Transit** allows the Aviatrix Transit Gateway to connect to multiple remote site, either with dynamic routing or static routing (Beta). 
- - **IKEv2 support for Site2Cloud connections** expands site2cloud function to support IPSEC IKEv2.
- - **IPv6 Support** 
- - **Insane Mode over Internet**
- - **User VPN Support two way communication** between client and cloud instances.
+ - **IKEv2 support for Site2Cloud connections** expands site2cloud function to support IPSEC IKEv2. Follow the `site2cloud instructions <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ to get started. 
+ - **IPv6 Support** allows you to leverage the unique addressing capability of IPv6 to solve overlapping network CIDR problem in the cloud networks. 
+ - **Insane Mode over Internet** allows you to leverage the existing high speed Internet to build high performance encryption.
+ - **User VPN Support two way communication** between client and cloud instances by disabling VPN gateway NAT function and program the VPC route table for traffic initiated from VPC to route back to your VPN desktop. 
 
 3. Security
 ------------
@@ -48,6 +46,12 @@ R5.0 (coming in soon)
  - **Disable Spoke VPC local CIDR propagation** is an optional feature that when enabled the Spoke VPC CIDR is not propagated to TGW route table when the Spoke VPC is attached to TGW. One use case is to allow multiple VPCs to be in one Security Domain (share one TGW route table) without the connectivity between them, thus reducing the need to createe a large number of Security Domains in order to build isolation. This optional feature is enable when attaching a VPC at `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_.
  - **Select Spoke VPC route table for programming** is an optional feature that allows you to select which Spoke VPC route tables will be programmed of learned routes propagated from on-prem or other Spoke VPCs. One use case is that certain instances in the VPC do not participate the TGW Orchestrator.  
  - **Management access from On-Prem** allows on-prem to access privately (SSH or HTTPS) the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable. 
+
+6. ActiveMesh and Multi-Site Transit Beta
+--------------------------------------------
+
+Contact Aviatrix sales or support team for preview on ActiveMesh and Multi-site Transit Network. 
+
 
 R4.7.590 (8/23/2019)
 ======================

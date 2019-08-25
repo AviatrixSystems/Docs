@@ -61,12 +61,16 @@ Create Site2Cloud Connection
    | Algorithms                    | Defaults will be used if unchecked.      |
    |                               | See below for more details.              |
    +-------------------------------+------------------------------------------+
+   | IKEv2                         | Select the option to connect to the      |
+   |                               | remote site using IKEv2 protocol.        |
+   +-------------------------------+------------------------------------------+
    | Encryption over ExpressRoute/ | An additional field will be displayed    |
    | DirectConnect                 | if checked.                              |
    +-------------------------------+------------------------------------------+
    | Route Tables to Modify        | Only displayed if Encrypting over        |
-   |                               | DirectConnect/ExpressRoute.              |
-   |                               | Select the specific routes to encrypt    |
+   |                               | DirectConnect/ExpressRoute is selected.  |
+   |                               | Select the specific routes tables to     |
+   |                               | be programmed with remote CIDR routes.   |
    +-------------------------------+------------------------------------------+
    | Enable HA                     | Additional fields are displayed when     |
    |                               | checked                                  |

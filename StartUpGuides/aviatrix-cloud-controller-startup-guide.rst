@@ -22,7 +22,7 @@ The Aviatrix Controller must be launched by a cloudformation script provided by 
 Step 1. Subscribe to an Aviatrix AMI 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have already subscribed an AMI on AWS Marketplace, skip this step and proceed to Step 2.
+If you have already subscribed the Metered AMI on AWS Marketplace, skip this step and proceed to Step 2.
 
 1.1 Subscribe to the AMI  
 ----------------------------------------------------------------
