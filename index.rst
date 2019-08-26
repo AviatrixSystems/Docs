@@ -100,6 +100,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/insane_mode
    HowTos/CloudN_insane_mode
    HowTos/insane_mode_perf
+   HowTos/activemesh_beta
 
 .. _Transit Network:
 
