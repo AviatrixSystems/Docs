@@ -28,32 +28,44 @@ Key variables that affect performance are:
  - Client TCP window size. 
  - The number of TCP streams. 
 
-Performance Test Results
----------------------------
+AWS Performance Test Results
+-------------------------------
 
 The performance test is conducted between a c5n.4xlarge instance in the Spoke VPC and on-prem host machine over a 10Gbps Direct Connect between the Transit VPC and an on-prem datacenter (Equinix co-lo). The physical latency is 5ms. Additional latency is injected into the data path to simulate the latency impact to the end to end throughput. 
 
 
-1. MTU = 9000 Bytes, C5n.4xlarge
-=================================
+1. MTU = 9000 Bytes, AWS C5n.4xlarge
+========================================
 
 |c5n_throughput_9000B|
 
-2. MTU = 1500 Bytes, C5n.4xlarge, on-prem to spoke instance through Transit instance
-======================================================================================
+2. MTU = 1500 Bytes, AWS C5n.4xlarge, on-prem to spoke instance through Transit instance
+===========================================================================================
 
 The test result below is for the end to end encryption performance. Note the Transit gateway does 
 encryption and decryption twice, hence the performance is around 1Gbps. 
 
 |c5n_throughput_1500B|
 
-3. MTU = 1500 Bytes, C5n.4xlarge, instance to instance directly 
-=================================================================
+3. MTU = 1500 Bytes, AWS C5n.4xlarge, instance to instance directly 
+======================================================================
 
 The test result below is for the instance to instance over AWS Peering. 
 
 |throughput_1500B_peering|
 
+Azure Performance Test Results
+--------------------------------
+
+1. MTU = 1500 Bytes, Azure D16_v2, VM to VM directly
+=======================================================
+
+Azure supports only 8 queues on its VM Ethernet interfaces. This limits its performance to 8.23Gbps when running IPERF test.
+
+2. MTU = 4000 Bytes, Azure D16_v2, VM to VM dierctly
+======================================================
+
+For Jumbo frame with MTU 4000 Byte, throughput can reach 12Gbps. 
 
 How to Tune Performance
 --------------------------
