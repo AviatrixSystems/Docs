@@ -57,16 +57,16 @@ The test result below is for the instance to instance over AWS Peering.
 Azure Performance Test Results
 --------------------------------
 
-1. MTU = 1500 Bytes, VM to VM directly
-==================================================================
+====================      ===============================  ====================================
+**Gateway VM Type**       **Throughput with MTU 1500B**    **Throughput with MTU 4000B**
+====================      ===============================  ====================================
+Standard_F32s_v2          8.9Gbps                          13.3Gbps
+Standard_F48s_v2          10.9Gbps                         17.4Gbps
+Standard_D64_v3           8.2Gbps                          12.1Gbps
+Standard_D32_v3           7.1Gbps                          10.9Gbps
+Standard_D5_v2            6.6Gbps                          10.1Gbps
+====================      ===============================  ====================================
 
-
-Azure supports only 8 queues on its VM Ethernet interfaces. This limits its performance to 8.23Gbps when running IPERF test.
-
-2. MTU = 4000 Bytes, Azure D16_v3, VM to VM dierctly
-======================================================
-
-For Jumbo frame with MTU 4000 Byte, throughput can reach 12Gbps. 
 
 How to Tune Performance
 --------------------------
