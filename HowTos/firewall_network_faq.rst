@@ -241,6 +241,27 @@ Can Firewall Network work with Panorama?
 
 Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
 
+What is the failover time?
+----------------------------
+
+Aviatrix FireNet gateway failure detection time is 8 - 10 seconds. The switch over to alternative gateway (primary or backup) is about the same time. 
+
+The Aviatrix Controller monitors the health of the firewall instances. For Pal Alto VM-Series, the Controller
+uses Palo Alto API to periodically check the firewall instance health. The polling time is 10 seconds. However depending 
+on how the instance fails, it can take over a minutes for the failure condition to be detected. For example, 
+if you stop the instance from AWS console, it can take a minute before the API access fails. On the other hand, if the firewall instance interface is shutdown, the failure detection is 10 seconds.  
+
+Why does the primary gateway send packets to backup gateway instead of sending to firewall directly?
+-------------------------------------------------------------------------------------------------------
+
+If the firewall instance is in the same AZ and on the same subnet with the primary gateway, packets are forwarded
+directly from the gateway to the firewall instance. 
+
+However if the firewall instance is in the different AZ and subnet, forwarding packets directly to the firewall instance
+requires AWS route table to be programmed with target as the firewall instance, and as result, there cannot be more
+than one firewall instance in the different AZ, thus losing the scale out capability. 
+
+
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
 

@@ -57,8 +57,9 @@ The test result below is for the instance to instance over AWS Peering.
 Azure Performance Test Results
 --------------------------------
 
-1. MTU = 1500 Bytes, Azure D16_v3, VM to VM directly
-=======================================================
+1. MTU = 1500 Bytes, VM to VM directly
+==================================================================
+
 
 Azure supports only 8 queues on its VM Ethernet interfaces. This limits its performance to 8.23Gbps when running IPERF test.
 
