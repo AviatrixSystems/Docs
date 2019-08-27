@@ -7,17 +7,24 @@
 Secure File Copy to AWS S3 FAQ
 =========================================================
 
-What is Secure File Copy to AWS S3?
-------------------------------------
+What is the security exposure when uploading files to AWS S3?
+---------------------------------------------------------------
 
 AWS Storage Gateway supports the NFS/SMB file interface, volume interface and tape interface to S3, which is useful 
 when you want to use S3 as if it is an NFS or SMB file system. But there are times when the use case is different. 
 
 For example: Developers like to leverage the Direct Connect to copy files to S3 but you are not sure how to enable them in a secure manner. Since S3 is a public service, you must use public VIF to terminate the Direct Connect. This implies all on-prem users can upload to any S3 bucket. 
 
+Even when you use S3 private Endpoint service, the endpoint is still represented by the public CIDR blocks representing AWS S3 in the region as shown below:
+
+|s3_endpoint|
+
 Another example: Your customers need to send data to AWS S3 buckets but you need to apply control to the activities as to which user and which buckets are available to upload objects.
 
-Aviatrix Secure File Copy is a tool that allows your developers to copy files between on-prem  
+What is Aviatrix Secure File Copy to AWS S3?
+-----------------------------------------------
+
+Aviatrix Secure File Copy (SFC) is a tool that allows your developers to copy files between on-prem and S3 
 while enabling you to control from which S3 buckets and from where the file can be copied. 
 
 What are the benefits of Secure File Copy?
@@ -50,45 +57,16 @@ SFC also works in a VPC that connects over the Internet with IPSEC.
 
 
 Is there an additional data charge by going through the Aviatrix gateway?
-------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 No, there is no data charge by AWS for using SFC. Normally AWS charges data transfer for data traffic leaving a VPC, however in this case, data transfer is through an AWS VPC endpoint to S3 which is free of charge. 
 
 
-How to setup SFC with preview release?
-----------------------------------------
-
-Here are the steps for setting up SFC in a preview release.
-
- 1. Custom upgrade to 4.1-sfc-preview.
- #. At the Aviatrix Controller console, create an AWS account with access key and secret key (NOT with IAM roles.)
- #. Launch an Aviatrix gateway in this account in a VPC.
- #. Go to AWS console VPC page to create a VPC endpoint for S3 with the VPC where the gateway was launched.  
- #. At the Aviatrix Controller Console, go to Useful Tools -> Secure File Copy. Select the gateway name and enter the name of the S3 bucket where you need to transfer file to. Leave all other options on default value and click OK. 
- #. Open the security group inbound rules of the gateway instance from AWS Console to allow TCP port 22 from the on-prem network address range. 
- #. Upload a file by using the scp commands with the following syntax. (contact support@aviatrix.com for the private key.)
-
-::
-  
-  scp -i guest_private_key.pem file_to_be_uploaded guest@gateway_private_ip_address:/home/guest/bucket_name/.
-
-What are the known limitations of the preview release?
-------------------------------------------------------
-
- 1. Only one bucket, one private key and one user "guest" are supported. 
- #. If you stop and start the gateway, the mount point cannot be preserved. You need to delete the bucket and create it again. 
- #. IAM roles are not supported.
-
-What to expect in the future official release?
-------------------------------------------------
-
-We expect all limitations stated above to be removed when this feature is officially released. 
-
 .. |sfc| image:: sfc_media/sfc .png
    :scale: 30%
 
-
-.. |main_companion_subnets| image:: transit_dmz_media/main_companion_subnets.png
+.. |s3_endpoint| image:: sfc_media/s3_endpoint .png
    :scale: 30%
+
 
 .. disqus::
