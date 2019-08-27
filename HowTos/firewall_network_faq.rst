@@ -66,7 +66,7 @@ For enterprises that wish to deploy a firewall in AWS, Aviatrix’s FireNet depl
  - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when on-prem route changes or VPC attachment changes. 
 
 Is the FireNet solution recommended by Palo Alto Networks?
--------------------------------------------------------
+--------------------------------------------------------------
 
 Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloaltonetworks.com/partners/alliance>`_ Palo Alto has published the `joint solution brief. <https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/technology-solutions-briefs/palo-alto-networks-and-aviatrix.pdf>`_
 
@@ -166,6 +166,10 @@ If the hash calculation determines the firewall instance is associated with the 
 
 When the HA FireNet gateway receives the packet, it performs exactly the same hash calculation and decides which 
 associated firewall instance it should forward the traffic to. 
+
+The packet flow is illustrated in the diagram below:
+
+|firenet_packet_flow|
 
 How do I configure FireNet?
 ---------------------------
@@ -270,5 +274,7 @@ Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.c
 .. |private_interfaces| image:: firewall_network_workflow_media/private_interfaces.png
    :scale: 30%
 
+.. |firenet_packet_flow| image:: firewall_network_faq_media/firenet_packet_flow.png
+   :scale: 30%
 
 .. disqus::
