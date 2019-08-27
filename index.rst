@@ -324,7 +324,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/reserve_onprem
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
-   HowTos/insane_poc
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
    Solutions/aviatrix_aws_transitvpc
