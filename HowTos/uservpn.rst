@@ -110,6 +110,41 @@ Create VPN Users
 
    |imageAddNewVPNUser|
 
+Export VPN Users
+###############################
+1. Click the export icon. |imageExportVPNUsers|
+2. Check the csv file aviatrix_vpn_users.csv in the Download path.
+
+   .. note::
+
+      If there has been a aviatrix_vpn_users.csv in the Download path already, the OS will rename it to aviatrix_vpn_users(1).csv automatically.
+
+Import VPN Users
+###############################
+
+1. Click the import icon |imageImportVPNUsers|
+#. Select a csv file to import.
+
+    .. note::
+
+      If you are using a MacOS system, the Apple `Number` can open and edit the csv file. It can export a new csv file from "File"->"Export To"->"CSV".
+      If you are using the Excel, it can export a new csv file from "File"->"Save As".
+
+#. Click the Open button to start the process.
+#. Select the default  `VPC ID` and `LB/Gateway Name` from the `Default VPN User Settings` dialog.
+
+    .. note::
+
+      Any empty `VPC ID` field in a csv file will cause a new dialog to select the default `VPC ID`.
+      If all of the `VPC ID` fields are filled in the the csv file, the `Default VPN User Settings` will not pop up.
+      Any record in a csv file with an empty `VPC ID` will be filled with the default settings.
+
+    |imageImportVPNUsersDefaultVPCID|
+
+#. Check the Import Results
+
+    |imageImportVPNUsersResults|
+
 Download VPN User Certificate
 ###############################
 
@@ -160,6 +195,18 @@ Detailed audit logs are maintained and available in various logging platforms.
    :scale: 50%
 
 .. |download_vpnfile| image:: uservpn_media/download_vpnfile.png
+   :scale: 30%
+
+.. |imageImportVPNUsers| image:: uservpn_media/import_vpn_users.png
+   :scale: 100%
+
+.. |imageExportVPNUsers| image:: uservpn_media/export_vpn_users.png
+   :scale: 100%
+
+.. |imageImportVPNUsersDefaultVPCID| image:: uservpn_media/import_vpn_users_default_vpn_settings.png
+   :scale: 30%
+
+.. |imageImportVPNUsersResults| image:: uservpn_media/import_vpn_users_results.png
    :scale: 30%
 
 OpenVPN is a registered trademark of OpenVPN Inc.
