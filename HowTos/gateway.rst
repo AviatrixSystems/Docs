@@ -54,10 +54,12 @@ based on iperf tests conducted between two gateways of the same size:
 +----------------------------+-------------------------------------------------+
 | c5.2xlarge, c5.4xlarge     | 2Gbps - 2.5Gbps                                 |
 +----------------------------+-------------------------------------------------+
+| c5n.2xlarge, c5n.4xlarge   | 4Gbps - 4.5Gbps (Jumbo Frame)                   |
++----------------------------+-------------------------------------------------+
 
 .. note::
 
-   If you need IPSec performance beyond 1.2Gbps - 1.5Gbps, refer to `Cluster Peering. <./Cluster_Peering_Ref_Design.html>`__
+   If you need IPSec performance beyond 2Gbps, refer to `Aviatrix Insane Mode. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
 Specify a Reachable DNS Server IP Address
 ------------------------------------------
@@ -479,7 +481,7 @@ gateways send keepalives and how often the Controller processes these message, w
 ===========================      =======================   =============================
 **Template name**                Gateway sends keepalive   Controller runs health checks
 ===========================      =======================   =============================
-Fast                             every 3 seconds           every 15 seconds
+Fast                             every 3 seconds           every 7 seconds
 Medium                           every 12 seconds          every 1 minute
 Slow                             every 1 minute            every 5 minute
 ===========================      =======================   =============================
@@ -604,6 +606,16 @@ and on-prem routes learned by this Transit Gateway.
 One use case is a connected multi site on-prem network, where each site is connected to the cloud via
 Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In such case, each Transit Gateway
 learns all Spoke VPCs and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC has a redundant route to on-prem.
+
+IPv6
+------
+
+IPv6 can be enabled on an Aviatrix gateway. The use case is to use IPv6 to resolve overlapping VPC CIDRs when doing encrypted peering. This use case requires both the VPC and EC2 instances have IPv6 enabled. 
+
+ActiveMesh Mode
+----------------
+
+When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and backup gateway forward packets in ECMP and active/active state.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
