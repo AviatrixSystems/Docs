@@ -417,6 +417,23 @@ $0.03 is counted each hour when the VPN user is connected to the Aviatrix VPN ga
 Aviatrix Controller monitors the active VPN sessions and reports to AWS Marketplace engine every hour the number of active VPN sessions in the last hour. Note when a VPN user connects, 
 the session is counted for the next hour.
 
+Can you explain the AWS Marketplace Metered AMI pricing models?
+------------------------------------------------------------------
+
+Aviatrix Metered AMI in the AWS Marketplace is a multi dimensions pay as you consume model. Each price unit
+represents one or more use cases. You are charged for the specific use case you consume. For example, "Number of User or Client SSL VPN Connections" is $0.03/hour/connection, which means if you deploy User VPN use case, each client connection is charged for $0.03/hour while the VPN client is connected. Once the VPN client disconnects, the charge stops. 
+
+The details are explained in the table below. 
+
+=============================================================      ===============    ==============================
+**Unit Type**                                                      **Cost/Unite**     **Use Case**
+=============================================================      ===============    ==============================
+Number of VPC-to-VPC IPSec Tunnel Connections within AWS            $0.16             TGW VPC attachment, Aviatrix Spoke VPC attachment, encrypted peering, Transit Peering
+Number of User or Client SSL VPN Connections                        $0.03             User VPN 
+Number of Gateways running Security Services                        $0.16             Aviatrix gateways with FQDN service
+Number of VPC to Site or Multi cloud IPSec Tunnel Connections       $0.48             Site2Cloud use case
+=============================================================      ===============    ==============================
+
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
