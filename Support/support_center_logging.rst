@@ -90,3 +90,9 @@ Can I upgrade the Sumo agent in my Controller and Gateways?
 We include a Sumo agent in our software but it might not be the latest. Aviatrix release 4.3 and later will let you update this agent from your Sumo Web Interface.
 Go to - Manage Data > Collection > Collection ==>Upgrade Collectors link in the page > Update All/individual collectors from the "Upgrade Collectors" collectors
 or, by clicking an individual collector and doing an upgrade/downgrade
+
+
+What are  the instance size requirements if I use Sumo?
+---------------------------------------------------------- 
+
+Sumo Logic's agent is memory intensive and we recommend that you use at least a t3.small instance. If you use any smaller instance, it could cause unexpected failures in your controller and gateways.
