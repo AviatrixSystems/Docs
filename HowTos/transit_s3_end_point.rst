@@ -185,7 +185,7 @@ Step 7. Verify S3 traffic flow
   
       |SPOKE_AWS_S3_CLI|
       
-      |SPOKE_ENDPOINT_PACKET_CAPTURE_TUN|
+      |SPOKE_SHARED_SPOKE_TUN|
       
       |SPOKE_SHARED_SPOKE_ETH0|
 
