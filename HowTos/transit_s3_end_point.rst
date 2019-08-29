@@ -1,132 +1,103 @@
-﻿.. meta::
-   :description: Aviatrix NEXT GEN TRANSIT with customized SNAT and DNAT features
-   :keywords: VGW, SNAT, DNAT, Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
-
+.. meta::
+   :description: Aviatrix Global Transit Network with AWS S3 end point
+   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN, AWS S3 service
 
 =========================================================================================
-Aviatrix NEXT GEN TRANSIT with customized SNAT and DNAT features
+Aviatrix Global Transit Network with AWS S3 end point
 =========================================================================================
 
 This technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
 
-1. Spoke VPCs in Cloud need to communicate with On-Prem
+1. Establsih Aviatrix Global Transit Network
 
-  - https://docs.aviatrix.com/HowTos/tgw_faq.html
+  - https://docs.aviatrix.com/HowTos/transitvpc_workflow.html
 
-  - https://docs.aviatrix.com/HowTos/tgw_plan.html
+2. Configure AWS Endpoint for Amazon S3 in a Shared Service VPC
 
-  - https://docs.aviatrix.com/HowTos/tgw_build.html
+  - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
 
-2. On-Prem is not able to route RFC 1918 traffic to Cloud
+3. On-Prem privately connects to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in a specific region
 
-  - Perform Customized SNAT feature for the traffic from Cloud to On-Prem
-
-  - Perform DNAT feature for the traffic from On-Prem to Cloud 
-
+4. Spoke VPCs privately connect to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in a specific region
 
 Topology:
 
-  1. Aviatrix NEXT GEN TRANSIT FOR AWS
+  1. Aviatrix Global Transit Network FOR AWS
 
-    - Spoke VPCs * 2 (for example: 10.1.0.0/16, 10.2.0.0/16)
+    - Spoke VPCs * 3 (for example: 192.168.1.0/24, 192.168.2.0/24, 192.168.99.0/24 [Shared Service Spoke VPC])
 
     - Transit VPC * 1 (for example: 192.168.100.0/24)
 
     - AWS VGW
 
-  2. On-Prem routable CIDR (for example: 99.0.0.0/8)
+  2. On-Prem CIDR (for example: 10.3.0.0/16)
+  
+  3. End point for Amazon S3/Bucket service in region us-east-1 
 
-|SNAT_DNAT_TRANSIT_SOLUTION|
+|S3_ENDPOINT_TRANSIT_SOLUTION|
 
 Scenario:
 
-  1. Traffic from Cloud to On-Prem
+  1. Traffic from On-Prem to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
+    
+  - Traffic which is sent from On-Prem to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NAT on Aviatrix Spoke Gateway in the Shared Service VPC.
+    
 
-    - When a packet sent from Spoke VPCs in Cloud enters the Aviatrix Transit Gateway, the packet’s source address needs to be changed to an IP that On-Prem is routable. (Source address translation)
+  2. Traffic from Spoke VPCs to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
+  
+  - Traffic which is sent from Spoke VPCs in cloud to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NAT on Aviatrix Spoke Gateway in the Shared Service VPC.
+    
+Notes:
 
-  2. Traffic from On-Prem to Cloud
-
-    - When a packet sent from On-Prem enters the Aviatrix Transit Gateway, the packet’s destination address needs to be changed from an IP within the On-Prem routable CIDR to an IP belonging to a service in Spoke VPCs in Cloud. (Destination address translation)
+  1. AWS S3 service/S3 bucket has different public CIDR range regarding to region. Here is the link for AWS service CIDR: https://ip-ranges.amazonaws.com/ip-ranges.json Additionally, those S3 service CIDR can be found on end point routing entry on AWS routing table.
+  
+  2. Since AWS S3 end point changes 'the source IPv4 addresses from instances in your affected subnets as received by Amazon S3 change from public IPv4 addresses to the private IPv4 addresses from your VPC', we need to perform source NAT function on Aviatrix Spoke Gateway in the Shared Service VPC for the traffic from On-Prem or other Spoke VPCs to reach AWS S3 service/S3 buckets via AWS end point properly. https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
+  
+  3. Users from on-prem or other Spoke VPCs can access only S3 buckets which are in the same region as the Shared Service Spoke VPC locates.
+  
+  4. Need to customize VPC endpoint policy to restricting access to a specific bucket.
 
 Follow the steps below to set up for the scenario.
 
 Step 1. Prerequisite
 -------------------------
 
-1.1. Upgrade the Aviatrix Controller to at least version UserConnect-4.7.386
+1.1. Upgrade the Aviatrix Controller to at least version UserConnect-4.7.591
 
   - https://docs.aviatrix.com/HowTos/inline_upgrade.html
 
-1.2. Prepare an IP mapping table for SNAT and DNAT configuration.
+1.2. Prepare a region where both S3 buckets and Shared Service VPC locate (for example: us-east-1). Notes: this solution only can access the S3 Service/S3 Bucket in the same region where the Shared Service Spoke VPC locate.
 
-  SNAT configuration
 
-    - Prepare two On-Prem routable IPs (one for the Aviatrix Transit Gateway; one for the Aviatrix Transit HA Gateway if needed)
-
-    ::
-
-      Example: 
-      Transit Primary Gateway: 99.0.0.1/32
-      Transit HA Gateway: 99.0.0.2/32
-
-  DNAT configuration
-
-    - Prepare a list of IP mapping tables for the On-Prem routable CIDR to a service in Spoke VPCs corresponding to your topology
-
-    - A service might be an IP belonging to Load Balancer or EIP
-
-    ::
-
-      Example:
-      99.1.0.98 <--> 10.1.0.98
-      99.2.0.243 <--> 10.2.0.243
-
-Step 2. Build Aviatrix NEXT GEN TRANSIT FOR AWS
+Step 2. Build Aviatrix Global Transit Network FOR AWS
 -------------------------
 
-  - follow steps 1, 2, 3, 4, 4.1, 5, and 6 in the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
+  - build the topology by following the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
 
-Step 3. Perform a Manual BGP Advertised Network List feature on the tunnel between Aviatrix Transit GW and AWS VGW
+
+Step 3. Deploy AWS S3 end point in Shared Service VPC
 -------------------------
 
-  - https://docs.aviatrix.com/HowTos/site2cloud.html#manual-bgp-advertised-network-list
-
-This action will advertise the On-Prem routable CIDR to On-Prem via BGP session.
-
-  ::
-
-    Example: 
-    On-Prem routable CIDR: 99.0.0.0/8
-
-To configure:
-
-  3.1. Go to the Site2Cloud page and click on the tunnel between Aviatrix Transit Gateway and AWS VGW
+  - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
   
-  3.2. Scroll down to the Manual BGP Advertised Network List
-  
-  3.3. Enter the value of the On-Prem routable CIDR
-  
-    - for example: 99.0.0.0/8
-  
-  3.4. Click the button "Change BGP Manual Spoke Advertisement"
+  - ensure the AWS subnet/routing table where Aviatrix Spoke gateway locates is selected when AWS S3 end point is created
 
 
-Step 4. Configure Aviatrix Customized SNAT function on both Transit Primary Gateway and Transit HA Gateway 
+Step 4. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway in Shared Service VPC
 -------------------------
 
   - https://docs.aviatrix.com/HowTos/gateway.html#customized-snat
 
-This action changes the packet’s source IP address from Spoke VPCs in the Cloud to an IP which belongs to an On-Prem routable CIDR.
+This action changes the packet’s source IP address from On-Prem or other Spoke VPCs in the Cloud to the private IP of Aviatrix Spoke Gateway in Shared Service VPC.
 
   ::
 
     Example: 
-    Transit Primary Gateway: traffic from spoke VPCs 10.1.0.0/16 and 10.2.0.0/16 translates to IP 99.0.0.1
-    Transit HA Gateway: traffic from spoke VPCs 10.1.0.0/16 and 10.2.0.0/16 translates to IP 99.0.0.2
+    Spoke Gateway: traffic to the IP range of AWS S3 Service in region us-east-1 (for example: 54.231.0.0/17 and 52.216.0.0/15) translates to IP 192.168.99.18
 
 To configure:
 
-  4.1. Go to the Gateway page, click on the Transit Primary Gateway first. Click Edit.
+  4.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first in Shared Service VPC. Click Edit.
 
   4.2. Continue on to the Edit page, scroll to SNAT. Select Customized SNAT.
 
@@ -134,8 +105,8 @@ To configure:
 
   4.4. Click Add New
 
-  4.5. Enter fields for Src CIDR, protocol, Interface (select the one with VGW) and SNAT IPs as below example.
-  
+  4.5. Enter fields for Src CIDR, protocol, Interface (select Interface eth0) and SNAT IP as below example.
+    
   4.6. Click Save
   
   4.7. Repeat the above steps for more entries.
@@ -146,94 +117,50 @@ To configure:
 
   4.9. Go to Gateway page, click on the Transit HA Gateway. Click Edit.
 
-  4.10. Repeat the above steps to configure Customized SNAT for Transit HA Gateway as shown in the example below.
-  
-    |SNAT_TRANSIT_HA|
 
-
-Step 5. Configure Aviatrix Customized DNAT function on the Transit Primary Gateway
+Step 5. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway in the Shared Service VPC
 -------------------------
 
-  - https://docs.aviatrix.com/HowTos/gateway.html#destination-nat
+  - https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs
 
-This action instructs the gateway to translate the destination address from an IP within the On-Prem routable CIDR to an IP belong to a service in Spoke VPCs in Cloud.
+This action will advertise the customized routes to On-Prem via BGP session and other Aviatrix Spoke Gateways if the function Connected Transit is enabled.
 
   ::
 
-    Example:
-    99.1.0.98/32 <--> 10.1.0.98
-    99.2.0.243/32 <--> 10.2.0.243
+    Example: 
+    AWS S3 service CIDR in region us-east-1: 54.231.0.0/17 and 52.216.0.0/15
 
 To configure:
 
-  5.1. Go to the Gateway page and click on the Transit Primary Gateway. Click Edit.
+  5.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first in Shared Service VPC. Click Edit.
 
-  5.2. Scroll down to “Destination NAT”, click Add/Edit DNAT
-
-  5.3. Click Add/Edit DNAT
-
-  5.4. Click Add New
-
-  5.5. Enter fields for Destination CIDR, protocol, Interface (select the one with VGW) and DNAT IPs as below example.
- 
-    |DNAT_TRANSIT_PRIMARY|
-
-  5.6. Click Save
-
-  5.7. Repeat steps 5.4, 5.5, and 5.6 for multiple entries.
-
-  5.8. Click Update to commit.
-
-
-Step 6. Attach spoke VPCs to an AWS Transit Gateway (TGW)
--------------------------
-
-  - https://docs.aviatrix.com/HowTos/tgw_build.html
-
-
-Step 7. Verify traffic flow
--------------------------
-
-  7.1. SNAT
+  5.2. Continue on to the Edit page, scroll to Customize Spoke Advertised VPC CIDRs.
   
-    - Traffic from Spoke VPC 10.1.0.0/16 to On-Prem
+  5.3. Enter the value of the On-Prem routable CIDR
+  
+    - for example: 54.231.0.0/17,52.216.0.0/15,192.168.99.0/24
+    
+    - notes: 192.168.99.0/24 in this example is the Shared Service VPC CIDR
+  
+  5.4. Click the button "Save"
+
+
+Step 6. Perform Connected Transit feature to build a full mesh network where Spoke VPCs communicate with each other via Transit GW
+-------------------------
+
+  - https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit
+
+
+Step 7. Verify S3 traffic flow
+-------------------------
+
+  7.1. Traffic from On-Prem -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
     
       |SNAT_10_1|
     
-    - Traffic from Spoke VPC 10.2.0.0/16 to On-Prem
-    
-      |SNAT_10_2|
-
-  7.2. DNAT
+  7.2. Traffic from Spoke -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
   
-    - Traffic from On-Prem to Spoke VPC 10.1.0.0/16
-    
       |DNAT_99_1|
-    
-    - Traffic from On-Prem to Spoke VPC 10.2.0.0/16
-    
-      |DNAT_99_2|
-
-  7.3. SNAT (failover to Transit HA gateway)
-  
-    - Traffic from Spoke VPC 10.1.0.0/16 to On-Prem
-    
-      |SNAT_FAILOVER_10_1|
-    
-    - Traffic from Spoke VPC 10.2.0.0/16 to On-Prem
-
-      |SNAT_FAILOVER_10_2|
-
-  7.4. DNAT (failover to Transit HA gateway)
-
-    - Traffic from On-Prem to Spoke VPC 10.1.0.0/16
-    
-      |DNAT_FAILOVER_99_1|
-    
-    - Traffic from On-Prem to Spoke VPC 10.2.0.0/16
-    
-      |DNAT_FAILOVER_99_2|
-
 
 .. |SNAT_DNAT_TRANSIT_SOLUTION| image:: transit_snat_dnat_media/SNAT_DNAT_TRANSIT_SOLUTION.png
    :scale: 30%
