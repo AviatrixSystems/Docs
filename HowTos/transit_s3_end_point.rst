@@ -175,19 +175,19 @@ Step 7. Verify S3 traffic flow
 
   7.1. Traffic from On-Prem -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
     
-      |ONPREM_ENDPOINT_S3|
+      |ONPREM_AWS_S3_CLI|
       
-      |ONPREM_ENDPOINT_PACKET_CAPTURE_TUN|
+      |ONPREM_SHARED_SPOKE_TUN|
       
-      |ONPREM_ENDPOINT_PACKET_CAPTURE_ETH0|
+      |ONPREM_SHARED_SPOKE_ETH0|
     
   7.2. Traffic from Spoke -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
   
-      |SPOKE_ENDPOINT_S3|
+      |SPOKE_AWS_S3_CLI|
       
       |SPOKE_ENDPOINT_PACKET_CAPTURE_TUN|
       
-      |SPOKE_ENDPOINT_PACKET_CAPTURE_ETH0|
+      |SPOKE_SHARED_SPOKE_ETH0|
 
 .. |S3_ENDPOINT_TRANSIT_SOLUTION| image:: transit_s3_end_point/S3_ENDPOINT_TRANSIT_SOLUTION.png
    :scale: 30%
@@ -201,22 +201,22 @@ Step 7. Verify S3 traffic flow
 .. |SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS| image:: transit_s3_end_point/SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS.png
    :scale: 30%
 
-.. |ONPREM_ENDPOINT_S3| image:: transit_s3_end_point/ONPREM_ENDPOINT_S3.png
+.. |ONPREM_AWS_S3_CLI| image:: transit_s3_end_point/ONPREM_AWS_S3_CLI.png
    :scale: 30%
 
-.. |ONPREM_ENDPOINT_PACKET_CAPTURE_TUN| image:: transit_s3_end_point/ONPREM_ENDPOINT_PACKET_CAPTURE_TUN.png
+.. |ONPREM_SHARED_SPOKE_TUN| image:: transit_s3_end_point/ONPREM_SHARED_SPOKE_TUN.png
    :scale: 30%
    
-.. |ONPREM_ENDPOINT_PACKET_CAPTURE_ETH0| image:: transit_s3_end_point/ONPREM_ENDPOINT_PACKET_CAPTURE_ETH0.png
+.. |ONPREM_SHARED_SPOKE_ETH0| image:: transit_s3_end_point/ONPREM_SHARED_SPOKE_ETH0.png
    :scale: 30%
 
-.. |SPOKE_ENDPOINT_S3| image:: transit_s3_end_point/SPOKE_ENDPOINT_S3.png
+.. |SPOKE_AWS_S3_CLI| image:: transit_s3_end_point/SPOKE_AWS_S3_CLI.png
    :scale: 30%
    
-.. |SPOKE_ENDPOINT_PACKET_CAPTURE_TUN| image:: transit_s3_end_point/SPOKE_ENDPOINT_PACKET_CAPTURE_TUN.png
+.. |SPOKE_SHARED_SPOKE_TUN| image:: transit_s3_end_point/SPOKE_SHARED_SPOKE_TUN.png
    :scale: 30%
 
-.. |SPOKE_ENDPOINT_PACKET_CAPTURE_ETH0| image:: transit_s3_end_point/SPOKE_ENDPOINT_PACKET_CAPTURE_ETH0.png
+.. |SPOKE_SHARED_SPOKE_ETH0| image:: transit_s3_end_point/SPOKE_SHARED_SPOKE_ETH0.png
    :scale: 30%
 
 .. disqus::
