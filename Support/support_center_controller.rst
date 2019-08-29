@@ -40,7 +40,7 @@ During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 &
 Why should I upgrade my Controller Software?
 ----------------------------------------------
 
-Our engineering team works very hard to fix issues on a continuous basis. We also continue to add new features and try to enhance the systems to keep your network working effectively and securely. Please take advantage of this and stay on the latest releases.  `Controller upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ does not affect your tunnels. Please keep your controller's size at > t2.large and please don't encrypt the root devices!
+Our engineering team works very hard to fix issues on a continuous basis. We also continue to add new features and try to enhance the systems to keep your network working effectively and securely. Please take advantage of this and stay on the latest releases.  `Controller upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ does not affect your tunnels. Please keep your controller's size at > t2.large!
 
 
 Does Aviatrix Controller support automation?
