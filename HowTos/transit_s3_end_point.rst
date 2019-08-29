@@ -39,7 +39,13 @@ Topology:
     Shared Service Spoke VPC: 192.168.99.0/24 [region us-east-1]
     Transit VPC: 192.168.100.0/24
 
-  2. On-Prem CIDR (for example: 10.3.0.0/16)
+  2. On-Prem CIDR 
+  
+  ::
+
+    Example: 
+    
+    On-Prem: 10.3.0.0/16
   
   3. End point for Amazon S3/Bucket service in region us-east-1
 
@@ -49,7 +55,7 @@ Scenario:
 
   1. Traffic from On-Prem to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
     
-  - Traffic which is sent from On-Prem to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NAT on Aviatrix Spoke Gateway in the Shared Service VPC.
+  - Traffic which is sent from On-Prem to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NATed on Aviatrix Spoke Gateway in the Shared Service VPC.
     
 
   2. Traffic from Spoke VPCs to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
@@ -59,6 +65,8 @@ Scenario:
 Notes:
 
   1. AWS S3 service/S3 bucket has different public CIDR range regarding to region. Here is the link for AWS service CIDR: https://ip-ranges.amazonaws.com/ip-ranges.json Additionally, those S3 service CIDR can be found on end point routing entry on AWS routing table.
+  
+  |AWS_S3_ENDPOINT|
   
   2. Since AWS S3 end point changes 'the source IPv4 addresses from instances in your affected subnets as received by Amazon S3 change from public IPv4 addresses to the private IPv4 addresses from your VPC', we need to perform source NAT function on Aviatrix Spoke Gateway in the Shared Service VPC for the traffic from On-Prem or other Spoke VPCs to reach AWS S3 service/S3 buckets via AWS end point properly. https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
   
@@ -81,7 +89,7 @@ Step 1. Prerequisite
 Step 2. Build Aviatrix Global Transit Network FOR AWS
 -------------------------
 
-  - build the topology by following the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
+  - deploy the topology by following the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
 
 
 Step 3. Deploy AWS S3 end point in Shared Service VPC
@@ -89,9 +97,7 @@ Step 3. Deploy AWS S3 end point in Shared Service VPC
 
   - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
   
-  - ensure the AWS subnet/routing table where Aviatrix Spoke gateway locates is selected when AWS S3 end point is created
-
-|AWS_S3_ENDPOINT|
+  - ensure the AWS subnet/routing table where Aviatrix Shared Service Spoke gateway locates is selected when AWS S3 end point is created
 
 Step 4. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway in Shared Service VPC
 -------------------------
@@ -103,6 +109,7 @@ This action changes the packet’s source IP address from On-Prem or other Spoke
   ::
 
     Example: 
+    
     Spoke Gateway: traffic to the IP range of AWS S3 Service in region us-east-1 (for example: 54.231.0.0/17 and 52.216.0.0/15) translates to IP 192.168.99.18
 
 To configure:
@@ -140,6 +147,7 @@ This action will advertise the customized routes to On-Prem via BGP session and 
   ::
 
     Example: 
+    
     AWS S3 service CIDR in region us-east-1: 54.231.0.0/17 and 52.216.0.0/15
 
 To configure:
@@ -173,19 +181,31 @@ To configure:
 Step 7. Verify S3 traffic flow
 -------------------------
 
-  7.1. Traffic from On-Prem -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
-    
+  7.1. Traffic from On-Prem -> Transit -> Shared Service Spoke -> AWS S3 service/S3 bucket
+  
+  - Issue AWS S3 CLI from On-Prem
+   
       |ONPREM_AWS_S3_CLI|
+      
+  - Execute packet capture on the tunnel interface of Aviatrix Shared Service Spoke
       
       |ONPREM_SHARED_SPOKE_TUN|
       
+  - Execute packet capture on the eth0 interface of Aviatrix Shared Service Spoke and check whether On-Prem IP has been sourced NATed to the private IP of the eth0 interface of Aviatrix Shared Service Spoke
+      
       |ONPREM_SHARED_SPOKE_ETH0|
     
-  7.2. Traffic from Spoke -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
+  7.2. Traffic from Spoke -> Transit -> Shared Service Spoke -> AWS S3 service/S3 bucket
+  
+  - Issue AWS S3 CLI from Spoke VPC
   
       |SPOKE_AWS_S3_CLI|
       
+  - Execute packet capture on the tunnel interface of Aviatrix Shared Service Spoke
+      
       |SPOKE_SHARED_SPOKE_TUN|
+      
+  - Execute packet capture on the eth0 interface of Aviatrix Shared Service Spoke and check whether Spoke VPC's IP has been sourced NATed to the private IP of the eth0 interface of Aviatrix Shared Service Spoke
       
       |SPOKE_SHARED_SPOKE_ETH0|
 
@@ -202,7 +222,7 @@ Step 7. Verify S3 traffic flow
    :scale: 30%
 
 .. |ONPREM_AWS_S3_CLI| image:: transit_s3_end_point/ONPREM_AWS_S3_CLI.png
-   :scale: 30%
+   :scale: 10%
 
 .. |ONPREM_SHARED_SPOKE_TUN| image:: transit_s3_end_point/ONPREM_SHARED_SPOKE_TUN.png
    :scale: 30%
@@ -211,7 +231,7 @@ Step 7. Verify S3 traffic flow
    :scale: 30%
 
 .. |SPOKE_AWS_S3_CLI| image:: transit_s3_end_point/SPOKE_AWS_S3_CLI.png
-   :scale: 30%
+   :scale: 10%
    
 .. |SPOKE_SHARED_SPOKE_TUN| image:: transit_s3_end_point/SPOKE_SHARED_SPOKE_TUN.png
    :scale: 30%
