@@ -8,11 +8,11 @@ Aviatrix Global Transit Network with AWS S3 end point
 
 This technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
 
-1. Establsih Aviatrix Global Transit Network
+1. Deploy Aviatrix Global Transit Network
 
   - https://docs.aviatrix.com/HowTos/transitvpc_workflow.html
 
-2. Configure AWS Endpoint for Amazon S3 in a Shared Service VPC
+2. Deploy AWS Endpoint for Amazon S3 in a Shared Service VPC
 
   - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
 
@@ -91,6 +91,7 @@ Step 3. Deploy AWS S3 end point in Shared Service VPC
   
   - ensure the AWS subnet/routing table where Aviatrix Spoke gateway locates is selected when AWS S3 end point is created
 
+|AWS_S3_ENDPOINT|
 
 Step 4. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway in Shared Service VPC
 -------------------------
@@ -176,15 +177,22 @@ Step 7. Verify S3 traffic flow
     
       |ONPREM_ENDPOINT_S3|
       
-      |ONPREM_ENDPOINT_PACKET_CAPTURE|
+      |ONPREM_ENDPOINT_PACKET_CAPTURE_TUN|
+      
+      |ONPREM_ENDPOINT_PACKET_CAPTURE_ETH0|
     
   7.2. Traffic from Spoke -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
   
-      |SPOKE_ENDPOINT|
+      |SPOKE_ENDPOINT_S3|
       
-      |SPOKE_ENDPOINT_PACKET_CAPTURE|
+      |SPOKE_ENDPOINT_PACKET_CAPTURE_TUN|
+      
+      |SPOKE_ENDPOINT_PACKET_CAPTURE_ETH0|
 
 .. |S3_ENDPOINT_TRANSIT_SOLUTION| image:: transit_s3_end_point/S3_ENDPOINT_TRANSIT_SOLUTION.png
+   :scale: 30%
+
+.. |AWS_S3_ENDPOINT| image:: transit_s3_end_point/AWS_S3_ENDPOINT.png
    :scale: 30%
 
 .. |SNAT_SHARED_SERVICE_SPOKE_PRIMARY| image:: transit_s3_end_point/SNAT_SHARED_SERVICE_SPOKE_PRIMARY.png
@@ -193,16 +201,22 @@ Step 7. Verify S3 traffic flow
 .. |SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS| image:: transit_s3_end_point/SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS.png
    :scale: 30%
 
-.. |ONPREM_ENDPOINT| image:: transit_s3_end_point/ONPREM_ENDPOINT.png
+.. |ONPREM_ENDPOINT_S3| image:: transit_s3_end_point/ONPREM_ENDPOINT_S3.png
    :scale: 30%
 
-.. |ONPREM_ENDPOINT_PACKET_CAPTURE| image:: transit_s3_end_point/ONPREM_ENDPOINT_PACKET_CAPTURE.png
-   :scale: 30%
-
-.. |SPOKE_ENDPOINT| image:: transit_s3_end_point/SPOKE_ENDPOINT.png
+.. |ONPREM_ENDPOINT_PACKET_CAPTURE_TUN| image:: transit_s3_end_point/ONPREM_ENDPOINT_PACKET_CAPTURE_TUN.png
    :scale: 30%
    
-.. |SPOKE_ENDPOINT_PACKET_CAPTURE| image:: transit_s3_end_point/SPOKE_ENDPOINT_PACKET_CAPTURE.png
+.. |ONPREM_ENDPOINT_PACKET_CAPTURE_ETH0| image:: transit_s3_end_point/ONPREM_ENDPOINT_PACKET_CAPTURE_ETH0.png
+   :scale: 30%
+
+.. |SPOKE_ENDPOINT_S3| image:: transit_s3_end_point/SPOKE_ENDPOINT_S3.png
+   :scale: 30%
+   
+.. |SPOKE_ENDPOINT_PACKET_CAPTURE_TUN| image:: transit_s3_end_point/SPOKE_ENDPOINT_PACKET_CAPTURE_TUN.png
+   :scale: 30%
+
+.. |SPOKE_ENDPOINT_PACKET_CAPTURE_ETH0| image:: transit_s3_end_point/SPOKE_ENDPOINT_PACKET_CAPTURE_ETH0.png
    :scale: 30%
 
 .. disqus::
