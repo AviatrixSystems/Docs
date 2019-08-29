@@ -22,13 +22,22 @@ This technical note provides a step-by-step configuration on the Aviatrix contro
 
 Topology:
 
-  1. Aviatrix Global Transit Network FOR AWS
+  1. Aviatrix Global Transit Network for AWS
 
-    - Spoke VPCs * 3 (for example: 192.168.1.0/24, 192.168.2.0/24, 192.168.99.0/24 [Shared Service Spoke VPC in region us-east-1])
-
-    - Transit VPC * 1 (for example: 192.168.100.0/24)
-
+    - Spoke VPCs * 3 
+    
+    - Transit VPC * 1
+    
     - AWS VGW
+
+  ::
+
+    Example: 
+    
+    Spoke VPC 1: 192.168.1.0/24
+    Spoke VPC 2: 192.168.2.0/24
+    Shared Service Spoke VPC: 192.168.99.0/24 [region us-east-1]
+    Transit VPC: 192.168.100.0/24
 
   2. On-Prem CIDR (for example: 10.3.0.0/16)
   
@@ -125,7 +134,7 @@ Step 5. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spo
 
   - https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs
 
-This action will advertise the customized routes to On-Prem via BGP session and other Aviatrix Spoke Gateways if the function Connected Transit is enabled.
+This action will advertise the customized routes to On-Prem via BGP session and other Aviatrix Spoke Gateways if the function Connected Transit is enabled. 
 
   ::
 
@@ -145,12 +154,19 @@ To configure:
     - notes: 192.168.99.0/24 in this example is the Shared Service VPC CIDR
   
   5.4. Click the button "Save"
-
+  
+  |SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS|
 
 Step 6. Perform Connected Transit feature to build a full mesh network where Spoke VPCs communicate with each other via Transit GW
 -------------------------
 
   - https://docs.aviatrix.com/HowTos/site2cloud.html#connected-transit
+  
+To configure:
+
+  6.1 Go to the Transit Network -> Advanced Config -> Edit Transit
+  
+  6.2 Click the toggle button on "Connected Transit"
 
 
 Step 7. Verify S3 traffic flow
@@ -158,22 +174,35 @@ Step 7. Verify S3 traffic flow
 
   7.1. Traffic from On-Prem -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
     
-      |ONPREM_ENDPOINT|
+      |ONPREM_ENDPOINT_S3|
+      
+      |ONPREM_ENDPOINT_PACKET_CAPTURE|
     
   7.2. Traffic from Spoke -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
   
       |SPOKE_ENDPOINT|
+      
+      |SPOKE_ENDPOINT_PACKET_CAPTURE|
 
-.. |S3_ENDPOINT_TRANSIT_SOLUTION| image:: transit_snat_dnat_media/SNAT_DNAT_TRANSIT_SOLUTION.png
+.. |S3_ENDPOINT_TRANSIT_SOLUTION| image:: transit_s3_end_point/S3_ENDPOINT_TRANSIT_SOLUTION.png
    :scale: 30%
 
-.. |SNAT_SHARED_SERVICE_SPOKE_PRIMARY| image:: transit_snat_dnat_media/SNAT_TRANSIT_PRIMARY.png
+.. |SNAT_SHARED_SERVICE_SPOKE_PRIMARY| image:: transit_s3_end_point/SNAT_SHARED_SERVICE_SPOKE_PRIMARY.png
    :scale: 30%
 
-.. |ONPREM_ENDPOINT| image:: transit_snat_dnat_media/SNAT_TRANSIT_HA.png
+.. |SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS| image:: transit_s3_end_point/SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS.png
    :scale: 30%
 
-.. |SPOKE_ENDPOINT| image:: transit_snat_dnat_media/DNAT_TRANSIT_PRIMARY.png
+.. |ONPREM_ENDPOINT| image:: transit_s3_end_point/ONPREM_ENDPOINT.png
+   :scale: 30%
+
+.. |ONPREM_ENDPOINT_PACKET_CAPTURE| image:: transit_s3_end_point/ONPREM_ENDPOINT_PACKET_CAPTURE.png
+   :scale: 30%
+
+.. |SPOKE_ENDPOINT| image:: transit_s3_end_point/SPOKE_ENDPOINT.png
+   :scale: 30%
+   
+.. |SPOKE_ENDPOINT_PACKET_CAPTURE| image:: transit_s3_end_point/SPOKE_ENDPOINT_PACKET_CAPTURE.png
    :scale: 30%
 
 .. disqus::
