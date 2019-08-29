@@ -113,11 +113,11 @@ Create VPN Users
 Export VPN Users
 ###############################
 1. Click the export icon. |imageExportVPNUsers|
-2. Check the csv file aviatrix_vpn_users.csv in the Download path.
+2. Check the csv file aviatrix_vpn_users.csv in the Download folder.
 
    .. note::
 
-      If there has been a aviatrix_vpn_users.csv in the Download path already, the OS will rename it to aviatrix_vpn_users(1).csv automatically.
+      If there has been an aviatrix_vpn_users.csv in the Download folder already, the OS will rename the new file with aviatrix_vpn_users(1).csv automatically.
 
 Import VPN Users
 ###############################
@@ -127,17 +127,17 @@ Import VPN Users
 
     .. note::
 
-      If you are using a MacOS system, the Apple `Number` can open and edit the csv file. It can export a new csv file from "File"->"Export To"->"CSV".
-      If you are using the Excel, it can export a new csv file from "File"->"Save As".
+      If you are using a MacOS system, the Apple App `Numbers` can open and edit the csv file. It can export a new csv file from "File"->"Export To"->"CSV".
+      If you are using the Excel, you can export a new csv file from "File"->"Save As".
 
 #. Click the Open button to start the process.
-#. Select the default  `VPC ID` and `LB/Gateway Name` from the `Default VPN User Settings` dialog.
+#. Select the default  `VPC ID` and `LB/Gateway Name` from the `Default VPN User Settings` dialog box.
 
     .. note::
 
-      Any empty `VPC ID` field in a csv file will cause a new dialog to select the default `VPC ID`.
-      If all of the `VPC ID` fields are filled in the the csv file, the `Default VPN User Settings` will not pop up.
-      Any record in a csv file with an empty `VPC ID` will be filled with the default settings.
+      Any empty `VPC ID` field in a csv file will trigger a new dialog box for selecting the default `VPC ID`.
+      Any record in a csv file with an empty `VPC ID` will be filled with the values in the `Default VPN User Settings` dialog box automatically.
+      If all the `VPC ID` fields are filled in the the original csv file already, the `Default VPN User Settings` dialog box will not be triggered.
 
     |imageImportVPNUsersDefaultVPCID|
 
