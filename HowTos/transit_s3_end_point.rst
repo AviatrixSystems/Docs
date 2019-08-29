@@ -24,7 +24,7 @@ Topology:
 
   1. Aviatrix Global Transit Network FOR AWS
 
-    - Spoke VPCs * 3 (for example: 192.168.1.0/24, 192.168.2.0/24, 192.168.99.0/24 [Shared Service Spoke VPC])
+    - Spoke VPCs * 3 (for example: 192.168.1.0/24, 192.168.2.0/24, 192.168.99.0/24 [Shared Service Spoke VPC in region us-east-1])
 
     - Transit VPC * 1 (for example: 192.168.100.0/24)
 
@@ -32,7 +32,7 @@ Topology:
 
   2. On-Prem CIDR (for example: 10.3.0.0/16)
   
-  3. End point for Amazon S3/Bucket service in region us-east-1 
+  3. End point for Amazon S3/Bucket service in region us-east-1
 
 |S3_ENDPOINT_TRANSIT_SOLUTION|
 
@@ -53,9 +53,9 @@ Notes:
   
   2. Since AWS S3 end point changes 'the source IPv4 addresses from instances in your affected subnets as received by Amazon S3 change from public IPv4 addresses to the private IPv4 addresses from your VPC', we need to perform source NAT function on Aviatrix Spoke Gateway in the Shared Service VPC for the traffic from On-Prem or other Spoke VPCs to reach AWS S3 service/S3 buckets via AWS end point properly. https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html
   
-  3. Users from on-prem or other Spoke VPCs can access only S3 buckets which are in the same region as the Shared Service Spoke VPC locates.
+  3. Users from on-prem or other Spoke VPCs can access only S3 buckets which are in the same region as the Shared Service Spoke VPC locates. In other words, AWS S3 Service/S3 buckets and the Shared Service Spoke VPC need to be deployed in the same region.
   
-  4. Need to customize VPC endpoint policy to restricting access to a specific bucket.
+  4. Users are able to customize VPC endpoint policy to restricting access to a specific bucket.
 
 Follow the steps below to set up for the scenario.
 
@@ -113,9 +113,11 @@ To configure:
 
   4.8. Click Enable SNAT to commit.
   
-    |SNAT_TRANSIT_PRIMARY|
+    |SNAT_SHARED_SERVICE_SPOKE_PRIMARY|
 
-  4.9. Go to Gateway page, click on the Transit HA Gateway. Click Edit.
+  4.9. Go to Gateway page, click on the Aviatrix Spoke HA Gateway. Click Edit.
+  
+  4.10. Repeat the above steps to configure Customized SNAT for Aviatrix Spoke HA Gateway with its own private IP.
 
 
 Step 5. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway in the Shared Service VPC
@@ -156,46 +158,22 @@ Step 7. Verify S3 traffic flow
 
   7.1. Traffic from On-Prem -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
     
-      |SNAT_10_1|
+      |ONPREM_ENDPOINT|
     
   7.2. Traffic from Spoke -> Transit -> Shared ServiceSpoke -> AWS S3 service/S3 bucket
   
-      |DNAT_99_1|
+      |SPOKE_ENDPOINT|
 
-.. |SNAT_DNAT_TRANSIT_SOLUTION| image:: transit_snat_dnat_media/SNAT_DNAT_TRANSIT_SOLUTION.png
+.. |S3_ENDPOINT_TRANSIT_SOLUTION| image:: transit_snat_dnat_media/SNAT_DNAT_TRANSIT_SOLUTION.png
    :scale: 30%
 
-.. |SNAT_TRANSIT_PRIMARY| image:: transit_snat_dnat_media/SNAT_TRANSIT_PRIMARY.png
+.. |SNAT_SHARED_SERVICE_SPOKE_PRIMARY| image:: transit_snat_dnat_media/SNAT_TRANSIT_PRIMARY.png
    :scale: 30%
 
-.. |SNAT_TRANSIT_HA| image:: transit_snat_dnat_media/SNAT_TRANSIT_HA.png
+.. |ONPREM_ENDPOINT| image:: transit_snat_dnat_media/SNAT_TRANSIT_HA.png
    :scale: 30%
 
-.. |DNAT_TRANSIT_PRIMARY| image:: transit_snat_dnat_media/DNAT_TRANSIT_PRIMARY.png
-   :scale: 30%
-
-.. |SNAT_10_1| image:: transit_snat_dnat_media/SNAT_10_1.png
-   :scale: 30%
-
-.. |SNAT_10_2| image:: transit_snat_dnat_media/SNAT_10_2.png
-   :scale: 30%
-
-.. |DNAT_99_1| image:: transit_snat_dnat_media/DNAT_99_1.png
-   :scale: 30%
-
-.. |DNAT_99_2| image:: transit_snat_dnat_media/DNAT_99_2.png
-   :scale: 30%
-
-.. |SNAT_FAILOVER_10_1| image:: transit_snat_dnat_media/SNAT_FAILOVER_10_1.png
-   :scale: 30%
-
-.. |SNAT_FAILOVER_10_2| image:: transit_snat_dnat_media/SNAT_FAILOVER_10_2.png
-   :scale: 30%
-
-.. |DNAT_FAILOVER_99_1| image:: transit_snat_dnat_media/DNAT_FAILOVER_99_1.png
-   :scale: 30%
-
-.. |DNAT_FAILOVER_99_2| image:: transit_snat_dnat_media/DNAT_FAILOVER_99_2.png
+.. |SPOKE_ENDPOINT| image:: transit_snat_dnat_media/DNAT_TRANSIT_PRIMARY.png
    :scale: 30%
 
 .. disqus::
