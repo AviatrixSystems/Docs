@@ -185,6 +185,9 @@ Egress traffic (Internet bound) inspection:
 
 Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress through Firewall" and click Enable.
 
+Note for GCE instances:
+Any GCE instance (excluding controller created gateways) that needs to participate in egress control (FQDN, SNAT and FW Egress) have to be tagged as "avx-snat-noip" . The GCE network tag "avx-snat-noip" can be associated during GCE instance creation or by editing an existing instance.
+
 How do I make Ingress inspection to work on FireNet?
 -----------------------------------------------------
 
