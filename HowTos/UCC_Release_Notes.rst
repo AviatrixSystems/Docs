@@ -5,7 +5,20 @@ Release Notes
 R5.0 (coming in soon)
 =========================
 
-1. Multi Cloud
+1. Automation & Operations
+----------------------------
+
+ - **Official Terraform Provider** Aviatrix has become the official Terraform provider! Visit `Aviatrix Provider <https://www.terraform.io/docs/providers/aviatrix/index.html>`_.
+ - **New REST API site** visit `api.aviatrix.com <https://api.aviatrix.com/?version=latest>`_ to see our brand new API doc site!
+ - **Access Account Audit** continuously monitors the health of Controller and individual access account. The Controller sends email alert to the admin user and logs the event when errors in the account setting are detected.
+ - **Gateway Audit** continuously monitors the status of gateway cloud credentials. For AWS, this credential is the gateway's IAM roles and policies. The Controller sends email alert to the admin user and logs the event when errors of gateway cloud credentials are detected. To view the health of the gateway, go to Gateway page and check the field Cloud Credentials.
+ - **Logs display the source IP address when a user login** to improve visibility.
+ - **Logs display the latest at the top of the screen** for ease of use. The logs include Site2Cloud diagnostics messages and command log messages.
+ - **Export VPC Tracker to XML** allows you to download in Excel form all VPCs the Controller retrieves. To download, go to Useful Tools -> VPC Tracker, click the refresh button and then click Export to CSV.
+ - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
+ - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state
+
+2. Multi Cloud
 -----------------
 
  - **Azure Transit with Native Spoke VNet Support** Allows you to build a transit solution without launching an Aviatrix gateway in the Spoke VNet. The solution leverages the Azure native peering capability for the traffic between Spoke VNet and Transit VNet, it also leverages the Controller to propagate learned routes directly to Spoke VNet. Follow the `Transit Network Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to get started by launching an Aviatrix Transit GW. Attach a Spoke VNet at `Step 6b <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_. 
@@ -13,7 +26,7 @@ R5.0 (coming in soon)
  - **GCP Transit Gateway Support** expands our `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to Google GCP. Follow the `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ instruction to get started. 
  - **Oracle Cloud (OCI) Spoke Gateway Support** expands our Transit Network Solution to OCI Spoke gateways. 
 
-2. Networking
+3. Networking
 ----------------
 
  - **IKEv2 support for Site2Cloud connections** expands site2cloud function to support IPSEC IKEv2. Follow the `site2cloud instructions <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ to get started. 
@@ -21,7 +34,7 @@ R5.0 (coming in soon)
  - **Insane Mode over Internet** allows you to leverage the existing high speed Internet to build high performance encryption.
  - **User VPN Support two way communication** between client and cloud instances by disabling VPN gateway NAT function and program the VPC route table for traffic initiated from VPC to route back to your VPN desktop. 
 
-3. Security
+4. Security
 ------------
  
  - **FQDN Applies to Private Domain Names** allows you to apply FQDN filter on Domain Names that resolve to private IP addresses. The use case is if you have host names that are on the private network and you need to apply whitelist filter. This is a global capability that applies to all FQDN tags. To enable, go to Egress Control -> Egress FQDN Filter, click "Enable Private Network Filter".
@@ -29,18 +42,6 @@ R5.0 (coming in soon)
  - **FireNet for GovCloud** is available. Follow the instructions for `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to get started.
  - **Aviatrix FQDN gateway for FireNet** enable Aviatrix FQDN function to be centrally deployed in AWS Transit Gateway (TGW) environment. One use case is to limit the number of EIPs of egress packets to specific sites that require whitelist of source IP addresses. To enable, follow the `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ and deploy Aviatrix FQDN gateway at `Step 7c <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_. Note only Egress Control for Internet bound traffic is supported.    
  
-4. Operations
----------------
-
- - **New REST API site** visit `api.aviatrix.com <https://api.aviatrix.com/?version=latest>`_ to see our brand new API doc site!
- - **Access Account Audit** continuously monitors the health of Controller and individual access account. The Controller sends email alert to the admin user and logs the event when errors in the account setting are detected.  
- - **Gateway Audit** continuously monitors the status of gateway cloud credentials. For AWS, this credential is the gateway's IAM roles and policies. The Controller sends email alert to the admin user and logs the event when errors of gateway cloud credentials are detected. To view the health of the gateway, go to Gateway page and check the field Cloud Credentials.
- - **Logs display the source IP address when a user login** to improve visibility. 
- - **Logs display the latest at the top of the screen** for ease of use. The logs include Site2Cloud diagnostics messages and command log messages.
- - **Export VPC Tracker to XML** allows you to download in Excel form all VPCs the Controller retrieves. To download, go to Useful Tools -> VPC Tracker, click the refresh button and then click Export to CSV.
- - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
- - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state. 
-
 5. AWS Transit Gateway (TGW) Enhancement
 -----------------------------------------
  - **Disable Spoke VPC local CIDR propagation** is an optional feature that when enabled the Spoke VPC CIDR is not propagated to TGW route table when the Spoke VPC is attached to TGW. One use case is to allow multiple VPCs to be in one Security Domain (share one TGW route table) without the connectivity between them, thus reducing the need to createe a large number of Security Domains in order to build isolation. This optional feature is enable when attaching a VPC at `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_.
