@@ -434,6 +434,13 @@ Number of Gateways running Security Services                        $0.16       
 Number of VPC to Site or Multi cloud IPSec Tunnel Connections       $0.48             Site2Cloud use case
 =============================================================      ===============    ==============================
 
+How is security updates handled and delivered by Aviatrix?
+------------------------------------------------------------
+
+These are the steps:
+
+ 1. **Field Notice** All Aviatrix customers are notified when a security update is available. 
+ #. **Security Patch** Aviatrix Controller provides a inline software patch to fix vulnerability with the instructions from the Field Notice. The updates do not require reboot of the Controller or gateways most of the time. 
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
