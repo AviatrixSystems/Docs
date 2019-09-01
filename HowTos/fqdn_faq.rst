@@ -136,6 +136,10 @@ If you have problems with FQDN on a specific gateway, follow the instructions be
  #. If all above steps failed, get help from the Aviatrix support team and upload `tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_.
 
 
+Any vendor specific comments to be noted?
+---------------------------------------------------------------------------------------------
+Any GCE instance (excluding controller created gateways) that needs to participate in egress control (FQDN, SNAT and FW Egress) have to be tagged as "avx-snat-noip" . The GCE network tag "avx-snat-noip" can be associated during GCE instance creation or by editing an existing instance.
+
 What happens if I enable FQDN and there are route tables that have an existing default route?
 ---------------------------------------------------------------------------------------------
 
