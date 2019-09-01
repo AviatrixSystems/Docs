@@ -58,7 +58,7 @@ Manages an Aviatrix Transit Gateway.
 	  gw_size = "t2.micro"
 	  subnet = "10.1.0.0/24"
 	  ha_subnet = "10.1.0.0/24"
-  	  tag_list = ["key:value", "key1:value1", "key2:value2"]
+    tag_list = ["key:value", "key1:value1", "key2:value2"]
 	}
 
 +--------------+-------------------------------------------------------------------+
@@ -232,6 +232,7 @@ Sample configuration to create complete transit VPC solution
 	  vpc_id = "vpc-abcd1234"
 	  bgp_vgw_id = "vgw-abcd1234"
     bgp_vgw_account = aviatrix_account.test_acc.aws_account_number
+    bgp_vgw_region = "us-east-1"
 	  bgp_local_as_num = "65001"
     depends_on = ["aviatrix_transit_gateway.test_transit_gw"]
 	}

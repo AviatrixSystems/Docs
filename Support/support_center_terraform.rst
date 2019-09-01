@@ -35,11 +35,13 @@ Our `Github repository <https://github.com/terraform-providers/terraform-provide
 
 
   However, we continue to offer support for Terraform v0.11 with our Controller 4.7.
+
   * For Aviatrix Controller Release 4.7, Terraform v0.11: Use the `Github UserConnect-4.7-TF.11 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.7-TF.11>`_
   * For Aviatrix Controller Release 4.7, Terraform v0.12: Use the `Github UserConnect-4.7-TF.12-v1 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.7-TF.12-v1>`_
 
 
   In addition to the Terraform v0.12 support, we have also had major restructuring to our code, such as attribute renaming, resource renaming and values etc, and have made a release (**R2.0**) for this version of our provider in the branch listed below:
+
   * `Github UserConnect-4.7-TF.12-v2 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.7-TF.12-v2>`_
 
 
@@ -52,9 +54,10 @@ Our `Github repository <https://github.com/terraform-providers/terraform-provide
 If you were using the master branch in the past, please move to the right release based branch as listed above to avoid incompatibility issues.
 
 
-**NOTE:** As of Aviatrix Controller Release 5.0, our Aviatrix Terraform provider is now officially recognized by Hashicorp. Customers may now simply source our provider within the "providers" block in the ``~/.terraformrc`` on Linux/ Unix by specifying the Release version. For Windows, the file should be ``%APPDATA%\terraform.rc``.
+**NOTE:** As of Aviatrix Controller Release 5.0, our Aviatrix Terraform provider is now officially recognized by Hashicorp. Customers may now simply source our provider within the "providers" block in the ``~/.terraformrc`` on Linux/ Unix by specifying the Release version. For Windows, the file should be ``%APPDATA%\terraform.rc``
 
 ::
+
   provider {
     "aviatrix" = "$GOPATH/bin/terraform-provider-aviatrix"
     version = 2.2.0
