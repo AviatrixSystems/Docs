@@ -110,6 +110,41 @@ Create VPN Users
 
    |imageAddNewVPNUser|
 
+Export VPN Users
+###############################
+1. Click the export icon. |imageExportVPNUsers|
+2. Check the csv file aviatrix_vpn_users.csv in the Download folder.
+
+   .. note::
+
+      If there has been an aviatrix_vpn_users.csv in the Download folder already, the OS will rename the new file with aviatrix_vpn_users(1).csv automatically.
+
+Import VPN Users
+###############################
+
+1. Click the import icon |imageImportVPNUsers|
+#. Select a csv file to import.
+
+    .. note::
+
+      If you are using a MacOS system, the Apple App `Numbers` can open and edit the csv file. It can export a new csv file from "File"->"Export To"->"CSV".
+      If you are using the Excel, you can export a new csv file from "File"->"Save As".
+
+#. Click the Open button to start the process.
+#. Select the default  `VPC ID` and `LB/Gateway Name` from the `Default VPN User Settings` dialog box.
+
+    .. note::
+
+      Any empty `VPC ID` field in a csv file will trigger a new dialog box for selecting the default `VPC ID`.
+      Any record in a csv file with an empty `VPC ID` will be filled with the values in the `Default VPN User Settings` dialog box automatically.
+      If all the `VPC ID` fields are filled in the the original csv file already, the `Default VPN User Settings` dialog box will not be triggered.
+
+    |imageImportVPNUsersDefaultVPCID|
+
+#. Check the Import Results
+
+    |imageImportVPNUsersResults|
+
 Download VPN User Certificate
 ###############################
 
@@ -160,6 +195,18 @@ Detailed audit logs are maintained and available in various logging platforms.
    :scale: 50%
 
 .. |download_vpnfile| image:: uservpn_media/download_vpnfile.png
+   :scale: 30%
+
+.. |imageImportVPNUsers| image:: uservpn_media/import_vpn_users.png
+   :scale: 100%
+
+.. |imageExportVPNUsers| image:: uservpn_media/export_vpn_users.png
+   :scale: 100%
+
+.. |imageImportVPNUsersDefaultVPCID| image:: uservpn_media/import_vpn_users_default_vpn_settings.png
+   :scale: 30%
+
+.. |imageImportVPNUsersResults| image:: uservpn_media/import_vpn_users_results.png
    :scale: 30%
 
 OpenVPN is a registered trademark of OpenVPN Inc.
