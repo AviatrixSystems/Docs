@@ -615,6 +615,8 @@ IPv6 can be enabled on an Aviatrix gateway. The use case is to use IPv6 to resol
 ActiveMesh Mode
 ----------------
 
+ActiveMesh is in Beta state. Do not deploy it in a production environment. 
+
 When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and backup gateway forward packets in ECMP and active/active state.
 
 

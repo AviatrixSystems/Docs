@@ -4,7 +4,7 @@
 
 
 =================================
-Gateway IAM roles Audit 
+Gateway Audit 
 =================================
 
 The Aviatrix Controller periodically checks the Aviatrix gateways in AWS it launched to make sure:
