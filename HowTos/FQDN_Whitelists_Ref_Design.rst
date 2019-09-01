@@ -121,6 +121,10 @@ the example in the illustration below:
 
 |source-edit|
 
+Enable Private Network Filtering
+=================================
+
+By checking this option, FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
 
 
 For support, send an email to support@aviatrix.com

@@ -158,6 +158,11 @@ When enabling egress filtering on a VPC, each subnet's route table is reviewed. 
   .. note::
      If the Gateway is detached from the VPC (via the egress configuration page), the route table will be updated with the original values.
 
+Can FQDN gateway be deployed in central place?
+-------------------------------------------------
+
+Yes. Available in Release 5.0 and later, Aviatrix FQDN gateway can be deployed centrally in the TGW environment. The use case is if you need 
+to limit the public IP addresses to a third party public service. Follow the `Firewall Network  workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_ to deploy. 
 
 .. |egress_overview| image::  FQDN_Whitelists_Ref_Design_media/egress_overview.png
    :scale: 30%
