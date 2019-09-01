@@ -20,7 +20,7 @@ For Mac, Terraform is also present in `Homebrew <https://brew.sh/>`_. Perform ``
 Once it is downloaded, double click to unzip the file. The executable file terraform should be
 in your Downloads folder. (This will be used as an example in this document)
 
-For Unix systems, open a terminal, type the command ``./Downloads/terraform --version``, and you should see output similar to the following image:
+For Unix systems, open a terminal, type the command ``./Downloads/terraform --version`` , and you should see output similar to the following image:
 
 |setup_tf|
 
@@ -32,7 +32,7 @@ For Windows, the command is ``terraform.exe --version``
 
 If you are running the Terraform binary file after simply downloading it, you will need to execute it using the full path.
 
-Assuming it's downloaded into your ``$HOME/Downloads`` directory, run
+Assuming it's downloaded into your ``$HOME/Downloads`` directory, run:
 
 ::
 
@@ -67,10 +67,10 @@ Example for Unix/Linux:
 Line 3 can also be made permanent:
 Edit ~/.bash_profile by appending line "export GOPATH=$HOME/go", and then run the command ``source ~/.bash_profile`` for the GOPATH path to take effect.
 
-For Windows, GOPATH and other environment variables can be edited from System Properties. Also note that you might have to either reboot your windows machine or at least close the current cmd window and open a new one to ensure that the environment variables are set. You can check by running "echo %GOPATH%"
+For Windows, GOPATH and other environment variables can be edited from System Properties. Also note that you might have to either reboot your windows machine or at least close the current cmd window and open a new one to ensure that the environment variables are set. You can check by running ``echo %GOPATH%``
 
 
-4.2 For **downloading, building and setting up the Aviatrix Terraform Provider,** please follow `these instructions <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_
+4.2 For **downloading, building and setting up the Aviatrix Terraform Provider,** please follow `these instructions <https://github.com/terraform-providers/terraform-provider-aviatrix>`_
 
 
 
@@ -86,7 +86,7 @@ the below text into the file. Be sure to modify the parameters to suit your envi
 
 ::
 
-  # specify aviatrix as the provider with these parameters:
+  # Specify aviatrix as the provider with these parameters:
   # controller_ip - public IP address of the controller
   # username - login user name, default is admin
   # password - password
@@ -103,8 +103,8 @@ the below text into the file. Be sure to modify the parameters to suit your envi
   # gw_name - Name of gateway.
   # vpc_id - AWS VPC ID.
   # vpc_reg - AWS VPC region.
-  # vpc_size - Gateway instance size
-  # vpc_net - VPC subnet CIDR where you want to launch GW instance
+  # gw_size - Gateway instance size
+  # subnet - VPC subnet CIDR where you want to launch GW instance
 
   resource "aviatrix_gateway" "testGW" {
       account_name = "for-create2"
@@ -112,8 +112,8 @@ the below text into the file. Be sure to modify the parameters to suit your envi
       gw_name = "testGW1"
       vpc_id = "vpc-01dd5643eca66486c"
       vpc_reg = "us-west-2"
-      vpc_size = "t2.micro"
-      vpc_net = "172.34.0.0/24"
+      gw_size = "t2.micro"
+      subnet = "172.34.0.0/24"
   }
 
 6. Run the Terraform Configuration
@@ -142,7 +142,7 @@ When the above command finishes, you can login to your Aviatrix Controller conso
 7. Simple Troubleshooting
 --------------------------
 
-A simple Terraform debug method is to set TF_LOG level in ~/.bash_profile, as shown in the below example (remember to run command ``source ~/.bash_profile`` after editing .bash_profile):
+A simple Terraform debug method is to set TF_LOG level in ~/.bash_profile, as shown in the below example (Remember to run command ``source ~/.bash_profile`` after editing .bash_profile):
 
 ::
 
@@ -160,15 +160,15 @@ To see more examples, read on `Setup Aviatrix Transit Network with Terraform <ht
 9. Contribute to the Community
 --------------------------------
 
-Aviatrix Terraform Provider is an `open source project <https://github.com/AviatrixSystems/terraform-provider-aviatrix>`_. All reviews, comments and contributions are welcome.
+The Aviatrix Terraform Provider is an `open source project <https://github.com/terraform-providers/terraform-provider-aviatrix>`_ and has recently become an official Terraform provider. All reviews, comments and contributions are welcome.
 
 
 Enjoy!
 
 .. |setup_tf| image:: tf_aviatrix_howto_media/setup_tf.png
-   :scale: 30%
+   :width: 100%
 
 .. |go_install| image:: tf_aviatrix_howto_media/go_install.png
-   :scale: 30%
+   :width: 100%
 
 .. disqus::
