@@ -610,7 +610,12 @@ learns all Spoke VPCs and on-prem network CIDRs. Without enabling this feature, 
 IPv6
 ------
 
-IPv6 can be enabled on an Aviatrix gateway. The use case is to use IPv6 to resolve overlapping VPC CIDRs when doing encrypted peering. This use case requires both the VPC and EC2 instances have IPv6 enabled. 
+IPv6 can be enabled on an Aviatrix gateway deployed in AWS. One use case is to use IPv6 to resolve overlapping VPC CIDRs when doing encrypted peering. This use case requires both the VPC and EC2 instances have IPv6 enabled. 
+
+When this option is enabled, Controller automatically enables IPv6 on the VPC CIDR and the subnet where the gateway is launched. It is your responsibility to enable IPv6 on any other subnets and instances. Use `Migrating to IPv6 <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html>`_ if you need help. 
+
+When building an encrypted tunnel between two identical VPC CIDRs to for networking between the instances in each VPC, the Controller uses the gateway's IPv4 EIP as tunnel end point. 
+
 
 ActiveMesh Mode
 ----------------
