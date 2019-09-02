@@ -99,45 +99,8 @@ Step 3. Deploy AWS S3 end point in Shared Service VPC
   
   - ensure the AWS subnet/routing table where Aviatrix Shared Service Spoke gateway locates is selected when AWS S3 end point is created
 
-Step 4. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway in Shared Service VPC
--------------------------
 
-  - https://docs.aviatrix.com/HowTos/gateway.html#customized-snat
-
-This action changes the packet’s source IP address from On-Prem or other Spoke VPCs in the Cloud to the private IP of Aviatrix Spoke Gateway in Shared Service VPC.
-
-  ::
-
-    Example: 
-    
-    Spoke Gateway: traffic to the IP range of AWS S3 Service in region us-east-1 (for example: 54.231.0.0/17 and 52.216.0.0/15) translates to IP 192.168.99.18
-
-To configure:
-
-  4.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first in Shared Service VPC. Click Edit.
-
-  4.2. Continue on to the Edit page, scroll to SNAT. Select Customized SNAT.
-
-  4.3. Select Customized SNAT
-
-  4.4. Click Add New
-
-  4.5. Enter fields for Src CIDR, protocol, Interface (select Interface eth0) and SNAT IP as below example.
-    
-  4.6. Click Save
-  
-  4.7. Repeat the above steps for more entries.
-
-  4.8. Click Enable SNAT to commit.
-  
-    |SNAT_SHARED_SERVICE_SPOKE_PRIMARY|
-
-  4.9. Go to Gateway page, click on the Aviatrix Spoke HA Gateway. Click Edit.
-  
-  4.10. Repeat the above steps to configure Customized SNAT for Aviatrix Spoke HA Gateway with its own private IP.
-
-
-Step 5. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway in the Shared Service VPC
+Step 4. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway in the Shared Service VPC
 -------------------------
 
   - https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs
@@ -152,19 +115,58 @@ This action will advertise the customized routes to On-Prem via BGP session and 
 
 To configure:
 
-  5.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first in Shared Service VPC. Click Edit.
+  4.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first in Shared Service VPC. Click Edit.
 
-  5.2. Continue on to the Edit page, scroll to Customize Spoke Advertised VPC CIDRs.
+  4.2. Continue on to the Edit page, scroll to Customize Spoke Advertised VPC CIDRs.
   
-  5.3. Enter the value of the On-Prem routable CIDR
+  4.3. Enter the value of the On-Prem routable CIDR
   
     - for example: 54.231.0.0/17,52.216.0.0/15,192.168.99.0/24
     
     - notes: 192.168.99.0/24 in this example is the Shared Service VPC CIDR
   
-  5.4. Click the button "Save"
+  4.4. Click the button "Save"
   
   |SHARED_SERVICE_SPOKE_CUSTOMIZE_SPOKE_ADVERTISED_VPC_CIDRS|
+
+
+Step 5. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway in Shared Service VPC
+-------------------------
+
+  - https://docs.aviatrix.com/HowTos/gateway.html#customized-snat
+
+This action changes the packet’s source IP address from On-Prem or other Spoke VPCs in the Cloud to the private IP of Aviatrix Spoke Gateway in Shared Service VPC.
+
+  ::
+
+    Example: 
+    
+    Spoke Gateway: traffic to the IP range of AWS S3 Service in region us-east-1 (for example: 54.231.0.0/17 and 52.216.0.0/15) translates to IP 192.168.99.18
+
+To configure:
+
+  5.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first in Shared Service VPC. Click Edit.
+
+  5.2. Continue on to the Edit page, scroll to SNAT. Select Customized SNAT.
+
+  5.3. Select Customized SNAT
+
+  5.4. Click Add New
+
+  5.5. Enter fields for Src CIDR, protocol, Interface (select Interface eth0) and SNAT IP as below example.
+    
+  5.6. Click Save
+  
+  5.7. Repeat the above steps for more entries.
+
+  5.8. Click Enable SNAT to commit.
+  
+    |SNAT_SHARED_SERVICE_SPOKE_PRIMARY|
+
+  5.9. Go to Gateway page, click on the Aviatrix Spoke HA Gateway. Click Edit.
+  
+  5.10. Repeat the above steps to configure Customized SNAT for Aviatrix Spoke HA Gateway with its own private IP.
+
 
 Step 6. Perform Connected Transit feature to build a full mesh network where Spoke VPCs communicate with each other via Transit GW
 -------------------------
