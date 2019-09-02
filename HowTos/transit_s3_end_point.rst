@@ -224,7 +224,7 @@ Step 7. Verify S3 traffic flow
    :scale: 30%
 
 .. |ONPREM_AWS_S3_CLI| image:: transit_s3_end_point/ONPREM_AWS_S3_CLI.png
-   :scale: 10%
+   :scale: 30%
 
 .. |ONPREM_SHARED_SPOKE_TUN| image:: transit_s3_end_point/ONPREM_SHARED_SPOKE_TUN.png
    :scale: 30%
@@ -233,7 +233,7 @@ Step 7. Verify S3 traffic flow
    :scale: 30%
 
 .. |SPOKE_AWS_S3_CLI| image:: transit_s3_end_point/SPOKE_AWS_S3_CLI.png
-   :scale: 10%
+   :scale: 30%
    
 .. |SPOKE_SHARED_SPOKE_TUN| image:: transit_s3_end_point/SPOKE_SHARED_SPOKE_TUN.png
    :scale: 30%
