@@ -92,6 +92,12 @@ Transit GW HA either.
 3. Connect the Transit GW to AWS VGW 
 -------------------------------------
 
+.. tip::
+
+ If you do not see the Transit GW you just created, refresh the browser.
+
+
+
 Although the title says to connect to AWS VGW, starting from Release 4.1, there are three options to connect to a Transit GW with BGP to an on-prem network. Choose one option that meets your network requirements.  
 
  - AWS VGW (This is the default setting.)
