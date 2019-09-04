@@ -111,7 +111,7 @@ Server                   HPE ProLiant DL360 Gen10 Xeon Gold 6130
 CPU                      16 cores
 Memory                   64GB
 PCIe                     3.0
-10Gbps Ethernet ports    2 x SFP+                                             1 LAN port and 1 WAN port 
+10/25Gbps Ethernet port  2 x SFP+                                             1 LAN port and 1 WAN port 
 1Gbps Ethernet port      RJ45                                                 1 Management port
 =====================    =======================================              =================
 
