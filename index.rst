@@ -42,6 +42,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aviatrix_overview
    StartUpGuides/aviatrix-cloud-controller-startup-guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
+   StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/aviatrix_operations
    StartUpGuides/CloudN-Startup-Guide
@@ -64,7 +65,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/customize_aws_iam_policy
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
-   StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide
+   HowTos/oracle-aviatrix-cloud-controller-onboard
    HowTos/AdminUsers_DuoAuth
    HowTos/CompanionGateway
    HowTos/Quick_Tour
