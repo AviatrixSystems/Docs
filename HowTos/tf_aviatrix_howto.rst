@@ -62,6 +62,7 @@ While you can run Terraform within any directory, we highly recommend using Terr
 Example for Unix/Linux:
 
 ::
+  
   $ mkdir terraform-test-environment
   $ cd terraform-test-environment
   $ terraform init
