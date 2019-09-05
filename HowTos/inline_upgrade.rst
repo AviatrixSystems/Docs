@@ -23,6 +23,7 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
 #. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com.
 #. Please make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process
+#. Please make a backup and check the S3 bucket to make sure the process was successful. If you don't have backup enabled, please follow the `backup instructions <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ to enable it.
 
 
 How to upgrade software
