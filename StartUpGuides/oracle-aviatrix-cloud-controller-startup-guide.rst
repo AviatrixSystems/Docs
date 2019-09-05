@@ -8,111 +8,122 @@ Oracle Cloud Infrastructure (OCI) Startup Guide
 
 The Aviatrix cloud network solution consists of two components, the controller and 
 gateways, both of which are cloud VMs. Gateways are launched from the controller console to specific VCNs. This
-guide helps you to launch the gateway in OCI. Make sure you follow the instructions to also subscribe to the Aviatrix Companion Gateway described in this guide.
+guide helps you to launch the controller in OCI.
 
 .. Note::
 
-  Currently we only support deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
-  The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS can also enable you to deploy gateways in OCI,
+  Currently we support deploying the Controller in either OCI or AWS. If you would like to launch Controller from the AWS Marketplace as a metered AMI, please follow the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+  The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in any vendor can also enable you to deploy and manage gateways in any cloud.
 
 
 1. Prepare your account in OCI
 ==============================
-
 
 Create an OCI account
 -----------------------
 
 Create an OCI account if you do not already have one.
 
-
-Set up your account
---------------------
+Set up your compartment
+-----------------------
 
 Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy.
 For more detail, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_
 
 
-2. Access the Controller
+2. Subscribe to the Controller
+==============================
+
+Go to `Oracle Cloud Marketplace <https://cloudmarketplace.oracle.com/marketplace/en_US/homePage.jspx>`_ and search for Aviatrix to subscribe to the Aviatrix platform.
+
+* Click "Get App >" at the top of the App page.
+* Select OCI region and click "Launch Image"
+
+ |inst_region|
+
+* Choose the version, compartment and click "Launch Instance"
+
+ |inst_launch|
+
+In the "Create Compute Instance" Page
+    a. choose name, availability domain and "virtual Machine" as instance type
+    b. choose instance type that has at least two cores
+
+       |inst_flavor|
+
+    c. choose proper compartment for VCN and subnet
+    d. you could optionally choose "Use network security groups to control traffic" if you have one, otherwise leave it as we will create one later
+
+       |inst_network|
+
+    e. choose ssh public key file
+    f. click "Create" to launch the instance
+
+
+3. Access the Controller
 =========================
 
-After the Controller instance is in a running state in AWS, you can access the Controller
-via a browser by `https://Controller_public_IP`, where Controller_public_IP is the static public IP address of the Controller.
+To be able to reach controller public ip via https using browser, you will need to open port 443 in either security list or security group.
 
+Security List (easy to config)
+------------------------------
+From OCI portal, navigate to Networking -> Virtual Cloud Networks -> your vcn name -> Security Lists -> Default Security List,
+Add an ingress rule to allow port 443. You could further limit the source cidr if you know all your VCN subnets where gateway will be launched.
+
+ |inst_seclist|
+
+Security Group (recommend to use)
+---------------------------------
+From OCI portal, navigate to Networking -> Virtual Cloud Networks -> your vcn name -> Network Security Groups
+Create a new security group. Add an ingress rule to allow port 443. You could further limit the source cidr if you know all your VCN subnets where gateway will be launched.
+
+ |inst_secgroup|
+
+Then navigate to Compute -> Instances -> Controller VM detail page, click the "Edit" link besides the "Network Security Groups" under "Primary VNIC Information".
+Associate the security group you created to the controller VNIC.
+
+ |inst_vnic_secgroup|
+
+
+Controller UI
+-------------
+After the Controller instance is in a running state, you can access the Controller
+via a browser by `https://Controller_public_IP`, where Controller_public_IP is the static public IP address of the Controller.
 The initial password is the private IP address of the instance.
 
-Follow the steps to go through an initial setup phase to download the latest software.
-After the latest software is downloaded, re-login again to go through the onboarding process.
+ |startup_first_login|
 
-3. Onboarding
+Follow the steps in browser to go through an initial setup phase to download the latest software. Use "latest" as version if not asked to use other version number.
+
+ |startup_version|
+
+After the latest software is downloaded which takes around 5 mins, UI would redirect you to the login page.
+You could also try to re-login if browser is closed to go through the account onboarding process.
+
+ |startup_login|
+
+
+4. Onboarding
 ==============
-The purpose of onboarding is to help you setup an account on the Aviatrix Controller that
-corresponds to an OCI account with compartment policies so that the Controller can launch gateways using OCI APIs.
-For on-boarding the OCI account in the Aviatrix controller, we need following four pieces of information: User OCID, Tenancy OCID, Compartment OCID, API Private Key File.
+Follow the `onboarding instructions <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to create an Aviatrix account that corresponds to your OCI account credential.
 
-User OCID
----------
-* Login to your OCI console and go to the Navigation Menu (3 bars on top left)->Identity->Users
-* Identify the IAM User who will be making the API calls and copy the User OCID
-
- |oci_user|
-
-Tenancy OCID
-------------
-* Login to your OCI console and go to the Navigation Menu (3 bars on top left) Administration->Tenancy Details
-* Copy the Tenancy OCID
-
- |oci_tenancy|
-
-Compartment OCID
-----------------
-* Login to your OCI console and go to the Navigation Menu (3 bars on top left) Identity->Compartments
-* Choose the compartment and copy the Compartment OCID
-
- |oci_compartment|
-
-Please note that if you have multiple compartments, choose one that has right set of policies which are required for Aviatrix to work. The best practice is to create a separate compartment for your operations and assign right policies to it.
-
-API Key
--------
-
-If you already have an existing RSA key pair in .pem format, you can use that as well. However, please note that this key pair is not the SSH key that is used to access compute instances. Both the private key and public key must be in PEM format (not SSH-RSA format). If you do not have an existing RSA key pair, you can follow the aforementioned steps from the terminal in your laptop to generate the API key
-
-1. Generate an API Signing Key: If you're using Windows, you'll need to install “Git Bash for Windows” and run the following commands with that tool. Mac and Linux users can run the following commands on their terminal
-    a.	Create a. oci directory to store the credentials: mkdir ~/ .oci
-    b.	Generate the private key without passphrase: openssl genrsa -out ~/.oci/oci_api_key.pem 2048
-    c.	Change the key settings, so that only you can read the file: chmod go-rwx ~/.oci/oci_api_key.pem
-    d.	Generate the Public Key: openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
-    e.	Copy the contents of the public key in clipboard locally in your computer: cat ~/.oci/oci_api_key_public.pem | pbcopy. Note: You may have to install pbcopy, if it is not already installed on your system. Alternatively, you can also open the public key file on the terminal and copy the file from there
-
-2. Upload the Public Key in the console:
-    a.	Sign in to the OCI console
-    b.	Login to your OCI console and go to the Navigation Menu (3 bars on top left)Identity->Users
-    c.	Choose the right User who will be making the API call
-    d.	Click Add Public Key
-    e.	Paste the contents of the PEM public key and click Add. Once you complete this, you will see the Key’s fingerprint
-
- |oci_api_key|
-
-For more details, please refer to
-`Required Keys and OCIDs <https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm>`_
+Note: you only need to create a single Aviatrix account that corresponds to many OCI, AWS, Azure and GCloud account credentials. This is a multi-cloud platform.
 
 
-Once you have the above info, please go to Aviatrix Controller->Accounts->Access Accounts->New Account and fill the required information. Please note that you should upload the Private Key file in the Aviatrix controller (which is different than the one you put in the OCI console). You can find that key in the folder where you generated the key in the above steps (.oci folder in above example)
-
-
-Congratulations on finishing your onboarding.
-Please go ahead to the "Useful Tools" menu at the main navigation on the left panel, and select Create a VPC -> +Create to create a VCN in OCI.
+Congratulations on finishing launching your Aviatrix networking platform. Please take a look at our step by step doc site
+`https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_
 Enjoy!
 
 
-.. |oci_user| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_user.png
-.. |oci_tenancy| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_tenancy.png
-.. |oci_compartment| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_compartment.png
-.. |oci_api_key| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_api_key.png
-.. |oci_account| image:: OCIAviatrixCloudControllerStartupGuide_media/oci_account.png
+.. |inst_launch| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_launch.png
+.. |inst_region| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_region.png
+.. |inst_flavor| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_flavor.png
+.. |inst_network| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_network.png
+.. |inst_seclist| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_seclist.png
+.. |inst_secgroup| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_secgroup.png
+.. |inst_vnic_secgroup| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_vnic_secgroup.png
+.. |startup_version| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_version.png
+.. |startup_first_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_first_login.png
+.. |startup_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_version.png
 
 
-.. add in the disqus tag
-
-.. disqus::
