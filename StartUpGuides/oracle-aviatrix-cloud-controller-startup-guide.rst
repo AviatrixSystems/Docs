@@ -124,6 +124,6 @@ Enjoy!
 .. |inst_vnic_secgroup| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_vnic_secgroup.png
 .. |startup_version| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_version.png
 .. |startup_first_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_first_login.png
-.. |startup_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_version.png
+.. |startup_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_login.png
 
 

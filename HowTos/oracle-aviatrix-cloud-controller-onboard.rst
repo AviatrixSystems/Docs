@@ -63,9 +63,11 @@ Once you have the above info, please go to Aviatrix Controller->Accounts->Access
 
 
 Congratulations on finishing onboarding your new oci account.
-Please go ahead to the "Useful Tools" menu at the main navigation on the left panel, and select Create a VPC -> +Create to create a VCN in OCI.
-For other info, please take a look at our step by step doc site
-`https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_
+
+To create a VCN with all the dependencies, please navigate to the "Useful Tools" menu at the main menu on the left panel, and select "Create a VPC" -> "+Create".
+
+For more info, please take a look at our step by step doc site `https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_
+
 Enjoy!
 
 
