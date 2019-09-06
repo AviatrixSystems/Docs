@@ -163,10 +163,13 @@ For customers who previously set up the Aviatrix Terraform provider prior to the
 Please also note that previously, customers were to match and build the branch of the provider corresponding to the Controller version. Now, customers should use whichever latest ``version`` is compatible with their Controller.
 
 * **EXCEPTION: For customers on Controller 4.7.x, please note there are multiple releases to support various configurations:**
-  - Controller 4.7.x , Terraform v0.11: Use **Release 1.15**
-  - Controller 4.7.x , Terraform v0.12: Use **Release 1.16**
+
+  * Controller 4.7.x , Terraform v0.11: Use **Release 1.15**
+  * Controller 4.7.x , Terraform v0.12: Use **Release 1.16**
+
 * **NOTE: For Release 2.0, there is major code restructuring and changes. Please follow Recommendations below before switching to Release 2.0+ if coming from releases prior/ Controller <4.7**
-  - Controller 4.7.x , Terraform v0.12: Use **Release 2.2**
+
+  * Controller 4.7.x , Terraform v0.12: Use **Release 2.2**
 
 ::
 
