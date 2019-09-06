@@ -155,16 +155,18 @@ This change means that current customers will no longer be required to manually 
 For customers who previously set up the Aviatrix Terraform provider prior to the official release on Hashicorp, the transition procedure is relatively simple.
 
 1. Remove the ``.terraformrc`` created to previously link Terraform to the filepath of the local provider to build/ comment out the "aviatrix" providers block within the file
-  a. For Linux/ Unix, it should be the ``~/.terraformrc``
-  b. For Windows, the file should be at ``%APPDATA%\terraform.rc``
+  * For Linux/ Unix, it should be the ``~/.terraformrc``
+  * For Windows, the file should be at ``%APPDATA%\terraform.rc``
 2. In your Terraform environment where the **provider** block is written, specify the version provider you would like to use (see below for example)
-  a. Please note that the ``version`` refers to the Aviatrix Terraform release number. Refer to our `provider release notes <https://github.com/terraform-providers/terraform-provider-aviatrix/releases>`_
-    * Please also note that previously, customers were to match and build the branch of the provider corresponding to the Controller version. Now, customers should use whichever latest ``version`` is compatible with their Controller
-    * **EXCEPTION: For customers on Controller 4.7.x, please note there are multiple releases to support various configurations:**
-      - Controller 4.7.x , Terraform v0.11: Use **Release 1.15**
-      - Controller 4.7.x , Terraform v0.12: Use **Release 1.16**
-    * **NOTE: For Release 2.0, there is major code restructuring and changes. Please follow Recommendations below before switching to Release 2.0+ if coming from releases prior/ Controller <4.7**
-      - Controller 4.7.x , Terraform v0.12: Use **Release 2.2**
+  * Please note that the ``version`` refers to the Aviatrix Terraform release number. Refer to our `provider release notes <https://github.com/terraform-providers/terraform-provider-aviatrix/releases>`_
+
+Please also note that previously, customers were to match and build the branch of the provider corresponding to the Controller version. Now, customers should use whichever latest ``version`` is compatible with their Controller.
+
+* **EXCEPTION: For customers on Controller 4.7.x, please note there are multiple releases to support various configurations:**
+  - Controller 4.7.x , Terraform v0.11: Use **Release 1.15**
+  - Controller 4.7.x , Terraform v0.12: Use **Release 1.16**
+* **NOTE: For Release 2.0, there is major code restructuring and changes. Please follow Recommendations below before switching to Release 2.0+ if coming from releases prior/ Controller <4.7**
+  - Controller 4.7.x , Terraform v0.12: Use **Release 2.2**
 
 ::
 
@@ -179,7 +181,7 @@ For customers who previously set up the Aviatrix Terraform provider prior to the
 
 Recommendation:
 ***************
-For customers on Controller 4.7 or looking to upgrade to 4.7, please refer to our `Upgrade Guide (from R1.x to R2.x) <https://www.terraform.io/docs/providers/aviatrix/guides/v2-upgrade-guide.html>`_ before attempting to immediately switch to our official provider, especially if you are on Controller 4.7.
+For customers on Controller 4.7 or looking to upgrade to 4.7, please refer to our `Upgrade Guide <https://www.terraform.io/docs/providers/aviatrix/guides/v2-upgrade-guide.html>`_ before attempting to immediately switch to our official provider, especially if you are on Controller 4.7.
 
 Other documentation that may be of interest when upgrading between provider versions (unofficial or official) are:
   * `Feature Changelist for R1.x <https://www.terraform.io/docs/providers/aviatrix/guides/feature-changelist.html>`_: tracks customer-impacting changes to Terraform environment for R1.x
