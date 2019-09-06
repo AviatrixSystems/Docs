@@ -9,12 +9,15 @@ Terraform
 What are the requirements to use Terraform with Aviatrix Systems?
 ----------------------------------------------------------------------
 
+.. note::
+  Aviatrix is now an official Terraform provider! The Terraform setup procedure has been significantly simplified and the documentation below has been updated accordingly. Customers who have previously set up our provider following our previous instructions may transition to our official provider by following Step 5 in the setup tutorial `here <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_
+
 We are constantly improving and enhancing our Terraform support, so we request that you to stay with the latest Aviatrix software and use the corresponding Terraform Aviatrix Provider from our Github repository. Please update the provider resource as we are frequently updating it.
 
 Please note the below requirements for the Aviatrix Terraform Provider:
 
 * **Terraform 0.11.x / 0.12.x**
-* **Go 1.11+**
+* **Go 1.11+** (no longer required if using our official provider)
 
 
 Which branch of Terraform Aviatrix Provider Resource should I use?
@@ -30,8 +33,8 @@ Our `Github repository <https://github.com/terraform-providers/terraform-provide
   * Aviatrix Controller Release 4.6: Use the `Github UserConnect-4.6 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.6>`_
 
 
-  Please note that for Aviatrix Controller 4.7 and onward, we support Terraform v0.12, which is not backwards-compatible with v0.11 and below.
-  Please see Hashicorp's blog `here <https://www.hashicorp.com/blog/announcing-terraform-0-12>`_ for more information.
+Please note that for Aviatrix Controller 4.7 and onward, we support Terraform v0.12, which is not backwards-compatible with v0.11 and below.
+Please see Hashicorp's blog `here <https://www.hashicorp.com/blog/announcing-terraform-0-12>`_ for more information.
 
 
   However, we continue to offer support for Terraform v0.11 with our Controller 4.7.
@@ -53,15 +56,19 @@ Our `Github repository <https://github.com/terraform-providers/terraform-provide
 
 If you were using the master branch in the past, please move to the right release based branch as listed above to avoid incompatibility issues.
 
-
-**NOTE:** As of Aviatrix Controller Release 5.0, our Aviatrix Terraform provider is now officially recognized by Hashicorp. Customers may now simply source our provider within the "providers" block in the ``~/.terraformrc`` on Linux/ Unix by specifying the Release version. For Windows, the file should be ``%APPDATA%\terraform.rc``
+.. note::
+  As of Aviatrix Controller Release 5.0, our Aviatrix Terraform provider is now officially recognized by Hashicorp. Customers may now simply source our provider within the "providers" block, wherever specified in the customer's Terraform environment, by identifying the Release version. For full instructions on transitioning to our official provider, please see Step 5 in the setup tutorial `here <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_
 
 ::
 
-  provider {
-    "aviatrix" = "$GOPATH/bin/terraform-provider-aviatrix"
-    version = 2.2.0
+  provider "aviatrix" {
+      controller_ip = "1.2.3.4"
+      username = "admin"
+      password = "password"
+      version = "2.2" # specify a Release version as shown on this line
   }
+
+  ...
 
 What if my Terraform scripts are timing out?
 ----------------------------------------------------------------------
@@ -74,7 +81,7 @@ Terraform sends all the operations to the controller at the same time, so if you
 How do I debug Terraform issues?
 ----------------------------------------------------------------------
 
-If you run into issues with Terraform, please turn on debug logs by doing ``export TF_LOG=TRACE`` on your terminal and then running your terraform scripts again. Please share the output with our support team at support@aviatrix.com
+If you run into issues with Terraform, please turn on debug logs by doing ``export TF_LOG=TRACE`` on your Terminal and then running your Terraform scripts again. Please share the output with our support team at support@aviatrix.com
 
 
 How can I launch a new Aviatrix Controller with Terraform?
@@ -90,4 +97,6 @@ Launching a new controller typically involves multiple steps as described `here 
 How can I create my IAM roles and policies in AWS using Terraform?
 ---------------------------------------------------------------------
 
-You can use our `terraform iam_roles module <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_ to create the Aviatrix IAM roles required to connect your Aviatrix Controller to an existing AWS account. This should be run in the account where you are installing the Controller and any additional accounts that will be connected to the Controller. This performs a similar role as the CloudFormation script does in "Controller UI > Accounts > Access Accounts > New Account > Select AWS > Select IAM-role-based > Launch CloudFormation Script" - it does not create the account, but rather creates the IAM roles/profiles like this CloudFormation script. This is similar to what is mentioned `here <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_.
+You can use our Terraform `IAM roles module <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_ to create the Aviatrix IAM roles required to connect your Aviatrix Controller to an existing AWS account. This should be run in the account where you are installing the Controller and any additional accounts that will be connected to the Controller.
+
+This performs a similar role as the CloudFormation script does in "Controller UI > Accounts > Access Accounts > New Account > Select AWS > Select IAM-role-based > Launch CloudFormation Script" - it does not create the account, but rather creates the IAM roles/profiles like this CloudFormation script. This is similar to what is mentioned `here <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_.

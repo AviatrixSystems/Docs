@@ -1,6 +1,6 @@
 .. meta::
    :description: Setup Transit VPC Solution using terraform
-   :keywords: terraform, terraform provider, api
+   :keywords: terraform, terraform provider, api, Transit network
 
 ============================================================
 Setup Transit Network using Aviatrix Terraform Provider
@@ -21,6 +21,7 @@ Setup Terraform Provider
 	  controller_ip = "1.2.3.4"
 	  username = "admin"
 	  password = "password"
+	  version = "2.2"
 	}
 
 	# Create a record
@@ -33,7 +34,7 @@ Resources
 These are the available resources for creating a transit VPC solution.
 
 aviatrix_transit_gateway
---------------------
+------------------------
 Manages an Aviatrix Transit Gateway.
 
 **Example Usage**
@@ -44,6 +45,7 @@ Manages an Aviatrix Transit Gateway.
 	  controller_ip = "1.2.3.4"
 	  username = "admin"
 	  password = "password"
+	  version = "2.2"
 	}
 
 	# Create a transit gateway.
@@ -90,6 +92,7 @@ Manages VGW connection
 	  controller_ip = "1.2.3.4"
 	  username = "admin"
 	  password = "password"
+	  version = "2.2"
 	}
 
 	# Once this resource is created, VGW can be disconnected
@@ -101,8 +104,8 @@ Manages VGW connection
 	  gw_name = "transit"
 	  vpc_id = "vpc-abcd1234"
 	  bgp_vgw_id = "vgw-abcd1234"
-    bgp_vgw_account = "devops"
-    bgp_vgw_region = "us-east-1"
+	  bgp_vgw_account = "devops"
+	  bgp_vgw_region = "us-east-1"
 	  bgp_local_as_num = "65001"
 	}
 
@@ -123,7 +126,7 @@ Manages VGW connection
 +------------------+-----------------------------------------+
 
 aviatrix_spoke_gateway
-------------------
+----------------------
 Manages an Aviatrix Spoke Gateway
 
 **Example Usage**
@@ -133,6 +136,7 @@ Manages an Aviatrix Spoke Gateway
 	  controller_ip = "1.2.3.4"
 	  username = "admin"
 	  password = "password"
+	  version = "2.2"
 	}
 
 	# Launch a spoke gateway, and join with transit gateway.
@@ -193,6 +197,7 @@ Sample configuration to create complete transit VPC solution
 	  controller_ip = "w.x.y.z"
 	  username = "admin"
 	  password = "Aviatrix123%23"
+	  version = "2.2"
 	}
 
 	resource "aviatrix_account" "test_acc" {
@@ -228,16 +233,16 @@ Sample configuration to create complete transit VPC solution
 
 	resource "aviatrix_vgw_conn" "test_vgw_conn" {
 	  conn_name = "my_conn"
-	  gw_name = aviatrix_transit_vpc.test_transit_gw.gw_name
+	  gw_name = aviatrix_transit_gateway.test_transit_gw.gw_name
 	  vpc_id = "vpc-abcd1234"
 	  bgp_vgw_id = "vgw-abcd1234"
-    bgp_vgw_account = aviatrix_account.test_acc.aws_account_number
-    bgp_vgw_region = "us-east-1"
+    bgp_vgw_account = aviatrix_account.test_acc.account_name
+	  bgp_vgw_region = "us-east-1"
 	  bgp_local_as_num = "65001"
     depends_on = ["aviatrix_transit_gateway.test_transit_gw"]
 	}
 
-	# Launch a spoke gatewa, and join with transit gateway.
+	# Launch a spoke gateway, and join with transit gateway.
 	# Omit ha_subnet to launch spoke gateway without HA.
 	# ha_subnet can be later added or deleted to enable/disable HA in spoke gateway
 	# Omit transit_gw to launch spoke gateway without attaching with transit gateway.

@@ -12,6 +12,9 @@ Read the `Aviatrix Terraform Provider Tutorial <https://docs.aviatrix.com/HowTos
 
 The provider allows you to manage Aviatrix resources such as account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. For Aviatrix Transit Network deployment, please click `here <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using Terraform.
 
+.. note::
+  Aviatrix is now an official Terraform provider! The Terraform setup procedure has been significantly simplified and the documentation below has been updated accordingly. Customers who have previously set up our provider following our previous instructions may transition to our official provider by following Step 5 in the setup tutorial `here <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_
+
 Example Usage
 =============
 
@@ -22,6 +25,7 @@ Example Usage
 	  controller_ip = "1.2.3.4"
 	  username = "admin"
 	  password = "password"
+	  version = "2.2"
 	}
 
 	# Create a record
@@ -31,7 +35,7 @@ Example Usage
 
 Documentation
 =============
-The complete documentation for all available Aviatrix resources and data sources may be viewed on the Hashicorp Terraform doc site `here <https://www.terraform.io/docs/providers/aviatrix/>`_
+The complete documentation for all available Aviatrix resources and data sources may be viewed on the Hashicorp Terraform doc site `here <https://www.terraform.io/docs/providers/aviatrix/>`_.
 
 
 Sample configuration to launch a full-mesh network on AWS
@@ -50,6 +54,7 @@ Sample configuration to launch a full-mesh network on AWS
 	  controller_ip = "w.x.y.z"
 	  username = "admin"
 	  password = "Aviatrix123"
+	  version = "2.2"
 	}
 
 	# Increase count default value to add more VPCs and subnets to launch more gateways together.

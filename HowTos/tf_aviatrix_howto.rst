@@ -7,28 +7,23 @@
 Aviatrix Terraform Tutorial
 ===========================================================================================
 
-This document will walk you through the steps to make use of the Aviatrix Terraform provider. As an example, an Aviatrix gateway will be launched.
-It is assumed that Terraform is already set up. If so, skip steps 1 and 2.
+This document will walk you through the steps to set up the Aviatrix Terraform provider. As an example, an Aviatrix gateway will be launched.
+
+.. note::
+  Aviatrix is now an official Terraform provider! The Terraform setup procedure has been significantly simplified and the documentation below has been updated accordingly. Customers who have previously set up our provider following our previous instructions may transition to our official provider by following the steps below in Step 5.
 
 1. Download Terraform Package
 -------------------------------------
 
 Terraform is delivered as a zip file in binary. Click `here <https://www.terraform.io/downloads.html>`_, select your respective OS and simply download the package as you would for any software.
 
-For Mac, Terraform is also present in `Homebrew <https://brew.sh/>`_. Perform ``brew install terraform`` to install Terraform (Skip step 2 if done this way).
+For Mac, Terraform is also present in `Homebrew <https://brew.sh/>`_. Perform ``brew install terraform`` to install Terraform (Skip step 1.1 if done this way).
 
-Once it is downloaded, double click to unzip the file. The executable file terraform should be
-in your Downloads folder. (This will be used as an example in this document)
-
-For Unix systems, open a terminal, type the command ``./Downloads/terraform --version`` , and you should see output similar to the following image:
-
-|setup_tf|
-
-For Windows, the command is ``terraform.exe --version``
+Once download is complete, double-click to unzip the file. The executable file ``terraform`` should be in your Downloads folder. (This will be used as an example in this document)
 
 
 1.1. Setup Execution Path (only when not using package manager)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you are running the Terraform binary file after simply downloading it, you will need to execute it using the full path.
 
@@ -43,8 +38,9 @@ Assuming it's downloaded into your ``$HOME/Downloads`` directory, run:
 
 In your Terminal, run ``terraform`` to verify Terraform has been successfully been installed.
 
-Please run ``terraform -version`` to verify you have the latest version of Terraform. `As of 22 May 2019 <https://www.hashicorp.com/blog/announcing-terraform-0-12>`_ , the latest version of Terraform is **0.12.x**.
+Please run ``terraform --version`` to verify you have the latest version of Terraform. `As of 22 May 2019 <https://www.hashicorp.com/blog/announcing-terraform-0-12>`_ , the latest version of Terraform is **0.12.x**.
 
+For Windows, the command is ``terraform.exe --version``
 
 2. Prepare Aviatrix Controller
 --------------------------------
@@ -62,7 +58,7 @@ While you can run Terraform within any directory, we highly recommend using Terr
 Example for Unix/Linux:
 
 ::
-  
+
   $ mkdir terraform-test-environment
   $ cd terraform-test-environment
   $ terraform init
@@ -137,9 +133,11 @@ Finally, run the ``terraform apply`` command to launch the gateway.
 When the above command finishes, you can login to your Aviatrix Controller console, navigate to the Gateway page and see that the new gateway with the name "testGW1" has been successfully launched.
 
 
-5. Simple Troubleshooting
+5. Troubleshooting
 --------------------------
 
+5.1 Simple debugging
+^^^^^^^^^^^^^^^^^^^^
 A simple Terraform debug method is to set TF_LOG level in ~/.bash_profile, as shown in the below example (Remember to run command ``source ~/.bash_profile`` after editing .bash_profile):
 
 ::
@@ -148,13 +146,54 @@ A simple Terraform debug method is to set TF_LOG level in ~/.bash_profile, as sh
 
 With this log set to TRACE, you should see TRACE and ERROR when running Terraform commands. Pay attention to ERRORs if a Terraform command is not successful.
 
+5.2 Transitioning to Official Provider
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Our Aviatrix Terraform provider is now an official Terraform provider and as such, future releases will no longer be updated at the AviatrixSystems Github repo; it will be available through Hashicorp directly.
+
+This change means that current customers will no longer be required to manually use Git to pull changes locally and then run Go to build the provider. Future customers will also be saved the hassle of the previous setup procedure.
+
+For customers who previously set up the Aviatrix Terraform provider prior to the official release on Hashicorp, the transition procedure is relatively simple.
+
+1. Remove the ``.terraformrc`` created to previously link Terraform to the filepath of the local provider to build/ comment out the "aviatrix" providers block within the file
+  a. For Linux/ Unix, it should be the ``~/.terraformrc``
+  b. For Windows, the file should be at ``%APPDATA%\terraform.rc``
+2. In your Terraform environment where the **provider** block is written, specify the version provider you would like to use (see below for example)
+  a. Please note that the ``version`` refers to the Aviatrix Terraform release number. Refer to our `provider release notes <https://github.com/terraform-providers/terraform-provider-aviatrix/releases>`_
+    * Please also note that previously, customers were to match and build the branch of the provider corresponding to the Controller version. Now, customers should use whichever latest ``version`` is compatible with their Controller
+      * **EXCEPTION: For customers on Controller 4.7.x, please note there are multiple releases to support various configurations:**
+        - Controller 4.7.x , Terraform v0.11: Use **Release 1.15**
+        - Controller 4.7.x , Terraform v0.12: Use **Release 1.16**
+      * **NOTE: For Release 2.0, there is major code restructuring and changes. Please follow Recommendations below before switching to Release 2.0+ if coming from releases prior/ Controller <4.7**
+        - Controller 4.7.x , Terraform v0.12: Use **Release 2.2**
+
+::
+
+  provider "aviatrix" {
+      controller_ip = "1.2.3.4"
+      username = "admin"
+      password = "password"
+      version = "2.2" # specify a Release version as shown on this line
+  }
+
+  ...
+
+Recommendation:
+***************
+For customers on Controller 4.7 or looking to upgrade to 4.7, please refer to our `Upgrade Guide (from R1.x to R2.x)<https://www.terraform.io/docs/providers/aviatrix/guides/v2-upgrade-guide.html>`_ before attempting to immediately switch to our official provider, especially if you are on Controller 4.7.
+
+Other documentation that may be of interest when upgrading between provider versions (unofficial or official) are:
+  * `Feature Changelist for R1.x <https://www.terraform.io/docs/providers/aviatrix/guides/feature-changelist.html>`_: tracks customer-impacting changes to Terraform environment for R1.x
+  * `Feature Changelist for R2.x <https://www.terraform.io/docs/providers/aviatrix/guides/feature-changelist-v2.html>`_: tracks customer-impacting changes to Terraform environment for R2.x
+
+If you have any questions, or would require assistance for the upgrade process, please feel free to send an email to support@aviatrix.com.
+
 
 6. More Examples
 -----------------
 
-To see what resources are provided, check out `Aviatrix Terraform Provider <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
+To see what resources are provided, check out the `Aviatrix Terraform Provider <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
 
-To see more examples, read on `Setup Aviatrix Transit Network with Terraform <https://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_.
+To see another example, check out how to `setup Aviatrix Transit Network with Terraform <https://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_.
 
 
 7. Contribute to the Community
