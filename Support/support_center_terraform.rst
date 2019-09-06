@@ -37,13 +37,13 @@ Please note that for Aviatrix Controller 4.7 and onward, we support Terraform v0
 Please see Hashicorp's blog `here <https://www.hashicorp.com/blog/announcing-terraform-0-12>`_ for more information.
 
 
-  However, we continue to offer support for Terraform v0.11 with our Controller 4.7.
+However, we continue to offer support for Terraform v0.11 with our Controller 4.7.
 
   * For Aviatrix Controller Release 4.7, Terraform v0.11: Use the `Github UserConnect-4.7-TF.11 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.7-TF.11>`_
   * For Aviatrix Controller Release 4.7, Terraform v0.12: Use the `Github UserConnect-4.7-TF.12-v1 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.7-TF.12-v1>`_
 
 
-  In addition to the Terraform v0.12 support, we have also had major restructuring to our code, such as attribute renaming, resource renaming and values etc, and have made a release (**R2.0**) for this version of our provider in the branch listed below:
+In addition to the Terraform v0.12 support, we have also had major restructuring to our code, such as attribute renaming, resource renaming and values etc, and have made a release (**R2.0**) for this version of our provider in the branch listed below:
 
   * `Github UserConnect-4.7-TF.12-v2 branch <https://github.com/terraform-providers/terraform-provider-aviatrix/tree/UserConnect-4.7-TF.12-v2>`_
 
