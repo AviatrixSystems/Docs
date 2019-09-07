@@ -51,7 +51,7 @@ R5.0 (coming in soon)
 6. ActiveMesh and Multi-Site Transit Beta
 --------------------------------------------
 
-  Contact Aviatrix sales or support team for preview on ActiveMesh and Multi-site Transit Network. 
+Learn `Aviatrix Transit ActiveMesh Mode <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_.  Contact Aviatrix sales or support team for preview on ActiveMesh and Multi-site Transit Network. 
 
 
 R4.7.590 (8/23/2019)
