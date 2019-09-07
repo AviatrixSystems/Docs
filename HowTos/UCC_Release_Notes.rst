@@ -51,7 +51,7 @@ R5.0 (coming in soon)
 6. ActiveMesh and Multi-Site Transit Beta
 --------------------------------------------
 
-Follow `ActiveMesh instructions to get started. <https://docs.aviatrix.com/HowTos/activemesh_beta.html>`_  Contact Aviatrix sales or support team for preview on ActiveMesh and Multi-site Transit Network. 
+  Contact Aviatrix sales or support team for preview on ActiveMesh and Multi-site Transit Network. 
 
 
 R4.7.590 (8/23/2019)

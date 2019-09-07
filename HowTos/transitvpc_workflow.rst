@@ -9,7 +9,7 @@ Global Transit Network Workflow Instructions (AWS/Azure/GCP)
 
 .. important::
 
- If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link. <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP or Transit network with Azure Native Peering, this document is your starting point.
+ If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP or Transit network with Azure Native Peering, this document is your starting point.
 
 This workflow provides you with step by step instructions to build a Global Transit Network. 
 
@@ -64,20 +64,27 @@ The Transit GW must be launched on a public subnet where its associated route ta
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Cloud Type                                      Currently Transit GW can only be launched in AWS
+Cloud Type                                      Currently Transit GW can launched in AWS, Azure and GCP
 Gateway Name                                    A unique name to identify the Transit GW
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
 VPC ID                                          The Transit VPC-id
 Public Subnet                                   The public subnet on which Transit GW instance is deployed
 Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
-Specify a Reachable DNS Server IP Address       Leave it unselected
+Allocate New EIP                                If selected, the Controller allocates a new EIP and associate it with the gateway instance. If not selected, the Controller looks for an allocated but unassociated EIP in the Transit GW account. 
+Insane Mode Encryption                          If selected, Transit GW can peer and connect to Spoke with `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_.
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
 
 .. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% for packet size less than 150 bytes when interoperating with VGW. This packet drop does not apply to Spoke GW.  
 
 You can change the Transit GW size later by following `these instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
+
+.. note::
+
+  If you would like to beta test ActiveMesh, go to Gateway page after the gateway launch is successful. Select the Transit GW, click Edit, scroll down to ActiveMesh Mode, click Enable. 
+
+
 
 2. (Optionally) Enable HA for the Transit Gateway
 --------------------------------------------------
@@ -199,8 +206,9 @@ Region                                          One of the AWS regions
 VPC ID                                          The Spoke VPC-id
 Public Subnet                                   The public subnet where the Spoke GW instance is deployed
 Gateway Size                                    Spoke GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
-Specify a Reachable DNS Servier IP Address      Leave it unselected
-Enable NAT                                      Select the option if the Spoke GW will also be the NAT gateway for the Spoke VPC
+Enable SNAT                                     Select the option if the Spoke GW will also be the NAT gateway for the Spoke VPC
+Allocate New EIP                                If selected, the Controller allocates a new EIP and associate it with the gateway instance. If not selected, the Controller looks for an allocated but unassociated EIP in the Transit GW account.
+Insane Mode Encryption                          If selected, Transit GW can peer and connect to Spoke with `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_.
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
 

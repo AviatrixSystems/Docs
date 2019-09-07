@@ -112,6 +112,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/nextgentransit_for_azure
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
+   HowTos/activemesh_faq
+   HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
 
 .. _Firewall Network:
