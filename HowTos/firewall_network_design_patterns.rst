@@ -52,6 +52,12 @@ inspection.
 When Ingress inspection is deployed, make sure you enable SNAT on the firewall instance to source NAT the private 
 IP address of NLB or a third party load balancer the IP address of LAN (or Trusted) interface of the FireNet. 
 
+Note you must follow the configuration sequence below:
+
+ 1. Disable the Traffic Inspection of the FireNet domain for Ingress/Egress.
+ #. Enable Egress Control for FireNet domain for Ingress/Egress. 
+ #. Build connection policies. 
+
 |multi_firewall|
 
 7. Ingress/Egress Traffic Inspection
