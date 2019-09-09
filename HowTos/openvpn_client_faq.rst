@@ -14,8 +14,8 @@ You may be connecting to a split tunnel VPN. This ensures that only your connect
 
 What user devices are VPN client software supported?
 ----------------------------------------------------------
-Windows, MAC, Linux, Chromebook, Android and iOS devices are supported.
-If you were asked to use Aviatrix VPN Client Windows, MAC, Linux and FreeBSD are supported
+Typical VPN client software on Windows, MAC, Linux, Chromebook, Android and iOS devices are supported.
+If you are using Aviatrix VPN Client for OpenVPN with SAML authentication, only Windows, MAC, Linux and FreeBSD are supported.
 
 
 I have a token generator for my Okta account. How do I use it?
