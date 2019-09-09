@@ -132,11 +132,17 @@ A logical deployment layout is described as below.
 
 |datacenter_layout|
 
+
 How to deploy Insane Mode for hybrid connectivity?
 ----------------------------------------------------
 
 Follow the `Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_ to deploy CloudN in your datacenter. 
 
+Do I need Direct Connect to use Insane Mode for On-prem?
+----------------------------------------------------
+
+Our InsaneMode high speed encryption feature works on top of your existing WAN link and it is agnostic to the type of connection used. As long as you have a pipe 
+that's large enough to alow for high throughput data transfer, using InsaneMode will offer seperior performance to regular IPSec. 
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
