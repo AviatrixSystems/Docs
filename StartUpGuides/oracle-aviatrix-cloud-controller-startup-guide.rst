@@ -47,7 +47,7 @@ Go to `Oracle Cloud Marketplace <https://cloudmarketplace.oracle.com/marketplace
 
 In the "Create Compute Instance" Page
     a. choose name, availability domain and "virtual Machine" as instance type
-    b. choose Instance Shape. The recommended shape is *Standard2.2* that has at least two cores
+    b. choose Instance Shape. The recommended shape is **Standard2.2**
 
        |inst_flavor|
 
