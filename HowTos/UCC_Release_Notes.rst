@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.0 (coming in soon)
+R5.0 (9/9/2019)
 =========================
 
 1. Automation & Operations
