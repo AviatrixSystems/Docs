@@ -4,16 +4,16 @@
 
 
 ==============================================================
-Global Transit Network Workflow Instructions (AWS/Azure/GCP)
+Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
 ==============================================================
 
 .. important::
 
- If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP or Transit network with Azure Native Peering, this document is your starting point.
+ If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
 
 This workflow provides you with step by step instructions to build a Global Transit Network. 
 
-While the instructions below reference AWS, they apply to Azure for preview starting release 4.1. 
+While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit Network is supported. 
 
 For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
