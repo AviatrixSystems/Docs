@@ -2,9 +2,9 @@
    :description: Aviatrix User SSL VPN Okta SAML Configuration
    :keywords: SAML, user vpn, saml, Aviatrix, OpenVPN, IdP, sp
 
-=====================================
+=================================
 OpenVPN® with SAML Authentication
-=====================================
+=================================
 
 1.  Overview
 ------------
@@ -319,6 +319,21 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 
 
+============================
+SAML Profile as an Attribute
+============================
+
+The VPN user gets a VPN profile rule configured to the one that is attached to the VPN User from the OpenVPN->Profiles page.
+If preferred, this can also be passed as attribute from the IDP. The IDP could send the "Profile" attribute along with the existing "FirstName", "LastName" and "Email" attributes.
+If the "Profile" attribute is set and the value sent from the IDP matches with any of the profile names configured from the controller, the profile rules are applied accordingly. 
+Note that if the IDP sends an invalid or empty Profile attribute, the default profile association is used.
+
+This way Profile associations can be configured at IDP instead of configuring at the controller.
+
+Currently only a single Profile is supported when using Profile as attributes.
+
+The profile association can be verified from the Dashboard page after the VPN user has connected.
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image3-1-1| image:: SSL_VPN_SAML_media/image3-1-1.png
@@ -332,3 +347,5 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |imagespmetadata| image:: SSL_VPN_SAML_media/SPMetadata.png
 
 .. disqus::
+
+
