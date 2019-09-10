@@ -2,9 +2,9 @@
    :description: launch a gateway and edit it
    :keywords: security policies, Aviatrix, AWS VPC, stateful firewall, UCX, controller, gateway
 
-###################################
+#######
 Gateway
-###################################
+#######
 
 .. raw:: html
 
@@ -220,6 +220,28 @@ This is disabled by default.
 
 By enabling the client certificate sharing, all VPN users share one .ovpn file. You must have MFA (such as DUO + LDAP) configured to make VPN access secure.
 
+
+Enable Duplicate Connections
+============================
+
+This was introduced in controller version 4.3. This controls whether users sharing the same common name can connect at the same time to the VPN Gateway.
+If this is disabled, when a user attempts to connect to the gateway through a different device, his existing VPN connection from the current device gets disconnected.
+
+Note that the users can still land on different VPN Gateways under a load balancer, even though the feature is enabled.
+
+Prior to 4.3, This setting was coupled with Client Certificate Sharing. 
+
+
+VPN NAT
+=======
+This features was introduced in controller version 4.6 . This controls whether the VPN connection uses NAT(Network Address Translation) while the VPN traffic leaves the Aviatrix VPN Gateway.
+
+VPN NAT is enabled by default. If you want to disable it, you can do so from OpenVPN->Edit Config->VPN NAT. 
+
+If NAT is disabled, the traffic would appear to originate from the virtual IP of the VPN user rather than the VPN Gateway itself. Note that you would need to open up the security groups of the target instance to the VPN CIDR for the traffic to flow through. 
+Any peering connection to this VPN gateway would additionally require traffic for the VPN CIDR to be forwarded to the gateway as well
+
+If you have multiple gateways under the load balancer, you would also need to ensure that the VPN CIDR of the gateways do not overlap, so that the traffic can be routed back to the respective gateway.
 
 Enable Policy Based Routing (PBR)
 =====================================
