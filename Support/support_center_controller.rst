@@ -258,3 +258,9 @@ Here is a sample script to import a CA signed cert:
 
   response = requests.post(url=api_endpoint_url, data=body_payload, files=file_list, verify=False)
   print(response.text)
+
+
+How can I use SAML for controller auth when I'm also using SAML for VPN authentication?
+------------------------------------------------------------------------------------------
+
+By default, we use "Hostname" for "Entity Id" when creating the SAML Endpoint in the Controller Console. When you create a second endpoint for controller login, you would have to pick "Custom" for "Entity Id" and use a custom string. You would have to use the same custom string when you provision the SAML App at your IdP(Okta, Onelogin, Azure, etc)
