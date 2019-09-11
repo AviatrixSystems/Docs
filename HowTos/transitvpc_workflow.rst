@@ -138,10 +138,10 @@ Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitg
 appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming both the 
 performance limit and route limit by these native services. Follow the instruction in this link to complete Step 3. 
 
-3.3 AWS VGW
+3.3 AWS VGW (VPN Gateway)
 ^^^^^^^^^^^^^^
 
-The instruction below is for a Transit GW to connect to AWS VGW. 
+Aviatrix automates the process of discovering and connecting to AWS VGW. The instruction below is for connecting Aviatrix Transit GW to AWS VGW. 
 
 Before executing this step, a VGW must have already been created. 
 
