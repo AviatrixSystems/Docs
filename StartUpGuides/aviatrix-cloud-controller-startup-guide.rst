@@ -150,14 +150,7 @@ Next, you will be prompted to change the admin password.
 
    |imageControllerChangePassword|
 
-3.5 Skip proxy setting 
--------------------------
-
-Click `Skip` in the next page, unless the Controller instance VPC has an HTTP or HTTPS proxy configured for Internet access. 
-
-   |imageproxy-config|
-
-3.6 Click Run
+3.5 Click Run
 ----------------
 
 Finally, the Controller will upgrade itself to the latest software version after you click on `Run`. Wait for a few minutes for the process to finish. 
@@ -171,14 +164,14 @@ Finally, the Controller will upgrade itself to the latest software version after
 
 If you wish to run a custom version, consult the Aviatrix support team before attempting it. 
 
-3.7  Select AWS
+3.6  Select AWS
 -------------------
 
 Once logged back into the Controller, you should be on the `Onboarding` page. You can also do this by clicking "Onboarding` on the navigation item. Then click the AWS icon. 
 
    |imageOnboardAws|
 
-3.8  Setup a primary access account  
+3.7  Setup a primary access account  
 --------------------------------------
 
 The Aviatrix primary access account contains the following information:
@@ -221,6 +214,7 @@ You are now ready to deploy use cases. Here are some of the things you can do:
 - `Build Site to Cloud VPN <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_
 - `Build Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_
 - `Build Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_
+- `Build Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
 
 -  `Aviatrix Overview. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
