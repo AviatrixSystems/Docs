@@ -124,11 +124,12 @@ Using **Push Mode** of ``token``
    .. note::
       You should receive a prompt to authenticate.  If you do not receive a prompt, make sure ``auth-user-pass`` option is in the .ovpn configuration file.
 
-#. Open the Duo Mobile app and get the latest passcode
+#. Open the Duo Mobile app and generate a new passcode. 
 #. In the VPN user/password prompt, enter any value for the username field and enter the passcode from Duo Mobile app for the password
 #. Verify you are connected and can access resources in the cloud
+#. Note that you need to generate a new passcode for each connection.
 
-Currently, token authentication with DUO is broken. Selecting token will enable auto authentication. This bug is expected to be fixed in a later release.
+Currently, selective authentication with DUO is broken if used when combined with LDAP. This bug is expected to be fixed in a later release.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
