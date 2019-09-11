@@ -68,7 +68,7 @@ Cloud Type                                      Currently Transit GW can launche
 Gateway Name                                    A unique name to identify the Transit GW
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
-VPC ID                                          The Transit VPC-id
+VPC ID                                          The Transit VPC/vNet/VCN ID 
 Public Subnet                                   The public subnet on which Transit GW instance is deployed
 Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
 Allocate New EIP                                If selected, the Controller allocates a new EIP and associate it with the gateway instance. If not selected, the Controller looks for an allocated but unassociated EIP in the Transit GW account. 
