@@ -37,6 +37,8 @@ Select Gateway Size
 When selecting the gateway size, note the following guidelines of IPsec performance
 based on iperf tests conducted between two gateways of the same size:
 
+AWS Performance Numbers: 
+
 +----------------------------+-------------------------------------------------+
 | AWS Instance Size          | Expected Throughput                             |
 +============================+=================================================+
@@ -56,6 +58,14 @@ based on iperf tests conducted between two gateways of the same size:
 +----------------------------+-------------------------------------------------+
 | c5n.2xlarge, c5n.4xlarge   | 4Gbps - 4.5Gbps (Jumbo Frame)                   |
 +----------------------------+-------------------------------------------------+
+
+OCI Performance Numbers: 
+
++----------------------------+--------------------------------------------------------------------------------
+| OCI Instance Shape         | Expected Throughput with Active Mesh | Expected Throughput without Active Mesh |
++============================+================================================================================
+| VM.Standard2.2,4,8,16      | 1.8G                                 | 900 Mbps                                |
++----------------------------+--------------------------------------------------------------------------------
 
 .. note::
 
