@@ -445,13 +445,14 @@ These are the steps:
 Is Aviatrix tunnel price expensive?
 -----------------------------------------
 
-Aviatrix pricing is not expensive. Majority of Aviatrix unit price, such as FQDN, TGW attachment and Spoke gateway attachment is placed at 
+Aviatrix pricing is not expensive. Majority of Aviatrix unit price, such as FQDN, TGW attachment and Spoke gateway attachment is priced at 
 $0.16/unit. The table below compares annual cost of an Aviatrix tunnel to an EC2. 
 
 As you can see, a tunnel or attachment cost is less than a single c5.xlarge or m5.xlarge cost. In a VPC, you may have tens or hundreds of instances that each costs more in a year than an Aviatrix tunnel.
 
 For example, if you have 100 instances in a VPC, the network cost is about 1% of your compute cost. Even when 
-you scale to more VPCs, this cost ratio does not change. Designing a network that optimize on network cost is a bad idea. 
+you scale to more VPCs, this cost ratio does not change. Designing a network that optimizes on network cost is 
+not a good idea. On the other hand, Aviatrix solution provides you many benefits in operations.
 
 =========================      ===============   ====================
 **Type**                       **Unit Price**    **Annual Price**
