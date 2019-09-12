@@ -62,7 +62,7 @@ AWS Performance Numbers:
 OCI Expected Throughput Numbers: 
 
 +----------------------------+--------------------------------------+------------------------------------------+
-| OCI Instance Shape         | Expected Throughput with Active Mesh |  Throughput without Active Mesh          |
+| OCI Instance Shape         |  Throughput with Active Mesh         |  Throughput without Active Mesh          |
 +============================+======================================+==========================================+
 | VM.Standard2.2 or larger   |  1.8G                                |  900 Mbps                                |
 +----------------------------+--------------------------------------+------------------------------------------+
