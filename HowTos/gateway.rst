@@ -59,12 +59,12 @@ AWS Performance Numbers:
 | c5n.2xlarge, c5n.4xlarge   | 4Gbps - 4.5Gbps (Jumbo Frame)                   |
 +----------------------------+-------------------------------------------------+
 
-OCI Performance Numbers: 
+OCI Expected Throughput Numbers: 
 
 +----------------------------+--------------------------------------+------------------------------------------+
-| OCI Instance Shape         | Expected Throughput with Active Mesh | Expected Throughput without Active Mesh  |
+| OCI Instance Shape         | Expected Throughput with Active Mesh |  Throughput without Active Mesh          |
 +============================+======================================+==========================================+
-| VM.Standard2.2,4,8,16      | 1.8G                                 | 900 Mbps                                 |
+| VM.Standard2.2 or larger   |  1.8G                                |  900 Mbps                                |
 +----------------------------+--------------------------------------+------------------------------------------+
 
 .. note::
