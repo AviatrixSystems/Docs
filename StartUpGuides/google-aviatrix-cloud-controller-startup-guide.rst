@@ -167,6 +167,23 @@ the quick tour guide to start launching gateways.
 
 For onboarding instructions on GCloud, click `this link. <http://docs.aviatrix.com/HowTos/CreateGCloudAccount.html>`_
 
+Resource Names
+===============
+The maximum length of a resource name can not exceed 63 characters in Gcloud.
+Resource names like firewall names, route names can be combination of project , vpc and
+gateway names. To avoid the resource names exceeding 63 characters, choose names that are
+not too long.
+
+
+Launching Gateway
+=================
+The following gateway sizes are supported for GCloud
+
+  'n1-standard-1','n1-highcpu-2',  'n1-standard-2',  'n1-highmem-2',
+  'n1-highcpu-4', 'n1-standard-4', 'n1-highmem-4',   'n1-highcpu-8', 
+  'n1-standard-8','n1-highmem-8',  'n1-highcpu-16',  'n1-standard-16',
+  'n1-highmem-16','n1-highcpu-32', 'n1-standard-32', 'n1-highmem-32'
+    
 Support
 =======
 
