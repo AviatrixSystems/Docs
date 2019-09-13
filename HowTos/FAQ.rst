@@ -453,12 +453,11 @@ As you can see, a tunnel or attachment cost is less than a single c5.xlarge or m
 For example, if you have 100 instances in a VPC, the additional network cost introduced by Aviatrix is 
 about 1% of your compute cost. Even when 
 you scale to more VPCs, this cost ratio does not change. Designing a network that optimizes on network cost is 
-not a good idea. On the other hand, Aviatrix solution provides you many benefits in operations.
+not a good idea. On the other hand, Aviatrix solution provides you many benefits in operations. 
 
 =========================      ===============   ====================
 **Type**                       **Unit Price**    **Annual Price**
 =========================      ===============   ====================
-Aviatrix Spoke attachment      $0.16/hour        $1401/year
 Aviatrix TGW attachment        $0.16/hour        $1401/year
 t3.xlarge                      $0.164/hour       $1436/year
 t3.2xlarge                     $0.3328/hour      $2915/year
