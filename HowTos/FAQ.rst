@@ -459,6 +459,7 @@ not a good idea. On the other hand, Aviatrix solution provides you many benefits
 **Type**                       **Unit Price**    **Annual Price**
 =========================      ===============   ====================
 Aviatrix TGW attachment        $0.16/hour        $1401/year
+Aviatrix FQDN gateway          $0.16/hour        $1401/year
 t3.xlarge                      $0.164/hour       $1436/year
 t3.2xlarge                     $0.3328/hour      $2915/year
 m5.xlarge                      $0.192/hour       $1681/year
