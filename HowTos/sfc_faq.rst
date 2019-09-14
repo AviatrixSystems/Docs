@@ -42,6 +42,8 @@ The key benefits are:
 
  1. Transferring files between on-prem and S3 by leveraging Direct Connect without using VGW public VIF. 
  #. The ability for you to have control over the data transfer in and out of any AWS S3 bucket. 
+ #. The ability to deploy multiple Aviatrix gateways to load balancing the data traffic.
+ #. Support multiple users, multiple AWS accounts and S3 buckets. 
 
 
 How does SFT work?
