@@ -1,10 +1,10 @@
 .. meta::
-  :description: Secure File Copy to S3 FAQ	
+  :description: Secure File Transfer to S3 FAQ	
   :keywords: AWS Storage gateway, AWS Transit Gateway, AWS TGW, scp, winscp, secure file copy
 
 
 =========================================================
-Secure File Copy to AWS S3 FAQ
+Secure File Transfer to AWS S3 FAQ
 =========================================================
 
 What is the security exposure when uploading files to AWS S3 over Direct Connect?
@@ -26,7 +26,7 @@ Another example: Your customers need to send data to AWS S3 buckets but you need
 
 Same issue of data leakage occurs if you upload files to S3 over public Internet.  
 
-What is Aviatrix Secure File Copy to AWS S3?
+What is Aviatrix Secure File Transfer to AWS S3?
 -----------------------------------------------
 
 Aviatrix Secure File Transfer (SFT) is a tool that allows you to leverage AWS Direct Connect to copy files between on-prem and S3 
