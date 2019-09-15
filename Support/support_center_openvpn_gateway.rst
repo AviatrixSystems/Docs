@@ -344,3 +344,13 @@ We do not have an API or a programmatic way to push the Aviatrix VPN Client app 
   * Regarding the encoded strings per profile in the above AviProf.conf - it is a base64encode of the fullpath+.ovpn file. You would have to generate it. (On Mac: "base64 --encode" or "base64 --decode")
   * If you deploy a profile with `certificate sharing <https://docs.aviatrix.com/HowTos/openvpn_features.html#authentication-options>`_, and deploy in a directory path which identical for all users, then you can build and deploy the same ".AviProf.conf" for all your users.
 
+
+How can I find out log history of my VPN users?
+------------------------------------------------------
+
+There are different options to find this information:
+
+  * Please look at "Controller > Troubleshoot > Diagnostics > VPN User" 
+  * You can look for a `disconnect log <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id1>`_ if you have `external logging feature  <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrix-log-format-for-log-management-systems>`_ turned on. 
+  * You could also look at our `REST API <https://api.aviatrix.com/?version=latest#79695109-338c-4569-8f6c-824eb5ed5602>`_ to get this data.
+
