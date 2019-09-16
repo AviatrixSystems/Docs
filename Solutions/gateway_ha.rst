@@ -67,9 +67,10 @@ Single AZ Gateway
 
 The gateway is actively monitored by the Controller.  If there is a problem with the gateway or tunnel(s):
 
-#. A new gateway is provisioned in the same availability zone
+#. The gateway is stopped and started again
 #. Any configured tunnels are established from the new gateway to their respective terminating gateway
 #. An email notification is sent to the administrator
+#. Please look `here <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_ for more information
 
 .. _gwha_backup_gw:
 
