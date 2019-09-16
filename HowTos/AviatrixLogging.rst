@@ -372,6 +372,7 @@ On the Aviatrix Controller:
 Steps to `upgrade <http://docs.aviatrix.com/HowTos/sumologic_upgrade.html>`_
 Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 
+Please note that Sumo collector is memory intensive and needs instances with at least 2GB of memory - for AWS, t3.small, or higher depending on features deployed.
 
 4. Log management system Apps
 ====================================
