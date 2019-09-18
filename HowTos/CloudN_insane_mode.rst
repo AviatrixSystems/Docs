@@ -72,6 +72,12 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary
 ~~~~~~~~~~~~~~~~~~~~~~~~
 A CloudN appliance does not require a public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
 
+Here is the list of the public IP address that CloudN requires for outbound traffic. 
+
+ - www.carmelonetworks.com (54.149.28.255). 
+ - Controller's public IP address
+ - license.aviatrix.com (52.24.131.245)
+
 2.2 BGP Requirement
 ~~~~~~~~~~~~~~~~~~~~~~~
 BGP is required between the LAN port of the appliance and the on-prem router for route propagation.
