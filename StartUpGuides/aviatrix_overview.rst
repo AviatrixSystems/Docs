@@ -48,7 +48,7 @@ Multi Accounts                                  Yes         Yes             Yes 
 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes                                    Yes
 Next Gen Transit Network Edge                   Yes         Yes             No			                   Yes
-Firewall Network                                Yes         No              No                                     No
+Firewall Network                                Yes         No              No                                     Yes
 Transit Peering                                 Yes         Yes             No                                     Yes
 
 Native Peering                                  Yes         No              N/A                                    Yes
@@ -60,7 +60,7 @@ Advanced NAT                                    Yes         Yes             Yes 
 Remote Access User VPN                          Yes         Yes             Yes                                    Yes
 Site to Cloud VPN                               Yes         Yes             Yes                                    Yes
 
-Insane Mode Encryption                          Yes         No              No                                     No
+Insane Mode Encryption                          Yes         No              No                                     Yes
 
 Logging Service Integration                     Yes         Yes             Yes                                    Yes
 FlightPath Expert Diagnostics                   Yes         No              No                                     Yes
