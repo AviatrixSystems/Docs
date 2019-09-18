@@ -111,17 +111,14 @@ Configure Aviatrix
    |                               | `Internet Key Exchange Configuration`    |
    |                               | > **Pre-Shared Key**                     |
    +-------------------------------+------------------------------------------+
-   | Remote Subnet                 | Enter the value that matches the value   |
-   |                               | `Inside IP Address`                      |
-   |                               | > **Virtual Private Gateway**,           |
-   |                               | comma, the remote VPC CIDR               |
-   |                               | Note, the remote VPC CIDR represents     |
-   |                               | the VPC where VGW resides. For example,  |
-   |                               | 169.254.44.145/30, 10.27.0.0/20          |
+   | Remote Subnet                 | Remote subnet is usually the cloud       |
+   |                               | networks                                 |
+   |                               | for eg., Spoke VPC which onprem wants to |
+   |                               | reach to  (10.20.0.0/20)                 |
    +-------------------------------+------------------------------------------+
 
    |tunnelconfig|
-   
+
 Test
 ----
 
@@ -226,4 +223,3 @@ Other fields should be filled as instructed in above section **Configure Aviatri
    :scale: 30%
 
 .. disqus::
-
