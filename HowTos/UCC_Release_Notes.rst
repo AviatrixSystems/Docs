@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+R5.0.2768 (9/18/2019)
+========================
+
+ - **Bug fix** FQDN process may take 2 to 5 minutes to restart when a new URL rule is updated. 
+
 R5.0.2754 (9/16/2019)
 =======================
  
