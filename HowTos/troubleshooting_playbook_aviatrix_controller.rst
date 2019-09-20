@@ -30,13 +30,13 @@ Workflow:
       `Check whether the IP in Aviatrix database is same as the current public IP of the controller`_
 
       `Check whether basic deployment functions properly by running Aviatrix Diagnostic report for Aviatrix Controller from Aviatrix Controller`_
-
+      
       `Check basic network configuration of AWS where Aviatrix Controller locates from Aviatrix Controller`_
  
-   * Cloud Platform
-   
+   * Cloud Platform 
+      
       `Check basic network configuration of AWS where Aviatrix Gateway locates from AWS portal`_
-
+      
 3. Troubleshoot Basic Network function for Aviatrix Gateway from Aviatrix Controller
 
     `T_05. Verify Internet layer by sending ICMP traffic to a public server with IP`_
@@ -148,7 +148,7 @@ Check basic network configuration of AWS where Aviatrix Controller locates from 
     
       * Run flight path feature
     
-      * Expect to meet the critical as below steps D.
+      * Expect to meet the criticals in `Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal`_
 
 Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
