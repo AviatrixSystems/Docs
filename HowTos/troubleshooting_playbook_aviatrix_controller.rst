@@ -6,7 +6,7 @@
 Aviatrix Controller Troubleshooting Playbook
 =========================================================================================
 
-This technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
+This technical note provides a step-by-step tips to troubleshoot Aviatrix Controller
 
 Workflow:
 ---------
@@ -35,19 +35,19 @@ Workflow:
  
    * Cloud Platform 
       
-      `Check basic network configuration of AWS where Aviatrix Gateway locates from AWS portal`_
+      `Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal`_
       
 3. Troubleshoot Basic Network function for Aviatrix Gateway from Aviatrix Controller
 
-    `T_05. Verify Internet layer by sending ICMP traffic to a public server with IP`_
+    `T_05. Verify Internet layer by sending ICMP traffic to a public server with IP from Aviatrix Controller`_
   
-    `T_06. Verify Transport layer by sending traffic to a public server with IP/Protocol/Port`_
+    `T_06. Verify Transport layer by sending traffic to a public server with IP/Protocol/Port from Aviatrix Controller`_
   
-    `T_07. Verify Application layer by sending ICMP traffic to a public server with domain name`_
+    `T_07. Verify Application layer by sending ICMP traffic to a public server with domain name from Aviatrix Controller`_
     
 4. Troubleshoot Application traffic
 
-    `T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly`_
+    `T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly from Aviatrix Controller`_
 
 Detail:
 -------
@@ -343,8 +343,8 @@ T_05. Verify Internet layer by sending ICMP traffic to a public server with IP f
       5 packets transmitted, 5 received, 0% packet loss, time 4008ms
       rtt min/avg/max/mdev = 1.954/1.986/2.028/0.061 ms
 
-T_06. Verify Transport layer by sending traffic to a public server with IP/Protocol/Port
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+T_06. Verify Transport layer by sending traffic to a public server with IP/Protocol/Port from Aviatrix Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    * https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#network-connectivity-utility
 
@@ -366,8 +366,8 @@ T_06. Verify Transport layer by sending traffic to a public server with IP/Proto
 
    * Expect to view a green message “Able to reach 8.8.8.8 at 443 from controller” on Aviatrix GUI
 
-T_07. Verify Application layer by sending ICMP traffic to a public server with domain name
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+T_07. Verify Application layer by sending ICMP traffic to a public server with domain name from Aviatrix Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    * https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#controller-utility
 
@@ -416,8 +416,8 @@ T_07. Verify Application layer by sending ICMP traffic to a public server with d
 
       2. Allow public traffic on security group and ACL
 
-T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly from Aviatrix Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html
 
