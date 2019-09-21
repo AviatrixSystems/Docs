@@ -70,9 +70,9 @@ In AWS S3, at the top level create a bucket for bootstrap with a **unique** name
 
 **3.1** The example bootstrap.xml file contains the "Allow All", Egress and API admin setup. To copy the file, click :download:`this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/Bootstrap-Config/bootstrap.xml>`. Save the file to bootstrap.xml
 
-This is another way :download:`init-cfg.txt <bootstrap_example_media/init-cfg.txt>`
+This is another way :download:`bootstrap.xml <bootstrap_example_media/bootstrap.xml>`
 
-**3.2** For the example init-cfg.txt file, click :download:`this link <https://aviatrix-download.s3-us-west-2.amazonaws.com/Bootstrap-Config/init-cfg.txt>` to copy and save the file to init-cfg.txt. 
+**3.2** For the example init-cfg.txt file, click :download:`init-cfg.txt <bootstrap_example_media/init-cfg.txt>`. 
 
 .. Note::
 
