@@ -10,6 +10,8 @@ Example Config for Palo Alto Network VM-Series
 In this document, we provide an example to set up the VM-Series for you to validate that packets are indeed
 sent to the VM-Series for VPC to VPC traffic inspection.
 
+For using bootstrap method to setup the VM-Series, follow `this document. <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_
+
 The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ After the launch is complete, the console displays the
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file 
 for SSH access to the instance. 
