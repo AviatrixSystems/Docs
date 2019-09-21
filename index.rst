@@ -125,11 +125,12 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
    HowTos/firewall_network_design_patterns
+   HowTos/paloalto_API_setup
    HowTos/config_paloaltoVM
+   HowTos/bootstrap_example
    HowTos/config_FortiGate.rst
    HowTos/config_Checkpoint.rst
    HowTos/config_PFsense
-   HowTos/paloalto_API_setup
    HowTos/config_Barracuda.rst
 
 .. _Transit DMZ:
