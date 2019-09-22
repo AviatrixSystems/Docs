@@ -23,37 +23,37 @@ Workflow:
 
   * Aviatrix
   
-      Check OpenVPN configuration from Aviatrix Controller
+      `Check OpenVPN configuration from Aviatrix Controller`_
   
   * Cloud Platform
       
-      Check Aviatrix gateway’s instance level and network level for OpenVPN feature from AWS portal
+      `Check Aviatrix gateway’s instance level and network level for OpenVPN feature from AWS portal`_
 
-      Check AWS components which are created by Aviatrix when ELB function is enabled from AWS portal
+      `Check AWS components which are created by Aviatrix when ELB function is enabled from AWS portal`_
 
 3. Troubleshoot other Aviatrix Features Deployment
 
-    Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue
+    `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
 
 4. Troubleshoot end device’s Deployment
     
-    Check end/testing device's instance level and network level from AWS portal
+    `Check end/testing device's instance level and network level from AWS portal`_
 
 5. Troubleshoot connectivity between Aviatrix and OpenVPN client
     
-    Check OpenVPN client’s log for detail
+    `Check OpenVPN client’s log for detail`_
     
-    Troubleshoot Network between Aviatrix and OpenVPN client
+    `Troubleshoot Network between Aviatrix and OpenVPN client`_
 
 6. Troubleshoot connectivity between OpenVPN client and end device
 
-    T_01. Verify Internet layer by sending ICMP traffic to the end device with IP
+    `T_01. Verify Internet layer by sending ICMP traffic to the end device with IP`_
 
-    T_02. Verify Transport layer by sending traffic to the end device with IP/Protocol/Port
+    `T_02. Verify Transport layer by sending traffic to the end device with IP/Protocol/Port`_
 
-    T_03. Verify DNS by issuing command #nslookup [DOMAIN NAME OF END DEVICE] on OpenVPN client
+    `T_03. Verify DNS by issuing command #nslookup [DOMAIN NAME OF END DEVICE] on OpenVPN client`_
 
-    T_04. Verify connectivity between OpenVPN client and end device
+    `T_04. Verify connectivity between OpenVPN client and end device`_
 
 Detail:
 -------
@@ -84,6 +84,9 @@ Check OpenVPN configuration from Aviatrix Controller
   * Check Enable ELB
   
     * https://docs.aviatrix.com/HowTos/gateway.html#enable-elb
+    
+  * Check VPN NAT
+     * https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat
   
   * More info in https://docs.aviatrix.com/HowTos/gateway.html
 
@@ -147,11 +150,11 @@ Check end/testing device's instance level and network level from AWS portal
 
   Check Point 1: Check the Security Group which is attached to the end/testing instance
   
-    * Expect to have at least allowing Aviatrix OpenVPN’s private IP in inbound rules if VPN NAT is enabled:
+    * Expect to have at least allowing Aviatrix OpenVPN’s private IP in inbound rules if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is enabled:
     
       1. Type: All traffic, Protocol: All, Port Range: 0-65535, Source: Custom: ‘Aviatrix OpenVPN’s private IP'
   
-    * Expect to have at least allowing virtual IP of the VPN user or the whole VPN CIDR in inbound rules if VPN NAT is not enabled:
+    * Expect to have at least allowing virtual IP of the VPN user or the whole VPN CIDR in inbound rules if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is not enabled:
     
       1. Type: All traffic, Protocol: All, Port Range: 0-65535, Source: Custom: ‘VPN CIDR'
 
@@ -177,19 +180,17 @@ Check end/testing device's instance level and network level from AWS portal
     
       1. “VPC CIDR” local route
     
-      2. a route entry “virtual IP of the VPN user” or “VPN CIDR” pointing Aviatrix Gateway if NAT is not enabled
+      2. a route entry “virtual IP of the VPN user” or “VPN CIDR” pointing Aviatrix Gateway if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is not enabled
 
   Check Point 4: Execute Packet Capture on end device if possible
   
     * Expect to view as below traffic for incoming traffic
     
-      1. Aviatrix OpenVPN’s private IP if VPN NAT is enabled.
+      1. Aviatrix OpenVPN’s private IP if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is enabled.
     
-      2. virtual IP of the VPN user if  VPN NAT is not enabled.
+      2. virtual IP of the VPN user if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is not enabled.
   
     * Expect to view outing traffic
-
-  * Notes: https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat
 
 Check OpenVPN client’s log for detail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,7 +232,7 @@ Troubleshoot Network between Aviatrix and OpenVPN client
 
       * For troubleshooting purpose, please consider disable authentication and attempt to establish OpenVPN session again
 
-      * Refer H. Troubleshoot MFA authentication for NON SAML scenario
+      * `Troubleshoot MFA authentication for NON SAML scenario`_
 
   Check Point 3: Check routing info on OpenVPN client’s OS after establishing OpenVPN session
   
@@ -275,7 +276,7 @@ Troubleshoot Network between Aviatrix and OpenVPN client
       
       * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
     
-    * F. Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue
+    * `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
 
 Troubleshoot MFA authentication for NON SAML scenario
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -331,7 +332,7 @@ T_01. Verify Internet layer by sending ICMP traffic to the end device with IP
 
   Suggestions:
   
-    * F. Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue
+    * `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
   
     * Execute Aviatrix feature “Packet Capture” on Aviatrix OpenVPN gateway to view incoming and outgoing traffic
       
@@ -360,7 +361,7 @@ T_02. Verify Transport layer by sending traffic to the end device with IP/Protoc
 
   Suggestions:
   
-    * F. Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue
+    * `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
   
     * Execute Aviatrix feature “Packet Capture” on Aviatrix OpenVPN gateway to view incoming and outgoing traffic
       
@@ -402,11 +403,18 @@ T_03. Verify DNS by issuing command #nslookup [DOMAIN NAME OF END DEVICE] on Ope
     * https://docs.aviatrix.com/HowTos/gateway.html#nameservers
     
 T_04. Verify connectivity between OpenVPN client and end device
-* Steps:
-    1. Send the real application traffic from OpenVPN client to the end device
-* If it still fails, please follow the Suggestions as below:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   * Steps:
+   
+      * Send the real application traffic from OpenVPN client to the end device
+   
+   * If it still fails, please follow the Suggestions as below:
 
    Suggestions:
-* F. Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue
-* Execute Aviatrix feature “Packet Capture” on Aviatrix OpenVPN gateway to view incoming and outgoing traffic
-    1. https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
+   
+      * `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
+      
+      * Execute Aviatrix feature “Packet Capture” on Aviatrix OpenVPN gateway to view incoming and outgoing traffic
+
+         * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
