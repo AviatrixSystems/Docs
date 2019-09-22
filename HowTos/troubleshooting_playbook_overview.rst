@@ -54,74 +54,74 @@ The purpose of Aviatrix troubleshooting playbook is trying to assist users self-
 
 * Playbook template
 
-1. Check cloud permission
+   1. Check cloud permission
 
-2. Troubleshoot cloud deployment configuration
+   2. Troubleshoot cloud deployment configuration
 
-  * methods:
+     * methods:
 
-    * Aviatrix software
-  
-    * Cloud platform portal
-    
-  * workflow: Top Down approach
-    
-    1. Instance level such as AWS security group
+       * Aviatrix software
 
-    2. Network level such as AWS subnet, Network ACL, and routing table
-  
-3. Troubleshoot Aviatrix configuration
+       * Cloud platform portal
 
-  * methods:
+     * workflow: Top Down approach
 
-    * Aviatrix software
-    
-  * workflow:
-    
-    1. Basic Linux network configuration
-    
-    2. Basic Linux operating system configuration
-    
-4. Troubleshoot Aviatrix feature configuration
+       1. Instance level such as AWS security group
 
-  * methods:
+       2. Network level such as AWS subnet, Network ACL, and routing table
 
-    * Aviatrix software
-  
-    * Cloud platform portal
-    
-  * workflow: Top Down approach
-    
-    1. Instance level such as AWS security group
+   3. Troubleshoot Aviatrix configuration
 
-    2. Network level such as AWS subnet, Network ACL, and routing table
-    
-    3. Other services
-  
-5. Troubleshoot data plan/traffic
+     * methods:
 
-  * methods:
-  
-    * Aviatrix software
-  
-    * User environment
-    
-  * workflow: Bottom Up Approach
-  
-    1. IP -> Transport -> Application
-    
-    2. Packet capture
+       * Aviatrix software
+
+     * workflow:
+
+       1. Basic Linux network configuration
+
+       2. Basic Linux operating system configuration
+
+   4. Troubleshoot Aviatrix feature configuration
+
+     * methods:
+
+       * Aviatrix software
+
+       * Cloud platform portal
+
+     * workflow: Top Down approach
+
+       1. Instance level such as AWS security group
+
+       2. Network level such as AWS subnet, Network ACL, and routing table
+
+       3. Other services
+
+   5. Troubleshoot data plan/traffic
+
+     * methods:
+
+       * Aviatrix software
+
+       * User environment
+
+     * workflow: Bottom Up Approach
+
+       1. IP -> Transport -> Application
+
+       2. Packet capture
   
 * Troubleshooting process
 
-1. Identify the problem by 
+   1. Identify the problem by 
 
-  1. Set checkpoints
+     1. Set checkpoints
 
-  2. Define expectation
-  
-  3. List failure/error message
-  
-2. Establish or educated guess a theory of probable causes
+     2. Define expectation
 
-3. Establish an action plan/suggestion and execute the plan
+     3. List failure/error message
+
+   2. Establish or educated guess a theory of probable causes
+
+   3. Establish an action plan/suggestion and execute the plan
