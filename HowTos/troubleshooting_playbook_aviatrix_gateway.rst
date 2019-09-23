@@ -190,7 +190,7 @@ Check basic network configuration of AWS where Aviatrix Gateway locates from AWS
       
          * Expect that the routing to AWS Endpoint does not impact the traffic to IGW/internet
 
-         * NOTES: PRIVATE DNS OR AWS INTERFACE ENDPOINT MIGHT RESOLVE A AWS SERVICE DOMAIN NAME INTO A PRIVATE IP WHICH MIGHT MISLEAD THE TRAFFIC TO END POINT ENTRY
+         * NOTES: Private DNS or AWS interface endpoint might resolve an AWS service domain name into a private IP which might mislead the traffic to endpoint entry
       
       5. Check whether an EIP is assigned to Aviatrix Gateway
 
@@ -204,7 +204,7 @@ Check basic network configuration of AWS where Aviatrix Gateway locates from AWS
          
             domain-name = us-west-1.compute.internal; domain-name-servers = AmazonProvidedDNS;
       
-         * If users deploys private DNS, please make sure the private DNS can forward request to public DNS properly
+         * If users deploys a private DNS, please make sure the private DNS can forward request to public DNS properly
          
             * NOTES: Aviatrix Gateway uses DNS 8.8.8.8 as a default DNS. Users are able to remove the default DNS server for the Aviatrix gateway and instructs the gateway to use the `VPC DNS server configured in VPC DHCP option <https://docs.aviatrix.com/HowTos/gateway.html#use-vpc-vnet-dns-server>`_
       
