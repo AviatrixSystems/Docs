@@ -408,13 +408,13 @@ T_07. Verify Application layer by sending ICMP traffic to a public server with d
 
    Suggestions:
 
-      1. please check the private DNS configuration
+      * Check the private DNS configuration
 
         1. Make sure it can resolve a public domain
 
-        2. Make sure it can forward public DNS request to a public DNS
+        2. Make sure it can forward a public DNS request to a public DNS
 
-      2. Allow public traffic on security group and ACL
+      * `Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal`_
 
 T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly from Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -456,7 +456,7 @@ T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly from Aviatr
 
    Probable Causes:
 
-      * There is an AWS endpoint/interface for AWS EC2 API in the routing table
+      * There is an AWS endpoint/interface for AWS EC2 API in the routing table or subnet
 
       * A private DNS cannot resolve a public domain or forward this public DNS request to a public DNS properly
 
@@ -471,6 +471,8 @@ T_08. Verify whether Aviatrix Gateway can issue AWS EC2 API properly from Aviatr
          1. Make sure it can resolve a public domain
 
          2. Make sure it can forward public DNS request to a public DNS
+         
+      3. `Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal`_
 
 
 .. disqus::
