@@ -292,7 +292,7 @@ Troubleshoot MFA authentication for NON SAML scenario
   
     * If server is deployed in other cloud platforms, internet or On-Prem, please check the similar configuration
   
-  3. F. Check OpenVPN client’s log for detail
+  3. `Check OpenVPN client’s log for detail`_
   
   4. Check whether Aviatrix OpenVPN gateway can reach to the authentication server
   
