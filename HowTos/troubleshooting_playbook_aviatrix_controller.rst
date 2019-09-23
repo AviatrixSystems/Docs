@@ -23,7 +23,7 @@ Workflow:
   
 2. Troubleshoot Deployment configuration
 
-   * Aviatrix Controller GUI
+   * Aviatrix
   
       `Check whether the DNS function works properly in Aviatrix Controller`_
 
