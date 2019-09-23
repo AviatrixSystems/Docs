@@ -89,7 +89,7 @@ Playbook template
 
       * workflow: Bottom Up Approach
 
-         1. IP -> Transport -> Application
+         1. IP layer -> Transport layer -> Application layer
 
          2. Packet capture
   
