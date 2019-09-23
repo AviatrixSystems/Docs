@@ -341,13 +341,13 @@ T_03. Verify Application layer by sending ICMP traffic to a public server with d
 
    Suggestions:
    
-      1. please check the private DNS configuration if you enable the feature “Use VPC/VNet DNS Server"
+      1. please check the private DNS configuration if you enable the feature `“Use VPC/VNet DNS Server" <https://docs.aviatrix.com/HowTos/gateway.html#use-vpc-vnet-dns-server>`_
       
          1. Make sure it can resolve a public domain
       
          2. Make sure it can forward public DNS request to a public DNS
       
-      2. Allow public traffic on security group and ACL
+      2. `Check basic network configuration of AWS where Aviatrix Gateway locates from AWS portal`_
 
 T_04. Verify connectivity between Controller and Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -362,7 +362,7 @@ T_04. Verify connectivity between Controller and Gateway
       
       2. Navigate to the Aviatrix GUI page: Troubleshoot -> Diagnostics -> Network -> NETWORK CONNECTIVITY UTILITY
       
-      3. Hostname:  [CONTROLLER-PUBLIC-IP] 
+      3. Hostname: [CONTROLLER-PUBLIC-IP] 
       
       4. Port: 443
       
@@ -402,9 +402,9 @@ T_04. Verify connectivity between Controller and Gateway
 
    Suggestions:
    
-      * Follow the instruction in A. Check whether Aviatrix Gateway displays status properly from Aviatrix Controller
+      * Follow the instructions in `Check whether Aviatrix Gateway displays status properly from Aviatrix Controller`_
    
-      * Follow the instruction in B. Check whether basic deployment functions properly by running Aviatrix Diagnostic report for Aviatrix Gateways from Aviatrix Controller
+      * Follow the instructions in `Check whether basic deployment functions properly by running Aviatrix Diagnostic report for Aviatrix Gateways from Aviatrix Controller`_
    
       * Enable the function `CONTROLLER SECURITY GROUP MANAGEMENT <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ on Aviatrix Controller 
 
@@ -450,7 +450,7 @@ T_05. Verify whether Aviatrix Gateway can issue AWS EC2 API properly
 
    Probable Causes:
    
-      * There is an AWS endpoint/interface for AWS EC2 API in the routing table
+      * There is an AWS endpoint/interface for AWS EC2 API in the routing table or subnet
 
    Suggestions:
    
