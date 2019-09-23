@@ -11,7 +11,7 @@ This technical note provides a step-by-step tips to troubleshoot Aviatrix Gatewa
 Workflow:
 ---------
 
-1. Check basic information
+1. Check basic information - Cloud Permission and Aviatrix Controller
 
       `Cloud Permission - AWS IAM Service Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aws_iam_service.rst>`_
    
