@@ -220,7 +220,7 @@ Check basic network configuration of AWS where Aviatrix Controller locates from 
 T_01. Verify Internet layer by sending ICMP traffic to the public IP of Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   * For troubleshooting purpose, please temporarily allow ICMP traffic from your environment's IP on Aviatrix Controller in Cloud Platform
+   * For troubleshooting purpose, please temporarily allow ICMP traffic from your environment's public IP on Aviatrix Controller in Cloud Platform
 
    * Issue command #ping [CONTROLLER PUBLIC IP]
 
