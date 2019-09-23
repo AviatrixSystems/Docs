@@ -6,6 +6,8 @@
 Aviatrix Troubleshooting Playbook Overview
 =========================================================================================
 
+This technical note provides an overview and guideline of Aviatrix Troubleshooting Playbook. The purpose of Aviatrix troubleshooting playbook is trying to assist users self-troubleshooting Aviatrix product, the related Cloud platform configuration, and data plan step-by-step.
+
 Category:
 ---------
 
@@ -47,10 +49,8 @@ How to high-level troubleshoot Aviatrix product
 
 6. Submit or update a support ticket
 
-Explanation of Aviatrix troubleshooting playbook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The purpose of Aviatrix troubleshooting playbook is trying to assist users self-troubleshooting Aviatrix product and the related Cloud configuration step-by-step.
+Explanation of Aviatrix troubleshooting playbook outline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Playbook template
 
