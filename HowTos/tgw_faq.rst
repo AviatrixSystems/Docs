@@ -319,6 +319,13 @@ Can Aviaitrix Controller orchestrate Direct Connect Gateway to  AWS Transit Gate
 Yes. If you would like to connect  your direct connect directly into Transit Gateway, Aviatrix controller allows you to configure an association between Direct Connect Gateway and AWS Tranist Gateway on the controller. 
 
 
+How to migrate from Aviatrix Transit Gateway to on-prem to TGW + DXGW?
+-------------------------------------------------------------------------
+
+ 1. Prepare. Ceate a DXGW on AWS Console, figure out the cloud VPCs summary prefixes. i.e., prepare for TGW Orchestrator -> Plan -> Step 7
+ #. Disconnect Aviatrix Transit Gateway from VGW. Transit Network -> Setup -> Step 8 (Disconnect VGW)
+ #. Connect. Connect to DXGW. TGW Orchestrator -> Plan -> Step 7
+
 
 
 
