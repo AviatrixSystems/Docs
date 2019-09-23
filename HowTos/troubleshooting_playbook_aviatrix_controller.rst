@@ -17,11 +17,11 @@ Workflow:
     
     `T_02. Verify Transport layer by sending traffic to the public IP of Aviatrix Controller with IP/Protocol/Port`_
     
-    `T_03. Verify Application layer by sending ICMP traffic to the domain name of Aviatrix Controller`_
+    `T_03. [OPTIONAL] Verify Application layer by sending ICMP traffic to the domain name of Aviatrix Controller`_
     
     `T_04. Verify connectivity between user’s environment and Aviatrix Controller`_
   
-2. Troubleshoot Deployment
+2. Troubleshoot Deployment configuration
 
    * Aviatrix
   
@@ -265,7 +265,7 @@ T_02. Verify Transport layer by sending traffic to the public IP of Aviatrix Con
 
       * Check network configuration
 
-T_03. Verify Application layer by sending ICMP traffic to the domain name of Aviatrix Controller
+T_03. [OPTIONAL] Verify Application layer by sending ICMP traffic to the domain name of Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    * For troubleshooting purpose, please temporarily allow ICMP traffic from your environment's IP on Aviatrix Controller in Cloud Platform
