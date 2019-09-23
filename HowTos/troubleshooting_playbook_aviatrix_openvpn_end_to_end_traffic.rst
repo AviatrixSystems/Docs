@@ -319,17 +319,17 @@ T_01. Verify Internet layer by sending ICMP traffic to the end device with IP
     
     2. Send ICMP traffic from OpenVPN client to the end device with IP by Traceroute/Tracert command
 
-  * If the Ping fail, please check the traceroute/tracert report to figure out where the traffic ends
+  * If the Ping fails, please check the traceroute/tracert report to figure out where the traffic ends
 
   Probable Causes:
   
     * End device does not allow ICMP traffic 
       
-      * check for the private IP of Aviatrix OpenVPN gateway if VPN NAT is enabled.
+      * check for the private IP of Aviatrix OpenVPN gateway if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is enabled.
       
-      * check for the VPN CIDR if VPN NAT is disabled.
+      * check for the VPN CIDR if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is disabled.
   
-    * Traffic might be routed or be blocked somewhere
+    * Traffic might be mis-routed or be blocked somewhere
 
   Suggestions:
   
@@ -346,7 +346,7 @@ T_02. Verify Transport layer by sending traffic to the end device with IP/Protoc
   
     1. Send traffic  from OpenVPN client to the end device by Telnet command
   
-  * If the telnet traffic fail, the real application traffic might not work properly
+  * If the telnet traffic fails, the real application traffic might not work properly
 
   Probable Causes:
   
@@ -354,11 +354,11 @@ T_02. Verify Transport layer by sending traffic to the end device with IP/Protoc
   
     * End device does not allow
       
-      * for the private IP of Aviatrix OpenVPN gateway if VPN NAT is enabled.
+      * for the private IP of Aviatrix OpenVPN gateway if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is enabled.
       
-      * for the VPN CIDR if VPN NAT is disabled.
+      * for the VPN CIDR if `VPN NAT <https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat>`_ is disabled.
   
-    * Traffic might be routed or be blocked somewhere
+    * Traffic might be mis-routed or be blocked somewhere
 
   Suggestions:
   
@@ -375,7 +375,7 @@ T_03. Verify DNS by issuing command #nslookup [DOMAIN NAME OF END DEVICE] on Ope
   
     * Execute command #nslookup [DOMAIN NAME OF END DEVICE] on OpenVPN client
   
-  * If DNS request fail, traffic will not send to the end device properly
+  * If DNS request fails, traffic will not send to the end device properly
 
   Probable Causes:
   
