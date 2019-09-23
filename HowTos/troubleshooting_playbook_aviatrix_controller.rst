@@ -23,7 +23,7 @@ Workflow:
   
 2. Troubleshoot Deployment configuration
 
-   * Aviatrix
+   * Aviatrix Controller GUI
   
       `Check whether the DNS function works properly in Aviatrix Controller`_
 
@@ -37,7 +37,7 @@ Workflow:
       
       `Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal`_
       
-3. Troubleshoot Basic Network function for Aviatrix Gateway from Aviatrix Controller
+3. Troubleshoot Basic Network function for Aviatrix Controller from Aviatrix Controller GUI
 
     `T_05. Verify Internet layer by sending ICMP traffic to a public server with IP from Aviatrix Controller`_
   
