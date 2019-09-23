@@ -70,9 +70,9 @@ Check whether IAM role/policy for AWS Accounts (1) Primary and (2) Secondary are
     
     * Refer the below documents
     
-    * https://docs.aviatrix.com/HowTos/iam_policies.html
-    
-    * https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html
+      * https://docs.aviatrix.com/HowTos/iam_policies.html
+
+      * https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html
 
 Check whether InstanceProfileArn has the exact string “instance-profile/aviatrix-role-ec2”
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,7 +157,7 @@ Check whether trust relationship is not established properly between primary and
     
     2. Expect to grant 
         
-        1. the primary (Controller) AWS account itself access to the aviatrix-role-app in this primary account
+      1. the primary (Controller) AWS account itself access to the aviatrix-role-app in this primary account
 
   Check Point 2: Check the secondary account in AWS portal
   
@@ -206,7 +206,13 @@ Check whether company centrally manages & governs permission/policies across acc
 
   Suggestions:
 
-    * Please update the “Service Control Policies” to the expectation and run the Step A & B again
+    * Please update the “Service Control Policies” to the expectation and run the below steps again
+    
+      * `Check whether IAM role/policy for AWS Accounts (1) Primary and (2) Secondary are configured properly`_
+
+      * `Check whether InstanceProfileArn has the exact string “instance-profile/aviatrix-role-ec2”`_
+
+      * `Check whether IAM role is attached to Aviatrix Gateway and IAM policy is associated to IAM role properly`_
 
 Other troubleshooting documents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
