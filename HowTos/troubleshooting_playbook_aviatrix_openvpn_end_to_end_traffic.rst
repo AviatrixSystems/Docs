@@ -11,7 +11,7 @@ This technical note provides a step-by-step tips to troubleshoot Aviatrix OpenVP
 Workflow:
 ---------
 
-1. Check Cloud Permission, Aviatrix Controller, and Aviatrix Gateway
+1. Check basic information - Cloud Permission, Aviatrix Controller, and Aviatrix Gateway
 
       `Cloud Permission - AWS IAM Service Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aws_iam_service.rst>`_
    
@@ -19,7 +19,7 @@ Workflow:
       
       `Aviatrix Gateway Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aviatrix_gateway.rst>`_
     
-2. Troubleshoot OpenVPN Deployment
+2. Troubleshoot OpenVPN Deployment configuration
 
   * Aviatrix
   
@@ -31,11 +31,11 @@ Workflow:
 
       `Check AWS components which are created by Aviatrix when ELB function is enabled from AWS portal`_
 
-3. Troubleshoot other Aviatrix Features Deployment
+3. Troubleshoot other Aviatrix Features Deployment configuration
 
     `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
 
-4. Troubleshoot end device’s Deployment
+4. Troubleshoot end device’s Deployment configuration
     
     `Check end/testing device's instance level and network level from AWS portal`_
 
