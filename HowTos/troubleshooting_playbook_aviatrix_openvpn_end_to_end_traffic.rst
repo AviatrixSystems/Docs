@@ -203,17 +203,17 @@ Troubleshoot Network between Aviatrix and OpenVPN client
 
   Check Point 1: Check whether OpenVPN client can reach to AWS NLB/Aviatrix OpenVPN gateway via internet
   
-    * Check there is no firewall configuration blocking OpenVPN session on client’s
+    * Check there is no firewall configuration blocking OpenVPN session on client’s environment
 
-      * https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#why-are-my-dns-settings-changes-not-taking-effect
-
-      * OS
+      * OS firewall
 
       * Network environment
+      
+      * https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#why-are-my-dns-settings-changes-not-taking-effect
 
     * Check the routing info on client’s OS/Network environment
 
-      * Make sure client have access to internet especially the public IP of Aviatrix OpenVPN gateway or the domain name of AWS NLB
+      * Make sure client has access to internet especially the public IP of Aviatrix OpenVPN gateway or the domain name of AWS NLB
 
       * Utilize command traceroute/tracert to confirm the routing path
 
