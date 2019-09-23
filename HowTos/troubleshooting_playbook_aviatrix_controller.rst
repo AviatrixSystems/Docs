@@ -69,7 +69,7 @@ Check whether the DNS function works properly in Aviatrix Controller
 
     Probable Causes:
 
-      * DNS which is used by Aviatrix Controller cannot resolve/forward public Domain name request properly.
+      * DNS which is used by Aviatrix Controller cannot resolve/forward a public domain name request properly.
 
     Suggestions:
 
@@ -192,8 +192,8 @@ Check basic network configuration of AWS where Aviatrix Controller locates from 
       4. Check whether the Routing Table where Aviatrix Controller locates has Endpoint entry
     
          * Expect that the routing to AWS Endpoint does not impact the traffic to IGW/internet
-    
-         * NOTES: PRIVATE DNS OR AWS INTERFACE ENDPOINT MIGHT RESOLVE A AWS SERVICE DOMAIN NAME INTO A PRIVATE IP WHICH MIGHT MISLEAD THE TRAFFIC TO END POINT ENTRY
+             
+         * NOTES: Private DNS or AWS interface endpoint might resolve an AWS service domain name into a private IP which might mislead the traffic to endpoint entry
 
       5. Check whether an EIP is assigned to Aviatrix Controller
 
@@ -207,7 +207,7 @@ Check basic network configuration of AWS where Aviatrix Controller locates from 
          
                domain-name = us-west-1.compute.internal; domain-name-servers = AmazonProvidedDNS;
     
-         * If users deploys private DNS, please make sure the private DNS can forward request to public DNS properly
+         * If users deploys a private DNS, please make sure the private DNS can forward request to public DNS properly
         
          * NOTES: Aviatrix Controller uses a DNS which is assigned by Cloud platform as default DNS
 
