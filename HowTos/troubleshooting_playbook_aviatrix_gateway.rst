@@ -17,7 +17,7 @@ Workflow:
    
       `Aviatrix Controller Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aviatrix_controller.rst>`_
 
-2. Troubleshoot Deployment
+2. Troubleshoot Deployment configuration
 
   * Aviatrix
 
