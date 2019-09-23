@@ -247,9 +247,9 @@ T_02. Verify Transport layer by sending traffic to the public IP of Aviatrix Con
 
    * Issue command #telent [CONTROLLER PUBLIC IP] 443
 
-   * Expect to telnet success
+   * Expect to view telnet success
 
-   * If it fail, please check the tcptraceroute report to figure out where the traffic ends
+   * If it fails, please check the tcptraceroute report to figure out where the traffic ends
 
    Probable Causes:
 
