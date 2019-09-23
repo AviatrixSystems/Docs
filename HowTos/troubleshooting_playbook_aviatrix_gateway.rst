@@ -92,7 +92,7 @@ Check whether basic deployment functions properly by running Aviatrix Diagnostic
 
             * Expect to view "DNS resolution": "Pass"
 
-            * If not, please refer to Troubleshooting_Diagnostics_Result doc for probable causes and how to address it.
+            * If not, please refer to `Troubleshooting_Diagnostics_Result doc <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_ for probable causes and how to address it.
 
             * Notes: Aviatrix Gateway uses 8.8.8.8 as default DNS
          
@@ -102,7 +102,7 @@ Check whether basic deployment functions properly by running Aviatrix Diagnostic
 
             * If not, 
 
-               1. Please refer to Troubleshooting_Diagnostics_Result doc for probable causes and how to address it.
+               1. Please refer to `Troubleshooting_Diagnostics_Result doc <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_ for probable causes and how to address it.
 
                2. Or restart supervisor services if the above step does not address the issue
                
@@ -120,21 +120,21 @@ Check whether basic deployment functions properly by running Aviatrix Diagnostic
                      
                      5. Click the button “OK"
                       
-               3. Verify Aviatrix Gateway can receive HTTPS traffic from Aviatrix Controller
-                  
-                  * Check HTTPS Output field
-                  
-                  * Expect to view "443": ["up","reachable"]
-                  
-                  * If not, please refer to Troubleshooting_Diagnostics_Result doc for probable causes and how to address it.
-                  
-               4. Verify Aviatrix Controller can receive HTTPS traffic from Aviatrix Gateway
-                  
-                  * Check HTTPS Get Output field
-                  
-                  * Expect to view "HTTPS GET": "Pass"
-                  
-                  * If not, please refer to Troubleshooting_Diagnostics_Result doc for probable causes and how to address it.
+         3. Verify Aviatrix Gateway can receive HTTPS traffic from Aviatrix Controller
+
+            * Check HTTPS Output field
+
+            * Expect to view "443": ["up","reachable"]
+
+            * If not, please refer to `Troubleshooting_Diagnostics_Result doc <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_ for probable causes and how to address it.
+
+         4. Verify Aviatrix Controller can receive HTTPS traffic from Aviatrix Gateway
+
+            * Check HTTPS Get Output field
+
+            * Expect to view "HTTPS GET": "Pass"
+
+            * If not, please refer to `Troubleshooting_Diagnostics_Result doc <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_ for probable causes and how to address it.
 
 Check basic network configuration of AWS where Aviatrix Gateway locates from Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
