@@ -45,11 +45,13 @@ Playbook template
 
          * Cloud platform portal
 
-      * workflow: Top Down approach
+      * workflow:
 
          1. Instance level such as AWS security group
 
          2. Network level such as AWS subnet, Network ACL, and routing table
+         
+         3. Other services
 
    3. Troubleshoot Aviatrix configuration
 
@@ -71,7 +73,7 @@ Playbook template
 
          * Cloud platform portal
 
-      * workflow: Top Down approach
+      * workflow:
 
          1. Instance level such as AWS security group
 
@@ -87,9 +89,9 @@ Playbook template
 
          * User environment
 
-      * workflow: Bottom Up Approach
+      * workflow:
 
-         1. IP layer -> Transport layer -> Application layer
+         1. IP layer -> Transport layer -> Application layer 
 
          2. Packet capture
   
