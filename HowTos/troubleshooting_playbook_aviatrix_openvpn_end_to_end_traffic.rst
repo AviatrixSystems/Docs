@@ -344,7 +344,7 @@ T_02. Verify Transport layer by sending traffic to the end device with IP/Protoc
 
   * Steps:
   
-    1. Send traffic  from OpenVPN client to the end device by Telnet command
+    * Send traffic  from OpenVPN client to the end device by Telnet command
   
   * If the telnet traffic fails, the real application traffic might not work properly
 
