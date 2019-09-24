@@ -347,7 +347,9 @@ T_03. Verify Transport layer by sending traffic with port 500/4500 to the public
 
   * Steps:
   
-    * Send traffic from Edge router to Aviatrix Gateway by similar Telnet command
+    * Send traffic with port 500 from Edge router to Aviatrix Gateway by similar Telnet command
+    
+    * Send traffic with port 4500 from Edge router to Aviatrix Gateway by similar Telnet command
   
   * If the telnet traffic fails, the real application traffic might not work properly
 
