@@ -216,8 +216,9 @@ Check whether company centrally manages & governs permission/policies across acc
 
       * `Check whether IAM role is attached to Aviatrix Gateway and IAM policy is associated to IAM role properly`_
 
-Other troubleshooting documents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Refer to other troubleshooting documents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   * https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html#how-can-i-debug-iam-related-issues-iam-debug-playbook
 
 
