@@ -132,33 +132,33 @@ Check IPSec VPN tunnel logs from Site2Cloud Diagnostics
      
       * If this string does not show up in the logs, IPSec VPN phase 1 does not establish properly
      
-   Probable Causes:
+      Probable Causes:
       
-      * Aviatrix Gateway cannot reach to the public IP of edge router
+         * Aviatrix Gateway cannot reach to the public IP of edge router
+
+         * Edge router cannot process IPSec VPN phase 1 negotiation traffic with port 500
+
+         * Phase 1 configuration on both IPSec VPN devices does not match
       
-      * Edge router cannot process IPSec VPN phase 1 negotiation traffic with port 500
+      Suggestions:
       
-      * Phase 1 configuration on both IPSec VPN devices does not match
-      
-   Suggestions:
-      
-      * Check whether edge router can receive traffic from Aviatrix Gateway
-      
-         * issue cli #ping [PUBLIC IP OF ED]
-         
-         * telnet 500
-      
-      * Confirm whether phase 1 configuration is consistent on both edge routers
-         
-         * Phase 1 Authentication
-         
-         * Phase 1 DH Group
-         
-         * Phase 1 Encryption
-         
-         * Phase 1 lifetime: 28800
-         
-         * Pre-shared Key
+         * Check whether edge router can receive traffic from Aviatrix Gateway
+
+            * issue cli #ping [PUBLIC IP OF ED]
+
+            * telnet 500
+
+         * Confirm whether phase 1 configuration is consistent on both edge routers
+
+            * Phase 1 Authentication
+
+            * Phase 1 DH Group
+
+            * Phase 1 Encryption
+
+            * Phase 1 lifetime: 28800
+
+            * Pre-shared Key
       
    Check Point 2: Check whether phase 2 is established
    
@@ -166,29 +166,29 @@ Check IPSec VPN tunnel logs from Site2Cloud Diagnostics
    
       * If this string does not show up in the logs, IPSec VPN phase 2 does not establish properly
      
-   Probable Causes:
+      Probable Causes:
    
-      * Edge router cannot process IPSec VPN phase 2 negotiation traffic with port 4500. Notes: if function nat traversal is enabled, IPSec VPN tunnel uses port 4500.
-      
-      * Phase 2 configuration on both IPSec VPN devices does not match
-      
-   Suggestions:
-      
-      * Check whether edge router can receive traffic from Aviatrix Gateway
-      
-         * telnet 4500
-      
-      * Confirm whether phase 2 configuration is consistent on both edge routers
+         * Edge router cannot process IPSec VPN phase 2 negotiation traffic with port 4500. Notes: if function nat traversal is enabled, IPSec VPN tunnel uses port 4500.
 
-         * Phase 2 Authentication
+         * Phase 2 configuration on both IPSec VPN devices does not match
+      
+      Suggestions:
+      
+         * Check whether edge router can receive traffic from Aviatrix Gateway
 
-         * Phase 2 DH Group
+            * telnet 4500
 
-         * Phase 2 Encryption
+         * Confirm whether phase 2 configuration is consistent on both edge routers
 
-         * Phase 2 lifetime: 3600
+            * Phase 2 Authentication
 
-         * Remote Subnet and Local Subnet
+            * Phase 2 DH Group
+
+            * Phase 2 Encryption
+
+            * Phase 2 lifetime: 3600
+
+            * Remote Subnet and Local Subnet
          
    Check Point 3: Check whether message "seems to be dead" displays in the latest log
    
@@ -196,23 +196,23 @@ Check IPSec VPN tunnel logs from Site2Cloud Diagnostics
    
       * If this string shows up in the logs, IPSec VPN tunnel might disconnect at some point
      
-   Probable Causes:
+      Probable Causes:
    
-      * DPD configuration does not match on both IPSec VPN devices
+         * DPD configuration does not match on both IPSec VPN devices
+
+         * Phase 1 rekey process somehow behaves anormal
       
-      * Phase 1 rekey process somehow behaves anormal
+      Suggestions:
       
-   Suggestions:
-      
-      * Sync up DPD configuration on both IPSec VPN devices
-      
-         * interval 10 seconds
-         
-         * retry 3 times
-         
-         * max failure 3 times
-         
-      * or disable DPD function on both IPSec VPN devices
+         * Sync up DPD configuration on both IPSec VPN devices
+
+            * interval 10 seconds
+
+            * retry 3 times
+
+            * max failure 3 times
+
+         * or disable DPD function on both IPSec VPN devices
       
    Check Point 4: Check whether phase 2 negotiation uses port 4500
    
@@ -220,13 +220,26 @@ Check IPSec VPN tunnel logs from Site2Cloud Diagnostics
    
       * If phase 2 negotiation uses non 4500, it might have a chance to fail IPSec VPN tunnel depending on topology. Notes: if the function nat traversal is enabled, phase 2 negotiation uses port 4500; if the function nat traversal is disabled, phase 2 negotiation uses port 500
      
-   Probable Causes:
+      Probable Causes:
    
-      * user's environment has a NAT device thus the function nat traversal needs to be enabled
+         * user's environment has a NAT device thus the function nat traversal needs to be enabled
       
-   Suggestions:
+      Suggestions:
       
-      * although the function nat traversal is not necessary to be configured on edge router (it depends on the whole network topology), we highly suggest to configure it since we enable it on Aviatrix Gateway side.
+         * although the function nat traversal is not necessary to be configured on edge router (it depends on the whole network topology), we highly suggest to configure it since we enable it on Aviatrix Gateway side.
       
+Check Aviatrix gateway’s instance level and network level for Site2Cloud feature from AWS portal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Check Point 1: Check the Security Group which is attached to the Aviatrix Gateway
+  
+      * Expect to have the below rules in inbound rules as default:
+
+         1. Type: Custom UDP Rule, Protocol: UDP, Port Range: 4500, Source: Custom: 'EDGE ROUTER PUBLIC IP'
+
+         2. Type: Custom UDP Rule. Protocol: UDP, Port Range:  500, Source: Custom: 'EDGE ROUTER PUBLIC IP'
+
+      * Expect to have the below rules in outbound rules as default:
+
+         1. Type: All traffic, Protocol: All, Port Range: All, Destination: 0.0.0.0/0
          
-      
