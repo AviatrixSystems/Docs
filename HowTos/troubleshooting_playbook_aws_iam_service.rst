@@ -21,7 +21,7 @@ Workflow:
 
 5. `Check whether company centrally manages & governs permission/policies across accounts through AWS Organization`_
 
-6. `Other troubleshooting documents`_
+6. `Refer to other troubleshooting documents`_
 
 7. TODO list download link:
 
