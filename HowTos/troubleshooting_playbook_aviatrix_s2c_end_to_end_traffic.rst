@@ -59,7 +59,7 @@ Workflow:
 
     `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
     
-    `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router to the end device on Aviatrix side with IP`_
+    `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
 
     `T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port`_
     
@@ -469,3 +469,147 @@ T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviat
       
 T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * For troubleshooting purpose, please consider allowing ICMP traffic on end device to confirm the whole routing path.
+  
+  * Steps:
+  
+    1. Send ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP by Ping command
+    
+    2. Send ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP by Traceroute/Tracert command
+
+  * If the Ping fails, please check the traceroute/tracert report to figure out where the traffic ends
+
+  Probable Causes:
+  
+    * End device does not allow ICMP traffic 
+    
+    * Traffic might be mis-routed or be blocked somewhere
+
+  Suggestions:
+  
+    * `Check other Aviatrix features on Aviatrix Gateway which might cause routing issue`_
+
+    * Execute Aviatrix feature `Packet Capture <https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture>`_ on Aviatrix gateway to view incoming and outgoing traffic
+
+      * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
+
+    * Check IPSec VPN tunnel - security association details from Site2Cloud Diagnostics
+
+      * https://docs.aviatrix.com/HowTos/site2cloud.html#troubleshooting
+
+      * Steps:
+
+         1. Navigate to the Aviatrix GUI page: Site2Cloud -> Diagnostics tab
+
+         2. Select the related tunnel info for VPC ID/VNet Name, Connection, and Gateway 
+
+         3. Select the Action "Show security association details"
+
+         4. Click the button "OK"
+
+         5. Record the packet status which you can search for the keyword "current:" on the outgoing info 
+         
+         ::
+         
+            [Aviatrix Gateway private IP to Edge Router public IP]
+
+         6. Click the button "OK" again
+
+         7. Compare the packet status again
+
+      * Expect to view the packet status value increasing
+
+   * Check IPSec VPN tunnel statistics for the incoming traffic on Edge router
+
+   * Check whether Edge router configures SNAT or DNAT feature
+
+      * if so, check NAT function statistics
+
+   * Execute feature “Packet Capture” on Edge router to view incoming and outgoing traffic
+   
+   * Check firewall configuration on Edge router
+   
+T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   * For troubleshooting purpose, please consider allowing ICMP traffic on end device to confirm the whole routing path.
+
+   * Steps:
+
+      1. Send ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP by Ping command
+
+      2. Send ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP by Traceroute/Tracert command
+
+   * If the Ping fails, please check the traceroute/tracert report to figure out where the traffic ends
+
+   Probable Causes:
+
+      * End device does not allow ICMP traffic 
+
+      * Traffic might be mis-routed or be blocked somewhere
+
+   Suggestions:
+  
+      * `Check other Aviatrix features on Aviatrix Gateway which might cause routing issue`_
+
+      * Execute Aviatrix feature `Packet Capture <https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture>`_ on Aviatrix gateway to view incoming and outgoing traffic
+
+      * Check IPSec VPN tunnel - security association details from Site2Cloud Diagnostics
+
+         * https://docs.aviatrix.com/HowTos/site2cloud.html#troubleshooting
+
+         * Steps:
+
+            1. Navigate to the Aviatrix GUI page: Site2Cloud -> Diagnostics tab
+
+            2. Select the related tunnel info for VPC ID/VNet Name, Connection, and Gateway 
+
+            3. Select the Action "Show security association details"
+
+            4. Click the button "OK"
+
+            5. Record the packet status which you can search for the keyword "current:" on the incoming info 
+
+            ::
+
+               [Aviatrix Gateway private IP to Edge Router public IP]
+
+            6. Click the button "OK" again
+
+            7. Compare the packet status again
+
+         * Expect to view the packet status value increasing
+
+      * Check IPSec VPN tunnel statistics for the outgoing traffic on Edge router
+
+      * Check whether Edge router configures SNAT or DNAT feature
+
+         * if so, check NAT function statistics
+
+      * Execute feature “Packet Capture” on Edge router to view incoming and outgoing traffic
+      
+      * Check firewall configuration on Edge router
+   
+T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port
+    
+   * Troubleshooting steps are similar to `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
+      
+      * Instead of sending ICMP traffic, try to simulate the traffic by issuing command #telnet with specific port
+    
+T_09. Verify Transport layer by sending traffic from end device on Edge router side to the end device on Aviatrix side with IP/Protocol/Port
+    
+   * Troubleshooting steps are similar to `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
+      
+      * Instead of sending ICMP traffic, try to simulate the traffic by issuing command #telnet with specific port
+
+T_10. Verify real traffic between end to end devices
+    
+   * Troubleshooting steps are similar to 
+   
+      `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
+      
+      `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
+      
+   * Instead of sending ICMP traffic, try to troubleshoot the real traffic
+   
