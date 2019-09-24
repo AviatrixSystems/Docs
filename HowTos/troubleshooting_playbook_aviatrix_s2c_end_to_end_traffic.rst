@@ -268,7 +268,7 @@ Check other Aviatrix features on Aviatrix Gateway which might cause routing issu
     
   * Check whether Site2Cloud Mapped feature is configured
   
-    * https://docs.aviatrix.com/HowTos/site2cloud.html?#connection-type-mapped
+    * https://docs.aviatrix.com/HowTos/site2cloud.html#connection-type-mapped
     
 T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
