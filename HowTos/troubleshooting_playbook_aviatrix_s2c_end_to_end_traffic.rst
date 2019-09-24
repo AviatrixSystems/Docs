@@ -33,39 +33,39 @@ Workflow:
       
 3. Check other Aviatrix Features Deployment configuration
 
-    `Check other Aviatrix features on Aviatrix Gateway which might cause routing issue`_
+      `Check other Aviatrix features on Aviatrix Gateway which might cause routing issue`_
       
 4. Troubleshoot connectivity between Aviatrix gateway and Edge router
 
-   `T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway`_
+      `T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway`_
 
-   `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
+      `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
 
-   `T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router`_
+      `T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router`_
    
 5. Check end device’s deployment configuration on Edge router side
 
-   `Check end/testing device's instance level and network level configuration on Edge router side`_
-      
-   `T_04. Troubleshoot connectivity between end device and Edge router on edge router side`_
+      `Check end/testing device's instance level and network level configuration on Edge router side`_
+
+      `T_04. Troubleshoot connectivity between end device and Edge router on edge router side`_
     
 7. Check end device’s deployment configuration on Aviatrix gateway side
 
-   `Check end/testing instance level and network level configuration on Aviatrix gateway side`_
-   
-   `T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side`_
+      `Check end/testing instance level and network level configuration on Aviatrix gateway side`_
+
+      `T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side`_
    
 9. Troubleshoot connectivity between end device and end device
 
-    `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
-    
-    `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
+      `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
 
-    `T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port`_
-    
-    `T_09. Verify Transport layer by sending traffic from end device on Edge router side to the end device on Aviatrix side with IP/Protocol/Port`_
+      `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
 
-    `T_10. Verify real traffic between end to end devices`_
+      `T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port`_
+
+      `T_09. Verify Transport layer by sending traffic from end device on Edge router side to the end device on Aviatrix side with IP/Protocol/Port`_
+
+      `T_10. Verify real traffic between end to end devices`_
     
 10. Refer to other troubleshooting documents
 
