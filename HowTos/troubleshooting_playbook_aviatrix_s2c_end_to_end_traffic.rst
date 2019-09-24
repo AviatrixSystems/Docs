@@ -57,22 +57,20 @@ Workflow:
    
 9. Troubleshoot connectivity between end device and end device
 
-    `T_01. Verify Internet layer by sending ICMP traffic to the end device with IP`_
-
-    `T_02. Verify Transport layer by sending traffic to the end device with IP/Protocol/Port`_
-
-    `T_03. Verify DNS by issuing command #nslookup [DOMAIN NAME OF END DEVICE] on OpenVPN client`_
-
-    `T_04. Verify connectivity between OpenVPN client and end device`_
+    `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
     
-10. Other troubleshooting documents
+    `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router to the end device on Aviatrix side with IP`_
 
-   https://docs.aviatrix.com/Support/support_center_site2cloud.html
+    `T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port`_
+    
+    `T_09. Verify Transport layer by sending traffic from end device on Edge router side to the end device on Aviatrix side with IP/Protocol/Port`_
+
+    `T_10. Verify real traffic between end to end devices`_
+    
+10. Refer to other troubleshooting documents
+
+   * https://docs.aviatrix.com/Support/support_center_site2cloud.html
    
-   Aviatrix default configuration:
-      
-      nat traversal is enabled
-    
 Detail:
 -------
     
@@ -461,14 +459,13 @@ T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviat
 
          * Execute function `Network Traceroute <https://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ on Aviatrix Gateway and check the report to figure out where the traffic ends
     
-      
    Check Point 2: Check whether end device can reach to the IP of the Edge router
    
    Check Point 3: Attempt to simulate sending traffic from end device to the range which is defined in the IPSec VPN tunnel
    
       * Expect that Aviatrix gateway receives the traffic from end device
       
-      * Execute Packet Capture feature from Aviatrix Controller GUI
-
-         * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
- 
+      * Execute `Packet Capture feature <https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture>`_ from Aviatrix Controller GUI
+      
+T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
