@@ -127,3 +127,5 @@ Aviatrix Gateway
 Aviatrix Features
 
 * `Aviatrix OpenVPN End to End traffic Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aviatrix_openvpn_end_to_end_traffic.rst>`_
+
+* `Aviatrix Site2Cloud End to End traffic Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aviatrix_s2c_end_to_end_traffic.rst>`_
