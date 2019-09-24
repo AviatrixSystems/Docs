@@ -43,18 +43,18 @@ Workflow:
 
    `T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router`_
    
-5. Check end device’s deployment configuration on edge router side
+5. Check end device’s deployment configuration on Edge router side
 
-      `Check end/testing device's instance level and network level from AWS portal`_
-
-6. Troubleshoot connectivity between end device and Edge router on edge router side
+   `Check end/testing device's instance level and network level configuration on Edge router side`_
+      
+   `T_04. Troubleshoot connectivity between end device and Edge router on edge router side`_
     
 7. Check end device’s deployment configuration on Aviatrix gateway side
-    
-8. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side
-    
-    `Troubleshoot Network between Aviatrix and OpenVPN client`_
 
+   `Check end/testing instance level and network level configuration on Aviatrix gateway side`_
+   
+   `T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side`_
+   
 9. Troubleshoot connectivity between end device and end device
 
     `T_01. Verify Internet layer by sending ICMP traffic to the end device with IP`_
@@ -366,3 +366,109 @@ T_03. Verify Transport layer by sending traffic with port 500/4500 to the public
     * Execute Aviatrix feature “Packet Capture” on Aviatrix gateway to view incoming and outgoing traffic
       
       * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
+      
+Check end/testing device's instance level and network level configuration on Edge router side
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Check Point 1: Check the firewall configuration on end device
+  
+      * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
+      
+   Check Point 2: Check the routing configuration on end device
+  
+      * Expect to route traffic back to the range which is defined in the IPSec VPN tunnel
+      
+   Check Point 3: Check the Security Group which is attached to the end/testing instance if it is deployed in AWS
+      
+      * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
+   
+   Check Point 4: Check the Network ACL where end/testing instance locates if it is deployed in AWS
+   
+      * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
+   
+   Check Point 5: Check the Routing Table where end/testing instance locates if it is deployed in AWS
+   
+      * Expect to route traffic back to the range which is defined in the IPSec VPN tunnel
+      
+T_04. Troubleshoot connectivity between end device and Edge router on edge router side
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Check Point 1: Check whether Edge router can reach to the IP of the end device
+      
+   Check Point 2: Check whether end device can reach to the IP of the Edge router
+   
+   Check Point 3: Attempt to simulate sending traffic from end device to the range which is defined in the IPSec VPN tunnel
+   
+      * Expect Edge router receives the traffic from end device
+      
+      * Execute function "packet capture" on Edge router
+      
+Check end/testing instance level and network level configuration on Aviatrix gateway side
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Check Point 1: Check the firewall configuration on end device
+  
+      * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
+      
+   Check Point 2: Check the routing configuration on end device
+  
+      * Expect to route traffic back to the range which is defined in the IPSec VPN tunnel
+      
+   Check Point 3: Check the Security Group which is attached to the end/testing instance if it is deployed in AWS
+      
+      * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
+   
+   Check Point 4: Check the Network ACL where end/testing instance locates if it is deployed in AWS
+   
+      * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
+   
+   Check Point 5: Check the Routing Table where end/testing instance locates if it is deployed in AWS
+   
+      * Expect to route traffic back to the range which is defined in the IPSec VPN tunnel
+      
+T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Check Point 1: Check whether Aviatrix gateway can reach to the IP of the end device
+   
+      * If troubleshooting purpose, please allow ICMP traffic on end device from Aviatrix gateway
+   
+      * Steps:
+
+         1. Navigate to the Aviatrix GUI page: Troubleshoot -> Diagnostics -> Network -> GATEWAY UTILITY
+
+         2. Select the Gateway Name
+
+         3. Select the Interface: eth0
+
+         4. Destination Host Name (or IP): [IP of end device on Aviatrix gateway side]
+
+         5. Click the button “Ping"
+      
+      Probable Causes:
+  
+         * End device does not allow ICMP traffic from the private IP of Aviatrix Gateway
+
+         * Traffic might be mis-routed or be blocked somewhere
+
+      Suggestions:
+  
+         * Check the firewall settings on end device
+         
+         * `Check end/testing instance level and network level configuration on Aviatrix gateway side`_
+
+         * Execute function “Packet Capture” on end device
+
+         * Execute function `Network Traceroute <https://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ on Aviatrix Gateway and check the report to figure out where the traffic ends
+    
+      
+   Check Point 2: Check whether end device can reach to the IP of the Edge router
+   
+   Check Point 3: Attempt to simulate sending traffic from end device to the range which is defined in the IPSec VPN tunnel
+   
+      * Expect that Aviatrix gateway receives the traffic from end device
+      
+      * Execute Packet Capture feature from Aviatrix Controller GUI
+
+         * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
+ 
