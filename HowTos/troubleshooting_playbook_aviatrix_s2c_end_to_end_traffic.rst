@@ -33,7 +33,7 @@ Workflow:
       
 3. Check other Aviatrix Features Deployment configuration
 
-    `Check other Aviatrix features on Aviatrix OpenVPN Gateway which might cause routing issue`_
+    `Check other Aviatrix features on Aviatrix Gateway which might cause routing issue`_
       
 4. Troubleshoot connectivity between Aviatrix gateway and Edge router
 
@@ -243,3 +243,27 @@ Check Aviatrix gateway’s instance level and network level for Site2Cloud featu
 
          1. Type: All traffic, Protocol: All, Port Range: All, Destination: 0.0.0.0/0
          
+Check other Aviatrix features on Aviatrix Gateway which might cause routing issue
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Check whether SNAT feature is configured
+  
+    * https://docs.aviatrix.com/HowTos/gateway.html#enable-nat
+  
+    * https://docs.aviatrix.com/HowTos/gateway.html#source-nat
+  
+  * Check whether DNAT feature is configured
+  
+    * https://docs.aviatrix.com/HowTos/gateway.html#destination-nat
+    
+  * Check whether Network Mapping feature is configured
+  
+    * https://docs.aviatrix.com/HowTos/gateway.html#network-mapping
+    
+  * Check whether Site2Cloud Mapped feature is configured
+  
+    * https://docs.aviatrix.com/HowTos/site2cloud.html?#connection-type-mapped
+    
+Troubleshoot connectivity between Aviatrix gateway and Edge router
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
