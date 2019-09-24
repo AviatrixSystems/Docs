@@ -37,6 +37,12 @@ Workflow:
       
 4. Troubleshoot connectivity between Aviatrix gateway and Edge router
 
+   `T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway`_
+
+   `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
+
+   `T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router`_
+   
 5. Check end device’s deployment configuration on edge router side
 
       `Check end/testing device's instance level and network level from AWS portal`_
@@ -264,6 +270,11 @@ Check other Aviatrix features on Aviatrix Gateway which might cause routing issu
   
     * https://docs.aviatrix.com/HowTos/site2cloud.html?#connection-type-mapped
     
-Troubleshoot connectivity between Aviatrix gateway and Edge router
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
