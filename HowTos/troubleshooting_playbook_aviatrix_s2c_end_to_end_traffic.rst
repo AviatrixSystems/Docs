@@ -49,13 +49,13 @@ Workflow:
 
       `T_04. Troubleshoot connectivity between end device and Edge router on edge router side`_
     
-7. Check end device’s deployment configuration on Aviatrix gateway side
+6. Check end device’s deployment configuration on Aviatrix gateway side
 
       `Check end/testing instance level and network level configuration on Aviatrix gateway side`_
 
       `T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side`_
    
-9. Troubleshoot connectivity between end device and end device
+7. Troubleshoot connectivity between end device and end device
 
       `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
 
@@ -67,11 +67,11 @@ Workflow:
 
       `T_10. Verify real traffic between end to end devices`_
     
-10. Refer to other troubleshooting documents
+8. Refer to other troubleshooting documents
 
    * https://docs.aviatrix.com/Support/support_center_site2cloud.html
    
-11. TODO list download link:  
+9. TODO list download link:  
    
 Detail:
 -------
