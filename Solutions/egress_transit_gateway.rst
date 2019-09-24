@@ -92,7 +92,8 @@ All that is left to do is to peer the worker VPCs/VNets with the egress VPC/VNet
 
 .. note::
 
-The number of peering to the egress gateway is limited by the number of route limit imposed by the AWS.
+   The number of peering to the egress gateway is limited by the number of route limit imposed by the AWS.
+
 
 First, set up a connection for traffic to go between the worker and the egress:
 
