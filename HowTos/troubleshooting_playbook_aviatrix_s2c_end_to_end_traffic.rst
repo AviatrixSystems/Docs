@@ -273,8 +273,94 @@ Check other Aviatrix features on Aviatrix Gateway which might cause routing issu
 T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+   * For troubleshooting purpose, please consider allowing ICMP traffic on Edge router to confirm Aviatrix Gateway can reach to the Edge router.
+  
+   * https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#gateway-utility
+   
+   * Steps:
+   
+      1. Navigate to the Aviatrix GUI page: Troubleshoot -> Diagnostics -> Network -> GATEWAY UTILITY
+      
+      2. Select the Gateway Name
+      
+      3. Select the Interface: eth0
+      
+      4. Destination Host Name (or IP): [Public IP of Edge router]
+      
+      5. Click the button “Ping"
+     
+  * If the Ping fails, Aviatrix Gateway might not able to reach to the public IP of Edge router. If the Edge router does not allow ICMP traffic for security concern, please troubleshoot the connectivity by refering to `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
+
+  Probable Causes:
+  
+    * End device does not allow ICMP traffic from the public IP of Aviatrix Gateway
+  
+    * Traffic might be mis-routed or be blocked somewhere
+
+  Suggestions:
+  
+    * Check the firewall settings on Edge router
+       
+    * Execute function “Packet Capture” on Edge router
+    
+    * Execute function `Network Traceroute <https://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ on Aviatrix Gateway and check the report to figure out where the traffic ends
+    
 T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+   * https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#network-connectivity-utility
+   
+   * Steps:
+   
+      1. Navigate to the Aviatrix GUI page: Troubleshoot -> Diagnostics -> Network -> NETWORK CONNECTIVITY UTILITY
+      
+      2. Hostname: [Public IP of Edge router]
+      
+      3. Port: 500
+      
+      4. Gateway Name: Aviatrix Gateway
+      
+      5. Protocol: UDP
+      
+      6. Click the button “Go"
+   
+   * Expect to view a green message “Able to reach [Public IP of Edge router] at 500 from gateway [AVIATRIX-GATEWAY-NAME]” on Aviatrix GUI
+   
+      7. Test port 4500 by following the previous steps 
+
+   * If the testing fails, Aviatrix Gateway might not able to reach to the public IP of Edge router with the specific port 500 or 4500.
+
+   Probable Causes:
+
+    * End device does not allow traffic with port 500 or 4500 from the public IP of Aviatrix Gateway
+
+    * Traffic might be mis-routed or be blocked somewhere
+
+   Suggestions:
+
+    * Check the firewall settings on Edge router
+
+    * Execute function “Packet Capture” on Edge router - check whether traffic from Aviatrix Gateway can hit the Edge router and the Edge router can return the traffic back to Aviatrix Gateway properly.
+
 T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Steps:
+  
+    * Send traffic from Edge router to Aviatrix Gateway by similar Telnet command
+  
+  * If the telnet traffic fails, the real application traffic might not work properly
+
+  Probable Causes:
+  
+    * Traffic might be mis-routed or be blocked somewhere
+    
+    * The related IPSec VPN configuraion on Cloud platform does not configure properly
+
+  Suggestions:
+  
+    * `Check Site2Cloud configuration from Aviatrix Controller`_
+  
+    * Execute Aviatrix feature “Packet Capture” on Aviatrix gateway to view incoming and outgoing traffic
+      
+      * https://docs.aviatrix.com/HowTos/troubleshooting.html#packet-capture
