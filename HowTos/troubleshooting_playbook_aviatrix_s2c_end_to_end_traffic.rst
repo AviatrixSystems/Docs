@@ -592,18 +592,21 @@ T_07. Verify Internet layer by sending ICMP traffic from end device on Edge rout
       * Check firewall configuration on Edge router
    
 T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port
-    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
    * Troubleshooting steps are similar to `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
       
       * Instead of sending ICMP traffic, try to simulate the traffic by issuing command #telnet with specific port
     
 T_09. Verify Transport layer by sending traffic from end device on Edge router side to the end device on Aviatrix side with IP/Protocol/Port
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
     
    * Troubleshooting steps are similar to `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
       
       * Instead of sending ICMP traffic, try to simulate the traffic by issuing command #telnet with specific port
 
 T_10. Verify real traffic between end to end devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
     
    * Troubleshooting steps are similar to 
    
