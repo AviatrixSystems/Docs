@@ -513,6 +513,7 @@ T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix 
          ::
          
             [Aviatrix Gateway private IP to Edge Router public IP]
+            [UPDATE EXAMPLE LATER]
 
          6. Click the button "OK" again
 
@@ -573,7 +574,8 @@ T_07. Verify Internet layer by sending ICMP traffic from end device on Edge rout
 
             ::
 
-               [Aviatrix Gateway private IP to Edge Router public IP]
+               [Edge Router public IP to Aviatrix Gateway private IP]
+               [UPDATE EXAMPLE LATER]
 
             6. Click the button "OK" again
 
