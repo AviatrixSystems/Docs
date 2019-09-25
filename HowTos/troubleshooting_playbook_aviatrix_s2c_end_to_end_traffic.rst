@@ -459,7 +459,7 @@ T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviat
 
          * Execute function `Network Traceroute <https://docs.aviatrix.com/HowTos/troubleshooting.html#network-traceroute>`_ on Aviatrix Gateway and check the report to figure out where the traffic ends
     
-   Check Point 2: Check whether end device can reach to the IP of the Edge router
+   Check Point 2: Check whether end device can reach to the private IP of the Aviatrix Gateway
    
    Check Point 3: Attempt to simulate sending traffic from end device to the range which is defined in the IPSec VPN tunnel
    
