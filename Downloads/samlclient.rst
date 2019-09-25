@@ -85,7 +85,7 @@ These are preview images for the next release.
 **********************
 FIPS140-2 Dev version
 **********************
-`Windows <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_win_x64_FIPS.exe>`__, `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_mac_FIPS.pkg>`__ , `Ubuntu 16 LTS <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_FIPS.tar.gz>`__
+`Windows <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_win_x64_FIPS.exe>`__, `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_mac_FIPS.pkg>`__ , `Ubuntu-18 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_ubuntu_18lts_FIPS.tar.gz>`__, `deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_ubuntu_18lts_FIPS.deb>`__
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
