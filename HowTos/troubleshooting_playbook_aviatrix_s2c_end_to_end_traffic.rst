@@ -405,7 +405,9 @@ Check end/testing instance level and network level configuration on Aviatrix gat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Check Point 1: Check the firewall configuration on end device
-  
+      
+      * Expect to allow traffic from the public IP of Aviatrix gateway
+      
       * Expect to allow traffic from the range which is defined in the IPSec VPN tunnel
       
    Check Point 2: Check the routing configuration on end device
