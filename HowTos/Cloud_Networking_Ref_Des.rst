@@ -7,9 +7,9 @@
 ..
 
 
-=================================
-OpenVPN® Design for Multi VPCs
-=================================
+===================================================
+OpenVPN® Design for Multi Accounts and Multi VPCs
+===================================================
 
 This reference design helps you build an end to end secure cloud
 network, from accessing the network (AWS VPC) by users to routing
