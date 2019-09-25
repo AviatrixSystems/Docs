@@ -150,9 +150,7 @@ Check IPSec VPN tunnel logs from Site2Cloud Diagnostics
       
          * Check whether edge router can receive traffic from Aviatrix Gateway
 
-            * issue cli #ping [PUBLIC IP OF ED]
-
-            * telnet 500
+            * `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
 
          * Confirm whether phase 1 configuration is consistent on both edge routers
 
@@ -182,7 +180,7 @@ Check IPSec VPN tunnel logs from Site2Cloud Diagnostics
       
          * Check whether edge router can receive traffic from Aviatrix Gateway
 
-            * telnet 4500
+            * `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
 
          * Confirm whether phase 2 configuration is consistent on both edge routers
 
