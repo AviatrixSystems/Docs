@@ -2,12 +2,19 @@ Aviatrix VPN Client Changelog
 -----------------------------
 
 
+2.2.10 - Sep 26 2019
+ - FIPS 140-2 support for openvpn
+ - Sorting and ordering profiles
+ - Option to disable legacy port usage
+ - Support non-ascii characters in the ovpn configuration file name
+
+
 2.1.3 - Aug 1 2019
  - Security fixes
 
 
 2.0.3 - Jul 23 2019
- - Fix for localhost cert being revoked (Please upgrade Aviatrix controller to version 4.7.501+ for the fix)
+ - Fix for localhost cert being revoked
  - Backward compatible with older controller via self signed cert
 
 
