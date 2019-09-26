@@ -30,6 +30,10 @@ How to high-level troubleshoot Aviatrix product
 
 6. Submit or update a support ticket
 
+   * Upload `Aviatrix Diagnostic report <https://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_
+   
+   * `Upload tracelog <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_
+
 Explanation of Aviatrix troubleshooting playbook outline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
