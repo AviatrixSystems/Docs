@@ -35,7 +35,8 @@ Step 2. Enable IPv6 on the gateway
 Login to the Controller. At the Gateway page, highlight one gateway, click Edit. Scroll down to IPv6, click Enable. Do the same 
 for the second gateway. 
 
-When IPv6 is enabled on the gateway, the Controller enables IPv6 on the gateway as well as the subnet where the 
+When IPv6 is enabled on the gateway, the Controller enables IPv6 on the VPC CIDR (auto assign one), the gateway instance 
+and the subnet where the 
 gateway is launched. You can validate this by login to the AWS Console EC2 and check for both gateway IPv6 address and the 
 associated subnet. 
 
