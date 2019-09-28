@@ -340,6 +340,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aws_transit_gateway_orchestrator
    HowTos/aviatrix_insanemode
    HowTos/transit_snat_dnat
+   HowTos/ipv6_peering
 
 .. _Good To Know:
 
