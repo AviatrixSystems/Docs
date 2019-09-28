@@ -47,3 +47,19 @@ If your onsite router does not support BGP, please follow the following steps to
  * At the Site-to-Site VPN connection page at AWS portal, select the vpn connection you created just now and click on "Download Configuration" to download the appropriate configuration. Follow the steps in this document to setup your tunnel on your onsite router.
  
 You would have to manually set the "remote subnets" in your onsite router to the on cloud CIDR's that you want the router to access. Your onprem CIDR's that you configured above, will be propogated by the VGW to the transit gateway via BGP and they will make it to all of your Spoke Gateways.
+
+
+How can I set the IPSec Phase1/2 lifetime values for Site2Cloud Tunnels?
+------------------------------------------------------------------------------------
+
+As of version 5.0.2773, we do not support setting the lifetime values for IPSec Phase1 and Phase2
+
+While you are creating a new Site2Cloud connection
+
+  * If you pick the remote gateway as "generic", we always use the settings from the peer device that this gateway is connecting to - so you can set these values on your remote IPSec device as you need
+  
+    * After you create the site2cloud tunnel, when you download the configuration file, for both vendors(generic and cisco), we incorrectly show lifetime values for phase1 and phase2 - please ignore them. 
+  * If you pick "AWS VGW" as the remote gateway, the lifetimes are set to 28800/3600 for phase1/2.
+  
+    * While you are downloading the configuration after creating this site2cloud tunnel, the configuration file for generic vendor will incorrectly show these values as 28800/28800 instead of 28800/3600 - we have an outstanding defect to address this issue 28800/3600, as of version 5.0.2773.
+    * If you pick Cisco as the vendor, we correctly show these values as 28800/3600. Please make a note of this and configure your remote end correctly
