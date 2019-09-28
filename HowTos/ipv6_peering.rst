@@ -66,6 +66,13 @@ Login to AWS console VPC, select the subnet, click Actions -> Edit IPv6 CIDRs. M
 
 |ipv6_subnet|
 
+4.3 Edit EC2 Security Group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Login to AWS console EC2. Select the instance and Edit Security Group to enable inbound IPv6, as shown below.
+
+|ipv6_security_group|
+
 Step 5. Ping
 --------------
 
@@ -85,6 +92,9 @@ All done.
    :scale: 30%
 
 .. |ipv6_subnet| image:: ipv6_peering_media/ipv6_subnet.png
+   :scale: 30%
+
+.. |ipv6_security_group| image:: ipv6_peering_media/ipv6_security_group.png
    :scale: 30%
 
 .. disqus::
