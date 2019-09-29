@@ -43,6 +43,7 @@ format, as shown below.
 
 |ipv6_vpncidr|  
 
+
 Step 2. Add VPN User
 -----------------------------------
 
@@ -57,7 +58,22 @@ Step 3. Scale out VPN gateways
 You can repeat Step 1 to launch more VPN gateways to scale out the performance. To learn more about user VPN, check out 
 `User VPN FAQ <https://docs.aviatrix.com/HowTos/openvpn_faq.html>`_
 
+Step 4. Add more VPCs
+-----------------------
+
+If you need to connect more VPCs, make sure you build encrypted tunnel and repeat Step2 to add the new IPv6 network CIDRs to the 
+VPN Network list. 
+
 All done. 
+
+Troubleshooting Tips
+---------------------
+
+If you experience VPN client connectivity issue, check the following:
+
+  - Encrypted tunnel is up. 
+  - Instance Security Group is configured with the correct inbound port open. 
+  - If you have User Profile enabled, the profile has the correct policies.
 
 For support, email to support@aviatrix.com
 
