@@ -7,6 +7,31 @@ Field Notices
  This field notice is provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
 
+
+Field Notice 0006 (2019/09/30)
+--------------------------------
+ 
+**Controller Memory Leak Issue due to Account and Gateway Audit feature in 5.0 Release**
+
+
+**Problem:**
+
+We introduced a new feature in Release 5.0 to allow our customers to monitor Aviatrix Controller managed AWS Accounts and Gateways periodically as described at https://docs.aviatrix.com/HowTos/account_audit.html and https://docs.aviatrix.com/HowTos/gateway_audit.html. This audit feature ensures the Aviatrix System to function as designed. Unfortunately, the new software introduced a bug that causes a memory leak on the Controller. Customers who are not running 5.0 at this time are not impacted - this issue only affects releases 5.0.2667 through 5.0.2773.
+ 
+**Recommended Solution:**
+
+We request that all customers running Aviatrix Software Releases 5.0.2667 through 5.0.2773 upgrade to 5.0.2782 or greater, as soon as possible, following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html. Our upgrades will not impact any tunnels or openvpn users and should be quite simple and fast for Aviatrix Controllers that are already on 5.0 release. If you need any support during this upgrade process, please open a new support ticket by sending a new email to support@aviatrix.com or by visiting https://aviatrix.zendesk.com. This upgrade will turn off the "AWS Account and Gateway Audit" feature.
+ 
+**Alternate/Workaround Solution:**
+
+For customers who cannot upgrade right away, we suggest that they work around by disabling the "AWS Account Audit" and “Gateway Audit” features following the instructions below.
+
+  * Aviatrix Console > Accounts > Account Audit > AWS Account Status > Background Audit, toggle the setting to Disabled.
+  * Aviatrix Console > Settings > Advanced > Gateway Audit > Background Audit, toggle the setting to Disabled.
+
+
+
+
 Field Notice 0005 (2019/07/22)
 --------------------------------
 
