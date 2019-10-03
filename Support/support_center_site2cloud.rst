@@ -63,3 +63,9 @@ While you are creating a new Site2Cloud connection
   
     * While you are downloading the configuration after creating this site2cloud tunnel, the configuration file for generic vendor will incorrectly show these values as 28800/28800 instead of 28800/3600 - we have an outstanding defect to address this issue 28800/3600, as of version 5.0.2773.
     * If you pick Cisco as the vendor, we correctly show these values as 28800/3600. Please make a note of this and configure your remote end correctly
+
+If I already have a Site2Cloud connection using IKEv1, could I create another one using IKEv2 ?
+-----------------------------------------------------------------------------------------------------
+The prerequisite for IKEv2 is that you need to create the first Site2Cloud connection with IKEv2 enabled.
+If your current gateway already have a Site2Cloud connection using IKEv1 which was created prior to 5.0 release, you will need to delete it first before creating the IKEv2 Site2Cloud connection. 
+Alternatively, you can create a new Aviatrix gateway in the same VPC and make the first Site2Cloud connection with IKEv2 enabled.
