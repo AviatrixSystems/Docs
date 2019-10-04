@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.2 (Coming soon)
+R5.1.2000 (Coming soon)
 ====================
 
  - **Encrypted Transit Enhancement** allows VPC route tables to be selected when attaching. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time.
@@ -10,6 +10,7 @@ R5.2 (Coming soon)
  - **FQDN Performance Improvement**
  - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
  - **AS Prepend** adds ASN number when Aviatrix transit gateway process redistribute routes to its BGP peer. 
+ - **IAM Policy Auto Update** allows you to update secondary accounts to the latest IAM policy from the Controller console. 
  - **UI Enhancement** on new gateway launch and Transit Gateway workflow. 
  
 
