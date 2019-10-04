@@ -38,8 +38,28 @@ your own organization email,
   go to Settings -> Controller -> CHANGE EMAIL NOTIFICATION SOURCE. 
   Enter a Test Email address if you like to test the configuration. 
   Click Save when done.  
+  
+::
+
+
+  Optional: Steps to setup email inside AWS and use Amazon SMTP server.
+  Verify all email(s) to send and receive
+
+|AwsEmailVerification|
+
+::
+
+  Enter all parameters and specify your AWS SES login & password.
+
+|ChangeEmailNotification|
 
 .. |change_alert_email| image:: alert_and_email_media/change_alert_email.png
+   :scale: 30%
+   
+.. |AwsEmailVerification| image:: alert_and_email_media/AwsEmailVerification.PNG
+   :scale: 30%
+   
+.. |ChangeEmailNotification| image:: alert_and_email_media/ChangeEmailNotification.PNG
    :scale: 30%
 
 .. disqus::

@@ -30,6 +30,16 @@ Set up your compartment
 Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy.
 For more detail, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_
 
+Create a VCN that has internet access
+-------------------------------------
+
+Create a VCN that has internet access by navigating to "Networking -> Virtual Cloud Networks" in the OCI console,
+then click "Create Virtual CLoud Network" button and choose "create virtual cloud network plus related resources".
+
+Alternatively if you want to create a VCN with your own CIDR, choose "create virtual cloud network only". Continue to create subnet, and internet gateway.
+Then add default route in the VCN default routing table to point to the newly created internet gateway. This is to grant internet access to the controller inside of this VCN.
+
+
 
 2. Subscribe to the Controller
 ==============================
