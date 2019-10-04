@@ -8,6 +8,8 @@ R5.2 (Coming soon)
  - **Encrypted Transit Enhancement** allows VPC route tables to be selected when attaching. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time.
  - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be placed in any Security Domain in addition to the default setting of being in the Default Domain.
  - **FQDN Performance Improvement**
+ - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
+ - **AS Prepend** adds ASN number when Aviatrix transit gateway process redistribute routes to its BGP peer. 
  - **UI Enhancement** on new gateway launch and Transit Gateway workflow. 
  
 
