@@ -2,6 +2,15 @@
 Release Notes
 =======================================
 
+R5.2 (Coming soon)
+====================
+
+ - **Encrypted Transit Enhancement** allows VPC route tables to be selected when attaching. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time.
+ - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be placed in any Security Domain in addition to the default setting of being in the Default Domain.
+ - **FQDN Performance Improvement**
+ - **UI Enhancement** on new gateway launch and Transit Gateway workflow. 
+ 
+
 R5.1.842 (10/1/2019)
 =====================
 
