@@ -656,6 +656,11 @@ ActiveMesh is in Beta state. Do not deploy it in a production environment.
 
 When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and backup gateway forward packets in ECMP and active/active state.
 
+New and advanced features such as Multi sites Transit solution where the Aviatrix Transit Gateway connects to multiple remote sites is only supported with ActiveMesh mode enabled on the Aviatrix Transit GW. 
+
+To enable ActiveMesh mode after the Transit Gateway or Spoke gateway is enabled, go to Gateway, highlight the gateway
+and click Edit. Scroll down to find ActiveMes Mode, click Enable. 
+
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 

@@ -94,6 +94,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_design_patterns
    HowTos/transit_gateway_peering
    HowTos/tgw_csr_migrate
+   HowTos/diy_tgw_migrate_to_aviatrix_tgw
    HowTos/transitgw_external
    HowTos/transitvpc_workflow
    HowTos/transitvpc_faq
