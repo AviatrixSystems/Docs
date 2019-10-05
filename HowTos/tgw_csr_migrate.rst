@@ -62,14 +62,26 @@ There are certain situations where you need to keep the CSR as the connection po
 
 |tgw_csr_migrate_pattern2|
 
-5. **Remove a Spoke VPC** Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
+**Step 5. Remove a Spoke VPC** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-6. **Attach Spoke VPC to Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ to attach a VPC to the corresponding security domain. 
+Select one Spoke VPC that has VGW deployed. Remove the VPC Transit Network tag. This will effectively detach the Spoke VPC from the CSR Transit Network. Make sure the above Spoke VPC CIDR route entry has been removed from the Transit Network.  
+
+**Step 6. Attach Spoke VPC** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow `TGW Build workflow Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ to attach a VPC to the corresponding security domain. 
 
 
-7. Repeat the above step 5 and step 6 for the remaining Spoke VPCs. 
+**Step 7**
+^^^^^^^^^^^^^^^^
 
-8. **Remove Transit hub VGW CSR tag** After all Spoke VPCs have been migrated to Aviatrix Transit GW, remove the VGW Transit Network tag. This effectively detaches the VGW from CSR. 
+Repeat the above step 5 and step 6 for the remaining Spoke VPCs. 
+
+**Step 8. Remove Transit hub VGW CSR tag** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After all Spoke VPCs have been migrated to Aviatrix Transit GW, remove the VGW Transit Network tag. This effectively detaches the VGW from CSR. 
 
 The effective operation downtime for each Spoke VPC is the time between the Transit Network tag being removed for the Spoke VPC and the Spoke VPC being attached to Aviatrix Transit GW. It should be a few minutes. 
 
