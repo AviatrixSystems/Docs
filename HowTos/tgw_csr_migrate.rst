@@ -29,19 +29,36 @@ There are a couple of patterns during the migration phase, consider the one that
 Before the migration process starts,  plan out what security domains you need to create and which security domains should connect other domains. If you are not sure and need to transition, proceed with no worries. The security domains can be added and modified at any time. 
 
 
-1. **Launch a Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_.
+**Step 1. Launch a Transit Gateway** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2. **Create Security Domains** If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. Follow `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_ to build connection policies. If you do not intend to build custom security domains, skip this section. 
+Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_.
 
-3. **Launch Aviatrix Transit GW** `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. For best practice, create a new Transit hub VPC to deploy the Aviatrix Transit GW. 
+**Step 2. Create Security Domains** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4a. **Reuse VGW: Connect Aviatrix Transit GW to VGW** `Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to the Aviatrix Transit GW. Make sure you specify a different "AS" number for the BGP session of the Aviatrix Transit GW connection to the VGW. Also note that if the Transit GW and the VGW are in the same account and same VPC, VGW must be detached from the VPC. 
+If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. Follow `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_ to build connection policies. If you do not intend to build custom security domains, skip this section. 
+
+**Step 3. Launch Aviatrix Transit GW** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. For best practice, create a new Transit hub VPC to deploy the Aviatrix Transit GW. 
+
+The next step has two options.
+
+**Step 4, option A. Reuse VGW: Connect Aviatrix Transit GW to VGW** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Follow Step 3. <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ At this point, VGW starts to advertise to the Aviatrix Transit GW. Make sure you specify a different "AS" number for the BGP session of the Aviatrix Transit GW connection to the VGW. Also note that if the Transit GW and the VGW are in the same account and same VPC, VGW must be detached from the VPC. 
 
 A diagram for this migration path is shown below:
 
 |tgw_csr_migrate_pattern1|
 
-4b. **Connect Aviatrix Transit GW to CSR** There are certain situations where you need CSR during migration phase for packet forwarding. In such scenario, use `External Device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ option in `Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to create an IPSec and BGP connection to CSR, as shown in the diagram below. After all Spoke VPCs are migrated, delete the connection to CSR, connect the Aviatrix Transit GW to VGW. 
+**Step 4, option B. Connect Aviatrix Transit GW to CSR** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are certain situations where you need to keep the CSR as the connection point to on-prem (for example, you need to use CSR route summarization feature to control routes to VGW to be under 100.). In such scenario, use `External Device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ option in `Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to create an IPSec and BGP connection to CSR, as shown in the diagram below. After all Spoke VPCs are migrated, delete the connection to CSR, connect the Aviatrix Transit GW to VGW. 
 
 |tgw_csr_migrate_pattern2|
 
