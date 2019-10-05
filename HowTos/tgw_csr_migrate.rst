@@ -41,7 +41,7 @@ A diagram for this migration path is shown below:
 
 |tgw_csr_migrate_pattern1|
 
-4b. **Connect Aviatrix Transit GW to a new VGW** There are certain situations where you need CSR during migration phase for packet forwarding. In such scenarios, create a new VGW and connect it to CSR as a Spoke VPC to CSR Transit, as shown in the diagram below. After all Spoke VPCs are migrated, remove the CSR connection and connect the VGW to on-prem. During migration, the network pattern is shown as below:
+4b. **Connect Aviatrix Transit GW to CSR** There are certain situations where you need CSR during migration phase for packet forwarding. In such scenario, use `External Device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ option in `Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to create an IPSec and BGP connection to CSR, as shown in the diagram below. After all Spoke VPCs are migrated, delete the connection to CSR, connect the Aviatrix Transit GW to VGW. 
 
 |tgw_csr_migrate_pattern2|
 
