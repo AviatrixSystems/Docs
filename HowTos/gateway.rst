@@ -652,7 +652,7 @@ When building an encrypted tunnel between two identical VPC CIDRs to for network
 ActiveMesh Mode
 ----------------
 
-ActiveMesh is in Beta state. Do not deploy it in a production environment. 
+ActiveMesh is officially supported in 5.1 release. If you deploy ActiveMesh gateway in the 5.0 beta code, please upgrade to the latest 5.1 before running it in production environment. 
 
 When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and backup gateway forward packets in ECMP and active/active state.
 
