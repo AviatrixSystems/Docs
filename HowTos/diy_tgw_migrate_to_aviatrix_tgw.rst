@@ -37,17 +37,17 @@ The key idea is to build an IPSec tunnel between TGW VPN and Aviatrix Transit Ga
 communicate with not yet migrated VPCs. 
 
 
-**Step 1. Launch a Transit Gateway** 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**1. Launch a new AWS Transit Gateway** 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_.
 
-**Step 2. Create Security Domains** 
+**2. Create Security Domains** 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. Follow `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_ to build connection policies. If you do not intend to build custom security domains, skip this section. 
 
-**Step 3. Launch Aviatrix Transit GW** 
+**3. Launch Aviatrix Transit GW** 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Follow Step 1 and Step 2 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW and enable HA in the Transit hub VPC. For best practice, create a new Transit hub VPC to deploy the Aviatrix Transit GW. 
@@ -56,7 +56,7 @@ Make sure you enable `ActiveMesh Mode <https://docs.aviatrix.com/HowTos/gateway.
 is written for Aviatrix Transit GW with ActiveMesh mode enabled.  
 
 
-**Step 4 Create TGW VPN Attachment**
+**4 Create TGW VPN Attachment**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step is to create a TGW VPN attachment on the DIY TGW. 
@@ -70,7 +70,7 @@ After the attachment is created, go to Site-to-Site VPN Connections. Click Downl
 Vendor "**Generic**" and download the configuration text file.  
 
 
-**Step 5. Create VPN on Aviatrix Transit Gateway** 
+**5. Create VPN on Aviatrix Transit Gateway** 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step is to create the other end of the VPN tunnel that terminates on the Aviatrix Transit GW. 
@@ -82,7 +82,7 @@ the right side shows the screen capture of the AWS VPN configuration text file.
 
 |migrate_tgw_config_vpn|
 
-**Step 6. Start Migrating VPCs**
+**6. Start Migrating VPCs**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this step, you detach VPCs from DIY TGW and attach it to Aviatrix managed TGW. 
@@ -95,14 +95,14 @@ In this step, you detach VPCs from DIY TGW and attach it to Aviatrix managed TGW
 Repeat this step to migrating all VPCs. 
 
 
-**Step 7. Build The Hybrid Connectivity** 
+**7. Build The Hybrid Connectivity** 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once all VPCs have migrated to Aviatrix managed TGW deployment, the migrated VPCs communicate with on-prem via Aviatrix Transit GW to DIY TGW and then to on-prem.
 
 At this point, you can move DIY TGW Direct Connect to Aviatrix Transit GW or to Aviatrix managed TGW directly. 
 
-**Step 8. Delete DIY TGW** 
+**8. Delete DIY TGW** 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After all VPCs and hybrid connectivity if any are all removed, you can safely delete DIY TGW. 
