@@ -1,13 +1,13 @@
 .. meta::
-  :description: ActiveMesh Beta workflow
+  :description: ActiveMesh Workflow
   :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials 
 
 
 ===================================
-Aviatrix ActiveMesh Beta workflow
+Aviatrix ActiveMesh Workflow
 ===================================
 
-Aviatrix ActiveMesh is available as Beta in Release 5.0. 
+Aviatrix ActiveMesh is officially available in Release 5.1. 
 
 ActiveMesh leverages both primary gateway and backup gateway for packet forwarding. The architecture statistically doubles the network throughput. In addition, in ActiveMesh mode, multiple remotes sites can be connected to the Aviatrix Transit gateways. 
 
