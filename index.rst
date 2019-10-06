@@ -86,7 +86,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Next Gen Transit for AWS
+   :caption: AWS TGW Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
@@ -108,12 +108,12 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Next Gen Transit for Azure
+   :caption: Encrypted Transit Network
 
+   HowTos/activemesh_faq
    HowTos/nextgentransit_for_azure
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
-   HowTos/activemesh_faq
    HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
 

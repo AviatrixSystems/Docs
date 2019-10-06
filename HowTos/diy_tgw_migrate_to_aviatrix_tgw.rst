@@ -35,7 +35,7 @@ downtime, as shown in the migration architecture below.
 |migration_architecture|
 
 The key idea is to build an IPSec tunnel between TGW VPN and Aviatrix Transit Gateway, so that migrated VPC can
-communicate with not yet migrated VPCs. 
+communicate with not yet migrated VPCs and also to on-prem. 
 
 
 **1. Launch a new AWS Transit Gateway** 
