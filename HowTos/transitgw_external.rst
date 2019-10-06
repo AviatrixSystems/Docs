@@ -16,7 +16,7 @@ Starting from Release 4.1, there are three options to connect to a Transit GW wi
 This document provides instructions on how to connect the Aviatrix Transit GW to external router/firewall devices.
 
 What are the use cases for connecting to an external router?
------------------------------------------------------------
+---------------------------------------------------------------
 
  - **Overcoming the AWS VGW 100 route limit** Typically, an Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to an external device, the VGW is bypassed. 
 
@@ -60,23 +60,30 @@ The configuration is the `Step 3 in the Transit Network workflow <https://docs.a
 
 Fill the parameters and click OK.
 
-=========================      ==========
+============================   ==========
 **Setting**                    **Value**
-=========================      ==========
-VPC ID/VNet Name               The Transit VPC ID where Transit GW was launched.
+============================   ==========
+BGP or Static                  Select BGP if the Transit GW runs dynamic routing with remote site. Otherwise, select Static.
+VPC Name                       The Transit VPC ID where Transit GW was launched.
 Connection Name                A unique name to identify the connection to external device. 
-BGP Local AS Number            The BGP AS number the Transit GW will use to exchange routes with external device.
-BGP Remote AS Number           The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
+Aviatrix Transit GW BGP ASN    The BGP AS number the Transit GW will use to exchange routes with external device.
 Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
-Remote Gateway Type            Select one device type. Select Generic if the external device is not in the drop down. 
 Algorithm                      Optional parameters. Leave it unselected if you don't know.
 Enable HA                      Select HA if there are two external devices. 
 Over DirectConnect             Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
-External Device IP             IP address of the external device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
+BGP Remote AS Number           When BGP is selected, the BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
+Remote Gateway IP              IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
-Local Tunnel IP address        Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
-Remote Tunnel IP address       Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
-=========================      ==========
+Local Tunnel IP                Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
+Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+Over DirectConnect (Backup)    Select this option if HA is enabled.
+BGP Remote ASN (Backup)        When BGP is selected, the remote ASN for backup should be the same as the primary remote ASN. 
+Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device.
+Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
+Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
+Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+
+============================   ==========
 
 2. Download the configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

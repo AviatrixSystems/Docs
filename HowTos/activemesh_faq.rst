@@ -78,6 +78,30 @@ Can ActiveMesh be applied to Azure?
 
 Yes. 
 
+What is route based VPN and policy based VPN?
+-----------------------------------------------
+
+Most firewalls appliances support both policy based and route based VPN’s. Which one we are supposed to use in most cases doesn't really matter, but there are a couple of things to consider.
+
+Route based VPN is more flexible, more powerful and recommended over policy based. However a policy based VPN is usually simpler to create.
+
+A route based VPN creates a virtual IPSec interface, and whatever traffic hits that interface is encrypted and decrypted according to the phase 1 and phase 2 IPSec settings.
+
+In policy based VPN the tunnel is specified within the policy itself with an action of "IPSec". Also for policy based VPN only one policy is required. A route based VPN is created with two policies, one for inbound and another for outbound with a normal "Accept" action.
+
+A static route is also required for a route based VPN, so anything destined to the remote network must go through the virtual IPSec interface which was created when specifying this within the Phase 1 settings.
+
+If the VPN connection requires redundancy, a route based VPN is normally required. 
+
+Does ActiveMesh support route based VPN or policy based VPN?
+-------------------------------------------------------------
+
+ActiveMesh enables the Aviatrix Transit GW to connect to multiple remote sites over IPSec VPN tunnels.
+
+When you configure VPN to remote sites from Transit Network -> Setup -> Step 3 (Connect to VGW/External Device/Aviatrix CloudN) in the `Transit Network workflow Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, the VPN tunnel is built with route based VPN. 
+
+On the other hand, when you configure VPN to remote sites from Site2Cloud page and select a Transit GW, the VPN tunnel is built with policy based VPN.  
+
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png
    :scale: 30%
