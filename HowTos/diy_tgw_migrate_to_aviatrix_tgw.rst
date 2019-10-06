@@ -28,7 +28,8 @@ The Solution
 
 There are multiple ways to migrate. For example, you can simply detach a spoke VPC from the DIY TGW and attach it to Aviatrix managed TGW and then build hybrid connection if necessary. 
 
-In this implementation, the migrated spoke VPCs can communicate with the not yet migrated VPCs during migration process, thus reducing the 
+In this implementation, the migrated spoke VPCs can communicate with the not yet migrated VPCs during migration process, and in addition the 
+migrated spoke VPCs can communicate with on-prem network, thus reducing the 
 downtime, as shown in the migration architecture below. 
 
 |migration_architecture|
