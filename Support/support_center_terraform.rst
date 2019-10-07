@@ -98,3 +98,9 @@ How can I create my IAM roles and policies in AWS using Terraform?
 You can use our Terraform `IAM roles module <https://github.com/AviatrixSystems/terraform-modules/tree/master/aviatrix-controller-iam-roles>`_ to create the Aviatrix IAM roles required to connect your Aviatrix Controller to an existing AWS account. This should be run in the account where you are installing the Controller and any additional accounts that will be connected to the Controller.
 
 This performs a similar role as the CloudFormation script does in "Controller UI > Accounts > Access Accounts > New Account > Select AWS > Select IAM-role-based > Launch CloudFormation Script" - it does not create the account, but rather creates the IAM roles/profiles like this CloudFormation script. This is similar to what is mentioned `here <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_.
+
+
+Which version of Terraform Aviatrix Provider should I use?
+-------------------------------------------------------------
+
+The terraform aviatrix provider resource version has to match with the controller version that you have deployed. Please look at `this link <https://www.terraform.io/docs/providers/aviatrix/guides/release-compatibility.html>`_ to find out which version to use. Then you can add "version = x.x.x" to specify the right vesion in the aviatrix provider resource as mentioned in the instructions `here <https://www.terraform.io/docs/providers/aviatrix/index.html>`_.
