@@ -74,9 +74,7 @@ A CloudN appliance does not require a public IP address, but the management port
 
 Here is the list of the public IP address that CloudN requires for outbound traffic. 
 
- - www.carmelonetworks.com (54.149.28.255). 
- - Controller's public IP address
- - license.aviatrix.com (52.24.131.245)
+ - www.carmelonetworks.com (54.149.28.255) for CloudN software upgrade. 
 
 2.2 BGP Requirement
 ~~~~~~~~~~~~~~~~~~~~~~~
