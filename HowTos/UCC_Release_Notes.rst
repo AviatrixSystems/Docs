@@ -3,7 +3,7 @@ Release Notes
 =======================================
 
 R5.1.2000 (Coming soon)
-====================
+==========================
 
  - **Encrypted Transit Enhancement** allows VPC route tables to be selected when attaching. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time.
  - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be placed in any Security Domain in addition to the default setting of being in the Default Domain.
@@ -12,6 +12,12 @@ R5.1.2000 (Coming soon)
  - **AS Prepend** adds ASN number when Aviatrix transit gateway process redistribute routes to its BGP peer. 
  - **IAM Policy Auto Update** allows you to update secondary accounts to the latest IAM policy from the Controller console. 
  - **UI Enhancement** on new gateway launch and Transit Gateway workflow. 
+
+R5.1.845 (10/8/2019)
+=====================
+
+- **Bug fix** Prevent upgrade from 4.7 to 5.1 directly without going through 5.0 release. 
+- **new API** for selecting firewall instance size.
  
 
 R5.1.842 (10/1/2019)
