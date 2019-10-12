@@ -63,7 +63,9 @@ Note you must follow the configuration sequence below:
 7. Ingress/Egress Traffic Inspection
 -----------------------------------------------------------------
 
-|firenet_ingress_egress|
+Follow the `Ingress firewall instructions <https://docs.aviatrix.com/HowTos/ingress_firewall_example.html>`_ to deploy the solution for Ingress traffic inspection. 
+
+|ingress_firewall|
 
 8. Aviatrix FQDN in FireNet for Egress Control
 -------------------------------------------------
@@ -88,7 +90,7 @@ Note you must follow the configuration sequence below:
 .. |multi_firewall| image:: firewall_network_faq_media/multi_firewall.png
    :scale: 30%
 
-.. |firenet_ingress_egress| image:: firewall_network_faq_media/firenet_ingress_egress.png
+.. |firenet_ingress_egress| image:: ingress_firewall_example_media/firenet_ingress_egress.png
    :scale: 30%
 
 .. |firenet| image:: firewall_network_media/firenet.png
@@ -104,6 +106,9 @@ Note you must follow the configuration sequence below:
    :scale: 30%
 
 .. |fqdn_in_firenet| image:: firewall_network_workflow_media/fqdn_in_firenet.png
+   :scale: 30%
+
+.. |ingress_firewall| image:: ingress_firewall_example_media/ingress_firewall.png
    :scale: 30%
 
 .. disqus::

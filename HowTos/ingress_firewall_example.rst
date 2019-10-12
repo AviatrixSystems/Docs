@@ -13,11 +13,11 @@ The deployment diagram is shown as below,
 
 |ingress_firewall|
 
-The key idea is to place an Internet facing AWS NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). There is a connection 
+The key idea is to place an Internet facing AWS NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). Build a connection 
 policy to connect the Ingress domain with the Application domain. Application domain 
-traffic requires inspection by connecting its domain with Aviatrix Firewall Domain.
+traffic that requires inspection is routed to FireNet gateway by connecting its domain with Aviatrix Firewall Domain.
 
-In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. The solution does not have AWS NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
+In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. The solution does not need AWS NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
 
 
 1. Prerequisite Setup
