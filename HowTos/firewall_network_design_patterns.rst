@@ -46,16 +46,13 @@ Connect to on-prem with an Aviatrix Edge gateway for both hybrid and multi regio
 6. Two Firewall Networks 
 --------------------------------------------------------
 
-You can deploy two Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Ingress/Egress
+You can deploy two Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Egress
 inspection.
-
-When Ingress inspection is deployed, make sure you enable SNAT on the firewall instance to source NAT the private 
-IP address of NLB or a third party load balancer the IP address of LAN (or Trusted) interface of the FireNet. 
 
 Note you must follow the configuration sequence below:
 
- 1. Disable the Traffic Inspection of the FireNet domain for Ingress/Egress.
- #. Enable Egress Control for FireNet domain for Ingress/Egress. 
+ 1. Disable the Traffic Inspection of the FireNet domain intended for Egress control.
+ #. Enable Egress Control for FireNet domain intended for Egress control. 
  #. Build connection policies. 
 
 |multi_firewall|
