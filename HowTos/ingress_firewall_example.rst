@@ -9,7 +9,7 @@ Ingress Firewall Setup Solution
 
 This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
-The deployment diagram is shown as below. 
+The deployment is shown as the diagram below. 
 
 |ingress_firewall|
 
