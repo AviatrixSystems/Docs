@@ -46,6 +46,7 @@ In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the fol
 
  - From the AWS Console, make sure NLB target group is in healthy state.
  - Run a https request on the NLB DNS name
+ - The application can also reach Internet through firewall instances if you enable Egress on the FireNet.
 
 4. Preserving Source IP
 -------------------------
