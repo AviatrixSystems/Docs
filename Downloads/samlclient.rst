@@ -44,9 +44,9 @@ Mac |mac|
 
 The Mac client can be downloaded from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__. Please make sure that you are running macOS 10.12(Sierra) or higher.
 
-macOS 10.15 (Catalina) is not supported at this point. If you are running MacOS Catalina, attempt to connect and then go to System Preferences->Privacy->Full Disk Access->sh->check to allow access.
+macOS 10.15 (Catalina) is supported in the beta version that can be downloaded from `this link <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/beta/2.3.9/AVPNC_mac.pkg>`__.
 
-If you have installed version 1.4.26 or lower, please uninstall before you install the newer version. Please note that the client uses the default browser, and Safari is not supported (will show cert warnings)
+If you have installed version 1.4.26 or lower, please uninstall before you install the newer version. Please note that the client uses the default browser, and Safari is not supported (will show certificate warnings)
 
 ***********
 Linux |lux|
