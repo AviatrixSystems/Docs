@@ -60,7 +60,7 @@ Note you must follow the configuration sequence below:
 
 |multi_firewall|
 
-7. Ingress/Egress Traffic Inspection
+7. Ingress Traffic Inspection
 -----------------------------------------------------------------
 
 Follow the `Ingress firewall instructions <https://docs.aviatrix.com/HowTos/ingress_firewall_example.html>`_ to deploy the solution for Ingress traffic inspection. 
