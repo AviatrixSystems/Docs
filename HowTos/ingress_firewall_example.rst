@@ -25,6 +25,8 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 
   This architecture works for both `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ and `AWS ALB. <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html>`_. NLB is used for illustration purpose. 
 
+  You can create multiple load balancers in the Ingress VPC. 
+
 
 
 1. Prerequisite Setup
