@@ -60,7 +60,7 @@ In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the fol
 4. Preserving Source IP
 -------------------------
 
-When NLB has IP address as target group, the source IP address when the packet reaches to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable `Proxy Protocol Support <https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html>`_ on the NLB. Then the application can retrieve the client IP address by using X-Forwarded-For in the HTTP header. . 
+When NLB uses IP address as target group, the source IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable `Proxy Protocol Support <https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html>`_ on the NLB. Then the application can retrieve the client IP address by using X-Forwarded-For in the HTTP header. . 
 
 .. |ingress_firewall| image:: ingress_firewall_example_media/ingress_firewall.png
    :scale: 30%
