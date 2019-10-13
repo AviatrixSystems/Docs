@@ -33,11 +33,9 @@ If on-prem sites advertise non overlapping network CIDRs to TGWs, Transit gatewa
 1.2 Advertising overlapping routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If on-prem sites advertising identical network CIDRs or overlapping CIDRs to TGWs (for example, they all 
-advertise 10.0.0.0/8 to their respective TGWs), you must enable Transit Gateway Peering Filter feature to 
-filter out identical or overlapping CIDRs. 
-
-When multi site on-prem network advertise the same routes to its respective TGW, you must filter out the on-prem routes when implementing `Transit Gateway Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_. Aviatrix Transit Gateway Peering connects Spoke VPCs in the different regions. 
+If on-prem sites advertise identical network CIDRs or overlapping CIDRs to TGWs (for example, they all 
+advertise 10.0.0.0/8 to their respective TGWs), you must enable `Transit Gateway Peering Filter <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_ feature to 
+filter out identical or overlapping CIDRs in order to connect the two regions. 
 
 
 2. ActiveMesh with Aviatrix Transit GW for on-prem Connection
