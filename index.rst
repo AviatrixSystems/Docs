@@ -346,6 +346,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aviatrix_insanemode
    HowTos/transit_snat_dnat
    HowTos/ipv6_peering
+   HowTos/activemesh_design_notes
 
 .. _Good To Know:
 
