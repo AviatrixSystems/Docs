@@ -338,6 +338,17 @@ After you have built the Transit GW and Spokes, you can view the connection betw
 
   Stay on the Transit Network page for any Spoke gateway and Transit GW actions such as attaching a Spoke, detaching a Spoke, connecting to VGW and disconnecting from a VGW. Do not go to any other pages for these actions. For deleting a Spoke gateway or Transit gateway, go to the Gateway page, select the gateway and delete. 
 
+Advanced Config
+------------------
+
+Prepend AS Path
+^^^^^^^^^^^^^^^^^
+
+You can insert BGP AS_PATH on the Transit Gateway customize the BGP AP_PATH field when it advertises to VGW or peer devices. For example, 
+enter 65458, 65478 in the input field, these ASN will appear to the remote end. 
+
+If you don't configure this field, Transit Gateway only advertises its own ASN.
+
   
 
 .. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
