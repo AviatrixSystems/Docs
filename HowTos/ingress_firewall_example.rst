@@ -7,7 +7,7 @@
 Ingress Firewall Setup Solution 
 =========================================================
 
-This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages AWS Load Balancers, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 The deployment is shown as the diagram below. 
 
@@ -15,11 +15,16 @@ The deployment is shown as the diagram below.
 
 The key idea is from FireNet point of view, the ingress inspection is simply a VPC to VPC traffic inspection. This is accomplished by 
 
- a. Placing an Internet facing AWS NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). 
+ a. Placing an Internet facing AWS ALB/NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). 
  #. Build a connection policy to connect the Ingress domain with the Application domain. 
  #. Connect the Application domain traffic that requires inspection with the Aviatrix Firewall Domain.
 
-In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. The solution does not need AWS NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
+In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. The solution does not need AWS ALB/NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
+
+.. Note::
+
+  This architecture works for both `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ and `AWS ALB. <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html>`_. NLB is used for illustration purpose. 
+
 
 
 1. Prerequisite Setup
