@@ -26,7 +26,7 @@ Starting from Release 4.3, InsaneMode is supported on Transit Gateway Peering. E
 
 .. tip::
 
-  The Aviatrix Transit GWs are typically launched during the workflow of the TGW Orchestrator, Transit Network or Transit DMZ. If the transit cluster does not need to connect to on-prem, skip `the step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ that connects to VGW/CloudN/External Device. 
+  The Aviatrix Transit GWs are typically launched during the workflow of the TGW Orchestrator and Transit Network. If the transit cluster does not need to connect to on-prem, skip `the step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ that connects to VGW/CloudN/External Device. 
 
 2. Establish Transit GW Peering
 --------------------------------
@@ -35,7 +35,12 @@ Go to Transit Network -> Transit Peering -> Add New.
 
 Select one of each Transit Gateway and click OK. 
 
-Done.
+Filtered CIDRs
+^^^^^^^^^^^^^^^^
+
+Filtered CIDRs is an optional field. When the field is empty, a Transit Gateway propagates all learned routes from both Spoke VPCs and on-prem. If there are overlapping CIDRs to the other Transit Gateway, the peering action will be 
+rejected. Using the filter option prevents the overlapped CIDRs from being propagated to the other Transit Gateway. 
+
 
 .. |multi-region| image:: tgw_design_patterns_media/multi-region.png
    :scale: 30%
