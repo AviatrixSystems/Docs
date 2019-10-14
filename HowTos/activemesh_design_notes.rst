@@ -7,7 +7,7 @@
 ActiveMesh Design Notes 
 =========================================================
 
-ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This tech note documents the supported common design scenarios while deploying ActiveMesh gateways. 
+ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This tech note documents the supported common design patterns while deploying ActiveMesh gateways. 
 
 1. ActiveMesh with TGW for On-prem Connections
 -------------------------------------------------------
