@@ -7,9 +7,9 @@
 ActiveMesh Design Notes 
 =========================================================
 
-ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This tech note documents the supported common design scenarios while deploying way ActiveMesh gateways. 
+ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This tech note documents the supported common design scenarios while deploying ActiveMesh gateways. 
 
-1. ActiveMesh with TGW for On-prem Connection
+1. ActiveMesh with TGW for On-prem Connections
 -------------------------------------------------------
 
 While AWS Transit Gateway (TGW) does not propagate routes to Spoke VPCs, TGW Direct Connect via DXGW and TGW
