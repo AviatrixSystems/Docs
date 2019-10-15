@@ -7,8 +7,8 @@
 Ingress Firewall Setup Solution 
 =========================================================
 
-This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages AWS Load Balancers, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_. The document also shows you 
-how to capture client IP address.
+This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages AWS Load Balancers, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_. The solution also allows 
+you to view the client IP address.
 
 The deployment is shown as the diagram below. 
 
@@ -56,50 +56,18 @@ In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the fol
 
  - From the AWS Console, make sure NLB target group is in healthy state.
  - Run a https request on the NLB DNS name
- - The application can also reach Internet through firewall instances if you enable Egress on the FireNet.
-
+- The application can also reach Internet through firewall instances if you enable Egress on the FireNet.  
 4. Capturing Client IP
 -------------------------
 
 4.1 Using AWS ALB
 ^^^^^^^^^^^^^^^^^^
 
-AWS ALB automatically preserves client IP address. Configure log format X-Forwarded-For headers by following the steps below to setup on your web server. 
-(The steps below refers to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.) 
+AWS ALB automatically preserves client IP address, you can find the client IP address in the HTTP header 
+field "X-Forwarded-For". 
 
- Take Apache/2.4.41 (Ubuntu) for example
-
-	- Find and open Apache configuration file. 
-	
-		::
-		
-			/etc/apache2/apache2.conf
-
-	- Edit/add commands into LogFormat section as below:
-
-		::
-		
-			LogFormat "%{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
-  
-			LogFormat "%h %l %u %t \"%r\" %>s %b" common
-
-	- Save the changes
-
-	- Reload the Apache service by issuing command.
-	
-		::
-			
-			systemctl reload apache2
-
-	- Open the Apache access logs on your Apache server
-
-	- Verify that client IP addresses are now recorded under the X-Forwarded-For header.
-
-	- Notes: 
-	
-		- Commands and file location varies by configuration
-	
-		- For other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
+To view the client IP address in the access log, 
+follow the instructions in `How to save client IP in access logs <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_. 
 
 4.2 Using AWS NLB
 ^^^^^^^^^^^^^^^^^^^^
@@ -156,7 +124,7 @@ Also, you need to configure/support Proxy Protocol feature on your web server to
 		
 			RemoteIPProxyProtocol On
 			
-	- Edit/add commands into LogFormat section as below:
+	- To view client IP address in the access log, edit/add commands into LogFormat section as below:
 
 		::
 		
