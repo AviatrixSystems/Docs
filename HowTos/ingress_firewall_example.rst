@@ -7,7 +7,8 @@
 Ingress Firewall Setup Solution 
 =========================================================
 
-This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages AWS Load Balancers, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages AWS Load Balancers, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_. The document also shows you 
+how to capture client IP address.
 
 The deployment is shown as the diagram below. 
 
@@ -57,15 +58,16 @@ In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the fol
  - Run a https request on the NLB DNS name
  - The application can also reach Internet through firewall instances if you enable Egress on the FireNet.
 
-4. Preserving Source IP
+4. Capturing Client IP
 -------------------------
 
 4.1 Using AWS ALB
 ^^^^^^^^^^^^^^^^^^
 
-AWS ALB automatically preserves source IP address. Configure log format X-Forwarded-For headers by following the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_ into your web server.
+AWS ALB automatically preserves client IP address. Configure log format X-Forwarded-For headers by following the steps below to setup on your web server. 
+(The steps below refers to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.) 
 
-	- Take Apache/2.4.41 (Ubuntu) for example
+ Take Apache/2.4.41 (Ubuntu) for example
 
 	- Find and open Apache configuration file. 
 	
@@ -102,7 +104,7 @@ AWS ALB automatically preserves source IP address. Configure log format X-Forwar
 4.2 Using AWS NLB
 ^^^^^^^^^^^^^^^^^^^^
 
-When NLB uses IP address as target group, the source IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Review the section "Enable Proxy Protocol" in the above AWS document or follow the same steps as below to enble this function on NLB using the AWS console.
+When NLB uses IP address as target group, the client IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original client IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Review the section "Enable Proxy Protocol" in the above AWS document or follow the same steps as below to enble this function on NLB using the AWS console.
 
 	- Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
 
