@@ -63,12 +63,99 @@ In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the fol
 4.1 Using AWS ALB
 ^^^^^^^^^^^^^^^^^^
 
-AWS ALB automatically preserves source IP address. Turn on log for apache2
+AWS ALB automatically preserves source IP address. Configure log format X-Forwarded-For headers by following the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_ into your web server.
+
+	- Take Apache/2.4.41 (Ubuntu) for example
+
+	- Find and open Apache configuration file. 
+	
+		- /etc/apache2/apache2.conf
+
+	- Edit/add commands into LogFormat section as below:
+
+		.. Note::
+
+  		LogFormat "%{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+  
+  		LogFormat "%h %l %u %t \"%r\" %>s %b" common
+
+	- Save the changes
+
+	- Reload the Apache service by issuing command.
+	
+		- #systemctl reload apache2
+
+	- Open the Apache access logs on your Apache server
+
+	- Verify that client IP addresses are now recorded under the X-Forwarded-For header.
+
+	- Notes: 
+	
+		- commands and file location varies by configuration
+	
+		- for other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
 
 4.2 Using AWS NLB
 ^^^^^^^^^^^^^^^^^^^^
 
-When NLB uses IP address as target group, the source IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable `Proxy Protocol Support <https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html>`_ on the NLB. Then the application can retrieve the client IP address by using X-Forwarded-For in the HTTP header. . 
+When NLB uses IP address as target group, the source IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Also, you need to configure/support Proxy Protocol feature on your web server to retrieve the client original IP address. Please follow the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.
+ 
+	- Take Apache/2.4.41 (Ubuntu) for example
+	
+	- Find and open Apache configuration file.
+	
+		- /etc/apache2/apache2.conf
+	
+	- Edit/add remoteip module configuration into Apache configuration file as below:
+	
+		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html
+		
+		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html#remoteipproxyprotocol
+		
+		.. Note::
+		
+			LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
+
+	- Confirm that the mod_remoteip module loads by issuing command as below
+	
+		- $sudo apachectl -t -D DUMP_MODULES | grep -i remoteip
+		
+	- Review the output and verify that it contains a line similar to:
+	
+		- remoteip_module (shared)
+
+		- Notes: If you are not able to view the prompt message, please make sure that your apache version support that module or attempt to load that module into the apache configuration.
+
+	- Configure the following line to your Apache configuration file to enable Proxy Protocol support.
+	
+		- take 000-default.conf for example: /etc/apache2/sites-available/000-default.conf
+		
+		.. Note::
+		
+			RemoteIPProxyProtocol On
+			
+	- Edit/add commands into LogFormat section as below:
+
+		.. Note::
+		
+		        LogFormat "%h %p %a %{remote}p %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+
+
+	- Save the changes
+
+	- Reload the Apache service by issuing command.
+	
+		- #systemctl reload apache2
+
+	- Open the Apache access logs on your Apache server
+
+	- Verify that client IP addresses are now recorded under the X-Forwarded-For header.
+
+	- Notes: 
+	
+		- commands and file location varies by configuration
+	
+		- for other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
 
 .. |ingress_firewall| image:: ingress_firewall_example_media/ingress_firewall.png
    :scale: 30%
