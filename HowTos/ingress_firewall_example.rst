@@ -102,7 +102,19 @@ AWS ALB automatically preserves source IP address. Configure log format X-Forwar
 4.2 Using AWS NLB
 ^^^^^^^^^^^^^^^^^^^^
 
-When NLB uses IP address as target group, the source IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Also, you need to configure/support Proxy Protocol feature on your web server to retrieve the client original IP address. Please follow the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.
+When NLB uses IP address as target group, the source IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original source IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Review the section "Enable Proxy Protocol" in the above AWS document or follow the same steps as below to enble this function on NLB using the AWS console.
+
+	- Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+	- On the navigation pane, under LOAD BALANCING, choose Target Groups.
+
+	- Select the target group.
+
+	- Choose Description, Edit attributes.
+
+	- Select Enable proxy protocol v2, and then choose Save.
+
+Also, you need to configure/support Proxy Protocol feature on your web server to retrieve the client original IP address. Please follow the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.
  
 	- Take Apache/2.4.41 (Ubuntu) for example
 	
@@ -162,9 +174,9 @@ When NLB uses IP address as target group, the source IP address of the packet re
 
 	- Notes: 
 	
-		- commands and file location varies by configuration
+		- Commands and file location varies by configuration
 	
-		- for other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
+		- For other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
 
 .. |ingress_firewall| image:: ingress_firewall_example_media/ingress_firewall.png
    :scale: 30%
