@@ -69,21 +69,25 @@ AWS ALB automatically preserves source IP address. Configure log format X-Forwar
 
 	- Find and open Apache configuration file. 
 	
-		- /etc/apache2/apache2.conf
+		::
+		
+			/etc/apache2/apache2.conf
 
 	- Edit/add commands into LogFormat section as below:
 
-		.. Note::
-
-  		LogFormat "%{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+		::
+		
+			LogFormat "%{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
   
-  		LogFormat "%h %l %u %t \"%r\" %>s %b" common
+			LogFormat "%h %l %u %t \"%r\" %>s %b" common
 
 	- Save the changes
 
 	- Reload the Apache service by issuing command.
 	
-		- #systemctl reload apache2
+		::
+			
+			systemctl reload apache2
 
 	- Open the Apache access logs on your Apache server
 
@@ -91,9 +95,9 @@ AWS ALB automatically preserves source IP address. Configure log format X-Forwar
 
 	- Notes: 
 	
-		- commands and file location varies by configuration
+		- Commands and file location varies by configuration
 	
-		- for other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
+		- For other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
 
 4.2 Using AWS NLB
 ^^^^^^^^^^^^^^^^^^^^
@@ -104,25 +108,31 @@ When NLB uses IP address as target group, the source IP address of the packet re
 	
 	- Find and open Apache configuration file.
 	
-		- /etc/apache2/apache2.conf
+		::
+			
+			/etc/apache2/apache2.conf
 	
 	- Edit/add remoteip module configuration into Apache configuration file as below:
-	
-		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html
-		
-		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html#remoteipproxyprotocol
-		
-		.. Note::
+			
+		::
 		
 			LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
 
+		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html
+		
+		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html#remoteipproxyprotocol
+
 	- Confirm that the mod_remoteip module loads by issuing command as below
 	
-		- $sudo apachectl -t -D DUMP_MODULES | grep -i remoteip
+		::
+		
+			$sudo apachectl -t -D DUMP_MODULES | grep -i remoteip
 		
 	- Review the output and verify that it contains a line similar to:
 	
-		- remoteip_module (shared)
+		::
+		
+			remoteip_module (shared)
 
 		- Notes: If you are not able to view the prompt message, please make sure that your apache version support that module or attempt to load that module into the apache configuration.
 
@@ -130,22 +140,23 @@ When NLB uses IP address as target group, the source IP address of the packet re
 	
 		- take 000-default.conf for example: /etc/apache2/sites-available/000-default.conf
 		
-		.. Note::
+		::
 		
 			RemoteIPProxyProtocol On
 			
 	- Edit/add commands into LogFormat section as below:
 
-		.. Note::
+		::
 		
-		        LogFormat "%h %p %a %{remote}p %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
-
+			LogFormat "%h %p %a %{remote}p %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 
 	- Save the changes
 
 	- Reload the Apache service by issuing command.
 	
-		- #systemctl reload apache2
+		::
+		
+			#systemctl reload apache2
 
 	- Open the Apache access logs on your Apache server
 
