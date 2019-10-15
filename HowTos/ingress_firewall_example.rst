@@ -136,9 +136,7 @@ When NLB uses IP address as target group, the source IP address of the packet re
 
 		- Notes: If you are not able to view the prompt message, please make sure that your apache version support that module or attempt to load that module into the apache configuration.
 
-	- Configure the following line to your Apache configuration file to enable Proxy Protocol support.
-	
-		- take 000-default.conf for example: /etc/apache2/sites-available/000-default.conf
+	- Configure the following line to your Apache configuration file (take /etc/apache2/sites-available/000-default.conf for example) to enable Proxy Protocol support. 
 		
 		::
 		
