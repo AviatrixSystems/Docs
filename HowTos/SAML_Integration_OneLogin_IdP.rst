@@ -54,7 +54,7 @@ We will use the string you select for the SAML application name to generate a UR
       Replace **<your controller ip or host name>** with the actual host name or IP address of your controller and **<aviatrix_onelogin>** with the ``[Endpoint Name]`` you chose to refer to the SAML application.
 
 #. Login to OneLogin as an administrator
-#. Add a new App (**Apps** > **Add Apps**)
+#. To add a new app go to **Applications** > **Applications** > click **Add Apps**
 
    |imageOLAddAppsMenu|
 
@@ -62,7 +62,7 @@ We will use the string you select for the SAML application name to generate a UR
 
    |imageOLNewAppSearch|
 
-#. Select **SAML Test Connector (IdP)**
+#. Select either **SAML Test Connector (Advanced)**
 #. Enter the Configuration values and click **Save**
 
    |imageOLNewAppStep1|
@@ -87,6 +87,33 @@ We will use the string you select for the SAML application name to generate a UR
    | ACS (Consumer) URL | **SP_ACS_URL**                                       |
    +--------------------+------------------------------------------------------+
    | Single Logout URL  | Blank                                                |
+   +--------------------+------------------------------------------------------+
+   | Login URL          | Blank                                                |
+   +--------------------+------------------------------------------------------+
+   | SAML not valid     | 3 (default)                                          |
+   | before             |                                                      |
+   +--------------------+------------------------------------------------------+
+   | SAML not valid     | 3 (default)                                          |
+   | on or after        |                                                      |
+   +--------------------+------------------------------------------------------+
+   | SAML initiator     | OneLogin (default)                                   |
+   +--------------------+------------------------------------------------------+
+   | SAML nameID format | Email (default)                                      |
+   +--------------------+------------------------------------------------------+
+   | SAML signature     | Assertion                                            |
+   | element            |                                                      |
+   +--------------------+------------------------------------------------------+
+   | Encrypt assertion  | Unchecked (default)                                  |
+   +--------------------+------------------------------------------------------+
+   | SAML encryption    | TRIPLEDES-CBC (default)                              |
+   | method             |                                                      |
+   +--------------------+------------------------------------------------------+
+   | SAML               | 1440 (default)                                       |
+   | sessionNotOnOrAfter|                                                      |
+   +--------------------+------------------------------------------------------+
+   | Generate           | Unchecked (default)                                  |
+   | AttributeValue tag |                                                      |
+   | for empty values   |                                                      |
    +--------------------+------------------------------------------------------+
 
 #. Click **Save**
