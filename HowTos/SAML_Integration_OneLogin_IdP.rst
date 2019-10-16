@@ -62,7 +62,7 @@ We will use the string you select for the SAML application name to generate a UR
 
    |imageOLNewAppSearch|
 
-#. Select either **SAML Test Connector (Advanced)**
+#. Select **SAML Test Connector (Advanced)**
 #. Enter the Configuration values and click **Save**
 
    |imageOLNewAppStep1|
