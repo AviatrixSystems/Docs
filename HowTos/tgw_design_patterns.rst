@@ -69,8 +69,8 @@ If you like to build a full mesh network that allows all VPCs and on-prem to com
 At Plan page Step 2, select "Full mesh network". 
 
 
-Fully Isolated network design
-------------------------------
+Fully Isolated network design - 1
+-----------------------------------
 
 If you would like to build a fully isolated network where no VPC can communicate with each other except to the shared service VPC and on-prem, you need to create a Security Domain for each VPC and connect each domain to the Shared_Service_Domain. 
 
@@ -79,6 +79,19 @@ If you would like to build a fully isolated network where no VPC can communicate
 In this network design, you need to create a custom Security Domain for each VPC. 
 
 If this design does not scale for you, consider the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ where all VPCs are by default isolated to each other. 
+
+Fully Isolated network design - 2
+------------------------------------
+
+An alternative design for a fully isolated deployment is to have a group of VPCs share one Security Domain but `disabling VPC
+route propagation <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ when attaching a VPC, as shown 
+in the diagram below. 
+
+|fully_isolated_2|
+
+The advantage of this design is to keep the Security Domains to minimum. You can specify connection policies for a domain
+to communicate with another domain, such as Aviatrix Edge Domain or Aviatrix FireNet Domain, without the VPC in the domain 
+being able to talk to each other. 
 
 Fully Isolated network with multi sites VPN
 ---------------------------------------------
@@ -136,6 +149,9 @@ as shown below. .
    :scale: 30%
 
 .. |fully_isolated_network_design| image:: tgw_design_patterns_media/fully_isolated_network_design.png
+   :scale: 30%
+
+.. |fully_isolated_2| image:: tgw_design_patterns_media/fully_isolated_2.png
    :scale: 30%
 
 .. |dev_prod_design| image:: tgw_design_patterns_media/dev_prod_design.png
