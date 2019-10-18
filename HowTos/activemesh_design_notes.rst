@@ -56,13 +56,37 @@ If Aviatrix Transit Gateways connects to multi sites on-prem directly via BGP, t
 non overlapping CIDRs to the Aviatrix Transit Gateway. .  
 
 3. NAT Functions
-^^^^^^^^^^^^^^^^^^^
+--------------------
 
 SNAT function is supported on the individual connection between the Aviatrix Transit Gateway and the remote sites. 
 
 SNAT function is not supported on the Spoke gateway tunnel interface to the Aviatrix Transit Gateway. 
 
+4. Configuration Notes
+-----------------------
 
+4.1 One on-prem device
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this scenario, the on-prem has one device as the diagram below.
+
+|activemesh_one_device|
+
+If the backup Aviatrix Transit Gateway is launched and the Transit Gateway is launched with ActiveMesh, the configuration should like the screen shot below. 
+
+|activemesh_config|
+
+
+4.2 Two on-prem devices
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this scenario, the on-prem has two devices as the diagram below.
+
+|activemesh_two_devices|
+
+You should check HA in the configuration and configure the second pair of inside tunnel addresses, as shown below. 
+
+|activemesh_ha_config|
 
 
 .. |activemesh_tgw_onprem| image:: activemesh_design_notes_media/activemesh_tgw_onprem.png
@@ -71,4 +95,15 @@ SNAT function is not supported on the Spoke gateway tunnel interface to the Avia
 .. |activemesh_avx_onprem| image:: activemesh_design_notes_media/activemesh_avx_onprem.png
    :scale: 30%
 
+.. |activemesh_config| image:: activemesh_design_notes_media/activemesh_config.png
+   :scale: 30%
+
+.. |activemesh_ha_config| image:: activemesh_design_notes_media/activemesh_ha_config.png
+   :scale: 30%
+
+.. |activemesh_one_device| image:: activemesh_design_notes_media/activemesh_one_device.png
+   :scale: 30%
+
+.. |activemesh_two_devices| image:: activemesh_design_notes_media/activemesh_two_devices.png
+   :scale: 30%
 .. disqus::
