@@ -410,6 +410,7 @@ Interface                        This is a qualifier condition that specifies ou
 Mark                             This is a qualifier condition that specifies a tag or mark of a TCP session where the rule applies. When left blank, this field is not used.
 SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
 SNAT Port                         This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
+Exclude Route Table               This field specifies which VPC private route table will not be programmed with the default route entry. 
 ===========================      =======================
 
 Destination NAT
