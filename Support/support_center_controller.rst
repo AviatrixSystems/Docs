@@ -9,18 +9,18 @@ Controller
 What are the minimum requirements for an instance to run the Aviatrix Controller Software?
 ---------------------------------------------------------------------------------------------------
 
-We strongly recommend that the instance be at least t2.large and have at least 20GB of storage to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
+We strongly recommend that the instance be at least t2.large and have at least 32GB of storage to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
 
 The controller needs to be able to resolve all DNS queries, download software, communicate with the gateways over port 443, redirect inbound SAML VPN connection (if used). The same goes with the gateways in regards to DNS queries and sending keepalive back to the controller. The Aviatrix controller must have an EIP even if it is behind an ELB for all necessary communication to work. However, you may access the UI using its private IP for operation.
 
 If you have enabled `Controller HA functionality <https://docs.aviatrix.com/HowTos/controller_ha.html>`_, please disable before initiating the following process. And do not forget to enable Controller HA after you finish with the disk size upgrade process.
  
-If you have less than 20GB of Storage on your controller, please follow these steps to increase your disk space:
+If you have less than 32GB of Storage on your controller, please follow these steps to increase your disk space:
 
 1. Make a backup of your controller. (https://docs.aviatrix.com/HowTos/controller_backup.html)
 2. Login to the AWS console and locate the Aviatrix controller instance.
 3. Click on Root device: /dev/sda1 and then click on EBS ID vol-xxxxxxxxxx.
-4. With the volume selected, click Action > Modify Volume to change the size to 20.
+4. With the volume selected, click Action > Modify Volume to change the size to 32.
 5. Click OK to start the resize process. Please make sure you wait until the state of the volume is "in-use - completed (100%)".
 6. Select the Aviatrix controller instance in EC2 page. Click Reboot for the disk space to take effect.
 7. Confirm that the controller is in running state in AWS console.
