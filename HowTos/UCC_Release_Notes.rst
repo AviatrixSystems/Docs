@@ -5,13 +5,26 @@ Release Notes
 R5.1.2000 (Coming soon)
 ==========================
 
- - **Encrypted Transit Enhancement** allows VPC route tables to be selected when attaching. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time.
- - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be placed in any Security Domain in addition to the default setting of being in the Default Domain.
- - **FQDN Performance Improvement**
- - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
+Transit Gateway Enhancement
+------------------------------
+
+ - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CDIRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
+
+ - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. API support only. 
+
+ - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
  - **AS Prepend** adds ASN number when Aviatrix transit gateway process redistribute routes to its BGP peer. 
- - **IAM Policy Auto Update** allows you to update secondary accounts to the latest IAM policy from the Controller console. 
- - **UI Enhancement** on new gateway launch and Transit Gateway workflow. 
+
+Security
+------------
+
+ - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
+ - **FQDN for non TCP 443 SSL protocol** allows you to execute FQDN filtering function for HTTPS traffic running on non TCP port 443. The use case is for HTTPS based applications that need to access Internet sites on non TCP port 443.
+
+Operations
+------------
+ - **IAM Policy Auto Update** allows you to update secondary accounts to the latest IAM policy from the Controller console. To configure, go to Accounts -> Access Accounts. Select an account, click the 3 dots skewer and click "Update policy"
+ - **New Dashboard Panel** displays what has been built and if they are healthy.  
 
 R5.1.845 (10/8/2019)
 =====================
