@@ -75,7 +75,7 @@ Example logs:
 
 ::
 
-  Aug 17 22:07:39 ip-172-31-46-24 cloudx\_cli: AviatrixVPNSession: 
+  Aug 17 22:07:39 ip-172-31-46-24 cloudx_cli: AviatrixVPNSession: 
   User=Splumo, Status=active, Gateway=splunksumo, GatewayIP=52.52.76.149,
   VPNVirtualIP=192.168.0.6, PublicIP=N/A, Login=2016-08-17 22:07:38, Logout=N/A,
   Duration=N/A, RXbytes=N/A, TXbytes=N/A
@@ -84,7 +84,7 @@ Example logs:
 
 ::
 
-  Aug 17 22:26:37 ip-172-31-46-24 cloudx\_cli: AviatrixVPNSession: 
+  Aug 17 22:26:37 ip-172-31-46-24 cloudx_cli: AviatrixVPNSession: 
   User=Splumo, Status=disconnected, Gateway=splunksumo,
   GatewayIP=52.52.76.149, VPNVirtualIP=192.168.0.6, PublicIP=N/A,
   Login=2016-08-17 22:07:38, Logout=2016-08-17 22:26:37, Duration=0:0:18:59,
@@ -107,12 +107,12 @@ Two example logs:
 
 ::
 
-  Aug 17 22:15:47 ip-10-100-0-60 kernel: \[14167.983249\]
+  Aug 17 22:15:47 ip-10-100-0-60 kernel: [14167.983249]
   ***AviatrixUser***:IN= OUT=eth0 SRC=192.168.0.6 DST=68.67.154.85 LEN=64
   TOS=0x00 PREC=0x00 TTL=63 ID=28916 DF PROTO=TCP SPT=50428 DPT=443
   WINDOW=65535 RES=0x00 SYN URGP=0
 
-  Aug 17 22:15:47 ip-10-100-0-60 kernel: \[14167.968275\]
+  Aug 17 22:15:47 ip-10-100-0-60 kernel: [14167.968275]
   ***AviatrixUser***:IN= OUT=eth0 SRC=192.168.0.6 DST=10.100.0.2 LEN=66
   TOS=0x00 PREC=0x00 TTL=254 ID=13309 PROTO=UDP SPT=64775 DPT=53 LEN=46
 
@@ -196,11 +196,11 @@ Two example logs:
 
   May 17 00:23:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
   timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
-  cpu\_idle=100 memory\_free=237048 disk\_total=8115168 disk\_free=4665560
+  cpu_idle=100 memory_free=237048 disk_total=8115168 disk_free=4665560
 
   May 17 00:28:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
   timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
-  cpu\_idle=100 memory\_free=237072 disk\_total=8115168 disk\_free=4665560
+  cpu_idle=100 memory_free=237072 disk_total=8115168 disk_free=4665560
 
 AviatrixFQDNRule
 ----------------
@@ -212,20 +212,20 @@ Domain name filtering can be configured per gateway via controller. And
 every time a gateway tries to access a domain name, it will check if the
 domain name passes the configured filters. If it does, access will be
 allowed with the state as MATCHED, otherwise it will be discarded with state
-as NO\_MATCH.
+as NO_MATCH.
 
 Two example logs:
 
 ::
 
   May 24 10:54:40 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule\[CRIT\]nfq\_ssl\_handle\_client\_hello() L\#137 P:7025
+  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#137 P:7025
   Gateway=bogusGw hostname=www.google.com state=MATCHED
 
   May 24 10:17:08 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule\[CRIT\]nfq\_ssl\_handle\_client\_hello() L\#162 P:6138
-  Gateway=bogusGw hostname=clients2.google.com state=NO\_MATCH
-  drop\_reason=NO\_HOSTNAME\_MATCH
+  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#162 P:6138
+  Gateway=bogusGw hostname=clients2.google.com state=NO_MATCH
+  drop_reason=NO_HOSTNAME_MATCH
 
 AviatrixTunnelStatusChange
 --------------------------
