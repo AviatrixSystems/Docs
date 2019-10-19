@@ -58,7 +58,7 @@ The configuration is the `Step 3 in the Transit Network workflow <https://docs.a
 1. Fill the parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fill the parameters and click OK.
+Fill the parameters and click OK. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
 
 ============================   ==========
 **Setting**                    **Value**
