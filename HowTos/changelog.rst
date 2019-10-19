@@ -2,6 +2,12 @@ Aviatrix VPN Client Changelog
 -----------------------------
 
 
+2.3.10 - Oct 18 2019
+ - Support MacOS Catalina
+ - Resolve fresh installation issues
+ - Set version in PkgInfo in Mac
+ - Nameserver wasn't being pushed correctly in Windows 10
+
 2.2.10 - Sep 26 2019
  - FIPS 140-2 support for openvpn
  - Sorting and ordering profiles
