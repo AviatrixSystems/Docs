@@ -68,7 +68,7 @@ Deployment:
         Example:
         CLIENT-SD and SERVER-SD
     
-		* build Connection policy between the CLIENT-SD domain and the SERVER-SD domain. 
+    * build Connection policy between the CLIENT-SD domain and the SERVER-SD domain. 
 	  
     * build Connection policy between CLIENT-SD domain and Firewall domain so that traffic in and out of the domain is inspected. 
     
