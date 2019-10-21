@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.1.935 (Coming soon)
+R5.1.935 (10/19/2019)
 ==========================
 
 Transit Gateway Enhancement
