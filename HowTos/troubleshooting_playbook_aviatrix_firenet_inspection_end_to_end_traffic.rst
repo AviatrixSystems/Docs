@@ -11,7 +11,7 @@ This technical note provides a step-by-step tips and simple topology to troubles
 Prerequisite Setup
 ------------------
 
-- Topology:
+Topology:
 
 * TGW * 1
 
@@ -55,7 +55,7 @@ Prerequisite Setup
     Example:
     FireNet VPC 10.66.0.0/16
 
-- Deployment:
+Deployment:
 
   * Follow `Aviatrix Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to launch FireNet Security Domain, FireNet gateways and firewall instances.
 
@@ -68,7 +68,7 @@ Prerequisite Setup
         Example:
         CLIENT-SD and SERVER-SD
     
-	  * build Connection policy between the CLIENT-SD domain and the SERVER-SD domain. 
+		* build Connection policy between the CLIENT-SD domain and the SERVER-SD domain. 
 	  
     * build Connection policy between CLIENT-SD domain and Firewall domain so that traffic in and out of the domain is inspected. 
     
