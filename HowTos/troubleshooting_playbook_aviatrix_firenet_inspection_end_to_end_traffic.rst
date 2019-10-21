@@ -120,7 +120,7 @@ Workflow:
    
     `Check routing info in Aviatrix FireNet Gateway from Firewall Network Advanced`_
       
-  	`Check routing info in Firewall from Firewall Network `_
+		`Check routing info in Firewall from Firewall Network `_
 
   * Cloud Platform
 	
@@ -369,13 +369,37 @@ Check routing info for Spoke Security Domain in Cloud Platform from TGW Orchestr
 			
 			* rest of the routing entries pointing to
 			
-				* Spoke VPC CIDR, 
+				* Spoke VPC CIDR, FireNet tgw attachment ID, static type, and Resource Name with FireNet VPC name
 				
-				*
-			
-				::
+				* FireNet VPC CIDR, FireNet tgw attachment ID, static type, and Resource Name with FireNet VPC name
+				
+Check routing info for FireNet Security Domain in Cloud Platform from TGW Orchestrator List
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-				Example: CLIENT-SD
-				
-			* 
+  * Steps:
+  
+    1. Navigate to the Aviatrix GUI page: TGW Orchestrator -> List
+
+    2. Find your FireNet Security Domain under the field Security Domain
+
+      ::
+
+      Example:
+ 			FIRENET-SD
+			
+		3. Select it and click the button "Show Details"
+		
+	* Expect to view:
 	
+		1. in VPC Route Table Details section
+		
+			* routing table *-firenet-tgw-egress has a route 0.0.0.0/0 pointing to AWS TGW
+			
+			* routing table *-firenet-tgw-ingress has a route 0.0.0.0/0 pointing to the interface eth1 of Aviatrix FireNet gateway
+			
+			* routing table *-firenet-dmz-firewall has a route 0.0.0.0/0 pointing to the interface eth2 of Aviatrix FireNet gateway
+			
+		2. in TGW Route Table Details section 
+			
+			* routing entries of all Spoke and FireNet security domains, VPC CIDRS, and the corresponding info
+			
