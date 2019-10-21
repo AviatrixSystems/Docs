@@ -23,8 +23,6 @@ Workflow:
 
 6. `Refer to other troubleshooting documents`_
 
-7. TODO list download link:
-
 Detail:
 -------
 
