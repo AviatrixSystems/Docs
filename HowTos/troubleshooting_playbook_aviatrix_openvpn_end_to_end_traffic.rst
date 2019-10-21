@@ -54,8 +54,6 @@ Workflow:
     `T_03. Verify DNS by issuing command #nslookup [DOMAIN NAME OF END DEVICE] on OpenVPN client`_
 
     `T_04. Verify connectivity between OpenVPN client and end device`_
-    
-7. TODO list download link:
 
 Detail:
 -------
