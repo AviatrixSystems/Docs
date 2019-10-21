@@ -101,6 +101,8 @@ Workflow:
       `Check Connection Policy from TGW Orchestrator View`_
       
       `Check Connection Policy from TGW Orchestrator Plan`_
+			
+			`Check Connection Policy from TGW Orchestrator List`_
       
     Check routing info in Cloud Platform which is related to TGW Orchestrator
       
@@ -108,7 +110,9 @@ Workflow:
       
       `Check routing info in Cloud Platform from TGW Orchestrator Test`_
       
-      `Check routing info in Cloud Platform from TGW Orchestrator List`_
+      `Check routing info for Spoke Security Domain in Cloud Platform from TGW Orchestrator List`_
+			
+			`Check routing info for FireNet Security Domain in Cloud Platform from TGW Orchestrator List`_
       
     `Check basic Firewall Network configuration from Firewall Network Advanced`_
      
@@ -130,9 +134,9 @@ Workflow:
 
 	`T_01. Verify Internet layer by sending ICMP traffic from end device in Client Spoke Security Domain to the end device in Server Spoke Security Domain with IP`_
 
-	`T_03. Verify Transport layer by sending traffic from end device in Client Spoke Security Domain to the end device in Server Spoke Security Domain with IP/Protocol/Port`_
+	`T_02. Verify Transport layer by sending traffic from end device in Client Spoke Security Domain to the end device in Server Spoke Security Domain with IP/Protocol/Port`_
 
-	`T_05. Verify real traffic between end to end devices`_
+	`T_03. Verify real traffic between end to end devices`_
    
 Detail:
 -------
@@ -225,6 +229,47 @@ Check Connection Policy from TGW Orchestrator Plan
 
       Example:
       Connected: CLIENT-SD
+			
+Check Connection Policy from TGW Orchestrator List
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Steps:
+  
+    1. Navigate to the Aviatrix GUI page: TGW Orchestrator -> List
+		
+		
+    2. Find your Spoke Domains and FireNet Domain under the field Security Domain
+
+      ::
+
+      Example:
+ 			FIRENET-SD, CLIENT-SD and SERVER-SD
+			
+		3. Select one of the security domains and click the button "Show Details"
+         
+  * Expect to view each security domain has corresponding domain connection policies as example below:
+
+    * CLIENT-SD
+
+      ::
+
+      Example:
+      Connected Domain(s): FIRENET-SD and SERVER-SD
+
+    * SERVER-SD
+
+      ::
+
+      Example:
+      Connected Domain(s): CLIENT-SD
+
+    * FIRENET-SD
+
+      ::
+
+      Example:
+      Connected Domain(s): CLIENT-SD
+
 
 Check routing info in Cloud Platform from TGW Orchestrator Audit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,3 +340,42 @@ Check routing info in Cloud Platform from TGW Orchestrator Test
 		* disconnect and connect policy connection
 		
 	* Correct the security group and ACL to allow traffic on both source and destination instances.
+	
+Check routing info for Spoke Security Domain in Cloud Platform from TGW Orchestrator List
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Steps:
+  
+    1. Navigate to the Aviatrix GUI page: TGW Orchestrator -> List
+
+    2. Find your Spoke Domains under the field Security Domain
+
+      ::
+
+      Example:
+ 			CLIENT-SD and SERVER-SD
+			
+		3. Select one of the spoke security domains and click the button "Show Details"
+		
+	* Expect to view:
+	
+		1. in VPC Route Table Details section
+		
+			* RFC 1918 routes (192.168.0.0/16, 10.0.0.0/8, and 172.16.0.0/12) points to AWS TGW 
+		
+		2. in TGW Route Table Details section 
+	
+			* one routing entry pointing to the Spoke VPC CIDR itself, tgw attachment ID itself, propagated type, and Resource Name with Spoke VPC name
+			
+			* rest of the routing entries pointing to
+			
+				* Spoke VPC CIDR, 
+				
+				*
+			
+				::
+
+				Example: CLIENT-SD
+				
+			* 
+	
