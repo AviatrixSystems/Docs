@@ -110,65 +110,29 @@ Workflow:
       
       `Check routing info in Cloud Platform from TGW Orchestrator List`_
       
-    `Check bacsic Firewall Network configuration from Firewall Network Advanced`_
+    `Check basic Firewall Network configuration from Firewall Network Advanced`_
      
     `Check routing info in Cloud Platform which is related to Firewall Network`_
    
     `Check routing info in Aviatrix FireNet Gateway from Firewall Network Advanced`_
       
-  `Check routing info in Firewall from Firewall Network `_
-  
-      -----[OLD]-----
-  
-      `Check Site2Cloud configuration from Aviatrix Controller`_
-      
-      `Check IPSec VPN tunnel logs from Site2Cloud Diagnostics`_
-  
+  	`Check routing info in Firewall from Firewall Network `_
+
   * Cloud Platform
+	
+		`Check routing info for TGW Orchestrator feature from AWS portal`_
       
-      `Check Aviatrix gateway’s instance level and network level for Site2Cloud feature from AWS portal`_
-      
-3. Check other Aviatrix Features Deployment configuration
+		`Check Aviatrix gateway’s instance level and network level for FireNet feature from AWS portal`_
+			
+		`Check Firewall instance level and network level for FireNet feature from AWS portal`_
+            
+3. Troubleshoot connectivity between end device and end device
 
-      `Check other Aviatrix features on Aviatrix Gateway which might cause routing issue`_
-      
-4. Troubleshoot connectivity between Aviatrix gateway and Edge router
+	`T_01. Verify Internet layer by sending ICMP traffic from end device in Client Spoke Security Domain to the end device in Server Spoke Security Domain with IP`_
 
-      `T_01. Verify Internet layer by sending ICMP traffic to the public IP of Edge router from Aviatrix Gateway`_
+	`T_03. Verify Transport layer by sending traffic from end device in Client Spoke Security Domain to the end device in Server Spoke Security Domain with IP/Protocol/Port`_
 
-      `T_02. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Edge router from Aviatrix Gateway`_
-
-      `T_03. Verify Transport layer by sending traffic with port 500/4500 to the public IP of Aviatrix Gateway from Edge router`_
-   
-5. Check end device’s deployment configuration on Edge router side
-
-      `Check end/testing device's instance level and network level configuration on Edge router side`_
-
-      `T_04. Troubleshoot connectivity between end device and Edge router on edge router side`_
-    
-6. Check end device’s deployment configuration on Aviatrix gateway side
-
-      `Check end/testing instance level and network level configuration on Aviatrix gateway side`_
-
-      `T_05. Troubleshoot connectivity between end device and Aviatrix gateway on aviatrix gateway side`_
-   
-7. Troubleshoot connectivity between end device and end device
-
-      `T_06. Verify Internet layer by sending ICMP traffic from end device on Aviatrix side to the end device on Edge router side with IP`_
-
-      `T_07. Verify Internet layer by sending ICMP traffic from end device on Edge router side to the end device on Aviatrix side with IP`_
-
-      `T_08. Verify Transport layer by sending traffic from end device on Aviatrix side to the end device on Edge router side with IP/Protocol/Port`_
-
-      `T_09. Verify Transport layer by sending traffic from end device on Edge router side to the end device on Aviatrix side with IP/Protocol/Port`_
-
-      `T_10. Verify real traffic between end to end devices`_
-    
-8. Refer to other troubleshooting documents
-
-   * https://docs.aviatrix.com/Support/support_center_site2cloud.html
-   
-9. TODO list download link:  
+	`T_05. Verify real traffic between end to end devices`_
    
 Detail:
 -------
@@ -296,3 +260,38 @@ Check routing info in Cloud Platform from TGW Orchestrator Audit
 		* detach and attach VPC to TGW
 		
 		* disconnect and connect policy connection
+		
+Check routing info in Cloud Platform from TGW Orchestrator Test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Steps:
+  
+    1. Navigate to the Aviatrix GUI page: TGW Orchestrator -> Test
+
+    2. Select the source instance and destination instance on the related configuration
+		
+		3. Click the button "FlightPath Test"
+    
+  * Expect to view Pass.
+    
+  * If the output displays error/failed message, Aviatrix solution will not work properly
+
+  Probable Causes:
+
+  * IAM permission issue 
+  
+  * Manually modify routes in Cloud platform 
+	
+	* Either Security group or ACL is not configured properly
+  
+  Suggestions:
+
+	* Check IAM permission by following the documents `Cloud Permission - AWS IAM Service Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aws_iam_service.rst>`_
+	
+	* Refer to the message(s) in the prompt and correct those missing routes by one of the suggestions as below:
+	
+		* detach and attach VPC to TGW
+		
+		* disconnect and connect policy connection
+		
+	* Correct the security group and ACL to allow traffic on both source and destination instances.
