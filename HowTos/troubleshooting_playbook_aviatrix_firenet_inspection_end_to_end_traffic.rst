@@ -284,13 +284,15 @@ Check routing info in Cloud Platform from TGW Orchestrator Audit
 
   * IAM permission issue 
   
-  * 
+  * Manually modify routes in Cloud platform 
   
-  *
 
   Suggestions:
 
-  * Attempt to use a public DNS such as 8.8.8.8 or cloud platform default DNS first
-
-  * `Check basic network configuration of AWS where Aviatrix Controller locates from AWS portal`_
-  
+	* Check IAM permission by following the documents `Cloud Permission - AWS IAM Service Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aws_iam_service.rst>`_
+	
+	* Refer to the message(s) in the prompt and correct those missing routes by one of the suggestions as below:
+	
+		* detach and attach VPC to TGW
+		
+		* disconnect and connect policy connection
