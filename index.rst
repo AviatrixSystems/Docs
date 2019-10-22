@@ -31,6 +31,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Good To Know`
 * :ref:`Support Center`
 * :ref:`IPmotion`
+* :ref:`Troubleshooting Playbook`
 
 
 .. _Getting Started:
@@ -389,3 +390,17 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/HowTo_Setup_IPMotion
    HowTos/design_pattern_ipmotion
    HowTos/ipmotion_dependency_discovery
+   
+.. _Troubleshooting Playbook:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Troubleshooting Playbook
+
+   TroubleshootingPlaybook/troubleshooting_playbook_overview.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aws_iam_service.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_controller.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_gateway.rst
+   
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_openvpn_end_to_end_traffic.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_s2c_end_to_end_traffic.rst
