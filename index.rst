@@ -401,6 +401,5 @@ While all content is searchable, the site is organized into the following sectio
    TroubleshootingPlaybook/troubleshooting_playbook_aws_iam_service.rst
    TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_controller.rst
    TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_gateway.rst
-   
    TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_openvpn_end_to_end_traffic.rst
    TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_s2c_end_to_end_traffic.rst
