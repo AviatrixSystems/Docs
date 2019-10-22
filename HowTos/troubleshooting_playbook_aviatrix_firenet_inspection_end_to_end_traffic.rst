@@ -120,7 +120,7 @@ Workflow:
    
     `Check routing info in Aviatrix FireNet Gateway from Firewall Network Advanced`_
       
-		`Check routing info in Firewall from Firewall Network `_
+		`Check routing info in Firewall from Firewall Network`_
 
   * Cloud Platform
 	
