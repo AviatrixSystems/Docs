@@ -403,3 +403,36 @@ Check routing info for FireNet Security Domain in Cloud Platform from TGW Orches
 			
 			* routing entries of all Spoke and FireNet security domains, VPC CIDRS, and the corresponding info
 			
+Check basic Firewall Network configuration from Firewall Network Advanced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Steps:
+  
+    1. Navigate to the Aviatrix GUI page: Firewall Network -> Advanced
+
+    2. Click on the three dot button on the right FireNet VPC ID
+		
+	* Expect to view:
+	
+		1. status 'true' under the field Attached which proves Firewall instance is attached to FireNet gateway
+		
+		2. button "Enable" is clicked uder the section "Traffic Inspection"
+		
+		3. State 'up' under the section "FireNet Gateway"
+		
+		4. the below info under section AWS Firewall Network Route Tables
+		
+			* routing table * TGW Egress Subnet has a route 0.0.0.0/0 pointing to AWS TGW
+			
+			* routing table * TGW Ingress Subnet has a route 0.0.0.0/0 pointing to the interface eth1 of Aviatrix FireNet gateway
+			
+			* routing table * Firewall Subnet has a route 0.0.0.0/0 pointing to the interface eth2 of Aviatrix FireNet gateway 
+			
+Check routing info in Cloud Platform which is related to Firewall Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  * Steps:
+  
+    1. Navigate to the Aviatrix GUI page: Firewall Network -> Vendor Integration
+
+    2. Click on the first tab "Firewall"
