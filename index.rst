@@ -87,7 +87,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: AWS TGW Orchestrator
+   :caption: Transit Gateway Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
