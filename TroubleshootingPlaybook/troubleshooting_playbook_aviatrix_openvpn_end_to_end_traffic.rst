@@ -13,11 +13,11 @@ Workflow:
 
 1. Check basic information - Cloud Permission, Aviatrix Controller, and Aviatrix Gateway
 
-      `Cloud Permission - AWS IAM Service Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aws_iam_service.rst>`_
+      `Cloud Permission - AWS IAM Service Troubleshooting Playbook <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_aws_iam_service.html>`_
    
-      `Aviatrix Controller Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aviatrix_controller.rst>`_
+      `Aviatrix Controller Troubleshooting Playbook <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_controller.html>`_
       
-      `Aviatrix Gateway Troubleshooting Playbook <https://github.com/brycewang03/Docs/blob/troubleshooting_playbook/HowTos/troubleshooting_playbook_aviatrix_gateway.rst>`_
+      `Aviatrix Gateway Troubleshooting Playbook <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_gateway.html>`_
     
 2. Troubleshoot OpenVPN Deployment configuration
 
