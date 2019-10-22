@@ -10,10 +10,10 @@ Transit Gateway Enhancement
 
  - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CDIRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
 
- - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. API support only. 
+ - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. `API support <https://api.aviatrix.com/?version=latest#6a8a1c4c-14b6-4f11-b280-d218f60cea1e>`_ only. 
 
  - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
- - **AS Prepend** adds ASN number when Aviatrix transit gateway process redistribute routes to its BGP peer. 
+ - **ASN Path Prepend** adds ASN number when Aviatrix transit gateway redistribute routes to its BGP peer. For new Transit connection, the Aviatrix Transit gateway automatically inserts its ASN number. To insert ASN path in an existing connection, go to Transit Network -> Advanced Config -> Prepend AS Path
 
 Security
 ------------
