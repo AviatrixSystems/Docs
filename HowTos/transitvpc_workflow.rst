@@ -3,9 +3,9 @@
   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
-==============================================================
+================================================================
 Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
-==============================================================
+================================================================
 
 .. important::
 
@@ -139,7 +139,7 @@ appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azur
 performance limit and route limit by these native services. Follow the instruction in  `this link <https://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html?>`_ to complete Step 3. 
 
 3.3 AWS VGW (VPN Gateway)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Aviatrix automates the process of discovering and connecting to AWS VGW. The instruction below is for connecting Aviatrix Transit GW to AWS VGW. 
 

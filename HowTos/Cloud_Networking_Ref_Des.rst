@@ -22,7 +22,7 @@ read and decide which one suits you or combine parts from different ones
 to create a network that meet your requirements. You can easily build a
 full mesh network.
 
-Multiple VPCs in one region
+Multiple VPCs in one region 
 ===========================
 
 The network you have in mind is shown below where all VPCs are in the
