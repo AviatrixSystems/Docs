@@ -2,6 +2,12 @@
 Release Notes
 =======================================
 
+R5.1.943 (10/25/2019)
+=======================
+
+ - **Bug fix** Hostname is blocked in VPN profile policy configuration. Revert the change. 
+ - **Bug fix** Transit gateway peering is missing on dashboard. 
+
 R5.1.935 (10/19/2019)
 ==========================
 
