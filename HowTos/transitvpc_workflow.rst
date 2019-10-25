@@ -31,7 +31,7 @@ between Spoke VPC or VNet instances and your on-prem network.
 
 The Global Transit Network diagram is described as below. 
 
-|SRMC|
+|Test|
 
 Planning and Prerequisites
 ---------------------------
@@ -233,7 +233,7 @@ To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6.
 
 Available in release 5.0 and later, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
 
-|azure_native_transit|
+|azure_native_transit2|
 
 .. Note::
 
@@ -270,7 +270,7 @@ To delete a Spoke GW, go to Gateway on the main navigation tab, select the gatew
 
 Repeat steps 4 to 6 to add more Spoke VPCs to the Transit GW group.
 
-|SpokeVPCs|
+|SpokeVPC|
 
 9. View the Network Topology
 -------------------------------------
@@ -351,7 +351,7 @@ If you don't configure this field, Transit Gateway only advertises its own ASN.
 
   
 
-.. |SRMC| image:: transitvpc_workflow_media/SRMC.png
+.. |Test| image:: transitvpc_workflow_media/SRMC.png
    :width: 5.55625in
    :height: 3.26548in
 
@@ -370,13 +370,13 @@ If you don't configure this field, Transit Gateway only advertises its own ASN.
 .. |AttachSpokeGW| image:: transitvpc_workflow_media/AttachSpokeGW.png
    :scale: 50%
 
-.. |SpokeVPCs| image:: transitvpc_workflow_media/SpokeVPCs.png
+.. |SpokeVPC| image:: transitvpc_workflow_media/SpokeVPC.png
    :scale: 50%
 
 .. |transit_to_onprem| image:: transitvpc_workflow_media/transit_to_onprem.png
    :scale: 40%
 
-.. |azure_native_transit| image:: transitvpc_workflow_media/AzureTransit.png
+.. |azure_native_transit2| image:: transitvpc_workflow_media/azure_native_transit2.png
    :scale: 30%
 
 .. disqus::
