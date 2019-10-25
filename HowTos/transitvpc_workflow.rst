@@ -22,7 +22,7 @@ For more information, check out `Transit Network FAQ. <http://docs.aviatrix.com/
 For other Aviatrix functions, such as `VPN access for users <http://docs.aviatrix.com/HowTos/uservpn.html>`_ and `VPN access for sites <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_, check out `Aviatrix Overview <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
 This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
-between Spoke VPC EC2 instances and on-prem network. 
+between Spoke VPC or VNet instances and your on-prem network. 
 
 
 .. note::
@@ -31,7 +31,7 @@ between Spoke VPC EC2 instances and on-prem network.
 
 The Global Transit Network diagram is described as below. 
 
-|image0|
+|Test|
 
 Planning and Prerequisites
 ---------------------------
@@ -58,7 +58,7 @@ Follow the steps below to set up a Transit Network.
 The Transit GW is the hub gateway, it serves to move traffic between a Spoke VPC and an on-prem network.
 The Transit GW must be launched on a public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
-|image1|
+|TVPC2|
 
 
 ==========================================      ==========
@@ -68,7 +68,7 @@ Cloud Type                                      Currently Transit GW can launche
 Gateway Name                                    A unique name to identify the Transit GW
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
-VPC ID                                          The Transit VPC/vNet/VCN ID 
+VPC ID                                          The Transit VPC/VNet/VCN ID 
 Public Subnet                                   The public subnet on which Transit GW instance is deployed
 Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
 Allocate New EIP                                If selected, the Controller allocates a new EIP and associate it with the gateway instance. If not selected, the Controller looks for an allocated but unassociated EIP in the Transit GW account. 
@@ -91,7 +91,7 @@ You can change the Transit GW size later by following `these instructions. <http
 
 When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
 
-|image2|
+|HAVPC|
 
 To disable Transit GW HA, go to the Gateway page and delete the Transit GW with -hagw in the name extension. Note: If the Transit GW is connected to VGW, you cannot disable Transit GW HA and if there are still Spoke GWs, you cannot disable
 Transit GW HA either. 
@@ -136,7 +136,7 @@ Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitg
 
 "Aviatrix Hardware Appliance CloudN" allows you to build a BGP and IPSEC tunnel directly to an on-prem Aviatrix hardware
 appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming both the 
-performance limit and route limit by these native services. Follow the instruction in this link to complete Step 3. 
+performance limit and route limit by these native services. Follow the instruction in  `this link <https://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html?>`_ to complete Step 3. 
 
 3.3 AWS VGW (VPN Gateway)
 ^^^^^^^^^^^^^^
@@ -159,7 +159,7 @@ exchange routes between on-prem and the cloud.
 
   Currently, only one connection is supported on a specific transit gateway/vpc, regardless of which of the three options above is chosen.
 
-|image3|
+|VGW|
 
 =====================      ==========
 **Setting**                **Value**
@@ -192,9 +192,9 @@ Scroll down to see the total number of learned routes.
 
 .. Note::
 
- If you are building Azure transit solution and do not require traffic encryption between Spoke VNet and Transit VNet, skip Step 4&5 and go to Step 6b to attach Spoke VNet directly. 
+ If you are building Azure transit solution and do not require traffic encryption between Spoke VNet and Transit VNet, skip Step 4-5 and go to Step 6b to attach Spoke VNet directly. 
 
-|image4|
+|launchSpokeGW|
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -224,7 +224,7 @@ go through the Spoke GW. Once NAT is enabled, you can further configure `FQDN wh
 
 This step attaches a Spoke VPC to the Transit GW Group by building an Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertising the Spoke VPC CIDR to VGW via the established BGP session.
 
-|image5|
+|AttachSpokeGW|
 
 To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6. 
 
@@ -233,7 +233,7 @@ To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6.
 
 Available in release 5.0 and later, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
 
-|azure_native_transit|
+|azure_native_transit2|
 
 .. Note::
 
@@ -270,7 +270,7 @@ To delete a Spoke GW, go to Gateway on the main navigation tab, select the gatew
 
 Repeat steps 4 to 6 to add more Spoke VPCs to the Transit GW group.
 
-|image6|
+|SpokeVPC|
 
 9. View the Network Topology
 -------------------------------------
@@ -351,34 +351,32 @@ If you don't configure this field, Transit Gateway only advertises its own ASN.
 
   
 
-.. |image0| image:: transitvpc_workflow_media/aviatrix-transit-service.png
+.. |Test| image:: transitvpc_workflow_media/SRMC.png
    :width: 5.55625in
    :height: 3.26548in
 
-.. |image1| image:: transitvpc_workflow_media/transitGw-launch.png
-   :width: 2.55625in
-   :height: 1.0in
+.. |TVPC2| image:: transitvpc_workflow_media/TVPC2.png
+   :scale: 60%
 
-.. |image2| image:: transitvpc_workflow_media/TransitGW-HA.png
-   :width: 2.55625in
-   :height: 1.0in
+.. |HAVPC| image:: transitvpc_workflow_media/HAVPC.png
+   :scale: 60%
 
-.. |image3| image:: transitvpc_workflow_media/connectVGW.png
+.. |VGW| image:: transitvpc_workflow_media/connectVGW.png
    :scale: 50%
 
-.. |image4| image:: transitvpc_workflow_media/launchSpokeGW.png
+.. |launchSpokeGW| image:: transitvpc_workflow_media/launchSpokeGW.png
    :scale: 50%
 
-.. |image5| image:: transitvpc_workflow_media/AttachSpokeGW.png
+.. |AttachSpokeGW| image:: transitvpc_workflow_media/AttachSpokeGW.png
    :scale: 50%
 
-.. |image6| image:: transitvpc_workflow_media/AttachMoreSpoke.png
+.. |SpokeVPC| image:: transitvpc_workflow_media/SpokeVPC.png
    :scale: 50%
 
 .. |transit_to_onprem| image:: transitvpc_workflow_media/transit_to_onprem.png
-   :scale: 30%
+   :scale: 40%
 
-.. |azure_native_transit| image:: transitvpc_workflow_media/azure_native_transit.png
+.. |azure_native_transit2| image:: transitvpc_workflow_media/azure_native_transit2.png
    :scale: 30%
 
 .. disqus::

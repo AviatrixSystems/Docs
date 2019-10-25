@@ -4,3 +4,5 @@ output
 *.xml
 .idea/Docs.iml
 .vscode/settings.json
+_build/
+*.doctree
