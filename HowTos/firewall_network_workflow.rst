@@ -163,101 +163,6 @@ eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted 
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
-Example Configuration for Bootstrap 
----------------------------------------
-
-When you `launch a VM-Series instance <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_, click "Advanced", this is the option to integrate bootstrap information to launch the instance and setup the initial policies.
-
-IAM role
-########
-
-Create an IAM role "aviatrix-s3-role", with "aviatrix-s3-policy" as follows:
-
-::
-
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "s3:ListBucket"
-                ],
-                "Resource": [
-                    "arn:aws:s3:::*"
-                ]
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "s3:GetObject"
-                ],
-                "Resource": [
-                    "arn:aws:s3:::*"
-                ]
-            }
-        ]
-    }
-
-Bootstrap bucket structure
-##########################
-
-In S3, at the top level create a bucket for bootstrap. Give it a name, for example "panvm_bucket", with following structure:
-
-::
-
-    panvm-bucket/
-      config/
-        init-cfg.txt
-        bootstrap.xml(Optional)
-      content/
-      license/
-      software/
-
-|panvm_bucket|
-
-Example for creating bootstrap init-cfg.txt for panorama managed firewall:
-
-1. Generate Auth Key in Panorama
-
-In Panorama CLI, create auth key, remember the key value.
-
-::
-
-    admin@Panorama> request bootstrap vm-auth-key generate lifetime 8760
-
-    VM auth key 0123456789 generated. Expires at: 2020/05/28 12:28:24
-
-    admin@Panorama>
-
-
-2. create init-cfg.txt file
-
-::
-
-    type=dhcp-client
-    ip-address=
-    default-gateway=
-    netmask=
-    ipv6-address=
-    ipv6-default-gateway=
-    hostname=FW
-    vm-auth-key=0123456789                                 ---> auth key created in Paranoma
-    panorama-server=3.216.229.15                           ---> paranoma public IP
-    panorama-server-2=
-    tplname=FireNet_cal_2_stack                            ---> template stack name, NOT TEMPLATE NAME
-    dgname=firenet_global                                  ---> device group name
-    dns-primary=
-    dns-secondary=
-    op-command-modes=jumbo-frame,mgmt-interface-swap       ---> mgmt-interface-swap is MUST
-    dhcp-send-hostname=yes
-    dhcp-send-client-id=yes
-    dhcp-accept-server-hostname=yes
-    dhcp-accept-server-domain=yes
-
-
-3.  create bootstrap.xml: export from the existing PAN firewall.
-This step is optional: if the firewall is managed by Panorama, this step can be omitted.
 
 .. important::
 
@@ -267,12 +172,6 @@ This step is optional: if the firewall is managed by Panorama, this step can be 
 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
-
-.. Tip::
-
-    Aviaitrix launches the Palo Alto Networks' VM-Series with default instance size of m4.xlarge. 
-    VM-Series offers different models with different performance offerings that are dependant on the instance size. For example, at the time of this writing, VM-500 and VM-700 series require C5.18xlarge instances. 
-    You can increase the instance size as needed to match the desired series and performance. For more information, refer to Palo Alto Networks documentation
 
 
 7a.2 Launch and Associate More
@@ -290,6 +189,7 @@ You can follow `this example configuration guide <https://docs.aviatrix.com/HowT
 a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
 to firewall instance. 
 
+For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_. 
 
 7b. Associate an Existing Firewall Instance
 --------------------------------------------
