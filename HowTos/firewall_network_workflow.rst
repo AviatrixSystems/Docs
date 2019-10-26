@@ -38,9 +38,10 @@ Do not launch the firewall instance from AWS Console as you launch it in the fol
 
 This step creates a Security Domain with a Firewall Domain option. 
 
-Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one as shown below.
+Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one. Select "Aviatrix Firewall Domain". 
 
-|firewall_domain|
+For more information, refer to `Create a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
+
 
 4. Launch Aviatrix FireNet Gateway
 ------------------------------------------
