@@ -91,7 +91,6 @@ The Transit Gateway Orchestrator can be deployed with some Spoke VPCs run Aviatr
 
  1. If you need a packet in flight to be encrypted, launch an Aviatrix gateway in the Spoke VPC. 
  #. If you need various NAT functions between Spoke and Transit VPC, use an Aviatrix gateway in the Spoke VPC. 
- #. If you need to connect an Azure VNet as a Spoke, use an Aviatrix gateway in the Spoke VPC. 
  #. If you need to obtain Netflow and log information from the Spoke and Transit, use Aviatrix gateway. 
  #. If you want to build a fully isolated Transit network where there is no inter VPC connectivity by default. 
 
