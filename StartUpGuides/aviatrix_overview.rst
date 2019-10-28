@@ -17,19 +17,22 @@ to provide you with turn key solutions.
 |aviatrix_overview|
 
 We focus on solving networking problems in use cases relevant to public clouds. 
-These use cases are shown as below: 
+These use cases are shown in the above diagram and links can be found below to these cases: 
 
-- Datacenter to cloud (`Next Gen Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
-- Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
-- Cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
-- User to cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
-- Site to cloud VPN (`Branch and customer sites to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_) 
-- Multicloud VPN (`Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_)
 
-We also provide security features for workloads/applications in the cloud: 
-
-- `Gateway inline L4 stateful firewall. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_ 
-- `VPC Egress Security. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
+1. Intelligent Orchestration and Control, Multi Account. Follow one of the links below to deploy an Aviatrix controller in your cloud of choice.
+  * `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
+  * `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_
+  * `Oracle Cloud Infrastructure (OCI) Startup Guide <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html>`_
+  * `Google Startup Guide <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_
+2. Advanced Netowrking Multi-Region and Multi-Cloud (`OpenVPN® Design for Multi Accounts and Multi VPCs <https://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_)
+#. Smart SAML VPN (`OpenVPN® with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_)
+#. Site to cloud VPN (`Branch and customer site to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_)
+#. Internet of Things 
+#. Secure Egress (`Egress Control Filter <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_)
+#. Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
+#. High-Performance Encrytion (`Global Transit Network Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)
+#. Operational Tools (`Aviatrix Operations Overview <https://docs.aviatrix.com/StartUpGuides/aviatrix_operations.html>`_)
 
 
 In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
@@ -73,7 +76,7 @@ How To Launch Aviatrix?
 Our product, Aviatrix Secure Networking Platform, consists of two components, Controller and
 gateway. Gateways are launched from the Controller
 browser console by using your cloud account credentials with cloud provider APIs.
-The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ and `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
+The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ ` and `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
 
 
 Why Should You Consider Us?
@@ -230,7 +233,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. |aviatrix_overview| image:: aviatrix_overview_media/aviatrix_overview.png
-   :scale: 50%
+   :width: 15.in
+   :height: 4.0in
 
 .. |aviatrix_backbone| image:: aviatrix_overview_media/aviatrix_backbone.png
    :scale: 30%
