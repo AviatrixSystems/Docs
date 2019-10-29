@@ -37,6 +37,10 @@ If on-prem sites advertise identical network CIDRs or overlapping CIDRs to TGWs 
 advertise 10.0.0.0/8 to their respective TGWs), you must enable `Transit Gateway Peering Filter <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_ feature to 
 filter out identical or overlapping CIDRs in order to connect the two regions. 
 
+.. important::
+
+  If you use TGW DXGW/VPN for hybrid connection to on-prem, you cannot use Aviatrix Transit Gateway as the backup router for connecting to the same on-prem network. This is because TGW propagated routes do not present themselves in the TGW route table with any BGP information and as such, it is not possible for the Controller to coordinate the dynamic route updates between TGW and Aviatrix Transit Gateway.
+
 
 2. ActiveMesh with Aviatrix Transit GW for on-prem Connection
 ---------------------------------------------------------------
