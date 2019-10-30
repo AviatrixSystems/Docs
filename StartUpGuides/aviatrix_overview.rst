@@ -47,8 +47,8 @@ Marketplace Launch                              Yes         Yes             No (
 Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
-Next Gen Transit Network Edge                   Yes         Yes             No	                      		   Yes                      Yes
-Firewall Network                                Yes         No              No                               No                       No                     
+Next Gen Transit Network Edge                   Yes         Yes             No	                      	     Yes                      Yes
+Firewall Network                                Yes         No              No                               Yes                      No                     
 Transit Peering                                 Yes         Yes             No                               Yes                      No
 
 Native Peering                                  Yes         No              N/A                              Yes                      No
@@ -60,7 +60,7 @@ Advanced NAT                                    Yes         Yes             Yes 
 Remote Access User VPN                          Yes         Yes             Yes                              Yes                      Yes
 Site to Cloud VPN                               Yes         Yes             Yes                              Yes                      Yes
 
-Insane Mode Encryption                          Yes         No              No                               No                       No
+Insane Mode Encryption                          Yes         Yes              No                              Yes                      No
 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
 FlightPath Expert Diagnostics                   Yes         No              No                               Yes                      No

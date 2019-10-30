@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R5.1.960 (10/29/2019)
+=========================
+
+ - **Bug fix** Aviatrix Controller API calls cause Panorama to become unusable overtime as Panorama fills up its desk space. This is a must fix that impacts all FireNet deployment with Panorama. 
+ - **Bug fix** FireNet does not load balance UDP packets correctly. This is a must fix that impacts all FireNet deployment where UDP traffic such as DNS, goes through the FireNet.  
+ - **Bug fix** ActiveMesh Transit Gateway stops forwarding packets when forwarding from one VTI interface to another. This is a must fix that impacts all multi sites ActiveMesh Transit Gateway deployment.
+
 R5.1.943 (10/25/2019)
 =======================
 
