@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.1.960 (10/29/2019)
+R5.1.962 (10/29/2019)
 =========================
 
  - **Bug fix** Aviatrix Controller API calls cause Panorama to become unusable overtime as Panorama fills up its desk space. This is a must fix that impacts all FireNet deployment with Panorama. 
