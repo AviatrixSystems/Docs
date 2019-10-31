@@ -77,7 +77,7 @@ Change to the region  where you would like to install the Aviatrix Controller on
 
   - the Stack name,
   - select a VPC in the drop down menu, 
-  - select a **public subnet in that VPC** (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
+  - select a **public subnet in that VPC** (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. A public subnet must have a default route point to IGW in its associated VPC route table. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
   - and a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if this field is blank.)
 
    |imageCFSpecifyDetails|
@@ -243,10 +243,10 @@ In addition to Metered AMI, we offer a few others, as shown below. Subscribe to 
 .. disqus::
 
 .. |subscribe| image:: ZeroToConnectivityInAWS_media/subscribe.png
-   :scale: 50%
+   :scale: 30%
 
 .. |3-step| image:: ZeroToConnectivityInAWS_media/3-step.png
-   :scale: 50%
+   :scale: 30%
 
 .. |4-steps| image:: ZeroToConnectivityInAWS_media/4-steps.png
    :scale: 30%
