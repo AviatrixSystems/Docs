@@ -61,6 +61,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/onboarding_faq
    HowTos/aviatrix_account
    HowTos/HowTo_IAM_role
+   HowTos/howto_customize_aviatrix_iam_role_names_for_2ndary_accounts/howto_customize_aviatrix_iam_role_names_for_2ndary_accounts.rst
    HowTos/iam_policies
    HowTos/aviatrix_iam_policy_requirements
    HowTos/customize_aws_iam_policy
