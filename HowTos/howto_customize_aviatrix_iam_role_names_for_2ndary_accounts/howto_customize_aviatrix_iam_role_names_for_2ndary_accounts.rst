@@ -109,9 +109,9 @@ Step 6: Invoke Aviatrix API to Create Access Account
 Step 7: Verify the work by creating an Encrypted Peering
 ------------------------------------------------------------
 
-+ `Click here to refer Aviatrix API documentation for Encrypted Peering <https://docs.aviatrix.com/HowTos/peering.html#peering>`_
++ `Click here to refer Aviatrix documentation for Encrypted Peering <https://docs.aviatrix.com/HowTos/peering.html#peering>`_
 
-+ After peering, the status should be UP and Green!
++ After peering, the status should be UP and Green within 1-5 minutes!
 
 
     |image10|
