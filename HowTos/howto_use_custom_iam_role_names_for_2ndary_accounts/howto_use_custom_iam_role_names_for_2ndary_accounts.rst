@@ -3,11 +3,11 @@
    :keywords: access account, cloud account, iam role, secondary account, custom
 
 ==========================================================
-Use Custom IAM Role Names for Secondary Accounts
+Customize IAM Role Names for Secondary Accounts
 ==========================================================
 
 
-Step 01: Navigate to AWS CloudFormation with Aviatrix CFT
+Step 1: Navigate to AWS CloudFormation with Aviatrix CFT
 --------------------------------------------------------------------
 
 + Login to Aviatrix controller GUI console
@@ -23,7 +23,7 @@ Step 01: Navigate to AWS CloudFormation with Aviatrix CFT
 |
 
 
-Step 02: Download Aviatrix CFT
+Step 2: Download Aviatrix CFT
 ----------------------------------
 
 + Use the URL shown in the screenshot below to download Aviatrix CFT to your local computer
@@ -35,7 +35,7 @@ Step 02: Download Aviatrix CFT
 |
 
 
-Step 03: Modify/Customize CFT
+Step 3: Modify/Customize CFT
 ---------------------------------
 
 + Modify/Replace the following highlighted string with your desired role name in order to create your own IAM role, which is equivalent to **"aviatrix-role-ec2"**
@@ -55,7 +55,7 @@ Step 03: Modify/Customize CFT
 |
 
 
-Step 04: Create CFT Stack
+Step 4: Create CFT Stack
 -----------------------------
 
 + Use the CFT you customized from the previous step to create a CFT-Stack
@@ -76,7 +76,7 @@ Step 04: Create CFT Stack
 |
 
 
-Save the 2 IAM role ARNs
+Step 5: Save the 2 IAM role ARNs
 -----------------------------
 
 + After stack creation has been completed, click [Outputs] tab and copy the 2 ARNs for your roles
@@ -88,7 +88,7 @@ Save the 2 IAM role ARNs
 |
 
 
-Invoke Aviatrix API to Create Access Account
+Step 6: Invoke Aviatrix API to Create Access Account
 ------------------------------------------------
 
 `Refer to Aviatrix API documentation for API example <https://api.aviatrix.com/?version=latest#345322bd-9bd8-4644-8231-25d85ca6a924>`_
@@ -100,7 +100,7 @@ Invoke Aviatrix API to Create Access Account
 |
 
 
-Verify the work by creating an Aviatrix Gateway
+Step 7: Verify the work by creating an Aviatrix Gateway
 ---------------------------------------------------
 
 
