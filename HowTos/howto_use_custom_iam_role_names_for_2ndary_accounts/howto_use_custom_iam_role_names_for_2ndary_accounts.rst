@@ -3,16 +3,16 @@
    :keywords: access account, cloud account, iam role, secondary account, custom
 
 ==========================================================
-How to Use Custom IAM Role Names for Secondary Account
+Use Custom IAM Role Names for Secondary Accounts
 ==========================================================
 
 
-Step 01: Navigate to AWS CloudFormation with Aviatrix 2ndary CFT
+Step 01: Navigate to AWS CloudFormation with Aviatrix CFT
 --------------------------------------------------------------------
 
 + Login to Aviatrix controller GUI console
 
-+ Enter Access-Account page by clicking [Accounts] --> [Account Users] on the left
++ Navigate to **Access-Account** page by clicking [Accounts] --> [Account Users] on the left
 
 + Click [+ Add new] and [Launch CloudFormation Script]
 
@@ -26,7 +26,7 @@ Step 01: Navigate to AWS CloudFormation with Aviatrix 2ndary CFT
 Step 02: Download Aviatrix CFT
 ----------------------------------
 
-+ Use the URL shown in screenshot below to download Aviatrix CFT to your local computer
++ Use the URL shown in the screenshot below to download Aviatrix CFT to your local computer
 
 
     |image2|
@@ -38,7 +38,7 @@ Step 02: Download Aviatrix CFT
 Step 03: Modify/Customize CFT
 ---------------------------------
 
-+ Modify/Replace the following highlighted string with your desired role name in order to create your own IAM role equivalent to **"aviatrix-role-ec2"**
++ Modify/Replace the following highlighted string with your desired role name in order to create your own IAM role, which is equivalent to **"aviatrix-role-ec2"**
 
 
     |image3|
@@ -46,7 +46,7 @@ Step 03: Modify/Customize CFT
     |image4|
 
 
-+ Modify/Replace the following highlighted string with your desired role name in order to create your own IAM role equivalent to **"aviatrix-role-app"**
++ Modify/Replace the following highlighted string with your desired role name in order to create your own IAM role, which is equivalent to **"aviatrix-role-app"**
 
 
     |image5|
@@ -58,7 +58,7 @@ Step 03: Modify/Customize CFT
 Step 04: Create CFT Stack
 -----------------------------
 
-+ Use the CFT you customized from previous step to create a CFT-Stack
++ Use the CFT you customized from the previous step to create a CFT-Stack
 
 
     |image6|
@@ -91,7 +91,7 @@ Save the 2 IAM role ARNs
 Invoke Aviatrix API to Create Access Account
 ------------------------------------------------
 
-+ [Refer to Aviatrix API documentation for API example](https://api.aviatrix.com/?version=latest#345322bd-9bd8-4644-8231-25d85ca6a924)
+`Refer to Aviatrix API documentation for API example <https://api.aviatrix.com/?version=latest#345322bd-9bd8-4644-8231-25d85ca6a924>`_
 
 
     |image9|
@@ -106,6 +106,11 @@ Verify the work by creating an Aviatrix Gateway
 
     |image10|
 
+
+|
+
+
+END
 
 
 
