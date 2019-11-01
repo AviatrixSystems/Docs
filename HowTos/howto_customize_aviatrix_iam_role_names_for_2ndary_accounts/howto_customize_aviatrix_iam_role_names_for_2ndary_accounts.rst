@@ -58,6 +58,10 @@ Step 3: Modify/Customize CFT
     |image11|
 
 
+.. Note:: We recommend to have the prefix string, "aviatrix" for Aviatrix IAM resources. However, if your new "aviatrix-role-app" role name doesn't have the prefix, you need to make sure the the IAM policy, "aviatrix-assume-role-policy" in both controller and secondary account allows you to assume the new "aviatrix-role-app" you create.
+..
+
+
 |
 
 
