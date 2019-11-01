@@ -17,6 +17,7 @@ Networking
 
  - **Cloud WAN Preview**
  - **BGP AS Prepend insertion for Transit Gateway Peering**
+ - **Network mapped SNAT/DNAT for Site2Cloud**
 
 Operation
 ------------
@@ -25,6 +26,7 @@ Operation
  - **FQDN Dashboard**
  - **Flightpath** to for ActiveMesh gateways. 
  - **Selective Gateways for Logging**
+ - **Show Deployment per Access Account**
 
 
 R5.1.962 (10/29/2019)
