@@ -2,6 +2,31 @@
 Release Notes
 =======================================
 
+R5.2 (Coming soon)
+====================
+
+Security
+------------------------------
+
+ - **Firewall Network for Encrypted Transit**
+ - **Amazon Guard Duty Enforcement with Ingress Routing**
+ - **Independent Verdict for Each Egress Control Rule**
+
+Networking
+-------------
+
+ - **Cloud WAN Preview**
+ - **BGP AS Prepend insertion for Transit Gateway Peering**
+
+Operation
+------------
+
+ - **Role Based Access Control** on functional level. 
+ - **FQDN Dashboard**
+ - **Flightpath** to for ActiveMesh gateways. 
+ - **Selective Gateways for Logging**
+
+
 R5.1.962 (10/29/2019)
 =========================
 
