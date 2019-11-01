@@ -49,7 +49,7 @@ Multi Accounts                                  Yes         Yes             Yes 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
 Next Gen Transit Network Edge                   Yes         Yes             No	                      	     Yes                      Yes
 Firewall Network                                Yes         No              No                               Yes                      No                     
-Transit Peering                                 Yes         Yes             No                               Yes                      No
+Transit Peering                                 Yes         Yes             No                               Yes                      Yes
 
 Native Peering                                  Yes         No              N/A                              Yes                      No
 
