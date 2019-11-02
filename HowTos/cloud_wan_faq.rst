@@ -17,23 +17,35 @@ Cloud WAN can be used to fulfill the following tasks.
  1. Manage multiple Cisco IOS Routers from the Aviatrix Controller. This includes uploading and viewing the IOS configuration, making configuration changes to it and monitoring health and stats of the routers. 
  #. Auto connect Cisco IOS routers to the Aviatrix Transit Gateway or AWS TGW with IPSEC VPN over the Internet, thus allowing them to be part of the Transit Network with connectivities with the Spoke VPCs. 
 
+What are the Cloud WAN deployment architectures?
+--------------------------------------------------
+
+Cloud WAN can be deployed to connect with Aviatrix Transit Network as shown below
+
+|cloud_wan_1|
+
+Alternatively you can deploy Cloud WAN as an attachment to TGW where the Aviatrix Transit Gateway functions as edge to the TGW. 
+
+|cloud_wan_2|
+
 What are the benefits of Cloud WAN?
 -----------------------------------------
 
- - **Minimum Friction** Leverage what you have already invested in the on-prem edge router for connecting to the cloud. 
+ - **No Friction** Leverage what you have already invested in the on-prem edge router for connecting to the cloud. 
  - **Automation** Avoid human errors when building VPN connections to the cloud. 
- - **Visibility** Use the single pane of glass to monitor router health and stats. 
+ - **Centrally Managed** Use the single pane of glass to both provision and monitor router health and stats. 
 
 
 Can I use Cloud WAN just to manage the Cisco routers?
 ------------------------------------------------------
 
-Yes. You can use Cloud WAN for making changes to the routers from a central place. -
+Yes. You can use Cloud WAN for making changes to the routers from a central place, even if you are ready to connect 
+the on-prem routers to the cloud. 
 
 What are the use cases for Cloud WAN?
 --------------------------------------
 
-Cloud WAN can be used to connect branch routers to the cloud directly. It can also be used to manage routers you deploy in the partner network where you have full access. 
+Cloud WAN can be used to connect branch routers to the cloud directly. It can also be used to manage routers you deploy in the branch or partner network where you have full access. 
 
 Can Cloud WAN manage other vendor devices?
 ---------------------------------------------
@@ -47,11 +59,26 @@ If the on-prem router terminates with Aviatrix Transit Gateway, there is limitat
 
 If the on-prem router terminates with AWS TGW, the maximum number of connections is 10. In addition the VPN has a 100 route limits.  
 
+What are the requirements to deploy Cloud WAN?
+-------------------------------------------------
 
-.. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
+Each managed Cisco router needs Internet access and a public IP address. 
+
+What routing protocols are supported on Cloud WAN?
+----------------------------------------------------
+
+Cloud WAN supports BGP and static routing. 
+
+Can Cloud WAN support branch to branch communications?
+---------------------------------------------------------
+
+When BGP is enabled on the branch router, Cloud WAN can route traffic between branches. 
+
+
+.. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png
    :scale: 30%
 
-.. |security_domain| image:: tgw_overview_media/security_domain.png
+.. |cloud_wan_2| image:: cloud_wan_faq_media/cloud_wan_2.png
    :scale: 30%
 
 .. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png

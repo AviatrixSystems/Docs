@@ -17,6 +17,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Firewall Network`
 * :ref:`Transit DMZ`
+* :ref:`Cloud WANZ
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN® <OpenVPN>`
@@ -147,6 +148,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_dmz_faq
    HowTos/transit_dmz_workflow
    HowTos/transit_dmz_vendors
+
+.. _Cloud WAN:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Cloud WAN
+
+   HowTos/cloud_wan_faq
+   HowTos/cloud_wan_workflow
 
 .. _Security:
 
