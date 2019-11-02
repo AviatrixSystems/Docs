@@ -75,6 +75,13 @@ for traffic to pass.
 
 For configuration details, refer to `this doc. <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
+Can FQDN be deployed in a central VPC?
+=========================================
+
+Yes. Check out `How to deploy FQDN in a central VPC design pattern <https://docs.aviatrix.com/HowTos/firewall_network_design_patterns.html#aviatrix-fqdn-in-firenet-for-egress-control>`_.
+
+One use case for this deployment is if you need to whitelist a limited number of public IP addresses to your partner websites. 
+
 How do I Enable 2 AZ HA for FQDN gateways?
 ============================================
 
