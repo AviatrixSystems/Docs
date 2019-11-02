@@ -75,13 +75,6 @@ for traffic to pass.
 
 For configuration details, refer to `this doc. <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
-Can FQDN be deployed in a central VPC?
-=========================================
-
-Yes. Check out `How to deploy FQDN in a central VPC design pattern <https://docs.aviatrix.com/HowTos/firewall_network_design_patterns.html#aviatrix-fqdn-in-firenet-for-egress-control>`_.
-
-One use case for this deployment is if you need to whitelist a limited number of public IP addresses to your partner websites. 
-
 How do I Enable 2 AZ HA for FQDN gateways?
 ============================================
 
@@ -128,7 +121,7 @@ Vendor support                                  Yes                             
 
 
 How do I Troubleshoot FQDN Problems?
-===================================
+======================================
 
 If you have problems with FQDN on a specific gateway, follow the instructions below to troubleshoot:
 
@@ -168,7 +161,11 @@ When enabling egress filtering on a VPC, each subnet's route table is reviewed. 
 Can FQDN gateway be deployed in central place?
 -------------------------------------------------
 
-Yes. Available in Release 5.0 and later, Aviatrix FQDN gateway can be deployed centrally in the TGW environment. The use case is if you need 
+Yes. Available in Release 5.0 and later, Aviatrix FQDN gateway can be deployed centrally in the TGW environment as shown in the diagram below. 
+
+|fqdn_in_firenet|
+
+One use case is if you need 
 to limit the public IP addresses to a third party public service. Follow the `Firewall Network  workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_ to deploy. 
 
 .. |egress_overview| image::  FQDN_Whitelists_Ref_Design_media/egress_overview.png
@@ -196,6 +193,9 @@ to limit the public IP addresses to a third party public service. Follow the `Fi
 
 .. |export| image::  FQDN_Whitelists_Ref_Design_media/export.png
    :scale: 50%
+
+.. |fqdn_in_firenet| image:: firewall_network_workflow_media/fqdn_in_firenet.png
+   :scale: 30%
 
 .. add in the disqus tag
 
