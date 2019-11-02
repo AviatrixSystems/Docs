@@ -25,7 +25,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 
 Consult the VPN client `user guide <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/Aviatrix+VPN+Client+User+Guide.pdf>`__ for how to use it. 
 
-Latest version: 2.3.10 - (Oct 18th 2019) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Latest version: 2.4.10 - (Nov 2nd 2019) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
 
 Please ask your Aviatrix Administrator to upgrade the Aviatrix Controller to version 4.7.501 + to prevent seeing certificate errors -`Ref. <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_ 
 
