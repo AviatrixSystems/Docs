@@ -153,7 +153,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Cloud WAN
+   :caption: Cloud WAN (Preview)
 
    HowTos/cloud_wan_faq
    HowTos/cloud_wan_workflow
