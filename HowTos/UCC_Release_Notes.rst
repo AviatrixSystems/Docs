@@ -8,9 +8,10 @@ R5.2 (Coming soon)
 Security
 ------------------------------
 
- - **Firewall Network for Encrypted Transit**
+ - **Firewall Network for Encrypted Transit VPC and Azure Transit** 
  - **Amazon Guard Duty Enforcement with Ingress Routing**
  - **Independent Verdict for Each Egress Control Rule**
+ - **Egress FQDN Filtering for VPC Public Subnets**
 
 Networking
 -------------
@@ -19,15 +20,24 @@ Networking
  - **BGP AS Prepend insertion for Transit Gateway Peering**
  - **Network mapped SNAT/DNAT for Site2Cloud**
 
-Operation
+Operations
 ------------
 
  - **Role Based Access Control** on functional level. 
  - **FQDN Dashboard**
- - **Flightpath** to for ActiveMesh gateways. 
+ - **Flightpath** to include ActiveMesh gateways. 
  - **Selective Gateways for Logging**
  - **Show Deployment per Access Account**
+ - **TGW Route Audit Per Spoke VPC**
 
+R5.1.969 (11/3/2019)
+======================
+
+ - **Enhancement** Import VPN users now include user profile field. 
+ - **Bug fix** Azure native peering is broken. 
+ - **Bug fix** FireNet gateway does not load balance UDP traffic. 
+ - **Bug fix** Cannot detach Spoke gateway when customized CIDRs feature is configured on the Spoke gateway. 
+ - **Bug fix** Fail to import user via CSV file when Geo VPN and SAML are enabled. 
 
 R5.1.962 (10/29/2019)
 =========================
