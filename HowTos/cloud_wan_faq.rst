@@ -39,7 +39,7 @@ What are the benefits of Cloud WAN?
 Can I use Cloud WAN just to manage the Cisco routers?
 ------------------------------------------------------
 
-Yes. You can use Cloud WAN for making changes to the routers from a central place, even if you are ready to connect 
+Yes. You can use Cloud WAN for making changes to the routers from a central place, even if you are not ready to connect 
 the on-prem routers to the cloud. 
 
 What are the use cases for Cloud WAN?
