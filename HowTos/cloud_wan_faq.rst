@@ -20,13 +20,28 @@ Cloud WAN can be used to fulfill the following tasks.
 What are the Cloud WAN deployment architectures?
 --------------------------------------------------
 
+There are three ways to deploy Cloud WAN. 
+
+Cloud WAN Deployment 1
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Cloud WAN can be deployed to connect with Aviatrix Transit Network as shown below
 
 |cloud_wan_1|
 
+Cloud WAN Deployment 2
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Alternatively you can deploy Cloud WAN as an attachment to TGW where the Aviatrix Transit Gateway functions as edge to the TGW. 
 
 |cloud_wan_2|
+
+Cloud WAN Deployment 3
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this deployment VPN connections are built directly with TGW/VPN.
+
+|cloud_wan_3|
 
 What are the benefits of Cloud WAN?
 -----------------------------------------
@@ -55,7 +70,7 @@ No. Currently Cloud WAN only manages Cisco IOS routers.
 How many routers can Cloud WAN manage?
 ---------------------------------------
 
-If the on-prem router terminates with Aviatrix Transit Gateway, there is limitation on how many routers can be connected. 
+If the on-prem router terminates with Aviatrix Transit Gateway, there is no limitation on how many routers can be connected. 
 
 If the on-prem router terminates with AWS TGW, the maximum number of connections is 10. In addition the VPN has a 100 route limits.  
 
@@ -79,6 +94,9 @@ When BGP is enabled on the branch router, Cloud WAN can route traffic between br
    :scale: 30%
 
 .. |cloud_wan_2| image:: cloud_wan_faq_media/cloud_wan_2.png
+   :scale: 30%
+
+.. |cloud_wan_3| image:: cloud_wan_faq_media/cloud_wan_3.png
    :scale: 30%
 
 .. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png
