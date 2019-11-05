@@ -106,7 +106,7 @@ Configuration Workflow when SAML is configured
 
     If:
 
-      Path-is: /flask/saml/sso/<provider name>
+      Path-is: /flask/*
 
     Then:
 
