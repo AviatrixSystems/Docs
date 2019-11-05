@@ -47,8 +47,16 @@ What are the benefits of Cloud WAN?
 -----------------------------------------
 
  - **No Friction** Leverage what you have already invested in the on-prem edge router for connecting to the cloud. 
- - **Automation** Avoid human errors when building VPN connections to the cloud. 
+ - **Shortest Latency** Leverage AWS Global Accelerator to connect your on-prem routers to the nearest AWS edge and route through the AWS backbone with the optimal path. 
+ - **Automation** Avoid human errors and the complexity of VPN configuration when building VPN connections to the cloud. 
  - **Centrally Managed** Use the single pane of glass to both provision and monitor router health and stats. 
+
+How does Cloud WAN work?
+--------------------------
+
+Cloud WAN leverages AWS Global Accelerator and the AWS backbone for the shortest latency path to the cloud. 
+
+|global_accelerator|
 
 
 Can I use Cloud WAN just to manage the Cisco routers?
@@ -97,6 +105,9 @@ When BGP is enabled on the branch router, Cloud WAN can route traffic between br
    :scale: 30%
 
 .. |cloud_wan_3| image:: cloud_wan_faq_media/cloud_wan_3.png
+   :scale: 30%
+
+.. |global_accelerator| image:: cloud_wan_faq_media/global_accelerator.png
    :scale: 30%
 
 .. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png
