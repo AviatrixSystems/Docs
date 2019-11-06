@@ -30,6 +30,12 @@ Operations
  - **Show Deployment per Access Account**
  - **TGW Route Audit Per Spoke VPC**
 
+R5.1.973 (11/6/2019)
+======================
+
+ - **Bug fix** ActiveMesh does not report tunnel counts to AWS when Metered AMI is deployed. 
+ - **Bug fix** Aviatrix Transit Gateway peering does not report tunnel counts to AWS when Metered AMI is deployed. 
+
 R5.1.969 (11/3/2019)
 ======================
 
