@@ -146,7 +146,7 @@ The "admin" account login can be disabled to instead use account user.
 
 To disable admin login to the Controller, go to Settings -> Controller -> Login Customization. Click Disable.
 
-Please note that you need a local user with admin privileges to be created first, before you can delete the "admin" account.
+Please note that you need a local user with admin privileges to be created first, before you can disable the "admin" account.
 
 7. Encrypt Controller EBS Volume
 ##################################
