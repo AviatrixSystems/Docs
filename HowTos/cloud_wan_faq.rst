@@ -97,6 +97,12 @@ Can Cloud WAN support branch to branch communications?
 
 When BGP is enabled on the branch router, Cloud WAN can route traffic between branches. 
 
+How to configure Cloud WAN?
+-----------------------------
+
+Follow the `Cloud WAN workflow to get started. <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html>`_. 
+ 
+
 
 .. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png
    :scale: 30%
