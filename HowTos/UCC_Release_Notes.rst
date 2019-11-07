@@ -76,6 +76,7 @@ Security
 ------------
 
  - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
+ - **Stateful Firewall Port Configuration Enhancement** allows you to add multiple port numbers and multiple port ranges separated by comma in the same rule. 
  - **FQDN for non TCP 443 SSL protocol** allows you to execute FQDN filtering function for HTTPS traffic running on non TCP port 443. The use case is for HTTPS based applications that need to access Internet sites on non TCP port 443. To configure, select HTTPS as the protocol and input a specific TCP port. With is feature, you can configure wild card. 
 
 Operations
