@@ -10,12 +10,12 @@ Aviatrix Cloud WAN FAQ
 What is the Aviatrix Cloud WAN?
 ---------------------------------------
 
-Aviatrix Cloud WAN is a feature where the Aviatrix Controller manages and help connects on-prem Cisco IOS Routers to the cloud directly. 
+Aviatrix Cloud WAN is a feature where Aviatrix Controller manages and help connect on-prem Cisco IOS Routers to the cloud directly. 
 
 Cloud WAN can be used to fulfill the following tasks. 
 
- 1. Manage multiple Cisco IOS Routers from the Aviatrix Controller. This includes uploading and viewing the IOS configuration, making configuration changes to it and monitoring health and stats of the routers. 
- #. Auto connect Cisco IOS routers to the Aviatrix Transit Gateway or AWS TGW with IPSEC VPN over the Internet, thus allowing them to be part of the Transit Network with connectivities with the Spoke VPCs. 
+ 1. Manage multiple Cisco IOS Routers from the Aviatrix Controller. This includes uploading and viewing the IOS configuration, making configuration changes and monitoring the health and stats of these routers. 
+ #. Auto connect Cisco IOS routers to the Aviatrix Transit Gateway or AWS TGW with IPSEC VPN over the Internet, thus allowing them to be part of the Transit Network where they gain connectivity to Spoke VPCs. 
 
 What are the Cloud WAN deployment architectures?
 --------------------------------------------------
@@ -39,7 +39,7 @@ Alternatively you can deploy Cloud WAN as an attachment to TGW where the Aviatri
 Cloud WAN Deployment 3
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this deployment VPN connections are built directly with TGW/VPN.
+In this deployment IPsec tunnels are built directly to TGW VPN.
 
 |cloud_wan_3|
 
