@@ -44,6 +44,11 @@ functions.
 
 In the next release (5.2), there will be new APIs to append new rules and delete a specific rule. 
 
+Is there limitation on the number of tags?
+--------------------------------------------
+
+There is no limitation on the number of tags. 
+
 How to configure stateful firewall?
 ---------------------------------------
 
