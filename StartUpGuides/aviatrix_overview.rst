@@ -47,11 +47,11 @@ Marketplace Launch                              Yes         Yes             No (
 Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
-Next Gen Transit Network Edge                   Yes         Yes             No	                      	     Yes                      Yes
+Next Gen Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
 Firewall Network                                Yes         No              No                               Yes                      No                     
-Transit Peering                                 Yes         Yes             No                               Yes                      Yes
+Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
-Native Peering                                  Yes         No              N/A                              Yes                      No
+Native Peering                                  Yes         Yes             N/A                              Yes                      No
 
 FQDN Egress Control                             Yes         Yes             Yes                              Yes                      Yes
 Stateful Firewall                               Yes         Yes             Yes                              Yes                      Yes
@@ -64,6 +64,7 @@ Insane Mode Encryption                          Yes         Yes              No 
 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
 FlightPath Expert Diagnostics                   Yes         No              No                               Yes                      No
+IPv6                                            Yes         No              No                               No                       No
 ==========================================      ==========  =============   ======================           =================       ==========
 
 
