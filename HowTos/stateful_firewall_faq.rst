@@ -27,7 +27,8 @@ The stateful firewall allows each individual rule to be defined as Allow, Deny a
 How many rules can be configured on a gateway?
 ------------------------------------------------
 
-Currently you can configure up to 500 rules on each gateway. 
+Currently you can configure up to 500 rules on each gateway. This limitation is not due to the lack of capacity in the gateways, but is 
+because of the implementation of how rules are sent to the gateways. 
 
 In the next release (5.2), the limitation will be removed. 
 
