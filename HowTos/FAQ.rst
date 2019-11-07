@@ -21,8 +21,8 @@ What can Aviatrix platform do for me?
 --------------------------------------
 
 
-Aviatrix Cloud Gateway provides an end to end secure network solution
-for AWS, Azure and Google GCloud. The solution includes `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_, an enterprise
+Aviatrix cloud-native networking solution provides an end to end secure network solution
+for AWS, Azure, Google GCloud and Oracle Cloud (OCI). The solution includes `AWS Global Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_, an enterprise
 `OpenVPN® <http://docs.aviatrix.com/HowTos/openvpn_faq.html>`_ access to VPC/VNet, `encrypted routing <http://docs.aviatrix.com/HowTos/peering.html>`_ for VPC/VNet to VPC/VNet traffic, `Stateful Firewall and Egress FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and
 `monitoring and logging <http://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ of link status and latency. The solution enables
 you to build a secure private network spanning one or more public clouds
@@ -47,8 +47,6 @@ gateways. The gateway is launched from the controller.
 
 The Controller provides a central console for all provisioning,
 monitoring and upgrades of the services.
-
-The Controller can be launched and managed by Aviatrix as a `Hosted Service <https://www.aviatrix.com/trial/>`_.
 
 The Controller is also available in AWS and Azure marketplace. It is also
 available as a GCloud community image. For marketplace launch, search

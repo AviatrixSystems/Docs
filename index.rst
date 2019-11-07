@@ -165,6 +165,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Security
 
 
+   HowTos/stateful_firewall_faq
    HowTos/tag_firewall
    HowTos/fqdn_faq
    HowTos/FQDN_Whitelists_Ref_Design
