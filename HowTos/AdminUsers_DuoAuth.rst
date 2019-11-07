@@ -82,6 +82,8 @@ Disable admin login
 
 If you need to disable admin login for security reasons, go to Settings -> Controller -> Login Customization. Click Disable to disable admin login. 
 
+Please note that you need a local user with admin privileges to be created first, before you can disable the "admin" account.
+
 
 Configuration Workflow for Duo Authentication
 ================================================
