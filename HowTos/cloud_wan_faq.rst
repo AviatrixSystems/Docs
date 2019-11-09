@@ -58,6 +58,11 @@ Cloud WAN leverages AWS Global Accelerator and the AWS backbone for the shortest
 
 |global_accelerator|
 
+For example, if the application is in us-west-2 and you have a branch office in Singapore country. If you built an IPSEC tunnel to the 
+gateway in us-west-2 without deploying Cloud WAN, the traffic initiated from Singapore typically traverse through many ISP carriers and eventually
+to AWS us-west-2. On the other hand, with Cloud WAN, traffic from Singapore gets to the first ISP, hops onto the AWS edge in the area and 
+moves through the uncongested AWS backbone to us-west-2. Both latency and jitter should be minimal. 
+
 
 Can I use Cloud WAN just to manage the Cisco routers?
 ------------------------------------------------------
@@ -80,7 +85,6 @@ How many routers can Cloud WAN manage?
 
 If the on-prem router terminates with Aviatrix Transit Gateway, there is no limitation on how many routers can be connected. 
 
-If the on-prem router terminates with AWS TGW, the maximum number of connections is 10. In addition the VPN has a 100 route limits.  
 
 What are the requirements to deploy Cloud WAN?
 -------------------------------------------------
