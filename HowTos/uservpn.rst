@@ -152,7 +152,7 @@ You can also download the VPN user certificate to your desktop, as shown
 below. Load this certificate configuration file to your OpenVPN® client on your desktop. You should
 be able to connect then.
 
-|download_vpnfile| 
+|New_User| 
 
 Conclusion
 ----------
@@ -194,8 +194,8 @@ Detailed audit logs are maintained and available in various logging platforms.
 .. |imageAddNewVPNUser| image:: uservpn_media/add_new_vpn_user.png
    :scale: 50%
 
-.. |download_vpnfile| image:: uservpn_media/download_vpnfile.png
-   :scale: 30%
+.. |New_User| image:: uservpn_media/New_User.png
+   :scale: 20%
 
 .. |imageImportVPNUsers| image:: uservpn_media/import_vpn_users.png
    :scale: 100%
