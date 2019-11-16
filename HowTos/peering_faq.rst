@@ -45,6 +45,22 @@ from the Controller console. Go to Peering -> AWS Peering.
 
 Cross accounts are supported. 
 
+How do I configure encrypted peering with ActiveMesh and Insane Mode both enabled?
+------------------------------------------------------------------------------------
+
+You can configure an encrypted peering with ActiveMesh and Insane Mode by going through the `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, as described in the following steps. 
+
+ 1. Go to Transit Network -> Setup -> Step 4, Launch a Spoke Gateway to launch the primary Spoke Gateway. Select ActiveMesh. Select Insane Encryption.
+ #. Go to Transit Network -> Setup -> Step 5, Enable HA to launch the HA gateway for the Spoke Gateway created in the above step.
+ #. Repeat the above two steps for the peering VPC. 
+ #. Go to Peering -> Encrypted Peering, +Add New. Select the two primary gateways created in the above steps. Select HA. Click OK. 
+
+Note that both primary gateway and backup gateway forward traffic. The VPC route tables are divided so that half of the route tables 
+point the peered VPC CIDR to the primary gateway and the other half of the route tables point the peered VPC CIDR to the HA gateway. This
+division is best effort. 
+
+Each gateway runs ECMP to the peered gateways.  
+
 
 
 .. |image1| image:: FAQ_media/image1.png
