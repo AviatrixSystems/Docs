@@ -38,7 +38,7 @@ Do not launch the firewall instance from AWS Console as you launch it in the fol
 
 This step creates a Security Domain with a Firewall Domain option. 
 
-Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one. Select "Aviatrix Firewall Domain". 
+Go to TGW Orchestrator -> Plan -> Create an AWS Transit Gateway and then a Security Domain by selecting "Aviatrix Firewall Domain". 
 
 For more information, refer to `Create a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
 
@@ -129,8 +129,11 @@ This step programs the relative route tables, described as below.
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway. 
 
-This step launches a VM-Series and associates it with one of the FireNet gateways. Note the VM-Series and the 
-associated FireNet gateway must be in the same AZ.
+This step launches a VM-Series and associates it with one of the FireNet gateways. 
+
+.. important::
+
+The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ##########################
@@ -166,7 +169,7 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 
 .. important::
 
-  For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from thePanorama console to sync the firewall instance and Panorama.
+  For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
 
 .. Tip::
 
@@ -201,6 +204,9 @@ If the firewall instance is by a vendor other than Palo Alto Network, for exampl
 instances from the AWS Console and associate them to the Aviatrix FireNet gateway. The `Management Interface Subnet` may be the same as the `Egress Interface Subnet`
 
 7c. Launch & Associate Aviatrix FQDN gateway
+
+If you perform 7a or 7b, please skip this step.
+
 ------------------------------------------------
 
 This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
