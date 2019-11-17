@@ -115,7 +115,6 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/activemesh_faq
    HowTos/activemesh_design_notes
-   HowTos/nextgentransit_for_azure
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
    HowTos/transitvpc_designs
@@ -362,6 +361,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aviatrix_insanemode
    HowTos/transit_snat_dnat
    HowTos/ipv6_peering
+   HowTos/nextgentransit_for_azure
 
 .. _Good To Know:
 
