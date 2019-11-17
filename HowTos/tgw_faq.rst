@@ -201,9 +201,14 @@ The Transit Gateway Orchestrator is deployed in two stages.
 
 In addition, you can 
 
- - List: List what is programmed in the Transit Gateway route table for a given Security Domain. 
- - View: View what VPC members are attached to Security Domains and Connection Policies. 
- - Test: instance to instance end-to-end Troubleshoot. 
+ - **List**: 
+      - **Show Details** on what is programmed in the VPC route tables and Transit Gateway route table for a given VPC. 
+      - **Audit Routes** to discover incorrectness in VPC route tables and Transit Gateway route tables for a given VPC. 
+      - **Update VPC CIDR** to update propagated routes to TGW when a new VPC CIDR is added to VPC. 
+      - **Update DXGW Allowed Prefix** if you like to change the summarized prefix after the DXGW has been attached to TGW.
+ - **View**: View what VPC members are attached to Security Domains and Connection Policies. 
+ - **Test**: instance to instance end-to-end Troubleshoot. 
+ - **Audit**: Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
 
 What can be displayed at the View page?
 -----------------------------------------
