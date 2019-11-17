@@ -7,7 +7,7 @@
 Transit FireNet  Workflow
 =========================================================
 
-For questions about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
+For questions about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_ 
 
 1. Enable Transit FireNet Function
 ------------------------------------------------
