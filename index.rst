@@ -114,12 +114,15 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Encrypted Transit Network
 
    HowTos/activemesh_faq
+   HowTos/activemesh_design_notes
    HowTos/nextgentransit_for_azure
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
    HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
-   HowTos/activemesh_design_notes
+   HowTos/transit_firenet_faq
+   HowTos/transit_firenet_workflow
+
 
 .. _Firewall Network:
 
