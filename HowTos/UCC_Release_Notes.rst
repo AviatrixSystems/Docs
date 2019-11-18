@@ -31,7 +31,7 @@ Operations
  - **TGW Route Auditing** allows you to immediately discover the missing routes in Spoke VPC route tables and its associated TGW route tables. To use, go to TGW Orchestrator -> List. Highlight one attachment, click the three dots and click Audit Routes.
  - **TGW Audit** expands its capability to audit all route entries of attached VPC route tables in addition to route entries in TGW route tables. To use, go to TGW Orchestrator -> Audit. Select one TGW and click Run On-Demand Audit. 
 
-R5.1.983 (11/17/2019)
+R5.1.989 (11/17/2019)
 =======================
 
  - **Enhancement** Controller does not allow Transit gateway peering when multiple Transit Gateways are in the same VPC. 
