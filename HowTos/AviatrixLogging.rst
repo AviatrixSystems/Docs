@@ -306,11 +306,15 @@ AviatrixFireNet
 
 Log messages with this prefix come from the Controller whenever a firewall instance state changes. 
 
+Example log:
+
 ::
 
   2019-11-19T09:38:40.070080-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to down.
-2019-11-19T09:39:03.066869-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to unaccessible.
-2019-11-19T09:40:12.878075-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to up.
+
+  2019-11-19T09:39:03.066869-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to unaccessible.
+
+  2019-11-19T09:40:12.878075-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to up.
 
 
 3. Logging Configuration at Aviatrix Controller
