@@ -301,6 +301,16 @@ Example log:
  
   2018-09-23T00:00:50.332066-07:00 ip-172-31-89-197 cloudxd: AviatrixGuardDuty: Account [aws], Region [us-east-1], Instance ID [i-0a675b03fafedd3f2], at 2018-09-23T06:35:40Z, Unprotected port on EC2 instance i-0a675b03fafedd3f2 is being probed. Please tighten instance security group to avoid Recon:EC2/PortProbeUnprotectedPort threat.
  
+AviatrixFireNet
+-----------------
+
+Log messages with this prefix come from the Controller whenever a firewall instance state changes. 
+
+::
+
+  2019-11-19T09:38:40.070080-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to down.
+2019-11-19T09:39:03.066869-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to unaccessible.
+2019-11-19T09:40:12.878075-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to up.
 
 
 3. Logging Configuration at Aviatrix Controller
