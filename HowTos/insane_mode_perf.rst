@@ -7,52 +7,37 @@
 Insane Mode Encryption Performance 
 ===============================================
 
-This document discusses Aviatrix Insane Mode (or InsaneMode) performance test benchmarks, parameters that affect performance and how you can tune your environment for best performance. 
+This document publishes Aviatrix Insane Mode (or InsaneMode) performance test benchmarks. 
 
 For more information on Aviatrix Insane Mode, check out `this link. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
-Insane Mode Performance Test Setup
+Test Result Summary
+--------------------------
+
+Aviatrix High Performance Encryption (HPE), also known as Insane Mode, achieves line rate performance with encryption in AWS when Jumbo frames are
+deployed. Azure has smaller Jumbo Frame size and has less performance results. . 
+
+Insane Mode Performance Test Topologies
 ---------------------------------------------------
 
-The iperf3 test is performed between a Spoke VPC instance and on-prem VM. The test
-setup is shown in the diagram below. The encryption is end to end: between on-prem CloudN and Transit GW and between Spoke gateway and Transit GW. 
 
+|test_topologies|
 
-|insane_perf_setup|
+The test is conducted by iperf3 tool with 128 streams. 
 
-
-Key variables that affect performance are: 
-
- - MTU size of all devices in the data path. 
- - Latency between on-prem and the Transit VPC. 
- - Client TCP window size. 
- - The number of TCP streams. 
 
 AWS Performance Test Results
 -------------------------------
 
-The performance test is conducted between a c5n.4xlarge instance in the Spoke VPC and on-prem host machine over a 10Gbps Direct Connect between the Transit VPC and an on-prem datacenter (Equinix co-lo). The physical latency is 5ms. Additional latency is injected into the data path to simulate the latency impact to the end to end throughput. 
-
-
-1. MTU = 9000 Bytes, AWS C5n.4xlarge
+1. MTU = 9000 Bytes
 ========================================
 
-|c5n_throughput_9000B|
+|jumbo|
 
-2. MTU = 1500 Bytes, AWS C5n.4xlarge, on-prem to spoke instance through Transit instance
+2. MTU = 1500 Bytes 
 ===========================================================================================
 
-The test result below is for the end to end encryption performance. Note the Transit gateway does 
-encryption and decryption twice, hence the performance is around 1Gbps. 
-
-|c5n_throughput_1500B|
-
-3. MTU = 1500 Bytes, AWS C5n.4xlarge, instance to instance directly 
-======================================================================
-
-The test result below is for the instance to instance over AWS Peering. 
-
-|throughput_1500B_peering|
+|1500|
 
 Azure Performance Test Results
 --------------------------------
@@ -98,6 +83,15 @@ For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~spark
    :scale: 30%
 
 .. |throughput_1500B_peering| image:: insane_mode_perf_media/throughput_1500B_peering.png
+   :scale: 30%
+
+.. |jumbo| image:: insane_mode_perf_media/jumbo.png
+   :scale: 30%
+
+.. |1500| image:: insane_mode_perf_media/1500.png
+   :scale: 30%
+
+.. |test_topologies| image:: insane_mode_perf_media/test_topologies.png
    :scale: 30%
 
 .. disqus::
