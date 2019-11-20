@@ -34,29 +34,29 @@ Create Site2Cloud Connection
 #. Click on `+ Add New` near the top of the `Site2Cloud` tab.
 #. Under `Add a New Connection`, enter the following:
    
-   +-------------------------------+---------------------------------------------+
-   | Field                         | Description                                 |
-   +===============================+=============================================+
-   | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel    |
-   |                               | will terminate in the cloud.                |
-   +-------------------------------+---------------------------------------------+
-   | Connection Type               | `Unmapped` unless there is an overlapping   |
-   |                               | CIDR block.                                 |
-   +-------------------------------+---------------------------------------------+
-   | Connection Name               | Name this connection.  This connection      |
-   |                               | represents the connectivity to the edge     |
-   |                               | device.                                     |
-   +-------------------------------+---------------------------------------------+
-   | Remote Gateway Type           | `Generic`, `AWS VGW`, `Azure VPN`,          |
-   |                               | `Aviatrix`, or `SonicWall`.                 |
-   |                               | See below for additional details.           |
-   +-------------------------------+---------------------------------------------+
-   | Tunnel Type                   | `UDP` or `TCP`                              |
-   |                               |                                             |
-   |                               | .. note::                                   |
-   |                               |    `TCP` tunnel type requires an Aviatrix   |
-   |                               |    gateway on both sides.                   |
-   |                               |                                             |
+   +-------------------------------+----------------------------------------------+
+   | Field                         | Description                                  |
+   +===============================+==============================================+
+   | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel     |
+   |                               | will terminate in the cloud.                 |
+   +-------------------------------+----------------------------------------------+
+   | Connection Type               | `Unmapped` unless there is an overlapping    |
+   |                               | CIDR block.                                  |
+   +-------------------------------+----------------------------------------------+
+   | Connection Name               | Name this connection.  This connection       |
+   |                               | represents the connectivity to the edge      |
+   |                               | device.                                      |
+   +-------------------------------+----------------------------------------------+
+   | Remote Gateway Type           | `Generic`, `AWS VGW`, `Azure VPN`,           |
+   |                               | `Aviatrix`, or `SonicWall`.                  |
+   |                               | See below for additional details.            |
+   +-------------------------------+----------------------------------------------+
+   | Tunnel Type                   | `UDP` or `TCP`                               |
+   |                               |                                              |
+   |                               | .. note::                                    |
+   |                               |    `TCP` tunnel type requires an Aviatrix    |
+   |                               |    gateway on both sides.                    |
+   |                               |                                              |
    +-------------------------------+----------------------------------------------+
    | Algorithms                    | Defaults will be used if unchecked. See      |
    |                               | below for more details.                      |
