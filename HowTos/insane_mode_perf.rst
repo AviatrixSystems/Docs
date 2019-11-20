@@ -14,7 +14,7 @@ For more information on Aviatrix Insane Mode, check out `this link. <https://doc
 Test Result Summary
 --------------------------
 
-Aviatrix High Performance Encryption (HPE), also known as Insane Mode, achieves line rate performance with encryption in AWS when Jumbo frames are
+Aviatrix High Performance Encryption (HPE), also known as ActiveMesh Insane Mode, achieves line rate performance with encryption in AWS when Jumbo frames are
 deployed. Azure has smaller Jumbo Frame size and has less performance results. . 
 
 Insane Mode Performance Test Topologies
