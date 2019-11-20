@@ -4,10 +4,10 @@
 
 
 ===============================================
-Insane Mode Encryption Performance 
+ActiveMesh Insane Mode Encryption Performance 
 ===============================================
 
-This document publishes Aviatrix Insane Mode (or InsaneMode) performance test benchmarks. 
+This document publishes Aviatrix ActiveMesh Insane Mode encryption performance test benchmarks. 
 
 For more information on Aviatrix Insane Mode, check out `this link. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
@@ -15,7 +15,7 @@ Test Result Summary
 --------------------------
 
 Aviatrix High Performance Encryption (HPE), also known as ActiveMesh Insane Mode, achieves line rate performance with encryption in AWS when Jumbo frames are
-deployed. Azure has smaller Jumbo Frame size and has less performance results. . 
+deployed.
 
 Insane Mode Performance Test Topologies
 ---------------------------------------------------
@@ -23,7 +23,7 @@ Insane Mode Performance Test Topologies
 
 |test_topologies|
 
-The test is conducted by iperf3 tool with 128 streams. 
+The test is conducted by iperf3 tool with TCP 128 streams. 
 
 
 AWS Performance Test Results
