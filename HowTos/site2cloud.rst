@@ -34,56 +34,69 @@ Create Site2Cloud Connection
 #. Click on `+ Add New` near the top of the `Site2Cloud` tab.
 #. Under `Add a New Connection`, enter the following:
    
-   +-------------------------------+------------------------------------------+
-   | Field                         | Description                              |
-   +===============================+==========================================+
-   | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel |
-   |                               | will terminate in the cloud.             |
-   +-------------------------------+------------------------------------------+
-   | Connection Type               | `Unmapped` unless there is an            |
-   |                               | overlapping CIDR block.                  |
-   +-------------------------------+------------------------------------------+
-   | Connection Name               | Name this connection.  This connection   |
-   |                               | represents the connectivity to the       |
-   |                               | edge device.                             |
-   +-------------------------------+------------------------------------------+
-   | Remote Gateway Type           | `Generic`, `AWS VGW`, `Azure VPN`,       |
-   |                               | `Aviatrix`, or `SonicWall`.              |
-   |                               | See below for additional details.        |
-   +-------------------------------+------------------------------------------+
-   | Tunnel Type                   | `UDP` or `TCP`                           |
-   |                               |                                          |
-   |                               | .. note::                                |
-   |                               |    `TCP` tunnel type requires an Aviatrix|
-   |                               |    gateway on both sides.                |
-   |                               |                                          |
-   +-------------------------------+------------------------------------------+
-   | Algorithms                    | Defaults will be used if unchecked.      |
-   |                               | See below for more details.              |
-   +-------------------------------+------------------------------------------+
-   | IKEv2                         | Select the option to connect to the      |
-   |                               | remote site using IKEv2 protocol.        |
-   +-------------------------------+------------------------------------------+
-   | Encryption over ExpressRoute/ | An additional field will be displayed    |
-   | DirectConnect                 | if checked.                              |
-   +-------------------------------+------------------------------------------+
-   | Route Tables to Modify        | Only displayed if Encrypting over        |
-   |                               | DirectConnect/ExpressRoute is selected.  |
-   |                               | Select the specific routes tables to     |
-   |                               | be programmed with remote CIDR routes.   |
-   +-------------------------------+------------------------------------------+
-   | Enable HA                     | Additional fields are displayed when     |
-   |                               | checked                                  |
-   +-------------------------------+------------------------------------------+
-   | Primary Cloud Gateway         | Select the Gateway where the tunnel will |
-   |                               | terminate in this VPC.                   |
-   +-------------------------------+------------------------------------------+
-   | Remote Gateway IP Address     | IP address of the device.                |
-   +-------------------------------+------------------------------------------+
-   | Pre-shared Key                | Optional.  Enter the pre-shared key for  |
-   |                               | this connection.  If nothing is entered  |
-   |                               | one will be generated for you.           |
-   +-------------------------------+------------------------------------------+
+   +-------------------------------+----------------------------------------------+
+   | Field                         | Description                                  |
+   +===============================+==============================================+
+   | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel     |
+   |                               | will terminate in the cloud.                 |
+   +-------------------------------+----------------------------------------------+
+   | Connection Type               | `Unmapped` unless there is an overlapping    |
+   |                               | CIDR block.                                  |
+   +-------------------------------+----------------------------------------------+
+   | Connection Name               | Name this connection.  This connection       |
+   |                               | represents the connectivity to the edge      |
+   |                               | device.                                      |
+   +-------------------------------+----------------------------------------------+
+   | Remote Gateway Type           | `Generic`, `AWS VGW`, `Azure VPN`,           |
+   |                               | `Aviatrix`, or `SonicWall`.                  |
+   |                               | See below for additional details.            |
+   +-------------------------------+----------------------------------------------+
+   | Tunnel Type                   | `UDP` or `TCP`                               |
+   |                               |                                              |
+   |                               | .. note::                                    |
+   |                               |    `TCP` tunnel type requires an Aviatrix    |
+   |                               |    gateway on both sides.                    |
+   |                               |                                              |
+   +-------------------------------+----------------------------------------------+
+   | Algorithms                    | Defaults will be used if unchecked. See      |
+   |                               | below for more details.                      |
+   +-------------------------------+----------------------------------------------+
+   | IKEv2                         | Select the option to connect to the remote   |
+   |                               | site using IKEv2 protocol.                   |
+   +-------------------------------+----------------------------------------------+
+   | Encryption over ExpressRoute/ | An additional field will be displayed if     |
+   | DirectConnect                 | checked.                                     |
+   +-------------------------------+----------------------------------------------+
+   | Route Tables to Modify        | Only displayed if Encrypting over            |
+   |                               | DirectConnect/ExpressRoute is selected.      |
+   |                               | Select the specific routes tables to be      |
+   |                               | programmed with remote CIDR routes.          |
+   +-------------------------------+----------------------------------------------+
+   | Enable HA                     | Enable High Availability. Additional fields  |
+   |                               | are displayed when checked.                  |
+   +-------------------------------+----------------------------------------------+
+   | Primary Cloud Gateway         | Select the Gateway where the tunnel will     |
+   |                               | terminate in this VPC.                       |
+   +-------------------------------+----------------------------------------------+
+   | Remote Gateway IP Address     | IP address of the device.                    |
+   +-------------------------------+----------------------------------------------+
+   | Pre-shared Key                | Optional.  Enter the pre-shared key for this |
+   |                               | connection.  If nothing is entered, one will |
+   |                               | be generated for you.                        |
+   +-------------------------------+----------------------------------------------+
+   | Backup Gateway                | Only available when 'Enable HA' is selected. |
+   |                               | Backup Gateway should be the .hagw created   |
+   |                               | at 'Gateway'->'Edit'->'Gateway for High      |
+   |                               | Availability Peering'                        |
+   +-------------------------------+----------------------------------------------+
+   | Remote Gateway IP Address     | Only available when 'Enable HA' is selected. |
+   | (Backup)                      | IP address of the backup gateway (.hagw)     |
+   +-------------------------------+----------------------------------------------+
+   | Pre-shared Key (Backup)       | Only available when 'Enable HA' is selected. |
+   |                               | Optional. Enter the pre-shared key for this  |
+   |                               | backup connection. If nothing is entered,    |
+   |                               | one will be generated for you.               |
+   +-------------------------------+----------------------------------------------+
 
 Connection Type: Unmapped
 +++++++++++++++++++++++++
