@@ -246,8 +246,8 @@ AviatrixCMD
 --------------------------
 
 Logs with this prefix come from the controller whenever a CLI command is issued.  It contains
-information on the CLI command that was issued, the results of the execution, and reason
-a message if there is a failure.
+information on the CLI command that was issued, the results of the execution,  reason
+a message if there is a failure and who issued the command.
 
 Example log:
 
@@ -255,9 +255,10 @@ Example log:
 
 ::
 
-  Nov 10 01:05:41 ip-172-31-6-24 cloudxd:
-  AviatrixCMD: action=ADD_TIME_SERVER, argv=['--rtn_file', '/run/shm/rtn1809376682',
-  'add_time_server', 'time2.google.com'], result=Success, reason=
+  2019-11-19T20:13:44.585942+00:00 ip-172-32-0-226 cloudxd: AviatrixCMD: action=USERCONNECT_UPGRADE_TO_VERSION, argv=['--rtn_file', '/run/shm/rtn957594707', 'userconnect_upgrade_to_version', 'upgrade-status', ''], result=Success, reason=, username=admin
+
+  2019-11-19T18:01:59.796230+00:00 ip-172-32-0-226 cloudxd: AviatrixCMD: action=TRANSIT_SPOKE_LIST, argv=['--rtn_file', '/run/shm/rtn2091225061', 'transit_spoke_list', '--spoke_only'], result=Success, reason=, username=admin
+
 
 AviatrixBGPOverlapCIDR
 ------------------------
