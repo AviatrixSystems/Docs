@@ -14,6 +14,8 @@ When upgrading a controller's software, all gateways are upgraded with the new s
    
    We strongly recommend that you make a backup before you start the upgrade process. Please follow the directions `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`__.
    
+   Please also check out our `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_.
+   
 Pre-upgrade Checklist:
 -----------------------
 
