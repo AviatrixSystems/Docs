@@ -15,7 +15,8 @@ Test Result Summary
 --------------------------
 
 Aviatrix High Performance Encryption (HPE), also known as ActiveMesh Insane Mode, achieves line rate performance with encryption in AWS when 
-Jumbo frames are deployed (the default setting for AWS instances). The test benchmark is against the native AWS peering where no Aviatrix 
+Jumbo frames are deployed (the default setting for AWS instances). The test benchmark baseline is the native AWS peering  
+where no Aviatrix gateways
 are deployed in the VPCs. Adding 500 stateful firewall rules have little impact to the performance. 
 
 Insane Mode Performance Test Topologies
@@ -24,7 +25,7 @@ Insane Mode Performance Test Topologies
 
 |test_topologies|
 
-The test is conducted by iperf3 tool with TCP 128 streams. 
+The test is conducted by iperf3 tool with TCP 128 streams. The two VPCs are in the same region. 
 
 
 AWS Performance Test Results
