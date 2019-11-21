@@ -102,6 +102,16 @@ When you configure VPN to remote sites from Transit Network -> Setup -> Step 3 (
 
 On the other hand, when you configure VPN to remote sites from Site2Cloud page and select a Transit GW, the VPN tunnel is built with policy based VPN.  
 
+What happens when an ActiveMesh enabled gateway is stopped?
+--------------------------------------------------------------
+
+With ActiveMesh gateway, `Gateway Single AZ HA <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_ is automatically
+enabled. That is, when an ActiveMesh gateway is stopped, the Controller automatically starts it again. Once the gateways comes up, 
+it participates in packet forwarding again. 
+
+To stop an ActiveMesh gateway, you should disable the Gateway Single AZ HA feature. Highlight the gateway at the Gateway page, 
+click Edit. Scroll down to Gateway Single AZ HA, click Disable. 
+
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png
    :scale: 30%
