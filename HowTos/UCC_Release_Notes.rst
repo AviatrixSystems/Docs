@@ -13,7 +13,7 @@ Security
  - **Amazon Guard Duty Enforcement with Ingress Routing**
  - **Independent Verdict for Each Egress Control Rule**
  - **Egress FQDN Filtering for VPC Public Subnets**
- - **FireNet Performance Improvement** 
+ - **FireNet Performance Improvement** FireNet performance achieves 40Gbps throughput. For details, check `this link. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-maximum-performance-firenet-can-achieve>`_
 
 Networking
 -------------
