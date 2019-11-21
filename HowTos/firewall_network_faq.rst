@@ -273,7 +273,7 @@ than one firewall instance in the different AZ, thus losing the scale out capabi
 .. |firewall_network_perf| image:: firewall_network_faq_media/firewall_network_perf.png
    :scale: 30%
 
-.. |firewall_network_perf_c5xlarge| image:: firewall_network_faq_media/firewall_network_perf_c5xlarge.png
+.. |firewall_network_perf_new| image:: firewall_network_faq_media/firewall_network_perf_new.png
    :scale: 30%
 
 .. |multi_firewall| image:: firewall_network_faq_media/multi_firewall.png
