@@ -1,11 +1,13 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+
 2.5.7 - Nov 20 2019
- - New UI for all supported platforms
- - Detect the missed VPN profile file
- - LDAP improvement
- - Fix the VPN connection cannot be disconnected sometimes
+ - New UI
+ - Detect missing VPN configuration file
+ - Fixed password based authentication issues on Windows
+ - Fix the intermittent VPN disconnection issues
+
 
 2.4.10 - Nov 2 2019
  - Security fixes

@@ -11,7 +11,7 @@
 .. |bsd| image:: AVPNC_img/BSD.png
  
 .. |Client| image:: AVPNC_img/Client.png
-   :width: 600
+   :width: 500
 
 ===================
 Aviatrix VPN Client 
@@ -60,7 +60,7 @@ Debian/Ubuntu
 =============
 
 
-Ubuntu18.04.1 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian.deb>`__,
+Ubuntu18.04.1 LTS/Generic - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian.deb>`__,
 `Tar file. <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_linux.tar.gz>`__
 
 Ubuntu18.04.3 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian_latest.deb>`__,
@@ -76,7 +76,7 @@ Note: Currently we do not support Fedora/Arch-Linux
 *************
 FreeBSD |bsd|
 *************
-FreeBSD (Release 11) client can be downloaded from- `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_FreeBSD.tar.gz>`__
+FreeBSD 11 client can be downloaded from- `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_FreeBSD.tar.gz>`__
 
 tar -xvzf file.tar.gz; cd AVPNC_setup; sudo ./install.sh to install
 
