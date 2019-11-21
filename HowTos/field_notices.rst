@@ -18,7 +18,7 @@ A couple of ways to raise local privilege escalation that could result in a vuln
  
 **Recommended Solution:**
  
-We have addressed all of these issues in our latest release 2.4.10 which was officially released on Nov 2, 2019. We request all of our customers who have deployed previous releases of the Aviatrix VPN Client to immediately upgrade to 2.4.10. The Dashboard on the Aviatrix Controller will display the version of the Aviatrix VPN Client that is used by the end users. The latest Aviatrix VPN Client can be found at https://docs.aviatrix.com/Downloads/samlclient.html and the release notes at https://docs.aviatrix.com/HowTos/changelog.html.
+We have addressed all of these issues in release 2.4.10 which was officially released on Nov 2, 2019. We request all of our customers who have deployed previous releases of the Aviatrix VPN Client to immediately upgrade to the latest release(2.4.10 or later). The Dashboard on the Aviatrix Controller will display the version of the Aviatrix VPN Client that is used by the end users. The latest Aviatrix VPN Client can be found at https://docs.aviatrix.com/Downloads/samlclient.html and the release notes at https://docs.aviatrix.com/HowTos/changelog.html.
 
 
 
