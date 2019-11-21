@@ -6,7 +6,7 @@ Aviatrix VPN Client Changelog
  - New UI
  - Detect missing VPN configuration file
  - Fixed password based authentication issues on Windows
- - Fix the intermittent VPN disconnection issues
+ - Fixed the intermittent VPN disconnection issues
 
 
 2.4.10 - Nov 2 2019
