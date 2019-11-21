@@ -213,22 +213,14 @@ Follow the FireNet workflow to complete Steps 1, 2, 3, 4, 5, 6 and 8.
 If you have an instance in VPC/Domain and another instance in a different VPC/Domain, and you specify connection policy between the Domains and one Domain to connect to the Firewall Domain, then you should be able to ping the 
 two instances. 
 
-What is the scale out performance for FireNet?
-------------------------------------------------
-
-We have run iperf3 TCP performance tests on the FireNet with the default Palo Alto VM-Series instance size m4.xlarge. 
-As shown in the chart below, the FireNet throughput scales as more VM-Series are attached to the FireNet gateway.
-
-|firewall_network_perf|
-
 What is the maximum performance FireNet can achieve?
 -------------------------------------------------------
 
-Currently for East-West (VPC to VPC) and North-South (on-prem to VPC) traffic inspection, FireNet can achieve 20Gbps throughput with Jumbo frame size in AWS. 
+For East-West (VPC to VPC) and North-South (on-prem to VPC) traffic inspection, FireNet achieves 40Gbps throughput with 
+Jumbo frame size in AWS. Note the maximum TGW performance between two attached VPCs is 50Gbps.
 
-The chart below describes the test case where Palo Alto VM-Series runs C5.xlarge instance size.
 
-|firewall_network_perf_c5xlarge|
+|firewall_network_perf|
 
 Are there any design patterns for Firewall Network deployment?
 ----------------------------------------------------------------
