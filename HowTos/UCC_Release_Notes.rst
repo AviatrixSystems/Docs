@@ -13,6 +13,7 @@ Security
  - **Amazon Guard Duty Enforcement with Ingress Routing**
  - **Independent Verdict for Each Egress Control Rule**
  - **Egress FQDN Filtering for VPC Public Subnets**
+ - **FireNet Performance Improvement** 
 
 Networking
 -------------

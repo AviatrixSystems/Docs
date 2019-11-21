@@ -173,8 +173,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/fqdn_discovery
    HowTos/fqdn_viewlog
-   HowTos/nat_only_outbound_traffic
    HowTos/guardduty
+   HowTos/public_subnet_filtering_faq
 
 .. _Peering:
 
@@ -362,6 +362,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_snat_dnat
    HowTos/ipv6_peering
    HowTos/nextgentransit_for_azure
+   HowTos/nat_only_outbound_traffic
 
 .. _Good To Know:
 
