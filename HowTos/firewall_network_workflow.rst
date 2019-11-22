@@ -145,6 +145,8 @@ VPC ID                                          The Security VPC created in Step
 Gateway Name                                    The primary FireNet gateway.
 Firewall Instance Name                          The name that will be displayed on AWS Console.
 Firewall Image                                  The AWS AMI that you have subscribed in Step 2.
+Firewall Image Version                          VM-Series current supported software versions. 
+Firewall Instance Size                          VM-Series instance type.  
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.

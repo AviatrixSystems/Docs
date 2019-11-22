@@ -10,23 +10,23 @@ Security
 ------------------------------
 
  - **Transit FireNet** Firewall Network for AWS Encrypted Transit VPC and Azure Transit. Transit FireNet integrates Firewall Network function into the Aviatrix Transit Gateway function. With this new capability, you can deploy firewall instances into the encrypted transit network to allow security policy management and IDS/IPS functions. To learn more, refer to `Transit FireNet FAQ <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_.  
- - **Amazon Guard Duty Enforcement with Ingress Routing**
- - **Independent Verdict for Each Egress Control Rule**
- - **Egress FQDN Filtering for VPC Public Subnets**
+ - **Public Subnet Filtering** provides the packet filtering capability to instances deployed in AWS VPC public subnets. Leveraging the AWS Ingress Routing service, the Public Subnet Filtering gateway filters out the malicious IP addresses detected by Amazon GuardDuty. Additionally, the filtering gateway provide FQDN functions for Egress traffic from the public instances. To configure, go to Security -> Public Subnets. Refer to `Public Subnet Filtering Gateway FAQ <https://docs.aviatrix.com/HowTos/public_subnet_filtering_faq.html>`_ for more information.   
+ - **Independent Verdict for Each Egress Control Rule** allows you to apply Allow or Deny to each FQDN rule. The use case is if you have a large set of FQDN names that should be allowed but only a small subset is denied, you can avoid inputting a large set of rules by creating a Deny rule of the small subset and one Allow rule with wild card for the large set. To configure, go to Security -> Egress Control. Select a tag, click Edit and add new rules. 
  - **FireNet Performance Improvement** FireNet performance achieves 40Gbps throughput. For details, check `this link. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-maximum-performance-firenet-can-achieve>`_
+ - **Palo Alto VM-Series Multiple Versions** can be launched from the Aviatrix Controller. The use case is companies with policy of not using the latest software releases. To configure, follow the `Firewall Network Workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
 
 Networking
 -------------
 
- - **Aviatrix CloudWAN** 
+ - **Aviatrix CloudWAN** provides two capabilities. It centrally manages Cisco IOS routers from the Controller by allowing you to program and edit the IOS CLIs, monitoring the routers' metrics and reachability. It also automatically connects the Cisco IOS routers to the Transit Network with the shortest latency by integrating AWS Global Accelerator. For more information, check out `Cloud WAN FAQ <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_. The use case is to manage and connect the already deployed millions of Cisco IOS routers in the least fiction way and minimum human errors. 
  - **BGP AS_PATH Prepend for Transit Gateway Peering** allows the on-prem learned routes to be propagated to the Transit peering routes along with the AS_PATH information. This feature requires no configuration. 
  - **Consider AS_PATH for Next Hop Decision** enhances the next hop routing decision when the Transit Gateway make decisions. Previously when multiple remote sites advertise the same network CIDRs, Aviatrix Transit Gateway routes with ECMP. With this enhancement, the Transit Gateway selects the shortest AS_PATH length as the preferred routes. Only when remote sites advertises with the same AS_PATH lengths the Transit Gateway routes based on ECMP. This feature requires no configuration. 
 
 Operations
 ------------
 
- - **FQDN Dashboard** displays statistics of egress bound destination FQDN names both accepted and rejected. You can further deep dive to see the statistics for each gateways. To view the statistics, go to Dashboard and scroll down to FQDN. 
- - **Flightpath** to include ActiveMesh Transit Gateways. 
+ - **FQDN Dashboard** displays statistics of egress bound destination FQDN names both accepted and rejected. You can further deep dive to see the statistics for each gateways. To view the statistics, go to Dashboard and scroll down to FQDN Stats. 
+ - **Flightpath** to include ActiveMesh spoke gateways, ActiveMesh Transit Gateways and peering gateways.  
  - **Selective Gateways for Logging** allows to not to have to enable all gateways for logging events.
  - **Show Deployment per Access Account** displays what is deployed, for example, the number of encrypted Spoke gateways, the number of VPC attachment, the number of FQDN gateways and the site2cloud tunnels, deployed for each access account. The use case is to gain visibility of the Aviatrix usage per each account and helps to charge back to teams who are part of the deployment. To view, go to Access Accounts, highlight one access account, click on the three dots skewer, click Show Deployment.
  - **TGW Route Auditing** allows you to immediately discover the missing routes in Spoke VPC route tables and its associated TGW route tables. To use, go to TGW Orchestrator -> List. Highlight one attachment, click the three dots and click Audit Routes.
