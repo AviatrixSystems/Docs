@@ -22,6 +22,7 @@ Prerequisites
 * Aviatrix Controller running latest version of software
 
   #. Login to your existing Aviatrix Controller
+  #. If you are using a BYOL image, please get your CustomerID either through Controller/Settings/Controller/License or from your Aviatrix Account Manager
   #. Navigate to **Settings** > **Maintenance** > **Upgrade tab**
   #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <inline_upgrade.html>`__ before proceeding. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore you may need to perform multiple upgrades until you reach the latest version on your existing controller. 
 
