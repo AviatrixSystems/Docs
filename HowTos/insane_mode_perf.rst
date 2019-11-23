@@ -28,8 +28,8 @@ Insane Mode Performance Test Topologies
 The test is conducted by iperf3 tool with TCP 128 streams. The two VPCs are in the same region. 
 
 
-AWS Performance Test Results
--------------------------------
+ActiveMesh in AWS Performance Test Results
+----------------------------------------------
 
 1. MTU = 9000 Bytes (AWS default setting)
 ============================================
@@ -40,6 +40,13 @@ AWS Performance Test Results
 ===========================================================================================
 
 |1500|
+
+Single Gateway in AWS Performance Test Results
+--------------------------------------------------
+
+For MTU = 9000 Bytes, the result is shown in the diagram below. 
+
+|single_gateway_jumbo|
 
 Azure Performance Test Results
 --------------------------------
@@ -74,6 +81,8 @@ For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~spark
 .. |insane_perf_jumbo| image:: insane_mode_perf_media/insane_perf_jumbo.png
    :scale: 30%
 
+.. |single_gateway_jumbo| image:: insane_mode_perf_media/single_gateway_jumbo.png
+   :scale: 30%
 
 .. |throughput_1500_25ms| image:: insane_mode_perf_media/throughput_1500_25ms.png
    :scale: 30%
