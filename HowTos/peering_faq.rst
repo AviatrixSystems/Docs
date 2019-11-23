@@ -61,6 +61,17 @@ division is best effort.
 
 Each gateway runs ECMP to the peered gateways.  
 
+What is the encryption algorithm for encrypted peering? 
+---------------------------------------------------------
+
+Phase 1:
+  - Authentication: SHA-256
+  - DH group: 14
+  - Encryption: AES-256-CBC
+
+Phase 2:
+   - Authentication: AES-128-GCM-96
+   - Encryption: AES-128-GCM-96
 
 
 .. |image1| image:: FAQ_media/image1.png
