@@ -81,7 +81,7 @@ and Site-2 accesses Prod-3/Prod-4 and Dev-3/Dev-4 via its local regional TGW.
 |excluded_tgw_connections|
 
 
-.. |multi-region| image:: transit_gateway_peering_media/multi-region.png
+.. |multi-region| image:: tgw_design_patterns_media/multi-region.png
    :scale: 30%
 
 .. |excluded_tgw_connections| image:: transit_gateway_peering_media/excluded_tgw_connections.png
