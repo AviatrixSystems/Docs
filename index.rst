@@ -102,10 +102,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_workflow
    HowTos/transitvpc_faq
    HowTos/transitvpc_design
-   HowTos/insane_mode
-   HowTos/CloudN_insane_mode
-   HowTos/insane_mode_perf
-   HowTos/activemesh_beta
 
 .. _Transit Network:
 
@@ -113,15 +109,18 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Encrypted Transit Network
 
-   HowTos/activemesh_faq
-   HowTos/activemesh_design_notes
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
    HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
    HowTos/transit_firenet_faq
    HowTos/transit_firenet_workflow
-
+   HowTos/activemesh_faq
+   HowTos/activemesh_design_notes
+   HowTos/activemesh_beta
+   HowTos/insane_mode
+   HowTos/insane_mode_perf
+   HowTos/CloudN_insane_mode
 
 .. _Firewall Network:
 
