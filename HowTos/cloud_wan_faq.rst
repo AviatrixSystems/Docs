@@ -105,6 +105,11 @@ How to configure CloudWAN?
 -----------------------------
 
 Follow the `CloudWAN workflow to get started. <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html>`_. 
+
+How should I secure my IOS router?
+--------------------------------------
+
+When a router is attached, an ACL rule to permit TCP port 22 access from the Aviatrix Controller. 
  
 
 
