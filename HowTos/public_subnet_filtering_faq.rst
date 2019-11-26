@@ -78,6 +78,11 @@ Once the PSP gateway is launched, you enable configure FQDN function.
 
 Go to Security -> Egress Control, follow the instructions in `FQDN workflow <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
 
+How to view blocked malicious IPs?
+-------------------------------------
+
+After the filtering gateway is launched and AWS GuardDuty is enabled from the previous steps, view blocked malicious IPs by going
+to Security -> Public Subnet. Highlight one gateway, click the 3 dots skewer, click Show Details. Scroll down to Blocked Malicious IPs.
 
 .. |public_subnet_filter| image::  public_subnet_filtering_faq_media/public_subnet_filter.png
    :scale: 30%
