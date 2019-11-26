@@ -90,6 +90,14 @@ enter the following commands and click Commit.
   hostname myrouter
 
 
+AWS Network Manager Integration
+-----------------------------------
+
+Aviatrix CloudWAN can be integrated with AWS Network Manager for visualization. Follow the steps below to:
+
+ - Create a Global Network
+ - Register AWS Transit Gateway
+ - Register Branch Device
 
 
 .. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png
