@@ -111,6 +111,10 @@ How should I secure my IOS router?
 
 When a router is attached, an ACL rule to permit TCP port 22 access from the Aviatrix Controller. 
  
+What Cisco routers are supported?
+-----------------------------------
+
+Cisco routers that run IOS Classic and IOS XE are supported. For example, ISR G2, ASR and ISR G3. 
 
 
 .. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png
