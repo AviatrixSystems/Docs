@@ -13,13 +13,13 @@ What is the Transit FireNet?
 Aviatrix Transit FireNet is the `Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ function applied to the Transit gateway. 
 With Transit FireNet feature, the FireNet function is integrated into the Transit gateway.. 
 
-The use case is to deploy firewalls in the `encrypted transit architecture <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ for AWS and Azure, 
-as shown below. 
+The use case is to deploy firewalls in the `encrypted transit architecture <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+for AWS, as shown below. 
 
 
 |transit_firenet|
 
-When deployed in Azure, Transit FireNet also works when using Native Azure VNet Spokes, as shown below. 
+When deployed in Azure (available in the future release), Transit FireNet also works when using Native Azure VNet Spokes, as shown below. 
 
 |transit_firenet_vnet|
 
@@ -64,6 +64,10 @@ By default, FireNet inspects traffic between North South (on-prem and VPC) and E
 Egress traffic (Internet bound) inspection: 
 
 Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress through Firewall" and click Enable.
+
+.. Important::
+
+  When Egress through Firewall is enabled, it applies to all Spoke VPCs. You do not need to configure individual VPC inspection policy.
 
 Is there an example guide to setup Palo Alto VM-Series policies?
 ------------------------------------------------------------------
