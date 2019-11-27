@@ -9,6 +9,12 @@ Transit FireNet  Workflow
 
 For questions about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_ 
 
+Prerequisite
+---------------
+
+Transit FireNet builds on the Aviatrix Encrypted Transit Network. Follow the `Aviatrix Encrypted Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Aviatrix Transit Gateways and Spoke gateways. ActiveMesh mode option must be selected when launching the gateways. 
+
+
 1. Enable Transit FireNet Function
 ------------------------------------------------
 

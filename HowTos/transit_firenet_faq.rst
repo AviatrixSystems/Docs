@@ -69,6 +69,18 @@ Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress thr
 
   When Egress through Firewall is enabled, it applies to all Spoke VPCs. You do not need to configure individual VPC inspection policy.
 
+Can I deploy Aviatrix Egress Control FQDN gateway on Transit FireNet?
+----------------------------------------------------------------------
+
+Yes. Deploy Aviatrix FQDN gateway as shown in the diagram below. 
+
+|transit_firenet_aviatrix_egress|
+
+The instructions are described as the following. 
+
+ 1. `Enable Aviatrix Transit Gateway for Transit FireNet <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#enable-transit-firenet-function>`_ 
+ 2. `Launch and associate Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_
+
 Is there an example guide to setup Palo Alto VM-Series policies?
 ------------------------------------------------------------------
 
@@ -109,5 +121,7 @@ if you stop the instance from AWS console, it can take a minute before the API a
 .. |transit_firenet_vnet| image:: transit_firenet_media/transit_firenet_vnet.png
    :scale: 30%
 
+.. |transit_firenet_aviatrix_egress| image:: transit_firenet_media/transit_firenet_aviatrix_egress.png
+   :scale: 30%
 
 .. disqus::
