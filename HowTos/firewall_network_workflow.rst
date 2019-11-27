@@ -206,10 +206,9 @@ If the firewall instance is by a vendor other than Palo Alto Network, for exampl
 instances from the AWS Console and associate them to the Aviatrix FireNet gateway. The `Management Interface Subnet` may be the same as the `Egress Interface Subnet`
 
 7c. Launch & Associate Aviatrix FQDN gateway
-
-If you perform 7a or 7b, please skip this step.
-
 ------------------------------------------------
+
+If you perform 7a or 7b, then you must be using a third party firewall instance. Skip this step.
 
 This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
 
