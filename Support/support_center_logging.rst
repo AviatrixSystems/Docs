@@ -96,3 +96,9 @@ What are  the instance size requirements if I use Sumo?
 ---------------------------------------------------------- 
 
 Sumo Logic's agent is memory intensive and we recommend that you use at least a t3.small instance. If you use any smaller instance, it could cause unexpected failures in your controller and gateways.
+
+
+How can I use rsyslog to send logs into different logging services?
+---------------------------------------------------------------------
+
+Almost all of the logging services support rsyslog inputs - please check out these links for your favourite logging service. `Splunk <https://docs.splunk.com/Documentation/Splunk/latest/Data/HowSplunkEnterprisehandlessyslogdata>`_, `logstash/filebeat <https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-input-syslog.html>`_, `Sumo <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_, `DataDog <https://docs.datadoghq.com/integrations/rsyslog/?tab=datadogussite>`_
