@@ -238,9 +238,7 @@ Example log:
 
 ::
 
-  Jul 21 04:28:19 Controller-52.41.237.237 cloudx_cli: 
-  AviatrixTunnelStatusChange: src_gw=Oregon-DevOps-VPC(AWS us-west-2) 
-  dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
+  2019-11-30T15:44:52.718808+00:00 ip-172-32-0-226 cloudxd: AviatrixTunnelStatusChange: src_gw=oregon-transit(AWS us-west-2) dst_gw=100.20.53.124(NA NA) old_state=Down new_state=Up
 
 AviatrixCMD
 --------------------------
