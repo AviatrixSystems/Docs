@@ -40,8 +40,8 @@ A more detailed functional comparison is described in the table below.
 On-prem to VPC traffic inspection               Yes                                     Yes                               Yes
 VPC to VPC traffic inspection                   Yes (requires SNAT)                     Yes                               Yes
 Egress traffic inspection                       Yes                                     Yes                               Yes
-Per firewall performance                        500Mpps                                 Up to 6Gbps                       Up to 6Gbsp
-Total FireNet performance                       > 500Mpps                               Up to 6Gbps                       Up to 20Gbsp
+Per firewall performance                        500Mps                                  Up to 6Gbps                       Up to 6Gbsp
+Total FireNet performance                       > 500Mpps                               Up to 6Gbps                       40Gbsp
 Multiple firewalls (scale out)                  Yes                                     No (Active/Standby)               Yes
 Integrated solution                             Yes                                     No (requires external script)     Yes        
 Solution complexity                             High                                    Medium                            Low
