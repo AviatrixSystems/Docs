@@ -351,6 +351,7 @@ Configuration for TGW VPN                          Yes                          
 Troubleshooting connectivity                       Yes (Test)                               No
 Onboard secondary account                          Automated                                Manual
 Connection Policies between Domains                Flexible Connection Policies             4 Policies defined (Flat, Isolated, Infrastructure & On-premises)
+Integrate Firewall deployment                      Yes                                      No
 =========================================          =============================            =============================
 
 
