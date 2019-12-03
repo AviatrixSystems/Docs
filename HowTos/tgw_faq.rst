@@ -331,6 +331,28 @@ How to migrate from Aviatrix Transit Gateway to on-prem to TGW + DXGW?
  #. Connect. Connect to DXGW. TGW Orchestrator -> Plan -> Step 7
 
 
+How does Aviatrix TGW Orchestrator compare with AWS Serverless TGW Orchestrator?
+------------------------------------------------------------------------------------
+
+AWS Serverless TGW Orchestrator is a solution published by AWS. It orchestrates VPC attachment to a TGW by programming both the TGW route
+table and VPC route table. The deployment is a Cloudformation Template that contains many AWS services such as Amazon DynamoDB, Amazon 
+EventBridge, Amazon Simple Notification, AWS Lambda function. 
+
+
+=========================================          =============================            =============================
+Feature                                            Aviatrix TGW Orchestrator                Serverless TGW Orchestrator 
+=========================================          =============================            =============================
+Single pane of glass for orchestration             Yes                                      No. Orchestration is done by VPC tag
+Single pane of glass for visualization             Yes (View, List)                         No. Each region must have its own deployment
+Inter region peering                               Yes                                      No
+Orchestration consistency checking                 Yes (Audit)                              No
+Configuration for TGW DXGW                         Yes                                      No
+Configuration for TGW VPN                          Yes                                      No
+Troubleshooting connectivity                       Yes (Test)                               No
+Onboard secondary account                          Automated                                Manual
+Connection Policies between Domains                Flexible Connection Policies             4 Policies defined (Flat, Isolated, Infrastructure & On-premises)
+=========================================          =============================            =============================
+
 
 
 
