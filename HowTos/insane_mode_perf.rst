@@ -51,6 +51,8 @@ For MTU = 9000 Bytes, the result is shown in the diagram below.
 Azure Performance Test Results
 --------------------------------
 
+Azure maximum MTU is 4000 Bytes. 
+
 ====================      ===============================  ====================================
 **Gateway VM Type**       **Throughput with MTU 1500B**    **Throughput with MTU 4000B**
 ====================      ===============================  ====================================
