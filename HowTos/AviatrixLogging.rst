@@ -13,16 +13,29 @@
 1. Introduction
 ================
 
-The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them  need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
+The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems.
+The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them need network connectivity
+to the logging server. Out of box integration is supported for the following logging service or systems.
 
- - Splunk Enterprise
- - Sumo Logic
- - Elastic Search
- - Datadog
- - Remote syslog
+
+ - Remote syslog (recommended to use)
  - AWS CloudWatch
+ - Splunk Enterprise
+ - Datadog
+ - Elastic Filebeat
+ - Sumo Logic
  - Netflow
 
+.. note:: We highly recommend user to use remote syslog (rsyslog) as log forwarder which is both efficient and the industry standard.
+   Most log collectors support rsyslog as forwarder. We may only add new features to rsyslog going forward.
+
+Here are the sample instructions to configure log services to collect from rsyslog forwarder.
+
+ - Splunk https://docs.splunk.com/Documentation/Splunk/latest/Data/HowSplunkEnterprisehandlessyslogdata
+ - Datadog https://docs.datadoghq.com/integrations/rsyslog/?tab=datadogussite
+ - Filebeat https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-input-syslog.html
+ - Sumologic https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source
+ 
 
 In addition to standard information on syslog, Aviatrix also provides
 capability for user VPN connections, VPN user TCP sessions, security
@@ -335,8 +348,61 @@ On the Aviatrix Controller:
   #. Protocol:	TCP or UDP (TCP by default)
   
 On the Remote syslog server:
-  1. SSH into the remote syslog server
-  #. Go to /var/log/aviatrix directory
+
+Configure /etc/rsyslog.conf with the similar content depends on the version to enable tls connection
+
+(version <8)
+::
+
+    $ModLoad imtcp
+    $InputTCPServerRun 514
+
+    $DefaultNetstreamDriver gtls
+
+    #Certificate location
+    $DefaultNetstreamDriverCAFile /etc/cert/rsyslog-ca.pem
+    $DefaultNetstreamDriverCertFile /etc/cert/rsyslog-crt.pem
+    $DefaultNetstreamDriverKeyFile /etc/cert/rsyslog-key.pem
+
+    $InputTCPServerStreamDriverAuthMode x509/certvalid
+    $InputTCPServerStreamDriverMode 1 # run driver in TLS-only mode
+
+    # Re-direct logs to host specific directories
+    $template TmplMsg, "/var/log/aviatrix/%HOSTNAME%/%PROGRAMNAME%"
+    *.info,mail.none,authpriv.*,cron.none ?TmplMsg
+    & ~
+
+
+(version 8+)
+::
+
+    global(
+        DefaultNetstreamDriver="gtls"
+        DefaultNetstreamDriverCAFile="/etc/cert/rsyslog-ca.pem"
+        DefaultNetstreamDriverCertFile="/etc/cert/rsyslog-crt.pem"
+        DefaultNetstreamDriverKeyFile="/etc/cert/rsyslog-key.pem"
+    )
+    template(name="TmplMsg" type="list") {
+        constant(value="/var/log/aviatrix/")
+        property(name="hostname")
+        constant(value="/")
+        property(name="programname" SecurePath="replace")
+        constant(value="")
+        }
+    ruleset(name="remote"){
+        *.info;mail.none;authpriv.*;cron.none action(type="omfile" DynaFile="TmplMsg")
+    }
+    module(
+        load="imtcp"
+        StreamDriver.Name="gtls"
+        StreamDriver.Mode="1"
+        StreamDriver.Authmode="anon"
+    )
+    input(type="imtcp" port="514" ruleset="remote")
+
+
+Then
+  1. Go to /var/log/aviatrix directory
   #. Find the directory of desired controller or gateway
         a. Controller's directory name is in a format of Controller-public_IP_of_controller
         #. Gateway's directory name is in a format of GW-gateway_name-public_IP_of_gateway
