@@ -2,9 +2,14 @@
 Release Notes
 =======================================
 
+R5.2.2011 (12/06/2019)
+========================
+
+- **Customize Network Filtering of FQDN** Allow configuration to customize the network CIDRS to not be included in FQDN filtering. One use case is if on-prem requires certain network CIDRs to skip FQDN filtering. To configure, go to Security -> Egress Control -> Egress FQDN Filter. Select Customize Network Filtering.
+
 
 R5.2.1991 (12/04/2019)
-====================
+===========================
 
 Security
 ------------------------------
