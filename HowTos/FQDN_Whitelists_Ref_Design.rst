@@ -150,6 +150,17 @@ Enable Private Network Filtering
 
 By checking this option, FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
 
+Disable Private Network Filtering
+===================================
+
+By checking this option, packets with destination IP address of RFC 1918 range are also inspected. 
+
+
+Customize Network Filtering
+==============================
+
+When this option is selected, you can customize packet destination address ranges not to be filtered by FQDN.  
+
 
 For support, send an email to support@aviatrix.com
 
