@@ -90,9 +90,9 @@ The new subnets created by the Controller at this steps are listed below.
 ==========================================         =================
 **Aviatrix FireNet VPC Private Subnet**            **Description**
 ==========================================         =================
--gw-tgw-egress                                     for FireNet gateway eth1 
+-gw-tgw-egress                                     for FireNet gateway eth1 to TGW
 -gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
--gw-tgw-ingress                                    for TGW to eth1 of FireNet gateway 
+-gw-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
 -gw-dmz-firewall                                   for FireNet gateway ethh2
 -gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
 -gw-dmz-exchange                                   for FireNet gateway eth3
