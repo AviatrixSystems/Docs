@@ -44,10 +44,10 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |user_accelerator| image:: user_accelerator_media/user_accelerator.png
    :scale: 30%
 
-.. |user_accelerator| image:: user_accelerator_media/ovpn_using_elb.png
+.. |ovpn_using_elb| image:: user_accelerator_media/ovpn_using_elb.png
    :scale: 30%
 
-.. |user_accelerator| image:: user_accelerator_media/ovpn_using_user_accelerator.png
+.. |ovpn_using_user_accelerator| image:: user_accelerator_media/ovpn_using_user_accelerator.png
    :scale: 30%
 
 .. |imageArchitecture| image:: GeoVPN_media/architecture_overview.png
