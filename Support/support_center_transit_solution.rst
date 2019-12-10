@@ -59,3 +59,9 @@ If I add an additional CIDR to my spoke VPC, do I need to do anything with my Av
 ---------------------------------------------------------------------------------------------------------
  
 The Aviatrix Spoke Gateway needs to learn and advertise this additional CIDR to the Aviatrix Transit Gateway. Please go to "Aviatrix Console > Transit Network > Setup" to detach this Spoke Gateway from the Transit Gateway and then attach it back again.
+
+
+Can I have some Spokes without HA gateways in my Aviatrix Transit Solution?
+---------------------------------------------------------------------------------------------------------
+
+In Aviatrix Transit Solution without ActiveMesh enabled, if you are priovisioning HA's for transit gateway, we strongly recommend that you add HA's for all Spoke gateways as well. If at any time, your site2cloud connection from transit-primary gateway goes down and connection switches over to the Transit-HA gateway, then the VPC's which do not have Spoke-HA's will lose connectivity. You would have to manually go to "Controller/Troubleshoot/Diagnostics/BGP" and switchover your active connection from Transit-HA to Primary Transit gateway.
