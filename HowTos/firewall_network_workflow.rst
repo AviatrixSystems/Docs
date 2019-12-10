@@ -93,6 +93,7 @@ The new subnets created by the Controller at this steps are listed below.
 -gw-tgw-egress                                     for FireNet gateway eth1 to TGW
 -gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
 -gw-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
+-gw-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
 -gw-dmz-firewall                                   for FireNet gateway ethh2
 -gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
 -gw-dmz-exchange                                   for FireNet gateway eth3
