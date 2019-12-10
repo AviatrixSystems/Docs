@@ -12,6 +12,7 @@ For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/
 1. Create a Security VPC
 ------------------------------------------------
 
+<<<<<<< HEAD
 We recommend that you use the Aviatrix "Useful Tools" to create a VPC for a FireNet deployment. 
 
 Select "Aviatrix FireNet VPC" option when creating a security VPC. 
