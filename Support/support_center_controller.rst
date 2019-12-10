@@ -36,6 +36,14 @@ Why are IAM policies important?
 
 During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 & aviatrix-role-app) are created and two associated IAM policies(aviatrix-assume-role-policy & aviatrix-app-policy) are also created. These roles and policies allow the Controller to use AWS APIs to launch gateway instances, create new route entries and build networks and are hence very important to keeping your network operational. Please check out `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ and `IAM for Secondary Access Accounts <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_. After a software upgrade, please update your IAM policies using the instructions in the above links - these updates have to be done for all accounts that have the Controller and the gateway. 
 
+We expect the following:
+
+  * All of your Aviatrix Controllers and Gateways to have "aviatrix-role-ec2" attached
+  * Your account to have an IAM role named "aviatrix-role-ec2", with an IAM policy named "aviatrix-assume-role-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_, unless it is customized carefully
+  * Your account to have another IAM role named "aviatrix-role-app", with an IAM policy named "aviatrix-app-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_, unless it is customized carefully
+  * If you have secondary accounts, the above roles in all of the secondary  accounts should be trusting the Controller's AWS account number via the "Trust Relationship" tab on the role.
+
+
 
 Why should I upgrade my Controller Software?
 ----------------------------------------------
