@@ -361,6 +361,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/ipv6_peering
    HowTos/nextgentransit_for_azure
    HowTos/nat_only_outbound_traffic
+   HowTos/activmesh_migration
 
 .. _Good To Know:
 
