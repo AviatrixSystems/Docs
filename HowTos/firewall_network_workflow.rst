@@ -75,7 +75,7 @@ In this step, the Aviatrix Controller creates 3 more Ethernet interfaces with as
 ==========================================         ==============================================   =================
 eth0                                               Allow SSH and HTTPS from Aviatrix Controller     Public interface for communication with Controller
 eth1                                               Allow ALL (Do not change)                        Private interface for traffic to/from TGW
-eth2                                               Allow ALL (Do not change)                        Private interface for traffic to/from firewall instances
+eth2                                               Allow ALL (Do not change)                        Private interface for traffic to firewall instances
 eth3                                               Allow ALL (Do not change)                        Private interface for traffic to FireNet HA gateway
 ==========================================         ==============================================   =================
 
