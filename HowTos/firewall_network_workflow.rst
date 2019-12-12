@@ -12,7 +12,7 @@ For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/
 1. Create a Security VPC
 ------------------------------------------------
 
-We recommend you to use the Aviatrix Useful Tool to create a VPC for FireNet deployment. 
+We recommend that you use the Aviatrix "Useful Tools" to create a VPC for a FireNet deployment. 
 
 Select "Aviatrix FireNet VPC" option when creating a security VPC. 
 
@@ -29,7 +29,7 @@ Select "Aviatrix FireNet VPC" option when creating a security VPC.
 2. Subscribe to AWS Marketplace
 --------------------------------------
 
-If you have not already done so, follow the Go link to subscribe to the VM-Series in AWS Marketplace.
+If you have not already done so, follow the `AWS Marketplace <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_ link to subscribe to the VM-Series.
 
 Do not launch the firewall instance from AWS Console as you launch it in the following steps.  
 
