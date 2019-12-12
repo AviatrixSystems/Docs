@@ -151,7 +151,7 @@ Router name (Optional)                          Specify the firewall virtual Rou
 
     - Panorama can be configured even when there is no VM-Series associated with a FireNet gateway. However in such case, the egress subnet is not decided, therefore the egress route cannot be added. Once the first VM-Series instance is launched and is in sync with Panorama, the egress route will be automatically added.
 
-    - If any VM-Series for a FireNet gateway is already managed by the Controller, you need to remove that configuration, before configure Panorama. See the migration instructions in the next section. 
+    - If any VM-Series for a FireNet gateway is already managed by the Controller, you need to remove that configuration before configuring Panorama. See the migration instructions in the next section. 
 
     - After Panorama is setup, any additional VM-Series associated with same gateway will be controlled by Panorama and no further configuration on the VM-Series is needed.
 
