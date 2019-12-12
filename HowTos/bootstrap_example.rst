@@ -7,7 +7,19 @@
 Bootstrap Configuration Example for VM-Series
 =========================================================
 
-Using bootstrap option significantly simplifies VM-Series initial configuration setup.
+Using bootstrap option significantly simplifies VM-Series initial configuration setup.  Please follow these links from Palo Alto Networks for PAN-OS 8.1 and 9.0 as references.
+
+https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/bootstrap-the-vm-series-firewall/create-the-init-cfgtxt-file.html#id8770fd72-81ea-48b6-b747-d0274f37860b
+
+https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws.html
+
+https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws.html
+
+https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws.html
+
+Please use 9.0.3.xfr and above .xfr version for better results.
+
+https://live.paloaltonetworks.com/t5/Blogs/PAN-OS-9-0-3-XFR-for-VM-Series-Now-Available/ba-p/290908
 
 In this document, we provide a bootstrap example to set up an "Allow All" and Egress NAT policy for the VM-Series to validate 
 that traffic is indeed sent to the VM-Series for VPC to VPC traffic inspection. This example does not use Panorama. 
