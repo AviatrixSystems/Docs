@@ -153,6 +153,22 @@ The private interfaces on FireNet gateway are described as below.
 
 |private_interfaces|
 
+Can TGW send packets to both FireNet gateways?
+-------------------------------------------------
+
+Yes. Both primary and HA FireNet gateways attach its eth1 ENI to TGW. When TGW forwards packets to the FireNet VPC, it
+applies AZ affinity in the best effort manner. That is, packets coming from a source VPC instance in AZ-a will be
+forwarded to the gateway whose ENI is in AZ-a.
+
+For example, two FireNet gateways, gateway-1 and gateway-2, one has eth1 in AZ-a and the other is in AZ-b, respectively.
+In a healthy state, both gateways receives traffic from TGW. A Spoke VPC traffic from AZ-a will be forwarded to gateway-1
+eth1 ENI for processing. Spoke VPC traffic from AZ-b will be forwarded to gateway-2 for processing.
+
+
+When gateway-1 goes down, the Controller detects the failure, the Controller then reprograms the default route entry
+(0.0.0.0/0) of the route table that is associated with the gateway-1 eth1 subnet (with the name like -gw-tgw-ingress)
+to point to the ENI of eth1 of the gateway-2 (its subnet should have a name like -gw-hagw-tgw-ingress), thus redirecting all
+AZ-a source traffic to the gateway in AZ-b.
 
 How does FireNet work?
 -----------------------
@@ -254,7 +270,7 @@ If the firewall instance is in the same AZ and on the same subnet with the prima
 directly from the gateway to the firewall instance. 
 
 However if the firewall instance is in the different AZ and subnet, forwarding packets directly to the firewall instance
-requires AWS route table to be programmed with target as the firewall instance, and as result, there cannot be more
+requires AWS route table to be programmed with target as the firewall instance, and as a result, there cannot be more
 than one firewall instance in the different AZ, thus losing the scale out capability. 
 
 
