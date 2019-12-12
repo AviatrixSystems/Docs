@@ -232,14 +232,9 @@ Two example logs:
 
 ::
 
-  May 24 10:54:40 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#137 P:7025
-  Gateway=bogusGw hostname=www.google.com state=MATCHED
+  2019-12-12T04:33:46.892381+00:00 ip-172-32-0-6 avx-nfq: AviatrixFQDNRule2[CRIT]nfq_ssl_handle_client_hello() L#281  Gateway=spoke1-fqdn S_IP=172.32.1.144 D_IP=52.218.234.41 hostname=aviatrix-download.s3-us-west-2.amazonaws.com state=MATCHED  Rule=*.amazonaws.com;1
 
-  May 24 10:17:08 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#162 P:6138
-  Gateway=bogusGw hostname=clients2.google.com state=NO_MATCH
-  drop_reason=NO_HOSTNAME_MATCH
+  2019-12-12T04:36:53.173210+00:00 ip-172-32-0-6 avx-nfq: AviatrixFQDNRule1[CRIT]nfq_ssl_handle_client_hello() L#281  Gateway=spoke1-fqdn S_IP=172.32.1.144 D_IP=98.137.246.7 hostname=www.yahoo.com state=NO_MATCH drop_reason=NOT_WHITELISTED
 
 AviatrixTunnelStatusChange
 --------------------------
