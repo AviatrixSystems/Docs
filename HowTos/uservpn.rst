@@ -43,6 +43,7 @@ Create a VPN Gateway
    The description in the steps below provides critical fields to get you started. You can make changes to set up advanced features such as `MFA <https://docs.aviatrix.com/HowTos/gateway.html#mfa-authentication>`_ and profile based access later.  
 
 #. Log in to the Aviatrix Controller
+      |AVTXSignIn|
 #. Launch a gateway with VPN capability
 
    #. In the left navigation bar, click `Gateway`
@@ -100,6 +101,7 @@ Create VPN Users
 ################
 
 1. Click `+ Add New`
+      |vpnuser|
 #. Select the `VPC ID` where this user should be attached.  The associated load balancer will appear in the `LB/Gateway Name`
 #. Enter the `User Name` and `User Email`. If DUO authentication is enabled, the User Name entered must match the user name of your DUO account. The User Email is optional.
 #. Click `OK`
@@ -192,10 +194,10 @@ Detailed audit logs are maintained and available in various logging platforms.
    :scale: 50%
 
 .. |imageAddNewVPNUser| image:: uservpn_media/add_new_vpn_user.png
-   :scale: 50%
+   :scale: 35%
 
 .. |New_User| image:: uservpn_media/New_User.png
-   :scale: 20%
+   :scale: 15%
 
 .. |imageImportVPNUsers| image:: uservpn_media/import_vpn_users.png
    :scale: 100%
@@ -209,6 +211,13 @@ Detailed audit logs are maintained and available in various logging platforms.
 .. |imageImportVPNUsersResults| image:: uservpn_media/import_vpn_users_results.png
    :scale: 30%
 
+.. |AVTXSignIn| image:: uservpn_media/AVTXSignIn.png
+   :scale: 20%
+
+.. |vpnuser| image:: uservpn_media/vpnuser.png
+   :scale: 20%
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. disqus::
+ 
