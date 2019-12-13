@@ -4,7 +4,21 @@ Field Notices
 
 .. Note::
 
- This field notice is provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
+ These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
+
+
+Field Notice 0007 (2019/11/19)
+--------------------------------
+
+**Multiple local privilege escalation vulnerabilities reported on Aviatrix VPN Client**
+ 
+**Problem:**
+ 
+A couple of ways to raise local privilege escalation that could result in a vulnerability were discovered and reported by Alex Seymour of Immersive Labs, a security research lab, as part of their testing. We have addressed these vulnerabilities at a high priority as soon as they were reported to us. We value the contribution and cooperation of such friendly research labs, their management and staff in making products better and safer for users across the world. These issues, if exploited, could allow authenticated users of local machines to execute commands on the local machine that require higher permission levels, if they did not have full access to their local computers. These issues impact only the local machine running the Aviatrix VPN Client on all the operating systems we support. This vulnerability will not affect local machines running other OpenVPN Compatible VPN clients. This vulnerability does not impact local machines for which the users already have administrator privileges. This vulnerability does not affect the Aviatrix VPN Gateway.
+ 
+**Recommended Solution:**
+ 
+We have addressed all of these issues in release 2.4.10 which was officially released on Nov 2, 2019. We request all of our customers who have deployed previous releases of the Aviatrix VPN Client to immediately upgrade to the latest release(2.4.10 or later). The Dashboard on the Aviatrix Controller will display the version of the Aviatrix VPN Client that is used by the end users. The latest Aviatrix VPN Client can be found at https://docs.aviatrix.com/Downloads/samlclient.html and the release notes at https://docs.aviatrix.com/HowTos/changelog.html.
 
 
 

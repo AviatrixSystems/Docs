@@ -67,7 +67,14 @@ Follow the `Ingress firewall instructions <https://docs.aviatrix.com/HowTos/ingr
 8. Aviatrix FQDN in FireNet for Egress Control
 -------------------------------------------------
 
+When Aviatrix FQDN gateway is deployed in a VPC, it uses a public IP address to perform both whitelisting and NAT function 
+for Internet bound traffic. Sometimes these Internet bound traffic are partner API calls and these partners require to 
+limit the number of IP addresses for each customer of theirs. In such situation, you can deploy FQDN in a centralized 
+manner as shown in the diagram below. 
+
 |fqdn_in_firenet|
+
+For more information, follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#firewall-network-firenet-workflow>`_. 
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%

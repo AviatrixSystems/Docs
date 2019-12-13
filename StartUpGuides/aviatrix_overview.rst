@@ -40,31 +40,32 @@ You can automate Aviatrix deployment by `REST APIs <https://api.aviatrix.com/?ve
 What Features Are Supported in Which Cloud?
 -----------------------------------------------
 
-==========================================      ==========  =============   ======================                 =================
-**Feature**                                     **AWS**     **Azure**       **GCP**                                **AWS GovCloud**
-==========================================      ==========  =============   ======================                 =================
-Marketplace Launch                              Yes         Yes             No (Community Image)                   Yes
-Multi Accounts                                  Yes         Yes             Yes                                    Yes
+==========================================      ==========  =============   ======================           =================       ==========
+**Feature**                                     **AWS**     **Azure**       **GCP**                          **AWS GovCloud**         **OCI**
+==========================================      ==========  =============   ======================           =================       ==========
+Marketplace Launch                              Yes         Yes             No (Community Image)             Yes                      Yes
+Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
 
-Next Gen Transit Network Spoke                  Yes         Yes             Yes                                    Yes
-Next Gen Transit Network Edge                   Yes         Yes             No			                   Yes
-Firewall Network                                Yes         No              No                                     Yes
-Transit Peering                                 Yes         Yes             No                                     Yes
+Next Gen Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
+Next Gen Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
+Firewall Network                                Yes         No              No                               Yes                      No                     
+Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
-Native Peering                                  Yes         No              N/A                                    Yes
+Native Peering                                  Yes         Yes             N/A                              Yes                      No
 
-FQDN Egress Control                             Yes         Yes             Yes                                    Yes
-Stateful Firewall                               Yes         Yes             Yes                                    Yes
-Advanced NAT                                    Yes         Yes             Yes                                    Yes
+FQDN Egress Control                             Yes         Yes             Yes                              Yes                      Yes
+Stateful Firewall                               Yes         Yes             Yes                              Yes                      Yes
+Advanced NAT                                    Yes         Yes             Yes                              Yes                      Yes
 
-Remote Access User VPN                          Yes         Yes             Yes                                    Yes
-Site to Cloud VPN                               Yes         Yes             Yes                                    Yes
+Remote Access User VPN                          Yes         Yes             Yes                              Yes                      Yes
+Site to Cloud VPN                               Yes         Yes             Yes                              Yes                      Yes
 
-Insane Mode Encryption                          Yes         No              No                                     Yes
+Insane Mode Encryption                          Yes         Yes              No                              Yes                      No
 
-Logging Service Integration                     Yes         Yes             Yes                                    Yes
-FlightPath Expert Diagnostics                   Yes         No              No                                     Yes
-==========================================      ==========  =============   ======================                 =================
+Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
+FlightPath Expert Diagnostics                   Yes         No              No                               Yes                      No
+IPv6                                            Yes         No              No                               No                       No
+==========================================      ==========  =============   ======================           =================       ==========
 
 
 How To Launch Aviatrix?
@@ -73,7 +74,8 @@ How To Launch Aviatrix?
 Our product, Aviatrix Secure Networking Platform, consists of two components, Controller and
 gateway. Gateways are launched from the Controller
 browser console by using your cloud account credentials with cloud provider APIs.
-The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ and `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
+The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace, <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_  `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ and `OCI <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html>`_.
+ 
 
 
 Why Should You Consider Us?

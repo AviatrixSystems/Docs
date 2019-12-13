@@ -45,9 +45,10 @@ as listed below.
  - Aviatrix Controller periodically polls Amazon `GuardDuty findings <https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html>`_. 
  - Findings from Amazon GuardDuty are `logged <AviatrixLogging.html#id13>`__ to the Controller syslog. (Syslog can be exported to `Aviatrix supported Logging services <AviatrixLogging.html>`__.)
  - Findings from Amazon GuardDuty are displayed in Alert Bell on the Controller console.  
- - In addition, if a finding is about instances in a VPC being probed by a malicious IP address, this IP address is blocked by the Controller automatically programming the Network ACL of the VPC, as shown below. 
+ - In addition, if a finding is about instances in a VPC being probed by a malicious IP address, this IP address is blocked by deploying `Public Subnet Filtering Gateway <https://docs.aviatrix.com/HowTos/public_subnet_filtering_faq.html>`_, as shown in the diagram below. 
 
-|guardduty_acl|
+|public_subnet_filter| 
+
 
 
 .. |guardduty_config| image::  guardduty_media/guardduty_config.png
@@ -56,6 +57,8 @@ as listed below.
 .. |guardduty_acl| image::  guardduty_media/guardduty_acl.png
    :scale: 30%
 
+.. |public_subnet_filter| image::  public_subnet_filtering_faq_media/public_subnet_filter.png
+   :scale: 30%
 
 .. add in the disqus tag
 

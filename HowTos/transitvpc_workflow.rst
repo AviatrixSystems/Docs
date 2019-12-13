@@ -143,19 +143,18 @@ performance limit and route limit by these native services. Follow the instructi
 
 Aviatrix automates the process of discovering and connecting to AWS VGW. The instruction below is for connecting Aviatrix Transit GW to AWS VGW. 
 
-Before executing this step, a VGW must have already been created. 
+Before executing this step, a VGW must have already been created on AWS console. 
 
-Select the VGW ID in the drop down menu. A Customer gateway will be automatically created as the result of this step. 
+Select the VGW ID in the drop down menu. 
 
-This step automatically builds a site2cloud IPSEC tunnel with the VGW and establishes a BGP session with the VGW to
-exchange routes between on-prem and the cloud.
+As a result of this step, a Customer Gateway and a Site2Cloud Connection between the VGW to the Aviatrix Transit GW will be automatically created.  The site2cloud IPSEC tunnel establishes a BGP session to exchange routes between on-prem and the cloud.  You also can view them under Customer Gateways and Site-to-Site VPN Connections of the AWS console.
 
 
 .. important::
 
   You are responsible for building the connection between VGW and on-prem. The connection is either over the Internet, over Direct Connect or both. 
 
-  We support two patterns of connections: Detached VGW and Attached VGW. Attached VGW is only allowed if the VGW and Transit GWs are in different VPCs. 
+  We support two patterns of connections: Detached VGW and Attached VGW. The VGW should not be attached to the Transit VPC.
 
   Currently, only one connection is supported on a specific transit gateway/vpc, regardless of which of the three options above is chosen.
 

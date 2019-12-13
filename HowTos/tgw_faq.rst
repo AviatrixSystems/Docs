@@ -91,7 +91,6 @@ The Transit Gateway Orchestrator can be deployed with some Spoke VPCs run Aviatr
 
  1. If you need a packet in flight to be encrypted, launch an Aviatrix gateway in the Spoke VPC. 
  #. If you need various NAT functions between Spoke and Transit VPC, use an Aviatrix gateway in the Spoke VPC. 
- #. If you need to connect an Azure VNet as a Spoke, use an Aviatrix gateway in the Spoke VPC. 
  #. If you need to obtain Netflow and log information from the Spoke and Transit, use Aviatrix gateway. 
  #. If you want to build a fully isolated Transit network where there is no inter VPC connectivity by default. 
 
@@ -202,9 +201,14 @@ The Transit Gateway Orchestrator is deployed in two stages.
 
 In addition, you can 
 
- - List: List what is programmed in the Transit Gateway route table for a given Security Domain. 
- - View: View what VPC members are attached to Security Domains and Connection Policies. 
- - Test: instance to instance end-to-end Troubleshoot. 
+ - **List**: 
+      - **Show Details** on what is programmed in the VPC route tables and Transit Gateway route table for a given VPC. 
+      - **Audit Routes** to discover incorrectness in VPC route tables and Transit Gateway route tables for a given VPC. 
+      - **Update VPC CIDR** to update propagated routes to TGW when a new VPC CIDR is added to VPC. 
+      - **Update DXGW Allowed Prefix** if you like to change the summarized prefix after the DXGW has been attached to TGW.
+ - **View**: View what VPC members are attached to Security Domains and Connection Policies. 
+ - **Test**: instance to instance end-to-end Troubleshoot. 
+ - **Audit**: Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
 
 What can be displayed at the View page?
 -----------------------------------------
@@ -326,6 +330,29 @@ How to migrate from Aviatrix Transit Gateway to on-prem to TGW + DXGW?
  #. Disconnect Aviatrix Transit Gateway from VGW. Transit Network -> Setup -> Step 8 (Disconnect VGW)
  #. Connect. Connect to DXGW. TGW Orchestrator -> Plan -> Step 7
 
+
+How does Aviatrix TGW Orchestrator compare with AWS Serverless TGW Orchestrator?
+------------------------------------------------------------------------------------
+
+AWS Serverless TGW Orchestrator is a solution published by AWS. It orchestrates VPC attachment to a TGW by programming both the TGW route
+table and VPC route table. The deployment is a Cloudformation Template that contains many AWS services such as Amazon DynamoDB, Amazon 
+EventBridge, Amazon Simple Notification, AWS Lambda function. 
+
+
+=========================================          =============================            =============================
+Feature                                            Aviatrix TGW Orchestrator                Serverless TGW Orchestrator 
+=========================================          =============================            =============================
+Single pane of glass for orchestration             Yes                                      No. Orchestration is done by VPC tag
+Single pane of glass for visualization             Yes (View, List)                         No. Each region must have its own deployment
+Inter region peering                               Yes                                      No
+Orchestration consistency checking                 Yes (Audit)                              No
+Configuration for TGW DXGW                         Yes                                      No
+Configuration for TGW VPN                          Yes                                      No
+Troubleshooting connectivity                       Yes (Test)                               No
+Onboard secondary account                          Automated                                Manual
+Connection Policies between Domains                Flexible Connection Policies             4 Policies defined (Flat, Isolated, Infrastructure & On-premises)
+Integrate Firewall deployment                      Yes                                      No
+=========================================          =============================            =============================
 
 
 

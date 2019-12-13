@@ -56,7 +56,11 @@ AWS Performance Numbers:
 +----------------------------+-------------------------------------------------+
 | c5.2xlarge, c5.4xlarge     | 2Gbps - 2.5Gbps                                 |
 +----------------------------+-------------------------------------------------+
-| c5n.2xlarge, c5n.4xlarge   | 4Gbps - 4.5Gbps (Jumbo Frame)                   |
+| c5n.4xlarge                | 50Gbps                                          |
++----------------------------+-------------------------------------------------+
+| c5n.9xlarge                | 70Gbps                                          |
++----------------------------+-------------------------------------------------+
+| c5n.18xlarge               | 70Gbps                                          |
 +----------------------------+-------------------------------------------------+
 
 OCI Expected Throughput Numbers: 
@@ -647,7 +651,7 @@ IPv6 can be enabled on an Aviatrix gateway deployed in AWS. One use case is to u
 
 When this option is enabled, Controller automatically enables IPv6 on the VPC CIDR and the subnet where the gateway is launched. It is your responsibility to enable IPv6 on any other subnets and instances. Use `Migrating to IPv6 <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html>`_ if you need help. 
 
-When building an encrypted tunnel between two identical VPC CIDRs to for networking between the instances in each VPC, the Controller uses the gateway's IPv4 EIP as tunnel end point. 
+When building an encrypted tunnel between two identical VPC CIDRs to for networking between the instances in each VPC, the Controller uses the gateway's IPv4 EIP as tunnel end point. Find out more in `Use IPv6 for User VPN Access <https://docs.aviatrix.com/HowTos/ipv6_multivpc_vpn.html>`_.
 
 
 ActiveMesh Mode

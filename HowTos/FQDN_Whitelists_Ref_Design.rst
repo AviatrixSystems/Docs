@@ -28,6 +28,7 @@ Click "+ New Tag", and enter a name for the tag, for example, prod-whitelist, as
 
 |fqdn-add-new-tag|
 
+
 Step 2. Add URL list to the new tag
 -----------------------------------
 
@@ -39,6 +40,29 @@ Click "+ Add New" to add each URL, wild card is allowed for HTTP/HTTPS (TCP 443)
 (Action "Update" means to save the rules in the tag and if gateways are attached to the tag, "Update" applies the rules to the gateways.)
 
 |fqdn-add-domain-names|
+
+Base Policy
+^^^^^^^^^^^^
+
+Base Policy is a new Action field of a rule available in Release 5.2. It only applies to a rule whose white list is on TCP port 80 or 443.
+
+The default Action field is Base Policy which means if the tag is a White List
+(which is the majority of the use case), this specific rule is to allow the domain name to pass. For the most part, you should not
+edit this field.
+
+There is a use case where you want to leverage the Active field. For example, you need to allow most of the FQDN names
+in salesforce.com except for one domain name, finance.salesforce.com. If salesforce.com provides hundreds of domain names, you would
+have to white list all of them and you cannot use ``*.salesforce.com`` as it will leak finance.salesforce.com.
+
+With the new feature, you can now configure two rules to accomplish filtering out finance.salesforce.com while allowing the rest of salesforce.com supported domain names, as shown below:
+
+==========================================    ================   ==================  =============
+Domain Name                                   Protocol           Port                Action
+==========================================    ================   ==================  =============
+finance.salesforce.com                        tcp                443                 Deny
+``*``.salesforce.com                          tcp                443                 Base Policy
+==========================================    ================   ==================  =============
+
 
 Step 3. Attach to gateways
 ---------------------------
@@ -125,6 +149,17 @@ Enable Private Network Filtering
 =================================
 
 By checking this option, FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
+
+Disable Private Network Filtering
+===================================
+
+By checking this option, packets with destination IP address of RFC 1918 range are also inspected. 
+
+
+Customize Network Filtering
+==============================
+
+When this option is selected, you can customize packet destination address ranges not to be filtered by FQDN.  
 
 
 For support, send an email to support@aviatrix.com

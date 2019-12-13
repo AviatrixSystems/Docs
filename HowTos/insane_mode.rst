@@ -52,8 +52,9 @@ and beyond, leveraging the multiple CPU cores in a single instance, VM or host.
 What are the use cases for Insane Mode?
 ----------------------------------------
 
- - 10Gbps Transit performance
- - Encryption over Direct Connect
+ - High performance `Encrypted Transit <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`
+ - High performance `Encrypted Peering <https://docs.aviatrix.com/HowTos/peering_faq.html>`_ performance
+ - High performance encryption over Direct Connect
  - Overcome VGW performance limit and 100 route limit
 
 How can I deploy Aviatrix Insane Mode?
@@ -70,15 +71,8 @@ The diagram below illustrates the high performance encryption between Transit VP
 What are the performance benchmarks? 
 ---------------------------------------------
 
-Insane mode is available on AWS for C5 series and C5n series. For more performance test results and how to
+Insane mode is available on AWS for C5 series and C5n series. It is also available on Azure. For more performance test results and how to
 tune your environment to get the best performance, check out `this document. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
-
-==================  ===============  ==============  ==============  ==============
- MTU size           C5.2xlarge       C5.9xlarge      C5.18xlarge     C5n.18xlarge
-==================  ===============  ==============  ==============  ==============
-1500                5Gbps            8.21Gbps        9Gbps           15Gbps
-9000                10Gbps           12Gbps          22Gbps          30Gbps
-==================  ===============  ==============  ==============  ==============
 
 How does Insane Mode work?
 -----------------------------
@@ -103,17 +97,17 @@ Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacente
 
 The Aviatrix appliance CloudN specification:
 
-=====================    =======================================              =================
-Aviatrix CloudN          Specification                                        Notes
-=====================    =======================================              =================
-Dimension                1U rack mount
-Server                   HPE ProLiant DL360 Gen10 Xeon Gold 6130
-CPU                      16 cores
-Memory                   64GB
-PCIe                     3.0
-10/25Gbps Ethernet port  2 x SFP+                                             1 LAN port and 1 WAN port 
-1Gbps Ethernet port      RJ45                                                 1 Management port
-=====================    =======================================              =================
+========================    =======================================              =================
+Aviatrix CloudN             Specification                                        Notes
+========================    =======================================              =================
+Dimension                   1U rack mount
+Server                      HPE ProLiant DL360 Gen10 Xeon Gold 6130
+CPU                         16 cores
+Memory                      64GB
+PCIe                        3.0
+10/25Gbps Ethernet port     2 x SFP+                                             1 LAN port and 1 WAN port 
+1Gbps Ethernet port         RJ45                                                 1 Management port
+========================    =======================================              =================
 
 More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-proliant-dl360-gen10-server.1010007891.html>`_
 

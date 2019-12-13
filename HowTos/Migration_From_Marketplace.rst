@@ -14,7 +14,9 @@ This document outlines all the steps necessary to migrate from one Aviatrix Cont
 .. tip::
    This document applies to migrating from an old controller to a new controller AMI within the same subscription or moving from one subscription to another.
 
-
+   .. note::
+      For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license.  Make sure you already have subscribed BYOL AMI. 
+      
 Prerequisites
 =============
 
@@ -22,6 +24,7 @@ Prerequisites
 * Aviatrix Controller running latest version of software
 
   #. Login to your existing Aviatrix Controller
+  #. If you are using a BYOL image, please get your CustomerID either through Controller/Settings/Controller/License or from your Aviatrix Account Manager
   #. Navigate to **Settings** > **Maintenance** > **Upgrade tab**
   #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <inline_upgrade.html>`__ before proceeding. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore you may need to perform multiple upgrades until you reach the latest version on your existing controller. 
 
@@ -66,9 +69,6 @@ Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartU
 
    .. tip::
       We highly recommend migrating to Metered AMI as it is more flexible and scalable as your business needs change over time.
-
-   .. note::
-      For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license.
       
    .. attention::
       Make sure you already have subscribed the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__  for detail.
@@ -100,12 +100,14 @@ Insert the details about your S3 bucket name and execute a restore.
 |image4|
 
 
-Step 9 - Setup Aviatrix Customer ID Again (Not required if you are migrating to a Metered AMI controller)
+Step 9 - Setup Aviatrix Customer ID Again (Not required if you are migrating to a Metered AMI controller) and AWS Account Number
 ================
 On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
 Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
 
 |image6|
+
+Step 10 - Make sure the Security Groups of the new controller match the old controller's.  After modification, backup the configuration again.
 
 .. tip::
    Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace controller instance.

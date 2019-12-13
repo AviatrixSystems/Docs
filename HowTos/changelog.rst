@@ -2,11 +2,25 @@ Aviatrix VPN Client Changelog
 -----------------------------
 
 
+2.5.7 - Nov 20 2019
+ - New UI
+ - Detect missing VPN configuration file
+ - Fixed password based authentication issues on Windows
+ - Fixed the intermittent VPN disconnection issues
+
+
+2.4.10 - Nov 2 2019
+ - Security fixes
+ - Remove config caching causing issues on MacOS 
+ - Fixes an issue preventing connection after switching between auth types
+
+
 2.3.10 - Oct 18 2019
  - Support MacOS Catalina
  - Resolve fresh installation issues
  - Set version in PkgInfo in Mac
  - Nameserver wasn't being pushed correctly in Windows 10
+
 
 2.2.10 - Sep 26 2019
  - FIPS 140-2 support for openvpn

@@ -62,31 +62,31 @@ Check OpenVPN configuration from Aviatrix Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    * Check what tunnel mode is configured on this Aviatrix Gateway
-
+   
       * https://docs.aviatrix.com/HowTos/openvpn_faq.html#is-full-tunnel-mode-supported-on-the-gateway
-
+      
    *  Check VPN CIDR
-
+   
       * https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block
 
    * Check additional CIRDs
-
+   
       * https://docs.aviatrix.com/HowTos/gateway.html#additional-cidrs
 
    * Check Name server
-
+   
       * https://docs.aviatrix.com/HowTos/gateway.html#nameservers
 
    * Check Search Domains
-
+   
       * https://docs.aviatrix.com/HowTos/gateway.html#search-domains
 
    * Check Enable ELB
-
+   
       * https://docs.aviatrix.com/HowTos/gateway.html#enable-elb
 
    * Check VPN NAT
-
+   
       * https://docs.aviatrix.com/HowTos/gateway.html#vpn-nat
 
    * More info in https://docs.aviatrix.com/HowTos/gateway.html

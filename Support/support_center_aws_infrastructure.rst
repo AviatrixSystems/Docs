@@ -85,3 +85,22 @@ How can I debug IAM related issues? (IAM Debug Playbook)
 * If you have edited the Aviatrix roles(aviatrix-role-app, aviatrix-role-ec2) and policies(aviatrix-app-policy, aviatrix-assume-role-policy) - please make sure that you have followed the `instructions for requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_ and for `customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_.
 * If you use `AWS Organizations <https://aws.amazon.com/organizations/>`_ for Central governance and management across AWS accounts, please work with your network security team or AWS for further support on how to provide the right access for Aviatrix Network System of Controllers and Gateways.
 * Repeat the "Aviatrix Console > Settings > Advanced > AWS IAM Policy Update > Update Account IAM Policy > Check" and "Aviatrix Console > Troubleshoot > Diagnostics > Cloud > Account Diagnostics" for all accounts for a final check.
+
+
+Why do I get an email alert about my gateway with "Cloud Message Queue Failure" message?
+-----------------------------------------------------------------------------------------------
+
+Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS. Please check the following:
+
+  * Please run `gateway diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ by going to "Controller/Troubleshoot/Diagnostics/Gateway" and pick the gateway and run diagnostics test and "submit" them to us. You can also review the results by referring to the service descriptions in diagnostics <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
+  * Go to "Controller/Troubleshoot/Diagnostics/Network/GatewayUtility", pick the gateway and ping www.google.com - to see if it can resolve names and if it has network connectivity.
+  * Check that this gateway has the `right IAM policies <https://docs.aviatrix.com/Support/support_center_controller.html#why-are-iam-policies-important>`_
+  
+    * Check that your controller and the gateway instances have "aviatrix-role-ec2" role attached to it on the AWS console
+    * Check that the policies attached to this role are correct by going to "Controller/Accounts/AccountAudit" and run `account audit <https://docs.aviatrix.com/HowTos/account_audit.html>`_ on the account that this gateway belongs to. If needed, please update the policies - To update IAM policy to latest please got to "Controller/Accounts/Access Accounts/SelectAccount Name/click 3 dots/UpdatePolicy" and click OK.
+    * Go to AWS Console > IAM > Roles > click on aviatrix-role-ec2 > check that aviatrix-assume-role-policy policy is attached > click on the policy name > {} JSON > it should be like https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt
+    * Go to AWS Console > IAM > Roles > click on aviatrix-role-app > check that  aviatrix-app-policy policy is attached > click on the policy name > {} JSON > it should be like https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt
+    * If the gateway is not on the same account as the Controller, please makse sure that this access account has trust relationship to the primary account (the Controller’s AWS account).
+  * Please make sure that both your contoller and gateway have an EIP associated and not just a PublicIP/PrivateIP
+  * Please note that this check is done once a day - after you address the issues, please wait for 24 hours from the previous alert to see if you will receive another alert
+  * If you are not able to find and address the issue, please `upload the tracelogs <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ for this gateway and send an email to support@aviatrix.com to open a new ticket.

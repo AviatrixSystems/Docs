@@ -13,16 +13,29 @@
 1. Introduction
 ================
 
-The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems. The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them  need network connectivity to the logging server. Out of box integration is supported for the following logging service or systems. 
+The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems.
+The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them need network connectivity
+to the logging server. Out of box integration is supported for the following logging service or systems.
 
- - Splunk Enterprise
- - Sumo Logic
- - Elastic Search
- - Datadog
- - Remote syslog
+
+ - Remote syslog (recommended to use)
  - AWS CloudWatch
+ - Splunk Enterprise
+ - Datadog
+ - Elastic Filebeat
+ - Sumo Logic
  - Netflow
 
+.. note:: We highly recommend user to use remote syslog (rsyslog) as log forwarder which is both efficient and the industry standard.
+   Most log collectors support rsyslog as forwarder. We may only add new features to rsyslog going forward.
+
+Here are the sample instructions to configure log services to collect from rsyslog forwarder.
+
+ - Splunk https://docs.splunk.com/Documentation/Splunk/latest/Data/HowSplunkEnterprisehandlessyslogdata
+ - Datadog https://docs.datadoghq.com/integrations/rsyslog/?tab=datadogussite
+ - Filebeat https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-input-syslog.html
+ - Sumologic https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source
+ 
 
 In addition to standard information on syslog, Aviatrix also provides
 capability for user VPN connections, VPN user TCP sessions, security
@@ -53,6 +66,7 @@ Management System for further analysis:
 - `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
+- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfirenet>`_
 
 Below are the details of each log keyword. 
 
@@ -218,14 +232,9 @@ Two example logs:
 
 ::
 
-  May 24 10:54:40 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#137 P:7025
-  Gateway=bogusGw hostname=www.google.com state=MATCHED
+  2019-12-12T04:33:46.892381+00:00 ip-172-32-0-6 avx-nfq: AviatrixFQDNRule2[CRIT]nfq_ssl_handle_client_hello() L#281  Gateway=spoke1-fqdn S_IP=172.32.1.144 D_IP=52.218.234.41 hostname=aviatrix-download.s3-us-west-2.amazonaws.com state=MATCHED  Rule=*.amazonaws.com;1
 
-  May 24 10:17:08 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#162 P:6138
-  Gateway=bogusGw hostname=clients2.google.com state=NO_MATCH
-  drop_reason=NO_HOSTNAME_MATCH
+  2019-12-12T04:36:53.173210+00:00 ip-172-32-0-6 avx-nfq: AviatrixFQDNRule1[CRIT]nfq_ssl_handle_client_hello() L#281  Gateway=spoke1-fqdn S_IP=172.32.1.144 D_IP=98.137.246.7 hostname=www.yahoo.com state=NO_MATCH drop_reason=NOT_WHITELISTED
 
 AviatrixTunnelStatusChange
 --------------------------
@@ -237,16 +246,14 @@ Example log:
 
 ::
 
-  Jul 21 04:28:19 Controller-52.41.237.237 cloudx_cli: 
-  AviatrixTunnelStatusChange: src_gw=Oregon-DevOps-VPC(AWS us-west-2) 
-  dst_gw=gcloud-prod-vpc(Gcloud us-central1) old_state=Down new_state=Up latency=2.79688203335
+  2019-11-30T15:44:52.718808+00:00 ip-172-32-0-226 cloudxd: AviatrixTunnelStatusChange: src_gw=oregon-transit(AWS us-west-2) dst_gw=100.20.53.124(NA NA) old_state=Down new_state=Up
 
 AviatrixCMD
 --------------------------
 
 Logs with this prefix come from the controller whenever a CLI command is issued.  It contains
-information on the CLI command that was issued, the results of the execution, and reason
-a message if there is a failure.
+information on the CLI command that was issued, the results of the execution,  reason
+a message if there is a failure and who issued the command.
 
 Example log:
 
@@ -254,9 +261,10 @@ Example log:
 
 ::
 
-  Nov 10 01:05:41 ip-172-31-6-24 cloudxd:
-  AviatrixCMD: action=ADD_TIME_SERVER, argv=['--rtn_file', '/run/shm/rtn1809376682',
-  'add_time_server', 'time2.google.com'], result=Success, reason=
+  2019-11-19T20:13:44.585942+00:00 ip-172-32-0-226 cloudxd: AviatrixCMD: action=USERCONNECT_UPGRADE_TO_VERSION, argv=['--rtn_file', '/run/shm/rtn957594707', 'userconnect_upgrade_to_version', 'upgrade-status', ''], result=Success, reason=, username=admin
+
+  2019-11-19T18:01:59.796230+00:00 ip-172-32-0-226 cloudxd: AviatrixCMD: action=TRANSIT_SPOKE_LIST, argv=['--rtn_file', '/run/shm/rtn2091225061', 'transit_spoke_list', '--spoke_only'], result=Success, reason=, username=admin
+
 
 AviatrixBGPOverlapCIDR
 ------------------------
@@ -301,6 +309,20 @@ Example log:
  
   2018-09-23T00:00:50.332066-07:00 ip-172-31-89-197 cloudxd: AviatrixGuardDuty: Account [aws], Region [us-east-1], Instance ID [i-0a675b03fafedd3f2], at 2018-09-23T06:35:40Z, Unprotected port on EC2 instance i-0a675b03fafedd3f2 is being probed. Please tighten instance security group to avoid Recon:EC2/PortProbeUnprotectedPort threat.
  
+AviatrixFireNet
+-----------------
+
+Log messages with this prefix come from the Controller whenever a firewall instance state changes. 
+
+Example log:
+
+::
+
+  2019-11-19T09:38:40.070080-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to down.
+
+  2019-11-19T09:39:03.066869-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to unaccessible.
+
+  2019-11-19T09:40:12.878075-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to up.
 
 
 3. Logging Configuration at Aviatrix Controller
@@ -315,18 +337,72 @@ Two examples for Remote Syslog and Logstash Forwarder follow below.
 On the Aviatrix Controller:
   a. Server:	FQDN or IP address of the remote syslog server
   #. Port:	Listening port of the remote syslog server (6514 by default)
-  #. Cert:	A compressed file in tgz format with both certificates (.crt format) of remote syslog server and CA. For example, a compressed file which is named certs.tgz includes (1) ca.pem, (2) rsyslog-crt.pem, and (3) rsyslog-key.pem
+  #. CA Certificate: Certificate Authority (CA) certificate
+  #. Server Public Certificate: Public certificate of the controller signed by the same CA
+  #. Server Private Key: Private key of the controller that pairs with the public certificate
   #. Protocol:	TCP or UDP (TCP by default)
   
 On the Remote syslog server:
-  1. SSH into the remote syslog server
-  #. Go to /var/log/aviatrix directory
+
+Configure /etc/rsyslog.conf with the similar content depends on the version to enable tls connection
+
+(version <8)
+::
+
+    $ModLoad imtcp
+    $InputTCPServerRun 514
+
+    $DefaultNetstreamDriver gtls
+
+    #Certificate location
+    $DefaultNetstreamDriverCAFile /etc/cert/rsyslog-ca.pem
+    $DefaultNetstreamDriverCertFile /etc/cert/rsyslog-crt.pem
+    $DefaultNetstreamDriverKeyFile /etc/cert/rsyslog-key.pem
+
+    $InputTCPServerStreamDriverAuthMode x509/certvalid
+    $InputTCPServerStreamDriverMode 1 # run driver in TLS-only mode
+
+    # Re-direct logs to host specific directories
+    $template TmplMsg, "/var/log/aviatrix/%HOSTNAME%/%PROGRAMNAME%"
+    *.info,mail.none,authpriv.*,cron.none ?TmplMsg
+    & ~
+
+
+(version 8+)
+::
+
+    global(
+        DefaultNetstreamDriver="gtls"
+        DefaultNetstreamDriverCAFile="/etc/cert/rsyslog-ca.pem"
+        DefaultNetstreamDriverCertFile="/etc/cert/rsyslog-crt.pem"
+        DefaultNetstreamDriverKeyFile="/etc/cert/rsyslog-key.pem"
+    )
+    template(name="TmplMsg" type="list") {
+        constant(value="/var/log/aviatrix/")
+        property(name="hostname")
+        constant(value="/")
+        property(name="programname" SecurePath="replace")
+        constant(value="")
+        }
+    ruleset(name="remote"){
+        *.info;mail.none;authpriv.*;cron.none action(type="omfile" DynaFile="TmplMsg")
+    }
+    module(
+        load="imtcp"
+        StreamDriver.Name="gtls"
+        StreamDriver.Mode="1"
+        StreamDriver.Authmode="anon"
+    )
+    input(type="imtcp" port="514" ruleset="remote")
+
+
+Then
+  1. Go to /var/log/aviatrix directory
   #. Find the directory of desired controller or gateway
         a. Controller's directory name is in a format of Controller-public_IP_of_controller
         #. Gateway's directory name is in a format of GW-gateway_name-public_IP_of_gateway
   #. Each controller/gateway directory should have
         a. auth.log
-        #. commmandlog.log
         #. syslog
  
 3.2 Logstash Forwarder

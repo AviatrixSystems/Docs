@@ -12,7 +12,7 @@ For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/
 1. Create a Security VPC
 ------------------------------------------------
 
-We recommend you to use the Aviatrix Useful Tool to create a VPC for FireNet deployment. 
+We recommend that you use the Aviatrix "Useful Tools" to create a VPC for a FireNet deployment. 
 
 Select "Aviatrix FireNet VPC" option when creating a security VPC. 
 
@@ -29,7 +29,7 @@ Select "Aviatrix FireNet VPC" option when creating a security VPC.
 2. Subscribe to AWS Marketplace
 --------------------------------------
 
-If you have not already done so, follow the Go link to subscribe to the VM-Series in AWS Marketplace.
+If you have not already done so, follow the `AWS Marketplace <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_ link to subscribe to the VM-Series.
 
 Do not launch the firewall instance from AWS Console as you launch it in the following steps.  
 
@@ -38,9 +38,10 @@ Do not launch the firewall instance from AWS Console as you launch it in the fol
 
 This step creates a Security Domain with a Firewall Domain option. 
 
-Go to TGW Orchestrator -> Plan -> Create a Security Domain to create one as shown below.
+Go to TGW Orchestrator -> Plan -> Create an AWS Transit Gateway and then a Security Domain by selecting "Aviatrix Firewall Domain". 
 
-|firewall_domain|
+For more information, refer to `Create a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
+
 
 4. Launch Aviatrix FireNet Gateway
 ------------------------------------------
@@ -74,7 +75,7 @@ In this step, the Aviatrix Controller creates 3 more Ethernet interfaces with as
 ==========================================         ==============================================   =================
 eth0                                               Allow SSH and HTTPS from Aviatrix Controller     Public interface for communication with Controller
 eth1                                               Allow ALL (Do not change)                        Private interface for traffic to/from TGW
-eth2                                               Allow ALL (Do not change)                        Private interface for traffic to/from firewall instances
+eth2                                               Allow ALL (Do not change)                        Private interface for traffic to firewall instances
 eth3                                               Allow ALL (Do not change)                        Private interface for traffic to FireNet HA gateway
 ==========================================         ==============================================   =================
 
@@ -89,9 +90,10 @@ The new subnets created by the Controller at this steps are listed below.
 ==========================================         =================
 **Aviatrix FireNet VPC Private Subnet**            **Description**
 ==========================================         =================
--gw-tgw-egress                                     for FireNet gateway eth1 
+-gw-tgw-egress                                     for FireNet gateway eth1 to TGW
 -gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
--gw-tgw-ingress                                    for TGW to eth1 of FireNet gateway 
+-gw-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
+-gw-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
 -gw-dmz-firewall                                   for FireNet gateway ethh2
 -gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
 -gw-dmz-exchange                                   for FireNet gateway eth3
@@ -128,8 +130,11 @@ This step programs the relative route tables, described as below.
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway. 
 
-This step launches a VM-Series and associates it with one of the FireNet gateways. Note the VM-Series and the 
-associated FireNet gateway must be in the same AZ.
+This step launches a VM-Series and associates it with one of the FireNet gateways. 
+
+.. important::
+
+The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ##########################
@@ -141,6 +146,8 @@ VPC ID                                          The Security VPC created in Step
 Gateway Name                                    The primary FireNet gateway.
 Firewall Instance Name                          The name that will be displayed on AWS Console.
 Firewall Image                                  The AWS AMI that you have subscribed in Step 2.
+Firewall Image Version                          VM-Series current supported software versions. 
+Firewall Instance Size                          VM-Series instance type.  
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
@@ -162,116 +169,15 @@ eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted 
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
-Example Configuration for Bootstrap 
----------------------------------------
-
-When you `launch a VM-Series instance <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_, click "Advanced", this is the option to integrate bootstrap information to launch the instance and setup the initial policies.
-
-IAM role
-########
-
-Create an IAM role "aviatrix-s3-role", with "aviatrix-s3-policy" as follows:
-
-::
-
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "s3:ListBucket"
-                ],
-                "Resource": [
-                    "arn:aws:s3:::*"
-                ]
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "s3:GetObject"
-                ],
-                "Resource": [
-                    "arn:aws:s3:::*"
-                ]
-            }
-        ]
-    }
-
-Bootstrap bucket structure
-##########################
-
-In S3, at the top level create a bucket for bootstrap. Give it a name, for example "panvm_bucket", with following structure:
-
-::
-
-    panvm-bucket/
-      config/
-        init-cfg.txt
-        bootstrap.xml(Optional)
-      content/
-      license/
-      software/
-
-|panvm_bucket|
-
-Example for creating bootstrap init-cfg.txt for panorama managed firewall:
-
-1. Generate Auth Key in Panorama
-
-In Panorama CLI, create auth key, remember the key value.
-
-::
-
-    admin@Panorama> request bootstrap vm-auth-key generate lifetime 8760
-
-    VM auth key 0123456789 generated. Expires at: 2020/05/28 12:28:24
-
-    admin@Panorama>
-
-
-2. create init-cfg.txt file
-
-::
-
-    type=dhcp-client
-    ip-address=
-    default-gateway=
-    netmask=
-    ipv6-address=
-    ipv6-default-gateway=
-    hostname=FW
-    vm-auth-key=0123456789                                 ---> auth key created in Paranoma
-    panorama-server=3.216.229.15                           ---> paranoma public IP
-    panorama-server-2=
-    tplname=FireNet_cal_2_stack                            ---> template stack name, NOT TEMPLATE NAME
-    dgname=firenet_global                                  ---> device group name
-    dns-primary=
-    dns-secondary=
-    op-command-modes=jumbo-frame,mgmt-interface-swap       ---> mgmt-interface-swap is MUST
-    dhcp-send-hostname=yes
-    dhcp-send-client-id=yes
-    dhcp-accept-server-hostname=yes
-    dhcp-accept-server-domain=yes
-
-
-3.  create bootstrap.xml: export from the existing PAN firewall.
-This step is optional: if the firewall is managed by Panorama, this step can be omitted.
 
 .. important::
 
-  For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from thePanorama console to sync the firewall instance and Panorama.
+  For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
 
 .. Tip::
 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
-
-.. Tip::
-
-    Aviaitrix launches the Palo Alto Networks' VM-Series with default instance size of m4.xlarge. 
-    VM-Series offers different models with different performance offerings that are dependant on the instance size. For example, at the time of this writing, VM-500 and VM-700 series require C5.18xlarge instances. 
-    You can increase the instance size as needed to match the desired series and performance. For more information, refer to Palo Alto Networks documentation
 
 
 7a.2 Launch and Associate More
@@ -289,6 +195,7 @@ You can follow `this example configuration guide <https://docs.aviatrix.com/HowT
 a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
 to firewall instance. 
 
+For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_. 
 
 7b. Associate an Existing Firewall Instance
 --------------------------------------------
@@ -301,6 +208,8 @@ instances from the AWS Console and associate them to the Aviatrix FireNet gatewa
 
 7c. Launch & Associate Aviatrix FQDN gateway
 ------------------------------------------------
+
+If you perform 7a or 7b, then you must be using a third party firewall instance. Skip this step.
 
 This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
 

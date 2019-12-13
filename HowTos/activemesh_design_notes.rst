@@ -34,8 +34,18 @@ If on-prem sites advertise non overlapping network CIDRs to TGWs, Transit gatewa
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If on-prem sites advertise identical network CIDRs or overlapping CIDRs to TGWs (for example, they all 
-advertise 10.0.0.0/8 to their respective TGWs), you must enable `Transit Gateway Peering Filter <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_ feature to 
+advertise 10.0.0.0/8 to their respective TGWs), you must  enable `<https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ feature on both sides of the Aviatrix Transit Gateways to 
 filter out identical or overlapping CIDRs in order to connect the two regions. 
+
+.. important::
+
+  If you use TGW DXGW/VPN for hybrid connection to on-prem, you cannot use Aviatrix Transit Gateway as the backup router for connecting to the same on-prem network. This is because TGW propagated routes do not present themselves in the TGW route table with any BGP information and as such, it is not possible for the Controller to coordinate the dynamic route updates between TGW and Aviatrix Transit Gateway.
+
+1.3 Overlapping Spoke VPC CIDRs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If there are overlapping Spoke VPCs CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Peering, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
+Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs. 
 
 
 2. ActiveMesh with Aviatrix Transit GW for on-prem Connection
@@ -54,6 +64,29 @@ not desired outcome, you should connect on-prem to the Aviatrix Transit Gateway 
 
 If Aviatrix Transit Gateways connects to multi sites on-prem directly via BGP, these sites should advertise
 non overlapping CIDRs to the Aviatrix Transit Gateway. .  
+
+2.3 Route Propagation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The local Aviatrix Transit Gateway learned routes via BGP are propagated to the peered Aviatrix Transit Gateway. 
+The propagated information includes network CIDRS, AS_PATH and metrics. 
+
+If the local Aviatrix Transit Gateway learned duplicate network CIDRs (i.e., there are multiple paths to reach the same network CIDRs) via BGP, it uses the following rules to decide which route is
+propagated to the remote Aviatrix Transit Gateway. 
+
+ - The route with the shortest AS_PATH length wins.
+ - If there are identical AS_PATH lengths, the lowest metric route wins. 
+ - If the metrics are all the same, the smallest next hop IP address wins. 
+
+In another words, there will always be one route advertised to the remote Aviatrix Transit Gateway when identical network CIDRs are 
+learned by the local Aviatrix Transit Gateway. 
+
+2.4 Overlapping Spoke VPC CIDRs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If there are overlapping Spoke VPCs CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Pee
+ring, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
+Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs.
 
 3. NAT Functions
 --------------------
@@ -87,6 +120,7 @@ In this scenario, the on-prem has two devices as the diagram below.
 You should check HA in the configuration and configure the second pair of inside tunnel addresses, as shown below. 
 
 |activemesh_ha_config|
+
 
 
 .. |activemesh_tgw_onprem| image:: activemesh_design_notes_media/activemesh_tgw_onprem.png

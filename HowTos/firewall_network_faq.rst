@@ -25,12 +25,12 @@ How does Aviatrix FireNet compare with the native deployment in AWS Transit Gate
 
 There are two native deployments: TGW VPN to connect to firewall or TGW VPC attachment to connect to firewall. 
 
-The three different deployment model is illustrated in the diagram below. 
+The three different deployment models are illustrated in the diagram below. 
 
 |firewall_deploy|
 
 If an AWS Transit Gateway connects to a firewall by using its built in VPN function, it must run IPSec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to
-ensure that both source and destination initiated traffic lands on the same firewall instance. Furthermore, since native deployment requires an IPSec VPN which limits its performance to 1Gbps, in this scenario the per firewall instance can only perform at 500Mbps since the VPN function is traversed twice.
+ensure that both source and destination initiated traffic lands on the same firewall instance. Furthermore, since native deployment requires an IPSec VPN which limits its performance to 1Gbps, in this scenario a single firewall instance can only perform at 500Mbps since the VPN function is traversed twice.
 
 A more detailed functional comparison is described in the table below. 
 
@@ -40,8 +40,8 @@ A more detailed functional comparison is described in the table below.
 On-prem to VPC traffic inspection               Yes                                     Yes                               Yes
 VPC to VPC traffic inspection                   Yes (requires SNAT)                     Yes                               Yes
 Egress traffic inspection                       Yes                                     Yes                               Yes
-Per firewall performance                        500Mpps                                 Up to 6Gbps                       Up to 6Gbsp
-Total FireNet performance                       > 500Mpps                               Up to 6Gbps                       Up to 20Gbsp
+Per firewall performance                        500Mbps                                 Up to 6Gbps                       Up to 6Gbps
+Total FireNet performance                       > 500Mbps                               Up to 6Gbps                       40Gbps
 Multiple firewalls (scale out)                  Yes                                     No (Active/Standby)               Yes
 Integrated solution                             Yes                                     No (requires external script)     Yes        
 Solution complexity                             High                                    Medium                            Low
@@ -75,7 +75,7 @@ Does FireNet work with other firewall appliances?
 --------------------------------------------------
 
 Yes. FireNet solution has been validated to work with `Checkpoint <https://docs.aviatrix.com/HowTos/config_Checkpoint.html>`_, 
-`FortiGate <https://docs.aviatrix.com/HowTos/config_FortiGate.html>`_ and `Barracuda CloudGen Firewall <https://docs.aviatrix.com/HowTos/config_Barracuda.html>`_.. 
+`FortiGate <https://docs.aviatrix.com/HowTos/config_FortiGate.html>`_ and `Barracuda CloudGen Firewall <https://docs.aviatrix.com/HowTos/config_Barracuda.html>`_. 
 
 
 How is Firewall Network different from Transit DMZ?
@@ -111,7 +111,7 @@ Security Domain to connect to the Firewall Domain. All packets to and from this 
 Example 2. Production VPCs
 ###########################
 
-You may decide to inspect all traffic from the production data, which resides in multiple VPCs. In this case you can create a Security Domain that all of these VPCs attached to. Then use connection policy to connect this 
+You may decide to inspect all traffic from the production data, which resides in multiple VPCs. In this case you can create a Security Domain that all of these VPCs are attached to. Then use connection policy to connect this 
 domain to the firewall domain. 
 
 What are the limitations of FireNet?
@@ -153,6 +153,22 @@ The private interfaces on FireNet gateway are described as below.
 
 |private_interfaces|
 
+Can TGW send packets to both FireNet gateways?
+-------------------------------------------------
+
+Yes. Both primary and HA FireNet gateways attach its eth1 ENI to TGW. When TGW forwards packets to the FireNet VPC, it
+applies AZ affinity in the best effort manner. That is, packets coming from a source VPC instance in AZ-a will be
+forwarded to the gateway whose ENI is in AZ-a.
+
+For example, two FireNet gateways, gateway-1 and gateway-2, one has eth1 in AZ-a and the other is in AZ-b, respectively.
+In a healthy state, both gateways receives traffic from TGW. A Spoke VPC traffic from AZ-a will be forwarded to gateway-1
+eth1 ENI for processing. Spoke VPC traffic from AZ-b will be forwarded to gateway-2 for processing.
+
+
+When gateway-1 goes down, the Controller detects the failure, the Controller then reprograms the default route entry
+(0.0.0.0/0) of the route table that is associated with the gateway-1 eth1 subnet (with the name like -gw-tgw-ingress)
+to point to the ENI of eth1 of the gateway-2 (its subnet should have a name like -gw-hagw-tgw-ingress), thus redirecting all
+AZ-a source traffic to the gateway in AZ-b.
 
 How does FireNet work?
 -----------------------
@@ -213,22 +229,14 @@ Follow the FireNet workflow to complete Steps 1, 2, 3, 4, 5, 6 and 8.
 If you have an instance in VPC/Domain and another instance in a different VPC/Domain, and you specify connection policy between the Domains and one Domain to connect to the Firewall Domain, then you should be able to ping the 
 two instances. 
 
-What is the scale out performance for FireNet?
-------------------------------------------------
-
-We have run iperf3 TCP performance tests on the FireNet with the default Palo Alto VM-Series instance size m4.xlarge. 
-As shown in the chart below, the FireNet throughput scales as more VM-Series are attached to the FireNet gateway.
-
-|firewall_network_perf|
-
 What is the maximum performance FireNet can achieve?
 -------------------------------------------------------
 
-Currently for East-West (VPC to VPC) and North-South (on-prem to VPC) traffic inspection, FireNet can achieve 20Gbps throughput with Jumbo frame size in AWS. 
+For East-West (VPC to VPC) and North-South (on-prem to VPC) traffic inspection, FireNet achieves 40Gbps throughput with 
+Jumbo frame size in AWS. Note the maximum TGW performance between two attached VPCs is 50Gbps.
 
-The chart below describes the test case where Palo Alto VM-Series runs C5.xlarge instance size.
 
-|firewall_network_perf_c5xlarge|
+|firewall_network_perf|
 
 Are there any design patterns for Firewall Network deployment?
 ----------------------------------------------------------------
@@ -262,7 +270,7 @@ If the firewall instance is in the same AZ and on the same subnet with the prima
 directly from the gateway to the firewall instance. 
 
 However if the firewall instance is in the different AZ and subnet, forwarding packets directly to the firewall instance
-requires AWS route table to be programmed with target as the firewall instance, and as result, there cannot be more
+requires AWS route table to be programmed with target as the firewall instance, and as a result, there cannot be more
 than one firewall instance in the different AZ, thus losing the scale out capability. 
 
 
@@ -281,7 +289,7 @@ than one firewall instance in the different AZ, thus losing the scale out capabi
 .. |firewall_network_perf| image:: firewall_network_faq_media/firewall_network_perf.png
    :scale: 30%
 
-.. |firewall_network_perf_c5xlarge| image:: firewall_network_faq_media/firewall_network_perf_c5xlarge.png
+.. |firewall_network_perf_new| image:: firewall_network_faq_media/firewall_network_perf_new.png
    :scale: 30%
 
 .. |multi_firewall| image:: firewall_network_faq_media/multi_firewall.png
