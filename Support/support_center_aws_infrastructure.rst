@@ -103,4 +103,5 @@ Typically, this message is sent when a gateway is not able to access the message
     * If the gateway is not on the same account as the Controller, please makse sure that this access account has trust relationship to the primary account (the Controller’s AWS account).
   * Please make sure that both your contoller and gateway have an EIP associated and not just a PublicIP/PrivateIP
   * Please note that this check is done once a day - after you address the issues, please wait for 24 hours from the previous alert to see if you will receive another alert
+  * Sometimes, this could be a transient issue which will resolve due to temporary dns/network failures
   * If you are not able to find and address the issue, please `upload the tracelogs <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ for this gateway and send an email to support@aviatrix.com to open a new ticket.
