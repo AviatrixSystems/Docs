@@ -90,7 +90,7 @@ How can I debug IAM related issues? (IAM Debug Playbook)
 Why do I get an email alert about my gateway with "Cloud Message Queue Failure" message?
 -----------------------------------------------------------------------------------------------
 
-Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS, either because it cannot resolve/reach AWS SQS or does not have the permissions to retrieve the messages from AWS SQS(dns, network connectivity, system issues, IAM permissions). Please check the following:
+Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS, either because it cannot resolve/reach AWS SQS or does not have the permissions to retrieve the messages from AWS SQS(i.e. dns, network connectivity, system issues, IAM permissions). Please check the following:
 
   * Please run `gateway diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ by going to "Controller/Troubleshoot/Diagnostics/Gateway" and pick the gateway and run diagnostics test and "submit" them to us. You can also review the results by referring to the service descriptions in diagnostics <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
   * Go to "Controller/Troubleshoot/Diagnostics/Network/GatewayUtility", pick the gateway and ping www.google.com - to see if it can resolve names and if it has network connectivity.
