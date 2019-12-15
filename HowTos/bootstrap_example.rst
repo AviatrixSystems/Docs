@@ -74,7 +74,7 @@ In AWS S3, at the top level create a bucket for bootstrap with a **unique** name
 
 .. Note::
 
-  In the example bootstrap.xml, the API admin user name is avxadmin. You can customize it.  
+  In the example bootstrap.xml, the API admin user name is avxadmin and the password is Aviatrix123#. You can customize it.  
 
 **3.3** upload these two files to your config folder in the bootstrap-bucket. 
 
