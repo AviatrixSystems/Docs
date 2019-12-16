@@ -134,7 +134,7 @@ This step launches a VM-Series and associates it with one of the FireNet gateway
 
 .. important::
 
-The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ##########################
