@@ -28,8 +28,11 @@ If you would like the alert messages to be sent to a different email,
 |change_alert_email|
 
 
-Use Amazon Simple Email Service (SES)
+
+How to Change Email Notification Source
 -----------------------------------------
+
+Use Amazon Simple Email Service (SES)
 
 1.	Create SMTP Credentials
     a.	Log into AWS Console
