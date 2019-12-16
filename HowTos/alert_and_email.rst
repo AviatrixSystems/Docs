@@ -27,31 +27,45 @@ If you would like the alert messages to be sent to a different email,
 
 |change_alert_email|
 
-How to change source of email notification 
--------------------------------------------
 
-If you like to change the email source from info@aviatrix.com to something else, for example, 
-your own organization email, 
+Use Amazon Simple Email Service (SES)
+-----------------------------------------
 
-::
+1.	Create SMTP Credentials
+    a.	Log into AWS Console
+    b.	Click “SES Email Service”
+    c.	Click “SMTP Settings”
+    d.	Click “Create My SMTP Credentials”
 
-  go to Settings -> Controller -> CHANGE EMAIL NOTIFICATION SOURCE. 
-  Enter a Test Email address if you like to test the configuration. 
-  Click Save when done.  
-  
-::
+|aws_ses|
+
+    e.	Click “Download Credentials” as the password will not be shown again
 
 
-  Optional: Steps to setup email inside AWS and use Amazon SMTP server.
-  Verify all email(s) to send and receive
+2.	Verify an Email Address
+    a.	Log into Amazon SES Console
+    b.	Click “Verify a New Email Address”
+    c.	In “Verify a New Email Address” dialog, enter an email address you want to send messages from. Note this *must* be a valid email address
 
-|AwsEmailVerification|
+|aws_verify_email|
 
-::
+    d.	You will receive a verification email from AWS SES asking you to confirm that you are the owner of the email address. Click the verification link in the message.
+    
+    
+3.	Configure Aviatrix Controller to use AWS SMTP email server
+    a.	SMTP Server: email-smtp.us-east-1.amazonaws.com
+    b.	Port: 587
+    c.	Sender Email: <from step 2: your verified email>
+    d.	Sender Login: <from step 1: your Smtp Username>
+    e.	Sender Password: <from step 1: your Smtp Password>
+    f.	Test Email: <from step 1: your Smtp Username>
+    g.	Protocol: TLS
+    h.	Click “Save”
 
-  Enter all parameters and specify your AWS SES login & password.
 
-|ChangeEmailNotification|
+
+
+
 
 .. |change_alert_email| image:: alert_and_email_media/change_alert_email.png
    :scale: 30%
@@ -61,5 +75,12 @@ your own organization email,
    
 .. |ChangeEmailNotification| image:: alert_and_email_media/ChangeEmailNotification.PNG
    :scale: 30%
+   
+.. |aws_ses| image:: alert_and_email_media/aws_ses.png
+   :scale: 30%
+   
+.. |aws_verify_email| image:: alert_and_email_media/aws_verify_email.png
+   :scale: 30%
+
 
 .. disqus::
