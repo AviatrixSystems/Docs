@@ -46,7 +46,7 @@ Use Amazon Simple Email Service (SES)
 
 
 2.	Verify an Email Address
-    a.	Log into Amazon SES Console
+    a.	Log into Amazon SES Console. Go to SESHome/IdentityManagement/EmailAddresses
     b.	Click “Verify a New Email Address”
     c.	In “Verify a New Email Address” dialog, enter an email address you want to send messages from. Note this *must* be a valid email address
 
