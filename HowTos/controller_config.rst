@@ -6,7 +6,7 @@
 Controller Configuration
 ===========================
 
-This document describes the configurations on the Controller tab under Settings. 
+This document describes the configurations on the Controller under Settings tab. 
 
 DNS Server
 ------------
