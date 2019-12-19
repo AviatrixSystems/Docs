@@ -105,3 +105,21 @@ Typically, this message is sent when a gateway is not able to access the message
   * Please note that this check is done once a day - after you address the issues, please wait for 24 hours from the previous alert to see if you will receive another alert
   * Sometimes, this could be a transient issue which will resolve due to temporary dns/network failures
   * If you are not able to find and address the issue, please `upload the tracelogs <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ for this gateway and send an email to support@aviatrix.com to open a new ticket.
+
+
+
+How do you launch a controller in GovCloud using a CloudFormation script?
+-------------------------------------------------------------------------
+
+Pre-deployment checklist:
+  * Prepare a VPC with a public subnet (i.e., with 0.0.0.0/0 route points to IGW)  to launch the controller.
+  * Go to EC2/Network & Security/Key Pairs to create a key pair.
+  * Locate the Aviatrix CloudFormation template URL. The CloudFormation links listed in https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products will open the CloudFormation-Create-stack UI in the AWS commerical cloud and populate the template URL into the Amazon-S3-URL field. Keep a copy of the template URL.
+  
+Deployment:
+  * Login to your GovCloud account. Go to Service/CloudFormation/Create Stack, enter the Aviatrix CloudFormation template URL. Create Next and follow the typical CloudFormation Deployment process.  Note that AWS EAST region does not support t2.large. Pick t3.large instead to avoid deployment failure.
+  
+Other notes:
+  * The controller FlightPath UI has a bug.  When open, it first looks for an account in the commerical AWS cloud and will hang with a spinning wheel if it cannot find one.  You can workaround it by onboard an commerical AWS cloud account into the controller. 1) Goto Accounts/Access Accounts/Add Account. 2) Pick AWS and uncheck IAM role-based checkbox. 3) Popular your AWS Access Key ID/Account Number/Secret key. 
+  * Controller VPC tracker is not yet supported in the GovCloud.
+  
