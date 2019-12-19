@@ -12,6 +12,10 @@ Using bootstrap option significantly simplifies VM-Series initial configuration 
 In this document, we provide a bootstrap example to set up an "Allow All" and Egress NAT policy for the VM-Series to validate 
 that traffic is indeed sent to the VM-Series for VPC to VPC traffic inspection. This example does not use Panorama. 
 
+Please use 9.0.3.xfr and above .xfr version for better results. Please refer to `PAN-OS 9.0.3 XFR for VM-Series <https://live.paloaltonetworks.com/t5/Blogs/PAN-OS-9-0-3-XFR-for-VM-Series-Now-Available/ba-p/290908>`_ .
+
+Note that Panorama PAN-OS version should be the same or higher than the firewall VMs when they are added to the Panorama, like, 9.0.3.xfr for both Panorama and VMs.
+
 For a manual setup, follow `manual setup example. <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_
 
 
@@ -138,8 +142,6 @@ Following links from Palo Alto Networks for PAN-OS 8.1 and 9.0 provides addition
 `Bootstrap the VM-Series Firewall on AWS 9.0 <https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws.html>`_
 
 `Bootstrap the VM-Series Firewall on AWS 8.1 <https://docs.paloaltonetworks.com/vm-series/8-1/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws.html>`_
-
-Please use 9.0.3.xfr and above .xfr version for better results. Please refer to `PAN-OS 9.0.3 XFR for VM-Series <https://live.paloaltonetworks.com/t5/Blogs/PAN-OS-9-0-3-XFR-for-VM-Series-Now-Available/ba-p/290908>`_ .
 
 .. |bootstrap_bucket| image:: bootstrap_example_media/bootstrap_bucket.png
    :scale: 30%
