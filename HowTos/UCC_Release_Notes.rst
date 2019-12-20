@@ -2,6 +2,16 @@
 Release Notes
 =======================================
 
+R5.2.2047 (12/19/2019)
+========================
+
+ - **Bug fix** Azure China upgraded to upgrade from 5.1 to 5.2.
+ - **Bug fix** Aviatrix Transit Gateway with multiple Spoke gateways exhibits memory leaks. 
+ - **Bug fix** GCP gateway replacement function fails.
+ - **Bug fix** GCP gateway names, VPC route table tables and route entry names can exceed cloud provider's limits. 
+ - **Bug fix** Failed to delete IPSec policy when deleting Spoke to Spoke peering. 
+ - **Enhancement** Add remote troubleshoot support on CloudN.
+
 R5.2.2011 (12/06/2019)
 ========================
 
