@@ -83,10 +83,9 @@ Install a license in Panorama. Without the correct license, it won't work.
 b. Upgrade Panorama 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Panorama must be on the same software version as its managed firewalls.
+Panorama must be on the same or higher software version as its managed firewalls.
 
-Currently, a newly launched firewall instance is on version 9.0.1, but the Panorama instance version is on 8.1.2. So once you have launched 
-a Panorama instance, upgrade it to version 9.0.0+ by following the instructions below.
+Currently, a newly launched firewall instance is on version 9.0.3.xfr, if the Panorama instance version is on 8.1.x. So once you have launched a Panorama instance, upgrade it to version 9.0.3.xfr by following the instructions below.
 
 Go to Panorama --> Dynamic Updates, click "Check Now", select the latest version in "Applications and Threats", download and install.
 
@@ -118,12 +117,12 @@ A Device Group is used to manage all the firewall policies.
       Add "allow-all" policy to the just created device group.
 
  #. **Add Egress Policy** (Optional)
-      If you plan to deploy Egress inspection, add egress-nat policy.
+      If you plan to deploy Egress inspection, add source-nat and security outbound rule policies
 
  #. **Commit The Change**
        Commit and push.
-
-After the above steps, VM-Series instances are managed by Panorama. All configuration should be done through the Panorama console.
+  
+After the above steps, once M-Series instances are added to Panorama, all configuration should be done through the Panorama console.
 
 e. Create admin role and user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -159,39 +158,38 @@ Router name (Optional)                          Specify the firewall virtual Rou
 
     - When Panorama is configured, the associated  will show the vendor as "Palo Alto Panorama". Clicking "Show" will use the same access account and password to access firewall and retrieve route information.  To enable this, you need to configure admin role and user (same name and password as configured for Panorama itself) in the template in Panorama.
 
-Migrating from individually managed VM-Series to Panorama
+Migrating from individually VM to Panorama
 #################################################################
 
-Assuming you have existing individually managed VM-Series by the Aviatrix Controller and have prepared your Panorama, follow the instructions below to migrate individually managed firewall (or VM-Series) to be managed by Panorama.. 
+Assuming you have existing individually managed VM-Series by the Aviatrix Controller and have prepared your Panorama, follow the instructions below to migrate individually VM to Panorama.. 
 
-a. Remove firewall integration as PAN
+a. Remove firewall integration as PAN 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If any firewall for a FireNet gateway is already integrated with the Controller with PAN as the Vendor type, you need to remove that configuration. 
 
 To do so, go to Controller->Firewall Network->Vendor Integration->Firewall, select the Transit VPC ID, Firewall Instance ID. For the Firewall Vendor Type, select "Generic". This effectively removes the Controller integration. 
 
-b. Remove firewall configuration
+b. Remove firewall configuration (if this is a new VM, skip this step)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 From your firewall console, remove interfaces, zone, virtual router, policies, api admin role and api administrator.
 
-c. Add Firewall to Managed Devices
+c. Add Firewall to Panorama
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to firewall, in dashboard, find the Serial #
+Refer to HOW TO ADD A LOCALLY MANAGED FIREWALL TO PANORAMA MANAGEMENT, https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CloRCAS
 
-Go to Panorama --> Managed Devices --> Summary, click "Add", paste the firewall's Serial # here, save and commit.
+  1. Add the firewall to the panorama managed devices list. Log into Panorama, select Panorama > Managed Devices and click Add. Enter the serial number of the firewall and click OK. Commit. For the Commit Type select Panorama, and click Commit again.
+  2. Set up a connection from the firewall to Panorama. Log in to the firewall, select Device > Setup, and edit the Panorama Settings. In the Panorama Servers fields, enter the IP addresses of the Panorama management server. Click OK and Commit.
+  3.  Make any necessary configuration changes and commit your changes to the VMs. Click Commit and for the Commit Type select Device Group. Select Merge with Device Candidate Config,select the 'Include Device and Network Templates' check box, and click Commit. 
 
-d. Configure Firewall
-^^^^^^^^^^^^^^^^^^^^^^^^
-
+  4.  Go back to Panorama --> Managed Devices --> Summary, check the device should show "Connected".
+  
+ 
 Port 3978 also needs to be allowed on the firewall side. After 4.7, newly launched firewalls through the AVX controller will handle this, but for existing firewalls, the user need to do it by himself/herself.
 
-Log in to Firewall, go to Device --> Setup --> Management, edit "Panorama Settings", add the public IP of Panorama, save and commit.
 
-Go back to Panorama --> Managed Devices --> Summary, check the device should show "Connected".
-
-e. Add device into desired template stack and Device Group
+d. Add device into desired template stack and Device Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to Panorama --> Template, select the desired template stack and check the firewall from the device list.
@@ -200,7 +198,7 @@ Go to Panorama --> Device Group, select the desired group and check the firewall
 
 Commit and push.
 
-f. Integrate Panorama with Aviatrix Controller
+e. Integrate Panorama with Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to the Aviatrix Controller->Firewall Network->Vendor Integration->Firewall Manager (Panorama), fill out all the required information and save.
