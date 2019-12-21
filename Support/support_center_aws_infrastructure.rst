@@ -108,18 +108,23 @@ Typically, this message is sent when a gateway is not able to access the message
 
 
 
-How do you launch a controller in GovCloud using a CloudFormation script?
+How do you launch a controller in GovCloud?
 -------------------------------------------------------------------------
 
 Pre-deployment checklist:
   * Prepare a VPC with a public subnet (i.e., with 0.0.0.0/0 route points to IGW)  to launch the controller.
   * Go to EC2/Network & Security/Key Pairs to create a key pair.
-  * Locate the Aviatrix CloudFormation template URL. The CloudFormation links listed in https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products will open the CloudFormation-Create-stack UI in the AWS commerical cloud and populate the template URL into the Amazon-S3-URL field. Keep a copy of the template URL.
+  * Note that AWS US-EAST region does not support t2.large. Pick t3.large instead to avoid deployment failure.
   
-Deployment:
-  * Login to your GovCloud account. Go to Service/CloudFormation/Create Stack, enter the Aviatrix CloudFormation template URL. Create Next and follow the typical CloudFormation Deployment process.  Note that AWS EAST region does not support t2.large. Pick t3.large instead to avoid deployment failure.
+Launch from CloudFormation template:
+  * If launch with CloudFormation template, copy the Aviatrix CloudFormation template URL from your AWS commerical cloud account as follows. 1) Follow the CloudFormation links (Metered or BYOL) listed in https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products should prompt you to login to your AWS commerical account and bring you into the CloudFormation-Create-stack UI. 2) Look under the Amazon-S3-URL field for the actual Metered/BYOL template URL. 3) Copy down the URL.
+  * Login to your GovCloud account. Go to Service/CloudFormation/Create Stack, enter the Aviatrix CloudFormation template URL. Click Next and follow the typical CloudFormation Deployment process.  
+ 
+Launch from EC2/Instances/Launch Instance/AWS Marketplace manually:
+  * You would need to create the Aviatrix-role-ec2, Aviatrix-role-app, Aviatrix-assume-role-policy and Aviatrix-app-policy manually: https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-secondary-account-iam-manually.  In addition, you would need to change the Resource of AssumeRole Action from "arn:aws:iam::*:role/aviatrix-*" to "arn:aws-us-gov:iam::*:role/aviatrix-*", making sure it is using the aws-us-gov.
+  * Launch the controller by picking an Aviatrix image under EC2/Instances/Launch Instance/AWS Marketplace.
   
 Other notes:
-  * The controller FlightPath UI has a bug.  When open, it first looks for an account in the commerical AWS cloud and will hang with a spinning wheel if it cannot find one.  You can workaround it by onboard an commerical AWS cloud account into the controller. 1) Goto Accounts/Access Accounts/Add Account. 2) Pick AWS and uncheck IAM role-based checkbox. 3) Popular your AWS Access Key ID/Account Number/Secret key. 
-  * Controller VPC tracker is not yet supported in the GovCloud.
+  * The controller expects a commercial AWS account to be available in the flightpath. Please provision a commercial AWS account as a workaround.  Without it, the flightpath UI will hang with a spinning wheel when opened.  Register a commerical AWS cloud account with the controller as follows. 1) Goto Accounts/Access Accounts/Add Account. 2) Pick AWS and uncheck IAM role-based checkbox. 3) Popular your AWS Access Key ID/Account Number/Secret key. 
+  * Controller VPC tracker is not yet supported in the GovCloud: https://docs.aviatrix.com/HowTos/vpc_tracker.html.
   
