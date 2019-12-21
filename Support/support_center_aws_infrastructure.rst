@@ -121,7 +121,7 @@ Launch from CloudFormation template:
   * Login to your GovCloud account. Go to Service/CloudFormation/Create Stack, enter the Aviatrix CloudFormation template URL. Click Next and follow the typical CloudFormation Deployment process.  
  
 Launch from EC2/Instances/Launch Instance/AWS Marketplace manually:
-  * You would need to create the Aviatrix-role-ec2, Aviatrix-role-app, Aviatrix-assume-role-policy and Aviatrix-app-policy manually: https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-secondary-account-iam-manually.  In addition, you would need to change the Resource of AssumeRole Action from "arn:aws:iam::*:role/aviatrix-*" to "arn:aws-us-gov:iam::*:role/aviatrix-*", making sure it is using the aws-us-gov.
+  * You would need to create the Aviatrix-role-ec2, Aviatrix-role-app, Aviatrix-assume-role-policy and Aviatrix-app-policy manually: https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-secondary-account-iam-manually.  In addition, you would need to change the Resource of AssumeRole Action in Aviatrix-assume-role-policy from "arn:aws:iam::*:role/aviatrix-*" to "arn:aws-us-gov:iam::*:role/aviatrix-*", making sure the arn is pointing to using aws-us-gov.
   * Launch the controller by picking an Aviatrix image under EC2/Instances/Launch Instance/AWS Marketplace.
   
 Other notes:
