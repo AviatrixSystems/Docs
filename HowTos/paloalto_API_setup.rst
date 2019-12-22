@@ -85,7 +85,7 @@ b. Upgrade Panorama
 
 Panorama must be on the same or higher software version as its managed firewalls.
 
-Currently, a newly launched firewall instance is on version 9.0.3.xfr, if the Panorama instance version is on 8.1.x. So once you have launched a Panorama instance, upgrade it to version 9.0.3.xfr by following the instructions below.
+Currently (Dec., 2019), a newly launched firewall instance is on version 9.0.3.xfr.  If the Panorama instance version is on 8.1.x, upgrade it to version 9.0.3.xfr or higher version by following the instructions below.
 
 Go to Panorama --> Dynamic Updates, click "Check Now", select the latest version in "Applications and Threats", download and install.
 
@@ -100,10 +100,10 @@ Template and template stack are used to configure Network properties, such as in
       You should create a template for each firewall group: One for the FireNet primary gateway and one for FireNet backup gateway.
 
  #. **Configure Template**
-      Add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), and a route table. Do not name the route table as "default" since this may conflict with the firewall's default route table.
+      Add interfaces (ethernet1/1, ethernet1/2), zones (LAN, WAN), and Virtual Routers (route tables). Do not name the route table as "default" since this may conflict with the firewall's default route table.  Please refer to the step 7 and 10 of  https://docs.aviatrix.com/HowTos/config_paloaltoVM.html
 
  #. **Create Template Stack**
-      A Template stack is a bundle to bound template with managed devices. When creating, select templates (can be multiple) and devices. For example,  create one template stack for each firewall group, one for primary FireNet gateway, one for backup FireNet gateway. Remember the template stack name. Commit and push.
+      A Template stack is a bundle to bound templates with managed devices. When creating, select template(s) and devices.  Create one template stack for the primary FireNet gateway, another for backup FireNet gateway. Remember the template stack name. Commit and push.
 
 d. Create Device Group
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,10 +111,11 @@ d. Create Device Group
 A Device Group is used to manage all the firewall policies.
 
  1. **Add Device Group**
-      Go to Panorama --> Device Groups, click "Add" to create a new device group. Add the template created from the previous step. Remember the device group name, for example "west2-firenet-primary".
+      Go to Panorama --> Device Groups, click "Add" to create two new device groups for FireNet GW HA. Add managed VMs to each device group. Remember the device group name, for example "west2-firenet-primary".
 
- #. **Add Example Policy**
-      Add "allow-all" policy to the just created device group.
+The following 3 # steps, please refer to the step 8 and 9 of https://docs.aviatrix.com/HowTos/config_paloaltoVM.html
+ #. **Add Example Policy** (Optional if internet traffic is needed) 
+      Add "Outbound" policy to the just created device group.
 
  #. **Add Egress Policy** (Optional)
       If you plan to deploy Egress inspection, add source-nat and security outbound rule policies
