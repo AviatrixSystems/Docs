@@ -16,7 +16,7 @@ The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `Step 7
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file 
 for SSH access to the instance. 
 
-Below are the steps to setup an "Allow ALL" policy. 
+Below are the steps for initial setup. 
 
 1. Download VM-Series Access Key
 ----------------------------------
@@ -65,8 +65,12 @@ Go to Firewall Network workflow, Step 7a. Click on the `Management UI`. It takes
 Login with Username "admin". Password is the password you set at the previous step. 
 
 4. Activate VM license
+------------------------
+
 5. Dynamic updates
-  From Device -> Dynamic Updates -> Click on "Check Now" -> download and then install latest versions of a. Applications and Threats b. Wildfire updates -> Click on "Check Now" again-> download and then install latest version of Antivirus
+------------------------
+
+From Device > Dynamic Updates > Click on "Check Now" > download and then install latest versions of a. Applications and Threats b. Wildfire updates > Click on "Check Now" again > download and then install latest version of Antivirus
 
 6. Configure VM-Series ethernet1/1 with WAN Zone
 -------------------------------------------------
@@ -104,36 +108,29 @@ Click Commit. Once Commit is complete, you should see the Link State turn green 
 8. Configure Allow Outbound Policies
 ---------------------------------
 
- - Click Policies tab.
- - Click +Add at the bottom left corner to create a new policy.
- - Click General tab. Name the policy Outbound.
- - Click Source tab. Select LAN zone.
- - Click Destination tab. Select WAN zone.
- - Click Application tab. Select Any.
+Policies > Security > Click "Add" > Name the policy Outbound > Source tab, Select LAN zone >  Destination tab. Select WAN zone > Click "OK"
 
 9. Configure NAT for egress
 ------------------------------
 
 If you would also like to enable NAT to test egress, follow these steps. 
 
- a. Click Policies
- b. Click NAT
- c. Click +Add
- d. Click General tab, give it a name
- e. Click Original Packet. At Source Zone, click +Add, select "LAN". At Destination Zone, select WAN. At Destination Interface, select Ethernet1/1, as shown below.
+Policies > NAT > Click "Add" > Click General tab, give it a name > Click Original Packet. At Source Zone, click Add, select "LAN". At Destination Zone, select WAN. At Destination Interface, select Ethernet1/1, as shown below.
 
  |nat_original_packet| 
 
- f. Click Translated Packet. At Translation Type, select "Dynamic IP And Port". At Address Type, select "Interface Address". At Interface, select "ethernet1/1", as shown below. 
+ Click Translated Packet. At Translation Type, select "Dynamic IP And Port". At Address Type, select "Interface Address". At Interface, select "ethernet1/1", as shown below. 
 
  |nat_translated_packet|
 
-10. Configure Virtual Router
-
+10. Configure Default Virtual Router
+------------------------------
 Under Network > Virtual Routers > Static Routes > Click on "Default"
 
 Destination : 0.0.0.0/0
+
 Interface : ethernet1/1
+
 Next Hop : None
 
 Click "Commit"
