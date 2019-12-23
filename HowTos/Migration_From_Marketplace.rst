@@ -32,6 +32,7 @@ Prerequisites
 
 * An S3 bucket in the AWS account linked to your Aviatrix Controller (will be used for backups).
 * Your IAM policy must be updated in all your AWS accounts. Please refer the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`__ to update your IAM policies.
+* Make sure you delete the controller HA cloud formation stack. This is important to avoid the backup configuration being corrupted which may result in controller migration failure.
 
 Step 1 - Enable Backup
 ======================
