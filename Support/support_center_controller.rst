@@ -273,9 +273,10 @@ In case if you lost or forget the password to AVX console, please use next steps
 1. Press “Forgot password” from the login page
 |login_page|
 
-2. Check email and find the one time token inside:
-Message format is :
+2. Check email and find the one time token inside. Message format is :
+
 <<ONE TIME TOKEN>> is the one time Aviatrix token from controller <<IP ADDR AVX CONTROLLER>> and is valid for 15 minutes.
+
 Please pay attention that the token expires in 15 minutes. If you repeatedly get this and think that this is being done by someone with malicious intent, you can restrict the IP's allowed to access your controller through AWS's Security Groups
 
 3. Enter Access Token in Account Verification window:
