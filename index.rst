@@ -205,6 +205,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/S2C_GW_CP
    HowTos/S2C_GW_ASA
    HowTos/S2C_GW_IOS
+   HowTos/site2cloud_sonicwall
    HowTos/CloudToPfSense
    HowTos/site2cloud_fortigate
    HowTos/site2cloud_meraki
