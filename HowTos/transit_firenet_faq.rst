@@ -46,6 +46,15 @@ interfaces:
  - eth2 is the interface to the firewall instances 
  - eth3 is the interface to the HA FireNet gateway
 
+What is the Transit FireNet performance?
+-------------------------------------------
+
+With a pair of c5n.18xlarge Aviatrix Transit Gateway, Transit FireNet achieves 70Gbps throughput with iperf3 benchmark, as shown in the diagram below. 
+
+Note if a single c5n.18xlarge Aviatrix Transit Gateway is deployed, the throughput is about 40Gbps. This is because Aviatrix Encrypted Transit solution runs with ActiveMesh where both Transit Gateways do the packet forwarding. 
+
+|transit_firenet_perf|
+
 Which option should I choose for "Create a VPC" tool"?
 ----------------------------------------------------------
 
@@ -116,6 +125,9 @@ if you stop the instance from AWS console, it can take a minute before the API a
 
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
+   :scale: 30%
+
+.. |transit_firenet_perf| image:: transit_firenet_media/transit_firenet_perf.png
    :scale: 30%
 
 .. |transit_firenet_vnet| image:: transit_firenet_media/transit_firenet_vnet.png
