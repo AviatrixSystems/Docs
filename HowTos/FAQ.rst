@@ -168,17 +168,18 @@ This scenario is explained in detail `here <https://docs.aviatrix.com/HowTos/con
 
 
 What are the events that the Aviatrix Controller monitors?
----------------------------------------------------
+--------------------------------------------------------------
 
- 1. VPN tunnel status. Alert when it goes down and alert when it comes back up.
- #. Gateway health status. Alert when gateway goes to down state. Alert when it comes back up.
- #. Overlap network CIDR range. Alert when BGP routes overlap. 
- #. Route limit. Alert when BGP route limits reach a threshold. 
- #. TGW Auditor. Monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
- #. IAM policy. Alert when account IAM policy is not up to date. 
- #. Guard Duty integration. Alert and block malicious IP addresses.
- #. Blackhole route. Alert when VPC route table has inactive routes.  
- #. Public subnet. Alert when there are unwanted instances launched on specific public subnets. 
+ 1. **VPN tunnel status** Alert when it goes down and alert when it comes back up.
+ #. **Gateway health status** Alert when gateway goes to down state. Alert when it comes back up.
+ #. **Overlap network CIDR range** Alert when BGP routes overlap. 
+ #. **Route limit** Alert when BGP route limits reach a threshold. 
+ #. **TGW Auditor** Monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
+ #. **IAM role and policy** Alert when account IAM policy is not up to date or being deleted. 
+ #. **Guard Duty integration** Alert and block malicious IP addresses.
+ #. **Black hole route** Alert when VPC route table has inactive routes.  
+ #. **Public subnet** Alert when there are unwanted instances launched on specific public subnets. 
+ #. **CPU/Memory/Disk** Alert when gateway memory or disk space reaches 95% of its capacity.
  
 
 
@@ -402,6 +403,23 @@ How to launch the Controller by Terraform?
 ---------------------------------------------
 
 Terraform for Controller launch is supported as a community project on github on `this Aviatrix repo. <https://github.com/AviatrixSystems/terraform-modules>`_
+
+How to migrate a Controller from a Metered license to BYOL license?
+-----------------------------------------------------------------------
+
+Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+
+What is the best practice to ensurer high availability of Controller?
+------------------------------------------------------------------------------
+
+The best practice is to enable `backup and restore function <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
+In the event of Controller being terminated or become non functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+
+Since Aviatrix Controller is not in the data plane, temporary loss of the Controller does not affect the existing tunnels or packet forwarding. 
+
+For AWS deployment, you can also enable `Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ for auto recovery when the current Controller becomes unhealthy. 
+
+
 
 Do you have the CloudFormation source code for launch the Controller?
 -------------------------------------------------------------------------
