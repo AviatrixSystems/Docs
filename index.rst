@@ -276,6 +276,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/controller_certificate
    HowTos/fips140-2
    HowTos/controller_config
+   HowTos/Migration_From_Marketplace
 
 .. _Troubleshoot:
 

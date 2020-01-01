@@ -3,18 +3,17 @@
    :keywords: Marketplace, migration, licensing, Aviatrix, AWS
 
 ==============================================================================
-Migrating from one Aviatrix Controller AMI to another
+Migrating Aviatrix Controller AMI 
 ==============================================================================
 
 Introduction
-============
+==============
 
-This document outlines all the steps necessary to migrate from one Aviatrix Controller AMI to another.
+This document outlines the steps to migrate from one type of Aviatrix Controller AMI to another. The use case may be 
+migrating from Metered AMI to BYOL AMI or vice versa. You can also use this procedure to migrate to a newer Controller AMI.
 
-.. tip::
-   This document applies to migrating from an old controller to a new controller AMI within the same subscription or moving from one subscription to another.
 
-   .. note::
+.. note::
       For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license.  Make sure you already have subscribed BYOL AMI. 
       
 Prerequisites
@@ -50,7 +49,7 @@ Step 1 - Enable Backup
 Step 2 - Stop the current Aviatrix Controller instance
 ======================================================
 
-.. note::
+.. important::
    If the Controller has `HA enabled <controller_ha.html#enable-controller-ha>`__, you must first `disable the Controller HA <controller_ha.html#disable-controller-ha>`__.
 
 On the AWS console proceed to **Stop** the existing Aviatrix Controller instance.
