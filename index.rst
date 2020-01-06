@@ -365,6 +365,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/nextgentransit_for_azure
    HowTos/nat_only_outbound_traffic
    HowTos/activemesh_migration
+   HowTos/openvpn_fqdn
 
 .. _Good To Know:
 
