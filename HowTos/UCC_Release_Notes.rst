@@ -137,7 +137,7 @@ R5.1.842 (10/1/2019)
 ---------------------------------
 
  - **Firewall Network load balancing from TGW** allows both primary gateway and backup gateway to present its ENI interface so that packets initiated from the Spoke VPCs can be forwarded to both gateways in the AZ affinity or nearest AZ affinity fashion.  
- - **Management access from On-Prem** allows on-prem to access privately (SSH or HTTPS) the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable. Note in this release, both accessing from on-prem via Aviatrix Edge Domain and accessing from TGW plus DXGW/VPN are supported.
+ - **Management access from On-Prem** allows on-prem to connect with private IP address of the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable. Note in this release, both accessing from on-prem via Aviatrix Edge Domain and accessing from TGW plus DXGW/VPN are supported.
  - **Improve FireNet gateway failover time** to be under 16 seconds. 
 
 2. Networking
