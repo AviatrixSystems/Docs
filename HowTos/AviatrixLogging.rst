@@ -341,6 +341,7 @@ On the Aviatrix Controller:
   #. Server Public Certificate: Public certificate of the controller signed by the same CA
   #. Server Private Key: Private key of the controller that pairs with the public certificate
   #. Protocol:	TCP or UDP (TCP by default)
+  #. Optional Custom Template: (Deprecated)
   
 On the Remote syslog server:
 
@@ -405,30 +406,13 @@ Then
         a. auth.log
         #. syslog
  
-3.2 Logstash Forwarder
+3.2 Filebeat Forwarder
 -----------------------
 On the Aviatrix Controller:
-  a. Server Type:	Remote or Local
-  #. Server:	FQDN or IP address of logstash server
+  a. Server:	FQDN or IP address of logstash server
   #. Port:	Listening port of logstash server (5000 by default)
-  #. Trusted CA:	CA certificate (.crt format)
+  #. Optional Configuration File:	(Deprecated)
 
-Note:
-If "Local" is selected for "Server Type", the Aviatrix Controller itself will be enabled as a logstash server. Before you do this, make sure your controller has at least 30GB of hard disk space. 
-
-On the Logstash console:
-  Log into the web page of your logstash server to access the logs. 
-
-  The Kibana interface is divided into four main sections:
-  
-  a. Discover
-	By default, this page will display all of your most recently received logs. You can filter through and find specific log messages based on Search Queries, then narrow the search results to a specific time range with the Time Filter. 
-  b. Visualize
-	The Visualize page is where you can create, modify, and view your own custom visualizations.
-  c. Dashboard
-	The Dashboard page is where you can create, modify, and view your own custom dashboards. With a dashboard, you can combine multiple visualizations onto a single page, then filter them by providing a search query or by selecting filters by clicking elements in the visualization.
-  d. Settings
-	The Settings page lets you change a variety of things like default values or index patterns.
 
 3.3 Splunk Logging
 -------------------
@@ -436,6 +420,7 @@ On the Aviatrix Controller:
   a. How to configure:	Manual Input or Import File
   #. Splunk Server:	FQDN or IP address of Splunk Enterprise Server
   #. Splunk Server Listening Port:	Listening port of Splunk Enterprise Server
+  #. Splunk inputs.conf stanza: (Deprecated)
 
 Note:
 If "Import File" is selected for "How to configure", please provide the Splunk configuration file. 
@@ -444,7 +429,10 @@ If "Import File" is selected for "How to configure", please provide the Splunk c
 -------------------
 On the Aviatrix Controller:
    a. Access ID : ID of SumoLogic server
-   b. Access Key: Access key of SumoLogic server
+   #. Access Key: Access key of SumoLogic server
+   #. Source Category: The category string of the source
+   #. Additional Configurations: (Deprecated)
+
 Steps to `upgrade <http://docs.aviatrix.com/HowTos/sumologic_upgrade.html>`_
 Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 
