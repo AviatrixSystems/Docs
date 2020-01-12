@@ -10,13 +10,22 @@ Insane Mode CloudN Deployment Checklist
 When Insane Mode is applied to improve encryption performance between on-prem and cloud, you need to deploy the Aviatrix hardware appliance CloudN. Making this use case work requires edge router configurations. This document lists the checklist you should follow in 
 successfully deploying Insane Mode for hybrid connection. 
 
+CloudN Insane Mode can be applied to hybrid connection by AWS Direct Connect or Azure Express Route. CloudN can also be applied to hybrid 
+connection by Internet. 
 
-Step 1. Deployment  Architecture 
----------------------------------------
 
-The first step is to understand how routing works in this use case, as demonstrated in the diagram below.
+Step 1. Understand Deployment Architecture 
+----------------------------------------------
 
-|insane_mode_howto| 
+The first step is to understand how routing works in this use case.
+
+Step 1.1 Connection Direct Connect or Express Route
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you use AWS Direct Connect or Azure Express Route to connect to your data center, the deployment architecture is 
+demonstrated in the diagram below. The diagram uses AWS Direct Connect for illustration purpose, the architecture applies to Azure Express Route. 
+
+|insane_mode_howto_dx| 
 
 The key ideas for this scenario are:
 
@@ -44,6 +53,27 @@ Redundant DX Deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |deployment_dual_dx|
+
+Step 1.2 Connection over Internet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you use high speed Internet to connect to data center, the deployment architecture is described as below. 
+
+
+|insane_mode_howto_internet| 
+
+Key ideas are listed below:
+
+  - CloudN LAN and WAN interfaces do not use public IP addresses. It relies on edge router for Internet connectivity. 
+  -  CloudN LAN interface runs a BGP session to the edge router where the edge router advertises on-prem network address range to CloudN LAN interface.
+  -  CloudN WAN interface runs a BGP session to Aviatrix Transit Gateway in the Transit VPC where Aviatrix Transit Gateway advertises all Spoke VPC CIDRs to CloudN and CloudN advertises on-prem network to the Aviatrix Transit Gateway.
+
+Example deployment diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|deployment_internet|
+
+  
 
 Step 2. Pre-deployment Request Form 
 ------------------------------------
@@ -154,6 +184,9 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
 .. |deployment_ha| image:: insane_mode_media/deployment_ha.png
    :scale: 30%
 
+.. |deployment_internet| image:: insane_mode_media/deployment_internet.png
+   :scale: 30%
+
 .. |deployment_dual_dx| image:: insane_mode_media/deployment_dual_dx.png
    :scale: 30%
 
@@ -163,7 +196,10 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
 .. |insane_routing| image:: insane_mode_media/insane_routing.png
    :scale: 30%
 
-.. |insane_mode_howto| image:: insane_mode_media/insane_mode_howto.png
+.. |insane_mode_howto_dx| image:: insane_mode_media/insane_mode_howto_dx.png
+   :scale: 30%
+
+.. |insane_mode_howto_internet| image:: insane_mode_media/insane_mode_howto_internet.png
    :scale: 30%
 
 .. |InsaneBeta| image:: insane_mode_media/InsaneBeta.png
