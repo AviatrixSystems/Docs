@@ -60,23 +60,23 @@ Example Config for Checkpoint VM in AWS
 
 7b.11	Go to Network Management > Network Interfaces. You should simply double-check whether all interfaces are active and with a valid IP address;
 
-7b.12	The next step is to update the route table. For the purpose of this guide, we suggest adding three routes, each for a RFC1918 address pointing to the private IP of the eth2/ENI of the Aviatrix gateway in question (whether you are attaching the instance to the main or to the backup gateway). Please go to the AWS console EC2 > Network Interfaces and filter by “_eth2” – the results should include at least the eth2 of both Aviatrix gateways;
+7b.12	 The next step is to update the route table. For the purpose of this guide, we suggest adding three return routes, each for a RFC1918 address pointing back to the VPC router of the subnet aviatrix*dmz-firewall (or aviatrix*hagw-dmz-firewall if you are attaching the instance to the backup gateway instead).  Please go to the AWS console > VPC > Subnets and filter by “dmz-firewall” – that will allow you to determine the VPC router IP, which is the first host of each subnet
 |image10|
 7b.13	Once you have determined the IP of the next hop, just go to IPv4 Static Routes and click on “Add”. Repeat this step for all three RF1918 subnets
 |image11|
-7b.14	Great. Now please download and install the SmartConsole if you have not done it already (please refer to item 7c.1). On SmartConsole you need to define a security policy that will allow the traffic to be inspected/logged and update the topology;
+7b.14	Great. Now please download and install the SmartConsole if you have not done it already (please refer to item 7b.1. On SmartConsole you need to define a security policy that will allow the traffic to be inspected/logged and update the topology
+
 7b.15	In the SmartConsole go to via Security Policies and then Policy and change the default policy to ‘accept’ traffic and to ‘Log’ it as well. This can (and SHOULD) be customized to comply with your project requirements. Finally, install the policy on the gateway(s) in question. Your basic policy should look like this
 |image12|
-7b.16	Please note that as soon as you attach an EIP to any instance, it will start receiving random hits from the Internet and you should guarantee that unwanted traffic is simply being dropped, so you don’t pay for “rejects/resets” being sent from of your firewall/VPC
-7b.17	As per the topology page, it can be reached via Gateways & Servers and a double-click on the gateway itself. Then click on Network Management > Get Interfaces.
+7b.16   As per the topology page, it can be reached via Gateways & Servers and a double-click on the gateway itself. Then click on Network Management > Get Interfaces.
 |image13|
 
-7b.18	The final step is to monitor your traffic to confirm that the inspection is being performed as configured. Go to Logs & Monitor:
+7d.17	The final step is to monitor your traffic to confirm that the inspection is being performed as configured. Go to Logs & Monitor:
 |image14|
 
-7b.19	Great. You are now good to repeat this process to add more instances to talk to the active gateway and also to the backup gateway. The difference regarding the backup gateway attachment is that the subnets will likely be in a different AZ
+7d.18	You are now good to repeat this process to attach another CloudGuard instance to the backup Aviatrix gateway. The difference regarding the backup gateway attachment is that the subnets should be in a different AZ
 
-7b.20 For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+7b.29 For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 
 .. |image1| image:: ./config_Checkpoint_media/image1.png
