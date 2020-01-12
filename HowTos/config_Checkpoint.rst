@@ -71,12 +71,12 @@ Example Config for Checkpoint VM in AWS
 7b.16   As per the topology page, it can be reached via Gateways & Servers and a double-click on the gateway itself. Then click on Network Management > Get Interfaces.
 |image13|
 
-7d.17	The final step is to monitor your traffic to confirm that the inspection is being performed as configured. Go to Logs & Monitor:
+7b.17	The final step is to monitor your traffic to confirm that the inspection is being performed as configured. Go to Logs & Monitor:
 |image14|
 
-7d.18	You are now good to repeat this process to attach another CloudGuard instance to the backup Aviatrix gateway. The difference regarding the backup gateway attachment is that the subnets should be in a different AZ
+7b.18	You are now good to repeat this process to attach another CloudGuard instance to the backup Aviatrix gateway. The difference regarding the backup gateway attachment is that the subnets should be in a different AZ
 
-7b.29 For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+7b.1    9 For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 
 .. |image1| image:: ./config_Checkpoint_media/image1.png
