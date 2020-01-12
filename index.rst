@@ -366,6 +366,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/nat_only_outbound_traffic
    HowTos/activemesh_migration
    HowTos/openvpn_fqdn
+   HowTos/HowTo_Setup_SAML_with_G_SUITE_ORG
 
 .. _Good To Know:
 
