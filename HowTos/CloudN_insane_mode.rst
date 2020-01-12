@@ -19,8 +19,8 @@ Step 1. Understand Deployment Architecture
 
 The first step is to understand how routing works in this use case.
 
-Step 1.1 Connection Direct Connect or Express Route
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 1.1 Connection over Direct Connect or Express Route
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you use AWS Direct Connect or Azure Express Route to connect to your data center, the deployment architecture is 
 demonstrated in the diagram below. The diagram uses AWS Direct Connect for illustration purpose, the architecture applies to Azure Express Route. 
