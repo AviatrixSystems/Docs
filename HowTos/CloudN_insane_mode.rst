@@ -64,7 +64,7 @@ If you use high speed Internet to connect to data center, the deployment archite
 
 Key ideas are listed below:
 
-  - CloudN LAN and WAN interfaces do not use public IP addresses. It relies on edge router for Internet connectivity. 
+  - CloudN LAN and WAN interfaces do not use public IP addresses. It relies on edge router or Firewall NAT function and Internet connectivity. 
   -  CloudN LAN interface runs a BGP session to the edge router where the edge router advertises on-prem network address range to CloudN LAN interface.
   -  CloudN WAN interface runs a BGP session to Aviatrix Transit Gateway in the Transit VPC where Aviatrix Transit Gateway advertises all Spoke VPC CIDRs to CloudN and CloudN advertises on-prem network to the Aviatrix Transit Gateway.
 
