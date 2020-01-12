@@ -18,9 +18,13 @@ below.
 
 |s3_public_vif|
 
+Using public VIF bypass all VPC constructs.
+
 Even when you use S3 private Endpoint service, the endpoint is still represented by the public CIDR blocks representing AWS S3 in the region as shown below:
 
 |s3_endpoint|
+
+Note there is Endpoint policy but it controls who can use the Endpoint service, it does not control which destination S3 bucket the request can be granted. 
 
 Another example: Your customers need to send data to AWS S3 buckets but you need to apply control to the activities as to which user and which buckets are available to upload objects. The current solution does not grant access control when using public VIF to advertise the S3 address range. 
 
