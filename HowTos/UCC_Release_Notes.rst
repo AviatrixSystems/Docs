@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R5.2.2071 (1/10/2019)
+=========================
+
+ - **Bug fix** on-prem adverting the default route 0.0.0.0/0 via TGW DXGW is not propagated through Aviatrix Transit Peering. 
+ - **Bug fix** Fix exception when using "Export to Terraform" feature with Aviatrix created VPC resource. 
+ - **Enhancement** to reduce failover time for Connected Transit deployment.
+
 R5.2.2047 (12/19/2019)
 ========================
 
