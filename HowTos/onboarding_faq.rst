@@ -70,9 +70,8 @@ credentials being compromised.
 Can an Aviatrix Access Account be multi-cloud?
 -----------------------------------------------
 
-An Aviatrix Cloud Account can correspond to multiple cloud accounts. For
-example, it can contain credentials for an AWS IAM account, Azure
-account and GCloud account.
+No. An Aviatrix Cloud Account corresponds to one cloud account of one cloud type. 
+You can create multiple Cloud Accounts to support multi cloud and multi account deployment environment.
 
 How do we apply Azure role-based access control to an Aviatrix Azure account?
 --------------------------------------------------------------------------
