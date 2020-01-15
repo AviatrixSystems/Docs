@@ -393,12 +393,16 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_center_controller
    Support/support_center_openvpn_gateway
    Support/support_center_transit_solution
+   Support/support_center_egress_firewall
    Support/support_center_logging
    Support/support_center_site2cloud
-   Support/support_center_aws_infrastructure
-   Support/support_center_terraform
-   Support/support_center_egress_firewall
    Support/support_center_ipsec
+   Support/support_center_aws_infrastructure
+   Support/support_center_gcp_infrastructure
+   Support/support_center_terraform
+   Support/support_ticket_priority
+   Support/support_center_useful_tools
+   Support/support_center_cloudn
 
 .. _IPmotion:
 
