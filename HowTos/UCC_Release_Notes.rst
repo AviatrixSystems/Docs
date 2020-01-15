@@ -2,7 +2,39 @@
 Release Notes
 =======================================
 
-R5.2.2071 (1/10/2019)
+R5.3 (Coming soon)
+=====================
+
+1. Networking 
+--------------------
+
+ - **AWS Transit Gateway (TGW) Inter Region Peering**
+ - **Approval Process for BGP Learned Routes** 
+ - **Aviatrix Transit Gateway 
+ - **CloudWAN Customize routes on CloudWAN with Tags**
+ - **CloudWAN Saves Multiple IOS Config Versions** 
+ - **User VPN Scale Out with AWS NLB UDP** 
+
+2. Security
+--------------
+
+ - **Aviatrix Transit FireNet for Azure**
+ - **FireNet Fail Close**
+
+3. Operation
+-------------
+
+ - **Role Based Access Control**
+ - **FlightPath to support IP address**
+ - **User VPN Cert Issue Date** 
+ - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. 
+
+R5.2.2092 (1/15/2020)
+=======================
+
+ - **Bug fix** Change GCP VPC firewall rule default behavior to allow traffic to pass instead of dropping. 
+
+R5.2.2071 (1/10/2020)
 =========================
 
  - **Bug fix** on-prem adverting the default route 0.0.0.0/0 via TGW DXGW is not propagated through Aviatrix Transit Peering. 
