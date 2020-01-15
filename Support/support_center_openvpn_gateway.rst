@@ -311,6 +311,7 @@ If you have deployed a TCP based Aviatrix OpenVPN Gateways behind an AWS Elastic
 
   * IP Address: AWS Load Balancers' public IP
   * Port: 443
+  * Please note that the Network Load Balancer will communicate with the Aviatrix OpenVPN Gateways on port 943. Since the source IP's are preserved, you need to keep this port open to 0.0.0.0/0 to allow all clients to connect.
 
 If you have deployed a UDP based OpenVPN Gateway (i.e. without an ELB enabled)
 
