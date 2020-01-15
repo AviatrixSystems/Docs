@@ -1,6 +1,6 @@
 ﻿.. meta::
    :description: Aviatrix Support Center
-   :keywords: Aviatrix, Support, Support Center
+   :keywords: Aviatrix, Support, Support Center, openvpn, saml, aviatrix vpn client, .ovpn file, okta token authentication, openvpn profiles, tunnelblick, ldap, csv upload
 
 ===========================================================================
 OpenVPN Gateway
