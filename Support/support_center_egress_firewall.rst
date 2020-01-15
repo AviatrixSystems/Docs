@@ -21,7 +21,8 @@ White lists should specifically be used for access to applications or access to 
 Which policies are executed first - egress or firewall?
 ----------------------------------------------------------------------------
 
-The policies for 80/443 are executed first followed by the other policies
+The policies for 80/443 are executed first followed by the other policies.
+FQDN takes precedence over Stateful Firewall.
 
 
 
