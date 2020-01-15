@@ -10,7 +10,6 @@ R5.3 (Coming soon)
 
  - **AWS Transit Gateway (TGW) Inter Region Peering**
  - **Approval Process for BGP Learned Routes** 
- - **Aviatrix Transit Gateway 
  - **CloudWAN Customize routes on CloudWAN with Tags**
  - **CloudWAN Saves Multiple IOS Config Versions** 
  - **User VPN Scale Out with AWS NLB UDP** 
@@ -32,7 +31,7 @@ R5.3 (Coming soon)
 R5.2.2092 (1/15/2020)
 =======================
 
- - **Bug fix** Change GCP VPC firewall rule default behavior to allow traffic to pass instead of dropping. 
+ - **Bug fix** Aviatrix Active Mesh Transit Gateway takes exception when building Transit Peering. 
 
 R5.2.2071 (1/10/2020)
 =========================
