@@ -111,27 +111,16 @@ Configuration WorkFlow:
         IPSec Crypto Profile              IPSec crypto profile created at Step 4.d
       ===============================     =========================================
         Note: There is no need to configure proxy-id
-      
-   f. Under **Network > Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new
-      route destinating to private subnet CIDR of the remote network.
 
-      |image12|
-
-      ===============================     =================================================================
-        **Field**                         **Value**
-      ===============================     =================================================================
-        Destination                       private subnet CIDR of the remote network(here VPC1 private subnet).
-        Interface                         Tunnel interface created at Step 4.a
-      ===============================     =================================================================
-
-   g. Commit the configuration.
+   f. Commit the configuration.
 
 
 5. Steps to configure BGP:
  a. Go to Network > Virtual Routers Default > BGP > peer group
     click add give any name(e.g bgppeering) and then click on the left bottom to add BGP peer
     |image13|
- b.Peer is created as follows by giving sample name dummy:
+ b.Peer is created as follows by giving sample name:
+    Enter the peer AS
     Created name: Name of the BGP peer (e.g.dummy)
     Local address:
            Interface -> tunnel interface
@@ -145,17 +134,21 @@ Configuration WorkFlow:
    Router ID is taken from the config file downloaded.(it should be the IP address of the tunnel created )
     |image16|
 
- e. Next click on redistribution rules and do the following:
-    Network -> default -> BGP -> Redistribution Rules -> Click on Add
-    Select ipv4 and give the subnet which you want to redistribute(e.g., here Loopback interface is redistributed)like
-    below image
+ e. Create a new Distribution Profile:
+    Network -> default -> Redistribution Profile -> Add -> Name: redis -> Check "Redist" -> General Filter -> 
+    Source Tupe: check "connect"
+        |image17|
+
+ f. Next click on redistribution rules and do the following:
+    Network -> default -> BGP -> Redistribution Rules -> Add -> select "redis" on e.    
     |image18|
+    
     Click on Match->Address prefix box  -> add -> (previously added ipv4 subnet) -> click on OK
     |image19|
- f. After the BGP route has been advertised it shows like the following image.
+ g. After the BGP route has been advertised it shows like the following image.
    Go to Network -> More runtime stats -> BGP -> RIB out.
     |image20|
- g. Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
+ h. Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
    Steps to create the Management profile and attach it to the interface:
      Click on Network profiles->. Interface management -> create the interface as below by giving a name and selecting
      ping and attach it to the tunnel.
