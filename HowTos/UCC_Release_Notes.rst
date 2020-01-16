@@ -12,19 +12,26 @@ R5.3 (Coming soon)
  - **Approval Process for BGP Learned Routes** 
  - **CloudWAN Customize routes on CloudWAN with Tags**
  - **CloudWAN Saves Multiple IOS Config Versions** 
- - **User VPN Scale Out with AWS NLB UDP** 
+ - **Use NLB to load balance UDP based User VPN** allows you to use AWS Network Loadbalancer for UDP traffic to scale out User VPN solution. The advantage for the deployment is improved throughput performance comparing to TCP based VPN solution.  
 
 2. Security
 --------------
 
  - **Aviatrix Transit FireNet for Azure**
- - **FireNet Fail Close**
+ - **Aviatrix Transit Gateway supports multiple TGW Security Domains**
+ - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case.  
+ - **Fortinet FortGate** can be launched from Aviatrix Controller for FireNet use case.
+ - **Secure S3 Transfer** allows you to leverage Direct Connect to access S3 buckets while preventing data leakage. 
+ - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. 
 
 3. Operation
 -------------
 
  - **Role Based Access Control**
  - **FlightPath to support IP address**
+ - **FlightPath for Azure**
+ - **FlightPath for GCP**
+ - **Dynamically display packets while packet capture is on** allows you to view the packet summary on the Controller console while they are being captured. 
  - **User VPN Cert Issue Date** 
  - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. 
 
