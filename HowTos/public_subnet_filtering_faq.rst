@@ -88,6 +88,13 @@ How to view blocked malicious IPs?
 After the filtering gateway is launched and AWS GuardDuty is enabled from the previous steps, view blocked malicious IPs by going
 to Security -> Public Subnet. Highlight the PSF gateway, click the 3 dots skewer, click Show Details. Scroll down to Blocked Malicious IPs.
 
+Do the public subnet instances keep their public IP addresses with FQDN function?
+-----------------------------------------------------------------------------------
+
+Yes. When you enable FQDN filtering for public subnets, packets initiated from the instances on the public subnet do not 
+get NATed when going through FQDN filtering gateway, the source public IP address of a public subnet instance is preserved. 
+
+
 .. |public_subnet_filter| image::  public_subnet_filtering_faq_media/public_subnet_filter.png
    :scale: 30%
 
