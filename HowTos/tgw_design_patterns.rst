@@ -134,13 +134,16 @@ Aviatrix supports TGW VPN and TGW Direct Connect for connecting to remote site o
 
 |firenet|
 
-Secure Transit with DMZ Firewalls
------------------------------------
+Connecting to AWS & Azure China Regions
+----------------------------------------
 
-Firewalls can be deployed in the Transit VPC for a centralized Ingress and Egress security solution, 
-as shown below. . 
+If the majority of deployment is outside China regions, the best way to connect China region VPC or VNets are to 
+use the cloud native AWS VGW or Azure VPN gateway and connect them to Aviatrix Transit Gateway by IPSec tunnels, as 
+shown in the diagram below. 
 
-|transit-DMZ|
+|tgw_china|
+
+
 
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
    :scale: 30%
@@ -167,6 +170,9 @@ as shown below. .
    :scale: 30%
 
 .. |transit-DMZ| image:: tgw_design_patterns_media/transit-DMZ.png
+   :scale: 30%
+
+.. |tgw_china| image:: tgw_design_patterns_media/tgw_china.png
    :scale: 30%
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
