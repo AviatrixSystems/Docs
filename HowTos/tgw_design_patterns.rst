@@ -140,6 +140,7 @@ Connecting to China Regions
 If the majority of deployment is outside China regions, the best way to connect China region VPC or VNets are to 
 use the cloud native AWS VGW or Azure VPN gateway and connect them to Aviatrix Transit Gateway by IPSec tunnels, as 
 shown in the diagram below. This architecture applies to all other cloud providers that have presence in China regions. 
+On the Aviatrix side, use the option `External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ when making the connection.
 
 |tgw_china|
 
@@ -148,7 +149,7 @@ Connecting to Other Cloud Providers
 
 To connect any network of a cloud provider is not AWS, Azure, Google GCP and Oracle Cloud, use the native VPN gateway of these
 cloud providers to build VPN tunnels to the Aviatrix Transit Gateway to connect to the rest of the deployment, as shown 
-in the diagram below. 
+in the diagram below. On the Aviatrix side, use the option `External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ when making the connection.
 
 |tgw_other_cloud| 
 
