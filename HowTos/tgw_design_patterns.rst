@@ -143,6 +143,14 @@ shown in the diagram below. This architecture applies to all other cloud provide
 
 |tgw_china|
 
+Connecting to Other Cloud Providers
+-------------------------------------
+
+To connect any network of a cloud provider is not AWS, Azure, Google GCP and Oracle Cloud, use the native VPN gateway of these
+cloud providers to build VPN tunnels to the Aviatrix Transit Gateway to connect to the rest of the deployment, as shown 
+in the diagram below. 
+
+|tgw_other_cloud| 
 
 
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
@@ -173,6 +181,9 @@ shown in the diagram below. This architecture applies to all other cloud provide
    :scale: 30%
 
 .. |tgw_china| image:: tgw_design_patterns_media/tgw_china.png
+   :scale: 30%
+
+.. |tgw_other_cloud| image:: tgw_design_patterns_media/tgw_other_cloud.png
    :scale: 30%
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
