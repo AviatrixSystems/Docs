@@ -134,12 +134,12 @@ Aviatrix supports TGW VPN and TGW Direct Connect for connecting to remote site o
 
 |firenet|
 
-Connecting to AWS & Azure China Regions
+Connecting to China Regions
 ----------------------------------------
 
 If the majority of deployment is outside China regions, the best way to connect China region VPC or VNets are to 
 use the cloud native AWS VGW or Azure VPN gateway and connect them to Aviatrix Transit Gateway by IPSec tunnels, as 
-shown in the diagram below. 
+shown in the diagram below. This architecture applies to all other cloud providers that have presence in China regions. 
 
 |tgw_china|
 
