@@ -78,6 +78,11 @@ Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress thr
 
   When Egress through Firewall is enabled, it applies to all Spoke VPCs. You do not need to configure individual VPC inspection policy.
 
+Is Ingress Inspection supported on Transit FireNet?
+----------------------------------------------------
+
+Yes. You need to enable source NAT on the LAN Interface of the VM-Series.
+
 Can I deploy Aviatrix Egress Control FQDN gateway on Transit FireNet?
 ----------------------------------------------------------------------
 
@@ -113,10 +118,17 @@ Can Firewall Network work with Panorama?
 
 Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
 
+How does the Controller check Firewall instance health?
+--------------------------------------------------------
+
+For Palo Alto VM-Series, the Controller pings its management interface. 
+
+For Check Point CloudGuard and Fortinet Fortigate, the Controller uses AWS API to check instance health. 
+
 What is the failover time?
 ----------------------------
 
-Aviatrix FireNet gateway failure detection time is 8 - 10 seconds. The switch over to alternative gateway (primary or backup) is about the same time. 
+Aviatrix FireNet gateway failure detection time is 15 - 20 seconds. The switch over to alternative gateway (primary or backup) is about the same time. 
 
 The Aviatrix Controller monitors the health of the firewall instances. For Pal Alto VM-Series, the Controller
 uses Palo Alto API to periodically check the firewall instance health. The polling time is 10 seconds. However depending 

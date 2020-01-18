@@ -4,50 +4,44 @@
 
 
 =========================================================
-Secure File Transfer to AWS S3 FAQ
+Secure S3 Transfer FAQ
 =========================================================
 
 What is the security exposure when uploading files to AWS S3 over Direct Connect?
 --------------------------------------------------------------------------------------
 
-AWS Storage Gateway supports the NFS/SMB file interface, volume interface and tape interface to S3, which is useful 
-when you want to use S3 as if it is an NFS or SMB file system. But there are times when the use case is different. 
-
-For example, you like to leverage the high speed AWS Direct Connect to copy files to S3. Since S3 is a public service, the current standard solution is to use public VIF to advertise the entire S3 public address ranges to on-prem. This implies all on-prem users can upload to any S3 bucket, including to their personal S3 buckets on their own personal account. The current solution is described as 
+If you like to leverage the high speed AWS Direct Connect to copy files to S3, the current standard solution is to use public VIF to advertise the entire S3 public address ranges to on-prem. This implies all on-prem users can upload to any S3 bucket, including to their personal S3 buckets on their own personal accounts, leading to potential confidential data leakage. The current solution is described as 
 below. 
 
 |s3_public_vif|
 
 Using public VIF bypass all VPC constructs.
 
-Even when you use S3 private Endpoint service, the endpoint is still represented by the public CIDR blocks representing AWS S3 in the region as shown below:
+Even when you use S3 private Endpoint service in a VPC to access S3 bucket, the endpoint is still represented by the public CIDR blocks representing AWS S3 in the region as shown below, 
 
 |s3_endpoint|
 
 Note there is Endpoint policy but it controls who can use the Endpoint service, it does not control which destination S3 bucket the request can be granted. 
 
-Another example: Your customers need to send data to AWS S3 buckets but you need to apply control to the activities as to which user and which buckets are available to upload objects. The current solution does not grant access control when using public VIF to advertise the S3 address range. 
-
 Same issue of data leakage occurs if you upload files to S3 over public Internet.  
 
-What is Aviatrix Secure File Transfer to AWS S3?
+What is Aviatrix Secure S3 Transfer?
 -----------------------------------------------
 
-Aviatrix Secure File Transfer (SFT) is a tool that allows you to leverage AWS Direct Connect to copy files between on-prem and S3 
-while enabling you to control from which S3 buckets and from where the file can be copied. 
+Aviatrix Secure S3 Transfer (SS3T) is a feature that allows you to leverage AWS Direct Connect to copy files between on-prem and S3 
+while enabling you to control from which S3 buckets by whitelisting the S3 buckets. 
 
 |sft_aviatrix|
 
-What are the benefits of Secure File Transfer?
+What are the benefits of Secure S3 Transfer?
 ----------------------------------------------------------------------------
 
 
 The key benefits are:
 
- 1. Transferring files between on-prem and S3 by leveraging Direct Connect without using VGW public VIF. 
+ 1. Transferring objects/files between on-prem and S3 by leveraging Direct Connect without using public VIF. 
  #. The ability for you to have control over the data transfer in and out of any AWS S3 bucket. 
  #. The ability to deploy multiple Aviatrix gateways to load balancing the data traffic.
- #. Support multiple users, multiple AWS accounts and S3 buckets. 
 
 
 How does SFT work?
