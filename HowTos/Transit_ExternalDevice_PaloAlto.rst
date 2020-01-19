@@ -44,7 +44,8 @@ Configuration WorkFlow:
    |image4|
 
 4. Log into Palo Alto Networks VM Series and configure it as following:
-   a.Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+
+   a. Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
  
       |image5|
 
@@ -112,54 +113,45 @@ Configuration WorkFlow:
       ===============================     =========================================
         Note: There is no need to configure proxy-id
       
-   f. Under **Network > Virtual Routers**, click on virtual router profile, then click **Static Routes**, add a new
-      route destinating to private subnet CIDR of the remote network.
-
-      |image12|
-
-      ===============================     =================================================================
-        **Field**                         **Value**
-      ===============================     =================================================================
-        Destination                       private subnet CIDR of the remote network(here VPC1 private subnet).
-        Interface                         Tunnel interface created at Step 4.a
-      ===============================     =================================================================
-
-   g. Commit the configuration.
+   f. Commit the configuration.
 
 
 5. Steps to configure BGP:
- a. Go to Network > Virtual Routers Default > BGP > peer group
-    click add give any name(e.g bgppeering) and then click on the left bottom to add BGP peer
-    |image13|
- b.Peer is created as follows by giving sample name dummy:
-    Created name: Name of the BGP peer (e.g.dummy)
-    Local address:
-           Interface -> tunnel interface
-           IP -> Tunnel interface Ip address.
-    Peer address:
-           Address -> remote tunnel address
-    |image14|
- c. Click on the peer created  and click OK
-    |image15|
- d. After everything is created the output looks like below:
-   Router ID is taken from the config file downloaded.(it should be the IP address of the tunnel created )
-    |image16|
 
- e. Next click on redistribution rules and do the following:
-    Network -> default -> BGP -> Redistribution Rules -> Click on Add
-    Select ipv4 and give the subnet which you want to redistribute(e.g., here Loopback interface is redistributed)like
-    below image
-    |image18|
-    Click on Match->Address prefix box  -> add -> (previously added ipv4 subnet) -> click on OK
-    |image19|
- f. After the BGP route has been advertised it shows like the following image.
-   Go to Network -> More runtime stats -> BGP -> RIB out.
-    |image20|
- g. Make sure the Interface is in the profile that allows ping and also in the Zone which is capable of sending traffic out.
-   Steps to create the Management profile and attach it to the interface:
-     Click on Network profiles->. Interface management -> create the interface as below by giving a name and selecting
-     ping and attach it to the tunnel.
-    |image21|
+   a. Go to Network > Virtual Routers Default > BGP > peer group
+      click add give any name(e.g bgppeering) and then click on the left bottom to add BGP peer
+      
+      |image13|
+
+   b. Add Peer > Created name > Enter the Peer AS > Local address: tunnel interface and Tunnel interface IP address > Peer address: remote tunnel address
+           
+      |image14|
+   
+      |image15|
+      
+   c. After everything is created the output looks like below:
+      Router ID is taken from the config file downloaded.(it should be the IP address of the tunnel created )
+      
+      |image16|
+      
+   d. Create a redistribution profile:
+      Network -> default -> Redistribution Profile -> Add -> Name: redis -> check Redist -> Source Type: connect
+      
+      |image12|
+      
+   e. Next click on redistribution rules and do the following:
+      Network -> default -> BGP -> Redistribution Rules -> Click on Add -> select "redis"
+      
+      |image18|
+      
+   f. Configure Export: Select Export, Add a name in the Rules field, and Enable the Export rule.  Add the Peer Group from which the routes will be imported.  Select Match and define the options used to filter routing information.
+      
+      |image19|
+      
+   g. After the BGP route has been advertised it shows like the following image.
+      Go to Network -> More runtime stats -> BGP -> RIB out.
+      
+      |image20|
 
 6. At AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1 private subnet with Palo Alto Networks VM LAN port as the gateway.
 
@@ -200,13 +192,13 @@ Configuration WorkFlow:
 .. |image11| image:: ./Transit_ExternalDevice_PaloAlto_media/11.png
     :width: 5.55625in
     :height: 3.26548in
-.. |image12| image:: ./Transit_ExternalDevice_PaloAlto_media/12.png
+.. |image12| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp11.png
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image13| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp1.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image14| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp2.png
+.. |image14| image:: ./Transit_ExternalDevice_PaloAlto_media/13.png
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image15| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp3.png
@@ -215,7 +207,7 @@ Configuration WorkFlow:
 .. |image16| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp4.png
     :width: 7.00000 in
     :height: 5.00000 in
-.. |image18| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp6.png
+.. |image18| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp12.png
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image19| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp7.png
