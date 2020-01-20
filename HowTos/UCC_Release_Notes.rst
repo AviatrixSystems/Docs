@@ -27,7 +27,6 @@ R5.3 (Coming soon)
 3. Operation
 -------------
 
- - **Role Based Access Control**
  - **FlightPath to support IP address**
  - **FlightPath for Azure**
  - **FlightPath for GCP**
