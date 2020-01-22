@@ -1,0 +1,141 @@
+.. meta::
+    :description: Central NAT Gateway
+    :keywords: Aviatrix, egress, NAT
+
+
+======================================================================
+Egress Transit VPC / Central NAT Gateway
+======================================================================
+
+Overview
+--------
+
+When making API requests from your AWS or Azure environment to a partner or customer, the receiving server may have a firewall with a whitelist of allowed IP addresses.  If that is the case, it is often better to provide a small set of known IP addresses that you will be making requests from to make it easier on the IT team on the receiving end.
+
+This is especially challenging to do if you have instances or containers in multiple VPCs/VNets spread out across a region (which is often the case as multi-VPC architectures become more prevalent).  Out of the box, you will most likely be required to provide a new IP address for every VPC or VNet.  However, with Aviatrix, you can narrow the outbound VPC traffic to just a handful of IP addresses.
+
+Aviatrix Solution
+-----------------
+
+Setting up a working solution with Aviatrix is quick and easy.  See the diagram below for the details on the solution.
+
+|imageUseCaseDesign|
+
+For this design, we use an Aviatrix Gateway in each of the VPCs where the requests are originating.  In the above picture, those requests orginate from "workers1", "workers 2", and "workers N" VPC.
+
+In addition, we install an Aviatrix Gateway in an "egress" VPC with an IGW connected to the internet.  Each of the worker VPCs is connected with the egress VPC via a secure tunnel.  Traffic destined for the partner network goes out that tunnel, to the Aviatrix Gateway and on to the internet via the IGW.  As the packet leaves the NAT-enabled Gateway, it uses the EIP.
+
+On the partner side, the firewall can use the EIP(s) in their firewall to white list incoming traffic from your network.
+
+Aviatrix Step-by-Step Deployment Guide
+--------------------------------------
+
+What you will need:
+
+#. A shared services VPC where the Aviatrix central controller will be installed.
+#. AWS account credentials or the ability to create new IAM roles.  This is how the Aviatrix Controller will connect to your AWS account.
+#. A separate "egress" VPC with a public subnet connected to the internet via an IGW.
+#. A list of "worker" VPCs where requests will orginate.
+
+Aviatrix Controller
+###################
+
+|imageSharedServicesVPC|
+
+If you have already installed an Aviatrix Controller, you can skip this step.
+
+#. Follow the steps in `this guide <../StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__ to install a Controller in a VPC of your choice (a shared services VPC, for example)
+
+Create an Aviatrix Gateway in the egress VPCs
+############################################################################
+
+|imageEgressVPC|
+
+#. Create a new VPC or VNet with a public subnet connected to the internet.  Follow `this AWS guide <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario1.html>`__ for more details.
+
+Once you have a VPC or VNet created, provision an Aviatrix Gateway:
+
+#. Login to your Aviatrix Controller
+#. Click on the `Gateways` item on the naviagation menu
+#. Click on `+ New Gateway` to create a new Gateway
+#. Select the VPC/VNet and provide a name for this Gateway (e.g., "egress")
+#. Check the `Enable NAT` checkbox
+
+   |imageGWEnableNAT|
+
+#. Click `OK`
+
+Create an Aviatrix Gateway in the Originating Requests VPCs ("worker" VPCs)
+###########################################################################
+
+Next, create a Gateway in each of the VPCs/VNets where the requests destined for the partner network are originating.
+
+|imageWorkersVPCs|
+
+.. note::
+
+   Each of the worker VPCs/VNets must have a public subnet to allow the Gateways to communicate with each other.  Nothing else needs to be in the public subnet other than the Gateway.
+
+#. Login to your Aviatrix Controller
+#. Click on the `Gateways` item on the naviagation menu
+#. Click on `+ New Gateway` to create a new Gateway
+#. Select the VPC/VNet and provide a name for this Gateway (e.g., "egress")
+#. Make sure to `uncheck` the `Enable NAT` checkbox
+#. Click `OK`
+
+Peer the egress VPC with the worker VPCs
+########################################
+
+All that is left to do is to peer the worker VPCs/VNets with the egress VPC/VNet.
+
+|imagePeer|
+
+.. note::
+
+   The number of peering to the egress gateway is limited by the number of route limit imposed by the AWS.
+
+
+First, set up a connection for traffic to go between the worker and the egress:
+
+#. Login to your Aviatrix Controller
+#. Click on the `Peering` item on the navigation menu
+#. Click on `+ New Peering` to create a new peer
+#. Select `egress` for `Gateway1` and one of the workers for `Gateway2`
+#. Click `OK`
+#. Repeat for all workers
+
+Next, set up a route for traffic to transit out to the internet via the egress Gateway:
+
+#. Login to your Aviatrix Controller
+#. Click on the `Peering` item on the navigation menu
+#. Click on the `Transitive Peering` tab
+#. Click on `+ New Peering` to create a new transitive peer definition
+#. Select the worker for the `Source Gateway` and `egress` for the `NextHop Gateway`
+#. In the `Destination CIDR`, enter 0.0.0.0/0 (or a narrower scope if preferred)
+#. Click `OK`
+#. Repeat for all workers
+
+Validate
+########
+
+You can use a tool like curl and `ipinfo.io` to see how an external server sees your requests coming from the private subnets in the worker VPCs/VNets:
+
+``> curl ipinfo.ip/ip``
+
+This should return the EIP of the Gateway in `egress`
+
+.. |imageUseCaseDesign| image:: egress_transit_gateway_media/architecture.png
+
+.. |imageGWEnableNAT| image:: egress_transit_gateway_media/gw_enable_nat.png
+
+.. |imageSharedServicesVPC| image:: egress_transit_gateway_media/shared_services.png
+
+.. |imageEgressVPC| image:: egress_transit_gateway_media/egress.png
+
+.. |imagePeer| image:: egress_transit_gateway_media/peer1.png
+
+.. |imageWorkersVPCs| image:: egress_transit_gateway_media/workers.png
+
+
+
+.. disqus::

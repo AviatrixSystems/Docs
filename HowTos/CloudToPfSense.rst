@@ -135,7 +135,7 @@ Create an IPsec tunnel in pfSense
 
 7. Save the Phase 2 entry
 
-8. Test the tunnel is up
+8. Test that the tunnel is up
 
 .. |imageExamplePfSenseConfiguration| image:: CloudToPfSense_media/example_config.png
 .. |imageExamplePfSensePhase2Config| image:: CloudToPfSense_media/example_phase2_config.png

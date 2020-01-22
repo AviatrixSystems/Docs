@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix Controller Login SAML Configuration
    :keywords: SAML, controller login, Aviatrix, idp, sp
 
@@ -12,11 +12,11 @@ Aviatrix Controller Login with SAML Authentication
 1.  Overview
 ------------
 
-This guide provides an example on how to configure Aviatrix Controller to authenticate to an IdP.  When SAML is
+This guide provides an example on how to configure the Aviatrix Controller to authenticate to an IdP.  When SAML is
 used for Controller access authentication, your Aviatrix controller acts as the
 Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., Okta) for authentication.
 
-Aviatrix controller SAML login supports multiple SAML endpoints with varying access and utilizing different IdP's.
+The Aviatrix controller SAML login supports multiple SAML endpoints with varying access and utilizing different IdP's.
 
 For different IdP's, there will be links to each individual IdP integration.
 
@@ -118,7 +118,7 @@ Follow these steps to configure Aviatrix to authenticate against IdP:
 .. note::
 
    This step is usually done by the IdP administrator.
-   This sections shows only a generalized process for creating a SAML application.
+   This section shows only a generalized process for creating a SAML application.
    Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
 
 Create a SAML 2.0 app with the IdP Provider with the following values.
@@ -180,7 +180,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Azure AD - provides IdP metadata URL and needs a custom SAML request template
 #. Centrify - provides IdP metadata URL and will need to provide SP metadata text from Aviatrix
 #. Google   - provides IdP metadata text
-#. Okta     - provides IdP metadata text
+#. Okta     - provides IdP metadata URL
 #. OneLogin - provides IdP metadata URL
 
 .. _Config_34:
@@ -243,7 +243,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
    .. important::
 
-      If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
+      If everything is configured correctly, once you have authenticated, another windows should open with the test user's access.
 
 .. _Config_36:
 
@@ -276,7 +276,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 .. |image3-2| image:: Controller_Login_SAML_media/image3-2.png
 
-.. |image3-5| image:: Controller_Login_SAML_media/image1.png
+.. |image3-5| image:: Controller_Login_SAML_media/image3-5.png
 
 .. |image3-6| image:: Controller_Login_SAML_media/image3-6.png
 

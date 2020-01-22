@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Admin users and Duo Authentication Management
    :keywords: Admin users, Duo authentication, Duo, Aviatrix
 
@@ -15,7 +15,7 @@
 Duo Authentication
 =============================================
   
-Aviatrix OpenVPN® solution provides Duo authentication integration. This document helps you set up Duo to connect with Aviatrix. For more information on how to configure OpenVPN®, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
+The Aviatrix OpenVPN® solution provides Duo authentication integration. This document helps you set up Duo to connect with Aviatrix. For more information on how to configure OpenVPN®, check out `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
 You need to first have a DUO account setup.  If you do not have one, please see `https://www.duosecurity.com/product <http://www.duosecurity.com/product>`__
 
@@ -124,9 +124,12 @@ Using **Push Mode** of ``token``
    .. note::
       You should receive a prompt to authenticate.  If you do not receive a prompt, make sure ``auth-user-pass`` option is in the .ovpn configuration file.
 
-#. Open the Duo Mobile app and get the latest passcode
+#. Open the Duo Mobile app and generate a new passcode. 
 #. In the VPN user/password prompt, enter any value for the username field and enter the passcode from Duo Mobile app for the password
 #. Verify you are connected and can access resources in the cloud
+#. Note that you need to generate a new passcode for each connection.
+
+Currently, selective authentication with DUO is broken if used when combined with LDAP. This bug is expected to be fixed in a later release.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

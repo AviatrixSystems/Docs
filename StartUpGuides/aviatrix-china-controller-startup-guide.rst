@@ -44,7 +44,7 @@ Before you start, you need to have an `AWS account <https://aws.amazon.com/>`__.
 Step 1. Locate the Controller AMI from AWS Community
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Login to AWS China, select Beijing region, click launch EC2 instance from AWS Community AMIs, search for aviatrix, as shown below. The Aviatrix Controller AMI name is Aviatrix_china_controller_051518_BYOL. 
+Login to AWS China, select the Beijing region, click launch EC2 instance from AWS Community AMIs and search for "aviatrix", as shown below. The Aviatrix Controller AMI name is Aviatrix_china_controller_051518_BYOL. 
 
 |controller-ami-china|
 
@@ -81,7 +81,7 @@ Open security group 443 to all, as shown below. (You can reduce the scope later)
 Step 6. Launch the instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Review the instance, create a new or use an existing key pair to launch the instance. 
+Review the instance and create a new key pair or use an existing key pair to launch the instance. 
 
 Step 7. Add EIP
 ^^^^^^^^^^^^^^^^
@@ -93,7 +93,7 @@ Associate the EIP with the Controller instance.
 
 Step 8. Connect to the Controller 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Now that Aviatrix Controller instance has been launched, let's login and go through a few init steps.
+Now that the Aviatrix Controller instance has been launched, let's log in and go through a few init steps.
 
 Open a browser window to https://AviatrixControllerEIP 
 
@@ -109,7 +109,7 @@ Step 9. Initial Login
 
  9.1 Login with the username `admin`.
 
- 9.2 For the password field, you can find the Controller instance's private IP address by going to AWS EC2 console, click the Controller instance and locate its private IP address. 
+ 9.2 For the password field, you can find the Controller instance's private IP address by going to the AWS EC2 console, clicking the Controller instance and locating its private IP address. 
    
 
  9.3 Enter your email address.  This email will be used for alerts as well as password recovery (if needed).
@@ -124,13 +124,13 @@ Step 9. Initial Login
 
    |imageproxy-config|
 
- 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. The process can take up minutes to hours. Read the tip below fore you proceed. 
+ 9.6. Finally, the Controller will upgrade itself to the latest software version. Enter 3.3 and click run, as shown below. The process can take up minutes to hours. Read the tip below before you proceed. 
 
    |imageControllerUpgrade-china|
 
 .. tip::
 
-   Since the Aviatrix software is hosted in AWS us-west-2, loading software to the Controller from AWS China could take significantly longer time, from tens of minutes to up to an hour. Our experiences have been that if you upgrade software during the early morning hours in China (2am to 7am China time) the download is faster. Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
+   Since the Aviatrix software is hosted in AWS us-west-2, loading software to the Controller from AWS China could take a significantly longer time, from tens of minutes to up to an hour. Our experiences have been that if you upgrade software during the early morning hours in China (2am to 7am China time) the download is faster. Once complete, the login prompt will appear.  Use the user `admin` and your new password to login.
 
 ..
 
@@ -141,7 +141,7 @@ Step 10. Create A Primary Access Account
 10.1 Select AWS China
 --------------------
 
-Once logged back in to the Controller, you should be on the `Onboarding` page or click "Onboarding` on the navigation item. Then click AWS icon. 
+Once logged back into the Controller, you should be on the `Onboarding` page. If not, click "Onboarding` on the navigation item. Then click on the AWS icon. 
 
    |aws-china|
 

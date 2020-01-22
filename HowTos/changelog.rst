@@ -1,6 +1,52 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+
+2.5.7 - Nov 20 2019
+ - New UI
+ - Detect missing VPN configuration file
+ - Fixed password based authentication issues on Windows
+ - Fixed the intermittent VPN disconnection issues
+
+
+2.4.10 - Nov 2 2019
+ - Security fixes
+ - Remove config caching causing issues on MacOS 
+ - Fixes an issue preventing connection after switching between auth types
+
+
+2.3.10 - Oct 18 2019
+ - Support MacOS Catalina
+ - Resolve fresh installation issues
+ - Set version in PkgInfo in Mac
+ - Nameserver wasn't being pushed correctly in Windows 10
+
+
+2.2.10 - Sep 26 2019
+ - FIPS 140-2 support for openvpn
+ - Sorting and ordering profiles
+ - Option to disable legacy port usage
+ - Support non-ascii characters in the ovpn configuration file name
+
+
+2.1.3 - Aug 1 2019
+ - Security fixes
+
+
+2.0.3 - Jul 23 2019
+ - Fix for localhost cert being revoked
+ - Backward compatible with older controller via self signed cert
+
+
+1.10.16 - Jul 9 2019
+ - Security fix for backend communication
+ - Fixed Windows log rotation errors
+ - Added an option to hide connnection window
+ - Added an option to hide notifications
+ - Fixed Mac dnsResponder not restarting to remove cached DNS
+ - Updated bundled tap driver
+
+
 1.9 - Oct 18 2018
  - Mac - Add an option to override manually set DNS
  - Mac - Fixed an issue that gave "cannot assign requested address" error while switching between Wifi networks on full tunnel
@@ -10,6 +56,7 @@ Aviatrix VPN Client Changelog
  - Windows - Install tap driver on silent install
  - Alert if localhost.aviatrix.com does not resolve to 127.0.0.1 (Eg: DD-WRT)
  - Handle private DNS/Full tunnel disconnects better
+
 
 1.8 - Jun 22 2018
  - Windows VPN Service to run the client without Admin access

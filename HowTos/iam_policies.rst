@@ -7,13 +7,23 @@
 AWS IAM Policies
 =================================
 
-Aviatrix Controller in AWS is launched by `a CloudFormation script  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. 
+The Aviatrix Controller in AWS is launched by `a CloudFormation script  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. 
 During the launch time, two IAM roles are created, aviatrix-role-ec2 and aviatrix-role-app. Two associated IAM policies are also created, `aviatrix-assume-role-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_ and `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_.
+
+Automatically Updating IAM Policies
+--------------------------------------
+
+Login to the Controller. Go to Accounts -> Access Accounts. Select an account and click the 3 dots skewer, click Update Policy. The latest IAM policy will be updated for this account. Repeat this step for all other accounts. 
+
+
 
 Updating IAM Policies
 ---------------------
 
-These two roles and its associated policies allow the Controller to use AWS APIs to launch gateway instances, 
+This section describes how to update IAM policies manually. We recommend you to update automatically follow the instructions 
+in the previous section.
+
+These two roles and their associated policies allow the Controller to use AWS APIs to launch gateway instances, 
 create new route entries and build networks. 
 
 As more features are added by Aviatrix with each release, the IAM Access Policy may need to be updated to allow the Controller to launch new services. 
@@ -24,7 +34,7 @@ As more features are added by Aviatrix with each release, the IAM Access Policy 
 .. note::
    Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
 
-Updating the IAM policies with the latest one is done by replacing them. Follow these steps to update IAM policies **for each AWS account** that you setup in the Controller.  Start with your `primary account <onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`__ (the account you set up during onboarding) and then on to each `secondary account <aviatrix_account.html#setup-additional-access-account-for-aws-cloud>`_ if there is any.
+Updating the IAM policies with the latest one is done by replacing them. Follow these steps to update IAM policies **for each AWS account** that you set up in the Controller.  Start with your `primary account <onboarding_faq.html#what-is-the-aviatrix-primary-access-account>`__ (the account you set up during onboarding) and then on to each `secondary account <aviatrix_account.html#setup-additional-access-account-for-aws-cloud>`_ if there is any.
 
 Steps
 ^^^^^
@@ -48,13 +58,13 @@ The `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/I
 
 You can view if your IAM policy needs to be 
 updated by going to Settings -> Advanced -> AWS IAM Policy Update. The Aviatrix Controller polls all
-AWS accounts upon each release to see if there is new IAM policy available that you need to 
-update for your accounts. Note if you do not run any new features, chances are you do not need to
+AWS accounts upon each release to see if there is a new IAM policy available that you need to 
+update for your accounts. Note: if you do not run any new features, chances are you do not need to
 update the IAM policies. 
 
-You can also check individual account IAM policy status by selecting the account and click Check. 
+You can also check individual account IAM policy status by selecting the account and clicking Check. 
 
-To update IAM policy, follow the instruction `here. <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_
+To update IAM policy, follow the instructions `here. <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_
 
 
 

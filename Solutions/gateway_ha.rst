@@ -23,9 +23,9 @@ The Aviatrix Controller monitors your cloud networking deployment, detects probl
 
 ``*`` Recovery times vary based on many factors including the number of tunnels established.
 
-These options give you the flexiblity to select the one that meets your requirements for recovery time.  For production environments, a quicker recovery time is typically very important.  But, for development environments, a longer delay is acceptable.  With Aviatrix HA, you can mix and match these options in your deployment to meet your needs.
+These options give you the flexibility to select the one that meets your requirements for recovery time.  For production environments, a quicker recovery time is typically very important.  But, for development environments, a longer delay is acceptable.  With Aviatrix HA, you can mix and match these options in your deployment to meet your needs.
 
-As the recovery time decreases, there may be additional costs to consider.  `Single AZ` has no additional costs.  `Backup Gateway` will incur additional EC2 instance charges (for the additional gateway provisioned).  `Backup Gateway and Tunnel(s)` will incur additional EC2 costs and additional tunnel costs.
+As the recovery time decreases, there may be additional costs to consider.  `Single AZ` has no additional costs.  `Backup Gateway` will incur additional instance charges (for the additional gateway provisioned).  `Backup Gateway and Tunnel(s)` will also incur additional costs.
 
 How is a Gateway or Tunnel Determined to be Down?
 -------------------------------------------------
@@ -67,9 +67,10 @@ Single AZ Gateway
 
 The gateway is actively monitored by the Controller.  If there is a problem with the gateway or tunnel(s):
 
-#. A new gateway is provisioned in the same availability zone
+#. The gateway is stopped and started again
 #. Any configured tunnels are established from the new gateway to their respective terminating gateway
 #. An email notification is sent to the administrator
+#. Please look `here <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_ for more information
 
 .. _gwha_backup_gw:
 

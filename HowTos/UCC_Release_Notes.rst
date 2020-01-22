@@ -2,29 +2,358 @@
 Release Notes
 =======================================
 
-R4.6 (Coming Soon)
+R5.3 (Coming soon)
 =====================
 
-1. Networking
-----------------
+1. Networking 
+--------------------
 
- - **AWS Transit Gateway Orchestrator for VPN Integration**
- - **AWS Transit Gateway Orchestrator for Direct Connect Integration**
+ - **AWS Transit Gateway (TGW) Inter Region Peering**
+ - **Approval Process for BGP Learned Routes** 
+ - **CloudWAN Customize routes on CloudWAN with Tags**
+ - **CloudWAN Saves Multiple IOS Config Versions** 
+ - **Use NLB to load balance UDP based User VPN** allows you to use AWS Network Loadbalancer for UDP traffic to scale out User VPN solution. The advantage for the deployment is improved throughput performance comparing to TCP based VPN solution.  
 
-2. Multi Cloud
-----------------
+2. Security
+--------------
 
- - **AWS GovCloud Encrypted Transit**
- - **AWS Transit Gateway Orchestrator for GovCloud**
- - **AWS Native Peering for GovCloud**
- - **Backup & Restore for GovCloud**
+ - **Aviatrix Transit FireNet for Azure**
+ - **Aviatrix Transit Gateway supports multiple TGW Security Domains**
+ - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case.  
+ - **Fortinet FortGate** can be launched from Aviatrix Controller for FireNet use case.
+ - **Secure S3 Transfer** allows you to leverage Direct Connect to access S3 buckets while preventing data leakage. 
+ - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. 
 
 3. Operation
 -------------
- - **Security Patch status display**
- - **FIPS 140-2 Compliant module**
+
+ - **FlightPath to support IP address**
+ - **FlightPath for Azure**
+ - **FlightPath for GCP**
+ - **Dynamically display packets while packet capture is on** allows you to view the packet summary on the Controller console while they are being captured. 
+ - **User VPN Cert Issue Date** 
+ - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. 
+
+R5.2.2092 (1/15/2020)
+=======================
+
+ - **Bug fix** Aviatrix Active Mesh Transit Gateway takes exception when building Transit Peering. 
+
+R5.2.2071 (1/10/2020)
+=========================
+
+ - **Bug fix** on-prem adverting the default route 0.0.0.0/0 via TGW DXGW is not propagated through Aviatrix Transit Peering. 
+ - **Bug fix** Fix exception when using "Export to Terraform" feature with Aviatrix created VPC resource. 
+ - **Enhancement** to reduce failover time for Connected Transit deployment.
+
+R5.2.2047 (12/19/2019)
+========================
+
+ - **Bug fix** Azure China upgraded to upgrade from 5.1 to 5.2.
+ - **Bug fix** Aviatrix Transit Gateway with multiple Spoke gateways exhibits memory leaks. 
+ - **Bug fix** GCP gateway replacement function fails.
+ - **Bug fix** GCP gateway names, VPC route table tables and route entry names can exceed cloud provider's limits. 
+ - **Bug fix** Failed to delete IPSec policy when deleting Spoke to Spoke peering. 
+ - **Enhancement** Add remote troubleshoot support on CloudN.
+
+R5.2.2011 (12/06/2019)
+========================
+
+- **Customize Network Filtering of FQDN** Allow configuration to customize the network CIDRS to not be included in FQDN filtering. One use case is if on-prem requires certain network CIDRs to skip FQDN filtering. To configure, go to Security -> Egress Control -> Egress FQDN Filter. Select Customize Network Filtering.
+
+
+R5.2.1991 (12/04/2019)
+===========================
+
+Security
+------------------------------
+
+ - **Transit FireNet** Firewall Network for AWS Encrypted Transit VPC. Transit FireNet integrates Firewall Network function into the Aviatrix Transit Gateway function. With this new capability, you can deploy firewall instances into the encrypted transit network to allow security policy management and IDS/IPS functions. To learn more, refer to `Transit FireNet FAQ <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_.  
+ - **Public Subnet Filtering** provides the packet filtering capability to instances deployed in AWS VPC public subnets. Leveraging the AWS Ingress Routing service, the Public Subnet Filtering gateway filters out the malicious IP addresses detected by Amazon GuardDuty. Additionally, the filtering gateway provide FQDN functions for Egress traffic from the public instances. To configure, go to Security -> Public Subnets. Refer to `Public Subnet Filtering Gateway FAQ <https://docs.aviatrix.com/HowTos/public_subnet_filtering_faq.html>`_ for more information.   
+ - **Independent Verdict for Each Egress Control Rule** allows you to apply Allow or Deny to each FQDN rule. The use case is if you have a large set of FQDN names that should be allowed but only a small subset be denied, you can avoid inputting a large set of rules by creating a Deny rule of the small subset and one Allow rule with wild card for the large set. To configure, go to Security -> Egress Control. Select a tag, click Edit and add new rules. For more information, refer to `Base Policy <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#base-policy>`_.
+ - **FireNet Performance Improvement** FireNet performance achieves 40Gbps throughput. For details, check `this link. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#what-is-the-maximum-performance-firenet-can-achieve>`_
+ - **Palo Alto VM-Series Multiple Versions** can be launched from the Aviatrix Controller. The use case is companies with policy of not using the latest software releases. To configure, follow the `Firewall Network Workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
+ - **API Support for Stateful Firewall Rules Update** allows individual rule to be inserted, appended and deleted. 
+
+Networking
+-------------
+
+ - **Aviatrix CloudWAN** provides two capabilities. It centrally manages Cisco IOS routers from the Controller by allowing you to program and edit the IOS CLIs, monitoring the routers' metrics and reachability. It also automatically connects the Cisco IOS routers to the Transit Network with the shortest latency by integrating AWS Global Accelerator. For more information, check out `Cloud WAN FAQ <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_. The use case is to manage and connect the already deployed millions of Cisco IOS routers in the least fiction way and minimum human errors. 
+ - **BGP AS_PATH Prepend for Transit Gateway Peering** allows the on-prem learned routes to be propagated to the Transit peering routes along with the AS_PATH information. This feature requires no configuration. 
+ - **Consider AS_PATH for Next Hop Decision** enhances the next hop routing decision when the Transit Gateway make decisions. Previously when multiple remote sites advertise the same network CIDRs, Aviatrix Transit Gateway routes with ECMP. With this enhancement, the Transit Gateway selects the shortest AS_PATH length as the preferred routes. Only when remote sites advertises with the same AS_PATH lengths the Transit Gateway routes based on ECMP. This feature requires no configuration. 
+
+Operations
+------------
+
+ - **FQDN Dashboard** displays statistics of egress bound destination FQDN names both accepted and rejected. You can further deep dive to see the statistics for each gateways. To view the statistics, go to Dashboard and scroll down to FQDN Stats. 
+ - **Flightpath** to include ActiveMesh spoke gateways, ActiveMesh Transit Gateways and peering gateways.  
+ - **Selective Gateways for Logging** allows to not to have to enable all gateways for logging events. To configure, go to Settings -> Logging, select a log service, click Advanced to edit the list of the gateways to forward the log to the log service. By default, all gateways are included. 
+ - **Show Deployment per Access Account** displays what is deployed, for example, the number of encrypted Spoke gateways, the number of VPC attachment, the number of FQDN gateways and the site2cloud tunnels, deployed for each access account. The use case is to gain visibility of the Aviatrix usage per each account and helps to charge back to teams who are part of the deployment. To view, go to Access Accounts, highlight one access account, click on the three dots skewer, click Show Deployment.
+ - **TGW Route Auditing** allows you to immediately discover the missing routes in Spoke VPC route tables and its associated TGW route tables. To use, go to TGW Orchestrator -> List. Highlight one attachment, click the three dots and click Audit Routes.
+ - **TGW Audit** expands its capability to audit all route entries of attached VPC route tables in addition to route entries in TGW route tables. To use, go to TGW Orchestrator -> Audit. Select one TGW and click Run On-Demand Audit. 
+
+R5.1.1183 (12/2/2019)
+=======================
+
+ - **Bug fix** BGP learned routes parsing error. 
+ - **Bug fix** Transit Peering filter not updating new learned routes. 
+
+R5.1.1016 (11/21/2019)
+=======================
+
+ - **Bug fix** Fix firewall instance launch failure in AWS Hong Kong region.
+ - **Bug fix** NTP configuration corruption fix. 
+
+R5.1.989 (11/17/2019)
+=======================
+
+ - **Enhancement** Controller does not allow Transit gateway peering when multiple Transit Gateways are in the same VPC. 
+ - **Bug fix** Gateways fail to forward syslog to remote syslog server when Controller cannot reach the syslog server. 
+ - **Terraform enhancement** Add Terraform Export for aviatrix_firewall_instance, aviatrix_firenet_resources, aviatrix_firenet.
+ - **Bug fix** Export to Terraform feature is broken.
+
+R5.1.973 (11/6/2019)
+======================
+
+ - **Bug fix** ActiveMesh does not report tunnel counts to AWS when Metered AMI is deployed. 
+ - **Bug fix** Aviatrix Transit Gateway peering does not report tunnel counts to AWS when Metered AMI is deployed. 
+
+R5.1.969 (11/3/2019)
+======================
+
+ - **Enhancement** Import VPN users now include user profile field. 
+ - **Bug fix** Azure native peering is broken. 
+ - **Bug fix** FireNet gateway does not load balance UDP traffic. 
+ - **Bug fix** Cannot detach Spoke gateway when customized CIDRs feature is configured on the Spoke gateway. 
+ - **Bug fix** Fail to import user via CSV file when Geo VPN and SAML are enabled. 
+
+R5.1.962 (10/29/2019)
+=========================
+
+ - **Bug fix** Aviatrix Controller API calls cause Panorama to become unusable overtime as Panorama fills up its desk space. This is a must fix that impacts all FireNet deployment with Panorama. 
+ - **Bug fix** FireNet does not load balance UDP packets correctly. This is a must fix that impacts all FireNet deployment where UDP traffic such as DNS, goes through the FireNet.  
+ - **Bug fix** ActiveMesh Transit Gateway stops forwarding packets when forwarding from one VTI interface to another. This is a must fix that impacts all multi sites ActiveMesh Transit Gateway deployment.
+ - **Bug fix** Transit VPC route propagation gets disabled when other Transit VPN connection is deleted. This is a must fix that impacts all multi sites ActiveMesh Transit Gateway deployment. 
+
+R5.1.943 (10/25/2019)
+=======================
+
+ - **Bug fix** Hostname is blocked in VPN profile policy configuration. Revert the change. 
+ - **Bug fix** Transit gateway peering is missing on dashboard. 
+
+R5.1.935 (10/19/2019)
+==========================
+
+Transit Gateway Enhancement
+------------------------------
+
+ - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CDIRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
+
+ - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. `API support <https://api.aviatrix.com/?version=latest#6a8a1c4c-14b6-4f11-b280-d218f60cea1e>`_ only. 
+
+ - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
+ - **ASN Path Prepend** adds ASN number when Aviatrix transit gateway redistribute routes to its BGP peer. For new Transit connection, the Aviatrix Transit gateway automatically inserts its ASN number. To insert ASN path in an existing connection, go to Transit Network -> Advanced Config -> Prepend AS Path
+
+Security
+------------
+
+ - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
+ - **Stateful Firewall Port Configuration Enhancement** allows you to add multiple port numbers and multiple port ranges separated by comma in the same rule. 
+ - **FQDN for non TCP 443 SSL protocol** allows you to execute FQDN filtering function for HTTPS traffic running on non TCP port 443. The use case is for HTTPS based applications that need to access Internet sites on non TCP port 443. To configure, select HTTPS as the protocol and input a specific TCP port. With is feature, you can configure wild card. 
+
+Operations
+------------
+ - **IAM Policy Auto Update** allows you to update secondary accounts to the latest IAM policy from the Controller console. To configure, go to Accounts -> Access Accounts. Select an account, click the 3 dots skewer and click "Update policy"
+ - **New Dashboard Panel** displays what has been built and if they are healthy.  
+
+R5.1.845 (10/8/2019)
+=====================
+
+- **Bug fix** Prevent upgrade from 4.7 to 5.1 directly without going through 5.0 release. 
+- **new API** for selecting firewall instance size.
+ 
+
+R5.1.842 (10/1/2019)
+=====================
+
+
+1. FireNet Network Enhancement
+---------------------------------
+
+ - **Firewall Network load balancing from TGW** allows both primary gateway and backup gateway to present its ENI interface so that packets initiated from the Spoke VPCs can be forwarded to both gateways in the AZ affinity or nearest AZ affinity fashion.  
+ - **Management access from On-Prem** allows on-prem to connect with private IP address of the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable. Note in this release, both accessing from on-prem via Aviatrix Edge Domain and accessing from TGW plus DXGW/VPN are supported.
+ - **Improve FireNet gateway failover time** to be under 16 seconds. 
+
+2. Networking
+-----------------
+ - **Aviatrix ActiveMesh** is officially available.
+
+R5.0.2782 (9/30/2019)
+=======================
+
+ - **Bug fix** Disable Account Audit and Gateway Audit features that cause memory leak in controller. 
+
+R5.0.2773 (9/20/2019)
+=======================
+
+ - **Bug fix** GovCloud does not support m4.xlarge on Palo Alto Networks VM-Series, fixed the issue with m5.xlarge instance type. 
+ - **Bug fix** Multiple gateway security groups can cause gateway audit to generate false alarm. 
+
+R5.0.2768 (9/18/2019)
+========================
+
+ - **Bug fix** FQDN process may take 2 to 5 minutes to restart when a new URL rule is updated. 
+
+R5.0.2754 (9/16/2019)
+=======================
+ 
+- **Bug fix** for Oracle Cloud Infrastructure (OCI).
+
+R5.0.2667 (9/9/2019)
+=========================
+
+1. Automation & Operations
+----------------------------
+
+ - **Official Terraform Provider** Aviatrix has become the official Terraform provider! Visit `Aviatrix Provider <https://www.terraform.io/docs/providers/aviatrix/index.html>`_. Terraform v0.12 is needed, please visit `Compatibility Chart <https://www.terraform.io/docs/providers/aviatrix/guides/release-compatibility.html>`_, `Terraform Provider 2.x Upgrade Guide <https://www.terraform.io/docs/providers/aviatrix/guides/v2-upgrade-guide.html>`_.
+ - **New REST API site** visit `api.aviatrix.com <https://api.aviatrix.com/?version=latest>`_ to see our brand new API doc site!
+ - **Access Account Audit** continuously monitors the health of Controller and individual access account. The Controller sends email alert to the admin user and logs the event when errors in the account setting are detected.
+ - **Gateway Audit** continuously monitors the status of gateway cloud credentials and security groups. For AWS, this credential is the gateway's IAM roles and policies. The Controller sends email alert to the admin user and logs the event when errors of gateway cloud credentials are detected. To view the health of the gateway, go to Gateway page and check the field `Audit. <https://docs.aviatrix.com/HowTos/gateway_audit.html>`_
+ - **Logs display the source IP address when a user login** to improve visibility.
+ - **Logs display the latest at the top of the screen** for ease of use. The logs include Site2Cloud diagnostics messages and command log messages.
+ - **Export VPC Tracker to XML** allows you to download in Excel form all VPCs the Controller retrieves. To download, go to Useful Tools -> VPC Tracker, click the refresh button and then click Export to CSV.
+ - **Bulk import/export VPN Users** Allow onboarding VPN users in volume.
+ - **Gateway restart** is a feature that when Controller detects a gateway goes down and initiates a failover, and in the meantime restart the failed gateway to recover its state. This feature is enabled by default on all gateways.
+
+2. Multi Cloud
+-----------------
+
+ - **Azure Transit with Native Spoke VNet Support** Allows you to build a transit solution without launching an Aviatrix gateway in the Spoke VNet. The solution leverages the Azure native peering capability for the traffic between Spoke VNet and Transit VNet, it also leverages the Controller to propagate learned routes directly to Spoke VNet. Follow the `Transit Network Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to get started by launching an Aviatrix Transit GW. Attach a Spoke VNet at `Step 6b <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_. 
+ - **Azure Transit Insane Mode Support** expands our `Insane Mode Encryption Service <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to Azure networks. The support include Insane Mode encryption over Express Route, Insane Mode for VNet to VNet encrypted peering and Transit Peering connections. Launch an Azure gateway with Insane Mode enabled to get started. 
+ - **GCP Transit Gateway Support** expands our `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to Google GCP. Follow the `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ instruction to get started. 
+ - **Oracle Cloud (OCI) Spoke Gateway Support** expands our Transit Network Solution to OCI Spoke gateways. 
+
+3. Networking
+----------------
+
+ - **IKEv2 support for Site2Cloud connections** expands site2cloud function to support IPSEC IKEv2. Follow the `site2cloud instructions <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ to get started. 
+ - **IPv6 Support** enables an Aviatrix gateway to have IPv6 address. One use case is to leverage the unique addressing of IPv6 to solve overlapping network CIDR problem in the cloud networks. IPv6 is supported on User VPN function and Encrypted Peering function. To enable, go to Gateway page, select the gateway, click Edit. Scroll down to IPv6 and click Enable. Refer to `Aviatrix IPv6 <https://docs.aviatrix.com/HowTos/gateway.html#ipv6>`_ for more details. 
+ - **Insane Mode over Internet** allows you to leverage the existing high speed Internet to build high performance encryption.
+ - **User VPN Support two way communication** between client and cloud instances by disabling VPN gateway NAT function and program the VPC route table for traffic initiated from VPC to route back to your VPN desktop. 
+
+4. Security
+------------
+ 
+ - **FQDN Applies to Private Domain Names** allows you to apply FQDN filter on Domain Names that resolve to private IP addresses. The use case is if you have host names that are on the private network and you need to apply whitelist filter. This is a global capability that applies to all FQDN tags. To enable, go to Egress Control -> Egress FQDN Filter, click "Enable Private Network Filter".
+ - **Multi Wildcard for FQDN** allows the FQDN gateway to match more relaxed expressions, such as a-*.b*.com.
+ - **FireNet for GovCloud** is available. Follow the instructions for `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to get started.
+ - **Aviatrix FQDN gateway for FireNet** enables Aviatrix FQDN function to be centrally deployed in AWS Transit Gateway (TGW) environment. One use case is to limit the number of EIPs of egress packets to specific sites that require whitelist of source IP addresses. To enable, follow the `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ and deploy Aviatrix FQDN gateway at `Step 7c <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_. Note only Egress Control for Internet bound traffic is supported.    
+ 
+5. AWS Transit Gateway (TGW) Enhancement
+-----------------------------------------
+ - **Disable Spoke VPC local CIDR propagation** is an optional feature that when enabled the Spoke VPC CIDR is not propagated to TGW route table when the Spoke VPC is attached to TGW. One use case is to allow multiple VPCs to be in one Security Domain (share one TGW route table) without the connectivity between them, thus reducing the need to createe a large number of Security Domains in order to build isolation. This optional feature is enable when attaching a VPC at `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_.
+ - **Select Spoke VPC route table for programming** is an optional feature that allows you to select which Spoke VPC route tables will be programmed of learned routes propagated from on-prem or other Spoke VPCs. One use case is that certain instances in the VPC do not participate the TGW Orchestrator.  
+ - **Management access from On-Prem** allows on-prem to access privately (SSH or HTTPS) the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable.Note in this release, only accessing from on-prem via Aviatrix Edge Domain is supported. Accessing from TGW plus DXGW/VPN are not supported.  
+
+6. ActiveMesh and Multi-Site Transit Beta
+--------------------------------------------
+
+Learn `Aviatrix Transit ActiveMesh Mode <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_.  Contact Aviatrix sales or support team for preview on ActiveMesh and Multi-site Transit Network. 
+
+
+R4.7.590 (8/23/2019)
+======================
+
+ - **Bug fix** When attaching a Spoke VPC to TGW, VPC route table did not handle the case when there is AWS end point. 
+ - **Bug fix** When connecting Transit gateway to external device, Transit gateway did not handle the case if on-prem router's advertised routes is a super set to the IPSEC end point IP address. 
+ - **Bug fix** The profile attribute handling for SAML user VPN client did not consider error cases when profile attribute is absent or does not produce a match. 
+ 
+
+R4.7.581 (8/11/2019)
+=======================
+
+ - **Transit peering for two transit gateways in the same VPC** removes the constraint that Transit Peering can only take place on two Aviatrix Transit Gateway in two different VPCs. The use case is if you have deployed two individual transit networks in the same VPC, now you can connect them by implementing Transit Gateway Peering. 
+
+
+R4.7.501 (7/22/2019)
+=======================
+
+ - **Software update for Field Notice 0005** as described in `this document  <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_. This software update applies to all customers who use Aviatrix Client VPN software for SAML authentication, and both Aviatrix Client VPN software and Controller are required to upgrade. If you use Aviatrix Client VPN software for non SAML authentication, you are not affected by the issues described in the Field Notice 0005.
+
+
+R4.7.494 (7/14/2019)
+======================
+
+ - **Spoke VPC Gateway Attach Behavior** is modified such that when a spoke gateway is attached to the Aviatrix Transit GW, RFC 1918 routes are programmed. Conversely when a Spoke VPC gateway is detached from the Aviatrix Transit GW, all learned routes are deleted. Such behavior change simplifies migration process from Aviatrix Encrypted Transit architecture to AWS Transit Gateway (TGW) based transit architecture. Backward compatibility is ensured.
+ - **Azure Gateway Launch** no longer creates a new resource, instead it now re-uses VNET resource. The use case is customers already created a resource group when creating a VNET. 
+ - **Add Aviatrix Tag for Cross Account VPC Attachment** allows you to identify in the TGW route table Aviatrix attachment resource when the Spoke VPC is in a different AWS account.  
+ - Bug fix that removes the unnecessary restarts of BGP process after software upgrades.  
+
+R4.7.473 (7/7/2019)
+================================================
+
+ - **Palo Alto VM-Series Bootstrap function support** allows firewall instance to retrieve initial VM-Series configuration and policies stored in S3 bucket. The use case is to improve automation by allowing the VM-Series to load the initial policy configuration. For more information, refer to `VM-Series Bootstrap integration. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#example-configuration-for-bootstrap>`_
+ - **Palo Alto VM-Series Panorama integration** allows firewall instances to be managed by Panorama. The use case is to have Panorama to centrally manage all firewall deployment both on-prem and in the cloud. For more information, refer to `Panorama integration. <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
+ - **EIP Allocation for Transit Gateway** allows a Transit Gateway to be associated with an already allocated EIP. The use case is to manage the Aviatrix gateway EIP the same way you would manage your EC2 deployment EIPs, as they are all in the same pool. 
+ - **Insane Mode Gateway Resizing** allows you to resize Insane Mode gateway after it is launched. This provides the flexibility of to manage instance cost when running Insane Mode. 
+
+R4.7.419 (6/30/2019)
+===============================================
+
+ - bug fix for "Customize Spoke VPC advertising CIDR".
+ - error checking for TGW VPN configuration parameters.
+
+
+R4.7.378 (6/16/2019)
+=====================
+
+1. AWS Transit Gateway Orchestrator
+-------------------------------------
+
+ - **AWS TGW Egress/Ingress Domain** allows you to create a central egress network architecture without requiring to launch Aviatrix FireNet gateway. Aviatrix Orchestrator programs the necessary Spoke VPC route tables and TGW route tables to make sure Internet bound traffic from Spoke VPCs are forwarded to the VPC in egress domain. One use case for native egress domain is to reduce the number of EIPs you may have to whitelist to accessing third party SaaS service. In the egress domain, you can deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or a virtual appliance to handle Internet bound traffic. Note in this network architecture, there is no built in scale out and redundancy as it is the case for Aviatrix Firewall Network. To configure, select "Native Egress/Ingress Domain" when `creating a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ at the TGW Orchestrator Plan. 
+
+ - **AWS TGW Firewall Domain** provides the firewall network architecture without requiring to launch Aviatrix FireNet gateway. Aviatrix Orchestrator programs the necessary Spoke VPC route tables and TGW route tables to make sure traffic that requires inspection is forwarded to the firewall security domain. One use case is to run a virtual appliance for packet inspection. Note in this network architecture, there is no built in scale out and redundancy as it is the case for Aviatrix Firewall Network architecture. To configure, select "Native Firewall Domain" when `creating a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ at the TGW Orchestrator Plan.
+
+ - **Customize Spoke VPC Route Table** allows you to program route entries in Spoke VPC route table that points to TGW as target. By default, Aviatrix Orchestrator programs RFC 1918 routes in the VPC route table to point to TGW, any routes that are outside of this range is dynamically programmed into the VPC route table. When you enable this feature, all dynamic route propagation will be stopped. One use case is if you simply want to program the default route to point to TGW. Another use case is if you do not wish Aviatrix Orchestrator to program any VPC routes, in which case you should enter 0.0.0.0/32 for the "Customizing Spoke VPC Rotues" field. To configure, enter a list of comma separated CIDRs at `Attach VPC to TGW <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ during TGW Orchestrator Build. 
+
+ - **Customize TGW VPN Creation** with additional parameters, such as inside_ip_cidr and pre_shared_key. For more information, checkout the API `Attach Native VPN to TGW <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_.
+
+2. Insane Mode Enhancement
+----------------------------
+
+ - **Insane Mode Dynamic Bandwidth Adjustment** significantly reduces Insane Mode tunnel switch over probability by automatically removing the failed encryption lane from the load balancing pool while keeping the remaining encryption lanes to continue to forward the traffic. After the failed lane is brought back up, it is then added back to the load balancing pool. Only when 50% of the lanes fail should the Controller declare the tunnel down and switch over to the backup tunnel.  
+
+3. FQDN Enhancement
+---------------------------------
+
+ - **Performance Enhancement** to handle traffic burst. FQDN and system memory pool are significantly increased to handle large burst traffic. 
+
+
+R4.6.587 (5/29/2019)
+=====================
+
+1. Networking
+-------------------
+
+ - **AWS Transit Gateway Orchestrator for VPN Integration** brings native TGW VPN connection to the Aviatrix Controller Orchestrator. Aviatrix Orchestrator periodically polls TGW route table learned routes from VPN connection and then programs the attach Spoke VPC route tables. One use case is for TGW VPN to connect to on-prem or a third party VPC via IPSec. To configure, follow the `TGW Plan workflow for VPN <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aws-transit-gateway-vpn-connection>`_. 
+ - **AWS Transit Gateway Orchestrator for Direct Connect Integration** brings native TGW DXGW cocnnection to the Aviatrix Controller Orchestrator. Aviatrix Orchestrator periodically polls TGW route table learned routes from Direct Connect Gateway connection and then programs the attach Spoke VPC route tables. One use case is for TGW DXGW to connect to on-prem. To configure, follow the `TGW Plan workflow for Direct Connect <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aws-transit-gateway-direct-connect>`_.`
+ - **Support multiple Firewall Network domains attached for the same TGW**. The use case is to separate VPC to VPC inspection from egress/ingress inspection. There is no User Interface change. To configure, follow the `Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_. Check out `this design pattern <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#firenet-deployment-model-6>`_ for how to use multi Firewall Networks in TGW environment. 
+
+2. AWS GovCloud
+------------------
+
+ - **AWS GovCloud Encrypted Transit** allows you to setup and operate an end-to-end encryption in a transit network. To configure, follow the `Encrypted Transit Network workflow. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+ - **AWS Transit Gateway Orchestrator for GovCloud** allows you to setup and operate AWS Transit Gateway based transit network. To learn more, follow the `AWS Transit Gateway Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
+ - **AWS Native Peering for GovCloud** supports AWS native peering in GovCloud. To configure, follow `this link. <https://docs.aviatrix.com/HowTos/peering.html#aws-vpc-peering>`_
+ - **Backup & Restore for GovCloud** is the best practice to operate Aviatrix solution. Make sure you enable this feature. 
+
+3. Compliance
+--------------
+ - **FIPS 140-2 Compliant module** allows you to install and operate FIPS 140-2 Crypto Module for SSL library. To learn more, check out `this document. <https://docs.aviatrix.com/HowTos/fips140-2.html>`_
+ - **Security Patch status display** enhances the Security Patch function by displaying the patch status. 
 
 R4.3.1275 (Patch release of 4.3 on 5/20/2019)
+===============================================
 
  - Bug fix for Transit Gateway External Device connection option where on-prem end point uses local link address 169.254.0.0/16.
  - Bug fix for FQDN HTTP protocol handling. 
@@ -43,7 +372,7 @@ R4.3.1230 (5/5/2019)
 =====================
 
 1. Networking
---------------
+----------------
 
  - **Firewall Network (FireNet)** is the new iteration of Transit DMZ for deploying firewall in the cloud. FireNet provides the simplicity, scalability and automation for an optimal network architecture for firewall deployment. Check out the `FireNet FAQ <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ to learn more. Follow `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to start deploying. 
  - **Transit Peering InsaneMode** allows you to build high performance encrypted connection across AWS regions over AWS private Peering network infrastructure. To configure, first launch the Aviatrix Transit Gateway with InsaneMode enabled, Transit Peering InsaneMode will be automatically enabled when you configure `Transit Gateway Peering. <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ This feature is only available for AWS deployment.
@@ -90,7 +419,7 @@ R4.2.634 (3/19/2019)
 1. Networking
 ----------------
 
-- **Transit DMZ for Egress Traffic Inspection** provides the networking capability to route Internet bound egress traffic from Spoke VPCs to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "Egress through Firewall".  
+- **Transit DMZ for Egress/Ingress Traffic Inspection** provides the networking capability to route Internet bound egress traffic from Spoke VPCs to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "Egress through Firewall".  
 
 - **Transit DMZ for East-West Traffic Inspection** provides the networking capability to route VPC to VPC traffic to a third party firewall deployed in the Aviatrix Transit DMZ architecture for inspection. Once `Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html#>`_ is deployed, go to Transit DMZ -> Advanced, click the Skewer button. Scroll down to enable "East-West Traffic Inspection".
 

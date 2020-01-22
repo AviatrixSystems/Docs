@@ -1,17 +1,17 @@
-
+﻿
 
 
 ***********************************
 Test Drive CloudN on Your Laptop 
 ***********************************
 
-CloudN can be installed on your laptop and test drive it for evaluation purpose. 
+CloudN can be installed on your laptop and test driven for evaluation purposes. 
 It runs on VMware Workstation, VMware Player, Fusion and virtual box. 
 
 Download CloudN Images
 #######################
 
-Follow `the instruction <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ to download CloudN image.
+Follow `these instructions <http://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html>`_ to download CloudN image.
 
 
 Test Drive CloudN in NAT Mode 
@@ -22,11 +22,11 @@ laptop on a private subnet in NAT mode (In Hyper-V, the network adapters
 are configured as Internal Network Wire).
 
 As an example, if your NAT mode subnet is 192.168.10.0/24, you can
-create a maximum 2 VPCs from CloudN deployed on this subnet. Suppose the
+create a maximum of 2 VPCs from CloudN deployed on this subnet. Suppose the
 default gateway IP address is 192.168.10.2. You should configure CloudN to 
 take 192.168.10.3 as its IP address. 
 
-In addition CloudN reserves IP
+In addition, CloudN reserves IP
 address ranges from 192.168.10.4 to 192.168.10.7. (If you have other VMs
 running on this subnet, if their IP address fall in the same sub
 segment as CloudN, you can use one of these VMs as test VM.)
@@ -37,7 +37,7 @@ instances in VPCs using the instance private IP address seamlessly,
 without any bastion station or landing VPC. Refer to How It Works
 section for more explanations.
 
-.. Note:: If you install CloudN on a NAT subnet, make sure both Ethernet interfaces are changed to NAT mode (By default, CloudN is pre-configured and shipped with both Network Adapters in Bridged mode). Right click on the CloudN VM, click Settings. Change both Network Adapters to NAT mode, as shown below for VMware Workstation:
+.. Note:: If you install CloudN on a NAT subnet, make sure both Ethernet interfaces are changed to NAT mode (By default, CloudN is pre-configured and shipped with both Network Adapters in Bridged mode). Right click on the CloudN VM, click Settings. Change both Network Adapters to NAT mode, as shown below for the VMware Workstation:
 
 |image23|
 
@@ -45,7 +45,7 @@ Test Drive on MAC with VMware Fusion
 ------------------------------------
 
 After downloading the zip file and decompressing it, copy the folder to
-a location, where your Mac can access it. Perform the following steps to
+a location where your Mac can access it. Perform the following steps to
 install CloudN.
 
 **Step 1**: From the VMware Fusion menu bar, select File > Import.
@@ -61,7 +61,7 @@ browsing to the location of OVF file.
 
 |image26|
 
-**Step 4**: Type the name for the imported virtual machine in the Save
+**Step 4**: Type the name of the imported virtual machine in the Save
 As text box and indicate where to save it.
 
 |image27|
@@ -91,7 +91,7 @@ Then open the desired VM.
 |image31|
 
 Highlight the VM, right click, select Settings, click on Network
-Adapter, change both Network Adapter to NAT mode as shown below.
+Adapters, change both Network Adapter to NAT mode as shown below.
 
 |image32|
 
@@ -113,11 +113,11 @@ follow the steps below.
 |image34|
 
 **Step 3**: In the next screen, click on “Import” to start the import
-process and wait for it to finish
+process and wait for it to finish.
 
 |image35|
 
-**Step 4**: CloudN virtual machine installation is finished and it can be
+**Step 4**: CloudN virtual machine installation is finished. It can be
 launched by selecting it and clicking on the “Start” button.
 
 |image36|
@@ -148,9 +148,9 @@ Repeat this procedure for “Adapter 2” as well.
 Booting Up and Initial Configuration
 #####################################
 
-CloudN supports browser based GUI Interface and REST APIs.
+CloudN supports a browser based GUI Interface and REST APIs.
 
-After the virtual machine boots up, you must first login into the
+After the virtual machine boots up, you must first log in to the
 machine while still in hypervisor console.
 
 **CloudN Login User Name: admin**
@@ -173,7 +173,7 @@ Step 1: Setup Interface Address
 -------------------------------
 
 CloudN works by dividing the subnet where CloudN is deployed into
-sub-segment where each sub-segment becomes the VPC/VNet CIDR in the
+sub-segments where each sub-segment becomes the VPC/VNet CIDR in the
 cloud. We recommend you deploy CloudN in its own subnet to maximize the
 number of VPC/VNets you can create.
 
@@ -182,7 +182,7 @@ Statically assign CloudN IP address
 
 You can statically assign an IP address to CloudN. Choose this approach
 if you use CloudN to connect to an existing VPC. In the use case where
-CloudN does not create a VPC and build encrypted tunnel, CloudN does not
+CloudN does not create a VPC and build an encrypted tunnel, CloudN does not
 need to be deployed on a separate subnet.
 
 Command: setup\_interface\_static\_address
@@ -201,9 +201,9 @@ download the latest Aviatrix software.
 Proxy Configuration
 --------------------
 
-If there is proxy server for Internet access, you must setup proxy
-configuration on CloudN to pass traffic to proxy correctly. Following is
-the command
+If there is a proxy server for Internet access, you must setup proxy
+configuration on CloudN to pass traffic to proxy correctly. The following is
+the necessary command.
 
 command: setup\_network\_proxy
 
@@ -221,7 +221,7 @@ Example:
   setup\_network\_proxy save --http\_proxy http://10.30.0.3:3128
   --https\_proxy http://10.30.0.3:3128
 
-Note after proxy configuration is saved, CloudN VM will reboot to have
+Note that after the proxy configuration is saved, CloudN VM will reboot to have
 the proxy take effect.
 
 
@@ -230,38 +230,38 @@ Step 2: Display Interface Address
 
 |image45|
 
-Now you can use the cloudN IP address as URL to access CloudN Manager
+Now you can use the cloudN IP address as the URL to access the CloudN Manager
 that manages CloudN.
 
-Note: The hypervisor console has only limited CLI for initial booting up
+Note: The hypervisor console has only limited CLI for the initial booting up
 purposes. Once Aviatrix software is downloaded, full commands are
 installed.
 
-User should use the GUI to access CloudN Console.
+The user should use the GUI to access the CloudN Console.
 
 Troubleshooting
 ---------------
 
-If there is any error messages during installation, it is usually due to
-lack of Internet connectivity, incorrect DNS server IP address or
+If there are any error messages during installation, they are usually due to a
+lack of Internet connectivity, an incorrect DNS server IP address or
 unopened firewall ports. Type “?” to see all the commands that help you
 troubleshoot.
 
-Use command “\ ***ping***\ ” and “\ ***traceroute***\ ” to check out
-Internet connectivity. Check your DNS server setting, consult your
+Use the commands “\ ***ping***\ ” and “\ ***traceroute***\ ” to check out
+Internet connectivity. Check your DNS server setting and consult your
 network and server admin to determine the cause of routing failure.
 
-After connectivity issue is resolved, use command
+After the connectivity issue is resolved, use the command
 “download\_cloudn\_software” to continue installation and finish. Or you
-can again type in command setup\_interface\_address.
+can again type in the command setup\_interface\_address.
 
 Use a Browser to Access CloudN
 -------------------------------
 
-CloudN has a built in CloudN Console that let you run provisioning from
+CloudN has a built in CloudN Console that lets you run provisioning from
 a browser.
 
-Once IP addressed setup is complete, you can use any browser, type
+Once IP address setup is complete, you can use any browser to type
 https://<IP address of CloudN> and see a Login page.
 
 |image46|
@@ -272,7 +272,7 @@ User Name: **admin**
 
 Password: **private IP address of the VM**
 
-After login, go through the initial setup process.
+After logging, go through the initial setup process.
 
 For the first time user and initial setup, follow Onboarding to go
 through the initial set up and launch your first VPC/VNet.
@@ -280,15 +280,15 @@ through the initial set up and launch your first VPC/VNet.
 Onboarding
 #############
 
-After you login to the browser console, click Onboarding to go through a
+After you log in to the browser console, click Onboarding to go through a
 few steps of initial setup and start creating the first VPC/VNet.
 
-Once you login, click on Help for Frequently Asked Questions (FAQs). All
+Once you log in, click on Help for Frequently Asked Questions (FAQs). All
 features have descriptions and should be self-explanatory.
 
-For support issues, send email to support@aviatrix.com.
+For support issues, send an email to support@aviatrix.com.
 
-For feedback and feature request, click Make a wish at the bottom of
+For feedback and feature requests, click Make a wish at the bottom of
 each page.
 
 Enjoy!

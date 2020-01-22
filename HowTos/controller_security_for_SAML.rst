@@ -7,10 +7,10 @@
 Aviatrix Controller Security for SAML auth based VPN Deployment
 ===============================================================
 
-Best practices calls for the Aviatrix Controller be not widely
+Best practices call for the Aviatrix Controller to be not widely
 accessible from the internet. Access on TCP port 443 should be limited to 
 
-  - management range of IPs coming from the Enterprise or the Datacenter, and 
+  - the management range of IPs coming from the Enterprise or the Datacenter, and 
   - access to/from each of the deployed gateways for general communication/keep-alives.
 
 
@@ -24,7 +24,7 @@ instructions below to secure your controller when SAML authentication is being u
 Pre-requisites
 ======================
 
- - We assume you already know how to deploy Aviatrix solution, if you need help, check out this `reference design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Networking+Reference+Design.pdf>`__.
+ - We assume you already know how to deploy the Aviatrix solution. If you need help, check out this `reference design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Networking+Reference+Design.pdf>`__.
 
  - You have deployed Aviatrix SAML authentication for your user VPN access. 
 
@@ -53,12 +53,12 @@ Configuration Workflow when SAML is configured
 
 #. Click next.
 
-#. For certificate upload from ACM or use your self/CA signed certificates. if you already have a Route53 domain name, an ACM certificate can be requested for your domain and can be easily validated through email. You will need to add a record in your DNS with CNAME pointing the load balancer to match the certificate used for the load balancer.
+#. For certificate upload from ACM, use your self/CA signed certificates. If you already have a Route53 domain name, an ACM certificate can be requested for your domain and can be easily validated through email. You will need to add a record in your DNS with CNAME pointing the load balancer to match the certificate used for the load balancer.
      Note: for self signed certificate select Security Policy: ELBSecurityPolicy-2015-05     
 
 #. Click next.
 
-#. Configure security groups to make it accessible to the world
+#. Configure security groups to make it accessible to the world.
 
      Type: ALL TCP
 
@@ -91,9 +91,9 @@ Configuration Workflow when SAML is configured
 
 #. Click next
 
-#. On the Register target page select the Aviatrix Controller instance and click "add to register"
+#. On the Register target page, select the Aviatrix Controller instance and click "add to register"
 
-#. Click on next to go to review page
+#. Click on next to go to the review page
 
 #. Review and then click on "Create"
 
@@ -106,7 +106,7 @@ Configuration Workflow when SAML is configured
 
     If:
 
-      Path-pattern: /flask
+      Path-is: /flask/*
 
     Then:
 
@@ -114,19 +114,19 @@ Configuration Workflow when SAML is configured
 
 
 On the Controller
-#. Configure SAML by accessing controller through the loadbalancer's certificate domain name. This will generate everything (URLs for the IDP and VPN user certificates) with respect to the DNS name. If you had configured SAML already, you will need to update the Assertion consumer URLs at the IDP to the domain name of the signed certificate. After you download the VPN user certificate, ensure that the domain name in the #AvaitrixController section is set correctly(If not, update it)
+#. Configure SAML by accessing the controller through the loadbalancer's certificate domain name. This will generate everything (URLs for the IDP and VPN user certificates) with respect to the DNS name. If you had configured SAML already, you will need to update the Assertion consumer URLs at the IDP to the domain name of the signed certificate. After you download the VPN user certificate, ensure that the domain name in the #AviatrixController section is set correctly(If not, update it)
 
 .. note::
 
-   Controller's security group for 443 must allow from Loadbalancer's internal IP address which can be usually VPC CIDR and also the Gateways public IP
+   The Controller's security group for 443 must allow from Loadbalancer's internal IP address which can be usually VPC CIDR and also the Gateways public IP
 
 
-To Block general access:
+To block general access:
 
-1. After the SAML configuration is complete, you can block generall access to your controller
-   Create dummy target group pointing to invalid port
-   path rule / will be pointing to dummy target group
-   path rule /flask will be pointing to valid target group at HTTPS 443 to controller
+1. After the SAML configuration is complete, you can block general access to your controller.
+   Create a dummy target group pointing to an invalid port
+   path rule / will be pointing to an dummy target group
+   path rule /flask will be pointing to valid target group at HTTPS 443 to controller.
    By doing this only the SAML application is being forwarded by the ELB and is open to the world
    This ensures that the rest of the controller configuration is open to the admin alone.
 

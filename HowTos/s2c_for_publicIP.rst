@@ -62,19 +62,19 @@ Step 5: Configure DNAT
 
 This step is to configure the gateway to translate the destination IP address 53.34.19.23 to the real private IP address 172.32.0.242.
 
-At the main navigation bar, click Gateway. Highlight the gateway, in this case, Spoke1, click Edit. 
+At the main navigation bar, click Gateway. Highlight the gateway, in this case, Spoke1, and click Edit. 
 
 Scroll down to Destination NAT. Follow the instructions `here <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_ to configure, as shown below. 
 
 |dnat-config|
 
 
-Step 6. Test site2cloud Connection and DNAT
+Step 6. Test the Site2Cloud Connection and DNAT
 ---------------------------------------------------------
 
-Go to "site2cloud" page and verify the site2cloud connection status is "Up".
+Go to the "Site2Cloud" page and verify that the site2cloud connection status is "Up".
 
-Test connectivity from on-prem host to the EC2 instance. For example, ping 53.34.19.23 from on-prem host machine. The ping should reach 172.32.0.243.  
+Test connectivity from on-prem host to the EC2 instance. For example, ping 53.34.19.23 from an on-prem host machine. The ping should reach 172.32.0.243.  
 
 .. |site2cloud-publicIP| image:: s2c_for_publicIP_media/site2cloud-publicIP.png
    :scale: 30%

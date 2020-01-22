@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Anonymous Internet surfing, VPN
    :keywords: Site2cloud, site to cloud, OpenVPN, ipsec vpn, tunnel, peering, PBR, Policy Based Routing
 
@@ -12,13 +12,13 @@ Anonymous Internet Surfing
 1. Solution Overview
 ======================
 
-Normally when you surf an Internet website, the website administrator can easy identify where the user is located. This is done by identifying the source IP address contained in the packets (public IP address assigned to your location).  Sometimes, business needs arise when your employee's internet browsing and online research needs to be anonymous or needs to appear to originate from some other place. Such needs arise when analysis of competitors is required or when avoiding countries' firewalls for better performance and access.
-This document describes how to setup anonymous browsing from client machine by routing internet traffic through an AWS-based gateway in a different region.
+Normally when you surf an Internet website, the website administrator can easily identify where the user is located. This is done by identifying the source IP address (public IP address assigned to your location) contained in the packets.  Sometimes, business needs arise when your employee's internet browsing and online research needs to be anonymous or needs to appear to originate from some other place. For example, when analysis of competitors is required or when avoiding countries' firewalls for better performance and access.
+This document describes how to set up anonymous browsing from a client machine by routing internet traffic through an AWS-based gateway in a different region.
 
 2. Configuration Workflow
 ==========================
 
-2.1 Pre Configuration Checklist
+2.1 Pre Configuration checklist
 -------------------------------
 
 Before configuring VPC Site to Cloud peering, make sure the following prerequisites are completed.
@@ -52,11 +52,11 @@ https://<public ip of Aviatrix Controller>
 
 -   Create 2 VPCs - VPC #1 (in Region 1) with CIDR 10.1.0.0/16 and VPC #2 (in Region 2) with CIDR 10.2.0.0/16
 
--   In VPC #1, create 2 public subnet in same Availability Zone - 10.1.0.0/24 and 10.1.1.0/24.
-    This means both subnets must be associated with a route table whose default route points to IGW.
+-   In VPC #1, create 2 public subnets in the same Availability Zone - 10.1.0.0/24 and 10.1.1.0/24.
+    This means that both subnets must be associated with a route table whose default route points to IGW.
 
 -   In VPC #2, create 1 public subnet - 10.2.0.0/24.
-    This means one subnet must be associated with a route table whose default route points to IGW.
+    This means that one subnet must be associated with a route table whose default route points to IGW.
 
 2.2 Configuration Steps
 -----------------------
@@ -65,7 +65,7 @@ Make sure the pre-configuration steps in the previous section are completed befo
 
 The instructions in this section will use the following architecture.
 The CIDR and subnets may vary depending on your VPC setup; however, the
-general principals will be the same.
+general principles will be the same.
 
 |image0|
 
@@ -77,7 +77,7 @@ The first step is to deploy Aviatrix gateways in each VPC.
 
 **Instructions:**
 
-a.1.  Login to the Aviatrix Controller Console
+a.1.  Log in to the Aviatrix Controller Console
 
 a.2.   Create Aviatrix Peering Gateway #1 in Subnet1 of VPC #1 (in Region 1)
 
@@ -102,7 +102,7 @@ Save Template                      Uncheck this box
 
 a.4.  Click “OK”. It will take a few minutes for the gateway to deploy. Do not proceed until the gateway is deployed.
 
-a.5.  Create Aviatrix VPN Gateway in Subnet2 of VPC #1 (note that VPN Gateway is in a different subnet of Peering Gateway)
+a.5.  Create an Aviatrix VPN Gateway in Subnet2 of VPC #1 (note that VPN Gateway is in a different subnet of Peering Gateway)
 
 a.6.  Click on Gateway -> "New Gateway"
 
@@ -174,7 +174,7 @@ b.1.  From the Aviatrix Controller Console
 
 b.2.  Click Site2Cloud -> Site2Cloud
 
-b.3.  Click "+Add New" to establish S2C connection from Aviatrix Peering Gateway #1 (in VPC #1) to Aviatrix Peering
+b.3.  Click "+Add New" to establish a S2C connection from Aviatrix Peering Gateway #1 (in VPC #1) to Aviatrix Peering
 Gateway #2 (in VPC #2).
 
 
@@ -198,13 +198,13 @@ Gateway #2 (in VPC #2).
 
 b.4.  Click button "OK"
 
-b.5.  From S2C connection table, select the site2cloud connection created above (e.g. vpc01-s2c-vpc02)
+b.5.  From the S2C connection table, select the Site2Cloud connection created above (e.g. vpc01-s2c-vpc02)
 
 b.6.  Select "Aviatrix" from "Vendor" drop down list
 
 b.7.  Click button "Download Configuration" then save it
 
-b.8.  Click "+Add New" to establish Site2Cloud connection from Aviatrix Peering Gateway #2
+b.8.  Click "+Add New" to establish a Site2Cloud connection from Aviatrix Peering Gateway #2
 
 b.9.  Choose VPC ID of VPC #2 from "VPC ID/VNet Name" drop down list. Click button "Import" to upload
 the downloaded configuration saved in Step b.7.
@@ -235,7 +235,7 @@ b.10. This template file contains the necessary information to configure the new
   Local Subnet                      0.0.0.0/0
 ===============================     ===================================================
 
-Notes: IP of eth1 of Aviatrix VPN Gateway can be acquired from AWS console
+Notes: The IP of eth1 of the Aviatrix VPN Gateway can be acquired from AWS console
 
 b.11.  Click button "OK"
 
@@ -267,14 +267,14 @@ c.3.  Click button "+Add New"
 
 c.4.  Click button "OK"
 
-c.5.  Check your email to receive an ovpn file
+c.5.  Check your email to receive a .ovpn file
 
 c.6.  Done
 
 2.2.4  Step d – Start anonymous browsing
 --------------------------------------------
 
-This step explains how to establish an OpenVPN® connection and surf network as anonymous.
+This step explains how to establish an OpenVPN® connection and surf the network anonymously.
 
 **Instructions:**
 

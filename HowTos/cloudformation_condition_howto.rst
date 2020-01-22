@@ -13,8 +13,8 @@ You may use `Condition Functions <https://docs.aws.amazon.com/AWSCloudFormation/
 
 Here is an example of how to use Conditions in a CloudFormation script. 
 
-In this example, we want to specify "unlimited", a CPU credit property only applies to t2/t3 
-series instance when a user select such instance type. If the user input is not t2 series, for example, m4 series, the CPU credit property cannot be specified as it does not exist. 
+In this example, we want to specify "unlimited", a CPU credit property that only applies to t2/t3 
+series instances when a user selects such instance type. If the user input is not t2 series, for example, m4 series, the CPU credit property cannot be specified as it does not exist. 
 
 The code to define a condition that tests if the input parameter is t2.large, t2.xlarge or 
 t2.2xlarge is as follows.

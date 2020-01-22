@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix User SSL VPN Google SAML Configuration
    :keywords: Google, SAML, user vpn, google saml, Aviatrix, OpenVPN
 
@@ -58,7 +58,7 @@ Follow these steps to configure Aviatrix to authenticate against your Google IDP
 
 .. _gsaml_google_saml_app:
 
-Create an Google SAML App for Aviatrix
+Create a Google SAML App for Aviatrix
 ######################################
 
 .. note::
@@ -151,7 +151,7 @@ Launch Aviatrix VPN Gateway
 
    This step can be skipped if you already have created a SAML VPN Gateway
 
-#. Login to the Aviatrix controller
+#. Log in to the Aviatrix controller
 #. Click `Gateway` in the left navigation menu
 #. Click the `+ New Gateway` button
 #. Enter a `Gateway Name`
@@ -230,7 +230,7 @@ Test the Integration
 Create a VPN User
 #################
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Click `OpenVPN®` in the left navigation menu
 #. Select `VPN Users`
 #. Click `+ Add New`
@@ -245,7 +245,7 @@ Create a VPN User
 Validate
 ########
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Click `OpenVPN®` in the left navigation menu
 #. Select `VPN Users`
 #. Download the configuration for your test user created in the previous step

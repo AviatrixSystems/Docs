@@ -24,7 +24,7 @@ This document describes how to configure an IPSec tunnel between an Aviatrix Gat
 Deployment Guide
 ----------------
 
-For this use case, we will create an IPSec connection from DRG first and then configure a site2cloud connection at Aviatrix Controller.
+For this use case, we will create an IPSec connection from DRG first and then configure a Site2Cloud connection at the Aviatrix Controller.
 
 Create an IPSec Connection from DRG
 ++++++++++++++++++++++++++++++++++++
@@ -36,9 +36,9 @@ Create an IPSec Connection from DRG
    #. You have a DRG created and attached to a VCN
    #. You have an Aviatrix Gateway provisioned in a VPC.  You will need this gateway's public IP address and its VPC CIDR for the steps below.
 
-#. Login to your Oracle Cloud Console and create a route rule for the DRG
+#. Log in to your Oracle Cloud Console and create a route rule for the DRG.
 
-    We need to modify the desired route table and create a route rule to take any traffic destined for Aviatrix Gateway's VPC CIDR and route it to the DRG.
+    We need to modify the desired route table and create a route rule to take any traffic destined for the Aviatrix Gateway's VPC CIDR and route it to the DRG.
 
       #. Under **Core Infrastructure**, go to **Networking** and click **Virtual Cloud Networks**
       #. Click your VCN
@@ -59,10 +59,10 @@ Create an IPSec Connection from DRG
    |vcn_route_table|
 
 
-#. Login to your Oracle Cloud Console and create security rules
+#. Log in to your Oracle Cloud Console and create security rules.
 
     We will edit the security list associated with your VCN subnets. We need to add two new rules - one ingress rule for
-    traffic coming from Aviatrix Gateway's VPC and one egress rule for traffic destinating to Aviatrix Gateway's VPC.
+    traffic coming from the Aviatrix Gateway's VPC and one egress rule for traffic destinating to the Aviatrix Gateway's VPC.
 
       #. Under **Core Infrastructure**, go to **Networking** and click **Virtual Cloud Networks**
       #. Click your VCN
@@ -82,7 +82,7 @@ Create an IPSec Connection from DRG
 
          |vcn_security_rule_ingress|
 
-      #. In **Allowed Rule for Egress** section, enter the following values to create a rule to allow outgoing traffic to Aviatrix Gateway's VPC
+      #. In **Allowed Rule for Egress** section, enter the following values to create a rule to allow outgoing traffic to the Aviatrix Gateway's VPC
 
          +--------------------------------+--------------------------------------------------------+
          | Field                          | Description                                            |
@@ -102,7 +102,7 @@ Create an IPSec Connection from DRG
 
       #. Under **Core Infrastructure**, go to **Networking** and click **Customer-Premises Equipment**
       #. Click **Create Customer-Premises Equipment**
-      #. Enter the following values and click **Create** button
+      #. Enter the following values and click the **Create** button
 
          +------------------------------+---------------------------------------------+
          | Field                        | Description                                 |
@@ -144,14 +144,14 @@ Create an IPSec Connection from DRG
       |ipsec_connection|
 
 
-   #. Once the IPSec connection enters **Available** state, click the **Action** icon (three dots), and then click **Tunnel Information**.
-      Please copy the **IP Address** of the VPN headend and the **Shared Secret** for configuring site2cloud connection at Aviatrix Controller.
+   #. Once the IPSec connection enters the **Available** state, click the **Action** icon (three dots), and then click **Tunnel Information**.
+      Please copy the **IP Address** of the VPN headend and the **Shared Secret** for configuring a Site2Cloud connection at the Aviatrix Controller.
 
       |ipsec_info|
 
 #. Login to Aviatrix Controller
 
-#. Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  Use this table for specific field values
+#. Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  Use this table for specific field values.
 
    +-------------------------------+-----------------------------------------------------------------+
    | Field                         | Description                                                     |
@@ -187,9 +187,9 @@ Create an IPSec Connection from DRG
 Test
 ----
 
-Once complete, test the communication using the tunnel by sending traffic between instances in Aviatrix Gateway' VPC and Oracle VCN.
+Once complete, test the communication using the tunnel by sending traffic between instances in the Aviatrix Gateway's VPC and Oracle VCN.
 
-Login Aviatrix Controller and go to **Site2Cloud** page. Verify the site2cloud connection created above is "Up" in **Status**.
+Login to the Aviatrix Controller and go to the **Site2Cloud** page. Verify that the Site2Cloud connection created above is "Up" in **Status**.
 
 
 |s2c_status|
@@ -198,12 +198,12 @@ Login Aviatrix Controller and go to **Site2Cloud** page. Verify the site2cloud c
 Troubleshooting
 ---------------
 
-Wait 2-3 minutes for the tunnel to come up.  If it does not come up within that time, check the IP addresses to confirm they are accurate.  Additional troubleshooting is available in the **Diagnositics** tab.
+Wait 2-3 minutes for the tunnel to come up.  If it does not come up within that time, check the IP addresses to confirm they are accurate.  Additional troubleshooting is available in the **Diagnostics** tab.
 
 Appendix: Enable HA
 -------------------
 
-You can enable HA for Aviatrix site2cloud connection to Oracle DRG. Please add following extra steps to the configuration.
+You can enable HA for an Aviatrix Site2Cloud connection to Oracle DRG. Please add following extra steps to the configuration.
 
 |gw2drg-ha|
 
@@ -211,13 +211,13 @@ You can enable HA for Aviatrix site2cloud connection to Oracle DRG. Please add f
 Create Aviatrix HA Gateway
 ++++++++++++++++++++++++++
 
-Before creating site2cloud connection, following `this <https://docs.aviatrix.com/Solutions/gateway_ha.html>`__ guide's
+Before creating a Site2Cloud connection, follow `this <https://docs.aviatrix.com/Solutions/gateway_ha.html>`__ guide's
 **Backup Gateway and Tunnel HA** section to create Aviatrix HA gateway in the same VPC.
 
 From Oracle Cloud console, create a second IPSec connection between the same DRG and Aviatrix HA Gateway
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#. Create a new CPE at Oracle Cloud Console for Aviatrix HA Gateway:
+#. Create a new CPE at Oracle Cloud Console for the Aviatrix HA Gateway:
 
      +------------------------------+----------------------------------------------------+
      | Field                        | Description                                        |
@@ -231,7 +231,7 @@ From Oracle Cloud console, create a second IPSec connection between the same DRG
      | Tags                         | Optional                                           |
      +------------------------------+----------------------------------------------------+
 
-#. Create a new IPSec connection at Oracle Cloud Console for Aviatrix HA Gateway:
+#. Create a new IPSec connection at Oracle Cloud Console for the Aviatrix HA Gateway:
 
      +-----------------------------------------+--------------------------------------------------------+
      | Field                                   | Description                                            |
@@ -249,13 +249,13 @@ From Oracle Cloud console, create a second IPSec connection between the same DRG
      | Tags                                    | Optional                                               |
      +-----------------------------------------+--------------------------------------------------------+
 
-#. Once the second IPSec connection enters **Available** state, click the **Action** icon (three dots), and then
+#. Once the second IPSec connection enters the **Available** state, click the **Action** icon (three dots), and then
    click **Tunnel Information**. Please copy the **IP Address** of the VPN headend and the **Shared Secret**.
 
 Create Aviatrix Site2Cloud Connection with HA
 +++++++++++++++++++++++++++++++++++++++++++++
 
-From Aviatrix Controller UI -> Site2Cloud page, click **+ Add New**, under **Add a New Connection**, make sure **Enable HA** is checked.
+From the Aviatrix Controller UI -> Site2Cloud page, click **+ Add New**. Under **Add a New Connection**, make sure **Enable HA** is checked.
 
 Additional fields are displayed when checked. All other fields should have the same values as corresponding ones WITHOUT HA.
 

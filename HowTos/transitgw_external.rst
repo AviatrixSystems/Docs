@@ -7,25 +7,26 @@
 Aviatrix Transit Gateway to External Devices 
 =========================================================
 
-Starting from Release 4.1, there are three options to connect to Transit GW with BGP:
+Starting from Release 4.1, there are three options to connect to a Transit GW with BGP:
 
  - AWS VGW
  - Aviatrix hardware appliance CloudN
  - External (or 3rd Party) Router/Firewall
 
-This document provides instructions on how to connect Aviatrix Transit GW to external router/firewall devices.
+This document provides instructions on how to connect the Aviatrix Transit GW to external router/firewall devices.
 
-What are the use cases for connecting to external router?
------------------------------------------------------------
+What are the use cases for connecting to an external router?
+---------------------------------------------------------------
 
- - **Overcome AWS VGW 100 route limit** Typically Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to external device, VGW is bypassed. 
+ - **Overcoming the AWS VGW 100 route limit** Typically, an Aviatrix Transit GW connects to VGW over IPSEC and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to an external device, the VGW is bypassed. 
 
- - **Azure Transit Network** This feature allows Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
+ - **Azure Transit Network** This feature allows an Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
+ - **All Other Cloud Providers** Use this feature to connect to network of cloud providers such as Alibaba Cloud, Tencent Cloud, Vmware Cloud, IBM Cloud and others. 
 
 How does it work? 
 ------------------
 
-Aviatrix Transit GW runs a BGP session to external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding. 
+The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding. 
 
 The mechanism works for AWS Direct Connect, Azure Express Route or Internet. 
 
@@ -58,32 +59,39 @@ The configuration is the `Step 3 in the Transit Network workflow <https://docs.a
 1. Fill the parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fill the parameters and click OK.
+Fill the parameters and click OK. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
 
-=========================      ==========
+============================   ==========
 **Setting**                    **Value**
-=========================      ==========
-VPC ID/VNet Name               The Transit VPC ID where Transit GW was launched.
+============================   ==========
+BGP or Static                  Select BGP if the Transit GW runs dynamic routing with remote site. Otherwise, select Static.
+VPC Name                       The Transit VPC ID where Transit GW was launched.
 Connection Name                A unique name to identify the connection to external device. 
-BGP Local AS Number            The BGP AS number the Transit GW will use to exchange routes with external device.
-BGP Remote AS Number           The BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
+Aviatrix Transit GW BGP ASN    The BGP AS number the Transit GW will use to exchange routes with external device.
 Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
-Remote Gateway Type            Select one device type. Select Generic if the external device is not in the drop down. 
 Algorithm                      Optional parameters. Leave it unselected if you don't know.
 Enable HA                      Select HA if there are two external devices. 
 Over DirectConnect             Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
-External Device IP             IP address of the external device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
+BGP Remote AS Number           When BGP is selected, the BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
+Remote Gateway IP              IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
-Local Tunnel IP address        Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
-Remote Tunnel IP address       Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
-=========================      ==========
+Local Tunnel IP                Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
+Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+Over DirectConnect (Backup)    Select this option if HA is enabled.
+BGP Remote ASN (Backup)        When BGP is selected, the remote ASN for backup should be the same as the primary remote ASN. 
+Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device.
+Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
+Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
+Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+
+============================   ==========
 
 2. Download the configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the configuration is done, a connection is created. Download the configuration file. 
 
-At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name", click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
+At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name" and click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
 
 |download_config_external|
 
@@ -106,7 +114,7 @@ Steps to
 
 
 
-Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP. . 
+Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP.  
 
 4. Disconnect the external device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +128,7 @@ The following is the topology used for the sample configuration below:
 
 |External-Device-Internet|
 
-Since over Internet, Aviatrix Transit GW and Cisco ISR/ASR use the other's public IP to create IPSec tunnel and establish BGP
+Since over Internet,  an Aviatrix Transit GW and Cisco ISR/ASR use each other's public IP to create an IPSec tunnel and establish a BGP
 connection.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding
@@ -141,13 +149,13 @@ The following is the topology used for the sample configuration below:
 
 |External-Device-DX|
 
-Since over Direct Connect, Aviatrix Transit GW and Cisco ISR/ASR use the other's private IP to create IPSec tunnel and
+Since over Direct Connect, the Aviatrix Transit GW and Cisco ISR/ASR use each other's private IP to create an IPSec tunnel and
 establish BGP connection.
 
 .. note::
-   ASN number of Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
-   ASN number (7224 in this example). Without it, Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
-   advertised by ASR/ISR back to Aviatrix Transit GW. With the same ASN number, Aviatrix Transit GW will drop the
+   The ASN number of the Aviatrix Transit GW entered at **BGP Local AS Number** of Step 1 above should be the same as VGW's
+   ASN number (7224 in this example). Without it, the Transit VPC CIDR advertised from VGW to on-prem ASR/ISR will be
+   advertised by ASR/ISR back to the Aviatrix Transit GW. With the same ASN number, Aviatrix Transit GW will drop the
    route to Transit VPC CIDR.
 
 The following diagrams display mappings between a sample configuration from Step 2 above and its corresponding

@@ -4,7 +4,7 @@
 
 
 ===============================================
-High Performance Transit Network - Insane Mode
+Insane Mode Encryption FAQ
 ===============================================
 
 This document discusses Aviatrix High Performance Transit Network and answers related questions.
@@ -22,11 +22,11 @@ have that performance cap.
 
 Why is that?
 
-Most virtual routers or software based routers are built with general purpose CPUs. Despite the vast CPU technology advancement, why does not IPSEC performance scale further?
+Most virtual routers or software based routers are built with general purpose CPUs. Despite the vast CPU technology advancement, why doesn't IPSEC performance scale further?
 
-It turns out the problem lies in the nature of tunneling, a common technique in networking to connect two end points. 
+It turns out the problem lies in the nature of tunneling, a common technique in networking to connect two endpoints. 
 
-When two general purpose server or virtual machine based routes  are connected by an IPSEC tunnel, 
+When two general purpose server or virtual machine based routes are connected by an IPSEC tunnel, 
 there is one UDP or ESP session going between the two machines, as shown below. 
 
 |tunnel_diagram|
@@ -38,8 +38,8 @@ CPU core, regardless how many CPU cores and memory you provide.
 This is true not only for IPSEC, but also for all tunneling protocols, such as GRE and IPIP.
 
 
-Aviatrix high performance Insane Mode Encryption
---------------------------------------------------
+What is Aviatrix high performance Insane Mode Encryption?
+-----------------------------------------------------------
 
 Aviatrix Insane Mode tunneling techniques establishes multiple tunnels between the two virtual routers, thus allowing
 all CPU cores to be used for performance scaling with the CPU resources, as shown below. 
@@ -52,14 +52,15 @@ and beyond, leveraging the multiple CPU cores in a single instance, VM or host.
 What are the use cases for Insane Mode?
 ----------------------------------------
 
- - 10Gbps Transit performance
- - Encryption over Direct Connect
+ - High performance `Encrypted Transit <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`
+ - High performance `Encrypted Peering <https://docs.aviatrix.com/HowTos/peering_faq.html>`_ performance
+ - High performance encryption over Direct Connect
  - Overcome VGW performance limit and 100 route limit
 
 How can I deploy Aviatrix Insane Mode?
 ----------------------------------------
 
-Aviatrix Insane mode is integrated into the Transit Network solution to provide 10Gbps performance between on-prem and Transit VPC with encryption. For VPC to VPC, Insane mode can achieve 20Gbps. 
+Aviatrix Insane mode is integrated into the Transit Network solution to provide 10Gbps performance between on-prem and Transit VPC with encryption. For VPC to VPC, Insane mode can achieve 25 - 30Gbps. 
 
 Insane mode can also be deployed in a flat (as opposed to Transit VPC) architecture for 10Gbps encryption. 
 
@@ -67,45 +68,54 @@ The diagram below illustrates the high performance encryption between Transit VP
 
 |insane_transit|
 
-Instance sizes and IPSEC Performance 
+What are the performance benchmarks? 
 ---------------------------------------------
 
-Insane mode is available on AWS for C5 series and C5n series. For more performance test results and how to
+Insane mode is available on AWS for C5 series and C5n series. It is also available on Azure. For more performance test results and how to
 tune your environment to get the best performance, check out `this document. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
-==================  ===============  ==============  ==============  ==============
- MTU size           C5.2xlarge       C5.9xlarge      C5.18xlarge     C5n.18xlarge
-==================  ===============  ==============  ==============  ==============
-1500                5Gbps            8.21Gbps        9Gbps           15Gbps
-9000                10Gbps           12Gbps          22Gbps          30Gbps
-==================  ===============  ==============  ==============  ==============
+How does Insane Mode work?
+-----------------------------
 
-What is the Aviatrix hardware appliance?
-------------------------------------------
+When a gateway is launched with `Insane Mode enabled <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_, 
+a new /26 public subnet is created where the Insane Mode gateway is launched on.
+
+Insane Mode builds high performance encryption tunnel over private network links. The private network links are 
+Direct Connect (DX) and AWS Peering (PCX). 
+
+For Insane Mode between two gateways, between an Transit GW and a Spoke gateway, or between a Transit GW and a Transit GW (Transit Peering), the Aviatrix Controller automatically creates the underlying AWS Peering connection and builds the tunnels over it. 
+
+Since Insane Mode tunnels are over private network links, the VPC route architecture is described as below, 
+where EC2 instances associated route entry to the remote site point to Aviatrix gateway, and the Aviatrix gateway instance associated route entry to remote site points to PCX or VGW. 
+
+|insane_routing|
+
+What is the Aviatrix hardware appliance CloudN?
+--------------------------------------------------
 
 Aviatrix offers a 1U rack mountable hardware appliance deployed in the datacenter. It works with the Aviatrix gateway.
 
 The Aviatrix appliance CloudN specification:
 
-=====================    ================================              =================
-Aviatrix CloudN          Specification                                 Notes
-=====================    ================================              =================
-Dimension                1U rack mount
-Server                   HPE ProLiant DL360 Gen10 Server
-CPU                      8 cores
-Memory                   16GB
-PCIe                     3.0
-10Gbps Ethernet ports    2 x SFP+                                          1 LAN port and 1 WAN port 
-1Gbps Ethernet port      RJ45                                              1 Management port
-=====================    ================================              =================
+========================    =======================================              =================
+Aviatrix CloudN             Specification                                        Notes
+========================    =======================================              =================
+Dimension                   1U rack mount
+Server                      HPE ProLiant DL360 Gen10 Xeon Gold 6130
+CPU                         16 cores
+Memory                      64GB
+PCIe                        3.0
+10/25Gbps Ethernet port     2 x SFP+                                             1 LAN port and 1 WAN port 
+1Gbps Ethernet port         RJ45                                                 1 Management port
+========================    =======================================              =================
 
 More information on HPE ProLiant DL360 Gen10 Server can be found `here. <https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-proliant-dl360-gen10-server.1010007891.html>`_
 
-How to deploy Aviatrix hardware appliance?
+What is the deployment logical diagram?
 -------------------------------------------
 
-Datacenter deployment is shown in the diagram below with redundancy, where R1 and R2 are two edge routers that connect to VGW over 
-DX. R3 and R4 are two routers connect to inside the datacenter. Aviatrix CloudN also runs a BGP session with R3 and
+Datacenter deployment is shown in the diagram below with redundancy, where R1 and R2 are two edge routers that connected to VGW over 
+DX. R3 and R4 are two routers connect to the inside of the datacenter. Aviatrix CloudN also runs a BGP session with R3 and
 R4 to collect datacenter routes. VGW is only used to terminate DX. Aviatrix gateway and on-prem appliance CloudN 
 run a BGP session to propagate on-prem routes to the Transit VPC. IPSEC tunnels are also built between the two. 
 
@@ -116,62 +126,23 @@ A logical deployment layout is described as below.
 
 |datacenter_layout|
 
-Reference Deployment Diagrams
-----------------------------------
 
-Single Aviatrix CloudN Appliance 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to deploy Insane Mode for hybrid connectivity?
+----------------------------------------------------
 
-|deployment|
+Follow the `Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_ to deploy CloudN in your datacenter. 
 
-And the sample configuration on an ISR is as follows.
+Do I need Direct Connect to use Insane Mode for On-prem?
+----------------------------------------------------
 
-|ISR-sample-config|
-
-Aviatrix CloudN Appliance with HA
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|deployment_ha|
-
-Redundant DX Deployment 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|deployment_dual_dx|
-
+Our InsaneMode high speed encryption feature works on top of your existing WAN link and it is agnostic to the type of connection used. As long as you have a pipe 
+that's large enough to alow for high throughput data transfer, using InsaneMode will offer seperior performance to regular IPSec. 
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
 
 At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ select "Insane Mode Encryption". 
 
-Pre-deployment Check List
-----------------------------
-
-Aviatrix support team configures and updates the software before shipping the appliance. 
-Deployment topology for Aviatrix CloudN is as follows:
-
-|InsaneBeta|
-
-Please collect information requested below and provide to Aviatrix. Click the link `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_ to download the application form.
-
-=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
-CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  Primary DNS Server  Secondary DNS Server   Note
-=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
-1- WAN                                                  Not Required     Not Required        Not Required
-2- LAN                                                  Not Required     Not Required        Not Required
-3- MGMT                                                                                                             Management port for CloudN configuration and software upgrade
-4- HPE iLO (optional)                                                    Not Required        Not Required           HP Integrated Lights-Out
-=====================  ==================  ===========  ===============  ==================  =====================  =============================================================
-
-Aviatrix will pre-configure the IP addresses, subnet masks, default gateway and DNS servers on CloudN before shipping the unit.
-
-Internet Access
-------------------
-CloudN appliance does not require public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
-
-BGP Requirement
-------------------
-BGP is required between LAN port of the appliance and the on-prem router for route propagation.
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
@@ -199,6 +170,9 @@ BGP is required between LAN port of the appliance and the on-prem router for rou
    :scale: 30%
 
 .. |ISR-sample-config| image:: insane_mode_media/ISR-sample-config.png
+   :scale: 30%
+
+.. |insane_routing| image:: insane_mode_media/insane_routing.png
    :scale: 30%
 
 .. |image1| image:: transitvpc_designs_media/multiRegions.png

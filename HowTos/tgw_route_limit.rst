@@ -10,18 +10,18 @@ AWS Transit Gateway Route Limit Test Validation
 Introduction
 ---------------
 
-While an AWS Transit Gateway (TGW) carries thousands of routes in the TGW route table, TGW VPN has the same 100 route limit as
+While an AWS Transit Gateway (TGW) carries thousands of routes in the TGW route table, a TGW VPN has the same 100 route limit as
 the VGW VPN. 
 
 Test Validation
 ----------------
 
-In the following setup, we launch a Cisco CSR 1000v as Customer Gateway and use it to attach a VPN connection
-to the TGW. TGW and CSR also run BGP between them. The detailed steps are `here <https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpn-attachments.html>`_.
+In the following setup, we launch a Cisco CSR 1000v as the Customer Gateway and use it to attach a VPN connection
+to the TGW. The TGW and the CSR also run BGP between themselves. The detailed steps are `here <https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpn-attachments.html>`_.
 
 |tgw_route_limit|
 
-After the VPN tunnel is created between TGW and CSR, run the following command at CSR to verify the BGP peer connection, where 169.254.11.233 is the TGW's BGP ID.:
+After the VPN tunnel is created between TGW and CSR, run the following command at CSR to verify the BGP peer connection, where 169.254.11.233 is the TGW's BGP ID:
 
 ::
 
@@ -40,21 +40,21 @@ debug messages:
  *Dec 18 00:29:28.213: BGP: ses global 169.254.11.233 (0x7F36A1AF6C60:1) Reset (BGP Notification received).
  *Dec 18 00:29:28.213: BGP: 169.254.11.233 went from Established to Closing
 
-The above messages show that when TGW exceeds its route limit (100) and it sends a BGP reset message to CSR.
+The above messages show that when the TGW exceeds its route limit (100), it sends a BGP reset message to CSR.
 
-BGP connection becomes idle after these messages.
+The BGP connection becomes idle after these messages.
 
 ::
 
  ip-10-10-0-106#show ip bgp neighbors 169.254.11.233 | include BGP state
    BGP state = Idle
 
-This test indicates that TGW has the same BGP total prefix limitation (100) as VGW.
+This test indicates that TGW has the same BGP total prefix limitation (100) as a VGW.
 
 Summary
 ----------
 
-TGW VPN has a total 100 BGP prefix. In addition TGW cannot summarize Spoke VPC routes. 
+TGW VPN has a total 100 BGP prefix. In addition, a TGW cannot summarize Spoke VPC routes. 
 
 
 .. |tgw_route_limit| image:: tgw_route_limit_media/tgw_route_limit.png

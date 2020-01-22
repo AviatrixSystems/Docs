@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Encrypted Transitive Peering Ref Design
    :keywords: peering, encrypted peering, transitive peering, encrypted transitive, aviatrix
 
@@ -11,7 +11,7 @@ your employees access cloud directly with the following highlighted
 benefits:
 
 -  Lower latency. Rather than having your employees connect via VPN to
-   your corporate office first and then access the cloud, provide a
+   your corporate office first and then access the cloud, you can provide a
    cloud VPN where they can access AWS directly.
 
 -  Better Security. Traditional VPN servers do not support modern multi
@@ -23,22 +23,22 @@ benefits:
 However, your business may require hosting some critical applications in
 wide spread co-locations. As a cloud infrastructure engineer, you need
 to access these sites to check on the health of your servers and
-applications. The challenge is to setup a system to enable secure
+applications. The challenge is to set up a system to enable secure
 accessing abilities to both the cloud and co-locations.
 
 Solution
 ========
 
 Our solution is to leverage Aviatrix’s encrypted peering and encrypted
-transitive peering capability to setup an end to end secure network.
+transitive peering capabilities to set up an end to end secure network.
 
 In this example, a datacenter or co-location hosts some critical
-customer facing applications. It connects to AWS VPC for additional
-processing, such as data analytics. The data center connects to a AWS
-VGW with IPSEC tunnel. Employees and developers access VPC-1 and VPC-2
+customer facing applications. It connects to an AWS VPC for additional
+processing, such as data analytics. The data center connects to an AWS
+VGW with an IPSEC tunnel. Employees and developers access VPC-1 and VPC-2
 directly via Aviatrix CloudVPN and encrypted peering configuration. The
 cloud infrastructure engineers need to access the servers in the
-datacenter or co-location for maintenance and monitoring purpose. They
+datacenter or co-location for maintenance and monitoring purposes. They
 do so via an Aviatrix encrypted tunnel and Aviatrix encrypted transitive
 tunnel configuration. The solution diagram is shown below.
 
@@ -47,7 +47,7 @@ tunnel configuration. The solution diagram is shown below.
 Configuration Workflow
 ======================
 
-Before you start make sure you have the latest software by checking the
+Before you start, make sure you have the latest software by checking the
 Dashboard. If an alert message displays, click Upgrade to download the
 latest software.
 
@@ -72,11 +72,11 @@ with major steps highlighted.
 
    Go to Peering -> Encrypted Peering -> New Peering, make sure:
 
-	a. At VPC Name 1 drop down menu, select the peering gateway launched in
+	a. At VPC Name 1's drop down menu, select the peering gateway launched in
 	   VPC-main (note, this peering gateway is different from the VPN
 	   gateway).
 
-	b. At VPC Name 2 drop down menu, select the gateway launched in VPC-2.
+	b. At VPC Name 2's drop down menu, select the gateway launched in VPC-2.
 
 	c. Click Add.
 
@@ -84,7 +84,7 @@ with major steps highlighted.
 
    Go to Peering -> Transitive Peering -> New Peering, make sure:
 
-	a. At Source VPC drop down menu, select the peering gateway launched in
+	a. At the Source VPC drop down menu, select the peering gateway launched in
 	   VPC-main (the same VPC gateway selected in the previous step)
 
 	b. At Next Hop VPC drop down menu, select the gateway launched in VPC-2
@@ -94,11 +94,11 @@ with major steps highlighted.
 	   For example, 10.12.0.0/24. Note this address should be unique across
 	   your network.
 
-3. Repeat the above step 3 for more co-locations.
+3. Repeat step 3 above for more co-locations.
 
-4. For support, send email to support@aviatrix.com.
+4. For support, send an email to support@aviatrix.com.
 
-5. For feature request and feedback, click Make a wish at the bottom of
+5. For feature requests and feedback, click Make a wish at the bottom of
    each page.
 
 6. Enjoy!

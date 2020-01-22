@@ -1,0 +1,55 @@
+.. meta::
+   :description: FIPS 140-2
+   :keywords: FIPS 140-2  
+
+###################################
+FIPS 140-2 Module
+###################################
+
+Staring Release 4.6, Aviatrix supports FIPS 140-2 crypto module.
+
+The Aviatrix Certificate number is #3475 which you can find from the `NIST site <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
+
+The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/security-policies/140sp3475.pdf>`_
+
+Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied , 
+
+To apply FIPS patch go to the Controller Console, Settings -> Maintainence -> Security Patches -> Click FIPS 140-2  
+
+To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
+
+When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module.
+
+
+
+
+
+
+
+.. |gen_csr| image::  controller_certificate_media/gen_csr.png
+    :scale: 30%
+
+.. |ca.crt| image::  controller_certificate_media/ca.crt.png
+    :scale: 30%
+
+.. |server_crt| image::  controller_certificate_media/server_crt.png
+    :scale: 30%
+
+.. |imageRestoreAWS| image::  controller_backup_media/backup_restore_restore_aws.png
+
+.. |S3Create| image:: controller_backup_media/S3Create.png
+.. |S3Properties| image:: controller_backup_media/S3Properties.png
+    :scale: 30%
+.. |S3SelectDefaultEncryption| image:: controller_backup_media/S3SelectDefaultEncryption.png
+      :scale: 25%
+.. |S3SelectEncryption| image:: controller_backup_media/S3SelectEncryption.png
+      :scale: 25%
+.. |KMSKeyCreate| image:: controller_backup_media/KMSKeyCreate.png
+      :scale: 30%
+      :align: middle
+.. |KMSKeyAddUser| image:: controller_backup_media/KMSKeyAddUser.png
+      :scale: 30%
+      :align: middle
+
+.. disqus::
+	  

@@ -47,7 +47,7 @@ In the future release, the hybrid deployment can be using native AWS Direct Conn
 What is the problem with deploying firewall instances with ECMP?
 ------------------------------------------------------------------
 
-AWS Transit Gateway (TGW) supports VPN with ECMP load balancing. With is capability, you can launch multiple firewall instances in a load balanced fashion 
+AWS Transit Gateway (TGW) supports VPN with ECMP load balancing. With its capability, you can launch multiple firewall instances in a load balanced fashion 
 for Egress Inspection and VPC to VPC traffic inspection. The problem with this deployment is performance. The IPSEC tunnel limits each firewall instance
 to be capped at 1Gbps. When this architecture is deployed for VPC to VPC inspection, traffic goes through VGW (the other end of the IPSEC tunnel) twice, 
 further reducing its throughput to 400Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is 

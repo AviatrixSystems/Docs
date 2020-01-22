@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
   :description: Aviatrix Client VPN Solution build a zero trust cloud network
   :keywords: Zero Trust network architecture, Aviatrix Zero Trust network, OpenVPN
 
@@ -23,16 +23,16 @@ How to build a Zero Trust cloud network
 1. Classify data by network segmentation 
 ------------------------------------------
 
- - Separating production data from dev and test is the first step. Give them separate cloud accounts is the best practice to ensure isolation. 
+ - Separating production data from dev and test is the first step. Giving them separate cloud accounts is the best practice to ensure isolation. 
 
  - Different business groups should have separate cloud accounts. 
 
- - The more the fine grained accounts the more micro segmentation goal is achieved.
+ - The more fine grained accounts, the more micro segmentation goal is achieved.
 
  - There should be zero connections among these networks by default. 
 
-In public cloud such as AWS, using the above principles to build your cloud network results in isolated islands of VPCs. If one VPC is breached,
-it is impossible to gain access to other VPCs, thus significantly reduce attack surface. 
+In public clouds such as AWS, using the above principles to build your cloud network results in isolated islands of VPCs. If one VPC is breached,
+it is impossible to gain access to other VPCs, thus significantly reducing attack surface. 
 
 `Aviatrix is a multi account platform <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ that enables you to manage all cloud accounts from a single pane of glass. 
 
@@ -40,11 +40,11 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 2. Policy driven connectivity with stateful firewall rules 
 ------------------------------------------------------------
 
- - The connectivity between VPCs and on-prem network should be policy driven. A network solution such as the AWS Global Transit Network with CSR is a opposite to Zero Trust architecture point of view as all VPCs and on-prem is built into a full mesh network. In contrast,  
+ - The connectivity between VPCs and on-prem networks should be policy driven. A network solution such as the AWS Global Transit Network with CSR is a polar opposite to Zero Trust architecture point of view as all VPCs and on-prem are built into a full mesh network. In contrast,  
  
  - `AWS Global Transit Network with Aviatrix <http://docs.aviatrix.com/Solutions/aviatrix_aws_transitvpc.html>`_ meets Zero Trust architecture requirements where secure connection is established by organization policy. 
 
- - In addition to policy driven network connections, there must be firewall rules that govern data flow and reduce the connection scope. For example, you should consider place application and database in separate VPCs and setup a stateful firewall rule to only allow traffic initiated from application to access database, no the other way around. `Aviatrix gateway stateful firewall <http://docs.aviatrix.com/HowTos/gateway.html>`_ enforces and logs all network events. 
+ - In addition to policy driven network connections, there must be firewall rules that govern data flow and reduce the connection scope. For example, you should consider placing application and database in separate VPCs and setting up a stateful firewall rule to only allow traffic initiated from application to access the database, not the other way around. `Aviatrix gateway stateful firewall <http://docs.aviatrix.com/HowTos/gateway.html>`_ enforces and logs all network events. 
 
  - Within a VPC, you can use AWS native security groups associated with instances to enforce policies for communications.
 
@@ -52,13 +52,13 @@ it is impossible to gain access to other VPCs, thus significantly reduce attack 
 3. User access with authentication and authorization
 ------------------------------------------------------
 
-- Users access cloud resources must be first authenticated. Certificate only based authentication is a weak solution as certificate can be stolen. Another insecure access method is Jump Host or Bastion stations. Multi factor authentication such as integrating with LDAP/DUO/OKTA and client SAML "Single Sign On" significantly improves authentication strengths. However authentication alone is not sufficient, 
+- User access to cloud resources must be first authenticated. Certificate-only based authentication is a weak solution as a certificate can be stolen. Another insecure access method is Jump Host or Bastion stations. Multi factor authentication such as integrating with LDAP/DUO/OKTA and client SAML "Single Sign On" significantly improves authentication strengths. However, authentication alone is not sufficient, 
 
-- Users access cloud resources must be authorized. The finer grained control you apply, the less literal movement a user can make even if accessing to the network is attained. With Zero Trust, you should only grant access to the required resources. 
+- A User's access cloud resources must be authorized. The finer grained control you apply, the less lateral movement a user can make even if access to the network is attained. With Zero Trust, you should only grant access to the required resources. 
 
 - User access activities must be fully audited. Every user initiated TCP session in the cloud network must be logged for audit and inspection. 
 
-`Aviatrix Enterprise OpenVPN® Solution <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ is the strongest secure client solution in the marketplace built for the public cloud. 
+The `Aviatrix Enterprise OpenVPN® Solution <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_ is the strongest secure client solution in the marketplace built for the public cloud. 
 
 4. Summary
 ------------

@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix Cloud Account for Azure
    :keywords: Aviatrix account, Azure, Aviatrix Azure account credential, API credential
 
@@ -9,7 +9,7 @@ Azure ARM
 1.0 Overview
 =============
 
-This document helps you to setup API credentials on Azure ARM. 
+This document helps you setup API credentials on Azure ARM. 
  
 Aviatrix Cloud Controller uses Azure APIs extensively to launch Aviatrix
 gateways, configure encrypted peering and other features.
@@ -24,20 +24,10 @@ interact with Azure Resource Manager APIs to manage resources, such as
 Virtual Machines, Network, Storage Accounts, etc.
 
 This document describes how to obtain the necessary information,
-specifically Application ID, Application Key, and
+specifically Application ID, Application Key(Client secret), and
 Application Directory ID to create an Aviatrix Cloud Account with step by
 step instructions. There are 3 sections, make sure you go through all of
 them.
-
-Or you may refer to this video:
-
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/LHqF-yyze7M" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
 
 |
 
@@ -51,10 +41,10 @@ Setting up Azure permission for Aviatrix involves three main steps.
 
 2. Grant Permissions
 
-3. Get Application ID, Application Key and Directory
+3. Get Application ID, Application Key(Client secret) and Directory
    ID
 
-**Important:** Complete the follow steps in order.
+**Important:** Complete the following steps in order.
 
 2.1  Step 1 – Register Aviatrix Controller Application
 -------------------------------------------------------
@@ -69,21 +59,19 @@ https://portal.azure.com
 
 |Image01|
 
-2. Click “App registrations"
+2. Click “App registrations".  Do not choose "App registrations (Legacy)"
 
 |Image03|
 
-3. Click “+ New application registration”
+3. Click “+ New registration”
 
 |Image04|
 
    a. Name = Aviatrix Controller
 
-   b. Application Type = Web app / API
+   b. Supported account types = Accounts in this organizational directory only
 
-   c. Sign-on URL = http://aviatrix
-
-   d. Click Create.
+   c. Click Register.
 
 3. Done
 
@@ -122,60 +110,53 @@ https://portal.azure.com
 
 **Get Application Information**
 
-1. From the Azure portal, click All services and search for “Azure Active Directory”.
+1. From the Azure portal, click All services and search for “Azure Active Directory”. Click “App registrations” and then the application to see the Application (client) ID and Directory (tenant) ID.
 
    |Image01|
 
-2. Retrieve the **Application** **Directory ID**.
+2. Retrieve the **Application (client) ID** and **Directory (tenant) ID**.
+   
+   A. Copy the Application ID and Directory ID for later use.  
 
-   A. Scroll down the Azure Active Directory panel and Click on Properties
+   |Image14|
+   
+3. Retrieve the **Client Secrets**.
 
-   |Image02|
+   A. Click Certificates & secrets
 
-   B. Copy the “Directory ID” (to notepad or a convenient location)
-
-3. Retrieve the **Application ID**.
-
-   A. Scroll up and click App registrations
-
-   |Image05|
-
-   B. Copy the “Application ID”
-
-4. Retrieve the **Application Key**.
-
-   A. Click Aviatrix Controller
-
-   B. Click Settings
+   B. Click New client secret
 
    |Image06|
 
-   C. Click Keys
 
-   |Image07|
-
-   D. Enter in the following
+   C. Enter in the following
 
       * Description = Aviatrix
 
-      * Expires = Never expires
+      * Expires = Never
+      
+   |Image07|
 
-   E. Click Save
+   E. Click Add
+   
+   |Image15|
 
-   F. Copy the key value (to notepad or a convenient location)
+   F. Copy the secret.  This will be used as the Application Key in the Aviatrix Controller.
 
-5. Add **App permissions**.
+5. Add **API permissions**.
 
-   A. Click Required permissions -> Add
+   A. Click API permissions
 
    |Image08|
 
-   B. Click Select an API -> Click Windows Azure Service Management API and click Select down below
-
+   B. Click "+Add a permission"
+   
+   C. Choose Azure Service Management
+   
    |Image09|
 
-   C. Click “Access Azure Service Management as organization user” and click Select
-
+   D. Select user_impersonation then Add permissions
+   
    |Image10|
 
 6. Done
@@ -184,12 +165,12 @@ At this point you should have the following information.
 
 +-----------------------------------+---------------+
 | **Subscription ID**               | From step 2   |
-+===================================+===============+
++-----------------------------------+---------------+
 | **Directory** **ID**              | From step 3   |
 +-----------------------------------+---------------+
 | **Application ID**                | From step 3   |
 +-----------------------------------+---------------+
-| **Application Key**               | From step 3   |
+| **Application Key(Client secret)**| From step 3   |
 +-----------------------------------+---------------+
 
 
@@ -199,30 +180,23 @@ At this point you should have the following information.
 .. |image02| image:: AviatrixAccountForAzure_media/az-ad-directory-id-02.PNG
    :width: 5.65600in
    :height: 2.39763in
-.. |image03| image:: AviatrixAccountForAzure_media/az-ad-app-03.PNG
-   :width: 6.98958in
-   :height: 3.02083in
-.. |image04| image:: AviatrixAccountForAzure_media/az-ad-app-create-04.PNG
-   :width: 5.20313in
-   :height: 1.50209in
+.. |image03| image:: AviatrixAccountForAzure_media/Image03.png
+   :width: 100%
+.. |image04| image:: AviatrixAccountForAzure_media/Image04.png
+   :width: 100%
 .. |image05| image:: AviatrixAccountForAzure_media/az-ad-list-all-apps-05.PNG
    :width: 5.65600in
    :height: 2.39763in
-.. |image06| image:: AviatrixAccountForAzure_media/az-ad-application-id-06.PNG
-   :width: 6.98958in
-   :height: 3.02083in
-.. |image07| image:: AviatrixAccountForAzure_media/az-ad-app-keys-save-07.PNG
-   :width: 5.20313in
-   :height: 1.50209in
-.. |image08| image:: AviatrixAccountForAzure_media/az-ad-app-permissions-add-08.PNG
-   :width: 5.65600in
-   :height: 2.39763in
-.. |image09| image:: AviatrixAccountForAzure_media/az-ad-app-permissions-add-api-09.PNG
-   :width: 6.98958in
-   :height: 3.02083in
-.. |image10| image:: AviatrixAccountForAzure_media/az-ad-app-permissions-api-set-10.PNG
-   :width: 5.20313in
-   :height: 1.50209in
+.. |image06| image:: AviatrixAccountForAzure_media/Image06.png
+   :width: 100%
+.. |image07| image:: AviatrixAccountForAzure_media/Image07.png
+   :width: 100%
+.. |image08| image:: AviatrixAccountForAzure_media/Image08.png
+   :width: 100%
+.. |image09| image:: AviatrixAccountForAzure_media/Image09.png
+   :width: 100%
+.. |image10| image:: AviatrixAccountForAzure_media/Image10.png
+   :width: 100%
 .. |image11| image:: AviatrixAccountForAzure_media/az-ad-sub-role-11.PNG
    :width: 5.65600in
    :height: 2.39763in
@@ -232,6 +206,11 @@ At this point you should have the following information.
 .. |image13| image:: AviatrixAccountForAzure_media/az-ad-sub-contrib-13.PNG
    :width: 6.98958in
    :height: 3.02083in
+   
+.. |image14| image:: AviatrixAccountForAzure_media/Image14.png
+   :width: 100%
+.. |image15| image:: AviatrixAccountForAzure_media/Image15.png
+   :width: 100%
 
 
 .. add in the disqus tag

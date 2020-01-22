@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
   :description: AWS Global Transit VPC
   :keywords: AWS Global Transit Network, Aviatrix site2cloud, Transitive Peering, Openvpn, SSL vpn, remote vpn, client vpn, CSR1000V
 
@@ -23,20 +23,20 @@ The configuration guide can be found `at this link. <http://docs.aviatrix.com/Ho
 Comparing Aviatrix Global Transit Network Solution with CSR1000v Solution
 ==============================================================================
 
-Aviatrix Solution has the following benefits compared to CSR1000v:
+The Aviatrix Solution has the following benefits compared to CSR1000v:
 
-**Simplicity** No Cisco CCIE, BGP, VRF and IPSEC domain expertise required. The Aviatrix central controller builds and manages your network with software defined routing and point and click solutions deploying in minutes.
+**Simplicity** No Cisco CCIE, BGP, VRF and IPSEC domain expertise is required. The Aviatrix central controller builds and manages your network with software defined routing and point and click solutions deploying in minutes.
 
-**No Double Egress Charge** Aviatrix supports direct Spoke VPC to Spoke VPC connectivity without going through transit VPC which incurs in twice the egress network charges.
+**No Double Egress Charge** Aviatrix supports direct Spoke VPC to Spoke VPC connectivity without going through a transit VPC, which incurs twice the egress network charges.
 
-**Isolation By Design** AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With Aviatrix solution no connectivity is established until you specify.
+**Isolation By Design** An AWS Transit VPC solution with CSR1000v automatically builds a full mesh network among all Spoke VPCs, which breaks enterprise security posture as different Spoke VPCs can be owned by different business units. With the Aviatrix solution no connectivity is established until you specify.
 
 **Highly Available** Built-in gateway redundancy supports hot standby
-and fail over in seconds.
+and failover in seconds.
 
-**Scalable**  No limits on the number of spoke VPCs can be connected to on-prem via hub VPC. Aviatrix Designated Gateway summarizes all routes. Gateways can scale-up, scale-down or scale-out with a few clicks.
+**Scalable**  There are no limits on the number of spoke VPCs can be connected to on-prem via hub VPC. Aviatrix Designated Gateway summarizes all routes. Gateways can scale-up, scale-down or scale-out with a few clicks.
 
-**Visibility** Central dashboard monitors, displays and alerts link
+**Visibility** A central dashboard monitors, displays and alerts link
 status and link latency.
 
 **Additional Benefits** Stateful firewall at the gateway to enforce

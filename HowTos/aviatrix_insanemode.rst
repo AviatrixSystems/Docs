@@ -13,10 +13,10 @@ efficient single instance encryption performance.
 InsaneMode Benefits
 --------------------------------------------------
 
- - **30Gbps IPSEC** Using single instance from C5 series to the latest C5n series, single instance IPSEC performance reaches up to 30Gbps.   
+ - **30Gbps IPSEC** Using a single instance from C5 series to the latest C5n series, single instance IPSEC performance reaches up to 30Gbps.   
  - **Private Link** InsaneMode connectivity is supported over AWS Peering and AWS Direct Connect.
  - **Stateful Firewall** Aviatrix gateways support stateful firewall for additional security policies, event and packet logging.
- - **Unlimited Routes** Aviatrix gateways have no limit to how many on-prem routes or VPC routes. 
+ - **Unlimited Routes** Aviatrix gateways have no limit to how many on-prem routes or VPC routes they can have. 
  - **Advanced NAT** Advanced NAT function for any packet transforming before and after routing function.
 
 InsaneMode Deployment Diagram

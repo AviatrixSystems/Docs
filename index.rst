@@ -17,6 +17,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Firewall Network`
 * :ref:`Transit DMZ`
+* :ref:`Cloud WAN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN® <OpenVPN>`
@@ -31,6 +32,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Good To Know`
 * :ref:`Support Center`
 * :ref:`IPmotion`
+* :ref:`Troubleshooting Playbook`
 
 
 .. _Getting Started:
@@ -42,7 +44,9 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aviatrix_overview
    StartUpGuides/aviatrix-cloud-controller-startup-guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
+   StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
+   StartUpGuides/aviatrix_operations
    StartUpGuides/CloudN-Startup-Guide
    StartUpGuides/appendix-CloudN-Startup-Guide
    StartUpGuides/aviatrix-china-controller-startup-guide
@@ -58,16 +62,18 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/onboarding_faq
    HowTos/aviatrix_account
    HowTos/HowTo_IAM_role
+   HowTos/howto_customize_aviatrix_iam_role_names_for_2ndary_accounts/howto_customize_aviatrix_iam_role_names_for_2ndary_accounts.rst
    HowTos/iam_policies
    HowTos/aviatrix_iam_policy_requirements
    HowTos/customize_aws_iam_policy
    HowTos/Aviatrix_Account_Azure
    HowTos/CreateGCloudAccount
+   HowTos/oracle-aviatrix-cloud-controller-onboard
    HowTos/AdminUsers_DuoAuth
    HowTos/CompanionGateway
    HowTos/Quick_Tour
    HowTos/accesskey
-
+   HowTos/account_audit
 
 .. _Gateway:
 
@@ -77,12 +83,13 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/gateway
    Solutions/gateway_ha
+   HowTos/gateway_audit
 
 .. _Transit Gateway Orchestrator:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Next Gen Transit for AWS
+   :caption: Transit Gateway Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
@@ -90,23 +97,30 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_design_patterns
    HowTos/transit_gateway_peering
    HowTos/tgw_csr_migrate
+   HowTos/diy_tgw_migrate_to_aviatrix_tgw
    HowTos/transitgw_external
-   HowTos/insane_mode
-   HowTos/insane_mode_perf
    HowTos/transitvpc_workflow
    HowTos/transitvpc_faq
-   HowTos/transitvpc_designs
+   HowTos/transitvpc_design
 
 .. _Transit Network:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Next Gen Transit for Azure
+   :caption: Encrypted Transit Network
 
-   HowTos/nextgentransit_for_azure
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
+   HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
+   HowTos/transit_firenet_faq
+   HowTos/transit_firenet_workflow
+   HowTos/activemesh_faq
+   HowTos/activemesh_design_notes
+   HowTos/activemesh_beta
+   HowTos/insane_mode
+   HowTos/insane_mode_perf
+   HowTos/CloudN_insane_mode
 
 .. _Firewall Network:
 
@@ -116,8 +130,15 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
-   HowTos/config_paloaltoVM
+   HowTos/firewall_network_design_patterns
    HowTos/paloalto_API_setup
+   HowTos/ingress_firewall_example
+   HowTos/config_paloaltoVM
+   HowTos/bootstrap_example
+   HowTos/config_FortiGate.rst
+   HowTos/config_Checkpoint.rst
+   HowTos/config_PFsense
+   HowTos/config_Barracuda.rst
 
 .. _Transit DMZ:
 
@@ -129,6 +150,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_dmz_workflow
    HowTos/transit_dmz_vendors
 
+.. _Cloud WAN:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Cloud WAN
+
+   HowTos/cloud_wan_faq
+   HowTos/cloud_wan_workflow
+
 .. _Security:
 
 .. toctree::
@@ -136,13 +166,14 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Security
 
 
+   HowTos/stateful_firewall_faq
    HowTos/tag_firewall
    HowTos/fqdn_faq
    HowTos/FQDN_Whitelists_Ref_Design
    HowTos/fqdn_discovery
    HowTos/fqdn_viewlog
-   HowTos/nat_only_outbound_traffic
    HowTos/guardduty
+   HowTos/public_subnet_filtering_faq
 
 .. _Peering:
 
@@ -174,6 +205,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/S2C_GW_CP
    HowTos/S2C_GW_ASA
    HowTos/S2C_GW_IOS
+   HowTos/site2cloud_sonicwall
    HowTos/CloudToPfSense
    HowTos/site2cloud_fortigate
    HowTos/site2cloud_meraki
@@ -183,6 +215,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud_case_study
    HowTos/EncrOverExpRoute
    HowTos/connect_overlap_cidrs
+   HowTos/connect_overlap_vpc_via_VGW
 
 .. _OpenVPN:
 
@@ -210,6 +243,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/DevSandbox
    HowTos/External_PKI_for_OpenVPN_Certificates
    HowTos/user_accelerator
+   HowTos/ipv6_multivpc_vpn
+
+
 
 
 .. _UsefulTools:
@@ -220,7 +256,6 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/vpc_tracker
    HowTos/create_vpc
-   HowTos/sfc_faq
 
 .. _Settings:
 
@@ -239,6 +274,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloudwatch
    HowTos/Controller_Login_SAML_Config
    HowTos/controller_certificate
+   HowTos/fips140-2
+   HowTos/controller_config
+   HowTos/Migration_From_Marketplace
 
 .. _Troubleshoot:
 
@@ -312,17 +350,23 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/reserve_onprem
    HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
-   HowTos/insane_poc
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
    Solutions/aviatrix_aws_transitvpc
-   Solutions/egress_transit_gateway
    Solutions/netapp_sap_floating_ip
    Solutions/egress_nat_pool
    HowTos/tgw_route_limit
    HowTos/tgw_pan_ecmp
+   HowTos/tgw_egress_vpc
    HowTos/aws_transit_gateway_orchestrator
    HowTos/aviatrix_insanemode
+   HowTos/transit_snat_dnat
+   HowTos/ipv6_peering
+   HowTos/nextgentransit_for_azure
+   HowTos/nat_only_outbound_traffic
+   HowTos/activemesh_migration
+   HowTos/openvpn_fqdn
+   HowTos/HowTo_Setup_SAML_with_G_SUITE_ORG
 
 .. _Good To Know:
 
@@ -349,11 +393,16 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_center_controller
    Support/support_center_openvpn_gateway
    Support/support_center_transit_solution
+   Support/support_center_egress_firewall
    Support/support_center_logging
    Support/support_center_site2cloud
+   Support/support_center_ipsec
    Support/support_center_aws_infrastructure
+   Support/support_center_gcp_infrastructure
    Support/support_center_terraform
-   Support/support_center_egress_firewall
+   Support/support_ticket_priority
+   Support/support_center_useful_tools
+   Support/support_center_cloudn
 
 .. _IPmotion:
 
@@ -365,3 +414,16 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/HowTo_Setup_IPMotion
    HowTos/design_pattern_ipmotion
    HowTos/ipmotion_dependency_discovery
+   
+.. _Troubleshooting Playbook:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Troubleshooting Playbook
+
+   TroubleshootingPlaybook/troubleshooting_playbook_overview.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aws_iam_service.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_controller.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_gateway.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_openvpn_end_to_end_traffic.rst
+   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_s2c_end_to_end_traffic.rst

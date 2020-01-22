@@ -7,7 +7,7 @@
  Egress Control Filter
 =================================
 
-For questions, check out `Egress FQDN FAQ <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or learn more about `FQDN here <https://www.aviatrix.com/learning/glossary/fqdn.php>>`_.
+For questions, check out `Egress FQDN FAQ <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ or learn more about `FQDN here <https://www.aviatrix.com/learning/glossary/fqdn.php>`_.
 
 
 Configuration Workflow
@@ -15,18 +15,19 @@ Configuration Workflow
 
 .. tip ::
 
- The instruction below assumes there is already an Aviatrix gateway running in the VPC where you wish to deploy FQDN filter. If not, follow the Egress Control workflow to first launch a gateway.
+ The instructions below assume there is already an Aviatrix gateway running in the VPC where you wish to deploy FQDN filter. If not, follow the Egress Control workflow to first launch a gateway.
 
 Step 1. Add a new tag
 ---------------------
 
-Go Security -> Egress Control, click New Tag, as shown below:
+Go Security -> Egress Control and click New Tag, as shown below:
 
 |fqdn-new-tag|
 
 Click "+ New Tag", and enter a name for the tag, for example, prod-whitelist, as shown below:
 
 |fqdn-add-new-tag|
+
 
 Step 2. Add URL list to the new tag
 -----------------------------------
@@ -40,12 +41,35 @@ Click "+ Add New" to add each URL, wild card is allowed for HTTP/HTTPS (TCP 443)
 
 |fqdn-add-domain-names|
 
+Base Policy
+^^^^^^^^^^^^
+
+Base Policy is a new Action field of a rule available in Release 5.2. It only applies to a rule whose white list is on TCP port 80 or 443.
+
+The default Action field is Base Policy which means if the tag is a White List
+(which is the majority of the use case), this specific rule is to allow the domain name to pass. For the most part, you should not
+edit this field.
+
+There is a use case where you want to leverage the Active field. For example, you need to allow most of the FQDN names
+in salesforce.com except for one domain name, finance.salesforce.com. If salesforce.com provides hundreds of domain names, you would
+have to white list all of them and you cannot use ``*.salesforce.com`` as it will leak finance.salesforce.com.
+
+With the new feature, you can now configure two rules to accomplish filtering out finance.salesforce.com while allowing the rest of salesforce.com supported domain names, as shown below:
+
+==========================================    ================   ==================  =============
+Domain Name                                   Protocol           Port                Action
+==========================================    ================   ==================  =============
+finance.salesforce.com                        tcp                443                 Deny
+``*``.salesforce.com                          tcp                443                 Base Policy
+==========================================    ================   ==================  =============
+
+
 Step 3. Attach to gateways
 ---------------------------
 
 Click "Attach Gateway" to attach a gateway to the tag.
 
-When a gateway is attached to a tag, in the tag will be pushed for
+When a gateway is attached to a tag, the gateway in the tag will be pushed for
 enforcement (whitelist or blacklist), as shown below:
 
 |fqdn-attach-spoke1|
@@ -57,8 +81,8 @@ Repeat Step 3 if you have more gateways that should be attached to this tag.
 Add more tags
 -------------
 
-Repeat from Step 1 to create more tags and attach to the same gateway or different gateways.
-However, if multiple tags are attached to the same gateway, then mode (Whitelist or BlackList) must be identical.
+Repeat from Step 1 to create more tags and attach them to the same gateway or different gateways.
+However, if multiple tags are attached to the same gateway, then the mode (Whitelist or BlackList) must be identical.
 
 
 Exception Rule
@@ -72,7 +96,7 @@ By default, the Exception Rule is enabled. (The Exception rule box should be che
 
 When Exception Rule is enabled, packets passing through the gateway without an SNI field are
 allowed to pass. This usually happens when an application uses hard-coded destination
-IP address for HTTPS connection instead of domain names.
+IP addresses for HTTPS connection instead of domain names.
 
 When Exception Rule is disabled (uncheck the box), packets passing through the gateway without SNI field
 are dropped unless the specific destination IP address of the
@@ -85,7 +109,7 @@ Export
 
 This feature is available in Release 3.4 and later.
 
-Export allows you to download the configured FQDN rules on a per tag bases,
+Export allows you to download the configured FQDN rules on a per tag basis,
 in a human-readable text file format, as shown in the example below:
 
 |export|
@@ -111,7 +135,7 @@ Edit Source allows you to control which source IP in the VPC is qualified for a 
 can be a subnet CIDR or host IP addresses. This provides fine-grained configuration.
 
 For example, one use case is if you have two private subnets in a VPC: one deploys dev instances and another
-deploys prod instances. With Edit Source feature, the dev instances can have a different tags than
+deploys prod instances. With the Edit Source feature, the dev instances can have different tags than
 the prod instances.
 
 Edit Source assumes you already attached a gateway to a tag.
@@ -121,9 +145,24 @@ the example in the illustration below:
 
 |source-edit|
 
+Enable Private Network Filtering
+=================================
+
+By checking this option, FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
+
+Disable Private Network Filtering
+===================================
+
+By checking this option, packets with destination IP address of RFC 1918 range are also inspected. 
 
 
-For support, send email to support@aviatrix.com
+Customize Network Filtering
+==============================
+
+When this option is selected, you can customize packet destination address ranges not to be filtered by FQDN.  
+
+
+For support, send an email to support@aviatrix.com
 
 Enjoy!
 

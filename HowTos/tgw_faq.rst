@@ -11,11 +11,11 @@ What is the Next Gen Transit for AWS?
 ---------------------------------------
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS Transit Gateway. 
- #. Automate AWS Resource Access Manager (RAM) for multi account support. 
- #. Creates security boundaries between groups of VPCs to achieve network segmentation.. 
+ #. Automates AWS Resource Access Manager (RAM) for multi account support. 
+ #. Creates security boundaries between groups of VPCs to achieve network segmentation. 
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
- #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and feature rich hybrid network for connecting to on-prem.
- #. Support Bring Your Own Firewall to the edge VPC for inline traffic inspection (`Transit DMZ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_.)
+ #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and features rich hybrid network for connecting to on-prem.
+ #. Supports Bring Your Own Firewall to TGW deployment for inline traffic inspection (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_) 
  #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs and Azure Spokes VNet.
 
 The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
@@ -29,7 +29,7 @@ Edge domain.
 
 Through the Aviatrix Transit GW in the Aviatrix Edge domain, Spoke VPCs can communicate with on-prem over Direct Connect. 
 
-In the deployment, the VPC in the Aviatrix Edge domain is a Spoke VPC from Transit Gateway  point of view, however it serves as Transit VPC 
+In the deployment, the VPC in the Aviatrix Edge domain is a Spoke VPC from the Transit Gateway point of view, however it serves as Transit VPC 
 from Aviatrix Transit Network point of view. No Aviatrix gateways are deployed in Spoke VPCs except in the Transit VPC. 
 
 Aviatrix Transit GW serves as hub connecting to Azure and GCP network. 
@@ -57,15 +57,15 @@ architecture deployable by overcome `Transit Gateway limitations <https://docs.a
 How does Transit Gateway (TGW)  Orchestrator compliment AWS Transit Gateway service?
 -------------------------------------------------------------------------------------
 
-- **Dynamic Route Propagation** Using Aviatrix Orchestrator is the only guaranteed way to ensure your on-prem routes are properly propagated to Spoke VPCs. AWS Transit Gateway propagates VPC CIDR and IPSEC VPN routes to the Transit Gateway route table. But the routes are not propagated to the VPC route table. It is account owner's responsibility to program VPC route tables. Aviatrix Transit Gateway Orchestrator dynamically update route entries in the VPC route tables. 
+- **Dynamic Route Propagation** Using Aviatrix Orchestrator is the only guaranteed way to ensure your on-prem routes are properly propagated to Spoke VPCs. AWS Transit Gateway propagates VPC CIDR and IPSEC VPN routes to the Transit Gateway route table. But the routes are not propagated to the VPC route table. It is the account owner's responsibility to program VPC route tables. Aviatrix Transit Gateway Orchestrator dynamically updates route entries in the VPC route tables. 
 
-- **Policy Abstraction** AWS Transit Gateway provides capability to allow two Transit Gateway route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Transit Gateway Orchestrator builds on that and allows customers to define policies that form a security boundary. 
+- **Policy Abstraction** An AWS Transit Gateway provides the capability to allow two Transit Gateway route tables to propagate routes to each other, but the actual route entry programming is left to the owner. Transit Gateway Orchestrator builds on that and allows customers to define policies that form a security boundary. 
 
 - **Multi Account Support** Automate the RAM resource sharing process to seamlessly manage multi account VPC attachment. 
 
-- **Troubleshooting** Single pane of glass for troubleshooting connectivity with expert diagnostics capabilities. 
+- **Troubleshooting** Flightpath allows a single pane of glass for troubleshooting connectivity with expert diagnostics capabilities. 
 
-- **Direct Connect Support** AWS Transit Gateway provides on-prem connectivity via IPSEC VPN. It does not support Direct Connect. With Transit Gateway Orchestrator, Direct Connect customers can immediately benefit Transit Gateway service.  
+- **Hybrid and Multi-cloud Support** Native AWS Transit Gateway VPN and Direct Connect support. Furthermore, Aviatrix allows customers to bridge multiple Transit Gateways together in different and public clouds. 
 
 - **Traffic Visibility** Netflow log support for traffic between on-prem and all VPCs.
 
@@ -76,22 +76,21 @@ How does Transit Gateway (TGW)  Orchestrator compliment AWS Transit Gateway serv
 How does Transit Gateway Orchestrator work with Transit VPC?
 -------------------------------------------------------------
 
-Transit Gateway Orchestrator leverages the Aviatrix Transit Network workflow for the hybrid connectivity function to on-prem datacenter and branches. It enables Transit Gateway Orchestrator to connect with on-prem over Direct Connect or Internet. 
+The Transit Gateway Orchestrator leverages the Aviatrix Transit Network workflow for the hybrid connectivity function to on-prem datacenter and branches. It enables the Transit Gateway Orchestrator to connect with on-prem over Direct Connect or Internet. 
 
-Transit Gateway Orchestrator can also be used as a stand alone function for orchestrating VPC to VPC connections.  
+The Transit Gateway Orchestrator can also be used as a stand alone function for orchestrating VPC to VPC connections.  
 
-When using Transit Gateway Orchestrator for hybrid connectivity, no gateways are deployed in the Spoke VPCs for hybrid function. 
+When using the Transit Gateway Orchestrator for hybrid connectivity, no gateways are deployed in the Spoke VPCs for hybrid function. 
 
 How does the Next Gen Transit compare with Transit VPC?
 ----------------------------------------------------------------
 
-Transit VPC refers to transit deployment model where an Aviatrix gateway is deployed in a Spoke VPC. this is now called advanced mode in the Next Gen Transit. 
+Transit VPC refers to the transit deployment model where an Aviatrix gateway is deployed in a Spoke VPC. This is now called "advanced mode" in the Next Gen Transit. 
 
-Transit Gateway Orchestrator can be deployed with some Spoke VPCs run Aviatrix gateways. When is the right use case to run Aviatrix Spoke gateway?
+The Transit Gateway Orchestrator can be deployed with some Spoke VPCs run Aviatrix gateways. When is the right use case to run Aviatrix Spoke gateway?
 
- 1. If you need packet in flight to be encrypted, launch Aviatrix gateway in the Spoke VPC. 
- #. If you need various NAT function between Spoke and Transit VPC, use Aviatrix gateway in the Spoke VPC. 
- #. If you need to connect a Azure VNet as Spoke, use Aviatrix gateway in the Spoke VPC. 
+ 1. If you need a packet in flight to be encrypted, launch an Aviatrix gateway in the Spoke VPC. 
+ #. If you need various NAT functions between Spoke and Transit VPC, use an Aviatrix gateway in the Spoke VPC. 
  #. If you need to obtain Netflow and log information from the Spoke and Transit, use Aviatrix gateway. 
  #. If you want to build a fully isolated Transit network where there is no inter VPC connectivity by default. 
 
@@ -102,9 +101,9 @@ AWS CloudFormation for `TransitGateway <https://docs.aws.amazon.com/AWSCloudForm
 
 They are all awesome, but these constructs may not be sufficient to run your network. 
 
-For example, Transit Gateway does not propagate routes from on-prem to the VPC route table, that means there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to Transit Gateway, what happens when a new VLAN or Subnet is stood up on-prem. Who is going to notify you?
+For example, a Transit Gateway does not propagate routes from on-prem to the VPC route table, meaning there is no guarantee that your VPC instances can reach a specific on-prem server or host. Even if you hard coded the list of CIDRs to shuffle them down to Transit Gateway, what happens when a new VLAN or Subnet is stood up on-prem. Who is going to notify you?
 
-Modern distributed network either requires BGP to dynamically propagate the routes or a controller that dynamically update the routes. Either approach, it is the only way to guarantee the network actually functions. At Aviatrix, we choose a software defined approach with our Controller. Unless you plan to develop a controller like ours, you should consider using our product. 
+A modern distributed network either requires BGP to dynamically propagate the routes or a controller that dynamically updates the routes. No matter what approach you use, it is the only way to guarantee the network actually functions. At Aviatrix, we choose a software defined approach with our Controller. Unless you plan to develop a controller like ours, you should consider using our product. 
 
 Learn more about Transit Gateway limitations from `this link <https://docs.aviatrix.com/HowTos/aws_network_limits.html>`_.
 
@@ -112,16 +111,16 @@ Learn more about Transit Gateway limitations from `this link <https://docs.aviat
 What is a Security Domain?
 ---------------------------
 
-Security Domain is an Aviatrix enforced network of VPC members, where VPCs in the Security Domain can communicate with each other, and VPCs not in the security domain cannot communicate with VPCs in the Security Domain.
+A Security Domain is an Aviatrix enforced network of VPC members, where VPCs in the Security Domain can communicate with each other, and VPCs not in the security domain cannot communicate with VPCs in the Security Domain.
 
-Aviatrix Security Domain is an abstraction builds upon AWS Transit Gateway route table concept. One or more Spoke VPCs are members in  
+An Aviatrix Security Domain is an abstraction builds upon the AWS Transit Gateway route table concept. One or more Spoke VPCs are members in  
 a security domain.
 
 |security_domain|
 
-VPCs in a security domain can communicate with each other via Transit Gateway. Each security domain has a corresponding route table on Transit Gateway. 
+VPCs in a security domain can communicate with each other via a Transit Gateway. Each security domain has a corresponding route table on Transit Gateway. 
 
-Aviatrix Controller dynamically programs and updates both VPC route tables so that instances in different 
+The Aviatrix Controller dynamically programs and updates both VPC route tables so that instances in different 
 Spoke VPCs in the same domain can communicate with each other.  
 
 Two security domains are not connected, i.e., a Spoke VPC in one domain has no connectivity to another 
@@ -131,11 +130,11 @@ Spoke VPC in a different domain. Connection policy must be specified to connect 
 What is a Connection Policy?
 -----------------------------
 
-A connection policy is an Aviatrix enforced cross Security Domain connectivity rules. 
+A connection policy is an Aviatrix enforced cross Security Domain connectivity rule. 
 
 A connection policy builds upon the Transit Gateway route table propagation concept, it specifies the 
 connection relationship of one Security Domain to others. 
-If two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via Transit Gateway. 
+If there are two Security Domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via Transit Gateway. 
 
 In the example below, both Dev_Domain and Prod_Domain have connection policy to Shared_Service_Domain. Dev_Domain and Prod_Domain are not connected. Instances of a VPC in Dev_Domain can communicate with instances of a VPC in Shared_Service_Domain. But instances of a VPC in Dev_Domain cannot communicate with instances of a VPC in Prod_Domain. 
 
@@ -151,12 +150,12 @@ The key use case for building Security Domains is to segment traffic between VPC
 
 The benefits are:
 
- - Native Service. It leverages AWS Transit Gateway route domain and route domain propagation constructs.
- - Zero performance impact. Comparing to deploy a firewall instance, this approach has zero network performance impact. 
+ - Native Service. It leverages AWS Transit Gateway route domains and route domain propagation constructs.
+ - Zero performance impact. Compared to deploying a firewall instance, this approach has zero network performance impact. 
 
 Using Security Domains and Connection Policies allow you to identify groups of VPCs with the same requirements from 
-networking point of view and then apply connection policies at the group level. This avoids having to individually 
-specify connections at VPC level. The Aviatrix Controller takes care of route programming of all route tables. 
+a networking point of view and then apply connection policies at the group level. This avoids having to individually 
+specify connections at the VPC level. The Aviatrix Controller takes care of route programming of all route tables. 
 
 One analogy to think of a Security Domain is datacenter VLAN/Subnets and hosts connecting to the 
 VLAN/Subnet. 
@@ -170,7 +169,7 @@ hosts in different VLAN can communicate with each other.
 What is the Default_Domain?
 ---------------------------
 
-When a Transit Gateway is created by the Aviatrix Controller, the Default_Domain is created and a route table corresponding to the Default_Domain is created on Transit Gateway. If you do not plan on building any network segmentation, you can use Default_Domain for inter Spoke VPC and hybrid communications. 
+When a Transit Gateway is created by the Aviatrix Controller, the Default_Domain is created and a route table corresponding to the Default_Domain is created on the Transit Gateway. If you do not plan on building any network segmentation, you can use Default_Domain for inter Spoke VPC and hybrid communications. 
 
 What is the Shared_Service_Domain?
 -----------------------------------
@@ -184,27 +183,47 @@ Shared_Service_Domain is always connected to Default_Domain and Aviatrix_Edge_Do
 What is the Aviatrix_Edge_Domain?
 ----------------------------------
 
-When a Transit Gateway is created by the Aviatrix Controller, the Aviatrix_Edge_Domain is created and a route table corresponding to the Aviatrix_Edge_Domain is created on Transit Gateway. 
+When a Transit Gateway is created by the Aviatrix Controller, the Aviatrix_Edge_Domain is created and a route table corresponding to the Aviatrix_Edge_Domain is created on the Transit Gateway. 
 
-Aviatrix_Edge_Domain is designated for connecting VPCs managed by Transit Gateway Orchestrator to on-prem network. There must be one VPC 
+Aviatrix_Edge_Domain is designated for connecting VPCs managed by the Transit Gateway Orchestrator to on-prem network. There must be one VPC 
 attached to this domain. In the VPC, an Aviatrix Transit GW is deployed and used for data traffic forwarding between Spoke VPCs and on-prem network. 
 
 Aviatrix_Edge_Domain is always connected to the Shared_Service Domain and the Default_Domain.
 
 
-How to deploy Transit Gateway Orchestrator?
----------------------------------------------
+How do I deploy the Transit Gateway Orchestrator?
+----------------------------------------------------
 
-Transit Gateway Orchestrator is deployed in two stages. 
+The Transit Gateway Orchestrator is deployed in two stages. 
 
- - `Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_: Define and setup Security Domains and Connection Policies.
- - `Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_: Attach a VPC to Transit Gateway and Security Domain.
+ - `Orchestrator Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_: Define and setup Security Domains and Connection Policies.
+ - `Orchestrator Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_: Attach a VPC to Transit Gateway and Security Domain.
 
 In addition, you can 
 
- - List: List what is programmed in the Transit Gateway route table for a given Security Domain. 
- - View: View what VPC members are attached to Security Domains and Connection Policies. 
- - Test: instance to instance end-to-end Troubleshoot. 
+Orchestrator List 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      - **Show Details** on what is programmed in the VPC route tables and Transit Gateway route table for a given VPC. 
+      - **Audit Routes** to discover incorrectness in VPC route tables and Transit Gateway route tables for a given VPC. 
+      - **Update VPC CIDR** to update propagated routes to TGW when a new VPC CIDR is added to VPC. 
+      - **Update DXGW Allowed Prefix** if you like to change the summarized prefix after the DXGW has been attached to TGW.
+
+Orchestrator View
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+View what VPC members are attached to Security Domains and Connection Policies. 
+
+Orchestrator Test 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Instance to instance end-to-end Troubleshoot. For more information, refer to `FlightPath <https://docs.aviatrix.com/HowTos/flightpath.html>`_. 
+
+
+**Audit**
+^^^^^^^^^^^^
+
+Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
 
 What can be displayed at the View page?
 -----------------------------------------
@@ -234,10 +253,10 @@ Yes, all stages (Plan, Build, List, View and Test) are modular. You can change y
 I already have a Transit Gateway and some VPCs attached to it, how do I migrate?
 ---------------------------------------------------------------------------------
 
-Unlike VPC where once you have created it and launched instances in the VPC you cannot delete the VPC or move
-the instances easily, Transit Gateway and its attachments can all be changed without making changes to the instances and VPC CIDRs. Simply detach the VPCs from the current Transit Gateway, launch a new Transit Gateway and build it out again. 
+Unlike a VPC, where once you have created it and launched instances in the VPC you cannot delete the VPC or move
+the instances easily, a Transit Gateway and its attachments can all be changed without making changes to the instances and VPC CIDRs. Simply detach the VPCs from the current Transit Gateway, launch a new Transit Gateway and build it out again. 
 
-Aviatrix Transit Gateway Orchestrator manages the entire life cycle of network, including Security Domains, all Transit Gateway and 
+The Aviatrix Transit Gateway Orchestrator manages the entire life cycle of the network, including Security Domains, all Transit Gateway and 
 attachments should be created and managed by the Orchestrator.    
 
 I plan to isolate a Dev Domain and Prod Domain, but there is one VPC in Dev that needs to connect to Prod. What should I do?
@@ -247,14 +266,14 @@ Since you can create as many security domains as you need, you can create one do
 and connect this domain to your Prod domain, and if needed, also to the Dev domain. Simply attach the
 special VPC to this domain, it will have connectivity to Prod domain. 
 
-How does CSR based Transit VPC solution compare with Transit Gateway?
+How does the CSR based Transit VPC solution compare with the Transit Gateway?
 -----------------------------------------------------------------------
 
-Transit Gateway significantly simplifies building VPC connections. But Transit Gateway itself is functionally incomplete for hybrid connection.
-For example, Transit Gateway does not propagate routes to Spoke VPCs, which means using Transit Gateway alone does not offer a functional hybrid
+Transit Gateway significantly simplifies building VPC connections. But the Transit Gateway itself is functionally incomplete for hybrid connection.
+For example, the Transit Gateway does not propagate routes to Spoke VPCs, which means using a Transit Gateway alone does not offer a functional hybrid
 solution.
 
-The example below illustrates the how CSR based Transit VPC provides an end-to-end solution while Transit Gateway alone leaves Spoke VPC route table all empty.
+The example below illustrates how CSR based Transit VPC provides an end-to-end solution while a Transit Gateway alone leaves Spoke VPC route table all empty.
 
 |tgw_transit_vpc_compare|
 
@@ -263,36 +282,36 @@ The missing function of Transit Gateway is listed as below:
  - Not able to propagate routes from on-prem to the Spoke VPCs.
  - Not able to connect with Direct Connect.
  - The Transit Gateway VPN has 100 route limits.
- - Transit Gateway route table cannot summarize routes to advertise to Transit Gateway VPN.
+ - The Transit Gateway route table cannot summarize routes to advertise to Transit Gateway VPN.
 
-While you may think you can gather the on-prem routes and program the Spoke VPC tables, it is not so simple. The on-prem routes
-change from time to time as new networks are added or removed, which means you need a reliable way to monitor the route changes, handle exceptions, dealing with errors and duplicate routes -- essentially a function carried by BGP or an orchestrator.
+While you may think you can gather the on-prem routes and program the Spoke VPC tables, it is in reality not so simple. The on-prem routes
+change from time to time as new networks are added or removed, which means you need a reliable way to monitor the route changes, handle exceptions and deal with errors and duplicate routes -- essentially a function carried by BGP or an orchestrator.
 
 Why should I use Aviatrix Transit Gateway Orchestrator to build a transit network architecture?
 -------------------------------------------------------------------------------------------------
 
-Aviatrix Transit Gateway Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
-shows how CSR Transit VPC, Transit Gateway and Aviatrix Orchestrator compare for route propagation function. As can be seen, in the CSR Transit VPC case, CSR propagates on-prem routes to Spoke VPC via BGP to VGW; Transit Gateway has no route propagation to Spoke VPC; Aviatrix Controller propagates routes to Spoke VPC through a software defined mechanism. 
+Aviatrix Transit Gateway Orchestrator fulfills the need to propagate on-prem routes to the Spoke VPCs. This function is either carried by BGP or is software defined. In the Aviatrix case, it is software defined and performed by the Controller. The diagram below
+shows how the CSR Transit VPC, the Transit Gateway and the Aviatrix Orchestrator compare for route propagation function. As can be seen, in the CSR Transit VPC case, CSR propagates on-prem routes to Spoke VPC via BGP to VGW; the Transit Gateway has no route propagation to Spoke VPC. Aviatrix Controller propagates routes to Spoke VPC through a software defined mechanism. 
 
 
 |tgw_transit_orchestrator_compare|
 
-What value does Aviatrix gateway provide in the Transit Gateway Orchestrator?
+What value does an Aviatrix gateway provide in the Transit Gateway Orchestrator?
 --------------------------------------------------------------------------------
 
-Aviatrix gateway deployed at the edge/transit VPC provides the following values:
+An Aviatrix gateway deployed at the edge/transit VPC provides the following values:
 
- - Ensure the correctness of connectivity by monitoring and dynamically programming on-prem network address ranges to Spoke VPCs route tables.
- - Avoid network outage by detecting and alerting overlapping and conflicting network address ranges between on-prem and all VPCs.
+ - Ensure the correctness of connectivity by monitoring and dynamically programming on-prem network address ranges to Spoke VPCs' route tables.
+ - Avoid network outages by detecting and alerting overlapping and conflicting network address ranges between on-prem and all VPCs.
  - Avoids AWS VGW or Transit Gateway VPN 100 route limits by summarizing Spoke VPC CIDRs advertisements to on-prem network.
  - Provides traffic visibility by supporting Netflow logs between on-prem network and all VPCs.
  - Provides stateful firewall to enforce policy between on-prem network and all VPCs.
- - Out-of-box integration to support Direct Connect.
+ - Out-of-the-box integration to support Direct Connect.
  - Connects multi-region Transit Gateway deployment.
  - Supports Transit DMZ architecture by inserting third party firewalls at the edge/transit VPC.
  - Supports 10Gbps Transit network throughput.
 
-When a VPC is attached to a TGW, why can't I simply program the default route in VPC route table to point to the TGW?
+When a VPC is attached to a TGW, why can't I simply program the default route in the VPC route table to point to the TGW?
 ----------------------------------------------------------------------------------------------------------------------
 
 In some cases, you absolutely can. For example, if you have a group of VPCs that need to be connected to each other, 
@@ -301,14 +320,56 @@ with the default route (0.0.0.0/0) to point to TGW.
 
 But in other cases you may not. Using the above example, if there is public subnet in a Spoke VPC, then you cannot simply 
 program each route table with the default route pointing to TGW, as a public subnet already must have its default route
-point to IGW. 
+pointing to the IGW. 
 
 Even a Spoke VPC route table for private subnet may already have the default route point to an AWS NAT gateway. This 
-is quite a common situation and it happens, you cannot program the default route to TGW. 
+is quite a common situation and as it happens, you cannot program the default route to the TGW. 
 
 However in the above example scenarios, you maybe able to program RFC 1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)
-routes of the Spoke VPCs to point to TGW. This is a viable solution you can use to address the issues mentioned above and
+routes of the Spoke VPCs to point to TGW. This is a viable solution you can use to address the issues mentioned above and one that
 works in a lot of situations.
+
+Can Aviaitrix Controller orchestrate VPN attachment to AWS Transit Gateway?
+----------------------------------------------------------------------------------------------------------------------
+Yes. Aviatrix controller allows you setup a VPN attachment from the controller directly. 
+
+Can Aviaitrix Controller orchestrate Direct Connect Gateway to  AWS Transit Gateway?
+----------------------------------------------------------------------------------------------------------------------
+Yes. If you would like to connect  your direct connect directly into Transit Gateway, Aviatrix controller allows you to configure an association between Direct Connect Gateway and AWS Tranist Gateway on the controller. 
+
+
+How to migrate from Aviatrix Transit Gateway to on-prem to TGW + DXGW?
+-------------------------------------------------------------------------
+
+ 1. Prepare. Ceate a DXGW on AWS Console, figure out the cloud VPCs summary prefixes. i.e., prepare for TGW Orchestrator -> Plan -> Step 7
+ #. Disconnect Aviatrix Transit Gateway from VGW. Transit Network -> Setup -> Step 8 (Disconnect VGW)
+ #. Connect. Connect to DXGW. TGW Orchestrator -> Plan -> Step 7
+
+
+How does Aviatrix TGW Orchestrator compare with AWS Serverless TGW Orchestrator?
+------------------------------------------------------------------------------------
+
+AWS Serverless TGW Orchestrator is a solution published by AWS. It orchestrates VPC attachment to a TGW by programming both the TGW route
+table and VPC route table. The deployment is a Cloudformation Template that contains many AWS services such as Amazon DynamoDB, Amazon 
+EventBridge, Amazon Simple Notification, AWS Lambda function. 
+
+
+=========================================          =============================            =============================
+Feature                                            Aviatrix TGW Orchestrator                Serverless TGW Orchestrator 
+=========================================          =============================            =============================
+Single pane of glass for orchestration             Yes                                      No. Orchestration is done by VPC tag
+Single pane of glass for visualization             Yes (View, List)                         No. Each region must have its own deployment
+Inter region peering                               Yes                                      No
+Orchestration consistency checking                 Yes (Audit)                              No
+Configuration for TGW DXGW                         Yes                                      No
+Configuration for TGW VPN                          Yes                                      No
+Troubleshooting connectivity                       Yes (Test)                               No
+Onboard secondary account                          Automated                                Manual
+Connection Policies between Domains                Flexible Connection Policies             4 Policies defined (Flat, Isolated, Infrastructure & On-premises)
+Integrate Firewall deployment                      Yes                                      No
+=========================================          =============================            =============================
+
+
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png

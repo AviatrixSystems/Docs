@@ -7,9 +7,9 @@
 Aviatrix Gateway to Cisco IOS Router
 =================================================
 
-This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Cisco IOS router.
+This document describes how to build an IPSec tunnel based Site2Cloud connection between an Aviatrix Gateway and a Cisco IOS router.
 
-Network setup is as following:
+The network setup is as follows:
 
 **VPC-AVX (with Aviatrix Gateway)**
 
@@ -19,12 +19,12 @@ Network setup is as following:
 
     *On-Prem Network CIDR: 10.10.2.0/24*
     
-1. Create Site2Cloud Connection at Aviatrix Controller
+1. Create a Site2Cloud Connection at the Aviatrix Controller
 ======================================================
 
- 1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect Gateway's public IP addresses (52.4.65.172 in this example).
+ 1.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at the public subnet of VPC-AVX. Collect the Gateway's public IP addresses (52.4.65.172 in this example).
 
- 1.2 Go to **site2cloud** page and click **Add New** to create a site2cloud connection.
+ 1.2 Go to the **Site2Cloud** page and click **Add New** to create a Site2Cloud connection.
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -37,19 +37,19 @@ Network setup is as following:
   Algorithms                        Uncheck this box
   Encryption over DirectConnect     Uncheck this box
   Enable HA                         Uncheck this box
-  Primary Cloud Gateway             Select Aviatrix Gateway created above
+  Primary Cloud Gateway             Select the Aviatrix Gateway created above
   Remote Gateway IP Address         Public IP of IOS Router WAN port (52.9.196.2 in this example)
   Pre-shared Key                    Optional (auto-generated if not entered)
   Remote Subnet                     10.10.2.0/24 (On-Prem Network CIDR)
   Local Subnet                      10.100.0.0/24 (VPC-AVX CIDR)
 ===============================     =================================================================
  
- 1.3 Go to **site2cloud** page. From site2cloud connection table, select the connection created above (e.g. avx-ios-s2c). 
+ 1.3 Go to the **Site2Cloud** page. From the Site2Cloud connection table, select the connection created above (e.g. avx-ios-s2c). 
      - Select **Generic** from **Vendor** drop down list 
-     - Click **Download Configuration** button to download the **Generic** site2cloud configuration 
+     - Click the **Download Configuration** button to download the **Generic** Site2Cloud configuration 
      - Save the configuration file as a reference for configuring your Cisco IOS router
      
-     The following is a sample configuration based on the site2cloud configuration above.
+     The following is a sample configuration based on the Site2Cloud configuration above.
 
      |image0|
 
@@ -62,26 +62,26 @@ Network setup is as following:
 
      |image1| 
 
-3. Troubleshooting and Verifying at Aviatrix Controller
+3. Troubleshooting and Verifying at the Aviatrix Controller
 ========================================================
 
- 3.1 At Aviatrix Controller, go to **Site2Cloud** page. Verify the status of the site2cloud connection is up.
+ 3.1 At the Aviatrix Controller, go to the **Site2Cloud** page. Verify that the status of the Site2Cloud connection is up.
 
      |image2|
 
- 3.2 At **Site2Cloud - Diagnostics** page, run various diagnostics commands.
+ 3.2 At the **Site2Cloud - Diagnostics** page, run various diagnostics commands.
 
 ===============================     =================================================================
   **Field**                         **Value**
 ===============================     =================================================================
   VPC ID/VNet Name                  VPC-AVX (Aviatrix Gateway VPC) ID
-  Connection                        Name of site2cloud connection created at Step 2
-  Gateway                           Name of Aviatrix Gateway
+  Connection                        Name of the Site2Cloud connection created at Step 2
+  Gateway                           Name of the Aviatrix Gateway
   Action                            One of the supported diagnostics commands
 ===============================     =================================================================
 
 
-For support, send email to support@aviatrix.com.
+For support, send an email to support@aviatrix.com.
 
 .. |image0| image:: s2c_gw_ios_media/s2c_sample_config.png
    :width: 5.55625in

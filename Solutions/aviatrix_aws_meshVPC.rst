@@ -1,4 +1,4 @@
-
+﻿
 
 ##########################################################
 Extending Your vmware Workloads to Public Cloud
@@ -8,7 +8,7 @@ Extending Your vmware Workloads to Public Cloud
 1  Overview
 =================
 
-Aviatrix Systems provides the next generation cloud networking solution
+Aviatrix Systems provides a next-generation cloud networking solution
 built from the ground up for the public cloud. Aviatrix simplifies the
 way you enable `site to cloud <https://www.aviatrix.com/learning/cloud-security-operations/site-to-cloud-vpn/>`_, user to cloud and cloud to cloud secure
 connectivity and access. The solution requires no new hardware and
@@ -32,19 +32,19 @@ building secure connections to the VPCs.
     **Fast to Provision** Provision a VPC with secure tunnel to
     datacenter in minutes.
 
-    **Simple to Use** 1-click operation to create and delete VPC with
+    **Simple to Use** 1-click operation to create and delete a VPC with
     secure tunnels.
 
     **Rapid Scaling** Creates multiple VPCs in any region with secure
     connectivity.
 
-    **Full Mesh Connectivity** inter region VPC can be securely peered
+    **Full Mesh Connectivity** inter region VPCs can be securely peered
     in minutes.
 
-    **IT Supported Self Service** Work flow allow multiple users to
+    **IT Supported Self Service** Workflow allows multiple users to
     create VPCs.
 
-    **Billing Visibility** Support multiple AWS accounts for different
+    **Billing Visibility** Supports multiple AWS accounts for different
     departments, DevOps and projects
 
     **Remote Access Capability**. Built in VPN server allows remote
@@ -57,25 +57,25 @@ building secure connections to the VPCs.
 3.1  Mix Layer 2 and Layer 3 Technologies
 -----------------------------------------
 
-CloudN uses a mixed Layer 2 and Layer 3 technologies whereas the CloudN
-virtual appliance behaves as a Layer 2 bridge and Gateway (launched by
+CloudN uses mixed Layer 2 and Layer 3 technologies whereas the CloudN
+virtual appliance behaves as a Layer 2 bridge and the Gateway (launched by
 CloudN at VPC creation time) behaves as a Layer 3 router. The design of
 CloudN as a Layer 2 bridge makes it possible to build an overlay IPSec
 tunnel to AWS VPC without involving edge routers in the network. The
 design of Gateways as a Layer 3 router makes it possible for the VPC to
 fully utilize all AWS VPC underlying infrastructures and services
-without requiring any software agent reside in any of the instances.
+without requiring any software agent to reside in any of the instances.
 
 Instances within the VPC communicate with each other directly and
-transparently without involvement of Gateway. From the user’s
+transparently without involvement of a Gateway. From the user’s
 perspective, what CloudN creates is a standard VPC.
 
-CloudN views each VPC as the smallest autonomous environment, it allows
+CloudN views each VPC as the smallest autonomous environment. It allows
 you to create security policies to deny any subnet or hosts on premise
 to access any VPC. For example, you may want to block developers from
-accessing production VPC. By default, inter-VPC communication is
+accessing the production VPC. By default, inter-VPC communication is
 blocked. By using VPC/VNet peering capability, you can establish direct
-secure tunnels among VPC in the same region or across different regions.
+secure tunnels among VPCs in the same region or across different regions.
 
 Enterprise users can access instances seamlessly in all private and
 public subnets over the secure tunnel using instance private addresses.
@@ -93,12 +93,12 @@ below diagram could be replaced with a VNet.
 
 |image2|
 
-Where a local subnet 10.16.0.0/16 has a default gateway 10.16.0.1. The
+Where a local subnet 10.16.0.0/16 has the default gateway 10.16.0.1, the
 subnet is divided into 4 sub segments. The default gateway and CloudN IP
 address fall into one segment. The rest of each segment is mapped to a
 VPC CIDR, in this case, the VPC CIDRs are 10.16.32.0/19, 10.16.64.0/19
 and 10.16.96.0/19. If this subnet 10.16.0.0/16 is reachable from other
-network in the enterprise, then the instances inside each VPC takes
+networks in the enterprise, then the instances inside each VPC take
 private IP address as if they are on the local subnet 10.16.0.0/16. For
 users in the enterprise, it is as if they are communicating with hosts
 on the local network.
@@ -110,7 +110,7 @@ on the local network.
 --------------------
 
 You need to have an AWS account to use most of the commands on CloudN.
-Note that CloudN support multiple cloud accounts with each one
+Note that CloudN supports multiple cloud accounts with each one
 associated with a different AWS IAM account, but there needs to be at
 least one to start with.
 
@@ -139,7 +139,7 @@ https://<Private IP address of Aviatrix Controller>
 
 5.1    Onboarding and create a cloud account
 --------------------------------------------
-Upon login to the controller for the first time, follow the onboarding process to create a cloud account that corresponding to an AWS IAM account. Aviatrix CloudN uses the account IAM credential to execute AWS REST APIs to create VPC and necessary resources.
+Upon logging in to the controller for the first time, follow the onboarding process to create a cloud account that corresponds to an AWS IAM account. Aviatrix CloudN uses the account's IAM credential to execute AWS REST APIs to create a VPC and necessary resources.
 
 
 5.2    Create a VPC and build an encrypted tunnel
@@ -148,7 +148,7 @@ After going through onboarding steps, click ACX. Provide a name for the VPC you 
 
 You then can launch instances in the VPC and access the instances by their private IP addresses.
 
-Repeat the above step for more VPC with encrypted tunnel creations.
+Repeat the above steps for more VPC with encrypted tunnel creations.
 
 
 

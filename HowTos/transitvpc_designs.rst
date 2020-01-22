@@ -15,7 +15,7 @@ Transit Groups in a single region or across multiple AWS regions.
 
 Single Region Transit VPC Design
 ----------------------------------
-
+ 
 The use case for this design is if you have one Direct Connect or
 Internet to VPC.
 
@@ -57,7 +57,7 @@ Connected Transit Design
 
 If you like to build a Transit network where all Spoke VPCs are connected via Transit GW, you can accomplish that by enabling "Connected Transit" property for the Transit GW. When Connected Transit is enabled, you do not need to build additional tunnels between shared service VPC to other VPCs. The diagram is shown below:
 
-|connected_transit|
+|image2|
 
 10Gbps Transit VPC Design
 ---------------------------
@@ -66,14 +66,15 @@ If you have applications that need 10Gbps bandwidth, you can place these applica
 that terminates on the VGW with the 10Gbps VIF DX. Place the Aviatrix Transit GW in a separate VPC and
 connect it to the VGW through the normal `Transit VPC workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
-|image2|
+|image3|
 
 Alternatively, you can place the high bandwidth application in a separate VPC that terminates directly on a VIF, as shown below.
 
-|image3|
 
-Using Aviatrix for Egress Control
-----------------------------------
+|image4|
+
+Distributed Egress Control with Aviatrix 
+-------------------------------------------------
 
 If you are using AWS NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control.
 
@@ -82,41 +83,18 @@ The function is embedded in the Aviatrix gateway. It is transparent to user inst
 
 |image5|
 
-Integrating with Third Party Firewall
------------------------------------------
+Centralized Third Party Firewall Integration
+-----------------------------------------------------
 
-If you are running AWS Workspace services for your employees and need a full fledged firewall device, you can connect the firewall device to VGW directly, shown in the diagram below. This approach requires only 1 connection to/from the firewall device. The drawback of the approach is that Transit GW also carry the Internet bound traffic from Spoke VPC.
+If you are running AWS Workspace services for your employees and need a full fledged firewall device, centralized third party firewall appliances 
+can be deployed via `Aviatrix Transit FireNet <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-Note in this design, it is not necessary that you run a BGP session with the external firewall appliance. It is sufficient if the VGW is configured with static routes with remote site to be 0.0.0.0/0. Also note that the firewall appliance could be an external security service. 
+|transit_firenet|
 
-.. tip::
+Centralized Egress Control with Aviatrix 
+-------------------------------------------
 
-   Additional details on this architecture can be found `here <transit_plus_security_vpc.html>`__.
-
-|image6|
-
-Integrating with Egress Firewall -2
-------------------------------------
-
-The second approach to connect to a full fledge firewall device is to place the
-firewall appliance in a shared service VPC or its own VPC. Treat this VPC as one type of shared service VPC that
-offers egress control for instances in a private subnet of all Spoke VPCs.
-
-In this case, use Aviatrix `site2cloud feature <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to connect to
-the firewall appliance, as shown in the diagram below.
-
-|image4|
-
-The advantage of this architecture is that traffic to Internet and on-prem is decoupled. Transit GW only carries traffic between on-prem and cloud.
-
-The drawback in this architecture is that each Spoke VPC needs to establish a site2cloud
-IPSEC connection to the firewall which is not optimized to handle potentially large scale of VPN tunnels. Unless there is automation, the process
-of building many IPSEC connections could be time consuming and difficult to manage. The performance load on the firewall device to handle VPN tunnels can significantly impact its ability to perform IDS/IPS functions.
-
-.. tip::
-
-   Additional details on this architecture can be found `here <transit_plus_security_vpc.html>`__.
-
+|transit_firenet_aviatrix_egress|
 
 SD-WAN Integration
 --------------------
@@ -127,43 +105,49 @@ Alternatively, you can use a SD-WAN termination point in the VPC to connect to t
 
 Both options can be described in the diagram below.
 
-|sd-wan|
+|image8|
 
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
-   :width: 5.55625in
-   :height: 3.26548in
+   :width: 10.0in
+   :height: 4.0in
 
-.. |image1| image:: transitvpc_designs_media/multiRegions.png
-   :width: 5.55625in
-   :height: 3.265480in
+.. |image1| image:: transitvpc_designs_media/multi_region.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |image2| image:: transitvpc_designs_media/10Gbps-1.png
-   :width: 5.55625in
-   :height: 3.2654in
+.. |image2| image:: transitvpc_designs_media/connected_transit.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |image3| image:: transitvpc_designs_media/10Gbps-2.png
-   :width: 5.55625in
-   :height: 3.2654in
+.. |image3| image:: transitvpc_designs_media/10Gbpspattern.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |image4| image:: transitvpc_designs_media/egress-firewall.png
-   :width: 5.55625in
-   :height: 3.2654in
+.. |image4| image:: transitvpc_designs_media/10Gbpspattern2.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |image5| image:: transitvpc_designs_media/aviatrix-egress.png
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image5| image:: transitvpc_designs_media/Egresscontrol.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |image6| image:: transitvpc_designs_media/egress-firewall2.png
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image6| image:: transitvpc_designs_media/Firewallintegration.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |sd-wan| image:: transitvpc_designs_media/sd-wan.png
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image7| image:: transitvpc_designs_media/Egresstofirewall.png
+   :width: 10.0in
+   :height: 4.0in
 
-.. |connected_transit| image:: transitvpc_designs_media/connected_transit.png
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image8| image:: transitvpc_designs_media/SDWANtransit.png
+   :width: 10.0in
+   :height: 4.0in
+
+.. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
+   :scale: 30%
+
+.. |transit_firenet_aviatrix_egress| image:: transit_firenet_media/transit_firenet_aviatrix_egress.png
+   :scale: 30%
 
 .. disqus::

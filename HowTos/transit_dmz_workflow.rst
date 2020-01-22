@@ -16,16 +16,16 @@ For more background information, read `Transit DMZ FAQ <https://docs.aviatrix.co
 1. Launch two sets of Aviatrix Transit Gateways
 ------------------------------------------------
 
-This step launches two Aviatrix gateways in the transit VPC, main gateway and companion gateway. If you require 
+This step launches two Aviatrix gateways in the transit VPC: a main gateway and a companion gateway. If you require 
 multi AZ HA, you should deploy one main gateway and one backup main gateway,  one companion gateway and one backup companion gateway. 
 
 .. tip::
 
-  Use Aviatrix Create a VPC feature to Launch a new VPC to be used as Transit VPC. Go to Useful Tools -> Create a VPC, create a VPC with /24 VPC CIDR size. Select the option "Aviatrix Transit VPC". If you would like to continue to use your existing transit VPC and it is too small (not enough of /28 unused segments), use AWS Edit VPC CIDR feature to create a new /24 subnet. 
+  Use the Aviatrix Create a VPC feature to launch a new VPC to be used as a Transit VPC. Go to Useful Tools -> Create a VPC and create a VPC with /22 VPC CIDR size. Select the option "Aviatrix Transit VPC". If you would like to continue to use your existing transit VPC and it is too small (not enough of /28 unused segments), use the AWS Edit VPC CIDR feature to create a new /24 subnet. 
 
 .. Note::
 
-  Transit gateway for the Transit DMZ deployment requires gateway instance size to be at least t2.small as it requires 3 Ethernet interfaces. 
+A Transit gateway for the Transit DMZ deployment requires the gateway instance size to be at least t2.small as it requires 3 Ethernet interfaces. 
 
 The main gateway(s) interfaces with Spoke VPC gateways or TGW, while the companion gateway(s) interface with VGW or 
 on-prem devices. The diagram below describes the naming convention of the two gateways.  
@@ -34,19 +34,21 @@ on-prem devices. The diagram below describes the naming convention of the two ga
 
 .. important::
   
-  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.small. In addition, if you **did not** use Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as the tip shown above, make sure the Transit VPC have unused subnet space for additional /28 subnets that Transit DMZ creates. 
+  Transit DMZ requires both main gateways and companion gateways to have three Ethernet interfaces, thus the minimum gateway instance types are t2.small. In addition, if you **did not** use the Aviatrix Useful Tool to create a transit VPC with /24 VPC CIDR range as directed in the tip shown above, make sure the Transit VPC has unused subnet space for additional /28 subnets that Transit DMZ creates. 
 
 1.1 Main gateway
 ~~~~~~~~~~~~~~~~~
 
- a. For main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (required for HA) to launch the main gateway(s). The main gateway size should be t2.small and larger. 
+ a. For the main gateway, go to Transit Network -> Setup, go through Step 1 and Step 2 (required for HA) to launch the main gateway(s). The main gateway size should be t2.small and larger.
 
- b.  If TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ to enable main gateway to be part of TGW orchestrator and attach the main gateway to TGW. If TGW Orchestrator is not used, skip step b.    
+Note: If you plan to create HA gateways for both the main and companion gateways and launch a firewall instance in DMZ, we recommend that you have more than the default number of 5 EIPs available in the region. If you need to increase the number of EIPs available, fill out AWS's request form.
+
+ b.  If the TGW Orchestrator is deployed, go to TGW Orchestrator -> Plan, complete `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_ to enable main gateway to be part of TGW orchestrator and attach the main gateway to the TGW. If the TGW Orchestrator is not used, skip step b.    
 
 1.2 Companion gateway
 ~~~~~~~~~~~~~~~~~~~~~~
 
- a. For companion gateway, go to Transit Network -> Setup, go through Step 1, 2 (required for HA) to launch the gateway(s). The companion gateway size should be t2.small and larger.
+ a. For the companion gateway, go to Transit Network -> Setup, go through Step 1, 2 (required for HA) to launch the gateway(s). The companion gateway size should be t2.small and larger.
 
  b. Connect the companion gateway to on-prem by executing `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. This step is necessary since companion gateway interfaces with one of the three options: AWS VGW, Aviatrix hardware appliance  CloudN or an external device.  
 
@@ -67,8 +69,8 @@ Return to the Transit DMZ workflow (which is this workflow). In this step, the A
 ------------------------------
 
 In this step, the Aviatrix Controller associates the main gateway with the companion gateways. Once this step is 
-completed, traffic should be able to flow through from the on-prem to the companion gateway and then is routed 
-through  main gateway without a firewall appliance. 
+completed, traffic should be able to flow through from the on-prem to the companion gateway and then routed 
+through to the main gateway without a firewall appliance. 
 
 .. tip::
 
@@ -78,7 +80,7 @@ through  main gateway without a firewall appliance.
 4. Insert Firewall Function in Transit DMZ
 ---------------------------------------------
 
-The firewall instance typically requires multiple Ethernet interfaces. In this solution, firewall instances requires one interface to the main gateway and another to the companion gateway, 
+The firewall instance typically requires multiple Ethernet interfaces. In this solution, firewall instances require one interface to the main gateway and another to the companion gateway, 
 as shown below.
 
 |main_companion_subnets|
@@ -112,7 +114,7 @@ If your firewall appliance is Palo Alto VM-Series, you can automate route update
 
 This step is the opposite of Step 4.
 
-This step removes the operation of firewall instance. After this step is executed, packets are passed through
+This step removes the operation of the firewall instance. After this step is executed, packets are passed through
 between the two Aviatrix gateways. 
 
 6. Disable Transit DMZ

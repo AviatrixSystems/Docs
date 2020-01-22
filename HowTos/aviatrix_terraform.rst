@@ -12,6 +12,9 @@ Read the `Aviatrix Terraform Provider Tutorial <https://docs.aviatrix.com/HowTos
 
 The provider allows you to manage Aviatrix resources such as account, gateway, peering, etc. It needs to be configured with valid Aviatrix UCC/CloudN's IP, and account credentials. For Aviatrix Transit Network deployment, please click `here <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ to read how to setup transit VPC using Terraform.
 
+.. note::
+  Aviatrix is now an official Terraform provider! The Terraform setup procedure has been significantly simplified and the documentation below has been updated accordingly. Customers who have previously set up our provider following our previous instructions may transition to our official provider by following Step 5 in the setup tutorial `here <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_
+
 Example Usage
 =============
 
@@ -22,6 +25,7 @@ Example Usage
 	  controller_ip = "1.2.3.4"
 	  username = "admin"
 	  password = "password"
+	  version = "2.2"
 	}
 
 	# Create a record
@@ -29,24 +33,18 @@ Example Usage
 	  # ...
 	}
 
-Resources
-=========
-The complete documentation for all the resources are available `here <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master/website/docs/r>`_ 
+Documentation
+=============
+The complete documentation for all available Aviatrix resources and data sources may be viewed on the Hashicorp Terraform doc site `here <https://www.terraform.io/docs/providers/aviatrix/>`_.
 
 
-Data Sources
-============
-The complete documentation for all the data sources are available `here <https://github.com/AviatrixSystems/terraform-provider-aviatrix/tree/master/website/docs/d>`_ 
-
-
-
-Sample configuration to launch a full mesh network on AWS
+Sample configuration to launch a full-mesh network on AWS
 =========================================================
 
 ::
 
 	# Sample Aviatrix terraform configuration to create a full mesh network on AWS
-	# This configuration creates a cloud account on Aviatrix controller,
+	# This configuration creates a cloud account on the Aviatrix controller,
 	# launches 3 gateways with the created account and establishes tunnels
 	# between each gateway.
 
@@ -56,6 +54,7 @@ Sample configuration to launch a full mesh network on AWS
 	  controller_ip = "w.x.y.z"
 	  username = "admin"
 	  password = "Aviatrix123"
+	  version = "2.2"
 	}
 
 	# Increase count default value to add more VPCs and subnets to launch more gateways together.
@@ -89,22 +88,22 @@ Sample configuration to launch a full mesh network on AWS
 
 	# Create count number of gateways
 	resource "aviatrix_gateway" "test_gw" {
-	  count = "${var.count}"
+	  count = var.count
 	  cloud_type = 1
 	  account_name = "devops"
 	  gw_name = "avtxgw-${count.index}"
 	  vpc_id = "${element(var.vpcs, count.index)}"
 	  vpc_reg = "ap-south-1"
-	  vpc_size = "t2.micro"
-	  vpc_net = "${element(var.vpc_nets, count.index)}"
+	  gw_size = "t2.micro"
+	  subnet = "${element(var.vpc_nets, count.index)}"
 	  depends_on = ["aviatrix_account.test_acc"]
 	}
 
 	# Create tunnels between above created gateways.
 	resource "aviatrix_tunnel" "test_tunnel" {
 	  count = "${var.count * (var.count - 1)/2}"
-	  vpc_name1 = "avtxgw-${count.index}"
-	  vpc_name2 = "avtxgw-${(count.index+1)%3}"
+	  gw_name1 = "avtxgw-${count.index}"
+	  gw_name2 = "avtxgw-${(count.index+1)%3}"
 	  depends_on = ["aviatrix_gateway.test_gw"]
 	}
 

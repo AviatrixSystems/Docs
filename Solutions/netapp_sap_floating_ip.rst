@@ -12,9 +12,9 @@ Overview
 
 A subnet cannot span more than one availability zone (AZ) in AWS [1]_.  Because of this, the IP address assigned to an instance in one AZ cannot be reassigned to another instance in a different AZ.
 
-Applications that require users have a single IP address for connectivity, such as cloud-based NFS and CIFS services, need a way to failover to a different instance when the node fails.  This fault tolerance is key to services like NetApp's ONTAP Cloud.  A single AZ solution does not satisfy users' demands for a guarantee of an always-on solution.
+Applications that require users to have a single IP address for connectivity, such as cloud-based NFS and CIFS services, need a way to failover to a different instance when the node fails.  This fault tolerance is key to services like NetApp's ONTAP Cloud.  A single AZ solution does not satisfy users' demands for a guarantee of an always-on solution.
 
-In order to overcome the AWS limitation, applications like NetApp Cloud, rely on "floating" IPs addresses for failover between nodes in different AZs.  Floating IP addresses are outside the range of the VPC CIDR.  In order to route to these addresses within AWS, they must not overlap with any CIDR range in the same AWS region.
+In order to overcome the AWS limitation, applications like NetApp Cloud rely on "floating" IPs addresses for failover between nodes in different AZs.  Floating IP addresses are outside the range of the VPC CIDR.  In order to route to these addresses within AWS, they must not overlap with any CIDR range in the same AWS region.
 
 Clients connect to the floating IP address rather than the IP address of the node itself.  When a node failure (or even an entire AZ failure) is detected, the floating IP address is "moved" to an instance in another AZ.
 
@@ -66,7 +66,7 @@ Provision an Aviatrix Gateway in the VPC where your client application resides:
    The Aviatrix gateway must be installed in a public subnet.  If you do not have one created in the VPC where your client application resides, please create one before continuing.
 
 #. Login to your Aviatrix Controller
-#. Click on the `Gateways` item on the naviagation menu
+#. Click on the `Gateways` item in the navigation menu
 #. Click on `+ New Gateway` to create a new Gateway
 #. Select the VPC and subnet and provide a name for this Gateway (e.g., "netapp-client")
 #. Leave the other options at their default values
@@ -82,7 +82,7 @@ Next, create a Gateway in the VPC of your NetApp Cloud installation.
    The Aviatrix gateway must be installed in a public subnet.  If you do not have one created in the VPC where your NetApp Cloud is installed, please create one before continuing.
 
 #. Login to your Aviatrix Controller
-#. Click on the `Gateways` item on the naviagation menu
+#. Click on the `Gateways` item on the navigation menu
 #. Click on `+ New Gateway` to create a new Gateway
 #. Select the VPC and subnet and provide a name for this Gateway (e.g., "netapp-ontap")
 #. Leave the other options at their default values
@@ -95,7 +95,7 @@ For redundancy, enable HA:
    The Aviatrix HA gateway must be installed in a public subnet.  If you do not have one created in the VPC where your NetApp Cloud is installed, please create (another) one before continuing in a different AZ than the previous gateway.
 
 #. Login to your Aviatrix Controller
-#. Click on the `Gateways` item on the naviagation menu
+#. Click on the `Gateways` item on the navigation menu
 #. Select the gateway just created (e.g., "netapp-ontap")
 #. Click on the `Edit` button above the table
 #. Below `Gateway for High Availability Peering`, select the public subnet that is in a different AZ from the earlier gateway

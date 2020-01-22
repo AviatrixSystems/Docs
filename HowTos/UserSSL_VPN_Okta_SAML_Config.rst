@@ -1,4 +1,4 @@
-.. meta::
+﻿.. meta::
    :description: Aviatrix User SSL VPN Okta SAML Configuration
    :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
 
@@ -18,9 +18,9 @@ Pre-Deployment Checklist
 -----------------------------
 Before configuring SAML integration between Aviatrix and Okta, make sure the following is completed:
 
-#. `Aviatrix Controller <#aviatrix-controller>`__ is setup and running.
-#. Have a valid `Okta account <#okta-account>`__ with admin access.
-#. Download and install the `Aviatrix SAML VPN client <#aviatrix-client>`__.
+#. The `Aviatrix Controller <#aviatrix-controller>`__ is setup and running.
+#. You have a valid `Okta account <#okta-account>`__ with admin access.
+#. You have downloaded and installed the `Aviatrix SAML VPN client <#aviatrix-client>`__.
 
 .. _aviatrix_controller:
 
@@ -161,14 +161,14 @@ You need to assign the application to your account. Please follow steps 11 throu
 
 .. _aviatrix_gateway:
 
-Launch Aviatrix VPN Gateway
+Launching an Aviatrix VPN Gateway
 ###########################
 
 .. note::
 
    This step is usually completed by the Aviatrix admin.
 
-#. Login to the Aviatrix controller
+#. Log in to the Aviatrix controller
 #. Click `Gateway` in the left navigation menu
 #. Click the `+ New Gateway` button
 #. Enter a `Gateway Name`
@@ -224,7 +224,7 @@ Test the Integration
    .. note::
       If you don't start the client, you will receive a warning from the browser in the last step of this process
 
-#. Login to the Aviatrix Controller
+#. Log in to the Aviatrix Controller
 #. Click `OpenVPN®` in the left navigation menu
 #. Select `Advanced`
 #. Click on the `SAML` tab
@@ -274,10 +274,10 @@ Validate
    SAML VPN supports shared certificates. You can share the certificate among VPN users or create more VPN users
 
 
-Configure Okta for Multifactor Authentication (OPTIONAL)
+Configure Okta for Multi Factor Authentication (OPTIONAL)
 ########################################################
 
-Once you have successfully configured Okta IDP with Aviatrix SP, you can configure Okta for Multifactor Authentication.
+Once you have successfully configured Okta IDP with Aviatrix SP, you can configure Okta for Multi Factor Authentication.
 
 Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`__ from Okta on Multifactor setup.
 
