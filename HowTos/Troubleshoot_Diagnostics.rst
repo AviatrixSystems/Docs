@@ -29,6 +29,16 @@ Packet Capture
 
 This tool enables a gateway to capture the forwarding packets for a period of time with the specified host, port, network interface, and packet length.
 
+Here are some Wireshark tips:
+
+ 1. **Sort the conversations** On Wireshark, go to Statistics -> Conversations. All Conversations captured are displayed in the pop up window. For each conversations, it shows how many bytes are transferred in which direction. 
+
+ 2. **Filter on conversation** From the above pop up window, select one conversation. Right click on the conversation, select Apply as Filter -> A <-> B. The Wireshark capture window will automatically filter the other conversation out. 
+
+
+ 3. **View Throughput** On Wireshsark, go to Statistics -> TCP Stream Graphs -> Throughput. The Throughput for this TCP session will be displayed in a pop up window. 
+
+
 
 Controller Utility
 ~~~~~~~~~~~~~~~~~~~~

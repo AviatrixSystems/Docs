@@ -268,6 +268,19 @@ Step 8 Update Direct Connect Network Prefix
 
 Use this step to update the "Allowed Prefix" to advertise to on-prem.
 
+TGW Inter Region Peering
+-----------------------------
+
+This step connects two TGWs in different regions using AWS native TGW Peering. It automatically creates two Security Domains associated with each 
+TGW and respective attachment ID. 
+
+
+After this step is completed, use `Connection Policy <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_ build end to end connectivity, 
+
+.. tip::
+
+  Your Controller may not have the latest IAM policies to execute TGW peering, go to Accounts -> Access Accounts. Click the 3 dot skewer for the account where TGW is deployed and click Update policy. Do so for the all TGW accounts if you wish to TGW build inter region peering.
+
 --------------------------------------------------------------------------------------
 
 This section consists of delete functions.

@@ -100,7 +100,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/diy_tgw_migrate_to_aviatrix_tgw
    HowTos/transitgw_external
    HowTos/transitvpc_workflow
-   HowTos/transitvpc_faq
    HowTos/transitvpc_design
 
 .. _Transit Network:
@@ -109,6 +108,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Encrypted Transit Network
 
+   HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
    HowTos/transitvpc_designs
