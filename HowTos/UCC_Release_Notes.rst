@@ -34,6 +34,16 @@ R5.3 (Coming soon)
  - **User VPN Cert Issue Date** 
  - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. 
 
+R5.2.2122 (1/25/2020)
+========================
+
+ - **Enhancement** Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables.
+ - **Enhancement** Allow the service account credential to be re-used by GCP projects. 
+ - **Bug fix** Fix Azure gateway memory leak issue. 
+ - **Bug fix** Enhancement to FQDN warning messages.
+ - **Bug fix** Fix issue with Spoke VPC with Customized routes on non ActiveMesh encrypted transit network. 
+ - **Bug fix** Fix issue with Customized DNS server not restored when after backup/restore. 
+
 R5.2.2092 (1/15/2020)
 =======================
 
