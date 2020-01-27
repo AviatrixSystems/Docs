@@ -89,6 +89,18 @@ enter the following commands and click Commit.
 
   hostname myrouter
 
+Save Config
+--------------
+
+For each branch router under management, multiple copies of IOS configuration can be saved on the Aviatrix Controller. 
+Go to CloudWAN -> List/Edit page, select one branch router under management, click the 3 dots skewer, select Save Config. 
+Enter name Configuration Name and optional description. 
+
+Saved Configurations can be applied to a branch router via "Restore A Configuration". 
+Go to CloudWAN -> List/Edit page, select one branch router, click the 3 dots skewer, select Save Config. 
+On the "RESTORE A CONFIGURATION", select a saved configuration and click Restore, the action will trigger a commit of 
+saved IOS configuration to the router. Click Show Config to view the saved configuration. 
+
 
 AWS Network Manager Integration
 -----------------------------------
@@ -129,7 +141,6 @@ Commit Tag to Branch Router
 -----------------------------
 
 Select a tag, click Commit. The CLIs in the tag are committed to the branch routers attached to the tag. 
-
 
 
 .. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png
