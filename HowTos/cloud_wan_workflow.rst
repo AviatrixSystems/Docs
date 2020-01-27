@@ -99,6 +99,38 @@ Aviatrix CloudWAN can be integrated with AWS Network Manager for visualization. 
  - Register AWS Transit Gateway
  - Register Branch Device
 
+Configuration Tags
+----------------------
+
+Aviatrix CloudWAN automatically programs CLIs required to connect to Aviatrix Transit Gateway or TGW VPN. 
+There are times when you need to add additional CLIs to the routers. Configuration Tags provide a way to 
+manage these additional CLIs in a scalable way. 
+
+A tag contains a block of CLI commands. 
+A tag can be attached to one or more branch routers. When Commit a tag, CLIs commands in the
+tag is committed to the routers attached to the tag. 
+
+Create a Tag
+--------------
+
+Provide a unique name to a new tag. For example, name the tag tier1-branches.
+
+Edit a Tag
+------------
+
+For a given tag, enter CLI commands exactly the way it should be programmed. 
+
+Attach to Branch Routers
+-------------------------
+
+Select branch routers to be part of Include or Exclude list to a given tag. 
+
+Commit Tag to Branch Router
+-----------------------------
+
+Select a tag, click Commit. The CLIs in the tag are committed to the branch routers attached to the tag. 
+
+
 
 .. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png
    :scale: 30%
