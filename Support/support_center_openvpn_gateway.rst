@@ -368,7 +368,7 @@ How can I find out log history of my VPN users?
 
 There are different options to find this information:
 
-  * Please look at "Controller > Troubleshoot > Diagnostics > VPN User" 
+  * Please look at "Controller > OpenVPN > Troubleshooting > VPN USER HISTORY SEARCH section" 
   * You can look for a `disconnect log <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id1>`_ if you have `external logging feature  <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrix-log-format-for-log-management-systems>`_ turned on. 
   * You could also look at our `REST API <https://api.aviatrix.com/?version=latest#79695109-338c-4569-8f6c-824eb5ed5602>`_ to get this data.
 
