@@ -80,6 +80,15 @@ and Site-2 accesses Prod-3/Prod-4 and Dev-3/Dev-4 via its local regional TGW.
 
 |excluded_tgw_connections|
 
+Default Route Propagation Behavior
+-------------------------------------
+
+If centralized egress is enabled by local TGW FireNet or Transit FireNet, the default route 0.0.0.0/0 is **not**
+propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
+
+On the other hand, if on-prem advertise the default route to the Aviatrix Transit Gateway, this default route is 
+propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
+
 
 .. |multi-region| image:: tgw_design_patterns_media/multi-region.png
    :scale: 30%
