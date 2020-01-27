@@ -4,10 +4,10 @@
 
 
 ============================================================
-Next Gen Transit for AWS  FAQ
+AWS TGW Orchestrator FAQ
 ============================================================
 
-What is the Next Gen Transit for AWS?
+What is the AWS TGW Orchestrator?
 ---------------------------------------
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS Transit Gateway. 
@@ -16,6 +16,7 @@ What is the Next Gen Transit for AWS?
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
  #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and features rich hybrid network for connecting to on-prem.
  #. Supports Bring Your Own Firewall to TGW deployment for inline traffic inspection (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_) 
+ #. Orchestrate AWS TGW Inter Region Peering and expand the Security Domains to be global.  
  #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs and Azure Spokes VNet.
 
 The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
