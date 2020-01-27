@@ -215,7 +215,8 @@ If the user VPN session is setup to use TCP(default setting with ELB), the sessi
 How can I use a CSV file to do bulk import of vpn users?
 --------------------------------------------------------------------------------------------------------------
 
-The Aviatrix Controller does not have the ability to read a CSV file to import users at this time. But since we already support REST API() and Terraform() it is very easy to import multiple vpn users. Here is an example using python and REST API
+The Aviatrix Controller supports to read a CSV file to import users using Aviatrix Console GUI started from version 5.0, please refer to this `instruction <https://docs.aviatrix.com/HowTos/uservpn.html#import-vpn-users>`_.
+If you prefer to use API to add vpn users from a csv file, here is an example using python and REST API
 
 ::
 
@@ -280,6 +281,22 @@ The Aviatrix Controller does not have the ability to read a CSV file to import u
   print("--------------------------")
   
 
+I need to migrate all my Aviatrix setup and resource from one AWS account A to Account B, what is the suggestion of migrating my VPN users?
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+To migrate controller from one AWS account to another, please follow the instructions at https://docs.aviatrix.com/Support/support_center_controller.html#how-can-i-move-my-controller-from-one-aws-account-to-another-aws-account. However you will need to make sure your controller is running the latest software version by upgrading to the current controller. Upgrade instructions are `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade>`_.
+
+For the OpenVPN GW with ELB migration, the ovpn file is associated with the ELB name used in AWS account A. When a user is connected to the OpenVPN, it's actually connected via the ELB created in AWS. If AWS can migrate everything from one AWS account in the VPC to another AWS account, there is possibly a chance to re-use the same ovpn file. 
+
+Here are our recommendation instead of doing the migration we believe the steps below are faster and less complicated.
+
+1. Spin up a brand new controller in the account B. Follow the instructions here to subscribe and launch a new controller. This could be done ahead of migration.
+2. After controller is initialized to the latest version, onboard the new account and create a new OpenVPN gateway in the new account.
+3. Upgrade the current controller to the latest version. Go to OpenVPN > VPN Users page, detach all users and then export the list of users.
+4. Import the OpenVPN users to the new controller at OpenVPN > VPN Users page.
+5. Attach them to the new OpenVPN gateway ELB in the new controller.
+6. All users should receive the new ovpn file. 
+7. Once your user confirm the connection to the new OpenVPN gateway, you can delete all users, gateway from the old controller and terminate the controller.
 
 How can I limit the duration on my vpn user's sessions?
 ------------------------------------------------------------
