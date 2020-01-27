@@ -18,7 +18,7 @@ monitor its health and statistics.
 Connect to the Controller
 --------------------------------------------------
 
-After a branch router is registered, the controller connects to its publicly accessible interface to retrieve its configuration. 
+After a branch router is registered, the controller connects to its publicly accessible interface of the branch router to retrieve its configuration. 
 
 Prepare to Attach
 ---------------------
