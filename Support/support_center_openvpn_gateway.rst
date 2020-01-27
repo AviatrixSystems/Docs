@@ -215,7 +215,8 @@ If the user VPN session is setup to use TCP(default setting with ELB), the sessi
 How can I use a CSV file to do bulk import of vpn users?
 --------------------------------------------------------------------------------------------------------------
 
-The Aviatrix Controller does not have the ability to read a CSV file to import users at this time. But since we already support REST API() and Terraform() it is very easy to import multiple vpn users. Here is an example using python and REST API
+The Aviatrix Controller supports to read a CSV file to import users using Aviatrix Console GUI started from version 5.0, please refer to this `instruction <https://docs.aviatrix.com/HowTos/uservpn.html#import-vpn-users>`_.
+If you prefer to use API to add vpn users from a csv file, here is an example using python and REST API
 
 ::
 
