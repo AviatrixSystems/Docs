@@ -163,8 +163,8 @@ The Aviatrix TransitNetwork feature requires the following additional permission
                 "ec2:ModifyTransitGatewayVpcAttachment",
                 "ec2:RejectTransitGatewayVpcAttachment",
                 "ec2:ReplaceTransitGatewayRoute",
-
-                "ec2:EnableRoutePropagation"
+                "ec2:EnableRoutePropagation",
+                "ec2:*TransitGatewayPeeringAttachment"
             ],
             "Resource": "*"
         },
