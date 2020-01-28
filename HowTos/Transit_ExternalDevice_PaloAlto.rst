@@ -1,6 +1,7 @@
 =========================================================
-Transit Connection to Palo Alto over the internet.
+External Device to Palo Alto VM-Series 
 =========================================================
+
 This document describes how to build Transit connection between Aviatrix Transit Gateway and Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
 
 Network setup is as following:
@@ -29,10 +30,11 @@ Configuration WorkFlow:
 
    |image1|
 
-2.Connect the transit VPC GW to Palo Alto. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
+2. Connect the transit VPC GW to Palo Alto. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
       a. BGP Local AS number: ASN of the transit VPC GW
       b. BGP Remote AS number: ASN of the Palo Alto
       c. Remote Gateway IP Address: Palo Alto WAN interface public IP.
+
    |image2|
 
 3. Download the configuration by going to Site2Cloud -> Click on the Connection.
@@ -111,12 +113,14 @@ Configuration WorkFlow:
         IKE Gateway                       IKE gateway created at Step 4.c
         IPSec Crypto Profile              IPSec crypto profile created at Step 4.d
       ===============================     =========================================
-        Note: There is no need to configure proxy-id
+
+      Note: There is no need to configure proxy-id
       
    f. Commit the configuration.
 
 
 5. Steps to configure BGP:
+
 
    a. Go to Network > Virtual Routers Default > BGP > peer group
       click add give any name(e.g bgppeering) and then click on the left bottom to add BGP peer
@@ -160,14 +164,13 @@ Configuration WorkFlow:
     |image22|
 
 .. |image1| image:: ./Transit_ExternalDevice_PaloAlto_media/1.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+   :scale: 30%
+
 .. |image2| image:: ./Transit_ExternalDevice_PaloAlto_media/2.png
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image3| image:: ./Transit_ExternalDevice_PaloAlto_media/3.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+   :scale: 30%
 .. |image4| image:: ./Transit_ExternalDevice_PaloAlto_media/4.png
     :width: 7.00000 in
     :height: 5.00000 in
@@ -193,8 +196,8 @@ Configuration WorkFlow:
     :width: 5.55625in
     :height: 3.26548in
 .. |image12| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp11.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+   :scale: 20%
+
 .. |image13| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp1.png
     :width: 7.00000 in
     :height: 5.00000 in
@@ -208,8 +211,8 @@ Configuration WorkFlow:
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image18| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp12.png
-    :width: 7.00000 in
-    :height: 5.00000 in
+   :scale: 30%
+
 .. |image19| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp7.png
     :width: 7.00000 in
     :height: 5.00000 in
