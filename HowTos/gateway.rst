@@ -216,8 +216,7 @@ delete all VPN gateways, you can re-launch them without having to reissue a
 new .ovpn cert file. This helps reduce friction to VPN users.
 
 When ELB is enabled, you can launch multiple VPN gateways behind ELB, thus
-achieving a scale out VPN solution. Note since AWS ELB only supports TCP for
-load balancing, VPN gateways with ELB enabled run on TCP.
+achieving a scale out VPN solution.
 
 ELB Name
 ==========
@@ -226,6 +225,15 @@ ELB Name is generated automatically if it is left blank.
 If it is left blank and there is already a load balancer in the specified VPC, it will choose that load balancer's name.
 
 You can set the ELB name if there is no existing ELB in the specified VPC.
+
+VPN Protocol
+=============
+
+When TCP is checked, the VPN gateway will accept the VPN TCP connection only.
+If UDP is checked, only the VPN UDP connection is allowed.
+These options are only available on the AWS.
+For all cloud types, the VPN protocol is TCP by default if ELB is enabled.
+If the ELB is disabled, the VPN protocol is UDP always.
 
 Enable Client Certificate Sharing
 ==================================
