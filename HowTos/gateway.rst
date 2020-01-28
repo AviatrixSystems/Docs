@@ -232,6 +232,8 @@ VPN Protocol
 When TCP is checked, the VPN gateway will accept the VPN TCP connection only.
 If UDP is checked, only the VPN UDP connection is allowed.
 These options are only available on the AWS.
+For all cloud types, the VPN protocol is TCP by default if ELB is enabled.
+If the ELB is disabled, the VPN protocol is UDP always.
 
 Enable Client Certificate Sharing
 ==================================
