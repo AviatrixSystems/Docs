@@ -1,23 +1,27 @@
 .. meta::
-  :description: Secure File Transfer to S3 FAQ	
-  :keywords: AWS Storage gateway, AWS Transit Gateway, AWS TGW, scp, winscp, secure file copy
+  :description: Transfer data from on-prem to S3 using private VIF	
+  :keywords: AWS Storage gateway, AWS Transit Gateway, AWS TGW, S3, Public VIF
 
 
 =========================================================
-Secure S3 Transfer FAQ
+PrivateS3 FAQ
 =========================================================
 
 What is the security exposure when uploading files to AWS S3 over Direct Connect?
 --------------------------------------------------------------------------------------
 
-If you like to leverage the high speed AWS Direct Connect to copy files to S3, the current standard solution is to use public VIF to advertise the entire S3 public address ranges to on-prem. This implies all on-prem users can upload to any S3 bucket, including to their personal S3 buckets on their own personal accounts, leading to potential confidential data leakage. The current solution is described as 
-below. 
+If you like to leverage the high speed AWS Direct Connect to transfer files and objects to/form S3, the current solution is to use public VIF where AWS advertise the entire S3 public address ranges to 
+on-prem. This implies all on-prem users can upload to any S3 bucket, including to their personal S3 buckets on their own personal accounts, leading to confidential data leakage. The current solution is described as below. 
 
 |s3_public_vif|
 
-Using public VIF bypass all VPC constructs.
+In the diagram above, there is no VPC involved when Using public VIF. Data is directly transferred
+to and from S3 riding on the Direct Connect link.  
 
-Even when you use S3 private Endpoint service in a VPC to access S3 bucket, the endpoint is still represented by the public CIDR blocks representing AWS S3 in the region as shown below, 
+In another scenario where an instance in a VPC trying to access S3 buckets, you can specify an S3 private Endpoint. The advantage is such that packets do not get routed over Internet and instead packets
+are routed to S3 via AWS network. However, 
+the endpoint is still represented by the public CIDR blocks representing AWS S3 in the region as shown below, in another words, someone with the valid credential to access the S3 Endpoint can transfer 
+objects to his/her own S3 buckets. 
 
 |s3_endpoint|
 
@@ -25,15 +29,15 @@ Note there is Endpoint policy but it controls who can use the Endpoint service, 
 
 Same issue of data leakage occurs if you upload files to S3 over public Internet.  
 
-What is Aviatrix Secure S3 Transfer?
+What is Aviatrix PrivateS3?
 -----------------------------------------------
 
-Aviatrix Secure S3 Transfer (SS3T) is a feature that allows you to leverage AWS Direct Connect to copy files between on-prem and S3 
+Aviatrix PrivateS3 is a feature that allows you to leverage AWS Direct Connect to copy files between on-prem and S3 
 while enabling you to control from which S3 buckets by whitelisting the S3 buckets. 
 
 |sft_aviatrix|
 
-What are the benefits of Secure S3 Transfer?
+What are the benefits of PrivateS3?
 ----------------------------------------------------------------------------
 
 
@@ -44,30 +48,30 @@ The key benefits are:
  #. The ability to deploy multiple Aviatrix gateways to load balancing the data traffic.
 
 
-How does SFT work?
---------------------
+How does PrivateS3 work?
+--------------------------
 
-SFT works by launching an Aviatrix gateway in a VPC that has a private connection to on-prem, for example, over a Direct Connect.
+PrivateS3 works by launching an Aviatrix gateway in a VPC that has a private connection to on-prem, for example, over a Direct Connect.
 
 
-Through SFT, an S3 bucket appears to be a mounted local directory on the Aviatrix gateway with the same
+Through PrivateS3, an S3 bucket appears to be a mounted local directory on the Aviatrix gateway with the same
 name as the bucket. A VPC endpoint is created to serve S3 so that data object transferring is private within the AWS network and free of charge. File copying from on-prem to the gateway directory is transferred to the S3 bucket. 
 
-With this approach, you can specify policies such as only allowing the VPC endpoint to access S3 buckets. Since only the mounted S3 buckets on an Aviatrix gateway can be used for file transferring, SFT 
+With this approach, you can specify policies such as only allowing the VPC endpoint to access S3 buckets. Since only the mounted S3 buckets on an Aviatrix gateway can be used for file transferring, PrivateS3 
 effectively locks down which S3 buckets and from where data can be transferred.  
 
-SFT also works in a VPC that connects over the Internet with IPSEC. 
+PrivateS3 also works in a VPC that connects over the Internet with IPSEC. 
 
 
 Is there an additional AWS data charge by going through the Aviatrix gateway?
 --------------------------------------------------------------------------------
 
-No, there is no data charge by AWS for using SFT. Normally AWS charges data transfer for data traffic leaving a VPC, however in this case, data transfer is through an AWS VPC endpoint to S3 which is free of charge. 
+No, there is no data charge by AWS for using PrivateS3. Normally AWS charges data transfer for data traffic leaving a VPC, however in this case, data transfer is through an AWS VPC endpoint to S3 which is free of charge. 
 
-Can SFT be deployed in TGW environment?
------------------------------------------
+Can PrivateS3 be deployed in TGW environment?
+------------------------------------------------
 
-Yes. You can deploy SFT in a Spoke VPC in the TGW environment as shown in the diagram below. 
+Yes. You can deploy PrivateS3 in a Spoke VPC in the TGW environment as shown in the diagram below. 
 
 |sft_deployment|
 
