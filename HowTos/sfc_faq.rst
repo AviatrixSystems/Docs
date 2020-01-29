@@ -60,7 +60,7 @@ PrivateS3 combines a few elements to make it work.
 Can PrivateS3 work for traffic initiated from a VPC?
 -------------------------------------------------------
 
-PrivateS3 is optimized for managing S3 access from on-prem. For traffic initiated from VPC, use `Aviatrix FQDN feature <https://docs.aviatrix.com/HowTos/fqdn_faq.html>_ for not only S3 access control but also all Internet bound egress control. 
+PrivateS3 is optimized for managing S3 access from on-prem. For traffic initiated from VPC, use `Aviatrix FQDN feature <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ for not only S3 access control but also all Internet bound egress control. 
 
 
 Is there an additional AWS data charge by going through the Aviatrix gateway?
