@@ -174,6 +174,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/fqdn_viewlog
    HowTos/guardduty
    HowTos/public_subnet_filtering_faq
+   HowTos/sfc_faq
 
 .. _Peering:
 

@@ -1,6 +1,6 @@
 .. meta::
   :description: Transfer data from on-prem to S3 using private VIF	
-  :keywords: AWS Storage gateway, AWS Transit Gateway, AWS TGW, S3, Public VIF
+  :keywords: AWS Storage gateway, Secure File Copy, Secure File Transfer, AWS Transit Gateway, AWS TGW, S3, Public VIF
 
 
 =========================================================
@@ -44,23 +44,23 @@ What are the benefits of PrivateS3?
 The key benefits are:
 
  1. Transferring objects/files between on-prem and S3 by leveraging Direct Connect without using public VIF. 
- #. The ability for you to have control over the data transfer in and out of any AWS S3 bucket. 
+ #. The ability to control which S3 buckets can be accessed. 
  #. The ability to deploy multiple Aviatrix gateways to load balancing the data traffic.
 
 
 How does PrivateS3 work?
 --------------------------
 
-PrivateS3 works by launching an Aviatrix gateway in a VPC that has a private connection to on-prem, for example, over a Direct Connect.
+PrivateS3 combines a few elements to make it work. 
 
+ 1. Customer on-prem resolves all S3 bucket names under management ta the private IP address of the gateway (or AWS internal NLB)
+ #. Configure S3 bucket names on the Aviatrix Controller Console. 
+ #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out the un-configured S3 bucket access. 
 
-Through PrivateS3, an S3 bucket appears to be a mounted local directory on the Aviatrix gateway with the same
-name as the bucket. A VPC endpoint is created to serve S3 so that data object transferring is private within the AWS network and free of charge. File copying from on-prem to the gateway directory is transferred to the S3 bucket. 
+Can PrivateS3 work for traffic initiated from a VPC?
+-------------------------------------------------------
 
-With this approach, you can specify policies such as only allowing the VPC endpoint to access S3 buckets. Since only the mounted S3 buckets on an Aviatrix gateway can be used for file transferring, PrivateS3 
-effectively locks down which S3 buckets and from where data can be transferred.  
-
-PrivateS3 also works in a VPC that connects over the Internet with IPSEC. 
+PrivateS3 is optimized for managing S3 access from on-prem. For traffic initiated from VPC, use `Aviatrix FQDN feature <https://docs.aviatrix.com/HowTos/fqdn_faq.html>_ for not only S3 access control but also all Internet bound egress control. 
 
 
 Is there an additional AWS data charge by going through the Aviatrix gateway?
