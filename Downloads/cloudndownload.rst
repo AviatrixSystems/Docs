@@ -3,8 +3,12 @@
    :keywords: 1-client hybrid cloud, IPSEC, AWS VPC, Azure VNet, Datacenter Extension, Aviatrix virtual appliance
 
 ###################################
-CloudN 
+CloudN Virtual Appliance 
 ###################################
+
+.. note::
+
+  The download information listed below only applies to CloudN virtual appliance. It does not apply to the hardware version of the CloudN appliance. The CloudN virtual appliance does not support InsaneMode.
 
 CloudN comes with OVF, VHD and KVM images to support VMware hypervisor, Microsoft Hyper-V and KVM.
 
