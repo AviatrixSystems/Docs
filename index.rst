@@ -175,6 +175,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/guardduty
    HowTos/public_subnet_filtering_faq
    HowTos/sfc_faq
+   HowTos/privateS3_workflow
 
 .. _Peering:
 
