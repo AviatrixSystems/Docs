@@ -33,6 +33,9 @@ Enable                                   If this is the first time, click Enable
 Update                                   If PrivatS3 has been enabled, use this button to update changes including editing Source CIDR Range, Add New Bucket or Delete existing bucket. 
 =================================        ==================
 
+.. important::
+
+  Make sure S3 buckets be in the same region as that of the gateway. For S3 buckets in a different region, launch a gateway in that region and repeat the above step.  
 
 Step 3. Configure on-prem DNS 
 ---------------------------------

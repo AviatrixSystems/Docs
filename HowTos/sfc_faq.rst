@@ -75,6 +75,18 @@ Yes. You can deploy PrivateS3 in a Spoke VPC in the TGW environment as shown in 
 
 |sft_deployment|
 
+Can PrivateS3 gateway filter S3 buckets in a different region?
+---------------------------------------------------------------
+
+No. Each PrivateS3 gateway can only filter S3 buckets in the region the gateway is deployed. 
+
+Can PrivateS3 solution scale out?
+----------------------------------
+
+The scale out PrivateS3 is not available in 5.3. It will be available in the future release. 
+
+
+
 
 .. |sfc| image:: sfc_media/sfc .png
    :scale: 30%
