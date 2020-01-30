@@ -129,7 +129,7 @@ Configuration Workflow
         Protocol                          Any
       ===============================     =================================================================
 
-   #. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes**, add a new route destinating to VPC1 private subnet.
+   #. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes** > default, add a new route destinating to VPC1 private subnet.
 
       |image7|
 
@@ -140,8 +140,10 @@ Configuration Workflow
         Interface                         Tunnel interface created at Step 5.1
       ===============================     =================================================================
 
-   #. Commit the configuration.
-
+   #. Commit the configuration.  And, you will see the IPSec tunnel status become green.
+   
+      |image10|
+	  
 #. At the AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1's private subnet with the Palo Alto Networks VM LAN port as the gateway.
 
 
@@ -155,43 +157,36 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
 
 
 .. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
 .. |image1| image:: s2c_gw_pan_media/IKE_Crypto_Profile.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
-.. |image2| image:: s2c_gw_pan_media/IKE_Gateway_1.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image2| image:: s2c_gw_pan_media/ike-gw-1.PNG
+   :scale: 30%
 
-.. |image3| image:: s2c_gw_pan_media/IKE_Gateway_2.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image3| image:: s2c_gw_pan_media/ike-gw-2.PNG
+   :scale: 30%n
 
 .. |image4| image:: s2c_gw_pan_media/IPSec_Crypto_Profile.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
 .. |image5| image:: s2c_gw_pan_media/IPSec_Tunnel_1.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
 .. |image6| image:: s2c_gw_pan_media/IPSec_Tunnel_2.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
 .. |image7| image:: s2c_gw_pan_media/Static_Route.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
 .. |image8| image:: s2c_gw_pan_media/Verify_S2C.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+   :scale: 30%
 
 .. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
-   :width: 5.55625in
-   :height: 3.26548in
-
+   :scale: 30%
+   
+.. |image10| image:: s2c_gw_pan_media/IPSecTunnelStatus.PNG
+   :scale: 30%
+   
 .. disqus::
