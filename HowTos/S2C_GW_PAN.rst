@@ -157,36 +157,47 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
 
 
 .. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image1| image:: s2c_gw_pan_media/IKE_Crypto_Profile.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image2| image:: s2c_gw_pan_media/ike-gw-1.png
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image3| image:: s2c_gw_pan_media/ike-gw-2.png
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image4| image:: s2c_gw_pan_media/IPSec_Crypto_Profile.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image5| image:: s2c_gw_pan_media/IPSec_Tunnel_1.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image6| image:: s2c_gw_pan_media/IPSec_Tunnel_2.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image7| image:: s2c_gw_pan_media/Static_Route.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image8| image:: s2c_gw_pan_media/Verify_S2C.PNG
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
-   :scale: 30%
+    :width: 7.00000 in
+    :height: 5.00000 in
    
 .. |image10| image:: s2c_gw_pan_media/IPSecTunnelStatus.png
-   :scale: 30%
+    :width: 7.00000 in
+    :height: 1.00000 in
    
 .. disqus::
