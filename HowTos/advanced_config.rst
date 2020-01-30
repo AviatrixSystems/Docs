@@ -6,6 +6,21 @@
 Advanced Config
 =================
 
+Tunnel
+--------
+
+Specify a IPSec tunnel down detection time. The minimum is 20 Seconds. If Controller is selected, all gateways share the same
+tunnel down detection time. 
+
+Aviatrix gateways samples the tunnel status every 10 seconds. 
+
+Keepalive
+------------
+
+In normal state, Aviatrix gateways send keep alive messages to the Controller. Keep Alive Speed determines when Controller determines if a gateway is down. 
+
+See `Gateway State <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_ for more information. 
+
 BGP Config
 ------------
 
