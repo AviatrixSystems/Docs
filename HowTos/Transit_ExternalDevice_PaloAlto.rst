@@ -230,11 +230,9 @@ Configuration WorkFlow:
 .. |image22| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp10.png
     :width: 7.00000 in
     :height: 5.00000 in
-
-
 .. |image23| image:: ./Transit_ExternalDevice_PaloAlto_media/14.png
     :width: 5.55625 in
-    :height: 1.00000 in
+    :height: 1.50000 in
 
 
 
