@@ -4,7 +4,7 @@
 
 
 =========================================================
-Transit Gateway Peering
+Aviatrix Transit Gateway Encrypted Peering
 =========================================================
 
 Transit Gateway Peering connects two or more Aviatrix Transit Gateways in a partial or full mesh manner, as shown in the diagram below. The Aviatrix Transit Gateways may be deployed in AWS or Azure, where each Transit GW connects
