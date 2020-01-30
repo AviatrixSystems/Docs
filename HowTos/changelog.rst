@@ -1,6 +1,10 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+2.6.6 - Jan 29 2020
+ - Improve the user experience to add a new VPN profile
+ - Security fixes for the OpenVPN params
+
 
 2.5.7 - Nov 20 2019
  - New UI
