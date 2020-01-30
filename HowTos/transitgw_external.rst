@@ -83,6 +83,7 @@ Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectC
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit gateway. Leave it blank.  
 Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+Enable Edge Segmentation       Check this option to allow this connection to communicate with a Security Domain via `Connection Policy. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_ For more information, read `Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_
 
 ============================   ==========
 

@@ -232,4 +232,13 @@ When you try to associate firewall instance to FireNet gateway, the firewall's L
 The firewall subnets/interfaces are created when enable FireNet function on the gateway. If you create firewall instance before enable FireNet function, those instances can not associate with gateway due to mismatched interface. One way to solve this is to use REST-API to enable FireNet function, and provide existing subnets as option. Please refer to API doc. 
 
 
+--------------------------------------------------------------------
+
+::
+
+    Error: [Aviatrix Error] Gateway instance create failed Reason:Quota 'IN_USE_ADDRESSES' exceeded. Limit: 8.0 in region us-central1.
+
+You may have exceeded GCP IN_USE_ADDRESSES limits on this account. By default in GCP, the In-use IP address of a region is 8 (Different GCP project has different quotas limit setting), you can ask for a new quota limit by following `this GCP instruction <https://cloud.google.com/compute/quotas#request_quotas>`_.
+
+
 .. disqus::

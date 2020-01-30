@@ -73,17 +73,15 @@ Public Subnet                                   The public subnet on which Trans
 Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
 Allocate New EIP                                If selected, the Controller allocates a new EIP and associate it with the gateway instance. If not selected, the Controller looks for an allocated but unassociated EIP in the Transit GW account. 
 Insane Mode Encryption                          If selected, Transit GW can peer and connect to Spoke with `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_.
+Enable ActiveMesh Mode                          `ActiveMesh Mode <https://docs.aviatrix.com/HowTos/gateway.html?#activemesh-mode>`_ is recommended. Non ActiveMesh Mode is deprecated. 
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
+Learned CIDR Approval                            If this option is enabled, dynamically learned routes by the Aviatrix Transit Gateway from remote side requires explicit approval to be propagated to Spoke VPCs. 
+Enable Transit FireNet Function                  This option is for Aviatrix Transit Gateway in Azure only. When this option is enabled, you can specify Spoke VNets to be inspected by firewall instances. 
 ==========================================      ==========
 
 .. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% for packet size less than 150 bytes when interoperating with VGW. This packet drop does not apply to Spoke GW.  
 
 You can change the Transit GW size later by following `these instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
-
-.. note::
-
-  If you would like to beta test ActiveMesh, go to Gateway page after the gateway launch is successful. Select the Transit GW, click Edit, scroll down to ActiveMesh Mode, click Enable. 
-
 
 
 2. (Optionally) Enable HA for the Transit Gateway
@@ -160,17 +158,18 @@ As a result of this step, a Customer Gateway and a Site2Cloud Connection between
 
 |VGW|
 
-=====================      ==========
-**Setting**                **Value**
-=====================      ==========
-VPC ID                     The Transit VPC ID where Transit GW was launched
-Connection Name            A unique name to identify the connection to VGW 
-BGP Local AS Number        The BGP AS number the Transit GW will use to exchange routes with VGW
-Primary Cloud Gateway      The Transit GW you created in Step 1
-AWS VGW Account Name       The Aviatrix account that VGW is created with. This account could be the same as the account used by Transit GW, or it could be by a different account
-VGW Region                 The AWS region where VGW is created
-VGW ID                     VGW that is created in the VGW Region in the AWS VGW Account
-=====================      ==========
+==========================      ==========
+**Setting**                     **Value**
+==========================      ==========
+VPC ID                          The Transit VPC ID where Transit GW was launched
+Connection Name                 A unique name to identify the connection to VGW 
+BGP Local AS Number             The BGP AS number the Transit GW will use to exchange routes with VGW
+Primary Cloud Gateway           The Transit GW you created in Step 1
+AWS VGW Account Name            The Aviatrix account that VGW is created with. This account could be the same as the account used by Transit GW, or it could be by a different account
+VGW Region                      The AWS region where VGW is created
+VGW ID                          VGW that is created in the VGW Region in the AWS VGW Account
+Enable Edge Segmentation        Check this option to allow this connection to communicate with a Security Domain via `Connection Policy. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_ For more information, read `Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_
+==========================      ==========
 
 
 Note that the Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. 
@@ -339,6 +338,57 @@ After you have built the Transit GW and Spokes, you can view the connection betw
 
 Advanced Config
 ------------------
+
+Manual BGP Advertised Network List
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This field is only applicable to Transit GW established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+
+By default, Aviatrix Transit GW advertises individual Spoke VPC CIDRs to VGW. You can 
+override that by manually entering the intended CIDR list to advertise to VGW. 
+
+This feature is critical to limit the total number of routes carried by VGW (maximum is 100). 
+
+To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
+Scroll down to "Connected Transit" to enable.
+
+For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
+
+To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
+
+Advertise Transit VPC Network CIDR(s)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This field is only applicable to Transit GW established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+
+By default, Aviatrix Transit GW does not advertise Transit VPC `CIDR <https://www.aviatrix.com/learning/glossary/cidr.php>`_.
+
+When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC CIDR to VGW. The Controller programs the 3 RFC1918 routes in the AWS route table to point to the Transit GW. It also programs the learned routes from VGW into the AWS route table. 
+
+If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
+
+To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
+Scroll down to "Connected Transit" to enable.
+
+For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
+
+
+Connected Transit
+^^^^^^^^^^^^^^^^^
+
+By default, Aviatrix Spoke VPCs do not have routing established to communicate 
+with each other via Transit. They are completely segmented. 
+
+If you would like to build a full mesh network where Spoke VPCs communicate with each other via Transit GW, you can achieve that by enabling "Connected Transit" mode. All connections are encrypted. 
+
+To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
+Scroll down to "Connected Transit" to enable.
+
+For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
+
+Note all Spokes should be either in HA mode or non HA mode. A mixed deployment where some Spokes have 
+HA enabled while others don't work in a normal environment, but does not work
+when a failover happens on a HA enabled Spoke. 
 
 Prepend AS Path
 ^^^^^^^^^^^^^^^^^

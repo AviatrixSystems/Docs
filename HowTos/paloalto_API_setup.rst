@@ -123,7 +123,7 @@ The following 3 # steps, please refer to the step 8 and 9 of https://docs.aviatr
  #. **Commit The Change**
        Commit and push.
   
-After the above steps, once M-Series instances are added to Panorama, all configuration should be done through the Panorama console.
+After the above steps, once VM-Series instances are added to Panorama, all configuration should be done through the Panorama console.
 
 e. Create admin role and user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

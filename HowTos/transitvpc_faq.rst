@@ -220,9 +220,9 @@ you can summarize the Spoke VPC CIDRs.
 
 Before you configure summarization, make sure your Transit network meets the `prerequisite <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#what-is-the-prerequisite-to-summarize-spoke-vpc-cidrs>`_
 
-Go to Site2Cloud, click on the connection that identifies the Transit GW and VGW. (This connection is automatically created when you complete `Step 3 at the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_. The Connection Name you entered should be displayed as a Site2Cloud connection at this page.)
+Go to Transit Network -> Advanced Config -> Edit Transit, select the Transit GW. (This Transit GW is created when you complete `Step 1 at the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_.)
 
-After you click on the connection, scroll down to "Manual BGP Advertised Network List", as shown below. Enter the summarized CIDR ranges and click Change BGP Manual Spoke Advertisement. You can enter a list of CIDRs separated by commas.
+After you select Transit GW, scroll down to "Manual BGP Advertised Network List", as shown below. Enter the summarized CIDR ranges and click Change BGP Manual Spoke Advertisement. You can enter a list of CIDRs separated by commas.
 
 |bgp_summarize|
 
@@ -314,12 +314,12 @@ For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blo
 
 
 
-.. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize.png
-   :scale: 30%
-
-.. |bgp_summarize_error| image:: transitvpc_faq_media/bgp_summarize_error.png
-   :scale: 30%
-
+.. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize_transit_adv_page.png
+   :scale: 60%
+   
+.. |bgp_summarize_error| image:: transitvpc_faq_media/bgp_summarize_error_adv_page.png
+   :scale: 60%
+   
 .. |force_switchover_spoke2| image:: transitvpc_faq_media/force_switchover_spoke2.png
    :scale: 30%
 

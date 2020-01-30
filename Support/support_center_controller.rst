@@ -307,3 +307,8 @@ Please pay attention that the token expires in 15 minutes. If you repeatedly get
 .. |admin_user| image:: password-recovery-img/Pic3.png
    :scale: 70%  
    
+
+How can I secure my controller?
+-----------------------------------
+
+Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller.

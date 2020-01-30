@@ -99,7 +99,7 @@ Create an IPsec tunnel in pfSense
    +-------------------------------+------------------------------------------+
    | My identifier                 | My IP address                            |
    +-------------------------------+------------------------------------------+
-   | :orange:`Peer identifier`     | :orange:`IP address. Enter the private`  |
+   | :orange:`Peer identifier`     | :orange:`IP address. Enter the Public`  |
    |                               | :orange:`IP address of the remote`       |
    |                               | :orange:`Aviatrix Gateway`               |
    +-------------------------------+------------------------------------------+
@@ -137,5 +137,5 @@ Create an IPsec tunnel in pfSense
 
 8. Test that the tunnel is up
 
-.. |imageExamplePfSenseConfiguration| image:: CloudToPfSense_media/example_config.png
+.. |imageExamplePfSenseConfiguration| image:: CloudToPfSense_media/IKEv1.png
 .. |imageExamplePfSensePhase2Config| image:: CloudToPfSense_media/example_phase2_config.png

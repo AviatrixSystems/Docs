@@ -273,6 +273,21 @@ However if the firewall instance is in the different AZ and subnet, forwarding p
 requires AWS route table to be programmed with target as the firewall instance, and as a result, there cannot be more
 than one firewall instance in the different AZ, thus losing the scale out capability. 
 
+Does Aviatrix Controller communicate with Palo Alto Panorama to its private IP address?
+------------------------------------------------------------------------------------------
+
+Yes. If the Panorama is reachable via private IP.
+
+Does Aviatrix Controller check the health of Panorama?
+--------------------------------------------------------
+
+No. Aviatrix Controller only checks the health of VM-Series instances. 
+
+How does Aviatrix Controller know which Panorama is the primary one if there are two cross sites?
+----------------------------------------------------------------------------------------------------
+
+The primary IP address is configured at the `Vendor Integration <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_ function.
+
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%

@@ -203,7 +203,7 @@ on-prem. (Make sure instance security groups and any on-prem firewalls are confi
 
 ------------------------------------------------------------------------------------------------
 
-This section consists of TGW native VPN and Direct Connect functions. 
+This section consists of TGW native VPN, Direct Connect and TGW Inter Region Peering functions. 
 
 Since TGW does not propagate learned routes from DXGW or VPN to Spoke VPCs, Aviatrix Controller solves 
 this problem by periodically polling the TGW route table and programming the learned routes to attached Spoke VPCs.
@@ -268,6 +268,50 @@ Step 8 Update Direct Connect Network Prefix
 
 Use this step to update the "Allowed Prefix" to advertise to on-prem.
 
+TGW Inter Region Peering
+-----------------------------
+
+It takes two steps to connect two Security Domains in two regions. 
+
+.. tip::
+
+  Your Controller may not have the latest IAM policies to execute TGW peering, go to Accounts -> Access Accounts. Click the 3 dot skewer for the account where TGW is deployed and click Update policy. Do so for the all TGW accounts if you wish to TGW build inter region peering.
+
+
+
+a. Create TGW Peering Attachment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step connects two TGWs in different regions using AWS native TGW Peering. It automatically creates two Security Domains associated with each 
+TGW and respective attachment ID. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Cloud Type 1                                    Select AWS or AWS GovCloud
+Region 1                                        Select a region where the one TGW is deployed
+AWS Transit Gateway Name 1                      Select an AWS TGW Created `here <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_
+Cloud Type 2                                    Select AWS or AWS GovCloud
+Region 2                                        Select a region where the peering TGW is deployed
+AWS Transit Gateway Name 2                      Select an AWS TGW Created `here <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_
+==========================================      ==========
+
+b. Build Connection Policies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+After step a is completed, go to `Add/Modify Connection Policies  <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. Refresh the page. The peered TGW with its Security Domains should appear on 
+Not Connected panel. Select one remote Security Domain and click Add. Repeat this step for all intended connection, 
+as shown in the diagram below. 
+
+|tgw_peer|
+
+In the above diagram, Dev-1 Domain of TGW-1 has connection policy to Dev-2 Domain of TGW-2. Any VPCs in Dev-1 Domain 
+can communicate with VPCs in Dev-2 Domain.  
+
+Similarly, Prod-1 Domain of TGW-1 has connection policy to Prod-2 Domain of TGW-2. Any VPCs in Prod-1 Domain can
+communicate with VPCs in Prod-2 Domain. However Dev-1 cannot communicate with Prod-2 if there is no connection 
+policy between them. 
+
 --------------------------------------------------------------------------------------
 
 This section consists of delete functions.
@@ -324,5 +368,7 @@ This step delete the AWS Transit Gateway created in Step 1.
 .. |prepare_tgw_attach| image:: tgw_plan_media/prepare_tgw_attach.png
    :scale: 30%
 
+.. |tgw_peer| image:: tgw_plan_media/tgw_peer.png
+   :scale: 30%
 
 .. disqus::

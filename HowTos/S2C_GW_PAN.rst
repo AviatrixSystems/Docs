@@ -59,7 +59,7 @@ Configuration Workflow
 
 #. Log into the Palo Alto Networks VM Series and configure it as following:
 
-   #. Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+   a. Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
 
       |image0|
 
@@ -76,11 +76,11 @@ Configuration Workflow
 
          If the tunnel interface is in a zone different from the one where the traffic will originate, a policy needs to be created to allow the traffic to flow from the source zone to the zone containing the tunnel interface.
 
-   #. Go to **Network > Network Profiles > IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
+   b. Go to **Network > Network Profiles > IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
 
       |image1|
 
-   #. Go to **Network > Network Profiles > IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
+   c. Go to **Network > Network Profiles > IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
 
       |image2|
 
@@ -101,11 +101,11 @@ Configuration Workflow
         IKE Crypto Profile                Select the profile created at Step 5.2
       ===============================     =========================================
 
-   #. Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
+   d. Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
 
       |image4|
 
-   #. Under **Network > IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At the **General** window:
+   e. Under **Network > IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At the **General** window:
 
       |image5|
 
@@ -117,7 +117,7 @@ Configuration Workflow
         IPSec Crypto Profile              IPSec crypto profile created at Step 5.4
       ===============================     =========================================
 
-   #. At **Proxy IDs** window:
+   f. At **Proxy IDs** window:
 
       |image6|
 
@@ -129,7 +129,7 @@ Configuration Workflow
         Protocol                          Any
       ===============================     =================================================================
 
-   #. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes**, add a new route destinating to VPC1 private subnet.
+   g. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes** > default, add a new route destinating to VPC1 private subnet.
 
       |image7|
 
@@ -140,8 +140,10 @@ Configuration Workflow
         Interface                         Tunnel interface created at Step 5.1
       ===============================     =================================================================
 
-   #. Commit the configuration.
-
+   h. Commit the configuration.  And, you will see the IPSec tunnel status become green.
+   
+      |image10|
+	  
 #. At the AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1's private subnet with the Palo Alto Networks VM LAN port as the gateway.
 
 
@@ -155,43 +157,47 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
 
 
 .. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image1| image:: s2c_gw_pan_media/IKE_Crypto_Profile.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
-.. |image2| image:: s2c_gw_pan_media/IKE_Gateway_1.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image2| image:: s2c_gw_pan_media/ike-gw-1.png
+    :width: 5.55625in
+    :height: 3.26548in
 
-.. |image3| image:: s2c_gw_pan_media/IKE_Gateway_2.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+.. |image3| image:: s2c_gw_pan_media/ike-gw-2.png
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image4| image:: s2c_gw_pan_media/IPSec_Crypto_Profile.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image5| image:: s2c_gw_pan_media/IPSec_Tunnel_1.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image6| image:: s2c_gw_pan_media/IPSec_Tunnel_2.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image7| image:: s2c_gw_pan_media/Static_Route.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image8| image:: s2c_gw_pan_media/Verify_S2C.PNG
-   :width: 5.55625in
-   :height: 3.26548in
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
-   :width: 5.55625in
-   :height: 3.26548in
-
+    :width: 7.00000 in
+    :height: 5.00000 in
+   
+.. |image10| image:: s2c_gw_pan_media/IPSecTunnelStatus.png
+    :width: 7.00000 in
+    :height: 1.00000 in
+   
 .. disqus::

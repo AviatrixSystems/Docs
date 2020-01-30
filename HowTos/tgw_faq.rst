@@ -4,10 +4,10 @@
 
 
 ============================================================
-Next Gen Transit for AWS  FAQ
+AWS TGW Orchestrator FAQ
 ============================================================
 
-What is the Next Gen Transit for AWS?
+What is the AWS TGW Orchestrator?
 ---------------------------------------
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS Transit Gateway. 
@@ -16,6 +16,7 @@ What is the Next Gen Transit for AWS?
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
  #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and features rich hybrid network for connecting to on-prem.
  #. Supports Bring Your Own Firewall to TGW deployment for inline traffic inspection (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_) 
+ #. Orchestrate AWS TGW Inter Region Peering and expand the Security Domains to be global.  
  #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs and Azure Spokes VNet.
 
 The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
@@ -225,6 +226,26 @@ Instance to instance end-to-end Troubleshoot. For more information, refer to `Fl
 
 Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
 
+**Approval**
+^^^^^^^^^^^^^^
+
+TGW VPN and TGW DXGW dynamically learns BGP routes from remote peer, Aviatrix Controller periodically pulls the TGW 
+route table and propagate these routes to Spoke VPCs route table that have connection policy to the VPN. 
+
+There are scenarios where you require an approval process before these learned CIDRs propagation take place. 
+For example, a specific TGW VPN may be 
+connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not 
+propagated into your own network and accidentally bring down the network.  
+
+Approval is enabled on per TGW VPN and TGW DXGW bases. When Approval is enabled on a TGW VPN, 
+dynamically learned routes trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
+TGW -> Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
+Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated. 
+
+To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
+
+When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes. 
+
 What can be displayed at the View page?
 -----------------------------------------
 
@@ -370,6 +391,21 @@ Integrate Firewall deployment                      Yes                          
 =========================================          =============================            =============================
 
 
+What is Edge Segmentation?
+---------------------------------------------------
+
+Edge Segmentation allows you to further specify on each edge connection which domain it can communicate with.
+
+At `Setup Aviatrix Transit GW <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aviatrix-transit-gw>`_, you can select 
+Edge Segmentation for each connection. When this option is selected, you can then use `Build Your Domain Connection Policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_ to specify which Security Domain this edge connection can 
+communicate with, as shown in the diagram below. 
+
+|edge_segmentation| 
+
+In the above diagram, Site 1 can communicate with Prod domain but not with Dev domain and Shared Service domain. Site 2 can communicate with Dev domain but not with Prod domain and Shared Service domain.Site 3 can communicate with Shared Service domain but not with 
+Dev domain and Prod domain. 
+
+The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. 
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
@@ -388,6 +424,9 @@ Integrate Firewall deployment                      Yes                          
    :scale: 30%
 
 .. |tgw_transit_orchestrator_compare| image:: tgw_overview_media/tgw_transit_orchestrator_compare.png
+   :scale: 30%
+
+.. |edge_segmentation| image:: tgw_overview_media/edge_segmentation.png
    :scale: 30%
 
 .. disqus::
