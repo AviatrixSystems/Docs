@@ -391,6 +391,21 @@ Integrate Firewall deployment                      Yes                          
 =========================================          =============================            =============================
 
 
+What is Edge Segmentation?
+---------------------------------------------------
+
+Edge Segmentation allows you to further specify on each edge connection which domain it can communicate with.
+
+At `Setup Aviatrix Transit GW <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aviatrix-transit-gw>`_, you can select 
+Edge Segmentation for each connection. When this option is selected, you can then use `Build Your Domain Connection Policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_ to specify which Security Domain this edge connection can 
+communicate with, as shown in the diagram below. 
+
+|edge_segmentation| 
+
+In the above diagram, Site 1 can communicate with Prod domain but not with Dev domain and Shared Service domain. Site 2 can communicate with Dev domain but not with Prod domain and Shared Service domain.Site 3 can communicate with Shared Service domain but not with 
+Dev domain and Prod domain. 
+
+The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. 
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
@@ -409,6 +424,9 @@ Integrate Firewall deployment                      Yes                          
    :scale: 30%
 
 .. |tgw_transit_orchestrator_compare| image:: tgw_overview_media/tgw_transit_orchestrator_compare.png
+   :scale: 30%
+
+.. |edge_segmentation| image:: tgw_overview_media/edge_segmentation.png
    :scale: 30%
 
 .. disqus::

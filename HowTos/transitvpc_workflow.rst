@@ -160,17 +160,18 @@ As a result of this step, a Customer Gateway and a Site2Cloud Connection between
 
 |VGW|
 
-=====================      ==========
-**Setting**                **Value**
-=====================      ==========
-VPC ID                     The Transit VPC ID where Transit GW was launched
-Connection Name            A unique name to identify the connection to VGW 
-BGP Local AS Number        The BGP AS number the Transit GW will use to exchange routes with VGW
-Primary Cloud Gateway      The Transit GW you created in Step 1
-AWS VGW Account Name       The Aviatrix account that VGW is created with. This account could be the same as the account used by Transit GW, or it could be by a different account
-VGW Region                 The AWS region where VGW is created
-VGW ID                     VGW that is created in the VGW Region in the AWS VGW Account
-=====================      ==========
+========================      ==========
+**Setting**                   **Value**
+========================      ==========
+VPC ID                        The Transit VPC ID where Transit GW was launched
+Connection Name               A unique name to identify the connection to VGW 
+BGP Local AS Number           The BGP AS number the Transit GW will use to exchange routes with VGW
+Primary Cloud Gateway         The Transit GW you created in Step 1
+AWS VGW Account Name          The Aviatrix account that VGW is created with. This account could be the same as the account used by Transit GW, or it could be by a different account
+VGW Region                    The AWS region where VGW is created
+VGW ID                        VGW that is created in the VGW Region in the AWS VGW Account
+Enable Connection Policy      Check this option to allow this connection to communicate with a Security Domain via `Connection Policy. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_ 
+========================      ==========
 
 
 Note that the Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. 
