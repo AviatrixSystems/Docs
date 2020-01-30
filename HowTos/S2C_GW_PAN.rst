@@ -59,7 +59,7 @@ Configuration Workflow
 
 #. Log into the Palo Alto Networks VM Series and configure it as following:
 
-   #. Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+   a. Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
 
       |image0|
 
@@ -76,11 +76,11 @@ Configuration Workflow
 
          If the tunnel interface is in a zone different from the one where the traffic will originate, a policy needs to be created to allow the traffic to flow from the source zone to the zone containing the tunnel interface.
 
-   #. Go to **Network > Network Profiles > IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
+   b. Go to **Network > Network Profiles > IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
 
       |image1|
 
-   #. Go to **Network > Network Profiles > IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
+   c. Go to **Network > Network Profiles > IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
 
       |image2|
 
@@ -101,11 +101,11 @@ Configuration Workflow
         IKE Crypto Profile                Select the profile created at Step 5.2
       ===============================     =========================================
 
-   #. Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
+   d. Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
 
       |image4|
 
-   #. Under **Network > IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At the **General** window:
+   e. Under **Network > IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At the **General** window:
 
       |image5|
 
@@ -117,7 +117,7 @@ Configuration Workflow
         IPSec Crypto Profile              IPSec crypto profile created at Step 5.4
       ===============================     =========================================
 
-   #. At **Proxy IDs** window:
+   f. At **Proxy IDs** window:
 
       |image6|
 
@@ -129,7 +129,7 @@ Configuration Workflow
         Protocol                          Any
       ===============================     =================================================================
 
-   #. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes** > default, add a new route destinating to VPC1 private subnet.
+   g. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes** > default, add a new route destinating to VPC1 private subnet.
 
       |image7|
 
@@ -140,7 +140,7 @@ Configuration Workflow
         Interface                         Tunnel interface created at Step 5.1
       ===============================     =================================================================
 
-   #. Commit the configuration.  And, you will see the IPSec tunnel status become green.
+   h. Commit the configuration.  And, you will see the IPSec tunnel status become green.
    
       |image10|
 	  
