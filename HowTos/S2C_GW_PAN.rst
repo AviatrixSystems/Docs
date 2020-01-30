@@ -162,10 +162,10 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
 .. |image1| image:: s2c_gw_pan_media/IKE_Crypto_Profile.PNG
    :scale: 30%
 
-.. |image2| image:: s2c_gw_pan_media/ike-gw-1.PNG
+.. |image2| image:: s2c_gw_pan_media/ike-gw-1.png
    :scale: 30%
 
-.. |image3| image:: s2c_gw_pan_media/ike-gw-2.PNG
+.. |image3| image:: s2c_gw_pan_media/ike-gw-2.png
    :scale: 30%n
 
 .. |image4| image:: s2c_gw_pan_media/IPSec_Crypto_Profile.PNG
@@ -186,7 +186,7 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
 .. |image9| image:: s2c_gw_pan_media/Troubleshoot_S2C.PNG
    :scale: 30%
    
-.. |image10| image:: s2c_gw_pan_media/IPSecTunnelStatus.PNG
+.. |image10| image:: s2c_gw_pan_media/IPSecTunnelStatus.png
    :scale: 30%
    
 .. disqus::
