@@ -166,7 +166,7 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
    :scale: 30%
 
 .. |image3| image:: s2c_gw_pan_media/ike-gw-2.png
-   :scale: 30%n
+   :scale: 30%
 
 .. |image4| image:: s2c_gw_pan_media/IPSec_Crypto_Profile.PNG
    :scale: 30%
