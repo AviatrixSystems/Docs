@@ -26,9 +26,9 @@ Transit FireNet builds on the Aviatrix Encrypted Transit Network. Follow the `Av
 
 In the drop down menu, select one Aviatrix Transit Gateway and click Enable. 
 
- .. important::
+.. important::
 
-  For Azure deployment, the Aviatrix Transit Gateway must be launched with the option Enable Transit FireNet Function enabled. 
+  For Azure deployment, the Aviatrix Transit Gateway must be `"launched" <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ with the option Enable Transit FireNet Function enabled. 
 
 2. Manage Transit FireNet Policy
 --------------------------------------
