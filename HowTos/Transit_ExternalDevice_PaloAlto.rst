@@ -116,7 +116,10 @@ Configuration WorkFlow:
 
       Note: There is no need to configure proxy-id
       
-   f. Commit the configuration.
+      
+   f. Commit the configuration.  We should see the IPSec tunnel is up in green.
+
+      |image23|
 
 
 5. Steps to configure BGP:
@@ -133,7 +136,9 @@ Configuration WorkFlow:
    
       |image15|
       
-   c. After everything is created the output looks like below:
+
+   c. After everything is created, the output looks like below, and Commit the configuration.
+
       Router ID is taken from the config file downloaded.(it should be the IP address of the tunnel created )
       
       |image16|
@@ -164,13 +169,14 @@ Configuration WorkFlow:
     |image22|
 
 .. |image1| image:: ./Transit_ExternalDevice_PaloAlto_media/1.png
-   :scale: 30%
-
+    :width: 5.55625in
+    :height: 3.26548in
 .. |image2| image:: ./Transit_ExternalDevice_PaloAlto_media/2.png
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image3| image:: ./Transit_ExternalDevice_PaloAlto_media/3.png
-   :scale: 30%
+    :width: 5.55625in
+    :height: 3.26548in
 .. |image4| image:: ./Transit_ExternalDevice_PaloAlto_media/4.png
     :width: 7.00000 in
     :height: 5.00000 in
@@ -196,8 +202,8 @@ Configuration WorkFlow:
     :width: 5.55625in
     :height: 3.26548in
 .. |image12| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp11.png
-   :scale: 20%
-
+    :width: 5.55625in
+    :height: 3.26548in
 .. |image13| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp1.png
     :width: 7.00000 in
     :height: 5.00000 in
@@ -211,8 +217,8 @@ Configuration WorkFlow:
     :width: 7.00000 in
     :height: 5.00000 in
 .. |image18| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp12.png
-   :scale: 30%
-
+    :width: 5.55625in
+    :height: 3.26548in
 .. |image19| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp7.png
     :width: 7.00000 in
     :height: 5.00000 in
@@ -225,6 +231,11 @@ Configuration WorkFlow:
 .. |image22| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp10.png
     :width: 7.00000 in
     :height: 5.00000 in
+.. |image23| image:: ./Transit_ExternalDevice_PaloAlto_media/14.png
+    :width: 5.55625 in
+    :height: 1.50000 in
+
+
 
 
 
