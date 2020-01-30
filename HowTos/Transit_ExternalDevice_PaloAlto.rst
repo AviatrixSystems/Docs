@@ -118,6 +118,7 @@ Configuration WorkFlow:
       
    f. Commit the configuration.  We should see the IPSec tunnel is up in green.
 
+      |image23|
 
 5. Steps to configure BGP:
 
@@ -196,6 +197,7 @@ Configuration WorkFlow:
 .. |image11| image:: ./Transit_ExternalDevice_PaloAlto_media/11.png
     :width: 5.55625in
     :height: 3.26548in
+
 .. |image12| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp11.png
     :width: 5.55625in
     :height: 3.26548in
@@ -228,6 +230,14 @@ Configuration WorkFlow:
 .. |image22| image:: ./Transit_ExternalDevice_PaloAlto_media/bgp10.png
     :width: 7.00000 in
     :height: 5.00000 in
+
+
+.. |image23| image:: ./Transit_ExternalDevice_PaloAlto_media/14.png
+    :width: 5.55625 in
+    :height: 1.00000 in
+
+
+
 
 
 
