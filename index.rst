@@ -291,7 +291,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/error-msgs
    HowTos/azuregwlaunch
    HowTos/flightpath
-   HowTos/flightpath_deployment_guide
 
 .. _REST APIs:
 
