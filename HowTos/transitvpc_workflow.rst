@@ -399,7 +399,7 @@ enter 65458, 65478 in the input field, these ASN will appear to the remote end.
 If you don't configure this field, Transit Gateway only advertises its own ASN.
 
 Approval
-^^^^^^^^^^^^
+-----------
 
 Aviatrix Transit Gateway dynamically learns BGP routes from remote site, these learned routes are reported
 to the Controller which in turn programs route entries of Spoke VPCs route table. 
