@@ -43,7 +43,7 @@ What are the benefits of PrivateS3?
 
 The key benefits are:
 
- 1. Transferring objects/files between on-prem and S3 by leveraging Direct Connect without using public VIF. 
+ 1. Transferring objects/data between on-prem and S3 by leveraging Direct Connect without using public VIF. 
  #. The ability to control which S3 buckets can be accessed. 
  #. The ability to deploy multiple Aviatrix gateways to load balancing the data traffic.
 
@@ -53,9 +53,14 @@ How does PrivateS3 work?
 
 PrivateS3 combines a few elements to make it work. 
 
- 1. Customer on-prem resolves all S3 bucket names under management ta the private IP address of the gateway (or AWS internal NLB)
+ 1. Customer on-prem resolves all S3 bucket names under management to the private IP address of the gateway (or AWS internal NLB)
  #. Configure S3 bucket names on the Aviatrix Controller Console. 
  #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out the un-configured S3 bucket access. 
+
+How to deploy PrivateS3?
+--------------------------
+
+Follow the `PrivateS3 Workflow <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_ for deployment. 
 
 Can PrivateS3 work for traffic initiated from a VPC?
 -------------------------------------------------------

@@ -17,11 +17,11 @@ R5.3 (Coming soon)
 2. Security
 --------------
 
+ - **PrivateS3** allows you to control S3 buckets access from on-prem over AWS Direct Connect private VIF without data leakage. To learn more, read `PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_ 
  - **Aviatrix Transit FireNet for Azure**
  - **Aviatrix Transit Gateway supports multiple TGW Security Domains**
  - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case.  
  - **Fortinet FortGate** can be launched from Aviatrix Controller for FireNet use case.
- - **Secure S3 Transfer** allows you to leverage Direct Connect to access S3 buckets while preventing data leakage. 
  - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. 
 
 3. Operation
