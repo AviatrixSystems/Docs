@@ -16,3 +16,26 @@ All the IPSec tunnels have the MTU set to 1370bytes. If you are running any appl
 You can adjust the MTU at "Aviatrix Console > Settings > Advanced > Tunnel > TCP MAXIMUM SEGMENT SIZE(MSS)"
  
 Please note that we **strongly** recommend that you do not set the MTU to a value higher than 1370 bytes.
+
+
+Why did my IPSec tunnel go down?
+--------------------------------------------------------------------------------------------
+
+We configure our IPSec tunnels with DPDs(sent every 10 seconds) and if do not see three consecutive dpd's, we declare that the tunnel is down and the gateway will try to renegotiate the tunnel.
+
+For reasons beyond the control of the gateway, such as network failure along the path and or the remote site going down, we occasionally will see the tunnels go down. If you have `external logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ turned on, you would be able to see the logs such as the following which will tell you when the tunnels have gone down. 
+
+::
+
+  2020-01-29T07:19:37.064245+00:00 ip-10-66-243-108 racoon: [xx.xx.xx.xx] INFO: DPD: remote (ISAKMP-SA spi=8d6ba0f7a74593d0:71fa69ac6b4afef3) seems to be dead.
+  2020-01-29T07:19:37.064354+00:00 ip-10-66-243-108 racoon: INFO: purging ISAKMP-SA spi=8d6ba0f7a74593d0:71fa69ac6b4afef3.
+  .
+  .
+  2020-01-29T07:19:44.199040+00:00 ip-10-66-243-108 racoon: INFO: initiate new phase 1 negotiation: 10.66.243.108[500]<=>xx.xx.xx.xx[500]
+  .
+  .
+  2020-01-29T07:20:49.311786+00:00 ip-10-66-243-108 racoon: INFO: IPsec-SA established: ESP/Tunnel 10.66.243.108[500]->xx.xx.xx.xx[500] spi=215564738(0xcd941c2)
+  .
+  .
+  
+Please check and see if there were any issues in your network and if the remote end had any service down events. Typically these explain the IPSec tunnel temporary down events.
