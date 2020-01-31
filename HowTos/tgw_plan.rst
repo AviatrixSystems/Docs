@@ -271,6 +271,10 @@ Use this step to update the "Allowed Prefix" to advertise to on-prem.
 TGW Inter Region Peering
 -----------------------------
 
+TGW inter region peering is a feature where Controller orchestrates AWS TGW peering. In addition, the 
+Controller programs and propagates network CIDR of Spoke VPCs and Edge Domains in a Security Domain to 
+the remote TGW deployment, thus providing the end-to-end turn key solution. 
+
 It takes two steps to connect two Security Domains in two regions. 
 
 .. tip::

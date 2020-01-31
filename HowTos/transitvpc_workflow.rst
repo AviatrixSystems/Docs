@@ -398,6 +398,28 @@ enter 65458, 65478 in the input field, these ASN will appear to the remote end.
 
 If you don't configure this field, Transit Gateway only advertises its own ASN.
 
+Approval
+^^^^^^^^^^^^
+
+Aviatrix Transit Gateway dynamically learns BGP routes from remote site, these learned routes are reported
+to the Controller which in turn programs route entries of Spoke VPCs route table. 
+
+There are scenarios where you require an approval process before these learned CIDRs propagation take place.
+For example, a specific VPN may be
+connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not
+propagated into your own network and accidentally bring down the network.
+
+Approval is enabled on an Aviatrix Transit Gateway. When Approval is enabled, dynamically learned routes
+from all remote peers 
+trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
+Transit Network -> Approval, the admin should see not yet approved CIDRs and already approved CIDRs. 
+Moving the routes from Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated.
+
+To enable Approval, go to Transit Network -> Approval. Select the gateway, 
+click Learned CIDRs Approval to enable.
+
+When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes.
+
   
 
 .. |Test| image:: transitvpc_workflow_media/SRMC.png
