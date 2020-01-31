@@ -139,6 +139,6 @@ Create an IPsec tunnel in pfSense
 
  |imageExamplePfSensePing
 
-.. |imageExamplePfSenseConfiguration| image:: CloudToPfSense_media/IKEv1.png
-.. |imageExamplePfSensePhase2Config| image:: CloudToPfSense_media/example_phase2_config.png
-.. |imageExamplePfSenseConfiguration| image:: CloudToPfSense_media/PfSensePing
+.. |imageExamplePfSenseConfiguration| image:: Site2Cloud_PFSense_media/IKEv1.png
+.. |imageExamplePfSensePhase2Config| image:: Site2Cloud_PFSense_media/example_phase2_config.png
+.. |imageExamplePfSenseConfiguration| image:: Site2Cloud_PFSense_media/PfSensePing
