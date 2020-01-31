@@ -4,7 +4,7 @@
 
 
 ================================================================
-Aviatrix Encrypted Transit Approval
+Encrypted Transit Approval
 ================================================================
 
 Aviatrix Transit Gateway dynamically learns BGP routes from remote site, these learned routes are reported
