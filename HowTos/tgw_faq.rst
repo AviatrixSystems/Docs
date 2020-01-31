@@ -392,6 +392,8 @@ Dev domain and Prod domain.
 
 The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. 
 
+To enable Edge Segmentation, go to Transit Network -> Setup -> Step 3, Connect to VGW/External Device/CloudN, to select the option "Enable Edge Segmentation".
+
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
    :scale: 30%
