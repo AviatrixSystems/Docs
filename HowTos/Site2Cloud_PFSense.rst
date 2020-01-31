@@ -137,7 +137,7 @@ Create an IPsec tunnel in pfSense
 
 8. Test that the tunnel is up
 
- |imageExamplePfSensePing
+ |imageExamplePfSensePing|
 
 .. |imageExamplePfSenseConfiguration| image:: Site2Cloud_PFSense_media/IKEv1.png
 .. |imageExamplePfSensePhase2Config| image:: Site2Cloud_PFSense_media/example_phase2_config.png
