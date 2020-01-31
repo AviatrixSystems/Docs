@@ -9,7 +9,6 @@ R5.3 (Coming soon)
 --------------------
 
  - **AWS Transit Gateway (TGW) Inter Region Peering** Allows you to connect TGWs deployed in different regions by using the native AWS TGW Inter Region Peering. Aviatrix solution enables you to implement Security Domains in a global fashion where you can specify a Security Domain in one region to connect a Security Domain in a different region. Read more on `TGW Inter Region Peering <https://docs.aviatrix.com/HowTos/tgw_plan.html#tgw-inter-region-peering>`_.
- - **Approval for BGP Learned Routes** Enables you to explicitly decide if a dynamically learned routes be allowed to be propagated in your cloud network. One use case is to apply this feature to a VPN tunnel that connects with a partner network where you can control which learned routes are allowed to propagate. This feature applies to both AWS TGW and Aviatrix Transit Gateway dynamically learned routes. To learn more, check out `Approval for TGW <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_ and `Aviatrix Encrypted Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_.
  - **CloudWAN Customize IOS Config with Tags**
  - **CloudWAN Saves Multiple IOS Config Versions** 
  - **Use NLB to load balance UDP based User VPN** allows you to use AWS Network Loadbalancer for UDP traffic to scale out User VPN solution. The advantage for the deployment is improved throughput performance comparing to TCP based VPN solution.  
@@ -27,11 +26,12 @@ R5.3 (Coming soon)
 3. Operation
 -------------
 
+ - **Approval for BGP Learned Routes** Enables you to explicitly make a decision if a dynamically learned routes be allowed to be propagated in your cloud network. One use case is to apply this feature to a VPN tunnel that connects with a partner network where you can control which learned routes are allowed to propagate. This feature applies to both AWS TGW and Aviatrix Transit Gateway dynamically learned routes. To learn more, check out `Approval for TGW <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_ and `Aviatrix Encrypted Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_.
  - **FlightPath to support IP address**
  - **FlightPath for Azure**
  - **FlightPath for GCP**
  - **Dynamically display packets while packet capture is on** allows you to view the packet summary on the Controller console while they are being captured. 
- - **User VPN Cert Issue Date** 
+ - **User VPN Cert Issue Date** displays the date of a VPN user creation.  
  - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. 
 
 R5.2.2122 (1/25/2020)
