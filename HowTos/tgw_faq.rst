@@ -237,12 +237,13 @@ For example, a specific TGW VPN may be
 connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not 
 propagated into your own network and accidentally bring down the network.  
 
+|tgw_approval|
+
 Approval is enabled on per TGW VPN and TGW DXGW bases. When Approval is enabled on a TGW VPN, 
 dynamically learned routes trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
 TGW -> Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
 Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated. 
 
-|tgw_approval|
 
 To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
 

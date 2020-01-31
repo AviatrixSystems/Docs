@@ -409,13 +409,14 @@ For example, a specific VPN may be
 connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not
 propagated into your own network and accidentally bring down the network.
 
+|transit_approval|
+
 Approval is enabled on an Aviatrix Transit Gateway. When Approval is enabled, dynamically learned routes
 from all remote peers 
 trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
 Transit Network -> Approval, the admin should see not yet approved CIDRs and already approved CIDRs. 
 Moving the routes from Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated.
 
-|transit_approval|
 
 To enable Approval, go to Transit Network -> Approval. Select the gateway, 
 click Learned CIDRs Approval to enable.
