@@ -13,7 +13,7 @@
    </style>
 
 =================================
- Stateful FirewallN FAQ
+ Stateful Firewall FAQ
 =================================
 
 What is Aviatrix Stateful Firewall?
