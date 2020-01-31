@@ -229,29 +229,7 @@ Audit the correctness of route entries of all attached VPC route tables and its 
 **TGW Approval**
 ^^^^^^^^^^^^^^^^^^^
 
-TGW VPN and TGW DXGW dynamically learns BGP routes from remote peer, Aviatrix Controller periodically pulls the TGW 
-route table and propagate these routes to Spoke VPCs route table that have connection policy to the VPN. 
-
-There are scenarios where you require an approval process before these learned CIDRs propagation take place. 
-For example, a specific TGW VPN may be 
-connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not 
-propagated into your own network and accidentally bring down the network.  
-
-|tgw_approval|
-
-Approval is enabled on per TGW VPN and TGW DXGW bases. When Approval is enabled on a TGW VPN, 
-dynamically learned routes trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
-TGW -> Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
-Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated. 
-
-
-To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
-
-.. important::
-
-  When TGW Approval is enabled on a TGW, summary routes (the RFC-1918 routes) are not programmed into the attached Spoke VPC route tables. Instead, specific route entries are programmed into the VPC route table. If more than 50 route entries are anticipated, please make support request to AWS to allow for more route entries. Up to 1000 route entries can be requested. 
-
-When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes. 
+Refer to this `link <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_.
 
 What can be displayed at the View page?
 -----------------------------------------
