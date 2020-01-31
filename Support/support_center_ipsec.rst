@@ -10,10 +10,10 @@ IPSec
 What is the MTU setting on the IPSec Tunnels between the Aviatrix Gateways?
 --------------------------------------------------------------------------------------------
 
-All the IPSec tunnels have the MTU set to 1370bytes. If you are running any applications which do not support fragmentation, you might have issues - please adjust the MTU on your end devices. Here are a couple examples of ssh failing due to MTU - `ssh hangs due to MTU <https://www.reddit.com/r/sysadmin/comments/737c1z/friendly_reminder_if_ssh_sometimes_hangs/>`_, 
+All the IPSec tunnels have the TCP MSS set to 1370 bytes, by default, on Aviatrix gateway created in AWS, Azure and OCI. In GCP, the default value is 1350 bytes due to previous experience with some GCP applications. If you are running any applications which do not support fragmentation, you might have issues - please adjust the MTU on your end devices. Here are a couple examples of ssh failing due to MTU - `ssh hangs due to MTU <https://www.reddit.com/r/sysadmin/comments/737c1z/friendly_reminder_if_ssh_sometimes_hangs/>`_, 
 `music fails due to MTU <https://news.ycombinator.com/item?id=4709952>`_
  
-You can adjust the MTU at "Aviatrix Console > Settings > Advanced > Tunnel > TCP MAXIMUM SEGMENT SIZE(MSS)"
+You can adjust the TCP MSS at “Aviatrix Console > Settings > Advanced > Tunnel > TCP MAXIMUM SEGMENT SIZE(MSS)” on the Aviatrix gateway.
  
 Please note that we **strongly** recommend that you do not set the MTU to a value higher than 1370 bytes.
 
@@ -21,7 +21,7 @@ Please note that we **strongly** recommend that you do not set the MTU to a valu
 Why did my IPSec tunnel go down?
 --------------------------------------------------------------------------------------------
 
-We configure our IPSec tunnels with DPDs(sent every 10 seconds) and if do not see three consecutive dpd's, we declare that the tunnel is down and the gateway will try to renegotiate the tunnel.
+We configure our IPSec tunnels with Dead Peer Detection a.k.a. DPDs (sent every 10 seconds) and if do not see three consecutive DPDs, we declare that the tunnel is down and the gateway will try to renegotiate the IPSec tunnel.
 
 For reasons beyond the control of the gateway, such as network failure along the path and or the remote site going down, we occasionally will see the tunnels go down. If you have `external logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ turned on, you would be able to see the logs such as the following which will tell you when the tunnels have gone down. 
 
