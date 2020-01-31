@@ -221,13 +221,13 @@ Orchestrator Test
 Instance to instance end-to-end Troubleshoot. For more information, refer to `FlightPath <https://docs.aviatrix.com/HowTos/flightpath.html>`_. 
 
 
-**Audit**
-^^^^^^^^^^^^
+**TGW Audit**
+^^^^^^^^^^^^^^^^^
 
 Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
 
-**Approval**
-^^^^^^^^^^^^^^
+**TGW Approval**
+^^^^^^^^^^^^^^^^^^^
 
 TGW VPN and TGW DXGW dynamically learns BGP routes from remote peer, Aviatrix Controller periodically pulls the TGW 
 route table and propagate these routes to Spoke VPCs route table that have connection policy to the VPN. 
@@ -242,7 +242,13 @@ dynamically learned routes trigger an email to the Controller admin. Controller 
 TGW -> Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
 Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated. 
 
+|tgw_approval|
+
 To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
+
+.. important::
+
+  When TGW Approval is enabled on a TGW, summary routes (the RFC-1918 routes) are not programmed into the attached Spoke VPC route tables. Instead, specific route entries are programmed into the VPC route table. If more than 50 route entries are anticipated, please make support request to AWS to allow for more route entries. Up to 1000 route entries can be requested. 
 
 When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes. 
 
@@ -288,7 +294,7 @@ and connect this domain to your Prod domain, and if needed, also to the Dev doma
 special VPC to this domain, it will have connectivity to Prod domain. 
 
 How does the CSR based Transit VPC solution compare with the Transit Gateway?
------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Transit Gateway significantly simplifies building VPC connections. But the Transit Gateway itself is functionally incomplete for hybrid connection.
 For example, the Transit Gateway does not propagate routes to Spoke VPCs, which means using a Transit Gateway alone does not offer a functional hybrid
@@ -318,7 +324,7 @@ shows how the CSR Transit VPC, the Transit Gateway and the Aviatrix Orchestrator
 |tgw_transit_orchestrator_compare|
 
 What value does an Aviatrix gateway provide in the Transit Gateway Orchestrator?
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 An Aviatrix gateway deployed at the edge/transit VPC provides the following values:
 
@@ -333,7 +339,7 @@ An Aviatrix gateway deployed at the edge/transit VPC provides the following valu
  - Supports 10Gbps Transit network throughput.
 
 When a VPC is attached to a TGW, why can't I simply program the default route in the VPC route table to point to the TGW?
-----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 In some cases, you absolutely can. For example, if you have a group of VPCs that need to be connected to each other, 
 you can attach each VPC to the same TGW route table with propagation enabled. Then program each VPC route table 
@@ -427,6 +433,9 @@ The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs
    :scale: 30%
 
 .. |edge_segmentation| image:: tgw_overview_media/edge_segmentation.png
+   :scale: 30%
+
+.. |tgw_approval| image:: tgw_overview_media/tgw_approval.png
    :scale: 30%
 
 .. disqus::
