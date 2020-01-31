@@ -89,7 +89,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit Gateway Orchestrator
+   :caption: AWS Transit Gateway Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
@@ -112,6 +112,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
+   HowTos/transit_approval
    HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
    HowTos/transit_firenet_faq
