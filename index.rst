@@ -248,6 +248,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/External_PKI_for_OpenVPN_Certificates
    HowTos/user_accelerator
    HowTos/ipv6_multivpc_vpn
+   HowTos/uservpn-TGW
 
 
 
