@@ -89,8 +89,8 @@ enter the following commands and click Commit.
 
   hostname myrouter
 
-Save Config
---------------
+Save & Restore Config
+---------------------------
 
 For each branch router under management, multiple copies of IOS configuration can be saved on the Aviatrix Controller. 
 Go to CloudWAN -> List/Edit page, select one branch router under management, click the 3 dots skewer, select Save Config. 

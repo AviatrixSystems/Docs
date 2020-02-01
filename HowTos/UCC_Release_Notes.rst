@@ -5,15 +5,22 @@ Release Notes
 R5.3 (Coming soon)
 =====================
 
-1. Networking 
---------------------
+1. AWS Transit Gateway (TGW) Orchestrator
+--------------------------------------------
 
  - **AWS Transit Gateway (TGW) Inter Region Peering** Allows you to connect TGWs deployed in different regions by using the native AWS TGW Inter Region Peering. Aviatrix solution enables you to implement Security Domains in a global fashion where you can specify a Security Domain in one region to connect a Security Domain in a different region. Read more on `TGW Inter Region Peering <https://docs.aviatrix.com/HowTos/tgw_plan.html#tgw-inter-region-peering>`_.
- - **CloudWAN Customize IOS Config with Tags**
- - **CloudWAN Saves Multiple IOS Config Versions** 
+ - **Update Spoke VPC CIDR** applies to an attached Spoke VPC and allows you to update Spoke VPC CIDR after it is attached to TGW, for example, new subnets or route tables are added to the Spoke VPC. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Update Spoke VPC CIDR. 
+ - **Edit Spoke VPC Customized Routes** allows you to edit Spoke VPC route table entries that target to TGW. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Customized Routes.
+ - **Edit Spoke VPC Advertised Routes** allows you to advertise to TGW via Controller a different set of routes other than the default VPC CIDR. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Advertised Rotues to edit. 
+
+2. Networking 
+--------------------
+
+ - **CloudWAN Tags** allows you to create a tag (template) that consists of list of CLI configuration commands and applies to routers that are attached to it. The use case is if you need to customize CLI commands that are outside the automated BGP & IPSec configuration by CloudWAN, you can do so by creating one or more tag and apply to the routers at once. To learn more, read `CloudWAN Tags <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#configuration-tags>`_. 
+ - **CloudWAN Saves & Restore Config Versions** Allows you to save and restore a complete IOS configuration for a branch router. To learn more, go to `Save & Restore Config <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#save-config>`_.
  - **Use NLB to load balance UDP based User VPN** allows you to use AWS Network Loadbalancer for UDP traffic to scale out User VPN solution. The advantage for the deployment is improved throughput performance comparing to TCP based VPN solution.  
 
-2. Security
+3. Security
 --------------
 
  - **PrivateS3** allows you to control S3 buckets access from on-prem over AWS Direct Connect private VIF without data leakage. If you need to transfer data to/from S3 using the high bandwidth Direct Connect, currently there is no solution to do so without the risk of data being transferred to unauthorized S3 buckets.  To learn more, read `PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_ 
@@ -23,10 +30,10 @@ R5.3 (Coming soon)
  - **Fortinet FortGate** can be launched from Aviatrix Controller for FireNet use case.
  - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. 
 
-3. Operation
+4. Operation
 -------------
 
- - **Approval for BGP Learned Routes** Enables you to explicitly make a decision if a dynamically learned routes be allowed to be propagated in your cloud network. One use case is to apply this feature to a VPN tunnel that connects with a partner network where you can control which learned routes are allowed to propagate. This feature applies to both AWS TGW and Aviatrix Transit Gateway dynamically learned routes. To learn more, check out `Approval for TGW <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_ and `Aviatrix Encrypted Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_.
+ - **Approval for BGP Learned Routes** Enables you to explicitly make a decision if a dynamically learned routes be allowed to propagate to your cloud network. One use case is to apply this feature to a TGW VPN/DXGW that connects with a partner network where you can control which learned routes are allowed to propagate. This feature applies to both AWS TGW and Aviatrix Transit Gateway dynamically learned routes. To learn more, check out `Approval for TGW <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_ and `Aviatrix Encrypted Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_.
  - **FlightPath to support IP address**
  - **FlightPath for Azure**
  - **FlightPath for GCP**
