@@ -15,13 +15,16 @@ to attach VPCs.
 
 For background information, refer to `AWS Transit Gateway  Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
-The plan stage consists of three sections:
+The plan stage consists of 4  sections:
 
  1.  **Create AWS Transit Gateway**. This is the only must-do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS Transit Gateway and three connected Security Domains are created.  
 
  #.  **Create Segmented Network**. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
 
  #.  **Create Hybrid, multi region or multi cloud Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC, builds a hybrid connection to on-prem or another Aviatrix Transit gateway cluster, or deploys Transit DMZ . If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
+ 
+ #. **TGW Native Edge Connections**. This is an optional section. It creates TGW VPN, TGW DXGW and TGW Inter Region Peering. It consists of Step 7 & Step 8. 
+ 
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
 from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates Transit Gateway and Transit Gateway route tables in AWS. There is no charge either by AWS or Aviatrix.
@@ -216,7 +219,7 @@ This section configures a native VPN connection from TGW. It takes two steps: fi
 Step 7 Setup VPN Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This step creates a VPN connection in TGW `Default_Domain. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_
+This step creates a VPN connection from TGW in a selected Security Domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -227,6 +230,9 @@ Remote Public IP                                Remote site public IP address
 Dynamic (BGP) or Static                         Use BGP to connect to remote site or static IP
 Remote CIDRs                                    When Static is selected, enter a list of CIDRs separated by comma. 
 Remote AS Number                                When Dynamic is selected, enter the AS number of the remote site. 
+Security Domain Name                            Select a Security Domain to associate the VPN attachment with
+Learned CIDR Approval                           Select the option to enable `Approval <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_. This option applies to Dynamic (BGP) mode only.
+Global Acceleration                             Select the option to enable AWS Accelerated VPN
 ==========================================      ==========
 
 Step 8 Download VPN Configuration
@@ -261,6 +267,8 @@ AWS Transit Gateway Name                        The name of a TGW created by `TG
 Direct Connect Gateway Account Name             The Aviatrix Access Account name that created AWS Direct Connect Gateway
 AWS Direct Connect Gateway                      The AWS Direct Connect Gateway you created from AWS Console
 Allowed Prefix                                  A list of comma separated CIDRs for DXGW to advertise to remote (on-prem)
+Security Domain Name                            Select a Security Domain to associate the VPN attachment with
+Learned CIDR Approval                           Select the option to enable `Approval <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_. This option applies to Dynamic (BGP) mode only.
 ==========================================      ==========
 
 Step 8 Update Direct Connect Network Prefix
