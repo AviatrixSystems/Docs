@@ -7,9 +7,6 @@ CloudN
 ###################################
 
 
-Click the link below to download the latest CloudN Request Form:
- `CloudN Request Form <https://s3-us-west-2.amazonaws.com/aviatrix-download/InsaneMode_CloudN_Prep.docx>`_
-
 
 CloudN comes with OVF, VHD and KVM images to support VMware hypervisor, Microsoft Hyper-V and KVM.
 
