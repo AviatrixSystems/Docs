@@ -30,7 +30,7 @@ Gateway Name                             Select a gateway launched in the previo
 Source CIDR Range                        Enter a list of the on-prem network address range separated by comma. For example, 10.10.0.0/16,10.12.0.0/16
 +Add New Bucket                          Click and then enter the S3 bucket name. Click Save to save entry. Click +Add New Bucket again to enter another entry. 
 Enable                                   If this is the first time, click Enable to enable the feature.   
-Update                                   If PrivatS3 has been enabled, use this button to update changes including editing Source CIDR Range, Add New Bucket or Delete existing bucket. 
+Update                                   If PrivateS3 has been enabled, use this button to update changes including editing Source CIDR Range, Add New Bucket or Delete existing bucket. 
 =================================        ==================
 
 .. important::
