@@ -202,12 +202,14 @@ The Transit Gateway Orchestrator is deployed in two stages.
 
 In addition, you can 
 
-Orchestrator List 
+Orchestrator List/Edit 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
       - **Show Details** on what is programmed in the VPC route tables and Transit Gateway route table for a given VPC. 
       - **Audit Routes** to discover incorrectness in VPC route tables and Transit Gateway route tables for a given VPC. 
       - **Update VPC CIDR** to update propagated routes to TGW when a new VPC CIDR is added to VPC. 
+      - **Edit Spoke VPC Customized Routes** allows you to edit Spoke VPC route table entries that target to TGW. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Customized Routes.
+      - **Edit Spoke VPC Advertised Routes** allows you to advertise to TGW via Controller a different set of routes other than the default VPC CIDR. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Advertised Rotues to edit.
       - **Update DXGW Allowed Prefix** if you like to change the summarized prefix after the DXGW has been attached to TGW.
 
 Orchestrator View
