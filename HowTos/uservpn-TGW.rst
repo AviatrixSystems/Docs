@@ -109,20 +109,10 @@ You will see your Prod and Dev VPCs there.
 |VPC_tracker|
 
 
-6. Add VPN Users
-------------------
-You nees to be a VPN user in order to proceed. If you have not already created a VPN user follow this link to learn 
-how: `VPN Users <https://docs.aviatrix.com/HowTos/uservpn.html#vpn-users>`_. After this is complete youcan return to this guide to continue
-the configuration process. 
-
-After following the VPN user guide we should now have:
-    
-    1. Created a VPN user
-    2. Downloaded the VPN User Certificate 
-
-
-7. Configure Aviatrix VPN Client
+6. Configure Aviatrix VPN Client
 ---------------------------------
+
+
 The first step is to add a new VPN User. This can be found in the "OpenVPN®" tab under the sub-menu "VPN Users". Click the "Add New"
 button and imput your inofrmation. For the VPC ID we want to use the Shared Service VPC ID. 
 
@@ -131,6 +121,8 @@ button and imput your inofrmation. For the VPC ID we want to use the Shared Serv
 Next, download your OpenVPN® configuration file.
 
 |download_config|
+
+
 
 Now, we should download the latest Aviatrix VPN Client from the Docs page here: `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
 
@@ -151,10 +143,10 @@ See below for an example of a proper ping response.
 
 |ping_test|
 
-8. Last Steps
+7. Last Steps
 ---------------
 
-One, last option we can congigure is under Step 3 of this guide "Connection Policies". As a test, we can remove either the Dev or 
+One last option we can congigure is under Step 3 of this guide "Connection Policies". As a test, we can remove either the Dev or 
 Prod Domain from the "Connected" list. If we remove Dev from the "Connected" list for the Shared Service Policy and run a Ping test. 
 We should receive no response from the EC2 instance in the Devolpment VPC. 
 
