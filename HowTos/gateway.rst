@@ -284,6 +284,13 @@ Enable LDAP
 When LDAP authentication is enabled, the VPN gateway will act as a LDAP client
 on behalf of the VPN user to authenticate the VPN user to the LDAP server.
 
+Minimum VPN Client Version
+============================
+
+Set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
+
+Available for Aviatrix VPN client only, thi
+
 Add/Edit Tags
 ---------------
 

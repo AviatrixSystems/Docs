@@ -23,6 +23,8 @@ When deployed in Azure, Transit FireNet also works when using Native Azure VNet 
 
 |transit_firenet_vnet|
 
+When deployed in Azure, only two firewall instances are supported.
+
 
 Can multiple firewalls be supported in Transit FireNet?
 --------------------------------------------------------------------------------------
