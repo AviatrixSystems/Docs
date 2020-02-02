@@ -34,12 +34,13 @@ R5.3 (Coming soon)
 -------------
 
  - **Approval for BGP Learned Routes** Enables you to explicitly make a decision if a dynamically learned routes be allowed to propagate to your cloud network. One use case is to apply this feature to a TGW VPN/DXGW that connects with a partner network where you can control which learned routes are allowed to propagate. This feature applies to both AWS TGW and Aviatrix Transit Gateway dynamically learned routes. To learn more, check out `Approval for TGW <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_ and `Aviatrix Encrypted Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_.
- - **FlightPath to support IP address**
+ - **FlightPath to support IP address** allows either source or destination to be IP address based. This enables you to troubleshoot connectivity to, for example, on-prem host with a certain IP address. 
  - **FlightPath for Azure** allows you to troubleshoot connectivity issues in Azure in a much faster way by pulling relevant information at once and present in a side by side panels. It also provides expert diagnostics to identify problems. To use, go to Troubleshoot -> FlightPath. 
  - **FlightPath for GCP** allows you to troubleshoot connectivity issues in GCP in a much faster way by pulling relevant information at once and present in a side by side panels. It also provides expert diagnostics to identify problems. To use, go to Troubleshoot -> FlightPath.
  - **Dynamically display packets while packet capture is on** allows you to view the packet summary on the Controller console while they are being captured. 
  - **User VPN Cert Issue Date** displays the date of a VPN user creation. The display is on the Dashboard page. 
  - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
+ - **Migrate Controller** allows you to migrate your Controller AMI image from ubuntu 14.04 distribution to 18.04 distribution. To migrate, go to Settings -> Maintenance -> Migration.
 
 R5.2.2122 (1/25/2020)
 ========================

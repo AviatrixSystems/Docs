@@ -89,51 +89,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 How to update AWS-IAM-Policy
 ----------------------------------------
 
-Please also keep your AWS IAM Policies updated to the latest (preferably before upgrading controller software).
-
-Step 01: Login to your AWS GUI console
-
-|common_image1|
-
-Step 02: Go to IAM service
-
-|common_image2|
-
-A. Update “aviatrix-assume-role-policy”:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Step 03: Click "Policies" and search for the policy "aviatrix-assume-role-policy"
-
-If you have not created "aviatrix-assume-role-policy", please see
-`here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-assume-role-policy>`__.
-
-|aviatrix-assume-role-policy_image3|
-
-Step 04: Click Edit Policy
-
-|aviatrix-assume-role-policy_image4|
-
-Step 05: Click tab "JSON"
-
-Step 06: Update Policy: copy and paste the policy text from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__ and then click button "Review policy" and button "Save changes".
-
-B. Update “aviatrix-app-policy”:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Step 07: Click "Policies" and search for the policy "aviatrix-app-policy"
-
-If you have not created "aviatrix-app-policy", please see
-`here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-app-policy>`__.
-
-|aviatrix-app-policy_image5|
-
-Step 08: Click Edit Policy
-
-|aviatrix-app-policy_image6|
-
-Step 09: Click tab "JSON"
-
-Step 10: Update Policy: copy and paste the policy provided by `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__ and then click button "Review policy" and button "Save changes".
+Login to the Controller, go to Accounts -> Access Accounts -> click on an AWS account, click the 3 dots skewer. In the drop 
+down menu, select Update Policy, click OK to confirm. The IAM policy will be automatically updated. 
 
 .. note::
    

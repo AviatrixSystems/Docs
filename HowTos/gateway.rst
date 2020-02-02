@@ -289,7 +289,7 @@ Minimum VPN Client Version
 
 Set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
 
-Available for Aviatrix VPN client only, thi
+Available for Aviatrix VPN client only.
 
 Add/Edit Tags
 ---------------
