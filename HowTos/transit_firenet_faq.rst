@@ -7,19 +7,19 @@
 Transit FireNet FAQ
 =========================================================
 
-What is the Transit FireNet?
+What is the Transit FireNet for AWS & Azure?
 ----------------------------------------------
 
-Aviatrix Transit FireNet is the `Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ function applied to the Transit gateway. 
-With Transit FireNet feature, the FireNet function is integrated into the Transit gateway.. 
+Aviatrix Transit FireNet is the `Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ function applied to the Aviatrix Encrypted Transit architecture. 
+With Transit FireNet feature, the FireNet function is integrated into the Aviatrix Transit gateway. 
 
 The use case is to deploy firewalls in the `encrypted transit architecture <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
-for AWS, as shown below. 
+for both AWS and Azure, as shown below. 
 
 
 |transit_firenet|
 
-When deployed in Azure (available in the future release), Transit FireNet also works when using Native Azure VNet Spokes, as shown below. 
+When deployed in Azure, Transit FireNet also works when using Native Azure VNet Spokes, as shown below. 
 
 |transit_firenet_vnet|
 
