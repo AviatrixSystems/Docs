@@ -21,7 +21,7 @@ Step 2. Enable/Edit PrivateS3
 
   If you don't see the gateway just launched, refresh the browser. 
 
-AWS S3 bucket name is a unique FQDN name. For example, if a full URL to access a file in S3 is https://avx-backup.s3-us-west-2.amazonaws.com/init.txt, then the bucket avx-backup is its FQDN name. 
+Each AWS S3 bucket has a unique FQDN name. For example, if a full URL to access a file in S3 is https://avx-backup.s3-us-west-2.amazonaws.com/init.txt, then the bucket's FQDN name is either avx-backup.s3-us-west-2.amazonaws.com or avx-backup.s3.us-west-2.amazonaws.com. 
 
 =================================        ==================
 **Setting**                              **Value**
