@@ -90,7 +90,7 @@ Configuration Workflow
         Interface                         Palo Alto Networks WAN port
         Peer IP Address                   Aviatrix Gateway public IP
         Pre-shared Key                    Key from Site2Cloud configuration downloaded at Step 4
-        Peer Identification               Peer public IP Address (if the controller version is below 5.0, 
+        Peer Identification               Peer public IP Address (if the controller version is below 5.0,
 						it should be peer private IP) 
       ===============================     =========================================
 	Note: In Palo Alto Networks offcial documents, it is not necessary to add the Peer Identification.  However, to make sure the tunnel working, we recommend to add it.
