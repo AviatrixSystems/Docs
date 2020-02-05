@@ -45,9 +45,9 @@ Configure on your DNS server so that all S3 bucket names resolve to the PrivateS
 Note depending on how application invokes S3 function, for example, by using "wget", "curl", "aws s3", 
 or "aws2 s3", the generated FQDN name for the S3 object access may be different. There are 3 formats. 
 
- 1. `bucket-name`.s3.region.amazonaws.com. Example, business-owner-bucket.s3.us-west-2.amazonaws.com
- #. `bucket-name`.s3-region.amazonaws.com. Example, business-owner-bucket.s3-us-west-2.amazonaws.com
- #. `bucket-name`.s3.amazonaws.com. Example, business-owner-bucket.s3.amazonaws.com (apply to us-east-1 region)
+ 1. bucket-name.s3.region.amazonaws.com. Example, business-owner-bucket.s3.us-west-2.amazonaws.com
+ #. bucket-name.s3-region.amazonaws.com. Example, business-owner-bucket.s3-us-west-2.amazonaws.com
+ #. bucket-name.s3.amazonaws.com. Example, business-owner-bucket.s3.amazonaws.com (apply to us-east-1 region)
 
 .. important::
 
