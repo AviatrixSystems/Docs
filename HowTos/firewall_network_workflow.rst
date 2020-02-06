@@ -31,7 +31,14 @@ Select "Aviatrix FireNet VPC" option when creating a security VPC.
 
 If you have not already done so, follow the `AWS Marketplace <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_ link to subscribe to the VM-Series.
 
-Do not launch the firewall instance from AWS Console as you launch it in the following steps.  
+If you have not already done so, click the following link to subscribe the firewall instance from a specific vendor on AWS
+Marketplace. 
+Do not launch the firewall instance from AWS Console as you can launch it on the Controller in the later steps.  
+
+ - `Palo Alto VM-Series <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_
+ - `Check Point CloudGuard <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Check+Point+>`_
+ - Fortinet FortiGate <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Fortinet>`_
+
 
 3. Create a Firewall Domain
 -----------------------------

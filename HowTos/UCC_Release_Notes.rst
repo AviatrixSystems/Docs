@@ -27,7 +27,7 @@ R5.3 (Coming soon)
  - **Aviatrix Transit Gateway Edge Segmentation** allows you to specify which `Aviatrix edge VPN connection <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ can communicate with which Security Domain in TGW deployment. To learn more, read `Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_.
  - **Aviatrix Transit FireNet for Azure** allows you to deploy firewall instances in Azure. For more information, check out `Transit FireNet FAQ <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_.
  - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case.  
- - **Fortinet FortGate** can be launched from Aviatrix Controller for FireNet use case.
+ - **Fortinet FortiGate** can be launched from Aviatrix Controller for FireNet use case.
  - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. 
 
 4. Operation
