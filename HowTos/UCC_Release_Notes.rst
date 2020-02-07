@@ -12,6 +12,7 @@ R5.3 (Coming soon)
  - **Update Spoke VPC CIDR** applies to an attached Spoke VPC and allows you to update Spoke VPC CIDR after it is attached to TGW, for example, new subnets or route tables are added to the Spoke VPC. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Update Spoke VPC CIDR. 
  - **Edit Spoke VPC Customized Routes** allows you to edit Spoke VPC route table entries that target to TGW. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Customized Routes.
  - **Edit Spoke VPC Advertised Routes** allows you to advertise to TGW via Controller a different set of routes other than the default VPC CIDR. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Advertised Rotues to edit. 
+ - **A Spoke VPC to Attache to Multiple TGWs** allows you to attach a Spoke VPC to multiple TGWs as long as the VPC route tables do not have conflicting route entries.
 
 2. Networking 
 --------------------
