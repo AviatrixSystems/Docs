@@ -43,6 +43,11 @@ R5.3 (Coming soon)
  - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
  - **Migrate Controller** allows you to migrate your Controller AMI image from ubuntu 14.04 distribution to 18.04 distribution. To migrate, go to Settings -> Maintenance -> Migration.
 
+R5.2.2153 (2/7/2020)
+
+ - **Enhancement** to reduce the number of alert emails. 
+ - **Enhancement** to reject an on-prem learned route if it is a subset of cloud network CIDR. 
+
 R5.2.2122 (1/25/2020)
 ========================
 
