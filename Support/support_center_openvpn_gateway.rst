@@ -372,3 +372,10 @@ There are different options to find this information:
   * You can look for a `disconnect log <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id1>`_ if you have `external logging feature  <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrix-log-format-for-log-management-systems>`_ turned on. 
   * You could also look at our `REST API <https://api.aviatrix.com/?version=latest#79695109-338c-4569-8f6c-824eb5ed5602>`_ to get this data.
 
+
+How can I address incomptibility between my Aviatrix VPN Client application and Cisco Umbrella Client running on my PC for DNS?
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Cisco Umbrella Client updates the DNS settings to point to itself on your local computer and could have an issue in letting you resolve your internal properties which cannot be resolved by public dns servers. Umbrella Client is known to be `incompatible with many vpn clients <https://support.umbrella.com/hc/en-us/articles/230561147-Umbrella-Roaming-Client-Compatibility-Guide-for-Software-and-VPNs#IncompatibleVPNs>`_.
+
+One of the solution is for you to configure Umbrella to not resolve your internal domains. In Umbrella preferences, you can head to Deployments/Configuration/DeomainManagements and add the domains you want to be resolved outside umbrella. Please reach out to your Cisco Support if you have more questions
