@@ -10,12 +10,12 @@ PrivateS3 FAQ
 What is the security exposure when uploading files to AWS S3 over Direct Connect?
 --------------------------------------------------------------------------------------
 
-If you like to leverage the high speed AWS Direct Connect to transfer files and objects to/form S3, the current solution is to use public VIF where AWS advertise the entire S3 public address ranges to 
-on-prem. This implies all on-prem users can upload to any S3 bucket, including to their personal S3 buckets on their own personal accounts, leading to confidential data leakage. The current solution is described as below. 
+If you leverage the high speed AWS Direct Connect to transfer files and objects to/form S3, the current solution is to use public VIF where AWS advertise the entire S3 public address ranges to 
+on-prem. This implies that all on-prem users can upload to any S3 bucket, including to their personal S3 buckets on their own personal accounts, leading to confidential data leakage. The current solution is described as below. 
 
 |s3_public_vif|
 
-In the diagram above, there is no VPC involved when Using public VIF. Data is directly transferred
+In the diagram above, there is no VPC involved when using public VIF. Data is directly transferred
 to and from S3 riding on the Direct Connect link.  
 
 In another scenario where an instance in a VPC trying to access S3 buckets, you can specify an S3 private Endpoint. The advantage is such that packets do not get routed over Internet and instead packets
@@ -32,8 +32,9 @@ Same issue of data leakage occurs if you upload files to S3 over public Internet
 What is Aviatrix PrivateS3?
 -----------------------------------------------
 
-Aviatrix PrivateS3 is a feature that allows you to leverage AWS Direct Connect to copy files between on-prem and S3 
-while enabling you to control from which S3 buckets by whitelisting the S3 buckets. 
+Aviatrix PrivateS3 is a feature that allows you to leverage AWS Direct Connect to transfer objects and files between on-prem and S3 
+while giving you the control of which S3 buckets by the ability to whitelist the S3 buckets. 
+
 
 |sft_aviatrix|
 
@@ -53,9 +54,9 @@ How does PrivateS3 work?
 
 PrivateS3 combines a few elements to make it work. 
 
- 1. Customer on-prem resolves all S3 bucket names under management to the private IP address of the gateway (or AWS internal NLB)
- #. Configure S3 bucket names on the Aviatrix Controller Console. 
- #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out the un-configured S3 bucket access. 
+ 1. Customer on-prem resolves all S3 bucket names under management to the private IP address of the Aviatrix created and managed AWS internal NLB.
+ #. Configure on the Aviatrix Controller the S3 bucket names that you allow access.
+ #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out the un-configured S3 bucket names, thus preventing data leakage.
 
 How to deploy PrivateS3?
 --------------------------
@@ -80,15 +81,22 @@ Yes. You can deploy PrivateS3 in a Spoke VPC in the TGW environment as shown in 
 
 |sft_deployment|
 
-Can PrivateS3 gateway filter S3 buckets in a different region?
----------------------------------------------------------------
+Can Direct Connect termination VPC be in a different region of managed S3 buckets?
+---------------------------------------------------------------------------------------
 
-No. Each PrivateS3 gateway can only filter S3 buckets in the region the gateway is deployed. 
+Yes. For example, the Direct Connect private VIF terminates in a VPC in us-west-2 and your S3 buckets are in us-east-1. You should
+launch the PrivateS3 gateway in a VPC in us-east-1 and make sure there is private connectivity to this VPC from on-prem.
+
+Can PrivateS3 gateway be in a different region of managed S3 buckets?
+----------------------------------------------------------------------
+
+Yes. However in such case you will not be able to leverage the S3 Gateway Endpoint service to route packets to S3 within AWS network. PrivateS3 will forward traffic to public Internet to reach S3 in a different region.
 
 Can PrivateS3 solution scale out?
 ----------------------------------
 
-The scale out PrivateS3 is not available in 5.3. It will be available in the future release. 
+Yes. You can launch multiple PrivateS3 gateways in a VPC. Aviatrix Controller automatically creates and manages AWS internal NLB to 
+load balance the S3 access requests. 
 
 
 

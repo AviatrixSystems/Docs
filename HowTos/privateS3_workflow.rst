@@ -23,24 +23,22 @@ Step 2. Enable/Edit PrivateS3
 
 Each AWS S3 bucket has a unique FQDN name. For example, if a full URL to access a file in S3 is https://avx-backup.s3-us-west-2.amazonaws.com/init.txt, then the bucket's FQDN name is either avx-backup.s3-us-west-2.amazonaws.com or avx-backup.s3.us-west-2.amazonaws.com. 
 
-=================================        ==================
-**Setting**                              **Value**
-=================================        ==================
-Gateway Name                             Select a gateway launched in the previous step
-Source CIDR Range                        Enter a list of the on-prem network address range separated by comma. For example, 10.10.0.0/16,10.12.0.0/16
-+Add New Bucket                          Click and then enter a FQDN name of the file in S3 bucket. Click Save to save entry. Click +Add New Bucket again to enter another entry. 
-Enable                                   If this is the first time, click Enable to enable the feature.   
-Update                                   If PrivateS3 has been enabled, use this button to update changes including editing Source CIDR Range, Add New Bucket or Delete existing bucket. 
-=================================        ==================
+===================================        ==================
+**Setting**                                **Value**
+===================================        ==================
+Gateway Name                               Select a gateway launched in the previous step
+Source CIDR Range                          Enter a list of the on-prem network address range separated by comma. For example, 10.10.0.0/16,10.12.0.0/16
+S3 Bucket FQDN Name Resolution IP          This is a display field. It displays the AWS internal NLB private IP address created by the Controller. This field does not immediately display after the first gateway is launched. Wait for a few minutes and refresh the browser. Use the displayed IP address for your on-prem DNS configuration in the next step. 
++Add New Bucket                            Click and then enter a FQDN name of the file in S3 bucket. Click Save to save entry. Click +Add New Bucket again to enter another entry. 
+Enable                                     If this is the first time, click Enable to enable the feature.   
+Update                                     If PrivateS3 has been enabled, use this button to update changes including editing Source CIDR Range, Add New Bucket or Delete existing bucket. 
+===================================        ==================
 
-.. important::
-
-  Make sure S3 buckets be in the same region as that of the gateway. For S3 buckets in a different region, launch a gateway in that region and repeat the above step.  
 
 Step 3. Configure on-prem DNS 
 ---------------------------------
 
-Configure on your DNS server so that all S3 bucket names resolve to the PrivateS3 gateway's private IP address. Note this IP address must be reachable from on-prem either by Direct Connect or VPN over Internet.
+Configure on your DNS server so that all S3 bucket names resolve to the PrivateS3 private IP address displayed from Step 2 in the field "S3 Bucket FQDN Name Resolution IP". Note this IP address must be reachable from on-prem either by Direct Connect or VPN over Internet.
 
 Note depending on how application invokes S3 function, for example, by using "wget", "curl", "aws s3", 
 or "aws2 s3", the generated FQDN name for the S3 object access may be different. There are 3 formats. 
