@@ -7,7 +7,7 @@ Controller Certificate Management
 ###################################
 
 The Aviatrix Controller uses a self-signed certificate by default. That is why you see "Not Secure" 
-at the browser. You can make it secure by importing a signed certificate. This documentation outlines the **Import a Certificate with Key** method. 
+at the browser. You can make it secure by importing a signed certificate. This documentation outlines the **Import a Certificate with Key** method. This example utilizes Godaddy as the CA, however steps 1 and 3 should be universal for any certificate provider.
 
 Import a Certificate with Key
 -------------------------------------
@@ -52,7 +52,6 @@ Step 3. Uploading the Certificates to the Controller
 Path: Controller > Settings > Advanced > Security > Import Certificate Key
 
  - Select “Import Certificate with Key”
- - If there is an existing CA certificate on the Controller you must disable “Method standard”
  - The CA certificate – the file named gd_bundle
  - The Server certificate - the other file ending in .crt
  - The Private Key – the file produced in step 1 of this documentation
@@ -77,18 +76,18 @@ Additional Notes
 
 
 .. |godaddy_1| image::  controller_certificate_media/godaddy_1.png
-    :scale: 100%
+    :scale: 60%
 
 .. |godaddy_2| image::  controller_certificate_media/godaddy_2.png
-    :scale: 100%
+    :scale: 60%
 
 .. |controller_cert_1| image::  controller_certificate_media/controller_cert_1.png
     :scale: 100%
 
-.. |controller_cert_2| image::  controller_backup_media/controller_cert_2.png
+.. |controller_cert_2| image::  controller_certificate_media/controller_cert_2.png
     :scale: 100%
 
-.. |controller_cert_3| image:: controller_backup_media/controller_cert_3.png
+.. |controller_cert_3| image:: controller_certificate_media/controller_cert_3.png
     :scale: 100%
 
 .. disqus::
