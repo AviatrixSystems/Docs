@@ -72,14 +72,14 @@ Create an IPsec tunnel in Barracuda
 Documentation
 Be sure to reference your Barracuda Documentation to make sure that your firewall is ready to accept VPN Connections and is properly configured to start the process
 
-1. 1.	Log into your NG via Ng Admin and go to your Configuration tree.
-2. 2.	Go to CONFIGURATION > Configuration Tree > Box > Virtual Servers > your virtual server > Assigned Services > VPN-Service > Site to Site.
-3. 3.	Click the IPSEC IKEv1 Tunnels tab
+1. Log into your NG via Ng Admin and go to your Configuration tree.
+2. Go to CONFIGURATION > Configuration Tree > Box > Virtual Servers > your virtual server > Assigned Services > VPN-Service > Site to Site.
+3. Click the IPSEC IKEv1 Tunnels tab
 4. Right-click the table and select New IPSec IKEv1 tunnel. The IPsec Tunnel window opens
 5. Select the Phase 1 settings according to the configuration file you downloaded    *General Information*
  |imageExamplePhase1-Step5
 
-6. 6.	Select the Phase 2 settings according to the configuration file you downloaded
+6. Select the Phase 2 settings according to the configuration file you downloaded
     a.	Note you must enable PFS on the NG
 |imageExamplePhase2-Step6
 
