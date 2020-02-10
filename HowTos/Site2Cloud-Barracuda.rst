@@ -103,6 +103,7 @@ You have two options to configure the remote IKE Gateway:
  10. Now you are going to Click on OK and then you want to send your changes and Activate them on the Barracuda NG Firewall.
  
 .. |imageExamplePhase1-Step5| image:: Site2Cloud_Barracuda_media/Phase1-Step5.png
+:width: 50%
 .. |imageExamplePhase2-Step6| image:: Site2Cloud_Barracuda_media/Phase2-Step6.png
 .. |imageExampleStep7| image:: Site2Cloud_Barracuda_media/Step 7.png
 .. |imageExampleStep8| image:: Site2Cloud_Barracuda_media/Step 8.png
