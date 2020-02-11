@@ -37,7 +37,7 @@ agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_mes
 
 You can automate Aviatrix deployment by `REST APIs <https://api.aviatrix.com/?version=latest>`_ and `Terraform configurations <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
 
-What are the complexities with cloud networking?
+What are the complexities in cloud networking?
 ---------------------------------------------------
 
 Networking is a well established industry, what makes networking in the cloud new again? It's the complexity. 
