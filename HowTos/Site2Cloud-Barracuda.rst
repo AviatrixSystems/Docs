@@ -88,10 +88,10 @@ Be sure to reference your Barracuda Documentation to make sure that your firewal
 |imageExampleStep7|
  
 8.	Click the Remote Networks tab, and configure the following settings:
-    a.	Remote IKE Gateway
-You have two options to configure the remote IKE Gateway:
-    b.	ID-type – Select the IPsec ID-type. For more information, see IPsec IKEv1 Tunnel Settings. – You will leave this at the defaults 
-    c.	Network Address – Add the IP address of the remote network, and enable Advertise Route if you want to propagate it via RIP, OSPF, or BGP. (e.g., 10.0.81.0/24). Enter the address and then click Add.
+   a.	Remote IKE Gateway
+      1. You have two options to configure the remote IKE Gateway:
+          b.	ID-type – Select the IPsec ID-type. For more information, see IPsec IKEv1 Tunnel Settings. – You will leave this at the defaults 
+          c.	Network Address – Add the IP address of the remote network, and enable Advertise Route if you want to propagate it via RIP, OSPF, or BGP. (e.g., 10.0.81.0/24). Enter the address and then click Add.
 |imageExampleStep8|
   
  9.	Click the Identify and Peer Identification tab, and enter the shared passphrase in the Shared Secret field. The passphrase may not contain the hash (#) character.  
