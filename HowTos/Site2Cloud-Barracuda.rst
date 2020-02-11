@@ -94,7 +94,7 @@ Be sure to reference your Barracuda Documentation to make sure that your firewal
           c.	Network Address – Add the IP address of the remote network, and enable Advertise Route if you want to propagate it via RIP, OSPF, or BGP. (e.g., 10.0.81.0/24). Enter the address and then click Add.
 |imageExampleStep8|
   
- 9.	Click the Identify and Peer Identification tab, and enter the shared passphrase in the Shared Secret field. The passphrase may not contain the hash (#) character.  
+ 9.	Click the Identify and Peer Identification tab, and enter the shared passphrase in the Shared Secret field. The passphrase may not contain the hash (#) character due to limits in Barracuda.  
 |imageExampleStep9|
  
  10. Now you are going to Click on OK and then you want to send your changes and Activate them on the Barracuda NG Firewall.
