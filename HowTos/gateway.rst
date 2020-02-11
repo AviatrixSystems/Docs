@@ -620,8 +620,8 @@ When it is enabled on an Spoke gateway, only that gateway VPC route table is app
 
 To disable this feature, empty the field and click Save. The on-prem learned routes will be propagated in to the Spoke VPC routes.
 
-Filter Routes to Spoke VPC
-------------------------------
+Filter Learned Routes to Spoke VPC
+----------------------------------
 
 This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The unwanted list of CIDRs should be entered as input. This list of
 CIDRs should be comma separated. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
@@ -635,7 +635,7 @@ When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will
 
 When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs.
 
-Filter Advertised Spoke VPC CIDRs
+Customize Advertised Spoke VPC CIDRs
 --------------------------------------
 
 This route policy enables you to selectively exclude some VPC CIDRs from being advertised to on-prem.
