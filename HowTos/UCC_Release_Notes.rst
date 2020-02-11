@@ -28,9 +28,9 @@ R5.3 (Coming soon)
  - **PrivateS3** allows you to whitelist S3 buckets access from on-prem over AWS Direct Connect private VIF without data leakage. If you transfer data to/from S3 using the high bandwidth Direct Connect, currently there is no solution to do so without the risk of data being transferred to unauthorized S3 buckets.  To learn more, read `PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_ 
  - **Aviatrix Transit Gateway Edge Segmentation** allows you to specify which `Aviatrix edge VPN connection <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ can communicate with which Security Domain in TGW deployment. To learn more, read `Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_.
  - **Aviatrix Transit FireNet for Azure** allows you to deploy firewall instances in Azure. For more information, check out `Transit FireNet FAQ <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_.
- - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case.  
- - **Fortinet FortiGate** can be launched from Aviatrix Controller for FireNet use case.
- - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. 
+ - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case. The Controller monitors the firewall instances' health and automatically detach the unhealthy instance and reattach when it becomes healthy. Note static routes need to be programmed on the firewall instances. 
+ - **Fortinet FortiGate** can be launched from Aviatrix Controller for FireNet use case. The Controller monitors the firewall instances' health and automatically detach the unhealthy instance and reattach when it becomes healthy. Note static routes need to be programmed on the firewall instances.
+ - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. To enable, go to Fiewall Network -> Advanced, highlight one FireNet gateway, click the 3 dots skewer. At Fail Close, click Enable.
 
 4. Operation
 -------------
