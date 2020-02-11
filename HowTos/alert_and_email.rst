@@ -13,7 +13,7 @@ The Aviatrix Controller sends alert emails for events such as:
 
 By default, the alert email is sent to the admin of the Controller. The email can be an individual email address or an email alias of a team. 
 
-By default, the source email address is info@aviatrix.com. 
+By default, the source email address is no-reply@aviatrix.com. 
 
 How to change alert email configuration
 ----------------------------------------
