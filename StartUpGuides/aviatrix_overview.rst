@@ -20,7 +20,7 @@ We focus on solving networking problems in use cases relevant to public clouds.
 These use cases are shown as below: 
 
 - Datacenter to cloud (`Next Gen Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
-- Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
+- Scalable Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
 - Cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
 - User to cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
 - Site to cloud VPN (`Branch and customer sites to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_) 
@@ -36,6 +36,71 @@ In addition, we have specific network solutions for `cloud migration <http://doc
 agile `datacenter extension <http://docs.aviatrix.com/Solutions/aviatrix_aws_meshVPC.html>`_ to cloud for vmware workloads. 
 
 You can automate Aviatrix deployment by `REST APIs <https://api.aviatrix.com/?version=latest>`_ and `Terraform configurations <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_.
+
+What are the complexities with cloud networking?
+---------------------------------------------------
+
+Networking is a well established industry, what makes networking in the cloud new again? It's the complexity. 
+
+The complexity of the cloud networking comes from the following areas and they only grow as time goes on:
+
+1. Unprecedented Scale
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  - Cloud networks (VPC/VNet) are many orders of magnitude in quantity than datacenters, driven by business billing/accounting and isolation.
+  - Multi accounts structure is a new element for networking and is significantly increasing the number of cloud networks.
+  - Multi cloud is happening by industry verticals and bleed cross all sectors due to the SaaS inter-connect effect. 
+
+2. Security
+^^^^^^^^^^^^^^^^
+
+  - As mission critical applications move to the cloud, security requirements applied to datacenter are catching up to the cloud.
+  - Security consist of 5 types:
+      - Egress to Internet: backend applications require API access to public hosted services.
+      - On-prem and cloud: data moving between two security zones. 
+      - East and West: data moving between cloud networks.
+      - Ingress: Accessing applications in the cloud.
+      - Data security: Encryption for data in motion & at rest.
+
+3. Unprecedented Performance 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  - As more data traverses among islands of networks, performance requirement is catching up. 
+ 
+4. Skill Gap
+^^^^^^^^^^^^^
+
+  - Each cloud offers completely different APIS, semantics and implementation in networking.
+  - Business cannot invest equally in time and effort to multiple cloud providers. 
+  - New generation of operational engineers are short in sophisticated networking skills. Older networking engineers are short in API skills. 
+
+5. Interoperability
+^^^^^^^^^^^^^^^^^^^^^
+
+ - Enterprise datacenters have compliance and established practices. Connecting to the on-prem sites of different businesses is complex due to the large set of legacy networking and security products.    
+
+Why Should You Consider Us?
+=============================
+
+Customers find that the most compelling value of our product is simplicity, both at configuration time and operation time. Simplicity is easier said than done in networking as it is by nature complex, so how can one achieve that? Here is how we do it:
+
+- **Abstraction**  Abstraction is key to achieving simplicity at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about being use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
+
+- **Service Extension** As part of the product offering, we provide service integration to Splunk, SumoLogic, Datadog, Duo, Okta, SAML IDPs and firewall appliance deployment.
+
+- **Centrally Managed** A single pane of glass to manage all your cloud accounts and cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window.
+
+For example, we hide the platform differences between AWS, Azure and GCP, so that you have the same
+experience when networking to any of them or between them.
+
+As another example, we hide the complexity of building IPSEC so that you have the same
+experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. Taking this one step further, not only is the connectivity setup, the underlying route entry is
+configured too so that you have a turn key solution.
+
+Beyond simplicity, Aviatrix solutions solve many problems better than other products in each use case. This document summarizes these problems. Links to
+configuration documents are listed at the end of each section.
+
+Our goal is to become your go-to vendor for all things cloud networking.
 
 What Features Are Supported in Which Cloud?
 -----------------------------------------------
@@ -65,6 +130,7 @@ Insane Mode Encryption                          Yes         Yes              No 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
 FlightPath Expert Diagnostics                   Yes         No              No                               Yes                      No
 IPv6                                            Yes         No              No                               No                       No
+PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No 
 ==========================================      ==========  =============   ======================           =================       ==========
 
 
@@ -76,31 +142,6 @@ gateway. Gateways are launched from the Controller
 browser console by using your cloud account credentials with cloud provider APIs.
 The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_  `Azure Marketplace, <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_  `GCloud <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ and `OCI <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html>`_.
  
-
-
-Why Should You Consider Us?
-=============================
-
-Customers find that the most compelling value of our product is simplicity, both at configuration time and operation time. Simplicity is easier said than done in networking as it is by nature complex, so how can one achieve that? Here is how we do it:
-
-- **Abstraction**  Abstraction is key to achieving simplicity at configuration time. Abstraction is about hiding layers and layers of complex network protocols, it is also about being use-case-driven at presentation layer by combining multiple networking components and features. APIs and Terraform templates also benefit from this abstraction as fewer of them need to be managed.
-
-- **Service Extension** As part of the product offering, we provide service integration to Splunk, SumoLogic, Datadog, Duo, Okta, SAML IDPs and firewall appliance deployment.  
-
-- **Centrally Managed** A single pane of glass to manage all your cloud accounts and cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window. 
-
-For example, we hide the platform differences between AWS, Azure and GCP, so that you have the same
-experience when networking to any of them or between them. 
-
-As another example, we hide the complexity of building IPSEC so that you have the same 
-experience when you build an IPSEC tunnel as you would with AWS native peering: a couple of clicks or a couple of APIs. Taking this one step further, not only is the connectivity setup, the underlying route entry is 
-configured too so that you have a turn key solution. 
-
-Beyond simplicity, Aviatrix solutions solve many problems better than other products in each use case. This document summarizes these problems. Links to 
-configuration documents are listed at the end of each section.  
-
-Our goal is to become your go-to tool for all things cloud networking. 
-
 
 Datacenter to Cloud: Aviatrix Next-Gen Transit Network 
 =========================================================
