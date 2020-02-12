@@ -510,9 +510,9 @@ www.carmelonetworks.com (54.149.28.255)                      TCP 443        Soft
 license.aviatrix.com (52.24.131.245)                         TCP 443        License update
 diag.aviatrix.com (54.200.59.112)                            TCP 443        Remote debugging
 customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog  
-AWS SQS                                                      TCP 443        Controller t gateway message queue
-Aviatrix gateways                                            TCP 22         gateway diagnostics
-Aviatrix gateways                                            TCP 443        Some Provisioning
+AWS SQS                                                      TCP 443        Controller to gateway message queue
+Aviatrix gateways                                            TCP 22         gateway diagnostics (on demand)
+Aviatrix gateways                                            TCP 443        Software upgrade to gateways
 ============================================                 ============   ===================
 
 
