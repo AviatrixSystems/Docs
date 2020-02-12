@@ -24,7 +24,7 @@ Aviatrix supports connectivity between its Gateways in the cloud and on-premise 
 
 
 Configuration Workflow
-======================
+=========================
 
 Create Site2Cloud Connection
 ----------------------------
@@ -84,6 +84,15 @@ Create Site2Cloud Connection
    |                               | connection.  If nothing is entered, one will |
    |                               | be generated for you.                        |
    +-------------------------------+----------------------------------------------+
+   | Remote Subnet                 | Specify a list of the destination network    |
+   |                               | CIDRs, separated by comma, that will         |
+   |                               | be encrypted. For example, 10.10.1.0/24, 10. |
+   |                               | 10.2.0./24                                   |
+   +-------------------------------+----------------------------------------------+
+   | Local Subnet                  | Specify a list of the source network CIDRs   |
+   |                               | , separated by comma, that will be encrypted.|
+   |                               | For example, 172.16.1.0/24, 172.16.2.0/24    |
+   +-------------------------------+----------------------------------------------+
    | Backup Gateway                | Only available when 'Enable HA' is selected. |
    |                               | Backup Gateway should be the .hagw created   |
    |                               | at 'Gateway'->'Edit'->'Gateway for High      |
@@ -97,6 +106,11 @@ Create Site2Cloud Connection
    |                               | backup connection. If nothing is entered,    |
    |                               | one will be generated for you.               |
    +-------------------------------+----------------------------------------------+
+
+.. important::
+
+  If the Local Subnet field is outside of gateway VPC/VNet, you need to open the gateway inbound security groups to allow the Local Subnet network CIDR ranges. 
+
 
 Connection Type: Unmapped
 +++++++++++++++++++++++++
