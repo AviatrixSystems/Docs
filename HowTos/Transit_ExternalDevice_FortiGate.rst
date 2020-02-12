@@ -5,7 +5,7 @@ Transit Connection to FortiGate over the internet.
 
    |image1|
 
-2.Connect the transit VPC GW to Palo Alto. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
+2.Connect the transit VPC GW to FortiGate. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
       a. BGP Local AS number: ASN of the transit VPC GW
       b. BGP Remote AS number: ASN of the Palo Alto
       c. Remote Gateway IP Address: Palo Alto WAN interface public IP.
