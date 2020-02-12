@@ -500,6 +500,19 @@ Here is the best practice procedure to follow:
  #. If gateway force upgrade fail, proceed to replace the gateway. Go to Troubleshoot -> Gateway -> GATEWAY REPLACE. Select the failed gateway and click Replace. 
  #. If Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
 
+What IP addresses does Controller need to reach out to?
+---------------------------------------------------------
+
+============================================                 ============   ===================
+Outbound IP Address                                          Port           Purpose
+============================================                 ============   ===================
+www.carmelonetworks.com (54.149.28.255)                      TCP 443        Software upgrade
+license.aviatrix.com (52.24.131.245)                         TCP 443        License update
+diag.aviatrix.com (54.200.59.112)                            TCP 443        Remote debugging
+customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog  
+AWS SQS                                                      TCP 443        Controller t gateway message queue
+Aviatrix gateways                                            TCP 22         gateway diagnostics
+============================================                 ============   ===================
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
