@@ -512,6 +512,7 @@ diag.aviatrix.com (54.200.59.112)                            TCP 443        Remo
 customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog  
 AWS SQS                                                      TCP 443        Controller t gateway message queue
 Aviatrix gateways                                            TCP 22         gateway diagnostics
+Aviatrix gateways                                            TCP 443        Some Provisioning
 ============================================                 ============   ===================
 
 
