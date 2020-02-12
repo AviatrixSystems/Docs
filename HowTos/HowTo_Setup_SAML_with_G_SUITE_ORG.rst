@@ -1,7 +1,11 @@
+.. meta::
+   :description: Enable SAML App for a group of users in G-Suite using Organization
+   :keywords: SAML, G-Suite, Organization
+
 Enable SAML App for a group of users in G-Suite using Organization
 -------------------------------------------------------------------
 
-1. Follow `Google Idp for SAML Integration <https://docs.aviatrix.com/HowTos/SAML_Integration_Google_IdP.html#google-idp-for-saml-integration>`_ to create a **SAMLVPN** application.
+1. Follow `Google Idp for SAML Integration <https://docs.aviatrix.com/HowTos/SAML_Integration_Google_IdP.html#google-idp-for-saml-integration##openvpn-with-saml-authentication-on-okta-idp>`_ to create a **SAMLVPN** application.
 
 2. Repeat the following steps to create users in G-suite Google Admin console and leave them under the root organization.
 
@@ -143,3 +147,5 @@ Enable SAML App for a group of users in G-Suite using Organization
 
 .. |reopen-2-confirm-org| image:: SSL_VPN_Google_SAML_Organization_media/reopen-2-confirm-org.png
    :scale: 70%
+
+.. disqus::
