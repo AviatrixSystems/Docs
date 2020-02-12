@@ -395,6 +395,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Support Center
 
    Support/support_center
+   Support/support_center_operations
    Support/support_center_controller
    Support/support_center_openvpn_gateway
    Support/support_center_transit_solution
