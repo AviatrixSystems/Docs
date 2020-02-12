@@ -95,10 +95,26 @@ Yes. However in such case you will not be able to leverage the S3 Gateway Endpoi
 Can PrivateS3 solution scale out?
 ----------------------------------
 
-Yes. You can launch multiple PrivateS3 gateways in a VPC. Aviatrix Controller automatically creates and manages AWS internal NLB to 
-load balance the S3 access requests. 
+Yes. You can launch multiple PrivateS3 gateways in a multi-AZ fashion in a VPC. Aviatrix Controller automatically 
+creates and manages AWS internal NLB to load balance the S3 access requests. 
+
+How can I test PrivateS3?
+----------------------------
+
+There is a simple method to simulate DNS resolution to the PrivateS3 internal NLB. 
+
+Launch a Linux instance or host, in sudo mode, edit file /etc/hosts. Add S3 bucket FQDN names to this file, as shown in the example below.
+
+|dns_emulation|
 
 
+How do I troubleshoot PrivateS3?
+----------------------------------
+
+PrivateS3 combines FQDN feature and stateful firewall feature. 
+
+ 1. Go to Security -> Egress Control -> Egress FQDN Filter. There should be a tag automatically created. Click Edit button to see if the desired S3 bucket name is configured. 
+ #. Go to Gateway, select one PrivateS3 gateway, click Edit. Scroll down to Destination NAT to make sure the DNAT rule is configured. 
 
 
 .. |sfc| image:: sfc_media/sfc .png
@@ -114,6 +130,9 @@ load balance the S3 access requests.
    :scale: 30%
 
 .. |s3_public_vif| image:: sfc_media/s3_public_vif .png
+   :scale: 30%
+
+.. |dns_emulation| image:: sfc_media/dns_emulation .png
    :scale: 30%
 
 .. disqus::
