@@ -14,6 +14,7 @@ The goal of the Aviatrix Support Center is to be a central repository for known 
 Topics
 -------------
 
+- `Operations <https://docs.aviatrix.com/Support/support_center_operations.html>`_
 - `Aviatrix Controller <https://docs.aviatrix.com/Support/support_center_controller.html>`_
 - `OpenVPN Gateway <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html>`_
 - `Transit Solution <https://docs.aviatrix.com/Support/support_center_transit_solution.html>`_
