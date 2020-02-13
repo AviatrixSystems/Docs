@@ -49,7 +49,7 @@ or "aws2 s3", the generated FQDN name for the S3 object access may be different.
 
 .. tip::
 
-  Use DNS wildcard. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3.
+  Use DNS wildcard. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3 internal NLB.
 
 
 
