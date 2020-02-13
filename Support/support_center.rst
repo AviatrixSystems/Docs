@@ -15,16 +15,20 @@ Topics
 -------------
 
 - `Operations <https://docs.aviatrix.com/Support/support_center_operations.html>`_
+- `Ticket Submission & Priority Guidelines <https://docs.aviatrix.com/Support/support_ticket_priority.html>`_
 - `Aviatrix Controller <https://docs.aviatrix.com/Support/support_center_controller.html>`_
-- `OpenVPN Gateway <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html>`_
 - `Transit Solution <https://docs.aviatrix.com/Support/support_center_transit_solution.html>`_
-- `Logging <https://docs.aviatrix.com/Support/support_center_logging.html>`_
-- `Site2Cloud <https://docs.aviatrix.com/Support/support_center_site2cloud.html>`_
-- `AWS Infrastructure <https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html>`_
-- `Terraform <https://docs.aviatrix.com/Support/support_center_terraform.html>`_
-- `Security: Egress FQDN Control and Firewall <https://docs.aviatrix.com/Support/support_center_egress_firewall.html>`_
 - `IPSec <https://docs.aviatrix.com/Support/support_center_ipsec.html>`_
+- `Site2Cloud <https://docs.aviatrix.com/Support/support_center_site2cloud.html>`_
+- `OpenVPN Gateway <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html>`_
+- `Security: Egress FQDN Control and Firewall <https://docs.aviatrix.com/Support/support_center_egress_firewall.html>`_
+- `Logging <https://docs.aviatrix.com/Support/support_center_logging.html>`_
+- `Useful Tools <https://docs.aviatrix.com/Support/support_center_useful_tools.html>`_
+- `Terraform <https://docs.aviatrix.com/Support/support_center_terraform.html>`_
 - `CloudN <https://docs.aviatrix.com/Support/support_center_cloudn.html>`_
+- `AWS Infrastructure <https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html>`_
+- `GCP Infrastructure <https://docs.aviatrix.com/Support/support_center_gcp_infrastructure.html>`_
+
 
 
 Scope of Aviatrix Support
