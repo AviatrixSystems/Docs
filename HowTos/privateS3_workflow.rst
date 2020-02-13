@@ -47,9 +47,9 @@ or "aws2 s3", the generated FQDN name for the S3 object access may be different.
  #. bucket-name.s3-region.amazonaws.com. Example, business-owner-bucket.s3-us-west-2.amazonaws.com
  #. bucket-name.s3.amazonaws.com. Example, business-owner-bucket.s3.amazonaws.com (apply to us-east-1 region)
 
-.. important::
+.. tip::
 
-  Since you may not know which FQDN name format application software invokes, you should enter the first two formats for any region that is not us-east-1. For us-east-1 region, you should enter 3 DNS entries for each bucket to ensure the S3 access is redirected to Aviatrix PrivateS3 gateway. You should follow the same rule when entering the FQDN name in the gateway at `Step 2. <https://docs.aviatrix.com/HowTos/privateS3_workflow.html#step-2-enable-edit-privates3>`_
+  Use DNS wildcard. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3.
 
 
 
