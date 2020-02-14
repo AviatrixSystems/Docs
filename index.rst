@@ -16,7 +16,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Gateway Orchestrator`
 * :ref:`Transit Network`
 * :ref:`Firewall Network`
-* :ref:`Transit DMZ`
 * :ref:`Cloud WAN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
@@ -141,16 +140,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_Checkpoint.rst
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
-
-.. _Transit DMZ:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Transit DMZ
-
-   HowTos/transit_dmz_faq
-   HowTos/transit_dmz_workflow
-   HowTos/transit_dmz_vendors
 
 .. _Cloud WAN:
 
