@@ -518,7 +518,13 @@ Aviatrix gateways                                            TCP 443        Soft
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
-
+Centralized Logging Within AWS Government Cloud
+---------------------------------------------------------
+When attempting to perform centralized logging for AWS Government Cloud, due to
+restrictions with communication inside of Government Cloud, it is not possible to have your 
+Aviatrix Controller hosted in AWS Public Cloud and receive logs from gateways in AWS Gov
+Cloud. In order for the Aviatrix Controller to be able to accept logs from gateways inside of the
+Government Cloud the Aviatrix controller must be hosted within AWS Government Cloud as well.
 
 .. |image1| image:: FAQ_media/image1.png
 
