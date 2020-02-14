@@ -417,7 +417,25 @@ Then
   #. Each controller/gateway directory should have
         a. auth.log
         #. syslog
- 
+
+
+3.1.a Using Rsyslog to send logs to Sumo
+-------------------------------------------
+
+Since Sumo agents on the controller and gateways tend to consume a lot of cpu/memory resources, we strongly suggest that rsyslog is used instead to send logs to Sumo. This is `documented by Sumo <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_. Follow the following instructions:
+
+  #. Follow the directions in `Sumo document  <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_ to create a cloud syslog source on your collections. Save the token, host and tcp tls port.
+  #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
+  #. Enter the Server ip/fqdn that you received from the first step
+  #. Provide the port - obtained from the first step
+  #. Upload the CA cert from Sumo pointed by their documentation
+  #. Keep the Protocol set to TCP
+  #. For Optional Custom Template, copy the following string into a new text file and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step and upload it
+    * <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\n
+  #. Click on Advanced, if you want to selectively send logs from only some gateways
+  #. Click on Enable
+
+
 3.2 Filebeat Forwarder
 -----------------------
 On the Aviatrix Controller:
