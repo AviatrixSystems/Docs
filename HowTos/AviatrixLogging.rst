@@ -67,6 +67,7 @@ Management System for further analysis:
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfirenet>`_
+- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixvpnversion>`_
 
 Below are the details of each log keyword. 
 
@@ -324,6 +325,17 @@ Example log:
 
   2019-11-19T09:40:12.878075-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to up.
 
+
+AviatrixVPNVersion
+-------------------
+
+Log messages with this prefix come from the Controller whenever it rejects an Aviatrix VPN client connection.
+
+Example log:
+
+::
+
+  2020-02-07T11:38:48.276150-08:00 Controller-52.204.188.212 cloudxd: AviatrixVPNVersion:  The VPN connection was rejected as it did not satisfy the minimum version requirements. Current version: AVPNC-2.4.10 Required minimum version: AVPNC-2.5.7 . The rejected VPN user name is tf-aws-52-tcplb-user1
 
 3. Logging Configuration at Aviatrix Controller
 ================================================
