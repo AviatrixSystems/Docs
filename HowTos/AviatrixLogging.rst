@@ -430,8 +430,12 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Provide the port - obtained from the first step
   #. Upload the CA cert from Sumo pointed by their documentation
   #. Keep the Protocol set to TCP
-  #. For Optional Custom Template, copy the following string into a new text file and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step and upload it
-    * <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\n
+  #. For Optional Custom Template, copy the following string into a new text file and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step and upload it. Please do keep the square brackets around the token.
+  
+  ::
+
+<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\n
+
   #. Click on Advanced, if you want to selectively send logs from only some gateways
   #. Click on Enable
 
