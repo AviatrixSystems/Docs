@@ -392,9 +392,15 @@ communicate with, as shown in the diagram below.
 In the above diagram, Site 1 can communicate with Prod domain but not with Dev domain and Shared Service domain. Site 2 can communicate with Dev domain but not with Prod domain and Shared Service domain.Site 3 can communicate with Shared Service domain but not with 
 Dev domain and Prod domain. 
 
-The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. 
+Edge Segmentation works across Connection Policies for `AWS TGW Peered <https://docs.aviatrix.com/HowTos/tgw_plan.html#tgw-inter-region-peering>`_ Security Domains. 
+
+.. note::
+
+ The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. 
 
 To enable Edge Segmentation, go to Transit Network -> Setup -> Step 3, Connect to VGW/External Device/CloudN, to select the option "Enable Edge Segmentation".
+
+
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png

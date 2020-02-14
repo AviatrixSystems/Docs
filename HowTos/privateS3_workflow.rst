@@ -27,7 +27,7 @@ Each AWS S3 bucket has a unique FQDN name. For example, if a full URL to access 
 **Setting**                                **Value**
 ===================================        ==================
 Gateway Name                               Select a gateway launched in the previous step
-Source CIDR Range                          Enter a list of the on-prem network address range separated by comma. For example, 10.10.0.0/16,10.12.0.0/16
+Source CIDR Range                          Enter a summary list of the on-prem network address range separated by comma. For example, 10.10.0.0/16,10.12.0.0/16. Note this list should be a simple super set of your on-prem network CIDR range. It does not need to be precise. 
 S3 Bucket FQDN Name Resolution IP          This is a display field. It displays the AWS internal NLB private IP address created by the Controller. This field does not immediately display after the first gateway is launched. Wait for a few minutes and refresh the browser. Use the displayed IP address for your on-prem DNS configuration in the next step. 
 +Add New Bucket                            Click and then enter a FQDN name of the file in S3 bucket. Click Save to save entry. Click +Add New Bucket again to enter another entry. 
 Enable                                     If this is the first time, click Enable to enable the feature.   
