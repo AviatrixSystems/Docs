@@ -72,7 +72,7 @@ will be polled by the Controller. The Controller then programs rules into the fi
 
 .. Note::
 
- if you enable AWS GuarDuty without launching the PSF gateway, GuardDuty does not have enforcement functionality.  
+ if you enable AWS GuardDuty without launching the PSF gateway, GuardDuty does not have enforcement functionality.  
 
 
 3. Enable Egress FQDN 
