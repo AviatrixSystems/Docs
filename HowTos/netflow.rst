@@ -11,7 +11,12 @@ Starting in release 3.5, Aviatrix Controller and gateways can forward `Netflow <
 
 To enable, click Settings on the main navigation bar, click Logging, and scroll down to NETFLOW AGENT.
 
-Input the IP address and the port number of the destination Netflow service and click Enable. All gateways will have Netflow enabled. 
+Input the IP address and the port number of the destination Netflow service and click Enable. All gateways will have Netflow enabled by default. You can select a subset of gateways to have Netflow 
+enabled in the Advanced option. 
+
+All flows are captured, there is no option to sample a fraction of the packets. 
+
+. 
 
 
 
