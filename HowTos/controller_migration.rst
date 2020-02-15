@@ -45,14 +45,14 @@ Prerequisites
 Controller Migration feature does the following in sequence
 --------------------------------------------------------------------------------
 
-01) User executes the "Migrate" feature on old controller
-02) Old controller enables controller "BackUp Now" feature to make sure the backup config file is up-to-date
-03) Old controller creates a new cloud virtual machine which has the latest Aviatrix controller image
-04) New controller extends disk partition to the max of the disk space available
-05) New controller initialize itself to match the version of old controller
-06) New controller restores configuration file from backup of step 2
-07) New controller invokes cloud API to transfer its old controller's EIP to itself
-08) New controller invokes cloud API to stop old controller
+1. User executes the "Migrate" feature on old controller
+2. Old controller enables controller "BackUp Now" feature to make sure the backup config file is up-to-date
+3. Old controller creates a new cloud virtual machine which has the latest Aviatrix controller image
+4. New controller extends disk partition to the max of the disk space available
+5. New controller initialize itself to match the version of old controller
+6. New controller restores configuration file from backup of step 2
+7. New controller invokes cloud API to transfer its old controller's EIP to itself
+8. New controller invokes cloud API to stop old controller
 
 
 
@@ -74,10 +74,10 @@ Intro
 Feature Logic Workflow
 --------------------------------------------------------------------------------
 
-01) New controller invokes cloud API to "Start" the old controller from "STOP" state
-02) New controller waits until old controller virtual machine is ready
-03) New controller invokes cloud API to transfer EIP back to old controller
-04) New controller invokes cloud API to stop itself
+1. New controller invokes cloud API to "Start" the old controller from "STOP" state
+2. New controller waits until old controller virtual machine is ready
+3. New controller invokes cloud API to transfer EIP back to old controller
+4. New controller invokes cloud API to stop itself
 
 
 .. disqus::
