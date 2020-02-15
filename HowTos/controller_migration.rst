@@ -2,7 +2,8 @@
    :description: controller Migration
    :keywords: controller high availability, controller HA, AWS VPC peering, auto scaling
 
-# Controller Migration in AWS
+Controller Migration in AWS
+========================================
 
 
 Introduction
@@ -14,7 +15,8 @@ Introduction
     - Restore
 
 
-
+|
+|
 
 
 Feature: Migrate
@@ -55,7 +57,8 @@ Controller Migration feature does the following in sequence
 8. New controller invokes cloud API to stop old controller
 
 
-
+|
+|
 
 
 Feature: Restore
