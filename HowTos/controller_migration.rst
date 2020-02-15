@@ -3,14 +3,13 @@
    :keywords: controller high availability, controller HA, AWS VPC peering, auto scaling
 
 Controller Migration in AWS
-========================================
+##################################
 
 
 Introduction
-========================================
+===============
 
-+ This feature is released in 5.3
-+ This feature has 2 sub-features:
+This feature is released in 5.3. It consists of 2 sub-features:
     - Migrate
     - Restore
 
@@ -19,11 +18,11 @@ Introduction
 |
 
 
-Feature: Migrate
-========================================
+Migrate
+=====================
 
 Intro
---------------------------------------------------------------------------------
+--------
 
 + This feature mainly is to perform "One Click" operation to migrate the current Aviatrix controller to a new one.
 + The EIP will be migrated from old controller to the new one
@@ -33,7 +32,7 @@ Intro
 
 
 Prerequisites
---------------------------------------------------------------------------------
+-----------------
 
 + The feature only supports AWS at the moment
 + User needs to enable controller backup using an AWS based access-account.
@@ -45,7 +44,7 @@ Prerequisites
 
 
 Controller Migration feature does the following in sequence
---------------------------------------------------------------------------------
+---------------------------------------------------------------
 
 1. User executes the "Migrate" feature on old controller
 2. Old controller enables controller "BackUp Now" feature to make sure the backup config file is up-to-date
@@ -61,7 +60,7 @@ Controller Migration feature does the following in sequence
 |
 
 
-Feature: Restore
+Restore
 ========================================
 
 Intro
@@ -74,7 +73,7 @@ Intro
 
 
 
-Feature Logic Workflow
+Logic Workflow
 --------------------------------------------------------------------------------
 
 1. New controller invokes cloud API to "Start" the old controller from "STOP" state
