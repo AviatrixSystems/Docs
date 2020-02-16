@@ -35,10 +35,13 @@ Update                                     If PrivateS3 has been enabled, use th
 ===================================        ==================
 
 
-Step 3. Configure on-prem DNS 
----------------------------------
+Step 3. Create on-prem DNS Private Zone
+---------------------------------------------
 
-Configure on your DNS server so that all S3 bucket names resolve to the PrivateS3 private IP address displayed from Step 2 in the field "S3 Bucket FQDN Name Resolution IP". Note this IP address must be reachable from on-prem either by Direct Connect or VPN over Internet.
+Create a private zone on your on-prem DNS server so that all S3 bucket names  
+resolve to the PrivateS3 private IP address displayed from Step 2 in the field "S3 Bucket FQDN Name Resolution IP". 
+Note this IP address must be reachable from on-prem either by Direct Connect or VPN over Internet.
+
 
 Note depending on how application invokes S3 function, for example, by using "wget", "curl", "aws s3", 
 or "aws2 s3", the generated FQDN name for the S3 object access may be different. There are 3 formats. 
@@ -47,9 +50,12 @@ or "aws2 s3", the generated FQDN name for the S3 object access may be different.
  #. bucket-name.s3-region.amazonaws.com. Example, business-owner-bucket.s3-us-west-2.amazonaws.com
  #. bucket-name.s3.amazonaws.com. Example, business-owner-bucket.s3.amazonaws.com (apply to us-east-1 region)
 
+You may need to create a private zone for each region and domain name format. For example, 
+create a zone with domain name s3.us-west-2.amazonaws.com, another zone with domain name s3-us-west-2.amazonaws.com.
+
 .. tip::
 
-  Use DNS wildcard. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3 internal NLB.
+  Use DNS wildcard for record. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3 internal NLB.
 
 
 
