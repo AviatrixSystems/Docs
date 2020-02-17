@@ -157,6 +157,8 @@ Firewall Image Version                          VM-Series current supported soft
 Firewall Instance Size                          VM-Series instance type.  
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Username                                        Applicable to Azure deployment only. "admin" as a username is not accepted.
+Password                                        Applicable to Azure deployment only.
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page. 
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified. 
