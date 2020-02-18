@@ -141,3 +141,8 @@ Other notes:
     * Populate your AWS Access Key ID/Account Number/Secret key. 
   * Controller `VPC tracker <https://docs.aviatrix.com/HowTos/vpc_tracker.html>`_ is not yet supported for GovCloud
   
+
+Can I change my AWS Access Account auth between IAM role based and Accesskey?
+-------------------------------------------------------------------------------
+
+You can change between IAM rolebased and accesskey based authentication on  AWS accounts from "Controller/Accounts/AccessAccounts/SelectAccount/Edit" when there are no resources on this account. If any resources, such as Gateway's are created, you will not be able to switch over
