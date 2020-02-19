@@ -25,8 +25,8 @@ Intro
 --------
 
 + This feature mainly is to perform "One Click" operation to migrate the current Aviatrix controller to a new one.
-+ The EIP will be migrated from old controller to the new one
-
++ The EIP will be migrated from old controller to the new one.
++ The whole migration process will take around 10 to 15 minutes.
 
 
 
@@ -54,6 +54,15 @@ Controller Migration feature does the following in sequence
 6. New controller restores configuration file from backup of step 2
 7. New controller invokes cloud API to transfer its old controller's EIP to itself
 8. New controller invokes cloud API to stop old controller
+
+
+
+
+Status
+---------
++ The migration status will be displayed in a tag named "MigrationStatus" of the new controller instance. Sample status messages are "Initializing", "Migrating", "Successful".
+
+
 
 
 |
