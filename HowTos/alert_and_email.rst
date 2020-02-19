@@ -32,7 +32,8 @@ If you would like the alert messages to be sent to a different email,
 How to Change Email Notification Source
 -----------------------------------------
 
-Use Amazon Simple Email Service (SES)
+The following example uses Amazon Simple Email Service (SES):
+Note that newly created SES accounts are placed in an "AWS SES Sandbox" and will not be able to send emails to unverified domains/addresses until they have been removed from the Sandbox: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html
 
 1.	Create SMTP Credentials
     a.	Log into AWS Console
@@ -42,7 +43,7 @@ Use Amazon Simple Email Service (SES)
 
 |aws_ses|
 
-    e.	Click “Download Credentials” as the password will not be shown again
+    e.	Click “Download Credentials” **as the password will not be shown again**
 
 
 2.	Verify an Email Address
@@ -56,12 +57,12 @@ Use Amazon Simple Email Service (SES)
     
     
 3.	Configure Aviatrix Controller to use AWS SMTP email server
-    a.	SMTP Server: email-smtp.us-east-1.amazonaws.com
-    b.	Port: 587
-    c.	Sender Email: <from step 2: your verified email>
-    d.	Sender Login: <from step 1: your Smtp Username>
-    e.	Sender Password: <from step 1: your Smtp Password>
-    f.	Test Email: <from step 1: your Smtp Username>
+    a.	SMTP Server: email-smtp.us-east-1.amazonaws.com <note that this value is regional and may differ based on the region of your verified address(es). You can confirm this from AWS Console > Services > SES > SMTP Settings > Server Name>
+    b.	Port: 587 
+    c.	Sender Email: <From Step 2: your verified email>
+    d.	Sender Login: <From Step 1e: your SMTP Username>
+    e.	Sender Password: <From step 1e: your SMTP Password>
+    f.	Test Email: <From Step 2: your verified email>
     g.	Protocol: TLS
     h.	Click “Save”
 
