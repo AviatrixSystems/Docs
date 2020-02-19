@@ -11,7 +11,7 @@ Encrypt EBS Volume
 Description 
 ------------
 
-This feature is used to encrypt your gateway EBS volume. Note that you will need to disable the `Gateway Single AZ HA  <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_ on your gateway prior to encrypting its EBS volume.
+This feature is used to encrypt your gateway EBS volume. Note that you will need to disable the `Gateway Single AZ HA  <https://docs.aviatrix.com/HowTos/gateway.html#gateway-single-az-ha>`_ on your gateway prior if you are running a release prior to 5.2 before encrypting its EBS volume. On 5.2 release and later you do not need to disable the Single AZ HA before encrypting.
 
 
 Prerequisite
