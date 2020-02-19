@@ -37,7 +37,7 @@ Do not launch the firewall instance from AWS Console as you can launch it on the
 
  - `Palo Alto VM-Series <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_
  - `Check Point CloudGuard <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Check+Point+>`_
- - Fortinet FortiGate <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Fortinet>`_
+ - `Fortinet FortiGate <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Fortinet>`_
 
 
 3. Create a Firewall Domain
