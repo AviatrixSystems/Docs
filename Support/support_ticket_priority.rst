@@ -20,7 +20,7 @@ Aviatrix customers may create a support ticket via
 Ticket Priority Guidelines
 --------------------------
 * Priority 1: Production system down (Email subject should include “P1” keyword)
-* Priority 2: System working, degraded functionality
+* Priority 2: System working, degraded functionality (Email subject should include “P2” keyword)
 * Priority 3: General questions, requests, comments (Default priority if not specified)
 
    .. note::
