@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+R5.3.1399 (2/20/2020)
+======================
+
+**Bug fix** CloudWAN gateway instance not programming ingress security group. 
+
 R5.3.1391 (2/17/2020)
 ========================
 
