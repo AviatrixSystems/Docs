@@ -51,7 +51,7 @@ a.  Launch from marketplace, select the license type and click Create
     |dropdown|
 
 #.  At Basics header, create new Resource Group titled "aviatrix" , virtual machine name can be "aviatrixController". 
-    For instance size we recomend at least 8GB of RAM so B2ms should be sufficient. Next enter a username, password and 
+    For instance size we recommend at least 8GB of RAM so B2ms should be sufficient. Next enter a username, password and
     Resource group, click OK.
 
     |Azure_Basics|
@@ -61,7 +61,7 @@ a.  Launch from marketplace, select the license type and click Create
 
     |Networking|
 
-#.  The management, advanced, and tag heders should not need any configuration.
+#.  The management, advanced, and tag headers should not need any configuration.
 
 #.  Finish launching the VM by hitting the create button.
 
@@ -79,7 +79,7 @@ a.  Launch from marketplace, select the license type and click Create
 
 #. Go through the login process.
 
-#. Start with the onboarding tab at the console.
+#. Start with the Onboarding tab at the console.
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller console. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
@@ -98,7 +98,7 @@ After the latest software is downloaded, re-login again to go through the onboar
 
 5. Onboarding
 ==============
-The purpose of onboarding is to help you setup an account on the Aviatrix Controller that
+The purpose of Onboarding is to help you setup an account on the Aviatrix Controller that
 corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
 APIs.
 
