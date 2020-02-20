@@ -2,6 +2,90 @@
 Release Notes
 =======================================
 
+R5.3.1399 (2/20/2020)
+======================
+
+**Bug fix** CloudWAN gateway instance not programming ingress security group. 
+
+R5.3.1391 (2/17/2020)
+========================
+
+1. AWS Transit Gateway (TGW) Orchestrator
+--------------------------------------------
+
+ - **AWS Transit Gateway (TGW) Inter Region Peering** Allows you to connect TGWs deployed in different regions by using the native AWS TGW Inter Region Peering. Aviatrix solution enables you to implement Security Domains in a global fashion where you can specify a Security Domain in one region to connect a Security Domain in a different region. Read more on `TGW Inter Region Peering <https://docs.aviatrix.com/HowTos/tgw_plan.html#tgw-inter-region-peering>`_.
+ - **Update Spoke VPC CIDR** applies to an attached Spoke VPC and allows you to update Spoke VPC CIDR after it is attached to TGW, for example, new subnets or route tables are added to the Spoke VPC. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Update Spoke VPC CIDR. 
+ - **Edit Spoke VPC Customized Routes** allows you to edit Spoke VPC route table entries that target to TGW. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Customized Routes.
+ - **Edit Spoke VPC Advertised Routes** allows you to advertise to TGW via Controller a different set of routes other than the default VPC CIDR. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Advertised Rotues to edit. 
+ - **A Spoke VPC to Attache to Multiple TGWs** allows you to attach a Spoke VPC to multiple TGWs as long as the VPC route tables do not have conflicting route entries.
+ - **Spoke VPC Reachability** shows all VPCs and attachments that a given Spoke VPC can reach by `Connection Policies <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_. To view, go to TGW Orchestrator -> List/Edit, highlight one attachment, select Attachment Reachability at the 3 dots skewer. 
+
+2. Networking 
+--------------------
+
+ - **CloudWAN Tags** allows you to create a tag (template) that consists of list of CLI configuration commands and applies to routers that are attached to it. The use case is if you need to customize CLI commands that are outside the automated BGP & IPSec configuration by CloudWAN, you can do so by creating one or more tag and apply to the routers at once. To learn more, read `CloudWAN Tags <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#configuration-tags>`_. 
+ - **CloudWAN Saves & Restore Config Versions** Allows you to save and restore a complete IOS configuration for a branch router. To learn more, go to `Save & Restore Config <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#save-config>`_.
+ - **Use NLB to load balance UDP based User VPN** allows you to use AWS Network Loadbalancer for UDP traffic to scale out User VPN solution. The advantage for the deployment is improved throughput performance comparing to TCP based VPN solution.  
+
+3. Security
+--------------
+
+ - **PrivateS3** allows you to whitelist S3 buckets access from on-prem over AWS Direct Connect private VIF without data leakage. If you transfer data to/from S3 using the high bandwidth Direct Connect, currently there is no solution to do so without the risk of data being transferred to unauthorized S3 buckets.  To learn more, read `PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_ 
+ - **Aviatrix Transit Gateway Edge Segmentation** allows you to specify which `Aviatrix edge VPN connection <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ can communicate with which Security Domain in TGW deployment. To learn more, read `Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_.
+ - **Aviatrix Transit FireNet for Azure** allows you to deploy firewall instances in Azure. For more information, check out `Transit FireNet FAQ <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_.
+ - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case. The Controller monitors the firewall instances' health and automatically detach the unhealthy instance and reattach when it becomes healthy. Note static routes need to be programmed on the firewall instances. 
+ - **Fortinet FortiGate** can be launched from Aviatrix Controller for FireNet use case. The Controller monitors the firewall instances' health and automatically detach the unhealthy instance and reattach when it becomes healthy. Note static routes need to be programmed on the firewall instances.
+ - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. To enable, go to Fiewall Network -> Advanced, highlight one FireNet gateway, click the 3 dots skewer. At Fail Close, click Enable.
+
+4. Operation
+-------------
+
+ - **Approval for BGP Learned Routes** Enables you to explicitly make a decision if a dynamically learned routes be allowed to propagate to your cloud network. One use case is to apply this feature to a TGW VPN/DXGW that connects with a partner network where you can control which learned routes are allowed to propagate. This feature applies to both AWS TGW and Aviatrix Transit Gateway dynamically learned routes. To learn more, check out `Approval for TGW <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_ and `Aviatrix Encrypted Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_.
+ - **FlightPath to support IP address** allows either source or destination to be IP address based. This enables you to troubleshoot connectivity to, for example, on-prem host with a certain IP address. 
+ - **FlightPath for Azure** allows you to troubleshoot connectivity issues in Azure in a much faster way by pulling relevant information at once and present in a side by side panels. It also provides expert diagnostics to identify problems. To use, go to Troubleshoot -> FlightPath. 
+ - **FlightPath for GCP** allows you to troubleshoot connectivity issues in GCP in a much faster way by pulling relevant information at once and present in a side by side panels. It also provides expert diagnostics to identify problems. To use, go to Troubleshoot -> FlightPath.
+ - **Dynamically display packets while packet capture is on** allows you to view the packet summary on the Controller console while they are being captured. 
+ - **User VPN Cert Issue Date** displays the date of a VPN user creation. The display is on the Dashboard page. 
+ - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
+ - **Migrate Controller** allows you to migrate your Controller AMI image from ubuntu 14.04 distribution to 18.04 distribution. To migrate, go to Settings -> Maintenance -> Migration.
+
+R5.2.2153 (2/7/2020)
+
+ - **Enhancement** to reduce the number of alert emails. 
+ - **Enhancement** to reject an on-prem learned route if it is a subset of cloud network CIDR. 
+
+R5.2.2122 (1/25/2020)
+========================
+
+ - **Enhancement** Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables. To enable, go to Site2Cloud, click on the connection, scroll down to Actitve Active HA and click Enable. 
+ - **Enhancement** Allow the service account credential to be re-used by GCP projects. 
+ - **Bug fix** Fix Azure gateway memory leak issue. 
+ - **Bug fix** Enhancement to FQDN warning messages.
+ - **Bug fix** Fix issue with Spoke VPC with Customized routes on non ActiveMesh encrypted transit network. 
+ - **Bug fix** Fix issue with Customized DNS server not restored when after backup/restore. 
+
+R5.2.2092 (1/15/2020)
+=======================
+
+ - **Bug fix** Aviatrix Active Mesh Transit Gateway takes exception when building Transit Peering. 
+
+R5.2.2071 (1/10/2020)
+=========================
+
+ - **Bug fix** on-prem adverting the default route 0.0.0.0/0 via TGW DXGW is not propagated through Aviatrix Transit Peering. 
+ - **Bug fix** Fix exception when using "Export to Terraform" feature with Aviatrix created VPC resource. 
+ - **Enhancement** to reduce failover time for Connected Transit deployment.
+
+R5.2.2047 (12/19/2019)
+========================
+
+ - **Bug fix** Azure China upgraded to upgrade from 5.1 to 5.2.
+ - **Bug fix** Aviatrix Transit Gateway with multiple Spoke gateways exhibits memory leaks. 
+ - **Bug fix** GCP gateway replacement function fails.
+ - **Bug fix** GCP gateway names, VPC route table tables and route entry names can exceed cloud provider's limits. 
+ - **Bug fix** Failed to delete IPSec policy when deleting Spoke to Spoke peering. 
+ - **Enhancement** Add remote troubleshoot support on CloudN.
+
 R5.2.2011 (12/06/2019)
 ========================
 
@@ -127,7 +211,7 @@ R5.1.842 (10/1/2019)
 ---------------------------------
 
  - **Firewall Network load balancing from TGW** allows both primary gateway and backup gateway to present its ENI interface so that packets initiated from the Spoke VPCs can be forwarded to both gateways in the AZ affinity or nearest AZ affinity fashion.  
- - **Management access from On-Prem** allows on-prem to access privately (SSH or HTTPS) the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable. Note in this release, both accessing from on-prem via Aviatrix Edge Domain and accessing from TGW plus DXGW/VPN are supported.
+ - **Management access from On-Prem** allows on-prem to connect with private IP address of the firewall device deployed in the Native Firewall Domain, Native Egress Domain and Aviatrix Firewall Domain. To enable, go to TGW Orchestrator -> List, highlight the firewall domain, click Edit, click to enable. Note in this release, both accessing from on-prem via Aviatrix Edge Domain and accessing from TGW plus DXGW/VPN are supported.
  - **Improve FireNet gateway failover time** to be under 16 seconds. 
 
 2. Networking

@@ -4,7 +4,7 @@
 
 
 =========================================================
-Transit Gateway Peering
+Aviatrix Transit Gateway Encrypted Peering
 =========================================================
 
 Transit Gateway Peering connects two or more Aviatrix Transit Gateways in a partial or full mesh manner, as shown in the diagram below. The Aviatrix Transit Gateways may be deployed in AWS or Azure, where each Transit GW connects
@@ -79,6 +79,15 @@ exclude 10.0.0.0/8. With this configuration, Site-1 still accesses Prod-1/Prod-2
 and Site-2 accesses Prod-3/Prod-4 and Dev-3/Dev-4 via its local regional TGW. 
 
 |excluded_tgw_connections|
+
+Default Route Propagation Behavior
+-------------------------------------
+
+If centralized egress is enabled by local TGW FireNet or Transit FireNet, the default route 0.0.0.0/0 is **not**
+propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
+
+On the other hand, if on-prem advertise the default route to the Aviatrix Transit Gateway, this default route is 
+propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
 
 
 .. |multi-region| image:: tgw_design_patterns_media/multi-region.png

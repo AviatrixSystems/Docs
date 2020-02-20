@@ -21,11 +21,15 @@ Pre-upgrade Checklist:
 
 Here are a few steps that we suggest you go through before the actual upgrade. If you are scheduling the upgrade during a maintenance window, you can execute these before the maintenance window, so you can make best use of your downtime.
 
+#. Please check our `pre-operations checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ before any operations on your controller
 #. Ensure that all gateways are in green/up status. If not, please check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
 #. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com.
 #. Please make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process
 #. Please make a backup and check the S3 bucket to make sure the process was successful. If you don't have backup enabled, please follow the `backup instructions <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ to enable it.
+#. If your controller is in AWS and running on a t2/t3 instance type, please make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"
+#. Please make sure that your controller has DNS service available and has public network access - you can verify that by pinging www.google.com at "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility". This is a requirement for upgrade and for the controller to function as designed.
+#. Please run  account audit for all your AWS accounts from "Controller/Accounts/AccountAudit" - please make sure that all of them pass. The IAM policies should be setup as documented. If you have any issues, please look at our `troubleshooting playbooks <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_overview.html>`_
 
 
 How to upgrade software
@@ -89,51 +93,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 How to update AWS-IAM-Policy
 ----------------------------------------
 
-Please also keep your AWS IAM Policies updated to the latest (preferably before upgrading controller software).
-
-Step 01: Login to your AWS GUI console
-
-|common_image1|
-
-Step 02: Go to IAM service
-
-|common_image2|
-
-A. Update “aviatrix-assume-role-policy”:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Step 03: Click "Policies" and search for the policy "aviatrix-assume-role-policy"
-
-If you have not created "aviatrix-assume-role-policy", please see
-`here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-assume-role-policy>`__.
-
-|aviatrix-assume-role-policy_image3|
-
-Step 04: Click Edit Policy
-
-|aviatrix-assume-role-policy_image4|
-
-Step 05: Click tab "JSON"
-
-Step 06: Update Policy: copy and paste the policy text from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`__ and then click button "Review policy" and button "Save changes".
-
-B. Update “aviatrix-app-policy”:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Step 07: Click "Policies" and search for the policy "aviatrix-app-policy"
-
-If you have not created "aviatrix-app-policy", please see
-`here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#create-aviatrix-app-policy>`__.
-
-|aviatrix-app-policy_image5|
-
-Step 08: Click Edit Policy
-
-|aviatrix-app-policy_image6|
-
-Step 09: Click tab "JSON"
-
-Step 10: Update Policy: copy and paste the policy provided by `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__ and then click button "Review policy" and button "Save changes".
+Login to the Controller, go to Accounts -> Access Accounts -> click on an AWS account, click the 3 dots skewer. In the drop 
+down menu, select Update Policy, click OK to confirm. The IAM policy will be automatically updated. 
 
 .. note::
    

@@ -29,6 +29,19 @@ Packet Capture
 
 This tool enables a gateway to capture the forwarding packets for a period of time with the specified host, port, network interface, and packet length.
 
+Here are some Wireshark tips:
+
+ 1. **Sort the conversations** On Wireshark, go to Statistics -> Conversations. All Conversations captured are displayed in the pop up window. For each conversations, it shows how many bytes are transferred in which direction. 
+
+ 2. **Filter on conversation** From the above pop up window, select one conversation. Right click on the conversation, select Apply as Filter -> A <-> B. The Wireshark capture window will automatically filter the other conversation out. 
+
+
+ 3. **View Throughput** On Wireshsark, go to Statistics -> TCP Stream Graphs -> Throughput. The Throughput for this TCP session will be displayed in a pop up window. 
+
+An example screenshot on conversation filtering is shown as below. 
+
+|wireshark_filter|
+
 
 Controller Utility
 ~~~~~~~~~~~~~~~~~~~~
@@ -221,6 +234,9 @@ Connectivity Test
 When you select the Source Network and Destination Network, the Aviatrix Controller will spin up two instances 
 and run a connectivity test. After the test completes, you can re-run the test. There is only one pair of test endpoints that is valid at any given time. If you want to test a different endpoint, delete the current pair and launch a new pair. 
 
+
+.. |wireshark_filter| image:: troubleshoot_diag_media/wireshark_filter.png
+   :scale: 30%
 
 
 .. disqus::

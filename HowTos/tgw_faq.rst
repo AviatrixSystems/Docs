@@ -4,10 +4,10 @@
 
 
 ============================================================
-Next Gen Transit for AWS  FAQ
+AWS TGW Orchestrator FAQ
 ============================================================
 
-What is the Next Gen Transit for AWS?
+What is the AWS TGW Orchestrator?
 ---------------------------------------
 
  1. Orchestrates VPC to VPC and on-prem to VPC connectivities via AWS Transit Gateway. 
@@ -16,6 +16,7 @@ What is the Next Gen Transit for AWS?
  #. Out-of-the-box integration of AWS Transit Gateway and Direct Connect and Internet to re-use what has been built. 
  #. Provides `Insane Mode high performance <https://docs.aviatrix.com/HowTos/insane_mode.html>`_  and features rich hybrid network for connecting to on-prem.
  #. Supports Bring Your Own Firewall to TGW deployment for inline traffic inspection (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_) 
+ #. Orchestrate AWS TGW Inter Region Peering and expand the Security Domains to be global.  
  #. Advanced mode for end to end encryption where Aviatrix gateways are deployed in the AWS Spoke VPCs and Azure Spokes VNet.
 
 The AWS Transit Gateway Orchestrator is illustrated in the diagram below.
@@ -192,23 +193,45 @@ Aviatrix_Edge_Domain is always connected to the Shared_Service Domain and the De
 
 
 How do I deploy the Transit Gateway Orchestrator?
----------------------------------------------
+----------------------------------------------------
 
 The Transit Gateway Orchestrator is deployed in two stages. 
 
- - `Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_: Define and setup Security Domains and Connection Policies.
- - `Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_: Attach a VPC to Transit Gateway and Security Domain.
+ - `Orchestrator Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_: Define and setup Security Domains and Connection Policies.
+ - `Orchestrator Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_: Attach a VPC to Transit Gateway and Security Domain.
 
 In addition, you can 
 
- - **List**: 
+Orchestrator List/Edit 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
       - **Show Details** on what is programmed in the VPC route tables and Transit Gateway route table for a given VPC. 
       - **Audit Routes** to discover incorrectness in VPC route tables and Transit Gateway route tables for a given VPC. 
       - **Update VPC CIDR** to update propagated routes to TGW when a new VPC CIDR is added to VPC. 
+      - **Edit Spoke VPC Customized Routes** allows you to edit Spoke VPC route table entries that target to TGW. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Customized Routes.
+      - **Edit Spoke VPC Advertised Routes** allows you to advertise to TGW via Controller a different set of routes other than the default VPC CIDR. To configure, go to TGW Orchestrator -> List, select the Spoke VPC, click the 3 dots skewer and select Edit Spoke VPC Advertised Rotues to edit.
       - **Update DXGW Allowed Prefix** if you like to change the summarized prefix after the DXGW has been attached to TGW.
- - **View**: View what VPC members are attached to Security Domains and Connection Policies. 
- - **Test**: instance to instance end-to-end Troubleshoot. 
- - **Audit**: Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
+
+Orchestrator View
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+View what VPC members are attached to Security Domains and Connection Policies. 
+
+Orchestrator Test 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Instance to instance end-to-end Troubleshoot. For more information, refer to `FlightPath <https://docs.aviatrix.com/HowTos/flightpath.html>`_. 
+
+
+**TGW Audit**
+^^^^^^^^^^^^^^^^^
+
+Audit the correctness of route entries of all attached VPC route tables and its associated TGW route tables including connection policy introduced route propagation. 
+
+**TGW Approval**
+^^^^^^^^^^^^^^^^^^^
+
+Refer to this `link <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_.
 
 What can be displayed at the View page?
 -----------------------------------------
@@ -252,7 +275,7 @@ and connect this domain to your Prod domain, and if needed, also to the Dev doma
 special VPC to this domain, it will have connectivity to Prod domain. 
 
 How does the CSR based Transit VPC solution compare with the Transit Gateway?
------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Transit Gateway significantly simplifies building VPC connections. But the Transit Gateway itself is functionally incomplete for hybrid connection.
 For example, the Transit Gateway does not propagate routes to Spoke VPCs, which means using a Transit Gateway alone does not offer a functional hybrid
@@ -282,7 +305,7 @@ shows how the CSR Transit VPC, the Transit Gateway and the Aviatrix Orchestrator
 |tgw_transit_orchestrator_compare|
 
 What value does an Aviatrix gateway provide in the Transit Gateway Orchestrator?
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 An Aviatrix gateway deployed at the edge/transit VPC provides the following values:
 
@@ -297,7 +320,7 @@ An Aviatrix gateway deployed at the edge/transit VPC provides the following valu
  - Supports 10Gbps Transit network throughput.
 
 When a VPC is attached to a TGW, why can't I simply program the default route in the VPC route table to point to the TGW?
-----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 In some cases, you absolutely can. For example, if you have a group of VPCs that need to be connected to each other, 
 you can attach each VPC to the same TGW route table with propagation enabled. Then program each VPC route table 
@@ -355,6 +378,29 @@ Integrate Firewall deployment                      Yes                          
 =========================================          =============================            =============================
 
 
+What is Edge Segmentation?
+---------------------------------------------------
+
+Edge Segmentation allows you to further specify on each edge connection which domain it can communicate with.
+
+At `Setup Aviatrix Transit GW <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aviatrix-transit-gw>`_, you can select 
+Edge Segmentation for each connection. When this option is selected, you can then use `Build Your Domain Connection Policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_ to specify which Security Domain this edge connection can 
+communicate with, as shown in the diagram below. 
+
+|edge_segmentation| 
+
+In the above diagram, Site 1 can communicate with Prod domain but not with Dev domain and Shared Service domain. Site 2 can communicate with Dev domain but not with Prod domain and Shared Service domain.Site 3 can communicate with Shared Service domain but not with 
+Dev domain and Prod domain. 
+
+Edge Segmentation works across Connection Policies for `AWS TGW Peered <https://docs.aviatrix.com/HowTos/tgw_plan.html#tgw-inter-region-peering>`_ Security Domains. 
+
+.. note::
+
+ The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. 
+
+To enable Edge Segmentation, go to Transit Network -> Setup -> Step 3, Connect to VGW/External Device/CloudN, to select the option "Enable Edge Segmentation".
+
+
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
@@ -373,6 +419,12 @@ Integrate Firewall deployment                      Yes                          
    :scale: 30%
 
 .. |tgw_transit_orchestrator_compare| image:: tgw_overview_media/tgw_transit_orchestrator_compare.png
+   :scale: 30%
+
+.. |edge_segmentation| image:: tgw_overview_media/edge_segmentation.png
+   :scale: 30%
+
+.. |tgw_approval| image:: tgw_overview_media/tgw_approval.png
    :scale: 30%
 
 .. disqus::

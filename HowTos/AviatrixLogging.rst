@@ -67,6 +67,7 @@ Management System for further analysis:
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfirenet>`_
+- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixvpnversion>`_
 
 Below are the details of each log keyword. 
 
@@ -232,14 +233,9 @@ Two example logs:
 
 ::
 
-  May 24 10:54:40 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#137 P:7025
-  Gateway=bogusGw hostname=www.google.com state=MATCHED
+  2019-12-12T04:33:46.892381+00:00 ip-172-32-0-6 avx-nfq: AviatrixFQDNRule2[CRIT]nfq_ssl_handle_client_hello() L#281  Gateway=spoke1-fqdn S_IP=172.32.1.144 D_IP=52.218.234.41 hostname=aviatrix-download.s3-us-west-2.amazonaws.com state=MATCHED  Rule=*.amazonaws.com;1
 
-  May 24 10:17:08 ubuntu64-dev avx-nfq:
-  AviatrixFQDNRule[CRIT]nfq_ssl_handle_client_hello() L#162 P:6138
-  Gateway=bogusGw hostname=clients2.google.com state=NO_MATCH
-  drop_reason=NO_HOSTNAME_MATCH
+  2019-12-12T04:36:53.173210+00:00 ip-172-32-0-6 avx-nfq: AviatrixFQDNRule1[CRIT]nfq_ssl_handle_client_hello() L#281  Gateway=spoke1-fqdn S_IP=172.32.1.144 D_IP=98.137.246.7 hostname=www.yahoo.com state=NO_MATCH drop_reason=NOT_WHITELISTED
 
 AviatrixTunnelStatusChange
 --------------------------
@@ -330,6 +326,17 @@ Example log:
   2019-11-19T09:40:12.878075-08:00 ip-172-31-93-101 cloudxd: AviatrixFireNet: Firewall i-021f23187b8ac81c9~~tran-fw-1 in FireNet VPC vpc-0f943cd05455358ac~~cal-transit-vpc-1 state has been changed to up.
 
 
+AviatrixVPNVersion
+-------------------
+
+Log messages with this prefix come from the Controller whenever it rejects an Aviatrix VPN client connection.
+
+Example log:
+
+::
+
+  2020-02-07T11:38:48.276150-08:00 Controller-52.204.188.212 cloudxd: AviatrixVPNVersion:  The VPN connection was rejected as it did not satisfy the minimum version requirements. Current version: AVPNC-2.4.10 Required minimum version: AVPNC-2.5.7 . The rejected VPN user name is tf-aws-52-tcplb-user1
+
 3. Logging Configuration at Aviatrix Controller
 ================================================
 
@@ -346,6 +353,7 @@ On the Aviatrix Controller:
   #. Server Public Certificate: Public certificate of the controller signed by the same CA
   #. Server Private Key: Private key of the controller that pairs with the public certificate
   #. Protocol:	TCP or UDP (TCP by default)
+  #. Optional Custom Template: (Deprecated)
   
 On the Remote syslog server:
 
@@ -409,31 +417,36 @@ Then
   #. Each controller/gateway directory should have
         a. auth.log
         #. syslog
- 
-3.2 Logstash Forwarder
+
+
+3.1.a Using Rsyslog to send logs to Sumo
+-------------------------------------------
+
+Since Sumo agents on the controller and gateways tend to consume a lot of cpu/memory resources, we strongly suggest that rsyslog is used instead to send logs to Sumo. This is `documented by Sumo <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_. Follow the following instructions:
+
+  #. Follow the directions in `Sumo document  <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_ to create a cloud syslog source on your collections. Save the token, host and tcp tls port.
+  #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
+  #. Enter the Server ip/fqdn that you received from the first step
+  #. Provide the port - obtained from the first step
+  #. Upload the CA cert from Sumo pointed by their documentation
+  #. Keep the Protocol set to TCP
+  #. For Optional Custom Template, copy the following string into a new text file and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step and upload it. Please do keep the square brackets around the token.
+  
+  ::
+
+<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\n
+
+  #. Click on Advanced, if you want to selectively send logs from only some gateways
+  #. Click on Enable
+
+
+3.2 Filebeat Forwarder
 -----------------------
 On the Aviatrix Controller:
-  a. Server Type:	Remote or Local
-  #. Server:	FQDN or IP address of logstash server
+  a. Server:	FQDN or IP address of logstash server
   #. Port:	Listening port of logstash server (5000 by default)
-  #. Trusted CA:	CA certificate (.crt format)
+  #. Optional Configuration File:	(Deprecated)
 
-Note:
-If "Local" is selected for "Server Type", the Aviatrix Controller itself will be enabled as a logstash server. Before you do this, make sure your controller has at least 30GB of hard disk space. 
-
-On the Logstash console:
-  Log into the web page of your logstash server to access the logs. 
-
-  The Kibana interface is divided into four main sections:
-  
-  a. Discover
-	By default, this page will display all of your most recently received logs. You can filter through and find specific log messages based on Search Queries, then narrow the search results to a specific time range with the Time Filter. 
-  b. Visualize
-	The Visualize page is where you can create, modify, and view your own custom visualizations.
-  c. Dashboard
-	The Dashboard page is where you can create, modify, and view your own custom dashboards. With a dashboard, you can combine multiple visualizations onto a single page, then filter them by providing a search query or by selecting filters by clicking elements in the visualization.
-  d. Settings
-	The Settings page lets you change a variety of things like default values or index patterns.
 
 3.3 Splunk Logging
 -------------------
@@ -441,6 +454,7 @@ On the Aviatrix Controller:
   a. How to configure:	Manual Input or Import File
   #. Splunk Server:	FQDN or IP address of Splunk Enterprise Server
   #. Splunk Server Listening Port:	Listening port of Splunk Enterprise Server
+  #. Splunk inputs.conf stanza: (Deprecated)
 
 Note:
 If "Import File" is selected for "How to configure", please provide the Splunk configuration file. 
@@ -449,7 +463,10 @@ If "Import File" is selected for "How to configure", please provide the Splunk c
 -------------------
 On the Aviatrix Controller:
    a. Access ID : ID of SumoLogic server
-   b. Access Key: Access key of SumoLogic server
+   #. Access Key: Access key of SumoLogic server
+   #. Source Category: The category string of the source
+   #. Additional Configurations: (Deprecated)
+
 Steps to `upgrade <http://docs.aviatrix.com/HowTos/sumologic_upgrade.html>`_
 Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 

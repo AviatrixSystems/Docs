@@ -22,9 +22,13 @@ Transit FireNet builds on the Aviatrix Encrypted Transit Network. Follow the `Av
 
   for AWS deployment, Transit FireNet works when the Aviatrix Transit Gateway is launched with ActiveMesh enabled. 
 
-  Transit FireNet works when the Transit Network is in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable. 
+  Transit FireNet works when the Aviatrix Encrypted Transit Network is in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable. 
 
 In the drop down menu, select one Aviatrix Transit Gateway and click Enable. 
+
+.. important::
+
+  For Azure deployment, the Aviatrix Transit Gateway must be `"launched" <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ with the option Enable Transit FireNet Function enabled. The minimum Azure FireNet gateway size is Standard_B2ms.
 
 2. Manage Transit FireNet Policy
 --------------------------------------

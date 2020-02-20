@@ -90,9 +90,10 @@ How can I debug IAM related issues? (IAM Debug Playbook)
 Why do I get an email alert about my gateway with "Cloud Message Queue Failure" message?
 -----------------------------------------------------------------------------------------------
 
-Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS. Please check the following:
+Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS, either because it cannot resolve/reach AWS SQS or does not have the permissions to retrieve the messages from AWS SQS(i.e. dns, network connectivity, system issues, IAM permissions). Please check the following:
 
-  * Please run `gateway diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ by going to "Controller/Troubleshoot/Diagnostics/Gateway" and pick the gateway and run diagnostics test and "submit" them to us. You can also review the results by referring to the service descriptions in diagnostics <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
+  * Please run `gateway diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ by going to "Controller/Troubleshoot/Diagnostics/Gateway" and pick the gateway and run diagnostics test and "submit" them to us. You can also review the results by referring to the `service descriptions in diagnostics <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
+  * Please make sure that the DNS can resolve public FQDN's and not just private FQDN's
   * Go to "Controller/Troubleshoot/Diagnostics/Network/GatewayUtility", pick the gateway and ping www.google.com - to see if it can resolve names and if it has network connectivity.
   * Check that this gateway has the `right IAM policies <https://docs.aviatrix.com/Support/support_center_controller.html#why-are-iam-policies-important>`_
   
@@ -103,4 +104,45 @@ Typically, this message is sent when a gateway is not able to access the message
     * If the gateway is not on the same account as the Controller, please makse sure that this access account has trust relationship to the primary account (the Controller’s AWS account).
   * Please make sure that both your contoller and gateway have an EIP associated and not just a PublicIP/PrivateIP
   * Please note that this check is done once a day - after you address the issues, please wait for 24 hours from the previous alert to see if you will receive another alert
+  * Sometimes, this could be a transient issue which will resolve due to temporary dns/network failures
   * If you are not able to find and address the issue, please `upload the tracelogs <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ for this gateway and send an email to support@aviatrix.com to open a new ticket.
+
+
+
+How do you launch a controller in GovCloud?
+-------------------------------------------------------------------------
+
+Pre-deployment checklist:
+  * Prepare a VPC with a public subnet (i.e., with 0.0.0.0/0 route points to IGW)  to launch the controller.
+  * Go to EC2/Network & Security/Key Pairs to create a key pair.
+  * Note that AWS US-EAST region does not support t2.large. Pick t3.large instead to avoid deployment failure.
+  
+Launch from CloudFormation template:
+  * Copy the Aviatrix CloudFormation template URL from your AWS commerical cloud account as follows:
+  
+    * The CloudFormation links (Metered or BYOL) listed in https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products should prompt you to login to your AWS commerical account and bring you into the CloudFormation-Create-stack UI.
+    * Look under the Amazon-S3-URL field for the actual Metered/BYOL template URL
+    * Copy the URL
+  * Launch the CloudFormation template by following these steps:
+
+    * Login to your GovCloud account
+    * Go to Service/CloudFormation/Create Stack, enter the Aviatrix CloudFormation template URL copied in the previous step
+    * Click Next and follow the typical CloudFormation Deployment process.  
+ 
+Launch from EC2/Instances/Launch Instance/AWS Marketplace manually:
+  * You would need to create the Aviatrix-role-ec2, Aviatrix-role-app, Aviatrix-assume-role-policy and Aviatrix-app-policy `manually <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html#setup-secondary-account-iam-manually>`_. In addition, you would need to change the Resource of AssumeRole Action in Aviatrix-assume-role-policy from "arn:aws:iam::*:role/aviatrix-*" to "arn:aws-us-gov:iam::*:role/aviatrix-*", making sure the arn is pointing to using aws-us-gov.
+  * Launch the controller by picking an Aviatrix image under EC2/Instances/Launch Instance/AWS Marketplace.
+  
+Other notes:
+  * Flightpath with AWS Govcloud does not work unless a Commerical AWS account is also registered on the controller. Register a commerical AWS cloud account with the controller:
+  
+    * Goto Accounts/Access Accounts/Add Account
+    * Pick AWS and uncheck IAM role-based checkbox
+    * Populate your AWS Access Key ID/Account Number/Secret key. 
+  * Controller `VPC tracker <https://docs.aviatrix.com/HowTos/vpc_tracker.html>`_ is not yet supported for GovCloud
+  
+
+Can I change my AWS Access Account auth between IAM role based and Accesskey?
+-------------------------------------------------------------------------------
+
+You can change between IAM rolebased and accesskey based authentication on  AWS accounts from "Controller/Accounts/AccessAccounts/SelectAccount/Edit" when there are no resources on this account. If any resources, such as Gateway's are created, you will not be able to switch over

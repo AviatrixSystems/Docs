@@ -161,6 +161,7 @@ For customers who previously set up the Aviatrix Terraform provider prior to the
   * Please note that the ``version`` refers to the Aviatrix Terraform release number. Refer to our `provider release notes <https://github.com/terraform-providers/terraform-provider-aviatrix/releases>`_
 
 Please also note that previously, customers were to match and build the branch of the provider corresponding to the Controller version. Now, customers should use whichever latest ``version`` is compatible with their Controller.
+You should follow the `Aviatrix Provider: Release Compatibility Chart <https://www.terraform.io/docs/providers/aviatrix/guides/release-compatibility.html>`_ to ensure terraform compatibility with your current Aviatrix controller version. 
 
 * **EXCEPTION: For customers on Controller 4.7.x, please note there are multiple releases to support various configurations:**
 

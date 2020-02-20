@@ -15,13 +15,16 @@ to attach VPCs.
 
 For background information, refer to `AWS Transit Gateway  Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
-The plan stage consists of three sections:
+The plan stage consists of 4  sections:
 
  1.  **Create AWS Transit Gateway**. This is the only must-do section in Plan before you start to Build (attach VPCs) and consists of `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_. In this section, an AWS Transit Gateway and three connected Security Domains are created.  
 
  #.  **Create Segmented Network**. This is an optional section. It consists of `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ and `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_. This section creates your own additional Security Domains and define Connection policies. This section is entirely modular and you can modify at any time. 
 
  #.  **Create Hybrid, multi region or multi cloud Connection**. This is an optional section. It consists of `Step 4 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-setup-aviatrix-transit-gw>`_, `Step 5 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-enable-aviatrix-transit-gw-for-hybrid-connection>`_ and `Step 6 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-attach-aviatrix-transit-gw-to-tgw>`_. This section launches an Aviatrix Transit Gateway at the edge VPC, builds a hybrid connection to on-prem or another Aviatrix Transit gateway cluster, or deploys Transit DMZ . If you need hybrid connectivity, Step 4, 5 and 6 must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
+ 
+ #. **TGW Native Edge Connections**. This is an optional section. It creates TGW VPN, TGW DXGW and TGW Inter Region Peering. It consists of Step 7 & Step 8. 
+ 
 
 In the planning stage, think about what network segmentation you need to achieve. For example, do you need to segment Dev/QA VPCs 
 from your Prod VPCs, i.e., no connectivity is allowed between these VPCs in each group? The plan stage creates Transit Gateway and Transit Gateway route tables in AWS. There is no charge either by AWS or Aviatrix.
@@ -203,7 +206,7 @@ on-prem. (Make sure instance security groups and any on-prem firewalls are confi
 
 ------------------------------------------------------------------------------------------------
 
-This section consists of TGW native VPN and Direct Connect functions. 
+This section consists of TGW native VPN, Direct Connect and TGW Inter Region Peering functions. 
 
 Since TGW does not propagate learned routes from DXGW or VPN to Spoke VPCs, Aviatrix Controller solves 
 this problem by periodically polling the TGW route table and programming the learned routes to attached Spoke VPCs.
@@ -216,7 +219,7 @@ This section configures a native VPN connection from TGW. It takes two steps: fi
 Step 7 Setup VPN Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This step creates a VPN connection in TGW `Default_Domain. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-the-default-domain>`_
+This step creates a VPN connection from TGW in a selected Security Domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -227,6 +230,9 @@ Remote Public IP                                Remote site public IP address
 Dynamic (BGP) or Static                         Use BGP to connect to remote site or static IP
 Remote CIDRs                                    When Static is selected, enter a list of CIDRs separated by comma. 
 Remote AS Number                                When Dynamic is selected, enter the AS number of the remote site. 
+Security Domain Name                            Select a Security Domain to associate the VPN attachment with
+Learned CIDR Approval                           Select the option to enable `Approval <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_. This option applies to Dynamic (BGP) mode only.
+Global Acceleration                             Select the option to enable AWS Accelerated VPN
 ==========================================      ==========
 
 Step 8 Download VPN Configuration
@@ -261,12 +267,62 @@ AWS Transit Gateway Name                        The name of a TGW created by `TG
 Direct Connect Gateway Account Name             The Aviatrix Access Account name that created AWS Direct Connect Gateway
 AWS Direct Connect Gateway                      The AWS Direct Connect Gateway you created from AWS Console
 Allowed Prefix                                  A list of comma separated CIDRs for DXGW to advertise to remote (on-prem)
+Security Domain Name                            Select a Security Domain to associate the VPN attachment with
+Learned CIDR Approval                           Select the option to enable `Approval <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_. This option applies to Dynamic (BGP) mode only.
 ==========================================      ==========
 
 Step 8 Update Direct Connect Network Prefix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use this step to update the "Allowed Prefix" to advertise to on-prem.
+
+TGW Inter Region Peering
+-----------------------------
+
+TGW inter region peering is a feature where Controller orchestrates AWS TGW peering. In addition, the 
+Controller programs and propagates network CIDR of Spoke VPCs and Edge Domains in a Security Domain to 
+the remote TGW deployment, thus providing the end-to-end turn key solution. 
+
+It takes two steps to connect two Security Domains in two regions. 
+
+.. tip::
+
+  Your Controller may not have the latest IAM policies to execute TGW peering, go to Accounts -> Access Accounts. Click the 3 dot skewer for the account where TGW is deployed and click Update policy. Do so for the all TGW accounts if you wish to TGW build inter region peering.
+
+
+
+a. Create TGW Peering Attachment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step connects two TGWs in different regions using AWS native TGW Peering. It automatically creates two Security Domains associated with each 
+TGW and respective attachment ID. 
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Cloud Type 1                                    Select AWS or AWS GovCloud
+Region 1                                        Select a region where the one TGW is deployed
+AWS Transit Gateway Name 1                      Select an AWS TGW Created `here <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_
+Cloud Type 2                                    Select AWS or AWS GovCloud
+Region 2                                        Select a region where the peering TGW is deployed
+AWS Transit Gateway Name 2                      Select an AWS TGW Created `here <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_
+==========================================      ==========
+
+b. Build Connection Policies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+After step a is completed, go to `Add/Modify Connection Policies  <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. Refresh the page. The peered TGW with its Security Domains should appear on 
+Not Connected panel. Select one remote Security Domain and click Add. Repeat this step for all intended connection, 
+as shown in the diagram below. 
+
+|tgw_peer|
+
+In the above diagram, Dev-1 Domain of TGW-1 has connection policy to Dev-2 Domain of TGW-2. Any VPCs in Dev-1 Domain 
+can communicate with VPCs in Dev-2 Domain.  
+
+Similarly, Prod-1 Domain of TGW-1 has connection policy to Prod-2 Domain of TGW-2. Any VPCs in Prod-1 Domain can
+communicate with VPCs in Prod-2 Domain. However Dev-1 cannot communicate with Prod-2 if there is no connection 
+policy between them. 
 
 --------------------------------------------------------------------------------------
 
@@ -324,5 +380,7 @@ This step delete the AWS Transit Gateway created in Step 1.
 .. |prepare_tgw_attach| image:: tgw_plan_media/prepare_tgw_attach.png
    :scale: 30%
 
+.. |tgw_peer| image:: tgw_plan_media/tgw_peer.png
+   :scale: 30%
 
 .. disqus::

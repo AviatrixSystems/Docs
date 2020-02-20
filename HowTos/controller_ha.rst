@@ -18,7 +18,8 @@ Controller HA in AWS
 Overview
 --------
 
-Aviatrix Controller HA in AWS leverages an auto scaling group and a Lambda function to perform monitoring, launch a new controller and restore the configuration when the active controller instance become unreachable.
+Aviatrix Controller HA in AWS leverages an auto scaling group and a Lambda function to perform monitoring the health of the current Controller, 
+launching a new controller and restoring the configuration when the active controller instance become unreachable.
 
 When a new controller is launched, the existing controller is terminated and its EIP is associated to the newly launched controller.  Existing configuration is restored, resulting in a seamless experience when failover happens.
 
@@ -35,7 +36,7 @@ Prerequisites
 
 * To use Controller HA with an ELB, refer to `here <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_
 
-* S3 bucket for backups
+* Controller has enabled backup function. 
 
 Controller HA Details
 ---------------------

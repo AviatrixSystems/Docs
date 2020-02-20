@@ -16,7 +16,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Gateway Orchestrator`
 * :ref:`Transit Network`
 * :ref:`Firewall Network`
-* :ref:`Transit DMZ`
 * :ref:`Cloud WAN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
@@ -89,18 +88,18 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Transit Gateway Orchestrator
+   :caption: AWS Transit Gateway Orchestrator
 
    HowTos/tgw_faq
    HowTos/tgw_plan
    HowTos/tgw_build
+   HowTos/tgw_approval
    HowTos/tgw_design_patterns
    HowTos/transit_gateway_peering
    HowTos/tgw_csr_migrate
    HowTos/diy_tgw_migrate_to_aviatrix_tgw
    HowTos/transitgw_external
    HowTos/transitvpc_workflow
-   HowTos/transitvpc_faq
    HowTos/transitvpc_design
 
 .. _Transit Network:
@@ -109,8 +108,10 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Encrypted Transit Network
 
+   HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
+   HowTos/transit_approval
    HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
    HowTos/transit_firenet_faq
@@ -140,21 +141,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
 
-.. _Transit DMZ:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Transit DMZ
-
-   HowTos/transit_dmz_faq
-   HowTos/transit_dmz_workflow
-   HowTos/transit_dmz_vendors
-
 .. _Cloud WAN:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Cloud WAN
+   :caption: CloudWAN
 
    HowTos/cloud_wan_faq
    HowTos/cloud_wan_workflow
@@ -174,6 +165,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/fqdn_viewlog
    HowTos/guardduty
    HowTos/public_subnet_filtering_faq
+   HowTos/sfc_faq
+   HowTos/privateS3_workflow
 
 .. _Peering:
 
@@ -203,8 +196,10 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud_oracledrg
    HowTos/S2C_GW_PAN
    HowTos/S2C_GW_CP
+   HowTos/S2C_GW_CP_88
    HowTos/S2C_GW_ASA
    HowTos/S2C_GW_IOS
+   HowTos/site2cloud_sonicwall
    HowTos/CloudToPfSense
    HowTos/site2cloud_fortigate
    HowTos/site2cloud_meraki
@@ -243,6 +238,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/External_PKI_for_OpenVPN_Certificates
    HowTos/user_accelerator
    HowTos/ipv6_multivpc_vpn
+   HowTos/uservpn-TGW
 
 
 
@@ -274,6 +270,10 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Controller_Login_SAML_Config
    HowTos/controller_certificate
    HowTos/fips140-2
+   HowTos/controller_config
+   HowTos/Migration_From_Marketplace
+   HowTos/controller_migration
+
 
 .. _Troubleshoot:
 
@@ -286,7 +286,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/error-msgs
    HowTos/azuregwlaunch
    HowTos/flightpath
-   HowTos/flightpath_deployment_guide
 
 .. _REST APIs:
 
@@ -362,6 +361,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/nextgentransit_for_azure
    HowTos/nat_only_outbound_traffic
    HowTos/activemesh_migration
+   HowTos/openvpn_fqdn
+   HowTos/HowTo_Setup_SAML_with_G_SUITE_ORG
 
 .. _Good To Know:
 
@@ -385,15 +386,20 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Support Center
 
    Support/support_center
+   Support/support_center_operations
    Support/support_center_controller
    Support/support_center_openvpn_gateway
    Support/support_center_transit_solution
+   Support/support_center_egress_firewall
    Support/support_center_logging
    Support/support_center_site2cloud
-   Support/support_center_aws_infrastructure
-   Support/support_center_terraform
-   Support/support_center_egress_firewall
    Support/support_center_ipsec
+   Support/support_center_aws_infrastructure
+   Support/support_center_gcp_infrastructure
+   Support/support_center_terraform
+   Support/support_ticket_priority
+   Support/support_center_useful_tools
+   Support/support_center_cloudn
 
 .. _IPmotion:
 

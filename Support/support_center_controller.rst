@@ -1,6 +1,6 @@
 ﻿.. meta::
    :description: Aviatrix Support Center
-   :keywords: Aviatrix, Support, Support Center
+   :keywords: Aviatrix, Support, Support Center, controller, bacakup, iam, upgrade, rest api, ssl certificate, controller HA, alerts, blackhole, interfaces, keepalive, certificate, dns, idle timeout, migrate controller, ca signed cert, saml auth, lost password
 
 ===========================================================================
 Controller
@@ -272,3 +272,43 @@ How can I use SAML for controller auth when I'm also using SAML for VPN authenti
 ------------------------------------------------------------------------------------------
 
 By default, we use "Hostname" for "Entity Id" when creating the SAML Endpoint in the Controller Console. When you create a second endpoint for controller login, you would have to pick "Custom" for "Entity Id" and use a custom string. You would have to use the same custom string for EntityId when you provision the SAML App at your IdP(Okta, Onelogin, Azure, etc)
+
+How to reset Controller login password if it's lost or forgotten?
+--------------------------------------------------------------
+
+In case if you've lost or forgetten the password to AVX console, please use next steps to repair it:
+
+1. Input the username to Username field, and press “Forgot password” from the login page
+
+|login_page|
+
+2. Check email and find the one time token inside. Message format is :
+
+<<ONE TIME TOKEN>> is the one time Aviatrix token from controller <<IP ADDR AVX CONTROLLER>> and is valid for 15 minutes.
+
+Please pay attention that the token expires in 15 minutes. If you repeatedly get this and think that this is being done by someone with malicious intent, you can restrict the IP's allowed to access your controller through AWS's Security Groups
+
+3. Enter Access Token in Account Verification window:
+
+|verification_window|
+
+4. Type new password for the admin user:
+
+|admin_user|
+
+5. Press Save button and try to login with a new password
+
+.. |login_page| image:: password-recovery-img/Pic1.png
+   :scale: 70%
+   
+.. |verification_window| image:: password-recovery-img/Pic2.png
+   :scale: 70%
+   
+.. |admin_user| image:: password-recovery-img/Pic3.png
+   :scale: 70%  
+   
+
+How can I secure my controller?
+-----------------------------------
+
+Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller.

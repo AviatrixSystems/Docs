@@ -10,8 +10,18 @@ AWS IAM Policies
 The Aviatrix Controller in AWS is launched by `a CloudFormation script  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. 
 During the launch time, two IAM roles are created, aviatrix-role-ec2 and aviatrix-role-app. Two associated IAM policies are also created, `aviatrix-assume-role-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_ and `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_.
 
+Automatically Updating IAM Policies
+--------------------------------------
+
+Login to the Controller. Go to Accounts -> Access Accounts. Select an account and click the 3 dots skewer, click Update Policy. The latest IAM policy will be updated for this account. Repeat this step for all other accounts. 
+
+
+
 Updating IAM Policies
 ---------------------
+
+This section describes how to update IAM policies manually. We recommend you to update automatically follow the instructions 
+in the previous section.
 
 These two roles and their associated policies allow the Controller to use AWS APIs to launch gateway instances, 
 create new route entries and build networks. 

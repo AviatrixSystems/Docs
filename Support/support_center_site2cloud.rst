@@ -69,3 +69,9 @@ If I already have a Site2Cloud connection using IKEv1, could I create another on
 The prerequisite for IKEv2 is that you need to create the first Site2Cloud connection with IKEv2 enabled.
 If your current gateway already have a Site2Cloud connection using IKEv1 which was created prior to 5.0 release, you will need to delete it first before creating the IKEv2 Site2Cloud connection. 
 Alternatively, you can create a new Aviatrix gateway in the same VPC and make the first Site2Cloud connection with IKEv2 enabled.
+
+
+How can I use a S2C with a simple NAT to public IP?
+-----------------------------------------------------------------------------------------------------
+
+If you are planning to NAT your local CIDR behind the Aviatrix Gateway, make sure that you enable SNAT on the gateway (Controller/Gateway/Edit/SourceNAT) and on your S2C configuration set your local subnet to the EIP of the Aviatrix Gateway(/32), so that you do not advertise the real local CIDR to the remote gateway.

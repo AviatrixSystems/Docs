@@ -7,6 +7,39 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
 
+
+Field Notice 0008 (2020/01/07)
+--------------------------------
+
+**Splunk Logging Year 2020 defect**
+
+**Problem:** 
+
+Splunk has published a defect and a fix for their products which impacts the Splunk Forwarder that is integrated into Aviatrix Products. This will affect your deployment only if you have enabled logging via Splunk. Please follow the `published information from Splunk <https://docs.splunk.com/Documentation/Splunk/latest/ReleaseNotes/FixDatetimexml2020.>`_ for more information.
+
+* Beginning on January 1, 2020, un-patched Splunk platform instances will be unable to recognize timestamps from events where the date contains a two-digit year. This means data that meets this criteria will be indexed with incorrect timestamps.
+* Beginning on September 13, 2020 at 12:26:39 PM Coordinated Universal Time (UTC), un-patched Splunk platform instances will be unable to recognize timestamps from events with dates that are based on Unix time, due to incorrect parsing of timestamp data.
+
+**Recommended Solution:**
+
+We have a couple of solutions, ordered by our preference:
+
+* Use rsyslog logging instead of Splunk logging by following the directions at https://docs.aviatrix.com/HowTos/AviatrixLogging.html#introduction. You can continue to use your current Splunk logging system - the difference is that they will receive the logs via rsyslog. This method will allow you to run logging with lower loads on the controllers and gateways and also keep them insulated from such defects in future as rsyslog is a very mature logging mechanism.
+* For Aviatrix version 5.0 or greater: Please go to "Controller/Settings/Maintenance/SoftwarePatches" and click on "Update Available Patches" and patch the "Apply xml file patch for Splunk year 2020 bug". Please verify that the patch is applied by checking the "Patch Status"
+* For Aviatrix version lower than 5.0: Please upgrade to the latest release to access our "Software Patches" feature. Please follow the upgrade instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html
+* For Aviatrix Release>=5.3: If Splunk logging is disabled and then enabled - you don’t have to reapply any patch, as we would install the latest Splunk forwarder client
+
+**Known Issues:**
+
+* After applying the above patch, if a new Gateway is created, you would have to reapply the patch so that it takes effect on the new gateway
+* If Splunk logging is disabled and then enabled - you would have to reapply the patch. This applies to only Aviatrix Release 5.2.
+
+We would like to restate our recommendation to use rsyslog to send logs from your Aviatrix System to your Splunk logging system following these `directions <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#introduction>`_. If you have any question, please open a new support ticket by sending a new email to support@aviatrix.com or by visiting https://aviatrix.zendesk.com.
+
+
+
+
+
 Field Notice 0007 (2019/11/19)
 --------------------------------
 

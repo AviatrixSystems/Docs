@@ -7,21 +7,23 @@
 Transit FireNet FAQ
 =========================================================
 
-What is the Transit FireNet?
+What is the Transit FireNet for AWS & Azure?
 ----------------------------------------------
 
-Aviatrix Transit FireNet is the `Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ function applied to the Transit gateway. 
-With Transit FireNet feature, the FireNet function is integrated into the Transit gateway.. 
+Aviatrix Transit FireNet is the `Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ function applied to the Aviatrix Encrypted Transit architecture. 
+With Transit FireNet feature, the FireNet function is integrated into the Aviatrix Transit gateway. 
 
 The use case is to deploy firewalls in the `encrypted transit architecture <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
-for AWS, as shown below. 
+for both AWS and Azure, as shown below. 
 
 
 |transit_firenet|
 
-When deployed in Azure (available in the future release), Transit FireNet also works when using Native Azure VNet Spokes, as shown below. 
+When deployed in Azure, Transit FireNet also works when using Native Azure VNet Spokes, as shown below. 
 
 |transit_firenet_vnet|
+
+When deployed in Azure, only two firewall instances are supported.
 
 
 Can multiple firewalls be supported in Transit FireNet?
@@ -46,6 +48,15 @@ interfaces:
  - eth2 is the interface to the firewall instances 
  - eth3 is the interface to the HA FireNet gateway
 
+What is the Transit FireNet performance?
+-------------------------------------------
+
+With a pair of c5n.18xlarge Aviatrix Transit Gateway, Transit FireNet achieves 70Gbps throughput with iperf3 benchmark, as shown in the diagram below. 
+
+Note if a single c5n.18xlarge Aviatrix Transit Gateway is deployed, the throughput is about 40Gbps. This is because Aviatrix Encrypted Transit solution runs with ActiveMesh where both Transit Gateways do the packet forwarding. 
+
+|transit_firenet_perf|
+
 Which option should I choose for "Create a VPC" tool"?
 ----------------------------------------------------------
 
@@ -68,6 +79,11 @@ Go to Firewall Network -> Advanced. Click the skewer. Scroll down to "Egress thr
 .. Important::
 
   When Egress through Firewall is enabled, it applies to all Spoke VPCs. You do not need to configure individual VPC inspection policy.
+
+Is Ingress Inspection supported on Transit FireNet?
+----------------------------------------------------
+
+Yes. You need to enable source NAT on the LAN Interface of the VM-Series.
 
 Can I deploy Aviatrix Egress Control FQDN gateway on Transit FireNet?
 ----------------------------------------------------------------------
@@ -104,10 +120,17 @@ Can Firewall Network work with Panorama?
 
 Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_
 
+How does the Controller check Firewall instance health?
+--------------------------------------------------------
+
+For Palo Alto VM-Series, the Controller pings its management interface. 
+
+For Check Point CloudGuard and Fortinet Fortigate, the Controller uses AWS API to check instance health. 
+
 What is the failover time?
 ----------------------------
 
-Aviatrix FireNet gateway failure detection time is 8 - 10 seconds. The switch over to alternative gateway (primary or backup) is about the same time. 
+Aviatrix FireNet gateway failure detection time is 15 - 20 seconds. The switch over to alternative gateway (primary or backup) is about the same time. 
 
 The Aviatrix Controller monitors the health of the firewall instances. For Pal Alto VM-Series, the Controller
 uses Palo Alto API to periodically check the firewall instance health. The polling time is 10 seconds. However depending 
@@ -116,6 +139,9 @@ if you stop the instance from AWS console, it can take a minute before the API a
 
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
+   :scale: 30%
+
+.. |transit_firenet_perf| image:: transit_firenet_media/transit_firenet_perf.png
    :scale: 30%
 
 .. |transit_firenet_vnet| image:: transit_firenet_media/transit_firenet_vnet.png

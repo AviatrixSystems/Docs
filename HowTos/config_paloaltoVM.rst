@@ -8,7 +8,7 @@ Example Config for Palo Alto Network VM-Series
 =========================================================
 
 In this document, we provide an example to set up the VM-Series for you to validate that packets are indeed
-sent to the VM-Series for VPC to VPC traffic inspection.
+sent to the VM-Series for VPC to VPC and from VPC to internet traffic inspection.
 
 For using bootstrap method to setup the VM-Series, follow `this document. <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_
 
@@ -16,7 +16,7 @@ The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `Step 7
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file 
 for SSH access to the instance. 
 
-Below are the steps to setup an "Allow ALL" policy. 
+Below are the steps for initial setup. 
 
 1. Download VM-Series Access Key
 ----------------------------------
@@ -64,7 +64,15 @@ Go to Firewall Network workflow, Step 7a. Click on the `Management UI`. It takes
 
 Login with Username "admin". Password is the password you set at the previous step. 
 
-4. Configure VM-Series ethernet1/1 and WAN Zone
+4. Activate VM license
+------------------------
+
+5. Dynamic updates
+------------------------
+
+From Device > Dynamic Updates > Click on "Check Now" > download and then install latest versions of a. Applications and Threats b. Wildfire updates > Click on "Check Now" again > download and then install latest version of Antivirus
+
+6. Configure VM-Series ethernet1/1 with WAN Zone
 -------------------------------------------------
 
 Once logged in, click on the Network tab and you should see a list of ethernet interfaces. Click ethernet1/1 and 
@@ -90,53 +98,51 @@ Continue,
 
 Click Commit. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/1. 
 
-5. Configure VM-Series ethernet1/2 and LAN Zone
+7. Configure VM-Series ethernet1/2 with LAN Zone
 ---------------------------------------------------
 
 Repeat Step 4 for ethernet1/2. Name the new zone LAN.
 
 Click Commit. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/2.
 
-6. Configure Allow All Policies
+8. Configure Allow Outbound Policies
 ---------------------------------
 
- - Click Policies tab.
- - Click +Add at the bottom left corner to create a new policy.
- - Click General tab. Name the policy Allow-all.
- - Click Source tab. Select Any for both panels.
- - Click Destination tab. Select Any for both panels.
- - Click Application tab. Select Any.
- - Click Commit to commit the Allow-all policy.
+Policies > Security > Click "Add" > Name the policy Outbound > Source tab, Select LAN zone >  Destination tab. Select WAN zone > Click "OK"
 
-Now the VM-Series has its Allow All policy setup. 
-
-7. Configure NAT for egress
+9. Configure NAT for egress
 ------------------------------
 
 If you would also like to enable NAT to test egress, follow these steps. 
 
- a. Click Policies
- b. Click NAT
- c. Click +Add
- d. Click General tab, give it a name
- e. Click Original Packet. At Source Zone, click +Add, select "LAN". At Destination Zone, select WAN. At Destination Interface, select Ethernet1/1, as shown below.
+Policies > NAT > Click "Add" > Click General tab, give it a name > Click Original Packet. At Source Zone, click Add, select "LAN". At Destination Zone, select WAN. At Destination Interface, select Ethernet1/1, as shown below.
 
  |nat_original_packet| 
 
- f. Click Translated Packet. At Translation Type, select "Dynamic IP And Port". At Address Type, select "Interface Address". At Interface, select "ethernet1/1", as shown below. 
+ Click Translated Packet. At Translation Type, select "Dynamic IP And Port". At Address Type, select "Interface Address". At Interface, select "ethernet1/1", as shown below. 
 
  |nat_translated_packet|
 
- d. Click "Commit"!
+10. Configure Default Virtual Router
+------------------------------
+Under Network > Virtual Routers > Static Routes > Click on "Default"
 
-8. Setup API access 
+Destination : 0.0.0.0/0
+
+Interface : ethernet1/1
+
+Next Hop : None
+
+Click "Commit"
+
+11. Setup API access 
 ----------------------
 
 In order for the Aviatrix Controller to automatically update firewall instance route tables, monitor the firewall instance health and manage instance failover, you need to setup API access permissions. 
 
 Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
-9. Ready to go!
+12. Ready to go!
 ---------------
 
 Now your firewall instance is ready to receive packets! 
@@ -148,7 +154,7 @@ For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.  
 
-10. View Traffic Log
+13. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain

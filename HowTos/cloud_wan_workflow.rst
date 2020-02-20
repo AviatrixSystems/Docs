@@ -18,7 +18,7 @@ monitor its health and statistics.
 Connect to the Controller
 --------------------------------------------------
 
-After a branch router is registered, the controller connects to its publicly accessible interface to retrieve its configuration. 
+After a branch router is registered, the controller connects to its publicly accessible interface of the branch router to retrieve its configuration. 
 
 Prepare to Attach
 ---------------------
@@ -89,6 +89,18 @@ enter the following commands and click Commit.
 
   hostname myrouter
 
+Save & Restore Config
+---------------------------
+
+For each branch router under management, multiple copies of IOS configuration can be saved on the Aviatrix Controller. 
+Go to CloudWAN -> List/Edit page, select one branch router under management, click the 3 dots skewer, select Save Config. 
+Enter name Configuration Name and optional description. 
+
+Saved Configurations can be applied to a branch router via "Restore A Configuration". 
+Go to CloudWAN -> List/Edit page, select one branch router, click the 3 dots skewer, select Save Config. 
+On the "RESTORE A CONFIGURATION", select a saved configuration and click Restore, the action will trigger a commit of 
+saved IOS configuration to the router. Click Show Config to view the saved configuration. 
+
 
 AWS Network Manager Integration
 -----------------------------------
@@ -98,6 +110,37 @@ Aviatrix CloudWAN can be integrated with AWS Network Manager for visualization. 
  - Create a Global Network
  - Register AWS Transit Gateway
  - Register Branch Device
+
+Configuration Tags
+----------------------
+
+Aviatrix CloudWAN automatically programs CLIs required to connect to Aviatrix Transit Gateway or TGW VPN. 
+There are times when you need to add additional CLIs to the routers. Configuration Tags provide a way to 
+manage these additional CLIs in a scalable way. 
+
+A tag contains a block of CLI commands. 
+A tag can be attached to one or more branch routers. When Commit a tag, CLIs commands in the
+tag is committed to the routers attached to the tag. 
+
+Create a Tag
+--------------
+
+Provide a unique name to a new tag. For example, name the tag tier1-branches.
+
+Edit a Tag
+------------
+
+For a given tag, enter CLI commands exactly the way it should be programmed. 
+
+Attach to Branch Routers
+-------------------------
+
+Select branch routers to be part of Include or Exclude list to a given tag. 
+
+Commit Tag to Branch Router
+-----------------------------
+
+Select a tag, click Commit. The CLIs in the tag are committed to the branch routers attached to the tag. 
 
 
 .. |cloud_wan_1| image:: cloud_wan_faq_media/cloud_wan_1.png

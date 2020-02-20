@@ -15,13 +15,13 @@ guide helps you to launch the controller VM in Azure. Make sure you follow the i
   We suggest you consider deploying the Controller in AWS. The preferred approach is to launch the Controller from the AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in AWS may be a good idea even if you only deploy gateways in Azure, as AWS provides a pay-as-you-go (without up front commitment nor contract negotiation) metered payment system that has the least friction. However if Azure is your choice to deploy the Controller, no worries, proceed to the following sections.
 
 1. Subscribe to the Aviatrix Controller
-====================================
+=============================================
 
 Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/>`_ to subscribe to one Aviatrix image. 
 
 
 2. Subscribe to an Aviatrix Companion Gateway
-===========================================
+=================================================
 
 The Aviatrix companion gateway needs to be subscribed as programmable. 
 
@@ -32,12 +32,12 @@ In order to launch an Aviatrix gateway from the controller, you must also subscr
 ==============================
 
 Create an Azure Account
------------------------
+---------------------------
 
 Create an Azure account if you do not already have one.
 
 Launch Controller VM from Azure marketplace portal
---------------------------------------------------
+-----------------------------------------------------
 
 a.  Launch from marketplace, select the license type and click Create
     Virtual Machine, as shown below. If you select a “BYOL” image, you
@@ -86,7 +86,7 @@ a.  Launch from marketplace, select the license type and click Create
 
 
 4. Access the Controller
-=========================
+============================
 
 After the Controller instance is in a running state in AWS, you can access the Controller
 via a browser by `https://Controller_public_IP`, where Controller_public_IP is the static public IP address of the Controller.

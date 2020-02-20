@@ -134,13 +134,25 @@ Aviatrix supports TGW VPN and TGW Direct Connect for connecting to remote site o
 
 |firenet|
 
-Secure Transit with DMZ Firewalls
------------------------------------
+Connecting to China Regions
+----------------------------------------
 
-Firewalls can be deployed in the Transit VPC for a centralized Ingress and Egress security solution, 
-as shown below. . 
+If the majority of deployment is outside China regions, the best way to connect China region VPC or VNets are to 
+use the cloud native AWS VGW or Azure VPN gateway and connect them to Aviatrix Transit Gateway by IPSec tunnels, as 
+shown in the diagram below. This architecture applies to all other cloud providers that have presence in China regions. 
+On the Aviatrix side, use the option `External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ when making the connection.
 
-|transit-DMZ|
+|tgw_china|
+
+Connecting to Other Cloud Providers
+-------------------------------------
+
+To connect any network of a cloud provider is not AWS, Azure, Google GCP and Oracle Cloud, use the native VPN gateway of these
+cloud providers to build VPN tunnels to the Aviatrix Transit Gateway to connect to the rest of the deployment, as shown 
+in the diagram below. On the Aviatrix side, use the option `External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ when making the connection.
+
+|tgw_other_cloud| 
+
 
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
    :scale: 30%
@@ -167,6 +179,12 @@ as shown below. .
    :scale: 30%
 
 .. |transit-DMZ| image:: tgw_design_patterns_media/transit-DMZ.png
+   :scale: 30%
+
+.. |tgw_china| image:: tgw_design_patterns_media/tgw_china.png
+   :scale: 30%
+
+.. |tgw_other_cloud| image:: tgw_design_patterns_media/tgw_other_cloud.png
    :scale: 30%
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png

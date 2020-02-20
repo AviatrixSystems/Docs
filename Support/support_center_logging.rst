@@ -97,6 +97,12 @@ What are  the instance size requirements if I use Sumo?
 
 Sumo Logic's agent is memory intensive and we recommend that you use at least a t3.small instance. If you use any smaller instance, it could cause unexpected failures in your controller and gateways.
 
+As a workaround, you can use rsyslog instead of Sumo agent to send your logs to yoru Sumo logging system. Please check out these links
+
+  * `Aviatrix Logging Introduction <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#introduction>`_
+  * `Aviatrix Logging using rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_
+  * `Using rsyslog to send logs to Sumo <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#a-using-rsyslog-to-send-logs-to-sumo>`_
+
 
 How can I use rsyslog to send logs into different logging services?
 ---------------------------------------------------------------------

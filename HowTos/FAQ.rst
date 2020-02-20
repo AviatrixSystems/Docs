@@ -168,17 +168,18 @@ This scenario is explained in detail `here <https://docs.aviatrix.com/HowTos/con
 
 
 What are the events that the Aviatrix Controller monitors?
----------------------------------------------------
+--------------------------------------------------------------
 
- 1. VPN tunnel status. Alert when it goes down and alert when it comes back up.
- #. Gateway health status. Alert when gateway goes to down state. Alert when it comes back up.
- #. Overlap network CIDR range. Alert when BGP routes overlap. 
- #. Route limit. Alert when BGP route limits reach a threshold. 
- #. TGW Auditor. Monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
- #. IAM policy. Alert when account IAM policy is not up to date. 
- #. Guard Duty integration. Alert and block malicious IP addresses.
- #. Blackhole route. Alert when VPC route table has inactive routes.  
- #. Public subnet. Alert when there are unwanted instances launched on specific public subnets. 
+ 1. **VPN tunnel status** Alert when it goes down and alert when it comes back up.
+ #. **Gateway health status** Alert when gateway goes to down state. Alert when it comes back up.
+ #. **Overlap network CIDR range** Alert when BGP routes overlap. 
+ #. **Route limit** Alert when BGP route limits reach a threshold. 
+ #. **TGW Auditor** Monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
+ #. **IAM role and policy** Alert when account IAM policy is not up to date or being deleted. 
+ #. **Guard Duty integration** Alert and block malicious IP addresses.
+ #. **Black hole route** Alert when VPC route table has inactive routes.  
+ #. **Public subnet** Alert when there are unwanted instances launched on specific public subnets. 
+ #. **CPU/Memory/Disk** Alert when gateway memory or disk space reaches 95% of its capacity.
  
 
 
@@ -403,6 +404,23 @@ How to launch the Controller by Terraform?
 
 Terraform for Controller launch is supported as a community project on github on `this Aviatrix repo. <https://github.com/AviatrixSystems/terraform-modules>`_
 
+How to migrate a Controller from a Metered license to BYOL license?
+-----------------------------------------------------------------------
+
+Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+
+What is the best practice to ensurer high availability of Controller?
+------------------------------------------------------------------------------
+
+The best practice is to enable `backup and restore function <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
+In the event of Controller being terminated or become non functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+
+Since Aviatrix Controller is not in the data plane, temporary loss of the Controller does not affect the existing tunnels or packet forwarding. 
+
+For AWS deployment, you can also enable `Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ for auto recovery when the current Controller becomes unhealthy. 
+
+
+
 Do you have the CloudFormation source code for launch the Controller?
 -------------------------------------------------------------------------
 
@@ -470,11 +488,43 @@ c5.2xlarge                     $0.34/hour        $2978/year
 c5.4xlarge                     $0.68/hour        $5956/year
 =========================      ===============   ====================
 
+How to recover when a Controller software upgrade fails?
+------------------------------------------------------------
+
+Here is the best practice procedure to follow:
+
+ 1. Before a software upgrade, go to Settings -> Maintenance -> Backup & Restore -> Backup Now. This will save a copy of the deployment configuration to your S3 bucket. 
+ #. Do a try dun before upgrade. Go to Settings -> Maintenance -> Upgrade -> UPGRADE TO THE LATEST -> Dry Run. If Dry Run is successful, proceed to the next step. If Dry Run fail, do not proceed to upgrade until you root cause the issue. 
+ #. Upgrade. Go to Settings -> Maintenance -> Upgrade -> UPGRADE TO THE LATEST -> Upgrade. Wait for the process to finish.
+ #. If Controller upgrade is successful and some gateways fail, you can force upgrade the failed gateway again. Go to Troubleshoot -> Gateway -> FORCE UPGRADE. Select the gateway and click Upgrade. 
+ #. If gateway force upgrade fail, proceed to replace the gateway. Go to Troubleshoot -> Gateway -> GATEWAY REPLACE. Select the failed gateway and click Replace. 
+ #. If Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
+
+What IP addresses does Controller need to reach out to?
+---------------------------------------------------------
+
+============================================                 ============   ===================
+Outbound IP Address                                          Port           Purpose
+============================================                 ============   ===================
+www.carmelonetworks.com (54.149.28.255)                      TCP 443        Software upgrade
+license.aviatrix.com (52.24.131.245)                         TCP 443        License update
+diag.aviatrix.com (54.200.59.112)                            TCP 443        Remote debugging
+customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog  
+AWS SQS                                                      TCP 443        Controller to gateway message queue
+Aviatrix gateways                                            TCP 22         gateway diagnostics (on demand)
+Aviatrix gateways                                            TCP 443        Software upgrade to gateways
+============================================                 ============   ===================
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
-
+Centralized Logging Within AWS Government Cloud
+---------------------------------------------------------
+When attempting to perform centralized logging for AWS Government Cloud, due to
+restrictions with communication inside of Government Cloud, it is not possible to have your 
+Aviatrix Controller hosted in AWS Public Cloud and receive logs from gateways in AWS Gov
+Cloud. In order for the Aviatrix Controller to be able to accept logs from gateways inside of the
+Government Cloud the Aviatrix controller must be hosted within AWS Government Cloud as well.
 
 .. |image1| image:: FAQ_media/image1.png
 

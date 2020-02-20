@@ -5,25 +5,25 @@ Transit Connection to FortiGate over the internet.
 
    |image1|
 
-2.Connect the transit VPC GW to Palo Alto. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
+2.Connect the transit VPC GW to FortiGate. Go to Transit Network -> Setup -> Connect to VGW/External Device. Select External Device and input the following parameters.
       a. BGP Local AS number: ASN of the transit VPC GW
-      b. BGP Remote AS number: ASN of the Palo Alto
-      c. Remote Gateway IP Address: Palo Alto WAN interface public IP.
+      b. BGP Remote AS number: ASN of the Fortinet Fortigate
+      c. Remote Gateway IP Address: Fortinet Fortigate external interface's public IP
    |image2|
 
 3.Download the configuration by going to Site2Cloud -> Click on the Connection.
-   Select generic and Download Configuration and configure on the router accordingly.
+   Select generic. Download Configuration and configure on the remote firewall accordingly.
 
    |image3|
 
    The following is a sample configuration based on the site2cloud configuration above.
    |image4|
 
-4.Login into FortiGate and configure it as following.
+4.Login into FortiGate and configure it as the following.
 
-   4.a In the VPN menu, select IPsec Tunnels.
+   4.a In the VPN menu, select IPsec Tunnels
 
-   4.b click + Create New
+   4.b click + Create New, select custom
 
     Populate the fields according to your preferences.
    **VPN Setup**
@@ -49,7 +49,7 @@ Transit Connection to FortiGate over the internet.
    +-------------------------------+------------------------------------------+
    | IP Address                    | Public IP address of Aviatrix Gateway    |
    +-------------------------------+------------------------------------------+
-   | Interface                     | Select the appropriate port/interface    |
+   | Interface                     | Select the external port/interface       |
    +-------------------------------+------------------------------------------+
    | Local Gateway                 | Disabled                                 |
    +-------------------------------+------------------------------------------+
@@ -87,20 +87,20 @@ Transit Connection to FortiGate over the internet.
       The following values from the Aviatrix Site2Cloud configuration are needed below:
 
       #. In the Aviatrix Controller, click on site2cloud connection.
-      #. Click on 3 dashed lines next to `Connect Detail`
+      #. Click on the 3 dashed lines next to `Connect Detail`
 
       |image8|
 
    +-------------------------------+------------------------------------------+
    | Field                         | Expected Value                           |
    +===============================+==========================================+
-   | Encryption                    | Match value From the config file         |
+   | Encryption                    | Match value from the config file         |
    |                               | downloaded at step3                      |
    +-------------------------------+------------------------------------------+
-   | Authentication                | Match value From the config file         |
+   | Authentication                | Match value from the config file         |
    |                               | downloaded at step3                      |
    +-------------------------------+------------------------------------------+
-   | Diffie-Hellman Group          | Match value From the config file         |
+   | Diffie-Hellman Group          | Match value from the config file         |
    |                               | downloaded at step3                      |
    +-------------------------------+------------------------------------------+
    | Key Lifetime (seconds)        | 28800                                    |
@@ -131,9 +131,9 @@ Transit Connection to FortiGate over the internet.
    +-------------------------------+------------------------------------------+
    | Comments                      | Any string value                         |
    +-------------------------------+------------------------------------------+
-   | Local Address                 | 0.0.0.0                                  |
+   | Local Address                 | 0.0.0.0/0                                |
    +-------------------------------+------------------------------------------+
-   | Remote Address                | 0.0.0.0                                  |
+   | Remote Address                | 0.0.0.0/0                                |
    +-------------------------------+------------------------------------------+
 
 
@@ -146,20 +146,20 @@ Transit Connection to FortiGate over the internet.
       The following values from the Aviatrix Site2Cloud configuration are needed below:
 
       #. In the Aviatrix Controller, select the Site2Cloud configuration.
-      #. Click on 3 dashedlines  next to `Connect Detail`
+      #. Click on the 3 dashed lines  next to `Connect Detail`
 
       |image12|
 
    +-------------------------------+------------------------------------------+
    | Field                         | Expected Value                           |
    +===============================+==========================================+
-   | Encryption                    | Match value From the config file         |
+   | Encryption                    | Match value from the config file         |
    |                               | downloaded at step3                      |
    +-------------------------------+------------------------------------------+
-   | Authentication                | Match value From the config file         |
+   | Authentication                | Match value from the config file         |
    |                               | downloaded at step3                      |
    +-------------------------------+------------------------------------------+
-   | Diffie-Hellman Group          | Match value From the config file         |
+   | Diffie-Hellman Group          | Match value from the config file         |
    |                               | downloaded at step3                      |
    +-------------------------------+------------------------------------------+
    | Key Lifetime                  | Seconds                                  |
@@ -173,7 +173,7 @@ Transit Connection to FortiGate over the internet.
 
    #. Click `OK`
 
-  4.d Click -> Network -> Interfaces -> Click on the Tunnelcreated above (e.g. aviatrix-gatew)-> assign the IP address from the configuration file downloaded  at step 3
+  4.d Click -> Network -> Interfaces. Click on the Tunnel created above (e.g. aviatrix-gatew)-> assign the IP address from the configuration file downloaded at step 3
       
       |image14|
 
@@ -213,9 +213,9 @@ Transit Connection to FortiGate over the internet.
     Click -> Network -> BGP
     Configure as below:
     
-    RouterID : Tunnel IPaddress taken from the configuration file downloaded at step3
+    RouterID : Tunnel IP address taken from the configuration file downloaded at step3
     
-    Neighbors: Remote tunnel ip address and ASN
+    Neighbors: Remote tunnel IP address and ASN
     
     Networks: All the networks needs to be advertised via BGP (here 10.0.3.0 is the local network of FortiGate)
  

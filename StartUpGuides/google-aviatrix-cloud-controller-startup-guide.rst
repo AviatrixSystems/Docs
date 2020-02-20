@@ -169,10 +169,8 @@ For onboarding instructions on GCloud, click `this link. <http://docs.aviatrix.c
 
 Resource Names
 ===============
-The maximum length of a resource name can not exceed 63 characters in Gcloud.
-Resource names like firewall names, route names can be combination of project , vpc and
-gateway names. To avoid the resource names exceeding 63 characters, choose names that are
-not too long.
+The maximum length of a gateway can not exceed 50 characters when configuring Aviatrix Google Cloud gateway.
+Other resource names like subnet and VPC have a maximum character limit of 63, a requirement for Google Cloud. 
 
 
 Launching Gateway

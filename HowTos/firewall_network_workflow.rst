@@ -12,7 +12,7 @@ For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/
 1. Create a Security VPC
 ------------------------------------------------
 
-We recommend you to use the Aviatrix Useful Tool to create a VPC for FireNet deployment. 
+We recommend that you use the Aviatrix "Useful Tools" to create a VPC for a FireNet deployment. 
 
 Select "Aviatrix FireNet VPC" option when creating a security VPC. 
 
@@ -29,9 +29,16 @@ Select "Aviatrix FireNet VPC" option when creating a security VPC.
 2. Subscribe to AWS Marketplace
 --------------------------------------
 
-If you have not already done so, follow the Go link to subscribe to the VM-Series in AWS Marketplace.
+If you have not already done so, follow the `AWS Marketplace <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_ link to subscribe to the VM-Series.
 
-Do not launch the firewall instance from AWS Console as you launch it in the following steps.  
+If you have not already done so, click the following link to subscribe the firewall instance from a specific vendor on AWS
+Marketplace. 
+Do not launch the firewall instance from AWS Console as you can launch it on the Controller in the later steps.  
+
+ - `Palo Alto VM-Series <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_
+ - `Check Point CloudGuard <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Check+Point+>`_
+ - `Fortinet FortiGate <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Fortinet>`_
+
 
 3. Create a Firewall Domain
 -----------------------------
@@ -75,7 +82,7 @@ In this step, the Aviatrix Controller creates 3 more Ethernet interfaces with as
 ==========================================         ==============================================   =================
 eth0                                               Allow SSH and HTTPS from Aviatrix Controller     Public interface for communication with Controller
 eth1                                               Allow ALL (Do not change)                        Private interface for traffic to/from TGW
-eth2                                               Allow ALL (Do not change)                        Private interface for traffic to/from firewall instances
+eth2                                               Allow ALL (Do not change)                        Private interface for traffic to firewall instances
 eth3                                               Allow ALL (Do not change)                        Private interface for traffic to FireNet HA gateway
 ==========================================         ==============================================   =================
 
@@ -93,6 +100,7 @@ The new subnets created by the Controller at this steps are listed below.
 -gw-tgw-egress                                     for FireNet gateway eth1 to TGW
 -gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
 -gw-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
+-gw-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
 -gw-dmz-firewall                                   for FireNet gateway ethh2
 -gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
 -gw-dmz-exchange                                   for FireNet gateway eth3
@@ -133,7 +141,7 @@ This step launches a VM-Series and associates it with one of the FireNet gateway
 
 .. important::
 
-The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ##########################
@@ -149,6 +157,8 @@ Firewall Image Version                          VM-Series current supported soft
 Firewall Instance Size                          VM-Series instance type.  
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Username                                        Applicable to Azure deployment only. "admin" as a username is not accepted.
+Password                                        Applicable to Azure deployment only.
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page. 
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified. 

@@ -79,7 +79,7 @@ Terraform sends all the operations to the controller at the same time, so if you
 How do I debug Terraform issues?
 ----------------------------------------------------------------------
 
-If you run into issues with Terraform, please turn on debug logs by doing ``export TF_LOG=TRACE`` on your Terminal and then running your Terraform scripts again. Please share the output with our support team at support@aviatrix.com
+If you run into issues with Terraform, please turn on debug logs by doing ``export TF_LOG=TRACE`` on your Terminal and then running your Terraform scripts again. Please share the output with our support team at support@aviatrix.com. Please also take a look at the `official terraform debug instructions <https://www.terraform.io/docs/internals/debugging.html>`_.
 
 
 How can I launch a new Aviatrix Controller with Terraform?

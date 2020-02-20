@@ -21,7 +21,8 @@ White lists should specifically be used for access to applications or access to 
 Which policies are executed first - egress or firewall?
 ----------------------------------------------------------------------------
 
-The policies for 80/443 are executed first followed by the other policies
+The policies for 80/443 are executed first followed by the other policies.
+FQDN takes precedence over Stateful Firewall.
 
 
 
@@ -97,3 +98,8 @@ Azure's subnets by default have an internet gateway associated. So the process i
 2. Create a second subnet for user instances. Create a route table and associate it with this second subnet. This will act as a private subnet like in AWS.
 3. Launch an Aviatrix Gateway in the first public subnet created in Step 1. If you need an HA, you can create it in the same subnet.
 
+
+Where can I find the traffic logs for my Egress FQDN Control on my Aviatrix Gateway?
+-------------------------------------------------------------------
+
+All traffic through your Aviatrix Egress Control Gateways will be logged. You can check out the logs from the Controller at "Controller/Security/EgressControl/EgressFQDNViewLog". We recommend that you `turn on external logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ to send the syslogs from Aviatrix to your logging systems. Please look at the `right tag for FQDN relevant logs <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_. 
