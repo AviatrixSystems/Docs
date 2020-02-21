@@ -101,20 +101,47 @@ Go to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configu
 **Field**           **Value**
 ==================  ===============================================
 Name                Configure any name for this policy
-Incoming Interface  LAN
-Outgoing Interface  LAN
+Incoming Interface  LAN (port2)
+Outgoing Interface  LAN (port2)
 Source              Click on the + sign and add all
 Destination         Click on the + sign and add all
 Schedule            always
 Service             ALL
 Action              ACCEPT
+NAT                 Disabled
 ==================  ===============================================
 
 After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-
-8. Configure basic traffic policy to allow traffic VPC to Internet
+8. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
 -------------------------------------------------
+
+In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
+
+::
+  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet first
+
+Go to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configure policy as the following screenshot.
+
+==================  ===============================================
+**Field**           **Value**
+==================  ===============================================
+Name                Configure any name for this policy
+Incoming Interface  LAN (port2)
+Outgoing Interface  WAN (port1)
+Source              Click on the + sign and add all
+Destination         Click on the + sign and add all
+Schedule            always
+Service             ALL
+Action              ACCEPT
+NAT                 Enable
+==================  ===============================================
+
+::
+
+  NAT function needs to be enabled
+
+After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
 9. Ready to go!
 ----------------
