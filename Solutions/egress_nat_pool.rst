@@ -70,7 +70,7 @@ Continue on the Edit page, scroll to SNAT. Select `Customized SNAT`.
 
  1. Select Customized SNAT
  #. Click Add New
- #. Enter Mark configured in Step 3; enter one SNAT IP from Step 2
+ #. Enter Mark configured in Step 3; enter one SNAT IP or an IP segment format like Step 2
  #. Click Save
  #. Repeat the above steps for more entries.
  #. Click Enable SNAT to commit.
