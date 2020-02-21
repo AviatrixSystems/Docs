@@ -9,7 +9,7 @@ Example Config for FortiGate VM in AWS
 
 In this document, we provide an example to set up the Fortigate Next Generation Firewall instance for you to validate that packets are indeed sent to the Fortigate Next Generation Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
-The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at Step 7a. 
+The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
 After the launch is complete, the console displays the Fortigate Next Generation Firewall instance instance with its public IP address of management interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
 
 .. note::
@@ -39,7 +39,7 @@ If you get a download error, usually it means the Fortigate Next Generation Fire
 ----------------------------------
 
 Go back to the Aviatrix Controller Console. 
-Go to Firewall Network workflow, Step 7a. Click on the `Management UI`. It takes you to the Fortigate Next Generation Firewall you just launched.
+Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`. It takes you to the Fortigate Next Generation Firewall you just launched.
 
 |v2_avx_management_UI|
 
