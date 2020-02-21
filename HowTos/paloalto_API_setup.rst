@@ -64,6 +64,9 @@ Firewall Management IP Address                  The public IP address of the fir
 Firewall Virtual Router name (Optional)         Specify the firewall virtual Router name you wish the Controller to program. If left unspecified, the Controller programs the firewall's default router.
 ==========================================      ==========
 
+.. Note::
+    - The controller only supports one virtual router.  If Firewall Virtual Router name is not specified, the controller takes the first virtual router in the list.
+
 5.2 Managing VM-Series by Panorama
 ------------------------------------
 
@@ -158,6 +161,8 @@ Router name (Optional)                          Specify the firewall virtual Rou
     - When all VM-Series are disassociated from a FireNet gateway, Panorama still maintains the configuration, unless the user removes the configuration from Panorama.
 
     - When Panorama is configured, the associated  will show the vendor as "Palo Alto Panorama". Clicking "Show" will use the same access account and password to access firewall and retrieve route information.  To enable this, you need to configure admin role and user (same name and password as configured for Panorama itself) in the template in Panorama.
+
+    - The controller only supports one virtual router.  If Router name is not specified, the controller takes the first virtual router in the list.
 
 Migrating from individually VM to Panorama
 #################################################################
