@@ -80,25 +80,37 @@ In this example, we configure all traffic for RFC 1918 to be sent out of the LAN
 Go to tha page "Network -> State Routes" to create a Static Route as the following screenshot.
 
   - Click on the button "Create New"
-  - Enter the destination route in the "Destination" box.
-  - In the "Gateway" box, you will need to enter the IP address of the 
-  
-  
-  
-  Eth2 interface of the Aviatrix gateway that this firewall will be attached to.
+  - Enter the destination route in the "Destination" box
+  - In the "Gateway Address" box, you will need to enter the IP address of the AWS default gateway on subnet -gw-dmz-firewall
 
+::
 
-- Interface will be the LAN port.
-- Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
-- Enter comments as necessary.
-
-
-
-
--> click on “Create New”
+  - Interface will be the LAN (port2)
+  - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
+  - Enter comments as necessary.
+  - Repeat the above steps for RFC 1918 routes
 
 7. Configure basic traffic policy to allow traffic VPC to VPC
 -------------------------------------------------
+
+In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in/out of LAN interface.
+
+Go to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configure policy as the following screenshot.
+
+==================  ===============================================
+**Field**           **Value**
+==================  ===============================================
+Name                Configure any name for this policy
+Incoming Interface  LAN
+Outgoing Interface  LAN
+Source              Click on the + sign and add all
+Destination         Click on the + sign and add all
+Schedule            always
+Service             ALL
+Action              ACCEPT
+==================  ===============================================
+
+After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
 
 8. Configure basic traffic policy to allow traffic VPC to Internet
