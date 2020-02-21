@@ -89,8 +89,41 @@ If the on-prem router terminates with Aviatrix Transit Gateway, there is no limi
 What are the requirements to deploy CloudWAN?
 -------------------------------------------------
 
-Each managed Cisco router needs Internet access and a public IP address. 
+General requirement is to have each managed Cisco router needs Internet access and a public IP address.
 
+Please make sure the following items are properly configured in Cisco IOS router.
+
+1. Please make sure Cisco router’s login username  is set to privilege 15
+
+  Cisco IOS CLI examples:
+  
+  ::
+  
+    username admin privilege 15 password 0 password
+    username administrator privilege 15 secret 5 $1$WbTk$uk7Au2PkCardkaM3BCcIS.
+    username superuser privilege 15
+
+2. Please make sure line vty is set to "privilege level 15" and ssh is included for “transport input” 
+
+  Cisco IOS CLI example:
+  
+  ::
+  
+    line vty 1 4
+      privilege level 15
+      login local
+      transport input ssh
+ 
+3. Please enable ip ssh in Cisco IOS, either password authentication, private key authentication, or both. Please refer to: https://www.cisco.com/c/en/us/support/docs/security-vpn/secure-shell-ssh/4145-ssh.html
+
+
+4. Please enable scp server in Cisco IOS
+
+  Cisco IOS CLI example:
+  
+  ::
+  
+    ip scp server enable
 
 What routing protocols are supported on CloudWAN?
 ----------------------------------------------------
