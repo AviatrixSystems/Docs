@@ -12,7 +12,9 @@ In this document, we provide an example to set up the Fortigate Next Generation 
 The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at Step 7a. 
 After the launch is complete, the console displays the Fortigate Next Generation Firewall instance instance with its public IP address of management interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
 
-Note that Fortigate Next Generation Firewall instance has 2 interfaces as described below.
+.. note::
+
+  Fortigate Next Generation Firewall instance has 2 interfaces as described below. Additionally, firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
 ========================================================         ===============================          ================================
 **Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -21,7 +23,6 @@ eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untru
 eth1 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
-Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
 Below are the steps for initial setup.
 
@@ -32,31 +33,37 @@ After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#
 
 If you get a download error, usually it means the Fortigate Next Generation Firewall instance is not ready. Wait until it is ready, refresh the browser and then try again.
 
-|access_key|
+|v2_avx_pem_file_download|
 
 2. Login to Fortigate Next Generation Firewall
 ----------------------------------
 
 Go back to the Aviatrix Controller Console. 
-Go to Firewall Network workflow, Step 7a. Click on the `Management UI`. It takes you the Fortigate Next Generation Firewall you just launched. 
+Go to Firewall Network workflow, Step 7a. Click on the `Management UI`. It takes you to the Fortigate Next Generation Firewall you just launched.
 
-Login with Username "admin". Default password is the instance-id.
+|v2_avx_management_UI|
+
+.. note::
+
+  Login with Username "admin". Default password is the instance-id.
 
 3. Reset Fortigate Next Generation Firewall Password
 --------------------------------
 
-Copy the URL from Aviatrix to access Fortigate Next Generation Firewall web page.
+Once logged in with the default password, it will ask you to set a new password.
 
 4. Configure Fortigate Next Generation Firewall port1 with WAN
 -------------------------------------------------
 
-Once logged in, go to the page "Network -> Interfaces" to configure Physical Interface port1 as the following screenshot.
+Once logged in with the new password, go to the page "Network -> Interfaces" to configure Physical Interface port1 as the following screenshot.
 
   - Select the interface with port 1 and click on "Edit"
   - Specify appropriate role (WAN)
   - Enter an Alias (i.e: WAN) for the interface
   - Enable DHCP to ensure FW retrieve private IP information from AWS console
   - Enable “Retrieve default gateway from server" 
+  
+|v2_fortigate_interface_wan|
 
 5. Configure Fortigate Next Generation Firewall port2 with LAN
 -------------------------------------------------
@@ -68,6 +75,8 @@ Go to the page "Network -> Interfaces" to configure Physical Interface port2 as 
   - Enter an Alias (i.e: LAN) for the interface
   - Enable DHCP to ensure FW retrieve private IP information from AWS console
   - Disable “Retrieve default gateway from server" 
+  
+|v2_fortigate_interface_lan|
 
 6. Create static routes for routing of traffic VPC to VPC
 -------------------------------------------------
@@ -81,14 +90,23 @@ Go to tha page "Network -> State Routes" to create a Static Route as the followi
 
   - Click on the button "Create New"
   - Enter the destination route in the "Destination" box
-  - In the "Gateway Address" box, you will need to enter the IP address of the AWS default gateway on subnet -gw-dmz-firewall
-
-::
-
+  - In the "Gateway Address" box, you will need to enter the AWS default gateway IP on subnet -gw-dmz-firewall
+  
+  .. note::
+    
+    i.e. subnet CIDR for -gw-dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
+  
   - Interface will be the LAN (port2)
   - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
   - Enter comments as necessary.
   - Repeat the above steps for RFC 1918 routes
+    
+|v2_fortigate_static_routes|
+
+Those static routes also could be reviewed on the page "Monitor -> Routing Monitor"
+
+|v2_fortigate_static_routes_review|
+ 
 
 7. Configure basic traffic policy to allow traffic VPC to VPC
 -------------------------------------------------
@@ -113,15 +131,21 @@ NAT                 Disabled
 
 After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
+|v2_fortigate_policy_vpc_to_vpc|
+
 8. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
 -------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
 
-::
-  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet first
+.. important::
+  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet
+  
+First of all, go back to the Aviatrix Controller Console. Navigate to the page "Firewall Network -> Advanced". Click the skewer/three dot button. Scroll down to “Egress through Firewall” and click Enable. Verify the Egress status on the page "Firewall Network -> Advanced".
 
-Go to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configure policy as the following screenshot.
+|v2_avx_egress_inspection|
+
+Secondly, go back to the Fortigate Next Generation Firewall console and navigate to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configure policy as the following screenshot.
 
 ==================  ===============================================
 **Field**           **Value**
@@ -137,11 +161,13 @@ Action              ACCEPT
 NAT                 Enable
 ==================  ===============================================
 
-::
+.. important::
 
-  NAT function needs to be enabled
+  NAT function needs to be enabled on this VPC to Internet policy
 
 After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
+
+|v2_fortigate_policy_vpc_to_internet|
 
 9. Ready to go!
 ----------------
@@ -158,27 +184,34 @@ Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the 
 10. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
+You can view if traffic is forwarded to the firewall instance by logging in to the Fortigate Next Generation Firewall console. Go to the page "FortiView -> Destinations". Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain.
 
+|v2_fortigate_view_traffic_log_vpc_to_vpc|
 
+[Optional] Start ping packets from VPC to Internet to verify egress function if it is enabled.
 
+|v2_fortigate_view_traffic_log_vpc_to_internet|
 
-.. |launch-step-2| image:: config_FortiGate_media/launch-step-2.png
+.. |v2_avx_pem_file_download| image:: config_FortiGate_media/v2_pem_file_download.png
    :scale: 40%
-.. |login| image:: config_FortiGate_media/login.png
+.. |v2_avx_management_UI| image:: config_FortiGate_media/v2_avx_management_UI.png
    :scale: 40%
-.. |Interfaces.png| image:: config_FortiGate_media/Interfaces.png.png
+.. |v2_fortigate_interface_wan| image:: config_FortiGate_media/v2_fortigate_interface_wan.png
    :scale: 40%
-.. |editInterface| image:: config_FortiGate_media/editInterface.png
+.. |v2_fortigate_interface_lan| image:: config_FortiGate_media/v2_fortigate_interface_lan.png
    :scale: 40%
-.. |editPolicy| image:: config_FortiGate_media/editPolicy.png
+.. |v2_fortigate_static_routes| image:: config_FortiGate_media/v2_fortigate_static_routes.png
    :scale: 40%
-.. |createStaticRoute| image:: config_FortiGate_media/createStaticRoute.png
+.. |v2_fortigate_static_routes_review| image:: config_FortiGate_media/v2_fortigate_static_routes_review.png
    :scale: 40%
-.. |editStaticRoute| image:: config_FortiGate_media/editStaticRoute.png
+.. |v2_fortigate_policy_vpc_to_vpc| image:: config_FortiGate_media/v2_fortigate_policy_vpc_to_vpc.png
    :scale: 40%
-.. |editStaticRoute| image:: config_FortiGate_media/editStaticRoute.png
+.. |v2_fortigate_policy_vpc_to_internet| image:: config_FortiGate_media/v2_fortigate_policy_vpc_to_internet.png
    :scale: 40%
-.. |showTraffic| image:: config_FortiGate_media/showTraffic.png
+.. |v2_avx_egress_inspection| image:: config_FortiGate_media/v2_avx_egress_inspection.png
+   :scale: 40%
+.. |v2_fortigate_view_traffic_log_vpc_to_vpc| image:: config_FortiGate_media/v2_fortigate_view_traffic_log_vpc_to_vpc.png
+   :scale: 40%
+.. |v2_fortigate_view_traffic_log_vpc_to_internet| image:: config_FortiGate_media/v2_fortigate_view_traffic_log_vpc_to_internet.png
    :scale: 40%
 .. disqus::
