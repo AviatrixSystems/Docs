@@ -147,15 +147,15 @@ Retrieve Okta IDP metadata
 
 After the application is created in Okta, go to the `Sign On` tab for the application.  Then, click on the `View Setup Instructions` button.
 
-    |image4|
+    |image5|
 
 Look for the section titled `Provide the following IDP metadata to your SP provider`.
 
-    |image5|
+    |idp_metadata|
 
 .. important::
 
-   Copy the text displayed.  This value will be used to configure the SAML on the Aviatrix controller.
+   Copy the text displayed.  This value will be used to configure the SAML "IDP Metadata URL" field on the Aviatrix controller.
 
 You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ 
 
@@ -303,6 +303,10 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |image4| image:: SSL_VPN_Okta_SAML_media/image4.png
 
 .. |image5| image:: SSL_VPN_Okta_SAML_media/image5.png
+
+.. |idp_metadata| image:: SSL_VPN_Okta_SAML_media/idp_metadata.png
+   :scale: 30%
+
 
 .. |image6| image:: SSL_VPN_Okta_SAML_media/image6.png
 
