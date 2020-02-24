@@ -175,9 +175,6 @@ Launching an Aviatrix VPN Gateway
 #. Select the appropriate `Account Name`, `Region`, `VPC ID`, `Public Subnet` and `Gateway Size`
 #. Check `VPN Access`
 #. Check `Enable SAML`
-
-	|image6|
-
 #. For information on the other settings, please refer to `this <./uservpn.html>`__ document
 #. Click `OK` to create the Gateway
 
