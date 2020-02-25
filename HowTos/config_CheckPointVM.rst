@@ -59,7 +59,7 @@ Terminate the SSH session.
 ----------------------------------
 
 Go back to the Aviatrix Controller Console. 
-Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`. It takes you to the CheckPoint Firewall you just launched.
+Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`. It takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
 |v2_avx_management_UI|
 
