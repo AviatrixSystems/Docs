@@ -108,7 +108,7 @@ Gateway Replace
 This feature allows you to replace a gateway by launching a new gateway and restoring the configuration and operation in the event that a gateway becomes inoperational and you have exhausted all other ways to recover. Contact support@aviatrix.com 
 before you use this feature. 
 
-Select a gateway in the drop down menu and click Replace. **Please make sure that your gateway disk size is at least 16GB before you attempt to replace the gateway - since the replace operation will use the latest gateway AMI, which might have a larger disk size requirement than the one used by your gateway's orginal AMI.**
+Select a gateway in the drop down menu and click Replace.
 
 
     Please refer to `Run diagnostics on a gateway. <http://docs.aviatrix.com/HowTos/troubleshooting.html>`__
