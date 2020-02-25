@@ -280,7 +280,7 @@ For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security
 
 For traffic VPC to VPC, launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping to the private IP of other instance. The ping should go through and be inspected on firewall.
 
-For traffic VPC to Internet, launch one private instance in either Spoke-1 VPC or Spoke-2 VPC. From one private instance, ping to the Internet service. The ping should go through and be inspected on firewall.
+[Optional] For traffic VPC to Internet, launch one private instance in either Spoke-1 VPC or Spoke-2 VPC. From one private instance, ping to the Internet service. The ping should go through and be inspected on firewall.  
 
 12. View Traffic Log
 ----------------------
