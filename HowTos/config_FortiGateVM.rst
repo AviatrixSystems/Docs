@@ -179,7 +179,9 @@ the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/f
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
 
-Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.  
+For traffic VPC to VPC, launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping to the private IP of other instance. The ping should go through and be inspected on firewall.
+
+[Optional] For traffic VPC to Internet, launch one private instance in either Spoke-1 VPC or Spoke-2 VPC. From one private instance, ping to the Internet service. The ping should go through and be inspected on firewall.  
 
 10. View Traffic Log
 ----------------------
