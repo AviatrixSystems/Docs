@@ -10,7 +10,7 @@ Example Config for CheckPoint VM in AWS
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
-After the launch is complete, the console displays the CheckPoint Firewall instance instance with its public IP address of management interface and allows you either to download the .pem file for SSH access to the instance or to access the CheckPoint web page.
+After the launch is complete, the console displays the CheckPoint Firewall instance instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the CheckPoint web page.
 
 .. note::
 
