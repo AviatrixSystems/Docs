@@ -108,3 +108,12 @@ How can I use rsyslog to send logs into different logging services?
 ---------------------------------------------------------------------
 
 Almost all of the logging services support rsyslog inputs - please check out these links for your favourite logging service. `Splunk <https://docs.splunk.com/Documentation/Splunk/latest/Data/HowSplunkEnterprisehandlessyslogdata>`_, `logstash/filebeat <https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-input-syslog.html>`_, `Sumo <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_, `DataDog <https://docs.datadoghq.com/integrations/rsyslog/?tab=datadogussite>`_
+
+
+What should I do if my logging has stopped?
+---------------------------------------------------------------------
+
+Please check the following
+
+  * Please check that your logging server is properly provisioned with enough computing power and storage space
+  * If your logging was working well in the past and stopped suddenly, please open a ticket with the support team by sending an email to support@aviatrix.com. 
