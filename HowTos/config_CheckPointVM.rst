@@ -96,7 +96,7 @@ Follow the Check Point First Time Configuration Wizard to initialize it as below
 
 |v2_CheckPoint_Gaia_Portal_Wizard_10|
 
-|v2_CheckPoint_Gaia_Portal_Overview.png|
+|v2_CheckPoint_Gaia_Portal_Overview|
 
 
 5. Configure CheckPoint Firewall interface eth0 with WAN
@@ -170,13 +170,15 @@ It also can be reviewed by clicking the button "Monitoting" on the page "Network
 
 First of all, please download the SmartConsole with version R80.10 on Windows-based computer
 
-Option 1: click on the button "Download Now!" with message "Manage Software Blades using SmartConsole" on the Overview page as below. 
+  Option 1: click on the button "Download Now!" with message "Manage Software Blades using SmartConsole" on the Overview page as below. 
 
 |v2_CheckPoint_Gaia_Portal_SmartConsole_DL|
 
-Option 2: download it by using this link `R80.10 <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk119612>`_
+  Option 2: download it by using this link `R80.10 <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk119612>`_
 
 Secondly, install the SmartConsole and login into it
+
+|v2_CheckPoint_Gaia_Portal_SmartConsole_install|
 
 Last but not least, execute the function "Get Interfaces With Topology" to sync up the settings that we have configured via Gaia Portal.
 
@@ -280,7 +282,7 @@ For traffic VPC to VPC, launch one instance in Spoke-1 VPC and Spoke-2 VPC. From
 
 For traffic VPC to Internet, launch one private instance in either Spoke-1 VPC or Spoke-2 VPC. From one private instance, ping to the Internet service. The ping should go through and be inspected on firewall.
 
-10. View Traffic Log
+12. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the CheckPoint Firewall SmartConsole. Go to the page "LOGS & MONITOR". Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain.
@@ -299,27 +301,27 @@ You can view if traffic is forwarded to the firewall instance by logging in to t
 .. |v2_CheckPoint_change_password| image:: config_Checkpoint_media/v2_CheckPoint_change_password.png
    :scale: 40%
 .. |v2_CheckPoint_Gaia_Portal_Wizard_01| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_01.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_02| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_02.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_03_eth0| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_03_eth0.png
-   :scale: 40%   
+   :scale: 20%   
 .. |v2_CheckPoint_Gaia_Portal_Wizard_04_eth1| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_04_eth1.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_05| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_05.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_06| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_06.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_07| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_07.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_08| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_08.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_09| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_09.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_10| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_10.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Overview| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Overview.png
-   :scale: 40% 
+   :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Configuration_eth0_WAN| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Configuration_eth0_WAN.png
    :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Configuration_eth1_LAN| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Configuration_eth1_LAN.png
@@ -334,6 +336,8 @@ You can view if traffic is forwarded to the firewall instance by logging in to t
    :scale: 40%
 .. |v2_CheckPoint_Gaia_Portal_SmartConsole_DL| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_SmartConsole_DL.png
    :scale: 40% 
+.. |v2_CheckPoint_Gaia_Portal_SmartConsole_install| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_SmartConsole_install.png
+   :scale: 40% 
 .. |v2_CheckPoint_SmartConsole_syncup_01| image:: config_Checkpoint_media/v2_CheckPoint_SmartConsole_syncup_01.png
    :scale: 40%
 .. |v2_CheckPoint_SmartConsole_syncup_02| image:: config_Checkpoint_media/v2_CheckPoint_SmartConsole_syncup_02.png
@@ -342,8 +346,8 @@ You can view if traffic is forwarded to the firewall instance by logging in to t
    :scale: 40%
 .. |v2_CheckPoint_policy_vpc_to_vpc_install| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_vpc_install.png
    :scale: 40%
-.. |v2_avx_egress_inspection| image:: config_Checkpoint_media/v2_avx_egress_inspection.png
-   :scale: 40%   
+.. |v2_avx_egress_inspection| image:: config_FortiGate_media/v2_avx_egress_inspection.png
+   :scale: 40%
 .. |v2_CheckPoint_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_internet_nat_enabled.png
    :scale: 40%
 .. |v2_CheckPoint_policy_vpc_to_internet| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_internet.png
