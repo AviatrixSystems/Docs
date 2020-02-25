@@ -138,17 +138,17 @@ Go to tha page "Network Management -> IPv4 Static Routes" to create a Static Rou
   - Click on the button "Add"
   - Enter the destination route in the "Destination" box and "Subnet Mask" box
  
-   .. note::
+    .. note::
     
-    i.e. Configure 10.0.0.0 for Destination and 255.0.0.0 for Subnet mask
+      i.e. Configure 10.0.0.0 for Destination and 255.0.0.0 for Subnet mask
     
   - Select "Normal" for Next Hop Type
   - Enter comments as necessary.
   - Click the button "Add Gateway" and then select the button "IP Address" to add AWS default gateway IP
   
-  .. note::
+    .. note::
     
-    i.e. subnet CIDR for -gw-dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
+      i.e. subnet CIDR for -gw-dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
   
   - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
   - Repeat the above steps for RFC 1918 routes
