@@ -137,11 +137,11 @@ This step programs the relative route tables, described as below.
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway. 
 
-This step launches a VM-Series and associates it with one of the FireNet gateways. 
+This step launches a Firewall instance and associates it with one of the FireNet gateways. 
 
 .. important::
 
-The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ##########################
@@ -153,8 +153,8 @@ VPC ID                                          The Security VPC created in Step
 Gateway Name                                    The primary FireNet gateway.
 Firewall Instance Name                          The name that will be displayed on AWS Console.
 Firewall Image                                  The AWS AMI that you have subscribed in Step 2.
-Firewall Image Version                          VM-Series current supported software versions. 
-Firewall Instance Size                          VM-Series instance type.  
+Firewall Image Version                          Firewall instance current supported software versions. 
+Firewall Instance Size                          Firewall instance type.  
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Username                                        Applicable to Azure deployment only. "admin" as a username is not accepted.
@@ -166,7 +166,8 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. 
 ==========================================      ==========
 
-Note that Palo instance has 3 interfaces as described below.
+Palo instance has 3 interfaces as described below.
+**********************
 
 ========================================================         ===============================          ================================
 **Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -178,7 +179,6 @@ eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted 
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
-
 .. important::
 
   For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
@@ -187,7 +187,30 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
+    
+Fortigate Next Generation Firewall instance has 2 interfaces as described below.
+**********************
 
+========================================================         ===============================          ================================
+**Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
+eth1 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+
+CheckPoint Firewall instance has 2 interfaces as described below. 
+**********************
+
+========================================================         ===============================          ================================
+**CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
+eth1 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
 7a.2 Launch and Associate More
 #################################
