@@ -12,6 +12,19 @@ In this document, we provide an example to set up the CheckPoint Firewall instan
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
 After the launch is complete, the console displays the CheckPoint Firewall instance instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the CheckPoint web page.
 
+Here is the Firewall information in this example for your referece. Please adjust it depending on your requirements.
+
+==========================================      ==========
+**Example setting**                             **Example value**
+==========================================      ==========
+Firewall Image                                  Check Point CloudGuard IaaS All-In-One
+Firewall Image Version                          R80.10-033.341
+Firewall Instance Size                          t2.2xlarge
+Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
+Attach                                          Check
+==========================================      ==========
+
 .. note::
 
   CheckPoint Firewall instance has 2 interfaces as described below. Additionally, firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
