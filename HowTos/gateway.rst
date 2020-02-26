@@ -543,6 +543,9 @@ Medium is the default configuration.
 
 A gateway is considered to be in **UP** state if controller receives at least 2 (out of a possible 5) messages from that gateway between two consecutive health checks.
 
+For **Fast** configuration, the Controller determines the gateway state on 2 samples, so the gateway failure 
+detection time is between 7 seconds and 14 seconds. 
+
 For example, with medium setting, gateway down detection time, on average, is 1 minute.
 
 The keepalive template is a global configuration on the Controller for all gateways. To change the keep alive template, go to
