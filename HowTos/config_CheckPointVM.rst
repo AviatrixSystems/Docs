@@ -20,7 +20,7 @@ After the launch is complete, the console displays the CheckPoint Firewall insta
 **CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
-eth1 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 
@@ -66,6 +66,7 @@ Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/fire
 .. note::
 
   Login with Username "admin" and the password you have just configured on the previous step.
+  Please try to use browser Firefox if the Management UI link is not able to open on your default browser.
 
 4. Initialize CheckPoint Firewall via Gaia Portal
 ----------------------------------
@@ -96,8 +97,13 @@ Follow the Check Point First Time Configuration Wizard to initialize it as below
 
 |v2_CheckPoint_Gaia_Portal_Wizard_10|
 
-|v2_CheckPoint_Gaia_Portal_Overview|
+|v2_CheckPoint_Gaia_Portal_Wizard_11|
 
+|v2_CheckPoint_Gaia_Portal_Wizard_12|
+
+After the initialization is completed, users will be navigated to the CheckPoint Firewall Gaia Portal Overview page as below.
+
+|v2_CheckPoint_Gaia_Portal_Overview|
 
 5. Configure CheckPoint Firewall interface eth0 with WAN
 -------------------------------------------------
@@ -148,7 +154,7 @@ Go to tha page "Network Management -> IPv4 Static Routes" to create a Static Rou
   
     .. note::
     
-      i.e. subnet CIDR for -gw-dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
+      i.e. subnet CIDR for -dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
   
   - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
   - Repeat the above steps for RFC 1918 routes
@@ -176,11 +182,11 @@ First of all, please download the SmartConsole with version R80.10 on Windows-ba
 
   Option 2: download it by using this link `R80.10 <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk119612>`_
 
-Secondly, install the SmartConsole and login into it
+Secondly, install the SmartConsole and login into it with the same username/password/IP Address for Gaia Portal
 
 |v2_CheckPoint_Gaia_Portal_SmartConsole_install|
 
-Last but not least, execute the function "Get Interfaces With Topology" to sync up the settings that we have configured via Gaia Portal.
+Moreover, execute the function "Get Interfaces With Topology" to sync up the settings that we have configured via Gaia Portal.
 
 - Click on the link "GATEWAYS&SERVERS" on the left side
 - Double click on the CheckPoint Firewall
@@ -195,25 +201,26 @@ Last but not least, execute the function "Get Interfaces With Topology" to sync 
 
 |v2_CheckPoint_SmartConsole_syncup_02|
 
+Last but not least, click on the button "Install Policy" and then "Install" to commit the settings.
 
 9. Configure basic traffic policy to allow traffic VPC to VPC
 -------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in/out of LAN interface.
 
-Go to the page "SECURITY POLICIES -> Access Control -> Policy" and configure a policy by seleting the default rule "Cleanup rule" and clicking the button "Add rule above" as the following screenshot.
+Go to the page "SECURITY POLICIES -> Access Control -> Policy" and configure a policy by selecting the default rule "Cleanup rule" and clicking the button "Add rule above" as the following screenshot.
 
-==================      ===============================================
-**Field**               **Value**
-==================      ===============================================
-Name                    Configure any name for this policy (i.e. allow-all-LAN-to-LAN)
-Source                  Select the object with interface eth1
-Destination             Select the object with interface eth1
-VPN                     Any
-Service & Applicagtions Any
-Action                  Accept
-Track                   Log
-==================      ===============================================
+=======================   ===============================================
+**Field**                 **Value**
+=======================   ===============================================
+Name                      Configure any name for this policy (i.e. allow-all-LAN-to-LAN)
+Source                    Select the object with interface eth1 or the object with Net
+Destination               Select the object with interface eth1 or the object with Net
+VPN                       Any
+Service & Applicagtions   Any
+Action                    Accept
+Track                     Log
+=======================   ===============================================
 
 Click on the button "Install Policy" and then "Install" to commit the settings.
 
@@ -250,17 +257,17 @@ Secondly, go back to the CheckPoint Firewall SmartConsole. Navigate to the page 
 
 Furthermore, navigate to the page "SECURITY POLICIES -> Access Control -> Policy". Inject a new rule between the default rule "Cleanup rule" and the rule "allow-all-LAN-to-LAN" that we have created in the previous steps.
 
-==================      ===============================================
-**Field**               **Value**
-==================      ===============================================
-Name                    Configure any name for this policy (i.e. allow-all-LAN-to-WAN)
-Source                  Select the object with interface eth1
-Destination             Select the object with All_internet
-VPN                     Any
-Service & Applicagtions Any
-Action                  Accept
-Track                   Log
-==================      ===============================================
+=======================   ===============================================
+**Field**                 **Value**
+=======================   ===============================================
+Name                      Configure any name for this policy (i.e. allow-all-LAN-to-WAN)
+Source                    Select the object with interface eth1 or the object with Net
+Destination               Select the object with All_internet
+VPN                       Any
+Service & Applicagtions   Any
+Action                    Accept
+Track                     Log
+=======================   ===============================================
 
 Click on the button "Install Policy" and then "Install" to commit the settings.
 
@@ -274,22 +281,26 @@ After validating that your TGW traffic is being routed through your firewall ins
 Now your firewall instance is ready to receive packets! 
 
 The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
-the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
+the firewall domain. This operation is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. In addition, attach VPC to TGW by `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#aws-transit-gateway-orchestrator-build>`_ in the TGW Orchestrator Build workflow.
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
-
-For traffic VPC to VPC, launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping to the private IP of other instance. The ping should go through and be inspected on firewall.
-
-[Optional] For traffic VPC to Internet, launch one private instance in either Spoke-1 VPC or Spoke-2 VPC. From one private instance, ping to the Internet service. The ping should go through and be inspected on firewall.  
 
 12. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the CheckPoint Firewall SmartConsole. Go to the page "LOGS & MONITOR". Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain.
+You can view if traffic is forwarded to the firewall instance by logging in to the CheckPoint Firewall SmartConsole. Go to the page "LOGS & MONITOR". 
+
+For VPC to VPC traffic:
+***********************
+
+Launch one instance in Spoke-1 VPC and Spoke-2 VPC. Start ping packets from a instance in Spoke-1 VPC to the private IP of another instance in Spoke-2 VPC where one or both of Security Domains are connected to Firewall Network Security Domain. The ICMP traffic should go through and be inspected on firewall.
 
 |v2_CheckPoint_view_traffic_log_vpc_to_vpc|
 
-[Optional] Start ping packets from VPC to Internet to verify egress function if it is enabled.
+[Optional] For VPC to Internet traffic:
+***************************************
+
+Launch a private instance in the Spoke VPC (i.e. Spoke-2 VPC) where the Security Domain (i.e. Security_Domain_2) is connected to Firewall Network Security Domain. Start ping packets from the private instance to Internet service to verify egress function. The ICMP traffic should go through and be inspected on firewall.  
 
 |v2_CheckPoint_view_traffic_log_vpc_to_internet|
 
@@ -319,6 +330,10 @@ You can view if traffic is forwarded to the firewall instance by logging in to t
 .. |v2_CheckPoint_Gaia_Portal_Wizard_09| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_09.png
    :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_10| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_10.png
+   :scale: 20% 
+.. |v2_CheckPoint_Gaia_Portal_Wizard_11| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_11.png
+   :scale: 20% 
+.. |v2_CheckPoint_Gaia_Portal_Wizard_12| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_12.png
    :scale: 20% 
 .. |v2_CheckPoint_Gaia_Portal_Overview| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Overview.png
    :scale: 20% 
