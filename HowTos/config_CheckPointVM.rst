@@ -10,9 +10,9 @@ Example Config for CheckPoint VM in AWS
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
-After the launch is complete, the console displays the CheckPoint Firewall instance instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the CheckPoint web page.
+After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the CheckPoint web page.
 
-Here is the Firewall information in this example for your referece. Please adjust it depending on your requirements.
+Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
 ==========================================      ==========
 **Example setting**                             **Example value**
@@ -152,7 +152,7 @@ For simplicity, you can configure the FW to send all RFC 1918 packets to LAN por
 
 In this example, we configure all traffic for RFC 1918 to be sent out of the LAN interface.
 
-Go to tha page "Network Management -> IPv4 Static Routes" to create a Static Route as the following screenshot.
+Go to the page "Network Management -> IPv4 Static Routes" to create a Static Route as the following screenshot.
 
   - Click on the button "Add"
   - Enter the destination route in the "Destination" box and "Subnet Mask" box
@@ -180,7 +180,7 @@ Those static routes could be reviewed on the page "Network Management -> IPv4 St
 
 |v2_CheckPoint_static_routes_review_01|
 
-It also can be reviewed by clicking the button "Monitoting" on the page "Network Management -> IPv4 Static Routes"
+It also can be reviewed by clicking the button "Monitoring" on the page "Network Management -> IPv4 Static Routes"
 
 |v2_CheckPoint_static_routes_review_02|
 
@@ -230,7 +230,7 @@ Name                      Configure any name for this policy (i.e. allow-all-LAN
 Source                    Select the object with interface eth1 or the object with Net
 Destination               Select the object with interface eth1 or the object with Net
 VPN                       Any
-Service & Applicagtions   Any
+Service & Applications    Any
 Action                    Accept
 Track                     Log
 =======================   ===============================================
@@ -266,7 +266,7 @@ Secondly, go back to the CheckPoint Firewall SmartConsole. Navigate to the page 
 
 .. important::
 
-  NAT function needs to be enabled on the CheckPoint FW interface eth0 for this VPC to Internet policy. Please refer to `Check Point's NAT insturction <https://sc1.checkpoint.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for detail.
+  NAT function needs to be enabled on the CheckPoint FW interface eth0 for this VPC to Internet policy. Please refer to `Check Point's NAT instruction <https://sc1.checkpoint.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for detail.
 
 Furthermore, navigate to the page "SECURITY POLICIES -> Access Control -> Policy". Inject a new rule between the default rule "Cleanup rule" and the rule "allow-all-LAN-to-LAN" that we have created in the previous steps.
 
@@ -277,7 +277,7 @@ Name                      Configure any name for this policy (i.e. allow-all-LAN
 Source                    Select the object with interface eth1 or the object with Net
 Destination               Select the object with All_internet
 VPN                       Any
-Service & Applicagtions   Any
+Service & Applications    Any
 Action                    Accept
 Track                     Log
 =======================   ===============================================
