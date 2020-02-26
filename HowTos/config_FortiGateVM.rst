@@ -62,8 +62,8 @@ Once logged in with the default password, it will ask you to set a new password.
 Once logged in with the new password, go to the page "Network -> Interfaces" to configure Physical Interface port1 as the following screenshot.
 
   - Select the interface with port 1 and click on "Edit"
-  - Specify appropriate role (WAN)
   - Enter an Alias (i.e: WAN) for the interface
+  - Specify appropriate role (WAN)
   - Enable DHCP to ensure FW retrieve private IP information from AWS console
   - Enable “Retrieve default gateway from server" 
   
