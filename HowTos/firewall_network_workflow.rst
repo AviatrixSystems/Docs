@@ -125,10 +125,10 @@ This step programs the relative route tables, described as below.
 ==========================================   =====================       =================
 -gw-tgw-egress                               0.0.0.0/0 -> tgw            for FireNet gateway and HA gateway eth1 to TGW 
 -gw-tgw-ingress                              0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway and ha gateway 
--gw-dmz-firewall                             0.0.0.0/0 -> eth2           for firewall instance to eth2 of FireNet gateway
--gw-hagw-dmz-firewall                        0.0.0.0/0 -> eth2           for firewall instance to eth2 of FireNet HA gateway 
--gw-dmz-exchange                             0.0.0.0/0 -> eth1           for eth3 of FireNet gateway to eth1 of HA gateway 
--gw-hagw-dmz-exchange                        0.0.0.0/0 -> eth1           for eth3 of FireNet HA gateway to eth1 of primary gateway 
+-gw-dmz-firewall                             0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW
+-gw-hagw-dmz-firewall                        0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW 
+-gw-dmz-exchange                             0.0.0.0/0 -> eth3           for eth3 of FireNet gateway to eth3 of HA gateway 
+-gw-hagw-dmz-exchange                        0.0.0.0/0 -> eth3           for eth3 of FireNet HA gateway to eth3 of primary gateway 
 ==========================================   =====================       =================
 
 
