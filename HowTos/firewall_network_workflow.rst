@@ -92,7 +92,7 @@ eth3                                               Allow ALL (Do not change)    
 
 If FireNet gateway HA is enabled, the HA gateway shares the same route table as the primary for its eth1 interface. 
 
-The new subnets created by the Controller at this steps are listed below.
+The new subnets created by the Controller at these steps are listed below.
 
 ==========================================      =================
 **Aviatrix FireNet VPC Private Subnet**         **Description**
