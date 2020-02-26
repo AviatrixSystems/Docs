@@ -94,18 +94,18 @@ If FireNet gateway HA is enabled, the HA gateway shares the same route table as 
 
 The new subnets created by the Controller at this steps are listed below.
 
-==========================================         =================
-**Aviatrix FireNet VPC Private Subnet**            **Description**
-==========================================         =================
--gw-tgw-egress                                     for FireNet gateway eth1 to TGW
--gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
--gw-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
--gw-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
--gw-dmz-firewall                                   for FireNet gateway eth2
--gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
--gw-dmz-exchange                                   for FireNet gateway eth3
--gw-hagw-dmz-exchange                              for FireNet HA gateway eth3
-==========================================         =================
+==========================================      =================
+**Aviatrix FireNet VPC Private Subnet**         **Description**
+==========================================      =================
+-tgw-egress                                     for FireNet gateway eth1 to TGW
+-hagw-tgw-egress                                for FireNet HA gateway eth1 to TGW
+-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
+-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
+-dmz-firewall                                   for FireNet gateway eth2
+-hagw-dmz-firewall                              for FireNet HA gateway eth2 
+-dmz-exchange                                   for FireNet gateway eth3
+-hagw-dmz-exchange                              for FireNet HA gateway eth3
+==========================================      =================
 
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
@@ -123,12 +123,14 @@ This step programs the relative route tables, described as below.
 ==========================================   =====================       =================                 
 **Aviatrix FireNet VPC route table**         **key route entry**         **Description**
 ==========================================   =====================       =================
--gw-tgw-egress                               0.0.0.0/0 -> tgw            for FireNet gateway and HA gateway eth1 to TGW 
--gw-tgw-ingress                              0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway and ha gateway 
--gw-dmz-firewall                             0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW
--gw-hagw-dmz-firewall                        0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW 
--gw-dmz-exchange                             0.0.0.0/0 -> eth3           for eth3 of FireNet gateway to eth3 of HA gateway 
--gw-hagw-dmz-exchange                        0.0.0.0/0 -> eth3           for eth3 of FireNet HA gateway to eth3 of primary gateway 
+-tgw-egress                                  0.0.0.0/0 -> tgw            for FireNet gateway eth1 to TGW 
+-hagw-tgw-egress                             0.0.0.0/0 -> tgw            for FireNet HA gateway eth1 to TGW
+-tgw-ingress                                 0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway
+-hagw-tgw-ingress                            0.0.0.0/0 -> eth1.          for TGW to eth1 of FireNet HA gateway
+-dmz-firewall                                0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW
+-hagw-dmz-firewall                           0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW 
+-dmz-exchange                                0.0.0.0/0 -> eth3           for eth3 of FireNet gateway to eth3 of HA gateway 
+-hagw-dmz-exchange                           0.0.0.0/0 -> eth3           for eth3 of FireNet HA gateway to eth3 of primary gateway 
 ==========================================   =====================       =================
 
 
