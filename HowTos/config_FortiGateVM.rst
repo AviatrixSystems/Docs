@@ -45,12 +45,16 @@ Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/fire
 
 .. note::
 
-  Login with Username "admin". Default password is the instance-id.
+  Please try to use browser Firefox if the Management UI link is not able to open on your default browser.
 
 3. Reset Fortigate Next Generation Firewall Password
 --------------------------------
 
 Once logged in with the default password, it will ask you to set a new password.
+
+.. note::
+
+  Login with Username "admin". Default password is the instance-id.
 
 4. Configure Fortigate Next Generation Firewall port1 with WAN
 -------------------------------------------------
