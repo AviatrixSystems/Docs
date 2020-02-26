@@ -30,12 +30,25 @@ to the logging server. Out of box integration is supported for the following log
    Most log collectors support rsyslog as forwarder. We may only add new features to rsyslog going forward.
 
 Here are the sample instructions to configure log services to collect from rsyslog forwarder.
+"Note" box gives example of template needed for the config on the Aviatrix rsyslog logging service.
 
- - Splunk https://docs.splunk.com/Documentation/Splunk/latest/Data/HowSplunkEnterprisehandlessyslogdata
+ - Splunk https://docs.splunk.com/Documentation/Splunk/latest/Data/Monitornetworkports
+
+ .. note:: (No rsyslog template needed for splunk config)
+
+
  - Datadog https://docs.datadoghq.com/integrations/rsyslog/?tab=datadogussite
- - Filebeat https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-input-syslog.html
+
+ .. note:: <DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\n
+
+   (replace DATADOG_API_KEY with your datadog key)
+
  - Sumologic https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source
- 
+
+ .. note:: <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [YOUR_TOKEN] %msg%\n
+
+    (replace YOUR_TOKEN with your sumo token)
+
 
 In addition to standard information on syslog, Aviatrix also provides
 capability for user VPN connections, VPN user TCP sessions, security
