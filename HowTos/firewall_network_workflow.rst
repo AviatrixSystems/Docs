@@ -176,7 +176,7 @@ Palo instance has 3 interfaces as described below.
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
 eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
-eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+eth2 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
@@ -197,7 +197,7 @@ Fortigate Next Generation Firewall instance has 2 interfaces as described below.
 **Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
-eth1 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
@@ -209,7 +209,7 @@ CheckPoint Firewall instance has 2 interfaces as described below.
 **CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
-eth1 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
