@@ -223,6 +223,8 @@ Or repeat this step to launch more firewall instances to associate with the same
 
 After a firewall instance is launched, wait for 15 minutes for it to come up. 
 
+Palo Alto
+**********
 You can follow `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to build
 a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
 to firewall instance. 
