@@ -10,9 +10,9 @@ Example Config for FortiGate VM in AWS
 In this document, we provide an example to set up the Fortigate Next Generation Firewall instance for you to validate that packets are indeed sent to the Fortigate Next Generation Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
-After the launch is complete, the console displays the Fortigate Next Generation Firewall instance instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
+After the launch is complete, the console displays the Fortigate Next Generation Firewall instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
 
-Here is the Firewall information in this example for your referece. Please adjust it depending on your requirements.
+Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
 ==========================================      ==========
 **Example setting**                             **Example value**
@@ -75,7 +75,7 @@ Once logged in with the default password, it will ask you to set a new password.
 Once logged in with the new password, go to the page "Network -> Interfaces" to configure Physical Interface port1 as the following screenshot.
 
   - Select the interface with port 1 and click on "Edit"
-  - Enter an Alias (i.e: WAN) for the interface
+  - Enter an Alias (i.e.: WAN) for the interface
   - Specify appropriate role (WAN)
   - Enable DHCP to ensure FW retrieve private IP information from AWS console
   - Enable “Retrieve default gateway from server" 
@@ -88,7 +88,7 @@ Once logged in with the new password, go to the page "Network -> Interfaces" to 
 Go to the page "Network -> Interfaces" to configure Physical Interface port2 as the following screenshot.
 
   - Select the interface with port 2 and click on "Edit"
-  - Enter an Alias (i.e: LAN) for the interface
+  - Enter an Alias (i.e.: LAN) for the interface
   - Specify appropriate role (LAN)
   - Enable DHCP to ensure FW retrieve private IP information from AWS console
   - Disable “Retrieve default gateway from server" 
@@ -103,7 +103,7 @@ For simplicity, you can configure the FW to send all RFC 1918 packets to LAN por
 
 In this example, we configure all traffic for RFC 1918 to be sent out of the LAN interface.
 
-Go to tha page "Network -> State Routes" to create a Static Route as the following screenshot.
+Go to the page "Network -> State Routes" to create a Static Route as the following screenshot.
 
   - Click on the button "Create New"
   - Enter the destination route in the "Destination" box
