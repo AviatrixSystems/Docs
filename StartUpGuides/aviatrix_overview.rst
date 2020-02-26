@@ -217,7 +217,8 @@ tunnel to the cloud directly over the Internet is the most economical way as you
 
 In this case, the cloud provider's native VPN solution falls short by a long shot. The Aviatrix site2cloud solution solves these problems:
 
- a. **AWS VPN Gateway Limitation** AWS VPN gateway supports 10 connections per VPC. I have more than 10 sites, the native solution is not usable. 
+ a. **Traffic Black Hole** When the tunnel on the primary gateway is down, VPC route entry still points to the primary gateway, it does not point to the backup gateway. .
+ #. **AWS VPN Gateway Limitation** AWS VPN gateway supports 10 connections per VPC. I have more than 10 sites, the native solution is not usable. 
  #. **Azure VPN Gateway Limitation** Azure VPN gateway supports only 1 VPN connection for IKEv1. My office firewall device only supports IKEv1.
  #. **No Visibility** Cloud provider's VPN gateway is a black box, there is no visibility for troubleshooting. 
  #. **No Manual** I have to configure and manage hundreds or thousands of IPSEC tunnels, the manual way by using traditional vendors such as Cisco ASA and CSR is not possible. 
