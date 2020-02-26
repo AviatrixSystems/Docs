@@ -12,6 +12,19 @@ In this document, we provide an example to set up the Fortigate Next Generation 
 The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
 After the launch is complete, the console displays the Fortigate Next Generation Firewall instance instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
 
+Here is the Firewall information in this example for your referece. Please adjust it depending on your requirements.
+
+==========================================      ==========
+**Example setting**                             **Example value**
+==========================================      ==========
+Firewall Image                                  Fortinet FortiGate Next-Generation Firewall
+Firewall Image Version                          6.2.3
+Firewall Instance Size                          c5.xlarge
+Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
+Attach                                          Check
+==========================================      ==========
+
 .. note::
 
   Fortigate Next Generation Firewall instance has 2 interfaces as described below. Additionally, firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
