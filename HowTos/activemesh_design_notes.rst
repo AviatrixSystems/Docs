@@ -15,7 +15,7 @@ ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This 
 While AWS Transit Gateway (TGW) does not propagate routes to Spoke VPCs, TGW Direct Connect via DXGW and TGW
 VPN have full functions of failover, multi-path and ECMP in supporting connection to on-prem. This includes:
 
- - TGW DXGW prefers to TGW VPN when both advertising the same network. When DXGW goes down, one of the VPN routes take over. 
+ - TGW prefers DXGW to TGW VPN when both advertising the same network. When DXGW goes down, one of the VPN routes take over. 
  - When there are multiple VPN routes, TGW routing policy selects the shortest AS_PATH length. 
  - When there are multiple VPN routes with identical AS_PATH length, TGW VPN distributes traffic with ECMP when it is enabled. 
 
