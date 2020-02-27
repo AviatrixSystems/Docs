@@ -34,7 +34,7 @@ Intro
 Prerequisites
 -----------------
 
-+ The feature only supports AWS at the moment
++ The feature only supports AWS and AWS-Gov at the moment
 + User needs to enable controller backup using an AWS based access-account.
 + User must disable controller HA. (User can enable HA again on the new controller once migration is fully completed)
 + User should not make any config change during the migration as these config will be lost once new controller takes over.
