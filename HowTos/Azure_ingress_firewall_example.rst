@@ -1,156 +1,84 @@
 .. meta::
-  :description: Firewall Network
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
+  :description: Azure ingress firewall network
+  :keywords: Next Gen Transit Architecture for Azure, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Azure virtual network peering
 
 
 =========================================================
-Ingress Firewall Setup Solution 
+Azure Ingress Firewall Setup Solution 
 =========================================================
 
-This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages AWS Load Balancers, `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ and `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_. The solution also allows 
+This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages Azure Load Balancers, `Transit FireNet for Azure <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_, and `Azure Transit with Native Spoke VNets <https://github.com/AviatrixSystems/Docs/blob/master/HowTos/transitvpc_workflow.rst#6b-attach-azure-arm-spoke-vnet-via-native-peering>`_. The solution also allows 
 you to view the client IP address.
 
 The deployment is shown as the diagram below. 
 
-|ingress_firewall|
+|transit_firenet_vnet|
 
-The key idea is from FireNet point of view, the ingress inspection is simply a VPC to VPC traffic inspection. This is accomplished by 
+The key idea is from FireNet point of view, the ingress inspection is simply a VNET to VNET traffic inspection. This is accomplished by 
 
- a. Placing an Internet facing AWS ALB/NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). 
- #. Build a connection policy to connect the Ingress domain with the Application domain. 
- #. Connect the Application domain traffic that requires inspection with the Aviatrix Firewall Domain.
+ #. Place an Internet facing Azure Application Gateway in a spoke VNET (in the diagram, this spoke VNET is called Ingress spoke VNET) from the VNET where applications reside (Application spoke VNET). 
+ 
+ #. Manage Spoke Inspection Policies for the Application spoke VNET traffic that requires inspection with the Aviatrix Transit VNet.
 
-In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. The solution does not need AWS ALB/NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
+In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VNET to VNET filtering. The solution does not need Azure Load Balancers to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
 
 .. Note::
 
-  This architecture works for both `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ and `AWS ALB. <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html>`_. NLB is used for illustration purpose. 
+  This architecture works for `Azure Application Gateway <https://docs.microsoft.com/en-us/azure/application-gateway/overview>`_.
 
-  You can create multiple load balancers in the Ingress VPC. 
-
+  You can create multiple load balancers in the Ingress spoke VNET. 
 
 
 1. Prerequisite Setup
 --------------------------------
 
- - Follow `Aviatrix Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to launch FireNet gateways and firewall instances. Enable `Egress <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ if desired.
+  - Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy Azure Transit with Native Spoke VNets topology, FireNet gateways, and firewall instances. Enable `Egress <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ if desired.
+ 
+	- Create an Ingress spoke VNET and attach it to the Aviatrix Transit VNET
+	- Create an Application spoke VNET and attach it to the Aviatrix Transit VNET
+	- Manage a spoke inspection policy for the Application spoke VNET
 
- - Follow `Aviatrix TGW Orchestrator workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_ to:
-	-  Create an Ingress domain (this domain can be named something else and can be an existing domain, just make sure it is in a different domain than Application domain.). 
-	- Build Connection policy between the Ingress domain and the Application domain. 
-	- Build Connection policy between Application domain and Firewall domain so that traffic in and out of the domain is inspected. 
- 	- Attach the Application domain VPC (Spoke-2 in the diagram) to the TGW. 
-	- Attach the Ingress domain VPC (Spoke-1 in the diagram) to the TGW.  
-
-2. Create AWS NLB
+2. Create Azure Application Gateway
 -------------------------------------
 
-In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the following. 
+In Ingress spoke VNET (Spoke-1), create an Azure Application Gateway, make sure you select the following: 
 
- - Select internet-facing
- - Routing Target group should be IP
+ - Select "Public" for Frontend IP address type in section Frontends
+ - Select "IP address or hostname" for Target type and configure the private IP of Application Server for Target in section Backends
+ 
+.. note::
 
+	`Quickstart: Direct web traffic with Azure Application Gateway - Azure portal <https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal>`_
+	
 
 3. Ready to go!
 ---------------
 
- - From the AWS Console, make sure NLB target group is in healthy state.
- - Run a https request on the NLB DNS name
-- The application can also reach Internet through firewall instances if you enable Egress on the FireNet.  
-4. Capturing Client IP
+- From the Azure portal, make sure Server (backend pool) status is in Healthy state.
+- Run a http/https request targeting on the Azure Application Gateway Public IP or DNS name.
+
+4. View Traffic Log on Firewall
+---------------
+
+You can view if traffic is forwarded to the firewall instance by logging in to the Palo Alto VM-Series console. Go to the page "Monitor -> Logs -> Traffic". Perform http/https traffic from your laptop/PC to the public IP or domain name of Azure Application Gateway.
+
+5. Capturing Client IP
 -------------------------
 
-4.1 Using AWS ALB
-^^^^^^^^^^^^^^^^^^
-
-AWS ALB automatically preserves client IP address, you can find the client IP address in the HTTP header 
+Azure Application Gateway automatically preserves client IP address, you can find the client IP address in the HTTP header 
 field "X-Forwarded-For". 
 
-To view the client IP address in the access log, 
-follow the instructions in `How to save client IP in access logs <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_. 
+To view the client IP address in the access log, follow the instructions in `How to save client IP in access logs <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_. 
 
-4.2 Using AWS NLB
-^^^^^^^^^^^^^^^^^^^^
+.. note::
 
-When NLB uses IP address as target group, the client IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original client IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Review the section "Enable Proxy Protocol" in the above AWS document or follow the same steps as below to enble this function on NLB using the AWS console.
-
-	- Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-
-	- On the navigation pane, under LOAD BALANCING, choose Target Groups.
-
-	- Select the target group.
-
-	- Choose Description, Edit attributes.
-
-	- Select Enable proxy protocol v2, and then choose Save.
-
-Also, you need to configure/support Proxy Protocol feature on your web server to retrieve the client original IP address. Please follow the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.
- 
-	- Take Apache/2.4.41 (Ubuntu) for example
-	
-	- Find and open Apache configuration file.
-	
-		::
-			
-			/etc/apache2/apache2.conf
-	
-	- Edit/add remoteip module configuration into Apache configuration file as below:
-			
-		::
-		
-			LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
-
-		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html
-		
-		- https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html#remoteipproxyprotocol
-
-	- Confirm that the mod_remoteip module loads by issuing command as below
-	
-		::
-		
-			$sudo apachectl -t -D DUMP_MODULES | grep -i remoteip
-		
-	- Review the output and verify that it contains a line similar to:
-	
-		::
-		
-			remoteip_module (shared)
-
-		- Notes: If you are not able to view the prompt message, please make sure that your apache version support that module or attempt to load that module into the apache configuration.
-
-	- Configure the following line to your Apache configuration file (take /etc/apache2/sites-available/000-default.conf for example) to enable Proxy Protocol support. 
-		
-		::
-		
-			RemoteIPProxyProtocol On
-			
-	- To view client IP address in the access log, edit/add commands into LogFormat section as below:
-
-		::
-		
-			LogFormat "%h %p %a %{remote}p %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
-
-	- Save the changes
-
-	- Reload the Apache service by issuing command.
-	
-		::
-		
-			#systemctl reload apache2
-
-	- Open the Apache access logs on your Apache server
-
-	- Verify that client IP addresses are now recorded under the X-Forwarded-For header.
-
-	- Notes: 
-	
-		- Commands and file location varies by configuration
-	
-		- For other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
+	`Does Application Gateway support x-forwarded-for headers? <https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-faq#does-application-gateway-support-x-forwarded-for-headers>`_
 
 .. |ingress_firewall| image:: ingress_firewall_example_media/ingress_firewall.png
    :scale: 30%
 
+.. |transit_firenet_vnet| image:: transit_firenet_media/transit_firenet_vnet.png
+   :scale: 30%
 
 .. disqus::
 
