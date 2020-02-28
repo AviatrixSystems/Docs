@@ -57,7 +57,8 @@ The key benefits of ActiveMesh are improved network resiliency, failover converg
 How to enable ActiveMesh?
 --------------------------
 
-ActiveMesh is not enabled by default. Follow the `Aviatrix Encrypted Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to enable ActiveMesh mode. 
+ActiveMesh enabled by default. For Aviatrix Transit or Spoke gateway launched before ActivMesh
+mode become available, follow the `Aviatrix Encrypted Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to enable ActiveMesh mode. 
 
 How to troubleshoot ActiveMesh deployment?
 --------------------------------------------
