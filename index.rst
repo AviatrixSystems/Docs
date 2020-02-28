@@ -183,6 +183,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. _Site2Cloud:
 
+
 .. toctree::
    :maxdepth: 1
    :caption: Site2Cloud
@@ -363,6 +364,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/activemesh_migration
    HowTos/openvpn_fqdn
    HowTos/HowTo_Setup_SAML_with_G_SUITE_ORG
+   HowTos/HowTo_Setup_Okta_SAML_Profile_Attribute
 
 .. _Good To Know:
 
