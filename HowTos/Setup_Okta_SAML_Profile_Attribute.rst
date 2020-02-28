@@ -173,58 +173,58 @@ Here are the steps for setting up the example:
 
       |dashboard_user_without_profile|
 
-.. |open_profile_editor| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/open_profile_editor.png
+.. |open_profile_editor| image:: Setup_Okta_SAML_Profile_Attribute_media/open_profile_editor.png
    :scale: 70%
 
-.. |open_user_template| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/open_user_template.png
+.. |open_user_template| image:: Setup_Okta_SAML_Profile_Attribute_media/open_user_template.png
    :scale: 70%
 
-.. |profile_editor_add| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/profile_editor_add.png
+.. |profile_editor_add| image:: Setup_Okta_SAML_Profile_Attribute_media/profile_editor_add.png
    :scale: 70%
 
-.. |add_profile_attribute_to_user_template| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_user_template.png
+.. |add_profile_attribute_to_user_template| image:: Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_user_template.png
    :scale: 70%
 
-.. |add_profile_attribute_to_app| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_app.png
+.. |add_profile_attribute_to_app| image:: Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_app.png
    :scale: 70%
 
-.. |add_profile_attribute_to_user| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_user.png
+.. |add_profile_attribute_to_user| image:: Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_user.png
    :scale: 70%
 
-.. |dashboard_user_with_profile| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/dashboard_user_with_profile.png
+.. |dashboard_user_with_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/dashboard_user_with_profile.png
    :scale: 70%
 
-.. |browser_user_with_profile| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/browser_user_with_profile.png
+.. |browser_user_with_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/browser_user_with_profile.png
    :scale: 70%
 
-.. |dashboard_user_without_profile| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/dashboard_user_without_profile.png
+.. |dashboard_user_without_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/dashboard_user_without_profile.png
    :scale: 70%
 
-.. |browser_user_without_profile| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/browser_user_without_profile.png
+.. |browser_user_without_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/browser_user_without_profile.png
    :scale: 70%
 
-.. |vpn-5-1-okta| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/vpn-5-1-okta.png
+.. |vpn-5-1-okta| image:: Setup_Okta_SAML_Profile_Attribute_media/vpn-5-1-okta.png
    :scale: 70%
 
-.. |cert-sharing| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/cert-sharing.png
+.. |cert-sharing| image:: Setup_Okta_SAML_Profile_Attribute_media/cert-sharing.png
    :scale: 70%
 
-.. |default-profile| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/default-profile.png
+.. |default-profile| image:: Setup_Okta_SAML_Profile_Attribute_media/default-profile.png
    :scale: 70%
 
-.. |access-profile| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/access-profile.png
+.. |access-profile| image:: Setup_Okta_SAML_Profile_Attribute_media/access-profile.png
    :scale: 70%
 
-.. |vpn-user| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/vpn-user.png
+.. |vpn-user| image:: Setup_Okta_SAML_Profile_Attribute_media/vpn-user.png
    :scale: 70%
 
-.. |download-cert| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/download-ovpn.png
+.. |download-cert| image:: Setup_Okta_SAML_Profile_Attribute_media/download-ovpn.png
    :scale: 70%
 
-.. |add-person| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/add-person.png
+.. |add-person| image:: Setup_Okta_SAML_Profile_Attribute_media/add-person.png
    :scale: 70%
 
-.. |assign-app| image:: Howto_Setup_Okta_SAML_Profile_Attribute_media/assign-app.png
+.. |assign-app| image:: Setup_Okta_SAML_Profile_Attribute_media/assign-app.png
    :scale: 70%
 
 .. disqus::
