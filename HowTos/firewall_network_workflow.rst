@@ -92,20 +92,20 @@ eth3                                               Allow ALL (Do not change)    
 
 If FireNet gateway HA is enabled, the HA gateway shares the same route table as the primary for its eth1 interface. 
 
-The new subnets created by the Controller at this steps are listed below.
+The new subnets created by the Controller at these steps are listed below.
 
-==========================================         =================
-**Aviatrix FireNet VPC Private Subnet**            **Description**
-==========================================         =================
--gw-tgw-egress                                     for FireNet gateway eth1 to TGW
--gw-hagw-tgw-egress                                for FireNet HA gateway eth1 
--gw-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
--gw-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
--gw-dmz-firewall                                   for FireNet gateway ethh2
--gw-hagw-dmz-firewall                              for FireNet HA gateway eth2 
--gw-dmz-exchange                                   for FireNet gateway eth3
--gw-hagw-dmz-exchange                              for FireNet HA gateway eth3
-==========================================         =================
+==========================================      =================
+**Aviatrix FireNet VPC Private Subnet**         **Description**
+==========================================      =================
+-tgw-egress                                     for FireNet gateway eth1 to TGW
+-hagw-tgw-egress                                for FireNet HA gateway eth1 to TGW
+-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
+-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway 
+-dmz-firewall                                   for FireNet gateway eth2
+-hagw-dmz-firewall                              for FireNet HA gateway eth2 
+-dmz-exchange                                   for FireNet gateway eth3
+-hagw-dmz-exchange                              for FireNet HA gateway eth3
+==========================================      =================
 
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
@@ -123,12 +123,14 @@ This step programs the relative route tables, described as below.
 ==========================================   =====================       =================                 
 **Aviatrix FireNet VPC route table**         **key route entry**         **Description**
 ==========================================   =====================       =================
--gw-tgw-egress                               0.0.0.0/0 -> tgw            for FireNet gateway and HA gateway eth1 to TGW 
--gw-tgw-ingress                              0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway and ha gateway 
--gw-dmz-firewall                             0.0.0.0/0 -> eth2           for firewall instance to eth2 of FireNet gateway
--gw-hagw-dmz-firewall                        0.0.0.0/0 -> eth2           for firewall instance to eth2 of FireNet HA gateway 
--gw-dmz-exchange                             0.0.0.0/0 -> eth1           for eth3 of FireNet gateway to eth1 of HA gateway 
--gw-hagw-dmz-exchange                        0.0.0.0/0 -> eth1           for eth3 of FireNet HA gateway to eth1 of primary gateway 
+-tgw-egress                                  0.0.0.0/0 -> tgw            for FireNet gateway eth1 to TGW 
+-hagw-tgw-egress                             0.0.0.0/0 -> tgw            for FireNet HA gateway eth1 to TGW
+-tgw-ingress                                 0.0.0.0/0 -> eth1           for TGW to eth1 of FireNet gateway
+-hagw-tgw-ingress                            0.0.0.0/0 -> eth1.          for TGW to eth1 of FireNet HA gateway
+-dmz-firewall                                0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW
+-hagw-dmz-firewall                           0.0.0.0/0 -> tgw            for firewall instance LAN interface to TGW 
+-dmz-exchange                                0.0.0.0/0 -> eth3           for eth3 of FireNet gateway to eth3 of HA gateway 
+-hagw-dmz-exchange                           0.0.0.0/0 -> eth3           for eth3 of FireNet HA gateway to eth3 of primary gateway 
 ==========================================   =====================       =================
 
 
@@ -137,11 +139,11 @@ This step programs the relative route tables, described as below.
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway. 
 
-This step launches a VM-Series and associates it with one of the FireNet gateways. 
+This step launches a Firewall instance and associates it with one of the FireNet gateways. 
 
 .. important::
 
-The VM-Series and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ##########################
@@ -153,8 +155,8 @@ VPC ID                                          The Security VPC created in Step
 Gateway Name                                    The primary FireNet gateway.
 Firewall Instance Name                          The name that will be displayed on AWS Console.
 Firewall Image                                  The AWS AMI that you have subscribed in Step 2.
-Firewall Image Version                          VM-Series current supported software versions. 
-Firewall Instance Size                          VM-Series instance type.  
+Firewall Image Version                          Firewall instance current supported software versions. 
+Firewall Instance Size                          Firewall instance type.  
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Username                                        Applicable to Azure deployment only. "admin" as a username is not accepted.
@@ -166,18 +168,18 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. 
 ==========================================      ==========
 
-Note that Palo instance has 3 interfaces as described below.
+Palo instance has 3 interfaces as described below.
+**********************
 
 ========================================================         ===============================          ================================
 **Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
 eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
-eth2 (on subnet -gw-dmz-firewall)                                LAN or Trusted interface                 Allow ALL (Do not change)
+eth2 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
-
 
 .. important::
 
@@ -187,7 +189,30 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
+    
+Fortigate Next Generation Firewall instance has 2 interfaces as described below.
+**********************
 
+========================================================         ===============================          ================================
+**Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+
+CheckPoint Firewall instance has 2 interfaces as described below. 
+**********************
+
+========================================================         ===============================          ================================
+**CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
 7a.2 Launch and Associate More
 #################################
@@ -200,6 +225,8 @@ Or repeat this step to launch more firewall instances to associate with the same
 
 After a firewall instance is launched, wait for 15 minutes for it to come up. 
 
+Palo Alto
+**********
 You can follow `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to build
 a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
 to firewall instance. 
