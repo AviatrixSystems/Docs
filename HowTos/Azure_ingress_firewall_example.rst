@@ -28,15 +28,14 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 
   You can create multiple load balancers in the Ingress Spoke VNET. 
 
-
 1. Prerequisite Setup
 --------------------------------
 
-1.1 Upgrade the Aviatrix Controller to at least version UserConnect-5.3.1428
+First of all, upgrade the Aviatrix Controller to at least version UserConnect-5.3.1428
 
   - https://docs.aviatrix.com/HowTos/inline_upgrade.html
   
-1.2 In this instruction, we are going to deploy the below topology in Azure
+In this instruction, we are going to deploy the below topology in Azure
 
 - Azure VNETs
 
@@ -45,8 +44,6 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 	- Ingress Spoke VNET * 1 (i.e. 10.20.0.0/16)
 
 	- Application Spoke VNET * 1 (i.e. 10.21.0.0/16)
-	
-- Apache2 Web server in Application Spoke VNET 
 
 - Azure Transit with Native Spoke VNets topology
 
@@ -103,59 +100,160 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 
 - Deploy firewall instance in Aviatrix Transit VNET by following the step `Deploy Firewall Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#deploy-firewall-network>`_ as the following screenshot.
 	
-Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
+	Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
-==========================================      ==========
-**Example setting**                             **Example value**
-==========================================      ==========
-Firewall Image                                  Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1
-Firewall Image Version                          9.1.0
-Firewall Instance Size                          Standard_D3_v2
-Management Interface Subnet						Select the subnet whose name contains "gateway-and-firewall-mgmt"
-Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress"
-Username										Applicable to Azure deployment only. “admin” as a username is not accepted.
-Attach                                          Check
-==========================================      ==========
+	==========================================      ==========
+	**Example setting**                             **Example value**
+	==========================================      ==========
+	Firewall Image                                  Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1
+	Firewall Image Version                          9.1.0
+	Firewall Instance Size                          Standard_D3_v2
+	Management Interface Subnet						Select the subnet whose name contains "gateway-and-firewall-mgmt"
+	Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress"
+	Username										Applicable to Azure deployment only. “admin” as a username is not accepted.
+	Attach                                          Check
+	==========================================      ==========
 
-|azure_avx_deploy_firewall|
+	|azure_avx_deploy_firewall|
 
 - Set up firewall configuration by referring to `Example Config for Palo Alto Network VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_
 
+	.. Note::
+
+		In Azure, instead of using pem file, please use username/password to ssh into firewall instance to reset password if needed. Additionally, use the same username/password to login into firewall website.
+
+2. Launch Apache2 Web server in Application Spoke VNET 
+-------------------------------------
+
+In Application Spoke VNET ((Spoke-2), create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with port 8080.
+
+
+========================	=================
+**Example setting**			**Example value**
+========================	=================
+Protocol					HTTP
+Port						8080
+========================	=================
+
 .. Note::
 
-	In Azure, instead of using pem file, please use username/password to ssh into firewall instance to reset password.
+	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On Ubuntu 16.04 | 17.10 | 18.04 LTS Servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server
+	
+	Refer to `How To Change Apache Default Port To A Custom Port <https://www.ostechnix.com/how-to-change-apache-ftp-and-ssh-default-port-to-a-custom-port-part-1/>`_ to use custom port 8080
 
-2. Create Azure Application Gateway
+3. Create Azure Application Gateway
 -------------------------------------
 
 In Ingress Spoke VNET (Spoke-1), create an Azure Application Gateway, make sure you select the following: 
 
- - Select "Public" for Frontend IP address type in section Frontends
- - Select "IP address or hostname" for Target type and configure the private IP of Application Server for Target in section Backends
+- Create an Azure Application Gateway in Ingress Spoke VNET
+
+	|azure_application_gw_creation|
+
+- Select "Public" for Frontend IP address type in section Frontends
+
+	|azure_application_gw_frontend|
+
+- Select "IP address or hostname" for Target type and configure the private IP of Application Server for Target in section Backends
+ 
+	|azure_application_gw_backend|
+
+- Add a routing rule on Listener depending on your requirement
+	
+	========================	=================
+	**Example setting**         **Example value**
+	========================    =================
+	Frontend IP					Public
+	Protocol					HTTP
+	Port						80
+	========================	=================
+	
+	|azure_application_gw_routing_rule_listener|
+
+- Add a routing rule on Backend targets and create a HTTP setting depending on your requirement
+	
+	|azure_application_gw_routing_rule_backend_target|
+
+	- Click the button "Create new" on HTTP settings
+
+	|azure_application_gw_routing_rule_http_setting|
+	
+	========================	=================
+	**Example setting**         **Example value**
+	========================    =================
+	Bankend protocol			HTTP										
+	Backend port				8080					
+	========================	=================
+
+	|azure_application_gw_routing_rule_backend_target_02|
+	
+- Review the configuration and click the button "Create" at the page "Review + create"
  
 .. note::
 
 	`Quickstart: Direct web traffic with Azure Application Gateway - Azure portal <https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal>`_
-	
 
-3. Ready to go!
+
+4. Ready to go!
 ---------------
 
-- From the Azure portal, make sure Server (backend pool) status is in Healthy state.
+- Make sure Server (backend pool) status is in Healthy state from the Azure portal page "Application Gateway -> Backend health".
+
+|azure_application_gw_health_check|
+
 - Run a http/https request targeting on the Azure Application Gateway Public IP or DNS name.
 
-4. View Traffic Log on Firewall
+	- Find the Frontend public IP address of Azure Application Gateway from the Azure portal page "Application Gateway -> Overview"
+	
+	|azure_application_gw_frontend_public_IP|
+	
+	- Copy the Frontend public IP address of Azure Application Gateway and paste it on a browser from your laptop/PC.
+	
+	|azure_browser|
+	
+	- Perform tcpdump with port 8080 on Apache2 Web server
+	
+	|azure_application_server_tcpdump|
+
+5. View Traffic Log on Firewall
 ---------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the Palo Alto VM-Series console. Go to the page "Monitor -> Logs -> Traffic". Perform http/https traffic from your laptop/PC to the public IP or domain name of Azure Application Gateway.
 
-5. Capturing Client IP
+6. Capturing Client IP
 -------------------------
 
 Azure Application Gateway automatically preserves client IP address, you can find the client IP address in the HTTP header 
 field "X-Forwarded-For". 
 
 To view the client IP address in the access log, follow the instructions in `How to save client IP in access logs <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_. 
+
+- Find and open Apache configuration file.
+	
+	::
+
+		#vim /etc/apache2/apache2.conf
+
+- In the LogFormat section, add %{X-Forwarded-For}i as follows:
+
+	::
+	
+		...
+		LogFormat "%{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+		LogFormat "%h %l %u %t \"%r\" %>s %b" common
+		...
+		
+- Save your changes.
+
+- Reload the Apache service.
+
+	::
+
+		#systemctl reload apache2
+		
+- Review the public/original client IP on apache2 access log 
+
+|azure_application_server_apache2_accesslog|
 
 .. note::
 
@@ -173,6 +271,39 @@ To view the client IP address in the access log, follow the instructions in `How
 
 .. |azure_avx_deploy_firewall| image:: ingress_firewall_example_media/azure_avx_deploy_firewall.png
    :scale: 30%
+  
+.. |azure_application_gw_creation| image:: ingress_firewall_example_media/azure_application_gw_creation.png
+   :scale: 30%
    
+.. |azure_application_gw_frontend| image:: ingress_firewall_example_media/azure_application_gw_frontend.png
+   :scale: 30%
+      
+.. |azure_application_gw_backend| image:: ingress_firewall_example_media/azure_application_gw_backend.png
+   :scale: 30%
+   
+.. |azure_application_gw_routing_rule_listener| image:: ingress_firewall_example_media/azure_application_gw_routing_rule_listener.png
+   :scale: 30%
+ 
+.. |azure_application_gw_routing_rule_backend_target| image:: ingress_firewall_example_media/azure_application_gw_routing_rule_backend_target.png
+   :scale: 30%
+ 
+.. |azure_application_gw_routing_rule_http_setting| image:: ingress_firewall_example_media/azure_application_gw_routing_rule_http_setting.png
+   :scale: 30%
+ 
+.. |azure_application_gw_health_check| image:: ingress_firewall_example_media/azure_application_gw_health_check.png
+   :scale: 30%
+   
+.. |azure_application_gw_frontend_public_IP| image:: ingress_firewall_example_media/azure_application_gw_frontend_public_IP.png
+   :scale: 30%
+   
+.. |azure_browser| image:: ingress_firewall_example_media/azure_browser.png
+   :scale: 30%
+
+.. |azure_application_server_tcpdump| image:: ingress_firewall_example_media/azure_application_server_tcpdump.png
+   :scale: 30%
+
+.. |azure_application_server_apache2_accesslog| image:: ingress_firewall_example_media/azure_application_server_apache2_accesslog.png
+   :scale: 30%
+
 .. disqus::
 
