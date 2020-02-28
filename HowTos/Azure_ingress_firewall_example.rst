@@ -32,15 +32,16 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 1. Prerequisite Setup
 --------------------------------
 
-  - Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy Azure Transit with Native Spoke VNets topology, FireNet gateways, and firewall instances. Enable `Egress <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ if desired.
- 
+Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy Azure Transit with Native Spoke VNets topology, FireNet gateways, and firewall instances. Enable `Egress <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ if desired.
+
+	- Create Aviatrix Transit VNET by utilizing Aviatrtix feature "Useful Tools -> `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_" with checkbox Aviatrix FireNet VPC enabled
 	- Create an Ingress Spoke VNET and attach it to the Aviatrix Transit VNET
 	- Create an Application spoke VNET and attach it to the Aviatrix Transit VNET
 	- Manage a spoke inspection policy for the Application spoke VNET
 	
 .. Note::
 
-	Aviatrix Encrypted Transit in Azure topology also supports this Azure Ingress Firewall Solution.
+	Aviatrix Transit FireNet for Azure Encrypted Transit topology also supports this Azure Ingress Firewall Solution.
 
 2. Create Azure Application Gateway
 -------------------------------------
