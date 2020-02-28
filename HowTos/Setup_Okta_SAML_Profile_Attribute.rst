@@ -152,7 +152,7 @@ Here are the steps for setting up the example:
 
    |assign-app|
 
-#. Follow Steps 1 and 2 in `Setup Okta Profile attribute <okta-setup>`__ to define the **Profile**
+#. Follow Steps 1 and 2 in `Setup Okta Profile attribute <#okta-setup>`__ to define the **Profile**
    attribute in Okta.
 
 #. Follow `Assign VPN profile <#okta-fill-attribute>`__ to
