@@ -32,7 +32,11 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 1. Prerequisite Setup
 --------------------------------
 
-In this instruction, we are going to deploy the below topology in Azure
+1.1 Upgrade the Aviatrix Controller to at least version UserConnect-5.3.1428
+
+  - https://docs.aviatrix.com/HowTos/inline_upgrade.html
+  
+1.2 In this instruction, we are going to deploy the below topology in Azure
 
 - Azure VNETs
 
@@ -50,7 +54,7 @@ In this instruction, we are going to deploy the below topology in Azure
 
 	Aviatrix Transit FireNet for Azure Encrypted Transit topology also supports this Azure Ingress Firewall Solution.
 
-1.1 Deploy Aviatrix Transit VNET
+Deploy Aviatrix Transit VNET
 ^^^^^^^^^^^^^^^^^^^^^
 
 Create an Aviatrix Transit VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
@@ -63,17 +67,17 @@ Create an Aviatrix Transit VNET by utilizing Aviatrtix feature `Create a VPC <ht
 
 - Enable the checkbox "Aviatrix FireNet VPC"
 
-1.2 Deploy Ingress Spoke VNET
+Deploy Ingress Spoke VNET
 ^^^^^^^^^^^^^^^^^^^^^
 
-Create an Ingress Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step 1.1 or manually deploying it in Azure portal. Moreover, feel free to use your existing VNET.
+Create an Ingress Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing VNET.
 
-1.3 Deploy Application Spoke VNET
+Deploy Application Spoke VNET
 ^^^^^^^^^^^^^^^^^^^^^
 
-Create an Application Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step 1.1 or manually deploying it in Azure portal. Moreover, feel free to use your existing Application VNET.
+Create an Application Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing Application VNET.
 
-1.4 Deploy Azure Transit with Native Spoke VNets topology
+Deploy Azure Transit with Native Spoke VNets topology
 ^^^^^^^^^^^^^^^^^^^^^
 
 Follow `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Azure Transit with Native Spoke VNets topology.
@@ -84,22 +88,42 @@ Follow `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https:
 
 		For Azure deployment, the Aviatrix Transit Gateway must be `"launched" <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ with the option Enable Transit FireNet Function enabled. The minimum Azure FireNet gateway size is Standard_B2ms.
 		
-
+|azure_avx_transit_gw|
 
 - Attach both Ingress Spoke VNET and Application Spoke VNET via Azure native peering by following the step `Attach Azure ARM Spoke VNet via native peering <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_
 
-1.5 Manage Transit FireNet
+Manage Transit FireNet
 ^^^^^^^^^^^^^^^^^^^^^
 
 Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy manage FireNet policy, and firewall instances.
 
 - Manage a spoke inspection policy for the Application spoke VNET by referring to step `Manage Transit FireNet Policy <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#manage-transit-firenet-policy>`_ as the following screenshot.
 
+|azure_avx_manage_firenet_policy|
+
 - Deploy firewall instance in Aviatrix Transit VNET by following the step `Deploy Firewall Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#deploy-firewall-network>`_ as the following screenshot.
 	
+Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
+==========================================      ==========
+**Example setting**                             **Example value**
+==========================================      ==========
+Firewall Image                                  Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1
+Firewall Image Version                          9.1.0
+Firewall Instance Size                          Standard_D3_v2
+Management Interface Subnet						Select the subnet whose name contains "gateway-and-firewall-mgmt"
+Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress"
+Username										Applicable to Azure deployment only. “admin” as a username is not accepted.
+Attach                                          Check
+==========================================      ==========
 
+|azure_avx_deploy_firewall|
 
+- Set up firewall configuration by referring to `Example Config for Palo Alto Network VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_
+
+.. Note::
+
+	In Azure, instead of using pem file, please use username/password to ssh into firewall instance to reset password.
 
 2. Create Azure Application Gateway
 -------------------------------------
@@ -140,6 +164,15 @@ To view the client IP address in the access log, follow the instructions in `How
 
 .. |transit_firenet_vnet| image:: ingress_firewall_example_media/transit_firenet_vnet.png
    :scale: 30%
+   
+.. |azure_avx_transit_gw| image:: ingress_firewall_example_media/azure_avx_transit_gw.png
+   :scale: 30%
+   
+.. |azure_avx_manage_firenet_policy| image:: ingress_firewall_example_media/azure_avx_manage_firenet_policy.png
+   :scale: 30%
 
+.. |azure_avx_deploy_firewall| image:: ingress_firewall_example_media/azure_avx_deploy_firewall.png
+   :scale: 30%
+   
 .. disqus::
 
