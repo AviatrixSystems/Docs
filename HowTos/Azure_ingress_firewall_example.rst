@@ -127,12 +127,12 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 
 In Application Spoke VNET, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080.
 
-========================	=================
+========================	==============
 **Example setting**			**Example value**
-========================	=================
+========================	==============
 Protocol					HTTP
 Port						8080
-========================	=================
+========================	==============
 
 .. Note::
 
@@ -159,13 +159,13 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 
 - Add a routing rule on Listener depending on your requirement
 	
-	========================	=================
-	**Example setting**         **Example value**
-	========================    =================
-	Frontend IP					Public
-	Protocol					HTTP
-	Port						80
-	========================	=================
+========================	==============
+**Example setting**         **Example value**
+========================    ==============
+Frontend IP					Public
+Protocol					HTTP
+Port						80
+========================	==============
 	
 	|azure_application_gw_routing_rule_listener|
 
@@ -173,19 +173,16 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 	
 	|azure_application_gw_routing_rule_backend_target|
 
-	- Click the button "Create new" on HTTP settings
+- Click the button "Create new" on HTTP settings
 
+	|azure_application_gw_routing_rule_http_setting|
 
-		|azure_application_gw_routing_rule_http_setting|
-
-
-		========================	=================
-		**Example setting**         **Example value**
-		========================    =================
-		Bankend protocol			HTTP										
-		Backend port				8080					
-		========================	=================
-
+========================	=================
+**Example setting**         **Example value**
+========================    =================
+Bankend protocol			HTTP										
+Backend port				8080					
+========================	=================
 
 	|azure_application_gw_routing_rule_backend_target_02|
 	
@@ -203,7 +200,7 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 
 |azure_application_gw_health_check|
 
-- Run a http/https request targeting on the Azure Application Gateway Public IP or DNS name.
+- Run a http request targeting on the Azure Application Gateway Public IP or DNS name.
 
 	- Find the Frontend public IP address of Azure Application Gateway from the Azure portal page "Application Gateway -> Overview"
 	
