@@ -158,16 +158,19 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 	|azure_application_gw_backend|
 
 - Add a routing rule on Listener depending on your requirement
+
+
+	========================	==============
+	**Example setting**         **Example value**
+	========================    ==============
+	Frontend IP					Public
+	Protocol					HTTP
+	Port						80
+	========================	==============
 	
-========================	==============
-**Example setting**         **Example value**
-========================    ==============
-Frontend IP					Public
-Protocol					HTTP
-Port						80
-========================	==============
 	
 	|azure_application_gw_routing_rule_listener|
+
 
 - Add a routing rule on Backend targets and create a HTTP setting depending on your requirement
 	
@@ -175,17 +178,21 @@ Port						80
 
 - Click the button "Create new" on HTTP settings
 
+
 	|azure_application_gw_routing_rule_http_setting|
 
-========================	=================
-**Example setting**         **Example value**
-========================    =================
-Bankend protocol			HTTP										
-Backend port				8080					
-========================	=================
+
+	========================	=================
+	**Example setting**         **Example value**
+	========================    =================
+	Bankend protocol			HTTP										
+	Backend port				8080					
+	========================	=================
+
 
 	|azure_application_gw_routing_rule_backend_target_02|
 	
+
 - Review the configuration and click the button "Create" at the page "Review + create"
  
 .. note::
