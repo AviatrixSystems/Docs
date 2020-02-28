@@ -16,9 +16,9 @@ The deployment is shown as the diagram below.
 
 The key idea is from FireNet point of view, the ingress inspection is simply a VNET to VNET traffic inspection. This is accomplished by 
 
- #. Place an Internet facing Azure Application Gateway in a spoke VNET (in the diagram, this spoke VNET is called Ingress Spoke VNET) from the VNET where applications reside (Application spoke VNET). 
+ #. Place an Internet facing Azure Application Gateway in a spoke VNET (in the diagram, this spoke VNET is called Ingress Spoke VNET) to load balance traffic to the VNET where applications reside (Application Spoke VNET). 
  
- #. Manage Spoke Inspection Policies for the Application spoke VNET traffic that requires inspection with the Aviatrix Transit VNet.
+ #. Manage Spoke Inspection Policies for the Application Spoke VNET traffic that requires inspection with the Aviatrix Transit VNET.
 
 In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VNET to VNET filtering. The solution does not need Azure Load Balancers to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
 
@@ -32,16 +32,74 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 1. Prerequisite Setup
 --------------------------------
 
-Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy Azure Transit with Native Spoke VNets topology, FireNet gateways, and firewall instances. Enable `Egress <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ if desired.
+In this instruction, we are going to deploy the below topology in Azure
 
-	- Create Aviatrix Transit VNET by utilizing Aviatrtix feature "Useful Tools -> `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_" with checkbox Aviatrix FireNet VPC enabled
-	- Create an Ingress Spoke VNET and attach it to the Aviatrix Transit VNET
-	- Create an Application spoke VNET and attach it to the Aviatrix Transit VNET
-	- Manage a spoke inspection policy for the Application spoke VNET
+- Azure VNETs
+
+	- Aviatrix Transit VNET * 1 (i.e. 192.168.23.0/24)
+
+	- Ingress Spoke VNET * 1 (i.e. 10.20.0.0/16)
+
+	- Application Spoke VNET * 1 (i.e. 10.21.0.0/16)
 	
+- Apache2 Web server in Application Spoke VNET 
+
+- Azure Transit with Native Spoke VNets topology
+
 .. Note::
 
 	Aviatrix Transit FireNet for Azure Encrypted Transit topology also supports this Azure Ingress Firewall Solution.
+
+1.1 Deploy Aviatrix Transit VNET
+^^^^^^^^^^^^^^^^^^^^^
+
+Create an Aviatrix Transit VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
+
+- Go to the Aviatrix Controller Console.
+
+- Click on the link "Useful Tools -> Create a VPC"
+
+- Click on the button "+ Add new" to create a new VPC with Cloud Type Azure ARM
+
+- Enable the checkbox "Aviatrix FireNet VPC"
+
+1.2 Deploy Ingress Spoke VNET
+^^^^^^^^^^^^^^^^^^^^^
+
+Create an Ingress Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step 1.1 or manually deploying it in Azure portal. Moreover, feel free to use your existing VNET.
+
+1.3 Deploy Application Spoke VNET
+^^^^^^^^^^^^^^^^^^^^^
+
+Create an Application Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step 1.1 or manually deploying it in Azure portal. Moreover, feel free to use your existing Application VNET.
+
+1.4 Deploy Azure Transit with Native Spoke VNets topology
+^^^^^^^^^^^^^^^^^^^^^
+
+Follow `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Azure Transit with Native Spoke VNets topology.
+
+- Create an Aviatrix Transit Gateway in Aviatrix Transit VNET by following the step `Launch a Transit Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ as the following screenshot.
+
+	.. important::
+
+		For Azure deployment, the Aviatrix Transit Gateway must be `"launched" <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ with the option Enable Transit FireNet Function enabled. The minimum Azure FireNet gateway size is Standard_B2ms.
+		
+
+
+- Attach both Ingress Spoke VNET and Application Spoke VNET via Azure native peering by following the step `Attach Azure ARM Spoke VNet via native peering <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_
+
+1.5 Manage Transit FireNet
+^^^^^^^^^^^^^^^^^^^^^
+
+Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy manage FireNet policy, and firewall instances.
+
+- Manage a spoke inspection policy for the Application spoke VNET by referring to step `Manage Transit FireNet Policy <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#manage-transit-firenet-policy>`_ as the following screenshot.
+
+- Deploy firewall instance in Aviatrix Transit VNET by following the step `Deploy Firewall Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#deploy-firewall-network>`_ as the following screenshot.
+	
+
+
+
 
 2. Create Azure Application Gateway
 -------------------------------------
