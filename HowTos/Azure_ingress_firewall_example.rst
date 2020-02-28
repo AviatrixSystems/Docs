@@ -39,11 +39,11 @@ In this instruction, we are going to deploy the below topology in Azure
 
 - Azure VNETs
 
-	- Aviatrix Transit VNET * 1 (i.e. 192.168.23.0/24)
+	- Aviatrix Transit VNET (i.e. 192.168.23.0/24)
 
-	- Ingress Spoke VNET * 1 (i.e. 10.20.0.0/16)
+	- Ingress Spoke VNET (i.e. 10.20.0.0/16)
 
-	- Application Spoke VNET * 1 (i.e. 10.21.0.0/16)
+	- Application Spoke VNET (i.e. 10.21.0.0/16)
 
 - Azure Transit with Native Spoke VNets topology
 
@@ -83,7 +83,7 @@ Follow `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https:
 
 	.. important::
 
-		For Azure deployment, the Aviatrix Transit Gateway must be `"launched" <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ with the option Enable Transit FireNet Function enabled. The minimum Azure FireNet gateway size is Standard_B2ms.
+		For Azure deployment, the Aviatrix Transit Gateway must be launched with the option Enable Transit FireNet Function enabled. The minimum Azure FireNet gateway size is Standard_B2ms.
 		
 |azure_avx_transit_gw|
 
@@ -125,8 +125,7 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 2. Launch Apache2 Web server in Application Spoke VNET 
 -------------------------------------
 
-In Application Spoke VNET ((Spoke-2), create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with port 8080.
-
+In Application Spoke VNET, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080.
 
 ========================	=================
 **Example setting**			**Example value**
@@ -144,7 +143,7 @@ Port						8080
 3. Create Azure Application Gateway
 -------------------------------------
 
-In Ingress Spoke VNET (Spoke-1), create an Azure Application Gateway, make sure you select the following: 
+In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select the following: 
 
 - Create an Azure Application Gateway in Ingress Spoke VNET
 
@@ -154,7 +153,7 @@ In Ingress Spoke VNET (Spoke-1), create an Azure Application Gateway, make sure 
 
 	|azure_application_gw_frontend|
 
-- Select "IP address or hostname" for Target type and configure the private IP of Application Server for Target in section Backends
+- Select "IP address or hostname" for Target type and configure the private IP of Apache2 Web Server for Target in section Backends
  
 	|azure_application_gw_backend|
 
@@ -176,14 +175,17 @@ In Ingress Spoke VNET (Spoke-1), create an Azure Application Gateway, make sure 
 
 	- Click the button "Create new" on HTTP settings
 
-	|azure_application_gw_routing_rule_http_setting|
-	
-	========================	=================
-	**Example setting**         **Example value**
-	========================    =================
-	Bankend protocol			HTTP										
-	Backend port				8080					
-	========================	=================
+
+		|azure_application_gw_routing_rule_http_setting|
+
+
+		========================	=================
+		**Example setting**         **Example value**
+		========================    =================
+		Bankend protocol			HTTP										
+		Backend port				8080					
+		========================	=================
+
 
 	|azure_application_gw_routing_rule_backend_target_02|
 	
@@ -191,7 +193,7 @@ In Ingress Spoke VNET (Spoke-1), create an Azure Application Gateway, make sure 
  
 .. note::
 
-	`Quickstart: Direct web traffic with Azure Application Gateway - Azure portal <https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal>`_
+	Refer to the instruction `Quickstart: Direct web traffic with Azure Application Gateway - Azure portal <https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal>`_
 
 
 4. Ready to go!
@@ -285,6 +287,9 @@ To view the client IP address in the access log, follow the instructions in `How
    :scale: 30%
  
 .. |azure_application_gw_routing_rule_backend_target| image:: ingress_firewall_example_media/azure_application_gw_routing_rule_backend_target.png
+   :scale: 30%
+   
+.. |azure_application_gw_routing_rule_backend_target_02| image:: ingress_firewall_example_media/azure_application_gw_routing_rule_backend_target_02.png
    :scale: 30%
  
 .. |azure_application_gw_routing_rule_http_setting| image:: ingress_firewall_example_media/azure_application_gw_routing_rule_http_setting.png
