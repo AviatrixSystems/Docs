@@ -51,7 +51,7 @@ In this instruction, we are going to deploy the below topology in Azure
 
 	Aviatrix Transit FireNet for Azure Encrypted Transit topology also supports this Azure Ingress Firewall Solution.
 
-Deploy Aviatrix Transit VNET
+Deploy an Aviatrix Transit VNET
 ^^^^^^^^^^^^^^^^^^^^^
 
 Create an Aviatrix Transit VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
@@ -64,12 +64,12 @@ Create an Aviatrix Transit VNET by utilizing Aviatrtix feature `Create a VPC <ht
 
 - Enable the checkbox "Aviatrix FireNet VPC"
 
-Deploy Ingress Spoke VNET
+Deploy an Ingress Spoke VNET
 ^^^^^^^^^^^^^^^^^^^^^
 
 Create an Ingress Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing VNET.
 
-Deploy Application Spoke VNET
+Deploy an Application Spoke VNET
 ^^^^^^^^^^^^^^^^^^^^^
 
 Create an Application Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing Application VNET.
@@ -122,16 +122,16 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 
 		In Azure, instead of using pem file, please use username/password to ssh into firewall instance to reset password if needed. Additionally, use the same username/password to login into firewall website.
 
-2. Launch Apache2 Web server in Application Spoke VNET 
+2. Launch an Apache2 Web server in Application Spoke VNET 
 -------------------------------------
 
 In Application Spoke VNET, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080.
 
 ========================	==============
-**Example setting**			**Example value**
+**Example setting**		**Example value**
 ========================	==============
-Protocol					HTTP
-Port						8080
+Protocol			HTTP
+Port				8080
 ========================	==============
 
 .. Note::
@@ -161,11 +161,11 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 
 
 	========================	==============
-	**Example setting**         **Example value**
-	========================    ==============
-	Frontend IP					Public
-	Protocol					HTTP
-	Port						80
+	**Example setting**        	**Example value**
+	========================    	==============
+	Frontend IP			Public
+	Protocol			HTTP
+	Port				80
 	========================	==============
 	
 	
@@ -183,10 +183,10 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 
 
 	========================	=================
-	**Example setting**         **Example value**
-	========================    =================
-	Bankend protocol			HTTP										
-	Backend port				8080					
+	**Example setting**        	**Example value**
+	========================    	=================
+	Bankend protocol		HTTP										
+	Backend port			8080					
 	========================	=================
 
 
@@ -203,21 +203,21 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 4. Ready to go!
 ---------------
 
-- Make sure Server (backend pool) status is in Healthy state from the Azure portal page "Application Gateway -> Backend health".
+Make sure Server (backend pool) status is in Healthy state from the Azure portal page "Application Gateway -> Backend health".
 
 |azure_application_gw_health_check|
 
-- Run a http request targeting on the Azure Application Gateway Public IP or DNS name.
+Run a http request targeting on the Azure Application Gateway Public IP or DNS name.
 
-	- Find the Frontend public IP address of Azure Application Gateway from the Azure portal page "Application Gateway -> Overview"
+- Find the Frontend public IP address of Azure Application Gateway from the Azure portal page "Application Gateway -> Overview"
 	
 	|azure_application_gw_frontend_public_IP|
 	
-	- Copy the Frontend public IP address of Azure Application Gateway and paste it on a browser from your laptop/PC.
+- Copy the Frontend public IP address of Azure Application Gateway and paste it on a browser from your laptop/PC.
 	
 	|azure_browser|
 	
-	- Perform tcpdump with port 8080 on Apache2 Web server
+- Perform tcpdump with port 8080 on Apache2 Web server
 	
 	|azure_application_server_tcpdump|
 
