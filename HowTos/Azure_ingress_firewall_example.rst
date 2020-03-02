@@ -24,9 +24,7 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 
 .. Note::
 
-  This architecture works for `Azure Application Gateway <https://docs.microsoft.com/en-us/azure/application-gateway/overview>`_.
-
-  You can create multiple load balancers in the Ingress Spoke VNET. 
+  This architecture works for `Azure Application Gateway <https://docs.microsoft.com/en-us/azure/application-gateway/overview>`_. You can create multiple load balancers in the Ingress Spoke VNET. 
 
 1. Prerequisite Setup
 --------------------------------
@@ -267,7 +265,7 @@ To view the client IP address in the access log, follow the instructions in `How
 
 
 .. |transit_firenet_vnet| image:: ingress_firewall_example_media/transit_firenet_vnet.png
-   :scale: 30%
+   :scale: 100%
    
 .. |azure_avx_transit_gw| image:: ingress_firewall_example_media/azure_avx_transit_gw.png
    :scale: 30%
@@ -312,7 +310,7 @@ To view the client IP address in the access log, follow the instructions in `How
    :scale: 30%
 
 .. |azure_application_server_apache2_accesslog| image:: ingress_firewall_example_media/azure_application_server_apache2_accesslog.png
-   :scale: 30%
+   :scale: 50%
 
 .. disqus::
 
