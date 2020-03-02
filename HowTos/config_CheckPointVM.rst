@@ -323,33 +323,33 @@ Launch a private instance in the Spoke VPC (i.e. Spoke-2 VPC) where the Security
 .. |v2_avx_management_UI| image:: config_Checkpoint_media/v2_avx_management_UI.png
    :scale: 40%
 .. |v2_CheckPoint_change_password| image:: config_Checkpoint_media/v2_CheckPoint_change_password.png
-   :scale: 40%
+   :scale: 60%
 .. |v2_CheckPoint_Gaia_Portal_Wizard_01| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_01.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_02| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_02.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_03_eth0| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_03_eth0.png
-   :scale: 20%   
+   :scale: 40%   
 .. |v2_CheckPoint_Gaia_Portal_Wizard_04_eth1| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_04_eth1.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_05| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_05.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_06| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_06.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_07| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_07.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_08| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_08.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_09| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_09.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_10| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_10.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_11| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_11.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_12| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_12.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Overview| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Overview.png
-   :scale: 20% 
+   :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Configuration_eth0_WAN| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Configuration_eth0_WAN.png
    :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Configuration_eth1_LAN| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Configuration_eth1_LAN.png
@@ -371,17 +371,17 @@ Launch a private instance in the Spoke VPC (i.e. Spoke-2 VPC) where the Security
 .. |v2_CheckPoint_SmartConsole_syncup_02| image:: config_Checkpoint_media/v2_CheckPoint_SmartConsole_syncup_02.png
    :scale: 40%
 .. |v2_CheckPoint_policy_vpc_to_vpc| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_vpc.png
-   :scale: 40%
+   :scale: 20%
 .. |v2_CheckPoint_policy_vpc_to_vpc_install| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_vpc_install.png
-   :scale: 40%
+   :scale: 20%
 .. |v2_avx_egress_inspection| image:: config_FortiGate_media/v2_avx_egress_inspection.png
-   :scale: 40%
+   :scale: 20%
 .. |v2_CheckPoint_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_internet_nat_enabled.png
-   :scale: 40%
+   :scale: 20%
 .. |v2_CheckPoint_policy_vpc_to_internet| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_internet.png
-   :scale: 40%
+   :scale: 20%
 .. |v2_CheckPoint_view_traffic_log_vpc_to_vpc| image:: config_Checkpoint_media/v2_CheckPoint_view_traffic_log_vpc_to_vpc.png
-   :scale: 40%
+   :scale: 20%
 .. |v2_CheckPoint_view_traffic_log_vpc_to_internet| image:: config_Checkpoint_media/v2_CheckPoint_view_traffic_log_vpc_to_internet.png
-   :scale: 40%
+   :scale: 20%
 .. disqus::
