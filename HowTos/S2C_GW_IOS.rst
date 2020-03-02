@@ -59,6 +59,7 @@ The network setup is as follows:
  2.1 Either ssh into the Cisco router or connect to it directly through its console port.
 
  2.2 Apply the following IOS configuration to your router:
+     Please note that from version 5.0, we use the gateway's public ip address as the identier, so the "match identity address" should use the public ip instead of the private ip as pointed in the picture below.
 
      |image1| 
 
