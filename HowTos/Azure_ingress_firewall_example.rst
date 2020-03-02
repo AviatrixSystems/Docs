@@ -265,7 +265,7 @@ To view the client IP address in the access log, follow the instructions in `How
 
 
 .. |transit_firenet_vnet| image:: ingress_firewall_example_media/transit_firenet_vnet.png
-   :scale: 100%
+   :scale: 50%
    
 .. |azure_avx_transit_gw| image:: ingress_firewall_example_media/azure_avx_transit_gw.png
    :scale: 30%
