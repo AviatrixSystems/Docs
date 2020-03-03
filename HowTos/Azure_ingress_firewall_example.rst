@@ -218,17 +218,27 @@ Run a http request targeting on the Azure Application Gateway Public IP or DNS n
 - Perform tcpdump with port 8080 on Apache2 Web server
 	
 	|azure_application_server_tcpdump|
+	
+- Furthermore, Azure Application Gateway automatically preserves client original IP address in the HTTP header field "X-Forwarded-For (XFF)". Here is an HTTP packet example which is opened with Wireshark tool for your reference:
+
+	|azure_application_server_wireshark|
+
+.. note::
+
+	`Does Application Gateway support x-forwarded-for headers? <https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-faq#does-application-gateway-support-x-forwarded-for-headers>`_
+
+	`What is X-Forwarded-For <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For>`_
+	
+	`How do I see X forwarded for in Wireshark? <https://osqa-ask.wireshark.org/questions/13384/display-http-header>`_
+
 
 5. View Traffic Log on Firewall
 ---------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the Palo Alto VM-Series console. Go to the page "Monitor -> Logs -> Traffic". Perform http/https traffic from your laptop/PC to the public IP or domain name of Azure Application Gateway.
 
-6. Capturing Client IP
+6. Capturing Client IP in logs
 -------------------------
-
-Azure Application Gateway automatically preserves client IP address, you can find the client IP address in the HTTP header 
-field "X-Forwarded-For". 
 
 To view the client IP address in the access log, follow the instructions in `How to save client IP in access logs <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_. 
 
@@ -258,10 +268,6 @@ To view the client IP address in the access log, follow the instructions in `How
 - Review the public/original client IP on apache2 access log 
 
 |azure_application_server_apache2_accesslog|
-
-.. note::
-
-	`Does Application Gateway support x-forwarded-for headers? <https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-faq#does-application-gateway-support-x-forwarded-for-headers>`_
 
 
 .. |transit_firenet_vnet| image:: ingress_firewall_example_media/transit_firenet_vnet.png
@@ -307,6 +313,9 @@ To view the client IP address in the access log, follow the instructions in `How
    :scale: 30%
 
 .. |azure_application_server_tcpdump| image:: ingress_firewall_example_media/azure_application_server_tcpdump.png
+   :scale: 30%
+   
+.. |azure_application_server_wireshark| image:: ingress_firewall_example_media/azure_application_server_wireshark.png
    :scale: 30%
 
 .. |azure_application_server_apache2_accesslog| image:: ingress_firewall_example_media/azure_application_server_apache2_accesslog.png
