@@ -113,7 +113,7 @@ Multi Accounts                                  Yes         Yes             Yes 
 
 Next Gen Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
 Next Gen Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
-Firewall Network                                Yes         No              No                               Yes                      No                     
+Firewall Network                                Yes         Yes             No                               Yes                      No                     
 Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
 Native Peering                                  Yes         Yes             N/A                              Yes                      No
