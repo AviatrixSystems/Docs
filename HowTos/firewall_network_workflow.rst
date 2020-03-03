@@ -224,14 +224,22 @@ Or repeat this step to launch more firewall instances to associate with the same
 ###########################################
 
 After a firewall instance is launched, wait for 15 minutes for it to come up. 
+In addition, please follow example configuration guides as below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to firewall instance. 
 
 Palo Alto
 **********
-You can follow `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to build
-a simple "Allow All" policy on the firewall instance for a test validation that traffic is indeed being routed
-to firewall instance. 
+For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
 
 For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_. 
+
+FortiGate
+**********
+For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html>`_.
+
+CheckPoint
+**********
+For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_
+
 
 7b. Associate an Existing Firewall Instance
 --------------------------------------------
