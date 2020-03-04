@@ -14,7 +14,6 @@ Overview
 
 This guide provides an example on how to configure Aviatrix to authenticate against AWS SSO IdP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., AWS SSO) for authentication.
 
-
 Before configuring SAML integration between Aviatrix and AWS SSO, make sure you have a valid AWS account with administrator access.
 
   .. tip::

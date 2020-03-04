@@ -16,7 +16,6 @@ This guide provides an example on how to configure Okta as an IdP for an Aviatri
 
 Before configuring SAML integration between Aviatrix and Okta, make sure you have a valid Okta account with administrator access.
 
-
 Configuration Steps
 -------------------
 

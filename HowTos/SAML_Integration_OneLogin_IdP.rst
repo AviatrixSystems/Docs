@@ -16,7 +16,6 @@ This guide provides an example on how to configure OneLogin as an IdP for an Avi
 
 Before configuring SAML integration between Aviatrix and OneLogin, make sure you have a valid OneLogin account with administrator access.
 
-
 Configuration Steps
 -------------------
 
