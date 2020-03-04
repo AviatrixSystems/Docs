@@ -14,11 +14,6 @@ Overview
 
 This guide provides an example on how to configure Okta as an IdP for an Aviatrix SAML SP (endpoint). When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., Okta) for authentication.
 
-Visit one of the following links based on your use case:
-
-  If integrating Okta IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating Okta IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
-
 Before configuring SAML integration between Aviatrix and Okta, make sure you have a valid Okta account with administrator access.
 
 
@@ -27,18 +22,31 @@ Configuration Steps
 
 Follow these steps to configure Aviatrix to authenticate against your Okta IdP:
 
-Step 1. Create an `Okta SAML App <#okta-saml-app>`__ for Aviatrix
+Step 1. Create a `temporary Aviatrix SP Endpoint <#aviatrix-endpoint>`__ in the Aviatrix Controller
 
-Step 2. Retrieve `Okta IdP metadata <#okta-idp-metadata>`__
+Step 2. Create an `Okta SAML App <#okta-saml-app>`__ for Aviatrix in the Okta Portal
 
-Step 3. Update `Aviatrix SP Endpoint <#okta-update-saml-endpoint>`__ in the Aviatrix Controller
+Step 3. Retrieve `Okta IdP metadata <#okta-idp-metadata>`__
 
-Step 4. `Test the Integration <#okta-test-integration>`__ is Set Up Correctly
+Step 4. Update `Aviatrix SP Endpoint <#okta-update-saml-endpoint>`__ in the Aviatrix Controller
+
+Step 5. `Test the Integration <#okta-test-integration>`__ is Set Up Correctly
+
+.. _aviatrix_endpoint:
+
+Step 1. Create an Aviatrix SP Endpoint
+########################################
+
+Visit one of the following links based on your use case and follow step1 (Create temporary Aviatrix SP Endpoint for Aviatrix) from the link's Configuration section:
+
+  If integrating Okta IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
+
+  If integrating Okta IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
 
 .. _okta_saml_app:
 
-Create an Okta SAML App for Aviatrix
-####################################
+Step 2. Create an Okta SAML App for Aviatrix
+############################################
 
 .. note::
 
@@ -120,8 +128,8 @@ Create an Okta SAML App for Aviatrix
 
 .. _okta_idp_metadata:
 
-Retrieve Okta IdP metadata
-##########################
+Step 3. Retrieve Okta IdP metadata
+##################################
 
 .. note::
 
@@ -137,13 +145,13 @@ Retrieve Okta IdP metadata
 
 .. _okta_update_saml_endpoint:
 
-Update Aviatrix SP Endpoint
-###########################
+Step 4. Update Aviatrix SP Endpoint
+###################################
 
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Okta IdP provides IdP Metadata through text or URL obtained in `Retrieve Okta IdP metadata (Step 2) <#okta-idp-metadata>`_.
+   Okta IdP provides IdP Metadata through text or URL obtained in `Retrieve Okta IdP metadata (Step 3) <#okta-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
@@ -174,8 +182,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
 
 .. _okta_test_integration:
 
-Test the Integration
-####################
+Step 5. Test the Integration
+#############################
 
 .. tip::
   Be sure to assign users to the new application in Okta prior to validating.  If you do not assign your test user to the Aviatrix SAML application, you will receive an error.

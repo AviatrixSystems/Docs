@@ -20,12 +20,7 @@ Overview
 
 This guide provides an example on how to configure Aviatrix to authenticate against Azure AD IdP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., Azure AD) for authentication.
 
-Visit one of the following links based on your use case:
-
-  If integrating Azure AD IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating Azure AD IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
-
-Before configuring SAML integration between Aviatrix and Azure AD, make sure you have a valid Azure AD account with administrator access.
+Before configuring SAML integration between Aviatrix and Azure AD, make sure you have a valid Azure AD Premium subscription account with administrator access.
 
 
 Configuration Steps
@@ -33,18 +28,29 @@ Configuration Steps
 
 Follow these steps to configure Aviatrix to authenticate against your Azure AD IdP:
 
-Step 1. Create a `Azure AD SAML Application <#azuread-saml-app>`__ for Aviatrix
-Step 2. Retrieve `Azure AD IdP metadata <#azuread-idp-metadata>`__
-Step 3. Update `Aviatrix SP Endpoint <#azuread-update-saml-endpoint>`__ in the Aviatrix Controller
-Step 4. `Test the Integration <#azuread-test-integration>`__ is Set Up Correctly
+Step 1. Create a `temporary Aviatrix SP Endpoint <#aviatrix-endpoint>`__ in the Aviatrix Controller
+
+Step 2. Create an `Azure AD SAML Application <#azuread-saml-app>`__ for Aviatrix in the Azure Portal's Premium Subscription Account
+
+Step 3. Retrieve the `Azure AD IdP metadata <#azuread-idp-metadata>`__
+
+Step 4. Update the `Aviatrix SP Endpoint <#azuread-update-saml-endpoint>`__ in the Aviatrix Controller
+
+Step 5. `Test the Integration <#azuread-test-integration>`__ is Set Up Correctly
 
 
-.. _azuread_saml_app:
+.. _aviatrix_endpoint:
 
-Create an Azure AD SAML App for Aviatrix
+Step 1. Create an Aviatrix SP Endpoint
 ########################################
 
-Before you start, pick a short name to be used for the SAML application name ``[Endpoint Name]``.  In the notes below we will refer to this as **aviatrix_azuread**.  But, it can be any string.
+Visit one of the following links based on your use case and follow step1 (Create temporary Aviatrix SP Endpoint for Aviatrix) from the link's Configuration section:
+
+  If integrating Azure AD IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
+
+  If integrating Azure AD IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
+
+This step will ask you to pick a short name to be used for the SAML application name ``[Endpoint Name]``.  In the notes below we will refer to this as **aviatrix_azuread**.  It can be any string that will identify the SAML application you create in the IdP.
 
 We will use the string you select for the SAML application name to generate a URL for Azure AD to connect with Aviatrix.  This URL is defined below as **SP_ACS_URL**.  This URL should be constructed as:
 
@@ -53,6 +59,11 @@ We will use the string you select for the SAML application name to generate a UR
 .. tip::
 
   Replace **<<<your controller ip or host name>>>** with the actual host name or IP address of your controller and **<<<aviatrix_azuread>>>** with the ``[Endpoint Name]`` you chose to refer to the SAML application.
+
+.. _azuread_saml_app:
+
+Step 2. Create an Azure AD SAML App for Aviatrix
+################################################
 
 **Connect to Azure**
 
@@ -137,8 +148,8 @@ Click **Single sign-on** below **Manage**
 
 .. _azuread_idp_metadata:
 
-Retrieve Azure AD IdP metadata
-##############################
+Step 3. Retrieve the Azure AD IdP metadata
+##########################################
 
 **SAML Signing Certificate**
 
@@ -155,18 +166,19 @@ Click **Save**
 
 .. _azuread_update_saml_endpoint:
 
-Update Aviatrix SP Endpoint
-###########################
+Step 4. Update the Aviatrix SP Endpoint
+#######################################
 
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   Azure AD IdP provides IdP Metadata through text obtained in `Retrieve Azure AD IdP metadata (Step 2) <#azuread-idp-metadata>`_.
+   Azure AD IdP provides IdP Metadata through text obtained in `Retrieve Azure AD IdP metadata (Step 3) <#azuread-idp-metadata>`_.
    Azure AD IdP requires a custom SAML request template.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
 #. If integrating Azure IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-34>`_
+
 #. If integrating Azure IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-34>`_
 
    +----------------------------+-----------------------------------------+
@@ -214,19 +226,19 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
 
 .. _azuread_test_integration:
 
-Test the Integration
-####################
+Step 5. Test the Integration
+############################
 
 .. tip::
   Be sure to assign users to the new application in Azure AD prior to validating.  If you do not assign your test user to the Aviatrix SAML application, you will receive an error.
 
 Continue with testing the integration by visiting one of the following links based on your use case:
 
-1. If integrating Azure AD IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+1. If integrating Azure AD IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`__
   #. Click `Settings` in the left navigation menu
   #. Select `Controller`
   #. Click on the `SAML Login` tab
-2. If integrating Azure AD IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+2. If integrating Azure AD IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`__
   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
   #. Stay on the `SAML` tab
 

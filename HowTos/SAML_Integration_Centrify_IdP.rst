@@ -14,11 +14,6 @@ Overview
 
 This guide provides an example on how to configure Aviatrix to authenticate against Centrify IdP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (SP) that redirects browser traffic from client to IdP for authentication.
 
-Visit one of the following links based on your use case:
-
-  If integrating Centrify IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating Centrify IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
-
 Before configuring SAML integration between Aviatrix and Centrify, make sure you have a valid Centrify account with administrator access.
 
 Configuration Steps
@@ -27,15 +22,19 @@ Configuration Steps
 Follow these steps to configure Aviatrix to authenticate against your Azure AD IdP:
 
 Step 1. Retrieve `Aviatrix SP Metadata <#centrify-saml-sp-metadata>`__ from the Aviatrix Controller
+
 Step 2. Create a `Centrify SAML Application <#centrify-saml-app>`__ for Aviatrix
+
 Step 3. Retrieve `Centrify IdP metadata <#centrify-idp-metadata>`__
+
 Step 4. Update `Aviatrix SP Endpoint <#centrify-update-saml-endpoint>`__ in the Aviatrix Controller
+
 Step 5. `Test the Integration <#centrify-test-integration>`__ is Set Up Correctly
 
 ..  _centrify_saml_sp_metadata:
 
-Retrieve Aviatrix SP Metadata from Aviatrix Controller
-######################################################
+Step 1. Retrieve Aviatrix SP Metadata from Aviatrix Controller
+###############################################################
 
 Before creating the Centrify SAML Application, Centrify requires the Service Provider (SP) metadata file from the Aviatrix Controller. You can create a temporary SP SAML endpoint to retrieve the SP metadata for now.
 Later on in the guide, the SP SAML endpoint will be updated.
@@ -62,8 +61,8 @@ For Centrify, right click the **SP Metadata** button next to the SAML endpoint a
 
 .. _centrify_saml_app:
 
-Create a Centrify SAML App for Aviatrix
-#######################################
+Step 2. Create a Centrify SAML App for Aviatrix
+###############################################
 
 1. From the Centrify App->Add New App->Custom, select SAML and click on “Add”. Click yes and close the prompt. This lets you configure the application.
 
@@ -117,8 +116,8 @@ Create a Centrify SAML App for Aviatrix
 
 .. _centrify_idp_metadata:
 
-Retrieve Centrify IdP metadata
-##############################
+Step 3. Retrieve Centrify IdP metadata
+#######################################
 
 #. Copy the metadata URL from the Trust page.
 
@@ -126,7 +125,7 @@ Retrieve Centrify IdP metadata
 
 .. _centrify_update_saml_endpoint:
 
-Update Aviatrix SP Endpoint
+Step 4. Update Aviatrix SP Endpoint
 ###########################
 
 .. note::
@@ -163,8 +162,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
 
 .. _centrify_test_integration:
 
-Test the Integration
-####################
+Step 5. Test the Integration
+#############################
 
 .. tip::
   Be sure to assign users to the new application in Centrify prior to validating.  If you do not assign your test user to the Aviatrix SAML application, you will receive an error.
