@@ -1,6 +1,16 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+
+2.7.9 - March 4 2020
+ - Improve the user experience to collect the username and password for the LDAP, DUO or Okta authentication challenge
+ - Support the 'route' ovpn parameter
+ - Fix the tray icon can not reflect the VPN status sometimes
+ - Fix the VPN client becomes unresponsive if it quits from the App icon of the MacOS task bar
+ - Fix the VPN client will not ask for the retry of the authentication challenge again if the previous challenge fails
+ - Fix the old version of VPN client will not quit and crash after a new installation is finished if the old version is not uninstalled
+
+
 2.6.6 - Jan 29 2020
  - Improve the user experience to add a new VPN profile
  - Security fixes for the OpenVPN params
