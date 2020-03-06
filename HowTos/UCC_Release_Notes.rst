@@ -2,6 +2,19 @@
 Release Notes
 =======================================
 
+R5.4 (Coming Soon)
+=====================
+
+- **Role Based Access Control** allows you to limit access to the Controller function in access accounts and use case functions. 
+- **Source and Destination NAT Function support* on Aviatrix Spoke gateways and Transit Gateways. 
+- **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
+ 
+
+R5.3.1468 (3/4/2020)
+======================
+
+- **Bug fix** for Controller Migration feature.
+
 R5.3.1428 (2/21/2020)
 =======================
 
