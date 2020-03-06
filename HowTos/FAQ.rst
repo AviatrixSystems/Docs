@@ -96,6 +96,8 @@ addresses, in addition to your own public IP address. This is because
 gateways launched from the controller use its public IP address to
 communicate back to the Controller.
 
+AWS Network ACLs are not stateful, so they are not recommended for controlling access to/from Aviatrix Controllers and Gateways.
+
 You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
 
 
