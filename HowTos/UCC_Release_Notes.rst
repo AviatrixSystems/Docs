@@ -18,13 +18,13 @@ R5.3.1468 (3/4/2020)
 R5.3.1428 (2/21/2020)
 =======================
 
-**Bug fix** AWS GovCloud IAM roles is broken.
+- **Bug fix** AWS GovCloud IAM roles is broken.
 
 R5.3.1399 (2/20/2020)
 ======================
 
-**Bug fix** CloudWAN gateway instance not programming ingress security group. 
-**Enhancement** to support Azure Africa region.
+- **Bug fix** CloudWAN gateway instance not programming ingress security group. 
+- **Enhancement** to support Azure Africa region.
 
 R5.3.1391 (2/17/2020)
 ========================
