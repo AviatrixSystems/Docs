@@ -29,6 +29,17 @@ R5.3.1399 (2/20/2020)
 R5.3.1391 (2/17/2020)
 ========================
 
+**Important Notice**
+----------------------
+
+Release 5.3 is the last software version that supports older Controller AMIs. If your Controller AMI is one of the following, we have
+provided an `one click migration <https://docs.aviatrix.com/HowTos/controller_migration.html>`_  to migrate to a new Controller after the Controller is upgraded to 5.3. The following Controller AMIs requires
+migration beyond release 5.3:
+
+ - Controller AMI ID contains "aviatrix_cloud_services_gateway_081517"
+ - Controller AMI ID contains "aviatrix_cloud_services_gateway_111517"
+ - Controller AMI ID contains "aviatrix_cloud_services_gateway_043018"
+
 1. AWS Transit Gateway (TGW) Orchestrator
 --------------------------------------------
 

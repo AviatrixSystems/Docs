@@ -44,6 +44,14 @@ In this deployment IPsec tunnels are built directly to TGW VPN.
 
 |cloud_wan_3|
 
+CloudWAN Deployment on Azure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+CloudWAN can terminate branch router IPSEC connection with Aviatrix Transit Gateway deployed in Azure, as shown in 
+the diagram below. 
+
+|cloud_wan_azure|
+
 What are the benefits of CloudWAN?
 -----------------------------------------
 
@@ -159,6 +167,9 @@ Cisco routers that run IOS Classic and IOS XE are supported. For example, ISR G2
    :scale: 30%
 
 .. |cloud_wan_3| image:: cloud_wan_faq_media/cloud_wan_3.png
+   :scale: 30%
+
+.. |cloud_wan_azure| image:: cloud_wan_faq_media/cloud_wan_azure.png
    :scale: 30%
 
 .. |global_accelerator| image:: cloud_wan_faq_media/global_accelerator.png
