@@ -72,9 +72,7 @@ Step 4 - Launch new Aviatrix Controller
 
 Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__ for steps.
 
-   .. tip::
-      We highly recommend migrating to Metered AMI as it is more flexible and scalable as your business needs change over time.
-      
+  
    .. note::
    	  To make best use of time, it is encouraged to launch the new Controller before stopping the old Controller in Step 2.    
       
