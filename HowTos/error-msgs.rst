@@ -236,6 +236,14 @@ The firewall subnets/interfaces are created when enable FireNet function on the 
 
 ::
 
+   Error: [Aviatrix Error] An error occurred (InsufficientFreeAddressesInSubnet) when calling the CreateTransitGatewayVpcAttachment operation: Insufficient Free IP Addresses in subnet.
+   
+This error will be returned when there are 0 available IP addresses in a subnet that is being attached to the TGW. You must have at least one available IP address in each subnet that will be attached. 
+   
+--------------------------------------------------------------------
+
+::
+
     Error: [Aviatrix Error] Gateway instance create failed Reason:Quota 'IN_USE_ADDRESSES' exceeded. Limit: 8.0 in region us-central1.
 
 You may have exceeded GCP IN_USE_ADDRESSES limits on this account. By default in GCP, the In-use IP address of a region is 8 (Different GCP project has different quotas limit setting), you can ask for a new quota limit by following `this GCP instruction <https://cloud.google.com/compute/quotas#request_quotas>`_.

@@ -37,6 +37,10 @@ Configuration WorkFlow:
 
    |image2|
 
+      .. note::
+
+         If using private IP as remote gateway IP, please make sure to check "Over DirectConnect".
+		 
 3. Download the configuration by going to Site2Cloud -> Click on the Connection.
    Select generic and Download Configuration and configure on the router accordingly.
 
@@ -87,9 +91,12 @@ Configuration WorkFlow:
         Interface                         Palo Alto Networks WAN port
         Peer IP Address                   Aviatrix Gateway public IP
         Pre-shared Key                    Key from site2cloud configuration downloaded at Step 3
-        Peer Identification               IP Address & Aviatrix Gateway private IP
+        Peer Identification               IP Address & Aviatrix Gateway public IP
       ===============================     =========================================
+      .. note::
 
+         If using remote private IP on Step 2, Peer IP Address should be the remote private IP while Peer Identification should be remote public IP.
+		 
       |image9|
 
       ===============================     =========================================
