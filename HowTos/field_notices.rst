@@ -7,6 +7,23 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
 
+Field Notice 0009 (2020/03/11)
+--------------------------------
+
+**New Gateway deployment failure can delete routes**
+ 
+**Problem:**
+We have found a defect that was introduced in release 5.3. When a gateway creation fails due to limited resource, the gateway rollback procedure incorrectly deletes existing routes ​in the VPC where the gateway is deployed. It has now been fixed in 5.3.1491. 5.2 and earlier releases are NOT impacted with this issue.
+ 
+**Recommended Solution:**
+Upgrading to the latest 5.3 release (5.3.1491 or above) will address this issue.
+ 
+One of the common causes of a gateway deployment failure is not having enough EIP's available in your account. We strongly recommend that you upgrade to the latest 5.3 release (5.3.1491 or above) if you are running an earlier 5.3 release. Releases 5.2 and earlier are NOT impacted. You can safely upgrade to 5.3 latest.
+ 
+Please follow the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html to upgrade your Aviatrix software. You can create a new support ticket by sending a new email to support@aviatrix.com or by registering at https://aviatrix.zendesk.com, if you need assistance for this upgrade.
+
+
+
 
 Field Notice 0008 (2020/01/07)
 --------------------------------
