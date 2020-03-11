@@ -9,6 +9,12 @@ R5.4 (Coming Soon)
 - **Source and Destination NAT Function support** on Aviatrix Spoke gateways and Transit Gateways. 
 - **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
  
+R5.3.1491 (3/11/2020)
+=======================
+
+- **Bug fix** Gateway launch failure triggered rollback function delete all VPC routes. 
+- **Bug fix** GCP VPN gateway shows in unhealthy state when it is still forwarding traffic.
+- **Bug fix** Azure gateway floods with IPSEC keep alive messages.
 
 R5.3.1468 (3/4/2020)
 ======================
