@@ -73,6 +73,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Quick_Tour
    HowTos/accesskey
    HowTos/account_audit
+   HowTos/rbac_faq
 
 .. _Gateway:
 
