@@ -533,6 +533,13 @@ Aviatrix Controller hosted in AWS Public Cloud and receive logs from gateways in
 Cloud. In order for the Aviatrix Controller to be able to accept logs from gateways inside of the
 Government Cloud the Aviatrix controller must be hosted within AWS Government Cloud as well.
 
+How does Aviatrix gateway support high availability in Azure?
+---------------------------------------------------------------
+
+Aviatrix support Azure Availability Zet for HA gateway that provides 99.95% of up time. 
+
+Azure has started to introduce Availability Zone in some regions. Aviatrix will start to support this option in the future. 
+
 .. |image1| image:: FAQ_media/image1.png
 
 .. |deployment| image:: FAQ_media/deployment.png
