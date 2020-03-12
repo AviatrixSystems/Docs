@@ -21,8 +21,8 @@ Aviatrix RBAC aims to achieve two objectives:
 RBAC Workflow Example 
 -----------------------
 
-RBAC allows you to create a hierarchy of the Controller administrators. It has the flexibility of different permutations. The best to learn how 
-RBAC works is by follow a simple example. 
+RBAC allows you to create a hierarchy of the Controller administrators. It has the flexibility of different permutations. The best way to learn how 
+RBAC works is by follow the following simple example. 
 
 
 In this example, the admin of the Controller creates a user Bob who has a full write access to an access account bu1-access-account.
