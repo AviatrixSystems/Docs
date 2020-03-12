@@ -119,7 +119,7 @@ Both options can be described in the diagram below.
 .. |image2| image:: transitvpc_designs_media/connected_transit.png
    :width: 10.0in
    :height: 4.0in
-
+(remove the lines from shared services VPC's avx gateway to the spoke VPC's gateways as with connected transit, the shared services VPC gw only needs to peer with the transit GW in the transit VPC) 
 .. |image3| image:: transitvpc_designs_media/10Gbpspattern.png
    :width: 10.0in
    :height: 4.0in
