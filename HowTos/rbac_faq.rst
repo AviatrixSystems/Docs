@@ -46,7 +46,7 @@ admin also creates a user Alice who has full responsibility to access account_B 
 
 **Step 6** Bob grants bob_group functional functional privilege. Go to Accounts -> Permission Groups. Select group_bob. Click Manage permissions. Click ALLWrite to grant group_bob  
 
-**Step 7** Bob creates a new Access Account account_A. Bob login. Go to Accounts -> Access Accounts -> +Add New. For the field "Attach to RBAC Groups", select account_admins. This creates an access account that associates a cloud account that Bob manages. For the Account Name field, Bob enters account_A. 
+**Step 7** Bob creates a new Access Account account_A. Bob login. Go to Accounts -> Access Accounts -> +Add New. For the field "Attach to RBAC Groups", select group_bob. This creates an access account that associates a cloud account that Bob manages. For the Account Name field, Bob enters account_A. 
 
 
 Bob can repeat **Step 7** to create account_B. Now Bob has full functional access to both account_A and account_B.
