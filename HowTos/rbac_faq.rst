@@ -51,7 +51,7 @@ admin also creates a user Alice who has full responsibility to access account_B 
 
 Bob can repeat **Step 7** to create account_B. Now Bob has full functional access to both account_A and account_B.
 
-Follow **Step 1** to **Step 7** for Alice to manage account_C and account_D.
+Follow **Step 3** to **Step 7** for Alice to manage account_C and account_D.
 
 
 .. |rbac_example_1| image:: rbac_faq_media/rbac_example_1.png
