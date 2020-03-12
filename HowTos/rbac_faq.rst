@@ -28,30 +28,30 @@ The best way to explain how RBAC works is through examples. Following are a few 
 RBAC Deployment Example 1
 ---------------------------
 
-In this example, the Controller admin creates a user Bob who has full responsibility to access account account_A and account_B. The Controller
-admin also creates a user Alice who has full responsibility to access account_B and account_C..
+In this example, the Controller admin creates a user Bob who has full responsibility to access account account-A and account-B. The Controller
+admin also creates a user Alice who has full responsibility to access account-B and account-C.
 
 |rbac_example_1|
 
 
-**Step 1** Create an account admin group.  Admin Login. Go to Accounts -> Permission Groups -> +Add New. Give the group a name, for example, account_admins. 
+**Step 1** Create an account admin group.  Admin Login. Go to Accounts -> Permission Groups -> +Add New. Give the group a name, for example, account-admins. 
 
 **Step 2** Give this group the privilege to create Access Accounts. Go to Accounts -> Permission Groups. Click the 3 skewer dots, click Manage Permission. Click +Add New. Select Accounts in the list of functions. Click OK to confirm. 
 
-**Step 3** Create user Bob to the account_admins group. Go to Account Users -> +New User. Fill the name, Bob, and other fields. For the field RBAC Groups, select account_admins created in Step 1. 
+**Step 3** Create user Bob to the account_admins group. Go to Account Users -> +New User. Fill the name, Bob, and other fields. For the field RBAC Groups, select account-admins created in Step 1. 
 
-**Step 4** Bob should receive an email to invite him to access the Controller. Bob login. Bob creates a new permission group with full access. Go to Accounts -> Permission Groups -> +Add New. Fill permission group name, for example, group_bob. 
+**Step 4** Bob should receive an email to invite him to access the Controller. Bob login. Bob creates a new permission group with full access. Go to Accounts -> Permission Groups -> +Add New. Fill permission group name, for example, group-bob. 
 
-**Step 5** Bob associates himself with the group_bob. Go to Accounts -> Permission Groups. Select bob_group, click Manage users. Select Bob to associate with the group. 
+**Step 5** Bob associates himself with the group_bob. Go to Accounts -> Permission Groups. Select bob-group, click Manage users. Select Bob to associate with the group. 
 
-**Step 6** Bob grants bob_group functional functional privilege. Go to Accounts -> Permission Groups. Select group_bob. Click Manage permissions. Click ALLWrite to grant group_bob  
+**Step 6** Bob grants group-bob functional functional privilege. Go to Accounts -> Permission Groups. Select group-bob. Click Manage permissions. Click ALLWrite to grant group-bob  
 
-**Step 7** Bob creates a new Access Account account_A. Bob login. Go to Accounts -> Access Accounts -> +Add New. For the field "Attach to RBAC Groups", select group_bob. This creates an access account that associates a cloud account that Bob manages. For the Account Name field, Bob enters account_A. 
+**Step 7** Bob creates a new Access Account account-A. Bob login. Go to Accounts -> Access Accounts -> +Add New. For the field "Attach to RBAC Groups", select group-bob. This creates an access account that associates a cloud account that Bob manages. For the Account Name field, Bob enters account-A. 
 
 
-Bob can repeat **Step 7** to create account_B. Now Bob has full functional access to both account_A and account_B.
+Bob can repeat **Step 7** to create account-B. Now Bob has full functional access to both account-A and account-B.
 
-Follow **Step 3** to **Step 7** for Alice to manage account_C and account_D.
+Apply **Step 3** to **Step 7** for Alice to manage account-C and account-D.
 
 
 .. |rbac_example_1| image:: rbac_faq_media/rbac_example_1.png
