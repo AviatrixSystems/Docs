@@ -33,12 +33,17 @@ admin also creates a user Alice who has full responsibility to access account-B 
 
 |rbac_example_1|
 
+Tasks carried out by admin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Step 1** Create an account admin group.  Admin Login. Go to Accounts -> Permission Groups -> +Add New. Give the group a name, for example, account-admins. 
 
 **Step 2** Give this group the privilege to create Access Accounts. Go to Accounts -> Permission Groups. Click the 3 skewer dots, click Manage Permission. Click +Add New. Select Accounts in the list of functions. Click OK to confirm. 
 
 **Step 3** Create user Bob to the account_admins group. Go to Account Users -> +New User. Fill the name, Bob, and other fields. For the field RBAC Groups, select account-admins created in Step 1. 
+
+Tasks carried out by Bob
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Step 4** Bob should receive an email to invite him to access the Controller. Bob login. Bob creates a new permission group with full access. Go to Accounts -> Permission Groups -> +Add New. Fill permission group name, for example, group-bob. 
 
@@ -53,8 +58,31 @@ Bob can repeat **Step 7** to create account-B. Now Bob has full functional acces
 
 Apply **Step 3** to **Step 7** for Alice to manage account-C and account-D.
 
+Can Bob assign a teammate with subset of functional privileges?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. The deployment is shown in the diagram below.
+
+|rbac_example_2|
+
+Bob should perform the following tasks to have it setup. 
+
+ 1. Bob creates a new permission group, say Site2Cloud-ops.
+ #. Bob assigns himself to Site2Cloud-ops group.
+ #. Bob clicks "Manage permission" for Site2Cloud-ops group to select Site2Cloud permission for the group.
+ #. Bob clicks "Manage access accounts" for Site2Cloud-ops group to select account_A. 
+ #. Bob creates a new user, say Adam and associate Adam to Site2Cloud-ops group. 
+
+After the above tasks, Adam will be able to login and perform Site2Cloud tasks for account-A. But Adam cannot perform Site2Cloud 
+tasks for Alice's account. 
+
+
+
 
 .. |rbac_example_1| image:: rbac_faq_media/rbac_example_1.png
+   :scale: 50%
+
+.. |rbac_example_2| image:: rbac_faq_media/rbac_example_2.png
    :scale: 50%
 
 .. |account_structure| image:: adminusers_media/account_structure.png
