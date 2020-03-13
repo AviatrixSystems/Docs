@@ -59,7 +59,7 @@ Bob can repeat **Step 7** to create account-B. Now Bob has full functional acces
 Apply **Step 3** to **Step 7** for Alice to manage account-C and account-D.
 
 Can Bob assign a teammate with subset of functional privileges?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------
 
 Yes. The deployment is shown in the diagram below.
 
