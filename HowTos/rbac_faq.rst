@@ -47,7 +47,7 @@ Tasks carried out by Bob
 
 **Step 4** Bob should receive an email to invite him to access the Controller. Bob login. Bob creates a new permission group with full access. Go to Accounts -> Permission Groups -> +Add New. Fill permission group name, for example, group-bob. 
 
-**Step 5** Bob associates himself with the group_bob. Go to Accounts -> Permission Groups. Select bob-group, click Manage users. Select Bob to associate with the group. 
+**Step 5** Bob associates himself with the group-bob. Go to Accounts -> Permission Groups. Select bob-group, click Manage users. Select Bob to associate with the group. 
 
 **Step 6** Bob grants group-bob functional functional privilege. Go to Accounts -> Permission Groups. Select group-bob. Click Manage permissions. Click ALLWrite to grant group-bob  
 
@@ -70,7 +70,7 @@ Bob should perform the following tasks to have it setup.
  1. Bob creates a new permission group, say Site2Cloud-ops.
  #. Bob assigns himself to Site2Cloud-ops group.
  #. Bob clicks "Manage permission" for Site2Cloud-ops group to select Site2Cloud permission for the group.
- #. Bob clicks "Manage access accounts" for Site2Cloud-ops group to select account_A. 
+ #. Bob clicks "Manage access accounts" for Site2Cloud-ops group to select account-A. 
  #. Bob creates a new user, say Adam and associate Adam to Site2Cloud-ops group. 
 
 After the above tasks, Adam will be able to login and perform Site2Cloud tasks for account-A. But Adam cannot perform Site2Cloud 
