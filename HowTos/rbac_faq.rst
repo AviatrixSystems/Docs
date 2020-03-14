@@ -56,7 +56,7 @@ Tasks carried out by Bob
 
 Bob can repeat **Step 7** to create account-B. Now Bob has full functional access to both account-A and account-B.
 
-Apply **Step 3** to **Step 7** for Alice to manage account-C and account-D.
+Apply **Step 4** to **Step 7** for Alice to manage account-C and account-D.
 
 Can Bob assign a teammate with subset of functional privileges?
 -----------------------------------------------------------------
