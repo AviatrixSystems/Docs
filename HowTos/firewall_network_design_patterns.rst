@@ -79,7 +79,8 @@ manner as shown in the diagram below.
 
 Another often configured Ingress Egress design pattern is to have the traffic forward to firewall instances
 directly as shown in the diagram below. In this design pattern, each firewall instance must configure SNAT on its LAN interface 
-that connects to the Aviatrix FireNet gateway.
+that connects to the Aviatrix FireNet gateway. The draw back of this design is source IP address is not preserved when traffic reaches
+the application. If you need to preserve source IP address, refer to `this recommended design for Ingress <https://docs.aviatrix.com/HowTos/firewall_network_design_patterns.html#ingress-traffic-inspection>`_.
 
 |firenet_ingress_egress| 
 
