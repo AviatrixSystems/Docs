@@ -74,6 +74,15 @@ manner as shown in the diagram below.
 
 |fqdn_in_firenet|
 
+9. Ingress Directly through Firewall
+---------------------------------------
+
+Another often configured Ingress Egress design pattern is to have the traffic forward to firewall instances
+directly as shown in the diagram below. In this design pattern, each firewall instance must configure SNAT on its LAN interface 
+that connects to the Aviatrix FireNet gateway.
+
+|firenet_ingress_egress| 
+
 For more information, follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#firewall-network-firenet-workflow>`_. 
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
@@ -94,7 +103,7 @@ For more information, follow the `FireNet workflow <https://docs.aviatrix.com/Ho
 .. |multi_firewall| image:: firewall_network_faq_media/multi_firewall.png
    :scale: 30%
 
-.. |firenet_ingress_egress| image:: ingress_firewall_example_media/firenet_ingress_egress.png
+.. |firenet_ingress_egress| image:: firewall_network_faq_media/firenet_ingress_egress.png
    :scale: 30%
 
 .. |firenet| image:: firewall_network_media/firenet.png
