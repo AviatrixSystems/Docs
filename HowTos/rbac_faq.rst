@@ -15,7 +15,7 @@ administrators, it is important to provide access controls to protect the securi
 
 Aviatrix RBAC aims to achieve two objectives:
 
-  - **Granular Access Control** A Controller administrator in a specific permission group can perform certain tasks for a subnet of Aviatrix `Access Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. For example, a Controller administrator can be limited to perform on his own AWS account VPC attachment function. 
+  - **Granular Access Control** A Controller administrator in a specific permission group can perform certain tasks for a subset of Aviatrix `Access Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. For example, a Controller administrator can be limited to perform on his own AWS account VPC attachment function. 
   - **Self Service** A Controller administrator in a specific permission group can onboard its own cloud accounts on the Controller and perform tasks. For example, a Controller administrator can be allowed to onboard his own AWS account on the Controller and create a group of users for different tasks on this access account. 
 
 How does RBAC work?
