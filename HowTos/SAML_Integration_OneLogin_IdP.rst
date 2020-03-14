@@ -14,36 +14,35 @@ Overview
 
 This guide provides an example on how to configure OneLogin as an IdP for an Aviatrix SAML SP (endpoint). When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., OneLogin) for authentication.
 
-Visit one of the following links based on your use case:
-
-  If integrating OneLogin IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
-  If integrating OneLogin IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`_
-
 Before configuring SAML integration between Aviatrix and OneLogin, make sure you have a valid OneLogin account with administrator access.
-
 
 Configuration Steps
 -------------------
 
 Follow these steps to configure Aviatrix to authenticate against your OneLogin IdP:
 
-Step 1. Create a `OneLogin SAML App <#onelogin-saml-app>`__ for Aviatrix
+Step 1. Create a `temporary Aviatrix SP Endpoint <#aviatrix-endpoint>`__ in the Aviatrix Controller
 
-Step 2. Retrieve `OneLogin IdP metadata <#onelogin-idp-metadata>`__
+Step 2. Create a `OneLogin SAML App <#onelogin-saml-app>`__ for Aviatrix in OneLogin's Portal
 
-Step 3. Update `Aviatrix SP Endpoint <#onelogin-update-saml-endpoint>`__ in the Aviatrix Controller
+Step 3. Retrieve `OneLogin IdP metadata <#onelogin-idp-metadata>`__
 
-Step 4. `Test the Integration <#onelogin-test-integration>`__ is Set Up Correctly
+Step 4. Update `Aviatrix SP Endpoint <#onelogin-update-saml-endpoint>`__ in the Aviatrix Controller
 
-.. _onelogin_saml_app:
+Step 5. `Test the Integration <#onelogin-test-integration>`__ is Set Up Correctly
 
-Create a OneLogin SAML App for Aviatrix
-#######################################
-.. note::
+.. _aviatrix_endpoint:
 
-   This step is usually done by the OneLogin Admin.
+Step 1. Create an Aviatrix SP Endpoint
+########################################
 
-Before you start, pick a short name to be used for the SAML application name ``[Endpoint Name]``.  In the notes below we will refer to this as **aviatrix_onelogin**.  But, it can be any string.
+Visit one of the following links based on your use case and follow step1 (Create temporary Aviatrix SP Endpoint for Aviatrix) from the link's Configuration section:
+
+  If integrating OneLogin IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
+
+  If integrating OneLogin IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
+
+This step will ask you to pick a short name to be used for the SAML application name ``[Endpoint Name]``.  In the notes below we will refer to this as **aviatrix_onelogin**.  It can be any string that will identify the SAML application you create in the IdP.
 
 We will use the string you select for the SAML application name to generate a URL for OneLogin to connect with Aviatrix.  This URL is defined below as **SP_ACS_URL**.  This URL should be constructed as:
 
@@ -52,6 +51,14 @@ We will use the string you select for the SAML application name to generate a UR
    .. tip::
 
       Replace **<your controller ip or host name>** with the actual host name or IP address of your controller and **<aviatrix_onelogin>** with the ``[Endpoint Name]`` you chose to refer to the SAML application.
+
+.. _onelogin_saml_app:
+
+Step 2. Create a OneLogin SAML App for Aviatrix
+################################################
+.. note::
+
+   This step is usually done by the OneLogin Admin.
 
 #. Login to OneLogin as an administrator
 #. To add a new app go to **Applications** > **Applications** > click **Add Apps**
@@ -144,8 +151,8 @@ We will use the string you select for the SAML application name to generate a UR
 
 .. _onelogin_idp_metadata:
 
-Retrieve OneLogin IdP metadata
-##############################
+Step 3. Retrieve OneLogin IdP metadata
+######################################
 
 #. Click on **SSO** tab
 #. Copy the **Issuer URL** for the next step. This URL will be provided to the Aviatrix SP Endpoint.
@@ -154,13 +161,13 @@ Retrieve OneLogin IdP metadata
 
 .. _onelogin_update_saml_endpoint:
 
-Update Aviatrix SP Endpoint
-###########################
+Step 4. Update Aviatrix SP Endpoint
+###################################
 
 .. note::
 
    This step is usually completed by the Aviatrix admin.
-   OneLogin IdP provides IdP Metadata through URL obtained in `Retrieve OneLogin IdP metadata (Step 2) <#onelogin-idp-metadata>`_.
+   OneLogin IdP provides IdP Metadata through URL obtained in `Retrieve OneLogin IdP metadata (Step 3) <#onelogin-idp-metadata>`_.
 
 Continue with updating Aviatrix SAML Endpoint by visiting one of the following links based on your use case:
 
@@ -191,8 +198,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
 
 .. _onelogin_test_integration:
 
-Test the Integration
-####################
+Step 5. Test the Integration
+#############################
 
 .. tip::
   Be sure to assign users to the new application in OneLogin prior to validating.  If you do not assign your test user to the Aviatrix SAML application, you will receive an error.
