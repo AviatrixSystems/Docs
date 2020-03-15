@@ -24,7 +24,7 @@ Migrate
 Intro
 --------
 
-+ This feature mainly is to perform "One Click" operation to migrate the current Aviatrix controller to a new one.
++ This feature mainly is to perform one click "Migrate" operation under "Settings->Maintenance->Migration" tab to migrate the current Aviatrix controller to a new one.
 + The EIP will be migrated from old controller to the new one.
 + The whole migration process will take around 10 to 15 minutes.
 
@@ -76,7 +76,7 @@ Intro
 --------------------------------------------------------------------------------
 
 + This feature is being performed in the new controller.
-+ This feature mainly is to perform "One Click" then give/return EIP from new controller back to the old controller if user decides to revert the "Migration" process.
++ This feature mainly is to perform one click "Restore" operation under "Settings->Maintenance->Migration" tab to restore EIP from new controller back to the old controller if user decides to revert the "Migration" process.
 
 
 
