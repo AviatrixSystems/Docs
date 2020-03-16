@@ -7,21 +7,22 @@
 Role Based Access Control FAQ
 =================================
 
-What is the Aviatrix Role Based Access Control (RBAC)?
+What is Aviatrix Role Based Access Control (RBAC)?
 ----------------------------------------------------------
 
-Aviatrix Controller is a multi cloud and multi tenants platform. As the Controller manages multiple cloud accounts by multiple Controller
-administrators, it is important to provide access controls to protect the security and integrity of the Controller. 
+Aviatrix Controller is a multicloud and multitenant Enterprise platform. As such, the Aviatrix Controller manages multiple cloud accounts by requiring access by multiple
+administrators. RBAC provides access controls to protect the security and integrity of the Controller while providing the ability to delegate and limit specific Aviatrix features 
+to groups defined by the admin of the Controller.
 
 Aviatrix RBAC aims to achieve two objectives:
 
-  - **Granular Access Control** A Controller administrator in a specific permission group can perform certain tasks for a subset of Aviatrix `Access Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. For example, a Controller administrator can be limited to perform on his own AWS account VPC attachment function. 
+  - **Granular Access Control** A Controller administrator in a specific permission group can perform certain tasks for a subset of Aviatrix `Access Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. For example, an Administrative user can be limited to perform on his own AWS account VPC attachment function. 
   - **Self Service** A Controller administrator in a specific permission group can onboard its own cloud accounts on the Controller and perform tasks. For example, a Controller administrator can be allowed to onboard his own AWS account on the Controller and create a group of users for different tasks on this access account. 
 
 How does RBAC work?
 ----------------------
 
-RBAC allows you to create a hierarchy of the Controller administrators. It has the flexibility of different permutations.
+RBAC allows you to create a hierarchy of administrators within the Aviatrix Controller. It has the flexibility to permutate based on your requirements. 
 
 The best way to explain how RBAC works is through examples. Following are a few deployment examples. 
 
@@ -56,7 +57,7 @@ Tasks carried out by Bob
 
 Bob can repeat **Step 7** to create account-B. Now Bob has full functional access to both account-A and account-B.
 
-Apply **Step 4** to **Step 7** for Alice to manage account-C and account-D.
+Apply **Step 3** to **Step 7** for Alice to manage account-C and account-D.
 
 Can Bob assign a teammate with subset of functional privileges?
 -----------------------------------------------------------------
@@ -85,7 +86,7 @@ tasks for Alice's account.
 .. |rbac_example_2| image:: rbac_faq_media/rbac_example_2.png
    :scale: 50%
 
-.. |account_structure| image:: adminusers_media/account_structure.png
+.. |account_structure| image:: adminusers_media/account_structure_2020.png
    :scale: 50%
 
 .. |access_account_35| image:: adminusers_media/access_account_35.png
