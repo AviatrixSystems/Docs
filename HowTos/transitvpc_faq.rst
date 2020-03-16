@@ -263,7 +263,7 @@ Before you can summarize Spoke VPC CIDRs, you must make sure Spoke gateways all 
 How to build Spoke to Spoke connectivity via Transit?
 ------------------------------------------------------
 
-Starting from release 3.5, Transit network supports Connected mode. https://docs.aviatrix.com/HowTos/transitvpc_designs.html#connected-transit-design_ where Spoke to Spoke connectivity is built automatically.
+Starting from release 3.5, Transit network supports `Connected mode. https://docs.aviatrix.com/HowTos/transitvpc_designs.html#connected-transit-design_` where Spoke to Spoke connectivity is built automatically.
 
 How do a Spoke gateway and VPC private DNS work together?
 ----------------------------------------------------------
