@@ -84,19 +84,7 @@ a.  Launch from marketplace, select the license type and click Create
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller console. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
 
-
-4. Access the Controller
-============================
-
-After the Controller instance is in a running state in AWS, you can access the Controller
-via a browser by `https://Controller_public_IP`, where Controller_public_IP is the static public IP address of the Controller.
-
-The initial password is the private IP address of the instance.
-
-Follow the steps to go through an initial setup phase to download the latest software.
-After the latest software is downloaded, re-login again to go through the onboarding process.
-
-5. Onboarding
+4. Onboarding
 ==============
 The purpose of Onboarding is to help you setup an account on the Aviatrix Controller that
 corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
@@ -107,7 +95,7 @@ create an Aviatrix account that corresponds to your Azure account credential.
 
 Note: you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account credentials. This is a multi cloud platform.
 
-6. Gateway Troubleshoot
+5. Gateway Troubleshoot
 ========================
 
 If the Controller fails to launch an Aviatrix gateway in Azure RM, check out `this troubleshooting guide. <http://docs.aviatrix.com/HowTos/azuregwlaunch.html>`_
