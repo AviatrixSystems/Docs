@@ -8,6 +8,13 @@ R5.4 (Coming Soon)
 - **Role Based Access Control** allows you to limit access to the Controller function in access accounts and use case functions. 
 - **Source and Destination NAT Function support** on Aviatrix Spoke gateways and Transit Gateways. 
 - **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
+
+R5.3.1499 (3/17/2020)
+=======================
+
+- **Bug fix** FQND statistics on the dashboard could cause the Controller to freeze. 
+- **Bug fix** Cannot edit network CIDRs in Site2Cloud configuration. 
+- **Bug fix** Azure FireNet firewall instance launch with enforcement for username/password. 
  
 R5.3.1491 (3/11/2020)
 =======================
