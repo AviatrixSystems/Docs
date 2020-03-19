@@ -57,7 +57,18 @@ create a zone with domain name s3.us-west-2.amazonaws.com, another zone with dom
 
   Use DNS wildcard for record. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3 internal NLB.
 
+Step 4. Adding additional Gateways
+----------------------------------------
 
+When you want to scale-out and add more Gateways to the pool, follow these steps
+
+ 1. Deploy a new Gateway in a subnet in the same VPC by navigating to Gateway -> New Gateway. Specify the Gateway Name, Access Account Name, Region, VPC ID, Public Subnet and Gateway Size. Leave all other fields as default.
+ #. Navigate to Security -> Private S3
+ #. Choose the initially deployed Gateway from the drop down menu under 'Gateway name'
+ #. Following fields will be automatically populate based on the earlier deployed Gateway in the same VPC: Source CIDR Range, S3 Bucket FQDN Name Resolution IP, NLB DNS, S3 Bucket Name
+ #. Click on Attach, which will add this new Gateway as a Target in the correct Target Group for the NLB created.
+
+This completes the configuration needed to add a new Gateway to the pool.
 
 .. |sfc| image:: sfc_media/sfc .png
    :scale: 30%
