@@ -17,9 +17,9 @@ The alternative to Transit architecture (often referred to as "flat" architectur
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
-For Next Gen Transit Network for AWS deployment, follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
+For AVX Transit Network for AWS deployment, follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
 
-For Next Gen Transit Network for Azure deployment, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+For AVX Transit Network for Azure deployment, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
 
 Should I deploy one Transit Group for Dev and one for Prod?
 ------------------------------------------------------------
@@ -65,7 +65,7 @@ I have a few high bandwidth applications, how do I deploy them in a Transit solu
 Aviatrix's `Insane Mode solution <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ provides 10Gbps Transit network throughput. 
 
 
-How can I fit an egress firewall into the Next Gen Transit solution?
+How can I fit an egress firewall into the AVX Transit solution?
 ----------------------------------------------------------------------
 
 There are two types of requirements.
@@ -296,7 +296,7 @@ They differ in the following areas:
 
  - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
- - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix Next Gen Transit integrates with an AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use the TGW native service to connect the Spoke VPCs.
+ - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix AVX Transit integrates with an AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use the TGW native service to connect the Spoke VPCs.
 
  - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design. With the TGW integration, you can customize the `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ to meet your segmentation requirements.
 
