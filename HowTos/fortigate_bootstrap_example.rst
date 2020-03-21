@@ -96,7 +96,7 @@ Login to the HTTPS interface of the public IP with username "admin", password "A
 5. Configure Static Routes
 --------------------------------------
 
-Follow `the instructions here <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#create-static-routes-for-routing-of-traffic-vpc-to-vpc> to configure the static
+Follow `the instructions here <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#create-static-routes-for-routing-of-traffic-vpc-to-vpc>`_ to configure the static
 routes. 
 
 
