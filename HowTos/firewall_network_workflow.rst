@@ -86,6 +86,7 @@ eth2                                               Allow ALL (Do not change)    
 eth3                                               Allow ALL (Do not change)                        Private interface for traffic to FireNet HA gateway
 ==========================================         ==============================================   =================
 
+
 .. important::
 
   Please do not change the security group inbound and outbound rules on eth1, eth2 and eth3 of a FireNet gateway.
@@ -168,8 +169,10 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. 
 ==========================================      ==========
 
+Palo Alto VM-Series Specifications
+**************************************
+
 Palo instance has 3 interfaces as described below.
-**********************
 
 ========================================================         ===============================          ================================
 **Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -189,9 +192,11 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
+
+Fortigate Specifications
+**************************
     
 Fortigate Next Generation Firewall instance has 2 interfaces as described below.
-**********************
 
 ========================================================         ===============================          ================================
 **Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -202,8 +207,15 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
+.. Tip::
+
+  Starting from Release 5.4, Fortigate bootstrap configuration is supported. 
+
+
+CheckPoint Specification
+****************************
+
 CheckPoint Firewall instance has 2 interfaces as described below. 
-**********************
 
 ========================================================         ===============================          ================================
 **CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -213,6 +225,11 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+
+.. Tip::
+
+  Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
+
 
 7a.2 Launch and Associate More
 #################################
