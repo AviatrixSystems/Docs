@@ -139,6 +139,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_paloaltoVM
    HowTos/bootstrap_example
    HowTos/config_FortiGateVM.rst
+   HowTos/fortigate_bootstrap_example.rst
    HowTos/config_CheckPointVM.rst
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
