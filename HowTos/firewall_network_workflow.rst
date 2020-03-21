@@ -142,6 +142,7 @@ This approach is recommended if this is the first Firewall instance to be attach
 
 This step launches a Firewall instance and associates it with one of the FireNet gateways. 
 
+
 .. important::
 
 The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
@@ -169,7 +170,7 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. 
 ==========================================      ==========
 
-Palo Alto VM-Series Specifications
+1. Palo Alto VM-Series Specifications
 **************************************
 
 Palo instance has 3 interfaces as described below.
@@ -193,8 +194,8 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
     then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
 
-Fortigate Specifications
-**************************
+2. Fortigate Specifications
+*******************************
     
 Fortigate Next Generation Firewall instance has 2 interfaces as described below.
 
@@ -212,8 +213,8 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
   Starting from Release 5.4, Fortigate bootstrap configuration is supported. 
 
 
-CheckPoint Specification
-****************************
+3. CheckPoint Specification
+******************************
 
 CheckPoint Firewall instance has 2 interfaces as described below. 
 
@@ -226,7 +227,7 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
-.. Tip::
+.. important::
 
   Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
 
