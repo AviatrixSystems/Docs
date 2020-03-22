@@ -14,7 +14,7 @@ R5.4 (Coming Soon)
 R5.3.1499 (3/17/2020)
 =======================
 
-- **Bug fix** FQND statistics on the dashboard could cause the Controller to freeze. 
+- **Bug fix** FQDN statistics on the dashboard could cause the Controller to freeze. 
 - **Bug fix** Cannot edit network CIDRs in Site2Cloud configuration. 
 - **Bug fix** Azure FireNet firewall instance launch with enforcement for username/password. 
  
