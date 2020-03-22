@@ -19,7 +19,7 @@ to provide you with turn key solutions.
 We focus on solving networking problems in use cases relevant to public clouds. 
 These use cases are shown as below: 
 
-- Datacenter to cloud (`Next Gen Global Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
+- Datacenter to cloud (`AVX Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
 - Scalable Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
 - Cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
 - User to cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
@@ -111,8 +111,8 @@ What Features Are Supported in Which Cloud?
 Marketplace Launch                              Yes         Yes             No (Community Image)             Yes                      Yes
 Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
 
-Next Gen Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
-Next Gen Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
+AVX Transit Network Spoke                       Yes         Yes             Yes                              Yes                      Yes
+AVX Transit Network Edge                        Yes         Yes             Yes	                      	     Yes                      Yes
 Firewall Network                                Yes         Yes             No                               Yes                      No                     
 Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
