@@ -139,7 +139,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_paloaltoVM
    HowTos/bootstrap_example
    HowTos/config_FortiGateVM.rst
-   HowTos/config_CheckpointVM.rst
+   HowTos/fortigate_bootstrap_example.rst
+   HowTos/config_CheckPointVM.rst
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
 
@@ -345,6 +346,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_vgw_snat
    HowTos/s2c_overlapping_subnets
    HowTos/s2c_for_publicIP
+   HowTos/transit_for_publicIP
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
    HowTos/spoke_skip_rfc1918

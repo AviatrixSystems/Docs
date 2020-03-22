@@ -64,7 +64,7 @@ This step is to configure the gateway to translate the destination IP address 53
 
 At the main navigation bar, click Gateway. Highlight the gateway, in this case, Spoke1, and click Edit. 
 
-Scroll down to Destination NAT. Follow the instructions `here <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_ to configure, as shown below. 
+Scroll down to Destination NAT. Follow the instructions `here <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_ to configure, as shown below. Note to use "Connection" field to specify the site2cloud connection name configured in Step 3. 
 
 |dnat-config|
 
