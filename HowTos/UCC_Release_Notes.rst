@@ -9,7 +9,7 @@ R5.4 (Coming Soon)
 - **Aviatrix Transit Network Spoke Gateways to Support SNAT/DNAT Functions** enable you to build an Aviatrix Transit Network for a variety of use cases, such as access cloud applications with virtual IP addresses, connecting overlapping network CIDRs from on-prem to Spoke VPCs.  
 - **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
 - **Improved CheckPoint CloudGuard Integration** supports the latest CloudGuard software and removes the need for initial SSH access process. Check out `CheckPoint CloudGuard Configuration Examples <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_ for more details. 
-- **FortiGate Bootstrap Configuration** is now supported. 
+- **FortiGate Bootstrap Configuration** is now supported. For details on how to configure, read `Bootstrap Configuration Example for FortiGate Firewall <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_.
 
 R5.3.1499 (3/17/2020)
 =======================
