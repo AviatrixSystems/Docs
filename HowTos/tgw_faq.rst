@@ -38,7 +38,7 @@ Aviatrix Transit GW serves as hub connecting to Azure and GCP network.
 What is the Aviatrix TGW Orchestrator?
 -----------------------------------------
 
-Aviatrix TGW Orchestrator builds the AVX Transit Network that includes TGW attached Spoke VPCs.
+Aviatrix TGW Orchestrator builds the Transit Network that includes TGW attached Spoke VPCs.
 
 
 Why should I use Transit Gateway Orchestrator?
@@ -83,7 +83,7 @@ The Transit Gateway Orchestrator can also be used as a stand alone function for 
 
 When using the Transit Gateway Orchestrator for hybrid connectivity, no gateways are deployed in the Spoke VPCs for hybrid function. 
 
-How does the AVX Transit compare with Transit VPC?
+How does the TGW Transit compare with Aviatrix VPC?
 ----------------------------------------------------------------
 
 Transit VPC refers to the transit deployment model where an Aviatrix gateway is deployed in a Spoke VPC. This is now called "advanced mode" in the AVX Transit. 
