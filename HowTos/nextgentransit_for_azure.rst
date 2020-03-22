@@ -1,16 +1,16 @@
 .. meta::
-   :description: Next Gen Transit for Azure
-   :keywords: Next Gen Transit Architecture for Azure
+   :description: AVX Transit for Azure
+   :keywords: AVX Transit Architecture for Azure
 
 ============================================
-Next Gen Transit Architecture for Azure
+AVX Transit Architecture for Azure
 ============================================
 
 
-Aviatrix Next Gen Transit for Azure
+Aviatrix AVX Transit for Azure
 ---------------------------------------------------------------
 
-The Aviatrix Next Gen Transit for Azure is an architecture to interconnect multiple VNets and on-prem in a hub and spoke 
+The Aviatrix AVX Transit for Azure is an architecture to interconnect multiple VNets and on-prem in a hub and spoke 
 deployment model, as shown in the diagram below. 
 
 |nextgentransit_for_azure|
@@ -23,7 +23,7 @@ remote Spoke VNets through the two connected Transit Gateways, as shown below.
 
 |multiregion_azure|
 
-Why do I need Aviatrix Next Gen Transit for Azure?
+Why do I need Aviatrix AVX Transit for Azure?
 ------------------------------------------------------
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit Hub VNet. Everything else (the Spoke VNet to on-prem traffic) is routed through the Transit Hub VNet.
@@ -39,7 +39,7 @@ Azure provides certain hub-and-spoke capabilities with limitations. Here are som
  - Azure native networking has different capabilities and semantics than AWS native networking. What skills your operations team has invested in AWS do not apply to Azure, you must invest in Azure also. Aviatrix provides a single pane of glass to unify cloud networking for all cloud providers.
 
 
-The Benefits of the Aviatrix Next Gen Transit for Azure
+The Benefits of the Aviatrix AVX Transit for Azure
 -------------------------------------------------------------------
 
  - **Simplicity** The Aviatrix Controller provides an abstraction layer and workflow to build the Transit network. You do not need to program any Azure route tables, manage the route entries or understand the significant details about Azure networking.
@@ -55,7 +55,7 @@ The Benefits of the Aviatrix Next Gen Transit for Azure
 How does it work?
 -------------------------------------------------------------------------------------------------
 
-The Next Gen Transit Network is a Duo Mode architecture. While the Transit Gateway runs 
+The AVX Transit Network is a Duo Mode architecture. While the Transit Gateway runs 
 BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. 
 CloudOps engineers without extensive networking background are able to build and manage the network. 
 

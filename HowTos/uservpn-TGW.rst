@@ -24,7 +24,7 @@ The first step is to create a TGW from the Aviatrix Controller.
 |createTGW|
 
 To learn more about Transit Gateway deployment follow this link:
- `Next Gen Transit for AWS FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html#next-gen-transit-for-aws-faq>`_
+ `AVX Transit for AWS FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html#next-gen-transit-for-aws-faq>`_
 
 
 2. Create a Security Domain

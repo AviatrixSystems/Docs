@@ -3,7 +3,7 @@
    :keywords: Transit Gateway, AWS Transit Gateway, TGW, Migration
 
 ========================================================================
-Migrating an Aviatrix Global Transit Network to Next Gen Transit for AWS
+Migrating an Aviatrix Global Transit Network to AVX Transit for AWS
 ========================================================================
 
 This document assumes that you have deployed an `Aviatrix Global Transit Network solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ with Aviatrix Transit Gateway and VGW. 
