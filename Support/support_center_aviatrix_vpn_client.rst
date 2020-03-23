@@ -3,7 +3,7 @@
    :keywords: Aviatrix, Support, Support Center, Aviatrix VPN Client
 
 ===========================================================================
-Support Center: Aviatrix VPN Client
+Aviatrix VPN Client
 ===========================================================================
 
 
