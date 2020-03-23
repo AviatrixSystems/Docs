@@ -1,6 +1,6 @@
 .. meta::
   :description: Azure ingress firewall network
-  :keywords: Next Gen Transit Architecture for Azure, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Azure virtual network peering
+  :keywords: AVX Transit Architecture for Azure, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Azure virtual network peering
 
 
 =========================================================

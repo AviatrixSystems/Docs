@@ -7,18 +7,31 @@
 Example Config for CheckPoint VM in AWS 
 =========================================================
 
+The following CheckPoint AMIs and software versions are supported. 
+
+==========================================================================             ==========
+**Supported AMI Name**                                                                 **Software Version**
+==========================================================================             ==========
+CloudGuard IaaS Next-Gen Firewall with Threat Prevention & SandBlast BYIL              R80.40, R80.30
+CloudGuard IaaS Next-Gen Firewall with Thread Prevention                               R80.40, R80.30
+CloudGuard IaaS All-In-One R80.40                                                      R80.40 
+==========================================================================             ==========
+
+
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
-After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the CheckPoint web page.
+After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console. 
+
+Starting from Release 5.4, you no longer need to SSH into the instance for the initial configuration. 
 
 Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
 ==========================================      ==========
 **Example setting**                             **Example value**
 ==========================================      ==========
-Firewall Image                                  Check Point CloudGuard IaaS All-In-One
-Firewall Image Version                          R80.10-033.341
+Firewall Image                                  Check Point CloudGuard IaaS All-In-One R80.40
+Firewall Image Version                          R80.40-294.581
 Firewall Instance Size                          t2.2xlarge
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
@@ -39,8 +52,12 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Below are the steps for initial setup.
 
+.. important::
+
+  For Controller on Release 5.4 and later, Step 1 and Step 2 can be skipped and start with Step 3.
+
 1. Download CheckPoint Firewall Access Key
-----------------------------------
+----------------------------------------------
 
 After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed, you'll see the Download button as below. Click the button to download the .pem file.
 
@@ -49,7 +66,7 @@ If you get a download error, usually it means the CheckPoint Firewall instance i
 |v2_avx_pem_file_download|
 
 2. Reset CheckPoint Firewall Password
-----------------------------------
+----------------------------------------------
 
 For Metered AMI, open a terminal and run the following command. 
 
@@ -69,7 +86,7 @@ For Metered AMI, open a terminal and run the following command.
 Terminate the SSH session.
 
 3. Login to CheckPoint Firewall Gaia Portal
-----------------------------------
+----------------------------------------------
 
 Go back to the Aviatrix Controller Console. 
 Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`. It takes you to the CheckPoint Firewall Gaia Portal you just launched.
@@ -78,11 +95,11 @@ Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/fire
 
 .. note::
 
-  Login with Username "admin" and the password you have just configured on the previous step.
+  If the Controller is on Release 5.4 or later, Login with Username **admin** and the password **Aviatrix123#**. Otherwise, login with **admin** and password set in Step 2.  
   Please try to use browser Firefox if the Management UI link is not able to open on your default browser.
 
 4. Initialize CheckPoint Firewall via Gaia Portal
-----------------------------------
+----------------------------------------------------
 
 Follow the Check Point First Time Configuration Wizard to initialize it as below:
 
@@ -119,7 +136,7 @@ After the initialization is completed, users will be navigated to the CheckPoint
 |v2_CheckPoint_Gaia_Portal_Overview|
 
 5. Configure CheckPoint Firewall interface eth0 with WAN
--------------------------------------------------
+------------------------------------------------------------
 
 Login Gaia Portal and go to the page "Network Management -> Network Interfaces" to configure interface eth0 as the following screenshot.
 
@@ -132,7 +149,7 @@ Login Gaia Portal and go to the page "Network Management -> Network Interfaces" 
 |v2_CheckPoint_Gaia_Portal_Configuration_eth0_WAN|
 
 6. Configure CheckPoint Firewall interface eth1 with LAN
--------------------------------------------------
+--------------------------------------------------------------
 
 Login Gaia Portal and go to the page "Network Management -> Network Interfaces" to configure interface eth1 as the following screenshot.
 
@@ -145,7 +162,7 @@ Login Gaia Portal and go to the page "Network Management -> Network Interfaces" 
 |v2_CheckPoint_Gaia_Portal_Configuration_eth1_LAN|
 
 7. Create static routes for routing of traffic VPC to VPC
--------------------------------------------------
+-------------------------------------------------------------
 
 Packets to and from TGW VPCs, as well as on-premises, will be hairpinned off of the LAN interface. As such, we will need to configure appropriate route ranges that you expect traffic for packets that need to be forward back to TGW. 
 For simplicity, you can configure the FW to send all RFC 1918 packets to LAN port, which sends the packets back to the TGW. 
@@ -217,7 +234,7 @@ Moreover, execute the function "Get Interfaces With Topology" to sync up the set
 Last but not least, click on the button "Install Policy" and then "Install" to commit the settings.
 
 9. Configure basic traffic policy to allow traffic VPC to VPC
--------------------------------------------------
+------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in/out of LAN interface.
 
@@ -244,7 +261,7 @@ Click on the button "Install Policy" and then "Install" to commit the settings.
 After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
 10. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
--------------------------------------------------
+----------------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
 

@@ -8,7 +8,7 @@ AWS Transit Gateway Orchestrator Plan
 =========================================================
 
 
-The AWS Transit Gateway (TGW) Orchestrator Plan is the first stage in deploying a Next Gen Transit Network using AWS Transit Gateway. 
+The AWS Transit Gateway (TGW) Orchestrator Plan is the first stage in deploying a AVX Transit Network using AWS Transit Gateway. 
 After you go through the Plan 
 stage configuration, you can proceed to the `Build stage <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ 
 to attach VPCs. 

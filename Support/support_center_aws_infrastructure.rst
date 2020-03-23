@@ -146,3 +146,9 @@ Can I change my AWS Access Account auth between IAM role based and Accesskey?
 -------------------------------------------------------------------------------
 
 You can change between IAM rolebased and accesskey based authentication on  AWS accounts from "Controller/Accounts/AccessAccounts/SelectAccount/Edit" when there are no resources on this account. If any resources, such as Gateway's are created, you will not be able to switch over
+
+
+How do I recover if my Instance Profile ARN goes missing on "aviatrix-role-ec2"?
+----------------------------------------------------------------------------------
+
+If the roles are deleted by accident, AWS might get into a weird state where the "Instance Profile ARN" might be missing. You would have to use the aws cli as mentioned at https://docs.aws.amazon.com/cli/latest/reference/iam/add-role-to-instance-profile.html to recover from this situation. The actual command would be "aws iam add-role-to-instance-profile --role-name aviatrix-role-ec2 --instance-profile-name aviatrix-role-ec2". You might have to remove the role aviatrix-role-ec2 on the controller and/or gateways and add it back. Wait for a couple minutes for this to take effect.
