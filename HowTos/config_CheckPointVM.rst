@@ -7,6 +7,17 @@
 Example Config for CheckPoint VM in AWS 
 =========================================================
 
+The CheckPoint AMIs and software versions are supported. 
+
+==========================================================================             ==========
+**Supported AMI Name**                                                                 **Software Version**
+==========================================================================             ==========
+CloudGuard IaaS Next-Gen Firewall with Threat Prevention & SandBlast BYIL              R80.40, R80.30
+CloudGuard IaaS Next-Gen Firewall with Thread Prevention                               R80.40, R80.30
+CloudGuard IaaS All-In-One R80.40                                                      R80.40 
+==========================================================================             ==========
+
+
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
