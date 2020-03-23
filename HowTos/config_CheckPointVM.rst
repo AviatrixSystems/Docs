@@ -7,7 +7,7 @@
 Example Config for CheckPoint VM in AWS 
 =========================================================
 
-The CheckPoint AMIs and software versions are supported. 
+The following CheckPoint AMIs and software versions are supported. 
 
 ==========================================================================             ==========
 **Supported AMI Name**                                                                 **Software Version**
