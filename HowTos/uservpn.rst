@@ -156,6 +156,9 @@ be able to connect then.
 
 |New_User| 
 
+Detach and revoke: will not only detach the user but revoke the user certificate as well.
+attach: will re-attach detached users and also re-create the user certificate if the user certificate is revoked.
+
 Conclusion
 ----------
 You now have a working Aviatrix VPN Gateway.  Users can connect and gain access to their cloud resources.
