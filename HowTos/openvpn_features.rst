@@ -60,7 +60,7 @@ Client Software
  
 - **OpenVPN® Client Software** All OpenVPN® client software is supported. The supported clients are macOS, Windows, iOS, Android, Chromebook, Linux and BSD. 
 - **Aviatrix VPN Client** Aviatrix VPN Client supports macOS, Windows and Linux Debian distribution and BSD distribution. Choose Aviatrix VPN Client if you require SAML authentication directly from VPN client software. 
-
+To download and install Aviatrix VPN Client, refer to `this link <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
