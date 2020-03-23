@@ -406,6 +406,7 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_ticket_priority
    Support/support_center_useful_tools
    Support/support_center_cloudn
+   Support/support_center_aviatrix_vpn_client
 
 .. _IPmotion:
 
