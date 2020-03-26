@@ -13,7 +13,7 @@ successfully deploying Insane Mode for hybrid connection.
 CloudN Insane Mode can be applied to hybrid connection by AWS Direct Connect or Azure Express Route. CloudN can also be applied to hybrid 
 connection by Internet. 
 
-One CloudN supports multiple Transit Gateways connections. 
+One CloudN supports `multiple Transit Gateways connections. <https://docs.aviatrix.com/HowTos/insane_mode.html#can-one-cloudn-appliance-connect-to-multiple-connections-of-direct-connect-or-express-route>`_
 
 
 Step 1. Understand Deployment Architecture 
