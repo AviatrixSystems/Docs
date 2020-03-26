@@ -13,6 +13,8 @@ successfully deploying Insane Mode for hybrid connection.
 CloudN Insane Mode can be applied to hybrid connection by AWS Direct Connect or Azure Express Route. CloudN can also be applied to hybrid 
 connection by Internet. 
 
+One CloudN supports multiple Transit Gateways connections. 
+
 
 Step 1. Understand Deployment Architecture 
 ----------------------------------------------
