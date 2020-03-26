@@ -9,7 +9,7 @@ VPN User Accelerator
 ===================================================
 
 The VPN User Accelerator leverages the `AWS Global Accelerator <https://aws.amazon.com/global-accelerator/>`_ to connect
-VPN users to the nearest AWS CloudFront access point and traverse the AWS backbone to the VPN gateway. 
+VPN users to the nearest AWS Edge location access point and traverse the AWS backbone to the VPN gateway. 
 
 .. Note::
    When this feature is enabled, the VPN user source address is masked out by AWS.
