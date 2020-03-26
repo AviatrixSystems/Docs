@@ -77,6 +77,56 @@ Bob should perform the following tasks to have it setup.
 After the above tasks, Adam will be able to login and perform Site2Cloud tasks for account-A. But Adam cannot perform Site2Cloud 
 tasks for Alice's account. 
 
+How to add a read_only user?
+------------------------------
+
+Read_only user has visibility to all pages on the Controller and can perform troubleshooting tasks. A read_only user cannot make modifications to any functions or accounts. 
+
+|rbac_example_3|
+
+In this example, Alice creates a read_only user George. Alice performs the following steps. 
+
+ 1. Alice login. 
+ #. Go to Accounts -> Account Users -> +Add New.
+ #. Add User Name George, User Email, Password. For RBAC Groups, select read_only.
+
+Can there be multiple admin users?
+------------------------------------
+
+Yes. Only admin can add more admin users. An admin user has the same privilege as the login admin with full access 
+to all pages and accounts. 
+
+In this example, admin creates an admin user Jennifer. admin performs the following steps. 
+
+|rbac_example_4|
+
+ 1. admin login.
+ # Go to Accounts -> Account Users -> +Add New.
+ #. Add User Name Jennifer, User Email, Password. For RBAC Groups, select admin. 
+
+Does RBAC support remote authentications?
+-------------------------------------------
+
+RBAC supports remote authentication against LDAP, DUO and SAML IDPs. 
+
+For LDAP and DUO, RBAC only supports authentication, the permissions are still validated locally on the 
+Controller. 
+
+For SAML IDPs, you can configure profile attribute associated with the SAML user for permissions, thus avoiding
+having to add users on the Controller. 
+
+How do I setup SAML login for RBAC?
+------------------------------------
+
+Aviatrix Controller login supports `SAML login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_. 
+
+Follow the instructions to setup SAML. In the SAML IDP Attribute Statements, add a new attribute "Profile". 
+For Value field, add the Name of the Permission Groups you configured on the Controller. 
+
+When a user authenticates against SAML IDP, the Controller retrieves the profile attribute and apply permission to the user. 
+There is no need to configure account users on the Conotroller, but you still need to specify Permission Groups 
+and their associated permissions. 
+
 
 
 
@@ -84,6 +134,12 @@ tasks for Alice's account.
    :scale: 50%
 
 .. |rbac_example_2| image:: rbac_faq_media/rbac_example_2.png
+   :scale: 50%
+
+.. |rbac_example_3| image:: rbac_faq_media/rbac_example_3.png
+   :scale: 50%
+
+.. |rbac_example_4| image:: rbac_faq_media/rbac_example_4.png
    :scale: 50%
 
 .. |account_structure| image:: adminusers_media/account_structure_2020.png
