@@ -369,8 +369,8 @@ On the Aviatrix Controller:
   #. Optional Custom Template: (Deprecated)
   
 On the Remote syslog server:
-
-Configure /etc/rsyslog.conf with the similar content depends on the version to enable tls connection
+  a. Configure /etc/rsyslog.conf with the similar content depends on the rsyslog version to enable tls connection
+  #. Make sure /var/log directory is writable by rsyslog user/daemon
 
 (version <8)
 ::
