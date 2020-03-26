@@ -143,6 +143,12 @@ How to configure Insane Mode for Transit VPC?
 
 At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ select "Insane Mode Encryption". 
 
+Can one CloudN appliance connect to multiple connections of Direct Connect or Express Route?
+-----------------------------------------------------------------------------------------------
+
+Yes. A CloudN appliance can build multiple InsaneMode tunnels to different Aviatrix Transit Gateways over multiple DX or Express Route, as shown in the diagram below. 
+
+|cloudn_multi_conn|
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
@@ -173,6 +179,9 @@ At `Step 1 Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc
    :scale: 30%
 
 .. |insane_routing| image:: insane_mode_media/insane_routing.png
+   :scale: 30%
+
+.. |cloudn_multi_conn| image:: insane_mode_media/cloudn_multi_conn.png
    :scale: 30%
 
 .. |image1| image:: transitvpc_designs_media/multiRegions.png
