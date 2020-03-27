@@ -56,6 +56,11 @@ Redundant DX Deployment
 
 |deployment_dual_dx|
 
+Redundant DX Deployment 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|deployment_dual_dx_aa|
+
 Step 1.2 Connection over Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -192,6 +197,9 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
 .. |deployment_dual_dx| image:: insane_mode_media/deployment_dual_dx.png
    :scale: 30%
 
+.. |deployment_dual_dx_aa| image:: insane_mode_media/deployment_dual_dx_aa.png
+   :scale: 30%
+   
 .. |ISR-sample-config| image:: insane_mode_media/ISR-sample-config.png
    :scale: 50%
 
