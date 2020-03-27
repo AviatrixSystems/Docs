@@ -61,6 +61,11 @@ Is IKEv2 supported?
 
 Yes.
 
+How frequent are keys rotated?
+---------------------------------
+
+Re-key for IKE phase 1 is every 8 hours. Re-key for IKE phase 2 is every hour. 
+
 Are there configuration examples with other devices?
 -------------------------------------------------------------------
 

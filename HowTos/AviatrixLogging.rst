@@ -369,8 +369,11 @@ On the Aviatrix Controller:
   #. Optional Custom Template: (Deprecated)
   
 On the Remote syslog server:
-
-Configure /etc/rsyslog.conf with the similar content depends on the version to enable tls connection
+  a. Install rsyslog and rsyslog-gnutls packages
+  #. Create a new config file in /etc/rsyslog.d with the similar content as in the following box depends on your rsyslog version to enable tls connection. Please make sure key paths are readable by the syslog user
+  #. Make sure the output directory /var/log is writable by rsyslog user/daemon
+  #. Restart rsyslog service and check port is listening and no error in /var/log/syslog
+  #. Confirm the port is allowed in the security group / fireware for incoming traffic
 
 (version <8)
 ::
@@ -394,7 +397,7 @@ Configure /etc/rsyslog.conf with the similar content depends on the version to e
     & ~
 
 
-(version 8+)
+(version >=8)
 ::
 
     global(

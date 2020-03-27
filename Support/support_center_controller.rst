@@ -312,3 +312,65 @@ How can I secure my controller?
 -----------------------------------
 
 Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller.
+
+How to use self-defined KMS key for default EBS encryption of gateway disk in the region?
+-----------------------------------
+
+We use default AWS KMS key( alias/aws/ebs ) for EBS encryption of gateway disk in all region. 
+
+|default-kms-key-value|
+
+If you want to use your self-defined KMS key, please use next steps to configure it:
+
+1. Go to AWS Key Management Service (KMS) page and click "Create a key" to create a new KMS key.
+
+2. Select Symmetric and click "Next" to configure key.
+
+3. Enter an alias and a description for this key and click "Next" to add labels.
+
+4. Leave it blank and click "Next".
+
+5. Enter aviatrix-role-app and check the box next to "aviatrix-role-app" and click "Next" to define key usage permissions.
+
+6. Review the policy and click "Finish".
+
+|create-result|
+
+7. Go to AWS console EC2 page and click "Settings" at the right side below to Account Attributes.
+
+|kms-key-setting|
+
+8. Click "Change the default key" at the end of "Default encryption key" and select your self-defined KMS key.
+
+|custimized-key|
+
+9. Click "Save Settings" to finish the process.
+
+Notice: If you already used your self-defined key, and controller pop out Error message:
+
+Failed to launch gateway. It is possible that gateway size is not supported in the region.
+        
+|kms-key-warning|
+
+Please use next steps to add aviatrix-role-app to your self-defined KMS key:
+
+1. Go to AWS Key Management Service (KMS) page -> Customer managed keys -> click your self-defined key.
+        
+2. Scroll down to "Key users" section and click "Add" at the right side.
+        
+3. Enter aviatrix-role-app and check the box next to "aviatrix-role-app" and click "Add"
+
+|kms-customer-managed-kms-key-users|
+
+.. |default-kms-key-value| image:: kms-key-managed-img/default-kms-key-value.png
+   :scale: 70%
+.. |create-result| image:: kms-key-managed-img/create-result.png
+   :scale: 70%
+.. |kms-key-setting| image:: kms-key-managed-img/kms-key-setting.png
+   :scale: 70%
+.. |custimized-key| image:: kms-key-managed-img/custimized-key.png
+   :scale: 70%
+.. |kms-key-warning| image:: kms-key-managed-img/kms-key-warning.png
+   :scale: 70%
+.. |kms-customer-managed-kms-key-users| image:: kms-key-managed-img/kms-customer-managed-kms-key-users.png
+   :scale: 70%
