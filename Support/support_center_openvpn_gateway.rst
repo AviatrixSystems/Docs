@@ -106,6 +106,8 @@ How can I scale my VPN user setup?
 Deploy your Aviatrix OpenVPN Gateways behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB when needed and not have to worry about losing an IP address and having to reissue certificates to all of your VPN users. Alternatively, you may choose to use `Aviatrix UDP LoadBalanced VPN using DNS <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_
 .
 
+We recommend that you use multiple t2 instances behind an ELB to make your openvpn deployment leverage the scalability, ha and  loadbalancing features that we built in. Also configuring the connection to be split-tunnel will help you serve more remote users, so you can offload traffic to internet locally instead of routing it through the Aviatrix OpenVPN Gateways. Please monitor the "Rate Total" and "CPU Idle" metrics for your openvpn gateways from the dashboard page and add more gateways as needed.
+
 How can the OpenVPN made Highly Available?
 -----------------------------------------------
 
