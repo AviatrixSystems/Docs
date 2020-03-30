@@ -342,7 +342,7 @@ If you want to use your self-defined KMS key, please use next steps to configure
 
 8. Click "Change the default key" at the end of "Default encryption key" and select your self-defined KMS key.
 
-|custimized-key|
+|customized-key|
 
 9. Click "Save Settings" to finish the process.
 
@@ -368,7 +368,7 @@ Please use next steps to add aviatrix-role-app to your self-defined KMS key:
    :scale: 70%
 .. |kms-key-setting| image:: kms-key-managed-img/kms-key-setting.png
    :scale: 70%
-.. |custimized-key| image:: kms-key-managed-img/custimized-key.png
+.. |customized-key| image:: kms-key-managed-img/customized-key.png
    :scale: 70%
 .. |kms-key-warning| image:: kms-key-managed-img/kms-key-warning.png
    :scale: 70%
