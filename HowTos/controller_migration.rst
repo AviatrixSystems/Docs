@@ -99,6 +99,6 @@ Workflow
 
 1. Old controller perform "Settings->Maintenance->Backup&Restore->Backup->Backup Now"
 2. New controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
-3. If old controller public IP is not attach to the new controller, perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
+3. If you want to keep the old controller public ip, detach it from the old controller and reattch to new controller. Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
 
 .. disqus::
