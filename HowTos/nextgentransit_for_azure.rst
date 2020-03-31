@@ -82,7 +82,7 @@ The Benefits of Aviatrix Transit for Azure
 How does it work?
 -------------------------------------------------------------------------------------------------
 
-Aviatrix Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network. 
+Aviatrix Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network.
 
 
 
