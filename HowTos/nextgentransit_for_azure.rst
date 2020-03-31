@@ -1,9 +1,9 @@
 .. meta::
-   :description: AVX Transit for Azure
-   :keywords: AVX Transit Architecture for Azure
+   :description: Aviatrix Transit for Azure
+   :keywords: Aviatrix Transit Architecture for Azure
 
 ============================================
-AVX Transit Architecture for Azure
+Aviatrix Transit Architecture for Azure
 ============================================
 
 Azure Native Transit
@@ -43,10 +43,10 @@ The options for spoke to spoke communication across regions follow the same patt
 Azure Virtual WAN is another native architectural approach which can also provide transitive functionality.  Aviatrix Transit can integrate with Azure Virtual WAN and is not covered in detail here.
 
 
-Aviatrix AVX Transit for Azure
+Aviatrix  Transit for Azure
 ---------------------------------------------------------------
 
-The Aviatrix AVX Transit for Azure is an architecture to interconnect multiple VNets and on-prem leveraging the hub and spoke deployment model while adding additional functionality and features.  This deployment is shown in the diagram below. 
+Aviatrix Transit for Azure is an architecture to interconnect multiple VNets and on-prem leveraging the hub and spoke deployment model while adding additional functionality and features.  This deployment is shown in the diagram below. 
 
 |nextgentransit_for_azure|
 
@@ -58,7 +58,7 @@ For cross region communication, multiple Transit Gateways can also be interconne
 
 Another important advantage of using Aviatrix Transit is that all communications are encrypted by default providing additional levels of security.  Azure does not provide any native encryption across the Microsoft Backbone and depends upon third party NVAs to provide this functionality should customers require it.
 
-Why do I need Aviatrix AVX Transit for Azure?
+Why do I need Aviatrix Transit for Azure?
 
 ------------------------------------------------------
 
@@ -67,7 +67,7 @@ Transit architecture is about building connectivity between cloud and on-prem in
 The alternative to Transit architecture is to leverage the native options already mentioned or is to build one connection (often referred to as "flat" architecture), either IPSEC over Internet or Express Route, each time you spin up a new VNet in Azure. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks.  Additionally, this method often facilitates the default any to any connectivity which may require additional configuration to prevent.
 
 
-The Benefits of the Aviatrix AVX Transit for Azure
+The Benefits of Aviatrix Transit for Azure
 -------------------------------------------------------------------
 
 - **Simplicity** The Aviatrix Controller provides an abstraction layer and workflow to build the Transit network. You do not need to program any Azure route tables, manage the route entries or understand the significant details about Azure networking.
@@ -82,7 +82,7 @@ The Benefits of the Aviatrix AVX Transit for Azure
 How does it work?
 -------------------------------------------------------------------------------------------------
 
-The AVX Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network. 
+The Aviatrix Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network. 
 
 
 
