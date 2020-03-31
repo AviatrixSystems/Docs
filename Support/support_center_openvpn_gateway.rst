@@ -381,3 +381,13 @@ How can I address incomptibility between my Aviatrix VPN Client application and 
 Cisco Umbrella Client updates the DNS settings to point to itself on your local computer and could have an issue in letting you resolve your internal properties which cannot be resolved by public dns servers. Umbrella Client is known to be `incompatible with many vpn clients <https://support.umbrella.com/hc/en-us/articles/230561147-Umbrella-Roaming-Client-Compatibility-Guide-for-Software-and-VPNs#IncompatibleVPNs>`_.
 
 One of the solution is for you to configure Umbrella to not resolve your internal domains. In Umbrella preferences, you can head to Deployments/Configuration/DeomainManagements and add the domains you want to be resolved outside umbrella. Please reach out to your Cisco Support if you have more questions
+
+
+How can I set DNS NameServer for my remote vpn users?
+-------------------------------------------------------
+
+For Full tunnel, by default, we push the DNS NameServer from the openvpn gateway. You can change the the DNS NameServer on the gateway at "Controller/Gateway/SelectGateway/Edit/Use VPC-VNet DNS Server" if you want to use the DNS server from the VPC settings instead of the default 8.8.8.8. Please note that if you enable/disable this setting, you would have to go to "Controller/OpenVPN/EditConfig/ReloadDHCPConfiguration" to have this setting take effect.
+
+For split tunnel, by default, we do not push a DNS NameServer from the Aviatrix OpenVPN Gateway. But, you can configure it at “Controller/OpenVPN/EditConfig/Select-elb-gateway/ModifySplitTunnel/Nameserver” - this will override the local setting on your clients - only if your clients allow you to do that. On Aviatrix VPN Client, you can check at “Settings/AllowOverrideofManuallySetDNS”
+
+
