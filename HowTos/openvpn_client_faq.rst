@@ -57,6 +57,17 @@ Enabling this feature allows the same user to be logged in from more than one lo
 
 
 
+Which log files should I share when I open a support ticket?
+---------------------------------------------------------------
+
+Please share the following log files with your support request. For MacOS, you can find them at "/Applications/Aviatrix VPN Client.app/Contents/Resources/logs" and for Windows, please look at “Program Files(x86)/Aviatrix VPN Client”
+
+ * commandlog.log
+ * server.log
+ * openvpn1.log
+
+
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 

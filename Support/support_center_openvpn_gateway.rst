@@ -106,6 +106,8 @@ How can I scale my VPN user setup?
 Deploy your Aviatrix OpenVPN Gateways behind a Load Balancer so you can scale up by adding more VPN gateways behind the ELB when needed and not have to worry about losing an IP address and having to reissue certificates to all of your VPN users. Alternatively, you may choose to use `Aviatrix UDP LoadBalanced VPN using DNS <https://docs.aviatrix.com/HowTos/DNSVPN.html>`_
 .
 
+We recommend that you use multiple t2 instances behind an ELB to make your openvpn deployment leverage the scalability, ha and  loadbalancing features that we built in. Also configuring the connection to be split-tunnel will help you serve more remote users, so you can offload traffic to internet locally instead of routing it through the Aviatrix OpenVPN Gateways. Please monitor the "Rate Total" and "CPU Idle" metrics for your openvpn gateways from the dashboard page and add more gateways as needed.
+
 How can the OpenVPN made Highly Available?
 -----------------------------------------------
 
@@ -379,3 +381,13 @@ How can I address incomptibility between my Aviatrix VPN Client application and 
 Cisco Umbrella Client updates the DNS settings to point to itself on your local computer and could have an issue in letting you resolve your internal properties which cannot be resolved by public dns servers. Umbrella Client is known to be `incompatible with many vpn clients <https://support.umbrella.com/hc/en-us/articles/230561147-Umbrella-Roaming-Client-Compatibility-Guide-for-Software-and-VPNs#IncompatibleVPNs>`_.
 
 One of the solution is for you to configure Umbrella to not resolve your internal domains. In Umbrella preferences, you can head to Deployments/Configuration/DeomainManagements and add the domains you want to be resolved outside umbrella. Please reach out to your Cisco Support if you have more questions
+
+
+How can I set DNS NameServer for my remote vpn users?
+-------------------------------------------------------
+
+For Full tunnel, by default, we push the DNS NameServer from the openvpn gateway. You can change the the DNS NameServer on the gateway at "Controller/Gateway/SelectGateway/Edit/Use VPC-VNet DNS Server" if you want to use the DNS server from the VPC settings instead of the default 8.8.8.8. Please note that if you enable/disable this setting, you would have to go to "Controller/OpenVPN/EditConfig/ReloadDHCPConfiguration" to have this setting take effect.
+
+For split tunnel, by default, we do not push a DNS NameServer from the Aviatrix OpenVPN Gateway. But, you can configure it at “Controller/OpenVPN/EditConfig/Select-elb-gateway/ModifySplitTunnel/Nameserver” - this will override the local setting on your clients - only if your clients allow you to do that. On Aviatrix VPN Client, you can check at “Settings/AllowOverrideofManuallySetDNS”
+
+
