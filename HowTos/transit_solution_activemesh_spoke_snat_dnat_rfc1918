@@ -20,84 +20,158 @@ Aviatrix Solution
 
 This technical note illustrates an example solution of performing source NAT and destination NAT feature on Aviatrix spoke 
 gateway to a specific use case where a customer needs a connectivity between certain on-prem hosts and certain cloud 
-instances, but the on-prem network range overlaps with the cloud network CIDR. Additionally, traffic can be initiated 
-from either side.
+instances, but the on-prem network range overlaps with the cloud network CIDR as shown in the diagram below. 
+Additionally, traffic can be initiated from either side.
 
+Topology - Aviatrix Global Transit HA Network with ActiveMesh:
+
+|transit_activemesh_spoke_overlap_cidr_topology|
+
+  ::
+    In this example, the on-prem network address range is 10.3.0.0/16 and all other spoke VPCs connect to on-prem via 
+    Aviatrix Global Transit HA Network with ActiveMesh, however there is one spoke VPC with an identical CIDR of 10.3.0.0/16.
+ 
 .. Note:: 
 
 This tech note supports:
-1. specific on-prem hosts and cloud instances which means no identical IP on each side including Aviatrix Spoke primary/HA gateway
+1. specific on-prem hosts and cloud instances which means no identical IP on each side including IPs of Aviatrix Spoke primary/HA gateway
 2. bi-direction traffic
 3. both on-prem and cloud network allow only RFC 1918 CIDR
 
 ..
 
-In addition, this technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
+Furthermore, this technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
 
-1. Deploy Aviatrix Global Transit Network with ActiveMesh
+1. Deploy `Aviatrix Global Transit Network with ActiveMesh <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__
 
-  - https://docs.aviatrix.com/HowTos/transitvpc_workflow.html
-  
-2. Route traffic belong to RFC 1918 between on-prem network and cloud network which has overlapping CIDR
+2. Deploy virtual CIDR within RFC 1918 range to solve the overlapping CIDR between on-prem network and cloud network
 
-
-Topology:
-
-  1. Aviatrix Global Transit Network with ActiveMesh
-
-  ::
-
-    Example: 
+    - `Customize Advertised Spoke VPC CIDRs <https://docs.aviatrix.com/HowTos/gateway.html#customize-advertised-spoke-vpc-cidrs>`__
     
-    Spoke VPC 1: 192.168.1.0/24
-    Spoke VPC 2: 192.168.2.0/24
-    Shared Service Spoke VPC: 192.168.99.0/24 [region us-east-1]
-    Transit VPC: 192.168.100.0/24
+    - `Customized SNAT <https://docs.aviatrix.com/HowTos/gateway.html#customized-snat>`__
 
-  2. On-Prem CIDR 
-  
-  ::
+    - `Destination NAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`__
 
-    Example: 
-    
-    On-Prem: 10.3.0.0/16
-  
-
-|S3_ENDPOINT_TRANSIT_SOLUTION|
 
 Scenario:
 
-  1. Traffic from On-Prem to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
-    
-  - Traffic which is sent from On-Prem to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NATed on Aviatrix Spoke Gateway in the Shared Service VPC.
-    
-
-  2. Traffic from Spoke VPCs to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
+    1. Traffic from On-Prem to Cloud Spoke network
   
-  - Traffic which is sent from Spoke VPCs in cloud to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NAT on Aviatrix Spoke Gateway in the Shared Service VPC.
-    
+        - Traffic which is initiated from On-Prem to Cloud Spoke network sends to a virtual IP of cloud instance. In addition,
+        cloud instance views a virtual IP of on-prem host.
+        
+    2. Traffic from Cloud Spoke network to On-Prem 
+  
+        - Traffic which is initiated from Cloud Spoke network to On-Prem sends to a virtual IP of on-prem host. In addition,
+        on-prem views a virtual IP of cloud instance.
+        
 Follow the steps below to set up for the scenario.
-
 
 Step 1. Prerequisite
 -------------------------
 
-Step 2. Build Aviatrix Global Transit Network with ActiveMesh
+1.1. Upgrade the Aviatrix Controller to at least version UserConnect-5.4
+
+    - `Inline Software Upgrade document <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
+  
+1.2. Prepare an Real/Virtual CIDR mapping table for on-prem network and cloud network
+
+    One of the key steps to solve overlapping network issue is to route different CIDRs. Therefore, please prepare a Virtual 
+    routable CIDR for your on-prem and spoke network. In this example, we practice a Virtual CIDR within RFC 1918 range.
+
+    ::
+
+        Example: 
+
+        Real/Virtual CIDR mapping table
+
+        ==============  ==============  ================
+                        Real CIDR       Virtual CIDR
+        ==============  ==============  ================
+        Spoke VPC       10.3.0.0/16     10.203.0.0/16
+        On-Prem VPC     10.3.0.0/16     10.103.0.0/16
+        ==============  ==============  ================
+        
+1.3. Find out the Real IPs of certain on-prem hosts and certain cloud instances to build a Real/Virtual IPs mapping table
+    
+    Since this solution is to tackle a specific use case where a customer needs a connectivity between certain on-prem hosts 
+    and certain cloud instances in overlapping CIDR, please find out those IPs and plan a Real/Virtual IPs mapping table for
+    routing advertisement and NAT configuration. 
+    
+    ::
+
+        Example: 
+
+        Real/Virtual IPs mapping table
+
+        ================    ==============  ================
+                            Real IP         Virtual IP
+        ================    ==============  ================
+        Cloud instance      10.3.0.86/32    10.203.0.86/32
+        On-Prem host        10.3.0.85/32    10.103.0.85/32
+        ================    ==============  ================
+  
+Step 2. Build Aviatrix Global Transit HA Network with ActiveMesh
 -------------------------
+    
+    Deploy the topology by following the steps 1, 2, 3, 4, and 5 in `document <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__ first
+        
+        - make sure `ActiveMesh Mode <https://docs.aviatrix.com/HowTos/gateway.html?#activemesh-mode>`__ is enabled on both Aviatrix Transit Gateway and Spoke Gateway
+        
+        - make sure HA is deployed for both Aviatrix Transit Gateway and Spoke Gateway
+        
+        - make sure On-Prem router advertise only the Real IP with /32 of On-Prem host not the whole Real CIDR or Virtual IP/CIDR
+    
+    ::
+
+        Example: On-Prem advertises 10.3.0.85/32 which is the Real IP of On-Prem host
 
 Step 3. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway
 -------------------------
+     
+    This action is to advertise the Virtual IP/CIDR of Cloud Spoke network to On-Prem via BGP session so that On-Prem
+    is able to route the Virtual IP of Cloud instance. Please refer to this `doc <https://docs.aviatrix.com/HowTos/gateway.html#customize-advertised-spoke-vpc-cidrs>`__ 
+    
+    To configure:
+
+      3.1. Go to the Gateway page, click on the Aviatrix Spoke Gateway first. Click Edit.
+
+      3.2. Continue on to the Edit page, scroll to Customize Spoke Advertised VPC CIDRs.
+
+      3.3. Enter the Virtual IP/CIDR of Cloud Spoke VPC that On-Prem is able to route
+
+        - for example: 10.203.0.86/32
+
+      3.4. Click the button "Save"
+
+      |transit_activemesh_spoke_customized_spoke_advertise_vpc_cidr|
+      
+    ::
+
+        Example: Aviatrix Spoke gateway advertises 10.203.0.86/32 which is the Virtual IP of cloud instance
 
 Step 4. Attach Aviatrix Spoke to Aviatrix Transit Network
 -------------------------
 
+    Follow the `step 6 Join a Spoke GW to Transit GW Group <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`__ 
+    in Global Transit Network Workflow.
+
 Step 5. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway and Spoke HA Gateway
 -------------------------
+
+
 
 Step 6. Configure Aviatrix DNAT function on the Aviatrix Transit Primary Gateway
 -------------------------
 
 Step 7. Verify traffic flow
 -------------------------
+
+
+.. |transit_activemesh_spoke_overlap_cidr_topology| image:: transit_activemesh_spoke_overlap_cidr_media/topology.png
+   :scale: 60%
+   
+.. |transit_activemesh_spoke_customized_spoke_advertise_vpc_cidr| image:: transit_activemesh_spoke_overlap_cidr_media/spoke_customized_spoke_advertise_vpc_cidr.png
+   :scale: 30%
 
 .. disqus::
