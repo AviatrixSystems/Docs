@@ -103,7 +103,7 @@ Step 3. Deploy AWS S3 end point in Shared Service VPC
 Step 4. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway in the Shared Service VPC
 -------------------------
 
-  - https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs
+  - https://docs.aviatrix.com/HowTos/gateway.html#customize-advertised-spoke-vpc-cidrs
 
 This action will advertise the customized routes to On-Prem via BGP session and other Aviatrix Spoke Gateways if the function Connected Transit is enabled. 
 
