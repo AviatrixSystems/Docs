@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.4 (Coming Soon)
+R5.4 (4/1/2020)
 =====================
 
 1. Operations
@@ -13,7 +13,7 @@ R5.4 (Coming Soon)
 2. Networking 
 ----------------
 
-- **User VPN Performance Improvements** improves gateway performance when User VPN is enabled on the gateway. To receive enhanced performance, launch a new gateway with `VPN Access <https://docs.aviatrix.com/HowTos/gateway.html#vpn-access>`_ enabled.   
+- **User VPN Performance Improvements** improves gateway performance when User VPN is enabled on the gateway. To receive enhanced performance, replace an existing gateway or launch a new gateway with `VPN Access <https://docs.aviatrix.com/HowTos/gateway.html#vpn-access>`_ enabled.   
 - **Aviatrix Transit Network Spoke Gateways to Support SNAT/DNAT Functions** enable you to support additional use cases in Aviatrix Transit network. These use cases are `"accessing cloud applications with virtual IP addresses" <https://docs.aviatrix.com/HowTos/transit_for_publicIP.html>`_ and "connecting overlapping network CIDRs from on-prem to Spoke VPCs".  
 - **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
 - **Azure Gateways Enhancement** Azure gateways is now launched by the Controller managed disk option instead of storage account for enhanced security. 
