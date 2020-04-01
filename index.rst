@@ -153,6 +153,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloud_wan_faq
    HowTos/cloud_wan_workflow
 
+.. _CoPilot:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: CoPilot
+
+   HowTos/copilot_intro
+   HowTos/copilot_release_notes
+
 .. _Security:
 
 .. toctree::
