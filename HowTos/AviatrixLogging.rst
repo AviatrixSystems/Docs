@@ -81,7 +81,7 @@ Management System for further analysis:
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfirenet>`_
 - `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixvpnversion>`_
-- `AviatrixGatewayStatusChanged <>`_
+- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixgatewaystatuschanged>`_
 
 Below are the details of each log keyword. 
 
