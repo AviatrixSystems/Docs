@@ -5,12 +5,25 @@ Release Notes
 R5.4 (Coming Soon)
 =====================
 
+1. Operations
+------------------
+
 - **Role Based Access Control** allows you to both limit access to the Controller functions and enable self-service for users with different permission privileges. Read `RBAC FAQ <https://docs.aviatrix.com/HowTos/rbac_faq.html>`_ for more details. 
-- **Aviatrix Transit Network Spoke Gateways to Support SNAT/DNAT Functions** enable you to build an Aviatrix Transit Network for a variety of use cases, such as access cloud applications with virtual IP addresses, connecting overlapping network CIDRs from on-prem to Spoke VPCs.  
+
+2. Networking 
+----------------
+
+- **User VPN Performance Improvements** improves gateway performance when User VPN is enabled on the gateway. To receive enhanced performance, launch a new gateway with `VPN Access <https://docs.aviatrix.com/HowTos/gateway.html#vpn-access>`_ enabled.   
+- **Aviatrix Transit Network Spoke Gateways to Support SNAT/DNAT Functions** enable you to support additional use cases in Aviatrix Transit network. These use cases are `"accessing cloud applications with virtual IP addresses" <https://docs.aviatrix.com/HowTos/transit_for_publicIP.html>`_ and "connecting overlapping network CIDRs from on-prem to Spoke VPCs".  
 - **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
+- **Azure Gateways Enhancement** Azure gateways is now launched by the Controller managed disk option instead of storage account for enhanced security. 
+- **User VPN Profile Multi Attribute Support** allows multiple attributes to be specified in the SAML IDP user database. Simply include a list of the names of User VPN Profiles in the user data profile field at the IDP database. 
+
+3. Security Integration
+-------------------------
+
 - **CheckPoint CloudGuard Integration** now supports CloudGuard All-In-One R80.40. In addition, the initial SSH access process is removed for all CloudGuard AMIs. Check out `CheckPoint CloudGuard Configuration Examples <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_ for more details. 
 - **FortiGate Bootstrap Configuration** is now supported. For details on how to configure, read `Bootstrap Configuration Example for FortiGate Firewall <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_.
-- **Azure Gateways Enhancement** Azure gateways is now launched by the Controller managed disk option instead of storage account for enhanced security. 
 
 R5.3.1499 (3/17/2020)
 =======================
