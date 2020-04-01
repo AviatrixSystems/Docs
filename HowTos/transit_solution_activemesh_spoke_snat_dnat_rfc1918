@@ -1,0 +1,103 @@
+.. meta::
+   :description: Aviatrix ActiveMesh with customized SNAT and DNAT on spoke gateway
+   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, VPN, SNAT, DNAT
+
+
+=========================================================================================
+Aviatrix ActiveMesh with customized SNAT and DNAT on spoke gateway
+=========================================================================================
+
+The Problem 
+------------------
+
+Organizations usually plan out cloud network address ranges for building non-overlapping connectivity to on-prem, 
+but there are times where a cloud network CIDR conflicts with an on-prem network address range. Moreover, there might be a 
+constraint that neither source NAT nor destination NAT can be performed in the on-prem network but still requires 
+connectivity to on-prem. Therefore, how to fulfill source NAT and destination NAT in the cloud becomes a key solution.
+
+Aviatrix Solution
+------------------
+
+This technical note illustrates an example solution of performing source NAT and destination NAT feature on Aviatrix spoke 
+gateway to a specific use case where a customer needs a connectivity between certain on-prem hosts and certain cloud 
+instances, but the on-prem network range overlaps with the cloud network CIDR. Additionally, traffic can be initiated 
+from either side.
+
+.. Note:: 
+
+This tech note supports:
+1. specific on-prem hosts and cloud instances which means no identical IP on each side including Aviatrix Spoke primary/HA gateway
+2. bi-direction traffic
+3. both on-prem and cloud network allow only RFC 1918 CIDR
+
+..
+
+In addition, this technical note provides a step-by-step configuration on the Aviatrix controller that will address the following requirements:
+
+1. Deploy Aviatrix Global Transit Network with ActiveMesh
+
+  - https://docs.aviatrix.com/HowTos/transitvpc_workflow.html
+  
+2. Route traffic belong to RFC 1918 between on-prem network and cloud network which has overlapping CIDR
+
+
+Topology:
+
+  1. Aviatrix Global Transit Network with ActiveMesh
+
+  ::
+
+    Example: 
+    
+    Spoke VPC 1: 192.168.1.0/24
+    Spoke VPC 2: 192.168.2.0/24
+    Shared Service Spoke VPC: 192.168.99.0/24 [region us-east-1]
+    Transit VPC: 192.168.100.0/24
+
+  2. On-Prem CIDR 
+  
+  ::
+
+    Example: 
+    
+    On-Prem: 10.3.0.0/16
+  
+
+|S3_ENDPOINT_TRANSIT_SOLUTION|
+
+Scenario:
+
+  1. Traffic from On-Prem to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
+    
+  - Traffic which is sent from On-Prem to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NATed on Aviatrix Spoke Gateway in the Shared Service VPC.
+    
+
+  2. Traffic from Spoke VPCs to AWS S3 service/AWS S3 Bucket via Shared Service Spoke VPC end point in region us-east-1
+  
+  - Traffic which is sent from Spoke VPCs in cloud to AWS S3 service/AWS S3 Bucket goes through Aviatrix Transit Gateway and Aviatrix Spoke Gateway along with IPSec VPN tunnel and AWS end point service. In addition, regarding to AWS requirement, traffic to AWS VPC S3 end point needs to be source NAT on Aviatrix Spoke Gateway in the Shared Service VPC.
+    
+Follow the steps below to set up for the scenario.
+
+
+Step 1. Prerequisite
+-------------------------
+
+Step 2. Build Aviatrix Global Transit Network with ActiveMesh
+-------------------------
+
+Step 3. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway
+-------------------------
+
+Step 4. Attach Aviatrix Spoke to Aviatrix Transit Network
+-------------------------
+
+Step 5. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway and Spoke HA Gateway
+-------------------------
+
+Step 6. Configure Aviatrix DNAT function on the Aviatrix Transit Primary Gateway
+-------------------------
+
+Step 7. Verify traffic flow
+-------------------------
+
+.. disqus::
