@@ -81,6 +81,7 @@ Management System for further analysis:
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfirenet>`_
 - `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixvpnversion>`_
+- `AviatrixGatewayStatusChanged <>`_
 
 Below are the details of each log keyword. 
 
@@ -349,6 +350,20 @@ Example log:
 ::
 
   2020-02-07T11:38:48.276150-08:00 Controller-52.204.188.212 cloudxd: AviatrixVPNVersion:  The VPN connection was rejected as it did not satisfy the minimum version requirements. Current version: AVPNC-2.4.10 Required minimum version: AVPNC-2.5.7 . The rejected VPN user name is tf-aws-52-tcplb-user1
+  
+
+AviatrixGatewayStatusChanged
+-----------------------------
+
+These log messages will be seen from the Controller's syslogs when a gateway's status changes
+
+Example log:
+
+::
+
+  2020-03-29T00:09:13.201669+00:00 ip-10-88-1-63 cloudxd: AviatrixGatewayStatusChanged: status=down gwname=EMEA-ENG-VPNGateway
+  
+  
 
 3. Logging Configuration at Aviatrix Controller
 ================================================
