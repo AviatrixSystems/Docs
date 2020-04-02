@@ -81,7 +81,7 @@ At the top screen, click “[+] CREATE IMAGE”, make sure to:
 
 -  At Cloud Storage file, paste in the following text string:
 
-   **aviatrix200/aviatrix-cloud-services-gateway-111517-byol.tar.gz**
+   **aviatrix300/aviatrix-cloud-services-gateway-032020-byol.tar.gz**
 
 -  Click create, as shown below.
 
@@ -156,7 +156,8 @@ and install the latest software. Log in again with your new admin password
 
 .. Warning:: Any resources created by the controller, such as Aviatrix gateways, GCP routing tables, subnets, LB, etc, must be deleted from the controller console. If you delete them directly on AWS console, controllers view of resources will be incorrect which will lead to features not working properly.
 
-..
+.. Note:: Upgrade from 5.3 to 5.4 is not supported Controller needs to be migrated. Look at the GCP controller migration secion in the below link.
+https://docs.aviatrix.com/HowTos/controller_migration.html
 
 Onboarding
 ==========
@@ -191,6 +192,8 @@ should be self-explanatory.
 
 An alert message will be displayed on the Dashboard menu when a new
 release becomes available.
+
+
 
 For support, send email to support@aviatrix.com
 
