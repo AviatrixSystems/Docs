@@ -115,4 +115,5 @@ Controller Migration from 5.3 to 5.4
 5. If you want to keep the old controller public ip, detach it from the old controller and reattach to new controller. 
    Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
 6. Upgrade new controller to 5.4.
+
 .. disqus::
