@@ -101,4 +101,19 @@ Workflow
 2. New controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
 3. If you want to keep the old controller public ip, detach it from the old controller and reattch to new controller. Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
 
+Controller Migration in GCP
+##################################
+GCP controller image in 5.3 and previous releases are based of 14.04 ubuntu distribution. 5.4 versions and higher versions of controller image will be based of 18.04 ubuntu distribution. Controller upgrade from 5.3 to 5.4 is not supported, instead the following workflow needs to be used.
+
+Controller Migration from 5.3 to 5.4
+
+1. On old controller (with version 5.3) perform "Settings->Maintenance->Backup&Restore->Backup->Backup Now"
+2. Create a new controller based of latest GCP controller image  following instructions at 
+   https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html   
+3.   When prompted to upgrade to "latest", replace latest with 5.3
+4. On the new controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
+5. If you want to keep the old controller public ip, detach it from the old controller and reattach to new controller. 
+   Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
+6. Upgrade new controller to 5.4.
+
 .. disqus::
