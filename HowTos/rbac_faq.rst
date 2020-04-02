@@ -30,7 +30,7 @@ RBAC Deployment Example 1
 ---------------------------
 
 In this example, the Controller admin creates a user Bob who has full responsibility to access account account-A and account-B. The Controller
-admin also creates a user Alice who has full responsibility to access account-B and account-C.
+admin also creates a user Alice who has full responsibility to access account-C and account-D.
 
 |rbac_example_1|
 
