@@ -124,7 +124,7 @@ Deploy the topology by following the steps 1, 2, 3, 4, and 5 in `document <https
 Step 3. Perform Customize Spoke Advertised VPC CIDRs feature on Aviatrix Spoke gateway
 -------------------------
      
-This action is to advertise the Virtual IP/CIDR of cloud spoke network to on-prem via BGP session so that on-prem
+This action is to advertise the Virtual CIDR of cloud spoke network to on-prem via BGP session so that on-prem
 is able to route the Virtual IP of Cloud instance. Please refer to this `doc <https://docs.aviatrix.com/HowTos/gateway.html#customize-advertised-spoke-vpc-cidrs>`__ 
 
 To configure:
@@ -133,7 +133,9 @@ To configure:
 
    3.2. Continue on to the Edit page, scroll to Customize Spoke Advertised VPC CIDRs.
 
-   3.3. Enter the Virtual IP/CIDR of Cloud Spoke VPC that On-prem is able to route
+   3.3. Enter the Virtual CIDR of cloud spoke VPC that on-prem is able to route
+   
+      - make sure advertise the Virtual CIDR of cloud spoke VPC not the Virtual IP of specific cloud instance
 
    3.4. Click the button "Save"
 
@@ -141,7 +143,7 @@ To configure:
    
    ::
 
-     Example: Aviatrix Spoke gateway advertises 10.203.0.86/32 which is the Virtual IP of cloud instance
+     Example: Aviatrix Spoke gateway advertises 10.203.0.0/16 which is the Virtual CIDR of cloud spoke VPC
 
 Step 4. Attach Aviatrix Spoke to Aviatrix Transit Network
 -------------------------
