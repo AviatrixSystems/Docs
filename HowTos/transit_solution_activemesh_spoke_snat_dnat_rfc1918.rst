@@ -27,9 +27,11 @@ Topology - Aviatrix Global Transit HA Network with Active Mesh:
 
 |TRANSIT_ACTIVEMESH_SPOKE_OVERLAP_CIDR_TOPOLOGY|
 
-  ::
+::
+
     In this example, the on-prem network address range is 10.3.0.0/16 and all other spoke VPCs connect to on-prem via 
     Aviatrix Global Transit HA Network with Active Mesh, however there is one spoke VPC with an identical CIDR of 10.3.0.0/16.
+
  
 .. Note:: 
 
