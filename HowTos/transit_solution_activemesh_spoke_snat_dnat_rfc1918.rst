@@ -387,15 +387,15 @@ Ans: As Aviatrix Global Transit HA Network design has a mechanism to handle clou
    :scale: 50%
    
 .. |ONPREM_HOST_TO_CLOUD_INSTANCE| image:: transit_activemesh_spoke_overlap_cidr_media/onprem_host_to_cloud_instance.png
-   :scale: 50%
+   :scale: 100%
    
 .. |CLOUD_INSTANCE_PACKET_CAPTURE| image:: transit_activemesh_spoke_overlap_cidr_media/cloud_instance_packet_capture.png
-   :scale: 50%
+   :scale: 100%
    
 .. |CLOUD_INSTANCE_TO_ONPREM_HOST| image:: transit_activemesh_spoke_overlap_cidr_media/cloud_instance_to_onprem_host.png
-   :scale: 50%
+   :scale: 100%
    
 .. |ONPREM_HOST_PACKET_CAPTURE| image:: transit_activemesh_spoke_overlap_cidr_media/onprem_host_packet_capture.png
-   :scale: 50%
+   :scale: 100%
    
 .. disqus::
