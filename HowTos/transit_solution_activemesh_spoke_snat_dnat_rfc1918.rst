@@ -34,9 +34,12 @@ Topology - Aviatrix Global Transit HA Network with Active Mesh:
 .. Note:: 
 
    This tech note supports:
-   1. specific on-prem hosts and cloud instances which means no identical IP on each side including IPs of Aviatrix Spoke primary/HA gateway
-   2. bi-direction traffic
-   3. both on-prem and cloud network allow only RFC 1918 CIDR
+   
+      1. specific on-prem hosts and cloud instances which means no identical IP on each side including IPs of Aviatrix Spoke primary/HA gateway
+   
+      2. bi-direction traffic
+   
+      3. both on-prem and cloud network allow only RFC 1918 CIDR
 
 ..
 
@@ -54,11 +57,9 @@ Furthermore, this technical note provides a step-by-step configuration on the Av
 
 Scenario:
 
-    1. Traffic which is initiated from on-prem to cloud spoke network sends to a virtual IP of cloud instance. 
-    In addition, cloud instance views a virtual IP of on-prem host.
+    1. Traffic which is initiated from on-prem to cloud spoke network sends to a virtual IP of cloud instance. In addition, cloud instance views a virtual IP of on-prem host.
         
-    2. Traffic which is initiated from cloud spoke network to on-prem sends to a virtual IP of on-prem host. 
-    In addition, on-prem views a virtual IP of cloud instance.
+    2. Traffic which is initiated from cloud spoke network to on-prem sends to a virtual IP of on-prem host. In addition, on-prem views a virtual IP of cloud instance.
     
     3. All virtual IPs are belonging to RFC 1918 range.
         
@@ -67,21 +68,17 @@ Follow the steps below to set up for the scenario.
 Step 1. Prerequisite
 -------------------------
 
-1.1. Upgrade the Aviatrix Controller to at least version UserConnect-5.4
-
-   - `Inline Software Upgrade document <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`__
+1.1. `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`__ the Aviatrix Controller to at least version UserConnect-5.4
   
 1.2. Prepare a Real/Virtual CIDR mapping table for on-prem network and cloud network
 
     One of the key steps to solve overlapping network issue is to route a non-overlapping CIDR. Therefore, please prepare 
-    a Virtual routable CIDR for your on-prem and spoke network. In this example, we practice a Virtual CIDR 
+    a virtual routable CIDR for your on-prem and spoke network. In this example, we practice a Virtual CIDR 
     within RFC 1918 range.
 
     ::
 
-        Example: 
-
-        Real/Virtual CIDR mapping table
+        Real/Virtual CIDR mapping table example: 
 
         ==============  ==============  ================
                         Real CIDR       Virtual CIDR
@@ -98,9 +95,7 @@ Step 1. Prerequisite
     
     ::
 
-        Example: 
-
-        Real/Virtual IPs mapping table
+        Real/Virtual IPs mapping table example:
 
         ================    ==============  ================
                             Real IP         Virtual IP
@@ -118,11 +113,11 @@ Deploy the topology by following the steps 1, 2, 3, 4, and 5 in `document <https
 
    - make sure HA is deployed for both Aviatrix Transit Gateway and Spoke Gateway
 
-   - make sure on-prem router advertise only the Real IP with /32 of on-prem host not the whole Real CIDR or Virtual IP/CIDR
+   - make sure on-prem router advertises only the Real IP with /32 of on-prem host not the whole Real CIDR or Virtual IP/CIDR
     
    ::
 
-      Example: on-prem advertises 10.3.0.85/32 which is the Real IP of On-prem host
+      Example: on-prem router advertises 10.3.0.85/32 which is the Real IP of On-prem host
 
 Step 3. Perform Customize Spoke Advertised VPC CIDRs feature on Aviatrix Spoke gateway
 -------------------------
@@ -137,8 +132,6 @@ To configure:
    3.2. Continue on to the Edit page, scroll to Customize Spoke Advertised VPC CIDRs.
 
    3.3. Enter the Virtual IP/CIDR of Cloud Spoke VPC that On-prem is able to route
-
-     - for example: 10.203.0.86/32
 
    3.4. Click the button "Save"
 
@@ -155,10 +148,10 @@ Follow the `step 6 Join a Spoke GW to Transit GW Group <https://docs.aviatrix.co
 in Global Transit Network Workflow.
 
 
-Step 5. Configure `Aviatrix DNAT function <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`__ on Aviatrix Spoke Gateway for the traffic which is initiated from on-prem to cloud spoke network
+Step 5. Configure Aviatrix DNAT function on Aviatrix Spoke Gateway for the traffic which is initiated from on-prem to cloud spoke network
 -------------------------
 
-This action instructs the spoke gateway to translate a destination address from a Virtual IP of cloud instance to a Real IP of cloud instance in Cloud Spoke VPC.
+This action instructs the spoke gateway to translate a destination address from a Virtual IP of cloud instance to a Real IP of cloud instance in cloud spoke VPC. Please refer to `Aviatrix DNAT function doc <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`__.
 
 To configure:
 
@@ -170,7 +163,7 @@ To configure:
 
   5.4. Click Add New
 
-  5.5. Enter fields for Src CIDR, Dst CIDR, Protocol, Connection (select the one to Transit Gateway), Mark, DNAT IPs and Exclude Route Table as below example.
+  5.5. Enter fields for Src CIDR, Dst CIDR, Protocol, Connection, Mark, DNAT IPs and Exclude Route Table as below example.
  
    ===================     =======================
    **Field**               **Value**
@@ -181,9 +174,9 @@ To configure:
    Destination Port        Leave it blank
    Protocol                all
    Interface               eth0         
-   Connection              Select the one to Transit Gateway
+   Connection              Select the connection to Transit Gateway
    Mark                    A rule field to mark this traffic session (i.e. use 103085 to track source 10.3.0.85/32)
-   DNAT IPs                Real IP of Cloud instance (i.e. 10.3.0.86)  
+   DNAT IPs                Real IP of cloud instance (i.e. 10.3.0.86)  
    DNAT Port               Leave it blank
    Exclude Route Table     [IMPORTANT] Collect all your cloud routing table ids and fill them here
    ===================     =======================
@@ -196,10 +189,10 @@ To configure:
 
   5.8. Click Update to commit.
 
-Step 6. Configure `Aviatrix Customized SNAT function <https://docs.aviatrix.com/HowTos/gateway.html#customized-snat>`__ on Aviatrix Spoke Gateway and Spoke HA Gateway for the traffic which is initiated from on-prem to cloud spoke network
+Step 6. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway and Spoke HA Gateway for the traffic which is initiated from on-prem to cloud spoke network
 -------------------------
 
-This action changes the packet’s source IP address from a Real IP of on-prem host to a Virtual IP representing on-prem host.
+This action changes the packet’s source IP address from a Real IP of on-prem host to a Virtual IP representing on-prem host. Please refer to `Aviatrix Customized SNAT function doc <https://docs.aviatrix.com/HowTos/gateway.html#customized-snat>`__
 
 To configure:
 
@@ -244,10 +237,10 @@ To configure:
     |SNAT_SPOKE_HA_ONPREM_TO_CLOUD|
 
 
-Step 7. Configure Aviatrix DNAT function on Aviatrix Spoke Gateway for the traffic which is initiated from Cloud Spoke network to on-prem
+Step 7. Configure Aviatrix DNAT function on Aviatrix Spoke Gateway for the traffic which is initiated from cloud spoke network to on-prem
 -------------------------
 
-This action instructs the spoke gateway to translate a destination address from a Virtual IP of on-prem host to a Real IP of on-prem host.
+This action instructs the spoke gateway to translate a destination address from a Virtual IP of on-prem host to a Real IP of on-prem host. Please refer to `Aviatrix DNAT function doc <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`__.
 
 To configure:
 
@@ -264,7 +257,7 @@ To configure:
    ===================     =======================
    **Field**               **Value**
    ===================     =======================
-   Source CIDR             Real IP of Cloud instance (i.e. 10.3.0.86/32)
+   Source CIDR             Real IP of cloud instance (i.e. 10.3.0.86/32)
    Source Port             Leave it blank
    Destination CIDR        Virtual IP of on-prem host (i.e. 10.103.0.85/32)
    Destination Port        Leave it blank
@@ -285,10 +278,10 @@ To configure:
 
   7.8. Click Update to commit.
 
-Step 8. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway and Spoke HA Gateway for the traffic which is initiated from Cloud Spoke network to on-prem
+Step 8. Configure Aviatrix Customized SNAT function on Aviatrix Spoke Gateway and Spoke HA Gateway for the traffic which is initiated from cloud spoke network to on-prem
 -------------------------
 
-This action changes the packet’s source IP address from a Real IP of Cloud instance to a Virtual IP representing Cloud instance.
+This action changes the packet’s source IP address from a Real IP of cloud instance to a Virtual IP representing cloud instance. Please refer to `Aviatrix Customized SNAT function doc <https://docs.aviatrix.com/HowTos/gateway.html#customized-snat>`__
 
 To configure:
 
@@ -311,7 +304,7 @@ To configure:
    Destination Port     Leave it blank
    Protocol	            all
    Interface            eth0
-   Connection           Select the one to Transit Gateway
+   Connection           Select the connection to Transit Gateway
    Mark                 Fill the number that we configure in the previous DNAT step 7 (i.e. 103086)
    SNAT IPs             Virtual IP of cloud instance (i.e. 10.203.0.86)
    SNAT Port            Leave it blank
@@ -346,9 +339,9 @@ Step 9. Verify traffic flow
       
       |CLOUD_INSTANCE_PACKET_CAPTURE|
 
-9.2. Traffic from Cloud Spoke network to on-prem 
+9.2. Traffic from cloud spoke network to on-prem 
 
-  - Issue ICMP traffic from Cloud instance to a Virtual IP of on-prem
+  - Issue ICMP traffic from cloud instance to a Virtual IP of on-prem
    
       |CLOUD_INSTANCE_TO_ONPREM_HOST|
       
@@ -357,28 +350,28 @@ Step 9. Verify traffic flow
       |ONPREM_HOST_PACKET_CAPTURE|
 
 .. |TRANSIT_ACTIVEMESH_SPOKE_OVERLAP_CIDR_TOPOLOGY| image:: transit_activemesh_spoke_overlap_cidr_media/topology.png
-   :scale: 60%
+   :scale: 50%
    
 .. |TRANSIT_ACTIVEMESH_SPOKE_CUSTOMIZED_SPOKE_ADVERTISE_VPC_CIDR| image:: transit_activemesh_spoke_overlap_cidr_media/spoke_customized_spoke_advertise_vpc_cidr.png
    :scale: 30%
 
 .. |DNAT_SPOKE_ONPREM_TO_CLOUD| image:: transit_activemesh_spoke_overlap_cidr_media/dnat_spoke_onprem_to_cloud.png
-   :scale: 30%
+   :scale: 50%
    
 .. |SNAT_SPOKE_PRIMARY_ONPREM_TO_CLOUD| image:: transit_activemesh_spoke_overlap_cidr_media/snat_spoke_primary_onprem_to_cloud.png
-   :scale: 30%
+   :scale: 50%
 
 .. |SNAT_SPOKE_HA_ONPREM_TO_CLOUD| image:: transit_activemesh_spoke_overlap_cidr_media/snat_spoke_ha_onprem_to_cloud.png
-   :scale: 30%
+   :scale: 50%
    
 .. |DNAT_SPOKE_CLOUD_TO_ONPREM| image:: transit_activemesh_spoke_overlap_cidr_media/dnat_spoke_cloud_to_onprem.png
-   :scale: 30%
+   :scale: 50%
    
 .. |SNAT_SPOKE_PRIMARY_CLOUD_TO_ONPREM| image:: transit_activemesh_spoke_overlap_cidr_media/snat_spoke_primary_cloud_to_onprem.png
-   :scale: 30%
+   :scale: 50%
 
 .. |SNAT_SPOKE_HA_CLOUD_TO_ONPREM| image:: transit_activemesh_spoke_overlap_cidr_media/snat_spoke_ha_cloud_to_onprem.png
-   :scale: 30%
+   :scale: 50%
    
 .. |ONPREM_HOST_TO_CLOUD_INSTANCE| image:: transit_activemesh_spoke_overlap_cidr_media/onprem_host_to_cloud_instance.png
    :scale: 30%
