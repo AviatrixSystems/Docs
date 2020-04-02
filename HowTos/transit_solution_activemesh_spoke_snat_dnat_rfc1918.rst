@@ -350,6 +350,17 @@ Step 9. Verify traffic flow
   - Execute packet capture on the on-prem host
       
       |ONPREM_HOST_PACKET_CAPTURE|
+      
+FAQ
+------------------
+
+Q1:  Why we need to “mark” the NAT sessions?
+
+Ans: Basically, "mark" function in NAT is a unique number that is associated with specific packets. In this tech note, we leverage on it for the purpose of tracking session identified by the Source CIDR of DNAT and then utilizing it for the SNAT IPs of customized SNAT. It is an advanced option for users to configure NAT rule. Alternatively, users still can configure DNAT and customized SNAT rule without mark.
+ 
+Q2: Why we need to fill all VPC route table IDs for “Exclude Route Table”?
+
+Ans: As Aviatrix Global Transit HA Network design has a mechanism to handle cloud routing table updates, filling all VPC route table IDs for “Exclude Route Table” in NAT feature prevents extra routes to be injected in cloud routing table.
 
 .. |TRANSIT_ACTIVEMESH_SPOKE_OVERLAP_CIDR_TOPOLOGY| image:: transit_activemesh_spoke_overlap_cidr_media/topology.png
    :scale: 50%
@@ -376,15 +387,15 @@ Step 9. Verify traffic flow
    :scale: 50%
    
 .. |ONPREM_HOST_TO_CLOUD_INSTANCE| image:: transit_activemesh_spoke_overlap_cidr_media/onprem_host_to_cloud_instance.png
-   :scale: 30%
+   :scale: 50%
    
 .. |CLOUD_INSTANCE_PACKET_CAPTURE| image:: transit_activemesh_spoke_overlap_cidr_media/cloud_instance_packet_capture.png
-   :scale: 30%
+   :scale: 50%
    
 .. |CLOUD_INSTANCE_TO_ONPREM_HOST| image:: transit_activemesh_spoke_overlap_cidr_media/cloud_instance_to_onprem_host.png
-   :scale: 30%
+   :scale: 50%
    
 .. |ONPREM_HOST_PACKET_CAPTURE| image:: transit_activemesh_spoke_overlap_cidr_media/onprem_host_packet_capture.png
-   :scale: 30%
+   :scale: 50%
    
 .. disqus::
