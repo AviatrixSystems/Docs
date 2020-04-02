@@ -356,6 +356,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_overlapping_subnets
    HowTos/s2c_for_publicIP
    HowTos/transit_for_publicIP
+   HowTos/transit_solution_activemesh_spoke_snat_dnat_rfc1918
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
    HowTos/spoke_skip_rfc1918
