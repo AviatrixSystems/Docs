@@ -80,7 +80,7 @@ Management System for further analysis:
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
-- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15f>`_
+- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
 - `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id16>`_
 
 Below are the details of each log keyword. 
