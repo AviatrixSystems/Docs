@@ -313,6 +313,57 @@ How can I secure my controller?
 
 Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller.
 
+Upgrading beyond 5.3 with old Controller AMI (14.04)
+-----------------------------------
+
+As Ubuntu 14.04 has reached its' end of life, existing Controllers that are running this AMI will be unable to upgrade past the latest release of 5.3.
+Customers with Controllers running this AMI will need to first migrate their Controller to a newer AMI if they are interested in upgrading beyond 5.3. 
+The following instructions detail the migration and upgrade process for Controllers in AWS and Azure. 
+The workflow for a similar end-result in GCP is also detailed at the end of this document:
+
+AWS:
+
+There are currently two ways to migrate Controllers in AWS:
+1) Manually
+2) Through the Controller Migration Feature (available in Release 5.3)
+
+Since you will need to reach 5.3 prior to upgrading to 5.4, it is recommended to perform the migration through the Controller Migration Feature as per option 2. 
+
+1) If you are interested in migrating manually, please refer to our migration documentation: 
+https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html
+
+2) One-Click Controller Migration:
+https://docs.aviatrix.com/HowTos/controller_migration.html
+
+Prerequisites: 
+1. AWS or AWS-Gov
+2. Controller Backup must be enabled.
+3. Controller HA MUST be disabled. 
+4. Ensure no configuration changes are made while the migration is taking place. 
+
+1. This feature can be accessed by logging in to the Controller UI and then navigating to Settings > Maintenance > Migration. 
+2. When you are ready to perform the migration, click "Migrate" and wait for the process to complete.
+3. Once the Controller has been migrated, complete the upgrade to 5.4 normally as per our Upgrade Guide: https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade
+
+Azure: 
+At the time of this writing Azure Controller migrations can only be performed manually. 
+Ensure that any Controller HA has been disabled. 
+
+1. Create a New Controller in Azure: https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-controller-vm-from-azure-marketplace-portal
+2. On the Old Controller, ensure you are on the latest version of 5.3. Otherwise, follow our Upgrade Guide to reach 5.3:  https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade
+	a. If you are on a version <5.3, you will need to follow the normal incremental upgrade path to reach 5.3-- doing so will automatically place you at the latest version.
+	b. If you are already on 5.3, but have not reached the latest version, log in to the Controller UI and then navigate to Settings > Maintenance > Upgrade > Upgrade to a Custom Release > Specify "5.3" > Dry Run > Click "Upgrade to a custom release". Make sure to complete the Pre-Upgrade Checklist found in the above link before upgrading.
+3. IMPORTANT: When the New Controller initializes, configure the admin email address and password then continue with initial setup until you reach the prompt to click "Run" and install the software. Instead of leaving the Software Version field at the default, "latest", specify "5.3" to upgrade the new Controller to the latest version of 5.3. Otherwise the new Controller will upgrade to 5.4 and you will be unable to restore your backup file.
+4. On the Old Controller, navigate to Settings > Maintenance > Backup & Restore > and create a Backup.
+5. Stop the Old Controller.
+6. On the New Controller, log in to the Controller UI, then navigate to Settings > Maintenance > Backup & Restore > Restore > Click Restore (with latest backed-up file)
+7. If you want to keep the Old Controller Public IP, detach it from the Old Controller and reattach to the New Controller. Otherwise perform Troubleshoot > Diagnostics > Network > Controller IP Migration > Migrate.
+8. Complete the upgrade to 5.4 on the New Controller normally, as per our Upgrade Guide: https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade
+
+GCP:
+For Controllers in GCP, please reference the following documentation: 
+https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-gcp
+
 How to use self-defined KMS key for default EBS encryption of gateway disk in the region?
 -----------------------------------
 
