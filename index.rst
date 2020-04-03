@@ -17,6 +17,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Firewall Network`
 * :ref:`Cloud WAN`
+* :ref:`CoPilot`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN® <OpenVPN>`
