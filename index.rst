@@ -161,6 +161,8 @@ While all content is searchable, the site is organized into the following sectio
    :caption: CoPilot
 
    HowTos/copilot_overview
+   HowTos/copilot_getting_started
+   HowTos/copilot_faq
    HowTos/copilot_release_notes
 
 .. _Security:
