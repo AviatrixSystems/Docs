@@ -71,17 +71,17 @@ Management System for further analysis:
 - `AviatrixUser <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id2>`_
 - `AviatrixLicenseVPNUsers <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id4>`_ 
 - `AviatrixRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id6>`_
-- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
-- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
-- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
-- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
-- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
+- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id7>`_
+- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
+- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_
+- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
+- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
 - `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
 - `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
-- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixfirenet>`_
-- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixvpnversion>`_
-- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixgatewaystatuschanged>`_
+- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
+- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
+- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id16>`_
 
 Below are the details of each log keyword. 
 

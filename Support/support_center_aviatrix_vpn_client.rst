@@ -17,3 +17,13 @@ Why does my client keep crashing regularly after connecting?
 ---------------------------------------------------------------
 
 Please check with your admin to see if you have any automated installs on your Aviatrix VPN Client. While the client has an established session, if the application is installed again, it will end up crashing the running client. Please ask your admin to check on the application version before pushing an install.
+
+
+Which log files should I share when I open a support ticket?
+---------------------------------------------------------------
+
+Please share the following log files with your support request. For MacOS, you can find them at "/Applications/Aviatrix VPN Client.app/Contents/Resources/logs" and for Windows, please look at “Program Files(x86)/Aviatrix VPN Client”
+
+  * commandlog.log
+  * server.log
+  * openvpn1.log
