@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.4.1070 (4/3/2020)
+R5.4.1074 (4/3/2020)
 =====================
 
 - **Bug fix** Restore a list of REST APIs that was deleted incorrectly. 
@@ -29,6 +29,13 @@ R5.4.1066 (4/1/2020)
 
 - **CheckPoint CloudGuard Integration** now supports CloudGuard All-In-One R80.40. In addition, the initial SSH access process is removed for all CloudGuard AMIs. Check out `CheckPoint CloudGuard Configuration Examples <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_ for more details. 
 - **FortiGate Bootstrap Configuration** is now supported. For details on how to configure, read `Bootstrap Configuration Example for FortiGate Firewall <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_.
+
+R5.3.1516 (4/3/2020)
+======================
+
+- **Bug fix** Transit Peering not learning routes correctly when remote transit peering configured static routes. 
+- **Bug fix** Back out auto refresh of BGP sessions after upgrading. 
+- **Enhancement** to the ability to update Aviatrix Transit VPC CIDR. 
 
 R5.3.1499 (3/17/2020)
 =======================
