@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+R5.4.1070 (4/3/2020)
+=====================
+
+- **Bug fix** Restore a list of REST APIs that was deleted incorrectly. 
+
 R5.4.1066 (4/1/2020)
 =====================
 
