@@ -17,7 +17,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Firewall Network`
 * :ref:`Cloud WAN`
-* :ref:`CoPilot`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`OpenVPN® <OpenVPN>`
@@ -28,6 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`REST APIs`
 * :ref:`Downloads`
 * :ref:`Release Notes`
+* :ref:`CoPilot`
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
 * :ref:`Support Center`
@@ -153,17 +153,6 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/cloud_wan_faq
    HowTos/cloud_wan_workflow
-
-.. _CoPilot:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: CoPilot
-
-   HowTos/copilot_overview
-   HowTos/copilot_getting_started
-   HowTos/copilot_faq
-   HowTos/copilot_release_notes
 
 .. _Security:
 
@@ -341,6 +330,17 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/UCC_Release_Notes
    HowTos/changelog
    HowTos/field_notices
+
+.. _CoPilot:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: CoPilot
+
+   HowTos/copilot_overview
+   HowTos/copilot_getting_started
+   HowTos/copilot_faq
+   HowTos/copilot_release_notes
 
 .. _Tech Notes:
 
