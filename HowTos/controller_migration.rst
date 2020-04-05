@@ -13,10 +13,8 @@ This feature is released in 5.3. It consists of 2 sub-features:
     - Migrate
     - Restore
 
-
 |
 |
-
 
 Migrate
 =====================
@@ -36,10 +34,9 @@ Prerequisites
 
 + The feature only supports AWS and AWS-Gov at the moment. (Only AWS products/AMIs, "BYOL" and "Metered" are supported)
 + User needs to enable controller backup using an AWS based access-account.
++ User must ensure the controller instance type is at least t2.large.
 + User must disable controller HA. (User can enable HA again on the new controller once migration is fully completed)
 + User should not make any config change during the migration as these config will be lost once new controller takes over.
-
-
 
 
 
