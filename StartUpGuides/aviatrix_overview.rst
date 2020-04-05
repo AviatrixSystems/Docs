@@ -11,12 +11,12 @@ What Do We Do?
 ================
 
 Aviatrix is a cloud native networking company. Unlike any other networking vendors, the 
-Aviatrix software platform understands the cloud provider's native construct. This allows us to program the native constructs and integrate them into our software
-to provide you with turn key solutions. 
+Aviatrix software platform understands the cloud providers' native constructs. This allows us to program the 
+native constructs and integrate them into our networking software to provide you with turn key solutions. 
 
 |aviatrix_overview|
 
-We focus on solving networking problems in use cases relevant to public clouds. 
+We focus on solving networking and networking security problems in use cases relevant to AWS, Azure and GCP. 
 These use cases are shown as below: 
 
 - Datacenter to cloud (`AVX Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
