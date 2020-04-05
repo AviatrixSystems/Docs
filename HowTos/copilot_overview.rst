@@ -15,6 +15,6 @@ Aviatrix CoPilot provides a global operational view of your multi-cloud network.
 Key Benefits
 ----------------------
 
-Dynamic Topology Map – Accurate, multi-cloud network topology, layout control and search
-FlowIQ – Detailed application traffic flow analysis, global heat map and trends
-Network Health Monitor – Real-time cloud network resource inventory and status
+- Dynamic Topology Map – Accurate, multi-cloud network topology, layout control and search
+- FlowIQ – Detailed application traffic flow analysis, global heat map and trends
+- Network Health Monitor – Real-time cloud network resource inventory and status
