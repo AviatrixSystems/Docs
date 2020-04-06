@@ -95,8 +95,10 @@ Controller Migration in Azure
 Workflow
 
 1. Old controller perform "Settings->Maintenance->Backup&Restore->Backup->Backup Now"
-2. New controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
-3. If you want to keep the old controller public ip, detach it from the old controller and reattch to new controller. Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
+2. Launch the new controller(for 5.3 to 5.4 controller migration, , when prompted to upgrade to "latest", replace latest with 5.3)
+   New controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
+3. Skip this step if you are NOT migrating from 5.3 to 5.4, but for 5.3 to 5.4 controller migration, upgrade new controller to 5.4
+4. If you want to keep the old controller public ip, detach it from the old controller and reattch to new controller. Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
 
 Controller Migration in GCP
 ##################################
