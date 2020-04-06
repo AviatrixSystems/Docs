@@ -313,11 +313,11 @@ How can I secure my controller?
 
 Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller.
 
-Upgrading beyond 5.3 with old Controller AMI (14.04)
+Upgrading beyond 5.3 with old Controller Image (Ubuntu 14.04)
 -----------------------------------
 
-As Ubuntu 14.04 has reached its' end of life, existing Controllers that are running this AMI will be unable to upgrade past the latest release of 5.3.
-Customers with Controllers running this AMI will need to first migrate their Controller to a newer AMI if they are interested in upgrading beyond 5.3. 
+As Ubuntu 14.04 has reached its' end of life, existing Controllers that are running this image will be unable to upgrade past the latest release of 5.3.
+Customers with Controllers running this image will need to first migrate their Controller to a newer image if they are interested in upgrading beyond 5.3. 
 The following instructions detail the migration and upgrade process for Controllers in AWS and Azure. 
 The workflow for a similar end-result in GCP is also detailed at the end of this document:
 
