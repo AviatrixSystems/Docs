@@ -56,13 +56,63 @@ The network setup is as follows:
 2. Configure Cisco IOS Router
 ===============================
 
+
+
  2.1 Either ssh into the Cisco router or connect to it directly through its console port.
 
  2.2 Apply the following IOS configuration to your router:
-     Please note that from version 5.0, we use the gateway's public ip address as the identier, so the "match identity address" should use the public ip instead of the private ip as pointed in the picture below.
+     Please note that from version 5.0, we use the gateway's public ip address as the identier, so the "match identity address" should use the public ip as well
 
-     |image1| 
+====================================================================
+#be sure to use YOUR Aviatrix gateway PUBLIC IP here
+#use your preshared key here
+crypto keyring aviatrixkey  
+  pre-shared-key address 54.189.176.52 key mypresharedkey
 
+crypto isakmp policy 10
+ encryption aes 256
+ authentication pre-share
+ group 2
+ lifetime 28800
+
+#This is dead peer detection 
+crypto isakmp keepalive 10 3 periodic
+
+#be sure to use the Aviatrix gateway PUBLIC IP here in identity address
+crypto isakmp profile aviatrixprofile
+   keyring aviatrixkey
+   self-identity address
+   match identity address 54.189.176.52 255.255.255.255 
+
+crypto ipsec transform-set myset esp-aes 256 esp-sha-hmac 
+ mode tunnel
+crypto ipsec df-bit clear
+
+#be sure to use the Aviatrix gateway PUBLIC IP here peer address
+crypto map aviatrixmap 10 ipsec-isakmp 
+ set peer 54.189.176.52
+ set transform-set myset 
+ set isakmp-profile aviatrixprofile
+ match address myacl
+
+
+#Apply the crypto map policy to the Interface
+
+ interface GigabitEthernet1
+ ip address dhcp
+ ip nat outside
+ negotiation auto
+ crypto map aviatrixmap
+
+    
+ #be sure to include ALL your INTERESTING traffic here: 
+
+ ip access-list extended myacl
+ 10 permit ip 192.168.0.0 0.0.0.255 10.200.0.0 0.0.255.255
+ 20 permit ip 192.168.0.0 0.0.0.255 10.100.0.0 0.0.255.255
+ =============================================================
+ 
+ 
 3. Troubleshooting and Verifying at the Aviatrix Controller
 ========================================================
 
