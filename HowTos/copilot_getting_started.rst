@@ -4,17 +4,21 @@
 
 
 ============================================================
-Aviatrix Deployment Guide
+Aviatrix CoPilot Deployment Guide
 ============================================================
 
 
 Launch CoPilot
 --------------
-CoPilot is launched as an instance from the MarketPlace. After successfuly launching the instance, follow this steps to configured CoPilot
-onfigure instance parameters and launch 
+CoPilot is available as an all-in-one virtual appliance that's hosted in users' own IaaS cloud environment. 
+It can be launched as an EC2 instance in AWS, or virtual machine Azure MarketPlaces. Please make sure default configurations for resources and
+and security group settings that are recommended by marketplaces are applied during launch. 
+After successfuly launching the instance, follow this steps to configure CoPilot instance parameters and launch. 
+
+
 
 Instance Configuration Details
---------------------------------
+******************************
 
 - Ensure you have 2TB of disk (Only supported size in this version) 
 
