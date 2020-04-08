@@ -13,8 +13,6 @@ This feature is released in 5.3. It consists of 2 sub-features:
     - Migrate
     - Restore
 
-|
-|
 
 Migrate
 =====================
@@ -33,26 +31,24 @@ Prerequisites
 -----------------
 
 + The feature only supports AWS and AWS-Gov at the moment. (Only AWS products/AMIs, "BYOL" and "Metered" are supported)
-+ User needs to enable controller backup using an AWS based access-account.
++ User needs to `enable controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using an AWS based access-account.
 + User must ensure the controller instance type is at least t2.large.
-+ User must disable controller HA. (User can enable HA again on the new controller once migration is fully completed)
++ User must `disable controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_. (User can `enable HA again <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ on the new controller once migration is fully completed)
 + User should not make any config change during the migration as these config will be lost once new controller takes over.
-
++ This activity should be scheduled during a maintenance window and a walk through `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ is highly recommended.
 
 
 Controller Migration feature does the following in sequence
 ---------------------------------------------------------------
 
 1. User executes the "Migrate" feature on old controller
-2. Old controller enables controller "BackUp Now" feature to make sure the backup config file is up-to-date
-3. Old controller creates a new cloud virtual machine which has the latest Aviatrix controller image
+2. Old controller executes "Controller/Settings/Maintenance/Backup&Restore/BackUpNow" to take a new backup to ensure that the backup is up-to-date
+3. Old controller creates a new Aviatrix Controller using the latest Aviatrix controller AMI
 4. New controller extends disk partition to the max of the disk space available
-5. New controller initialize itself to match the version of old controller
+5. New controller initializes itself to match the software version of old controller
 6. New controller restores configuration file from backup of step 2
 7. New controller invokes cloud API to transfer its old controller's EIP to itself
 8. New controller invokes cloud API to stop old controller
-
-
 
 
 Status
@@ -60,10 +56,6 @@ Status
 + The migration status will be displayed in a tag named "MigrationStatus" of the new controller instance. Sample status messages are "Initializing", "Migrating", "Successful".
 
 
-
-
-|
-|
 
 
 Restore
