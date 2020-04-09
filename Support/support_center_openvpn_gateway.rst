@@ -391,3 +391,21 @@ For Full tunnel, by default, we push the DNS NameServer from the openvpn gateway
 For split tunnel, by default, we do not push a DNS NameServer from the Aviatrix OpenVPN Gateway. But, you can configure it at “Controller/OpenVPN/EditConfig/Select-elb-gateway/ModifySplitTunnel/Nameserver” - this will override the local setting on your clients - only if your clients allow you to do that. On Aviatrix VPN Client, you can check at “Settings/AllowOverrideofManuallySetDNS”
 
 
+What can I do when I saw the email QuotaExceededException while creating a VPN user or re-issuing a VPN user certificate?
+-------------------------------------------------------------------------------------------------------------------------
+
+This is a known issue with our email service provider office365 that is integrated with Controller 5.2
+and earlier releases.
+From time to time, we will run into quota problem.
+There are three possible solutions:
+
+#. You can use your own SMTP server.
+   Change controller's default SMTP setting and point to your preferred SMTP server
+   for sending out email: Controller/Settings/Controller/Email/Change email notification source.
+#. For an immediate solution, download the certificate and send it out manually.
+   |download-ovpn|
+#. Upgrade to Controller 5.3 or later release where we use a different email service provider with no quota limit.
+
+
+.. |download-ovpn| image:: email-quota/download-ovpn-manually.png
+   :scale: 70%
