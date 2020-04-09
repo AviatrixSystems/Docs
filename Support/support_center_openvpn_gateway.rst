@@ -1,6 +1,6 @@
 ﻿.. meta::
    :description: Aviatrix Support Center
-   :keywords: Aviatrix, Support, Support Center, openvpn, saml, aviatrix vpn client, .ovpn file, okta token authentication, openvpn profiles, tunnelblick, ldap, csv upload
+   :keywords: Aviatrix, Support, Support Center, openvpn, saml, aviatrix vpn client, .ovpn file, okta token authentication, openvpn profiles, tunnelblick, ldap, csv upload, QuotaExceededException
 
 ===========================================================================
 OpenVPN Gateway
@@ -397,7 +397,7 @@ What can I do when I saw the email QuotaExceededException while creating a VPN u
 This is a known issue with our email service provider office365 that is integrated with Controller 5.2
 and earlier releases.
 From time to time, we will run into quota problem.
-There are three possible solutions:
+There are three solutions:
 
 #. You can use your own SMTP server.
    Change controller's default SMTP setting and point to your preferred SMTP server
