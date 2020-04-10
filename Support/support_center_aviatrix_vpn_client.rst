@@ -38,6 +38,6 @@ In some cases you may see an error when launching the VPN Client.  Some examples
   * Check your default browser and if this is set to Safari please try setting this to Chrome or Firefox then attempt to connect again.
   * If you are using Chrome please try disabling all extensions. Then test your connection. You may need to enable them one by one to determine which one is causing the issue
    
-* Cannot run Route Add Command on Windows clients:
+* Cannot run "Route Add" Command on Windows clients:
 
   * This error usually occurs when the profile was not properly imported into the client. If a user double clicks on the profile it will be opened by the Client but will not be able to properly run. Have the end user first open the client and import the Configuration in by clicking on the + at the bottom of the client should resolve this issue.
