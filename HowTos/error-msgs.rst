@@ -236,6 +236,15 @@ The firewall subnets/interfaces are created when enable FireNet function on the 
 
 ::
 
+   Error: TCP: connect to [AF_INET] failed, will try again in 5 seconds: The system tried to join a drive to a directory on a joined drive. 
+   
+This error may be found in Aviatrix VPN Client logs. It will be returned in the event a TCP OpenVPN Gateway is deployed behind an AWS NLB, but port 943 is not open to the preserved source IP's. We recommend opening port 943 to 0.0.0.0/0 to prevent connectivity issues like this. Please refer to the following documentation for OpenVPN required ports:
+
+https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#which-ports-should-i-have-open-in-my-firewall-to-allow-openvpn-users-to-come-in
+--------------------------------------------------------------------
+
+::
+
    Error: [Aviatrix Error] An error occurred (InsufficientFreeAddressesInSubnet) when calling the CreateTransitGatewayVpcAttachment operation: Insufficient Free IP Addresses in subnet.
    
 This error will be returned when there are 0 available IP addresses in a subnet that is being attached to the TGW. You must have at least one available IP address in each subnet that will be attached. 
