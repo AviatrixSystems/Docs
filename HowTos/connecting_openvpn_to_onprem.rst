@@ -28,7 +28,7 @@ On-prem Network 					          10.200.0.0/16
 Configuration
 --------------
 
-1. Add the On-prem Networks to the OpenVPN Gateway
+1. Add the On-prem Networks to the OpenVPN Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Controller > OpenVPN > Edit Config > MODIFY SPLIT TUNNEL 
@@ -51,19 +51,19 @@ Depending on your network's use case, please refer to the links below:
 Controller > Site2Cloud > select tunnel > Local Subnet(s)
 
 - Add the OpenVPN Gateway Network to Local Subnets(s) (ig, 10.99.245.0/24)
-- The User VPN client network (ig, 192.168.43.0/24) will be SNAT'ed off the OpenVPN Gateway's local IP (ig, 10.99.245.x) 
+- The User VPN client network (ig, 192.168.43.0/24) will be SNAT'ed off of the OpenVPN Gateway's local IP (ig, 10.99.245.x) 
 - Transit Gateways configured with BGP should advertise the OpenVPN network automatically
 
 Conclusion
 --------------
 
-Users connected to the SSL VPN should now beable to route through OpenVPN Gateway, through the IPSec tunnel and back to On-prem.
+Users connected to the SSL VPN should now be able to route through the OpenVPN Gateway back to On-prem.
 
 Troubleshooting
 --------------
 
 - Confirm the VPN User policy allows for connectivity to the On-prem network
-- Log out of the Aviatrix VPN client and reconnect
+- Log out of the Aviatrix VPN client and reconnect - this will refresh your device's local routes
 - If this a TGW solution, confirm that the OpenVPN Gateway's Security Domain is connected to the S2C Security Domain
 - If this is a BGP solution confirm that Transit Gateway is advertising the OpenVPN Gateway network (ig, 10.99.245.0/24)
 - On the remote firewall or router check for any ACLs that would block the OpenVPN Gateway Network
