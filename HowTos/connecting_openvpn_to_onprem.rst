@@ -51,6 +51,7 @@ Depending on your network's use case, please refer to the links below:
 Controller > Site2Cloud > select tunnel > Local Subnet(s)
 
 - Add the OpenVPN Gateway Network to Local Subnets(s) (ig, 10.99.245.0/24)
+- The remote Firewal/Router will need to add the OpenVPN Gateway's network (10.99.245.0/24) to it's IPSec policy
 - The User VPN client network (ig, 192.168.43.0/24) will be SNAT'ed off of the OpenVPN Gateway's local IP (ig, 10.99.245.x) 
 - Transit Gateways configured with BGP should advertise the OpenVPN network automatically
 
