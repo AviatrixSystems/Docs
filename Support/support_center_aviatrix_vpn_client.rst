@@ -22,12 +22,17 @@ Please check with your admin to see if you have any automated installs on your A
 Which log files should I share when I open a support ticket?
 ---------------------------------------------------------------
 
-Please share the following log files with your support request. For MacOS, you can find them at "/Applications/Aviatrix VPN Client.app/Contents/Resources/logs" and for Windows, please look at “Program Files(x86)/Aviatrix VPN Client”
+Please share the following 3 log files from the Aviatrix VPN client installation folder with your support request:
 
   * commandlog.log
   * server.log
   * openvpn1.log
-  
+
+Before Aviatrix VPN Client 2.4.10, you can find them at "/Applications/Aviatrix VPN Client.app/Contents/Resources" for **MacOS**,
+at “Program Files(x86)/Aviatrix VPN Client” for **Windows**, and at
+"/usr/bin/AVPNC_bin" for **Ubuntu**.  For Aviatrix VPN client 2.4.10 and after, these files have been moved
+into the **logs** sub-folder of the aforementioned directories.
+
 How to address some common issues with Users and the VPN Client
 --------------------------------------------------------------------------------------------
 
