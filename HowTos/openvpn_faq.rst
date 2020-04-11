@@ -395,9 +395,12 @@ Aviatrix VPN gateways are deployed behind cloud provider's native load balancer,
 scales to unlimited number of VPN gateways capable of supporting unlimited number of 
 simultaneous VPN client connections. 
 
-Aviatrix VPN solution supports both UDP based and TCP based VPN, they have similar performance
-characteristics. The char below benchmarks a VPN gateway's single session performance 
-while using TCP VPN. 
+Aviatrix VPN solution supports both UDP and TCP mode VPN deployments. They have similar performance
+characteristics. The chart below benchmarks a VPN client's single session download and upload speed 
+on one VPN gateway in TCP mode 
+The benchmark provides a reference information on selecting VPN gateway instance size. 
+Note actual VPN client performance also depends on client's Internet ISP speed, packet loss ratio
+and other factors.
 
 The chart below is measured on a Windows client. 
 
