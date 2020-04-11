@@ -396,7 +396,7 @@ scales to unlimited number of VPN gateways capable of supporting unlimited numbe
 simultaneous VPN client connections. 
 
 Aviatrix VPN solution supports both UDP based and TCP based VPN, they have similar performance
-characteristics. The char below benchmarks a VPN gateway's single session performance while 
+characteristics. The char below benchmarks a VPN gateway's single session performance 
 while using TCP VPN. 
 
 The chart below is measured on a Windows client. 
