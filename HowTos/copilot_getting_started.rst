@@ -35,14 +35,14 @@ Configure controllers access for CoPilot
 
 - Assign a static public IP address to CoPilot. For example, in EC2 console, you go to Elastic IP section and assign an EIP to copilot instance 
 
-- On controller security groups, ensure 443 is option to public IP address of CoPilot instance
+- On controller security groups, ensure 443 is open to public IP  of CoPilot instance
 
 - Configure a dedicate user account on aviatrix controller for copilot 
 
-- You should now be able to login to CoPilot with the username we configured above
+- You should now be able to login to CoPilot with the credentials we configured above
 
 .. note::
-  As of 1.1.5 Copilot requires read-only access + access to ping and traceroute functions for diagnositc capabilities 
+  If you are using RBAC, as of 1.1.5 Copilot requires read-only access + access to ping and traceroute functions for diagnositc capabilities 
 
 
 Enable FlowIQ
