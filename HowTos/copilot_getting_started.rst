@@ -30,32 +30,34 @@ Instance Configuration Details
 
  
 
-Configure CoPilot and Netflow 
+Configure controllers access for CoPilot
 -----------------------------
 
-- In EC2 console go to Elastic IP and assign an EIP to copilot instance 
+- Assign a static public IP address to CoPilot. For example, in EC2 console, you go to Elastic IP section and assign an EIP to copilot instance 
+
+- On controller security groups, ensure 443 is option to public IP address of CoPilot instance
 
 - Configure a dedicate user account on aviatrix controller for copilot 
 
+- You should now be able to login to CoPilot with the username we configured above
+
 .. note::
-  As of 1.1.4 Copilot requires read-only access + access to ping and traceroute function for diagnositc capabilities 
+  As of 1.1.5 Copilot requires read-only access + access to ping and traceroute functions for diagnositc capabilities 
 
 
-Configure controller to send NetFlow records to copilot 
+Enable FlowIQ
 --------------------------------------------------------
 - Login to Aviatrix controller 
 
-- Go to Settings -> Loggings 
+- Go to Settings -> Loggings -> NetFlow Logging
 
 - Use the EIP of copilot as the server and UDP port 31283 (default) 
 
-.. note::
-  You have the option of selecting which gateways generate flows 
-  
+ 
 Deployment is complete. At this point your Copilot is setup and ready to use. You should start seeing NetFlow in less than 5 minutes. Note that when you launch CoPilot at first your version number will be the based on the version in the image. Within an hour, Copilot version will be updated. 
 
 System Design Considerations 
 ----------------------------
 
-
-If you are using AVX Transit Service, you might consider turning NetFlow on only in transit to avoid duplicating traffic. 
+- For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
+- You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
