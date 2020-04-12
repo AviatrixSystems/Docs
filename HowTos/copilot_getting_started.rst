@@ -11,8 +11,7 @@ Aviatrix CoPilot Deployment Guide
 Launch CoPilot
 --------------
 CoPilot is available as an all-in-one virtual appliance that's hosted in users' own IaaS cloud environment. 
-It can be launched as an EC2 instance in AWS, or virtual machine Azure MarketPlaces. Please make sure default configurations for resources and
-and security group settings that are recommended by marketplaces are applied during launch. 
+It can be launched as an EC2 instance in AWS, or virtual machine in Azure. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfuly launching the instance, follow this steps to configure CoPilot instance parameters and launch. 
 
 
@@ -20,16 +19,14 @@ After successfuly launching the instance, follow this steps to configure CoPilot
 Instance Configuration Details
 ******************************
 
-- Ensure you have 2TB of disk (Only supported size in this version) 
-
 - Configure your copilot security group as shown below to allow the following: 
 
   - 443 from anywhere user access (User Interface)
 
-  - UDP port 31283 from anywhere (NetFlow) 
+  - UDP port 31283 from 0.0.0.0/0 or specific gateway IPs 
 
 .. tip::
-  If security requirement dictates that security groups not be open to 0.0.0.0/0, you can program the security group to open this UDP port to aviatrix gateway EIPs. You can leverage controllers SG to copy the IP address of the gateways 
+  If security requirement dictates that security groups not be open to 0.0.0.0/0, you can program the security group to open this UDP port to aviatrix gateway EIPs. You can leverage controllers security group management to copy the IP addresses of the gateways 
 
  
 
@@ -47,7 +44,6 @@ Configure CoPilot and Netflow
 Configure controller to send NetFlow records to copilot 
 --------------------------------------------------------
 - Login to Aviatrix controller 
-
 
 - Go to Settings -> Loggings 
 
