@@ -50,10 +50,11 @@ Controller Migration feature does the following in sequence
 7. New controller invokes cloud API to transfer its old controller's EIP to itself
 8. New controller invokes cloud API to stop old controller
 
+Note: A temparory EIP is created for business continuity during migration.  A new private IP will be created on the new controller.
 
 Status
 ---------
-+ The migration status will be displayed in a tag named "MigrationStatus" of the new controller instance. Sample status messages are "Initializing", "Migrating", "Successful".
++ The migration status will be displayed in a tag named "MigrationStatus" of the new controller instance on AWS console.  Sample status messages are "Initializing", "Migrating", "Successful".  After "Successful" appears around 15 minutes of migration, you may prepare to access the same EIP.
 
 
 
