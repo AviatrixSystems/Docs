@@ -339,7 +339,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Security Bulletin
 
    HowTos/security_bulletin_article
-   HowTos/security_faq
+   HowTos/security_bulletin_faq
 
 .. _CoPilot:
 
