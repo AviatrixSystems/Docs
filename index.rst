@@ -27,7 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`REST APIs`
 * :ref:`Downloads`
 * :ref:`Release Notes`
-* :ref:`Aviatrix Security Bulletin`
+* :ref:`Security Bulletin`
 * :ref:`CoPilot`
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
@@ -332,13 +332,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/changelog
    HowTos/field_notices
 
-.. _Aviatrix Security Bulletin:
+.. _Security Bulletin:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Aviatrix Security Bulletin
+   :caption: Security Bulletin
 
-   HowTos/security_bulletin_CVE_2020_7224
+   HowTos/security_bulletin_article
+   HowTos/security_faq
 
 .. _CoPilot:
 
