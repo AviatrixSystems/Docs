@@ -59,7 +59,7 @@ Improvements/Fixes
 References
 ----------
 
-<insert docs.aviatrix.com link here> 
+https://docs.aviatrix.com/HowTos/security_bulletin_article.html#cve-2020-7224
 
 https://docs.aviatrix.com/HowTos/openvpn_faq.html 
 
