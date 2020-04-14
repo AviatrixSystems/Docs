@@ -2,13 +2,8 @@
 Security Article
 =======================================
 
-CVE-2020-7224
-=====================
-
-Article # 
----------
-
-AVXSB-00001 
+Article #: AVXSB-00001 
+======================
 
 CVE-ID 
 ------
@@ -59,11 +54,11 @@ Improvements/Fixes
 References
 ----------
 
-https://docs.aviatrix.com/HowTos/security_bulletin_article.html#cve-2020-7224
+- https://docs.aviatrix.com/HowTos/security_bulletin_article.html#cve-2020-7224
 
-https://docs.aviatrix.com/HowTos/openvpn_faq.html 
+- https://docs.aviatrix.com/HowTos/openvpn_faq.html 
 
-https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7224 
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7224 
 
 
 .. disqus::
