@@ -9,15 +9,16 @@ Aviatrix CoPilot Deployment Guide
 
 
 Launch CoPilot
---------------
+==================
+
 CoPilot is available as an all-in-one virtual appliance that's hosted in users' own IaaS cloud environment. 
 It can be launched as an EC2 instance in AWS, or virtual machine in Azure. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfuly launching the instance, follow this steps to configure CoPilot instance parameters and launch. 
-
+Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot is not a separate product.
 
 
 Instance Configuration Details
-******************************
+------------------------------
 
 - Configure your copilot security group as shown below to allow the following: 
 
@@ -31,7 +32,7 @@ Instance Configuration Details
  
 
 Configure controllers access for CoPilot
------------------------------
+=============================================
 
 - Assign a static public IP address to CoPilot. For example, in EC2 console, you go to Elastic IP section and assign an EIP to copilot instance 
 
@@ -46,7 +47,8 @@ Configure controllers access for CoPilot
 
 
 Enable FlowIQ
---------------------------------------------------------
+=================
+
 - Login to Aviatrix controller 
 
 - Go to Settings -> Loggings -> NetFlow Logging
@@ -57,7 +59,6 @@ Enable FlowIQ
 Deployment is complete. At this point your Copilot is setup and ready to use. You should start seeing NetFlow in less than 5 minutes. Note that when you launch CoPilot at first your version number will be the based on the version in the image. Within an hour, Copilot version will be updated. 
 
 System Design Considerations 
-----------------------------
-
+==================================
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
