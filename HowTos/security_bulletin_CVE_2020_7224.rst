@@ -10,12 +10,7 @@ AVXSB-00001
 CVE-ID 
 ------
 
-CVE-2020-7224 
-
-Created Date 
-------------
-
-1/16/2020 
+CVE-2020-7224 [Created Date: 1/16/2020]
 
 Product and Version 
 -------------------
