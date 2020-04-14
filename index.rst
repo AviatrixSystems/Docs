@@ -27,6 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`REST APIs`
 * :ref:`Downloads`
 * :ref:`Release Notes`
+* :ref:`Security Bulletin`
 * :ref:`CoPilot`
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
@@ -330,6 +331,15 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/UCC_Release_Notes
    HowTos/changelog
    HowTos/field_notices
+
+.. _Security Bulletin:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Security Bulletin
+
+   HowTos/security_bulletin_article
+   HowTos/security_bulletin_faq
 
 .. _CoPilot:
 
