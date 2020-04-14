@@ -8,7 +8,7 @@ Aviatrix CoPilot FAQs
 ============================================================
 
 
-What is the defaul login for copilot? 
+What is the default login for copilot? 
 ====================================================
 
 Today copilot authenticates against aviatrix controller’s list of local users.  
@@ -16,7 +16,7 @@ Today copilot authenticates against aviatrix controller’s list of local users.
 Are the traffic flow records coming from controller or gateways?  
 ===============================================================================
 
-While  is configured in the controller, but the actual flows come from the gateways directly to CoPilot's instance.
+While it is configured in the controller, but the actual flows come from the gateways directly to CoPilot's instance.
 
 What protocol does CoPilot use to talk to its controller? 
 ===============================================================================
