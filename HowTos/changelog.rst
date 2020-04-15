@@ -15,7 +15,7 @@ Aviatrix VPN Client Changelog
 
 2.6.6 - Jan 29 2020
  - Improve the user experience to add a new VPN profile
- - `Security fixes for the OpenVPN params <https://docs.aviatrix.com/HowTos/security_bulletin_article.html#cve-2020-7224>`_
+ - `Security fixes for the OpenVPN params <https://docs.aviatrix.com/HowTos/security_bulletin_article.html#article-avxsb-00001>`_
 
 
 2.5.7 - Nov 20 2019
