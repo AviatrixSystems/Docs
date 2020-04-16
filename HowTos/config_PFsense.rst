@@ -11,7 +11,7 @@
  *2* Currently we do not have a full integration between the Aviatrix dashboard and the Netgate pfSense, which means that you will not be able to dynamically update the firewall routing table, as it is currently possible with the Palo Alto VM-Series.
 
 =========================================================
-Setup Firewall Network(Firenet)
+Setup Firewall Network(Firenet) for Netgate PFSense
 =========================================================
 Complete steps 1-6 of the Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your PFsense instance.
 
