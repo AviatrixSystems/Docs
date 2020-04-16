@@ -28,7 +28,7 @@ Interveral    	 					          The interveral the ping is sent in seconds
 IP Address              			      The destination IP of a device on the remote end of the tunnel
 ===============================     =================================================================
 
-Set the desired values and then click "Enable." The Gateway will now ping the remote device in intervals of seconds. The ping will orginate from the Gateway's local IP.
+Set the desired values (ie, Interval 3 & IP Address 10.200.1.8) and then click "Enable." The Gateway will now ping the remote device in intervals of seconds. The ping will orginate from the Gateway's local IP.
 
 Additional Notes
 --------------
