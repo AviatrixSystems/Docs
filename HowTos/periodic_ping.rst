@@ -7,7 +7,7 @@
 Periodic Ping
 ============================================
 
-In very rare cases Site2cloud tunnels may fail to pass traffic if the tunnel is dormant for a long period of time. This is not an issue with the Avaitrix Gateways and can usually be traced to misconfigurations on the remote device. To compenstate for this Periodic Ping was developed to maintain a steady flow of traffic across the tunnel. 
+In very rare cases Site2cloud tunnels may fail to pass traffic if the tunnel is dormant for a long period of time. This is not an issue with the Aviatrix Gateways and can usually be traced to misconfigurations on the remote device. To compensate for this Periodic Ping was developed to maintain a steady flow of traffic across the tunnel. 
 
 For more information on troubleshooting Site2Cloud issues please refer to these links:
 
@@ -24,11 +24,11 @@ Configuration
 ===============================     =================================================================
   **Option**                        **Description**
 ===============================     =================================================================
-Interveral    	 					          The interveral the ping is sent in seconds
+Interval    	 					          The interval the ping is sent in seconds
 IP Address              			      The destination IP of a device on the remote end of the tunnel
 ===============================     =================================================================
 
-Set the desired values (ie, Interval 3 & IP Address 10.200.1.8) and then click "Enable." The Gateway will now ping the remote device in intervals of seconds. The ping will orginate from the Gateway's local IP.
+Set the desired values (ie, Interval 3 & IP Address 10.200.1.8) and then click "Enable." The Gateway will now ping the remote device in intervals of seconds. The ping will originate from the Gateway's local IP.
 
 Additional Notes
 --------------
