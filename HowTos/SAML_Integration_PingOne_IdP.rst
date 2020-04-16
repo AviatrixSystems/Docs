@@ -1,35 +1,35 @@
 .. meta::
-   :description: Aviatrix User SSL VPN Okta SAML Configuration
-   :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
+   :description: PingOne IdP for SAML Integration
+   :keywords: PingOne, SAML, user vpn, PingOne saml, Aviatrix, OpenVPN, Controller
 
 .. toctree::
    :numbered:
 
 ==============================================================================
-Okta IdP for SAML Integration
+PingOne IdP for SAML Integration
 ==============================================================================
 
 Overview
 ------------
 
-This guide provides an example on how to configure Okta as an IdP for an Aviatrix SAML SP (endpoint). When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., Okta) for authentication.
+This guide provides an example on how to configure PingOne as an IdP for an Aviatrix SAML SP (endpoint). When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IdP (e.g., PingOne) for authentication.
 
-Before configuring SAML integration between Aviatrix and Okta, make sure you have a valid Okta account with administrator access.
+Before configuring SAML integration between Aviatrix and PingOne, make sure you have a valid PingOne account with administrator access.
 
 Configuration Steps
 -------------------
 
-Follow these steps to configure Aviatrix to authenticate against your Okta IdP:
+Follow these steps to configure Aviatrix to authenticate against your PingOne IdP:
 
 Step 1. Create a `temporary Aviatrix SP Endpoint <#aviatrix-endpoint>`__ in the Aviatrix Controller
 
-Step 2. Create an `Okta SAML App <#okta-saml-app>`__ for Aviatrix in the Okta Portal
+Step 2. Create an `PingOne SAML App <#pingone-saml-app>`__ for Aviatrix in the PingOne Portal
 
-Step 3. Retrieve `Okta IdP metadata <#okta-idp-metadata>`__
+Step 3. Retrieve `PingOne IdP metadata <#pingone-idp-metadata>`__
 
-Step 4. Update `Aviatrix SP Endpoint <#okta-update-saml-endpoint>`__ in the Aviatrix Controller
+Step 4. Update `Aviatrix SP Endpoint <#pingone-update-saml-endpoint>`__ in the Aviatrix Controller
 
-Step 5. `Test the Integration <#okta-test-integration>`__ is Set Up Correctly
+Step 5. `Test the Integration <#pingone-test-integration>`__ is Set Up Correctly
 
 .. _aviatrix_endpoint:
 
@@ -38,21 +38,21 @@ Step 1. Create an Aviatrix SP Endpoint
 
 Visit one of the following links based on your use case and follow step1 (Create temporary Aviatrix SP Endpoint for Aviatrix) from the link's Configuration section:
 
-  If integrating Okta IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
+  If integrating PingOne IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-31>`_
 
-  If integrating Okta IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
+  If integrating PingOne IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-31>`_
 
-.. _okta_saml_app:
+.. _pingone_saml_app:
 
-Step 2. Create an Okta SAML App for Aviatrix
+Step 2. Create an PingOne SAML App for Aviatrix
 ############################################
 
 .. note::
 
-   This step is usually done by the Okta Admin.
+   This step is usually done by the PingOne Admin.
 
 #. Login to the Okta Admin portal
-#. Follow `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application.
+#. Follow `PingOne documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application.
 
    +----------------+----------------+
    | Field          | Value          |
