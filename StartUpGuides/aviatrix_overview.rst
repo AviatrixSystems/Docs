@@ -277,7 +277,7 @@ Not all your workloads require the bandwidth and latency that calls for a Direct
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 
-.. |aviatrix_overview| image:: aviatrix_overview_media/aviatrix_overview_2020.png
+.. |aviatrix_overview| image:: aviatrix_overview_media/aviatrix_overview2.png
    :scale: 25%
 
 .. |aviatrix_backbone| image:: aviatrix_overview_media/aviatrix_backbone.png
