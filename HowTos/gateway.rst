@@ -702,6 +702,12 @@ New and advanced features such as Multi sites Transit solution where the Aviatri
 To enable ActiveMesh mode after the Transit Gateway or Spoke gateway is enabled, go to Gateway, highlight the gateway
 and click Edit. Scroll down to find ActiveMes Mode, click Enable. 
 
+Periodic Ping
+--------------------
+
+In very rare cases Site2cloud tunnels may fail to pass traffic if the tunnel is dormant for a long period of time. This is not an issue with the Aviatrix Gateways and can usually be traced to misconfigurations on the remote device. To compensate for this Periodic Ping was developed to maintain a steady flow of traffic across the tunnel. 
+
+For configuration steps read the full article here:  `Periodic Ping <https://docs.aviatrix.com/HowTos/periodic_ping.html>`_
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
