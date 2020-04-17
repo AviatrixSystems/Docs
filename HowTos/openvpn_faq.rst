@@ -388,31 +388,6 @@ What IP Address is used for NAT'ing the VPN Clients?
 
 If the destination is another instance within the cloud provider, then the OpenVPN gateway’s private IP address is used to NAT the OpenVPN Client's traffic. But if the destination is outside the cloud provider(the Internet), then the public IP address of the OpenVPN Gateway is used.
 
-What is one Aviatrix VPN gateway throughput benchmark?
-----------------------------------------------------------------
-
-Aviatrix VPN gateways are deployed behind cloud provider's native load balancer, the deployment
-scales to unlimited number of VPN gateways capable of supporting unlimited number of 
-simultaneous VPN client connections. 
-
-Aviatrix VPN solution supports both UDP and TCP mode VPN deployments. They have similar performance
-characteristics. The chart below benchmarks a VPN client's single session download and upload speed 
-on one VPN gateway in TCP mode 
-The benchmark provides a reference information on selecting VPN gateway instance size. 
-Note actual VPN client performance also depends on client's Internet ISP speed, packet loss ratio
-and other factors.
-
-The chart below is measured on a Windows client. 
-
-|windows_client|
-
-The chart below is measured on a Linux client. 
-
-|linux_client|
-
-Depending on how much throughput VPN clients require, you can determine how many VPN gateways are required. The good news is you can launch more VPN gateways at any given time to accommodate the 
-number of clients and their performance requirements.  
-
    
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
