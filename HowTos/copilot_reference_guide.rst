@@ -15,6 +15,9 @@ This guide will provide descriptions and definition of functionalities that are 
 
 Dashboard
 ================
+
+|dashboard_image|
+
 Dashboard offers a broad perspective on the inventory and status of your deployment. 
 The tiles on top of the page shows different aggregated numbers of different networking nodes in your multi-cloud environments.  
 
@@ -40,6 +43,9 @@ The tiles on top of the page shows different aggregated numbers of different net
 
 Topology
 ================
+
+|topology_image| 
+
 
 Topology provides a visual representation of deployed networks, gateways, instances, and gateway connection.
 
@@ -99,6 +105,8 @@ from the gateway that is in focus.
 
 FlowIQ
 ================
+
+|flowIQ_image| 
 
 FlowIQ section provides visualization of traffic flows that traverse AVX gateways.  
 Flows provider the user with critical visibility capability to that traffic that traverses their network.
@@ -162,6 +170,8 @@ and take necessary actions
 
 Licensing 
 -----------
+This page provides functionality for viewing your current license or release the license. 
+**Releasing License*** this 
 
 Index Management
 -----------------
@@ -174,4 +184,19 @@ Managing Your Appliance
   In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
   You can configure periodic snapshots
   ,based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS  
+
+
+
+..  |dashboard_image| image:: copilot_reference_guide_media/copilot_dashboard.png
+    :width: 500
+    :align: right
+
+..  |topology_image| image:: copilot_reference_guide_media/copilot_topology.png
+    :width: 500
+    :align: right
+
+..  |flowIQ_image| image:: copilot_reference_guide_media/copilot_flowiq.png
+    :width: 500
+    :align: right
+
 
