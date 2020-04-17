@@ -289,11 +289,8 @@ What is the support model?
 
 
 For support, send email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers with 24x7 support.
-To request a
-feature, click Make a wish button at the bottom of each page.
-
-
+`support@aviatrix.com <mailto:support@aviatrix.com>`__ or your respective Account Executive.
+We also offer `Platinum <https://aviatrix.com/support/>`__ customers with 24x7 support.
 
 Logging and Monitoring
 ======================
