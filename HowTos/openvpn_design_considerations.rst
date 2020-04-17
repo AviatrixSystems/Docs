@@ -3,7 +3,7 @@
    :keywords: Aviatrix OpenVPN, Client VPN, OpenVPN, SAML client, Remote User VPN
 
 =========================================
-Aviatrix User VPN Design Considerations
+Aviatrix User VPN Design Guide
 =========================================
 
 What is a single Aviatrix gateway OpenVPN® throughput?
