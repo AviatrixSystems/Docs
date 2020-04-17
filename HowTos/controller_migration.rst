@@ -17,20 +17,19 @@ This feature is released in 5.3. It consists of 2 sub-features:
 Migrate
 =====================
 
-Intro
---------
+Introduction
+--------------
 
 + This feature mainly is to perform one click "Migrate" operation under "Settings->Maintenance->Migration" tab to migrate the current Aviatrix controller to a new one.
-+ The EIP will be migrated from old controller to the new one.
++ The EIP will be migrated from old controller to the new controller.
 + The whole migration process will take around 10 to 15 minutes.
-
-
 
 
 Prerequisites
 -----------------
 
-+ The feature only supports AWS and AWS-Gov at the moment. (Only AWS products/AMIs, "BYOL" and "Metered" are supported)
++ The feature is supported in AWS and AWS-Gov for the "BYOL" and "Metered" AMI's.
++ An `account audit <https://docs.aviatrix.com/HowTos/account_audit.html>`_ on the controller account and all secondary accounts also should be done to make sure that the `IAM roles and policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_ are setup as suggested.
 + User needs to `enable controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using an AWS based access-account.
 + User must ensure the controller instance type is at least t2.large.
 + User must `disable controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_. (User can `enable HA again <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ on the new controller once migration is fully completed)
@@ -57,6 +56,10 @@ Status
 + The migration status will be displayed in a tag named "MigrationStatus" of the new controller instance on AWS console.  Sample status messages are "Initializing", "Migrating", "Successful".  After "Successful" appears around 15 minutes of migration, you may prepare to access the same EIP.
 
 
+Post Migration Tasks
+---------------------------
+
+* Once all the tests are done to ensure that the controller migration is complete and successful, you can delete the old controller. It can be left in "stopped" status for a while, but it should never be started - else, it will reach out to the gateways and the network could have issues with two controllers trying to monitor/modify the gateways. 
 
 
 Restore

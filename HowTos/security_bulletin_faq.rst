@@ -27,10 +27,16 @@ No, you don't. You can launch AWS, Azure, GCP, and OCI Gateways from a single Av
 Configuration Management
 ========================
 
-Q. How are gateway devices are hardened?
+Q. How Aviatrix instances are hardened?
 ----------------------------------------
 
-User will never login to Aviatrix Controller or Gateway instances. We do not allow root access and SSH access to the instances. Both Controller and Gateway instances have hard disk encryption, using Elastic Block Storage (EBS). See detail: https://docs.aviatrix.com/HowTos/FAQ.html#encrypt-controller-ebs-volume and https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html.  
+- User will never login to Aviatrix Controller or Gateway instances. 
+- Both root access and SSH access to the Aviatrix instances are not allowed. 
+- Both Controller and Gateway instances have hard disk encryption, using Elastic Block Storage (EBS). See detail: https://docs.aviatrix.com/HowTos/FAQ.html#encrypt-controller-ebs-volume and https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html.
+- Aviatrix Gateway instance’s security group has an inbound rule that opens to the Controller EIP on port 443
+- `How do I secure the Controller access? <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ 
+
+
 
 Q. Is Aviatrix implementing custom OS then a software layer secures the OS? How do people login to each gateway device or it is completely managed by the controller portal, there are no root account things in that nature we need to secure? 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -44,14 +50,6 @@ Q. Does Aviatrix Controller have a database running?
 ----------------------------------------------------
 
 Controller instances have a local Mongodb installed in your local account is encrypted using disk encryption.  
-
-
-
-
-
-
-
-
 
 
 .. disqus::
