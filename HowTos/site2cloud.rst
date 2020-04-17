@@ -254,6 +254,14 @@ send periodic messages to ensure the remote site is up.
 
 By default DPD detection is enabled. 
 
+
+Periodic Ping
+--------------------
+
+In very rare cases Site2cloud tunnels may fail to pass traffic if the tunnel is dormant for a long period of time. This is not an issue with the Aviatrix Gateways and can usually be traced to misconfigurations on the remote device. To compensate for this Periodic Ping was developed to maintain a steady flow of traffic across the tunnel. 
+
+For configuration steps read the full article here:  `Periodic Ping <https://docs.aviatrix.com/HowTos/periodic_ping.html>`_
+
 Network Device Support
 ======================
 
