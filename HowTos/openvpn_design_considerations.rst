@@ -41,7 +41,7 @@ There are several factors to decide how many clients can be determined for each 
 
  1. `VPN virtual address space <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. The default is 192.168.43.0/24 which can support 64 simultaneous VPN connection. For large deployment, you should configure this to a /20 network so that address spacing is not an issue. 
  #. `Maximum VPN Connections <https://docs.aviatrix.com/HowTos/gateway.html#max-connections>`_. The default is 100. When the connection number exceeds the configuration, the VPN gateway rejects new connections. The VPN client should auto reconnect and the cloud provider's network load balancer forwards the connection to a different VPN gateway. 
- #. VPN Client performance. If each VPN client sustained average performance is designed to be capped at 1Gbps, then a VPN gateway can support 1000 VPN clients. Accordingly, if each VPN client sustained average throughput is designed to be capped at 10Gbps, then a VPN gateway can support 100 clients. 
+ #. VPN Client performance. If each VPN client sustained average performance is designed to be capped at 1Mbps, then a VPN gateway can support 1000 VPN clients. Accordingly, if each VPN client sustained average throughput is designed to be capped at 10Mbps, then a VPN gateway can support 100 clients. 
 
 
    
