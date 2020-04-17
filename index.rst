@@ -216,6 +216,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EncrOverExpRoute
    HowTos/connect_overlap_cidrs
    HowTos/connect_overlap_vpc_via_VGW
+   HowTos/periodic_ping
+   
 
 .. _OpenVPN:
 
