@@ -45,96 +45,119 @@ Visit one of the following links based on your use case and follow step1 (Create
 .. _pingone_saml_app:
 
 Step 2. Create an PingOne SAML App for Aviatrix
-############################################
+###############################################
 
 .. note::
 
    This step is usually done by the PingOne Admin.
 
-#. Login to the Okta Admin portal
-#. Follow `PingOne documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application.
+#. Login to the PingOne Admin portal
+#. Follow `PingOne documentation <https://docs.pingidentity.com/bundle/p14c/page/lyd1583255784891.html>`__ to Add a SAML application
 
-   +----------------+----------------+
-   | Field          | Value          |
-   +================+================+
-   | Platform       | Web            |
-   +----------------+----------------+
-   | Sign on method | SAML 2.0       |
-   +----------------+----------------+
+   On the top of the page, click Connections.
+   On the left, click Applications and then + Application.
 
-      |image0|
+   |image0|
+      
+   Click Web App, and then for SAML, click Configure.
+   
+   |image0|
+   
+   Create the application profile by entering the following information:
 
-#. General Settings
+   +----------------------+---------------------------------------------------------+
+   | Field                | Value                                                   |
+   +======================+=========================================================+
+   | Application name     | A unique identifier for the application.                |
+   +----------------------+---------------------------------------------------------+
+   | Description          | (optional)A brief characterization of the application.  |
+   +----------------------+---------------------------------------------------------+
+   | Icon.                | (optional)A pictorial representation of the application.|
+   |                      | Use a file up to 1MB in JPG, JPEG, GIF, or PNG format.  |
+   +----------------------+---------------------------------------------------------+
 
-   +----------------+-----------------+----------------------------------------+
-   | Field          | Value           | Description                            |
-   +================+=================+========================================+
-   | App name       | Aviatrix        | This can be any value.  It will be     |
-   |                |                 | displayed in Okta only.                |
-   +----------------+-----------------+----------------------------------------+
-   |                | Aviatrix logo:  | Aviatrix logo (optional)               |
-   |                |                 |                                        |
-   | App logo       | | |logoAlias1|_ |                                        |
-   |                | | |logoAlias2|_ |                                        |
-   +----------------+-----------------+----------------------------------------+
-   | App visibility | N/A             | Leave both options unchecked           |
-   +----------------+-----------------+----------------------------------------+
 
-      |image1|
+#. For Configure SAML Connection, enter the following: 
 
-#. SAML Settings
-
-   * General
-
-   +----------------------+----------------------------------------------------+
-   | Field                | Value                                              |
-   +======================+====================================================+
-   | Single sign on URL   | ``https://[host]/flask/saml/sso/[Endpoint Name]``  |
-   +----------------------+----------------------------------------------------+
-   | Audience URI         | ``https://[host]/``                                |
-   | (SP Entity ID)       |                                                    |
-   +----------------------+----------------------------------------------------+
-   | Default RelayState   |                                                    |
-   +----------------------+----------------------------------------------------+
-   | Name ID format       | Unspecified                                        |
-   +----------------------+----------------------------------------------------+
-   | Application username | Okta username                                      |
-   +----------------------+----------------------------------------------------+
+   +------------------------------+---------------------------------------------------+
+   | Field                        | Value                                             |
+   +------------------------------+---------------------------------------------------+
+   | ACS URLs                     | ``https://[host]/flask/saml/sso/[Endpoint Name]`` |
+   +------------------------------+---------------------------------------------------+
+   | Signing certificate          | PingOne SSO Certificate for Default environment   |
+   +------------------------------+---------------------------------------------------+
+   | Signing                      | Sign Assertion                                    |
+   +------------------------------+---------------------------------------------------+
+   | Signing Algorithm            | RSA_SHA256                                        |
+   +------------------------------+---------------------------------------------------+
+   | Encryption                   | DISABLED                                          |
+   +------------------------------+---------------------------------------------------+
+   | Entity ID                    | ``https://[host]/``                               |
+   +------------------------------+---------------------------------------------------+
+   | SLO endpoint                 | Not Specified                                     |
+   +------------------------------+---------------------------------------------------+
+   | SLO response endpoint        | Not Specified                                     |
+   +------------------------------+---------------------------------------------------+
+   | SLO binding                  | HTTP POST                                         |
+   +------------------------------+---------------------------------------------------+
+   | Assertion validity duration  | 300                                               |
+   +------------------------------+---------------------------------------------------+
+   | Target Application URL       | Not Specified                                     |
+   +------------------------------+---------------------------------------------------+
+   | Enforce signed Authn request | Disabled                                          |
+   +------------------------------+---------------------------------------------------+
+   | Verification certificate     | No Verification Certificates Selected             |
+   +------------------------------+---------------------------------------------------+
 
    ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
    ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[Endpoint Name]``
 
-   |image2|
+   |image0|
+   
+#. Click Save and Continue.
+
+#. For attribute mapping, click the button "+ADD ATTRIBUTE" and then select "PingOne Attribute" to map PingOne user attribute to an attribute in this application as below.
 
    * Attribute Statements
 
-     +----------------+-----------------+--------------------------------------+
-     | Name           | Name format     | Value                                |
-     +================+=================+======================================+
-     | FirstName      | Unspecified     | user.firstName                       |
-     +----------------+-----------------+--------------------------------------+
-     | LastName       | Unspecified     | user.lastName                        |
-     +----------------+-----------------+--------------------------------------+
-     | Email          | Unspecified     | user.email                           |
-     +----------------+-----------------+--------------------------------------+
+   +------------------------+-----------------------+
+   | PINGONE USER ATTRIBUTE | APPLICATION ATTRIBUTE |
+   +------------------------+-----------------------+
+   | User ID                | saml_subject          |
+   +------------------------+-----------------------+
+   | Given Name             | FirstName             |
+   +------------------------+-----------------------+
+   | Family Name            | LastName              |
+   +------------------------+-----------------------+
+   | Email Address          | Email                 |
+   +------------------------+-----------------------+
 
-     |image3|
+   Notes: User ID is a default required in PingOne
+
+   |image3|
 
 
-#. You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__
-
+#. Click Save and Close.
 
 .. _okta_idp_metadata:
 
-Step 3. Retrieve Okta IdP metadata
-##################################
+Step 3. Retrieve PingOne IdP metadata
+#####################################
 
 .. note::
 
-   This step is usually completed by the Okta admin.
+   This step is usually completed by the PingOne admin.
 
-#. After the application is created in Okta, go to the `Sign On` tab for the application.
+#. After the application is created in PingOne, click Connections on the top of the page and then click Applicationso n the left.
+
+#. Find the application and 
+
+
+ On the top of the page, click Connections.
+On the left, click Applications.
+Locate the SAML application you want to edit. You can browse or search for applications.
+Click the details icon to expand the SAML application you want to edit, and then click the pencil icon. 
 
 #. Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
