@@ -2,9 +2,9 @@
    :description: onboarding Frequently Asked Questions
    :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
-============================
-Transit VPC/VNET FAQ
-============================
+===============================
+Multi Cloud Global Transit FAQ
+===============================
 
 
 Why should I choose Transit architecture?
