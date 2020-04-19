@@ -14,9 +14,9 @@ When complete, you'll be ready to deploy use cases.
 
 You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
 
-.. important ::
+.. important::
 
-The Aviatrix Controller must be launched by a cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from AWS Console. 
+ The Aviatrix Controller must be launched by a cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from AWS Console. 
 
 
 Step 1. Subscribe to an Aviatrix AMI 
@@ -56,6 +56,8 @@ Step 2. Launch the Controller with CloudFormation
 Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
 
 `CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json>`_
+
+For other products, check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
 
 2.2 Login to AWS Console
 ---------------------------
@@ -228,6 +230,8 @@ Other Aviatrix Products
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
+
+ - `Aviatrix Secure Networking Platform Metered - 24x7 Support <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metered-controller-24x7-support.template>`_
 
  - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template>`_
 
