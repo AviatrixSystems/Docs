@@ -434,6 +434,7 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_center_useful_tools
    Support/support_center_cloudn
    Support/support_center_aviatrix_vpn_client
+   Support/support_center_firenet
 
 .. _IPmotion:
 
