@@ -10,13 +10,11 @@ CoPilot User Reference Guide
 Aviatrix CoPilot is a component of Aviatrix platform offering that extends visibility into complex, multi-cloud networks deployed and managed by Aviatrix controller. 
 CoPilot delivers, end-end, in-depth, historical analytics of multi cloud networks with a single pane of glass that offers application flows, inventory, health, and complete topological view of the network.  
 
-This guide will provide descriptions and definition of functionalities that are avialable in Aviatrix CoPilot.
+This guide will provide descriptions and definition of functionalities that are available in Aviatrix CoPilot.
 
 
 Dashboard
-================
-
-  |dashboard_image|
+================ 
 
 Dashboard offers a broad perspective on the inventory and status of your deployment. 
 The tiles on top of the page shows different aggregated numbers of different networking nodes in your multi-cloud environments.  
@@ -41,10 +39,10 @@ The tiles on top of the page shows different aggregated numbers of different net
 
   Offers total bytes seen over the network in the past 24 hours 
 
+
+
 Topology
 ================
-
-|topology_image| 
 
 
 Topology provides a visual representation of deployed networks, gateways, instances, and gateway connection.
@@ -52,19 +50,17 @@ Topology provides a visual representation of deployed networks, gateways, instan
 Highlights of Topology capabilities: 
 -------------------------------------
 
-- Stateful representatoins
+- Stateful representations
   
-  Connectivty elements in topology reflect state of the objct:
+  Connectivity elements in topology reflect state of the objet:
     
     - Connections between Aviatrix gateways are drawn with color codes representing the status of thir connection.
-    - Aviatirx gateway icons represent the state of the gateway. A down gateway is shown in the black line 
+    - Aviatrix gateway icons represent the state of the gateway. A down gateway is shown in the black line 
     - Tunnels statuses are shown with green or red lines, representing the status of the link
 - Search for any objects and their properties
 
   In the topology you can search for any objects that are plotted. This allows you quickly isolate and identify
-  resources that you are looking in your entired environment, and across clouds
-
-
+  resources that you are looking in your entire environment, and across clouds
 
 
 
@@ -102,11 +98,9 @@ reduce the time spent troubleshooting issues.
 When highlighting a gateway, click on the “Diag” button to see options available for sending ping/traceroute 
 from the gateway that is in focus.
 
-
 FlowIQ
 ================
 
-|flowIQ_image| 
 
 FlowIQ section provides visualization of traffic flows that traverse AVX gateways.  
 Flows provider the user with critical visibility capability to that traffic that traverses their network.
@@ -188,15 +182,13 @@ Managing Your Appliance
 
 
 ..  |dashboard_image| image:: CoPilot_reference_guide_media/CoPilot_dashboard.png
-    :width: 500
-    :align: right
+    :width: 200
 
 ..  |topology_image| image:: CoPilot_reference_guide_media/CoPilot_topology.png
-    :width: 500
-    :align: right
+    :width: 200
+
 
 ..  |flowIQ_image| image:: CoPilot_reference_guide_media/CoPilot_flowiq.png
-    :width: 500
-    :align: right
+    :width: 200
 
 
