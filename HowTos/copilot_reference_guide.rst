@@ -16,7 +16,7 @@ This guide will provide descriptions and definition of functionalities that are 
 Dashboard
 ================
 
-|dashboard_image|
+  |dashboard_image|
 
 Dashboard offers a broad perspective on the inventory and status of your deployment. 
 The tiles on top of the page shows different aggregated numbers of different networking nodes in your multi-cloud environments.  
@@ -187,15 +187,15 @@ Managing Your Appliance
 
 
 
-..  |dashboard_image| image:: copilot_reference_guide_media/copilot_dashboard.png
+..  |dashboard_image| image:: CoPilot_reference_guide_media/CoPilot_dashboard.png
     :width: 500
     :align: right
 
-..  |topology_image| image:: copilot_reference_guide_media/copilot_topology.png
+..  |topology_image| image:: CoPilot_reference_guide_media/CoPilot_topology.png
     :width: 500
     :align: right
 
-..  |flowIQ_image| image:: copilot_reference_guide_media/copilot_flowiq.png
+..  |flowIQ_image| image:: CoPilot_reference_guide_media/CoPilot_flowiq.png
     :width: 500
     :align: right
 
