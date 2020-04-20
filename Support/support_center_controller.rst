@@ -39,7 +39,8 @@ During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 &
 We expect all of your accounts to have the following:
   * Role named "aviatrix-role-ec2" with policy named "aviatrix-assume-role-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_, unless it is `customized <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ carefully.
   * Role named "aviatrix-role-app" with an IAM policy named "aviatrix-app-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_, unless it is customized carefully
-  * If you have secondary accounts, the "aviatrix-role-app" in each and every one of the secondary accounts should be trusting the Controller's AWS account number via the "Trust Relationship" tab on the role.
+  * If you have secondary accounts, the "aviatrix-role-app" in each and every one of the secondary accounts should be trusting the Controller's AWS account number via the "Trust Relationship" tab on the role in addition to trusting it's own account number.
+  * In the case of the primary account(which hosts the controller), "aviatrix-role-app" role should trust it's own account number.
   * All of your Aviatrix Controllers and Gateways need to have "aviatrix-role-ec2" attached
 
 
