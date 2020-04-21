@@ -39,43 +39,106 @@ Setup PingOne for Customers Profile attribute
 Define a new User attribute
 ----------------------------
 
-At Okta, define a new attribute in the **User** definition template using
-**Okta/Directory/Profile Editor**.  In this example, the new attribute is named **accessprofile** and
-it can store a string of up to 20 characters.
+.. note::
 
-#. Open Profile Editor at **Okta/Directory/Profile Editor**.
+   This step is usually completed by the PingOne for Customers Admin.
+   
+#. Login to the PingOne Admin portal
 
-   |open_profile_editor|
+#. Follow `PingOne documentation <https://docs.pingidentity.com/bundle/p14c/page/zhb1564020491029.html>`__ to add an User attribute. 
 
-#. Click **Okta** on the left navigation bar to find the **User** definition template and click **Profile** to open.
+#. On the top of the page, click Settings.
 
-   |open_user_template|
+#. On the left, under Directory, click Attributes.
 
-#. Click **Add Attribute** to add a new attribute in the user template.
+#. Click + Add Attribute.
 
-   |profile_editor_add|
+   |image0|
 
-#. Define a string attribute with a name; in this example, we use **accessprofile**.
+#. Click DECLARED
 
-   |add_profile_attribute_to_user_template|
+#. Click button "Next"
+
+   |image0|
+   
+#. Enter the following information to create custom user attribute:
+
++-----------------------+---------------+---------------------------------------------------------------------------+
+| Field                 | Value         | Description                                                               |
++-----------------------+---------------+---------------------------------------------------------------------------+
+| Name                  | accessprofile | A unique identifier for the attribute.                                    |
++-----------------------+---------------+---------------------------------------------------------------------------+
+| Display name          | accessprofile | The name of the attribute as you want it to appear in the,user interface. |
++-----------------------+---------------+---------------------------------------------------------------------------+
+| Description           | (optional)    | A brief characterization of the application.                              |
++-----------------------+---------------+---------------------------------------------------------------------------+
+| Enforce unique values | Uncheck       | Option to require the attribute,values be unique across the environment   |
++-----------------------+---------------+---------------------------------------------------------------------------+
+
+.. note::
+
+   In this example, the new attribute is named **accessprofile**.
+
+
+#. Click Save and Close.
+
+   |image0|
 
 .. _pingone_for_customers_map_attribute:
 
 Define an attribute mapping
 ---------------------------
 
-In the SAML application (**Okta/Applications/<your-vpn-saml-app>/General/SAML Settings/Edit**),
-define a mapping for the new attribute (e.g., **accessprofile**)
-using the name **Profile**.
-Note that the name **Profile** is required to be an exact match and the new attribute name is
-pre-qualified with the keyword **user** for referencing a property in the user template.
+.. note::
 
-|add_profile_attribute_to_app|
+   This step is usually completed by the PingOne for Customers Admin.
+
+#. On the top of the page, click Connections.
+
+#. Click Applications on the left.
+
+#. Locate the Web SAML application to add this custom User attribute.
+
+#. Click the details icon to expand the Web SAML application, and then click the pencil icon.
+
+#. Click the "Attribute Mappings"
+
+#. For updating attribute mapping, click the button "+ADD ATTRIBUTE" and then select "PingOne Attribute" to map PingOne user attribute to an attribute in this application as below.
+
+   +------------------------+-----------------------+
+   | PINGONE USER ATTRIBUTE | APPLICATION ATTRIBUTE |
+   +------------------------+-----------------------+
+   | accessprofile          | Profile               |
+   +------------------------+-----------------------+
+   
+.. note::
+
+   The application attribute **Profile** is required to be an exact match so that Aviatrix Controller can process.
+   
+|image0|
 
 .. _pingone_for_customers_user_fill_attribute:
 
 Assign VPN profile to each SAML user
 -------------------------------------
+
+.. note::
+
+   This step is usually completed by the PingOne for Customers Admin.
+
+For each SAML application user, edit the user profile for assigning the VPN profile 
+
+#. On the top of the page, click Identities.
+
+#. Locate the user you want to edit. You can browse or search for users.
+
+#. Click the details icon to expand the user you want to edit, and then click the pencil icon.
+
+#. On the Profile tab, scroll down to the "OTHER" section
+
+#. Find the new User attribute "accessprofile" and 
+
+|image0|
 
 For each SAML application user, edit the user record in the Okta directory for assigning the VPN profile (**Okta/Directory/People/<your-user>/Profile/Edit**).
 In this example, the VPN profile defined at the controller is named **access-profile**.
