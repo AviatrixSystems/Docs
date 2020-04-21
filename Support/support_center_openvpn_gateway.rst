@@ -409,3 +409,13 @@ There are three solutions:
 
 .. |download-ovpn| image:: email-quota/download-ovpn-manually.png
    :scale: 70%
+
+
+How can I improve the performance of my gateways and clients?
+---------------------------------------------------------------
+
+Our engineering team has tuned the performance of our openvpn features on the gateways and the clients. Please do the following to pick up these changes 
+
+* Please `upgrade the VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_ to v2.8.2 or above
+* Please upgrade your Controller to the latest 5.4 release (5.4.1140)
+* Please replace all of your Aviatrix OpenVPN Gateways using Controller/Troubleshoot/Diagnostics/Gateway/ReplaceGateway
