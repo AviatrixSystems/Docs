@@ -52,17 +52,18 @@ Step 2. Create a PingOne Web SAML App for Aviatrix
    This step is usually done by the PingOne for Customers Admin.
 
 #. Login to the PingOne Admin portal
+
 #. Follow `PingOne documentation <https://docs.pingidentity.com/bundle/p14c/page/lyd1583255784891.html>`__ to add a Web SAML application
 
 #. On the top of the page, click Connections.
    
 #. On the left, click Applications and then + Application.
 
-   |image0|
+   |pingone_idp_adding_web_saml_app_01|
       
-#. Click Web App, and then for SAML, click Configure.
+#. Click WEB APP, and then for SAML, click Configure.
    
-   |image0|
+   |pingone_idp_adding_web_saml_app_02|
    
 #. Create the application profile by entering the following information:
 
@@ -73,10 +74,9 @@ Step 2. Create a PingOne Web SAML App for Aviatrix
    +----------------------+---------------------------------------------------------+
    | Description          | (optional)A brief characterization of the application.  |
    +----------------------+---------------------------------------------------------+
-   | Icon.                | (optional)A pictorial representation of the application.|
+   | Icon                 | (optional)A pictorial representation of the application.|
    |                      | Use a file up to 1MB in JPG, JPEG, GIF, or PNG format.  |
    +----------------------+---------------------------------------------------------+
-
 
 #. For Configure SAML Connection, enter the following: 
 
@@ -114,10 +114,12 @@ Step 2. Create a PingOne Web SAML App for Aviatrix
    
       ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
-      ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[Endpoint Name]``
-
-   |image0|
-   
+      ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+      
+      ``[Entity ID]`` is using ``https://[host]/`` as default if you select `Hostname` option when configuring SAML in the Aviatrix controller.
+      
+   |pingone_idp_configuring_saml_connection|
+      
 #. Click Save and Continue.
 
 #. For attribute mapping, click the button "+ADD ATTRIBUTE" and then select "PingOne Attribute" to map PingOne user attribute to an attribute in this application as below.
@@ -138,11 +140,14 @@ Step 2. Create a PingOne Web SAML App for Aviatrix
    
       Notes: User ID is a default required in PingOne
 
-   |image3|
-
+   ||pingone_idp_configuring_attribute_mapping||
 
 #. Click Save and Close.
 
+#. Enable the WEB SAML APP
+
+   |pingone_idp_enable|
+   
 .. _pingone_idp_metadata:
 
 Step 3. Retrieve PingOne IdP metadata
@@ -160,7 +165,7 @@ Step 3. Retrieve PingOne IdP metadata
 
 #. Copy the URL from the IDP Metadata URL from the CONNECTION DETAILS. This value will be used to configure the Aviatrix SP Endpoint.
 
-  |image4|
+  |pingone_idp_retrieve_idp_metadata_url|
 
 .. _pingone_update_saml_endpoint:
 
@@ -188,15 +193,9 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Select `Hostname`                               |
    +-------------------------+-------------------------------------------------+
-   | Access                  | Select admin or read-only access                |
-   +-------------------------+-------------------------------------------------+
    | Custom SAML Request     | Check the box and either copy the below format  |
    | Template                | into the prompt text box or modify it           |
    +-------------------------+-------------------------------------------------+
-
-.. note::
-   Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
-   `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
 
 .. code-block:: XML
    <?xml version="1.0" encoding="UTF-8"?>
@@ -206,6 +205,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
       <samlp:RequestedAuthnContext xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" Comparison="exact"><saml:AuthnContextClassRef xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml:AuthnContextClassRef>
       </samlp:RequestedAuthnContext>
    </samlp:AuthnRequest>
+   
+   |pingone_idp_reformat_custom_saml_request_template|
 
 .. _pingone_test_integration:
 
@@ -215,12 +216,18 @@ Step 5. Test the Integration
 Continue with testing the integration by visiting one of the following links based on your use case:
 
 1. If integrating PingOne IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
-  #. Click `Settings` in the left navigation menu
-  #. Select `Controller`
-  #. Click on the `SAML Login` tab
+
+   #. Click `Settings` in the left navigation menu
+   
+   #. Select `Controller`
+
+   #. Click on the `SAML Login` tab
+
 2. If integrating PingOne IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
-  #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
-  #. Stay on the `SAML` tab
+  
+   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
+  
+   #. Stay on the `SAML` tab
 
 You can quickly validate that the configuration is complete by clicking on the **Test** button next to the SAML endpoint.
 
@@ -232,21 +239,19 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |logoAlias2| replace:: Aviatrix logo with transparent background
 .. _logoAlias2: https://www.aviatrix.com/images/logo-reverse.png
 
-.. |image0| image:: SAML_Integration_PingOne_IdP_media/image0.png
+.. |pingone_idp_adding_web_saml_app_01| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_adding_web_saml_app_01.png
 
-.. |image1| image:: SAML_Integration_PingOne_IdP_media/image1.png
+.. |pingone_idp_adding_web_saml_app_02| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_adding_web_saml_app_02.png
 
-.. |image2| image:: SAML_Integration_PingOne_IdP_media/image2.png
+.. |pingone_idp_configuring_saml_connection| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_configuring_saml_connection.png
 
-.. |image3| image:: SAML_Integration_PingOne_IdP_media/image3.png
+.. |pingone_idp_configuring_attribute_mapping| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_configuring_attribute_mapping.png
 
-.. |image4| image:: SAML_Integration_PingOne_IdP_media/image4.png
+.. |pingone_idp_enable| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_enable.png
 
-.. |image5| image:: SAML_Integration_PingOne_IdP_media/image5.png
+.. |pingone_idp_retrieve_idp_metadata_url| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_retrieve_idp_metadata_url.png
 
-.. |image6| image:: SAML_Integration_PingOne_IdP_media/image6.png
-
-.. |image7| image:: SAML_Integration_PingOne_IdP_media/image7.png
+.. |pingone_idp_reformat_custom_saml_request_template| image:: SAML_Integration_PingOne_IdP_media/pingone_idp_reformat_custom_saml_request_template.png
 
 .. |imageControllerNavOpenVPNAdvanced| image:: SAML_Integration_PingOne_IdP_media/OpenVPN_Advanced_SAML_AddNew.png
    :scale: 50%
