@@ -2,6 +2,18 @@
 Release Notes
 =======================================
 
+R5.4.1804 (4/21/2020)
+======================
+
+- **Support More AWS TGW Peering Regions** Newly available regions of AWS TGW Peering is now supported. 
+- **User VPN Customizing Notification** You can now customize pop up messages after a VPN user is connected. To configure, go to OpenvVPN -> Advanced -> System Use Notification. One use case is for customer to write their own messages for compliance. 
+- **VPN DPD Interval Configuration** allows you to specify DPD interval. `API support only. <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_
+- **Gateway Default Memory Alert Threshold** is changed to 80% to provide earlier warning to the Controller admin. 
+- **Change Gateway Default Size** to t3.medium.
+- **Bug fix** User VPN to Save Configuration Template to allow multiple gateways to have the same configuration when attached to the same NLB. 
+- **Performance Optimization** in handling the route programming time for large deployment of Aviatrix Transit Gateway peering. 
+- **CloudN Enhancement** in handling tunnel down message with Insane Mode. 
+
 R5.4.1074 (4/3/2020)
 =====================
 
