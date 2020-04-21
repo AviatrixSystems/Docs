@@ -197,6 +197,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    | Template                | into the prompt text box or modify it           |
    +-------------------------+-------------------------------------------------+
 
+   |pingone_idp_reformat_custom_saml_request_template|
+   
 .. code-block:: XML
    <?xml version="1.0" encoding="UTF-8"?>
    <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ID="$ID" Version="2.0" IssueInstant="$Time" Destination="$Dest" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="$ACS">
@@ -206,8 +208,6 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
       </samlp:RequestedAuthnContext>
    </samlp:AuthnRequest>
    
-   |pingone_idp_reformat_custom_saml_request_template|
-
 .. _pingone_test_integration:
 
 Step 5. Test the Integration
