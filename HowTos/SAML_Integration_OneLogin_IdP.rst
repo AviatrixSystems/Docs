@@ -84,7 +84,7 @@ Step 2. Create a OneLogin SAML App for Aviatrix
    +====================+======================================================+
    | RelayState         | Blank                                                |
    +--------------------+------------------------------------------------------+
-   | Audience           | **SP_ACS_URL**                                       |
+   | Audience(Entity ID)| **SP Entity ID**                                     |
    +--------------------+------------------------------------------------------+
    | Recipient          | **SP_ACS_URL**                                       |
    +--------------------+------------------------------------------------------+
@@ -95,7 +95,7 @@ Step 2. Create a OneLogin SAML App for Aviatrix
    +--------------------+------------------------------------------------------+
    | Single Logout URL  | Blank                                                |
    +--------------------+------------------------------------------------------+
-   | Login URL          | Blank                                                |
+   | Login URL          | **SP Login(Test) URL**                               |
    +--------------------+------------------------------------------------------+
    | SAML not valid     | 3 (default)                                          |
    | before             |                                                      |
@@ -103,9 +103,11 @@ Step 2. Create a OneLogin SAML App for Aviatrix
    | SAML not valid     | 3 (default)                                          |
    | on or after        |                                                      |
    +--------------------+------------------------------------------------------+
-   | SAML initiator     | OneLogin (default)                                   |
+   | SAML initiator     | Service Provider                                     |
    +--------------------+------------------------------------------------------+
-   | SAML nameID format | Email (default)                                      |
+   | SAML nameID format | Transient                                            |
+   +--------------------+------------------------------------------------------+
+   | SAML issuer type   | Specific (default)                                   |
    +--------------------+------------------------------------------------------+
    | SAML signature     | Assertion                                            |
    | element            |                                                      |
@@ -115,6 +117,8 @@ Step 2. Create a OneLogin SAML App for Aviatrix
    | SAML encryption    | TRIPLEDES-CBC (default)                              |
    | method             |                                                      |
    +--------------------+------------------------------------------------------+
+   | Sign SLO Response  | Unchecked (default)                                  |
+   +--------------------+------------------------------------------------------+
    | SAML               | 1440 (default)                                       |
    | sessionNotOnOrAfter|                                                      |
    +--------------------+------------------------------------------------------+
@@ -122,7 +126,11 @@ Step 2. Create a OneLogin SAML App for Aviatrix
    | AttributeValue tag |                                                      |
    | for empty values   |                                                      |
    +--------------------+------------------------------------------------------+
-
+   | Sign SLO Request   | Unchecked (default)                                  |
+   +--------------------+------------------------------------------------------+
+   
+   |imageConfiguration|
+   
 #. Click **Save**
 #. Click on the **Parameters** tab
 #. Add the following custom parameters (case sensitive)
@@ -154,8 +162,8 @@ Step 2. Create a OneLogin SAML App for Aviatrix
 Step 3. Retrieve OneLogin IdP metadata
 ######################################
 
-#. Click on **SSO** tab
-#. Copy the **Issuer URL** for the next step. This URL will be provided to the Aviatrix SP Endpoint.
+#. Click on **More actions** dropdown
+#. Copy the URL from the **SAML Metadata** for the next step. This URL will be provided to the Aviatrix SP Endpoint.
 
   |imageOLSSOTab|
 
@@ -182,7 +190,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+
    | IdP Metadata Text/URL      | Paste in the **Issuer URL** obtained    |
-   |                            | from the `OneLogin app <#onelogin-idpimetadata>`_.                  |
+   |                            | from the `OneLogin app                  |
+   |                            | <#onelogin-idpimetadata>`_.             |
    +----------------------------+-----------------------------------------+
    | Entity ID                  | Select `Hostname`                       |
    +----------------------------+-----------------------------------------+
@@ -206,13 +215,17 @@ Step 5. Test the Integration
 
 Continue with testing the integration by visiting one of the following links based on your use case:
 
-1. If integrating OneLogin IdP with `Controller Login SAML Config <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+1. If integrating OneLogin IdP with `Controller Login SAML Configuration <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#config-35>`_
+ 
   #. Click `Settings` in the left navigation menu
   #. Select `Controller`
   #. Click on the `SAML Login` tab
-2. If integrating OneLogin IdP with `OpenVPN with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+  
+2. If integrating OneLogin IdP with `OpenVPN with SAML Auth <https://docs.aviatrix.com/HowTos/VPN_SAML.html#config-35>`_
+
   #. Expand `OpenVPN®` in the navigation menu and click `Advanced`
   #. Stay on the `SAML` tab
+  
 You can quickly validate that the configuration is complete by clicking on the **Test** button next to the SAML endpoint.
 
 |imageAvtxTestSAML|
@@ -225,4 +238,6 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageAvtxTestSAML| image:: onelogin_saml_media/avtx_saml_endpoint_test.png
 .. |imageAvtxSAMLEndpoint| image:: onelogin_saml_media/avtx_saml_endpoint.png
 .. |imageOLAddAppsMenu| image:: onelogin_saml_media/onelogin_select_add_apps.png
-.. |imageOLSSOTab| image:: onelogin_saml_media/onelogin_issuer_url.png
+.. |imageOLSSOTab| image:: onelogin_saml_media/onelogin_issuer_url.png\
+.. |imageConfiguration| image:: onelogin_saml_media/onelogin_configuration.png
+
