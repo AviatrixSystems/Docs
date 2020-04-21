@@ -12,25 +12,27 @@ For questions about Transit FireNet, check out `Transit FireNet FAQ. <https://do
 Prerequisite for AWS
 ---------------------
 
-Transit FireNet builds on the Aviatrix Transit Network. Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Aviatrix Transit Gateways and Spoke gateways. 
-
-.. important::
+Transit FireNet builds on the Aviatrix Transit Network. For AWS, make sure the deployment meets the following specifications. 
 
   1. ActiveMesh must be enabled when launching the  Aviatrix Transit Gateway. 
   2. The minimum size of the Aviatrix Transit Gateway is c5.xlarge. 
   3. Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
 
+Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Aviatrix Transit Gateways and at least one Spoke gateway. When complete, proceed to Step 1. 
+
 Prerequisite for Azure
 ------------------------
 
-Transit FireNet builds on the Aviatrix Transit Network. Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Aviatrix Transit Gateways and Spoke gateways.
-
-.. important::
+Transit FireNet builds on the Aviatrix Transit Network solution. For Azure, make sure the deployment meets the following 
+specifications. 
 
   1. ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
   #. The minimum size of the Aviatrix Transit Gateway instance size is Standard_B2ms. 
   #. Select the option "Enable Transit FireNet" when launching the Aviatrix Transit Gateway. 
   #. Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.  
+
+Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to 
+deploy Aviatrix Transit Gateways and at least one Spoke gateway. When you are done, proceed to Step 1. 
 
 
 1. Enable Transit FireNet Function
