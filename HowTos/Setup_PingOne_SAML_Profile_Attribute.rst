@@ -1,13 +1,12 @@
 .. meta::
-   :description: Setup Okta SAML with Profile Attribute
-   :keywords: Okta, Profile
+   :description: Setup PingOne for Customers web SAML app with Profile Attribute
+   :keywords: Profile, PingOne, PingOne for Customers, SAML, user vpn, PingOne saml, Aviatrix, OpenVPN, Controller
 
-=======================================
-Setup Okta SAML with Profile Attribute
-=======================================
+===============================================================
+Setup PingOne for Customers web SAML app with Profile Attribute
+===============================================================
 
-This guide demonstrates the use of the **Profile** attribute in **Okta** so each SAML user can be assigned a different
-VPN profile.
+This guide demonstrates the use of the **Profile** attribute in **PingOne for Customers** so each SAML user can be assigned a different VPN profile.
 
 How VPN profile works
 ---------------------
@@ -22,23 +21,23 @@ specifying a VPN profile, overriding
 the corresponding user's VPN profile assigned at the controller.
 If unspecified, the corresponding VPN profile assigned at the controller will be used.
 
-.. _okta_setup:
+.. _pingone_for_customers_setup:
 
-Setup Okta Profile attribute
------------------------------
+Setup PingOne for Customers Profile attribute
+---------------------------------------------
 
-#. `Define a new attribute <#okta-new-attribute>`__ in the OKta User template for storing the VPN profile name.
-#. `Define an attribute mapping <#okta-map-attribute>`__
-   for the new attribute using the name **Profile**
-   so that the SAML application
-   knows how to compose the **Profile** information in the SAML response.
-#. `Assign VPN profile <#okta-fill-attribute>`__ to each SAML user.
-#. `Validate <#okta-validation>`__ the setup.
+#. `Define a new User attribute <#pingone_for_customers_new_user_attribute>`__ in the PingOne for customers portal for storing the VPN profile name.
 
-.. _okta_new_attribute:
+#. `Define an attribute mapping <#pingone_for_customers_map_attribute>`__ for the new attribute using the name **Profile** so that the web SAML application knows how to compose the **Profile** information in the SAML response.
+   
+#. `Assign VPN profile <#pingone_for_customers_user_fill_attribute>`__ to each SAML user.
 
-Define a new attribute
-----------------------
+#. `Validate <#pingone_for_customers_validation>`__ the setup.
+
+.. _pingone_for_customers_new_user_attribute:
+
+Define a new User attribute
+----------------------------
 
 At Okta, define a new attribute in the **User** definition template using
 **Okta/Directory/Profile Editor**.  In this example, the new attribute is named **accessprofile** and
@@ -60,7 +59,7 @@ it can store a string of up to 20 characters.
 
    |add_profile_attribute_to_user_template|
 
-.. _okta_map_attribute:
+.. _pingone_for_customers_map_attribute:
 
 Define an attribute mapping
 ---------------------------
@@ -73,7 +72,7 @@ pre-qualified with the keyword **user** for referencing a property in the user t
 
 |add_profile_attribute_to_app|
 
-.. _okta_fill_attribute:
+.. _pingone_for_customers_user_fill_attribute:
 
 Assign VPN profile to each SAML user
 -------------------------------------
@@ -84,7 +83,7 @@ Currently, only one profile is allowed per SAML user.
 
 |add_profile_attribute_to_user|
 
-.. _okta_validation:
+.. _pingone_for_customers_validation:
 
 Validation
 ----------
