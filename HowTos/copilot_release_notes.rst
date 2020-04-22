@@ -21,3 +21,8 @@ Release 1.1.4 (GA)
 Release 1.1.4.2 
 -------------------
 - Addressed the issue with license key validation
+
+Release 1.1.5.2 
+-------------------
+- Added support for tagging in Topology 
+- Added support for custom SSL certificate import
