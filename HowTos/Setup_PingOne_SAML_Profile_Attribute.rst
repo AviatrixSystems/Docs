@@ -47,13 +47,13 @@ Define a new User attribute
 
 #. Click + Add Attribute.
 
-   |image0|
+   |pingone_idp_adding_attribute|
 
 #. Click DECLARED
 
-#. Click button "Next"
+   |pingone_idp_adding_attribute_declared|
 
-   |image0|
+#. Click button "Next"
    
 #. Enter the following information to create custom user attribute:
 
@@ -69,14 +69,13 @@ Define a new User attribute
 | Enforce unique values | Uncheck       | Option to require the attribute,values be unique across the environment   |
 +-----------------------+---------------+---------------------------------------------------------------------------+
 
+#. Click Save and Close.
+
 .. note::
 
    In this example, the new user attribute is named **accessprofile**.
 
-
-#. Click Save and Close.
-
-   |image0|
+   |pingone_idp_setting_attribute|
 
 .. _pingone_for_customers_map_attribute:
 
@@ -109,7 +108,7 @@ Define an attribute mapping
 
    The application attribute **Profile** is required to be an exact match so that Aviatrix Controller can process in the SAML response.
    
-|image0|
+   |pingone_idp_saml_attribute_mapping|
 
 .. _pingone_for_customers_user_fill_attribute:
 
@@ -136,7 +135,7 @@ For each SAML application user, edit the user profile for assigning the VPN prof
 
    In this example, the VPN profile defined at the controller is named **access-profile**.
 
-|image0|
+   |pingone_idp_vpn_profile|
 
 .. _pingone_for_customers_validation:
 
@@ -146,58 +145,22 @@ Validation
 Please refer to this `doc <https://docs.aviatrix.com/HowTos/Setup_Okta_SAML_Profile_Attribute.html#validation>`__ for more validation detail.
 
 
-.. |open_profile_editor| image:: Setup_Okta_SAML_Profile_Attribute_media/open_profile_editor.png
+.. |pingone_idp_adding_attribute| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_adding_attribute.png
    :scale: 70%
 
-.. |open_user_template| image:: Setup_Okta_SAML_Profile_Attribute_media/open_user_template.png
+.. |pingone_idp_adding_attribute_declared| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_adding_attribute_declared.png
    :scale: 70%
 
-.. |profile_editor_add| image:: Setup_Okta_SAML_Profile_Attribute_media/profile_editor_add.png
+.. |profile_editor_add| image:: Setup_PingOne_SAML_Profile_Attribute_media/profile_editor_add.png
    :scale: 70%
 
-.. |add_profile_attribute_to_user_template| image:: Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_user_template.png
+.. |pingone_idp_setting_attribute| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_setting_attribute.png
    :scale: 70%
 
-.. |add_profile_attribute_to_app| image:: Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_app.png
+.. |pingone_idp_saml_attribute_mapping| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_saml_attribute_mapping.png
    :scale: 70%
 
-.. |add_profile_attribute_to_user| image:: Setup_Okta_SAML_Profile_Attribute_media/add_profile_attribute_to_user.png
-   :scale: 70%
-
-.. |dashboard_user_with_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/dashboard_user_with_profile.png
-   :scale: 70%
-
-.. |browser_user_with_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/browser_user_with_profile.png
-   :scale: 70%
-
-.. |dashboard_user_without_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/dashboard_user_without_profile.png
-   :scale: 70%
-
-.. |browser_user_without_profile| image:: Setup_Okta_SAML_Profile_Attribute_media/browser_user_without_profile.png
-   :scale: 70%
-
-.. |vpn-5-1-okta| image:: Setup_Okta_SAML_Profile_Attribute_media/vpn-5-1-okta.png
-   :scale: 70%
-
-.. |cert-sharing| image:: Setup_Okta_SAML_Profile_Attribute_media/cert-sharing.png
-   :scale: 70%
-
-.. |default-profile| image:: Setup_Okta_SAML_Profile_Attribute_media/default-profile.png
-   :scale: 70%
-
-.. |access-profile| image:: Setup_Okta_SAML_Profile_Attribute_media/access-profile.png
-   :scale: 70%
-
-.. |vpn-user| image:: Setup_Okta_SAML_Profile_Attribute_media/vpn-user.png
-   :scale: 70%
-
-.. |download-cert| image:: Setup_Okta_SAML_Profile_Attribute_media/download-ovpn.png
-   :scale: 70%
-
-.. |add-person| image:: Setup_Okta_SAML_Profile_Attribute_media/add-person.png
-   :scale: 70%
-
-.. |assign-app| image:: Setup_Okta_SAML_Profile_Attribute_media/assign-app.png
+.. |pingone_idp_vpn_profile| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_vpn_profile.png
    :scale: 70%
 
 .. disqus::
