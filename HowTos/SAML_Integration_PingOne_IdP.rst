@@ -140,7 +140,7 @@ Step 2. Create a PingOne Web SAML App for Aviatrix
    
       Notes: User ID is a default required in PingOne
 
-   ||pingone_idp_configuring_attribute_mapping||
+   |pingone_idp_configuring_attribute_mapping|
 
 #. Click Save and Close.
 
@@ -199,7 +199,8 @@ Continue with updating Aviatrix SAML Endpoint by visiting one of the following l
 
    |pingone_idp_reformat_custom_saml_request_template|
    
-.. code-block:: XML
+.. code-block:: xml
+
    <?xml version="1.0" encoding="UTF-8"?>
    <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ID="$ID" Version="2.0" IssueInstant="$Time" Destination="$Dest" ForceAuthn="false" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="$ACS">
       <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">$Issuer</saml:Issuer>
