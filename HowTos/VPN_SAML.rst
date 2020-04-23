@@ -42,7 +42,7 @@ If you haven’t already deployed the Aviatrix controller, follow `these instruc
 
 An IdP refers to an identity provider for SAML. This could be any provider that supports a SAML endpoint like `Okta <./SAML_Integration_Okta_IdP.html>`__,
 `OneLogin <./SAML_Integration_OneLogin_IdP.html>`__, `Google <./SAML_Integration_Google_IdP.html>`__,
-`AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__, and `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__.
+`AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__, `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__, and `PingOne <./SAML_Integration_PingOne_IdP.html>`__.
 You will require administrator access to create IdP endpoints for SAML. Check `IdP-specific SAML Integration <#IdP-integration>`__ to see a list of guides for supported IdP's
 
 
@@ -181,9 +181,10 @@ These are guides with specific IdP's that were tested to work with Aviatrix SAML
 #. `Google <./SAML_Integration_Google_IdP.html>`__
 #. `Okta <./SAML_Integration_Okta_IdP.html>`__
 #. `OneLogin <./SAML_Integration_OneLogin_IdP.html>`__
+#. `PingOne <./SAML_Integration_PingOne_IdP.html>`__
 
 Other tested IdP's include:
-Ping Identity, VmWare VIDM, ForgeRock's OpenAM etc.
+VmWare VIDM, ForgeRock's OpenAM etc.
 
 .. _Config_33:
 
@@ -198,7 +199,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Google   - provides IdP metadata text
 #. Okta     - provides IdP metadata text
 #. OneLogin - provides IdP metadata URL
-
+#. PingOne  - provides IdP metadata URL
 
 .. _Config_34:
 
