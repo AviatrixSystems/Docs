@@ -331,9 +331,14 @@ Note that if the IDP sends an invalid or empty Profile attribute, the default pr
 
 This way Profile associations can be configured at IDP instead of configuring at the controller.
 
-Currently only a single Profile is supported when using Profile as attributes.
+Multiple Profiles is supported when using Profile as attribute starting with `release 5.4 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r5-4-1066-4-1-2020>`__
 
 The profile association can be verified from the Dashboard page after the VPN user has connected.
+
+These are guides with specific IdP's that were tested to work with Aviatrix SAML integration:
+
+#. `Okta <./Setup_Okta_SAML_Profile_Attribute.html>`__
+#. `PingOne <./Setup_PingOne_SAML_Profile_Attribute.html>`__
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
