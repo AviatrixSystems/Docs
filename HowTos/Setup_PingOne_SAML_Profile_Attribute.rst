@@ -20,13 +20,13 @@ For SAML VPN, the SAML user definition at the IDP has a **Profile** attribute fo
 Setup PingOne for Customers Profile attribute
 ---------------------------------------------
 
-#. `Define a new User attribute <#pingone_for_customers_new_user_attribute>`__ in the PingOne for customers portal for storing the VPN profile name.
+#. `Define a new User attribute <#pingone-for-customers-new-user-attribute>`__ in the PingOne for customers portal for storing the VPN profile name.
 
-#. `Define an attribute mapping <#pingone_for_customers_map_attribute>`__ for the new attribute using the name **Profile** so that the web SAML application knows how to compose the **Profile** information in the SAML response.
+#. `Define an attribute mapping <#pingone-for-customers-map-attribute>`__ for the new attribute using the name **Profile** so that the web SAML application knows how to compose the **Profile** information in the SAML response.
    
-#. `Assign VPN profile <#pingone_for_customers_user_fill_attribute>`__ to each SAML user.
+#. `Assign VPN profile <#pingone-for-customers-user-fill-attribute>`__ to each SAML user.
 
-#. `Validate <#pingone_for_customers_validation>`__ the setup.
+#. `Validate <#pingone-for-customers-validation>`__ the setup.
 
 .. _pingone_for_customers_new_user_attribute:
 
@@ -146,21 +146,15 @@ Please refer to this `doc <https://docs.aviatrix.com/HowTos/Setup_Okta_SAML_Prof
 
 
 .. |pingone_idp_adding_attribute| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_adding_attribute.png
-   :scale: 70%
 
 .. |pingone_idp_adding_attribute_declared| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_adding_attribute_declared.png
-   :scale: 70%
 
 .. |profile_editor_add| image:: Setup_PingOne_SAML_Profile_Attribute_media/profile_editor_add.png
-   :scale: 70%
 
 .. |pingone_idp_setting_attribute| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_setting_attribute.png
-   :scale: 70%
 
 .. |pingone_idp_saml_attribute_mapping| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_saml_attribute_mapping.png
-   :scale: 70%
 
 .. |pingone_idp_vpn_profile| image:: Setup_PingOne_SAML_Profile_Attribute_media/pingone_idp_vpn_profile.png
-   :scale: 70%
 
 .. disqus::
