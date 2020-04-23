@@ -132,7 +132,7 @@ Site to Cloud VPN                               Yes         Yes             Yes 
 Insane Mode Encryption                          Yes         Yes              No                              Yes                      No
 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
-FlightPath Expert Diagnostics                   Yes         No              No                               Yes                      No
+FlightPath Expert Diagnostics                   Yes         Yes              Yes                               Yes                      No
 IPv6                                            Yes         No              No                               No                       No
 PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No 
 ==========================================      ==========  =============   ======================           =================       ==========
