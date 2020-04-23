@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R5.4.1804 (4/21/2020)
+R5.4.1140 (4/21/2020)
 ======================
 
 - **Support More AWS TGW Peering Regions** Newly available regions of AWS TGW Peering is now supported. 
