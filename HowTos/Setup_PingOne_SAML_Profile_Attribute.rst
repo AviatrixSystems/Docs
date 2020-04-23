@@ -57,25 +57,25 @@ Define a new User attribute
    
 #. Enter the following information to create custom user attribute:
 
-+-----------------------+---------------+---------------------------------------------------------------------------+
-| Field                 | Value         | Description                                                               |
-+-----------------------+---------------+---------------------------------------------------------------------------+
-| Name                  | accessprofile | A unique identifier for the attribute.                                    |
-+-----------------------+---------------+---------------------------------------------------------------------------+
-| Display name          | accessprofile | The name of the attribute as you want it to appear in the,user interface. |
-+-----------------------+---------------+---------------------------------------------------------------------------+
-| Description           | (optional)    | A brief characterization of the application.                              |
-+-----------------------+---------------+---------------------------------------------------------------------------+
-| Enforce unique values | Uncheck       | Option to require the attribute,values be unique across the environment   |
-+-----------------------+---------------+---------------------------------------------------------------------------+
+   +-----------------------+---------------+---------------------------------------------------------------------------+
+   | Field                 | Value         | Description                                                               |
+   +-----------------------+---------------+---------------------------------------------------------------------------+
+   | Name                  | accessprofile | A unique identifier for the attribute.                                    |
+   +-----------------------+---------------+---------------------------------------------------------------------------+
+   | Display name          | accessprofile | The name of the attribute as you want it to appear in the,user interface. |
+   +-----------------------+---------------+---------------------------------------------------------------------------+
+   | Description           | (optional)    | A brief characterization of the application.                              |
+   +-----------------------+---------------+---------------------------------------------------------------------------+
+   | Enforce unique values | Uncheck       | Option to require the attribute,values be unique across the environment   |
+   +-----------------------+---------------+---------------------------------------------------------------------------+
 
-#. Click Save and Close.
+   .. note::
 
-.. note::
-
-   In this example, the new user attribute is named **accessprofile**.
+      In this example, the new user attribute is named **accessprofile**.
 
    |pingone_idp_setting_attribute|
+
+#. Click Save and Close.
 
 .. _pingone_for_customers_map_attribute:
 
@@ -104,9 +104,9 @@ Define an attribute mapping
    | accessprofile          | Profile               |
    +------------------------+-----------------------+
    
-.. note::
+   .. note::
 
-   The application attribute **Profile** is required to be an exact match so that Aviatrix Controller can process in the SAML response.
+      The application attribute **Profile** is required to be an exact match so that Aviatrix Controller can process in the SAML response.
    
    |pingone_idp_saml_attribute_mapping|
 
@@ -131,9 +131,9 @@ For each SAML application user, edit the user profile for assigning the VPN prof
 
 #. Find the new User attribute "accessprofile" and assign the VPN profile
 
-.. note::
+   .. note::
 
-   In this example, the VPN profile defined at the controller is named **access-profile**.
+      In this example, the VPN profile defined at the controller is named **access-profile**.
 
    |pingone_idp_vpn_profile|
 
