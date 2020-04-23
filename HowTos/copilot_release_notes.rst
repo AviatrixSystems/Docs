@@ -14,8 +14,8 @@ Release 1.1.4 (GA)
 - Enabled license management
 - Added support for multi-select
 - Added ability to delete indexes
-- Added storage auto-delete threshhold configuration
-- Added diagnostics (ping/tracerout) to topology
+- Added storage auto-delete threshold configuration
+- Added diagnostics (ping/traceroute) to topology
 
 
 Release 1.1.4.2 
