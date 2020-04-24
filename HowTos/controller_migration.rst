@@ -37,7 +37,7 @@ Prerequisites
 + It is required that the the backup is done to a S3 bucket which belongs to the same account that hosts the controller.
 + PLEASE NOTE: User must `disable controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_. (User can `enable HA again <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ on the new controller once migration is fully completed)
 + PLEASE NOTE: If you have any backend scripts/bots/security-processes monitoring your instances for any particular Tags to let the instance be recognized as approved to keep it running, please do plan to make these changes when the new controller comes up, before it is shutdown by your security process. Else the migration process will fail and you would have to delete the new controller and start the migration process again.
-+ PLEASE NOTE: If you are using SAML login for either the controller login and/or for openvpn authentication, the newer AMI's are much more stricter in validating the EntityId - please make sure that they are configured to be exactly same on the endpoints configured on the controller and the SAML applications in the IdP
++ PLEASE NOTE: If you are using SAML login for either the controller login(Settings/Controller/SAMLLogin) and/or for openvpn authentication(OpenVPN/Advanced/SAML), the newer AMI's are much more stricter in validating the EntityId - please make sure that they are configured to be exactly same on the endpoints configured on the controller and the SAML applications in the IdP
 
 
 Controller Migration feature does the following in sequence
