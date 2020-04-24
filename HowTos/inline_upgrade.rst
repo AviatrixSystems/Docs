@@ -30,6 +30,11 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 #. If your controller is in AWS and running on a t2/t3 instance type, please make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"
 #. Please make sure that your controller has DNS service available and has public network access - you can verify that by pinging www.google.com at "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility". This is a requirement for upgrade and for the controller to function as designed.
 #. Please run  account audit for all your AWS accounts from "Controller/Accounts/AccountAudit" - please make sure that all of them pass. The IAM policies should be setup as documented. If you have any issues, please look at our `troubleshooting playbooks <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_overview.html>`_
+#. Our Controller AMI's have been upgraded and if you are running an older 1404 AMI, you would have to migrate your controller first before upgrading to 5.4. If you are running an older AMI, your upgrade to 5.4 will fail. You can upgrade your controller by following the directions here
+    * `Migration when an AMI type change is required <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+    * `AWS Controller AMI Migration <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
+    * `Controller AMI Migration: Azure <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_
+    * `Controller AMI Migration: GCP <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-gcp>`
 
 
 How to upgrade software
