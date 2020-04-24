@@ -138,7 +138,15 @@ If you have problems with FQDN on a specific gateway, follow the instructions be
 
 Any vendor specific comments to be noted?
 ---------------------------------------------------------------------------------------------
+
 Any GCE instance (excluding controller created gateways) that needs to participate in egress control (FQDN, SNAT and FW Egress) have to be tagged as "avx-snat-noip" . The GCE network tag "avx-snat-noip" can be associated during GCE instance creation or by editing an existing instance.
+
+What happens if I configure conflicting FQDN and Stateful Firewall base policies?
+---------------------------------------------------------------------------------------------
+
+In the case that Stateful Firewall and FQDN Filter base policies conflict, the FQDN Filter base policy will be applied with a greater priority. Understanding of this behavior can help resolve issues with traffic being unexpectedly allowed or dropped. For example, this may occur if a Gateway is configured with a base Deny-all policy in Stateful Firewall, but also attached to a blacklist FQDN Egress Filter tag: 
+
+The Stateful Firewall policy implies that any traffic that is not explicitly defined in the tag is dropped, whereas the FQDN Egress Filter blacklist implies that any traffic that is not explicitly defined in the tag is allowed. These contradictory policies would be considered to be in conflict with one another, so the FQDN Egress Filter policy will be used; the effect being that traffic will be allowed. 
 
 What happens if I enable FQDN and there are route tables that have an existing default route?
 ---------------------------------------------------------------------------------------------
