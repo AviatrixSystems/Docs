@@ -7,12 +7,15 @@
 Transit FireNet  Workflow for AWS/Azure
 =========================================================
 
-For questions about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_ 
+To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_ 
+
+If you are looking deploying firewall networks in AWS TGW environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
 
 Prerequisite for AWS
 ---------------------
 
-Transit FireNet builds on the Aviatrix Transit Network. For AWS, make sure the deployment meets the following specifications. 
+Transit FireNet builds on the Aviatrix Transit Network where Aviatrix gateways are deployed in both
+the transit VPC and the spoke VPCs in AWS. Make sure the deployment meets the following specifications. 
 
   1. ActiveMesh must be enabled when launching the  Aviatrix Transit Gateway. 
   2. The minimum size of the Aviatrix Transit Gateway is c5.xlarge. 
@@ -23,7 +26,8 @@ Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/
 Prerequisite for Azure
 ------------------------
 
-Transit FireNet builds on the Aviatrix Transit Network solution. For Azure, make sure the deployment meets the following 
+Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed
+in Transit VNet and/or in Spoke VNet in Azure. Make sure the deployment meets the following 
 specifications. 
 
   1. ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
@@ -32,7 +36,7 @@ specifications.
   #. Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.  
 
 Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to 
-deploy Aviatrix Transit Gateways and at least one Spoke gateway. When you are done, proceed to Step 1. 
+deploy Aviatrix Transit Gateways and attach at least one Spoke gateway or one Spoke VNet. When you are done, proceed to Step 1. 
 
 
 1. Enable Transit FireNet Function
