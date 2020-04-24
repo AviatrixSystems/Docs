@@ -30,11 +30,17 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 #. If your controller is in AWS and running on a t2/t3 instance type, please make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"
 #. Please make sure that your controller has DNS service available and has public network access - you can verify that by pinging www.google.com at "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility". This is a requirement for upgrade and for the controller to function as designed.
 #. Please run  account audit for all your AWS accounts from "Controller/Accounts/AccountAudit" - please make sure that all of them pass. The IAM policies should be setup as documented. If you have any issues, please look at our `troubleshooting playbooks <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_overview.html>`_
-#. Our Controller AMI's have been upgraded and if you are running an older 1404 AMI, you would have to migrate your controller first before upgrading to 5.4. If you are running an older AMI, your upgrade to 5.4 will fail. You can upgrade your controller by following the directions here
-    * `Migration when an AMI type change is required <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
-    * `AWS Controller AMI Migration <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
-    * `Controller AMI Migration: Azure <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_
-    * `Controller AMI Migration: GCP <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-gcp>`
+#. Our Controller AMI's are periodically upgraded. If you would like to upgrade your AMI, please follow the links listed below.
+    * In release 5.3, we introduced a feature to upgrade the AMI of the controller from within the UI, for AWS.
+    * If your Controller is on 5.2 or older release or if your controller is in Azure or GCP, you would have to migrate your Controller manually.
+    * Release 5.4 requires that your Controller be running on an 1804 based AMI. If your Controller is running an older 1404 AMI you would have to first migrate your controller before upgrading to 5.4
+    *  If in AWS, please check the AMI Name from “AWS portal Services/EC2/SelectControllerInstance/DescriptionTab/AMI-ID”. If it does not have 1804 in the Name, then it is running an older AMI. If the name has 1804 then it is running a newer AMI and migration is optional.
+    * You can upgrade your controller by following the directions here
+        * `Migration when an AMI type change is required <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+        * `Controller AMI Migration: Azure: AWS <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
+        * `Controller AMI Migration: Azure <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_
+        * `Controller AMI Migration: GCP <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-gcp>`_
+
 
 
 How to upgrade software
