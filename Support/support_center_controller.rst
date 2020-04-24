@@ -43,7 +43,9 @@ We expect all of your accounts to have the following:
   * In the case of the primary account(which hosts the controller), "aviatrix-role-app" role should trust it's own account number.
   * All of your Aviatrix Controllers and Gateways need to have "aviatrix-role-ec2" attached
 
-
+You can follow one of the ways described below to update your IAM policies:
+  * If you are running 5.1 or later releases, you can go to "Accounts -> Access Accounts -> Select an account -> Click the 3 dots skewer and click on **Update policy**"
+  * You can copy the latest IAM policies from this `link <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_ and paste it into your IAM policies through your AWS Console (Services/IAM/Dashboard/Policies/search for **aviatrix-app-policy**/Click on **aviatrix-app-policy**/Permissions/EditPolicy/JSON/delete all text and paste the policies you copied from the link above/ReviewPolicies/SaveChanges"
 
 
 
