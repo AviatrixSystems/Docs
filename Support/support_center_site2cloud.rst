@@ -84,5 +84,5 @@ The default DPD settings for site2cloud connections on Aviatrix Gateways is 3 re
 
 If you want to keep sending periodic ping packets to keep the tunnel up due to differences in dpd's with the remote edge device, please look to the `periodic ping feature <https://docs.aviatrix.com/HowTos/periodic_ping.html>`_.
 
-You can also disable dpd's on the Gateway for a site2cloud tunnel - please do remember that this will report the tunnel to be up always and you might not see a `tunnel down notification <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_  anymore if you turn off DPD's. `DPD's can be disabled only through the API <https://api.aviatrix.com/?version=latest#f4251c15-ffc6-47e9-942f-246687ac0cb0>`_.
+You can also disable dpd's on the Gateway for a site2cloud tunnel - please do remember that this will report the tunnel to be up always and you might not see a `tunnel down notification <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_  anymore if you turn off DPD's. `Instructions to turn off DPD's <https://docs.aviatrix.com/HowTos/site2cloud.html#dead-peer-detection>`_.
 
