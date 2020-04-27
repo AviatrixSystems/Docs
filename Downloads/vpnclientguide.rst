@@ -52,6 +52,14 @@
 .. |WinClientStartUp| image:: AVPNC_img/WinClientStartUp.png
    :width: 400
 
+.. |minus| image:: AVPNC_img/minus.png
+   :height: 16
+
+.. |add| image:: AVPNC_img/add.png
+   :height: 16
+
+.. |3dots| image:: AVPNC_img/3dots.png
+   :height: 16
 
 ==============================
 Aviatrix VPN Client User Guide
@@ -137,11 +145,15 @@ Using the Application
 
 There are 3 buttons on the bottom
 
-1. + : This opens a window to choose the OpenVPN configuration (.ovpn) file.
 
-2. - : This deletes a item choosed in the Connection Profiles
+1. |add| : This opens a window to choose the OpenVPN configuration (.ovpn) file.
 
-3. ... : This pops up a submenu including "Edit", "Sort", "Connection Log", "Settings"
+
+2. |minus| : This deletes a item choosed in the Connection Profiles
+
+
+3. |3dots| : This pops up a submenu including "Edit", "Sort", "Connection Log" and "Settings"
+
 
   3.1 "Edit": Modify a item choosed in the Connection Profiles
 
