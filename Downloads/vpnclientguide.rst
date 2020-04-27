@@ -217,9 +217,8 @@ Here you can perform special operations if Troubleshooting is required
 Connecting to a SAML Gateway
 ****************************
 
-|SamlAuth|
 
-Enter your IDP Credentials (Forgerock, in this case) to login.
+Enter your IDP Credentials to login.
 
 **************************************************
 Connecting to a Gateway without any Authentication
