@@ -83,19 +83,17 @@ Windows |win|
 
 3. Open the “Aviatrix VPN Client” application by going to “Start Menu -> Aviatrix VPN Client-> Aviatrix VPN Client”.
 
-|WinClientLocation|
+   |WinClientLocation|
 
-A UAC window pops up.
+4. A UAC window pops up.
 
-|WinClientPopup|
+   |WinClientPopup|
 
-Allow administrator access so that the application can modify the routing tables.
+5. Allow administrator access so that the application can modify the routing tables. The Aviatrix VPN Client window should come up which should look like.
 
-The Aviatrix VPN Client window should come up which should look like.
+   |WinClientStartUp|
 
-|WinClientStartUp|
-
-Skip to the “Using the Application” section if you do not need to install it on a Mac or Linux
+6. Skip to the `Using the Application <#using-the-application>`__ section if you do not need to install it on a Mac or Linux
 
 *********
 Mac |mac|
@@ -107,19 +105,19 @@ Mac |mac|
 
 2. Save the OpenVPN configuration file (with the extension .ovpn) that was sent to you by your Admin, on to your machine.
 
-3. Start the Aviatrix VPN Client application by going to LaunchPad
+3. Start the Aviatrix VPN Client application by going to LaunchPad and clicking on “Aviatrix VPN Client”.
 
-|MacClientLocation| and clicking on “Aviatrix VPN Client”.
-
-|MacClientLocation2|
+   |MacClientLocation| 
+   
+   |MacClientLocation2|
 
 4. A popup comes up to request sudo privelages to modify routing tables
 
-|MacCrendential|
+   |MacCrendential|
 
 5. This opens the application window.
 
-6. Skip to the “Using the Application” section if you do not need to install it on Linux
+6. Skip to the `Using the Application <#using-the-application>`__ section if you do not need to install it on Linux
 
 ***********
 Linux |lux|
@@ -137,7 +135,11 @@ Linux |lux|
 
 4. To open the “Aviatrix VPN Client” launch a new terminal and type AVPNC
 
-This has been tested only on Ubuntu 16/14. Theoretically, it should work with other flavours of linux as well as long as openvpn is installed separately.
+.. note::
+
+   This has been tested only on Ubuntu 16/14. Theoretically, it should work with other flavours of linux as well as long as openvpn is installed separately.
+
+.. _using_the_application:
 
 *********************
 Using the Application
@@ -171,9 +173,9 @@ Windows |win|
 
     1.2 "Help" has menu "About" to show the App information
 
-2.Closing the application window hides it to the system tray
+2. Closing the application window hides it to the system tray
 
-|WinBottomBar|
+   |WinBottomBar|
 
 *********
 Mac |mac|
@@ -185,17 +187,17 @@ Mac |mac|
 
     1.2 "Quit" exit the App information
 
-2.Closing the application window hides it to the system tray
+2. Closing the application window hides it to the system tray
 
-|MacBottomBar|
+   |MacBottomBar|
 
-By a right click on Windows's or a click on Mac's system tray icon to show a menu
+   By a right click on Windows's or a click on Mac's system tray icon to show a menu
 
-|TrayMenu|
+   |TrayMenu|
 
-There are 3 status icons that are shown in the window and on the tray.
+3. There are 3 status icons that are shown in the window and on the tray.
 
-|ProgressIcon|
+   |ProgressIcon|
 
 
 ***********************
@@ -217,8 +219,9 @@ Here you can perform special operations if Troubleshooting is required
 Connecting to a SAML Gateway
 ****************************
 
-
 Enter your IDP Credentials to login.
+
+Check doc `OpenVPN® with SAML Authentication <https://docs.aviatrix.com/HowTos/VPN_SAML.html>`__ for detail.
 
 **************************************************
 Connecting to a Gateway without any Authentication
@@ -235,6 +238,8 @@ CloudN VPC supports a variety of authentication methods to verify VPN user crede
 LDAP:
 
   Enter username and password stored on LDAP server.
+  
+  Check doc `LDAP Configuration for Authenticating VPN Users <https://docs.aviatrix.com/HowTos/VPNUsers_LDAP.html>`__ for detail.
 
 Google 2-step verification:
 
