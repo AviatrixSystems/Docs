@@ -7,15 +7,23 @@ Controller Migration in AWS
 
 
 Introduction
-===============
+--------------
+
 
 This feature is released in 5.3. It consists of 2 sub-features:
-    - Migrate
-    - Restore
+
+ * Migrate
+ * Restore
+ 
+This feature will migrate your controller to run from the latest AMI. A controller migration might be needed for the following reasons:
+
+  * If your controller is running an old AMI and you are trying to upgrade to version 5.4, your upgrade will be blocked as a new AMI is required for 5.4
+  * If you are looking to move to a newer AMI for your controller on recommendation from Aviatrix Support to pick up any new fixes
 
 
 Migrate
-=====================
+###########
+
 
 Introduction
 --------------
@@ -66,7 +74,7 @@ Post Migration Tasks
 
 
 Restore
-========================================
+############
 
 Intro
 --------------------------------------------------------------------------------
