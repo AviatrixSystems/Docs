@@ -99,7 +99,7 @@ Windows |win|
 Mac |mac|
 *********
 
-1. Download the Aviatrix VPN Client installer from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AviatrixVPNClientSetup.pkg>`__
+1. Download the Aviatrix VPN Client installer from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_mac.pkg>`__
 
     Follow the on-screen instructions to install the application
 
