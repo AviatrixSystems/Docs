@@ -86,3 +86,8 @@ If you want to keep sending periodic ping packets to keep the tunnel up due to d
 
 You can also disable dpd's on the Gateway for a site2cloud tunnel - please do remember that this will report the tunnel to be up always and you might not see a `tunnel down notification <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_  anymore if you turn off DPD's. `Instructions to turn off DPD's <https://docs.aviatrix.com/HowTos/site2cloud.html#dead-peer-detection>`_.
 
+
+Can I configure DPD interval settings?
+-----------------------------------------
+
+At this time, we allow DPD settings (such as delay, retry and maxfail) to be configured only through REST API. Please check out the `REST API documentation <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_.
