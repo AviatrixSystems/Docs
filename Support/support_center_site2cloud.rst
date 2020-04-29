@@ -96,4 +96,4 @@ At this time, we allow DPD settings (such as delay, retry and maxfail) to be con
 Why is my Cisco Router rekeying the IPSec session sooner than the usual?
 ---------------------------------------------------------------------------
 
-It is possible that your Cisco router is using data transferred as a lifetime. If so, you can use this command "set security-association lifetime kilobytes disable" to disable using the data transferred as a lifetime metric.
+It is possible that your Cisco router is using data transferred as a lifetime metric. If so, you can use this command "set security-association lifetime kilobytes disable" to disable using the data transferred as a lifetime metric.
