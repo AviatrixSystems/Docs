@@ -120,7 +120,7 @@ Please note that the Cisco IOS default lifetimes are *3600 seconds (one hour) an
   * `crypto ipsec security-association idle-time seconds <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c3.html#wp1305920947>`_    ##configure idle-timers globally
   * `crypto ipsec security-association lifetime <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c3.html#wp2944599527>`_    ##global lifetime values for SA associations
   * `set security-association idle-time <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s2.html#wp3209803263>`_    ##specify the maximum amount of time for which the current peer can be idle before the default peer is used
-  * `set security-association lifetime` https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s2.html#wp1549482593>`_    ##specify lifetime for a specific crypto map entry or IPsec profile that is used when negotiating IPsec security associations (SAs)
+  * `set security-association lifetimew <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s2.html#wp1549482593>`_    ##specify lifetime for a specific crypto map entry or IPsec profile that is used when negotiating IPsec security associations (SAs)
   
 
 Please refer to `Cisco's IPSec Troubleshooting guide <https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/5409-ipsec-debug-00.html>`_ for more information.
