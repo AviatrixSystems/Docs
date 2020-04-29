@@ -112,7 +112,7 @@ Steps to Disable Controller HA
 
 You can disable Controller HA by deleting the Controller HA CloudFormation stack. 
 
-Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack. 
+Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack. **Please be careful,** and delete the cloudformation stack associated with the controller HA - and do not delete your controller launch cloudformation stack.
 
 
 FAQ
