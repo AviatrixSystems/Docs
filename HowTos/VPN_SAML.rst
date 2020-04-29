@@ -333,6 +333,8 @@ This way Profile associations can be configured at IDP instead of configuring at
 
 Multiple Profiles is supported when using Profile as attribute starting with `release 5.4 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r5-4-1066-4-1-2020>`__
 
+Multiple profiles can be added seperated by commas. Note that mixing of base rules is not allowed. 
+
 The profile association can be verified from the Dashboard page after the VPN user has connected.
 
 These are guides with specific IdP's that were tested to work with Aviatrix SAML integration:
