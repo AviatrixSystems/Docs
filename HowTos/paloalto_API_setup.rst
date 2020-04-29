@@ -114,7 +114,7 @@ d. Create Device Group
 A Device Group is used to manage all the firewall policies.
 
  1. **Add Device Group**
-      Go to Panorama --> Device Groups, click "Add" to create two new device groups for FireNet GW HA. Add managed VMs to each device group. Remember the device group name, for example "west2-firenet-primary".
+      Go to Panorama --> Device Groups, click "Add" to create a new device group for both FireNet GWs. Add managed VMs to the device group. Remember the device group name, for example "west2-firenet-primary".  You may create two device groups as well if you want to separately edit for each Firenet GW.
 
 The following 3 # steps, please refer to the step 8 and 9 of https://docs.aviatrix.com/HowTos/config_paloaltoVM.html
  #. **Add Example Policy** (Optional if internet traffic is needed) 
@@ -150,15 +150,13 @@ Router name (Optional)                          Specify the firewall virtual Rou
 
 .. Note::
 
-    - The Panorama manager needs to be configured separately for the primary and backup FireNet gateways, because each is associated with a different template name.  
+    - The Panorama needs to be configured separately for the primary and backup FireNet gateways.  
 
     - Panorama can be configured even when there is no VM-Series associated with a FireNet gateway. However in such case, the egress subnet is not decided, therefore the egress route cannot be added. Once the first VM-Series instance is launched and is in sync with Panorama, the egress route will be automatically added.
 
     - If any VM-Series for a FireNet gateway is already managed by the Controller, you need to remove that configuration before configuring Panorama. See the migration instructions in the next section. 
 
     - After Panorama is setup, any additional VM-Series associated with same gateway will be controlled by Panorama and no further configuration on the VM-Series is needed.
-
-    - When all VM-Series are disassociated from a FireNet gateway, Panorama still maintains the configuration, unless the user removes the configuration from Panorama.
 
     - When Panorama is configured, the associated  will show the vendor as "Palo Alto Panorama". Clicking "Show" will use the same access account and password to access firewall and retrieve route information.  To enable this, you need to configure admin role and user (same name and password as configured for Panorama itself) in the template in Panorama.
 
