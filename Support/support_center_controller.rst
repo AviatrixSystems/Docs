@@ -431,3 +431,9 @@ Please use next steps to add aviatrix-role-app to your self-defined KMS key:
    :scale: 70%
 .. |kms-customer-managed-kms-key-users| image:: kms-key-managed-img/kms-customer-managed-kms-key-users.png
    :scale: 70%
+
+
+Why did my SAML Login on the Controller stopped working after Controller AMI migration?
+------------------------------------------------------------------------------------------
+
+In our latest AMI, we have made the EntityID checks more stricter. It is possible that your EntityID in your IdP settings might be slightly different. Please login to the controller and go to Settings/Controller/SAMLLogin and click on the "SP Metadata" button - that should open a new tab on your browser. Please make sure that the EntityId in the IdP's SAML application is configured to be exactly the string between the quotes including any slashes at the end. (For example if your entityID="https://mysite.example.com/test/, use the entire string: https://mysite.example.com/test/ in your IdP for EntityId)
