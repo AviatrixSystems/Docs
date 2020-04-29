@@ -91,3 +91,9 @@ Can I configure DPD interval settings?
 -----------------------------------------
 
 At this time, we allow DPD settings (such as delay, retry and maxfail) to be configured only through REST API. Please check out the `REST API documentation <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_.
+
+
+Why is my Cisco Router rekeying the IPSec session sooner than the usual?
+---------------------------------------------------------------------------
+
+It is possible that your Cisco router is using data transferred as a lifetime. If so, you can use this command "set security-association lifetime kilobytes disable" to disable using the data transferred as a lifetime metric.
