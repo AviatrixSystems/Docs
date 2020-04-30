@@ -58,6 +58,10 @@ For cross region communication, multiple Transit Gateways can also be interconne
 
 Another important advantage of using Aviatrix Transit is that all communications are encrypted by default providing additional levels of security.  Azure does not provide any native encryption across the Microsoft Backbone and depends upon third party NVAs to provide this functionality should customers require it.
 
+The Aviatrix controller also has the ability to orchestrate native VNET peering for Azure VNETs should customers not wish to deploy gateways within spoke VNETs.  While customers will lose the encryption and visibility benefits across these links, all appropriate UDRs will be orchestrated to facilitate transitive communication as desired.  It is also important to note that certain native limitations may apply as to the number of peerings allowed as well as restricitions to overlapping IP space when native peering is leveraged.
+
+|native_peering|
+
 Why do I need Aviatrix Transit for Azure?
 ------------------------------------------------------
 
@@ -82,7 +86,6 @@ How does it work?
 -------------------------------------------------------------------------------------------------
 
 Aviatrix Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network.
-
 
 
 How do I deploy it?
@@ -112,5 +115,10 @@ The Aviatrix Controller is available in the Azure Marketplace.
 
 .. |S2SPeer| image:: nextgentransit_for_azure_media/S2SPeer.png
    :scale: 30%
+
+.. |native_peering| image:: nextgentransit_for_azure_media/native-peering-updated-resized-2.png
+   :scale: 30% 
+   
+
 
 .. disqus::
