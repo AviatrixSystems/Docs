@@ -34,9 +34,7 @@ This guide helps you configure an encrypted peering. For cluster peering, refer 
 AWS VPC Peering
 """"""""""""""""""
 
-The Aviatrix Controller integrates native AWS `VPC Peering <https://www.aviatrix.com/learning/cloud-routing-networking/aws-vpc-peering/>`_ for both intra region peering and inter 
-region peering, where it is available. Cross account peering is also supported. 
-We have made it simple for AWS VPC Peering by integrating route table programming and integrating requester and acceptor into one step. You can also decide which route table to participate in the AWS VPC Peering. 
+The Aviatrix Controller integrates native AWS `VPC Peering <https://www.aviatrix.com/learning/cloud-routing-networking/aws-vpc-peering/>`_ for both intra region peering and inter region peering, where it is available. Cross account peering is also supported. We have made it simple for AWS VPC Peering by integrating route table programming and integrating requester and acceptor into one step. You can also decide which route table to participate in the AWS VPC Peering. 
 
 To Configure:
 
@@ -46,6 +44,19 @@ To Configure:
  2. Select the account, region and VPC. 
  3. You can choose to build the peering for the entire VPC or select individual route tables. 
  4. Click OK.
+
+ Azure VNET Peering
+""""""""""""""""""
+
+The Aviatrix Controller integrates native Azure `VNET Peering <https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview/>`_ for both intra region peering and inter region peering. Cross subscription peering is also supported as long as both subscriptions are onboarded to the controller.
+
+To Configure:
+
+::
+
+ 1. Go to Peering -> Azure Peering -> New Peering.
+ 2. Select the subscription, region and VNET. 
+ 3. Click OK.
 
 
 MultiCloud Peering
