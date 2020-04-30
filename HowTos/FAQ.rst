@@ -289,11 +289,8 @@ What is the support model?
 
 
 For support, send email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers with 24x7 support.
-To request a
-feature, click Make a wish button at the bottom of each page.
-
-
+`support@aviatrix.com <mailto:support@aviatrix.com>`__ or your respective Account Executive.
+We also offer `Platinum <https://aviatrix.com/support/>`__ customers with 24x7 support.
 
 Logging and Monitoring
 ======================
@@ -372,7 +369,7 @@ Phase 2 DH Groups            2, 1, 5, 14, 15, 16, 17, 18
 Phase 2 Encryption           AES-256-CBC, AES-192-CBC, AES-128-CBC, AES-128-GCM-64, AES-128-GCM-96, AES-128-GCM-128, 3DES
 =======================      ==========
 
-SSL VPN encryption algorithm is AES-256-CBC. 
+SSL VPN encryption algorithm set on the server is AES-256-CBC. For OpenVPN clients running a version 2.3 or lower the negotiated algorithm would be AES-256-CBC. For OpenVPN clients running 2.4 or higher, the negotiated algorithm would be AES-256-GCM due to NCP(Negotiable Crypto Parameters)
 
 SSL VPN authentication algorithm is SHA512.
 

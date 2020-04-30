@@ -36,12 +36,18 @@ Why are IAM policies important?
 
 During the launch of your Aviatrix Controller, two IAM roles(aviatrix-role-ec2 & aviatrix-role-app) are created and two associated IAM policies(aviatrix-assume-role-policy & aviatrix-app-policy) are also created. These roles and policies allow the Controller to use AWS APIs to launch gateway instances, create new route entries and build networks and are hence very important to keeping your network operational. Please check out `IAM Policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, `Requirements <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_, `Customization <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ and `IAM for Secondary Access Accounts <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_. After a software upgrade, please update your IAM policies using the instructions in the above links - these updates have to be done for all accounts that have the Controller and the gateway. 
 
-We expect the following:
+We expect all of your accounts to have the following:
+  * Role named "aviatrix-role-ec2" with policy named "aviatrix-assume-role-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_, unless it is `customized <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html>`_ carefully.
+  * Role named "aviatrix-role-app" with an IAM policy named "aviatrix-app-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_, unless it is customized carefully
+  * If you have secondary accounts, the "aviatrix-role-app" in each and every one of the secondary accounts should be trusting the Controller's AWS account number via the "Trust Relationship" tab on the role in addition to trusting it's own account number.
+  * In the case of the primary account(which hosts the controller), "aviatrix-role-app" role should trust it's own account number.
+  * All of your Aviatrix Controllers and Gateways need to have "aviatrix-role-ec2" attached
 
-  * All of your Aviatrix Controllers and Gateways to have "aviatrix-role-ec2" attached
-  * Your account to have an IAM role named "aviatrix-role-ec2", with an IAM policy named "aviatrix-assume-role-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_, unless it is customized carefully
-  * Your account to have another IAM role named "aviatrix-role-app", with an IAM policy named "aviatrix-app-policy" attached to it. The policy should be identical to the `specified policy requirements <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_, unless it is customized carefully
-  * If you have secondary accounts, the above roles in all of the secondary  accounts should be trusting the Controller's AWS account number via the "Trust Relationship" tab on the role.
+You can follow one of the ways described below to update your IAM policies:
+  * If you are running 5.1 or later releases, you can go to "Accounts -> Access Accounts -> Select an account -> Click the 3 dots skewer and click on **Update policy**"
+  * You can copy the latest IAM policies from this `link <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_ and paste it into your IAM policies through your AWS Console (Services/IAM/Dashboard/Policies/search for **aviatrix-app-policy**/Click on **aviatrix-app-policy**/Permissions/EditPolicy/JSON/delete all text and paste the policies you copied from the link above/ReviewPolicies/SaveChanges"
+  * Detailed `instructions to create roles/policies <https://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`_
+  * Instructions to `create roles/policies via terraform <https://docs.aviatrix.com/Support/support_center_terraform.html#how-can-i-create-my-iam-roles-and-policies-in-aws-using-terraform>`_
 
 
 
@@ -311,7 +317,58 @@ Please pay attention that the token expires in 15 minutes. If you repeatedly get
 How can I secure my controller?
 -----------------------------------
 
-Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller.
+Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller. We release periodic updates of our software to address any known issues, please do keep your Aviatrix System up to date by following these `upgrade instructions<https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. If you have any further questions or doubts, please reach out to our technical support by creating a new ticketby sending a new email to support@aviatrix.com or by registering at https://aviatrix.zendesk.com.
+
+Upgrading beyond 5.3 with old Controller Image (Ubuntu 14.04)
+-----------------------------------
+
+As Ubuntu 14.04 has reached its' end of life, existing Controllers that are running this image will be unable to upgrade past the latest release of 5.3.
+Customers with Controllers running this image will need to first migrate their Controller to a newer image if they are interested in upgrading beyond 5.3. 
+The following instructions detail the migration and upgrade process for Controllers in AWS and Azure. 
+The workflow for a similar end-result in GCP is also detailed at the end of this document:
+
+AWS:
+
+There are currently two ways to migrate Controllers in AWS:
+1) Manually
+2) Through the Controller Migration Feature (available in Release 5.3)
+
+Since you will need to reach 5.3 prior to upgrading to 5.4, it is recommended to perform the migration through the Controller Migration Feature as per option 2. 
+
+1) If you are interested in migrating manually, please refer to our migration documentation: 
+https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html
+
+2) One-Click Controller Migration:
+https://docs.aviatrix.com/HowTos/controller_migration.html
+
+Prerequisites: 
+1. AWS or AWS-Gov
+2. Controller Backup must be enabled.
+3. Controller HA MUST be disabled. 
+4. Ensure no configuration changes are made while the migration is taking place. 
+
+1. This feature can be accessed by logging in to the Controller UI and then navigating to Settings > Maintenance > Migration. 
+2. When you are ready to perform the migration, click "Migrate" and wait for the process to complete.
+3. Once the Controller has been migrated, complete the upgrade to 5.4 normally as per our Upgrade Guide: https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade
+
+Azure: 
+At the time of this writing Azure Controller migrations can only be performed manually. 
+Ensure that any Controller HA has been disabled. 
+
+1. Create a New Controller in Azure: https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-controller-vm-from-azure-marketplace-portal
+2. On the Old Controller, ensure you are on the latest version of 5.3. Otherwise, follow our Upgrade Guide to reach 5.3:  https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade
+	a. If you are on a version <5.3, you will need to follow the normal incremental upgrade path to reach 5.3-- doing so will automatically place you at the latest version.
+	b. If you are already on 5.3, but have not reached the latest version, log in to the Controller UI and then navigate to Settings > Maintenance > Upgrade > Upgrade to a Custom Release > Specify "5.3" > Dry Run > Click "Upgrade to a custom release". Make sure to complete the Pre-Upgrade Checklist found in the above link before upgrading.
+3. IMPORTANT: When the New Controller initializes, configure the admin email address and password then continue with initial setup until you reach the prompt to click "Run" and install the software. Instead of leaving the Software Version field at the default, "latest", specify "5.3" to upgrade the new Controller to the latest version of 5.3. Otherwise the new Controller will upgrade to 5.4 and you will be unable to restore your backup file.
+4. On the Old Controller, navigate to Settings > Maintenance > Backup & Restore > and create a Backup.
+5. Stop the Old Controller.
+6. On the New Controller, log in to the Controller UI, then navigate to Settings > Maintenance > Backup & Restore > Restore > Click Restore (with latest backed-up file)
+7. If you want to keep the Old Controller Public IP, detach it from the Old Controller and reattach to the New Controller. Otherwise perform Troubleshoot > Diagnostics > Network > Controller IP Migration > Migrate.
+8. Complete the upgrade to 5.4 on the New Controller normally, as per our Upgrade Guide: https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade
+
+GCP:
+For Controllers in GCP, please reference the following documentation: 
+https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-gcp
 
 How to use self-defined KMS key for default EBS encryption of gateway disk in the region?
 -----------------------------------
@@ -374,3 +431,9 @@ Please use next steps to add aviatrix-role-app to your self-defined KMS key:
    :scale: 70%
 .. |kms-customer-managed-kms-key-users| image:: kms-key-managed-img/kms-customer-managed-kms-key-users.png
    :scale: 70%
+
+
+Why did my SAML Login on the Controller stopped working after Controller AMI migration?
+------------------------------------------------------------------------------------------
+
+In our latest AMI, we have made the EntityID checks more stricter. It is possible that your EntityID in your IdP settings might be slightly different. Please login to the controller and go to Settings/Controller/SAMLLogin and click on the "SP Metadata" button - that should open a new tab on your browser and display some data, including your EntityId. Please make sure that the EntityId in the IdP's SAML application is configured to be exactly as the string between the quotes including any slashes at the end as shown by the controller. (For example if your entityID="https://mysite.example.com/test/, use the entire string: https://mysite.example.com/test/ in your IdP for EntityId)

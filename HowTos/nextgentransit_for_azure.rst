@@ -59,7 +59,6 @@ For cross region communication, multiple Transit Gateways can also be interconne
 Another important advantage of using Aviatrix Transit is that all communications are encrypted by default providing additional levels of security.  Azure does not provide any native encryption across the Microsoft Backbone and depends upon third party NVAs to provide this functionality should customers require it.
 
 Why do I need Aviatrix Transit for Azure?
-
 ------------------------------------------------------
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit Hub VNet. Everything else (the Spoke VNet to on-prem traffic) is routed through the Transit Hub VNet.

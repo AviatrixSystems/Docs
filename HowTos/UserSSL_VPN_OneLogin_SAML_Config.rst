@@ -77,7 +77,7 @@ We will use the string you select for the SAML application name to generate a UR
 
    |imageOLNewAppSearch|
 
-#. Select **SAML Test Connector (IdP)**
+#. Select **SAML Test Connector (Advanced)**
 #. Enter the Configuration values and click **Save**
 
    |imageOLNewAppStep1|
@@ -92,7 +92,7 @@ We will use the string you select for the SAML application name to generate a UR
    +====================+======================================================+
    | RelayState         | Blank                                                |
    +--------------------+------------------------------------------------------+
-   | Audience           | **SP_ACS_URL**                                       |
+   | Audience(Entity ID)| **SP Entity ID**                                     |
    +--------------------+------------------------------------------------------+
    | Recipient          | **SP_ACS_URL**                                       |
    +--------------------+------------------------------------------------------+
@@ -103,6 +103,41 @@ We will use the string you select for the SAML application name to generate a UR
    +--------------------+------------------------------------------------------+
    | Single Logout URL  | Blank                                                |
    +--------------------+------------------------------------------------------+
+   | Login URL          | **SP Login(Test) URL**                               |
+   +--------------------+------------------------------------------------------+
+   | SAML not valid     | 3 (default)                                          |
+   | before             |                                                      |
+   +--------------------+------------------------------------------------------+
+   | SAML not valid     | 3 (default)                                          |
+   | on or after        |                                                      |
+   +--------------------+------------------------------------------------------+
+   | SAML initiator     | Service Provider                                     |
+   +--------------------+------------------------------------------------------+
+   | SAML nameID format | Transient                                            |
+   +--------------------+------------------------------------------------------+
+   | SAML issuer type   | Specific (default)                                   |
+   +--------------------+------------------------------------------------------+
+   | SAML signature     | Assertion                                            |
+   | element            |                                                      |
+   +--------------------+------------------------------------------------------+
+   | Encrypt assertion  | Unchecked (default)                                  |
+   +--------------------+------------------------------------------------------+
+   | SAML encryption    | TRIPLEDES-CBC (default)                              |
+   | method             |                                                      |
+   +--------------------+------------------------------------------------------+
+   | Sign SLO Response  | Unchecked (default)                                  |
+   +--------------------+------------------------------------------------------+
+   | SAML               | 1440 (default)                                       |
+   | sessionNotOnOrAfter|                                                      |
+   +--------------------+------------------------------------------------------+
+   | Generate           | Unchecked (default)                                  |
+   | AttributeValue tag |                                                      |
+   | for empty values   |                                                      |
+   +--------------------+------------------------------------------------------+
+   | Sign SLO Request   | Unchecked (default)                                  |
+   +--------------------+------------------------------------------------------+
+   
+   |imageConfiguration|
 
 #. Click **Save**
 #. Click on the **Parameters** tab
@@ -127,10 +162,13 @@ We will use the string you select for the SAML application name to generate a UR
    +====================+================+=====================================+
    | Profile            | (User Defined) | Include in SAML assertion           |
    +--------------------+----------------+-------------------------------------+
+ 
 
 #. Click **Save**
-#. Click on **SSO** tab
-#. Note the **Issuer URL** for the next step.
+#. Click on **More actions** dropdown
+#. Copy the **Metadata URL** from it
+   
+   |imageOLSSOTab| 
    
 .. _onelogin_saml_endpoint:
 
@@ -150,7 +188,7 @@ Aviatrix Controller SAML Endpoint
    +----------------------------+-----------------------------------------+
    | IPD Metadata Type          | URL                                     |
    +----------------------------+-----------------------------------------+
-   | IDP Metadata Text/URL      | Paste in the **Issuer URL** obtained    |
+   | IDP Metadata Text/URL      | Paste in the **Metadata URL** obtained  |
    |                            | from the OneLogin app.                  |
    +----------------------------+-----------------------------------------+
    | Entity ID                  | Select `Hostname`                       |
@@ -202,3 +240,5 @@ Validate
 .. |imageAvtxTestSAML| image:: onelogin_saml_media/avtx_saml_endpoint_test.png
 .. |imageAvtxSAMLEndpoint| image:: onelogin_saml_media/avtx_saml_endpoint.png
 .. |imageOLAddAppsMenu| image:: onelogin_saml_media/onelogin_select_add_apps.png
+.. |imageConfiguration| image:: onelogin_saml_media/onelogin_configuration.png
+.. |imageOLSSOTab| image:: onelogin_saml_media/onelogin_issuer_url.png\

@@ -71,7 +71,7 @@ How can I debug IAM related issues? (IAM Debug Playbook)
 * If you are using `"AWS Organizations" <https://aws.amazon.com/organizations/>`_ to centrally manage & govern your policies across accounts, please follow the following to check on the policies to make sure you have the right permissions.
 
   * Check "Service Controller Policies" for "Root": Go to "AWS Console > AWS Organizations > Organize Account" and click on "Root" on the left panel, followed by a click on "Service Control Policies" on the right panel. Check all attached "Service Control Policies".
-  * Check "Service Controller Policies" for "Organization Unit": Go to "AWS Console > AWS Organizations > Organize Account > Find" and click on the "Oranization Unit" (which the account belongs to) on the left panel > Click on "Service control policies" on the right panel. Check all attached "Service Control Policies"
+  * Check "Service Controller Policies" for "Organization Unit": Go to "AWS Console > AWS Organizations > Organize Account > Find" and click on the "Organization Unit" (which the account belongs to) on the left panel > Click on "Service control policies" on the right panel. Check all attached "Service Control Policies"
   * Check "Service Controller Policies" for the account: Go to "AWS Console > AWS Organizations > Account > Find" and click on the account from the list. Click on "Service Control Policies" on the right panel. Check all attached "Service Control Policies".
 * Go to "Aviatrix Console > Settings > Advanced > AWS IAM Policy Update > Update Account IAM Policy" and make sure to pick one account at a time and click on "Check" - if the "Status=Up-to-date" then you do not need any updates, else you would have to `update the polices <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_. Repeat this check for all accounts that were added to Aviatrix Controller
 * Go to "Aviatrix Console > Troubleshoot > Diagnostics > Cloud > Account Diagnostics" and click on "OK" - this will identify any IAM issues you might have
@@ -90,7 +90,7 @@ How can I debug IAM related issues? (IAM Debug Playbook)
 Why do I get an email alert about my gateway with "Cloud Message Queue Failure" message?
 -----------------------------------------------------------------------------------------------
 
-Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS, either because it cannot resolve/reach AWS SQS or does not have the permissions to retrieve the messages from AWS SQS(i.e. dns, network connectivity, system issues, IAM permissions). Please check the following:
+Typically, this message is sent when a gateway is not able to access the messages from the controller via AWS' SQS, either because it cannot resolve/reach AWS SQS or does not have the permissions to retrieve the messages from AWS SQS(i.e. DNS, network connectivity, system issues, IAM permissions). Please check the following:
 
   * Please run `gateway diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ by going to "Controller/Troubleshoot/Diagnostics/Gateway" and pick the gateway and run diagnostics test and "submit" them to us. You can also review the results by referring to the `service descriptions in diagnostics <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`_.
   * Please make sure that the DNS can resolve public FQDN's and not just private FQDN's
@@ -101,10 +101,10 @@ Typically, this message is sent when a gateway is not able to access the message
     * Check that the policies attached to this role are correct by going to "Controller/Accounts/AccountAudit" and run `account audit <https://docs.aviatrix.com/HowTos/account_audit.html>`_ on the account that this gateway belongs to. If needed, please update the policies - To update IAM policy to latest please got to "Controller/Accounts/Access Accounts/SelectAccount Name/click 3 dots/UpdatePolicy" and click OK.
     * Go to AWS Console > IAM > Roles > click on aviatrix-role-ec2 > check that aviatrix-assume-role-policy policy is attached > click on the policy name > {} JSON > it should be like https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt
     * Go to AWS Console > IAM > Roles > click on aviatrix-role-app > check that  aviatrix-app-policy policy is attached > click on the policy name > {} JSON > it should be like https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt
-    * If the gateway is not on the same account as the Controller, please makse sure that this access account has trust relationship to the primary account (the Controller’s AWS account).
-  * Please make sure that both your contoller and gateway have an EIP associated and not just a PublicIP/PrivateIP
+    * If the gateway is not on the same account as the Controller, please make sure that this access account has trust relationship to the primary account (the Controller’s AWS account). The role "aviatrix-role-app" should be trusting it's own account and the controller's account. In the case of the primary account(which hosts the controller), it should trust it's own account.
+  * Please make sure that both your controller and gateway have an EIP associated and not just a PublicIP/PrivateIP
   * Please note that this check is done once a day - after you address the issues, please wait for 24 hours from the previous alert to see if you will receive another alert
-  * Sometimes, this could be a transient issue which will resolve due to temporary dns/network failures
+  * Sometimes, this could be a transient issue which will resolve due to temporary DNS/network failures
   * If you are not able to find and address the issue, please `upload the tracelogs <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_ for this gateway and send an email to support@aviatrix.com to open a new ticket.
 
 
@@ -118,9 +118,9 @@ Pre-deployment checklist:
   * Note that AWS US-EAST region does not support t2.large. Pick t3.large instead to avoid deployment failure.
   
 Launch from CloudFormation template:
-  * Copy the Aviatrix CloudFormation template URL from your AWS commerical cloud account as follows:
+  * Copy the Aviatrix CloudFormation template URL from your AWS commercial cloud account as follows:
   
-    * The CloudFormation links (Metered or BYOL) listed in https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products should prompt you to login to your AWS commerical account and bring you into the CloudFormation-Create-stack UI.
+    * The CloudFormation links (Metered or BYOL) listed in https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products should prompt you to login to your AWS commercial account and bring you into the CloudFormation-Create-stack UI.
     * Look under the Amazon-S3-URL field for the actual Metered/BYOL template URL
     * Copy the URL
   * Launch the CloudFormation template by following these steps:
@@ -134,7 +134,7 @@ Launch from EC2/Instances/Launch Instance/AWS Marketplace manually:
   * Launch the controller by picking an Aviatrix image under EC2/Instances/Launch Instance/AWS Marketplace.
   
 Other notes:
-  * Flightpath with AWS Govcloud does not work unless a Commerical AWS account is also registered on the controller. Register a commerical AWS cloud account with the controller:
+  * Flightpath with AWS Govcloud does not work unless a Commercial AWS account is also registered on the controller. Register a commercial AWS cloud account with the controller:
   
     * Goto Accounts/Access Accounts/Add Account
     * Pick AWS and uncheck IAM role-based checkbox

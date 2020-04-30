@@ -48,7 +48,7 @@ a.  Launch from marketplace, select the license type and click Create
 
 #.  At Basics header, create new Resource Group titled "aviatrix" , virtual machine name can be "aviatrixController". 
     For instance size we recommend at least 8GB of RAM so B2ms should be sufficient. Next enter a username, password and
-    Resource group, click OK.
+    Resource group, click OK. Please do NOT use 'ubuntu' as username if you use password as authentication type.
 
     |Azure_Basics|
 

@@ -27,6 +27,8 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`REST APIs`
 * :ref:`Downloads`
 * :ref:`Release Notes`
+* :ref:`Security Bulletin`
+* :ref:`CoPilot`
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
 * :ref:`Support Center`
@@ -107,7 +109,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Encrypted Transit Network
+   :caption: Global Transit Network
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
@@ -214,6 +216,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/EncrOverExpRoute
    HowTos/connect_overlap_cidrs
    HowTos/connect_overlap_vpc_via_VGW
+   HowTos/periodic_ping
+   
 
 .. _OpenVPN:
 
@@ -224,6 +228,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/uservpn
    HowTos/openvpn_faq
    HowTos/openvpn_features
+   HowTos/openvpn_design_considerations
    HowTos/Cloud_Networking_Ref_Des
    HowTos/GeoVPN
    HowTos/DNSVPN
@@ -243,8 +248,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/user_accelerator
    HowTos/ipv6_multivpc_vpn
    HowTos/uservpn-TGW
-
-
+   HowTos/Setup_Okta_SAML_Profile_Attribute
+   HowTos/Setup_PingOne_SAML_Profile_Attribute
 
 
 .. _UsefulTools:
@@ -330,6 +335,27 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/changelog
    HowTos/field_notices
 
+.. _Security Bulletin:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Security Bulletin
+
+   HowTos/security_bulletin_article
+   HowTos/security_bulletin_faq
+
+.. _CoPilot:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: CoPilot
+
+   HowTos/copilot_overview
+   HowTos/copilot_getting_started
+   HowTos/copilot_reference_guide.rst
+   HowTos/copilot_faq
+   HowTos/copilot_release_notes
+
 .. _Tech Notes:
 
 .. toctree::
@@ -347,6 +373,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_overlapping_subnets
    HowTos/s2c_for_publicIP
    HowTos/transit_for_publicIP
+   HowTos/transit_solution_activemesh_spoke_snat_dnat_rfc1918
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
    HowTos/spoke_skip_rfc1918
@@ -368,8 +395,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/activemesh_migration
    HowTos/openvpn_fqdn
    HowTos/HowTo_Setup_SAML_with_G_SUITE_ORG
-   HowTos/Setup_Okta_SAML_Profile_Attribute
-
+   
 .. _Good To Know:
 
 .. toctree::
@@ -407,6 +433,7 @@ While all content is searchable, the site is organized into the following sectio
    Support/support_center_useful_tools
    Support/support_center_cloudn
    Support/support_center_aviatrix_vpn_client
+   Support/support_center_firenet
 
 .. _IPmotion:
 

@@ -17,7 +17,7 @@ to groups defined by the admin of the Controller.
 Aviatrix RBAC aims to achieve two objectives:
 
   - **Granular Access Control** A Controller administrator in a specific permission group can perform certain tasks for a subset of Aviatrix `Access Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. For example, an Administrative user can be limited to perform on his own AWS account VPC attachment function. 
-  - **Self Service** A Controller administrator in a specific permission group can onboard its own cloud accounts on the Controller and perform tasks. For example, a Controller administrator can be allowed to onboard his own AWS account on the Controller and create a group of users for different tasks on this access account. 
+  - **Self Service** A Controller administrator in a specific permission group can onboard its own cloud accounts on the Controller and perform tasks. For example, a Controller administrator can be allowed to onboard his own AWS account on the Controller and create a group of users for different tasks on this access account. Another use case is for developers to have a read_only login permission to troubleshoot network connectivity issues. 
 
 How does RBAC work?
 ----------------------
@@ -30,7 +30,7 @@ RBAC Deployment Example 1
 ---------------------------
 
 In this example, the Controller admin creates a user Bob who has full responsibility to access account account-A and account-B. The Controller
-admin also creates a user Alice who has full responsibility to access account-B and account-C.
+admin also creates a user Alice who has full responsibility to access account-C and account-D.
 
 |rbac_example_1|
 

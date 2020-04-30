@@ -1,6 +1,6 @@
 ﻿.. meta::
    :description: Aviatrix Support Center
-   :keywords: Aviatrix, Support, Support Center, openvpn, saml, aviatrix vpn client, .ovpn file, okta token authentication, openvpn profiles, tunnelblick, ldap, csv upload
+   :keywords: Aviatrix, Support, Support Center, openvpn, saml, aviatrix vpn client, .ovpn file, okta token authentication, openvpn profiles, tunnelblick, ldap, csv upload, QuotaExceededException
 
 ===========================================================================
 OpenVPN Gateway
@@ -391,3 +391,31 @@ For Full tunnel, by default, we push the DNS NameServer from the openvpn gateway
 For split tunnel, by default, we do not push a DNS NameServer from the Aviatrix OpenVPN Gateway. But, you can configure it at “Controller/OpenVPN/EditConfig/Select-elb-gateway/ModifySplitTunnel/Nameserver” - this will override the local setting on your clients - only if your clients allow you to do that. On Aviatrix VPN Client, you can check at “Settings/AllowOverrideofManuallySetDNS”
 
 
+What can I do when I saw the email QuotaExceededException while creating a VPN user or re-issuing a VPN user certificate?
+-------------------------------------------------------------------------------------------------------------------------
+
+This is a known issue with our email service provider office365 that is integrated with Controller 5.2
+and earlier releases.
+From time to time, we will run into quota problem.
+There are three solutions:
+
+#. You can use your own SMTP server.
+   Change controller's default SMTP setting and point to your preferred SMTP server
+   for sending out email: Controller/Settings/Controller/Email/Change email notification source.
+#. For an immediate solution, download the certificate and send it out manually.
+   |download-ovpn|
+#. Upgrade to Controller 5.3 or later release where we use a different email service provider with no quota limit.
+
+
+.. |download-ovpn| image:: email-quota/download-ovpn-manually.png
+   :scale: 70%
+
+
+How can I improve the performance of my gateways and clients?
+---------------------------------------------------------------
+
+Our engineering team has tuned the performance of our openvpn features on the gateways and the clients. Please do the following to pick up these changes 
+
+* Please `upgrade the VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_ to v2.8.2 or above
+* Please upgrade your Controller to the latest 5.4 release (5.4.1140)
+* Please replace all of your Aviatrix OpenVPN Gateways using Controller/Troubleshoot/Diagnostics/Gateway/ReplaceGateway

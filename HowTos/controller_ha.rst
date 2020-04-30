@@ -21,7 +21,7 @@ Overview
 Aviatrix Controller HA in AWS leverages an auto scaling group and a Lambda function to perform monitoring the health of the current Controller, 
 launching a new controller and restoring the configuration when the active controller instance become unreachable.
 
-When a new controller is launched, the existing controller is terminated and its EIP is associated to the newly launched controller.  Existing configuration is restored, resulting in a seamless experience when failover happens.
+When a new controller is launched, the existing controller is terminated, its EIP is associated to the newly launched controller, and the private IP is created in the new controller subnet.  Existing configuration is restored, resulting in a seamless experience when failover happens.
 
 Prerequisites
 -------------
@@ -66,9 +66,9 @@ Launch CloudFormation Stack
    | Enter VPC of existing         | Select the VPC in this region where the  |
    | controller instance.          | AVX Controller is installed.             |
    +-------------------------------+------------------------------------------+
-   | Enter one or more subnets in  | Select the subnet where the Controller   |
-   | different Availability zones  | is installed and optionally one          |
-   | within that VPC.              | additional subnet for redundancy.        |
+   | Enter one or more subnets in  | Select a PUBLIC subnet of the controller |
+   | different Availability zones  | VPC. Optionally one additional subnet for|
+   | within that VPC.              | redundancy.                              |
    +-------------------------------+------------------------------------------+
    | Enter Name tag of the existing| Enter the **Name** tag for the existing  |
    | Aviatrix Controller instance. | Controller EC2 instance.                 |
@@ -103,13 +103,16 @@ Launch CloudFormation Stack
 
 .. tip::
    Additional instructions and code are available `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/>`__.
+   
+ .. note::
+   During spinning up the HA after the current active controller stops or being terminated by accident, you won't see a new controller for a few minutes on AWS console, it is expected.
      
 Steps to Disable Controller HA
 ------------------------------
 
 You can disable Controller HA by deleting the Controller HA CloudFormation stack. 
 
-Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack. 
+Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack. **Please be careful,** and delete the cloudformation stack associated with the controller HA - and do not delete your controller launch cloudformation stack.
 
 
 FAQ

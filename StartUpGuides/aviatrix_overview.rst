@@ -11,13 +11,17 @@ What Do We Do?
 ================
 
 Aviatrix is a cloud native networking company. Unlike any other networking vendors, the 
-Aviatrix software platform understands the cloud provider's native construct. This allows us to program the native constructs and integrate them into our software
-to provide you with turn key solutions. 
+Aviatrix software platform understands the cloud provider's native constructs. This allows us to leverage 
+and control the native constructs directly using the cloud provider's APIs extending their capabilities and 
+integrating them into our software to provide organizations with turn key solutions accelerating their cloud journey. 
 
 |aviatrix_overview|
 
-We focus on solving networking problems in use cases relevant to public clouds. 
-These use cases are shown as below: 
+We focus on solving common networking problems faced by enterprises on their public cloud journey while providing 
+a common control plane that provides multi-account/multi-cloud automation, advanced transit services, advanced security services, advanced troubleshooting capabilities,
+and unparalleled visibility that the enterprise needs.
+
+Some common enterprise use cases are shown below: 
 
 - Datacenter to cloud (`AVX Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
 - Scalable Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
@@ -47,9 +51,9 @@ The complexity of the cloud networking comes from the following areas and they o
 1. Unprecedented Scale
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  - Cloud networks (VPC/VNet) are many orders of magnitude in quantity than datacenters, driven by business billing/accounting and isolation.
-  - Multi accounts structure is a new element for networking and is significantly increasing the number of cloud networks.
-  - Multi cloud is happening by industry verticals and bleed cross all sectors due to the SaaS inter-connect effect. 
+  - Cloud networks (VPC/VNET/VCNs) are many orders of magnitude in quantity than datacenters, driven by business billing/accounting and variable isolation requirements.
+  - Multiple account ownership is a new concept for networking significantly increasing the number of cloud networks.
+  - Multi-cloud strategies are the new industry norm enterprise will eventually require workloads spread across multiple cloud providers where they run best.
 
 2. Security
 ^^^^^^^^^^^^^^^^
@@ -65,13 +69,13 @@ The complexity of the cloud networking comes from the following areas and they o
 3. Unprecedented Performance 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  - As more data traverses among islands of networks, performance requirement is catching up. 
+  - As more enterprise data and workloads traverse cloud networks, the enterprise needs to account for performance requirements in their cloud architecture.
  
-4. Skill Gap
+4. Skills Gap
 ^^^^^^^^^^^^^
 
-  - Each cloud offers completely different APIS, semantics and implementation in networking.
-  - Business cannot invest equally in time and effort to multiple cloud providers. 
+  - Each cloud offers completely different terminology, APIS, semantics, and implementation details to provide networking.
+  - Businesses cannot invest equally in time and effort to achieve skill parity across multiple cloud providers making it difficult to expand and pivot strategy. 
   - New generation of operational engineers are short in sophisticated networking skills. Older networking engineers are short in API skills. 
 
 5. Interoperability
@@ -146,11 +150,11 @@ The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com
 Datacenter to Cloud: Aviatrix Next-Gen Transit Network 
 =========================================================
 
-Aviatrix Next-Gen Transit Network solution solves many problems when connecting datacenters to a growing number of VPCs.
+Aviatrix AVX Transit Network solution solves many problems when connecting datacenters to a growing number of VPCs.
 
 These problems are listed below:
 
- a. **AWS Transit Gateway** AWS just released Transit Gateway (TGW), I need to migrate my current CSR based Transit VPC solution.
+ a. **AWS Transit Gateway** AWS released Transit Gateway (TGW), I need to migrate my current CSR based Transit VPC solution.
  #. **Transit Solution for Azure** We have multiple Azure VNETs now, we need to form a transit network and connect them to on-prem and to AWS Transit network.
  #. **Change Control** Each time a new VPC is stood up, a change control process has to take place to modify the edge router for Direct Connect or IPSEC over Internet. This is not agile and the risk of errors in configuration is not acceptable.
  #. **BGP** The CSR based Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to the outside.  

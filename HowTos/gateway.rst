@@ -149,6 +149,8 @@ with your VPN virtual IP address. On the other hand, if your desktop is on a LAN
 your VPN virtual IP address might conflict with your LAN address. In this case, change the VPN CIDR Block to a different address range,
 for example, 10.10.0.0/24.
 
+Note a /24 VPN CIDR block supports about 64 simultaneous VPN clients. This is because for each connected VPN client, VPN gateways reserves 3 virtual addresses. For larger number of clients per VPN gateway, consider making the VPN CIDR block to a /22 or /20 network. 
+
 MFA Authentication
 =====================
 

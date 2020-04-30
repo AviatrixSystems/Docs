@@ -405,4 +405,9 @@ OpenVPN® is a registered trademark of OpenVPN Inc.
 .. |assign_user_to_profile| image:: FAQ_media/assign_user_to_profile.png
    :scale: 30%
 
+.. |windows_client| image:: openvpn_faq_media/windows_client.png
+   :scale: 30%
+
+.. |linux_client| image:: openvpn_faq_media/linux_client.png
+   :scale: 30%
 .. disqus::

@@ -75,3 +75,52 @@ How can I use a S2C with a simple NAT to public IP?
 -----------------------------------------------------------------------------------------------------
 
 If you are planning to NAT your local CIDR behind the Aviatrix Gateway, make sure that you enable SNAT on the gateway (Controller/Gateway/Edit/SourceNAT) and on your S2C configuration set your local subnet to the EIP of the Aviatrix Gateway(/32), so that you do not advertise the real local CIDR to the remote gateway.
+
+
+What are the DPD settings for Aviatrix Site2Cloud Settings?
+-----------------------------------------------------------------------------------------------------
+
+The default DPD settings for site2cloud connections on Aviatrix Gateways is 3 retries at 10 second intervals. If the Aviatrix gateway does not receive 3 consecutive DPD's, the IPSec connection will be terminated and a new Phase1 negotiation is attempted. This is to make sure that the tunnel is always up and active.
+
+If you want to keep sending periodic ping packets to keep the tunnel up due to differences in dpd's with the remote edge device, please look to the `periodic ping feature <https://docs.aviatrix.com/HowTos/periodic_ping.html>`_.
+
+You can also disable dpd's on the Gateway for a site2cloud tunnel - please do remember that this will report the tunnel to be up always and you might not see a `tunnel down notification <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_  anymore if you turn off DPD's. `Instructions to turn off DPD's <https://docs.aviatrix.com/HowTos/site2cloud.html#dead-peer-detection>`_.
+
+
+Can I configure DPD interval settings?
+-----------------------------------------
+
+At this time, we allow DPD settings (such as delay, retry and maxfail) to be configured only through REST API. Please check out the `REST API documentation <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_.
+
+
+Why is my Cisco Router rekeying the IPSec session sooner than usual?
+---------------------------------------------------------------------------
+
+It is possible that your `Cisco router <https://www.cisco.com/c/en/us/td/docs/ios/sec_secure_connectivity/configuration/guide/convert/sec_ike_for_ipsec_vpns_15_1_book/sec_key_exch_ipsec.html>`_ is using data transferred as a lifetime metric. If so, you can use this command "set security-association lifetime kilobytes disable" to disable using the data transferred as a lifetime metric. When in doubt, please refer to our `Site2Cloud configuration instructions for Cisco IOS <https://docs.aviatrix.com/HowTos/S2C_GW_IOS.html>`_.
+
+
+Here is a relevant `excerpt from Cisco Docs <https://www.cisco.com/c/en/us/td/docs/ios/12_2/security/command/reference/srfipsec.html#wp1017619>`_:
+
+    Assuming that the particular crypto map entry does not have lifetime values configured, when the router requests new security associations during security association negotiation, it will specify its global lifetime value in the request to the peer; it will use this value as the lifetime of the new security associations. When the router receives a negotiation request from the peer, it will use the smaller of the lifetime value proposed by the peer or the locally configured lifetime value as the lifetime of the new security associations.  
+
+    There are two lifetimes: a "timed" lifetime and a "traffic-volume" lifetime. The security association expires after the first of these lifetimes is reached.  
+
+    If you change a global lifetime, the change is only applied when the crypto map entry does not have a lifetime value specified. To change the global timed lifetime, use the "*crypto ipsec security-association lifetime seconds*" form of the command. The timed lifetime causes the security association to time out after the specified number of seconds have passed.
+
+    To change the global traffic-volume lifetime, use the "*crypto ipsec security-association lifetime kilobytes*" form of the command. The traffic-volume lifetime causes the security association to time out after the specified amount of traffic (in kilobytes) has been protected by the security associations' key.  
+
+Please note that the Cisco IOS default lifetimes are *3600 seconds (one hour) and 4,608,000 kilobytes (10 megabits per second for one hour)*. Here are some useful commands:
+
+  * `show crypto map <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s3.html#wp3995346140>`_    ##view the crypto map configuration, will show the sa lifetimes
+  * `show crypto isakmp policy <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s3.html#wp1951563782>`_    ##display the parameters for each IKE policy, shows time/volume lifetime limits
+  * `show crypto ipsec sa <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s3.html#wp3458936948>`_    ##view the settings used by current security associations, will display lifetime information
+  * `show crypto ipsec security-association idle-time <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s3.html#wp1306510365>`_    ##display the SA idle-time value configured for crypto map entry
+  * `show crypto ipsec security-association lifetime <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s3.html#wp2015308296>`_    ##display the SA lifetime value configured for a particular crypto map entry
+  * `crypto isakmp policy lifetime <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp4832891500>`_    ##define IKE policies and lifetimes
+  * `crypto ipsec security-association idle-time seconds <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c3.html#wp1305920947>`_    ##configure idle-timers globally
+  * `crypto ipsec security-association lifetime <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c3.html#wp2944599527>`_    ##global lifetime values for SA associations
+  * `set security-association idle-time <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s2.html#wp3209803263>`_    ##specify the maximum amount of time for which the current peer can be idle before the default peer is used
+  * `set security-association lifetimew <https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s2.html#wp1549482593>`_    ##specify lifetime for a specific crypto map entry or IPsec profile that is used when negotiating IPsec security associations (SAs)
+  
+
+Please refer to `Cisco's IPSec Troubleshooting guide <https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/5409-ipsec-debug-00.html>`_ for more information.

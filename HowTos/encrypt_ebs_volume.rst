@@ -100,6 +100,7 @@ How to encrypt gateway EBS volume via Aviatrix controller?
 
 .. note::
    You can see that the gateway EBS volume was encrypted. Also, the previous unencrypted volume will be kept.
+   Please make sure to add "aviatrix-role-app" to the CMK as Key users in KMS when you want to replace or resize the gateway later.
 
 |
 

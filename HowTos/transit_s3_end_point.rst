@@ -89,7 +89,7 @@ Step 1. Prerequisite
 Step 2. Build Aviatrix Global Transit Network FOR AWS
 -------------------------
 
-  - deploy the topology by following the online document https://docs.aviatrix.com/HowTos/tgw_plan.html
+  - deploy the topology by following the online document https://docs.aviatrix.com/HowTos/transitvpc_workflow.html
 
 
 Step 3. Deploy AWS S3 end point in Shared Service VPC
@@ -103,7 +103,7 @@ Step 3. Deploy AWS S3 end point in Shared Service VPC
 Step 4. Perform Customize Spoke Advertised VPC CIDRs feature on the Aviatrix Spoke gateway in the Shared Service VPC
 -------------------------
 
-  - https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs
+  - https://docs.aviatrix.com/HowTos/gateway.html#customize-advertised-spoke-vpc-cidrs
 
 This action will advertise the customized routes to On-Prem via BGP session and other Aviatrix Spoke Gateways if the function Connected Transit is enabled. 
 
@@ -212,7 +212,7 @@ Step 7. Verify S3 traffic flow
       |SPOKE_SHARED_SPOKE_ETH0|
 
 .. |S3_ENDPOINT_TRANSIT_SOLUTION| image:: transit_s3_end_point/S3_ENDPOINT_TRANSIT_SOLUTION.png
-   :scale: 30%
+   :scale: 60%
 
 .. |AWS_S3_ENDPOINT| image:: transit_s3_end_point/AWS_S3_ENDPOINT.png
    :scale: 30%

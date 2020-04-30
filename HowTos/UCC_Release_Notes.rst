@@ -2,15 +2,58 @@
 Release Notes
 =======================================
 
-R5.4 (Coming Soon)
+R5.4.1140 (4/21/2020)
+======================
+
+- **Support More AWS TGW Peering Regions** Newly available regions of AWS TGW Peering is now supported. 
+- **User VPN Customizing Notification** You can now customize pop up messages after a VPN user is connected. To configure, go to OpenvVPN -> Advanced -> System Use Notification. One use case is for customer to write their own messages for compliance. Please ensure that you are running Aviatrix VPN Client version 2.9 or higher to view the usage notification
+- **VPN DPD Interval Configuration** allows you to specify DPD interval. `API support only. <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_
+- **Gateway Default Memory Alert Threshold** is changed to 80% to provide earlier warning to the Controller admin. 
+- **Change Gateway Default Size** at launch time to t3.small.
+- **Bug fix** User VPN to Save Configuration Template to allow multiple gateways to have the same configuration when attached to the same NLB. 
+- **Performance Optimization** in handling the route programming time for large deployment of Aviatrix Transit Gateway peering. 
+- **CloudN Enhancement** in handling tunnel down message with Insane Mode. 
+
+R5.4.1074 (4/3/2020)
 =====================
 
+- **Bug fix** Restore a list of REST APIs that was deleted incorrectly. 
+
+R5.4.1066 (4/1/2020)
+=====================
+
+1. Operations
+------------------
+
 - **Role Based Access Control** allows you to both limit access to the Controller functions and enable self-service for users with different permission privileges. Read `RBAC FAQ <https://docs.aviatrix.com/HowTos/rbac_faq.html>`_ for more details. 
-- **Aviatrix Transit Network Spoke Gateways to Support SNAT/DNAT Functions** enable you to build an Aviatrix Transit Network for a variety of use cases, such as access cloud applications with virtual IP addresses, connecting overlapping network CIDRs from on-prem to Spoke VPCs.  
+
+2. Networking 
+----------------
+
+- **User VPN Performance Improvements** improves gateway performance when User VPN is enabled on the gateway. To receive enhanced performance, replace an existing gateway or launch a new gateway with `VPN Access <https://docs.aviatrix.com/HowTos/gateway.html#vpn-access>`_ enabled.   
+- **Aviatrix Transit Network Spoke Gateways to Support SNAT/DNAT Functions** enable you to support additional use cases in Aviatrix Transit network. These use cases are `"accessing cloud applications with virtual IP addresses" <https://docs.aviatrix.com/HowTos/transit_for_publicIP.html>`_ and `"connecting overlapping addresses from on-prem to Spoke VPCs in ActiveMesh network" <https://docs.aviatrix.com/HowTos/transit_solution_activemesh_spoke_snat_dnat_rfc1918.html>`_.  
 - **Azure Virtual WAN Integration with CloudWAN** expands Aviatrix CloudWAN solution to allow branch office Cisco IOS routers to automatically connect to Azure Virtual WAN by automatically programming IPSEC and BGP on IOS routers.  
+- **Azure Gateways Enhancement** Azure gateways is now launched by the Controller managed disk option instead of storage account for enhanced security. 
+- **User VPN Profile Multi Attribute Support** allows multiple attributes to be specified in the SAML IDP user database. Simply include a list of the names of User VPN Profiles in the user data profile field at the IDP database. 
+
+3. Security Integration
+-------------------------
+
 - **CheckPoint CloudGuard Integration** now supports CloudGuard All-In-One R80.40. In addition, the initial SSH access process is removed for all CloudGuard AMIs. Check out `CheckPoint CloudGuard Configuration Examples <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_ for more details. 
 - **FortiGate Bootstrap Configuration** is now supported. For details on how to configure, read `Bootstrap Configuration Example for FortiGate Firewall <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_.
-- **Azure Gateways Enhancement** Azure gateways is now launched by the Controller managed disk option instead of storage account for enhanced security. 
+
+R5.3.1524 (4/26/2020)
+========================
+
+- **Bug fix** Enhancement for Controller migration.
+- **Bug fix** CloudN missing routes after Transit gateway is rebooted. 
+
+R5.3.1516 (4/3/2020)
+======================
+
+- **Bug fix** Transit Peering not learning routes correctly when remote transit peering configured static routes. 
+- **Bug fix** Back out auto refresh of BGP sessions after upgrading. 
+- **Enhancement** to the ability to update Aviatrix Transit VPC CIDR. 
 
 R5.3.1499 (3/17/2020)
 =======================

@@ -87,7 +87,7 @@ Considerations
 * Once enabled, local user accounts will no longer be active.  That is, if there is a user created in the Controller that does not match a user in LDAP, they will no longer be able to login to the Controller.
 
   .. note::
-     The local `admin` account is always active even when this setting is enabled
+     The local `admin` account is active when ldap is used for controller login authentication as descrived above. Please note that if the `admin` account is disabled via "Settings/Controller/LoginCustomization" and if your ldap authentication is not working as expected for any reason(for eexamp, server is down or not reachable), you will get locked out of the controller till your ldap authentication process is back up.
 
 
 .. |imageLDAPForm| image:: AdminUsers_LDAP_media/controller_settings_ldap.png

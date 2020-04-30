@@ -2,6 +2,14 @@ Aviatrix VPN Client Changelog
 -----------------------------
 
 
+2.9.6 - April 23 2020
+ - Support displaying system use notifications
+
+
+2.8.2 - April 10 2020
+ - Boost VPN throughput
+
+
 2.7.9 - March 4 2020
  - UI enhancements for password-based authentication
  - Support the OVPN parameter: 'route'
@@ -13,7 +21,7 @@ Aviatrix VPN Client Changelog
 
 2.6.6 - Jan 29 2020
  - Improve the user experience to add a new VPN profile
- - Security fixes for the OpenVPN params
+ - `Security fixes for the OpenVPN params <https://docs.aviatrix.com/HowTos/security_bulletin_article.html#article-avxsb-00001>`_
 
 
 2.5.7 - Nov 20 2019
