@@ -72,14 +72,14 @@ No, customer's configuration data is never accessed by Aviatrix. The only time
 Do we need a controller in each cloud environment like one AWS, one for Azure, etc. If not, how do I do multi-cloud traffic steering?  
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-No, you don’t. One Aviatrix Controller manages cloud deployment in AWS, Azure, GCP, and OCI. Aviatrix Controller launches gateways in each cloud and orchestrates your policies to build network segmentation and secure connectivity.
+No, you don’t. One Aviatrix Controller manages cloud deployment in AWS, Azure, GCP, and OCI. Aviatrix Controller launches gateways in each cloud and orchestrates policies to build network segmentation and secure connectivity.
 
 How are gateway devices hardened?
 ---------------------------------
 
 Aviatrix gateways are virtual machines in the cloud launched from the Controller.  
 
-  * User cannot login to Aviatrix Controller or Gateway instances, as the Controller SSH access is disabled. 
+  * User cannot login to Aviatrix Controller, as the Controller SSH access is disabled. 
   
   * User cannot login to the Aviatrix gateway as the SSH access is disabled. 
   
@@ -90,7 +90,7 @@ Aviatrix gateways are virtual machines in the cloud launched from the Controller
 Is Aviatrix implementing custom OS then a software layer secures the OS? How do people login to each gateway device or it is completely managed by the controller portal, there are no root account things in that nature we need to secure?
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-The Aviatrix Controller and Gateway EC2 instances are using Ubuntu OS which is maintained specifically for Aviatrix for infrastructure services. All OS patches are managed in the releases. Changes to the OS must go through our full QA process. We recommend customer to upgrade to the latest version on their Aviatrix Controller
+The Aviatrix Controller and Gateway EC2 instances are using Ubuntu OS which is maintained specifically for Aviatrix for infrastructure services. All OS patches are managed in the releases. Changes to the OS must go through our full QA process. We recommend customer to upgrade to the latest version on their Aviatrix Controller.
 
 Does Aviatrix Controller have a database running?
 -------------------------------------------------
