@@ -43,7 +43,7 @@ The options for spoke to spoke communication across regions follow the same patt
 Azure Virtual WAN is another native architectural approach which can also provide transitive functionality.  Aviatrix Transit can integrate with Azure Virtual WAN and is not covered in detail here.
 
 
-Aviatrix  Transit for Azure
+Aviatrix Transit for Azure
 ---------------------------------------------------------------
 
 Aviatrix Transit for Azure is an architecture to interconnect multiple VNets and on-prem leveraging the hub and spoke deployment model while adding additional functionality and features.  This deployment is shown in the diagram below. 
@@ -58,8 +58,11 @@ For cross region communication, multiple Transit Gateways can also be interconne
 
 Another important advantage of using Aviatrix Transit is that all communications are encrypted by default providing additional levels of security.  Azure does not provide any native encryption across the Microsoft Backbone and depends upon third party NVAs to provide this functionality should customers require it.
 
-Why do I need Aviatrix Transit for Azure?
+The Aviatrix controller also has the ability to orchestrate native VNET peering for Azure VNETs should customers not wish to deploy gateways within spoke VNETs.  While customers will lose the encryption and visibility benefits across these links, all appropriate UDRs will be orchestrated to facilitate transitive communication as desired.  It is also important to note that certain native limitations may apply as to the number of peerings allowed as well as restricitions to overlapping IP space when native peering is leveraged.
 
+|native_peering|
+
+Why do I need Aviatrix Transit for Azure?
 ------------------------------------------------------
 
 Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit Hub VNet. Everything else (the Spoke VNet to on-prem traffic) is routed through the Transit Hub VNet.
@@ -82,8 +85,7 @@ The Benefits of Aviatrix Transit for Azure
 How does it work?
 -------------------------------------------------------------------------------------------------
 
-The Aviatrix Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network. 
-
+Aviatrix Transit Network is a Duo Mode architecture. While the Transit Gateway runs BGP protocol, advertising Spoke VNets CIDRs to an on-prem network and learning the on-prem network CIDRs, Spoke VNets do not run dynamic routing protocols. Learned routes by the Transit Gateway are reported to the Controller which in turn propagate to the Spoke VNets. By minimizing dynamic protocol running in the network, operations and troubleshooting become simple. CloudOps engineers without extensive networking background are able to build and manage the network.
 
 
 How do I deploy it?
@@ -113,5 +115,10 @@ The Aviatrix Controller is available in the Azure Marketplace.
 
 .. |S2SPeer| image:: nextgentransit_for_azure_media/S2SPeer.png
    :scale: 30%
+
+.. |native_peering| image:: nextgentransit_for_azure_media/native-peering-updated-resized-2.png
+   :scale: 30% 
+   
+
 
 .. disqus::
