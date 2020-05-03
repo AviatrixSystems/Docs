@@ -43,7 +43,7 @@ There are several factors to decide how many clients can be determined for each 
  #. `Maximum VPN Connections <https://docs.aviatrix.com/HowTos/gateway.html#max-connections>`_. The default is 100. When the connection number exceeds the configuration, the VPN gateway rejects new connections. The VPN client should auto reconnect and the cloud provider's network load balancer forwards the connection to a different VPN gateway. 
  #. VPN Client performance. If each VPN client sustained average performance is designed to be capped at 1Mbps, then a VPN gateway can support 1000 VPN clients. Accordingly, if each VPN client sustained average throughput is designed to be capped at 10Mbps, then a VPN gateway can support 100 clients. 
 
-
+For a good performance, creating a few t3.medium behind an ELB is a good option.
    
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
