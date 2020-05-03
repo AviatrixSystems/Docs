@@ -23,7 +23,7 @@ and unparalleled visibility that the enterprise needs.
 
 Some common enterprise use cases are shown below: 
 
-- Datacenter to cloud (`AVX Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
+- Datacenter to cloud (`Aviatrix Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
 - Scalable Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
 - Cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
 - User to cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
@@ -34,6 +34,7 @@ We also provide security features for workloads/applications in the cloud:
 
 - `Gateway inline L4 stateful firewall. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_ 
 - `VPC Egress Security. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
+- `High Speed Secure Access to AWS S3 <https://docs.aviatrix.com/HowTos/sfc_faq.html>`_.
 
 
 In addition, we have specific network solutions for `cloud migration <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ and 
@@ -115,8 +116,8 @@ What Features Are Supported in Which Cloud?
 Marketplace Launch                              Yes         Yes             No (Community Image)             Yes                      Yes
 Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
 
-AVX Transit Network Spoke                       Yes         Yes             Yes                              Yes                      Yes
-AVX Transit Network Edge                        Yes         Yes             Yes	                      	     Yes                      Yes
+Aviatrix Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
+Aviatrix Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
 Firewall Network                                Yes         Yes             No                               Yes                      No                     
 Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
@@ -132,7 +133,7 @@ Site to Cloud VPN                               Yes         Yes             Yes 
 Insane Mode Encryption                          Yes         Yes              No                              Yes                      No
 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
-FlightPath Expert Diagnostics                   Yes         Yes              Yes                               Yes                      No
+FlightPath Expert Diagnostics                   Yes         Yes             Yes                              Yes                      No
 IPv6                                            Yes         No              No                               No                       No
 PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No 
 ==========================================      ==========  =============   ======================           =================       ==========
@@ -150,11 +151,12 @@ The Controller image is available in `AWS Marketplace, <http://docs.aviatrix.com
 Datacenter to Cloud: Aviatrix Next-Gen Transit Network 
 =========================================================
 
-Aviatrix AVX Transit Network solution solves many problems when connecting datacenters to a growing number of VPCs.
+Aviatrix Transit Network solution solves many problems when connecting datacenters to a growing number of VPCs.
 
 These problems are listed below:
 
  a. **AWS Transit Gateway** AWS released Transit Gateway (TGW), I need to migrate my current CSR based Transit VPC solution.
+ #. **No Route Propagation** AWS Transit Gateway (TGW) does not propagate on-prem learned routes to Spoke VPC route table, it requires manual programming. 
  #. **Transit Solution for Azure** We have multiple Azure VNETs now, we need to form a transit network and connect them to on-prem and to AWS Transit network.
  #. **Change Control** Each time a new VPC is stood up, a change control process has to take place to modify the edge router for Direct Connect or IPSEC over Internet. This is not agile and the risk of errors in configuration is not acceptable.
  #. **BGP** The CSR based Global Transit solution runs VGW in each spoke VPC which runs a BGP session to Transit hub. This is operationally challenging to manage and troubleshoot. The BGP in VGW is a black box and  invisible to the outside.  
@@ -244,6 +246,7 @@ Aviatrix L7 FQDN filter solves these problems:
 
  a. **No policies** AWS NAT Gateway has no inbound/outbound policies. I have to configure security groups in each instance that needs Internet access. 
  #. **Only IP Based Rules** AWS NAT instance provides security groups, but it is IP address based and limits to 50 rules. My application needs to make API calls to Office 365 and that site alone resolves to hundreds of changing IP addresses. Using a Security group is not an acceptable solution. 
+ #. **Compliance** Our applications process PCI data and requires egress security policies. 
  #. **Firewall for Each VPC is Too Complex** My cloud instances are workloads and programs, they make API calls to known destinations. Deploying a traditional firewall that requires certs and keys to decrypt every packet for inspection is too complex and an overkill. 
  #. **Firewall for Each VPC is Too Expensive** Traditional firewall of IDS/IPS is too expensive to be deployed per VPC. 
  #. **Whitelisting** All I need is to be able to white list or black list the well known destinations by specifying them as fully qualified domain names (FQDN) for my http and https traffic. Support wild card or regex is a bonus. 
@@ -262,6 +265,18 @@ firewall policies. This reduces the need to have to configure security groups of
  #. **Regulation** We cannot use the AWS VPC Peering as it does not allow us to apply policies. We need an infrastructure presence that not only provides security but also enforce policies. 
 
 To learn how to setup the L4 firewall, `follow the doc. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_
+
+High Speed Secure Access to AWS S3 (PrivateS3)
+================================================
+
+Aviatrix PrivateS3 provides control and visibility for AWS S3 upload/download while leveraging the high speed private connections. It solves the following problems. 
+
+
+ a. **Prevent Data Leakage** We attempt to use AWS Direct Connect for high speed access to S3, but doing so anyone in the company can upload data to their own S3 buckets. 
+ #. **Palo Alto Firewall not usable** Palo Alto Firewall FQDN uses DNS name resolution which does not work on S3 as it has hundreds of thousands of IP addresses and as such the firewall is not usable. 
+
+To learn more, `follow the PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/sfc_faq.html>`_
+
 
 Cloud Migration
 ==================
