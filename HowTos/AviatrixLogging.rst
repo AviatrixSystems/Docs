@@ -503,6 +503,18 @@ Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 
 Please note that Sumo collector is memory intensive and needs instances with at least 2GB of memory - for AWS, t3.small, or higher depending on features deployed.
 
+3.5 DataDog Agent
+-------------------
+On the Aviatrix Controller:
+	#. server: intake.logs.datadoghq.com  
+	#. port: 10516  
+	#. Optional Custom Template: upload your saved customer template, like this,
+	
+<DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - [metas ddsource=\"<MY_SOURCE_NAME>\" ddtags=\"env:dev,<KEY:VALUE>\"] %msg%\n
+
+Make sure you keep <> when you replace your DD API Key, save the temp like .txt file, and upload it.
+
+
 4. Log management system Apps
 ====================================
 
