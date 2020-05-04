@@ -45,19 +45,6 @@ To Configure:
  3. You can choose to build the peering for the entire VPC or select individual route tables. 
  4. Click OK.
 
- Azure VNET Peering
-""""""""""""""""""
-
-The Aviatrix Controller integrates native Azure `VNET Peering <https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview/>`_ for both intra region peering and inter region peering. Cross subscription peering is also supported as long as both subscriptions are onboarded to the controller.
-
-To Configure:
-
-::
-
- 1. Go to Peering -> Azure Peering -> New Peering.
- 2. Select the subscription, region and VNET. 
- 3. Click OK.
-
 
 Azure VNET Peering
 """"""""""""""""""
