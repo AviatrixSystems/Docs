@@ -26,6 +26,14 @@ Error(SG)                                       The gateway instance's security 
 Error(IAM)                                      The gateway instance's aviatrix-role-ec2 is detached from the instance profile or aviatrix-role-app does not have associated policy. 
 ==========================================      =================
 
+Cloud Message Queue Failure
+-----------------------------
+
+If the alert message has a title "Cloud Message Queue Failure", it implies the following:
+
+ 1. The gateway runs periodic APIs calls to retrieve SQS messages if any sent by the Controller. For 15 minutes, the specific gateway has been experiencing  API calls failures. This does not necessarily mean the gateway has missed any messages. There may be a temporary interruption for gateway to make API calls. 
+ #. If the failure continues, a new message will be sent once a day. 
+
 If you need help, email to support@aviatrix.com
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
