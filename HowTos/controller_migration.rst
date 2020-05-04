@@ -39,12 +39,9 @@ Prerequisites
 + The feature is supported in AWS and AWS-Gov for the "BYOL" and "Metered" AMI's.
 + An `account audit <https://docs.aviatrix.com/HowTos/account_audit.html>`_ on the controller account and all secondary accounts also should be done to make sure that the `IAM roles and policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_ are setup as suggested.
 + User needs to `enable controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using an AWS based access-account.
-+ User must ensure the controller instance type is at least t2.large.
 + User should not make any config change during the migration as these config will be lost once new controller takes over.
 + This activity should be scheduled during a maintenance window and a walk through `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ is highly recommended.
-+ It is required that the the backup is done to a S3 bucket which belongs to the same account that hosts the controller.
 + **PLEASE NOTE:** User must `disable controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_. (User can `enable HA again <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ on the new controller once migration is fully completed)
-+ **PLEASE NOTE:** If you have any backend scripts/bots/security-processes monitoring your instances for any particular Tags to let the instance be recognized as approved to keep it running, please do plan to make these changes when the new controller comes up, before it is shutdown by your security process. Else the migration process will fail and you would have to delete the new controller and start the migration process again.
 + **PLEASE NOTE:** If you are using SAML login for either the controller login(Settings/Controller/SAMLLogin) and/or for openvpn authentication(OpenVPN/Advanced/SAML), the newer AMI's are much more stricter in validating the EntityId - please make sure that they are configured to be exactly same on the endpoints configured on the controller and the SAML applications in the IdP
 
 
