@@ -15,7 +15,7 @@ We recommend that you always go through the following checklist before you start
 * The controller needs to have full access to public internet
 
   * Please check that you can ping google.com from "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility"
-  * Please check that you can reach carmelosystems.com on port 443 from the controller using "Controller/Troubleshoot/Diagnostics/Network/NetworkConnectivityUtility"
+  * Please check that you can reach carmelonetworks.com on port 443 from the controller using "Controller/Troubleshoot/Diagnostics/Network/NetworkConnectivityUtility"
   * Please check that you can ping github.com and also reach it on port 443
   * Please check ping and port 443 connectivity to bower.io
   
