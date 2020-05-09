@@ -41,7 +41,7 @@ Prerequisites
 + User needs to `enable controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using an AWS based access-account.
 + User should not make any config change during the migration as these config will be lost once new controller takes over.
 + This activity should be scheduled during a maintenance window and a walk through `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ is highly recommended.
-+ Please upgrade to the latest build of your current release like 5.3 first.
++ Please upgrade to the latest build of your current release. For example, if running 5.3, goto "Settings/Maintenance/Upgrade/UpgradeToACustomRelease" and enter "5.3" and click on "Upgrade to a custom release". Please follow the `upgrade instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 + **PLEASE NOTE:** User must `disable controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_. (User can `enable HA again <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ on the new controller once migration is fully completed)
 + **PLEASE NOTE:** If you are using SAML login for either the controller login(Settings/Controller/SAMLLogin) and/or for openvpn authentication(OpenVPN/Advanced/SAML), the newer AMI's are much more stricter in validating the EntityId - please make sure that they are configured to be exactly same on the endpoints configured on the controller and the SAML applications in the IdP
 
