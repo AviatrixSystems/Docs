@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+R5.4.1204 (5/8/2020)
+======================
+
+- **Bug fix** fix API bug in `enable_fqdn_cache_global <https://api.aviatrix.com/?version=latest#08b34de5-450c-4fa8-9ef5-64acf0f9f7d5>`_.
+
 R5.4.1201 (5/7/2020)
 ======================
 
