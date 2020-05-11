@@ -1,6 +1,8 @@
 Aviatrix VPN Client Changelog
 -----------------------------
 
+2.10.7 - May 11 2020
+  - Enhance the client security
 
 2.9.6 - April 23 2020
  - Support displaying system use notifications
