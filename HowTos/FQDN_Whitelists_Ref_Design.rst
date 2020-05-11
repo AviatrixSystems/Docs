@@ -153,7 +153,7 @@ By checking this option, FQDN names that translate to private IP address range (
 Disable Private Network Filtering
 ===================================
 
-By checking this option, packets with destination IP address of RFC 1918 range are also inspected. 
+By checking this option, packets with destination IP address of RFC 1918 range are not inspected. This is the default behavior.
 
 
 Customize Network Filtering
