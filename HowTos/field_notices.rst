@@ -6,6 +6,22 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+Field Notice 0010 (2020/05/12)
+----------------------------------
+
+**VPN Client Security Vulnerability**
+
+**Problem**
+We have found defects that was introduced in VPN Client 2.8.9. The Aviatrix VPN client on Linux, macOS, and Windows is vulnerable to elevated access. See details in our PCIRT Advisory links below.   
+
+ - AVX-IR-20-005 OpenVPN Client 2.8.2 - Elevation of Privilege on macOS, Linux and Windows 
+
+ - AVX-IR-20-004 OpenVPN Client 2.8.2 - Arbitrary File Write 
+
+**Recommended Solution:**
+VPN Client upgrade to 2.10.7 and Controller version should be at least 5.3 or higher.  
+
+In addition, you must configure your Controller under OpenVPN > Edit Config > Minimum VPN Client Version setting to version 2.10.7 to enforce the client’s upgrade.  
 
 Field Notice 0009 (2020/03/11)
 --------------------------------
