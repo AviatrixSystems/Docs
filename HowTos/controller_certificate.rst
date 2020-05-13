@@ -18,7 +18,7 @@ Import Certificate with Key
 -----------------------------
 
 This is the **preferred approach** compared to the next approach detailed below. Simply import ca.crt, server.crt and server.key to the Controller and 
-you are done. In this method, the private key file server.key must match the server.crt. 
+you are done. In this method, the private key file server.key must match the server.crt. Please refer to the configuration example `here <https://docs.aviatrix.com/HowTos/import_cert_with_key.html>`_ .
 
 Generate CSR and Import Certificate
 -------------------------------------
