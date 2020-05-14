@@ -2,6 +2,36 @@
 PCIRT Advisories
 =======================================
 
+Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please send it to support@aviatrix.com. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below.
+
+Most Recent IR
+================
+
+
+**Date**
+5/12/2020
+
+**Risk Rating**
+Critical
+
+**Description**
+An API call on Aviatrix Controller web interface was found missing session token check to control access.  
+
+**Impact**
+Application may be vulnerable to Cross Site Request Forgery (CSRF) 
+
+**Affected Product**
+Aviatrix Controller with software release 5.3 or earlier 
+
+**Solution**
+Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
 Article #: AVXSB-00001 
 ======================
 
