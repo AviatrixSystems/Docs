@@ -41,8 +41,8 @@ How does Transit FireNet work?
 Transit FireNet works the same way as the Firewall Network where traffic in and out of the specified Spoke is forwarded to the firewall instances for
 inspection or policy application. 
 
-What is the minimum gateway instance size for Transit FireNet deployment?
-----------------------------------------------------------------------------
+What is the minimum gateway instance size for Transit FireNet deployment in AWS?
+--------------------------------------------------------------------------------
 
 The minimum gateway instance size is C5.xlarge. This is because the FireNet gateway requires 4 network 
 interfaces: 
@@ -52,6 +52,16 @@ interfaces:
  - eth2 is the interface to the firewall instances 
  - eth3 is the interface to the HA FireNet gateway
 
+What is the minimum gateway instance size for Transit FireNet deployment in Azure?
+----------------------------------------------------------------------------------
+
+The minimum gateway instance size is Standard_B2ms. This is because the FireNet gateway requires 3 network 
+interfaces:
+
+ - eth0 is a management interface
+ - eth1 is the interface to the firewall instances 
+ - eth2 is the interface to the HA FireNet gateway
+ 
 What is the Transit FireNet performance?
 -------------------------------------------
 
