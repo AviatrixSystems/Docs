@@ -3,7 +3,7 @@
    :keywords: datacenter extension, Aviatrix API, Aviatrix, VLAN stretching
 
 =================================================
-    REST API Example
+    API Example
 =================================================
 
 
@@ -15,7 +15,7 @@ The APIs for Aviatrix can be used for the tasks
 that are done through the Web UI. 
 
 The following is an example of utilizing the APIs to create a VPC/VNet
-under Datacenter Extension. For the complete REST API documentation, check out `this link. <https://api.aviatrix.com/?version=latest>`_
+under Datacenter Extension. For the complete API documentation, check out `this link. <https://api.aviatrix.com/?version=latest>`_
 
 Datacenter Extension capability manages your cloud address range. It
 creates VPC/VNet, subnets, routing tables and creates an IPSec tunnel to
