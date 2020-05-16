@@ -123,46 +123,32 @@ Direct Connect or Internet.
 4. Setup Aviatrix Transit GW  
 ------------------------------------------------------------------
 
-If your deployment does not require on-prem connection or to another Transit gateway, skip this section. Later when the 
-requirement changes, return to this section and start with Step 4 to setup. 
+This section, Step 4, 5 and 6, is about deploying Aviatrix Transit Gateways in a VPC and attach the VPC to TGW. From TGW point of view, this VPC is 
+a Spoke VPC attached to TGW, however from Controller point of view, the Aviatrix Transit Gateway is the packet forwarding engine to on-prem 
+or to another Aviatrix Transit Gateway. The direct attachment architecture allows the Aviatrix Transit Gateways to forward packets to TGW and Spoke VPCs 
+at the rate of 50Mbps as specified by TGW. 
+
+The use case for this deployment is to use Aviatrix Transit Gateway to connect to on-prem or to peer with another Aviatrix Transit Gateway. 
+
+If you intend to use `TGW DXGW to connect to on-prem <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aws-transit-gateway-direct-connect>`_ , `TGW VPN to connect to on-prem <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aws-transit-gateway-vpn-connection>`_ or use `native TGW Peering to 
+connect to regions <https://docs.aviatrix.com/HowTos/tgw_plan.html#tgw-inter-region-peering>`_ , skip this section. 
+
+This section is modular, return to this section anytime if your requirements change later. 
 
 .. tip::
 
-  Create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
-  If you would like to continue to use your existing transit VPC and it is too small (not enough of /28 unused segments), use AWS Edit VPC CIDR feature to create a new /24 subnet for the Aviatrix Transit Gateway in TGW use case. 
+  We strongly recommend you to create a new transit VPC at `Useful Tools -> Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_. Select the option "Aviatrix Transit VPC". 
+  If you would like to use an existing VPC and its network CIDR is too small (not enough of /28 unused CIDR segments), use AWS Edit VPC CIDR feature to create a new /23 subnet to deploy the Aviatrix Transit Gateway in TGW use case. 
 
-4.1 Non DMZ Transit Network
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To deploy the Aviatrix Transit Gateways, take a detour and complete Step 1 & 2 in the `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. If you intent to use Aviatrix Transit Gateway to connect to on-prem, also complete `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_.
 
-Non DMZ Transit refers to the configuration where Aviatrix Transit gateway at the edge VPC connects to on-prem in the following scenarios, 
-
- - AWS VGW
- - External Device over Direct Connect or Internet
- - Aviatrix Appliance CloudN. 
-
-|transit_gw|
-
-Step 4.1 is to take a detour to set up an Aviatrix Transit GW if you have not done so. Follow the `the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and complete Transit Network workflow Steps 1, 2 and 3. 
-
-When complete, return to this section and continue to Step 5 in this workflow to Enable Aviatrix Transit GW for Hybrid Connection. 
-
-
-4.2 Transit DMZ
-~~~~~~~~~~~~~~~~~
-
-If you plan to deploy Transit DMZ as shown below, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_ to launch the gateways and complete Transit DMZ workflow Step 1, Step 2 and Step 3. Step 4 can be setup at any time later.  
-
-|transit_dmz|
-
-When complete, you are done! 
-
-(The next two steps, Step 5 and Step 6 in this workflow should have already been executed for the Main gateway, i.e., you can skip the next two steps.) 
+When complete, return to this section and continue to Step 5 in this workflow to Enable Aviatrix Transit GW to TGW. 
 
 
 5. Prepare Aviatrix Transit GW for TGW Attachment
 ---------------------------------------------------------------
 
-The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to AWS Transit Gateway. The networking between AWS Transit Gateway and the Aviatrix Transit GW is via the AWS VPC infrastructure. 
+The Aviatrix Transit GW created in Step 4 does not build an IPSEC tunnel to AWS Transit Gateway. The networking between AWS Transit Gateway and the Aviatrix Transit GW is via the AWS VPC infrastructure.
 
 This step designates an Aviatrix Transit GW to be used in conjunction with the AWS Transit Gateway. 
 It creates a second Ethernet interface eth1 on the Aviatrix Transit GW for sending and receiving packets from AWS Transit Gateway. 
@@ -199,12 +185,12 @@ In this step, route entries are added to the two created private subnet route ta
 
 |transit_complete|
 
-After you finish Step 4, 5 and 6, your hybrid connection setup is complete. In the above example, 
+After you finish Step 4, 5 and 6, your hybrid connection using Aviatrix Transit Gateway for TGW setup is complete. 
+In the above example, 
 if you have any Spoke VPCs attached to the prod_domain, EC2 instances should be able to communicate with 
 on-prem. (Make sure instance security groups and any on-prem firewalls are configured properly.)
 
-
-------------------------------------------------------------------------------------------------
+------------------------------------------
 
 This section consists of TGW native VPN, Direct Connect and TGW Inter Region Peering functions. 
 
@@ -212,12 +198,13 @@ Since TGW does not propagate learned routes from DXGW or VPN to Spoke VPCs, Avia
 this problem by periodically polling the TGW route table and programming the learned routes to attached Spoke VPCs.
 
 Setup AWS Transit Gateway VPN Connection
--------------------------------------------
+--------------------------------------------
 
-This section configures a native VPN connection from TGW. It takes two steps: first configure, then download the configuration. 
 
 Step 7 Setup VPN Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function configures a native TGW VPN. It takes two steps: first configure, then download the configuration. 
 
 This step creates a VPN connection from TGW in a selected Security Domain.
 
