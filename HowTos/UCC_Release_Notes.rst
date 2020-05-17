@@ -2,6 +2,72 @@
 Release Notes
 =======================================
 
+R6.0 (Coming soon)
+=====================
+
+1. Aviatrix Multi-Cloud Transit
+-----------------------------------------
+
+- **ActiveMesh 2.0**  unifies the Aviatrix Transit Gateway next hop route selection by conforming to BGP next hop selection algorithm for all traffic sources. The use case is to provide a predictable routing path in a multi regions, multi cloud  and multi sites environments. All new Transit Gateways are launched  with ActiveMesh 2.0. For a one time migration from the existing deployment, go to Settings -> Migration -> ActiveMesh 2.0 Migration. Click Migrate. 
+- **Security Domains and Connection Policies Apply to Aviatrix Multi-Cloud Transit** allows you to segment the Aviatrix multi-cloud transit network (where Aviatrix Transit Gateways and Spoke gateways are deployed) by specifying domains and connection policy across all clouds and regions.
+- **External Device to Support Static Remote Policy-Based** provides the interoperability between a route-based Aviatrix Transit Gateway and a remote policy-based IPSEC tunnel connection. The use case is to allow the remote site to participate in the ActiveMesh 2.0 route selection in a unified manner. The caveat in this mode is the remote site must always initiate the traffic. To configure, go to Multi-Cloud Transit -> Setup -> Step 3 -> External Device -> Static Remote Policy-Based.
+- **Separate Egress and East-West Filtering** allows you to attach an Aviatrix Spoke gateway to two Aviatrix Transit Gateways, each with Transit FireNet service enabled but with a different purpose. One carries Egress/Ingress inspection and the other carries East-West and North-South inspection. The use case is to allow different policies to be implemented easily. 
+- **Aviatrix Transit Gateway ECMP Disable Option** allows you to turn off ECMP for next hop selection. The use case is if on-prem deploy a firewall devices that require symmetric routing. 
+- **Advanced NAT Function for Azure and GCP** is now available for Aviatrix Spoke gateways. The use case is to resolve overlapping network CIDRs between on-prem network and Spoke network. 
+- **GCP Multi Region Transit HA** leverages the GCP capability of multi regions in a single VPC and provide Aviatrix Transit/Spoke Gateway HA in a different region. The use case is to improve regional failure by the ability to failover to a different region. 
+- **Azure Availability Zone Support** allows you to deploy an Aviatrix gateway in Azure in a specified availability zone where it is applicable. Not all regions support availability zones and where it is not, availability set is supported.  
+- **Change Aviatrix Transit Gateway AS Number** provides the ability to change AS number without re-configuring the tunnel. The use case is to reduce network downtime if customer must change the Aviatrix Transit Gateway AS. To configure, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> LOCAL AS NUMBER, enter the desired AS number and click Change. 
+
+
+2. Firewall Network (FireNet)
+------------------------------
+
+- **Firewall Instances Health Check Enhancement** checks a firewall instance's health by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative option to checking health through firewall's management interface, which improves firewall failure detection time and detection accuracy. Available for both FireNet and Transit FireNet deployment and in both AWS and Azure. 
+- **FireNet Exclude CIDRs** allows you to exclude a list of network CIDRs to be excluded from going through firewall inspection even though its associated Security Domain or network requires inspection. One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors. 
+- **Check Point CloudGuard and Fortinet Fortigate in Azure** is now available in Azure when deploying Aviatrix Transit FireNet. 
+- **Check Point Dynamic Route Update** enhances FireNet Check Point integration by dynamically updates CloudGuard route tables by the Controller. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the Check Point appliance. 
+
+3. User VPN
+--------------
+
+- **Signed Cert for SAML Authentication** improves security of User VPN SAML authentication when it authenticates with the IDPs by provides a signed cert. 
+- **Dashboard to Display user speed** allows you to access individual User VPN client performance. 
+
+4. Site2Cloud
+---------------
+
+- **Route Based IPSEC** provides flexibility to configuration.
+- ** Mapped Configuration for Route Based IPSEC** supports both SNAT and DNAT on the network address ranges. The use case is to connect two IP address overlapping networks, for example a cloud VPC and on-prem, where on-prem cannot implement any network address translation. Comparing with individual IP address based translation, this significantly simplifies configuration. Note this configuration is implemented on route based IPSEC tunnel of an Aviatrix gateway site12cloud connection. 
+- **Intelligent Troubleshooting** provides expert analysis to the IPSEC syslog and reduces diagnosis time. 
+- **Shared the Same Pre-Shared Keys** provides an option for both primary and backup IPSEC tunnel to share the same pre-shared keys. The use case is to reduce the configuration burden for on-prem devices. 
+
+5. Egress Control 
+-------------------
+- **PrivateS3 Auto Populate  S3 Buckets FQDN** improves security and usability of PrivateS3. 
+- **FQDN Search** supports general search for a specified destination FQDN during a specified period of time. One use case is to troubleshoot on an FQDN tag entry without the need to upload tracelog. 
+- **Disable Caching FQDN Entries** prevents potential data leakage to large domain names that contain unrelated sites. To configure, go to Security -> Egress Control -> Egress FQDN Filter -> Global Configs -> Caching. Click to Disable. 
+
+6. Operations
+-----------------
+
+- **Multi Remote Syslog Servers Support** allows an Aviatrix gateway to forward its syslog to a different remote syslog server than other gateways. The use case is customer may have multiple syslog servers deployed in different regions and Aviatrix gateways deployed in regions should forward syslog data to the server it is assigned to. 
+- **Netflow v9 Support** adds new capability in addition to the current v5 support. 
+- **CloudWatch Customize Configuration** now supports group name customization. The use case is to provide flexibility for customer to name their log folders. To configure, go to Settings -> Logging -> ClooudWatch -> Advanced -> Log Group Name, enter a name of your choice. 
+
+7. AWS Transit Gateway (TGW)
+-------------------------------
+
+- **Intra Domain Firewall Inspection** allows AWS VPCs in the same Security Domain to be inspected by FireNet. The use case is a Security Domain in which all VPCs can communicate with each other, but all traffic requires logging and inspection. 
+- **Change Spoke VPC's Security Domains** provides the ability to change a Spoke VPC's Security Domain without detaching the VPC from the TGW. The use case is to reduce Spoke VPC connectivity downtime when it needs to change its associated domains. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Switch Security Domain. In the pop up window, select the desired Security Domain to associate. 
+- **Update Spoke VPC Route Tables** provides the ability to update a Spoke VPC route tables without detaching the VPC from TGW. The use case is to reduce Spoke VPC connectivity downtime when its subnets and route tables are added or deleted. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Update VPC CIDR. 
+
+R5.4.xxx (5/18/2020)
+=======================
+
+- **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway page. To download, go to Gateway page, select the gateway, click Diag and select Download Syslog.
+- **Enhancement to Transit FireNet on Azure** now support Insane Mode. 
+
+
 R5.4.1204 (5/8/2020)
 ======================
 
