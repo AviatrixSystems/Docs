@@ -66,6 +66,8 @@ R5.4.xxx (5/18/2020)
 
 - **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway page. To download, go to Gateway page, select the gateway, click Diag and select Download Syslog.
 - **Enhancement to Transit FireNet on Azure** now support Insane Mode. 
+- **Bug fix** Aviatrix Transit Gateway update learned routes incorrectly in certain cases. 
+- **Route Update Convergence Enhancement** to improve route propagation and convergence time when routes are changed to the Transit network. 
 
 
 R5.4.1204 (5/8/2020)
