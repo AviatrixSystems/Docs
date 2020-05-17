@@ -37,7 +37,7 @@ R6.0 (Coming soon)
 ---------------
 
 - **Route Based IPSEC** provides flexibility to configuration.
-- ** Mapped Configuration for Route Based IPSEC** supports both SNAT and DNAT on the network address ranges. The use case is to connect two IP address overlapping networks, for example a cloud VPC and on-prem, where on-prem cannot implement any network address translation. Comparing with individual IP address based translation, this significantly simplifies configuration. Note this configuration is implemented on route based IPSEC tunnel of an Aviatrix gateway site12cloud connection. 
+- **Mapped Configuration for Route Based IPSEC** supports both SNAT and DNAT on the network address ranges. The use case is to connect two IP address overlapping networks, for example a cloud VPC and on-prem, where on-prem cannot implement any network address translation. Comparing with individual IP address based translation, this significantly simplifies configuration. Note this configuration is implemented on route based IPSEC tunnel of an Aviatrix gateway site12cloud connection. 
 - **Intelligent Troubleshooting** provides expert analysis to the IPSEC syslog and reduces diagnosis time. 
 - **Shared the Same Pre-Shared Keys** provides an option for both primary and backup IPSEC tunnel to share the same pre-shared keys. The use case is to reduce the configuration burden for on-prem devices. 
 
