@@ -60,10 +60,20 @@ How to enable ActiveMesh?
 ActiveMesh enabled by default. For Aviatrix Transit or Spoke gateway launched before ActivMesh
 mode become available, follow the `Aviatrix Encrypted Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to enable ActiveMesh mode. 
 
-How to troubleshoot ActiveMesh deployment?
---------------------------------------------
+How to troubleshoot ActiveMesh Transit Gateway?
+-------------------------------------------------
 
-Go to Transit Network -> List. Select either the Transit GW or a spoke gateway, click Show Details. 
+ 1. **Check IPSec Tunnel**. Go to Site2Cloud -> Setup. Find the connection and make sure it is in Up state. If it is not, go to Site2Cloud -> Diagnostics and run "Show log". Since all BGP sessions run inside IPSEC tunnel, this is the first thing you should check. 
+ #. **Check BGP Session**. Go to (Multi-Cloud) Transit Network -> Advanced Config -> BGP. Look for the BGP session and make sure it is in Established State. If it is not, go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run commands, such as "show ip bgp".
+ #. **BGP Has Learned Routes** Go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run "show ip bgp" to make sure the transit gateway under inspection has learned the routes you are looking for. 
+ #. **Aviatrix Transit Gateway Has Programmed Routes** Got (Multi-Cloud) Transit Network -> List. Select the transit gateway, click Actions -> Show Details. Scroll down to the Gateway Routing Table and click to open. Make sure the routes you are looking for is in the table and has a next hop with metric 100.  
+
+If any of the above steps show failure, there is an error, contact support@aviatrix.com for more debugging assistance. 
+
+If all above steps succeed, the connectivity issue lies somewhere else. Check Spoke VPC route table and TGW route table if applicable. 
+
+If this is TGW based deployment, run an Audit by going to TGW Orchestrator -> Audit. Any missing routes in either VPC route table or TGW route table should be discovered. 
+
 
 How to migrate from the encrypted transit network to ActiveMesh mode?
 ----------------------------------------------------------------------

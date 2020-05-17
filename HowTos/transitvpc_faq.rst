@@ -17,9 +17,15 @@ The alternative to Transit architecture (often referred to as "flat" architectur
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
 
-For AVX Transit Network for AWS deployment, follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
 
-For AVX Transit Network for Azure deployment, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+If you plan to deploy AWS Transit Gateway (TGW) based transit network, follow the `Aviatrix Transit Gateway Orchestrator  Workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_.
+
+If you plan to deploy in Azure or deploy Aviatrix gateways in the Spoke VPC/VNets, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
+
+Should Aviatrix Transit Network all be deployed in ActiveMesh mode?
+----------------------------------------------------------------------
+
+Yes. All Aviatrix Transit Network should be deployed in ActiveMesh mode. To learn more, check out `ActiveMesh FAQ <https://docs.aviatrix.com/HowTos/activemesh_faq.html>`_. 
 
 Should I deploy one Transit Group for Dev and one for Prod?
 ------------------------------------------------------------
@@ -47,17 +53,11 @@ Enable `Spoke VPC route summarization <https://docs.aviatrix.com/HowTos/transitv
 
 Aviatrix Controller sends out alert/warning messages when it determines that the total routes carried by the VGW exceeds 80. This is to alert you to start reducing routes carried by the VGW to avoid potential network outage. This alert message is sent each time there is a route VGW advertised from VGW to Transit GW.
 
-2. By Pass VGW
+2. Bypass VGW
 ~~~~~~~~~~~~~~~~
 
 To permanently solve the route limit problem and not have to worry about summarizing routes at all and ever, use `External Device Option <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ to connect to on-prem directly over Direct Connect or the Internet. 
 
-
-Can I launch multiple Transit GW groups from one Controller?
--------------------------------------------------------------
-
-Yes, you can launch multiple Transit GW groups from one Aviatrix Controller. 
-Simply start at `Transit Gateway Plan stage <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_ to create a new TGW in a different region or the same region.
 
 I have a few high bandwidth applications, how do I deploy them in a Transit solution?
 --------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ I have a few high bandwidth applications, how do I deploy them in a Transit solu
 Aviatrix's `Insane Mode solution <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ provides 10Gbps Transit network throughput. 
 
 
-How can I fit an egress firewall into the AVX Transit solution?
+How can I fit an egress firewall into the Aviatrix Transit solution?
 ----------------------------------------------------------------------
 
 There are two types of requirements.
@@ -86,26 +86,25 @@ What are the automation methods for Transit Network?
 
 There are multiple resources to help you automate Transit Network setup. Note that if you are building a Transit Network following the workflow, you should use the APIs documented below.
 
- - `Transit Network section in API doc <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_.
+ - `Transit Network section in API doc <https://api.aviatrix.com/?version=latest>`_.
 
- - `Terraform example. <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
+ - `Use Terraform. <https://www.terraform.io/docs/providers/aviatrix>`_
 
- - `Python API example for Transit Network <https://github.com/AviatrixSystems/TransitNetworkAPI_python_example>`_
 
 Does Aviatrix Transit Network support HA?
 ------------------------------------------
 
-You can enable multi AZ HA during the workflow when launching a Transit VPC gateway or Spoke VPC gateway.
+Yes. Aviatrix Transit Gateways operates in `ActiveMesh mode <https://docs.aviatrix.com/HowTos/activemesh_faq.html>`_. 
 
 Why are AWS t2 series instance types not recommended for production deployment on a Transit GW?
----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
 When a t2 series Transit GW communicate with VGW over IPSEC, there is a 3% packet drop for packet size less than 150 bytes by Transit GW due to an issue with AWS Xen hypervisor and the kernel version GW is using. This will be fixed in a future release.
 
 Note that this packet drop issue does not affect Spoke gateways.
 
 How do I resize a Transit GW instance?
-------------------------------------
+------------------------------------------
 
 Go to the Gateway page at the navigation bar, select the Transit GW, click Edit, scroll up to see the options and find Gateway Resize. Select the desired size and click Change.
 
@@ -125,7 +124,7 @@ How can I route VPC egress Internet bound traffic to on-prem to go through the c
 If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route point to the Transit GW and route egress Internet traffic to VGW and back to on-prem. Make sure you do not have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC.
 
 How do I know if the tunnel between the VGW and the Transit GW is up?
----------------------------------------------------------------
+------------------------------------------------------------------------
 
 Go to Site2Cloud, the tunnel status is displayed for each connection.
 
@@ -296,7 +295,7 @@ They differ in the following areas:
 
  - **Central Control** - With the Aviatrix solution, the Aviatrix Controller is the single pane of glass for all networking in the cloud.
 
- - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix AVX Transit integrates with an AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use the TGW native service to connect the Spoke VPCs.
+ - **AWS Transit Gateway Integration** If you have AWS deployment, Aviatrix Transit integrates with an AWS TGW seamlessly for high bandwidth Spoke VPC connection. Customers who do not require end to end encryption can now use the TGW native service to connect the Spoke VPCs.
 
  - **Network Segmentation** - In the CSR-based solution, all Spoke VPCs have connectivity to each other through the Transit GW, even though these Spoke VPCs belong to different AWS accounts or business teams. In contrast, in the Aviatrix solution the Spoke VPCs have no connectivity to each other, by default. Connectivity is built by design. With the TGW integration, you can customize the `Security Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ to meet your segmentation requirements.
 

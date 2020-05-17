@@ -161,8 +161,8 @@ It also creates two subnets, -tgw-ingress and -tgw-egress  and two respective ro
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. This account is for launching Transit gateway. It does not need to be the same account as AWS Transit Gateway creator. 
-Gateway Namen                                   Select a Transit GW from the drop down menu. 
+Cloud Type                                      AWS or AWS Gov Cloud
+Aviatrix Transit Gateway Name                   Select a Transit GW from the drop down menu. 
 ==========================================      ==========
 
 6. Attach Aviatrix Transit GW to TGW
