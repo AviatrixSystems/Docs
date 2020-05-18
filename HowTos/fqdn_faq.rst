@@ -109,7 +109,7 @@ Squid is a popular open source software that can be configured to do transparent
 ==========================================      =============================================================                                           =============
 Requires instance configuration                 No                                                                                                      No
 HTTP and HTTPS FQDN filter                      Yes                                                                                                     Yes
-non HTTP/HTTPS FQDN filter                      Yes                                                                                                     No
+non HTTP/HTTPS FQDN filter                      Yes (wildcard FQDN is not supported)                                                                    No
 Multi AZ High Availability                      Yes (load balanced)                                                                                     No
 Centrally Managed                               Yes                                                                                                     No
 Egress Discovery                                `Yes <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_                                           No 
