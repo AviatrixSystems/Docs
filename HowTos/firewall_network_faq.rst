@@ -213,7 +213,7 @@ you need to SNAT on the firewall instance to its LAN or Trusted Interface IP (et
 The rule is that for a source IP address that comes from NLB or a vendor load balancer such as F5 private IP address, it is translated to firewall interface eth2 private IP address.
 
 Is there an example guide to setup Palo Alto VM-Series policies?
-------------------------------------------------------------------
+----------------------------------------------------------------
 
 Yes. Follow `Example Config for Palo Alto VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to 
 setup an "ALLOW ALL" policy for test validation.
