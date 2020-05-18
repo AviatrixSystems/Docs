@@ -89,6 +89,21 @@ Is Ingress Inspection supported on Transit FireNet?
 
 Yes. You need to enable source NAT on the LAN Interface of the VM-Series.
 
+How to exclude specific CIDRs from being sent to the firewall? and What is the Use case?
+-----------------------------------------------------------------------------------------------------
+
+Go to **Firewall Network --> Advanced** and put the CIDRs in the field **"Network List Excluded From East-West Inspection"** to exclude from being sent to firewall.
+
+**Note:**
+    1. Maximum 5 CIDRs coma-separated are supported.
+    2. CIDRs are excluded from east-west inspections only.
+    3. If Egress inspection and exclude CIDRs both features are enabled, in Transit FireNet case, Egress traffic will always get inspected by the firewall even exclude CIDRs feature is enabled.
+
+Use case
+########
+
+One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors.
+
 Can I deploy Aviatrix Egress Control FQDN gateway on Transit FireNet?
 ----------------------------------------------------------------------
 
