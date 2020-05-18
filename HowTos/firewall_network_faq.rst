@@ -212,18 +212,20 @@ If the FireNet deployment is for both Egress and Ingress traffic,
 you need to SNAT on the firewall instance to its LAN or Trusted Interface IP (eth2 interface). 
 The rule is that for a source IP address that comes from NLB or a vendor load balancer such as F5 private IP address, it is translated to firewall interface eth2 private IP address.
 
-How to exclude specific CIDRs/IP Addresses from being sent to the firewall? and What is the Use case?
+How to exclude specific CIDRs from being sent to the firewall? and What is the Use case?
 -----------------------------------------------------------------------------------------------------
 
-Go to **Firewall Network --> Advanced** and put the CIDRs or IP Addresses in the field **"Network List Excluded From East-West Inspection"** to exclude from being sent to firewall.
+Go to **Firewall Network --> Advanced** and put the CIDRs in the field **"Network List Excluded From East-West Inspection"** to exclude from being sent to firewall.
 
-**Note:** Maximum 5 CIDRs coma-separated are supported.
+**Note:**
+    1. Maximum 5 CIDRs coma-separated are supported.
+    2. CIDRs are excluded from east-west inspections only.
+    3. If Egress inspection and exclude CIDRs both features are enabled then Egress traffic originated from the excluded CIDRs list will be dropped.
 
 Use case
 ########
 
-Stringent firewall rules/polices blocks the Aviatrix Controller (AVX), which causes a lost of connection with the gateways. This problem can be avoided by excluding a specific CIDRs or IP Addresses from being send to the firewall.
-
+One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors.
 
 Is there an example guide to setup Palo Alto VM-Series policies?
 ----------------------------------------------------------------
