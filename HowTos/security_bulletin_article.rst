@@ -34,35 +34,6 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-
-AVX-IR-20-007 Bypass htaccess security control
-------------------------------------------------------
-
-**Date**
-5/19/2020
-
-**Risk Rating**
-Low
-
-**Description**
-The Aviatrix Cloud Controller uses htaccess files to control access to certain directories.  
-
-**Impact**
-This would impact in remote unauthenticated access. 
-
-**Affected Product**
-Aviatrix Controller 5.3 or earlier 
-
-**Solution**
-Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later  
-
-**CVE-ID**
-TBD
-
-**Acknowledgement**
-Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
-
-
 **Date**
 5/19/2020
 
