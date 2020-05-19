@@ -24,7 +24,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`UsefulTools`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
-* :ref:`REST APIs`
+* :ref:`API`
 * :ref:`Downloads`
 * :ref:`Release Notes`
 * :ref:`Security Bulletin`
@@ -296,11 +296,11 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/azuregwlaunch
    HowTos/flightpath
 
-.. _REST APIs:
+.. _API:
 
 .. toctree::
    :maxdepth: 1
-   :caption: REST APIs
+   :caption: API
 
    HowTos/Aviatrix_Controller_API
    HowTos/AviatrixAPI/multiple_approaches_to_use_aviatrix_api/multiple_approaches_to_use_aviatrix_api
