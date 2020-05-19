@@ -32,7 +32,7 @@ because of the implementation of how rules are sent to the gateways.
 
 In the next release (5.2), the limitation will be removed. 
 
-What is the REST API to configure stateful firewall?
+What is the API to configure stateful firewall?
 --------------------------------------------------------
 
 The API for the stateful firewall can be found `here. <https://api.aviatrix.com/?version=latest#ce6b766f-4d4a-4e68-8419-4b93fa6281b4>`_.
