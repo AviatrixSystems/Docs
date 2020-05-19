@@ -8,8 +8,6 @@ Most Recent IR
 ================
 
 #. Observable Response Discrepancy from API
-------------------------------------------------------
-
 **Date**
 5/19/2020
  
@@ -34,12 +32,10 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
+#. OpenVPN Client - Elevation of Privilege 
 **Date**
 5/19/2020
 
-**Title**
-AVX-IR-20-#. OpenVPN Client - Elevation of Privilege
- 
 **Risk Rating**
 High
 
@@ -67,8 +63,6 @@ Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 
 
 #. Cross Site Request Forgery (CSRF)
------------------------------------------------
-
 **Date**
 5/12/2020
  
@@ -94,8 +88,6 @@ TBD
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 #. Clean-up Old Code 
---------------------------------
-
 **Date**
 1/16/2020
 
@@ -122,8 +114,6 @@ TBD
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 #. CSRF on Password Reset  
-------------------------------------
-
 **Date**
 1/16/2020
  
@@ -147,8 +137,6 @@ Make sure your AWS Security Group settings limit authorized Controller Access on
 TBD
 
 #. XML Signature Wrapping in SAML
---------------------------------------------
-
 **Date**
 2/26/2020
 
@@ -175,8 +163,6 @@ TBD
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
 #. OpenVPN Client Arbitrary File Write 
--------------------------------------------------
-
 **Date**
 1/16/2020
  
