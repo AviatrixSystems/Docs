@@ -7,7 +7,7 @@ Aviatrix Product Security Team continually tests the software product, looking f
 Most Recent IR
 ================
 
-AVX-IR-20-#. Observable Response Discrepancy from API
+#. Observable Response Discrepancy from API
 ------------------------------------------------------
 
 **Date**
@@ -66,7 +66,7 @@ TBD
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 
-AVX-IR-20-#. Cross Site Request Forgery (CSRF)
+#. Cross Site Request Forgery (CSRF)
 -----------------------------------------------
 
 **Date**
@@ -93,7 +93,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-AVX-IR-20-#. Clean-up Old Code 
+#. Clean-up Old Code 
 --------------------------------
 
 **Date**
@@ -121,7 +121,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-AVX-IR-20-#. CSRF on Password Reset  
+#. CSRF on Password Reset  
 ------------------------------------
 
 **Date**
@@ -146,7 +146,7 @@ Make sure your AWS Security Group settings limit authorized Controller Access on
 **CVE-ID**
 TBD
 
-AVX-IR-20-#. XML Signature Wrapping in SAML
+#. XML Signature Wrapping in SAML
 --------------------------------------------
 
 **Date**
@@ -174,7 +174,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
-AVX-IR-20-#. OpenVPN Client Arbitrary File Write 
+#. OpenVPN Client Arbitrary File Write 
 -------------------------------------------------
 
 **Date**
