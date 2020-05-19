@@ -7,7 +7,9 @@ Aviatrix Product Security Team continually tests the software product, looking f
 Most Recent IR
 ================
 
-#. Observable Response Discrepancy from API
+Observable Response Discrepancy from API
+----------------------------------------
+
 **Date**
 5/19/2020
  
@@ -32,7 +34,9 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-#. OpenVPN Client - Elevation of Privilege 
+OpenVPN Client - Elevation of Privilege 
+---------------------------------------
+
 **Date**
 5/19/2020
 
@@ -62,7 +66,9 @@ TBD
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 
-#. Cross Site Request Forgery (CSRF)
+Cross Site Request Forgery (CSRF)
+---------------------------------
+
 **Date**
 5/12/2020
  
@@ -87,7 +93,9 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-#. Clean-up Old Code 
+Clean-up Old Code
+------------------
+
 **Date**
 1/16/2020
 
@@ -113,7 +121,9 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-#. CSRF on Password Reset  
+CSRF on Password Reset  
+----------------------
+
 **Date**
 1/16/2020
  
@@ -136,7 +146,9 @@ Make sure your AWS Security Group settings limit authorized Controller Access on
 **CVE-ID**
 TBD
 
-#. XML Signature Wrapping in SAML
+XML Signature Wrapping in SAML
+------------------------------
+
 **Date**
 2/26/2020
 
@@ -162,7 +174,9 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
-#. OpenVPN Client Arbitrary File Write 
+OpenVPN Client Arbitrary File Write
+------------------------------------
+
 **Date**
 1/16/2020
  
