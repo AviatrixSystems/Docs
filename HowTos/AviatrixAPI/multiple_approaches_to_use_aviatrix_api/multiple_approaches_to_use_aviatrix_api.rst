@@ -1,6 +1,6 @@
 .. meta::
    :description: Multiple Approaches to Use Aviatrix API
-   :keywords: REST, API, CID, login, cloud account
+   :keywords: API, CID, login, cloud account
 
 =======================================
 Multiple Ways to Use Aviatrix API
@@ -10,14 +10,14 @@ Multiple Ways to Use Aviatrix API
 Introduction
 ------------
 
-Aviatrix provides a REST/RESTful (Representational State Transfer) API to help customers to integrate Aviatrix products or to automate some routine tasks, such as backups for the Aviatrix controller, checking the status of active/live VPN users for management purposes, etc.
+Aviatrix provides APIs to help customers to integrate Aviatrix products or to automate some routine tasks, such as backups for the Aviatrix controller, checking the status of active/live VPN users for management purposes, etc.
 
 |
 
 Tools
 -----
 
-In this document, we demonstrate Aviatrix REST API invocation with the following tools.
+In this document, we demonstrate Aviatrix API invocation with the following tools.
   1. **Postman**
   2. Linux **"curl"** command
   3. Python **"requests"** module/library/package
@@ -57,11 +57,11 @@ There are many tools online that can do the job. Just simply google **"URL Encod
 
 |
 
-How the Aviatrix REST API Works
+How the Aviatrix API Works
 -------------------------------
 
 In order to invoke most of the Aviatrix API(s), the user must have a valid **"CID"** (session ID) for security purposes. Moreover, a valid CID can be acquired through the Aviatrix **"login"** API. The examples are provided below.
-Please refer to the `Aviatrix API site. <https://api.aviatrix.com/?version=latest>`_ for the completed Aviatrix REST API list.
+Please refer to the `Aviatrix API site. <https://api.aviatrix.com/?version=latest>`_ for the completed Aviatrix API list.
 
 |
 
@@ -133,7 +133,7 @@ Python "requests" module
         "password": password
     }
 
-    # Use "requests" module to invoke REST API
+    # Use "requests" module to invoke API
     response = requests.post(url=base_url, data=payload, verify=False)
 
     # If login successfully
@@ -224,7 +224,7 @@ Python
         "aws_secret_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     }
 
-    # Use "requests" module to invoke REST API
+    # Use "requests" module to invoke API
     response = requests.post(url="https://10.67.0.2/v1/api", data=payload, verify=False)
 
     # Display return message
