@@ -117,8 +117,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_approval
    HowTos/transitvpc_designs
    HowTos/Setup_Transit_Network_Terraform
-   HowTos/transit_firenet_faq
-   HowTos/transit_firenet_workflow
    HowTos/activemesh_faq
    HowTos/activemesh_design_notes
    HowTos/activemesh_beta
@@ -135,6 +133,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
    HowTos/firewall_network_design_patterns
+   HowTos/transit_firenet_faq
+   HowTos/transit_firenet_workflow
    HowTos/paloalto_API_setup
    HowTos/ingress_firewall_example
    HowTos/Azure_ingress_firewall_example

@@ -65,8 +65,8 @@ How to troubleshoot ActiveMesh Transit Gateway?
 
  1. **Check IPSec Tunnel**. Go to Site2Cloud -> Setup. Find the connection and make sure it is in Up state. If it is not, go to Site2Cloud -> Diagnostics and run "Show log". Since all BGP sessions run inside IPSEC tunnel, this is the first thing you should check. 
  #. **Check BGP Session**. Go to (Multi-Cloud) Transit Network -> Advanced Config -> BGP. Look for the BGP session and make sure it is in Established State. If it is not, go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run commands, such as "show ip bgp".
- #. **BGP Has Learned Routes** Go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run "show ip bgp" to make sure the transit gateway under inspection has learned the routes you are looking for. 
- #. **Aviatrix Transit Gateway Has Programmed Routes** Got (Multi-Cloud) Transit Network -> List. Select the transit gateway, click Actions -> Show Details. Scroll down to the Gateway Routing Table and click to open. Make sure the routes you are looking for is in the table and has a next hop with metric 100.  
+ #. **Check BGP Learned Routes** Go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run "show ip bgp" to make sure the transit gateway under inspection has learned the routes you are looking for. 
+ #. **Check Aviatrix Transit Gateway Programmed Routes** Got (Multi-Cloud) Transit Network -> List. Select the transit gateway, click Actions -> Show Details. Scroll down to the Gateway Routing Table and click to open. Make sure the routes you are looking for is in the table and has a next hop with metric 100.  
 
 If any of the above steps show failure, there is an error, contact support@aviatrix.com for more debugging assistance. 
 
@@ -84,8 +84,8 @@ Here are the steps:
  1. Launch a new Transit GW and enable ActiveMesh on it. 
  #. Detach a current spoke and attach it to the new Transit GW.
 
-Can ActiveMesh be applied to Azure?
--------------------------------------
+Can ActiveMesh be applied to Azure, GCP and OCI?
+----------------------------------------------------
 
 Yes. 
 
@@ -111,6 +111,9 @@ ActiveMesh enables the Aviatrix Transit GW to connect to multiple remote sites o
 
 When you configure VPN to remote sites from Transit Network -> Setup -> Step 3 (Connect to VGW/External Device/Aviatrix CloudN) in the `Transit Network workflow Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, the VPN tunnel is built with route based VPN. 
 
+Starting from Release 6.0, ActiveMesh Transit Gateway supports both remote route based VPN and remote policy based VPN tunnels. In this case, the 
+Aviatrix Transit Gateway always operates in route based mode. 
+
 On the other hand, when you configure VPN to remote sites from Site2Cloud page and select a Transit GW, the VPN tunnel is built with policy based VPN.  
 
 What happens when an ActiveMesh enabled gateway is stopped?
@@ -122,6 +125,24 @@ it participates in packet forwarding again.
 
 To stop an ActiveMesh gateway, you should disable the Gateway Single AZ HA feature. Highlight the gateway at the Gateway page, 
 click Edit. Scroll down to Gateway Single AZ HA, click Disable. 
+
+What is ActiveMesh 2.0?
+-------------------------
+
+ActiveMesh 2.0 is a new iteration of ActiveMesh. The main advancement of ActiveMesh 2.0 is its deterministic nature of Next Hop selection.
+
+Here is how Aviatrix Transit Gateway treat the following entities. 
+
+==========================================            ==========
+**Entity**                                            **Aviatrix Transit Gateway Route Propagation**
+==========================================            ==========
+Local TGW attached VPC CIDR                           Local
+Local TGW VPN dynamically learned network CIDR        Advertises TGW VPN AS and its remote peer AS to a remote BGP peer
+Local TGW DXGW learned network CIDR                   Advertises  TGW DXGW AS and its remote peer AS to a remote BGP peer
+Remote Aviatrix Transit Gateway learned routes        Advertises remote Aviatrix peer's AS 
+==========================================            ==========
+
+
 
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png

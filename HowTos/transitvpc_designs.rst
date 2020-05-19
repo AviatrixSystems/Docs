@@ -107,6 +107,21 @@ Both options can be described in the diagram below.
 
 |image8|
 
+Aviatrix Transit Gateway for Azure Spoke to Spoke Connectivity
+---------------------------------------------------------------
+
+If you use Azure ExpressRotue gateway to connect Spoke VNets to on-prem, you can use Aviatrix Transit Gateway for Spoke to Spoke connectivity, 
+as shown in the diagram below. To connect Spoke VNet, follow the `Step 6b in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_.
+
+|transit_azure_native_spoke|
+
+Multi-Cloud Transit with Native Spokes
+----------------------------------------
+
+Use Aviatrix Transit Gateways to inter-connect transit network for a multi cloud network deployment, as shown in the diagram below. 
+
+|multi_cloud_transit_native|
+
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
    :width: 10.0in
@@ -144,10 +159,18 @@ Both options can be described in the diagram below.
    :width: 10.0in
    :height: 4.0in
 
+.. |transit_azure_native_spoke| image:: transitvpc_designs_media/transit_azure_native_spoke.png
+   :scale: 30%
+
+.. |multi_cloud_transit_native| image:: transitvpc_designs_media/multi_cloud_transit_native.png
+   :scale: 30%
+
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
    :scale: 30%
 
 .. |transit_firenet_aviatrix_egress| image:: transit_firenet_media/transit_firenet_aviatrix_egress.png
    :scale: 30%
+
+
 
 .. disqus::
