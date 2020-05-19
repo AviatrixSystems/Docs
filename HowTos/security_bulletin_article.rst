@@ -6,11 +6,12 @@ Aviatrix Product Security Team continually tests the software product, looking f
 
 Most Recent IR
 ================
+
+AVX-IR-20-008 Observable Response Discrepancy from API
+------------------------------------------------------
+
 **Date**
 5/19/2020
-
-**Title**
-AVX-IR-20-008 Observable Response Discrepancy from API 
  
 **Risk Rating**
 Medium
@@ -33,14 +34,13 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-===
+
+AVX-IR-20-007 Bypass htaccess security control
+------------------------------------------------------
 
 **Date**
 5/19/2020
 
-**Title**
-AVX-IR-20-007 Bypass htaccess security control
- 
 **Risk Rating**
 Low
 
@@ -62,7 +62,6 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-===
 
 **Date**
 5/19/2020
@@ -95,13 +94,12 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-===
+
+AVX-IR-20-005 Cross Site Request Forgery (CSRF)
+-----------------------------------------------
 
 **Date**
 5/12/2020
-
-**Title**
-AVX-IR-20-005 Cross Site Request Forgery (CSRF)
  
 **Risk Rating**
 Critical
@@ -124,13 +122,12 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-===
+AVX-IR-20-004 Clean-up Old Code 
+--------------------------------
+
 **Date**
 1/16/2020
 
-**Title**
-AVX-IR-20-004 Clean-up Old Code  
- 
 **Risk Rating**
 Low
 
@@ -153,13 +150,11 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-===
+AVX-IR-20-003 CSRF on Password Reset  
+------------------------------------
 
 **Date**
 1/16/2020
-
-**Title**
-AVX-IR-20-003 CSRF on Password Reset  
  
 **Risk Rating**
 Medium
@@ -180,14 +175,12 @@ Make sure your AWS Security Group settings limit authorized Controller Access on
 **CVE-ID**
 TBD
 
+AVX-IR-20-002 XML Signature Wrapping in SAML
+--------------------------------------------
 
-===
 **Date**
 2/26/2020
 
-**Title**
-AVX-IR-20-002 XML Signature Wrapping in SAML
- 
 **Risk Rating**
 High
 
@@ -210,13 +203,11 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
-===
+AVX-IR-20-001 OpenVPN Client Arbitrary File Write 
+-------------------------------------------------
 
 **Date**
 1/16/2020
-
-**Title**
-AVX-IR-20-001 OpenVPN Client Arbitrary File Write 
  
 **Risk Rating**
 High
