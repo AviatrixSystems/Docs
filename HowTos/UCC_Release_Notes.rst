@@ -61,7 +61,7 @@ R6.0 (Coming soon)
 - **Change Spoke VPC's Security Domains** provides the ability to change a Spoke VPC's Security Domain without detaching the VPC from the TGW. The use case is to reduce Spoke VPC connectivity downtime when it needs to change its associated domains. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Switch Security Domain. In the pop up window, select the desired Security Domain to associate. 
 - **Update Spoke VPC Route Tables** provides the ability to update a Spoke VPC route tables without detaching the VPC from TGW. The use case is to reduce Spoke VPC connectivity downtime when its subnets and route tables are added or deleted. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Update VPC CIDR. 
 
-R5.4.xxx (5/18/2020)
+R5.4.1232 (5/18/2020)
 =======================
 
 - **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway page. To download, go to Gateway page, select the gateway, click Diag and select Download Syslog.
