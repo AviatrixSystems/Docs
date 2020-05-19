@@ -7,7 +7,7 @@ Aviatrix Product Security Team continually tests the software product, looking f
 Most Recent IR
 ================
 
-AVX-IR-20-008 Observable Response Discrepancy from API
+AVX-IR-20-#. Observable Response Discrepancy from API
 ------------------------------------------------------
 
 **Date**
@@ -38,7 +38,7 @@ Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 5/19/2020
 
 **Title**
-AVX-IR-20-006 OpenVPN Client - Elevation of Privilege
+AVX-IR-20-#. OpenVPN Client - Elevation of Privilege
  
 **Risk Rating**
 High
@@ -66,7 +66,7 @@ TBD
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 
-AVX-IR-20-005 Cross Site Request Forgery (CSRF)
+AVX-IR-20-#. Cross Site Request Forgery (CSRF)
 -----------------------------------------------
 
 **Date**
@@ -93,7 +93,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-AVX-IR-20-004 Clean-up Old Code 
+AVX-IR-20-#. Clean-up Old Code 
 --------------------------------
 
 **Date**
@@ -121,7 +121,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-AVX-IR-20-003 CSRF on Password Reset  
+AVX-IR-20-#. CSRF on Password Reset  
 ------------------------------------
 
 **Date**
@@ -146,7 +146,7 @@ Make sure your AWS Security Group settings limit authorized Controller Access on
 **CVE-ID**
 TBD
 
-AVX-IR-20-002 XML Signature Wrapping in SAML
+AVX-IR-20-#. XML Signature Wrapping in SAML
 --------------------------------------------
 
 **Date**
@@ -174,7 +174,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
-AVX-IR-20-001 OpenVPN Client Arbitrary File Write 
+AVX-IR-20-#. OpenVPN Client Arbitrary File Write 
 -------------------------------------------------
 
 **Date**
