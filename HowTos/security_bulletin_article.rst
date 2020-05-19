@@ -6,7 +6,6 @@ Aviatrix Product Security Team continually tests the software product, looking f
 
 Most Recent IR
 ================
-
 7. Observable Response Discrepancy from API
 ----------------------------------------
 
