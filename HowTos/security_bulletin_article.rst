@@ -6,11 +6,103 @@ Aviatrix Product Security Team continually tests the software product, looking f
 
 Most Recent IR
 ================
+**Date**
+5/19/2020
 
+**Title**
+AVX-IR-20-008 Observable Response Discrepancy from API 
+ 
+**Risk Rating**
+Medium
+
+**Description**
+The Aviatrix Cloud Controller appliance is vulnerable to a user enumeration vulnerability. 
+
+**Impact**
+A valid username could be used for brute force attack. 
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+===
+
+**Date**
+5/19/2020
+
+**Title**
+AVX-IR-20-007 Bypass htaccess security control
+ 
+**Risk Rating**
+Low
+
+**Description**
+The Aviatrix Cloud Controller uses htaccess files to control access to certain directories.  
+
+**Impact**
+This would impact in remote unauthenticated access. 
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier 
+
+**Solution**
+Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later  
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+===
+
+**Date**
+5/19/2020
+
+**Title**
+AVX-IR-20-006 OpenVPN Client - Elevation of Privilege
+ 
+**Risk Rating**
+High
+
+**Description**
+The Aviatrix VPN client on Linux, macOS, and Windows is vulnerable to an Elevation of Privilege vulnerability. This vulnerability was previously reported (CVE-2020-7224), and a patch was released however the fix is incomplete.  
+
+**Impact**
+This would impact dangerous OpenSSL parameters code execution that are not authorized.
+Impacts macOS, Linux and Windows clients.
+
+**Affected Product**
+Client VPN 2.8.2 or earlier 
+Controller & Gateway 5.2 or earlier 
+
+**Solution**
+Client VPN upgrade to 2.10.7 
+Controller & Gateway upgrade to 5.3 or later 
+In Controller, customer must configure OpenVPN minimum client version to 2.10.7  
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+===
 
 **Date**
 5/12/2020
 
+**Title**
+AVX-IR-20-005 Cross Site Request Forgery (CSRF)
+ 
 **Risk Rating**
 Critical
 
@@ -32,63 +124,120 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-Article #: AVXSB-00001 
-======================
+===
+**Date**
+1/16/2020
 
-CVE-ID 
-------
+**Title**
+AVX-IR-20-004 Clean-up Old Code  
+ 
+**Risk Rating**
+Low
 
-CVE-2020-7224 [Created Date: 1/16/2020]
+**Description**
+The Aviatrix Cloud Controller contains credentials unused by the software. This is a clean-up effort implemented to improve on operational and security maintenance. 
 
-Product and Version 
--------------------
+**Impact**
+This would impact operation and maintenance complexity. 
 
+**Affected Product**
+Aviatrix Controller 5.3 or lower
+
+**Solution**
+Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later 
+Recommended: AWS Security Group settings grants only authorized Controller Access in your environment
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+===
+
+**Date**
+1/16/2020
+
+**Title**
+AVX-IR-20-003 CSRF on Password Reset  
+ 
+**Risk Rating**
+Medium
+
+**Description**
+Controller Web Interface session token parameter is not required on an API call, which opens the application up to a Cross Site Request Forgery (CSRF) vulnerability. 
+
+**Impact**
+Vulnerability could lead to the unintended reset of a user’s password. 
+
+**Affected Product**
+Aviatrix Controller 5.3 or lower
+
+**Solution**
+Upgrade 5.4.1066 (must be on version is 5.0 or above) 
+Make sure your AWS Security Group settings limit authorized Controller Access only
+
+**CVE-ID**
+TBD
+
+
+===
+**Date**
+2/26/2020
+
+**Title**
+AVX-IR-20-002 XML Signature Wrapping in SAML
+ 
+**Risk Rating**
+High
+
+**Description**
+An attacker with any signed SAML assertion from the Identity Provider can establish a connection (even if that SAML assertion has expired or is from a user who is not authorized to access Aviatrix). 
+
+**Impact**
+Aviatrix customer using SAML 
+
+**Affected Product**
+Aviatrix Controller 5.1 or lower
+
+**Solution**
+Aviatrix Controller 5.2 or later
+Plus Security Patch “SAML XML signature wrapping vulnerability” 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
+
+===
+
+**Date**
+1/16/2020
+
+**Title**
+AVX-IR-20-001 OpenVPN Client Arbitrary File Write 
+ 
+**Risk Rating**
+High
+
+**Description**
+Aviatrix OpenVPN client through 2.5.7 or older on Linux, MacOS, and Windows is vulnerable when OpenSSL parameters are altered from the issued value set; the parameters could allow unauthorized third-party libraries to load. 
+
+**Impact**
+OpenVPN client on Linux, MacOS, and Windows   
+
+**Affected Product**
 OpenVPN Client 2.5.7 
 
-Affected Component 
-------------------
+**Solution**
+Upgrade to VPN client v2.6 or later
 
-OpenVPN client on Linux, MacOS, and Windows 
+**CVE-ID**
+CVE-2020-7224
 
-Description
------------
-
-Aviatrix OpenVPN client through 2.5.7 or older on Linux, MacOS, and Windows is vulnerable when OpenSSL parameters are altered from the issued value set; the parameters could allow unauthorized third-party libraries to load.  
-
-Attack Type/ Vector(s) / Impact 
--------------------------------
-
-Attack Type: 
-
-  Remote 
-
-Attack Vector(s): 
-
-  Parameters could be altered from the issue value set; the parameters could allow unauthorized third-party libraries to load.
-
-Impact: 
-
-  Code Execution 
-
-Improvements/Fixes 
-------------------------------
-  
-- Do not allow users to alter the .ovpn file.  
-
-- Upgrade to VPN client v2.6 to automatically check for the appropriate .ovpn file.  
-
-- If the validation check fails, user will not be able to connect until the file is replaced to pass validation checks. 
-
-- If the file is altered, obtain a replacement from your company’s Aviatrix VPN support team.   
-
-References
-----------
-
-- https://docs.aviatrix.com/HowTos/security_bulletin_article.html#article-avxsb-00001
-
-- https://docs.aviatrix.com/HowTos/openvpn_faq.html 
-
-- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7224 
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 
 .. disqus::
