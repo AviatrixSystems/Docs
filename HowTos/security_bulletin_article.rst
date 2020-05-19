@@ -7,7 +7,7 @@ Aviatrix Product Security Team continually tests the software product, looking f
 Most Recent IR
 ================
 
-Observable Response Discrepancy from API
+7. Observable Response Discrepancy from API
 ----------------------------------------
 
 **Date**
@@ -34,7 +34,8 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-OpenVPN Client - Elevation of Privilege 
+
+6. OpenVPN Client - Elevation of Privilege 
 ---------------------------------------
 
 **Date**
@@ -66,7 +67,7 @@ TBD
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 
-Cross Site Request Forgery (CSRF)
+5. Cross Site Request Forgery (CSRF)
 ---------------------------------
 
 **Date**
@@ -93,7 +94,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-Clean-up Old Code
+4. Clean-up Old Code
 ------------------
 
 **Date**
@@ -121,7 +122,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-CSRF on Password Reset  
+3. CSRF on Password Reset  
 ----------------------
 
 **Date**
@@ -146,7 +147,7 @@ Make sure your AWS Security Group settings limit authorized Controller Access on
 **CVE-ID**
 TBD
 
-XML Signature Wrapping in SAML
+2. XML Signature Wrapping in SAML
 ------------------------------
 
 **Date**
@@ -174,7 +175,7 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
-OpenVPN Client Arbitrary File Write
+1. OpenVPN Client Arbitrary File Write
 ------------------------------------
 
 **Date**
