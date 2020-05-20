@@ -68,6 +68,8 @@ Status
 Post Migration Tasks
 ---------------------------
 
+* If you have your old `controller behind an ELB <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_, please note that you would have to remove the old controller's instance from the ELB's listening group and add the new controller's  instance in its place.
+
 * Once all the tests are done to ensure that the controller migration is complete and successful, you can delete the old controller. It can be left in "stopped" status for a while, but it should never be started - else, it will reach out to the gateways and the network could have issues with two controllers trying to monitor/modify the gateways. 
 
 
