@@ -11,7 +11,7 @@ Transit Network Design Patterns
 to create a Transit VPC GW with a set of Spoke VPC GWs.
 
 From one Aviatrix Controller, you can setup
-Transit Groups in a single region or across multiple AWS regions.
+Transit network in a single region or across multiple AWS regions.
 
 Single Region Transit VPC Design
 ----------------------------------
@@ -106,21 +106,6 @@ Alternatively, you can use a SD-WAN termination point in the VPC to connect to t
 Both options can be described in the diagram below.
 
 |image8|
-
-Aviatrix Transit Gateway for Azure Spoke to Spoke Connectivity
----------------------------------------------------------------
-
-If you use Azure ExpressRotue gateway to connect Spoke VNets to on-prem, you can use Aviatrix Transit Gateway for Spoke to Spoke connectivity, 
-as shown in the diagram below. To connect Spoke VNet, follow the `Step 6b in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_.
-
-|transit_azure_native_spoke|
-
-Multi-Cloud Transit with Native Spokes
-----------------------------------------
-
-Use Aviatrix Transit Gateways to inter-connect transit network for a multi cloud network deployment, as shown in the diagram below. 
-
-|multi_cloud_transit_native|
 
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
