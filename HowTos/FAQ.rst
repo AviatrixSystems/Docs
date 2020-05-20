@@ -181,7 +181,7 @@ What are the events that the Aviatrix Controller monitors?
  #. **Guard Duty integration** Alert and block malicious IP addresses.
  #. **Black hole route** Alert when VPC route table has inactive routes.  
  #. **Public subnet** Alert when there are unwanted instances launched on specific public subnets. 
- #. **CPU/Memory/Disk** Alert when gateway memory or disk space reaches 80% of its capacity.
+ #. **CPU/Memory/Disk** Alert when gateway memory usage crosses 80% or disk space reaches 90% of its capacity.
  
 
 
