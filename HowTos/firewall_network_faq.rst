@@ -4,7 +4,7 @@
 
 
 =========================================================
-Firewall Network FAQ
+Firewall Network (FireNet) FAQ
 =========================================================
 
 What is Aviatrix Firewall Network (FireNet)?

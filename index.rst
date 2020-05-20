@@ -109,7 +109,7 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Global Transit Network
+   :caption: Multi-Cloud Transit Network
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
