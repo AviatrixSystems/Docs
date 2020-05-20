@@ -84,6 +84,8 @@ Step 5 - Associate EIP
 
 On the AWS console, go to **EC2** > **Network & Security** > **Elastic IPs**, and associate the same EIP from step 3 to the new Aviatrix Controller.
 
+If you have your old `controller behind an ELB <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_, please note that you would have to remove the old controller instance from the listening group and add the new controller instance in its place.
+
 Step 6 - Upgrade Controller
 ===========================
 
