@@ -64,7 +64,7 @@ R6.0 (Coming soon)
 R5.4.1232 (5/18/2020)
 =======================
 
-- **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway page. To download, go to Gateway page, select the gateway, click Diag and select Download Syslog.
+- **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway page. `API support only <https://api.aviatrix.com/?version=latest#8c0f26e3-044d-46e9-b7e7-14cf7ba16a71>`_
 - **Enhancement to Transit FireNet on Azure** now support Insane Mode. 
 - **Bug fix** Aviatrix Transit Gateway update learned routes incorrectly in certain cases. 
 - **Route Update Convergence Enhancement** to improve route propagation and convergence time when routes are changed to the Transit network. 
