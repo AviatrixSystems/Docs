@@ -225,7 +225,7 @@ This section provides the ability to view BGP configurations for diagnostics or 
 System Resources
 ------------------
 
-This feature allows you to set the threshold for notifications when the disk/memory of a controller/gateway has reached certain percentage of the total usage. The default behavior is to alert administrators when the usage reaches 95% or higher.
+This feature allows you to set the threshold for notifications when the disk/memory of a controller/gateway has reached certain percentage of the total usage. The default behavior is to alert administrators when the disk usage crosses 90% or if memory usage crosses 80%.
 
 
 Connectivity Test
