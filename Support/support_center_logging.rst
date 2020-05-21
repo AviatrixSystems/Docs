@@ -95,7 +95,7 @@ or, by clicking an individual collector and doing an upgrade/downgrade
 What are the instance size requirements if I use Sumo or other loggings?
 ---------------------------------------------------------- 
 
-Sumo Logic's agent is memory intensive and we recommend that you use at least a t3.small instance. If you use any smaller instance, it could cause unexpected failures in your controller and gateways. We recommend our customer to use at least t2.small or t3.small which has 2GB memory if logging feature is enabled.
+Sumo Logic's agent is memory intensive and we recommend that you use at least a t3.small instance. If you use any smaller instance, it could cause unexpected failures in your controller and gateways. We recommend our customer to use at least t3.small which has 2GB memory if logging feature is enabled.
 
 As a workaround, you can use rsyslog instead of Sumo agent to send your logs to yoru Sumo logging system. Please check out these links
 
