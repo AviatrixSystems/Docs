@@ -131,19 +131,30 @@ What is ActiveMesh 2.0?
 
 ActiveMesh 2.0 is a new iteration of ActiveMesh. The main advancement of ActiveMesh 2.0 is its deterministic nature of Next Hop selection.
 
-Here is how Aviatrix Transit Gateway treat the following entities. 
+Here is how Aviatrix Transit Gateway routing engine treats the following types of routes. 
 
-==========================================            ==========
-**Entity**                                            **Aviatrix Transit Gateway Route Propagation**
-==========================================            ==========
-Local TGW attached VPC CIDR                           Local
-Local TGW VPN dynamically learned network CIDR        Advertises TGW VPN AS and its remote peer AS to a remote BGP peer
-Local TGW DXGW learned network CIDR                   Advertises  TGW DXGW AS and its remote peer AS to a remote BGP peer
-Remote Aviatrix Transit Gateway learned routes        Advertises remote Aviatrix peer's AS 
-==========================================            ==========
+==========================================                    ==========
+**Networks**                                                  **Aviatrix Transit Gateway Route Propagation**
+==========================================                    ==========
+Local TGW attached VPC CIDR                                   Local
+Local TGW VPN dynamically learned network CIDR                Advertises TGW VPN AS and its remote peer ASN to a remote BGP peer if it's the best route.
+Local TGW DXGW learned network CIDR                           Advertises  TGW DXGW AS and its remote peer ASN to a remote BGP peer if it's the best route.
+Remote Aviatrix Transit Gateway Peering learned routes        Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
+Aviatrix Transit Gateway BGP learned from on-prem             Advertises to its remote peers by Aviatrix Transit Gateway peering if it's the best route. 
+==========================================                    ==========
 
+With this approach, there is more visibility on learned routes regarding what paths the routes are learned from. 
 
+The next hop best path selection follows the priorities listed below. 
 
+ 1. Local 
+ #. Shortest number of ASN list 
+ #. For two identical length ASN routes, select the next hop with the lowest Metric Value 
+ #. For two identical ASN length and Metric Value routes, if ECMP is disabled (this is the default configuration), select the current best route. If there is no current best route, the next hop IP addresses are compared, the lower integer IP address is selected. 
+ #. For two identical ASN length and Metric Value routes, if ECMP is enabled, traffic is distributed to both routes using ECMP. 
+
+ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. If you have current Transit Network, 
+migrate to ActiveMesh 2.0 by going to Settings -> Migration -> ActiveMesh 2.0 Migration, click Migrate. 
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png
    :scale: 30%
