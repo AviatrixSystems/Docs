@@ -8,7 +8,7 @@ R6.0 (Coming soon)
 1. Aviatrix Multi-Cloud Transit
 -----------------------------------------
 
-- **ActiveMesh 2.0**  unifies the Aviatrix Transit Gateway next hop route selection by conforming to BGP next hop selection algorithm for all traffic sources. The use case is to provide a predictable routing path in a multi regions, multi cloud  and multi sites environments. All new Transit Gateways are launched  with ActiveMesh 2.0. For a one time migration from the existing deployment, go to Settings -> Migration -> ActiveMesh 2.0 Migration. Click Migrate. 
+- **ActiveMesh 2.0**  unifies the Aviatrix Transit Gateway next hop route selection by conforming to BGP next hop selection algorithm for all traffic sources. The use case is to provide a predictable routing path in a multi regions, multi cloud  and multi sites environments. All new Transit Network deployed is launched with ActiveMesh 2.0. For a one time migration from the existing deployment, go to Settings -> Migration -> ActiveMesh 2.0 Migration. Click Migrate. To learn more details, check out `ActiveMesh 2.0 Details <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_.
 - **Security Domains and Connection Policies Apply to Aviatrix Multi-Cloud Transit** allows you to segment the Aviatrix multi-cloud transit network (where Aviatrix Transit Gateways and Spoke gateways are deployed) by specifying domains and connection policy across all clouds and regions.
 - **External Device to Support Static Remote Policy-Based** provides the interoperability between a route-based Aviatrix Transit Gateway and a remote policy-based IPSEC tunnel connection. The use case is to allow the remote site to participate in the ActiveMesh 2.0 route selection in a unified manner. The caveat in this mode is the remote site must always initiate the traffic. To configure, go to Multi-Cloud Transit -> Setup -> Step 3 -> External Device -> Static Remote Policy-Based.
 - **Separate Egress and East-West Filtering** allows you to attach an Aviatrix Spoke gateway to two Aviatrix Transit Gateways, each with Transit FireNet service enabled but with a different purpose. One carries Egress/Ingress inspection and the other carries East-West and North-South inspection. The use case is to allow different policies to be implemented easily. 
@@ -43,7 +43,6 @@ R6.0 (Coming soon)
 
 5. Egress Control 
 -------------------
-- **PrivateS3 Auto Populate  S3 Buckets FQDN** improves security and usability of PrivateS3. 
 - **FQDN Search** supports general search for a specified destination FQDN during a specified period of time. One use case is to troubleshoot on an FQDN tag entry without the need to upload tracelog. 
 - **Disable Caching FQDN Entries** prevents potential data leakage to large domain names that contain unrelated sites. To configure, go to Security -> Egress Control -> Egress FQDN Filter -> Global Configs -> Caching. Click to Disable. 
 
