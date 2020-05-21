@@ -93,7 +93,15 @@ Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs.
 
 SNAT function is supported on the individual connection between the Aviatrix Transit Gateway and the remote sites. 
 
-SNAT function is not supported on the Spoke gateway tunnel interface to the Aviatrix Transit Gateway. 
+Starting Release 5.4, SNAT and DNAT functions are supported on the Spoke gateway tunnel interface to the Aviatrix Transit Gateway. 
+
+4. Egress Routes Propagation Behavior
+----------------------------------------
+
+If Firewalls are deployed for Internet bound Egress traffic in either FireNet and Transit FireNet deployment, the default routes are propagated 
+to the remote peer by Transit Gateway peering. This allows Firewalls to be shared across regions. 
+
+If you have regional Firewalls for Egress traffic, make sure you apply filter to filter out the default routes. 
 
 4. Configuration Notes
 -----------------------

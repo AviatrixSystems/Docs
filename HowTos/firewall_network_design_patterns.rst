@@ -86,6 +86,24 @@ the application. If you need to preserve source IP address, refer to `this recom
 
 For more information, follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#firewall-network-firenet-workflow>`_. 
 
+10. Central Egress in a Multi Region Deployment
+--------------------------------------------------------
+
+Since the default routes are propagated over the Aviatrix Transit Gateway peering, you can consolidate the Internet bound egress traffic to the 
+firewalls in one region, as shown in the diagram below. 
+
+|central_egress|
+
+11. Distributed Egress in a Multi Region Deployment
+------------------------------------------------------
+
+If you need to have a distributed egress for each region, make sure you filter out the default route 0.0.0.0/0 when you build 
+the Aviatrix Transit Gateway peering, as shown in the diagram below. 
+
+|multi_egress|
+
+
+
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
 
@@ -114,6 +132,12 @@ For more information, follow the `FireNet workflow <https://docs.aviatrix.com/Ho
    :scale: 30%
 
 .. |firenet_insane| image:: firewall_network_media/firenet_insane.png
+   :scale: 30%
+
+.. |central_egress| image:: firewall_network_media/central_egress.png
+   :scale: 30%
+
+.. |multi_egress| image:: firewall_network_media/multi_egress.png
    :scale: 30%
 
 .. |private_interfaces| image:: firewall_network_workflow_media/private_interfaces.png
