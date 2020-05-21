@@ -137,10 +137,16 @@ Here is how Aviatrix Transit Gateway routing engine treats the following types o
 **Networks**                                                                **Aviatrix Transit Gateway Route Propagation**
 ========================================================                    ==========
 Local TGW attached VPC CIDR                                                 Local
+Aviatrix Spoke gateway associated VPC/VNet CIDR                             Local
+Azure Native Spoke assoociated VNet CIDR                                    Local
 Local TGW VPN dynamically learned network CIDR                              Advertises TGW VPN ASN and its remote peer ASN to a remote BGP peer if it's the best route.
 Local TGW DXGW learned network CIDR                                         Advertises  TGW DXGW ASN and its remote peer ASN to a remote BGP peer if it's the best route.
 Remote Aviatrix Transit Gateway Peering learned routes                      Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
 Aviatrix Transit Gateway BGP learned from on-prem                           Advertises to its remote peers by Aviatrix Transit Gateway peering if it's the best route. 
+Aviatrix Transit Gateway statically learned from on-prem                    Local
+Aviatrix Transit Gateway associated VPC/VNet CIDR                           Local
+Local Firewall Egress route (0.0.0.0/0)                                     Local
+Aviatrix Transit Gateway SNAT IP address                                    Local
 ========================================================                    ==========
 
 With this approach, there is more visibility on learned routes regarding what paths the routes are learned from. 
