@@ -133,15 +133,15 @@ ActiveMesh 2.0 is a new iteration of ActiveMesh. The main advancement of ActiveM
 
 Here is how Aviatrix Transit Gateway routing engine treats the following types of routes. 
 
-==========================================                    ==========
-**Networks**                                                  **Aviatrix Transit Gateway Route Propagation**
-==========================================                    ==========
-Local TGW attached VPC CIDR                                   Local
-Local TGW VPN dynamically learned network CIDR                Advertises TGW VPN AS and its remote peer ASN to a remote BGP peer if it's the best route.
-Local TGW DXGW learned network CIDR                           Advertises  TGW DXGW AS and its remote peer ASN to a remote BGP peer if it's the best route.
-Remote Aviatrix Transit Gateway Peering learned routes        Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
-Aviatrix Transit Gateway BGP learned from on-prem             Advertises to its remote peers by Aviatrix Transit Gateway peering if it's the best route. 
-==========================================                    ==========
+========================================================                    ==========
+**Networks**                                                                **Aviatrix Transit Gateway Route Propagation**
+========================================================                    ==========
+Local TGW attached VPC CIDR                                                 Local
+Local TGW VPN dynamically learned network CIDR                              Advertises TGW VPN ASN and its remote peer ASN to a remote BGP peer if it's the best route.
+Local TGW DXGW learned network CIDR                                         Advertises  TGW DXGW ASN and its remote peer ASN to a remote BGP peer if it's the best route.
+Remote Aviatrix Transit Gateway Peering learned routes                      Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
+Aviatrix Transit Gateway BGP learned from on-prem                           Advertises to its remote peers by Aviatrix Transit Gateway peering if it's the best route. 
+========================================================                    ==========
 
 With this approach, there is more visibility on learned routes regarding what paths the routes are learned from. 
 
