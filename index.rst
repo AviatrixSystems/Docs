@@ -118,6 +118,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_designs
    HowTos/azure_transit_designs
    HowTos/transit_segmentation_faq
+   HowTos/transit_segmentation_workflow
    HowTos/Setup_Transit_Network_Terraform
    HowTos/activemesh_faq
    HowTos/activemesh_design_notes
