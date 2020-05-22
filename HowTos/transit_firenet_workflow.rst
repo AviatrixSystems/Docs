@@ -42,11 +42,37 @@ deploy Aviatrix Transit Gateways and attach at least one Spoke gateway or one Sp
 1. Enable Transit FireNet Function
 ------------------------------------------------
 
+A Transit FireNet Gateway is an Aviatrix Transit Gateway with FireNet service enabled. 
+
+Starting from Release 6.0, A Aviatrix Spoke can be optionally attached to two Transit FireNet Gateways, one for east-west and north-south traffic inspection, and another for ingress/egress inspections. 
+
+1a. Enable Transit FireNet on Aviatrix Transit Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step defines a set of Aviatrix Transit FireNet Gateways. 
+
 In the drop down menu, select one Aviatrix Transit Gateway and click Enable. 
 
 .. Note::
 
   For Azure deployment, Transit FireNet function is enabled when launching the gateway, skip this step. 
+
+
+
+
+1b. Enable Transit FireNet on Aviatrix Egress Transit Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you plan to use one set of Transit FireNet Gateways for all traffic types' inspection, skip this step. 
+
+If a separate group of firewalls for Ingress/Egress traffic inspection is required, you need to deploy a second set of Aviatrix Transit Gateways 
+called Aviatrix Egress Transit Gateway, shown as the diagram below.
+
+|dual_transit|
+
+This step defines a set of Aviatrix Egress Transit FireNet Gateways. The HA Aviatrix Egress Transit FireNet Gateway is automatically enabled in this step.
+
+
 
 2. Manage Transit FireNet Policy
 --------------------------------------
@@ -73,6 +99,9 @@ Go to Firewall Network -> Setup -> Deploy Firewall Network, follow the `deployme
 In the drop menu, select one Aviatrix Transit Gateway with FireNet function to disable it.  
 
 .. |transit_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_policy.png
+   :scale: 30%
+
+.. |dual_transit| image:: transit_firenet_workflow_media/dual_transit.png
    :scale: 30%
 
 .. disqus::

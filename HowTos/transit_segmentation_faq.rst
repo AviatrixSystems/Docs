@@ -4,7 +4,7 @@
 
 
 ============================================================
-Transit Segmentation FAQ
+Transit Network Segmentation FAQ
 ============================================================
 
 What is Multi-Cloud Transit Segmentation?

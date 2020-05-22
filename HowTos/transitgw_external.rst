@@ -67,8 +67,11 @@ Fill the parameters and click OK. For ActiveMesh design notes, check out `Active
 ============================   ==========
 **Setting**                    **Value**
 ============================   ==========
-BGP or Static                  Select BGP if the Transit GW runs dynamic routing with remote site. Otherwise, select Static.
-VPC Name                       The Transit VPC ID where Transit GW was launched.
+External Device                Select this option to build a IPSEC connection to a remote site. 
+BGP                            Select BGP if the Transit GW runs dynamic routing with remote site.
+Static Remote Route-Based      Select this option the remote site supports route-based VPN with static configuration.
+Static Remote Policy-Based     Select this option the remote site supports policy-based VPN with static configuration. The caveat in this mode is the remote site must always initiate the traffic.
+Transit VPC Name               The Transit VPC ID where Transit GW was launched.
 Connection Name                A unique name to identify the connection to external device. 
 Aviatrix Transit GW BGP ASN    The BGP AS number the Transit GW will use to exchange routes with external device.
 Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
