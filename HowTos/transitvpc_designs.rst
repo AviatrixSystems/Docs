@@ -112,7 +112,7 @@ Both options can be described in the diagram below.
    :width: 10.0in
    :height: 4.0in
 
-.. |image1| image:: transitvpc_designs_media/multi_region.png
+.. |image1| image:: transitvpc_designs_media/multi_region2.png
    :width: 10.0in
    :height: 4.0in
 
@@ -128,7 +128,7 @@ Both options can be described in the diagram below.
    :width: 10.0in
    :height: 4.0in
 
-.. |image5| image:: transitvpc_designs_media/Egresscontrol.png
+.. |image5| image:: transitvpc_designs_media/egress-control2.png
    :width: 10.0in
    :height: 4.0in
 
