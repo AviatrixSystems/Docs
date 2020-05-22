@@ -58,6 +58,12 @@ In the drop down menu, select one Aviatrix Transit Gateway and click Enable.
   For Azure deployment, Transit FireNet function is enabled when launching the gateway, skip this step. 
 
 
+By default, east-west and north-south traffic inspections are enabled on Transit FireNet Gateways, you can also enable Ingress/Egress inspection on the Transit FireNet Gateways. To do so, go to Firewall Network -> Advanced -> click the 3 dots skewer of one FireNet gateway, 
+enable Egress through firewall option. 
+
+A deployment diagram in this option is shown as below:
+
+|single_transit|
 
 
 1b. Enable Transit FireNet on Aviatrix Egress Transit Gateway
@@ -102,6 +108,9 @@ In the drop menu, select one Aviatrix Transit Gateway with FireNet function to d
    :scale: 30%
 
 .. |dual_transit| image:: transit_firenet_workflow_media/dual_transit.png
+   :scale: 30%
+
+.. |single_transit| image:: transit_firenet_workflow_media/single_transit.png
    :scale: 30%
 
 .. disqus::
