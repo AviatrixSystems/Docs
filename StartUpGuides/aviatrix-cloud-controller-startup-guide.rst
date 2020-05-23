@@ -30,14 +30,14 @@ If you have already subscribed the Metered AMI on AWS Marketplace, skip this ste
 Click the AMI link below to take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-`Aviatrix Secure Networking Platform PAYG - Metered AMI <https://aws.amazon.com/marketplace/pp/B079T2HGWG?ref=_ptnr_docs_link_startup_metered>`_ . 
+`Aviatrix Secure Networking Platform Metered - 24x7 Support <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1590260881838&sr=0-6&ref_=srh_res_product_title>`_ . 
 
 1.2 Continue to Subscribe 
 ----------------------------------------
 
 Click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
-   |subscribe|
+   |subscribe_24x7|
 
 1.3 Accept Terms
 -----------------------------
@@ -53,9 +53,11 @@ Step 2. Launch the Controller with CloudFormation
 2.1 Click CloudFormation Link
 --------------------------------
 
-Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in Step 2 to run the Cloudformation script.   
+Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in the next steps 
+to run the Cloudformation script.   
 
-`CloudFormation for Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json>`_
+`CloudFormation for Aviatrix Secure Networking Platform Metered - 24x7 Support <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metered-controller-24x7-support.template>`_
+
 
 For other products, check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
 
@@ -231,8 +233,6 @@ Other Aviatrix Products
 
 In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
 
- - `Aviatrix Secure Networking Platform Metered - 24x7 Support <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metered-controller-24x7-support.template>`_
-
  - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template>`_
 
  - `Secure Networking Platform - Custom <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template>`_
@@ -240,6 +240,8 @@ In addition to Metered AMI, we offer a few others, as shown below. Subscribe to 
  - `Aviatrix Secure Networking Platform - BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template>`_
 
  - `Community BYOL (Available only in us-west-2 region) <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-community-byol.template>`_
+
+ - Secure Networking Platform PAYG - Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Faws-cloudformation-aviatrix-metering-controller.json>`_
  
  
 .. add in the disqus tag
@@ -247,6 +249,9 @@ In addition to Metered AMI, we offer a few others, as shown below. Subscribe to 
 .. disqus::
 
 .. |subscribe| image:: ZeroToConnectivityInAWS_media/subscribe.png
+   :scale: 30%
+
+.. |subscribe_24x7| image:: ZeroToConnectivityInAWS_media/subscribe_24x7.png
    :scale: 30%
 
 .. |3-step| image:: ZeroToConnectivityInAWS_media/3-step.png
