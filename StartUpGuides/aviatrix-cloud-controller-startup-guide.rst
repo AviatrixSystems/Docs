@@ -30,7 +30,7 @@ If you have already subscribed the Metered AMI on AWS Marketplace, skip this ste
 Click the AMI link below to take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-`Aviatrix Secure Networking Platform Metered - 24x7 Support <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1590260881838&sr=0-6&ref_=srh_res_product_title>`_ . 
+`Aviatrix Secure Networking Platform Metered - 24x7 Support <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1590260881838&sr=0-6&ref_=srh_res_product_title>`_ 
 
 1.2 Continue to Subscribe 
 ----------------------------------------
