@@ -172,7 +172,7 @@ Plus Security Patch “SAML XML signature wrapping vulnerability”
 TBD
 
 **Acknowledgement**
-Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
+Aviatrix is pleased to thank Ioannis Kakavas from Elastic Search for reporting this vulnerability under responsible disclosure. 
 
 1. OpenVPN Client Arbitrary File Write
 ------------------------------------
