@@ -1,8 +1,8 @@
 =======================================
-PCIRT Advisories
+PSIRT Advisories
 =======================================
 
-Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please send it to support@aviatrix.com. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below.
+Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please send it to support@aviatrix.com. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below. 
 
 Most Recent IR
 ================
@@ -28,7 +28,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-13413
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -60,7 +60,7 @@ Controller & Gateway upgrade to 5.3 or later
 In Controller, customer must configure OpenVPN minimum client version to 2.10.7  
 
 **CVE-ID**
-TBD
+CVE-2020-13417
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -88,12 +88,12 @@ Aviatrix Controller with software release 5.3 or earlier
 Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-13412
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-4. Clean-up Old Code
+4. Code Clean-up
 ------------------
 
 **Date**
@@ -116,7 +116,7 @@ Controller & Gateway upgrade 5.4.1204 (5/8/2020) or later
 Recommended: AWS Security Group settings grants only authorized Controller Access in your environment
 
 **CVE-ID**
-TBD
+CVE-2020-13414
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -144,7 +144,7 @@ Upgrade 5.4.1066 (must be on version is 5.0 or above)
 Make sure your AWS Security Group settings limit authorized Controller Access only
 
 **CVE-ID**
-TBD
+CVE-2020-13416
 
 2. XML Signature Wrapping in SAML
 ------------------------------
@@ -169,7 +169,7 @@ Aviatrix Controller 5.2 or later
 Plus Security Patch “SAML XML signature wrapping vulnerability” 
 
 **CVE-ID**
-TBD
+CVE-2020-13415
 
 **Acknowledgement**
 Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
