@@ -59,7 +59,7 @@ Note that the three domains are connected, implying that if you attach a VPC to 
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS. 
 Region                                          One of the AWS regions
 TGW Name                                        The name of the AWS Transit Gateway
-AWS Side AS Number                              Default AS number is 64512. This field currently is not used.
+AWS Side AS Number                              TGW ASN number. Default AS number is 64512.
 ==========================================      ==========
 
 After AWS Transit Gateway is created, you can validate by going to `View page <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-can-be-displayed-at-the-view-page>`_ and seeing what has been created. 
