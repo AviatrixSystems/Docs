@@ -372,6 +372,11 @@ Scroll down to "Connected Transit" to enable.
 
 For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
 
+Local AS Number
+^^^^^^^^^^^^^^^^^^^^
+
+This is to change Aviatrix Transit Gateway's ASN number. Enter a new ASN number, click Change. 
+
 
 Connected Transit
 ^^^^^^^^^^^^^^^^^
@@ -389,6 +394,14 @@ For software version 4.1 and later, you will click Transit Network on the left n
 Note all Spokes should be either in HA mode or non HA mode. A mixed deployment where some Spokes have 
 HA enabled while others don't work in a normal environment, but does not work
 when a failover happens on a HA enabled Spoke. 
+
+BGP ECMP
+^^^^^^^^^^^
+
+This option is to enable Equal Cost Multi Path (ECMP) routing for the next hop. For Aviatrix Transit Gateway next hop routing decision
+process, refer to `ActiveMesh 2.0 next hop. <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_.
+
+Click the Slide Bar to enable BGP ECMP. 
 
 Prepend AS Path
 ^^^^^^^^^^^^^^^^^
