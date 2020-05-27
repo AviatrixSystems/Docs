@@ -4,7 +4,7 @@
 
 
 =========================================================
-Firewall Network (FireNet)  Advanced Config
+FireNet Advanced Config
 =========================================================
 
 For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
