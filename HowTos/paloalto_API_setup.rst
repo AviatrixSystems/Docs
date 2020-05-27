@@ -86,9 +86,9 @@ Install a license in Panorama. Without the correct license, it won't work.
 b. Upgrade Panorama 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Panorama must be on the same or higher software version as its managed firewalls.
+Panorama MUST be on the same or higher software version as its managed firewalls.
 
-Currently (Dec., 2019), a newly launched firewall instance is on version 9.0.3.xfr.  If the Panorama instance version is on 8.1.x, upgrade it to version 9.0.3.xfr or higher version by following the instructions below.
+Currently (May, 2020) a newly launched firewall instance is on version 9.0.6 or 9.1.2.  If the Panorama instance version is on 8.1.x, upgrade it to version 9.0.6 or higher version by following the instructions below.
 
 Go to Panorama --> Dynamic Updates, click "Check Now", select the latest version in "Applications and Threats", download and install.
 
@@ -205,9 +205,7 @@ Commit and push.
 e. Integrate Panorama with Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to the Aviatrix Controller->Firewall Network->Vendor Integration->Firewall Manager (Panorama), fill out all the required information and save.
-
-This step can also be done right after step a.
+Go to the Aviatrix Controller->Firewall Network->Vendor Integration->Firewall Manager (Panorama), fill out all the required information and save.  After this step, the Panorama and PAN firewalls are attached to the controller.
 
 
 4. API calls
