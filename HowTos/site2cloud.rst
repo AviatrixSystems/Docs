@@ -20,7 +20,7 @@ Overview
 
 Aviatrix supports connectivity between its Gateways in the cloud and on-premise routers using a feature called `Site2Cloud`, as shown below.  This document outlines how to get connectivity established between an Aviatrix Gateway in AWS, Azure, or GCP and your on-premise router or firewall.
 
-|site2cloud|
+|site2cloud_new|
 
 
 Configuration Workflow
@@ -40,8 +40,8 @@ Create Site2Cloud Connection
    | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel     |
    |                               | will terminate in the cloud.                 |
    +-------------------------------+----------------------------------------------+
-   | Connection Type               | `Unmapped` unless there is an overlapping    |
-   |                               | CIDR block.                                  |
+   | Connection Type               | `Unmapped` unless Local Subnet and Remote    |
+   |                               |  Subnet are overlapped.                      |
    +-------------------------------+----------------------------------------------+
    | Connection Name               | Name this connection.  This connection       |
    |                               | represents the connectivity to the edge      |
@@ -51,11 +51,11 @@ Create Site2Cloud Connection
    |                               | `Aviatrix`, or `SonicWall`.                  |
    |                               | See below for additional details.            |
    +-------------------------------+----------------------------------------------+
-   | Tunnel Type                   | `UDP` or `TCP`                               |
+   | Tunnel Type                   | `Route-based` or `Policy-based`              |
    |                               |                                              |
    |                               | .. note::                                    |
-   |                               |    `TCP` tunnel type requires an Aviatrix    |
-   |                               |    gateway on both sides.                    |
+   |                               |    If Connection Type `Mapped` is selected   |
+   |                               |    only `Route-based' is supported.          |
    |                               |                                              |
    +-------------------------------+----------------------------------------------+
    | Algorithms                    | Defaults will be used if unchecked. See      |
@@ -84,14 +84,34 @@ Create Site2Cloud Connection
    |                               | connection.  If nothing is entered, one will |
    |                               | be generated for you.                        |
    +-------------------------------+----------------------------------------------+
-   | Remote Subnet                 | Specify a list of the destination network    |
+   | Remote Subnet (Real)          | Specify a list of the destination network    |
    |                               | CIDRs, separated by comma, that will         |
    |                               | be encrypted. For example, 10.10.1.0/24, 10. |
    |                               | 10.2.0./24                                   |
    +-------------------------------+----------------------------------------------+
-   | Local Subnet                  | Specify a list of the source network CIDRs   |
+   | Remote Subnet (Virtual)       | Only applicable when Connection Type is      |
+   |                               | `Mapped`. Specify a list of virtual remote   |
+   |                               | network                                      |
+   |                               | CIDRs that is 1-1 mapped to the Remote       |
+   |                               | Subnet Real. For example, if the real        |
+   |                               | subnets are 10.10.1.0/24, 10.10.2.0/24       |
+   |                               | 24, you can specify the virtual remote       |
+   |                               | subnets as                                   |
+   |                               |       192.168.1.0/24, 192.168.2.0/24         |
+   +-------------------------------+----------------------------------------------+
+   | Local Subnet (Real)           | Specify a list of the source network CIDRs   |
    |                               | , separated by comma, that will be encrypted.|
    |                               | For example, 172.16.1.0/24, 172.16.2.0/24    |
+   +-------------------------------+----------------------------------------------+
+   | Local Subnet (Virtual)        | Only applicable when Connection Type is      |
+   |                               | `Mapped`. Specify a list of virtual local    |
+   |                               | network                                      |
+   |                               | CIDRs that are 1-1 mapped to the Local       |
+   |                               | Subnet Real. For example, if the real        |
+   |                               | subnets are 172.16.1.0/24, 172.16.2.0/24,    |
+   |                               | you can specify the virtual local            |
+   |                               | subnets as                                   |
+   |                               |       192.168.7.0/24, 192.168.8.0/24         |
    +-------------------------------+----------------------------------------------+
    | Backup Gateway                | Only available when 'Enable HA' is selected. |
    |                               | Backup Gateway should be the .hagw created   |
@@ -304,6 +324,9 @@ To check a tunnel state, go to Site2Cloud. The tunnel status appears next to the
 Diagnostics and troubleshooting options are available in the **Diagnostics** tab.  You must first select the connection, and then select an **Action**, followed by **OK**.
 
 .. |site2cloud| image:: site2cloud_media/site2cloud.png
+   :scale: 50%
+
+.. |site2cloud_new| image:: site2cloud_media/site2cloud_new.png
    :scale: 50%
 
 .. disqus::
