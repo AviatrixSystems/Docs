@@ -138,6 +138,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/firewall_network_design_patterns
    HowTos/transit_firenet_faq
    HowTos/transit_firenet_workflow
+   HowTos/firewall_advanced
    HowTos/paloalto_API_setup
    HowTos/ingress_firewall_example
    HowTos/Azure_ingress_firewall_example
