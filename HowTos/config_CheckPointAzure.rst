@@ -11,7 +11,7 @@ Example Config for CheckPoint VM in Azure
     - Basic CheckPoint Architecture Understanding
     - CheckPoint Security Management instance to manage CheckPoint CloudGauard IAAS Gateway.
 
-The following CheckPoint AMIs and software versions are supported in Azure.
+The following CheckPoint AMIs and software versions are supported in Azure by Aviatrix.
 
 ==================================================================================             ====================
 **Supported AMI Name**                                                                         **Software Version**
@@ -23,7 +23,7 @@ CloudGuard IaaS Standalone (Gateway + Management) R80.40 - BYOL                 
 
 .. important::
 
-  - CheckPoint Standalone do not require Security Management to manage polices.
+  - CheckPoint Standalone does not require Security Management to manage polices.
   - Gateway NGTP and NGTX both requires Security Management to configure Firewall Polices in the Gateway
 
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
@@ -67,7 +67,7 @@ Below are the steps for initial setup.
 
 Go to the Aviatrix Controller --> Firewall Network --> Setup, and finish `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ to successfully launch a Checkpoint firewall in Azure.
 
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 10 to 15 mins and then go back to Firewall Network --> Setup -- Step 7a and  Click on the `Management UI`as shown below.
+After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 10 to 15 mins and then go back to Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
 
 The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
@@ -376,7 +376,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 |cp_view_traffic_log_vpc_to_internet|
 
 
-.. |avx_firewall_step7a_UI| image:: config_Checkpoint_media/avx_firewall_step7a_UI.png
+.. |avx_firewall_step7a_UI| image:: config_Checkpoint_media/avx_firewall_step7a_UI_a.png
    :scale: 40%
 .. |cp_firewall_interfaces| image:: config_Checkpoint_media/cp_firewall_interfaces.png
    :scale: 40%
