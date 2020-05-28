@@ -67,7 +67,7 @@ Below are the steps for initial setup.
 
 Go to the Aviatrix Controller --> Firewall Network --> Setup, and finish `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ to successfully launch a Checkpoint firewall in Azure.
 
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 10 to 15 mins and then go back to Firewall Network --> Setup -- Step 7a and  Click on the `Management UI`as shown below.
+After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 10 to 15 mins and then go back to Firewall Network --> Setup -- Step 7a and  Click on the `Management UI` as shown below.
 
 The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
@@ -132,7 +132,7 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
 
 ::
 
-    % ssh admin@ip-address
+    % **ssh admin@ip-address**
     The authenticity of host 'ip-address' can't be established.
     ECDSA key fingerprint is SHA256:1S6wQF4xI6YtieM1te0lnI2wXoRDiDfa85ctsDHd1N4.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
@@ -144,18 +144,18 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
     as specified in https://www.checkpoint.com/download_agreement.html
     CLINFR0771  Config lock is owned by admin. Use the command 'lock database override' to acquire the lock.
 
-    cp-firewall-sc-azure> lock database override
-    cp-firewall-sc-azure> set expert-password
+    cp-firewall-sc-azure> **lock database override**
+    cp-firewall-sc-azure> **set expert-password**
     Enter new expert password:
     Enter new expert password (again):
-    cp-firewall-sc-azure> expert
+    cp-firewall-sc-azure> **expert**
     Enter expert password:
 
 
     Warning! All configurations should be done through clish
     You are in expert mode now.
 
-    [Expert@cp-firewall-sc-azure:0]# cpconfig
+    [Expert@cp-firewall-sc-azure:0]# **cpconfig**
     This program will let you re-configure
     your Check Point products configuration.
 
@@ -173,7 +173,7 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
 
     (9) Exit
 
-    Enter your choice (1-9) :5
+    **Enter your choice (1-9) :5**
 
     Configuring Secure Internal Communication...
     ============================================
@@ -214,7 +214,7 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
 
     (9) Exit
 
-    Enter your choice (1-9) :9
+    **Enter your choice (1-9) :9**
 
     Thank You...
 
@@ -229,7 +229,7 @@ Now go back to SmartConsole and Add a Gateway as shown below:
 
 Click on Wizard Mode
 
-|cp_gateway_creation_wizard|
+|cp_gw_creation_wizard|
 
 Next provide the GW information as shown in the table:
 
@@ -279,7 +279,7 @@ At this point if all the steps are followed properly then you should see a Gatew
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall.
 
-Go to the page "SECURITY POLICIES -> Access Control -> Policy" and configure a policy by either modifying the default rule "Cleanup rule" or "Add rule above".
+Go to the page "SECURITY POLICIES -> Access Control -> Policy" and configure a policy by either modifying the default "Cleanup rule" or Add a new rule above the default rule.
 
 =======================   ===============================================
 **Field**                 **Value**
@@ -328,7 +328,7 @@ Secondly, go back to the CheckPoint Firewall SmartConsole. Navigate to the page 
 
   NAT function needs to be enabled on the CheckPoint FW interface eth0 for this VPC to Internet policy. Please refer to `Check Point's NAT instruction <https://sc1.checkpoint.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for detail.
 
-Furthermore, navigate to the page "SECURITY POLICIES -> Access Control -> Policy". Inject a new rule between the default rule "Cleanup rule" and the rule "allow-all-LAN-to-LAN" that we have created in the previous steps.
+**[Optional]** If you have default "Cleanup rule", then navigate to the page "SECURITY POLICIES -> Access Control -> Policy" and inject a new rule for Internet Policy on top of the default "Cleanup rule".
 
 =======================   ===============================================
 **Field**                 **Value**
@@ -371,7 +371,10 @@ Launch one instance in PROD Spoke VPC and DEV Spoke VPC. Start ping packets from
 [Optional] For VPC to Internet traffic:
 ***************************************
 
-Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping packets from the private instance to Internet service to verify egress function. The ICMP traffic should go through and be inspected on firewall.
+Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
+
+.. important::
+    Egress Inspection inserts a default route (0.0.0.0/0) towards Transit GW to send the Internet traffic towards firewall to get inspected. Azure's System Default Route pointing towards Internet will be Invalid and overwritten by User-defined default route inserted by the Controller which may cause workload/VM's no longer reachable if they are in wrong subnet. Create a jumphost using GW-Public subnet or a new subnet to access private instance using private IP address.
 
 |cp_view_traffic_log_vpc_to_internet|
 
@@ -392,7 +395,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
    :scale: 40%
 .. |smartconsole_add_gateway| image:: config_Checkpoint_media/smartconsole_add_gateway.png
    :scale: 40%
-.. |cp_gateway_creation_wizard| image:: config_Checkpoint_media/cp_gateway_creation_wizard.png
+.. |cp_gw_creation_wizard| image:: config_Checkpoint_media/cp_gw_creation_wizard.png
    :scale: 40%
 .. |gw_general_properties| image:: config_Checkpoint_media/gw_general_properties.png
    :scale: 40%
