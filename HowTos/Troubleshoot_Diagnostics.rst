@@ -56,6 +56,13 @@ Controller IP Migration
 .. important:: The user MUST execute this feature after re-associating a new public IP for the controller through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for the controller and gateways.
 ..
 
+Remote Support 
+~~~~~~~~~~~~~~~~~
+
+By enable Remote Support, you grant permission for Aviatrix support team to access the Controller for debugging 
+purpose. 
+
+Make sure you disable the option when the debugging session is complete. 
 
 Controller Public IP
 ~~~~~~~~~~~~~~~~~~~~~~
