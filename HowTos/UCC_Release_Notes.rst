@@ -60,6 +60,12 @@ R6.0 (Coming soon)
 - **Change Spoke VPC's Security Domains** provides the ability to change a Spoke VPC's Security Domain without detaching the VPC from the TGW. The use case is to reduce Spoke VPC connectivity downtime when it needs to change its associated domains. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Switch Security Domain. In the pop up window, select the desired Security Domain to associate. 
 - **Update Spoke VPC Route Tables** provides the ability to update a Spoke VPC route tables without detaching the VPC from TGW. The use case is to reduce Spoke VPC connectivity downtime when its subnets and route tables are added or deleted. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Update VPC CIDR. 
 
+R5.4.xxx (5/27/2020)
+======================
+
+- **Enhancement** Insane Mode mode to support Transit FireNet in Azure. 
+- **Bug fix** CloudN to work with RBAC.
+
 R5.4.1234 (5/20/2020)
 ======================
 
