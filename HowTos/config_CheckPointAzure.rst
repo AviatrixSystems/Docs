@@ -23,8 +23,8 @@ CloudGuard IaaS Standalone (Gateway + Management) R80.40 - BYOL                 
 
 .. important::
 
-  - CheckPoint Standalone do not require Security Management to manage polices.
-  - Gateway NGTP and NGTX both requires Security Management to configure Firewall Polices in the Gateway
+  - CheckPoint Standalone does not require Security Management to manage polices.
+  - Gateway NGTP and NGTX both requires Security Management to configure Firewall Polices in the Gateway.
 
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
