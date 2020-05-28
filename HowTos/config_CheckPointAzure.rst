@@ -71,7 +71,7 @@ After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#
 
 The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
-|avx_firewall_step7a_UI|
+|avx_firewall-step7a_UI|
 
 .. note::
 
@@ -376,7 +376,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 |cp_view_traffic_log_vpc_to_internet|
 
 
-.. |avx_firewall_step7a_UI| image:: config_Checkpoint_media/avx_firewall_step7a_UI.png
+.. |avx_firewall-step7a_UI| image:: config_Checkpoint_media/avx_firewall-step7a_UI.png
    :scale: 40%
 .. |cp_firewall_interfaces| image:: config_Checkpoint_media/cp_firewall_interfaces.png
    :scale: 40%
@@ -412,7 +412,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
    :scale: 40%
 .. |policy_installed| image:: config_Checkpoint_media/policy_installed.png
    :scale: 20%
-.. |cp_egress_inspection| image:: config_FortiGate_media/cp_egress_inspection.png
+.. |cp_egress_inspection| image:: config_Checkpoint_media/cp_egress_inspection.png
    :scale: 20%
 .. |cp_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/cp_policy_vpc_to_internet_nat_enabled.png
    :scale: 20%
