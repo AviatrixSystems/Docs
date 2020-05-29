@@ -12,7 +12,7 @@ The following CheckPoint AMIs and software versions are supported.
 ==========================================================================             ==========
 **Supported AMI Name**                                                                 **Software Version**
 ==========================================================================             ==========
-CloudGuard IaaS Next-Gen Firewall with Threat Prevention & SandBlast BYIL              R80.40, R80.30
+CloudGuard IaaS Next-Gen Firewall with Threat Prevention & SandBlast BYOL              R80.40, R80.30
 CloudGuard IaaS Next-Gen Firewall with Thread Prevention                               R80.40, R80.30
 CloudGuard IaaS All-In-One R80.40                                                      R80.40 
 ==========================================================================             ==========
@@ -23,16 +23,18 @@ In this document, we provide an example to set up the CheckPoint Firewall instan
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
 After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console. 
 
-Starting from Release 5.4, you no longer need to SSH into the instance for the initial configuration. 
-
 Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
+
+.. note::
+    Firewall Image other then CheckPoint CloudGuard IaaS All-In-One requires a Check Point Security Management to manage firewall polices. See CheckPoint Azure Example for more information.
+
 
 ==========================================      ==========
 **Example setting**                             **Example value**
 ==========================================      ==========
 Firewall Image                                  Check Point CloudGuard IaaS All-In-One R80.40
 Firewall Image Version                          R80.40-294.581
-Firewall Instance Size                          t2.2xlarge
+Firewall Instance Size                          m5.large
 Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach                                          Check
@@ -52,40 +54,7 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Below are the steps for initial setup.
 
-.. important::
-
-  For Controller on Release 5.4 and later, Step 1 and Step 2 can be skipped and start with Step 3.
-
-1. Download CheckPoint Firewall Access Key
-----------------------------------------------
-
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed, you'll see the Download button as below. Click the button to download the .pem file.
-
-If you get a download error, usually it means the CheckPoint Firewall instance is not ready. Wait until it is ready, refresh the browser and then try again.
-
-|v2_avx_pem_file_download|
-
-2. Reset CheckPoint Firewall Password
-----------------------------------------------
-
-For Metered AMI, open a terminal and run the following command. 
-
-.. tip ::
-
-  Once you download the .pem file, change the file permission to 600. It usually takes up to 15 minutes for the CheckPoint Firewall to be ready. Wait and try again until the console prompts. Once SSH into the CheckPoint Firewall using the proper keys and the user “admin”. It takes only two commands to set a new password as below.
-
-::
-
-  ssh -i <private_key.pem> admin@<public-ip_address>
-  set user admin password
-  save config
-  exit
-
-|v2_CheckPoint_change_password|
-
-Terminate the SSH session.
-
-3. Login to CheckPoint Firewall Gaia Portal
+1. Login to CheckPoint Firewall Gaia Portal
 ----------------------------------------------
 
 Go back to the Aviatrix Controller Console. 
@@ -95,122 +64,38 @@ Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/fire
 
 .. note::
 
-  If the Controller is on Release 5.4 or later, Login with Username **admin** and the password **Aviatrix123#**. Otherwise, login with **admin** and password set in Step 2.  
-  Please try to use browser Firefox if the Management UI link is not able to open on your default browser.
+  If the Controller is on Release 5.4 or later, Login with Username **admin** and the password **Aviatrix123#**. Otherwise, login to firewall and  configure the password manually.
 
-4. Initialize CheckPoint Firewall via Gaia Portal
+2. Initialize CheckPoint Firewall via Gaia Portal
 ----------------------------------------------------
 
-Follow the Check Point First Time Configuration Wizard to initialize it as below:
+First time login shows the Check Point First Time Configuration Wizard screen as shown below. This step is not required, just click "Next", "Next" and "Finish", no need to configure anything.
 
 |v2_CheckPoint_Gaia_Portal_Wizard_01|
-
 |v2_CheckPoint_Gaia_Portal_Wizard_02|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_03_eth0|
-
-.. note::
-  
-  Please ignore configuring interface eth1 at this Wizard page as we will configure it in the later section.
-
-|v2_CheckPoint_Gaia_Portal_Wizard_04_eth1|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_05|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_06|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_07|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_08|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_09|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_10|
-
-|v2_CheckPoint_Gaia_Portal_Wizard_11|
-
 |v2_CheckPoint_Gaia_Portal_Wizard_12|
+
+.. important::
+    Aviatrix Controller automatically configures the Checkpoint interfaces and RFC1918 static routes which is required for FireNet feature, so, initialize wizard configurations are no longer required but we need to click Next on each window to initialize the firewall properly.
 
 After the initialization is completed, users will be navigated to the CheckPoint Firewall Gaia Portal Overview page as below.
 
 |v2_CheckPoint_Gaia_Portal_Overview|
 
-5. Configure CheckPoint Firewall interface eth0 with WAN
-------------------------------------------------------------
+|cp_firewall_interfaces_aws|
+|cp_firewall_static_routes_aws|
+|cp_firewall_routes_monitoring_aws|
 
-Login Gaia Portal and go to the page "Network Management -> Network Interfaces" to configure interface eth0 as the following screenshot.
-
-  - Select the interface eth0 and click on "Edit"
-  - Enable the checkbox "Enable"
-  - Enter "WAN" for the field "Comment"
-  - Make sure the IPv4 address/Subnet mask info match to the eth0 of CheckPoint Firewall in AWS portal under the tab "IPv4"
-  - Click on the button "OK"
-  
-|v2_CheckPoint_Gaia_Portal_Configuration_eth0_WAN|
-
-6. Configure CheckPoint Firewall interface eth1 with LAN
---------------------------------------------------------------
-
-Login Gaia Portal and go to the page "Network Management -> Network Interfaces" to configure interface eth1 as the following screenshot.
-
-  - Select the interface eth1 and click on "Edit"
-  - Enable the checkbox "Enable"
-  - Enter "LAN" for the field "Comment"
-  - Click on the radio "Obtain IPv4 address automatically" under tab "IPv4"
-  - Click on the button "OK"
-
-|v2_CheckPoint_Gaia_Portal_Configuration_eth1_LAN|
-
-7. Create static routes for routing of traffic VPC to VPC
--------------------------------------------------------------
-
-Packets to and from TGW VPCs, as well as on-premises, will be hairpinned off of the LAN interface. As such, we will need to configure appropriate route ranges that you expect traffic for packets that need to be forward back to TGW. 
-For simplicity, you can configure the FW to send all RFC 1918 packets to LAN port, which sends the packets back to the TGW. 
-
-In this example, we configure all traffic for RFC 1918 to be sent out of the LAN interface.
-
-Go to the page "Network Management -> IPv4 Static Routes" to create a Static Route as the following screenshot.
-
-  - Click on the button "Add"
-  - Enter the destination route in the "Destination" box and "Subnet Mask" box
- 
-    .. note::
-    
-      i.e. Configure 10.0.0.0 for Destination and 255.0.0.0 for Subnet mask
-    
-  - Select "Normal" for Next Hop Type
-  - Enter comments as necessary.
-  - Click the button "Add Gateway" and then select the button "IP Address" to add AWS default gateway IP
-  
-    .. note::
-    
-      i.e. subnet CIDR for -dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
-  
-  - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
-  - Repeat the above steps for RFC 1918 routes
-    
-|v2_CheckPoint_static_routes_01|
-
-|v2_CheckPoint_static_routes_02|
-
-Those static routes could be reviewed on the page "Network Management -> IPv4 Static Routes"
-
-|v2_CheckPoint_static_routes_review_01|
-
-It also can be reviewed by clicking the button "Monitoring" on the page "Network Management -> IPv4 Static Routes"
-
-|v2_CheckPoint_static_routes_review_02|
-
-8. Download and install the SmartConsole
+3. Download and install the SmartConsole
 -------------------------------------------------
 
-First of all, please download the SmartConsole with version R80.10 on Windows-based computer
+First of all, please download the SmartConsole with version R80.40 on Windows-based computer
 
   Option 1: click on the button "Download Now!" with message "Manage Software Blades using SmartConsole" on the Overview page as below. 
 
 |v2_CheckPoint_Gaia_Portal_SmartConsole_DL|
 
-  Option 2: download it by using this link `R80.10 <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk119612>`_
+  Option 2: download it by using this link `R80.40 <https://supportcenter.checkpoint.com/supportcenter/portal?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=101086>`_
 
 Secondly, install the SmartConsole and login into it with the same username/password/IP Address for Gaia Portal
 
@@ -345,23 +230,11 @@ Launch a private instance in the Spoke VPC (i.e. Spoke-2 VPC) where the Security
    :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_02| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_02.png
    :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_03_eth0| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_03_eth0.png
+.. |cp_firewall_interfaces_aws| image:: config_Checkpoint_media/cp_firewall_interfaces_aws.png
    :scale: 40%   
-.. |v2_CheckPoint_Gaia_Portal_Wizard_04_eth1| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_04_eth1.png
+.. |cp_firewall_static_routes_aws| image:: config_Checkpoint_media/cp_firewall_static_routes_aws.png
    :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_05| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_05.png
-   :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_06| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_06.png
-   :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_07| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_07.png
-   :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_08| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_08.png
-   :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_09| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_09.png
-   :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_10| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_10.png
-   :scale: 40% 
-.. |v2_CheckPoint_Gaia_Portal_Wizard_11| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_11.png
+.. |cp_firewall_routes_monitoring_aws| image:: config_Checkpoint_media/cp_firewall_routes_monitoring_aws.png
    :scale: 40% 
 .. |v2_CheckPoint_Gaia_Portal_Wizard_12| image:: config_Checkpoint_media/v2_CheckPoint_Gaia_Portal_Wizard_12.png
    :scale: 40% 
