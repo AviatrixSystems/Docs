@@ -28,6 +28,9 @@ CloudGuard IaaS Standalone (Gateway + Management) R80.40 - BYOL                 
 
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
+1. Launch CheckPoint Firewall from Aviatrix Controller
+----------------------------------------------------------
+
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_.
 After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console.
 
@@ -40,7 +43,8 @@ Firewall Image                                  Check Point CloudGuard IaaS Sing
 Firewall Image Version                          8040.900294.0593
 Firewall Instance Size                          Standard_D3_v2
 Egress Interface Subnet                         Select the subnet whose name contains "Public-FW-ingress-egress".
-Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
+Username 			                admin (no alternatives)
+Password                                        Input a good password of your choice
 Attach                                          Check
 ==========================================      ==========
 
@@ -56,18 +60,11 @@ eth1 (on subnet -dmz-firewall-lan)                               LAN or Trusted 
 ========================================================         ===============================          ================================
 
 
-Below are the steps for initial setup.
 
-.. important::
-
-  For Controller on Release 5.4 and later, Step 1 and Step 2 can be skipped and start with Step 3.
-
-1. Login to CheckPoint Firewall Gaia Portal
+2. Login to CheckPoint Firewall Gaia Portal
 ----------------------------------------------
 
-Go to the Aviatrix Controller --> Firewall Network --> Setup, and finish `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ to successfully launch a Checkpoint firewall in Azure.
-
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 10 to 15 mins and then go back to Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
+After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 5 minutes and then go back to Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
 
 The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
@@ -77,7 +74,9 @@ The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
   Please try to use different browser (e.g. Firefox) if the Management UI link is not opening on your default browser.
 
-Login Gaia Portal and go to the page “Network Management -> Network Interfaces” to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
+Login Gaia Portal with admin and password specified at launch time. 
+
+Go to the page “Network Management -> Network Interfaces” to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
 
 |cp_firewall_interfaces|
 
@@ -91,7 +90,7 @@ Routes can also be reviewed by clicking the button “Monitoring” on the page 
 
 |cp_firewall_routes_monitoring|
 
-2. Firewall Vendor Integration
+3. Firewall Vendor Integration
 -------------------------------------------------
 Go to Aviatrix Controller --> Firewall Network --> Vendor Integration and complete the step as shown below:
 
@@ -101,10 +100,13 @@ Click **Save**, **Show** and **Sync** respectively.
 
 This automatically set up  the routes between Aviatrix Gateway and Vendor’s firewall instance in this case CheckPoint. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
 
-3. Download and install the SmartConsole
+4. Download and install the SmartConsole
 -------------------------------------------------
 
-First of all, please download and install the **CheckPoint Security Management** from Azure Marketplace for managing Gateways.
+4.1 Download and Install CheckPoint Security Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Download and install the **CheckPoint Security Management** from Azure Marketplace for managing Gateways.
 
 .. important::
 
@@ -118,12 +120,15 @@ Login to CheckPoint Security Manager and download the SmartConsole on Windows-ba
 
   Option 2: download it by using this link `R80.40 <https://supportcenter.checkpoint.com/supportcenter/portal?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=101086>`_
 
-Secondly, install the SmartConsole and login into it with the Gaia Portal username, password and IP Address of Security Manager.
+4.2 Install SmartConsole and Login
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install the SmartConsole and login into it with the Gaia Portal username, password and IP Address of Security Manager.
 
 |smart_console_login|
 
 
-4. Configure and Add CheckPoint Gateway in SmartConsole
+5. Configure and Add CheckPoint Gateway in SmartConsole
 --------------------------------------------------------
 
 CheckPoint Gateway needs to be configured with one-time secure password in order to establish the secure communication with CheckPoint Security Management Portal.
@@ -132,7 +137,7 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
 
 ::
 
-    % **ssh admin@ip-address**
+    %ssh admin@ip-address
     The authenticity of host 'ip-address' can't be established.
     ECDSA key fingerprint is SHA256:1S6wQF4xI6YtieM1te0lnI2wXoRDiDfa85ctsDHd1N4.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
@@ -144,18 +149,18 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
     as specified in https://www.checkpoint.com/download_agreement.html
     CLINFR0771  Config lock is owned by admin. Use the command 'lock database override' to acquire the lock.
 
-    cp-firewall-sc-azure> **lock database override**
-    cp-firewall-sc-azure> **set expert-password**
+    cp-firewall-sc-azure> lock database override
+    cp-firewall-sc-azure> set expert-password
     Enter new expert password:
     Enter new expert password (again):
-    cp-firewall-sc-azure> **expert**
+    cp-firewall-sc-azure> expert
     Enter expert password:
 
 
     Warning! All configurations should be done through clish
     You are in expert mode now.
 
-    [Expert@cp-firewall-sc-azure:0]# **cpconfig**
+    [Expert@cp-firewall-sc-azure:0]# cpconfig
     This program will let you re-configure
     your Check Point products configuration.
 
@@ -173,7 +178,7 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
 
     (9) Exit
 
-    **Enter your choice (1-9) :5**
+    Enter your choice (1-9) :5
 
     Configuring Secure Internal Communication...
     ============================================
@@ -214,7 +219,7 @@ SSH to Checkpoint Gateway in order to configure One-time Secure Password.
 
     (9) Exit
 
-    **Enter your choice (1-9) :9**
+    Enter your choice (1-9) :9
 
     Thank You...
 
@@ -274,7 +279,7 @@ At this point if all the steps are followed properly then you should see a Gatew
 
 |cp_gw_added|
 
-5. Configure basic traffic policy to allow traffic VPC to VPC
+6. Configure basic traffic policy to allow traffic VPC to VPC
 ------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall.
@@ -303,7 +308,7 @@ Click on the button "Install Policy" and then "Install" to commit the settings.
 
 After validating that your traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-6. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
+7. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
 ----------------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
@@ -348,7 +353,7 @@ Click on the button "Install Policy" and then "Install" to commit the settings.
 
 After validating that your traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-7. Ready to go!
+8. Ready to go!
 ----------------
 
 Now your firewall instance is configured and ready to receive packets!
@@ -356,7 +361,7 @@ Now your firewall instance is configured and ready to receive packets!
 Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
 
-8. View Traffic Log
+9. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the CheckPoint Firewall SmartConsole. Go to the page "LOGS & MONITOR".
@@ -374,7 +379,7 @@ Launch one instance in PROD Spoke VPC and DEV Spoke VPC. Start ping packets from
 Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
 
 .. important::
-    Egress Inspection inserts a default route (0.0.0.0/0) towards Transit GW to send the Internet traffic towards firewall to get inspected. Azure's System Default Route pointing towards Internet will be Invalid and overwritten by User-defined default route inserted by the Controller which may cause workload/VM's no longer reachable if they are in wrong subnet. Create a jumphost using GW-Public subnet or a new subnet to access private instance using private IP address.
+    The Egress Inspection is only applicable to all VNets that deploys non public facing applications. If you have any Spoke VNet that has public facing web services, you should not enable Egress Inspection. This is because Egress Inspection inserts a default route (0.0.0.0/0) towards Transit GW to send the Internet traffic towards firewall to get inspected. Azure's System Default Route pointing towards Internet will be overwritten by User-defined default route inserted by the Controller. 
 
 |cp_view_traffic_log_vpc_to_internet|
 
