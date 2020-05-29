@@ -23,8 +23,9 @@ R6.0 (Coming soon)
 ------------------------------
 
 - **Firewall Instances Health Check Enhancement** checks a firewall instance's health by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative option to checking health through firewall's management interface, which improves firewall failure detection time and detection accuracy. Available for both FireNet and Transit FireNet deployment and in both AWS and Azure. 
-- **FireNet Exclude CIDRs** allows you to exclude a list of network CIDRs to be excluded from going through firewall inspection even though its associated Security Domain or network requires inspection. One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors. 
-- **Check Point CloudGuard and Fortinet Fortigate in Azure** is now available in Azure when deploying Aviatrix Transit FireNet. 
+- **FireNet Exclude CIDRs** allows you to exclude a list of network CIDRs to be excluded from going through firewall inspection even though its associated Security Domain or network requires inspection. One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors. For details, check out `Exclude CDIR <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-to-exclude-specific-cidrs-from-being-inspected-by-the-firewall>`_.
+- **Check Point CloudGuard in Azure** is now available in Azure when deploying Aviatrix Transit FireNet. Refer to `this example CheckPoint workflow in Azure <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html>`_ for more details. 
+- **Fortinet Fortigate in Azure** is now available in Azure when deploying Aviatrix Transit FireNet. 
 - **Check Point Dynamic Route Update** enhances FireNet Check Point integration by dynamically updates CloudGuard route tables by the Controller. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the Check Point appliance. 
 
 3. User VPN
