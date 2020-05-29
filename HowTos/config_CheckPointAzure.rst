@@ -7,9 +7,16 @@
 Example Config for CheckPoint VM in Azure
 =========================================================
 
-**Prerequisites:**
-    - Basic CheckPoint Architecture Understanding
-    - CheckPoint Security Management instance to manage CheckPoint CloudGauard IAAS Gateway.
+In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint 
+Firewall for VPC to VPC and from VPC to internet traffic inspection.
+
+Prerequisites
+----------------
+
+Before you start, make sure you have understanding on 
+
+    - Basic CheckPoint Architecture
+    - CheckPoint Security Management 
 
 The following CheckPoint AMIs and software versions are supported in Azure by Aviatrix.
 
@@ -26,13 +33,11 @@ CloudGuard IaaS Standalone (Gateway + Management) R80.40 - BYOL                 
   - CheckPoint Standalone does not require Security Management to manage polices.
   - Gateway NGTP and NGTX both requires Security Management to configure Firewall Polices in the Gateway
 
-In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 1. Launch CheckPoint Firewall from Aviatrix Controller
 ----------------------------------------------------------
 
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_.
-After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console.
 
 Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
@@ -59,12 +64,13 @@ eth0 (on subnet -Public-FW-ingress-egress)                       Egress or Untru
 eth1 (on subnet -dmz-firewall-lan)                               LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
+After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console.
 
 
 2. Login to CheckPoint Firewall Gaia Portal
 ----------------------------------------------
 
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed. Wait for 5 minutes and then go back to Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
+After launch is complete, wait for 5 minutes and then go back to the Controller, Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
 
 The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
@@ -80,7 +86,7 @@ Go to the page “Network Management -> Network Interfaces” to review eth0 (WA
 
 |cp_firewall_interfaces|
 
-Also, review static routes RFC 1918 which is configured on LAN port, the purpose of those static route is to send the packets back to the Gateway (GW).
+Review static routes RFC 1918 which is configured on LAN port, the purpose of those static route is to send the packets back to the Gateway (GW).
 
 Those static routes could be reviewed on the page “Network Management -> IPv4 Static Routes”
 
@@ -106,7 +112,9 @@ This automatically set up  the routes between Aviatrix Gateway and Vendor’s fi
 4.1 Download and Install CheckPoint Security Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download and install the **CheckPoint Security Management** from Azure Marketplace for managing Gateways.
+The CheckPoint instance launched in the previous step requires a management console for managing policies. 
+
+Download and install the **CheckPoint Security Management** from Azure Marketplace. 
 
 .. important::
 

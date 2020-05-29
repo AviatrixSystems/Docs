@@ -25,6 +25,14 @@ Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes 
 
 To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
 
+Design Considerations
+-------------------------
+
+TGW VPN/DXGW associated TGW route tables are automatically programmed when a new routes is learned by TGP BGP. In the current design, the corresponding TGW route
+tables whose Security Domains are connected with the VPN/DXGW associated Security Domains are also auto propagated using the TGW route propagation capability. 
+
+Therefore it is important these auto propagated routes do not overlap, or else packets may be routed to incorrect destinations.
+
 .. important::
 
   When TGW Approval is enabled on a TGW, summary routes (the RFC-1918 routes) are not programmed into the attached Spoke VPC route tables. Instead, specific route entries are programmed into the VPC route table. If more than 50 route entries are anticipated, please make support request to AWS to allow for more route entries. Up to 1000 route entries can be requested. 
