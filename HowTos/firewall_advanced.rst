@@ -64,8 +64,9 @@ Go to SmartConsole -> Global Properties -> Firewall -> Accept ICMP requests.
 
 **Fortigate (Fortinet):**
 
-Just check the ‘ping’ box
+Go to Network -> Interfaces -> Edit Interface -> Check "PING" box
 
+|fortigate_example_ping|
 
 Verify LAN Side ICMP Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,7 +95,6 @@ If you enable Fail Close, FireNet gateway drops all traffic when all firewalls a
 
 
 
-
 .. |firewall_advanced_lan_1| image:: firewall_network_workflow_media/firewall_advanced_lan_1.png
    :scale: 30%
 
@@ -117,6 +117,9 @@ If you enable Fail Close, FireNet gateway drops all traffic when all firewalls a
    :scale: 30%
 
 .. |cp_ping_enable_2| image:: firewall_network_workflow_media/cp_ping_enable_2.png
+   :scale: 30%
+
+.. |fortigate_example_ping| image:: firewall_network_workflow_media/fortigate_example_ping.png
    :scale: 30%
 
 .. disqus::
