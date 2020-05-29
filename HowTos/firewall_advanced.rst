@@ -22,7 +22,9 @@ By default, Aviatrix Controller check the firewall's health by pinging the firew
 How to enable LAN Side ICMP Firewall Health Check?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to Firewall Network --> Advance --> Click the 3 vertical dots as shown below:
+**Aviatrix Controller's side:**
+
+Go to Firewall Network --> Advanced --> Click the 3 vertical dots as shown below:
 
 |firewall_advanced_lan_1|
 
@@ -30,9 +32,44 @@ The expanded view shows the firewall deployed by the Aviatrix controller and tow
 
 |firewall_advanced_lan_ping|
 
+.. note::
+    Firewall LAN's interface private ip must be pingable before you enable this feature.
+
+
+**Vendor's Firewall side:**
+
+**Palo Alto Network:**
+
+Go to Network -> Network Profiles -> Interface Mgmt, create profile to allow ping
+
+|pan_network_profile|
+
+Next, Go to Network -> Interfaces, select **"Ethernet 1/2"**, go to Advanced tab -> Management Profile and select the profile just created in above step
+
+|pan_lan_attach|
+
+Commit changes
+
+**Panoroma:**
+
+Configure stack similar to Palo Alto Network shown above.
+
+**Check Point:**
+
+Go to SmartConsole -> Global Properties -> Firewall -> Accept ICMP requests.
+
+|cp_ping_enable_1|
+
+|cp_ping_enable_2|
+
+**Fortigate (Fortinet):**
+
+Just check the ‘ping’ box
+
+
 Verify LAN Side ICMP Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this example AWS and Check Point used to demonstrate the functionality as shown below:
+In this example, AWS and Check Point used to demonstrate the functionality as shown below:
 
 |example_topology_lan_ping|
 
@@ -70,7 +107,16 @@ If you enable Fail Close, FireNet gateway drops all traffic when all firewalls a
 .. |cp_icmp_lan_example| image:: firewall_network_workflow_media/cp_icmp_lan_example.png
    :scale: 30%
 
-.. |fqdn_in_firenet| image:: firewall_network_workflow_media/fqdn_in_firenet.png
+.. |pan_network_profile| image:: firewall_network_workflow_media/pan_network_profile.png
+   :scale: 30%
+
+.. |pan_lan_attach| image:: firewall_network_workflow_media/pan_lan_attach.png
+   :scale: 30%
+
+.. |cp_ping_enable_1| image:: firewall_network_workflow_media/cp_ping_enable_1.png
+   :scale: 30%
+
+.. |cp_ping_enable_2| image:: firewall_network_workflow_media/cp_ping_enable_2.png
    :scale: 30%
 
 .. disqus::
