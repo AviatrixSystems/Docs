@@ -57,7 +57,7 @@ R6.0 (Coming soon)
 7. AWS Transit Gateway (TGW)
 -------------------------------
 
-- **Intra Domain Firewall Inspection** allows AWS VPCs in the same Security Domain to be inspected by FireNet. The use case is a Security Domain in which all VPCs can communicate with each other, but all traffic requires logging and inspection. 
+- **Intra Domain Firewall Inspection** allows AWS VPCs in the same Security Domain to be inspected by FireNet. The use case is a Security Domain in which all VPCs can communicate with each other, but all traffic requires logging and inspection. To enable, go to TGW Orchestrator -> List -> TGW Security Domains. Select one Security Domain, click Actions -> Edit Intra Domain Inspection. 
 - **Change Spoke VPC's Security Domains** provides the ability to change a Spoke VPC's Security Domain without detaching the VPC from the TGW. The use case is to reduce Spoke VPC connectivity downtime when it needs to change its associated domains. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Switch Security Domain. In the pop up window, select the desired Security Domain to associate. 
 - **Update Spoke VPC Route Tables** provides the ability to update a Spoke VPC route tables without detaching the VPC from TGW. The use case is to reduce Spoke VPC connectivity downtime when its subnets and route tables are added or deleted. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Update VPC CIDR. 
 
