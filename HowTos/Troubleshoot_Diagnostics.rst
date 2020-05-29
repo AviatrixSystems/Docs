@@ -235,11 +235,11 @@ System Resources
 This feature allows you to set the threshold for notifications when the disk/memory of a controller/gateway has reached certain percentage of the total usage. The default behavior is to alert administrators when the disk usage crosses 90% or if memory usage crosses 80%.
 
 
-Connectivity Test
---------------------
+Network Validation: Connectivity Test
+---------------------------------------
 
 When you select the Source Network and Destination Network, the Aviatrix Controller will spin up two instances 
-and run a connectivity test. After the test completes, you can re-run the test. There is only one pair of test endpoints that is valid at any given time. If you want to test a different endpoint, delete the current pair and launch a new pair. 
+and run a connectivity test. After the test completes, you can re-run the test. There is only one pair of test endpoints that is valid at any given time. If you want to test a different endpoint, delete the current pair and launch a new pair. These instances are visible in Gateway page, under "View Instances"
 
 
 .. |wireshark_filter| image:: troubleshoot_diag_media/wireshark_filter.png
