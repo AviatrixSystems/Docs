@@ -13,37 +13,96 @@ For background information, refer to the `TGW Orchestrator FAQ <https://docs.avi
 
 Before you show list, you must have at least completed some `TGW Build  <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ in Build page. 
 
-
 TGW Attachments
 -------------------------------------------
+
+Show Details
+~~~~~~~~~~~~~~~
+
+Show Details display routing details of TGW attachments, Spoke VPC or TGW VPN/DXGW. 
+The routing details include Spoke VPC's VPC route table entries, its attached TGW route table entries and Edge 
+Domain VPC route table entries and its TGW route tables entries. The visibility helps verifying the correctness
+of route entries.   
+
+To view, go to TGW Orchestrator -> List -> TGW Attachment. Select the attachment, click Actions -> Show Details. 
 
 Show Attachment Reachability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Show Attachment Reachability displays the selected attachment's connectivity configuration graphically. 
+
+
 Audit Routes
 ~~~~~~~~~~~~~~
+
+Audit Routes verify route correctness by scanning the attachment's VPC route table, its attached TGW route table 
+and connected TGW route tables. Use this to detect missing routes deleted by mistake or through programming 
+errors.  
 
 Update VPC CIDR
 ~~~~~~~~~~~~~~~~~
 
+If a new Spoke VPC CIDR is added/deleted or a new VPC route is added/deleted, clicking this option updates VPC 
+attachments without having to detach the VPC first. 
+
+Update VPC CIDR automatically makes routing adjustment when there is VPC CIDR change, for example, a new VPC CIDR has 
+been added to the VPC. It also makes routing adjustment when a new route table is added or deleted. 
+
+To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select the attachment, click Actions -> Update VPC CIDR.
+
+
 Edit Spoke VPC Customized Routes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+By default, RFC 1918 summarized routes and learned non RFC 1918 specific routes are dynamically programmed into
+each Spoke VPC's VPC route table. This feature allows you to statically program specific routes whose 
+target is TGW. 
+
+.. Note::
+
+ When Edit Spoke VPC Customized Routes is enabled, all dynamically learned routes by the Spoke VPC are not programmed into the Spoke VPC route tables.  
+
+To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select the attachment, click Actions -> Edit Spoke VPC Customized Routes. Enter a list of network CIDRs separated by comma. 
+
+
 Edit Spoke VPC Advertised Routes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, Spoke VPC advertises its VPC CIDR to TGW route table. This feature allows you to advertise different network CIDRs. 
+
+There are environments where all Spoke VPCs have one identical CIDR, attaching these Spoke VPCs to a TGW will result in error. 
+For example, Spoke VPC CIDR is 10.10.0.0/16, 100.100.0.0/16 where 100.100.0.0/16 is common across all Spoke VPCs. 
+By using this feature, the Spoke VPC only advertises 10.10.0.0/16.  
+
+To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select the attachment, click Actives -> Customize Spoke VPC Advertised Routes. Enter a list of network CIDRs separated by comma. 
 
 Switch Security Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This feature allows you to switch a Spoke VPC's Security Domains without having to detach the Spoke VPC first. 
 
+Go to TGW Orchestrator -> List -> TGW Attachment. Select one attachment, click Actions -> Switch Security Domain. In the drop 
+down menu, select the desired Security Domain, click Update. 
 
 TGW Security Domains
---------------------------------------------------
+-------------------------
 
-This step detaches a VPC from a AWS Transit Gateway and Domain. 
+Show Details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Show Details display the TGW route table entries. 
+
+Edit Intra Domain Inspection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, traffic between VPCs in the same Security Domain does not get inspected by firewalls in the FireNet deployment. 
+
+This feature allows you to enable firewall inspection for traffic within one Security Domain. 
 
 
-.. |prod_vpc_attach| image:: tgw_build_media/prod_vpc_attach.png
+
+
+.. |firewall_launch| image:: tgw_list_media/firewall_launch.png
    :scale: 30%
 
 .. disqus::

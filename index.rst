@@ -96,6 +96,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_faq
    HowTos/tgw_plan
    HowTos/tgw_build
+   HowTos/tgw_list
    HowTos/tgw_approval
    HowTos/tgw_design_patterns
    HowTos/transit_gateway_peering

@@ -375,14 +375,14 @@ Next step is to validate your configurations and polices using FlightPath and Di
 You can view if traffic is forwarded to the firewall instance by logging in to the CheckPoint Firewall SmartConsole. Go to the page "LOGS & MONITOR".
 
 For VPC to VPC traffic:
-***********************
+~~~~~~~~~~~~~~~~~~~~~~~~~`
 
 Launch one instance in PROD Spoke VPC and DEV Spoke VPC. Start ping packets from a instance in DEV Spoke VPC to the private IP of another instance in PROD Spoke VPC. The ICMP traffic should go through the firewall and be inspected in firewall.
 
 |cp_view_traffic_log_vpc_to_vpc|
 
 [Optional] For VPC to Internet traffic:
-***************************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
 
 Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
 
@@ -395,7 +395,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 .. |avx-firewall-step7a_UI| image:: config_Checkpoint_media/avx-firewall-step7a_UI.png
    :scale: 40%
 .. |cp_firewall_interfaces| image:: config_Checkpoint_media/cp_firewall_interfaces.png
-   :scale: 40%
+   :scale: 30%
 .. |cp_firewall_static_routes| image:: config_Checkpoint_media/cp_firewall_static_routes.png
    :scale: 60%
 .. |cp_firewall_routes_monitoring| image:: config_Checkpoint_media/cp_firewall_routes_monitoring.png
