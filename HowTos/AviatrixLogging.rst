@@ -470,6 +470,16 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Click on Advanced, if you want to selectively send logs from only some gateways
   #. Click on Enable
 
+3.1.b Using Rsyslog to send logs to DATADOG
+---------------------------------------------
+  #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
+  #. server: intake.logs.datadoghq.com  
+  #. port: 10516  
+  #. Optional Custom Template: upload your saved customer template, like this,
+	
+<DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - [metas ddsource=\"<MY_SOURCE_NAME>\" ddtags=\"env:dev,<KEY:VALUE>\"] %msg%\n
+
+Make sure you keep <> when you replace your DD API Key, save the temp like .txt file, and upload it.
 
 3.2 Filebeat Forwarder
 -----------------------
@@ -505,14 +515,10 @@ Please note that Sumo collector is memory intensive and needs instances with at 
 
 3.5 DataDog Agent
 -------------------
-On the Aviatrix Controller:
-	#. server: intake.logs.datadoghq.com  
-	#. port: 10516  
-	#. Optional Custom Template: upload your saved customer template, like this,
-	
-<DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - [metas ddsource=\"<MY_SOURCE_NAME>\" ddtags=\"env:dev,<KEY:VALUE>\"] %msg%\n
-
-Make sure you keep <> when you replace your DD API Key, save the temp like .txt file, and upload it.
+You may refer to this link, `here <https://docs.aviatrix.com/HowTos/DatadogIntegration.html>`_ to set up.  
+However, based on the past year experience, the vendor has changed the client root certificates for a few times.  
+   #. You may disable DataDog Agent and re-enable it to fetch the current new root certificate.  
+   #. Or, we highly recommend to follow above 3.1.b steps to use Remote Syslog as client to forward to any servers and will not encounter any of these cert issues.
 
 
 4. Log management system Apps
