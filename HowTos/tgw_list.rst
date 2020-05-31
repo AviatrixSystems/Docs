@@ -76,12 +76,19 @@ By using this feature, the Spoke VPC only advertises 10.10.0.0/16.
 
 To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select the attachment, click Actives -> Customize Spoke VPC Advertised Routes. Enter a list of network CIDRs separated by comma. 
 
+Edit Spoke VPC Local Route Propagation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This feature changes an attached Spoke VPC local route propagation attribute without detaching the VPC. 
+
+To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select one attachment, click Actions -> Edit Spoke VPC Local Route Propagation. 
+
 Switch Security Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature allows you to switch a Spoke VPC's Security Domains without having to detach the Spoke VPC first. 
 
-Go to TGW Orchestrator -> List -> TGW Attachment. Select one attachment, click Actions -> Switch Security Domain. In the drop 
+To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select one attachment, click Actions -> Switch Security Domain. In the drop 
 down menu, select the desired Security Domain, click Update. 
 
 TGW Security Domains
