@@ -4,7 +4,7 @@
 
 
 =========================================================
-AWS Transit Gateway Orchestrator Design Patterns
+TGW Design Patterns
 =========================================================
 
 Many design patterns exist to deploy your network with the AWS Transit Gateway Orchestrator. Here are some 

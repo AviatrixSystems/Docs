@@ -4,7 +4,7 @@
 
 
 =========================================================
-TGW Orchestrator Build
+TGW Build
 =========================================================
 
 At the Build stage, you attach VPCs to an AWS Transit Gateway (TGW) and security domain. Each VPC can only be attached to one security domain. 
