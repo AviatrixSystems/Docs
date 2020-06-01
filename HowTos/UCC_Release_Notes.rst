@@ -63,10 +63,15 @@ R6.0 (Coming soon)
 - **Update Spoke VPC Route Tables** provides the ability to update a Spoke VPC route tables without detaching the VPC from TGW. The use case is to reduce Spoke VPC connectivity downtime when its subnets and route tables are added or deleted. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Update VPC CIDR. For more information, refer to `Update VPC CIDR <https://docs.aviatrix.com/HowTos/tgw_list.html#update-vpc-cidr>`_.
 - **Edit Spoke VPC Local Route Propagation** provides the ability to enable and disable attached Spoke VPC local route propagation without detaching the VPC. The use case is to disable local route propagation after a Spoke VPC is attached to TGW. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Edit Spoke VPC Local Route Propagation. For more information, refer to `Edit Spoke VPC Local Route Propagation <https://docs.aviatrix.com/HowTos/tgw_list.html#edit-spoke-vpc-local-route-propagation>`_. 
 
+R5.4.1240 (6/1/2020)
+=====================
+
+- **Bug fix** Insane Mode to support Transit FireNet in Azure has an issue when the FireNet gateway is rebooted. 
+
 R5.4.1238 (5/27/2020)
 ======================
 
-- **Enhancement** Insane Mode mode to support Transit FireNet in Azure. 
+- **Enhancement** Insane Mode to support Transit FireNet in Azure. 
 - **Bug fix** CloudN to work with RBAC.
 
 R5.4.1234 (5/20/2020)
