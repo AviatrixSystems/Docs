@@ -58,21 +58,29 @@ Below are the steps for initial setup.
 ----------------------------------------------
 
 Go back to the Aviatrix Controller Console. 
-Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`. It takes you to the CheckPoint Firewall Gaia Portal you just launched.
+Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`.
 
 |v2_avx_management_UI|
 
+It takes you to the CheckPoint Firewall Gaia Portal you just launched.
+
+|v2_cp_login_UI|
+
 .. note::
 
-  If the Controller is on Release 5.4 or later, Login with Username **admin** and the password **Aviatrix123#**. Otherwise, login to firewall and  configure the password manually.
+  If the Controller is on Release 5.4 or later, Login with Username **admin** and the password **Aviatrix123#**. Otherwise, ssh to firewall, configure the firewall password manually and then login via user-defined pasword.
 
-2. Initialize CheckPoint Firewall via Gaia Portal
-----------------------------------------------------
+2. Initialize and Login CheckPoint Firewall via Gaia Portal
+-------------------------------------------------------------
 
-First time login shows the Check Point First Time Configuration Wizard screen as shown below. This step is not required, just click "Next", "Next" and "Finish", no need to configure anything.
+First time login shows the **"Check Point First Time Configuration Wizard"** screen as shown below.
 
 |v2_CheckPoint_Gaia_Portal_Wizard_01|
+
+Click **"Next"**, **"Next"** and continue until the **"Finish"** button, no need to configure anything in the configuration wizard.
+
 |v2_CheckPoint_Gaia_Portal_Wizard_02|
+
 |v2_CheckPoint_Gaia_Portal_Wizard_12|
 
 .. important::
@@ -82,9 +90,36 @@ After the initialization is completed, users will be navigated to the CheckPoint
 
 |v2_CheckPoint_Gaia_Portal_Overview|
 
+Go to the page “Network Management -> Network Interfaces” to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
+
 |cp_firewall_interfaces_aws|
+
+Review static routes RFC 1918 which is configured on LAN port, the purpose of those static route is to send the packets back to the Gateway (GW).
+
+Those static routes could be reviewed on the page “Network Management -> IPv4 Static Routes”
+
 |cp_firewall_static_routes_aws|
+
+Routes can also be reviewed by clicking the button “Monitoring” on the page “Network Management -> IPv4 Static Routes”
+
 |cp_firewall_routes_monitoring_aws|
+
+3. (Optional) Firewall Vendor Integration
+-------------------------------------------
+
+The Firewall SSH username and passwords needs to be setup first before we perform vendor integration.
+
+.. code-block::
+
+
+
+Go to Aviatrix Controller –> Firewall Network –> Vendor Integration and complete the step as shown below:
+
+|v2_vendor_integration_AWS|
+
+Click Save, Show and Sync respectively.
+
+This automatically set up the non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case CheckPoint. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
 
 3. Download and install the SmartConsole
 -------------------------------------------------
@@ -219,10 +254,13 @@ Launch a private instance in the Spoke VPC (i.e. Spoke-2 VPC) where the Security
 
 |v2_CheckPoint_view_traffic_log_vpc_to_internet|
 
-
+.. |v2_vendor_integration_AWS| image:: config_Checkpoint_media/v2_vendor_integration_AWS.png
+   :scale: 40%
 .. |v2_avx_pem_file_download| image:: config_Checkpoint_media/v2_pem_file_download.png
    :scale: 40%
 .. |v2_avx_management_UI| image:: config_Checkpoint_media/v2_avx_management_UI.png
+   :scale: 40%
+.. |v2_cp_login_UI| image:: config_Checkpoint_media/v2_cp_login_UI.png
    :scale: 40%
 .. |v2_CheckPoint_change_password| image:: config_Checkpoint_media/v2_CheckPoint_change_password.png
    :scale: 60%
