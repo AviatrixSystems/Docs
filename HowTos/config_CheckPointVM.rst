@@ -17,11 +17,11 @@ CloudGuard IaaS Next-Gen Firewall with Thread Prevention                        
 CloudGuard IaaS All-In-One R80.40                                                      R80.40 
 ==========================================================================             ==========
 
-
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
-After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console. 
+
+After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console.
 
 Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
@@ -51,10 +51,38 @@ eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untru
 eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
-
 Below are the steps for initial setup.
 
-1. Login to CheckPoint Firewall Gaia Portal
+1. Download CheckPoint Firewall Access Key
+----------------------------------------------
+
+After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed, you'll see the Download button as shown below. Click the button to download the .pem file.
+
+If you get a download error, usually it means the CheckPoint Firewall instance is not ready. Wait until it is ready, refresh the browser and then try again.
+
+|v2_avx_pem_file_download|
+
+2. Reset CheckPoint Firewall Password
+----------------------------------------------
+
+For Metered AMI, open a terminal and run the following command.
+
+.. tip ::
+
+  Once you download the .pem file, change the file permission to 600. It usually takes up to 15 minutes for the CheckPoint Firewall to be ready. Wait and try again until the console prompts. Once SSH into the CheckPoint Firewall using the proper keys and the user “admin”. It takes only two commands to set a new password as below.
+
+::
+
+  ssh -i <private_key.pem> admin@<public-ip_address>
+  set user admin password
+  save config
+  exit
+
+|v2_CheckPoint_change_password|
+
+Terminate the SSH session.
+
+3. Login to CheckPoint Firewall Gaia Portal
 ----------------------------------------------
 
 Go back to the Aviatrix Controller Console. 
@@ -70,7 +98,7 @@ It takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
   If the Controller is on Release 5.4 or later, Login with Username **admin** and the password **Aviatrix123#**. Otherwise, ssh to firewall, configure the firewall password manually and then login via user-defined pasword.
 
-2. Initialize and Login CheckPoint Firewall via Gaia Portal
+4. Initialize and Login CheckPoint Firewall via Gaia Portal
 -------------------------------------------------------------
 
 First time login shows the **"Check Point First Time Configuration Wizard"** screen as shown below.
@@ -104,14 +132,8 @@ Routes can also be reviewed by clicking the button “Monitoring” on the page 
 
 |cp_firewall_routes_monitoring_aws|
 
-3. (Optional) Firewall Vendor Integration
+5. (Optional) Firewall Vendor Integration
 -------------------------------------------
-
-The Firewall SSH username and passwords needs to be setup first before we perform vendor integration.
-
-.. code-block::
-
-
 
 Go to Aviatrix Controller –> Firewall Network –> Vendor Integration and complete the step as shown below:
 
@@ -254,9 +276,12 @@ Launch a private instance in the Spoke VPC (i.e. Spoke-2 VPC) where the Security
 
 |v2_CheckPoint_view_traffic_log_vpc_to_internet|
 
+
+.. |v2_avx_pem_file_download| image:: config_Checkpoint_media/v2_avx_pem_file_download.png
+   :scale: 40%
 .. |v2_vendor_integration_AWS| image:: config_Checkpoint_media/v2_vendor_integration_AWS.png
    :scale: 40%
-.. |v2_avx_pem_file_download| image:: config_Checkpoint_media/v2_pem_file_download.png
+.. |v2_pem_file_download| image:: config_Checkpoint_media/v2_pem_file_download.png
    :scale: 40%
 .. |v2_avx_management_UI| image:: config_Checkpoint_media/v2_avx_management_UI.png
    :scale: 40%
