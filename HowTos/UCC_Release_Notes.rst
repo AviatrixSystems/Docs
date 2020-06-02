@@ -33,7 +33,7 @@ R6.0 (Coming soon)
 
 - **Signed Cert for SAML Authentication** improves security of User VPN SAML authentication when it authenticates with the IDPs by provides a signed cert. 
 - **Dashboard to Display user speed** allows you to access individual User VPN client performance. To view the client VPN speed, go to Dashboard, scroll down to the Use VPN section to view. 
-- **Attach a user to profile** provides the new capability to attach a VPN user to a given profile. 
+- **Terraform for Attaching a user to profile** allows you to update the user profile in modular fashion.  
 
 4. Site2Cloud
 ---------------

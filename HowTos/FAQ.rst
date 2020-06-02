@@ -511,7 +511,6 @@ diag.aviatrix.com (54.200.59.112)                            TCP 443        Remo
 customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog  
 AWS SQS                                                      TCP 443        Controller to gateway message queue. sqs.region.amazonaws.com, where region is represented by us-west-2, us-east-2, etc, the region where the Aviatrix gateway is launched. 
 AWS API                                                      TCP 443        AWS API access. ec2.amazonaws.com
-Aviatrix gateways                                            TCP 22         gateway diagnostics (on demand)
 Aviatrix gateways                                            TCP 443        Software upgrade to gateways
 ============================================                 ============   ===================
 
