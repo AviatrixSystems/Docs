@@ -62,23 +62,33 @@ If you get a download error, usually it means the CheckPoint Firewall instance i
 
 |v2_avx_pem_file_download|
 
-2. Reset CheckPoint Firewall Password
-----------------------------------------------
+2. Set CheckPoint Gateway (Firewall) Password
+--------------------------------------------------
 
 For Metered AMI, open a terminal and run the following command.
 
 .. tip ::
 
-  Once you download the .pem file, change the file permission to 600. It usually takes up to 15 minutes for the CheckPoint Firewall to be ready. Wait and try again until the console prompts. Once SSH into the CheckPoint Firewall using the proper keys and the user “admin”. It takes only two commands to set a new password as below.
+  Once you download the .pem file, change the file permission to 600. It usually takes 5 to 10 minutes for the Check Point Gateway to be ready. Once SSH into the Check Point Gateway using the proper keys and the user “admin”, only few commands will be required to enable ssh for user "admin".
 
 ::
 
   ssh -i <private_key.pem> admin@<public-ip_address>
-  set user admin password
-  save config
-  exit
+  set expert-password
+  Enter new expert password:
+  Enter new expert password (again):
+  gw-358e82> expert
+  Enter expert password:
 
-|v2_CheckPoint_change_password|
+
+  Warning! All configurations should be done through clish
+  You are in expert mode now.
+
+  [Expert@gw-358e82:0]# sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+  [Expert@gw-358e82:0]# sed -i 's/PermitRootLogin forced-commands-only/PermitRootLogin yes/' /etc/ssh/sshd_config
+  [Expert@gw-358e82:0]# service sshd reload
+  Reloading sshd:                                            [  OK  ]
+  [Expert@gw-358e82:0]# exit
 
 Terminate the SSH session.
 
