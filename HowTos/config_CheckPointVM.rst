@@ -225,8 +225,6 @@ Click on the button "Install Policy" and then "Install" to commit the settings.
 
 |v2_CheckPoint_policy_vpc_to_vpc_install|
 
-|policy_installed_aws|
-
 8. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
 ----------------------------------------------------------------------------------
 
@@ -235,7 +233,7 @@ In this step, we will configure a basic traffic security policy that allows inte
 .. important::
   Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet
 
-First of all, go back to the Aviatrix Controller Console. Navigate to the page "Firewall Network -> Advanced". Click the skewer/three dot button. Scroll down to “Egress through Firewall” and click Enable. Verify the Egress status on the page "Firewall Network -> Advanced".
+First of all, go back to the Aviatrix Controller Console. Navigate to the page "Firewall Network -> Advanced". Click the skewer/three dot button. Scroll down to “Egress through Firewall” and click "Enable" button. Verify the Egress status on the page "Firewall Network -> Advanced".
 
 |cp_egress_inspection_aws|
 
