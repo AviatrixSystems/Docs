@@ -139,7 +139,7 @@ https://<Private IP address of Aviatrix Controller>
 
 5.1    Onboarding and create a cloud account
 --------------------------------------------
-Upon logging in to the controller for the first time, follow the onboarding process to create a cloud account that corresponds to an AWS IAM account. Aviatrix CloudN uses the account's IAM credential to execute AWS REST APIs to create a VPC and necessary resources.
+Upon logging in to the controller for the first time, follow the onboarding process to create a cloud account that corresponds to an AWS IAM account. Aviatrix CloudN uses the account's IAM credential to execute AWS APIs to create a VPC and necessary resources.
 
 
 5.2    Create a VPC and build an encrypted tunnel
