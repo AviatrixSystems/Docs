@@ -117,3 +117,9 @@ Please check the following
 
   * Please check that your logging server is properly provisioned with enough computing power and storage space
   * If your logging was working well in the past and stopped suddenly, please open a ticket with the support team by sending an email to support@aviatrix.com. 
+  
+  
+How can I update the datadog agent on my controller and gateways?
+---------------------------------------------------------------------
+
+You can disable and enable datadog via the UI on the controller to update the agent. If you prefer to do that only on some gateways, you can disable datadog on those gateways and then enable them back again.
