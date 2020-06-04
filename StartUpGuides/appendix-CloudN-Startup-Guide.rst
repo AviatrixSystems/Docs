@@ -148,7 +148,7 @@ Repeat this procedure for “Adapter 2” as well.
 Booting Up and Initial Configuration
 #####################################
 
-CloudN supports a browser based GUI Interface and REST APIs.
+CloudN supports a browser based GUI Interface and APIs.
 
 After the virtual machine boots up, you must first log in to the
 machine while still in hypervisor console.
