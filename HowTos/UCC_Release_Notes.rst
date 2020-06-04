@@ -141,6 +141,13 @@ R5.4.1066 (4/1/2020)
 - **CheckPoint CloudGuard Integration** now supports CloudGuard All-In-One R80.40. In addition, the initial SSH access process is removed for all CloudGuard AMIs. Check out `CheckPoint CloudGuard Configuration Examples <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_ for more details. 
 - **FortiGate Bootstrap Configuration** is now supported. For details on how to configure, read `Bootstrap Configuration Example for FortiGate Firewall <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_.
 
+R5.3.1551 (6/4/2020)
+======================
+
+- **Bug fix** Change user password should require login CID. 
+- **Enhancement** Multiple enhancement back porting to 5.3. 
+
+
 R5.3.1524 (4/26/2020)
 ========================
 
