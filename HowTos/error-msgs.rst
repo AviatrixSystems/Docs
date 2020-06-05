@@ -229,7 +229,7 @@ You may have exceeded GCP IN_USE_ADDRESSES limits on this account. By default in
     Error: [Aviatrix Error] LAN interface is not in demo1-oregon-firenet-gw firewall subnet subnet-09f70b0922e5878ce.
 
 When you try to associate firewall instance to FireNet gateway, the firewall's LAN instance must stay in the same subnet with FireNet gateway's firewall subnet. It is recommended to use Aviatrix controller to launch and associate firewall, which guarentee all the subnets and interfaces are correct. If you launch your own firewall, you need to make sure the firewall interfaces are correct.
-The firewall subnets/interfaces are created when enable FireNet function on the gateway. If you create firewall instance before enable FireNet function, those instances can not associate with gateway due to mismatched interface. One way to solve this is to use REST-API to enable FireNet function, and provide existing subnets as option. Please refer to API doc. 
+The firewall subnets/interfaces are created when enable FireNet function on the gateway. If you create firewall instance before enable FireNet function, those instances can not associate with gateway due to mismatched interface. One way to solve this is to use API to enable FireNet function, and provide existing subnets as option. Please refer to API doc. 
 
 
 --------------------------------------------------------------------
