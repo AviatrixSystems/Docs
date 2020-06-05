@@ -180,7 +180,7 @@ How do I change a user’s profile programmatically?
 ------------------------------------------------------
 
 
-The controller provides a REST API which can be invoked to change a
+The controller provides a API which can be invoked to change a
 user’s profile. Refer to API documentation under the Help menu.
 
 During this operation, the user’s existing VPN session will be
