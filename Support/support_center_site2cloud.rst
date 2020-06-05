@@ -126,3 +126,9 @@ Please note that the Cisco IOS default lifetimes are *3600 seconds (one hour) an
   
 
 Please refer to `Cisco's IPSec Troubleshooting guide <https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/5409-ipsec-debug-00.html>`_ for more information.
+
+
+How can I restart the tunnel?
+--------------------------------
+
+Please head to Site2Cloud/Diagnostics and pick the correct values for "VPC, Gateway, Connection" and under "Action" select "Restart Service" - this will restart the tunnel services. PLEASE NOTE that this will restart all of the tunnels on this gateway and could impact your service till the tunnels come up.
