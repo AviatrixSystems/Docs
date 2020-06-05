@@ -12,6 +12,7 @@ For questions on FireNet workflow, check out `FireNet Workflow <https://docs.avi
 
 Firewall Health Check and Failover Detection using LAN Interface
 ---------------------------------------------------------------------
+
 By default, Aviatrix Controller check the firewall's health by pinging the firewall's management IP address. In 6.0, firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
 
 .. note::
@@ -19,26 +20,13 @@ By default, Aviatrix Controller check the firewall's health by pinging the firew
     - It also detects the data-plane failure
     - This enhancement is cloud and firewall vendors agnostic, and supported for Transit FireNet and FireNet both.
 
-How to enable LAN Side ICMP Firewall Health Check?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Aviatrix Controller's side:**
-
-Go to Firewall Network --> Advanced --> Click the 3 vertical dots as shown below:
-
-|firewall_advanced_lan_1|
-
-The expanded view shows the firewall deployed by the Aviatrix controller and towards the end of screen shot, one can enable/disable LAN side Health Check.
-
-|firewall_advanced_lan_ping|
-
-.. note::
-    Firewall LAN's interface private ip must be pingable before you enable this feature.
+Step 1: Enable ICMP on Firewall Devices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-**Vendor's Firewall side:**
-
-**Palo Alto Network:**
+**Palo Alto Network**
+~~~~~~~~~~~~~~~~~~~~~~
 
 Go to Network -> Network Profiles -> Interface Mgmt, create profile to allow ping
 
@@ -50,11 +38,13 @@ Next, Go to Network -> Interfaces, select **"Ethernet 1/2"**, go to Advanced tab
 
 Commit changes
 
-**Panoroma:**
+**Panoroma**
+~~~~~~~~~~~~~~~~~
 
 Configure stack similar to Palo Alto Network shown above.
 
-**Check Point:**
+**Check Point**
+~~~~~~~~~~~~~~~~~~~~~
 
 Go to SmartConsole -> Global Properties -> Firewall -> Accept ICMP requests.
 
@@ -62,13 +52,26 @@ Go to SmartConsole -> Global Properties -> Firewall -> Accept ICMP requests.
 
 |cp_ping_enable_2|
 
-**Fortigate (Fortinet):**
+**Fortigate (Fortinet)**
+~~~~~~~~~~~~~~~~~~~~~~~~~~`
 
 Go to Network -> Interfaces -> Edit Interface -> Check "PING" box
 
 |fortigate_example_ping|
 
-Verify LAN Side ICMP Health Check
+Step 2: Configure Aviatrix Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Go to Firewall Network --> Advanced --> Click the 3 vertical dots as shown below:
+
+|firewall_advanced_lan_1|
+
+The expanded view shows the firewall deployed by the Aviatrix controller and towards the end of screen shot, one can enable/disable LAN side Health Check.
+
+|firewall_advanced_lan_ping|
+
+
+Step 3: Verify LAN Side ICMP Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this example, AWS and Check Point used to demonstrate the functionality as shown below:
 
