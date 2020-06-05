@@ -90,7 +90,7 @@ You can also disable dpd's on the Gateway for a site2cloud tunnel - please do re
 Can I configure DPD interval settings?
 -----------------------------------------
 
-At this time, we allow DPD settings (such as delay, retry and maxfail) to be configured only through REST API. Please check out the `REST API documentation <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_.
+At this time, we allow DPD settings (such as delay, retry and maxfail) to be configured only through API. Please check out the `API documentation <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_.
 
 The defaults are dpd_delay 10, dpd_retry 3 and dpd_maxfail 3. Depending on the quality of your connection and packet loss on it, you might be seeing your tunnel going down sometimes. You can adjust your dpd settings to let your tunnel stay up a bit longer before declaring it as dead. dpd_delay is time interval before successful dpds, dpd_rety is the interval at which dpd's are sent in case of a dpd failure and maxfail denotes the number of dpd fails before declaring the tunnel to be down and to restart the negotiation to restart the tunnel again. With the default settings, you should see the tunnel go down if 3 dpd's are missed over a 9 second period.
 
