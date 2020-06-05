@@ -116,7 +116,7 @@ R5.4.1140 (4/21/2020)
 R5.4.1074 (4/3/2020)
 =====================
 
-- **Bug fix** Restore a list of REST APIs that was deleted incorrectly. 
+- **Bug fix** Restore a list of APIs that was deleted incorrectly. 
 
 R5.4.1066 (4/1/2020)
 =====================
@@ -441,7 +441,7 @@ R5.0.2667 (9/9/2019)
 ----------------------------
 
  - **Official Terraform Provider** Aviatrix has become the official Terraform provider! Visit `Aviatrix Provider <https://www.terraform.io/docs/providers/aviatrix/index.html>`_. Terraform v0.12 is needed, please visit `Compatibility Chart <https://www.terraform.io/docs/providers/aviatrix/guides/release-compatibility.html>`_, `Terraform Provider 2.x Upgrade Guide <https://www.terraform.io/docs/providers/aviatrix/guides/v2-upgrade-guide.html>`_.
- - **New REST API site** visit `api.aviatrix.com <https://api.aviatrix.com/?version=latest>`_ to see our brand new API doc site!
+ - **New API site** visit `api.aviatrix.com <https://api.aviatrix.com/?version=latest>`_ to see our brand new API doc site!
  - **Access Account Audit** continuously monitors the health of Controller and individual access account. The Controller sends email alert to the admin user and logs the event when errors in the account setting are detected.
  - **Gateway Audit** continuously monitors the status of gateway cloud credentials and security groups. For AWS, this credential is the gateway's IAM roles and policies. The Controller sends email alert to the admin user and logs the event when errors of gateway cloud credentials are detected. To view the health of the gateway, go to Gateway page and check the field `Audit. <https://docs.aviatrix.com/HowTos/gateway_audit.html>`_
  - **Logs display the source IP address when a user login** to improve visibility.
@@ -604,8 +604,8 @@ R4.3.1230 (5/5/2019)
  - **User Accelerator Preview** integrates AWS Global Accelerator with Aviatrix User VPN to reduce user access latency. 
  - **Azure Native Peering** supports VNET to VNET native peering in the same Azure subscription. Cross subscription is not supported. To configure, go to Peering -> Azure Peering. 
  - **C5n Instance** is now supported. With C5n.18xlarge, InsaneMode IPSEC performance reaches 25Gbps. 
- - **Select Subnets for TGW Attachment** provides by REST API the flexibility to select which subnet to attach to AWS Transit Gateway (TGW). 
- - **Reuse Azure Resource Group** provides by REST API the ability to reuse the VNET resource group when launching an Azure gateway. 
+ - **Select Subnets for TGW Attachment** provides by API the flexibility to select which subnet to attach to AWS Transit Gateway (TGW). 
+ - **Reuse Azure Resource Group** provides by API the ability to reuse the VNET resource group when launching an Azure gateway. 
 
 2. Routing Policies
 ---------------------
@@ -893,7 +893,7 @@ R3.3 (6/10/2018)
 
 - **Access Account Name** is now searchable. 
 
-- **New REST APIs** are available for all features in 3.3.
+- **New APIs** are available for all features in 3.3.
 
 - **List Spoke Gateways** allows you to easily see what are the Spoke gateways are attached to a selected Transit gateway. To view, scroll down to Step 9 at Transit Network workflow, select a Transit GW and view the attached Spoke gateways. 
 
@@ -926,10 +926,10 @@ R3.2 (4/18/2018)
 
 - **UCC Controller Public IP Migration** can be used after Controller's public IP is changed. To migrate, go to Troubleshoot -> Diagnostics -> Network -> Migrate.
 
-4. REST API
+4. API
 ------------
 
-- 50 REST APIs have been added to the Controller. For details, refer to `API Doc <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_
+- 50 APIs have been added to the Controller. For details, refer to `API Doc <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_
  
 
 R3.1 (3/6/2018)
@@ -989,7 +989,7 @@ R3.0 (12/1/2017)
 3. Controller
 --------------
 
-- **Audit** user actions on the Controller. All commands from web console or REST API are now logged to syslog and can be forwarded to integrated log services.
+- **Audit** user actions on the Controller. All commands from web console or API are now logged to syslog and can be forwarded to integrated log services.
 
 - **Name your controller** for ease of use. Click "Your controller name goes here" on the Controller console and start typing a new name. Hit return to save the name. 
 
@@ -1051,7 +1051,7 @@ R2.7
 
 - Support resizing UDP based OpenVPN® gateway instance. 
 
-5. NEW REST APIs
+5. NEW APIs
 ------------------
 
 - Set VPC Access Base Policy.
@@ -1077,7 +1077,7 @@ Security
 
 - FQDN blacklist. In addition to FQDN whitelist, FQDN whitelist is added as a base configuration for each FQDN tag. To configure, go to Advanced Config -> FQDN Filter. After you create a new tag, you can select either White List or Black List. With Black List, the URLs on the Black List will be rejected. 
 
-REST API
+API
 ---------
 
 - New APIs are published. list active VPN users, edit Open VPN configuration, backup and restore, list vpc peers, list image. For API details, click `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`_ for details.
@@ -1590,7 +1590,7 @@ UserConnect-102416
    the specific cloud provider VPN gateways to ensure encrypted tunnel
    work correctly.
 
--  Add REST API for CloudN64 Join features: allow subnet to VPC and
+-  Add API for CloudN64 Join features: allow subnet to VPC and
    delete subnet to VPC. For the complete APIs, refer to `API
    Document <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`__
 
@@ -1657,7 +1657,7 @@ UserConnect-090416
 
 -  Support HA for GCloud gateways with a zone selection option.
 
--  Update REST API to accommodate GUI 2.0 development
+-  Update API to accommodate GUI 2.0 development
 
 UserConnect-082116
 ==================
@@ -2125,12 +2125,12 @@ UserConnect-082515
 -  Detailed display of VPC/gateway on Dashboard. Clicking on the gateway
    name displays the complete configuration of the gateway.
 
--  Support REST API for all CloudOps commands.
+-  Support API for all CloudOps commands.
 
 -  Support the option to launch gateway when creating CloudOps VPC pool.
 
 -  Support CloudOps Access IP address map history and initiator (from
-   Console or from REST API).
+   Console or from API).
 
 -  Hash all password.
 
@@ -2237,7 +2237,7 @@ UserConnect-051515
 
 -  Support configurable base policy for user profiles
 
--  REST API to change a VPN user’s profile
+-  API to change a VPN user’s profile
 
 UserConnect-050915
 ==================
