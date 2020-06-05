@@ -311,7 +311,8 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 .. |smart_console_login_aws| image:: config_Checkpoint_media/smart_console_login_aws.png
    :scale: 40%
 .. |v2_avx_pem_file_download| image:: config_Checkpoint_media/v2_avx_pem_file_download.png
-   :scale: 40%
+   :scale: 30%
+
 .. |v2_vendor_integration_AWS| image:: config_Checkpoint_media/v2_vendor_integration_AWS.png
    :scale: 40%
 .. |v2_pem_file_download| image:: config_Checkpoint_media/v2_pem_file_download.png
