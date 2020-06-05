@@ -1,6 +1,6 @@
 ﻿.. meta::
    :description: Aviatrix Support Center
-   :keywords: Aviatrix, Support, Support Center, controller, bacakup, iam, upgrade, rest api, ssl certificate, controller HA, alerts, blackhole, interfaces, keepalive, certificate, dns, idle timeout, migrate controller, ca signed cert, saml auth, lost password
+   :keywords: Aviatrix, Support, Support Center, controller, bacakup, iam, upgrade, api, ssl certificate, controller HA, alerts, blackhole, interfaces, keepalive, certificate, dns, idle timeout, migrate controller, ca signed cert, saml auth, lost password
 
 ===========================================================================
 Controller
@@ -60,7 +60,7 @@ Our engineering team works very hard to fix issues on a continuous basis. We als
 Does Aviatrix Controller support automation?
 -------------------------------------------------
 
-The Aviatrix Controller supports a `comprehensive set of REST API <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_ to enable automation
+The Aviatrix Controller supports a `comprehensive set of API <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_ to enable automation
 
 We also support Terraform. Please check out `Aviatrix Terraform Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_, `Aviatrix Terraform Provider <https://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_, `Transit Network using Terraform <https://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_ and our `Github Repository <https://github.com/terraform-providers/terraform-provider-aviatrix>`_.
 
@@ -231,7 +231,7 @@ How can I move my controller from one AWS account to another AWS account?
 5. After restore process is finished, check that the new controller can access/configure all the gateways from old controller.
 
 
-How can I import a CA signed cert into my controller through REST API?
+How can I import a CA signed cert into my controller through API?
 --------------------------------------------------------------------------
 
 Here is a sample script to import a CA signed cert:
@@ -239,7 +239,7 @@ Here is a sample script to import a CA signed cert:
 ::
 
   # Description:
-  #    This script demonstrates using Aviatrix REST API, "import_new_https_certs"
+  #    This script demonstrates using Aviatrix API, "import_new_https_certs"
 
   # Instruction(s):
   #    + Please  replace  the content from line 11 to 23 with your own data
