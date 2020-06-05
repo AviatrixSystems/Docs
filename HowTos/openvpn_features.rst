@@ -19,7 +19,7 @@ VPN Management
 - **PKI Management** Supports Bring Your Own (BYO) PKI management system. 
 - **Force Disconnect** Any admin can force disconnect a VPN user from the controller console. 
 - **Dashboard** View all active VPN users and their connection history from the controller console dashboard.
-- **REST API** Support REST API for all management activities.
+- **API** Support API for all management activities.
 
 Authentication Options 
 -----------------------
