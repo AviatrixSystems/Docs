@@ -10,8 +10,8 @@
 
 The Aviatrix CloudN virtual appliance is deployed in an on-premise datacenter or co-location facility.
 
-CloudN supports REST API that allows for further automation and third party software integration.
-REST API documentation can be found at `this link. <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_ For an example of how to use REST API, check out `this link. <http://docs.aviatrix.com/HowTos/aviatrix_apis_datacenter_extension.html>`__
+CloudN supports API that allows for further automation and third party software integration.
+API documentation can be found at `this link. <http://docs.aviatrix.com/HowTos/Aviatrix_Controller_API.html>`_ For an example of how to use API, check out `this link. <http://docs.aviatrix.com/HowTos/aviatrix_apis_datacenter_extension.html>`__
 
 CloudN performs three major functions: 
 
@@ -250,8 +250,7 @@ If you plan to use CloudN for IPmotion, skip section 2.4
 2.10. Time Service
 ---------------------
 
-  CloudN extensively uses Amazon Web Service (AWS) APIs and Azure REST
-  APIs. These APIs checks timestamp for each API call. CloudN is
+  CloudN extensively uses Amazon Web Service (AWS) APIs and Azure APIs. These APIs checks timestamp for each API call. CloudN is
   pre-configured to synchronize its time with the host (please double check on
   the VM advanced option to make sure this is the case.) To ensure correct
   operation of CloudN, it is important that the Host where CloudN is
