@@ -63,10 +63,11 @@ mode become available, follow the `Aviatrix Encrypted Transit Network workflow <
 How to troubleshoot ActiveMesh Transit Gateway?
 -------------------------------------------------
 
- 1. **Check IPSec Tunnel**. Go to Site2Cloud -> Setup. Find the connection and make sure it is in Up state. If it is not, go to Site2Cloud -> Diagnostics and run "Show log". Since all BGP sessions run inside IPSEC tunnel, this is the first thing you should check. 
- #. **Check BGP Session**. Go to (Multi-Cloud) Transit Network -> Advanced Config -> BGP. Look for the BGP session and make sure it is in Established State. If it is not, go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run commands, such as "show ip bgp".
- #. **Check BGP Learned Routes** Go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run "show ip bgp" to make sure the transit gateway under inspection has learned the routes you are looking for. 
- #. **Check Aviatrix Transit Gateway Programmed Routes** Got (Multi-Cloud) Transit Network -> List. Select the transit gateway, click Actions -> Show Details. Scroll down to the Gateway Routing Table and click to open. Make sure the routes you are looking for is in the table and has a next hop with metric 100.  
+ 1. **Check IPSec Tunnel**. For BGP learned routes, check if the IPSEC tunnel is up. Go to Site2Cloud -> Setup. Find the connection and make sure it is in Up state. If it is not, go to Site2Cloud -> Diagnostics and run "Show log". Since all BGP sessions run inside IPSEC tunnel, this is the first thing you should check. 
+ #. **Check BGP Session**. For BGP learned routes, check if BGP session is established. Go to (Multi-Cloud) Transit Network -> Advanced Config -> BGP. Look for the BGP session and make sure it is in Established State. If it is not, go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run commands, such as "show ip bgp".
+ #. **Check BGP Learned Routes** For BGP learned routes, check if routes are learned. Go to (Multi-Cloud) Transit Network -> Advanced Config -> Diagnostics. Select the transit gateway, run "show ip bgp" to make sure the transit gateway under inspection has learned the routes you are looking for. 
+ #. **Check Route Database** For all routes, check if the Controller see all the learned routes from TGW, BGP, Transit Peering and Static. Go to Multi-Cloud Transit -> List. Select the Transit Gateway, click Show Details. Scroll down and refresh `Route Info DB Details`. This table contains learned routes from all sources. 
+ #. **Check Aviatrix Transit Gateway Programmed Routes** Got (Multi-Cloud) Transit Network -> List. Select the Transit Gateway, click Actions -> Show Details. Scroll down to the Gateway Routing Table and click to open. Make sure the routes you are looking for is in the table and has a next hop with metric 100 or lower.  
 
 If any of the above steps show failure, there is an error, contact support@aviatrix.com for more debugging assistance. 
 
