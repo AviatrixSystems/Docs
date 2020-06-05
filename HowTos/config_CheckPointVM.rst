@@ -318,7 +318,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 .. |v2_pem_file_download| image:: config_Checkpoint_media/v2_pem_file_download.png
    :scale: 40%
 .. |v2_avx_management_UI| image:: config_Checkpoint_media/v2_avx_management_UI.png
-   :scale: 40%
+
 .. |v2_cp_login_UI| image:: config_Checkpoint_media/v2_cp_login_UI.png
    :scale: 40%
 .. |v2_CheckPoint_change_password| image:: config_Checkpoint_media/v2_CheckPoint_change_password.png
