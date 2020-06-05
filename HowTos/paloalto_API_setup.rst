@@ -27,7 +27,7 @@ At the Palo Alto VM-Series console,
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  a. Create a new role profile and name it Aviatrix-API-Role: Go to Device -> Admin Roles -> +Add
- #. Click XML/REST API
+ #. Click XML/API
  #. Click Report, Configuration, Operation Requests and Commit
  #. Click Commit.
 
