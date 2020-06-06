@@ -14,6 +14,9 @@ Where do I start?
 The first time you log in, complete the Onboarding process. It takes a
 few steps.
 
+What is an Aviatrix Customer ID?
+------------------------------------
+
 If you have a BYOL license or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Contact
 support@aviatrix.com if you do not have a customer ID.
@@ -26,7 +29,7 @@ An Aviatrix access account (or account for short) represents the following infor
   - The cloud provider account (for example, AWS) credential that the Controller uses to launch Aviatrix gateway in that cloud account.
 
 Why do I need an AWS account credential?
----------------------------------------
+-------------------------------------------
 
 To build connectivity between two VPCs, the Aviatrix Controller launches Aviatrix gateway instances
 in the respective VPCs, instructs the gateways to build an IPSEC tunnel and modifies AWS route tables
@@ -75,7 +78,9 @@ You can create multiple Cloud Accounts to support multi cloud and multi account 
 
 How do we apply Azure role-based access control to an Aviatrix Azure account?
 --------------------------------------------------------------------------
+
 Step 1. Add Aviatrix Resource Role through Powershell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 
 ::
@@ -119,12 +124,14 @@ In Powershell, perform the following:
 2. New-AzRoleDefinition -InputFile avx_rbac_role.json
  
  
-Step2. Add a role assignment in the Azure portal.
+Step 2. Add a role assignment in the Azure portal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment->Select Aviatrix Resource Role as Role -> Select Service Principle-> Save
 
  
-Step3. Use the Service Principle to create an Azure ARM account in the Aviatrix portal
+Step 3. Use the Service Principle to create an Azure ARM account in the Aviatrix portal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 How do I upgrade software?
