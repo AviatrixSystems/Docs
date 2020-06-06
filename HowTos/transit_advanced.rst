@@ -92,7 +92,7 @@ This polling time affects BGP route change convergence time.
 
 This option changes the default polling time. The range is 10 seconds to 50 seconds.
 
-Refresh BGP Advertise Network Routes
+Refresh BGP Advertised Routes
 ---------------------------------------
 
 This option reset BGP connection to the remote BGP peers. 
