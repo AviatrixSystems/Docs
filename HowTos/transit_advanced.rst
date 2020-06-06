@@ -109,7 +109,7 @@ BGP Overlapping Alert Email
 
 When Aviatrix Controller detects overlapping network CIDRs in the network, it sends out alert emails to the admins. 
 
-BGP Route Limitation Alert Email
+BGP Route Limit Alert Email
 ----------------------------------
 
 AWS VGW BGP supports up to 100 routes. When this limit is reached, VGW BGP goes down and causes outage. This email alert 
