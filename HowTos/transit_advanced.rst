@@ -104,6 +104,17 @@ Refer to `TGW Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#w
 
 TGW Edge Segmentation can be enabled at given time. Select a connection to enable or disable. 
 
+BGP Overlapping Alert Email
+----------------------------
+
+When Aviatrix Controller detects overlapping network CIDRs in the network, it sends out alert emails to the admins. 
+
+BGP Route Limitation Alert Email
+----------------------------------
+
+AWS VGW BGP supports up to 100 routes. When this limit is reached, VGW BGP goes down and causes outage. This email alert 
+notifies admin when routes approach 90. 
+
 .. |Test| image:: transitvpc_workflow_media/SRMC.png
    :width: 5.55625in
    :height: 3.26548in
