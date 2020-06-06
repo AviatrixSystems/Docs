@@ -116,17 +116,18 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
    HowTos/transit_approval
+   HowTos/transit_advanced
    HowTos/transitvpc_designs
    HowTos/azure_transit_designs
    HowTos/transit_segmentation_faq
    HowTos/transit_segmentation_workflow
-   HowTos/Setup_Transit_Network_Terraform
    HowTos/activemesh_faq
    HowTos/activemesh_design_notes
    HowTos/activemesh_beta
    HowTos/insane_mode
    HowTos/insane_mode_perf
    HowTos/CloudN_insane_mode
+   HowTos/Setup_Transit_Network_Terraform
 
 .. _Firewall Network:
 

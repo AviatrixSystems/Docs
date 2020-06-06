@@ -54,8 +54,8 @@ What are the advantages of ActiveMesh?
 
 The key benefits of ActiveMesh are improved network resiliency, failover convergence time and performance.
 
-How to enable ActiveMesh?
---------------------------
+How to enable ActiveMesh 1.0?
+--------------------------------
 
 ActiveMesh enabled by default. For Aviatrix Transit or Spoke gateway launched before ActivMesh
 mode become available, follow the `Aviatrix Encrypted Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to enable ActiveMesh mode. 
@@ -159,6 +159,9 @@ The next hop best path selection follows the priorities listed below.
  #. For two identical length ASN routes, select the next hop with the lowest Metric Value 
  #. For two identical ASN length and Metric Value routes, if ECMP is disabled (this is the default configuration), select the current best route. If there is no current best route, the next hop IP addresses are compared, the lower integer IP address is selected. 
  #. For two identical ASN length and Metric Value routes, if ECMP is enabled, traffic is distributed to both routes using ECMP. 
+
+How to enable ActiveMesh 2.0?
+--------------------------------
 
 ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. If you have current Transit Network, 
 migrate to ActiveMesh 2.0 by going to Settings -> Migration -> ActiveMesh 2.0 Migration, click Migrate. 
