@@ -77,7 +77,7 @@ No. An Aviatrix Cloud Account corresponds to one cloud account of one cloud type
 You can create multiple Cloud Accounts to support multi cloud and multi account deployment environment.
 
 How do we apply Azure role-based access control to an Aviatrix Azure account?
---------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Step 1. Add Aviatrix Resource Role through Powershell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,6 +132,11 @@ In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment->S
  
 Step 3. Use the Service Principle to create an Azure ARM account in the Aviatrix portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How to setup OCI account credentials?
+---------------------------------------
+
+Follow the instructions on `Oracle Cloud Infrastructure Documentation. <https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm>`_. 
 
 
 How do I upgrade software?
