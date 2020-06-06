@@ -4,7 +4,7 @@
 
 
 ================================================================
-Aviatrix Multi-Cloud Transit Advanced Config
+Multi-Cloud Transit Advanced Config
 ================================================================
 
 .. Note::
@@ -17,7 +17,7 @@ Local AS Number
 This option changes the Aviatrix Transit Gateway ASN number without tearing down the Aviatrix Transit Gateway connection configurations. 
 
 
-Manual BGP Advertised Network List
+BGP Manual Advertised Network List
 -------------------------------------
 
 This field is only applicable to Transit GW established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
