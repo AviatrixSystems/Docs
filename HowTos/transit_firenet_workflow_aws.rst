@@ -38,7 +38,7 @@ Aviatrix controller has set of useful tools available for users and in this exam
 1.	Login to the Aviatrix Controller with username and password
 #.	Navigate to **Useful Tools -> Create A VPC**
 #.	Add one VPC for Transit FireNet Gateway and select **Aviatrix FireNet VPC** option as shown below.
-#.  Create two more VPCs with no option selected for Spoke Gateways.
+#.  Create two more VPCs with **no option/checkbox** selected for Spoke Gateways.
 
 |create_vpc|
 
@@ -155,7 +155,7 @@ This step launches a Firewall instance and associates it with one of the FireNet
 
 .. important::
 
-The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 7a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,12 +197,11 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 
 .. important::
 
-  For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
+    For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
 
 .. Tip::
 
-    If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above,
-    then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
+    If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above, then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
 
 2. Fortigate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -216,11 +215,11 @@ eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untru
 eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
-Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+.. note::
+    Firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
 
-.. Tip::
-
-  Starting from Release 5.4, Fortigate bootstrap configuration is supported.
+.. tip::
+    Starting from Release 5.4, Fortigate bootstrap configuration is supported.
 
 
 3. CheckPoint Specification
@@ -239,7 +238,7 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
 
 .. important::
 
-  Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
+    Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
 
 
 .. note::
@@ -257,22 +256,22 @@ Step 9: Example Setup for "Allow All" Policy
 After a firewall instance is launched, wait for 5 to 15 minutes for it to come up. Time varies for each firewall vendor.
 In addition, please follow example configuration guides as below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to firewall instance.
 
-Palo Alto
+Palo Alto Network (PAN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
+For basic configuration, please refer to `example Palo Alto Network configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
 
 For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_.
 
-FortiGate
+FortiGate (Fortinet)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html>`_.
+For basic configuration, please refer to `example Fortinet configuration guide <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html>`_.
 
-CheckPoint
+Check Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_.
+For basic configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_.
 
 
 Step 10: (Optional) Vendor Firewall Integration
@@ -286,18 +285,31 @@ Vendor integration dynamically updates firewall route tables. The use case is fo
 Step 11: Verification
 ***************************
 
-There are multiple ways to verify if Transit FireNet is configured properly.
-1.	Aviatrix Flightpath - Control-plane Test
-2.	Ping Test between Spoke VPCs (East-West) - Data-plane Test
+There are multiple ways to verify if Transit FireNet is configured properly:
 
-Flight Path Test for FireNet Verification
-1.	Navigate to Troubleshoot-> Flight Path
-2.	Provide the Source and Destination Region and VPC information.
-3.	Select ICMP and Private subnet and Run the test.
+    1.	Aviatrix Flightpath - Control-plane Test
+    #.	Ping/Traceroute Test between Spoke VPCs (East-West) - Data-plane Test
+
+Flight Path Test for FireNet Control-Plane Verification:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Flight Path is a very powerful troubleshooting Aviatrix tool which allows users to validate the control-plane and gives visibility of end to end packet flow.
+
+    1.	Navigate to **Troubleshoot-> Flight Path**
+    #.	Provide the Source and Destination Region and VPC information
+    #.	Select ICMP and Private subnet, and Run the test
 
 .. note::
     EC2 VM instance will be required in AWS, and ICMP should be allowed in security group.
 
+Ping/Traceroute Test for FireNet Data-Plane Verification:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once control-plane is established and no problem found in security and routing polices. Data-plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
+
+There are multiple ways to check data-plane:
+    1. One way to SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
+    2. Ping/traceroute capture can also be performed from Aviatrix Controller. Go to **TROUBLESHOOT -> Diagnostics** and perform the test.
 
 
 .. |subscribe_firewall| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/subscribe_firewall.png
