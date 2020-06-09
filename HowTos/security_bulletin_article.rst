@@ -172,7 +172,7 @@ Plus Security Patch “SAML XML signature wrapping vulnerability”
 CVE-2020-13415
 
 **Acknowledgement**
-Aviatrix is pleased to thank Christos Argyropoulos from Elastic Search for reporting this vulnerability under responsible disclosure. 
+Aviatrix is pleased to thank Ioannis Kakavas from Elastic for reporting this vulnerability under responsible disclosure. 
 
 1. OpenVPN Client Arbitrary File Write
 ------------------------------------
