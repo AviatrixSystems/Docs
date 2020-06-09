@@ -112,7 +112,7 @@ Go to Controller -> Firewall Network -> Vendor Integration -> Firewall. Note the
  -  Firewall Login User Name field, use "avxadmin" without the double quotes.
  -  Firewall Login Password field, use "Aviatrix123#" without the double quotes.
 
-Follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
+If you are manually configuring the firewall from scratch, follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
 
 6. Ready to go!
