@@ -15,11 +15,32 @@ ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This 
 While AWS Transit Gateway (TGW) does not propagate routes to Spoke VPCs, TGW Direct Connect via DXGW and TGW
 VPN have full functions of failover, multi-path and ECMP in supporting connection to on-prem. This includes:
 
- - TGW DXGW prefers to TGW VPN when both advertising the same network. When DXGW goes down, one of the VPN routes take over. 
+ - TGW prefers DXGW to TGW VPN when both advertising the same network. When DXGW goes down, one of the VPN routes take over. 
  - When there are multiple VPN routes, TGW routing policy selects the shortest AS_PATH length. 
  - When there are multiple VPN routes with identical AS_PATH length, TGW VPN distributes traffic with ECMP when it is enabled. 
 
 In this case, Aviatrix Controller performs the orchestration function in managing route propagation and Aviatrix Transit gateways are used to connect two TGWs. 
+
+Design Note: Implementing TGW with VPN backup design could lead to asymmetric routing i.e with traffic from AWS to on-premises 
+traversing the DX as inteneded while traffic from on-premises to AWS traversing the IPSec VPN tunnel instead.
+
+Traffic from AWS to on-premise prefers the AWS DXGW over the VPN connection because the TGW effectively sets a higher “local
+preference” (LOCAL_PREF) on the DXGW BGP sessions (refer to Route Evaluation Order as outlined in the AWS Transit Gateway
+documentation).
+
+For traffic from on-premises to AWS, the DX path should be preferred because AWS sets a Multi Exit Discriminator (MED) value
+of 100 on BGP sessions over VPN links as compared to the default value of 0 over the DX path. This works well in the case DX
+and VPN are used with a Virtual Private Gateway (VGW) as the same AS is announced over both connections but in case of the
+TGW, the DX path uses a different ASN compared to the VPN path. 
+
+The advertised ASN over VPN is the TGW AS while the ASN over DX is the ASN of the DXGW. Note that in case of TGW, the AS path
+over the DXGW path only consists of the DXGW AS instead of AS path length of two with TGW AS + DXGW AS. This is the result of
+manually setting the CIDRs to be announced by the AWS DXGW towards on-premises which effectively causes DXGW to originate the
+routes resulting in a reduced path length of one over DX which is the same AS path length as over the VPN link but different
+AS path.
+
+To ensure that the on-premises routers always cosnider the MED value, set the “bgp always-compare-med” knob. This forces the
+router to compare the MED if multiple routes to a destination have the same local preference and AS path length.
 
 The deployment is shown in the diagram below. 
 
