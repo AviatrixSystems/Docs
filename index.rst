@@ -140,7 +140,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/firewall_network_design_patterns
    HowTos/transit_firenet_faq
    HowTos/transit_firenet_workflow
-   HowTos/transit_firenet_workflow_aws
    HowTos/firewall_advanced
    HowTos/paloalto_API_setup
    HowTos/ingress_firewall_example
@@ -403,6 +402,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/activemesh_migration
    HowTos/openvpn_fqdn
    HowTos/HowTo_Setup_SAML_with_G_SUITE_ORG
+   HowTos/transit_firenet_workflow_aws
    
 .. _Good To Know:
 
