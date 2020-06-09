@@ -102,7 +102,7 @@ https://portal.azure.com
 
 
 7. In the Select search field, type in “Aviatrix”. The Aviatrix Controller
-   app should show up. Select this one and click Select towards to the
+   (that you created in step 1) app should show up. Select this one and click Select towards to the
    bottom.
 
 2.3 Step 3 – Get Application Information
