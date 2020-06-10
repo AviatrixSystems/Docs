@@ -51,13 +51,18 @@ Aviatrix CloudN Appliance with HA
 
 |deployment_ha|
 
-Redundant DX Deployment 
+Redundant DX Deployment (Active/Standby)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this deployment model, Direct Connects are being used in a Active/Standby mode. The Preferred path is indicated on the picture.
+
+.. note::
+    The firewalls on the left side of the picture cannot handle asymmetric traffic which maybe the reason of having Direct Connect as Active/Standby
 
 |deployment_dual_dx|
 
-Redundant DX Deployment 
+Redundant DX Deployment (Active/Active)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this deployment model, Direct Connects are Active / Active. One of the requirements would be for the firewall to handle asymmetric routing.
 
 |deployment_dual_dx_aa|
 
