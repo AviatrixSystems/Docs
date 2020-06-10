@@ -410,52 +410,52 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 |cp_view_traffic_log_vpc_to_internet|
 
 
-.. |cp_arch_reference| image:: config_CheckPoint_media/cp_arch_reference.png
+.. |cp_arch_reference| image:: config_Checkpoint_media/cp_arch_reference.png
    :scale: 20%
-.. |avx-firewall-step7a_UI| image:: config_CheckPoint_media/avx-firewall-step7a_UI.png
+.. |avx-firewall-step7a_UI| image:: config_Checkpoint_media/avx-firewall-step7a_UI.png
    :scale: 20%
-.. |cp_firewall_interfaces| image:: config_CheckPoint_media/cp_firewall_interfaces.png
+.. |cp_firewall_interfaces| image:: config_Checkpoint_media/cp_firewall_interfaces.png
    :scale: 20%
-.. |cp_firewall_static_routes| image:: config_CheckPoint_media/cp_firewall_static_routes.png
+.. |cp_firewall_static_routes| image:: config_Checkpoint_media/cp_firewall_static_routes.png
    :scale: 20%
-.. |cp_firewall_routes_monitoring| image:: config_CheckPoint_media/cp_firewall_routes_monitoring.png
+.. |cp_firewall_routes_monitoring| image:: config_Checkpoint_media/cp_firewall_routes_monitoring.png
    :scale: 20%
-.. |cp_firewall_vendor_integration| image:: config_CheckPoint_media/cp_firewall_vendor_integration.png
+.. |cp_firewall_vendor_integration| image:: config_Checkpoint_media/cp_firewall_vendor_integration.png
    :scale: 20%
-.. |cp_security_manager| image:: config_CheckPoint_media/cp_security_manager.png
+.. |cp_security_manager| image:: config_Checkpoint_media/cp_security_manager.png
    :scale: 20%
-.. |smart_console_login| image:: config_CheckPoint_media/smart_console_login.png
+.. |smart_console_login| image:: config_Checkpoint_media/smart_console_login.png
    :scale: 20%
-.. |smartconsole_add_gateway| image:: config_CheckPoint_media/smartconsole_add_gateway.png
+.. |smartconsole_add_gateway| image:: config_Checkpoint_media/smartconsole_add_gateway.png
    :scale: 20%
-.. |cp_gw_creation_wizard| image:: config_CheckPoint_media/cp_gw_creation_wizard.png
+.. |cp_gw_creation_wizard| image:: config_Checkpoint_media/cp_gw_creation_wizard.png
    :scale: 20%
-.. |gw_general_properties| image:: config_CheckPoint_media/gw_general_properties.png
+.. |gw_general_properties| image:: config_Checkpoint_media/gw_general_properties.png
    :scale: 20%
-.. |trusted_communication| image:: config_CheckPoint_media/trusted_communication.png
+.. |trusted_communication| image:: config_Checkpoint_media/trusted_communication.png
    :scale: 20%
-.. |get_topology| image:: config_CheckPoint_media/get_topology.png
+.. |get_topology| image:: config_Checkpoint_media/get_topology.png
    :scale: 20%
-.. |cp_wizard_summary| image:: config_CheckPoint_media/cp_wizard_summary.png
+.. |cp_wizard_summary| image:: config_Checkpoint_media/cp_wizard_summary.png
    :scale: 20%
-.. |cp_gw_summary| image:: config_CheckPoint_media/cp_gw_summary.png
+.. |cp_gw_summary| image:: config_Checkpoint_media/cp_gw_summary.png
    :scale: 20%
-.. |cp_gw_added| image:: config_CheckPoint_media/cp_gw_added.png
+.. |cp_gw_added| image:: config_Checkpoint_media/cp_gw_added.png
    :scale: 20%
-.. |basic_allowall_policy| image:: config_CheckPoint_media/basic_allowall_policy.png
+.. |basic_allowall_policy| image:: config_Checkpoint_media/basic_allowall_policy.png
    :scale: 20%
-.. |install_allowall_policy| image:: config_CheckPoint_media/install_allowall_policy.png
+.. |install_allowall_policy| image:: config_Checkpoint_media/install_allowall_policy.png
    :scale: 20%
-.. |policy_installed| image:: config_CheckPoint_media/policy_installed.png
+.. |policy_installed| image:: config_Checkpoint_media/policy_installed.png
    :scale: 20%
-.. |cp_egress_inspection| image:: config_CheckPoint_media/cp_egress_inspection.png
+.. |cp_egress_inspection| image:: config_Checkpoint_media/cp_egress_inspection.png
    :scale: 20%
-.. |cp_policy_vpc_to_internet_nat_enabled| image:: config_CheckPoint_media/cp_policy_vpc_to_internet_nat_enabled.png
+.. |cp_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/cp_policy_vpc_to_internet_nat_enabled.png
    :scale: 20%
-.. |cp_policy_vpc_to_internet| image:: config_CheckPoint_media/cp_policy_vpc_to_internet.png
+.. |cp_policy_vpc_to_internet| image:: config_Checkpoint_media/cp_policy_vpc_to_internet.png
    :scale: 20%
-.. |cp_view_traffic_log_vpc_to_vpc| image:: config_CheckPoint_media/cp_view_traffic_log_vpc_to_vpc.png
+.. |cp_view_traffic_log_vpc_to_vpc| image:: config_Checkpoint_media/cp_view_traffic_log_vpc_to_vpc.png
    :scale: 20%
-.. |cp_view_traffic_log_vpc_to_internet| image:: config_CheckPoint_media/cp_view_traffic_log_vpc_to_internet.png
+.. |cp_view_traffic_log_vpc_to_internet| image:: config_Checkpoint_media/cp_view_traffic_log_vpc_to_internet.png
    :scale: 20%
 .. disqus::
