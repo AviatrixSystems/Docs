@@ -93,8 +93,8 @@ For example, if traffic going in and out of VPC Spoke2 where Spoke2-gw is deploy
 
 For specify more VPC/VNets for inspection, repeat this step. 
 
-3. Deploy Firewall Network
------------------------------
+3. Deploy Firewall Instances
+-------------------------------
 
 Go to Firewall Network -> Setup -> Deploy Firewall Network, follow the `deployment instructions <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ to launch one or more firewall instances. 
 
