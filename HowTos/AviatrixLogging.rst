@@ -520,6 +520,7 @@ However, based on the past year experience, the vendor has changed the client ro
    #. You may disable DataDog Agent and re-enable it to fetch the current new root certificate.  
    #. Or, we highly recommend to follow above 3.1.b steps to use Remote Syslog as client to forward to any servers and will not encounter any of these cert issues.
 
+Before 5.3 release, DataDog agent woulld only upload metrics from the Aviatrix Controller and Gateways - from release 5.3, we also upload syslogs to bring it on par with Sumo and Splunk agent behavior.
 
 4. Log management system Apps
 ====================================
