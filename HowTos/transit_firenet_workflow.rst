@@ -11,6 +11,8 @@ To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.av
 
 If you are looking deploying firewall networks in AWS TGW environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
 
+For a complete step by step guide, refer to `Transit FireNet on AWS Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_. 
+
 Prerequisite for AWS
 ---------------------
 

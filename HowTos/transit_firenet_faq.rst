@@ -71,6 +71,8 @@ How do I configure FireNet?
 
 Follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to deploy firewall in the cloud. 
 
+For a complete end to end example, refer to `The Example Step by Step Guide for Transit FireNet in AWS <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_. 
+
 
 How do I enable Egress inspection on Transit FireNet?
 --------------------------------------------------------
