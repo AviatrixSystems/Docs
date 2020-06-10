@@ -98,11 +98,28 @@ For specify more VPC/VNets for inspection, repeat this step.
 
 Go to Firewall Network -> Setup -> Deploy Firewall Network, follow the `deployment instructions <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ to launch one or more firewall instances. 
 
+4. Enable Firewall Management Access
+--------------------------------------
 
-4. Delete Function
+When this option is configured, Aviatrix Transit Gateway advertises the transit VPC CIDR to on-prem. 
+
+The use case is if a firewall management console, such as Palo Alto Networks Panorama is deployed on-prem, the Panorama can access the firewalls of their private IP addresses with this option configured. 
+
+5. Delete Function
 ------------------------------------------
 
 In the drop menu, select one Aviatrix Transit Gateway with FireNet function to disable it.  
+
+5a. Disable Transit FireNet on Aviatrix Transit Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select a Transit FireNet gateway to disable the function. 
+
+5b. Disable Transit FireNet on Aviatrix Egress Transit Gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If Aviatrix Egress Transit Gateway has been configured, select one to disable the function.   
+
 
 .. |transit_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_policy.png
    :scale: 30%
