@@ -19,9 +19,10 @@ The scenario is described in the following diagram, where VPC-2 represents an on
 
 |overlap_rbi|
 
+
 ::
 
-  VPC-1 CIDR =  10.20.0.0/20, instance-1 in VPC-1 has an IP address 10.24.7.122.
+  VPC-1 CIDR = 10.20.0.0/20, instance-1 in VPC-1 has an IP address 10.24.7.122.
   VPC-2 CIDR = 10.20.0.0/20, instance-2 in VPC-2 has an IP address 10.24.1.4.
 
 
@@ -58,12 +59,17 @@ Go to Controller Console -> Site2Cloud.
 
 Click "+Add New". Fill the form and click OK. Select "Mapped" for the Connection Type field.
 
+|s2c_connection|
+
 2.1 VPC-1 gateway-1 side
 #########################
 
-For the VPC-1 gateway side, the Local Subnet field should be private IP address of VPC-1 gateway (e.g. 10.24.0.0/20), and the Remote Subnet field should be private IP address of VPC-2 gateway (e.g. 10.24.0.4/32), as shown below.
+For the VPC-1 gateway side, the Local Subnet field should be the subnet of VPC-1 (e.g. 10.24.0.0/20), and the Remote Subnet field should be the subnet of VPC-2 (e.g. 10.24.0.4/32), as shown below.
 
 |vpc1_to_vpc2_rbipsec|
+
+.. important::
+    Local & Remote Subnet (virtual) IP range could be anything but subnet should be same as Physical/Real subnet.
 
 2.2 VPC-2 gateway-2 side
 ##########################
@@ -76,7 +82,9 @@ For the VPC-2 gateway side, the Local Subnet field should be 10.24.0.0/20, and t
 
 Wait for the tunnel to come up.
 
-Normally you'll need to download the configuration, but in this example, since both ends of the network are on the VPC, you can simply configure each Site2Cloud tunnel. Make sure the pre-shared Keys are the same for both ends. In the above example, we used "Aviatrix101#" as our pre-shared key.
+.. note::
+
+    Normally you'll need to download the configuration, but in this example, since both ends of the network are on the VPC, you can simply configure each Site2Cloud tunnel. Make sure the pre-shared Keys are the same for both ends. In the above example, we used "Aviatrix123!" as our pre-shared key.
 
 Step 3. Test site2cloud Connection
 ---------------------------------------------------------
@@ -87,6 +95,9 @@ From instance-1, you should be able to ping instance-2 by "ping 192.24.1.4".
 From instance-2, you should be able to ping instance-1 by "ping 172.24.7.122"
 
 Done.
+
+.. |s2c_connection| image:: connect_overlap_cidrs_media/s2c_connection.png
+   :scale: 25%
 
 .. |overlap_rbi| image:: connect_overlap_cidrs_media/overlap_rbi.png
    :scale: 30%
