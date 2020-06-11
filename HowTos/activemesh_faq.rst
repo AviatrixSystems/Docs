@@ -160,8 +160,8 @@ The next hop best path selection follows the priorities listed below.
  #. For two identical ASN length and Metric Value routes, if ECMP is disabled (this is the default configuration), select the current best route. If there is no current best route, the next hop IP addresses are compared, the lower integer IP address is selected. 
  #. For two identical ASN length and Metric Value routes, if ECMP is enabled, traffic is distributed to both routes using ECMP. 
 
-How to enable ActiveMesh 2.0?
---------------------------------
+How to migrate to ActiveMesh 2.0?
+--------------------------------------
 
 ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. If you have current Transit Network, 
 migrate to ActiveMesh 2.0 by going to Settings -> Migration -> ActiveMesh 2.0 Migration, click Migrate. 
