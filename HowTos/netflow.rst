@@ -16,6 +16,8 @@ enabled in the Advanced option.
 
 All flows are captured, there is no option to sample a fraction of the packets. 
 
+Both Netflow V5 and V9 are supported. 
+
 . 
 
 
