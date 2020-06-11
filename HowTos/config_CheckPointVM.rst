@@ -7,7 +7,7 @@
 Example Config for Check Point VM in AWS 
 =========================================================
 
-The following CheckPoint AMIs and software versions are supported. 
+The following CheckPoint AMIs and software versions are supported.
 
 ==========================================================================             ==========
 **Supported AMI Name**                                                                 **Software Version**
@@ -16,6 +16,10 @@ CloudGuard IaaS Next-Gen Firewall with Threat Prevention & SandBlast BYOL       
 CloudGuard IaaS Next-Gen Firewall with Thread Prevention                               R80.40, R80.30
 CloudGuard IaaS All-In-One R80.40                                                      R80.40 
 ==========================================================================             ==========
+
+Basic Check Point architecture is shown below:
+
+|cp_arch_reference|
 
 In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
 
@@ -297,28 +301,28 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 |v2_CheckPoint_view_traffic_log_vpc_to_internet|
 
 
-
+.. |cp_arch_reference| image:: config_Checkpoint_media/cp_arch_reference.png
+   :scale: 35%
 .. |cp_policy_vpc_to_internet_aws| image:: config_Checkpoint_media/cp_policy_vpc_to_internet_aws.png
-   :scale: 40%
+   :scale: 30%
 .. |cp_egress_inspection_aws| image:: config_Checkpoint_media/cp_egress_inspection_aws.png
    :scale: 40%
 .. |policy_installed_aws| image:: config_Checkpoint_media/policy_installed_aws.png
    :scale: 40%
 .. |smartconsole_gateway_login_aws| image:: config_Checkpoint_media/smartconsole_gateway_login_aws.png
-   :scale: 40%
+   :scale: 30%
 .. |install_policy_aws| image:: config_Checkpoint_media/install_policy_aws.png
-   :scale: 40%
+   :scale: 30%
 .. |smart_console_login_aws| image:: config_Checkpoint_media/smart_console_login_aws.png
    :scale: 40%
 .. |v2_avx_pem_file_download| image:: config_Checkpoint_media/v2_avx_pem_file_download.png
    :scale: 20%
-
 .. |v2_vendor_integration_AWS| image:: config_Checkpoint_media/v2_vendor_integration_AWS.png
-   :scale: 40%
+   :scale: 30%
 .. |v2_pem_file_download| image:: config_Checkpoint_media/v2_pem_file_download.png
    :scale: 40%
 .. |v2_avx_management_UI| image:: config_Checkpoint_media/v2_avx_management_UI.png
-
+   :scale: 30%
 .. |v2_cp_login_UI| image:: config_Checkpoint_media/v2_cp_login_UI.png
    :scale: 40%
 .. |v2_CheckPoint_change_password| image:: config_Checkpoint_media/v2_CheckPoint_change_password.png
@@ -356,7 +360,7 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 .. |v2_CheckPoint_SmartConsole_syncup_01| image:: config_Checkpoint_media/v2_CheckPoint_SmartConsole_syncup_01.png
    :scale: 40%
 .. |v2_CheckPoint_SmartConsole_syncup_02| image:: config_Checkpoint_media/v2_CheckPoint_SmartConsole_syncup_02.png
-   :scale: 40%
+   :scale: 30%
 .. |v2_CheckPoint_policy_vpc_to_vpc| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_vpc.png
    :scale: 20%
 .. |v2_CheckPoint_policy_vpc_to_vpc_install| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_vpc_install.png
@@ -364,11 +368,11 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 .. |v2_avx_egress_inspection| image:: config_FortiGate_media/v2_avx_egress_inspection.png
    :scale: 20%
 .. |v2_CheckPoint_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_internet_nat_enabled.png
-   :scale: 20%
+   :scale: 30%
 .. |v2_CheckPoint_policy_vpc_to_internet| image:: config_Checkpoint_media/v2_CheckPoint_policy_vpc_to_internet.png
    :scale: 20%
 .. |v2_CheckPoint_view_traffic_log_vpc_to_vpc| image:: config_Checkpoint_media/v2_CheckPoint_view_traffic_log_vpc_to_vpc.png
-   :scale: 20%
+   :scale: 30%
 .. |v2_CheckPoint_view_traffic_log_vpc_to_internet| image:: config_Checkpoint_media/v2_CheckPoint_view_traffic_log_vpc_to_internet.png
-   :scale: 20%
+   :scale: 30%
 .. disqus::
