@@ -411,51 +411,51 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 
 
 .. |cp_arch_reference| image:: config_Checkpoint_media/cp_arch_reference.png
-   :scale: 20%
+   :scale: 35%
 .. |avx-firewall-step7a_UI| image:: config_Checkpoint_media/avx-firewall-step7a_UI.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_firewall_interfaces| image:: config_Checkpoint_media/cp_firewall_interfaces.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_firewall_static_routes| image:: config_Checkpoint_media/cp_firewall_static_routes.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_firewall_routes_monitoring| image:: config_Checkpoint_media/cp_firewall_routes_monitoring.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_firewall_vendor_integration| image:: config_Checkpoint_media/cp_firewall_vendor_integration.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_security_manager| image:: config_Checkpoint_media/cp_security_manager.png
-   :scale: 20%
+   :scale: 30%
 .. |smart_console_login| image:: config_Checkpoint_media/smart_console_login.png
-   :scale: 20%
+   :scale: 40%
 .. |smartconsole_add_gateway| image:: config_Checkpoint_media/smartconsole_add_gateway.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_gw_creation_wizard| image:: config_Checkpoint_media/cp_gw_creation_wizard.png
-   :scale: 20%
+   :scale: 40%
 .. |gw_general_properties| image:: config_Checkpoint_media/gw_general_properties.png
-   :scale: 20%
+   :scale: 35%
 .. |trusted_communication| image:: config_Checkpoint_media/trusted_communication.png
-   :scale: 20%
+   :scale: 35%
 .. |get_topology| image:: config_Checkpoint_media/get_topology.png
-   :scale: 20%
+   :scale: 35%
 .. |cp_wizard_summary| image:: config_Checkpoint_media/cp_wizard_summary.png
-   :scale: 20%
+   :scale: 35%
 .. |cp_gw_summary| image:: config_Checkpoint_media/cp_gw_summary.png
-   :scale: 20%
+   :scale: 35%
 .. |cp_gw_added| image:: config_Checkpoint_media/cp_gw_added.png
-   :scale: 20%
+   :scale: 35%
 .. |basic_allowall_policy| image:: config_Checkpoint_media/basic_allowall_policy.png
-   :scale: 20%
+   :scale: 35%
 .. |install_allowall_policy| image:: config_Checkpoint_media/install_allowall_policy.png
-   :scale: 20%
+   :scale: 30%
 .. |policy_installed| image:: config_Checkpoint_media/policy_installed.png
-   :scale: 20%
+   :scale: 35%
 .. |cp_egress_inspection| image:: config_Checkpoint_media/cp_egress_inspection.png
-   :scale: 20%
+   :scale: 25%
 .. |cp_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/cp_policy_vpc_to_internet_nat_enabled.png
-   :scale: 20%
+   :scale: 25%
 .. |cp_policy_vpc_to_internet| image:: config_Checkpoint_media/cp_policy_vpc_to_internet.png
-   :scale: 20%
+   :scale: 30%
 .. |cp_view_traffic_log_vpc_to_vpc| image:: config_Checkpoint_media/cp_view_traffic_log_vpc_to_vpc.png
-   :scale: 20%
+   :scale: 25%
 .. |cp_view_traffic_log_vpc_to_internet| image:: config_Checkpoint_media/cp_view_traffic_log_vpc_to_internet.png
-   :scale: 20%
+   :scale: 25%
 .. disqus::
