@@ -6,7 +6,7 @@
 
 
 ===========================================================================================
-Site2Cloud Route-Based IPSec Example & Usecase
+Solving Overlapping Networks with Network Mapped IPSec 
 ===========================================================================================
 
 The Scenario
@@ -25,9 +25,14 @@ The scenario is described in the following diagram, where VPC-2 represents an on
   VPC-1 CIDR = 10.20.0.0/20, instance-1 in VPC-1 has an IP address 10.24.7.122.
   VPC-2 CIDR = 10.20.0.0/20, instance-2 in VPC-2 has an IP address 10.24.1.4.
 
+The traditional solution is to build IPSEC tunnel between the two networks and use SNAT/DNAT rules to translate each addresses, as
+demonstrated in this `example. <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs.html>`_. Such solution requires a potentially
+large number of SNAT/DNAT rules which is difficult to configure and maintain.
 
 The Solution
 ------------------
+
+The new solutions uses a new "network mapped" feature in Site2Cloud that removes the need to configure individual SNAT/DNAT rules. 
 
 The solution is to build a site2cloud route-based IPSEC tunnel using Virtual Tunnel Interface (VTI) between VPC-1 and VPC-2. The packet flow is demonstrated as below:
 
