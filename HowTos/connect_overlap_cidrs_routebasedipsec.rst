@@ -34,13 +34,13 @@ The Solution
 
 The new solutions uses a new "network mapped" feature in Site2Cloud that removes the need to configure individual SNAT/DNAT rules. 
 
-The solution is to build a site2cloud route-based IPSEC tunnel using Virtual Tunnel Interface (VTI) between VPC-1 and VPC-2. The packet flow is demonstrated as below:
+This solution uses a site2cloud route-based IPSEC tunnel using Virtual Tunnel Interface (VTI) between VPC-1 and VPC-2. The packet flow is demonstrated as below:
 
  1. instance-1 sends a packet to instance-2 with a virtual destination IP address, for example 192.24.1.4. From instance-1's point of view, the destination instance is a virtual address - 192.24.1.4.
  #. When the packet arrives at the VPC-1 gateway, the gateway does DNAT on the packet to translate the virtual destination IP address to 10.24.1.4 which is the instance-2 physical IP address.
- #. The gateway at VPC-1 then translates the packet source IP address (10.24.7.122) to a virtual source IP address, say it is 192.24.1.4.
+ #. The gateway at VPC-1 then translates the packet source IP address (10.24.7.122) to a virtual source IP address, say it is 172.24.7.122.
  #. The packet then arrives at VPC-2 with destination IP address 10.24.1.4 and source IP address 172.24.7.122. From instance-2's point of view, instance-1's address is a virtual IP address - 172.24.7.122.
- #. When instance-2 sends a packet to instance-1, the destination is the virtual IP address 192.24.1.4.
+ #. When instance-2 sends a packet to instance-1, the destination is the virtual IP address 172.24.7.122.
  #.  When the packet arrives at the VPC-1 gateway over the IPSEC tunnel, the VPC-1 gateway translates its destination IP address from virtual address 172.24.7.122 to 10.24.7.122.
  #. The VPC-1 gateway then translates the source IP address of the packet from 10.24.1.4 to virtual address 192.24.1.4.
 
@@ -102,15 +102,15 @@ From instance-2, you should be able to ping instance-1 by "ping 172.24.7.122"
 Done.
 
 .. |s2c_connection| image:: connect_overlap_cidrs_media/s2c_connection.png
-   :scale: 25%
+   :scale: 35%
 
 .. |overlap_rbi| image:: connect_overlap_cidrs_media/overlap_rbi.png
-   :scale: 30%
+   :scale: 35%
 
 .. |vpc1_to_vpc2_rbipsec| image:: connect_overlap_cidrs_media/vpc1_to_vpc2_rbipsec.png
-   :scale: 25%
+   :scale: 30%
 
 .. |vpc2_to_vpc1_rbipsec| image:: connect_overlap_cidrs_media/vpc2_to_vpc1_rbipsec.png
-   :scale: 25%
+   :scale: 30%
 
 .. disqus::
