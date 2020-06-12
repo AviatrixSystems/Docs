@@ -256,7 +256,7 @@ Check Point
 For basic configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html>`_.
 
 
-Step 9: (Optional) Vendor Firewall Integration
+Step 9: Vendor Firewall Integration
 *****************************************************
 
 Vendor integration dynamically updates firewall route tables. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the firewall appliance
