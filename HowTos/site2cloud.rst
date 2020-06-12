@@ -97,7 +97,7 @@ Create Site2Cloud Connection
    |                               | subnets are 10.10.1.0/24, 10.10.2.0/24       |
    |                               | 24, you can specify the virtual remote       |
    |                               | subnets as                                   |
-   |                               |       192.168.1.0/24, 192.168.2.0/24         |
+   |                               | 192.168.1.0/24, 192.168.2.0/24               |
    +-------------------------------+----------------------------------------------+
    | Local Subnet (Real)           | Specify a list of the source network CIDRs   |
    |                               | , separated by comma, that will be encrypted.|
@@ -111,7 +111,7 @@ Create Site2Cloud Connection
    |                               | subnets are 172.16.1.0/24, 172.16.2.0/24,    |
    |                               | you can specify the virtual local            |
    |                               | subnets as                                   |
-   |                               |       192.168.7.0/24, 192.168.8.0/24         |
+   |                               | 192.168.7.0/24, 192.168.8.0/24               |
    +-------------------------------+----------------------------------------------+
    | Backup Gateway                | Only available when 'Enable HA' is selected. |
    |                               | Backup Gateway should be the .hagw created   |
@@ -120,6 +120,9 @@ Create Site2Cloud Connection
    +-------------------------------+----------------------------------------------+
    | Remote Gateway IP Address     | Only available when 'Enable HA' is selected. |
    | (Backup)                      | IP address of the backup gateway (.hagw)     |
+   +-------------------------------+----------------------------------------------+
+   | Same Pre-Shared Key as Primary| Check the option if the backup tunnel uses   |
+   |                               | the same pre-shared key as the primary       |
    +-------------------------------+----------------------------------------------+
    | Pre-shared Key (Backup)       | Only available when 'Enable HA' is selected. |
    |                               | Optional. Enter the pre-shared key for this  |

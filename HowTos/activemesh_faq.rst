@@ -110,10 +110,11 @@ Does ActiveMesh support route based VPN or policy based VPN?
 
 ActiveMesh enables the Aviatrix Transit GW to connect to multiple remote sites over IPSec VPN tunnels.
 
-When you configure VPN to remote sites from Transit Network -> Setup -> Step 3 (Connect to VGW/External Device/Aviatrix CloudN) in the `Transit Network workflow Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, the VPN tunnel is built with route based VPN. 
+When you configure VPN to remote sites from Transit Network -> Setup -> Step 3 (Connect to VGW/External Device/Aviatrix CloudN) in the `Transit Network workflow Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, the VPN tunnel is built with route based VPN on the Aviatrix Transit Gateway. 
 
-Starting from Release 6.0, ActiveMesh Transit Gateway supports both remote route based VPN and remote policy based VPN tunnels. In this case, the 
-Aviatrix Transit Gateway always operates in route based mode. 
+Starting from Release 6.0, ActiveMesh Transit Gateway supports both remote route based VPN and remote policy based VPN tunnels. In both cases, 
+the Aviatrix Transit Gateway operates in route based mode. Note if the remote site is policy based static VPN, 
+traffic must be initiated from the remote site. 
 
 On the other hand, when you configure VPN to remote sites from Site2Cloud page and select a Transit GW, the VPN tunnel is built with policy based VPN.  
 
