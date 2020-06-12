@@ -107,11 +107,8 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  MTU Siz
 
 2.1 Internet Access
 ~~~~~~~~~~~~~~~~~~~~~~~~
-A CloudN appliance does not require a public IP address, but the management port requires outbound internet access on the management port for software upgrade. 
+A CloudN appliance does not require a public IP address, but the management port requires outbound internet access on the management port for licencing and software upgrade listed in the Request Form.
 
-Here is the list of the public IP address that CloudN requires for outbound traffic. 
-
- - www.carmelonetworks.com (54.149.28.255) for CloudN software upgrade. 
 
 2.2 BGP Requirement
 ~~~~~~~~~~~~~~~~~~~~~~~
