@@ -1,6 +1,6 @@
 ﻿.. meta::
-   :description: Data Analytics with Aviatrix Logs -Splunk and Sumo
-   :keywords: Splunk, Sumo, aviatrix logs, data analytics
+   :description: Data Analytics with Aviatrix Logs
+   :keywords: Rsyslog, Datadog, Splunk, Elastic Filebeat, Sumo, Netflow, Cloudwatch, aviatrix logs, data analytics
 
 
 
@@ -19,35 +19,15 @@ to the logging server. Out of box integration is supported for the following log
 
 
  - Remote syslog (recommended to use)
- - AWS CloudWatch
- - Splunk Enterprise
- - Datadog
  - Elastic Filebeat
+ - Splunk Enterprise/Cloud
  - Sumo Logic
+ - Datadog
  - Netflow
+ - AWS CloudWatch
 
 .. note:: We highly recommend user to use remote syslog (rsyslog) as log forwarder which is both efficient and the industry standard.
    Most log collectors support rsyslog as forwarder. We may only add new features to rsyslog going forward.
-
-Here are the sample instructions to configure log services to collect from rsyslog forwarder.
-"Note" box gives example of template needed for the config on the Aviatrix rsyslog logging service.
-
- - Splunk https://docs.splunk.com/Documentation/Splunk/latest/Data/Monitornetworkports
-
- .. note:: (No rsyslog template needed for splunk config)
-
-
- - Datadog https://docs.datadoghq.com/integrations/rsyslog/?tab=datadogussite
-
- .. note:: <DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\n
-
-   (replace DATADOG_API_KEY with your datadog key)
-
- - Sumologic https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source
-
- .. note:: <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [YOUR_TOKEN] %msg%\n
-
-    (replace YOUR_TOKEN with your sumo token)
 
 
 In addition to standard information on syslog, Aviatrix also provides
@@ -200,17 +180,16 @@ Two example logs:
 
 ::
  
-  2018-02-19T06:51:03.496447+00:00 ip-172-31-58-147 perfmon.py: AviatrixGwNetStats: 
-  timestamp=2018-02-19 06:51:03.496156 name=gg public_ip=35.172.17.198.fifo 
-  private_ip=172.31.58.147 interface=eth0 total_rx_rate=4.48Kb total_tx_rate=3.14Kb
-  total_rx_tx_rate=7.62Kb total_rx_cum=292.43MB total_tx_cum=169.99MB
-  total_rx_tx_cum=462.42MB
+  2020-06-09T17:29:31.372628+00:00 GW-test-10.23.183.116 perfmon.py: AviatrixGwNetStats:
+  timestamp=2020-06-09T17:29:31.371791 name=test public_ip=10.23.183.116.fifo private_ip=172.31.78.160
+  interface=eth0 total_rx_rate=10.06Kb total_tx_rate=12.77Kb total_rx_tx_rate=2.85Kb
+  total_rx_cum=207.16MB total_tx_cum=1.2MB total_rx_tx_cum=208.36
   
-  2018-02-19T05:44:07.491705+00:00 ip-172-31-58-147 perfmon.py: AviatrixGwNetStats:
-  timestamp=2018-02-19 05:44:07.491411 name=gg public_ip=35.172.17.198.fifo 
-  private_ip=172.31.58.147 interface=eth0 total_rx_rate=3.99Kb total_tx_rate=2.84Kb
-  total_rx_tx_rate=6.83Kb total_rx_cum=290.44MB total_tx_cum=168.48MB
-  total_rx_tx_cum=458.92MB
+  2020-06-12T08:30:09.297478+00:00 GW-test-10.23.183.116 perfmon.py: AviatrixGwNetStats:
+  timestamp=2020-06-12T08:30:09.296752 name=test public_ip=10.23.183.116.fifo private_ip=172.31.78.160
+  interface=eth0 total_rx_rate=8.84Kb total_tx_rate=8.45Kb total_rx_tx_rate=17.29Kb
+  total_rx_cum=4.63MB total_tx_cum=6.8MB total_rx_tx_cum=11.44MB
+
 
 AviatrixGwSysStats:
 -------------------
@@ -223,13 +202,16 @@ Two example logs:
 
 ::
 
-  May 17 00:23:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
-  timestamp=2017-05-17 00:23:06.065548 name=wing-aws-aws-use-2-gw0000
-  cpu_idle=100 memory_free=237048 disk_total=8115168 disk_free=4665560
+  2020-06-09T17:29:31.372822+00:00 GW-test-10.23.183.116 perfmon.py: AviatrixGwSysStats:
+  timestamp=2020-06-09T17:29:31.371791 name=test cpu_idle=68
+  memory_free=414640 memory_available=1222000 memory_total=1871644
+  disk_total=16197524 disk_free=10982084
 
-  May 17 00:28:20 ip-10-0-0-129 gwmon.py: AviatrixGwSysStats: 
-  timestamp=2017-05-17 00:28:06.064229 name=wing-aws-aws-use-2-gw0000
-  cpu_idle=100 memory_free=237072 disk_total=8115168 disk_free=4665560
+  2020-06-12T08:22:09.295660+00:00 GW-test-10.23.183.116 perfmon.py: AviatrixGwSysStats:
+  timestamp=2020-06-12T08:22:09.294333 name=test cpu_idle=99
+  memory_free=919904 memory_available=1264792 memory_total=1871644
+  disk_total=16197524 disk_free=11409716
+
 
 AviatrixFQDNRule
 ----------------
@@ -381,7 +363,7 @@ On the Aviatrix Controller:
   #. Server Public Certificate: Public certificate of the controller signed by the same CA
   #. Server Private Key: Private key of the controller that pairs with the public certificate
   #. Protocol:	TCP or UDP (TCP by default)
-  #. Optional Custom Template: (Deprecated)
+  #. Optional Custom Template: Useful when forwarding to 3rd party servers like Datadog or Sumo (Details bellow)
   
 On the Remote syslog server:
   a. Install rsyslog and rsyslog-gnutls packages
@@ -450,6 +432,7 @@ Then
         #. syslog
 
 
+
 3.1.a Using Rsyslog to send logs to Sumo
 -------------------------------------------
 
@@ -461,25 +444,61 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Provide the port - obtained from the first step
   #. Upload the CA cert from Sumo pointed by their documentation
   #. Keep the Protocol set to TCP
-  #. For Optional Custom Template, copy the following string into a new text file and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step and upload it. Please do keep the square brackets around the token.
-  
-  ::
+  #. For Optional Custom Template, copy the following string and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step. Please do keep the square brackets around the token.
 
-<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\n
+ .. note:: <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [YOUR_TOKEN] %msg%\n
 
-  #. Click on Advanced, if you want to selectively send logs from only some gateways
-  #. Click on Enable
+|rsyslog_template|
 
-3.1.b Using Rsyslog to send logs to DATADOG
+.. |rsyslog_template| image:: AviatrixLogging_media/rsyslog_template.png
+   :width: 6.50500in
+   :height: 6.20500in
+
+3.1.b Using Rsyslog to send logs to Datadog
 ---------------------------------------------
   #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
-  #. server: intake.logs.datadoghq.com  
-  #. port: 10516  
-  #. Optional Custom Template: upload your saved customer template, like this,
-	
-<DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - [metas ddsource=\"<MY_SOURCE_NAME>\" ddtags=\"env:dev,<KEY:VALUE>\"] %msg%\n
+  #. Server: intake.logs.datadoghq.com
+  #. Port: 10516
+  #. Protocol: TCP
+  #. For Optional Custom Template, copy the following string and replace the string DATADOG_API_KEY with your own key. Please do keep the square brackets around the token.
 
-Make sure you keep <> when you replace your DD API Key, save the temp like .txt file, and upload it.
+ .. note:: <DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\n
+
+
+3.1.c Using Rsyslog to send logs to Splunk
+---------------------------------------------
+  #. Follow the directions in `Splunk Monitornetworkports <https://docs.splunk.com/Documentation/Splunk/latest/Data/Monitornetworkports>`_ to create a listener in Splunk.
+  #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
+  #. Server: your Splunk server fqdn or ip
+  #. Port: your Splunk listener port
+  #. Protocol: TCP
+  #. Optional Custom Template: (leave blank)
+
+
+3.1.d Using Rsyslog to send logs to Logstash (ElasticSearch/Kibana/ELK stack)
+--------------------------------------------------------------------------------
+  #. Follow the directions in `Logstash TCP input <https://www.elastic.co/guide/en/logstash/current/plugins-inputs-tcp.html>`_ to create a tcp listener in Logstash.
+  #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
+  #. Server: your Logstash server fqdn or ip
+  #. Port: your Logstash listener port
+  #. Protocol: TCP
+  #. Optional Custom Template: (leave blank)
+
+A sample config of Logstash to work with Rsyslog in ELK stack v7 is
+::
+
+    input {
+        syslog {
+            port => 6514
+        }
+    }
+
+    output {
+        elasticsearch {
+            hosts => ["127.0.0.1:9200"]
+        }
+    }
+
 
 3.2 Filebeat Forwarder
 -----------------------
@@ -487,6 +506,30 @@ On the Aviatrix Controller:
   a. Server:	FQDN or IP address of logstash server
   #. Port:	Listening port of logstash server (5000 by default)
   #. Optional Configuration File:	(Deprecated)
+
+
+A sample config of Logstash to work with Filebeat in ELK stack v7 is
+::
+
+    input {
+        beats {
+            port => 5000
+        }
+    }
+
+    filter {
+      mutate {
+        rename => {
+          "[host][name]" => "[host]"
+        }
+      }
+    }
+
+    output {
+        elasticsearch {
+            hosts => ["127.0.0.1:9200"]
+        }
+    }
 
 
 3.3 Splunk Logging
@@ -499,6 +542,7 @@ On the Aviatrix Controller:
 
 Note:
 If "Import File" is selected for "How to configure", please provide the Splunk configuration file. 
+
 
 3.4 Sumo Logic
 -------------------
@@ -513,14 +557,20 @@ Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 
 Please note that Sumo collector is memory intensive and needs instances with at least 2GB of memory - for AWS, t3.small, or higher depending on features deployed.
 
+
 3.5 DataDog Agent
 -------------------
-You may refer to this link, `here <https://docs.aviatrix.com/HowTos/DatadogIntegration.html>`_ to set up.  
-However, based on the past year experience, the vendor has changed the client root certificates for a few times.  
-   #. You may disable DataDog Agent and re-enable it to fetch the current new root certificate.  
+You may refer to this link, `DatadogIntegration <https://docs.aviatrix.com/HowTos/DatadogIntegration.html>`_ to set up. However, based on the past year experience, the vendor has changed the client root certificates for a few times.
+   a. You may disable DataDog Agent and re-enable it to fetch the current new root certificate.
    #. Or, we highly recommend to follow above 3.1.b steps to use Remote Syslog as client to forward to any servers and will not encounter any of these cert issues.
 
 Before 5.3 release, DataDog agent woulld only upload metrics from the Aviatrix Controller and Gateways - from release 5.3, we also upload syslogs to bring it on par with Sumo and Splunk agent behavior.
+
+
+3.6 Cloudwatch
+-------------------
+Please follow this link `AWS CloudWatch Integration <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_ for instruction.
+
 
 4. Log management system Apps
 ====================================
@@ -535,8 +585,7 @@ Splunk App for Aviatrix
 Splunk app for Aviatrix can be downloaded from
 `Splunkbase <https://splunkbase.splunk.com/app/3585/>`_.
 
-Click `here <https://github.com/AviatrixSystems/SplunkforAviatrix>`_ to check
-instructions on GitHub.
+Click `SplunkforAviatrix <https://github.com/AviatrixSystems/SplunkforAviatrix>`_ to check instructions on GitHub.
 
 **Sample**
 
@@ -572,10 +621,12 @@ To configure Loggly integration through an intermediary syslog server relay:
 
 3. Follow `this document <https://www.loggly.com/docs/network-devices-and-routers/>`_ to configure the relay to send to Loggly
 
-6. Netflow and Span port support
-=================================
 
-Starting from Release 4.0, Aviatrix Controller and gateways support netflow and span port. 
+6. Netflow
+=============
+
+Aviatrix gateways support netflow protocol v5 and v9.
+
 
 
 
