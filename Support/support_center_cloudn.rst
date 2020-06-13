@@ -18,3 +18,5 @@ CloudN requires access to the following:
 * bower.io:443 for upgrade
 * github.com:443 for upgrades
 
+Please take a look at https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access for more information
+
