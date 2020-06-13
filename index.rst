@@ -222,6 +222,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/site2cloud_case_study
    HowTos/EncrOverExpRoute
    HowTos/connect_overlap_cidrs_routebasedipsec
+   HowTos/overlapping_network_solutions
    HowTos/connect_overlap_cidrs
    HowTos/connect_overlap_vpc_via_VGW
    HowTos/periodic_ping
