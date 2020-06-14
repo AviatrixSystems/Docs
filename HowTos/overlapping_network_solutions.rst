@@ -14,7 +14,7 @@ of Aviatrix `Site2Cloud <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ fea
 
 This document does not go into specifics of the actual configurations. For such information, check out `this example document <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs_routebasedipsec.html>`_.
 
-Scenario 1: On-prem Overlap with Spoke VPCs in TGW Deployment
+Scenario 1: On-prem Overlaps with Spoke VPC in TGW Deployment
 ----------------------------------------------------------------
 
 In this scenario, on-prem site-1 overlaps with Spoke-1 VPC CIDR, they both are 172.32.0.0/16 and wish to communicate with each 
@@ -125,11 +125,35 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
 
  #. Done.
 
+Scenario 3: On-prem Overlaps with Spoke in Aviatrix Transit Deployment
+--------------------------------------------------------------------------
+
+In this scenario, Aviatrix Transit solution is deployed and similarly on-prem site
+overlaps with a Spoke CIDR where it needs to communicate with, as shown in the diagram below. 
+
+|overlap_onprem_aviatrix_transit|
+
+This scenario currently not supported. It will be available in the future releases.
+
+Scenario 4: Multi-Sites Overlap in Aviatrix Transit Deployment
+-----------------------------------------------------------------
+
+This scenario extends the previous solution to include multi sites, as shown in the diagram below. 
+
+|overlap_multi_onprem_aviatrix_transit|
+
+This scenario currently not supported. It will be available in the future releases.
+
 .. |overlap_onprem_tgw| image:: overlapping_network_solutions_media/overlap_onprem_tgw.png
    :scale: 30%
 
 .. |overlap_multi_onprem_tgw| image:: overlapping_network_solutions_media/overlap_multi_onprem_tgw.png
    :scale: 30%
    
+.. |overlap_onprem_aviatrix_transit| image:: overlapping_network_solutions_media/overlap_onprem_aviatrix_transit.png
+   :scale: 30%
+
+.. |overlap_multi_onprem_aviatrix_transit| image:: overlapping_network_solutions_media/overlap_multi_onprem_aviatrix_transit.png
+   :scale: 30%
 
 .. disqus::    
