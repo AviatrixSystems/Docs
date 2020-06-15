@@ -73,7 +73,7 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
 
     ::
 
-       Spoke-2 gateway site2cloud key parameters:
+       Spoke-2 gateway site2cloud to site-1 key parameters:
 
             Connection Type: Mapped
             Local Subnet (real): 172.32.0.0/16
@@ -97,7 +97,7 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
 
     ::
 
-       Spoke-2 gateway site2cloud key parameters:
+       Spoke-2 gateway site2cloud to site-2 key parameters:
 
             Connection Type: Mapped
             Local Subnet (real): 172.32.0.0/16
