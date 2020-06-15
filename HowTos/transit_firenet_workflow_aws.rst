@@ -157,6 +157,12 @@ This step launches a Firewall instance and associates it with one of the FireNet
 7a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
+
+.. important::
+    Vendor's firewall may take some time after launch to be available.
+
+
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
@@ -177,49 +183,7 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored.
 ==========================================      ==========
 
-1. Palo Alto VM-Series Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Palo instance has 3 interfaces as described below.
-
-========================================================         ===============================          ================================
-**Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
-========================================================         ===============================          ================================
-eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL
-eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
-eth2 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
-========================================================         ===============================          ================================
-
-Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
-
-.. important::
-
-    For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
-
-.. Tip::
-
-    If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above, then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
-
-2. Fortigate Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Fortigate Next Generation Firewall instance has 2 interfaces as described below.
-
-========================================================         ===============================          ================================
-**Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
-========================================================         ===============================          ================================
-eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL
-eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
-========================================================         ===============================          ================================
-
-.. note::
-    Firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
-
-.. tip::
-    Starting from Release 5.4, Fortigate bootstrap configuration is supported.
-
-
-3. CheckPoint Specification
+1. CheckPoint Specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CheckPoint Firewall instance has 2 interfaces as described below.
@@ -242,10 +206,65 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
     Repeat Step 8a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
 
 
+Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html#example-config-for-check-point-vm-in-aws>`_ to launch Check Point security gateway in AWS and for more details.
+
+
+2. Palo Alto VM-Series Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Palo instance has 3 interfaces as described below.
+
+========================================================         ===============================          ================================
+**Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL
+eth1 (on subnet -Public-gateway-and-firewall-mgmt-AZ-a)          Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
+eth2 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
+
+.. important::
+
+    For Panorama managed firewalls, you need to prepare Panorama first and then launch a firewall. Check out `Setup Panorama <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_.  When a VM-Series instance is launched and connected with Panorama, you need to apply a one time "commit and push" from the Panorama console to sync the firewall instance and Panorama.
+
+.. Tip::
+
+    If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above, then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
+
+
+Follow `Palo Alto Network (VM Series) Example <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#example-config-for-palo-alto-network-vm-series>`_ to launch VM Series firewall in AWS and for more details.
+
+
+3. Fortigate Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fortigate Next Generation Firewall instance has 2 interfaces as described below.
+
+========================================================         ===============================          ================================
+**Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+.. note::
+    Firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+
+.. tip::
+    Starting from Release 5.4, Fortigate bootstrap configuration is supported.
+
+
+Follow `Fortigate Example <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#example-config-for-fortigate-vm-in-aws>`_ to launch Fortigate in AWS and for more details.
+
+
+
 Step 8b: Associate an Existing Firewall Instance
 *******************************************************
 
 This step is the alternative step to Step 8a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
+
+Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
 
 Step 9: Example Setup for "Allow All" Policy
 ***************************************************

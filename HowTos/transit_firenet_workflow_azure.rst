@@ -144,6 +144,11 @@ This step launches a Firewall instance and associates it with one of the FireNet
 7a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
+
+.. important::
+    Vendor's firewall may take some time after launch to be available.
+
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
@@ -162,7 +167,33 @@ Attach (Optional)                               By selecting this option, the fi
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified.
 ==========================================      ==========
 
-1. Palo Alto VM-Series Specifications
+1. CheckPoint Specification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CheckPoint Firewall instance has 2 interfaces as described below.
+
+========================================================         ===============================          ================================
+**CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+========================================================         ===============================          ================================
+eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL
+eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+========================================================         ===============================          ================================
+
+Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+
+.. important::
+
+    Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
+
+
+.. note::
+    Repeat Step 7a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
+
+
+Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#launch-check-point-firewall-from-aviatrix-controller>`_ to launch Check Point security gateway in Azure and for more details.
+
+
+2. Palo Alto VM-Series Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Palo instance has 3 interfaces as described below.
@@ -185,7 +216,8 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above, then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
 
-2. Fortigate Specifications
+
+3. Fortigate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fortigate Next Generation Firewall instance has 2 interfaces as described below.
@@ -204,35 +236,24 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
     Starting from Release 5.4, Fortigate bootstrap configuration is supported.
 
 
-3. CheckPoint Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-CheckPoint Firewall instance has 2 interfaces as described below.
-
-========================================================         ===============================          ================================
-**CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
-========================================================         ===============================          ================================
-eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL
-eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
-========================================================         ===============================          ================================
-
-Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
-
-.. important::
-
-    Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
-
-
-.. note::
-    Repeat Step 8a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
-
-
 Step 7b: Associate an Existing Firewall Instance
 *******************************************************
 
 This step is the alternative step to Step 7a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from Azure Console, you can still associate it with the FireNet gateway.
 
-Step 8: Example Setup for "Allow All" Policy
+Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
+
+
+Step 8: Vendor Firewall Integration
+*****************************************************
+
+Vendor integration dynamically updates firewall route tables. The use case is for networks with RFC 1918 and non-RFC 1918 routes that require specific route table programming on the firewall appliance
+
+1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
+2.	Click Save, Show and Sync.
+
+
+Step 9: Example Setup for "Allow All" Policy
 ***************************************************
 
 After a firewall instance is launched, wait for 5 to 15 minutes for it to come up. Time varies for each firewall vendor.
@@ -255,14 +276,6 @@ Check Point
 
 For basic configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html>`_.
 
-
-Step 9: Vendor Firewall Integration
-*****************************************************
-
-Vendor integration dynamically updates firewall route tables. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the firewall appliance
-
-1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
-2.	Click Save, Show and Sync.
 
 Step 10: Verification
 ***************************
@@ -292,7 +305,6 @@ Once control-plane is established and no problem found in security and routing p
 There are multiple ways to check data-plane:
     1. One way to SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
     2. Ping/traceroute capture can also be performed from Aviatrix Controller. Go to **TROUBLESHOOT -> Diagnostics** and perform the test.
-
 
 
 .. |avx_tr_firenet_topology_az| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/avx_tr_firenet_topology_az.png
