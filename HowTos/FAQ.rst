@@ -518,6 +518,18 @@ Since the Controller is deployed on a public subnet, to restrict the Controller 
 you should use `Aviatrix Public Subnet Filter <https://docs.aviatrix.com/HowTos/public_subnet_filtering_faq.html>`_ 
 to configure Egress Control on the Controller by allowing whitelist to only the listed domain names. 
 
+What IP addresses does an Aviatrix gateway  need to reach out to?
+----------------------------------------------------------------------
+
+============================================                 ============   ===================
+Outbound IP Address                                          Port           Purpose
+============================================                 ============   ===================
+Aviatrix Controller                                          TCP 443        Keep alive messages
+customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog
+AWS SQS                                                      TCP 443        Controller to gateway message queue. sqs.region.amazonaws.com, where region is represented by us-west-2, us-east-2, etc, the region where the Aviatrix gateway is launched.
+External remote sites                                         UDP 500       IKE protocol for IPSEC negotiation
+External remote sites                                         UDP 4500      IPSEC data channel
+============================================                 ============   ===================
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
