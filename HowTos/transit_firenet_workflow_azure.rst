@@ -1,21 +1,21 @@
 .. meta::
   :description: Firewall Network Workflow
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet
+  :keywords: Azure Transit Gateway, Azure, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet
 
 
 =========================================================
-Transit FireNet Workflow for AWS
+Transit FireNet Workflow for Azure
 =========================================================
 
 Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Encrypted Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
 
 To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-If you are looking deploying firewall networks in AWS Transit Gateway (TGW) environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
+If you are looking to deploy Aviatrix FireNet Workflow in AWS, your starting point is `here. <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ and If you would like to deploy firewall networks in AWS Transit Gateway (TGW) environment, your starting point is `Firenet Workflow. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
 
 This workflow provides you the step by step instructions to build a Aviatrix Transit Firewall Network also called Transit FireNet.
 
-While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit FireNet is supported.
+While the instructions below reference Azure, these functionalities apply to any public cloud in which Aviatrix Transit FireNet is supported.
 
 In this example, Transit VPC with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
 
@@ -23,14 +23,14 @@ The transit VPC will have a firewall of supported vendors (Checkpoint, Palo Alto
 
 Once the infra is in-place then the policy will be created to inspect the east-west and north-south traffic.
 
-|avx_tr_firenet_topology|
+|avx_tr_firenet_topology_az|
 
 Step 1 : Create VPCs
 ***************************
 
-VPCs can be created manually on AWS or directly from Aviatrix Controller.
+VNets can be created manually on Azure or directly from Aviatrix Controller.
 
-Aviatrix controller has set of useful tools available for users and in this example, VPCs are created following the Useful Tools `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ guidelines.
+Aviatrix controller has set of useful tools available for users and in this example, VNets are created following the Useful Tools `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ guidelines.
 
 1.	Login to the Aviatrix Controller with username and password
 #.	Navigate to **Useful Tools -> Create A VPC**
@@ -44,32 +44,35 @@ Step 2: Deploy the Transit Aviatrix Gateway
 
 Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 
-Prerequisite for AWS
+Prerequisite for Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Transit FireNet builds on the Aviatrix Transit Network where Aviatrix gateways are deployed in both the transit VPC and the spoke VPCs in AWS.
+Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed in Transit VNet and/or in Spoke VNet in Azure.
 
 Make sure the deployment meets the following specifications:
 
 1.	ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
-#.	The minimum size of the Aviatrix Transit Gateway is c5.xlarge.
-#.	Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
+2.	The minimum size of the Aviatrix Transit Gateway instance size is Standard_B2ms.
+3.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
+4.	Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
 
 Procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
 1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #1 Launch an Aviatrix Transit Gateway**
-#.	Choose instance size **C5x.large**
+#.	Choose instance size **Standard_B2ms**
 #.	Enable **ActiveMesh Mode (Mandatory)**
 #.	Enable InsaneMode for higher throughputs (optional)
 #.	Enable Transit VPC GW HA by navigating to **MULTI-CLOUD TRANSIT -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway**
 
-.. note::
-    Instance size of c5.xlarge will be required for Insane Mode Encryption for higher throughput.
-
 Please see an example below for Transit FireNet GW:
 
 |tr_firenet_gw|
+
+.. note::
+    Insane Mode Encryption for higher throughput requires an instance size as shown below.
+
+|insane_mode_tp|
 
 Step 3: Deploy Spoke Gateways
 *************************************
@@ -80,9 +83,6 @@ Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs using defaults while choose correct Account and VPC info
 #.	Choose the Public Subnet
 #.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW
-
-.. note::
-    Instance size of c5.xlarge will be required for Insane Mode Encryption for higher throughput.
 
 |launch_spk_gw|
 
@@ -129,20 +129,7 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 |tr_firenet_policy|
 
 
-Step 7: Subscribe Firewall Vendor in AWS Marketplace
-*************************************************************
-
-At this point, FireNet functionality on Transit Gateway is enabled and FireNet policy is created for spokes. It is time to subscribe the firewall vendor and deploy the firewall.
-
-1.	Navigate to **Firewall Network -> Setup -> #2 Subscribe to Firewall Vendor Product** in AWS Marketplace
-#.	Follow the link to subscribe to Check Point, Palo Alto or Fortinet in AWS Marketplace.
-
-.. note::
-    Please subscribe the firewall but do not launch the firewall.
-
-|subscribe_firewall|
-
-Step 8a: Launch and Associate Firewall Instance
+Step 7a: Launch and Associate Firewall Instance
 *****************************************************************
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway.
@@ -162,14 +149,13 @@ Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup 
 .. important::
     Vendor's firewall may take some time after launch to be available.
 
-
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
 VPC ID                                          The Security VPC created in Step 1.
 Gateway Name                                    The primary FireNet gateway.
-Firewall Instance Name                          The name that will be displayed on AWS Console.
-Firewall Image                                  The AWS AMI that you have subscribed in Step 2.
+Firewall Instance Name                          The name that will be displayed on Azure Console.
+Firewall Image                                  The Azure AMI that you have subscribed in Step 2.
 Firewall Image Version                          Firewall instance current supported software versions.
 Firewall Instance Size                          Firewall instance type.
 Management Interface Subnet.                    Select the subnet whose name contains "gateway and firewall management"
@@ -179,8 +165,6 @@ Password                                        Applicable to Azure deployment o
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page.
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified.
-IAM Role                                        In advanced mode, create an IAM Role on the AWS account that launched the FireNet gateway. Create a policy to attach to the role. The policy is to allow access to "Bootstrap Bucket".
-Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored.
 ==========================================      ==========
 
 1. CheckPoint Specification
@@ -203,10 +187,10 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
 
 
 .. note::
-    Repeat Step 8a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
+    Repeat Step 7a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
 
 
-Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html#example-config-for-check-point-vm-in-aws>`_ to launch Check Point security gateway in AWS and for more details.
+Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#launch-check-point-firewall-from-aviatrix-controller>`_ to launch Check Point security gateway in Azure and for more details.
 
 
 2. Palo Alto VM-Series Specifications
@@ -233,9 +217,6 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above, then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
 
 
-Follow `Palo Alto Network (VM Series) Example <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#example-config-for-palo-alto-network-vm-series>`_ to launch VM Series firewall in AWS and for more details.
-
-
 3. Fortigate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -255,16 +236,22 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
     Starting from Release 5.4, Fortigate bootstrap configuration is supported.
 
 
-Follow `Fortigate Example <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#example-config-for-fortigate-vm-in-aws>`_ to launch Fortigate in AWS and for more details.
-
-
-
-Step 8b: Associate an Existing Firewall Instance
+Step 7b: Associate an Existing Firewall Instance
 *******************************************************
 
-This step is the alternative step to Step 8a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
+This step is the alternative step to Step 7a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from Azure Console, you can still associate it with the FireNet gateway.
 
 Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
+
+
+Step 8: Vendor Firewall Integration
+*****************************************************
+
+Vendor integration dynamically updates firewall route tables. The use case is for networks with RFC 1918 and non-RFC 1918 routes that require specific route table programming on the firewall appliance
+
+1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
+2.	Click Save, Show and Sync.
+
 
 Step 9: Example Setup for "Allow All" Policy
 ***************************************************
@@ -287,18 +274,10 @@ For basic configuration, please refer to `example Fortinet configuration guide <
 Check Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For basic configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_.
+For basic configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html>`_.
 
 
-Step 10: (Optional) Vendor Firewall Integration
-*****************************************************
-
-Vendor integration dynamically updates firewall route tables. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the firewall appliance
-
-1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
-2.	Click Save, Show and Sync.
-
-Step 11: Verification
+Step 10: Verification
 ***************************
 
 There are multiple ways to verify if Transit FireNet is configured properly:
@@ -316,7 +295,7 @@ Flight Path is a very powerful troubleshooting Aviatrix tool which allows users 
     #.	Select ICMP and Private subnet, and Run the test
 
 .. note::
-    EC2 VM instance will be required in AWS, and ICMP should be allowed in security group.
+    VM instance will be required in Azure, and ICMP should be allowed in security group.
 
 Ping/Traceroute Test for FireNet Data-Plane Verification:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -328,31 +307,34 @@ There are multiple ways to check data-plane:
     2. Ping/traceroute capture can also be performed from Aviatrix Controller. Go to **TROUBLESHOOT -> Diagnostics** and perform the test.
 
 
-.. |subscribe_firewall| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/subscribe_firewall.png
+.. |avx_tr_firenet_topology_az| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/avx_tr_firenet_topology_az.png
+   :scale: 20%
+
+.. |insane_mode_tp| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/insane_mode_tp.png
+   :scale: 30%
+
+.. |create_vpc| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/create_vpc.png
+   :scale: 30%
+
+.. |tr_firenet_gw| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/tr_firenet_gw.png
    :scale: 25%
 
-.. |en_tr_firenet| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/en_tr_firenet.png
+.. |launch_spk_gw| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/launch_spk_gw.png
    :scale: 25%
 
-.. |tr_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/tr_firenet_policy.png
+.. |attach_spk_trgw| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/attach_spk_trgw.png
    :scale: 25%
 
-.. |avx_tr_firenet_topology| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/avx_tr_firenet_topology.png
+.. |en_tr_firenet| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/en_tr_firenet.png
    :scale: 25%
 
-.. |create_vpc| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/create_vpc.png
+.. |tr_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/tr_firenet_policy.png
    :scale: 25%
 
-.. |tr_firenet_gw| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/tr_firenet_gw.png
+.. |avx_tr_firenet_topology| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/avx_tr_firenet_topology.png
    :scale: 25%
 
-.. |launch_spk_gw| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/launch_spk_gw.png
-   :scale: 25%
-
-.. |attach_spk_trgw| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/attach_spk_trgw.png
-   :scale: 25%
-
-.. |connected_transit| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/connected_transit.png
-   :scale: 25%
+.. |connected_transit| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/connected_transit.png
+   :scale: 30%
 
 .. disqus::
