@@ -128,6 +128,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/insane_mode_perf
    HowTos/CloudN_insane_mode
    HowTos/Setup_Transit_Network_Terraform
+   HowTos/migrate_tgw_orchestrator_to_aviatrix_transit
 
 .. _Firewall Network:
 
