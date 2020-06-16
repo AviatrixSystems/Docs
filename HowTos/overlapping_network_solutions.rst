@@ -27,7 +27,7 @@ build a more complex network.
 
 .. Tip::
 
-   VPC Spoke-1 is for illustration purpose. The destination network that overlaps with the on-prem site may be on on-prem network that connects with AWS TGW via DXGW or VPN. 
+   VPC Spoke-1 is for illustration purpose. The destination network that overlaps with the on-prem site may be on on-prem network that connects with AWS TGW via DXGW or VPN. Similarly, the on-prem network could be a VPC/VNet in the cloud.
 
 
 |overlap_onprem_tgw|
