@@ -12,6 +12,9 @@ Overlapping Network Connectivity Solutions
 This document describes a few scenarios of overlapping networking CIDRs and their solutions. The solution uses the `Mapped` option
 of Aviatrix `Site2Cloud <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ feature when building IPSEC tunnels. 
 
+Using Mapped Site2Cloud provides the advantage of not having to configure individual SNAT/DNAT rules, as 
+all virtual and physical network addresses are 1-1 translated. 
+
 This document does not go into specifics of the actual configurations. For such information, check out `this example document <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs_routebasedipsec.html>`_.
 
 Scenario 1: On-prem Overlaps with Spoke VPC in TGW Deployment
