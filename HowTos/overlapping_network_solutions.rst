@@ -34,15 +34,17 @@ build a more complex network.
 
 Following are the steps to setup the above networks. 
 
- 1. Attach VPC Spoke-2 to TGW.
- #. Launch Aviatrix gateway in Spoke-2. 
- #. Configure Site2Cloud to site-1 with Mapped Option on Spoke-2. Key parameters on site2cloud IPSEC configuration: 
+ 1. Attach VPC Spoke-2 to TGW. Go to TGW Orchestrator -> Build to attach. 
+ #. Launch Aviatrix gateway in Spoke-2. Go to Gateway -> Add New to launch. 
+ #. (Optional) Enable HA. Go to Gateway -> Gateway for High Availability Peering to enable HA. 
+ #. Configure Site2Cloud to site-1 with Mapped Option on Spoke-2. Go to Site2Cloud -> Add New. Key parameters on site2cloud IPSEC configuration: 
 	
     ::
 
        Spoke-2 gateway site2cloud key parameters: 
 
             Connection Type: Mapped
+            Enable HA: Selected (Optional)
             Local Subnet (real): 172.32.0.0/16
             local Subnet (virtual): 192.168.0.0/16
             Remote Subnet (real): 172.32.0.0/16
@@ -59,7 +61,7 @@ Following are the steps to setup the above networks.
 
  #. Make sure the tunnel come up. 
  
- #. Advertise 100.100.0.0/16 to TGW from Spoke-2 VPC. Go to TGW Orchestrator -> List. Click Spoke-2, click Actions -> Edit Spoke Advertised Routes. Enter `172.34.0.0/100, 100.100.0.0/16`, where 172.34.0.0/16 is Spoke-2 VPC CIDR and 100.100.0.0/16 is the virtual network CIDR of on-prem site-1. 
+ #. **Important** Advertise 100.100.0.0/16 to TGW from Spoke-2 VPC. Go to TGW Orchestrator -> List. Click Spoke-2, click Actions -> Edit Spoke Advertised Routes. Enter `172.34.0.0/100, 100.100.0.0/16`, where 172.34.0.0/16 is Spoke-2 VPC CIDR and 100.100.0.0/16 is the virtual network CIDR of on-prem site-1. 
 
  #. Test connectivity. From on-prem site-1 to ping an instance in Spoke-1 using the Spoke-1 virtual network CIDR with the real host portion of its IP address. For example, if the instance in Spoke-1 is 172.32.10.15, then site-1 should ping 192.168.10.15. 
 
@@ -73,8 +75,9 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
 
 |overlap_multi_onprem_tgw| 
 
- 1. Attache VPC Spoke-2 to TGW.
- #. Launch Aviatrix gateway in Spoke-2.
+ 1. Attache VPC Spoke-2 to TGW. Go to TGW Orchestrator -> Build to attach.
+ #. Launch Aviatrix gateway in Spoke-2. Go to Gateway -> Add New to launch.
+ #. (Optional) Enable HA. Go to Gateway -> Gateway for High Availability Peering to enable HA.
  #. Create a Site2Cloud connection to site-1 with Mapped Option on Spoke-2. Key parameters on site2cloud IPSEC configuration:
 
     ::
@@ -82,6 +85,7 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
        Spoke-2 gateway site2cloud to site-1 key parameters:
 
             Connection Type: Mapped
+            Enable HA: Selected (Optional)
             Local Subnet (real): 172.32.0.0/16
             local Subnet (virtual): 192.168.0.0/16
             Remote Subnet (real): 172.32.0.0/16
@@ -106,6 +110,7 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
        Spoke-2 gateway site2cloud to site-2 key parameters:
 
             Connection Type: Mapped
+            Enable HA: Selected (Optional)
             Local Subnet (real): 172.32.0.0/16
             local Subnet (virtual): 192.168.0.0/16
             Remote Subnet (real): 172.32.0.0/16
