@@ -4,7 +4,7 @@
 
 
 ================================================================
-Multi-Cloud Transit Advanced Config
+Transit Advanced Config
 ================================================================
 
 .. Note::
@@ -59,8 +59,10 @@ with each other via Transit. They are completely segmented.
 
 If you would like to build a full mesh network where Spoke VPCs communicate with each other via Transit GW, you can achieve that by enabling "Connected Transit" mode. All connections are encrypted. 
 
-To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
-Scroll down to "Connected Transit" to enable.
+.. Note::
+
+  For a Spoke VPC/VNet in a multi-cloud transit to communicate with a Spoke VPC in TGW Orchestrator, Connected
+ Transit must be enabled on the Aviatrix Transit Gateway that connects both sides.
 
 For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
 
