@@ -55,7 +55,7 @@ Attach an IAM policy with the name, for example, "bootstrap-VM-S3-policy". The p
 2. Create bootstrap bucket structure
 -------------------------------------
 
-In AWS S3, at the top level create a bucket for bootstrap with a **unique** name, for example "bootstrap_bucket", with the following structure:
+In AWS S3, at the top level create a bucket for bootstrap with a **unique** name, for example "bootstrap-bucket", with the following structure:
 
 ::
 
