@@ -31,7 +31,7 @@ R6.0 (Coming soon)
 3. User VPN
 --------------
 
-- **Signed Cert for SAML Authentication** improves security of User VPN SAML authentication when it authenticates with the IDPs by provides a signed cert. 
+- **Signed Cert for SAML Authentication** improves security of User VPN SAML authentication when it authenticates with the IDPs by provides a signed cert. To configure, go to OpenVPN -> Advanced -> SMAL -> Add a New SMAL Endpoint, select the option "Sign Authn Requests". For SMAL login to the Controller, go to Settings -> Controller -> SAML Login -> Add a New SAML Endpoint, select the option "Sign Authn Requests".
 - **Dashboard to Display user speed** allows you to access individual User VPN client performance. To view the client VPN speed, go to Dashboard, scroll down to the Use VPN section to view. 
 - **Terraform for Attaching a user to profile** allows you to update the user profile in modular fashion.  
 

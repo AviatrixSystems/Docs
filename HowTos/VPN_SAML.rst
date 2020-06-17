@@ -105,7 +105,10 @@ The configuration consists of 8 parts:
    +-------------------------+--------------------------------------------------------+
    | Entity ID               | Select `Hostname` for now                              |
    +-------------------------+--------------------------------------------------------+
-   | Access                  | Select admin or read-only access                       |
+   | Sign Authn Requests     | Sign the cert when requesting to IDP from client       |
+   +-------------------------+--------------------------------------------------------+
+   | Access                  | (Removed from 6.0 and later) Select admin or read-only |
+   |                         | access                                                 |
    +-------------------------+--------------------------------------------------------+
    | Custom SAML Request     | For now leave blank, depending on your specific        |
    | Template                | IdP, you may have to check this option                 |
