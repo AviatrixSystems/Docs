@@ -53,10 +53,19 @@ Follow the `Multi-Cloud Transit Segmentation workflow <https://docs.aviatrix.com
  #. (Optional) After all Spoke VPCs have been migrated, setup multi-cloud connection policies. Go to Multi-Cloud Transit -> Segmentation -> Build to associate each Aviatrix Spoke gateway with a security domain. 
  #. Done. 
 
-4. Extra
------------
+4. Other Components
+-----------------------
+
+4.1 Hybrid Connectivity
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If Hybrid connectivity is accomplished via TGW DXGW or TGW VPN, these connections can continue to serve the new deployment after migration to not to change the connectivity to on-prem. 
+
+4.2 FireNet
+~~~~~~~~~~~~
+
+If TGW FireNet has been deployed with TGW Orchestrator, migrate that to `Transit FireNet <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_ where firewall instances can be attached too the Aviatrix Transit Gateway. Disassociate firewall instances from FireNet and launch and associate to Aviatrix Transit Gateway after Spoke migration is complete.  
+
 
 
 .. |tgw_to_multi-cloud_transit| image:: migrate_tgw_orchestrator_to_aviatrix_transit_media/tgw_to_multi-cloud_transit.png
