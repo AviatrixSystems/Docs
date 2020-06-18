@@ -625,7 +625,9 @@ To configure Loggly integration through an intermediary syslog server relay:
 6. Netflow
 =============
 
-Aviatrix gateways support netflow protocol v5 and v9.
+Aviatrix gateways support Netflow protocol v5 and v9.
+
+Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/netflow.html#netflow-integration>`_ to enable it.
 
 
 
