@@ -16,7 +16,6 @@ The objectives here are:
  - Minimum change to on-prem connectivity.   
  - Transferring Security Domains and Connection Policies in TGW to multi-cloud transit. 
 
-This document assumes your current deployment uses Aviatrix Transit Gateway to connect to on-prem.
 
 The Solution
 ^^^^^^^^^^^^^^^^
