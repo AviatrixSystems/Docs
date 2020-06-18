@@ -16,12 +16,9 @@ To enable Netflow, go to Aviatrix Controller's console -> click "Settings" on th
 Input the IP address and the port number of the destination Netflow service and click "Enable".
 
 .. note::
-    All gateways will have Netflow enabled by default. You can select a subset of gateways to have Netflow
-enabled in the Advanced option. 
+    All gateways will have Netflow enabled by default. You can select a subset of gateways to have Netflow enabled in the Advanced option.
 
 All flows are captured, there is no option to sample a fraction of the packets. 
-
-Netflow configuration example is shown below:
 
 
 .. add in the disqus tag
