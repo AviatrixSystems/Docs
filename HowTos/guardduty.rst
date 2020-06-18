@@ -42,12 +42,17 @@ Integration and Enforcements
 The Aviatrix Controller provides additional monitoring, logging and enforcement services when you enable Amazon GuardDuty from the Aviatrix Controller Console, 
 as listed below. 
 
- - Aviatrix Controller periodically polls Amazon `GuardDuty findings <https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html>`_. 
+ - Aviatrix Controller periodically polls Amazon `GuardDuty findings <https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html>`_. The polling time is configurable between 5 minutes to 60 minutes. 
  - Findings from Amazon GuardDuty are `logged <AviatrixLogging.html#id13>`__ to the Controller syslog. (Syslog can be exported to `Aviatrix supported Logging services <AviatrixLogging.html>`__.)
  - Findings from Amazon GuardDuty are displayed in Alert Bell on the Controller console.  
  - In addition, if a finding is about instances in a VPC being probed by a malicious IP address, this IP address is blocked by deploying `Public Subnet Filtering Gateway <https://docs.aviatrix.com/HowTos/public_subnet_filtering_faq.html>`_, as shown in the diagram below. 
 
 |public_subnet_filter| 
+
+Polling Time
+-------------
+
+Go to Security -> AWS GuardDuty -> Change Scanning Interval. Select a time and click Apply. 
 
 
 
