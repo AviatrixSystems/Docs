@@ -49,8 +49,8 @@ Follow the `Multi-Cloud Transit Segmentation workflow <https://docs.aviatrix.com
  #. Launch an Aviatrix Spoke gateway in Spoke-1 VPC, enable HA if required. 
  #. Detach Spoke-1 from TGW. Go to TGW Orchestrator -> Build -> Detach.
  #. Attach Aviatrix Spoke-1 gateway to Aviatrix Transit Gateway. Go to Multi-Cloud Transit -> Attach (Step 6a)
- #. Repeat the above steps for all remaining Spoke VPCs. 
- #. After all Spoke VPCs have been migrated, setup multi-cloud connection policies. Go to Multi-Cloud Transit -> Segmentation -> Build to associate an Aviatrix Spoke gateway with a security domain. 
+ #. Repeat the above steps for all remaining Spoke VPCs during the migration process. 
+ #. (Optional) After all Spoke VPCs have been migrated, setup multi-cloud connection policies. Go to Multi-Cloud Transit -> Segmentation -> Build to associate each Aviatrix Spoke gateway with a security domain. 
  #. Done. 
 
 4. Extra
