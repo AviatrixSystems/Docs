@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R6.0 (Coming soon)
+R6.0.2269 (6/19/2020)
 =====================
 
 1. Aviatrix Multi-Cloud Transit
