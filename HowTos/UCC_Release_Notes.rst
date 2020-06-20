@@ -54,6 +54,7 @@ R6.0.2269 (6/19/2020)
 - **Multi Remote Syslog Servers Support** allows an Aviatrix gateway to forward its syslog to a different remote syslog server than other gateways. The use case is customer may have multiple syslog servers deployed in different regions and Aviatrix gateways deployed in regions should forward syslog data to the server it is assigned to. 
 - **Netflow v9 Support** adds new capability in addition to the current v5 support. 
 - **CloudWatch Customize Configuration** now supports group name customization. The use case is to provide flexibility for customer to name their log folders. To configure, go to Settings -> Logging -> ClooudWatch -> Advanced -> Log Group Name, enter a name of your choice. 
+- **New User Interface** aims to reduce web interface screen load time and improve user experience.   
 
 7. AWS Transit Gateway (TGW)
 -------------------------------
