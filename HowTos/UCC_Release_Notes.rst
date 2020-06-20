@@ -17,6 +17,7 @@ R6.0.2269 (6/19/2020)
 - **GCP Multi Region Transit HA** leverages the GCP capability of multi regions in a single VPC and provide Aviatrix Transit/Spoke Gateway HA in a different region. The use case is to improve regional failure by the ability to failover to a different region. 
 - **Azure Availability Zone Support** allows you to deploy an Aviatrix gateway in Azure in a specified availability zone where it is applicable. Not all regions support availability zones and where it is not, availability set is supported.  
 - **Change Aviatrix Transit Gateway AS Number** provides the ability to change AS number without re-configuring the tunnel. The use case is to reduce network downtime if customer must change the Aviatrix Transit Gateway AS. To configure, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> LOCAL AS NUMBER, enter the desired AS number and click Change. 
+- **Sync Controller Best Routes to Aviatrix Transit Gateway** allows the Controller to reprogram an Aviatrix Transit Gateway route table in case they go out of sync. The use case is to recover the routes from an unforeseeable errors in the deployment. To configure, go to Multi-Cloud Transit -> Advanced Config. Select the Aviatrix Transit Gateway, scroll down to `Sync Controller Best Routes to Transit Gateway`, click Sync Routes. 
 
 
 2. Firewall Network (FireNet)
