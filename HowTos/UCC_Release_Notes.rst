@@ -56,6 +56,7 @@ R6.0.2269 (6/19/2020)
 - **Netflow v9 Support** adds new capability in addition to the current v5 support. 
 - **CloudWatch Customize Configuration** now supports group name customization. The use case is to provide flexibility for customer to name their log folders. To configure, go to Settings -> Logging -> ClooudWatch -> Advanced -> Log Group Name, enter a name of your choice. 
 - **New User Interface** aims to reduce web interface screen load time and improve user experience.   
+- **Datadog multi site support** to allow Datadog agent to send syslog to a destination site. To configure, go to Settings -> Logging -> Datadog Agent -> Enable Datadog Agent. Select a site datadoghq.com or datadoghq.eu.
 
 7. AWS Transit Gateway (TGW)
 -------------------------------
