@@ -166,7 +166,7 @@ How to migrate to ActiveMesh 2.0?
 --------------------------------------
 
 ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. If you have current Transit Network, 
-migrate to ActiveMesh 2.0 by going to Settings -> Migration -> ActiveMesh 2.0 Migration, click Migrate. 
+migrate to ActiveMesh 2.0 by going to Settings -> Maintenance -> Migration -> ActiveMesh 2.0 Migration, click Migrate. 
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png
    :scale: 30%
