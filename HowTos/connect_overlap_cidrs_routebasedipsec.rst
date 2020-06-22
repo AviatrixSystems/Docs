@@ -69,7 +69,7 @@ Click "+Add New". Fill the form and click OK. Select "Mapped" for the Connection
 2.1 VPC-1 gateway-1 side
 #########################
 
-For the VPC-1 gateway side, the Local Subnet field should be the subnet of VPC-1 (e.g. 10.24.0.0/20), and the Remote Subnet field should be the subnet of VPC-2 (e.g. 10.24.0.4/32), as shown below.
+For the VPC-1 gateway side, the Local Subnet field should be the subnet of VPC-1 (e.g. 10.24.0.0/20), and the Remote Subnet field should be the subnet of VPC-2 (e.g. 10.24.0.0/20), as shown below.
 
 |vpc1_to_vpc2_rbipsec|
 
@@ -81,7 +81,7 @@ For the VPC-1 gateway side, the Local Subnet field should be the subnet of VPC-1
 
 On the VPC gateway-2 side, the IPSEC is a standard configuration.
 
-For the VPC-2 gateway side, the Local Subnet field should be 10.24.0.0/20, and the Remote Subnet field should be 192.168.0.43/32, as shown below.
+For the VPC-2 gateway side, the Local Subnet field should be 10.24.0.0/20, and the Remote Subnet field should be 10.24.0.0/20, as shown below.
 
 |vpc2_to_vpc1_rbipsec|
 
