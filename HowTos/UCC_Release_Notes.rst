@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R6.0 (Coming soon)
+R6.0.2269 (6/19/2020)
 =====================
 
 1. Aviatrix Multi-Cloud Transit
@@ -10,20 +10,21 @@ R6.0 (Coming soon)
 
 - **ActiveMesh 2.0**  unifies the Aviatrix Transit Gateway next hop route selection by conforming to BGP next hop selection algorithm for all traffic sources. The use case is to provide a predictable routing path in a multi regions, multi cloud  and multi sites environments. All new Transit Network deployed is launched with ActiveMesh 2.0. For a one time migration from the existing deployment, go to Settings -> Migration -> ActiveMesh 2.0 Migration. Click Migrate. To learn more details, check out `ActiveMesh 2.0 Details <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_.
 - **Multi-Cloud Transit Segmentation** allows you to segment the Aviatrix multi-cloud transit network (where Aviatrix Transit Gateways and Spoke gateways are deployed) by specifying domains and connection policy across all clouds and regions. To learn more, check out `Aviatrix Transit Network Segmentation FAQ <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html>`_.
-- **External Device to Support Static Remote Policy-Based** provides the interoperability between a route-based Aviatrix Transit Gateway and a remote policy-based IPSEC tunnel connection. The use case is to allow the remote site to participate in the ActiveMesh 2.0 route selection in a unified manner. The caveat in this mode is the remote site must always initiate the traffic. To configure, go to Multi-Cloud Transit -> Setup -> Step 3 -> External Device -> Static Remote Policy-Based.
+- **External Device to Support Static Remote Route-Based** provides the interoperability between a route-based Aviatrix Transit Gateway and a remote route-based IPSEC tunnel connection. The use case is to allow the remote site to participate in the ActiveMesh 2.0 route selection in a unified manner. To configure, go to Multi-Cloud Transit -> Setup -> Step 3 -> External Device -> Static Remote Route-Based.
 - **Dual Transit FireNet** allows you to attach an Aviatrix Spoke gateway to two Aviatrix Transit Gateways, each with Transit FireNet service enabled but with a different purpose. One carries Egress/Ingress inspection and the other carries East-West and North-South inspection. The use case is to allow different policies to be implemented easily. To configure, go to Multi-Cloud Transit -> Transit FireNet -> `Step 1b. <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#b-enable-transit-firenet-on-aviatrix-egress-transit-gateway>`_
 - **Aviatrix Transit Gateway ECMP Disable Option** allows you to turn off ECMP for next hop selection. The use case is if on-prem deploy a firewall devices that require symmetric routing. The BGP ECMP is disabled by default. To enable, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> BGP ECMP. For more information, refer to `BGP ECMP <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-ecmp>`_.
 - **Advanced NAT Function for Azure and GCP** is now available for Aviatrix Spoke gateways. The use case is to resolve overlapping network CIDRs between on-prem network and Spoke network. To learn more on Aviatrix advanced SNAT/DNAT functions, check out `Aviatrix Advanced SNAT <https://docs.aviatrix.com/HowTos/gateway.html#source-nat>`_ and `Aviatrix Advanced DNAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_.
 - **GCP Multi Region Transit HA** leverages the GCP capability of multi regions in a single VPC and provide Aviatrix Transit/Spoke Gateway HA in a different region. The use case is to improve regional failure by the ability to failover to a different region. 
 - **Azure Availability Zone Support** allows you to deploy an Aviatrix gateway in Azure in a specified availability zone where it is applicable. Not all regions support availability zones and where it is not, availability set is supported.  
-- **Change Aviatrix Transit Gateway AS Number** provides the ability to change AS number without re-configuring the tunnel. The use case is to reduce network downtime if customer must change the Aviatrix Transit Gateway AS. To configure, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> LOCAL AS NUMBER, enter the desired AS number and click Change. 
+- **Change Aviatrix Transit Gateway AS Number** provides the ability to change AS number of Aviatrix Transit Gateways. The use case is to avoid human errors when there are multiple BGP connections. To configure, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> LOCAL AS NUMBER, enter the desired AS number and click Change. 
+- **Sync Controller Best Routes to Aviatrix Transit Gateway** allows the Controller to reprogram an Aviatrix Transit Gateway route table in case they go out of sync. The use case is to recover the routes from an unforeseeable errors in the deployment. To configure, go to Multi-Cloud Transit -> Advanced Config. Select the Aviatrix Transit Gateway, scroll down to `Sync Controller Best Routes to Transit Gateway`, click Sync Routes. 
 
 
 2. Firewall Network (FireNet)
 ------------------------------
 
 - **Firewall Instances Health Check Enhancement** checks a firewall instance's health by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative option to checking health through firewall's management interface, which improves firewall failure detection time and detection accuracy. Available for both FireNet and Transit FireNet deployment and in both AWS and Azure. To configure, go to Firewall Networks -> Advanced, select the FireNet gateway, click the 3-dot skewer, scroll to Keep Alive via Firewall LAN Interface, click Enable. To learn more, refer to `Firewall Health Check with LAN Interface <https://docs.aviatrix.com/HowTos/firewall_advanced.html#firewall-health-check-and-failover-detection-using-lan-interface>`_.
-- **FireNet Exclude CIDRs** allows you to exclude a list of network CIDRs to be excluded from going through firewall inspection even though its associated Security Domain or network requires inspection. One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors. For details, check out `Exclude CDIR <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-to-exclude-specific-cidrs-from-being-inspected-by-the-firewall>`_.
+- **FireNet Exclude CIDRs** allows you to exclude a list of network CIDRs to be excluded from going through firewall inspection even though its associated Security Domain or network requires inspection. One use case is to exclude the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors. For details, check out `Exclude CIDR <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-to-exclude-specific-cidrs-from-being-inspected-by-the-firewall>`_.
 - **Check Point CloudGuard in Azure** is now available in Azure when deploying Aviatrix Transit FireNet. Refer to `this example CheckPoint workflow in Azure <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html>`_ for more details. 
 - **Fortinet Fortigate in Azure** is now available in Azure when deploying Aviatrix Transit FireNet. 
 - **Check Point Dynamic Route Update** enhances FireNet Check Point integration by dynamically updates CloudGuard route tables by the Controller. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the Check Point appliance. 
@@ -31,7 +32,7 @@ R6.0 (Coming soon)
 3. User VPN
 --------------
 
-- **Signed Cert for SAML Authentication** improves security of User VPN SAML authentication when it authenticates with the IDPs by provides a signed cert. To configure, go to OpenVPN -> Advanced -> SMAL -> Add a New SMAL Endpoint, select the option "Sign Authn Requests". For SMAL login to the Controller, go to Settings -> Controller -> SAML Login -> Add a New SAML Endpoint, select the option "Sign Authn Requests".
+- **Signed Cert for SAML Authentication** improves security of User VPN SAML authentication when it authenticates with the IDPs by providing a signed cert. To configure, go to OpenVPN -> Advanced -> SAML -> Add a New SAML Endpoint, select the option "Sign Authn Requests". For SAML login to the Controller, go to Settings -> Controller -> SAML Login -> Add a New SAML Endpoint, select the option "Sign Authn Requests".
 - **Dashboard to Display user speed** allows you to access individual User VPN client performance. To view the client VPN speed, go to Dashboard, scroll down to the Use VPN section to view. 
 - **Terraform for Attaching a user to profile** allows you to update the user profile in modular fashion.  
 
@@ -39,7 +40,7 @@ R6.0 (Coming soon)
 ---------------
 
 - **Route Based IPSEC** provides flexibility to configuration. One use case for selecting route based VPN is to solve overlapping network CIDRs with on-prem as referred in `this example <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs_routebasedipsec.html>`_. To learn more about route based VPN, check out `the FAQ <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-route-based-vpn-and-policy-based-vpn>`_. 
-- **Mapped Configuration for Route Based IPSEC** supports both SNAT and DNAT on the network address ranges. The use case is to connect two IP address overlapping networks, for example a cloud VPC and on-prem, where on-prem cannot implement any network address translation. Comparing with individual IP address based translation, this significantly simplifies configuration. Note this configuration is implemented on route based IPSEC tunnel of an Aviatrix gateway site12cloud connection. To configure, go to Site2Cloud -> Add New. For Connection Type, select `Mapped`. For an example configuration, refer to `Solving Overlapping Networks with Network Mapped IPSec. <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs_routebasedipsec.html>`_ For more complex solutions, read `Overlapping Network Connectivity Solutions <https://docs.aviatrix.com/HowTos/overlapping_network_solutions.html>`_.
+- **Mapped Configuration for Route Based IPSEC** supports both SNAT and DNAT on the network address ranges. The use case is to connect two IP address overlapping networks, for example a cloud VPC and on-prem, where on-prem cannot implement any network address translation. Comparing with individual IP address based translation, this significantly simplifies configuration. Note this configuration is implemented on route based IPSEC tunnel of an Aviatrix gateway site2cloud connection. To configure, go to Site2Cloud -> Add New. For Connection Type, select `Mapped`. For an example configuration, refer to `Solving Overlapping Networks with Network Mapped IPSec. <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs_routebasedipsec.html>`_ For more complex solutions, read `Overlapping Network Connectivity Solutions <https://docs.aviatrix.com/HowTos/overlapping_network_solutions.html>`_.
 - **Intelligent Troubleshooting** provides expert analysis to the IPSEC syslog and reduces diagnosis time. To use, go to Site2Cloud -> Diagnostics. Select one connection, select `Run Analysis`. 
 - **Shared the Same Pre-Shared Keys** provides an option for both primary and backup IPSEC tunnel to share the same pre-shared keys. The use case is to reduce the configuration burden for on-prem devices. To configure, go to Site2Cloud -> Add New. Check the option `Same Pre-shared Key as Primary` when creating a connection. For configuration details, check out `Site2Cloud configuration workflow <https://docs.aviatrix.com/HowTos/site2cloud.html#site2cloud-ipsec-vpn-instructions>`_. 
 
@@ -53,7 +54,9 @@ R6.0 (Coming soon)
 
 - **Multi Remote Syslog Servers Support** allows an Aviatrix gateway to forward its syslog to a different remote syslog server than other gateways. The use case is customer may have multiple syslog servers deployed in different regions and Aviatrix gateways deployed in regions should forward syslog data to the server it is assigned to. 
 - **Netflow v9 Support** adds new capability in addition to the current v5 support. 
-- **CloudWatch Customize Configuration** now supports group name customization. The use case is to provide flexibility for customer to name their log folders. To configure, go to Settings -> Logging -> ClooudWatch -> Advanced -> Log Group Name, enter a name of your choice. 
+- **CloudWatch Customize Configuration** now supports group name customization. The use case is to provide flexibility for customer to name their log folders. To configure, go to Settings -> Logging -> CloudWatch -> Advanced -> Log Group Name, enter a name of your choice. 
+- **New User Interface** aims to reduce web interface screen load time and improve user experience.   
+- **Datadog multi site support** to allow Datadog agent to send syslog to a destination site. To configure, go to Settings -> Logging -> Datadog Agent -> Enable Datadog Agent. Select a site datadoghq.com or datadoghq.eu.
 
 7. AWS Transit Gateway (TGW)
 -------------------------------
@@ -62,6 +65,11 @@ R6.0 (Coming soon)
 - **Change Spoke VPC's Security Domains** provides the ability to change a Spoke VPC's Security Domain without detaching the VPC from the TGW. The use case is to reduce Spoke VPC connectivity downtime when it needs to change its associated domains. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Switch Security Domain. In the pop up window, select the desired Security Domain to associate. For more information, refer to `Switch Security Domain <https://docs.aviatrix.com/HowTos/tgw_list.html#switch-security-domain>`_.
 - **Update Spoke VPC Route Tables** provides the ability to update a Spoke VPC route tables without detaching the VPC from TGW. The use case is to reduce Spoke VPC connectivity downtime when its subnets and route tables are added or deleted. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Update VPC CIDR. For more information, refer to `Update VPC CIDR <https://docs.aviatrix.com/HowTos/tgw_list.html#update-vpc-cidr>`_.
 - **Edit Spoke VPC Local Route Propagation** provides the ability to enable and disable attached Spoke VPC local route propagation without detaching the VPC. The use case is to disable local route propagation after a Spoke VPC is attached to TGW. To configure, go to TGW Orchestrator -> List -> Select the attached Spoke VPC -> Actions -> Edit Spoke VPC Local Route Propagation. For more information, refer to `Edit Spoke VPC Local Route Propagation <https://docs.aviatrix.com/HowTos/tgw_list.html#edit-spoke-vpc-local-route-propagation>`_. 
+R5.4.1251 (6/19/2020)
+========================
+
+- **Bug fix** nightly cron job hit exception. 
+
 R5.4.1249 (6/15/2020)
 ======================
 
@@ -377,7 +385,7 @@ R5.1.935 (10/19/2019)
 Transit Gateway Enhancement
 ------------------------------
 
- - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CDIRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
+ - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CIDRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
 
  - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. `API support <https://api.aviatrix.com/?version=latest#6a8a1c4c-14b6-4f11-b280-d218f60cea1e>`_ only. 
 

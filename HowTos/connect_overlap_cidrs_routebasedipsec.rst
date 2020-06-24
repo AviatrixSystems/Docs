@@ -69,7 +69,7 @@ Click "+Add New". Fill the form and click OK. Select "Mapped" for the Connection
 2.1 VPC-1 gateway-1 side
 #########################
 
-For the VPC gateway side, the Local Subnet field should be the subnet of VPC-1 (e.g. 10.24.0.0/20), and the Remote Subnet field should be the subnet of VPC-2 (e.g. 10.24.0.0/20), as shown below.
+For the VPC gateway side, the Local Subnet field should be the subnet of VPC-1 (e.g. 10.24.0.0/20), and the Remote Subnet field should be the subnet of OnPrem Router (e.g. 10.24.0.0/20), as shown below.
 
 ==================================================                =======================================================================
   **Field**                                                         **Value**
