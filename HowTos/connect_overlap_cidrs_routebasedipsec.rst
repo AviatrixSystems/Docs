@@ -202,10 +202,10 @@ Done.
    :scale: 35%
 
 .. |overlap_rbi| image:: connect_overlap_cidrs_media/overlap_rbi.png
-   :scale: 35%
+   :scale: 40%
 
 .. |vpc_to_onprem_rbipsec| image:: connect_overlap_cidrs_media/vpc_to_onprem_rbipsec.png
-   :scale: 30%
+   :scale: 35%
 
 .. |ios_config_template| image:: connect_overlap_cidrs_media/ios_config_template.png
    :scale: 30%
