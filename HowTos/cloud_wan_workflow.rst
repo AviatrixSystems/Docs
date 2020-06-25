@@ -59,7 +59,7 @@ Remote Tunnel IP                                       Optional parameter. Leave
 Attach to TGW VPN
 ^^^^^^^^^^^^^^^^^^
 
-If you connect the branch router to TGW VPN, refer to the following fields to attach the branch router.
+To connect a branch router to TGW VPN, refer to the following fields to attach the branch router.
 
 =========================================              ==========================
 Input Field                                            Value
@@ -71,6 +71,23 @@ Branch Router's BGP ASN                                Only BGP is supported. En
 Algorithm                                              Default is unchecked. Leave it unchecked.
 Security Domain Name                                   An Aviatrix TGW Orchestrator Security Domain
 Enable Global Accelerator                              Check the box to enable AWS Global Accelerator for the branch router to hop onto the nearest AWS edge and traverse the AWS backbone to get to the AWS TGW.
+=========================================              ==========================
+
+Attach to Azure vWAN
+^^^^^^^^^^^^^^^^^^^^^^
+
+To connect a branch router to Azure vWAN, select Azure Virtual WAN
+
+=========================================              ==========================
+Input Field                                            Value
+=========================================              ==========================
+Branch                                                 A registered branch router.
+Azure Virtual WAN                                      Azure vWAN option
+Access Account Name                                    The Access Account for Azure subscription 
+Resource Group                                         The resource group on Azure
+Hub Name                                               Azure vWAN Hub created on Azure portal
+Connection Name                                        A unique name for the connection.
+Branch Router's BGP ASN                                Only BGP is supported. Enter BGP ASN number on the branch router.
 =========================================              ==========================
 
 
