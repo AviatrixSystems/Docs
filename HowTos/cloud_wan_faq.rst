@@ -67,8 +67,8 @@ What are the benefits of CloudWAN?
  - **Automation** Avoid human errors and the complexity of VPN configuration when building VPN connections to the cloud. 
  - **Centrally Managed** Use the single pane of glass to both provision and monitor router health and stats. 
 
-How does CloudWAN work?
---------------------------
+How does CloudWAN work in AWS?
+---------------------------------
 
 CloudWAN leverages AWS Global Accelerator and the AWS backbone for the shortest latency path to the cloud. 
 
