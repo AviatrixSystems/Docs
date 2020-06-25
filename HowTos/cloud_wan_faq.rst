@@ -52,6 +52,13 @@ the diagram below.
 
 |cloud_wan_azure|
 
+CloudWAN Deployment on Azure Virtual WAN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+CloudWAN is integrated with Azure Virtual WAN, as shown in the diagram below. 
+
+|cloudwan_azure_vwan|
+
 What are the benefits of CloudWAN?
 -----------------------------------------
 
@@ -170,6 +177,9 @@ Cisco routers that run IOS Classic and IOS XE are supported. For example, ISR G2
    :scale: 30%
 
 .. |cloud_wan_azure| image:: cloud_wan_faq_media/cloud_wan_azure.png
+   :scale: 30%
+
+.. |cloudwan_azure_vwan| image:: cloud_wan_faq_media/cloudwan_azure_vwan.png
    :scale: 30%
 
 .. |global_accelerator| image:: cloud_wan_faq_media/global_accelerator.png
