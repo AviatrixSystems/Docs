@@ -63,7 +63,7 @@ What are the benefits of CloudWAN?
 -----------------------------------------
 
  - **No Friction** Leverage what you have already invested in the on-prem edge router for connecting to the cloud. 
- - **Shortest Latency** Leverage AWS Global Accelerator to connect your on-prem routers to the nearest AWS edge and route through the AWS backbone with the optimal path. 
+ - **Shortest Latency** Leverage AWS Global Accelerator or Azure backbone to connect your on-prem routers to the nearest cloud provider edge and route through the their backbone with the optimal path. 
  - **Automation** Avoid human errors and the complexity of VPN configuration when building VPN connections to the cloud. 
  - **Centrally Managed** Use the single pane of glass to both provision and monitor router health and stats. 
 
