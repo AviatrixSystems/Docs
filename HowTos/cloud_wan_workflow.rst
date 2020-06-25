@@ -31,10 +31,11 @@ In the drop down menu, select the branch device. Click Upload Config. After the 
 Attach Branch to Cloud
 -----------------------------------------
 
-This step creates an IPSEC tunnel between the IOS router and the Aviatrix Transit Gateway or between the IOS router and TGW VPN. . 
+This step has 3 options. 
+It creates an IPSEC tunnel between the IOS router and the Aviatrix Transit Gateway, between the IOS router and TGW VPN or IOS router and Azure vWAN. 
 
-Attach to an Aviatrix Transit Gateway
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Option 1: Attach to an Aviatrix Transit Gateway
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you connect the branch router to an Aviatrix Transit Gateway, refer to the following fields to attach the branch router. 
 
@@ -56,8 +57,8 @@ Local Tunnel IP                                        Optional parameter. Leave
 Remote Tunnel IP                                       Optional parameter. Leave it unchecked. 
 =========================================              ==========================
 
-Attach to TGW VPN
-^^^^^^^^^^^^^^^^^^
+Option 2: Attach to TGW VPN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To connect a branch router to TGW VPN, refer to the following fields to attach the branch router.
 
@@ -73,8 +74,8 @@ Security Domain Name                                   An Aviatrix TGW Orchestra
 Enable Global Accelerator                              Check the box to enable AWS Global Accelerator for the branch router to hop onto the nearest AWS edge and traverse the AWS backbone to get to the AWS TGW.
 =========================================              ==========================
 
-Attach to Azure vWAN
-^^^^^^^^^^^^^^^^^^^^^^
+Option 3: Attach to Azure vWAN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To connect a branch router to Azure vWAN, select Azure Virtual WAN
 
