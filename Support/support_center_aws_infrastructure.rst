@@ -134,8 +134,6 @@ Launch from EC2/Instances/Launch Instance/AWS Marketplace manually:
   * Launch the controller by picking an Aviatrix image under EC2/Instances/Launch Instance/AWS Marketplace.
   
 Other notes:
-  * Flightpath with AWS Govcloud does not work unless a Commercial AWS account is also registered on the controller. Register a commercial AWS cloud account with the controller:
-  
     * Goto Accounts/Access Accounts/Add Account
     * Pick AWS and uncheck IAM role-based checkbox
     * Populate your AWS Access Key ID/Account Number/Secret key. 
