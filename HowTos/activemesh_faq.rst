@@ -136,21 +136,21 @@ ActiveMesh 2.0 is a new iteration of ActiveMesh. The main advancement of ActiveM
 
 Here is how Aviatrix Transit Gateway routing engine treats the following types of routes. 
 
-========================================================                    ==========
-**Networks**                                                                **Aviatrix Transit Gateway Route Propagation**
-========================================================                    ==========
-Local TGW attached VPC CIDR                                                 Local
-Aviatrix Spoke gateway associated VPC/VNet CIDR                             Local
-Azure Native Spoke assoociated VNet CIDR                                    Local
-Local TGW VPN dynamically learned network CIDR                              Advertises TGW VPN ASN and its remote peer ASN to a remote BGP peer if it's the best route.
-Local TGW DXGW learned network CIDR                                         Advertises  TGW DXGW ASN and its remote peer ASN to a remote BGP peer if it's the best route.
-Remote Aviatrix Transit Gateway Peering learned routes                      Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
-Aviatrix Transit Gateway BGP learned from on-prem                           Advertises to its remote peers by Aviatrix Transit Gateway peering if it's the best route. 
-Aviatrix Transit Gateway statically learned from on-prem                    Local
-Aviatrix Transit Gateway associated VPC/VNet CIDR                           Local
-Local Firewall Egress route (0.0.0.0/0)                                     Local
-Aviatrix Transit Gateway SNAT IP address                                    Local
-========================================================                    ==========
+========================================================     ===============               ==========
+**Networks**                                                 **Route Type**                **Aviatrix Transit Gateway Route Propagation**
+========================================================     ===============               ==========
+Local TGW attached VPC CIDR                                  tgwvpc                        Local
+Aviatrix Spoke gateway associated VPC/VNet CIDR              vpc                           Local
+Azure Native Spoke assoociated VNet CIDR                     vpc                           Local
+Local TGW VPN dynamically learned network CIDR               tgwedge                       Advertises TGW VPN ASN and its remote peer ASN to a remote BGP peer if it's the best route.
+Local TGW DXGW learned network CIDR                          tgwedge                       Advertises  TGW DXGW ASN and its remote peer ASN to a remote BGP peer if it's the best route.
+Remote Aviatrix Transit Gateway Peering learned routes       peer                          Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
+Aviatrix Transit Gateway BGP learned from on-prem            bgp                           Advertises to its remote peers by Aviatrix Transit Gateway peering if it's the best route. 
+Aviatrix Transit Gateway statically learned from on-prem     static                        Local
+Aviatrix Transit Gateway associated VPC/VNet CIDR            linklocal                     Local
+Local Firewall Egress route (0.0.0.0/0)                      transit                       Local
+Aviatrix Transit Gateway SNAT IP address                     linklocal                     Local
+========================================================     ===============               ==========
 
 With this approach, there is more visibility on learned routes regarding what paths the routes are learned from. 
 
@@ -167,21 +167,14 @@ How to migrate to ActiveMesh 2.0?
 
 There are 3 scenarios:
 
-1. Non ActiveMesh deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=================================    ===============================================================================================  ==========
+**Deployment**                       **Notes**                                                                                        **ActiveMesh 2.0 Migration**
+=================================    ===============================================================================================  ==========
+Non ActiveMesh deployment            the Aviatrix Transit Gateway in the deployment has been launched before Release 5.1 (10/1/2019)  follow `this instructions <https://docs.aviatrix.com/HowTos/activemesh_migration.html>`_
+ActiveMesh 1.0 deployment            the Aviatrix Transit Gateway was launched with ActiveMesh option enabled prior to Release 6.0    migrate to ActiveMesh 2.0 by going to Settings -> Maintenance -> Migration -> ActiveMesh 2.0 Migration, click Migrate.
+New ActiveMesh 2.0 deployment        the Aviatrix Transit Gateway was launched with ActiveMesh option enabled after Release 6.0       ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller.
+=================================    ===============================================================================================  ==========
 
-If the Aviatrix Transit Gateway in the deployment has been launched before Release 5.1 (10/1/2019), follow the `instructions <https://docs.aviatrix.com/HowTos/activemesh_migration.html>`_ to 
-migrate to ActiveMesh. The instruction will migrate you to ActiveMesh 2.0 directly.  
-
-2. ActiveMesh 1.0 deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If the Aviatrix Transit Gateway was launched with ActiveMesh option enabled prior to Release 6.0, migrate to ActiveMesh 2.0 by going to Settings -> Maintenance -> Migration -> ActiveMesh 2.0 Migration, click Migrate.
-
-3. New ActiveMesh 2.0 deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. 
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png
    :scale: 30%
