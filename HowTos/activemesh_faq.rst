@@ -165,8 +165,23 @@ The next hop best path selection follows the priorities listed below.
 How to migrate to ActiveMesh 2.0?
 --------------------------------------
 
-ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. If you have current Transit Network, 
-migrate to ActiveMesh 2.0 by going to Settings -> Maintenance -> Migration -> ActiveMesh 2.0 Migration, click Migrate. 
+There are 3 scenarios:
+
+1. Non ActiveMesh deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the Aviatrix Transit Gateway in the deployment has been launched before Release 5.1 (10/1/2019), follow the `instructions <https://docs.aviatrix.com/HowTos/activemesh_migration.html>`_ to 
+migrate to ActiveMesh. The instruction will migrate you to ActiveMesh 2.0 directly.  
+
+2. ActiveMesh 1.0 deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the Aviatrix Transit Gateway was launched with ActiveMesh option enabled prior to Release 6.0, migrate to ActiveMesh 2.0 by going to Settings -> Maintenance -> Migration -> ActiveMesh 2.0 Migration, click Migrate.
+
+3. New ActiveMesh 2.0 deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller. 
 
 .. |activemesh_spoke_transit| image:: activemesh_faq_media/activemesh_spoke_transit.png
    :scale: 30%
