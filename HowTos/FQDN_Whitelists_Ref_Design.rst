@@ -132,7 +132,8 @@ Edit Source
 Edit Source is available in Release 4.0 and later.
 
 Edit Source allows you to control which source IP in the VPC is qualified for a specific tag. The source IP
-can be a subnet CIDR or host IP addresses. This provides fine-grained configuration.
+can be a subnet CIDR or host IP addresses. This provides fine-grained configuration. Note packets 
+sourcing from the unselected source CIDRs will be dropped.
 
 For example, one use case is if you have two private subnets in a VPC: one deploys dev instances and another
 deploys prod instances. With the Edit Source feature, the dev instances can have different tags than
@@ -141,7 +142,8 @@ the prod instances.
 Edit Source assumes you already attached a gateway to a tag.
 
 To go to the Edit Source page, click "Edit Source" at Egress FQDN Filter on a specific tag and follow
-the example in the illustration below:
+the example in the illustration below, the network appeared on the right hand of the panel go through the FQDN tag filtering while 
+the network on the left side of the panel are dropped.
 
 |source-edit|
 

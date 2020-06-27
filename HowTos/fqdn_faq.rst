@@ -168,6 +168,16 @@ Yes. Available in Release 5.0 and later, Aviatrix FQDN gateway can be deployed c
 One use case is if you need 
 to limit the public IP addresses to a third party public service. Follow the `Firewall Network  workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_ to deploy. 
 
+How does FQDN and Stateful Firewall work together?
+----------------------------------------------------
+
+If FQDN service is enabled on a gateway for any TCP port 80 and 443 traffic, all forwarding traffic to destination 
+TCP port 80 and 443 are processed by FQDN engine 
+and the decision to drop or accept the session is reached by FQDN engine. Stateful firewall can only process traffic destined 
+to non TCP port 80 and 443. 
+
+
+
 .. |egress_overview| image::  FQDN_Whitelists_Ref_Design_media/egress_overview.png
    :scale: 30%
 
