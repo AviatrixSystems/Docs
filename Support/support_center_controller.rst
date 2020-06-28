@@ -437,3 +437,30 @@ Why did my SAML Login on the Controller stopped working after Controller AMI mig
 ------------------------------------------------------------------------------------------
 
 In our latest AMI, we have made the EntityID checks more stricter. It is possible that your EntityID in your IdP settings might be slightly different. Please login to the controller and go to Settings/Controller/SAMLLogin and click on the "SP Metadata" button - that should open a new tab on your browser and display some data, including your EntityId. Please make sure that the EntityId in the IdP's SAML application is configured to be exactly as the string between the quotes including any slashes at the end as shown by the controller. (For example if your entityID="https://mysite.example.com/test/, use the entire string: https://mysite.example.com/test/ in your IdP for EntityId)
+
+Upgrading Aviatrix Controller on GCloud Project beyond 5.3 with old Controller Image (Ubuntu 14.04)
+------------------------------------------------------------------------------------------
+
+1. On old controller please make sure all the gateways, s2c tunnels, peerings are up and healthy. You can also take a screenshot of the dashboard page. This screenshot will contain with all the important numbers of your old Aviatrix Controller.
+
+2. Check the version of your old controller and upgrade to the latest 5.3 version if it's not ( upgrade method can reference to: https://docs.aviatrix.com/HowTos/inline_upgrade.html#inline-software-upgrade ). Then, perform “Settings -> Maintenance -> Backup&Restore -> Backup -> Backup Now”. Check the backup file on your cloud bucket and note the bucket name and backup file name for later use.
+
+3. Please create a new external ip on GCloud console. Go to GCloud main page -> Click the 3 bars at the top left corner -> Drop down menu and select VPC Network -> External IP addresses. Click “Reserve a static address” at the top of the middle and create a new external ip with the same Network Service Tier and region as the old controller external ip address( we assume the migration is above the same VPC).
+
+4. Create a new controller based of latest GCP controller image following instructions at https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html( Notice: When creating the controller instance, please extend the network option and click the networking tap to change your external ip address to a static ip that you create at step3 for the new controller ).
+
+5. Access to the new Aviatrix Controller with new external ip address( https:// New_External_IP_of_the_controller ), and login with id / password : admin / internal ip address.
+
+6. Important: Initialize new controller with latest 5.3 version, please replace the default "latest" version with "5.3".
+
+7. Select Onboarding on Aviatrix Controller, and make sure you onboard the same account name of the GCloud project as old controller.
+
+8. If you want to keep the old controller external ip address, please stop the old controller first. Then, detach the old external ip from the old controller and reattach to new controller.
+
+9. Access to the new Aviatrix Controller with old external ip address and perform “Troubleshoot -> Diagnostics -> Network -> Controller IP Migration -> Migrate”, finishing migrate your old external ip to new controller.
+
+10. On the new controller perform “Settings -> Maintenance -> Backup&Restore -> Restore -> Restore with noted bucket name and backup file name at step2.
+
+11. Re-login and check all the gateways, s2c tunnels and peerings are up and healthy. Compare the numbers on the dashboard page with the screenshot you take from step1.
+
+12. Upgrade new controller to latest 5.4 or above verion.
