@@ -25,43 +25,46 @@ Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes 
 
 To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
 
-Design Considerations
--------------------------
+How does it work?
+---------------------
 
-TGW VPN/DXGW associated TGW route tables are automatically programmed when a new routes is learned by TGP BGP. In the current design, the corresponding TGW route
-tables whose Security Domains are connected with the VPN/DXGW associated Security Domains are also auto propagated using the TGW route propagation capability. 
+When Approval feature is enabled, TGW route table route propagation to connected Security Domain is turned
+off. That is, the TGW VPN/DXGW learned routes are statically programmed into the TGW route table of 
+connected Security Domains. 
 
-Therefore it is important these auto propagated routes do not overlap, or else packets may be routed to incorrect destinations.
+This is illustrated in the following two examples. 
 
-.. important::
+Example 1: Two TGW VPN/DXGW in the same domain
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  When TGW Approval is enabled on a TGW, summary routes (the RFC-1918 routes) are not programmed into the attached Spoke VPC route tables. Instead, specific route entries are programmed into the VPC route table. If more than 50 route entries are anticipated, please make support request to AWS to allow for more route entries. Up to 1000 route entries can be requested. 
+|tgw_two_vpn_approval|
 
-When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes. 
+In the above example, two identical VPN CIDRs 10.10.1.0/24 are attached to two TGW VPN but are in the same domain.  
+Whichever VPN attachment learned CIDR first, its attachment is programmed into Spoke associated
+TGW route table, in this case, VPN1 attachment arrives first and is programmed into the Spoke associated 
+TGW route table. VPN2 CIDR should continue to remain in pending state. If VPN1 
+withdraw route 10.10.1.0/24, you can initiate approval by moving the VPN2 pending CIDR to 
+the approved panel, and this time it should be programmed. 
 
+Example 2 One TGW VPN requires approval and another one does not
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
-   :scale: 30%
+|tgw_vpn_different_domains|
 
-.. |security_domain| image:: tgw_overview_media/security_domain.png
-   :scale: 30%
+In the second example, the TGW VPN2 link 10.9.0.0/24 that is in a different domain and does not require
+approval is propagated to the Spoke TGW route table, while TGW VPN1 link 10.1.0.0/24 is statically 
+programmed to Spoke TGW route table after approval is initiated by the customer. 
 
-.. |domain_policy_diagram| image:: tgw_overview_media/domain_policy_diagram.png
-   :scale: 30%
-
-.. |tgw_view| image:: tgw_overview_media/tgw_view.png
-   :scale: 30%
-
-.. |tgw_transit_vpc_compare| image:: tgw_overview_media/tgw_transit_vpc_compare.png
-   :scale: 30%
-
-.. |tgw_transit_orchestrator_compare| image:: tgw_overview_media/tgw_transit_orchestrator_compare.png
-   :scale: 30%
-
-.. |edge_segmentation| image:: tgw_overview_media/edge_segmentation.png
-   :scale: 30%
+Note in the second example, if TGW VPN2 link has the same network CIDR 10.1.0.0/24, this CIDR will be propagated first and TGW VPN1 approval request will be rejected and the CIDR 10.1.0.0/24 from TGW VPN1 remains
+in the approval pending list. 
 
 .. |tgw_approval| image:: tgw_overview_media/tgw_approval.png
+   :scale: 30%
+
+.. |tgw_two_vpn_approval| image:: tgw_approval_media/tgw_two_vpn_approval.png
+   :scale: 30%
+
+.. |tgw_vpn_different_domains| image:: tgw_approval_media/tgw_vpn_different_domains.png
    :scale: 30%
 
 .. disqus::
