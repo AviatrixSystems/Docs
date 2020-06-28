@@ -13,8 +13,8 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Getting Started`
 * :ref:`Onboarding and Accounts`
 * :ref:`Gateway`
-* :ref:`Transit Gateway Orchestrator`
 * :ref:`Transit Network`
+* :ref:`Transit Gateway Orchestrator`
 * :ref:`Firewall Network`
 * :ref:`Cloud WAN`
 * :ref:`Peering`
@@ -87,25 +87,6 @@ While all content is searchable, the site is organized into the following sectio
    Solutions/gateway_ha
    HowTos/gateway_audit
 
-.. _Transit Gateway Orchestrator:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: AWS Transit Gateway Orchestrator
-
-   HowTos/tgw_faq
-   HowTos/tgw_plan
-   HowTos/tgw_build
-   HowTos/tgw_list
-   HowTos/tgw_approval
-   HowTos/tgw_design_patterns
-   HowTos/transit_gateway_peering
-   HowTos/tgw_csr_migrate
-   HowTos/diy_tgw_migrate_to_aviatrix_tgw
-   HowTos/transitgw_external
-   HowTos/transitvpc_workflow
-   HowTos/transitvpc_design
-
 .. _Transit Network:
 
 .. toctree::
@@ -129,6 +110,25 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/CloudN_insane_mode
    HowTos/Setup_Transit_Network_Terraform
    HowTos/migrate_tgw_orchestrator_to_aviatrix_transit
+
+.. _Transit Gateway Orchestrator:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: AWS Transit Gateway Orchestrator
+
+   HowTos/tgw_faq
+   HowTos/tgw_plan
+   HowTos/tgw_build
+   HowTos/tgw_list
+   HowTos/tgw_approval
+   HowTos/tgw_design_patterns
+   HowTos/transit_gateway_peering
+   HowTos/tgw_csr_migrate
+   HowTos/diy_tgw_migrate_to_aviatrix_tgw
+   HowTos/transitgw_external
+   HowTos/transitvpc_workflow
+   HowTos/transitvpc_design
 
 .. _Firewall Network:
 
