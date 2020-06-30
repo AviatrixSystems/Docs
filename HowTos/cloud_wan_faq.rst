@@ -55,7 +55,7 @@ the diagram below.
 CloudWAN Deployment on Azure Virtual WAN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-CloudWAN is integrated with Azure Virtual WAN, as shown in the diagram below. 
+CloudWAN is integrated with Azure Virtual WAN, as shown in the diagram below. For configuration example, refer to `CloudWAN on Azure vWAN Configuration Example <https://docs.aviatrix.com/HowTos/cloud_wan_workflow_azure_vwan.html>`_.
 
 |cloudwan_azure_vwan|
 

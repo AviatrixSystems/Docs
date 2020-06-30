@@ -77,7 +77,7 @@ Enable Global Accelerator                              Check the box to enable A
 Option 3: Attach to Azure vWAN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To connect a branch router to Azure vWAN, select Azure Virtual WAN
+To connect a branch router to Azure vWAN, select Azure Virtual WAN. For a detailed example, refer to `CloudWAN on Azure vWAN Configuration Example <https://docs.aviatrix.com/HowTos/cloud_wan_workflow_azure_vwan.html>`_.
 
 =========================================              ==========================
 Input Field                                            Value

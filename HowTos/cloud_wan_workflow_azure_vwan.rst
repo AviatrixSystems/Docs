@@ -27,11 +27,12 @@ Topology
 
 ::
 
-    In this testing example, the on-premise router is Cisco ISR with network loopback address 1.1.1.1/32. Azure Virtual Hub private address space is 10.0.0.0/16. Azure Virtual network which connects to the Virtual Hub is 192.168.22.0/24 and the testing VM IP is 192.168.22.5/32.
+    In this testing example, the on-premise router is Cisco ISR with network loopback address 1.1.1.1/32. 
+    Azure Virtual Hub private address space is 10.0.0.0/16. Azure Virtual network which connects to the Virtual Hub is 192.168.22.0/24 and the testing VM IP is 192.168.22.5/32.
 
 
-Workflow for Azure
-==================
+Part 1. Workflow on Azure
+===========================
 
 Step 1. Login Azure Portal
 ---------------------------
@@ -212,8 +213,8 @@ Step 5. Connect the VNet to the hub
 	
 		|cloudwan_azure_vwan_check_status_virtual_network_connections|		
 			
-Workflow for Aviatrix
-=====================
+Part 2. Workflow on Aviatrix
+=============================
 
 Prerequisite
 ------------
