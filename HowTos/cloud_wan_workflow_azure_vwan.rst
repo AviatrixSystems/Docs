@@ -6,7 +6,7 @@
 Aviatrix CloudWAN Workflow for Azure Virtual WAN
 ============================================================
 
-This technical note provides a step-by-step instruction how to build `CloudWAN Deployment on Azure Virtual WAN <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html#cloudwan-deployment-on-azure>`_ In this note you learn how to:
+This technical note provides a step-by-step instruction how to build `CloudWAN Deployment on Azure Virtual WAN <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html#cloudwan-deployment-on-azure>`_. In this note you learn how to:
 
 	#. create a virtual WAN, a hub, VPN gateway, and a connection between VNet and a hub in Azure portal
 	
@@ -75,7 +75,7 @@ Step 2. Create a Virtual WAN
 
 	- Wait for a few minutes for Azure to create Virtual WAN
 
-	- Go to the Resource Group (i.e. Aviatrix-Azure-Virtual-WANS-Group)
+	- Go to the Resource group where the Azure Virtual WAN locates (i.e. Aviatrix-Azure-Virtual-WANS-Group)
 	
 	- Confirm Virtual WAN is created (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2)
 
@@ -157,7 +157,7 @@ This step guide you how to create a VPN gateway in an existing Hub if you have n
 	
 		|cloudwan_azure_vwan_example_vpngw|
 	
-	- Wait for at least 30 minutes for Azure to create Hub
+	- Wait for at least 30 minutes for Azure to create VPN gateway
 	
 	- Refresh the page
 	
@@ -290,7 +290,7 @@ Step 9. `Prepare to Attach <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.
 		
 	- Select WAN interface in the drop-down menu
 	
-	- Update WAN primary interface IP if needed
+	- Update WAN primary interface and IP if needed
 	
 	- Click the button "APPLY"
 	
@@ -441,7 +441,10 @@ Resource
 
 .. |cloudwan_azure_vwan_avx_check_connection_status| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_check_connection_status.png
    :scale: 30%	
-	
+	 
+.. |cloudwan_azure_vwan_azure_check_connection_status| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_azure_check_connection_status.png
+   :scale: 30%	
+	 
 .. |cloudwan_azure_vwan_verification_on_prem_router_issue_icmp| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_verification_on_prem_router_issue_icmp.png
    :scale: 30%	
 
