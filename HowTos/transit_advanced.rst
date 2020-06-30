@@ -14,7 +14,7 @@ Transit Advanced Config
 Local AS Number
 --------------------
 
-This option changes the Aviatrix Transit Gateway ASN number without tearing down the Aviatrix Transit Gateway connection configurations. 
+This option changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations. 
 
 
 BGP Manual Advertised Network List
