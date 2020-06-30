@@ -445,7 +445,7 @@ Dst Port                         This is a qualifier condition that specifies a 
 Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
 Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
 Mark                             This is a qualifier condition that specifies a tag or mark of a TCP session where the rule applies. When left blank, this field is not used.
-SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
+SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.100.1.5 - 100.100.1.10
 SNAT Port                         This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
 Exclude Route Table               This field specifies which VPC private route table will not be programmed with the default route entry. 
 ===========================      =======================
@@ -469,7 +469,7 @@ Destination Port                 This is a qualifier condition that specifies a 
 Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
 Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
 Mark                             This is a rule field that specifies a tag or mark of a TCP session when all qualifier conditions meet. When left blank, this field is not used.
-DNAT IPs                         This is a rule field that specifies the translated destination IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
+DNAT IPs                         This is a rule field that specifies the translated destination IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.101.2.5 - 100.101.2.10
 DNAT Port                         This is a rule field that specifies the translated destination port when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
 ===========================      =======================
 
