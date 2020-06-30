@@ -51,17 +51,21 @@ Step 2. Create a Virtual WAN
 	
 	- Click the button "+Add" to go to the page "Create WAN"
 
-	- Enter fields Subscription, Resource group, Resource group location, Name, and Type for Project details and Virtual WAN details
+	- Enter fields Subscription, Resource group, Resource group location, Name, and Type for Project details and Virtual WAN details:
 	
-		==================================			===========================================================================
-		**Field**																**Value**
-		==================================			===========================================================================
-		Subscription                          	Select the subscription
-		Resource group                   				Create new or use existing (i.e. Aviatrix-Azure-Virtual-WANS-Group)
-		Resource group location               	Select a resource location (i.e. West US 2)
-		Name                             				Enter a name for Virtual WAN (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2)
-		Type                       							Basic or Standard (i.e. Standard)
-		==================================			===========================================================================
+		+-------------------------+-----------------------------------------------------------------------+
+		| **Field**               | **Value**                                                             |
+		+-------------------------+-----------------------------------------------------------------------+
+		| Subscription            | Select the subscription                                               |
+		+-------------------------+-----------------------------------------------------------------------+
+		| Resource group          | Create new or use existing (i.e. Aviatrix-Azure-Virtual-WANS-Group)   |
+		+-------------------------+-----------------------------------------------------------------------+
+		| Resource group location | Select a resource location (i.e. West US 2)                           |
+		+-------------------------+-----------------------------------------------------------------------+
+		| Name                    | Enter a name for Virtual WAN (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2) |
+		+-------------------------+-----------------------------------------------------------------------+
+		| Type                    | Basic or Standard (i.e. Standard)                                     |
+		+-------------------------+-----------------------------------------------------------------------+
 	
 		|cloudwan_azure_vwan_create_vwan|
 	
@@ -96,13 +100,15 @@ Step 3. Create a Hub with VPN gateway
 	
 	- Enter fields Region, Name, and Hub private address space for Virtual Hub Details
 
-		==================================		=================================
-		**Field**															**Value**
-		==================================		=================================
-		Region                          			Select a region for hub (i.e. West US 2)
-		Name                   								Enter a name for Hub (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2-Virtual-Hub-1)
-		Hub private address space             Hub private address space (i.e. 10.0.0.0/16)
-		==================================		=================================
+		+---------------------------+-----------------------------------------------------------------------------+
+		| **Field**                 | **Value**                                                                   |
+		+---------------------------+-----------------------------------------------------------------------------+
+		| Region                    | Select a region for hub (i.e. West US 2)                                    |
+		+---------------------------+-----------------------------------------------------------------------------+
+		| Name                      | Enter a name for Hub (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2-Virtual-Hub-1) |
+		+---------------------------+-----------------------------------------------------------------------------+
+		| Hub private address space | Hub private address space (i.e. 10.0.0.0/16)                                |
+		+---------------------------+-----------------------------------------------------------------------------+
 	
 		|cloudwan_azure_vwan_example_hub|
 	
@@ -172,24 +178,31 @@ Step 5. Connect the VNet to the hub
 	
 	- Enter Connection name, Hubs, Subscription, Resource group, Virtual network, and Routing configuration.
 
-		==================================		=================================
-		**Field**															**Value**
-		==================================		=================================
-		Connection name                       Enter a name for connection (i.e. Aviatrix-Azure-WAN-to-VNET-192-168-22-connection)
-		Hubs                   								Select the hub you want to associate with this connection (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2-Virtual-Hub-1)
-		Subscription             							Select the subscription
-		Resource group												Select the Resource group where has a Virtual network to associate with this connection (i.e. rg-av-Azure-West-US-2-192-168-22-881195)
-		Virtual network												Select the virtual network you want to connect to this hub (i.e. Azure-West-US-2-192-168-22)
-		Associate Route Table									Select Route Tables for this connection (i.e. Default)
-		Propagate to Route Tables							Select Propagate to Route Tables (i.e. Default)
-		Static routes													Customize routes to specify next hop as an IP address, for example a NVA IP address (i.e. leave it blank)
-		==================================		=================================
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| **Field**                 | **Value**                                                                                                                              |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Connection name           | Enter a name for connection (i.e. Aviatrix-Azure-WAN-to-VNET-192-168-22-connection)                                                    |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Hubs                      | Select the hub you want to associate with this connection (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2-Virtual-Hub-1)                       |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Subscription              | Select the subscription                                                                                                                |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Resource group            | Select the Resource group where has a Virtual network to associate with this connection (i.e. rg-av-Azure-West-US-2-192-168-22-881195) |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Virtual network           | Select the virtual network you want to connect to this hub (i.e. Azure-West-US-2-192-168-22)                                           |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Associate Route Table     | Select Route Tables for this connection (i.e. Default)                                                                                 |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Propagate to Route Tables | Select Propagate to Route Tables (i.e. Default)                                                                                        |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+		| Static routes             | Customize routes to specify next hop as an IP address, for example a NVA IP address (i.e. leave it blank)                              |
+		+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 		
 		.. note::
 			
 			The virtual network cannot have an already existing virtual network gateway.
 	
-			|cloudwan_azure_vwan_example_virtual_network_connections|			
+		|cloudwan_azure_vwan_example_virtual_network_connections|			
 			
 	- Wait for a few minutes for Azure to create Virtual network connection
 	
@@ -227,18 +240,25 @@ Step 7. `Register a Branch Router <https://docs.aviatrix.com/HowTos/cloud_wan_wo
 	
 	- Enter fields for Branch Name, Branch Router's Management IP Address, Vendor / Device / OS, Router's Console Access Authentication, Username, Private Key/Password, SSH Port, and Optional Information.
 
-		======================================  =======================
-		**Field**               								**Value**
-		======================================  =======================
-		Branch Name             								The name of the branch router (i.e. Aviatrix-Office-Cisco-ISR-1)
-		Branch Router's Management IP Address   The public management IP of the branch router
-		Vendor / Device / OS        						The operation system of the branch router (i.e. ios)
-		Router's Console Access Authentication  Access authentication to public management IP (i.e. Password)
-		Username                								Username to access branch router
-		Private Key/Password               			Private Key/Password to access branch router         
-		SSH Port             	 									SSH port to access branch router 
-		Optional Information                    [optional] Address info for the branch router
-		======================================	=======================
+		+----------------------------------------+------------------------------------------------------------------+
+		| **Field**                              | **Value**                                                        |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Branch Name                            | The name of the branch router (i.e. Aviatrix-Office-Cisco-ISR-1) |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Branch Router's Management IP Address  | The public management IP of the branch router                    |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Vendor / Device / OS                   | The operation system of the branch router (i.e. ios)             |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Router's Console Access Authentication | Access authentication to public management IP (i.e. Password)    |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Username                               | Username to access branch router                                 |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Private Key/Password                   | Private Key/Password to access branch router                     |
+		+----------------------------------------+------------------------------------------------------------------+
+		| SSH Port                               | SSH port to access branch router                                 |
+		+----------------------------------------+------------------------------------------------------------------+
+		| Optional Information                   | [optional] Address info for the branch router                    |
+		+----------------------------------------+------------------------------------------------------------------+
 
 	- Click the button "REGISTER"
 	
@@ -287,16 +307,21 @@ Step 10.  `Attach the Branch Router to Azure Virtual WAN <https://docs.aviatrix.
 	
 	- Enter fields for Branch Name, Access Account Name, Resource Group, Hub Name, Connection Name, and Branch Router's BGP ASN.
 
-		==================================		=================================
-		**Field**															**Value**
-		==================================		=================================
-		Branch Name                           A registered branch router (i.e. Aviatrix-Office-Cisco-ISR-1)
-		Access Account Name                   The Access Account for Azure subscription 
-		Resource Group                        The Resource Group where Azure Virtual WAN locates (i.e. Aviatrix-Azure-Virtual-WANS-Group)
-		Hub Name                              Azure Virtual Hub which is created on Azure portal (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2-Virtual-Hub-1)
-		Connection Name                       A unique name for the connection (i.e. Aviatrix-Office-Cisco-ISR-1-to-Azure-Hub)
-		Branch Router's BGP ASN               Only BGP is supported. Enter BGP ASN number on the branch router. (i.e. 65222)
-		==================================		=================================
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| **Field**               | **Value**                                                                                                 |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| Branch Name             | A registered branch router (i.e. Aviatrix-Office-Cisco-ISR-1)                                             |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| Access Account Name     | The Access Account for Azure subscription                                                                 |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| Resource Group          | The Resource Group where Azure Virtual WAN locates (i.e. Aviatrix-Azure-Virtual-WANS-Group)               |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| Hub Name                | Azure Virtual Hub which is created on Azure portal (i.e. Aviatrix-Azure-Virtual-WAN-1-US-2-Virtual-Hub-1) |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| Connection Name         | A unique name for the connection (i.e. Aviatrix-Office-Cisco-ISR-1-to-Azure-Hub)                          |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
+		| Branch Router's BGP ASN | Only BGP is supported. Enter BGP ASN number on the branch router. (i.e. 65222)                            |
+		+-------------------------+-----------------------------------------------------------------------------------------------------------+
 		
 	- Click the button "ATTACH"
 		
