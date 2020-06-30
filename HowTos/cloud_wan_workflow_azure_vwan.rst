@@ -381,78 +381,78 @@ Resource
 	https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-site-to-site-portal
 
 .. |cloudwan_azure_vwan_topology| image:: cloud_wan_faq_media/cloudwan_azure_vwan.png
-   :scale: 30%
+   :scale: 50%
 	 
 .. |cloudwan_azure_vwan_create_vwan| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_create_vwan.png
-   :scale: 30%
+   :scale: 50%
 	 
 .. |cloudwan_azure_vwan_confirm_vwan| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_confirm_vwan.png
-   :scale: 30%
+   :scale: 50%
 	 
 .. |cloudwan_azure_vwan_check_status_vwan| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_check_status_vwan.png
-   :scale: 30%	 
+   :scale: 50%	 
 	 
 .. |cloudwan_azure_vwan_create_hub| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_create_hub.png
-   :scale: 30%	 
+   :scale: 50%	 
 
 .. |cloudwan_azure_vwan_click_hub| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_click_hub.png
-   :scale: 30%	 
+   :scale: 50%	 
 
 .. |cloudwan_azure_vwan_example_hub| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_example_hub.png
-   :scale: 30%	 
+   :scale: 50%	 
 
 .. |cloudwan_azure_vwan_example_site2site| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_example_site2site.png
-   :scale: 30%	 
+   :scale: 50%	 
 	 
 .. |cloudwan_azure_vwan_check_status_hub| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_check_status_hub.png
-   :scale: 30%	   
+   :scale: 50%	   
 	 
 .. |cloudwan_azure_vwan_link_hub| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_link_hub.png
-   :scale: 30%		 
+   :scale: 50%		 
 	 
 .. |cloudwan_azure_vwan_example_vpngw| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_example_vpngw.png
-   :scale: 30%		 
+   :scale: 50%		 
 	 
 .. |cloudwan_azure_vwan_check_status_vpngw| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_check_status_vpngw.png
-   :scale: 30%		 
+   :scale: 50%		 
 	 
 .. |cloudwan_azure_vwan_link_virtual_network_connections| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_link_virtual_network_connections.png
-   :scale: 30%		
+   :scale: 50%		
 
 .. |cloudwan_azure_vwan_example_virtual_network_connections| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_example_virtual_network_connections.png
-   :scale: 30%	
+   :scale: 50%	
 
 .. |cloudwan_azure_vwan_check_status_virtual_network_connections| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_check_status_virtual_network_connections.png
-   :scale: 30%	
+   :scale: 50%	
 
 .. |cloudwan_azure_vwan_avx_example_register_branch_router| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_example_register_branch_router.png
-   :scale: 30%	
+   :scale: 50%	
 
 .. |cloudwan_azure_vwan_avx_check_status_branch_router| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_check_status_branch_router.png
-   :scale: 30%	
+   :scale: 50%	
 
 .. |cloudwan_azure_vwan_avx_click_discover_wan_interfaces_button| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_click_discover_wan_interfaces_button.png
-   :scale: 30%	
+   :scale: 50%	
 	 
 .. |cloudwan_azure_vwan_avx_example_prepare_to_attach| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_example_prepare_to_attach.png
-   :scale: 30%	
+   :scale: 50%	
 	
 .. |cloudwan_azure_vwan_avx_example_attach_branch_to_cloud| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_example_attach_branch_to_cloud.png
-   :scale: 30%	
+   :scale: 50%	
 
 .. |cloudwan_azure_vwan_avx_check_connection_status| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_avx_check_connection_status.png
-   :scale: 30%	
+   :scale: 50%	
 	 
 .. |cloudwan_azure_vwan_azure_check_connection_status| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_azure_check_connection_status.png
-   :scale: 30%	
+   :scale: 50%	
 	 
 .. |cloudwan_azure_vwan_verification_on_prem_router_issue_icmp| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_verification_on_prem_router_issue_icmp.png
-   :scale: 30%	
+   :scale: 50%	
 
 .. |cloudwan_azure_vwan_verification_cloud_vm_tcpdump_icmp| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_verification_cloud_vm_tcpdump_icmp.png
-   :scale: 30%	
+   :scale: 50%	
 	 
 .. |cloudwan_azure_vwan_verification_cloud_vm_issue_icmp| image:: cloud_wan_faq_media/azure_vWAN/cloudwan_azure_vwan_verification_cloud_vm_issue_icmp.png
-   :scale: 30%	
+   :scale: 50%	
 	 
 .. disqus::
