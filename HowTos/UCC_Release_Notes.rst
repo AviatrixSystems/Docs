@@ -2,6 +2,13 @@
 Release Notes
 =======================================
 
+R6.0.2373 (6/30/2020)
+=======================
+
+- **Enhancement on TGW VPN Approval** improves TGW VPN Approval for overlapping CIDRs to prevent black holing traffic. For details, refer to `this link <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_.
+- **Bug fix** for FQDN thread process stuck. 
+- **Bug fixes** to improve stability and use cases. 
+
 R6.0.2269 (6/19/2020)
 =====================
 
