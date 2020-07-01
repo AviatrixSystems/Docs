@@ -143,11 +143,12 @@ How does the Controller check Firewall instance health?
 --------------------------------------------------------
 
 When vendor integration is enabled, for Palo Alto Networks VM-Series, the Controller pings the individual firewall management interface every 10 seconds. If two
-consecutive ping fails, the firewall is declared down and is moved to "down" state.  
+consecutive ping fails, the firewall is declared down and is moved to "down" state. The Controller continues to ping the management interface, if consecutive pings 
+become successful, the firewall instance is attached back to the FireNet gateway pool.  
 
 For Check Point CloudGuard and Fortinet Fortigate, the Controller uses AWS API to check instance health. 
 
-Starting in Release 6.0 and later, Controller can also `check firewall instance health on its LAN interface <https://docs.aviatrix.com/HowTos/firewall_advanced.html#firewall-health-check-and-failover-detection-using-lan-interface>`_. , 
+Starting in Release 6.0 and later, Controller can also `check firewall instance health on its LAN interface <https://docs.aviatrix.com/HowTos/firewall_advanced.html#firewall-health-check-and-failover-detection-using-lan-interface>`_. 
 
 What is the firewall instance state Inaccessible mean?
 ---------------------------------------------------------
