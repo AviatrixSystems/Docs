@@ -10,15 +10,20 @@ FireNet Advanced Config
 For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
 For questions on FireNet workflow, check out `FireNet Workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
 
+FireNet Advanced Config applies to both TGW based FireNet and Aviatrix Transit FireNet. 
+
 Firewall Health Check and Failover Detection using LAN Interface
 ---------------------------------------------------------------------
 
 By default, Aviatrix Controller check the firewall's health by pinging the firewall's management IP address. In 6.0, firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
 
-.. note::
-    - Firewall's failure detection by using LAN interface will be approx. 5 sec.
-    - It also detects the data-plane failure
-    - This enhancement is cloud and firewall vendors agnostic, and supported for Transit FireNet and FireNet both.
+The mechanism is that the FireNet gateway pings the firewall instance's LAN interface every 5 seconds with a ping time out of 20ms. If the first ping times out, it 
+immediately pings again. Two consecutive ping failures indicates the firewall is in down state and it is detached from the FireNet gateway pool. The ping functions continues 
+and it detects the firewall instance has come up by successful pings, it is attached back to the FireNet gateway pool. 
+
+With LAN interface pinging, the firewall instance fail over time is reduced. 
+
+The following details describe how to enable ping on the firewall instance LAN interface. 
 
 
 Step 1: Enable ICMP on Firewall Devices
