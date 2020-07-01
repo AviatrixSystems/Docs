@@ -142,20 +142,17 @@ Yes. Follow the instructions for `Panorama integration. <https://docs.aviatrix.c
 How does the Controller check Firewall instance health?
 --------------------------------------------------------
 
-For Palo Alto VM-Series, the Controller pings its management interface. 
+When vendor integration is enabled, for Palo Alto Networks VM-Series, the Controller pings the individual firewall management interface every 10 seconds. If two
+consecutive ping fails, the firewall is declared down and is moved to "down" state.  
 
 For Check Point CloudGuard and Fortinet Fortigate, the Controller uses AWS API to check instance health. 
 
-What is the failover time?
-----------------------------
+What is the firewall instance state Inaccessible mean?
+---------------------------------------------------------
 
-Aviatrix FireNet gateway failure detection time is 15 - 20 seconds. The switch over to alternative gateway (primary or backup) is about the same time. 
-
-The Aviatrix Controller monitors the health of the firewall instances. For Pal Alto VM-Series, the Controller
-uses Palo Alto API to periodically check the firewall instance health. The polling time is 10 seconds. However depending 
-on how the instance fails, it can take over a minutes for the failure condition to be detected. For example, 
-if you stop the instance from AWS console, it can take a minute before the API access fails. On the other hand, if the firewall instance interface is shutdown, the failure detection is 10 seconds.  
-
+The Controller periodically issues Palo Alto API calls to find out if API can be issued successfully. This is used for route updates purpose, as firewall route updates
+requires API to work. If Palo Alto API fails for two consecutive times, the Controller declares the firewall is in Inaccessible state, but the firewall should still be attached 
+and be forwarded traffic as long as its health check pass. 
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
    :scale: 30%
