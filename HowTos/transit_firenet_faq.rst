@@ -147,6 +147,8 @@ consecutive ping fails, the firewall is declared down and is moved to "down" sta
 
 For Check Point CloudGuard and Fortinet Fortigate, the Controller uses AWS API to check instance health. 
 
+Starting in Release 6.0 and later, Controller can also `check firewall instance health on its LAN interface <https://docs.aviatrix.com/HowTos/firewall_advanced.html#firewall-health-check-and-failover-detection-using-lan-interface>`_. , 
+
 What is the firewall instance state Inaccessible mean?
 ---------------------------------------------------------
 
