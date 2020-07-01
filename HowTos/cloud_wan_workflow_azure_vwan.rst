@@ -27,7 +27,7 @@ Topology
 
 ::
 
-    In this testing example, the on-premise router is Cisco ISR with network loopback address 1.1.1.1/32. 
+    In this testing example, the on-premise router is Cisco IOS with network loopback address 1.1.1.1/32. 
     Azure Virtual Hub private address space is 10.0.0.0/16. Azure Virtual network which connects to the Virtual Hub is 192.168.22.0/24 and the testing VM IP is 192.168.22.5/32.
 
 
@@ -354,12 +354,12 @@ Step 12. Check whether the VPN connection status is Up on Azure portal
 	
 		|cloudwan_azure_vwan_azure_check_connection_status|	
 		
-Traffic flow Verification
+Traffic Flow Verification
 =========================
 
-    In this traffic verification example, the on-premise router is Cisco ISR with network loopback address 1.1.1.1/32. Azure Virtual Hub private address space is 10.0.0.0/16. Azure Virtual network which connects to the Virtual Hub is 192.168.22.0/24 and the private IP of the testing VM is 192.168.22.5/32.
+    In this traffic verification example, the on-premise router is Cisco IOS with network loopback address 1.1.1.1/32. Azure Virtual Hub private address space is 10.0.0.0/16. Azure Virtual network which connects to the Virtual Hub is 192.168.22.0/24 and the private IP of the testing VM is 192.168.22.5/32.
 		
-		- Traffic from on-premise router Cisco ISR to cloud VM
+		- Traffic from on-premise router Cisco IOS to cloud VM
 		
 			- Issue ICMP traffic from on-prem loopback interface to a Virtual IP of cloud instance
 			
@@ -369,7 +369,7 @@ Traffic flow Verification
 				
 				|cloudwan_azure_vwan_verification_cloud_vm_tcpdump_icmp|
 		
-		- Traffic from cloud VM to on-premise router Cisco ISR
+		- Traffic from cloud VM to on-premise router Cisco IOS
 		
 			- Issue ICMP traffic from cloud instance to on-prem loopback interface address
 			
