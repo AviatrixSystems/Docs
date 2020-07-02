@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+R6.0.2383 (7/2/2020)
+======================
+
+- **Bug fix** for error out when using Diagnostics to force upgrade an gateway. 
+
 R6.0.2373 (6/30/2020)
 =======================
 
