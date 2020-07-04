@@ -352,12 +352,20 @@ Example log:
 
 To enable logging at the Aviatrix Controller, go to Settings->Logging page. Once logging is enabled, both the Controller and all gateways will forward logs directly to the logging server.
 
-Two examples for Remote Syslog and Logstash Forwarder follow below.
+ .. note::  A total of 10 profiles from index 0 to 9 are supported for remote syslog, while index 9 is reserved for CoPilot.
+
+            Newly deployed gateway will be added to a profile if it is the only profile enabled in the index range of 0 to 8,
+
+            If more than one profiles are enabled in the range of 0 to 8, the newly deployed gateway will not be added to any profile in the range of 0 to 8. User may use the advanced options in the logging "edit options" window to edit the exclude and include list.
+
+            However newly deployed gateway will always be added to profile 9 which is reserved for Copilot to monitor.
+
 
 3.1 Remote Syslog
 ------------------
 On the Aviatrix Controller:
-  a. Server:	FQDN or IP address of the remote syslog server
+  a. Profile Index: select a profile to edit
+  #. Server:	FQDN or IP address of the remote syslog server
   #. Port:	Listening port of the remote syslog server (6514 by default)
   #. CA Certificate: Certificate Authority (CA) certificate
   #. Server Public Certificate: Public certificate of the controller signed by the same CA
