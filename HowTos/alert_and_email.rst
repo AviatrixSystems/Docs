@@ -28,6 +28,20 @@ If you would like the alert messages to be sent to a different email,
 |change_alert_email|
 
 
+How to manage Alert Bell notification?
+------------------------------------------------------
+
+The Alert Bell notification can be managed under Settings -> Controller -> Alert Bell.
+
+By default, Alert Bell notification is enabled for the following features:
+    1. **Overlapped CIDR Check** - Alert when BGP routes overlap in Site2Cloud.
+    #. **Guard Duty Check** - Alert gets logged as Alert Bell notification and block malicious IP addresses when offending IPs are detected by Guard Duty. To learn more about Guard Duty integration with Aviatrix click `here <https://docs.aviatrix.com/HowTos/guardduty.html>`_.
+    #. **Log Service Check** - This alarm generates a warning as a Alert Bell notification for remote syslog server down event.
+    #. **Reach of Route Limit Check** - Alert when VPC and BGP route limits reach a threshold.
+    #. **Blackhole Route Entry Check** - Alert when VPC route table has inactive routes. To learn more about Blackhole Routes click `here <https://docs.aviatrix.com/Support/support_center_controller.html?highlight=bell#what-are-blackholes-on-alert-bell>`_.
+
+|alert_bell_notify|
+
 
 How to Change Email Notification Source
 -----------------------------------------
@@ -70,7 +84,6 @@ Note that newly created SES accounts are placed in an "AWS SES Sandbox" and will
 
 
 
-
 .. |change_alert_email| image:: alert_and_email_media/change_alert_email.png
    :scale: 30%
    
@@ -86,5 +99,7 @@ Note that newly created SES accounts are placed in an "AWS SES Sandbox" and will
 .. |aws_verify_email| image:: alert_and_email_media/aws_verify_email.png
    :scale: 30%
 
+.. |alert_bell_notify| image:: alert_and_email_media/alert_bell_notify.png
+   :scale: 30%
 
 .. disqus::
