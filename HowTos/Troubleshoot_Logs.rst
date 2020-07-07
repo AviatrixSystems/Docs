@@ -34,7 +34,7 @@ This feature provides users to download Aviatrix Audit log to local.
 DISPLAY EVENT
 ~~~~~~~~~~~~~~
 
-This feature provide users to view Aviatrix Event log on GUI.
+This feature provides users to view Aviatrix Event log on GUI.
 
 
 Please refer to `Logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`__ for logging detail.
