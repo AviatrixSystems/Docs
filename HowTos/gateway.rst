@@ -407,6 +407,11 @@ You can change Gateway Size if needed to change gateway throughput. The gateway 
 
 To configure, click Gateway on the left navigation panel, select the desired gateway, click Edit. Scroll down to "Gateway Resize" and in the drop down menu,
 select the new gateway instance size. Click "Change". The gateway instance will be stopped and restarted again with the new instance size.
+o
+
+::
+
+  If you use Availability Set when launching Azure gateways, different classes of VM sizes can be resized interchangeably. 
 
 Source NAT
 ------------
