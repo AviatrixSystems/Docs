@@ -42,7 +42,7 @@ def setup(app):
 # ones.
 #extensions = []
 
-extensions = ['sphinxcontrib.disqus']
+# extensions = ['sphinxcontrib.disqus']
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'aviatrix_docs'
-copyright = '2018, Aviatrix Systems, Inc'
+copyright = '2020, Aviatrix Systems, Inc'
 author = 'Aviatrix'
 
 # Options for extensions
