@@ -184,6 +184,11 @@ This feature provides the following operations that can be applied to a VNet:
     12. Associate a subnet to a route table
     13. Dissociate a subnet from a route table
 
+Refresh Tags
+~~~~~~~~~~~~~
+
+This feature syncs up AWS VPC name tags if users change the VPC name in AWS.
+
 
 .. raw:: html
 
