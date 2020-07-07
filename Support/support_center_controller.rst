@@ -9,7 +9,7 @@ Controller
 What are the minimum requirements for an instance to run the Aviatrix Controller Software?
 ---------------------------------------------------------------------------------------------------
 
-We strongly recommend that the instance be at least t2.large and have at least 32GB of storage to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
+We strongly recommend that the instance be at least t2.large and have at least 32GB of storage and at least 8GB of Memory to act as a Controller in AWS. Please check out https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#select-instance-size for more information.
 
 The controller needs to be able to resolve all DNS queries, download software, communicate with the gateways over port 443, redirect inbound SAML VPN connection (if used). The same goes with the gateways in regards to DNS queries and sending keepalive back to the controller. The Aviatrix controller must have an EIP even if it is behind an ELB for all necessary communication to work. However, you may access the UI using its private IP for operation.
 
