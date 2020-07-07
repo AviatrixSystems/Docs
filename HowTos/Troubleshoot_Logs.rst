@@ -19,22 +19,22 @@ Display Aviatrix Command Log
 DISPLAY
 ~~~~~~~
 
-This feature provides users to view Aviatrix Command Log on GUI.
+This feature enablers users to view Aviatrix Command Log on GUI.
 
 DISPLAY AUDIT
 ~~~~~~~~~~~~~
 
-This feature provides users to view Aviatrix Audit log on GUI.
+This feature enablers users to view Aviatrix Audit log on GUI.
 
 DOWNLOAD AUDIT
 ~~~~~~~~~~~~~~
 
-This feature provides users to download Aviatrix Audit log to local.
+This feature enablers users to download Aviatrix Audit log to local.
 
 DISPLAY EVENT
 ~~~~~~~~~~~~~~
 
-This feature provides users to view Aviatrix Event log on GUI.
+This feature enablers users to view Aviatrix Event log on GUI.
 
 
 Please refer to `Logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`__ for logging detail.
