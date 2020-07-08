@@ -28,6 +28,25 @@ An Aviatrix access account (or account for short) represents the following infor
 
   - The cloud provider account (for example, AWS) credential that the Controller uses to launch Aviatrix gateway in that cloud account.
 
+What is Controller ID?
+-------------------------
+
+Controller ID is a 32 digits Universal Unique Identifier (UUID). This ID is unique per customer and used for tracking purposes.
+
+This 32 digits UUID can be seen under Settings -> Controller -> License.
+
+What are different types of licenses available?
+--------------------------------------------------
+
+There are three different types of licenses option available in Aviatrix Controller.
+
+    1. Bring Your Own License (BYOL) License - This license supports public cloud AWS, Azure, GCP and OCI. Contact support@aviatrix.com to get BYOL license.
+    #. Metered or Platinum Metered License - This is only applicable to AWS public cloud
+    #. Utility - The utility AMI is available in AWS and Azure both and supports maximum 100 tunnels and limited number of VPN users.
+
+To check license type, Go to Controller's console -> Settings -> Controller -> License
+
+
 Why do I need an AWS account credential?
 -------------------------------------------
 

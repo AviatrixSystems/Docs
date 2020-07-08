@@ -82,7 +82,6 @@ profiles first. See the next section.
 What user devices are VPN client software supported?
 ----------------------------------------------------------
 
-
 Windows, MAC, Linux, Chromebook, Android and iOS devices are supported.
 
 Is NAT capability supported on the gateway?
@@ -190,6 +189,15 @@ in again.
 The use case for this feature is to allow an administrator to quarantine a
 VPN user for security reasons.
 
+
+How to set User VPN License Threshold Notification?
+---------------------------------------------------
+
+The User VPN License Threshold Notification can be set in Aviatrix Controller. Login to controller's console, navigate to Settings -> Controller -> License.
+
+Under License, user can set the number of license purchased and threshold value. Once the number of licenses exceeded the threshold value an email notification will be sent.
+
+The email id which receives all the notification can be set in Email tab (Settings -> Controller -> Email).
 
 
 Is DUO multi-factor authentication supported?
