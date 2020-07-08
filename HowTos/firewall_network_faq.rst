@@ -295,6 +295,16 @@ How does Aviatrix Controller know which Panorama is the primary one if there are
 
 The primary IP address is configured at the `Vendor Integration <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html#managing-vm-series-by-panorama>`_ function.
 
+Aviatrix FireNet Security Groups
+----------------------------------
+
+LAN interface: the SG can be limited to RFC1918 since all traffic is from internal network
+
+Eth0 interface: is under Aviatrix Controller’s control and is already limited to the minimum SG. It should NOT be changed otherwise it’ll risk impact to controller and gateway communication.
+
+Eth1, 2, 3: is for data traffic. If FireNet is used for egress then the SG should NOT be changed. But, if you are absolutely sure all your data traffic is within RFC1918, then you may change the SG.
+
+
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
