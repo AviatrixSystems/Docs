@@ -7,6 +7,20 @@
 Example Config for Check Point VM in AWS 
 =========================================================
 
+In this document, we provide an example to set up the Check Point Security Gateway instance for you to validate that packets are indeed sent to the Check Point Security Gateway for VPC to VPC and from VPC to internet traffic inspection.
+
+.. note::
+    Firewall and Security Gateway word will be used interchangeably in this document. Both refers to Check Point Security Gateway product.
+
+Prerequisites
+----------------
+
+Before you start, make sure you meet the basic requirement:
+
+    - Basic Check Point Architecture Understanding
+    - Check Point CloudGuard IaaS product is subscribed in AWS Marketplace
+
+
 The following CheckPoint AMIs and software versions are supported.
 
 ==========================================================================             ==========
