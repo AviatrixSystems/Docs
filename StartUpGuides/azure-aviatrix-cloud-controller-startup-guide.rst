@@ -53,7 +53,7 @@ a.  Launch from marketplace, select the license type and click Create
     |Azure_Basics|
 
 #.  At the networking header, this will be preconfigured with a default subnet and security group. You should not need
-    to change anything here. 
+    to change anything here. At Public IP, click Create New, at Assingment select Static and click OK. 
 
     |Networking|
 
