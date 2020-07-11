@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+R6.0.2387 (7/10/2020)
+======================
+
+- **Bug fix** New gateway launching is missing MSS clamping rule which affects connectivity for potentially different types of traffic including egress and multi region transit gateway peering, etc. 
+
 R6.0.2383 (7/2/2020)
 ======================
 
