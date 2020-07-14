@@ -323,7 +323,7 @@ What are the integration points with Fortinet firewall?
 
  2. Managing Fortinet firewall instances pool
 
-    a. Aviatrix Controller monitors individual firewall health by periodically pining the LAN interface of each firewall instances. Ping period is every 5 second with a 20ms ping time out. The failure detection is maximum 50 seconds and 40ms. Aviatrix Controller automatically detaches a unhealthy firewall instance. When the firewall instance is reachable again, it automatically attaches it back to the pool. 
+    a. Aviatrix Controller monitors individual firewall health by periodically pining the LAN interface of each firewall instances. Ping period is every 5 second with a 20ms ping time out. The failure detection is maximum 5 seconds and 40ms. Aviatrix Controller automatically detaches a unhealthy firewall instance. When the firewall instance is reachable again, it automatically attaches it back to the pool. 
     #. You can initiate a new firewall instance to be launched and attached to pool at any given time. 
     #. You can initiate to remove a firewall instance from the pool at any given time.. 
 
