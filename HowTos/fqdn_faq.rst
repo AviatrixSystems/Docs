@@ -176,6 +176,17 @@ TCP port 80 and 443 are processed by FQDN engine
 and the decision to drop or accept the session is reached by FQDN engine. Stateful firewall can only process traffic destined 
 to non TCP port 80 and 443. 
 
+How does FQDN rules are processed in order?
+----------------------------------------------
+
+Since you can create multiple tags with each consisting of a list of FQDN rules, the Controller must merge these rules in a specific order before sending these rules to FQDN gateway for processing. 
+
+The Controller merges all FQDN rules by this order:
+
+  1. If the rule ACTION is `Deny`, it is placed in the first block for processing, that is, they are processed first. 
+  #. Within each block (`Deny`, `Allow`, `Base Policy`), the more specific rules are processed or examined first. For example, salesforce.com is more specific than *.salesforce.com therefore salesforce.com is processed first. 
+  #. Each rule has a verdict, Accept or Drop. When the FQDN processing engine finds a match, the verdict is reached and the packet is either dropped or accepted. The processing engine does not continue on to the next rule. 
+
 
 
 .. |egress_overview| image::  FQDN_Whitelists_Ref_Design_media/egress_overview.png
