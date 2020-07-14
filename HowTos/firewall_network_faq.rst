@@ -298,11 +298,21 @@ The primary IP address is configured at the `Vendor Integration <https://docs.av
 Aviatrix FireNet Security Groups
 ----------------------------------
 
-LAN interface: the SG can be limited to RFC1918 since all traffic is from internal network
+On firewall LAN interface.
 
-Eth0 interface: is under Aviatrix Controller’s control and is already limited to the minimum SG. It should NOT be changed otherwise it’ll risk impact to controller and gateway communication.
+Eth2 on PAN; or Eth1 on Fortigate and Checkpoint. This interface accepts all data traffic to be inspected or going to internet (if egress is enabled). The traffic originates from an internal instance, which is destinated to other internal instance or internet. Therefore, it is OK to limit this SG to RFC1918 only. But if there are non-RFC1918 CIDR’s inside your network, those may not work.
 
-Eth1, 2, 3: is for data traffic. If FireNet is used for egress then the SG should NOT be changed. But, if you are absolutely sure all your data traffic is within RFC1918, then you may change the SG.
+
+On firenet gateway, there are 4 interfaces.
+
+Eth0: this interface is used for all internet traffic (DNS, NTP, etc), communication with controller (TCP, SSH, etc), encrypted tunnels, etc. This interface is under Aviatrix controller’s control, it’s SG is already limited to the minimum. User should NOT change it. Even if user changes it, the Aviatrix controller will always try to change back.
+
+Eth1: this interface is used to send/receive traffic to AWS TGW. It accepts data traffic from TGW. So it is OK to limit SG to RFC1918 only.
+
+Eth2: this interface is used to send/receive traffic to firewalls (through firewall’s LAN interface). So it expects traffic originated from both internal and external. It might be OK to limit to RFC1918 since AWS SG is stateful.
+
+Eth3: this interface is used to exchange traffic between primary and backup gateway, this is part of our uniform hashing algorithm. Same as eth2, it expects traffic originated from both internal and external. It might be OK to limit to RFC1918, since AWS SG is stateful.
+
 
 
 
