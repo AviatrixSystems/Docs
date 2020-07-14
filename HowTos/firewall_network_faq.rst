@@ -313,6 +313,24 @@ Eth2: this interface is used to send/receive traffic to firewalls (through firew
 
 Eth3: this interface is used to exchange traffic between primary and backup gateway, this is part of our uniform hashing algorithm. Same as eth2, it expects traffic originated from both internal and external. It might be OK to limit to RFC1918, since AWS SG is stateful.
 
+What are the integration points with Fortinet firewall?
+---------------------------------------------------------
+
+ 1. Managing Life Cycle of Fortinet firewall instances
+
+    a. Aviatrix Controller launches and deletes Fortinet firewall instances. 
+    #. Supports `Fortinet Bootstrap mechanism <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_ to simplifying firewall instance launching and reload any firewall configurations.
+
+ 2. Managing Fortinet firewall instances pool
+
+    a. Aviatrix Controller monitors individual firewall health by periodically pining the LAN interface of each firewall instances. Ping period is every 5 second with a 20ms ping time out. The failure detection is maximum 50 seconds and 40ms. Aviatrix Controller automatically detaches a unhealthy firewall instance. When the firewall instance is reachable again, it automatically attaches it back to the pool. 
+    #. You can initiate a new firewall instance to be launched and attached to pool at any given time. 
+    #. You can initiate to remove a firewall instance from the pool at any given time.. 
+
+ 3. Static Route Configuration
+
+    Currently there is no API integration to automatically populate Fortinet route table entries. Customer needs to configure these entries. We recommend you to configure the 3 RFC 1918 routes to point to the firewall LAN interface. For FireNet deployment, the RFC 1918 routes should point to the LAN interface subnet cloud provider's default gateways. For Transit FireNet deployment, the RFC 1918 routes should point to the FireNet gateway LAN interface IP, as shown in this `example. <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#configure-fortigate-next-generation-firewall-port1-with-wan>`_.  
+    
 
 
 
