@@ -319,7 +319,7 @@ What are the integration points with Fortinet firewall?
  1. Managing Life Cycle of Fortinet firewall instances
 
     a. Aviatrix Controller launches and deletes Fortinet firewall instances. 
-    #. Supports `Fortinet Bootstrap mechanism <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_ to simplifying firewall instance launching and reload any firewall configurations.
+    #. Supports `Fortinet Bootstrap mechanism <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_ to simplifying firewall instance launching and preload any firewall configurations.
 
  2. Managing Fortinet firewall instances pool
 
