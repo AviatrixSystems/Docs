@@ -172,7 +172,7 @@ Spoke-Transit-Spoke (MSS 350 bytes) Throughput
 ----------------------------------------------
 
 +-------------+---------------+----------------+---------------------+
-| Cloud Type  | Gateway Size  | Single Stream, | Maximum Throughput, |
+| Cloud Type  | Gateway Size  | Single Stream  | Maximum Throughput  |
 |             |               |     Mb/s       |      Mb/s           |
 +=============+===============+================+=====================+
 | AWS         | t3.small      |     300        |      400            |
@@ -186,7 +186,7 @@ Spoke-Transit (MSS 350 bytes) Throughput
 ----------------------------------------
 
 +-------------+---------------+----------------+---------------------+
-| Cloud Type  | Gateway Size  | Single Stream, | Maximum Throughput, |
+| Cloud Type  | Gateway Size  | Single Stream  | Maximum Throughput  |
 |             |               |     Mb/s       |      Mb/s           |
 +=============+===============+================+=====================+
 | AWS         | t3.small      |     550        |      750            |
