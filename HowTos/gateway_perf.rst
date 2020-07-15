@@ -14,13 +14,14 @@ For Insane Mode performance results, please refer to `this link. <https://docs.a
 Testing Environment
 -------------------
 1. VPCs/VNETs were in the same region.
+#. All test results are based on non-HA scenario.
 #. Multiple Linux iperf3 clients/servers were used to maximize all vCPU cores in the transit gateway.
 #. Buffer size in all iperf3 clients/servers were modified to avoid being a bottleneck. Refer to `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
-#. iperf3 traffic was sent with MSS 1400 bytes. It was found that MSS 4000 bytes or 9000 bytes does not yield significant performance as the testing of IPsec tunnel is over Internet.
+#. iperf3 traffic was sent with MSS 1400 bytes unless specified. It was found that MSS 4000 bytes or 9000 bytes does not yield significant performance as the testing of IPsec tunnel is over Internet.
 
 
-ActiveMesh Gateway (Spoke-Transit-Spoke) Maximum Throughput (no HA) 
--------------------------------------------------------------------
+Spoke-Transit-Spoke Maximum Throughput
+--------------------------------------
 
 +-------------+---------------+------------------+
 | Cloud Type  | Gateway Size  | Throughput, Gbps |
@@ -52,8 +53,8 @@ ActiveMesh Gateway (Spoke-Transit-Spoke) Maximum Throughput (no HA)
 |             | n1-highcpu-4  |  2.5             |
 +-------------+---------------+------------------+
 
-Single Stream Gateway (Spoke-Transit-Spoke) Maximum Throughput (no HA) 
-----------------------------------------------------------------------
+Spoke-Transit-Spoke (Single Stream) Throughput
+----------------------------------------------
 
 +-------------+---------------+------------------+
 | Cloud Type  | Gateway Size  | Throughput, Gbps |
@@ -81,8 +82,8 @@ Single Stream Gateway (Spoke-Transit-Spoke) Maximum Throughput (no HA)
 |             | n1-highcpu-4  |  1.0             |
 +-------------+---------------+------------------+
 
-Single Stream Gateway (Spoke-Transit) Maximum Throughput (no HA) 
-----------------------------------------------------------------
+Spoke-Transit (Single Stream) Throughput
+----------------------------------------
 
 +-------------+---------------+------------------+
 | Cloud Type  | Gateway Size  | Throughput, Gbps |
@@ -114,8 +115,8 @@ Single Stream Gateway (Spoke-Transit) Maximum Throughput (no HA)
 Site2Cloud IPSec VPN Performance
 --------------------------------
 
-Algorithm
---------- 
+Algorithm 1:
+----------- 
 Phase 1: SHA-1, AES-256-CBC, DH-2
 Phase 2: HMAC-SHA-1, AES-256-CBC, DH-2
 
@@ -129,6 +130,8 @@ Phase 2: HMAC-SHA-1, AES-256-CBC, DH-2
 |             | c5n.4xlarge   |  13.0            |
 +-------------+---------------+------------------+
 
+Algorithm 2:
+----------- 
 Phase 1: SHA-256, AES-256-CBC, DH-14
 Phase 2: HMAC-SHA-256, AES-256-CBC, DH-14
 
@@ -142,6 +145,8 @@ Phase 2: HMAC-SHA-256, AES-256-CBC, DH-14
 |             | c5n.4xlarge   |  8.0             |
 +-------------+---------------+------------------+
 
+Algorithm 3:
+----------- 
 Phase 1: SHA-256, AES-256-CBC, DH-14
 Phase 2: NO-AUTH, AES-128-GCM-96, DH-14
 
@@ -160,6 +165,36 @@ Phase 2: NO-AUTH, AES-128-GCM-96, DH-14
 |             +---------------+------------------+
 |             | F16s_v2       | 6.6              |
 +-------------+---------------+------------------+
+
+Maximum IPSec tunnel per gateway = 1000
+
+Spoke-Transit-Spoke (MSS 350 bytes) Throughput
+----------------------------------------------
+
++-------------+---------------+----------------+---------------------+
+| Cloud Type  | Gateway Size  | Single Stream, | Maximum Throughput, |
+|             |               |     Mb/s       |      Mb/s           |
++=============+===============+================+=====================+
+| AWS         | t3.small      |     300        |      400            |
+|             +---------------+----------------+---------------------+
+|             | c5.large      |     320        |      450            |
+|             +---------------+----------------+---------------------+
+|             | c5n.large     |     370        |      500            |
++-------------+---------------+----------------+---------------------+
+
+Spoke-Transit (MSS 350 bytes) Throughput
+----------------------------------------
+
++-------------+---------------+----------------+---------------------+
+| Cloud Type  | Gateway Size  | Single Stream, | Maximum Throughput, |
+|             |               |     Mb/s       |      Mb/s           |
++=============+===============+================+=====================+
+| AWS         | t3.small      |     550        |      750            |
+|             +---------------+----------------+---------------------+
+|             | c5.large      |     580        |      850            |
+|             +---------------+----------------+---------------------+
+|             | c5n.large     |     630        |      850            |
++-------------+---------------+----------------+---------------------+
 
 
 UserVPN Gateway Performance
