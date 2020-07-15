@@ -13,9 +13,9 @@ For Insane Mode performance results, please refer to `this link. <https://docs.a
 
 Testing Environment:
 1. VPCs/VNETs were in the same region.
-2. Multiple Linux iperf3 clients/servers were used to maximize all vCPU cores in the transit gateway.
-3. Buffer size in all iperf3 clients/servers were modified to avoid being a bottleneck. Refer to `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
-4. iperf3 traffic was sent with MSS 1400. It was found that MSS 4000 or 9000 does not yield significant performance as the testing of IPsec tunnel is over Internet.
+#. Multiple Linux iperf3 clients/servers were used to maximize all vCPU cores in the transit gateway.
+#. Buffer size in all iperf3 clients/servers were modified to avoid being a bottleneck. Refer to `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
+#. iperf3 traffic was sent with MSS 1400 bytes. It was found that MSS 4000 bytes or 9000 bytes does not yield significant performance as the testing of IPsec tunnel is over Internet.
 
 
 ActiveMesh Gateway (Spoke-Transit-Spoke) Maximum Throughput (no HA) 
