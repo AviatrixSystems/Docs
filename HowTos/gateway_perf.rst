@@ -3,11 +3,11 @@
   :keywords: Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, Insane mode, Transit Gateway, TGWa, Site2Cloud
 
 
-=======================================
-Aviatrix Gateway Encryption Performance 
-=======================================
+============================
+Aviatrix Gateway Performance
+============================
 
-This document describes Aviatrix non HPE gateway encryption performance test benchmarks for different use-cases. 
+This document describes Aviatrix non HPE gateway encryption performance test benchmarks for different use cases. 
 
 For Insane Mode performance results, please refer to `this link. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
