@@ -116,9 +116,9 @@ Site2Cloud IPSec VPN Performance
 --------------------------------
 
 Algorithm 1:
------------ 
-Phase 1: SHA-1, AES-256-CBC, DH-2
-Phase 2: HMAC-SHA-1, AES-256-CBC, DH-2
+
+- Phase 1: SHA-1, AES-256-CBC, DH-2
+- Phase 2: HMAC-SHA-1, AES-256-CBC, DH-2
 
 +-------------+---------------+------------------+
 | Cloud Type  | Gateway Size  | Throughput, Gbps |
@@ -131,9 +131,9 @@ Phase 2: HMAC-SHA-1, AES-256-CBC, DH-2
 +-------------+---------------+------------------+
 
 Algorithm 2:
------------ 
-Phase 1: SHA-256, AES-256-CBC, DH-14
-Phase 2: HMAC-SHA-256, AES-256-CBC, DH-14
+ 
+- Phase 1: SHA-256, AES-256-CBC, DH-14
+- Phase 2: HMAC-SHA-256, AES-256-CBC, DH-14
 
 +-------------+---------------+------------------+
 | Cloud Type  | Gateway Size  | Throughput, Gbps |
@@ -146,9 +146,9 @@ Phase 2: HMAC-SHA-256, AES-256-CBC, DH-14
 +-------------+---------------+------------------+
 
 Algorithm 3:
------------ 
-Phase 1: SHA-256, AES-256-CBC, DH-14
-Phase 2: NO-AUTH, AES-128-GCM-96, DH-14
+
+- Phase 1: SHA-256, AES-256-CBC, DH-14
+- Phase 2: NO-AUTH, AES-128-GCM-96, DH-14
 
 +-------------+---------------+------------------+
 | Cloud Type  | Gateway Size  | Throughput, Gbps |
