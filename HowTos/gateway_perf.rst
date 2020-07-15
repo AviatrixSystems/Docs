@@ -11,7 +11,8 @@ This document describes Aviatrix non HPE gateway encryption performance test ben
 
 For Insane Mode performance results, please refer to `this link. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
-Testing Environment:
+Testing Environment
+-------------------
 1. VPCs/VNETs were in the same region.
 #. Multiple Linux iperf3 clients/servers were used to maximize all vCPU cores in the transit gateway.
 #. Buffer size in all iperf3 clients/servers were modified to avoid being a bottleneck. Refer to `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
