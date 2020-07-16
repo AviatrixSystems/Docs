@@ -2,6 +2,39 @@
 Release Notes
 =======================================
 
+R6.1 (Coming soon)
+====================
+
+1. Multi-cloud Network
+--------------------------------
+
+- **Scale out Firewalls in Azure FireNet** allows FireNet to support multiple firewall virtual machines in Azure. The use case is to support more than 2 firewall deployment to meet performance requirements. 
+
+- **Azure GovCloud** is now supported for both Controller and Aviatrix gateways. Controller can be launched from Azure GovCloud marketplace. 
+
+- **FireNet for Cross Region Peering Inspection** allows you to specifically inspect traffic cross TGW Peering regions. The use case is in certain deployment, it is not desirable to specify all traffic going in and out of a Security Domain. Rather the requirement is to only inspect traffic that moves across the regions. 
+
+- **Prepend ASN on BGP Connection** expands Prepend ASN to specific BGP connection. Previously the ASN prepend applies to the entire Aviatrix Transit Gateway, this feature brings the flexibility to prepend different ASN for different BGP connections. The use case is to provide more flexibility on the Aviatrix Transit Gateway to influence the next hop selection of the upstream BGP neighbour. 
+
+2. Security
+----------------
+
+- **Auto PrivateS3** significantly improves PrivateS3 usability and security by automatically retrieving S3 bucket names for PrivateS3 filtering. The use case to support thousands of organization's S3 buckets without having to manually import into the Controller. The second use case is to prevent accidental or intentionally input S3 buckets that are not owned by organization. 
+
+- **Subnets to Bypass FQDN** allows you to specify certain subnets in a VPC to bypass any FQDN filter rules. The use case is certain subnets are for Dev environment that does not require filtering. 
+
+- **FQDN Option for Exact Match** is a new feature where if a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped.  
+
+3. Operations
+-----------------
+
+- **Account Name Alias** allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime. To change account name alias, go to Accounts -> Access Accounts, hover the mouse at a specific account, click the Pen icon and start typing. 
+
+- **Gateway Name Alias** allow you to change an Aviatrix gateway name after it is created by providing an alias name and allowing it to be modified at any time. The use case is customers often need to change some gateway names after the network has been built out to certain scale. By allowing gateway name alias to be modified without having to delete the gateway and thus reduces network downtime. To change gateway name alias, go to Gateway, hover the mouse at a specific gateway name, click the Pen icon and start typing. Note the original gateway name is still maintained as "Original Name".
+
+- **Create a VPC Enhancement** now creates multiple route tables associated with public and private subnets. One use case is to allow traffic load balancing when Aviatrix Spoke gateways are deployed. 
+
+
 R6.0.2387 (7/10/2020)
 ======================
 
