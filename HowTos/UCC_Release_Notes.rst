@@ -33,7 +33,13 @@ R6.1 (Coming soon)
 - **Gateway Name Alias** allow you to change an Aviatrix gateway name after it is created by providing an alias name and allowing it to be modified at any time. The use case is customers often need to change some gateway names after the network has been built out to certain scale. By allowing gateway name alias to be modified without having to delete the gateway and thus reduces network downtime. To change gateway name alias, go to Gateway, hover the mouse at a specific gateway name, click the Pen icon and start typing. Note the original gateway name is still maintained as "Original Name".
 
 - **Create a VPC Enhancement** now creates multiple route tables associated with public and private subnets. One use case is to allow traffic load balancing when Aviatrix Spoke gateways are deployed. 
+ 
+- **Controller Access Security on Azure** extends the Access Security feature to Azure. When an Aviatrix gateway is launched, security rule is automatically added to the Controller inbound rule. This allows Controller admin to only open inbound TCP port 443 to Aviatrix gateways and no-prem public IP addresses, thus improving Controller security. 
 
+4. CloudN
+------------
+
+- **CloudN As a Gateway (CaaG)** simplifies managing Aviatrix hardware appliance CloudN by enabling the Controller to manage the configuration and operation of CloudN appliance. 
 
 R6.0.2387 (7/10/2020)
 ======================
