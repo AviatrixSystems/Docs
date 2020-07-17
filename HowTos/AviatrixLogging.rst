@@ -454,7 +454,7 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Keep the Protocol set to TCP
   #. For Optional Custom Template, copy the following string and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step. Please do keep the square brackets around the token.
 
- .. note:: <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [YOUR_TOKEN] %msg%\n
+ .. note:: <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [YOUR_TOKEN] %msg%\\n
 
 |rsyslog_template|
 
@@ -470,7 +470,7 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Protocol: TCP
   #. For Optional Custom Template, copy the following string and replace the string DATADOG_API_KEY with your own key. Please do keep the square brackets around the token.
 
- .. note:: <DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\n
+ .. note:: <DATADOG_API_KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\\n
 
 
 3.1.c Using Rsyslog to send logs to Splunk

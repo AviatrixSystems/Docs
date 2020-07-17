@@ -12,7 +12,7 @@ This document describes the steps for testing functionality and performance with
 Preparation
 ---------------------------------------------------
 
- a. Custom upgrade to preview release. Settings -> Maintenance -> Upgrade -> UPGRADE TO CUSTOM RELEASE, enter preview for the "Release Version" field. 
+ a. Upgrade Aviatrix software to the latest version by following the instructions `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
  #. Update IAM policies. It's likely the Aviatrix required IAM policies are out of date. Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`_ to update IAM policies for Controller account and all gateways accounts. 
 
