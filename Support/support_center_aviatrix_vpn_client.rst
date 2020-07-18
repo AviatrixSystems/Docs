@@ -22,16 +22,35 @@ Please check with your admin to see if you have any automated installs on your A
 Which log files should I share when I open a support ticket?
 ---------------------------------------------------------------
 
-Please share the following 3 log files from the Aviatrix VPN client installation folder with your support request:
+* Please share the following 3 log files from the Aviatrix VPN client installation folder with your support request:
 
   * commandlog.log
+
   * server.log
+
   * openvpn1.log
 
-Before Aviatrix VPN Client 2.4.10, you can find them at "/Applications/Aviatrix VPN Client.app/Contents/Resources" for **MacOS**,
-at “Program Files(x86)/Aviatrix VPN Client” for **Windows**, and at
-"/usr/bin/AVPNC_bin" for **Ubuntu**.  For Aviatrix VPN client 2.4.10 and after, these files have been moved
-into the **logs** sub-folder of the aforementioned directories.
+
+* Before Aviatrix VPN Client 2.4.10, you can find them at **/Applications/Aviatrix VPN Client.app/Contents/Resources** for **MacOS**,
+  at **Program Files(x86)/Aviatrix VPN Client** for **Windows**, and at
+  **/usr/bin/AVPNC_bin** for **Ubuntu**.  
+
+* For Aviatrix VPN client 2.4.10 - 2.9.6, these files have been moved into the **LOGS** sub-folder of the
+  aforementioned directories.
+
+* For Aviatrix VPN client 2.10.x and after, you can find these files under the following directory (and  
+  **SERVER** subfolder):
+
+  *  **~/Library/Logs** for **Mac**,
+
+  *  **~/.AviatrixVPNC** for **Linux**, and
+
+  *  **%APPDATA%\AviatrixVPNC** for **Window**. For Window OS, you can open the folder %APPDATA% using
+     the Run
+     command box (Start Menu/Windows System/Run).  Simply enter %APPDATA% at the Open field, click Browse
+     button and search for AviatrixVPNC.
+
+  Note also that openvpn1.log is renamed to avxopenvpn.log.
 
 How to address some common issues with Users and the VPN Client
 --------------------------------------------------------------------------------------------
