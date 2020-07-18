@@ -187,10 +187,11 @@ The Controller merges all FQDN rules by this order:
   #. Within each block (`Deny`, `Allow`, `Base Policy`), the more specific rules are processed or examined first. For example, salesforce.com is more specific than *.salesforce.com therefore salesforce.com is processed first. 
   #. Each rule has a verdict, Accept or Drop. When the FQDN processing engine finds a match, the verdict is reached and the packet is either dropped or accepted. The processing engine does not continue on to the next rule. 
   
-  FQDN Option for Exact Match - R6.1 (coming soon)
-  ----------------------------------------------------
   
-  Is a new feature where if a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped.
+FQDN Option for Exact Match - R6.1 (coming soon)
+----------------------------------------------------
+  
+Is a new feature where if a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped.
 
 
 
