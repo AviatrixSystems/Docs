@@ -48,6 +48,14 @@ For MTU = 9000 Bytes, the result is shown in the diagram below.
 
 |single_gateway_jumbo|
 
+Single Gateway in AWS Performance Test Results
+--------------------------------------------------
+
+For MTU = 350 Bytes, the result is shown in the diagram below. 
+
+|single_gateway_350B|
+
+
 Azure Performance Test Results
 --------------------------------
 
@@ -105,6 +113,9 @@ For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~spark
    :scale: 30%
 
 .. |test_topologies| image:: insane_mode_perf_media/test_topologies.png
+   :scale: 30%
+   
+.. |single_gateway_350B| image:: insane_mode_perf_media/single_gateway_350B.png
    :scale: 30%
 
 .. disqus::
