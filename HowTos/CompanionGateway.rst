@@ -2,12 +2,12 @@
   :description: Aviatrix Companion Gateway
   :keywords: aviatrix, companion, gateway, v2, version 2
 
-==================================
-Aviatrix Companion Gateway
-==================================
+======================================
+Aviatrix Companion Gateway in Azure
+======================================
 
 
-If you need to launch a gateway in Azure ARM, you must subscribe to
+If you need to launch an Aviatrix  gateway in Azure, you must subscribe to
 **Aviatrix Companion Gateway** in **Azure Marketplace**. This model removes
 the requirement to download the Aviatrix gateway image into your
 Azure account which typically takes more than 30 minutes, thus
