@@ -48,9 +48,6 @@ For MTU = 9000 Bytes, the result is shown in the diagram below.
 
 |single_gateway_jumbo|
 
-Single Gateway in AWS Performance Test Results
---------------------------------------------------
-
 For MTU = 350 Bytes, the result is shown in the diagram below. 
 
 |single_gateway_350B|
