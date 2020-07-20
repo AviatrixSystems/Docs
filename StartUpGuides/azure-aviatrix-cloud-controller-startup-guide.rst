@@ -10,13 +10,25 @@ The Aviatrix cloud network solution consists of two components, the controller a
 gateways, both of which are Azure VMs. Gateways are launched from the controller console to specific VNets. This
 guide helps you to launch the controller VM in Azure. Make sure you follow the instructions to also subscribe to the Aviatrix Companion Gateway described in this guide. 
 
-1. Subscribe to the Aviatrix Controller
+1. Subscribe to the Aviatrix Metered Offer 
 =============================================
 
-Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/>`_ to subscribe to one Aviatrix image. 
+Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-saas>`_ to subscribe to Aviatrix Controller Meter License - PAYG. 
+
+Follow the Azure portal instruction to subscribe. 
+
+|subscribe_to_meter|
 
 
-2. Subscribe to an Aviatrix Companion Gateway
+
+2. Subscribe to the Aviatrix Controller BYOL Offer
+===================================================
+
+After you subscribe to Aviatrix Meter License offer, you should receive an email from admin@aviatrix.io to inform you with customer ID and a link to subscribe the actual Aviatrix Controller BYOL offer. **More to continue on Step 4.**
+
+(Note with Aviatrix Meter License, you are billed monthly. No upfront cost and pay as you go.)
+
+3. Subscribe to an Aviatrix Companion Gateway
 =================================================
 
 The Aviatrix companion gateway needs to be subscribed as programmable. 
@@ -24,38 +36,38 @@ The Aviatrix companion gateway needs to be subscribed as programmable.
 In order to launch an Aviatrix gateway from the controller, you must also subscribe to the Aviatrix Companion Gateway, which is free in the Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
 
 
-3. Launch the Controller
+4. Launch the Controller
 ==============================
 
-Create an Azure Account
----------------------------
 
-Create an Azure account if you do not already have one.
+Click the link in the email to launch the Controller
+------------------------------------------------------
+
+Going back to the email received from admin@aviatrix.io. The email informs you with a customer ID and a 
+link to subscribe the actual Aviatrix Controller BYOL offer, as shown below. 
+
+|license_key|
+
+Click the link to take to Azure Portal again to launch the Controller. 
 
 Launch Controller VM from Azure marketplace portal
 -----------------------------------------------------
 
-a.  Launch from marketplace, select the license type and click Create
-    Virtual Machine, as shown below. If you select a “BYOL” image, you
-    need a Customer ID. Send email to support@aviatrix.com or
-    info@aviatrix.com to request a Customer ID.
 
-    |marketplace|
+a. Get from Azure Marketplace for the actual BYOL Controller. 
 
-#.  From the dropdown menu select one option, for example the BYOL option.
+    |click_byol|
 
-    |dropdown|
-
-#.  At Basics header, create new Resource Group titled "aviatrix" , virtual machine name can be "aviatrixController". 
+#.  At Basics header, create new Resource Group titled "aviatrix", virtual machine name can be "aviatrixController". 
     For instance size we recommend at least 8GB of RAM so B2ms should be sufficient. Next enter a username, password and
     Resource group, click OK. Please do NOT use 'ubuntu' as username if you use password as authentication type.
 
     |Azure_Basics|
 
 #.  At the networking header, this will be preconfigured with a default subnet and security group. You should not need
-    to change anything here. At Public IP, click Create New, at Assingment select Static and click OK. 
+    to change anything here. For Public IP, click Create New, at Assignment select Static and click OK. 
 
-    |Networking|
+    |static_ip|
 
 #.  The management, advanced, and tag headers should not need any configuration.
 
@@ -80,7 +92,7 @@ a.  Launch from marketplace, select the license type and click Create
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller console. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
 
-4. Onboarding
+5. Onboarding
 ==============
 The purpose of Onboarding is to help you setup an account on the Aviatrix Controller that
 corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
@@ -91,7 +103,7 @@ create an Aviatrix account that corresponds to your Azure account credential.
 
 Note: you can create a single Aviatrix account that corresponds to AWS, Azure and GCloud account credentials. This is a multi cloud platform.
 
-5. Gateway Troubleshoot
+6. Gateway Troubleshoot
 ========================
 
 If the Controller fails to launch an Aviatrix gateway in Azure RM, check out `this troubleshooting guide. <http://docs.aviatrix.com/HowTos/azuregwlaunch.html>`_
@@ -123,6 +135,19 @@ Enjoy!
 .. |Networking| image:: AzureAviatrixCloudControllerStartupGuide_media/Networking.png
    :width: 5.0in
    :height: 5.0in
+
+.. |subscribe_to_meter| image:: AzureAviatrixCloudControllerStartupGuide_media/subscribe_to_meter.png
+   :scale: 30%
+
+.. |license_key| image:: AzureAviatrixCloudControllerStartupGuide_media/license_key.png
+   :scale: 30%
+
+.. |click_byol| image:: AzureAviatrixCloudControllerStartupGuide_media/click_byol.png
+   :scale: 30%
+
+.. |static_ip| image:: AzureAviatrixCloudControllerStartupGuide_media/static_ip.png
+   :scale: 30%
+
 .. add in the disqus tag
 
 .. disqus::
