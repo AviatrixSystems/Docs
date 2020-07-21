@@ -28,12 +28,15 @@ After you subscribe to Aviatrix Meter License offer, you should receive an email
 
 (Note with Aviatrix Meter License, you are billed monthly. No upfront cost and pay as you go.)
 
-3. Subscribe to an Aviatrix Companion Gateway
-=================================================
+3. (Optional) Subscribe to an Aviatrix Companion Gateway
+===========================================================
 
-The Aviatrix companion gateway needs to be subscribed as programmable. 
+This step is not required for most of deployment scenarios as Aviatrix Controller automatically subscribes to the Aviatrix Companion Gateway 
+when it is launched. 
 
-In order to launch an Aviatrix gateway from the controller, you must also subscribe to the Aviatrix Companion Gateway, which is free in the Azure marketplace. Follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
+There are exceptional cases, such as if you provide Managed Service on Azure, the Aviatrix Companion Gateway requires manual subscription. 
+
+For manual subscription, follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
 
 
 4. Launch the Controller
