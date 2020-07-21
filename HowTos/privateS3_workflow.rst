@@ -7,14 +7,24 @@
 PrivateS3 Workflow
 =========================================================
 
+Below is the workflow for PrivateS3. To learn more about PrivateS3, check out `PrivateS3 FAQ. <https://docs.aviatrix.com/HowTos/sfc_faq.html>`_. 
+
 Step 1. Launch an Aviatrix Gateway
 -------------------------------------
 
-Go to Gateway -> New Gateway to launch a gateway. Specify the Gateway Name, Access Account Name, Region, VPC ID, 
+Go to Gateway -> New Gateway to launch an Aviatrix gateway. Specify the Gateway Name, Access Account Name, Region, VPC ID, 
 Public Subnet and Gateway Size. Leave all other fields as default. 
 
+Select the region where you want the S3 buckets explicitly allowed or denied access through PrivateS3. 
 
-Step 2. Enable/Edit PrivateS3
+Step 2. Create Access Accounts
+--------------------------------
+
+PrivateS3 automatically scans the S3 buckets owned by the `Access Accounts. <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. 
+Create one Access Account if you have not done so. 
+
+
+Step 3. Enable/Edit PrivateS3
 ----------------------------------
 
 .. tip::
@@ -26,17 +36,35 @@ Each AWS S3 bucket has a unique FQDN name. For example, if a full URL to access 
 ===================================        ==================
 **Setting**                                **Value**
 ===================================        ==================
-Gateway Name                               Select a gateway launched in the previous step
-Source CIDR Range                          Enter a summary list of the on-prem network address range separated by comma. For example, 10.10.0.0/16,10.12.0.0/16. Note this list should be a simple super set of your on-prem network CIDR range. It does not need to be precise. 
-S3 Bucket FQDN Name Resolution IP          This is a display field. It displays the AWS internal NLB private IP address created by the Controller AFTER you complete this step of attaching the bucket URL to the FIRST gateway. It will take sometime while the NLB is created. If you are repeating this step for additional gateways, the NLB IP should be autopopulated when you choose the first gateway that the URL was attached to. Use the displayed IP address for your on-prem DNS configuration in the next step. 
-+Add New Bucket                            Click and then enter a FQDN name of the file in S3 bucket. Click Save to save entry. Click +Add New Bucket again to enter another entry. 
-Enable                                     If this is the first time, click Enable to enable the feature.   
-Update                                     If PrivateS3 has been enabled, use this button to update changes including editing Source CIDR Range, Add New Bucket or Delete existing bucket. 
+Gateway Name                               Select a gateway launched in the previous step for PrivateS3 service.
+Source CIDR Range                          This field represents a scope of on-prem network address range, it is used to check if PrivateS3 filtering function should be applied for a given packet source IP address. This address range does not need to be precise. Enter a summary list of the on-prem network address range separated by comma. For example, 10.0.0.0/8. 
+===================================        ==================
+
+Click Update. If PrivateS3 has been enabled, use this button to update changes including editing Source CIDR Range.
+
+Step 4. View/Delete PrivateS3
+--------------------------------
+
+When PrivateS3 is enabled, Aviatrix Controller creates an AWS Network Load Balancer (NLB) and attaches Aviatrix gateway to it. More Aviatrix 
+gateways can be launched and attached to this NLB. The NLB front ends the pool of Aviatrix gateways and distributes S3 related HTTPS
+requests to the attached gateways.  
+
+The View displays relevant data for troubleshooting and visibility. 
+
+===================================        ==================
+**Setting**                                **Value**
+===================================        ==================
+PrivateS3 NLB Name                         AWS NLB created by Aviatrix Controller when PrivateS3 is enabled. 
+NLB Status                                 The status of the NLB created Aviatrix Controller.
+PrivateS3                                  true/false to indicate if PrivateS3 is enabled or not. 
+Region                                     AWS region where PrivateS3 gateways are launched. 
+PrivateS3 DNS Name Resolution IP           This filed displays the AWS internal NLB private IP address created by the Controller AFTER you complete this step of attaching the bucket URL to the FIRST gateway. It will take sometime while the NLB is created. If you are repeating this step for additional gateways, the NLB IP should be autopopulated when you choose the first gateway that the URL was attached to. Use the displayed IP address for your on-prem DNS configuration in the next step.
+PrivateS3 DNS Name                         This field displays the DNS name of the NLB created by Aviatrix Controller for PrivateS3 function.
 ===================================        ==================
 
 
-Step 3. Create on-prem DNS Private Zone
----------------------------------------------
+Additional Steps:  Create on-prem DNS Private Zone
+--------------------------------------------------------
 
 Create a private zone on your on-prem DNS server so that all S3 bucket names  
 resolve to the PrivateS3 private IP address displayed from Step 2 in the field "S3 Bucket FQDN Name Resolution IP". 
