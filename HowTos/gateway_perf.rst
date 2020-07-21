@@ -139,7 +139,8 @@ Site2Cloud IPSec VPN Performance
 Testing Environment:
 
 1. VPCs/VNETs were in the same region.
-#. All test results are based on non-HA scenario. 
+#. All test results are based on non-HA scenario.
+#. Multiple remote sites were connected to the Aviatrix gateway to simulate traffic from various remote sites.
 #. Buffer size in all iperf3 clients/servers were modified to avoid being a bottleneck. Refer to `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
 #. iperf3 traffic was sent with MSS 1400 bytes unless specified. It was found that MSS 4000 bytes or 9000 bytes does not yield significant performance as the testing of IPsec tunnel is over Internet.
 
@@ -155,7 +156,7 @@ Algorithm 1:
 |             +---------------+------------------+
 |             | c5.xlarge     |  3.1             |
 |             +---------------+------------------+
-|             | c5n.4xlarge   |  13.0            |
+|             | c5n.4xlarge   |  12.0            |
 +-------------+---------------+------------------+
 
 Algorithm 2:
