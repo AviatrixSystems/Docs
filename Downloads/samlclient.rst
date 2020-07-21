@@ -26,7 +26,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 
 Consult the VPN client `user guide <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`__ for how to use it.
 
-Latest version: 2.10.8 - (May 14 2020) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Latest version: 2.11.6 - (July 22 2020) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
 
 Please ask your Aviatrix Administrator to upgrade the Aviatrix Controller to version 4.7.501 + to prevent seeing certificate errors -`Ref. <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_ 
 
@@ -59,6 +59,8 @@ If the icon is missing from the launcher, type AVPNC in the terminal to launch t
 Debian/Ubuntu
 =============
 
+Ubuntu20.04 LTS - `Debian file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.deb>`__,
+`Tar file. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.tar.gz>`__
 
 Ubuntu18.04.1 LTS/Generic - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian.deb>`__,
 `Tar file. <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_linux.tar.gz>`__
@@ -92,7 +94,19 @@ Development version
 *******************
 These are preview images for the next release.
 
-`Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`__, `Mac <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_mac.pkg>`__ , `Linux tar <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux.tar.gz>`__, `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_debian.deb>`__, `Linux tar bionic <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_latest.tar.gz>`__,  `Debian bionic <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_debian_latest.deb>`__,  `Linux tar xenial <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_xenial.tar.gz>`__, `Debian xenial <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_xenial.deb>`__, `Linux tar trusty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux_Q4.tar.gz>`__, `Debian trusty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_debian_Q4.deb>`__, `FreeBSD <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_FreeBSD.tar.gz>`__
+`Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`__,
+`MacOS <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_mac.pkg>`__ ,
+`Debian Focal Fossa  <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_FocalFossa.deb>`__,
+`Linux tar Focal Fossa <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_FocalFossa.tar.gz>`__,
+`Linux tar <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux.tar.gz>`__,
+`Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_debian.deb>`__,
+`Linux tar bionic <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_latest.tar.gz>`__,
+`Debian bionic <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_debian_latest.deb>`__,
+`Linux tar xenial <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_xenial.tar.gz>`__,
+`Debian xenial <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_xenial.deb>`__,
+`Linux tar trusty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux_Q4.tar.gz>`__,
+`Debian trusty <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_debian_Q4.deb>`__,
+`FreeBSD <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_FreeBSD.tar.gz>`__
 
 FIPS140-2 Dev version
 
