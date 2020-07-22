@@ -116,6 +116,20 @@ The instructions are described as the following.
  1. `Enable Aviatrix Transit Gateway for Transit FireNet <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#enable-transit-firenet-function>`_ 
  2. `Launch and associate Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_
 
+What is the performance of Aviatrix Egress FQDN gateway on Transit FireNet?
+----------------------------------------------------------------------------
+
+Preliminary test results are as the follows. 
+
+==============================       =========================
+# of FQDN gateways                   Throughput (Gbps)
+==============================       =========================
+4                                    27
+6                                    30
+==============================       =========================
+
+
+
 Is there an example guide to setup Palo Alto VM-Series policies?
 ------------------------------------------------------------------
 
