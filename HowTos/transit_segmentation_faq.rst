@@ -63,7 +63,12 @@ They do not work together at this time, however we have plan to integrate them i
 How do I setup Multi-Cloud Transit Segmentation?
 --------------------------------------------------
 
-Follow the workflow. 
+Follow the `Transit Segmentation Workflow. <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html>`_.  
+
+How many Security Domains are supported in Multi-Cloud Transit Segmentation?
+-------------------------------------------------------------------------------
+
+The maximum number of Security Domains is 252. 
 
 
 
