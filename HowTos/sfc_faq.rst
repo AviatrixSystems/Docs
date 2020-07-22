@@ -116,11 +116,11 @@ PrivateS3 combines FQDN feature and stateful firewall feature.
  1. Go to Security -> Egress Control -> Egress FQDN Filter. There should be a tag automatically created. Click Edit button to see if the desired S3 bucket name is configured. 
  #. Go to Gateway, select one PrivateS3 gateway, click Edit. Scroll down to Destination NAT to make sure the DNAT rule is configured. 
 
-Why doesn't AWS S3 list command work?
+Does AWS S3 list command work?
 -----------------------------------------
 
-AWS S3 CLI "list" command requires you to add s3.region.amazonaws.com in the bucket rule, where region is represented 
-as us-west-2, us-east-2, for example. 
+Yes. AWS S3 CLI "list" command requires s3.region.amazonaws.com in the bucket rule where region is represented. This is automatically populated 
+by the Controller.  
 
 
 .. |sfc| image:: sfc_media/sfc .png
