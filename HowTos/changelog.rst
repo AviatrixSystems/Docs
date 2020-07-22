@@ -1,5 +1,13 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+2.11.6 - July 22 2020
+ - OpenSSL lib of the MacOS client is updated to 1.1.11g
+ - OpenSSL lib of the Windows client is updated to 1.1.11f
+ - Enhance the security to prevent Man-in-the-middle attack
+ - Boost the Windows client data throughput
+ - Improve the connectivity of the MacOS client under the unstable WiFi connection
+ - Improve the connectivity of the Windows client under the high data throughput
+ - New clients to support Ubuntu 20.4 LTS
 
 2.10.8 - May 14 2020
  - Address client vulnerabilities of elevation in privilege and arbitrary file write.
