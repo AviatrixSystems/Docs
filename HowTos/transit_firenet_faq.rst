@@ -119,7 +119,7 @@ The instructions are described as the following.
 What is the performance of Aviatrix Egress FQDN gateway on Transit FireNet?
 ----------------------------------------------------------------------------
 
-Preliminary test results are as the follows. 
+Preliminary test results are as follows. 
 
 ==============================       =========================
 # of FQDN gateways                   Throughput (Gbps)
