@@ -55,7 +55,7 @@ R6.1 (Coming soon)
 
 - **CloudN As a Gateway (CaaG)** simplifies managing Aviatrix hardware appliance CloudN by enabling the Controller to manage the configuration and operation of CloudN appliance. 
 
-R6.0.2459 (7/22/2020)
+R6.0.2466 (7/22/2020)
 =======================
 
 - **Bug fix** Missing MSS clamping configuration resulted in egress traffic loss. 
