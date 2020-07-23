@@ -7,7 +7,7 @@
 Aviatrix Gateway Performance
 ============================
 
-This document describes Aviatrix non HPE gateway encryption performance test benchmarks for different use cases. 
+This document describes Aviatrix non HPE gateway IPSec encryption performance test benchmarks for different use cases. 
 
 For Insane Mode performance results, please refer to `this link. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
@@ -145,6 +145,7 @@ Testing Environment:
 #. iperf3 traffic was sent with MSS 1400 bytes unless specified. It was found that MSS 4000 bytes or 9000 bytes does not yield significant performance as the testing of IPsec tunnel is over Internet.
 
 Algorithm 1:
+~~~~~~~~~~~~~~~~~
 
 - Phase 1: SHA-1, AES-256-CBC, DH-2
 - Phase 2: HMAC-SHA-1, AES-256-CBC, DH-2
@@ -160,6 +161,7 @@ Algorithm 1:
 +-------------+---------------+------------------+
 
 Algorithm 2:
+~~~~~~~~~~~~~~~~
 
 - Phase 1: SHA-256, AES-256-CBC, DH-14
 - Phase 2: HMAC-SHA-256, AES-256-CBC, DH-14
@@ -175,6 +177,7 @@ Algorithm 2:
 +-------------+---------------+------------------+
 
 Algorithm 3:
+~~~~~~~~~~~~~~
 
 - Phase 1: SHA-256, AES-256-CBC, DH-14
 - Phase 2: NO-AUTH, AES-128-GCM-96, DH-14

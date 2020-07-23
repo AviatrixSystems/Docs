@@ -55,6 +55,16 @@ R6.1 (Coming soon)
 
 - **CloudN As a Gateway (CaaG)** simplifies managing Aviatrix hardware appliance CloudN by enabling the Controller to manage the configuration and operation of CloudN appliance. 
 
+R6.0.2459 (7/22/2020)
+=======================
+
+- **Bug fix** Missing MSS clamping configuration resulted in egress traffic loss. 
+- **Bug fix** Handle VNet UDR routes programming when Azure Netapp service is deployed in the Spoke VNet. 
+- **Bug fix** AWS GovCloud cannot list firewall options. 
+- **Bug fix** Configure the system to prevent memory leak.
+- **Enhancement** API support for t3a.x gateway instance types. 
+- **Bug fix** Missing configuration parameters in download file for Site2Cloud for Cisco ASA devices. 
+
 R6.0.2387 (7/10/2020)
 ======================
 
