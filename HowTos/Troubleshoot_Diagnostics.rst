@@ -169,6 +169,9 @@ The diagnostic result of this feature provides the information of a specified VP
 VNet Route Diagnostics
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: This feature supports Azure Classic only.
+..
+
 This feature provides the following operations that can be applied to a VNet:
     1. Display all route tables
     2. Display route table details
