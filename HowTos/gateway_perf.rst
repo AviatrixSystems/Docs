@@ -1,6 +1,5 @@
 .. meta::
   :description: Aviatrix Gateway Performance benchmark
-  :keywords: Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, Insane mode, Transit Gateway, TGWa, Site2Cloud
 
 
 ============================
