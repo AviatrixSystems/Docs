@@ -7,6 +7,11 @@
 Firewall Network (FireNet)  Workflow
 =========================================================
 
+FireNet is a solution for integrating firewalls in the AWS TGW deployment. 
+
+If you are looking for firewall integration solution on Azure or in Aviatrix Multi-Cloud transit architecture, 
+your starting point is `here <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html>`_. 
+
 For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
 
 1. Create a Security VPC

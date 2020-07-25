@@ -7,7 +7,7 @@
 Transit FireNet Workflow for Azure
 =========================================================
 
-Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Encrypted Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
+Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Multi-Cloud Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
 
 To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
@@ -17,7 +17,7 @@ This workflow provides you the step by step instructions to build a Aviatrix Tra
 
 While the instructions below reference Azure, these functionalities apply to any public cloud in which Aviatrix Transit FireNet is supported.
 
-In this example, Transit VPC with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
+In this example, Transit VNet with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
 
 The transit VPC will have a firewall of supported vendors (Checkpoint, Palo Alto Networks and Fortinet etc.) deployed in it. Please see the diagram below for more details.
 
@@ -25,8 +25,8 @@ Once the infra is in-place then the policy will be created to inspect the east-w
 
 |avx_tr_firenet_topology_az|
 
-Step 1 : Create VPCs
-***************************
+Step 1 : Create Transit VNet
+*******************************
 
 VNets can be created manually on Azure or directly from Aviatrix Controller.
 
