@@ -12,7 +12,7 @@ R6.1 (Coming soon)
 
 - **Azure GovCloud** is now supported for both Controller and Aviatrix gateways. Controller can be launched from Azure GovCloud marketplace. Follow `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ to get started. 
 
-- **FireNet for AWS TGW Cross Region Peering Inspection** allows you to specifically inspect traffic cross TGW Peering regions. The use case is in certain deployment, it is not desirable to specify all traffic going in and out of a Security Domain. Rather the requirement is to only inspect traffic that moves across the regions. 
+- **FireNet for AWS TGW Inter Region Traffic Inspection** allows you to specifically inspect traffic crossing TGW Peering regions. One use case is in certain deployment, it is not desirable to specify all traffic going in and out of a Security Domain, rather the requirement is to only inspect traffic that moves across the regions. For configuration details, refer to `Inspect Inter Region Traffic <https://docs.aviatrix.com/HowTos/tgw_plan.html#inspect-inter-region-traffic>`_.
 
 - **Prepend ASN on BGP Connection** expands Prepend ASN to specific BGP connection. Previously the ASN prepend applies to the entire Aviatrix Transit Gateway, this feature brings the flexibility to prepend different ASN for different BGP connections. The use case is to provide more flexibility on the Aviatrix Transit Gateway to influence the next hop selection of the upstream BGP neighbour. 
 

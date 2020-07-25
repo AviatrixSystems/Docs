@@ -78,8 +78,8 @@ process, refer to `ActiveMesh 2.0 next hop. <https://docs.aviatrix.com/HowTos/ac
 
 Click the Slide Bar to enable BGP ECMP. 
 
-Prepend AS Path
-------------------
+Gateway AS Path Prepend
+-------------------------------------------
 
 You can insert BGP AS_PATH on the Aviatrix Transit Gateway to customize the BGP AP_PATH field when it advertises to VGW or peer devices. For example, 
 enter 65458, 65478 in the input field, these ASN will appear to the remote end. 
@@ -87,6 +87,12 @@ enter 65458, 65478 in the input field, these ASN will appear to the remote end.
 This configuration applies to all BGP peers of the Aviatrix Transit Gateway. 
 
 If you don't configure this field, Transit Gateway only advertises its own ASN.
+
+Connection AS Path Prepend
+----------------------------
+
+Customize AS Path Prepend by specifying AS PATH for each BGP connection. 
+This feature  applies to any dynamic connection and Transit Gateway peering connections on a selected Aviatrix Transit Gateway. 
 
 BGP Polling Time 
 ---------------------
