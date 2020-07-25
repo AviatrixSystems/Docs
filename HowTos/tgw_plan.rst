@@ -274,7 +274,7 @@ It takes two steps to connect two Security Domains in two regions.
 
 .. tip::
 
-  Your Controller may not have the latest IAM policies to execute TGW peering, go to Accounts -> Access Accounts. Click the 3 dot skewer for the account where TGW is deployed and click Update policy. Do so for the all TGW accounts if you wish to TGW build inter region peering.
+  Your Controller may not have the latest IAM policies to execute TGW peering, go to Accounts -> Access Accounts. Select the account where TGW is deployed and click `Update Policy`. Do so for the all TGW accounts if you wish to TGW build inter region peering.
 
 
 
@@ -294,6 +294,15 @@ Cloud Type 2                                    Select AWS or AWS GovCloud
 Region 2                                        Select a region where the peering TGW is deployed
 AWS Transit Gateway Name 2                      Select an AWS TGW Created `here <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_
 ==========================================      ==========
+
+Inspect Inter Region Traffic 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Starting from Release 6.1, the Security Domain associated with each TGW Peering attachment is available for user. The Security Domain has the
+name `peering_<TGW NAME>`. For example, for the TGW with name tgw-1, the peering Security Domain is `peering_tgw-1`. 
+
+You can specify FireNet inspection policy on this Security Domain. When you do so, it implies that any traffic in and out of this 
+domain is inspected. Use TGW -> Plan -> Add/Modify Connection Policies to connect the peering domain with FireNet Domain. 
 
 b. Build Connection Policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
