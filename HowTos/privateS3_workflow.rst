@@ -24,7 +24,7 @@ PrivateS3  automatically scans the S3 buckets owned by the `Access Accounts. <ht
 Create one Access Account if you have not done so. 
 
 
-Step 3. Enable PrivateS3
+Step 3. Enable/Update PrivateS3
 ----------------------------------
 
 .. tip::
