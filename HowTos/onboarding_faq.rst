@@ -193,6 +193,13 @@ From the article:
  
 Companies that sell some types of **equipment or software** used in cardholder data processing, transmission, and storage environments, but have no access to, or do not impact, those environments, are also not required to be PCI compliant and therefore do not have AOCs. A few examples include routers, firewalls, application servers, database servers, telecommunications equipment, server operating systems, **application firewalls**, etc
 
+What is Account Name Alias?
+---------------------------
+
+Account Name Alias allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime. 
+
+To change account name alias, go to Accounts -> Access Accounts, then hover the mouse at a specific account, click the Pen icon and start typing.
+
 
 .. |image1| image:: FAQ_media/image1.png
 
