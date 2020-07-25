@@ -4,7 +4,7 @@
 
 
 ===============================================
-CloudN Deployment Workflow
+Connecting a CloudN Workflow
 ===============================================
 
 This document describes CloudN deployment workflow for R6.1 and later. 
