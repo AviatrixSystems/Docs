@@ -39,7 +39,7 @@ This configuration applies to a specific FQDN gateway.
 To configure, go to Security -> Egress Control -> Egress FQDN Gateway View. Select a gateway,
 click Actions -> Edit Pass-through. Select subnet or multi select subnets to allow bypass the filter. 
 
-To configure, select one gateway, click Actions. 
+To configure, select one gateway, click Actions -> Edit Pass-through. Select one or multiple source subnets in the VPC and click Add to allow these subnets to be bypassed. You can also enter IP address range manually. Enter a list of IPs separated by comma.. 
 
 
 
