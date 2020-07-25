@@ -10,9 +10,9 @@ R6.1 (Coming soon)
 
 - **Scale out Firewalls in Azure FireNet** allows FireNet to support multiple firewall virtual machines in Azure. The use case is to support more than 2 firewall deployment to meet performance requirements. Refer to `this document <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
 
-- **Azure GovCloud** is now supported for both Controller and Aviatrix gateways. Controller can be launched from Azure GovCloud marketplace. 
+- **Azure GovCloud** is now supported for both Controller and Aviatrix gateways. Controller can be launched from Azure GovCloud marketplace. Follow `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ to get started. 
 
-- **FireNet for Cross Region Peering Inspection** allows you to specifically inspect traffic cross TGW Peering regions. The use case is in certain deployment, it is not desirable to specify all traffic going in and out of a Security Domain. Rather the requirement is to only inspect traffic that moves across the regions. 
+- **FireNet for AWS TGW Cross Region Peering Inspection** allows you to specifically inspect traffic cross TGW Peering regions. The use case is in certain deployment, it is not desirable to specify all traffic going in and out of a Security Domain. Rather the requirement is to only inspect traffic that moves across the regions. 
 
 - **Prepend ASN on BGP Connection** expands Prepend ASN to specific BGP connection. Previously the ASN prepend applies to the entire Aviatrix Transit Gateway, this feature brings the flexibility to prepend different ASN for different BGP connections. The use case is to provide more flexibility on the Aviatrix Transit Gateway to influence the next hop selection of the upstream BGP neighbour. 
 
