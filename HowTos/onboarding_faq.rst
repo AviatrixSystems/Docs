@@ -196,7 +196,7 @@ Companies that sell some types of **equipment or software** used in cardholder d
 What is Account Name Alias?
 ---------------------------
 
-Account Name Alias allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime. 
+Account Name Alias feature allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime. 
 
 To change account name alias, go to Accounts -> Access Accounts, then hover the mouse at a specific account, click the Pen icon and start typing.
 
