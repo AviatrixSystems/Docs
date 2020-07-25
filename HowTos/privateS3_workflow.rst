@@ -15,16 +15,16 @@ Step 1. Launch an Aviatrix Gateway
 Go to Gateway -> New Gateway to launch an Aviatrix gateway. Specify the Gateway Name, Access Account Name, Region, VPC ID, 
 Public Subnet and Gateway Size. Leave all other fields as default. 
 
-Select the region where you want the S3 buckets explicitly allowed or denied access through PrivateS3. 
+Select the region where you want the S3 buckets to be explicitly allowed or denied access through PrivateS3. 
 
 Step 2. Create Access Accounts
 --------------------------------
 
-PrivateS3 automatically scans the S3 buckets owned by the `Access Accounts. <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. 
+PrivateS3  automatically scans the S3 buckets owned by the `Access Accounts. <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_. 
 Create one Access Account if you have not done so. 
 
 
-Step 3. Enable/Edit PrivateS3
+Step 3. Enable PrivateS3
 ----------------------------------
 
 .. tip::
@@ -38,11 +38,30 @@ Each AWS S3 bucket has a unique FQDN name. For example, if a full URL to access 
 ===================================        ==================
 Gateway Name                               Select a gateway launched in the previous step for PrivateS3 service.
 Source CIDR Range                          This field represents a scope of on-prem network address range, it is used to check if PrivateS3 filtering function should be applied for a given packet source IP address. This address range does not need to be precise. Enter a summary list of the on-prem network address range separated by comma. For example, 10.0.0.0/8. 
+Access Accounts                            You can select multiple accounts and move them to the right panel. The Controller scans S3 of the selected accounts every 30 minutes to discover any new S3 buckets.
 ===================================        ==================
 
-Click Update. If PrivateS3 has been enabled, use this button to update changes including editing Source CIDR Range.
+Click Enable. If PrivateS3 has been enabled, use this Step to update changes in Source CIDR Range or Access Accounts.
 
-Step 4. View/Delete PrivateS3
+Once PrivateS3 is enabled, Controller creates an AWS NLB and attach the PrivateS3 gateway to it. The NLB serves as load balancer to forward 
+S3 HTTPS request to the gateways. 
+
+Once PrivateS3 is enabled, you can go to Step 1 to create more Aviatrix gateways in the same VPC and attach it to the NLB. 
+
+Once PrivateS3 is enabled on the selected accounts, the Controller scans every 30 minutes S3 buckets of the selected accounts in the region where Aviatrix PrivateS3 gateway is deployed.
+
+When new S3 buckets are discovered, an email will be sent to the Controller admin. Admin should login to the Controller, go to Security -> PrivateS3 -> Step 4 to take actions on the new buckets. The actions are either Allow or Deny.
+
+Step 4. Update S3 Bucket Policy 
+---------------------------------------
+
+Filter on S3 buckets with policy New. Change it to either Allow or Deny.  
+
+You can change all buckets to Allow All or Deny All. 
+
+
+
+Step 5 View/Delete PrivateS3
 --------------------------------
 
 When PrivateS3 is enabled, Aviatrix Controller creates an AWS Network Load Balancer (NLB) and attaches Aviatrix gateway to it. More Aviatrix 
@@ -63,8 +82,8 @@ PrivateS3 DNS Name                         This field displays the DNS name of t
 ===================================        ==================
 
 
-Additional Steps:  Create on-prem DNS Private Zone
---------------------------------------------------------
+Additional Configuration:  Create on-prem DNS Private Zone
+--------------------------------------------------------------
 
 Create a private zone on your on-prem DNS server so that all S3 bucket names  
 resolve to the PrivateS3 private IP address displayed from Step 2 in the field "S3 Bucket FQDN Name Resolution IP". 
@@ -85,8 +104,8 @@ create a zone with domain name s3.us-west-2.amazonaws.com, another zone with dom
 
   Use DNS wildcard for record. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3 internal NLB.
 
-Step 4. Adding additional Gateways
-----------------------------------------
+Adding More PrivateS3  Gateways
+---------------------------------------------------------------
 
 When you want to scale-out and add more Gateways to the pool, follow these steps
 
