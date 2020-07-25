@@ -23,11 +23,11 @@ R6.1 (Coming soon)
 
 - **Auto PrivateS3** significantly improves PrivateS3 usability and security by automatically retrieving S3 bucket names for PrivateS3 filtering. One use case is to support large set of S3 buckets owned by organizations without having to manually import into the Controller. The second use case is to prevent accidental or intentional manual  input S3 buckets that are not owned by organization. For workflow, check out `PrivateS3 workflow <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_.
 
-- **Subnets to Bypass FQDN** allows you to specify certain subnets in a VPC to bypass any FQDN filter rules. The use case is certain subnets are for Dev environment that does not require filtering. 
+- **Subnets Pass-through** allows you to specify certain subnets in a VPC to bypass any FQDN filter rules. One use case is that certain subnets, for example,  are for Dev environment, therefore does not require to be FQDN filtered or logged. To configure, go to Security -> Egress Control -> Egress FQDN Gateway View. Select a gateway, click Actions -> Edit Pass-through. Select subnet or multi select subnets to allow bypass the filter. For more details, refer to `FQDN Source Pass-through <https://docs.aviatrix.com/HowTos/fqdn_viewlog.html#edit-pass-through>`_.
 
-- **Exact Port Match** now applies to each FQDN rule. One use case is if you only specify an FQDN rule for TCP port 443, packets with the same FQDN rule for TCP port 80 are dropped unless you have the specific FQDN rule on TCP port 80. 
+- **Exact Port Match** now applies to each FQDN rule. One use case is if you only specify an FQDN rule for TCP port 443, packets with the same FQDN rule for TCP port 80 are dropped unless you have the specific FQDN rule on TCP port 80. This is a bug fix, no configuration required.
 
-- **FQDN Option for Exact Match** is a new feature where if a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped.  
+- **FQDN Option for Exact Match** is a new feature where if a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped. For configuration details, refer to `FQDN Exact Match <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exact-match>`_. 
 
 
 3. Operations
@@ -46,7 +46,7 @@ R6.1 (Coming soon)
 4. User VPN
 --------------
 
-- **Max Routes Pushing to VPN Client** has now been increased to 250. This allow a larger network deployment.  
+- **Max Routes Pushing to VPN Client** has now been increased to 250. This allow a larger network deployment. Requires Aviatrix VPN client 2.11. No configuration change is needed.  
 
 - **GeoVPN to use DHCP Setting** for DNS name resolution from the VPC where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. 
 
