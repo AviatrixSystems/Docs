@@ -8,7 +8,7 @@ R6.1 (Coming soon)
 1. Multi-cloud Network
 --------------------------------
 
-- **Scale out Firewalls in Azure FireNet** allows FireNet to support multiple firewall virtual machines in Azure. The use case is to support more than 2 firewall deployment to meet performance requirements. 
+- **Scale out Firewalls in Azure FireNet** allows FireNet to support multiple firewall virtual machines in Azure. The use case is to support more than 2 firewall deployment to meet performance requirements. Refer to `this document <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
 
 - **Azure GovCloud** is now supported for both Controller and Aviatrix gateways. Controller can be launched from Azure GovCloud marketplace. 
 
@@ -21,7 +21,7 @@ R6.1 (Coming soon)
 2. Security
 ----------------
 
-- **Auto PrivateS3** significantly improves PrivateS3 usability and security by automatically retrieving S3 bucket names for PrivateS3 filtering. The use case to support thousands of organization's S3 buckets without having to manually import into the Controller. The second use case is to prevent accidental or intentionally input S3 buckets that are not owned by organization. 
+- **Auto PrivateS3** significantly improves PrivateS3 usability and security by automatically retrieving S3 bucket names for PrivateS3 filtering. One use case is to support large set of S3 buckets owned by organizations without having to manually import into the Controller. The second use case is to prevent accidental or intentional manual  input S3 buckets that are not owned by organization. For workflow, check out `PrivateS3 workflow <https://docs.aviatrix.com/HowTos/privateS3_workflow.html>`_.
 
 - **Subnets to Bypass FQDN** allows you to specify certain subnets in a VPC to bypass any FQDN filter rules. The use case is certain subnets are for Dev environment that does not require filtering. 
 

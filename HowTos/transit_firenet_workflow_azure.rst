@@ -13,10 +13,6 @@ To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.av
 
 If you are looking to deploy Aviatrix FireNet Workflow in AWS, your starting point is `here. <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ and If you would like to deploy firewall networks in AWS Transit Gateway (TGW) environment, your starting point is `Firenet Workflow. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
 
-This workflow provides you the step by step instructions to build a Aviatrix Transit Firewall Network also called Transit FireNet.
-
-While the instructions below reference Azure, these functionalities apply to any public cloud in which Aviatrix Transit FireNet is supported.
-
 In this example, Transit VNet with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
 
 The transit VPC will have a firewall of supported vendors (Checkpoint, Palo Alto Networks and Fortinet etc.) deployed in it. Please see the diagram below for more details.

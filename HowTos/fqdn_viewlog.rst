@@ -12,6 +12,37 @@ or passed on the `FQDN gateway. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists
 
 For audit and compliance, we recommend that you to use one of our integrated `logging tools <http://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_
 
+Thee are additional functions associated with the FQDN View page. 
+
+Detach or Disable FQDN
+--------------------------
+
+To disable FQDN function for a specific VPC, select the gateway, click Actions -> Detach/Disable FQDN.
+
+Remove Tag
+-----------
+
+If you like to remove a specific tag associated with a FQDN tag, select the gateway, click Actions -> Remove Tag.
+
+Download Logs
+--------------
+
+For FQDN log on a specific gatewway, select the gateway, click Actions -> Download Logs. 
+
+Edit Pass-through
+--------------------
+
+This feature allows you to specify traffic originated from certain subnets to only be NATed and bypass FQDN filter function.
+
+This configuration applies to a specific FQDN gateway.
+
+To configure, go to Security -> Egress Control -> Egress FQDN Gateway View. Select a gateway,
+click Actions -> Edit Pass-through. Select subnet or multi select subnets to allow bypass the filter. 
+
+To configure, select one gateway, click Actions. 
+
+
+
 
 .. |discovered_sites| image::  fqdn_discovery_media/discovered_sites.png
    :scale: 50%

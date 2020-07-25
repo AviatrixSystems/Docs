@@ -154,19 +154,58 @@ the network on the left side of the panel are dropped.
 Enable Private Network Filtering
 =================================
 
-By checking this option, FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
+This is a global configuration that applies to  all FQDN gateways. 
+
+By checking this option, destination FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
+
+To configure, go to Security -> Egress Control -> GLOBAL CONFIGS -> Disable Private Network Filtering. FQDN names that are resolved
+to RFC 1918 range will be subject to FQDN filter function.
 
 Disable Private Network Filtering
 ===================================
 
+This is a global configuration that applies to  all FQDN gateways. 
+
 By checking this option, packets with destination IP address of RFC 1918 range are not inspected. This is the default behavior.
+
+To configure, go to Security -> Egress Control -> GLOBAL CONFIGS -> Disable Private Network Filtering. FQDN names that are resolved
+to RFC 1918 range will be subject to FQDN filter function.
 
 
 Customize Network Filtering
 ==============================
 
+This is a global configuration that applies to  all FQDN gateways. 
+
 When this option is selected, you can customize packet destination address ranges not to be filtered by FQDN.  
 
+To configure, go to Security -> Egress Control -> GLOBAL CONFIGS -> Customize Network Filtering. Select pre-defined RFC 1918 
+range, or enter your own network range. 
+
+This feature is not enabled as default.
+
+FQDN Name Caching
+=====================
+
+This is a global configuration that applies to  all FQDN gateways. 
+
+If FQDN Name caching is enabled, the resolved IP address from FQDN filter is cached so that if subsequent TCP session matches the 
+cached IP address list, FQND domain name is not checked and the session is allowed to pass. 
+
+We recommend you to disable Caching to prevent unwanted domain names to bypass filter as they resolve to the same IP address. For example, youtube.com shares the same destination IP address range as google.com. There is no performance impact by disabling the cache. 
+
+To configure, go to Security -> Egress Control -> GLOBAL CONFIGS -> Caching -> click Enabled to disable it.
+
+This feature is not enabled as default.
+
+Exact Match
+==============
+
+This is a global configuration that applies to  all FQDN gateways. 
+
+If a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped.
+
+This feature is not enabled as default.
 
 For support, send an email to support@aviatrix.com
 

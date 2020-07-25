@@ -7,15 +7,11 @@
 Transit FireNet Workflow for AWS
 =========================================================
 
-Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Encrypted Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
+Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Multi-Cloud transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
 
 To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
 If you are looking deploying firewall networks in AWS Transit Gateway (TGW) environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
-
-This workflow provides you the step by step instructions to build a Aviatrix Transit Firewall Network also called Transit FireNet.
-
-While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit FireNet is supported.
 
 In this example, Transit VPC with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
 
