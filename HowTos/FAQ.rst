@@ -171,16 +171,7 @@ This scenario is explained in detail `here <https://docs.aviatrix.com/HowTos/con
 11. Enable Login Banner
 #######################
 
-This function allows users to customize banner text for first time login for compliance. Any user who login for the first time must acknowledge the text before proceeding to Controller. 
-
-To configure, go to Settings -> Controller -> Login Customization -> Login Banner. 
-
-Then, enter the desired login banner text in the Message.
-
-Lastly, toggle Status to Enabled and click Save. 
-
-The next time when a user login to the Controller, the user will be prompted with the banner text. Once the user clicks OK, the banner text does not show in the following logins. Additionally, the user acknowledgement report is able to download by clicking the button "DOWNLOAD REPORT".
-
+This function is explained in detail `here <https://docs.aviatrix.com/HowTos/controller_config.html#login-banner>`_
 
 What are the events that the Aviatrix Controller monitors?
 --------------------------------------------------------------
