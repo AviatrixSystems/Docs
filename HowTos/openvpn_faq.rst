@@ -67,12 +67,11 @@ Also check out `this link for help. <http://docs.aviatrix.com/HowTos/GeoVPN.html
 How do I add a VPN user?
 -----------------------------
 
-
 After at least one gateway is created, you can add VPN users.
 
 Click OpenVPN® -> VPN Users -> +Add New.
 
-When a user is added, an email is sent to the user with instructions on how to download client software and connect to a VPN server. You can customize this email by updating the settings at "OpenVPN -> Advanced -> Email". You could also use your own SMTP server to send these emails out by following `these instructions <https://docs.aviatrix.com/HowTos/alert_and_email.html#how-to-change-source-of-email-notification>`_
+When a user is added, an email is sent to the user with instructions on how to download client software and connect to a VPN server. You can customize this email by updating the settings at "OpenVPN -> Advanced -> Global Config -> User Defined Email Notification". You could also use your own SMTP server to send these emails out by following `these instructions <https://docs.aviatrix.com/HowTos/alert_and_email.html#how-to-change-source-of-email-notification>`_
 
 If you prefer to not share the .ovpn file with your users via email, do not enter the email address when you add a VPN user. You can then download the .ovpn file from OpenVPN -> VPN Users -> Select VPN User and then download the file and share it with your VPN user via your preferred file share mechanism.
 
@@ -396,7 +395,31 @@ What IP Address is used for NAT'ing the VPN Clients?
 
 If the destination is another instance within the cloud provider, then the OpenVPN gateway’s private IP address is used to NAT the OpenVPN Client's traffic. But if the destination is outside the cloud provider(the Internet), then the public IP address of the OpenVPN Gateway is used.
 
-   
+What is User Defined Email Notification?
+----------------------------------------
+
+User Defined Email Notification feature allows users to customize the email notification (both email content and attachment file name) for VPN client. 
+
+To configure it, go to OpenVPN® -> Advanced -> Global Config -> User Defined Email Notification to edit the file name or email content. The new email format will be used when a VPN certificate is issued. Check `How do I add a VPN user?`_ for more info.
+
+How to customize pop-up messages after a VPN user is connected?
+----------------------------------------------------------------
+
+System Use Notification feature allows users to customize pop-up messages after a VPN user is connected. One use case is for customer to write their own messages for compliance. 
+
+To configure it, go to OpenVPN® -> Advanced -> Global Config -> System Use Notification. 
+
+.. note::
+
+   Please ensure that you are running Aviatrix VPN Client version 2.9 or higher to view the usage notification.
+
+How to set a minimum Aviatrix VPN client software version for OpenVPN® connection?
+----------------------------------------------------------------------------------
+
+Minimum Aviatrix VPN Client Version feature allows users to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. 
+
+To configure it, go to OpenVPN® -> Advanced -> Global Config -> Minimum Aviatrix VPN Client Version to set the Aviatrix VPN client version.
+
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
 .. |image1| image:: FAQ_media/image1.png
