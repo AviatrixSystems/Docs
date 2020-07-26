@@ -41,7 +41,7 @@ R6.1 (Coming soon)
  
 - **Controller Access Security on Azure** extends the Access Security feature to Azure. When an Aviatrix gateway is launched, security rule is automatically added to the Controller inbound rule. This allows Controller admin to only open inbound TCP port 443 to Aviatrix gateways and no-prem public IP addresses, thus improving Controller security. To configure, go to Settings -> Controller -> Access Security. Select the Controller account and enable. For more details, refer to `Enable Controller Security Group Management <https://docs.aviatrix.com/HowTos/FAQ.html#enable-controller-security-group-management>`_.  
 
-- **Banner Login** allows you to customize banner text for first time login for compliance. Any user who login for the first time must acknowledge the text before proceeding to Controller. To configure, go to Settings -> Controller -> Login Customization -> Login Banner. Enter the desired login banner text. Click Status to Enable and Click Save. The next time when a user login to the Controller, the user will be prompted with the banner text. Once the user clicks OK, the banner text does not show in the following logins. 
+- **Login Banner** allows you to customize banner text for first time login for compliance. Any user who login for the first time must acknowledge the text before proceeding to Controller. To configure, go to Settings -> Controller -> Login Customization -> Login Banner. For more information, refer to `Login Banner <https://docs.aviatrix.com/HowTos/controller_config.html#login-banner>`_.
 
 4. User VPN
 --------------
@@ -53,7 +53,7 @@ R6.1 (Coming soon)
 5. CloudN
 ------------
 
-- **CloudN As a Gateway (CaaG)** simplifies managing Aviatrix hardware appliance CloudN by enabling the Controller to manage the configuration and operation of CloudN appliance. 
+- **CloudN As a Gateway (CaaG)** simplifies managing Aviatrix hardware appliance CloudN by enabling the Controller to manage the configuration and operation of CloudN appliance.
 
 R6.0.2466 (7/22/2020)
 =======================
