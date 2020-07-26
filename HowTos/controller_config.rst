@@ -16,6 +16,25 @@ where it is launched. The DHCP option contains DNS server which could be on-prem
 
 When "Use VPC/VNET DNS Server" is disabled, the controller uses Google public DNS server, therefore making the controller's DNS reachability independent of customer's configuration. This is recommended configuration. 
 
+Login Customization
+----------------------
+
+Enable/Disable Admin Login
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The “admin” account login can be disabled to instead use account user.
+
+To disable admin login to the Controller, go to Settings -> Controller -> Login Customization. Click Disable.
+
+Note that you need a local user with admin privileges to be created first, before you can disable the “admin” account.
+
+Login Banner
+~~~~~~~~~~~~~~
+
+Customize banner text for first time login for compliance. Any user who login for the first time must acknowledge the text before proceeding to Controller. 
+
+To configure, go to Settings -> Controller -> Login Customization -> Login Banner. Enter the desired login banner text. Click Status to Enable and Click Save. The next time when a user login to the Controller, the user will be prompted with the banner text. Once the user clicks OK, the banner text does not show in the following logins.
+
 
 .. |imageGrid| image:: advanced_config_media/grid.png
 
