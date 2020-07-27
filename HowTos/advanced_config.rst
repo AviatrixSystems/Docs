@@ -21,6 +21,29 @@ In normal state, Aviatrix gateways send keep alive messages to the Controller. K
 
 See `Gateway State <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_ for more information. 
 
+
+Password Management
+----------------------
+
+By default, password management is disabled for controller's account users which means there is no restriction for password length and expiration validity check.
+
+If company's requires strict regulation for passwords then password restriction can be managed and enabled in Controller's console.
+
+Navigate to Settings -> Advanced -> Password Management to enable password management. Password Management allows to put the following restriction for account's user:
+
+    #. Minimum Password Length
+    #. Maximum Password Age(Days) and
+    #. Enforce Password History which force users to use new strong password.
+
+
+Credentials
+---------------
+In order to exercise 90 days security compliance requirement for key rotation policy, API key pair and other internal passwords for company IAM account needs to be refreshed frequently.
+This function will allow customers update the access/secret keys if they are using version 5.4 and below.
+After 5.4, this function will check the key rotation policy everyday automatically during the midnight, every power cycle (or daemon) restart.
+
+
+
 BGP Config
 ------------
 
