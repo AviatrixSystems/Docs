@@ -18,6 +18,8 @@ R6.1 (Coming soon)
 
 - **Route Based Site2Cloud Enhancement** expands the `Mapped` configuration to Aviatrix Spoke gateways in the multi-cloud transit network. One use case is to solve network overlapping issue without specifying many SNAT/DNAT rules. For configuration examples, refer to `On-prem overlaps with Spoke in multi-cloud transit deployment <https://docs.aviatrix.com/HowTos/overlapping_network_solutions.html#scenario-3-on-prem-overlaps-with-spoke-in-aviatrix-transit-deployment>`_.
 
+- **Multi-cloud Segmentation Enhancement** now handles egress default route in a consistent way by introducing individual route tables for each Security Domain on an Aviatrix Multi-cloud Transit Gateway. This release is not backward compatible to the implementation in Release 6.0. To migrate, `disable Multi-cloud Segmentation <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html#disable-aviatrix-transit-gateway-for-segmentation>`_ on each Aviatrix Transit Gateway, upgrade to Release 6.1 and `enable <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html#enable-aviatrix-transit-gateway-for-segmentation>`_ again. To learn more on deployment limitation, refer to `this link. <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html#what-is-the-limitation-of-segmentation>`_ 
+
 2. Security
 ----------------
 
