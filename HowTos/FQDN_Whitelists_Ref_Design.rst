@@ -158,7 +158,7 @@ This is a global configuration that applies to  all FQDN gateways.
 
 By checking this option, destination FQDN names that translate to private IP address range (RFC 1918) are subject to FQDN whitelist filtering function. The use case is if your destination hostname is indeed a private service and you wish to apply FQDN filtering, you can enable this option.
 
-To configure, go to Security -> Egress Control -> GLOBAL CONFIGS -> Disable Private Network Filtering. FQDN names that are resolved
+To configure, go to Security -> Egress Control -> GLOBAL CONFIGS -> Enable Private Network Filtering. FQDN names that are resolved
 to RFC 1918 range will be subject to FQDN filter function.
 
 Disable Private Network Filtering
