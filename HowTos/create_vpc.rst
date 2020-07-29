@@ -21,6 +21,8 @@ Aviatrix Transit VPC
 
 When the "Aviatrix Transit VPC" option is selected, Create a VPC creates the following AWS VPC subnets.
 
+The VPC CIDR range for a Transit VPC is from /16 to /23.
+
 ==========================================      ===================
 **Subnet name**                                 **Suggested usage**
 ==========================================      ===================
