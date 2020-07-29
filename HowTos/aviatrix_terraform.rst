@@ -53,7 +53,7 @@ Sample configuration to launch a full-mesh network on AWS
 	provider "aviatrix" {
 	  controller_ip = "w.x.y.z"
 	  username = "admin"
-	  password = "Aviatrix123"
+	  password = "!password!12@"
 	  version = "2.2"
 	}
 
