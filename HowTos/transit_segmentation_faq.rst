@@ -68,7 +68,23 @@ Follow the `Transit Segmentation Workflow. <https://docs.aviatrix.com/HowTos/tra
 How many Security Domains are supported in Multi-Cloud Transit Segmentation?
 -------------------------------------------------------------------------------
 
-The maximum number of Security Domains is 252. 
+The maximum number of Security Domains on each Aviatrix Transit Gateway is 250. 
+
+What is the difference in implementation of Segmentation between Release 6.1 and Release 6.0?
+-------------------------------------------------------------------------------------------------
+
+In Release 6.1 and later, each Security Domain is implemented as an individual route table on the Aviatrix Transit Gateway. This allows
+better handling for the default route (0.0.0.0/0) traffic if different domains require different egress next hop. In addition, duplicate 
+Spoke CIDRs attached to different Aviatrix Transit Gateways can co-exist if they belong to different domains. 
+
+What is the limitation of Segmentation?
+------------------------------------------
+
+Segmentation is not supported on Aviatrix Transit Gateway connection to Aviatrix CloudN hardware for Insane Mode connection. 
+Segmentation is also not allowed if Aviatrix Transit Gateway instance type is C5n.18xlarge. 
+
+
+
 
 
 
