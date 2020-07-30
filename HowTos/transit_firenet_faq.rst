@@ -169,7 +169,41 @@ What is the firewall instance state Inaccessible mean?
 
 The Controller periodically issues Palo Alto API calls to find out if API can be issued successfully. This is used for route updates purpose, as firewall route updates
 requires API to work. If Palo Alto API fails for two consecutive times, the Controller declares the firewall is in Inaccessible state, but the firewall should still be attached 
-and be forwarded traffic as long as its health check pass. 
+and be forwarded traffic as long as its health check pass.
+
+
+How does Transit Firenet load balance traffic between different firewalls?
+----------------------------------------------------------------------------
+
+AWS
+====
+In AWS, Transit Firenet Load Balance the traffic across different firewall using five-tuple hash.
+
+The tuple is composed of the:
+
+Source IP
+Source port
+Destination IP
+Destination port
+Protocol type
+
+The algorithm provides stickiness only within a transport session. Packets that are in the same session are directed to the same firewall. When the client starts a new session from the same source IP, the source port changes and causes the traffic to go to a different firewall.
+
+Azure
+======
+Aviatrix Transit FireNet supports different hashing algorithms available in Azure cloud to load balance the traffic across different firewalls which includes `Hash-based distribution mode (five-tuple hash) <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode#hash-based-distribution-mode>`_ and `Source IP affinity mode (three-tuple or two-tuple hash) <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode#source-ip-affinity-mode>`_.
+
+By default, Transit Firenet use 5-tuple hashing algorithm but that can be changed using Azure's portal.
+
+    1. Login to Microsoft Azure's Portal and Go to Load balancer under Azure services.
+    #. Click the Transit Firenet where Load balancing algorithm needs to be changed.
+    #. Go to Load Balancing rules under Settings and click on "LBRule".
+    #. Select hashing algorithm under Session persistence.
+        1. None -> Default five-tuple (source IP, source port, destination IP, destination port and protocol type) hashing algorithm.
+        2. Client IP -> This mode uses a two-tuple (source IP and destination IP).
+        3. Client IP and protocol -> three-tuple uses source IP, destination IP, and protocol type.
+
+|lb-rule-azure|
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
    :scale: 30%
@@ -182,5 +216,9 @@ and be forwarded traffic as long as its health check pass.
 
 .. |transit_firenet_aviatrix_egress| image:: transit_firenet_media/transit_firenet_aviatrix_egress.png
    :scale: 30%
+
+.. |lb-rule-azure| image:: transit_firenet_media/lb-rule-azure.png
+   :scale: 30%
+
 
 .. disqus::
