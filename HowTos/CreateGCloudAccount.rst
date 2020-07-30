@@ -77,7 +77,7 @@ To enable Pub/Sub on the selected project,
 Step 5: Create Credential File
 ----------------------------------
 
-When you create a cloud account for GCloud, you are asked to upload a
+When you create a cloud account Aviatrix Controller for GCloud, you will be asked to upload a
 GCloud Project Credentials file. Below are the steps to download the
 credential file from the Google Developer Console.
 
@@ -92,12 +92,17 @@ credential file from the Google Developer Console.
    |image1|
 
 4. At the Service account dropdown menu, select Compute Engine default
-   service account, select JSON.
+   service account. If you don't have a service account, click Create to create a new one. Enter a unique Service account name and 
+   skip all optional parameters. Make sure at Service account permission you select a role "Compute Admin", as shown below.
 
-5. Click Create. The credential file will be downloaded to your local
+ |iam_credential|
+
+5. Select a service account. Click the 3 skewer bar and select Create Key. Select JSON, click Create.
+
+6. Click Create. The credential file will be downloaded to your local
    computer.
 
-6. Upload the Project Credential file to the Aviatrix controller at the GCloud
+7. Upload the Project Credential file to the Aviatrix controller at the GCloud
    account create page.
 
 Troubleshooting Tips
@@ -116,5 +121,8 @@ For additional support, send an email to support@aviatrix.com
 .. |image2| image:: GCloud_media/gcloud-api-library-search.png
 
 .. |image3| image:: GCloud_media/gcloud-enable-apis-and-services.png
+
+.. |iam_credential| image:: GCloud_media/iam_credential.png
+   :scale: 30%
 
 .. disqus::
