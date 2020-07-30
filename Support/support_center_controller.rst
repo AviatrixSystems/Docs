@@ -317,7 +317,7 @@ Please pay attention that the token expires in 15 minutes. If you repeatedly get
 How can I secure my controller?
 -----------------------------------
 
-Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller. We release periodic updates of our software to address any known issues, please do keep your Aviatrix System up to date by following these `upgrade instructions<https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. If you have any further questions or doubts, please reach out to our technical support by creating a new ticketby sending a new email to support@aviatrix.com or by registering at https://aviatrix.zendesk.com.
+Please follow the instructions `here <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure your controller. We release periodic updates of our software to address any known issues, please do keep your Aviatrix System up to date by following these `upgrade instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. If you have any further questions or doubts, please reach out to our technical support by creating a new ticketby sending a new email to support@aviatrix.com or by registering at https://aviatrix.zendesk.com.
 
 Upgrading beyond 5.3 with old Controller Image (Ubuntu 14.04)
 -----------------------------------
