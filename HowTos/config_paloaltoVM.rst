@@ -123,18 +123,6 @@ Policies > NAT > Click "Add" > Click General tab, give it a name > Click Origina
 
  |nat_translated_packet|
 
-10. Configure Default Virtual Router
-------------------------------
-Under Network > Virtual Routers > Static Routes > Click on "Default"
-
-Destination : 0.0.0.0/0
-
-Interface : ethernet1/1
-
-Next Hop : None
-
-Click "Commit"
-
 11. Setup API access 
 ----------------------
 
