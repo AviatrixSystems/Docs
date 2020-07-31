@@ -35,9 +35,10 @@ R6.1 (Coming soon)
 3. Operations
 -----------------
 
-- **Account Name Alias** allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime. To change account name alias, go to Accounts -> Access Accounts, hover the mouse at a specific account, click the Pen icon and start typing. 
+- **Account Name Alias** allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime. To change account name alias, go to Accounts -> Access Accounts, hover the mouse at a specific account, click the Pen icon and start typing. Refer to `this document <https://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-account-name-alias>`_.
 
-- **Gateway Name Alias** allow you to change an Aviatrix gateway name after it is created by providing an alias name and allowing it to be modified at any time. The use case is customers often need to change some gateway names after the network has been built out to certain scale. By allowing gateway name alias to be modified without having to delete the gateway and thus reduces network downtime. To change gateway name alias, go to Gateway, hover the mouse at a specific gateway name, click the Pen icon and start typing. Note the original gateway name is still maintained as "Original Name".
+- **Gateway Name Alias** allow you to change an Aviatrix gateway name after it is created by providing an alias name and allowing it to be modified at any time. The use case is customers often need to change some gateway names after the network has been built out to certain scale. By allowing gateway name alias to be modified without having to delete the gateway and thus reduces network downtime. To change gateway name alias, go to Gateway, hover the mouse at a specific gateway name, click the Pen icon and start typing. Note the original gateway name is still maintained as "Original Name". Refer to `this document <https://docs.aviatrix.com/HowTos/gateway.html#gateway-name-alias>`_.
+
 
 - **Create a VPC Enhancement** now creates multiple route tables associated with public and private subnets. One use case is to allow traffic load balancing when Aviatrix Spoke gateways are deployed. To configure, go to Useful Tools -> Create a VPC. For more details, check out `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_.
  
@@ -50,7 +51,7 @@ R6.1 (Coming soon)
 
 - **Max Routes Pushing to VPN Client** has now been increased to 250. This allow a larger network deployment. Requires Aviatrix VPN client 2.11. No configuration change is needed.  
 
-- **GeoVPN to use DHCP Setting** for DNS name resolution from the VPC where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. 
+- **GeoVPN to use DHCP Setting** for DNS name resolution from the VPC where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. For configuration examples, refer to `VPN Access Gateway Selection by Geolocation of User <https://docs.aviatrix.com/HowTos/GeoVPN.html>`_.
 
 5. CloudN
 ------------
