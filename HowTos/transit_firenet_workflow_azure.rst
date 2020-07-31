@@ -13,8 +13,6 @@ Aviatrix Transit FireNet supports different hashing algorithms available in Azur
 
 To learn more about Hashing Algorithm and Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-If you are looking to deploy Aviatrix FireNet Workflow in AWS, your starting point is `here. <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ and If you would like to deploy firewall networks in AWS Transit Gateway (TGW) environment, your starting point is `Firenet Workflow. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
-
 In this example, Transit VNet with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
 
 The transit VNET will have a firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) deployed in it. Please see the diagram below for more details.
@@ -142,7 +140,7 @@ This step launches a Firewall instance and associates it with one of the FireNet
     The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 .. note::
-    By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 or 3 tuple as per requirement. Please check transit firenet FAQs for more details.
+    By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 or 3 tuple as per requirement. Please check transit `firenet FAQs <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#azure>`_ for more details.
 
 7a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

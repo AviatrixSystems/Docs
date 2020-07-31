@@ -301,8 +301,10 @@ Inspect Inter Region Traffic
 Starting from Release 6.1, the Security Domain associated with each TGW Peering attachment is available for user. The Security Domain has the
 name `peering_<TGW NAME>`. For example, for the TGW with name tgw-1, the peering Security Domain is `peering_tgw-1`. 
 
-You can specify FireNet inspection policy on this Security Domain. When you do so, it implies that any traffic in and out of this 
-domain is inspected. Use TGW -> Plan -> Add/Modify Connection Policies to connect the peering domain with FireNet Domain. 
+You can specify FireNet inspection policy on this Security Domain. When you do so, it implies that any cross region traffic 
+is inspected. Use TGW -> Plan -> Add/Modify Connection Policies to connect the peering domain with FireNet Domain. 
+
+Note to avoid double inspections by two FireNet gateways associated with each TGW, configure the connection policy between peering domain and FireNet domain on only one TGW. 
 
 b. Build Connection Policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
