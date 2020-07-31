@@ -55,10 +55,6 @@ R6.1 (Coming soon)
 
 - **GeoVPN to use DHCP Setting** for DNS name resolution from the VPC where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. For configuration examples, refer to `VPN Access Gateway Selection by Geolocation of User <https://docs.aviatrix.com/HowTos/GeoVPN.html>`_.
 
-5. CloudN
-------------
-
-- **CloudN As a Gateway (CaaG)** simplifies managing Aviatrix hardware appliance CloudN by enabling the Controller to manage the configuration and operation of CloudN appliance.
 
 R6.0.2466 (7/22/2020)
 =======================
