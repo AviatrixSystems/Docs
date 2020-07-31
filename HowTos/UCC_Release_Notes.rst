@@ -8,7 +8,7 @@ R6.1 (Coming soon)
 1. Multi-cloud Network
 --------------------------------
 
-- **Scale out Firewalls in Azure FireNet** allows FireNet to support multiple firewall virtual machines in Azure. The use case is to support more than 2 firewall deployment to meet performance requirements. Refer to `this document <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
+- **Scale out Firewalls in Azure FireNet** allows FireNet to support multiple firewall virtual machines in Azure. The use case is to support more than 2 firewall deployment to meet performance requirements. Only new FireNet gateways in Azure supports scale out firewall feature. Refer to `this document <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
 
 - **Azure GovCloud** is now supported for both Controller and Aviatrix gateways. Controller can be launched from Azure GovCloud marketplace. Follow `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ to get started. 
 
