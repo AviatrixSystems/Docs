@@ -7,13 +7,13 @@
 Example Config for FortiGate VM in Azure
 =========================================================
 
-In this document, we provide an example to set up the Fortigate Next Generation Firewall instance for you to validate that packets are indeed sent to the Fortigate Next Generation Firewall for VPC to VPC and from VPC to internet traffic inspection.
+In this document, we provide an example to set up the Fortigate Next Generation Firewall instance for you to validate that packets are indeed sent to the Fortigate Next Generation Firewall for VNET to VNET and from VNET to internet traffic inspection.
 
 The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_.
 
-After the launch is complete, the console displays the Fortigate Next Generation Firewall instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
+After the launch is complete, the console displays the Fortigate Next Generation Firewall instance with its public IP address of management/egress interface and allows you to access the FortiGate web page.
 
-Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
+Here is the Firewall information in this example used during launch (Aviatrix Controller's console, Firewall Network -> Setup -> Step 7a) for your reference. Please adjust it depending on your requirements.
 
 ==========================================      ==========
 **Example setting**                             **Example value**
@@ -69,7 +69,7 @@ Go to "Network -> Interfaces" and review the interface configuration before move
 
 |review_fg_interfaces|
 
-3. Create static routes for routing of traffic VPC to VPC
+3. Create static routes for routing of traffic VNET to VNET
 -----------------------------------------------------------------
 
 For simplicity, in this example we configure the firewall to send all RFC 1918 packets to LAN port.
@@ -96,7 +96,29 @@ Those static routes could also be reviewed on the page "Dashboard -> Network -> 
 |az_fortigate_static_routes_review|
 
 
-7. Configure basic traffic policy to allow traffic VPC to VPC
+4. Enable Health Check Policy in Firewall
+------------------------------------------------
+
+Aviatrix Controller uses HTTPS (TCP 443 port) to check the health of firewall every 5 seconds. User needs to enable this port in firewall as per given instruction.
+
+Please follow the steps to allow HTTPS in FortiGate:
+
+    1. Login to FortiGate's console using username and password
+    #. Go to Network -> Interfaces, select **port 2** and click "Edit".
+    #. Check HTTPS checkbox under Administrative access -> IPv4 and click "OK".
+
+**Example Fortigate Port 2 Interface**
+
+|health-check|
+
+The health check probes can be verified in FortiGate by navigating to Log & Report -> Local Traffic.
+
+**Example Health-Check Logs in Fortigate**
+
+|health-probe-logs|
+
+
+5. Configure basic traffic policy to allow traffic VNET to VNET
 -------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in/out of LAN interface.
@@ -121,7 +143,7 @@ NAT                 Disabled
 
 After validating that your traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-8. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
+6. [Optional] Configure basic traffic policy to allow traffic VNET to Internet
 ----------------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic to the LAN port of the Firewall, we simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
@@ -151,20 +173,20 @@ NAT                 Enable
 
 .. important::
 
-  NAT function needs to be enabled on this VPC to Internet policy
+  NAT function needs to be enabled on this VNET to Internet policy
 
 |az_fortigate_policy_vpc_to_internet|
 
 After validating that your traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-9. Ready to go!
+7. Ready to go!
 ----------------
 
 Now your Security Gateway instance is configured and ready to receive packets!
 
 Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
-10. View Traffic Log
+8. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the Fortigate Next Generation Firewall console. Go to the page **Dashboard -> FortiView Sessions or FortiView Destinations**. Traffic can also be viewed from **Logs & Report**
@@ -172,20 +194,20 @@ You can view if traffic is forwarded to the firewall instance by logging in to t
 .. note::
     To view Forward Traffic logs under Logs & Report, go to Policy & Objects -> Firewall Policy -> Select a Policy and click Edit -> Logging Options -> Select All Sessions for Log Allowed Traffic.
 
-For VPC to VPC traffic:
-***********************
+For VNET to VNET traffic:
+*****************************
 
-Launch one instance in PROD Spoke VPC and DEV Spoke VPC. Start ping packets from a instance in DEV Spoke VPC to the private IP of another instance in PROD Spoke VPC. The ICMP traffic should go through the firewall and be inspected in firewall.
+Launch one instance in PROD Spoke VNET and DEV Spoke VNET. Start ping packets from a instance in DEV Spoke VNET to the private IP of another instance in PROD Spoke VNET. The ICMP traffic should go through the firewall and be inspected in firewall.
 
 |az_fortigate_view_traffic_log_vpc_to_vpc|
 
 |az_fortigate_view_traffic_log_vpc_to_vpc_2|
 
 
-[Optional] For VPC to Internet traffic:
-***************************************
+[Optional] For VNET to Internet traffic:
+***********************************************
 
-Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
+Launch a private instance in the Spoke VNET (i.e. PROD Spoke VNET) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
 
 .. important::
     The Egress Inspection is only applicable to all VNets that deploys non public facing applications. If you have any Spoke VNet that has public facing web services, you should not enable Egress Inspection. This is because Egress Inspection inserts a default route (0.0.0.0/0) towards Transit GW to send the Internet traffic towards firewall to get inspected. Azure's System Default Route pointing towards Internet will be overwritten by User-defined default route inserted by the Controller.
@@ -222,5 +244,11 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
 .. |az_fortigate_view_traffic_log_vpc_to_internet| image:: config_FortiGate_media/az_fortigate_view_traffic_log_vpc_to_internet.png
    :scale: 40%
 .. |az_fortigate_view_traffic_log_vpc_to_internet_2| image:: config_FortiGate_media/az_fortigate_view_traffic_log_vpc_to_internet_2.png
-   :scale: 25%
+   :scale: 30%
+.. |health-check| image:: config_FortiGate_media/health-check.png
+   :scale: 30%
+.. |health-probe-logs| image:: config_FortiGate_media/health-probe-logs.png
+   :scale: 30%
+
+
 .. disqus::
