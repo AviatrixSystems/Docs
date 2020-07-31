@@ -57,7 +57,7 @@ If you are looking to deploy Check Point in AWS environment, your starting point
 
 The Aviatrix Firewall Network (FireNet) workflow launches a Check Point Security Gateway instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_.
 
-Here is the Security Gateway information in this example for your reference. Please adjust it depending on your requirements.
+Go to Aviatrix Controller's console, Firewall Network -> Setup -> Step 7a. Here is the Security Gateway information in this example for your reference. Please adjust it depending on your requirements.
 
 ==========================================      ==========
 **Example setting**                             **Example value**
@@ -87,24 +87,14 @@ eth0 (on subnet -Public-FW-ingress-egress)                       Egress or Untru
 eth1 (on subnet -dmz-firewall-lan)                               LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
-After the launch is complete, the console displays the Check Point Security Gateway instance with its public IP address of management/egress interface for you to login to the console.
+After the launch is complete, Aviatrix Controller automatically initiates the Security Gateway on-boarding process, configure interfaces and program RFC 1918 routes in Check Point Security Gateway.
 
-
-2. Firewall Vendor Integration
--------------------------------------------------
-Go to Aviatrix Controller --> Firewall Network --> Vendor Integration and complete the step as shown below:
-
-|cp_firewall_vendor_integration|
-
-Click **Save**, **Show** and **Sync** respectively.
-
-This automatically set up the routes between Aviatrix Gateway and Vendor’s firewall instance in this case Check Point. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
-
-
-3. Login to Check Point Firewall Gaia Portal
+2. Login to Check Point Firewall Gaia Portal
 ----------------------------------------------
 
-After launch is complete, wait for 5 minutes and then go back to the Controller, Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
+After launch is complete, the controller's displays the Check Point Security Gateway with its public IP address of management/egress interface to login to the Check Point Gaia's console.
+
+Go back to the Controller's console, Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
 
 The URL takes you to the Check Point Security Gateway Gaia Portal you just launched.
 
@@ -130,6 +120,20 @@ Routes can also be reviewed by clicking the button “Monitoring” on the page 
 
 |cp_firewall_routes_monitoring|
 
+.. important::
+    Please make sure HTTPS (TCP 443 port) must be allowed in Check Point Security Gateway. By default, TCP 443 port is enabled in Security Gateay. This port will be used for Security Gateway health check.
+
+
+3. (Optional) Firewall Vendor Integration
+-------------------------------------------------
+Go to Aviatrix Controller --> Firewall Network --> Vendor Integration and complete the step as shown below:
+
+|cp_firewall_vendor_integration|
+
+Click **Save**, **Show** and **Sync** respectively.
+
+This automatically set up the non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case Check Point. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
+
 
 4. Download and install the SmartConsole
 -------------------------------------------------
@@ -137,9 +141,9 @@ Routes can also be reviewed by clicking the button “Monitoring” on the page 
 4.1 Deploy and Install Check Point Security Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Check Point instance launched in the previous step requires a management console for managing policies. 
+The Check Point Security Gateway launched in the step 1 requires a management console (Check Point Security Manager) for managing one or more Security Gateways.
 
-Deploy and install the **Check Point Security Management** from Azure Marketplace in Azure Console.
+Deploy and install the **Check Point Security Management** from Azure Marketplace in Azure's Console.
 
 .. important::
 
@@ -156,7 +160,9 @@ Login to Check Point Security Manager and download the SmartConsole on Windows-b
 4.2 Install SmartConsole and Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install the SmartConsole and login into it with the Gaia Portal username, password and IP Address of Security Manager.
+Check Point's SmartConsole is a Windows-based application used to configure and manage polices. These polices can be applied to one or more Security Gateways.
+
+Install the SmartConsole and login into it with the Gaia Portal username, password and IP Address of **Check Point's Security Manager**.
 
 |smart_console_login|
 
@@ -427,23 +433,23 @@ Launch a private instance in the Spoke VNET (i.e. PROD Spoke VNET) and start pin
 
 
 .. |cp_arch_reference| image:: config_Checkpoint_media/cp_arch_reference.png
-   :scale: 35%
+   :scale: 40%
 .. |avx-firewall-step7a_UI| image:: config_Checkpoint_media/avx-firewall-step7a_UI.png
-   :scale: 30%
+   :scale: 35%
 .. |cp_firewall_interfaces| image:: config_Checkpoint_media/cp_firewall_interfaces.png
-   :scale: 30%
+   :scale: 35%
 .. |cp_firewall_static_routes| image:: config_Checkpoint_media/cp_firewall_static_routes.png
-   :scale: 30%
+   :scale: 35%
 .. |cp_firewall_routes_monitoring| image:: config_Checkpoint_media/cp_firewall_routes_monitoring.png
-   :scale: 30%
+   :scale: 35%
 .. |cp_firewall_vendor_integration| image:: config_Checkpoint_media/cp_firewall_vendor_integration.png
-   :scale: 30%
+   :scale: 40%
 .. |cp_security_manager| image:: config_Checkpoint_media/cp_security_manager.png
-   :scale: 30%
+   :scale: 35%
 .. |smart_console_login| image:: config_Checkpoint_media/smart_console_login.png
    :scale: 40%
 .. |smartconsole_add_gateway| image:: config_Checkpoint_media/smartconsole_add_gateway.png
-   :scale: 30%
+   :scale: 35%
 .. |cp_gw_creation_wizard| image:: config_Checkpoint_media/cp_gw_creation_wizard.png
    :scale: 50%
 .. |gw_general_properties| image:: config_Checkpoint_media/gw_general_properties.png
@@ -465,13 +471,13 @@ Launch a private instance in the Spoke VNET (i.e. PROD Spoke VNET) and start pin
 .. |policy_installed| image:: config_Checkpoint_media/policy_installed.png
    :scale: 35%
 .. |cp_egress_inspection| image:: config_Checkpoint_media/cp_egress_inspection.png
-   :scale: 25%
+   :scale: 30%
 .. |cp_policy_vpc_to_internet_nat_enabled| image:: config_Checkpoint_media/cp_policy_vpc_to_internet_nat_enabled.png
-   :scale: 25%
+   :scale: 30%
 .. |cp_policy_vpc_to_internet| image:: config_Checkpoint_media/cp_policy_vpc_to_internet.png
    :scale: 30%
 .. |cp_view_traffic_log_vpc_to_vpc| image:: config_Checkpoint_media/cp_view_traffic_log_vpc_to_vpc.png
-   :scale: 25%
+   :scale: 35%
 .. |cp_view_traffic_log_vpc_to_internet| image:: config_Checkpoint_media/cp_view_traffic_log_vpc_to_internet.png
-   :scale: 25%
+   :scale: 30%
 .. disqus::
