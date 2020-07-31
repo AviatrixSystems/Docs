@@ -723,9 +723,13 @@ Gateway Name Alias feature allows you to change an Aviatrix gateway name after i
 
 To change gateway name alias, go to Gateway, then hover the mouse at a specific gateway name, click the Pen icon and start typing. 
 
+|gateway_name_alias|
+
 .. note::
 
-   The original gateway name is still maintained as “Original Name”.
+   The original gateway name is still maintained as “Original Name” in the table column.
+
+To revert back to the original gateway name, go to Gateway, then hover the mouse at the gateway alias name, click the Pen icon and apply the name with empty text. 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
@@ -742,6 +746,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 30%
 
 .. |network_mapping| image:: gateway_media/network_mapping.png
+   :scale: 30%
+   
+.. |gateway_name_alias| image:: gateway_media/gateway_name_alias.png
    :scale: 30%
 
 .. disqus::
