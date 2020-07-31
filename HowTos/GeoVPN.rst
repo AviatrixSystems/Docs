@@ -150,13 +150,15 @@ GeoVPN can use DHCP Setting for DNS name resolution from the cloud private netwo
 #. In the `VPC ID/VNet Name` drop down, select the specific VPC ID/VNet Name and LB/Gateway Name instead of Geo VPN service name
 #. Update the supported VPN configuration as below regarding to your requirement in each VPN gateway
    
-   - Split Tunnel Mode
-   
    - Additional CIDRs
    
    - Nameservers
    
    - Search Domains
+   
+   .. note::
+
+      The attributes “Additional CIDRs, Nameservers, and Search Domains” are able to be edited for individual LB//Gateway Name only if the split tunnel mode is selected under the Geo VPN service.
 
 #. Check this `document <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#how-can-i-resolve-my-private-vpc-instance-s-name-when-connecting-via-remote-vpn>`_ for more info.
 
