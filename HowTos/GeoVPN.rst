@@ -143,7 +143,7 @@ Once you have Geo VPN feature enabled, you can centrally manage all the VPN gate
 Advanced Settings - manage VPN configuration for individual DHCP setup  
 ======================================================================
 
-GeoVPN to use DHCP Setting for DNS name resolution from the cloud private network where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. Follow these steps to configure DHCP configuration for individual VPN gateway:
+GeoVPN can use DHCP Setting for DNS name resolution from the cloud private network where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. Follow these steps to configure DHCP configuration for individual VPN gateway:
 
 #. Click the **OpenVPN** navigation menu item
 #. Click **Edit Config**
