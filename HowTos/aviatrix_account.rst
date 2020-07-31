@@ -81,6 +81,8 @@ To change account name alias, go to Accounts -> Access Accounts, then hover the 
 
 |account_name_alias|
 
+To revert back to the original account name, go to Accounts -> Access Accounts, then hover the mouse at the specific account with alias name, click the Pen icon and apply the name with empty text.
+
 .. |secondary_account| image:: adminusers_media/secondary_account.png
    :scale: 50%
 
