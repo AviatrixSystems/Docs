@@ -20,6 +20,8 @@ R6.1 (Coming soon)
 
 - **Multi-cloud Segmentation Enhancement** now handles egress default route in a consistent way by introducing individual route tables for each Security Domain on an Aviatrix Multi-cloud Transit Gateway. This release is not backward compatible to the implementation in Release 6.0. To migrate, `disable Multi-cloud Segmentation <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html#disable-aviatrix-transit-gateway-for-segmentation>`_ on each Aviatrix Transit Gateway, upgrade to Release 6.1 and `enable <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html#enable-aviatrix-transit-gateway-for-segmentation>`_ again. To learn more on deployment limitation, refer to `this link. <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html#what-is-the-limitation-of-segmentation>`_ 
 
+- **FireNet Check Point Integration Enhancement** now support Check Point firewall or security gateway automatic route updates to its routing tables by the Controller. You no longer need to statically configure RFC 1918 or any other routes.
+
 2. Security
 ----------------
 
@@ -27,7 +29,7 @@ R6.1 (Coming soon)
 
 - **Subnets Pass-through** allows you to specify certain subnets in a VPC to bypass any FQDN filter rules. One use case is that certain subnets, for example,  are for Dev environment, therefore does not require to be FQDN filtered or logged. To configure, go to Security -> Egress Control -> Egress FQDN Gateway View. Select a gateway, click Actions -> Edit Pass-through. Select subnet or multi select subnets to allow bypass the filter. For more details, refer to `FQDN Source Pass-through <https://docs.aviatrix.com/HowTos/fqdn_viewlog.html#edit-pass-through>`_.
 
-- **Exact Port Match** now applies to each FQDN rule. One use case is if you only specify an FQDN rule for TCP port 443, packets with the same FQDN rule for TCP port 80 are dropped unless you have the specific FQDN rule on TCP port 80. This is a bug fix, no configuration required.
+- **Exact Port Match** now applies to each FQDN rule. One use case is if you only specify an FQDN rule for TCP port 443, packets with the same FQDN rule for TCP port 80 are dropped unless you have the specific FQDN rule on TCP port 80. This is a bug fix, no configuration required. For more information, refer to `Exact Match <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exact-match>`_. 
 
 - **FQDN Option for Exact Match** is a new feature where if a FQDN rule does not have * an exact match is expected. If this global option is not enabled, FQDN rules use regex to match any FQDN names that are subset of the name. For example, if salesforce.com is a rule and Exact Match option is enabled, finance.salesforce.com is not a match and will be dropped. For configuration details, refer to `FQDN Exact Match <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exact-match>`_. 
 
