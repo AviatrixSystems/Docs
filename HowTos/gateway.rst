@@ -729,7 +729,7 @@ To change gateway name alias, go to Gateway, then hover the mouse at a specific 
 
    The original gateway name is still maintained as “Original Name” in the table column.
 
-To revert back to the original gateway name, go to Gateway, then hover the mouse at the gateway alias name, click the Pen icon and apply the name with empty text. 
+To revert back to the original gateway name, go to Gateway, then hover the mouse at the specific gateway with alias name, click the Pen icon and apply the name with empty text. 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
