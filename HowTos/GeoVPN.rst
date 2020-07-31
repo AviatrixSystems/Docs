@@ -129,9 +129,36 @@ Once you have Geo VPN enabled, you can add users.  Follow these steps to add use
 #. Click **OK**
 
    |imageAddVPNUser|
+   
+Manage Geo VPN configuration
+++++++++++++++++++++++++++++
 
+Once you have Geo VPN feature enabled, you can centrally manage all the VPN gateways' configuration under the Geo VPN service. Follow these steps to configure them:
 
+#. Click the **OpenVPN** navigation menu item
+#. Click **Edit Config**
+#. In the `VPC ID/VNet Name` drop down, select the Geo VPN service name created in the previous steps
+#. Update the VPN configuration regarding to your requirement
 
+Advanced Settings - manage VPN configuration for individual DHCP setup  
+======================================================================
+
+GeoVPN to use DHCP Setting for DNS name resolution from the cloud private network where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. Follow these steps to configure DHCP configuration for individual VPN gateway:
+
+#. Click the **OpenVPN** navigation menu item
+#. Click **Edit Config**
+#. In the `VPC ID/VNet Name` drop down, select the specific VPC ID/VNet Name and LB/Gateway Name instead of Geo VPN service name
+#. Update the supported VPN configuration as below regarding to your requirement in each VPN gateway
+   
+   - Split Tunnel Mode
+   
+   - Additional CIDRs
+   
+   - Nameservers
+   
+   - Search Domains
+
+#. Check this `document <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#how-can-i-resolve-my-private-vpc-instance-s-name-when-connecting-via-remote-vpn>`_ for more info.
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
