@@ -100,6 +100,10 @@ You can use the Controller Security Management feature to automatically manage t
 
 Go to Settings -> Controller -> Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click Enable. 
 
+.. note::
+
+  After this feature is enabled, you can now edit the security rules that are outside gateways public IP addresses to limit the source address range. 
+
 AWS:
 ^^^^
 
@@ -112,11 +116,9 @@ AZURE:
 
 When this feature is enabled, the Controller utilizes the associated network security group which can support up to 1,000 security rules.
 
-::
+.. note::
 
-  After this feature is enabled, you can now edit the security rules that are outside gateways public IP addresses to limit the source address range. 
-
-(If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller.) 
+   If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller.
 
 2. Use signed certificate
 ##########################
