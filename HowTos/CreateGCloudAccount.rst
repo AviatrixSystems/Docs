@@ -86,14 +86,12 @@ credential file from the Google Developer Console.
 
 2. Select the project you are creating credentials for.
 
-3. At Credentials, Click Create credentials, select Service account key,
+3. At Credentials, Click Create credentials, select Service account,
    as shown below
 
-   |image1|
+   |service_account|
 
-4. At the Service account dropdown menu, select Compute Engine default
-   service account. If you don't have a service account, click Create to create a new one. Enter a unique Service account name and 
-   skip all optional parameters. Make sure at Service account permission you select a role "Compute Admin", as shown below.
+4. At the Service Accounts, enter a Service account name and click Create. For Service account permissions, select Project, Editor, as shown below. 
 
  |iam_credential|
 
@@ -121,6 +119,9 @@ For additional support, send an email to support@aviatrix.com
 .. |image2| image:: GCloud_media/gcloud-api-library-search.png
 
 .. |image3| image:: GCloud_media/gcloud-enable-apis-and-services.png
+
+.. |service_account| image:: GCloud_media/service_account.png
+   :scale: 30%
 
 .. |iam_credential| image:: GCloud_media/iam_credential.png
    :scale: 30%
