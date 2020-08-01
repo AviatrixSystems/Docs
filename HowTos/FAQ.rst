@@ -96,14 +96,21 @@ addresses, in addition to your own public IP address. This is because
 gateways launched from the controller use its public IP address to
 communicate back to the Controller.
 
-AWS Network ACLs are not stateful, so they are not recommended for controlling access to/from Aviatrix Controllers and Gateways.
-
 You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
-
 
 Go to Settings -> Controller -> Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click Enable. 
 
+AWS:
+^^^^
+
+AWS Network ACLs are not stateful, so they are not recommended for controlling access to/from Aviatrix Controllers and Gateways.
+
 When this feature is enabled, the Controller will immediately create 4 security groups. Since each security group can support 50 security rules, the Controller can support up to 200 gateways. 
+
+AZURE:
+^^^^^^
+
+When this feature is enabled, the Controller utilizes the associated network security group which can support up to 1,000 security rules.
 
 ::
 
