@@ -103,9 +103,19 @@ How can I test PrivateS3?
 
 There is a simple method to simulate DNS resolution to the PrivateS3 internal NLB. 
 
-Launch a Linux instance or host, in sudo mode, edit file /etc/hosts. Add S3 bucket FQDN names to this file, as shown in the example below.
+Launch a Linux instance or host, in sudo mode, edit file /etc/hosts. Add S3 bucket FQDN names to this file, as shown in the example below, where 172.32.1.212 is the PrivateS3 NLB IP address. This IP address can be found `here <https://docs.aviatrix.com/HowTos/privateS3_workflow.html#step-5-view-delete-privates3>`_.
 
 |dns_emulation|
+
+You can then run an AWS CLI command, such as "aws s3 ls", you should be able to see the list of S3 buckets on the Access Account 
+in the region where a PrivateS3 gateway is launched. 
+
+Below is another example of uploading  a file to S3 using AWS CLI 
+
+::
+
+  ubuntu@ip-172-32-1-144:~$ aws s3 cp init-cfg.txt.3 s3://sxw-new-bucket-2
+  upload: ./init-cfg.txt.3 to s3://sxw-new-bucket-2/init-cfg.txt.3  
 
 
 How do I troubleshoot PrivateS3?
