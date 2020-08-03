@@ -6,6 +6,23 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+Field Notice 0011 (2020/08/02)
+----------------------------------
+
+**Unable to log into Controller with Chrome browser**
+
+**Problem:**
+After upgrading to 6.0 or above, users were not able to log into Controller with Chrome browser using SAML or admin user/password
+
+**Recomended Solution:**
+Upgrade to 6.0.2481 or 6.1.1162 release
+
+**Work around:**
+1.	Go to url chrome://flags/;
+2.	Search for keyword “samesite” and Disabled all three; and Relaunch;
+3.	Or try using Firefox or any browser other than Chrome
+
+
 Field Notice 0010 (2020/05/12)
 ----------------------------------
 
