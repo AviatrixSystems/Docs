@@ -440,20 +440,24 @@ When "Customized SNAT" is selected, the gateway can translate source IP address 
 
 |SNAT-customize|
 
-===========================      =======================
-**Field**                        Value
-===========================      =======================
-Src CIDR                         This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
-Src Port                         This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
-Dst CIDR                         This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
-Dst Port                         This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
-Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
-Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
-Mark                             This is a qualifier condition that specifies a tag or mark of a TCP session where the rule applies. When left blank, this field is not used.
-SNAT IPs                         This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.100.1.5 - 100.100.1.10
-SNAT Port                         This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
-Exclude Route Table               This field specifies which VPC private route table will not be programmed with the default route entry. 
-===========================      =======================
+Sync to HA Gateway feature is an option to help users automatically duplicating NAT rules to HA peer gateway. By default, this function is disabled on Customized SNAT meaning users need to configure NAT rules manually on HA peer gateway even NAT rules are same.
+
+================================       =======================
+**Field**                              Value
+================================       =======================
+SRC CIDR	                              This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
+SRC PORT                               This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
+DST CIDR                               This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
+DST PORT                               This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
+PROTOCOL                               This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
+INTERFACE                              This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
+CONNECTION                             This is a qualifier condition that specifies output connection where the rule applies. When left blank, this field is not used.
+MARK                                   This is a qualifier condition that specifies a tag or mark of a TCP session where the rule applies. When left blank, this field is not used.
+SNAT IPS                               This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.100.1.5 - 100.100.1.10
+SNAT PORT                              This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
+APPLY ROUTE ENTRY                      This is an option to program the route entry "DST CIDR pointing to Aviatrix Gateway" into Cloud platform routing table.
+(DEPRECATED) EXCLUDE ROUTE TABLE       This field specifies which VPC private route table will not be programmed with the default route entry. This is a depracated function, but users still can combine this with APPLY ROUTE ENTRY enabled.
+================================       =======================
 
 Destination NAT
 ----------------
@@ -464,19 +468,24 @@ There are multiple optional parameters you can configure to meet your requiremen
 
 |dnat-port-mapping|
 
-===========================      =======================
-**Field**                        Value
-===========================      =======================
-Source CIDR                      This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
-Source Port                      This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
-Destination CIDR                 This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
-Destination Port                 This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
-Protocol                         This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
-Interface                        This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
-Mark                             This is a rule field that specifies a tag or mark of a TCP session when all qualifier conditions meet. When left blank, this field is not used.
-DNAT IPs                         This is a rule field that specifies the translated destination IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.101.2.5 - 100.101.2.10
-DNAT Port                         This is a rule field that specifies the translated destination port when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
-===========================      =======================
+Sync to HA Gateway feature is an option to help users automatically duplicating NAT rules to HA peer gateway. By default, this function is enabled on DNAT.
+
+================================       =======================
+**Field**                              Value
+================================       =======================
+SRC CIDR                               This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
+SRC PORT                               This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
+DST CIDR                               This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
+DST PORT                               This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
+PROTOCOL                               This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
+INTERFACE                              This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
+CONNECTION                             This is a qualifier condition that specifies output connection where the rule applies. When left blank, this field is not used.
+MARK                                   This is a rule field that specifies a tag or mark of a TCP session when all qualifier conditions meet. When left blank, this field is not used.
+DNAT IPS                               This is a rule field that specifies the translated destination IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.101.2.5 - 100.101.2.10
+DNAT PORT                              This is a rule field that specifies the translated destination port when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
+APPLY ROUTE ENTRY                      This is an option to program the route entry "DST CIDR pointing to Aviatrix Gateway" into Cloud platform routing table.
+(DEPRECATED) EXCLUDE ROUTE TABLE       This field specifies which VPC private route table will not be programmed with the default route entry. This is a depracated function, but users still can combine this with APPLY ROUTE ENTRY enabled.
+================================       =======================
 
 Network Mapping
 -----------------
@@ -714,25 +723,32 @@ Gateway Name Alias feature allows you to change an Aviatrix gateway name after i
 
 To change gateway name alias, go to Gateway, then hover the mouse at a specific gateway name, click the Pen icon and start typing. 
 
+|gateway_name_alias|
+
 .. note::
 
-   The original gateway name is still maintained as “Original Name”.
+   The original gateway name is still maintained as “Original Name” in the table column.
+
+To revert back to the original gateway name, go to Gateway, then hover the mouse at the specific gateway with alias name, click the Pen icon and apply the name with empty text. 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |edit-designated-gateway| image:: gateway_media/edit-designated-gateway.png
    :scale: 50%
 
-.. |SNAT-customize| image:: gateway_media/SNAT-customize.png
+.. |SNAT-customize| image:: gateway_media/SNAT-customize-6-1.png
    :scale: 30%
 
-.. |dnat-port-mapping| image:: gateway_media/dnat-port-mapping.png
+.. |dnat-port-mapping| image:: gateway_media/dnat-port-mapping-6-1.png
    :scale: 30%
 
 .. |additional_cidr| image:: gateway_media/additional_cidr.png
    :scale: 30%
 
 .. |network_mapping| image:: gateway_media/network_mapping.png
+   :scale: 30%
+   
+.. |gateway_name_alias| image:: gateway_media/gateway_name_alias.png
    :scale: 30%
 
 .. disqus::
