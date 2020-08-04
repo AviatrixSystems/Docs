@@ -135,7 +135,8 @@ Insane Mode Encryption                          Yes         Yes              No 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
 FlightPath Expert Diagnostics                   Yes         Yes             Yes                              Yes                      No
 IPv6                                            Yes         No              No                               No                       No
-PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No 
+PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No
+Controller Security Group Management            Yes         Yes             No                               Yes                      No
 ==========================================      ==========  =============   ======================           =================       ==========
 
 
