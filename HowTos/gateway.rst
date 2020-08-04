@@ -77,7 +77,15 @@ Azure Performance Numbers (without Insane mode):
 | F Series                   | approximately 450Mbps - 1.2Gbps                 |
 +----------------------------+-------------------------------------------------+
 
+GCP Performance Numbers (without Insane mode):
 
++--------------------------------------------+-----------------------+
+| GCP Instance Size                          | Expected Throughput   |
++============================================+=======================+
+| n1-standard-1, n1-standard-2, n1-highcpu-2 | 1.0 - 1.2 Gbps        |
++--------------------------------------------+-----------------------+
+| n1-standard-4, n1-highcpu-2                | 2.3 - 2.5 Gbps        |
++--------------------------------------------+-----------------------+
 
 OCI Expected Throughput Numbers: 
 
