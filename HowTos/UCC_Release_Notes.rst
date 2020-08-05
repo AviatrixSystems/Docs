@@ -53,6 +53,11 @@ R6.1.1162 (8/1/2020)
 
 - **GeoVPN to use DHCP Setting** for DNS name resolution from the VPC where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. For configuration examples, refer to `VPN Access Gateway Selection by Geolocation of User <https://docs.aviatrix.com/HowTos/GeoVPN.html>`_.
 
+R6.0.2483 (8/4/2020)
+======================
+
+- **Bug fix** fix upgrade jump version issue. 
+
 R6.0.2481 (8/1/2020)
 ======================
 
