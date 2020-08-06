@@ -6,6 +6,63 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+Field Notice 0012 (2020/08/07)
+----------------------------------
+**Security Vulnerabilities in R5.3 and Earlier**
+
+**Problem**
+In May 2020, Aviatrix worked with Critical Start, a Security Researcher firm, on some security vulnerabilities on Aviatrix Controller R5.3. The vulnerabilities were identified in the lab. The discoveries had some critical severity issues. These issues were considered critical under the assumption that there were no other safeguards in place.   
+
+Aviatrix addressed all the issues that were identified. All the resolutions have also been validated by the reporter. Details about these issues are published in our PSIRT Advisory at https://docs.aviatrix.com/HowTos/security_bulletin_article.html 
+
+**Recommended Solution**
+We request our customers to upgrade their Controller to 5.4.2183 or higher, following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html to get the above fixes. We strongly recommend that the Controller be upgraded to 6.0 or higher. 
+
+Please note that if the Controller is running an older AMI, it needs to be migrated to run on the latest AMI before upgrading to 5.4. If the Controller is already running 5.4 or above, a Controller AMI migration is not needed. More information about the Controller AMI migration is at https://docs.aviatrix.com/HowTos/controller_migration.html 
+
+**Procedure**
+
+Check if the controller is running an older AMI or a newer AMI 
+
+* Go to "ControllerUI/Troubleshoot/Diagnostics/Gateway/Diagnostics", select "none" under "Gateway" and check the box next to controller and click on "Run" 
+
+* After the operation is complete, click on "Show" 
+
+* Do a browser search for "Ubuntu SMP" to find out if the controller is running a 14.0.4 AMI or an 18.0.4 AMI as show below. 
+
+
+If the controller is running a 14.0.4 AMI 
+
+* Please follow the upgrade instructions at  https://docs.aviatrix.com/HowTos/inline_upgrade.html carefully to upgrade to 5.3 
+
+* Once you reach 5.3, please upgrade the Controller AMI following the instructions at https://docs.aviatrix.com/HowTos/controller_migration.html 
+
+* Please continue upgrading to at least 5.4.1283 following the above instructions 
+
+* It is highly recommended that you upgrade your controller to 6.0
+
+
+If the controller is running an 18.0.4 AMI 
+
+* Please follow the upgrade instructions at  https://docs.aviatrix.com/HowTos/inline_upgrade.html carefully to upgrade to 5.4.1283 
+
+* It is highly recommended that you upgrade your controller to 6.0 
+
+Please consider upgrading your controller instance size if your workload has increased since you have deployed your Controller. We recommend an instance with at least 8GB of memory (t2/t3 large, c5.xlarge or larger) 
+
+Please open a ticket with the Support Team by sending a new email to support@aviatrix.com or at https://aviatrix.zendesk.com if you need have any further questions or if you need us to review your upgrade plans or if you need any other assistance for these upgrades.  
+
+**Support for R5.3 or earlier will end December 31, 2020**  
+Although we try to minimize impact, security is Aviatrix’s top priority. The Aviatrix terms of use require customers to stay on the current release. Support for R5.3 or earlier will end December 31,2020.  
+
+**Sample image for 14.04 Controller**
+
+|image1404Controller|
+   
+**Sample image for 18.04 Controller**
+
+|image1804Controller|
+
 Field Notice 0011 (2020/08/02)
 ----------------------------------
 
@@ -230,5 +287,10 @@ For further information, or to open a support ticket, please visit https://www.a
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
-
+.. |image1404Controller| image:: field_notices_media/1404Controller.png 
+   :width: 600
+   
+.. |image1804Controller| image:: field_notices_media/1804Controller.png 
+   :width: 600
+   
 .. disqus::
