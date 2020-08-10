@@ -44,7 +44,7 @@ Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 Low
 
 **Description**
-The htaccess control to prevent requests to the a directory can be bypassed to download files.
+The htaccess control to prevent requests to directories can be bypassed for file downloading.
 
 **Impact**
 Unauthorized file download
