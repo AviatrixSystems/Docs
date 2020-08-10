@@ -13,7 +13,7 @@ What is Aviatrix Firewall Network (FireNet)?
 Aviatrix Firewall Network (FireNet) is a turn key network solution to deploy firewall instances in the 
 cloud, as shown in the diagram below. 
 
-|firewall_network|
+<img width="1274" alt="image" src="https://user-images.githubusercontent.com/69173400/89824008-44939c80-db07-11ea-9971-7fd7490d6088.png">
 
 FireNet significantly simplifies firewall instance deployment and allows the firewall instances to inspect 
 VPC to VPC (East West) traffic, VPC to Internet (Egress) traffic, and VPC to on-prem (North South) traffic. 
@@ -334,8 +334,6 @@ What are the integration points with Fortinet firewall?
 
 
 
-.. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
-   :scale: 30%
 
 .. |firewall_deploy| image:: firewall_network_faq_media/firewall_deploy.png
    :scale: 30%
