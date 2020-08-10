@@ -6,6 +6,145 @@ Aviatrix Product Security Team continually tests the software product, looking f
 
 Most Recent IR
 ================
+
+12. OpenVPN - Abitrary File Access
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+High
+
+**Description**
+The VPN service write logs to a location that is writable
+
+**Impact**
+Unauthorized file permission
+
+**Affected Product**
+Aviatrix OpenVPN R2.8.2 or earlier  
+
+**Solution**
+Aviatrix OpenVPN R2.10.7 or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+11. Bypass Htaccess Security Control
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Low
+
+**Description**
+The htaccess control to prevent requests to the a directory can be bypassed to download files.
+
+**Impact**
+Unauthorized file download
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+10. Cleartext Storage of Cryptographic Key 
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+High
+
+**Description**
+Encrypted keys values are stored in readable file
+
+**Impact**
+Access to read key in encrypted format
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+9. Pre-Auth Account Takeover
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Critical
+
+**Description**
+An unused API file does not require a valid session access and allowed update access.
+
+**Impact**
+Access to unauthorized files
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+
+8. Insufficiently Protected Credentials
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Critical
+
+**Description**
+An encrypted file containing credentials to unrelated systems is protected by a weak key.
+
+**Impact**
+Encryption key may not meet the latest security standard
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+
+
 7. Observable Response Discrepancy from API
 ----------------------------------------
 
@@ -93,8 +232,8 @@ CVE-2020-13412
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-4. Code Clean-up
-------------------
+4. Hard Coded Credentials
+-------------------------
 
 **Date**
 1/16/2020
