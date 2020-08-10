@@ -21,7 +21,7 @@ We are happy to report that starting with release 4.0  we support `Logging to AW
 Are syslogs viewable on Controller?
 -------------------------------------
 
-Syslogs are not viewable on the Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, or rsyslog. Also, syslogs from gateways are not collected at the Controller and are sent directly from the gateways to the Controller.
+Syslogs are not viewable on the Controller. Please deploy an external service such as Cloudwatch, DataDog, Splunk, Logstash, SumoLogic, or rsyslog. Also, syslogs from gateways are not collected at the Controller and are sent directly from the gateways to the syslog destination.
 
 Is Splunk Cloud supported?
 -------------------------------------
