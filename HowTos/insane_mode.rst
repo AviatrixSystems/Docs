@@ -52,7 +52,7 @@ and beyond, leveraging the multiple CPU cores in a single instance, VM or host.
 What are the use cases for Insane Mode?
 ----------------------------------------
 
- - High performance `Encrypted Transit <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`
+ - High performance `Encrypted Transit <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
  - High performance `Encrypted Peering <https://docs.aviatrix.com/HowTos/peering_faq.html>`_ performance
  - High performance encryption over Direct Connect
  - Overcome VGW performance limit and 100 route limit
