@@ -16,7 +16,7 @@ In May 2020, Aviatrix worked with Critical Start, a Security Researcher 
 Aviatrix addressed all the issues that were identified. All the resolutions have also been validated by the reporter. Details about these issues are published in our PSIRT Advisory at https://docs.aviatrix.com/HowTos/security_bulletin_article.html 
 
 **Recommended Solution**
-We request our customers to upgrade their Controller to 5.4.2183 or higher, following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html to get the above fixes. We strongly recommend that the Controller be upgraded to 6.0 or higher. 
+We request our customers to upgrade their Controller to 5.4.1290 or higher, following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html to get the above fixes. We strongly recommend that the Controller be upgraded to 6.0.2483 or higher. 
 
 Please note that if the Controller is running an older AMI, it needs to be migrated to run on the latest AMI before upgrading to 5.4. If the Controller is already running 5.4 or above, a Controller AMI migration is not needed. More information about the Controller AMI migration is at https://docs.aviatrix.com/HowTos/controller_migration.html 
 
@@ -37,16 +37,16 @@ If the controller is running a 14.0.4 AMI
 
 * Once you reach 5.3, please upgrade the Controller AMI following the instructions at https://docs.aviatrix.com/HowTos/controller_migration.html 
 
-* Please continue upgrading to at least 5.4.1283 following the above instructions 
+* Please continue upgrading to at least 5.4.1290 following the above instructions 
 
-* It is highly recommended that you upgrade your controller to 6.0
+* It is highly recommended that you upgrade your controller to 6.0.2483 or higher
 
 
 If the controller is running an 18.0.4 AMI 
 
-* Please follow the upgrade instructions at  https://docs.aviatrix.com/HowTos/inline_upgrade.html carefully to upgrade to 5.4.1283 
+* Please follow the upgrade instructions at  https://docs.aviatrix.com/HowTos/inline_upgrade.html carefully to upgrade to 5.4.1290 
 
-* It is highly recommended that you upgrade your controller to 6.0 
+* It is highly recommended that you upgrade your controller to 6.0.2483 or higher
 
 Please consider upgrading your controller instance size if your workload has increased since you have deployed your Controller. We recommend an instance with at least 8GB of memory (t2/t3 large, c5.xlarge or larger) 
 
