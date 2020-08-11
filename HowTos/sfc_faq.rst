@@ -118,6 +118,9 @@ Below is another example of uploading  a file to S3 using AWS CLI
   upload: ./init-cfg.txt.3 to s3://sxw-new-bucket-2/init-cfg.txt.3  
 
 
+To test on a Window's machine, you modify file at c:\Windows\System32\Drivers\etc\hosts. An example instruction 
+is shown `here. <https://gist.github.com/zenorocha/18b10a14b2deb214dc4ce43a2d2e2992#2-modify-your-hosts-file>`_ 
+
 How do I troubleshoot PrivateS3?
 ----------------------------------
 
