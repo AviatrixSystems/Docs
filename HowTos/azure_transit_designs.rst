@@ -58,7 +58,7 @@ Both options can be described in the diagram below.
 Aviatrix Transit Gateway for Azure Spoke to Spoke Connectivity
 ---------------------------------------------------------------
 
-If you use Azure ExpressRotue gateway to connect Spoke VNets to on-prem, you can use Aviatrix Transit Gateway for Spoke to Spoke connectivity, 
+If you use Azure ExpressRoute gateway to connect Spoke VNets to on-prem, you can use Aviatrix Transit Gateway for Spoke to Spoke connectivity, 
 as shown in the diagram below. To connect Spoke VNet, follow the `Step 6b in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_.
 
 |transit_azure_native_spoke|
