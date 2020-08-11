@@ -59,7 +59,7 @@ Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later
 TBD
 
 **Acknowledgement**
-Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 10. Cleartext Storage of Cryptographic Key 
 ----------------------------------------
@@ -71,7 +71,7 @@ Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 High
 
 **Description**
-Encrypted keys values are stored in readable file
+Encrypted key values are stored in a readable file
 
 **Impact**
 Access to read key in encrypted format
@@ -86,7 +86,7 @@ Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later
 TBD
 
 **Acknowledgement**
-Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 9. Pre-Auth Account Takeover
 ----------------------------------------
@@ -98,7 +98,7 @@ Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 Critical
 
 **Description**
-An unused API file does not require a valid session access and allowed update access.
+An unused API file does not require a valid session ID for access.
 
 **Impact**
 Access to unauthorized files
@@ -141,7 +141,7 @@ Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later
 TBD
 
 **Acknowledgement**
-Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
 
 
