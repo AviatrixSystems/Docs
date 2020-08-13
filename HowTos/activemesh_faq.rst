@@ -141,7 +141,7 @@ Here is how Aviatrix Transit Gateway routing engine treats the following types o
 ========================================================     ===============               ==========
 Local TGW attached VPC CIDR                                  tgwvpc                        Local
 Aviatrix Spoke gateway associated VPC/VNet CIDR              vpc                           Local
-Azure Native Spoke assoociated VNet CIDR                     vpc                           Local
+Azure Native Spoke associated VNet CIDR                      vpc                           Local
 Local TGW VPN dynamically learned network CIDR               tgwedge                       Advertises TGW VPN ASN and its remote peer ASN to a remote BGP peer if it's the best route.
 Local TGW DXGW learned network CIDR                          tgwedge                       Advertises  TGW DXGW ASN and its remote peer ASN to a remote BGP peer if it's the best route.
 Remote Aviatrix Transit Gateway Peering learned routes       peer                          Advertises remote Aviatrix peer's network CIDRs to a remote BGP peer if it's the best route.
