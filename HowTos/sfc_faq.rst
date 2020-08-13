@@ -25,7 +25,7 @@ objects to his/her own S3 buckets.
 
 |s3_endpoint|
 
-Note there is Endpoint policy but it controls who can use the Endpoint service, it does not control which destination S3 bucket the request can be granted. 
+Note that an Endpoint policy controls who can use the Endpoint service, but it does not control which destination S3 bucket the request can be granted. 
 
 Same issue of data leakage occurs if you upload files to S3 over public Internet.  
 
@@ -33,7 +33,7 @@ What is Aviatrix PrivateS3?
 -----------------------------------------------
 
 Aviatrix PrivateS3 is a feature that allows you to leverage AWS Direct Connect to transfer objects and files between on-prem and S3 
-while giving you the control of which S3 buckets by the ability to whitelist the S3 buckets. 
+while giving you control of the S3 buckets by the ability to whitelist the S3 buckets. 
 
 
 |sft_aviatrix|
@@ -46,7 +46,7 @@ The key benefits are:
 
  1. Transferring objects/data between on-prem and S3 by leveraging Direct Connect without using public VIF. 
  #. The ability to control which S3 buckets can be accessed. 
- #. The ability to deploy multiple Aviatrix gateways to load balancing the data traffic.
+ #. The ability to deploy multiple Aviatrix gateways to load balance the data traffic.
 
 
 How does PrivateS3 work?
@@ -54,7 +54,7 @@ How does PrivateS3 work?
 
 PrivateS3 combines a few elements to make it work. 
 
- 1. Customer on-prem resolves all S3 bucket names under management to the private IP address of the Aviatrix created and managed AWS internal NLB.
+ 1. Customer on-prem resolves all S3 bucket names under management to the private IP address of the Aviatrix gateway created and managed in AWS internal NLB.
  #. Configure on the Aviatrix Controller the S3 bucket names that you allow access.
  #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out the un-configured S3 bucket names, thus preventing data leakage.
 
