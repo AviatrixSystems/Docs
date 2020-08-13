@@ -147,7 +147,7 @@ On the Aviatrix side, use the option `External Devices <https://docs.aviatrix.co
 Connecting to Other Cloud Providers
 -------------------------------------
 
-To connect any network of a cloud provider is not AWS, Azure, Google GCP and Oracle Cloud, use the native VPN gateway of these
+To connect any network of a cloud provider that is not AWS, Azure, Google GCP and Oracle Cloud, use the native VPN gateway of these
 cloud providers to build VPN tunnels to the Aviatrix Transit Gateway to connect to the rest of the deployment, as shown 
 in the diagram below. On the Aviatrix side, use the option `External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ when making the connection.
 
