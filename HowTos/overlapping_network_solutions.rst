@@ -78,7 +78,7 @@ Scenario 1 can be extended to on-prem multi sites that have overlapping or ident
 
 |overlap_multi_onprem_tgw| 
 
- 1. Attache VPC Spoke-2 to TGW. Go to TGW Orchestrator -> Build to attach.
+ 1. Attach VPC Spoke-2 to TGW. Go to TGW Orchestrator -> Build to attach.
  #. Launch Aviatrix gateway in Spoke-2. Go to Gateway -> Add New to launch.
  #. (Optional) Enable HA. Go to Gateway -> Gateway for High Availability Peering to enable HA.
  #. Create a Site2Cloud connection to site-1 with Mapped Option on Spoke-2. Key parameters on site2cloud IPSEC configuration:
