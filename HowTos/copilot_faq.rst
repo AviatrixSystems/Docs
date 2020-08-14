@@ -41,8 +41,8 @@ For production deployments, minium requirement is 8vCPU and 32G of Memory
 Can I configure flows to be sent over private IPs? 
 ===============================================================================
 
-CoPilot does not setup a private overlay between gateways and itself. If a private communication path between the gateways and CoPilot is available, then you can use CoPilot’s private IP when you input the collector IP in the controller. 
-For example, if you have Aviatrix transit, and you put CoPilot in one of the spokes, then you can private IP as the destination. 
+CoPilot does not setup a private overlay between the gateways and itself. If a private communication path between the gateways and CoPilot is available, then you can use CoPilot’s private IP when you input the collector IP in the controller. 
+For example, if you have an Aviatrix transit gateway, and you put CoPilot in one of the spokes, then you can use CoPilot’s private IP as the destination. 
 
 
 
@@ -51,22 +51,22 @@ Does CoPilot hold any user or sensitive data?
 
 CoPilot does not hold any user-identifiable or payment processing information. As of this release, it also does not hold any credentials on the appliance’s storage. However, it is a recommended to ensure all security best practices are followed. 
 
-Can I Encrypt Volumes for CoPilot 
+Can I Encrypt Volumes for CoPilot ?
 ===============================================================================
 
 In AWS, you can use EBS encryption should this be a requirement. To encrypt the disk for CoPilot, you will need to ensure encryption option is checked during launch of the VM. 
-If this is not done at time of launch, you will then have to create a snapshot and recreate a new instance from that snapshot 
+If this is not done at time of launch, you will then have to create a snapshot and recreate a new instance from that snapshot with encryption option checked.
 
 How does CoPilot get its data?
 ===============================================================================
 
 1.Controller APIs
 
-  CoPilot dials into controller to retrieve information from CoPilot
+  CoPilot dials into controller to retrieve information from CoPilot.
 
 2.Flow records
 
-  Aviatrix Gateways generate and export information about network traffic. Flows come directly from  Gateways to CoPilot
+  Aviatrix Gateways generate and export information about network traffic. Flows come directly from  Gateways to CoPilot.
 
 
 Is FlowIQ showing realtime traffic? 
@@ -82,17 +82,17 @@ This will depend on the nature of traffic and volume. The answer to this questio
 Can the data retention be adjusted ? 
 ===============================================================================
 
-Today you can set a threshold based on disk space available, so that you can remove the old records
+Today you can set a threshold based on disk space available, so that you can remove the old records.
 
 Can we turn topology tunnels Red/Green based on tunnel status ? 
 ===============================================================================
 The tunnels are responsive to the state of the link.
 
-Can we provide bandwidth details of links/tunnels 
+Can we provide bandwidth details of links/tunnels ?
 ===============================================================================
-If you can specify source and destination for the two endpoint of the path, i.d gateways, you will be able to obtain this information from FlowIQ by using filters
+If you can specify source and destination for the two endpoints of the path, i.e gateways, you will be able to obtain this information from FlowIQ by using filters.
 
-How I can get my additional questions answered
+How I can get my additional questions answered ?
 ===============================================================================
 
 Visit Aviatrix.com and use the live chat icon to talk to a live expert
