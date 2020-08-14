@@ -277,8 +277,13 @@ By default, VM-Series do not allow HTTPS or TCP 443 port. Pleas follow the given
     1. Login to VM-Series with username and password.
     #. Go to Network -> Interface Mgmt under Network Profiles and click "Add".
     #. Give any name in "Interface Management Profile", check HTTPS checkbox under Administrative Management Service and click "OK".
+    #. Attach Profile with LAN interface. Network -> Interfaces -> Select LAN Ethernet Interface -> Advanced -> Management Profile -> Select appropiate profile.
 
 |PAN-health-check|
+
+See an example screenshot below how to attach profile to an interface.
+
+|pan_hcheck_attach|
 
 Firewall health check probes can be verified in Monitor -> Traffic.
 
@@ -394,5 +399,9 @@ There are multiple ways to check data-plane:
 
 .. |pan-health-probe| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/pan-health-probe.png
    :scale: 40%
+
+.. |pan_hcheck_attach| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/pan_hcheck_attach.png
+   :scale: 40%
+
 
 .. disqus::
