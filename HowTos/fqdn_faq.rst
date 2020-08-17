@@ -99,7 +99,7 @@ Her are the steps to enable 3 AZ HA FQDN gateways:
 Following the above instructions, Aviatrix Controller will try to load balance the route tables to point to the gateways with AZ affinity. 
 When a gateway fails, the Controller will reprogram the VPC route table to redistribute the traffic to the remaining gateways. 
 
-How does Aviatrix Egress FQDN compare to Squid Solution and other solutions?
+How does Aviatrix Egress FQDN compare to Squid and other solutions?
 ===============================================================================
 
 Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. Below is a more comprehensive comparison between Aviatrix FQDN and Squid. 
