@@ -377,7 +377,7 @@ R5.2.2153 (2/7/2020)
 R5.2.2122 (1/25/2020)
 ========================
 
- - **Enhancement** Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables. To enable, go to Site2Cloud, click on the connection, scroll down to Actitve Active HA and click Enable. 
+ - **Enhancement** Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables. To enable, go to Site2Cloud, click on the connection, scroll down to Active Active HA and click Enable. 
  - **Enhancement** Allow the service account credential to be re-used by GCP projects. 
  - **Bug fix** Fix Azure gateway memory leak issue. 
  - **Bug fix** Enhancement to FQDN warning messages.
