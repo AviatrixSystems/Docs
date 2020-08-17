@@ -99,25 +99,30 @@ Her are the steps to enable 3 AZ HA FQDN gateways:
 Following the above instructions, Aviatrix Controller will try to load balance the route tables to point to the gateways with AZ affinity. 
 When a gateway fails, the Controller will reprogram the VPC route table to redistribute the traffic to the remaining gateways. 
 
-How does Aviatrix Egress FQDN compare to Squid Solution?
-==============================================================
+How does Aviatrix Egress FQDN compare to Squid Solution and other solutions?
+===============================================================================
 
 Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. Below is a more comprehensive comparison between Aviatrix FQDN and Squid. 
 
-==========================================      =============================================================                                           =============
-**Functions**                                     **Aviatrix FQDN**                                                                                      **Squid**
-==========================================      =============================================================                                           =============
-Requires instance configuration                 No                                                                                                      No
-HTTP and HTTPS FQDN filter                      Yes                                                                                                     Yes
-non HTTP/HTTPS FQDN filter                      Yes (wildcard FQDN is not supported)                                                                    No
-Multi AZ High Availability                      Yes (load balanced)                                                                                     No
-Centrally Managed                               Yes                                                                                                     No
-Egress Discovery                                `Yes <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_                                           No 
-Rest API support                                Yes                                                                                                     No
-Terraform support                               Yes                                                                                                     No
-Out-of-box log integration                      Yes                                                                                                     No
-Vendor support                                  Yes                                                                                                     No 
-==========================================      =============================================================                                           =============
+=============================================      =============================================================    ===============   ================     =============
+**Functions**                                      **Aviatrix FQDN**                                                AWS NAT Gateway   Azure Firewall       **Squid**
+=============================================      =============================================================    ===============   ================     =============
+Requires instance configuration                    No                                                               No                No                   No
+HTTP and HTTPS FQDN filter                         Yes                                                              No                Yes                  Yes
+non HTTP/HTTPS FQDN filter                         Yes (wildcard FQDN is not supported)                             No                No                   No
+Multi AZ High Availability                         Yes (load balanced)                                              Yes               Yes                  No
+Centrally Managed                                  Yes                                                              Yes               Yes                  No
+Egress Discovery                                   `Yes <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_    No                No                   No 
+API support                                        Yes                                                              Yes               Yes                  No
+Terraform support                                  Yes                                                              Yes               No                   No
+Out-of-box log integration                         Yes                                                              No                Yes                  No
+Allow private network to be filtered               Yes                                                              No                No                   No
+Allow specified source CIDR to bypass a rule       Yes                                                              No                No                   No
+Allow specified source CIDR to apply to rule       Yes                                                              No                No                   No  
+Visibility on allowed/Denied sessions              Yes                                                              No                No                   No
+Search a specified rule match history              Yes                                                              No                No                   No
+Vendor product support                             Yes                                                              Yes               Yes                  No 
+=============================================      =============================================================    ===============   ================     =============
 
 
 How do I Troubleshoot FQDN Problems?
