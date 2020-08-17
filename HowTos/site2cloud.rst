@@ -282,7 +282,7 @@ Active Active HA
 
 Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables. 
 
-To enable this, go to Site2Cloud, click on the connection, scroll down to Actitve Active HA and click Enable.
+To enable this, go to SITE2CLOUD, edit the connection on the Setup page, scroll down to Active Active HA and click the button ENABLE.
 
 Periodic Ping
 --------------------
