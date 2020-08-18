@@ -2,6 +2,17 @@
 Release Notes
 =======================================
 
+R6.1.1280 (8/17/2020)
+=======================
+
+- **Bug fix** fix multiple issues with TGW Approval, TGW Peering inspection and FireNet integration. 
+- **Bug fix** Transit Peering with SNAT creates redundant rules. 
+- **Bug fix** FQDN with Edit Source behavior change. 
+- **Enhancement** Add support for Aviatrix gateway certificate import. 
+- **Bug fix** CloudN asymmetric routing for management interface. 
+
+
+
 R6.1.1163 (8/5/2020)
 =====================
 
