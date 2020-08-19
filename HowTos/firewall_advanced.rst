@@ -4,18 +4,64 @@
 
 
 =========================================================
-FireNet Advanced Config
+Firewall Network (FireNet) Advanced Config
 =========================================================
+
+Firewall Network (FireNet) Advanced Config applies to both AWS TGW based FireNet and Aviatrix Transit FireNet.
 
 For questions about FireNet, check out `FireNet FAQ. <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
 For questions on FireNet workflow, check out `FireNet Workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
 
-FireNet Advanced Config applies to both TGW based FireNet and Aviatrix Transit FireNet. 
+For questions about Aviatrix Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#transit-firenet-faq>`_
+For questions on Aviatrix FireNet workflow, check out `Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure>`_
 
-Firewall Health Check and Failover Detection using LAN Interface
+
+Traffic Inspection
+------------------------------------------------
+
+You can enable and disable traffic inspection. When traffic inspection is disabled, FireNet gateway loops back all packets.
+
+Egress through Firewall
+-----------------------
+
+This is to enable Internet bound egress traffic for inspection.
+
+Fail Close
+-------------
+
+If you enable Fail Close, FireNet gateway drops all traffic when all firewalls are in Down state.
+
+
+Network List Excluded From East-West Inspection
+---------------------------------------------------
+
+By default, FireNet inspects all East-West (VPC to VPC) traffic but you may have an instance in the VPC which you do not want to be inspected. For example, the Aviatrix Controller deployed in the Shared Service VPC to be excluded from inspection while Shared Service VPC traffic is inspected. This improves the Controller reachability by not subjecting the Controller access to unintentional firewall policy errors.
+
+Put the CIDRs in the field **"Network List Excluded From East-West Inspection"** to exclude from being inspected by the firewall.
+
+.. Note::
+
+    1. Maximum 20 CIDRs coma-separated are supported.
+    2. CIDRs are excluded from East-West inspections only.
+    3. In Transit FireNet, if Egress inspection is enabled, all the Egress traffic will get inspected by the firewall even for the CIDRs excluded for East-West inspection.
+
+
+Firewall Hashing
+--------------------
+
+Firewall Network solution supports two hashing types:
+    - Five-tuple and
+    - Two-tuple.
+
+By default, AWS TGW based FireNet and Aviatrix Transit FireNet use 5-tuple hashing algorithm (source IP, source port, destination IP, destination port and protocol type) to load balance the traffic across different firewall. However, user has an option to select two-tuple (source IP and destination IP) hashing algorithm to map traffic to the available firewalls.
+
+
+Keep Alive via Firewall Lan Interface
 ---------------------------------------------------------------------
 
-By default, Aviatrix Controller check the firewall's health by pinging the firewall's management IP address. In 6.0, firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
+For AWS, LAN or Management interface can be used for firewall health check and failure detection.
+
+By default, Aviatrix Controller check the firewall's health by pinging the firewall's management IP address. Starting 6.0, firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
 
 The mechanism is that the FireNet gateway pings the firewall instance's LAN interface every 5 seconds with a ping time out of 20ms. If the first ping times out, it 
 immediately pings again. Two consecutive ping failures indicates the firewall is in down state and it is detached from the FireNet gateway pool. The ping functions continues 
@@ -85,22 +131,6 @@ In this example, AWS and Check Point used to demonstrate the functionality as sh
 Go to Check Point logs and Monitoring section, notice that the ICMP health check is initiated every 5 second from the Aviatrix Transit FireNet gateways. The 5 second setting is the default and cannot be changed.
 
 |cp_icmp_lan_example|
-
-Traffic Inspection
-------------------------------------------------
-
-You can enable and disable traffic inspection. When traffic inspection is disabled, FireNet gateway loops back all packets. 
-
-Egress through Firewall
------------------------
-
-This is to enable Internet bound egress traffic for inspection. 
-
-Fail Close
--------------
-
-If you enable Fail Close, FireNet gateway drops all traffic when all firewalls are in Down state. 
-
 
 
 .. |firewall_advanced_lan_1| image:: firewall_network_workflow_media/firewall_advanced_lan_1.png
