@@ -277,6 +277,12 @@ send periodic messages to ensure the remote site is up.
 
 By default DPD detection is enabled. 
 
+Active Active HA
+----------------
+
+Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables. 
+
+To enable this, go to SITE2CLOUD, edit the connection on the Setup page, scroll down to Active Active HA and click the button ENABLE.
 
 Periodic Ping
 --------------------
