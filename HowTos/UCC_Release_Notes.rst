@@ -35,6 +35,8 @@ R6.1.1162 (8/1/2020)
 
 - **FireNet Check Point Integration Enhancement** now support Check Point firewall or security gateway automatic route updates to its routing tables by the Controller. You no longer need to statically configure RFC 1918 or any other routes.
 
+- **FireNet for AWS TGW Inter Region Traffic Inspection** allows you to specifically inspect traffic crossing TGW Peering regions. One use case is in certain deployment, it is not desirable to specify all traffic going in and out of a Security Domain, rather the requirement is to only inspect traffic that moves across the regions. For configuration details, refer to `Inspect Inter Region Traffic <https://docs.aviatrix.com/HowTos/tgw_plan.html#inspect-inter-region-traffic>`_.
+
 2. Security
 ----------------
 
