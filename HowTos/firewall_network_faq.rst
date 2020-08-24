@@ -131,7 +131,7 @@ for Egress Inspection and VPC to VPC traffic inspection.
 
 One problem with this deployment is performance. The IPSEC tunnel limits each firewall instance
 to be capped at 1Gbps. When this architecture is deployed for VPC to VPC inspection, traffic goes through the VGW (the other end of the IPSEC tunnel) twice,
-further reducing its throughput to 500Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is
+further reducing its throughput to 500Mbps. What this implies is that each firewall instance can only operate at 400Mbps throughput. This is
 much lower than what firewall instances can do without an IPSEC tunnel.
 
 Another problem is that for east west traffic inspection, the firewall instance must NAT the source address, otherwise the return traffic is not guaranteed to go through the same firewall instance. This is because ECMP 
