@@ -2,6 +2,44 @@
 Release Notes
 =======================================
 
+R6.2 (Coming soon)
+=====================
+
+1. Multi-cloud Transit Network
+---------------------------------
+
+- **Active-Standby Mode on ActiveMesh 2.0** provides the flexibility on Aviatrix Transit Gateways to connect to on-prem with only one active tunnel and the other one as backup. The use case is a deployment scenario where on-prem device such as firewalls does not support asymmetric routing on two tunnels. When Active-Standby mode is enabled, it applies to all BGP based `External Device Connections <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ and for each connection, only one tunnel is active in forwarding traffic at any given time. To configure, go to Multi-cloud Transit -> Advanced Config, select the Aviatrix Transit Gateway to enable Active-Standby.  
+
+- **Segmentation based BGP CIDRs Advertisements** advertises only those Spoke CIDRs that have connection policy to a specific on-prem connection. For example, consider aa multi-tenant deployment where Aviatrix Transit Gateway connects to multiple on-prem sites over BGP, each site connecting to certain number of Spokes through `AWS TGW Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_ or `Multi-cloud Segmentation <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html#what-is-multi-cloud-transit-segmentation>`_. With this new feature, Aviatrix Transit Gateway only advertises Spoke CIDRs that are relevant to the on-prem site. To enable, go to Multi-cloud Transit -> Advanced Config, select an Aviatrix Transit Gateway, scroll down to `Refresh BGP Advertise Network Routes`. 
+
+- **Aviatrix Transit Gateway Peering over Private Network** expands Transit Gateway peering over multi-cloud where there is private network connectivity. One use case is two Aviatrix Transit Gateways deployed in two different public cloud where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond. To configure, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Peering over Private Network for a new peering connection. 
+
+- **Insane Mode in GCP** is now available for Multi-cloud Transit solution. 
+
+- **Custom Mapped Site2Cloud in Spoke** solves all issues of overlapping network addresses with remote networks by expanding Site2Cloud `Mapped <https://docs.aviatrix.com/HowTos/site2cloud.html#connection-type-mapped>`_ function in a Spoke. 
+
+
+2. FireNet
+-------------
+
+- **FireNet 2-tuple Forwarding Algorithm Support** expands FireNet forwarding algorithm to include forwarding decision based on only the source and destination IP address. One use case is an application where multiple TCP sessions are used for an egress Internet service therefore requiring all these sessions to go through one firewall with the same source NAT IP address.  
+
+- **Centralized FQDN on Azure FireNet** allows Aviatrix FQDN gateways to be deployed in FireNet solution in Azure. One use case is to consolidate egress control to reduce cost with centralized statistical multiplexing.  
+
+- **Palo Alto Networks VM-Series Bootstrap Support on Azure** 
+
+- **TGW with Multicast capability** allows you to launch an AWS TGW with multicast capability. A use case is to support applications running on multicast protocols. API support only. 
+
+- **Update Attached Spoke VNet CIDR** allows you to update Spoke VNet CIDR when there is a change without having to detach the Spoke and attach again, thus removing any down time or outage. API support only. 
+
+
+3. Operations
+------------------
+
+- **Discover Unencrypted Flows** is a useful tool to provide visibility on any non TCP port 443 and port 22 traffic running in a VPC in AWS. By running, recording and analyzing VPC flow logs in an on-demand fashion, this tool helps infrastructure engineers to understand application traffic patterns without cost incurring for long running VPC Flow Logs. By excluding TCP port 443 and port 22 traffic, the tool highlights any unencrypted traffic in the network.  
+
+- **Session Visibility** 
+
 R6.1.1280 (8/17/2020)
 =======================
 
