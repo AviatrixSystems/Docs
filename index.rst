@@ -410,6 +410,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_firenet_workflow_aws
    HowTos/transit_firenet_workflow_azure
    HowTos/cloud_wan_workflow_azure_vwan
+   HowTos/using_VPC_Endpoints_w_AVX
    
 .. _Good To Know:
 
