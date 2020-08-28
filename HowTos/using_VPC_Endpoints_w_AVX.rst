@@ -141,16 +141,16 @@ A simple way to test connectivity is to edit the /etc/hosts file on a linux inst
    :scale: 75%
    
 .. |image6| image:: VPCEndpoints/image6.png
-   :scale: 75%
+   :scale: 50%
    
 .. |image7| image:: VPCEndpoints/image7.png
-   :scale: 100%
+   :scale: 50%
    
 .. |image8| image:: VPCEndpoints/image8.png
    :scale: 100%
    
 .. |image9| image:: VPCEndpoints/image9.png
-   :scale: 100%
+   :scale: 50%
    
 .. |image10| image:: VPCEndpoints/image10.png
    :scale: 100%
@@ -159,9 +159,9 @@ A simple way to test connectivity is to edit the /etc/hosts file on a linux inst
    :scale: 100%
    
 .. |image12| image:: VPCEndpoints/image12.png
-   :scale: 100%
+   :scale: 75%
    
 .. |image13| image:: VPCEndpoints/image13.png
-   :scale: 100%
+   :scale: 75%
 
 .. disqus::
