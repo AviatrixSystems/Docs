@@ -1,6 +1,11 @@
+.. toctree::
+   :maxdepth: 1
+   :caption: Tech Notes
+
+
 .. meta::
    :description: Using AVX S2C to use VPC endpoints in different regions
-   :keywords: site2cloud, endpoints, AWS Global Transit Network, Aviatrix Transit Network, RFC1918
+   :keywords: site2cloud, endpoints, AWS Global Transit Network, Aviatrix Transit Network
 
 
 ===========================================================================================
