@@ -103,7 +103,7 @@ For simplicity, you can configure the FW to send all RFC 1918 packets to LAN por
 
 In this example, we configure all traffic for RFC 1918 to be sent out of the LAN interface.
 
-Go to the page "Network -> State Routes" to create a Static Route as the following screenshot.
+Go to the page "Network -> Static Routes" to create a Static Route as the following screenshot.
 
   - Click on the button "Create New"
   - Enter the destination route in the "Destination" box
