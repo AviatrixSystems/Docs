@@ -1,6 +1,4 @@
-.. toctree::
-   :maxdepth: 1
-   :caption: Tech Notes
+
 
 
 .. meta::
