@@ -106,7 +106,7 @@ Scroll to the Destination NAT section and choose ADD NEW.
 
 Ensure Sync to HA Gateway is selected.
 
-Source CIDR will be the source of our US-East-1 VPC, 10.10.11.0/24.  Destination CIDR will be the private IP of our Primary Gateway.  In our example 10.10.11.5/24.  Destination port in our example is 80.  Protocol TCP.  Connection is None.  DNAT IPS in our example will be in the workload VPC available across our Site2Cloud tunnel.  The server is 10.10.12.69.  DNAT PORT is 80.  
+Source CIDR will be the source of our US-East-1 VPC, 10.10.11.0/24.  Destination CIDR will be the private IP of our Primary Gateway.  In our example 10.10.11.5/32.  Destination port in our example is 80.  Protocol TCP.  Connection is None.  DNAT IPS in our example will be in the workload VPC available across our Site2Cloud tunnel.  The server is 10.10.12.69.  DNAT PORT is 80.  
 
 Once filled out, hit SAVE, then UPDATE.
 
