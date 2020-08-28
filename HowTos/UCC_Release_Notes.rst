@@ -38,7 +38,7 @@ R6.2 (Coming soon)
 
 - **Discover Unencrypted Flows** is a useful tool to provide visibility on any non TCP port 443 and port 22 traffic running in a VPC in AWS. By running, recording and analyzing VPC flow logs in an on-demand fashion, this tool helps infrastructure engineers to understand application traffic patterns without cost incurring for long running VPC Flow Logs. By excluding TCP port 443 and port 22 traffic, the tool highlights any unencrypted traffic in the network.  
 
-- **Session Visibility** 
+- **Session Visibility** displays active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. To view sessions, go to Troubleshoot -> Diagnostics -> Gateway -> Session View. Or go to Security -> Stateful Firewall -> Session View. 
 
 R6.1.1280 (8/17/2020)
 =======================
