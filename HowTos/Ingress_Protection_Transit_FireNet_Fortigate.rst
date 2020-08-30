@@ -187,6 +187,14 @@ In Transit FireNet VPC, create an internet-facing AWS Application Load Balancer 
 	- Review the configuration in Step 6: Review
 	
 		|Ingress_Internet_ALB_Step_6_Review|
+		
+	- Wait for a couple of minutes and check firewall instances' healthy Status behind AWS Application Load Balancer
+	
+		|Internet_ALB_WEB_HTTP_8080_tg_healthcheck|
+		
+		.. note::
+			
+			Targets healthy status behind AWS load balancer can be found on the page "EC2 -> Target groups -> selecting the target group -> Targets"
 	
 Step 2. Launch an Apache2 Web server in Application Spoke
 ----------------------------------------------------------
@@ -265,7 +273,7 @@ In Application Spoke VPC, create an internal AWS Application Load Balancer by re
 	- Review the configuration in Step 6: Review
 	
 		|Ingress_Internal_ALB_Step_6_Review|
-		
+				
 Workflow on Firewall instances - Fortigate	
 ==========================================
 
@@ -442,6 +450,9 @@ Step 4. Reference
    :scale: 30%
 	 
 .. |Ingress_Internet_ALB_Step_6_Review| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Internet_ALB_Step_6_Review.png
+   :scale: 30%
+	 
+.. |Internet_ALB_WEB_HTTP_8080_tg_healthcheck| image:: ingress_protection_transit_firenet_fortigate_media/Internet_ALB_WEB_HTTP_8080_tg_healthcheck.png
    :scale: 30%
 	 
 .. |Ingress_Internal_ALB_Step_1_Configure_Load_Balancer| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Internal_ALB_Step_1_Configure_Load_Balancer.png
