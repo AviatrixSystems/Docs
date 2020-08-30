@@ -444,6 +444,12 @@ Step 4. Reference
 .. |Ingress_Internet_ALB_Step_6_Review| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Internet_ALB_Step_6_Review.png
    :scale: 30%
 	 
+.. |Ingress_Internal_ALB_Step_1_Configure_Load_Balancer| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Internal_ALB_Step_1_Configure_Load_Balancer.png
+   :scale: 30%
+	 
+.. |Ingress_Internal_ALB_Step_6_Review| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Internal_ALB_Step_6_Review.png
+   :scale: 30%
+	 
 .. |Ingress_Fortigate_DNAT| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Fortigate_DNAT.png
    :scale: 30%
 
