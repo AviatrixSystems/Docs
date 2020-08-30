@@ -48,7 +48,7 @@ In this example, we are going to deploy the below VPCs in AWS
 Workflow on Transit FireNet for AWS
 =====================================
 
-Refer to `Transit FireNet Workflow for AWS doc <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ for the below steps:
+Refer to `Transit FireNet Workflow for AWS doc <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ for the below steps. Please adjust the topology depending on your requirements.
 
 Step 1. Deploy VPCs for Transit FireNet and Spoke for Applicaton
 -----------------------------------------------------------------
@@ -118,6 +118,8 @@ This workflow example describes how to
 	#. place an internal AWS Load Balancer to load balance traffic to private application server in Application Spoke
 	
 	#. set up the related network components and private application web server with HTTP and port 8080
+	
+Please adjust the settings depending on your requirements.
 	
 Step 1. Create an AWS Application Load Balancer with scheme Internet-facing
 ---------------------------------------------------------------------------
@@ -276,6 +278,8 @@ In Application Spoke VPC, create an internal AWS Application Load Balancer by re
 				
 Workflow on Firewall instances - Fortigate	
 ==========================================
+
+This is just a simple example to set up Firwall for Ingress traffic. Please adjust the security settings depending on your requirements.
 
 Step 1. Set up basic configuration for FortiGate (Fortinet)
 -----------------------------------------------------------
