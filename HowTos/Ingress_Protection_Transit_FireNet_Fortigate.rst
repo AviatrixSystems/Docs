@@ -414,11 +414,11 @@ Step 3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall
 Step 4. Reference
 ------------------
 
-	-  `Inbound application traffic with firewall resiliency in Amazon Web Services (AWS) Reference Architecture <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
+	-  Inbound application traffic with firewall resiliency in `Amazon Web Services (AWS) Reference Architecture <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
 
-	- `INBOUND APPLICATION TRAFFIC WITH FIREWALL RESILIENCY in wp-aws-transit-gateway-cloud-services.pdf <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
+	- INBOUND APPLICATION TRAFFIC WITH FIREWALL RESILIENCY in `wp-aws-transit-gateway-cloud-services.pdf <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
 		
-	- ` FortiGate Cookbook <https://docs.fortinet.com/document/fortigate/6.2.4/cookbook/954635/getting-started>`_
+	- `FortiGate Cookbook <https://docs.fortinet.com/document/fortigate/6.2.4/cookbook/954635/getting-started>`_
 	
 .. |transit_firenet_ingress| image:: ingress_firewall_example_media/Ingress_Aviatrix_Transit_FireNet_topology.png
    :scale: 30%
