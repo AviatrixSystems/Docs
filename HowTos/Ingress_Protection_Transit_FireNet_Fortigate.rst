@@ -8,10 +8,10 @@ Ingress Protection via Aviatrix Transit FireNet with Fortigate
 
 This document illustrates a simple architecture for Ingress traffic inspection/protection firewall that leverages AWS Load Balancers, 
 `Transit FireNet for AWS <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ and 
-`Fortigate Example <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#example-config-for-fortigate-vm-in-aws>`_.
+`Fortigate VM in AWS <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#example-config-for-fortigate-vm-in-aws>`_.
 
 Ingress traffic from Internet forwards to firewall instances first in Aviatrix Transit FireNet VPC and then reaches to application servers as shown 
-in the diagram below. In this design pattern, each firewall instance must performs
+in the diagram below. In this design pattern, each firewall instance must perform
 
   #. Source NAT (SNAT) on its LAN interface that connects to the Aviatrix FireNet gateway 
 
@@ -62,7 +62,7 @@ Step 2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA
 
 	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in Transit FireNet VPC
 	
-	- Connected Transit mode is not necessary for Ingress inspection.
+	- Connected Transit mode is not necessary for this Ingress inspection solution.
 
 Step 3. Deploy Spoke Gateway and HA
 -----------------------------------
@@ -194,7 +194,7 @@ In Transit FireNet VPC, create an internet-facing AWS Application Load Balancer 
 		
 		.. note::
 			
-			Targets healthy status behind AWS load balancer can be found on the page "EC2 -> Target groups -> selecting the target group -> Targets"
+			Targets healthy status behind AWS load balancer can be found on the page "EC2 -> Target groups -> selecting the target group -> Targets" in AWS portal.
 	
 Step 2. Launch an Apache2 Web server in Application Spoke
 ----------------------------------------------------------
@@ -290,7 +290,7 @@ Step 1. Set up basic configuration for FortiGate (Fortinet)
 	
 	- `Create static routes for routing traffic to Spoke VPC <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#create-static-routes-for-routing-of-traffic-vpc-to-vpc>`_
 
-Step 2. Configure Destination NAT (DNAT) to the IP of application load balancer
+Step 2. Configure Destination NAT (DNAT) to the IP of Application Load Balancer
 --------------------------------------------------------------------------------
 
 	- Login Fortigate GUI
@@ -299,7 +299,7 @@ Step 2. Configure Destination NAT (DNAT) to the IP of application load balancer
 	
 	- Click the button "+ Create New"
 	
-	- Enter fields for Name, Comments, Interface, Type, External IP address, Mapped address, and Port Forwarding as follows
+	- Enter fields for Name, Comments, Interface, Type, External IP address, Mapped address, and Port Forwarding as follows:
 	
 		+-----------------+-----------------------+-----------------------------------------------+
 		| **Section**     | **Example setting**   | **Example value**                             |
@@ -333,7 +333,7 @@ Step 2. Configure Destination NAT (DNAT) to the IP of application load balancer
 	
 		|Ingress_Fortigate_DNAT_Mapped_address|
 		
-	- Enter fields for Name, Type, FQDN, and Interface as follows for Mapped address
+	- Enter fields for Name, Type, FQDN, and Interface for Mapped address as follows:
 	
 		+---------------------+---------------------------------------------------------------------------------------------+
 		| **Example setting** | **Example value**                                                                           |
@@ -342,7 +342,7 @@ Step 2. Configure Destination NAT (DNAT) to the IP of application load balancer
 		+---------------------+---------------------------------------------------------------------------------------------+
 		| Type                | FQDN                                                                                        |
 		+---------------------+---------------------------------------------------------------------------------------------+
-		| FQDN                | DNS name of the internal AWS Application Load balancer which is created in the previos step |
+		| FQDN                | DNS name of the internal AWS Application Load Balancer which is created in the previos step |
 		+---------------------+---------------------------------------------------------------------------------------------+
 		| Interface           | any                                                                                         |
 		+---------------------+---------------------------------------------------------------------------------------------+
@@ -351,11 +351,11 @@ Step 2. Configure Destination NAT (DNAT) to the IP of application load balancer
 		
 		.. important::
 		
-			FQDN is the DNS name of the 'internal' AWS Application Load balancer not 'internet-facing' AWS ALB.
+			FQDN is the DNS name of the 'internal' AWS Application Load Balancer not 'internet-facing' AWS ALB.
 		
 		.. note::
 			
-			DNS name of the AWS Application Load balancer can be found on the page "EC2 -> Load Balancing -> Load Balancers -> selecting the Load balancer -> Description -> DNS name"
+			DNS name of the AWS Application Load Balancer can be found on the page "EC2 -> Load Balancing -> Load Balancers -> selecting the Load balancer -> Description -> DNS name"
 			
 
 Step 3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall's LAN interface in Firewall Policy to allow Ingress traffic
@@ -384,7 +384,7 @@ Step 3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall
 		+----------------------------+-----------------------+---------------------------------------------------------------------------------------------------+
 		|                            | Action                | ACCEPT                                                                                            |
 		+----------------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-		| Firewall / Network Options | NAT                   | Enable                                                                                           |
+		| Firewall / Network Options | NAT                   | Enable                                                                                            |
 		+----------------------------+-----------------------+---------------------------------------------------------------------------------------------------+
 		|                            | IP Pool Configuration | Use Outgoing Interface Address                                                                    |
 		+----------------------------+-----------------------+---------------------------------------------------------------------------------------------------+
@@ -418,8 +418,11 @@ Step 3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall
 	- Review Firewall Policy
 	
 		|Ingress_Fortigate_Firewall_policy_review|
-		
-Step 4. Reference
+
+Step 4. Repeat the above steps for all your firewall instances
+---------------------------------------------------------------
+
+Step 5. Reference
 ------------------
 
 	-  Inbound application traffic with firewall resiliency in `Amazon Web Services (AWS) Reference Architecture <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
@@ -427,6 +430,15 @@ Step 4. Reference
 	- INBOUND APPLICATION TRAFFIC WITH FIREWALL RESILIENCY in `wp-aws-transit-gateway-cloud-services.pdf <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
 		
 	- `FortiGate Cookbook <https://docs.fortinet.com/document/fortigate/6.2.4/cookbook/954635/getting-started>`_
+	
+Ready to go!
+=============
+
+Now firewall instances and private application server are ready to receive Ingress traffic!
+
+Open your browser and access the DNS of AWS Internet Application Load Balancer with HTTP and port 8080.
+
+	|Ingress_private_WEB_server_access|
 	
 .. |transit_firenet_ingress| image:: ingress_firewall_example_media/Ingress_Aviatrix_Transit_FireNet_topology.png
    :scale: 30%
@@ -478,5 +490,8 @@ Step 4. Reference
 	 
 .. |Ingress_Fortigate_Firewall_policy_review| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_Fortigate_Firewall_policy_review.png
    :scale: 30%
+	 
+.. |Ingress_private_WEB_server_access| image:: ingress_protection_transit_firenet_fortigate_media/Ingress_private_WEB_server_access.png
+   :scale: 30%	 
 	 
 .. disqus::
