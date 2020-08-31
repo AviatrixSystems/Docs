@@ -6,7 +6,7 @@
 Ingress Protection via Aviatrix Transit FireNet with Fortigate
 ==============================================================
 
-This document illustrates a simple architecture for Ingress traffic inspection/protection firewall that leverages AWS Load Balancers, 
+This document illustrates a widely deployed architecture for Ingress traffic inspection/protection firewall that leverages AWS Load Balancers, 
 `Transit FireNet for AWS <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ and 
 `Fortigate VM in AWS <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#example-config-for-fortigate-vm-in-aws>`_.
 
@@ -54,38 +54,38 @@ Workflow on Transit FireNet for AWS
 
 Refer to `Transit FireNet Workflow for AWS doc <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_ for the below steps. Please adjust the topology depending on your requirements.
 
-Step 1. Deploy VPCs for Transit FireNet and Spoke for Applicaton
+Step 1.1. Deploy VPCs for Transit FireNet and Spoke for Applicaton
 -----------------------------------------------------------------
 
 	- Create an Aviatrix Transit VPC by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
 
 	- Create an Aviatrix Spoke VPC for Application by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in AWS portal. Moreover, feel free to use your existing VPC.
 
-Step 2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA
+Step 1.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA
 ----------------------------------------------------------
 
 	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in Transit FireNet VPC
 	
 	- Connected Transit mode is not necessary for this Ingress inspection solution.
 
-Step 3. Deploy Spoke Gateway and HA
+Step 1.3. Deploy Spoke Gateway and HA
 -----------------------------------
 
 	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in Spoke VPC for Application 
 
-Step 4. Attach Spoke Gateways to Transit Network
+Step 1.4. Attach Spoke Gateways to Transit Network
 ------------------------------------------------
 
 	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Spoke Gateways to Transit Gateways 
 
-Step 5. Configure Transit Firewall Network
+Step 1.5. Configure Transit Firewall Network
 ------------------------------------------------
 
 	- `Configure Transit Firewall Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-6-configure-transit-firewall-network>`_
 	
 	- Adding spoke to the Inspected box for traffic inspection in 2> Manage FireNet Policy is not necessary for this Ingress solution as inbound traffic hit firewall instances first.
 
-Step 6. Launch and Associate Firewall Instance
+Step 1.6. Launch and Associate Firewall Instance
 ------------------------------------------------
 
 	- `Subscribe Firewall Vendor in AWS Marketplace <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-7-subscribe-firewall-vendor-in-aws-marketplace>`_ for Fortigate Next Generation Firewall
@@ -125,8 +125,8 @@ This workflow example describes how to
 	
 Please adjust the settings depending on your requirements.
 	
-Step 1. Create an AWS Application Load Balancer with scheme Internet-facing
----------------------------------------------------------------------------
+Step 2.1. Create an AWS Application Load Balancer with scheme Internet-facing
+-----------------------------------------------------------------------------
 
 In Transit FireNet VPC, create an internet-facing AWS Application Load Balancer by following the steps below:
 
@@ -202,8 +202,8 @@ In Transit FireNet VPC, create an internet-facing AWS Application Load Balancer 
 			
 			Targets healthy status behind AWS load balancer can be found on the page "EC2 -> Target groups -> selecting the target group -> Targets" in AWS portal.
 	
-Step 2. Launch an Apache2 Web server in Application Spoke
-----------------------------------------------------------
+Step 2.2. Launch an Apache2 Web server in Application Spoke
+-----------------------------------------------------------
 
 In Application Spoke, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080 as a web application server.
 
@@ -221,8 +221,8 @@ In Application Spoke, create an Ubuntu Server 18.04 LTS virtual machine and inst
 	
 	Refer to `How To Change Apache Default Port To A Custom Port <https://www.ostechnix.com/how-to-change-apache-ftp-and-ssh-default-port-to-a-custom-port-part-1/>`_ to use custom port 8080
 	
-Step 3. Create an AWS Application Load Balancer with scheme Internal
----------------------------------------------------------------------
+Step 2.3. Create an AWS Application Load Balancer with scheme Internal
+----------------------------------------------------------------------
 
 In Application Spoke VPC, create an internal AWS Application Load Balancer by refering to the steps below:
 
@@ -285,8 +285,8 @@ Workflow on Firewall instances - Fortigate
 
 This is just a simple example to set up Firwall for Ingress traffic. Please adjust the security settings depending on your requirements.
 
-Step 1. Set up basic configuration for FortiGate (Fortinet)
------------------------------------------------------------
+Step 3.1. Set up basic configuration for FortiGate (Fortinet)
+-------------------------------------------------------------
 
 	- Refer to `Fortigate Example <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#example-config-for-fortigate-vm-in-aws>`_ to launch Fortigate in AWS and for more details.
 	
@@ -298,8 +298,8 @@ Step 1. Set up basic configuration for FortiGate (Fortinet)
 	
 	- `Create static routes for routing traffic to Spoke VPC <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#create-static-routes-for-routing-of-traffic-vpc-to-vpc>`_
 
-Step 2. Configure Destination NAT (DNAT) to the FQDN/IP of Internal Application Load Balancer
----------------------------------------------------------------------------------------------
+Step 3.2. Configure Destination NAT (DNAT) to the FQDN/IP of Internal Application Load Balancer
+-----------------------------------------------------------------------------------------------
 
 	- Login Fortigate GUI
 	
@@ -366,8 +366,8 @@ Step 2. Configure Destination NAT (DNAT) to the FQDN/IP of Internal Application 
 			DNS name of the AWS Application Load Balancer can be found on the page "EC2 -> Load Balancing -> Load Balancers -> selecting the Load balancer -> Description -> DNS name"
 			
 
-Step 3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall's LAN interface in Firewall Policy to allow Ingress traffic
---------------------------------------------------------------------------------------------------------------------------------------------
+Step 3.3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall's LAN interface in Firewall Policy to allow Ingress traffic
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 	- Navigate to the page "Policy & Objects -> Firewall Policy"
 	
@@ -427,11 +427,11 @@ Step 3. Apply Destination NAT (DNAT) and configure Source NAT (SNAT) on firewall
 	
 		|Ingress_Fortigate_Firewall_policy_review|
 
-Step 4. Repeat the above steps for all your firewall instances
----------------------------------------------------------------
+Step 3.4. Repeat the above steps for all your firewall instances
+----------------------------------------------------------------
 
-Step 5. Reference
-------------------
+Step 3.5. Reference
+--------------------
 
 	-  Inbound application traffic with firewall resiliency in `Amazon Web Services (AWS) Reference Architecture <https://www.fortinet.com/content/dam/fortinet/assets/white-papers/wp-aws-reference-architecture.pdf>`_ 
 
