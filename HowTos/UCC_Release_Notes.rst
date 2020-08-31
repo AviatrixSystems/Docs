@@ -499,6 +499,11 @@ R5.1.1183 (12/2/2019)
  - **Bug fix** BGP learned routes parsing error. 
  - **Bug fix** Transit Peering filter not updating new learned routes. 
 
+R5.1.1169 (11/25/2019)
+=======================
+
+- **Bug fix** Transit gateway filter does not work properly 
+
 R5.1.1016 (11/21/2019)
 =======================
 
