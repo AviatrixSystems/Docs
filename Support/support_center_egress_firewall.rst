@@ -122,7 +122,7 @@ This design certainly has some limitation when there are multiple specific rules
 Here is an example: the first rule is allow sts.awsamazon.com from 10.10.10.0/24 and the second rule is *.awsamazon.com from 10.10.20.0/24.
 Packet is from 10.10.20.200 the source is not matched with first rule and the packet dropped .
 
-Here's improvement in latest 6.1 (R6.1.1280)
+Here's improvement in latest 6.1 (R6.1.1280).
 When doing above FQDN rule checking for domain-match with source, it will continue to check the rest of the rules to see if there is domain-match but with different sources.
 
 Hence, the result will be different before and after 6.1.1280 version, for example:
