@@ -108,29 +108,29 @@ All traffic through your Aviatrix Egress Control Gateways will be logged. You ca
 What is the New Aviatrix Controller(6.0~6.1) Egress FQDN Filter behavior?
 -------------------------------------------------------------------
 
-For Egress FQDN Filter, controller version 6.0 and above version, there is a mechanism that will re-order all the FQDN rules on the same egress gateway in order by the following factors:
+For Egress FQDN Filter, controller version 6.0 and above version, there is a mechanism that will sort all the FQDN rules on the same egress gateway in order by the following factors:
 
-1. Edit/Action: Allow (for Whitelist) / Deny (Blacklist) comes first than Base Policy.
-2. Edit/Domain: More specific domain (no ‘*’) comes first than wildcard rule
-3. Edit Source: No source IP will come first than rules with source.
+1. Edit/Action: For White-list/Black-list “Deny"/"Allow” rules comes first then “Allow"/"Deny” then the “Base-policy" rules
+2. Edit/Domain: More specific domain (no ‘*’) comes first then rules with wildcard. ex: abc.sts.aws.com -> sts.aws.com -> *.*.aws.com -> *.aws.com
+3. Edit Source: No source IP comes first than rules with source.
 4. Shorter Domain or smaller number of CIDR/Subnet.
 
-Every domain access will check the list in order by these factors to see if there is a domain-match.
-Once the domain-match happened, it will come to a result “MATCH” or “NO-MATCH” (according to the Source) and stop checking the rest of the list.
+Every domain access will go through this list that be sorted by these factors to see if there is a domain-match.
+Once the domain-match happened, it will stop checking the rest of the list, and comes a result of “MATCH” or “NO-MATCH” (according to the source).
 
-This design certain has some limitation and here's improvement in latest 6.1 (R6.1.1280)
-Even we have our first domain-match, it won’t stop checking the rest of the list, but keep checking if there are another rules that also match the domain with another sources.
-The result of “MATCH” or “NO-MATCH” will not come out with single rule anymore but the whole list.
+This design certain has some limitation for those rules with source and here's improvement in latest 6.1 (R6.1.1280)
+If we have our first domain-match with source, it will keep checking the rest of the rules for other domain-match with different sources.
+The result of “MATCH” or “NO-MATCH” will reference more than one rules, but the sources from different rules that also match the our target domain.
 
 Hence, the result will be different before and after 6.1.1280 version, for example:
 
 * FQDN Filter Tag A: attach egress gw1 with rule A1: sts.awsamazon.com, Source X, Base policy
 * FQDN Filter Tag B: attach egress gw1 with rule B1: *.awsamazon.com, Source Y, Base policy
 
-The order will be A1 -> B1 (reason: 2. More specific domain comes first than wildcard rule)
+The order of FQDN filter list for gw1 will be A1 -> B1 (reason: 2. More specific domain comes first)
 
 Version 6.0 ~ before 6.1.1280
 Source Y CAN’T access sts.awsamazon.com, because the domain “sts.awsamazon.com” first match rule A1 and Source Y is not in rule A1. => NO-MATCH
 
 Version after 6.1.1280
-Source Y CAN access sts.awsamazon.com, because the domain “sts.awsamazon.com” match both rule A1 and B1, and the Source Y is in rule B1. => MATCH
+Source Y CAN access sts.awsamazon.com, because the domain “sts.awsamazon.com” first match rule A1 with source X, and there is another rule B1 also match with Source Y. => MATCH
