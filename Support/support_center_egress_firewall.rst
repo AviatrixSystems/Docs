@@ -105,32 +105,36 @@ Where can I find the traffic logs for my Egress FQDN Control on my Aviatrix Gate
 All traffic through your Aviatrix Egress Control Gateways will be logged. You can check out the logs from the Controller at "Controller/Security/EgressControl/EgressFQDNViewLog". We recommend that you `turn on external logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ to send the syslogs from Aviatrix to your logging systems. Please look at the `right tag for FQDN relevant logs <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_. 
 
 
-What is the New Aviatrix Controller(6.0~6.1) Egress FQDN Filter behavior?
+What is the Egress FQDN Filter behavior on controller 6.0+?
 -------------------------------------------------------------------
 
-For Egress FQDN Filter, controller version 6.0 and above version, there is a mechanism that will sort all the FQDN rules on the same egress gateway in order by the following factors:
+For Egress FQDN Filter on controller version 6.0, there is a mechanism that will sort all the FQDN rules on the same egress gateway in order by the following factors:
 
-1. Edit/Action: For White-list/Black-list “Deny"/"Allow” rules comes first then “Allow"/"Deny” then the “Base-policy" rules
-2. Edit/Domain: More specific domain and no wildcard(‘*’) comes first. ex: abc.sts.aws.com -> sts.aws.com -> *.*.aws.com -> *.aws.com
+1. Edit/Action: For White-list/Black-list “Deny"/"Allow” rules comes first then “Allow"/"Deny” rules then the “Base-policy" rules
+2. Edit/Domain: More specific domain and no wildcard(‘*’) comes first. ex: abc.sts.awsamazon.com -> sts.awsamazon.com -> *.awsamazon.com
 3. Edit Source: No source IP comes first than rules with source.
 4. Shorter Domain or smaller number of CIDR/Subnet.
 
-Every domain access will go through this list that be sorted by these factors to see if there is a domain-match.
-Once the domain-match happened, it will stop checking the rest of the list, and comes out a result of “MATCH” or “NO-MATCH” (according to the source).
+In 6.0, every domain access will go through this list that be sorted by these factors to see if there is a domain-match.
+Once the domain-match happens, it will stop checking the rest of the list, and comes out a result of “MATCH” or “NO-MATCH”.
 
-This design certain has some limitation for those rules with source and here's improvement in latest 6.1 (R6.1.1280)
-If we have our first domain-match with source, it will keep checking the rest of the rules for other domain-match with different sources.
-The result of “MATCH” or “NO-MATCH” will reference more than one rules, but the sources from different rules that also match the our target domain.
+This design certainly has some limitation when there are multiple specific rules with source filter enabled.
+Here is an example: the first rule is allow sts.awsamazon.com from 10.10.10.0/24 and the second rule is *.awsamazon.com from 10.10.20.0/24.
+Packet is from 10.10.20.200 the source is not matched with first rule and the packet dropped .
+
+Here's improvement in latest 6.1 (R6.1.1280)
+When doing above FQDN rule checking for domain-match with source, it will continue to check the rest of the rules to see if there is domain-match but with different sources.
 
 Hence, the result will be different before and after 6.1.1280 version, for example:
 
-* FQDN Filter Tag A: attach egress gw1 with rule A1: sts.awsamazon.com, Source X, Base policy
-* FQDN Filter Tag B: attach egress gw1 with rule B1: *.awsamazon.com, Source Y, Base policy
+* Source host 10.10.20.100 is making a connection to sts.awsamazon.com
+* FQDN Filter Tag A: attach egress gw1 with rule A1: sts.awsamazon.com, Source 10.10.10.0/24, Base policy
+* FQDN Filter Tag B: attach egress gw1 with rule B1: *.awsamazon.com, Source 10.10.20.0/24, Base policy
 
-The order of FQDN filter list for gw1 will be A1 -> B1 (reason: 2. More specific domain comes first)
+The order of FQDN filter list for gw1 will be A1 -> B1 (Refer to above factor 2. More specific domain comes first)
 
 Version 6.0 ~ before 6.1.1280
-Source Y CAN’T access sts.awsamazon.com, because the domain “sts.awsamazon.com” first match rule A1 and Source Y is not in rule A1. => NO-MATCH
+Source host 10.10.20.100 CAN’T access sts.awsamazon.com. The domain “sts.awsamazon.com” first match rule A1 and Source 10.10.20.100 is not in rule A1. => NO-MATCH
 
 Version after 6.1.1280
-Source Y CAN access sts.awsamazon.com, because the domain “sts.awsamazon.com” first match rule A1 with source X, and there is another rule B1 also match with Source Y. => MATCH
+Source host 10.10.20.100 CAN access sts.awsamazon.com. The domain “sts.awsamazon.com” first match rule A1 and Source 10.10.20.100 is not in rule A1, instead of stopping checking, in 6.1 it will continue to check other rules and find the better match rule B1 with Source 10.10.20.0/24. => MATCH
