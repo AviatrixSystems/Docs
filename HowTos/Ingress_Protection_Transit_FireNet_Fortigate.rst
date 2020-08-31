@@ -19,6 +19,10 @@ in the diagram below. In this design pattern, each firewall instance must perfor
   
 |transit_firenet_ingress|
 
+.. note::
+
+	This design pattern also supports multiple of firewalls (scale out fashion) for each Aviatrix Transit FireNet gateway.
+
 This document describes a step-by-step Ingress Protection via Aviatrix Transit FireNet with Fortigate deployment workflow for R6.1 and later. 
 In this note you learn how to:
 
@@ -294,8 +298,8 @@ Step 1. Set up basic configuration for FortiGate (Fortinet)
 	
 	- `Create static routes for routing traffic to Spoke VPC <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#create-static-routes-for-routing-of-traffic-vpc-to-vpc>`_
 
-Step 2. Configure Destination NAT (DNAT) to the IP of Application Load Balancer
---------------------------------------------------------------------------------
+Step 2. Configure Destination NAT (DNAT) to the FQDN/IP of Internal Application Load Balancer
+---------------------------------------------------------------------------------------------
 
 	- Login Fortigate GUI
 	
