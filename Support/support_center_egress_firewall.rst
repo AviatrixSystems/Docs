@@ -111,12 +111,12 @@ What is the New Aviatrix Controller(6.0~6.1) Egress FQDN Filter behavior?
 For Egress FQDN Filter, controller version 6.0 and above version, there is a mechanism that will sort all the FQDN rules on the same egress gateway in order by the following factors:
 
 1. Edit/Action: For White-list/Black-list “Deny"/"Allow” rules comes first then “Allow"/"Deny” then the “Base-policy" rules
-2. Edit/Domain: More specific domain (no ‘*’) comes first then rules with wildcard. ex: abc.sts.aws.com -> sts.aws.com -> *.*.aws.com -> *.aws.com
+2. Edit/Domain: More specific domain and no wildcard(‘*’) comes first. ex: abc.sts.aws.com -> sts.aws.com -> *.*.aws.com -> *.aws.com
 3. Edit Source: No source IP comes first than rules with source.
 4. Shorter Domain or smaller number of CIDR/Subnet.
 
 Every domain access will go through this list that be sorted by these factors to see if there is a domain-match.
-Once the domain-match happened, it will stop checking the rest of the list, and comes a result of “MATCH” or “NO-MATCH” (according to the source).
+Once the domain-match happened, it will stop checking the rest of the list, and comes out a result of “MATCH” or “NO-MATCH” (according to the source).
 
 This design certain has some limitation for those rules with source and here's improvement in latest 6.1 (R6.1.1280)
 If we have our first domain-match with source, it will keep checking the rest of the rules for other domain-match with different sources.
