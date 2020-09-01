@@ -527,9 +527,6 @@ AWS API (AWS only)                                           TCP 443        AWS 
 Aviatrix gateways                                            TCP 443        Software upgrade to gateways
 ============================================                 ============   ===================
 
-Since the Controller is deployed on a public subnet, to restrict the Controller outbound access, 
-you should use `Aviatrix Public Subnet Filter <https://docs.aviatrix.com/HowTos/public_subnet_filtering_faq.html>`_ 
-to configure Egress Control on the Controller by allowing whitelist to only the listed domain names. 
 
 What IP addresses does an Aviatrix gateway  need to reach out to?
 ----------------------------------------------------------------------
