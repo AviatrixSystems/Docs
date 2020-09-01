@@ -102,7 +102,12 @@ the Aviatrix Transit Gateway peering, as shown in the diagram below.
 
 |multi_egress|
 
+12. Ingress Protection via Aviatrix Transit FireNet
+------------------------------------------------------
 
+This Ingress Protection design pattern is to have the traffic forward to firewall instances directly in Aviatrix Transit FireNet VPC as shown in the diagram below. In this design pattern, each firewall instance must configure (1) SNAT on its LAN interface that connects to the Aviatrix FireNet gateway and (2) DNAT to the IP of application server/load balancer. The draw back of this design is source IP address is not preserved when traffic reaches the application. 
+
+|transit_firenet_ingress|
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
@@ -147,6 +152,9 @@ the Aviatrix Transit Gateway peering, as shown in the diagram below.
    :scale: 30%
 
 .. |ingress_firewall| image:: ingress_firewall_example_media/ingress_firewall.png
+   :scale: 30%
+
+.. |transit_firenet_ingress| image:: ingress_firewall_example_media/Ingress_Aviatrix_Transit_FireNet_topology.png
    :scale: 30%
 
 .. disqus::
