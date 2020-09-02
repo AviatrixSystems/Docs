@@ -739,6 +739,10 @@ To change gateway name alias, go to Gateway, then hover the mouse at a specific 
 
 To revert back to the original gateway name, go to Gateway, then hover the mouse at the specific gateway with alias name, click the Pen icon and apply the name with empty text. 
 
+.. important::
+
+  This feature does not interoperate with Co-Pilot at this time. Customers who also deploy Co-Pilot should not change the gateway names as they are not reflected in the Co-Pilot product.
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |edit-designated-gateway| image:: gateway_media/edit-designated-gateway.png

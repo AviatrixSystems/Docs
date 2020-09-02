@@ -79,7 +79,7 @@ Go to the page "Network -> State Routes" to create a Static Route as the followi
   - Click on the button "Create New"
   - Enter the destination route in the "Destination" box
   - In the "Gateway Address" box, you will need to enter the Azure default gateway IP on subnet -dmz-firewall-lan
-    i.e. subnet CIDR for -dmz-firewall-lan is 10.20.0.96/28, thus the Azure default gateway IP on this subnet is 10.20.0.97
+    i.e. subnet CIDR for -dmz-firewall-lan is 10.20.0.80/28, thus the Azure default gateway IP on this subnet is 10.20.0.81
 
   .. note::
     dmz-firewall-lan subnet can be found in Aviatrix Controller. Go to Aviatrix Controller's console -> Gateway -> Select Gateway and click Edit -> click More details to check all subnets.
@@ -91,7 +91,12 @@ Go to the page "Network -> State Routes" to create a Static Route as the followi
 
 |az_fortigate_static_routes|
 
-Those static routes could also be reviewed on the page "Dashboard -> Network -> Routing"
+.. important::
+    Load Balancer static route 168.63.129.16/32 needs to be added manually pointing to the lan interface (port 2). 168.63.129.16/32 is the health probe source address.
+
+Those static routes could also be reviewed on the page "Dashboard -> Network -> Routing".
+
+RFC 1918 routes are highlighted in RED where as load balancer static route is highlighted in GREEN.
 
 |az_fortigate_static_routes_review|
 
