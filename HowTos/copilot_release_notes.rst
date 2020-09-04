@@ -7,36 +7,6 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
-
-Release 1.1.4 (GA)
--------------------
-
-- Enabled license management
-- Added support for multi-select
-- Added ability to delete indexes
-- Added storage auto-delete threshold configuration
-- Added diagnostics (ping/traceroute) to topology
-
-
-Release 1.1.4.2 
--------------------
-- Addressed the issue with license key validation
-
-Release 1.1.5.2 
--------------------
-- Added support for tagging in Topology 
-- Added support for custom SSL certificate import
-
-Release 1.1.6.1
--------------------
-- Tagging functionality extended, Tag Manager in Settings Pages, Latency Charts, Filtering in Flow IQ improved
-
-Release 1.1.7.1
--------------------
-- Topology Highlight
-- Performance Monitoring Charts with multiple hosts
-- && and || support for FlowIQ Filters
-
 Release 1.2.0.3
 -------------------
 Version 1.2.0.3 requires users to enter valid credentials for the controller that Copilot will store as a **Service Account**. This Service Account is needed
@@ -65,6 +35,45 @@ The Service Account can be changed in **Settings** .
 
 - Bug Fixes
   Few Bug fixes and performance improvements to load topology and instances faster
+
+Release 1.1.9
+-------------------
+- Security Updates
+
+Release 1.1.8
+-------------------
+- Topology Clustering 
+- Enhancements to Perf Mon charts with time period support
+- Saving of Filter Groups in Flow IQ
+
+Release 1.1.7.1
+-------------------
+- Topology Highlight
+- Performance Monitoring Charts with multiple hosts
+- && and || support for FlowIQ Filters
+
+Release 1.1.6.1
+-------------------
+- Tagging functionality extended, Tag Manager in Settings Pages, Latency Charts, Filtering in Flow IQ improved
+
+Release 1.1.5.2 
+-------------------
+- Added support for tagging in Topology 
+- Added support for custom SSL certificate import
+
+
+Release 1.1.4.2 
+-------------------
+- Addressed the issue with license key validation
+
+Release 1.1.4 (GA)
+-------------------
+
+- Enabled license management
+- Added support for multi-select
+- Added ability to delete indexes
+- Added storage auto-delete threshold configuration
+- Added diagnostics (ping/traceroute) to topology
 
 
 .. |service_account_modal| image:: copilot_releases/service_account_modal.png
