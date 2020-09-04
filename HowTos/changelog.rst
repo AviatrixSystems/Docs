@@ -1,5 +1,11 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+2.12.10 - September 3 2020
+  - Support Ubuntu 20.04 FIPS
+  - A toggle to support Cisco Umbrella DNS servers or the VPC DNS servers on MacOS
+  - Support multiple MacOS system login accounts
+  - Allow override of manually set DNS flag to be enabled by default on MacOS
+
 2.11.6 - July 22 2020
  - OpenSSL lib of the MacOS client is updated to 1.1.11g
  - OpenSSL lib of the Windows client is updated to 1.1.11f

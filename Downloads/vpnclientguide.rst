@@ -214,6 +214,8 @@ Here you can perform special operations if Troubleshooting is required
 
 3. Force kill all OpenVPN process: Terminates other OpenVPN processes that are running abruptly
 
+4. Check VPN DNS server reachability: (MacOS only) If this option is checked, it will apply the VPC DNS servers in the MacOS system. If it is disabled, it will use the local DNS servers or other local DNS mechanism (e.g. CISCO Umbrella)
+
 
 ****************************
 Connecting to a SAML Gateway
