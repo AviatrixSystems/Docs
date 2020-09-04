@@ -35,6 +35,15 @@ Go to Transit Network -> Transit Peering -> Add New.
 
 Select one of each Transit Gateway and click OK. 
 
+Peering with Private Network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This Peering with Private Network function is an optional field. When this checkbox is checked, users are able to build Aviatrix Transit Gateway peering over multi-cloud where there is private network connectivity.
+
+One of the use cases is two Aviatrix Transit Gateways deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
+
+For example configuration workflow, check out [this document].
+
 Excluded Network CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
