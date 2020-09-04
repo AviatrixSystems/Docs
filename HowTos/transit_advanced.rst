@@ -78,6 +78,15 @@ process, refer to `ActiveMesh 2.0 next hop. <https://docs.aviatrix.com/HowTos/ac
 
 Click the Slide Bar to enable BGP ECMP. 
 
+Active-Standby
+--------------
+
+This option is to provide the flexibility on Aviatrix Transit Gateways to connect to on-prem with only one active tunnel and the other one as backup. In addition, this Active-Standby Mode supports ActiveMesh 2.0 only.
+
+The use case is a deployment scenario where on-prem device such as firewall does not support asymmetric routing on two tunnels. When Active-Standby mode is enabled, it applies to both BGP and Static Remote Route Based External Device Connections and for each connection, only one tunnel is active in forwarding traffic at any given time. 
+
+Click the Slide Bar to enable Active-Standby mode. 
+
 Gateway AS Path Prepend
 -------------------------------------------
 

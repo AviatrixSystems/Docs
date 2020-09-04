@@ -123,6 +123,18 @@ Select a gateway in the drop down menu and click Replace.
     Please refer to `Service Description of Diagnostic Result <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`__
 
 
+Session View
+~~~~~~~~~~~~
+
+This feature allows you to view active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. 
+
+To view sessions:
+
+	- go to Troubleshoot -> Diagnostics -> Gateway -> Session View
+
+	- or go to Security -> Stateful Firewall -> Session View
+   
+
 .. raw:: html
 
    <hr width="%80"/>

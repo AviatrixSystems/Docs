@@ -401,6 +401,10 @@ Edge Segmentation works across Connection Policies for `AWS TGW Peered <https://
 To enable Edge Segmentation, go to Transit Network -> Setup -> Step 3, Connect to VGW/External Device/CloudN, to select the option "Enable Edge Segmentation".
 
 
+How to enable multicast capability function on TGW?
+---------------------------------------------------
+
+Multicast capability function is able to be turned on when users launch AWS TGW. This is API support only.
 
 
 .. |tgw_overview| image:: tgw_overview_media/tgw_overview.png
