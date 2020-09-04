@@ -27,11 +27,22 @@ Release 1.1.5.2
 - Added support for tagging in Topology 
 - Added support for custom SSL certificate import
 
-Release 1.2.0
+Release 1.1.6.1
 -------------------
-Version 1.2.0 requires users to enter valid credentials for the controller that Copilot will store as a Service Account. This Service Account is needed
+- Tagging functionality extended, Tag Manager in Settings Pages, Latency Charts, Filtering in Flow IQ improved
+
+Release 1.1.7.1
+-------------------
+- Topology Highlight
+- Performance Monitoring Charts with multiple hosts
+- && and || support for FlowIQ Filters
+
+Release 1.2.0.3
+-------------------
+Version 1.2.0.3 requires users to enter valid credentials for the controller that Copilot will store as a **Service Account**. This Service Account is needed
 so Copilot can process and send alerts based on configured thresholds. This Service Account can be a read-only account the user created on
-the controller.
+the controller. This dialog will only show one time when no service account has been configured.
+The Service Account can be changed in **Settings** .
 
 |service_account_modal|
 
@@ -57,4 +68,3 @@ the controller.
 
 
 .. |service_account_modal| image:: copilot_releases/service_account_modal.png
-        :scale: 50%
