@@ -214,7 +214,7 @@ Moreover, execute the function "Get Interfaces With Topology" to sync up the set
 
 |v2_CheckPoint_SmartConsole_syncup_02|
 
-Click on the button "Install Policy" and then "Install" to commit the settings.
+Go to the page "SECURITY POLICIES -> Access Control -> Policy" and click on the button "Install Policy" and then "Install" to commit the settings.
 
 |install_policy_aws|
 
@@ -223,7 +223,7 @@ Click on the button "Install Policy" and then "Install" to commit the settings.
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall.
 
-Go to the page "SECURITY POLICIES -> Access Control -> Policy" and configure a policy by either modifying the default "Cleanup rule" or Add a new rule above the default rule.
+From the page "SECURITY POLICIES -> Access Control -> Policy", configure a policy by either modifying the default "Cleanup rule" or Add a new rule above the default rule.
 
 =======================   ===============================================
 **Field**                 **Value**
