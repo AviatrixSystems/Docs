@@ -72,7 +72,8 @@ Objects on the topology support drag and drop. You can click, drag and drop reso
 
 - Search
 
-  The search bar allows you to filter the objects that are plotted on the topology.
+
+  The search box allows you to filter the objects that are plotted on the topology.
 
 - Filter 
 
