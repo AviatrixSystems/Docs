@@ -271,6 +271,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/vpc_tracker
    HowTos/create_vpc
+   HowTos/discover_flows
 
 .. _Settings:
 
