@@ -42,7 +42,7 @@ This Peering with Private Network function is an optional field. When this check
 
 One of the use cases is two Aviatrix Transit Gateways deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
 
-For example configuration workflow, check out [this document].
+For example configuration workflow, check out this doc `Aviatrix Transit Gateway Peering with Private Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
 
 Excluded Network CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
