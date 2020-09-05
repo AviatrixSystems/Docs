@@ -56,17 +56,15 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 Azure Performance Test Results
 --------------------------------
 
-Azure maximum MTU is 4000 Bytes. 
-
-====================      ===============================  ====================================
-**Gateway VM Type**       **Throughput with MTU 1500B**    **Throughput with MTU 4000B**
-====================      ===============================  ====================================
-Standard_F32s_v2          8.9Gbps                          13.3Gbps
-Standard_F48s_v2          10.9Gbps                         17.4Gbps
-Standard_D64_v3           8.2Gbps                          12.1Gbps
-Standard_D32_v3           7.1Gbps                          10.9Gbps
-Standard_D5_v2            6.6Gbps                          10.1Gbps
-====================      ===============================  ====================================
+====================      ===============================
+**Gateway VM Type**       **Throughput with MTU 1500B**    
+====================      ===============================
+Standard_F32s_v2          8.9Gbps                          
+Standard_F48s_v2          10.9Gbps                         
+Standard_D64_v3           8.2Gbps                          
+Standard_D32_v3           7.1Gbps                         
+Standard_D5_v2            6.6Gbps                          
+====================      ===============================
 
 
 How to Tune Performance
