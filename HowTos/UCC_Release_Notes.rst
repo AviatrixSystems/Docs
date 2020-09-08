@@ -40,6 +40,19 @@ R6.2 (Coming soon)
 
 - **Session Visibility** displays active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. To view sessions, go to Troubleshoot -> Diagnostics -> Gateway -> Session View. Or go to Security -> Stateful Firewall -> Session View. 
 
+R6.1.1309 (9/7/2020)
+======================
+
+- **Gateway Rename feature removal** Gateway Rename feature has been removed from UI. 
+- **Account Rename feature removal** Account Rename feature has been removed from UI. 
+- **Enhancement** Consistent Login Banner when custom banner login is enabled. 
+- **Enhancement** Enable multicast option when creating an AWS Transit Gateway (TGW). `API support only. <https://api.aviatrix.com/#d5c3051f-a3b0-4778-b2c5-300eadec9ba2>`_
+- **Bug fix** fix Insane Mode gateway replacement function bug. 
+- **Bug fix** fix Transit Gateway Manual Summarize route bug.
+- **Bug fix** fix FireNet error programming firewall instances when they go through stop and start process. 
+- **Bug fix** fix gateway launch tag attachment to ensure when a gateway is launched tag is part of the AWS API call. 
+
+
 R6.1.1280 (8/17/2020)
 =======================
 
