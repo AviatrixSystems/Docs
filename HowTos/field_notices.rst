@@ -6,6 +6,26 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+Field Notice 0013 (2020/09/04)
+----------------------------------
+**Products Affected**
+
+•	Aviatrix CoPilot
+
+**Problem Description:**
+
+Aviatrix Software Release 6.1 introduced a feature to support gateway name change from the Controller Dashboard which breaks Topology Map and tagging feature available in CoPilot.
+
+**Recommended Solution:**
+
+•	If you have deployed Aviatrix software release 6.1 on the controller and have not made any changes to gateway names, please refrain from making any changes. The gateway name change feature has been removed from the software in the latest 6.1 patch release and thereafter. Please upgrade your software to the latest 6.1 release 6.1.1309
+https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r6-1-1309-9-7-2020
+
+•	If you are running both Aviatrix 6.1 release (older than patch 1309) and CoPilot in your environment, and if you have made changes to a gateway name already, please change it back to its original name to restore the topology and tagging functions in CoPilot. 
+Then, upgrade the software to release 6.1.1309
+
+•	If you haven’t upgraded Aviatrix Software release to 6.1, please upgrade to the latest 6.1 release 6.1.1309
+
 Field Notice 0012 (2020/08/07)
 ----------------------------------
 **Security Vulnerabilities in R5.3 and Earlier**
