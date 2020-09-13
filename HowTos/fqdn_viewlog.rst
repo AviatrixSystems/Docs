@@ -27,7 +27,7 @@ If you like to remove a specific tag associated with a FQDN tag, select the gate
 Download Logs
 --------------
 
-For FQDN log on a specific gatewway, select the gateway, click Actions -> Download Logs. 
+For FQDN log on a specific gateway, select the gateway, click Actions -> Download Logs. 
 
 Edit Pass-through
 --------------------
