@@ -17,7 +17,7 @@ it gives flexibility to do all kind of address translations (e.g. Many-to-Many, 
 
 This document covers examples with Aviatrix Transit Gateway only and below topology will be used for all scenarios.
 
-|cnat_topology|
+|cmap_topology|
 
 .. note::
  Same virtual CIDR for multiple customer sites cannot be used.
@@ -231,7 +231,7 @@ For the VPC gateway side, the Local Subnet field should be the subnet of VPC-1 (
 
 
 
-.. |cnat_topology| image:: custom_mapped_solution_media/cnat_topology.png
+.. |cmap_topology| image:: custom_mapped_solution_media/cmap_topology.png
    :scale: 35%
 
 .. |scenario1_overlapping_cidr| image:: custom_mapped_solution_media/scenario1_overlapping_cidr.png
