@@ -398,8 +398,7 @@ Edge Segmentation works across Connection Policies for `AWS TGW Peered <https://
 
  The Edge Segmentation is only applicable to TGW Orchestrator deployed Spoke VPCs. It does not apply to Aviatrix Encrypted Transit. It also does not apply to Aviatrix Transit Gateway peering. 
 
-To enable Edge Segmentation, go to Transit Network -> Setup -> Step 3, Connect to VGW/External Device/CloudN, to select the option "Enable Edge Segmentation".
-
+To enable Edge Segmentation, go to Multi-Cloud Transit Network -> Advanced Config, select Transit Gateway, and scroll to “AWS TGW Segmentation” and “Enable”
 
 How to enable multicast capability function on TGW?
 ---------------------------------------------------
