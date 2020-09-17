@@ -4,7 +4,7 @@
 
 
 =========================================================
-Transit FireNet Workflow for Azure
+Transit FireNet Workflow for Azure Native Spoke VNets
 =========================================================
 
 Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Multi-Cloud Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
@@ -13,13 +13,13 @@ Aviatrix Transit FireNet supports different hashing algorithms available in Azur
 
 To learn more about Hashing Algorithm and Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-In this example, Transit VNet with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
+In this example, Transit VNet with Aviatrix Gateways will be deployed, and two Native Spoke VNets will be attached to it.
 
-The transit VNET will have a firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) deployed in it. Please see the diagram below for more details.
+The transit VNet will have a firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) deployed in it. Please see the diagram below for more details.
 
 Once the infra is in-place then the policy will be created to inspect the east-west and north-south traffic.
 
-|avx_tr_firenet_topology_az|
+|avx_tr_firenet_topology_az_native|
 
 Step 1 : Create Transit VNet
 *******************************
@@ -33,7 +33,7 @@ Aviatrix controller has set of useful tools available for users and in this exam
 #.	Add one VNet for Transit FireNet Gateway and select **Aviatrix FireNet VPC** option as shown below.
 #.  Create two more VNets with **no option/checkbox** selected for Spoke Gateways.
 
-|create_vpc|
+|create_vpc_native_case|
 
 Step 2: Deploy the Transit Aviatrix Gateway
 ***************************************************
@@ -65,84 +65,68 @@ Procedure
 
 Please see an example below for Transit FireNet GW:
 
-|tr_firenet_gw|
+|tr_firenet_gw_native|
 
 .. note::
     Insane Mode Encryption for higher throughput requires a virtual machine size as shown below.
 
 |insane_mode_tp|
 
-Step 3: Deploy Spoke Gateways
-*************************************
 
-Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VNET using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
-
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #4 Launch an Aviatrix Spoke Gateway**
-#.	Deploy a Spoke Gateway (GW) in each of the spoke VNETs using defaults while choose correct Account and VNET info
-#.	Choose the Public Subnet
-#.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW
-
-|launch_spk_gw|
-
-Step 4: Attach Spoke Gateways to Transit Network
+Step 3: Attach Native Spoke VNETs to Transit Network
 *******************************************************
 
 Transit and spoke gateways are deployed, next step is to connect them.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #6a Attach Spoke Gateway to Transit Network**
-#.	Select one spoke at a time and attach to the Transit Gateway.
+1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #6b Attach Azure ARM Spoke through Native Peering**
+#.	Select one VNET at a time and attach to the Transit Gateway.
 
-|attach_spk_trgw|
+|attach_native_vnet|
 
 .. note::
- Transit Gateway is attached to Spoke Gateways, but by default, Transit Gateway will not route traffic between Spoke Gateways.
+ Transit Gateway is attached to Azure Native Spokes but by default, Transit Gateway will not route traffic between Native Spokes.
 
-Step 5: Enable Connected Transit
+Step 4: Enable Connected Transit
 **************************************
 
 By default, spoke VNETs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VNETs to communicate with each other, we need to enable Connected Transit
 
 1.	Navigate to **MULTI-CLOUD TRANSIT -> Advanced Config**, select the right Transit Gateway and enable **“Connected Transit”**
 
-|connected_transit|
+|connected_transit_native_vnet|
 
-Step 6: Configure Transit Firewall Network
+Step 5: Configure Transit Firewall Network
 **************************************************
 
-Transit and Spoke Gateways have now been deployed, next step is to deploy and enable the Firewall for traffic inspection.
+Transit and Native VNET Spokes have now been deployed, next step is to deploy and enable the Firewall for traffic inspection.
 
 Let’s start with enabling the firewall function and configure the FireNet policy.
 
 1.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #1 Enable Transit FireNet on Aviatrix Transit Gateway**
 #.	Choose the Aviatrix Transit Gateway and Click **“Enable”**
 
-|en_tr_firenet|
+|en_tr_firenet_native_case|
 
 3.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #2 Manage FireNet Policy**
 #.	Add spokes to the Inspected box for traffic inspection
 
 .. note::
-    By default, FireNet inspects ingress (INET to VNET) and east-west traffic (VNET to VNET) only.
+    By default, FireNet inspects ingress (Internet to VNET) and east-west traffic (VNET to VNET) only.
 
-|tr_firenet_policy|
+|tr_firenet_policy_native_case|
 
 
-Step 7a: Launch and Associate Firewall Instance
+Step 6a: Launch and Associate Firewall Instance
 *****************************************************************
 
-This approach is recommended if this is the first Firewall instance to be attached to the gateway.
+This step launches a Firewall instance and associates it with one of the FireNet gateways. To attach the existing firewall instance to one of the gateway, please follow Step 6b.
 
-This step launches a Firewall instance and associates it with one of the FireNet gateways.
-
-
-.. important::
-
-    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
 .. note::
-    By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 or 3 tuple as per requirement. Please check transit `firenet FAQs <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#azure>`_ for more details.
+    By default, Aviatrix Transit FireNet uses 5 tuple forwarding algorithm but that can be changed from Firewall Network -> Advanced settings.
 
-7a.1 Launch and Attach
+
+6a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
@@ -178,7 +162,7 @@ Check Point Security Gateway has 2 interfaces as described below.
 **Check Point VM interfaces**                                    **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress)                       Egress or Untrusted interface            Allow ALL
-eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+eth1 (on subnet -dmz-firewall_lan)                               LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note that security gateway eth1 is on the same subnet as Firenet gateway eth2 interface.
@@ -202,12 +186,15 @@ Palo instance has 3 interfaces as described below.
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-gateway-and-firewall-mgmt)               Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
 eth1 (on subnet -Public-FW-ingress-egress)                       Egress or Untrusted interface            Allow ALL
-eth2 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+eth2 (on subnet -dmz-firewall_lan)                               LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
 Launch VM Series from Aviatrix Controller automatically set it up the Palo Alto Network VM-Series firewall. User should be able to login to the VM-Series console with given username and password during launch.
+
+Please follow `Palo Alto Networks VM-Series Azure Example <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html#example-config-for-palo-alto-networks-vm-series-in-azure>`_ to see how to launch VM-Series in Azure, and for more details.
+
 
 .. important::
 
@@ -227,7 +214,7 @@ FortiGate Next Generation Firewall instance has 2 interfaces as described below.
 **FortiGate VM interfaces**                                      **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress)                       Egress or Untrusted interface            Allow ALL
-eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
+eth1 (on subnet -dmz-firewall_lan)                               LAN or Trusted interface                 Allow ALL (Do not change)
 ========================================================         ===============================          ================================
 
 .. tip::
@@ -235,7 +222,7 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Please refer to `FortiGate Azure Configuration Example <https://docs.aviatrix.com/HowTos/config_FortiGateAzure.html#example-config-for-fortigate-vm-in-azure>`_ for more details.
 
-Step 7b: Associate an Existing Firewall Instance
+Step 6b: Associate an Existing Firewall Instance
 *******************************************************
 
 This step is the alternative step to Step 7a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from Azure Console, you can still associate it with the FireNet gateway.
@@ -243,7 +230,7 @@ This step is the alternative step to Step 7a. If you already launched the firewa
 Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
 
 
-Step 8: Vendor Firewall Integration
+Step 7: Vendor Firewall Integration
 *****************************************************
 
 Vendor integration dynamically updates firewall route tables. The use case is for networks with RFC 1918 and non-RFC 1918 routes that require specific route table programming on the firewall appliance
@@ -258,7 +245,7 @@ Vendor integration dynamically updates firewall route tables. The use case is fo
     Vendor integration is not supported for FortiGate. User needs to configure RFC 1918 static routes manually in FortiGate firewall.
 
 
-Step 9: Enable Health Check Policy in Firewall
+Step 8: Enable Health Check Policy in Firewall
 ***************************************************
 Aviatrix Controller uses HTTPS (TCP 443) to check the health of firewall every 5 seconds. User needs to enable this port in firewall as per given instruction.
 
@@ -301,7 +288,7 @@ The health check probes can be verified in FortiGate by navigating to Log & Repo
 |health-probe-logs|
 
 
-Step 10: Example Setup for "Allow All" Policy
+Step 9: Example Setup for "Allow All" Policy
 ***************************************************
 
 After a firewall instance is launched, wait for 5 to 15 minutes for it to come up. Time varies for each firewall vendor.
@@ -310,7 +297,7 @@ In addition, please follow example configuration guides as below to build a simp
 Palo Alto Network (PAN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For basic configuration, please refer to `example Palo Alto Network configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
+For basic configuration, please refer to `example Palo Alto Network configuration guide <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html>`_.
 
 For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_.
 
@@ -325,7 +312,7 @@ Check Point
 For basic policy configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#configure-basic-traffic-policy-to-allow-traffic-vnet-to-vnet>`_.
 
 
-Step 11: Verification
+Step 10: Verification
 ***************************
 
 There are multiple ways to verify if Transit FireNet is configured properly:
@@ -351,38 +338,35 @@ Ping/Traceroute Test for FireNet Data-Plane Verification:
 Once control-plane is established and no problem found in security and routing polices. Data-plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
 
 There are multiple ways to check data-plane:
-    1. One way to SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
+    1. One way to SSH to Spoke EC2 instance and ping other Spoke EC2 to instance to make sure no traffic loss in the path.
     2. Ping/traceroute capture can also be performed from Aviatrix Controller. Go to **TROUBLESHOOT -> Diagnostics** and perform the test.
 
 
-.. |avx_tr_firenet_topology_az| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/avx_tr_firenet_topology_az.png
+.. |avx_tr_firenet_topology_az_native| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/avx_tr_firenet_topology_az_native.png
    :scale: 20%
 
 .. |insane_mode_tp| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/insane_mode_tp.png
    :scale: 30%
 
-.. |create_vpc| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/create_vpc.png
+.. |create_vpc_native_case| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/create_vpc_native_case.png
    :scale: 40%
 
-.. |tr_firenet_gw| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/tr_firenet_gw.png
+.. |tr_firenet_gw_native| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/tr_firenet_gw.png
    :scale: 35%
 
-.. |launch_spk_gw| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/launch_spk_gw.png
+.. |attach_native_vnet| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/attach_native_vnet.png
    :scale: 35%
 
-.. |attach_spk_trgw| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/attach_spk_trgw.png
+.. |en_tr_firenet_native_case| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/en_tr_firenet_native_case.png
    :scale: 35%
 
-.. |en_tr_firenet| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/en_tr_firenet.png
-   :scale: 35%
-
-.. |tr_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/tr_firenet_policy.png
+.. |tr_firenet_policy_native_case| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/tr_firenet_policy_native_case.png
    :scale: 35%
 
 .. |avx_tr_firenet_topology| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/avx_tr_firenet_topology.png
    :scale: 35%
 
-.. |connected_transit| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/connected_transit.png
+.. |connected_transit_native_vnet| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/connected_transit_native_vnet.png
    :scale: 40%
 
 .. |health-check| image:: transit_firenet_workflow_media/transit_firenet_Azure_workflow_media/health-check.png

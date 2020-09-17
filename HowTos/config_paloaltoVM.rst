@@ -12,6 +12,8 @@ sent to the VM-Series for VPC to VPC and from VPC to internet traffic inspection
 
 For using bootstrap method to setup the VM-Series, follow `this document. <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_
 
+VM-Series in Azure can be setup using the guide `Palo Alto Networks VM-Series Azure Example <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html#example-config-for-palo-alto-networks-vm-series-in-azure>`_.
+
 The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ After the launch is complete, the console displays the
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file 
 for SSH access to the instance. 
@@ -101,9 +103,10 @@ Click Commit. Once Commit is complete, you should see the Link State turn green 
 7. Configure VM-Series ethernet1/2 with LAN Zone
 ---------------------------------------------------
 
-Repeat Step 4 for ethernet1/2. Name the new zone LAN.
+Repeat Step 6 for ethernet1/2. Name the new zone LAN.
 
 Click Commit. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/2.
+
 
 8. Configure Allow Outbound Policies
 ---------------------------------
