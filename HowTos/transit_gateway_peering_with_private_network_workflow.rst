@@ -2,7 +2,6 @@
   :description: Transit Gateway Peering with Private Network Workflow
   :keywords: Transit Gateway Peering, Aviatrix Transit network, Private Network, Transit Gateway Peering with Private Network, Azure ExpressRoute, AWS Direct Connect
 
-
 ==============================================================
 Aviatrix Transit Gateway Peering with Private Network Workflow
 ==============================================================
@@ -55,39 +54,72 @@ In this example, we are going to deploy the below VPCs in AWS and Azure
 
 	- AWS Aviatrix Spoke VPC (i.e. 192.168.1.0/24)
   
-  - Azure Aviatrix Transit VNET (i.e. 10.0.0.0/16)
+	- Azure Aviatrix Transit VNET (i.e. 10.0.0.0/16)
 
 	- Azure Aviatrix Spoke VNET (i.e. 192.168.0.0/24)
 
 Workflow on building underlay connectivity for private network with AWS Direct Connect
 ======================================================================================
 
-Building AWS Direct Connect is customer's responsibility. Please adjust the topology depending on your requirements. 
-
-Step 1.1. Build AWS Direct Connect
------------------------------------
+Building AWS Direct Connect is customer's responsibility. For more information about AWS Direct Connect, please check out the below documents:
 
   - Refer to `Connect Your Data Center to AWS <https://aws.amazon.com/getting-started/projects/connect-data-center-to-aws/>`_
   
   - Refer to `Equinix ECX Fabric AWS Direct Connect <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-aws-direct-connect.htm>`_ if users select Equinix solution. This is just an example here.
 
-Step 1.2. Associate AWS VGW to AWS Transit VPC
+Please adjust the topology depending on your requirements. 
+
+Step 1.1. Associate AWS VGW to AWS Transit VPC
 -----------------------------------------------
 
 
 Workflow on building underlay connectivity for private network with Azure ExpressRoute 
 =======================================================================================
 
-Building Azure ExpressRoute is customer's responsibility. Please adjust the topology depending on your requirements. 
-
-Step 2.1. Build Azure ExpressRoute
------------------------------------
+Building Azure ExpressRoute is customer's responsibility. For more information about Azure ExpressRoute, please check out the below documents:
 
   - Refer to `Azure ExpressRoute <https://azure.microsoft.com/en-us/services/expressroute/>`_
   
   - Refer to `ExpressRoute documentation <https://docs.microsoft.com/en-us/azure/expressroute/>`_ for more info
   
   - Refer to `Equinix ECX Fabric Microsoft Azure ExpressRoute <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-ms-azure.htm>`_ if users select Equinix solution. This is just an example here.
+
+Please adjust the topology depending on your requirements. 
+
+Step 2.1. Create an ExpressRoute circuit
+----------------------------------------
+
+	- Refer to `Tutorial: Create and modify an ExpressRoute circuit <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-circuit-portal-resource-manager>`_
+
+Step 2.2. Create Azure private peering for an ExpressRoute circuit
+-------------------------------------------------------------------
+
+	- Refer to `private peering section in Create and modify peering for an ExpressRoute circuit <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-routing-portal-resource-manager>`_
+ 
+Step 2.3. Create a virtual network gateway for an ExpressRoute circuit
+----------------------------------------------------------------------
+
+	- Refer to `Configure a virtual network gateway for ExpressRoute using the Azure portal <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager>`_
+	
+Step 2.4. Connect a virtual network to an ExpressRoute circuit
+--------------------------------------------------------------
+
+	- Refer to `Connect a virtual network to an ExpressRoute circuit using the portal <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager>`_
+ 
+Step 2.5. Check Express Route Circuits - List Routes Table on Azure portal
+---------------------------------------------------------------------------
+	
+	- Login Azure Portal
+	
+	- Search for "ExpressRoute circuits" on the search bar
+	
+	- Select the "ExpressRoute circuits" that you created
+	
+	- Select the Azure private peering row
+	
+	- Click on the hyperlink "Get route table"
+	
+	- Check whether AWS Transit VPC's CIDR with the ASN Path of edge router and AWS VGW
 
 Workflow on Aviatrix Transit Gateway Peering with private network 
 ===================================================================
@@ -111,7 +143,7 @@ Step 3.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 Step 3.3. Enable Route Propagation on the subnet route table where Aviatrix Transit Gateway locates on AWS portal
 ------------------------------------------------------------------------------------------------------------------
 
-	- Navigate to AWS VPC portal
+	- Login AWS VPC portal
 	
 	- Locate the subnet route table where Aviatrix Transit Gateway locates
 	
@@ -126,13 +158,13 @@ Step 3.3. Enable Route Propagation on the subnet route table where Aviatrix Tran
 Step 3.4. Check route propagation info on AWS portal
 ----------------------------------------------------
 	
-	- Navigate to AWS VPC portal
+	- Login AWS VPC portal
 	
 	- Locate the subnet route table where Aviatrix Transit Gateway locates
 	
 	- Select the tab "Routes"
 	
-	- Check whether Azure Transit VNet's CIDR points to AWS VGW
+	- Check whether there is a route entry "Azure Transit VNet's CIDR pointing to AWS VGW"
 	
 Step 3.5. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
 ---------------------------------------------------------------------
@@ -143,29 +175,58 @@ Step 3.5. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
 
 	- Enable Transit FireNet Function (optional)
 
-Step 3.6. Check route propagation info on Azure portal
-------------------------------------------------------
+Step 3.6. Check Effective routes info on Azure portal
+-------------------------------------------------------
 	
-	- Navigate to Azure VPC portal
+	- Login Azure Portal
 	
-	- Locate the subnet route table where Aviatrix Transit Gateway locates
-	
-	- Select the tab "Routes"
-	
-	- Check whether Azure Transit VNet's CIDR points to AWS VGW
+	- Search for "Network interfaces" on the search bar
 
+	- Select Aviatrix Transit Gateway's interface
+	
+	- Navigate to the page "Effective routes" by clicking the link "Effective routes" under the section "Support + troubleshooting"
+	
+	- Check whether there is a route entry "AWS Transit VPC's CIDR pointing to Next Hop Type Virtual network gateway"
 
-Step 3.5. Deploy Spoke Gateway and HA in AWS
---------------------------------------------
+Step 3.7. Establish Transit GW Peering with Private Network
+-----------------------------------------------------------
 
-	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in Spoke VPC for Application 
+	- Navigate back to Aviatrix Controller
+	
+	- Go to MULTI-CLOUD TRANSIT -> Transit Peering
+	
+	- Click the button "+ADD NEW"
+	
+	- Enable the checkbox "Peering with Private Network"
+	
+	- Select "AWS Transit Gateway" as Transit Gateway1
+	
+	- Select "Azure Transit Gateway" as Transit Gateway2
+	
+	- Click the button "OK"
+	
+	- Wait for a couple of minutes
+	
+	- Confirm the transit peering status is Up
+
+Step 3.8. Deploy Spoke Gateway and HA
+--------------------------------------
+
+	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in AWS Spoke VPC
 	
 	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput.
+	
+	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in Azure Spoke VNet
+	
+	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput
 
-Step 3.6. Attach Spoke Gateways to Transit Network
+Step 3.9. Attach Spoke Gateways to Transit Network
 --------------------------------------------------
 
-	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Spoke Gateways to Transit Gateways 
+	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in AWS
+	
+		- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in Azure
+	
 
 
 
