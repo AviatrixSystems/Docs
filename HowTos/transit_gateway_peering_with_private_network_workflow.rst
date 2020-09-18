@@ -29,7 +29,7 @@ Topology
 ====================
   
 
-The key ideas for this scenario are:
+The key ideas for this solution are:
 -------------------------------------
 
   - The edge (WAN) router runs a BGP session to AWS VGW via AWS Direct Connect where the edge router advertises the Azure Transit VNET CIDR and the AWS VGW advertises the AWS Transit VPC CIDR.
@@ -69,12 +69,10 @@ Step 1.1. Build AWS Direct Connect
 
   - Refer to `Connect Your Data Center to AWS <https://aws.amazon.com/getting-started/projects/connect-data-center-to-aws/>`_
   
-  - Refer to `Equinix ECX Fabric AWS Direct Connect <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-aws-direct-connect.htm>`_ if users select Equinix solution
+  - Refer to `Equinix ECX Fabric AWS Direct Connect <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-aws-direct-connect.htm>`_ if users select Equinix solution. This is just an example here.
 
 Step 1.2. Associate AWS VGW to AWS Transit VPC
 -----------------------------------------------
-
-  - 
 
 
 Workflow on building underlay connectivity for private network with Azure ExpressRoute 
@@ -89,37 +87,86 @@ Step 2.1. Build Azure ExpressRoute
   
   - Refer to `ExpressRoute documentation <https://docs.microsoft.com/en-us/azure/expressroute/>`_ for more info
   
-  - Refer to `Equinix ECX Fabric Microsoft Azure ExpressRoute <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-ms-azure.htm>`_ if users select Equinix solution
+  - Refer to `Equinix ECX Fabric Microsoft Azure ExpressRoute <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-ms-azure.htm>`_ if users select Equinix solution. This is just an example here.
 
 Workflow on Aviatrix Transit Gateway Peering with private network 
 ===================================================================
 
 Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ and `Aviatrix Transit Gateway Encrypted Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ for the below steps. Please adjust the topology depending on your requirements.
 
+Step 3.1. Deploy VPCs for Transit FireNet
+------------------------------------------
 
+	- Create AWS Transit VPC and Azure Transit VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
 
-!!!!!!!
+	- Create AWS Spoke VPC and Azure Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
 
-Step 1.1. Deploy VPCs for Transit FireNet
------------------------------------------------------------------
+Step 3.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
+-------------------------------------------------------------------
 
-	- Create an Aviatrix Transit VPC by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
-
-	- Create an Aviatrix Spoke VPC for Application by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in AWS portal. Moreover, feel free to use your existing VPC.
-
-Step 1.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA
---------------------------------------------------------------
-
-	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in Transit FireNet VPC
+	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in AWS Transit VPC
 	
-	- Connected Transit mode is not necessary for this Ingress inspection solution.
+	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput.
+	
+Step 3.3. Enable Route Propagation on the subnet route table where Aviatrix Transit Gateway locates on AWS portal
+------------------------------------------------------------------------------------------------------------------
 
-Step 1.3. Deploy Spoke Gateway and HA
------------------------------------
+	- Navigate to AWS VPC portal
+	
+	- Locate the subnet route table where Aviatrix Transit Gateway locates
+	
+	- Select the tab "Route Propagation"
+	
+	- Click the button "Edit route propagation"
+
+	- Locate the AWS VGW that is associated with this Transit VPC and check the checkbox "Propagate"
+	
+	- Click the button "Save"
+	
+Step 3.4. Check route propagation info on AWS portal
+----------------------------------------------------
+	
+	- Navigate to AWS VPC portal
+	
+	- Locate the subnet route table where Aviatrix Transit Gateway locates
+	
+	- Select the tab "Routes"
+	
+	- Check whether Azure Transit VNet's CIDR points to AWS VGW
+	
+Step 3.5. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
+---------------------------------------------------------------------
+
+	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in Azure Transit VNet
+
+	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput
+
+	- Enable Transit FireNet Function (optional)
+
+Step 3.6. Check route propagation info on Azure portal
+------------------------------------------------------
+	
+	- Navigate to Azure VPC portal
+	
+	- Locate the subnet route table where Aviatrix Transit Gateway locates
+	
+	- Select the tab "Routes"
+	
+	- Check whether Azure Transit VNet's CIDR points to AWS VGW
+
+
+Step 3.5. Deploy Spoke Gateway and HA in AWS
+--------------------------------------------
 
 	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in Spoke VPC for Application 
+	
+	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput.
 
-Step 1.4. Attach Spoke Gateways to Transit Network
-------------------------------------------------
+Step 3.6. Attach Spoke Gateways to Transit Network
+--------------------------------------------------
 
 	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Spoke Gateways to Transit Gateways 
+
+
+
+
