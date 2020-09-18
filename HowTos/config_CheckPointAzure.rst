@@ -359,7 +359,7 @@ After validating that your traffic is being routed through your Security Gateway
 7. [Optional] Configure basic traffic policy to allow traffic VNET to Internet
 ----------------------------------------------------------------------------------
 
-In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
+In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall.
 
 .. important::
   Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet
