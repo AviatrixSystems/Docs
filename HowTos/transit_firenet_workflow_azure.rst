@@ -68,9 +68,8 @@ Please see an example below for Transit FireNet GW:
 |tr_firenet_gw|
 
 .. note::
-    Insane Mode Encryption for higher throughput requires a virtual machine size as shown below.
 
-|insane_mode_tp|
+  Insane Mode Encryption for higher throughput requires a virtual machine size. Check this `link <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#azure-performance-test-results>`_ for detail. 
 
 Step 3: Deploy Spoke Gateways
 *************************************
