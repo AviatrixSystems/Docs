@@ -44,6 +44,8 @@ Firewall inspections can be applied to native Spoke VNet, on-prem to transit and
 
 |transit_firenet_native_spokes|
 
+Please refer to `Transit FireNet Workflow for Azure Native Spoke VNets <https://docs.aviatrix.com/HowTos/transit_firenet_azure_native_spokes_workflow.html>`_ for more details.
+
 SD-WAN Integration
 --------------------
 
