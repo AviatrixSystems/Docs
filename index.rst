@@ -146,6 +146,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/ingress_firewall_example
    HowTos/Azure_ingress_firewall_example
    HowTos/config_paloaltoVM
+   HowTos/config_PaloAltoAzure.rst
    HowTos/bootstrap_example
    HowTos/config_FortiGateVM.rst
    HowTos/config_FortiGateAzure.rst
