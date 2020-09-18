@@ -69,7 +69,10 @@ Building AWS Direct Connect is customer's responsibility. For more information a
 
 Please adjust the topology depending on your requirements. 
 
-Step 1.1. Associate AWS VGW to AWS Transit VPC
+Step 1.1. Build AWS Direct Connect
+-----------------------------------
+
+Step 1.2. Associate AWS VGW to AWS Transit VPC
 -----------------------------------------------
 
 
@@ -225,7 +228,7 @@ Step 3.9. Attach Spoke Gateways to Transit Network
 
 	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in AWS
 	
-		- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in Azure
+	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in Azure
 	
 
 
