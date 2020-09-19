@@ -93,7 +93,7 @@ Configuration Workflow
         Peer Identification               Peer public IP Address (if the controller version is below 5.0,
 						it should be peer private IP) 
       ===============================     =========================================
-	Note: In Palo Alto Networks offcial documents, it is not necessary to add the Peer Identification.  However, to make sure the tunnel working, we recommend to add it.
+	Note: In Palo Alto Networks official documents, it is not necessary to add the Peer Identification.  However, to make sure the tunnel working, we recommend to add it. In the event that IPSec tunnel is up but traffic is not passing between cloud and on-premises, you may want to enable NAT-T in Palo Alto Networks Firewall.
 
       |image3|
 
