@@ -9,11 +9,11 @@
 Site2Cloud (S2C) Custom Network Mapped Solutions Workflow
 ===========================================================================================
 
-This document describes a few scenarios of overlapping networking CIDRs and their solutions. The solution uses the Custom Mapped under the `Mapped` option
+This document describes a solution to solving network connectivity issues where there are overlapping network CIDRs. The solution uses the Custom Mapped under the `Mapped` option
 of Aviatrix `Site2Cloud <https://docs.aviatrix.com/HowTos/site2cloud.html>`_ feature when building IPSEC tunnels.
 
 Custom Mapped Site2Cloud provides the advantage of not having to configure individual SNAT/DNAT rules, also
-it gives flexibility to do all kind of address translations (e.g. Many-to-Many, Many-to-One etc.)
+it gives flexibility to build address translations of all scenarios. (e.g. Many-to-Many, Many-to-One etc.)
 
 This document covers examples with Aviatrix Transit Gateway only and below topology will be used for all scenarios.
 
@@ -24,6 +24,29 @@ This document covers examples with Aviatrix Transit Gateway only and below topol
 
 .. important::
  This document applies to both Aviatrix Transit and AWS Transit Gateway (TGW). "Forward Traffic to Transit Gateway" needs to be enabled under S2C connection in Avaitrix Transit Gateway case.
+
+Terminology Definitions
+--------------------------
+
+The primary reason for terminology definitions is that in connecting overlapping networks with IPSec tunnels, the address translation
+requirements are
+often not symmetric. For example, Remote Initiated Traffic may all require to be source NATed to a single or small range of addresses, while
+Local Initiated Traffic may require to have a 1-1 DNAT and SNAT. By separating different traffic directions, address translations can 
+be done specifically for the direction, thus providing the ultimate flexibility. 
+
+Remote Initiated Traffic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From the point of view of an Aviatrix gateway where site2cloud (with IPSec tunnel) connection is established, traffic initiating from the 
+remote end of the IPSec tunnel is called Remote Initiated Traffic. 
+
+Local Initiated Traffic
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From the point of view of an Aviatrix gateway where site2cloud (with IPSec tunnel) connection is established, traffic initiating from the 
+Aviatrix gateway side of the IPSec tunnel is called Local Initiated Traffic. This traffic may originally come from an Aviatrix Transit Gateway
+to the Aviatrix Spoke gateway where IPSec tunnels are established. 
+
 
 
 Problem Statement
