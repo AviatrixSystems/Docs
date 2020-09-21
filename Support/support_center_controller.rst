@@ -273,6 +273,37 @@ Here is a sample script to import a CA signed cert:
   response = requests.post(url=api_endpoint_url, data=body_payload, files=file_list, verify=False)
   print(response.text)
 
+How to address "Certificate Chain is Incomplete" or "Missing Intermediate Certificate" issue after you run SSL analysis (ex: ssllabs.com) to the controller URL?
+--------------------------------------------------------------------------
+
+Please refer to following steps to prepare CA Certificate and Server Public Certificate
+
+
+
+1. Include intermediate CA and root CA in the CA certificate file as full chain, please keep them in this order.
+
+::
+
+	-----BEGIN CERTIFICATE-----
+	(Your Intermediate certificate)
+	-----END CERTIFICATE-----
+	-----BEGIN CERTIFICATE-----
+	(Your Root certificate)
+	-----END CERTIFICATE-----
+
+2. Include intermediate CA in the Server Public certificate file as full chain, please keep them in this order.
+
+::
+
+	-----BEGIN CERTIFICATE-----
+	(Your Server Public certificate)
+	-----END CERTIFICATE-----
+	-----BEGIN CERTIFICATE-----
+	(Your Intermedia certificate)
+	-----END CERTIFICATE-----
+
+3. Follow `here <https://docs.aviatrix.com/HowTos/import_cert_with_key.html#step-3-uploading-the-certificates-to-the-controller>`_  to update the controller certificate again.
+
 
 How can I use SAML for controller auth when I'm also using SAML for VPN authentication?
 ------------------------------------------------------------------------------------------
