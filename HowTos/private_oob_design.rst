@@ -38,6 +38,10 @@ with the Spoke gateways as TGW attachments.
 
 If the Controller is deployed in Azure, Azure native transit are used for private OOB network. 
 
+In a multi cloud environment, gateways deployed in the different cloud are expected to have private network connectivity to the Controller. 
+This may be accomplished via on-prem network. For example, build a private network connectivity via private circuit or public Internet such 
+that network in the different cloud connect with the Controller via on-prem network.
+
 
 3. Private OOB Deployment 
 ---------------------------------------
