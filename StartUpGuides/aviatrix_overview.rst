@@ -18,8 +18,8 @@ integrating them into our software to provide organizations with turn key soluti
 |aviatrix_overview|
 
 We focus on solving common networking problems faced by enterprises on their public cloud journey while providing 
-a common control plane that provides multi-account/multi-cloud automation, advanced transit services, advanced security services, advanced troubleshooting capabilities,
-and unparalleled visibility that the enterprise needs.
+a common control plane that provides multi-account/multi-cloud automation, advanced transit services, security services, troubleshooting capabilities,
+and visibility that you need. 
 
 Some common enterprise use cases are shown below: 
 
