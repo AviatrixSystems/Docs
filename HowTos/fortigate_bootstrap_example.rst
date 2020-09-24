@@ -56,7 +56,7 @@ In AWS S3, at the top level create a bucket for bootstrap with a **unique** name
 ::
 
     bootstrap-fortigate-bucket/
-        init.cconf
+        init.conf
         license.lic
 
 
