@@ -138,9 +138,9 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/firewall_network_faq
    HowTos/firewall_network_workflow
-   HowTos/firewall_network_design_patterns
    HowTos/transit_firenet_faq
    HowTos/transit_firenet_workflow
+   HowTos/transit_firenet_design_patterns
    HowTos/firewall_advanced
    HowTos/paloalto_API_setup
    HowTos/ingress_firewall_example
@@ -155,6 +155,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_CheckPointAzure.rst
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
+   HowTos/firewall_network_design_patterns
 
 .. _Cloud WAN:
 
