@@ -99,16 +99,7 @@ For example configuration workflow, check out `Ingress Protection via Aviatrix T
 .. |multi_egress| image:: transit_firenet_design_patterns_media/multi_egress.png
    :scale: 30%
 
-.. |firenet_ingress_egress| image:: firewall_network_faq_media/firenet_ingress_egress.png
-   :scale: 30%
-
-.. |firenet| image:: firewall_network_media/firenet.png
-   :scale: 30%
-
-.. |firenet_transit| image:: firewall_network_media/firenet_transit.png
-   :scale: 30%
-
-.. |firenet_insane| image:: firewall_network_media/firenet_insane.png
+.. |transit_firenet_ingress| image:: ingress_firewall_example_media/Ingress_Aviatrix_Transit_FireNet_topology.png
    :scale: 30%
 
 
