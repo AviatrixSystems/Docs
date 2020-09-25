@@ -40,7 +40,7 @@ R6.2 (Coming soon)
 
 - **Session Visibility** displays active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. To view sessions, go to Troubleshoot -> Diagnostics -> Gateway -> Session View. Or go to Security -> Stateful Firewall -> Session View. 
 
-R6.1.1377 (9/24/2020)
+R6.1.1338 (9/24/2020)
 ======================
 
 - **Bug fix** Aviatrix Transit connecting to external device with 2 different ASNs doesn't work properly 
