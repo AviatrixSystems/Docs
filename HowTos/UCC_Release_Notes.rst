@@ -46,6 +46,7 @@ R6.1.1377 (9/24/2020)
 - **Bug fix** Aviatrix Transit connecting to external device with 2 different ASNs doesn't work properly 
 - **Bug fix** TGW attaching sometimes fails due to RAM authentication timeout. 
 - **Bug fix** Custom SNAT is not able to select eth0 on Aviatrix Transit Gateway. 
+- **Bug fix** Cannot edit mapped tunnels built before 6.0
 
 R6.1.1309 (9/7/2020)
 ======================
