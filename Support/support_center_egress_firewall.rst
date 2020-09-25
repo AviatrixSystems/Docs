@@ -110,10 +110,9 @@ What is the Egress FQDN Filter behavior on Controller 6.0+?
 
 For Egress FQDN Filter on controller version 6.0, there is a mechanism that will sort all the FQDN rules on the same egress gateway in order by the following factors:
 
-1. Edit/Action: For White-list/Black-list “Deny"/"Allow” rules comes first then “Allow"/"Deny” rules then the “Base-policy" rules
-2. Edit/Domain: More specific domain and no wildcard(‘*’) comes first. ex: abc.sts.awsamazon.com -> sts.awsamazon.com -> *.awsamazon.com
-3. Edit Source: No source IP comes first than rules with source.
-4. Shorter Domain or smaller number of CIDR/Subnet.
+1. Edit/Action: For White List, “Deny” rules comes first, followed by “Allow” rules and lastly the “Base-policy” rules.
+2. Edit/Action: For Black List, “Allow” rules comes first, followed by “Deny” rules and lastly the “Base-policy” rules.
+3. Edit/Domain: More specific domain and no wildcard(‘*’) comes first. ex: abc.sts.awsamazon.com -> sts.awsamazon.com -> *.awsamazon.com
 
 In 6.0, every domain access will go through this list that be sorted by these factors to see if there is a domain-match.
 Once the domain-match happens, it will stop checking the rest of the list, and comes out a result of “MATCH” or “NO-MATCH”.
@@ -131,7 +130,7 @@ Hence, the result will be different before and after 6.1.1280 version, for examp
 * FQDN Filter Tag A: attach egress gw1 with rule A1: sts.awsamazon.com, Source 10.10.10.0/24, Base policy
 * FQDN Filter Tag B: attach egress gw1 with rule B1: *.awsamazon.com, Source 10.10.20.0/24, Base policy
 
-The order of FQDN filter list for gw1 will be A1 -> B1 (Refer to above factor 2. More specific domain comes first)
+The order of FQDN filter list for gw1 will be A1 -> B1 (Refer to above factor 3. More specific domain comes first)
 
 Version 6.0 ~ before 6.1.1280:
 
