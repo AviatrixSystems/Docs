@@ -28,6 +28,10 @@ This document describes a step-by-step Managed CloudN deployment workflow for R6
 For more information about CloudN, please check out the below documents:
 
 	`Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_
+	
+.. note::
+
+	Managed CloudN solution supports only High-Performance (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
   
 Topology
 ==================
@@ -64,7 +68,7 @@ Deploy Aviatrix Multi-Cloud Transit solution in the cloud.
 
 .. note::
 	
-	In this example, Aviatrix Multi-Cloud Transit Gateway and Aviatrix Spoke Gateway are deployed in AWS platform. 
+	In this example, Aviatrix Multi-Cloud Transit Gateway and Aviatrix Spoke Gateway with HPE are deployed in AWS platform. 
 
 
 Workflow on Aviatrix CloudN
@@ -166,38 +170,38 @@ Step 3.4.  `Attach the Managed CloudN device to Aviatrix Transit Gateway <https:
 
 	- Navigate to the page "CLOUDWAN -> Attach"
 	
-	- Find the panel 2) Attach Branch to Cloud
+	- Find the panel 2) Attach Device to Cloud
 	
 	- Select the radio button "Aviatrix Transit Gateway"
 	
 	- Enter fields for Branch Name, Aviatrix Transit Gateway, Connection Name, Aviatrix Transit Gateway BGP ASN, CloudN's BGP ASN, CloudN LAN Interface Neighbor's IP, CloudN LAN Interface Neighbor's BGP ASN, and Over DirectConnect.
 
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| **Field**                               | **Value**                                                                       |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| Branch Name                             | Select the Managed CloudN device                                                |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| Aviatrix Transit Gateway                | Select an Aviatrix Transit Gateway                                              |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| Connection Name                         | A unique name for the connection (i.e. Managed-CloudN-to-Aviatrix-Transit-GW)   |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| Aviatrix Transit Gateway BGP ASN        | Only BGP is supported. Enter BGP ASN number on Aviatrix Transit Gateway. (i.e.) |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| CloudN's BGP ASN                        | Only BGP is supported. Enter BGP ASN number on the Managed CloudN device. (i.e.)|
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| CloudN LAN Interface Neighbor's IP      | Enter Managed CloudN LAN Interface Neighbor's IP                                |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| CloudN LAN Interface Neighbor's BGP ASN | Only BGP is supported. Enter BGP ASN number on the Neighbor's Router. (i.e.)    |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
-		| Over DirectConnect                      | A checkbox to select whether the connection is over Direct Connect or Internet  |
-		+-----------------------------------------+---------------------------------------------------------------------------------+
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| **Field**                               | **Value**                                                                       				|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| Device Name                             | Select the Managed CloudN device                                                				|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| Aviatrix Transit Gateway                | Select an Aviatrix Transit Gateway                                              				|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| Connection Name                         | A unique name for the connection (i.e. Managed-CloudN-to-Aviatrix-Transit-GW-connection)|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| Aviatrix Transit Gateway BGP ASN        | Only BGP is supported. Enter BGP ASN number on Aviatrix Transit Gateway. (i.e. 65019)		|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| CloudN's BGP ASN                        | Only BGP is supported. Enter BGP ASN number on the Managed CloudN device. (i.e. 65056)	|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| CloudN LAN Interface Neighbor's IP      | Enter Managed CloudN LAN Interface Neighbor's IP                                				|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| CloudN LAN Interface Neighbor's BGP ASN | Only BGP is supported. Enter BGP ASN number on the Neighbor's Router. (i.e. 65122)    	|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+		| Over DirectConnect                      | A checkbox to select whether the connection is over Direct Connect or Internet  				|
+		+-----------------------------------------+-----------------------------------------------------------------------------------------+
 
 	- Click the button "ATTACH"
 		
 		|controller_attach_aviatrix_transit|
 
 Step 3.5. Check whether the Managed CloudN device attaches to Aviatrix Transit Gateway properly 
---------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 	- Navigate back to the page "CLOUDWAN -> List/Edit" 
   
@@ -212,7 +216,7 @@ Step 3.6. Check whether the connection status is Up
 
 	- Navigate to the page "SITE2CLOUD -> Setup"
 	
-	- Locate the connection which is created in the previous step (i.e. Managed-CloudN-to-Aviatrix-Transit-GW)
+	- Locate the connection which is created in the previous step (i.e. Managed-CloudN-to-Aviatrix-Transit-GW-connection)
 	
 	- Check whether the connection status is Up as below example
 	
@@ -221,7 +225,7 @@ Step 3.6. Check whether the connection status is Up
 Traffic Flow Verification
 =========================
 
-In this traffic verification example, the on-premise router is Cisco IOS with network loopback address 1.1.1.1/32. Aviatrix Transit VPC is 192.168.1.0/24. Aviatrix Spoke VPC is 10.1.0.0/16 and the private IP of the testing VM is 10.1.X.X/32.
+In this traffic verification example, the on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC is 10.1.0.0/16. Aviatrix Spoke VPC is 192.168.1.0/24 and the private IP of the testing VM is 10.1.X.X/32.
 
 	- Traffic from on-premise router Cisco IOS to cloud VM
 
@@ -316,14 +320,35 @@ When a Standalone CloudN registers with an Aviatrix Controller properly as a Man
 Backup/Restore
 ==============
 
+
+
 Workflow on cleanup
 ===================
 
 De-register a Managed CloudN device from Aviatrix Controller
 ------------------------------------------------------------
 
-Perform feature "De-register a Branch Router" on Aviatrix Controller GUI
+Step 4.1. Perform feature "Detach Device from Cloud" on Aviatrix Controller GUI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+	- Open a browser
+	
+	- Navigate to the Aviatrix Controller
+	
+	- Sign in with Aviatrix account
+	
+	- Navigate to the page "CLOUDWAN -> Attach" 
+  
+	- Find the panel "Delete Function -> 3> Detach Device from Cloud"
+	
+	- Select the connection from Managed CloudN to Aviatrix Transit gateway on the Attachment Name dropdown menu
+	
+	- Click on the button "DETACH" to disconnect the connection
+	
+	|controller_cloudwan_detach|
+
+Step 4.2. Perform feature "De-register a Device" on Aviatrix Controller GUI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	- Open a browser
 	
@@ -333,7 +358,7 @@ Perform feature "De-register a Branch Router" on Aviatrix Controller GUI
 	
 	- Navigate to the page "CLOUDWAN -> Register" 
   
-	- Find the panel "Delete Function -> 2> De-register a Branch Router"
+	- Find the panel "Delete Function -> 2> De-register a Device"
 	
 	- Select the Managed CloudN device on the Branch Name dropdown menu
 	
@@ -343,15 +368,14 @@ Perform feature "De-register a Branch Router" on Aviatrix Controller GUI
 
 	.. note::
 
-		If this step cannot convert a Managed CloudN device back to a Standalone CloudN state properly, please proceed Factory Reset feature.
+		If these steps cannot convert a Managed CloudN device back to a Standalone CloudN state properly, please proceed Factory Reset feature.
 
 Workflow on Factory Reset
 --------------------------
 
-"Factory Reset" feature enables users to wipe out all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps in order `<Step 4.1. Perform feature "Factory Reset" on CloudN GUI first>`_ and `<
-Step 4.2. Perform feature "Factory Reset" on Aviatrix Controller GUI>`_ to operate "Factory Reset". This Factory Reset feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through `<De-register a Managed CloudN device from Aviatrix Controller>`_ step above.
+"Factory Reset" feature enables users to wipe out all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps in order `<Step 4.3. Perform feature "Factory Reset" on CloudN GUI first>`_ and `<Step 4.4. Perform feature "Factory Reset" on Aviatrix Controller GUI>`_ to operate "Factory Reset". This Factory Reset feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through the steps above.
 
-Step 4.1. Perform feature "Factory Reset" on CloudN GUI first
+Step 4.3. Perform feature "Factory Reset" on CloudN GUI first
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	- Open a browser
@@ -370,7 +394,7 @@ Step 4.1. Perform feature "Factory Reset" on CloudN GUI first
 	
 	|cloudn_factory_reset|
 
-Step 4.2. Perform feature "Factory Reset" on Aviatrix Controller GUI
+Step 4.4. Perform feature "Factory Reset" on Aviatrix Controller GUI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	- Open a browser
@@ -391,13 +415,6 @@ Step 4.2. Perform feature "Factory Reset" on Aviatrix Controller GUI
 	
 	|controller_cloudwan_factory_reset|
 	
-Step 3. Verify whether "Factory Reset" is performed propery on CloudN
----------------------------------------------------------------------
-
-	- Open a browser
-	
-	- Access the CloudN GUI with CloudN domain name/IP and port 443
-	
 	.. important::
 	
 		If users need any assistance for factory reset operation, please contact Aviatrix Support support@aviatrix.com.
@@ -411,17 +428,17 @@ Ans: In this document, the term "Standalone CloudN" means that a CloudN device h
 
 Q: Could a Managed CloudN be converted back to a Standalone CloudN?
 
-Ans: Yes, users are able to convert a Managed CloudN device back to a Standalone CloudN by following the `<Cleanup workflow>`_.
+Ans: Yes, users are able to convert a Managed CloudN device back to a Standalone CloudN by following the `<Workflow on cleanup>`_.
 
 Q: What are the benefits of registering a CloudN hardware appliance with an Aviatrix Controller?
 
 Ans: 
 
-- Ease of use: centrally manage all CloudN appliances through Aviatrix controller without logging into each CloudN GUI individually
+- Ease of use: centrally manage all CloudN appliances through Aviatrix Controller without logging into each CloudN GUI individually
 
 - Active Mesh support: employ ECMP feature on Managed CloudN device to send traffic to both Aviatrix Transit primary gateway and backup gateway
 
-- Enhanced visibility and troubleshooting: perform diagnostics on CaaG device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI
+- Enhanced visibility and troubleshooting: perform diagnostics on Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI
 
 - Performance: support scale-out fashion to achive high IPsec throughput
 
@@ -477,6 +494,9 @@ Ans: Yes, Managed CloudN solution support not only over Azure Express Route but 
    :scale: 30%
 
 .. |controller_troubleshooting_tips_force_upgrade| image:: XXX/controller_troubleshooting_tips_force_upgrade.png
+   :scale: 30%
+
+.. |controller_cloudwan_detach| image:: XXX/controller_cloudwan_detach.png
    :scale: 30%
 
 .. |controller_cloudwan_deregister| image:: XXX/controller_cloudwan_deregister.png
