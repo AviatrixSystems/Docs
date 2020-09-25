@@ -458,10 +458,10 @@ The details are explained in the table below.
 =============================================================      ===============    ==============================
 **Unit Type**                                                      **Cost/Unite**     **Use Case**
 =============================================================      ===============    ==============================
-Number of VPC-to-VPC IPSec Tunnel Connections within AWS            $0.16             TGW VPC attachment, Aviatrix Spoke VPC attachment, encrypted peering, Transit Peering
-Number of User or Client SSL VPN Connections                        $0.03             User VPN 
-Number of Gateways running Security Services                        $0.16             Aviatrix gateways with FQDN service
-Number of VPC to Site or Multi cloud IPSec Tunnel Connections       $0.48             Site2Cloud use case
+Number of VPC-to-VPC IPSec Tunnel Connections within AWS            $0.19             TGW VPC attachment, Aviatrix Spoke VPC attachment, encrypted peering, Transit Peering
+Number of User or Client SSL VPN Connections                        $0.04             User VPN 
+Number of Gateways running Security Services                        $0.19             Aviatrix gateways with FQDN service
+Number of VPC to Site or Multi cloud IPSec Tunnel Connections       $0.58             Site2Cloud use case
 =============================================================      ===============    ==============================
 
 How is security updates handled and delivered by Aviatrix?
