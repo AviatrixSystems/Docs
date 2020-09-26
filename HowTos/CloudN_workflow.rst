@@ -4,7 +4,7 @@
 
 
 ===============================================
-Connecting a CloudN Workflow
+Connecting a Managed CloudN Workflow
 ===============================================
 
 This document describes a step-by-step Managed CloudN deployment workflow for R6.2 and later. In this note you learn how to:
@@ -58,9 +58,9 @@ Step 1.5. Deploy VPCs, Aviatrix Multi-Cloud Transit Gateways, and Spoke Gateways
 
 Deploy Aviatrix Multi-Cloud Transit solution in the cloud.
 
-	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch Aviatrix Transit gateway with insane mode enabled
+	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch Aviatrix Transit gateway with insane mode enabled. Recommended minimum size for Transit in AWS is cn5.4xlarge.
 	
-	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch Aviatrix Spoke gateway with insane mode enabled
+	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch Aviatrix Spoke gateway with insane mode enabled. Recommended minimum size for Spoke in AWS is c5.2xlarge.
 	
 	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ to attach Aviatrix Spoke gateway to Aviatrix Transit gateway
 	
@@ -92,7 +92,7 @@ Step 2.1. Update Aviatrix Controller's inbound security group to allow TCP 443 f
 		Please apply a static public IP address for the router of CloudN's MGMT interface. 
 
 Step 2.2. Login CloudN GUI
-------------------------
+--------------------------
 
 	- Open a browser
 	
@@ -100,7 +100,65 @@ Step 2.2. Login CloudN GUI
 	
 	- Sign in with CloudN login credentials
 	
-Step 2.3. Register Aviatrix Controller FQDN
+Step 2.3. Check whether CloudN device needs to function Controller IP Migration
+-------------------------------------------------------------------------------
+
+	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
+	
+	- Find the panel `CONTROLLER PUBLIC IP <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#controller-public-ip>`_
+	
+	- Perform function `CONTROLLER IP MIGRATION <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#controller-ip-migration>`_ if the message in the panel "CONTROLLER PUBLIC IP" guides users to execute it.
+	
+	.. note::
+	
+		For private link connectivity such as AWS Direct Connect or Azure Express Route case, CloudN WAN interface normally is assigned with a private IP, thus the message in the panel "CONTROLLER PUBLIC IP" displays "The public IP of this controller is NA. Controller was not able to reach www.carmelonetworks.com through the WAN interface(eth0)."
+		
+Step 2.4. Check basic connectivity to Internet from CloudN device
+-----------------------------------------------------------------
+
+	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
+	
+	- Find the panel `CONTROLLER UTILITY <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#controller-utility>`_
+	
+	- Enter a public Host Name (or IP) for testing such as "yahoo.com" or "www.google.com"
+
+Step 2.5. Make sure CloudN device can access the related FQDN list as follows for software upgrade through management port 
+--------------------------------------------------------------------------------------------------------------------------
+
+	- Refer to `Internet Access <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access>`_
+	
+	=======================  ================  ==== =================================================
+	FQDN                     IP address        PORT Purpose
+	=======================  ================  ==== =================================================
+	www.carmelonetworks.com  54.149.28.255     443  Download CloudN software upgrades
+	license.aviatrix.com     52.24.131.245     443  Reach out to Aviatrix’s License Server
+	security.aviatrix.com    54.149.28.255     443  Sync service certificates
+	diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
+	bower.io                 104.248.78.23     443  Download Linux software upgrades
+	github.com               192.30.255.112    443  Download Linux software upgrades
+	=======================  ================  ==== =================================================
+	
+	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
+	
+	- Find the panel `Network Connectivity Utility <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#network-connectivity-utility>`_
+	
+	- Enter fields for Hostname, Port, Gateway Name, and Protocol
+	
+	+--------------+--------------------------------------------------------------------+
+	| **Field**    | **Value**                                                          |
+	+--------------+--------------------------------------------------------------------+
+	| Hostname     | Refer to the FQDN/IP address in the Internet Access table as above |
+	+--------------+--------------------------------------------------------------------+
+	| Port         | Refer to the PORT in the Internet Access table as above            |
+	+--------------+--------------------------------------------------------------------+
+	| Gateway Name | Controller                                                         |
+	+--------------+--------------------------------------------------------------------+
+	| Protocol     | TCP                                                                |
+	+--------------+--------------------------------------------------------------------+
+	
+	- Click the button "Go" to check connectivity
+
+Step 2.6. Register Aviatrix Controller FQDN
 -------------------------------------------
 
 	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases dropdown menu on the top
@@ -214,7 +272,7 @@ Step 3.5. Check whether the Managed CloudN device attaches to Aviatrix Transit G
 		|controller_managed_cloudn_attached_state|
 		
 Step 3.6. Check whether the connection status is Up
---------------------------------------------------
+---------------------------------------------------
 
 	- Navigate to the page "SITE2CLOUD -> Setup"
 	
@@ -223,6 +281,15 @@ Step 3.6. Check whether the connection status is Up
 	- Check whether the connection status is Up as below example
 	
 		|controller_managed_cloudn_s2c_up_state|		
+		
+Step 3.6. Check Transit Gateway BGP status
+-------------------------------------------
+
+	- Navigate to the page "MULTI-CLOUD TRANSIT -> Advanced Config -> BGP"
+	
+	- Locate the connection which is created in the previous step (i.e. Managed-CloudN-to-Aviatrix-Transit-GW-connection)
+	
+	- Check whether the NEIGHBOR STATUS is established
 
 Traffic Flow Verification
 =========================
