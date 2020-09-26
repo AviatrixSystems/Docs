@@ -379,7 +379,7 @@ Step 4.2. Perform feature "De-register a Device" on Aviatrix Controller GUI
 Workflow on Factory Reset
 --------------------------
 
-"Factory Reset" feature enables users to wipe out all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps in order `<Step 4.3. Perform feature "Factory Reset" on CloudN GUI first>`_ and `<Step 4.4. Perform feature "Factory Reset" on Aviatrix Controller GUI>`_ to operate "Factory Reset". This Factory Reset feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through the steps above.
+"Factory Reset" feature enables users to wipe out all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps in order to operate "Factory Reset". This Factory Reset feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through the steps above.
 
 Step 4.3. Perform feature "Factory Reset" on CloudN GUI first
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -390,7 +390,9 @@ Step 4.3. Perform feature "Factory Reset" on CloudN GUI first
   
 	- Sign in with CloudN login credentials
 
-	- Navigate to the page "Settings -> Advanced -> Registration"
+	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases dropdown menu on the top
+		
+		|cloudn_register_controller_fqdn_link_managed_cloudn|
   
 	- Find the panel "FACTORY RESET"
 	
@@ -411,7 +413,7 @@ Step 4.4. Perform feature "Factory Reset" on Aviatrix Controller GUI
 	
 	- Navigate to the page "CLOUDWAN -> List/Edit" 
   
-	- Search for the CloudN/CaaG device and select it
+	- Search for the Managed CloudN device and select it
 	
 	- Click on the button "DIAG" to display dropdown menu
 	
