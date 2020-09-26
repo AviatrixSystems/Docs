@@ -103,7 +103,9 @@ Step 2.2. Login CloudN GUI
 Step 2.3. Register Aviatrix Controller FQDN
 -------------------------------------------
 
-	- Navigate to the page "Settings -> Advanced -> Registration"
+	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases dropdown menu on the top
+		
+		|cloudn_register_controller_fqdn_link_managed_cloudn|
   
 	- Find the panel "REGISTER CLOUDN AS A GATEWAY"
 
@@ -176,25 +178,25 @@ Step 3.4.  `Attach the Managed CloudN device to Aviatrix Transit Gateway <https:
 	
 	- Enter fields for Branch Name, Aviatrix Transit Gateway, Connection Name, Aviatrix Transit Gateway BGP ASN, CloudN's BGP ASN, CloudN LAN Interface Neighbor's IP, CloudN LAN Interface Neighbor's BGP ASN, and Over DirectConnect.
 
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| **Field**                               | **Value**                                                                       				|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| Device Name                             | Select the Managed CloudN device                                                				|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| Aviatrix Transit Gateway                | Select an Aviatrix Transit Gateway                                              				|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| Connection Name                         | A unique name for the connection (i.e. Managed-CloudN-to-Aviatrix-Transit-GW-connection)|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| Aviatrix Transit Gateway BGP ASN        | Only BGP is supported. Enter BGP ASN number on Aviatrix Transit Gateway. (i.e. 65019)		|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| CloudN's BGP ASN                        | Only BGP is supported. Enter BGP ASN number on the Managed CloudN device. (i.e. 65056)	|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| CloudN LAN Interface Neighbor's IP      | Enter Managed CloudN LAN Interface Neighbor's IP                                				|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| CloudN LAN Interface Neighbor's BGP ASN | Only BGP is supported. Enter BGP ASN number on the Neighbor's Router. (i.e. 65122)    	|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
-		| Over DirectConnect                      | A checkbox to select whether the connection is over Direct Connect or Internet  				|
-		+-----------------------------------------+-----------------------------------------------------------------------------------------+
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| **Field**                               | **Value**                                                                                |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| Device Name                             | Select the Managed CloudN device                                                         |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| Aviatrix Transit Gateway                | Select an Aviatrix Transit Gateway                                                       |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| Connection Name                         | A unique name for the connection (i.e. Managed-CloudN-to-Aviatrix-Transit-GW-connection) |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| Aviatrix Transit Gateway BGP ASN        | Only BGP is supported. Enter BGP ASN number on Aviatrix Transit Gateway. (i.e. 65019)    |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| CloudN's BGP ASN                        | Only BGP is supported. Enter BGP ASN number on the Managed CloudN device. (i.e. 65056)   |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| CloudN LAN Interface Neighbor's IP      | Enter Managed CloudN LAN Interface Neighbor's IP                                         |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| CloudN LAN Interface Neighbor's BGP ASN | Only BGP is supported. Enter BGP ASN number on the Neighbor's Router. (i.e. 65122)       |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
+	| Over DirectConnect                      | A checkbox to select whether the connection is over Direct Connect or Internet           |
+	+-----------------------------------------+------------------------------------------------------------------------------------------+
 
 	- Click the button "ATTACH"
 		
@@ -225,7 +227,7 @@ Step 3.6. Check whether the connection status is Up
 Traffic Flow Verification
 =========================
 
-In this traffic verification example, the on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC is 10.1.0.0/16. Aviatrix Spoke VPC is 192.168.1.0/24 and the private IP of the testing VM is 10.1.X.X/32.
+In this traffic verification example, the on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC is 10.1.0.0/16. Aviatrix Spoke VPC is 192.168.1.0/24 and the private IP of the testing VM is 192.168.1.36/32.
 
 	- Traffic from on-premise router Cisco IOS to cloud VM
 
@@ -461,6 +463,9 @@ Ans: Yes, Managed CloudN solution support not only over Azure Express Route but 
 .. |managed_cloudn_topology| image:: CloudN_workflow_media/managed_cloudn_topology.png
    :scale: 30%
    
+.. |cloudn_register_controller_fqdn_link_managed_cloudn| image:: CloudN_workflow_media/cloudn_register_controller_fqdn_link_managed_cloudn.png
+   :scale: 30%	 
+	 
 .. |cloudn_register_controller_fqdn| image:: CloudN_workflow_media/cloudn_register_controller_fqdn.png
    :scale: 30%
 	 
