@@ -11,7 +11,7 @@ Introduction
 
 Aviatrix Transit Gateway Peering over Private Network expands Transit Gateway peering over multi-clouds where there is private network connectivity instead of Internet. 
 
-One of the use cases is that two Aviatrix Transit Gateways deploy in two different public cloud where each has its private connectivity such as AWS Direct Connect and Azure ExpressRoute connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond. 
+One of the use cases is that two Aviatrix Transit Gateways are deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure ExpressRoute connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond. 
 
 This document describes a step-by-step instruction how to build Aviatrix Transit Gateway Peering with Private Network over AWS Direct Connect and Azure ExpressRoute for R6.2 and later. In this note, you learn how to:
 
