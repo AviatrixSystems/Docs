@@ -134,8 +134,6 @@ Step 2.5. Make sure CloudN device can access the related FQDN list as follows fo
 	license.aviatrix.com     52.24.131.245     443  Reach out to Aviatrix’s License Server
 	security.aviatrix.com    54.149.28.255     443  Sync service certificates
 	diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
-	bower.io                 104.248.78.23     443  Download Linux software upgrades
-	github.com               192.30.255.112    443  Download Linux software upgrades
 	=======================  ================  ==== =================================================
 	
 	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
