@@ -9,7 +9,7 @@ Aviatrix Transit Gateway Peering with Private Network Workflow
 Introduction
 ============
 
-Aviatrix Transit Gateway Peering over Private Network expands Transit Gateway peering over multi-cloud where there is private network connectivity instead of Internet. 
+Aviatrix Transit Gateway Peering over Private Network expands Transit Gateway peering over multi-clouds where there is private network connectivity instead of Internet. 
 
 One of the use cases is that two Aviatrix Transit Gateways deploy in two different public cloud where each has its private connectivity such as AWS Direct Connect and Azure ExpressRoute connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond. 
 
@@ -30,7 +30,13 @@ For more information about Multi-Cloud Transit Network, please check out the bel
   `Aviatrix Transit Gateway Encrypted Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_
   
   `Transit Network Design Patterns <https://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_
-  
+
+.. note::
+
+	- Aviatrix Transit Gateway Peering with Private Network solution supports only High-Performance Encryption (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	
+	- This solution does NOT build underlay connectivity. It is users' responsibility to deploy private network first. Workflow on building underlay connectivity for private network with AWS Direct Connect/Azure ExpressRoute here is just an example. Please adjust the topology depending on your requirements.
+	
 Topology
 ====================
 
@@ -47,11 +53,9 @@ The key ideas for this solution are:
 	
   - Once the reachability between two cloud transits over private network is there, user is able to deploy Aviatrix Multi Cloud Global Transit Gateway Encrypted Peering over Private Network
   
-.. note::
+.. important::
 
-  - Reachability between two transit networks' private CIDR is the responsibility of customer
-  
-  - This feature also supports high performance encryption (H.P.E) peering
+  - Reachability between two transit networks' private CIDR is the responsibility of customer.
 
 Prerequisite
 ====================
@@ -162,9 +166,9 @@ Step 3.1. Deploy VPCs for Transit FireNet
 Step 3.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 -------------------------------------------------------------------
 
-	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in AWS Transit VPC
+	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in AWS Transit VPC
 	
-	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput.
+	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput. Recommended minimum size for Transit in AWS is c5n.4xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 	
 Step 3.3. Enable Route Propagation on the subnet route table where Aviatrix Transit Gateway locates on AWS portal
 ------------------------------------------------------------------------------------------------------------------
@@ -201,9 +205,9 @@ Step 3.4. Check route propagation info on AWS portal
 Step 3.5. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
 ---------------------------------------------------------------------
 
-	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA in Azure Transit VNET
+	- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in Azure Transit VNET
 
-	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput
+	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 
 	- Enable Transit FireNet Function (optional)
 
@@ -248,13 +252,13 @@ Step 3.7. Establish Transit Gateway Peering with Private Network
 Step 3.8. Deploy Spoke Gateway and HA
 --------------------------------------
 
-	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in AWS Spoke VPC
+	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in AWS Spoke VPC
 	
-	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput.
+	- Instance size of at least c5.xlarge will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 	
-	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA in Azure Spoke VNET
+	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in Azure Spoke VNET
 	
-	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput
+	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 
 Step 3.9. Attach Spoke Gateways to Transit Network
 --------------------------------------------------
@@ -263,6 +267,10 @@ Step 3.9. Attach Spoke Gateways to Transit Network
 	
 	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in Azure
 
+Ready to go!
+============
+
+Now you are able to send traffic over Aviatrix Transit Gateway Peering with Private Network.
 
 .. |transit_gateway_peering_with_private_network_diagram| image:: transit_gateway_peering_with_private_network_workflow_media/transit_gateway_peering_with_private_network_diagram.png
    :scale: 50%
