@@ -107,13 +107,11 @@ In this example, admin creates an admin user Jennifer. admin performs the follow
 Does RBAC support remote authentications?
 -------------------------------------------
 
-RBAC supports remote authentication against LDAP, DUO and SAML IDPs. 
+RBAC supports remote authentication against LDAP, Duo and other SAML IDPs.
 
-For LDAP and DUO, RBAC only supports authentication, the permissions are still validated locally on the 
-Controller. 
+For LDAP and Duo, RBAC supports authentication only; the permissions are still validated locally on the Controller. 
 
-For SAML IDPs, you can configure profile attribute associated with the SAML user for permissions, thus avoiding
-having to add users on the Controller. 
+For other SAML IDPs, you can configure profile attribute associated with the SAML user for permissions, thus avoiding having to add users on the Controller. 
 
 How do I setup SAML login for RBAC?
 ------------------------------------
