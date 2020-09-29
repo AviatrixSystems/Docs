@@ -79,8 +79,8 @@ Transit Gateway types     AWS VGW                   External Device             
 ========================= ======================    ======================      ===========================
 no HA, no HPE             1 inter-cloud license     1 inter-cloud license       Not supported
 yes HA, no HPE            2 inter-cloud licenses    2 inter-cloud licenses      Not supported
-no HA, yes HPE            1 inter-cloud license     1 inter-cloud license       8 inter-cloud licenses
-yes HA, yes HPE           2 inter-cloud licenses    2 inter-cloud licenses      16 inter-cloud licenses
+no HA, yes HPE            1 inter-cloud license     1 inter-cloud license       8 intra-cloud licenses
+yes HA, yes HPE           2 inter-cloud licenses    2 inter-cloud licenses      16 intra-cloud licenses
 ========================= ======================    ======================      ===========================
 
 4. Cloud Native Spoke Network Attachment
