@@ -130,13 +130,14 @@ Advanced NAT                                    Yes         Yes             Yes 
 Remote Access User VPN                          Yes         Yes             Yes                              Yes                      Yes
 Site to Cloud VPN                               Yes         Yes             Yes                              Yes                      Yes
 
-Insane Mode Encryption                          Yes         Yes              No                              Yes                      No
+Insane Mode Encryption                          Yes         Yes             Yes                              Yes                      No
 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
 FlightPath Expert Diagnostics                   Yes         Yes             Yes                              Yes                      No
 IPv6                                            Yes         No              No                               No                       No
 PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No
 Controller Security Group Management            Yes         Yes             No                               Yes                      No
+Managed CloudN                                  Yes         Yes             No                               Yes                      No
 ==========================================      ==========  =============   ======================           =================       ==========
 
 
