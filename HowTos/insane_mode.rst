@@ -150,6 +150,29 @@ Yes. A CloudN appliance can build multiple InsaneMode tunnels to different Aviat
 
 |cloudn_multi_conn|
 
+
+What are the supported gateway sizes for GCP High-performance encryption (Insane mode)?
+---------------------------------------------------------------------------------------
+
+There are total 4 sizes: n1-highcpu-4, n1-highcpu-8, n1-highcpu-16, and n1-highcpu-32
+
+What is the subnet prefix length for GCP High-performance encryption (Insane mode)?
+-----------------------------------------------------------------------------------
+
+Gateway subnet prefix length cannot be greater than /24 
+
+What ActiveMesh version does GCP High-performance encryption (Insane mode) support?
+-----------------------------------------------------------------------------------
+
+GCP Insane mode supports only Transit Solution ActiveMesh 2.0
+
+
+What is the MTU and MSS size for GCP High-performance encryption (Insane mode)?
+--------------------------------------------------------------------------------
+
+MTU is 1460 and MSS is 1330 bytes
+
+
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
 
