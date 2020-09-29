@@ -17,8 +17,23 @@ Common notions.
    yes HA - One gateway and its HA gateway are deployed.
    no HPE - HPE (Insane Mode) is not enabled on the gateway. 
    yes HPE - HPE (Insane Mode) is enabled on the gateway. 
-   yes SameCloud - In Spoke to Transit scenario, both gateways are in the same cloud. In Transit Gateway Peering scenario, both Transit Gateways are in the same cloud. 
-   no SameCloud - A Spoke gateway and Transit Gateway are in the different clouds, or two Transit Gateways are in the different clouds. 
+   yes SameCloud - In Spoke to Transit scenario, both gateways are in the same cloud. 
+                   In Transit Gateway Peering scenario, both Transit Gateways are in the same cloud. 
+   no SameCloud - A Spoke gateway and Transit Gateway are in the different clouds, 
+                  or two Transit Gateways are in the different clouds. 
+
+
+License and pricing mapping. 
+
+::
+
+  1 inter-cloud license = $0.58/hour
+  1 intra-cloud license = 0.19/hour
+  1 security service license = $0.19/hour
+  1 user VPN license = $0.04/hour
+
+
+   
 
 
 
@@ -83,7 +98,7 @@ GCP VPC                Not supported             Not supported
 ---------------------------------
 
 ====================================================     ======================
-Cloud Native Peering types                               Price
+Cloud Native Peering types                               License
 ====================================================     ======================
 inter-region AWS TGW Peering                             1 intra-cloud license
 AWS VPC Peering                                          0 intra-cloud license
@@ -93,9 +108,31 @@ Azure VNet Peering                                       0 intra-cloud license
 6. FQDN Egress Control
 -------------------------
 
+====================================================     ===========================
+Aviatrix gateway types                                   FQDN Function
+====================================================     ===========================
+no HA                                                    1 security-service license
+yes HA                                                   2 security-service licenses
+====================================================     ===========================
 
+7. Site2Cloud 
+---------------
 
+====================================================     ======================
+Aviatrix gateway types                                   Site2Cloud 
+====================================================     ======================
+no HA                                                    1 inter-cloud license
+yes HA                                                   2 inter-cloud licenses
+====================================================     ======================
 
+8. User VPN
+-------------
+
+====================================================     ======================
+Aviatrix gateway                                         User VPN
+====================================================     ======================
+1 active user connection                                 1 user license
+====================================================     ======================
 
 
 .. |deployment| image:: FAQ_media/deployment.png
