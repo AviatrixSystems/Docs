@@ -3,50 +3,70 @@
    :keywords: Aviatrix Transit, AWS Transit Gateway, TGW
 
 ===============================
-Metered AMI Pricing References
+Metered AMI Pricing Book
 ===============================
 
 This document describes Aviatrix Metered offering pricing for use cases and scenarios. It applies to both
 AWS and Azure Metered AMI offerings. 
 
+Common notions.
+
+::
+
+   no HA - One gateway, HA gateway is not deployed.
+   yes HA - One gateway and its HA gateway are deployed.
+   no HPE - HPE (Insane Mode) is not enabled on the gateway. 
+   yes HPE - HPE (Insane Mode) is enabled on the gateway. 
+   yes SameCloud - In Spoke to Transit scenario, both gateways are in the same cloud. In Transit Gateway Peering scenario, both Transit Gateways are in the same cloud. 
+   no SameCloud - A Spoke gateway and Transit Gateway are in the different clouds, or two Transit Gateways are in the different clouds. 
+
+
 
 1. Multi-cloud Spoke Gateway Attachment
 -----------------------------------------
 
-=====================  ==============================  ==============================    ==============================  =============================== 
-Spoke gateway types    no HA, no HPE Transit Gateway   yes HA, no HPE Transit Gateway    no HA, yes HPE Transit Gateway  yes HA, yes HPE Transit Gateway
-=====================  ==============================  ==============================    ==============================  =============================== 
-no HA, no HPE          $0.19/hour/attachment           $0.19/hour/attachment             $0.19/hour/attachment           $0.19/hour/attachment
-yes HA, no HPE         $0.19/hour/attachment           $0.38/hour/attachment             $0.19/hour/attachment           $0.38/hour/attachment
-no HA, yes HPE         $0.19/hour/attachment           $0.19/hour/attachment             $1.52/hour/attachment           $1.52/hour/attachment
-yes HA, yes HPE        $0.19/hour/attachment           $0.38/hour/attachment             $1.52/hour/attachment           $3.04/hour/attachment
-=====================  ==============================  ==============================    ==============================  =============================== 
+===============================      ==============================  ==============================    ==============================  =============================== 
+Spoke gateway types                  no HA, no HPE Transit Gateway   yes HA, no HPE Transit Gateway    no HA, yes HPE Transit Gateway  yes HA, yes HPE Transit Gateway
+===============================      ==============================  ==============================    ==============================  =============================== 
+no HA, no HPE, yes SameCloud         1 intra-cloud license           1 intra-cloud license             1 intra-cloud license           1 intra-cloud license
+yes HA, no HPE, yes SameCloud        1 intra-cloud license           2 intra-cloud licenses            1 intra-cloud license           2 intra-cloud licenses
+no HA, yes HPE, yes SameCloud        1 intra-cloud license           1 intra-cloud license             8 intra-cloud licenses          8 intra-cloud licenses 
+yes HA, yes HPE, yes SameCloud       1 intra-cloud license           2 intra-cloud licenses            8 intra-cloud licenses          16 intra-cloud licenses
+no HA, no HPE, no SameCloud          1 inter-cloud license           1 inter-cloud license             1 inter-cloud license           1 inter-cloud license
+yes HA, no HPE, no SameCloud         1 inter-cloud license           2 inter-cloud licenses            1 inter-cloud license           2 inter-cloud licenses
+no HA, yes HPE, no SameCloud         1 inter-cloud license           1 inter-cloud license             1 inter-cloud license           1 inter-cloud license
+yes HA, yes HPE, no SameCloud        1 inter-cloud license           2 inter-cloud licenses            1 inter-cloud license           2 inter-cloud licenses
+===============================      ==============================  ==============================    ==============================  =============================== 
 
 2. Multi-cloud Transit Gateway Peering
 -----------------------------------------
 
 Multi-cloud Transit Gateway peering applies to both inter-region and inter-cloud `Aviatrix Transit Gateway peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
 
-=============================  =====================================  ====================================== ====================================== ======================================
-Transit Gateway types          no HA, no HPE peered Transit Gateway   yes HA, no HPE peered Transit Gateway  no HA, yes HPE peered Transit Gateway  yes HA, yes HPE peered Transit Gateway
-=============================  =====================================  ====================================== ====================================== ======================================
-no HA, no HPE                  $0.19/hour/attachment                  Not supported                          $0.19/hour/attachment                  Not supported
-yes HA, no HPE                 Not supported                          $0.38/hour/attachment                  Not supported                          $0.19/hour/attachment
-no HA, yes HPE                 $0.19/hour/attachment                  Not supported                          $1.52/hour/attachment                  Not supported
-yes HA, yes HPE                Not supported                          $0.38/hour/attachment                  Not supported                          $3.04/hour/attachment
-=============================  =====================================  ====================================== ====================================== ======================================
+===============================  =====================================  ====================================== ====================================== ======================================
+Transit Gateway types            no HA, no HPE peered Transit Gateway   yes HA, no HPE peered Transit Gateway  no HA, yes HPE peered Transit Gateway  yes HA, yes HPE peered Transit Gateway
+===============================  =====================================  ====================================== ====================================== ======================================
+no HA, no HPE, yes SameCloud     1 intra-cloud license                  Not supported                          1 intra-cloud license                  Not supported
+yes HA, no HPE, yes SameCloud    Not supported                          2 intra-cloud licenses                 Not supported                          2 intra-cloud licenses
+no HA, yes HPE, yes SameCloud    1 intra-cloud license                  Not supported                          8 intra-cloud licenses                 Not supported
+yes HA, yes HPE, yes SameCloud   Not supported                          2 intra-cloud licenses                 Not supported                          16 intra-cloud licenses
+no HA, no HPE, no SameCloud      1 inter-cloud license                  Not supported                          1 inter-cloud license                  Not supported
+yes HA, no HPE, no SameCloud     Not supported                          2 inter-cloud licenses                 Not supported                          2 inter-cloud licenses
+no HA, yes HPE, no SameCloud     1 inter-cloud license                  Not supported                          8 inter-cloud licenses                 Not supported
+yes HA, yes HPE, no SameCloud    Not supported                          2 inter-cloud licenses                 Not supported                          16 inter-cloud licenses
+===============================  =====================================  ====================================== ====================================== ======================================
 
 3. Multi-cloud Transit Gateway Connection to on-prem 
 --------------------------------------------------------
 
-========================= ================ ================== ===========================
-Transit Gateway types     AWS VGW          External Device    Managed CloudN Appliance
-========================= ================ ================== ===========================
-no HA, no HPE             $0.19/hour       $0.58/hour         Not supported
-yes HA, no HPE            $0.38/hour       $1.16/hour         Not supported
-no HA, yes HPE            $0.19/hour       $0.58/hour         $1.52/hour
-yes HA, yes HPE           $0.38/hour       $1.16/hour         $3.04/hour
-========================= ================ ================== ===========================
+========================= ======================    ======================      ===========================
+Transit Gateway types     AWS VGW                   External Device             Managed CloudN Appliance
+========================= ======================    ======================      ===========================
+no HA, no HPE             1 inter-cloud license     1 inter-cloud license       Not supported
+yes HA, no HPE            2 inter-cloud licenses    2 inter-cloud licenses      Not supported
+no HA, yes HPE            1 inter-cloud license     1 inter-cloud license       8 inter-cloud licenses
+yes HA, yes HPE           2 inter-cloud licenses    2 inter-cloud licenses      16 inter-cloud licenses
+========================= ======================    ======================      ===========================
 
 4. Cloud Native Spoke Network Attachment
 -------------------------------------------
@@ -54,8 +74,8 @@ yes HA, yes HPE           $0.38/hour       $1.16/hour         $3.04/hour
 =====================  =======================   ==============================
 Native Spoke types     AWS TGW                   Multi-cloud Transit Gateway
 =====================  =======================   ==============================
-Azure VNet             Not supported             $0.19/hour/attachment
-AWS VPC                $0.19/hour/attachment     Not supported
+Azure VNet             Not supported             1 intra-cloud license
+AWS VPC                1 intra-cloud license     Not supported
 GCP VPC                Not supported             Not supported
 =====================  =======================   ==============================
 
@@ -65,10 +85,15 @@ GCP VPC                Not supported             Not supported
 ====================================================     ======================
 Cloud Native Peering types                               Price
 ====================================================     ======================
-inter-region AWS TGW Peering                             $0.19/hour
-AWS VPC Peering                                          $0
-Azure VNet Peering                                       $0
+inter-region AWS TGW Peering                             1 intra-cloud license
+AWS VPC Peering                                          0 intra-cloud license
+Azure VNet Peering                                       0 intra-cloud license
 ====================================================     ======================
+
+6. FQDN Egress Control
+-------------------------
+
+
 
 
 
