@@ -9,9 +9,9 @@ Aviatrix Transit Gateway Peering with Private Network Workflow
 Introduction
 ============
 
-Aviatrix Transit Gateway Peering over Private Network expands Transit Gateway peering over multi-clouds where there is private network connectivity instead of Internet. 
+Aviatrix Transit Gateway Peering over Private Network feature not only expands Transit Gateway peering over multi-clouds where there is a private network connectivity to on-prem or a co-location instead of Internet in a simple approach but also supports High-Performance Encryption. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
 
-One of the use cases is that two Aviatrix Transit Gateways are deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure ExpressRoute connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond. 
+In addition, this solution applies to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. 
 
 This document describes a step-by-step instruction how to build Aviatrix Transit Gateway Peering with Private Network over AWS Direct Connect and Azure ExpressRoute for R6.2 and later. In this note, you learn how to:
 
@@ -31,9 +31,11 @@ For more information about Multi-Cloud Transit Network, please check out the bel
   
   `Transit Network Design Patterns <https://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_
 
-.. note::
+.. important::
 
 	- Aviatrix Transit Gateway Peering with Private Network solution supports only High-Performance Encryption (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	
+	- This solution supports only `ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_, please check this doc `How to migrate to ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#how-to-migrate-to-activemesh-2-0>`_ for migration detail.
 	
 	- This solution does NOT build underlay connectivity. It is users' responsibility to deploy private network first. Workflow on building underlay connectivity for private network with AWS Direct Connect/Azure ExpressRoute here is just an example. Please adjust the topology depending on your requirements.
 	
