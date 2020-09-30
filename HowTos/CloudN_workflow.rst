@@ -528,60 +528,60 @@ Q: Can Managed CloudN solution support over Azure Express Route?
 Ans: Yes, Managed CloudN solution support not only over Azure Express Route but also over AWS Direct Connect.
 
 .. |managed_cloudn_topology| image:: CloudN_workflow_media/managed_cloudn_topology.png
-   :scale: 30%
+   :scale: 50%
    
 .. |cloudn_register_controller_fqdn_link_managed_cloudn| image:: CloudN_workflow_media/cloudn_register_controller_fqdn_link_managed_cloudn.png
-   :scale: 30%	 
+   :scale: 50%	 
 	 
 .. |cloudn_register_controller_fqdn| image:: CloudN_workflow_media/cloudn_register_controller_fqdn.png
-   :scale: 30%
+   :scale: 50%
 	 
 .. |controller_managed_cloudn_registered_state| image:: CloudN_workflow_media/controller_managed_cloudn_registered_state.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_discover_wan_interfaces| image:: CloudN_workflow_media/controller_discover_wan_interfaces.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_attach_aviatrix_transit| image:: CloudN_workflow_media/controller_attach_aviatrix_transit.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_managed_cloudn_attached_state| image:: CloudN_workflow_media/controller_managed_cloudn_attached_state.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_managed_cloudn_s2c_up_state| image:: CloudN_workflow_media/controller_managed_cloudn_s2c_up_state.png
-   :scale: 30%
+   :scale: 50%
 
 .. |managed_cloudn_traffic_flow_verification_on_prem_router_issue_icmp| image:: CloudN_workflow_media/managed_cloudn_traffic_flow_verification_on_prem_router_issue_icmp.png
-   :scale: 30%
+   :scale: 50%
 
 .. |managed_cloudn_traffic_flow_verification_cloud_vm_tcpdump_icmp| image:: CloudN_workflow_media/managed_cloudn_traffic_flow_verification_cloud_vm_tcpdump_icmp.png
-   :scale: 30%
+   :scale: 50%
 	 
 .. |managed_cloudn_traffic_flow_verification_cloud_vm_issue_icmp| image:: CloudN_workflow_media/managed_cloudn_traffic_flow_verification_cloud_vm_issue_icmp.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_running_diagnostics| image:: CloudN_workflow_media/controller_troubleshooting_tips_running_diagnostics.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_upload_tracelog| image:: CloudN_workflow_media/controller_troubleshooting_tips_upload_tracelog.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_download_syslogs| image:: CloudN_workflow_media/controller_troubleshooting_tips_download_syslogs.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_force_upgrade| image:: CloudN_workflow_media/controller_troubleshooting_tips_force_upgrade.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_cloudwan_detach| image:: CloudN_workflow_media/controller_cloudwan_detach.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_cloudwan_deregister| image:: CloudN_workflow_media/controller_cloudwan_deregister.png
-   :scale: 30%
+   :scale: 50%
 
 .. |cloudn_factory_reset| image:: CloudN_workflow_media/cloudn_factory_reset.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_cloudwan_factory_reset| image:: CloudN_workflow_media/controller_cloudwan_factory_reset.png
-   :scale: 30%
+   :scale: 50%
 
 .. disqus::
