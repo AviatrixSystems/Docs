@@ -113,6 +113,6 @@ Rule 5: Error out a warning message when users attempt to enable single SNAT/FQD
 Example:
 ^^^^^^^^
 
-If there is a default route 0.0.0.0/0 learned from onp-rem already existed in Aviatrix Transit solution, then Aviatrix will pop out a warning message when users attempt to enable single SNAT/FQDN features in Spoke network.
+If there is a default route 0.0.0.0/0 learned from on-prem already existed in Aviatrix Transit solution, then Aviatrix will pop out a warning message when users attempt to enable single SNAT/FQDN features in Spoke network.
 
 .. disqus::
