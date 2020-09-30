@@ -79,9 +79,11 @@ Rule 3: How to handle default route 0.0.0.0/0 from Aviatrix Transit Gateway?
 Scenarios:
 ^^^^^^^^^^
 
-- Learn default route 0.0.0.0/0 from on-prem
+- Learning default route 0.0.0.0/0 from on-prem
 
-- Learn default route 0.0.0.0/0 from Aviatrix Transit peering
+- Learning default route 0.0.0.0/0 from Aviatrix Transit peering
+
+- Enabling Central Egress feature
 
 High-level logic:
 ^^^^^^^^^^^^^^^^^
@@ -102,12 +104,7 @@ High-level logic:
 |                                      |                                                        | - UDR: 0.0.0.0/0 to Virtual Network                                                                                           |
 +--------------------------------------+--------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
-Rule 4: How Aviatrix handles 0.0.0.0/0 when Central Egress is enabled?
-----------------------------------------------------------------------
-
-- Treat it as Rule 3: How to handle default route 0.0.0.0/0 from Aviatrix Transit Gateway
-
-Rule 5: Error out a warning message when users attempt to enable single SNAT/FQDN in a Spoke network where default route 0.0.0.0/0 is already programmed by Rule 3 or Rule 4.
+Rule 4: Error out a warning message when users attempt to enable single SNAT/FQDN in a Spoke network where default route 0.0.0.0/0 is already programmed by Rule 3.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Example:
