@@ -13,7 +13,7 @@ Aviatrix Transit Gateway Peering over Private Network feature not only expands T
 
 In addition, this solution applies to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. 
 
-This document describes a step-by-step instruction how to build Aviatrix Transit Gateway Peering with Private Network over AWS Direct Connect and Azure ExpressRoute for R6.2 and later. In this note, you learn how to:
+This document describes a step-by-step instruction how to build Aviatrix Transit Gateway Peering with Private Network over AWS Direct Connect and Azure ExpressRoute for R6.2 and later as an example. In this note, you learn how to:
 
 	#. Workflow on building underlay connectivity for private network with AWS Direct Connect
   
