@@ -31,7 +31,11 @@ For more information about CloudN, please check out the below documents:
 	
 .. note::
 
-	Managed CloudN solution supports only High-Performance (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	- Managed CloudN solution supports only High-Performance (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	
+	- This solution applies to over AWS Direct Connect, Azure ExpressRoute, and Internet.
+	
+	- Will support Aviatrix Transit Gateway in GCP soon.
   
 Topology
 ==================
@@ -534,10 +538,10 @@ Ans: Yes, Managed CloudN solution support not only over Azure Express Route but 
    :scale: 80%	 
 	 
 .. |cloudn_register_controller_fqdn| image:: CloudN_workflow_media/cloudn_register_controller_fqdn.png
-   :scale: 50%
+   :scale: 40%
 	 
 .. |controller_managed_cloudn_registered_state| image:: CloudN_workflow_media/controller_managed_cloudn_registered_state.png
-   :scale: 50%
+   :scale: 30%
 
 .. |controller_discover_wan_interfaces| image:: CloudN_workflow_media/controller_discover_wan_interfaces.png
    :scale: 60%
@@ -546,7 +550,7 @@ Ans: Yes, Managed CloudN solution support not only over Azure Express Route but 
    :scale: 60%
 
 .. |controller_managed_cloudn_attached_state| image:: CloudN_workflow_media/controller_managed_cloudn_attached_state.png
-   :scale: 60%
+   :scale: 50%
 
 .. |controller_managed_cloudn_s2c_up_state| image:: CloudN_workflow_media/controller_managed_cloudn_s2c_up_state.png
    :scale: 60%
@@ -561,13 +565,13 @@ Ans: Yes, Managed CloudN solution support not only over Azure Express Route but 
    :scale: 100%
 
 .. |controller_troubleshooting_tips_running_diagnostics| image:: CloudN_workflow_media/controller_troubleshooting_tips_running_diagnostics.png
-   :scale: 60%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_upload_tracelog| image:: CloudN_workflow_media/controller_troubleshooting_tips_upload_tracelog.png
-   :scale: 60%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_download_syslogs| image:: CloudN_workflow_media/controller_troubleshooting_tips_download_syslogs.png
-   :scale: 60%
+   :scale: 50%
 
 .. |controller_troubleshooting_tips_force_upgrade| image:: CloudN_workflow_media/controller_troubleshooting_tips_force_upgrade.png
    :scale: 50%
@@ -579,7 +583,7 @@ Ans: Yes, Managed CloudN solution support not only over Azure Express Route but 
    :scale: 60%
 
 .. |cloudn_factory_reset| image:: CloudN_workflow_media/cloudn_factory_reset.png
-   :scale: 60%
+   :scale: 40%
 
 .. |controller_cloudwan_factory_reset| image:: CloudN_workflow_media/controller_cloudwan_factory_reset.png
    :scale: 60%
