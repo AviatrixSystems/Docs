@@ -50,6 +50,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aviatrix_operations
    StartUpGuides/CloudN-Startup-Guide
    StartUpGuides/appendix-CloudN-Startup-Guide
+   StartUpGuides/meter_pricing
 
    HowTos/FAQ
 
