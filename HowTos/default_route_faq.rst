@@ -33,7 +33,7 @@ How Aviatrix defines public or private subnet/route table in each cloud?
 |                                      +--------------------------------------+---------------------------------------------+
 |                                      | 0.0.0.0/0 to AWS NAT gateway         | - UDR: 0.0.0.0/0 to Virtual Network Gateway |
 |                                      +--------------------------------------+---------------------------------------------+
-|                                      |                                      | Azure NAT gateway                           |
+|                                      | overall: 0.0.0.0/0 to non-IGW        |                                             |
 +--------------------------------------+--------------------------------------+---------------------------------------------+
 | Notes:                               | IGW: Internet gateways               | UDR: User Defined Routing                   |
 |                                      +--------------------------------------+---------------------------------------------+
@@ -50,25 +50,47 @@ What are the rules and scenarios that Aviatrix programs default route?
 Rule 1: Overwrite default route entry 0.0.0.0/0 in subnet/route table where Aviatrix defines it as “Private” when the below features are enabled:
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
+Features:
+^^^^^^^^^
+
 - Single SNAT
 
 - FQDN discovery
 
 - FQDN
 
+High-level logic:
+^^^^^^^^^^^^^^^^^
+
+- Save customer's original route entry 0.0.0.0 configuration
+
+- Overwrite route entry 0.0.0.0 to Aviatrix
+
+- Restore back customer's original route entry 0.0.0.0 configuration if users disable the above features
+
 Rule 2: Load balance the route entry 0.0.0.0/0 between Aviatrix gateways when users attempt to enable the same type of feature such as Single SNAT/FQDN which is already deployed in the same network.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Refer to `NAT GW Load-balance with AZ affinity <https://docs.aviatrix.com/HowTos/nat_gw_LoadBalance_AZ.html>`_
+- Refer to `NAT GW Load-balance with AZ affinity <https://docs.aviatrix.com/HowTos/nat_gw_LoadBalance_AZ.html>`_ for Aviatrix load balance detail
 
 Rule 3: How to handle default route 0.0.0.0/0 from Aviatrix Transit Gateway?
 ----------------------------------------------------------------------------
+
+Scenarios:
+^^^^^^^^^^
+
+- Learn default route 0.0.0.0/0 from on-prem
+
+- Learn default route 0.0.0.0/0 from Aviatrix Transit peering
+
+High-level logic:
+^^^^^^^^^^^^^^^^^
 
 - Utilize Aviatrix subnet/route table definition to discover private subnet/route table 
 
 - Program '0.0.0.0/0 to Aviatrix Spoke Gateway' into private subnet/route table of Spoke network, but it has a slightly different implementation for each cloud as below table.
 
-- Program '0.0.0.0/0 to Aviatrix Transit Gateway' into private subnet/route table of Spoke network by folloing Azure implementation as below table if Azure ARM Spoke through Native Peering feature is deployed
+- Program '0.0.0.0/0 to Aviatrix Transit Gateway' into private subnet/route table of Spoke network by following Azure implementation as below table if Azure ARM Spoke through Native Peering feature is deployed
 
 +--------------------------------------+--------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | **Aviatrix definition**              | **AWS**                                                | **Azure**                                                                                                                     |
@@ -85,7 +107,12 @@ Rule 4: How Aviatrix handles 0.0.0.0/0 when Central Egress is enabled?
 
 - Treat it as Rule 3: How to handle default route 0.0.0.0/0 from Aviatrix Transit Gateway
 
-Rule 5: Error out a warning message when users attempt to enable single SNAT/FQDN in a Spoke network where default route 0.0.0.0 is already programmed by Rule 3 or Rule 4.
+Rule 5: Error out a warning message when users attempt to enable single SNAT/FQDN in a Spoke network where default route 0.0.0.0/0 is already programmed by Rule 3 or Rule 4.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Example:
+^^^^^^^^
+
+If there is a default route 0.0.0.0/0 learned from onp-rem already existed in Aviatrix Transit solution, then Aviatrix will pop out a warning message when users attempt to enable single SNAT/FQDN features in Spoke network.
 
 .. disqus::
