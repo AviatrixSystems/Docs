@@ -35,7 +35,7 @@ For more information about CloudN, please check out the below documents:
 	
 	- This solution applies to over AWS Direct Connect, Azure ExpressRoute, and Internet.
 	
-	- Will support Aviatrix Transit Gateway in GCP soon.
+	- Will support connecting to Aviatrix Transit Gateway in GCP soon.
   
 Topology
 ==================
@@ -48,7 +48,7 @@ Prerequisite
 Step 1.1. `Order a CloudN device <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#step-2-pre-deployment-request-form>`_ and install it properly in your data center or data center provider
 ---------------------------------------------------------------------------------------------------------
 
-Step 1.2. Prepare/register an FQDN for Aviatrix controller public IP
+Step 1.2. Prepare/register an FQDN for Aviatrix Controller public IP
 ---------------------------------------------------------------------------------------------------------
 
 Step 1.3. Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN if you have it in your existing Standalone CloudN topology
@@ -284,7 +284,7 @@ Step 3.6. Check whether the connection status is Up
 	
 		|controller_managed_cloudn_s2c_up_state|		
 		
-Step 3.6. Check Transit Gateway BGP status
+Step 3.7. Check Transit Gateway BGP status
 -------------------------------------------
 
 	- Navigate to the page "MULTI-CLOUD TRANSIT -> Advanced Config -> BGP"
@@ -505,7 +505,7 @@ Ans: In this document, the term "Standalone CloudN" means that a CloudN device h
 
 Q: Could a Managed CloudN be converted back to a Standalone CloudN?
 
-Ans: Yes, users are able to convert a Managed CloudN device back to a Standalone CloudN by following the `<Workflow on cleanup>`_.
+Ans: Yes, users are able to convert a Managed CloudN device back to a Standalone CloudN by following the `Workflow on cleanup <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-cleanup>`_.
 
 Q: What are the benefits of registering a CloudN hardware appliance with an Aviatrix Controller?
 
@@ -517,7 +517,7 @@ Ans:
 
 - Enhanced visibility and troubleshooting: perform diagnostics on Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI
 
-- Performance: support scale-out fashion to achive high IPsec throughput
+- Performance: support scale-out fashion to achieve high IPsec throughput
 
 Q: Does Managed CloudN has Aviatrix High-Performance (Insane) mode supported?
 
