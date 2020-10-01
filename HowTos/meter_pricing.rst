@@ -7,9 +7,19 @@ Metered AMI Pricing Book
 ===============================
 
 This document describes Aviatrix Metered offering pricing for use cases and scenarios. It applies to both
-AWS and Azure Metered AMI offerings. 
+`AWS Metered AMI <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1601567061685&sr=0-3&ref_=srh_res_product_title>`_ 
+and `Azure Metered AMI <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-saas?tab=Overview>`_ offerings. 
 
-Common notions.
+General license and pricing mapping is as follows:
+
+::
+
+  1 inter-cloud license = $0.58/hour
+  1 intra-cloud license = 0.19/hour
+  1 security service license = $0.19/hour
+  1 user VPN license = $0.04/hour
+
+Some common notions described in the following sessions:
 
 ::
 
@@ -21,20 +31,6 @@ Common notions.
                    In Transit Gateway Peering scenario, both Transit Gateways are in the same cloud. 
    no SameCloud - A Spoke gateway and Transit Gateway are in the different clouds, 
                   or two Transit Gateways are in the different clouds. 
-
-
-License and pricing mapping. 
-
-::
-
-  1 inter-cloud license = $0.58/hour
-  1 intra-cloud license = 0.19/hour
-  1 security service license = $0.19/hour
-  1 user VPN license = $0.04/hour
-
-
-   
-
 
 
 1. Multi-cloud Spoke Gateway Attachment
@@ -83,8 +79,10 @@ no HA, yes HPE            1 inter-cloud license     1 inter-cloud license       
 yes HA, yes HPE           2 inter-cloud licenses    2 inter-cloud licenses      16 intra-cloud licenses
 ========================= ======================    ======================      ===========================
 
-4. Cloud Native Spoke Network Attachment
+4. Native Spoke Network Attachment
 -------------------------------------------
+
+Native Spoke refers to a spoke VPC or VNet in a hub-and-spoke architecture. In this scenario, there is no Aviatrix Spoke gateway deployed in the Spoke network. 
 
 =====================  =======================   ==============================
 Native Spoke types     AWS TGW                   Multi-cloud Transit Gateway
@@ -109,7 +107,7 @@ Azure VNet Peering                                       0 intra-cloud license
 -------------------------
 
 ====================================================     ===========================
-Aviatrix gateway types                                   FQDN Function
+Aviatrix gateway types                                   FQDN Function configured
 ====================================================     ===========================
 no HA                                                    1 security-service license
 yes HA                                                   2 security-service licenses
@@ -119,17 +117,27 @@ yes HA                                                   2 security-service lice
 ---------------
 
 ====================================================     ======================
-Aviatrix gateway types                                   Site2Cloud 
+Aviatrix gateway types                                   Site2Cloud configured
 ====================================================     ======================
 no HA                                                    1 inter-cloud license
 yes HA                                                   2 inter-cloud licenses
 ====================================================     ======================
 
-8. User VPN
+8. PrivateS3
+-------------------------
+
+====================================================     ==============================
+Aviatrix gateway types                                   PrivateS3 Function configured
+====================================================     ==============================
+no HA                                                    1 security-service license
+yes HA                                                   2 security-service licenses
+====================================================     ==============================
+
+9. User VPN
 -------------
 
 ====================================================     ======================
-Aviatrix gateway                                         User VPN
+Aviatrix gateway                                         User VPN configured
 ====================================================     ======================
 1 active user connection                                 1 user license
 ====================================================     ======================
