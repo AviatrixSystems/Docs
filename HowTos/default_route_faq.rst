@@ -14,7 +14,7 @@ What is default route 0.0.0.0/0?
 
 In the context of routing tables, a network destination of 0.0.0.0 is used with a network mask of 0 to depict the default route as a destination subnet. This destination is expressed as "0.0.0.0/0" in CIDR notation from `Wikipedia <https://en.wikipedia.org/wiki/0.0.0.0>`_ 
 
-When users configure default route 0.0.0.0/0 into routing table?
+When do users configure default route 0.0.0.0/0 into routing table?
 ================================================================
 
 Usually, when users want to route traffic to all non-local addresses as use cases below
@@ -23,32 +23,44 @@ Usually, when users want to route traffic to all non-local addresses as use case
   
 - for central traffic control (i.e. VPN gateway, firewall, other cloud network component, or NVA)
 
-What is public subnet?
+What is public subnet and private subnet?
 ======================
 
-In `AWS <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html>`_, a public subnet is a subnet that's associated with a route table that has a route to an Internet gateway. Most of the time, the route entry is 0.0.0.0/0 -> IGW. In addition, AWS IGW performs network address translation (NAT) for instances that have been assigned public IPv4 addresses. Check this `AWS User Guide <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html>`_ for detail. Same concept applies to other cloud providers.
+In general, public subnet means the interfaces in that subnet have direct access to internet. 
+For example, in `AWS <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html>`_, a public subnet is a subnet that's associated with a route table that has a route to an Internet gateway. Most of the time, the route entry is 0.0.0.0/0 -> IGW. In addition, AWS IGW performs network address translation (NAT) for instances that have been assigned public IPv4 addresses. Check this `AWS User Guide <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html>`_ for detail. Same concept applies to other cloud providers.
 
-Therefore, Aviatrix assumes that a subnet which is associated with a route table that has a route 0.0.0.0/0 to an Internet gateway is a public subnet and this subnet/route table is set for internet facing purpose by customer. Check the question `How Aviatrix defines public or private subnet/route table in each cloud? <#aviatrixdefinition>`_ for detail. 
+A private subnet means the interfaces in that subnet have no direct access to internet. So the interfaces are better protected. 
+However, in many cases, instances/VMs in private subnet also need to access internet. There are multiple ways to dealing with it. By manipulating 0.0.0.0/0 route in the subnet associated route table, internet traffic can be redirect to different entities to handle.
 
 Why Aviatrix needs to differentiate public subnet/route table and private subnet/route table?
 ==============================================================================================
 
-Aviatrix controller programs default route 0.0.0.0/0 pointing to Aviatrix in cloud route table for different Aviatrix solutions/use cases. Thus, determining what type of subnet/route table to program is critical. Additionally, the implementation logic is slightly different depending on use cases. Check the question `How Aviatrix defines public or private subnet/route table in each cloud? <#aviatrixdefinition>`_ for detail. 
+Aviatrix controller programs default route 0.0.0.0/0 pointing to Aviatrix gateways in cloud private route tables for different Aviatrix solutions/use cases. So that the private instances/VMs can access internet through Aviatrix solution. Thus, determining which subnet/route table is private and to program is critical. Additionally, the criteria are slightly different depending on use cases. Check the question `How Aviatrix defines public or private subnet/route table in each cloud? <#aviatrixdefinition>`_ for detail. 
 
-Use cases: Single SNAT and FQDN 
+Use cases 1: Single SNAT and FQDN in individual Network
 --------------------------------
 
 Since these are the features routing private traffic from cloud network to the Internet and replacing native cloud NAT gateways, Aviatrix discovers 'private' subnet/route table first and then program the default route 0.0.0.0/0 pointing to Aviatrix gateway into it. Furthermore, to reduce friction and to shorten downtime when users remove default route by themselves, Aviatrix performs overwrite default route logic by default. Check Rule 1 and Rule 2 for detail.
 
-Use cases: Aviatrix Centralized Egress and on-prem advertising default route 0.0.0.0/0
+Shanshan:
+User can launch Aviatrix gateways within the network, and enable Single SNAT or FQDN feature on the gateway. Aviatrix gateway will discover 'private' subnets/route tables, then program default route 0.0.0.0/0 pointing to Aviatrix gateway into it. 
+By doing this, private instances/VMs internet traffic will go through Aviatrix gateway, and inspected by FQDN (if enabled).
+
+
+Use cases 2: Aviatrix Centralized Egress and on-prem advertising default route 0.0.0.0/0
 --------------------------------------------------------------------------------------
 
 Since these are the features routing private traffic for central traffic control, Aviatrix discovers 'private' subnet/route table first and then program the default route 0.0.0.0/0 into it if there is no default route existed. Aviatrix, however, does not perform overwrite logic in these use cases by default. Check Rule 3 for detail.
 
+Shanshan:
+In Aviatrix Transit Network solution, for private instances/VMS in spoke networks, user can choose centralized Egress by using Aviatrix FireNet, or using onprem Egress. In either case, Aviatrix transit gateway propagates 0.0.0.0/0 route to Aviatrix spoke gateways, and program 0.0.0.0/0 route in spoke private subnets/route tables. Thus, all private instances/VMs internet traffic are forwarded to transit gateway, and then forwarded to FireNet or onprem networks.
+
 .. _aviatrixdefinition:
 
-How Aviatrix defines public or private subnet/route table in each cloud?
+How Aviatrix defines public or private subnet/route table in each cloud for use case 1?
 ========================================================================
+
+Here we only discuss AWS and Azure.
 
 +--------------------------------------+--------------------------------------+---------------------------------------------+
 | **Aviatrix definition**              | **AWS**                              | **Azure**                                   |
@@ -112,6 +124,30 @@ Rule 2: Load balance the route entry 0.0.0.0/0 between Aviatrix gateways when us
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - Refer to `NAT GW Load-balance with AZ affinity <https://docs.aviatrix.com/HowTos/nat_gw_LoadBalance_AZ.html>`_ for Aviatrix load balance detail
+
+How Aviatrix defines public or private subnet/route table in each cloud for use case 2?
+========================================================================
+
++--------------------------------------+--------------------------------------+---------------------------------------------+
+| **Aviatrix definition**              | **AWS**                              | **Azure**                                   |
++--------------------------------------+--------------------------------------+---------------------------------------------+
+| **Public** cloud subnet/route table  | 0.0.0.0/0 to IGW                     | UDR does not exist                          |
+|                                      |                                      +---------------------------------------------+
+|                                      |                                      | UDR is associated with a subnet:            |
+|                                      |                                      +---------------------------------------------+
+|                                      |                                      | - UDR: 0.0.0.0/0 entry doesn't exist        |
+|                                      |                                      +---------------------------------------------+
+|                                      |                                      | - UDR: 0.0.0.0/0 to Cloud Internet          |
++--------------------------------------+--------------------------------------+---------------------------------------------+
+| **Private** cloud subnet/route table | 0.0.0.0/0 route entry does not exist | UDR is associated with a subnet:            |
+|                                      |                                      +---------------------------------------------+
+|                                      |                                      | - UDR: 0.0.0.0/0 to None                    |
+|                                      |                                      +---------------------------------------------+
+|                                      |                                      | - UDR: 0.0.0.0/0 to Virtual Network Gateway |
++--------------------------------------+--------------------------------------+---------------------------------------------+
+
+What are the rules and scenarios that Aviatrix programs default route?
+======================================================================
 
 Rule 3: How to handle default route 0.0.0.0/0 from Aviatrix Transit Gateway?
 ----------------------------------------------------------------------------
