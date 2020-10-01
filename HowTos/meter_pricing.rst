@@ -111,6 +111,7 @@ Aviatrix gateway types                                   FQDN Function configure
 ====================================================     ===========================
 no HA                                                    1 security-service license
 yes HA                                                   2 security-service licenses
+3 AZ                                                     3 security-service licenses
 ====================================================     ===========================
 
 7. Site2Cloud 
@@ -130,7 +131,7 @@ yes HA                                                   2 inter-cloud licenses
 Aviatrix gateway types                                   PrivateS3 Function configured
 ====================================================     ==============================
 no HA                                                    1 security-service license
-yes HA                                                   2 security-service licenses
+N number of gateways                                     N security-service licenses
 ====================================================     ==============================
 
 9. User VPN
