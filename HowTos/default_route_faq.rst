@@ -9,6 +9,40 @@ Default route FAQ
 
 This document explains how Aviatrix manupilates default route 0.0.0.0/0 starting from R6.2 with Active Mesh 2.0.
 
+What is default route 0.0.0.0/0?
+================================
+
+In the context of routing tables, a network destination of 0.0.0.0 is used with a network mask of 0 to depict the default route as a destination subnet. This destination is expressed as "0.0.0.0/0" in CIDR notation from `Wikipedia <https://en.wikipedia.org/wiki/0.0.0.0>`_ 
+
+When users configure default route 0.0.0.0/0 into routing table?
+================================================================
+
+Usually, when users want to route traffic to all non-local addresses as use cases below
+
+- to Internet traffic (i.e. Internet gateway or NAT gateway)
+  
+- for central traffic control (i.e. VPN gateway, firewall, other cloud network component, or NVA)
+
+What is public subnet?
+======================
+
+In `AWS <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html>`_, a public subnet is a subnet that's associated with a route table that has a route to an Internet gateway. Most of the time, the route entry is 0.0.0.0/0 -> IGW. In addition, AWS IGW performs network address translation (NAT) for instances that have been assigned public IPv4 addresses. Check this `AWS User Guide <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html>`_ for detail. 
+
+Therefore, Aviatrix assumes that a subnet which is associated with a route table that has a route 0.0.0.0/0 to an Internet gateway is a public subnet and this subnet/route table is set for internet facing purpose by customer. Check the question `How Aviatrix defines public or private subnet/route table in each cloud? <How Aviatrix defines public or private subnet/route table in each cloud?>`_ for detail. 
+
+Why Aviatrix needs to differentiate public subnet/route table and private subnet/route table?
+==============================================================================================
+
+Aviatrix controller programs default route 0.0.0.0/0 pointing to Aviatrix in cloud route table for different Aviatrix solutions/use cases. Thus, determining which subnet/route table to program is critical. Additionally, the definition/implementation logic is slightly different depends on use cases. Otherwise, it might cause unexpected network outage. Check the question `How Aviatrix defines public or private subnet/route table in each cloud? <How Aviatrix defines public or private subnet/route table in each cloud?>`_ for detail. 
+
+Use cases: Single SNAT and FQDN 
+--------------------------------
+
+
+Use cases: Aviatrix Centralized Egress and on-prem advertising default route 0.0.0.0/0
+--------------------------------------------------------------------------------------
+
+
 How Aviatrix defines public or private subnet/route table in each cloud?
 ========================================================================
 
