@@ -35,6 +35,15 @@ Why Aviatrix needs to differentiate public subnet/route table and private subnet
 
 Aviatrix controller programs default route 0.0.0.0/0 pointing to Aviatrix in cloud route table for different Aviatrix solutions/use cases. Thus, determining what type of subnet/route table to program is critical. Additionally, the implementation logic is slightly different depending on use cases. Check the question `How Aviatrix defines public or private subnet/route table in each cloud? <#aviatrixdefinition>`_ for detail. 
 
+Use cases: Single SNAT and FQDN 
+--------------------------------
+
+Since these are the features routing private traffic from cloud network to the Internet and replacing native cloud NAT gateways, Aviatrix discovers 'private' subnet/route table first and then program the default route 0.0.0.0/0 pointing to Aviatrix gateway into it. Furthermore, to reduce friction and to shorten downtime when users remove default route by themselves, Aviatrix performs overwrite default route logic by default. Check Rule 1 and Rule 2 for detail.
+
+Use cases: Aviatrix Centralized Egress and on-prem advertising default route 0.0.0.0/0
+--------------------------------------------------------------------------------------
+
+Since these are the features routing private traffic for central traffic control, Aviatrix discovers 'private' subnet/route table first and then program the default route 0.0.0.0/0 into it if there is no default route existed. Aviatrix, however, does not perform overwrite logic in these use cases by default. Check Rule 3 for detail.
 
 .. _aviatrixdefinition:
 
