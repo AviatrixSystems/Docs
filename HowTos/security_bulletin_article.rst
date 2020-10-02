@@ -4,6 +4,13 @@ PSIRT Advisories
 
 Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please send it to support@aviatrix.com. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below. 
 
+Please note the below Aviatrix Security recommendations and communication plans:
+- Aviatrix strongly recommend customers to stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions. 
+- Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system level security patch
+- All known software vulerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
+- Avitrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
+
+
 Most Recent IR
 ================
 
@@ -34,7 +41,88 @@ TBD
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-11. Bypass Htaccess Security Control
+16. Bypass htaccess security control
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Low
+
+**Description**
+The htaccess control to prevent requests to a cert directory can be bypassed to download files.
+
+**Impact**
+Excessive Permission
+
+**Affected Product**
+Controller 5.3.1516
+
+**Solution**
+Controller R5.4.1290 (8/5/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure.
+
+15. Insecure File Permissions
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Medium
+
+**Description**
+Several world writable files and directories were found
+
+**Impact**
+Excessive Permission
+
+**Affected Product**
+Controller 5.3.1516
+
+**Solution**
+Controller R5.4.1290 (8/5/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure.
+
+14. Arbitrary File Write
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+High
+
+**Description**
+The VPN service writes logs to a location that is world writable and can be leveraged to gain write access to any file on the system.
+
+**Impact**
+Excessive Permission
+
+**Affected Product**
+OpenVPN 2.8.2 or earlier 
+
+**Solution**
+OpenVPN 2.10.8 - May 14 2020 or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure.
+
+14. Bypass Htaccess Security Control
 ----------------------------------------
 
 **Date**
@@ -61,7 +149,34 @@ TBD
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-10. Cleartext Storage of Cryptographic Key 
+13. Insecure sudo rule
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Medium
+
+**Description**
+A user account has permission to execute all commands access as any user on the system.
+
+**Impact**
+Excessive permission
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+12. Cleartext Ecryption Key Storage
 ----------------------------------------
 
 **Date**
@@ -71,7 +186,7 @@ Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 High
 
 **Description**
-Encrypted key values are stored in a readable file
+Encrypted key values are stored in cleartext in a readable file
 
 **Impact**
 Access to read key in encrypted format
@@ -81,6 +196,7 @@ Aviatrix Controller 5.3 or earlier
 
 **Solution**
 Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later
+Migration required to the latest AMI Software Version 050120 (Aug 13, 2020)
 
 **CVE-ID**
 TBD
@@ -88,7 +204,7 @@ TBD
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
 
-9. Pre-Auth Account Takeover
+11. Pre-Auth Account Takeover
 ----------------------------------------
 
 **Date**
@@ -98,7 +214,7 @@ Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES 
 Critical
 
 **Description**
-An unused API file does not require a valid session ID for access.
+An API file does not require a valid session and allows for updates of account email addresses. 
 
 **Impact**
 Access to unauthorized files
@@ -108,6 +224,61 @@ Aviatrix Controller 5.3 or earlier
 
 **Solution**
 Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+
+10. Post-Auth Remote Code Execution
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+High
+
+**Description**
+Several APIs contain functions that allow arbitrary files to be uploaded to the web tree.
+
+**Impact**
+Access to unauthorized files
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R6.0.2483 (8/4/2020) or later 
+
+**CVE-ID**
+TBD
+
+**Acknowledgement**
+Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
+
+9. Pre-Auth Remote Code Execution
+----------------------------------------
+
+**Date**
+8/10/2020
+ 
+**Risk Rating**
+Critical
+
+**Description**
+An API file does not require a valid session ID and allows arbitrary files to be uploaded to the web tree.
+
+**Impact**
+Access to unauthorized files
+
+**Affected Product**
+Aviatrix Controller 5.3 or earlier  
+
+**Solution**
+Controller & Gateway upgrade R6.0.2483 (8/4/2020) or later 
 
 **CVE-ID**
 TBD
