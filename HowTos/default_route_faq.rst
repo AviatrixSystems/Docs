@@ -23,14 +23,14 @@ Usually, when users want to route traffic to all non-local addresses as use case
   
 - for central traffic control (i.e. VPN gateway, firewall, other cloud network component, or NVA)
 
-What is public subnet and private subnet?
+What are public subnet and private subnet?
 ======================
 
 In general, public subnet means the interfaces in that subnet have direct access to the Internet. 
 For example, in `AWS <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html>`_, a public subnet is a subnet that's associated with a route table that has a route to an Internet gateway. Most of the time, the route entry is 0.0.0.0/0 -> IGW. In addition, AWS IGW performs network address translation (NAT) for instances that have been assigned public IPv4 addresses. Check this `AWS User Guide <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html>`_ for detail. Same concept applies to other cloud providers.
 
 A private subnet means the interfaces in that subnet have no direct access to the Internet. So the interfaces are better protected. 
-However, in many cases, instances/VMs in private subnet also need to access internet. There are multiple ways to dealing with it. By manipulating 0.0.0.0/0 route in the subnet associated route table, internet traffic can be redirect to different entities to handle.
+However, in many cases, instances/VMs in private subnet also need to access internet. There are multiple ways to deal with it. By manipulating 0.0.0.0/0 route in the subnet associated route table, internet traffic can be redirect to different entities to handle.
 
 Why Aviatrix needs to differentiate public subnet/route table and private subnet/route table?
 ==============================================================================================
