@@ -7,6 +7,44 @@
 Connecting a Managed CloudN Workflow
 ===============================================
 
+Introduction
+============
+
+Aviatrix Managed CloudN feature enables users to register a CloudN hardware appliance with an Aviatrix Controller so that it can be managed like a CloudWAN device/Aviatrix gateway.
+
+Benefits:
+---------
+
+- Ease of use:
+
+	- centrally manage all CloudN appliances through Aviatrix Controller without logging into each Standalone CloudN GUI individually
+
+	- operate Managed CloudN under CloudWAN workflow
+
+	- remove manually importing S2C IPsec configuration to Standalone CloudN
+
+- Enhanced visibility and troubleshooting:
+
+	- perform running diagnostics, upload tracelog, upgrade, and etc on Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI
+
+	- support backup/restore function
+	
+- Active Mesh support:
+	
+	- employ ECMP feature on Managed CloudN device to send traffic to both Aviatrix Transit primary gateway and backup gateway
+	
+- Scalability:
+
+	- support scale-out fashion to achieve higher IPsec throughput
+	
+.. note::
+
+	- Managed CloudN solution supports only High-Performance (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	
+	- This solution applies to over AWS Direct Connect, Azure ExpressRoute, and Internet.
+	
+	- Will support connecting to Aviatrix Transit Gateway in GCP soon.
+
 This document describes a step-by-step Managed CloudN deployment workflow for R6.2 and later. In this note you learn how to:
 
 	- Workflow on Aviatrix CloudN
@@ -28,14 +66,6 @@ This document describes a step-by-step Managed CloudN deployment workflow for R6
 For more information about CloudN, please check out the below documents:
 
 	`Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_
-	
-.. note::
-
-	- Managed CloudN solution supports only High-Performance (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
-	
-	- This solution applies to over AWS Direct Connect, Azure ExpressRoute, and Internet.
-	
-	- Will support connecting to Aviatrix Transit Gateway in GCP soon.
   
 Topology
 ==================
@@ -496,6 +526,29 @@ Step 4.4. Perform feature "Factory Reset" on Aviatrix Controller GUI
 	
 		If users need any assistance for factory reset operation, please contact Aviatrix Support support@aviatrix.com.
 
+User Guide for Redundant DX Deployment
+======================================
+
+Active/Active
+-------------
+
+This `Active/Active deployment model <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#redundant-dx-deployment-active-active>`_ is highly recommended. Not only two CloudN appliances but also underlay bandwidth could be fully utilized.
+
+.. important::
+	
+	Topology requirements:
+	
+		- firewall should either be placed somewhere behind the LAN routers or be able to handle asymmetric routing.	
+
+Active/Standby
+--------------
+
+Aviatrix solution supports `Active/Standby deployment model <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#redundant-dx-deployment-active-standby>`_, but one of the CloudN appliances and network connections stays at standby/idle mode.
+
+To deploy this topology, users need to advertise **longer BGP AS_PATH** to the Standby CloudN from LAN router so that traffic direction from cloud to on-prem always routes to the Active CloudN when the connection is up. Once the connection on the Active CloudN is down, traffic will direct towards to the Standby CloudN based on BGP info. When the Active CloudN is recovered, traffic will switch back to the Active CloudN as it has **shorter BGP AS_PATH** length.
+
+Users can utilize `Connection AS Path Prepend <https://docs.aviatrix.com/HowTos/transit_advanced.html#connection-as-path-prepend>`_ for the traffic direction from on-prem to cloud depending on requirement.
+
 FAQ
 ====
 
@@ -507,29 +560,37 @@ Q: Could a Managed CloudN be converted back to a Standalone CloudN?
 
 Ans: Yes, users are able to convert a Managed CloudN device back to a Standalone CloudN by following the `Workflow on cleanup <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-cleanup>`_.
 
-Q: What are the benefits of registering a CloudN hardware appliance with an Aviatrix Controller?
-
-Ans: 
-
-- Ease of use: centrally manage all CloudN appliances through Aviatrix Controller without logging into each CloudN GUI individually
-
-- Active Mesh support: employ ECMP feature on Managed CloudN device to send traffic to both Aviatrix Transit primary gateway and backup gateway
-
-- Enhanced visibility and troubleshooting: perform diagnostics on Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI
-
-- Performance: support scale-out fashion to achieve high IPsec throughput
-
-Q: Does Managed CloudN has Aviatrix High-Performance (Insane) mode supported?
+Q: Does Managed CloudN have Aviatrix High-Performance (Insane) mode supported?
 
 Ans: Yes. When a Managed CloudN device attaches to an Aviatrix Transit gateway with HA function enabled, High-Performance (Insane) mode tunnels to both primary and backup transit gateways are automatically be built.
+
+Q: Could Managed CloudN solution support over Azure Express Route?
+
+Ans: Yes, Managed CloudN solution support not only over Azure Express Route but also over AWS Direct Connect.
 
 Q: Could we build a hybrid topology which means mix of IPsec tunnels between CloudN (Managed CloudN/Standalone CloudN) and Aviatrix Transit Gateway?
 
 Ans: No. We don't support this hybrid topology on either Aviatrix Transit Gateway side or CloudN side. Once users decide to deploy Managed CloudN solution, users need to make sure there is no IPsec tunnel between Aviatrix Transit Gateway and Standalone CloudN before registering the Standalone CloudN to Aviatrix Controller. Furthermore, it is not allowed to build mix of IPsec tunnels to Managed CloudN and to Standalone CloudN on one Aviatrix Transit Gateway.
 
-Q: Can Managed CloudN solution support over Azure Express Route?
+Q: Could one Standalone/Managed CloudN appliance connect to multiple connections of Direct Connect or Express Route?
 
-Ans: Yes, Managed CloudN solution support not only over Azure Express Route but also over AWS Direct Connect.
+Ans: Yes. A CloudN appliance can build multiple of HPE tunnels to different Aviatrix Transit Gateways over multiple Direct Connect or Express Route.
+
+Q: Could one Aviatrix Transit Gateway connect to multiple of Standalone/Managed CloudNs?
+
+Ans: Yes. An Aviatrix Transit Gateway can build multiple of HPE tunnels to different Standalone/Managed CloudNs.
+
+Q: How to migrate Standalone CloudN topology to Managed CloudN?
+
+Ans:
+
+- upgrade to the version R6.2
+
+- delete the existing S2C IPsec connection between Aviatrix Transit gateway and Standalone CloudN
+
+- follow `Workflow on Aviatrix CloudN <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-cloudn>`_
+
+- follow `Workflow on Aviatrix Controller <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-controller>`_
 
 .. |managed_cloudn_topology| image:: CloudN_workflow_media/managed_cloudn_topology.png
    :scale: 80%
