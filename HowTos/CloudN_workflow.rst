@@ -45,6 +45,12 @@ Benefits:
 	
 	- Will support connecting to Aviatrix Transit Gateway in GCP soon.
 
+For more information and benefits about CloudN, please check out the below documents:
+
+	`Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_
+	
+	`Insane Mode Encryption FAQ <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
+
 This document describes a step-by-step Managed CloudN deployment workflow for R6.2 and later. In this note you learn how to:
 
 	- Workflow on Aviatrix CloudN
@@ -62,10 +68,6 @@ This document describes a step-by-step Managed CloudN deployment workflow for R6
 	- Workflow on cleanup
   
 	- FAQ
-
-For more information about CloudN, please check out the below documents:
-
-	`Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_
   
 Topology
 ==================
@@ -94,11 +96,11 @@ Deploy Aviatrix Multi-Cloud Transit solution in the cloud.
 
 	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch Aviatrix Transit gateway with insane mode enabled. Recommended minimum size for Transit in AWS is c5n.4xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 	
-	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch Aviatrix Spoke gateway with insane mode enabled. Recommended minimum size for Spoke in AWS is c5.2xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
+	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch Aviatrix Spoke gateway with insane mode enabled. Recommended minimum size for Spoke with insane mode in AWS is c5.2xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail. Notes: Users has option to attach none-insane mode Spoke gateway to insane mode Transit gateway.
 	
 	- Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ to attach Aviatrix Spoke gateway to Aviatrix Transit gateway
 	
-	- To buld connection between Avaitrix Transit Gateway and Managed CloudN, please follow the steps in `Workflow on Aviatrix CloudN`_ and `Workflow on Aviatrix Controller`_
+	- To build connection between Aviatrix Transit Gateway and Managed CloudN, please follow the steps in `Workflow on Aviatrix CloudN`_ and `Workflow on Aviatrix Controller`_
 
 .. note::
 	
@@ -119,7 +121,7 @@ Step 2.1. Update Aviatrix Controller's inbound security group to allow TCP 443 f
 	
 	- Find the security group which is associated with Aviatrix Controller
 	
-	- Configure inboud rule to allow TCP 443 from public IP address of the router of CloudN's MGMT interface 
+	- Configure inbound rule to allow TCP 443 from public IP address of the router of CloudN's MGMT interface 
 
 	.. important::
 
@@ -216,8 +218,8 @@ Step 2.6. Register Aviatrix Controller FQDN
 Workflow on Aviatrix Controller
 =======================================
 
-Step 3.1. Login Aviatrix Contoller
---------------------------------
+Step 3.1. Login Aviatrix Controller
+-----------------------------------
 
 	- Open a browser
 	
@@ -302,6 +304,10 @@ Step 3.5. Check whether the Managed CloudN device attaches to Aviatrix Transit G
 	- Check the state is displayed "attached" on the column "State"
 	
 		|controller_managed_cloudn_attached_state|
+	
+.. note::
+
+	The status "attached" here reflects only the management operation state, it does not reflect the attached connection state in real time (green LED light will be never changed). Please go to Site2Cloud page to monitor the connection status as below step.
 		
 Step 3.6. Check whether the connection status is Up
 ---------------------------------------------------
@@ -326,7 +332,7 @@ Step 3.7. Check Transit Gateway BGP status
 Traffic Flow Verification
 =========================
 
-In this traffic verification example, the on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC is 10.1.0.0/16. Aviatrix Spoke VPC is 192.168.1.0/24 and the private IP of the testing VM is 192.168.1.36/32.
+Traffic Flow Verification example was exercised "after S2C connection(s) is up and BGP connection(s) is established. The on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC is 10.1.0.0/16. Aviatrix Spoke VPC is 192.168.1.0/24 and the private IP of the testing VM is 192.168.1.36/32.
 
 	- Traffic from on-premise router Cisco IOS to cloud VM
 
@@ -347,7 +353,11 @@ In this traffic verification example, the on-premise router is Cisco IOS with ne
 Troubleshooting Tips
 ====================
 
-When a Standalone CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, users are able to function those troubleshooting features as below on a Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI.
+When a Standalone CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, users are able to function those troubleshooting features as below on a Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI. 
+
+.. note::
+	
+	Direct access to CloudN's local HTTPs URL/UI is still allowed for only Troubleshoot/Diagnostic reasons; access to any other menu items is neither recommended nor supported.
 
 Running diagnostics
 --------------------
@@ -532,6 +542,8 @@ User Guide for Redundant DX Deployment
 Active/Active
 -------------
 
+|deployment_dual_dx_aa|
+
 This `Active/Active deployment model <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#redundant-dx-deployment-active-active>`_ is highly recommended. Not only two CloudN appliances but also underlay bandwidth could be fully utilized.
 
 .. important::
@@ -542,6 +554,8 @@ This `Active/Active deployment model <https://docs.aviatrix.com/HowTos/CloudN_in
 
 Active/Standby
 --------------
+
+|deployment_dual_dx|
 
 Aviatrix solution supports `Active/Standby deployment model <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#redundant-dx-deployment-active-standby>`_, but one of the CloudN appliances and network connections stays at standby/idle mode.
 
@@ -648,5 +662,11 @@ Ans:
 
 .. |controller_cloudwan_factory_reset| image:: CloudN_workflow_media/controller_cloudwan_factory_reset.png
    :scale: 60%
+
+.. |deployment_dual_dx| image:: insane_mode_media/deployment_dual_dx.png
+   :scale: 30%
+
+.. |deployment_dual_dx_aa| image:: insane_mode_media/deployment_dual_dx_aa.png
+   :scale: 30%
 
 .. disqus::
