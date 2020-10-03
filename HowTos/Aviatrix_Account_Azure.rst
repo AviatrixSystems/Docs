@@ -16,8 +16,8 @@ In order to use Azure API, you need to first create an Aviatrix `Access
 Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_ on the Aviatrix controller. This access account corresponds
 to a valid Azure subscription with API credentials. You need to create an access account for each subscription. 
 
-This document describes, for an given subscription, how to obtain the necessary information,
-specifically Application ID, Application Key(Client secret), and
+This document describes, for a given subscription, how to obtain the necessary information,
+specifically Application ID, Application Key (Client secret), and
 Application Directory ID to create an Aviatrix Access Account so that the Controller can execute APIs on that subscription
 There are 3 sections, make sure you go through all of them.
 
@@ -153,7 +153,7 @@ https://portal.azure.com
 
 6. Done
 
-At this point you should have the following information.
+At this point you should have the following information to create an access account on Azure.
 
 +-----------------------------------+---------------+
 | **Subscription ID**               | From step 2   |
