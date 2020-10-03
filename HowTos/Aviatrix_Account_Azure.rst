@@ -3,31 +3,23 @@
    :keywords: Aviatrix account, Azure, Aviatrix Azure account credential, API credential
 
 ===========================================================
-Azure ARM
+Azure Account Credential Setup 
 ===========================================================
 
 1.0 Overview
 =============
 
-This document helps you setup API credentials on Azure ARM. 
- 
-Aviatrix Cloud Controller uses Azure APIs extensively to launch Aviatrix
+Aviatrix Controller uses Azure APIs extensively to launch Aviatrix
 gateways, configure encrypted peering and other features.
 
-In order to use Azure API, you need to first create an Aviatrix Cloud
-Account on the Aviatrix Cloud controller. This cloud account corresponds
-to a valid Azure account with API credentials.
+In order to use Azure API, you need to first create an Aviatrix `Access
+Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_ on the Aviatrix controller. This access account corresponds
+to a valid Azure subscription with API credentials. You need to create an access account for each subscription. 
 
-The new Microsoft Azure (as opposed to Azure Classic) is significantly
-different in how applications are authenticated and authorized to
-interact with Azure Resource Manager APIs to manage resources, such as
-Virtual Machines, Network, Storage Accounts, etc.
-
-This document describes how to obtain the necessary information,
+This document describes, for an given subscription, how to obtain the necessary information,
 specifically Application ID, Application Key(Client secret), and
-Application Directory ID to create an Aviatrix Cloud Account with step by
-step instructions. There are 3 sections, make sure you go through all of
-them.
+Application Directory ID to create an Aviatrix Access Account so that the Controller can execute APIs on that subscription
+There are 3 sections, make sure you go through all of them.
 
 |
 
@@ -98,7 +90,7 @@ https://portal.azure.com
 |Image13|
 
 
-6. Click Add and then select the “Contributor” role.
+6. Click Add and then select the “Contributor” role. If the "Contributor"role is too broad, you can create custom role with specific permissions. 
 
 
 7. In the Select search field, type in “Aviatrix”. The Aviatrix Controller
@@ -124,12 +116,12 @@ https://portal.azure.com
 
    A. Click Certificates & secrets
 
-   B. Click New client secret
+   B. Click + New client secret
 
    |Image06|
 
 
-   C. Enter in the following
+   C. Enter in the following, and then click Add
 
       * Description = Aviatrix
 
@@ -137,7 +129,7 @@ https://portal.azure.com
       
    |Image07|
 
-   E. Click Add
+   E. You should see the new secret as shown below.
    
    |Image15|
 
