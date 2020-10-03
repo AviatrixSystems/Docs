@@ -18,11 +18,11 @@ to a valid Azure subscription with API credentials. You need to create an access
 
 This document describes, for a given subscription, how to obtain the necessary information,
 specifically Application ID, Application Key (Client secret), and
-Application Directory ID to create an Aviatrix Access Account so that the Controller can execute APIs on that subscription
+Application Directory ID to create an Aviatrix Access Account so that the Controller can execute APIs on that subscription.
 There are 3 sections, make sure you go through all of them.
 
 
-2. Permission Setup 
+2. API and Permission Setup 
 ========================================
 
 Setting up Azure permission for Aviatrix involves three main steps.
@@ -84,7 +84,7 @@ Login to the Azure Portal:  https://portal.azure.com
 
 
 7. In the Select search field, type in “Aviatrix”. The Aviatrix Controller
-   (that you created in step 1) app should show up. Select this one and click Select towards to the
+   (that you created in section 2.1) app should show up. Select this one and click Select towards to the
    bottom.
 
 2.3 – Setup Information for Programmatic Sign in
