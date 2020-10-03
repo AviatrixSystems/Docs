@@ -6,7 +6,7 @@
 Azure Account Credential Setup 
 ===========================================================
 
-1.0 Overview
+1. Overview
 =============
 
 Aviatrix Controller uses Azure APIs extensively to launch Aviatrix
@@ -21,43 +21,35 @@ specifically Application ID, Application Key (Client secret), and
 Application Directory ID to create an Aviatrix Access Account so that the Controller can execute APIs on that subscription
 There are 3 sections, make sure you go through all of them.
 
-|
 
-
-2.0 Azure Permission Setup for Aviatrix
+2. Permission Setup 
 ========================================
 
 Setting up Azure permission for Aviatrix involves three main steps.
 
 1. Register Aviatrix Controller Application with Azure Active Directory
 
-2. Grant Permissions
+2. Assign a role to the Aviatrix Controller Application 
 
-3. Get Application ID, Application Key(Client secret) and Directory
-   ID
+3. Get Application ID, Application Key (Client secret) and Directory ID
 
 **Important:** Complete the following steps in order.
 
-2.1  Step 1 – Register Aviatrix Controller Application
+2.1 – Register Aviatrix Controller Application
 -------------------------------------------------------
 
-Login to the Azure Portal.
+Login to the Azure Portal:  https://portal.azure.com
 
-https://portal.azure.com
 
-***Register Aviatrix Controller***
-
-1. From the Azure portal click on "All services" and search for “Azure Active Directory” and click on “Azure Active Directory”
-
-|Image01|
+1. From the Azure portal click on "All services" and search for “Azure Active Directory” and click on “Azure Active Directory”.
 
 2. Click “App registrations".  Do not choose "App registrations (Legacy)"
 
-|Image03|
+|image03|
 
 3. Click “+ New registration”
 
-|Image04|
+|image04|
 
    a. Name = Aviatrix Controller
 
@@ -67,50 +59,46 @@ https://portal.azure.com
 
 3. Done
 
-2.2 Step 2 – Grant Permissions
--------------------------------
+2.2 – Assign a role to the Aviatrix Application
+------------------------------------------------------------
 
-
-***Grant Permissions***
 
 1. Login to the Azure portal
 
 2. On the top left, click All services, search for “Subscriptions”
 
-|Image11|
+  |image11|
 
 3. Copy the Subscription ID (to notepad or a convenient location)
 
-|Image12|
+|image12|
 
 4. Click on the Subscription ID
 
 5. Then select “Access control (IAM)”.
 
-|Image13|
+|image13|
 
 
-6. Click Add and then select the “Contributor” role. If the "Contributor"role is too broad, you can create custom role with specific permissions. 
+6. Click Add and then select the “Contributor” role. If the "Contributor" role is too broad, you can create custom role with specific permissions. 
 
 
 7. In the Select search field, type in “Aviatrix”. The Aviatrix Controller
    (that you created in step 1) app should show up. Select this one and click Select towards to the
    bottom.
 
-2.3 Step 3 – Get Application Information
------------------------------------------
-
-**Get Application Information**
+2.3 – Setup Information for Programmatic Sign in
+------------------------------------------------------------
 
 1. From the Azure portal, click All services and search for “Azure Active Directory”. Click “App registrations” and then the application to see the Application (client) ID and Directory (tenant) ID.
 
-   |Image01|
+   |image01|
 
 2. Retrieve the **Application (client) ID** and **Directory (tenant) ID**.
    
    A. Copy the Application ID and Directory ID for later use.  
 
-   |Image14|
+   |image14|
    
 3. Retrieve the **Client Secrets**.
 
@@ -118,7 +106,7 @@ https://portal.azure.com
 
    B. Click + New client secret
 
-   |Image06|
+   |image06|
 
 
    C. Enter in the following, and then click Add
@@ -127,15 +115,17 @@ https://portal.azure.com
 
       * Expires = Never
       
-   |Image07|
+   |image07|
 
    E. You should see the new secret as shown below.
    
-   |Image15|
+   |image15|
 
    F. Copy the secret.  This will be used as the Application Key in the Aviatrix Controller.
 
 5. Add **API permissions**.
+
+   Go to Azure Active Directory -> select the "Aviatrix Controller" application, click into the application. 
 
    A. Click API permissions
 
@@ -146,8 +136,6 @@ https://portal.azure.com
    C. Choose Azure Service Management
    
    |Image09|
-
-   D. Select user_impersonation then Add permissions
    
    |Image10|
 
@@ -155,15 +143,19 @@ https://portal.azure.com
 
 At this point you should have the following information to create an access account on Azure.
 
-+-----------------------------------+---------------+
-| **Subscription ID**               | From step 2   |
-+-----------------------------------+---------------+
-| **Directory** **ID**              | From step 3   |
-+-----------------------------------+---------------+
-| **Application ID**                | From step 3   |
-+-----------------------------------+---------------+
-| **Application Key(Client secret)**| From step 3   |
-+-----------------------------------+---------------+
+==========================================               ======================
+Access Account Setup Input Field                         Value
+==========================================               ======================
+Subscription ID                                          From section 2.2
+Directory ID                                             From section 2.3
+Application ID                                           From section 2.3
+Application Key (Client Secret)                          From section 2.3
+==========================================               ======================
+
+Additional References
+=======================
+
+If you need additional information, refer to `How to: Use the portal to create an Azure AD application and service principal that can access resources <https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal>`_ on Azure documentation.
 
 
 .. |image01| image:: AviatrixAccountForAzure_media/az-ad-01.PNG
