@@ -98,18 +98,31 @@ You can create multiple Cloud Accounts to support multi cloud and multi account 
 How do we apply Azure role-based access control to an Aviatrix Azure account?
 --------------------------------------------------------------------------------
 
-Step 1. Add Aviatrix Resource Role through Powershell
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Aviatrix Controller is viewed as an application running on Azure. Since this application needs to create or 
+program Azure resources, such as launching a gateway, modifying route entries in a route table, etc, 
+the application requires a role with certain permissions. By default, this role is a pre-defined Azure built-in
+role called "contributor". 
+
+If you wish not to use the contributor role and instead creating a custom 
+role with Aviatrix provided permission, you can do so via Azure portal or with via PowerShell. 
+Below is guide on how to accomplish that via PowerShell. 
+
+Step 1. Add an custom role through Powershell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The custom role must have permission that meets the requirement for Aviatrix Controller to function. 
+The permission is represented by the json file below. 
  
+Remember to replace the subscription "11111111-1111-1111-1111-111111111111" with your own valid subscription ID. 
 
 ::
 
   avx_rbac_role.json:
 
   {
-    "Name": "Aviatrix Resource Role",
+    "Name": "Aviatrix Controller Custom Role",
     "IsCustom": true,
-    "Description": "Aviatrix Resource Action",
+    "Description": "Custom role for Aviatrix Controller",
     "Actions": [
         "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/read",
         "Microsoft.Compute/*/read",
@@ -132,7 +145,7 @@ Step 1. Add Aviatrix Resource Role through Powershell
     ],
     "NotActions": [],
     "AssignableScopes": [
-        "/subscriptions/xyz/"
+        "/subscriptions/11111111-1111-1111-1111-111111111111"
     ]
   }
  
@@ -146,11 +159,21 @@ In Powershell, perform the following:
 Step 2. Add a role assignment in the Azure portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment->Select Aviatrix Resource Role as Role -> Select Service Principle-> Save
+In Azure portal->Subscriptions->Access Control(IAM)->Add->Add role assignment. 
 
- 
-Step 3. Use the Service Principle to create an Azure ARM account in the Aviatrix portal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At Role assignment, fill the fields as follows.
+
+========================       =======================
+Role                           Aviatrix Controller Custom Role (this is the role created from above)
+Assign access to               User, group, or service principal
+Select                         My-new-controller (this is the registered application name for the Controller)
+========================       =======================
+
+Once the above step is complete, you have assigned the My-new-controller (as a service principal) the custom role 
+called "Aviatrix Controller Custom Role".  
+
+For more information on how to PowerShell to create custom role on Azure, refer to `this link. <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-powershell>`_. 
+
 
 How to setup OCI account credentials?
 ---------------------------------------
