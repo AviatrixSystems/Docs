@@ -68,6 +68,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aviatrix_iam_policy_requirements
    HowTos/customize_aws_iam_policy
    HowTos/Aviatrix_Account_Azure
+   HowTos/azure_custom_role
    HowTos/CreateGCloudAccount
    HowTos/oracle-aviatrix-cloud-controller-onboard
    HowTos/AdminUsers_DuoAuth

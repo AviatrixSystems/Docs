@@ -59,34 +59,34 @@ by the Controller as shown below. This document describes how to accomplish this
 ----------------------------------------------------
 
  a. Login to Azure portal. Go to Subscriptions. Select the subscription whose network already managed by Aviatrix Controller and click in. 
- #. Next click Access control (IAM)
- #. Next click Roles as shown below.
+ b. Next click Access control (IAM)
+ c. Next click Roles as shown below.
 
  |iam_role|
 
- #. Next click +Add Role and select "Add custom role".
- #. Next select Start from scratch and click Next, as shown below. 
+ d. Next click +Add Role and select "Add custom role".
+ e. Next select Start from scratch and click Next, as shown below. 
 
  |start_from_scratch|  
 
- #. Next click JSON, click Edit. 
+ f. Next click JSON, click Edit. 
 
  |click_json|
 
- #. Next remove the existing JSON template and copy and paste the above Aviatrix required permissions JSON into the Editor box, as shown below. 
+ g. Next remove the existing JSON template and copy and paste the above Aviatrix required permissions JSON into the Editor box, as shown below. 
  
  |aviatrix_custom_role|
  
- #. Next click Permissions. You should say the permissions have been populated, as shown below. 
+ h. Next click Permissions. You should say the permissions have been populated, as shown below. 
 
   |show_permission|
 
- #. Next click Assignable scopes, click Add assignable scopes, select the subscription. 
- #. Next click JSON, you should say the subscription has been added to the assignableScopes, as shown below. 
+ i. Next click Assignable scopes, click Add assignable scopes, select the subscription. 
+ j. Next click JSON, you should say the subscription has been added to the assignableScopes, as shown below. 
 
  |subscription_scope|
 
- #. Next click Review + create, click Create.
+ k. Next click Review + create, click Create.
 
 3. Replace the Contributor Role
 --------------------------------
@@ -95,11 +95,18 @@ by the Controller as shown below. This document describes how to accomplish this
 
  |remove_contributor|
 
- #. Click +Add, select Add role assignment. Fill in the fields as shown below
+ b. Click +Add, select Add role assignment. Fill in the fields as shown below
  
  |replace_role|
 
 Done.
+
+4. Additional References
+--------------------------
+
+To learn more on Azure custom role and how to configure it, refer to `Azure Custom Roles. <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>`_
+
+To view the complete Azure role permissions, refer to `Azure resource provider operations. <https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations>`_. 
 
 .. |aviatrix_custom_role| image:: azure_custom_role_media/aviatrix_custom_role.png
    :scale: 30%

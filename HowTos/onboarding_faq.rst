@@ -107,6 +107,8 @@ If you wish not to use the contributor role and instead creating a custom
 role with Aviatrix provided permission, you can do so via Azure portal or with via PowerShell. 
 Below is guide on how to accomplish that via PowerShell. 
 
+For replacing the Contributor role via Azure portal, refer to `Azure IAM Custom Role <https://docs.aviatrix.com/HowTos/azure_custom_role.html>`_. 
+
 Step 1. Add an custom role through Powershell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

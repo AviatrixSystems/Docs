@@ -80,7 +80,7 @@ Login to the Azure Portal:  https://portal.azure.com
 |image13|
 
 
-6. Click Add and then select the “Contributor” role. If the "Contributor" role is too broad, you can later create custom role with specific permissions. 
+6. Click Add and then select the “Contributor” role. If the "Contributor" role is too broad, you can later replace it with a custom role with specific permissions. Refer to `Use Azure IAM Custom Role <https://docs.aviatrix.com/HowTos/azure_custom_role.html> for instructions. 
 
 
 7. In the Select search field, type in “Aviatrix”. The Aviatrix Controller
