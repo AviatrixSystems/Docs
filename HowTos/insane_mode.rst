@@ -150,9 +150,43 @@ Yes. A CloudN appliance can build multiple InsaneMode tunnels to different Aviat
 
 |cloudn_multi_conn|
 
+
+What are the supported gateway sizes for GCP High-performance encryption (Insane mode)?
+---------------------------------------------------------------------------------------
+
+There are total 4 sizes: n1-highcpu-4, n1-highcpu-8, n1-highcpu-16, and n1-highcpu-32
+
+What is the subnet prefix length for GCP High-performance encryption (Insane mode)?
+-----------------------------------------------------------------------------------
+
+Gateway subnet prefix length cannot be greater than /24. Moreover, Aviatrix highly suggests that customers utilize a subnet exclusively for deploying insane mode gateway without any other instances in the subnet.
+
+What ActiveMesh version does GCP High-performance encryption (Insane mode) support?
+-----------------------------------------------------------------------------------
+
+GCP Insane mode supports only Transit Solution ActiveMesh 2.0
+
+
+What is the MTU and MSS size for GCP High-performance encryption (Insane mode)?
+--------------------------------------------------------------------------------
+
+MTU is 1460 and MSS is 1330 bytes
+
+What are the features supported with GCP insane mode?
+-----------------------------------------------------
+
+Because GCP network infrastructure/concept is different than AWS/Azure, Aviatrix GCP Insane mode behavior differs from AWS/Azure support in the following ways:
+
+- Only Spoke and Transit gateway types are supported
+
+- Only "Multi Cloud Transit functionality is supported with Insane mode gateways"; Encrypted peering is not supported
+
+- Feature "Advertise Transit VPC Network CIDR(s)" is not supported with Insane mode gateway
+
+- Will support Managed CloudN connecting to Aviatrix Transit Gateway in GCP soon
+
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
-
 
 .. |insane_tunnel_diagram| image:: insane_mode_media/insane_tunnel_diagram.png
    :scale: 30%
