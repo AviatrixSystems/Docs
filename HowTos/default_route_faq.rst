@@ -24,7 +24,7 @@ Usually, when users want to route traffic to all non-local addresses as use case
 - for central traffic control (i.e. VPN gateway, firewall, other cloud network component, or NVA)
 
 What are public subnet and private subnet?
-======================
+==========================================
 
 In general, public subnet means the interfaces in that subnet have direct access to the Internet. 
 For example, in `AWS <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html>`_, a public subnet is a subnet that's associated with a route table that has a route to an Internet gateway. Most of the time, the route entry is 0.0.0.0/0 -> IGW. In addition, AWS IGW performs network address translation (NAT) for instances that have been assigned public IPv4 addresses. Check this `AWS User Guide <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html>`_ for detail. Same concept applies to other cloud providers.
@@ -177,5 +177,14 @@ Example:
 ^^^^^^^^
 
 If there is a default route 0.0.0.0/0 learned from on-prem already existed in Aviatrix Transit solution, then Aviatrix will pop out a warning message when users attempt to enable single SNAT/FQDN features in Spoke network.
+
+What is the main difference for **Azure** between R6.2 and prior to R6.2?
+=========================================================================
+
+First of all, starting from R6.2, when users utilize Aviatrix feature 'create a VPC tool' to deploy Azure VNet, Aviatrix programs a default route 0.0.0.0 pointing to next hop type "None" in the UDR which is associated with the private subnet; Aviatrix does NOT program this default route in UDR for private subnet prior to R6.2. Please check this `doc <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info. 
+
+Secondly, in R6.2, Aviatrix controller programs default route 0.0.0.0/0 in UDR by following the rules in this document for different Aviatrix solutions/use cases.
+
+Therefore, for those customers who have created Azure VNet via Aviatrix feature 'create a VPC tool' in prior R6.2 or who have created Azure VNet by themselves need to inject a default route 0.0.0.0 pointing to next hop type "None" in the UDR for Aviatrix to differentiate private subnet.
 
 .. disqus::
