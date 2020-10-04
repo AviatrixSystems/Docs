@@ -105,8 +105,7 @@ learned by the local Aviatrix Transit Gateway.
 2.4 Overlapping Spoke VPC CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If there are overlapping Spoke VPCs CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Pee
-ring, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
+If there are overlapping Spoke VPCs CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Peering, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
 Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs.
 
 3. NAT Functions
