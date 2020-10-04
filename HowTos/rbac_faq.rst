@@ -121,17 +121,17 @@ How do I setup SAML login for RBAC?
 Aviatrix Controller login supports `SAML login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_ 
 
 You have the option of authorizing user by Controller configuration or through SAML IDP Attribute. 
-Go to Settings -> SAML Login -> Add/Update
+Go to Settings -> Controller -> SAML Login -> + Add New
 
-If you select "Set by SAML IDP attribute", 
+If you select "Set Access By" to be 'SAML IDP attribute', 
 follow the instructions to setup SAML. In the SAML IDP Attribute Statements, add a new attribute "Profile". 
 For Value field, add the Name of the Permission Groups you configured on the Controller. 
 
 When a user authenticates against SAML IDP, the Controller retrieves the profile attribute and apply permission to the user. 
-There is no need to configure account users on the Conotroller, but you still need to specify Permission Groups 
+There is no need to configure account users on the Controller, but you still need to specify Permission Groups 
 and their associated permissions. 
 
-If you select "Set by controller", 
+If you select "Set Access By" to be 'Controller', 
 you need to select an RBAC Group when creating an IDP endpoint. 
 
 
