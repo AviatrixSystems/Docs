@@ -136,7 +136,7 @@ Do I need Direct Connect to use Insane Mode for On-prem?
 ----------------------------------------------------
 
 Our InsaneMode high speed encryption feature works on top of your existing WAN link and it is agnostic to the type of connection used. As long as you have a pipe 
-that's large enough to alow for high throughput data transfer, using InsaneMode will offer seperior performance to regular IPSec. 
+that's large enough to alow for high throughput data transfer, using InsaneMode will offer superior performance to regular IPSec. 
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
