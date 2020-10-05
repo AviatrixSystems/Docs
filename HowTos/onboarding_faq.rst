@@ -126,7 +126,7 @@ Remember to replace the subscription "11111111-1111-1111-1111-111111111111" with
     "IsCustom": true,
     "Description": "Custom role for Aviatrix Controller",
     "Actions": [
-        "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/read",
+        "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/*",
         "Microsoft.Compute/*/read",
         "Microsoft.Compute/availabilitySets/*",
         "Microsoft.Compute/virtualMachines/*",
