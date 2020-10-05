@@ -40,6 +40,16 @@ R6.2 (Coming soon)
 
 - **Session Visibility** displays active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. To view sessions, go to Troubleshoot -> Diagnostics -> Gateway -> Session View. Or go to Security -> Stateful Firewall -> Session View. 
 
+R6.1.1401 (10/4/2020)
+======================
+
+- **Bug fix** When attaching an Insane Mode Spoke gateway to Transit Gateway, action succeed even though the underlying cloud provider peering (AWS PCX and Azure VNet Peering) failed. 
+- **Bug fix** Controller does not update the egress default route when Spoke gateways experiences a failover. 
+- **Bug fix** Enabling advertising transit CIDR breaks Azure transit network. 
+- **Bug fix** Single AZ gateway replace function is broken.
+- **Enhancement** Improve IKEv2 compatibility with Cisco ASA when re-establishing a tunnel after it goes down without restarting the VPN service. 
+- **Enhancement** Enable multi-core processing capability on the Controller to handle co-pilot queries. 
+
 R6.1.1338 (9/24/2020)
 ======================
 
