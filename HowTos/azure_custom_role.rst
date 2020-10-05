@@ -73,15 +73,16 @@ by the Controller as shown below. This document describes how to accomplish this
 
  |click_json|
 
- g. Next remove the existing JSON template and copy and paste the above Aviatrix required permissions JSON into the Editor box, as shown below. 
+ g. Next remove the existing JSON template and copy and paste the above Aviatrix required permissions JSON into the Editor box, as shown below. Click Save.
  
  |aviatrix_custom_role|
  
- h. Next click Permissions. You should say the permissions have been populated, as shown below. 
+ h. Next click Permissions. You should see the permissions have been populated, as shown below. 
 
   |show_permission|
 
  i. Next click Assignable scopes, click Add assignable scopes, select the subscription. 
+
  j. Next click JSON, you should say the subscription has been added to the assignableScopes, as shown below. 
 
  |subscription_scope|
