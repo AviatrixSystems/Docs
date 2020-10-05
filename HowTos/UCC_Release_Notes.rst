@@ -43,8 +43,8 @@ R6.2 (Coming soon)
 R6.1.1401 (10/4/2020)
 ======================
 
-- **Bug fix** When attaching an Insane Mode Spoke gateway to Transit Gateway, action succeed even though the underlying cloud provider peering (AWS PCX and Azure VNet Peering) failed. 
-- **Bug fix** Controller does not update the egress default route when Spoke gateways experiences a failover. 
+- **Bug fix** When attaching an Insane Mode Spoke gateway to Transit Gateway, the action succeeds even though the underlying cloud provider peering (AWS PCX and Azure VNet Peering) fails. 
+- **Bug fix** Controller does not update the egress default route when Spoke gateways experience a failover. 
 - **Bug fix** Enabling advertising transit CIDR breaks Azure transit network. 
 - **Bug fix** Single AZ gateway replace function is broken.
 - **Enhancement** Improve IKEv2 compatibility with Cisco ASA when re-establishing a tunnel after it goes down without restarting the VPN service. 
