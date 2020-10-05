@@ -28,7 +28,7 @@ by the Controller as shown below. This document describes how to accomplish this
             "permissions": [
                 {
                     "actions": [
-                        "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/read",
+                        "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/*",
                         "Microsoft.Compute/*/read",
                         "Microsoft.Compute/availabilitySets/*",
                         "Microsoft.Compute/virtualMachines/*",
