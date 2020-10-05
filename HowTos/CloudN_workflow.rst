@@ -167,9 +167,10 @@ Step 2.5. Make sure CloudN device can access the related FQDN list as follows fo
 	FQDN                     IP address        PORT Purpose
 	=======================  ================  ==== =================================================
 	www.carmelonetworks.com  54.149.28.255     443  Download CloudN software upgrades
-	license.aviatrix.com     52.24.131.245     443  Reach out to Aviatrix’s License Server
+	license.aviatrix.com     52.24.131.245     443  Access Aviatrix’s License Server
 	security.aviatrix.com    54.149.28.255     443  Sync service certificates
 	diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
+	[AVIATRIX CONTROLLER]                      443  Access Aviatrix Controller
 	=======================  ================  ==== =================================================
 	
 	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
@@ -548,9 +549,17 @@ This `Active/Active deployment model <https://docs.aviatrix.com/HowTos/CloudN_in
 
 .. important::
 	
-	Topology requirements:
+	Aviatrix topology requirements:
 	
-		- firewall should either be placed somewhere behind the LAN routers or be able to handle asymmetric routing.	
+		- attach two CloudN appliances to Aviatrix Transit by following the above workflows
+		
+		- enable `BGP ECMP function <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-ecmp>`_ on Aviatrix Transit
+		
+	On-prem topology requirements:
+	
+		- firewall should either be placed somewhere behind the LAN routers or be able to handle asymmetric routing.
+		
+		- LAN routers should advertise same AS path length to both CloudN appliances and enable ECMP feature
 
 Active/Standby
 --------------
