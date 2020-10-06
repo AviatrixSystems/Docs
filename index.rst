@@ -156,6 +156,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/fortigate_bootstrap_example_azure
    HowTos/config_CheckPointVM.rst
    HowTos/config_CheckPointAzure.rst
+   HowTos/checkpoint_bootstrap_azure.rst
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
    HowTos/firewall_network_design_patterns

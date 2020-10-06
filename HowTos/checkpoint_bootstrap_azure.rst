@@ -3,9 +3,11 @@
   :keywords: Azure Transit Gateway, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Bootstrap, Check Point, Security Gateway
 
 
-============================================================================
-Bootstrap Configuration Example for Check Point Security Gateway in Azure
-============================================================================
+===============================================================================
+Bootstrap Configuration Example for Check Point Security Gateway in AWS/Azure
+===============================================================================
+
+This document applies to both AWS and Azure
 
 Using bootstrap option significantly simplifies Check Point Security Gateway initial configuration setup.
 
@@ -65,7 +67,7 @@ Additional References
 
 Check Point Reference `Custom Data <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk105242&partition=General&product=vSEC>`_
 
-.. |cp_bootstrap_example| image:: bootstrap_example_media/cp_bootstrap_example.png
+.. |cp_bootstrap_example| image:: bootstrap_example_media/cp-bootstrap-example.png
    :scale: 40%
 
 .. disqus::
