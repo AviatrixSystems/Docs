@@ -14,6 +14,10 @@ that traffic is indeed sent to the FortiGate for VPC to VPC traffic inspection. 
 
 For a manual setup, follow `manual setup example. <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html>`_
 
+FortiGate also supports "User Data" method as an alternative bootstrap mechanism. This mechanism is same for both
+AWS and Azure. If "User Data" method is desired, refer to 
+`Bootstrap with User Data on FortiGatew in Azure <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example_azure.html#method-1-configure-fortigate-firewall-via-user-data>`_.
+
 
 1. Create IAM Role and Policy
 --------------------------------
