@@ -136,7 +136,7 @@ Here we only discuss AWS and Azure.
 |                                      |                                      +---------------------------------------------+
 |                                      |                                      | - UDR: 0.0.0.0/0 to None                    |
 |                                      |                                      +---------------------------------------------+
-|                                      |                                      | - UDR: 0.0.0.0/0 to Virtual Network Gateway |
+|                                      |                                      | - UDR: 0.0.0.0/0 to Virtual Network         |
 +--------------------------------------+--------------------------------------+---------------------------------------------+
 
 Rule 2.1: How to handle default route 0.0.0.0/0 from Aviatrix Transit Gateway?
