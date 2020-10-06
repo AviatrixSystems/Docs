@@ -142,7 +142,13 @@ Resource Group.
 
 Note when creating a custom role for a resource group on Azure portal, start at Subscription -> Resource groups, select one resource group 
 and click "Access Control (IAM). Then follow the role creation process with the permission described in the file below 
-to create the role. After the role is created, assign the role to the Service principal of the Aviatrix Controller application.
+to create the role. When configuring Assignable scopes, select one or more resource groups (it is multi selectable) for this role. After the role is created, assign the role to the Service principal of the Aviatrix Controller application.
+
+.. note::
+
+  It takes a few minutes for the display to appear for the custom role just created. Once it can be displayed, you can find it by going to
+  Subscription -> Resource groups -> select one resource group assigned to the role, then click Access Control (IAM), then click Roles. 
+  Then search for the role you just created. 
 
 ::
 
