@@ -4,7 +4,7 @@
 
 
 =========================================================
-Example Config for Palo Alto Network VM-Series
+Example Config for Palo Alto Network VM-Series in AWS
 =========================================================
 
 In this document, we provide an example to set up the VM-Series for you to validate that packets are indeed

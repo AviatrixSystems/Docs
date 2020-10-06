@@ -171,8 +171,9 @@ Password                                        Applicable to Azure deployment o
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page. 
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified. 
-IAM Role                                        In advanced mode, create an IAM Role on the AWS account that launched the FireNet gateway. Create a policy to attach to the role. The policy is to allow access to "Bootstrap Bucket".
-Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. 
+IAM Role                                        In advanced mode, create an IAM Role on the AWS account that launched the FireNet gateway. Create a policy to attach to the role. The policy is to allow access to "Bootstrap Bucket". This option is not supported on Check Point. 
+Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored. This option is not supported on Check Point. 
+User Data                                       In advanced mode and applicable to Check Point and FortiGate. For FortiGate in Azure, refer to `FortiGate User Data in Azure <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example_azure.html#method-1-configure-fortigate-firewall-via-user-data>`_. For Check Point in Azure, refer to `Check Point User Data in Azure <https://docs.aviatrix.com/HowTos/checkpoint_bootstrap_azure.html#configure-check-point-security-gateway-using-custom-data>`_.
 ==========================================      ==========
 
 1. Palo Alto VM-Series Specifications

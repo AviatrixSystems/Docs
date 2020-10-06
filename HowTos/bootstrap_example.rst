@@ -4,7 +4,7 @@
 
 
 =========================================================
-Bootstrap Configuration Example for VM-Series
+Bootstrap Configuration Example for VM-Series in AWS
 =========================================================
 
 Using bootstrap option significantly simplifies VM-Series initial configuration setup. 

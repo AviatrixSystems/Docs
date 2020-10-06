@@ -4,7 +4,7 @@
 
 
 =================================================================
-Bootstrap Configuration Example for FortiGate Firewall
+Bootstrap Configuration Example for FortiGate Firewall in AWS
 =================================================================
 
 Using bootstrap option significantly simplifies Fortinet FortiGate initial configuration setup. 
