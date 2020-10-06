@@ -6,6 +6,27 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+Field Notice 0014 (2020/10/06)
+----------------------------------
+**Recommended Controller version for enabling Copilot**
+
+•	Customers running or planning to deploy Copilot should upgrade their controller to latest 6.1 patch (R6.1.1401, released on 10/4/2020) or newer.  R6.1.1401 enables multi-core processing capability on the controller to handle Copilot queries.
+
+https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#r6-1-1401-10-4-2020
+
+•	Please reach out to your AE/SE to identify the appropriate sizing requirements for your controller based on your network.
+
+•	If you are unable to upgrade to the latest 6.1 patch (R6.1.1401) and are experiencing  slowness or long response times from the controller with Copilot enabled in your environment then we recommend either of the following remediation:
+
+      o Shutdown Copilot
+    
+      o	Update Security Group to block (443) Copilot from talking to controller
+    
+•	Once you upgrade controller to R6.1.1401 or newer,  we recommend the following default interval settings on the Copilot: 
+
+|imagefn14|
+
+
 Field Notice 0013 (2020/09/04)
 ----------------------------------
 **Products Affected**
@@ -311,6 +332,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :width: 600
    
 .. |image1804Controller| image:: field_notices_media/1804Controller.png 
+   :width: 600
+   
+.. |imagefn14| image:: field_notices_media/fn14.png 
    :width: 600
    
 .. disqus::
