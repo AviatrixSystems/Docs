@@ -3,17 +3,20 @@
   :keywords: Transit Gateway Peering, Aviatrix Transit network, Private Network, Transit Gateway Peering with Private Network, Azure ExpressRoute, AWS Direct Connect
 
 ==============================================================
-Aviatrix Transit Gateway Peering with Private Network Workflow
+Aviatrix Transit Gateway Peering over Private Network Workflow
 ==============================================================
 
 Introduction
 ============
 
-Aviatrix Transit Gateway Peering over Private Network feature not only expands Transit Gateway peering over multi-clouds where there is a private network connectivity to on-prem or a co-location instead of Internet in a simple approach but also supports High-Performance Encryption. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
+Aviatrix Transit Gateway Peering over Private Network feature expands Transit Gateway peering to across multi-clouds where there is a 
+private network connectivity between the cloud providers via on-prem or a co-location. It also supports High-Performance 
+Encryption over such private network. This enables customers to build high performance data networks while ensuring data privacy by
+encrypting data in motion. 
 
-In addition, this solution applies to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. 
+The solution applies to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect for the cloud to on-prem connectivity. 
 
-This document describes a step-by-step instruction how to build Aviatrix Transit Gateway Peering with Private Network over AWS Direct Connect and Azure ExpressRoute for R6.2 and later as an example. In this note, you learn how to:
+This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway Peering with Private Network over AWS Direct Connect and Azure ExpressRoute for R6.2 and later releases. In this note, you learn the following:
 
 	#. Workflow on building underlay connectivity for private network with AWS Direct Connect
   
@@ -33,7 +36,7 @@ For more information about Multi-Cloud Transit Network, please check out the bel
 
 .. important::
 
-	- Aviatrix Transit Gateway Peering with Private Network solution supports only High-Performance Encryption (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	- Aviatrix Transit Gateway Peering over Private Network solution supports only High-Performance Encryption (Insane) mode where Aviatrix Transit Gateways have Insane Mode Encryption option enabled at the gateway launch time.
 	
 	- This solution supports only `ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_, please check this doc `How to migrate to ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#how-to-migrate-to-activemesh-2-0>`_ for migration detail.
 	
@@ -228,8 +231,8 @@ Step 3.6. Check Effective routes info on Azure portal
 	
 		|azure_effective_routes_routing_entry|
 
-Step 3.7. Establish Transit Gateway Peering with Private Network
-----------------------------------------------------------------
+Step 3.7. Establish Transit Gateway Peering over Private Network
+-------------------------------------------------------------------
 
 	- Navigate back to Aviatrix Controller
 	
@@ -237,7 +240,7 @@ Step 3.7. Establish Transit Gateway Peering with Private Network
 	
 	- Click the button "+ADD NEW"
 	
-	- Enable the checkbox "Peering with Private Network"
+	- Enable the checkbox "Peering over Private Network"
 	
 	- Select "AWS Transit Gateway" as Transit Gateway1
 	
