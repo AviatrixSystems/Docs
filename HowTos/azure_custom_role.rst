@@ -54,6 +54,7 @@ by the Controller as shown below. This document describes how to accomplish this
             ]
         }
     }  
+
  
 2. Create a Custom Role
 ----------------------------------------------------
@@ -102,7 +103,86 @@ by the Controller as shown below. This document describes how to accomplish this
 
 Done.
 
-4. Additional References
+4. Multiple Custom Roles Approach
+----------------------------------
+
+The Aviatrix role permissions can be split into multiple custom roles each with a subset of permissions. Subscription permission must 
+be at the subscription scope. The additional permission may have
+the scope of one or more Resource Groups. 
+
+Below is an example where the "Aviatrix Custom Role for subscription" has the scope of subscription and the remaining permissions has the scope of
+Resource Group. 
+
+4.1 Subscription Scope IAM Custom Role
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    {
+        "properties": {
+            "roleName": "Aviatrix Custom Role for subscription",
+            "description": "Aviatrix Custom role for gateway subscription permission",
+            "assignableScopes": [],
+            "permissions": [
+                {
+                    "actions": [
+                        "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/*"
+                    ],
+                    "notActions": [],
+                    "dataActions":[],
+                    "notDataActions":[]
+                }
+            ]
+        }
+    }
+
+
+4.2 Resource Group Scope IAM Custom role 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note when creating a custom role for a resource group on Azure portal, start at Subscription -> Resource groups, select one resource group 
+and click "Access Control (IAM). Then follow the role creation process with the permission described in the file below 
+to create the role. After the role is created, assign the role to the Service principal of the Aviatrix Controller application.
+
+::
+
+    {
+        "properties": {
+            "roleName": "Aviatrix Custom Role for services",
+            "description": "Aviatrix Custom role for the network and gateway services",
+            "assignableScopes": [],
+            "permissions": [
+                {
+                    "actions": [
+                        "Microsoft.Compute/*/read",
+                        "Microsoft.Compute/availabilitySets/*",
+                        "Microsoft.Compute/virtualMachines/*",
+                        "Microsoft.Network/*/read",
+                        "Microsoft.Network/publicIPAddresses/*",
+                        "Microsoft.Network/networkInterfaces/*",
+                        "Microsoft.Network/networkSecurityGroups/*",
+                        "Microsoft.Network/loadBalancers/*",
+                        "Microsoft.Network/routeTables/*",
+                        "Microsoft.Network/virtualNetworks/*",
+                        "Microsoft.Storage/storageAccounts/*",
+                        "Microsoft.Resources/*/read",
+                        "Microsoft.Resourcehealth/healthevent/*",
+                        "Microsoft.Resources/deployments/*",
+                        "Microsoft.Resources/tags/*",
+                        "Microsoft.Resources/marketplace/purchase/*",
+                        "Microsoft.Resources/subscriptions/resourceGroups/*"
+                    ],
+                    "notActions": [],
+                    "dataActions":[],
+                    "notDataActions":[]
+                }
+            ]
+        }
+    }
+
+
+
+5. Additional References
 --------------------------
 
 To learn more on Azure custom role and how to configure it, refer to `Azure Custom Roles. <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>`_
