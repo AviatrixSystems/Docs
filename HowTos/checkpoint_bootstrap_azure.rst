@@ -7,7 +7,7 @@
 Bootstrap Configuration Example for Check Point Security Gateway in AWS/Azure
 ===============================================================================
 
-This document applies to both AWS and Azure
+This document applies to both AWS and Azure.
 
 Using bootstrap option significantly simplifies Check Point Security Gateway initial configuration setup.
 

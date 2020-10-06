@@ -30,7 +30,9 @@ R6.2 (Coming soon)
 
 - **Centralized FQDN on Azure FireNet** allows Aviatrix FQDN gateways to be deployed in FireNet solution in Azure. One use case is to consolidate egress control to reduce cost with centralized statistical multiplexing.  
 
-- **Palo Alto Networks VM-Series, Check Point and FortiGate Bootstrap Support on Azure** 
+- **Bootstrap support in Azure FireNet on Palo Alto Networks VM-Series, Check Point and FortiGate** simplifies FireNet deployment in Azure. For details, refer to `VM-Series bootstrap in Azure <https://docs.aviatrix.com/HowTos/pan_bootstrap_example_azure.html>`_, `Check Point bootstrap in Azure <https://docs.aviatrix.com/HowTos/checkpoint_bootstrap_azure.html>`_ and `FortiGate bootstrap in Azure <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example_azure.html>`_. 
+
+- **Bootstrap support in AWS FireNet on Check Point and FortiGate** simplifies FireNet deployment in AWS. For details, refer to `Check Point bootstrap in AWS <https://docs.aviatrix.com/HowTos/checkpoint_bootstrap_azure.html>`_ and `FortiGate bootstrap in AWS <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_. 
 
 
 3. Operations
