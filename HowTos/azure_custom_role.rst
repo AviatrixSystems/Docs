@@ -180,6 +180,11 @@ to create the role. After the role is created, assign the role to the Service pr
         }
     }
 
+.. tip ::
+
+   If you wish to use Contributor role for the above part of the permission, ignore the json file listed above. Simply use
+   Azure portal, Resource groups -> select the resource group. Click Access Control (IAM) -> +Add -> Add Role assignment. Then
+   select Contributor as Role and assign the Contributor role to the Aviatrix Controller service principal.
 
 
 5. Additional References
