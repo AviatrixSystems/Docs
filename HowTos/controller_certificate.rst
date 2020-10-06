@@ -1,6 +1,12 @@
 .. meta::
-   :description: controller Certificate Management
-   :keywords: Controller Certificate Management 
+   :description: Certificate Management
+   :keywords: Controller Certificate Management, Gateway Certificate Management
+
+###################################
+Certificate Management Overview
+###################################
+
+Customer can choose to use Aviatrix certificate created at the time of installation for the Controller and Gateway or customize the Controller and Gateway certificate to use an organization specific certificate. Both type are certificate issued locally through the Aviatrix Controller's automated processes. To customize the Controller or Gateway certificate, refer to the below steps. 
 
 ###################################
 Controller Certificate Management
@@ -52,6 +58,32 @@ as shown below.
 If everything works, you now have a signed certificate on the Controller!
 
 
+###################################
+Gateway Certificate Management
+###################################
+
+The Gateway Certificate is created when each Gateway is launched thru the Controller console. At the time of Gateway launch, an Aviatrix self-signed certificate is issued to the Gateway to make sure all data transmission to and from the Gateway is authenticated. If you don't customize the certificate, your Gateway will continue to operate with the default certificate. If you choose to customize the certificate with your organization credentails, then you must apply the below steps to customize all existing and new Gateway. 
+
+In addition, you can confirm and monitor each Gateway certificate type in the Aviatrix Controller Console > Gateway > reference column Cert Type. Please note, when customizing Gateway Certificates, all existing Gateways will get the custom certificate if the Gateway is on software version 6.0 or higher. All earlier version will failed the custom cert deployment.
+
+
+Setup Custom Gateway Certificate
+-------------------------------------
+
+Step 1. Navigate to the Setting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Go to Settings > Advanced > Security subtab. Scroll down to the section Gateway Certificate Import Method. 
+
+Step 2. Upload file and key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the input field, upload the CA Certificate and CA Private Key. Click Ok.
+
+
+Once you click ok, you will get a confirmation box to show that only R6.0 or higher will apply. Earlier version will failed the deployment for custom cert. If this happens, you will need to update the Gateway to the latest version before applying custom certificate. 
+
+Step 3. Check the Gateway Cert Type to Confirm Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When the deployment completes, go to your Gateway list and display the column name Cert Type. Check to make sure each of the Cert Type is Custom. 
 
 
 
