@@ -150,13 +150,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_paloaltoVM
    HowTos/config_PaloAltoAzure.rst
    HowTos/bootstrap_example
-   HowTos/config_FortiGateVM.rst
-   HowTos/config_FortiGateAzure.rst
+   HowTos/pan_bootstrap_example_azure
+   HowTos/config_FortiGateVM
+   HowTos/config_FortiGateAzure
    HowTos/fortigate_bootstrap_example
    HowTos/fortigate_bootstrap_example_azure
-   HowTos/config_CheckPointVM.rst
-   HowTos/config_CheckPointAzure.rst
-   HowTos/checkpoint_bootstrap_azure.rst
+   HowTos/config_CheckPointVM
+   HowTos/config_CheckPointAzure
+   HowTos/checkpoint_bootstrap_azure
    HowTos/config_PFsense
    HowTos/config_Barracuda.rst
    HowTos/firewall_network_design_patterns
