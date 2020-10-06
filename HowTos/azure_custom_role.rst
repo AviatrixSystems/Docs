@@ -93,7 +93,7 @@ by the Controller as shown below. This document describes how to accomplish this
 3. Replace the Contributor Role
 --------------------------------
 
- a. Now that you have created a custom role called Aviatrix Controller Custom Role, go ahead replace the Contributor role, as shown below.
+ a. (This step is optional, it is only applicable if you have already assigned "Contributor" role to the Aviatrix Controller service principal. If not, skip this step and proceed to the next step.)  Now that you have created a custom role called Aviatrix Controller Custom Role, go ahead replace the Contributor role, as shown below.
 
  |remove_contributor|
 
