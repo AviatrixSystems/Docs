@@ -66,7 +66,6 @@ The Gateway Certificate is created when each Gateway is launched thru the Contro
 
 In addition, you can confirm and monitor each Gateway certificate type in the Aviatrix Controller Console > Gateway > reference column Cert Type. Please note, when customizing Gateway Certificates, all existing Gateways will get the custom certificate if the Gateway is on software version 6.0 or higher. All earlier version will failed the custom cert deployment.
 
-[cert-type]
 
 Setup Custom Gateway Certificate
 -------------------------------------
@@ -79,7 +78,6 @@ Step 2. Upload file and key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the input field, upload the CA Certificate and CA Private Key. Click Ok.
 
-[gw_cert_setting]
 
 Once you click ok, you will get a confirmation box to show that only R6.0 or higher will apply. Earlier version will failed the deployment for custom cert. If this happens, you will need to update the Gateway to the latest version before applying custom certificate. 
 
@@ -87,16 +85,9 @@ Step 3. Check the Gateway Cert Type to Confirm Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When the deployment completes, go to your Gateway list and display the column name Cert Type. Check to make sure each of the Cert Type is Custom. 
 
-[gw_cert_confirmation]
 
 
 
-
-.. [gw_cert_confirmation] image::  controller_certificate_media/gateway-cert-confirmation.png
-    :scale: 30%
-
-.. [gw_cert_setting] image::  controller_certificate_media/Gateway-certificate-setting.png
-    :scale: 30%
 
 .. |gen_csr| image::  controller_certificate_media/gen_csr.png
     :scale: 30%
