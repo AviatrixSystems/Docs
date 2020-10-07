@@ -1,5 +1,5 @@
 $(function() {
-	$('.wy-breadcrumbs-aside').append('<br /><a href="https://aviatrix.com/schedule-demo/">Request Product Demo</a>');
+	$('.wy-breadcrumbs-aside').append('<br /><a href="https://aviatrix.com/schedule-demo/">&raquo; Request Product Demo</a>');
 
 	$('.wy-menu-vertical > ul.current').prev().addClass('active');
 
