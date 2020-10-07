@@ -13,6 +13,11 @@ What is the Aviatrix CloudWAN?
 Aviatrix CloudWAN manages and automates secure connectivity of on-prem Cisco IOS Routers to the cloud. The IPSEC connection terminates with 
 AWS Transit Gateway (TGW), Aviatrix Transit Gateway or Azure Virtual WAN.
 
+Starting in Release 6.2, CloudWAN also manages Aviatrix CloudN appliance for high performance encryption connection (up to 25Gbps) from on-prem to the cloud. 
+
+This document focuses on CloudWAN for Cisco IOS devices. For configuration information on CloudN 
+appliance, refer to `Managed CloudN Workflow <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_. 
+
 CloudWAN can be used to fulfill the following tasks. 
 
  1. Manage multiple Cisco IOS Routers from the Aviatrix Controller. This includes uploading and viewing the IOS configuration, making configuration changes and monitoring the health and stats of these routers. 

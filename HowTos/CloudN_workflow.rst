@@ -10,40 +10,40 @@ Connecting a Managed CloudN Workflow
 Introduction
 ============
 
-Aviatrix Managed CloudN feature enables users to register a CloudN hardware appliance with an Aviatrix Controller so that it can be managed like a CloudWAN device/Aviatrix gateway.
+Aviatrix CloudN hardware appliance is deployed on-prem to connect to public cloud. It provides up to 25Gbps encryption performance over AWS Direct Connect and Azure Express Route.
+
+Aviatrix Managed CloudN feature enables you to manage CloudN hardware appliances by Aviatrix Controller as an `Aviatrix CloudWAN device <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_. 
 
 Benefits:
 ---------
 
 - Ease of use:
 
-	- centrally manage all CloudN appliances through Aviatrix Controller without logging into each Standalone CloudN GUI individually
+	- Centrally manage all CloudN appliances from Aviatrix Controller without logging into each Standalone CloudN GUI individually for ongoing configuration and operation actions.
 
-	- operate Managed CloudN under CloudWAN workflow
-
-	- remove manually importing S2C IPsec configuration to Standalone CloudN
+	- Simplifying connection configuration by removing manually importing S2C IPsec configuration method as in Standalone CloudN.
 
 - Enhanced visibility and troubleshooting:
 
-	- perform running diagnostics, upload tracelog, upgrade, and etc on Managed CloudN device same as an Aviatrix gateway in the cloud through Aviatrix Controller GUI
+	- Perform running diagnostics, upload tracelog and upgrade on Managed CloudN device the same way as an Aviatrix gateway. 
 
-	- support backup/restore function
+	- Support backup/restore function
 	
 - Active Mesh support:
 	
-	- employ ECMP feature on Managed CloudN device to send traffic to both Aviatrix Transit primary gateway and backup gateway
+	-  Managed CloudN automatically load balance traffic to both Aviatrix Transit primary gateway and backup gateway
 	
 - Scalability:
 
-	- support scale-out fashion to achieve higher IPsec throughput
+	- Support scale-out fashion to achieve higher IPsec throughput
 	
 .. note::
 
-	- Managed CloudN solution supports only High-Performance (Insane) mode which means Aviatrix Transit needs to enable Insane Mode Encryption function.
+	- Managed CloudN only supports High-Performance (Insane Mode) encryption connection. It works with Aviatrix Transit Gaateways with Insane Mode enabled.
 	
-	- This solution applies to over AWS Direct Connect, Azure ExpressRoute, and Internet.
+	- This solution applies to over AWS Direct Connect, Azure ExpressRoute and Internet.
 	
-	- Will support connecting to Aviatrix Transit Gateway in GCP soon.
+	- GCP InterConnect support is coming soon. 
 
 For more information and benefits about CloudN, please check out the below documents:
 
@@ -51,7 +51,7 @@ For more information and benefits about CloudN, please check out the below docum
 	
 	`Insane Mode Encryption FAQ <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
-This document describes a step-by-step Managed CloudN deployment workflow for R6.2 and later. In this note you learn how to:
+This document describes a step-by-step Managed CloudN deployment workflow for R6.2 and later. It covers the following topics.
 
 	- Workflow on Aviatrix CloudN
 	
@@ -83,7 +83,7 @@ Step 1.1. `Order a CloudN device <https://docs.aviatrix.com/HowTos/CloudN_insane
 Step 1.2. Prepare/register an FQDN for Aviatrix Controller public IP
 ---------------------------------------------------------------------------------------------------------
 
-Step 1.3. Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN if you have it in your existing Standalone CloudN topology
+Step 1.3. (Optional, skip if this is a brand new deployment) Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN if you have any in your existing Standalone CloudN deployment 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Step 1.4. `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.2
@@ -104,7 +104,7 @@ Deploy Aviatrix Multi-Cloud Transit solution in the cloud.
 
 .. note::
 	
-	In this example, Aviatrix Multi-Cloud Transit Gateway and Aviatrix Spoke Gateway with HPE are deployed in AWS platform. 
+	In this example, Aviatrix Multi-Cloud Transit Gateway and Aviatrix Spoke Gateway with HPE are deployed in AWS platform. The workflow applies to Azure. 
 
 
 Workflow on Aviatrix CloudN
