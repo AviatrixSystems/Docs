@@ -4,7 +4,7 @@
 
 
 ===============================================
-Connecting a Managed CloudN Workflow
+Managed CloudN Workflows
 ===============================================
 
 Introduction
@@ -275,8 +275,10 @@ This step is for building connection over internet. If you are building connecti
 	
 	- Click the button "APPLY"
 
-Step 3.4  `Attach the Managed CloudN device to Aviatrix Transit Gateway <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#option-1-attach-to-an-aviatrix-transit-gateway>`_
+Step 3.4  Attach Managed CloudN
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This step follows the instruction at `Attach a CloudWAN device to Aviatrix Transit Gateway <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#option-1-attach-to-an-aviatrix-transit-gateway>`_.
 
 	- Navigate to the page "CLOUDWAN -> Attach"
 	
