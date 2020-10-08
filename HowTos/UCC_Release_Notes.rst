@@ -51,6 +51,7 @@ R6.1.1401 (10/4/2020)
 - **Bug fix** Single AZ gateway replace function is broken.
 - **Enhancement** Improve IKEv2 compatibility with Cisco ASA when re-establishing a tunnel after it goes down without restarting the VPN service. 
 - **Enhancement** Enable multi-core processing capability on the Controller to handle co-pilot queries. `API support <https://api.aviatrix.com/#e80ff223-232d-4e1b-a172-79b4ad342eba>`_ to enable/disable multi-core processing in case of failure. 
+- **Enhancement** In Azure add Aviatrix default tag when Controller creates resources such as launching an Aviatrix gateway, create route entries, load balancer and route tables.  
 
 R6.1.1338 (9/24/2020)
 ======================
