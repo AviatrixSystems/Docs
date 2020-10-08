@@ -55,6 +55,16 @@ Public-FW-ingress-egress-1                      Use this subnet to create an int
 Public-FW-ingress-egress-2                      Use this subnet to create an interface on backup firewall instance handles ingress and egress traffic in DMZ deployment.
 ==========================================      ===================
 
+Cloud type: Azure
+------------------
+
+Starting from R6.2, Aviatrix programs a default route 0.0.0.0 pointing to next hop type "None" in User Defined Route Table (UDR) which is associated with the private subnet by this Aviatrix creation tool; UDR which is associated with the public subnet does not have the default route entry been programmed by this Aviatrix creation tool.
+
++----------+--------------------+-------------------+
+| **Name** | **Address prefix** | **Next hop type** |
++----------+--------------------+-------------------+
+| default  | 0.0.0.0/0          | None              |
++----------+--------------------+-------------------+
 
 .. |edit-designated-gateway| image:: gateway_media/edit-designated-gateway.png
    :scale: 50%
