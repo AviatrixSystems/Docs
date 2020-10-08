@@ -623,19 +623,19 @@ Ans: Yes. A CloudN appliance can build multiple of HPE connections to different 
 
 Q: Can one Aviatrix Transit Gateway connect to multiple of Standalone/Managed CloudNs?
 
-Ans: Yes. An Aviatrix Transit Gateway can build multiple of HPE tunnels to different Standalone/Managed CloudNs.
+Ans: Yes. An Aviatrix Transit Gateway can build multiple of HPE connections to different Standalone/Managed CloudNs.
 
-Q: How to migrate a Standalone CloudN to Managed CloudN?
+Q: How to migrate a Standalone CloudN to a Managed CloudN?
 
 Ans:
 
-- upgrade to the version R6.2
+- `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.2
 
-- delete the existing S2C IPsec connection between Aviatrix Transit gateway and Standalone CloudN
+- Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN
 
-- follow `Workflow on Aviatrix CloudN <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-cloudn>`_
+- Follow `Workflow on Aviatrix CloudN <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-cloudn>`_
 
-- follow `Workflow on Aviatrix Controller <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-controller>`_
+- Follow `Workflow on Aviatrix Controller <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-controller>`_
 
 .. |managed_cloudn_topology| image:: CloudN_workflow_media/managed_cloudn_topology.png
    :scale: 80%
