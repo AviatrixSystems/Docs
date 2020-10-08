@@ -8,13 +8,13 @@ R6.2 (Coming soon)
 1. Multi-cloud Transit Network
 ---------------------------------
 
-- **Active-Standby Mode on ActiveMesh 2.0** provides the flexibility on Aviatrix Transit Gateways to connect to on-prem with only one active tunnel and the other one as backup. The use case is a deployment scenario where on-prem device such as firewalls does not support asymmetric routing on two tunnels. When Active-Standby mode is enabled, it applies to both BGP and Static Remote Route Based `External Device Connections <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ and for each connection, only one tunnel is active in forwarding traffic at any given time. To configure, go to Multi-cloud Transit -> Advanced Config, select the Aviatrix Transit Gateway to enable Active-Standby.  
+- **Active-Standby Mode on ActiveMesh 2.0** provides the flexibility on Aviatrix Transit Gateways to connect to on-prem with only one active tunnel and the other one as backup. The use case is a deployment scenario where on-prem device such as firewalls does not support asymmetric routing on two tunnels. When Active-Standby mode is enabled, it applies to both BGP and Static Remote Route Based `External Device Connections <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ and for each connection, only one tunnel is active in forwarding traffic at any given time. To configure, go to Multi-cloud Transit -> Advanced Config, select the Aviatrix Transit Gateway to enable Active-Standby. For more information, refer to `Active-Standby <https://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
 
-- **Segmentation based BGP CIDRs Advertisements** advertises only those Spoke CIDRs that have connection policy to a specific on-prem connection. For example, consider aa multi-tenant deployment where Aviatrix Transit Gateway connects to multiple on-prem sites over BGP, each site connecting to certain number of Spokes through `AWS TGW Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_ or `Multi-cloud Segmentation <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html#what-is-multi-cloud-transit-segmentation>`_. With this new feature, Aviatrix Transit Gateway only advertises Spoke CIDRs that are relevant to the on-prem site. To enable, go to Multi-cloud Transit -> Advanced Config, select an Aviatrix Transit Gateway, scroll down to `Refresh BGP Advertise Network Routes`. 
+- **Segmentation based BGP CIDRs Advertisements** advertises only those Spoke CIDRs that have connection policy to a specific on-prem connection. For example, consider a multi-tenant deployment where Aviatrix Transit Gateway connects to multiple on-prem sites over BGP, each site connecting to a set of Spokes through `AWS TGW Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_ or `Multi-cloud Segmentation <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html#what-is-multi-cloud-transit-segmentation>`_. With this new feature, Aviatrix Transit Gateway only advertises Spoke CIDRs that are relevant to the on-prem site. This behavior is enabled as the default when launching a new Transit Gateway. For existing deployment, you can enable it by going to Multi-cloud Transit -> Advanced Config, select an Aviatrix Transit Gateway, scroll down to `Refresh BGP Advertise Network Routes`. 
 
 - **Multi-cloud Transit Gateway Peering over Private Network** expands Transit Gateway peering over multi-cloud where there is private network connectivity cross cloud. One use case is two Aviatrix Transit Gateways deployed in two different public cloud where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a high performance Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond with encryption for data in motion. To configure, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Peering over Private Network for a new peering connection. For an example configuration, refer to `Multi-cloud Transit Peering over Private Networks <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
 
-- **Insane Mode in GCP** is now available for Multi-cloud Transit solution. 
+- **Insane Mode in GCP** is now available for Multi-cloud Transit solution. For performance benchmark, refer to `GCP Insane Mode performance test results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_. Insane Mode is enabled when launching a new Aviatrix Transit Gateway or Spoke gateway in GCP. 
 
 - **Custom Mapped Site2Cloud in Spoke** solves all issues of overlapping network addresses with remote networks by expanding Site2Cloud `Mapped <https://docs.aviatrix.com/HowTos/site2cloud.html#connection-type-mapped>`_ function in a Spoke. 
 
@@ -22,13 +22,15 @@ R6.2 (Coming soon)
 
 - **Update Attached Spoke VNet CIDR** allows you to update Spoke VNet CIDR when there is a change without having to detach the Spoke and attach again, thus removing any down time or outage. API support only.
 
+- **Default Tagging in Azure** adds Aviatrix default tag when Controller creates resources such as launching an Aviatrix gateway, create route entries, load balancer and route tables.  
+
 
 2. FireNet
 -------------
 
-- **FireNet 2-tuple Forwarding Algorithm Support** expands FireNet forwarding algorithm to include forwarding decision based on only the source and destination IP address. One use case is an application where multiple TCP sessions are used for an egress Internet service therefore requiring all these sessions to go through one firewall with the same source NAT IP address.  
+- **FireNet 2-tuple Forwarding Algorithm Support** expands FireNet forwarding algorithm to include forwarding decision based on only the source and destination IP address. One use case is to support an application where multiple TCP sessions are used for an egress Internet service therefore requiring all sessions to go through one firewall with the same source NAT IP address. To configure, go to Firewall Network -> Advanced. Select the FireNet gateway, click the 3 dots skewer, scroll down to Firewall Forwarding, select 2-Tuple. For more information, refer to `Firewall Forwarding Algorithms <https://docs.aviatrix.com/HowTos/firewall_advanced.html#firewall-hashing>`_.  
 
-- **Centralized FQDN on Azure FireNet** allows Aviatrix FQDN gateways to be deployed in FireNet solution in Azure. One use case is to consolidate egress control to reduce cost with centralized statistical multiplexing.  
+- **Centralized FQDN on Azure FireNet** allows Aviatrix FQDN gateways to be deployed in FireNet solution in Azure. One use case is to consolidate egress control to reduce cost with centralized statistical multiplexing. To configure, go to Firewall Network -> Setup -> 7c. For more information, refer to `Launch & Associate Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_. 
 
 - **Bootstrap support in Azure FireNet on Palo Alto Networks VM-Series, Check Point and FortiGate** simplifies FireNet deployment in Azure. For details, refer to `VM-Series bootstrap in Azure <https://docs.aviatrix.com/HowTos/pan_bootstrap_example_azure.html>`_, `Check Point bootstrap in Azure <https://docs.aviatrix.com/HowTos/checkpoint_bootstrap_azure.html>`_ and `FortiGate bootstrap in Azure <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example_azure.html>`_. 
 
@@ -51,7 +53,6 @@ R6.1.1401 (10/4/2020)
 - **Bug fix** Single AZ gateway replace function is broken.
 - **Enhancement** Improve IKEv2 compatibility with Cisco ASA when re-establishing a tunnel after it goes down without restarting the VPN service. 
 - **Enhancement** Enable multi-core processing capability on the Controller to handle co-pilot queries. `API support <https://api.aviatrix.com/#e80ff223-232d-4e1b-a172-79b4ad342eba>`_ to enable/disable multi-core processing in case of failure. 
-- **Enhancement** In Azure add Aviatrix default tag when Controller creates resources such as launching an Aviatrix gateway, create route entries, load balancer and route tables.  
 
 R6.1.1338 (9/24/2020)
 ======================

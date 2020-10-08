@@ -281,7 +281,9 @@ If you perform 7a or 7b, then you must be using a third party firewall instance.
 
 This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
 
-This option is only available in AWS.
+This option is available in AWS and Azure. It applies to multi-cloud transit, Azure native Spoke transit and TGW based transit. 
+
+|fqdn_egress|
 
 |fqdn_in_firenet| 
 
@@ -324,6 +326,9 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
    :scale: 30%
 
 .. |fqdn_in_firenet| image:: firewall_network_workflow_media/fqdn_in_firenet.png
+   :scale: 30%
+
+.. |fqdn_egress| image:: transit_firenet_design_patterns_media/fqdn_egress.png
    :scale: 30%
 
 .. disqus::
