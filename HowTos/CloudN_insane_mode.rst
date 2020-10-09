@@ -15,6 +15,8 @@ connection by Internet.
 
 One CloudN supports `multiple Transit Gateways connections. <https://docs.aviatrix.com/HowTos/insane_mode.html#can-one-cloudn-appliance-connect-to-multiple-connections-of-direct-connect-or-express-route>`_
 
+Starting in Release 6.2, Managed CloudN is the supported deployment model where CloudN configuration and operations are managed by the Controller. 
+
 
 Step 1. Understand Deployment Architecture 
 ----------------------------------------------
@@ -119,8 +121,8 @@ Here is the list of the public IP address that CloudN requires for outbound traf
 =======================  ================  ==== =================================================
 FQDN                     IP address        PORT Purpose
 =======================  ================  ==== =================================================
-www.carmelonetworks.com  54.149.28.255     443  Download CloudN software upgrades
-license.aviatrix.com     52.24.131.245     443  Reach out to Aviatrix’s License Server
+www.carmelonetworks.com  54.149.28.255     443  (Not required for Managed CloudN) Download CloudN software upgrades
+license.aviatrix.com     52.24.131.245     443  (Not required for Managed CloudN) Reach out to Aviatrix’s License Server
 security.aviatrix.com    54.149.28.255     443  Sync service certificates
 diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
 =======================  ================  ==== =================================================

@@ -24,6 +24,8 @@ R6.2 (Coming soon)
 
 - **Default Tagging in Azure** adds Aviatrix default tag when Controller creates resources such as launching an Aviatrix gateway, create route entries, load balancer and route tables.  
 
+- **Managed CloudN Appliance** simplifies CloudN configuration and operation by allowing it to be managed by the Controller. Active-Active deployment model doubles encryption performance. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.  
+
 
 2. FireNet
 -------------
