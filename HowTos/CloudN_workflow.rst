@@ -675,7 +675,7 @@ Ans:
    :scale: 40%
 	 
 .. |controller_managed_cloudn_registered_state| image:: CloudN_workflow_media/controller_managed_cloudn_registered_state.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_discover_wan_interfaces| image:: CloudN_workflow_media/controller_discover_wan_interfaces.png
    :scale: 60%
