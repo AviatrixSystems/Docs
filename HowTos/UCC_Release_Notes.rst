@@ -16,6 +16,8 @@ R6.2 (Coming soon)
 
 - **Insane Mode in GCP** is now available for Multi-cloud Transit solution. For performance benchmark, refer to `GCP Insane Mode performance test results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_. Insane Mode is enabled when launching a new Aviatrix Transit Gateway or Spoke gateway in GCP. 
 
+- **Managed CloudN Appliance** simplifies CloudN configuration and operation by allowing it to be managed by the Controller. Active-Active deployment model supports up to 25Gbps encryption performance. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
+
 - **Custom Mapped Site2Cloud in Spoke** solves all issues of overlapping network addresses with remote networks by expanding Site2Cloud `Mapped <https://docs.aviatrix.com/HowTos/site2cloud.html#connection-type-mapped>`_ function in a Spoke. 
 
 - **TGW with Multicast capability** allows you to launch an AWS TGW with multicast capability. A use case is to support applications running on multicast protocols. API support only.
@@ -23,8 +25,6 @@ R6.2 (Coming soon)
 - **Update Attached Spoke VNet CIDR** allows you to update Spoke VNet CIDR when there is a change without having to detach the Spoke and attach again, thus removing any down time or outage. API support only.
 
 - **Default Tagging in Azure** adds Aviatrix default tag when Controller creates resources such as launching an Aviatrix gateway, create route entries, load balancer and route tables.  
-
-- **Managed CloudN Appliance** simplifies CloudN configuration and operation by allowing it to be managed by the Controller. Active-Active deployment model doubles encryption performance. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.  
 
 
 2. FireNet
