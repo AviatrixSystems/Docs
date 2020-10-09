@@ -118,8 +118,8 @@ Deploy Aviatrix Multi-Cloud Transit solution in the cloud.
 Workflow on Aviatrix CloudN
 =============================
 
-Step 2.1 Open Controller inbound  ports
------------------------------------------
+Step 2.1 Open Controller inbound ports
+--------------------------------------
 
 CloudN is deployed inside a data center, it does not require any public IP addressees. However you need to collect the public IP for 
 the management interface (The ISP provided pubic IP) and open port 443 on the Controller for that public IP.  
@@ -512,28 +512,7 @@ Workflow on Factory Reset
 "Factory Reset" feature enables users to remove all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps for "Factory Reset". 
 This Factory Reset feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through the steps above.
 
-Step 4.3 Perform feature "Factory Reset" on CloudN GUI first
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-	- Open a browser
-	
-	- Navigate to the CloudN GUI with CloudN domain name/IP and port 443
-  
-	- Sign in with CloudN login credentials
-
-	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases dropdown menu on the top
-		
-		|cloudn_register_controller_fqdn_link_managed_cloudn|
-  
-	- Find the panel "FACTORY RESET"
-	
-	- Click the button "Reset"
-  
-	- Wait for a couple of minutes to complete the factory reset process
-	
-	|cloudn_factory_reset|
-
-Step 4.4 Perform feature "Factory Reset" on Aviatrix Controller GUI
+Step 4.3 Perform feature "Factory Reset" on Aviatrix Controller GUI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	- Open a browser
@@ -553,6 +532,31 @@ Step 4.4 Perform feature "Factory Reset" on Aviatrix Controller GUI
 	- Wait for a couple of minutes to complete the factory reset process
 	
 	|controller_cloudwan_factory_reset|
+	
+	.. note::
+	
+		Normally, when users perform feature "Factory Reset" on Aviatrix Controller GUI, Aviatrix Controller will notify Managed Cloudn to perform "Factory Reset". If Managed CloudN does not function "Factory Reset" properly through Aviatrix Controller, users need to execute the step 4.4 below.
+	
+(Optional) Step 4.4 Perform feature "Factory Reset" on CloudN GUI 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+	- Open a browser
+	
+	- Navigate to the CloudN GUI with CloudN domain name/IP and port 443
+  
+	- Sign in with CloudN login credentials
+
+	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases dropdown menu on the top
+		
+		|cloudn_register_controller_fqdn_link_managed_cloudn|
+  
+	- Find the panel "FACTORY RESET"
+	
+	- Click the button "Reset"
+  
+	- Wait for a couple of minutes to complete the factory reset process
+	
+	|cloudn_factory_reset|	
 	
 	.. important::
 	
@@ -581,7 +585,7 @@ model, both CloudN appliances forward traffic and the underlying network links a
 	
 		- If firewalls are deployed, make sure there is no asymmetric routing issues or the firewalls are capable of handling asymmetric routing issues. 
 		
-		- LAN routers should advertise the same AS path length to both CloudN appliances and enable ECMP feature on the Controller. 
+		- LAN routers should advertise the same AS path length to both CloudN appliances and enable ECMP feature. 
 
 Active/Standby
 --------------
@@ -613,23 +617,47 @@ Q: Can Managed CloudN solution support Azure Express Route?
 
 Ans: Yes, Managed CloudN runs over Azure Express Route. 
 
-Q: Can we build a mixed topology in the deployment where some are Managed CloudN and others are Standalone CloudN? 
+Q: Can we build a mixed topology in the deployment where some connections are from Managed CloudN and others are from Standalone CloudN in one CloudN appliance? 
 
-Ans: No. We don't support this mixed topology. Once you decide to deploy Managed CloudN solution, you need to make sure there is no IPsec tunnel between Aviatrix Transit Gateway and Standalone CloudN before registering the Standalone CloudN to Aviatrix Controller. Furthermore, it is not allowed to build mix of IPsec tunnels to Managed CloudN and to Standalone CloudN on one Aviatrix Transit Gateway.
+Ans: No. We don't support this mixed topology. Once you decide to deploy Managed CloudN solution, you need to make sure there is no IPsec tunnel between Aviatrix Transit Gateway and Standalone CloudN before registering the Standalone CloudN to Aviatrix Controller.
 
 Q: Can one Standalone/Managed CloudN appliance connect to multiple links Direct Connect or Express Route?
 
 Ans: Yes. A CloudN appliance can build multiple of HPE connections to different Aviatrix Transit Gateways over multiple Direct Connect or Express Route.
 
-Q: Can one Aviatrix Transit Gateway connect to multiple of Standalone/Managed CloudNs?
+Q: Can one Aviatrix Transit Gateway connect to multiple of Managed CloudNs?
 
-Ans: Yes. An Aviatrix Transit Gateway can build multiple of HPE connections to different Standalone/Managed CloudNs.
+Ans: Yes. An Aviatrix Transit Gateway can build multiple of HPE connections to different Managed CloudNs.
+
+Q: Can one Aviatrix Transit Gateway build mixed connections to different Standalone CloudN and Managed CloudN?
+
+Ans: Yes. While this is not recommended practice, an Aviatrix Transit Gateway is able to build mixed connections to different Standalone CloudN and Managed CloudN. This deployment is for migration stage only.
+
+Q: How to update the new Aviatrix Controller public IP for Managed CloudN?
+
+Ans:
+
+- Refer to `step 2.6 Register with Aviatrix Controller FQDN Name <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#step-2-6-register-with-aviatrix-controller-fqdn-name>`_.
+
+- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases drop down menu on the top on CloudN GUI
+
+- Find the panel "REGISTER CLOUDN AS A GATEWAY"
+
+- Enter the new Aviatrix Controller public IP
+
+	.. important::
+
+		It is highly recommended that a FQDN name is used instead of an IP address for enhanced security and controller HA.
+
+- Click the button "Register"
+
+- Click the button "OK" to confirm
 
 Q: How to migrate a Standalone CloudN to a Managed CloudN?
 
 Ans:
 
-- `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.2
+- `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller and CloudN appliance to at least version 6.2
 
 - Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN
 
@@ -647,7 +675,7 @@ Ans:
    :scale: 40%
 	 
 .. |controller_managed_cloudn_registered_state| image:: CloudN_workflow_media/controller_managed_cloudn_registered_state.png
-   :scale: 30%
+   :scale: 50%
 
 .. |controller_discover_wan_interfaces| image:: CloudN_workflow_media/controller_discover_wan_interfaces.png
    :scale: 60%
