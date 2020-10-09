@@ -39,7 +39,7 @@ Benefits:
 	
 .. note::
 
-	- Managed CloudN only supports High-Performance (Insane Mode) encryption connection. It works with Aviatrix Transit Gaateways with Insane Mode enabled.
+	- Managed CloudN only supports High-Performance (Insane Mode) encryption connection. It works with Aviatrix Transit Gateways with Insane Mode enabled.
 	
 	- This solution applies to over AWS Direct Connect, Azure ExpressRoute and Internet.
 	
@@ -163,17 +163,8 @@ This is a rare case. It is documented here for completeness. Skip if the Control
 	.. note::
 	
 		For private link connectivity such as AWS Direct Connect or Azure Express Route case, CloudN WAN interface is assigned a private IP, thus the message in the panel "CONTROLLER PUBLIC IP" displays "The public IP of this controller is NA. Controller was not able to reach www.carmelonetworks.com through the WAN interface(eth0)."
-		
-Step 2.4 Check basic connectivity to Internet from CloudN device
------------------------------------------------------------------
 
-	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
-	
-	- Find the panel `CONTROLLER UTILITY <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#controller-utility>`_
-	
-	- Enter a public Host Name (or IP) for testing by using the Controller IP address or its FQDN name.  
-
-Step 2.5 CloudN egress ports on management port
+Step 2.4 CloudN egress ports on management port
 --------------------------------------------------------------------------------------------------------------------------
 
 CloudN management port requires the following Internet egress access. 
@@ -186,7 +177,7 @@ CloudN management port requires the following Internet egress access.
 	[AVIATRIX CONTROLLER]                             443  Access Aviatrix Controller
 	==============================  ================  ==== =================================================
 	
-To troubleshoot reachability issue to these addresses, follow the steps below. 
+To check basic connectivity to Internet from CloudN device and to troubleshoot reachability issue to these addresses, follow the steps below. 
 
 	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
 	
@@ -208,7 +199,7 @@ To troubleshoot reachability issue to these addresses, follow the steps below.
 	
 	- Click the button "Go" to check connectivity
 
-Step 2.6 Register with Aviatrix Controller FQDN Name
+Step 2.5 Register with Aviatrix Controller FQDN Name
 -------------------------------------------------------
 
 	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases drop down menu on the top
@@ -325,7 +316,7 @@ Step 3.5 Check whether the Managed CloudN device is attached to Aviatrix Transit
 	
 .. note::
 
-	The status "attached" here reflects only the management operation state, it does not reflect the attached connection state in real time (green LED light will be never changed). Please go to Site2Cloud page to monitor the connection status as below step.
+	The status "attached" here reflects only the management operation state, it does not reflect the attached connection state in real time. Please go to Site2Cloud page to monitor the connection status as below step.
 		
 Step 3.6 Check whether the connection status is Up
 ---------------------------------------------------
@@ -535,7 +526,7 @@ Step 4.3 Perform feature "Factory Reset" on Aviatrix Controller GUI
 	
 	.. note::
 	
-		Normally, when users perform feature "Factory Reset" on Aviatrix Controller GUI, Aviatrix Controller will notify Managed Cloudn to perform "Factory Reset". If Managed CloudN does not function "Factory Reset" properly through Aviatrix Controller, users need to execute the step 4.4 below.
+		Normally, when users perform feature "Factory Reset" on Aviatrix Controller GUI, Aviatrix Controller will notify Managed CloudN to perform "Factory Reset". If Managed CloudN does not function "Factory Reset" properly through Aviatrix Controller, users need to execute the step 4.4 below.
 	
 (Optional) Step 4.4 Perform feature "Factory Reset" on CloudN GUI 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
