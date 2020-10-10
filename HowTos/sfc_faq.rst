@@ -135,6 +135,12 @@ Does AWS S3 list command work?
 Yes. AWS S3 CLI "list" command requires s3.region.amazonaws.com in the bucket rule where region is represented. This is automatically populated 
 by the Controller.  
 
+Can Aviatrix Spoke gateways be used for PrivateS3 function?
+--------------------------------------------------------------
+
+No, Aviatrix Spoke gateways cannot be used for PrivateS3 function. This is because PrivateS3 requires certain DNAT rule that conflict with
+Spoke gateway forwarding function. 
+
 
 .. |sfc| image:: sfc_media/sfc .png
    :scale: 30%
