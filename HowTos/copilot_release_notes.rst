@@ -1,11 +1,28 @@
 .. meta::
   :description: Aviatrix CoPilot Release Notes
-  :keywords: CoPilot,visibility
+  :keywords: CoPilot,visibility, monitoring, performance, operations
 
 
 ============================================================
 Aviatrix CoPilot Release Notes
 ============================================================
+
+Release 1.2.1
+-------------------
+- **AppIQ** generates a comprehensive report of control plane connectivity between any two cloud endpoints connected with Aviatrix Transit Network which includes link status, latency, bandwidth, traffic, and performance monitoring data.
+    |appIQ_1| |appIQ_2| |appIQ_3|
+- **BGP Info** shows detailed BGP connections information with routes, map and status inside Cloud Routes
+    |bgp_1| |bgp_2| |bgp_3|
+- **Continuous Latency Monitoring** allows to see the continuous historical latencies data on Topology in Multi-Cloud environment between Transit and Spoke.
+    |latency_1| |latency_2|
+- **Performance Improvements** for Cloud Routes and Scheduled Tasks that run behind the scenes.
+
+Release 1.2.0.5
+-------------------
+- **Topology Enhancement** Search and Filter capability and Customize Topology Layout options
+- **Site2Cloud** shows detailed S2C connections information with routes and status inside Cloud Routes
+- **Notification** allows to pause alerts and delete old alert notifications
+- **Operational Enhancements** auto delete flowIQ and Perfmon indexes to save disk space
 
 Release 1.2.0.3
 -------------------
@@ -75,5 +92,22 @@ Release 1.1.4 (GA)
 - Added storage auto-delete threshold configuration
 - Added diagnostics (ping/traceroute) to topology
 
+.. disqus::
 
 .. |service_account_modal| image:: copilot_releases/service_account_modal.png
+.. |appIQ_1| image:: copilot_releases/appIQ_1.png
+    :width: 30%
+.. |appIQ_2| image:: copilot_releases/appIQ_2.png
+    :width: 30%
+.. |appIQ_3| image:: copilot_releases/appIQ_3.png
+    :width: 30%
+.. |bgp_1| image:: copilot_releases/bgp_1.png
+    :width: 35%
+.. |bgp_2| image:: copilot_releases/bgp_2.png
+    :width: 30%
+.. |bgp_3| image:: copilot_releases/bgp_3.png
+    :width: 30%
+.. |latency_1| image:: copilot_releases/latency_1.png
+    :width: 40%
+.. |latency_2| image:: copilot_releases/latency_2.png
+    :width: 40%
