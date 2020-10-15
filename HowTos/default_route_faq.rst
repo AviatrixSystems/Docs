@@ -96,7 +96,7 @@ Features:
 High-level logic:
 ^^^^^^^^^^^^^^^^^
 
-- Utilize the `Aviatrix definition table 1 <#_aviatrixdefinitiontable1>`_ above to discover private subnet/route table 
+- Utilize the `Aviatrix definition table 1 <#aviatrixdefinitiontable1>`_ above to discover private subnet/route table 
 
 - Save customer's original route entry 0.0.0.0 configuration
 
@@ -154,7 +154,7 @@ Scenarios:
 High-level logic:
 ^^^^^^^^^^^^^^^^^
 
-- Utilize the `Aviatrix definition table 2 <#_aviatrixdefinitiontable2>`_ above to discover private subnet/route table 
+- Utilize the `Aviatrix definition table 2 <#aviatrixdefinitiontable2>`_ above to discover private subnet/route table 
 
 - Program '0.0.0.0/0 to Aviatrix Spoke Gateway' into private subnet/route table of Spoke network, but it has a slightly different implementation for each cloud as below table.
 
