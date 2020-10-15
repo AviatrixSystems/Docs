@@ -40,7 +40,9 @@ For more information about Multi-Cloud Transit Network, please check out the bel
 	
 	- This solution supports only `ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_, please check this doc `How to migrate to ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#how-to-migrate-to-activemesh-2-0>`_ for migration detail.
 	
-	- This solution does NOT build underlay connectivity. It is users' responsibility to deploy private network first. Workflow on building underlay connectivity for private network with AWS Direct Connect/Azure ExpressRoute here is just an example. Please adjust the topology depending on your requirements.
+	- Private subnets reachability between two Transit CIDRs is customers' responsibility which is typically done by Colo providers.
+	
+	- Workflow on building underlay connectivity for private network with AWS Direct Connect/Azure ExpressRoute here is just an example. Please adjust the topology depending on your requirements.
 	
 Topology
 ====================
