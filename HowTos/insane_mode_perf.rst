@@ -78,6 +78,13 @@ n1-highcpu-16             11.58Gbps
 n1-highcpu-32             19.97Gbps                                           
 ====================      ===============================
 
+Topology:
+  
+    - VM <-> Spoke <-> Transit <-> Spoke <-> VM
+    
+    - HA enabled
+    
+    - HPE mode enabled
 
 How to Tune Performance
 --------------------------
