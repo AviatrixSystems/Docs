@@ -10,11 +10,17 @@ Aviatrix CoPilot Release Notes
 Release 1.2.1
 -------------------
 - **AppIQ** generates a comprehensive report of control plane connectivity between any two cloud endpoints connected with Aviatrix Transit Network which includes link status, latency, bandwidth, traffic, and performance monitoring data.
-    |appIQ_1| |appIQ_2| |appIQ_3|
+
+  |appIQ_1| |appIQ_2| |appIQ_3|
+
 - **BGP Info** shows detailed BGP connections information with routes, map and status inside Cloud Routes
-    |bgp_1| |bgp_2| |bgp_3|
+
+  |bgp_1| |bgp_2| |bgp_3|
+
 - **Continuous Latency Monitoring** allows to see the continuous historical latencies data on Topology in Multi-Cloud environment between Transit and Spoke.
-    |latency_1| |latency_2|
+
+  |latency_1| |latency_2|
+
 - **Performance Improvements** for Cloud Routes and Scheduled Tasks that run behind the scenes.
 
 Release 1.2.0.5
