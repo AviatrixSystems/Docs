@@ -20,7 +20,8 @@ Release 1.2.1
 - **Continuous Latency Monitoring** allows to see the continuous historical latencies data on Topology in Multi-Cloud environment between Transit and Spoke.
 
   |latency_1| |latency_2|
-
+  
+  
 - **Performance Improvements** for Cloud Routes and Scheduled Tasks that run behind the scenes.
 
 Release 1.2.0.5
