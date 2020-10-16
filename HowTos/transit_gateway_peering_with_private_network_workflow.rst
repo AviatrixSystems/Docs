@@ -9,10 +9,7 @@ Multi-cloud Transit Gateway Peering over Private Network Workflow
 Introduction
 ============
 
-Aviatrix Transit Gateway Peering over Private Network feature expands Transit Gateway peering to across multi-clouds where there is a 
-private network connectivity between the cloud providers via on-prem or a co-location. It also supports High-Performance 
-Encryption over such private network. This enables customers to build high performance data networks while ensuring data privacy by
-encrypting data in motion. 
+Aviatrix Transit Gateway Peering over Private Network feature expands Transit Gateway peering to across multi-clouds where there is a private network connectivity between the cloud providers via on-prem or a co-location. This enables customers to build high performance data networks while ensuring data privacy by encrypting data in motion. 
 
 The solution applies to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect for the cloud to on-prem connectivity. 
 
