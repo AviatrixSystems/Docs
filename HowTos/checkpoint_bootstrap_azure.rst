@@ -32,7 +32,7 @@ Fill in the required fields. Click Advanced. Fill in the following parameters.
 User Data                          Bootstrap Configuration
 ================================  ======================
 
-Sample Fortigate Bootstrap Configuration to configure firewall "Allow-all" policy, health check policy and RFC 1918 static routes is shown below:
+Sample Check Point Bootstrap Configuration to configure firewall "Allow-all" policy, health check policy and RFC 1918 static routes is shown below:
 
     ::
 
