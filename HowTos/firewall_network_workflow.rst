@@ -281,6 +281,10 @@ If you perform 7a or 7b, then you must be using a third party firewall instance.
 
 This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
 
+.. important::
+
+  If a deployed Aviatrix FQDN gateway has no FQDN whitelist attached to it, the FQDN gateway acts as a NAT gateway and it will pass all traffic to all destination sites. To add whitelist policies, follow `how to configure FQDN instructions <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+
 This option is available in AWS and Azure. It applies to multi-cloud transit, Azure native Spoke transit and TGW based transit. 
 
 |fqdn_egress|
