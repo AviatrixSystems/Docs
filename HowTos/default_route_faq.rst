@@ -181,10 +181,15 @@ If there is a default route 0.0.0.0/0 learned from on-prem already existed in Av
 What is the main difference for **Azure** between R6.2 and prior to R6.2?
 =========================================================================
 
-First of all, starting from R6.2, when users utilize Aviatrix feature 'create a VPC tool' to deploy Azure VNet, Aviatrix programs a default route 0.0.0.0 pointing to next hop type "None" in the UDR which is associated with the private subnet; Aviatrix does NOT program this default route in UDR for private subnet prior to R6.2. Please check this `doc <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info. 
+Prior to 6.2, Aviatrix Controller overwrites the default routes in every route table blindly when egress control is enabled. This can cause 
+outages if the deployment
+has public facing VMs. In 6.2, the rules for Aviatrix Controller to overwrite the default route becomes well defined. 
 
-Secondly, in R6.2, Aviatrix controller programs default route 0.0.0.0/0 in UDR by following the rules in this document for different Aviatrix solutions/use cases.
+Starting from R6.2, when users utilize Aviatrix feature 'create a VPC tool' to deploy Azure VNet, Aviatrix programs a default route 0.0.0.0 pointing to next hop type "None" in the UDR which is associated with the private subnet; This is not the case for release prior to 6.2. Please check this `doc <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info. 
 
-Therefore, for those customers who have created Azure VNet via Aviatrix feature 'create a VPC tool' in prior R6.2 or who have created Azure VNet by themselves need to inject a default route 0.0.0.0 pointing to next hop type "None" in the UDR for Aviatrix to differentiate private subnet.
+Also in R6.2, Aviatrix controller programs default route 0.0.0.0/0 in UDR by following the rules in this document for different Aviatrix solutions/use cases.
+
+Customers who have created Azure VNet via Aviatrix feature 'create a VPC tool' prior R6.2 or created Azure VNet by themselves need to inject a default route 0.0.0.0 pointing to next hop type "None" in the UDR to signal to the Aviatrix Controller that this is a private subnet and its default 
+route can be overwritten when enabling egress control. 
 
 .. disqus::
