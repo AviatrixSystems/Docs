@@ -62,7 +62,7 @@ Below are the specific rules Aviatrix Controller follows when handling a subnet 
 
 .. important::
 
-  In Azure, the rule of thumb of classifying a subnet as private is that the subnet associated route table has a UDR (User Defined Routes) route entry of 0.0.0.0/0 pointing to None, an NVA appliance, Virtual Network or Virtual Network Gateway. 
+  In Azure, the rule of thumb of classifying a subnet as private is that the subnet's associated route table has a UDR (User Defined Routes) route entry of 0.0.0.0/0 pointing to None, an NVA appliance, Virtual Network or Virtual Network Gateway. 
 
 
 2. Changes made on **Azure** in R6.2
