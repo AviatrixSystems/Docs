@@ -19,7 +19,7 @@ In AWS, a public subnet is well defined. If the subnet associated route table ha
 
 In Azure, such distinction is less defined via explicit route entries. By default any VM in Azure is a public instance 
 with direct Internet access and can be reached 
-from the Internet as long as it has a public IP address. This is because Azure automatically programs a system route entry with 0.0.0.0/0 pointing to Internet, as shown in the screenshot below after a VM is launched. The system programmed default route is displayed as an Effective Routes.
+from the Internet as long as it has a public IP address. This is because Azure automatically programs a system route entry with 0.0.0.0/0 pointing to Internet, as shown in the screenshot below after a VM is launched. Azure's `system programmed default route` is displayed in Effective Routes.
 
 |system_default_route|
 
@@ -68,15 +68,15 @@ Below are the specific rules Aviatrix Controller follows when handling a subnet 
 2. Changes made on **Azure** in R6.2
 =========================================================================
 
-Prior to 6.2, Aviatrix Controller blindly overwrites the default routes to point to Aviatrix gateway in every route table whenever egress control is involved. This can bring
+Prior to 6.2, Aviatrix Controller blindly overwrites the default route to point to Aviatrix gateway in every route table whenever egress control is involved. This can bring
 outages if the deployment
 has public facing application or VMs. In 6.2, the rules for Aviatrix Controller to overwrite the default route becomes well defined.
 
 .. tip::
 
-  Use Useful Tool 'create a VPC tool' to create an Azure VNet. The Controller will program a UDR default route 0.0.0.0 pointing to next hop type "None" to the route table associated with the private subnets. Check `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info.
+  Use Useful Tool `create a VPC tool` to create an Azure VNet. The Controller will program a UDR default route 0.0.0.0 pointing to next hop type "None" to the route table associated with the private subnets. Check `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info.
 
-If you created Azure VNet via 'create a VPC tool' prior R6.2 or created Azure VNet via your own scrip, make sure you inject a UDR route 0.0.0.0 pointing to next hop type 
+If you created Azure VNet via `create a VPC tool` prior R6.2 or created Azure VNet via your own scrip, make sure you inject a UDR route 0.0.0.0 pointing to next hop type 
 "None" to signal to the Aviatrix Controller that this is a private subnet and its default route can be overwritten.
 
 3. Testing
