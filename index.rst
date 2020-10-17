@@ -87,6 +87,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/gateway
    Solutions/gateway_ha
    HowTos/gateway_audit
+   HowTos/default_route_faq
    
 
 .. _Transit Network:

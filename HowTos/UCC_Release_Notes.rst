@@ -26,6 +26,8 @@ R6.2.1742 (10/15/2020)
 
 - **Default Tagging in Azure** adds Aviatrix default tag when Controller creates resources such as launching an Aviatrix gateway, create route entries, load balancer and route tables.  
 
+- **Enhancement in Creating a VNet** defines public and private subnets and their associated route tables. This helps clarify how Aviatrix Controller manages route table and their programming. For details, refer to `Aviatrix Default Route Handling <https://docs.aviatrix.com/HowTos/default_route_faq.html>`_.
+
 
 2. FireNet
 -------------
