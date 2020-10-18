@@ -79,6 +79,9 @@ has public facing application or VMs. In 6.2, the rules for Aviatrix Controller 
 If you created Azure VNet via `create a VPC tool` prior R6.2 or created Azure VNet via your own scrip, make sure you inject a UDR route 0.0.0.0 pointing to next hop type 
 "None" to signal to the Aviatrix Controller that this is a private subnet and its default route can be overwritten.
 
+If you have already deploy Transit FireNet with Egress Control, upgrading to 6.2 does not impact the existing traffic. However if you detach a Spoke VNet and re-attach it or 
+disable Egress Inspection and re-enable it, the new rules will kick in. 
+
 3. Testing
 ===================
 
