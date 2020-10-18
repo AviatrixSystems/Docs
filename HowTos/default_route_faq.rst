@@ -4,7 +4,7 @@
 
 
 =========================================================
-Aviatrix Default Route Handing  
+Aviatrix Default Route Handling  
 =========================================================
 
 This document explains how Aviatrix handles the default route 0.0.0.0/0 starting from R6.2. 
