@@ -74,7 +74,7 @@ has public facing application or VMs. In 6.2, the rules for Aviatrix Controller 
 
 .. tip::
 
-  Use Useful Tool `create a VPC tool` to create an Azure VNet. The Controller will program a UDR default route 0.0.0.0 pointing to next hop type "None" to the route table associated with the private subnets. Check `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info.
+  Use Useful Tool `create a VPC tool` to create an Spoke and Transit Azure VNet. For Spoke VNet, the Controller will program a UDR default route 0.0.0.0 pointing to next hop type "None" to the route table associated with the private subnets. Check `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info.
 
 If you created Azure VNet via `create a VPC tool` prior R6.2 or created Azure VNet via your own scrip, make sure you inject a UDR route 0.0.0.0 pointing to next hop type 
 "None" to signal to the Aviatrix Controller that this is a private subnet and its default route can be overwritten.
