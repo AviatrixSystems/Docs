@@ -25,7 +25,7 @@ from the Internet as long as it has a public IP address. This is because Azure a
 
 Since Aviatrix Controller programs route table extensively and there are use cases that deal with egress control, it is important that the Controller follow well defined rules when handling different types of subnets.  
 
-Below are the specific rules Aviatrix Controller follows when handling a subnet route table. 
+Below are what Aviatrix Controller defines as public or private subnet.  
 
 
 +--------------------------------------+--------------------------------------+---------------------------------------------+
