@@ -179,7 +179,7 @@ Because GCP network infrastructure/concept is different than AWS/Azure, Aviatrix
 
 - Only Spoke and Transit gateway types are supported
 
-- Only "Multi Cloud Transit functionality is supported with Insane mode gateways"; Encrypted peering is not supported
+- Only "Multi Cloud Transit functionality is supported with Insane mode gateways"; `Encrypted peering <https://docs.aviatrix.com/HowTos/Quick_Tour.html#encrypted-peering>`_ is not supported
 
 - Feature "Advertise Transit VPC Network CIDR(s)" is not supported with Insane mode gateway
 
