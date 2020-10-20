@@ -183,7 +183,7 @@ Because GCP network infrastructure/concept is different than AWS/Azure, Aviatrix
 
 - Feature "Advertise Transit VPC Network CIDR(s)" is not supported with Insane mode gateway
 
-- Will support Managed CloudN connecting to Aviatrix Transit Gateway in GCP soon
+- Will support Managed CloudN connecting to Aviatrix Transit Gateway in GCP soon; Standalone/unmannaged CloudN connecting to Aviatrix Transit Gateway is not supported in GCP
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
