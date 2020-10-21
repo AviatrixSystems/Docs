@@ -48,6 +48,13 @@ R6.2.1742 (10/15/2020)
 
 - **Session Visibility** displays active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. To view sessions, go to Troubleshoot -> Diagnostics -> Gateway -> Session View. Or go to Security -> Stateful Firewall -> Session View. 
 
+R6.1.1409 (10/20/2020)
+=========================
+
+- **Bug fix** FireNet VPC does not advertise its CIDR to on-prem when FireNet Management is enabled on the Aviatrix Edge Security Domain. 
+- **Bug fix** Custom upgrade is broken. 
+- **Bug fix** Site2Cloud Custom Mapped option becomes unavailable after upgrading. 
+
 R6.1.1401 (10/4/2020)
 ======================
 
