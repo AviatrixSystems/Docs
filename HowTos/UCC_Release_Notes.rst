@@ -28,6 +28,8 @@ R6.2.1742 (10/15/2020)
 
 - **Enhancement in Creating a VNet** defines public and private subnets and their associated route tables. This helps clarify how Aviatrix Controller manages route table and their programming. For details, refer to `Aviatrix Default Route Handling <https://docs.aviatrix.com/HowTos/default_route_faq.html>`_.
 
+- **Default Routing Handling** enforces rules on how Aviatrix Controller handles the propagation and programming of cloud networks. Specifically the Controller only overwrite the default route on private subnets. For details, refer to `Aviatrix Default Route Handling <https://docs.aviatrix.com/HowTos/default_route_faq.html>`_. 
+
 
 2. FireNet
 -------------
