@@ -13,8 +13,7 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 Most Recent IR
 ================
-
-12. OpenVPN - Abitrary File Access
+17. OpenVPN - Abitrary File Write
 ----------------------------------------
 
 **Date**
@@ -33,7 +32,7 @@ Unauthorized file permission
 Aviatrix OpenVPN R2.8.2 or earlier  
 
 **Solution**
-Aviatrix OpenVPN R2.10.7 or later 
+Aviatrix OpenVPN OpenVPN 2.10.8 - May 14 2020 or later 
 
 **CVE-ID**
 TBD
@@ -95,33 +94,6 @@ TBD
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure.
 
-14. Arbitrary File Write
-----------------------------------------
-
-**Date**
-8/10/2020
- 
-**Risk Rating**
-High
-
-**Description**
-The VPN service writes logs to a location that is world writable and can be leveraged to gain write access to any file on the system.
-
-**Impact**
-Excessive Permission
-
-**Affected Product**
-OpenVPN 2.8.2 or earlier 
-
-**Solution**
-OpenVPN 2.10.8 - May 14 2020 or later 
-
-**CVE-ID**
-TBD
-
-**Acknowledgement**
-Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure.
-
 14. Bypass Htaccess Security Control
 ----------------------------------------
 
@@ -144,7 +116,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-26549
 
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -171,7 +143,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later
 
 **CVE-ID**
-TBD
+CVE-2020-26548
 
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -199,7 +171,7 @@ Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later
 Migration required to the latest AMI Software Version 050120 (Aug 13, 2020)
 
 **CVE-ID**
-TBD
+CVE-2020-26551
 
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -226,7 +198,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade R5.4.1290 (8/5/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-26552
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -254,7 +226,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade R6.0.2483 (8/4/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-26553
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -281,7 +253,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade R6.0.2483 (8/4/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-26553
 
 **Acknowledgement**
 Aviatrix is pleased to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
@@ -309,7 +281,7 @@ Aviatrix Controller 5.3 or earlier
 Controller & Gateway upgrade R5.3.1151 (6/4/2020) or later 
 
 **CVE-ID**
-TBD
+CVE-2020-26550
 
 **Acknowledgement**
 Aviatrix would like to thank Rich Mirch, Senior Adversarial Engineer - TeamARES from Critical Start, Inc. for reporting this vulnerability under responsible disclosure. 
