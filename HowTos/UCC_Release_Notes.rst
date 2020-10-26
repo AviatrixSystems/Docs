@@ -50,7 +50,12 @@ R6.2.1742 (10/15/2020)
 
 - **Session Visibility** displays active connection sessions running through Aviatrix gateways. This is useful for troubleshooting connectivity issue. To view sessions, go to Troubleshoot -> Diagnostics -> Gateway -> Session View. Or go to Security -> Stateful Firewall -> Session View. 
 
-- **16,000,000 Max Session Table Size** This improves the ability of Aviatrix gateways to handle the concurrent sessions going through the gateway. 
+- **16,000,000 Max Connection Session Table Size** This improves the ability of Aviatrix gateways to handle the concurrent sessions going through the gateway. 
+
+R6.1.1415 (10/25/2020)
+========================
+
+- **Enhancement** Increase the max connection session table size to 16,000,000. Also include connection track entry count in the gateway diagnostics information. 
 
 R6.1.1409 (10/20/2020)
 =========================
