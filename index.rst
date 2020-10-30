@@ -422,6 +422,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloud_wan_workflow_azure_vwan
    HowTos/using_VPC_Endpoints_w_AVX
    HowTos/transit_gateway_peering_with_private_network_workflow
+   HowTos/aviatrix_aws_outposts
    
 .. _Good To Know:
 
