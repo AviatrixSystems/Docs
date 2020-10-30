@@ -64,7 +64,7 @@ Gateway Certificate Management
 
 The Gateway Certificate is created when each Gateway is launched thru the Controller console. At the time of Gateway launch, an Aviatrix self-signed certificate is issued to the Gateway to make sure all data transmission to and from the Gateway is authenticated. If you don't customize the certificate, your Gateway will continue to operate with the default certificate. If you choose to customize the certificate with your organization credentails, then you must apply the below steps to customize all existing and new Gateway. 
 
-In addition, you can confirm and monitor each Gateway certificate type in the Aviatrix Controller Console > Gateway > reference column Cert Type. Please note, when customizing Gateway Certificates, all existing Gateways will get the custom certificate if the Gateway is on software version 6.0 or higher. All earlier version will failed the custom cert deployment.
+In addition, you can confirm and monitor each Gateway certificate type in the Aviatrix Controller Console > Gateway > reference column Cert Type. Please note, when customizing Gateway Certificates, all existing Gateways will get the custom certificate if the Gateway is on software version 6.0 or higher. If you're on version 14.04-GCP GWs, Gateway certificate is not supported.  
 
 
 Setup Custom Gateway Certificate
