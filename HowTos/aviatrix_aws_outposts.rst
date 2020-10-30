@@ -137,7 +137,7 @@ Aviatrix provides deep visibility and troubleshooting into the Outposts network.
 
 
 .. |architecture| image:: aws_outposts_media/architecture.png
-   :scale: 45%
+   :scale: 30%
 
 .. |intra-outposts| image:: aws_outposts_media/intra-outposts.png
    :scale: 70%
