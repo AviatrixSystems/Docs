@@ -136,7 +136,7 @@ Click **Single sign-on** below **Manage**
 
    |imageSAMLSettings|
 
-**User Attributes**
+**User Attributes & Claims**
 
 #. Enter **user.mail** for **User Identifier**
 #. Click **View and edit all other user attributes**
@@ -154,6 +154,7 @@ Click **Single sign-on** below **Manage**
  
 
    |imageUserAttrs|
+   |imageUserClaims|
    
 **SAML Signing Certificate**
 
@@ -233,6 +234,7 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageAddAppSetName| image:: azuread_saml_media/azure_ad_add_new_step_1.png
 .. |imageAssignUser| image:: azuread_saml_media/azure_ad_assign_user.png
 .. |imageUserAttrs| image:: azuread_saml_media/azure_ad_saml_user_attrs.png
+.. |imageUserClaims| image:: azuread_saml_media/azure_ad_saml_user_claims.png
 .. |imageSAMLSettings| image:: azuread_saml_media/azure_ad_saml_settings.png
 .. |imageSAMLMetadata| image:: azuread_saml_media/azure_ad_saml_metadata.png
 
