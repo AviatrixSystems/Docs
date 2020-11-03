@@ -155,6 +155,10 @@ Click **Single sign-on** below **Manage**
 
    |imageUserAttrs|
    
+Note: Recently Azure change to New UI "attributes & claims". The following picture is the new reference setting example.
+
+   |imageUserClaims|
+   
 **SAML Signing Certificate**
 
 #. Find the **Metadata XML** link
@@ -233,6 +237,7 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageAddAppSetName| image:: azuread_saml_media/azure_ad_add_new_step_1.png
 .. |imageAssignUser| image:: azuread_saml_media/azure_ad_assign_user.png
 .. |imageUserAttrs| image:: azuread_saml_media/azure_ad_saml_user_attrs.png
+.. |imageUserClaims| image:: azuread_saml_media/azure_ad_saml_user_claims.png
 .. |imageSAMLSettings| image:: azuread_saml_media/azure_ad_saml_settings.png
 .. |imageSAMLMetadata| image:: azuread_saml_media/azure_ad_saml_metadata.png
 
