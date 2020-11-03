@@ -136,7 +136,7 @@ Click **Single sign-on** below **Manage**
 
    |imageSAMLSettings|
 
-**User Attributes & Claims**
+**User Attributes**
 
 #. Enter **user.mail** for **User Identifier**
 #. Click **View and edit all other user attributes**
@@ -154,6 +154,9 @@ Click **Single sign-on** below **Manage**
  
 
    |imageUserAttrs|
+   
+Note: Recently Azure change to New UI "attributes & claims". The following picture is the new reference setting example.
+
    |imageUserClaims|
    
 **SAML Signing Certificate**
