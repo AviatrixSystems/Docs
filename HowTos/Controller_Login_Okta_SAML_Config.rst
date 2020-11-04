@@ -184,14 +184,14 @@ Create Aviatrix SAML Endpoint
 Test the Integration
 ####################
 
+      .. tip::
+
+         You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
+
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
 #. Click the `Test` button next to ``SAML endpoint name``
-
-      .. tip::
-
-         You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
 
    |image7|
 
