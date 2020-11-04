@@ -161,7 +161,7 @@ Create Aviatrix SAML Endpoint
 
    |image6|
    
-   `image9 <https://github.com/anyefrem/Docs/blob/ayefremov-okta/HowTos/Controller_Login_Okta_SAML_media/image9.png>`_
+   .. image:: https://github.com/anyefrem/Docs/blob/ayefremov-okta/HowTos/Controller_Login_Okta_SAML_media/image9.png
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
