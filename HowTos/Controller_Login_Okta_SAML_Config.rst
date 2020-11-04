@@ -160,6 +160,7 @@ Create Aviatrix SAML Endpoint
 #. Click `Enable` button
 
    |image6|
+   |image9|
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
