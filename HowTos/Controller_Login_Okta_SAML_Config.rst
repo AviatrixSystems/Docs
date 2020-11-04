@@ -189,17 +189,17 @@ Test the Integration
 #. Click on the `SAML Login` tab
 #. Click the `Test` button next to ``SAML endpoint name``
 
-   .. tip::
+      .. tip::
 
-      You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
+         You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
 
-      |image7|
+         |image7|
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
-   .. important::
+      .. important::
 
-      If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
+         If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
 
 .. _validate_entire_process:
 
