@@ -67,7 +67,7 @@ Create an Okta SAML App for Aviatrix
    | Sign on method | SAML 2.0       |
    +----------------+----------------+
 
-      |image0|
+   |image0|
 
 #. General Settings
 
@@ -85,7 +85,7 @@ Create an Okta SAML App for Aviatrix
    | App visibility | N/A             | Leave both options unchecked           |
    +----------------+-----------------+----------------------------------------+
 
-      |image1|
+   |image1|
 
 #. SAML Settings
 
@@ -136,13 +136,13 @@ Retrieve Okta IDP metadata
 
 After the application is created in Okta, go to the `Sign On` tab for the application.
 
-    |image4|
+|image4|
 
-Right click on the Identity Provider metadata and copy URL. This value will be used to configure the SAML on the Aviatrix controller.
+Right click on the Identity Provider metadata and Copy link address. This value will be used to configure the SAML on the Aviatrix controller.
 
 Assign the application to your account
 
-    |image5|
+|image5|
 
 .. _aviatrix_saml_endpoint:
 
@@ -166,14 +166,14 @@ Create Aviatrix SAML Endpoint
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
    +=========================+=================================================+
-   | IDP Metadata Type       | Text                                            |
+   | IDP Metadata Type       | URL                                             |
    +-------------------------+-------------------------------------------------+
-   | IDP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
-   |                         | copied from Okta SAML configuration)            |
+   | IDP Metadata URL        | ``Value copied from Okta`` (Paste the value     |
+   |                         | copied from Okta Sign On)                       |
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Hostname                                        |
    +-------------------------+-------------------------------------------------+
-   | Access                  | Use either Admin or read-only                   |
+   | Access                  | Use either admin or read-only                   |
    |                         |                                                 |
    +-------------------------+-------------------------------------------------+
 
@@ -209,7 +209,7 @@ Validate
 #. Logout of the Aviatrix Controller
 #. Login to the Aviatrix Controller by clicking the `SAML Login` button
 
-    |image8|
+   |image8|
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
