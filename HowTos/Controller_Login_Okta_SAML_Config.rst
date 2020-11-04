@@ -160,6 +160,7 @@ Create Aviatrix SAML Endpoint
 #. Click `ADD NEW` button
 
    |image6|
+   
    |image9|
 
    +-------------------------+-------------------------------------------------+
