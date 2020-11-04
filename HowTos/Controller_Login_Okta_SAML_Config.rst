@@ -126,7 +126,7 @@ Create an Okta SAML App for Aviatrix
    | Email          | Unspecified     | user.email                           |
    +----------------+-----------------+--------------------------------------+
 
-   |image2|
+   |image2-1|
    
 
 .. _okta_idp_metadata:
