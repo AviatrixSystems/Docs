@@ -161,7 +161,7 @@ Create Aviatrix SAML Endpoint
 
    |image6|
    
-   .. image:: https://github.com/anyefrem/Docs/blob/ayefremov-okta/HowTos/Controller_Login_Okta_SAML_media/image9.png
+   |image9|
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
@@ -255,5 +255,6 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image8| image:: Controller_Login_Okta_SAML_media/image8.png
 
+.. |image9| image:: Controller_Login_Okta_SAML_media/image9.png
 
 .. disqus::
