@@ -91,6 +91,7 @@ Create an Okta SAML App for Aviatrix
 
    * General
 
+
    +----------------------+----------------------------------------------------+
    | Field                | Value                                              |
    +======================+====================================================+
@@ -112,17 +113,18 @@ Create an Okta SAML App for Aviatrix
 
    ``https://[host]/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
 
-     * Attribute Statements
-
-     +----------------+-----------------+--------------------------------------+
-     | Name           | Name format     | Value                                |
-     +================+=================+======================================+
-     | FirstName      | Unspecified     | user.firstName                       |
-     +----------------+-----------------+--------------------------------------+
-     | LastName       | Unspecified     | user.lastName                        |
-     +----------------+-----------------+--------------------------------------+
-     | Email          | Unspecified     | user.email                           |
-     +----------------+-----------------+--------------------------------------+
+   * Attribute Statements
+   
+   
+   +----------------+-----------------+--------------------------------------+
+   | Name           | Name format     | Value                                |
+   +================+=================+======================================+
+   | FirstName      | Unspecified     | user.firstName                       |
+   +----------------+-----------------+--------------------------------------+
+   | LastName       | Unspecified     | user.lastName                        |
+   +----------------+-----------------+--------------------------------------+
+   | Email          | Unspecified     | user.email                           |
+   +----------------+-----------------+--------------------------------------+
 
    |image2|
    
