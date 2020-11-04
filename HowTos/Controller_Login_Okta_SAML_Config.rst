@@ -90,8 +90,6 @@ Create an Okta SAML App for Aviatrix
 #. SAML Settings
 
    * General
-
-
    +----------------------+----------------------------------------------------+
    | Field                | Value                                              |
    +======================+====================================================+
@@ -114,8 +112,6 @@ Create an Okta SAML App for Aviatrix
    ``https://[host]/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
 
    * Attribute Statements
-   
-   
    +----------------+-----------------+--------------------------------------+
    | Name           | Name format     | Value                                |
    +================+=================+======================================+
@@ -126,7 +122,7 @@ Create an Okta SAML App for Aviatrix
    | Email          | Unspecified     | user.email                           |
    +----------------+-----------------+--------------------------------------+
 
-   |image2-1|
+   |image2|
    
 
 .. _okta_idp_metadata:
