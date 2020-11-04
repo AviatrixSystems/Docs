@@ -134,7 +134,7 @@ Retrieve Okta IDP metadata
 
    This step is usually completed by the Okta admin.
 
-After the application is created in Okta, go to the `Sign On` tab for the application.  Then, click on the `View Setup Instructions` button.
+After the application is created in Okta, go to the `Sign On` tab for the application.
 
     |image4|
 
