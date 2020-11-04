@@ -130,9 +130,9 @@ Create an Okta SAML App for Aviatrix
 Retrieve Okta IDP metadata
 ##########################
 
-.. note::
+      .. note::
 
-   This step is usually completed by the Okta admin.
+         This step is usually completed by the Okta admin.
 
 After the application is created in Okta, go to the `Sign On` tab for the application.
 
@@ -149,9 +149,9 @@ Assign the application to your account
 Create Aviatrix SAML Endpoint
 #############################
 
-.. note::
+      .. note::
 
-   This step is usually completed by the Aviatrix admin.
+         This step is usually completed by the Aviatrix admin.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
