@@ -157,7 +157,7 @@ Create Aviatrix SAML Endpoint
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
-#. Click `Enable` button
+#. Click `ADD NEW` button
 
    |image6|
    |image9|
