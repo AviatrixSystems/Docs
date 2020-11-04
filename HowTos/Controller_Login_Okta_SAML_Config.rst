@@ -187,7 +187,7 @@ Test the Integration
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
-#. Click the `Test` button next to ``controller``
+#. Click the `Test` button next to ``SAML endpoint name``
 
    .. tip::
 
