@@ -161,7 +161,7 @@ Create Aviatrix SAML Endpoint
 
    |image6|
    
-   |image9|
+   |image6|
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
