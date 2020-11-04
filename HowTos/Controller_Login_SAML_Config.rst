@@ -107,8 +107,8 @@ Follow these steps to configure Aviatrix to authenticate against IdP:
 #. Click `OK`
 #. Depending on your IdP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
 
-  - Right click **SP Metadata** button next to the SAML endpoint and save file to your local machine.
-  - Click **SP Metadata** button, and copy the SP metadata as text
+  - Click **DOWNLOAD SP METADATA** button next to the SAML endpoint and save file to your local machine
+  - Click **SP METADATA** button, and copy the SP metadata as text
 
 .. _Config_32:
 
