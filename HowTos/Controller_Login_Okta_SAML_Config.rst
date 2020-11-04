@@ -24,7 +24,7 @@ Before configuring SAML integration between Aviatrix and Okta, make sure the fol
 .. _aviatrix_controller:
 
 Aviatrix Controller
-####################
+###################
 
 If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
 
@@ -50,7 +50,7 @@ Follow these steps to configure Aviatrix to authenticate against your Okta IDP:
 .. _okta_saml_app:
 
 Create an Okta SAML App for Aviatrix
-#####################################
+####################################
 
 .. note::
 
@@ -128,7 +128,7 @@ Create an Okta SAML App for Aviatrix
 .. _okta_idp_metadata:
 
 Retrieve Okta IDP metadata
-#####################################
+##########################
 
 .. note::
 
@@ -140,7 +140,7 @@ After the application is created in Okta, go to the `Sign On` tab for the applic
 
 Right click on the Identity Provider metadata and copy URL. This value will be used to configure the SAML on the Aviatrix controller.
 
-#. Assign the application to your account
+Assign the application to your account
 
     |image5|
 
