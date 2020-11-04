@@ -193,7 +193,7 @@ Test the Integration
 
          You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
 
-      |image7|
+   |image7|
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
