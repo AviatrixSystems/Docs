@@ -105,19 +105,19 @@ Step 2. Create an Okta SAML App for Aviatrix
 
    ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[Endpoint Name]``
 
-   |image2|
-
    * Attribute Statements
 
-     +----------------+-----------------+--------------------------------------+
-     | Name           | Name format     | Value                                |
-     +================+=================+======================================+
-     | FirstName      | Unspecified     | user.firstName                       |
-     +----------------+-----------------+--------------------------------------+
-     | LastName       | Unspecified     | user.lastName                        |
-     +----------------+-----------------+--------------------------------------+
-     | Email          | Unspecified     | user.email                           |
-     +----------------+-----------------+--------------------------------------+
+   +----------------+-----------------+--------------------------------------+
+   | Name           | Name format     | Value                                |
+   +================+=================+======================================+
+   | FirstName      | Unspecified     | user.firstName                       |
+   +----------------+-----------------+--------------------------------------+
+   | LastName       | Unspecified     | user.lastName                        |
+   +----------------+-----------------+--------------------------------------+
+   | Email          | Unspecified     | user.email                           |
+   +----------------+-----------------+--------------------------------------+
+
+   |image2|
 
 #. You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__
 
