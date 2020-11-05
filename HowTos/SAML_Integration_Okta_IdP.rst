@@ -103,7 +103,8 @@ Step 2. Create an Okta SAML App for Aviatrix
 
    ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
-   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[Endpoint Name]``
+   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+   The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
 
    * Attribute Statements
 
