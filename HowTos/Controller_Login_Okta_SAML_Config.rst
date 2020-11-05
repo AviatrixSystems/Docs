@@ -88,10 +88,11 @@ Create an Okta SAML App for Aviatrix
 #. SAML Settings
 
    * General
+   
    +----------------------+----------------------------------------------------+
    | Field                | Value                                              |
    +======================+====================================================+
-   | Single sign on URL   | ``https://[host]/flask/saml/sso/controller``       |
+   | Single sign on URL   | ``https://[host]/flask/saml/sso/[Endpoint Name]``  |
    +----------------------+----------------------------------------------------+
    | Audience URI         | ``https://[host]/``                                |
    | (SP Entity ID)       |                                                    |
@@ -105,11 +106,13 @@ Create an Okta SAML App for Aviatrix
 
    ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
 
-   ``controller`` must be the SP name. Otherwise there will be an "SP is not present" error.
-
+   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+   The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
+   
    ``https://[host]/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
 
    * Attribute Statements
+   
    +----------------+-----------------+--------------------------------------+
    | Name           | Name format     | Value                                |
    +================+=================+======================================+
