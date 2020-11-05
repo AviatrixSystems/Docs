@@ -101,7 +101,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | Application username | Okta username                                      |
    +----------------------+----------------------------------------------------+
 
-   ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
+   ``[host]`` is the hostname or IP of your Aviatrix controller.
 
    ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
    The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
@@ -122,16 +122,12 @@ Step 2. Create an Okta SAML App for Aviatrix
 
    |image2|
 
-#. You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__
-
-
 .. _okta_idp_metadata:
 
 Step 3. Retrieve Okta IdP metadata
 ##################################
 
 .. note::
-
    This step is usually completed by the Okta admin.
 
 #. After the application is created in Okta, go to the `Sign On` tab for the application.
@@ -140,7 +136,9 @@ Step 3. Retrieve Okta IdP metadata
 
   |image4|
 
+Assign the application to your account
 
+|image8|
 
 .. _okta_update_saml_endpoint:
 
@@ -232,6 +230,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |image6| image:: SSL_VPN_Okta_SAML_media/image6.png
 
 .. |image7| image:: SSL_VPN_Okta_SAML_media/image7.png
+
+.. |image8| image:: Controller_Login_Okta_SAML_media/image5.png
 
 .. |imageControllerNavOpenVPNAdvanced| image:: SSL_VPN_Okta_SAML_media/OpenVPN_Advanced_SAML_AddNew.png
    :scale: 50%
