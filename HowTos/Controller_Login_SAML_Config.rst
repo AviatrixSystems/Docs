@@ -51,23 +51,26 @@ You will require administrator access to create IdP endpoints for SAML. Check `I
 
 Follow these steps to configure Aviatrix to authenticate against IdP:
 
-  1. Create `temporary Aviatrix SP Endpoint <#config-31>`__ for Aviatrix controller
-  2. Create `SAML IdP App <#config-32>`__ with specific IdP
-  #. Retrieve `IdP Metadata <#config-33>`__ from IdP
-  #. Update `Aviatrix SP Endpoint <#config-34>`__ with IdP metadata
-  #. `Test the Integration <#config-35>`__ is set up correctly
-  #. `Validate <#config-36>`__
+1. Create `temporary Aviatrix SP Endpoint <#config-31>`__ for Aviatrix controller
+2. Create `SAML IdP App <#config-32>`__ with specific IdP
+#. Retrieve `IdP Metadata <#config-33>`__ from IdP
+#. Update `Aviatrix SP Endpoint <#config-34>`__ with IdP metadata
+#. `Test the Integration <#config-35>`__ is set up correctly
+#. `Validate <#config-36>`__
 
 .. _Config_31:
 
 3.1 Create temporary Aviatrix SP Endpoint
 #########################################
-.. note::
 
-   This step is usually completed by the Aviatrix admin.
-   This endpoint will be updated later on in the guide. At this step, we will be using placeholder values.
-   Choose an endpoint name for your Aviatrix SAML endpoint which will be used throughout the guide.
-   This guide will use ``aviatrix_saml_controller`` as an example for the endpoint name.
+      .. note::
+
+         This step is usually completed by the Aviatrix admin.
+         This endpoint will be updated later on in the guide.
+         At this step, we will be using placeholder values.
+   
+Choose an endpoint name for your Aviatrix SAML endpoint which will be used throughout the guide.
+This guide will use ``aviatrix_saml_controller`` as an example for the endpoint name.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
