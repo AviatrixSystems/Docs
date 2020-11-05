@@ -52,9 +52,9 @@ Follow these steps to configure Aviatrix to authenticate against your Okta IDP:
 Create an Okta SAML App for Aviatrix
 ####################################
 
-      .. note::
-
-         This step is usually done by the Okta Admin.
+.. note::
+   
+   This step is usually done by the Okta Admin.
 
 #. Login to the Okta Admin portal
 #. Follow `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application.
