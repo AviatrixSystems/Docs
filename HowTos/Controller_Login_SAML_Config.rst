@@ -199,7 +199,7 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
-#. Click `Add/Update` button
+#. Click `Edit` button
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
