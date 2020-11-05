@@ -62,7 +62,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | Sign on method | SAML 2.0       |
    +----------------+----------------+
 
-      |image0|
+   |image0|
 
 #. General Settings
 
