@@ -136,7 +136,7 @@ Step 3. Retrieve Okta IdP metadata
 
   |image4|
 
-Assign the application to your account
+3. Assign the application to your account
 
 |image8|
 
