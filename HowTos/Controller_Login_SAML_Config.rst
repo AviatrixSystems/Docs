@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
    :description: Aviatrix Controller Login SAML Configuration
    :keywords: SAML, controller login, Aviatrix, idp, sp
 
@@ -44,8 +44,6 @@ An IdP refers to an identity provider for SAML. This could be any provider that 
 `AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__, `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__, and `PingOne <./SAML_Integration_PingOne_IdP.html>`__.
 You will require administrator access to create IdP endpoints for SAML. Check `IdP-specific SAML Integration <#idp-integration>`__ to see a list of guides for supported IdP's
 
-
-
 3. Configuration Steps
 ----------------------
 
@@ -63,11 +61,10 @@ Follow these steps to configure Aviatrix to authenticate against IdP:
 3.1 Create temporary Aviatrix SP Endpoint
 #########################################
 
-      .. note::
-
-         This step is usually completed by the Aviatrix admin.
-         This endpoint will be updated later on in the guide.
-         At this step, we will be using placeholder values.
+.. note::
+   This step is usually completed by the Aviatrix admin.
+   This endpoint will be updated later on in the guide.
+   At this step, we will be using placeholder values.
    
 Choose an endpoint name for your Aviatrix SAML endpoint which will be used throughout the guide.
 This guide will use ``aviatrix_saml_controller`` as an example for the endpoint name.
@@ -104,8 +101,8 @@ This guide will use ``aviatrix_saml_controller`` as an example for the endpoint 
    | Template                | IdP, you may have to check this option          |
    +-------------------------+-------------------------------------------------+
 
-      .. note::
-         Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
+.. note::
+   Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
 
 #. Click `OK`
 #. Depending on your IdP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
@@ -118,11 +115,10 @@ This guide will use ``aviatrix_saml_controller`` as an example for the endpoint 
 3.2 Create a SAML App for Aviatrix with the IdP
 ###############################################
 
-      .. note::
-
-         This step is usually done by the IdP administrator.
-         This section shows only a generalized process for creating a SAML application.
-         Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
+.. note::
+   This step is usually done by the IdP administrator.
+   This section shows only a generalized process for creating a SAML application.
+   Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
 
 Create a SAML 2.0 app with the IdP Provider with the following values.
 
@@ -132,12 +128,11 @@ Create a SAML 2.0 app with the IdP Provider with the following values.
 #. SP Login URL
 #. Default RelayState* = <empty>
 
-      .. important::
-
-         You can find these values in the controller under the `Settings` navigation item.
-         Then, select `Controller` and go to the `SAML Login` tab.
-         Click on the button for the respective value, and copy the URL on the new page.
-         RelayState is currently not used by the Aviatrix SP
+.. important::
+   You can find these values in the controller under the `Settings` navigation item.
+   Then, select `Controller` and go to the `SAML Login` tab.
+   Click on the button for the respective value, and copy the URL on the new page.
+   RelayState is currently not used by the Aviatrix SP
 
 |image3-2|
 
@@ -147,18 +142,15 @@ The following SAML attributes are expected:
 #. LastName
 #. Email (unique identifier for SAML)
 
-      .. note::
-
-         These values are case sensitive
-
+.. note::
+   These values are case sensitive
 
 .. _Idp_Integration:
 
 **IdP-specific SAML App Integration**
 
-      .. note::
-
-         You will require administrator access to create IdP endpoints for SAML.
+.. note::
+   You will require administrator access to create IdP endpoints for SAML.
 
 These are guides with specific IdP's that were tested to work with Aviatrix SAML integration:
 
@@ -172,7 +164,6 @@ These are guides with specific IdP's that were tested to work with Aviatrix SAML
 
 Other tested IdP's include:
 VmWare VIDM, ForgeRock's OpenAM etc.
-
 
 .. _Config_33:
 
@@ -194,10 +185,9 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 3.4 Update Aviatrix SP Endpoint
 ###############################
 
-      .. note::
-
-         This step is usually completed by the Aviatrix admin.
-         Take note of the IdP Metadata type along with Text/URL your IdP provides, and if you need a custom SAML request template in the previous section.
+.. note::
+   his step is usually completed by the Aviatrix admin.
+   Take note of the IdP Metadata type along with Text/URL your IdP provides, and if you need a custom SAML request template in the previous section.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
@@ -227,8 +217,8 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
    |                         | Refer to `IdP-specific Integration <#idp-integration>`__ |
    +-------------------------+----------------------------------------------------------+
 
-      .. note::
-         `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
+.. note::
+   `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
 
 6. Click `OK`
 
@@ -246,9 +236,8 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 #. You should be redirected to IdP.  Login with your test user credentials.
 
-      .. important::
-
-         If everything is configured correctly, once you have authenticated, another windows should open with the test user's access.
+.. important::
+   If everything is configured correctly, once you have authenticated, another windows should open with the test user's access.
 
 .. _Config_36:
 
@@ -263,11 +252,8 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 #. You should be redirected to IdP.  Login with your test user credentials.
 
-       .. important::
-
-          If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
-
-
+.. important::
+   If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
 
 .. |logoAlias1| replace::  Aviatrix logo with red background
 .. _logoAlias1: https://www.aviatrix.com/news/press-kit/logo-aviatrix.png
@@ -284,7 +270,6 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 .. |image3-5| image:: Controller_Login_SAML_media/image3-5.png
 
 .. |image3-6| image:: Controller_Login_SAML_media/image3-6.png
-
 
 
 .. disqus::
