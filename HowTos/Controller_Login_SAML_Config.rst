@@ -201,27 +201,27 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 #. Click on the `SAML Login` tab
 #. Click `Edit` button
 
-   +-------------------------+-------------------------------------------------+
-   | Field                   | Value                                           |
-   +=========================+=================================================+
-   | Endpoint Name           | Unique name that you chose in step 3.1          |
-   +-------------------------+-------------------------------------------------+
-   | IPD Metadata Type       | Text or URL (depending on what was              |
-   |                         | provided by the SAML provider)                  |
-   +-------------------------+-------------------------------------------------+
-   | IdP Metadata Text/URL   | IdP metadata URL/Text copied from the SAML      |
-   |                         | provider configuration                          |
-   +-------------------------+-------------------------------------------------+
-   | Entity ID               | Select `Hostname` or `Custom`                   |
-   +-------------------------+-------------------------------------------------+
-   | Custom Entity ID        | Only visible if `Entity ID` is `Custom`         |
-   +-------------------------+-------------------------------------------------+
-   | Access                  | Select admin or read-only access                |
-   +-------------------------+-------------------------------------------------+
-   | Custom SAML Request     | Depending on your specific                      |
-   | Template                | IdP, you may have to check this option.         |
-   |                         | Refer to `IdP-specific Integration <#idp-integration>`__    |
-   +-------------------------+-------------------------------------------------+
+   +-------------------------+----------------------------------------------------------+
+   | Field                   | Value                                                    |
+   +=========================+==========================================================+
+   | Endpoint Name           | Unique name that you chose in step 3.1                   |
+   +-------------------------+----------------------------------------------------------+
+   | IPD Metadata Type       | Text or URL (depending on what was                       |
+   |                         | provided by the SAML provider)                           |
+   +-------------------------+----------------------------------------------------------+
+   | IdP Metadata Text/URL   | IdP metadata URL/Text copied from the SAML               |
+   |                         | provider configuration                                   |
+   +-------------------------+----------------------------------------------------------+
+   | Entity ID               | Select `Hostname` or `Custom`                            |
+   +-------------------------+----------------------------------------------------------+
+   | Custom Entity ID        | Only visible if `Entity ID` is `Custom`                  |
+   +-------------------------+----------------------------------------------------------+
+   | Access                  | Select admin or read-only access                         |
+   +-------------------------+----------------------------------------------------------+
+   | Custom SAML Request     | Depending on your specific                               |
+   | Template                | IdP, you may have to check this option.                  |
+   |                         | Refer to `IdP-specific Integration <#idp-integration>`__ |
+   +-------------------------+----------------------------------------------------------+
 
 .. note::
   `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
