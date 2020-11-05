@@ -104,7 +104,7 @@ Create an Okta SAML App for Aviatrix
    | Application username | Okta username                                      |
    +----------------------+----------------------------------------------------+
 
-   ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
+   ``[host]`` is the hostname or IP of your Aviatrix controller.
 
    ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
    The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
@@ -134,10 +134,9 @@ Retrieve Okta IDP metadata
    This step is usually completed by the Okta admin.
 
 After the application is created in Okta, go to the `Sign On` tab for the application.
+Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
 |image4|
-
-Right click on the Identity Provider metadata and Copy link address. This value will be used to configure the SAML on the Aviatrix controller.
 
 Assign the application to your account
 
