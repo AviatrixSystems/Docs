@@ -104,25 +104,25 @@ This guide will use ``aviatrix_saml_controller`` as an example for the endpoint 
    | Template                | IdP, you may have to check this option          |
    +-------------------------+-------------------------------------------------+
 
-.. note::
-   Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
+      .. note::
+         Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
 
 #. Click `OK`
 #. Depending on your IdP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
 
-  - Click **DOWNLOAD SP METADATA** button next to the SAML endpoint and save file to your local machine
-  - Click **SP METADATA** button, and copy the SP metadata as text
+- Click **DOWNLOAD SP METADATA** button next to the SAML endpoint and save file to your local machine
+- Click **SP METADATA** button, and copy the SP metadata as text
 
 .. _Config_32:
 
 3.2 Create a SAML App for Aviatrix with the IdP
 ###############################################
 
-.. note::
+      .. note::
 
-   This step is usually done by the IdP administrator.
-   This section shows only a generalized process for creating a SAML application.
-   Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
+         This step is usually done by the IdP administrator.
+         This section shows only a generalized process for creating a SAML application.
+         Refer to the `IdP-specific SAML App Integration <#idp-integration>`_ section for links to detailed steps with each particular IdP.
 
 Create a SAML 2.0 app with the IdP Provider with the following values.
 
@@ -132,11 +132,12 @@ Create a SAML 2.0 app with the IdP Provider with the following values.
 #. SP Login URL
 #. Default RelayState* = <empty>
 
-.. important::
+      .. important::
 
-   You can find these values in the controller under the `Settings` navigation item.  Then, select `Controller` and go to the `SAML Login` tab.
-   Click on the button for the respective value, and copy the URL on the new page.
-   RelayState is currently not used by the Aviatrix SP
+         You can find these values in the controller under the `Settings` navigation item.
+         Then, select `Controller` and go to the `SAML Login` tab.
+         Click on the button for the respective value, and copy the URL on the new page.
+         RelayState is currently not used by the Aviatrix SP
 
 |image3-2|
 
@@ -146,18 +147,18 @@ The following SAML attributes are expected:
 #. LastName
 #. Email (unique identifier for SAML)
 
-.. note::
+      .. note::
 
-   These values are case sensitive
+         These values are case sensitive
 
 
 .. _Idp_Integration:
 
 **IdP-specific SAML App Integration**
 
-.. note::
+      .. note::
 
-  You will require administrator access to create IdP endpoints for SAML.
+         You will require administrator access to create IdP endpoints for SAML.
 
 These are guides with specific IdP's that were tested to work with Aviatrix SAML integration:
 
@@ -193,10 +194,10 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 3.4 Update Aviatrix SP Endpoint
 ###############################
 
-.. note::
+      .. note::
 
-   This step is usually completed by the Aviatrix admin.
-   Take note of the IdP Metadata type along with Text/URL your IdP provides, and if you need a custom SAML request template in the previous section.
+         This step is usually completed by the Aviatrix admin.
+         Take note of the IdP Metadata type along with Text/URL your IdP provides, and if you need a custom SAML request template in the previous section.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
@@ -226,11 +227,10 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
    |                         | Refer to `IdP-specific Integration <#idp-integration>`__ |
    +-------------------------+----------------------------------------------------------+
 
-.. note::
-  `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
+      .. note::
+         `Hostname` is the default for Entity ID, but if you have other apps using the same hostname, use a custom Entity ID.
 
-
-#. Click `OK`
+6. Click `OK`
 
 .. _Config_35:
 
@@ -246,9 +246,9 @@ After creating the IdP, you need to retrieve IdP Metadata either in URL or text 
 
 #. You should be redirected to IdP.  Login with your test user credentials.
 
-   .. important::
+      .. important::
 
-      If everything is configured correctly, once you have authenticated, another windows should open with the test user's access.
+         If everything is configured correctly, once you have authenticated, another windows should open with the test user's access.
 
 .. _Config_36:
 
