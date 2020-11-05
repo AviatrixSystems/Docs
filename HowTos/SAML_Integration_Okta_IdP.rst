@@ -134,7 +134,7 @@ Step 3. Retrieve Okta IdP metadata
 
 #. Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
-  |image4|
+|image4|
 
 3. Assign the application to your account
 
