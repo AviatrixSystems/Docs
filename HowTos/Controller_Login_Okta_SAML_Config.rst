@@ -35,7 +35,6 @@ Okta Account
 
 A valid Okta account with admin access is required to configure the integration.
 
-
 Configuration Steps
 -------------------
 
@@ -53,7 +52,6 @@ Create an Okta SAML App for Aviatrix
 ####################################
 
 .. note::
-   
    This step is usually done by the Okta Admin.
 
 #. Login to the Okta Admin portal
@@ -123,16 +121,14 @@ Create an Okta SAML App for Aviatrix
    +----------------+-----------------+--------------------------------------+
 
    |image2|
-   
 
 .. _okta_idp_metadata:
 
 Retrieve Okta IDP metadata
 ##########################
 
-      .. note::
-
-         This step is usually completed by the Okta admin.
+.. note::
+   This step is usually completed by the Okta admin.
 
 After the application is created in Okta, go to the `Sign On` tab for the application.
 
@@ -149,9 +145,8 @@ Assign the application to your account
 Create Aviatrix SAML Endpoint
 #############################
 
-      .. note::
-
-         This step is usually completed by the Aviatrix admin.
+.. note::
+   This step is usually completed by the Aviatrix admin.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
@@ -184,9 +179,8 @@ Create Aviatrix SAML Endpoint
 Test the Integration
 ####################
 
-      .. tip::
-
-         You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
+.. tip::
+   You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
 
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
@@ -197,9 +191,8 @@ Test the Integration
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
-      .. important::
-
-         If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
+.. important::
+   If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
 
 .. _validate_entire_process:
 
@@ -213,10 +206,8 @@ Validate
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
-       .. important::
-
-          If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
-
+.. important::
+   If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
 
 
 Configure Okta for Multifactor Authentication (OPTIONAL)
@@ -227,7 +218,6 @@ Once you have successfully configured Okta IDP with Aviatrix SP, you can configu
 Please read this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Multifactor-Authentication-1320134400>`__ from Okta on Multifactor setup.
 
 See this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Configuring-Duo-Security-734413457>`__ if you're interested in using DUO in particular.
-
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
