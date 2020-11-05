@@ -94,7 +94,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | Audience URI         | ``https://[host]/``                                |
    | (SP Entity ID)       |                                                    |
    +----------------------+----------------------------------------------------+
-   | Default RelayState   |                                                    |
+   | Default RelayState   | ``https://[host]/#/dashboard``                                                |
    +----------------------+----------------------------------------------------+
    | Name ID format       | Unspecified                                        |
    +----------------------+----------------------------------------------------+
@@ -105,6 +105,8 @@ Step 2. Create an Okta SAML App for Aviatrix
 
    ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
    The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
+   
+   ``https://[host]/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
 
    * Attribute Statements
 
