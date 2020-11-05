@@ -73,7 +73,7 @@ This guide will use ``aviatrix_saml_controller`` as an example for the endpoint 
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
-#. Click `Add/Update` button
+#. Click `ADD NEW` button
 
    |image3-1-1|
 
