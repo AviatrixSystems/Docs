@@ -94,7 +94,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | Audience URI         | ``https://[host]/``                                |
    | (SP Entity ID)       |                                                    |
    +----------------------+----------------------------------------------------+
-   | Default RelayState   | ``https://[host]/#/dashboard``                                                |
+   | Default RelayState   | ``https://[host]/#/dashboard``                     |
    +----------------------+----------------------------------------------------+
    | Name ID format       | Unspecified                                        |
    +----------------------+----------------------------------------------------+
