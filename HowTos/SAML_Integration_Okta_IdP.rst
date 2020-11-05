@@ -80,7 +80,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | App visibility | N/A             | Leave both options unchecked           |
    +----------------+-----------------+----------------------------------------+
 
-      |image1|
+   |image1|
 
 #. SAML Settings
 
@@ -212,10 +212,10 @@ See this `article <https://support.okta.com/help/Documentation/Knowledge_Article
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |logoAlias1| replace::  Aviatrix logo with red background
-.. _logoAlias1: https://www.aviatrix.com/news/press-kit/logo-aviatrix.png
+.. _logoAlias1: https://a.aviatrix.com/news/press-kit/logo-aviatrix-reverse.zip
 
 .. |logoAlias2| replace:: Aviatrix logo with transparent background
-.. _logoAlias2: https://www.aviatrix.com/images/logo-reverse.png
+.. _logoAlias2: https://a.aviatrix.com/news/press-kit/logo-aviatrix.zip
 
 .. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png
 
