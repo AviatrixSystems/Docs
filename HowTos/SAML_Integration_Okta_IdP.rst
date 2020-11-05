@@ -217,7 +217,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |logoAlias2| replace:: Aviatrix logo with transparent background
 .. _logoAlias2: https://a.aviatrix.com/news/press-kit/logo-aviatrix.zip
 
-.. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png
+.. |image0| image:: Controller_Login_Okta_SAML_media/image0.png
 
 .. |image1| image:: SSL_VPN_Okta_SAML_media/image1.png
 
