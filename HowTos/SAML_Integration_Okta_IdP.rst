@@ -119,9 +119,6 @@ Step 2. Create an Okta SAML App for Aviatrix
      | Email          | Unspecified     | user.email                           |
      +----------------+-----------------+--------------------------------------+
 
-     |image3|
-
-
 #. You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__
 
 
@@ -221,7 +218,7 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image1| image:: SSL_VPN_Okta_SAML_media/image1.png
 
-.. |image2| image:: SSL_VPN_Okta_SAML_media/image2.png
+.. |image2| image:: Controller_Login_Okta_SAML_media/image2.png
 
 .. |image3| image:: SSL_VPN_Okta_SAML_media/image3.png
 
