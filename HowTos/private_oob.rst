@@ -61,8 +61,7 @@ service VPC, attach this VPC to the TGW.
 
 **6. Attach Spoke VPC to TGW** From the Controller console or via API, attach a Spoke VPC to the same TGW. Do so for all Spoke VPCs. This is the private OOB network where Controller and gateways management information is communicated over. Note only attach the subnet where Aviatrix spoke gateway management interface will be launched on and packets from gateways to Controller are sent over.
 
-**7. Launch Aviatrix Transit Gateway** From the Controller console or via API, launch Aviatrix Transit Gateway on a private subnet in the transit VPC, copy necessary software to the gateway via TGW attachment connection.
- Once Aviatrix gateways are launched, you can attach Spoke gateways to the Transit Gateway and form the data plane network.
+**7. Launch Aviatrix Transit Gateway** From the Controller console or via API, launch Aviatrix Transit Gateway on a private subnet in the transit VPC, copy necessary software to the gateway via TGW attachment connection. Once Aviatrix gateways are launched, you can attach Spoke gateways to the Transit Gateway and form the data plane network.
 
 .. |private_oob| image:: private_oob_media/private_oob.png
    :scale: 30%
