@@ -423,6 +423,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/using_VPC_Endpoints_w_AVX
    HowTos/transit_gateway_peering_with_private_network_workflow
    HowTos/aviatrix_aws_outposts
+   HowTos/private_oob
    
 .. _Good To Know:
 
