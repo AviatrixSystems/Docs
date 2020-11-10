@@ -52,6 +52,12 @@ R6.2.1742 (10/15/2020)
 
 - **16,000,000 Max Connection Session Table Size** This improves the ability of Aviatrix gateways to handle the concurrent sessions going through the gateway. 
 
+R6.1.1425 (11/9/2020)
+=========================
+
+- **Bug fix** CloudN failover route selection is not based on best route algorithm. 
+- **Bug fix** Retry when Controller DNS lookup fails intermittently. 
+
 R6.1.1415 (10/25/2020)
 ========================
 
