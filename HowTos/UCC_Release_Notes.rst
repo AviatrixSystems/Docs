@@ -2,6 +2,16 @@
 Release Notes
 =======================================
 
+R6.2.1837 (11/10/2020)
+=======================
+
+- **Enhancement** Add conntrack_count to syslog.
+- **Enhancement** FireNet LAN interface keep alive add additional TCP keep alive when ICPM ping fails. Customer needs to open TCP port 443 from the gateway eth2 IP. 
+- **Enhancement** New gateway AMI with the latest AWS SR-IOV device driver enhancement and connection limit exceeding count. 
+- **Bug fix** FQDN feature not working when ports are selected as all. 
+- **Enhancement** interoperating with co-pilot. 
+
+
 R6.2.1742 (10/15/2020)
 ========================
 
