@@ -248,13 +248,13 @@ In addition to Metered AMI, we offer a few others, as shown below. Subscribe to 
 Additional Information for Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- - **Controller Sizing** `Controller Sizing info. <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
+ - **Controller sizing** `Controller instance sizing and EBS volume selection info  <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
 
- - **Controller backup** Controller backup instructions can be found `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
+ - **Controller backup and restore** Controller backup instructions can be found `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 
- - **Controller HA**  Controller HA instructions can be found `here <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.
+ - **Controller high availability**  Controller HA instructions can be found `here <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.
 
- - **Software Upgrade** Software upgrade procedure can be found `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. 
+ - **Software upgrade** Software upgrade procedure can be found `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. 
 
 
 
