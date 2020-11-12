@@ -2,6 +2,44 @@
 Release Notes
 =======================================
 
+R6.3 (Coming Soon)
+===================
+
+1. Multi-Cloud Transit Network
+--------------------------------
+
+- **Transit in Azure with Express Route** allows you to build an Aviatrix Transit and Transit FirNet solutions while leveraging the native Azure Express Route for on-prem to cloud connectivity and route propagation. One use case is to deploy in an environment where encryption between data center and cloud is not required but using native high performance Express Route is required. Both native Spoke VNet and Aviatrix Spoke gateways are supported as Spoke attachment.  
+
+- **Transit BGP over GRE Tunnel** provides alternative tunneling protocol to IPSec when connecting Aviatrix Transit Gateway to on-prem. One use case is to improve performance comparing to using IPSec. Only available in AWS (Azure and GCP do not support GRE)
+
+- **Transit BGP to Local** allows Aviatrix Transit Gateway to run BGP and data plane with an instance in the same VPC or VNet without running a tunnel interface. One use case is to interoperate with third party virtual appliances that do not have the capability to support BGP over any tunneling protocols. 
+
+- **Manual Advertise Routes per BGP Connection** expands the existing gateway based manual advertising routes feature to apply it to each BGP connection. One use case is to have better route advertising control for each remote BGP peer. 
+
+- **Transit Approval per BGP Connection** expands the existing Aviatrix Transit Gateway based Transit Approval feature to apply it to each on-prem BGP connection for fine grain control of network CIDRs admitted to the cloud network. 
+
+- **Private Transit Gateway Peering without Insane Mode** expands the existing Insane Mode Transit Gateway Peering Over Private Network to apply it to single IPSec tunnel. One use case is for low speed encryption between cloud networks. 
+
+- **Transit to External Device Using IKEv2** provides an option to run IKEv2 with the on-prem site. 
+
+- **Private OOB** allows both the Controller and Aviatrix Transit and Spoke gateways to be deployed in private  subnets. One use case is to satisfy compliance requirements where no public facing instances were permitted. 
+
+- **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. 
+
+2. FireNet
+=============
+
+- **FireNet on GCP** expands Aviatrix FireNet to GCP to enable firewall inspections for east-west, north-south and egress traffic. 
+
+- **FireNet integration with AWS Gateway Load Balancer** provides the capability where adding or removing a firewall to the FireNet does not impact the existing established network sessions. 
+
+3. User VPN
+=============
+
+- **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. 
+
+
+
 R6.2.1837 (11/10/2020)
 =======================
 
