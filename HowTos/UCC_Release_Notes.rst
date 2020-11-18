@@ -45,7 +45,7 @@ R6.2.1837 (11/10/2020)
 
 - **Enhancement** Add conntrack_count to syslog.
 - **Enhancement** FireNet LAN interface keep alive is enhancement with follow up TCP keep alive packets when ICPM ping fails, making the firewall detection more robust. Customer needs to open TCP port 443 from the gateway eth2 IP for this to take effect. No additional configuration required. 
-- **Enhancement** New AWS gateway AMI with the latest AWS SR-IOV device driver enhancement. 
+- **Enhancement** New AWS gateway AMI "hvm-cloudx-aws-102320" with the latest AWS SR-IOV device driver enhancement. 
 - **Bug fix** FQDN feature not working when ports are selected as all. 
 - **Enhancement** on interoperating with co-pilot. 
 - **Enhancement** Add disaster debugging capability when the Controller Apache daemon process fail to start.
