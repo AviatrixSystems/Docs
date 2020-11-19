@@ -50,13 +50,6 @@ Switch to a different configuration:
 #. Click `Connect` button.  A drop down will appear.
 #. Select the profile from the list
    
-What is "Client Certificate Sharing"
-------------------------------------
-
-Enabling this feature allows the same user to be logged in from more than one location at a time.  If this option is disabled and a user logs in from a second location, the first location will be disconnected automatically.
-
-
-
 Which log files should I share when I open a support ticket?
 ---------------------------------------------------------------
 
