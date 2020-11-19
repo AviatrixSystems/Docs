@@ -235,7 +235,6 @@ Other Aviatrix Products
 
 In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
 
- - `Aviatrix User VPN – Metered <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-user-vpn-metered.template>`_
 
  - `Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template>`_
 
