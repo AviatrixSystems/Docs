@@ -24,6 +24,8 @@ Instance Configuration Details
 
   - 443 from anywhere user access (User Interface)
 
+  - UDP port 5000 from 0.0.0.0/0 or specific gateway IPs
+
   - UDP port 31283 from 0.0.0.0/0 or specific gateway IPs 
 
 .. tip::
@@ -44,6 +46,16 @@ Configure controllers access for CoPilot
 
 .. note::
   If you are using RBAC, as of 1.1.5 Copilot requires read-only access + access to ping and traceroute functions for diagnositc capabilities 
+
+
+Enable Syslog for Performance Monitoring
+==============================================
+
+- Login to Aviatrix controller 
+
+- Go to Settings -> Loggings -> Remote Syslog
+
+- Enable the Service, choose a Profile Index (ie. 0), and use the EIP of copilot as the server and UDP port 5000 (default) 
 
 
 Enable FlowIQ
