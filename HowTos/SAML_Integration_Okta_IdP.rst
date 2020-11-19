@@ -62,7 +62,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | Sign on method | SAML 2.0       |
    +----------------+----------------+
 
-      |image0|
+   |image0|
 
 #. General Settings
 
@@ -80,7 +80,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    | App visibility | N/A             | Leave both options unchecked           |
    +----------------+-----------------+----------------------------------------+
 
-      |image1|
+   |image1|
 
 #. SAML Settings
 
@@ -94,36 +94,33 @@ Step 2. Create an Okta SAML App for Aviatrix
    | Audience URI         | ``https://[host]/``                                |
    | (SP Entity ID)       |                                                    |
    +----------------------+----------------------------------------------------+
-   | Default RelayState   |                                                    |
+   | Default RelayState   | ``https://[host]/#/dashboard``                     |
    +----------------------+----------------------------------------------------+
    | Name ID format       | Unspecified                                        |
    +----------------------+----------------------------------------------------+
    | Application username | Okta username                                      |
    +----------------------+----------------------------------------------------+
 
-   ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
+   ``[host]`` is the hostname or IP of your Aviatrix controller.
 
-   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller. The example uses ``dev`` for ``[Endpoint Name]``
-
-   |image2|
+   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+   The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
+   
+   ``https://[host]/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
 
    * Attribute Statements
 
-     +----------------+-----------------+--------------------------------------+
-     | Name           | Name format     | Value                                |
-     +================+=================+======================================+
-     | FirstName      | Unspecified     | user.firstName                       |
-     +----------------+-----------------+--------------------------------------+
-     | LastName       | Unspecified     | user.lastName                        |
-     +----------------+-----------------+--------------------------------------+
-     | Email          | Unspecified     | user.email                           |
-     +----------------+-----------------+--------------------------------------+
+   +----------------+-----------------+--------------------------------------+
+   | Name           | Name format     | Value                                |
+   +================+=================+======================================+
+   | FirstName      | Unspecified     | user.firstName                       |
+   +----------------+-----------------+--------------------------------------+
+   | LastName       | Unspecified     | user.lastName                        |
+   +----------------+-----------------+--------------------------------------+
+   | Email          | Unspecified     | user.email                           |
+   +----------------+-----------------+--------------------------------------+
 
-     |image3|
-
-
-#. You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__
-
+   |image2|
 
 .. _okta_idp_metadata:
 
@@ -131,16 +128,17 @@ Step 3. Retrieve Okta IdP metadata
 ##################################
 
 .. note::
-
    This step is usually completed by the Okta admin.
 
 #. After the application is created in Okta, go to the `Sign On` tab for the application.
 
 #. Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
-  |image4|
+|image4|
 
+3. Assign the application to your account
 
+|image8|
 
 .. _okta_update_saml_endpoint:
 
@@ -212,16 +210,16 @@ See this `article <https://support.okta.com/help/Documentation/Knowledge_Article
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |logoAlias1| replace::  Aviatrix logo with red background
-.. _logoAlias1: https://www.aviatrix.com/news/press-kit/logo-aviatrix.png
+.. _logoAlias1: https://a.aviatrix.com/news/press-kit/logo-aviatrix-reverse.zip
 
 .. |logoAlias2| replace:: Aviatrix logo with transparent background
-.. _logoAlias2: https://www.aviatrix.com/images/logo-reverse.png
+.. _logoAlias2: https://a.aviatrix.com/news/press-kit/logo-aviatrix.zip
 
 .. |image0| image:: SSL_VPN_Okta_SAML_media/image0.png
 
-.. |image1| image:: SSL_VPN_Okta_SAML_media/image1.png
+.. |image1| image:: Controller_Login_Okta_SAML_media/image1.png
 
-.. |image2| image:: SSL_VPN_Okta_SAML_media/image2.png
+.. |image2| image:: Controller_Login_Okta_SAML_media/image2.png
 
 .. |image3| image:: SSL_VPN_Okta_SAML_media/image3.png
 
@@ -232,6 +230,8 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |image6| image:: SSL_VPN_Okta_SAML_media/image6.png
 
 .. |image7| image:: SSL_VPN_Okta_SAML_media/image7.png
+
+.. |image8| image:: Controller_Login_Okta_SAML_media/image5.png
 
 .. |imageControllerNavOpenVPNAdvanced| image:: SSL_VPN_Okta_SAML_media/OpenVPN_Advanced_SAML_AddNew.png
    :scale: 50%
