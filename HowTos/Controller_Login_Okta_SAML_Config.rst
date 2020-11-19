@@ -24,7 +24,7 @@ Before configuring SAML integration between Aviatrix and Okta, make sure the fol
 .. _aviatrix_controller:
 
 Aviatrix Controller
-####################
+###################
 
 If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
 
@@ -34,7 +34,6 @@ Okta Account
 ############
 
 A valid Okta account with admin access is required to configure the integration.
-
 
 Configuration Steps
 -------------------
@@ -50,10 +49,9 @@ Follow these steps to configure Aviatrix to authenticate against your Okta IDP:
 .. _okta_saml_app:
 
 Create an Okta SAML App for Aviatrix
-#####################################
+####################################
 
 .. note::
-
    This step is usually done by the Okta Admin.
 
 #. Login to the Okta Admin portal
@@ -67,7 +65,7 @@ Create an Okta SAML App for Aviatrix
    | Sign on method | SAML 2.0       |
    +----------------+----------------+
 
-      |image0|
+   |image0|
 
 #. General Settings
 
@@ -85,16 +83,16 @@ Create an Okta SAML App for Aviatrix
    | App visibility | N/A             | Leave both options unchecked           |
    +----------------+-----------------+----------------------------------------+
 
-      |image1|
+   |image1|
 
 #. SAML Settings
 
    * General
-
+   
    +----------------------+----------------------------------------------------+
    | Field                | Value                                              |
    +======================+====================================================+
-   | Single sign on URL   | ``https://[host]/flask/saml/sso/controller``       |
+   | Single sign on URL   | ``https://[host]/flask/saml/sso/[Endpoint Name]``  |
    +----------------------+----------------------------------------------------+
    | Audience URI         | ``https://[host]/``                                |
    | (SP Entity ID)       |                                                    |
@@ -106,52 +104,43 @@ Create an Okta SAML App for Aviatrix
    | Application username | Okta username                                      |
    +----------------------+----------------------------------------------------+
 
-   ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
+   ``[host]`` is the hostname or IP of your Aviatrix controller.
 
-   ``controller`` must be the SP name. Otherwise there will be an "SP is not present" error.
-
+   ``[Endpoint Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+   The example uses ``aviatrix_saml_controller`` for ``[Endpoint Name]``
+   
    ``https://[host]/#/dashboard`` must be set as the Default RelayState so that after SAML authenticates, user will be redirected to dashboard.
 
+   * Attribute Statements
+   
+   +----------------+-----------------+--------------------------------------+
+   | Name           | Name format     | Value                                |
+   +================+=================+======================================+
+   | FirstName      | Unspecified     | user.firstName                       |
+   +----------------+-----------------+--------------------------------------+
+   | LastName       | Unspecified     | user.lastName                        |
+   +----------------+-----------------+--------------------------------------+
+   | Email          | Unspecified     | user.email                           |
+   +----------------+-----------------+--------------------------------------+
 
    |image2|
-
-   * Attribute Statements
-
-     +----------------+-----------------+--------------------------------------+
-     | Name           | Name format     | Value                                |
-     +================+=================+======================================+
-     | FirstName      | Unspecified     | user.firstName                       |
-     +----------------+-----------------+--------------------------------------+
-     | LastName       | Unspecified     | user.lastName                        |
-     +----------------+-----------------+--------------------------------------+
-     | Email          | Unspecified     | user.email                           |
-     +----------------+-----------------+--------------------------------------+
-
-     |image3|
 
 .. _okta_idp_metadata:
 
 Retrieve Okta IDP metadata
-#####################################
+##########################
 
 .. note::
-
    This step is usually completed by the Okta admin.
 
-After the application is created in Okta, go to the `Sign On` tab for the application.  Then, click on the `View Setup Instructions` button.
+After the application is created in Okta, go to the `Sign On` tab for the application.
+Copy the URL from the *Identity Provider metadata* link. This value will be used to configure the Aviatrix SP Endpoint.
 
-    |image4|
+|image4|
 
-Look for the section titled `Provide the following IDP metadata to your SP provider`.
+Assign the application to your account
 
-    |image5|
-
-.. important::
-
-   Copy the text displayed.  This value will be used to configure the SAML on the Aviatrix controller.
-
-You need to assign the application to your account. Please follow steps 11 through 14 at `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__
-
+|image5|
 
 .. _aviatrix_saml_endpoint:
 
@@ -159,30 +148,31 @@ Create Aviatrix SAML Endpoint
 #############################
 
 .. note::
-
    This step is usually completed by the Aviatrix admin.
 
 #. Login to the Aviatrix Controller
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
-#. Click `Enable` button
+#. Click `ADD NEW` button
 
    |image6|
-
+   
    +-------------------------+-------------------------------------------------+
    | Field                   | Value                                           |
    +=========================+=================================================+
-   | IDP Metadata Type       | Text                                            |
+   | IDP Metadata Type       | URL                                             |
    +-------------------------+-------------------------------------------------+
-   | IDP Metadata Text       | ``Value Copied from Okta`` (Paste the value     |
-   |                         | copied from Okta SAML configuration)            |
+   | IDP Metadata URL        | ``Value copied from Okta`` (Paste the value     |
+   |                         | copied from Okta Sign On)                       |
    +-------------------------+-------------------------------------------------+
    | Entity ID               | Hostname                                        |
    +-------------------------+-------------------------------------------------+
-   | Access                  | Use either Admin or read-only                   |
+   | Access                  | Use either admin or read-only                   |
    |                         |                                                 |
    +-------------------------+-------------------------------------------------+
+   
+   |image9|
 
 #. Click `OK`
 
@@ -191,22 +181,20 @@ Create Aviatrix SAML Endpoint
 Test the Integration
 ####################
 
+.. tip::
+   You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
+
 #. Click `Settings` in the left navigation menu
 #. Select `Controller`
 #. Click on the `SAML Login` tab
-#. Click the `Test` button next to ``controller``
+#. Click the `Test` button next to ``SAML endpoint name``
 
-   .. tip::
-
-      You will need to assign the new Okta application to a test user's Okta account before clicking `Test`.
-
-      |image7|
+   |image7|
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
-   .. important::
-
-      If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
+.. important::
+   If everything is configured correctly, once you have authenticated another windows should open with the test user's access.
 
 .. _validate_entire_process:
 
@@ -216,14 +204,12 @@ Validate
 #. Logout of the Aviatrix Controller
 #. Login to the Aviatrix Controller by clicking the `SAML Login` button
 
-    |image8|
+   |image8|
 
 #. You should be redirected to Okta.  Login with your test user credentials.
 
-       .. important::
-
-          If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
-
+.. important::
+   If everything is configured correctly, once you have authenticated you will be redirected to the dashboard's controller.
 
 
 Configure Okta for Multifactor Authentication (OPTIONAL)
@@ -235,14 +221,13 @@ Please read this `article <https://support.okta.com/help/Documentation/Knowledge
 
 See this `article <https://support.okta.com/help/Documentation/Knowledge_Article/Configuring-Duo-Security-734413457>`__ if you're interested in using DUO in particular.
 
-
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |logoAlias1| replace::  Aviatrix logo with red background
-.. _logoAlias1: https://www.aviatrix.com/news/press-kit/logo-aviatrix.png
+.. _logoAlias1: https://a.aviatrix.com/news/press-kit/logo-aviatrix-reverse.zip
 
 .. |logoAlias2| replace:: Aviatrix logo with transparent background
-.. _logoAlias2: https://www.aviatrix.com/images/logo-reverse.png
+.. _logoAlias2: https://a.aviatrix.com/news/press-kit/logo-aviatrix.zip
 
 .. |image0| image:: Controller_Login_Okta_SAML_media/image0.png
 
@@ -262,5 +247,6 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image8| image:: Controller_Login_Okta_SAML_media/image8.png
 
+.. |image9| image:: Controller_Login_Okta_SAML_media/image9.png
 
 .. disqus::
