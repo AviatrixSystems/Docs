@@ -108,7 +108,6 @@ Squid is a popular open source software that can be configured to do transparent
 **Functions**                                      **Aviatrix FQDN**                                                AWS NAT Gateway   AWS Network Firewall  Azure Firewall    **Squid**
 =============================================      =============================================================    ===============   ===================== ================  =============
 Requires instance configuration                    No                                                               No                No                    No                No
-Requires dedicated subnet                          No                                                               No                Yes                   No                No
 HTTP and HTTPS FQDN filter                         Yes (support wildcard)                                           No                Yes                   Yes               Yes
 non HTTP/HTTPS FQDN filter                         Yes                                                              No                No                    No                No
 Multi AZ High Availability                         Yes (load balanced)                                              Yes               Yes                   Yes               No
