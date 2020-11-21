@@ -38,6 +38,14 @@ R6.3 (Coming Soon)
 
 - **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. 
 
+R6.2.1890 (11/20/2020)
+========================
+
+- **Bug fix** OCI Spoke VCN default route tables not programmed correctly. 
+- **Bug fix** After removing Spoke FQDN, Spoke gateway route table entries are missing. 
+- **Enhancement** Reduce excessive logging on Controller. 
+- **Enhancement** Add new regions to OCI. 
+- **Enhancement** Performance enhancement when interoperating with Copilot. 
 
 
 R6.2.1837 (11/10/2020)
