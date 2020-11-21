@@ -118,7 +118,8 @@ Terraform support                                  Yes                          
 Out-of-box log integration                         Yes                                                              No                Yes                   Yes               No
 Allow specified destination to bypass filter       Yes                                                              No                No                    No                No
 Allow specified source CIDR to apply to rule       Yes                                                              No                No                    No                No  
-Visibility on allowed/Denied sessions              Yes                                                              No                Yes                   No                No
+Allow specified source CIDR to bypass filter       Yes                                                              No                No                    No                No
+Out of box visibility on sessions                  Yes                                                              No                No                    No                No
 Search a specified rule match history              Yes                                                              No                No                    No                No
 Vendor product support                             Yes                                                              Yes               Yes                   Yes               No 
 =============================================      =============================================================    ===============   ===================== ================  =============
