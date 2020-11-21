@@ -82,7 +82,7 @@ PrivateS3 DNS Name                         This field displays the DNS name of t
 ===================================        ==================
 
 
-Additional Configuration:  Create on-prem DNS Private Zone
+Additional Configuration 1:  Create on-prem DNS Private Zone
 --------------------------------------------------------------
 
 Create a private zone on your on-prem DNS server so that all S3 bucket names  
@@ -103,6 +103,13 @@ create a zone with domain name s3.us-west-2.amazonaws.com, another zone with dom
 .. tip::
 
   Use DNS wildcard for record. For example, use *.s3.us-west-2.amazonaws.com that resolves to an A record that is the private IP address of the PrivateS3 internal NLB.
+
+Additional Configuration 2: S3 endpoint
+-------------------------------------------------
+
+PrivateS3 does not require a S3 endpoint, however, S3 endpoint in the VPC where PrivateS3 gateways are deployed 
+helps forwarding traffic to S3 services without
+routing through the Internet. Configuring S3 endpoint is outside the scope of the PrivateS3 workflow. Login to AWS Console to create S3 endpoint. 
 
 Adding More PrivateS3  Gateways
 ---------------------------------------------------------------

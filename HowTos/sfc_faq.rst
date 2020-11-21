@@ -141,6 +141,11 @@ Can Aviatrix Spoke gateways be used for PrivateS3 function?
 No, Aviatrix Spoke gateways cannot be used for PrivateS3 function. This is because PrivateS3 requires certain DNAT rule that conflict with
 Spoke gateway forwarding function. 
 
+Is S3 endpoint required for PrivateS3?
+---------------------------------------
+
+No. S3 endpoint in the VPC where PrivateS3 gateways are deployed is not required for PrivateS3 to work. However creating a S3 endpoint allows traffic to be forwarded to S3 service without going through the Internet. 
+
 
 .. |sfc| image:: sfc_media/sfc .png
    :scale: 30%
