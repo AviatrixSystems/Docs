@@ -104,12 +104,15 @@ How does Aviatrix Egress FQDN compare to Squid and other solutions?
 
 Squid is a popular open source software that can be configured to do transparent HTTP/HTTPS filtering. Squid does not process non HTTP/HTTPS traffic. For example, if you need to filter on a SFTP site that runs on TCP port 22, Squid does not work. Below is a more comprehensive comparison between Aviatrix FQDN and Squid. 
 
+The table below also compares with other solutions such as AWS NAT Gateway, AWS Network Firewall and Azure Firewall.
+
 =============================================      =============================================================    ===============   ===================== ================  =============
 **Functions**                                      **Aviatrix FQDN**                                                AWS NAT Gateway   AWS Network Firewall  Azure Firewall    **Squid**
 =============================================      =============================================================    ===============   ===================== ================  =============
 Requires instance configuration                    No                                                               No                No                    No                No
 HTTP and HTTPS FQDN filter                         Yes (support wildcard)                                           No                Yes                   Yes               Yes
 non HTTP/HTTPS FQDN filter                         Yes                                                              No                No                    No                No
+Requires dedicated subnet                          No                                                               No                Yes                   Yes               No
 Multi AZ High Availability                         Yes (load balanced)                                              Yes               Yes                   Yes               No
 Centrally Managed                                  Yes                                                              Yes               Yes                   Yes               No
 Egress Discovery                                   `Yes <https://docs.aviatrix.com/HowTos/fqdn_discovery.html>`_    No                No                    No                No 
