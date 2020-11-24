@@ -56,7 +56,7 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 Azure Performance Test Results
 --------------------------------
 
-The test results below are done with the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
+The performance results below are from tests conducted with the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
 region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke gateways
 or HA Spoke gateways to take advantage of the active-mesh deployment. 
 
