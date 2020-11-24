@@ -56,14 +56,17 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 Azure Performance Test Results
 --------------------------------
 
+The test results below is for the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
+region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke gateways
+or HA Spoke gateways to take advantage of the active-mesh deployment. 
+
 ====================      ===============================
 **Gateway VM Type**       **Throughput with MTU 1500B**    
 ====================      ===============================
-Standard_F32s_v2          8.9Gbps                          
-Standard_F48s_v2          10.9Gbps                         
-Standard_D64_v3           8.2Gbps                          
-Standard_D32_v3           7.1Gbps                         
-Standard_D5_v2            6.6Gbps                          
+Standard_F48s_v2          24.52Gbps                         
+Standard_F32s_v2          21.56Gbps                          
+Standard_D32_v3           20.47Gbps                         
+Standard_D5_v2            20.56Gbps                          
 ====================      ===============================
 
 GCP Performance Test Results
