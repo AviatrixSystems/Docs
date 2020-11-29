@@ -11,7 +11,7 @@ Browse Questions
 
 `Do we need a controller in each cloud environment (i.e., one for AWS, one for Azure, etc.)? If not, how do we do multi-cloud traffic steering?`_
 
-`How are gateway devices hardened?`_
+`How are Aviatrix instances hardened?`_
 
 `Does Aviatrix Controller have a database running?`_
 
@@ -25,7 +25,7 @@ Browse Questions
 
 `Is Aviatrix FedRamp compliant?`_
 
-`Is Aviatrix software compliant with Section 508, IT Accessibility Standards?`_
+`Is Aviatrix software in compliance with Section 508, IT Accessibility Standards?`_
 
 `Is Aviatrix FIPS 140-2 certified?`_
 
@@ -33,7 +33,7 @@ Browse Questions
 
 `Do Aviatrix Controller and Gateway instances support running an anti-malware agent?`_
 
-`Is it possible to do OS disk encryption on the Aviatrix Gateway instances without taking the Gateway down?`_
+`Is it possible to do OS disk encryption on Aviatrix Gateway instances without taking the Gateway down?`_
 
 `Can a customer create their own custom hardened image for the Aviatrix Controller or Gateway instances?`_
 
@@ -58,7 +58,7 @@ Is customer data contained in the customer's AWS account?
 
 Yes, all Aviatrix AMI is deployed in the customer’s private cloud environment.
 
-Will the controller and gateway need to reach out to Aviatrix to receive command or send routing data to Aviatrix? 
+Will the controller and gateway need to reach out to Aviatrix to receive commands or send routing data to Aviatrix?
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 No, customers' configuration data is never accessed by Aviatrix. The only time Aviatrix receives information from a customer is:  
@@ -73,7 +73,7 @@ Do we need a controller in each cloud environment (i.e., one for AWS, one for 
 No, you don’t. One Aviatrix Controller manages cloud deployment in AWS, Azure, GCP, and OCI. Aviatrix Controller launches Gateways in each cloud and orchestrates policies to build network segmentation and secure connectivity.
 
 How are Aviatrix instances hardened?
----------------------------------
+------------------------------------
 
 The Aviatrix Controller and Gateway instances are virtual machines using Ubuntu OS which is maintained specifically for Aviatrix for infrastructure services. All OS patches go through our full QA process and are managed in the releases of the Aviatrix software.
 
@@ -129,13 +129,13 @@ Can Aviatrix software support GovCloud implementation?  
 
 Yes. We support AWS GovCloud infrastructure.    
 
-DDo Aviatrix Controller and Gateway instances support running an anti-malware agent??  
+Do Aviatrix Controller and Gateway instances support running an anti-malware agent? 
 --------------------------------------------------------------------------------------
 
 Because Aviatrix is an appliance, we do not allow customer SSH access to install anti-malware software on the instances.  
 
 Is it possible to do OS disk encryption on Aviatrix Gateway instances without taking the Gateway down?  
----------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
 No, customers are not allowed to add additional software code in Aviatrix Gateway instance. The instance is implemented with hard disk encryption using Elastic Block Store (EBS) encryption.  Below are additional details for this technology.  
 
@@ -176,7 +176,7 @@ Can we patch the Aviatrix Controller and Gateway instances using our Systems Man
 
 No, our instances are appliances and customer SSH access is disabled. To patch Aviatrix Controller and Gateway instances, customers need to log into their Controller management console and update to the latest Aviatrix version.  
 
-Does Aviatrix implement Secure Coding and Development practices to ensure that the Aviatrix software is not vulnerable to DDoS, SQL Injection, and/or Cross Site Scripting Attacks?
+Does Aviatrix implement Secure Coding and Development practices to ensure that the software is not vulnerable to DDoS, SQL Injection and/or Cross Site Scripting Attacks?
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Aviatrix security measures for SDLC include access, change, vulnerability, threat intelligence and risk management safeguards. To ensure we protect our software code from known attacks like CSS, SQL Injection, and DDOS, we run vulnerability scans prior to each release to detect and mitigate any possible attacks. We also work closely with security researchers to detect zero day threats and we work with Coalfire to anually perform source code review and independent penetration testing.  
@@ -204,8 +204,8 @@ The default IAM Policies used for Aviatrix are documented here: https://docs.avi
 
 See a sample of how to edit your IAM Policy for Aviatrix: https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html 
 
-Can I use a custom SSL Certificate for the Controller and Gateway? 
-----------------------------------------------------------------------
+Can I use a custom SSL Certificate for the Controller and Gateway instances?
+----------------------------------------------------------------------------
 
 Yes, you can. To implement the SSL Certificate for your controller, go to Setting > Advanced > Security sub tab. Note that SSL verification check is not enabled by default and should be enabled by a customer
 
