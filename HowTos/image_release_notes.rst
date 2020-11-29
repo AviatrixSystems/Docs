@@ -84,10 +84,10 @@ hvm-cloudx-aws-102320 (11/10/2020)
 
 - Fix and passed vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
-.. |controller_migration| image:: image_release_notes/controller_migration.png
+.. |controller_migration| image:: image_release_notes_media/controller_migration.png
    :scale: 50%
 
-.. |gateway_replace| image:: image_release_notes/gateway_replace.png
+.. |gateway_replace| image:: image_release_notes_media/gateway_replace.png
    :scale: 50%
 
 .. disqus::
