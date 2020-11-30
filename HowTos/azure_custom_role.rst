@@ -32,6 +32,7 @@ by the Controller as shown below. This document describes how to accomplish this
                         "Microsoft.Compute/*/read",
                         "Microsoft.Compute/availabilitySets/*",
                         "Microsoft.Compute/virtualMachines/*",
+                        "Microsoft.Compute/disks/*",
                         "Microsoft.Network/*/read",
                         "Microsoft.Network/publicIPAddresses/*",
                         "Microsoft.Network/networkInterfaces/*",
