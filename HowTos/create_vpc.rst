@@ -58,7 +58,7 @@ Public-FW-ingress-egress-2                      Use this subnet to create an int
 Cloud type: Azure
 ------------------
 
-Starting from R6.2, Aviatrix programs a default route 0.0.0.0 pointing to next hop type "None" in User Defined Route Table (UDR) which is associated with the private subnet by this Aviatrix creation tool; UDR which is associated with the public subnet does not have the default route entry been programmed by this Aviatrix creation tool.
+Starting from R6.2, Aviatrix programs a default route 0.0.0.0 pointing to the next hop type "None", for any User Defined Route Table (UDR) associated with a private subnet.  This behavior does not extend to public subnets, which are skipped. 
 
 +----------+--------------------+-------------------+
 | **Name** | **Address prefix** | **Next hop type** |
