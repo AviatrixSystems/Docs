@@ -2,15 +2,16 @@
 Overview
 =======================================
 
-Aviatrix multi-cloud networking solution is delivered in two kinds of images, both should be maintained with the latest version for managing security 
-and support for the product. Aviatrix roadmap is to publish 2 new images per year.
+Aviatrix multi-cloud networking platform is delivered via two images, a Controller image and a gateway image,  
+both should be maintained with the latest version for managing security 
+and support for the product. Aviatrix intends to publish 2 new images per year.
 
 New Customer Installation Procedures 
 ====================================
 
-- Customer will download the Aviatrix Controller image in the AWS, Azure, or respective cloud marketplace.  
+- Customer launches the Aviatrix Controller image instance in the AWS, Azure, or respective cloud marketplace.  
 
-- Customer will launch new gateways from the Controller. The Controller will automatically pull the latest compatible Gateway version.   
+- Customer launches new gateways from the Controller. The Controller will automatically pull the latest compatible Gateway version.   
 
 Existing Customers - Controller Image upgrade (Migration) 
 =========================================================
@@ -29,7 +30,7 @@ Existing Customers - Controller Image upgrade (Migration)
 
   |controller_migration|
 
-Note: Migrating your Controller will not impact your network transits. Your existing Gateways are still running.  
+Note: Migrating your Controller does not impact your network data plane. Your existing Gateways should continue operating during migration.  
 
 Existing Customers- Gateway Image upgrade 
 ===========================================
@@ -38,7 +39,7 @@ Existing Customers- Gateway Image upgrade
 
   #. Go to your Controller management console 
 
-  #. Go to Troubleshoot > Diagnostics > Gateway subtab. There is a section called Gateway Replace. You will select each Gateway and click Replace. 
+  #. Go to Troubleshoot > Diagnostics > Gateway -> Gateway Replace. Select each Gateway and click Replace. 
 
   |gateway_replace|
 
@@ -82,7 +83,7 @@ hvm-cloudx-aws-102320 (11/10/2020)
 
 - New network drivers 
 
-- Fix and passed vulnerabilities scan to Sep/2020 (mid ref: 18262) 
+- Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
 .. |controller_migration| image:: image_release_notes_media/controller_migration.png
    :scale: 50%
