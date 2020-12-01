@@ -3,7 +3,7 @@ Overview
 =======================================
 
 Aviatrix multi-cloud networking solution is delivered in two kinds of images, both should be maintained with the latest version for managing security 
-and support for the product. Aviatrix roadmap is to publish 2 new images per year. 
+and support for the product. Aviatrix roadmap is to publish 2 new images per year.
 
 New Customer Installation Procedures 
 ====================================
@@ -54,11 +54,11 @@ Controller Images
 AWS AMI – 050120 (8/17/2020) 
 ----------------------------
 
-- R6.1.1280 Software Version is required for this change 
+- R6.1.1280 Software Version is required
 
-- Update new Linux kernel and packages versions 
+- Update Linux kernel and packages versions 
 
-- Remove packages no longer use by the product 
+- Remove packages no longer used by the product 
 
 - Set X-XSS-Protection and X-Content-Type-Options by default 
 
@@ -72,13 +72,13 @@ Gateway Images
 hvm-cloudx-aws-102320 (11/10/2020)
 ----------------------------------
 
-- R6.2.1837 Software Version is required for this change 
+- R6.2.1837 Software Version is required
 
 - New image fetch mechanism 
 
 - Update security patches to date 
 
-- New Linux Kernel and package upgrade 
+- Linux Kernel update and package upgrade 
 
 - New network drivers 
 
