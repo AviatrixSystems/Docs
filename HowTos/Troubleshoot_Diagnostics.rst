@@ -102,13 +102,6 @@ Keep Gateway on Error
 By default, the controller will roll back all the operations (gateway, EIP, security-group creations, etc...) if an error occurs during a gateway creation. However, this function allows you to keep the gateway instance for debugging purposes. In another word, this feature disables the roll back operation if the Status is set to True.
 
 
-Gateway IP Migration
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. important:: The user MUST execute this feature after re-associating a new public IP for the gateway through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for controller and gateways.
-..
-
-
 Gateway Replace
 ~~~~~~~~~~~~~~~~~
 
