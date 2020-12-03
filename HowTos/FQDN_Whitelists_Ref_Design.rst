@@ -88,7 +88,7 @@ However, if multiple tags are attached to the same gateway, then the mode (White
 Exception Rule
 ===============
 
-Exception Rule is a system-wide mode.
+Exception Rule is a system-wide mode. **Exception Rule only applies to whitelist**. 
 
 By default, the Exception Rule is enabled. (The Exception rule box should be checked.)
 
@@ -102,6 +102,8 @@ When Exception Rule is disabled (uncheck the box), packets passing through the g
 are dropped unless the specific destination IP address of the
 packet is listed in the Whitelist. The use case could be that certain old applications use
 hard coded destination IP address to access external services.
+
+If blacklist is configured, client hello packets without SNI is allowed to pass as it should not match any rules. 
 
 
 Export
