@@ -52,11 +52,13 @@ The key benefits are:
 How does PrivateS3 work?
 --------------------------
 
-PrivateS3 combines a few elements to make it work. 
+PrivateS3 works as follows.  
 
  1. Customer on-prem resolves all S3 bucket names under management to the private IP address of the Aviatrix gateway created and managed in AWS internal NLB.
- #. Configure on the Aviatrix Controller the S3 bucket names that you allow access.
- #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out the un-configured S3 bucket names, thus preventing data leakage.
+ #. The Controller scans periodically (every 30 minutes) S3 buckets in the selected region and accounts. 
+ #. The Controller sends email notification to the admin for newly discovered S3 buckets. All S3 buckets are denied access by default. 
+ #. The admin logs into the Controller to approve or deny access to the discovered S3 buckets. 
+ #. When Aviatrix PrivateS3 gateway receives the packets, it uses its FQDN feature to filter out any buckets names that are not on the allowed list, thus preventing data leakage.
 
 How to deploy PrivateS3?
 --------------------------
