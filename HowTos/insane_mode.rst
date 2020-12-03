@@ -9,7 +9,7 @@ Insane Mode Encryption FAQ
 
 This document discusses Aviatrix High Performance Transit Network and answers related questions.
 
-Why is Transit VPC performance capped at 1.25Gbsp?
+Why is Transit VPC performance capped at 1.25Gbps?
 ---------------------------------------------------
 
 In the current Transit VPC solution, the throughput is capped at 1.25Gbps regardless if you have a 10Gbps 
@@ -136,7 +136,7 @@ Do I need Direct Connect to use Insane Mode for On-prem?
 ----------------------------------------------------
 
 Our InsaneMode high speed encryption feature works on top of your existing WAN link and it is agnostic to the type of connection used. As long as you have a pipe 
-that's large enough to alow for high throughput data transfer, using InsaneMode will offer superior performance to regular IPSec. 
+that's large enough to allow for high throughput data transfer, using InsaneMode will offer superior performance to regular IPSec.
 
 How to configure Insane Mode for Transit VPC?
 ----------------------------------------------
@@ -183,7 +183,7 @@ Because GCP network infrastructure/concept is different than AWS/Azure, Aviatrix
 
 - Feature "Advertise Transit VPC Network CIDR(s)" is not supported with Insane mode gateway
 
-- Will support Managed CloudN connecting to Aviatrix Transit Gateway in GCP soon; Standalone/unmannaged CloudN connecting to Aviatrix Transit Gateway is not supported in GCP
+- Will support Managed CloudN connecting to Aviatrix Transit Gateway in GCP soon; Standalone/unmanaged CloudN connecting to Aviatrix Transit Gateway is not supported in GCP
 
 .. |tunnel_diagram| image:: insane_mode_media/tunnel_diagram.png
    :scale: 30%
