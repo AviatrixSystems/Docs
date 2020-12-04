@@ -45,7 +45,7 @@ Configure controllers access for CoPilot
 - You should now be able to login to CoPilot with the credentials we configured above
 
 .. note::
-  If you are using RBAC, as of 1.1.5 Copilot requires read-only access + access to ping and traceroute functions for diagnositc capabilities 
+  If you are using RBAC, as of 1.1.5 Copilot requires read-only access + access to ping and traceroute functions for diagnostic capabilities
 
 
 Enable Syslog for Performance Monitoring
@@ -68,7 +68,7 @@ Enable FlowIQ
 - Use the EIP of copilot as the server and UDP port 31283 (default) 
 
  
-Deployment is complete. At this point your Copilot is setup and ready to use. You should start seeing NetFlow in less than 5 minutes. Note that when you launch CoPilot at first your version number will be the based on the version in the image. Within an hour, Copilot version will be updated. 
+Deployment is complete. At this point your Copilot is setup and ready to use. You should start seeing NetFlow in less than 5 minutes. Note that when you launch CoPilot at first your version number will be based on the version in the image. Within an hour, Copilot version will be updated.
 
 System Design Considerations 
 ==================================
