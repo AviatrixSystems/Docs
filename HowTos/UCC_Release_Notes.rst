@@ -38,6 +38,13 @@ R6.3 (Coming Soon)
 
 - **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. 
 
+R6.2.1914 (12/04/2020)
+========================
+
+- **Bug fix** Not able to detach a native Spoke VNet when its resource group is deleted on Azure console. 
+- **Bug fix** FQDN crashes when the number of FQDN rules exceed 1000. 
+- **Enhancement** Increase the number of FQDN rules to 1500. 
+
 R6.2.1891 (11/20/2020)
 ========================
 
