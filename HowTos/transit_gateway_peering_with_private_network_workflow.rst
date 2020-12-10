@@ -163,9 +163,9 @@ Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.co
 Step 3.1. Deploy VPCs for Transit FireNet
 ------------------------------------------
 
-	- Create AWS Transit VPC and Azure Transit VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
+	- Create AWS Transit VPC and Azure Transit VNET by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
 
-	- Create AWS Spoke VPC and Azure Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
+	- Create AWS Spoke VPC and Azure Spoke VNET by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
 
 Step 3.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 -------------------------------------------------------------------
