@@ -12,7 +12,7 @@ Launch CoPilot
 ==================
 
 CoPilot is available as an all-in-one virtual appliance that's hosted in users' own IaaS cloud environment. 
-It can be launched as an EC2 instance in AWS, or virtual machine in Azure. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
+It can be launched as an EC2 instance in AWS, virtual machine in Azure, or a VM instances in GCP (preview mode). Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfully launching the instance, follow this steps to configure CoPilot instance parameters and launch. 
 Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot is not a separate product.
 
@@ -74,3 +74,41 @@ System Design Considerations
 ==================================
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
+
+Deploy Aviatrix CoPilot in GCP (Preview mode)
+=============================================
+
+- Go to GCP marketplace
+
+- Find the product "Aviatrix CoPilot - BYOL"
+
+- Click the button "LAUNCH"
+
+|gcp_copilot_1|
+
+- Make sure the selected Machine type has at least 8 vCPUs with 32 GB memory
+
+- Boot Disk is SSD Persistnent Disk with 2000 GB
+
+|gcp_copilot_2|
+
+- 443 from anywhere user access (User Interface)
+
+- UDP port 31283 from 0.0.0.0/0 or specific gateway IPs
+
+- UDP port 5000 from 0.0.0.0/0 or specific gateway IPs
+
+|gcp_copilot_3|
+
+- Click the button "Deploy"
+
+.. |gcp_copilot_1| image:: copilot_getting_started_media/gcp_copilot_1.png
+   :scale: 50%
+   
+.. |gcp_copilot_2| image:: copilot_getting_started_media/gcp_copilot_2.png
+   :scale: 50%
+   
+.. |gcp_copilot_3| image:: copilot_getting_started_media/gcp_copilot_3.png
+   :scale: 50%
+
+.. disqus::
