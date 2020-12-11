@@ -185,6 +185,8 @@ Ready to go!
 
 Now you should be able to send traffic from cloud to on-prem as well as on-prem to cloud over Azure Express Route.
 
+For an end to end example configuration workflow, follow the `Multi-cloud transit with  Azure VNG VPN example <https://docs.aviatrix.com/HowTos/transit_gateway_integration_with_vng_IOSexample.html>`_. 
+
 For FireNet deployment, follow the `Transit FireNet workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html>`_.
 
 
