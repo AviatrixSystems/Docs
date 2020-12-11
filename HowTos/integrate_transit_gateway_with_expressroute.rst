@@ -9,46 +9,52 @@ Multi-Cloud Transit Integration with Azure ExpressRoute
 Introduction
 ============
 
-Currently, Aviatrix Transit requires encryption over Azure ExpressRoute or External Device to on-prem directly but there are times where customers would like to keep their ExpressRoute or cannot deploy CloudN. In such scenarios, Aviatrix transit solution including Transit FirNet can only forward traffic between Spoke VNets or inspect east-west traffic only, as shown `here <https://docs.aviatrix.com/HowTos/azure_transit_designs.html#aviatrix-transit-gateway-for-azure-spoke-to-spoke-connectivity>`_
+Currently, Aviatrix Multi-cloud Transit solution requires encryption over Azure ExpressRoute or External Device to on-prem directly. 
+There are times where encryption is not required and native network connectivity on ExpressRoute is highly desirable. 
+In such scenarios, Aviatrix transit solution including Transit FirNet can only forward traffic between Spoke VNets or inspect east-west traffic only, as shown `here <https://docs.aviatrix.com/HowTos/azure_transit_designs.html#aviatrix-transit-gateway-for-azure-spoke-to-spoke-connectivity>`_.
 
-This feature allows Aviatrix Transit native integration with Azure VNG (Virtual Network Gateway) and allows Aviatrix Transit Gateway to inspect traffic from on-prem to cloud on top of east-west traffic inspection.
+This feature allows Aviatrix Multi-cloud Transit solution to integrate with native Azure Virtual Network Gateway (VNG) and enables 
+Aviatrix Transit Gateway to inspect traffic from on-prem to cloud in addition to east-west and egress traffic inspection. Both 
+native Spoke VNet and Aviatrix Spoke gateway based Spoke VNets are supported. 
 
 
 The key ideas for this solution are:
 -------------------------------------
 
-    - Traffic initiated from On-prem over Express Route first routed to Aviatrix Transit Gateway where traffic can be inspected, and then route to the Spoke VNet. Similarly, traffic initiated from the Spoke VNet first routed to the Aviatrix Transit Gateway and then from VNG to on-prem over Express Route.
+    - The edge (WAN) router runs a BGP session to Azure VNG via Azure ExpressRoute or VPN where the edge router advertises to the Azure VNG the on-prem routes and the VNG advertises the Spoke VNet CIDRs.  
 
-    - Aviatrix Controller periodically pulls the Transit VNet VNG route table for learned routes from on-prem. These routes are then distributed to Spoke VNet and Aviatrix Transit Gateway.
+    - Aviatrix Controller periodically retrieves route entries from the Transit VNet VNG route table advertised from on-prem. The Controller then distributes these routes to Spoke VNet and Aviatrix Transit Gateway.
 
-    - Azure native VNet Peering capabilities will be leveraged between Spokes and Transit to automatically advertise routes from Cloud to On-prem.
+    - Azure native VNet Peering is configured between each Spoke VNet and Transit VNet VNG  with `Allow Remote Gateway` attribute configured on the Spoke VNet to automatically advertise routes from Spoke VNet to VNG and to On-prem.
 
-    - The edge (WAN) router runs a BGP session to Azure VNG via Azure ExpressRoute where the edge router advertises the Azure VNG advertises the Azure Transit VNET CIDR.
+    - Traffic coming from on-prem to VNG is routed to Azure load balancer which then forwards traffic to both Aviatrix Transit Gateway for Active-mesh deployment. The same load balancer is also used to distribute traffic to firewalls for inspection. 
+   
+    - Traffic coming from Spoke VNet is routed to Aviatrix Transit Gateway directly which then forwards the traffic to Azure load balancer. Future release will support Active-mesh in the this direction of traffic. 
 
-    - The edge (WAN) router redistributes the Azure Transit VNET CIDR.
 
+This document describes the configuration workflow for the following network diagram. 
+
+|topology_expressroute|
+
+where there are two Spoke VNets, one with Aviatrix Spoke gateway (172.60.0.0/16) and one native Spoke VNet (172.50.0.0/16)
 
 Prerequisite
 ====================
 
-First of all, `upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.3.
-
-Topology
-====================
-
-|topology_expressroute|
-
-In this example, we are going to deploy the below VNETs in Azure
-
-    - Azure Aviatrix Transit VNET (i.e. 172.40.0.0/16)
-
-    - Azure Aviatrix Spoke VNETs (i.e. 172.50.0.0/16 & 172.60.0.0/16)
+`Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.3.
 
 
-Workflow to connect Virtual Network Gateway (VNG) with On-Prem DC over Azure ExpressRoute (Optional)
-====================================================================================================
+.. tip::
 
-Customers using existing Express Route can skip this workflow and move to next section. Building Azure ExpressRoute is customer's responsibility. For more information about Azure ExpressRoute, please check out the below documents:
+  We highly recommend you to ceate Azure Transit VNET by utilizing Aviatrix feature `Create a VNet  <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VNet option enabled. Create a VNG in this Transit VNet.
+
+
+Connect VNG on On-Prem 
+=======================================================================================================
+
+If you have already created VNG in Transit VNet, skip this section. 
+
+Building Azure ExpressRoute is customer's responsibility. For more information about Azure ExpressRoute, please check out the below documents:
 
   - Refer to `Azure ExpressRoute <https://azure.microsoft.com/en-us/services/expressroute/>`_
 
@@ -56,29 +62,34 @@ Customers using existing Express Route can skip this workflow and move to next s
 
   - Refer to `Equinix ECX Fabric Microsoft Azure ExpressRoute <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-ms-azure.htm>`_ if users select Equinix solution. This is just an example here.
 
-Please adjust the topology depending on your requirements.
+Adjust the topology depending on your requirements.
 
-Step 1.1. Create an ExpressRoute circuit
+Step 1.1 Create an ExpressRoute circuit
 ----------------------------------------
 
-	- Refer to `Tutorial: Create and modify an ExpressRoute circuit <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-circuit-portal-resource-manager>`_
+Refer to `Tutorial: Create and modify an ExpressRoute circuit <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-circuit-portal-resource-manager>`_
 
-Step 1.2. Create Azure private network for an ExpressRoute circuit
+Step 1.2 Create Azure private network for an ExpressRoute circuit
 -------------------------------------------------------------------
 
-	- Refer to `private peering section in Create and modify peering for an ExpressRoute circuit <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-routing-portal-resource-manager>`_
+Refer to `private peering section in Create and modify peering for an ExpressRoute circuit <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-routing-portal-resource-manager>`_
 
-Step 1.3. Create a virtual network gateway for an ExpressRoute circuit
+Step 1.3 Create a VNG in Transit VNet
 ----------------------------------------------------------------------
 
-	- Refer to `Configure a virtual network gateway for ExpressRoute using the Azure portal <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager>`_
+We highly recommend you to use create Azure Transit VNET by utilizing `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VNet option enabled.
 
-Step 1.4. Connect a virtual network to an ExpressRoute circuit
+This step may take up to 45 minutes to complete.
+
+Refer to `Configure a virtual network gateway for ExpressRoute using the Azure portal <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager>`_
+
+
+Step 1.4 Connect a virtual network to an ExpressRoute circuit
 --------------------------------------------------------------
 
-	- Refer to `Connect a virtual network to an ExpressRoute circuit using the portal <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager>`_
+Refer to `Connect a virtual network to an ExpressRoute circuit using the portal <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager>`_
 
-Step 1.5. Check Express Route Circuits - List Routes Table on Azure portal
+Step 1.5 Check ExpressRoute Circuits - List Routes Table on Azure portal
 ---------------------------------------------------------------------------
 
 	- Login Azure Portal
@@ -92,20 +103,12 @@ Step 1.5. Check Express Route Circuits - List Routes Table on Azure portal
 	- Click on the hyperlink "Get route table" to verify routes learned from on-prem
 
 
-Workflow to connect Aviatrix Transit Gateway with Virtual Network Gateway
+Connect Aviatrix Transit Gateway with VNG
 ============================================================================
 
 Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ for the below steps. Please adjust the topology depending on your requirements.
 
-Step 2.1. Deploy VNet for Transit FireNet
-------------------------------------------
-
-	- Create Azure Transit VNET by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VNet option enabled
-
-	- Create Azure Spoke VNET by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
-
-
-Step 2.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
+Step 2.1 Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
 -----------------------------------------------------------------------
 
     - Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in Azure Transit VNET. Insane mode is not required but an optional feature to increase throughput.
@@ -117,23 +120,25 @@ Step 2.2. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
     - (Optional) `Transit FireNet Traffic Inspection Policy <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#manage-transit-firenet-policy>`_
 
 
-Step 2.3. Attach Transit FireNet Gateway with Virtual Network Gateway (VNG)
+Step 2.2 Connect Transit FireNet Gateway with VNG
 ------------------------------------------------------------------------------
+
+This step assumes VNG is already deployed in the Transit VNet. 
 
     - Go to Multi-Cloud Transit -> Step 3 Connect to VGW / External Device / Aviatrix CloudN / Azure VNG
 
     - Select **Azure VNG** radio button
 
-    - Select **Primary Aviatrix Transit Gateway**
+    - Select **Primary Aviatrix Transit Gateway** in the drop down menu. Note if VNG has not been deployed in the Transit VNet, this step cannot complete.
 
-    - VNG Name will populated automatically
+    - VNG Name will populate automatically
 
     - Click **Connect**
 
 |vng_step|
 
 
-Step 2.4. Check Effective routes info on Azure portal
+Step 2.3 Check Effective routes info on Azure portal
 -------------------------------------------------------
 
 	- Login Azure Portal
@@ -149,36 +154,33 @@ Step 2.4. Check Effective routes info on Azure portal
 		|azure_effective_routes_routing_entry|
 
 
-Workflow to connect Aviatrix Transit Gateway with Spokes VNET
+Attach Spoke VNet to Aviatrix Transit Gateway 
 ============================================================================
 
-Step 3.1. Deploy VNet for Aviatrix Spoke Gateway
---------------------------------------------------
+Step 3.1 Deploy Aviatrix Spoke Gateway in Spoke VNet
+--------------------------------------------------------
 
 	- Create Azure VNET for Aviatrix Spoke Gateway by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ or manually deploy it in cloud portal or feel free to use existing virtual network.
 
-Step 3.2. Deploy Spoke Gateway and HA
+Step 3.2 Launch Spoke Gateway and HA
 --------------------------------------
 
 	- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in Azure Spoke VNET. Insane mode is optional.
 
 	- Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 
-Step 3.3. Deploy Azure Native VNET Spoke
---------------------------------------------
+Step 3.3 (Optional) Create Spoke VNet
+---------------------------------------------------
 
-	- Create Azure Spoke VNET for Native Spoke using Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploy it in cloud portal or use your existing virtual network.
+	- If you do not have any Spoke VNet, create one by using Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ or manually do so in Azure portal.
 
 
-Step 3.3. Attach Spoke Gateways to Transit Network
+Step 3.3 Attach Spoke Gateways to Transit Network
 --------------------------------------------------
 
 	- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in Azure
 
     - Follow step `Attach Native Azure VNET to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_azure_native_spokes_workflow.html?highlight=Transit%20Firenet%20Native%20Azure%20Spoke%20workflow#step-3-attach-native-spoke-vnets-to-transit-network>`_ to attach Azure Native VNET Spoke to Aviatrix Transit Gateway.
-
-    .. important::
-        VNET Native Peering is required for Azure Native Spoke as well as for VNET Spoke where Aviatrix Spoke Gateway is deployed in order to advertise Spoke CIDRs to On-Prem
 
 Ready to go!
 ============
