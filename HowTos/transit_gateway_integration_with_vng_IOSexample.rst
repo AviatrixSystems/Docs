@@ -2,9 +2,9 @@
   :description: Transit Gateway integration with ExpressRoute Workflow
   :keywords: Azure ExpressRoute, Aviatrix Transit Gateway integration with ExpressRoute
 
-==================================================================
-Multi-Cloud Transit Integration with Azure VPN Example
-==================================================================
+============================================================================
+Configuration Example for Multi-Cloud Transit Integration Azure VNG VPN 
+============================================================================
 
 This document describes the configuration workflow for the following network diagram.
 
