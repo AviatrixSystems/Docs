@@ -25,22 +25,6 @@ To resolve this issue, upgrade your Controller to the latest software version or
 For GCP Controllers, please monitor the latest release notes for the patch.
 
 
-Field Notice 0015 (2020/12/07)
-----------------------------------
-**Default SMTP Service Down**
-
-Aviatrix is performing maintenance on our default SMTP service. Email alerts are down for older Controller versions. Gateways are not impacted. 
-
-**Who is impacted?**
-Controller with older version before R5.4.1201
-All GCP Controllers
-
-**Resolution**
-To resolve this issue, upgrade your Controller to the latest software version or configure your own SMTP service. Please see instructions:https://docs.aviatrix.com/HowTos/alert_and_email.html?highlight=smtp 
-
-For GCP Controllers, please monitor the latest release notes for the patch.
-
-
 Field Notice 0014 (2020/10/06)
 ----------------------------------
 **Recommended Controller version for enabling Copilot**
