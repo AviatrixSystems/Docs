@@ -48,7 +48,7 @@ deploy Aviatrix Transit Gateways and attach at least one Spoke gateway or one Sp
 
 A Transit FireNet Gateway is an Aviatrix Transit Gateway with FireNet service enabled. 
 
-Starting from Release 6.0, A Aviatrix Spoke can be optionally attached to two Transit FireNet Gateways, one for east-west and north-south traffic inspection, and another for ingress/egress inspections. 
+Starting from Release 6.0, an Aviatrix Spoke can be optionally attached to two Transit FireNet Gateways, one for east-west and north-south traffic inspection, and another for ingress/egress inspections.
 
 1a. Enable Transit FireNet on Aviatrix Transit Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
