@@ -115,9 +115,7 @@ Step 2.1 Deploy Aviatrix Multi-Cloud Transit Gateway and HA in Azure
 
     - Instance size of at least Standard_D5_v2 will be required for `Insane Mode Encryptions <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_ for higher throughput. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance detail.
 
-    - Enable ` Transit FireNet Function <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#enable-transit-firenet-function>`_
-
-    - (Optional) `Transit FireNet Traffic Inspection Policy <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#manage-transit-firenet-policy>`_
+    - Enable `Transit FireNet Function <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#enable-transit-firenet-function>`_
 
 
 Step 2.2 Connect Transit FireNet Gateway with VNG
