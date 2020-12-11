@@ -187,6 +187,8 @@ Ready to go!
 
 Now you should be able to send traffic from cloud to on-prem as well as on-prem to cloud over Azure Express Route.
 
+For FireNet deployment, follow the `Transit FireNet workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html>`_.
+
 
 
 .. |topology_expressroute| image:: transit_gateway_integration_with_expressroute_media/topology_expressroute.png

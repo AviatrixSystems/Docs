@@ -86,6 +86,11 @@ Aviatrix, by default, will alert you if you add a spoke that overlaps with your 
 
 Toggle the switch to **Disabled** to disable overlap checking.
 
+Proxy
+--------
+
+Proxy configuration is available for Release 6.3 and later. It is a global setting that applies to Controller and all gateways. 
+
 .. |imageGrid| image:: advanced_config_media/grid.png
 
 .. disqus::

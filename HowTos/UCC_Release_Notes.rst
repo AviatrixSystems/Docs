@@ -8,7 +8,7 @@ R6.3 (Coming Soon)
 1. Multi-Cloud Transit Network
 --------------------------------
 
-- **Transit in Azure with Express Route** allows you to build an Aviatrix Transit and Transit FirNet solutions while leveraging the native Azure Express Route for on-prem to cloud connectivity and route propagation. One use case is to deploy in an environment where encryption between data center and cloud is not required but using native high performance Express Route is required. Both native Spoke VNet and Aviatrix Spoke gateways are supported as Spoke attachment.  
+- **Transit in Azure with Express Route** allows you to build an Aviatrix Transit and Transit FirNet solutions while leveraging the native Azure Express Route for on-prem to cloud connectivity and route propagation. One use case is to deploy in an environment where encryption between data center and cloud is not required but using native high performance Express Route is required. Both native Spoke VNet and Aviatrix Spoke gateways are supported as Spoke attachment. For configuration workflow, follow the `Multi-cloud Transit Integration with Azure Expressroute workflow <https://docs.aviatrix.com/HowTos/integrate_transit_gateway_with_expressroute.html>`_.
 
 - **Transit BGP over GRE Tunnel** provides alternative tunneling protocol to IPSec when connecting Aviatrix Transit Gateway to on-prem. One use case is to improve performance comparing to using IPSec. Only available in AWS (Azure and GCP do not support GRE)
 
