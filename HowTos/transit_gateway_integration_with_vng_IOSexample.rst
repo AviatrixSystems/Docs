@@ -6,32 +6,6 @@
 Multi-Cloud Transit Integration with Azure VPN Example
 ==================================================================
 
-Introduction
-============
-
-Currently, Aviatrix Multi-cloud Transit solution requires encryption over Azure ExpressRoute or External Device to on-prem directly.
-There are times where encryption is not required and native network connectivity on ExpressRoute is highly desirable.
-In such scenarios, Aviatrix transit solution including Transit FirNet can only forward traffic between Spoke VNets or inspect east-west traffic only, as shown `here <https://docs.aviatrix.com/HowTos/azure_transit_designs.html#aviatrix-transit-gateway-for-azure-spoke-to-spoke-connectivity>`_.
-
-This feature allows Aviatrix Multi-cloud Transit solution to integrate with native Azure Virtual Network Gateway (VNG) and enables
-Aviatrix Transit Gateway to inspect traffic from on-prem to cloud in addition to east-west and egress traffic inspection. Both
-native Spoke VNet and Aviatrix Spoke gateway based Spoke VNets are supported.
-
-
-The key ideas for this solution are:
--------------------------------------
-
-    - The edge (WAN) router runs a BGP session to Azure VNG via Azure ExpressRoute or VPN where the edge router advertises to the Azure VNG the on-prem routes and the VNG advertises the Spoke VNet CIDRs.
-
-    - Aviatrix Controller periodically retrieves route entries from the Transit VNet VNG route table advertised from on-prem. The Controller then distributes these routes to Spoke VNet and Aviatrix Transit Gateway.
-
-    - Azure native VNet Peering is configured between each Spoke VNet and Transit VNet VNG  with `Allow Remote Gateway` attribute configured on the Spoke VNet to automatically advertise routes from Spoke VNet to VNG and to On-prem.
-
-    - Traffic coming from on-prem to VNG is routed to Azure load balancer which then forwards traffic to both Aviatrix Transit Gateway for Active-mesh deployment. The same load balancer is also used to distribute traffic to firewalls for inspection.
-
-    - Traffic coming from Spoke VNet is routed to Aviatrix Transit Gateway directly which then forwards the traffic to Azure load balancer. Future release will support Active-mesh in the this direction of traffic.
-
-
 This document describes the configuration workflow for the following network diagram.
 
 |vpn_topology|
