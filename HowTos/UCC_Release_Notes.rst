@@ -38,6 +38,12 @@ R6.3 (Coming Soon)
 
 - **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. 
 
+R6.2.1925 (12/12/2020)
+========================
+
+- **Enhancement** Execute all Azure Spoke VNet programming in parallel. The scope of the enhancement includes individual route entry update and multiple VNet route tables update. The result is a significant reduction in Spoke attachment time and certain failover convergence time. 
+- **Enhancement** Improve Controller daemon process robustness.  
+
 R6.2.1914 (12/04/2020)
 ========================
 
