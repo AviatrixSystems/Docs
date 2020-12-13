@@ -33,7 +33,7 @@ Preparation
 The Controller VPC should have public subnet and its associated route table for the Helper Controller and UserVPN gateway. 
 It should also have private subnet and its associate route table for OOB Controller. 
 
-The `Emulate on prem VPC` is an VPC that emulate on-prem environment. 
+The `Emulate on prem VPC` is a VPC that emulate on-prem environment. 
 
 1. Launch the Helper Controller
 ---------------------------------
