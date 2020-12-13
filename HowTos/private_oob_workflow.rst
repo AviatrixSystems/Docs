@@ -33,8 +33,8 @@ document for the workflow in sections 1, 2, 3 and 4 described below.
 
 Use a published CloudFormation script to launch the Controller on a **private subnet**. 
 
-2.1 
-~~~~~
+2.1 Launch OOB Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As an example, launch the `Aviatrix Secure Networking Platform Metered - 24x7 Support` product. Click the link below.
 
@@ -43,19 +43,20 @@ As an example, launch the `Aviatrix Secure Networking Platform Metered - 24x7 Su
 Select a private subnet (instead of a public subnet as displayed in the CFT stack launch parameter) to create a CFT stack. 
 When it is completed, a Controller instance is launched. 
 
-2.2 
-~~~~~
+2.2 Release EIP
+~~~~~~~~~~~~~~~~~
+
 An EIP is associated with the Controller instance as a result of stack creation, 
 login to the AWS Console to disassociate the EIP as it is not needed. 
 
-2.3 
-~~~~
+2.3 Access OOB Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Login to the Controller web console by connecting to its private IP address over HTTPS. 
 `https://controller-private-ip-address` 
 
-2.4 
-~~~
+2.4 Download the latest software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go through the initial setup steps to download the latest Controller software. 
 

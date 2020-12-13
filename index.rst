@@ -115,6 +115,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Setup_Transit_Network_Terraform
    HowTos/migrate_tgw_orchestrator_to_aviatrix_transit
    HowTos/integrate_transit_gateway_with_expressroute
+   HowTos/private_oob_workflow
 
 .. _Transit Gateway Orchestrator:
 
