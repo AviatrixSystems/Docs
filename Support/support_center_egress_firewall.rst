@@ -25,6 +25,13 @@ The policies for 80/443 are executed first followed by the other policies.
 FQDN takes precedence over Stateful Firewall.
 
 
+What is the egress FQDN rules limit?
+----------------------------------------------------------------------------
+
+1. From 6.2.1914 onwards, one egress FQDN tag can have up to 1500 NFQ rules. 
+2. NFQ rules are the rules containing TCP port 80/443 and the limit is reached if the total number of rules containing TCP port 80/443 is 1500. Other ports like 21,22 are not counted under NFQ rules
+3. You can have multiple tags in an egress FQDN filter. However, the limit of 1500 is applicable to total number of NFQ rules across multiple tags per gateway
+
 
 How can I overcome the character limit in API and Terraform while adding a lot of FQDN Rules for a FQDN Egress Control Tag?
 --------------------------------------------------------------------------------------------------------------------------------------------------------
