@@ -13,6 +13,13 @@ For background information, refer to the `TGW Orchestrator FAQ <https://docs.avi
 
 Before you show list, you must have at least completed some `TGW Build  <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ in Build page. 
 
+TGW
+------
+
+TGW lists the TGWs created by the Controller. 
+
+TGW lists also allows you to select a FireNet Inspection Mode. 
+
 TGW Attachments
 -------------------------------------------
 
@@ -105,6 +112,12 @@ Edit Intra Domain Inspection
 By default, traffic between VPCs in the same Security Domain does not get inspected by firewalls in the FireNet deployment. 
 
 This feature allows you to enable firewall inspection for traffic within one Security Domain. 
+
+Enable Edge Inspection
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This option applies to connection-based inspection mode. When connection-based inspection is enabled, use this option to enable Egress
+inspection for a specific domain. 
 
 
 

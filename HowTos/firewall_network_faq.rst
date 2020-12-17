@@ -96,7 +96,7 @@ to deploy a firewall for certain VPCs. FireNet provides the network solution tha
 
  1. Deploy the Aviatrix FireNet in a special Security Domain with a Firewall Domain attribute. 
  #. If a Security Domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC member in that Security Domain will first be forwarded to the Firewall for inspection. In other words, the connection policy specifies which domain (or a group of VPCs) will be inspected by the firewall. 
- #. VPC to VPC traffic in the same Security Domain is not inspected. 
+ #. Alternatively, starting in Release 6.3 you can specify inspection based on pairs of Connection Policies.  
 
 What are the use cases for FireNet?
 -------------------------------------
@@ -332,6 +332,10 @@ What are the integration points with Fortinet firewall?
     Currently there is no API integration to automatically populate Fortinet route table entries. Customer needs to configure these entries. We recommend you to configure the 3 RFC 1918 routes to point to the firewall LAN interface. For FireNet deployment, the RFC 1918 routes should point to the LAN interface subnet cloud provider's default gateways. For Transit FireNet deployment, the RFC 1918 routes should point to the FireNet gateway LAN interface IP, as shown in this `example. <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#configure-fortigate-next-generation-firewall-port1-with-wan>`_.  
     
 
+What is Intra Domain inspection?
+---------------------------------
+
+Intra Domain inspection allows traffic between VPCs in the same Security Domain to be redirected to Firewall Domain for inspection before reaching to the destination.
 
 
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png

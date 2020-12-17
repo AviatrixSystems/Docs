@@ -312,38 +312,48 @@ Attach                                          Attach this FQDN gateway to the 
 There are two inspection modes, one is Domain based inspection which is the default and the other is Connection Policy based inspection. 
 The Connection Policy based inspection mode (connection based inspection) is available in Release 6.3 and later. 
 
-8a. Domain based inspection
+8a. Domain-based inspection
 ###############################
 
-In domain based inspection, to specify a Spoke VPC that needs inspection is to define a connection policy of the Security Domain, where the  Spoke VPC is a member, 
+In domain-based inspection, to specify a Spoke VPC that needs inspection is to define a connection policy of the Security Domain, where the  Spoke VPC is a member, 
 to the Firewall Domain.
 
 For example, if you wish to inspect traffic between on-prem to VPC, connect Aviatrix Edge Domain to the 
 Firewall Domain. This means on-prem traffic to any Spoke VPC is routed to the firewall first and then it is forwarded
 to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-prem is routed to the firewall first and then forwarded to on-prem. 
 
-8b. Connection based inspection
+8b. Connection-based inspection
 #################################
 
-Starting from Release 6.3, connection based inspection is supported. Connection based inspection allows you to inspect traffic going
+connection-based inspection is available from Release 6.3 and later. Connection-based inspection allows you to inspect traffic going
 across a specific pair of Security Domains. For example, Domain A has connection policy to Domain B and Domain C, you can specify to
 inspect traffic between Domain A and Domain B, but not Domain A and Domain C. This inspection mode reduces the amount of traffic being 
 inspected and reduces the instances size requirements on both FireNet gateways and firewalls. 
 
+.. note::
+
+  Connection-based inspection is not applicable to `intra-domain inspection <https://docs.aviatrix.com/HowTos/tgw_list.html#edit-intra-domain-inspection>`_ where all VPC to VPC traffic in the same domain is inspected. 
+
 Here are the steps to enable and configure connection based inspection. 
 
-Step 1. Enable Connection Based Inspection
+Step 1. Enable Connection-Based Inspection
 *********************************************
 
 Go to Controller -> TGW Orchestrator -> List. Click TGW, select one TGW, click Action -> Edit Inspection Mode. Select Connection-based, click Update. 
 
-Step 2. Configure Inspection
-*******************************
+Step 2. Configure East-West Inspection
+******************************************
 
 Go to Controller -> TGW Orchestrator -> List. Click Connection which displays all Connection Policies in rows. Select on Connection Policy, 
 click Action -> Enable Inspection. In the pop up drop down menu, select a FireNet gateway to associate the Connection Policy with. 
 
 Repeat this step for other Connection Policies. 
+
+Step 3. Configure Egress Inspection
+*************************************
+
+Go to Controller -> TGW Orchestrator -> List. Click Security Domains which displays all Security Domains configured on the TGW. 
+Select on domain, click Action -> Enable Egress Inspection.
 
 Done. 
 
