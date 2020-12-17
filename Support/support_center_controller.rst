@@ -495,3 +495,12 @@ Upgrading Aviatrix Controller on GCloud Project beyond 5.3 with old Controller I
 11. Re-login and check all the gateways, s2c tunnels and peerings are up and healthy. Compare the numbers on the dashboard page with the screenshot you take from step1.
 
 12. Upgrade new controller to latest 5.4 or above verion.
+
+How to attach SSL certificate with Aviatrix VPN gateway NLB?
+------------------------------------------------------------------------------------------
+
+In our implementation NLB does not terminate the SSL connection. NLB only forwards the TCP connection(like SNAT). The SSL/TCP termination happens on the gateways itself.
+ 
+Openvpn have their own custom implementation of SSL and the traffic underneath is not HTTP. Moreover, we also use client certificate authentication(which AWS load balancers don’t support) and openvpn server certificates have different key usage attributes than the ones generated via ACM.
+ 
+So, it would not be compatible with the new secure(TCP) load balancer protocol for AWS NLB.
