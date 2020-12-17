@@ -18,7 +18,7 @@ R6.3 (Coming Soon)
 
 - **Transit Approval per BGP Connection** expands the existing Aviatrix Transit Gateway based Transit Approval feature to apply it to each on-prem BGP connection for fine grain control of network CIDRs admitted to the cloud network. 
 
-- **Private Transit Gateway Peering without Insane Mode** expands the existing Insane Mode Transit Gateway Peering Over Private Network to apply it to single IPSec tunnel. One use case is for low speed encryption between cloud networks. 
+- **Private Transit Gateway Peering with Single-Tunnel Mode** expands the existing Insane Mode Transit Gateway Peering Over Private Network to apply it to single IPSec tunnel. One use case is for low speed encryption between cloud networks. 
 
 - **Transit to External Device Using IKEv2** provides an option to run IKEv2 with the on-prem site. 
 
