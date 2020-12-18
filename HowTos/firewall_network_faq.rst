@@ -95,8 +95,8 @@ There are situations where additional security measures such as packet inspectio
 to deploy a firewall for certain VPCs. FireNet provides the network solution that simplifies firewall deployment and scale. 
 
  1. Deploy the Aviatrix FireNet in a special Security Domain with a Firewall Domain attribute. 
- #. If a Security Domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC member in that Security Domain will first be forwarded to the Firewall for inspection. In other words, the connection policy specifies which domain (or a group of VPCs) will be inspected by the firewall. 
- #. Alternatively, starting in Release 6.3 you can specify inspection based on pairs of Connection Policies.  
+ #. If a Security Domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC member in that Security Domain will first be forwarded to the Firewall for inspection. In other words, the connection policy specifies which domain (or a group of VPCs) will be inspected by the firewall. See `Domain-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-domain-based-inspection>`_. 
+ #. Alternatively, starting in Release 6.3 you can specify inspection based on pairs of Connection Policies. See `Connection-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#b-connection-based-inspection>`_.  
 
 What are the use cases for FireNet?
 -------------------------------------
@@ -116,8 +116,6 @@ domain to the firewall domain.
 
 What are the limitations of FireNet?
 -------------------------------------
-
-In Release 4.3, FireNet only supports the AWS Transit Gateway (TGW) deployment scenario. It does not support the encrypted transit deployment scenario. 
 
 You can have multiple Firewall Domains. However a Security Domain cannot be connected to two 
 Firewall Domains except the case when one is for Ingress/Egress and another is for East-West and North-South inspection.

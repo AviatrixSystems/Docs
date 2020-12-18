@@ -76,7 +76,7 @@ AWS native service VGW is used to build the IPSEC tunnel. Follow the instruction
 Make sure to specify:
   
    a. When configuring VGN Site-to-Site VPN connection, enter 0.0.0.0/0 for the Static IP Prefix field. 
-   #. When configuring site2clud on the on-prem gateway, enter 0.0.0.0/0 for the Local Subnet field. Enter the Controller VPC CIDR (172.32.0.0/16 as in this example) for the Remote Subnet field. 
+   #. When configuring site2cloud on the on-prem gateway, enter 0.0.0.0/0 for the Local Subnet field. Enter the Controller VPC CIDR (172.32.0.0/16 as in this example) for the Remote Subnet field. 
 
 6. Launch OOB Controller
 --------------------------

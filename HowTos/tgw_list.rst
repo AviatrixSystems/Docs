@@ -119,6 +119,29 @@ Enable Edge Inspection
 This option applies to connection-based inspection mode. When connection-based inspection is enabled, use this option to enable Egress
 inspection for a specific domain. 
 
+TGW Connection
+----------------
+
+TGW -> List -> Connection lists all Connection Policies. Each Connection Policy is represented by two rows. 
+Each row represents one Connection Policy in one direction. 
+
+Enable Inspection
+~~~~~~~~~~~~~~~~~~~
+
+This configuration is to specify an inspection rule for connection-based mode. 
+
+Select one Connection Policy row by clicking on the row. Then click Actions -> Enable Inspection. In the pop up drop down menu, select the 
+firewall domain to associate. Click Update. The reverse direction is automatically configured. 
+
+Disable Inspection
+~~~~~~~~~~~~~~~~~~~
+
+This configuration is to disable an inspection rule for connection-based mode. Disable Inspection is only available for an inspection rule
+if it is already enabled. 
+
+Select one Connection Policy row by clicking on the row. Then click Actions -> Disable Inspection. In the pop up drop down menu, select the
+firewall domain to disassociate. Click Update. The reverse direction is automatically configured.
+
 
 
 

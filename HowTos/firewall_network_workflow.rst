@@ -325,7 +325,7 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
 8b. Connection-based inspection
 #################################
 
-connection-based inspection is available from Release 6.3 and later. Connection-based inspection allows you to inspect traffic going
+Connection-based inspection is available from Release 6.3 and later. Connection-based inspection allows you to inspect traffic going
 across a specific pair of Security Domains. For example, Domain A has connection policy to Domain B and Domain C, you can specify to
 inspect traffic between Domain A and Domain B, but not Domain A and Domain C. This inspection mode reduces the amount of traffic being 
 inspected and reduces the instances size requirements on both FireNet gateways and firewalls. 
