@@ -325,6 +325,8 @@ to the destination Spoke VPC. Conversely, any Spoke VPC traffic destined to on-p
 8b. Connection-based inspection
 #################################
 
+Connection-based inspection only applies to TGW based Transit solution. 
+
 Connection-based inspection is available from Release 6.3 and later. Connection-based inspection allows you to inspect traffic going
 across a specific pair of Security Domains. For example, Domain A has connection policy to Domain B and Domain C, you can specify to
 inspect traffic between Domain A and Domain B, but not Domain A and Domain C. This inspection mode reduces the amount of traffic being 
@@ -344,16 +346,22 @@ Go to Controller -> TGW Orchestrator -> List. Click TGW, select one TGW, click A
 Step 2. Configure East-West Inspection
 ******************************************
 
+`A firewall security domain <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#create-a-firewall-domain>`_ must be created first before configuring east-west inspection. 
+
 Go to Controller -> TGW Orchestrator -> List. Click Connection which displays all Connection Policies in rows. Select on Connection Policy, 
-click Action -> Enable Inspection. In the pop up drop down menu, select a FireNet gateway to associate the Connection Policy with. 
+click Action -> Enable Inspection. In the pop up drop down menu, select a firewall domain to associate the Connection Policy with. 
+Click Update. 
 
 Repeat this step for other Connection Policies. 
 
 Step 3. Configure Egress Inspection
 *************************************
 
+The Firewall Domain must have `Egress Inspection <https://docs.aviatrix.com/HowTos/firewall_advanced.html#egress-through-firewall>`_ enabled before configuring Egress Inspection. 
+
 Go to Controller -> TGW Orchestrator -> List. Click Security Domains which displays all Security Domains configured on the TGW. 
-Select on domain, click Action -> Enable Egress Inspection.
+Select one domain, click Action -> Enable Egress Inspection. In the pop up drop down menu, select a firewall domain to 
+associate the domain with.  Click Update.
 
 Done. 
 
