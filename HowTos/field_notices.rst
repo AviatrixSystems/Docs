@@ -6,6 +6,33 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
  
+Field Notice 0016 (2020/12/22)
+----------------------------------
+**EOL update for release 5.3 and older**
+
+This Field Notice is a follow up to an earlier Field Notice 0012 we published in August 2020 on Security vulnerabilities in R5.3 and older and our recommendation to upgrade.
+
+**Support for R5.3 or earlier will end on January 31st , 2021**
+
+Aviatrix has decided to extend the date to January 31st, 2021 to aid any customers who are unable to upgrade to release 5.4 or newer due to the upcoming holiday / freeze period.
+
+Please refer back to Field Notice 0012 for detailed instructions on how to upgrade.
+
+On January 31st, 2021, as a security measure, Aviatrix will change credentials on our auth server. This applies to ALL customers and will have no impact to customers who are on release 5.4 and newer. 
+
+**What is the impact if customer remains on R5.3 or older code on/after Jan 31st  2021:**
+
+a. Customer will be unable to send logs to support
+
+b. Customer cannot enable Remote SSH support option and send diagnostics to support
+
+c. Customer will be unable to get the latest default SMTP credential for Controller to send Alerts
+
+d. Customer will not be able to get assistance from Aviatrix Support on EOL code
+
+**Recommendation:** Please follow guidance specified in Field Notice 0012 and upgrade immediately.
+
+ 
 Field Notice 0015 (2020/12/07)
 ----------------------------------
 **Default SMTP Service Down**
