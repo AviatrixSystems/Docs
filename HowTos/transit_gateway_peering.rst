@@ -35,6 +35,8 @@ Go to Transit Network -> Transit Peering -> Add New.
 
 Select one of each Transit Gateway and click OK. 
 
+There are a few optional and advanced options as described below. 
+
 Excluded Network CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -83,7 +85,7 @@ and Site-2 accesses Prod-3/Prod-4 and Dev-3/Dev-4 via its local regional TGW.
 Peering over Private Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This advanced option only applies to when the two Multi-cloud Transit Gateways is each launched in Insane Mode 
+This advanced option only appears and applies to when the two Multi-cloud Transit Gateways is each launched in Insane Mode 
 and each is in a different cloud type. For example, one Multi-cloud Transit Gateway in AWS and the other in Azure. 
 
 Peering over Private Network function is an optional field. When this checkbox is checked, users are able to build Aviatrix Transit Gateway peering over multi-cloud where there is private network connectivity.
@@ -95,7 +97,7 @@ For example configuration workflow, check out this doc `Aviatrix Transit Gateway
 Single-tunnel mode
 ^^^^^^^^^^^^^^^^^^^^^
 
-This advanced option only applies to This advanced option only applies to when the 
+This advanced option only appears and applies to when the 
 two Multi-cloud Transit Gateways is each launched in Insane Mode
 and each is in a different cloud type. For example, one Multi-cloud Transit Gateway in AWS and the other in Azure.
 
