@@ -42,7 +42,8 @@ The steps are documented in detail below.
 
 9.  Repeat steps 5 through 8 for all spokes
 
-10. You can go to "Controller/Gateway" and select your old Transit and Transit-HA gateways and delete them
+10. Prior to Deleteing the old gateways please go to Multi Cloud Network >> Advanced and select the old gateway from the drop down. Make sure that the option Advertise Transit VPC CIDR is disabled. Once this is verified you can go to "Controller/Gateway" and select your old Transit and Transit-HA gateways and delete them.
+
 11. Please check your network routes and connectivity and open a ticket if you run into any issues, by sending an email to support@aviatrix.com
 
 
