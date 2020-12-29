@@ -64,7 +64,8 @@ The key ideas for this solution are:
 Prerequisite
 ====================
 
-First of all, `upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.2
+This feature is available for 6.2 and later. 
+`Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.2
   
 In this example, we are going to deploy the below VPCs in AWS and Azure
 
@@ -239,11 +240,13 @@ Step 3.7. Establish Transit Gateway Peering over Private Network
 	
 	- Click the button "+ADD NEW"
 	
-	- Enable the checkbox "Peering over Private Network"
-	
 	- Select "AWS Transit Gateway" as Transit Gateway1
 	
 	- Select "Azure Transit Gateway" as Transit Gateway2
+
+	- Under Advanced options, check the option "Peering over Private Network"
+
+        - (Optional) Under Advanced options, check the option `Single-Tunnel mode` if the underlying network is low speed (up to 4Gbps) 
 	
 	- Click the button "OK"
 	

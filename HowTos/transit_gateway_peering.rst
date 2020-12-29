@@ -35,15 +35,6 @@ Go to Transit Network -> Transit Peering -> Add New.
 
 Select one of each Transit Gateway and click OK. 
 
-Peering over Private Network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Peering over Private Network function is an optional field. When this checkbox is checked, users are able to build Aviatrix Transit Gateway peering over multi-cloud where there is private network connectivity.
-
-One of the use cases is two Aviatrix Transit Gateways deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
-
-For example configuration workflow, check out this doc `Aviatrix Transit Gateway Peering over Private Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
-
 Excluded Network CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -88,6 +79,34 @@ exclude 10.0.0.0/8. With this configuration, Site-1 still accesses Prod-1/Prod-2
 and Site-2 accesses Prod-3/Prod-4 and Dev-3/Dev-4 via its local regional TGW. 
 
 |excluded_tgw_connections|
+
+Peering over Private Network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This advanced option only applies to when the two Multi-cloud Transit Gateways is each launched in Insane Mode 
+and each is in a different cloud type. For example, one Multi-cloud Transit Gateway in AWS and the other in Azure. 
+
+Peering over Private Network function is an optional field. When this checkbox is checked, users are able to build Aviatrix Transit Gateway peering over multi-cloud where there is private network connectivity.
+
+One of the use cases is two Aviatrix Transit Gateways deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
+
+For example configuration workflow, check out this doc `Aviatrix Transit Gateway Peering over Private Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
+
+Single-tunnel mode
+^^^^^^^^^^^^^^^^^^^^^
+
+This advanced option only applies to This advanced option only applies to when the 
+two Multi-cloud Transit Gateways is each launched in Insane Mode
+and each is in a different cloud type. For example, one Multi-cloud Transit Gateway in AWS and the other in Azure.
+
+When this option is selected, instead of building up to 50 IPSec tunnels (as in Insane Mode) between the 
+two Multi-cloud Transit Gateways, 
+only a single tunnel connection is established. One use case is if the underlying private network is a low speed 
+(up to 4Gbps) link across the two cloud types. By using the Single-Tunnel mode, you do not pay the Insane Mode 
+license charges. Note when the Multi-cloud Transit Gateways enable HA on both cloud types, the aggregate 
+throughput via Single-Tunnel mode can reach 4Gbps. 
+
+
 
 Default Route Propagation Behavior
 -------------------------------------
