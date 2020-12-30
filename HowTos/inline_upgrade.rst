@@ -21,17 +21,17 @@ Pre-upgrade Checklist:
 
 Here are a few steps that we suggest you go through before the actual upgrade. If you are scheduling the upgrade during a maintenance window, you can execute these before the maintenance window, so you can make best use of your downtime.
 
-#. Please check our `pre-operations checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ before any operations on your controller
-#. Ensure that all gateways are in green/up status. If not, please check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions
+#. Check `pre-operations checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ before any operations on your controller.
+#. Ensure that all gateways are in green/up status. If not, check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions.
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
 #. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com.
-#. Please make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process
-#. Please make a backup and check the S3 bucket to make sure the process was successful. If you don't have backup enabled, please follow the `backup instructions <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ to enable it.
-#. If your controller is in AWS and running on a t2/t3 instance type, please make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"
-#. Please make sure that your controller has DNS service available and has public network access - you can verify that by pinging www.google.com at "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility". This is a requirement for upgrade and for the controller to function as designed.
-#. Please run  account audit for all your AWS accounts from "Controller/Accounts/AccountAudit" - please make sure that all of them pass. The IAM policies should be setup as documented. If you have any issues, please look at our `troubleshooting playbooks <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_overview.html>`_
-#. Please make sure that your account has elevated permissions to launch host instances where such operations may become necessary.
-#. Our Controller AMI's are periodically upgraded. If you would like to upgrade your AMI, please follow the links listed below.
+#. Make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process.
+#. Do a backup and check the S3 bucket to make sure the process was successful. If you don't have backup enabled, please follow the `backup instructions <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ to enable it.
+#. If your controller is in AWS and running on a t2/t3 instance type, make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"
+#. Make sure that your controller has DNS service available and has public network access - you can verify that by pinging www.google.com at "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility". This is a requirement for upgrade and for the controller to function as designed.
+#. Run  account audit for all your AWS accounts from "Controller/Accounts/AccountAudit" - please make sure that all of them pass. The IAM policies should be setup as documented. If you have any issues, please look at our `troubleshooting playbooks <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_overview.html>`_
+#. Make sure that your account has elevated permissions to launch host instances where such operations may become necessary.
+#. New Controller AMIs are published over time. If you would like to upgrade your AMI, please follow the links listed below.
     * In release 5.3, we introduced a feature to upgrade the AMI of the controller from within the UI, for AWS.
     * If your Controller is on 5.2 or older release or if your controller is in Azure or GCP, you would have to migrate your Controller manually.
     * Release 5.4 requires that your Controller be running on an 1804 based AMI. If your Controller is running an older 1404 AMI you would have to first migrate your controller before upgrading to 5.4
