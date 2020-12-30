@@ -125,6 +125,34 @@ AWS S3 allows uploaded backup files to be encrypted in the server side for more 
 
     |KMSKeyAddUser|
 
+How to backup Controller configuration privately with Azure Private Link
+------------------------------------------------------------------------
+
+Azure Private Link enables you to access Azure PaaS Services (for example, Azure Storage and SQL Database) and Azure hosted customer-owned/partner services over a private endpoint in your virtual network. Traffic between your virtual network and the service travels the Microsoft backbone network. Exposing your service to the public internet is no longer necessary.
+
+By leveraging Azure private link, the controller backups will happen privately from your VNET so that your blob storage account does not need to be exposed to the outside world.
+
+1. Create an Azure Storage Account
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    |AzureStorage|
+
+2. Setup the Storage Account for Private Link
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    a. On the 'Networking' tab for the storage account creation, select Private endpoint for the connectivity method.
+
+    b. Add a new private endpoint with the target of the blob storage resource and enable DNS Integration
+
+    |AzurePrivateEndpoint|
+
+.. note::
+
+   If you currently have exisisting private endpoints deployed, you may need to leverage an existing private zone in another subsciption.  This must be completed through the dedicated private endpoint creation workflow.  For additional assistance with this setup please reach out to an Aviatrix Solution Engineer for assistance.
+
+3. Verify Backup through Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Once successful, backup traffic from the controller will be performed privately across private link so that associated storage account does not need to be accessible publicly.
+
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |imageBackupAWS| image::  controller_backup_media/backup_restore_backup_aws.png
@@ -143,6 +171,12 @@ OpenVPN is a registered trademark of OpenVPN Inc.
       :scale: 30%
       :align: middle
 .. |KMSKeyAddUser| image:: controller_backup_media/KMSKeyAddUser.png
+      :scale: 30%
+      :align: middle
+.. |AzureStorage| image: controller_backup_media/AzureStorage.png
+      :scale: 30%
+      :align: middle
+.. |AzurePrivateEndpoint| image: controller_backup_media/AzurePrivateEndpoint.png
       :scale: 30%
       :align: middle
 
