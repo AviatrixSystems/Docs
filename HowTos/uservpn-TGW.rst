@@ -19,7 +19,7 @@ The first step is to create a TGW from the Aviatrix Controller.
     b. Navigate to the TGW Orchestrator tab on the left side of the screen and click "Plan".
     
 
-    c. Next, select your cloud type. In this case it is AWS. Fill in the reamining information, name the TGW, and hit create.
+    c. Next, select your cloud type. In this case it is AWS. Fill in the remaining information, name the TGW, and hit create.
 
 |createTGW|
 
@@ -58,7 +58,7 @@ Now we have allowed both the Dev and Prod Domains to connect to the Shared Servi
 
 4. Attach VPCs to TGW
 ----------------------
-The next step is to attach your existing VPCs to the Transist Gateway (TGW) created in Step 1. 
+The next step is to attach your existing VPCs to the Transit Gateway (TGW) created in Step 1. 
 
 To perform this, navigate in the Aviatrix Controller to the "Build" section under the TGW Orchestrator tab.
 In section 1 "Attach VPC to TGW" 
