@@ -53,12 +53,12 @@ Example 2 One TGW VPN requires approval and another one does not
 
 |tgw_vpn_different_domains|
 
-In the second example, TGW VPN2 link 10.9.0.0/24 is in a different domain and does not require
+In the second example, TGW VPN2 link 10.10.9.0/24 is in a different domain and does not require
 approval. Its route  is propagated to the Spoke TGW route table, 
-while TGW VPN1 link 10.1.0.0/24 is statically 
+while TGW VPN1 link 10.10.1.0/24 is statically 
 programmed to Spoke TGW route table after approval is initiated by the customer. 
 
-Note in the second example, if TGW VPN2 link advertises the same network CIDR 10.1.0.0/24, this CIDR will be propagated first and TGW VPN1 approval request will be rejected and the CIDR 10.1.0.0/24 from 
+Note in the second example, if TGW VPN2 link advertises the same network CIDR 10.10.1.0/24, this CIDR will be propagated first and TGW VPN1 approval request will be rejected and the CIDR 10.10.1.0/24 from 
 TGW VPN1 remains in the approval pending list. 
 
 .. |tgw_approval| image:: tgw_overview_media/tgw_approval.png
