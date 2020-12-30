@@ -114,7 +114,7 @@ What is a Security Domain?
 
 A Security Domain is an Aviatrix enforced network of VPC members, where VPCs in the Security Domain can communicate with each other, and VPCs not in the security domain cannot communicate with VPCs in the Security Domain.
 
-An Aviatrix Security Domain is an abstraction builds upon the AWS Transit Gateway route table concept. One or more Spoke VPCs are members in  
+An Aviatrix Security Domain is an abstraction that builds upon the AWS Transit Gateway route table concept. One or more Spoke VPCs are members in  
 a security domain.
 
 |security_domain|
