@@ -73,6 +73,14 @@ Standard_D5_v2            20.56Gbps
 3. GCP Performance Test Results
 --------------------------------
 
+Topology is shown below where the test is performed with the following conditions:
+
+    - VM <-> Spoke <-> Transit <-> Spoke <-> VM
+    - HA enabled
+    - HPE mode enabled
+
+|gcp_test_topology|
+
 ====================      ===============================
 **Gateway VM Type**       **Throughput**    
 ====================      ===============================
@@ -82,13 +90,6 @@ n1-highcpu-16             11.58Gbps
 n1-highcpu-32             19.97Gbps                                           
 ====================      ===============================
 
-Topology:
-  
-    - VM <-> Spoke <-> Transit <-> Spoke <-> VM
-    
-    - HA enabled
-    
-    - HPE mode enabled
 
 How to Tune Performance
 --------------------------
@@ -134,6 +135,9 @@ For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~spark
    :scale: 30%
    
 .. |azure_test_topology| image:: insane_mode_perf_media/azure_test_topology.png
+   :scale: 30%
+
+.. |gcp_test_topology| image:: insane_mode_perf_media/gcp_test_topology.png
    :scale: 30%
 
 .. |single_gateway_350B| image:: insane_mode_perf_media/single_gateway_350B.png
