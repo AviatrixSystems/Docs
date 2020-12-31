@@ -19,7 +19,7 @@ Jumbo frames are deployed (the default setting for AWS instances). The test benc
 where no Aviatrix gateways
 are deployed in the VPCs. Adding 500 stateful firewall rules have little impact to the performance. 
 
-Below is the test topologies.
+Below are the test topologies.
 
 |test_topologies|
 
