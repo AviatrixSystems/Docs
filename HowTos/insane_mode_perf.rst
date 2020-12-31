@@ -11,38 +11,35 @@ This document publishes Aviatrix ActiveMesh Insane Mode encryption performance t
 
 For more information on Aviatrix Insane Mode, check out `this link. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
-Test Result Summary
---------------------------
+1. AWS Performance Test Results
+----------------------------------------------
 
 Aviatrix High Performance Encryption (HPE), also known as ActiveMesh Insane Mode, achieves line rate performance with encryption in AWS when 
 Jumbo frames are deployed (the default setting for AWS instances). The test benchmark baseline is the native AWS peering  
 where no Aviatrix gateways
 are deployed in the VPCs. Adding 500 stateful firewall rules have little impact to the performance. 
 
-Insane Mode Performance Test Topologies
----------------------------------------------------
-
+Below is the test topologies.
 
 |test_topologies|
 
-The test is conducted by iperf3 tool with TCP 128 streams. The two VPCs are in the same region. 
+The test is conducted by using iperf3 tool with TCP 128 streams. The two VPCs are in the same region. 
 
 
-ActiveMesh in AWS Performance Test Results
-----------------------------------------------
-
-1. MTU = 9000 Bytes (AWS default setting)
+MTU = 9000 Bytes (AWS default setting)
 ============================================
 
 |jumbo|
 
-2. MTU = 1500 Bytes 
+MTU = 1500 Bytes 
 ===========================================================================================
 
 |1500|
 
 Single Gateway in AWS Performance Test Results
---------------------------------------------------
+===================================================
+
+This test is done without HA enabled in either Spoke or Transit gateways. The traffic is end-to-end from user instance -> spoke gateway -> Multi-cloud Transit Gateway -> spoke gateway -> instance. 
 
 For MTU = 9000 Bytes, the result is shown in the diagram below. 
 
@@ -53,12 +50,16 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 |single_gateway_350B|
 
 
-Azure Performance Test Results
---------------------------------
+2. Azure Performance Test Results
+------------------------------------
 
 The performance results below are from tests conducted with the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
 region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke gateways
 or HA Spoke gateways to take advantage of the active-mesh deployment. 
+
+The test topology is shown as below. 
+
+|azure_test_topology|
 
 ====================      ===============================
 **Gateway VM Type**       **Throughput with MTU 1500B**    
@@ -69,7 +70,7 @@ Standard_D32_v3           20.47Gbps
 Standard_D5_v2            20.56Gbps                          
 ====================      ===============================
 
-GCP Performance Test Results
+3. GCP Performance Test Results
 --------------------------------
 
 ====================      ===============================
@@ -132,6 +133,9 @@ For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~spark
 .. |test_topologies| image:: insane_mode_perf_media/test_topologies.png
    :scale: 30%
    
+.. |azure_test_topology| image:: insane_mode_perf_media/azure_test_topology.png
+   :scale: 30%
+
 .. |single_gateway_350B| image:: insane_mode_perf_media/single_gateway_350B.png
    :scale: 30%
 
