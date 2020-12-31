@@ -49,6 +49,20 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 
 |single_gateway_350B|
 
+T3 instance series performance
+=================================
+
+==========================      ===============================     ===============================
+**Spoke Gateway**               **Throughput Gbps (MTU 1500B)**     **Throughput Gbsp (MTU 9600B)**
+==========================      ===============================     ===============================
+t3a.xlarge                      6.12                                9.82
+t3a.medium                      2.33                                8.85
+t3a.small                       2.7                                 8.52
+t3.large                        3.34                                9.5
+t3.medium                       3.03                                9.6
+t3.small                        3.35                                9.96
+==========================      ===============================     ===============================
+
 
 2. Azure Performance Test Results
 ------------------------------------
@@ -61,14 +75,14 @@ The test topology is shown as below.
 
 |azure_test_topology|
 
-====================      ===============================
-**Gateway VM Type**       **Throughput with MTU 1500B**    
-====================      ===============================
-Standard_F48s_v2          24.52Gbps                         
-Standard_F32s_v2          21.56Gbps                          
-Standard_D32_v3           20.47Gbps                         
-Standard_D5_v2            20.56Gbps                          
-====================      ===============================
+===========================      ===============================
+**Transit Gateway**              **Throughput with MTU 1500B**    
+===========================      ===============================
+Standard_F48s_v2                 24.52Gbps                         
+Standard_F32s_v2                 21.56Gbps                          
+Standard_D32_v3                  20.47Gbps                         
+Standard_D5_v2                   20.56Gbps                          
+===========================      ===============================
 
 3. GCP Performance Test Results
 --------------------------------
@@ -82,7 +96,7 @@ Topology is shown below where the test is performed with the following condition
 |gcp_test_topology|
 
 ====================      ===============================
-**Gateway VM Type**       **Throughput**    
+**Transit Gateway**       **Throughput**    
 ====================      ===============================
 n1-highcpu-4              3.12Gbps                          
 n1-highcpu-8              6.54Gbps                         
