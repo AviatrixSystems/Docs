@@ -52,7 +52,7 @@ Step 2. Create an Okta SAML App for Aviatrix
    This step is usually done by the Okta Admin.
 
 #. Login to the Okta Admin portal
-#. Follow `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application.
+#. Follow `Okta documentation <https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`__ to create a new application. (Use Okta Classic UI to create the app)
 
    +----------------+----------------+
    | Field          | Value          |
