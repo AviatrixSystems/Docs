@@ -26,7 +26,7 @@ R6.3 (Coming Soon)
 
 - **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. 
 
-- **Improve AWS t3 instances IPSec performance** to up to 6Gbps (MTU 1500 Bytes) for Multi-cloud Transit and Spoke gateway without additional license charge. The mechanism is to allow Insane Mode to be applied the t3 series without charging the Insane Mode license. 
+- **Improve AWS t3 instances IPSec performance** to up to 6Gbps (MTU 1500 Bytes) for Multi-cloud Transit and Spoke gateway without additional license charge. The mechanism is to allow Insane Mode to be applied the t3 series without charging the Insane Mode license. For performance details on t3 series, refer to `t3 series Insane Mode performance <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#t3-instance-series-performance>`_. 
 
 2. FireNet
 =============
