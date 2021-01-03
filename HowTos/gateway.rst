@@ -266,7 +266,7 @@ Enable Client Certificate Sharing
 
 This is disabled by default.
 
-By enabling the client certificate sharing, all VPN users share one .ovpn file. You must have MFA (such as DUO + LDAP) configured to make VPN access secure.
+By enabling the client certificate sharing, all VPN users share one .ovpn file. You must have MFA (such as SAML, DUO + LDAP) configured to make VPN access secure.
 
 
 Enable Duplicate Connections

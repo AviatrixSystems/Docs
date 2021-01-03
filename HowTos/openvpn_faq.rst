@@ -423,9 +423,23 @@ To configure it, go to OpenVPN® -> Advanced -> Global Config -> Minimum Aviatri
 What is Download VPN Cert and Client with SAML?
 -----------------------------------------------
 
-Download VPN Cert and Client with SAML feature allows users to download the ovpn VPN connection cert file and the VPN client installer.
+This feature only applies to VPN client using SAML authentication. 
+
+It allows users to download the ovpn VPN connection cert file and the VPN client installer in a self-service manner.
 
 To configure it, go to OpenVPN® -> Advanced -> Global Config -> Download VPN Cert and Client with SAML to enable/disable this feature.
+
+|client_download|
+
+
+Once enabled, copy the `Download URL` link and send the link to your VPN users. When accessing the
+URL link, a VPN user is redirected to SAML IDP for authentication. Only after authentication, a user
+is allowed to access for VPN software download. 
+
+.. important::
+
+  1. Only one load balancer is supported on a given Controller implying that the system supports a fleet of UserVPN gateways behind one load balancer. 
+  2. `Client Certificate Sharing <https://docs.aviatrix.com/HowTos/gateway.html#enable-client-certificate-sharing>`_ must be enabled for the UserVPN solution implying you must first configure the VPN user on SAML IDP and on the Aviatrix Controller you need to configure only one VPN user. 
 
 OpenVPN® is a registered trademark of OpenVPN Inc.
 
@@ -447,5 +461,8 @@ OpenVPN® is a registered trademark of OpenVPN Inc.
    :scale: 30%
 
 .. |linux_client| image:: openvpn_faq_media/linux_client.png
+   :scale: 30%
+
+.. |client_download| image:: openvpn_faq_media/client_download.png
    :scale: 30%
 .. disqus::
