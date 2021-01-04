@@ -436,6 +436,9 @@ Once enabled, copy the `Download URL` link and send the link to your VPN users. 
 URL link, a VPN user is redirected to SAML IDP for authentication. Only after authentication, a user
 is allowed to access for VPN software download. 
 
+Two files, the Aviatrix VPN client software and the UserVPN certificate (.ovpn file) are downloaded. Install the 
+client package to start the VPN client software and then load the client certificate to connect to the cloud network. 
+
 .. important::
 
   1. Only one load balancer is supported on a given Controller implying that the system supports a fleet of UserVPN gateways behind one load balancer. 
