@@ -455,7 +455,7 @@ Sync to HA Gateway feature is an option to help users automatically duplicating 
 ================================       =======================
 SRC CIDR	                              This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
 SRC PORT                               This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
-DST CIDR                               This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
+DST CIDR                               This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used and a default route 0.0.0.0/0 pointing to Aviatrix Gateway will be programmed into Cloud platform routing table.
 DST PORT                               This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
 PROTOCOL                               This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
 INTERFACE                              This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
@@ -483,7 +483,7 @@ Sync to HA Gateway feature is an option to help users automatically duplicating 
 ================================       =======================
 SRC CIDR                               This is a qualifier condition that specifies a source IP address range where the rule applies. When left blank, this field is not used.
 SRC PORT                               This is a qualifier condition that specifies a source port that the rule applies. When left blank, this field is not used.
-DST CIDR                               This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used.
+DST CIDR                               This is a qualifier condition that specifies a destination IP address range where the rule applies. When left blank, this field is not used and a default route 0.0.0.0/0 pointing to Aviatrix Gateway will be programmed into Cloud platform routing table.
 DST PORT                               This is a qualifier condition that specifies a destination port where the rule applies. When left blank, this field is not used.
 PROTOCOL                               This is a qualifier condition that specifies a destination port protocol where the rule applies. When left blank, this field is not used.
 INTERFACE                              This is a qualifier condition that specifies output interface where the rule applies. When left blank, this field is not used.
