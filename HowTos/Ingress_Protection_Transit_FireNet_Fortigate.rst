@@ -57,7 +57,7 @@ Refer to `Transit FireNet Workflow for AWS doc <https://docs.aviatrix.com/HowTos
 Step 1.1. Deploy VPCs for Transit FireNet and Spoke for Applicaton
 -----------------------------------------------------------------
 
-	- Create an Aviatrix Transit VPC by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
+	- Create an Aviatrix Transit VPC by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
 
 	- Create an Aviatrix Spoke VPC for Application by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in AWS portal. Moreover, feel free to use your existing VPC.
 
