@@ -6,47 +6,49 @@
 Troubleshooting Site2Cloud connection with IKEv2
 ================================================
 
+This article describes how to troubleshoot Aviatrix Site2Cloud connection with IKEv2.
+
 Workflow
 =========
 
 Check Site2Cloud Connection Status
 ----------------------------------
 
-	- Login Aviatrix Controller
-	
-	- Go to SITE2CLOUD -> Setup
-  
-  - Find the Site2Cloud Connection
-  
-  - Check the tunnel status
-  
-    - if the Status displays "Down", please follow the next step
+- Login Aviatrix Controller
+
+- Go to SITE2CLOUD -> Setup
+
+- Find the Site2Cloud Connection
+
+- Check the tunnel status
+
+  - if the Status displays "Down", please follow the next step
 
 Perform the Diagnostics Action "Run analysis"
 ---------------------------------------------
 
-	- Go to SITE2CLOUD -> Diagnostics
-  
-  - Select the related information for VPC ID/VNet Name, Connection, and Gateway
-  
-  - Select the option "Run analysis" under Action and click the button "OK"
-  
-  - View the suggestion on the prompt panel to troubleshoot Site2Cloud tunnel down issue
-  
-  - Follw the next step to view logs if needed
+- Go to SITE2CLOUD -> Diagnostics
+
+- Select the related information for VPC ID/VNet Name, Connection, and Gateway
+
+- Select the option "Run analysis" under Action and click the button "OK"
+
+- View the suggestion on the prompt panel to troubleshoot Site2Cloud tunnel down issue
+
+- Follw the next step to view logs if needed
   
 Troubleshoot the keyword in the Diagnostics Action "Show logs"
 --------------------------------------------------------------
 
-  - Go to SITE2CLOUD -> Diagnostics
-  
-  - Select the related information for VPC ID/VNet Name, Connection, and Gateway
-  
-  - Select the option "Show logs" under Action and click the button "OK"
-  
-  - Review the logs on the prompt panel
-  
-  - Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some keyword example log entries of negotiation failure to troubleshoot further.
+- Go to SITE2CLOUD -> Diagnostics
+
+- Select the related information for VPC ID/VNet Name, Connection, and Gateway
+
+- Select the option "Show logs" under Action and click the button "OK"
+
+- Review the logs on the prompt panel
+
+- Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some keyword example log entries of negotiation failure to troubleshoot further.
 
 Keyword: "Error: Failed to deliver message to gateway"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
