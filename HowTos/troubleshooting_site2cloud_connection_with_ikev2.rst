@@ -35,7 +35,7 @@ Perform the Diagnostics Action "Run analysis"
 
 - View the suggestion on the prompt panel to troubleshoot Site2Cloud tunnel down issue
 
-- Follw the next step to view logs if needed
+- Follow the next step to view logs if needed
   
 Troubleshoot the keyword in the Diagnostics Action "Show logs"
 --------------------------------------------------------------
@@ -66,9 +66,9 @@ Keyword: "establishing IKE_SA failed, peer not responding"
 
 Probable Causes: 
 
-- Peer IP address is mismatched or peer IP address is not reachable
+- Peer IP address is mismatched, or peer IP address is not reachable
 
-- UDP Port 500/4500 is not accessable
+- UDP Port 500/4500 is not accessible
 
 Suggestions:
 
@@ -79,13 +79,13 @@ Keyword: "NO_PROPOSAL_CHOSEN"
 
 Probable Causes: 
 
-- Peer IP address is mismatched or peer IP address is not reachable
+- Peer IP address is mismatched, or peer IP address is not reachable
 
 - IKE version is mismatched
 
 - IKEv2 algorithm is mismatched
 
-- IPSec alogorithm is mismatched
+- IPsec algorithm  is mismatched
 
 Suggestions:
 
@@ -93,7 +93,7 @@ Suggestions:
 
 - Verify that both VPN settings use the same IKEv2 version
 
-- Verify that all IKEv2/IPSec algorithm parameters (i.e. Authentication/DH Groups/Encryption) match on both VPN configuration
+- Verify that all IKEv2/IPsec algorithm parameters (i.e., Authentication/DH Groups/Encryption) match on both VPN configuration
 
 Keyword: "AUTHENTICATION_FAILED"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,8 +114,8 @@ Suggestions:
 
 - Verify that Identifier match
 
-  - By default, Aviatrix uses gateway's public IP as Local Identifier. User can adjust this default value to private IP by navigating to the page "SITE2CLOUD -> Setup" then clicking the button "Edit" on the site2cloud connection entry and changing the "Local Identifier" configuration.
-
+  - By default, Aviatrix utilizes gateway's public IP as Local Identifier.
+  
 Keyword: "no shared key found"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -131,18 +131,18 @@ Suggestions:
 
 - Verify that Identifier match
 
-  - By default, Aviatrix uses gateway's public IP as Local Identifier. User can adjust this default value to private IP by navigating to the page "SITE2CLOUD -> Setup" then clicking the button "Edit" on the site2cloud connection entry and changing the "Local Identifier" configuration.
+  - By default, Aviatrix utilizes gateway's public IP as Local Identifier.
 
 Keyword: "failed to establish CHILD_SA, keeping IKE_SA"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Probable Causes: 
 
-- IPSec alogorithm is mismatched
+- IPsec algorithm  is mismatched
 
 Suggestions:
 
-- Verify that all IPSec algorithm parameters (i.e. Authentication/DH Groups/Encryption) match on both VPN configuration
+- Verify that all IPsec algorithm parameters (i.e., Authentication/DH Groups/Encryption) match on both VPN configuration
 
 Other troubleshooting documents
 ===============================
