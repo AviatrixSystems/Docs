@@ -48,7 +48,7 @@ Troubleshoot the keyword in the Diagnostics Action "Show logs"
 
 - Review the logs on the prompt panel
 
-- Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some keyword example log entries of negotiation failure to troubleshoot further.
+- Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some examples of IKEv2 negotiation failure and hint to fix or troubleshoot it further:
 
 Keyword: "Error: Failed to deliver message to gateway"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
