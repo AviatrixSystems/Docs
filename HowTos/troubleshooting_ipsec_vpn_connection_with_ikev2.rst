@@ -1,12 +1,12 @@
 .. meta::
-  :description: Troubleshooting Site2Cloud connection with IKEv2
+  :description: Troubleshooting IPsec VPN connection with IKEv2
   :keywords: Aviatrix Transit network, Private Network, Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, Encrypted Peering
 
 ================================================
-Troubleshooting Site2Cloud connection with IKEv2
+Troubleshooting IPsec VPN connection with IKEv2
 ================================================
 
-This article describes how to troubleshoot Aviatrix Site2Cloud connection with IKEv2.
+This article describes how to troubleshoot IPsec VPN connection with IKEv2 on Aviatrix gateway.
 
 Workflow
 =========
@@ -48,7 +48,19 @@ Troubleshoot the keyword in the Diagnostics Action "Show logs"
 
 - Review the logs on the prompt panel
 
-- Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some examples of IKEv2 negotiation failure and hint to fix or troubleshoot it further:
+- Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some examples of negotiation failure and hint to fix or troubleshoot it further:
+
+  - `Keyword: "Error: Failed to deliver message to gateway"`_
+  
+  - `Keyword: "establishing IKE_SA failed, peer not responding"`_
+  
+  - `Keyword: "NO_PROPOSAL_CHOSEN"`_
+
+  - `Keyword: "AUTHENTICATION_FAILED"`_
+  
+  - `Keyword: "no shared key found"`_
+  
+  - `Keyword: "failed to establish CHILD_SA, keeping IKE_SA"`_
 
 Keyword: "Error: Failed to deliver message to gateway"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,7 +93,7 @@ Probable Causes:
 
 - Peer IP address is mismatched, or peer IP address is not reachable
 
-- IKE version is mismatched
+- IKE version is mismatched (one VPN gateway uses IKEv1 and another one uses IKEv2)
 
 - IKEv2 algorithm is mismatched
 
@@ -100,7 +112,7 @@ Keyword: "AUTHENTICATION_FAILED"
 
 Probable Causes: 
 
-- IKE version is mismatched
+- IKE version is mismatched (one VPN gateway uses IKEv1 and another one uses IKEv2)
 
 - pre-shared key is mismatched
 
@@ -121,7 +133,7 @@ Keyword: "no shared key found"
 
 Probable Causes:
 
-- IKE version is mismatched
+- IKE version is mismatched (one VPN gateway uses IKEv1 and another one uses IKEv2)
 
 - Identifier configuration is mismatched
 
@@ -138,7 +150,7 @@ Keyword: "failed to establish CHILD_SA, keeping IKE_SA"
 
 Probable Causes: 
 
-- IPsec algorithm  is mismatched
+- IPsec algorithm is mismatched
 
 Suggestions:
 
