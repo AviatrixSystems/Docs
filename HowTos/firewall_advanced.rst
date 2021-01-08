@@ -32,7 +32,16 @@ At `Egress through Firewall`, click Enable.
 Fail Close
 -------------
 
-If you enable Fail Close, FireNet gateway drops all traffic when all firewalls are in Down state.
+Fail Close feature applies to the scenario where there are no firewalls attached to the FireNet gateways. Fail Close
+is disabled by default. 
+
+When Fail Close is disabled, east-west traffic that requires inspection  
+can pass through the FireNet gateways without having any attached firewalls, making the FireNet gateway behave
+as a lookback interface. This is useful as it allows you  to isolate and test network connectivity 
+during troubleshooting.  
+
+When Fail Close is disabled, FireNet gateway drops all traffic when there are no firewalls 
+attached to the FireNet gateways. 
 
 
 Network List Excluded From East-West Inspection
