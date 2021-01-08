@@ -177,7 +177,7 @@ How does Transit Firenet load balance traffic between different firewalls?
 
 AWS
 ====
-In AWS, Transit Firenet Load Balance the traffic across different firewall using five-tuple hash.
+In AWS, Transit FireNet Load Balance the traffic across different firewall using five-tuple hash.
 
 The tuple is composed of the:
 
@@ -188,6 +188,7 @@ Destination port
 Protocol type
 
 The algorithm provides stickiness only within a transport session. Packets that are in the same session are directed to the same firewall. When the client starts a new session from the same source IP, the source port changes and causes the traffic to go to a different firewall.
+
 
 Azure
 ======
@@ -204,6 +205,25 @@ By default, Transit Firenet use 5-tuple hashing algorithm but that can be change
         3. Client IP and protocol -> three-tuple uses source IP, destination IP, and protocol type.
 
 |lb-rule-azure|
+
+How to migrate from Aviatrix Transit FireNet to Transit FireNet with AWS GWLB?
+---------------------------------------------------------------------------------
+
+Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) and allowing users to migrate from Transit FireNet to Transit FireNet with AWS GWLB or vice versa. Follow the below steps for migration:
+
+    1. Disassociate Firewall Instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
+    #. Disable Transit FireNet Function -> Go to Aviatrix Controller's console -> MULTI-CLOUD TRANSIT -> Transit Firenet -> Step 5a to disable Transit FireNet Function for Aviatrix Transit Gateway.
+    #. Enable Transit FireNet Function -> Go to Aviatrix Controller's console -> MULTI-CLOUD TRANSIT -> Transit Firenet -> Step 1a to enable Transit FireNet Function on Aviatrix Transit Gateway. Check "Use AWS GWLB" if migrating from Transit FireNet to Transit FireNet with AWS GWLB.
+    #. Associate Existing Firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7b.
+
+ .. note::
+    Vendor integration is required in some cases to populate the RFC 1918 or non-RFC 1918 to the firewall appliance for successful migration. Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Vendor Integration, provide the firewall information and do the Save, Show and Sync operations.
+
+How to migrate from AWS Native Firewall Network solution to Aviatrix Transit FireNet solution or vice versa ?
+----------------------------------------------------------------------------------------------------------------
+
+Those scenarios are not supported. You need to un-deploy everything and re-deploy it.
+
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
    :scale: 30%
