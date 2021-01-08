@@ -316,6 +316,11 @@ If I already have a Transit to External Device connection using IKEv1, could I c
 
 Starting from 6.3 release, Aviatrix supports the feature `Transit to External Device Using IKEv2 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#multi-cloud-transit-network>`_. The prerequisite for IKEv2 is that you need to create the first Transit to External Device connection with IKEv2 enabled. If your current Transit gateway already has a connection using IKEv1 either is created by attaching spoke gateway or is built in MULTI-CLOUD TRANSIT step 3, you need to delete it first before creating the Transit to External Device connection with IKEv2. 
 
+How to troubleshoot Transit to External Device connection with IKEv2 issue?
+---------------------------------------------------------------------------
+
+Refer to `Troubleshooting IPsec VPN connection with IKEv2 <https://docs.aviatrix.com/HowTos/troubleshooting_ipsec_vpn_connection_with_ikev2.html>`_
+
 .. |bgp_summarize| image:: transitvpc_faq_media/bgp_summarize_transit_adv_page.png
    :scale: 60%
    
