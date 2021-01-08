@@ -100,9 +100,9 @@ If FireNet gateway HA is enabled, the HA gateway shares the same route table as 
 
 The new subnets created by the Controller at these steps are listed below.
 
-==========================================      =================
+==========================================      ============================
 **Aviatrix FireNet VPC Private Subnet**         **Description**
-==========================================      =================
+==========================================      ============================
 -tgw-egress                                     for FireNet gateway eth1 to TGW
 -hagw-tgw-egress                                for FireNet HA gateway eth1 to TGW
 -tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway 
@@ -111,7 +111,84 @@ The new subnets created by the Controller at these steps are listed below.
 -hagw-dmz-firewall                              for FireNet HA gateway eth2 
 -dmz-exchange                                   for FireNet gateway eth3
 -hagw-dmz-exchange                              for FireNet HA gateway eth3
-==========================================      =================
+==========================================      ============================
+
+5a. Enable the Aviatrix Gateway for FireNet Function
+#############################################################
+
+This step configures the gateway launched in Step 4 for FireNet function with AWS Gateway Load Balancer (GWLB). If you have HA enabled, it
+automatically sets up the HA gateway for FireNet deployment.
+
+In the drop down menu, select one Aviatrix Transit Gateway, check "Use AWS GWLB" and click "Enable".
+
+In this step, the Aviatrix Controller creates 2 more Ethernet interfaces with associated subnets on the FireNet gateways.
+
+==========================================         ==============================================   =================
+**FireNet gateway instance interfaces**            **Inbound Security Group Rule**                  **Description**
+==========================================         ==============================================   =================
+eth0                                               Allow SSH and HTTPS from Aviatrix Controller     Public interface for communication with Controller
+eth1                                               Allow ALL (Do not change)                        Private interface for traffic to/from TGW
+eth2                                               Allow ALL (Do not change)                        Private interface for traffic to firewall instances
+==========================================         ==============================================   =================
+
+
+.. important::
+
+  Please do not change the security group inbound and outbound rules on eth1 and eth2 of a FireNet gateway.
+
+If FireNet gateway HA is enabled, the HA gateway shares the same route table as the primary for its eth1 interface.
+
+The new subnets created by the Controller at these steps are listed below.
+
+==========================================      ============================
+**Aviatrix FireNet VPC Private Subnet**         **Description**
+==========================================      ============================
+-tgw-egress                                     for FireNet gateway eth1 to TGW
+-hagw-tgw-egress                                for FireNet HA gateway eth1 to TGW
+-tgw-ingress                                    for TGW to the ENI of eth1 of FireNet gateway
+-hagw-tgw-ingress                               for TGW to the ENI of eth1 of the FireNet HA gateway
+-dmz-firewall                                   for FireNet gateway eth2
+-hagw-dmz-firewall                              for FireNet HA gateway eth2
+-gwlb-pool                                      for GWLB and Firewalls
+-gwlb-pool-ha                                   for GWLB and Firewalls in different AZ
+-gwlb-egress                                    for FireNet gateway (if egress inspection is enabled)
+-gwlb-egress-ha                                 for FireNet HA gateway (if egress inspection is enabled)
+==========================================      ============================
+
+|gwlb_tgw_avxgw|
+
+.. note::
+    HTTPS needs to be opened on firewall appliance for health check. See `firewall health check <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-9-enable-health-check-policy-in-firewall>`_ for more information.
+
+
+5b. Enable Native AWS GWLB for FireNet Function
+#############################################################
+
+This step integrates the AWS Transit Gateway (TGW) with AWS Gateway Load Balancer (GWLB) for native FireNet solution.
+
+In the drop down menu, select the right AWS Account and region, provide the right security VPC and click "Enable".
+
+The Aviatrix Controller will automatically create the new subnets, GWLB and GWLBe.
+
+The new subnets created by the Controller at these steps are listed below.
+
+==========================================      ============================
+**Aviatrix FireNet VPC Private Subnet**         **Description**
+==========================================      ============================
+-tgw-ingress                                    for TGW ENI to the GWLBe
+-hagw-tgw-ingress                               for TGW ENI to the GWLBe in different AZ
+-dmz-firewall                                   for GWLBe
+-hagw-dmz-firewall                              for GWLBe in different AZ
+-gwlb-pool                                      for GWLB and Firewalls
+-gwlb-pool-ha                                   for GWLB and Firewalls in different AZ
+-gwlb-egress                                    for NATGW gateway (if egress inspection is enabled)
+-gwlb-egress-ha                                 for NATGW HA gateway (if egress inspection is enabled)
+==========================================      ============================
+
+|gwlb_native|
+
+.. note::
+    HTTPS needs to be opened on firewall appliance for health check. Check `Firewall Health Check <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-9-enable-health-check-policy-in-firewall>`_ for more information.
 
 
 6. Attach Aviatrix FireNet gateway to TGW Firewall Domain
@@ -386,5 +463,12 @@ Done.
 
 .. |fqdn_egress| image:: transit_firenet_design_patterns_media/fqdn_egress.png
    :scale: 30%
+
+.. |gwlb_tgw_avxgw| image:: firewall_network_workflow_media/gwlb_tgw_avxgw.png
+   :scale: 40%
+
+.. |gwlb_native| image:: firewall_network_workflow_media/gwlb_native.png
+   :scale: 40%
+
 
 .. disqus::
