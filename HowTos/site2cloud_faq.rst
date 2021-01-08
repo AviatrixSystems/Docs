@@ -96,6 +96,11 @@ Here are a few documents in the Tech Notes session that demonstrate how you can 
   - `Connecting offices to multiple VPCs using AWS Peering <https://docs.aviatrix.com/HowTos/simpletransit.html>`_
   - `Connect Networks with Overlap CIDRs <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs.html>`_
   - `Connect Overlapping VPC to On-prem <https://docs.aviatrix.com/HowTos/connect_overlap_vpc_via_VGW.html>`_
+  
+How to troubleshoot Site2Cloud connection with IKEv2?
+-----------------------------------------------------
+
+Refer to `Troubleshooting IPsec VPN connection with IKEv2 <https://docs.aviatrix.com/HowTos/troubleshooting_ipsec_vpn_connection_with_ikev2.html>`_  
 
 .. |image1| image:: FAQ_media/image1.png
 
