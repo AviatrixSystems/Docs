@@ -48,6 +48,10 @@ Troubleshoot the keyword in the Diagnostics Action "Show logs"
 
 - Review the logs on the prompt panel
 
+- Compare your logs with the successful example logs as below
+
+|IKEv2_show_log|
+
 - Attempt to locate the keyword or failure message during IKEv2/IPsec negotiation. Here are some examples of negotiation failure and hint to fix or troubleshoot it further:
 
   - `Keyword: "Error: Failed to deliver message to gateway"`_
@@ -162,5 +166,8 @@ Other troubleshooting documents
 - `Support Center Site2Cloud <https://docs.aviatrix.com/Support/support_center_site2cloud.html>`_
 
 - `Aviatrix Site2Cloud connection with IKEv1 End to End traffic Troubleshooting Playbook <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_s2c_end_to_end_traffic.html>`_
+
+.. |IKEv2_show_log| image:: site2cloud_media/IKEv2_show_log.png
+   :scale: 50%
 
 .. disqus::
