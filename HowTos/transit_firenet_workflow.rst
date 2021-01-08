@@ -1,6 +1,6 @@
 .. meta::
   :description: Firewall Network Workflow
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet, AWS GWLB, Azure Load Balancer, Azure LB, Gateway Load balancer
 
 
 =========================================================
@@ -69,6 +69,25 @@ A deployment diagram in this option is shown as below:
 
 |single_transit|
 
+Starting 6.3, Aviatrix Transit FireNet solution is also supporting AWS Gateway Load Balancer (AWS GWLB).
+
+In order to use the Aviatrix Transit FireNet solution with AWS GWLB, select one Aviatrix Transit Gateway deployed in AWS from the  drop down menu, check the box "Use AWS GWLB" and click "Enable".
+
+.. note::
+
+    IAM policies needs to be updated for ingress/egress traffic. Go to Aviatrix Controller console -> Accounts -> Access Accounts - > Select AWS Account and click "Update Policy".
+
+.. important::
+
+    Transit FireNet solution with GWLB also requires HTTPS port enable on firewall appliance to check the firewall health status at regular interval. Click `here <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-9-enable-health-check-policy-in-firewall>`_ for more information.
+
+By default, east-west and north-south traffic inspections are enabled on Transit FireNet Gateways, you can also enable Ingress/Egress inspection on the Transit FireNet Gateways. To do so, go to Firewall Network -> Advanced -> click the 3 dots skewer of one FireNet gateway,
+enable Egress through firewall option.
+
+A deployment diagram in this option is shown as below:
+
+|gwlb_tr_firenet|
+
 
 1b. Enable Transit FireNet on Aviatrix Egress Transit Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,5 +152,9 @@ If Aviatrix Egress Transit Gateway has been configured, select one to disable th
 
 .. |single_transit| image:: transit_firenet_workflow_media/single_transit.png
    :scale: 30%
+
+.. |gwlb_tr_firenet| image:: transit_firenet_workflow_media/gwlb_tr_firenet.png
+   :scale: 40%
+
 
 .. disqus::
