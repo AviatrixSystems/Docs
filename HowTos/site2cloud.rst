@@ -267,6 +267,11 @@ Select the remote site device from the dropdowns provided.  If your remote site 
 
 This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
 
+Local Identifier
+----------------
+
+By default, Aviatrix configures gateway's public IP as Local Identifier. User can adjust this settings to gateway's private IP.
+
 Dead Peer Detection
 --------------------
 

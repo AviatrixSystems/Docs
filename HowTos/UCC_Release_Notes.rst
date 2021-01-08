@@ -20,7 +20,7 @@ R6.3 (Coming Soon)
 
 - **Private Transit Gateway Peering with Single-Tunnel Mode** expands the existing Insane Mode Transit Gateway Peering Over Private Network to apply it to single IPSec tunnel. One use case is for low speed encryption between cloud networks (up to 4Gbps). For more information, refer to `Transit Peering in Single-Tunnel mode. <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#single-tunnel-mode>`_. 
 
-- **Transit to External Device Using IKEv2** provides an option to run IKEv2 with the on-prem site. 
+- **Transit to External Device Using IKEv2** provides an option to run IKEv2 with the on-prem site. For more information, refer to `Aviatrix Transit Gateway to External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. 
 
 - **Private OOB** allows both the Controller and Aviatrix Transit and Spoke gateways to be deployed in private  subnets. One use case is to satisfy compliance requirements where no public facing instances were permitted. For setup information, refer to `Private OOB workflow <https://docs.aviatrix.com/HowTos/private_oob_workflow.html>`_.
 
@@ -39,6 +39,13 @@ R6.3 (Coming Soon)
 =============
 
 - **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. To enable, go to OpenVPN -> Advanced -> Global Config -> Download SAML VPN Client to enable. For more information, refer to `Self Service Download SAML Client <https://docs.aviatrix.com/HowTos/openvpn_faq.html#what-is-download-vpn-cert-and-client-with-saml>`_. 
+
+4. Site2Cloud
+=============
+
+- **Route based IPSEC with IKEv2** provides an option to run route-based VPN with IKEv2. 
+
+- **Change Local Identifier** provides the flexibility to update either gateway's public IP address or private IP address as local identifier.
 
 R6.2.1925 (12/12/2020)
 ========================

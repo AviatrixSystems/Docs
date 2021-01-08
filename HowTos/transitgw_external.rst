@@ -75,9 +75,10 @@ Transit VPC Name               The Transit VPC ID where Transit GW was launched.
 Connection Name                A unique name to identify the connection to external device. 
 Aviatrix Transit GW BGP ASN    The BGP AS number the Transit GW will use to exchange routes with external device.
 Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
-Algorithm                      Optional parameters. Leave it unselected if you don't know.
-Enable HA                      Select HA if there are two external devices. 
-Over DirectConnect             Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
+Algorithms                     Optional parameters. Leave it unselected if you don't know.
+IKEv2                          Select the option to connect to the remote site using IKEv2 protocol.
+Enable Remote Gateway HA       Select HA if there are two external devices. 
+Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
 BGP Remote AS Number           When BGP is selected, the BGP AS number the external device will use to  exchange routes Aviatrix Transit GW.
 Remote Gateway IP              IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
