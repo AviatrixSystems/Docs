@@ -31,8 +31,6 @@ R6.3 (Coming Soon)
 2. FireNet
 =============
 
-- **FireNet on GCP** expands Aviatrix FireNet to GCP to enable firewall inspections for east-west, north-south and egress traffic. 
-
 - **FireNet integration with AWS Gateway Load Balancer** provides the capability where adding or removing a firewall to the FireNet does not impact the existing established network sessions. 
 
 3. User VPN
