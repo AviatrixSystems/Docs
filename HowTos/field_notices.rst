@@ -6,6 +6,27 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
  
+ 
+Field Notice 0017 (2021/01/10)
+--------------------------------
+**Namespace limit is 120 Bytes**
+
+
+**Problem**
+
+Version 6.2 and prior, customer may create a spoke or transit gateway name exceeding 50 Bytes. During peer creation a failure may occur if the peering name (concatenation of spoke-to-transit, spoke-to-spoke, etc) exceeds 120 Bytes and throws an error.
+
+(example)
+Error: command create_peer_xx_gw failed due to exception errors fully qualified namespace peering_info.xxxxxxxx is too long (max is 120 bytes)
+
+
+**Recommended Solution**
+
+Version 6.2 and prior: If spoke or transit name exceeds 50 Bytes, manually delete and re-create gateway with name limited to 50 Bytes or less.
+
+Version 6.3 and higher: Fix, newly created spoke and transit gateway names are checked and limited to 50 Bytes or less. However, if there are any residual gateways (6.2 and prior) with name exceeding 50 Bytes they must be deleted and re-created.
+
+ 
 Field Notice 0016 (2020/12/22)
 ----------------------------------
 **EOL update for release 5.3 and older**
