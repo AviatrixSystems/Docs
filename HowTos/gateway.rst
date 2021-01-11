@@ -320,7 +320,7 @@ Available for Aviatrix VPN client only.
 Add/Edit Tags
 ---------------
 
-The Aviatrix gateway is launched with a default tag name avx-gateway@private-ip-address-of-the-gateway. This option allows you to add additional AWS tags at gateway launch time that you
+The Aviatrix gateway is launched with a default tag name avx-gateway@private-ip-address-of-the-gateway. This option allows you to add additional AWS/Azure tags at gateway launch time that you
 can use for automation scripts.
 
 Designated Gateway
