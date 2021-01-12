@@ -7,6 +7,9 @@
 Encrypt EBS Volume 
 ############################
 
+.. note::
+
+   Aviatrix starts to support enabling EBS encryption by default when users launch gateway since release 6.0.
 
 Description 
 ------------
