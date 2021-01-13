@@ -153,6 +153,18 @@ in the diagram below. On the Aviatrix side, use the option `External Devices <ht
 
 |tgw_other_cloud| 
 
+Extending Security Domains to on-prem Sites
+----------------------------------------------
+
+If the Aviatrix Transit Gateway connect to multiple sites over IPSec or GRE tunnels, the Security Domains can be
+extended to each site as shown below, where Blue Domain in the cloud can only communicate with Site 2, Green 
+Domain can only communicate with Site 1. Routes are only advertised within the domain and data traffic is segmented
+by the Security Domains. 
+
+|edge_seg|
+
+
+
 
 .. |default_domain_design| image:: tgw_design_patterns_media/default_domain_design.png
    :scale: 30%
@@ -201,6 +213,9 @@ in the diagram below. On the Aviatrix side, use the option `External Devices <ht
    :scale: 30%
 
 .. |multi_cloud_transit_peering| image:: tgw_design_patterns_media/multi_cloud_transit_peering.png
+   :scale: 30%
+
+.. |edge_seg| image:: tgw_design_patterns_media/edge_seg.png
    :scale: 30%
 
 .. disqus::
