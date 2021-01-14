@@ -101,10 +101,10 @@ n1 series performance
 ====================      ===============================
 **Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
 ====================      ===============================
-n1-highcpu-4              3.12Gbps                          
-n1-highcpu-8              6.54Gbps                         
-n1-highcpu-16             11.58Gbps                          
-n1-highcpu-32             19.97Gbps                                           
+n1-highcpu-4              3.12                       
+n1-highcpu-8              6.54                        
+n1-highcpu-16             11.58                       
+n1-highcpu-32             19.97                                          
 ====================      ===============================
 
 n2 series performance
@@ -113,10 +113,10 @@ n2 series performance
 ====================      ===============================
 **Transit Gateway**       **Throughput Gbps (MTU 1500B)**     
 ====================      ===============================
-n2-highcpu-4              5.063Gbps                          
-n2-highcpu-8              10.2Gbps                         
-n2-highcpu-16             14.98Gbps                          
-n2-highcpu-32             25.549Gbps                                           
+n2-highcpu-4              5.063                          
+n2-highcpu-8              10.2                         
+n2-highcpu-16             14.98                          
+n2-highcpu-32             25.549                                          
 ====================      ===============================
 
 c2 series performance
@@ -125,10 +125,10 @@ c2 series performance
 ====================      ===============================
 **Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
 ====================      ===============================
-c2-standard-4             5.792Gbps                          
-c2-standard-8             9.44Gbps                         
-c2-standard-16            18.48Gbps                          
-c2-standard-30            25.52Gbps                                           
+c2-standard-4             5.792                          
+c2-standard-8             9.44                         
+c2-standard-16            18.48                         
+c2-standard-30            25.52                                           
 ====================      ===============================
 
 .. note::
