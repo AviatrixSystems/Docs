@@ -95,8 +95,11 @@ Topology is shown below where the test is performed with the following condition
 
 |gcp_test_topology|
 
+n1 series performance
+=================================
+
 ====================      ===============================
-**Transit Gateway**       **Throughput**    
+**Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
 ====================      ===============================
 n1-highcpu-4              3.12Gbps                          
 n1-highcpu-8              6.54Gbps                         
@@ -104,6 +107,33 @@ n1-highcpu-16             11.58Gbps
 n1-highcpu-32             19.97Gbps                                           
 ====================      ===============================
 
+n2 series performance
+=================================
+
+====================      ===============================
+**Transit Gateway**       **Throughput Gbps (MTU 1500B)**     
+====================      ===============================
+n2-highcpu-4              5.063Gbps                          
+n2-highcpu-8              10.2Gbps                         
+n2-highcpu-16             14.98Gbps                          
+n2-highcpu-32             25.549Gbps                                           
+====================      ===============================
+
+c2 series performance
+=================================
+
+====================      ===============================
+**Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
+====================      ===============================
+c2-standard-4             5.792Gbps                          
+c2-standard-8             9.44Gbps                         
+c2-standard-16            18.48Gbps                          
+c2-standard-30            25.52Gbps                                           
+====================      ===============================
+
+.. notes::
+
+  To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `Quota Increase <https://cloud.google.com/compute/quotas>`_ request to GCP support.
 
 How to Tune Performance
 --------------------------
