@@ -53,24 +53,6 @@ to be capped at 1Gbps. When this architecture is deployed for VPC to VPC inspect
 further reducing its throughput to 400Mbps. What this implies is that each firewall instance can only operate at 400Mpbs throughput. This is 
 much lower than what firewall instances can do without IPSEC tunnel.
 
-How to migrate from Aviatrix FireNet to FireNet with AWS GWLB?
----------------------------------------------------------------------------------
-
-Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) and allowing users to migrate from FireNet to FireNet with AWS GWLB or vice versa. Follow the below steps for migration:
-
-    1. Disassociate Firewall Instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
-    #. Disable FireNet Function -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 11a to disable Aviatrix Gateway FireNet Function.
-    #. Enable Transit FireNet Function -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 5a to enable the Aviatrix Gateway for FireNet Function. Check "Use AWS GWLB" if migrating from Aviatrix FireNet to FireNet with AWS GWLB.
-    #. Associate Existing Firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7b.
-
- .. note::
-    Vendor integration is required in some cases to populate the RFC 1918 or non-RFC 1918 to the firewall appliance for successful migration. Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Vendor Integration, provide the firewall information and do the Save, Show and Sync operations.
-
-How to migrate from AWS Native Firewall Network solution to Aviatrix FireNet solution or vice versa ?
-----------------------------------------------------------------------------------------------------------------
-
-Those scenarios are not supported. You need to un-deploy everything and re-deploy it.
-
 
 .. |firenet| image:: firewall_network_media/firenet.png
    :scale: 30%

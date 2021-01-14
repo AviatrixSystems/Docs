@@ -336,6 +336,37 @@ What is Intra Domain inspection?
 Intra Domain inspection allows traffic between VPCs in the same Security Domain to be redirected to Firewall Domain for inspection before reaching to the destination.
 
 
+How to migrate from Aviatrix FireNet to FireNet with AWS GWLB or vice versa?
+---------------------------------------------------------------------------------
+
+Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) and allowing users to migrate from FireNet to FireNet with AWS GWLB or vice versa. Follow the below steps for migration:
+
+    1. Save firewall configuration
+    #. Disassociate firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
+    #. Delete firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 7a.
+    #. Disable FireNet function -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 11a to disable Aviatrix Gateway FireNet Function.
+    #. Enable Transit FireNet function -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 5a to enable the Aviatrix Gateway for FireNet Function. Check "Use AWS GWLB" if migrating from Aviatrix FireNet to FireNet with AWS GWLB.
+    #. Launch and associate firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7a.
+    #. Restore firewall configuration
+
+ .. note::
+    Vendor integration is required in some cases to populate the RFC 1918 or non-RFC 1918 to the firewall appliance for successful migration. Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Vendor Integration, provide the firewall information and do the Save, Show and Sync operations.
+
+Can we migrate from Aviatrix FireNet solution to Aviatrix Native FireNet with GWLB solution ?
+----------------------------------------------------------------------------------------------------------------
+
+Yes, please use the following steps for migration:
+
+    1. Save firewall configuration
+    #. Disassociate firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
+    #. Delete firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 7a.
+    #. Disable FireNet function -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 11a to disable Aviatrix Gateway FireNet Function.
+    #. Delete Transit FireNet Gateway
+    #. Enable Transit FireNet function -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 5b to enable the Native AWS GWLB for FireNet Function.
+    #. Launch and associate firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7a.
+    #. Restore firewall configuration
+
+
 .. |firewall_network| image:: firewall_network_faq_media/firewall_network.png
    :scale: 30%
 
