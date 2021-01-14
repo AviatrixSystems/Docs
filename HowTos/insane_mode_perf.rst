@@ -131,7 +131,7 @@ c2-standard-16            18.48Gbps
 c2-standard-30            25.52Gbps                                           
 ====================      ===============================
 
-.. notes::
+.. note::
 
   To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `Quota Increase <https://cloud.google.com/compute/quotas>`_ request to GCP support.
 
