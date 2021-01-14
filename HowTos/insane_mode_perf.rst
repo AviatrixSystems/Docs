@@ -133,7 +133,7 @@ c2-standard-30            25.52
 
 .. note::
 
-  To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `Quota Increase <https://cloud.google.com/compute/quotas>`_ request to GCP support.
+  To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
 
 How to Tune Performance
 --------------------------
