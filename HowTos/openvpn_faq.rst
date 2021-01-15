@@ -420,14 +420,14 @@ Minimum Aviatrix VPN Client Version feature allows users to set a minimum Aviatr
 
 To configure it, go to OpenVPN® -> Advanced -> Global Config -> Minimum Aviatrix VPN Client Version to set the Aviatrix VPN client version.
 
-What is Download VPN Cert and Client with SAML?
+What is Download SAML VPN Client?
 -----------------------------------------------
 
 This feature only applies to VPN client using SAML authentication. 
 
 It allows users to download the ovpn VPN connection cert file and the VPN client installer in a self-service manner.
 
-To configure it, go to OpenVPN® -> Advanced -> Global Config -> Download VPN Cert and Client with SAML to enable/disable this feature.
+To configure it, go to OpenVPN® -> Advanced -> Global Config -> Download SAML VPN Client to enable/disable this feature.
 
 |client_download|
 
