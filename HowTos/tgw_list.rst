@@ -102,6 +102,8 @@ FireNet Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To allow access to the private IP of the MGMT interface of the Firewalls, enable Management Access From Onprem.  This feature advertises the Firewalls private MGMT subnet to your Edge domain.  This allows administrators and Firewall MGMT servers to connect to the Firewall without having to go over the internet.
 
+To enable, to to TGW Orchestrator -> List and highlight the FireNet VPC.  Then choose Actions -> FireNet Management.
+
 TGW Security Domains
 -------------------------
 
