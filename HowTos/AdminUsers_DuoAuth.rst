@@ -96,14 +96,14 @@ Follow the `instruction in <http://docs.aviatrix.com/HowTos/duo_auth.html>`_ to 
 Create Duo Authentication
 -------------------------
 
-To enable DUO, go to Settings -> Setup 2FA Login
+To enable DUO, go to Settings -> Controller -> Duo Login
 
 Enter Duo integration key, secret key, and API hostname of your
 account in DUO website described earlier. Currently only DUO push is
 supported.
 
 Once it is created successfully, the Duo push login applies to all
-users, including user admin. Every user (listed in settings -> Manage
+users (admin is exempt). Every user (listed in settings -> Manage
 Accounts -> Users) who wishes to login to the system must have a
 matching user name in their DUO account.
 
