@@ -12,7 +12,7 @@ there is no IGW in any VPCs, all control plane communications between the Contro
 out-of-band (OOB) network. For background information on Private OOB, refer to `Private OOB Design. <https://docs.aviatrix.com/HowTos/private_oob.html>`_
 
 Private OOB Deployment is only applicable to multi-cloud transit solution and transit Firenet solution. 
-It does not apply to a deployment where there is any gateway that perform FQDN, site2clud or UserVPN function. 
+It does not apply to a deployment where there is any gateway that perform FQDN, site2cloud or UserVPN function. 
 
 In this document, the Controller is referred as OOB Controller.  
 
