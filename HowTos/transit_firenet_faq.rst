@@ -219,7 +219,6 @@ Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) an
     #. Launch & associate Firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7a.
     #. Restore firewall configuration.
 
-
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
    :scale: 30%
 

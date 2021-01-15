@@ -95,15 +95,45 @@ Topology is shown below where the test is performed with the following condition
 
 |gcp_test_topology|
 
+n1 series performance
+=================================
+
 ====================      ===============================
-**Transit Gateway**       **Throughput**    
+**Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
 ====================      ===============================
-n1-highcpu-4              3.12Gbps                          
-n1-highcpu-8              6.54Gbps                         
-n1-highcpu-16             11.58Gbps                          
-n1-highcpu-32             19.97Gbps                                           
+n1-highcpu-4              3.12                       
+n1-highcpu-8              6.54                        
+n1-highcpu-16             11.58                       
+n1-highcpu-32             19.97                                          
 ====================      ===============================
 
+n2 series performance
+=================================
+
+====================      ===============================
+**Transit Gateway**       **Throughput Gbps (MTU 1500B)**     
+====================      ===============================
+n2-highcpu-4              5.063                          
+n2-highcpu-8              10.2                         
+n2-highcpu-16             14.98                          
+n2-highcpu-32             25.549                                          
+====================      ===============================
+
+c2 series performance
+=================================
+
+====================      ===============================
+**Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
+====================      ===============================
+c2-standard-4             5.792                          
+c2-standard-8             9.44                         
+c2-standard-16            18.48                         
+c2-standard-30            25.52                                           
+====================      ===============================
+
+.. note::
+
+  To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
 
 How to Tune Performance
 --------------------------
