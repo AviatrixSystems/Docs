@@ -219,10 +219,6 @@ Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) an
     #. Launch & associate Firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7a.
     #. Restore firewall configuration.
 
- .. note::
-    Vendor integration is required in some cases to populate the RFC 1918 or non-RFC 1918 to the firewall appliance for successful migration. Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Vendor Integration, provide the firewall information and do the Save, Show and Sync operations.
-
-
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
    :scale: 30%
 
