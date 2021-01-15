@@ -65,10 +65,6 @@ By default, RFC 1918 summarized routes and learned non RFC 1918 specific routes 
 each Spoke VPC's VPC route table. This feature allows you to statically program specific routes whose 
 target is TGW. 
 
-FireNet Management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To allow access to the private IP of the MGMT interface of the Firewalls, enable Management Access From Onprem.  This feature advertises the Firewalls private MGMT subnet to your Edge domain.  This allows administrators and Firewall MGMT servers to connect to the Firewall without having to go over the internet.
-
 .. Note::
 
  When Edit Spoke VPC Customized Routes is enabled, all dynamically learned routes by the Spoke VPC are not programmed into the Spoke VPC route tables.  
@@ -101,6 +97,10 @@ This feature allows you to switch a Spoke VPC's Security Domains without having 
 
 To configure, go to TGW Orchestrator -> List -> TGW Attachment. Select one attachment, click Actions -> Switch Security Domain. In the drop 
 down menu, select the desired Security Domain, click Update. 
+
+FireNet Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To allow access to the private IP of the MGMT interface of the Firewalls, enable Management Access From Onprem.  This feature advertises the Firewalls private MGMT subnet to your Edge domain.  This allows administrators and Firewall MGMT servers to connect to the Firewall without having to go over the internet.
 
 TGW Security Domains
 -------------------------
