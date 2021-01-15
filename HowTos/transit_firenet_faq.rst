@@ -211,18 +211,16 @@ How to migrate from Aviatrix Transit FireNet to Transit FireNet with AWS GWLB?
 
 Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) and allowing users to migrate from Transit FireNet to Transit FireNet with AWS GWLB or vice versa. Follow the below steps for migration:
 
-    1. Disassociate Firewall Instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
-    #. Disable Transit FireNet Function -> Go to Aviatrix Controller's console -> MULTI-CLOUD TRANSIT -> Transit Firenet -> Step 5a to disable Transit FireNet Function for Aviatrix Transit Gateway.
-    #. Enable Transit FireNet Function -> Go to Aviatrix Controller's console -> MULTI-CLOUD TRANSIT -> Transit Firenet -> Step 1a to enable Transit FireNet Function on Aviatrix Transit Gateway. Check "Use AWS GWLB" if migrating from Transit FireNet to Transit FireNet with AWS GWLB.
-    #. Associate Existing Firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7b.
+    1. Save firewall configuration
+    #. Disassociate firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
+    #. Delete firewall instances -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 7a.
+    #. Disable Transit FireNet function -> Go to Aviatrix Controller's console -> MULTI-CLOUD TRANSIT -> Transit Firenet -> Step 5a to disable Transit FireNet Function for Aviatrix Transit Gateway.
+    #. Enable Transit FireNet function -> Go to Aviatrix Controller's console -> MULTI-CLOUD TRANSIT -> Transit Firenet -> Step 1a to enable Transit FireNet Function on Aviatrix Transit Gateway. Check "Use AWS GWLB" if migrating from Transit FireNet to Transit FireNet with AWS GWLB.
+    #. Launch & associate Firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7a.
+    #. Restore firewall configuration.
 
  .. note::
     Vendor integration is required in some cases to populate the RFC 1918 or non-RFC 1918 to the firewall appliance for successful migration. Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Vendor Integration, provide the firewall information and do the Save, Show and Sync operations.
-
-How to migrate from AWS Native Firewall Network solution to Aviatrix Transit FireNet solution or vice versa ?
-----------------------------------------------------------------------------------------------------------------
-
-Those scenarios are not supported. You need to un-deploy everything and re-deploy it.
 
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
