@@ -478,7 +478,7 @@ Upgrading Aviatrix Controller on GCloud Project beyond 5.3 with old Controller I
 
 3. Please create a new external ip on GCloud console. Go to GCloud main page -> Click the 3 bars at the top left corner -> Drop down menu and select VPC Network -> External IP addresses. Click “Reserve a static address” at the top of the middle and create a new external ip with the same Network Service Tier and region as the old controller external ip address( we assume the migration is above the same VPC).
 
-4. Create a new controller based of latest GCP controller image following instructions at https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html( Notice: When creating the controller instance, please extend the network option and click the networking tap to change your external ip address to a static ip that you create at step3 for the new controller ).
+4. Create a new controller based of latest GCP controller image following instructions at https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html (Notice: When creating the controller instance, please extend the network option and click the networking tap to change your external ip address to a static ip that you create at step3 for the new controller).
 
 5. Access to the new Aviatrix Controller with new external ip address( https:// New_External_IP_of_the_controller ), and login with id / password : admin / internal ip address.
 
