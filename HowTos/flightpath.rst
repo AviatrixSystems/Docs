@@ -6,14 +6,14 @@
 FlightPath
 ###################################
 
-FlightPath is a troubleshooting tool. It retrieves and displays, in a side by side fashion, AWS EC2 related information such as Security Groups, 
+FlightPath is a troubleshooting tool. It retrieves and displays, in a side by side fashion, cloud provider's network related information such as Security Groups, 
 Route table and route table entries and network ACL. This helps you to identify connectivity problems.
 
 What you need
 --------------
 
 You do not need to launch Aviatrix gateways to use this tool, but you need to create Aviatrix accounts 
-so that the Controller can use the account credentials to execute AWS APIs to retrieve relevant information.
+so that the Controller can use the account credentials to execute cloud provider's APIs to retrieve relevant information.
 
  
 
