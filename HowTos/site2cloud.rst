@@ -289,6 +289,16 @@ Allow site2cloud gateways to support Active-Active mode where both tunnels are u
 
 To enable this, go to SITE2CLOUD, edit the connection on the Setup page, scroll down to Active Active HA and click the button ENABLE.
 
+Forward Traffic to Transit Gateway
+----------------------------------
+
+Coming soon in 6.3
+
+Event Triggered HA
+------------------
+
+Coming soon in 6.3
+
 Periodic Ping
 --------------------
 
