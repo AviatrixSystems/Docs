@@ -34,6 +34,21 @@ For software version 4.1 and later, you will click Transit Network on the left n
 
 To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
 
+Connection Manual BGP Advertised Network List
+---------------------------------------------
+
+Manual Advertise Routes per BGP Connection expands the existing gateway based manual advertising routes feature to apply it to each BGP connection. One use case is to have better route advertising control for each remote BGP peer.
+
+To enable this option on software version 6.3, 
+
+- click "MULTI-CLOUD TRANSIT" on the left navigation bar, and then click the "Advanced Config" option
+
+- browse to the "Edit Transit" tab, and then select the Transit Gateway 
+
+- find the panel "Connection Manual BGP Advertised Network List", and then select the connection name and fill the CIDRs to advertise under field "Advertised Network List"
+
+To disable the option, leave the field blank and click the button "CHANGE".
+
 Advertise Transit VPC Network CIDR(s)
 --------------------------------------
 
