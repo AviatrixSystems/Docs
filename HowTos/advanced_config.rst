@@ -91,6 +91,50 @@ Proxy
 
 Proxy configuration is available for Release 6.3 and later. It is a global setting that applies to Controller and all gateways. 
 
+There are scenarios where a corporation requires all Internet bound web traffic be inspected by a proxy server before being allowed
+to enter Internet. Such requirement may apply to cloud deployment, and when it happens, both Controller and gateways need to comply to 
+the policy. This is accomplished by enabling and configuring proxy server on the Controller. 
+
+When a proxy server is configured on the Aviatrix platform (Controller and gateways), all Internet bound HTTP and HTTPS traffic initiated by 
+the Controller and gateways is forwarded to the proxy server first before entering Internet. Such traffic includes all cloud provider 
+API calls made by the Controller and gateways. 
+
+.. important::
+
+  The domain name .aviatrix.com must be excluded by the proxy server from SSL or HTTPS termination. 
+  
+Configuration
+################
+
+=========================================      =========================
+**Field**                                      **Value**
+=========================================      =========================
+HTTP Proxy                                     proxy server IP address for HTTP traffic
+HTTPS Proxy                                    proxy server IP address for HTTPS traffic (usually the same as HTTP Proxy field)
+(Optional) Proxy CA Certificate                This field is optional. When a CA Certificate is uploaded, the Controller and gateway expect that the proxy server will terminate a HTTPS request initiated by them and will initiate a new HTTPS request on behalf of them. When this option is not used, the proxy server simply forwards HTTP/HTTPS traffic.  
+=========================================      =========================
+
+Test
+~~~~~~
+
+The Test option runs a few HTTPS request to make sure your proxy configuration is correct. 
+
+Once all fields are configured, click Test to validate if your configuration is correct. If not, results are displayed. Correct the 
+configuration and try again. 
+
+Apply
+~~~~~~~
+
+Apply is clickable only after Test is passed. When Apply is applied, the proxy configuration takes effect. 
+
+Delete
+~~~~~~~
+
+To disable proxy, click Delete. 
+
+                                      
+
+  
 .. |imageGrid| image:: advanced_config_media/grid.png
 
 .. disqus::
