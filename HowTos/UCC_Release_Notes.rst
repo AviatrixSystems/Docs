@@ -16,7 +16,7 @@ R6.3 (Coming Soon)
 
 - **Manual Advertise Routes per BGP Connection** expands the existing gateway based manual advertising routes feature to apply it to each BGP connection. One use case is to have better route advertising control for each remote BGP peer. For configuration details, refer to `Connection Base Manual BGP Advertisement <https://docs.aviatrix.com/HowTos/transit_advanced.html#connection-manual-bgp-advertised-network-list>`_.  
 
-- **Transit Approval per BGP Connection** expands the existing Aviatrix Transit Gateway based Transit Approval feature to apply it to each on-prem BGP connection for fine grain control of network CIDRs admitted to the cloud network. 
+- **Transit Approval per BGP Connection** expands the existing Aviatrix Transit Gateway based Transit Approval feature to apply it to each on-prem BGP connection for fine grain control of network CIDRs admitted to the cloud network. To configure, go to Multi-cloud Transit -> Approval. Select a Transit Gateway, select Mode Connection and select a connection, enable Learned CIDRs Approval. For more information, refer to `Transit Approval <https://docs.aviatrix.com/HowTos/transit_approval.html>`_. 
 
 - **Private Transit Gateway Peering with Single-Tunnel Mode** expands the existing Insane Mode Transit Gateway Peering Over Private Network to apply it to single IPSec tunnel. One use case is for low speed encryption between cloud networks (up to 4Gbps). For more information, refer to `Transit Peering in Single-Tunnel mode. <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#single-tunnel-mode>`_. 
 
@@ -31,7 +31,7 @@ R6.3 (Coming Soon)
 2. FireNet
 =============
 
-- **FireNet integration with AWS Gateway Load Balancer** provides the capability where adding or removing a firewall to the FireNet does not impact the existing established network sessions. 
+- **FireNet integration with AWS Gateway Load Balancer** provides the capability where adding or removing a firewall to the FireNet does not impact the existing established network sessions. AWS Gateway Load Balancer (GWLB) integration is supported for both TGW based FireNet and Multi-cloud Transit FireNet. For configuration details on TGW based FireNet without Aviatrix FireNet gateways, refer to `Native AWS GWLB Integration <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#b-enable-native-aws-gwlb-for-firenet-function>`_. For configuration details on TGW based FireNet with Aviatrix FireNet gateways, refer to `FireNett with GWLB <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-enable-the-aviatrix-gateway-for-firenet-function>`_. 
 
 3. User VPN
 =============
