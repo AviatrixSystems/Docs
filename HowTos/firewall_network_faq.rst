@@ -336,10 +336,12 @@ What is Intra Domain inspection?
 Intra Domain inspection allows traffic between VPCs in the same Security Domain to be redirected to Firewall Domain for inspection before reaching to the destination.
 
 
-How to migrate from Aviatrix FireNet to FireNet with AWS GWLB or vice versa?
+How to migrate from FireNet to FireNet with AWS GWLB or vice versa?
 ---------------------------------------------------------------------------------
 
-Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) and allowing users to migrate from FireNet to FireNet with AWS GWLB or vice versa. Follow the below steps for migration:
+Starting from Release 6.3, Multi-cloud Transit FireNet  added support for AWS Gateway Load Balancer (GWLB). The key
+advantage of this integration is to allow firewalls to be scaled up and down without affecting established sessions
+(except sessions associated with the failed firewalls).
 
     1. Save firewall configuration
     #. Disassociate firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
@@ -349,10 +351,12 @@ Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) an
     #. Launch and associate firewall -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Step 7a.
     #. Restore firewall configuration
 
-Can we migrate from Aviatrix FireNet solution to Aviatrix Native FireNet with GWLB solution ?
+Can we migrate from FireNet solution to Native FireNet with GWLB solution ?
 ----------------------------------------------------------------------------------------------------------------
 
-Yes, please use the following steps for migration:
+Native FireNet refers to a deployment scenario where Aviatrix FireNet gateways are not deployed. 
+
+To migrate use the following steps for migration:
 
     1. Save firewall configuration
     #. Disassociate firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.

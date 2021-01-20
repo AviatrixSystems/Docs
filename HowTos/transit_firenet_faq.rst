@@ -209,7 +209,11 @@ By default, Transit Firenet use 5-tuple hashing algorithm but that can be change
 How to migrate from Aviatrix Transit FireNet to Transit FireNet with AWS GWLB?
 ---------------------------------------------------------------------------------
 
-Starting 6.3, Aviatrix added the support for AWS Gateway Load Balancer (GWLB) and allowing users to migrate from Transit FireNet to Transit FireNet with AWS GWLB or vice versa. Follow the below steps for migration:
+Starting from Release 6.3, Multi-cloud Transit FireNet  added support for AWS Gateway Load Balancer (GWLB). The key 
+advantage of this integration is to allow firewalls to be scaled up and down without affecting established sessions
+(except sessions associated with the failed firewalls). 
+
+To migrate from Transit FireNet to Transit FireNet with AWS GWLB and vice versa. Follow the steps below:
 
     1. Save firewall configuration
     #. Disassociate firewall instance -> Go to Aviatrix Controller's console -> FIREWALL NETWORK -> Setup -> Step 10.
