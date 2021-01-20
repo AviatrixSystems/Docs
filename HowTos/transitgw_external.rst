@@ -67,10 +67,13 @@ Fill the parameters and click OK. For ActiveMesh design notes, check out `Active
 ============================   ==========
 **Setting**                    **Value**
 ============================   ==========
-External Device                Select this option to build a IPSEC connection to a remote site. 
+External Device                Select this option to build a connection to a remote site. 
 BGP                            Select BGP if the Transit GW runs dynamic routing with remote site.
 Static Remote Route-Based      Select this option the remote site supports route-based VPN with static configuration.
-Static Remote Policy-Based     Select this option the remote site supports policy-based VPN with static configuration. The caveat in this mode is the remote site must always initiate the traffic.
+Static Remote Policy-Based     Select this option the remote site supports policy-based VPN with static configuration. The caveat in this mode is the remote site must always initiate the traffic. This function has been moved to `SITE2CLOUD <https://docs.aviatrix.com/HowTos/site2cloud.html>`_.
+IPsec                          Select this option to run BGP and build a IPSEC connection to a remote site.
+GRE                            Select this option to run BGP and build a GRE connection to a remote site.
+LAN                            Select this option to run BGP and data plane by LAN interface with an instance in the same VPC or VNet.
 Transit VPC Name               The Transit VPC ID where Transit GW was launched.
 Connection Name                A unique name to identify the connection to external device. 
 Aviatrix Transit GW BGP ASN    The BGP AS number the Transit GW will use to exchange routes with external device.
