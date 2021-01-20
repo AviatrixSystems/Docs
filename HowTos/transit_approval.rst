@@ -29,6 +29,16 @@ click Learned CIDRs Approval to enable.
 
 When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes.
 
+Mode Gateway
+--------------
+
+By default, Learned CIDR Approval applies to all BGP connections configured on the Multi-cloud Transit Gateway. 
+
+Mode Connection
+----------------
+
+If Connection mode is selected, approval is applied to a selected BGP connection as shown in the 
+drop down menu. A BGP connection that is not configured for Approval learns all routes from its peer automatically. 
   
 
 .. |Test| image:: transitvpc_workflow_media/SRMC.png

@@ -14,7 +14,7 @@ R6.3 (Coming Soon)
 
 - **Transit BGP to Local** allows Aviatrix Transit Gateway to run BGP and data plane with an instance in the same VPC or VNet without running a tunnel interface. One use case is to interoperate with third party virtual appliances that do not have the capability to support BGP over any tunneling protocols. 
 
-- **Manual Advertise Routes per BGP Connection** expands the existing gateway based manual advertising routes feature to apply it to each BGP connection. One use case is to have better route advertising control for each remote BGP peer. 
+- **Manual Advertise Routes per BGP Connection** expands the existing gateway based manual advertising routes feature to apply it to each BGP connection. One use case is to have better route advertising control for each remote BGP peer. For configuration details, refer to `Connection Base Manual BGP Advertisement <https://docs.aviatrix.com/HowTos/transit_advanced.html#connection-manual-bgp-advertised-network-list>`_.  
 
 - **Transit Approval per BGP Connection** expands the existing Aviatrix Transit Gateway based Transit Approval feature to apply it to each on-prem BGP connection for fine grain control of network CIDRs admitted to the cloud network. 
 
@@ -24,7 +24,7 @@ R6.3 (Coming Soon)
 
 - **Private OOB** allows both the Controller and Aviatrix Transit and Spoke gateways to be deployed in private  subnets. One use case is to satisfy compliance requirements where no public facing instances were permitted. For setup information, refer to `Private OOB workflow <https://docs.aviatrix.com/HowTos/private_oob_workflow.html>`_.
 
-- **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. 
+- **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. For configuration information, refer to `proxy configuration <https://docs.aviatrix.com/HowTos/advanced_config.html#proxy>`_. 
 
 - **Improve AWS t3 instances IPSec performance** to up to 6Gbps (MTU 1500 Bytes) for Multi-cloud Transit and Spoke gateway without additional license charge. The mechanism is to allow Insane Mode to be applied the t3 series without charging the Insane Mode license. For performance details on t3 series, refer to `t3 series Insane Mode performance <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#t3-instance-series-performance>`_. 
 
