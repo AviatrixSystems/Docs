@@ -43,8 +43,9 @@ R6.3 (Coming Soon)
 
 - **Route based IPSEC with IKEv2** provides an option to run route-based VPN with IKEv2. 
 - **Change Local Identifier** provides the flexibility to update either gateway's public IP address or private IP address as local identifier.
-- **DPD Parameters** can now be modified through the Controller User Interface in additional to API and Terraform. One use case of modifying DPD parameters is to reduce tunnel failure detection time. 
-- **Event Trigger** is an enhancement to reduce failure detection time. This is an alternative to the default setting where tunnel status change is detected by a periodic monitoring process running on the gateways. 
+- **DPD Parameters** can now be modified through the Controller User Interface in additional to API and Terraform. One use case of modifying DPD parameters is to reduce tunnel failure detection time. To configure, refer to `DPD Configuration <https://docs.aviatrix.com/HowTos/site2cloud.html#dead-peer-detection>`_. 
+- **Event Trigger** is a new mechanism to reduce failure detection time. This is an alternative to the default setting where tunnel status change is detected by a periodic monitoring process running on the gateways. To configure, refer to `Event Triggered HA <https://docs.aviatrix.com/HowTos/site2cloud.html#event-triggered-ha>`_. 
+- **Failover Time Reduction for Overlapping Networks** Significant improvements in failover time reduction through a series of optimization. Refer to `Tuning For Sub-10 Seconds Failover Time in Overlapping Networks. <https://docs.aviatrix.com/HowTos/s2c_overlapping_cidrs_with_fast_convergence.html>`_. 
 
 
 R6.2.1955 (1/16/2020)
