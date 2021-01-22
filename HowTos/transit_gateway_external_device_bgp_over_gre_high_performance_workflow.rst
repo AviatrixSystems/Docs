@@ -24,15 +24,15 @@ where Aviatrix Multi-cloud Transit Gateways connect to an on-prem Edge Router ov
 This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using GRE over AWS Direct Connect. 
 In this Tech Note, you learn the following:
 
-#. Workflow on `building underlay connectivity with AWS Direct Connect 10 Gbps capacity <1. Building underlay connectivity with AWS Direct Connect>`_
+#. Workflow on `building underlay connectivity with AWS Direct Connect 10 Gbps capacity <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#building-underlay-connectivity-with-aws-direct-connect>`_
 
-#. Workflow on `deploying Aviatrix Transit Solution <2. Deploy Aviatrix Multi-Cloud Transit Solution>`_
+#. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
 
-#. Workflow on `establishing connectivity between Edge Router and Aviatrix Transit Gateway to form GRE tunnel <3. Build connectivity between Edge Router and Aviatrix Transit Gateway>`_
+#. Workflow on `establishing connectivity between Edge Router and Aviatrix Transit Gateway to form GRE tunnel <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-connectivity-between-edge-router-and-aviatrix-transit-gateway>`_
 
-#. Workflow on `building GRE tunnel and BGP over GRE <4. Build GRE tunnel and BGP over GRE>`_
+#. Workflow on `building GRE tunnel and BGP over GRE <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-gre-tunnel-and-bgp-over-gre>`_
 
-#. Workflow on `enabling ECMP Load Balancing to achieve high performance <5. Configure ECMP Load Balancing for high performances>`_
+#. Workflow on `enabling ECMP Load Balancing to achieve high performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#configure-ecmp-load-balancing-for-high-performance>`_
 
 For more information about Multi-Cloud Transit Network and External Device, please check out the below documents:
 
@@ -225,7 +225,7 @@ Step 3.4. Check route propagation info on AWS portal
 
   |aws_route_propagation_routing_entry|
     
-Step 3.4. Confirm that Edge Router and Aviatrix Transit Gateway can reach to each other IP for GRE tunnel
+Step 3.5. Confirm that Edge Router and Aviatrix Transit Gateway can reach to each other IP for GRE tunnel
 ----------------------------------------------------------------------------------------------------------
 
 4. Build GRE tunnel and BGP over GRE
