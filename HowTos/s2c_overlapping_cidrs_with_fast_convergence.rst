@@ -5,8 +5,11 @@
 
 
 ===========================================================================================
-Tuning Sub-10 Seconds Failover Time in Overlapping Networks Environment
+Tuning Sub-10 Seconds Failover Time in Overlapping Networks
 ===========================================================================================
+
+Introduction
+--------------
 
 The purpose of this document is to provide the instructions for tuning network configurations for sub-10 seconds failover time when 
 network address ranges on-prem and cloud are overlapping.

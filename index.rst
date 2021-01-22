@@ -427,6 +427,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_gateway_peering_with_private_network_workflow
    HowTos/aviatrix_aws_outposts
    HowTos/private_oob
+   HowTos/s2c_overlapping_cidrs_with_fast_convergence
+
    
 .. _Good To Know:
 
