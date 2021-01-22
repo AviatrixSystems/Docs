@@ -116,7 +116,7 @@ Step 2.1. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 
 - Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in AWS Transit VPC
 
-- In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <7. Performance Benchmark>`_.
+- In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
 
 Step 2.2. Enable Route Propagation on the subnet route table where Aviatrix Transit Gateway locates on AWS portal
 ------------------------------------------------------------------------------------------------------------------
@@ -142,7 +142,7 @@ Step 2.3. Deploy Spoke Gateway and HA
 
 - Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in AWS Spoke VPC
 
-- In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <7. Performance Benchmark>`_.
+- In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
 
 Step 2.4. Attach Spoke Gateways to Transit Network
 --------------------------------------------------
@@ -415,7 +415,7 @@ Step 5.1. Build multiple GRE tunnels between Edge Router and Aviatrix Transit Ga
 
 - Build multiple BGP over GRE tunnels by repeating "Build GRE tunnel and BGP over GRE"
 
-- In this example, we build up to 4 pairs of GRE connections (total up to 8 tunnels) to benchmark `performance <7. Performance Benchmark>`_. 
+- In this example, we build up to 4 pairs of GRE connections (total up to 8 tunnels) to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_. 
 
   |aviatrix_multiple_gre|
 
