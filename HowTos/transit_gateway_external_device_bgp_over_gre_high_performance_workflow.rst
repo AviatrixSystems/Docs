@@ -543,13 +543,13 @@ Multiple streams result by using iperf3 tool with TCP 128 streams
    :scale: 50%    
 
 .. |aviatrix_gre_bgp_verify_ecmp_function| image:: transit_gateway_external_device_bgp_over_gre_high_performance_workflow_media/aviatrix_gre_bgp_verify_ecmp_function.png
-   :scale: 50%    
+   :scale: 30%    
 
 .. |asr_gre_bgp_verify_ecmp_function| image:: transit_gateway_external_device_bgp_over_gre_high_performance_workflow_media/asr_gre_bgp_verify_ecmp_function.png
-   :scale: 50%    
+   :scale: 70%    
 
 .. |aviatrix_multiple_gre| image:: transit_gateway_external_device_bgp_over_gre_high_performance_workflow_media/aviatrix_multiple_gre.png
-   :scale: 50%    
+   :scale: 30%    
 
 .. disqus::
 
