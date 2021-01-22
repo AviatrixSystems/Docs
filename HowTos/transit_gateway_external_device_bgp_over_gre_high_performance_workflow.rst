@@ -192,9 +192,9 @@ To demonstrate this concept in a simple fashion, we utilize IOS "ip prefix-list"
 
     #configure t
 
-    (config)#ip prefix-list CN-11-to-VGW description Advertised CIDRs 192.168.77.0/24 to build GRE tunnels
+    (config)#ip prefix-list Router-to-VGW description Advertised GRE source CIDRs 192.168.77.X/32 to build GRE tunnels
 
-    (config)#ip prefix-list CN-11-to-VGW seq 10 permit 192.168.77.1/32
+    (config)#ip prefix-list Router-to-VGW seq 10 permit 192.168.77.1/32
   
 - Apply this prefix list to outgoing BGP advertisements
 
@@ -206,7 +206,7 @@ To demonstrate this concept in a simple fashion, we utilize IOS "ip prefix-list"
 
     (config-router)#address-family ipv4
 
-    (config-router-af)#neighbor 169.254.253.17 prefix-list CN-11-to-VGW out
+    (config-router-af)#neighbor 169.254.253.17 prefix-list Router-to-VGW out
 
   Notes::
 
@@ -349,9 +349,9 @@ Step 4.4. Configure BGP over GRE tunnel on Edge Router
 
     #configure t
 
-    (config)#ip prefix-list To-Transit-GRE description Advertised CIDRs 10.220.5.0/24
+    (config)#ip prefix-list Router-To-Transit-GRE description Advertised on-prem CIDRs 10.220.5.0/24
 
-    (config)#ip prefix-list To-Transit-GRE seq 10 permit 10.220.5.0/24
+    (config)#ip prefix-list Router-To-Transit-GRE seq 10 permit 10.220.5.0/24
 
 - Apply the prefix list to outgoing BGP advertisements
 
@@ -363,9 +363,9 @@ Step 4.4. Configure BGP over GRE tunnel on Edge Router
 
     (config-router)#address-family ipv4
 
-    (config-router-af)#neighbor 169.254.61.206 prefix-list To-Transit-GRE out
+    (config-router-af)#neighbor 169.254.61.206 prefix-list Router-To-Transit-GRE out
 
-    (config-router-af)#neighbor 169.254.173.78 prefix-list To-Transit-GRE out
+    (config-router-af)#neighbor 169.254.173.78 prefix-list Router-To-Transit-GRE out
 
 Step 4.5. Verify GRE tunnel status on Aviatrix Controller
 ----------------------------------------------------------
