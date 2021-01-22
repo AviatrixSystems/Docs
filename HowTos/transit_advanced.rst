@@ -28,9 +28,9 @@ override that by manually entering the intended CIDR list to advertise to VGW.
 This feature is critical to limit the total number of routes carried by VGW (maximum is 100). 
 
 To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
-Scroll down to "Connected Transit" to enable.
+Scroll down to "Manual BGP Advertised Network List" to enable.
 
-For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
+For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable this feature on and scroll down to the "Manual BGP Advertised Network List" and enter the summarized CIDRs that you want to advertise
 
 To disable the option, leave the field blank and click "Change BGP Manual Spoke Advertisement".
 
@@ -61,9 +61,9 @@ When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC CID
 If you deploy instances in the Transit VPC, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
 
 To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
-Scroll down to "Connected Transit" to enable.
+Scroll down to "Advertise Transit VPC Network CIDR(s)" to enable.
 
-For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
+For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want and scroll down to enable the "Advertise Transit VPC Network CIDR(s)" option. 
 
 
 Connected Transit
