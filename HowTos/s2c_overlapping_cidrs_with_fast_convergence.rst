@@ -5,24 +5,32 @@
 
 
 ===========================================================================================
-How to get sub-10 seconds convergence in overlapping networks environment?
+Tuning Sub-10 Seconds Failover Time in Overlapping Networks Environment
 ===========================================================================================
 
-The purpose of this document is to provide an instructions to setup an environment to demo sub-10 seconds of convergence when network ranges on-prem and cloud are overlapping.
+The purpose of this document is to provide the instructions for tuning network configurations for sub-10 seconds failover time when 
+network address ranges on-prem and cloud are overlapping.
 
 The scenario is described in the following diagram:
 
 |s2c_overlapping_cidr_topology|
 
+In the above diagram, Client-1 and Client-2 need to communicate with on-prem network. However, both Client-1 and Client-2 network 
+address ranges overlap with each other, and worse yet, they both overlap with on-prem network address range (10.0.0.0/16). Such scenarios
+happen when Client-1, Client-2 and the on-prem networks belong to three different organizations. 
+
 The traditional solution is to build IPSEC tunnel between the two networks and use SNAT/DNAT rules to translate each addresses, as
 demonstrated in this `example. <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs.html>`_. Such solution requires a potentially
 large number of SNAT/DNAT rules which is difficult to configure and maintain.
 
-.. note::
-    This example uses Aviatrix Gateway on client site to simulate fast convergence environment
+With the introduction of `Mapped Site2Cloud for address overlapping networks <https://docs.aviatrix.com/HowTos/overlapping_network_solutions.html>`_ , you no longer need to wrestle with the individual SNAT/DNAT rules. 
+
 
 Configuration Steps
 ----------------------------
+
+.. note::
+    This example uses Aviatrix Gateway on client site to simulate fast convergence environment
 
 Step 1: Follow the Multi-Cloud Transit workflow to launch gateways
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

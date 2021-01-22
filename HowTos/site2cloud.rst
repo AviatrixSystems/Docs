@@ -292,12 +292,14 @@ To enable this, go to SITE2CLOUD, edit the connection on the Setup page, scroll 
 Forward Traffic to Transit Gateway
 ----------------------------------
 
-Coming soon in 6.3
+This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPSec connections. 
+
 
 Event Triggered HA
 ------------------
 
-Coming soon in 6.3
+Event Trigger HA is a new mechanism to reduce the convergence time. To configure, go to Site2Cloud -> select a connection, click Edit. 
+Scroll down to Event Triggered HA and click Enable. 
 
 Periodic Ping
 --------------------
