@@ -95,6 +95,8 @@ Customers find that the most compelling value of our product is simplicity, both
 
 - **Centrally Managed** A single pane of glass to manage all your cloud accounts and cloud network scattered in different regions and clouds. Hitless software upgrade eliminates operation downtime and maintenance window.
 
+- **Flexible Consumption Model** We offer pay-as-you-go metered images available on cloud providers' marketplace. No contract negotiation and no upfront commitment. Start instantly and turn it off at any time if you decide not to continue.  
+
 For example, we hide the platform differences between AWS, Azure and GCP, so that you have the same
 experience when networking to any of them or between them.
 
