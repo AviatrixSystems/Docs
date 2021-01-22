@@ -24,7 +24,7 @@ where Aviatrix Multi-cloud Transit Gateways connect to an on-prem Edge Router ov
 This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using GRE over AWS Direct Connect. 
 In this Tech Note, you learn the following:
 
-#. Workflow on `building underlay connectivity with AWS Direct Connect 10 Gbps capacity <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#building-underlay-connectivity-with-aws-direct-connect>`_
+#. Workflow on `building underlay connectivity with AWS Direct Connect 10 Gbps capacity <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-underlay-connectivity-with-aws-direct-connect>`_
 
 #. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
 
@@ -73,7 +73,7 @@ Prerequisite
 
 - Edge Router has high throughput supported on hardware interface(s) and GRE tunnel(s)
   
-1. Building underlay connectivity with AWS Direct Connect
+1. Build underlay connectivity with AWS Direct Connect
 ===================================================================================
 
 Building AWS Direct Connect is customer's responsibility. For more information about AWS Direct Connect, please check out the below documents:
@@ -411,9 +411,9 @@ Step 4.6. Verify BGP session status on Aviatrix Controller
 Step 5.1. Build multiple GRE tunnels between Edge Router and Aviatrix Transit Gateway
 ----------------------------------------------------------------------------------------
 
-- Build multiple GRE tunnels by repeating "Build connectivity between Edge Router and Aviatrix Transit Gateway"
+- Build multiple GRE tunnels by repeating `"Build connectivity between Edge Router and Aviatrix Transit Gateway" <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-connectivity-between-edge-router-and-aviatrix-transit-gateway>`_.
 
-- Build multiple BGP over GRE tunnels by repeating "Build GRE tunnel and BGP over GRE"
+- Build multiple BGP over GRE tunnels by repeating `"Build GRE tunnel and BGP over GRE" <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-gre-tunnel-and-bgp-over-gre>`_.
 
 - In this example, we build up to 4 pairs of GRE connections (total up to 8 tunnels) to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_. 
 
