@@ -492,20 +492,8 @@ At this point, run connectivity and performance test to ensure everything is wor
 End-to-End traffic via Aviatrix <-> Cisco ASR
 ---------------------------------------------
 
-Single stream result by using iperf3 tool with TCP 1 stream
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------------------+----------------------------------------------+---------------------------------------------+
-| Aviatrix Gateway size | 3 pairs of GRE connections (total 6 tunnels) | 4 pairs of GRE connections (total 8 tunnels)|
-+-----------------------+----------------------------------------------+---------------------------------------------+
-| C5n.2xlarge           | 1.6 - 2.4 (Gbps)                             |  1.6 - 2.5 (Gbps)                           |
-+-----------------------+----------------------------------------------+---------------------------------------------+
-| C5n.4xlarge           | 1.6 - 2.5 (Gbps)                             |  1.6 - 2.5 (Gbps)                           |
-+-----------------------+----------------------------------------------+---------------------------------------------+
-
-
-Multiple streams result by using iperf3 tool with TCP 128 streams
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Multiple flows result by using iperf3 tool with TCP 128 connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------+---------------------------------------------+---------------------------------------------+
 | Aviatrix Gateway size | 3 pairs of GRE connections (total 6 tunnels)| 4 pairs of GRE connections (total 8 tunnels)|
@@ -514,6 +502,11 @@ Multiple streams result by using iperf3 tool with TCP 128 streams
 +-----------------------+---------------------------------------------+---------------------------------------------+
 | C5n.4xlarge           | 9.0 - 9.3 (Gbps)                            | 9.2 - 9.3 (Gbps)                            |
 +-----------------------+---------------------------------------------+---------------------------------------------+
+
+Single flow result by using iperf3 tool with TCP 1 connection: 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.6 - 2.4 (Gbps) for both sizes C5n.2xlarge and C5n.4xlarge
 
 .. |transit_gateway_external_device_bgp_over_gre_diagram| image:: transit_gateway_external_device_bgp_over_gre_high_performance_workflow_media/transit_gateway_external_device_bgp_over_gre_diagram.png
    :scale: 50%
