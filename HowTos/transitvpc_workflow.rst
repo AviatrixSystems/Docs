@@ -3,25 +3,25 @@
   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
-================================================================
-Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
-================================================================
+======================================================================
+Multi-cloud Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
+======================================================================
 
 .. important::
 
  If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
 
-This workflow provides you with step by step instructions to build a Global Transit Network. 
+This workflow provides you with step by step instructions to build a Multi-cloud Transit Network. 
 
 While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit Network is supported. 
 
-For design guide, check out `Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
+For design guide, check out `Multi-cloud Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
-For more information, check out `Transit Network FAQ. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
+For more information, check out `Multi-cloud Transit Network FAQ. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
 
 For other Aviatrix functions, such as `VPN access for users <http://docs.aviatrix.com/HowTos/uservpn.html>`_ and `VPN access for sites <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_, check out `Aviatrix Overview <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
-This Global Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
+This Multi-cloud Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
 between Spoke VPC or VNet instances and your on-prem network. 
 
 
@@ -29,7 +29,7 @@ between Spoke VPC or VNet instances and your on-prem network.
    For description purposes, gateway and GW are used interchangeably.
    Other than gateway deletion, resources created by this workflow should be deleted within the work flow. 
 
-The Global Transit Network diagram is described as below. 
+The Transit Network diagram is described as below. 
 
 |Test|
 
@@ -103,9 +103,10 @@ Transit GW HA either.
 
 
 
-Although the title says to connect to AWS VGW, starting from Release 4.1, there are three options to connect to a Transit GW with BGP to an on-prem network. Choose one option that meets your network requirements.  
+Although the title says to connect to AWS VGW, there are four options to connect to a Transit GW to an on-prem network. Choose one option that meets your network requirements.  
 
  - AWS VGW (This is the default setting.)
+ - Azure VNG 
  - External Device (over Direct Connect or over Internet)
  - Aviatrix hardware appliance CloudN
 
@@ -140,7 +141,7 @@ performance limit and route limit by these native services. Follow the instructi
 ^^^^^^^^^^^^^^^^
 
 With this option, data packets are forwarded natively to on-prem through Azure Virtual Network Gateway (VNG) either over 
-Express Route or Internet, and in the meantime, inserting Aviatrix Transit Gateway in the data path between VNG and Spoke VNet. This allows you to run advanced function such as firewall inspection for on-prem to Spoke and between the Spokes.  
+Express Route or Internet, and in the meantime, Aviatrix Transit Gateways are inserted in the data path between VNG and Spoke VNet. This allows you to run advanced function such as firewall inspection for on-prem to Spoke and between the Spokes.  
 
 See `Multi-cloud Transit Integration with Azure VNG <https://docs.aviatrix.com/HowTos/integrate_transit_gateway_with_expressroute.html>`_. 
 
