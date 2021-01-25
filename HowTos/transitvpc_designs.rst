@@ -105,7 +105,7 @@ Alternatively, you can use a SD-WAN termination point in the VPC to connect to t
 
 Both options can be described in the diagram below.
 
-|image8|
+|sd_wan_integ|
 
 
 .. |image0| image:: transitvpc_designs_media/singleRegion.png
@@ -148,6 +148,9 @@ Both options can be described in the diagram below.
    :scale: 30%
 
 .. |multi_cloud_transit_native| image:: transitvpc_designs_media/multi_cloud_transit_native.png
+   :scale: 30%
+
+.. |sd_wan_integ| image:: transitvpc_designs_media/sd_wan_integ.png
    :scale: 30%
 
 .. |transit_firenet| image:: transit_firenet_media/transit_firenet.png
