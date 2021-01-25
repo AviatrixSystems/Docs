@@ -136,7 +136,16 @@ Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitg
 appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming both the 
 performance limit and route limit by these native services. Follow the instruction in  `this link <https://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html?>`_ to complete Step 3. 
 
-3.3 AWS VGW (VPN Gateway)
+3.3 Azure VNG
+^^^^^^^^^^^^^^^^
+
+With this option, data packets are forwarded natively to on-prem through Azure Virtual Network Gateway (VNG) either over 
+Express Route or Internet, and in the meantime, inserting Aviatrix Transit Gateway in the data path between VNG and Spoke VNet. This allows you to run advanced function such as firewall inspection for on-prem to Spoke and between the Spokes.  
+
+See `Multi-cloud Transit Integration with Azure VNG <https://docs.aviatrix.com/HowTos/integrate_transit_gateway_with_expressroute.html>`_. 
+
+
+3.4 AWS VGW (VPN Gateway)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Aviatrix automates the process of discovering and connecting to AWS VGW. The instruction below is for connecting Aviatrix Transit GW to AWS VGW. 

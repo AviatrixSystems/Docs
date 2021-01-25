@@ -3,7 +3,7 @@
   :keywords: Azure ExpressRoute, Aviatrix Transit Gateway integration with ExpressRoute
 
 ==================================================================
-Multi-Cloud Transit Integration with Azure ExpressRoute
+Multi-Cloud Transit Integration with Azure VNG
 ==================================================================
 
 Introduction

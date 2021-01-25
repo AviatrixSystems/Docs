@@ -7,13 +7,14 @@
 Aviatrix Transit Gateway to External Devices 
 =========================================================
 
-Starting from Release 4.1, there are three options to connect to a Transit GW with BGP:
+There are four options to connect to Aviatrix Multi-cloud Transit GW:
 
  - AWS VGW
+ - Azure VNG
  - Aviatrix hardware appliance CloudN
  - External (or 3rd Party) Router/Firewall
 
-This document provides instructions on how to connect the Aviatrix Transit GW to external router/firewall devices.
+This document focuses on the External Device connecting the Aviatrix Transit GW.
 
 What are the use cases for connecting to an external router?
 ---------------------------------------------------------------
@@ -23,28 +24,42 @@ What are the use cases for connecting to an external router?
  - **Overcome AWS VGW performance reset** VGW adjusts instance size based on network bandwidth consumption, leading to unexpected outage. 
 
  - **Azure Transit Network** This feature allows an Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
+ 
+ - **High Performance with on-prem** By using GRE tunneling protocol, Aviatrix Multi-cloud Transit Gateway `build multiple GRE tunnels to on-prem routers <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_ to achieve 10Gbps throughput. 
+
+ - **Integrate with SD-WAN gateways deployed in the cloud** BGP over LAN as part of the External Device option provides an efficient mechanism to connect to SD-WAN cloud gateways by interoperating with them over LAN in the same VPC/VNet while exchanging routes dynamically via BGP. 
 
  - **All Other Cloud Providers** Use this feature to connect to network of cloud providers such as Alibaba Cloud, Tencent Cloud, Vmware Cloud, IBM Cloud and others. 
+
 
 How does it work? 
 ------------------
 
-The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding. 
+The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPSEC tunnel, GRE tunnel or direct Ethernet to the router for packet forwarding. For IPSEC tunneling, static routing option is also supported. 
 
 The mechanism works for AWS Direct Connect, Azure Express Route or Internet. 
 
-Over Private Network
-~~~~~~~~~~~~~~~~~~~~~~~
+Over Private Network in AWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the underlying infrastructure is AWS Direct Connect, the diagram is shown as below. 
 
-|transitgw_dx|
+|transitgw_private_aws|
 
 Make sure:
 
-  - The VGW is attached to the Transit VPC.  
+  - The VGW is attached to the Transit VPC for IPSEC over Direct Connect and GRE over Direct Connect.  
   - The external device advertises its IP address to VGW.
   - The external device advertises the on-prem network CIDR list to Aviatrix Transit GW.
+
+Over Private Network in Azure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When the underlying infrastructure is Azure Express Route, the External Device options are IPSEC or LAN, as shown below. 
+
+|transitgw_private_azure|
+
+Note GRE is not supported on Azure. 
 
 Over the Internet
 ~~~~~~~~~~~~~~~~~~~~~
@@ -181,6 +196,12 @@ Cisco ISR/ASR router configuration:
 |transitgw_bgp_dx|
 
 .. |transitgw_dx| image:: transitgw_external_media/transitgw_dx.png
+   :scale: 30%
+
+.. |transitgw_private_aws| image:: transitgw_external_media/transitgw_private_aws.png
+   :scale: 30%
+
+.. |transitgw_private_azure| image:: transitgw_external_media/transitgw_private_azure.png
    :scale: 30%
 
 .. |transitgw_internet| image:: transitgw_external_media/transitgw_internet.png
