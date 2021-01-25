@@ -99,11 +99,9 @@ Centralized Egress Control with Aviatrix
 SD-WAN Integration
 --------------------
 
-If you have multiple sites to connect to the cloud, you can use an Aviatrix gateway to terminate the many site2cloud to branch offices, and connect this gateway to the VGW in the Transit VPC.
-
-Alternatively, you can use a SD-WAN termination point in the VPC to connect to the branches.
-
-Both options can be described in the diagram below.
+Aviatrix Multi-cloud Transit integrates with SD-WAN cloud instances with BGP over LAN where both BGP routes and data packets
+are exchanged between Aviatrix Transit Gateways and SD-WAN gateways deployed in the same Transit VPC, as shown in the diagram
+below. . 
 
 |sd_wan_integ|
 
