@@ -45,7 +45,7 @@ For more information about Multi-Cloud Transit Network and External Device, plea
 	
   - This solution supports only `ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_, please check this doc `How to migrate to ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#how-to-migrate-to-activemesh-2-0>`_ for migration detail.
   - This solution is not available to Azure and GCP as they do not support GRE.
-  - Reachability between Transit CIDR and Edge Router is customers' responsibility which is typically done by Colocation data center providers.
+  - Reachability between Transit VPC CIDR and Edge Router is customers' responsibility which is typically done by Colocation data center providers.
   - Workflow on building underlay connectivity for private network with AWS Direct Connect here is just an example. Please adjust the topology depending on your requirements.
 	
 
@@ -58,7 +58,7 @@ The key ideas for this solution are:
   
 .. important::
 
-  - Reachability between Transit CIDR and Edge Router is the responsibility of customer.
+  - Reachability between Transit VPC CIDR and Edge Router is the responsibility of customer.
 
 Prerequisite
 ====================
