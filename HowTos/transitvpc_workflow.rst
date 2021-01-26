@@ -112,22 +112,24 @@ Although the title says to connect to AWS VGW, there are four options to connect
 
 as shown below. 
 
-|transit_to_onprem|
+|transit_to_onprem-2|
 
 ==========================================      ================  ===============  ===============   ==================
 **Transit Gateway Connect Type**                 **Performance**   **HA**           Route Limit       Deployment notes
 ==========================================      ================  ===============  ===============   ==================
 AWS VGW                                         1.25Gbps          Active/Active    100                VGW should be detached. Use the `instruction here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ to build encryption between VGW and on-prem router. 
-External Device                                 1.25Gbps          Active/Standby   Unlimited          VGW should be attached. Aviatrix Transit Gateway establishes BGP + IPSEC with on-prem router. 
-CloudN                                          10Gbps            Active/Standby   Unlimited          VGW should be attached. Aviatrix Transit Gateway established BGP + IPSEC with on-prem CloudN.
+External Device                                 Up to 10Gbps      Active/Standby   Unlimited          VGW should be attached. Aviatrix Transit Gateway establishes BGP + IPSEC with on-prem router. 
+CloudN                                          20Gbps            Active/Active    Unlimited          VGW should be attached. Aviatrix Transit Gateway established BGP + IPSEC with on-prem CloudN.
+Azure VNG                                       10Gbps            Active/Active    Unlimited          VNG should be attached. 
 ==========================================      ================  ===============  ===============   ==================
 
 3.1 External Device
 ^^^^^^^^^^^^^^^^^^^^^
 
-The "External Device" option allows you to build a BGP and IPSEC tunnel directly to on-prem or 
-in the cloud device. It bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming the route limit by these native services. For more information, read more `here. <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ 
+The "External Device" option allows you to build IPSEC tunnel, GRE tunnel or Ethernet LAN directly to on-prem or 
+in the cloud device. It bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming the route limit by these native services. 
 
+To learn how to leverage External Device to connect to variety of devices, read more about `External Device FAQ. <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ 
 Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_  to complete this Step. 
 
 3.2 Aviatrix Appliance CloudN
@@ -370,6 +372,9 @@ After you have built the Transit GW and Spokes, you can view the connection betw
    :scale: 50%
 
 .. |transit_to_onprem| image:: transitvpc_workflow_media/transit_to_onprem.png
+   :scale: 40%
+
+.. |transit_to_onprem-2| image:: transitvpc_workflow_media/transit_to_onprem-2.png
    :scale: 40%
 
 .. |azure_native_transit2| image:: transitvpc_workflow_media/azure_native_transit2.png
