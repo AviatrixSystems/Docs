@@ -55,7 +55,7 @@ Create Site2Cloud Connection
    |                               |                                              |
    |                               | .. note::                                    |
    |                               |    If Connection Type `Mapped` is selected   |
-   |                               |    only `Route-based' is supported.          |
+   |                               |    only 'Route-based' is supported.          |
    |                               |                                              |
    +-------------------------------+----------------------------------------------+
    | Algorithms                    | Defaults will be used if unchecked. See      |
@@ -209,7 +209,7 @@ Remote Gateway Type
    | Generic                       | Use this option for most third-party     |
    |                               | routers and firewalls.                   |
    +-------------------------------+------------------------------------------+
-   | AWS VGW                       | For terminating on an AWS Virtual Private |
+   | AWS VGW                       | For terminating on an AWS Virtual Private|
    |                               | Gateway, select this option.             |
    +-------------------------------+------------------------------------------+
    | Azure VPN                     | For terminating on Azure VPN Services    |
@@ -228,13 +228,13 @@ If the `Algorithms` checkbox is unchecked, the default values will be used.  If 
    +-------------------------------+
    | Field                         |
    +===============================+
-   | Phase 1 Authentication       |
+   | Phase 1 Authentication        |
    +-------------------------------+
    | Phase 1 DH Groups             |
    +-------------------------------+
    | Phase 1 Encryption            |
    +-------------------------------+
-   | Phase 2 Authentication       |
+   | Phase 2 Authentication        |
    +-------------------------------+
    | Phase 2 DH Groups             |
    +-------------------------------+
@@ -281,6 +281,15 @@ Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPSEC tunne
 send periodic messages to ensure the remote site is up. 
 
 By default DPD detection is enabled. 
+
+================   ===============    ===============        
+Field              Value              Description                 
+================   ===============    ===============     
+Delay              >= 1               Keealive timer (in seconds)
+Retry Delay        >= 1               How long should the tunnel wait before declaring keep alive failed. (in seconds)
+Maxfail            >= 1               Number of tries before considering the peer is dead. 
+================   ===============    ===============     
+
 
 Active Active HA
 ----------------
