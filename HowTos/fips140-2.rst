@@ -18,9 +18,7 @@ To apply FIPS patch go to the Controller Console, Settings -> Maintainence -> Se
 
 To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
-When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module.
-
-
+When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module. OpenVPN services will be restarted and this will cause your VPN clients to disconnect and reconnect to the gateways. 
 
 
 
