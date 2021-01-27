@@ -27,13 +27,13 @@ where Aviatrix Multi-cloud Transit Gateways connect to a Simulation Peer Routers
 This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using BGP over LAN. 
 In this Tech Note, you learn the following:
 
-#. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
+#. Workflow on `deploying Aviatrix Transit Solution <>`_
 
-#. Workflow on `deploying Simulation Peer Router by Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
+#. Workflow on `deploying Simulation Peer Router by Aviatrix Transit Solution <>`_
 
 #. Workflow on `building connectivity between Aviatrix Transit Gateway and Peer Router in the same VPC or VNet <>`_
 
-#. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-gre-tunnel-and-bgp-over-gre>`_
+#. Workflow on `building BGP over LAN <>`_
 
 For more information about Multi-Cloud Transit Network and External Device, please check out the below documents:
 
