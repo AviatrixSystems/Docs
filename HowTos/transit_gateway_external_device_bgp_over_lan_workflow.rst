@@ -3,24 +3,19 @@
   :keywords: Aviatrix Transit network, Private Network, AWS Direct Connect, BGP over LAN, External Device, High Performance
 
 ==========================================================================================
-Multi-cloud Transit Gateway BGP over LAN simulation Workflow
+Multi-cloud Transit BGP over LAN Workflow
 ==========================================================================================
 
 Introduction
 ============
 
-[NEED TO WORK ON INTRODUCTION]
+Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC or VNet without running 
+any tunneling protocol such as IPSec or GRE. One use case is to interoperate with third party virtual appliances such as 
+SD-WAN cloud instances that do not have the capability to support BGP over any tunneling protocols.
 
-Transit BGP to LAN allows Aviatrix Transit Gateway to deploy BGP and data plane with an instance in the same VPC or VNet without running a tunnel protocol such as IPSec and GRE. 
+For example, integrating with SD-WAN gateways can be deployed as below, 
 
-Use Cases:
------------
-
-- Interoperate with third party virtual appliances such as a SD-WAN cloud instance that do not have the capability to support BGP over any tunneling protocols.
-
-The solution is shown in the diagram below, 
-
-|transit_gateway_external_device_bgp_over_lan_diagram|
+|sd_wan_integ|
 
 where Aviatrix Multi-cloud Transit Gateways connect to a Simulation Peer Routers in the same VPC/VNet.
 
@@ -79,42 +74,20 @@ Step 1.1. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 
 - In this example, size c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
 	
-Step 1.2. Deploy Spoke Gateway and HA
---------------------------------------
-
-- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in AWS Spoke VPC
-
-- In this example, size c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
-
-Step 1.3. Attach Spoke Gateways to Transit Network
---------------------------------------------------
-
-- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in AWS
-
-2. Deploy another Aviatrix Multi-Cloud Transit Solution to simulate Peer Router
+2. Launch third party cloud instances
 ================================================================================
 
-To demonstrate this BGP over LAN feature in a simple fashion, we simulate Peer Router by deploying another Aviatrix Multi-Cloud Transit Solution. 
-Please adjust the topology depending on your requirements.
+Deploy third party cloud instances in the same VPC or VNet. 
 
-Step 2.1. Follow the previous step to deploy another Aviatrix Multi-Cloud Transit Solution
-------------------------------------------------------------------------------------------
+.. important::
 
-3. Build connectivity between Aviatrix Transit Gateway and Peer Router in the same VPC or VNet
-===============================================================================================
+  The primary Aviatrix Transit Gateway must be deployed in the same subnet as the first third party cloud instance. The HA Transit Gateway if deployed must reside in the same subnet as the second cloud instance. 
 
-Aviatrix Transit Solution is used as a Peer Router in this AWS example.
 
-Step 3.1. Create or find a subnet within the same AZ where Aviatrix Transit Primary and Peer Router Primary locate
--------------------------------------------------------------------------------------------------------------------
-
-Step 3.2. Create or find another subnet within the same AZ where Aviatrix Transit HA and Peer Router HA locate
---------------------------------------------------------------------------------------------------------------
-
-4. Build BGP over LAN
+3. Build BGP over LAN
 ================================================
 
-Step 4.1. Configure BGP over LAN on Aviatrix Transit Gateway
+Step 3.1. Configure BGP over LAN on Aviatrix Transit Gateway
 --------------------------------------------------------------------
 
 - Login Aviatrix Controller
@@ -153,7 +126,7 @@ Step 4.1. Configure BGP over LAN on Aviatrix Transit Gateway
 
   |aviatrix_transit_externel_device_lan|
   
-Step 4.2. (Optional) Download the BGP over LAN configuration sample from Aviatrix Controller
+Step 3.2. (Optional) Download the BGP over LAN configuration sample from Aviatrix Controller
 --------------------------------------------------------------------------------------------
 
 - Navigate to SITE2CLOUD -> Setup
@@ -166,12 +139,12 @@ Step 4.2. (Optional) Download the BGP over LAN configuration sample from Aviatri
 
 - Click the button "Download Configuration".
 
-Step 4.3. Configure BGP over LAN on Peer Router
+Step 3.3. Configure BGP over LAN on Peer Router
 -----------------------------------------------
 
 - Open the downloaded BGP over LAN configuration file
 
-Step 4.4. Verify LAN status on Aviatrix Controller
+Step 3.4. Verify LAN status on Aviatrix Controller
 ----------------------------------------------------------
 
 - Navigate back to Aviatrix Controller
@@ -198,7 +171,7 @@ Step 4.4. Verify LAN status on Aviatrix Controller
 
   |aviatrix_bgp_lan_status_2|
 
-Step 4.5. Verify BGP session status on Aviatrix Controller
+Step 3.5. Verify BGP session status on Aviatrix Controller
 ----------------------------------------------------------
 
 - Go to MULTI-CLOUD TRANSIT -> Advanced Config -> BGP Tab
@@ -209,16 +182,20 @@ Step 4.5. Verify BGP session status on Aviatrix Controller
 
   |aviatrix_bgp_status|
 
-5. Ready to go!
+4. Ready to go!
 =================
 
 At this point, run connectivity and performance test to ensure everything is working correctly. 
 
-6. Performance Benchmark
+5. Performance Benchmark
 ===========================
 
 End-to-End traffic via Aviatrix <-> Aviatrix
 ---------------------------------------------
+
+The performance test is done with a pair of Aviatrix Transit Gateways as the third party cloud instances, as shown below. 
+
+|transit_gateway_external_device_bgp_over_lan_diagram|
 
 Multiple flows result by using iperf3 tool with TCP 128 connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,10 +206,10 @@ Multiple flows result by using iperf3 tool with TCP 128 connections
 | C5n.4xlarge           | 23 - 24                                     | 
 +-----------------------+---------------------------------------------+
 
-7. Additional Information
+6. Additional Read
 ===========================
 
-- `Need of conventional BGP support in the cloud <https://community.aviatrix.com/t/h7htvvc/need-of-conventional-bgp-support-in-the-cloud>`_
+Additional read can be found in this short blog, `Need of conventional BGP support in the cloud <https://community.aviatrix.com/t/h7htvvc/need-of-conventional-bgp-support-in-the-cloud>`_
 
 .. |transit_gateway_external_device_bgp_over_lan_diagram| image:: transit_gateway_external_device_bgp_over_lan_simulation_workflow_media/transit_gateway_external_device_bgp_over_lan_diagram.png
    :scale: 50%
@@ -257,6 +234,9 @@ Multiple flows result by using iperf3 tool with TCP 128 connections
  
 .. |aviatrix_bgp_status| image:: transit_gateway_external_device_bgp_over_lan_simulation_workflow_media/aviatrix_bgp_status.png
    :scale: 50% 
+
+.. |sd_wan_integ| image:: transitvpc_designs_media/sd_wan_integ.png
+   :scale: 30%
    
 .. disqus::
 
