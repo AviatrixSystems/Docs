@@ -117,6 +117,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/integrate_transit_gateway_with_expressroute
    HowTos/private_oob_workflow
    HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow
+   HowTos/transit_gateway_external_device_bgp_over_lan_workflow
 
 .. _Transit Gateway Orchestrator:
 
