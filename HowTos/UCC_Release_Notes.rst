@@ -48,7 +48,7 @@ R6.3 (Coming Soon)
 - **Failover Time Reduction for Overlapping Networks** Significant improvements in failover time reduction through a series of optimization. Refer to `Tuning For Sub-10 Seconds Failover Time in Overlapping Networks. <https://docs.aviatrix.com/HowTos/s2c_overlapping_cidrs_with_fast_convergence.html>`_. 
 
 
-R6.2.1955 (1/16/2020)
+R6.2.1955 (1/16/2021)
 ======================
 
  - **Bug fix** GCP Spoke gateway with SNAT configuration propagates route incorrectly. 
