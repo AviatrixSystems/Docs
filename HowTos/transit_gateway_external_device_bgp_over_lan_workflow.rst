@@ -22,11 +22,11 @@ where an Aviatrix Multi-cloud Transit Gateway connects to a third-party cloud in
 This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using BGP over LAN. 
 In this Tech Note, you learn the following:
 
-#. Workflow on `deploying Aviatrix Transit Solution <>`_
+#. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
 
-#. Workflow on `launching third-party cloud instances <>`_
+#. Workflow on `launching third-party cloud instances <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#launch-third-party-cloud-instances>`_
 
-#. Workflow on `building BGP over LAN <>`_
+#. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#build-bgp-over-lan>`_
 
 For more information about Multi-Cloud Transit Network and External Device, please check out the below documents:
 
@@ -41,10 +41,12 @@ For more information about Multi-Cloud Transit Network and External Device, plea
   
   - This solution is available to AWS and Azure. Workflow with AWS here is just an example. Please adjust the topology depending on your requirements.
 
-  - Require instance size to support at least 5 interfaces such as c4.4xlarge
+  - Require instance size to support at least 5 interfaces such as c4.4xlarge.
 	
-	- LAN interfaces for Aviatrix Transit Primary and third-party cloud instance must be in the same Availability Zone.
-
+  - LAN interfaces for Aviatrix Transit Primary and third-party cloud instance must be in the same Availability Zone.
+  
+  - One BGP over LAN connection per gateway is supported.
+ 
 The key ideas for this solution are:
 ----------------------------------------
   
