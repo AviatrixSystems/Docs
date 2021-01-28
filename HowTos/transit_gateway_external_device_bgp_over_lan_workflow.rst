@@ -9,7 +9,7 @@ Multi-cloud Transit BGP over LAN Workflow
 Introduction
 ============
 
-Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC or VNet without running 
+Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in AWS or different VNets in Azure without running 
 any tunneling protocol such as IPSec or GRE. One use case is to interoperate with third-party virtual appliances such as 
 SD-WAN cloud instances that do not have the capability to support BGP over any tunneling protocols.
 
@@ -17,9 +17,9 @@ For example, integrating with SD-WAN gateways can be deployed as below,
 
 |sd_wan_integ|
 
-where an Aviatrix Multi-cloud Transit Gateway connects to a third-party cloud instance in the same VPC/VNet.
+where an Aviatrix Multi-cloud Transit Gateway connects to a third-party cloud instance in the same VPC in AWS or different VNets in Azure.
 
-This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using BGP over LAN. 
+This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using BGP over LAN in AWS.  
 In this Tech Note, you learn the following:
 
 #. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
@@ -27,6 +27,8 @@ In this Tech Note, you learn the following:
 #. Workflow on `launching third-party cloud instances <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#launch-third-party-cloud-instances>`_
 
 #. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#build-bgp-over-lan>`_
+
+For how to configure BGP over LAN in Azure, please refer to this doc.
 
 For more information about Multi-Cloud Transit Network and External Device, please check out the below documents:
 
@@ -41,7 +43,7 @@ For more information about Multi-Cloud Transit Network and External Device, plea
   
   - This solution is available to AWS and Azure. Workflow with AWS here is just an example. Please adjust the topology depending on your requirements.
 
-  - Require instance size to support at least 5 interfaces such as c4.4xlarge.
+  - Require instance size to support at least 5 interfaces such as c4.4xlarge in AWS.
 	
   - LAN interfaces for Aviatrix Transit Primary and third-party cloud instance must be in the same Availability Zone.
   
@@ -50,7 +52,7 @@ For more information about Multi-Cloud Transit Network and External Device, plea
 The key ideas for this solution are:
 ----------------------------------------
   
-- A BGP session establishes between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface in the same VPC or VNet
+- A BGP session establishes between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface in the same VPC or different VNets
 
 - Data plane traffic also runs between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface without a tunnel protocol such as IPSec and GRE. 
 
@@ -77,14 +79,14 @@ Step 1.1. Deploy Aviatrix Multi-Cloud Transit Gateway and HA
 
 - Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in Transit VPC
 
-- In this example, size c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
+- In this example, size c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#performance-benchmark>`_.
 
 Step 1.2. Deploy Spoke Gateway and HA
 --------------------------------------
 
 - Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in Spoke VPC
 
-- In this example, size c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
+- In this example, size c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#performance-benchmark>`_.
 
 Step 1.3. Attach Spoke Gateways to Transit Network
 --------------------------------------------------
@@ -94,11 +96,20 @@ Step 1.3. Attach Spoke Gateways to Transit Network
 2. Launch third-party cloud instances
 ================================================================================
 
-Deploy third-party cloud instances in the same VPC or VNet. 
+Step 2.1. Deploy third-party cloud instances in the same VPC where Aviatrix Transit Gateways locate
+----------------------------------------------------------------------------------------------------
+
+- Create a third-party cloud instance and put MGMT interface in public gateway subnet. 
+
+- Create a new public WAN subnet and a dedicated routing table for WAN interface if needed.
+
+- Create a new private LAN subnet and a dedicated routing table (optional) for LAN interface.
+
+- Make sure the function "Source/Dest check" on third-party cloud instance's interfaces is disabled
 
 .. important::
 
-  The primary Aviatrix Transit Gateway must be deployed in the same subnet as the first third-party cloud instance. The HA Transit Gateway if deployed must reside in the same subnet as the second cloud instance. 
+  The primary Aviatrix Transit Gateway must be deployed in the same available zone as the first third-party cloud instance. The HA Transit Gateway if deployed must reside in the same available zone as the second cloud instance. 
 
 3. Build BGP over LAN
 ================================================
@@ -114,29 +125,29 @@ Step 3.1. Configure BGP over LAN on Aviatrix Transit Gateway
 
 - Fill the parameters to set up BGP over LAN to a third-party cloud instance
   
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched.                                                                                                   |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Connection Name                  | Provide a unique name to identify the connection to external device.                                                                                       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Aviatrix Transit Gateway BGP ASN | Configure a BGP AS number that the Transit GW will use to exchange routes with external device.                                                            |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Primary Aviatrix Transit Gateway | Select the Transit GW.                                                                                                                                     |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Enable Remote Gateway HA         | Check this option in this example.                                                                                                                         |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote BGP AS Number             | Configure a BGP AS number that third-party cloud instance will use to exchange routes with Aviatrix Transit Primary                                        |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote LAN IP                    | Configure a valid IP within the subnet where Aviatrix Transit Primary and third-party cloud instance Primary locate for third-party cloud instance Primary |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Local LAN IP                     | Configure a valid IP within the subnet where Aviatrix Transit Primary and third-party cloud instance Primary locate for Aviatrix Transit Primary           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote BGP AS Number (Backup)    | Configure a BGP AS number that third-party cloud instance HA will use to exchange routes with Aviatrix Transit HA                                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote LAN IP                    | Configure a valid IP within the subnet where Aviatrix Transit HA and third-party cloud instance HA locate for third-party cloud instance HA                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Local LAN IP                     | Configure a valid IP within the subnet where Aviatrix Transit HA and third-party cloud instance HA locate for Aviatrix Transit HA                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched                                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Connection Name                  | Provide a unique name to identify the connection to external device                                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Aviatrix Transit Gateway BGP ASN | Configure a BGP AS number that the Transit GW will use to exchange routes with external device                      |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Primary Aviatrix Transit Gateway | Select the Transit GW                                                                                               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Enable Remote Gateway HA         | Check this option in this example                                                                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Remote BGP AS Number             | Configure a BGP AS number that third-party cloud instance will use to exchange routes with Aviatrix Transit Primary |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Remote LAN IP                    | Find the IP of the LAN interface of the third-party cloud primary instance                                          |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Local LAN IP                     | Leave it blank or find a valid IP within the subnet where "Remote LAN IP" locates                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Remote BGP AS Number (Backup)    | Configure a BGP AS number that third-party cloud HA instance  will use to exchange routes with Aviatrix Transit HA  |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Remote LAN IP                    | Find the IP of the LAN interface of the third-party cloud HA instance                                               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Local LAN IP                     | Leave it blank or find a valid IP within the subnet where "Remote LAN IP" locates                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 - Click the button "CONNECT" to generate BGP session over LAN
 
