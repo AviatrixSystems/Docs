@@ -1,5 +1,10 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+2.13.12 - Jan 28 2021
+  - Provide a MD5 checksum along with every single installer
+  - Support MacOS Big Sur
+  - Verify the settings before exiting the Settings UI
+
 2.12.10 - September 3 2020
   - Support Ubuntu 20.04 FIPS
   - A toggle to support Cisco Umbrella DNS servers or the VPC DNS servers on MacOS
