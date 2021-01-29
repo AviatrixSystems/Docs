@@ -31,7 +31,17 @@ Some common notions described in the following sessions:
                    In Transit Gateway Peering scenario, both Transit Gateways are in the same cloud. 
    no SameCloud - A Spoke gateway and Transit Gateway are in the different clouds, 
                   or two Transit Gateways are in the different clouds. 
+ 
 
+.. note ::
+
+  When launching a selected t3 series gateway instance in AWS with Insane Mode option enabled, HPE license is **not** applied. The selected t3 series instances are: t3a.xlarge, t3a.medium, t3a.small, t3.large, t3.medium, t3.small. 
+ 
+ 
+ 
+ 
+ 
+ 
 
 1. Multi-cloud Spoke Gateway Attachment
 -----------------------------------------
