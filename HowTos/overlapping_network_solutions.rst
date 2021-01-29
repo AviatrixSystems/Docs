@@ -147,7 +147,6 @@ overlaps with a Spoke CIDR where it needs to communicate with, as shown in the d
 
 |overlap_onprem_aviatrix_transit|
 
-This scenario currently not supported. It will be available in the future releases.
 
 Scenario 4: Multi-Sites Overlap in Aviatrix Transit Deployment
 -----------------------------------------------------------------
@@ -156,7 +155,6 @@ This scenario extends the previous solution to include multi sites, as shown in 
 
 |overlap_multi_onprem_aviatrix_transit|
 
-This scenario currently not supported. It will be available in the future releases.
 
 .. |overlap_onprem_tgw| image:: overlapping_network_solutions_media/overlap_onprem_tgw.png
    :scale: 30%
