@@ -22,11 +22,11 @@ where an Aviatrix Multi-cloud Transit Gateway connects to a third-party cloud in
 This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using BGP over LAN in Azure.  
 In this Tech Note, you learn the following:
 
-#. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
+#. Workflow on `deploying Aviatrix Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
 
-#. Workflow on `launching third-party cloud instances <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#launch-third-party-cloud-instances>`_
+#. Workflow on `launching third-party cloud instances <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html#launch-third-party-cloud-instances>`_
 
-#. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#build-bgp-over-lan>`_
+#. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html#build-bgp-over-lan>`_
 
 For how to configure BGP over LAN in AWS, please refer to this `doc <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html>`_.
 
@@ -50,7 +50,7 @@ For more information about Multi-Cloud Transit Network and External Device, plea
 The key ideas for this solution are:
 ----------------------------------------
   
-- A BGP session establishes between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface in the same VPC or different VNets
+- A BGP session establishes between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface in different VNets.
 
 - Data plane traffic also runs between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface without a tunnel protocol such as IPSec and GRE. 
 
@@ -59,11 +59,11 @@ Prerequisite
 
 - This feature is available for 6.3 and later. `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.3
   
-- In this example, we are going to deploy the below VPCs in Azure:
+- In this example, we are going to deploy the below VNets in Azure:
 
-  - Transit VPCs (i.e. 10.1.0.0/16 and 10.2.0.0/16) by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
+  - Transit VNets (i.e. 10.1.0.0/16 and 10.2.0.0/16) by utilizing Aviatrix feature `Create a VNet <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VNet option enabled
 
-  - Spoke VPCs (i.e. 192.168.11.0/24 and 192.168.21.0/24) by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
+  - Spoke VNets (i.e. 192.168.11.0/24 and 192.168.21.0/24) by utilizing Aviatrix feature `Create a VNet <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
   
 - Third-party cloud instance has high throughput supported
 	
@@ -75,18 +75,18 @@ Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.co
 Step 1.1. Deploy Aviatrix Multi-Cloud Transit Gateway and HA
 ------------------------------------------------------------
 
-- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in Transit VPC
+- Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway and enable HA with insane mode enabled in Transit VNet
 
 - (Important) Enable the function "BGP Over LAN"
 
-- In this example, size Standard_D5_v2 are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#performance-benchmark>`_.
+- In this example, size Standard_D5_v2 are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html#performance-benchmark>`_.
 
 |aviatrix_azure_gateway_creation|
 
 Step 1.2. Deploy Spoke Gateway and HA
 --------------------------------------
 
-- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in Spoke VPC
+- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in Spoke VNet
 
 Step 1.3. Attach Spoke Gateways to Transit Network
 --------------------------------------------------
@@ -98,7 +98,7 @@ Step 1.3. Attach Spoke Gateways to Transit Network
 
 - Follow this step `Attach Azure ARM Spoke VNet via native peering <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_ if users prefer not to encrypt the traffic between the Transit VNet and the Spoke VNet.
 
-- In this example, this approach is selected to benchmark `performance <>`_.
+- In this example, this approach is selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html#performance-benchmark>`_.
 
 2. Launch third-party cloud instances
 ================================================================================
@@ -262,11 +262,6 @@ Multiple flows result by using iperf3 tool with TCP 128 connections
 +-----------------------+------------------+
 | Standard_D5_v2        | 22 - 23          |
 +-----------------------+------------------+
-
-Single flow result by using iperf3 tool with TCP 1 connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-9.00 - 10.5 (Gbps) for size Standard_D5_v2
 
 6. Additional Read
 ===========================
