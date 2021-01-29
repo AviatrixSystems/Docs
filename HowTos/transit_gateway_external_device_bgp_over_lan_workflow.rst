@@ -3,19 +3,19 @@
   :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, High Performance, SD-WAN
 
 ==========================================================================================
-Multi-cloud Transit BGP over LAN Workflow
+AWS Multi-cloud Transit BGP over LAN Workflow
 ==========================================================================================
 
 Introduction
 ============
 
-Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in AWS or different VNets in Azure without running 
+Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in AWS without running 
 any tunneling protocol such as IPSec or GRE. One use case is to interoperate with third-party virtual appliances such as 
 SD-WAN cloud instances that do not have the capability to support BGP over any tunneling protocols.
 
 For example, integrating with SD-WAN gateways can be deployed as below, 
 
-|sd_wan_integ|
+|sd_wan_integ_aws|
 
 where an Aviatrix Multi-cloud Transit Gateway connects to a third-party cloud instance in the same VPC in AWS or different VNets in Azure.
 
@@ -269,7 +269,7 @@ Additional read can be found in this short blog, `Need of conventional BGP suppo
 .. |aviatrix_bgp_status| image:: transit_gateway_external_device_bgp_over_lan_simulation_workflow_media/aviatrix_bgp_status.png
    :scale: 50% 
 
-.. |sd_wan_integ| image:: transitvpc_designs_media/sd_wan_integ.png
+.. |sd_wan_integ_aws| image:: transitvpc_designs_media/sd_wan_integ_aws.png
    :scale: 30%
    
 .. disqus::
