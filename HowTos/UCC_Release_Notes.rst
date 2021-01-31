@@ -2,8 +2,8 @@
 Release Notes
 =======================================
 
-R6.3 (Coming Soon)
-===================
+R6.3.2092 (1/31/2021)
+=======================
 
 1. Multi-Cloud Transit Network
 --------------------------------
@@ -28,6 +28,8 @@ R6.3 (Coming Soon)
 
 - **Improve AWS t3 instances IPSec performance** to up to 6Gbps (MTU 1500 Bytes) for Multi-cloud Transit and Spoke gateway without additional license charge. The mechanism is to allow Insane Mode to be applied the t3 series without charging the Insane Mode license. For performance details on t3 series, refer to `t3 series Insane Mode performance <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#t3-instance-series-performance>`_. 
 
+- **Support N2 and C2 instance types on GCP gateways** improves Insane Mode performance on GCP cloud. For new network throughput with these new instance types, refer to `GCP Insane Mode Performance. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_ 
+
 2. FireNet
 =============
 
@@ -47,6 +49,14 @@ R6.3 (Coming Soon)
 - **Event Trigger** is a new mechanism to reduce failure detection time. This is an alternative to the default setting where tunnel status change is detected by a periodic monitoring process running on the gateways. To configure, refer to `Event Triggered HA <https://docs.aviatrix.com/HowTos/site2cloud.html#event-triggered-ha>`_. 
 - **Failover Time Reduction for Overlapping Networks** Significant improvements in failover time reduction through a series of optimization. Refer to `Tuning For Sub-10 Seconds Failover Time in Overlapping Networks. <https://docs.aviatrix.com/HowTos/s2c_overlapping_cidrs_with_fast_convergence.html>`_. 
 
+5. Security
+==============
+
+- **Reduce Email API Blocking** is an enhancement for non HTTP/HTTPS traffic configured on a FQDN gateway where a set of large site's well known IP addresses are pre-populated to the FQDN gateways, thus significantly reducing the probability that applications still cannot make API calls (mostly email services) even though the FQDN rules for these sites are configured. The set of sites are: gmail.com, hotmail.com, microsoft.com, live.com, outlook.com, office.com ad office365.com. The applicable TCP ports are: 25, 465, 587, 143, 993 and 995.  
+- **Edit Stateful Firewall Rules Enhancement** simplifies editing and viewing IP address based stateful firewall  rules, allowing large set of rules to be managed easily. To configure, go to Security -> Stateful Firewall -> Policy to edit policies.   
+- **GCP Outbound Rules** are added to GCP gateway instance that explicitly opens the default route CIDR (0.0.0.0/0) to all destinations. This helps security and compliance team for audit purposes. 
+
+ 
 
 R6.2.1955 (1/16/2021)
 ======================
