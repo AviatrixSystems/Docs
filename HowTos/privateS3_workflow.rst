@@ -124,6 +124,11 @@ When you want to scale-out and add more Gateways to the pool, follow these steps
 
 This completes the configuration needed to add a new Gateway to the pool.
 
+Additional Read
+---------------
+
+Additional read can be found in this short blog, `Secure, Cost Effective and Private S3 access via PrivateLink for Partners with Visibility and Troubleshooting Tools <https://community.aviatrix.com/t/60hz6nx/secure-cost-effective-and-private-s3-access-via-privatelink-for-partners-with-visibility-and-troubleshooting-tools>`_. 
+
 .. |sfc| image:: sfc_media/sfc .png
    :scale: 30%
 
