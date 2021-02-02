@@ -38,7 +38,7 @@ R6.3.2092 (1/31/2021)
 3. User VPN
 =============
 
-- **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. To enable, go to OpenVPN -> Advanced -> Global Config -> Download SAML VPN Client to enable. For more information, refer to `Self Service Download SAML Client <https://docs.aviatrix.com/HowTos/openvpn_faq.html#what-is-download-vpn-cert-and-client-with-saml>`_. 
+- **Download Aviatrix SAML VPN Client from Controller** provides self-service ability for organizations to download Aviatrix SAML VPN Client software from the Controller directly for SAML authenticated users. This simplifies administration for on-boarding new VPN users. To enable, go to OpenVPN -> Advanced -> Global Config -> Download SAML VPN Client to enable. For more information, refer to `Self Service Download SAML Client <https://docs.aviatrix.com/HowTos/openvpn_faq.html#what-is-download-saml-vpn-client>`_. 
 
 4. Site2Cloud
 =============
