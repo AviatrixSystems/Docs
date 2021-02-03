@@ -1,12 +1,11 @@
 .. meta::
   :description: AWS Multi-cloud Transit BGP over LAN with Cisco Meraki Workflow
-  :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, High Performance, SD-WAN, Meraki
+  :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, SD-WAN, Meraki
 
 ==========================================================================================
 AWS Multi-cloud Transit BGP over LAN with Cisco Meraki Workflow
 ==========================================================================================
 
-Introduction
 ============
 
 Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in AWS without running 
@@ -120,7 +119,7 @@ Step 1.2. Check Cisco Meraki vMX status on Meraki Dashboard
 
 - Go to Security & SD-WAN -> MONITOR -> Appliance status
 
-- Check 
+- Check whether Cisco Meraki vMX displays "Active" status
 
   |cisco_meraki_aws_vMX_appliance_status|
 
@@ -181,7 +180,7 @@ Step 2.2. Check branch Cisco Meraki vMX status on Meraki Dashboard
 
 - Go to Security & SD-WAN -> MONITOR -> Appliance status
 
-- Check 
+- Check whether branch Cisco Meraki device displays "Active" status 
 
   |cisco_meraki_aws_branch_vMX_appliance_status|
 
@@ -196,7 +195,7 @@ Step 2.3. Enable Spoke type
 
 - Select the radio button "Spoke" to establish VPN tunnels with selected hubs
 
-- Select the "NETWORK" where the Cisco Meraki vMX in Transit VPC locates
+- Select the "NETWORK" where the Cisco Meraki vMX in Transit VPC locates for Hubs
 
 - Click the button "Save"
 
@@ -234,7 +233,7 @@ Step 2.5. Check VPN status
 
 - Go to Security & SD-WAN -> MONITOR -> VPN status
 
-- Check 
+- Check whether VPN status is Green
 
   |cisco_meraki_aws_branch_vMX_s2s_vpn_status|
 
@@ -248,7 +247,7 @@ Step 3.1. Deploy Aviatrix Multi-Cloud Transit Gateway
 
 - Follow this step `Deploy the Transit Aviatrix Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ to launch Aviatrix Transit gateway in Transit VPC.
   
-- In this example, size c5n.4xlarge is selected to benchmark `performance <>`_.
+- In this example, size c5n.4xlarge is selected.
 
 .. important::
 
