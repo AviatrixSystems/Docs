@@ -22,7 +22,7 @@ R6.3.2092 (1/31/2021)
 
 - **Transit to External Device Using IKEv2** provides an option to run IKEv2 with the on-prem site. For more information, refer to `Aviatrix Transit Gateway to External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. 
 
-- **Private OOB** allows both the Controller and Aviatrix Transit and Spoke gateways to be deployed in private  subnets. One use case is to satisfy compliance requirements where no public facing instances were permitted. For setup information, refer to `Private OOB workflow <https://docs.aviatrix.com/HowTos/private_oob_workflow.html>`_.
+- **Private OOB** allows both the Controller and Aviatrix Transit and Spoke gateways to be deployed in private  subnets. One use case is to satisfy compliance requirements where no public facing instances were permitted. For setup information in AWS, refer to `Private OOB workflow <https://docs.aviatrix.com/HowTos/private_oob_workflow.html>`_. Azure OOB support is in the future release. 
 
 - **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. For configuration information, refer to `proxy configuration <https://docs.aviatrix.com/HowTos/advanced_config.html#proxy>`_. 
 
