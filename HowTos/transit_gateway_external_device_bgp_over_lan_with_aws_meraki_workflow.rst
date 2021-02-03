@@ -16,7 +16,7 @@ This Tech Note is a step-by-step guide for interoperating with Cisco Meraki as t
 
 Two supported design patterns are described as below:
 
-Design Pattern 1 with Aviatrix Multi-cloud Transit 
+Design Pattern #1 with Aviatrix Multi-cloud Transit 
 ----------------------------------------------------
 
 |cisco_meraki_aviatrix_transit_solution_diag|
