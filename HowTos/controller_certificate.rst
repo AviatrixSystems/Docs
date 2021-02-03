@@ -8,6 +8,9 @@ Certificate Management Overview
 
 Customer can choose to use Aviatrix certificate created at the time of installation for the Controller and Gateway or customize the Controller and Gateway certificate to use an organization specific certificate. Both type are certificate issued locally through the Aviatrix Controller's automated processes. To customize the Controller or Gateway certificate, refer to the below steps. 
 
+.. note:: Please make sure there are no special characters including space in the file name.
+
+
 ###################################
 Controller Certificate Management
 ###################################
