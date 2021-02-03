@@ -3,31 +3,34 @@
   :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, SD-WAN, Meraki
 
 ==========================================================================================
-AWS Multi-cloud Transit BGP over LAN with Cisco Meraki Workflow
+Aviatrix Transit BGP over LAN with Cisco Meraki Workflow in AWS
 ==========================================================================================
 
 Introduction
 ============
 
 Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in AWS without running 
-any tunneling protocol such as IPSec or GRE. In this use case, Aviatrix interoperates with third-party virtual appliance - Cisco Meraki.
+any tunneling protocol such as IPSec or GRE. 
 
-There are two Aviatrix design patterns to integrate with Cisco Meraki in AWS as below:
+This Tech Note is a step-by-step guide for interoperating with Cisco Meraki as the third party appliance in AWS. BGP over LAN also works in Azure, make adjustments accordingly when applying to deployment in Azure. 
 
-Design Pattern #1 with Aviatrix Transit Solution
-------------------------------------------------
+Two supported design patterns are described as below:
+
+Design Pattern 1 with Aviatrix Multi-cloud Transit 
+----------------------------------------------------
 
 |cisco_meraki_aviatrix_transit_solution_diag|
+
+In this design pattern, Aviatrix Multi-cloud transit is deployed to connect Spoke VPCs to the Transit VPC and Aviatrix Transit Gateway is used to connect to Meraki vMX in the same Transit VPC. . 
 
 Design Pattern #2 with AWS TGW Orchestrator
 -------------------------------------------
 
 |cisco_meraki_aws_tgw_orchestrator_diag|
 
-where an Aviatrix Multi-cloud Transit Gateway connects to a Cisco Meraki in the same VPC in AWS.
-
-This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using BGP over LAN in AWS.  
-In this Tech Note, you learn the following:
+In the second design pattern, AWS TGW is deployed for connecting to Spoke VPC and Aviatrix Multi-cloud transit is used to connect to Meraki vMX in the same Transit VPC. 
+  
+This Tech Note includes the following:
 
 #. Workflow on `launching Cisco Meraki vMX in AWS <>`_
 
@@ -53,23 +56,12 @@ For more information about Multi-Cloud Transit Network, External Device, and AWS
 
 .. important::
 	
-  - This solution supports only `ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_, please check this doc `How to migrate to ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#how-to-migrate-to-activemesh-2-0>`_ for migration detail.
-  
-  - This solution is available to AWS and Azure. Workflow with AWS here is just an example. Please adjust the topology depending on your requirements.
-
-  - Require instance size to support at least 5 interfaces such as c4.4xlarge in AWS.
+  - Aviatrix Transit Gateway instance requires 5 interfaces. Minimum instance sizes are c4.4xlarge, c5.4xlarge, c5n.4xlarge
 	
-  - LAN interfaces for Aviatrix Transit Primary and third-party cloud instance must be in the same Availability Zone.
+  - LAN interfaces for Aviatrix Transit Primary and Meraki vMX  must be in the same Availability Zone.
   
   - One BGP over LAN connection per gateway is supported.
  
-The key ideas for this solution are:
-----------------------------------------
-  
-- A BGP session establishes between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface in the same VPC.
-
-- Data plane traffic also runs between a third-party cloud instance and Aviatrix Transit Gateway via each LAN interface without a tunnel protocol such as IPSec and GRE. 
-
 Prerequisite
 ====================
 
@@ -156,24 +148,24 @@ Step 1.4. Enable BGP settings
 
   Will configure BGP neighbors for eBGP in the later workflow.
 
-2. Deploy branch Cisco Meraki device
+2. Deploy branch Meraki device
 ==================================================================
 
-In this workflow example, we deploy another Cisco Meraki vMX in a Spoke VPC as a branch device and configure Hub-and-spoke Auto VPN Connection to verify this solution.
+In this workflow example, we deploy another Meraki vMX in a Spoke VPC as a branch device and configure Hub-and-spoke Auto VPN Connection to verify this solution.
 Please adjust the topology depending on your requirements.
 
-For more Cisco Meraki VPN info, please check out the below documents:
+For more Meraki VPN info, please check out the below documents:
 
 - `Configuring Hub-and-spoke VPN Connections on the MX Security Appliance <https://documentation.meraki.com/MX/Site-to-site_VPN/Configuring_Hub-and-spoke_VPN_Connections_on_the_MX_Security_Appliance>`_
 - `Meraki Auto VPN <https://documentation.meraki.com/MX/Site-to-site_VPN/Meraki_Auto_VPN>`_
 
-Step 2.1. Deploy branch Cisco Meraki vMX in Spoke VPC
+Step 2.1. Deploy branch Meraki vMX in Spoke VPC
 ---------------------------------------------------------
 
--  Follow step 1.1. but deploy Cisco Meraki vMX in Spoke VPC
+-  Follow step 1.1. but deploy Meraki vMX in Spoke VPC
 
-Step 2.2. Check branch Cisco Meraki vMX status on Meraki Dashboard
------------------------------------------------------------------
+Step 2.2. Check branch  Meraki vMX status on Meraki Dashboard
+---------------------------------------------------------------------
 
 - Login Meraki Dashboard
 
