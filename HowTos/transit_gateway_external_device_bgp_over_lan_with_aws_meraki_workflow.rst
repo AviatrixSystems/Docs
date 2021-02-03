@@ -32,13 +32,13 @@ In the second design pattern, AWS TGW is deployed for connecting to Spoke VPC an
   
 This Tech Note includes the following:
 
-#. Workflow on `launching Cisco Meraki vMX in AWS <>`_
+#. Workflow on `launching Cisco Meraki vMX in AWS <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow.html#launch-cisco-meraki-vmx-in-aws>`_
 
-#. Workflow on `deploying branch Cisco Meraki device <>`_
+#. Workflow on `deploying branch Cisco Meraki device <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow.html#deploy-branch-meraki-device>`_
 
-#. Workflow on `deploying Aviatrix Multi-Cloud Transit Solution <>`_
+#. Workflow on `deploying Aviatrix Multi-Cloud Transit Solution <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow.html#deploy-aviatrix-multi-cloud-transit-solution>`_
 
-#. Workflow on `building BGP over LAN <>`_
+#. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow.html#build-bgp-over-lan>`_
 
 For more information about how to configure BGP over LAN, please refer to the doc links as follows:
 
@@ -356,9 +356,9 @@ For more Cisco Meraki BGP information, please check this `doc <https://documenta
 +----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | Allow transit  | Uncheck this option in this example                                                                                                          |
 +----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| EBGP Holdtimer | Enter Aviatrix default value 180 in this example                                                                                             |
+| EBGP Holdtimer | 30 for this example                                                                                                                          |
 +----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| EBGP Multihop  | Enter Aviatrix default value 255 in this example                                                                                             |
+| EBGP Multihop  | 1 for this example                                                                                                                           |
 +----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 - Click the button "Save"
@@ -442,7 +442,7 @@ Step 4.8. Verify routing info on branch Cisco Meraki device
 
   |cisco_meraki_aws_branch_vMX_routing_info|
 
-4. Ready to go!
+5. Ready to go!
 =================
 
 At this point, run connectivity and performance test to ensure everything is working correctly. 
