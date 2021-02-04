@@ -94,7 +94,9 @@ Step 1.1. Deploy Cisco Meraki vMX in Transit VPC
 
 .. important::
 
-  - Make sure the function "Source/Dest check" on third-party cloud instance's interfaces is disabled
+  - Assign an EIP to Meraki vMX's interface
+	
+  - Make sure the function "Source/Dest check" on Meraki vMX's interface is disabled
   
   - Since One-Armed Concentrator mode is adopted in this document, the vMX is configured with a single Network Interface which means all traffic will be sent and received on this interface.
 
@@ -120,14 +122,10 @@ Step 1.3. Enable Hub (Mesh) type
 
 - Select the radio button "Hub (Mesh)" to establish VPN tunnels with all hubs and dependent spokes for this Cisco Meraki vMX
 
-- Click the button "Save"
-
   |cisco_meraki_aws_vMX_s2s_hub_type|
 
 Step 1.4. Enable BGP settings
 -----------------------------------------------------------
-
-- Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN
 
 - Find the panel "BGP settings"
 
@@ -140,8 +138,8 @@ Step 1.4. Enable BGP settings
   |cisco_meraki_aws_vMX_s2s_bgp_enable|
 
 .. important::
-
-  Will configure BGP neighbors for eBGP in the later workflow.
+  
+	Will guide how to set up BGP neighbors for eBGP in the later workflow.
 
 2. Deploy branch Meraki device
 ==================================================================
@@ -159,7 +157,7 @@ Step 2.1. Deploy branch Meraki vMX in Spoke VPC
 
 -  Follow step 1.1. but deploy Meraki vMX in Spoke VPC
 
-Step 2.2. Check branch  Meraki vMX status on Meraki Dashboard
+Step 2.2. Check branch Meraki vMX status on Meraki Dashboard
 ---------------------------------------------------------------------
 
 - Login Meraki Dashboard
@@ -171,6 +169,16 @@ Step 2.2. Check branch  Meraki vMX status on Meraki Dashboard
 - Check whether branch Cisco Meraki device displays "Active" status 
 
   |cisco_meraki_aws_branch_vMX_appliance_status|
+	
+.. important::
+
+  Since Meraki vMX is deployed as a branch device in AWS as an example here, please follow the checklist as below:
+	
+  - Assign an EIP to Meraki vMX's interface
+	
+  - Make sure the function "Source/Dest check" on Meraki vMX's interface is disabled
+
+  - Both security group and routing table are configured properly to route and receive traffic
 
 Step 2.3. Enable Spoke type
 -----------------------------------------------------------
@@ -183,18 +191,14 @@ Step 2.3. Enable Spoke type
 
 - Select the radio button "Spoke" to establish VPN tunnels with selected hubs
 
-- Select the "NETWORK" where the Cisco Meraki vMX in Transit VPC locates for Hubs
+- Click the link "Add a hub" for the field "Hubs"
 
-- Click the button "Save"
+- Select the "NETWORK" where the Cisco Meraki vMX in Transit VPC locates for Hubs
 
   |cisco_meraki_aws_branch_vMX_s2s_spoke_type|
 
 Step 2.4. Advertise Spoke VPC CIDR
 -----------------------------------------------------------
-
-- Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates
-
-- Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN
 
 - Locate "Local networks" in the panel "VPN settings"
 
@@ -221,10 +225,10 @@ Step 2.5. Check VPN status
 
 - Go to Security & SD-WAN -> MONITOR -> VPN status
 
-- Check whether VPN status is Green
+- Check whether VPN status is Green and VPN Registry is Connected.
 
   |cisco_meraki_aws_branch_vMX_s2s_vpn_status|
-
+	
 3. Deploy Aviatrix Multi-Cloud Transit Solution
 =================================================
 
@@ -286,7 +290,7 @@ Step 4.1. Configure BGP over LAN on Aviatrix Transit Gateway
 
 - Select option "External Device" -> "BGP" -> "LAN"
 
-- Fill the parameters to set up BGP over LAN to a third-party cloud instance
+- Fill the parameters to set up BGP over LAN to Meraki vMX in Transit VPC
   
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched                                                                                                                                                     |
@@ -303,7 +307,7 @@ Step 4.1. Configure BGP over LAN on Aviatrix Transit Gateway
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Remote VNet Name                 | Select the Transit VNet where third-party cloud instance locates                                                                                                                                            |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote LAN IP                    | Find the private IP of the Network Interface on Cisco Meraki vMX                                                                                                                                            |
+| Remote LAN IP                    | Use the private IP of the Network Interface on Cisco Meraki vMX                                                                                                                                            |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Local LAN IP                     | Leave it blank and the controller will assign an IP in the same subnet where the Remote LAN IP locates. Optionally configure an IP of your choosing within the same subnet where the Remote LAN IP locates. |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -359,7 +363,11 @@ For more Cisco Meraki BGP information, please check this `doc <https://documenta
 - Click the button "Save"
 
   |cisco_meraki_aws_vMX_bgp_over_lan|
+	
+.. important::
 
+  Update Meraki vMX's security group to allow traffic coming from Aviatrix Transit Gateway properly. One of the secure approaches is to specify Aviatrix Transit Gateway's eth4 security group ID as the source for the Inbound rule in Meraki vMX's security group. Please check "Security group rules" in this AWS `doc <https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html>`_ for more info.
+	
 Step 4.4. Verify LAN status on Aviatrix Controller
 ----------------------------------------------------------
 
@@ -437,10 +445,25 @@ Step 4.8. Verify routing info on branch Cisco Meraki device
 
   |cisco_meraki_aws_branch_vMX_routing_info|
 
+.. note::
+
+  If iBGP protocol betweeen Meraki vMX in Transit VPC and branch Meraki device does not establish properly, please attempt to reboot Meraki vMX in Transit VPC.
+
 5. Ready to go!
 =================
 
 At this point, run connectivity and performance test to ensure everything is working correctly. 
+
+6. Troubleshooting Tips
+========================
+
+- Check the function "Source/Dest check" on Meraki vMX's interface is disabled
+
+- Check whether the routing table and security group are configured properly
+
+- Check eBGP is established between Aviatrix Transit Gateway and Meraki vMX in Transit VPC
+
+- Check iBGP is established between Meraki vMX and branch Meraki device
 
 .. |cisco_meraki_aws_tgw_orchestrator_diag| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_tgw_orchestrator_diag.png
    :scale: 50%
@@ -467,13 +490,13 @@ At this point, run connectivity and performance test to ensure everything is wor
    :scale: 50% 
 
 .. |cisco_meraki_aws_branch_vMX_s2s_vpn_status| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_branch_vMX_s2s_vpn_status.png
-   :scale: 30%
+   :scale: 50%
    
 .. |aviatrix_transit_externel_device_lan| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/aviatrix_transit_externel_device_lan.png
    :scale: 30%
    
 .. |cisco_meraki_aws_vMX_bgp_over_lan| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_vMX_bgp_over_lan.png
-   :scale: 30%
+   :scale: 50%
    
 .. |aviatrix_bgp_lan_status_1| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/aviatrix_bgp_lan_status_1.png
    :scale: 30%
@@ -485,19 +508,19 @@ At this point, run connectivity and performance test to ensure everything is wor
    :scale: 30%
 
 .. |cisco_meraki_aws_vMX_bgp_event_log| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_vMX_bgp_event_log.png
-   :scale: 30%
+   :scale: 50%
    
 .. |cisco_meraki_aws_vMX_routing_info| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_vMX_routing_info.png
-   :scale: 30%   
+   :scale: 50%   
 
 .. |cisco_meraki_aws_branch_vMX_routing_info| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_branch_vMX_routing_info.png
-   :scale: 30%   
+   :scale: 50%   
 
 .. |cisco_meraki_aviatrix_transit_solution_illustration_diag| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aviatrix_transit_solution_illustration_diag.png
-   :scale: 30%   
+   :scale: 50%   
 
 .. |cisco_meraki_aws_tgw_orchestrator_illustration_diag| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_tgw_orchestrator_illustration_diag.png
-   :scale: 30%   
+   :scale: 50%   
 
 .. disqus::
 
