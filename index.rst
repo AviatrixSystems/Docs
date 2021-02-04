@@ -349,7 +349,6 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Downloads
 
-   Downloads/cloudndownload
    Downloads/samlclient
 
 .. _Release Notes:
