@@ -9,10 +9,7 @@ Aviatrix Transit BGP over LAN with Cisco Meraki Workflow in AWS
 Introduction
 ============
 
-Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in AWS without running 
-any tunneling protocol such as IPSec or GRE. 
-
-This Tech Note is a step-by-step guide for interoperating with Cisco Meraki as the third party appliance in AWS. BGP over LAN also works in Azure, make adjustments accordingly when applying to deployment in Azure. 
+This Tech Note is a step-by-step guide for using `BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html>`_ to interoperate with Cisco Meraki as the third party appliance in AWS. BGP over LAN also works in Azure, make adjustments accordingly when applying to deployment in Azure. 
 
 Two supported design patterns are described as below:
 
@@ -21,7 +18,7 @@ Design Pattern 1 with Aviatrix Multi-cloud Transit
 
 |cisco_meraki_aviatrix_transit_solution_diag|
 
-In this design pattern, Aviatrix Multi-cloud transit is deployed to connect Spoke VPCs to the Transit VPC and Aviatrix Transit Gateway is used to connect to Meraki vMX in the same Transit VPC. . 
+In this design pattern, Aviatrix Multi-cloud transit is deployed to connect Spoke VPCs to the Transit VPC and Aviatrix Transit Gateway is used to connect to Meraki vMX in the same Transit VPC. 
 
 Design Pattern #2 with AWS TGW Orchestrator
 -------------------------------------------
@@ -30,7 +27,7 @@ Design Pattern #2 with AWS TGW Orchestrator
 
 In the second design pattern, AWS TGW is deployed for connecting to Spoke VPC and Aviatrix Multi-cloud transit is used to connect to Meraki vMX in the same Transit VPC. 
   
-This Tech Note includes the following:
+This Tech Note consists of:
 
 #. Workflow on `launching Cisco Meraki vMX in AWS <>`_
 
@@ -56,22 +53,20 @@ For more information about Multi-Cloud Transit Network, External Device, and AWS
 
 .. important::
 	
-  - Aviatrix Transit Gateway instance requires 5 interfaces. Minimum instance sizes are c4.4xlarge, c5.4xlarge, c5n.4xlarge
+  - The minimum instance sizes of Aviatrix Transit Gateway for `BGP over LAN` are c4.4xlarge, c5.4xlarge, c5n.4xlarge
 	
   - LAN interfaces for Aviatrix Transit Primary and Meraki vMX  must be in the same Availability Zone.
-  
-  - One BGP over LAN connection per gateway is supported.
  
 Prerequisite
 ====================
 
 - This feature is available for 6.3 and later. `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.3.
   
-- In this example, we are going to deploy the below VPCs in AWS:
+- In this Tech Note, the following VPC CIDRs are used: 
 
-  - Transit VPC (i.e. 10.1.0.0/16) by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled.
+  - Transit VPC (10.1.0.0/16). You can create this VPC by using `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled.
 
-  - Spoke VPCs (i.e. 192.168.1.0/24, 192.168.2.0/24, 192.168.3.0/24) by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in each cloud portal. Moreover, feel free to use your existing cloud network.
+  - Spoke VPCs (192.168.1.0/24, 192.168.2.0/24, 192.168.3.0/24). You can create the Spoke VPCs by using `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_  or manually deploying them in AWS console.  Use existing Spoke VPCs also works. 
 
 Illustration for Design Pattern #1 with Aviatrix Transit Solution
 ------------------------------------------------------------------
