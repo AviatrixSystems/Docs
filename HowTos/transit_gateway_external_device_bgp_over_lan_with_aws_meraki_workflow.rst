@@ -157,6 +157,16 @@ Step 2.1. Deploy branch Meraki vMX in Spoke VPC
 
 -  Follow step 1.1. but deploy Meraki vMX in Spoke VPC
 
+.. important::
+
+  Since Meraki vMX is deployed as a branch device in AWS as an example here, please follow the checklist as below:
+	
+  - Assign an EIP to Meraki vMX's interface
+	
+  - Make sure the function "Source/Dest check" on Meraki vMX's interface is disabled
+  
+  - Since One-Armed Concentrator mode is adopted in this document, the vMX is configured with a single Network Interface which means all traffic will be sent and received on this interface. Make sure both security group and routing table are configured properly.
+
 Step 2.2. Check branch Meraki vMX status on Meraki Dashboard
 ---------------------------------------------------------------------
 
@@ -169,16 +179,6 @@ Step 2.2. Check branch Meraki vMX status on Meraki Dashboard
 - Check whether branch Cisco Meraki device displays "Active" status 
 
   |cisco_meraki_aws_branch_vMX_appliance_status|
-	
-.. important::
-
-  Since Meraki vMX is deployed as a branch device in AWS as an example here, please follow the checklist as below:
-	
-  - Assign an EIP to Meraki vMX's interface
-	
-  - Make sure the function "Source/Dest check" on Meraki vMX's interface is disabled
-
-  - Both security group and routing table are configured properly to route and receive traffic
 
 Step 2.3. Enable Spoke type
 -----------------------------------------------------------
