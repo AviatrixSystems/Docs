@@ -1,4 +1,40 @@
 =======================================
+Image Release Notes
+=======================================
+
+****Next Controller image is scheduled for Feb 2021****
+
+****Next Gateway image is scheduled for Mar 2021****
+
+Controller Images: AWS AMI – 050120 (8/17/2020) 
+===============================================
+
+- R6.1.1280 Software Version is required
+
+- Update Linux kernel and packages versions 
+
+- Remove packages no longer used by the product 
+
+- Set X-XSS-Protection and X-Content-Type-Options by default 
+
+- Fix all vulnerabilities up to Jun/2020 (mid ref: 15727) 
+
+Gateway Images: hvm-cloudx-aws-102320 (11/10/2020)
+==================================================
+
+- R6.2.1837 Software Version is required
+
+- New image fetch mechanism 
+
+- Update security patches to date 
+
+- Linux Kernel update and package upgrade 
+
+- New network drivers 
+
+- Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
+
+=======================================
 Overview
 =======================================
 
@@ -43,47 +79,6 @@ Existing Customers- Gateway Image upgrade
 
   |gateway_replace|
 
-=======================================
-Image Release Notes
-=======================================
-
-Controller Images 
-=================
-
-****Next Controller image is scheduled for Feb 2021****
-
-AWS AMI – 050120 (8/17/2020) 
-----------------------------
-
-- R6.1.1280 Software Version is required
-
-- Update Linux kernel and packages versions 
-
-- Remove packages no longer used by the product 
-
-- Set X-XSS-Protection and X-Content-Type-Options by default 
-
-- Fix all vulnerabilities up to Jun/2020 (mid ref: 15727) 
-
-Gateway Images 
-=================
-
-****Next Gateway image is scheduled for Mar 2021****
-
-hvm-cloudx-aws-102320 (11/10/2020)
-----------------------------------
-
-- R6.2.1837 Software Version is required
-
-- New image fetch mechanism 
-
-- Update security patches to date 
-
-- Linux Kernel update and package upgrade 
-
-- New network drivers 
-
-- Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
 .. |controller_migration| image:: image_release_notes_media/controller_migration.png
    :scale: 50%
