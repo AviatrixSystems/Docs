@@ -105,8 +105,8 @@ By default, the controller will roll back all the operations (gateway, EIP, secu
 Gateway Replace
 ~~~~~~~~~~~~~~~~~
 
-This feature allows you to replace a gateway by launching a new gateway and restoring the configuration and operation in the event that a gateway becomes inoperational and you have exhausted all other ways to recover. Contact support@aviatrix.com 
-before you use this feature. 
+This feature allows you to replace an existing gateway when it becomes not functional by launching a new gateway and restoring the configuration to the new gateway. Use this feature only when you have exhausted all other options. 
+Contact support@aviatrix.com to execute this recovery mechanism. 
 
 Select a gateway in the drop down menu and click Replace.
 
@@ -115,6 +115,20 @@ Select a gateway in the drop down menu and click Replace.
     
     Please refer to `Service Description of Diagnostic Result <http://docs.aviatrix.com/HowTos/Troubleshooting_Diagnostics_Result.html>`__
 
+Note when the Controller performs a gateway replacement procedure, efforts are made to minimize the downtime. For example, 
+when a failed Spoke gateway is being replaced, the Controller first redirects the traffic to the healthy Spoke gateway by 
+modifying the Spoke VPC route table to route all instance or VM traffic to the healthy gateway, it also 
+move the routes from the Transit Gateways pointing to the failed Spoke gateway to the healthy Spoke gateway for traffic 
+moving from Transit Gateway to Spoke gateway. After the failed gateway is terminated and a new gateway is launched and 
+configuration installed, the Controller then programs the Spoke VPC route table to load balancing some subnets/route table
+to point to the new gateway and also move the routes back on the Transit Gateways. 
+
+Similar process happens when a Transit Gateway is being replaced. 
+
+As a result the downtime is under 10 seconds for each gateway replacement in the Multi-cloud Transit solution. 
+
+Similarly, when a failed gateway with Site2Cloud connections are being replaced, traffic is first redirected to 
+the other healthy gateway before the failed gateway is terminated and replaced. 
 
 Session View
 ~~~~~~~~~~~~
