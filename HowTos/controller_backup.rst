@@ -85,6 +85,8 @@ Once you are past the initial configuration steps:
 
 |imageRestoreAWS|
 
+  If Aviatrix Managed CloudN exists in the backup controller, after the restore operation on the new controller, you will need to go to the Aviatrix Managed CloudN UI and follow the steps of 2.2 and 2.5 in https://docs.aviatrix.com/HowTos/CloudN_workflow.html?highlight=managed%20CloudN by entering the new FQDN or IP of the new controller to complete the restore.  You will be required to repeat 2.2 and 2.5 on other Aviatrix Managed CloudN if you have more than one Managed CloudN device.
+  
 
 How to backup configuration with AWS encrypted storage
 ------------------------------------------------------
