@@ -28,7 +28,10 @@ In this Tech Note, you learn the following:
 
 #. Workflow on `building BGP over LAN <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#build-bgp-over-lan>`_
 
-For how to configure BGP over LAN in Azure, please refer to this `doc <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html>`_.
+For other BGP over LAN workflows, please check out the below documents:
+
+- `Azure Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html>`_
+- `Aviatrix BGP over LAN with Cisco Meraki in AWS <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow.html>`_
 
 For more information about Multi-Cloud Transit Network and External Device, please check out the below documents:
 
@@ -125,29 +128,29 @@ Step 3.1. Configure BGP over LAN on Aviatrix Transit Gateway
 
 - Fill the parameters to set up BGP over LAN to a third-party cloud instance
   
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched                                                                                                                                                     |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Connection Name                  | Provide a unique name to identify the connection to external device                                                                                                                                         |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Aviatrix Transit Gateway BGP ASN | Configure a BGP AS number that the Transit GW will use to exchange routes with external device                                                                                                              |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Primary Aviatrix Transit Gateway | Select the Transit GW                                                                                                                                                                                       |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Enable Remote Gateway HA         | Check this option in this example to connect two external devices                                                                                                                                           |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote BGP AS Number             | Configure a BGP AS number that Meraki vMX will use to exchange routes with Aviatrix Transit Primary                                                                                                         |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote LAN IP                    | Use the private IP of the LAN interface of the third-party cloud primary instance                                                                                                                           |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Local LAN IP                     | Leave it blank and the controller will assign an IP in the same subnet where the Remote LAN IP locates. Optionally configure an IP of your choosing within the same subnet where the Remote LAN IP locates. |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote BGP AS Number (Backup)    | Configure a BGP AS number that third-party cloud HA instance  will use to exchange routes with Aviatrix Transit HA                                                                                          |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote LAN IP                    | Use the private IP of the LAN interface of the third-party cloud HA instance                                                                                                                                |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Local LAN IP                     | Leave it blank and the controller will assign an IP in the same subnet where the Remote LAN IP locates. Optionally configure an IP of your choosing within the same subnet where the Remote LAN IP locates. |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched                                                                                                                                                                       |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Connection Name                  | Provide a unique name to identify the connection to external device                                                                                                                                                           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Aviatrix Transit Gateway BGP ASN | Configure a BGP AS number that the Transit GW will use to exchange routes with external device                                                                                                                                |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Primary Aviatrix Transit Gateway | Select the Transit GW                                                                                                                                                                                                         |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Enable Remote Gateway HA         | Check this option in this example to connect two external devices                                                                                                                                                             |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Remote BGP AS Number             | Configure a BGP AS number that third-party cloud primary instance will use to exchange routes with Aviatrix Transit Primary                                                                                                   |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Remote LAN IP                    | Use the private IP of the LAN interface of the third-party cloud primary instance                                                                                                                                             |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Local LAN IP                     | Leave it blank and the controller will assign an IP in the same subnet where the Remote LAN IP locates. Optionally configure an IP of your choosing within the same subnet where the Remote LAN IP locates.                   |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Remote BGP AS Number (Backup)    | Configure a BGP AS number that third-party cloud HA instance will use to exchange routes with Aviatrix Transit HA                                                                                                             |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Remote LAN IP (Backup)           | Use the private IP of the LAN interface of the third-party cloud HA instance                                                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Local LAN IP (Backup)            | Leave it blank and the controller will assign an IP in the same subnet where the Remote LAN IP (Backup) locates. Optionally configure an IP of your choosing within the same subnet where the Remote LAN IP (Backup) locates. |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 - Click the button "CONNECT" to generate BGP session over LAN
 
