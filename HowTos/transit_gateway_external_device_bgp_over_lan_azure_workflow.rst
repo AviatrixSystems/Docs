@@ -113,7 +113,7 @@ Step 2.1. Deploy third-party cloud instances in a seperate Transit VNet
 
 - Create a new public WAN subnet and a dedicated routing table for WAN interface if needed
 
-- Create a new private LAN subnet and a dedicated routing table (optional) for LAN interface
+- Create a new private LAN subnet and a dedicated routing table for LAN interface
 
 - Make sure the function "IP forwarding" on third-party cloud instance's interfaces is enabled
 
