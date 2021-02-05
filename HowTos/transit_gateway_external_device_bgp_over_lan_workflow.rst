@@ -46,7 +46,7 @@ For more information about Multi-Cloud Transit Network and External Device, plea
   
   - This solution is available to AWS and Azure. Workflow with AWS here is just an example. Please adjust the topology depending on your requirements.
 
-  - Require instance size to support at least 5 interfaces such as c4.4xlarge in AWS.
+  - Require instance size to support at least 5 interfaces such as c4.4xlarge, c5.4xlarge, and c5n.4xlarge in AWS.
 	
   - LAN interfaces for Aviatrix Transit Primary and third-party cloud instance must be in the same Availability Zone.
   
