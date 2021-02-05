@@ -269,9 +269,7 @@ At this point, run connectivity and performance test to ensure everything is wor
 End-to-End traffic via Native Spoke VNet <-> Aviatrix <-> Aviatrix <-> Native Spoke VNet
 ----------------------------------------------------------------------------------------
 
-The performance test is done with a pair of Aviatrix Transit Gateways as the third-party cloud instances, as shown below. 
-
-|transit_azure_gateway_external_device_bgp_over_lan_diagram|
+The performance test is done with a pair of Aviatrix Transit Gateways as the third-party cloud instances, as shown below.
 
 Multiple flows result by using iperf3 tool with TCP 128 connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
