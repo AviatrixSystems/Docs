@@ -227,8 +227,6 @@ End-to-End traffic via Aviatrix <-> Aviatrix
 
 The performance test is done with a pair of Aviatrix Transit Gateways as the third-party cloud instances, as shown below. 
 
-|transit_gateway_external_device_bgp_over_lan_diagram|
-
 Multiple flows result by using iperf3 tool with TCP 128 connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
