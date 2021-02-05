@@ -3,7 +3,7 @@
   :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, SD-WAN, Meraki
 
 ==========================================================================================
-Aviatrix Transit BGP over LAN with Cisco Meraki Workflow in AWS
+Aviatrix BGP over LAN with Cisco Meraki in AWS
 ==========================================================================================
 
 Introduction
@@ -62,7 +62,7 @@ Prerequisite
 
 - This feature is available for 6.3 and later. `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to at least version 6.3.
   
-- In this Tech Note, the following VPC CIDRs are used: 
+- In this Tech Note, the following VPC CIDRs are used for illustration purpose: 
 
   - Transit VPC (10.1.0.0/16). You can create this VPC by using `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled.
 
@@ -455,13 +455,13 @@ At this point, run connectivity and performance test to ensure everything is wor
 6. Troubleshooting Tips
 ========================
 
-- Check the function "Source/Dest check" on Meraki vMX's interface is disabled
+- Check to make sure "Source/Dest check" on Meraki vMX's interface is disabled.
 
-- Check whether the routing table and security group are configured properly
+- Check whether the routing table and security group are configured properly.
 
-- Check eBGP is established between Aviatrix Transit Gateway and Meraki vMX in Transit VPC
+- Check eBGP is established between Aviatrix Transit Gateway and Meraki vMX in Transit VPC.
 
-- Check iBGP is established between Meraki vMX and branch Meraki device
+- Check iBGP is established between Meraki vMX and branch Meraki device.
 
 .. |cisco_meraki_aws_tgw_orchestrator_diag| image:: transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow_media/cisco_meraki_aws_tgw_orchestrator_diag.png
    :scale: 50%
