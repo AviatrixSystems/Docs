@@ -109,10 +109,10 @@ It is recommended to create the service account with the Editor role as mentione
 to further restrict permission for the service account. In such a situation Aviatrix recommendation is to have at least following roles assigned
 to service account so that Aviatrix can perform its functions properly. For instance managing the compute resources, route tables, firewall rules, shared service vpc network etc. 
 
-    Compute Admin
-    Service Account User
-    Organization Administrator (required for GCP Shared VPC)
-    Project IAM Admin (required for GCP Shared VPC)
+    . Compute Admin
+    . Service Account User
+    . Organization Administrator (required for GCP Shared VPC)
+    . Project IAM Admin (required for GCP Shared VPC)
 
    image:: https://netjoints.com/wp-content/uploads/2020/09/Screen-Shot-2020-09-28-at-2.28.46-PM.png
 
