@@ -103,6 +103,11 @@ credential file from the Google Developer Console.
 7. Upload the Project Credential file to the Aviatrix controller at the GCloud
    account create page.
 
+Note: Creating Service Account with Restricted Access
+-----------------------------------------------------
+It is possible to create the service account with restricted access. 
+   
+
 Troubleshooting Tips
 ----------------------
 
