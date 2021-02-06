@@ -116,8 +116,8 @@ to service account so that Aviatrix can perform its functions properly. For inst
 
    image:: https://netjoints.com/wp-content/uploads/2020/09/Screen-Shot-2020-09-28-at-2.28.46-PM.png
 
-   If an orginization is currently using GCP Shared VPC or planning to use in future then it is a requirement to enable Organization Administrator 
-   and Project IAM Admin as well.
+If an orginization is currently using GCP Shared VPC or planning to use in future then it is a requirement to enable Organization Administrator 
+and Project IAM Admin as well.
    
 
 
