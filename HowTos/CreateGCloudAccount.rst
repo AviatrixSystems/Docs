@@ -103,6 +103,24 @@ credential file from the Google Developer Console.
 7. Upload the Project Credential file to the Aviatrix controller at the GCloud
    account create page.
 
+Note: Creating Service Account with Restricted Access
+-----------------------------------------------------
+It is recommended to create the service account with the Editor role as mentioned in Step 5.4 but in some cases an orginizations might want
+to further restrict permission for the service account. In such a situation Aviatrix recommendation is to have at least following roles assigned
+to service account so that Aviatrix can perform its functions properly. For instance managing the compute resources, route tables, firewall rules, shared service vpc network etc. 
+
+1. Compute Admin
+2. Service Account User
+3. Organization Administrator (required for GCP Shared VPC)
+4. Project IAM Admin (required for GCP Shared VPC)
+
+   image:: https://netjoints.com/wp-content/uploads/2020/09/Screen-Shot-2020-09-28-at-2.28.46-PM.png
+
+If an orginization is currently using GCP Shared VPC or planning to use in future then it is a requirement to enable Organization Administrator 
+and Project IAM Admin as well.
+   
+
+
 Troubleshooting Tips
 ----------------------
 
