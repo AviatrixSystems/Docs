@@ -114,12 +114,10 @@ to service account so that Aviatrix can perform its functions properly. For inst
 3. Organization Administrator (required for GCP Shared VPC)
 4. Project IAM Admin (required for GCP Shared VPC)
 
-   image:: https://netjoints.com/wp-content/uploads/2020/09/Screen-Shot-2020-09-28-at-2.28.46-PM.png
+  |restricted_access|
 
 If an orginization is currently using GCP Shared VPC or planning to use in future then it is a requirement to enable Organization Administrator 
 and Project IAM Admin as well.
-   
-
 
 Troubleshooting Tips
 ----------------------
@@ -142,6 +140,9 @@ For additional support, send an email to support@aviatrix.com
    :scale: 30%
 
 .. |iam_credential| image:: GCloud_media/iam_credential.png
+   :scale: 30%
+   
+.. |restricted_access| image:: GCloud_media/restricted_access.png
    :scale: 30%
 
 .. disqus::
