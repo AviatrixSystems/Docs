@@ -40,7 +40,7 @@ can pass through the FireNet gateways without having any attached firewalls, mak
 as a lookback interface. This is useful as it allows you  to isolate and test network connectivity 
 during troubleshooting.  
 
-When Fail Close is disabled, FireNet gateway drops all traffic when there are no firewalls 
+When Fail Close is enabled, FireNet gateway drops all traffic when there are no firewalls 
 attached to the FireNet gateways. 
 
 
