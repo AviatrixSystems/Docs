@@ -27,8 +27,7 @@ The following guide provides step by step instructions for deploying the virtual
 1. Download the Image
 =======================
 
-The virtual appliance CloudN image can be downloaded from `the download link. <http://docs.aviatrix.com/Downloads/cloudndownload.html>`_
-
+Please contact info@aviatrix.com to get access to CloudN virtual appliance.
 
 2. Pre-Installation Check List
 ===============================
