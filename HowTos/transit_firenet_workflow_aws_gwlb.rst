@@ -103,14 +103,14 @@ By default, spoke VPCs are in isolated mode where the Transit will not route tra
 Step 6: Configure Transit Firewall Network
 **************************************************
 
-Transit and Spoke Gateways have now been deployed, next step is to deploy and enable the Firewall for traffic inspection.
+Transit and Spoke Gateways have now been deployed, next step is to enable the fireNet function and create traffic inspection policy.
 
 Let’s start with enabling the firewall function and configure the FireNet policy.
 
 1.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #1 Enable Transit FireNet on Aviatrix Transit Gateway**
-#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**
+#.	Choose the Aviatrix Transit Gateway, check Use AWS GWLB and Click **“Enable”**
 
-|en_tr_firenet|
+|en_tr_firenet_gwlb|
 
 3.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #2 Manage FireNet Policy**
 #.	Add spokes to the Inspected box for traffic inspection
@@ -118,7 +118,7 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 .. note::
     By default, FireNet inspects ingress (INET to VPC) and east-west traffic (VPC to VPC) only.
 
-|tr_firenet_policy|
+|tr_firenet_policy_gwlb|
 
 
 Step 7: Subscribe Firewall Vendor in AWS Marketplace
@@ -144,14 +144,12 @@ This step launches a Firewall instance and associates it with one of the FireNet
 
 .. important::
 
-    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management interface subnet and Egress (untrust dataplane) interface subnet should not be in the same subnet.
 
-7a.1 Launch and Attach
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
 
-.. important::
+.. note::
     Vendor's firewall may take some time after launch to be available.
 
 
@@ -178,7 +176,7 @@ Bootstrap Bucket Name                           In advanced mode, specify a boot
 1. CheckPoint Specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check Point Security Gateway do not support AWS GWLB.
+Check Point Security Gateway do not support AWS GWLB in latest release, and it is in Roadmap for future release.
 
 
 2. Palo Alto VM-Series Specifications
@@ -209,7 +207,7 @@ Note that firewall instance eth2 is on the same subnet as AWS GWLB interface.
 3. Fortigate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-FortiGate firewall do not support AWS GWLB.
+FortiGate firewall do not support AWS GWLB in latest release, and it is in Roadmap for future release.
 
 
 Step 8b: Associate an Existing Firewall Instance
@@ -228,20 +226,34 @@ In addition, please follow example configuration guides as below to build a simp
 Palo Alto Network (PAN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For basic configuration, please refer to `example Palo Alto Network configuration guide <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
+For basic policy configuration, refer to following steps:
 
-For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_.
+1) `Download VM-Series Access Key <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#download-vm-series-access-key>`_
+2) `Reset VM-Series Password <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#reset-vm-series-password>`_
+3) `Login to VM-Series and activate VM-Series license <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#login-to-vm-series>`_
+4) `Configure VM-Series ethernet1/1 with WAN zone <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#configure-vm-series-ethernet1-1-with-wan-zone>`_
+5) `Configure VM-Series ethernet1/2 with LAN zone <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#configure-vm-series-ethernet1-2-with-lan-zone>`_
+6) `Configure  Vendor Integration <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html?highlight=PAN%20health%20check#vendor-firewall-integration>`_
+7) `Enable HTTPS on VM-Series for Health Check <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html?highlight=PAN%20health%20check#enable-vm-series-health-check-policy>`_
+8) `Configure basic Allow-All policy <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html?highlight=PAN%20health%20check#configure-basic-traffic-policy-to-allow-traffic-vnet-to-vnet>`_
+
+For Egress Inspection
+
+Go to `Firewall Network -> Advanced -> Click on 3 dots -> Enable Egress Through Firewall <https://docs.aviatrix.com/HowTos/firewall_advanced.html#egress-through-firewall>`_
+
+|egress_gwlb|
 
 FortiGate (Fortinet)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Fortinet firewall do not support AWS GWLB in latest release. AWS GWLB is in Roadmap for future release.
 
 Check Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check Point Security Gateway do not support AWS GWLB.
+Check Point Security Gateway do not support AWS GWLB in latest release. AWS GWLB is in Roadmap for future release.
 
-Step 11: Verification
+Step 10: Verification
 ***************************
 
 There are multiple ways to verify if Transit FireNet is configured properly:
@@ -271,31 +283,168 @@ There are multiple ways to check data-plane:
     2. Ping/traceroute capture can also be performed from Aviatrix Controller. Go to **TROUBLESHOOT -> Diagnostics** and perform the test.
 
 
+Transit FireNet with AWS GWLB Packet Walk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|gwlb_impementation|
+
+
+**Step 1: Spoke Gateway Connections and Routing Table**
+
+|spk_list_1|
+
+
+|spk_list_2|
+
+**Step 2: Transit Gateway Connections and Routing Table**
+|transit_list_1|
+
+
+|transit_list_2|
+
+
+|transit_list_3|
+
+**Step 3: Transit to Endpoint Routing (dmz_firewall Route Table)**
+|aws_cons_1|
+
+
+|aws_cons_2|
+
+|aws_cons_3|
+
+**Step 4: AWS Gateway Load Balancer Endpoint to Gateway Load Balancer**
+|aws_cons_4|
+
+|aws_cons_5|
+
+|aws_cons_6|
+
+|aws_cons_7|
+
+
+**Step 5: Load Balancer to Firewall (Palo Alto Networks)**
+|aws_cons_8|
+
+|aws_cons_9|
+
+|aws_cons_10|
+
+|aws_cons_11|
+
+|aws_cons_12|
+
+**Step 6: Load Balancer and Firewall (Palo Alto Networks) Routing**
+|aws_cons_13|
+
+|aws_cons_14|
+
+
+**Step 7: Egress Traffic Endpoint Point to NAT GW to Internet**
+
+|nat_gw_1|
+
+|nat_gw_2|
+
+
+
+
+.. |gwlb_impementation| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/gwlb_impementation.png
+   :scale: 35%
+
+.. |nat_gw_1| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/nat_gw_1.png
+   :scale: 35%
+
+.. |nat_gw_2| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/nat_gw_2.png
+   :scale: 35%
+
+
+.. |aws_cons_1| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_1.png
+   :scale: 35%
+
+.. |aws_cons_2| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_2.png
+   :scale: 35%
+
+.. |aws_cons_3| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_3.png
+   :scale: 35%
+
+.. |aws_cons_4| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_4.png
+   :scale: 35%
+
+.. |aws_cons_5| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_5.png
+   :scale: 35%
+
+.. |aws_cons_6| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_6.png
+   :scale: 35%
+
+.. |aws_cons_7| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_7.png
+   :scale: 35%
+
+.. |aws_cons_8| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_8.png
+   :scale: 35%
+
+.. |aws_cons_9| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_9.png
+   :scale: 35%
+
+.. |aws_cons_10| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_10.png
+   :scale: 35%
+
+.. |aws_cons_11| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_11.png
+   :scale: 35%
+
+.. |aws_cons_12| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_12.png
+   :scale: 35%
+
+.. |aws_cons_13| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_13.png
+   :scale: 35%
+
+.. |aws_cons_14| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/aws_cons_14.png
+   :scale: 35%
+
+.. |transit_list_1| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/transit_list_1.png
+   :scale: 35%
+
+.. |transit_list_2| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/transit_list_2.png
+   :scale: 35%
+
+.. |transit_list_3| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/transit_list_3.png
+   :scale: 35%
+
+
+.. |spk_list_1| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/spk_list_1.png
+   :scale: 35%
+
+.. |spk_list_2| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/spk_list_2.png
+   :scale: 35%
+
 .. |subscribe_firewall| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/subscribe_firewall.png
-   :scale: 25%
+   :scale: 35%
 
-.. |en_tr_firenet| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/en_tr_firenet.png
-   :scale: 25%
+.. |en_tr_firenet_gwlb| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/en_tr_firenet_gwlb.png
+   :scale: 35%
 
-.. |tr_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/tr_firenet_policy.png
-   :scale: 25%
+.. |tr_firenet_policy_gwlb| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/tr_firenet_policy_gwlb.png
+   :scale: 35%
 
 .. |topology_trfnet_with_gwlb| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/topology_trfnet_with_gwlb.png
-   :scale: 25%
+   :scale: 35%
 
 .. |create_vpc| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/create_vpc.png
-   :scale: 25%
+   :scale: 35%
 
 .. |tr_firenet_gw| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/tr_firenet_gw.png
-   :scale: 25%
+   :scale: 35%
 
 .. |launch_spk_gw| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/launch_spk_gw.png
-   :scale: 25%
+   :scale: 35%
 
 .. |attach_spk_trgw| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/attach_spk_trgw.png
-   :scale: 25%
+   :scale: 35%
 
 .. |connected_transit| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/connected_transit.png
-   :scale: 25%
+   :scale: 35%
+
+.. |egress_gwlb| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/egress_gwlb.png
+   :scale: 35%
 
 .. disqus::
