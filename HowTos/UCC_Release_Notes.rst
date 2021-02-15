@@ -59,7 +59,7 @@ R6.3.2092 (1/31/2021)
 R6.2.2003 (2/15/2021)
 =======================
 
-- **Enhancement** Add API support to turn off Jumbo frame support. 
+- **Enhancement** Add API support to turn off Jumbo frame support. `Enable Jumbo Frame API <https://api.aviatrix.com/#756ec3d7-029b-4ce8-87ab-aba464d68014>`_. `Disable Jumbo Frame API <https://api.aviatrix.com/#756ec3d7-029b-4ce8-87ab-aba464d68014>`_. 
 - **Bug fix** Allow more than 16 network CIDRs in the Site2Cloud configuration. 
 - **Bug fix** Route programming failure in OCI VCN route entry. 
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud. 
