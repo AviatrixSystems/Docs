@@ -56,6 +56,14 @@ R6.3.2092 (1/31/2021)
 - **Edit Stateful Firewall Rules Enhancement** simplifies editing and viewing IP address based stateful firewall  rules, allowing large set of rules to be managed easily. To configure, go to Security -> Stateful Firewall -> Policy to edit policies.   
 - **GCP Outbound Rules** are added to GCP gateway instance that explicitly opens the default route CIDR (0.0.0.0/0) to all destinations. This helps security and compliance team for audit purposes. 
 
+R6.2.2003 (2/15/2021)
+=======================
+
+- **Enhancement** Add API support to turn off Jumbo frame support. 
+- **Bug fix** Allow more than 16 network CIDRs in the Site2Cloud configuration. 
+- **Bug fix** Route programming failure in OCI VCN route entry. 
+- **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud. 
+
  
 
 R6.2.1955 (1/16/2021)
