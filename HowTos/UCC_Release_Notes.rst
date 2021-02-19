@@ -70,7 +70,6 @@ R6.2.2003 (2/15/2021)
 - **Bug fix** Route programming failure in OCI VCN route entry. 
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud. 
 
- 
 
 R6.2.1955 (1/16/2021)
 ======================
