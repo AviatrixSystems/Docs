@@ -9,6 +9,7 @@ R6.3.2216 (2/22/2021)
 - **Enhancement** Add Clear Session capability in Site2Cloud connection to clear all the conntrack sessions entry.
 - **Enhancement** Add the Active-Standby mode on ActiveMesh 2.0 support for BGP over LAN scenario.
 - **Enhancement** Add API support to unify programming RFC1918 routes in native egress domain
+- **Enhancement** New capability to split sending gateway metrics and syslog to different log management systems
 - **Bug fix** Allow more than 16 network CIDRs in the Site2Cloud configuration.
 - **Bug fix** Address Route programming failure in OCI VCN route entry in Site2Cloud configuration.
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud.
