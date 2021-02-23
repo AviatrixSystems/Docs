@@ -8,16 +8,16 @@ R6.3.2216 (2/22/2021)
 - **Enhancement** Significant improvements in failover time through a series of optimization for overlapping networks.
 - **Enhancement** Add Clear Session capability in Site2Cloud connection to clear all the conntrack sessions entry.
 - **Enhancement** Add the Active-Standby mode on ActiveMesh 2.0 support for BGP over LAN scenario.
-- **Enhancement** Add an API support to unify programming RFC1918 routes in native egress domain
+- **Enhancement** Add API support to unify programming RFC1918 routes in native egress domain
 - **Bug fix** Allow more than 16 network CIDRs in the Site2Cloud configuration.
-- **Bug fix** Route programming failure in OCI VCN route entry in Site2Cloud configuration.
+- **Bug fix** Address Route programming failure in OCI VCN route entry in Site2Cloud configuration.
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud.
-- **Bug fix** In 6.3, ActiveMesh 2.0 blocks the Aviatrix Transit Peering if ASN# for Aviatrix Transit Gateways are same or not set. Revert the behavior changes.
-- **Bug fix** Allow long security domain names in Aviatrix Controller UI.
+- **Bug fix** Revert check introduced in 6.3.2092 for ActiveMesh 2.0 that blocks the Aviatrix Transit Peering if ASN# for Aviatrix Transit Gateways are same or not set.
+- **Bug fix** Fix the long security domain names display issue in Aviatrix Controller.
 - **Bug fix** Fix exception when using “Export to Terraform” feature for fqdn_tag_rule.
 - **Bug fix** Fix the route propagation for HPE Aviatrix Transit Gateway eth0 in Azure.
 - **Bug fix** Update RFC1918 routes in OCI VCN for non-default security list.
-- **Bug fix** Fix the default route entry removal issue when "Use VPC/VNET DNS Server" feature is in-use.
+- **Bug fix** Fix the default route entry removal issue when "Use VPC/VNET DNS Server" feature in-use.
 
 
 R6.3.2092 (1/31/2021)
