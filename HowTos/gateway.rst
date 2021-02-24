@@ -724,24 +724,6 @@ New and advanced features such as Multi sites Transit solution where the Aviatri
 To enable ActiveMesh mode after the Transit Gateway or Spoke gateway is enabled, go to Gateway, highlight the gateway
 and click Edit. Scroll down to find ActiveMes Mode, click Enable. 
 
-Gateway Name Alias
-------------------
-
-Gateway Name Alias feature allows you to change an Aviatrix gateway name after it is created by providing an alias name and allowing it to be modified at any time. The use case is customers often need to change some gateway names after the network has been built out to certain scale. By allowing gateway name alias to be modified without having to delete the gateway and thus reduces network downtime. 
-
-To change gateway name alias, go to Gateway, then hover the mouse at a specific gateway name, click the Pen icon and start typing. 
-
-|gateway_name_alias|
-
-.. note::
-
-   The original gateway name is still maintained as “Original Name” in the table column.
-
-To revert back to the original gateway name, go to Gateway, then hover the mouse at the specific gateway with alias name, click the Pen icon and apply the name with empty text. 
-
-.. important::
-
-  This feature does not interoperate with Co-Pilot at this time. Customers who also deploy Co-Pilot should not change the gateway names as they are not reflected in the Co-Pilot product.
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
