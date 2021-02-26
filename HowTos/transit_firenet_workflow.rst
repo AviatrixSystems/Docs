@@ -13,6 +13,8 @@ To learn about Transit FireNet, check out `Transit FireNet FAQ. <https://docs.av
 
 For a complete step by step guide on AWS for Transit FireNet, refer to `Transit FireNet on AWS Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_. 
 
+For a complete step by step guide on AWS for Transit FireNet with AWS Gateway Load Balancer (GWLB), refer to `Transit FireNet Workflow with AWS Gateway Load Balancer (GWLB) <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws_gwlb.html>`_. 
+
 For a complete step by step guide on Azure for Transit FireNet, refer to `Transit FireNet on Azure Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
 
 Prerequisite for AWS
