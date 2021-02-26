@@ -7,6 +7,85 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+Releases 1.4.0.1, 1.4.0.2
+----------------------------
+
+- **Enhancement** Enhanced Topology Replay to add zoom and move to preview timeline
+- **Enhancement** Throttle Latency Calls to reduce controller cpu usage (for large scale env), removed duplicate latency calls for edges
+- **Bug fix** Topology Transit View - Single node clusters for VPC, Fix for Spokes with Peering Connections, Connect S2C to regions
+- **Bug fix** Dashboard not showing OCI in Geo Map
+- **Bug fix** Segments not showing up randomly on Domain Segmentation. Truncate long labels and add tooltip
+
+
+Release 1.4.0
+-------------------
+
+- **Copilot Theme** New Dark Mode The moon icon in the Copilot header can be toggled to switch between light mode and dark mode.
+- **Topology Replay** Full view of what’s changed in your infrastructure. Instantly see any change (for ex: GWs go up/down, tunnels flap, peerings added) to your topology at any timestamp and manage your changesets.
+- **Multi Cloud Network Segmentation** Now in Security tab, Logical view -> you can visualize which spoke (or Site2Cloud instance) can reach which other spokes based on the security domains they are part of. In the physical view -> you can visualize the spokes (or S2C instances) grouped by the transit gateways and their reachability based on the security domains they are attached to.
+- **Transit View for Topology** Topology Revamped. Clear the clutter and visualize multi-cloud topology with just the Aviatrix transits connected to regions. Double click to open/close VPC/VNET clusters.
+- **Improved FlowIQ Filters** Use “not equal to” in a filter rule to specify negation. Group filter rules using “NOT” to specify negation of all the filter rules together.
+- **Interface Stats** Use the Diag button in topology to view interface statistics for a gateway
+
+Releases 1.3.2.1, 1.3.2.2, 1.3.2.3
+-----------------------------------
+
+- **Bug fix** Fixes to saved filter groups in FlowIQ
+- **Bug fix** Fixes to pie charts in FlowIQ Trends
+- **Bug fix** Fixes to top navigation header to always show it
+- **Enhancement** Better error checking for dashboard APIs
+- **Enhancement** Changes to slider step while defining alerts for Rx, Tx and RxTx metrics
+
+Release 1.3.2
+-------------------
+
+- **Enhanced FlowIQ Filters** Now filter FlowIQ results by performing complex queries by doing logical ANDs and ORs between different filters. Filter groups can now be searched and selected in FlowIQ
+- **Alerts** Now get alerted when a Site2Cloud tunnel or BGP connection status changes
+- **Enhanced Diagnosis in Topology** Test connectivity from a selected gateway to a host IP
+- **Session Visibility** Active Sessions for a selected Gateway
+- **Enhanced Index Management and Data Retention policies** Now you can better control how long you want to retain data for each of FlowIQ, Performance, FlowIQ, latencies.
+- **Multi-Cloud AppIQ Support** AppIQ supports all clouds (FlightPath may not work across all clouds)
+- **Performance Monitoring** A much cleaner legend for performance monitoring charts
+- **Topology Enhancement** New Truncate/expand labels in topology
+
+Release 1.3.1.2
+-------------------
+
+- **Bug fix** to flight path in AppIQ report
+- **Enhancement** Change Cluster Labels in Topology to VPC Labels
+- **Enhancement** Gov Cloud icons show up in Topology
+
+Release 1.3.1.1
+-------------------
+
+ - **Bug fix** Fixes to latency tracker
+
+Release 1.3.1
+-------------------
+
+- **Enhancement** Receive email and webhook alerts when a Gateway or Tunnel is down
+- **Latencies** View historical latencies and perform search to filter latencies of interest
+- **Enhancement** Cleaner topology with truncated labels and latency numbers align along edges
+- **Enhancement** Cleaner topology in AppIQ
+- **Enhancement** Filter table columns in GW Routes and VPC Routes
+
+Release 1.3.0
+-------------------
+
+- **Security** Egress FQDN Dashboard, search and live monitoring
+- **Alerts** Webhooks integration for alerts - Use Webhooks to alert on telemetry data
+
+Release 1.2.1.2
+-------------------
+
+- **Bug fix** A fix to AppIQ inconsistency in topology instances
+
+Release 1.2.1.1
+-------------------
+
+- **Enhancements** Compressed the AppIQ report file size for easier download
+- **Bug fix** in BGP routes and AppIQ charts
+
 Release 1.2.1
 -------------------
 - **AppIQ** generates a comprehensive report of control plane connectivity between any two cloud endpoints connected with Aviatrix Transit Network which includes link status, latency, bandwidth, traffic, and performance monitoring data.

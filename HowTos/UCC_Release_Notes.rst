@@ -19,6 +19,7 @@ R6.3.2216 (2/22/2021)
 - **Bug fix** Fix the route propagation for HPE Aviatrix Transit Gateway eth0 in Azure.
 - **Bug fix** Update RFC1918 routes in OCI VCN for non-default security list.
 - **Bug fix** Fix the default route entry removal issue when "Use VPC/VNET DNS Server" feature in-use.
+- **Bug fix** Security patch for SAML vulnerablity.
 
 
 R6.3.2092 (1/31/2021)
@@ -80,7 +81,6 @@ R6.2.2016 (2/18/2021)
 =======================
 
 - **Bug fix** Security patch for SAML Vulnerablity.
-
 
 
 R6.2.2003 (2/15/2021)
