@@ -43,7 +43,7 @@ Benefits:
 	
 	- This solution applies to over AWS Direct Connect, Azure ExpressRoute and Internet.
 	
-	- GCP InterConnect support is coming soon. 
+	- This solution applies to over GCP InterConnect starting from 6.3.
 
 For more information and benefits about CloudN, please check out the below documents:
 
