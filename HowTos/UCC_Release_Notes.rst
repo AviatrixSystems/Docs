@@ -50,6 +50,8 @@ R6.3.2092 (1/31/2021)
 
 - **Support N2 and C2 instance types on GCP gateways** improves Insane Mode performance on GCP cloud. For new network throughput with these new instance types, refer to `GCP Insane Mode Performance. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_ 
 
+- **Managed CloudN Appliance** supports in GCP. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
+
 2. FireNet
 =============
 
@@ -150,7 +152,7 @@ R6.2.1742 (10/15/2020)
 
 - **Insane Mode in GCP** is now available for Multi-cloud Transit solution. For performance benchmark, refer to `GCP Insane Mode performance test results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_. Insane Mode is enabled when launching a new Aviatrix Transit Gateway or Spoke gateway in GCP. 
 
-- **Managed CloudN Appliance** simplifies CloudN configuration and operation by allowing it to be managed by the Controller. Active-Active deployment model supports up to 25Gbps encryption performance. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
+- **Managed CloudN Appliance** simplifies CloudN configuration and operation by allowing it to be managed by the Controller. Active-Active deployment model supports up to 25Gbps encryption performance. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_. GCP support is in the future release. 
 
 - **Custom Mapped Site2Cloud in Spoke** solves all issues of overlapping network addresses with remote networks by expanding Site2Cloud `Mapped <https://docs.aviatrix.com/HowTos/site2cloud.html#connection-type-mapped>`_ function in a Spoke. 
 
