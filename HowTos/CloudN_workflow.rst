@@ -45,7 +45,7 @@ Benefits:
 	
 	- This solution applies to over GCP InterConnect starting from 6.3. 
 	
-	- This solution in GCP supports only one tunnel for over Internet scenario.
+	- This solution in GCP supports only one tunnel per transit gateway for over Internet scenario.
 
 For more information and benefits about CloudN, please check out the below documents:
 
