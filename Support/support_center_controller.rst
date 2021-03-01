@@ -344,6 +344,7 @@ Please pay attention that the token expires in 15 minutes. If you repeatedly get
 .. |admin_user| image:: password-recovery-img/Pic3.png
    :scale: 70%  
    
+6. Note that the password reset relies on a mail daemon which falls back from its default of 587 to 2525 in the event that port 587 is inaccessible. 
 
 How can I secure my controller?
 -----------------------------------
