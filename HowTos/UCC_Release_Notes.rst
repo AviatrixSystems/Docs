@@ -2,6 +2,15 @@
 Release Notes
 =======================================
 
+R6.3.2247 (03/01/2021)
+=======================
+
+- **Bug fix** Race condition casuing exception for Aviatrix Transit Gateway peering.
+- **Bug fix** Fix the TGW attachment deletion issue when customize IAM policy is used in AWS.
+- **Bug fix** Fix the Site2Cloud diagnostics display issue.
+- **Bug fix** Missing "Aviatrix-Created-Resource" tag for Aviatrix Gateway keypair in AWS.
+- **Bug fix** Fix exception for CloudN when eth0 is down.
+
 R6.3.2216 (2/22/2021)
 =======================
 
@@ -52,6 +61,9 @@ R6.3.2092 (1/31/2021)
 
 - **Managed CloudN Appliance** supports in GCP. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
 
+- **License Info** license change to inter-cloud for Aviatrix Transit to AWS VGW connection.
+
+
 2. FireNet
 =============
 
@@ -69,7 +81,7 @@ R6.3.2092 (1/31/2021)
 - **Change Local Identifier** provides the flexibility to update either gateway's public IP address or private IP address as local identifier. To configure, refer to `Local Identifier <https://docs.aviatrix.com/HowTos/site2cloud.html#local-identifier>`_. 
 - **DPD Parameters** can now be modified through the Controller User Interface in additional to API and Terraform. One use case of modifying DPD parameters is to reduce tunnel failure detection time. To configure, refer to `DPD Configuration <https://docs.aviatrix.com/HowTos/site2cloud.html#dead-peer-detection>`_. 
 - **Event Trigger** is a new mechanism to reduce failure detection time. This is an alternative to the default setting where tunnel status change is detected by a periodic monitoring process running on the gateways. To configure, refer to `Event Triggered HA <https://docs.aviatrix.com/HowTos/site2cloud.html#event-triggered-ha>`_. 
-- **Failover Time Reduction for Overlapping Networks** Significant improvements in failover time reduction through a series of optimization. Refer to `Tuning For Sub-10 Seconds Failover Time in Overlapping Networks. <https://docs.aviatrix.com/HowTos/s2c_overlapping_cidrs_with_fast_convergence.html>`_. 
+- **Failover Time Reduction for Overlapping Networks** Significant improvements in failover time reduction through a series of optimization. Refer to `Tuning For Sub-10 Seconds Failover Time in Overlapping Networks. <https://docs.aviatrix.com/HowTos/s2c_overlapping_cidrs_with_fast_convergence.html>`_.
 
 5. Security
 ==============
@@ -125,6 +137,7 @@ R6.2.1891 (11/20/2020)
 - **Enhancement** Reduce excessive logging on Controller. 
 - **Enhancement** Add new regions to OCI. 
 - **Enhancement** Performance enhancement when interoperating with Copilot. 
+- **License Info** Site2Cloud license change to inter-cloud for Aviatrix Transit to AWS VGW connection.
 
 
 R6.2.1837 (11/10/2020)
