@@ -8,9 +8,9 @@ FIPS 140-2 Module
 
 Staring Release 4.6, Aviatrix supports FIPS 140-2 crypto module.
 
-The Aviatrix Certificate number is #3475 which you can find from the `NIST site <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_.
+The Aviatrix Certificate number is #3273 which you can find from the `NIST site <https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3273>`_.
 
-The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/security-policies/140sp3475.pdf>`_
+The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/FIPS140ConsolidatedCertAug2018.pdf>`_
 
 Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied , 
 
