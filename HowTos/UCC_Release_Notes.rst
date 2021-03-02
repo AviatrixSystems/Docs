@@ -5,7 +5,7 @@ Release Notes
 R6.3.2247 (03/01/2021)
 =======================
 
-- **Bug fix** Race condition casuing exception for Aviatrix Transit Gateway peering.
+- **Bug fix** Race condition causing exception for Aviatrix Transit Gateway peering.
 - **Bug fix** Fix the TGW attachment deletion issue when customize IAM policy is used in AWS.
 - **Bug fix** Fix the Site2Cloud diagnostics display issue.
 - **Bug fix** Missing "Aviatrix-Created-Resource" tag for Aviatrix Gateway keypair in AWS.
