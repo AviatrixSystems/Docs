@@ -364,7 +364,7 @@ Yes. Accounts -> Account Users -> Add A NEW USER, at Account Name field, select 
 Is Aviatrix FIPS 140-2 compliant?
 ----------------------------------
 
-Yes. Aviatrix has achieved FIPS 140-2 compliant status with certificate number `#3475 <https://csrc.nist.gov/Projects/cryptographic-module-validation-program/Certificate/3475>`_ as listed at NIST site. 
+Yes. Aviatrix has achieved FIPS 140-2 compliant status with certificate number `#3273 <https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3273>`_ as listed at NIST site. 
 
 What are the FIPS 140-2 compliant algorithms?
 ------------------------------------------------
