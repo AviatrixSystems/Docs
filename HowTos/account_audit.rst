@@ -16,6 +16,7 @@ The Aviatrix Controller periodically checks the accounts it manages to make sure
  #. An access account IAM role aviatrix-role-ec2 has associated policies.
  #. An access account IAM role aviatrix-role-app has associated policies.
  #. An access account has trust relationship to the primary account (the Controller's AWS account).
+ #. An access account has expired, deleted or invalid credential.
 
 If any of the above condition fails, the Controller sends out alert email and logs the event.  In addition, the controller will also send alert email on behalf of any of the above condition failures reported by a gateway upon the first detection and subsequently every 24 hours until the problem is rectified.
 
