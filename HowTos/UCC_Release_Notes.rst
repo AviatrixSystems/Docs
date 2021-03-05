@@ -100,7 +100,7 @@ R6.2.2016 (2/18/2021)
 R6.2.2003 (2/15/2021)
 =======================
 
-- **Enhancement** Add API support to turn off Jumbo frame support. `Enable Jumbo Frame API <https://api.aviatrix.com/#756ec3d7-029b-4ce8-87ab-aba464d68014>`_. `Disable Jumbo Frame API <https://api.aviatrix.com/#756ec3d7-029b-4ce8-87ab-aba464d68014>`_. 
+- **Enhancement** Add API support to turn off Jumbo frame support.
 - **Bug fix** Allow more than 16 network CIDRs in the Site2Cloud configuration. 
 - **Bug fix** Route programming failure in OCI VCN route entry. 
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud. 
@@ -227,7 +227,7 @@ R6.1.1401 (10/4/2020)
 - **Bug fix** Enabling advertising transit CIDR breaks Azure transit network. 
 - **Bug fix** Single AZ gateway replace function is broken.
 - **Enhancement** Improve IKEv2 compatibility with Cisco ASA when re-establishing a tunnel after it goes down without restarting the VPN service. 
-- **Enhancement** Enable multi-core processing capability on the Controller to handle co-pilot queries. `API support <https://api.aviatrix.com/#e80ff223-232d-4e1b-a172-79b4ad342eba>`_ to enable/disable multi-core processing in case of failure. 
+- **Enhancement** Enable multi-core processing capability on the Controller to handle co-pilot queries. API support to enable/disable multi-core processing in case of failure. 
 
 R6.1.1338 (9/24/2020)
 ======================
@@ -243,7 +243,7 @@ R6.1.1309 (9/7/2020)
 - **Gateway Rename feature removal** Gateway Rename feature has been removed from UI. 
 - **Account Rename feature removal** Account Rename feature has been removed from UI. 
 - **Enhancement** Consistent Login Banner when custom banner login is enabled. 
-- **Enhancement** Enable multicast option when creating an AWS Transit Gateway (TGW). `API support only. <https://api.aviatrix.com/#d5c3051f-a3b0-4778-b2c5-300eadec9ba2>`_
+- **Enhancement** Enable multicast option when creating an AWS Transit Gateway (TGW). API support only.
 - **Bug fix** fix Insane Mode gateway replacement function bug. 
 - **Bug fix** fix Transit Gateway Manual Summarize route bug.
 - **Bug fix** fix FireNet error programming firewall instances when they go through stop and start process. 
@@ -469,7 +469,7 @@ R5.4.1234 (5/20/2020)
 R5.4.1232 (5/18/2020)
 =======================
 
-- **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway. `API support only <https://api.aviatrix.com/?version=latest#8c0f26e3-044d-46e9-b7e7-14cf7ba16a71>`_
+- **Enhancement to Gateway Syslog Download** allows you to a gateway syslog directly from the Gateway. API support only.
 - **Bug fix** Aviatrix Transit Gateway update learned routes incorrectly in certain cases. 
 - **Route Update Convergence Enhancement** to improve route propagation and convergence time when routes are changed to the Transit network. 
 
@@ -477,12 +477,12 @@ R5.4.1232 (5/18/2020)
 R5.4.1204 (5/8/2020)
 ======================
 
-- **Bug fix** fix API bug in `enable_fqdn_cache_global <https://api.aviatrix.com/?version=latest#08b34de5-450c-4fa8-9ef5-64acf0f9f7d5>`_.
+- **Bug fix** fix API bug in enable_fqdn_cache_global.
 
 R5.4.1201 (5/7/2020)
 ======================
 
-- **Enhancement on FQDN** to disable learned FQDN entry IP address caching. `API support only <https://api.aviatrix.com/?version=latest#08b34de5-450c-4fa8-9ef5-64acf0f9f7d5>`_.
+- **Enhancement on FQDN** to disable learned FQDN entry IP address caching. API support only.
 - **Enhancement on User VPN** to improve page load time by caching VPC tags. 
 - **CloudN Enhancement** to support Netflow to export logs. 
 - **Enhancement to Gateway page** to allow gateway AMI image name to be displayed. This is useful to identify if a gateway runs on older AMI image that needs replacement to newer AMI image. 
@@ -492,7 +492,7 @@ R5.4.1140 (4/21/2020)
 
 - **Support More AWS TGW Peering Regions** Newly available regions of AWS TGW Peering is now supported. 
 - **User VPN Customizing Notification** You can now customize pop up messages after a VPN user is connected. To configure, go to OpenvVPN -> Advanced -> System Use Notification. One use case is for customer to write their own messages for compliance. Please ensure that you are running Aviatrix VPN Client version 2.9 or higher to view the usage notification
-- **VPN DPD Interval Configuration** allows you to specify DPD interval. `API support only. <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_
+- **VPN DPD Interval Configuration** allows you to specify DPD interval. API support only.
 - **Gateway Default Memory Alert Threshold** is changed to 80% to provide earlier warning to the Controller admin. 
 - **Change Gateway Default Size** at launch time to t3.small.
 - **Bug fix** User VPN to Save Configuration Template to allow multiple gateways to have the same configuration when attached to the same NLB. 
@@ -765,7 +765,7 @@ Transit Gateway Enhancement
 
  - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CIDRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
 
- - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. `API support <https://api.aviatrix.com/?version=latest#6a8a1c4c-14b6-4f11-b280-d218f60cea1e>`_ only. 
+ - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. API support only.
 
  - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
  - **ASN Path Prepend** adds ASN number when Aviatrix transit gateway redistribute routes to its BGP peer. For new Transit connection, the Aviatrix Transit gateway automatically inserts its ASN number. To insert ASN path in an existing connection, go to Transit Network -> Advanced Config -> Prepend AS Path
@@ -932,7 +932,7 @@ R4.7.378 (6/16/2019)
 
  - **Customize Spoke VPC Route Table** allows you to program route entries in Spoke VPC route table that points to TGW as target. By default, Aviatrix Orchestrator programs RFC 1918 routes in the VPC route table to point to TGW, any routes that are outside of this range is dynamically programmed into the VPC route table. When you enable this feature, all dynamic route propagation will be stopped. One use case is if you simply want to program the default route to point to TGW. Another use case is if you do not wish Aviatrix Orchestrator to program any VPC routes, in which case you should enter 0.0.0.0/32 for the "Customizing Spoke VPC Rotues" field. To configure, enter a list of comma separated CIDRs at `Attach VPC to TGW <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ during TGW Orchestrator Build. 
 
- - **Customize TGW VPN Creation** with additional parameters, such as inside_ip_cidr and pre_shared_key. For more information, checkout the API `Attach Native VPN to TGW <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_.
+ - **Customize TGW VPN Creation** with additional parameters, such as inside_ip_cidr and pre_shared_key.
 
 2. Insane Mode Enhancement
 ----------------------------
@@ -1320,7 +1320,7 @@ R3.2 (4/18/2018)
 4. API
 ------------
 
-- 50 APIs have been added to the Controller. For details, refer to `API Doc <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`_
+- 50 APIs have been added to the Controller.
  
 
 R3.1 (3/6/2018)

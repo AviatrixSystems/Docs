@@ -84,11 +84,7 @@ If your security team requires inline IDS/IPS firewall function, consider `Trans
 What are the automation methods for Transit Network?
 -----------------------------------------------------
 
-There are multiple resources to help you automate Transit Network setup. Note that if you are building a Transit Network following the workflow, you should use the APIs documented below.
-
- - `Transit Network section in API doc <https://api.aviatrix.com/?version=latest>`_.
-
- - `Use Terraform. <https://www.terraform.io/docs/providers/aviatrix>`_
+There are multiple resources to help you automate Transit Network setup. Note that if you are building a Transit Network following the workflow, you should `use Terraform <https://www.terraform.io/docs/providers/aviatrix>`_.
 
 
 Does Aviatrix Transit Network support HA?

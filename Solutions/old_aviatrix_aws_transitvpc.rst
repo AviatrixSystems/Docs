@@ -23,7 +23,7 @@ This document is published by AWS Answers for `AWS Global Transit Network <https
 ===========
 
 Aviatrix is a next generation cloud networking solution built from the
-ground up for the public cloud. For transit VPC design, Aviatrix provides one console for building, managing, monitoring and troubleshooting all aspects of your network connectivity. The console (controller) gives users the ability to implement Transit VPC design with a point-and-click (no CLI) as well as REST API.
+ground up for the public cloud. For transit VPC design, Aviatrix provides one console for building, managing, monitoring and troubleshooting all aspects of your network connectivity. The console (controller) gives users the ability to implement Transit VPC design with a point-and-click (no CLI) as well as Terraform.
 
 
 This configuration guide provides step by step instruction on how to

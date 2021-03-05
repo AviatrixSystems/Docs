@@ -156,7 +156,7 @@ In the case of a full tunnel deployment, if an OpenVPN Gateway is edited to togg
 How can I send the VPN config files to my users?
 ------------------------------------------------------
 
-By default, when you add the email address to a user, they will receive the VPN config file (.ovpn) via email. If you do not want to share these files via email, please do not enter the email address for the vpn users. You can then download these files one at a time from the Controller UI per user. You can use our `API <https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_get_vpn_ssl_ca_configuration>`_ - and then share it via your preferred mechanism with your VPN user. The API allows you to scale up if you deploy it via automation.
+By default, when you add the email address to a user, they will receive the VPN config file (.ovpn) via email. If you do not want to share these files via email, please do not enter the email address for the vpn users. You can then download these files one at a time from the Controller UI per user.
 
 
 How can I customize the email that is sent out when a new VPN user is added?
@@ -218,70 +218,7 @@ How can I use a CSV file to do bulk import of vpn users?
 --------------------------------------------------------------------------------------------------------------
 
 The Aviatrix Controller supports to read a CSV file to import users using Aviatrix Console GUI started from version 5.0, please refer to this `instruction <https://docs.aviatrix.com/HowTos/uservpn.html#import-vpn-users>`_.
-If you prefer to use API to add vpn users from a csv file, here is an example using python and API
 
-::
-
-  First: Prepare your data file("vpn-users.csv" in this example) for your VPN users. Format is "vpc_id, lb_name, username, user_email, profile_name". The first line is needed. The first three args are required. Email and profile are optional. If you do not want to use them, please delete them from the csv header line and update the python file as well - remove the lines from the payload. Here's an example, the first header line is required:
-  
-    vpc_id,lb_name,username,user_email,profile_name
-    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test1,test1@example.com,test-fqdn
-    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test2,test2@example.com,test-fqdn
-    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test3,test3@example.com,test-fqdn
-    vpc-0a64f49d9w8kdjde,Aviatrix-vpc-0aidj3sk80x341898c02,test4,test4@example.com,test-fqdn
- 
-  Next: Using API, login to your controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
-  curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
- 
-  Next: Copy the following python code into a file, lets say, import-vpn-users.py. Update the CID value from the above command, and run it:
- 
-  #!/usr/local/bin/python3
-  import requests
-  import os
-  import csv
- 
-  CID = "Uj8rE7cJsoENKS7wltkm"   #update with your CID look to
-  vpn_users_file = "vpn-users.csv"
-  url="https://your-controllers-ip-or-fqdn/v1/api"
- 
-  # first line should have the data needed for the api - vpc_id, lb_name, username, user_email, profile_name with open(vpn_users_file, mode='r') as csv_file:
-  
-    csv_reader = csv.DictReader(csv_file)
-    line_count = 0
-    for row in csv_reader:
-        # skipping first line as it has the headers
-        if line_count == 0:
-            line_count += 1
-        line_count += 1
- 
-        payload = {
-            "action": "add_vpn_user",
-            "CID": CID,
-            "vpc_id": row["vpc_id"],
-            "lb_name": row["lb_name"],
-            "username": row["username"],
-            "user_email": row["user_email"],
-            "profile_name": row["profile_name"]
-        }
- 
-        response = requests.post(url=url, data=payload, verify=False)
-        print(response.json())
- 
-  # printing all vpn users configured on this controller
-  payload = {
-    "action": "list_vpn_users",
-    "CID": CID
-  }
- 
-  response = requests.post(url=url, data=payload, verify=False)
-  parsed = json.loads(json.dumps(response.json()))
-  print("--------------------------")
-  print("id, email, vpc_id, lb_name")
-  print("--------------------------")
-  for items in parsed['results']:
-      print(f"{items['_id']}, {items['email']}, {items['vpc_id']}, {items['lb_name']}")
-  print("--------------------------")
-  
 
 I need to migrate all my Aviatrix setup and resource from one AWS account A to Account B, what is the suggestion of migrating my VPN users?
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -361,7 +298,6 @@ How can Aviatrix VPN Client and a VPN configuration file(.ovpn file) be pushed t
 We do not have an API or a programmatic way to push the Aviatrix VPN Client app and configurations, but here is a workflow you can automate:
 
 * You can push the Aviatrix VPN Client with any of your current App push tools for each of the platform. In Windows, an unattended install can be done by “AVPNC_win_x64.exe /SILENT”.
-* You can use `Aviatrix API <https://api.aviatrix.com/?version=latest>`_ to generate the .ovpn file for each user - look at `OpenVPN/VPNUsers/Download/Get VPN Configuration <https://api.aviatrix.com/?version=latest#01323fe0-91d9-42da-a3ad-23a6616bfdc7>`_. Regarding the configuration
 * You would also need the ".AviProf.conf" file for Macs in home directory and for Windows you need "%APPDATA%/AviProf.conf"
 
   * Please look at your own AviProf.conf file to figure out the format, it is a simple json file
@@ -376,8 +312,6 @@ There are different options to find this information:
 
   * Please look at "Controller > OpenVPN > Troubleshooting > VPN USER HISTORY SEARCH section" 
   * You can look for a `disconnect log <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id1>`_ if you have `external logging feature  <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrix-log-format-for-log-management-systems>`_ turned on. 
-  * You could also look at our `API <https://api.aviatrix.com/?version=latest#79695109-338c-4569-8f6c-824eb5ed5602>`_ to get this data.
-
 
 How can I address incompatibility between my Aviatrix VPN Client application and Cisco Umbrella Client running on my PC for DNS?
 ----------------------------------------------------------------------------------------------------------------------------------------------

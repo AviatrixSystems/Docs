@@ -33,53 +33,6 @@ What is the egress FQDN rules limit?
 3. You can have multiple tags in an egress FQDN filter. However, the limit of 1500 is applicable to total number of NFQ rules across multiple tags per gateway
 
 
-How can I overcome the character limit in API and Terraform while adding a lot of FQDN Rules for a FQDN Egress Control Tag?
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-There is a character limit while using `FQDN Egress Control API <https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_set_fqdn_filter_tag_domain_names>`_, which might limit you to about 100 FQDN rules. You can use the following workaround to load a file with FQDN Rules. The size of the file can be upto 65280 bytes. We recommend that you keep your FQDN rules to less than 500-750 per Tag. You might see a "CID required" error, if you run into this issue.
- 
-
-::
-
-  First: Prepare your data file("test_file" in this example) for your Egress Control Rules. Format is "FQDN,protocol,port". Here's an example:
-    *.yahoo.com,tcp,443
-    google.com,tcp,443
-
-  Next: Make sure that you have an Egress Filter Tag created on the controller. "Controller UI > Security > Egress Control > New Tag". "newtag2" for this example
-
-  Next: Using API, login to your controller and generate a CID. This works on a Mac - replace the username, password and controller's IP/FQDN. https://s3-us-west-2.amazonaws.com/avx-apidoc/API.htm#_login
-    curl -k -s --data "action=login" --data "username=admin" --data "password=My-Pass-3484" "https://1.1.2.55/v1/api"
-
-  Next: Copy the following python code into a file, let's say, egress-rules.py. Update the CID value from the above command, input the url and run it:
-
-  ----------
-  #!/usr/local/bin/python3
-  import requests
-  import os
-  
-  CID = "aL4H34aPWnS738TmHsGV"
-  fqdn_file = "test_file"
-  tag_name = "newtag2"
-  url="https://1.1.2.55/v1/api"
-  
-  print("import FQDN config file")
-  myfile = {
-              "import_file":open(fqdn_file, "rb")
-           }
-  
-  payload = {
-      "action": "import_fqdn_filter_tag_domain_names_from_file",
-      "CID": CID,
-      "tag_name": tag_name
-  }
-  
-  response = requests.post(url=url, files=myfile ,data=payload, verify=False)
-  print(response.json())
-  ----------
-  
-  Next: Check on your controller to verify that the Egress FQDN Filter tag has been updated.
-
-
 What is the DNS dependency for Egress Control?
 ---------------------------------------------------
 

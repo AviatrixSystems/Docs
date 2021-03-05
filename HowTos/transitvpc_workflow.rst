@@ -321,13 +321,7 @@ going through the backup Transit GW.
 13. Transit Network APIs
 -------------------------
 
-There are multiple resources to help you automate Transit Network setup. Note that if you are building a Transit Network following the workflow, you should use the APIs documented below. 
-
- - `Transit Network section in API doc <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm#api-doc-transit-network>`_. 
-
- - `Terraform example. <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_
-
- - `Python API example for Transit Network <https://github.com/AviatrixSystems/TransitNetworkAPI_python_example>`_
+There are multiple resources to help you automate Transit Network setup. Note that if you are building a Transit Network following the workflow, you should follow the `Terraform example <http://docs.aviatrix.com/HowTos/Setup_Transit_Network_Terraform.html>`_.
 
 
 How do I get started on AWS?

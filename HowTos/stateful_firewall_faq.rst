@@ -32,18 +32,6 @@ because of the implementation of how rules are sent to the gateways.
 
 In the next release (5.2), the limitation will be removed. 
 
-What is the API to configure stateful firewall?
---------------------------------------------------------
-
-The API for the stateful firewall can be found `here. <https://api.aviatrix.com/?version=latest#ce6b766f-4d4a-4e68-8419-4b93fa6281b4>`_.
-
-Follow the example in the API doc to setup multiple rules. 
-
-Currently the API call requires you to input the entire set of the rules for each call. There is no incremental append or delete
-functions. 
-
-In the next release (5.2), there will be new APIs to append new rules and delete a specific rule. 
-
 Is there limitation on the number of tags?
 --------------------------------------------
 

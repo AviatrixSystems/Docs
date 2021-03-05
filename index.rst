@@ -24,7 +24,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`UsefulTools`
 * :ref:`Settings`
 * :ref:`Troubleshoot`
-* :ref:`API`
 * :ref:`Downloads`
 * :ref:`Release Notes`
 * :ref:`Security Bulletin`
@@ -63,7 +62,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/onboarding_faq
    HowTos/aviatrix_account
    HowTos/HowTo_IAM_role
-   HowTos/howto_customize_aviatrix_iam_role_names_for_2ndary_accounts/howto_customize_aviatrix_iam_role_names_for_2ndary_accounts.rst
    HowTos/iam_policies
    HowTos/aviatrix_iam_policy_requirements
    HowTos/customize_aws_iam_policy
@@ -323,16 +321,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Troubleshoot_ELB_Status
    HowTos/flightpath
 
-.. _API:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: API
-
-   HowTos/Aviatrix_Controller_API
-   HowTos/AviatrixAPI/multiple_approaches_to_use_aviatrix_api/multiple_approaches_to_use_aviatrix_api
-   HowTos/aviatrix_apis_datacenter_extension
-
 .. _Terraform:
 
 .. toctree::
@@ -403,7 +391,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_solution_activemesh_spoke_snat_dnat_rfc1918
    HowTos/meraki_to_transit
    HowTos/reserve_onprem
-   HowTos/spoke_skip_rfc1918
    HowTos/HowTo_Setup_AWS_Managed_Microsoft_AD_for_Aviatrix
    Solutions/aviatrix_aws_meshVPC
    Solutions/build_zerotrust_cloud_network
