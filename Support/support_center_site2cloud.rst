@@ -87,12 +87,10 @@ If you want to keep sending periodic ping packets to keep the tunnel up due to d
 You can also disable dpd's on the Gateway for a site2cloud tunnel - please do remember that this will report the tunnel to be up always and you might not see a `tunnel down notification <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_  anymore if you turn off DPD's. `Instructions to turn off DPD's <https://docs.aviatrix.com/HowTos/site2cloud.html#dead-peer-detection>`_.
 
 
-Can I configure DPD interval settings?
------------------------------------------
+What are the default DPD interval settings?
+-------------------------------------------
 
-At this time, we allow DPD settings (such as delay, retry and maxfail) to be configured only through API. Please check out the `API documentation <https://api.aviatrix.com/?version=latest#831e896e-709f-4a99-935e-dc79ee31eff5>`_.
-
-The defaults are dpd_delay 10, dpd_retry 3 and dpd_maxfail 3. Depending on the quality of your connection and packet loss on it, you might be seeing your tunnel going down sometimes. You can adjust your dpd settings to let your tunnel stay up a bit longer before declaring it as dead. dpd_delay is time interval before successful dpds, dpd_rety is the interval at which dpd's are sent in case of a dpd failure and maxfail denotes the number of dpd fails before declaring the tunnel to be down and to restart the negotiation to restart the tunnel again. With the default settings, you should see the tunnel go down if 3 dpd's are missed over a 9 second period.
+The defaults are dpd_delay 10, dpd_retry 3 and dpd_maxfail 3.
 
 
 Why is my Cisco Router rekeying the IPSec session sooner than usual?

@@ -7,7 +7,7 @@
 Azure Ingress Firewall Setup Solution 
 =========================================================
 
-This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages Azure Load Balancers, `Transit FireNet for Azure <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_, and `Azure Transit with Native Spoke VNets <https://github.com/AviatrixSystems/Docs/blob/master/HowTos/transitvpc_workflow.rst#6b-attach-azure-arm-spoke-vnet-via-native-peering>`_. The solution also allows 
+This document illustrates a simple architecture for Ingress traffic inspection firewall that leverages Azure Load Balancers, `Transit FireNet for Azure <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_, and `Azure Transit with Native Spoke VNets <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_. The solution also allows 
 you to view the client IP address.
 
 The deployment is shown as the diagram below. 

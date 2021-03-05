@@ -14,9 +14,9 @@ Managing Aviatrix Resources in CloudFormation
 Overview
 --------
 
-Automating Aviatrix components is managed by APIs on the Aviatrix Controller.  However, many AWS customers use CloudFormation to automate their infrastructure within AWS.  In order to call `Aviatrix APIs <https://s3-us-west-2.amazonaws.com/avx-apidoc/index.htm>`__ from CloudFormation templates, a `Custom Resource <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html>`__ is required.
+Automating Aviatrix components is managed by APIs on the Aviatrix Controller.  However, many AWS customers use CloudFormation to automate their infrastructure within AWS.  In order to call Aviatrix APIs from CloudFormation templates, a `Custom Resource <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html>`__ is required.
 
-Aviatrix has developed a Custom Resource to facilitate automation of Aviatrix components from CloudFormation templates.  This Custom Resource is backed by an AWS Lambda function that will invoke the appropriate API call using the `Aviatrix Python SDK <https://github.com/AviatrixSystems/python_sdk>`__.
+Aviatrix has developed a Custom Resource to facilitate automation of Aviatrix components from CloudFormation templates.  This Custom Resource is backed by an AWS Lambda function.
 
 Use this guide to set up your AWS account with the necessary components to automate Aviatrix from your CloudFormation templates. 
 
@@ -212,8 +212,6 @@ This resource allows you to create Aviatrix Gateways.
 +------------------+----------+------------------------------------------------+
 | additional_args  | Yes      | Dictionary with additional arguments for this  |
 |                  |          | gateway.                                       |
-|                  |          |                                                |
-|                  |          | | See |linkAliasAPI|_ for available arguments  |
 +------------------+----------+------------------------------------------------+
 
 **Example**
@@ -354,6 +352,3 @@ This sample shows how to create a new FQDN filter called `production` that is en
 
 .. |imageASMKey| image:: CloudFormationResources_media/asm_secret_key_name.png
    :width: 300px
-
-.. |linkAliasAPI| replace::  Aviatrix API
-.. _linkAliasAPI: https://api.aviatrix.com/?version=latest#a8271731-01fd-46c6-b0a6-d243d1131ad3
