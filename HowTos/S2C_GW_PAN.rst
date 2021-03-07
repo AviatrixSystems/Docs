@@ -170,7 +170,7 @@ For troubleshooting, go to **Site2Cloud > Diagnostics** and select various comma
     :width: 5.55625in
     :height: 3.26548in
 
-.. |image3| image:: s2c_gw_pan_media/ike-gw-2.png
+.. |image3| image:: s2c_gw_pan_media/IKE_Gateway_2.PNG
     :width: 5.55625in
     :height: 3.26548in
 
