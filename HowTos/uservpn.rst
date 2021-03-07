@@ -168,7 +168,7 @@ Detailed audit logs are maintained and available in various logging platforms.
 .. note::
 
    Audit reports are best viewed in the `Aviatrix Splunk Application <AviatrixLogging.html#splunk-app-for-aviatrix>`__
-
+----This is mixed messaging. For logging we are recommending that customers use rsyslog to forward logs to Splunk but here we are recommending our Splunk app. Can we clarify here what we recommend is bes? 
 
 .. |image0| image:: uservpn_media/AviatrixCloudVPN.png
    :width: 5.55625in
