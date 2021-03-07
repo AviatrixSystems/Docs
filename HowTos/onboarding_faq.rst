@@ -41,7 +41,7 @@ What are different types of licenses available?
 There are three different types of licenses option available in Aviatrix Controller.
 
     1. Bring Your Own License (BYOL) License - This license supports public cloud AWS, Azure, GCP and OCI. Contact support@aviatrix.com to get BYOL license.
-    #. Metered or Platinum Metered License - This is only applicable to AWS public cloud
+    #. Metered or Platinum Metered License - This is only applicable to AWS and Azure public cloud
     #. Utility - The utility AMI is available in AWS and Azure both and supports maximum 100 tunnels and limited number of VPN users.
 
 To check license type, Go to Controller's console -> Settings -> Controller -> License
