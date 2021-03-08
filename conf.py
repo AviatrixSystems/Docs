@@ -29,6 +29,7 @@ def setup(app):
     app.add_javascript('js/custom.js')
     app.add_javascript('js/digitalpi-utm-tracker-aviatrix.com.js')
     app.add_javascript('js/marketo-munchkin.js')
+    app.add_javascript('js/6sense.js')
     app.add_javascript('js/drift.js')
 
 # -- General configuration ------------------------------------------------
