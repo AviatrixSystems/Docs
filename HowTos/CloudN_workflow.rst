@@ -729,7 +729,6 @@ Ans:
    :scale: 30%
    
 .. |correct_place_to_check_cloudN_version| image:: ./CloudN_workflow_media/correct_place_to_check_cloudN_version.png
-    :width: 7.00000 in
-    :height: 5.50000 in
+   :scale: 60%
     
 .. disqus::
