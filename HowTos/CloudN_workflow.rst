@@ -439,7 +439,7 @@ as an Aviatrix gateway in the cloud when Aviatrix Controller is upgraded. Please
 
 .. important::
 	
-	* If you wish to check the version of Managed-CloudNs, please go to Aviatrix controller -> Settings -> Maintenance -> Upgrade -> Gateway Upgrade Status. Do NOT check CloudN software version by accessing CloudN GUI once CloudN is registered to Aviatrix controller. The version you see from CloudN GUI always displays the version at the time when you register CloudN to Aviatrix controller.
+	* Once CloudN is registered to Aviatrix controller, if you wish to check the version of Managed-CloudNs, please go to Aviatrix controller -> Settings -> Maintenance -> Upgrade -> Gateway Upgrade Status. However, the software version you see from CloudN GUI locally would not change, and it stays with the version at the time when you register CloudN to Aviatrix controller.
 	
 	* With Managed CloudN, software upgrading directly from CloudN GUI is no longer needed, unless unexpected issues occur. In such case, please first contact Aviatrix Support support@aviatrix.com.
 	
