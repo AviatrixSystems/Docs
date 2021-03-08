@@ -439,7 +439,14 @@ as an Aviatrix gateway in the cloud when Aviatrix Controller is upgraded. Please
 
 .. important::
 	
-	With Managed CloudN, software upgrading directly from CloudN GUI is no longer needed, unless unexpected issues occur. In such case, please first contact Aviatrix Support support@aviatrix.com.
+	* If you wish to check the version of Managed-CloudNs, please go to Aviatrix controller -> Settings -> Maintenance -> Upgrade -> Gateway Upgrade Status. Do NOT check CloudN software version by accessing CloudN GUI once CloudN is registered to Aviatrix controller. The version you see from CloudN GUI always displays the version at the time when you register CloudN to Aviatrix controller.
+	
+	* With Managed CloudN, software upgrading directly from CloudN GUI is no longer needed, unless unexpected issues occur. In such case, please first contact Aviatrix Support support@aviatrix.com.
+	
+	
+
+|correct_place_to_check_cloudN_version|
+	
 
 Backup/Restore
 ==============
@@ -720,5 +727,9 @@ Ans:
 
 .. |deployment_dual_dx_aa| image:: insane_mode_media/deployment_dual_dx_aa.png
    :scale: 30%
-
+   
+.. |correct_place_to_check_cloudN_version| image:: ./CloudN_workflow_media/correct_place_to_check_cloudN_version.png
+    :width: 7.00000 in
+    :height: 5.50000 in
+    
 .. disqus::
