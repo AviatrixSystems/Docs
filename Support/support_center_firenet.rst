@@ -25,7 +25,7 @@ If firewalls are managed by **Panorama**:
 
 Firewall has 3 status, **up**, **unaccessible**, **down**.
 
-1. If Panorama is accessible from the Aviatrix Controller, and device in Panorama shows “connected”, Aviatrix Controller consider the firewall to be **up**
+1. If Panorama is accessible from the Aviatrix Controller, the device in Panorama shows “connected”, and the Aviatrix Controller is able to ping the Management Interface of the Firewall, the Aviatrix Controller consider the firewall to be **up**
 
 2. If either Panorama is not accessible, or device is not in managed device list, or device shows “disconnected”, Aviatrix Controller then pings the firewall to check status
 
