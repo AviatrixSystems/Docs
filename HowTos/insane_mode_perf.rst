@@ -53,7 +53,7 @@ T3 instance series performance
 =================================
 
 ==========================      ===============================     ===============================
-**Spoke Gateway**               **Throughput Gbps (MTU 1500B)**     **Throughput Gbsp (MTU 9600B)**
+**Spoke Gateway**               **Throughput Gbps (MTU 1500B)**     **Throughput Gbps (MTU 9600B)**
 ==========================      ===============================     ===============================
 t3a.xlarge                      6.12                                9.82
 t3a.medium                      2.33                                8.85
