@@ -1,10 +1,10 @@
 .. meta::
   :description: Firewall Network Workflow
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet, AWS GWLB, Azure Load Balancer, Azure LB, Gateway Load balancer
+  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet, AWS GWLB, Azure Load Balancer, Azure LB, Gateway Load balancer, GCP, GCP FireNet, Azure FireNet, GCP ILB
 
 
 =========================================================
-Transit FireNet  Workflow for AWS/Azure
+Transit FireNet  Workflow for AWS, Azure and GCP
 =========================================================
 
 If you are looking deploying firewall networks in AWS TGW environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
@@ -16,6 +16,8 @@ For a complete step by step guide on AWS for Transit FireNet, refer to `Transit 
 For a complete step by step guide on AWS for Transit FireNet with AWS Gateway Load Balancer (GWLB), refer to `Transit FireNet Workflow with AWS Gateway Load Balancer (GWLB) <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws_gwlb.html>`_. 
 
 For a complete step by step guide on Azure for Transit FireNet, refer to `Transit FireNet on Azure Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
+
+For a complete step by step guide on GCP for Transit FireNet, refer to `Transit FireNet on GCP Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_.
 
 Prerequisite for AWS
 ---------------------
@@ -45,6 +47,24 @@ Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/
 deploy Aviatrix Transit Gateways and attach at least one Spoke gateway or one Spoke VNet. When you are done, proceed to Step 1. 
 
 
+Prerequisite for GCP
+------------------------
+
+Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed
+in Transit VPC and/or in Spoke VPC in GCP. Make sure the deployment meets the following
+specifications.
+
+  1. ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
+  #. Minimum four VPCs will be required for GCP FireNet solution with Palo Alto VM-series and all VPCs should be in same region.
+  #. The minimum size of the Aviatrix Transit Gateway instance size is n1-standard_1.
+  #. Select the option "Enable Transit FireNet" when launching the Aviatrix Transit Gateway.
+  #. Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
+
+Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to
+deploy Aviatrix Transit Gateways and attach at least one Spoke gateway or one Spoke VNet. When you are done, proceed to Step 1.
+
+
+
 1. Enable Transit FireNet Function
 ------------------------------------------------
 
@@ -61,15 +81,14 @@ In the drop down menu, select one Aviatrix Transit Gateway and click Enable.
 
 .. Note::
 
-  For Azure deployment, Transit FireNet function is enabled when launching the gateway, skip this step. 
-
+  For Azure and GCP deployment, Transit FireNet function is enabled when launching the gateway, skip this step.
 
 By default, east-west and north-south traffic inspections are enabled on Transit FireNet Gateways, you can also enable Ingress/Egress inspection on the Transit FireNet Gateways. To do so, go to Firewall Network -> Advanced -> click the 3 dots skewer of one FireNet gateway, 
 enable Egress through firewall option. 
 
 A deployment diagram in this option is shown as below:
 
-|single_transit|
+|single_transit_new|
 
 Starting 6.3, Aviatrix Transit FireNet solution is also supporting AWS Gateway Load Balancer (AWS GWLB).
 
@@ -112,9 +131,9 @@ Select an Aviatrix Transit Gateway that you enabled for FireNet function in the 
 
 On the left side of the panel, highlight one Spoke VPC/VNet for inspection and click Add. The selected Spoke VPC/VNet should appear on the right side panel. 
 
-For example, if traffic going in and out of VPC Spoke2 where Spoke2-gw is deployed should be inspected, move the Spoke2-gw to the right, as shown below. 
+For example, if traffic going in and out of VPC PROD1 where gcp-spk-prod1-gw is deployed should be inspected, move the gcp-spk-prod1-gw to the right, as shown below.
 
-|transit_firenet_policy|
+|transit_firenet_policy_new|
 
 For specify more VPC/VNets for inspection, repeat this step. 
 
@@ -146,13 +165,13 @@ Select a Transit FireNet gateway to disable the function.
 If Aviatrix Egress Transit Gateway has been configured, select one to disable the function.   
 
 
-.. |transit_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_policy.png
+.. |transit_firenet_policy_new| image:: transit_firenet_workflow_media/transit_firenet_policy_new.png
    :scale: 30%
 
 .. |dual_transit| image:: transit_firenet_workflow_media/dual_transit.png
    :scale: 30%
 
-.. |single_transit| image:: transit_firenet_workflow_media/single_transit.png
+.. |single_transit_new| image:: transit_firenet_workflow_media/single_transit_new.png
    :scale: 30%
 
 .. |gwlb_tr_firenet| image:: transit_firenet_workflow_media/gwlb_tr_firenet.png
