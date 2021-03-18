@@ -2,6 +2,21 @@
 Release Notes
 =======================================
 
+R6.3.2364 (03/18/2021)
+=======================
+
+- **Aviatrix Transit FireNet for GCP** allows you to deploy firewall instances in GCP. For more information, check out `Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure-and-gcp>`_.
+- **Segmentation Enhancement** Add the Multi-Cloud Transit segmentation support for CloudN
+- **Site2Cloud Enhancement** Clear Session option is added in Site2Cloud connection to clear the active connection sessions running through Aviatrix gateways.
+- **Multi-Cloud Transit Enhancement** New capability to attach managed CloudN with Multi-Cloud Aviatrix Transit without High Performance Encryption (HPE).
+- **TGW Enhancement** Add support for AWS TGW connect
+- **Bug fix** Enhanced AWS ENA conntrack data into the syslog
+- **Bug fix** Improve the route programming mechanism for Spoke VPC to filter the customize CIDRs first before installing into the Spoke VPC route table.
+- **Bug fix** Fix the Dashboard status display issue for BGP over LAN.
+- **Bug fix** Fix the Aviatrix Gateways "Polling" status after Controller Backup & Restore and IP migration
+- **Bug fix** Add the missing parameters in template for “Export to Terraform” feature
+- **Bug fix** Fix exception for CloudN registration after controller migration.
+
 R6.3.2247 (03/01/2021)
 =======================
 
