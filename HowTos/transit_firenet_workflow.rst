@@ -166,13 +166,13 @@ If Aviatrix Egress Transit Gateway has been configured, select one to disable th
 
 
 .. |transit_firenet_policy_new| image:: transit_firenet_workflow_media/transit_firenet_policy_new.png
-   :scale: 30%
+   :scale: 40%
 
 .. |dual_transit| image:: transit_firenet_workflow_media/dual_transit.png
-   :scale: 30%
+   :scale: 40%
 
 .. |single_transit_new| image:: transit_firenet_workflow_media/single_transit_new.png
-   :scale: 30%
+   :scale: 40%
 
 .. |gwlb_tr_firenet| image:: transit_firenet_workflow_media/gwlb_tr_firenet.png
    :scale: 40%
