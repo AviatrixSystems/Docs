@@ -119,7 +119,7 @@ First configure DNAT rule for Health Check is a mandatory required in GCP. Go to
 |health_check_dnat|
 
 
-Also, follow ` VM-Series Health Check Steps <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html#enable-vm-series-health-check-policy>`_ to allow Google Load Balancer to check firewall instance health at regular intervals.
+Also, follow `VM-Series Health Check Steps <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html#enable-vm-series-health-check-policy>`_ to allow Google Load Balancer to check firewall instance health at regular intervals.
 
 
 9. Configure Basic Allow-all Policy
@@ -164,10 +164,10 @@ You can view if traffic is forwarded to the firewall instance by logging in to t
 
 
 .. |access_key| image:: config_paloaltoVM_media/gcp/access_key.png
-   :scale: 35%
+   :scale: 45%
 
 .. |health_check_dnat| image:: config_paloaltoVM_media/gcp/health_check_dnat.png
-   :scale: 35%
+   :scale: 45%
 
 .. |new_zone| image:: config_paloaltoVM_media/new_zone.png
    :scale: 30%
