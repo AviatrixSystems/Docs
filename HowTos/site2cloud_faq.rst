@@ -48,11 +48,11 @@ What are the encryption algorithms supported?
 **Type**                                   **Value**
 ====================================       ======================================
 Phase 1 Authentication                     SHA-1, SHA-512, SHA-384, SHA-256
-Phase 1 DH Groups                          2, 1, 5, 14, 15, 16, 17, 18, 19
+Phase 1 DH Groups                          1, 2, 5, 14, 15, 16, 17, 18, 19, 20, 21 (20 & 21 IKEv2 Only)
 Phase 1  Encryption                        AES-256-CBC, AES-192-CBC, AES-128-CBC, 3DES
 Phase 2 Authentication                     HMAC-SHA-1, HMAC-SHA-512, HMAC-SHA-384, HMAC-SHA-256, NO-AUTH
-Phase 2 DH Groups                          2, 1, 5, 14, 15, 16, 17, 18, 19
-Phase 2 Encryption                         AES-256-CBC, AES-192-CBC, AES-128-CBC, AES-128-GCM-96, AES-256-GCM-128, 3DES, NULL-ENCR
+Phase 2 DH Groups                          1, 2, 5, 14, 15, 16, 17, 18, 19, 20, 21 (20 & 21 IKEv2 Only)
+Phase 2 Encryption                         AES-128-CBC, AES-192-CBC, AES-256-CBC, AES-128-GCM-64, AES-128-GCM-96, AES-128-GCM-128, 3DES, NULL-ENCR
 
 ====================================       ======================================
 
