@@ -154,6 +154,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Azure_ingress_firewall_example
    HowTos/config_paloaltoVM
    HowTos/config_PaloAltoAzure.rst
+   HowTos/config_paloaltoGCP
    HowTos/bootstrap_example
    HowTos/pan_bootstrap_example_azure
    HowTos/config_FortiGateVM
@@ -412,6 +413,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_firenet_workflow_aws
    HowTos/transit_firenet_workflow_aws_gwlb
    HowTos/transit_firenet_workflow_azure
+   HowTos/transit_firenet_workflow_gcp
    HowTos/cloud_wan_workflow_azure_vwan
    HowTos/using_VPC_Endpoints_w_AVX
    HowTos/transit_gateway_peering_with_private_network_workflow
