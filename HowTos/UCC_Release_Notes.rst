@@ -8,7 +8,7 @@ R6.3.2364 (03/18/2021)
 - **Aviatrix Transit FireNet for GCP** allows you to deploy firewall instances in GCP. For more information, check out `Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure-and-gcp>`_.
 - **Segmentation Enhancement** Add the Multi-Cloud Transit segmentation support for CloudN
 - **Site2Cloud Enhancement** Clear Session option is added in Site2Cloud connection to clear the active connection sessions running through Aviatrix gateways.
-- **Multi-Cloud Transit Enhancement** New capability to attach managed CloudN with Multi-Cloud Aviatrix Transit without High Performance Encryption (HPE).
+- **Multi-Cloud Transit Enhancement** New capability to attach managed CloudN with Multi-Cloud Aviatrix Transit without High Performance Encryption (HPE) for Oracle cloud only.
 - **FlightPath Enhancement** Add support for IP address as a source
 - **TGW Enhancement** Add support for AWS TGW connect
 - **Bug fix** Enhanced AWS ENA conntrack data into the syslog
