@@ -9,6 +9,7 @@ R6.3.2364 (03/18/2021)
 - **Segmentation Enhancement** Add the Multi-Cloud Transit segmentation support for CloudN
 - **Site2Cloud Enhancement** Clear Session option is added in Site2Cloud connection to clear the active connection sessions running through Aviatrix gateways.
 - **Multi-Cloud Transit Enhancement** New capability to attach managed CloudN with Multi-Cloud Aviatrix Transit without High Performance Encryption (HPE).
+- **FlightPath Enhancement** Add support for IP address as a source
 - **TGW Enhancement** Add support for AWS TGW connect
 - **Bug fix** Enhanced AWS ENA conntrack data into the syslog
 - **Bug fix** Improve the route programming mechanism for Spoke VPC to filter the customize CIDRs first before installing into the Spoke VPC route table.
