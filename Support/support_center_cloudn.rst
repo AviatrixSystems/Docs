@@ -14,3 +14,8 @@ CloudN requires access to some ports/hosts. Please take a look `here <https://do
 
 Please take a look at https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access for more information
 
+
+Site2Cloud not coming up?
+---------------------------
+
+Pleae make sure that if there are any firewalls or routers in between the CloudN and Transit Gateways - they should allow port 500 and port 4500 traffic between CloudN's wan/etho0 interface and Transit Gateway.
