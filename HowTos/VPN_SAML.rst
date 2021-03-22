@@ -13,7 +13,7 @@ There are two methods to authenticate a VPN client: `Okta API Token <https://doc
 
 This document shows you how to setup VPN authentication using an Aviatrix SAML client.
 
-The Aviatrix user VPN is the only OpenVPN® based remote VPN solution that provides a VPN client with SAML authentication capability.
+The Aviatrix user VPN is one of the OpenVPN® based remote VPN solutions that provides a VPN client with SAML authentication capability.
 
 This step-by-step guide shows you how to use an Aviatrix SAML client to authenticate an IdP. When a SAML client is used, the Aviatrix controller acts as the service provider (SP) that redirects browser traffic from the client to the IdP for authentication.
 
