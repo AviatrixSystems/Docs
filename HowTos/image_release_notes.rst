@@ -2,9 +2,9 @@
 Image Release Notes
 =======================================
 
-****Next Controller image is scheduled for Feb 2021****
+****Next Controller image is scheduled for April 2021****
 
-****Next Gateway image is scheduled for Mar 2021****
+****Next Gateway image is scheduled for April 2021****
 
 Controller Images: AWS AMI – 050120 (8/17/2020) 
 ===============================================
