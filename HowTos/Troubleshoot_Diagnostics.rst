@@ -12,6 +12,7 @@ Network
 
 This section provides tools to test the network connectivity of the controller and gateways.
 
+
 Gateway Utility
 ~~~~~~~~~~~~~~~~~
 
@@ -23,6 +24,7 @@ Network Connectivity Utility
 
 The Network Connectivity (nc) tool allows you to test if the controller/gateway is able to reach a host with a specified protocol and port number.
 
+Please note that tests using UDP protocol cannot be used to reliably determine connectivity as Load balancers or Security groups could consume the UDP packet, indicating a false positive. So a UDP test that says success does not gurantee UDP connectivity. However a UDP test showing failure means there are issues with UDP connectivity 
 
 Packet Capture
 ~~~~~~~~~~~~~~~~
