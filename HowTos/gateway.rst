@@ -23,7 +23,7 @@ Click "Gateway" on the navigation panel. Click "New" to set up launching a new g
 Public Subnet
 --------------
 
-Aviatrix gateways must be launched in a public subnet.
+Aviatrix gateways are launched in a public subnet.
 
 A public subnet in AWS VPC is defined as
 a subnet whose associated route table has a default route entry that points to IGW. To learn
