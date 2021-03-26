@@ -110,7 +110,7 @@ to enter an alternative DNS IP address.
 Enable NAT
 -------------
 
-The Aviatrix gateway will perform Source NAT (SNAT) function when this option is selected. All VPC routing tables for
+The Aviatrix gateway performs Source NAT (SNAT) function when this option is selected. All VPC routing tables for
 private subnets are automatically programmed with 0.0.0.0/0 points to the gateway.
 
 The function can be enabled at gateway launch time, or any time afterwards.
