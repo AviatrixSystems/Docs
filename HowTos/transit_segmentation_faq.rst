@@ -85,7 +85,7 @@ Segmentation is also not allowed if Aviatrix Transit Gateway instance type is C5
 
 In addition, if two Aviatrix Transit Gateways are peered together and one of them has FireNet Egress enabled, through 
 Aviatrix Transit Gateway peering the Spoke VPC/VNets may be connected. The work around is to have FireNet Egress enabled
-on each Aviatrix Transit FirNet. 
+on each Aviatrix Transit FireNet. 
 
 
 
