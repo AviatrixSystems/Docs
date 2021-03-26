@@ -30,14 +30,15 @@ If you have already subscribed the Metered AMI on AWS Marketplace, skip this ste
 Click the AMI link below to take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-`Aviatrix Secure Networking Platform Metered - 24x7 Support <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1590260881838&sr=0-6&ref_=srh_res_product_title>`_ 
+`Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2&ref_=srh_res_product_title>`_
+
 
 1.2 Continue to Subscribe 
 ----------------------------------------
 
 Click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
-   |subscribe_24x7|
+   |AMI_24x7_copilot|
 
 1.3 Accept Terms
 -----------------------------
@@ -56,7 +57,7 @@ Step 2. Launch the Controller with CloudFormation
 Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in the next steps 
 to run the Cloudformation script.   
 
-`CloudFormation for Aviatrix Secure Networking Platform Metered - 24x7 Support <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https://s3-us-west-2.amazonaws.com/aviatrix-cloudformation-templates/aws-cloudformation-aviatrix-metered-controller-24x7-support.template>`_
+`CloudFormation for Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
 
 
 For other products, check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
@@ -235,7 +236,7 @@ Other Aviatrix Products
 
 In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then come back to this section to click on the CloudFormation script to launch the Controller. 
 
- - `Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
+ - `Aviatrix Secure Networking Platform Metered - 24x7 Support <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1590260881838&sr=0-6&ref_=srh_res_product_title>`_
 
  - `Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template>`_
 
@@ -249,11 +250,11 @@ Additional Information for Controller
 
  - **Controller sizing** `Controller instance sizing and EBS volume selection info  <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
 
- - **Controller backup and restore** Controller backup instructions can be found `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
+ - **Controller backup and restore**  `Controller backup instructions info <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 
  - **Controller high availability**  Controller HA instructions can be found `here <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.
 
- - **Software upgrade** Software upgrade procedure can be found `here <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. 
+ - **Software upgrade**  `Software upgrade procedure info <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
 
 
@@ -268,6 +269,9 @@ Additional Information for Controller
 
 .. |subscribe_24x7| image:: ZeroToConnectivityInAWS_media/subscribe_24x7.png
    :scale: 30%
+
+.. |AMI_24x7_copilot| image:: ZeroToConnectivityInAWS_media/AMI_24x7_copilot.png
+   :scale: 40%
 
 .. |3-step| image:: ZeroToConnectivityInAWS_media/3-step.png
    :scale: 30%
