@@ -104,7 +104,6 @@ R6.3.2092 (1/31/2021)
 
 - **Reduce Email API Blocking** is an enhancement for non HTTP/HTTPS traffic configured on a FQDN gateway where a set of large site's well known IP addresses are pre-populated to the FQDN gateways, thus significantly reducing the probability that applications still cannot make API calls (mostly email services) even though the FQDN rules for these sites are configured. The set of sites are: gmail.com, hotmail.com, microsoft.com, live.com, outlook.com, office.com ad office365.com. The applicable TCP ports are: 25, 465, 587, 143, 993 and 995.  
 - **Edit Stateful Firewall Rules Enhancement** simplifies editing and viewing IP address based stateful firewall  rules, allowing large set of rules to be managed easily. To configure, go to Security -> Stateful Firewall -> Policy to edit policies.   
-- **GCP Outbound Rules** are added to GCP gateway instance that explicitly opens the default route CIDR (0.0.0.0/0) to all destinations. This helps security and compliance team for audit purposes. 
 
 
 R6.2.2016 (2/18/2021)
