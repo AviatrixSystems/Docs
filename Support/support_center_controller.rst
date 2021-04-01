@@ -199,7 +199,7 @@ Please also note that a Gateway "Down" state does not necessarily mean IPsec or 
 What is the preferred way for generating a CSR and uploading a Signed CA Certificate to the Aviatrix Controller?
 ------------------------------------------------------------------------------------------------------------------------
 
-The recommended way is to generate a CSR and have it signed by your CA and then upload the signed cert, ca cert and the key at "Controller Web Interface > Settings > Advanced > Security > Import Method > Import Certificate with the Key". `Instructions to generate CSR <https://support.comodoca.com/Com_KnowledgeDetailPage?Id=kA01N000000zFU6>`_
+The recommended way is to generate a CSR and have it signed by your CA and then upload the signed cert, ca cert and the key at "Controller Web Interface > Settings > Advanced > Security > Import Method > Import Certificate with the Key". `Instructions to generate CSR <https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl>`_
 
 
 
