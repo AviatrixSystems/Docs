@@ -82,7 +82,7 @@ Overlapping Alert Email
 
 Aviatrix, by default, will alert you if you add a spoke that overlaps with your on-premise network (or, if you start advertising a network from on-premise that overlaps with a spoke).  However, there are some cases where you expect overlaps and the alert emails are not helpful.  For these cases, you can disable the overlap checking.  To do this go to
 
-**Advanced Config** > **BGP Alert Email** > **BGP Overlapping Alert Email**
+**Settings** > **Controller** > **Alert Bell** > **Overlapped CIDR Check**
 
 Toggle the switch to **Disabled** to disable overlap checking.
 
