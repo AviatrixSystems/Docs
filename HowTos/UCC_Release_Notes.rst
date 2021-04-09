@@ -7,8 +7,46 @@ R6.4 (Coming Soon)
 
 1. Multi-Cloud Transit Network
 --------------------------------
+- **Alibaba Cloud Support** expands the Aviatrix Multi-Cloud Transit solution to support the Alibaba Cloud. This includes support for Ali Global and Ali China region.
+- **China Multi-Cloud Network Architecture Support** expands the Aviatrix Multi-Cloud Transit solution to AWS, Azure, and Alibaba public clouds in China regions. Support includes
+    - Aviatrix Controller image in AWS China Marketplace.
+    - Multi-Cloud Transit solution in AWS China, Azure China and Alibaba China regions.
+- **Multi-Tier Transit** supports the hierarchical Multi-Cloud Transit gateway deployment model, and adds the ability to traverse more than two Aviatrix Multi-Cloud Transit gateways. This feature improves operational simplicity by aggregating multiple Aviatrix Transits. One use case is centralized firewall design for multiple Aviatrix-Transits in a single region, which allows in-region traffic without any inspection. To configure Multi-Tier Transit, go to Multi-cloud Transit -> Advance Config. Select the Transit Gateway and enable the Multi-Tier Transit feature.
+- **Transit Peering Insane Mode Support over Public Network** provides high performance Transit Gateway peering to multi-cloud networks with public network connectivity between AWS and Azure only. To configure Insane Mode over public networks, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Insane mode over Internet for a new peering connection.
+- **OCI Transit Insane Mode Support** expands our Insane Mode Encryption Service to OCI networks. The support includes Insane Mode for VCN to VCN encrypted peering and Transit Peering connections. Launch an OCI gateway with Insane Mode enabled to get started.
+- **IAM Role and Policy for Gateways**  separate IAM policy for Aviatrix gateway.
+- **BGP Connection Holdtime** can now be modified through the Aviatrix Controller. One use case of modifying BGP Hold Timer is to have a quicker BGP failover time.
+
+2. FireNet
+-------------
+- **Aviatrix Transit FireNet for OCI** allows you to deploy firewall instances in OCI. The OCI FireNet can be used for East-West, North-South and Ingress-Egress inspection with Palo Alto Networks VM-Series only.
+- **FireNet Fortinet Integration Enhancement** now supports Fortinet firewall integration with the Aviatrix Transit FireNet solution. This integration allows automatic route updates in Fortigate routing tables by the Aviatrix Controller. You no longer need to statically configure RFC 1918 or any other routes in Fortigate. This integration is supported for AWS and Azure Public clouds only.
+- **Check Point CloudGuard in GCP** is now available when deploying Aviatrix Transit FireNet. Refer to this example `CheckPoint workflow in GCP <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure-and-gcp>`_ for more details.
+- **Fortinet Fortigate for GCP** is now available in GCP when deploying Aviatrix Transit FireNet.
+- **Custom AMI Support for Firewall Instances** allows customer to launch the special images provided by firewall vendors. API support only.
 
 
+3. Site2Cloud
+---------------
+- **Dynamic routes update for Site2Cloud Connections** adds the capability to auto advertise or remove the remote subnet automatically based on the Up/Down status of the Site2Cloud tunnel. To configure dynamic routes for Site2Cloud, go to Multi-Cloud Transit -> List -> Spoke -> Select Spoke Gateway and click "Auto Advertise Spoke S2C CIDRs" to enable dynamic routes.
+- **Site2Cloud Single Public IP Failover Support** enhances the HA mechanism to use a single public IP address and single tunnel from the remote site (on-prem) point of view. To configure Site2Cloud Single Public IP Failover, go to Site2Cloud -> Add New -> Enable HA. Check the box to Enable Single IP HA to activate Single Public IP Failover. This applies to AWS and Azure only.
+- **Jumbo Frame Support** adds the ability to turn on/off Insane Mode jumbo frame support for the Site2Cloud tunnel between the Aviatrix Transit Gateway and CloudN. To enable jumbo frame support, go to Site2Cloud -> Select Site2Cloud connection to CloudN. Click Edit and enable jumbo frame support.
+
+4. Security
+---------------
+- **Egress FQDN Enhancement** is now supported for multiple Egress FQDN gateways in GCP. This feature includes support for GCP Shared VPC as well as Distributed and Centralized Egress for FQDNs.
+
+5. User VPN
+---------------
+- **Non-ASCII Environment Support** This is a bug fix which allows customers to use non-ascii username.
+
+6. Operations
+-----------------
+- **Create a VPC Enhancement** adds an option in "Create a VPC" to select an existing Resource Group for Azure under Advanced options.
+- **Co-Pilot integration with Controller** delivers the operational simplicity you need by presenting Aviatrix Controller as a single-pane of glass for managing the Day 0, Day 1 and Day 2 operations of the cloud fabric. The integration with Co-Pilot brings additional capabilities including the SAML and DUO integration, and RBAC control. To configure the CoPilot Controller integration, log into the Aviatrix Controller console and go to Settings -> CoPilot -> Enable CoPilot Association to integrate CoPilot with Aviatrix Controller.
+- **Performance and Scalability Improvements** Significant performance improvements for the Aviatrix Multi-Cloud Network Architecture (MCNA) especially for a very large enterprise networks.
+- **Route Table Optimization** allows customer to skip public route table programming. This is supported in AWS only.
+- **Notification Enable/Disable Option** gives an ability to customers to disable exception emails send to Aviatrix.
 
 R6.3.2364 (03/18/2021)
 =======================
