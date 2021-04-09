@@ -11,9 +11,9 @@ R6.4 (Coming Soon)
 
 - **China Multi-Cloud Network Architecture Support** expands the Aviatrix Multi-Cloud Transit solution to AWS, Azure, and Alibaba public clouds in China regions. Support includes:
   
-  - Aviatrix Controller image in AWS China Marketplace.
+  * Aviatrix Controller image in AWS China Marketplace.
   
-  - Multi-Cloud Transit solution in AWS China, Azure China and Alibaba China regions.
+  * Multi-Cloud Transit solution in AWS China, Azure China and Alibaba China regions.
 
 - **Multi-Tier Transit** supports the hierarchical Multi-Cloud Transit gateway deployment model, and adds the ability to traverse more than two Aviatrix Multi-Cloud Transit gateways. This feature improves operational simplicity by aggregating multiple Aviatrix Transits. One use case is centralized firewall design for multiple Aviatrix-Transits in a single region, which allows in-region traffic without any inspection. To configure Multi-Tier Transit, go to Multi-cloud Transit -> Advance Config. Select the Transit Gateway and enable the Multi-Tier Transit feature.
 - **Transit Peering Insane Mode Support over Public Network** provides high performance Transit Gateway peering to multi-cloud networks with public network connectivity between AWS and Azure only. To configure Insane Mode over public networks, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Insane mode over Internet for a new peering connection.
