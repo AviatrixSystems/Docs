@@ -24,7 +24,7 @@ R6.4 (Coming Soon)
 2. FireNet
 -------------
 - **Aviatrix Transit FireNet for OCI** allows you to deploy firewall instances in OCI. The OCI FireNet can be used for East-West, North-South and Ingress-Egress inspection with Palo Alto Networks VM-Series only.
-- **FireNet Fortinet Integration Enhancement** now supports Fortinet firewall integration with the Aviatrix Transit FireNet solution. This integration allows automatic route updates in Fortigate routing tables by the Aviatrix Controller. You no longer need to statically configure RFC 1918 or any other routes in Fortigate. This integration is supported for AWS and Azure Public clouds only.
+- **FireNet Fortinet Integration Enhancement** now supports Fortinet firewall integration with the Aviatrix Transit FireNet solution. This integration allows automatic route updates in Fortigate routing tables by the Aviatrix Controller. You no longer need to statically configure RFC 1918 or any other routes in Fortigate. This integration is supported for AWS, Azure, and GCP Public clouds only.
 - **Check Point CloudGuard in GCP** is now available when deploying Aviatrix Transit FireNet. Refer to this example `CheckPoint workflow in GCP <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure-and-gcp>`_ for more details.
 - **Fortinet Fortigate for GCP** is now available in GCP when deploying Aviatrix Transit FireNet.
 - **Custom AMI Support for Firewall Instances** allows customer to launch the special images provided by firewall vendors. API support only.
