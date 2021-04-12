@@ -40,11 +40,7 @@ R6.4 (Coming Soon)
 ---------------
 - **Egress FQDN Enhancement** is now supported for multiple Egress FQDN gateways in GCP. This feature includes support for GCP Shared VPC as well as Distributed and Centralized Egress for FQDNs.
 
-5. User VPN
----------------
-- **Non-ASCII Environment Support** This is a bug fix which allows customers to use non-ascii username.
-
-6. Operations
+5. Operations
 -----------------
 - **Create a VPC Enhancement** adds an option in "Create a VPC" to select an existing Resource Group for Azure under Advanced options.
 - **Co-Pilot integration with Controller** delivers the operational simplicity you need by presenting Aviatrix Controller as a single-pane of glass for managing the Day 0, Day 1 and Day 2 operations of the cloud fabric. The integration with Co-Pilot brings additional capabilities including the SAML and DUO integration, and RBAC control. To configure the CoPilot Controller integration, log into the Aviatrix Controller console and go to Settings -> CoPilot -> Enable CoPilot Association to integrate CoPilot with Aviatrix Controller.
