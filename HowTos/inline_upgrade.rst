@@ -31,6 +31,7 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 #. Make sure that your controller has DNS service available and has public network access - you can verify that by pinging www.google.com at "Controller/Troubleshoot/Diagnostics/Network/ControllerUtility". This is a requirement for upgrade and for the controller to function as designed.
 #. Run  account audit for all your AWS accounts from "Controller/Accounts/AccountAudit" - please make sure that all of them pass. The IAM policies should be setup as documented. If you have any issues, please look at our `troubleshooting playbooks <https://docs.aviatrix.com/TroubleshootingPlaybook/troubleshooting_playbook_overview.html>`_
 #. Make sure that your account has elevated permissions to launch host instances where such operations may become necessary.
+#. Please clean up your bucket where you store your controller backups, so that only the last 3 relevant configuration files are seen. Any old configurations should be moved out to your archive bucket/folder.
 #. New Controller AMIs are published over time. If you would like to upgrade your AMI, please follow the links listed below.
     * In release 5.3, we introduced a feature to upgrade the AMI of the controller from within the UI, for AWS.
     * If your Controller is on 5.2 or older release or if your controller is in Azure or GCP, you would have to migrate your Controller manually.
@@ -55,6 +56,7 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Click `Maintenance`
 #. Click `Dry Run` to make sure the controller and gateway are in contact and allowed to download our software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups and VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Make a backup before the upgrade by following the instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
+#. Please clean up your bucket where you store your controller backups, so that only the last 3 relevant configuration files are seen. Any old configurations should be moved out to your archive bucket/folder.
 #. Click `Upgrade to the latest` to upgrade your software to the latest version
 
     #. If upgrading from a release<3.3.x: Please upgrade to the next immediate release by entering the right version in "Upgrade to custom release" - the correct order is: 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3
