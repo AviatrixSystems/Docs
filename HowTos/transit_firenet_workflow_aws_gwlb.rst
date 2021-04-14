@@ -207,7 +207,10 @@ Note that firewall instance eth2 is on the same subnet as AWS GWLB interface.
 3. Fortigate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-FortiGate firewall do not support AWS GWLB in latest release, and it is in Roadmap for future release.
+FortiGate firewall supports AWS GWLB in their latest 6.4 release, please refer to the FortiOS 6.4 AWS Cookbook, pages 175 through 189. 
+This section covers both North-South and East-West scenarios.  Please see the following link:
+
+https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/f4e6f33e-6876-11ea-9384-00505692583a/FortiOS_6.4_AWS_Cookbook.pdf
 
 
 Step 8b: Associate an Existing Firewall Instance
@@ -246,7 +249,10 @@ Go to `Firewall Network -> Advanced -> Click on 3 dots -> Enable Egress Through 
 FortiGate (Fortinet)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fortinet firewall do not support AWS GWLB in latest release. AWS GWLB is in Roadmap for future release.
+FortiGate firewall supports AWS GWLB in their latest 6.4 release, please refer to the FortiOS 6.4 AWS Cookbook, pages 175 through 189. 
+This section covers both North-South and East-West scenarios. Please see the following link:
+
+https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/f4e6f33e-6876-11ea-9384-00505692583a/FortiOS_6.4_AWS_Cookbook.pdf
 
 Check Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
