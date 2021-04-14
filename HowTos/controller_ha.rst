@@ -137,7 +137,7 @@ FAQ
    
 	All logs related to H/A can be found in AWS Cloudwatch under the log group <controller_name>-ha
    
-* How do I make lambda talks to controller privately within the VPC?
+* How do I make lambda talk to the controller privately within the VPC?
     
 	Launch CFT with Private access set to True. Attach lambda to the VPC from the AWS console. Ensure that the VPC that you have attached the lambda to has internet access via NAT gateway or VPC endpoints. You can also ensure that lambda has internet access by attaching an EIP(Elastic IP) to the lambda ENI(Network Interface). Please ensure that everything is reverted before you destroy the stack. Otherwise the lambda will not have internet access to respond to the CFT(CFT may get stuck on destroy).
 
