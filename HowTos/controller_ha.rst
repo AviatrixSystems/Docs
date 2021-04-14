@@ -117,10 +117,36 @@ Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation
 
 FAQ
 ---
+* How can I know which version of HA script I am running?
+   
+	versions.py file found in the AWS Lambda function with the name <controller_name>-ha would show the information. You can also see the version in the cloudwatch logs. Only versions from 1.5 and above are visible.
+   
+* How can I get notification for H/A events?
+   
+	Enter an email address to receive notifications for autoscaling group events while launching the CFT. You would receive an email to subscribe to SNS. Click on the link from the email to accept SNS event notifications   
+
+* My H/A event failed. What can I do?
+   
+	You can manually restore the saved backup to a newly launched controller. Please ensure controller H/A is disabled and re-enabled by deleting and re-creating the CFT stack to ensure that lambda is pointing to the right backup
+ 
+* How do I ensure that lambda is pointing to the right backup?
+   
+	In the AWS Lambda, verify if the INST_ID environment variable is updated correctly to the current controller instance ID. 
+   
+* Where do I find logs related to controller H/A ?
+   
+	All logs related to H/A can be found in AWS Cloudwatch under the log group <controller_name>-ha
+   
+* How do I make lambda talks to controller privately within the VPC?
+    
+	Launch CFT with Private access set to True. Attach lambda to the VPC form the AWS console. Ensure that the VPC that you have attached has internet access via NAT gateway or VPC endpoints. You can also ensure lambda has internet access by attaching an EIP(Elastic IP) to the lambda ENI(Network Interface). Please ensure that everything is reverted before you destroy the stack. Otherwise the lambda will not have internet access to respond to the CFT(CFT may be stuck on destroy).
+
 * Can two controllers in two different regions be linked such that they can detect if one or the other is down? Is this possible?
 	Our Controller HA script leverages EC2 auto scaling. EC2 auto scaling doesn’t support cross regions but it does support cross AZs. The script will automatically bring up a new Controller in case the existing Controller enters an unhealthy state.
 
 * Could a controller in a different region be used to restore a saved configuration in case of disaster recovery? Will the change in controller’s IP cause any issues?
 	A controller can be manually launched from a different region and the backed up configuration can be restored on it. The controller’s new EIP shouldn’t cause any issue unless SAML VPN authentication is being used. (All peering tunnels will still work). In that case, SAML VPN client will need reach the controller IP address. If FQDN hostname is used for the controller for SAML, then it should work after changing the Route 53 to resolve to the correct EIP in the different region.
+
+
 
 .. disqus::
