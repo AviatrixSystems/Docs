@@ -137,9 +137,9 @@ Edit Source allows you to control which source IP in the VPC is qualified for a 
 can be a subnet CIDR or host IP addresses. This provides fine-grained configuration.  
 
 .. important::
-  If Edit Source is not configured, i.e., no source IP address ranges is selected, all packets arriving at the FQDN gateway
-  are applied to the filter tag. However if there is one or more source IP address range is selected, any packets with 
-  source IP addresses outside the range are dropped. 
+  If Edit Source is not configured, i.e., no source IP address ranges are selected, all packets arriving at the FQDN gateway
+  are applied to the filter tag. However if there are one or more source IP address ranges selected, any packets with 
+  source IP addresses outside those ranges are dropped. In this regard, the distinguished Source is exclusive. 
 
 For example, one use case is if you have two private subnets in a VPC: one deploys dev instances and another
 deploys prod instances. With the Edit Source feature, the dev instances can have different tags than
