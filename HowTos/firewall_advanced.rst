@@ -29,6 +29,10 @@ This is to enable Internet bound egress traffic for inspection.
 To configure, go to Controller -> Firewall Network -> Advanced. Select one firewall domain, click the 3-dots skewer to the detail page. 
 At `Egress through Firewall`, click Enable. 
 
+Egress Static CIDRs
+-----------------------
+
+
 Fail Close
 -------------
 

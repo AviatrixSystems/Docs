@@ -330,6 +330,11 @@ This section consists of delete functions.
 
  To delete an Aviatrix Transit GW attached to a AWS Transit Gateway, go through Step 7 and Step 8 listed below. Then go to Controller Gateway page to terminate the gateway instance.
 
+
+Setup AWS Transit Gateway Connect
+----------------------------------------------------
+
+
 Detach Aviatrix Transit GW from TGW
 ----------------------------------------------------
 

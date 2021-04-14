@@ -310,6 +310,15 @@ Event Triggered HA
 Event Trigger HA is a new mechanism to reduce the convergence time. To configure, go to Site2Cloud -> select a connection, click Edit. 
 Scroll down to Event Triggered HA and click Enable. 
 
+Jumbo Frame
+------------------
+
+
+Clear Sessions
+-------------------
+
+
+
 Periodic Ping
 --------------------
 
