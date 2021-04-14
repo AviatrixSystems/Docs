@@ -104,6 +104,11 @@ This feature can only be applied to non HA remote device in `Multi-cloud transit
 
 Click the Slide Bar to enable Active-Standby mode. 
 
+
+Multi-Tier Transit
+-----------------------
+
+
 Gateway AS Path Prepend
 -------------------------------------------
 
@@ -127,6 +132,12 @@ Aviatrix Transit Gateways report its BGP routes to the Controller periodically. 
 This polling time affects BGP route change convergence time. 
 
 This option changes the default polling time. The range is 10 seconds to 50 seconds.
+
+
+BGP Hold Time
+----------------------
+
+
 
 Refresh BGP Advertised Routes
 ---------------------------------------

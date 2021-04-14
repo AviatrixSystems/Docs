@@ -218,6 +218,10 @@ From the article:
  
 Companies that sell some types of **equipment or software** used in cardholder data processing, transmission, and storage environments, but have no access to, or do not impact, those environments, are also not required to be PCI compliant and therefore do not have AOCs. A few examples include routers, firewalls, application servers, database servers, telecommunications equipment, server operating systems, **application firewalls**, etc
 
+What is Certificate Domain?
+--------------------------------
+
+
 How to setup Account Name Alias?
 --------------------------------
 
