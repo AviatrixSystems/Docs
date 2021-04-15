@@ -7,6 +7,8 @@
 IPmotion Early Customer Trial  Instructions
 ============================================
 
+This document is obsolate. 
+
  1. **Get a trial license** Obtain a customer ID from Aviatrix support. Email to support@aviatrix.com
  #. **Read** `IPmotion Setup Instructions <http://docs.aviatrix.com/HowTos/ipmotion.html>`_
  #. **Complete the "Prerequisites"** in the above document that include download, install and bootup Aviatrix virtual appliance CloudN.
