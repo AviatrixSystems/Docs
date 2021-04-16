@@ -21,6 +21,8 @@ If you have a BYOL license or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Contact
 support@aviatrix.com if you do not have a customer ID.
 
+You do not need a Customer ID if you are running a metered AMI. 
+
 What is an Aviatrix access account on the Controller?
 -------------------------------------------------------------
 
