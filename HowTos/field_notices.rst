@@ -7,7 +7,7 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
  
  
-Field Notice 0018 (2021/04/15)
+Field Notice 0018 (2021/04/16)
 -------------------------------- 
 **Default SMTP Service Down on releases < 6.2.1955**
 
