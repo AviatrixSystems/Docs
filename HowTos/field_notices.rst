@@ -8,6 +8,24 @@ Field Notices
  
  
 
+Field Notice 0020 (2021/04/19)
+-------------------------------- 
+**End of Life (EOL) announcement for Aviatrix VPN Clients for Ubuntu 14.04 and Ubuntu 16.04**
+
+VPN Clients running on Ubuntu 14.04 are designated EOL effective immediately. VPN Clients running on Ubuntu 16.04 are designated EOL effective 6/1/2021. Aviatrix is discontinuing support because these operating systems have reached their end of standard support from the provider. Please see the Ubuntu release information at https://wiki.ubuntu.com/Releases and https://ubuntu.com/about/release-cycle.
+ 
+What is the impact if you remain on a deprecated release that is designated EOL?
+The Aviatrix Support team does not provide assistance on EOL releases.
+Patches for known issues and vulnerabilities are not provided.
+ 
+Recommendation
+Please upgrade to one of the supported `Aviatrix VPN Clients <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
+ 
+If you have any difficulties in upgrading your Aviatrix VPN Client, please contact your Aviatrix Network Admin and have them open a `support ticket <https://aviatrix.zendesk.com/>`_.
+
+
+
+
 Field Notice 0019 (2021/04/19)
 -------------------------------- 
 **End of Life (EOL) announcement for 5.4 and 6.0 releases**
