@@ -8,6 +8,25 @@ Field Notices
  
  
 
+Field Notice 0022 (2021/04/19)
+--------------------------------
+ 
+**Deprecated build 6.3.2405**
+ 
+Last week, Aviatrix published R6.3.2405 and due to the incorrect handling of a corner case issue we decided to deprecate R6.3.2405. If you upgraded to R6.3.2405 your controller might incorrectly notify you that there is a newer release, since you are not running the current R6.3.2364 release. We request that you ignore this upgrade notification. We will be releasing a new build > R6.3.2405 later today. You can safely upgrade to the new release.
+ 
+**Recommendation:**
+Please use the following processes to upgrade your Aviatrix network:
+
+* https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+* https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures
+* https://docs.aviatrix.com/HowTos/inline_upgrade.html
+ 
+If you have any questions about your Aviatrix network, please open a `support ticket <https://aviatrix.zendesk.com/>`_.
+ 
+
+
+
 Field Notice 0021 (2021/04/19)
 --------------------------------
 **Controller HA Code Improvements for release R6.3 and R6.4**
