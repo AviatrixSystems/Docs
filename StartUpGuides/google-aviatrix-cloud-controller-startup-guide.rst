@@ -61,8 +61,29 @@ Aviatrix controller.
 (As an example, we created a project called Aviatrix-UCC, the project ID is
 aviatrix-ucc-1214)
 
-Copy Aviatrix Controller Image to Your Project
-----------------------------------------------
+(Optional) Create Networks
+--------------------------
+
+This step creates a network in the project created in the previous step.
+
+When a new project is created, a default network is created. You may
+skip this step if you do not need to customize the network address range by
+creating a new network, or go on to the next step if you have done so.
+
+Note that the Aviatrix Controller handles a GCloud network like a VPC in AWS.
+Whenever a network configuration is mentioned for GCloud, the term VPC
+is used. (The VNet is used for Azure.)
+
+At GCloud console, select the project that you have copied the Aviatrix
+controller image to. Click the 3 bars. At the drop down menu, select
+Networking. Click “[+] Create Network”.
+
+Note: if you plan to have multiple projects, we suggest you plan your
+subnets so that the network addresses do not overlap. Select Custom to
+create subnets.
+
+Option #1: Copy Aviatrix Controller Image to Your Project
+=========================================================
 
 At your GCloud console (https://console.cloud.google.com), select the
 project where you want to launch your controller. Click the 3 bars at
@@ -87,29 +108,8 @@ At the top screen, click “[+] CREATE IMAGE”, make sure to:
 
    |image1|
 
-(Optional) Create Networks
---------------------------
-
-This step creates a network in the project created in the previous step.
-
-When a new project is created, a default network is created. You may
-skip this step if you do not need to customize the network address range by
-creating a new network, or go on to the next step if you have done so.
-
-Note that the Aviatrix Controller handles a GCloud network like a VPC in AWS.
-Whenever a network configuration is mentioned for GCloud, the term VPC
-is used. (The VNet is used for Azure.)
-
-At GCloud console, select the project that you have copied the Aviatrix
-controller image to. Click the 3 bars. At the drop down menu, select
-Networking. Click “[+] Create Network”.
-
-Note: if you plan to have multiple projects, we suggest you plan your
-subnets so that the network addresses do not overlap. Select Custom to
-create subnets.
-
-Launch the Aviatrix Controller
-==============================
+Launch the Aviatrix Controller from the copied Image
+----------------------------------------------------
 
 At the GCloud console,
 
@@ -138,6 +138,30 @@ At the GCloud console,
 -  Click Create.
 
    |image2|
+   
+   
+Option #2: Deploy Aviatrix Controller in GCP Marketplace (Preview mode)
+=======================================================================
+
+- Go to GCP marketplace
+
+- Find the product "Aviatrix Secured Networking Platform - BYOL"
+
+- Click the button "LAUNCH"
+
+  |gcp_controller_gcp_marketplace_01|
+  
+- Make sure the selected Machine type has at least 2 vCPUs with 8 GB memory
+
+- Boot Disk is SSD Persistnent Disk with 32 GB
+
+  |gcp_controller_gcp_marketplace_02|
+  
+- HTTPS with port 443 from anywhere user access (User Interface)
+
+  |gcp_controller_gcp_marketplace_03|
+  
+- Click the button "DEPLOY"
 
 Access the Aviatrix Controller
 ==============================
@@ -212,6 +236,17 @@ Enjoy!
    :width: 4.93125in
    :height: 2.10210in
 
+.. |gcp_controller_gcp_marketplace_01| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_01.png
+   :width: 4.93125in
+   :height: 2.10210in
+
+.. |gcp_controller_gcp_marketplace_02| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_02.png
+   :width: 4.93125in
+   :height: 2.10210in
+ 
+.. |gcp_controller_gcp_marketplace_03| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_03.png
+   :width: 4.93125in
+   :height: 2.10210in
 
 .. add in the disqus tag
 
