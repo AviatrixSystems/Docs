@@ -223,6 +223,13 @@ For support, send email to support@aviatrix.com
 
 Enjoy!
 
+.. |gcp_controller_gcp_marketplace_01| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_01.png
+   :scale: 50%
+.. |gcp_controller_gcp_marketplace_02| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_02.png
+   :scale: 50%
+.. |gcp_controller_gcp_marketplace_03| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_03.png
+   :scale: 50%
+
 .. |image0| image:: GoogleAviatrixCloudControllerStartupGuide_media/image001.png
    :width: 2.90683in
    :height: 0.35000in
@@ -233,15 +240,6 @@ Enjoy!
    :width: 5.50432in
    :height: 3.49607in
 .. |image3| image:: GoogleAviatrixCloudControllerStartupGuide_media/image004.png
-   :width: 4.93125in
-   :height: 2.10210in
-.. |gcp_controller_gcp_marketplace_01| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_01.png
-   :width: 4.93125in
-   :height: 2.10210in
-.. |gcp_controller_gcp_marketplace_02| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_02.png
-   :width: 4.93125in
-   :height: 2.10210in
-.. |gcp_controller_gcp_marketplace_03| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_03.png
    :width: 4.93125in
    :height: 2.10210in
 
