@@ -48,6 +48,26 @@ R6.4 (Coming Soon)
 - **Route Table Optimization** allows customer to skip public route table programming. This is supported in AWS only.
 - **Notification Enable/Disable Option** gives an ability to customers to disable exception emails send to Aviatrix.
 
+
+R6.3.2415 (04/19/2021)
+=======================
+
+- **Co-Pilot integration with Controller** delivers operational simplicity by presenting Aviatrix Controller and CoPilot in a single pane of glass for managing the Day 0, Day 1 and Day 2 operations of the cloud fabric. The Aviatrix Controller integration with Co-Pilot adds capabilities to the Controller including SAML and DUO integration, and RBAC control. To configure the CoPilot Controller integration, log into the Aviatrix Controller console and go to Settings -> CoPilot -> Enable CoPilot Association to integrate CoPilot with Aviatrix Controller.
+- **Enhancement** Improved CloudN to controller reachability mechanism for public and private subnets.
+- **Enhancement** Improved error handling for Aviatrix Controller HA process.
+- **Bug fix** Fixed the backup restoration API response for Aviatrix Controller HA mechanism.
+- **Bug fix** Blocked the exclude CIDR feature for Native GWLB FireNet.
+- **Bug fix** Fixed exception for Site2Cloud remote subnet modifications.
+- **Bug fix** Corrected invalid netflow data sent to CoPilot.
+- **Bug fix** Fixed GCP security rule for Site2Cloud over private IP.
+- **Bug fix** Corrected route table programming for native GWLB.
+- **Bug fix** Fixed gateway creation issue when customized IAM policy is used in AWS.
+- **Bug fix** Fixed default route restoration for FQDN when discovery is disabled.
+- **Bug fix** Improved error messages for native GWLB egress.
+- **Bug fix** Allowed ActiveMesh 2.0 migration without disabling Transit FireNet for older releases.
+
+
+
 R6.3.2364 (03/18/2021)
 =======================
 
