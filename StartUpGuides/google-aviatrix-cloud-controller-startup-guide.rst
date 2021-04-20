@@ -235,15 +235,12 @@ Enjoy!
 .. |image3| image:: GoogleAviatrixCloudControllerStartupGuide_media/image004.png
    :width: 4.93125in
    :height: 2.10210in
-
 .. |gcp_controller_gcp_marketplace_01| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_01.png
    :width: 4.93125in
    :height: 2.10210in
-
 .. |gcp_controller_gcp_marketplace_02| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_02.png
    :width: 4.93125in
    :height: 2.10210in
- 
 .. |gcp_controller_gcp_marketplace_03| image:: GoogleAviatrixCloudControllerStartupGuide_media/gcp_controller_gcp_marketplace_03.png
    :width: 4.93125in
    :height: 2.10210in
