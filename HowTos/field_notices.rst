@@ -116,30 +116,6 @@ If you have any difficulties upgrading your Aviatrix network, please open a `sup
 
 
 
-
-Field Notice 0018 (2021/04/16)
--------------------------------- 
-**Default SMTP Service Down on releases < 6.2.1955**
-
-
-**Problem:**
-
-The default SMTP service used by Aviatrix has been impacted in releases older than 6.2.1955. Alerts generated from the Controller will fail to reach the admin by email. Gateways are not impacted. Password recovery by email and sending OpenVPN profiles via email will also be impacted.
-
-
-**Who is impacted?**
-
-Any Controller running versions older than R6.2.1955 that also does not have an SMTP server configured to override the default service.
-
-
-**Recommended Solution:**
-
-To resolve this issue, please upgrade your Controller to the latest R6.2(>=6.2.1955) or R6.3 software version following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html, or configure your own SMTP service to override the default SMTP service using the instructions at https://docs.aviatrix.com/HowTos/alert_and_email.html.
- 
-This issue will not be addressed in 5.4, 6.0 and 6.1 releases so if your Controller is running one of these releases, Aviatrix strongly encourages you to upgrade to the 6.3 release.
-
-
-
 Field Notice 0017 (2021/01/10)
 --------------------------------
 **Namespace limit is 120 Bytes**
