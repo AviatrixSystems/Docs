@@ -8,6 +8,28 @@ Field Notices
  
 
 
+Field Notice 0024 (2021/04/25)
+--------------------------------
+**Controller HA Code Improvements for release R6.3 and R6.4**
+ 
+Problem:
+Improved Controller HA process to avoid corner cases related to Controller HA restore failures.
+ 
+What is Impacted?
+Controllers deployed in AWS with the "Controller HA" process enabled.
+ 
+Recommendation
+For Controllers running in AWS with the Controller HA process enabled, Aviatrix strongly recommends that you `disable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ and `reenable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-enable-controller-ha>`_ the "Controller HA" process as soon as possible to pick up the latest version of the software. This operation should not impact the Controller that is in operation but we do recommend that you follow our `pre-operation recommendations <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_. Please see https://docs.aviatrix.com/HowTos/controller_ha.html for more information on Controller HA. Please verify that your `Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html?#faq>`_ version is 1.6 or higher.
+ 
+ 
+Please note that enabling and disabling the Controller HA process is a prerequisite for upgrading to release R6.4, which is scheduled to be released soon.
+
+* https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+* https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures
+* https://docs.aviatrix.com/HowTos/inline_upgrade.html
+
+
+
 Field Notice 0023 (2021/04/24)
 -------------------------------- 
 **Default SMTP Service Down on releases < 6.2.1955**
@@ -30,8 +52,6 @@ To resolve this issue, please upgrade your Controller to the latest R6.2(>=6.2.1
 This issue will not be addressed in 5.4, 6.0 and 6.1 releases so if your Controller is running one of these releases, Aviatrix strongly encourages you to upgrade to the 6.3 release.
 
 
-
-
 Field Notice 0022 (2021/04/19)
 --------------------------------
  
@@ -47,31 +67,6 @@ Please use the following processes to upgrade your Aviatrix network:
 * https://docs.aviatrix.com/HowTos/inline_upgrade.html
  
 If you have any questions about your Aviatrix network, please open a `support ticket <https://aviatrix.zendesk.com/>`_.
- 
-
-
-
-Field Notice 0021 (2021/04/19)
---------------------------------
-**Controller HA Code Improvements for release R6.3 and R6.4**
- 
-Problem:
-Improved Controller HA process to avoid corner cases related to Controller HA restore failures.
- 
-What is Impacted?
-Controllers deployed in AWS with the "Controller HA" process enabled.
- 
-Recommendation
-For Controllers running in AWS with the Controller HA process enabled, Aviatrix strongly recommends that you `disable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ and `reenable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-enable-controller-ha>`_ the "Controller HA" process as soon as possible to pick up the latest version of the software. This operation should not impact the Controller that is in operation but we do recommend that you follow our `pre-operation recommendations <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_. Please see https://docs.aviatrix.com/HowTos/controller_ha.html for more information on Controller HA. Please verify that your `Controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html?#faq>`_ version is 1.6 or higher.
- 
- 
-Please note that enabling and disabling the Controller HA process is a prerequisite for upgrading to release R6.4, which is scheduled to be released soon.
-
-* https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
-* https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures
-* https://docs.aviatrix.com/HowTos/inline_upgrade.html
- 
-
 
 
 
