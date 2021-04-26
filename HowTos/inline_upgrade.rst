@@ -42,6 +42,10 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
         * `Controller AMI Migration: Azure: AWS <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
         * `Controller AMI Migration: Azure <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_
         * `Controller AMI Migration: GCP <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-gcp>`_
+#. New Gateway AMIs are published over time with fixes for known issues and vulnerabilites. We strongly recommend that you periodically check and update your gateway AMI's
+    * New Gateways are automatically deployed with the latest AMI - we suggest that you upgrade to the latest Controller release and then deploy new gateways
+    * Gateways can be upgraded to use the latest AMI's through the `gateway replace operation <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-gateway-image-upgrade>`_. We recommend that this operation is executed when the Controller is running the latest version, so your gateways can be built using the latest AMI
+    * If your controller is running V6.2.1955 or later, you can go to "Settings->Maintenance->Software Patches->Update Available Patches", to download a new utility called "Generate list of Aviatrix Gateways using deprecated AMIs". Running this patch will send an email to the admin with a list of gateways running deprecated AMI's.
 
 
 
@@ -72,6 +76,7 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Make a backup after the upgrade by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. If you are using terraform, please use the appropriate branch from https://www.terraform.io/docs/providers/aviatrix/index.html (old link: https://github.com/terraform-providers/terraform-provider-aviatrix). For more information please go to https://www.terraform.io/docs/providers/aviatrix/index.html (old link: https://github.com/terraform-providers/terraform-provider-aviatrix#controller-version).
 #. If you are using Aviatrix VPN Client, please consider upgrading to the `latest release <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
+#. Please review your Gateway AMI's and Controller AMI as mentioned in the `Pre-upgrade Checklist <https://docs.aviatrix.com/HowTos/inline_upgrade.html#pre-upgrade-checklist>`_ above and upgrade the AMI's, as needed.
 
 .. note::
    
