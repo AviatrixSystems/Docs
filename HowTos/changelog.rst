@@ -1,5 +1,11 @@
 Aviatrix VPN Client Changelog
 -----------------------------
+2.14.14 - April 27 2021
+  - Support non-ASCII Windows user login account
+  - Support non-ASCII VPN connection profile name on the client UI
+  - Support Ubuntu 20.04.01 deb format installer
+  - Enhance the Windows client security
+
 2.13.12 - Jan 28 2021
   - Provide a MD5 checksum along with every single installer
   - Support MacOS Big Sur
