@@ -77,7 +77,7 @@ Azure Performance Numbers (without Insane mode):
 | F Series                   | approximately 450Mbps - 1.2Gbps                 |
 +----------------------------+-------------------------------------------------+
 
-GCP Performance Numbers (without Insane mode):
+GCP Performance numbers (without Insane mode):
 
 +--------------------------------------------+-----------------------+
 | GCP Instance Size                          | Expected Throughput   |
