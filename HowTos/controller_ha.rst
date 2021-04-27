@@ -147,6 +147,10 @@ FAQ
 * Could a controller in a different region be used to restore a saved configuration in case of disaster recovery? Will the change in controller’s IP cause any issues?
 	A controller can be manually launched from a different region and the backed up configuration can be restored on it. The controller’s new EIP shouldn’t cause any issue unless SAML VPN authentication is being used. (All peering tunnels will still work). In that case, SAML VPN client will need reach the controller IP address. If FQDN hostname is used for the controller for SAML, then it should work after changing the Route 53 to resolve to the correct EIP in the different region.
 
+Changelog
+---------
+The changes from various releases can be viewed from `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/releases>`_
+
 
 
 .. disqus::
