@@ -37,7 +37,7 @@ Select Gateway Size
 When selecting the gateway size, note the following guidelines of IPsec performance
 based on IPERF tests conducted between two gateways of the same size:
 
-AWS Performance Numbers: 
+AWS Performance numbers: 
 
 +----------------------------+-------------------------------------------------+
 | AWS Instance Size          | Expected Throughput                             |
