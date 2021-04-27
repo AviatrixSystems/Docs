@@ -7,6 +7,30 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
  
 
+Field Notice 0025 (2021/04/26)
+-------------------------------- 
+**End of Life (EOL) announcement for 5.4, 6.0, 6.1 releases**
+ 
+Following up on Field Notice `0012 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0012-2020-08-07>`_ and `0016 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0016-2020-12-22>`_, we are announcing EOL and End of Support for releases 5.4, 6.0 and 6.1. The R5.4 EOL date is 6/1/2021, the R6.0 EOL date is 6/19/2021 and the R6.1 EOL date is 8/31/2021.
+ 
+What is the impact if you remain on a deprecated release that is designated EOL?
+
+ * The Aviatrix Support team does not provide assistance on EOL releases.
+ * Patches for known issues and vulnerabilities are not provided.
+ * Enabling the remote SSH support option as well as sending logs and diagnostics to Aviatrix Support may not work.
+ * The default SMTP on the Controller cannot send Alerts.
+ 
+**Recommendation:**
+Please use the following processes to upgrade your Aviatrix network:
+
+* https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+* https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures
+* https://docs.aviatrix.com/HowTos/inline_upgrade.html
+ 
+If you have any difficulties upgrading your Aviatrix network, please open a `support ticket <https://aviatrix.zendesk.com/>`_.
+
+
+
 
 Field Notice 0024 (2021/04/25)
 --------------------------------
@@ -84,30 +108,6 @@ Recommendation
 Please upgrade to one of the supported `Aviatrix VPN Clients <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
  
 If you have any difficulties in upgrading your Aviatrix VPN Client, please contact your Aviatrix Network Admin and have them open a `support ticket <https://aviatrix.zendesk.com/>`_.
-
-
-
-
-Field Notice 0019 (2021/04/19)
--------------------------------- 
-**End of Life (EOL) announcement for 5.4 and 6.0 releases**
- 
-Following up on Field Notice `0012 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0012-2020-08-07>`_ and `0016 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0016-2020-12-22>`_, we are announcing EOL and Support for releases 5.4 and 6.0. The R5.4 EOL date is 6/1/2021, the R6.0 EOL date is 6/19/2021.
- 
-What is the impact if you remain on a deprecated release that is designated EOL?
-The Aviatrix Support team does not provide assistance on EOL releases.
-Patches for known issues and vulnerabilities are not provided.
-Enabling the remote SSH support option as well as sending logs and diagnostics to Aviatrix Support may not work.
-The default SMTP on the Controller cannot send Alerts.
- 
-**Recommendation:**
-Please use the following processes to upgrade your Aviatrix network:
-
-* https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
-* https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures
-* https://docs.aviatrix.com/HowTos/inline_upgrade.html
- 
-If you have any difficulties upgrading your Aviatrix network, please open a `support ticket <https://aviatrix.zendesk.com/>`_.
 
 
 
