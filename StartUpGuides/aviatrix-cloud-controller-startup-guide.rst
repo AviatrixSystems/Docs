@@ -7,6 +7,24 @@
 AWS Startup Guide
 ==================================================================
 
+.. raw:: html
+
+    <script>
+    /**
+    * Function that captures a click on an outbound link in Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    var captureOutboundLink = function(url) {
+       ga('send', 'event', 'outbound', 'click', url, {
+         'transport': 'beacon',
+         'hitCallback': function(){document.location = url;}
+       });
+    }
+    </script>
+    
+
 Welcome to getting started on AWS! This guide takes you through the 3 steps to launch the Controller instance. 
 When complete, you'll be ready to deploy use cases. 
 
@@ -32,7 +50,14 @@ If you have already subscribed the Metered AMI on AWS Marketplace, skip this ste
 Click the AMI link below to take you to the AWS Marketplace to complete step 1.1 and 1.2. 
 (Open a new tab on the selected AMI so you can follow along with this guide.)
 
-`Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2&ref=_ptnr_docs_startup_metered_copilot24x7>`_
+.. |marketplace_metered_link| raw:: html
+
+    <a href="https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2" onclick="captureOutboundLink('https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2'); return false;"  target="_blank">Aviatrix Secure Networking Platform Metered</a>
+
+|marketplace_metered_link|
+
+..
+    `Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2&ref=_ptnr_docs_startup_metered_copilot24x7>`_
 
 
 1.2 Continue to Subscribe 
