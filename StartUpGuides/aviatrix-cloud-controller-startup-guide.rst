@@ -12,7 +12,11 @@ When complete, you'll be ready to deploy use cases.
 
   |3-step|
 
-You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
+..
+
+  You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
+
+..
 
 .. important::
 
