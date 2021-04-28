@@ -4,7 +4,6 @@ Aviatrix VPN Client Changelog
   - Support non-ASCII Windows user login account
   - Support non-ASCII VPN connection profile name on the client UI
   - Support Ubuntu 20.04.01 deb format installer
-  - Enhance the Windows client security
   - `Enhance the Windows client security <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31776>`_
 
 2.13.12 - Jan 28 2021
