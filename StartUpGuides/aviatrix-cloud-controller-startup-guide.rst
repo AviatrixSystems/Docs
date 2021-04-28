@@ -38,7 +38,26 @@ AWS Startup Guide
     	'event_category': 'outbound',
         'event_label': url,
         'transport_type': 'beacon',
-        'event_callback': function() {console.log('gtag called.');}
+        'event_callback': function() {window.open(url, '_blank');}
+      });
+    }
+    </script>
+
+.. raw:: html
+
+    <script>
+    /**
+    * Function that registers a click on an outbound link in Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    var getOutboundLinkAndOpen = function(url) {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function() {}
       });
     }
     </script>
@@ -72,7 +91,14 @@ Click the AMI link below to take you to the AWS Marketplace to complete step 1.1
 
     <a href="https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2" target="_blank" onclick="getOutboundLink('https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2'); return false;">Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support</a>
 
+
 |marketplace_metered_link|
+
+.. |marketplace_metered_link2| raw:: html
+
+    <a href="https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2" target="_blank" onclick="getOutboundLinkAndOpen('https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2');">Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support</a>
+
+|marketplace_metered_link2|
 
 ..
     `Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2&ref=_ptnr_docs_startup_metered_copilot24x7>`_
