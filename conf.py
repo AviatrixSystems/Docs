@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'aviatrix_docs'
-copyright = '2020, Aviatrix Systems, Inc'
+copyright = '2021, Aviatrix Systems, Inc'
 author = 'Aviatrix'
 
 # Options for extensions
