@@ -83,7 +83,7 @@ Ubuntu16.04 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-down
 `Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_xenial.deb.checksum.txt>`__,
 `Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_xenial.tar.gz.checksum.txt>`__
 
-Note: Currently we do not support Fedora/Arch-Linux
+Note: Currently we do not support Fedora/Arch-Linux. VPN Clients running on Ubuntu 14.04 are designated EOL.
 
 
 *************
