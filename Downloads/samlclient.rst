@@ -26,7 +26,7 @@ The VPN Client can be installed on desktop platforms and is supported on various
 
 Consult the VPN client `user guide <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`__ for how to use it.
 
-Latest version: 2.13.12 - (Jan. 28 2021) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
+Latest version: 2.14.14 - (April 27 2021) `Changelog. <http://docs.aviatrix.com/HowTos/changelog.html>`_
 
 Please ask your Aviatrix Administrator to upgrade the Aviatrix Controller to version 4.7.501 + to prevent seeing certificate errors -`Ref. <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_ 
 
@@ -83,12 +83,7 @@ Ubuntu16.04 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-down
 `Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_xenial.deb.checksum.txt>`__,
 `Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_xenial.tar.gz.checksum.txt>`__
 
-Ubuntu14.04 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian_Q4.deb>`__,
-`Tar file <https://s3-us-west-2.amazonaws.com/avi atrix-download/AviatrixVPNClient/AVPNC_linux_Q4.tar.gz>`__,
-`Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_debian_Q4.deb.checksum.txt>`__,
-`Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_Q4.tar.gz.checksum.txt>`__
-
-Note: Currently we do not support Fedora/Arch-Linux
+Note: Currently we do not support Fedora/Arch-Linux. VPN Clients running on Ubuntu 14.04 are designated EOL.
 
 
 *************
@@ -112,11 +107,23 @@ FIPS140-2 version
 `Ubuntu 20 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz>`__,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz.checksum.txt>`__
 
+`Ubuntu 20 deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_debian_FIPS.deb>`__,
+`Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_FocalFossa_FIPS.deb.checksum.txt>`__
+
 `Ubuntu 18 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FIPS.tar.gz>`__,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FIPS.tar.gz.checksum.txt>`__
 
 `Ubuntu 18 deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_debian_FIPS.deb>`__,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_debian_FIPS.deb.checksum.txt>`__
+
+*****************
+Archived Clients
+*****************
+
+Ubuntu14.04 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_debian_Q4.deb>`__,
+`Tar file <https://s3-us-west-2.amazonaws.com/avi atrix-download/AviatrixVPNClient/AVPNC_linux_Q4.tar.gz>`__,
+`Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_debian_Q4.deb.checksum.txt>`__,
+`Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_Q4.tar.gz.checksum.txt>`__
 
 *******************
 Development version
