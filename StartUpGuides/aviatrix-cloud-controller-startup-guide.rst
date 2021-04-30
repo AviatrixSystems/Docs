@@ -89,7 +89,7 @@ Click the AMI link below to take you to the AWS Marketplace to complete step 1.1
 
 .. |marketplace_metered_link2| raw:: html
 
-    <a href="https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2" target="_blank" onclick="getOutboundLinkAndOpen('https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2');">Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support</a>
+    <a href="https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2" target="_blank" onclick="getOutboundLinkAndOpen('https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2');">Aviatrix Secure Networking Platform Metered with Copilot</a>
 
 |marketplace_metered_link2|
 
@@ -121,7 +121,15 @@ Step 2. Launch the Controller with CloudFormation
 Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in the next steps 
 to run the Cloudformation script.   
 
-`CloudFormation for Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
+.. |CFT_link| raw:: html
+
+    <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template" target="_blank" onclick="getOutboundLinkAndOpen('CFT_launch');">CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot</a> 
+
+
+|CFT_link|
+
+..
+    `CloudFormation for Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
 
 
 For other products, check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
