@@ -24,7 +24,7 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 #. Check `pre-operations checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ before any operations on your controller.
 #. Ensure that all gateways are in green/up status. If not, check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions.
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
-#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket by sending an email to support@aviatrix.com.
+#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket at https://aviatrix.zendesk.com or by sending an email to support@aviatrix.com.
 #. Make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process.
 #. Do a backup and check the S3 bucket to make sure the process was successful. If you don't have backup enabled, please follow the `backup instructions <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ to enable it.
 #. If your controller is in AWS and running on a t2/t3 instance type, make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"
@@ -54,14 +54,12 @@ How to upgrade software
 
 Upgrades are done from the Controller UI.  To check for an available update and perform an upgrade, follow these steps:
 
-#. Follow the directions listed below in this document to update your IAM policies in all accounts, before starting the upgrade process
-#. Log in to your Controller.
-#. Expand `Settings` navigation menu item
-#. Click `Maintenance`
-#. Click `Dry Run` to make sure the controller and gateway are in contact and allowed to download our software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups and VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
+#. Follow the directions listed in this `document to update your IAM policies <https://docs.aviatrix.com/HowTos/iam_policies.html#automatically-updating-iam-policies>`_ in all accounts, before starting the upgrade process
+#. Head to Upgrade section by logging in to your Controller, expand `Settings` navigation menu item and click on `Maintenance`
+#. Click `Dry Run` to make sure the controller and gateway are in contact and allowed to download software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups and VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Make a backup before the upgrade by following the instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. Please clean up your bucket where you store your controller backups, so that only the last 3 relevant configuration files are seen. Any old configurations should be moved out to your archive bucket/folder.
-#. Click `Upgrade to the latest` to upgrade your software to the latest version
+#. Click on `"Upgrade to the latest"` to upgrade your software to the latest version
 
     #. If upgrading from a release<3.3.x: Please upgrade to the next immediate release by entering the right version in "Upgrade to custom release" - the correct order is: 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3
     #. Upgrading from a release>=3.3.x: The Aviatrix Controller will enforce incremental upgrades, so please click on "Upgrade to the Latest". You might have to go through multiple upgrades before you reach the latest release. Follow the directions in the next note when you upgrade to release 4.0
