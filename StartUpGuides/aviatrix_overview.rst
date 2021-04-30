@@ -142,6 +142,44 @@ Controller Security Group Management            Yes         Yes             No  
 Managed CloudN                                  Yes         Yes             No                               Yes                      No
 ==========================================      ==========  =============   ======================           =================       ==========
 
+What Features Are Supported in Which China Region Cloud?
+-----------------------------------------------
+
+==========================================      ==========  =============   ======================
+**Feature**                                     **AWS**     **Azure**       **Alibaba** 
+==========================================      ==========  =============   ======================
+Controller                                      Yes         No              No
+CoPilot                                         Yes         No              No
+Transit Gateway Peering                         Yes         Yes             Yes
+Multi Accounts                                  Yes         Yes             Yes                                  
+Transit Network Spoke and Transit Gateways      Yes         Yes             Yes
+Transit to External IPsec Devices               Yes         Yes             Yes
+Site2Cloud VPN for All Gateways                 Yes         Yes             Yes
+Create a VCP                                    Yes         Yes             Yes
+Terraform                                       Yes         Yes             Yes
+Backup and Restore                              Yes         Yes             Yes
+Native Peering                                  Yes         Yes             No
+FlightPath Expert Diagnostics                   Yes         Yes             No
+VPC Tracker                                     Yes         Yes             No
+Controller Security Group Management            Yes         No              No
+Launch Controller with CloudFormation           Yes         No              No
+Firewall Network                                No          No              No
+Insane Mode Encryption                          No          No              No
+Managed CloudN                                  No          No              No
+Transit to AWS VGW                              No          No              No
+BGP over LAN                                    No          No              No
+BGP over GRE                                    No          No              No
+AWS TGW                                         No          No              No
+CloudWAN                                        No          No              No
+FQDN Egress Control                             No          No              No
+Stateful Firewall                               No          No              No
+Advanced NAT                                    No          No              No
+Remote Access User VPN (OpenVPN)                No          No              No
+PrivateS3                                       No          No              No
+IPv6                                            No          No              No
+Conroller Migrate                               No          No              No
+Logging Service Integration                     No          No              No
+==========================================      ==========  =============   ======================           =================       ==========
 
 How To Launch Aviatrix?
 =========================
