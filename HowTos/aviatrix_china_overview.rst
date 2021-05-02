@@ -99,7 +99,7 @@ What is a China ICP License?
 
 Regulations in China require you to acquire an Internet Content Provider (ICP) license from the government and register the license with your CSP 
 to provide internet services in China. In China, an ICP license is required to establish SSL connections between different regions, ISPs, CSPs, or to 
-cross national borders. Aviatrix supports transit gateways using AWS, Azure, and Alibaba multi-cloud networks in the China region.
+cross national borders. Aviatrix supports transit gateways using AWS China, Azure China, and Alibaba multi-cloud networks in the China region.
 Obtaining and implementing an ICP is a process and you should follow the directions of your compliance experts. 
 
 There are some general guidelines Aviatrix recommends following to implement a multi-cloud network in the China region.
@@ -114,6 +114,27 @@ There are some general guidelines Aviatrix recommends following to implement a m
  
  - Use dedicated lines from certified telecom carries for connections between China and the rest of the world.
  
- - Deploy the Aviatrix Controller and CoPilot in China.
+ - Deploy the Aviatrix Controller, CoPilot, and Multi-Cloud Network in China.
 
+What issue will hit if the company doesn't follow China Regulation?
+===================================================================
 
+Both Aviatrix Controller and Gateway in the China region cannot communicate to each other properly.
+
+What is the design recommendation for China region?
+====================================================
+
+  |aviatrix_design_recommendation_china|
+
+What is the design recommendation to build connectivity between China and Global regions?
+=========================================================================================
+
+  |aviatrix_design_recommendation_china_global|
+
+.. |aviatrix_design_recommendation_china| image:: aviatrix_china_overview_media/aviatrix_design_recommendation_china.png
+   :scale: 50%
+
+.. |aviatrix_design_recommendation_china_global| image:: aviatrix_china_overview_media/aviatrix_design_recommendation_china_global.png
+   :scale: 50%
+   
+.. disqus::
