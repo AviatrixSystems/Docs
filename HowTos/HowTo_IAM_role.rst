@@ -149,6 +149,22 @@ this secondary account.
 
    e. Click Update Trust Policy
 
+Notes for custom IAM role name feature:
+=======================================
+
+If the primary access account is using a custom EC2 IAM role name for the controller, then any secondary IAM based access accounts must use an identical name for the EC2 IAM role.
+
+The primary and secondary access accounts must use identical names under the following conditions:
+
+- You are using custom IAM roles for the primary access account.
+
+- You are NOT using custom gateway IAM roles on the secondary account.
+
+Example:
+
+The controller is using 'custom-role-app' and 'custom-role-ec2' on a secondary access account. Custom role 'custom-role-ec2' also exists on the primary account because that is where the controller is hosted.
+
+When you launch a gateway under the secondary access account the controller takes the primary access account ec2 role name, in this case 'custom-role-ec2' and passes it to the API call to create the instance. The API call refers to a role on the secondary CSP account, not the role of the primary account. 
 
 .. |image0| image:: IAM_media/image1.png
    :width: 6.50000in
