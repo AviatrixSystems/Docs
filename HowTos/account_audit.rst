@@ -28,9 +28,9 @@ If you need help, email to support@aviatrix.com.
 
 .. Note::
 
-- Account auditing does not work with new feature "customized IAM app role" in 6.4. 
+  - Account auditing does not work with new feature "customized IAM app role" in 6.4. 
 
-- The account auditing feature also does not work if the IAM app role has more than one policy attached because only the first policy is used.
+  - The account auditing feature also does not work if the IAM app role has more than one policy attached because only the first policy is used.
 
 ..
 
