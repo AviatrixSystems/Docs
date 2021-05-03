@@ -55,7 +55,7 @@ by the Controller as shown below. This document describes how to accomplish this
             ]
         }
     }  
-
+* For Azure China please remove "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/*" and "Microsoft.Resources/marketplace/purchase/*" from "actions"
  
 2. Create a Custom Role
 ----------------------------------------------------
