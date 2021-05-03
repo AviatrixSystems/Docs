@@ -272,6 +272,11 @@ Local Identifier
 
 By default, Aviatrix configures gateway's public IP as Local Identifier. User can adjust this settings to gateway's private IP.
 
+Remote Identifier
+-----------------
+
+By default, Aviatrix configures public ip of peer device as Remote Identifier. User can adjust this settings to private ip of peer device.
+
 Dead Peer Detection
 --------------------
 
