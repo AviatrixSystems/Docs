@@ -8,6 +8,41 @@ Field Notices
  
 
 
+
+Field Notice 0028 (2021/05/03)
+--------------------------------
+**End of Life (EOL) announcement for Gateway AMI's**
+
+Gateway AMI's based on Ubuntu 14 and Ubuntu 16 are designated EOL effective 5/3/2021. Aviatrix is discontinuing support because these operating systems have reached their end of standard support from the provider. Please see the Ubuntu release information at https://wiki.ubuntu.com/Releases and https://ubuntu.com/about/release-cycle.
+ 
+What is the impact if you remain on a deprecated release that is designated EOL?
+
+  * The Aviatrix Support team does not provide assistance on EOL releases.
+  * Patches for known issues and vulnerabilities are no longer provided.
+ 
+**Recommendation**
+
+Replace the deprecated gateways and use the new AMIs. To update your Aviatrix gateways, you may need to upgrade your Aviatrix Controller first. The Gateway page lists the AMIs for all your gateways. Go to "Gateway->Column View->Select Gateway Image Name->Apply Columns". For more information, see https://docs.aviatrix.com/HowTos/image_release_notes.html.
+ 
+Discover all deprecated AMIs. Download the "Generate list of Aviatrix Gateways using deprecated AMIs" utility from "Settings->Maintenance->Software Patches->Update Available Patches". Run this utility to send an email to the admin with a list of all gateways running deprecated AMI's. 
+ 
+We recommend that you replace gateways running Ubuntu14 and Ubuntu16 based AMIs before upgrading to 6.4.
+ 
+Upgrade your Aviatrix Controller to the latest 6.3 release following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html and replace these gateways using the procedures at https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-gateway-image-upgrade. 
+ 
+You can also use the following Aviatrix API's to replace your gateways programmatically:
+
+  * Login and generate CID: curl --location -g --request POST 'https://{{controller_hostname}}/v1/api' --form 'action="login"' --form 'username="admin"' --form 'password="{{admin_password}}"'
+  * Use the CID generated above to resize gateway and wait till it is complete, before running on another gateway : curl --location -g --request POST 'https://{{controller_hostname}}/v1/api'  --form 'action="replace_gateway"' --form 'CID="{{CID}}"' --form 'gateway_name="{{gateway_name_in_controller}}"' 
+  * Check the Gateway AMI information: curl --location -g --request GET 'https://{{controller_hostname}}/v1/api?action=get_gateway_info&CID={{CID}}&gateway_name={{gateway_name_in_controller}}'
+ 
+Aviatrix strongly recommends that you keep your Aviatrix Network up to date with the latest releases. We also strongly suggest that you periodically check the AMI versions on all your gateways and update them to get the latest fixes for known issues and vulnerabilities. 
+ 
+If you have any difficulties in upgrading your Gateways or have any questions about your Aviatrix network, please open a `support ticket <https://aviatrix.zendesk.com>`_.
+
+
+
+
 Field Notice 0027 (2021/04/29)
 --------------------------------
 **Gateway names longer than 50 bytes can cause issues**
