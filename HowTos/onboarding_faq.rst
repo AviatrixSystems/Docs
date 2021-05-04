@@ -223,6 +223,7 @@ Companies that sell some types of **equipment or software** used in cardholder d
 What is Certificate Domain?
 --------------------------------
 
+Entering Certificate Domain is required for Aviatrix China Solution. The domain is the one that you registered in China and applied for ICP license. For more information, see What is a China ICP License.
 
 How to setup Account Name Alias?
 --------------------------------
