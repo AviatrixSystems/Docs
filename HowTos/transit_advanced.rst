@@ -107,6 +107,14 @@ Click the Slide Bar to enable Active-Standby mode.
 
 Multi-Tier Transit
 -----------------------
+Use the Multi-Cloud Transit Gateway option to implement a hierarchical transit gateway architecture that permits packets to traverse more than 2 Aviatrix transit gateways. In previous releases, full-mesh transit peering was required. You can now connect the two CSPs or regions through one peered connection. You must use ActiveMesh 2.0 to use multi-tier transit gateways, but full-mesh transit peering is not required.
+
+Guidelines
+
+* You can use Multi-Cloud Transit Gateway option with or without HPE.
+* Inter and intra-region peering are both supported.
+* Inter-CSP HPE over Internet is supported between AWS and Azure.
+* AWS TGW peering is not supported.
 
 
 Gateway AS Path Prepend
@@ -136,6 +144,9 @@ This option changes the default polling time. The range is 10 seconds to 50 seco
 
 BGP Hold Time
 ----------------------
+Use the BGP Hold Time option to manually set the BGP holding time for your Aviatrix transit gateway. The hold time specifies how long a router waits for incoming BGP messages before it assumes the neighbor is dead. 
+
+The Aviatrix transit gateway hold time is bound to the Aviatrix keep alive message time which is always 1/3 of the hold time. By default, the Hold Time is 180 seconds and the Keep Alive time is 60 seconds. The supported Hold Time range is 12 to 180 seconds. If the remote site has a shorter hold time, the shorter hold time is used for the gateway.
 
 
 
