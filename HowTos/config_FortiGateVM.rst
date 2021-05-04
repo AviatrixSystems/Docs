@@ -123,7 +123,29 @@ Go to the page "Network -> Static Routes" to create a Static Route as the follow
 Those static routes also could be reviewed on the page "Monitor -> Routing Monitor"
 
 |v2_fortigate_static_routes_review|
- 
+
+(Optional) Firewall Vendor Integration
+-------------------------------------------------
+
+Integrating a FortiGate firewall with the Aviatrix controller enables the controller to make automatic route updates to the FortiGate routing tables. You may also manually enable the integration with your CSP management tools. FortiGate integration is supported in AWS, Azure, and GCP clouds.
+
+Integrate the FortiGate firewall with the Aviatrix controller.
+
+- Generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the controller.
+
+  - In the FortiGate GUI, go to System > Admin Profiles > Create New.
+
+  - Enter the information to create the token. You must enable the Read/Write option for the network to router connection.
+  
+  - Generate the token.
+
+- Go to Aviatrix Controller > Firewall Network > Vendor Integration.
+
+- Enter the vendor firewall information in the controller.
+
+- Click Save, then Show, then Sync to enable the Aviatrix Controller and FortiGate firewall integration. 
+
+The Aviatrix controller is now enabled to make automatic route updates to the FortiGate routing tables. 
 
 7. Configure basic traffic policy to allow traffic VPC to VPC
 -------------------------------------------------
