@@ -1,6 +1,6 @@
 .. meta::
   :description: Firewall Network Workflow
-  :keywords: Azure Transit Gateway, Azure, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet
+  :keywords: OCI Transit Gateway, OCI, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet OCI
 
 
 =========================================================
