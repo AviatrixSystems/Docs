@@ -216,7 +216,7 @@ Check Point support for OCI is coming in future release
 Follow `Configure PaloAlto VM-Series Example in OCI <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_ to properly configure PAN VM-Series.
 
 
-Step 8: Vendor Firewall Integration
+Step 9: Vendor Firewall Integration
 *****************************************************
 
 Vendor integration dynamically updates firewall route tables. The use case is for networks with RFC 1918 and non-RFC 1918 routes that require specific route table programming on the firewall appliance
@@ -225,7 +225,7 @@ Vendor integration dynamically updates firewall route tables. The use case is fo
 2.	Click Save, Show and Sync.
 
 
-Step 9: Enable Health Check Policy in Firewall
+Step 10: Enable Health Check Policy in Firewall
 ***************************************************
 Aviatrix Controller uses ICMP or ping to check the health of firewall every 5 seconds. User needs to enable this port in firewall as per given instruction.
 
@@ -246,7 +246,7 @@ Fortinet
 ~~~~~~~~~~~~~~~
 Fortigate support for OCI is coming in future release
 
-Step 10: Example Setup for "Allow All" Policy
+Step 11: Example Setup for "Allow All" Policy
 ***************************************************
 
 After a firewall instance is launched, wait for 5 to 15 minutes for it to come up. Time varies for each firewall vendor.
@@ -269,7 +269,7 @@ Check Point
 Check Point support for OCI is coming in future release
 
 
-Step 11: Verification
+Step 12: Verification
 ***************************
 
 There are multiple ways to verify if Transit FireNet is configured properly:
