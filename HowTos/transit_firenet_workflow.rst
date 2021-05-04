@@ -4,7 +4,7 @@
 
 
 =========================================================
-Transit FireNet  Workflow for AWS, Azure and GCP
+Transit FireNet  Workflow for AWS, Azure, GCP, and OCI
 =========================================================
 
 If you are looking deploying firewall networks in AWS TGW environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
@@ -18,6 +18,8 @@ For a complete step by step guide on AWS for Transit FireNet with AWS Gateway Lo
 For a complete step by step guide on Azure for Transit FireNet, refer to `Transit FireNet on Azure Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_.
 
 For a complete step by step guide on GCP for Transit FireNet, refer to `Transit FireNet on GCP Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_.
+
+For a complete step by step guide on OCI for Transit FireNet, refer to `Transit FireNet on OCI Configuration Example Guide <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_oci.html>`_.
 
 Prerequisite for AWS
 ---------------------
