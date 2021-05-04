@@ -25,6 +25,17 @@ conditions to repair the configuration.
 
 If you need help, email to support@aviatrix.com.
 
+
+.. Note::
+
+  - Account auditing does not work with the new enhancement "customized IAM role name" in 6.4. In the current design, the account auditing feature looks for the Aviatrix standard IAM role names which are aviatrix-role-app and aviatrix-role-ec2 and the Aviatrix standard policy name which is aviatrix-app-policy.
+
+  - The account auditing feature also does not work if the IAM app role has more than one policy attached because only the first policy is used.
+
+..
+
+
+
 .. |secondary_account| image:: adminusers_media/secondary_account.png
    :scale: 50%
 
