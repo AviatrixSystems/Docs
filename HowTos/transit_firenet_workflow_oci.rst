@@ -131,8 +131,6 @@ This step launches a Firewall instance and associates it with one of the FireNet
 
     The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
-.. note::
-    By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 tuple as per requirement. Please check transit `firenet FAQs <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#azure>`_ for more details.
 
 7a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
