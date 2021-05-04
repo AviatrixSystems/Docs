@@ -7,23 +7,23 @@ R6.4 (Coming Soon)
 
 1. Multi-Cloud Transit Network
 --------------------------------
-- **Alibaba Cloud Support** expands the Aviatrix Multi-Cloud Transit solution to support the Alibaba Cloud. This includes support for Ali Global and Ali China region.
+- **Alibaba Cloud Support** expands the Aviatrix Multi-Cloud Transit solution to support the Alibaba Cloud. This includes support for Ali Global and Ali China region. For more information, check out `Alibaba Cloud Account Credential Setup <https://docs.aviatrix.com/HowTos/aviatrix_account_alibaba.html>`_
 
-- **China Multi-Cloud Network Architecture Support** expands the Aviatrix Multi-Cloud Transit solution to AWS, Azure, and Alibaba public clouds in China regions. Support includes:
+- **China Multi-Cloud Network Architecture Support** expands the Aviatrix Multi-Cloud Transit solution to AWS, Azure, and Alibaba public clouds in China regions. For more information, check out `Aviatrix China Overview <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html>`_. Support includes:
   
-  * Aviatrix Controller image in AWS China Marketplace.
+  * Aviatrix Controller image and CoPilot image in AWS China Marketplace.
   
   * Multi-Cloud Transit solution in AWS China, Azure China and Alibaba China regions.
 
 - **Multi-Tier Transit** supports the hierarchical Multi-Cloud Transit gateway deployment model, and adds the ability to traverse more than two Aviatrix Multi-Cloud Transit gateways. This feature improves operational simplicity by aggregating multiple Aviatrix Transits. One use case is centralized firewall design for multiple Aviatrix-Transits in a single region, which allows in-region traffic without any inspection. To configure Multi-Tier Transit, go to Multi-cloud Transit -> Advance Config. Select the Transit Gateway and enable the Multi-Tier Transit feature.
 - **Transit Peering Insane Mode Support over Public Network** provides high performance Transit Gateway peering to multi-cloud networks with public network connectivity between AWS and Azure only. To configure Insane Mode over public networks, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Insane mode over Internet for a new peering connection.
 - **OCI Transit Insane Mode Support** expands our Insane Mode Encryption Service to OCI networks. The support includes Insane Mode for VCN to VCN encrypted peering and Transit Peering connections. Launch an OCI gateway with Insane Mode enabled to get started.
-- **IAM Role and Policy for Gateways**  separate IAM policy for Aviatrix gateway.
+- **IAM Role and Policy for Gateways** separate IAM policy for Aviatrix gateway. API support only.
 - **BGP Connection Holdtime** can now be modified through the Aviatrix Controller. One use case of modifying BGP Hold Timer is to have a quicker BGP failover time.
 
 2. FireNet
 -------------
-- **Aviatrix Transit FireNet for OCI** allows you to deploy firewall instances in OCI. The OCI FireNet can be used for East-West, North-South and Ingress-Egress inspection with Palo Alto Networks VM-Series only.
+- **Aviatrix Transit FireNet for OCI** allows you to deploy firewall instances in OCI. The OCI FireNet can be used for East-West, North-South and Ingress-Egress inspection with Palo Alto Networks VM-Series only. For more information, check out `Transit FireNet Workflow for OCI <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_oci.html>`_ and `Example Config for Palo Alto Network VM-Series in OCI <https://docs.aviatrix.com/HowTos/config_paloaltoOCI.html>`_.
 - **FireNet Fortinet Integration Enhancement** now supports Fortinet firewall integration with the Aviatrix Transit FireNet solution. This integration allows automatic route updates in Fortigate routing tables by the Aviatrix Controller. You no longer need to statically configure RFC 1918 or any other routes in Fortigate. This integration is supported for AWS, Azure, and GCP Public clouds only.
 - **Check Point CloudGuard in GCP** is now available when deploying Aviatrix Transit FireNet. Refer to this example `CheckPoint workflow in GCP <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure-and-gcp>`_ for more details.
 - **Fortinet Fortigate for GCP** is now available in GCP when deploying Aviatrix Transit FireNet.
