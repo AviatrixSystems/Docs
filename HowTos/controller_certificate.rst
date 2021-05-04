@@ -80,6 +80,7 @@ Go to Settings > Advanced > Security subtab. Scroll down to the section Gateway 
 Step 2. Upload file and key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the input field, upload the CA Certificate and CA Private Key. Click Ok.
+In this section it is necessary for this certificate to be a CA and not a signed certificate from a signing authority. The reason for this is the certificate that you upload here will be used to author additional certificates as you deploy more gateways. In general the most common use here is a self signed certificate that you create solely for this purpose.
 
 
 Once you click ok, you will get a confirmation box to show that only R6.0 or higher will apply. Earlier version will failed the deployment for custom cert. If this happens, you will need to update the Gateway to the latest version before applying custom certificate. 
