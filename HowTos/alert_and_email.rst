@@ -82,7 +82,11 @@ Note that newly created SES accounts are placed in an "AWS SES Sandbox" and will
     g.	Protocol: TLS
     h.	Click “Save”
 
+How to not send exception notification to Aviatrix
+-------------------------------------------------------------
 
+Software exception notification button gives an ability to customers to disable exception emails send to Aviatrix. To disable notification, go to Settings -> Controller -> Email, scroll down to find the software exception field and click Disable.
+ 
 
 
 
