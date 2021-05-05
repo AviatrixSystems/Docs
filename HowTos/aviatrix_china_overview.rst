@@ -121,6 +121,20 @@ What issue will hit if the company doesn't follow China Regulation?
 
 Both Aviatrix Controller and Gateway in the China region cannot communicate to each other properly.
 
+How to find Aviatrix Controller and CoPilot on China Marketplace?
+===================================================================
+
+- Login AWS China Portal
+
+- Navigate to AWS marketplace for Ningxia and Beijing Region
+
+- Search for the keyword "Aviatrix"
+
+  |aviatrix_aws_china_marketplace|
+  
+.. Note:: Both Aviatrix Controller and CoPilot are published on AWS China Marketplace only.
+..
+
 What is the design recommendation for China region?
 ====================================================
 
@@ -135,6 +149,9 @@ What is the design recommendation to build connectivity between China and Global
    :scale: 50%
 
 .. |aviatrix_design_recommendation_china_global| image:: aviatrix_china_overview_media/aviatrix_design_recommendation_china_global.png
+   :scale: 50%
+   
+.. |aviatrix_aws_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_aws_china_marketplace.png
    :scale: 50%
    
 .. disqus::
