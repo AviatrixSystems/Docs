@@ -24,7 +24,8 @@ R6.4 (Coming Soon)
 2. FireNet
 -------------
 - **Aviatrix Transit FireNet for OCI** allows you to deploy firewall instances in OCI. The OCI FireNet can be used for East-West, North-South and Ingress-Egress inspection with Palo Alto Networks VM-Series only. For more information, check out `Transit FireNet Workflow for OCI <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_oci.html>`_ and `Example Config for Palo Alto Network VM-Series in OCI <https://docs.aviatrix.com/HowTos/config_paloaltoOCI.html>`_.
-- **FireNet Fortinet Integration Enhancement** now supports Fortinet firewall integration with the Aviatrix Transit FireNet solution. This integration allows automatic route updates in Fortigate routing tables by the Aviatrix Controller. You no longer need to statically configure RFC 1918 or any other routes in Fortigate. This integration is supported for AWS, Azure, and GCP Public clouds only.
+- **FireNet Fortinet Integration Enhancement** now supports Fortinet firewall integration with the Aviatrix Transit FireNet solution. This integration allows automatic route updates in Fortigate routing tables by the Aviatrix Controller. You no longer need to statically configure RFC 1918 or any other routes in Fortigate. This integration is supported for AWS, Azure, and GCP Public clouds only. For more information, check out `Transit FireNet Workflow for AWS, Azure, GCP, and OCI <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html>`_
+
 - **Check Point CloudGuard in GCP** is now available when deploying Aviatrix Transit FireNet. Refer to this example `CheckPoint workflow in GCP <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#transit-firenet-workflow-for-aws-azure-and-gcp>`_ for more details.
 - **Fortinet Fortigate for GCP** is now available in GCP when deploying Aviatrix Transit FireNet.
 - **Custom AMI Support for Firewall Instances** allows customer to launch the special images provided by firewall vendors. API support only.
@@ -32,9 +33,9 @@ R6.4 (Coming Soon)
 
 3. Site2Cloud
 ---------------
-- **Dynamic routes update for Site2Cloud Connections** adds the capability to auto advertise or remove the remote subnet automatically based on the Up/Down status of the Site2Cloud tunnel. To configure dynamic routes for Site2Cloud, go to Multi-Cloud Transit -> List -> Spoke -> Select Spoke Gateway and click "Auto Advertise Spoke S2C CIDRs" to enable dynamic routes.
-- **Site2Cloud Single Public IP Failover Support** enhances the HA mechanism to use a single public IP address and single tunnel from the remote site (on-prem) point of view. To configure Site2Cloud Single Public IP Failover, go to Site2Cloud -> Add New -> Enable HA. Check the box to Enable Single IP HA to activate Single Public IP Failover. This applies to AWS and Azure only.
-- **Jumbo Frame Support** adds the ability to turn on/off Insane Mode jumbo frame support for the Site2Cloud tunnel between the Aviatrix Transit Gateway and CloudN. To enable jumbo frame support, go to Site2Cloud -> Select Site2Cloud connection to CloudN. Click Edit and enable jumbo frame support.
+- **Dynamic routes update for Site2Cloud Connections** adds the capability to auto advertise or remove the remote subnet automatically based on the Up/Down status of the Site2Cloud tunnel. To configure dynamic routes for Site2Cloud, go to Multi-Cloud Transit -> List -> Spoke -> Select Spoke Gateway and click "Auto Advertise Spoke S2C CIDRs" to enable dynamic routes. For more information, refer to `Auto Advertise Spoke Site2Cloud CIDRs doc <https://docs.aviatrix.com/HowTos/transit_list.html#auto-advertise-spoke-site2cloud-cidrs>`_
+- **Site2Cloud Single Public IP Failover Support** enhances the HA mechanism to use a single public IP address and single tunnel from the remote site (on-prem) point of view. To configure Site2Cloud Single Public IP Failover, go to Site2Cloud -> Add New -> Enable HA. Check the box to Enable Single IP HA to activate Single Public IP Failover. This applies to AWS and Azure only. For more information, refer to `Site2Cloud IPSec VPN Instructions <https://docs.aviatrix.com/HowTos/site2cloud.html>`_
+- **Jumbo Frame Support** adds the ability to turn on/off Insane Mode jumbo frame support for the Site2Cloud tunnel between the Aviatrix Transit Gateway and CloudN. To enable jumbo frame support, go to Site2Cloud -> Select Site2Cloud connection to CloudN. Click Edit and enable jumbo frame support. For more information, refer to `Jumbo Frame doc <https://docs.aviatrix.com/HowTos/site2cloud.html#jumbo-frame>`_
 
 4. Security
 ---------------
@@ -43,10 +44,10 @@ R6.4 (Coming Soon)
 5. Operations
 -----------------
 - **Create a VPC Enhancement** adds an option in "Create a VPC" to select an existing Resource Group for Azure under Advanced options.
-- **Co-Pilot integration with Controller** delivers the operational simplicity you need by presenting Aviatrix Controller as a single-pane of glass for managing the Day 0, Day 1 and Day 2 operations of the cloud fabric. The integration with Co-Pilot brings additional capabilities including the SAML and DUO integration, and RBAC control. To configure the CoPilot Controller integration, log into the Aviatrix Controller console and go to Settings -> CoPilot -> Enable CoPilot Association to integrate CoPilot with Aviatrix Controller.
+- **Co-Pilot integration with Controller** delivers the operational simplicity you need by presenting Aviatrix Controller as a single-pane of glass for managing the Day 0, Day 1 and Day 2 operations of the cloud fabric. The integration with Co-Pilot brings additional capabilities including the SAML and DUO integration, and RBAC control. To configure the CoPilot Controller integration, log into the Aviatrix Controller console and go to Settings -> CoPilot -> Enable CoPilot Association to integrate CoPilot with Aviatrix Controller. For more information, refer to `CoPilot doc <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html>`_
 - **Performance and Scalability Improvements** Significant performance improvements for the Aviatrix Multi-Cloud Network Architecture (MCNA) especially for a very large enterprise networks.
-- **Route Table Optimization** allows customer to skip public route table programming. This is supported in AWS only.
-- **Notification Enable/Disable Option** gives an ability to customers to disable exception emails send to Aviatrix.
+- **Route Table Optimization** allows customer to skip public route table programming. This is supported in AWS only. For more information, refer to `Transit List doc <https://docs.aviatrix.com/HowTos/transit_list.html>`_
+- **Notification Enable/Disable Option** gives an ability to customers to disable exception emails send to Aviatrix. For more information, refer to `How to not send exception notification to Aviatrix doc <https://docs.aviatrix.com/HowTos/alert_and_email.html#how-to-not-send-exception-notification-to-aviatrix>`_
 
 
 R6.3.2415 (04/19/2021)
