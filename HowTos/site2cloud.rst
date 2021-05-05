@@ -75,6 +75,20 @@ Create Site2Cloud Connection
    | Enable HA                     | Enable High Availability. Additional fields  |
    |                               | are displayed when checked.                  |
    +-------------------------------+----------------------------------------------+
+   | Enable Single IP HA           | HA gatway failover solution using Single     |
+   |                               | Public IP on Aviatrix Regular gateway        | 
+   |                               | allows you to reuse the same EIP to bring up |
+   |                               | the backup tunnel.                           |
+   |                               | Supported for AWS and Azure only             |
+   +-------------------------------+----------------------------------------------+
+   | Over Private Network          | Select this option if your underlying        |
+   |                               | infrastructure is private network, such as   |
+   |                               | AWS Direct Connect and Azure Express Rout.   |
+   |                               | See “How does it work” section for more      |
+   |                               | details. When this option is selected, BGP   |
+   |                               | and IPSEC run over private IP addresses.     |
+   |                               | terminate in this VPC.                       |
+   +-------------------------------+----------------------------------------------+
    | Primary Cloud Gateway         | Select the Gateway where the tunnel will     |
    |                               | terminate in this VPC.                       |
    +-------------------------------+----------------------------------------------+
