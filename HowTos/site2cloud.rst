@@ -323,7 +323,8 @@ Scroll down to Jumbo Frame and click Enable.
 Clear Sessions
 -------------------
 
-Clear Session allows to reset all the active sessions on a selected Site2Cloud connection.
+Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, go to Site2Cloud -> select a connection, click Edit. 
+Scroll down to Clear Sessions and click Clear.
 
 
 Periodic Ping
