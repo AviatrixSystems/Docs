@@ -308,7 +308,6 @@ Forward Traffic to Transit Gateway
 
 This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPSec connections. 
 
-
 Event Triggered HA
 ------------------
 
@@ -318,10 +317,13 @@ Scroll down to Event Triggered HA and click Enable.
 Jumbo Frame
 ------------------
 
+Jumbo Frame improves the performance between Aviatrix Transit gateway and CloudN. This feature is only supported for AWS, other clouds (Azure, GCP etc.) do not support Jumbo frame. To configure, go to Site2Cloud -> select a connection, click Edit. 
+Scroll down to Jumbo Frame and click Enable. 
 
 Clear Sessions
 -------------------
 
+Clear Session allows to reset all the active sessions on a selected Site2Cloud connection.
 
 
 Periodic Ping
