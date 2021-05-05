@@ -135,6 +135,36 @@ c2-standard-30            25.52
 
   To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
 
+
+4. OCI Performance Test Results
+------------------------------------
+
+The performance results below are from tests conducted with the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
+region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke gateways
+or HA Spoke gateways to take advantage of the active-mesh deployment. 
+
+===========================      ===============================
+**Transit Gateway**              **Throughput with MTU 1500B**    
+===========================      ===============================
+VM.Standard2.2                   0.5092Gbps                         
+VM.Standard2.4                   1.057Gbps                          
+VM.Standard2.8                   2.471Gbps                         
+VM.Standard2.16                  4.99Gbps
+VM.Standard2.24                  6.039Gbps                          
+===========================      ===============================
+
+===========================      ===============================
+**Transit Gateway**              **Throughput with MTU 9000**    
+===========================      ===============================
+VM.Standard2.2                   2.584Gbps                         
+VM.Standard2.4                   4.878Gbps                          
+VM.Standard2.8                   10.75Gbps                         
+VM.Standard2.16                  20.1199bps
+VM.Standard2.24                  24.65Gbps                          
+===========================      ===============================
+
+
+
 How to Tune Performance
 --------------------------
 
