@@ -104,3 +104,9 @@ Which version of Terraform Aviatrix Provider should I use?
 -------------------------------------------------------------
 
 The terraform aviatrix provider resource version has to match with the controller version that you have deployed. Please look at `this link <https://www.terraform.io/docs/providers/aviatrix/guides/release-compatibility.html>`_ to find out which version to use. Then you can add "version = x.x.x" to specify the right vesion in the aviatrix provider resource as mentioned in the instructions `here <https://www.terraform.io/docs/providers/aviatrix/index.html>`_.
+
+
+How can I avoid IAM role issues if I deploy using Terraform
+-------------------------------------------------------------
+
+AWS has a known issue about IAM instance profile as `documented here <https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html#how-do-i-recover-if-my-instance-profile-arn-goes-missing-on-aviatrix-role-ec2>`_. If you are deploying your gateways through terraform, we strongly recommend that you create the aviatrix required roles and policies first, before deploying the gateways - you can do that by using the `"depends_on" argument in terraform <https://www.terraform.io/docs/language/meta-arguments/depends_on.html>`_.
