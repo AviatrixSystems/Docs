@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-R6.4 (Coming Soon)
+R6.4.1804 (05/10/2021)
 ========================
 
 1. Multi-Cloud Transit Network
@@ -19,7 +19,7 @@ R6.4 (Coming Soon)
 - **Transit Peering Insane Mode Support over Public Network** provides high performance Transit Gateway peering to multi-cloud networks with public network connectivity between AWS and Azure only. To configure Insane Mode over public networks, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Insane mode over Internet for a new peering connection. For more information, refer to `Peering over Public Network or Internet doc <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network-or-internet>`_
 - **OCI Transit Insane Mode Support** expands our Insane Mode Encryption Service to OCI networks. The support includes Insane Mode for VCN to VCN encrypted peering and Transit Peering connections. Launch an OCI gateway with Insane Mode enabled to get started. For more information, refer to `OCI Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#oci-performance-test-results>`_
 - **IAM Role and Policy for Gateways** separate IAM policy for Aviatrix gateway. API support only.
-- **BGP Connection Holdtime** can now be modified through the Aviatrix Controller. One use case of modifying BGP Hold Timer is to have a quicker BGP failover time. For more information, refer to `BGP Hold Time doc <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-hold-time>`_
+z- **BGP Connection Holdtime** can now be modified through the Aviatrix Controller. One use case of modifying BGP Hold Timer is to have a quicker BGP failover time. For more information, refer to `BGP Hold Time doc <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-hold-time>`_
 
 2. FireNet
 -------------
@@ -49,6 +49,20 @@ R6.4 (Coming Soon)
 - **Route Table Optimization** allows customer to skip public route table programming. This is supported in AWS only. For more information, refer to `Transit List doc <https://docs.aviatrix.com/HowTos/transit_list.html>`_
 - **Notification Enable/Disable Option** gives an ability to customers to disable exception emails send to Aviatrix. For more information, refer to `How to not send exception notification to Aviatrix doc <https://docs.aviatrix.com/HowTos/alert_and_email.html#how-to-not-send-exception-notification-to-aviatrix>`_
 
+6. Behavior Change Notice 
+-------------------------- 
+- Aviatrix is setting the public IP address of a peer device as the default remote identifier for an S2C connection. If the peer device uses its private IP address as the local identifier, the user needs to manually update the private IP of the peer device to use the remote identifier. In the Aviatrix Controller, go to the Aviatrix S2C page -> Edit connection -> Remote Identifier and update the private IP of the peer device to use the remote identifier. 
+ 
+- The API "get_transit_or_spoke_gateway_details" result format changed.
+
+- Two CaaG can’t have the same public IP, e.g. mgmt interface behind the same NAT gateway.
+
+7. Before you Upgrade 
+-------------------------- 
+- Gateway FQDN names (gateway_name + aviatrixnetwork.com) longer than 64 characters will prevent gateways from booting up correctly.
+- Standalone CloudN cannot be upgrade to 6.4.
+- Please review the latest field notices (FN#22 - 28), and take a recommended action for any `field notices <https://docs.aviatrix.com/HowTos/field_notices.html>`_ applicable to your environment.
+- Aviatrix released new gateway and Controller images/AMIs for AWS and Azure.
 
 R6.3.2415 (04/19/2021)
 =======================
