@@ -43,7 +43,7 @@ If you connect the branch router to an Aviatrix Transit Gateway, refer to the fo
 Input Field                                            Value
 =========================================              ==========================
 Branch                                                 A registered branch router.
-Aviatrix Transit Gateway                               An Aviatrix Transit Gateway in AWS. (Other cloud type not supported)
+Aviatrix Transit Gateway                               An Aviatrix Transit Gateway.
 Connection Name                                        A unique name for the connection.
 BGP                                                    Select BGP if BGP is the protocol between branch and Aviatrix Transit Gateway.
 Aviatrix Transit Gateway BGP ASN                       If BGP is selected, enter the BGP ASN number for the Aviatrix Transit Gateway.
