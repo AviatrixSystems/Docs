@@ -75,7 +75,7 @@ Existing Customers- Gateway Image upgrade
 
   #. Go to your Controller management console 
 
-  #. Go to Troubleshoot > Diagnostics > Gateway -> Gateway Replace. Select each Gateway and click Replace. 
+  #. Go to Troubleshoot > Diagnostics > Gateway -> Gateway Replace. Select each Gateway and click Replace. (`More info on  Gateway Replace operation <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#gateway-replace>`_)
 
   |gateway_replace|
 
