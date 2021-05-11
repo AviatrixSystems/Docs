@@ -46,7 +46,7 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
     * New Gateways are automatically deployed with the latest AMI - we suggest that you upgrade to the latest Controller release and then deploy new gateways
     * Gateways can be upgraded to use the latest AMI's through the `gateway replace operation <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-gateway-image-upgrade>`_. We recommend that this operation is executed when the Controller is running the latest version, so your gateways can be built using the latest AMI
     * If your controller is running V6.2.1955 or later, you can go to "Settings->Maintenance->Software Patches->Update Available Patches", to download a new utility called "Generate list of Aviatrix Gateways using deprecated AMIs". Running this patch will send an email to the admin with a list of gateways running deprecated AMI's.
-    * **From v6.4, when you upgrade your Aviatrix Controller and Gateways, any gateways which are running on Ubuntu14 and Ubuntu16 will not be upgraded** as documented in `Field Notice 26 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0026-2021-04-28>`_. Please follow the instructions in the field notice to identify these gateways and replace them before you start your upgrade to 6.4
+    * **From v6.4, when you upgrade your Aviatrix Controller and Gateways, any gateways which are running on Ubuntu14 and Ubuntu16 run the risk of not getting upgraded** as documented in `Field Notice 26 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0026-2021-04-28>`_. Please follow the instructions in the field notice to identify these gateways and replace them before you start your upgrade to 6.4
 
 
 
