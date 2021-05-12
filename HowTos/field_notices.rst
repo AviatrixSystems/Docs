@@ -8,6 +8,15 @@ Field Notices
  
 
 
+Field Notice 0029 (2021/05/11)
+--------------------------------
+**Do not upgrade Controllers to R6.4.2499 if you have CloudN’s in your network**
+
+Due to some unresolved issues in R6.4.2499, we strongly ask that you do not upgrade your Aviatrix Controller or CloudN devices to R6.4.2499. If you upgrade to this build, your CloudNs could fail, impacting your network operations.
+ 
+Please look to our release notes on future 6.4 builds for guidance on upgrading your network when CloudN devices are involved. We apologize for any inconvenience.
+
+
 
 Field Notice 0028 (2021/05/03)
 --------------------------------
