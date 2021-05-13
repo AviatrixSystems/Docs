@@ -45,9 +45,13 @@ Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix g
 
 Make sure the deployment meets the following specifications:
 
-1.	ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
-2.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
-3.	Aviatrix Transit Gateway minimum instance size should be VM.Standard2.4 or more
+  1.	ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
+  2.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
+  3.	Aviatrix Transit Gateway minimum instance size should be VM.Standard2.4 or more
+
+.. Note::
+
+  Transit FireNet Insane mode is not supported in Release 6.4.
 
 
 Procedure
