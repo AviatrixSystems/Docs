@@ -66,6 +66,24 @@ Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/
 deploy Aviatrix Transit Gateways and attach at least one Spoke gateway or one Spoke VNet. When you are done, proceed to Step 1.
 
 
+Prerequisite for OCI
+------------------------
+
+Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed in Transit VCN and/or in Spoke VCN in OCI.
+
+Make sure the deployment meets the following specifications:
+
+  1. ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
+  #. Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
+  #. Aviatrix Transit Gateway minimum instance size should be VM.Standard2.4 or more
+
+Follow the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to
+deploy Aviatrix Transit Gateways and attach at least one Spoke gateway. When you are done, proceed to Step 1.
+
+.. Note::
+
+  Transit FireNet Insane mode is not supported in Release 6.4.
+  
 
 1. Enable Transit FireNet Function
 ------------------------------------------------
