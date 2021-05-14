@@ -19,7 +19,7 @@ R6.4.2499 (05/10/2021)
 - **Transit Peering Insane Mode Support over Public Network** provides high performance Transit Gateway peering to multi-cloud networks with public network connectivity between AWS and Azure only. To configure Insane Mode over public networks, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Insane mode over Internet for a new peering connection. For more information, refer to `Peering over Public Network or Internet doc <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network-or-internet>`_
 - **OCI Transit Insane Mode Support** expands our Insane Mode Encryption Service to OCI networks. The support includes Insane Mode for VCN to VCN encrypted peering and Transit Peering connections. Launch an OCI gateway with Insane Mode enabled to get started. For more information, refer to `OCI Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#oci-performance-test-results>`_
 - **IAM Role and Policy for Gateways** separate IAM policy for Aviatrix gateway. API support only.
-z- **BGP Connection Holdtime** can now be modified through the Aviatrix Controller. One use case of modifying BGP Hold Timer is to have a quicker BGP failover time. For more information, refer to `BGP Hold Time doc <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-hold-time>`_
+- **BGP Connection Holdtime** can now be modified through the Aviatrix Controller. One use case of modifying BGP Hold Timer is to have a quicker BGP failover time. For more information, refer to `BGP Hold Time doc <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-hold-time>`_
 
 2. FireNet
 -------------
