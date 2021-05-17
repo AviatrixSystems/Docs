@@ -7,6 +7,51 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+Release 1.4.4
+-----------------
+- **Bug fix** Performance Fixes for Dashboard - Overview and Traffic Pages load faster.
+- **Bug fix** Security fixes
+- **Improvement** Topology loads better
+- **Enhancement** Latencies can now be refreshed at user specified intervals
+- **Enhancement** Topology Replay - loads much faster for bigger changes
+
+Release 1.4.3.3
+-----------------
+- **Bug fix** Security fixes
+
+Release 1.4.3
+-----------------
+- **Dashboard -> Traffic page** Detailed metrics on data sent and received in the last hour and day for instances, regions, GWs and VPCs/VNETs/VCNs. Also shows the trend and detailed traffic chart for each cloud construct. Ties into FlowIQ for deeper visibility.
+- **Security -> Audit** End to end audit on every API call (with response status, user who made the call, arguments for the call), aggregated hourly, daily, monthly and fully searchable, filterable and sortable.
+- **Search for titles/notes in the topology replay timeline across timestamps** Replay now ties into Audit so that you know who made the infrastructure change(s) and when it was (they were) made.
+- **SSO** Configure Copilot in the controller UI and login into copilot from the Controller directly without having to enter the credentials. 
+- **Cloud Routes and BGP** section now scale to work with Controller 6.4 API changes, backward compatible with pre-6.4 APIs.
+- **Cloud Routes Search** Search, filter and highlight across routes/GWs for anything you see on the page (name, routes, cloud provider, status, tunnels). Search for IP in Subnet also highlights which CIDR the IP is part of.
+- Look and feel improvements for Settings Pages and Notifications page.
+- **Bug fix** Good number of UX enhancements and bug fixes.
+
+
+Release 1.4.2.1
+-----------------
+- A patch update to the release 1.4.2 
+- **Improvement** in scalability and security. Support 100k+ changes in topology diff and more than 250k tunnels in the cloud routes section (which is about 40MB of tunnels data rendered in less than 5 secs). We also made improvements to our middleware to secure Copilot. We now logout the user immediately from accessing copilot data, if the user gets deleted from the controller.
+
+
+Release 1.4.2
+----------------
+- **Scale** Scaled the cloud routes section to handle any number of routes, so for GWs with 10ks of routes is blazing fast. The Latency charts are scaled too to handle 1000s of charts each for one topology edge.
+- **Search** You can even search and highlight across 1000s of routes across GWs. 
+- **Bug fix** We fixed our disk cleanup logic that periodically frees up space in the copilot instance for a user specified threshold percentage of free disk.
+- **Bug fix** We fixed some bugs in topology replay, talking of which, you can now hide/show highlited nodes to clear the clutter while viewing changed nodes.
+- **Enhancement** When you receive a ‘closed’ alert (email or webhook) it also contains what hosts were previously affected, so customers can use third party tools (like OpsGenie) to parse for fields of their interest.
+- **Improvement** Minor UX improvements 
+
+Release 1.4.1 
+-----------------
+- **Bug Fixes** 
+- **Scale** Large environment support in Latency Monitor and in Replay. 
+- **Topology Replay** Ability to now add notes and a tag to a change in replay.
+
 Releases 1.4.0.1, 1.4.0.2
 ----------------------------
 
