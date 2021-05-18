@@ -2,6 +2,30 @@
 Release Notes
 =======================================
 
+
+R6.4.2561 (05/18/2021)
+========================
+- **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and cloudn, backup/restore breaks the control connection between the controller and cloudn 
+- **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
+- **Bug fix** In the Alibaba cloud, after running for a while BGP sessions on the IPSEC tunnel can go down at random.
+- **Bug fix** When using insane mode over the internet, missing Elastic IP addresses can cause some tunnels not to come up.
+- **Bug fix** When a new transit gateway for FireNet is launched on Azure, a false notification indicating that interface eth1 is down and needs to be restarted manually is sent.
+- **Bug fix** Disconnecting last BGP connection does not clear the IP prefix configuration.
+- **Bug fix** When a new best path is selected, old routes are deleted causing traffic interruptions.
+- **Bug fix** In GCP, when FireNet and FQDN Filtering are enabled the gateway is no longer associated with the existing instance group after the gateway is replaced.
+- **Bug fix** Deleting then recreating transit peering connections blocks some tunnels from delivering traffic.
+- **Bug fix** In GCP, after a NIC connection goes down the gateway fails to restart.
+- **Bug fix** Route updates can take excessive time after upgrading to 6.4.
+- **Bug fix** Unable to attach OCI spoke gateway to OCI transit gateway after upgrading to 6.4.
+- **Bug fix** When a spoke is attached to an egress IP, the skip public route table update operation is not working.
+- **Bug fix** Some gateways may not be upgraded during the 6.4 upgrade process.
+- **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
+- **Bug fix** Block creating a global network from AWS China controllers.
+- **Bug fix** In Alibaba clouds, after deleting a transit gateway you may find invalid paths to certificates.
+- **Bug fix** Enable the custom Gateway IAM role feature for AWS China and Government clouds through the API. 
+
+
+
 R6.4.2499 (05/10/2021)
 ========================
 
