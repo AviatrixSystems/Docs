@@ -5,6 +5,10 @@ Release Notes
 
 R6.4.2561 (05/18/2021)
 ========================
+
+.. note::
+  Controllers with CaaGs can upgrade to this patch release. Stand-alone CloudNs should not upgrade to this release.
+
 - **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and cloudn, backup/restore breaks the control connection between the controller and cloudn 
 - **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
 - **Bug fix** In the Alibaba cloud, after running for a while BGP sessions on the IPSEC tunnel can go down at random.
@@ -24,8 +28,6 @@ R6.4.2561 (05/18/2021)
 - **Bug fix** In Alibaba clouds, after deleting a transit gateway you may find invalid paths to certificates.
 - **Bug fix** Enable the custom Gateway IAM role feature for AWS China and Government clouds through the API. 
 
-.. note::
-  CaaG customers can upgrade to this patch release. Not supported for stand-alone Cloudn customers.
 
 R6.4.2499 (05/10/2021)
 ========================
