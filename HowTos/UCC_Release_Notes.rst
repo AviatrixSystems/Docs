@@ -24,7 +24,8 @@ R6.4.2561 (05/18/2021)
 - **Bug fix** In Alibaba clouds, after deleting a transit gateway you may find invalid paths to certificates.
 - **Bug fix** Enable the custom Gateway IAM role feature for AWS China and Government clouds through the API. 
 
-
+.. note::
+  CaaG customers can upgrade to this patch release. Not supported for stand-alone Cloudn customers.
 
 R6.4.2499 (05/10/2021)
 ========================
