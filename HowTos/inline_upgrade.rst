@@ -61,16 +61,33 @@ Upgrades are done from the Controller UI.  To check for an available update and 
 #. Click `Dry Run` to make sure the controller and gateway are in contact and allowed to download software from our release server. If the `Dry Run` is unsuccessful, you may want to check controller/gateway security groups and VPC DNS settings to make sure their outbound traffic to Internet is allowed. 
 #. Make a backup before the upgrade by following the instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 #. Please clean up your bucket where you store your controller backups, so that only the last 3 relevant configuration files are seen. Any old configurations should be moved out to your archive bucket/folder.
-#. Click on `"Upgrade to the latest"` to upgrade your software to the latest version
+#. Controller Upgrade Operation
+  * For every single upgrade action, you should go through all of the following steps:
+  
+    * Ensure that all gateways and tunnels are up
+    * Test all your network paths for connectivity - before upgrade
+    * Backup your controller configuration before upgrade
+    * Dry Run
+    * Upgrade
+    * Verify that all gateways are upgraded
+    * Verify that all gateways and tunnels are up
+    * Test all your network paths for connectivity - after upgrade
+    * Backup your controller configuration - after upgrade
+    
+  * Upgrading Controller to the latest build in the Current Release
+  
+    * To upgrade to latest build in the same release that the Controller is currently on, please use the "Settings/Maintenance/Upgrade/Upgrade to Custom Release" and type in the current running release. For example, if your Controller is running 6.2.1000 and you would like to upgrade to latest build on 6.2 (let's say 6.2.2500) - you should type in "6.2" in the "Upgrade to Custom Release" textbox and then click on "Upgrade to Custom Release" button.
+    
+  * Upgrading Controller to next release
+  
+    * The first upgrade should always be to the latest build in the current release. For example, if you are starting with your Controller running 6.2.1000, you should first upgrade to latest build of 6.2, before you upgrade to 6.3 - by going to "Settings/Maintenance/Upgrade/Upgrade to Custom Release" and entering "6.2". After the first upgrade to latest build in the same release, use the following instructions to upgrade to next release (6.3 for this example)
 
-    #. If upgrading from a release<3.3.x: Please upgrade to the next immediate release by entering the right version in "Upgrade to custom release" - the correct order is: 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3
-    #. Upgrading from a release>=3.3.x: The Aviatrix Controller will enforce incremental upgrades, so please click on "Upgrade to the Latest". You might have to go through multiple upgrades before you reach the latest release. Follow the directions in the next note when you upgrade to release 4.0
-    #. If upgrading from a release<4.0: Once you upgrade to 4.0, please go to "Aviatrix Console > Troubleshoot > Diagnostics > Services" and click on "Restart Cloudxd" - please click on it only one time, wait for a minute, close your browser and start a new https connection to Aviatrix Console. This is only needed if your controller is based on 14.04 AMI. This will not be required for later AMI's.
-    #. **If you are running 4.7 or reached 4.7 during upgrade,** the next release to upgrade is 5.0 and you would have to go to "Upgrade to Custom Release" and enter "5.0" in "Release Version" and click on "Upgrade to a Custom Release" button. Once you have reached 5.0, you can go back to using "Upgrade to the Latest" button.
-    #. **If you are running 5.4 or reached 5.4 during upgrade,** please check the version you are running. If you are running 5.4.1290 or higher, you can use "Upgrade to the Latest" to move to 6.0. If you are running a build lower than 5.4.1290, please upgrade to the latest 5.4 build by entering "5.4" in "Release Version" and click on "Upgrade to a Custom Release" button. Once you have reached a build 5.4.1290 or higher, you can go back to using "Upgrade to the Latest" button to move to 6.0
-    #. **If you are running 6.0 or reached 6.0 during upgrade,** please check the version you are running. If you are running 6.0.2483 or higher, you can use "Upgrade to the Latest" to move to 6.1. If you are running a build lower than 6.0.2483, please upgrade to the latest 6.0 build by entering "6.0" in "Release Version" and click on "Upgrade to a Custom Release" button. Once you have reached a build 6.0.2483 or higher, you can go back to using "Upgrade to the Latest" button to move to 6.1
+    * You can use "Settings/Maintenance/Upgrade/Upgrade to the Latest" to move to the next release, except in the following cases:
+    
+      * If upgrading from a release<3.3.x: Please upgrade to the next immediate release by entering the right version in "Upgrade to custom release" - the correct order is: 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3
+      * When you reach release 4.0: Please go to “Aviatrix Console > Troubleshoot > Diagnostics > Services” and click on “Restart Cloudxd” - please click on it only one time, wait for a minute, close your browser and start a new https connection to Aviatrix Console. Continue upgrading using "Settings/Maintenance/Upgrade/Upgrade to the Latest"
+      * When you reach release 4.7: Please go to "Upgrade to custom release" and enter "5.0"
 
-    #. **If you are trying to upgrade to the latest build in the same release that you are currently on,** please use the "Upgrade to Custom Release" and type in your release. For example, if you are running 5.2.2186 and the latest release shows 5.3.1499 and you would like to upgrade to 5.2.latestrelease (let's say 5.2.2199) and avoid going to 5.3 - you should type in "5.2" in the "Upgrade to Custom Release" textbox and then click on "Upgrade to Custom Release" button.
 
 #. Please go to "AviatrixConsole/Settings/Maintenance/Upgrade/GatewayUpgradeStatus" and check that all gateways have been upgraded - “Current Version” on all gateways should match the version you have upgraded to. Please flip through additional pages if you have more than 20 gateways. If any gateway failed, please run `diagnostics <https://docs.aviatrix.com/HowTos/troubleshooting.html#run-diagnostics-on-a-gateway>`_ and a `forced upgrade <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_. If needed, please open a ticket with diags and `tracelogs  <https://docs.aviatrix.com/HowTos/troubleshooting.html#upload-tracelog>`_. If any of the gateways were not upgraded as they were running older ubuntu 14 or ubuntu 16 images, you can `replace them to have them rebuilt with the latest ami's <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-gateway-image-upgrade>`_. We recommend that these older gateways be replaced before upgrading to v6.4. Please check `Field Notice 28 <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0028-2021-05-03>`_
 #. Make a backup after the upgrade by following instructions documented `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
