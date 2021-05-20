@@ -7,9 +7,8 @@ R6.4.2561 (05/18/2021)
 ========================
 
 .. note::
-  Controllers with CaaGs can upgrade to this patch release. Stand-alone CloudNs should not upgrade to this release.
+  Customers should hold off upgrading Controller with managed CloudN to 6.4 until next 6.4-patch
 
-- **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and cloudn, backup/restore breaks the control connection between the controller and cloudn 
 - **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
 - **Bug fix** In the Alibaba cloud, after running for a while BGP sessions on the IPSEC tunnel can go down at random.
 - **Bug fix** When using insane mode over the internet, missing Elastic IP addresses can cause some tunnels not to come up.
