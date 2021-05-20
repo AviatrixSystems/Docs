@@ -7,7 +7,7 @@ R6.4.2561 (05/18/2021)
 ========================
 
 .. note::
-  Customers should hold off upgrading Controller with managed CloudN to 6.4 until next 6.4-patch
+  Customers should hold off upgrading Controller with CloudN to 6.4 until next 6.4-patch
 
 - **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
 - **Bug fix** In the Alibaba cloud, after running for a while BGP sessions on the IPSEC tunnel can go down at random.
