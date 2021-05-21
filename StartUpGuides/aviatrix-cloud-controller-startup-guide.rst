@@ -315,6 +315,8 @@ In addition to Metered AMI, we offer a few others, as shown below. Subscribe to 
 
  - `Aviatrix Secure Networking Platform - BYOL <https://aws.amazon.com/marketplace/pp/prodview-nsys2ingy6m3w?ref=_ptnr_docs_startup_byol>`_
 
+ - `Aviatrix Secure Networking Platform - BYOL in AWS China <https://awsmarketplace.amazonaws.cn/marketplace/pp/prodview-tr55yz2zpuzlo>`_
+
  - `Community BYOL (Available only in us-west-2 region) <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-community-byol.template>`_
 
 
