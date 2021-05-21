@@ -135,6 +135,18 @@ How to find Aviatrix Controller and CoPilot on China Marketplace?
 .. Note:: Both Aviatrix Controller and CoPilot are published on AWS China Marketplace only.
 ..
 
+Where is the URL for Aviatrix Controller and CoPilot on China Marketplace?
+===========================================================================
+
+- `Aviatrix Secure Networking Platform - BYOL <https://awsmarketplace.amazonaws.cn/marketplace/pp/prodview-tr55yz2zpuzlo>`_
+
+- `Aviatrix CoPilot - BYOL <https://awsmarketplace.amazonaws.cn/marketplace/pp/prodview-m73cvirso7uu6>`_
+
+Where is the URL to launch Aviatrix Controller from AWS CloudFormation in AWS China?
+=====================================================================================
+
+- `aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template <https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-china-cloudformation-templates/aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template>`_
+
 What is the design recommendation for China region?
 ====================================================
 
