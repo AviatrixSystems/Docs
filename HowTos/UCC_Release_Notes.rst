@@ -56,7 +56,6 @@ R6.4.2499 (05/10/2021)
 - **Fortinet Fortigate for GCP** is now available in GCP when deploying Aviatrix Transit FireNet.
 - **Custom AMI Support for Firewall Instances** allows customer to launch the special images provided by firewall vendors. API support only.
 
-
 3. Site2Cloud
 ---------------
 - **Dynamic routes update for Site2Cloud Connections** adds the capability to auto advertise or remove the remote subnet automatically based on the Up/Down status of the Site2Cloud tunnel. To configure dynamic routes for Site2Cloud, go to Multi-Cloud Transit -> List -> Spoke -> Select Spoke Gateway and click "Auto Advertise Spoke S2C CIDRs" to enable dynamic routes. For more information, refer to `Auto Advertise Spoke Site2Cloud CIDRs doc <https://docs.aviatrix.com/HowTos/transit_list.html#auto-advertise-spoke-site2cloud-cidrs>`_
@@ -89,6 +88,16 @@ R6.4.2499 (05/10/2021)
 - Standalone CloudN cannot be upgrade to 6.4.
 - Please review the latest field notices (FN#22 - 28), and take a recommended action for any `field notices <https://docs.aviatrix.com/HowTos/field_notices.html>`_ applicable to your environment.
 - Aviatrix released new gateway and Controller images/AMIs for AWS and Azure.
+
+R6.3.2475 (05/22/2021)
+=======================
+- **End of life** Gateway images based on Ubuntu 14 and Ubuntu 16 are deprecated. You MUST replace these with Ubuntu 18 based images before upgrading to 6.4. Refer to FN28 for more details.
+- **Bug fix** Fixed exception for OCI gateway launch.
+- **Bug fix** Fixed bug in GCP FireNet with Palo Alto VM-Series image version listing.
+- **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and Cloudn.
+- **Bug fix** Fixed an issue with BGP route advertisement after spoke attachment
+- **Bug fix** When a gateway NIC goes down, an alert will be triggered and the gateway will be taken down and brought back up again after self-remediation. 
+- **Bug Fix** If a VNet route table is deleted unexpectedly, VNets could connect to the wrong transit gateway spoke for the subscription. When VNets under different subscriptions use the same Resource group name, and both Spoke VNets connect to different transit gateways, the controller cannot distinguish which VNet should attach to which gateway.
 
 R6.3.2415 (04/19/2021)
 =======================
