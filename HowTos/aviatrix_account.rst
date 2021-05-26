@@ -72,16 +72,6 @@ CloudFormation script on each secondary account first, then use Terraform accoun
 
 The CloudFormation is necessary to create IAM roles, policies and establish a trust relationship with the primary account (The account where the Controller is launched.)
 
-Setup Account Name Alias
-------------------------
-
-Account Name Alias feature allows you to change the account name after it is created by providing an alias name and allowing it to be modified at any given time. The use case is customers often need to change some account names after the network has been built out to certain scale. By allowing account name alias to be modified without having to delete the account and thus reduces network downtime.
-
-To change account name alias, go to Accounts -> Access Accounts, then hover the mouse at a specific account, click the Pen icon and start typing.
-
-|account_name_alias|
-
-To revert back to the original account name, go to Accounts -> Access Accounts, then hover the mouse at the specific account with alias name, click the Pen icon and apply the name with empty text.
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
    :scale: 30%
