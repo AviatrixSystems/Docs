@@ -2,14 +2,13 @@
 Release Notes
 =======================================
 
-R6.4.2614 (05/30/2021)
+R6.4.2618 (05/30/2021)
 ========================
 - **Bug fix** Fixed the Managed CloudN state flapping issue over the private network in Azure cloud.
 - **Bug fix** Enabling segmentation caused some routes missing in the spoke routing table
 - **Bug fix** Fixed exception for SAML VPN connection.
 - **Bug fix** In Ali Cloud, Transit gateway showed all connections down.
 - **Bug fix** In some corner cases Controller HA, backup/restore broke the control connection between the controller and CloudN.
-- **Bug fix** Fixed the python 3 exception.
 - **Bug fix** Fixed exception when downloading the OCI OVPN file
 - **Bug fix** Fixed Managed CloudN exception during registration.
 - **Enhancement** Add RBAC permission support for Managed CloudN. Earlier, admin privilege were requierd to register a CloudN to the controller.
