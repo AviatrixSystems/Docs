@@ -2,9 +2,24 @@
 Image Release Notes
 =======================================
 
-****Next Controller image is scheduled for April 2021****
+****Next Controller image is scheduled for Novemeber 2021****
 
-****Next Gateway image is scheduled for April 2021****
+****Next Gateway image is scheduled for November 2021****
+
+
+Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
+====================================================================================================
+
+- R6.4.2499 Software Version is required
+
+- Support new IPSec encryption mechanism
+
+- Update security patches to date 
+
+- Introduced the gateway in AWS China and Ali Cloud
+
+- Fix and pass vulnerabilities scan to Feb/2021 (mid ref: 20573)
+
 
 Controller Images: AWS AMI – 050120 (8/17/2020) 
 ===============================================
