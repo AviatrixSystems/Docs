@@ -18,7 +18,7 @@ Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021)
 
 - Introduced the gateway in AWS China and Ali Cloud
 
-- Fix and pass vulnerabilities scan to Feb/2021 (mid ref: 20573)
+- Fix and pass vulnerabilities scan to Feb/2021
 
 
 Controller Images: AWS AMI – 050120 (8/17/2020) 
