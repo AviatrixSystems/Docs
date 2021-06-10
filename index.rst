@@ -76,6 +76,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/accesskey
    HowTos/account_audit
    HowTos/rbac_faq
+   HowTos/oci_iam_policy
 
 .. _Gateway:
 
