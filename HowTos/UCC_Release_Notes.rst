@@ -8,7 +8,7 @@ R6.4.2672 (06/11/2021)
 - **Bug fix** Availability Domain and Fault Domain not available in OCI gateway and firewall instances.
 - **Bug fix** Terraform bug fix, cannot delete all gateway tags.
 - **Bug fix** SNAT cannot be disabled on Azure spoke gateway.
-- **Bug fix** OCI Gateways deployed with Active Mesh are not being deployed in separate Active Directories.
+- **Bug fix** OCI Gateways deployed with Active Mesh are not being deployed in separate Availability Domains.
 - **Bug fix** CAAG OCI, OCI tunnels missing after replacing the OCI transit gateway
 - **Bug fix** Controller in Azure unable to push RFC-1918 route to Panorama in OCI.
 - **Bug fix** Intermittent connectivity issues from CoPilot to Controller.
