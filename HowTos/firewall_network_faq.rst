@@ -66,6 +66,15 @@ For enterprises that wish to deploy a firewall in AWS, Aviatrix’s FireNet depl
  - **Vendor Integration** Launch Palo Alto Networks VM-Series from the Aviatrix Controller console to simplify deployment. 
  - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when on-prem route changes or VPC attachment changes. 
 
+Does FireNet support other firewalls?
+--------------------------------------------------------------
+
+The following firewalls are supported:
+- Palo Alto VM-Series
+- Check Point CloudGuard
+- Fortinet FortiGate
+
+
 Is the FireNet solution recommended by Palo Alto Networks?
 --------------------------------------------------------------
 
