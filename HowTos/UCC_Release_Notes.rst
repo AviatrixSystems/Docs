@@ -10,12 +10,12 @@ R6.4.2672 (06/11/2021)
 - **Bug fix** SNAT cannot be disabled on Azure spoke gateway.
 - **Bug fix** OCI Gateways deployed with Active Mesh are not being deployed in separate Availability Domains.
 - **Bug fix** CAAG OCI, OCI tunnels missing after replacing the OCI transit gateway
-- **Bug fix** Controller in Azure unable to push RFC-1918 route to Panorama in OCI.
+- **Bug fix** Aviatrix Controller in Azure unable to push RFC-1918 route to Panorama in OCI.
 - **Bug fix** Intermittent connectivity issues from CoPilot to Controller.
 - **Bug fix** Enabling FQDN Discovery fails, some configuration changes are not removed, and the network connection breaks.
 - **Bug fix** Upgrade fails when upgrades from 6.3 to 6.4 using the upgrade to latest release feature.
 - **Bug fix** Cannot add certificates to LDAP configuration, error C:\fakepath\user.crt does not exist.
-- **Enhancement** Aviatrix controller blocks multiple simultaneous logins from one account.
+- **Enhancement** Aviatrix Controller blocks multiple simultaneous logins from one account.
 
 
 
