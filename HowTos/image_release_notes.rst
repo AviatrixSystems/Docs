@@ -2,7 +2,7 @@
 Image Release Notes
 =======================================
 
-****Next Controller image is scheduled for Novemeber 2021****
+****Next Controller image is scheduled for November 2021****
 
 ****Next Gateway image is scheduled for November 2021****
 
