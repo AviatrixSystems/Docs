@@ -164,7 +164,7 @@ MFA Authentication
 
 You can select either Duo or Okta for the VPN gateway to authenticate to these two services on behalf of a VPN user.
 
-In this case, you can use OpenVPN® clients such as Tunnelblick for iOS and OpenVPN for Windows.
+When either option is selected, you can use native OpenVPN® client software such as Tunnelblick for iOS and OpenVPN for Windows.
 
 For how to configure Duo, check out: `How to configure Duo. <http://docs.aviatrix.com/HowTos/duo_auth.html>`_
 
