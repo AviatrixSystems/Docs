@@ -119,6 +119,97 @@ to service account so that Aviatrix can perform its functions properly. For inst
 If an organization is currently using GCP Shared VPC or planning to use in future then it is a requirement to enable Organization Administrator 
 and Project IAM Admin as well.
 
+In addition to restricting the GCP roles, you can restrict the rights for those roles. You can grant roles permission to perform the following tasks:
+
+::
+
+   compute.addresses.create
+   compute.addresses.createInternal
+   compute.addresses.delete
+   compute.addresses.deleteInternal
+   compute.addresses.get
+   compute.addresses.list
+   compute.addresses.use
+   compute.addresses.useInternal
+   compute.disks.create
+   compute.disks.get
+   compute.firewalls.create
+   compute.firewalls.delete
+   compute.firewalls.get
+   compute.firewalls.list
+   compute.firewalls.update
+   compute.forwardingRules.create
+   compute.forwardingRules.delete
+   compute.forwardingRules.list
+   compute.globalOperations.get
+   compute.healthChecks.create
+   compute.healthChecks.delete
+   compute.healthChecks.useReadOnly
+   compute.httpHealthChecks.get
+   compute.httpHealthChecks.useReadOnly
+   compute.images.list
+   compute.images.useReadOnly
+   compute.instanceGroups.create
+   compute.instanceGroups.delete
+   compute.instanceGroups.get
+   compute.instanceGroups.update
+   compute.instanceGroups.use
+   compute.instances.create
+   compute.instances.delete
+   compute.instances.get
+   compute.instances.list
+   compute.instances.setMachineType
+   compute.instances.setMetadata
+   compute.instances.setTags
+   compute.instances.start
+   compute.instances.stop
+   compute.instances.updateNetworkInterface
+   compute.instances.use
+   compute.networks.addPeering
+   compute.networks.create
+   compute.networks.delete
+   compute.networks.get
+   compute.networks.list
+   compute.networks.removePeering
+   compute.networks.updatePolicy
+   compute.projects.get
+   compute.projects.setCommonInstanceMetadata
+   compute.regionBackendServices.create
+   compute.regionBackendServices.delete
+   compute.regionBackendServices.get
+   compute.regionBackendServices.update
+   compute.regionBackendServices.use
+   compute.regionOperations.get
+   compute.routes.create
+   compute.routes.delete
+   compute.routes.list
+   compute.subnetworks.create
+   compute.subnetworks.delete
+   compute.subnetworks.get
+   compute.subnetworks.list
+   compute.subnetworks.use
+   compute.subnetworks.useExternalIp
+   compute.targetPools.addInstance
+   compute.targetPools.create
+   compute.targetPools.delete
+   compute.targetPools.get
+   compute.targetPools.removeInstance
+   compute.targetPools.use
+   compute.zoneOperations.get
+   compute.zones.list
+   iam.serviceAccounts.actAs
+   logging.logEntries.create
+   pubsub.subscriptions.consume
+   pubsub.subscriptions.create
+   pubsub.subscriptions.delete
+   pubsub.subscriptions.get
+   pubsub.topics.attachSubscription
+   pubsub.topics.create
+   pubsub.topics.delete
+   pubsub.topics.get
+   pubsub.topics.publish
+   resourcemanager.projects.get
+
 Troubleshooting Tips
 ----------------------
 
