@@ -128,6 +128,12 @@ On the other hand, if on-prem advertise the default route to the Aviatrix Transi
 propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
 
 
+Spoke to Spoke Peering Monitoring
+-------------------------------------
+
+The Peering page is only used only to create and delete peered spoke to spoke connections in activemesh mode. To view the status of the connection, go to the Multi-Cloud Transit > List > Spoke page.
+
+
 .. |multi-region| image:: tgw_design_patterns_media/multi-region.png
    :scale: 30%
 
