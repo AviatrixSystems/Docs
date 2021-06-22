@@ -72,12 +72,9 @@ How does CoPilot get its data?
 If Controller IP changes and if copilot is associated with an old controller IP, how to login into Copilot?
 ============================================================================================================
 
-Go to Controller UI and navigate to settings -> copilot. 
-Add the copilot IP address and hit save. This will associate the copilot with controller.
-Upon associating copilot with controller, Copilot logo shows up in the controller UI's header
-Click on the copilot logo to directly login into copilot using SSO. This will let the user in and will update the controller's IP in Copilot's database.
+If the user is signed-in into copilot is to - go to Copilot UI -> Settings and click on 'Reset controller IP' button. It will prompt the user to enter new Controller IP address and service account credentials.
 
-Another way to update controller IP if the user is already signed-in into copilot is to - go to Copilot UI -> Settings and click on 'Reset controller IP' button. It will prompt the user to enter new Controller IP address and service account credentials.
+If user is logged out, please contact support@aviatrix.com for solution.
 
 
 Is FlowIQ showing realtime traffic? 
