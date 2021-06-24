@@ -7,16 +7,16 @@ Metered AMI Pricing Book
 ===============================
 
 This document describes Aviatrix Metered offering pricing for use cases and scenarios. It applies to both
-`AWS Metered AMI <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1601567061685&sr=0-3&ref_=srh_res_product_title>`_ 
+`AWS Metered AMI <https://aws.amazon.com/marketplace/pp/prodview-leh6ufnwbl6eo>`_ 
 and `Azure Metered AMI <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-saas?tab=Overview>`_ offerings. 
 
 General license and pricing mapping is as follows:
 
 ::
 
-  1 inter-cloud license = $0.58/hour
-  1 intra-cloud license = 0.19/hour
-  1 security service license = $0.19/hour
+  1 inter-cloud license = $0.64/hour
+  1 intra-cloud license = 0.21/hour
+  1 security service license = $0.21/hour
   1 user VPN license = $0.04/hour
 
 Some common notions described in the following sessions:
