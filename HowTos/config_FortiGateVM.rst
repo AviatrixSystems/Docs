@@ -135,9 +135,13 @@ Integrate the FortiGate firewall with the Aviatrix controller.
 
   - In the FortiGate GUI, go to System > Admin Profiles > Create New.
 
-  - Enter the information to create the token. You must enable the Read/Write option for the network to router connection.
+  - Enable the Read/Write option for Network and click OK.
   
-  - Generate the token.
+  - Navigate to System > Administrators > Create New > REST API Admin.
+  
+  - Supply a Username and choose the Admin Profile from the previous step, and press OK.
+  
+  - Copy the generated token. It will only be displayed once.
 
 - Go to Aviatrix Controller > Firewall Network > Vendor Integration.
 
