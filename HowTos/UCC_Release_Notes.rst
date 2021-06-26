@@ -2,6 +2,15 @@
 Release Notes
 =======================================
 
+R6.4.2674 (06/26/2021)
+========================
+- **Bug fix** In AWS and Azure clouds, gateway and FireNet tag keys and values do not support the colon (:) and other special characters.
+- **Bug fix** Added support for Azure Controller Security Group Management allowing the Network Security Group and the Azure Controller to use different Resource Groups.
+- **Bug fix** Added support for Multiple Dynamic SAML Profile attributes for controller login in list format.
+- **Bug fix** Added size suggestions for deploying ActiveMesh Insane Mode gateway instances in Azure India regions.
+- **Bug fix** Transit list page displays exceptions during gateway deployment.
+
+
 R6.4.2672 (06/11/2021)
 ========================
 - **Bug fix** Gateway FQDN logs fail to download resulting in an error message.
@@ -16,7 +25,6 @@ R6.4.2672 (06/11/2021)
 - **Bug fix** Upgrade fails when upgrades from 6.3 to 6.4 using the upgrade to latest release feature.
 - **Bug fix** Cannot add certificates to LDAP configuration, error C:\fakepath\user.crt does not exist.
 - **Enhancement** Aviatrix Controller blocks multiple simultaneous logins from one account.
-
 
 
 R6.4.2618 (05/30/2021)
