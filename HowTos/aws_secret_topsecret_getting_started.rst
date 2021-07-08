@@ -7,7 +7,7 @@
 Aviatrix Controller and Gateway Deployment Guide in AWS Secret and Top Secret regions
 =====================================================================================
 
-The Aviatrix Secure Networking Platform consists of two components: Aviatrix Controller; and Aviatrix Secure Companion Gateway. The Aviatrix Controller manages the Aviatrix Secure Companion Gateway and orchestrates all connectivities. 
+The Aviatrix Secure Networking Platform consists of two components: Aviatrix Controller and Gateway. The Aviatrix Controller manages the Aviatrix Gateway and orchestrates all connectivities. 
 
 .. _launch_aviatrix_controller:
 
