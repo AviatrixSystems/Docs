@@ -9,8 +9,6 @@ Aviatrix Controller and Gateway Deployment Guide in AWS Secret and Top Secret re
 
 The Aviatrix Secure Networking Platform consists of two components: Aviatrix Controller and Gateway. The Aviatrix Controller manages the Aviatrix Gateway and orchestrates all connectivities. 
 
-.. _launch_aviatrix_controller:
-
 Launch Aviatrix Controller
 ===========================
 
@@ -65,8 +63,8 @@ Launch Aviatrix Gateway
 
 To deploy Aviatrix Secure Companion Gateway from AWS ICMP successfully, make sure you follow the instructions as follows. When complete, you'll be ready to deploy use cases.
 
-Step 1. Follow the step `Launch Aviatrix Controller <#_launch_aviatrix_controller>`_ above
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1. Follow the step `Launch Aviatrix Controller <https://docs.aviatrix.com/HowTos/aws_secret_topsecret_getting_started.html#launch-aviatrix-controller>`_ above
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Step 2. Subscribe to Aviatrix Secure Companion Gateway on AWS ICMP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,7 +74,7 @@ Step 3. Start a Use Case
 
 Congratulations! You are now ready to deploy use cases.
 
-- `Build Net-Gen Transit Network for AWS <https://docs.aviatrix.com/HowTos/tgw_plan.html>`__
+- `Build Aviatrix Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__
 
 
 .. disqus::
