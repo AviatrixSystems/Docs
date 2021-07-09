@@ -22,9 +22,13 @@ If you have already subscribed the Aviatrix Secure Networking Platform - BYOL on
 Step 2. Launch the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Login to AWS ICMP console and navigate to EC2 dashboard page
+Two options to search and deploy Aviatrix Controller:
 
-- Click the button "Launch Instances" and select the product "Aviatrix Secure Networking Platform - BYOL" on AWS ICMP
+- (Option 1) Search the product “Aviatrix Secure Networking Platform - BYOL” on ICMP website
+
+- (Option 2) Login to AWS ICMP console and navigate to EC2 dashboard page
+
+- (Option 2) Click the button “Launch Instances” and select the product “Aviatrix Secure Networking Platform - BYOL” on AWS ICMP
 
 - Follow EC2 configuration workflow to deploy Aviatrix Controller
 
