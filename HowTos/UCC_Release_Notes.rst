@@ -2,6 +2,33 @@
 Release Notes
 =======================================
 
+R6.4.2776 (07/13/2021)
+========================
+
+.. note::
+  - If upgrading from 6.3 to 6.4, please make sure to upgrade the image to 6.3 latest first before upgrading it to release 6.4.
+  - Starting 6.4, Standalone CloudN no longer support HPE over Internet
+ 
+- **Bug fix** NAT rule is missing after replacing a gateway with and S2C mapped tunnel.
+- **Bug fix** When an S2C mapped tunnel route is modified the old iptable entry is not removed.
+- **Bug fix** HA Controller restorations partially fail when DataDog API is integrated.
+- **Bug fix** In Azure clouds the Controller does not deploy more than one firewall instance in the same availability set as the Controller.
+- **Bug fix** False license expiration alerts can be sent to subscribers.
+- **Bug fix** When adding a FireNet instance to the routing path, the default value of the "Attach" flag should be "false".
+- **Bug fix** In some implementations, the firewall does not block traffic to subdomains of domains that are on the whitelist.
+- **Bug fix** The RBAC permissions for Site2cloud configuration download are not correct.
+- **Bug fix** Failed to attach HPE Spoke to Transit due to route already exists error.
+- **Bug fix** Controller unable to push RFC-1918 route to Panorama.
+- **Bug fix** Azure Peering UI filter not working.
+- **Bug fix** Unable to enter User VPN filter content fields on the Controller dashboard.
+- **Enhancement** Reduced memory consumption for BGP event monitoring process and other processes. 
+- **Enhancement** Improved reliability by requiring the OVPN file to use the Global Accelerator DNS name to resolve to the 2 static IP addresses of the accelerator.
+- **Enhancement** Allow changes to the MTU setting in the Aviatrix OVPN client during runtime.
+- **Enhancement** Shortened execution time and memory usage for removing list_vpc and list_saml_info users.
+- **Enhancement** Allow the same PSK to be used for primary and backup Aviatrix gateways based on S2C tunnel policy.
+- **Enhancement** Allow use of colon in tags.
+
+
 R6.4.2674 (06/26/2021)
 ========================
 - **Bug fix** In AWS and Azure clouds, gateway and FireNet tag keys and values do not support the colon (:) and other special characters.
