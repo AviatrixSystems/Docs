@@ -91,6 +91,7 @@ Go to the page "Network -> Interfaces" to configure Physical Interface port2 as 
   - Enter an Alias (i.e.: LAN) for the interface
   - Specify appropriate role (LAN)
   - Enable DHCP to ensure FW retrieve private IP information from AWS console
+  - Enable Administrative Access . IPv4 > HTTPS
   - Disable “Retrieve default gateway from server" 
   
 |v2_fortigate_interface_lan|
