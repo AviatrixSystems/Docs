@@ -2,6 +2,11 @@
 Release Notes
 =======================================
 
+6.4-1804 (07/15/2021)
+========================
+- **Bug fix** When running Aviatrix 6.4 on AWS t2.micro instances, increased memory pressure from new services enabled in 6.4 can result in gateway down events after upgrading to 6.4. This release resolves those issues by removing several legacy packages with scheduled tasks that burden the t2.micro appliances.
+- **Enhancement** When running Aviatrix 6.4 on AWS t2.micro instances, swap memory for t2.micro instances is provided to relieve excess pressure on the instance memory. This allows the operating system to tolerate short periods of overprovisioning and ensure continuous operations.
+
 R6.4.2776 (07/13/2021)
 ========================
 
