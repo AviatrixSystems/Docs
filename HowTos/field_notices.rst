@@ -54,7 +54,7 @@ If you have any difficulties in upgrading your Gateways or have any questions ab
 
 Field Notice 0027 (2021/04/29)
 --------------------------------
-**Gateway names longer than 50 bytes can cause issues**
+**Gateway names longer than 50 bytes or exceeding 64 characters (including Certificate Domain) can cause issues**
 
 **Problem**
 
@@ -69,6 +69,8 @@ Error: command create_peer_xx_gw failed due to exception errors fully qualified 
 Version 6.2 and prior: If spoke or transit name exceeds 50 Bytes, manually delete and re-create gateway with name limited to 50 Bytes or less.
 
 Version 6.3 and higher: Newly created spoke and transit gateway names are checked and limited to 50 Bytes or less. However, if there are any residual gateways (6.2 and prior) with name exceeding 50 Bytes they must be deleted and re-created to avoid this issue.
+
+Onboarding > Step 2: Enter Certificate Domain may also help in recovering older existing instances with longer names. The default certificate domain is 'aviatrixnetworks.com' and can be adjusted to something much shorter (as few as 5 characters-- for example, 'av.uk'). This is used internally only and should not have any traffic impact on the existing deployment.
 
 
 
