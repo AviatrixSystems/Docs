@@ -8,6 +8,28 @@ Field Notices
  
 
 
+Field Notice 0030 (2021/07/19)
+--------------------------------
+**Upgrade from 6.3 to 6.4 could cause gateways to be in down/polling state if any of them have more than 44 characters**
+
+**Problem:**
+
+We had announced in Field Notice 0027(https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0027-2021-04-29) that gateway names are required to be 50 characters or less. We have noticed that during upgrade operations, from 6.3 to 6.4, we are further limited on the gateway name length to 44 characters due to a new default behavior introduced in 6.4.
+ 
+From 6.4, we started using self-signed certs to authenticate management/control communication between controller and gateways. The default cert domain used is "aviatrixnetwork.com". This ends up using 20 characters from our internal max of 64 characters - leaving only 44 characters for the gateway names(including "-hagw", if the gateway has an HA gateway). If the controller has any gateways with names longer than 44 characters, that gateway and the following gateways in the upgrade process could show up as "down/polling" state on the gateway page.
+ 
+**Recommended Solution:**
+
+If all your gateway names have less than 44 characters, you are not impacted by this issue
+If any of your gateway names have more than 50 characters (including "-hagw") please schedule a downtime, delete them, and create them again with shorter names(<44 chars, <39 chars if you have an HA for them).
+If any of your gateway names have more than 44 characters, you have two options
+While in 6.3, you can delete them and recreate them with names shorter than 44 characters (39 chars max, if you plan to have HA gateway, to account for 5 extra characters in "-hagw" which will be appended to the HA gateway name)
+Upgrade to 6.4. Some gateways will not be in "green/up". To recover, head to Controller/Onboarding and click in "AWS" icon and enter "av.com". All gateways should come up in "green/up" status. If not, please perform "Troubleshoot/Diagnostics/Gateway/ForceUpgrade" on the affected gateways.
+ 
+If you need further support, please head to our support portal at https://support.avaiatrix.com and open a new ticket.
+
+
+
 Field Notice 0029 (2021/05/11)
 --------------------------------
 **Do not upgrade Controllers to R6.4.2499 if you have CloudN’s in your network**
