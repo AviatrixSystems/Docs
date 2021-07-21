@@ -20,11 +20,12 @@ From 6.4, we started using self-signed certs to authenticate management/control 
  
 **Recommended Solution:**
 
-If all your gateway names have less than 44 characters, you are not impacted by this issue
-If any of your gateway names have more than 50 characters (including "-hagw") please schedule a downtime, delete them, and create them again with shorter names(<44 chars, <39 chars if you have an HA for them).
-If any of your gateway names have more than 44 characters, you have two options
-While in 6.3, you can delete them and recreate them with names shorter than 44 characters (39 chars max, if you plan to have HA gateway, to account for 5 extra characters in "-hagw" which will be appended to the HA gateway name)
-Upgrade to 6.4. Some gateways will not be in "green/up". To recover, head to Controller/Onboarding and click in "AWS" icon and enter "av.com". All gateways should come up in "green/up" status. If not, please perform "Troubleshoot/Diagnostics/Gateway/ForceUpgrade" on the affected gateways.
+* If all your gateway names(including ha gateways) have less than 44 characters, you are not impacted by this issue
+* If the name length of any of your gateways is 45 to 50 characters, you have two options
+
+    * While in 6.3, you can delete them and recreate them with names shorter than 44 characters (39 chars max, if you plan to have HA gateway, to account for 5 extra characters in "-hagw" which will be appended to the HA gateway name)
+    * Upgrade to 6.4. Some gateways will not be in "green/up". To recover, head to Controller/Onboarding and click in "AWS" icon and enter "av.com". All gateways should come up in "green/up" status. If not, please perform "Troubleshoot/Diagnostics/Gateway/ForceUpgrade" on the affected gateways.
+* If any of your gateway names have more than 50 characters (including "-hagw") please schedule a downtime, delete them, and create them again with shorter names(<44 chars, <39 chars if you have an HA for them).
  
 If you need further support, please head to our support portal at https://support.avaiatrix.com and open a new ticket.
 
