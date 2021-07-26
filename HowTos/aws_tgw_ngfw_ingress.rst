@@ -97,7 +97,7 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
 
 - Commit
 
-1. Validate:
+5. Validate:
 ---------------
   - Test the Public DNS name of the ALB in a web browser. The web site should appear.
   - Timeouts are often a AWS Security Group issue. Make sure the backend app can accept traffic from the ALB subnets.
