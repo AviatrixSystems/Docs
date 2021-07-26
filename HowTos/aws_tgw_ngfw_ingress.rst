@@ -62,11 +62,13 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
    - nic1_private (private IP of Internal-facing NIC)
    - nic1_nexthop (first IP in Internet-facing subnet)
    - app (FQDN of back end Load Balancer)
+|address_objects|
 - Create route(s) for ALB instances in other AZs. This is needed because the ALB does cross-zone Load Balancing and cannot be disabled.
    - In the default router, add a Static Route for each additional AZ.
    - Destination: Subnet for ALB in another AZ.
    - Next hop: Address Object named nic0_nexthop.
    - Interface: ethernet1/1
+|static_route|
 - Create a NAT rule for inbound traffic:  
    - Original Packet:
       -  Source zone: external
@@ -81,15 +83,17 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
       -  Destination Address Translation Type: Dynamic IP (with session distribution)
       -  Destination Translated Address: Address Object named app
       -  Destination Translated Port: 80 (match the service port from the Original Packet)
+|nat_rule|
 - Create a Security Rule for inbound traffic:
    -  Source Zone: external
    -  Source Address: all ALB subnets
    -  Destination Zone: internal
    -  Destination Address: Address Objects app and nic0_private.
    -  Service: service-http (match the service used in the NAT rule)
+|security_rule|
 - Commit
 
-5. Validate:
+1. Validate:
 ---------------
   - Test the Public DNS name of the ALB in a web browser. The web site should appear.
   - Timeouts are often a AWS Security Group issue. Make sure the backend app can accept traffic from the ALB subnets.
@@ -186,6 +190,18 @@ Also, you need to configure/support Proxy Protocol feature on your web server to
 		- For other OSs and web services, please find detail in the document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_
 
 .. |aws_tgw_ngfw_ingress_design| image:: aws_tgw_ngfw_ingress/aws_tgw_ngfw_ingress_design.png
+   :scale: 30%
+
+.. |address_objects| image:: aws_tgw_ngfw_ingress/address_objects.png
+   :scale: 30%
+
+.. |static_route| image:: aws_tgw_ngfw_ingress/static_route.png
+   :scale: 30%
+
+.. |nat_rule| image:: aws_tgw_ngfw_ingress/nat_rule.png
+   :scale: 30%
+
+.. |security_rule| image:: aws_tgw_ngfw_ingress/security_rule.png
    :scale: 30%
 
 
