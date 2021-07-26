@@ -63,12 +63,14 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
    - nic1_nexthop (first IP in Internet-facing subnet)
    - app (FQDN of back end Load Balancer)
 |address_objects|
+
 - Create route(s) for ALB instances in other AZs. This is needed because the ALB does cross-zone Load Balancing and cannot be disabled.
    - In the default router, add a Static Route for each additional AZ.
    - Destination: Subnet for ALB in another AZ.
    - Next hop: Address Object named nic0_nexthop.
    - Interface: ethernet1/1
 |static_route|
+
 - Create a NAT rule for inbound traffic:  
    - Original Packet:
       -  Source zone: external
@@ -84,6 +86,7 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
       -  Destination Translated Address: Address Object named app
       -  Destination Translated Port: 80 (match the service port from the Original Packet)
 |nat_rule|
+
 - Create a Security Rule for inbound traffic:
    -  Source Zone: external
    -  Source Address: all ALB subnets
@@ -91,6 +94,7 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
    -  Destination Address: Address Objects app and nic0_private.
    -  Service: service-http (match the service used in the NAT rule)
 |security_rule|
+
 - Commit
 
 1. Validate:
