@@ -52,6 +52,7 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
 4. Configure the NGFW to forward traffic to the backend.
 --------------------------------------------------------
 
+
 .. note:: These steps assume that the NGFW is configured per the appropriate workflow.
    The below example uses a Palo Alto NGFW. The Palo Alto workflow is `here <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
 
