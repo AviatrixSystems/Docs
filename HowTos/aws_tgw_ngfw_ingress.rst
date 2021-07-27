@@ -22,10 +22,9 @@ The design is accomplished by:
 
 In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. Ingress traffic must be NAT'd to the NGFW's internal IP. Firewall instances can be scaled out as applications scale for all traffic types.
 
-.. Note::
-  This architecture works for both `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ and `AWS ALB. <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html>`_. ALB is used for illustration purpose. 
+.. note:: This architecture works for both `AWS Network Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html>`_ and `AWS ALB. <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html>`_. ALB is used for illustration purpose. 
 
-  You can create multiple load balancers in front of the firewall.
+   You can create multiple load balancers in front of the firewall.
 
 
 
