@@ -15,10 +15,10 @@ The deployment is shown as the diagram below.
 
 The design is accomplished by:
 
- 1. Using `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ to deploy AWS Transit Gateway and attach the Application VPC.
- 2. Deploying `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ and NGFWs.
- 3. Build the Application Load Balancer.
- 4. Configure the NGFW to send traffic accordingly.
+1. Using `Aviatrix TGW Orchestrator <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_ to deploy AWS Transit Gateway and attach the Application VPC.
+2. Deploying `Aviatrix Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_ and NGFWs.
+3. Build the Application Load Balancer.
+4. Configure the NGFW to send traffic accordingly.
 
 In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. Ingress traffic must be NAT'd to the NGFW's internal IP. Firewall instances can be scaled out as applications scale for all traffic types.
 
@@ -102,7 +102,7 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
 - Test the Public DNS name of the ALB in a web browser. The web site should appear.
 - Timeouts are often a AWS Security Group issue. Make sure the backend app can accept traffic from the ALB subnets.
  
-1. Capturing Client IP
+Capturing Client IP
 -------------------------
 
 Using AWS ALB
