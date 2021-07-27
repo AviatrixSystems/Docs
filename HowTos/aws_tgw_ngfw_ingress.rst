@@ -53,8 +53,8 @@ In Firenet/Security VPC, create an AWS ALB, make sure you select the following.
 --------------------------------------------------------
 
 .. note::
-	These steps assume that the NGFW is configured per the appropriate workflow.
-   The below example uses a Palo Alto NGFW. The Palo Alto workflow is `here <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
+	 These steps assume that the NGFW is configured per the appropriate workflow.
+    The below example uses a Palo Alto NGFW. The Palo Alto workflow is `here <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
 
 - Log into the Palo Alto console.
 - Create Address Objects (these will be different for each NGFW):
