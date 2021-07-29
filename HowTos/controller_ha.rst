@@ -147,6 +147,9 @@ FAQ
 * Could a controller in a different region be used to restore a saved configuration in case of disaster recovery? Will the change in controller’s IP cause any issues?
 	A controller can be manually launched from a different region and the backed up configuration can be restored on it. The controller’s new EIP shouldn’t cause any issue unless SAML VPN authentication is being used. (All peering tunnels will still work). In that case, SAML VPN client will need reach the controller IP address. If FQDN hostname is used for the controller for SAML, then it should work after changing the Route 53 to resolve to the correct EIP in the different region.
 
+* How do I manage the controller HA stack if the controller instance's disk is encrypted?
+	If EBS Encryption using Customer managed key is enabled, the Autoscaling Group created may not have permissions to launch the instance. You will need to allow the service-linked role created for the Autoscaling group to have permissions to use this key for the cryptographic operation. To do so, go to AWS KMS->Customer managed keys->select the key and add the "AWSServiceRoleForAutoScaling" role to the list of Key Users.
+
 Changelog
 ---------
 The changes from various releases can be viewed from `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/releases>`_
