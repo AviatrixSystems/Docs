@@ -464,7 +464,7 @@ MARK                                   This is a qualifier condition that specif
 SNAT IPS                               This is a rule field that specifies the changed source IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.100.1.5 - 100.100.1.10
 SNAT PORT                              This is a rule field that specifies the changed source port when all specified qualifier conditions meet.. When left blank, this field is not used. One of the rule fields must be specified for this rule to take effect.
 APPLY ROUTE ENTRY                      This is an option to program the route entry "DST CIDR pointing to Aviatrix Gateway" into Cloud platform routing table.
-(DEPRECATED) EXCLUDE ROUTE TABLE       This field specifies which VPC private route table will not be programmed with the default route entry. This is a depracated function, but users still can combine this with APPLY ROUTE ENTRY enabled.
+EXCLUDE ROUTE TABLE                    This field specifies which VPC private route table will not be programmed with the default route entry. Users can combine this with APPLY ROUTE ENTRY enabled.
 ================================       =======================
 
 Destination NAT
@@ -492,7 +492,7 @@ MARK                                   This is a rule field that specifies a tag
 DNAT IPS                               This is a rule field that specifies the translated destination IP address when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect. Multiple translated source IP addresses are supported, they are specified as a range, for example, 100.101.2.5 - 100.101.2.10
 DNAT PORT                              This is a rule field that specifies the translated destination port when all specified qualifier conditions meet. When left blank, this field is not used. One of the rule field must be specified for this rule to take effect.
 APPLY ROUTE ENTRY                      This is an option to program the route entry "DST CIDR pointing to Aviatrix Gateway" into Cloud platform routing table.
-(DEPRECATED) EXCLUDE ROUTE TABLE       This field specifies which VPC private route table will not be programmed with the default route entry. This is a depracated function, but users still can combine this with APPLY ROUTE ENTRY enabled.
+EXCLUDE ROUTE TABLE                    This field specifies which VPC private route table will not be programmed with the default route entry. Users can combine this with APPLY ROUTE ENTRY enabled.
 ================================       =======================
 
 Network Mapping
