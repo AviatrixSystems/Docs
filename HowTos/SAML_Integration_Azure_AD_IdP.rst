@@ -145,6 +145,9 @@ Click **Single sign-on** below **Manage**
 
 
    |imageUserAttrs|
+#. Verify that the Namespace URI is blank like so for each claim.
+
+   |imageAttributeURI|
 
 .. _azuread_idp_metadata:
 
@@ -252,3 +255,4 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageUserAttrs| image:: azuread_saml_media/azure_ad_saml_user_attrs.png
 .. |imageSAMLSettings| image:: azuread_saml_media/azure_ad_saml_settings.png
 .. |imageSAMLMetadata| image:: azuread_saml_media/azure_ad_saml_metadata.png
+.. |imageAttributeURI| image:: azuread_saml_media/azure_ad_claim_edit.png
