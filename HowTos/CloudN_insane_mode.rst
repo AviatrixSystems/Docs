@@ -108,7 +108,7 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  MTU Siz
 1- WAN                                                                                    Not Required        Not Required           WAN port that connects edge router
 2- LAN                                                  Not Required                      Not Required        Not Required           LAN port that connects edge router
 3- MGMT                                                                  Not Required                                                Management port for CloudN configuration and software upgrade
-4- HPE iLO (optional)                                                    Not Required     Not Required        Not Required           HP Integrated Lights-Out
+4- HPE iLO                                                               Not Required     Not Required        Not Required           HP Integrated Lights-Out
 =====================  ==================  ===========  ===============  ===============  ==================  =====================  =============================================================
 
 
