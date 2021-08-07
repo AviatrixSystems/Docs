@@ -108,7 +108,7 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  MTU Siz
 1- WAN                                                                                    Not Required        Not Required           WAN port that connects edge router
 2- LAN                                                  Not Required                      Not Required        Not Required           LAN port that connects edge router
 3- MGMT                                                                  Not Required                                                Management port for CloudN configuration and software upgrade
-4- HPE iLO (optional)                                                    Not Required     Not Required        Not Required           HP Integrated Lights-Out
+4- HPE iLO                                                               Not Required     Not Required        Not Required           HP Integrated Lights-Out
 =====================  ==================  ===========  ===============  ===============  ==================  =====================  =============================================================
 
 
@@ -121,8 +121,6 @@ Here is the list of the public IP address that CloudN requires for outbound traf
 =======================  ================  ==== =================================================
 FQDN                     IP address        PORT Purpose
 =======================  ================  ==== =================================================
-www.carmelonetworks.com  54.149.28.255     443  (Not required for Managed CloudN) Download CloudN software upgrades
-license.aviatrix.com     52.24.131.245     443  (Not required for Managed CloudN) Reach out to Aviatrix’s License Server
 security.aviatrix.com    54.149.28.255     443  Sync service certificates
 diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
 =======================  ================  ==== =================================================
