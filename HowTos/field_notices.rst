@@ -8,6 +8,29 @@ Field Notices
  
 
 
+
+Field Notice 0031 (2021/08/06)
+--------------------------------
+
+**After a Gateway Replace operation on version 6.4 or later, the Site2Cloud connections on the Gateway might not come up**
+
+**Problem:**
+
+If you run a "Gateway Replace" operation from a Controller running version 6.4 or later, on a gateway which was created when this Controller was running on 6.3 or earlier, the Site2Cloud connections on this Gateway might not be able to come up
+
+The default IPSec tunnel management software was changed in the `Gateway Images <https://docs.aviatrix.com/HowTos/image_release_notes.html>`_ associated with `version 6.4 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and later. Any Gateway which might have been created while running version 6.3 or older will be using the older IPSec tunnel management software. While the Controller ported the config from the old Gateway to the new Gateway, one of the field's default setting has changed. This setting could come into play based on the devices that this Gateway has established Site2Cloud tunnels and might result in the Site2Cloud tunnel not coming up. This was `documented in the 6.4.2499 release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#behavior-change-notice>`_. You can find `more information <https://aviatrix.zendesk.com/hc/en-us/articles/4406236429581>`_ on our `Support Portal <https://support.aviatrix.com/>`_ about this issue
+
+**Recommended Solution:**
+
+If the Site2Cloud tunnel(s) does/do not come up on a Gateway after a "Gateway Replace" operation in 6.4, please go to Controller/Site2Cloud, select the tunnel, click on edit and update the "Remote Identifier" field. If you have any issues, please open a ticket on our `Support Portal <https://support.aviatrix.com/>`_.
+
+
+
+
+
+
+
+
 Field Notice 0030 (2021/07/19)
 --------------------------------
 **Upgrade from 6.3 to 6.4 could cause gateways to be in down/polling state if any of them have more than 44 characters**
