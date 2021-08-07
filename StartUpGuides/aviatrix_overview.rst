@@ -115,7 +115,7 @@ What Features Are Supported in Which Cloud?
 ==========================================      ==========  =============   ======================           =================       ==========
 **Feature**                                     **AWS**     **Azure**       **GCP**                          **AWS GovCloud**         **OCI**
 ==========================================      ==========  =============   ======================           =================       ==========
-Marketplace Launch                              Yes         Yes             No (Community Image)             Yes                      Yes
+Marketplace Launch                              Yes         Yes             Yes	                             Yes                      Yes
 Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
 
 Aviatrix Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes

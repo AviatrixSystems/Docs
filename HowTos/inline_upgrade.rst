@@ -6,7 +6,7 @@
 Inline Software Upgrade
 ###################################
 
-Aviatrix software is released frequently every 6 - 8 weeks.
+If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in this section. If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_. 
 
 When upgrading a controller's software, all gateways are upgraded with the new software at the same time. This is done by the controller pushing new software to gateways directly and automatically once requested.
 

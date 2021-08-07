@@ -8,11 +8,13 @@ Aviatrix CloudWAN Workflow for Azure Virtual WAN
 
 This technical note provides a step-by-step instruction how to build `CloudWAN Deployment on Azure Virtual WAN <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html#cloudwan-deployment-on-azure>`_. In this note you learn how to:
 
-	#. create a virtual WAN, a hub, VPN gateway, and a connection between VNet and a hub in Azure portal
+	#. create a virtual WAN, a hub, VPN gateway, and a connection between VNet and a hub in Azure portal.
 	
-	#. deploy a site and build a VPN connection between a site and a hub through Aviatrix Controller
+	#. deploy a site and build a VPN connection between a site and a hub through Aviatrix Controller.
 	
-	#. verify end-to-end traffic between a site and a VM in Azure VNet
+	#. verify end-to-end traffic between a site and a VM in Azure VNet.
+
+**Note**: You can use the same VNet resource group names under different subscriptions.
 
 For more information about CloudWAN, please check out the below documents:
 
