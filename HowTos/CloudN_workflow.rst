@@ -218,6 +218,10 @@ Step 2.5 Register with Aviatrix Controller FQDN Name
 
 			It is highly recommended that a FQDN name is used instead of an IP address for enhanced security and controller HA.
 	
+	- Enter Aviatrix Controller Username/Password with an admin user credential (any users in admin RBAC Groups)
+	
+	- Enter Gateway Name to represent this CloudN device
+	
 	- Click the button "Register"
 	
 	- Click the button "OK" to confirm
