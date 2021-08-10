@@ -278,6 +278,21 @@ To perform a gateway image upgrade:
 3. Click on Image Upgrade. You can follow the status in the progress window.
 4. Verify the gateway upgrade by reviewing the gateway information in the Current Image Version column.
 
+Troubleshooting
+---------------
+
+In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways are stuck running different versions could develop. If this condition occurs assistance from Aviatrix Support is required.
+For example:
+A controller and gateways are running version 6.5.200.
+- You upgrade the controller and a subset of gateways to 6.5.300.
+- You rollback the gateways to 6.5.200 because of a bug in the 6.5.300 software. 
+- Now the controller is running 6.5.300 and all gateways are running 6.5.200, and the gateways cannot be upgraded to 6.5.300 because of the bug.
+- The bug is resolved in controller version 6.5.400, so you want to upgrade to 6.5.400 to resolve the issue. However, this is not supported because the controller and gateways must be running the same software version before the controller can be upgraded.
+- In this corner case, you must contact Aviatrix Support to upgrade the controller to the newer ver-sion. Support will diagnose the issue and provide the API operation required to perform the con-troller upgrade.
+
+
+
+
 
 
 .. |upgrade.build.release| image:: selective_upgrade_media/upgrade.build.release.png
