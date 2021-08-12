@@ -12,7 +12,7 @@ Launch CoPilot
 ==================
 
 CoPilot is available as an all-in-one virtual appliance that's hosted in users' own IaaS cloud environment. 
-It can be launched as an EC2 instance in AWS, virtual machine in Azure, or a VM instances in GCP (preview mode). Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
+It can be launched as an EC2 instance in AWS, virtual machine in Azure, or a VM instances in GCP. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfully launching the instance, follow this steps to configure CoPilot instance parameters and launch. 
 Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot is not a separate product.
 
