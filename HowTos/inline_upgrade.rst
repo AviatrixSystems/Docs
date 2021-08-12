@@ -22,6 +22,7 @@ Pre-upgrade Checklist:
 Here are a few steps that we suggest you go through before the actual upgrade. If you are scheduling the upgrade during a maintenance window, you can execute these before the maintenance window, so you can make best use of your downtime.
 
 #. Check `pre-operations checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ before any operations on your controller.
+#. Check the `End of Life for software releases <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ and please run the supported release
 #. Ensure that all gateways are in green/up status. If not, check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions.
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
 #. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket at https://aviatrix.zendesk.com or by sending an email to support@aviatrix.com.
