@@ -508,15 +508,15 @@ Step 4.2 Perform feature "De-register a Device" on Aviatrix Controller GUI
 
 	.. note::
 
-		If these steps cannot convert a Managed CloudN device back to a Standalone CloudN state properly, please proceed Factory Reset feature.
+		If these steps cannot convert a Managed CloudN device back to a Standalone CloudN state properly, please proceed Reset Configuration feature.
 
-Workflow on Factory Reset
+Workflow on Reset Configuration
 --------------------------
 
-"Factory Reset" feature enables users to remove all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps for "Factory Reset". 
-This Factory Reset feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through the steps above.
+"Reset Configuration" feature enables users to remove all configuration on a Managed CloudN device from a corrupted state to a clean state. Please follow the below steps for "Reset Configuration". 
+This Reset Configuration feature is the last resort if users are not able to convert a Managed CloudN device back to a Standalone CloudN state through the steps above.
 
-Step 4.3 Perform feature "Factory Reset" on Aviatrix Controller GUI
+Step 4.3 Perform feature "Reset Configuration" on Aviatrix Controller GUI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	- Open a browser
@@ -531,17 +531,17 @@ Step 4.3 Perform feature "Factory Reset" on Aviatrix Controller GUI
 	
 	- Click on the button "DIAG" to display dropdown menu
 	
-	- Click on the button "Factory Reset"
+	- Click on the button "Reset Configuration"
 
-	- Wait for a couple of minutes to complete the factory reset process
+	- Wait for a couple of minutes to complete the Reset Configuration process
 	
 	|controller_cloudwan_factory_reset|
 	
 	.. note::
 	
-		Normally, when users perform feature "Factory Reset" on Aviatrix Controller GUI, Aviatrix Controller will notify Managed CloudN to perform "Factory Reset". If Managed CloudN does not function "Factory Reset" properly through Aviatrix Controller, users need to execute the step 4.4 below.
+		Normally, when users perform feature "Reset Configuration" on Aviatrix Controller GUI, Aviatrix Controller will notify Managed CloudN to perform "Reset Configuration". If Managed CloudN does not function "Reset Configuration" properly through Aviatrix Controller, users need to execute the step 4.4 below.
 	
-(Optional) Step 4.4 Perform feature "Factory Reset" on CloudN GUI 
+(Optional) Step 4.4 Perform feature "Reset Configuration" on CloudN GUI 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	- Open a browser
@@ -554,17 +554,17 @@ Step 4.3 Perform feature "Factory Reset" on Aviatrix Controller GUI
 		
 		|cloudn_register_controller_fqdn_link_managed_cloudn|
   
-	- Find the panel "FACTORY RESET"
+	- Find the panel "Reset Configuration"
 	
 	- Click the button "Reset"
   
-	- Wait for a couple of minutes to complete the factory reset process
+	- Wait for a couple of minutes to complete the Reset Configuration process
 	
 	|cloudn_factory_reset|	
 	
 	.. important::
 	
-		If users need any assistance for factory reset operation, please contact Aviatrix Support support@aviatrix.com.
+		If users need any assistance for Reset Configuration operation, please contact Aviatrix Support support@aviatrix.com.
 
 User Guide for Redundant DX Deployment
 ======================================
