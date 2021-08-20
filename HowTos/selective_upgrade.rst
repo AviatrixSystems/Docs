@@ -307,7 +307,9 @@ Upgrading the Gateway Image
 ---------------------------
 
 Traffic is briefly disrupted during the image upgrade in cluster configurations. 
+
 **Note:** If ActiveMesh mode is not enabled or you are or running ActiveMesh 1.0, please open an Aviatrix Support ticket before attempting an upgrade.
+
 To perform a gateway image upgrade:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
