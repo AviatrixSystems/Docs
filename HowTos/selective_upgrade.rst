@@ -149,7 +149,7 @@ To understand the contents and potential impact of upgrading to specific softwar
 
 To understand the contents and potential impact of upgrading to specific image release, see https://docs.aviatrix.com/HowTos/image_release_notes.html.
 
-Verify DNS Settings
+**Verify DNS Settings**
 
 The Aviatrix Controller must have a reliable DNS resolution service available. Aviatrix recommends using the default 8.8.8.8 for the DNS IP address. Using the default address is not required, but your network must be able to resolve public names and have uninterrupted access to the DNS name resolver. 
 
