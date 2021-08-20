@@ -71,6 +71,7 @@ Valid upgrade paths to a new minor release. The current build is the build you a
 |upgrade.minor.release|
 
 **Upgrading Major Release Version Paths**
+
 When you upgrade from one major release to another major release, you cannot skip over major release versions. You must upgrade each major release sequentially.  For example, if you are upgrading from 6.current to 8.latest you must first upgrade to the intermediate release 7.latest. 
 Valid upgrade path to a new major release. The current build is the build you are currently running. The latest build available on the Aviatrix server.
 
@@ -246,7 +247,6 @@ To perform a platform software upgrade dry run:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
 #. Optional. In the Platform Upgrade window, enter the target major and minor release number in the Release Version field. For example, 6.5. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller.
- 
 #. Click on Dry Run.
 #. After the progress meter closes, review the information in the Upgrade Result window.
 
