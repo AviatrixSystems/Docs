@@ -33,7 +33,7 @@ Firewall Image Version                          9.1.0
 Firewall Instance Size                          Standard_D3_v2
 Management Interface Subnet                     Select the subnet whose name contains "Public-gateway-and-firewall-mgmt".
 Egress Interface Subnet                         Select the subnet whose name contains "Public-FW-ingress-egress".
-Username 			                            Any Good Name (e.g. panadmin)
+Username 			                            Any Good Name (e.g. panadmin). Note that 'admin' is not allowed. Please refer to https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq for the requirements behing setting this name
 Authentication Method                           Password or SSH Public Key
 Password                                        Input a good password of your choice
 Attach                                          Check
