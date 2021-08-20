@@ -1,3 +1,7 @@
+.. meta::
+   :description: software upgrade of controller and gateways
+   :keywords: hitless upgrade, inline upgrade, upgrade gateway software, no packet loss upgrade
+
 =============================================
 Upgrading the Aviatrix Cloud Network Platform
 =============================================
