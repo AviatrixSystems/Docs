@@ -2,9 +2,9 @@
    :description: software upgrade of controller and gateways
    :keywords: hitless upgrade, inline upgrade, upgrade gateway software, no packet loss upgrade
 
-###################################
-Inline Software Upgrade
-###################################
+####################################################
+Inline Software Upgrade for 6.4 and Earlier Releases
+####################################################
 
 If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in this section. If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`__. 
 
