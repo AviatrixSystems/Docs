@@ -12,7 +12,8 @@ Aviatrix encourages you to keep your platform controller and gateways up to date
 
 Perform all preparatory tasks and verify all prerequisites are satisfied before performing Aviatrix upgrades. For more information, see Preparing to Upgrade the Aviatrix Network Platform.
 
-You can perform the following operations:  
+You can perform the following operations:
+  
 * Performing a Platform Software Upgrade Dry Run
 * Performing a Gateway Software Upgrade Dry Run
 * Upgrading the Platform Software
@@ -92,8 +93,10 @@ The following example demonstrates a selective upgrade from build 6.5.250 to 6.5
 
 |upgrade.mixed.versions|
 
-#. Operations are normal and no conflicts are detected.
-#. Gateways still running 6.5.250 are then upgraded to 6.5.750 and all gateways and the platform controller are running the same version.
+
+4. Operations are normal and no conflicts are detected.
+5. Gateways still running 6.5.250 are then upgraded to 6.5.750 and all gateways and the platform controller are running the same version.
+
 
 The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 
@@ -101,7 +104,7 @@ The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 #. The Aviatrix Platform Controller is upgraded to 6.5.750.
 #. Some gateways are upgraded to 6.5.750, some gateways continue to run 6.5.250.
 #. You attempt to upgrade the Aviatrix Platform Controller from 6.5.750 to 6.6.100 without first upgrading the remaining 6.5.250 gateways to 6.5.750.  
-#. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controller�before you can upgrade the platform controller.
+#. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controller before you can upgrade the platform controller.
 
 |upgrade.mixed.versions.fail|
 
@@ -117,6 +120,7 @@ Upgrading OpenVPN Users
 -----------------------
 
 Most upgrades do not impact connected OpenVPN users. In some cases, OpenVPN service needs to be restarted as part of software upgrade. For example, upgrading to a new SSL version for security patch. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
+
 Rollbacks do disrupt services. If there is only one OpenVPN gateway in service, all user connections are lost and users cannot reconnect until the gateway is available. If there are other OpenVPN gateways available, the disconnected users can attempt to log in again and land on the available gateways.
 
 Upgrading HA Gateways in an Active Mesh Topology
@@ -143,7 +147,9 @@ Understanding the Release Contents
 ----------------------------------
 
 To understand the contents and potential impact of upgrading to specific software release, see https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html.
+
 To understand the contents and potential impact of upgrading to specific image release, see https://docs.aviatrix.com/HowTos/image_release_notes.html.
+
 Verify DNS Settings
 
 The Aviatrix Controller must have a reliable DNS resolution service available. Aviatrix recommends using the default 8.8.8.8 for the DNS IP address. Using the default address is not required, but your network must be able to resolve public names and have uninterrupted access to the DNS name resolver. 
