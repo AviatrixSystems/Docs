@@ -1,7 +1,7 @@
 =======================================
 Release Notes
 =======================================
-6.5.xxxx (8/9/2021)
+6.5.xxxx (8/xx/2021)
 =====================
 
 **Upgrading to Aviatrix Release 6.5**
@@ -22,7 +22,7 @@ To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix p
 - **AVX-10188** "-" Added warning message when disabling the import certificate which includes the impact and effects of disabling the certificate.
 - **AVX-10493** "-" Added support for Aviatrix FlightPath to the Alibaba cloud including China regions.
 - **AVX-10799** "-" Added support for Aviatrix VPC Tracker to the Alibaba cloud including Global and China regions.
-- **AVX-13460** "-" Enable swap memory on AWS instance size t2.micro to reduce memory pressure on our smallest supported AWS instance size. This allows short periods of overprovisioning to be tolerated by the operating system ensuring continuous operations.	
+- **AVX-13460** "-" Enabled swap memory on AWS instance size t2.micro to reduce memory pressure on our smallest supported AWS instance size. This allows short periods of overprovisioning to be tolerated by the operating system ensuring continuous operations.	
 - **AVX-13615** "-" Added AWS GuardDuty support for AWS GovCloud monitoring.
 
 **Modified Behaviors in Aviatrix Release 6.5**
