@@ -6,7 +6,7 @@
 Upgrading the Aviatrix Cloud Network Platform
 =============================================
 
-If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`__.  
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.  
 
 Aviatrix encourages you to keep your platform controller and gateways up to date to ensure you are operating the most secure and highest performing versions available. To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. 
 
