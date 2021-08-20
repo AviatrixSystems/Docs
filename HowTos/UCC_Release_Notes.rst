@@ -1,9 +1,8 @@
 =======================================
 Release Notes
 =======================================
-6.4.2789 (08/19/2021)
+6.4.2791 (08/20/2021)
 =====================
-- **Bug fix** When spoke on-prem routes are deleted, they are incorrectly removed from connected domain route tables.
 - **Bug fix** The FQDN egress filtering gateway blocks traffic after adding whitelisting tags to the egress filtering gateway.
 
 6.4.2783 (07/15/2021)
