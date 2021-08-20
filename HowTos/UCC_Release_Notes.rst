@@ -1,60 +1,6 @@
 =======================================
 Release Notes
 =======================================
-6.5.xxxx (8/9/2021)
-=====================
-
-**Upgrading to Aviatrix Release 6.5**
-
--Platform upgrades to the same build of a minor release are not supported in 6.5.  For example, 6.5.100 cannot upgrade to 6.5.100 again but upgrading to 6.5.200 is supported. This prevents accidental upgrade operations.  
--Only one non-ActiveMesh transit or spoke gateway can have the image upgraded or the software rolled back at a time.  If you select multiple non-ActiveMesh gateways, you receive an error message. For multiple API calls to replace non-ActiveMesh gateways using Terraform, only one gateway is allowed and the others fail. For Terraform calls, Aviatrix recommends you set parallelism=1. 
-
-**New Features in Aviatrix Release 6.5**
-
-**Selective Upgrades**
-
-To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.  
-
-**Feature Enhancements in Aviatrix Release 6.5**
-
-- AVX-3170 "-" Removed operation. In previous releases, even if the controller was protected a controller using https: 0.0.0.0/0 was created during HA restore operations and then removed after the controller is back up. Controller HA no longer creates another controller using https: 0.0.0.0/0 during an HA restore operation. 
-- **AVX-9881** "-" Added support for using the same Azure Virtual Network name and resource group names under different subscriptions.
-- **AVX-10188** "-" Added warning message when disabling the import certificate which includes the impact and effects of disabling the certificate.
-- **AVX-10493** "-" Added support for Aviatrix FlightPath to the Alibaba cloud including China regions.
-- **AVX-10799** "-" Added support for Aviatrix VPC Tracker to the Alibaba cloud including Global and China regions.
-- **AVX-13460** "-" Enable swap memory on AWS instance size t2.micro to reduce memory pressure on our smallest supported AWS instance size. This allows short periods of overprovisioning to be tolerated by the operating system ensuring continuous operations.	
-- **AVX-13615** "-" Added AWS GuardDuty support for AWS GovCloud monitoring.
-
-**Modified Behaviors in Aviatrix Release 6.5**
-
-- **AVX-9894** "-" Removed deprecated optional logging fields for Splunk from the user interface. This is in accordance with the Aviatrix policy of supporting deprecated features for one year.
-- **AVX-10113** "-" When you import security certificates on the gateways and controller, the certificate must include the proper FQDN. 
- 
- For example:
- openssl req -new "-"subj "/C=GB/CN=foo" \
-                  "-"addext "subjectAltName = DNS:foo.co.uk" \
-                  "-"addext "certificatePolicies = 1.2.3.4" \
-                  "-"newkey rsa:2048 -keyout key.pem -out req.pem
-                  
-Alternatively, you can add the SubjectAlternateName (SAN) tag in the openssl.cnf file before generating the certificate. The SAN tag makes sure your certificate includes the SubjectAlternateName which is validated by the Apache server on the controller. Versions of UserConnect-6.4 and later require the proper SubjectAlternateName including altNames be set in the certificates when they are imported. If the SAN is not specified, importing the certificates fails.
-- **AVX-14009** "-" Added option to allow all traffic from the local VPC CIDR block to the network security group created during the OCI gateway creation process. Previously, only TCP port 443 traffic from the controller was added to the security group. By default, OCI allows all traffic from RFC1918 blocks. This change only applies to non-RFC1918 VPC CIDR block configurations.
-
-**Known Behaviors in Aviatrix Release 6.5**
-
-In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways are stuck running different versions could develop. If this condition occurs assistance from Aviatrix Support is required.
-For example:
-A controller and gateways are running version 6.5.200.
-- You upgrade the controller and a subset of gateways to 6.5.300.
-- You rollback the gateways to 6.5.200 because of a bug in the 6.5.300 software. 
-- Now the controller is running 6.5.300 and all gateways are running 6.5.200, and the gateways cannot be upgraded to 6.5.300 because of the bug.
-- The bug is resolved in controller version 6.5.400, so you want to upgrade to 6.5.400 to resolve the issue. However, this is not supported because the controller and gateways must be running the same software version before the controller can be upgraded.
-- In this corner case, you must contact Aviatrix Support to upgrade the controller to the newer ver-sion. Support will diagnose the issue and provide the API operation required to perform the con-troller upgrade.
-
-**Issues Corrected in Aviatrix Release 6.5**
-
-- **AVX-10552** "-" Changed TGW VPN tunnel details response in API so list_attachment_route_table_detail  returns are in dictionary format rather than a long string.
-- **AVX-13447** "-" Removed unnecessary packages from gateway image software patch.
-
 6.4.2789 (08/19/2021)
 =====================
 - **Bug fix** When spoke on-prem routes are deleted, they are incorrectly removed from connected domain route tables.
@@ -64,7 +10,6 @@ A controller and gateways are running version 6.5.200.
 =====================
 - **Bug fix** This issue is related to our smallest supported instance size in AWS which is t2.micro. In 6.4 the t2.micro instances were under additional memory pressure because of new services enabled in 6.4. As a result, some customers may experience gateway down events after upgrading to 6.4. This issue resolves those issues by optimizing several scheduled jobs which burden the t2.micro appliances.
 - **Enhancement** In order to alleviate memory pressure on our smallest supported AWS instance size; t2.micro, we now enable swap memory on instances with less than 1G of memory. This allows short periods of over-provision to be tolerated by the operating system ensuring continuous operations.
-
 
 R6.4.2776 (07/13/2021)
 ========================

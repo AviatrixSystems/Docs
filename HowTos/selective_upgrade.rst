@@ -2,7 +2,7 @@
 Upgrading the Aviatrix Cloud Network Platform
 =============================================
 
-If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. 
+If you are upgrading from release 6.5.xÂ or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.xÂ or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier ReleasesÂ <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.Â 
 
 Aviatrix encourages you to keep your platform controller and gateways up to date to ensure you are operating the most secure and highest performing versions available. To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. 
 
@@ -22,11 +22,11 @@ Understanding Aviatrix Upgrades
 -------------------------------
 
 There are two types of upgrades for the Aviatrix Platform and gateways:
-- **Software Upgrade** "–" Platform and gateway software upgrades replace the relevant Aviatrix controller and gateway packages, configuration files, and binaries without disrupting network traffic or replacing the gateways. All software upgrades are hitless.
-- **Image Upgrade** "–" Gateway image upgrades replace the current gateways. Traffic throughput is briefly disrupted during image upgrades.
+- **Software Upgrade** "â€“" Platform and gateway software upgrades replace the relevant Aviatrix controller and gateway packages, configuration files, and binaries without disrupting network traffic or replacing the gateways. All software upgrades are hitless.
+- **Image Upgrade** "â€“" Gateway image upgrades replace the current gateways. Traffic throughputÂ is briefly disrupted during image upgrades.
 There are two types of patch updates:
-- **Security Patches** "–" Security patches are released when security updates to underlying software components become available. Most security patches are hitless. Review the release notes for the patch to discover if the upgrade is hitless or disruptive. 
-- **Software Patches** "–" Software patches are released to address compatibility issues when they arise. You should apply the patches to the Aviatrix system when they become available if you are using any applications or configurations affected by the patch.  Most software patches are hitless. Review the release notes for the patch to discover if the upgrade is hitless or disruptive. 
+- **Security Patches** "â€“" Security patches are released when security updates to underlying software components become available. Most security patches are hitless. Review the release notes for the patch to discover if the upgrade is hitless or disruptive. 
+- **Software Patches** "â€“" Software patches are released to address compatibility issues when they arise. You should apply the patches to the Aviatrix system when they become available if you are using any applications or configurations affected by the patch.  Most software patches are hitless. Review the release notes for the patch to discover if the upgrade is hitless or disruptive. 
 
 Understanding Release Numbers
 -----------------------------
@@ -37,9 +37,9 @@ Aviatrix release numbers follow the Major.Minor.Build format. For example, the r
 - 100 is the build number.
 
 Each release type has different functionality parameters.   
-- Major "–" Includes new features and updates that affect the platform infrastructure and user interfaces. 
-- Minor "–" Includes modified and new small features and updates that may affect the platform infrastructure and user interfaces. 
-- Build "–" Corrected issues and feature enhancements. 
+- Major "â€“" Includes new features and updates that affect the platform infrastructure and user interfaces. 
+- Minor "â€“" Includes modified and new small features and updates that may affect the platform infrastructure and user interfaces. 
+- Build "â€“" Corrected issues and feature enhancements. 
 
 Valid Upgrade Paths
 -------------------
@@ -87,7 +87,7 @@ The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 2. The Aviatrix Platform Controller is upgraded to 6.5.750.
 3. Some gateways are upgraded to 6.5.750, some gateways continue to run 6.5.250.
 4. You attempt to upgrade the Aviatrix Platform Controller from 6.5.750 to 6.6.100 without first upgrading the remaining 6.5.250 gateways to 6.5.750.  
-5. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controller before you can upgrade the platform controller.
+5. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controllerÂ before you can upgrade the platform controller.
 
 |upgrade.mixed.versions.fail|
 
@@ -102,13 +102,13 @@ You can roll back gateway software upgrades to the previous version, you cannot 
 Upgrading OpenVPN Users
 -----------------------
 
-Most upgrades do not impact connected OpenVPN® users. In some cases, OpenVPN service needs to be restarted as part of software upgrade. For example, upgrading to a new SSL version for security patch. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
+Most upgrades do not impact connected OpenVPNÂ® users. In some cases, OpenVPN service needs to be restarted as part of software upgrade. For example, upgrading to a new SSL version for security patch. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
 Rollbacks do disrupt services. If there is only one OpenVPN gateway in service, all user connections are lost and users cannot reconnect until the gateway is available. If there are other OpenVPN gateways available, the disconnected users can attempt to log in again and land on the available gateways.
 
 Upgrading HA Gateways in an Active Mesh Topology
 ------------------------------------------------
 
-Gateway traffic is briefly affected and there is a drop in throughput when you perform a gateway image upgrade, and when a gateway software upgrade is rolled back. If Aviatrix ActiveMesh mode is enabled and only one gateway in an ActiveMesh pair is selected for upgrade, the system gracefully drains the traffic away from one of the gateways so it can be replaced. If both gateways in an ActiveMesh pair are selected, the gateways are replaced simultaneously without any additional safeguards.
+Gateway traffic is briefly affected and there is a drop in throughput when you perform a gateway image upgrade, and when a gateway software upgrade is rolled back. If Aviatrix ActiveMesh mode is enabled and only one gateway in an ActiveMesh pair is selected for upgrade, the system gracefully drains the traffic away from one of the gateways so it can be replaced. If both gateways in an ActiveMesh pair are selected, the gateways are replaced simultaneously without any additionalÂ safeguards.
 - If the gateway has BPG peers, the BGP process is shut down and the protocol reconverges to elect alternatives routes. 
 - The tunnel interfaces are shut down. The controller recalculates alternatives routes and distributes them to the gateways within the Aviatrix network. 
 - If the selected gateway is a spoke, the controller modifies the underlay cloud routing table of the selected gateway that was acting as the next hop for the default route or RFC1918 routes. The HA peer is selected as the next hop.
@@ -192,29 +192,29 @@ Upgrade Parameter Definitions
 
 **Platform Upgrade Window Parameter Definitions**
 
-- **Previous Version** "–" Previous version of the controller. 
-- **Current Version** "–" Current version of the controller. 
-- **Kernel Version** "–" Version of the controller’s Linux kernel. 
-- **Release Versions** "–" The upgrade path between the currently running version of the controller and the latest release available on the Aviatrix release server. For example, if you are running Aviatrix Platform 6.4.321 and the latest release available on the release server is 6.6.123 the Release Version field displays: UserConnect-6.6.123 (6.5,6.6). This indicates you must successively upgrade to 6.5 then upgrade to 6.6 to bring the platform up to the latest available version. 
-- **Target Release Version** "–" New version of the Aviatrix Platform to which you are upgrading. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller. The version cannot be a version earlier than the release currently running on the platform controller.  
+- **Previous Version** "â€“" Previous version of the controller. 
+- **Current Version** "â€“" Current version of the controller. 
+- **Kernel Version** "â€“" Version of the controllerâ€™s Linux kernel. 
+- **Release Versions** "â€“" The upgrade path between the currently running version of the controller and the latest release available on the Aviatrix release server. For example, if you are running Aviatrix Platform 6.4.321 and the latest release available on the release server is 6.6.123 the Release Version field displays: UserConnect-6.6.123 (6.5,6.6). This indicates you must successively upgrade to 6.5 then upgrade to 6.6 to bring the platform up to the latest available version. 
+- **Target Release Version** "â€“" New version of the Aviatrix Platform to which you are upgrading. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller. The version cannot be a version earlier than the release currently running on the platform controller.  
 
 
 **Selective Gateway Upgrade Window Parameter Definitions**
 
-- **Current Version** "–" Current software version running on the gateway. 
-- **Previous Version** "–" If the gateway has never been upgraded there is no version number. If the gateway has been upgraded at least once, this is the software version the gateway ran before the last upgrade. 
-- **Target Version** "–" Software version to which the gateway can be upgraded. It is the same version as the current version of the platform controller.
-- **Previous Image Version** "–" If the gateway OS has never been upgraded there is no version number. If the gateway OS has been upgraded at least once, this is the image version the gateway ran before the last upgrade. 
-- **Current Image Version** "–" Current version of the gateway underlying OS. 
-- **Target Image Version** "–" Every gateway software version matches a unique recommended OS version that may change over time. This version is determined by a compatibility matrix. This field displays the OS version that will be used in case of an OS upgrade.
-- **Kernel Version** "–" Version of the gateway OS kernel. 
-- **Rollback Version** "–" Software version to which the gateway can be rolled back. It is the same version as the previous version of the platform controller. 
-- **Rollback Image Version** "–" OS version that will be used in case of a gateway software rollback. Depending on the system compatibility matrix, this version can be higher, lower, or the same OS version currently running on the gateway. 
-- **Account** "–" Account attached to the gateway.
-- **Cloud** "–" Cloud provider hosting the gateway.
-- **Region** "–" Cloud region where the gateway is deployed.
-- **Gateway Type** "–" Gateway persona: transit, spoke, or standalone.
-- **Gateway Role** "–" Primary or secondary.
+- **Current Version** "â€“" Current software version running on the gateway. 
+- **Previous Version** "â€“" If the gateway has never been upgraded there is no version number. If the gateway has been upgraded at least once, this is the software version the gateway ran before the last upgrade. 
+- **Target Version** "â€“" Software version to which the gateway can be upgraded. It is the same version as the current version of the platform controller.
+- **Previous Image Version** "â€“" If the gateway OS has never been upgraded there is no version number. If the gateway OS has been upgraded at least once, this is the image version the gateway ran before the last upgrade. 
+- **Current Image Version** "â€“" Current version of the gateway underlying OS. 
+- **Target Image Version** "â€“" Every gateway software version matches a unique recommended OS version that may change over time. This version is determined by a compatibility matrix. This field displays the OS version that will be used in case of an OS upgrade.
+- **Kernel Version** "â€“" Version of the gateway OS kernel. 
+- **Rollback Version** "â€“" Software version to which the gateway can be rolled back. It is the same version as the previous version of the platform controller. 
+- **Rollback Image Version** "â€“" OS version that will be used in case of a gateway software rollback. Depending on the system compatibility matrix, this version can be higher, lower, or the same OS version currently running on the gateway. 
+- **Account** "â€“" Account attached to the gateway.
+- **Cloud** "â€“" Cloud provider hosting the gateway.
+- **Region** "â€“" Cloud region where the gateway is deployed.
+- **Gateway Type** "â€“" Gateway persona: transit, spoke, or standalone.
+- **Gateway Role** "â€“" Primary or secondary.
 
 Performing a Platform Software Upgrade Dry Run
 ----------------------------------------------
@@ -244,7 +244,7 @@ Upgrading the Platform Software
 
 To perform a platform software upgrade:
 1. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-2. Optional. In the Platform Upgrade window, enter the target major and minor release number in the Release Version field. For example, 6.5. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller.
+2. Optional. In the Platform Upgrade window, enter the target major and minor release number in the Release Version field. For example, 6.5. If youÂ do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller.
 3. In the Platform Upgrade window, click on Platform Upgrade. You can follow the status in the progress window. You are logged out of the controller after the upgrade.
 4. After the upgrade, log in to the controller. 
 5. Verify the upgrade by reviewing the Current Version in the Platform Upgrade window.
