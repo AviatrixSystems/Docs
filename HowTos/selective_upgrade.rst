@@ -250,7 +250,7 @@ To perform a platform software upgrade dry run:
 #. After the progress meter closes, review the information in the Upgrade Result window.
 * If there are no errors, you can continue with the upgrade process. 
 * If there are errors, you must resolve them before continuing with the upgrade.
-#. Close the Upgrade Result window.
+4. Close the Upgrade Result window.
 
 
 Performing a Gateway Software Upgrade Dry Run
