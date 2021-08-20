@@ -93,10 +93,8 @@ The following example demonstrates a selective upgrade from build 6.5.250 to 6.5
 
 |upgrade.mixed.versions|
 
-
 4. Operations are normal and no conflicts are detected.
 5. Gateways still running 6.5.250 are then upgraded to 6.5.750 and all gateways and the platform controller are running the same version.
-
 
 The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 
@@ -247,11 +245,14 @@ Performing a Platform Software Upgrade Dry Run
 To perform a platform software upgrade dry run:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. Optional. In the Platform Upgrade window, enter the target major and minor release number in the Release Version field. For example, 6.5. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller. 
+#. Optional. In the Platform Upgrade window, enter the target major and minor release number in the Release Version field. For example, 6.5. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller.
+ 
 #. Click on Dry Run.
 #. After the progress meter closes, review the information in the Upgrade Result window.
+
 * If there are no errors, you can continue with the upgrade process. 
 * If there are errors, you must resolve them before continuing with the upgrade.
+
 4. Close the Upgrade Result window.
 
 
