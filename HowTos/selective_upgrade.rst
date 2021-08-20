@@ -93,8 +93,10 @@ The following example demonstrates a selective upgrade from build 6.5.250 to 6.5
 
 |upgrade.mixed.versions|
 
+
 4. Operations are normal and no conflicts are detected.
 5. Gateways still running 6.5.250 are then upgraded to 6.5.750 and all gateways and the platform controller are running the same version.
+
 
 The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 
