@@ -145,7 +145,7 @@ Where is the URL for Aviatrix Controller and CoPilot on China Marketplace?
 Where is the URL to launch Aviatrix Controller from AWS CloudFormation in AWS China?
 =====================================================================================
 
-- `aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template <https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-china-cloudformation-templates/aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template>`_
+- `aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template <https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-public-download.s3.cn-north-1.amazonaws.com.cn/aws-china/cloudformation-templates/aviatrix-controller-and-IAM-setup-CFT/aviatrix-controller-and-IAM-setup-cft-BYOL.template>`_
 
 What is the design recommendation for China region?
 ====================================================
