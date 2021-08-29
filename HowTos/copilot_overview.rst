@@ -28,7 +28,7 @@ Key Benefits
 Deployment Model
 ------------------
 
-CoPilot is deployed as an all-in-one virtual appliance and is available on AWS and Azure MarketPlaces.
+CoPilot is deployed as an all-in-one virtual appliance and is available on AWS, Azure, GCP, and OCI MarketPlaces.
 CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational 
 Aviatrix Controller. 
 
