@@ -59,6 +59,14 @@ Gateway rollback operations are not supported after Controller restore operation
 
 - **AVX-10552** - Changed TGW VPN tunnel details response in API so list_attachment_route_table_detail  returns are in dictionary format rather than a long string.
 
+6.4.2830 (08/28/2021)
+=====================
+**Issues Corrected**
+
+- **AVX-13787** Incorrect gateway status is reported for default routes when an OCI gateway in insane mode is attached to a Transit FireNet gateway.
+- **AVX-14295** When on-premise routes are a injected or withdrawn, they are incorrectly removed in connected domain route tables.
+- **AVX-14689** Creating an Aviatrix gateway in the Alibaba Cloud may fail because the public IP address may not get converted to an elastic IP address.
+
 6.4.2791 (08/20/2021)
 =====================
 - **Bug fix** The FQDN egress filtering gateway blocks traffic after adding whitelisting tags to the egress filtering gateway.
