@@ -120,7 +120,7 @@ Multi Accounts                                  Yes         Yes             Yes 
 
 Aviatrix Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
 Aviatrix Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
-Firewall Network                                Yes         Yes             No                               Yes                      No                     
+Firewall Network                                Yes         Yes             No                               Yes                      Yes                     
 Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
 Native Peering                                  Yes         Yes             N/A                              Yes                      No
@@ -132,7 +132,7 @@ Advanced NAT                                    Yes         Yes             Yes 
 Remote Access User VPN                          Yes         Yes             Yes                              Yes                      Yes
 Site to Cloud VPN                               Yes         Yes             Yes                              Yes                      Yes
 
-Insane Mode Encryption                          Yes         Yes             Yes                              Yes                      No
+Insane Mode Encryption                          Yes         Yes             Yes                              Yes                      Yes
 
 Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
 FlightPath Expert Diagnostics                   Yes         Yes             Yes                              Yes                      No
@@ -142,6 +142,10 @@ Controller Security Group Management            Yes         Yes             No  
 Managed CloudN                                  Yes         Yes             No                               Yes                      No
 ==========================================      ==========  =============   ======================           =================       ==========
 
+What Features Are Supported in Which China Region Cloud?
+--------------------------------------------------------
+
+`Features supported table in China region <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html#what-features-are-supported-in-which-china-region-cloud>`_
 
 How To Launch Aviatrix?
 =========================
