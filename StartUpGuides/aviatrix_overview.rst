@@ -120,7 +120,7 @@ Multi Accounts                                  Yes         Yes             Yes 
 
 Aviatrix Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
 Aviatrix Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
-Firewall Network                                Yes         Yes             No                               Yes                      Yes                     
+Firewall Network                                Yes         Yes             Yes                              Yes                      Yes                     
 Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
 
 Native Peering                                  Yes         Yes             N/A                              Yes                      No
@@ -138,8 +138,8 @@ Logging Service Integration                     Yes         Yes             Yes 
 FlightPath Expert Diagnostics                   Yes         Yes             Yes                              Yes                      No
 IPv6                                            Yes         No              No                               No                       No
 PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No
-Controller Security Group Management            Yes         Yes             No                               Yes                      No
-Managed CloudN                                  Yes         Yes             No                               Yes                      No
+Controller Security Group Management            Yes         Yes             Yes                              Yes                      No
+Managed CloudN                                  Yes         Yes             Yes                              Yes                      No
 ==========================================      ==========  =============   ======================           =================       ==========
 
 What Features Are Supported in Which China Region Cloud?
