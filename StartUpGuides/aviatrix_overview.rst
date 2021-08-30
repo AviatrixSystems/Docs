@@ -139,7 +139,7 @@ FlightPath Expert Diagnostics                   Yes         Yes             Yes 
 IPv6                                            Yes         No              No                               No                       No
 PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No
 Controller Security Group Management            Yes         Yes             Yes                              Yes                      No
-Managed CloudN                                  Yes         Yes             Yes                              Yes                      No
+Managed CloudN                                  Yes         Yes             Yes                              Yes                      Yes
 ==========================================      ==========  =============   ======================           =================       ==========
 
 What Features Are Supported in Which China Region Cloud?
