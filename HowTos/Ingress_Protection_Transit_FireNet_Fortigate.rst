@@ -503,3 +503,19 @@ Open your browser and access the DNS of AWS Internet Application Load Balancer w
    :scale: 30%	 
 	 
 .. disqus::
+
+
+
+
+Ingress Protection via Aviatrix Transit Firenet for Multiple Applications
+
+
+In case customer has a use case where they want to inspect traffic for multiple applications using the same FW, in that case we need to add more NAT rules on the firewall. 
+
+
+Recommended Steps
+
+
+Create an additional subnet in the security VPC (/24) for the LB
+Create additional ALB/NLB based on the number of applications
+Add a SNAT/DNAT same as above for each application mapping it for the specific LB
