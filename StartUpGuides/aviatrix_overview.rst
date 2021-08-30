@@ -112,35 +112,47 @@ Our goal is to become your go-to vendor for all things cloud networking.
 What Features Are Supported in Which Cloud?
 -----------------------------------------------
 
-==========================================      ==========  =============   ======================           =================       ==========
-**Feature**                                     **AWS**     **Azure**       **GCP**                          **AWS GovCloud**         **OCI**
-==========================================      ==========  =============   ======================           =================       ==========
-Marketplace Launch                              Yes         Yes             Yes	                             Yes                      Yes
-Multi Accounts                                  Yes         Yes             Yes                              Yes                      Yes
-
-Aviatrix Transit Network Spoke                  Yes         Yes             Yes                              Yes                      Yes
-Aviatrix Transit Network Edge                   Yes         Yes             Yes	                      	     Yes                      Yes
-Firewall Network                                Yes         Yes             Yes                              Yes                      Yes                     
-Transit Gateway Peering                         Yes         Yes             Yes                              Yes                      Yes
-
-Native Peering                                  Yes         Yes             N/A                              Yes                      No
-
-FQDN Egress Control                             Yes         Yes             Yes                              Yes                      Yes
-Stateful Firewall                               Yes         Yes             Yes                              Yes                      Yes
-Advanced NAT                                    Yes         Yes             Yes                              Yes                      Yes
-
-Remote Access User VPN                          Yes         Yes             Yes                              Yes                      Yes
-Site to Cloud VPN                               Yes         Yes             Yes                              Yes                      Yes
-
-Insane Mode Encryption                          Yes         Yes             Yes                              Yes                      Yes
-
-Logging Service Integration                     Yes         Yes             Yes                              Yes                      Yes
-FlightPath Expert Diagnostics                   Yes         Yes             Yes                              Yes                      No
-IPv6                                            Yes         No              No                               No                       No
-PrivateS3 (unique to AWS)                       Yes         No              No                               Yes                      No
-Controller Security Group Management            Yes         Yes             Yes                              Yes                      No
-Managed CloudN                                  Yes         Yes             Yes                              Yes                      Yes
-==========================================      ==========  =============   ======================           =================       ==========
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| **Feature**                          | **AWS** | **Azure** | **GCP** | **OCI** | **AWS GovCloud** | **Azure GovCloud** |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Marketplace Launch                   | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Multi Accounts                       | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Aviatrix Transit Network Spoke       | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Aviatrix Transit Network Edge        | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Firewall Network                     | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Transit Gateway Peering              | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Native Peering                       | Yes     | Yes       | N/A     | No      | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| FQDN Egress Control                  | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Stateful Firewall                    | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Advanced NAT                         | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Remote Access User VPN               | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Site to Cloud VPN                    | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Insane Mode Encryption               | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Logging Service Integration          | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| FlightPath Expert Diagnostics        | Yes     | Yes       | Yes     | No      | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| IPv6                                 | Yes     | No        | No      | No      | No               | No                 |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| PrivateS3 (unique to AWS)            | Yes     | No        | No      | No      | Yes              | No                 |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Controller Security Group Management | Yes     | Yes       | Yes     | No      | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
+| Managed CloudN                       | Yes     | Yes       | Yes     | Yes     | Yes              | Yes                |
++--------------------------------------+---------+-----------+---------+---------+------------------+--------------------+
 
 What Features Are Supported in Which China Region Cloud?
 --------------------------------------------------------
