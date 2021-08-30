@@ -61,6 +61,7 @@ Gateway rollback operations are not supported after Controller restore operation
 
 6.4.2830 (08/28/2021)
 =====================
+
 **Issues Corrected**
 
 - **AVX-13787** Incorrect gateway status is reported for default routes when an OCI gateway in insane mode is attached to a Transit FireNet gateway.
@@ -69,10 +70,12 @@ Gateway rollback operations are not supported after Controller restore operation
 
 6.4.2791 (08/20/2021)
 =====================
+
 - **Bug fix** The FQDN egress filtering gateway blocks traffic after adding whitelisting tags to the egress filtering gateway.
 
 6.4.2783 (07/15/2021)
 =====================
+
 - **Bug fix** This issue is related to our smallest supported instance size in AWS which is t2.micro. In 6.4 the t2.micro instances were under additional memory pressure because of new services enabled in 6.4. As a result, some customers may experience gateway down events after upgrading to 6.4. This issue resolves those issues by optimizing several scheduled jobs which burden the t2.micro appliances.
 - **Enhancement** In order to alleviate memory pressure on our smallest supported AWS instance size; t2.micro, we now enable swap memory on instances with less than 1G of memory. This allows short periods of over-provision to be tolerated by the operating system ensuring continuous operations.
 
