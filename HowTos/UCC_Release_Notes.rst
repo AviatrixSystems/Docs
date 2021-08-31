@@ -1,6 +1,8 @@
 =======================================
 Release Notes
 =======================================
+
+
 6.5.1905 (8/24/2021)
 =====================
 
@@ -59,6 +61,7 @@ Gateway rollback operations are not supported after Controller restore operation
 
 - **AVX-10552** - Changed TGW VPN tunnel details response in API so list_attachment_route_table_detail  returns are in dictionary format rather than a long string.
 
+
 6.4.2830 (08/28/2021)
 =====================
 
@@ -68,16 +71,19 @@ Gateway rollback operations are not supported after Controller restore operation
 - **AVX-14295** When on-premise routes are a injected or withdrawn, they are incorrectly removed in connected domain route tables.
 - **AVX-14689** Creating an Aviatrix gateway in the Alibaba Cloud may fail because the public IP address may not get converted to an elastic IP address.
 
+
 6.4.2791 (08/20/2021)
 =====================
 
 - **Bug fix** The FQDN egress filtering gateway blocks traffic after adding whitelisting tags to the egress filtering gateway.
+
 
 6.4.2783 (07/15/2021)
 =====================
 
 - **Bug fix** This issue is related to our smallest supported instance size in AWS which is t2.micro. In 6.4 the t2.micro instances were under additional memory pressure because of new services enabled in 6.4. As a result, some customers may experience gateway down events after upgrading to 6.4. This issue resolves those issues by optimizing several scheduled jobs which burden the t2.micro appliances.
 - **Enhancement** In order to alleviate memory pressure on our smallest supported AWS instance size; t2.micro, we now enable swap memory on instances with less than 1G of memory. This allows short periods of over-provision to be tolerated by the operating system ensuring continuous operations.
+
 
 R6.4.2776 (07/13/2021)
 ========================
@@ -108,6 +114,7 @@ R6.4.2776 (07/13/2021)
 
 R6.4.2674 (06/26/2021)
 ========================
+
 - **Bug fix** In AWS and Azure clouds, gateway and FireNet tag keys and values do not support the colon (:) and other special characters.
 - **Bug fix** Added support for Azure Controller Security Group Management allowing the Network Security Group and the Azure Controller to use different Resource Groups.
 - **Bug fix** Added support for Multiple Dynamic SAML Profile attributes for controller login in list format.
@@ -117,6 +124,7 @@ R6.4.2674 (06/26/2021)
 
 R6.4.2672 (06/11/2021)
 ========================
+
 - **Bug fix** Gateway FQDN logs fail to download resulting in an error message.
 - **Bug fix** Availability Domain and Fault Domain not available in OCI gateway and firewall instances.
 - **Bug fix** Terraform bug fix, cannot delete all gateway tags.
