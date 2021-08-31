@@ -10,7 +10,7 @@ Bootstrap Configuration Example for FortiGate Firewall in AWS
 Using bootstrap option significantly simplifies Fortinet FortiGate initial configuration setup. 
 
 In this document, we provide a bootstrap example to set up an "Allow All" and Egress NAT policy for the FortiGate to validate 
-that traffic is indeed sent to the FortiGate for VPC to VPC traffic inspection. This example does not use Panorama. 
+that traffic is indeed sent to the FortiGate for VPC to VPC traffic inspection.
 
 For a manual setup, follow `manual setup example. <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html>`_
 
