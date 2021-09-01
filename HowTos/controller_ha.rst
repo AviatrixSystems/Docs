@@ -47,6 +47,8 @@ An AWS Lambda script is notified via SNS when new instances are launched by the 
 
 Restoring the Aviatrix Controller from a newly built instance requires access to the S3 bucket to retrieve the latest backup file.  In order to do this, the newly built EC2 Controller instance must be granted permission to read files in the bucket.  The simplest method of doing this is via an `IAM user with programmatic access to the S3 bucket <#create-iam-user>`__.
 
+The lambda script also requires access to the S3 bucket. It is recommended that the backup bucket is used in the same account that was used to launch the controller.
+
 Steps to Enable Controller HA
 -----------------------------
 
