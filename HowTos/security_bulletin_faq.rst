@@ -222,7 +222,7 @@ Aviatrix 6.5 and above implements the spiffee framework which use a PKI/X.509 st
 
 How does Aviatrix handle security patch?
 --------------------------------------------------------------------------------------------
-Security patch resolves software vulnerabilities and will be patched to the compatible software versions as stated in the release notes. When a patch is released, there will be a field notice to Aviatrix Controller via email. In addition, customer can send an email to securityalerts@aviatrix.com with a subject Subscribe, to subscribe to our customer mailing list. 
+A security patch resolves software vulnerabilities and will be applied to the compatible software versions as stated in the release notes. When a patch is released, there will be a field notice to Aviatrix Controller via email.
 
 How do I stay up to date with the latest security vulnerabilities?
 --------------------------------------------------------------------------------------------
