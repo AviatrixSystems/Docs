@@ -218,7 +218,7 @@ By default, data transfer is over a TCP connection with TLSv1.2 for encryption. 
 
 How does Aviatrix encrypt data in transit? 
 --------------------------------------------------------------------------------------------
-Aviatrix 6.5 and above implements the spiffee framework which use a PKI/X.509 strong encryption. You can read more about this framework at spiffee.io. 
+Aviatrix 6.5 and above, Aviatrix implements a secured framework based on PKI/X.509 protocol to communicate between Controller and Gateway. 
 
 How does Aviatrix handle security patch?
 --------------------------------------------------------------------------------------------
