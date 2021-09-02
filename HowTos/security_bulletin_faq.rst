@@ -226,7 +226,7 @@ A security patch resolves software vulnerabilities and will be applied to the co
 
 How do I stay up to date with the latest security vulnerabilities?
 --------------------------------------------------------------------------------------------
-We recommend customer to deploy the latest image, upgrading to the latest Software version, and staying on top of any security patch released. Security vulnerabilities is complex Aviatrix's policy is to address them continously in the latest releases. 
+We recommend customers to deploy the latest image, upgrading to the latest software version, and staying on top of any security patch released. Guaranteeing security against vulnerabilities is a sustained effort and it is Aviatrix's policy to address them continuously. 
 
 Does Aviatrix have a ISO 27002 Certification?
 --------------------------------------------------------------------------------------------
