@@ -71,6 +71,9 @@ Gateway rollback operations are not supported after Controller restore operation
 - **AVX-14295** When on-premise routes are a injected or withdrawn, they are incorrectly removed in connected domain route tables.
 - **AVX-14689** Creating an Aviatrix gateway in the Alibaba Cloud may fail because the public IP address may not get converted to an elastic IP address.
 
+**Known Behavior**
+
+Newly deployed cloud gateways use a new IKE implementation. This change may cause negotiation issues when spoke or on-premise tunnels are configured with an older IKE implementation on one side and our new IKE implementation on the transit side. You may observe tunnels taking a long time to become established, and on occasion may observe route flapping even after the tunnel is established.
 
 6.4.2791 (08/20/2021)
 =====================
