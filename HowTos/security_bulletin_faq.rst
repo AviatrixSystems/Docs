@@ -224,7 +224,7 @@ How does Aviatrix handle security patch?
 --------------------------------------------------------------------------------------------
 Security patch resolves software vulnerabilities and will be patched to the compatible software versions as stated in the release notes. When a patch is released, there will be a field notice to Aviatrix Controller via email. In addition, customer can send an email to securityalerts@aviatrix.com with a subject Subscribe, to subscribe to our customer mailing list. 
 
-How do I stay up to sate with the latest security vulnerabilities?
+How do I stay up to date with the latest security vulnerabilities?
 --------------------------------------------------------------------------------------------
 We recommend customer to deploy the latest image, upgrading to the latest Software version, and staying on top of any security patch released. Security vulnerabilities is complex Aviatrix's policy is to address them continously in the latest releases. 
 
