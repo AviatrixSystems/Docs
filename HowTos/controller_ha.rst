@@ -103,6 +103,10 @@ Launch CloudFormation Stack
    * A Lambda function for setting up HA and restoring configuration automatically
    * An AWS Role for Lambda and corresponding role policy with required permissions
 
+.. note::
+   Please note that if you change the Controller name or change the backup destination bucket on S3, your Controller HA will not work as expected. You would have to delete the Controller HA CloudFormation Stack and redeploy it.
+
+
 .. tip::
    Additional instructions and code are available `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/>`__.
    
