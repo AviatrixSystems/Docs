@@ -9,6 +9,29 @@ Field Notices
 
 
 
+
+Field Notice 0032 (2021/09/09)
+--------------------------------
+
+**In rare occasions, Controller backup file could get corrupted, resulting in gateways being shown as “down” if used for a Controller restore**
+
+**Problem:**
+
+We have observed, on one occasion, that the Controller’s backups were corrupt. If the backup file does get corrupt, the size of the backup file will be much larger than expected (in tens of MB or larger - much larger than the typical sizes ≤1 MB). The size would be the only indication of the backup file corruption. This issue is being tracked as AVX-14852
+
+**Recommended Solution:**
+
+A fix for this issue is in works and will be released for the supported releases (6.2, 6.3, 6.4, 6.5) on 9/11/2021. Please upgrade to these builds, following the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_, as soon possible.
+
+We request that you inspect your backup file size and if it is larger than expected, please go to Controller/Settings/Backup and click on “backup now” while not running any other operation on the Controller - and compare the backup file sizes.
+* If the new backup file size is as expected, please save a copy. And upgrade to the new builds with fix for AVX-14852
+* If the new backup file size continues to be large, please reach out to Aviatrix Support at https://support.aviatrix.com
+
+
+
+
+
+
 Field Notice 0031 (2021/08/06)
 --------------------------------
 
