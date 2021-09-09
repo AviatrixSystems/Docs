@@ -97,7 +97,7 @@ Launch CloudFormation Stack
 .. note::
    This stack creates the following:
    
-   * An Autoscaling group of size 1 and associated security group
+   * An Autoscaling group of size 1 (minimum capacity=0, maximum capacity=1, desired capacity=1) and associated security group
    * A SNS topic with same name as of existing controller instance
    * An email subscription to the SNS topic (optional)
    * A Lambda function for setting up HA and restoring configuration automatically
