@@ -22,7 +22,7 @@ Gateway in Azure marketplace.
 Step 1: Select Aviatrix Companion Gateway
 ------------------------------------------
 
-Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-companion-gateway-v5?tab=Overview>`_ to subscribe to Companion Gatewaay V5
+Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-companion-gateway-v5?tab=Overview>`_ to subscribe to Companion Gatewaay V8.
 
 
  |companion_gw|
@@ -46,7 +46,7 @@ Select **[Enable]**, click **[Save]**, as shown below
 
     That’s it!
 
-    For support, send email to support@aviatrix.com
+    For support, go to Aviatrix Support at https://support.aviatrix.com and open a ticket.
 
 .. |image0| image:: CompanionGateway_media/img_01.PNG
 .. |image1| image:: CompanionGateway_media/img_02.PNG
