@@ -2,6 +2,25 @@
 Release Notes
 =======================================
 
+Security Note (9/11/2021)
+=========================
+
+**Subject**: Security release for Aviatrix versions 6.5, 6.4, 6.3, and 6.2. 
+
+**Issues**: The latest 6.5, 6.4, 6.3, and 6.2 versions contain fixes for several vulnerabilities in the controller API: 
+
+- Several APIs used to upload configurations of certain services did not verify the authentication of the service or user executing the API call properly.
+- Similar APIs designed to upload files from authenticated users did not properly sanitize their destination input, allowing directory traversal attacks which could eventually allow an authenticated attacker to execute code on the controller. 
+- Fix for Aviatrix issue AVX-14852 described in Aviatrix FN 0032: In rare occasions, Controller backup file could get corrupted, resulting in gateways being shown as “down” if used for a Controller restore.
+
+**Mitigation**: Please upgrade to the latest release:
+
+- "6.2": "UserConnect-6.2-1804.2043" or later.
+- "6.3": "UserConnect-6.3-1804.2490" or later. 
+- "6.4": "UserConnect-6.4-1804.2838" or later. 
+- "6.5": "UserConnect-6.5-1804.1922" or later.
+
+**Credit**: Aviatrix would like to thank the team at Tradecraft (https://www.wearetradecraft.com/) for the responsible disclosure of these issues.
 
 6.5.1905 (8/24/2021)
 =====================
