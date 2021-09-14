@@ -16,8 +16,8 @@ Security Note (9/11/2021)
 **Mitigation**: Please upgrade to the latest release:
 
 - "6.2": "UserConnect-6.2-1804.2043" or later.
-- "6.3": "UserConnect-6.3-1804.2490" or later. 
-- "6.4": "UserConnect-6.4-1804.2838" or later. 
+- "6.3": "UserConnect-6.3-1804.2490" or later.
+- "6.4": "UserConnect-6.4-1804.2838" or later.
 - "6.5": "UserConnect-6.5-1804.1922" or later.
 
 **Credit**: Aviatrix would like to thank the team at Tradecraft (https://www.wearetradecraft.com/) for the responsible disclosure of these issues.
