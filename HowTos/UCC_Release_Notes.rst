@@ -2,8 +2,8 @@
 Release Notes
 =======================================
 
-Security Note (9/11/2021)
-=========================
+Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
+===================================================================
 
 **Subject**: Security release for Aviatrix versions 6.5, 6.4, 6.3, and 6.2. 
 
@@ -13,12 +13,13 @@ Security Note (9/11/2021)
 - `CVE-2021-40870 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40870>`_: Similar APIs designed to upload files from authenticated users did not properly sanitize their destination input, allowing directory traversal attacks which could eventually allow an authenticated attacker to execute code on the controller.
 - Fix for Aviatrix issue AVX-14852 described in Aviatrix FN 0032: In rare occasions, Controller backup file could get corrupted, resulting in gateways being shown as “down” if used for a Controller restore.
 
-**Mitigation**: Please upgrade to the latest release:
+**Mitigation**: Please upgrade to the latest release. For instructions, go to `support.aviatrix.com <https://support.aviatrix.com/>`_ and search for *Aviatrix Controller Upgrade*.
 
-- "6.2": "UserConnect-6.2-1804.2043" or later.
-- "6.3": "UserConnect-6.3-1804.2490" or later.
-- "6.4": "UserConnect-6.4-1804.2838" or later.
-- "6.5": "UserConnect-6.5-1804.1922" or later.
+
+-If you are running 6.2, upgrade to 6.2.2043 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.2 `EoL <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ is 10/15/2021.
+-If you are running 6.3, upgrade to 6.3.2490 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.3 `EoE <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ was 7/31/2021.
+-If you are running 6.4, upgrade to 6.4.2838 or later.
+-If you are running 6.5, upgrade to 6.5.1922 or later.
 
 **Credit**: Aviatrix would like to thank the team at Tradecraft (https://www.wearetradecraft.com/) for the responsible disclosure of these issues.
 
