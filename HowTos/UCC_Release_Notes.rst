@@ -21,7 +21,6 @@ Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
 -If you are running 6.4, upgrade to 6.4.2838 or later.
 -If you are running 6.5, upgrade to 6.5.1922 or later.
 
-
 **Credit**: Aviatrix would like to thank the team at Tradecraft (https://www.wearetradecraft.com/) for the responsible disclosure of these issues.
 
 6.5.1905 (8/24/2021)
