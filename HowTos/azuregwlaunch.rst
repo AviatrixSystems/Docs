@@ -47,7 +47,7 @@ From the Controller console, launch the gateway again and observe the failure.
 
 4. Get Help from Aviatrix Support
 ---------------------------------
-If you still cannot figure out the problem, send an email to support@aviatrix.com to get help.
+If you still cannot figure out the problem, lease open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get help.
 
 .. |image0| image:: azuregwlaunch_media/azuregwlaunch.png
 
