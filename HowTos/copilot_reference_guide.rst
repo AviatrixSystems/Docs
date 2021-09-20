@@ -111,6 +111,259 @@ Interacting with the flows
 FlowIQ providers various views for visualizing traffic records. The view respond to filters that are selected. 
 The filters that are set by the user are carried across all of views. 
 
+CoPilot WebHooks Customization
+======================
+
+
+You can customize the webhooks Aviatrix CoPilot generates for sending to external systems (such as Slack) by using the Handlebars templating language. Examples are provided in this topic for high level variables that are exposed in CoPilot notification alerts.
+
+CoPilot alerts expose the following high level variables (objects):
+
+- **alert**
+- **event**
+- **webhook**
+
+Each object exposes additional variables that can be accessed.
+
+Alert
+-------
+
+The alert object exposes ::
+
+  "alert": {
+    "closed": false,
+    "metric": "CPU Utilization",
+    "name": "High CPU Usage",
+    "status": "OPEN",
+    "threshold": 80,
+    "unit": "%"
+  }
+
+Event
+-------
+
+The event object exposes ::
+
+  "event": {
+    "receiveSeparateAlert": false,
+    "exceededOrDropped": "Exceeded",
+    "newlyAffectedHosts": ["spoke1", "spoke1-hagw"],
+    "recoveredHosts": ["spoke2"],
+    "message": "Alert Updated",
+    "timestamp": "2021-05-22T17:49:20.547Z"
+  }
+
+where:
+
+- ``newlyAffectedHosts`` represents the hosts that are now affected but were not affected before. These hosts usually need the user’s attention the most.
+- ``recoveredHosts`` represents the hosts that are now recovered.
+- ``receiveSeparateAlert`` is for individual host alerts.
+
+Webhook
+---------
+
+The webhook object exposes ::
+
+  "webhook": {
+    "name": "",
+    "secret": "",
+    "tags": [],
+    "url": ""
+  }
+
+Creating a custom webhook and accessing individual fields
+-----------------------------------------------------------
+
+Example 1: If individual alerts for hosts is ON, receive a string. Else receive an array.  ::
+
+  {  
+    "status": "{{#if alert.closed}}ok{{else}}critical{{/if}}", 
+    "check": {{alert.name}},
+    "copilotstatus": {{alert.status}},
+    "host": {{#if event.receiveSeparateAlert}}
+    {{#if event.newlyAffectedHosts}}
+      {{event.newlyAffectedHosts.[0]}}
+    {{else}}
+      {{event.recoveredHosts.[0]}}
+    {{/if}}
+  {{else}}
+    {{#if event.newlyAffectedHosts}}
+      {{event.newlyAffectedHosts}}
+    {{else}}
+      {{event.recoveredHosts}}
+    {{/if}}
+  {{/if}},
+    "alert_timestamp": "Received <<alert.metric>> at <<event.timestamp>>"
+  }
+
+
+Example 2  ::
+
+  {
+    "myAlert": {{alert.name}},
+    "triggeredAt": {{event.timestamp}},
+    "eventMessage": {{event.message}},
+    "triggeredMetric": {{alert.metric}},
+    "status": {{alert.status}},
+    "webHookName": {{webhook.name}},
+    "webHookTags": {{webhook.tags}}
+  }​
+
+Output:L  ::
+
+  {
+    "myAlert": "High CPU Usage",
+    "triggeredAt": "2021-05-22T18:06:34.143Z",
+    "eventMessage": "Alert Updated",
+    "triggeredMetric": "CPU Utilization",
+    "status": "OPEN",
+    "webHookName": "test",
+    "webHookTags": [
+      "customTag"
+    ]
+  }​
+
+Templates support JSON and String formatted output as values.
+
+In situations where you want to specifically format the value of an output, it needs to be converted from JSON (default) to a string value.
+
+“webhook”: {{webhook}}→ produces JSON: ::
+
+  {
+    "webhook": {
+      "name": "",
+      "secret": "",
+      "tags": [
+        "test",
+        "123",
+        "emergency"
+      ],
+      "url": ""
+    }
+  }​
+
+“webhook”: “<<webhook>>” → produces STRING: ::
+
+  {
+    "webhook": "{\n  \"name\": \"\",\n  \"secret\": \"\",\n  \"tags\": [\n    \"test\",\n    \"123\",\n    \"emergency\"\n  ],\n  \"url\": \"\"\n}"
+  }
+
+String escaped values allow for custom messages to be used in values. ::
+
+  {
+    "webhook": "My Custom Webhook message <<webhook>>"
+  }
+
+Output:  ::
+
+  {
+    "webhook": "My Custom Webhook message {\n  \"name\": \"\",\n  \"secret\": \"\",\n  \"tags\": [\n    \"test\",\n    \"123\",\n    \"emergency\"\n  ],\n  \"url\": \"\"\n}"
+  }
+
+Looping over lists in templates using ``#attribute...``**.**``.../attribute``. Any content between the # and / is expanded once for each list item, and the special attribute **.** can be used to refer to it.
+
+Some attributes refer to a list of results:
+
+- ``webhook.tags:`` list of optional user-defined strings, configured on a per-webhook basis.
+- ``event.newlyAffectedHosts`` represents the hosts that are now affected but were not affected before. These hosts usually need the user’s attention the most.
+- ``event.recoveredHosts`` represents the hosts that are now recovered.
+
+::
+
+  {
+    "webHookTags": {{webhook.tags}}
+  }
+
+Output: ::
+
+  {
+    "webHookTags": [
+      "customTag",
+      "Slack",
+      "Emergency"
+    ]
+  }
+
+If you want to customize the output for list items: ::
+
+   {
+     "webhook": "<<#webhook.tags>> tag:<<.>> <</webhook.tags>>"
+   }
+
+Output: ::
+
+  {
+    "webhook": " tag:test  tag:123  tag:emergency "
+  }
+
+Escaping quotes for return values when creating custom values is performed automatically for strings within << >>.
+
+``{{{some_quoted_var}}}`` disables escapes altogether, which should be avoided, as it can unexpectedly cause embedded strings to form invalid JSON, for example, an alert name of ``A “great” alert``, quotes, newlines, tabs, and so on are not allowed in JSON strings.
+
+Input: ::
+
+  {
+    "alertStatus": "Name:{{{alert.name}}} Metric:{{{alert.metric}}} alert"
+  }
+
+Output: ::
+
+  {
+    "alertStatus": "Name:High CPU Usage Metric:CPU Utilization alert"
+  }
+
+Custom Slack Webhook example (slack document: https://app.slack.com/block-kit-builder/): ::
+
+  {
+    "blocks":[
+      {
+        "type":"header",
+        "text":{
+          "type":"plain_text",
+          "text":":fire:<<alert.name>>:fire:"
+        }
+      },
+      {
+        "type":"divider"
+      },
+      {
+        "type":"section",
+        "text":{
+          "type":"mrkdwn",
+          "text":"newly affected hosts:\n <<#event.newlyAffectedHosts>>:arrow_down:<<.>>\n<</event.newlyAffectedHosts>>"
+        }
+      },
+      {
+        "type":"actions",
+        "elements":[
+          {
+            "type":"button",
+            "text":{
+              "type":"plain_text",
+              "text":"Confirm",
+              "emoji":true
+            },
+            "value":"click_me_123",
+            "action_id":"actionId-0"
+          }
+        ]
+      },
+      {
+        "type":"section",
+        "text":{
+          "type":"mrkdwn",
+          "text":"status: <<alert.status>>\nthreshold: <<alert.threshold>><<alert.unit>>\ntime: <<event.timestamp>>\nmesssage: <<event.message>>"
+        }
+      }
+    ]
+  }
+
+
+**Webhook Example**
+
+|webhook_image|
+
+
 Settings
 ======================
 
@@ -191,5 +444,8 @@ Managing Your Appliance
 
 ..  |flowIQ_image| image:: CoPilot_reference_guide_media/CoPilot_flowiq.png
     :width: 200
+
+..  |webhook_image| image:: copilot_reference_guide_media/webhookImage.png
+    :scale: 50%
 
 
