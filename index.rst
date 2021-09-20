@@ -2,7 +2,7 @@ Welcome to Aviatrix Docs
 ========================
 
 All Aviatrix product documentation can be found here.
-If you cannot find what you need, email us at support@aviatrix.com. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on GitHub" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
+If you cannot find what you need, please reach out to us via `Aviatrix Support Portal <https://support.aviatrix.com>`_. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on GitHub" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
 
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
