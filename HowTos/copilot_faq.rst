@@ -74,7 +74,7 @@ If Controller IP changes and if copilot is associated with an old controller IP,
 
 If the user is signed-in into copilot is to - go to Copilot UI -> Settings and click on 'Reset controller IP' button. It will prompt the user to enter new Controller IP address and service account credentials.
 
-If user is logged out, please contact support@aviatrix.com for solution.
+If user is logged out, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for solution.
 
 
 Is FlowIQ showing realtime traffic? 
