@@ -145,7 +145,7 @@ The configuration workflow is as follows. It highlights the major steps.
    include the domain name. For example, an instance with nickname
    webfrontend should be accessed as webfrontend.mydevops.com
 
-#. For support, send email to support@aviatrix.com.
+#. For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 #. For feature request, click Make a wish at the bottom of each page.
 
