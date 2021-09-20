@@ -28,10 +28,7 @@ Prerequisite
 Get a Customer ID from Aviatrix
 -------------------------------
 
-Currently, the Aviatrix Controller for GCloud is only available via community
-image for BYOL license. Send an email to info@aviatrix.com or
-support@aviatrix.com with your organization name to request a customer
-ID. We offer a 30 day free trial license.
+Currently, the Aviatrix Controller for GCloud is only available via community image for BYOL license. Send an email to info@aviatrix.com or open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_  with your organization name to request a customer ID. We offer a 30 day free trial license.
 
 Create a Google Cloud Platform (GCloud) account
 ------------------------------------------------
@@ -219,7 +216,7 @@ release becomes available.
 
 
 
-For support, send email to support@aviatrix.com
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 Enjoy!
 
