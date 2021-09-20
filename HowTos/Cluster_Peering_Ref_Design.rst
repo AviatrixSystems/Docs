@@ -131,7 +131,7 @@ highlighted.
 3. You can create multiple clusters in a VPC. A gateway may also belong
    to different clusters.
 
-4. For support, send an email to support@aviatrix.com.
+4. For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 5. Enjoy!
 
