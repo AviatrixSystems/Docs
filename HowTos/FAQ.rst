@@ -266,8 +266,7 @@ The first time when you login, complete the Onboarding process. It takes a
 few steps.
 
 If you have a BYOL license or use a community image, you need to have a
-customer ID provided by Aviatrix to be able to use the product. Contact
-support@aviatrix.com if you do not have a customer ID.
+customer ID provided by Aviatrix to be able to use the product. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ if you do not have a customer ID.
 
 What is an Aviatrix Access Account?
 -------------------------------------
@@ -301,8 +300,7 @@ What is the support model?
 -----------------------------
 
 
-For support, send email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__ or your respective Account Executive.
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ or reach out to your respective Account Executive.
 We also offer `Platinum <https://aviatrix.com/support/>`__ customers with 24x7 support.
 
 Logging and Monitoring
