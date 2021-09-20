@@ -445,7 +445,7 @@ as an Aviatrix gateway in the cloud when Aviatrix Controller is upgraded. Please
 	
 	* Once CloudN is registered to Aviatrix controller, if you wish to check the version of Managed-CloudNs, please go to Aviatrix controller -> Settings -> Maintenance -> Upgrade -> Gateway Upgrade Status. However, the software version you see from CloudN GUI locally would not change, and it stays with the version at the time when you register CloudN to Aviatrix controller.
 	
-	* With Managed CloudN, software upgrading directly from CloudN GUI is no longer needed, unless unexpected issues occur. In such case, please first contact Aviatrix Support support@aviatrix.com.
+	* With Managed CloudN, software upgrading directly from CloudN GUI is no longer needed, unless unexpected issues occur. In such case, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 	
 	
 
@@ -564,7 +564,7 @@ Step 4.3 Perform feature "Reset Configuration" on Aviatrix Controller GUI
 	
 	.. important::
 	
-		If users need any assistance for Reset Configuration operation, please contact Aviatrix Support support@aviatrix.com.
+		If users need any assistance for Reset Configuration operation, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 User Guide for Redundant DX Deployment
 ======================================
