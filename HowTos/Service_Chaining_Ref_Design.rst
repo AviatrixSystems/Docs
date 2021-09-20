@@ -74,7 +74,7 @@ steps highlighted.
 2. Note: You can create more peering connections from VPC-1, all traffic
    will be inspected.
 
-3. For support, send email to support@aviatrix.com.
+3. For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 4. Enjoy!
 
