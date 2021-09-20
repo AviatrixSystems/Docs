@@ -200,7 +200,7 @@ If cloud account creation fails, check the error message at the Aviatrix
 controller console and try again with the steps provided in this
 document.
 
-For additional support, send an email to support@aviatrix.com
+For additional support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 .. |image0| image:: GCloud_media/image1.png
 
