@@ -9,7 +9,7 @@ Operations
 Pre-Op Procedures
 ---------------------
 
-We recommend that you always go through the following checklist before you start any operations on your Aviatrix Controller. This will help minimize any issues or collateral damage. All of the following procedures can be executed outside your maintenance window - and can help save valuable time during maintenance window. If you have any comments or feedback, we welcome your inputs at support@aviatrix.com
+We recommend that you always go through the following checklist before you start any operations on your Aviatrix Controller. This will help minimize any issues or collateral damage. All of the following procedures can be executed outside your maintenance window - and can help save valuable time during maintenance window. If you have any comments or feedback, we welcome your inputs - please submit a new ticket at our `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 * Your Controller has to have a reliable DNS resolution service available. We recommend using 8.8.8.8. If you are on AWS/Azure, you can go to "Controller/Settings/Controller/DNS Server/Use VPC.VNET DNS Server" and disable it. This will force the controller to use 8.8.8.8.
 * The controller needs to have full access to public internet
