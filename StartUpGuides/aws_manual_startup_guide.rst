@@ -17,8 +17,7 @@ select the image type you wish to launch.
 ::
 
   Note if you select the BYOL image, you need a customer ID from Aviatrix
-  for launching gateways. Send email to support@aviatrix.com or
-  info@aviatrix.com to request a customer ID.
+  for launching gateways. Send email to info@aviatrix.com or open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to request a customer ID.
 
 
 Customer ID is not needed if you select utility images such as “5
@@ -94,7 +93,7 @@ Once you are at AWS EC2 console, follow the steps below:
        address ranges as Aviatrix gateways need to communicate to the
        controller on this port.
 
-For support, send email to support@aviatrix.com. Enjoy!
+Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_. Enjoy!
 
 .. |image0| image:: AviatrixCloudControllerStartupGuide_media/image001.png
    :width: 2.90683in
