@@ -720,9 +720,9 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |Indicates disk usage on the gateway.                                                          |
 |                                                                                              |
-|  > The maximum size of /usr should be lower than 6G, please contact                          |
+|  > The maximum size of /usr should be lower than 6G, please open  a support ticket at        |
 |                                                                                              |
-|  support@aviatrix.com if you see abnormal usage in a folder.                                 |
+|  https://support.aviatrix.com if you see abnormal usage in a folder.                         |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |                                                                                              |
