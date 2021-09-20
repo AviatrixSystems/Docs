@@ -70,7 +70,7 @@ How to troubleshoot ActiveMesh Transit Gateway?
  #. **Check Aviatrix Transit Gateway Programmed Routes** Go (Multi-Cloud) Transit Network -> List. Select the Transit Gateway, click Actions -> Show Details. Scroll down to the Gateway Routing Table and click to open. Make sure the routes you are looking for is in the table and has a next hop with metric 100 or lower.  
  #. **Sync Routes** If for any reason the Route Database on the Controller become inconsistent with the Aviatrix Transit Gateway route table, sync the routes to force program the routes on the gateway again. Go to Multi-Cloud Transit -> Advanced Config. Select the Aviatrix Transit Gateway in question, scroll down to the `Sync Controller Best Routes to Transit Gateway`, click `Sync Routes`. 
 
-If any of the above steps show failure, there is an error, contact support@aviatrix.com for more debugging assistance. 
+If any of the above steps show failure, there is an error, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for more debugging assistance.
 
 If all above steps succeed, the connectivity issue lies somewhere else. Check Spoke VPC route table and TGW route table if applicable. 
 
