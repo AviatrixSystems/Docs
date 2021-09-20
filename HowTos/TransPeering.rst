@@ -96,7 +96,7 @@ with major steps highlighted.
 
 3. Repeat step 3 above for more co-locations.
 
-4. For support, send an email to support@aviatrix.com.
+4. For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 5. For feature requests and feedback, click Make a wish at the bottom of
    each page.
