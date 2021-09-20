@@ -99,7 +99,7 @@ The Controller and gateways can export logged data to the following services:
 9. Software and Technical Support
 ------------------------------------
 
- - **support@aviatrix.com** Technical problem? Have no fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24/7 support for Platinum customers.
+ - `Aviatrix Support Portal <https://support.aviatrix.com>`_ Technical problem? Have no fear. Aviatrix's most capable networking engineers are ready to help you troubleshoot issues large and small and most of them are not even related to Aviatrix solutions. Aviatrix offers 24/7 support for Platinum customers.
  - **Fast Release Cycle** New software releases become available every 6 - 8 weeks. A new software release automatically generates notification email to the Controller admin team.
  - **Hot Fix** Any showstoppers or operation impacting problems are immediately addressed by "Hot Fix" patches. 
  - **Solution Architects** Aviatrix solution architects can help you design your cloud network deployment to be simple to manage, scalable and secure. 
