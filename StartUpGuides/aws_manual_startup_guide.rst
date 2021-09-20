@@ -17,7 +17,9 @@ select the image type you wish to launch.
 ::
 
   Note if you select the BYOL image, you need a customer ID from Aviatrix
-  for launching gateways. Send email to info@aviatrix.com or open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to request a customer ID.
+  for launching gateways. Send email to info@aviatrix.com or open a support
+  ticket at Aviatrix Support Portal (https://support.aviatrix.com) to request
+  a customer ID.
 
 
 Customer ID is not needed if you select utility images such as “5
