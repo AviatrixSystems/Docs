@@ -260,7 +260,7 @@ Output:  ::
     "webhook": "My Custom Webhook message {\n  \"name\": \"\",\n  \"secret\": \"\",\n  \"tags\": [\n    \"test\",\n    \"123\",\n    \"emergency\"\n  ],\n  \"url\": \"\"\n}"
   }
 
-Looping over lists in templates using ``#attribute...  .  .../attribute``. Any content between the # and / is expanded once for each list item, and the special attribute ``.`` can be used to refer to it.
+Looping over lists in templates using #attribute...  .  .../attribute. Any content between the # and / is expanded once for each list item, and the special attribute ``.`` can be used to refer to it.
 
 Some attributes refer to a list of results:
 
