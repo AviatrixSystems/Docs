@@ -260,11 +260,11 @@ Output:  ::
     "webhook": "My Custom Webhook message {\n  \"name\": \"\",\n  \"secret\": \"\",\n  \"tags\": [\n    \"test\",\n    \"123\",\n    \"emergency\"\n  ],\n  \"url\": \"\"\n}"
   }
 
-Looping over lists in templates using ``#attribute...````.````.../attribute``. Any content between the # and / is expanded once for each list item, and the special attribute ``.`` can be used to refer to it.
+Looping over lists in templates using ``#attribute...  .  .../attribute``. Any content between the # and / is expanded once for each list item, and the special attribute ``.`` can be used to refer to it.
 
 Some attributes refer to a list of results:
 
-- ``webhook.tags:`` list of optional user-defined strings, configured on a per-webhook basis.
+- ``webhook.tags`` list of optional user-defined strings, configured on a per-webhook basis.
 - ``event.newlyAffectedHosts`` represents the hosts that are now affected but were not affected before. These hosts usually need the user’s attention the most.
 - ``event.recoveredHosts`` represents the hosts that are now recovered.
 
