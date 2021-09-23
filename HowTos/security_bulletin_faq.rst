@@ -216,6 +216,24 @@ How is data encrypted during transmission from source Controller to destination 
 
 By default, data transfer is over a TCP connection with TLSv1.2 for encryption. Customers have the option to downgrade the TLS Version used due to internal dependency conflicts. You can configure this in Aviatrix Controller by clicking on Settings > Advanced > Security.
 
+How does Aviatrix encrypt data in transit? 
+--------------------------------------------------------------------------------------------
+Aviatrix 6.5 and above, Aviatrix implements a secured framework based on PKI/X.509 protocol to communicate between Controller and Gateway. 
+
+How does Aviatrix handle security patch?
+--------------------------------------------------------------------------------------------
+A security patch resolves software vulnerabilities and will be applied to the compatible software versions as stated in the release notes. When a patch is released, there will be a field notice to Aviatrix Controller via email.
+
+How do I stay up to date with the latest security vulnerabilities?
+--------------------------------------------------------------------------------------------
+We recommend customers to deploy the latest image, upgrading to the latest software version, and staying on top of any security patch released. Guaranteeing security against vulnerabilities is a sustained effort and it is Aviatrix's policy to address them continuously. 
+
+Does Aviatrix have a ISO 27002 Certification?
+--------------------------------------------------------------------------------------------
+We currently don't but this is on the roadmap for 4Q2021. 
+
+
+
 |security_bulletin_faq_encrypted_transmission|
 
 .. |security_rbac_1| image:: security_bulletin_media/security_bulletin_faq_rbac_1.png
