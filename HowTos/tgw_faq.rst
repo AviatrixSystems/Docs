@@ -349,7 +349,7 @@ Yes. If you would like to connect  your direct connect directly into Transit Gat
 How to migrate from Aviatrix Transit Gateway to on-prem to TGW + DXGW?
 -------------------------------------------------------------------------
 
- 1. Prepare. Ceate a DXGW on AWS Console, figure out the cloud VPCs summary prefixes. i.e., prepare for TGW Orchestrator -> Plan -> Step 7
+ 1. Prepare. Create a DXGW on AWS Console, figure out the cloud VPCs summary prefixes. i.e., prepare for TGW Orchestrator -> Plan -> Step 7
  #. Disconnect Aviatrix Transit Gateway from VGW. Transit Network -> Setup -> Step 8 (Disconnect VGW)
  #. Connect. Connect to DXGW. TGW Orchestrator -> Plan -> Step 7
 
