@@ -2,6 +2,21 @@
 Release Notes
 =======================================
 
+6.4.2859 (9/22/2021)
+=====================
+
+**Feature Enhancements in Aviatrix Release 6.4**
+
+- **AVX-15101** - Added support for Azure Government Cloud Availablility Zones.
+- Enhanced stateful firewall functionality.
+- Enhanced certificate functionality.
+
+**Issues Corrected in Aviatrix Release 6.4**
+
+- **AVX-14678** - Unable to create multiple firewalls attached to the same transit gateway in Azure environments.
+- **AVX-15138** - When a spoke or transit gateway advertises a CIDR that overlaps with a CaaG or StandAlone CloudN MGMT eth2 subnet, and the client application accesses the device through the eth2 MGMT interface, the reply traffic is not returned through the eth2 MGMT interface.
+- **AVX-15198** - When transit gateway details are listed by the Aviatrix Controller or CoPilot, an exception may occur because the request is in replica mode and incorrectly tries to update the Mongo DB.
+
 Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
 ===================================================================
 
