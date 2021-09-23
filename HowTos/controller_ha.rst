@@ -41,11 +41,13 @@ Prerequisites
 Controller HA Details
 ---------------------
 
-Aviatrix Controller HA operates by relying on an AWS Auto Scaling Group.  This ASG has a desired capacity of 1.  If the Controller EC2 instance is stopped or terminated, it will be automatically re-deployed by the ASG.
+Aviatrix Controller HA operates by relying on an AWS Auto Scaling Group.  This ASG has a desired capacity of 1 (and minimum capacity = 0 and maximum capacity = 1).  If the Controller EC2 instance is stopped or terminated, it will be automatically re-deployed by the ASG.
 
 An AWS Lambda script is notified via SNS when new instances are launched by the Auto Scaling Group.  This script handles configuration using a recent Controller backup file.  The Aviatrix Controller manages these backups once `enabled <controller_backup.html>`__.
 
 Restoring the Aviatrix Controller from a newly built instance requires access to the S3 bucket to retrieve the latest backup file.  In order to do this, the newly built EC2 Controller instance must be granted permission to read files in the bucket.  The simplest method of doing this is via an `IAM user with programmatic access to the S3 bucket <#create-iam-user>`__.
+
+The lambda script also requires access to the S3 bucket. It is recommended that the backup bucket is used in the same account that was used to launch the controller.
 
 Steps to Enable Controller HA
 -----------------------------
@@ -95,11 +97,15 @@ Launch CloudFormation Stack
 .. note::
    This stack creates the following:
    
-   * An Autoscaling group of size 1 and associated security group
+   * An Autoscaling group of size 1 (minimum capacity=0, maximum capacity=1, desired capacity=1) and associated security group
    * A SNS topic with same name as of existing controller instance
    * An email subscription to the SNS topic (optional)
    * A Lambda function for setting up HA and restoring configuration automatically
    * An AWS Role for Lambda and corresponding role policy with required permissions
+
+.. note::
+   Please note that if you change the Controller name or change the backup destination bucket on S3, your Controller HA will not work as expected. You would have to delete the Controller HA CloudFormation Stack and redeploy it.
+
 
 .. tip::
    Additional instructions and code are available `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/>`__.
@@ -112,7 +118,10 @@ Steps to Disable Controller HA
 
 You can disable Controller HA by deleting the Controller HA CloudFormation stack. 
 
-Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack. **Please be careful,** and delete the cloudformation stack associated with the controller HA - and do not delete your controller launch cloudformation stack.
+  * Please take a backup from the Controller first - Controller/Settings/Maintenance/Backup&Restore/BackupNow. Please check in your S3 bucket to make sure that there is new backup files were generated and saved
+  * Check the ASG capacity first, it should be minimum capacity=0, maximum capacity=1, desired capacity=1. If these are changed, deleting the Controller HA Cloudformation stack could have an impact on your current Controller
+  * Log in to AWS Console, go to CloudFormation Service, identify the CloudFormation stack you used to enable Controller HA and delete the stack
+  * **Please be careful,** and delete the cloudformation stack associated with the controller HA - and do not delete your controller launch cloudformation stack
 
 
 FAQ

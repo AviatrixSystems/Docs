@@ -220,7 +220,7 @@ Troubleshooting
    the TTL expired and the key-value store cleans up the old entry
    automatically.
 
-For support, send email to support@aviatrix.com.
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 For feature request and feedback, click Make a wish at the bottom of
 each page.

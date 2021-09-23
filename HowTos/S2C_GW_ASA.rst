@@ -87,7 +87,7 @@ Network setup is as following:
 ===============================     =================================================================
 
 
-For support, send an email to support@aviatrix.com.
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 .. |image0| image:: s2c_gw_asa_media/Doc1.png
    :width: 5.55625in

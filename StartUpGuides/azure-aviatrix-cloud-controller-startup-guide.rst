@@ -140,13 +140,13 @@ Enjoy!
    :height: 5.0in
 
 .. |subscribe_to_meter| image:: AzureAviatrixCloudControllerStartupGuide_media/subscribe_to_meter.png
-   :scale: 30%
+   :scale: 90%
 
 .. |license_key| image:: AzureAviatrixCloudControllerStartupGuide_media/license_key.png
-   :scale: 30%
+   :scale: 90%
 
 .. |click_byol| image:: AzureAviatrixCloudControllerStartupGuide_media/click_byol.png
-   :scale: 30%
+   :scale: 90%
 
 .. |static_ip| image:: AzureAviatrixCloudControllerStartupGuide_media/static_ip.png
    :scale: 30%

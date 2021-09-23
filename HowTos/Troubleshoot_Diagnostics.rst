@@ -107,8 +107,7 @@ By default, the controller will roll back all the operations (gateway, EIP, secu
 Gateway Replace
 ~~~~~~~~~~~~~~~~~
 
-This feature allows you to replace an existing gateway when it becomes not functional by launching a new gateway and restoring the configuration to the new gateway. Use this feature only when you have exhausted all other options. 
-Contact support@aviatrix.com to execute this recovery mechanism. 
+This feature allows you to replace an existing gateway when it becomes not functional by launching a new gateway and restoring the configuration to the new gateway. Use this feature only when you have exhausted all other options. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ if you ahve any questions or if you need support
 
 Select a gateway in the drop down menu and click Replace.
 

@@ -23,7 +23,7 @@ If any of the above condition fails, the Controller sends out alert email and lo
 Note the event requires immediate attention; otherwise, it can lead to catastrophic operation outage. Go through the above
 conditions to repair the configuration.
 
-If you need help, email to support@aviatrix.com.
+If you need help, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 
 .. Note::

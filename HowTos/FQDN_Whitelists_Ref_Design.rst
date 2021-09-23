@@ -209,7 +209,7 @@ If a FQDN rule does not have * an exact match is expected. If this global option
 
 This feature is not enabled as default.
 
-For support, send an email to support@aviatrix.com
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 Enjoy!
 

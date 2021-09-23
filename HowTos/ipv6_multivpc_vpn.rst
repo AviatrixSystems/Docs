@@ -75,7 +75,7 @@ If you experience VPN client connectivity issue, check the following:
   - Instance Security Group is configured with the correct inbound port open. 
   - If you have User Profile enabled, the profile has the correct policies.
 
-For support, email to support@aviatrix.com
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 .. |ipv6_uservpn| image:: ipv6_multivpc_vpn_media/ipv6_uservpn.png
    :scale: 30%

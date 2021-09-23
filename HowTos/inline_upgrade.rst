@@ -2,11 +2,11 @@
    :description: software upgrade of controller and gateways
    :keywords: hitless upgrade, inline upgrade, upgrade gateway software, no packet loss upgrade
 
-###################################
-Inline Software Upgrade
-###################################
+####################################################
+Inline Software Upgrade for 6.4 and Earlier Releases
+####################################################
 
-Aviatrix software is released frequently every 6 - 8 weeks.
+If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in this section. If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`__. 
 
 When upgrading a controller's software, all gateways are upgraded with the new software at the same time. This is done by the controller pushing new software to gateways directly and automatically once requested.
 
@@ -24,7 +24,7 @@ Here are a few steps that we suggest you go through before the actual upgrade. I
 #. Check `pre-operations checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ before any operations on your controller.
 #. Ensure that all gateways are in green/up status. If not, check out `Support Center <https://docs.aviatrix.com/Support/support_center.html>`_ for common issues and solutions.
 #. Ensure that all the tunnels are green/up - if not, work with the right teams to debug and bring them up.
-#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket at https://aviatrix.zendesk.com or by sending an email to support@aviatrix.com.
+#. Execute "AviatrixConsole/Settings/Maintenance/Upgrade/DryRun" to make sure that all gateways are ready for upgrade. If any gateways fail the dry run, please run "AviatrixConsole/Troubleshoot/Diagnostics/Gateway/Diagnostics" and review results to make sure there is a good communication path between the Controller and the Gateway. If you cannot fix it, please click on "Submit Results" and then open a ticket on Support Portal at https://aviatrix.zendesk.com.
 #. Make sure that you have the right accounts/credentials to update IAM policies in all AWS accounts during the upgrade process.
 #. Do a backup and check the S3 bucket to make sure the process was successful. If you don't have backup enabled, please follow the `backup instructions <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ to enable it.
 #. If your controller is in AWS and running on a t2/t3 instance type, make sure that "T2/T3 Unlimited" attribute is set to "enabled" via the AWS Console - select controller instance, click on "Actions/InstanceSettings/Change T2.T3 Unlimited/Enable"

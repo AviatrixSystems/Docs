@@ -300,7 +300,7 @@ You are now ready to deploy use cases. Here are some of the things you can do:
 
 .. Important:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on an AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
-For technical support, email us at support@aviatrix.com
+For technical support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 Enjoy!
 

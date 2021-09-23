@@ -18,8 +18,7 @@ What is an Aviatrix Customer ID?
 ------------------------------------
 
 If you have a BYOL license or use a community image, you need to have a
-customer ID provided by Aviatrix to be able to use the product. Contact
-support@aviatrix.com if you do not have a customer ID.
+customer ID provided by Aviatrix to be able to use the product. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ if you do not have a customer ID.
 
 You do not need a Customer ID if you are running a metered AMI. 
 
@@ -42,7 +41,7 @@ What are different types of licenses available?
 
 There are three different types of licenses option available in Aviatrix Controller.
 
-    1. Bring Your Own License (BYOL) License - This license supports public cloud AWS, Azure, GCP and OCI. Contact support@aviatrix.com to get BYOL license.
+    1. Bring Your Own License (BYOL) License - This license supports public cloud AWS, Azure, GCP and OCI. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get BYOL license.
     #. Metered or Platinum Metered License - This is only applicable to AWS public cloud
     #. Utility - The utility AMI is available in AWS and Azure both and supports maximum 100 tunnels and limited number of VPN users.
 
@@ -202,8 +201,7 @@ Check out docs.aviatrix.com.
 What is the support model?
 ----------------------------
 
-For support, send an email to
-`support@aviatrix.com <mailto:support@aviatrix.com>`__. We also offer premium customers 24/7 support.
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_. We also offer premium customers 24/7 support.
 To request a
 feature, click the Make a wish button at the bottom of each page.
 

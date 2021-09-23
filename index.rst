@@ -2,7 +2,7 @@ Welcome to Aviatrix Docs
 ========================
 
 All Aviatrix product documentation can be found here.
-If you cannot find what you need, email us at support@aviatrix.com. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on GitHub" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
+If you cannot find what you need, please reach out to us via `Aviatrix Support Portal <https://support.aviatrix.com>`_. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on GitHub" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
 
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
@@ -23,7 +23,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Security`
 * :ref:`UsefulTools`
 * :ref:`Settings`
-* :ref:`Troubleshoot`
 * :ref:`Downloads`
 * :ref:`Release Notes`
 * :ref:`Security Bulletin`
@@ -31,8 +30,6 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
 * :ref:`Support Center`
-* :ref:`IPmotion`
-* :ref:`Troubleshooting Playbook`
 
 
 .. _Getting Started:
@@ -47,8 +44,6 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
    StartUpGuides/aviatrix_operations
-   StartUpGuides/CloudN-Startup-Guide
-   StartUpGuides/appendix-CloudN-Startup-Guide
    HowTos/meter_pricing
 
    HowTos/FAQ
@@ -113,7 +108,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/insane_mode_perf
    HowTos/CloudN_insane_mode
    HowTos/CloudN_workflow
-   HowTos/Setup_Transit_Network_Terraform
    HowTos/migrate_tgw_orchestrator_to_aviatrix_transit
    HowTos/integrate_transit_gateway_with_expressroute
    HowTos/private_oob_workflow
@@ -298,6 +292,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/controller_backup
    HowTos/controller_ha
+   HowTos/selective_upgrade
    HowTos/inline_upgrade
    HowTos/AviatrixLogging
    HowTos/alert_and_email
@@ -325,16 +320,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/azuregwlaunch
    HowTos/Troubleshoot_ELB_Status
    HowTos/flightpath
-
-.. _Terraform:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Terraform
-
-   HowTos/tf_aviatrix_howto
-   HowTos/aviatrix_terraform
-   HowTos/tf_export
 
 .. _Downloads:
 
@@ -382,7 +367,6 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Tech Notes
 
-   HowTos/CloudN-config-drive-v1_4
    HowTos/AWS_NetworkLoadBalancer_Onsite_And_In_Cloud
    HowTos/DatadogIntegration
    StartUpGuides/aws_manual_startup_guide
@@ -448,44 +432,5 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Support Center
 
-   Support/support_center
    Support/support_center_operations
-   Support/support_center_controller
-   Support/support_center_openvpn_gateway
-   Support/support_center_transit_solution
-   Support/support_center_egress_firewall
-   Support/support_center_logging
-   Support/support_center_site2cloud
-   Support/support_center_ipsec
-   Support/support_center_aws_infrastructure
-   Support/support_center_gcp_infrastructure
-   Support/support_center_terraform
-   Support/support_ticket_priority
-   Support/support_center_useful_tools
-   Support/support_center_cloudn
-   Support/support_center_aviatrix_vpn_client
-   Support/support_center_firenet
-
-.. _IPmotion:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: IPmotion
-
-   HowTos/ipmotion
-   HowTos/HowTo_Setup_IPMotion
-   HowTos/design_pattern_ipmotion
-   HowTos/ipmotion_dependency_discovery
-   
-.. _Troubleshooting Playbook:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Troubleshooting Playbook
-
-   TroubleshootingPlaybook/troubleshooting_playbook_overview.rst
-   TroubleshootingPlaybook/troubleshooting_playbook_aws_iam_service.rst
-   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_controller.rst
-   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_gateway.rst
-   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_openvpn_end_to_end_traffic.rst
-   TroubleshootingPlaybook/troubleshooting_playbook_aviatrix_s2c_end_to_end_traffic.rst
+  

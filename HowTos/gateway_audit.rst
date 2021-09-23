@@ -34,7 +34,7 @@ If the alert message has a title "Cloud Message Queue Failure", it implies the f
  1. The gateway runs periodic APIs calls to retrieve SQS messages if any sent by the Controller. For 15 minutes, the specific gateway has been experiencing  API calls failures. This does not necessarily mean the gateway has missed any messages. There may be a temporary interruption for gateway to make API calls. 
  #. If the failure continues, a new message will be sent once a day. 
 
-Please checkout this `document <https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html#why-do-i-get-an-email-alert-about-my-gateway-with-cloud-message-queue-failure-message>`_ to look for ways to debug and address this issue. If you need help, email to support@aviatrix.com
+Please checkout this `document <https://docs.aviatrix.com/Support/support_center_aws_infrastructure.html#why-do-i-get-an-email-alert-about-my-gateway-with-cloud-message-queue-failure-message>`_ to look for ways to debug and address this issue. If you need help, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
    :scale: 50%

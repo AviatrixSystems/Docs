@@ -46,7 +46,46 @@ For example, you can attach a VPC to prod_domain created at the Plan page, as sh
 This step detaches a VPC from a AWS Transit Gateway and Domain. 
 
 
+=========================================================
+Build a TGW Connect Attachment
+=========================================================
+
+A *TGW Connect attachment* creates a connection between the Connect VPC, Connect Attachment, Transport Attachment and third-party appliances.
+
+Note: Only VPC attachments to a TGW Connect attachment are supported.
+
+
+TGW Connect Components
+----------------------
+
+**Connect VPC** - Central VPC containing EC2 instances running third-party virtual appliances that connect to the TGW over the Connect attachment. 
+**Connect Attachment** - TGW attachment type that leverages the Transport TGW attachment (existing VPC as transport) for the third-party appliance to connect to the TGW. Generic Routing Encapsulation (GRE) tunneling protocol and Border Gateway Protocol (BGP) are supported over the Connect attachment. 
+**Transport Attachment** - TGW attachment type (VPC attachment) used as the underlying transport by the Connect attachment. 
+**Third-Party Appliances** - Third-party virtual router and gateway appliances running on an EC2 instance, in a Connect VPC that leverages VPC attachment as the transport. It establishes BGP peering with the TGW over a GRE tunnel using the Connect attachment. It is also responsible for exchanging traffic with the TGW over an encapsulation channel. 
+
+
+In the following example, TGW CIDR block (1.1.1.0/24) is used as the Connect peer IP (GRE outer IP 1.1.1.1) on the TGW side.
+
+|tgw_connect_vpc|
+
+Building the TGW Connect
+------------------------
+
+1. Attach the Connect VPC to TGW using a VPC attachment.
+2. Launch the third-party virtual appliances in the Connect VPC.
+3. Configure a TGW CIDR block which will be used as the Connect peer IP (GRE outer IP) on the TGW side.
+4. Create a Connect attachment on the TGW using VPC attachment as the Transport attachment.
+5. Create a Connect peer (GRE tunnel) specifying the GRE and BGP parameters.
+6. Add an additional Connect peer on the TGW attachment page.
+7. Create a route in the appropriate VPC/Subnet route table for the third-party virtual appliances to connect with the TGW side Connect peer IP (GRE tunnel IP). You can use the *Edit Spoke VPC Customized Routes* feature to configure the route.
+8. Complete the Connect peer configuration (GRE tunnel and BGP peering configuration) on the third-party virtual appliances. 
+
+
+
 .. |prod_vpc_attach| image:: tgw_build_media/prod_vpc_attach.png
-   :scale: 30%
+   :scale: 80%
+
+.. |tgw_connect_vpc| image:: tgw_build_media/tgw_connect_vpc.png
+   :scale: 80%
 
 .. disqus::

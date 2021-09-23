@@ -556,7 +556,7 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 
 
 
-**CONFIG-FAIL**: Gateway could not process a configuration command from the controller successfully. Please contact support@aviatrix.com for assistance.
+**CONFIG-FAIL**: Gateway could not process a configuration command from the controller successfully. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for assistance.
 
 If a gateway is not in **UP** state, please perform the following steps.
 

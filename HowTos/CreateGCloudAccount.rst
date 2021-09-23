@@ -56,25 +56,8 @@ Enable Compute Engine API on the selected project,
 
 4. click Enable.
 
-Step 4: Enable GCloud Messaging Service
--------------------------------------------
 
-The Aviatrix controller uses GCloud Pub/Sub messaging services to communicate
-with the gateways.
-
-To enable Pub/Sub on the selected project,
-
-1. Go to your Google Cloud Platform console, at the upper left corner
-   left to Google Cloud Platform signage, click the 3 bars. A drop down
-   menu will appear.
-
-2. Select APIs and Services, at Dashboard, click on Enable APIs and Services
-
-3. On the Search box, input Cloud Pub/Sub API and select it from search result
-
-4. Click Enable.
-
-Step 5: Create Credential File
+Step 4: Create Credential File
 ----------------------------------
 
 When you create a cloud account Aviatrix Controller for GCloud, you will be asked to upload a
@@ -217,7 +200,7 @@ If cloud account creation fails, check the error message at the Aviatrix
 controller console and try again with the steps provided in this
 document.
 
-For additional support, send an email to support@aviatrix.com
+For additional support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
 
 .. |image0| image:: GCloud_media/image1.png
 

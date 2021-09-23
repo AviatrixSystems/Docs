@@ -30,7 +30,7 @@ Once you subscribe, return to this page and continue to the next section.
 Search "aviatrix" on AWS marketplace and accept the terms and conditions to use the software.
 After subscription, follow the instructions in the next sections to launch the Controller.
 
-If you choose the BYOL image, you need a customer ID (license ID) to use Aviatrix solution. Send an email to support@aviatrix.com to obtain one.
+If you choose the BYOL image, you need a customer ID (license ID) to use Aviatrix solution. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to obtain one.
 
 DNS Server Connectivity Check
 ==============================
@@ -109,7 +109,7 @@ Key Use cases
 
  - `Client VPN or OpenVPN® <http://docs.aviatrix.com/HowTos/uservpn.html>`_
 
-For support, send email to support@aviatrix.com. Enjoy!
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_. Enjoy!
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

@@ -12,7 +12,7 @@ Launch CoPilot
 ==================
 
 CoPilot is available as an all-in-one virtual appliance that's hosted in users' own IaaS cloud environment. 
-It can be launched as an EC2 instance in AWS, virtual machine in Azure, or a VM instances in GCP. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
+It can be launched as an EC2 instance in AWS, virtual machine in Azure, or a VM instances in GCP and OCI. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfully launching the instance, follow this steps to configure CoPilot instance parameters and launch. 
 Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot is not a separate product.
 
@@ -75,8 +75,8 @@ System Design Considerations
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
 
-Deploy Aviatrix CoPilot in GCP (Preview mode)
-=============================================
+Deploy Aviatrix CoPilot in GCP
+==============================
 
 - Go to GCP marketplace
 

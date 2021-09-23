@@ -2,8 +2,120 @@
 Release Notes
 =======================================
 
+6.4.2859 (9/22/2021)
+=====================
+
+**Feature Enhancements in Aviatrix Release 6.4**
+
+- **AVX-15101** - Added support for Azure Government Cloud Availablility Zones.
+- Enhanced stateful firewall functionality.
+- Enhanced certificate functionality.
+
+**Issues Corrected in Aviatrix Release 6.4**
+
+- **AVX-14678** - Unable to create multiple firewalls attached to the same transit gateway in Azure environments.
+- **AVX-15138** - When a spoke or transit gateway advertises a CIDR that overlaps with a CaaG or StandAlone CloudN MGMT eth2 subnet, and the client application accesses the device through the eth2 MGMT interface, the reply traffic is not returned through the eth2 MGMT interface.
+- **AVX-15198** - When transit gateway details are listed by the Aviatrix Controller or CoPilot, an exception may occur because the request is in replica mode and incorrectly tries to update the Mongo DB.
+
+Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
+===================================================================
+
+**Subject**: Security release for Aviatrix versions 6.5, 6.4, 6.3, and 6.2. 
+
+**Issues**: The latest 6.5, 6.4, 6.3, and 6.2 versions contain fixes for several vulnerabilities in the controller API: 
+
+- Several APIs used to upload configurations of certain services did not verify the authentication of the service or user executing the API call properly.
+- `CVE-2021-40870 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40870>`_: Similar APIs designed to upload files from authenticated users did not properly sanitize their destination input, allowing directory traversal attacks which could eventually allow an authenticated attacker to execute code on the controller.
+- Fix for Aviatrix issue AVX-14852 described in Aviatrix FN 0032: In rare occasions, Controller backup file could get corrupted, resulting in gateways being shown as “down” if used for a Controller restore.
+
+**Mitigation**: Please upgrade to the latest release. For instructions, go to `support.aviatrix.com <https://support.aviatrix.com/>`_ and search for *Aviatrix Controller Upgrade*.
+
+
+- If you are running 6.2, upgrade to 6.2.2043 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.2 `EoL <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ is 10/15/2021.
+- If you are running 6.3, upgrade to 6.3.2490 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.3 `EoE <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ was 7/31/2021.
+- If you are running 6.4, upgrade to 6.4.2838 or later.
+- If you are running 6.5, upgrade to 6.5.1922 or later.
+
+**Credit**: Aviatrix would like to thank the team at Tradecraft (https://www.wearetradecraft.com/) for the responsible disclosure of these issues.
+
+6.5.1905 (8/24/2021)
+=====================
+
+**New Features in Aviatrix Release 6.5**
+
+**Selective Upgrades**
+
+To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.  
+
+**Feature Enhancements in Aviatrix Release 6.5**
+
+- **AVX-9881** - Added support for using the same Azure Virtual Network name and resource group names under different subscriptions.
+- **AVX-10188** - Added warning message when disabling the import certificate which includes the impact and effects of disabling the certificate.
+- **AVX-10493** - Added support for Alibaba cloud including China regions in Aviatrix FlightPath.
+- **AVX-10799** - Added support for Alibaba cloud including Global and China regions to Aviatrix VPC Tracker.
+- **AVX-13615** - Added AWS GuardDuty support for AWS GovCloud monitoring.
+
+**Modified Behaviors in Aviatrix Release 6.5**
+
+- **AVX-9894** - Removed deprecated optional custom logging fields for Splunk, Sumo, and FielBeat from the user interface.
+- **AVX-10113** - When you import security certificates on the gateways and controller, the certificate must include the proper FQDN. 
+ 
+ For example:
+ openssl req -new -subj "/C=GB/CN=foo" \
+                  -addext "subjectAltName = DNS:foo.co.uk" \
+                  -addext "certificatePolicies = 1.2.3.4" \
+                  -newkey rsa:2048 -keyout key.pem -out req.pem
+                  
+Alternatively, you can add the SubjectAlternateName (SAN) tag in the openssl.cnf file before generating the certificate. The SAN tag makes sure your certificate includes the SubjectAlternateName which is validated by the Apache server on the controller. Versions of UserConnect-6.4 and later require the proper SubjectAlternateName including altNames be set in the certificates when they are imported. If the SAN is not specified, importing the certificates fails.
+
+- **AVX-14009** - Added option to allow all traffic from the local VPC CIDR block to the network security group created during the OCI gateway creation process. Previously, only TCP port 443 traffic from the controller was added to the security group. By default, OCI allows all traffic from RFC1918 blocks. This change only applies to non-RFC1918 VPC CIDR block configurations.
+
+**Known Behaviors in Aviatrix Release 6.5**
+
+*Upgrading to Aviatrix Release 6.5*
+
+- This behavior does not affect ActiveMesh gateways. In non-ActiveMesh environments, only one transit or spoke gateway can have the image upgraded or the software rolled back at a time. If you select multiple gateways, you receive an error message. For multiple API calls to replace gateways using Terraform, only one gateway is allowed and the others fail. For Terraform calls, Aviatrix recommends you set parallelism=1. 
+
+*Gateway Issue Discovered After Upgrade*
+
+In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways remain running different versions could develop. If this condition occurs assistance from Aviatrix Support is required.
+For example:
+A controller and gateways are running version 6.5.200.
+
+- You upgrade the controller and a subset of gateways to 6.5.300.
+- You rollback the gateways to 6.5.200 because of a bug in the 6.5.300 software. 
+- Now the controller is running 6.5.300 and all gateways are running 6.5.200, and the gateways cannot successfully be upgraded to 6.5.300 because of the bug.
+- The bug is resolved in controller version 6.5.400, so you want to upgrade to 6.5.400 to resolve the issue. However, this is not supported because the controller and gateways must be running the same software version before the controller can be upgraded.
+- In this corner case, you must contact Aviatrix Support to upgrade the controller to the newer version. Support will diagnose the issue and provide the API operation required to perform the con-troller upgrade.
+
+*Gateway Rollbacks*
+
+Gateway rollback operations are not supported after Controller restore operations.
+
+**Issues Corrected in Aviatrix Release 6.5**
+
+- **AVX-10552** - Changed TGW VPN tunnel details response in API so list_attachment_route_table_detail  returns are in dictionary format rather than a long string.
+
+
+6.4.2830 (08/28/2021)
+=====================
+
+**Issues Corrected**
+
+- **AVX-13787** Incorrect gateway status is reported for default routes when an OCI gateway in insane mode is attached to a Transit FireNet gateway.
+- **AVX-14295** When on-premise routes are a injected or withdrawn, they are incorrectly removed in connected domain route tables.
+- **AVX-14426** Newly deployed cloud gateways use a new IKE implementation and may cause negotiation issues when spoke or on-premise tunnels are configured with an older IKE implementation on one side and the new Aviatrix IKE implementation on the transit side. You may observe tunnels taking a long time to become established, and on occasion may observe route flapping even after the tunnel is established.
+- **AVX-14689** Creating an Aviatrix gateway in the Alibaba Cloud may fail because the public IP address may not get converted to an elastic IP address.
+
+6.4.2791 (08/20/2021)
+=====================
+
+- **Bug fix** The FQDN egress filtering gateway blocks traffic after adding whitelisting tags to the egress filtering gateway.
+
+
 6.4.2783 (07/15/2021)
 =====================
+
 - **Bug fix** This issue is related to our smallest supported instance size in AWS which is t2.micro. In 6.4 the t2.micro instances were under additional memory pressure because of new services enabled in 6.4. As a result, some customers may experience gateway down events after upgrading to 6.4. This issue resolves those issues by optimizing several scheduled jobs which burden the t2.micro appliances.
 - **Enhancement** In order to alleviate memory pressure on our smallest supported AWS instance size; t2.micro, we now enable swap memory on instances with less than 1G of memory. This allows short periods of over-provision to be tolerated by the operating system ensuring continuous operations.
 
@@ -37,6 +149,7 @@ R6.4.2776 (07/13/2021)
 
 R6.4.2674 (06/26/2021)
 ========================
+
 - **Bug fix** In AWS and Azure clouds, gateway and FireNet tag keys and values do not support the colon (:) and other special characters.
 - **Bug fix** Added support for Azure Controller Security Group Management allowing the Network Security Group and the Azure Controller to use different Resource Groups.
 - **Bug fix** Added support for Multiple Dynamic SAML Profile attributes for controller login in list format.
@@ -46,6 +159,7 @@ R6.4.2674 (06/26/2021)
 
 R6.4.2672 (06/11/2021)
 ========================
+
 - **Bug fix** Gateway FQDN logs fail to download resulting in an error message.
 - **Bug fix** Availability Domain and Fault Domain not available in OCI gateway and firewall instances.
 - **Bug fix** Terraform bug fix, cannot delete all gateway tags.

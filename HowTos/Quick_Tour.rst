@@ -77,8 +77,7 @@ design <http://docs.aviatrix.com/HowTos/site2cloud.html>`__.
 Help
 """""
 
-Under the Help menu, check out FAQs and additional implementation guides. Send
-an email to support@aviatrix.com to get immediate support.
+Under the Help menu, check out FAQs and additional implementation guides. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get immediate support.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

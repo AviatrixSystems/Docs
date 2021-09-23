@@ -6,8 +6,7 @@
 IPSec
 ===========================================================================
 
-
-What are the MSS / MTU settings on the IPSec Tunnels between the Aviatrix Gateways?
+What is the MTU setting on the IPSec Tunnels between the Aviatrix Gateways?
 --------------------------------------------------------------------------------------------
 
 All the IPSec tunnels have the TCP MSS set to 1370 bytes, by default, on Aviatrix gateway created in AWS, Azure and OCI. In GCP, the default value is 1330 bytes (from R6.1) due to previous experience with some GCP applications. If you are running any applications which do not support fragmentation, you might have issues - please adjust the MSS value on your gateways. 

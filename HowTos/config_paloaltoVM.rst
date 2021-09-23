@@ -107,6 +107,12 @@ Repeat Step 6 for ethernet1/2. Name the new zone LAN.
 
 Click Commit. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/2.
 
+.. tip ::
+
+If Keepalive via Firewall LAN Interface is enabled in Firewall Network > Advanced, ensure that ping is allowed in the Firewall LAN interface configuration:
+https://docs.aviatrix.com/HowTos/firewall_advanced.html?#keep-alive-via-firewall-lan-interface
+
+::
 
 8. Configure Allow Outbound Policies
 ---------------------------------
