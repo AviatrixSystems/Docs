@@ -201,7 +201,7 @@ Mac |mac|
 
 
 ***********************
-Advanced Setttings Page
+Advanced Settings Page
 ***********************
 
 |Settings|
