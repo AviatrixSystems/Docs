@@ -36,9 +36,9 @@ What Features Are Supported in Which China Region Cloud?
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
 | Native Peering                                                         | Yes           | Yes             | No                        |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
-| FlightPath Expert Diagnostics                                          | Yes           | Yes             | No                        |
+| FlightPath Expert Diagnostics                                          | Yes           | Yes             | Yes                       |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
-| VPC Tracker                                                            | Yes           | Yes             | No                        |
+| VPC Tracker                                                            | Yes           | Yes             | Yes                       |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
 | Controller Security Group Management                                   | Yes           | No              | No                        |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
@@ -90,7 +90,7 @@ What is China Multi-Cloud Network Coverage?
 
 You must overcome performance limitations and satisfy government requirements to create a global multi-cloud network that includes the China region. 
 Slow connection speeds and high-latency associated with the China region can be overcome by using a dedicated line to create an Aviatrix transit connection 
-and deploying services close to the China region. To satisfy legal regulations is China you must have an Internet Content Provider (ICP) license.
+and deploying services close to the China region. To satisfy legal regulations in China you must have an Internet Content Provider (ICP) license.
 
 For more information, see What is a China ICP License.
 
