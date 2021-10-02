@@ -22,10 +22,10 @@ Several APIs used to upload configurations of certain services did not verify th
 
 Please upgrade to latest release:
 
-* "6.2": "UserConnect-6.2.2043" or later
-* "6.3": "UserConnect- 6.3.2490 " or later
-* "6.4": "UserConnect- 6.4.2838 " or later
-* "6.5": "UserConnect- 6.5.1922 " or later
+* 6.2: 6.2.2043 or later
+* 6.3: 6.3.2490 or later
+* 6.4: 6.4.2838 or later
+* 6.5: 6.5.1922 or later
 Credit: Aviatrix would like to thank the team at Tradecraft ( https://www.wearetradecraft.com/ ) for the responsible disclosure of these issues.
 
 Release notes also available on: https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
