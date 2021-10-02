@@ -9,6 +9,29 @@ Field Notices
 
 
 
+Field Notice 0033 (2021/10/02)
+--------------------------------
+
+**The latest 6.5, 6.4, 6.3, and 6.2 versions contain fixes for several vulnerabilities in the controller API**
+
+**Problem:**
+
+Several APIs used to upload configurations of certain services did not verify the authentication of the service or user executing the API call properly. Similar APIs designed to upload files from authenticated users did not properly sanitize their destination input, allowing directory traversal attacks which could eventually allow an authenticated attacker to execute code on the controller.
+
+**Recommended Solution:**
+
+Please upgrade to latest release:
+  "6.2": "UserConnect-6.2.2043" or later.
+  "6.3": "UserConnect- 6.3.2490 " or later.
+  "6.4": "UserConnect- 6.4.2838 " or later.
+  "6.5": "UserConnect- 6.5.1922 " or later.
+Credit: Aviatrix would like to thank the team at Tradecraft ( https://www.wearetradecraft.com/ ) for the responsible disclosure of these issues.
+
+Release notes also available on: https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+
+Please upgrade to these builds, following the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_, as soon possible.
+
+
 
 Field Notice 0032 (2021/09/09)
 --------------------------------
