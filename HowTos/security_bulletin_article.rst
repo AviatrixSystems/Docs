@@ -13,6 +13,39 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 Most Recent IR
 ================
+18. Aviatrix Controller - Remote file execution
+----------------------------------------
+
+**Date**
+10/04/2021
+ 
+**Risk Rating**
+Critical
+
+**Description**
+The Aviatrix Controller legacy API had a vulnerability allowing an unauthenticated attacker to upload arbitrary files, including .php scripts, to the filesystem. These uploaded scripts will be processed by the web frontend, allowing an attacker to run code of their choosing.
+
+**Impact**
+Remote file execution
+
+**Affected Product**
+Aviatrix Controller prior to the fixed versions.
+
+**Solution**
+The vulnerability has been fixed in:
+
+  - UserConnect-6.2-1804.2043 or later
+  - UserConnect-6.3-1804.2490 or later
+  - UserConnect-6.4-1804.2838 or later
+  - UserConnect-6.5-1804.1922 or later
+
+
+**CVE-ID**
+CVE-2021-40870
+
+**Acknowledgement**
+Aviatrix would like to thank the team at Tradecraft (https://www.wearetradecraft.com/) for the responsible disclosure of these issues. 
+
 17. OpenVPN - Abitrary File Write
 ----------------------------------------
 
