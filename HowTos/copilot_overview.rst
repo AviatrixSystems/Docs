@@ -20,9 +20,9 @@ Key Benefits
 - **Network Health Monitor** – Real-time cloud network resource inventory and status
 - **Dynamic Topology Map** – Accurate, multi-cloud network topology, layout control and search
 - **FlowIQ** – Detailed application traffic flow analysis, global heat map and trends
-- **MultiCloud Tagging** – Tag MultiCloud Resouces. Search by tag. Filter traffic data by tag.
-- **CloudRoutes** – Detailed searchable routing tables across cloud providers.
-- **Notifications** – Alert on resources status/utilization across MultiCloud
+- **Multi-Cloud Tagging** – Tag multi-cloud resources, search by tag, filter traffic data by tag
+- **CloudRoutes** – Detailed searchable routing tables across cloud providers
+- **Notifications** – Alert on resources status/utilization across multi-Cloud
 
 
 Deployment Model
