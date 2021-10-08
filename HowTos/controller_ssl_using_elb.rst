@@ -72,6 +72,9 @@ Follow the steps below to put the Aviatrix Controller behind an AWS ALB:
 
       |imageRoute53Example|
 
+
+#. The Controller's security groups should have inbound allow policy for port 443 for the VPC CIDR, so that the ELB can talk to the Controller
+
    
 .. |imageConfigureStep1| image:: controller_ssl_elb_media/configure_lb_step1.png
    :scale: 75%
