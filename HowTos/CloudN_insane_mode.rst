@@ -123,6 +123,7 @@ FQDN                     IP address        PORT Purpose
 =======================  ================  ==== =================================================
 security.aviatrix.com    54.149.28.255     443  Sync service certificates
 diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
+license.aviatrix.com     52.24.131.245     443  Software upgrade operations
 =======================  ================  ==== =================================================
 
 
