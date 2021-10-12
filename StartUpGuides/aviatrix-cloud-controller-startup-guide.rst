@@ -309,13 +309,13 @@ Other Aviatrix Products
 
 In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then proceed to select the CloudFormation launch method to launch the Controller stack directly from AWS console. 
 
- - `Aviatrix Secure Networking Platform Metered - 24x7 Support <https://aws.amazon.com/marketplace/pp/B086T2RVTF?qid=1590260881838&sr=0-6&ref=_ptnr_docs_startup_metered_24x7>`_
+ - `Aviatrix Secure Networking Platform Metered - 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=aws-cloudformation-aviatrix-metered-controller-24x7-support>`_
 
- - `Aviatrix Secure Networking Platform - Enterprise Subscription <https://aws.amazon.com/marketplace/pp/prodview-35vvm63xuwsrw?ref=_ptnr_docs_startup_private_offer>`_
+ - `Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=avx-awsmp-5tunnel.template>`_
 
- - `Aviatrix Secure Networking Platform - BYOL <https://aws.amazon.com/marketplace/pp/prodview-nsys2ingy6m3w?ref=_ptnr_docs_startup_byol>`_
+ - `Aviatrix Secure Networking Platform - BYOL <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=avx-awsmp-BYOL.template>`_
 
- - `Aviatrix Secure Networking Platform - BYOL in AWS China <https://awsmarketplace.amazonaws.cn/marketplace/pp/prodview-tr55yz2zpuzlo>`_
+ - `Aviatrix Secure Networking Platform - BYOL in AWS China <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3.us-west-2.amazonaws.com/aws-china-cloudformation-templates/aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template>`_
 
  - `Community BYOL (Available only in us-west-2 region) <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-community-byol.template>`_
 
