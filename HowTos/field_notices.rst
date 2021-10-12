@@ -17,10 +17,10 @@ These releases address a Denial-of-Service vulnerability and also improve the se
 
 Please upgrade to latest release:
 
-* 6.2: 6.2.2052 or later
-* 6.3: 6.3.2526 or later
-* 6.4: 6.4.2869 or later
-* 6.5: 6.5.1936 or later
+- 6.2: 6.2.2052 or later
+- 6.3: 6.3.2526 or later
+- 6.4: 6.4.2869 or later
+- 6.5: 6.5.1936 or later
 
 Refer to the `Security Alert <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#security-note-6-5-1936-6-4-2869-6-3-2526-and-6-2-2052-10-11-2021>`_ for more details on these updates.
 
