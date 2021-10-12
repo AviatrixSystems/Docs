@@ -2,6 +2,29 @@
 Release Notes
 =======================================
 
+Security Note 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052 (10/11/2021)
+===================================================================== 
+
+**Subject**: Security release for Aviatrix versions 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052.
+
+**Issues**: The latest 6.5, 6.4, 6.3, and 6.2 versions contain fixes for two vulnerabilities. 
+
+**AVX-15638** – Corrected vulnerability that could result in a Denial-of-Service (DoS) in Aviatrix's controller API which allows an attacker to fill the disk of the controller. The API vulnerability is blocked in the latest controller software versions. 
+
+For more information, see `CVE-2021-40870 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40870>`_
+
+**AVX-15740** - The latest version of the Aviatrix AWS CloudFormation stack improves security by removing 0.0.0.0 entry on port 443 so the Aviatrix controller is not open to the world by default. However, this means related gateway IP entries need to be added to the security group when a new gateway is deployed for the gateway to talk to controller. To achieve this automatically, the Controller Security Group Management feature will be auto enabled when a user creates the first AWS account. If you are performing the manual backup and restore procedure, please inherit all the original security groups in the newly launched controller.   
+
+Mitigation: Please upgrade to the latest release. For detailed instructions related to this security upgrade, please see https://aviatrix.zendesk.com/hc/en-us/articles/4410621458317.
+
+-If you are running 6.2, upgrade to 6.2.2052 or later. Aviatrix strongly recommends you upgrade to 6.4.2869 or later, 6.2 `EoL <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ is 10/15/2021. 
+
+-If you are running 6.3, upgrade to 6.3.2526 or later. Aviatrix strongly recommends you upgrade to 6.4.2869 or later, 6.3 `EoE <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ was 7/31/2021.
+
+-If you are running 6.4, upgrade to 6.4.2869 or later. 
+
+-If you are running 6.5, upgrade to 6.5.1936 or later. 
+
 6.4.2859 (9/22/2021)
 =====================
 
