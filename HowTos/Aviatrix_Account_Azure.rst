@@ -17,7 +17,7 @@ Account <https://docs.aviatrix.com/HowTos/aviatrix_account.html>`_ on the Aviatr
 to a valid Azure subscription with API credentials. You need to create an access account for each subscription. 
 
 This document describes, for a given subscription, how to obtain the necessary information,
-specifically Application ID, Application Key (Client secret), and
+specifically Application ID, Application Key (Client secret value), and
 Application Directory ID to create an Aviatrix Access Account so that the Controller can execute APIs on that subscription.
 There are 3 sections, make sure you go through all of them.
 
@@ -31,7 +31,7 @@ Setting up Azure permission for Aviatrix involves three main steps.
 
 2. Assign a role to the Aviatrix Controller Application 
 
-3. Get Application ID, Application Key (Client secret) and Directory ID
+3. Get Application ID, Application Key (Client secret value) and Directory ID
 
 **Important:** Complete the following steps in order.
 
@@ -100,7 +100,7 @@ Login to the Azure Portal:  https://portal.azure.com
 
    |image14|
    
-3. Retrieve the **Client Secrets**.
+3. Retrieve the **Client Secret Value**.
 
    A. Click Certificates & secrets
 
@@ -121,7 +121,7 @@ Login to the Azure Portal:  https://portal.azure.com
    
    |image15|
 
-   F. Copy the secret.  This will be used as the Application Key in the Aviatrix Controller.
+   F. Copy the secret value.  This will be used as the Application Key in the Aviatrix Controller.
 
 5. Add **API permissions**.
 
@@ -149,7 +149,7 @@ Access Account Setup Input Field                         Value
 Subscription ID                                          From section 2.2
 Directory ID                                             From section 2.3
 Application ID                                           From section 2.3
-Application Key (Client Secret)                          From section 2.3
+Application Key (Client Secret value)                    From section 2.3
 ==========================================               ======================
 
 Additional References
