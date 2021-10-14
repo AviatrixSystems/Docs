@@ -20,7 +20,7 @@ These releases addresses vulnerabilities closed by Apache versions 2.4.49, 2.4.5
 
 - Controller images ami-05f68e98cdd080289, ami-043530fe4901c2f25, and ami-0ec2b3fcdc3916621 close a potential denial-of-service vulnerability and corrects an issue with launching controller HA.
 
-- Note: The images are submitted to AWS, they will be available as soon as AWS approves and publishes them.
+
 
 Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
 ====================================================================================================
