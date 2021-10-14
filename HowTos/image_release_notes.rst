@@ -7,6 +7,19 @@ Image Release Notes
 ****Next Gateway image is scheduled for November 2021****
 
 
+AWS AMI Controller Images: 05f68e98cdd080289, 043530fe4901c2f25, and 0ec2b3fcdc3916621 (10/13/21)
+====================================================================================================
+
+These releases addresses vulnerabilities closed by Apache versions 2.4.49, 2.4.50, and 2.4.51.
+
+- Controller images ami-05f68e98cdd080289, ami-043530fe4901c2f25, and ami-0ec2b3fcdc3916621 include Apache version 2.4.51 which closed vulnerabilities `CVE-2021-40438 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438>`_, `CVE-2021-33193 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193>`_ and vulnerabilities closed in previous Apache releases.
+ 
+- Vulnerabilities `CVE-2021-41524 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41524>`_ and `CVE-2021-41773 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41773>`_ in Apache version 2.4.49 rated with an estimated CVSS of 7.5 were closed in Apache version 2.4.50.
+
+- Vulnerabilities in Apache version 2.4.48 rated with a CVSS of 8.1 were closed in Apache version 2.4.49.
+
+- Controller images ami-05f68e98cdd080289, ami-043530fe4901c2f25, and ami-0ec2b3fcdc3916621 close a potential denial-of-service vulnerability and corrects an issue with launching controller HA.
+
 Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
 ====================================================================================================
 
