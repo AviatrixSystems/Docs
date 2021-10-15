@@ -48,7 +48,7 @@ Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
 **Issues**: The latest 6.5, 6.4, 6.3, and 6.2 versions contain fixes for several vulnerabilities in the controller API: 
 
 - Several APIs used to upload configurations of certain services did not verify the authentication of the service or user executing the API call properly.
-- `CVE-2021-40870 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40870>`_: Similar APIs designed to upload files from authenticated users did not properly sanitize their destination input, allowing directory traversal attacks which could eventually allow an authenticated attacker to execute code on the controller.
+- `CVE-2021-40870 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40870>`_: Similar APIs designed to upload files from authenticated users did not properly sanitize their destination input, which could eventually allow an unauthenticated user to execute arbitrary code via directory traversal.
 - Fix for Aviatrix issue AVX-14852 described in Aviatrix FN 0032: In rare occasions, Controller backup file could get corrupted, resulting in gateways being shown as “down” if used for a Controller restore.
 
 **Mitigation**: Please upgrade to the latest release. For instructions, go to `support.aviatrix.com <https://support.aviatrix.com/>`_ and search for *Aviatrix Controller Upgrade*.
