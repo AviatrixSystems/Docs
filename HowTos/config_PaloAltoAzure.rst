@@ -52,17 +52,7 @@ eth2 (on subnet -dmz-firewall_lan)                               LAN or Trusted 
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
-2. Vendor Firewall Integration
----------------------------------
-
-This step automatically configures the RFC 1918 and non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case Palo Alto Networks VM-Series. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
-
-1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
-2.	Click Save, Show and Sync.
-
-|vendor_integration_example|
-
-3. Login to VM-Series
+2. Login to VM-Series
 ------------------------
 
 Go back to the Aviatrix Controller Console.
@@ -72,10 +62,10 @@ Login with Username "panadmin". Password is the password you set at the previous
 
 |avx-firewall-step7a_UI|
 
-4. Activate VM license
+3. Activate VM license
 ------------------------
 
-5. Dynamic updates
+4. Dynamic updates
 ------------------------
 
 Go to Device > Dynamic Updates > Click on "Check Now"
@@ -85,8 +75,7 @@ Go to Device > Dynamic Updates > Click on "Check Now"
 
 |pan_dynamic_updates|
 
-
-6. Configure VM-Series ethernet1/1 with WAN Zone
+5. Configure VM-Series ethernet1/1 with WAN Zone
 -------------------------------------------------
 
 Once logged in, click on the Network tab and you should see a list of ethernet interfaces. Click ethernet1/1 and
@@ -112,15 +101,14 @@ Continue,
 
 Click **Commit**. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/1.
 
-7. Configure VM-Series ethernet1/2 with LAN Zone
+6. Configure VM-Series ethernet1/2 with LAN Zone
 ---------------------------------------------------
 
-Repeat Step 6 for ethernet1/2. Name the new zone LAN.
+Repeat Step 5 for ethernet1/2. Name the new zone LAN.
 
 Click **Commit**. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/2.
 
-
-8. Enable VM-Series Health Check Policy
+7. Enable VM-Series Health Check Policy
 ----------------------------------------------
 
 By default, VM-Series do not allow HTTPS or TCP 443 port. Pleas follow the given steps to enable it:
@@ -134,11 +122,6 @@ By default, VM-Series do not allow HTTPS or TCP 443 port. Pleas follow the given
 See an example screenshot below how to attach profile to an interface.
 
 |pan_hcheck_attach|
-
-Firewall health check probes can be verified in Monitor -> Traffic.
-
-|pan-health-probe|
-
 
 9. Configure basic traffic policy to allow traffic VNET to VNET
 ------------------------------------------------------------------
@@ -154,7 +137,6 @@ In this step, we will configure a basic traffic security policy that allows traf
     #.	Click OK
     #.	Click Commit to commit the Allow-all policy.
 
-
 10. [Optional] Configure basic traffic policy to allow traffic VNET to Internet
 ----------------------------------------------------------------------------------
 
@@ -168,21 +150,36 @@ Policies > NAT > Click "Add" > Click General tab, give it a name > Click Origina
 
  |nat_translated_packet|
 
+11. Vendor Firewall Integration
+---------------------------------
 
-11. Ready to go!
+This step automatically configures the RFC 1918 and non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case Palo Alto Networks VM-Series. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
+
+1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
+2.	Click Save, Show and Sync.
+
+|vendor_integration_example|
+
+12. Ready to go!
 --------------------
 
 Now your firewall instance is ready to receive packets!
 
 Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
-12. View Traffic Log
+13. View Traffic Log
 ----------------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Go to Monitor --> Traffic.
 
+Azure Loadbalancer to Firewall Health Probes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Firewall health check probes can be verified in Monitor -> Traffic.
+
+|pan-health-probe|
+
 VNET to VNET traffic:
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Launch one instance in Spoke VNET-1 and one in Spoke VNET-2. Start ping packets from a instance in Soke VNET-1 to the private IP of another instance in Spoke VNET-2. The ICMP traffic should go through the firewall and can be inspected in firewall.
 
