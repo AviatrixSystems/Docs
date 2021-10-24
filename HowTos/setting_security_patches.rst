@@ -32,6 +32,9 @@ SAML XML signature wrapping vulnerability                                       
                                                                                                         Applicable to Aviatrix Controller only.
 =================================================================             ====================      =======================================================
 
+.. important::
+    Increase File Descriptor limit patch will disconnect all VPN Users.
+
 To apply a patch:
 
 1) Backup your Aviatrix Controller. For more information, see `Controller Backup and Restore <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
@@ -42,7 +45,6 @@ To apply a patch:
 
 4) Validate the update by clicking on the icon on the right and selecting **Patch Status** and scrolling down to bottom of page.
 
-.. important::
-    Increase File Descriptor limit patch will disconnect all VPN Users.
+5) Backup your Aviatrix Controller again to save the new configuration.
 
 .. disqus::

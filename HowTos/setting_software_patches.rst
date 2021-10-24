@@ -36,4 +36,6 @@ To apply a patch:
 
 4) Validate the update by clicking on the icon on the right and selecting **Patch Status** and scrolling down to bottom of page.
 
+5) Backup your Aviatrix Controller again to save the new configuration.
+
 .. disqus::
