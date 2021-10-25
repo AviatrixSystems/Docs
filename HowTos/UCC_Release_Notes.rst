@@ -207,7 +207,7 @@ R6.4.2618 (05/30/2021)
 - **Bug fix** Fixed exception for SAML VPN connection.
 - **Bug fix** In Ali Cloud, Transit gateway showed all connections down.
 - **Bug fix** In some corner cases Controller HA, backup/restore broke the control connection between the controller and CloudN.
-- **Bug fix** Fixed exception when downloading the OCI OVPN file
+- **Bug fix** Fixed exception when downloading the OCI OVPN file.
 - **Bug fix** Fixed Managed CloudN exception during registration.
 - **Enhancement** In IAM policy, enable parallel role swapping after role name change.
 
@@ -2331,13 +2331,13 @@ UserConnect-101016
 -  Add Mumbai (ap-south-1) to AWS region support list.
 
 -  Support multiple Splunk indexers by importing Splunk config file.
-   This enables Aviatrix controller and gateway logs to be integrated
+   This enables Aviatrix Controller and gateway logs to be integrated
    with multiple Splunk servers that many enterprises deploy. To
    configure, go to Settings -> Loggings -> Splunk. Select Import files
    to import a Splunk configuration file. You may also choose Manual
    Input, in this case each indexer must be listening on the same port.
 
--  Support DataDog agent for both controller and gateways. To enable, go
+-  Support DataDog agent for both Controller and gateways. To enable, go
    to Settings -> Loggings -> DataDog, provide an API Key.
 
 -  Enhancement for VPN user profile editing: when adding a user to a
