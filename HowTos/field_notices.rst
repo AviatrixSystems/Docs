@@ -27,7 +27,7 @@ Aviatrix is strongly recommending you to apply this patch at your earliest conve
 
 * The security patch does not impact the data path or control path and can be executed without a maintenance window
 * This patch can be applied on releases 6.2 and higher
-* Aviatrix strongly recommends you to upgrade to releases 6.4 or higher. Please check out the `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and follow the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_
+* Aviatrix **strongly recommends** you to upgrade to releases 6.4 or higher. Please check out the `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and follow the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_
 
 
 
