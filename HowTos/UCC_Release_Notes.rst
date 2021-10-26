@@ -5,7 +5,7 @@ Release Notes
 Security Patch Note for 6.5 (10/25/2021)
 ===================================================================== 
 
-**Subject**: AVI-2021-0006 Critical Vulnerability Security Patch for Aviatrix versions 6.5, 6.4, and 6.3.
+**Subject**: AVI-2021-0006 Critical Vulnerability Security Patch for Aviatrix version 6.5.
 
 **Issues**: The latest 6.5 patch contains a fix for a controller vulnerability. 
 
