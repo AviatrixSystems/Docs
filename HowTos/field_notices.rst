@@ -8,6 +8,30 @@ Field Notices
  
 
 
+Field Notice 0035 (2021/10/25)
+--------------------------------
+
+**Critical Vulnerability Security Patch - AVI-2021-0006**
+
+This security patch was made available Monday, October 25th, 2021 at 05:00PM PST. The critical vulnerability addressed by this patch was privately disclosed to Aviatrix. It affects services of Controller available on port 443 and would allow an unauthenticated attacker to execute code on the Controller. This could be mitigated by limiting access to the https/port 443 of the Controller, or by running a Web Application Firewall (WAF) in front of it. Please refer to our documentation to `secure the Controller access <https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_.
+
+Aviatrix is strongly recommending you to apply this patch at your earliest convenience. To apply a security patch, please refer to the following steps:
+
+* First, do a backup on your Controller in “Controller/Settings/Maintenance/Backup&Restore/Backup Now”
+* Go to “Controller/Settings/Maintenance/Security Patches” and click on “Update Available Patches”
+* You should see a new patch called: “AVI-2021-0006 Critical Vulnerability Security Patch”
+* Apply the patch, by clicking on the icon on the right and selecting “Apply Patch”
+* Take a backup again at “Controller/Settings/Maintenance/Backup&Restore/Backup Now”
+
+**Note:**
+
+* The security patch does not impact the data path or control path and can be executed without a maintenance window
+* This patch can be applied on releases 6.2 and higher
+* Aviatrix strongly recommends you to upgrade to releases 6.4 or higher. Please check out the `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and follow the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_
+
+
+
+
 Field Notice 0034 (2021/10/11)
 --------------------------------
 
