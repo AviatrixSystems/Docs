@@ -2,12 +2,12 @@
 Release Notes
 =======================================
 
-Security Patch Note 6.5, 6.4, and 6.3 (10/25/2021)
+Security Patch Note for 6.5 (10/25/2021)
 ===================================================================== 
 
 **Subject**: AVI-2021-0006 Critical Vulnerability Security Patch for Aviatrix versions 6.5, 6.4, and 6.3.
 
-**Issues**: The latest 6.5, 6.4, and 6.3 patches contain a fix for a controller vulnerability. 
+**Issues**: The latest 6.5 patch contains a fix for a controller vulnerability. 
 
 The critical vulnerability addressed by this patch was privately disclosed to Aviatrix and is not known to be exploited. It affects services of our controller available on port 443 and would allow an unauthenticated attacker to execute code on the controller. This could be mitigated by limiting access to the https/port 443 of the Controller, or by running a Web Application Firewall (WAF) in front of it.
 
