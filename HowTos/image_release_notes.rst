@@ -8,7 +8,7 @@ Image Release Notes
 
 
 Controller Images: AWS AMI – Version 100621 (10/13/21)
-====================================================================================================
+======================================================
 
 This release addresses vulnerabilities closed by Apache versions 2.4.49, 2.4.50, and 2.4.51.
 
@@ -22,7 +22,7 @@ This release addresses vulnerabilities closed by Apache versions 2.4.49, 2.4.50,
 
 
 Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
-====================================================================================================
+============================================================================
 
 - R6.4.2499 Software Version is required
 
