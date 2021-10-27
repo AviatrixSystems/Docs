@@ -17,7 +17,6 @@ This release addresses vulnerabilities fixed by Apache version 2.4.51.
 - Controller image version 100621 closes a potential denial-of-service vulnerability and corrects an issue with launching controller HA.
 
 
-
 Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
 ====================================================================================================
 
@@ -78,7 +77,7 @@ New Customer Installation Procedures
 Existing Customers - Controller Image upgrade (Migration) 
 =========================================================
 
-- Customer is responsible for migrate their existing Controller to the latest image. See image list below.  
+- Customer is responsible for migrating their existing Controller to the latest image. See image list below.  
 
 - To implement the **latest Controller image**, perform the following steps: 
 
