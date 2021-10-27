@@ -12,7 +12,9 @@ Controller Images: AWS AMI – Version 100621 (10/13/21)
 
 This release addresses vulnerabilities fixed by Apache version 2.4.51.
 
-- Controller image version 100621 includes Apache version 2.4.51 which closed vulnerabilities `CVE-2021-40438 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438>`_, `CVE-2021-33193 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193>`_ and vulnerabilities closed in previous Apache releases.
+- Controller image version 100621 includes Apache version 2.4.51 which closed vulnerabilities CVE-2021-40438 and CVE-2021-33193 and vulnerabilities closed in previous Apache releases.
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193
  
 - Controller image version 100621 closes a potential denial-of-service vulnerability and corrects an issue with launching controller HA.
 
