@@ -9,9 +9,9 @@ Security Patch Note for 6.5 (10/25/2021)
 
 **Issues**: The latest 6.5 patch contains a fix for a controller vulnerability. 
 
-The critical vulnerability addressed by this patch was privately disclosed to Aviatrix and is not known to be exploited. It affects services of our controller available on port 443 and would allow an unauthenticated attacker to execute code on the controller. This could be mitigated by limiting access to the https/port 443 of the Controller, or by running a Web Application Firewall (WAF) in front of it.
+The critical vulnerability addressed by this patch was privately disclosed to Aviatrix and is not known to be exploited. It affects services of our Controller available on port 443 and would allow an unauthenticated attacker to execute code on the controller. This could be mitigated by limiting access to the https/port 443 of the Controller, or by running a Web Application Firewall (WAF) in front of it.
 
-For more information about securing controller access, see https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access.
+For more information about securing Controller access, see https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access.
 
 Aviatrix strongly recommends you install the **AVI-2021-0006 Critical Vulnerability Security Patch**.
 
