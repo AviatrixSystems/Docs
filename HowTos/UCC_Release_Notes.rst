@@ -39,7 +39,7 @@ Release Notes
 - **AVX-15238** - CaaG Registration to Controller's Private IP add. - After changing Controller cert-domin, CaaG /etc/hosts controller.com entry got changed to controller's public ip.
 - **AVX-15332** - The Controller migration fails due to CID parameter not being passed properly. The Controller HA function is now corrected in AMI v23.
 - **AVX-15337** - CaaG Over Private Network - Registration failed when Controller use custom cert domain rather than default one.
-- **AVX-15416** - Key Pair 'nike-spoke-6' does not exist in upgrade_image.
+- **AVX-15416** - Key Pair does not exist in upgrade_image.
 - **AVX-15454** - We no longer create storage account for Azure China gateways.
 - **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
 - **AVX-15599** - Cannot launch a gateway on private OOB Controller for Aviatrix 6.4 and 6.5.
