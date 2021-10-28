@@ -241,6 +241,68 @@ Multiple flows result by using iperf3 tool with TCP 128 connections
 
 Additional read can be found in this short blog, `Need of conventional BGP support in the cloud <https://community.aviatrix.com/t/h7htvvc/need-of-conventional-bgp-support-in-the-cloud>`_
 
+
+BGP over LAN Multi-Peer
+===========================
+
+Overview
+-------------
+
+With the 6.5.2608 release, BGP over LAN in AWS can scale up to 10 BGP over LAN peers per Transit Gateway, and 20 total per Transit Gateway pair.  This provides a higher throughput, better redundancy, and a consolidation of BGP over LAN peers on a pair of Transit Gateways. ECMP is supported on all BGP over LAN connections.
+
+On-Prem to Cloud
+------------------
+
+On-Prem to Cloud connectivity can be achieved with ECMP.
+
+When connecting multiple peers, the same BGP over LAN ENI can be reused.  Under Multi-Cloud Transit Step 3, specify the ENI IP to reuse it.
+
+On-prem to cloud can also be achieved without ECMP.
+
+On-Prem to On-Prem Using Aviatrix Transit as a Hub
+--------------------------------------------------
+
+On-prem to on-prem using Aviatrix Transit as a hub is the same architecture as on-prem to cloud without ECMP. However, different ENIs must be used for each BGP over LAN peer, in order for the traffic to flow through the Aviatrix Transit Gateways. This is achieved by leaving the Local LAN IP field blank, or by specifying an IP different from any existing BGP over LAN ENIs.  The Controller will allocate a new ENI in the subnet of the BGP over LAN peer specified by Remote LAN IP.  Keep in mind that there is a maximum ENI count per instance, depending on the AWS instance type.  Otherwise, there is no difference when it comes to performance or any other capabilities.
+
+HA with BGP over LAN Multi-Peer
+-------------------------------
+
+Use Remote Gateway HA to attach peers to the secondary Transit Gateway.  One BGP over LAN connection consists of 2 peers.  Because a peer must be in the same AZ as the Transit Gateway it is connected to, the HA model is 2 peers, each single-attached to their Transit Gateway in their AZ.
+
+
+Throughput with BGP over LAN Multi-Peer
+---------------------------------------
+
+The aggregate throughput with 20 BGP over LAN peers and a pair of c5n.18xlarge Transit Gateways are as follows:
+
+- 460-byte packets -> 12 Gbps.
+
+- 1460-byte packets -> 40 Gbps.
+
+- 9000-byte packets -> 90 Gbps.
+
+
+Segmentation Domains with BGP over LAN Multi-Peer
+-------------------------------------------------
+
+Segmentation domains are supported on a per BGP over LAN connection basis.  If using Remote Gateway HA, then 1 BGP over LAN connection = 2 BGP over LAN peers = 1 domain.
+
+
+Migration with BGP over LAN Multi-Peer
+--------------------------------------
+
+Additional BGP over LAN connections can be added to an existing (pre-6.5.2608) Transit Gateway.  The Gateway can have existing BGP over LAN connections.  New connections can be added either with the single-ENI or the multi-ENI model.  The existing connections do not need to be removed.  The Transit Gateway does not need to be replaced.  There is no control plane or data place disruption.
+
+Feature Interaction with BGP over LAN Multi-Peer
+------------------------------------------------
+
+FireNet is supported.  A BGP over LAN connection can be part of FireNet Inspection Policies. 
+
+NAT is not supported on BGP over LAN connections.  The configuration is blocked.
+
+The existing Terraform module aviatrix_transit_external_device_conn supports BGP over LAN multi-peer, using the existing argument local_lan_ip.
+ 
+
 .. |transit_gateway_external_device_bgp_over_lan_diagram| image:: transit_gateway_external_device_bgp_over_lan_simulation_workflow_media/transit_gateway_external_device_bgp_over_lan_diagram.png
    :scale: 50%
 	 
