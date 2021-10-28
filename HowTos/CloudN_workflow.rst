@@ -166,18 +166,28 @@ This is a rare case. It is documented here for completeness. Skip if the Control
 	
 		For private link connectivity such as AWS Direct Connect or Azure Express Route case, CloudN WAN interface is assigned a private IP, thus the message in the panel "CONTROLLER PUBLIC IP" displays "The public IP of this controller is NA. Controller was not able to reach www.carmelonetworks.com through the WAN interface(eth0)."
 
-Step 2.4 CloudN egress ports on management port
+Step 2.4 Managed CloudN management port outbound access
 --------------------------------------------------------------------------------------------------------------------------
 
-CloudN management port requires the following Internet egress access. 
+Manged CloudN (registered to the Controller) management port requires the following Internet egress access. 
 
 	==============================  ================  ==== =================================================
 	FQDN                            IP address        PORT Purpose
 	==============================  ================  ==== =================================================
 	security.aviatrix.com           54.149.28.255     443  Sync service certificates
-	diag.aviatrix.com (optional)    54.200.59.112     443  Open this address if communication between Controller and ClouldN is broken. 
-	[AVIATRIX CONTROLLER]                             443  Access Aviatrix Controller
+	diag.aviatrix.com (optional)    54.200.59.112     443  Allow Remote Support access to the CloudN 
+	[AVIATRIX CONTROLLER]                             443  Communicate to Aviatrix Controller and receive software upgrades from Controller
 	==============================  ================  ==== =================================================
+	
+Standalone CloudN (de-registered from the Controller) management port requires the following Internet egress access.
+
+        =======================  ================  ==== =================================================
+        FQDN                     IP address        PORT Purpose
+        =======================  ================  ==== =================================================
+        security.aviatrix.com    54.149.28.255     443  Sync service certificates
+        diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
+        release.aviatrix.com     54.149.28.255     443  Download software for upgrading CloudN
+        =======================  ================  ==== =================================================
 	
 To check basic connectivity to Internet from CloudN device and to troubleshoot reachability issue to these addresses, follow the steps below. 
 
