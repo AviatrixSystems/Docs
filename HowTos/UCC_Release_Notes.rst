@@ -2,6 +2,64 @@
 Release Notes
 =======================================
 
+6.5.2608 (10/27/2021)
+=====================
+
+**Feature Enhancements in Aviatrix Release 6.5**
+
+- Added support for AWS BGP over LAN to support multiple peer instances.
+- Added fields “ec2 role” and “app role” in the Controller UI to support custom roles for AWS IAM based accounts.
+- **AVX-15101** - Added support for Azure Government Cloud Availability Zones.
+
+**Issues Corrected in Aviatrix Release 6.5**
+
+- **AVX-9927** - The Controller does a page refresh automatically when detecting a network issue.
+- **AVX-11175** - FQDN: HTTP traffic on alpine domain is not in whitelist, but traffic is being forwarded.
+- **AVX-13851** - In Connection to External Device, when using Private IP as the Local Identifier, not all the tunnels get their Identifier configured correctly, resulting in tunnels not coming up.
+- **AVX-14224** - Spire Gateway Service failure on large number of gateways in staging testbed.
+- **AVX-14240** - Remove "Controller Public IP" area from CloudN Diagnostics UI page.
+- **AVX-14253** - It takes hours before Azure transit gateway advertises newly attached spoke's CIDRs over BGP.
+- **AVX-14298** - Update ssh security config for controller instances from upgrade logic and security patch.
+- **AVX-14397** - CaaG's state become config_fall due to wrong cert name
+- **AVX-14600** - Traceback when doing PAN vendor integration w/ ethernet 1/1 has secondary IP.
+- **AVX-14610** - GUI commands log output displayed garbage characters
+- **AVX-14619** - Packet drops when migrating from ActiveMesh 1.0 to 2.0.
+- **AVX-14630** - Unable to upgrade from 6.5.1836 to 6.5.1905.
+- **AVX-14678** - Unable to create multiple firewalls attached to the same transit gateway in Azure environments.
+- **AVX-14700** - 2 gateways down after cert domain update, lost conduit connection.
+- **AVX-14729** - cloudN upgrade failed dry run Caused by SSLError (Cert Expired).
+- **AVX-14760** - ARM: non HPE spoke gateway Standard_D5_v2 low throughput - tx_send_full: 85670605.
+- **AVX-14775** - LDAP encrypted password is visible with readonly access.
+- **AVX-14820** - Unable to bring the gateways to UP status on 6.5 Controller.
+- **AVX-15012** - Exception error during disabling OCI transit firenet function.
+- **AVX-15071** - After upgrade, 2-tuple is not working.
+- **AVX-15083** - Sync to HA Gateway (customized SNAT) traceback error with S2C tunnels to TGW and VGW (Single IP HA).
+- **AVX-15138** - CaaG ip rule mgmt entry should have high priority than exclude_gateway entry. When the spoke or transit is advertising a CIDR overlapping with CaaG or StandAlone CloudN MGMT eth2 subnet, the client application accesses this device by eth2 MGMT interface, but the reply return traffic would not send back by eth2 MGMT interface.
+- **AVX-15198** - When transit gateway details are listed by the Aviatrix Controller or CoPilot, an exception may occur because the request is in replica mode and incorrectly tries to update the Mongo DB.
+- **AVX-15238** - CaaG Registration to Controller's Private IP add. - After changing Controller cert-domin, CaaG /etc/hosts controller.com entry got changed to controller's public ip.
+- **AVX-15332** - The Controller migration fails due to CID parameter not being passed properly. The Controller HA function is now corrected in AMI v23.
+- **AVX-15337** - CaaG Over Private Network - Registration failed when Controller use custom cert domain rather than default one.
+- **AVX-15416** - Key Pair 'nike-spoke-6' does not exist in upgrade_image.
+- **AVX-15454** - We no longer create storage account for Azure China gateways.
+- **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
+- **AVX-15599** - Cannot launch a gateway on private OOB Controller for Aviatrix 6.4 and 6.5.
+- **AVX-15639** - Image Upgrade (replace) on AWS does not add 'Aviatrix-Created-Resource' Tags.
+- **AVX-15653** - Failed controller migration when using custom IAM roles and limited permissions.
+- **AVX-15704** - Cannot create IKEv2 based site2cloud connection.
+- **AVX-15897** - The Splunk installation has issues during the enabling of the Splunk logging service. With this fix, newly created gateways no longer enter configuration failure when Splunk Logging is enabled on the Controller. This applies to all supported releases, and will affect all gateways that were deployed or upgraded after 2021-10-13. Gateways that are already logging (or have ever logged) to Splunk are unaffected by this issue. To resolve the failures, upgrade to a build on 6.3, 6.4, or 6.5 released after 10/27/2021.
+- **AVX-15978** - PSF Stateful Firewal Accept Establish Rule below Drop All Rule.
+- **AVX-15985** - Controller get_gateway_stats API should NOT return stats for deleted interface.
+- **AVX-16066** - Stateful-Firewall ESTABLISHED rule deleted from FORWARD chain.
+- **AVX-16100** - DNAT blocked to External Connection on non-activemesh transit in 6.4.2869
+- **AVX-16130** - S2C GRE tunnel shows down even though the S2C connection passing traffic with BGPoGRE Up
+
+- The following CVEs were addressed in this release: CVE-2007-2243 and CVE-2004-1653.
+
+**Known Behaviors in Aviatrix Release 6.5**
+
+- **AVX-16151** - The [NAT] incorrect tunnel is used during DNAT rule programming for Transit Gateway with HA. When DNAT is configured on non-active-mesh Transit Gateway with "Sync to HA" enabled, the DNAT rule may not be programmed correctly on HA Gateway and the Transit Gateway failover may see traffic impact. **Workaround** The workaround for this issue is that the DNAT config needs to be separately programmed on the primary and HA Gateway rather than programming on the primary Gateway side with "Sync to HA" enabled.
+
+
 Security Patch Note for 6.5 (10/25/2021)
 ===================================================================== 
 
@@ -18,6 +76,7 @@ Aviatrix strongly recommends you install the **AVI-2021-0006 Critical Vulnerabil
 For more instructions for applying the security patch, see https://docs.aviatrix.com/HowTos/setting_security_patches.html.
 
 Applying the security patch does not impact the data path or control path and can be applied without a maintenance window.
+
 
 Security Note 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052 (10/11/2021)
 ===================================================================== 
