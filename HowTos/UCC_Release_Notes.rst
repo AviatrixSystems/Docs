@@ -7,53 +7,46 @@ Release Notes
 
 **Feature Enhancements in Aviatrix Release 6.5**
 
-- Added support for AWS BGP over LAN to support multiple peer instances.
+- Added support for AWS BGP over LAN to support multiple peer instances. Scale up to 10 BGP over LAN peers per Transit Gateway, and 20 total per Transit Gateway pair. This provides a higher throughput, better redundancy, and a consolidation of BGP over LAN peers for on-prem connectivity on a pair of Transit Gateways. For more information, see the discussion about `BGP over LAN Multi-Peer <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#bgp-over-lan-multi-peer>`_.
 - Added fields “ec2 role” and “app role” in the Controller UI to support custom roles for AWS IAM based accounts.
 - **AVX-15101** - Added support for Azure Government Cloud Availability Zones.
 
 **Issues Corrected in Aviatrix Release 6.5**
 
 - **AVX-9927** - The Controller does a page refresh automatically when detecting a network issue.
-- **AVX-11175** - FQDN: HTTP traffic on alpine domain is not in whitelist, but traffic is being forwarded.
-- **AVX-13851** - In Connection to External Device, when using Private IP as the Local Identifier, not all the tunnels get their Identifier configured correctly, resulting in tunnels not coming up.
-- **AVX-14224** - Spire Gateway Service failure on large number of gateways in staging testbed.
-- **AVX-14240** - Remove "Controller Public IP" area from CloudN Diagnostics UI page.
-- **AVX-14253** - It takes hours before Azure transit gateway advertises newly attached spoke's CIDRs over BGP.
-- **AVX-14298** - Update ssh security config for controller instances from upgrade logic and security patch.
-- **AVX-14397** - CaaG's state become config_fall due to wrong cert name
-- **AVX-14600** - Traceback when doing PAN vendor integration w/ ethernet 1/1 has secondary IP.
-- **AVX-14610** - GUI commands log output displayed garbage characters
-- **AVX-14619** - Packet drops when migrating from ActiveMesh 1.0 to 2.0.
-- **AVX-14630** - Unable to upgrade from 6.5.1836 to 6.5.1905.
-- **AVX-14678** - Unable to create multiple firewalls attached to the same transit gateway in Azure environments.
-- **AVX-14700** - 2 gateways down after cert domain update, lost conduit connection.
-- **AVX-14729** - cloudN upgrade failed dry run Caused by SSLError (Cert Expired).
-- **AVX-14760** - ARM: non HPE spoke gateway Standard_D5_v2 low throughput - tx_send_full: 85670605.
-- **AVX-14775** - LDAP encrypted password is visible with readonly access.
-- **AVX-14820** - Unable to bring the gateways to UP status on 6.5 Controller.
+- **AVX-11175** - FQDN feature will handle any case changes to the UserAgent field made by a proxy.
+- **AVX-13851** - Site2cloud edit to update Local Identifier as private IP for External Device connection will update all tunnels correctly.
+- **AVX-14224** - Improvements to Spire Gateway Service for handling a large number of gateways.
+- **AVX-14240** - Improved messaging for CloudN without public IP.
+- **AVX-14397** - CaaG’s state changed to config_fail due to a wrong certificate name.
+- **AVX-14600** - Support Palo Alto Firewall vendor integration with multiple IPs configured on the eth interfaces
+- **AVX-14610** - Corrected non-ASCII characters while displaying the logs from Troubleshoot->Logs.
+- **AVX-14619** - Fixed an issue causing packet drops when migrating from ActiveMesh 1.0 to 2.0.
+- **AVX-14678** - Support multiple firewalls to be created and attached to Transit Gateway in Azure when Panorama vendor integration is configured.
+- **AVX-14700** - Addressed an issue where some Gateways could be reported in a down state if Certificate Domain is updated.
+- **AVX-14729** - Fixed an issue with cloudN upgrade failing dry run caused due to SSLError (Cert Expired).
+- **AVX-14820** - Addressed an issue with Gateways being in up state during an upgrade from 6.4 to 6.5.
 - **AVX-15012** - Exception error during disabling OCI transit firenet function.
-- **AVX-15071** - After upgrade, 2-tuple is not working.
-- **AVX-15083** - Sync to HA Gateway (customized SNAT) traceback error with S2C tunnels to TGW and VGW (Single IP HA).
-- **AVX-15138** - CaaG ip rule mgmt entry should have high priority than exclude_gateway entry. When the spoke or transit is advertising a CIDR overlapping with CaaG or StandAlone CloudN MGMT eth2 subnet, the client application accesses this device by eth2 MGMT interface, but the reply return traffic would not send back by eth2 MGMT interface.
-- **AVX-15198** - When transit gateway details are listed by the Aviatrix Controller or CoPilot, an exception may occur because the request is in replica mode and incorrectly tries to update the Mongo DB.
-- **AVX-15238** - CaaG Registration to Controller's Private IP add. - After changing Controller cert-domin, CaaG /etc/hosts controller.com entry got changed to controller's public ip.
-- **AVX-15332** - The Controller migration fails due to CID parameter not being passed properly. The Controller HA function is now corrected in AMI v23.
-- **AVX-15337** - CaaG Over Private Network - Registration failed when Controller use custom cert domain rather than default one.
-- **AVX-15416** - Key Pair does not exist in upgrade_image.
-- **AVX-15454** - We no longer create storage account for Azure China gateways.
+- **AVX-15071** - Fixed firewall tuple setting from changing during Controller upgrade.
+- **AVX-15083** - Fixed issues with Site2Cloud with “Single IP HA” feature having issues with customized SNAT features when “sync to HA gateway” configuration is enabled.
+- **AVX-15138** - Fixed route table priority to deal with CIDR overlap between advertised routes from Transit and CaaG/CloudN eth2 MGMT interface.
+- **AVX-15198** - Process optimization to avoid db updates when transit gateway details are listed by the Aviatrix Controller or CoPilot.
+- **AVX-15238** - Fixed a CaaG registrion failure issue after the cert domain is changed from default.
+- **AVX-15332** - Fixed an issue that was causing the Controller migration process to fail.
+- **AVX-15454** - Deleted dependency of storage account for Azue Chine gateways.
 - **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
-- **AVX-15599** - Cannot launch a gateway on private OOB Controller for Aviatrix 6.4 and 6.5.
-- **AVX-15639** - Image Upgrade (replace) on AWS does not add 'Aviatrix-Created-Resource' Tags.
-- **AVX-15653** - Failed controller migration when using custom IAM roles and limited permissions.
-- **AVX-15704** - Cannot create IKEv2 based site2cloud connection.
+- **AVX-15599** - Cannot launch a gateway on private OOB Controller.
+- **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. This has been fixed by ensuring the tag is added while launching the new gateway.
+- **AVX-15653** - Fixed an issue where Controller migration fails when custom IAM roles and limited permissions are used.
+- **AVX-15704** - Fixed the issue when creating an IKEv2 enabled site2cloud connection, where "Failed to establish a new connection" error displays.
 - **AVX-15897** - The Splunk installation has issues during the enabling of the Splunk logging service. With this fix, newly created gateways no longer enter configuration failure when Splunk Logging is enabled on the Controller. This applies to all supported releases, and will affect all gateways that were deployed or upgraded after 2021-10-13. Gateways that are already logging (or have ever logged) to Splunk are unaffected by this issue. To resolve the failures, upgrade to a build on 6.3, 6.4, or 6.5 released after 10/27/2021.
-- **AVX-15978** - PSF Stateful Firewal Accept Establish Rule below Drop All Rule.
-- **AVX-15985** - Controller get_gateway_stats API should NOT return stats for deleted interface.
-- **AVX-16066** - Stateful-Firewall ESTABLISHED rule deleted from FORWARD chain.
-- **AVX-16100** - DNAT blocked to External Connection on non-activemesh transit in 6.4.2869
-- **AVX-16130** - S2C GRE tunnel shows down even though the S2C connection passing traffic with BGPoGRE Up
+- **AVX-15978** - The conntrack allow all rule should always be above DROP all rule. The order should be honored. Fixed in this release.
+- **AVX-15985** - Fixed the issue where Controller get_gateway_stats API was returning stats for deleted interface.
+- **AVX-16100** - Fix that allows configuration of DNAT on transit GW on non-ActiveMesh connection.
+- **AVX-16130** - Fixed an issue where S2C GRE tunnel was showing it was down even though the S2C connection passing traffic with BGPoGRE was up.
 
-- The following CVEs were addressed in this release: CVE-2007-2243 and CVE-2004-1653.
+
+- The following CVEs were addressed in this release: `CVE-2007-2243 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2243>`_ and `CVE-2004-1653 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1653>`_.
 
 **Known Behaviors in Aviatrix Release 6.5**
 
