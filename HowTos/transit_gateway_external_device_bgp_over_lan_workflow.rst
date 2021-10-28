@@ -248,7 +248,7 @@ BGP over LAN Multi-Peer
 Overview
 -------------
 
-With the 6.5.2608 release, BGP over LAN in AWS can scale up to 10 BGP over LAN peers per Transit Gateway, and 20 total per Transit Gateway pair.  This provides a higher throughput, better redundancy, and a consolidation of BGP over LAN peers on a pair of Transit Gateways. ECMP is supported on all BGP over LAN connections.
+BGP over LAN in AWS can scale up to 10 BGP over LAN peers per Transit Gateway, and 20 total per Transit Gateway pair.  This provides a higher throughput, better redundancy, and a consolidation of BGP over LAN peers on a pair of Transit Gateways. ECMP is supported on all BGP over LAN connections.
 
 On-Prem to Cloud
 ------------------
@@ -291,7 +291,7 @@ Segmentation domains are supported on a per BGP over LAN connection basis.  If u
 Migration with BGP over LAN Multi-Peer
 --------------------------------------
 
-Additional BGP over LAN connections can be added to an existing (pre-6.5.2608) Transit Gateway.  The Gateway can have existing BGP over LAN connections.  New connections can be added either with the single-ENI or the multi-ENI model.  The existing connections do not need to be removed.  The Transit Gateway does not need to be replaced.  There is no control plane or data place disruption.
+Additional BGP over LAN connections can be added to an existing Transit Gateway.  The Gateway can have existing BGP over LAN connections.  New connections can be added either with the single-ENI or the multi-ENI model.  The existing connections do not need to be removed.  The Transit Gateway does not need to be replaced.  There is no control plane or data place disruption.
 
 Feature Interaction with BGP over LAN Multi-Peer
 ------------------------------------------------
