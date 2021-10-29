@@ -16,7 +16,7 @@ Release Notes
 **Feature Enhancements in Aviatrix Release 6.5**
 
 - Added support for AWS BGP over LAN to support multiple peer instances. Scale up to 10 BGP over LAN peers per Transit Gateway, and 20 total per Transit Gateway pair. This provides a higher throughput, better redundancy, and a consolidation of BGP over LAN peers for on-prem connectivity on a pair of Transit Gateways. For more information, see the discussion about `BGP over LAN Multi-Peer <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#bgp-over-lan-multi-peer>`_.
-- Added fields “ec2 role” and “app role” in the Controller UI to support custom roles for AWS IAM based accounts.
+- Added fields “ec2 role” and “app role” in the Controller UI to support custom roles for AWS IAM based accounts. It is highly recommended to use a customized name for "ec2 role" and "app role" instead of the Aviatrix default roles for better security.
 - **AVX-15101** - Added support for Azure Government Cloud Availability Zones.
 
 **Issues Corrected in Aviatrix Release 6.5**
@@ -47,7 +47,7 @@ Release Notes
 - **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. This has been fixed by ensuring the tag is added while launching the new gateway.
 - **AVX-15653** - Fixed an issue where Controller migration fails when custom IAM roles and limited permissions are used.
 - **AVX-15704** - Fixed the issue when creating an IKEv2 enabled site2cloud connection, where "Failed to establish a new connection" error displays.
-- **AVX-15897** - The Splunk installation has issues during the enabling of the Splunk logging service. With this fix, newly created gateways no longer enter configuration failure when Splunk Logging is enabled on the Controller. This applies to all supported releases, and will affect all gateways that were deployed or upgraded after 2021-10-13. Gateways that are already logging (or have ever logged) to Splunk are unaffected by this issue. To resolve the failures, upgrade to a build on 6.3, 6.4, or 6.5 released after 10/27/2021.
+- **AVX-15897** - Fixed an issue for Gateway Replace/Create/ForceUpgrade operations if Splunk logging was enabled on it.
 - **AVX-15978** - The conntrack allow all rule should always be above DROP all rule. The order should be honored. Fixed in this release.
 - **AVX-15985** - Fixed the issue where Controller get_gateway_stats API was returning stats for deleted interface.
 - **AVX-16100** - Fix that allows configuration of DNAT on transit GW on non-ActiveMesh connection.
