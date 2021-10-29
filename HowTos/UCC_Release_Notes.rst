@@ -46,7 +46,7 @@ Release Notes
 - **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. This has been fixed by ensuring the tag is added while launching the new gateway.
 - **AVX-15653** - Fixed an issue where Controller migration fails when custom IAM roles and limited permissions are used.
 - **AVX-15704** - Fixed the issue when creating an IKEv2 enabled site2cloud connection, where "Failed to establish a new connection" error displays.
-- **AVX-15897** - Fixed an issue for Gateway Replace/Create/ForceUpgrade operations if Splunk logging was enabled on it.
+- **AVX-15897** - Fixed an issue for Gateway Replace/Create/ForceUpgrade operations if Splunk logging was enabled on it, which was seen on all releases after 10/13/2021 (when Splunk behavior changed).
 - **AVX-15978** - The conntrack allow all rule should always be above DROP all rule. The order should be honored. Fixed in this release.
 - **AVX-15985** - Fixed the issue where Controller get_gateway_stats API was returning stats for deleted interface.
 - **AVX-16100** - Fix that allows configuration of DNAT on transit GW on non-ActiveMesh connection.
@@ -60,14 +60,14 @@ Release Notes
 - **AVX-16151** - The [NAT] incorrect tunnel is used during DNAT rule programming for Transit Gateway with HA. When DNAT is configured on non-active-mesh Transit Gateway with "Sync to HA" enabled, the DNAT rule may not be programmed correctly on HA Gateway and the Transit Gateway failover may see traffic impact. **Workaround** The workaround for this issue is that the DNAT config needs to be separately programmed on the primary and HA Gateway rather than programming on the primary Gateway side with "Sync to HA" enabled.
 
 
-Security Patch Note for 6.5 (10/25/2021)
+Security Patch Note (10/25/2021)
 ===================================================================== 
 
-**Subject**: AVI-2021-0006 Critical Vulnerability Security Patch for Aviatrix version 6.5.
+**Subject**: AVI-2021-0006 Critical Vulnerability Security Patch
 
-**Issues**: The latest 6.5 patch contains a fix for a controller vulnerability. 
+**Issues**: This security patch contains a fix for a Controller vulnerability. 
 
-The critical vulnerability addressed by this patch was privately disclosed to Aviatrix and is not known to be exploited. It affects services of our Controller available on port 443 and would allow an unauthenticated attacker to execute code on the controller. This could be mitigated by limiting access to the https/port 443 of the Controller, or by running a Web Application Firewall (WAF) in front of it.
+This security patch was made available Monday, October 25th, 2021 at 05:00PM PST. The critical vulnerability addressed by this patch was privately disclosed to Aviatrix and is not known to be exploited. It affects services of our Controller available on port 443 and would allow an unauthenticated attacker to execute code on the controller. This could be mitigated by limiting access to the https/port 443 of the Controller, or by running a Web Application Firewall (WAF) in front of it.
 
 For more information about securing Controller access, see https://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access.
 
