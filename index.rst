@@ -110,7 +110,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/CloudN_workflow
    HowTos/migrate_tgw_orchestrator_to_aviatrix_transit
    HowTos/integrate_transit_gateway_with_expressroute
-   HowTos/private_oob_workflow
    HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow
@@ -407,7 +406,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/using_VPC_Endpoints_w_AVX
    HowTos/transit_gateway_peering_with_private_network_workflow
    HowTos/aviatrix_aws_outposts
-   HowTos/private_oob
    HowTos/s2c_overlapping_cidrs_with_fast_convergence
    HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow
    

@@ -43,7 +43,6 @@ Release Notes
 - **AVX-15332** - Fixed an issue that was causing the Controller migration process to fail.
 - **AVX-15454** - Deleted dependency of storage account for Azure China gateways.
 - **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
-- **AVX-15599** - Cannot launch a gateway on private OOB Controller.
 - **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. This has been fixed by ensuring the tag is added while launching the new gateway.
 - **AVX-15653** - Fixed an issue where Controller migration fails when custom IAM roles and limited permissions are used.
 - **AVX-15704** - Fixed the issue when creating an IKEv2 enabled site2cloud connection, where "Failed to establish a new connection" error displays.
@@ -468,8 +467,6 @@ R6.3.2092 (1/31/2021)
 - **Private Transit Gateway Peering with Single-Tunnel Mode** expands the existing Insane Mode Transit Gateway Peering Over Private Network to apply it to single IPSec tunnel. One use case is for low speed encryption between cloud networks (up to 4Gbps). For more information, refer to `Transit Peering in Single-Tunnel mode. <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#single-tunnel-mode>`_. 
 
 - **Transit to External Device Using IKEv2** provides an option to run IKEv2 with the on-prem site. For more information, refer to `Aviatrix Transit Gateway to External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. 
-
-- **Private OOB** allows both the Controller and Aviatrix Transit and Spoke gateways to be deployed in private  subnets. One use case is to satisfy compliance requirements where no public facing instances were permitted. For setup information in AWS, refer to `Private OOB workflow <https://docs.aviatrix.com/HowTos/private_oob_workflow.html>`_. Azure OOB support is in the future release. 
 
 - **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. For configuration information, refer to `proxy configuration <https://docs.aviatrix.com/HowTos/advanced_config.html#proxy>`_. 
 
