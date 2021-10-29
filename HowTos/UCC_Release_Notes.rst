@@ -2,6 +2,14 @@
 Release Notes
 =======================================
 
+6.5.2613 (10/28/2021)
+=====================
+
+**Issue Corrected in Aviatrix Release 6.5**
+
+- **AVX-15444** - This fixes CaaG registration version check error.
+
+
 6.5.2608 (10/27/2021)
 =====================
 
@@ -33,7 +41,7 @@ Release Notes
 - **AVX-15198** - Process optimization to avoid db updates when transit gateway details are listed by the Aviatrix Controller or CoPilot.
 - **AVX-15238** - Fixed a CaaG registrion failure issue after the cert domain is changed from default.
 - **AVX-15332** - Fixed an issue that was causing the Controller migration process to fail.
-- **AVX-15454** - Deleted dependency of storage account for Azue Chine gateways.
+- **AVX-15454** - Deleted dependency of storage account for Azure China gateways.
 - **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
 - **AVX-15599** - Cannot launch a gateway on private OOB Controller.
 - **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. This has been fixed by ensuring the tag is added while launching the new gateway.
