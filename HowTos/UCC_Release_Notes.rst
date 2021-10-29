@@ -42,7 +42,7 @@ Release Notes
 - **AVX-15238** - Fixed a CaaG registrion failure issue after the cert domain is changed from default.
 - **AVX-15332** - Fixed an issue that was causing the Controller migration process to fail.
 - **AVX-15454** - Deleted dependency of storage account for Azure China gateways.
-- **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
+- **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the Project.
 - **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. This has been fixed by ensuring the tag is added while launching the new gateway.
 - **AVX-15653** - Fixed an issue where Controller migration fails when custom IAM roles and limited permissions are used.
 - **AVX-15704** - Fixed the issue when creating an IKEv2 enabled site2cloud connection, where "Failed to establish a new connection" error displays.
@@ -73,9 +73,19 @@ For more information about securing Controller access, see https://docs.aviatrix
 
 Aviatrix strongly recommends you install the **AVI-2021-0006 Critical Vulnerability Security Patch**.
 
-For more instructions for applying the security patch, see https://docs.aviatrix.com/HowTos/setting_security_patches.html.
+To apply a security patch, please refer to the following steps:
 
-Applying the security patch does not impact the data path or control path and can be applied without a maintenance window.
+* First, do a backup on your Controller in “Controller/Settings/Maintenance/Backup&Restore/Backup Now”
+* Go to “Controller/Settings/Maintenance/Security Patches” and click on “Update Available Patches”
+* You should see a new patch called: “AVI-2021-0006 Critical Vulnerability Security Patch”
+* Apply the patch, by clicking on the icon on the right and selecting “Apply Patch”
+* Take a backup again at “Controller/Settings/Maintenance/Backup&Restore/Backup Now”
+
+**Note:**
+
+* The security patch does not impact the data path or control path and can be executed without a maintenance window
+* This patch can be applied on releases 6.2 and higher
+* Aviatrix **strongly recommends** you to upgrade to releases 6.4 or higher. Please check out the `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and follow the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_
 
 
 Security Note 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052 (10/11/2021)
