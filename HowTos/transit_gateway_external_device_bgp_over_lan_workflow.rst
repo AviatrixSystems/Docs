@@ -255,19 +255,34 @@ On-Prem to Cloud
 
 On-Prem to Cloud connectivity can be achieved with ECMP.
 
+|bgp_lan_multipeer_onprem_clouds|
+
 When connecting multiple peers, the same BGP over LAN ENI can be reused.  Under Multi-Cloud Transit Step 3, specify the ENI IP to reuse it.
 
+|bgp_lan_multipeer_same_eni|
+
 On-prem to cloud can also be achieved without ECMP.
+
+|bgp_lan_multipeer_onprem_cloud_no_ecmp|
 
 On-Prem to On-Prem Using Aviatrix Transit as a Hub
 --------------------------------------------------
 
-On-prem to on-prem using Aviatrix Transit as a hub is the same architecture as on-prem to cloud without ECMP. However, different ENIs must be used for each BGP over LAN peer, in order for the traffic to flow through the Aviatrix Transit Gateways. This is achieved by leaving the Local LAN IP field blank, or by specifying an IP different from any existing BGP over LAN ENIs.  The Controller will allocate a new ENI in the subnet of the BGP over LAN peer specified by Remote LAN IP.  Keep in mind that there is a maximum ENI count per instance, depending on the AWS instance type.  Otherwise, there is no difference when it comes to performance or any other capabilities.
+This is the same architecture as on-prem to cloud without ECMP:
+
+|bgp_lan_multipeer_onprem_cloud_no_ecmp2|
+
+However, different ENIs must be used for each BGP over LAN peer, in order for the traffic to flow through the Aviatrix Transit Gateways. This is achieved by leaving the Local LAN IP field blank, or by specifying an IP different from any existing BGP over LAN ENIs.  The Controller will allocate a new ENI in the subnet of the BGP over LAN peer specified by Remote LAN IP.  Keep in mind that there is a maximum ENI count per instance, depending on the AWS instance type.  Otherwise, there is no difference when it comes to performance or any other capabilities.
+
+|bgp_lan_multipeer_local_IP_blank|
+
 
 HA with BGP over LAN Multi-Peer
 -------------------------------
 
-Use Remote Gateway HA to attach peers to the secondary Transit Gateway.  One BGP over LAN connection consists of 2 peers.  Because a peer must be in the same AZ as the Transit Gateway it is connected to, the HA model is 2 peers, each single-attached to their Transit Gateway in their AZ.
+Use Remote Gateway HA to attach peers to the secondary Transit Gateway.  One BGP over LAN connection consists of 2 peers.  Because a peer must be in the same AZ as the Transit Gateway it is connected to, the HA model is 2 peers, each single-attached to their Transit Gateway in their AZ. Notice the BGPoLAN-1 and BGPoLAN-2 connection names in the following diagram.
+
+|bgp_lan_multipeer_ha|
 
 
 Throughput with BGP over LAN Multi-Peer
@@ -328,6 +343,24 @@ The existing Terraform module aviatrix_transit_external_device_conn supports BGP
    :scale: 50% 
 
 .. |sd_wan_integ_aws| image:: transitvpc_designs_media/sd_wan_integ_aws.png
+   :scale: 30%
+
+.. |bgp_lan_multipeer_onprem_clouds| image:: transitvpc_designs_media/bgp_lan_multipeer_onprem_clouds.png
+   :scale: 30%
+
+.. |bgp_lan_multipeer_same_eni| image:: transitvpc_designs_media/bgp_lan_multipeer_same_eni.png
+   :scale: 30%
+
+.. |bgp_lan_multipeer_onprem_cloud_no_ecmp| image:: transitvpc_designs_media/bgp_lan_multipeer_onprem_cloud_no_ecmp.png
+   :scale: 30%
+
+.. |bgp_lan_multipeer_onprem_cloud_no_ecmp2| image:: transitvpc_designs_media/bgp_lan_multipeer_onprem_cloud_no_ecmp2.png
+   :scale: 30%
+
+.. |bgp_lan_multipeer_local_IP_blank| image:: transitvpc_designs_media/bgp_lan_multipeer_local_IP_blank.png
+   :scale: 30%
+
+.. |bgp_lan_multipeer_ha| image:: transitvpc_designs_media/bgp_lan_multipeer_ha.png
    :scale: 30%
    
 .. disqus::
