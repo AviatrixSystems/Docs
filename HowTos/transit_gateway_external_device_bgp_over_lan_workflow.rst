@@ -255,7 +255,7 @@ On-Prem to Cloud
 
 On-Prem to Cloud connectivity can be achieved with ECMP.
 
-|bgp_lan_multipeer_onprem_clouds|
+|bgp_lan_multipeer_onprem_cloud|
 
 When connecting multiple peers, the same BGP over LAN ENI can be reused.  Under Multi-Cloud Transit Step 3, specify the ENI IP to reuse it.
 
