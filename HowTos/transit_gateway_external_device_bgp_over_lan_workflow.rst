@@ -345,7 +345,7 @@ The existing Terraform module aviatrix_transit_external_device_conn supports BGP
 .. |sd_wan_integ_aws| image:: transitvpc_designs_media/sd_wan_integ_aws.png
    :scale: 30%
 
-.. |bgp_lan_multipeer_onprem_clouds| image:: transitvpc_designs_media/bgp_lan_multipeer_onprem_clouds.png
+.. |bgp_lan_multipeer_onprem_cloud| image:: transitvpc_designs_media/bgp_lan_multipeer_onprem_cloud.png
    :scale: 30%
 
 .. |bgp_lan_multipeer_same_eni| image:: transitvpc_designs_media/bgp_lan_multipeer_same_eni.png
