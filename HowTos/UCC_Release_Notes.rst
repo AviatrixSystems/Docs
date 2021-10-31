@@ -2,6 +2,21 @@
 Release Notes
 =======================================
 
+6.4.2945 (10/31/2021)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.4**
+
+- **AVX-11175** - FQDN feature will handle any case changes to the UserAgent field made by a proxy.
+- **AVX-15438** - For gateways with HPE connections to other gateways or CloudN gateways, a resize-up operation will make use of excess capacity, but a later replace operation might cause gateway to go to config_fail state. This fix addresses the issue.
+- **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the VPC.
+- **AVX-15599** - Cannot launch a gateway on private OOB Controller.
+- **AVX-15897** - Fixed an issue for Gateway Replace/Create/ForceUpgrade operations if Splunk logging was enabled on it, which was seen on all releases after 10/13/2021 (when Splunk behavior changed).
+- **AVX-15978** - The conntrack allow all rule should always be above DROP all rule. The order should be honored. Fixed in this release.
+- **AVX-15985** - Fixed the issue where Controller get_gateway_stats API was returning stats for deleted interface.
+- **AVX-16066** - Stateful-Firewall ESTABLISHED rule deleted from FORWARD chain.
+- **AVX-16100** - Fix that allows configuration of DNAT on transit GW on non-active mesh connection.
+
 6.5.2613 (10/28/2021)
 =====================
 
