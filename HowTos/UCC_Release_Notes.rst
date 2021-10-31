@@ -17,6 +17,7 @@ Release Notes
 - **AVX-16066** - Stateful-Firewall ESTABLISHED rule deleted from FORWARD chain.
 - **AVX-16100** - Fix that allows configuration of DNAT on transit GW on non-active mesh connection.
 
+
 6.5.2613 (10/28/2021)
 =====================
 
