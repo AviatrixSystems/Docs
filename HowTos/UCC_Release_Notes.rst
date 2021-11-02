@@ -2,6 +2,65 @@
 Release Notes
 =======================================
 
+
+Security Patch Note for Controllers (11/01/21)
+===================================================================== 
+
+**Subject**: AVI-2021-0005 Apache Request Smuggling Vulnerability Security Patch.
+
+**Issues**: This patch addresses vulnerabilities fixed by Apache version 2.4.51. 
+
+Aviatrix released new AMIs for AWS on 10/13/21 to address vulnerabilities (`CVE-2021-40438 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438>`_ and `CVE-2021-33193 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193>`_). You are fully covered if you migrated your Controller to use the new AMIs mentioned in `Controller Images: AWS AMI – Version 100621 <https://docs.aviatrix.com/HowTos/image_release_notes.html#controller-images-aws-ami-version-100621-10-13-21>`_, following the instructions for `existing customers to perform a Controller image upgrade <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-controller-image-upgrade-migration>`_.
+
+This patch will address the same issue without requiring a Controller migration.
+
+For Controllers running in AWS, Aviatrix recommends that you migrate your Controllers as instructed in `Existing Customers - Controller Image upgrade (Migration)  <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-controller-image-upgrade-migration>`_.
+
+For Controllers running in cloud service providers other than AWS (Azure, GCP, etc.), you can apply this security patch.
+
+To apply the security patch:
+
+  #. Secure a maintenance window and execute the following during the maintenance window. 
+
+  #. Go to your Controller (any version) management console. 
+
+  #. Go to Settings > Maintenance > Backup & Restore.  Make sure you have a backup of your current settings.  
+
+  #. Go to Settings > Maintenance > Security Patches and click on "Update available patches".  
+
+  #. From the list of patches, apply the "AVI-2021-0005 Apache Request Smuggling Vulnerability" patch.  
+
+  #. Back up your Controller again.  
+
+
+(CloudN standalone mode) To apply the security patch if you have CloudN running in a standalone mode, Aviatrix suggests you run the following in a maintenance window:
+
+  #. Go to CloudN > Maintenance > Security Patches and click on "Update available patches".  
+
+  #. Please make sure that CloudN has outbound access to 0.0.0.0/0 for ports 80 and 443 before applying the patch. 
+
+  #. From the list of patches, apply the "AVI-2021-0005 Apache Request Smuggling Vulnerability" patch.  
+
+
+(CloudN in CaaG mode) To apply the security patch if you have CloudN running in a CaaG mode, Aviatrix suggests you run the following during a maintenance window:
+
+  #. Detach CaaG from the Transit Gateway. 
+
+  #. Deregister the CaaG Gateway. 
+
+  #. Reload the CloudN UI page.  
+
+  #. Go to CloudN > Maintenance > Security Patches and click on "Update available patches".  
+
+  #. Please make sure that CloudN has outbound access to 0.0.0.0/0 for ports 80 and 443 before applying the patch.
+
+  #. From the list of patches, apply the "AVI-2021-0005 Apache Request Smuggling Vulnerability" patch.  
+
+  #. Register CaaG back to the Controller.  
+
+  #. Attach CaaG back to the Transit Gateway.
+
+
 6.4.2945 (10/31/2021)
 =====================
 
@@ -67,6 +126,7 @@ Release Notes
 - **AVX-15985** - Fixed the issue where Controller get_gateway_stats API was returning stats for deleted interface.
 - **AVX-16100** - Fix that allows configuration of DNAT on transit GW on non-ActiveMesh connection.
 - **AVX-16130** - Fixed an issue where S2C GRE tunnel was showing it was down even though the S2C connection passing traffic with BGPoGRE was up.
+- This release includes a fix for the security vulnerability AVI-2021-0006 that would allow an unauthenticated attacker to execute arbitrary code on the Controller (this vulnerability was also fixed by our security patch released on 10/25/2021 as described here https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#security-patch-note-10-25-2021).
 
 
 - The following CVEs were addressed in this release: `CVE-2007-2243 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2243>`_ and `CVE-2004-1653 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1653>`_.
