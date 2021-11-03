@@ -274,7 +274,7 @@ This is the same architecture as on-prem to cloud without ECMP:
 
 However, different ENIs must be used for each BGP over LAN peer, in order for the traffic to flow through the Aviatrix Transit Gateways. This is achieved by leaving the Local LAN IP field blank, or by specifying an IP different from any existing BGP over LAN ENIs.  The Controller will allocate a new ENI in the subnet of the BGP over LAN peer specified by Remote LAN IP.  Keep in mind that there is a maximum ENI count per instance, depending on the AWS instance type.  Otherwise, there is no difference when it comes to performance or any other capabilities.
 
-|bgp_lan_multipeer_local_IP_blank|
+|bgp_lan_multipeer_local_ipblank|
 
 
 HA with BGP over LAN Multi-Peer
@@ -357,7 +357,7 @@ The existing Terraform module aviatrix_transit_external_device_conn supports BGP
 .. |bgp_lan_multipeer_onprem_cloud_no_ecmp2| image:: transitvpc_designs_media/bgp_lan_multipeer_onprem_cloud_no_ecmp2.png
    :scale: 50%
 
-.. |bgp_lan_multipeer_local_IP_blank| image:: transitvpc_designs_media/bgp_lan_multipeer_local_IP_blank.png
+.. |bgp_lan_multipeer_local_ipblank| image:: transitvpc_designs_media/bgp_lan_multipeer_local_ipblank.png
    :scale: 50%
 
 .. |bgp_lan_multipeer_ha| image:: transitvpc_designs_media/bgp_lan_multipeer_ha.png
