@@ -31,7 +31,7 @@ Instance Configuration Details
 .. tip::
   If security requirement dictates that security groups not be open to 0.0.0.0/0, you can program the security group to open this UDP port to aviatrix gateway EIPs. You can leverage controllers security group management to copy the IP addresses of the gateways 
 
- 
+  
 
 Configure controllers access for CoPilot
 =============================================
@@ -40,7 +40,7 @@ Configure controllers access for CoPilot
 
 - On controller security groups, ensure 443 is open to public IP  of CoPilot instance
 
-- Configure a dedicate user account on aviatrix controller for copilot 
+- `Configure a dedicate user account <https://docs.aviatrix.com/HowTos/copilot_user_account.html>`_ on aviatrix controller for copilot 
 
 - You should now be able to login to CoPilot with the credentials we configured above
 
