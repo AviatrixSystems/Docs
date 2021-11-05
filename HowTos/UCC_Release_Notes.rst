@@ -3,6 +3,17 @@ Release Notes
 =======================================
 
 
+6.3.2548 (11/04/2021)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.3**
+
+- **AVX-15897** - Fixed an issue for Gateway Replace/Create/ForceUpgrade operations if Splunk logging was enabled on it, which was seen on all releases after 10/13/2021 (when Splunk behavior changed).
+- **AVX-15985** - Fixed the issue where the Controller get_gateway_stats API was returning stats for deleted interfaces.
+- **AVX-16017** - Users were unable to create Microsoft Azure Resource Manager (ARM) China Gateway for the 6.3 version. This issue was fixed by updating an Azure China image link for 6.3.
+- This release includes a fix for the security vulnerability AVI-2021-0006 that would allow an unauthenticated attacker to execute arbitrary code on the Controller (this vulnerability was also fixed by our security patch released on 10/25/2021 as described here https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#security-patch-note-10-25-2021).
+
+
 Security Patch Note for Controllers (11/01/21)
 ===================================================================== 
 
