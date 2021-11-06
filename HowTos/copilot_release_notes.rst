@@ -7,6 +7,115 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+Release 1.4.8
+-----------------
+- **New: ThreatGuard** You can now block and get alerted on the threats detected in your network. A dashboard to configure and view ThreatGuard in action.
+- **Enhancement** Improved alerts.
+- **Enhancement** More metrics. All of Performance V2 metrics are now supported for receiving alerts.
+- **Enhancement** Ability to pick and choose one/more/all hosts and one/more/all of interfaces to receive telemetry and node status alerts.
+- **Enhancement** Support for filtering domains and hosts in Network Segmentation graphs.
+- **Enhancement** Faster Cloud Routes pages and faster Notifications page.
+- **Enhancement** Performance improvements.
+- **Bug fix** Minor bug fixes.
+
+Release 1.4.7.4
+-----------------
+- **Bug fix** Fixes to latencies in Topology.
+
+Release 1.4.7.3
+-----------------
+- **Enhancement** Improvements to GW, Tunnel, S2C alerts.
+- **Enhancement** Performance improvements in backend tasks.
+- **Enhancement** Configurable settings for Network Segmentation charts.
+- **Bug fix** Fix in V2 Telemetry alerts.
+
+
+Release 1.4.7.2
+-----------------
+- **Bug fix** Fixes to Legend in Network Segmentation Page.
+- Revert ETL migration for Customers with older than 6.4 Controllers
+- **Bug fix** Minor improvements to Performance V2 Charts.
+
+
+Release 1.4.7.1
+-----------------
+- **Bug fix** Minor bug fixes in Performance Monitor V2.
+
+Release 1.4.7
+-----------------
+- **New: ThreatIQ** Real time identification of threats in ThreatIQ.
+- **Enhancement** Performance V2. Many more metrics to monitor performance of hosts, interfaces and tunnels. In the Performance Page, click on **Switch to V2**.
+- **Enhancement** Latencies for Site 2 Cloud links.
+- **Enhancement** You can now filter topology data by node type.
+- **Enhancement** Improved Cloud Routes Search and show only the routes with longest prefix.
+- **Enhancement** Upgraded AppIQ with V2 performance metrics.
+- **Enhancement** Performance improvements.
+- **Bug fix** Minor bug fixes.
+
+
+Release 1.4.6.4
+-----------------
+- **Bug fix** Fixes to SSO login.
+
+
+Release 1.4.6.3
+-----------------
+- **Enhancement** Improvements to individual alerts per host.
+- **Enhancement** In Dashboard, added a chart for instances per region.
+- **Bug fix** Fixes to topology replay.
+- **Bug fix** Fixes to topology saved layouts.
+
+
+Release 1.4.6.3
+-----------------
+- **Enhancement** Improvements to individual alerts per host.
+- **Enhancement** In Dashboard, added a chart for instances per region.
+- **Bug fix** Fixes to topology replay.
+- **Bug fix** Fixes to topology saved layouts.
+
+
+Release 1.4.6.2
+-----------------
+- **Bug fix** Fix to the offline upgrade process.
+
+
+Release 1.4.1
+-----------------
+- **Bug fix** Fix in Webhooks test button.
+
+Release 1.4.6
+-----------------
+- **Enhancement** You can now receive individual alert notifications for each host.
+- **Enhancement** AppIQ now works across all clouds.
+- **Enhancement** In Topology, you can show and hide latencies.
+- **Bug fix** Fixes for Dashboard Charts.
+- **Bug fix** Fixes for Security Charts.
+
+Release 1.4.5.3
+-----------------
+- **Enhancement** In Dashboard, new chart for Instances Per Cloud.
+- **Bug fix** Fixes for Gateways Active Sessions and Interfaces.
+- **Bug fix** Fixes for Security Charts.
+
+Release 1.4.5.2
+-----------------
+- **Enhancement** Security updates.
+- **Bug fix** Webhook templates bug fix.
+
+
+Release 1.4.5.1
+-----------------
+- **Bug fixes** Minor bug fixes in Dashboard pie charts and VPC Routes.
+
+Release 1.4.5
+-----------------
+- **Enhancement** Support for offline upgrade and offline installation of CoPilot.
+- **Enhancement** Support for templates in Webhooks.
+- **Enhancement** Support for Alibaba Cloud.
+- **Settings -> Index Management** Support for searching and filtering indices.
+- **Bug fixes** Minor bug fixes.
+
+
 Release 1.4.4
 -----------------
 - **Bug fix** Performance Fixes for Dashboard - Overview and Traffic Pages load faster.
@@ -24,7 +133,7 @@ Release 1.4.3
 - **Dashboard -> Traffic page** Detailed metrics on data sent and received in the last hour and day for instances, regions, GWs and VPCs/VNETs/VCNs. Also shows the trend and detailed traffic chart for each cloud construct. Ties into FlowIQ for deeper visibility.
 - **Security -> Audit** End to end audit on every API call (with response status, user who made the call, arguments for the call), aggregated hourly, daily, monthly and fully searchable, filterable and sortable.
 - **Search for titles/notes in the topology replay timeline across timestamps** Replay now ties into Audit so that you know who made the infrastructure change(s) and when it was (they were) made.
-- **SSO** Configure Copilot in the controller UI and login into copilot from the Controller directly without having to enter the credentials. 
+- **SSO** Configure CoPilot in the Controller UI and login into CoPilot from the Controller directly without having to enter the credentials. 
 - **Cloud Routes and BGP** section now scale to work with Controller 6.4 API changes, backward compatible with pre-6.4 APIs.
 - **Cloud Routes Search** Search, filter and highlight across routes/GWs for anything you see on the page (name, routes, cloud provider, status, tunnels). Search for IP in Subnet also highlights which CIDR the IP is part of.
 - Look and feel improvements for Settings Pages and Notifications page.
@@ -34,7 +143,7 @@ Release 1.4.3
 Release 1.4.2.1
 -----------------
 - A patch update to the release 1.4.2 
-- **Improvement** in scalability and security. Support 100k+ changes in topology diff and more than 250k tunnels in the cloud routes section (which is about 40MB of tunnels data rendered in less than 5 secs). We also made improvements to our middleware to secure Copilot. We now logout the user immediately from accessing copilot data, if the user gets deleted from the controller.
+- **Improvement** in scalability and security. Support 100k+ changes in topology diff and more than 250k tunnels in the cloud routes section (which is about 40MB of tunnels data rendered in less than 5 secs). We also made improvements to our middleware to secure CoPilot. We now logout the user immediately from accessing copilot data, if the user gets deleted from the Controller.
 
 
 Release 1.4.2
@@ -56,7 +165,7 @@ Releases 1.4.0.1, 1.4.0.2
 ----------------------------
 
 - **Enhancement** Enhanced Topology Replay to add zoom and move to preview timeline
-- **Enhancement** Throttle Latency Calls to reduce controller cpu usage (for large scale env), removed duplicate latency calls for edges
+- **Enhancement** Throttle Latency Calls to reduce Controller cpu usage (for large scale env), removed duplicate latency calls for edges
 - **Bug fix** Topology Transit View - Single node clusters for VPC, Fix for Spokes with Peering Connections, Connect S2C to regions
 - **Bug fix** Dashboard not showing OCI in Geo Map
 - **Bug fix** Segments not showing up randomly on Domain Segmentation. Truncate long labels and add tooltip
@@ -65,7 +174,7 @@ Releases 1.4.0.1, 1.4.0.2
 Release 1.4.0
 -------------------
 
-- **Copilot Theme** New Dark Mode The moon icon in the Copilot header can be toggled to switch between light mode and dark mode.
+- **CoPilot Theme** New Dark Mode The moon icon in the CoPilot header can be toggled to switch between light mode and dark mode.
 - **Topology Replay** Full view of what’s changed in your infrastructure. Instantly see any change (for ex: GWs go up/down, tunnels flap, peerings added) to your topology at any timestamp and manage your changesets.
 - **Multi Cloud Network Segmentation** Now in Security tab, Logical view -> you can visualize which spoke (or Site2Cloud instance) can reach which other spokes based on the security domains they are part of. In the physical view -> you can visualize the spokes (or S2C instances) grouped by the transit gateways and their reachability based on the security domains they are attached to.
 - **Transit View for Topology** Topology Revamped. Clear the clutter and visualize multi-cloud topology with just the Aviatrix transits connected to regions. Double click to open/close VPC/VNET clusters.
@@ -157,8 +266,8 @@ Release 1.2.0.5
 
 Release 1.2.0.3
 -------------------
-Version 1.2.0.3 requires users to enter valid credentials for the controller that Copilot will store as a **Service Account**. This Service Account is needed
-so Copilot can process and send alerts based on configured thresholds. This Service Account can be a read-only account the user created on
+Version 1.2.0.3 requires users to enter valid credentials for the Controller that CoPilot will store as a **Service Account**. This Service Account is needed
+so CoPilot can process and send alerts based on configured thresholds. This Service Account can be a read-only account the user created on
 the controller. This dialog will only show one time when no service account has been configured.
 The Service Account can be changed in **Settings** .
 
