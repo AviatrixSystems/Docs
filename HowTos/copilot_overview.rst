@@ -23,6 +23,8 @@ Key Benefits
 - **Multi-Cloud Tagging** – Tag multi-cloud resources, search by tag, filter traffic data by tag
 - **CloudRoutes** – Detailed searchable routing tables across cloud providers
 - **Notifications** – Alert on resources status/utilization across multi-Cloud
+- **AppIQ** – Comprehensive reports to analyze network path between any two cloud instances
+- **ThreatIQ** – Monitor for security threats from malicious sites, set alerts when threats are detected
 
 
 Deployment Model
