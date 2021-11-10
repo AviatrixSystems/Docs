@@ -14,7 +14,7 @@ Launch CoPilot
 Aviatrix CoPilot is available as an all-in-one virtual appliance that is hosted in a user's own IaaS cloud environment. 
 It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a VM instance in GCP and OCI. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfully launching the instance, follow these steps to configure CoPilot instance parameters and launch. 
-Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot is not a separate product. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNETs or separate cloud providers (in multi-cloud environments).
+Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNETs or separate cloud providers (in multi-cloud environments).
 
 
 Instance Configuration Details
