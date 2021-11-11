@@ -13,11 +13,21 @@ CoPilot delivers, end-end, in-depth, historical analytics of multi cloud network
 This guide will provide descriptions and definition of functionalities that are available in Aviatrix CoPilot.
 
 
-Dashboard
-================ 
+CoPilot Dashboard
+================= 
 
-Dashboard offers a broad perspective on the inventory and status of your deployment. 
-The tiles on top of the page shows different aggregated numbers of different networking nodes in your multi-cloud environments.  
+This section describes the Aviatrix CoPilot dashboard.
+
+The CoPilot Dashboard offers a broad perspective on the inventory and status of your deployment. CoPilot Dashboard shows an inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. The Dashboard shows the number and status of these managed resources as well as a breakdown of each on a per cloud basis. A topology geographic map shows where the managed VPCs/VPNs/VNETs are located across the globe.
+
+First displayed in Dashboard are inventory chips providing information about managed resources across your cloud networks. Inventory chips show the number and status of each managed resource. 
+
+The number on the inventory chip represents the total number of instances of that managed resource that exists across your multi-cloud network. 
+
+To view the status of a managed resource, click the status marker in its associated inventory chip. The status marker is:  
+
+- A green checkmark when all instances of that resource type are on (connected, running). 
+- A red exclamation mark when one or more instances of that resource type are off (disconnected, shut down). 
 
 - Virtual Data Center 
 
@@ -41,9 +51,8 @@ The tiles on top of the page shows different aggregated numbers of different net
 
 
 
-Topology
-================
-
+Working with Topology
+=====================
 
 Topology provides a visual representation of deployed networks, gateways, instances, and gateway connection.
 
@@ -61,7 +70,6 @@ Highlights of Topology capabilities:
 
   In the topology you can search for any objects that are plotted. This allows you quickly isolate and identify
   resources that you are looking in your entire environment, and across clouds
-
 
 
 Interacting with Topology 
@@ -94,26 +102,115 @@ Objects on the topology support drag and drop. You can click, drag and drop reso
 Performing diagnostics from Topology
 -------------------------------------
 
-Topology providers the user with the ability to perform troubleshooting inside the topology. This can dramatically 
+Topology provides the user with the ability to perform troubleshooting inside the topology. This can dramatically 
 reduce the time spent troubleshooting issues. 
+
 When highlighting a gateway, click on the “Diag” button to see options available for sending ping/traceroute 
 from the gateway that is in focus.
 
-FlowIQ
-================
+Working with FlowIQ
+===================
 
+This section describes the FlowIQ feature of Aviatrix CoPilot.
 
-FlowIQ section provides visualization of traffic flows that traverse AVX gateways.  
-Flows provider the user with critical visibility capability to that traffic that traverses their network.
+FlowIQ provides visualization of traffic flows that traverse Aviatrix gateways. In FlowIQ, you can find any network traffic that is moving across any gateway managed by the Aviatrix Controller in your Aviatrix transit network (multi-cloud or single cloud network). CoPilot displays metadata about traffic that flows across each link in your Aviatrix transit network. FlowIQ enables you to identify where data in your network is going to and where it is coming from and you can filter for detailed information about the traffic down to the packet level. 
+
+Flows provides you with critical visibility capability to that traffic that traverses your network.
 
 Interacting with the flows
 --------------------------
-FlowIQ providers various views for visualizing traffic records. The view respond to filters that are selected. 
-The filters that are set by the user are carried across all of views. 
+FlowIQ provides various views for visualizing traffic records. The views respond to filters that are selected. 
+The filters that are set by the user are carried across all of the views. 
+
+
+Working with Performance
+========================
+
+This section describes the Performance feature of Aviatrix CoPilot.
+
+In Performance, CoPilot displays the resource utilization (telemetry) data for all managed resources across your Aviatrix transit network (multi-cloud and single cloud). You can filter telemetry data based on one or more resources (hosts) located in any cloud. When choosing multiple resources, CoPilot displays the telemetry data for those resources in a comparative graph.
+
+The telemetry data CoPilot displays for managed resources includes:
+
+- Free memory 
+- CPU utilization 
+- Disk free 
+- Rx rate of the interface 
+- Tx rate of the interface 
+- Rx Tx rate combined of the interfaces 
+
+Working with Cloud Routes
+=========================
+
+This section describes the Cloud Routes feature of Aviatrix CoPilot.
+
+In Cloud Routes, you can view all routing information for managed resources spanning your Aviatrix transit network, including resources across clouds (multi-cloud) and on-prem (for Site 2 Cloud connections). For multi-cloud, cloud engineers can view the information in a central place without having to log in to individual cloud provider consoles.
+
+In Cloud Routes, you can view routing information for:
+
+- Gateway Routes: Tunnel information for all Aviatrix gateways managed by the Controller across clouds.
+
+  You can view the detailed routing table of each gateway, the state (up or down status) of the route (tunnel/interface), and more detailed information.
+
+  You can view the detailed routing table of each gateway, the state (up or down status) of the route (tunnel/interface), and more detailed information.
+
+  You can filter routes based on gateway name to view the routing table of that specific gateway.
+
+  You can filter routes based on a specific subnet to view all gateways across which the subnet is propagated.
+
+  You can filter routes based on a specific IP address to view all gateways across which a subnet is propagated that includes the specific IP address.
+
+- VPC/VNET/VCN Routes: Routing tables for all virtual data centers (VPC/VNET/VCN) in any cloud provider. 
+
+  You can filter routing tables based on a specific route table name.
+
+  You can filter routing tables based on a specific subnet to view all routes across which the subnet is propagated.
+ 
+  You can filter routing tables based on a specific IP address to view all routes across which a subnet is propagated that includes the specific IP address.
+
+- Site 2 Cloud: Data center connections into the cloud. 
+
+  You can view the tunnel status and the gateway to which it is connected.
+
+  You can view the remote IP address and the type of tunnel.
+ 
+- BGP Info: BGP connections from on-prem into the cloud.
+
+  You can view advertised routes being sent to the remote site, learned routes that are being received from the remote site, and a map showing how the BGP connection is connected. The map shows the gateway the BGP connection is established on, the local ASN and IP, the connection name you defined, the remote ASN IP and the remote ASN. 
+
+Working with Notifications
+==========================
+
+This section describes the Notifications feature of Aviatrix CoPilot.
+
+In Notifications, you can configure alerts so that you can be notified about changes in your Aviatrix transit network. The alerts can be based on common telemetry data monitored in the network. For example, you can receive an alert when the status of any Aviatrix Gateway in your network changes.
+
+CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people.
+
+You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
+
+In the Notification tab, CoPilot lists all alerts and shows if they are in a triggerd (open) or closed state. You can open an alert from the list to view its lifecycle. CoPilot closes the alert automatically when the alert metric no longer meets the condition to trigger the alert. The alert lifecycle provides a history for every alert that happens in your network environment.
+
+Working with AppIQ
+==================
+
+This section describes the AppIQ feature of Aviatrix CoPilot.
+
+In AppIQ, you can generate a report that gives you visibility into security domain and traffic information between any two cloud instances that are connected by way of your Aviatrix transit network. For the source instance and destination instance you specify, CoPilot analyzes network traffic, security domain settings, and route table configurations to provide details that help you understand any problems with the network path between the two instances.
+
+Working with ThreatIQ
+=====================
+
+This section describes the ThreatIQ feature of Aviatrix CoPilot.
+
+ThreatIQ provides visibility into threats that may attack your network. Aviatrix Cloud Network Platform communicates with a well known threat-IP source to stay abreast of malicious sites or IP addresses known to be bad actors (threat IPs). Netflow data is sent to CoPilot from Aviatrix Gateways in real time and CoPilot analyzes the traffic and compares it with a database of known malicious hosts to quickly detect traffic from threat IPs.
+
+In ThreatIQ Threats view, a geographical map shows you the locations in your Aviatrix transit network where threat-IP traffic is occurring or has occurred within a specified time period. You can view the severity level of threat IPs detected and their associated attack classifications (as categorized by the well known threat-IP source).
+In ThreatIQ, you can view detailed information about each attack including the source IP of the threat, the destination IP, the gateways where the threat-IP traffic traversed, the associated traffic flow data (date and time, source and destination ports, and so on), and threat information such as why it was deemed a threat. For each attack, you can open a network topology map where the associated compromised network is highlighted. You can drill down into the map to the server level where the compromised server (that is communicating and egressing to the threat IP) is highlighted. This topology view makes it easy to identify the subnet the compromised server was deployed on, the VPC it was deployed within, and the transit gateway it was using to communicate with the threat IP.
+
 
 CoPilot WebHooks Customization
-======================
-
+==============================
 
 You can customize the webhooks Aviatrix CoPilot generates for sending to external systems (such as Slack) by using the Handlebars templating language. Examples are provided in this topic for high level variables that are exposed in CoPilot notification alerts.
 
