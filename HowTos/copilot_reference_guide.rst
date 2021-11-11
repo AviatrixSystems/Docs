@@ -203,10 +203,8 @@ To configure notifications:
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
 #. In Condition, select the metric or condition that must be met to trigger the alert.
-#. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent.
-    Repeat this step for each recipient you want to receive the alert.
-#. Click Save.
-    The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
+#. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the alert.
+#. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
 
 Working with AppIQ
 ==================
