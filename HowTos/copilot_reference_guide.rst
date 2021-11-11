@@ -56,7 +56,7 @@ Working with Topology
 
 Topology provides a visual representation of deployed networks, gateways, instances, and gateway connection.
 
-Highlights of Topology capabilities: 
+Highlights of Topology capabilities 
 -------------------------------------
 
 - Stateful representations
@@ -190,6 +190,23 @@ CoPilot supports Webhook alerts. Webhooks allow you to send notifications to thi
 You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
 
 In the Notification tab, CoPilot lists all alerts and shows if they are in a triggerd (open) or closed state. You can open an alert from the list to view its lifecycle. CoPilot closes the alert automatically when the alert metric no longer meets the condition to trigger the alert. The alert lifecycle provides a history for every alert that happens in your network environment.
+
+Configure Notifications 
+-----------------------
+
+Configure notifications in CoPilot so you can be alerted to events that occur in your network.
+
+When configuring notifications, you can choose email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-webhooks-customization>`_.
+
+To configure notifications:
+
+1. From the sidebar, click Notifications.
+#. In Define Alert, type the name you want to use for the alert.
+#. In Condition, select the metric or condition that must be met to trigger the alert.
+#. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent.
+    Repeat this step for each recipient you want to receive the alert.
+#. Click Save.
+    The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
 
 Working with AppIQ
 ==================
