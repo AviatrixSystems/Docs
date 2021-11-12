@@ -18,6 +18,11 @@ Are the traffic flow records coming from controller or gateways?
 
 The flows are sent from the Aviatrix gateways directly to CoPilot's instance.
 
+How do ThreatGuard firewall policies interact with existing/new firewall policies applied to the same gateways? 
+==============================================================================================================
+
+The ThreatGuard drop policies are in addition to the existing firewall policies applied to the same gateways.  
+
 What protocol does CoPilot use to talk to its controller? 
 ===============================================================================
 
@@ -36,7 +41,7 @@ Updates are downloaded and applied automatically. The update process runs every 
 What is the smallest recommended Instance/VM size?  
 ===============================================================================
 
-For production deployments, minium requirement is 8vCPU and 32G of Memory
+For production deployments, minimum requirement is 8vCPU and 32G of Memory
 
 Can I configure flows to be sent over private IPs? 
 ===============================================================================
