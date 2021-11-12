@@ -2,6 +2,12 @@
 Release Notes
 =======================================
 
+6.3.2551 (11/12/2021)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.3**
+
+- **AVX-16569** - Controller image migration fails to progress past the initialization state.
 
 6.3.2548 (11/04/2021)
 =====================
