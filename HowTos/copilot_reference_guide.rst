@@ -152,8 +152,6 @@ In Cloud Routes, you can view routing information for:
 
   You can view the detailed routing table of each gateway, the state (up or down status) of the route (tunnel/interface), and more detailed information.
 
-  You can view the detailed routing table of each gateway, the state (up or down status) of the route (tunnel/interface), and more detailed information.
-
   You can filter routes based on gateway name to view the routing table of that specific gateway.
 
   You can filter routes based on a specific subnet to view all gateways across which the subnet is propagated.
@@ -253,15 +251,10 @@ To enable ThreatGuard alerts:
 1. Log in to CoPilot.
 2. From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
 3. Click the **Send Alert** button and then click the Send Alert slider so that it slides to the right.
-4. In the ThreatGuard Configuration dialog, click Add Recipients. Select the email address or Webhook destination to which you want to send ThreatGuard alerts. 
-    Repeat this for each recipient you want to receive the alert.
-5. Click **CONFIRM**.  
-    ThreatGuard alerts are enabled. When a threat IP is detected in a traffic flow, CoPilot will now send a notification to the email or Webhook system you specified. The notification will state the threat IP that was detected in the blocked traffic.
-6. (Optional) Verify that ThreatGuard alerts are enabled: 
-    A) From the sidebar, click Notifications. 
-    B) In the Configured Alerts list, locate the entry with the name ThreatGuard Alert that has the condition **When Threat IP Detected**. This entry validates that alerts are enabled.
-7. (Optional) Enable ThreatGuard blocking. After alerts are enabled, you can opt to enable ThreatGuard blocking. See Enable ThreatGuard Blocking for instructions. 
-    When ThreatGuard blocking is enabled, Aviatrix Gateways instantiate and enforce firewall policies to block threat-IP associated traffic as soon as it is detected.
+4. In the ThreatGuard Configuration dialog, click Add Recipients. Select the email address or Webhook destination to which you want to send ThreatGuard alerts. Repeat this for each recipient you want to receive the alert.
+5. Click **CONFIRM**. ThreatGuard alerts are enabled. When a threat IP is detected in a traffic flow, CoPilot will now send a notification to the email or Webhook system you specified. The notification will state the threat IP that was detected in the blocked traffic.
+6. (Optional) Verify that ThreatGuard alerts are enabled: A) From the sidebar, click Notifications. B) In the Configured Alerts list, locate the entry with the name **ThreatGuard Alert** that has the condition **When Threat IP Detected**. This entry validates that alerts are enabled.
+7. (Optional) Enable ThreatGuard blocking. After alerts are enabled, you can opt to enable ThreatGuard blocking. See Enable ThreatGuard Blocking for instructions. When ThreatGuard blocking is enabled, Aviatrix Gateways instantiate and enforce firewall policies to block threat-IP associated traffic as soon as it is detected.
 
 Enable ThreatGuard Blocking 
 ---------------------------
@@ -275,10 +268,8 @@ To enable ThreatGuard blocking:
 1. Log in to CoPilot.
 2. From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
 3. Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
-4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right.
-   ThreatGuard blocking is enabled. Aviatrix Gateways now enforce firewall policies to block threat-IP associated traffic as soon as it is detected in their traffic flow. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC will block the associated traffic.
-5. (Optional) Disable blocking.
-    Note: When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Gateways for all threats detected up to that point.   
+4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. ThreatGuard blocking is enabled. Aviatrix Gateways now enforce firewall policies to block threat-IP associated traffic as soon as it is detected in their traffic flow. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC will block the associated traffic.
+5. (Optional) Disable blocking. **Note:** When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Gateways for all threats detected up to that point.   
 
 CoPilot WebHooks Customization
 ==============================
