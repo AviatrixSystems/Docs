@@ -213,6 +213,13 @@ This section describes the AppIQ feature of Aviatrix CoPilot.
 
 In AppIQ, you can generate a report that gives you visibility into security domain and traffic information between any two cloud instances that are connected by way of your Aviatrix transit network. For the source instance and destination instance you specify, CoPilot analyzes network traffic, security domain settings, and route table configurations to provide details that help you understand any problems with the network path between the two instances.
 
+Working with Security
+=====================
+
+This section describes the Security feature of Aviatrix CoPilot.
+
+In Security, CoPilot uses visual elements to demonstrate the segments in your Aviatrix transit network that can and cannot communicate with each other. The segments are enabled by way of security domains and their ability to communicate with each other is dictated by security domain policies. You enable security domains and set security domain policies in Aviatrix Controller. CoPilot shows the logical and physical view of the domain segments and their connection relationships.
+
 Working with ThreatIQ
 =====================
 
