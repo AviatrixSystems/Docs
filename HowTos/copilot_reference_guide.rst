@@ -225,10 +225,21 @@ Working with ThreatIQ
 
 This section describes the ThreatIQ feature of Aviatrix CoPilot.
 
-ThreatIQ provides visibility into threats that may attack your network. Aviatrix Cloud Network Platform communicates with a well known threat-IP source to stay abreast of malicious sites or IP addresses known to be bad actors (threat IPs). Netflow data is sent to CoPilot from Aviatrix Gateways in real time and CoPilot analyzes the traffic and compares it with a database of known malicious hosts to quickly detect traffic from threat IPs.
+ThreatIQ enables you to monitor for security threats in your Aviatrix cloud network, set alerts when threats are detected in the network traffic flows, and block traffic that is associated with threats. All of these capabilities apply to your entire cloud network (multi-cloud or single cloud).
+
+ThreatIQ provides visibility into threats that may attack your network. Aviatrix Cloud Network Platform communicates with a well known threat-IP source to stay abreast of malicious sites or IP addresses known to be bad actors (*threat IPs*). Netflow data is sent to CoPilot from Aviatrix Gateways in real time and CoPilot analyzes the traffic and compares it with a database of known malicious hosts to quickly detect traffic from threat IPs.
 
 In ThreatIQ Threats view, a geographical map shows you the locations in your Aviatrix transit network where threat-IP traffic is occurring or has occurred within a specified time period. You can view the severity level of threat IPs detected and their associated attack classifications (as categorized by the well known threat-IP source).
+
 In ThreatIQ, you can view detailed information about each attack including the source IP of the threat, the destination IP, the gateways where the threat-IP traffic traversed, the associated traffic flow data (date and time, source and destination ports, and so on), and threat information such as why it was deemed a threat. For each attack, you can open a network topology map where the associated compromised network is highlighted. You can drill down into the map to the server level where the compromised server (that is communicating and egressing to the threat IP) is highlighted. This topology view makes it easy to identify the subnet the compromised server was deployed on, the VPC it was deployed within, and the transit gateway it was using to communicate with the threat IP.
+
+While the ThreatIQ Threats view provides visibility into the threats detected in your network, the ThreatIQ ThreatGuard view enables you to take actions on those threats:
+
+- **Enable alerts.** In ThreatGuard view, you can enable alerts so you are notified when threat-IP traffic is first detected.You can configure your preferred communication channel (email or Webhook alerts) for sending these ThreatGuard alerts. In CoPilot Notifications, you can view historical information about when the alerts were triggered, including the names of the gateways within the threat-IP traffic flow. ThreatGuard alerts are based on threat-IP data stored in a database that is regularly updated with the most current threats (new or removed). When a threat IP is removed from the threat-IP source (the IP is no longer deemed malicious), the update is automatically pushed to Aviatrix Cloud Network Platform
+
+- **Block threat-IP traffic.** In ThreatGuard, you can enable blocking of threat-IP traffic. To block threat-IP traffic, alerts must first be enabled. When blocking is enabled, the Controller upon first detecting a threat IP in a traffic flow, instantiates security rules (stateful firewall rules) on all gateways that are within that flow (all gateways within the VPC/VNET) to immediately block the threat-IP associated traffic. If the threat IP is removed from the database of the threat-IP source, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the security rules for that specific threat IP remain enforced. NOTE: If you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Gateways for all threats (all threat IPs) detected up to that point.
+
+You must have a CoPilot user account that has ``all_write`` or ``all_security_write`` permissions to be able to enable/disable ThreatGuard alerts and blocking.
 
 
 CoPilot WebHooks Customization
