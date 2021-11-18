@@ -5,11 +5,11 @@
 ###################################
 CoPilot
 ###################################
-This document describes the configurations on the CoPilot under Settings tab.
+This document describes the **CoPilot** configurations under Settings in Aviatrix Controller.
 
 CoPilot Association
 ===========================
-When “Status” is enabled, the CoPilot with the "IP Address/Hostname" is associated with the controller. A user can sign into the CoPilot without any username and password from the controller.
+When “Status” is enabled, the CoPilot with the "IP Address/Hostname" you specify is associated with the Controller. After the association is enabled, a user can sign into the CoPilot without a username and password from the Controller homepage (by clicking on the CoPilot button in the action bar).
 
     |image0|
 
