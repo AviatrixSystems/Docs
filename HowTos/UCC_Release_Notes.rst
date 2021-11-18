@@ -2,6 +2,26 @@
 Release Notes
 =======================================
 
+6.5.2721 (11/18/2021)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.5**
+
+- **AVX-15735** - CoPilot unable to display gateway active sessions from the Aviatrix Controller.
+- **AVX-16494** - CPU overconsumption by IP processes on gateways.
+- **AVX-16572** - Listing interfaces on a gateway takes a long time with large number of Site2Cloud connections.
+- **AVX-16601** - If the API enable_gateway_auto_recovery option is used on the Controller to overcome the Azure maintenance windows it causes the ethernet interfaces on the gateways to go missing. In some cases, the API failed to stop and start the affected gateways. 
+
+**Feature Enhancements in Aviatrix Release 6.5**
+
+- **AVX-9927** - Added message for unstable network connectivity prompting user to refresh page to reconnect.
+- **AVX-15530** - Added timestamp to packets per second (PPS) statistics.
+- **AVX-15651** - Removed hard coded role names.
+
+**Known Behaviors in Aviatrix Release 6.5**
+
+- **AVX-16486** - Restarting IPSEC services in Site2Cloud -> Diagnostics after upgrading can deliver higher performance on your S2C tunnels and is highly recommended. Please note that the IPSEC services restart will bring all tunnels down, but they should come back up quickly.
+
 6.3.2551 (11/12/2021)
 =====================
 
