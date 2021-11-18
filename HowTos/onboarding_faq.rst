@@ -108,6 +108,8 @@ If you wish not to use the contributor role and instead creating a custom
 role with Aviatrix provided permission, you can do so via Azure portal or with via PowerShell. 
 Below is guide on how to accomplish that via PowerShell. 
 
+**Note:** For security purposes, Aviatrix recommends you use a custom role rather than the default role Aviatrix created. When you use a custom role name it is important to make sure the AssumeRole policy and Trust policy are correct. The AssumeRole policy is attached to the EC2 role and the Trust policy is accessed on the APP role Trust Relationship tab.
+
 For replacing the Contributor role via Azure portal, refer to `Azure IAM Custom Role <https://docs.aviatrix.com/HowTos/azure_custom_role.html>`_. 
 
 Step 1. Add an custom role through Powershell
