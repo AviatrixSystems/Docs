@@ -470,34 +470,6 @@ These are the steps:
  1. **Field Notice** All Aviatrix customers are notified when a security update is available. 
  #. **Security Patch** Aviatrix Controller provides a inline software patch to fix vulnerability with the instructions from the Field Notice. The updates do not require reboot of the Controller or gateways most of the time. 
 
-Is Aviatrix tunnel price expensive?
------------------------------------------
-
-Aviatrix pricing is not expensive. Majority of Aviatrix unit price, such as FQDN, TGW attachment and Spoke gateway attachment is priced at 
-$0.16/unit. The table below compares annual cost of an Aviatrix tunnel to an EC2. 
-
-As you can see, a tunnel or attachment cost is less than a single c5.xlarge or m5.xlarge cost. In a VPC, you may have tens or hundreds of instances that each costs more in a year than an Aviatrix tunnel.
-
-For example, if you have 100 instances in a VPC, the additional network cost introduced by Aviatrix is 
-about 1% of your compute cost. Even when 
-you scale to more VPCs, this cost ratio does not change. Designing a network that optimizes on network cost is 
-not a good idea. On the other hand, Aviatrix solution provides you many benefits in operations. 
-
-=========================      ===============   ====================
-**Type**                       **Unit Price**    **Annual Price**
-=========================      ===============   ====================
-Aviatrix TGW attachment        $0.16/hour        $1401/year
-Aviatrix FQDN gateway          $0.16/hour        $1401/year
-t3.xlarge                      $0.164/hour       $1436/year
-t3.2xlarge                     $0.3328/hour      $2915/year
-m5.xlarge                      $0.192/hour       $1681/year
-m5.2xlarge                     $0.384/hour       $3363/year
-m5.4xlarge                     $0.768/hour       $6727/year
-c5.xlarge                      $0.17/hour        $1489/year
-c5.2xlarge                     $0.34/hour        $2978/year
-c5.4xlarge                     $0.68/hour        $5956/year
-=========================      ===============   ====================
-
 How to recover when a Controller software upgrade fails?
 ------------------------------------------------------------
 
