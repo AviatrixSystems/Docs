@@ -17,10 +17,6 @@ Release Notes
 - **AVX-9927** - Added message for unstable network connectivity prompting user to refresh page to reconnect.
 - **AVX-10080** - Added support for Transit Firenet in AWS China for Checkpoint.
 
-**Known Behaviors in Aviatrix Release 6.5**
-
-- **AVX-16486** - Restarting IPSEC services in Site2Cloud -> Diagnostics after upgrading can deliver higher performance on your S2C tunnels and is highly recommended. Please note that the IPSEC services restart will bring all tunnels down, but they should come back up quickly.
-
 6.3.2551 (11/12/2021)
 =====================
 
