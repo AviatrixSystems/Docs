@@ -15,8 +15,7 @@ Release Notes
 **Feature Enhancements in Aviatrix Release 6.5**
 
 - **AVX-9927** - Added message for unstable network connectivity prompting user to refresh page to reconnect.
-- **AVX-15530** - Added timestamp to packets per second (PPS) statistics.
-- **AVX-15651** - Removed hard coded role names.
+- **AVX-10080** - Added support for Transit Firenet in AWS China for Checkpoint.
 
 **Known Behaviors in Aviatrix Release 6.5**
 
