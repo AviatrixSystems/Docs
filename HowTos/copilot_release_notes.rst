@@ -7,6 +7,16 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+Release 1.4.9
+-----------------
+- **New: Inventory Reports** You can now create customized, detailed reports for all or specific inventory (resources managed by Aviatrix Controller) running across your multi-cloud network.  To create a custom report, you answer questions that guide you to include only the information you want in the report. Each time you specify your criteria, the PDF report view updates in real time in an adjacent pane. You first specify the cloud provider(s) to include information about a single cloud or multiple clouds. You then specify the regions you have resources in that you want to include. You can further specify the VPCs/VNETs/VCNs in the region(s) and drill down further to specify the resource types (for example, gateways and instances). You can save and download the report. Currently, you cannot save a report filter.
+- **Enhancement** (ThreatGuard) Now only users logged in to CoPilot who have Admin/Firewall Admin permissions can enable/disable ThreatGuard blocking.
+- **Enhancement** (ThreatGuard) Selective Threat Blocking. You can now be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled. By default, all VPCs/VNets/VCNs block when ThreatGuard blocking is enabled. You can then use the Allow/Deny List to specify which ones will not block.
+- **Enhancement** (Topology) Support for filtering on your own tags you created in the CSP (supported for tags added to gateways only at this time, not instances).
+- **Enhancement** (Egress) For Egress, CoPilot now shows Rule and Action when a request hits a rule.
+- **Enhancement** Performance improvements.
+- **Bug fix** Minor bug fixes.
+
 Release 1.4.8
 -----------------
 - **New: ThreatGuard** You can now block and get alerted on the threats detected in your network. A dashboard to configure and view ThreatGuard in action.
