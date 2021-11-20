@@ -2,6 +2,15 @@
 Release Notes
 =======================================
 
+6.4.2973 (11/19/2021)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.4**
+
+- **AVX-15653** - Controller image migration fails to progress past the initialization state.
+- **AVX-16494** - CPU overconsumption by IP processes on gateways.
+- **AVX-16601** - In some corner cases, if the API enable_gateway_auto_recovery option is used on the Controller to overcome the Azure maintenance windows it causes the ethernet interfaces on the gateways to go missing. In some cases, the API failed to stop and start the affected gateways. If you have this feature enabled, please disable it and then enable it again after the upgrade or open a Support ticket at https://support.Aviatrix.com to get assistance.
+
 6.5.2721 (11/18/2021)
 =====================
 
@@ -10,7 +19,7 @@ Release Notes
 - **AVX-15735** - CoPilot unable to display gateway active sessions from the Aviatrix Controller.
 - **AVX-16494** - CPU overconsumption by IP processes on gateways.
 - **AVX-16572** - Listing interfaces on a gateway takes a long time with large number of Site2Cloud connections.
-- **AVX-16601** - If the API enable_gateway_auto_recovery option is used on the Controller to overcome the Azure maintenance windows it causes the ethernet interfaces on the gateways to go missing. In some cases, the API failed to stop and start the affected gateways. 
+- **AVX-16601** - In some corner cases, if the API enable_gateway_auto_recovery option is used on the Controller to overcome the Azure maintenance windows it causes the ethernet interfaces on the gateways to go missing. In some cases, the API failed to stop and start the affected gateways. If you have this feature enabled, please disable it and then enable it again after the upgrade or open a Support ticket at https://support.Aviatrix.com to get assistance.
 
 **Feature Enhancements in Aviatrix Release 6.5**
 
