@@ -271,6 +271,48 @@ To enable ThreatGuard blocking:
 4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNET/VCN will block the associated traffic.
 5. (Optional) Disable blocking. **Note:** When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats detected up to that point.   
 
+
+Working with Reports
+=====================
+
+This section describes the Reports feature of Aviatrix CoPilot.
+
+In Reports, you can create detailed reports showing your inventory of managed resources (resources managed by Aviatrix Controller) in a single cloud or across all clouds in your multi-cloud network.
+
+You can quickly create reports that show on which cloud, region, and VPC/VNET/VCN specific managed resources are running. You can add columns to the report for different properties associated with resource types. You can apply complex filters to customize the data that gets included in the report for each resource type.
+
+Create an Inventory Report
+--------------------------
+
+Create a report showing inventory of managed resources (resources managed by Aviatrix Controller) in a single cloud or across all clouds in your multi-cloud network.
+
+You can create a custom report by answering questions that guide you to include only those managed resources you want in your report. You can apply complex filters to further narrow down the contents of the report.
+
+To create an inventory report:
+
+1.  Log in to CoPilot
+
+2.  From the sidebar, click Reports.
+
+3.  In **Select the cloud(s)**, CoPilot shows icons for the clouds in which you have managed resources. Select one of the following:
+
+    -   (Multi-cloud) If the report is to include managed resources that span across all of your clouds, click **All clouds**.
+    -   If the report is to include managed resources for a single cloud, click the icon of the applicable cloud provider.
+4.  In **Select the region(s)**, CoPilot shows the regions in which you have managed resources for the cloud(s) you specified in the previous step. Select each region that includes managed resources you want to include in your report. If the types of managed resources to include are within all regions, click **Select All**.
+
+5.  In **Select the VPC(s)**, CoPilot shows all the VPCs/VNETs/VCNs in which you have managed resources for the region(s) you specified in the previous step. Select each VPC/VNET/VCN that includes managed resources to include in your report. If the types of managed resources to include are within all VPCs/VNETs/VCNs, click **Select All**.
+
+6.  In **Select resource type(s)**, select the resource type icons to specify the resource types to include in the report.
+
+7.  In **Select the properties**, CoPilot shows various properties that are associated with the resource types you specified in the previous step. Select a property to include it as a column in the report. The report preview pane automatically includes the *name* property of the managed resource and its *cloud*, *region*, and *VPC/VNET/VCN* properties (you can deselect them to remove them from the report). You can use the Search box to locate a property associated with data to include in the report. For example, for the gateway resource type, typing *size* in the search box returns a result `vpc_size`. By including `vpc_size` in the report, you can view what size instance each of those gateways are currently running on (the `vpc_size` property signifies the size of gateways). As another example, typing *trans* in the search box returns properties that include `transit` in the name, such as `transit_vpc`. By including the `transit_vpc` property in the report, you can view which of those gateways are transit gateways.
+
+8.  In **Add filters**, you can optionally use filters to narrow down the managed resources to include in your report. For any property you selected in the previous step, you can set a filter using the property's value (TIP: When you include a property in the report, the value of it is listed in its associated report column). For example, if you have hundreds of gateways in your environment and want to narrow down the contents of the report to only transit gateways, add a filter with the rule to show only transit gateways (click ADD FILTERS, click ADD RULE, and then set field `gateway.transit.vpc` with the filter operator ``==`` set to value `yes` and click APPLY FILTERS). NOTE: Currently, filters cannot be saved.
+
+9.  (Optional) Save, download, or print the report. For printing, select the paper size and page orientation.
+
+10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNETs/VCNs, deselect the regions, and deselect the clouds as needed to report only on the data you want.
+
+
 CoPilot WebHooks Customization
 ==============================
 
