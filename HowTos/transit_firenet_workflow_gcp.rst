@@ -226,16 +226,6 @@ For basic configuration, please refer to `example Palo Alto Network configuratio
 
 For implementation details on using Bootstrap to launch and initiate VM-Series, refer to `Bootstrap Configuration Example <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_.
 
-FortiGate (Fortinet)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Fortinet support for Google Cloud is coming in future release
-
-Check Point
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Security Gateway support for Google Cloud is coming in future release
-
 
 Step 10: Verification
 ***************************
