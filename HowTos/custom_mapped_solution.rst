@@ -23,7 +23,7 @@ This document covers examples with Aviatrix Transit Gateway only and below topol
  Same virtual CIDR for multiple customer sites cannot be used.
 
 .. important::
- This document applies to both Aviatrix Transit and AWS Transit Gateway (TGW). "Forward Traffic to Transit Gateway" needs to be enabled under S2C connection in Avaitrix Transit Gateway case.
+ This document applies to both Aviatrix Transit and AWS Transit Gateway (TGW). "Forward Traffic to Transit Gateway" needs to be enabled under S2C connection in Aviatrix Transit Gateway case.
 
 Terminology Definitions
 --------------------------

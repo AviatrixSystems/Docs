@@ -162,7 +162,7 @@ After you power up CloudN, first test that the CloudN interfaces are alive and c
  #. Log in with username "admin" and the password provided by your Aviatrix Support Representative (You can change the password later).
  #. Upgrade CloudN to the latest.
 
-3.4 Configure Insane Moode
+3.4 Configure Insane Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure to select all the correct options.
