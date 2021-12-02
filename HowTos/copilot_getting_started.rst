@@ -119,11 +119,17 @@ To perform an initial login to CoPilot:
 
     You can use any account defined on the controller to log in to CoPilot. Typically for initial login, this is an administrative account.
 
+    |copilot_login_user_account|
+
 4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account.
 
     The CoPilot service account is used to run CoPilot (without any user logged in).
 
+    |copilot_login_service_account|
+
 5.  When prompted for **CoPilot Customer ID**, enter your CoPilot licence key.
+
+    |copilot_login_customer_id|
 
     You are now successfully logged in to CoPilot.
 
@@ -131,7 +137,7 @@ To perform an initial login to CoPilot:
 
     **Note:** When CoPilot first launches, the version number is based on the version in the image, but within an hour the CoPilot version will be updated.
 
-    **Note:** If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, ensure you first release the CoPilot licence of the current instance. To release the license, in CoPilot under Settings->Licensing, click the **RESET** button.
+    **Note:** If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, release the CoPilot licence of the current instance first. To release the license, in CoPilot under Settings->Licensing, click the **RESET** button.
 
 6.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
@@ -231,5 +237,14 @@ Deploy Aviatrix CoPilot in GCP
    
 .. |gcp_copilot_3| image:: copilot_getting_started_media/gcp_copilot_3.png
    :scale: 50%
+
+.. |copilot_login_customer_id| image:: copilot_getting_started_media/copilot_login_customer_id.png
+   :scale: 100%
+
+.. |copilot_login_service_account| image:: copilot_getting_started_media/copilot_login_service_account.png
+   :scale: 100%
+
+.. |copilot_login_user_account| image:: copilot_getting_started_media/copilot_login_user_account.png
+   :scale: 100%
 
 .. disqus::
