@@ -47,6 +47,7 @@ To subscribe to a CoPilot offer:
     -   Google Cloud Platform
     -   Microsoft Azure Marketplace
     -   Oracle Cloud Infrastructure (OCI)
+
 2.  Locate the Aviatrix CoPilot software offer you want to subscribe to and click **Subscribe**.
 
 3.  When prompted, review the subscription pricing information and accept the terms and conditions. You may be prompted to confirm your subscription before moving on to configuration.
@@ -61,6 +62,7 @@ To subscribe to a CoPilot offer:
         -   TCP port 443 for Web UI (to reach CoPilot public IP via HTTPS using your web browser)
         -   UDP port 31283 for FlowIQ (port is configurable)
         -   UDP port 5000 for Remote Syslog Service
+
         For the ports, you can accept the default inbound rule of 0.0.0.0/0. If a security requirement dictates that resources not be open to 0.0.0.0/0, you can allow only the IP addresses of your Aviatrix gateways for the UDP ports. You can allow only your and other trusted user's IP addresses for port 443.
 
 5.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
@@ -71,33 +73,31 @@ To subscribe to a CoPilot offer:
 
 6.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section and assign an EIP to the CoPilot instance.
 
-    Take note of the IP address to use later during initial login to CoPilot.
+    Take note of the IP address to use later during initial setup of CoPilot.
 
 7.  Start the CoPilot instance/virtual machine.
 
     For example, in the AWS EC2 Dashboard, check the instance checkbox and from the Actions menu, choose Start Instance.
 
-    You are now ready to launch CoPilot in a web browser or from the Aviatrix Controller homepage and perform your initial login.
+    You are now ready to launch CoPilot in a web browser or from the Aviatrix Controller homepage and perform your initial setup.
 
 
-Initial Login to CoPilot
+Initial Setup of CoPilot
 ========================
 
-Perform an initial login to Aviatrix CoPilot after you deploy/launch the CoPilot software in the cloud provider of your choice.
+Perform an initial setup of Aviatrix CoPilot after you deploy/launch the CoPilot software in the cloud provider of your choice.
 
-For initial login to CoPilot, have the following information available:
+For initial setup of CoPilot, have the following information available:
 
 -   The static public IP address of your recently deployed CoPilot software instance/virtual machine (obtained from the cloud provider portal).
 -   The static IP address for your Aviatrix Controller.
--   The login credentials for a valid user account on the controller.
-
-    You can use any account defined on the controller to log in to CoPilot. You can choose which account(s) you want to use as the CoPilot service account. If you plan to use the ThreatGuard feature in CoPilot, the service account must have `all_firewall_write` permissions. Otherwise, the account can have `read_only` permissions.
-
+-   The login credentials of your Aviatrix Controller user account.
+-   The login credentials for the user account to be used as the CoPilot service account. If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
 -   The CoPilot licence key (obtained from your Aviatrix representative).
 
 This procedure assumes your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). Your CoPilot software instance/virtual machine must also be up and running.
 
-To perform an initial login to CoPilot:
+To perform an initial setup of CoPilot:
 
 1.  Launch CoPilot in your web browser:
 
@@ -109,21 +109,19 @@ To perform an initial login to CoPilot:
 
 2.  (Optional) Launch CoPilot from Aviatrix Controller:
 
-    1.  In Aviatrix Controller, under Settings, select CoPilot.
+    a.  In Aviatrix Controller, under Settings, select CoPilot.
 
-    2.  For the CoPilot Association, set the status to **Enabled** and enter the static IP address for your running CoPilot instance.
+    b.  For the CoPilot Association, set the status to **Enabled** and enter the static IP address for your running CoPilot instance.
 
-    3.  From the controller homepage, click the CoPilot button in the action bar.
+    c.  From the controller homepage, click the CoPilot button in the action bar.
 
 3.  When prompted, enter the login and password of a valid Aviatrix Controller user account and the static IP address for your controller.
-
-    You can use any account defined on the controller to log in to CoPilot. Typically for initial login, this is an administrative account.
 
     |copilot_login_user_account|
 
 4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account.
 
-    The CoPilot service account is used to run CoPilot (without any user logged in).
+    The CoPilot service account is used to run CoPilot services such as alerts, topology replay, and ThreatGuard (without any user logged in).
 
     |copilot_login_service_account|
 
@@ -143,21 +141,37 @@ To perform an initial login to CoPilot:
 
 7.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
-    1.  Log in to Aviatrix Controller.
+    a.  Log in to Aviatrix Controller.
 
-    2.  Go to Settings -> Loggings -> NetFlow Logging.
+    b.  Go to Settings -> Loggings -> NetFlow Logging.
 
-    3.  Use the static IP address of CoPilot as the server and UDP port 31283 (default, port is configurable).
+    c.  Use the static IP address of CoPilot as the server and UDP port 31283 (default, port is configurable).
 
     You should start seeing NetFlow in CoPilot after a few minutes.
 
 8.  (For remote syslog service) To enable syslog for performance monitoring in CoPilot, ensure that the controller is configured to specify CoPilot as the loghost server.
 
-    1.  Log in to Aviatrix Controller.
+    a.  Log in to Aviatrix Controller.
 
-    2.  Go to Settings -> Loggings -> Remote Syslog.
+    b.  Go to Settings -> Loggings -> Remote Syslog.
 
-    3.  Enable the Service, choose a Profile Index (ie. 0), and use the static IP address of CoPilot as the server and UDP port 5000 (default).
+    c.  Enable the Service, choose a Profile Index (ie. 0), and use the static IP address of CoPilot as the server and UDP port 5000 (default).
+
+
+About CoPilot User Accounts
+=============================================
+
+This section describes user accounts for CoPilot and permissions required for some features.
+
+You can use any valid user account defined on the controller to log in to CoPilot.
+
+During initial setup of CoPilot, you specify a user account defined on the controller to be used as the CoPilot service account. The CoPilot service account is used to run CoPilot services, such as alerts, topology replay, and ThreatGuard (without any user logged in). If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
+
+For a user to enable ThreatGuard alerts or ThreatGuard blocking in CoPilot, they must log in to CoPilot with a user account that has `all_write` or `all_security_write` or `admin` permissions.
+
+Users who will not enable ThreatGuard alerts or blocking can log in to CoPilot with an account that has `read_only` permissions and use all of its other features.
+
+Users should be granted only the permissions needed to perform their work. Review user privileges on a routine basis to confirm they are appropriate for current work tasks.
 
 
 Configure Controller's access for CoPilot
