@@ -57,7 +57,7 @@ Put the CIDRs in the field **"Network List Excluded From East-West Inspection"**
 
 .. Note::
 
-    1. Maximum 20 CIDRs coma-separated are supported.
+    1. Maximum 50 CIDRs coma-separated are supported.
     2. CIDRs are excluded from East-West inspections only.
     3. In Transit FireNet, if Egress inspection is enabled, all the Egress traffic will get inspected by the firewall even for the CIDRs excluded for East-West inspection.
 
