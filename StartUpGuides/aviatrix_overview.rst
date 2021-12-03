@@ -11,9 +11,9 @@ What Do We Do?
 ================
 
 Aviatrix is a cloud native networking company. Unlike any other networking vendors, the 
-Aviatrix software platform understands the cloud provider's native constructs. This allows us to leverage 
+Aviatrix software platform understands the cloud provider's native constructs. This allows you to leverage 
 and control the native constructs directly using the cloud provider's APIs extending their capabilities and 
-integrating them into our software to provide organizations with turn key solutions accelerating their cloud journey. 
+integrating them into our software to provide organizations with turn key solutions accelerating your cloud journey. 
 
 |aviatrix_overview|
 
