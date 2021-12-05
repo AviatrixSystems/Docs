@@ -43,8 +43,7 @@ If you haven’t already deployed the Aviatrix controller, follow `these instruc
 An identity provider (IdP) is any provider that supports a SAML endpoint like `Okta <./SAML_Integration_Okta_IdP.html>`__,
 `OneLogin <./SAML_Integration_OneLogin_IdP.html>`__, `Google <./SAML_Integration_Google_IdP.html>`__,
 `AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__, `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__, and `PingOne <./SAML_Integration_PingOne_IdP.html>`__.
-Administrator access is required to create IdP endpoints for SAML. For a list of supported IdPs, see `IdP-specific SAML App Integration < https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#IdP-specific>`__.
-
+Administrator access is required to create IdP endpoints for SAML. For a list of supported IdPs, see `IdP-specific SAML App Integration <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#IdP-specific>`.
 
 .. _PDC_23:
 
