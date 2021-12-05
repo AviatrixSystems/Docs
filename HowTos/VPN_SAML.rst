@@ -24,7 +24,7 @@ For different IdP's, there will be links to each individual IdP integration.
 Before configuring the SAML integration between Aviatrix and your IdP, make sure the following is completed:
 
 	#. The `Aviatrix Controller <#pdc-21>`__ is setup and running
-	#. You haveHave a valid `IdP account <#pdc-22>`__ with admin access
+	#. You have a valid `IdP account <#pdc-22>`__ with admin access
 	#. You have `Downloaded and installed <#pdc-23>`__ the Aviatrix SAML client
 
 
