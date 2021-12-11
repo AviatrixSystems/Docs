@@ -2,6 +2,41 @@
 Release Notes
 =======================================
 
+6.5.XXXX (12/XX/2021) 
+=====================
+
+**Issues Corrected in Aviatrix Release 6.5** 
+
+- **AVX-9033** - The routing logs are not rotated on CloudN and are not included in the trace logs. 
+- **AVX-14298** - The following CVEs were addressed in this release: `CVE-2007-2243 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2243>`_ and `CVE-2004-1653 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1653>`_. 
+- **AVX-14659** - IPSec tunnel flapping between gateways running different flavors of IPSec infra. 
+- **AVX-16121** - After a successful image upgrade, the gateway state changes from success to config_fail after about 5 minutes. 
+- **AVX-16563** - Security Group Management feature fails on an Aviatrix Controller deployed in GCP after a Controller Migration operation. 
+- **AVX-16912** - Cannot create Transit GW with HA in OCI using Terraform scripts. 
+- **AVX-16967** - Deleting one or more Customized SNATs generates a “route already exists in route table” error. 
+- **AVX-17489** - When deleting one CIDR from the spoke customized advertise CIDR list, the CIDR should only be removed from the transit gateway and the rest of the network. However, during deletion the CIDR was removed from the spoke itself, which deletes the routes added for static S2c. 
+ 
+**Known Issues in Aviatrix Release 6.5**
+
+- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in “Controller/Logging” before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the “config_fail” state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. 
+
+If you already upgraded and have Gateways in the “config_fail” state, you can do an “Image Upgrade” on the impacted Gateway to resolve the issue. 
+
+- **AVX-17221** - When upgrading to standalone CloudN version 6.5.1936 or later, after registering CloudN with the Controller as a managed CloudN, CloudN will be in a “config_fail” state. 
+
+Workaround scenario 1: Prior to performing the registration process. 
+
+  #. Add a firewall rule to allow CloudN’s MGMT outbound UDP port 123 access to ntp.ubuntu.com or to a local NTP server. 
+  #. From the CloudN UI page go to Setting -> Controller-> System Time. Enter ntp.ubuntu.com or a local NTP server then select the Sync option. 
+  #. Do a manual sync from CloudN to the NTP server. 
+  #. From the CloudN UI go to Setting -> Maintenance page and upgrade standalone CloudN to 6.5.f. 
+  #. From the CloudN UI page Setting -> Advanced page, perform the registration process. 
+
+Workaround scenario 2: Managed CloudN already registered and in “config_fail“ state. 
+
+  #. From Controller UI page go to CLOUDWAN -> Register -> De-register a Device, select the CloudN  already registered and in “config_fail” state. 
+  #. Follow steps outline in “Workaround for scenario 1” get CloudN out of the failed state. 
+
 6.4.2973 (11/19/2021)
 =====================
 
