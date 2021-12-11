@@ -32,6 +32,8 @@ At `Egress through Firewall`, click Enable.
 Egress Static CIDRs
 -----------------------
 
+You can allow egress to a subset of your IP address space from your on-prem data center to the Internet with Aviatrix Egress FireNet. Static CIDR egress is supported on Aviatrix Transit and AWS Transit Gateways (TGW). Up to 20 subnets are supported.
+
 
 Fail Close
 -------------
