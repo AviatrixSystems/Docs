@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-6.5.XXXX (12/XX/2021) 
+6.5.2835 (12/10/2021) 
 =====================
 
 **Issues Corrected in Aviatrix Release 6.5** 
