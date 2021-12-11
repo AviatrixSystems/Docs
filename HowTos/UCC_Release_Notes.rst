@@ -29,7 +29,7 @@ Workaround scenario 1: Prior to performing the registration process.
   #. Add a firewall rule to allow CloudN’s MGMT outbound UDP port 123 access to ntp.ubuntu.com or to a local NTP server. 
   #. From the CloudN UI page go to Setting -> Controller-> System Time. Enter ntp.ubuntu.com or a local NTP server then select the Sync option. 
   #. Do a manual sync from CloudN to the NTP server. 
-  #. From the CloudN UI go to Setting -> Maintenance page and upgrade standalone CloudN to 6.5.f. 
+  #. From the CloudN UI go to Setting -> Maintenance page and upgrade standalone CloudN to 6.5.2835. 
   #. From the CloudN UI page Setting -> Advanced page, perform the registration process. 
 
 Workaround scenario 2: Managed CloudN already registered and in “config_fail“ state. 
