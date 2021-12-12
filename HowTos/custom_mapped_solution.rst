@@ -145,8 +145,6 @@ Traffic initiated from on-prem's side
 
 Traffic initiated from the on-prem's side means it is a local initiated traffic from Aviatrix Gateway perspective as shown below.
 
-|scenario2_local_initiated|
-
 
 ==================================================                =======================================================================
   **Client 1 S2C CIDR**                                             **Remote Initiated**
