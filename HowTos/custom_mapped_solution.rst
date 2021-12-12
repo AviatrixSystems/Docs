@@ -53,8 +53,6 @@ Problem Statement
 -------------------------------------------------------------------------
 In this use case, a customer needs to connect certain on-prem hosts to certain EC2 instances in a VPC over an IPSEC tunnel over the Internet, but the on-prem network range overlaps with the customer's VPC CIDR range, and the requirement from the customer is that traffic can be initiated from either side.
 
-|scenario1_overlapping_cidr|
-
 ::
 
   VPC       CIDR = 10.10.0.0/16, instance-1 in Client-1 has an IP address 10.10.43.145
