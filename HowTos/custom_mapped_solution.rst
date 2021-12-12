@@ -86,8 +86,6 @@ Traffic initiated from customer's side
 
 Traffic initiated from Client's side means it is a remote initiated traffic from Aviatrix Gateway perspective as shown below.
 
-|scenario1_remote_initiated|
-
 Furthermore, requirement is to map customer's Real CIDR into the smaller Virtual CIDRs of 16 IP addresses range.
 
 SNAT is only required to translate 10.10.0.0/16 to small range of ip address 100.64.0.16/28, 100.64.0.32/28 respectively.
@@ -105,8 +103,6 @@ Traffic initiated from on-prem's side
 ########################################
 
 Traffic initiated from the on-prem's side means it is a local initiated traffic from Aviatrix Gateway perspective as shown below.
-
-|scenario1_local_initiated|
 
 
 ==================================================                =======================================================================
@@ -128,8 +124,6 @@ Traffic initiated from customer's side
 ########################################
 
 Traffic initiated from Client's side means it is a remote initiated traffic from Aviatrix Gateway perspective as shown below.
-
-|scenario2_remote_initiated|
 
 Furthermore, requirement is to map customer's Real CIDR into the smaller Virtual CIDRs of 16 IP addresses range.
 
