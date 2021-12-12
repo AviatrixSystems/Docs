@@ -62,6 +62,9 @@ In this use case, a customer needs to connect certain on-prem hosts to certain E
 
 Aviatrix offers multiple solutions to this requirement. The solutions uses in this document to solve this scenario is called "custom mapped" feature in Site2Cloud that removes the need to configure individual SNAT/DNAT rules and gives flexibility to map Real CIDRs to small Virtual CIDRs range.
 
+.. note::
+ The maximum number of CIDRs for Site2Cloud network maps is 32.
+
 This solution uses a site2cloud route-based IPSEC tunnel using Virtual Tunnel Interface (VTI) between VPC and On-Prem Router. The packet flow is demonstrated as below:
 
  1. Client-1 instance-1 sends a packet to host-1 with a virtual destination IP address, for example 11.10.0.212. From Client-1 instance-1's point of view, the destination instance is a virtual address - 11.10.0.212.
