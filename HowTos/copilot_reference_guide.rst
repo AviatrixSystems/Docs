@@ -54,22 +54,44 @@ To view the status of a managed resource, click the status marker in its associa
 Working with Topology
 =====================
 
-Topology provides a visual representation of deployed networks, gateways, instances, and gateway connection.
+This section describes the Topology feature of Aviatrix CoPilot.
+
+Topology provides a visual representation of deployed networks, gateways, instances, and gateway connections.
+
+The Topology feature gives you visibility into your network as follows:
+
+-   **Network Graph - Network View**
+
+    In Network Graph, in Network view, CoPilot displays a network topology map that shows the logical and physical layout of how managed network resources are connected across multiple clouds. Topology provides a visual representation of deployed networks (VPCs/VNETs/VCNs), gateways, instances, and gateway connections. CoPilot automatically draws the map when it connects to Aviatrix Controller.
+
+    The Aviatrix Gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. When highlighting a gateway, click on the DIAG button to see options available for performing diagnostics from the gateway that is in focus.
+
+-   **Network Graph - Transit View**
+
+    In Network Graph, in Transit view, CoPilot shows the topology of your Aviatrix transit network in relation to your deployed Aviatrix transit gateways. By clicking on the Aviatrix transit icon, you can see all of the transit VPCs/VNETs, VPNs that are managed by Aviatrix Controller. By clicking on a region icon, you can see the spoke VPCs/VNETs/VPNs that the controller currently manages. By clicking on a spoke VPC/VNET/VPN, you can see all network constructs inside of that spoke. You can use the search field to find specific resources.
+
+-   **Latency Monitor**
+
+    In Latency Monitor, CoPilot shows detailed latencies, historically for the last hour, last day, last week, and last month, for all links (connections) between managed resources. You can use the date picker to view historical latencies for a custom timeframe. You can filter the historical latency information by search field, such as by the name of a specific gateway to view historical latencies that relate only to that gateway.
+
+-   **Topology Replay**
+
+    In Topology Replay, CoPilot shows what changed in your environment and when it changed. CoPilot shows when route, credential, and other metrics in your cloud network constructs have changed over time. A timeline panel shows you all of the changes (as change sets) that were recorded over the last month. You can analyze the additions, modifications, and deletions recorded in each change set. You can delete change sets when you no longer need them.
 
 Highlights of Topology capabilities 
 -------------------------------------
 
 - Stateful representations
   
-  Connectivity elements in topology reflect state of the objet:
+  Connectivity elements in topology reflect state of the object:
     
-    - Connections between Aviatrix gateways are drawn with color codes representing the status of thir connection.
-    - Aviatrix gateway icons represent the state of the gateway. A down gateway is shown in the black line 
-    - Tunnels statuses are shown with green or red lines, representing the status of the link
+    - Connections between Aviatrix gateways are drawn with color codes representing the status of their connection.
+    - Aviatrix gateway icons represent the state of the gateway. A down gateway is shown in the black line. 
+    - Tunnels statuses are shown with green or red lines, representing the status of the link.
 - Search for any objects and their properties
 
-  In the topology you can search for any objects that are plotted. This allows you quickly isolate and identify
-  resources that you are looking in your entire environment, and across clouds
+  In the topology, you can search for any objects that are plotted. This allows you to quickly isolate and identify
+  resources that you are looking for in your entire environment and across clouds.
 
 
 Interacting with Topology 
@@ -102,11 +124,26 @@ Objects on the topology support drag and drop. You can click, drag and drop reso
 Performing diagnostics from Topology
 -------------------------------------
 
-Topology provides the user with the ability to perform troubleshooting inside the topology. This can dramatically 
-reduce the time spent troubleshooting issues. 
+The Aviatrix gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. Performing diagnostics from Topology can dramatically 
+reduce the time spent troubleshooting issues.
 
-When highlighting a gateway, click on the “Diag” button to see options available for sending ping/traceroute 
-from the gateway that is in focus.
+To perform diagnostics from Topology (from an Aviatrix Gateway):
+
+1.  In Topology, click on an Aviatrix Gateway in the topology map to select it.
+
+2.  Click the DIAG button.
+
+3.  Perform any of the following diagnostic tasks for the gateway:
+
+    1.  PING: Run pings directly from the gateway to outside of the Aviatrix managed network or to any resource inside the network.
+
+    2.  TRACEROUTE: Run trace route.
+
+    3.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+
+    4.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+
+    5.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
 
 Working with FlowIQ
 ===================
