@@ -24,12 +24,12 @@ Instance Configuration Details
 
   - 443 from anywhere user access (User Interface)
 
-  - UDP port 5000 from 0.0.0.0/0 or specific gateway IPs
+  - UDP port 5000 from specific gateway IPs
 
-  - UDP port 31283 from 0.0.0.0/0 or specific gateway IPs 
+  - UDP port 31283 from specific gateway IPs 
 
 .. tip::
-  If a security requirement dictates that security groups not be open to 0.0.0.0/0, you can program the security group to open this UDP port to Aviatrix gateway EIPs. You can leverage Controller's security group management to copy the IP addresses of the gateways. 
+  You can leverage Aviatrix Controller's security group management to copy the IP addresses of the gateways. 
 
 
 Subscribe to a CoPilot Offer
@@ -63,7 +63,7 @@ To subscribe to a CoPilot offer:
         -   UDP port 31283 for FlowIQ (port is configurable)
         -   UDP port 5000 for Remote Syslog Service
 
-        For the ports, you can accept the default inbound rule of 0.0.0.0/0. If a security requirement dictates that resources not be open to 0.0.0.0/0, you can allow only the IP addresses of your Aviatrix gateways for the UDP ports. You can allow only your and other trusted user's IP addresses for port 443.
+        For the UDP ports, change the default inbound rule of 0.0.0.0/0 to only the IP addresses of your Aviatrix gateways. For port 443, you can allow only your and other trusted user's IP addresses.
 
 5.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
@@ -216,8 +216,8 @@ System Design Considerations
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
 
-Deploy Aviatrix CoPilot in GCP
-==============================
+Example - Deploy Aviatrix CoPilot in GCP
+========================================
 
 - Go to GCP marketplace.
 
@@ -235,9 +235,9 @@ Deploy Aviatrix CoPilot in GCP
 
 - 443 from anywhere user access (User Interface).
 
-- UDP port 31283 from 0.0.0.0/0 or specific gateway IPs.
+- UDP port 31283 from specific gateway IPs (remove 0.0.0.0/0).
 
-- UDP port 5000 from 0.0.0.0/0 or specific gateway IPs.
+- UDP port 5000 from specific gateway IPs (remove 0.0.0.0/0).
 
 |gcp_copilot_3|
 
