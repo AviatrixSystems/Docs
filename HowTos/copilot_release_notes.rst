@@ -7,6 +7,10 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+Releases 1.4.9.1, 1.4.9.2
+-------------------------
+- **Bug fix** Minor bug fixes.
+
 Release 1.4.9
 -----------------
 - **New: Inventory Reports** You can now create customized, detailed reports for all or specific inventory (resources managed by Aviatrix Controller) running across your multi-cloud network.  To create a custom report, you answer questions that guide you to include only the information you want in the report. Each time you specify your criteria, the PDF report view updates in real time in an adjacent pane. You first specify the cloud provider(s) to include information about a single cloud or multiple clouds. You then specify the regions you have resources in that you want to include. You can further specify the VPCs/VNETs/VCNs in the region(s) and drill down further to specify the resource types (for example, gateways and instances). You can save and download the report. Currently, you cannot save a report filter.

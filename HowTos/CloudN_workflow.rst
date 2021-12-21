@@ -142,7 +142,18 @@ Update Aviatrix Controller's inbound security group to allow TCP 443 from public
 
 		This public IP address needs to be static.  
 
-Step 2.2 Login CloudN GUI
+Step 2.2 Configure NTP Sync and SMTP Services
+---------------------------------------------
+
+	- Add a firewall rule to allow CloudN’s MGMT outbound UDP port 123 access to ntp.ubuntu.com or to a local NTP server.
+
+	- From the CloudN UI, go to Setting -> Controller -> System Time. Enter ntp.ubuntu.com or a local NTP server then select the Sync option.
+
+	- Do a manual sync to the NTP server.
+
+	- From the CloudN UI, go to Setting -> Controller -> Email, Setup SMTP settings to allow CloudN to send alert email.
+
+Step 2.3 Login CloudN GUI
 --------------------------
 
 	- Open a browser
@@ -151,7 +162,7 @@ Step 2.2 Login CloudN GUI
 	
 	- Sign in with CloudN login credentials
 	
-Step 2.3 (Optional) Check whether CloudN requires a Controller IP migration
+Step 2.4 (Optional) Check whether CloudN requires a Controller IP migration
 ---------------------------------------------------------------------------------------------
 
 This is a rare case. It is documented here for completeness. Skip if the Controller IP address has not been changed. 
@@ -166,7 +177,7 @@ This is a rare case. It is documented here for completeness. Skip if the Control
 	
 		For private link connectivity such as AWS Direct Connect or Azure Express Route case, CloudN WAN interface is assigned a private IP, thus the message in the panel "CONTROLLER PUBLIC IP" displays "The public IP of this controller is NA. Controller was not able to reach www.carmelonetworks.com through the WAN interface(eth0)."
 
-Step 2.4 Managed CloudN management port outbound access
+Step 2.5 Managed CloudN management port outbound access
 --------------------------------------------------------------------------------------------------------------------------
 
 Manged CloudN (registered to the Controller) management port requires the following Internet egress access. 
@@ -211,7 +222,7 @@ To check basic connectivity to Internet from CloudN device and to troubleshoot r
 	
 	- Click the button "Go" to check connectivity
 
-Step 2.5 Register with Aviatrix Controller FQDN Name
+Step 2.6 Register with Aviatrix Controller FQDN Name
 -------------------------------------------------------
 
 	- Navigate to the page "Settings -> Advanced -> Registration" or click the link "Managed CloudN" under UseCases drop down menu on the top

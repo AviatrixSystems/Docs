@@ -4,13 +4,13 @@
 
 
 ====================================
-CoPilot User Reference Guide
+Aviatrix CoPilot User Reference Guide
 ====================================
 
-Aviatrix CoPilot is a component of Aviatrix platform offering that extends visibility into complex, multi-cloud networks deployed and managed by Aviatrix controller. 
-CoPilot delivers, end-end, in-depth, historical analytics of multi cloud networks with a single pane of glass that offers application flows, inventory, health, and complete topological view of the network.  
+Aviatrix CoPilot is a component of Aviatrix platform offering that extends visibility into complex, multi-cloud networks deployed and managed by Aviatrix Controller. 
+CoPilot delivers, end-to-end, in-depth, historical analytics of multi cloud networks with a single pane of glass that offers application flows, inventory, health, and complete topological view of the network.  
 
-This guide will provide descriptions and definition of functionalities that are available in Aviatrix CoPilot.
+This guide will provide descriptions and definitions of functionalities that are available in Aviatrix CoPilot.
 
 
 CoPilot Dashboard
@@ -54,59 +54,94 @@ To view the status of a managed resource, click the status marker in its associa
 Working with Topology
 =====================
 
-Topology provides a visual representation of deployed networks, gateways, instances, and gateway connection.
+This section describes the Topology feature of Aviatrix CoPilot.
+
+Topology provides a visual representation of deployed networks, gateways, instances, and gateway connections.
+
+The Topology feature gives you visibility into your network as follows:
+
+-   **Network Graph - Network View**
+
+    In Network Graph, in Network view, CoPilot displays a network topology map that shows the logical and physical layout of how managed network resources are connected across multiple clouds. Topology provides a visual representation of deployed networks (VPCs/VNETs/VCNs), gateways, instances, and gateway connections. CoPilot automatically draws the map when it connects to Aviatrix Controller.
+
+    The Aviatrix Gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. When highlighting a gateway, click on the DIAG button to see options available for performing diagnostics from the gateway that is in focus.
+
+-   **Network Graph - Transit View**
+
+    In Network Graph, in Transit view, CoPilot shows the topology of your Aviatrix transit network in relation to your deployed Aviatrix transit gateways. By clicking on the Aviatrix transit icon, you can see all of the transit VPCs/VNETs, VPNs that are managed by Aviatrix Controller. By clicking on a region icon, you can see the spoke VPCs/VNETs/VPNs that the controller currently manages. By clicking on a spoke VPC/VNET/VPN, you can see all network constructs inside of that spoke. You can use the search field to find specific resources.
+
+-   **Latency Monitor**
+
+    In Latency Monitor, CoPilot shows detailed latencies, historically for the last hour, last day, last week, and last month, for all links (connections) between managed resources. You can use the date picker to view historical latencies for a custom timeframe. You can filter the historical latency information by search field, such as by the name of a specific gateway to view historical latencies that relate only to that gateway.
+
+-   **Topology Replay**
+
+    In Topology Replay, CoPilot shows what changed in your environment and when it changed. CoPilot shows when route, credential, and other metrics in your cloud network constructs have changed over time. A timeline panel shows you all of the changes (as change sets) that were recorded over the last month. You can analyze the additions, modifications, and deletions recorded in each change set. You can delete change sets when you no longer need them.
 
 Highlights of Topology capabilities 
 -------------------------------------
 
 - Stateful representations
   
-  Connectivity elements in topology reflect state of the objet:
+  Connectivity elements in Topology reflect the state of the object:
     
-    - Connections between Aviatrix gateways are drawn with color codes representing the status of thir connection.
-    - Aviatrix gateway icons represent the state of the gateway. A down gateway is shown in the black line 
-    - Tunnels statuses are shown with green or red lines, representing the status of the link
+    - Connections between Aviatrix gateways are drawn with color codes representing the status of their connections.
+    - Aviatrix gateway icons represent the state of the gateway. A gateway that is down is shown as a black line. 
+    - Tunnels statuses are shown with green or red lines, representing the status of the link.
 - Search for any objects and their properties
 
-  In the topology you can search for any objects that are plotted. This allows you quickly isolate and identify
-  resources that you are looking in your entire environment, and across clouds
+  In Topology, you can search for any objects that are plotted. This allows you to quickly isolate and identify
+  resources that you are looking for in your entire environment and across clouds.
 
 
 Interacting with Topology 
 ---------------------------
-Objects on the topology support drag and drop. You can click, drag and drop resources to reorganize the objects 
+Objects on the topology maps support drag and drop. You can click, drag and drop resources to reorganize the objects. 
 
-.. tip:: You can multi-select objects for drag and drop by holding control/command key and selecting
+.. tip:: You can multi-select objects for drag and drop by holding control/command key and selecting.
 
 - Search
-
 
   The search box allows you to filter the objects that are plotted on the topology.
 
 - Filter 
 
-  Filter menu offers the option to hide/show different category of the object, to ensure topology shows only what you as the user care about 
+  Filter menu offers the option to hide/show different categories of the objects to ensure the topology shows only what you care about. 
  
 - Layout
    
   You can save and reload layouts in the topology using the layout menu. If you prefer the topology to load a default
-  layout, you can select one as the default
+  layout, you can select one as the default.
 
 - Physics options 
 
   By default topology objects are organized using physics engines. This menu allows you to configure physical 
-  gravity settings that manages placement of objects. You can adjust different parameters, or turn the physics off
-  completely for complete control over placement of the objects 
+  gravity settings that manage the placement of objects. You can adjust different parameters, or turn the physics off
+  completely for complete control over placement of the objects. 
 
 
 Performing diagnostics from Topology
 -------------------------------------
 
-Topology provides the user with the ability to perform troubleshooting inside the topology. This can dramatically 
-reduce the time spent troubleshooting issues. 
+The Aviatrix gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. Performing diagnostics from Topology can dramatically reduce the time spent troubleshooting issues.
 
-When highlighting a gateway, click on the “Diag” button to see options available for sending ping/traceroute 
-from the gateway that is in focus.
+To perform diagnostics from Topology (from an Aviatrix Gateway):
+
+1.  In Topology, click on an Aviatrix Gateway in the topology map to select it.
+
+2.  Click the DIAG button.
+
+3.  Perform any of the following diagnostic tasks for the gateway:
+
+    a.  PING: Run pings directly from the gateway to outside of the Aviatrix managed network or to any resource inside the network.
+
+    b.  TRACEROUTE: Run trace route.
+
+    c.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+
+    d.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+
+    e.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
 
 Working with FlowIQ
 ===================
@@ -120,7 +155,7 @@ Flows provides you with critical visibility capability to that traffic that trav
 Interacting with the flows
 --------------------------
 FlowIQ provides various views for visualizing traffic records. The views respond to filters that are selected. 
-The filters that are set by the user are carried across all of the views. 
+The filters that you set are carried across all of the views. 
 
 
 Working with Performance
@@ -568,8 +603,9 @@ Custom Slack Webhook example (slack document: https://app.slack.com/block-kit-bu
 Settings
 ======================
 
-Settings page allows user to configure various settings of CoPilot. Please ensure to reach the documentation
-before making any changes to the settings
+This section describes the Settings options of Aviatrix CoPilot.
+
+The Settings page allows you to configure various CoPilot settings. The default entries are usually sufficient. Ensure that you understand the impact of changing an option before making the change. Typically, you only need to set the Controller IP options by specifying the controller IP address and the controller service account.
 
 Configuration
 ---------------
@@ -609,18 +645,23 @@ Disk Space Management
 
 Services
 ----------
-This page allows you stop/start/restart various services
+This page allows you stop/start/restart various services. 
+
+Use **Services Download Log Bundle Locally** to download the support log bundle to your local system. Submit a support ticket first.
+
+Use **Services Upload Log Bundle to Support** to send your support log bundle directly to Aviatrix Support (the log bundle is uploaded to s3).
+
 
 Resources
 -----------
-Resources helps you understand the resource utilization levels in your appliances 
-and take necessary actions
+The Resources page helps you understand the resource utilization levels in your appliances (to determine if you need to take necessary actions).
 
 
 Licensing 
 -----------
-This page provides functionality for viewing your current license or release the license. 
-**Releasing License*** this 
+This page provides functionality for viewing your current license key or releasing the license. 
+
+If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, release the CoPilot licence of the current instance first. To release the license, click the RESET button. 
 
 Index Management
 -----------------

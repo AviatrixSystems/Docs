@@ -1,10 +1,10 @@
 .. meta::
-  :description: Aviatrix Controller and Gateway Deployment Guide in AWS Secret and Top Secret regions
-  :keywords: Aviatrix, AWS, Secret, Top Secret
+  :description: Aviatrix Controller and Gateway Deployment Guide in AWS Discrete Regions
+  :keywords: Aviatrix, AWS
 
 
 =====================================================================================
-Aviatrix Controller and Gateway Deployment Guide in AWS Secret and Top Secret regions
+Aviatrix Controller and Gateway Deployment Guide in Discrete Regions
 =====================================================================================
 
 The Aviatrix Secure Networking Platform consists of two components: Aviatrix Controller and Gateway. The Aviatrix Controller manages the Aviatrix Gateway and orchestrates all connectivities. 
@@ -12,7 +12,7 @@ The Aviatrix Secure Networking Platform consists of two components: Aviatrix Con
 Launch Aviatrix Controller
 ===========================
 
-Welcome to getting started on AWS secret/top secret regions! This guide takes you through the 3 steps to launch the Controller instance. 
+These instructions apply when deploying in discrete regions in AWS. This guide takes you through the 3 steps to launch the Controller instance. 
 
 Step 1. Subscribe to Aviatrix Secure Networking Platform - BYOL on AWS ICMP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -26,7 +26,7 @@ Two options to search and deploy Aviatrix Controller:
 
 - (Option 1) Search the product “Aviatrix Secure Networking Platform - BYOL” on ICMP website
 
-- (Option 2) Login to AWS ICMP console and navigate to EC2 dashboard page
+- (Option 2) Log in to AWS ICMP console and navigate to EC2 dashboard page
 
 - (Option 2) Click the button “Launch Instances” and select the product “Aviatrix Secure Networking Platform - BYOL” on AWS ICMP
 
@@ -49,9 +49,9 @@ Step 3. Onboarding
 
 Now that Aviatrix Controller instance has been launched, let’s login and go through the onboarding process.
 
-- Access the Controller console by going to https://[Controller_Public_IP] on a browser
+- Access the Controller console by going to https://[*Controller_Public_IP*] on a browser
 
-- Login with the username "admin" and the default password "Controller_Private_IP"
+- Log in with the username "admin" and the default password of your *Controller_Private_IP*
 
 - Enter your email address
 
@@ -67,7 +67,7 @@ Launch Aviatrix Gateway
 
 To deploy Aviatrix Secure Companion Gateway from AWS ICMP successfully, make sure you follow the instructions as follows. When complete, you'll be ready to deploy use cases.
 
-Step 1. Follow the step `Launch Aviatrix Controller <https://docs.aviatrix.com/HowTos/aws_secret_topsecret_getting_started.html#launch-aviatrix-controller>`_ above
+Step 1. Follow the step Launch Aviatrix Controller above
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Step 2. Subscribe to Aviatrix Secure Companion Gateway on AWS ICMP

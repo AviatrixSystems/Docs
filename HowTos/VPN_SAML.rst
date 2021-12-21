@@ -24,7 +24,7 @@ For different IdP's, there will be links to each individual IdP integration.
 Before configuring the SAML integration between Aviatrix and your IdP, make sure the following is completed:
 
 	#. The `Aviatrix Controller <#pdc-21>`__ is setup and running
-	#. You haveHave a valid `IdP account <#pdc-22>`__ with admin access
+	#. You have a valid `IdP account <#pdc-22>`__ with admin access
 	#. You have `Downloaded and installed <#pdc-23>`__ the Aviatrix SAML client
 
 
@@ -40,11 +40,10 @@ If you haven’t already deployed the Aviatrix controller, follow `these instruc
 2.2 IdP Account
 ###############
 
-An IdP refers to an identity provider for SAML. This could be any provider that supports a SAML endpoint like `Okta <./SAML_Integration_Okta_IdP.html>`__,
+An identity provider (IdP) is any provider that supports a SAML endpoint like `Okta <./SAML_Integration_Okta_IdP.html>`__,
 `OneLogin <./SAML_Integration_OneLogin_IdP.html>`__, `Google <./SAML_Integration_Google_IdP.html>`__,
 `AWS SSO <./SAML_Integration_AWS_SSO_IdP.html>`__, `Azure AD <./SAML_Integration_Azure_AD_IdP.html>`__, and `PingOne <./SAML_Integration_PingOne_IdP.html>`__.
-You will require administrator access to create IdP endpoints for SAML. Check `IdP-specific SAML Integration <#IdP-integration>`__ to see a list of guides for supported IdP's
-
+Administrator access is required to create IdP endpoints for SAML. For a list of supported IdPs, see `IdP-specific SAML App Integration <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html#IdP-specific>`_.
 
 .. _PDC_23:
 

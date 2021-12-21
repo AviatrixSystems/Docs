@@ -97,7 +97,7 @@ Controllers send messages to your SQS or via HTTPS to the Gateway. Gateways pu
 Is Aviatrix SOC2 certified?
 ---------------------------
 
-Yes, Aviatrix is SOC2 Type 1 certified. SOC2 Type 2 is targeted for Aug 2020. 
+Yes, Aviatrix is SOC2 Type 1 and Type 2 certified. 
 
 Is Aviatrix PCI-DSS compliant?  
 ------------------------------

@@ -4,7 +4,7 @@
 
 
 ===============================================
-Insane Mode CloudN Deployment Checklist
+Standalone CloudN Deployment Checklist
 ===============================================
 
 When Insane Mode is applied to improve encryption performance between on-prem and cloud, you need to deploy the Aviatrix hardware appliance CloudN. Making this use case work requires edge router configurations. This document lists the checklist you should follow in 
@@ -153,7 +153,7 @@ Before powering up CloudN, make sure
 After you power up CloudN, first test that the CloudN interfaces are alive and connected properly by doing the following tests.  
 
  a. From ASR,  ping the CloudN LAN interface, WAN interface and Mgmt interface.
- #. CloudN mgmt interface can ping Internet (From CloudN clish console)
+ #. CloudN mgmt interface can ping Internet (From CloudN cli console)
 
 3.3 Upgrade CloudN to the Latest Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +162,15 @@ After you power up CloudN, first test that the CloudN interfaces are alive and c
  #. Log in with username "admin" and the password provided by your Aviatrix Support Representative (You can change the password later).
  #. Upgrade CloudN to the latest.
 
-3.4 Configure Insane Moode
+3.4 Configure NTP Sync and SMTP Services
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ a. Add a firewall rule to allow CloudN’s MGMT outbound UDP port 123 access to ntp.ubuntu.com or to a local NTP server.
+ #. In the CloudN UI, go to Setting -> Controller -> System Time. Enter ntp.ubuntu.com or a local NTP server then select the Sync option.
+ #. Do a manual sync to the NTP server.
+ #. In the CloudN UI, go to Setting -> Controller -> Email. Setup the SMTP settings to allow CloudN to send alert emails.
+
+3.5 Configure Insane Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure to select all the correct options.
@@ -174,7 +182,7 @@ From the Controller in AWS, configure Transit Setup Step 3 to CloudN, make sure 
  #. After configuration, download the configure file and import to CloudN.
  #. If there is HA, import to CloudN HA.
 
-3.5 Troubleshooting Tips
+3.6 Troubleshooting Tips
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  a. Check on CloudN Console. Go to Site2Cloud, make sure the tunnel is up. 

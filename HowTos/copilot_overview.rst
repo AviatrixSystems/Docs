@@ -24,7 +24,8 @@ Key Benefits
 - **CloudRoutes** – Detailed searchable routing tables across cloud providers
 - **Notifications** – Alert on resources status/utilization across multi-Cloud
 - **AppIQ** – Comprehensive reports to analyze network path between any two cloud instances
-- **ThreatIQ** – Monitor for security threats from malicious sites, set alerts when threats are detected
+- **ThreatIQ with ThreatGuard** – Monitor for security threats from malicious sites, set alerts when threats are detected, and block threat-IP associated traffic
+- **Inventory Reports** – Create detailed reports showing your inventory of managed resources in a single cloud or across all clouds in your multi-cloud network 
 
 
 Deployment Model
@@ -38,4 +39,4 @@ Licensing and Trials
 ---------------------
 
 CoPilot is offered with BYOL model. If you are interested in a trial of CoPilot, contact us through our chat window below, or contact your
-Aviatrix Sales representative 
+Aviatrix Sales representative. 
