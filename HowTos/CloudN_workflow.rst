@@ -182,8 +182,11 @@ Step 2.5 Managed CloudN management port outbound access
 
 You must use the specified FDQN, IP address, and ports for Managed CloudN (registered to the Controller) and Standalone CloudN (de-registered from the Controller) implementations. Please see `Aviatrix Products: Access to external FQDN required <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
-.. note::
+	.. note::
 	
+		You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
+
+
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
