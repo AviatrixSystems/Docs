@@ -2,11 +2,6 @@
 Image Release Notes
 =======================================
 
-****Next Controller image is scheduled for November 2021****
-
-****Next Gateway image is scheduled for November 2021****
-
-
 Controller Images: AWS AMI – Version 100621 (10/13/21)
 ======================================================
 
