@@ -132,7 +132,7 @@ Apply the following IOS configuration to your router:
     ! authentication, Diffie-Hellman, lifetime, and key parameters.
     !
     crypto keyring 52.40.45.197-20.42.145.156
-      pre-shared-key address 20.42.145.156 key Aviatrix123!
+      pre-shared-key address 20.42.145.156 key <key>
     !
     crypto isakmp policy 1
      encryption aes 256

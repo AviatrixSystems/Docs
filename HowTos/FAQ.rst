@@ -485,14 +485,14 @@ Here is the best practice procedure to follow:
 What IP addresses does Controller need to reach out to?
 ---------------------------------------------------------
 
-Please see `Aviatrix Products: Access to external FQDN required <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
+Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
 .. note::
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 What IP addresses does an Aviatrix gateway  need to reach out to?
 ----------------------------------------------------------------------
-Please see `Aviatrix Products: Access to external FQDN required <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
+Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
 .. note::
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.
