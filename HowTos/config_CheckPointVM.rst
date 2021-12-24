@@ -123,6 +123,7 @@ The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
 
 .. note::
 
+
   For initial Checkpoint login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
