@@ -2267,8 +2267,7 @@ Controller Administration
    user, go to Accounts -> Account Users -> "New User". Select
    "read\_only" from the dropdown list of "Account Name".
 
--  CloudN's console password can be changed from the default
-   "Aviatrix123#". To do so, type "enable" to enter config mode and then
+-  CloudN's console password can be changed from the default. To do so, type "enable" to enter config mode and then
    issue "change\_console\_password" command.
 
 -  Capability has been added for HTTPS certificate check for control

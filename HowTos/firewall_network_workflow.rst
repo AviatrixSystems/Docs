@@ -312,7 +312,7 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
 
 .. important::
 
-  Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. After completing this step, user should be able to login to the CheckPoint console with username **admin** and password **Aviatrix123#**.
+  Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com. 
 
 
 7a.2 Launch and Associate More

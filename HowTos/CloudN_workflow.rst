@@ -180,7 +180,7 @@ This is a rare case. It is documented here for completeness. Skip if the Control
 Step 2.5 Managed CloudN management port outbound access
 --------------------------------------------------------------------------------------------------------------------------
 
-You must use the specified FDQN, IP address, and ports for Managed CloudN (registered to the Controller) and Standalone CloudN (de-registered from the Controller) implementations. Please see `Aviatrix Products: Access to external FQDN required <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
+You must use the specified FDQN, IP address, and ports for Managed CloudN (registered to the Controller) and Standalone CloudN (de-registered from the Controller) implementations. Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
 	.. note::
 	

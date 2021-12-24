@@ -114,7 +114,7 @@ CloudN Interface       Private IP Address  Subnet Mask  Default Gateway  MTU Siz
 
 2.1 Internet Access
 ~~~~~~~~~~~~~~~~~~~~~~~~
-A CloudN appliance does not require a public IP address, but the management port requires outbound internet access on the management port for software upgrade. Please see `Aviatrix Products: Access to external FQDN required <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
+A CloudN appliance does not require a public IP address, but the management port requires outbound internet access on the management port for software upgrade. Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
 .. note::
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.

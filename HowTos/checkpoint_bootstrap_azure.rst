@@ -20,11 +20,11 @@ Configure Check Point Security Gateway using Custom Data
 ---------------------------------------------------------
 
 Follow the Aviatrix Firewall Network (FireNet) workflow
-to `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. to launch the firewall instance.
+to `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ to launch the firewall instance.
 
-Go to Aviatrix Controller's console -> Firewall Network  -> Step -> Step 7a Launch & Associate Firewall Instance
+To Configure Check Point Security Gateway using Custom Data, go to the Aviatrix Controller -> Firewall Network  -> Setup -> Launch & Associate Firewall Instance.
 
-Fill in the required fields. Click Advanced. Fill in the following parameters.
+Fill in the required fields. Click Advanced. Fill in the following parameters. You must specify a custom username and password, and generate a hash string for the password.
 
 ================================  ======================
 **Advanced Field**                **Example Value**
@@ -38,17 +38,17 @@ Sample Check Point Bootstrap Configuration to configure firewall "Allow-all" pol
 
         #!/bin/bash
 
-        clish -c "set user admin password-hash \$6\$d76f84f720ece349\$GJp4So2HJtbivPgoF3WXXjvzzoUUwA3KbS14N3epYimRYMGILKLKobCMrH7KLeGzepIDpm1GB7z2wBhygtJZM0" -s
+        clish -c "set user <user> password-hash <100+ character hash string>" -s
         clish -c 'set interface eth1 state on' -s
         clish -c 'set hostname checkpoint' -s
-        blink_config -s 'upload_info=false&download_info=false&install_security_gw=true&install_ppak=true&install_security_managment=false&ipstat_v6=off&ftw_sic_key=Aviatrix123#'
+        blink_config -s 'upload_info=false&download_info=false&install_security_gw=true&install_ppak=true&install_security_managment=false&ipstat_v6=off&ftw_sic_key=<password>'
 
 
 |cp_bootstrap_example|
 
 Launch the instance. Wait for 15 minutes for it to boot up and initialize.
 
-Login to the HTTPS interface of the public IP with username "admin", password "Aviatrix123#"
+Login to the HTTPS interface of the public IP with the username and password specified in the Bootstrap Configuration file.
 
 
 

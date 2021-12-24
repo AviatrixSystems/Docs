@@ -73,7 +73,8 @@ In AWS S3, at the top level create a bucket for bootstrap with a **unique** name
 
 .. Note::
 
-  In the example, the password is set to Aviatrix123#. You can customize it.  
+  You must specify the password in the example init.conf file. For initial Fortigate login information, go to `Credentials for FortiGate Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417531104781>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
+
 
 **3.3** upload these two files to your config folder in the bootstrap-fortigate-bucket. 
 
@@ -94,7 +95,7 @@ Bootstrap Bucket Name             fortigate-bootstrap-bucket (must be a unique n
 
 Launch the instance. Wait for 15 minutes for it to boot up and initialize. 
 
-Login to the HTTPS interface of the public IP with username "admin", password "Aviatrix123#"
+Login to the HTTPS interface of the public IP with username "admin" and the password specified in the example init.conf file. You should change the username and password after the initial login.
 
 
 5. Configure Static Routes
