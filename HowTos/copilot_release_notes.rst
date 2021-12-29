@@ -7,13 +7,16 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
-Releases 1.4.9.3 (12/28/2021)
+Release 1.4.9.3 (12/28/2021)
 -----------------------------
--   UI improvements.
-    -   You can now open Aviatrix Controller from CoPilot. From the CoPilot dashboard, click the Apps icon in the action bar, and then select **Controller**. The controller opens in a new browser tab.
-    -   Improvements were made to the ThreatIQ dashboard.
--   Performance improvements.
--   Minor bug fixes.
+- UI improvements. 
+
+  - You can now open Aviatrix Controller from CoPilot. From the CoPilot dashboard, click the Apps icon in the action bar, and then select **Controller**. The controller opens in a new browser tab.
+
+  - Improvements were made to the ThreatIQ dashboard.
+
+- Performance improvements. 
+- Minor bug fixes. 
 
 Releases 1.4.9.1, 1.4.9.2
 -------------------------
