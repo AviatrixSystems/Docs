@@ -143,6 +143,29 @@ To perform diagnostics from Topology (from an Aviatrix Gateway):
 
     e.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
 
+
+Topology Physics Options
+------------------------
+
+This section describes the physics options that control how objects move in the network topology map.
+
+|Topology Physics Option|Description|
+|-----------------------|-----------|
+|Physics Enabled|Enable or disable physics effects in the topology map. Deselect this option if you do not want objects to move on their own and have them stay in the location you place them (when you click and drag them there).
+
+|
+|Smooth Edges|Enable or disable smooth edges for objects in the topology map. Deselect this option if you do not want the lines between the nodes to be smoothed. Smooth edges are more computationally expensive but they produce better layouts.
+
+|
+|Node Repulsion|Controls how strongly the objects in the map repulse other objects that come near them. The higher the value, the more force applies to the repulsion field around each object.|
+|Central Gravity|Controls the force by which all objects in the network are pulled to a center of gravity in the topology map.|
+|Spring Length|Controls how far apart objects appear from each other when they are moving or at rest. The edges are modelled as springs.|
+|Spring Constant|Controls how quickly objects go back (spring back) to their original position after they are dragged and released. The higher the value, the more quickly the objects spring back into place.|
+|Dampening|Controls how much the moving of objects (in one physics simulation iteration) carries over into moving objects again (next physics simulation iteration). The higher the value, the more velocity of movement carries over into moving subsequent objects.|
+|Max Velocity|Controls how long it takes for objects to stop moving after they are dragged and released. The higher the value, the more time it takes for objects to stabilize (stop moving) after having been dragged.|
+|Min Velocity|Controls how long it takes for objects to stop moving after they are dragged and released. The higher the value, the less time it takes for objects to stop moving after having been dragged.|
+
+
 Working with FlowIQ
 ===================
 
