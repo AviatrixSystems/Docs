@@ -101,7 +101,7 @@ At the top screen, click “[+] CREATE IMAGE”, make sure to:
 
    **aviatrix300/aviatrix-cloud-services-gateway-032020-byol.tar.gz**
 
--  Click create, as shown below.
+-  Click **Create**.
 
    |image1|
 
@@ -130,12 +130,12 @@ At the GCloud console,
 
       -  Select “Read Write” for Compute.
 
--  At Firewall, click “Allow HTTPS Traffic”, as shown below.
+.. Important:: 
 
--  Click Create.
+  Do not check the **Firewall** box to **Allow HTTPS Traffic**. Aviatrix reccomends you improve security by removing any 0.0.0.0 entries on port 443 not allowing the Aviatrix Controller to the world. 
 
-   |image2|
-   
+-  Click **Create**.
+
    
 Option #2: Deploy Aviatrix Controller in GCP Marketplace (Preview mode)
 =======================================================================
@@ -154,11 +154,11 @@ Option #2: Deploy Aviatrix Controller in GCP Marketplace (Preview mode)
 
   |gcp_controller_gcp_marketplace_02|
   
-- HTTPS with port 443 from anywhere user access (User Interface)
+.. Important:: 
 
-  |gcp_controller_gcp_marketplace_03|
-  
-- Click the button "DEPLOY"
+  Do not check the **Firewall** box to **Allow HTTPS Traffic**. Aviatrix reccomends you improve security by removing any 0.0.0.0 entries on port 443 not allowing the Aviatrix Controller to the world. 
+
+- Click **DEPLOY**.
 
 Access the Aviatrix Controller
 ==============================
