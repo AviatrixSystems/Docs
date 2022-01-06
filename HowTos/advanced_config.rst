@@ -14,6 +14,15 @@ tunnel down detection time.
 
 Aviatrix gateways samples the tunnel status every 10 seconds. 
 
+Anti-replay Window
+--------
+
+Specify a IPSec tunnel anti-replay window.
+
+Set this value to 0 to disable anti-replay protection. The default is 0.
+
+See `Wikipedia <https://en.wikipedia.org/wiki/Anti-replay>`_ for more information.
+
 Keepalive
 ------------
 
