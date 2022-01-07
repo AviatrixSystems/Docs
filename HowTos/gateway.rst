@@ -495,15 +495,6 @@ APPLY ROUTE ENTRY                      This is an option to program the route en
 EXCLUDE ROUTE TABLE                    This field specifies which VPC private route table will not be programmed with the default route entry. Users can combine this with APPLY ROUTE ENTRY enabled.
 ================================       =======================
 
-Network Mapping
------------------
-
-Networking mapping is a destination address translation scheme where the destination address range is one to one mapped to
-a virtual address range. A configuration example can be shown below, where "Real Destination CIDR" 10.10.10.0/24 is mapped to
-"Virtual Destination CIDR" 100.100.10.0/24.
-
-|network_mapping|
-
 Monitor Gateway Subnet
 -----------------------
 
