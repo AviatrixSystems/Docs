@@ -19,7 +19,9 @@ have disparate subnets and a subnet can connect across regions.
 
 .. Important::
 
-  We advise you not to deploy a Controller in GCP. The preferred approach is to launch the Controller from AWS Marketplace as a metered AMI by following the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. The Aviatrix Controller is multi cloud, multi account and multi region capable. Launching a controller in AWS is preferred even if you only deploy gateways in GCP. This is because AWS provides a metered charging mechanism, a true pay-as-you-go (without up front commitment nor contract negotiation) payment system that has the least friction. 
+  Advantages of Metered Pricing
+ 
+The Aviatrix Controller is a secure multi-cloud networking platform. Aviatrix recommends you deploy your controller in clouds that offer metered pricing, then deploy your gateways in any supported cloud. Metered pricing offers you a true pay-as-you-go option without any up-front commitments or contract negotiations. The AWS and Azure clouds offer metered pricing for running the Aviatrix Controller image. The GCP and OCI clouds do not offer metered pricing for running the Aviatrix Controller image.
 
 
 Prerequisite
