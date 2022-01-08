@@ -10,10 +10,11 @@ The Aviatrix cloud network solution consists of two components, the controller a
 gateways, both of which are cloud VMs. Gateways are launched from the controller console to specific VCNs. This
 guide helps you to launch the controller in OCI.
 
-.. Note::
+.. Important::
 
-  Currently we support deploying the Controller in either OCI or AWS. If you would like to launch Controller from the AWS Marketplace as a metered AMI, please follow the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
-  The Aviatrix Controller is multi cloud, multi subscription and multi region capable. Launching the Controller in any vendor can also enable you to deploy and manage gateways in any cloud.
+  Advantages of Metered Pricing
+ 
+The Aviatrix Controller is a secure multi-cloud networking platform. Aviatrix recommends you deploy your controller in clouds that offer metered pricing, then deploy your gateways in any supported cloud. Metered pricing offers you a true pay-as-you-go option without any up-front commitments or contract negotiations. The AWS and Azure clouds offer metered pricing for running the Aviatrix Controller image. The GCP and OCI clouds do not offer metered pricing for running the Aviatrix Controller image.
 
 
 1. Prepare your account in OCI
