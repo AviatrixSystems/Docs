@@ -46,7 +46,7 @@ For production deployments, minimum requirement is 8vCPU and 32G of Memory
 Can I configure flows to be sent over private IPs? 
 ===============================================================================
 
-CoPilot does not setup a private overlay between the gateways and itself. If a private communication path between the gateways and CoPilot is available, then you can use CoPilot’s private IP when you input the collector IP in the controller. 
+CoPilot does not set up a private overlay between the gateways and itself. If a private communication path between the gateways and CoPilot is available, then you can use CoPilot’s private IP when you input the collector IP in the controller. 
 For example, if you have an Aviatrix transit gateway, and you put CoPilot in one of the spokes, then you can use CoPilot’s private IP as the destination. 
 
 
@@ -77,9 +77,9 @@ How does CoPilot get its data?
 If Controller IP changes and if copilot is associated with an old controller IP, how to login into Copilot?
 ============================================================================================================
 
-If the user is signed-in into copilot is to - go to Copilot UI -> Settings and click on 'Reset controller IP' button. It will prompt the user to enter new Controller IP address and service account credentials.
+If you are logged in to copilot go to Copilot UI -> Settings and click on the 'Reset controller IP' button. It will prompt you to enter the new Controller IP address and service account credentials.
 
-If user is logged out, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for solution.
+If you are logged out of Copilot, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for a solution.
 
 
 Is FlowIQ showing realtime traffic? 
@@ -108,4 +108,4 @@ If you can specify source and destination for the two endpoints of the path, i.e
 How I can get my additional questions answered ?
 ===============================================================================
 
-Visit Aviatrix.com and use the live chat icon to talk to a live expert
+Visit Aviatrix.com and use the live chat icon to talk to a live expert.
