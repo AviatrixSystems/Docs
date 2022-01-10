@@ -132,6 +132,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitgw_external
    HowTos/transitvpc_workflow
    HowTos/transitvpc_design
+   HowTos/tgwconnect
 
 .. _Firewall Network:
 
