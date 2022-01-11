@@ -2,35 +2,34 @@
 Release Notes
 =======================================
 
-6.5.2835 (12/10/2021) 
+6.5.2835 (11/01/2022) 
 =====================
 
 **Issues Corrected in Aviatrix Release 6.5** 
 
-**AVX-9033** - Some logs are too big on CloudN. 
-**AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability. 
-**AVX-14537** - Error establishing Raccoon native CaaG attachment with larger transit instance size (Ex: c5.4xlarge, Standard_D8_v3) and number of IPSec Tunnels > 32. 
-**AVX-14659** - Tunnel flaps when attaching spoke gateways running IPSec strongSwan to transit gateways running IPSec racoon, or transit gateways running IPSec strongSwan to transit gateways running IPSec racoon. 
-**AVX-16496** – Internet access restrictions block CloudN upgrade. 
+- **AVX-9033** - Some logs are too big on CloudN. 
+- **AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability. 
+- **AVX-14659** - Tunnel flaps when attaching spoke gateways running IPSec strongSwan to transit gateways running IPSec racoon, or transit gateways running IPSec strongSwan to transit gateways running IPSec racoon. 
+- **AVX-16496** – Internet access restrictions block CloudN upgrade. 
 Specific FDQNs are required to access CloundN. Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
 
 Use the link display text Required Access for External Sites for the link. 
 
-**AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated. 
-**AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 
+- **AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated. 
+- **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 
 'AVXERR-CONNTRACK-0001': 'Gateway Error: {}',  
 'AVXERR-CONNTRACK-0002': 'Required/Invalid option: {}'  
 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}'  
 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
 
-**AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
-**AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
-**AVX-17628** - Hardened SSH security for legacy users. 
-**AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed.
+- **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
+- **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
+- **AVX-17628** - Hardened SSH security for legacy users. 
+- **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed.
 
 Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
 
-**AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests.
+- **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests.
 
 **Known Behaviors in Aviatrix Release 6.5**
 
@@ -39,6 +38,13 @@ Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was a
 To access CloudN device in web UI: 
   #. Use CloudN management IP address inside on-premises network. 
   #. Use CloudN LAN IP address from Spoke workplace in the CSP network. 
+
+6.4.2995 (11/01/2022) 
+=====================
+
+**Issues Corrected in Aviatrix Release 6.4** 
+
+- **AVX-14537** - Error establishing Raccoon native CaaG attachment with larger transit instance size (Ex: c5.4xlarge, Standard_D8_v3) and number of IPSec Tunnels > 32. 
 
 6.5.2835 (12/10/2021) 
 =====================
