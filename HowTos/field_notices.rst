@@ -17,8 +17,8 @@ A new software release with a fix for this vulnerability was made available on T
 
 The upgrade mechanism is described in our documentation:
 
-* For 6.4 users, refer to `these instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html#how-to-upgrade-software>`_
-* For 6.5 users, start `here <https://docs.aviatrix.com/HowTos/selective_upgrade.html#performing-a-platform-software-upgrade-dry-run>`_ 
+* For 6.4 release, refer to `these instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html#how-to-upgrade-software>`_
+* For 6.5 release, start `here <https://docs.aviatrix.com/HowTos/selective_upgrade.html#performing-a-platform-software-upgrade-dry-run>`_ 
 
 Please subscribe to the Security Alerts mailing lists at securityalerts@aviatrix.com to get notified earlier on any future vulnerabilities. To subscribe, send an email to securityalerts@aviatrix.com with "Subscribe" in subject line.
 
