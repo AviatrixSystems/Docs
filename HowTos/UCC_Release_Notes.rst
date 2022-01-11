@@ -19,7 +19,7 @@ Specific FDQNs are required to access CloundN. Please see `Required Access for E
 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
 - **AVX-17628** - Hardened SSH security for legacy users. 
-- **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed.Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
+- **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
 - **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests.
 
 **Known Behaviors in Aviatrix Release 6.5**
