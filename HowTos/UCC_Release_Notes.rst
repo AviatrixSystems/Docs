@@ -22,7 +22,6 @@ Use the link display text Required Access for External Sites for the link.
 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}'  
 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
 
-- **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
 - **AVX-17628** - Hardened SSH security for legacy users. 
 - **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed.
@@ -45,6 +44,7 @@ To access CloudN device in web UI:
 **Issues Corrected in Aviatrix Release 6.4** 
 
 - **AVX-14537** - Error establishing Raccoon native CaaG attachment with larger transit instance size (Ex: c5.4xlarge, Standard_D8_v3) and number of IPSec Tunnels > 32. 
+- **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
 
 6.5.2835 (12/10/2021) 
 =====================
