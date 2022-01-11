@@ -17,7 +17,7 @@ Most Recent IR
 19. Aviatrix Controller and Gateways - Unauthorized Access
 ----------------------------------------
 
-**Date** 1/11/2022
+**Date** 01/11/2022
 
 **Risk Rating** High for Gateways, medium for Controller.
 
@@ -28,8 +28,8 @@ Most Recent IR
 **Affected Products** Aviatrix Controller and Gateways.
 
 **Solution** Upgrade your controller and gateway software to:
-  - 6.4.2995 (6.4.m) or later.
-  - 6.5.2898 (6.5.g) or later.
+  - 6.4.2995 or later.
+  - 6.5.2898 or later.
 
 18. Aviatrix Controller - Remote file execution
 ----------------------------------------
