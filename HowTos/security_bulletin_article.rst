@@ -28,8 +28,8 @@ Most Recent IR
 **Affected Products** Aviatrix Controller and Gateways.
 
 **Solution** Upgrade your controller and gateway software to:
-  - 6.4.2995 (6.4.m) or later.
-  - 6.5.2898 (6.5.g) or later.
+  - 6.4.2995 or later.
+  - 6.5.2898 or later.
 
 18. Aviatrix Controller - Remote file execution
 ----------------------------------------
