@@ -16,12 +16,10 @@ Specific FDQNs are required to access CloundN. Please see `Required Access for E
 Use the link display text Required Access for External Sites for the link. 
 
 - **AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated. 
-- **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 
-'AVXERR-CONNTRACK-0001': 'Gateway Error: {}',  
+- **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 'AVXERR-CONNTRACK-0001': 'Gateway Error: {}',  
 'AVXERR-CONNTRACK-0002': 'Required/Invalid option: {}'  
 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}'  
 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
-
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
 - **AVX-17628** - Hardened SSH security for legacy users. 
 - **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed.
