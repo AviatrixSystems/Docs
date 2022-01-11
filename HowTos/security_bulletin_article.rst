@@ -13,6 +13,30 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 Most Recent IR
 ================
+
+19. Aviatrix Controller and Gateways - Unauthorized Access
+----------------------------------------
+
+**Date**
+1/11/2022
+
+**Risk Rating**
+High for Gateways, medium for Controller.
+
+**Description**
+On the Aviatrix Controller, a successful attack would allow an unauthenticated remote attacker partial access to configuration information and allow them to disrupt the service. On the gateway, a successful attack would allow an unauthenticated network-adjacent attacker (i.e.: an attacker present on the gateway's VPC) access to its API.
+
+**Impact**
+Access to configuration information and disruption of service.
+
+**Affected Products**
+Aviatrix Controller and Gateways.
+
+**Solution**
+Upgrade your controller and gateway software to:
+6.4.2995 (6.4.m) or later.
+6.5.2898 (6.5.g) or later.
+
 18. Aviatrix Controller - Remote file execution
 ----------------------------------------
 
