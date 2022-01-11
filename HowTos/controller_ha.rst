@@ -159,6 +159,9 @@ FAQ
 * How do I manage the controller HA stack if the controller instance's disk is encrypted?
 	If EBS Encryption using Customer managed key is enabled, the Autoscaling Group created may not have permissions to launch the instance. You will need to allow the service-linked role created for the Autoscaling group to have permissions to use this key for the cryptographic operation. To do so, go to AWS KMS->Customer managed keys->select the key and add the "AWSServiceRoleForAutoScaling" role to the list of Key Users.
 
+* What do I need to do after I change the controller name?
+	Please delete the CFT stack and then create a new CFT stack using the new controller name.
+
 Changelog
 ---------
 The changes from various releases can be viewed from `here <https://github.com/AviatrixSystems/Controller-HA-for-AWS/releases>`_
