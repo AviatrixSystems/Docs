@@ -25,7 +25,9 @@ Release Notes
 
 To access CloudN device in web UI: 
   #. Use CloudN management IP address inside on-premises network. 
-  #. Use CloudN LAN IP address from Spoke workplace in the CSP network. 
+  #. Use CloudN LAN IP address from Spoke workplace in the CSP network.
+  
+If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
 
 6.4.2995 (01/11/2022) 
 =====================
