@@ -2,7 +2,7 @@
 Release Notes
 =======================================
 
-6.5.2835 (1/11/2022) 
+6.5.2898 (01/11/2022) 
 =====================
 
 **Issues Corrected in Aviatrix Release 6.5** 
@@ -39,7 +39,7 @@ To access CloudN device in web UI:
   #. Use CloudN management IP address inside on-premises network. 
   #. Use CloudN LAN IP address from Spoke workplace in the CSP network. 
 
-6.4.2995 (1/11/2022) 
+6.4.2995 (01/11/2022) 
 =====================
 
 **Issues Corrected in Aviatrix Release 6.4** 
