@@ -12,7 +12,10 @@ CoPilot Release 1.5.0 (1/12/2022)
 
 -   **ThreatIQ map in dashboard** — The CoPilot Dashboard now includes the ThreatIQ map showing any threats over the last 24 hours.
 
--   **New gateway diagnostic features** — You can now perform the following diagnostic tasks for Aviatrix gateways (from Topology, click on any gateway in a topology map, and then click DIAG in the node properties pane):
+-   **New gateway diagnostic features** 
+
+      You can now perform the following diagnostic tasks for Aviatrix gateways (from Topology, click on any gateway in a topology map, and then click DIAG in the node properties pane):
+
      -   (TRACEPATH tab) Discover the MTU on the path (if router supports it).
      -   (TRACELOG tab) Upload a gateway's tracelog directly to Aviatrix Support. The controller and gateway tracelog is uploaded and the support team notified.
      -   (SERVICE ACTIONS tab) Check the status of gateway services and restart services.
