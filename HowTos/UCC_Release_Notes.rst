@@ -21,13 +21,12 @@ Release Notes
 
 **Known Behaviors in Aviatrix Release 6.5**
 
-**AVX-15458** - Controller and standalone CloudN’s upgraded from 6.3 to 6.4.
+- **AVX-15458** - After Controller and standalone CloudN’s are upgraded from 6.3 to 6.4, to access CloudN device in web UI:
 
-To access CloudN device in web UI: 
   #. Use CloudN management IP address inside on-premises network. 
   #. Use CloudN LAN IP address from Spoke workplace in the CSP network.
   
-If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
+- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
 
 6.4.2995 (01/11/2022) 
 =====================
