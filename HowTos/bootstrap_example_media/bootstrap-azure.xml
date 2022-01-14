@@ -2,7 +2,7 @@
 <config version="9.1.0" urldb="paloaltonetworks">
   <mgt-config>
     <users>
-      <entry name="admin">
+      <entry name="https_interface_admin_username">
         <phash>*</phash>
         <permissions>
           <role-based>
@@ -10,8 +10,8 @@
           </role-based>
         </permissions>
       </entry>
-      <entry name="ahmed">
-        <phash>$1$tfkvijky$q9ErIhagNPO158LRr2XR//</phash>
+      <entry name="api_admin_username">
+        <phash>password_hash</phash>
         <permissions>
           <role-based>
             <superuser>yes</superuser>

@@ -2,6 +2,41 @@
 Release Notes
 =======================================
 
+=======
+6.5.2898 (01/11/2022) 
+=====================
+
+**Issues Corrected in Aviatrix Release 6.5** 
+
+- **AVX-9033** - Some logs are too big on CloudN. 
+- **AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability. 
+- **AVX-14659** - Tunnel flaps when attaching spoke gateways running IPSec strongSwan to transit gateways running IPSec racoon, or transit gateways running IPSec strongSwan to transit gateways running IPSec racoon. 
+- **AVX-16496** – Internet access restrictions block CloudN upgrade. Specific FDQNs are required to access CloundN. Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. Use the link display text Required Access for External Sites for the link.
+- **AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated.
+- **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 'AVXERR-CONNTRACK-0001': 'Gateway Error: {}', 'AVXERR-CONNTRACK-0002': 'Required/Invalid option: {}' 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}' 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
+- **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
+- **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
+- **AVX-17628** - Hardened SSH security for legacy users.
+- **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
+- **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests.
+
+**Known Behaviors in Aviatrix Release 6.5**
+
+- **AVX-15458** - After Controller and standalone CloudN’s are upgraded from 6.3 to 6.4, to access CloudN device in web UI:
+
+  #. Use CloudN management IP address inside on-premises network. 
+  #. Use CloudN LAN IP address from Spoke workplace in the CSP network.
+  
+- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
+
+6.4.2995 (01/11/2022) 
+=====================
+
+**Issues Corrected in Aviatrix Release 6.4** 
+
+- **AVX-14537** - Error establishing Raccoon native CaaG attachment with larger transit instance size (Ex: c5.4xlarge, Standard_D8_v3) and number of IPSec Tunnels > 32. 
+- **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
+
 6.5.2835 (12/10/2021) 
 =====================
 
@@ -2267,8 +2302,7 @@ Controller Administration
    user, go to Accounts -> Account Users -> "New User". Select
    "read\_only" from the dropdown list of "Account Name".
 
--  CloudN's console password can be changed from the default
-   "Aviatrix123#". To do so, type "enable" to enter config mode and then
+-  CloudN's console password can be changed from the default. To do so, type "enable" to enter config mode and then
    issue "change\_console\_password" command.
 
 -  Capability has been added for HTTPS certificate check for control

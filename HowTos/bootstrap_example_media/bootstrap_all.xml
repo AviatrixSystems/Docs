@@ -2,16 +2,16 @@
 <config version="9.0.0" urldb="paloaltonetworks">
   <mgt-config>
     <users>
-      <entry name="admin">
-        <phash>$1$hsyqpcpu$1kuBjBkoDzFdKA0Is2540/</phash>
+      <entry name="https_interface_admin_username">
+        <phash>password_hash/</phash>
         <permissions>
           <role-based>
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDUXNMUjhOOFhhRWtkVTJKT0t6TXF5N21SSEx5aFMrc01reUh2dHl4Ni8xc2dtQU0wQ1N3WXdYcmhoeG4wYnpNdDl4TFl2V0taaGUrektmeCszdWhySHg5Yi83djhEUzlZbmVudzQ5ejl1MTJUaEFSV3BMUUxHRU9SdnpwK0FGTGlmSjhRR3lSR0hIMnU2NTA2amNFTkNqRy9mbnVPSTA0NTZHdnZ6ZlM5ejVPOXkzYnRtWUZZM3ZqQU43WEtKNksxd1UyRExLZXFMcVo0S25WMjZ1T1dBbFMvL1c0bGtYTHhBNjVLc01PMjc4TnNWR3JSRlNBOXFjRGFNdEpQMUtJd201T0grWmF4R2VOUVNISm9Zd083KzVNTk9iZ0xHbVZNb0JTOXRod1ROY1RYZFN1Tkd3czNURVU0eWdVMEVWUWIvU2E0bm1kdEptT1pHWXJpd29FSmYgd2VzdC1zZXJ2ZXItMQ==</public-key>
+        <public-key>key</public-key>
       </entry>
-      <entry name="avxadmin">
+      <entry name="api_admin_username">
         <permissions>
           <role-based>
             <custom>
@@ -19,7 +19,7 @@
             </custom>
           </role-based>
         </permissions>
-        <phash>$1$snyiktft$0c6C0a4SnkT4K37tqdmY00</phash>
+        <phash>password_hash</phash>
       </entry>
     </users>
   </mgt-config>

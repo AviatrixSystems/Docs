@@ -170,7 +170,7 @@ Cisco IOS sample configuration used in this example:
     crypto ikev2 keyring CSR-VPN-keyring
      peer 52.151.46.220
       address 52.151.46.220
-      pre-shared-key Aviatrix123!
+      pre-shared-key <key>
      !
     !
     crypto ikev2 profile CSR-VPN-profile

@@ -8,6 +8,25 @@ Field Notices
  
 
 
+Field Notice 0036 (2022/01/11)
+--------------------------------
+
+**High and Medium Severity Vulnerability - AVI-2021-0008**
+
+A new software release with a fix for this vulnerability was made available on Tuesday, January 11th, 2022. Aviatrix is strongly recommending you to upgrade to the new release at your earliest convenience. This vulnerability was discovered by Aviatrix engineering team and is not known to be exploited. Please refer to `Release Notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and `Security Bulletin <https://docs.aviatrix.com/HowTos/security_bulletin_article.html#aviatrix-controller-and-gateways-unauthorized-access>`_ for more information.
+
+The upgrade mechanism is described in our documentation:
+
+* For 6.4 release, refer to `these instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html#how-to-upgrade-software>`_
+* For 6.5 release, start `here <https://docs.aviatrix.com/HowTos/selective_upgrade.html#performing-a-platform-software-upgrade-dry-run>`_ 
+
+Please subscribe to the Security Alerts mailing lists at securityalerts@aviatrix.com to get notified earlier on any future vulnerabilities. To subscribe, send an email to securityalerts@aviatrix.com with "Subscribe" in subject line.
+
+If you run into any issues during upgrade, you can reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com
+
+
+
+
 Field Notice 0035 (2021/10/25)
 --------------------------------
 

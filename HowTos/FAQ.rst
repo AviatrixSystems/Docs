@@ -485,33 +485,17 @@ Here is the best practice procedure to follow:
 What IP addresses does Controller need to reach out to?
 ---------------------------------------------------------
 
-============================================                 ============   ===================
-Outbound IP Address                                          Port           Purpose
-============================================                 ============   ===================
-www.carmelonetworks.com (54.149.28.255)                      TCP 443        Software upgrade
-license.aviatrix.com (52.24.131.245)                         TCP 443        License update
-diag.aviatrix.com (54.200.59.112)                            TCP 443        Remote debugging
-customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog  
-AWS SQS                                                      TCP 443        Controller to gateway message queue. sqs.region.amazonaws.com, where region is represented by us-west-2, us-east-2, etc, the region where the Aviatrix gateway is launched. 
-AWS API (AWS only)                                           TCP 443        AWS API access. ec2.amazonaws.com
-Aviatrix gateways                                            TCP 443        Software upgrade to gateways
-============================================                 ============   ===================
+Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
+.. note::
+	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 What IP addresses does an Aviatrix gateway  need to reach out to?
 ----------------------------------------------------------------------
+Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
-============================================                 ============   ===================
-Outbound IP Address                                          Port           Purpose
-============================================                 ============   ===================
-Aviatrix Controller                                          TCP 443        Keep alive messages
-customer-bucket.s3-us-west-2.amazonaws.com                   TCP 443        Diagnostics tracelog
-AWS SQS                                                      TCP 443        Controller to gateway message queue. sqs.region.amazonaws.com, where region is represented by us-west-2, us-east-2, etc, the region where the Aviatrix gateway is launched.
-External remote sites                                         UDP 500       IKE protocol for IPSEC negotiation
-External remote sites                                         UDP 4500      IPSEC data channel
-============================================                 ============   ===================
-
-OpenVPN is a registered trademark of OpenVPN Inc.
+.. note::
+	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.
 
 Centralized Logging Within AWS Government Cloud
 ---------------------------------------------------------
