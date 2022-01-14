@@ -30,6 +30,16 @@ In normal state, Aviatrix gateways send keep alive messages to the Controller. K
 
 See `Gateway State <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_ for more information. 
 
+Password Requirements
+----------------------
+
+Aviatrix uses a password meter to enforce password requirements. The default password requirements are:
+
+- Minimum characters - 4.
+- Maximum characters - 16,777,216 or 16MB.
+- At least 1 upper and 1 lower case character.
+- At least 1 numeral character.
+- At least one special character.
 
 Password Management
 ----------------------
@@ -44,14 +54,22 @@ Navigate to Settings -> Advanced -> Password Management to enable password manag
     #. Maximum Password Age(Days) and
     #. Enforce Password History which force users to use new strong password.
 
+If you are using the Password Management option, the policy default values are:
+
+- Minimum characters – 8.
+- Age limit  - 180 days.
+- Not repeatable times – 5.
+
+If you are using the Password Management option, the policy ranges are:
+
+- Minimum characters – 8.
+- Maximum characters – 32.
+- Age limit is 1 - 365 days.
+- Not repeatable times is 1 – 12.
 
 Credentials
 ---------------
 In order to exercise 90 days security compliance requirement for key rotation policy, API key pair and other internal passwords for company IAM account needs to be refreshed frequently.
-This function will allow customers update the access/secret keys if they are using version 5.4 and below.
-After 5.4, this function will check the key rotation policy everyday automatically during the midnight, every power cycle (or daemon) restart.
-
-
 
 BGP Config
 ------------
