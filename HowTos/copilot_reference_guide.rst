@@ -117,6 +117,9 @@ Objects on the topology maps support drag and drop. You can click, drag and drop
 
   By default topology objects are organized using physics engines. This menu allows you to configure physical 
   gravity settings that manage the placement of objects. You can adjust different parameters, or turn the physics off
+  completely for complete control over placement of the objects. 
+
+=======
   completely for complete control over placement of the objects.
 
 
@@ -165,12 +168,30 @@ This section describes the physics options that control how objects move in the 
 |                         |   moving after having been dragged.                                                |
 +-------------------------+------------------------------------------------------------------------------------+
 
+
 Performing diagnostics from Topology
 -------------------------------------
 
 The Aviatrix gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. Performing diagnostics from Topology can dramatically reduce the time spent troubleshooting issues.
 
 To perform diagnostics from Topology (from an Aviatrix Gateway):
+
+1.  In Topology, click on an Aviatrix Gateway in the topology map to select it.
+
+2.  Click the DIAG button.
+
+3.  Perform any of the following diagnostic tasks for the gateway:
+
+    a.  PING: Run pings directly from the gateway to outside of the Aviatrix managed network or to any resource inside the network.
+
+    b.  TRACEROUTE: Run trace route.
+
+    c.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+
+    d.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+
+    e.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
+=======
 
 1.  In Topology, click on an Aviatrix Gateway in the topology map to select it.
 
@@ -316,6 +337,7 @@ Properties of the time series panel include:
 -   **View** controls to load a change set
 
     The View icon indicates a change set at that point in time. Click on a View control to load a change set; this populates the network constructs associated with the changes in the topology map and displays the details for their changes in the changes details pane. The constructs associated with the changes are circled in the map.
+
 
 
 Working with FlowIQ

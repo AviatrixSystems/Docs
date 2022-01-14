@@ -94,6 +94,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
    HowTos/transitgw_external
+   HowTos/spokegw_external
    HowTos/transit_approval
    HowTos/transit_advanced
    HowTos/transitvpc_designs
@@ -132,6 +133,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transitgw_external
    HowTos/transitvpc_workflow
    HowTos/transitvpc_design
+   HowTos/tgwconnect
 
 .. _Firewall Network:
 
@@ -371,6 +373,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
    HowTos/controller_security_for_SAML
+   HowTos/azure_saml_auth_vpn_access
    HowTos/simpletransit
    HowTos/s2c_vgw_snat
    HowTos/s2c_overlapping_subnets
