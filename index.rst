@@ -373,6 +373,7 @@ While all content is searchable, the site is organized into the following sectio
    StartUpGuides/aws_manual_startup_guide
    HowTos/site_to_site_vpn
    HowTos/controller_security_for_SAML
+   HowTos/azure_saml_auth_vpn_access
    HowTos/simpletransit
    HowTos/s2c_vgw_snat
    HowTos/s2c_overlapping_subnets
