@@ -8,7 +8,9 @@ Aviatrix CoPilot Release Notes
 ============================================================
 
 
-This document describes new features and en For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html
+This section describes new features and enhancements for Aviatrix CoPilot software releases.
+
+For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html.
 
 CoPilot Release 1.5.1 (1/12/2022)
 ---------------------------------
