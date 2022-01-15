@@ -7,7 +7,23 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
-=======
+
+This document describes new features and en For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html
+
+CoPilot Release 1.5.1 (1/12/2022)
+---------------------------------
+
+-   (Performance) Performance Charts now have cross hairs that are synced across all visible charts for easy correlation between metrics.
+
+-   (Topology) Run VPC/VNET/VCN diagnostics and submit them to Aviatrix Support from Topology. From Topology, click on any VPC/VNET/VCN in a topology map, and then click DIAG in the node properties pane.
+
+-   (Notifications>Configure) Use new input box to type in a value (instead of using the slider) for configuring notification thresholds.
+
+-   Performance improvements.
+
+For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html
+
+
 CoPilot Release 1.5.0 (1/12/2022)
 ---------------------------------
 
