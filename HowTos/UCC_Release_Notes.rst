@@ -20,6 +20,7 @@ Release Notes
 
 **Known Behaviors in Aviatrix Release 6.5**
 
+- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
 - **AVX-16496** - When upgrading a standalone CloundN implementation:
 
   - For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
@@ -40,8 +41,6 @@ Release Notes
 
   Option 2: Open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
   
-- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
-
 6.4.2995 (01/11/2022) 
 =====================
 
@@ -66,6 +65,8 @@ Release Notes
  
 **Known Issues in Aviatrix Release 6.5**
 
+- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
+6.4.2973 (11/19/2021)
 - **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in “Controller/Logging” before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the “config_fail” state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the “config_fail” state, you can do an “Image Upgrade” on the impacted Gateway to resolve the issue. 
 - **AVX-17221** - If you have Managed CloudN, Aviatrix requires you to follow the Managed instructions and allow access to the sites mentioned for the CloudN Managed Port. If your Managed CloudN ends up in a "config_fail" state after your Controller is upgraded, you have the following options:
 
@@ -77,8 +78,6 @@ Release Notes
 
   Option 2: Open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
 
-- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
-6.4.2973 (11/19/2021)
 =====================
 
 **Issues Corrected in Aviatrix Release 6.4**
