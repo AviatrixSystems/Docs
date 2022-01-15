@@ -85,6 +85,20 @@ OCI Expected Throughput Numbers:
 | VM.Standard2.2 or larger   |  1.8G                                |  900 Mbps                                |
 +----------------------------+--------------------------------------+------------------------------------------+
 
+
+With OCI you can choose a flexible shape to modify the Oracle CPU (OCPU) and memory configurations of your shape after it is deployed.
+
++-----------------------+--------------------+
+| OCI Flex Shape        | OCPU and RAM       |
++=======================+====================+
+| FLEX4.16              | E3 4 OCPU 8G RAM   |
++-----------------------+--------------------+
+| FLEX8.32              | E3 8 OCPU 32G RAM  |
++-----------------------+--------------------+
+| FLEX16.32             | E3 16 OCPU 32G RAM |
++-----------------------+--------------------+
+
+
 .. note::
 
    If you need IPSec performance beyond 2Gbps, refer to `Aviatrix Insane Mode. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
