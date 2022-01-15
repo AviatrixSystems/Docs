@@ -2,31 +2,43 @@
 Release Notes
 =======================================
 
-=======
-6.5.2898 (01/11/2022) 
+6.5.2898 (01/11/2022)
 =====================
 
-**Issues Corrected in Aviatrix Release 6.5** 
-
-- **AVX-9033** - Some logs are too big on CloudN. 
-- **AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability. 
-- **AVX-14659** - Tunnel flaps when attaching spoke gateways running IPSec strongSwan to transit gateways running IPSec racoon, or transit gateways running IPSec strongSwan to transit gateways running IPSec racoon. 
-- **AVX-16496** – Internet access restrictions block CloudN upgrade. Specific FDQNs are required to access CloundN. Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. Use the link display text Required Access for External Sites for the link.
+**Issues Corrected in Aviatrix Release 6.5**
+ 
+- **AVX-9033** - Some logs are too big on CloudN.
+- **AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability.
+- **AVX-14659** - Tunnel flaps when attaching spoke gateways running IPSec strongSwan to transit gateways running IPSec racoon, or transit gateways running IPSec strongSwan to transit gateways running IPSec racoon.
 - **AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated.
 - **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 'AVXERR-CONNTRACK-0001': 'Gateway Error: {}', 'AVXERR-CONNTRACK-0002': 'Required/Invalid option: {}' 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}' 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
 - **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
-- **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
+- **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS.
 - **AVX-17628** - Hardened SSH security for legacy users.
 - **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
 - **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests.
 
 **Known Behaviors in Aviatrix Release 6.5**
 
+- **AVX-16496** - When upgrading a standalone CloundN implementation:
+
+  #. For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
+  #. For CloudN versions >= 6.5.2613: Please follow the instructions at Standalone CloudN Deployment Checklist — aviatrix_docs documentation. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
+
 - **AVX-15458** - After Controller and standalone CloudN’s are upgraded from 6.3 to 6.4, to access CloudN device in web UI:
 
   #. Use CloudN management IP address inside on-premises network. 
   #. Use CloudN LAN IP address from Spoke workplace in the CSP network.
-  
+
+- **AVX-17221** - If you have Managed CloudN, Aviatrix requires you to follow the Managed instructions and allow access to the sites mentioned for the CloudN Managed Port. If your Managed CloudN ends up in a "config_fail" state after your Controller is upgraded, you have the following options:
+
+  Option 1:
+
+  #. Deregister your CloudN. Follow the instructions to allow management port outbound access.
+  #. Follow NTP sync instructions at `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#step-2-2-configure-ntp-sync-and-smtp-services>`_.
+  #. Register your CloudN.
+
+  Option 2: Open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
 
 6.4.2995 (01/11/2022) 
@@ -53,25 +65,18 @@ Release Notes
  
 **Known Issues in Aviatrix Release 6.5**
 
-- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in “Controller/Logging” before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the “config_fail” state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. 
+- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in “Controller/Logging” before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the “config_fail” state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the “config_fail” state, you can do an “Image Upgrade” on the impacted Gateway to resolve the issue. 
+- **AVX-17221** - If you have Managed CloudN, Aviatrix requires you to follow the Managed instructions and allow access to the sites mentioned for the CloudN Managed Port. If your Managed CloudN ends up in a "config_fail" state after your Controller is upgraded, you have the following options:
 
-If you already upgraded and have Gateways in the “config_fail” state, you can do an “Image Upgrade” on the impacted Gateway to resolve the issue. 
+  Option 1:
 
-- **AVX-17221** - When upgrading to standalone CloudN version 6.5.1936 or later, after registering CloudN with the Controller as a managed CloudN, CloudN will be in a “config_fail” state. 
+  #. Deregister your CloudN. Follow the instructions to allow management port outbound access.
+  #. Follow NTP sync instructions at `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#step-2-2-configure-ntp-sync-and-smtp-services>`_.
+  #. Register your CloudN.
 
-Workaround scenario 1: Prior to performing the registration process. 
+  Option 2: Open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
 
-  #. Add a firewall rule to allow CloudN’s MGMT outbound UDP port 123 access to ntp.ubuntu.com or to a local NTP server. 
-  #. From the CloudN UI page go to Setting -> Controller-> System Time. Enter ntp.ubuntu.com or a local NTP server then select the Sync option. 
-  #. Do a manual sync from CloudN to the NTP server. 
-  #. From the CloudN UI go to Setting -> Maintenance page and upgrade standalone CloudN to 6.5.2835 or later. 
-  #. From the CloudN UI page Setting -> Advanced page, perform the registration process. 
-
-Workaround scenario 2: Managed CloudN already registered and in “config_fail“ state. 
-
-  #. From Controller UI page go to CLOUDWAN -> Register -> De-register a Device, select the CloudN  already registered and in “config_fail” state. 
-  #. Follow steps outline in “Workaround for scenario 1” get CloudN out of the failed state. 
-
+- If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
 6.4.2973 (11/19/2021)
 =====================
 
