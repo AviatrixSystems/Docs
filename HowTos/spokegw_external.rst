@@ -15,7 +15,7 @@ This document focuses on the External Device connecting the Aviatrix Spoke GW th
 
 Using BGP-enabled spoke gateways is currently supported for AWS Commercial and Azure Commercial cloud service providers, including Government regions.
 
-**Note:** BGP-enabled spokes are introduced in release 6.6. Spoke gateways created prior to Aviatrix release 6.6 cannot be enabled for BGP (you enable BGP at gateway creation). Rollback to release 6.5 Aviatrix Controller is not possible if there is at least one BGP-enabled Spoke Gateway.
+**Note:** BGP-enabled spokes are introduced in release 6.6. Spoke gateways created prior to Aviatrix release 6.6 cannot be enabled for BGP (you enable BGP at gateway creation). Rollback to release 6.5 Aviatrix gateways is not possible if there is at least one BGP-enabled Spoke Gateway.
 
 
 What is a use case for connecting a BGP-enabled spoke gateway to an external router?
@@ -56,7 +56,7 @@ By using BGP-enabled spoke gateways in their network architecture, SaaS provider
 How does using a BGP-enabled spoke to an external device work? 
 --------------------------------------------------------------
 
-The Aviatrix Spoke GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding (BGP is run over IPsec only). BGP is run on top of a S2C connection that terminates on active-mesh spoke gateways. All spoke gateways must be active mesh (no standalone gateway). Each spoke gateway must have a unique asynchronous system (AS) number.
+The Aviatrix Spoke GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPSEC tunnel to the router for packet forwarding (BGP is run over IPsec only). BGP is run on top of a S2C connection that terminates on active-mesh spoke gateways. All spoke gateways must be active mesh (no standalone gateway). Each spoke gateway must have a unique Autonomous System (AS) number.
 
 Note the following points:
 
@@ -70,7 +70,7 @@ Co-existence of BGP S2C with static S2C connections under the same Spoke GW is s
 
 FireNet is supported. The inspection policy is the entire Spoke Gateway including all the BGP routes (not individual S2C BGP sessions).
 
-The following features are not supported on a BGP-enabled spoke gateway:
+The following features are not supported on a BGP-enabled spoke gateway in the current (6.6) release:
 
 -   ActiveMesh 1.0.
 -   Mapped NAT.
@@ -155,9 +155,9 @@ To create a BGP-enabled spoke gateway:
 
 6.  (Optional) Enable HA for the spoke gateway.
 
-    When HA is enabled, a second Spoke GW will be launched. Note that both Spoke GWs will be forwarding traffic in an event of tunnel failure between the Spoke GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different Availability Zone.
+    When HA is enabled, a second Spoke GW will be launched. For best practice, the HA GW should be launched on a different public subnet in a different Availability Zone.
 
-    To disable Spoke GW HA, go to the Gateway page and delete the Spoke GW with -hagw in the name extension. Note: If the Spoke GW is connected to VGW, you cannot disable Spoke GW HA.
+    Note: If the Spoke GW is connected to VGW, you cannot disable Spoke GW HA.
 
 7.  Scroll back up to the top of the Launch an Aviatrix Spoke Gateway workflow page.
 
@@ -165,7 +165,8 @@ To create a BGP-enabled spoke gateway:
 
     The Attach Spoke Gateway page opens.
 
-    Now that you've created the spoke gateway, you can connect it to the external device (device in an on-prem network). In this case, you will build a site-to-cloud (S2C) IPsec BGP connection.
+    Now that you've created the spoke gateway, you can connect it to the external device (device in an on-prem network). In this case, you will build a site-to-cloud (S2C) BGP over IPsec connection.
+
 
 Step 2: Create the S2C BGP Tunnel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,7 +200,7 @@ Primary Aviatrix Gateway       The Spoke GW you created.
 Algorithms                     Optional parameters. Leave it unselected if you don't know.
 IKEv2                          Select the option to connect to the remote site using IKEv2 protocol.
 Enable Remote Gateway HA       Select HA if there are two external devices. 
-Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
+Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Route. See "How does it work" section for more details. When this option is selected, BGP and IPSEC run over private IP addresses.
 BGP Remote AS Number           When BGP is selected, the BGP AS number the external device will use to exchange routes Aviatrix Spoke GW.
 Remote Gateway IP              IP address of the remote device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
@@ -229,9 +230,13 @@ To configure the external device:
 
     The Connection Detail page opens.
 
-3.  For Vendor, select **Cisco**.
+3.  For Vendor, select the device you are using (any device that is capable of running IPsec and BGP).
 
-4.  For Platform, select **ISR,ASR, or CSR**.
+    (For example, **Cisco**.)
+
+4.  For Platform, select the applicable platform for the chosen device.
+
+    (For example, **ISR, ASR, or CSR**.)
 
 5.  Click **Download Configuration**.
 
@@ -245,25 +250,19 @@ To configure the external device:
 Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP.  
 
 
-(Disconnect) To disconnect the external device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To disconnect, go to Transit Network -> Setup, scroll down to the step for removing the gateway to the connection, select the Spoke GW you created from the drop down menu, click **Disconnect**.
-
-
-Step 5: Verify status of connection is UP
+Step 4: Verify status of connection is UP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (Verify status of connection is Up) After configuring the router, the tunnel should change the status from down to up. Go back to the controller Site2Cloud option Setup page and click the refresh icon. Verify the status of your connection is now Up.
 
 
-Step 6: Verify the BGP routes
+Step 5: Verify the BGP routes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(To verify the BGP routes) On the controller, from the sidebar, expand the Multi-Cloud Transit option and then select **Advanced Config**. Click on Diagnostics and select the GW name from the dropdown list, and then select **Show Ip bgp** Command from the predefined Show list to verify the BGP Routes.
+(To verify the BGP routes) On the controller, from the sidebar, expand the Multi-Cloud Transit option and then select **BGP**. Under Diagnostics, select the Gateway name (of the BGP-enabled spoke). From the predefined show list, select **Show Ip bgp** to verify the BGP Routes.
 
 
-Step 7: Customize spoke advertised VPC CIDRs
+Step 6: Customize spoke advertised VPC CIDRs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can customize spoke advertised VPC CIDRs for your BGP-enabled spoke gateway. The CIDRs are propagated into ActiveMesh and into BGP as belonging to the Spoke Gateway shown in the example. 
@@ -277,13 +276,13 @@ BGP advertisement: those CIDRs are combined with all other ActiveMesh CIDRs from
 |spokegw_external_custom_adv_cidrs|
 
 
-Step 8: Set Up approval for gateway learned CIDR
+Step 7: Set Up approval for gateway learned CIDR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up approval for gateway learned CIDRs for your BGP-enabled spoke gateways. You must select Gateway mode (connection-level route approval is currently not supported). Route approval completely blocks a BGP prefix to even be considered by the control plane. Prefixes blocked are not programmed in the gateway route table.
 
 
-Step 9: Set Up BGP Route Control
+Step 8: Set Up BGP Route Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1.  From the sidebar, expand the Multi-Cloud Transit option, and then select **Advanced Config**.
@@ -293,10 +292,29 @@ Step 9: Set Up BGP Route Control
 3.  Specify the parameters to suit your business requirements (they are similar to BGP controls on transit gateways):
 
     Local AS Number  
+    
     BGP ECMP
+    
     Active-Standby
+    
     Gateway Manual BGP Advertised Network List 
+    
     Connection Manual BGP Advertised Network List
+
+
+(Disconnect) To disconnect the external device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To disconnect the external device from the BGP-enabled Spoke GW:
+
+1.  Log in to Aviatrix Controller.
+
+2.  From the sidebar, expand the Multi-Cloud Transit option, and then select **Setup**.
+
+3.  Scroll down to the step for removing the gateway to the connection, and select the Spoke GW you created from the list menu.
+
+4.  Click **Disconnect**. 
+
 
 .. |spokegw_external_saas_sol| image:: spokegw_external_media/spokegw_external_saas_sol.png
    :scale: 30%
