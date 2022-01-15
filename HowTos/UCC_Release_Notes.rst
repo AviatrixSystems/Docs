@@ -39,6 +39,7 @@ Release Notes
   #. Register your CloudN.
 
   Option 2: Open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+  
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to 6.5 release.
 
 6.4.2995 (01/11/2022) 
