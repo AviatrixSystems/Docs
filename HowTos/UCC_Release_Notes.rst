@@ -23,7 +23,7 @@ Release Notes
 - **AVX-16496** - When upgrading a standalone CloundN implementation:
 
   #. For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
-  #. For CloudN versions >= 6.5.2613: Please follow the instructions at Standalone CloudN Deployment Checklist — aviatrix_docs documentation. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
+  #. For CloudN versions >= 6.5.2613: Please follow the instructions at Standalone `CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html?highlight=StandAlone%20CloudN%20>`_. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
 
 - **AVX-15458** - After Controller and standalone CloudN’s are upgraded from 6.3 to 6.4, to access CloudN device in web UI:
 
