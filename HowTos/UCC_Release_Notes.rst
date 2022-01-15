@@ -77,6 +77,7 @@ Release Notes
 
   Option 2: Open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
 
+6.4.2973 (11/19/2021) 
 =====================
 
 **Issues Corrected in Aviatrix Release 6.4**
