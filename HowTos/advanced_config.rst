@@ -15,16 +15,17 @@ tunnel down detection time.
 Aviatrix gateways samples the tunnel status every 10 seconds. 
 
 Anti-replay Window
---------
+------------------
 
-Specify a IPSec tunnel anti-replay window.
+Specify the IPSec tunnel anti-replay window size.
 
-Set this value to 0 to disable anti-replay protection. The default is 0.
-
-See `Wikipedia <https://en.wikipedia.org/wiki/Anti-replay>`_ for more information.
+- The size range is 0 to 4096. 
+- The default value is 0.
+- Set the size to 0 to disable anti-replay protection. 
+- If “controller” of “Aviatrix Entity” is selected, all gateways share the same tunnel anti-replay window. 
 
 Keepalive
-------------
+---------
 
 In normal state, Aviatrix gateways send keep alive messages to the Controller. Keep Alive Speed determines when Controller determines if a gateway is down. 
 
