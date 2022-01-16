@@ -160,6 +160,12 @@ Select the VGW ID in the drop down menu.
 As a result of this step, a Customer Gateway and a Site2Cloud Connection between the VGW to the Aviatrix Transit GW will be automatically created.  The site2cloud IPSEC tunnel establishes a BGP session to exchange routes between on-prem and the cloud.  You also can view them under Customer Gateways and Site-to-Site VPN Connections of the AWS console.
 
 
+
+.. important::
+
+  If you configure a customized transit VPC route and policy Site2Cloud connections on same transit gateway, then policy Site2Cloud failover might not work.
+
+
 .. important::
 
   You are responsible for building the connection between VGW and on-prem. The connection is either over the Internet, over Direct Connect or both. 

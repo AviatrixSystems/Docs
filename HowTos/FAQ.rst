@@ -403,8 +403,6 @@ There are a couple of other differences regarding IKEv2, which has a better supp
 How to encrypt Aviatrix Controller and gateway EBS volume?
 ------------------------------------------------------------
 
-You can follow the `instructions here  <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller.
-
 For automation, you can reference our `python script on github repository. <https://github.com/AviatrixSystems/EBS-encryption>`_   
 
 Starting Release 4.2, Aviatrix gateway EBS volume can be encrypted from the Controller console. 
@@ -413,6 +411,8 @@ How to launch the Controller by Terraform?
 ---------------------------------------------
 
 Terraform for Controller launch is supported as a community project on github on `this Aviatrix repo. <https://github.com/AviatrixSystems/terraform-modules>`_
+
+For more information about Aviatrix Tearraform modules, see the `Aviatrix <https://github.com/AviatrixSystems/terraform-modules>`_ registry on the HachiCorp website.
 
 How to migrate a Controller from a Metered license to BYOL license?
 -----------------------------------------------------------------------
