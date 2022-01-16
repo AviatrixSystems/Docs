@@ -114,6 +114,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow
+   HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow
+
+
 
 .. _Transit Gateway Orchestrator:
 
