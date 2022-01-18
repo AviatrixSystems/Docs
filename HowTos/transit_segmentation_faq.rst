@@ -80,14 +80,10 @@ Spoke CIDRs attached to different Aviatrix Transit Gateways can co-exist if they
 What is the limitation of Segmentation?
 ------------------------------------------
 
-Segmentation is not supported on Aviatrix Transit Gateway connection to Aviatrix CloudN hardware for Insane Mode connection. 
-Segmentation is also not allowed if Aviatrix Transit Gateway instance type is C5n.18xlarge. 
-
-In addition, if two Aviatrix Transit Gateways are peered together and one of them has FireNet Egress enabled, through 
-Aviatrix Transit Gateway peering the Spoke VPC/VNets may be connected. The work around is to have FireNet Egress enabled
-on each Aviatrix Transit FireNet. 
-
-
+- Segmentation is not supported on Aviatrix Transit Gateway connection to Aviatrix CloudN hardware for Insane Mode connection. 
+- Segmentation is also not allowed if Aviatrix Transit Gateway instance type is C5n.18xlarge. 
+- If two Aviatrix Transit Gateways are peered together and one of them has FireNet Egress enabled, through Aviatrix Transit Gateway peering the Spoke VPC/VNets may be connected. The work around is to have FireNet Egress enabled on each Aviatrix Transit FireNet. 
+- Duplicated CIDRs that cross domains or cross transits may not work all the time. Aviatrix does not support duplicated CIDRs that cross domains or cross transits.
 
 
 .. |transit_segmentation| image:: transit_segmentation_faq_media/transit_segmentation.png

@@ -227,7 +227,11 @@ Step 2.6 Register with Aviatrix Controller FQDN Name
   
 		.. important::
 
-			It is highly recommended that a FQDN name is used instead of an IP address for enhanced security and controller HA.
+			It is highly recommended to register CloudN with Aviatrix Controller’s FQDN name instead of its IP address for allowing Controller HA operation (allows the controller to be assigned to a different IP address).
+
+			When your Aviatrix Controller's FQDN is mapped to a private IP address, make sure that CloudN’s MGMT primary DNS server or secondary DNS server can resolve the FQDN to its private IP address.
+
+			Registering CloudN to Aviatrix Controller via private networks is not a fully supported scenario; please discuss this with the Aviatrix team during the planning phase before you finalize the design for the Managed CloudN deployment. 
 	
 	- Enter Aviatrix Controller Username/Password with an admin user credential (any users in admin RBAC Groups)
 	

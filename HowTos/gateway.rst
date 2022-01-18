@@ -44,16 +44,6 @@ AWS Performance numbers:
 +============================+=================================================+
 | T2 series                  | Not guaranteed; it can burst up to 130Mbps      |
 +----------------------------+-------------------------------------------------+
-| M3 series                  | 300 - 500Mbps                                   |
-+----------------------------+-------------------------------------------------+
-| m4.xlarge, c4.xlarge       | approximately 500Mbps                           |
-+----------------------------+-------------------------------------------------+
-| c3.2xlarge, m4.2xlarge     | approximately 1Gbps                             |
-+----------------------------+-------------------------------------------------+
-| c3.4xlarge                 | approximately 1.2Gbps                           |
-+----------------------------+-------------------------------------------------+
-| c4.2xlarge                 | 1.2Gbps - 1.5Gbps                               |
-+----------------------------+-------------------------------------------------+
 | c5.2xlarge, c5.4xlarge     | 2Gbps - 2.5Gbps                                 |
 +----------------------------+-------------------------------------------------+
 | c5n.4xlarge                | 25Gbps (with InsaneMode)                        |
@@ -494,15 +484,6 @@ DNAT PORT                              This is a rule field that specifies the t
 APPLY ROUTE ENTRY                      This is an option to program the route entry "DST CIDR pointing to Aviatrix Gateway" into Cloud platform routing table.
 EXCLUDE ROUTE TABLE                    This field specifies which VPC private route table will not be programmed with the default route entry. Users can combine this with APPLY ROUTE ENTRY enabled.
 ================================       =======================
-
-Network Mapping
------------------
-
-Networking mapping is a destination address translation scheme where the destination address range is one to one mapped to
-a virtual address range. A configuration example can be shown below, where "Real Destination CIDR" 10.10.10.0/24 is mapped to
-"Virtual Destination CIDR" 100.100.10.0/24.
-
-|network_mapping|
 
 Monitor Gateway Subnet
 -----------------------

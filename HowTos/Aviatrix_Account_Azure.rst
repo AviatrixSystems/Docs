@@ -167,7 +167,6 @@ Prerequisites:
 
 - You must already have a Microsoft Azure China account and Aviatrix Controller in AWS China to deploy an Aviatrix Gateway in the Azure China Cloud.
 
-- If you have not created a storage account in your Microsoft Azure cloud, create a storage account first.
 
 1.	Create the Aviatrix Controller in your AWS China Cloud. Go to Onboarding and select Azure China. 
 
@@ -177,9 +176,7 @@ Prerequisites:
 
 4.	Create the Primary Access Account.
 
-5.	Download the Aviatrix gateway image to your Microsoft Azure China storage account in a specified region. If the storage account does not exist, go to Azure China portal to create one first. Note: The download may take up to 20 minutes due to Azure infrastructure limitations.
-
-6. Deploy Aviatrix gateway in Gateway page or Multi-Cloud Transit Solution page.
+6. 	Deploy Aviatrix gateway from the Gateway page in the Aviatrix Controller or the Multi-Cloud Transit Solution page.
 
 For more information, see “What is a China ICP License?”
 
