@@ -7,7 +7,6 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
-
 This section describes new features and enhancements for Aviatrix CoPilot software releases.
 
 For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html.
