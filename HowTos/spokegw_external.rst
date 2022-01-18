@@ -15,7 +15,9 @@ This document focuses on the External Device connecting the Aviatrix Spoke GW th
 
 Using BGP-enabled spoke gateways is currently supported for AWS Commercial and Azure Commercial cloud service providers, including Government regions.
 
-**Note:** BGP-enabled spokes are introduced in release 6.6. Spoke gateways created prior to Aviatrix release 6.6 cannot be enabled for BGP (you enable BGP at gateway creation). Rollback to release 6.5 Aviatrix gateways is not possible if there is at least one BGP-enabled Spoke Gateway.
+.. note::
+
+   BGP-enabled spokes are introduced in release 6.6. Spoke gateways created prior to Aviatrix release 6.6 cannot be enabled for BGP (you enable BGP at gateway creation). Rollback to release 6.5 Aviatrix gateways is not possible if there is at least one BGP-enabled Spoke Gateway.
 
 
 What is a use case for connecting a BGP-enabled spoke gateway to an external router?
@@ -240,14 +242,17 @@ To configure the external device:
 
 5.  Click **Download Configuration**.
 
-    Open the downloaded Aviatrix Site2Cloud configuration template. Configure on CiscoASA accordingly.
+    Open the downloaded Aviatrix Site2Cloud configuration template. 
 
-6.  Apply the following configuration to your CiscoASA:
+6.  Apply the following changes on your external device configuration (for example, on your CiscoASA) to configure the on-prem device with IPSEC tunnel and BGP:
 
-    Note: The tunnel IP addresses are configured accordingly with the configuration file you downloaded.
+    Crypto Policy Number
 
+    Tunnel Number with Tunnel Source
 
-Use the information provided in the configuration file to configure the on-prem device with IPSEC tunnel and BGP.  
+    Make similar changes on the configuration of the backup tunnel. 
+
+    |spokegw_bgp_external_device_config| 
 
 
 Step 4: Verify status of connection is UP
@@ -323,6 +328,9 @@ To disconnect the external device from the BGP-enabled Spoke GW:
    :scale: 30%
 
 .. |spokegw_external_custom_adv_cidrs| image:: spokegw_external_media/spokegw_external_custom_adv_cidrs.png
+   :scale: 30%
+
+.. |spokegw_bgp_external_device_config| image:: spokegw_external_media/spokegw_bgp_external_device_config.png
    :scale: 30%
 
 .. disqus::
