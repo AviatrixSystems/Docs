@@ -47,8 +47,7 @@ Follow `Step 2.3 <https://docs.paloaltonetworks.com/vm-series/9-1/vm-series-depl
 **2.2** For the example init-cfg.txt file, click :download:`init-cfg.txt <bootstrap_example_media/init-cfg.txt>`.
 
 .. Note::
-
-  In the example bootstrap.xml, the API admin user name is avxadmin and the password is Aviatrix123#. You can customize it.
+	In the example bootstrap.xml, you must specify custom usernames and passwords for the <https_interface_admin_username> and <api_admin_username>, and generate hash strings for the passwords.
 
 **2.3** upload these two files to your config folder under Storage Account-> File Shares.
 
@@ -72,7 +71,7 @@ Share-directory (Optional)          Config (Optional)
 
 Launch the VM-Series instance. Wait for 15 minutes for it to boot up and initialize.
 
-Login to the HTTPS interface of VM-Series management public IP with username "admin", password "Aviatrix123#"
+Login to the HTTPS interface of VM-Series management public IP with the username and password specified in the bootstrap.xml file.
 
 
 4. Configure API Vendor Integration
@@ -82,8 +81,8 @@ In order for the Aviatrix Controller to automatically update firewall instance r
 
 Go to Controller -> Firewall Network -> Vendor Integration -> Firewall. Note the following fields.
 
- -  Firewall Login User Name field, use "avxadmin" without the double quotes.
- -  Firewall Login Password field, use "Aviatrix123#" without the double quotes.
+ -  Firewall Login User Name field, use the username specified in the bootstrap.xml file.
+ -  Firewall Login Password field, use the password specified in the bootstrap.xml file.
 
 If you are manually configuring the firewall from scratch, follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access.
 

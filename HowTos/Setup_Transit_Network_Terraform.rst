@@ -19,7 +19,7 @@ Setup Terraform Provider
 	# Configure Aviatrix provider
 	provider "aviatrix" {
 	  controller_ip = "1.2.3.4"
-	  username = "admin"
+	  username = "username"
 	  password = "password"
 	  version = "2.2"
 	}
@@ -43,7 +43,7 @@ Manages an Aviatrix Transit Gateway.
 
 	provider "aviatrix" {
 	  controller_ip = "1.2.3.4"
-	  username = "admin"
+	  username = "username"
 	  password = "password"
 	  version = "2.2"
 	}
@@ -90,7 +90,7 @@ Manages VGW connection
 
 	provider "aviatrix" {
 	  controller_ip = "1.2.3.4"
-	  username = "admin"
+	  username = "username"
 	  password = "password"
 	  version = "2.2"
 	}
@@ -134,7 +134,7 @@ Manages an Aviatrix Spoke Gateway
 
 	provider "aviatrix" {
 	  controller_ip = "1.2.3.4"
-	  username = "admin"
+	  username = "username"
 	  password = "password"
 	  version = "2.2"
 	}
@@ -184,6 +184,10 @@ Manages an Aviatrix Spoke Gateway
 Sample configuration to create complete transit VPC solution
 ============================================================
 
+.. Note::
+	In this example, you must specify the username and password, controller_ip, account_email and other parameters.
+
+
 ::
 
 	# Sample Aviatrix terraform configuration to create complete transit VPC solution
@@ -195,14 +199,14 @@ Sample configuration to create complete transit VPC solution
 	# Edit to enter your controller's IP, username and password to login with.
 	provider "aviatrix" {
 	  controller_ip = "w.x.y.z"
-	  username = "admin"
-	  password = "Aviatrix123%23"
+	  username = "username"
+	  password = "password"
 	  version = "2.2"
 	}
 
 	resource "aviatrix_account" "test_acc" {
 	  account_name = "devops"
-	  account_password = "Aviatrix123"
+	  account_password = "account_password"
 	  account_email = "abc@xyz.com"
 	  cloud_type = 1
 	  aws_account_number = "123456789012"

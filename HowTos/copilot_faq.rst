@@ -105,6 +105,12 @@ Can we provide bandwidth details of links/tunnels ?
 ===============================================================================
 If you can specify source and destination for the two endpoints of the path, i.e gateways, you will be able to obtain this information from FlowIQ by using filters.
 
+
+Why do I get an error Failed to fetch Topology when I open the Topology page?
+===============================================================================
+
+If you get the error **Failed to fetch Topology data** when opening the Topology page, CoPilot was unable to access the data it needs for topology. If the issue persists, Contact Aviatrix Support.
+
 How I can get my additional questions answered ?
 ===============================================================================
 

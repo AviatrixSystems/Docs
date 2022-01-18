@@ -7,6 +7,50 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+This section describes new features and enhancements for Aviatrix CoPilot software releases.
+
+For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html.
+
+CoPilot Release 1.5.1 (1/12/2022)
+---------------------------------
+
+-   (Performance) Performance Charts now have cross hairs that are synced across all visible charts for easy correlation between metrics.
+
+-   (Topology) Run VPC/VNET/VCN diagnostics and submit them to Aviatrix Support from Topology. From Topology, click on any VPC/VNET/VCN in a topology map, and then click DIAG in the node properties pane.
+
+-   (Notifications>Configure) Use new input box to type in a value (instead of using the slider) for configuring notification thresholds.
+
+-   Performance improvements.
+
+For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html
+
+
+CoPilot Release 1.5.0 (1/12/2022)
+---------------------------------
+
+-   **ThreatIQ map in dashboard** — The CoPilot Dashboard now includes the ThreatIQ map showing any threats over the last 24 hours.
+
+-   **New gateway diagnostic features** 
+
+      You can now perform the following diagnostic tasks for Aviatrix gateways (from Topology, click on any gateway in a topology map, and then click DIAG in the node properties pane):
+
+     -   (TRACEPATH tab) Discover the MTU on the path (if router supports it).
+     -   (TRACELOG tab) Upload a gateway's tracelog directly to Aviatrix Support. The controller and gateway tracelog is uploaded and the support team notified.
+     -   (SERVICE ACTIONS tab) Check the status of gateway services and restart services.
+
+-   Performance improvements and bug fixes.
+
+Release 1.4.9.3 (12/28/2021)
+-----------------------------
+- UI improvements. 
+
+  - You can now open Aviatrix Controller from CoPilot. From the CoPilot dashboard, click the Apps icon in the action bar, and then select **Controller**. The controller opens in a new browser tab.
+
+  - Improvements were made to the ThreatIQ dashboard.
+
+- Performance improvements. 
+- Minor bug fixes. 
+
 Releases 1.4.9.1, 1.4.9.2
 -------------------------
 - **Bug fix** Minor bug fixes.
