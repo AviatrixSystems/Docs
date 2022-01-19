@@ -239,8 +239,6 @@ Remote Gateway IP (Backup)     IP address of the remote device. If "Private Netw
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Spoke gateway. Leave it blank.  
 Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
-
-
 ============================   ==========
 
 
