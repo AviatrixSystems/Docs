@@ -128,7 +128,7 @@ For example, you may already have a NAT gateway configured for the VPC. To minim
 Enable BGP
 ----------
 
-If this option is selected, the Aviatrix Spoke gateway is enabled with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke gateways created pre-6.6 cannot be enabled with BGP. A Spoke gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/insane_mode.html>`_for information about restrictions.
+If this option is selected, the Aviatrix Spoke gateway is enabled with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke gateways created pre-6.6 cannot be enabled with BGP. A Spoke gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_for information about restrictions.
 
 Allocate New EIP
 -----------------
