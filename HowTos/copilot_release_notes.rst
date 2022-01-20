@@ -9,7 +9,7 @@ Aviatrix CoPilot Release Notes
 
 This section describes new features and enhancements for Aviatrix CoPilot software releases.
 
-For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html.
+For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 CoPilot Release 1.5.1 (1/12/2022)
 ---------------------------------
@@ -22,7 +22,11 @@ CoPilot Release 1.5.1 (1/12/2022)
 
 -   Performance improvements.
 
-For information about Aviatrix CoPilot image releases, see https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html
+If you deploy Aviatrix CoPilot image version 1.5.1 from the marketplace, the following disk volume and auto-scaling features are now available:
+
+-   New disk (volume) support — You can now allocate data disks (volumes) to your Aviatrix CoPilot deployment to be used for expandable storage. During instance creation in the marketplace, you can attach a data disk (data volume) to be used for CoPilot storage. When you deploy the instance, the initial setup process will automatically detect the disk/volume you attached during instance creation and format and attach your disks (a logical disk/volume is created from all physical disks). As your storage needs increase later (after deploying), you can also add more disks (volumes) as needed.
+
+-   Auto-scaling memory support — CoPilot now supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. New base images will default to these automatic settings, but existing deployments will keep their current configuration unless updated. Memory settings are still located under Settings > Configuration > Options.
 
 
 CoPilot Release 1.5.0 (1/12/2022)
