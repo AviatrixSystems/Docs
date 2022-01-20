@@ -233,7 +233,7 @@ Remote Gateway IP              IP address of the remote device.
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP                Optional parameter. This field is for the tunnel inside IP address of the Spoke gateway. Leave it blank.  
 Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
-Over Private Network (Backup)  Select this option if HA is enabled.
+Over Private Network(Backup)   Select this option if HA is enabled. 
 BGP Remote ASN (Backup)        When BGP is selected, the remote ASN for backup should be the same as the primary remote ASN. 
 Remote Gateway IP (Backup)     IP address of the remote device. If "Private Network" is selected, enter the private IP address of the external device.
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
