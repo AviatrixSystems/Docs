@@ -9,6 +9,8 @@ Aviatrix CoPilot Image Release Notes
 
 Aviatrix CoPilot is delivered via one image that should be maintained with the latest version for managing security and support for the product. You launch the Aviatrix CoPilot image instance in the AWS, Azure, or respective cloud marketplace.
 
+For information about new features and enhancements for CoPilot software releases, see `Aviatrix CoPilot Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes.html>`_.
+
 CoPilot Image: Version 1.5.1 (01/14/22)
 ---------------------------------------
 
