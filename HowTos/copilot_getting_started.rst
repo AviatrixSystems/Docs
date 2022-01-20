@@ -229,7 +229,7 @@ When you initially provision CoPilot (from your cloud service provider), you add
 
 When you newly launch the CoPilot instance, the initial setup process automatically detects the disk/volume you attached during instance provisioning. An add-disk process prompts you to confirm the disk/volume to use and then formats and attaches your disk(s). A logical disk/volume is created from all physical disks (volumes) you added during provisioning. Note that CoPilot comes with a 25GB root disk.
 
-The storage you need for CoPilot can increase based on several factors including the number of Aviatrix gateways launched and the type and volume of traffic in your network. When you need more storage, you can add additional disks (volumes) by using the CoPilot > Settings > Resources page (Add Additional Disks). For instructions, see "Add a Disk (Volume) for CoPilot Storage after Deployment".
+The storage you need for CoPilot can increase based on several factors including the number of Aviatrix gateways launched and the type and volume of traffic in your network. When you need more storage, you can add additional disks (volumes) by using the CoPilot > Settings > Resources page (Add Additional Disks). For instructions, see `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#add-a-disk-volume-for-copilot-storage-after-deployment>`_.
 
 After you allocate new disks (volumes), you can only increase storage (you cannot decrease storage).
 
@@ -239,7 +239,7 @@ Disk (volume) management for expandable storage became available with the releas
 Add a Disk (Volume) for CoPilot Storage after Deployment
 ========================================================
 
-Add a data disk (volume) to your Aviatrix CoPilot deployment to be used for expandable storage. For information about expandable storage, see "CoPilot Disk (Volume) Management".
+Add a data disk (volume) to your Aviatrix CoPilot deployment to be used for expandable storage. For information about expandable storage, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_.
 
 This procedure assumes you have a running CoPilot and want to add more storage (add a data disk/volume) above and beyond the storage you added when you first provisioned the CoPilot instance (from your CSP).
 
