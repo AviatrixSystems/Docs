@@ -85,6 +85,20 @@ OCI Expected Throughput Numbers:
 | VM.Standard2.2 or larger   |  1.8G                                |  900 Mbps                                |
 +----------------------------+--------------------------------------+------------------------------------------+
 
+
+With OCI you can choose a flexible shape to modify the Oracle CPU (OCPU) and memory configurations of your shape after it is deployed.
+
++-----------------------+--------------------+
+| OCI Flex Shape        | OCPU and RAM       |
++=======================+====================+
+| FLEX4.16              | E3 4 OCPU 8G RAM   |
++-----------------------+--------------------+
+| FLEX8.32              | E3 8 OCPU 32G RAM  |
++-----------------------+--------------------+
+| FLEX16.32             | E3 16 OCPU 32G RAM |
++-----------------------+--------------------+
+
+
 .. note::
 
    If you need IPSec performance beyond 2Gbps, refer to `Aviatrix Insane Mode. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
@@ -110,6 +124,11 @@ For example, you may already have a NAT gateway configured for the VPC. To minim
  1. Launch a gateway without the SNAT option selected.
  #. Go to AWS Console to remove the existing 0.0.0.0/0 route entry from the route table.
  #. Go to the Gateway page, highlight the desired gateway, click Edit, Scroll down to SNAT and click Enable.
+
+Enable BGP
+----------
+
+If this option is selected, the Aviatrix Spoke gateway is enabled with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke gateways created pre-6.6 cannot be enabled with BGP. A Spoke gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_for information about restrictions.
 
 Allocate New EIP
 -----------------

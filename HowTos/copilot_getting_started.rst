@@ -52,6 +52,7 @@ To subscribe to a CoPilot offer:
 
     For information about Aviatrix CoPilot image versions, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
+
 3.  When prompted, review the subscription pricing information and accept the terms and conditions. You may be prompted to confirm your subscription before moving on to configuration.
 
 4.  Each marketplace will prompt you to configure and launch the CoPilot software. Apply the default configurations for resource settings that are recommmended by your chosen marketplace. For CoPilot instance configurations, you can accept the defaults or change them to suit your business needs. Note the following required CoPilot instance specifications:
@@ -67,13 +68,16 @@ To subscribe to a CoPilot offer:
     -   **(Storage & Instance) Pre-1.5.1 image releases ONLY**:
         -   For machine/instance/VM type, CoPilot requires a minimum of 8 vCPUs and 32 GB Memory.
         -   CoPilot requires 2 TB of storage (SSD recommended)
+
     -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS)
     -   Copilot requires the following service ports:
 
         -   TCP port 443 for Web UI (to reach CoPilot public IP via HTTPS using your web browser)
         -   UDP port 31283 for FlowIQ (port is configurable)
         -   UDP port 5000 for Remote Syslog Service
-        For the UDP ports, change the default inbound rule of 0.0.0.0/0 to only the IP addresses of your Aviatrix gateways. You can allow only your and other trusted user's IP addresses for port 443.
+
+        For the UDP ports, change the default inbound rule of 0.0.0.0/0 to only the IP addresses of your Aviatrix gateways. For port 443, you can allow only your and other trusted user's IP addresses.
+
 
 5.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
