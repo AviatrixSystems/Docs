@@ -150,7 +150,7 @@ The objective is to limit access to Aviatrix Controller port 443 to authorized I
 
 7. Create 2 Backend pools.
 
-    - Choose Backend target as <dont-allow>, so that the App GW returns “502 Bad Gateway” response to any paths other than ‘/flask*’.
+    - Choose Backend target as ‘dont-allow‘, so that the App GW returns “502 Bad Gateway” response to any paths other than ‘/flask*’.
     - Create a path based rule for the path “/flask*“, with the backend target set to <controller>.
 
 8. Create a path based rule in listener rules.
