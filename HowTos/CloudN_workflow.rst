@@ -12,7 +12,7 @@ Introduction
 
 Aviatrix CloudN hardware appliance is deployed on-prem to connect to public cloud. It provides up to 25Gbps encryption performance over AWS Direct Connect and Azure Express Route.
 
-Aviatrix Managed CloudN enables you to manage CloudN hardware appliances by Aviatrix Controller as an `Aviatrix CloudWAN device <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_. 
+Aviatrix Managed CloudN enables you to manage CloudN hardware appliances by Aviatrix Controller as an `Aviatrix CloudN device <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_. 
 
 Benefits:
 ---------
@@ -258,7 +258,7 @@ Step 3.1 Login Aviatrix Controller
 Step 3.2 Check if a Managed CloudN device is connected to Aviatrix Controller properly 
 -------------------------------------------------------------------------------------------
 
-	- Navigate to the page "CLOUDWAN -> List/Edit" 
+	- Navigate to the page "CLOUDN -> List/Edit" 
 	
 	- Search for the Managed CloudN device
 	
@@ -267,11 +267,11 @@ Step 3.2 Check if a Managed CloudN device is connected to Aviatrix Controller pr
 		|controller_managed_cloudn_registered_state|
 	
 Step 3.3  (Optional) Discover a Managed CloudN device WAN interface
------------------------------------------------------------------
+---------------------------------------------------------------------
 
 This step is for building connection over internet. If you are building connection over Direct Connect, please jump to the next step directly.
 
-	- Navigate to the page "CLOUDWAN -> Attach"
+	- Navigate to the page "CLOUDN -> Attach"
 	
 	- Find the panel 1) Prepare to Attach 
 	
@@ -290,9 +290,9 @@ This step is for building connection over internet. If you are building connecti
 Step 3.4  Attach Managed CloudN
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-This step follows the instruction at `Attach a CloudWAN device to Aviatrix Transit Gateway <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#option-1-attach-to-an-aviatrix-transit-gateway>`_.
+This step follows the instruction at `Attach a CloudN device to Aviatrix Transit Gateway <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html#option-1-attach-to-an-aviatrix-transit-gateway>`_.
 
-	- Navigate to the page "CLOUDWAN -> Attach"
+	- Navigate to the page "CLOUDN -> Attach"
 	
 	- Find the panel 2) Attach Device to Cloud
 	
@@ -327,7 +327,7 @@ This step follows the instruction at `Attach a CloudWAN device to Aviatrix Trans
 Step 3.5 Check whether the Managed CloudN device is attached to Aviatrix Transit Gateway properly 
 -----------------------------------------------------------------------------------------------------
 
-	- Navigate back to the page "CLOUDWAN -> List/Edit" 
+	- Navigate back to the page "CLOUDN -> List/Edit" 
   
 	- Search for the Managed CloudN device
 	
@@ -393,7 +393,7 @@ an Aviatrix gateway in the cloud via Aviatrix Controller GUI.
 Running diagnostics
 --------------------
 	
-	- Navigate to the page "CLOUDWAN -> List/Edit" on Aviatrix Controller GUI
+	- Navigate to the page "CLOUDN -> List/Edit" on Aviatrix Controller GUI
   
 	- Search for the Managed CloudN device and select it
 	
@@ -412,7 +412,7 @@ Running diagnostics
 Upload tracelog
 ---------------
 
-	- Navigate to the page "CLOUDWAN -> List/Edit" on Aviatrix Controller GUI
+	- Navigate to the page "CLOUDN -> List/Edit" on Aviatrix Controller GUI
   
 	- Search for the Managed CloudN device and select it
 	
@@ -425,7 +425,7 @@ Upload tracelog
 Download syslogs
 ----------------
 
-	- Navigate to the page "CLOUDWAN -> List/Edit" on Aviatrix Controller GUI
+	- Navigate to the page "CLOUDN -> List/Edit" on Aviatrix Controller GUI
   
 	- Search for the Managed CloudN device and select it
 	
@@ -492,7 +492,7 @@ Step 4.1 Perform feature "Detach Device from Cloud" on Aviatrix Controller GUI
 	
 	- Sign in with Aviatrix account
 	
-	- Navigate to the page "CLOUDWAN -> Attach" 
+	- Navigate to the page "CLOUDN -> Attach" 
   
 	- Find the panel "Delete Function -> 3> Detach Device from Cloud"
 	
@@ -511,7 +511,7 @@ Step 4.2 Perform feature "De-register a Device" on Aviatrix Controller GUI
 	
 	- Sign in with Aviatrix account
 	
-	- Navigate to the page "CLOUDWAN -> Register" 
+	- Navigate to the page "CLOUDN -> Register" 
   
 	- Find the panel "Delete Function -> 2> De-register a Device"
 	
@@ -540,7 +540,7 @@ Step 4.3 Perform feature "Reset Configuration" on Aviatrix Controller GUI
 	
 	- Sign in with Aviatrix account
 	
-	- Navigate to the page "CLOUDWAN -> List/Edit" 
+	- Navigate to the page "CLOUDN -> List/Edit" 
   
 	- Search for the Managed CloudN device and select it
 	
