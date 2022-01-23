@@ -276,7 +276,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/uservpn-TGW
    HowTos/Setup_Okta_SAML_Profile_Attribute
    HowTos/Setup_PingOne_SAML_Profile_Attribute
-
+   HowTos/azure_saml_auth_vpn_access
 
 .. _UsefulTools:
 
