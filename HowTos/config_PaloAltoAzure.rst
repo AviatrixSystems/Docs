@@ -105,7 +105,7 @@ Click **Commit**. Once Commit is complete, you should see the Link State turn gr
 6. Configure VM-Series ethernet1/2 with LAN Zone
 ---------------------------------------------------
 
-Repeat Step 6 for ethernet1/2. Name the new zone LAN.
+Repeat Step 5 for ethernet1/2. Name the new zone LAN.
 
 Click **Commit**. Once Commit is complete, you should see the Link State turn green at the Network page for ethernet1/2.
 
