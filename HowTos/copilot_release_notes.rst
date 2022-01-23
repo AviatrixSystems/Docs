@@ -7,6 +7,54 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
+This section describes new features and enhancements for Aviatrix CoPilot software releases.
+
+For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
+
+CoPilot Release 1.5.1 (1/12/2022)
+---------------------------------
+
+-   (Performance) Performance Charts now have cross hairs that are synced across all visible charts for easy correlation between metrics.
+
+-   (Topology) Run VPC/VNET/VCN diagnostics and submit them to Aviatrix Support from Topology. From Topology, click on any VPC/VNET/VCN in a topology map, and then click DIAG in the node properties pane.
+
+-   (Notifications>Configure) Use new input box to type in a value (instead of using the slider) for configuring notification thresholds.
+
+-   Performance improvements.
+
+If you deploy Aviatrix CoPilot image version 1.5.1 from the marketplace, the following disk volume and auto-scaling features are now available:
+
+-   New disk (volume) support — You can now allocate data disks (volumes) to your Aviatrix CoPilot deployment to be used for expandable storage. During instance creation in the marketplace, you can attach a data disk (data volume) to be used for CoPilot storage. When you deploy the instance, the initial setup process will automatically detect the disk/volume you attached during instance creation and format and attach your disks (a logical disk/volume is created from all physical disks). As your storage needs increase later (after deploying), you can also add more disks (volumes) as needed. See `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_ for more information.
+
+-   Auto-scaling memory support — CoPilot now supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. New base images will default to these automatic settings, but existing deployments will keep their current configuration unless updated. Memory settings are still located under Settings > Configuration > Options.
+
+
+CoPilot Release 1.5.0 (1/12/2022)
+---------------------------------
+
+-   **ThreatIQ map in dashboard** — The CoPilot Dashboard now includes the ThreatIQ map showing any threats over the last 24 hours.
+
+-   **New gateway diagnostic features** 
+
+      You can now perform the following diagnostic tasks for Aviatrix gateways (from Topology, click on any gateway in a topology map, and then click DIAG in the node properties pane):
+
+     -   (TRACEPATH tab) Discover the MTU on the path (if router supports it).
+     -   (TRACELOG tab) Upload a gateway's tracelog directly to Aviatrix Support. The controller and gateway tracelog is uploaded and the support team notified.
+     -   (SERVICE ACTIONS tab) Check the status of gateway services and restart services.
+
+-   Performance improvements and bug fixes.
+
+Release 1.4.9.3 (12/28/2021)
+-----------------------------
+- UI improvements. 
+
+  - You can now open Aviatrix Controller from CoPilot. From the CoPilot dashboard, click the Apps icon in the action bar, and then select **Controller**. The controller opens in a new browser tab.
+
+  - Improvements were made to the ThreatIQ dashboard.
+
+- Performance improvements. 
+- Minor bug fixes. 
+
 Releases 1.4.9.1, 1.4.9.2
 -------------------------
 - **Bug fix** Minor bug fixes.

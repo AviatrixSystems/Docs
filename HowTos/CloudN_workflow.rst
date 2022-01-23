@@ -180,27 +180,17 @@ This is a rare case. It is documented here for completeness. Skip if the Control
 Step 2.5 Managed CloudN management port outbound access
 --------------------------------------------------------------------------------------------------------------------------
 
-Manged CloudN (registered to the Controller) management port requires the following Internet egress access. 
+You must use the specified FDQN, IP address, and ports for Managed CloudN (registered to the Controller) and Standalone CloudN (de-registered from the Controller) implementations. Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
-	==============================  ================  ==== =================================================
-	FQDN                            IP address        PORT Purpose
-	==============================  ================  ==== =================================================
-	security.aviatrix.com           54.149.28.255     443  Sync service certificates
-	diag.aviatrix.com (optional)    54.200.59.112     443  Allow Remote Support access to the CloudN 
-	[AVIATRIX CONTROLLER]                             443  Communicate to Aviatrix Controller and receive software upgrades from Controller
-	==============================  ================  ==== =================================================
+	.. note::
 	
-Standalone CloudN (de-registered from the Controller) management port requires the following Internet egress access.
+		You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
-        =======================  ================  ==== =================================================
-        FQDN                     IP address        PORT Purpose
-        =======================  ================  ==== =================================================
-        security.aviatrix.com    54.149.28.255     443  Sync service certificates
-        diag.aviatrix.com        54.200.59.112     443  Upload tracelog to Aviatrix and remote debugging
-        release.aviatrix.com     54.149.28.255     443  Download software for upgrading CloudN
-        =======================  ================  ==== =================================================
-	
-To check basic connectivity to Internet from CloudN device and to troubleshoot reachability issue to these addresses, follow the steps below. 
+
+	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
+
+
+	To check basic connectivity to Internet from CloudN device and to troubleshoot reachability issue to these addresses, follow the steps below. 
 
 	- Navigate to the page "Troubleshoot -> Diagnostics -> Network"
 	
@@ -211,9 +201,9 @@ To check basic connectivity to Internet from CloudN device and to troubleshoot r
 	+--------------+--------------------------------------------------------------------+
 	| **Field**    | **Value**                                                          |
 	+--------------+--------------------------------------------------------------------+
-	| Hostname     | Refer to the FQDN/IP address in the Internet Access table as above |
+	| Hostname     | Refer to the FQDN/IP address on the Aviatrix Support webstie.      |
 	+--------------+--------------------------------------------------------------------+
-	| Port         | Refer to the PORT in the Internet Access table as above            |
+	| Port         | Refer to the PORT on the Aviatrix Support webstie.                 |
 	+--------------+--------------------------------------------------------------------+
 	| Gateway Name | Controller                                                         |
 	+--------------+--------------------------------------------------------------------+

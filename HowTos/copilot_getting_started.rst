@@ -50,12 +50,25 @@ To subscribe to a CoPilot offer:
 
 2.  Locate the Aviatrix CoPilot software offer you want to subscribe to and click **Subscribe**.
 
+    For information about Aviatrix CoPilot image versions, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
+
+
 3.  When prompted, review the subscription pricing information and accept the terms and conditions. You may be prompted to confirm your subscription before moving on to configuration.
 
 4.  Each marketplace will prompt you to configure and launch the CoPilot software. Apply the default configurations for resource settings that are recommmended by your chosen marketplace. For CoPilot instance configurations, you can accept the defaults or change them to suit your business needs. Note the following required CoPilot instance specifications:
 
-    -   For machine/instance/VM type, CoPilot requires a minimum of 8 vCPUs and 32 GB Memory.
-    -   CoPilot requires 2 TB of storage (SSD recommended)
+    -   **(Storage & Instance) Aviatrix Copilot 1.5.1 image release**:
+
+        When deploying the Aviatrix CoPilot 1.5.1 image release:
+
+        -   During instance creation, you must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage (see CoPilot Disk (Volume) Management). This is in addition to the 25GB root disk that comes with CoPilot. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
+        -   Attach the disk (volume) to your CoPilot instance. Later, when you newly launch CoPilot, CoPilot will format and attach your disks (a logical disk/volume is created from all physical disks) as part of the initial setup.
+        -   CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. The base image will default to these automatic settings. Memory settings are located in CoPilot under Settings > Configuration > Options.
+
+    -   **(Storage & Instance) Pre-1.5.1 image releases ONLY**:
+        -   For machine/instance/VM type, CoPilot requires a minimum of 8 vCPUs and 32 GB Memory.
+        -   CoPilot requires 2 TB of storage (SSD recommended)
+
     -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS)
     -   Copilot requires the following service ports:
 
@@ -64,6 +77,7 @@ To subscribe to a CoPilot offer:
         -   UDP port 5000 for Remote Syslog Service
 
         For the UDP ports, change the default inbound rule of 0.0.0.0/0 to only the IP addresses of your Aviatrix gateways. For port 443, you can allow only your and other trusted user's IP addresses.
+
 
 5.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
@@ -129,17 +143,15 @@ To perform an initial setup of CoPilot:
 
     |copilot_login_customer_id|
 
-    You are now successfully logged in to CoPilot.
+    **Note:** If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, release the CoPilot license of the current instance first. To release the license, in CoPilot under Settings->Licensing, click the **RESET** button.
 
-    If you haven't already done so, you can enable the syslog service and Netflow logging for CoPilot in your controller as described below.
+6.  **(If you are **NOT** prompted to add a data disk)** If you are not prompted to add a data disk, skip to step 8 (to verify connectivity with your controller).
 
-    **Note:** When CoPilot first launches, the version number is based on the version in the image, but within an hour the CoPilot version will be updated.
+7.  **(If you are prompted to add a data disk**) If you are prompted to add a data disk, select the disk/volume you created for storage for CoPilot and click START. When the process is complete, click FINISH.
 
-    **Note:** If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, release the CoPilot licence of the current instance first. To release the license, in CoPilot under Settings->Licensing, click the **RESET** button.
+8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
-6.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
-
-7.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+9.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
     a.  Log in to Aviatrix Controller.
 
@@ -149,7 +161,7 @@ To perform an initial setup of CoPilot:
 
     You should start seeing NetFlow in CoPilot after a few minutes.
 
-8.  (For remote syslog service) To enable syslog for performance monitoring in CoPilot, ensure that the controller is configured to specify CoPilot as the loghost server.
+10. (For remote syslog service) To enable syslog for performance monitoring in CoPilot, ensure that the controller is configured to specify CoPilot as the loghost server.
 
     a.  Log in to Aviatrix Controller.
 
@@ -211,8 +223,48 @@ Enable FlowIQ
  
 Deployment is complete. At this point your CoPilot is set up and ready to use. You should start seeing NetFlow in less than 5 minutes. Note that when you launch CoPilot at first your version number will be based on the version in the image. Within an hour, the CoPilot version will be updated.
 
+
+CoPilot Disk (Volume) Management 
+================================
+
+Allocate data disks (volumes) to your Aviatrix CoPilot deployment to be used for expandable storage.
+
+When you initially provision CoPilot (from your cloud service provider), you add a disk (volume) to be used for CoPilot storage. You are required to add at least one disk (volume). You create the data disk (volume) in your CSP account and attach it to your CoPilot instance. During instance provisioning, there is no minimum requirement for the disk/volume you add. You can choose the disk type (volume type) you want. You will be able to add more storage after deployment.
+
+When you newly launch the CoPilot instance, the initial setup process automatically detects the disk/volume you attached during instance provisioning. An add-disk process prompts you to confirm the disk/volume to use and then formats and attaches your disk(s). A logical disk/volume is created from all physical disks (volumes) you added during provisioning. Note that CoPilot comes with a 25GB root disk.
+
+The storage you need for CoPilot can increase based on several factors including the number of Aviatrix gateways launched and the type and volume of traffic in your network. When you need more storage, you can add additional disks (volumes) by using the CoPilot > Settings > Resources page (Add Additional Disks). For instructions, see `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#add-a-disk-volume-for-copilot-storage-after-deployment>`_.
+
+After you allocate new disks (volumes), you can only increase storage (you cannot decrease storage).
+
+Disk (volume) management for expandable storage became available with the release of Aviatrix CoPilot image version 1.5.1. Prior to CoPilot image version 1.5.1, images had a static disk of 2 TB.
+
+
+Add a Disk (Volume) for CoPilot Storage after Deployment
+========================================================
+
+Add a data disk (volume) to your Aviatrix CoPilot deployment to be used for expandable storage. For information about expandable storage, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_.
+
+This procedure assumes you have a running CoPilot and want to add more storage (add a data disk/volume) above and beyond the storage you added when you first provisioned the CoPilot instance (from your CSP).
+
+To add a data disk (volume) for CoPilot expandable storage after deployment:
+
+1.  Log in to your CSP account and create the disk (volume) you want to add. Choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements.
+
+2.  Attach the disk (volume) to your CoPilot instance. Do *not* reboot the instance (a disk can be dynamically added to an instance on any CSP without rebooting).
+
+3.  After you receive confirmation from the CSP that the disk is attached, log in to CoPilot.
+
+4.  Go to CoPilot > Settings > Resources and click Add Additional Disk. If you do not see the disk (volume) you created in the list, press the refresh icon.
+
+5.  Select the disk/volume you created and click START.
+
+6.  When the process is complete, click FINISH.
+
+
 System Design Considerations 
 ==================================
+
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
 

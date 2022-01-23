@@ -222,7 +222,7 @@ Examples of Palo Alto Networks API used:
 
 ::
 
-    https://54.149.55.193/api/?password=Aviatrix123%23&type=keygen&user=apiadmin
+    https://54.149.55.193/api/?password=password&type=keygen&user=apiadmin
 
 2. get route tables:
 

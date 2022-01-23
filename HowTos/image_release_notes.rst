@@ -2,12 +2,16 @@
 Image Release Notes
 =======================================
 
-****Next Controller image is scheduled for November 2021****
+Controller Images: AWS AMI – Version 110421 (11/8/2021)
+======================================================
 
-****Next Gateway image is scheduled for November 2021****
+- Added support for AWS IMDSv2.
+ 
+- Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
 
+- Closed potential vulnerability in Ubuntu.
 
-Controller Images: AWS AMI – Version 100621 (10/13/21)
+Controller Images: AWS AMI – Version 100621 (10/13/2021)
 ======================================================
 
 This release addresses vulnerabilities fixed by Apache version 2.4.51.

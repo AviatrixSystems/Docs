@@ -22,7 +22,7 @@ Method 1: Configure Fortigate Firewall via User Data
 Follow the Aviatrix Firewall Network (FireNet) workflow
 to `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. to launch the firewall instance.
 
-Go to Aviatrix Controller's console -> Firewall Network  -> Step -> Step 7a Launch & Associate Firewall Instance
+To Configure FortiGate using Custom Data, go to the Aviatrix Controller -> Firewall Network  -> Setup -> Launch & Associate Firewall Instance.
 
 Fill in the required fields. Click Advanced. Fill in the following parameters.
 
@@ -37,12 +37,12 @@ Sample Fortigate Bootstrap Configuration to configure firewall "Allow-all" polic
     ::
 
         # Simple Example Fortigate Bootstrap Configuration
-        # Not Necessary Fullfil the Requirement for any Customer
+        # Not Necessary Fulfill the Requirement for any Customer
 
         # Login Username and Password
         config system admin
             edit admin
-                set password Aviatrix123#
+                set password <password>
         end
 
         # System Hostname
@@ -103,7 +103,7 @@ Sample Fortigate Bootstrap Configuration to configure firewall "Allow-all" polic
 
 Launch the instance. Wait for 15 minutes for it to boot up and initialize.
 
-Login to the HTTPS interface of the public IP with username "admin", password "Aviatrix123#"
+Login to the HTTPS interface of the public IP with username "admin" and the password specified in the example Fortigate Bootstrap Configuration. For initial Fortigate login information, go to `Credentials for FortiGate Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417531104781>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 Method 2: Configure Fortigate using Azure Blob
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,10 +128,6 @@ Login to Azure's console and create a storage account, and private container in 
 **2.1** The example init.conf file contains the "Allow All" setup. To download the file, click :download:`init.txt <fortigate_bootstrap_example_media/init-azure.txt>`.
 
 **2.2** For the example license.lic file (optional), click :download:`license.txt <fortigate_bootstrap_example_media/license.lic>`.
-
-.. Note::
-
-  In the example, the password is set to Aviatrix123#. You can customize it.
 
 **2.3** upload these two files in the blob. Please follow Step 4 in `this <https://docs.fortinet.com/document/fortigate/6.0.0/deploying-fortigate-on-azure/61731/bootstrapping-the-fortigate-cli-and-byol-license-at-initial-boot-up-using-user-data>`_ guide.
 
@@ -159,7 +155,7 @@ Example Screenshot:
 
 Launch the instance. Wait for 15 minutes for it to boot up and initialize. Please make sure to verify the RFC 1918 and Internet static route in Fortigate firewall.
 
-Login to the HTTPS interface of the public IP with username "admin", password "Aviatrix123#"
+Login to the HTTPS interface of the public IP with username "admin" and the password specified in the example Fortigate Bootstrap Configuration. For initial Fortigate login information, go to `ZENDESK_TITLE <ZENDESK_TITLE>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
 Ready to go!
