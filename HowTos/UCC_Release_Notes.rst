@@ -2,6 +2,81 @@
 Release Notes
 =======================================
 
+6.6.5224 (01/23/2022) 
+=====================
+
+**Enhanced Features in Release 6.6**
+
+- Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create spoke gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled spoke gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spoke_gateway_external.html>`_. 
+- Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunneling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow>`_. 
+- Added support for AWS TGW Connect over Direct Connect. Amazon Web Services (AWS) enables AWS customers to integrate their Software Defined Wide Area Network (SD-WAN) devices with AWS Transit Gateway and AWS Direct Connect so they can use their existing SD-WAN devices to connect their on-premises networks to an AWS Transit Gateway. In support of this, Aviatrix enables you to create one or multiple Transit Gateway Connect attachments over Direct Connect. You can also create Transit Gateway Connect peer attachments. For instructions, see the topic `Enable AWS TGW connect over Direct Connect <https://docs.aviatrix.com/HowTos/tgwconnect.html>`_. 
+- Added support for Aviatrix Controller Security Assertion Markup Language (SAML) based authentication user VPN access in Azure. For instructions, see the topic `Azure Sample Authorization VPN Access <https://docs.aviatrix.com/HowTos/azure_saml_auth_vpn_access.html>`_. 
+- Added support for FireNet with PAN in AWS China. 
+- Added support for Checkpoint integration with private SSH keys. 
+
+**UI Enhancements in Release 6.6**
+
+- Improved FireNet and Multi-Cloud Transit workflows reducing clicks and navigation steps.
+- Decommissioning and Renaming of CLOUDWAN to CLOUDN.
+- Notification bar includes message history.
+- Guided “What’s New” information for first Aviatrix Controller user login.
+- Launch CoPilot from the Aviatrix Controller App Drawer.
+- Enable daily backup added to notification menu.
+- Use consistent naming in action menu and config box for the list view of Transit Gateway.
+
+**Changed Behaviors in Release 6.6**
+
+- The primary gateway will always be active to forward traffic to on-prem, unless its tunnel to on-prem goes down. When its tunnel to on-prem comes up, it will start to forward the traffic again. This is different from 6.5 release and before where when forwarding failover to HA gateway, it won't switch back to primary gateway when its tunnel comes up. 
+- Before 6.6, when BGP ECMP is enabled, routes from different domain can be combined to form ECMP at gateway. This is incorrect behavior and is fixed in 6.6, such that only BGP routes from the same domain can be combined for ECMP. 
+
+**Upgrade Behaviors and Restrictions in Release 6.6**
+
+- To upgrade to 6.6, you must manually enter “6.6” in the Aviatrix Controller upgrade window. 
+- You cannot rollback to Aviatrix version 6.5 after upgrading to 6.6.
+- The 6.6 release introduces a behavior change in the Multi-Cloud Transit Active-Standby Site2Cloud behavior, if the setting is enabled.  After a failover, when the primary gateway is back up, the traffic is switched over automatically back to the primary Site2Cloud connection. This brings more predictability and fits into the model of most on-prem firewalls. In 6.6, this behavior cannot be adjusted. If Active-Standby is disabled (which is the default setting), there is no behavior change.  If you have questions about this behavior, please contact your Aviatrix account team.
+
+**Known Issues in Release 6.6**
+
+- Cannot add more than 2 remote and 2 local subnet pair tunnels to a Site2Cloud policy based connection with the Aviatrix Controller.
+
+  - Workaround: Use Site2Cloud to delete or add new subnet pair tunnels to a Site2Cloud policy based connection.  
+
+**Issues Corrected in Release 6.6**
+
+- **AVX-14515** - Exception seen when configuring vendor integration with a Palo Alto Firewall VM which has no route tables.
+- **AVX-14568** - If there are any GWs that are not reachable by the controller before the Controller HA Migration starts, the control planes of these GWs will be out of sync because there will be an implicit control-plane certificate re-bootstrap as a part of Control HA Migration process. The issue exists before 6.5.2835 (exclusive) and all 6.4 releases. 
+- **AVX-14754** - When Controller Security Group Management is enabled and launching a gateway causes controller SG to reach limit, it will show correct error "The maximum number of rules per security group has been reached. 
+- **AVX-14822** - Controller Security Group Management will add gateway IP rule to customer attached controller SGs as well as controller created SGs. 
+- **AVX-15180** - Allows you to configure default route as destination CIDR in customized SNAT. 
+- **AVX-15454** - Deleted dependency of storage account for Azure China gateways. 
+- **AVX-15639** - When replacing a gateway using image upgrade the new gateway was missing the Aviatrix-Created-Resource tag. 
+- **AVX-15651** - Incorrect existing references to default Aviatrix AWS IAM role names. 
+- **AVX-15704** - While creating an IKEv2 enabled site2cloud connection, you will see "Failed to establish a new connection" error.snat 
+- **AVX-15978** - The conntrack "allow all" rule should always be placed above the "drop all" rule in the order of operations.
+- **AVX-16100** - You can configure DNAT on transit GW, either ActiveMesh or non-ActiveMesh connection. 
+- **AVX-16375** - For policy based site2cloud connection, if one of the s2c tunnel is down on a transit gateway, traffic from attached spoke, or peering transit, or AWS TGW to the transit gateway will be dropped. 
+- **AVX-16450** - Addressed issues with CloudN registration in some scenarios. 
+- **AVX-16486** - Improved IPSec performance on high latency links. 
+- **AVX-16494** - Performance optimization in monitoring IPSec states. 
+- **AVX-16496** - When upgrading a standalone CloundN implementation:
+
+  - For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
+  - For CloudN versions >= 6.5.2613:  Please follow the `Internet Acces <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access>`_ instructions. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
+
+- **AVX-17027** - The UI upgrade progress bar getting stuck at 99% during standalone CloudN upgrade. 
+- **AVX-17302** - Secondary cidrs in OCI VCN not advertised to transit gateway. 
+- **AVX-17348** - OCI is not yet compatible with the 6.6 release. Until a new image is available, initializing your controller to the latest will fail. As a workaround, initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue. 
+- **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
+- **AVX-17432** - For route based, unmapped S2C, when the connection is down, the routes for the remote CIDRs are still associated with the connection, i.e. the routes are not removed. 
+- **AVX-17512** - Addressed an issue in NAT programming on Spoke-HA when sync-to-ha is enabled. 
+- **AVX-17582** - Closed potential security issue the controller UI console. 
+- **AVX-17628** - Closed potential SSH security issue for users upgrading from previous releases. 
+- **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC is incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.  
+- **AVX-17849** - Existing issues in Flightpath for Azure NSG's. 
+- **AVX-18148** - Excessive load on cloudxd induced due to rsyslog monitoring certain user visible changes.Excessive email alerts generated about rsyslog while trying to reduce rsyslog monitoring load on core processes. 
+- **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests. 
+- **AVX-18164** - The performance of the API to list the security policies of a gateway is not satisfactory. 
+
 6.5.2898 (01/11/2022)
 =====================
 
