@@ -7,8 +7,8 @@ Release Notes
 
 **Enhanced Features in Release 6.6**
 
-- Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create spoke gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled spoke gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spoke_gateway_external.html>`_. 
-- Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunneling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow>`_. 
+- Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create spoke gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled spoke gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_. 
+- Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunneling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html>`_. 
 - Added support for AWS TGW Connect over Direct Connect. Amazon Web Services (AWS) enables AWS customers to integrate their Software Defined Wide Area Network (SD-WAN) devices with AWS Transit Gateway and AWS Direct Connect so they can use their existing SD-WAN devices to connect their on-premises networks to an AWS Transit Gateway. In support of this, Aviatrix enables you to create one or multiple Transit Gateway Connect attachments over Direct Connect. You can also create Transit Gateway Connect peer attachments. For instructions, see the topic `Enable AWS TGW connect over Direct Connect <https://docs.aviatrix.com/HowTos/tgwconnect.html>`_. 
 - Added support for Aviatrix Controller Security Assertion Markup Language (SAML) based authentication user VPN access in Azure. For instructions, see the topic `Azure SAML Authorization VPN Access <https://docs.aviatrix.com/HowTos/azure_saml_auth_vpn_access.html>`_. 
 - Added support for FireNet with PAN in AWS China. 
@@ -39,7 +39,8 @@ Release Notes
 
 - Cannot add more than 2 remote and 2 local subnet pair tunnels to a Site2Cloud policy based connection with the Aviatrix Controller.
 
-  - Workaround: Use Site2Cloud to delete or add new subnet pair tunnels to a Site2Cloud policy based connection.  
+  - Workaround: Use Site2Cloud to delete or add new subnet pair tunnels to a Site2Cloud policy based connection. 
+- **AVX-17348** - OCI is not yet compatible with the 6.6 release. Until a new image is available, initializing your controller to the latest will fail. As a workaround, initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue. 
 
 **Issues Corrected in Release 6.6**
 
@@ -65,7 +66,6 @@ Release Notes
 
 - **AVX-17027** - The UI upgrade progress bar getting stuck at 99% during standalone CloudN upgrade. 
 - **AVX-17302** - Secondary cidrs in OCI VCN not advertised to transit gateway. 
-- **AVX-17348** - OCI is not yet compatible with the 6.6 release. Until a new image is available, initializing your controller to the latest will fail. As a workaround, initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue. 
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
 - **AVX-17432** - For route based, unmapped S2C, when the connection is down, the routes for the remote CIDRs are still associated with the connection, i.e. the routes are not removed. 
 - **AVX-17512** - Addressed an issue in NAT programming on Spoke-HA when sync-to-ha is enabled. 
