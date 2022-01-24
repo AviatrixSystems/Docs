@@ -39,8 +39,11 @@ Release Notes
 
 - Cannot add more than 2 remote and 2 local subnet pair tunnels to a Site2Cloud policy based connection with the Aviatrix Controller.
 
-  - Workaround: Use Site2Cloud to delete or add new subnet pair tunnels to a Site2Cloud policy based connection. 
-- **AVX-17348** - OCI is not yet compatible with the 6.6 release. Until a new image is available, initializing your controller to the latest will fail. As a workaround, initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue. 
+  - Workaround: Use Site2Cloud to delete or add new subnet pair tunnels to a Site2Cloud policy based connection.
+
+- OCI is not yet compatible with the 6.6 release. Until a new image is available, initializing your controller to the latest will fail.
+
+  - Workaround: initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue.
 
 **Issues Corrected in Release 6.6**
 
