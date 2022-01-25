@@ -26,14 +26,13 @@ Release Notes
 
 **Changed Behaviors in Release 6.6**
 
-- The primary gateway will always be active to forward traffic to on-prem, unless its tunnel to on-prem goes down. When its tunnel to on-prem comes up, it will start to forward the traffic again. This is different from 6.5 release and before where when forwarding failover to HA gateway, it won't switch back to primary gateway when its tunnel comes up. 
+- The 6.6 release introduces a behavior change in the Multi-Cloud Transit Active-Standby Site2Cloud behavior, if the setting is enabled. After a failover, when the primary gateway is back up, the traffic is switched over automatically back to the primary Site2Cloud connection. This brings more predictability and fits into the model of most on-prem firewalls. In 6.6, this behavior cannot be adjusted. If Active-Standby is disabled (which is the default setting), there is no behavior change. If you have questions about this behavior, please contact your Aviatrix account team.
 - Before 6.6, when BGP ECMP is enabled, routes from different domain can be combined to form ECMP at gateway. This is incorrect behavior and is fixed in 6.6, such that only BGP routes from the same domain can be combined for ECMP. 
 
 **Upgrade Behaviors and Restrictions in Release 6.6**
 
 - To upgrade to 6.6, you must manually enter “6.6” in the Aviatrix Controller upgrade window. 
 - You cannot rollback to Aviatrix version 6.5 after upgrading to 6.6.
-- The 6.6 release introduces a behavior change in the Multi-Cloud Transit Active-Standby Site2Cloud behavior, if the setting is enabled.  After a failover, when the primary gateway is back up, the traffic is switched over automatically back to the primary Site2Cloud connection. This brings more predictability and fits into the model of most on-prem firewalls. In 6.6, this behavior cannot be adjusted. If Active-Standby is disabled (which is the default setting), there is no behavior change.  If you have questions about this behavior, please contact your Aviatrix account team.
 
 **Known Issues in Release 6.6**
 
