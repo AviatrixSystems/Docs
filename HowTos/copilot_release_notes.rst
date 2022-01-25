@@ -11,6 +11,24 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
+
+CoPilot Release 1.6.0 (1/25/2022)
+---------------------------------
+
+-   (Topology) Packet capture from Topology — You can now capture packets on any gateway. In a topology map, click on any gateway where you wish to do packet capture, click DIAG in the node properties pane, and then click the PACKET CAPTURE tab. In the Packet Capture page, you can further filter on host and port number and specify the capture time. You can also search and filter by time, source address, destination address, source port, destination port, protocol, flags, length, and info. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. The pcap file can be viewed by Wireshark.
+
+-   (FlowIQ) You can now filter for information by gateway name using the new FlowIQ fields: src_gateway_name (Source Gateway), dest_gateway_name (Destination Gateway), and gw_gateway (Gateway Name).
+
+-   (ThreatIQ) Custom ThreatIQ IP List — Network administrators can now maintain a list of IP addresses they consider to be threat IPs. For each IP address in the custom threat IP list, you can specify a custom severity, classification, color (for display in lists), and informational note. When a custom threat-IP list is added, and those threat IPs are detected, the threats are shown in the ThreatIQ map on the Dashboard. The custom threat IPs are handled by Aviatrix Controller in the same manner as the threat IPs identified through ThreatIQ with ThreatGuard (detection, blocking, and unblocking functionality is the same). In the current release, custom ThreatIQ IP lists must be created in CoPilot under ThreatIQ > Custom Threat List.
+
+-   Support for expanding existing physical volumes — For data disks you already allocated to your CoPilot deployment, you can increase their size. After increasing their size via the CSP, log into CoPilot and go to Settings > Resources. In the Resources page, locate the physical volume in the Disk Usage table associated with the resized data disk and click its corresponding RESIZE button. CoPilot resizes the physical volume to match the size of your expanded disk. TIP: In the Disk Usage table, click the detail control ( ˅ ) to the left of the Filesystem column for each physical volume until you locate the enabled RESIZE button.
+
+-   (Usability) Latency Charts now have cross hairs that are synced across all visible charts for easy correlation between metrics.
+
+-   Performance improvements.
+
+-   Minor bug fixes.
+
 CoPilot Release 1.5.1 (1/12/2022)
 ---------------------------------
 
