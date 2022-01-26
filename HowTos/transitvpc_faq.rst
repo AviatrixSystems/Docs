@@ -70,15 +70,10 @@ How can I fit an egress firewall into the Aviatrix Transit solution?
 
 There are two types of requirements.
 
-1. Egress Control Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Egress Control Policies
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your compliance requires egress policies and you have currently implemented AWS NAT gateways, consider using `Aviatrix Egress Control <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_, it is the most efficient way to provide a FQDN filter for all TCP/UDP protocols.  
-
-2. Bring your own Firewall
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If your security team requires inline IDS/IPS firewall function, consider `Transit DMZ architecture, <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ which maximizes the firewall appliance performance by decoupling networking and security. 
 
 
 What are the automation methods for Transit Network?
