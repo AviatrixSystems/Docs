@@ -237,6 +237,8 @@ The storage you need for CoPilot can increase based on several factors including
 
 After you allocate new disks (volumes), you can only increase storage (you cannot decrease storage).
 
+For data disks you already allocated to your CoPilot deployment, you can increase their size. For instructions, see Expand a Disk (Volume) for CoPilot Storage.
+
 Disk (volume) management for expandable storage became available with the release of Aviatrix CoPilot image version 1.5.1. Prior to CoPilot image version 1.5.1, images had a static disk of 2 TB.
 
 
@@ -260,6 +262,28 @@ To add a data disk (volume) for CoPilot expandable storage after deployment:
 5.  Select the disk/volume you created and click START.
 
 6.  When the process is complete, click FINISH.
+
+
+Expand a Disk (Volume) for CoPilot Storage
+==========================================
+
+For data disks you already allocated to your CoPilot deployment, increase their size.
+
+To expand a disk (volume) that is allocated to your CoPilot deployment:
+
+1.  Log in to your CSP account and locate the disk (volume) attached to your CoPilot instance that you want to expand for CoPilot storage.
+
+2.  Increase the size of the disk (volume).
+
+3.  After you receive confirmation from the CSP that the disk is resized, log in to CoPilot.
+
+4.  Go to CoPilot > Settings > Resources.
+
+5.  In the Disk Usage table, expand the tree-pane icon (shown) for the physical volume associated with your resized data disk.
+
+    |tree_pane_icon_disk_usage_table|
+
+6.  Click the enabled RESIZE button. CoPilot resizes the physical volume to match the size of your expanded disk.
 
 
 System Design Considerations 
@@ -309,6 +333,9 @@ Example - Deploy Aviatrix CoPilot in GCP
 
 .. |copilot_login_service_account| image:: copilot_getting_started_media/copilot_login_service_account.png
    :scale: 100%
+
+.. |tree_pane_icon_disk_usage_table| image:: copilot_getting_started_media/tree_pane_icon_disk_usage_table.png
+   :scale: 50%
 
 .. |copilot_login_user_account| image:: copilot_getting_started_media/copilot_login_user_account.png
    :scale: 100%

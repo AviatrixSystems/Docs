@@ -446,7 +446,7 @@ While the ThreatIQ Threats view provides visibility into the threats detected in
 
 - **Block threat-IP traffic.** In ThreatGuard, you can enable blocking of threat-IP traffic. To block threat-IP traffic, alerts must first be enabled. When blocking is enabled, the Controller upon first detecting a threat IP in a traffic flow, instantiates security rules (stateful firewall rules) on all gateways that are within that flow (all gateways within the VPC/VNET/VCN) to immediately block the threat-IP associated traffic. If the threat IP is removed from the database of the threat-IP source, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the security rules for that specific threat IP remain enforced. NOTE: If you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats (that is, all threat IPs) detected up to that point.
 
-You must have a CoPilot user account that has ``all_write`` or ``all_security_write`` permissions to be able to enable/disable ThreatGuard alerts and blocking.
+You can add a custom list of IP addresses (you consider threat IPs) to the database of known malicious hosts used by ThreatIQ with ThreatGuard. For information, see Add a Custom ThreatIQ IP List.
 
 Enable ThreatGuard Alerts
 ---------------------------
@@ -479,6 +479,36 @@ To enable ThreatGuard blocking:
 3. Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
 4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNET/VCN will block the associated traffic. You can be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled. By default, all VPCs/VNets/VCNs block. You can then use the Allow/Deny List to specify which ones will not block.
 5. (Optional) Disable blocking. **Note:** When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats detected up to that point.   
+
+Add a Custom ThreatIQ IP List 
+-----------------------------
+
+Add a custom list of IP addresses to the database of known malicious hosts used by ThreatIQ with ThreatGuard. The custom threat IPs are handled by Aviatrix Controller in the same manner as the threat IPs identified through ThreatIQ with ThreatGuard (detection, alerts, blocking, and unblocking functionality is the same).
+
+You must log in to CoPilot with a user account that has `all_write` or `all_security_write` permissions to add, modify, or delete a custom ThreatIQ IP list.
+
+To add a custom ThreatIQ IP list:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click ThreatIQ, and then click the Custom Threat List tab.
+
+3.  Click **Add Threat IP** and enter the details:
+
+    -   IP — An IP address you consider a threat IP.
+    -   Severity — Any term you want to use that indicates the severity of this threat IP.
+    -   Color — The color you want to associate with this threat IP. The color is used in lists and charts of the ThreatIQ dashboard.
+    -   Classification — Any term you want to use that indicates the classification of this threat IP.
+    -   Info — Any custom note you want to state for this threat IP.
+4.  To add more IP addresses to the list, click the plus sign and enter the details for each one.
+
+5.  Click **Confirm**.
+
+    The IP addresses are added to the database of known malicious hosts used by ThreatIQ with ThreatGuard.
+
+    To change a threat IP entry, click the pen icon, double-click on a value to change it, and click the save icon. Threat records generated prior to the change retain earlier values (for example, if you change the color from blue to red, threat records generated before the color change still show blue).
+
+    To delete an IP address from the list, click the trash icon. The IP address is removed from the database of known malicious hosts used by ThreatIQ with ThreatGuard. If ThreatGuard blocking has been applied for this threat IP, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked.
 
 
 Working with Reports
