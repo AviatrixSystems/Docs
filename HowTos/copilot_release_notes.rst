@@ -12,6 +12,19 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 
+
+CoPilot Release 1.6.1 (1/26/2022)
+---------------------------------
+
+-   Search and filter for instance tags — You can now search and filter for instance tags in Topology (feature available starting from Controller release 6.6). To filter for instance tags, from Topology, click the Filter slider to enable it. In the key list, under the CSP Tags category, select the instance tag to filter for.
+
+-   Added auto refresh to the Resources page (Settings).
+
+-   Performance improvements.
+
+-   Minor bug fixes.
+
+
 CoPilot Release 1.6.0 (1/25/2022)
 ---------------------------------
 
