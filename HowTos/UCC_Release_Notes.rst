@@ -44,7 +44,7 @@ Release Notes
 
   - Workaround: initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue.
 
-- The controller's database version and schema are changed in 6.6, you might notice that there will be a brief period of error messages in the controller's log while this change is happening. The errors should stop without user intervention after the upgrade is complete. 
+- The controller's database version and schema are changed in 6.6. You might notice that there will be a brief period of error messages in the controller's log while this change is happening. The errors should stop without user intervention after the upgrade is complete. 
 
 **Issues Corrected in Release 6.6**
 
