@@ -71,7 +71,7 @@ The diagram below illustrates the high performance encryption between Transit VP
 What are the performance benchmarks? 
 ---------------------------------------------
 
-Insane mode is available on AWS for C5 series and C5n series. It is also available on Azure. For more performance test results and how to
+Insane mode is available on AWS and Azure. For more performance test results and information about how to
 tune your environment to get the best performance, check out `this document. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_
 
 How does Insane Mode work?
