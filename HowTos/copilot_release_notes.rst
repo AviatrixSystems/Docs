@@ -13,6 +13,12 @@ For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Ima
 
 
 
+CoPilot Release 1.6.2 (1/28/2022)
+---------------------------------
+
+-   **Security fix**: This patch mitigates a vulnerability that would allow an attacker to escalate user permissions.
+
+
 CoPilot Release 1.6.1 (1/26/2022)
 ---------------------------------
 
