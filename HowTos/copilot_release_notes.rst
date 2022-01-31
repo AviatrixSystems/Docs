@@ -12,6 +12,11 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 
+CoPilot Release 1.6.3 (1/31/2022)
+---------------------------------
+
+-   **Security fix**: This patch mitigates a vulnerability that would allow an attacker to escalate user permissions.
+
 
 CoPilot Release 1.6.2 (1/28/2022)
 ---------------------------------
