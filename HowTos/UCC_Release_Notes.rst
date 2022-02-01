@@ -3303,7 +3303,7 @@ UserConnect-061915
 UserConnect-061015
 ==================
 
--  Support operator account where operator can only access dashboard.
+-  Support operator account where the operator can only access dashboard.
 
 -  Support disconnect user from dashboard page.
 
