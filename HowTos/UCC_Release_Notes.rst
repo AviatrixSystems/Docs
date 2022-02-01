@@ -3105,7 +3105,7 @@ UserConnect-112415
 -  Add LDAP user search capability when Test LDAP Configuration to
    further test drive the correctness of a LDAP configuration.
 
--  Enable gateway High Availability capability with a pair of gateway
+-  Enable the gateway High Availability capability with a pair of gateway
    instances in active and hot standby mode. To enable, go to VPC/VNet
    -> VPC HA.
 
