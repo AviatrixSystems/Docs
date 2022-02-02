@@ -3374,7 +3374,7 @@ UserConnect-041715
 UserConnect-032315
 ==================
 
--  Support user profile based security policies.
+-  Support user profile-based security policies.
 
 -  Support scale out and highly available OpenVPN® solutions for direct
    access to VPCs.
