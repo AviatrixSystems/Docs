@@ -3,16 +3,16 @@
    :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
 ===============================
-Multi Cloud Global Transit FAQ
+Multi-Cloud Global Transit FAQ
 ===============================
 
 
 Why should I choose Transit architecture?
 -------------------------------------------
 
-Transit architecture is about building connectivity between cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit VPC. Everything else (the Spoke VPCs to on-prem traffic) is routed through the Transit VPC.
+Transit architecture is about building connectivity between the cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit VPC. Everything else (the Spoke VPCs to on-prem traffic) is routed through the Transit VPC.
 
-The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes from days to weeks.
+The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPSEC over the Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes days to weeks.
 
 How do I configure a Global Transit Network with Aviatrix solution?
 --------------------------------------------------------------------
@@ -30,9 +30,9 @@ Yes. All Aviatrix Transit Network should be deployed in ActiveMesh mode. To lear
 Should I deploy one Transit Group for Dev and one for Prod?
 ------------------------------------------------------------
 
-If your reason for two Transit hubs is security and a smaller blast radius, you need not worry about these when using Aviatrix solution. Simply create two Security Domains in your deployment. 
+If your reason for two Transit hubs is security and a smaller blast radius, you need not worry about these when using the  Aviatrix solution. Simply create two Security Domains in your deployment. 
 
-I have two regions and two Direct Connects, how do I build a multi region Transit solution?
+I have two regions and two Direct Connects, how do I build a multi-region Transit solution?
 -------------------------------------------------------------------------------------------------
 
 Starting from release 4.1, `inter region transit network <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#connecting-transit-gateways-in-multi-regions-multi-cloud>`_ can be connected directly. Follow the instructions `here <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#transit-gateway-peering>`_. 
