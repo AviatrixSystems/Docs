@@ -3349,7 +3349,7 @@ UserConnect-050915
 UserConnect-050215
 ==================
 
--  Support policy based routing on the VPN server to allow enterprise to
+-  Support policy-based routing on the VPN server to allow enterprise to
    re-direct traffic to its own backbone.
 
 UserConnect-042315
