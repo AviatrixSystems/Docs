@@ -17,7 +17,7 @@ Most Recent IR
 20. Aviatrix Controller and Gateways - Privilege Escalation (CVE-2021-4034 and CVE-2022-0185)
 ----------------------------------------
 
-**Date** 03/02/2022
+**Date** 02/03/2022
 
 **Risk Rating** Medium
 
