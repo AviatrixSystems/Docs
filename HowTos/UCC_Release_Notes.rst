@@ -2800,7 +2800,7 @@ UserConnect-072216
    re-login)**
 
 -  Allow users to specify their own ELB names when creating AWS/GCloud
-   VPN gateways. If no ELB name specified by users, Controller will
+   VPN gateways. If no ELB name is specified by users, the Controller will
    provide a default ELB name.
 
 -  Support AWS IAM role. When AWS IAM role is used, there is no need to
