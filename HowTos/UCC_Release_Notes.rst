@@ -77,6 +77,7 @@ Release Notes
 - **AVX-17628** - Closed potential SSH security issue for users upgrading from previous releases. 
 - **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC is incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.  
 - **AVX-17849** - Existing issues in Flightpath for Azure NSG's. 
+- **AVX-18047** - Jumbo Frame support on the GRE connection not enabled. 
 - **AVX-18148** - Excessive load on cloudxd induced due to rsyslog monitoring certain user visible changes.Excessive email alerts generated about rsyslog while trying to reduce rsyslog monitoring load on core processes. 
 - **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests. 
 - **AVX-18164** - The performance of the API to list the security policies of a gateway is not satisfactory. 
