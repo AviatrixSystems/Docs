@@ -55,6 +55,7 @@ If you are starting from a new Controller, follow these steps to get started:
 
 #. Log in to the Controller with the `admin` username and the default password
 #. Follow the initial steps to get the Controller up and running.
+
    #. Shut down the older controller
    #. Transfer the IP address to the new controller
    #. Proceed to configure the new controller by entering an email address
