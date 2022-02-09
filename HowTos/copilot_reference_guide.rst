@@ -191,7 +191,7 @@ To perform diagnostics from Topology (from an Aviatrix Gateway):
 View Topology Changes (Topology Replay)
 ---------------------------------------
 
-This section describes how to use the Topology Replay feature of Aviatrix CoPilot. You use Topology Replay to see what changed in your environment and when it changed. See also Topology Replay Properties.
+This section describes how to use the Topology Replay feature of Aviatrix CoPilot. You use Topology Replay to see what changed in your environment and when it changed. This feature can be used, for example, shortly after a problem occurs in the network to see if recent changes to network constructs may have caused the problem. See also Topology Replay Properties.
 
 Topology Replay shows when route, credential, and other metrics in your cloud network constructs changed. The changes are shown for all constructs regardless if they are located in one or multiple clouds. You can view the changes (additions, modifications, and deletions) that were made to the properties of subnets, gateways, and gateway connections. A time series visualization graphs change-set data as points (blue dots) with each change set collected at one-minute intervals. Clicking on a change set in the time series panel loads it into the topology map and changes details pane where you can inspect the data. For more information about UI controls in topology replay, see Topology Replay Properties.
 
