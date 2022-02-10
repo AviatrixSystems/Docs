@@ -18,7 +18,8 @@ Release Notes
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
 - **AVX-17620** - Improved stateful firewall duplicate rule checks if duplicate rules are already present in the system. 
-- **AVX-17332** - While onboarding a Google account either through UI or Terraform, subsequent onboarding attempts with incorrect Google Project ID will display an error. 
+- **AVX-17332** - While onboarding a Google account either through UI or Terraform, subsequent onboarding attempts with incorrect Google Project ID will display an error.
+- **AVX-18148** - Excessive load on cloudxd induced due to rsyslog monitoring certain user visible changes.Excessive email alerts generated about rsyslog while trying to reduce rsyslog monitoring load on core processes.
 - **AVX-18291** - Daily controller backup failing with traceback on command 'tar' returning non-zero exit status. 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long". 
 
@@ -55,6 +56,7 @@ Release Notes
 
 - The 6.6 release introduces a behavior change in the Multi-Cloud Transit Active-Standby Site2Cloud behavior, if the setting is enabled. After a failover, when the primary gateway is back up, the traffic is switched over automatically back to the primary Site2Cloud connection. This brings more predictability and fits into the model of most on-prem firewalls. In 6.6, this behavior cannot be adjusted. If Active-Standby is disabled (which is the default setting), there is no behavior change. If you have questions about this behavior, please contact your Aviatrix account team.
 - Before 6.6, when BGP ECMP is enabled, routes from different domain can be combined to form ECMP at gateway. This is incorrect behavior and is fixed in 6.6, such that only BGP routes from the same domain can be combined for ECMP. 
+- Aviatrix no longer supports non-ActiveMesh transit network configurations beginning in release 6.6. Aviatrix recommends that if you are running version 6.5 or earlier, you upgrade to version 6.5.1922 or a higher 6.5 version before upgrading to 6.6.
 
 **Upgrade Behaviors and Restrictions in Release 6.6**
 
