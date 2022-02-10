@@ -2,6 +2,33 @@
 Release Notes
 =======================================
 
+6.6.5230 (02/09/2022)  
+====================== 
+
+**Issues Corrected in Release 6.6**  
+
+- **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
+- **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long" .
+
+
+6.5.3006 (02/09/2022)  
+====================== 
+
+**Issues Corrected in Release 6.5** 
+
+- **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
+- **AVX-17620** - Improved stateful firewall duplicate rule checks if duplicate rules are already present in the system. 
+- **AVX-17332** - While onboarding a Google account either through UI or Terraform, subsequent onboarding attempts with incorrect Google Project ID will display an error. 
+- **AVX-18291** - Daily controller backup failing with traceback on command 'tar' returning non-zero exit status. 
+- **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long". 
+
+6.4.3008 (02/09/2022)  
+===================== 
+
+**Issues Corrected in Release 6.4** 
+
+- **AVX-17620** - Improved stateful firewall duplicate rule checks if duplicate rules are already present in the system. 
+
 6.6.5224 (01/23/2022) 
 =====================
 
