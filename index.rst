@@ -439,3 +439,8 @@ While all content is searchable, the site is organized into the following sectio
 
    Support/support_center_operations
   
+.. toctree::
+   :maxdepth: 1
+   :caption: Legal Notices
+
+   legal_notices
