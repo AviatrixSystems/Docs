@@ -57,7 +57,7 @@ To subscribe to a CoPilot offer:
 
 4.  Each marketplace will prompt you to configure and launch the CoPilot software. Apply the default configurations for resource settings that are recommmended by your chosen marketplace. For CoPilot instance configurations, you can accept the defaults or change them to suit your business needs. Note the following required CoPilot instance specifications:
 
-    -   **(Storage & Instance) Aviatrix Copilot 1.5.1 image release**:
+    -   (Storage & Instance)
 
         When deploying the Aviatrix CoPilot 1.5.1 image release:
 
@@ -65,9 +65,10 @@ To subscribe to a CoPilot offer:
         -   Attach the disk (volume) to your CoPilot instance. Later, when you newly launch CoPilot, CoPilot will format and attach your disks (a logical disk/volume is created from all physical disks) as part of the initial setup.
         -   CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. The base image will default to these automatic settings. Memory settings are located in CoPilot under Settings > Configuration > Options.
 
-    -   **(Storage & Instance) Pre-1.5.1 image releases ONLY**:
+        When deploying Pre-1.5.1 image releases:
+
         -   For machine/instance/VM type, CoPilot requires a minimum of 8 vCPUs and 32 GB Memory.
-        -   CoPilot requires 2 TB of storage (SSD recommended)
+        -   CoPilot requires 2 TB of storage (SSD recommended).
 
     -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS)
     -   Copilot requires the following service ports:
@@ -87,19 +88,19 @@ To subscribe to a CoPilot offer:
 
 6.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section and assign an EIP to the CoPilot instance.
 
-    Take note of the IP address to use later during initial setup of CoPilot.
+    Take note of the IP address to use later during initial setup.
 
 7.  Start the CoPilot instance/virtual machine.
 
     For example, in the AWS EC2 Dashboard, check the instance checkbox and from the Actions menu, choose Start Instance.
 
-    You are now ready to launch CoPilot in a web browser or from the Aviatrix Controller homepage and perform your initial setup.
+    You are now ready to launch CoPilot in a web browser or from the Aviatrix Controller homepage and perform initial setup.
 
 
 Initial Setup of CoPilot
 ========================
 
-Perform an initial setup of Aviatrix CoPilot after you deploy/launch the CoPilot software in the cloud provider of your choice.
+Perform initial setup of CoPilot after you have launched the instance/virtual machine in the cloud provider environment.
 
 For initial setup of CoPilot, have the following information available:
 
@@ -107,7 +108,7 @@ For initial setup of CoPilot, have the following information available:
 -   The static IP address for your Aviatrix Controller.
 -   The login credentials of your Aviatrix Controller user account.
 -   The login credentials for the user account to be used as the CoPilot service account. If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
--   The CoPilot licence key (obtained from your Aviatrix representative).
+-   The CoPilot license key (obtained from your Aviatrix representative).
 
 This procedure assumes your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). Your CoPilot software instance/virtual machine must also be up and running.
 
@@ -135,19 +136,19 @@ To perform an initial setup of CoPilot:
 
 4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account.
 
-    The CoPilot service account is used to run CoPilot services such as alerts, topology replay, and ThreatGuard (without any user logged in).
+    See see `About CoPilot User Accounts <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-copilot-user-accounts>`_. 
 
     |copilot_login_service_account|
 
-5.  When prompted for **CoPilot Customer ID**, enter your CoPilot licence key.
+5.  When prompted for **CoPilot Customer ID**, enter your CoPilot license key.
 
     |copilot_login_customer_id|
 
-    **Note:** If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, release the CoPilot license of the current instance first. To release the license, in CoPilot under Settings->Licensing, click the **RESET** button.
+    **TIP:** Later, if you decide to terminate your instance of CoPilot and deploy a new instance using the same license key, release the license of the current instance first by clicking **RESET** in Settings > Licensing.
 
-6.  **(If you are **NOT** prompted to add a data disk)** If you are not prompted to add a data disk, skip to step 8 (to verify connectivity with your controller).
+6.  If you are NOT prompted to add a data disk, skip to step 8 to verify connectivity with your controller.
 
-7.  **(If you are prompted to add a data disk**) If you are prompted to add a data disk, select the disk/volume you created for storage for CoPilot and click START. When the process is complete, click FINISH.
+7.  If you are prompted to add a data disk, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
 
 8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
@@ -290,7 +291,7 @@ System Design Considerations
 ==================================
 
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
-- You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network.
+- You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network (configured in the controller).
 
 Example - Deploy Aviatrix CoPilot in GCP
 ========================================
@@ -302,6 +303,8 @@ Example - Deploy Aviatrix CoPilot in GCP
 - Click the button "LAUNCH".
 
 |gcp_copilot_1|
+
+If deploying Pre-1.5.1 image releases:
 
 - Make sure the selected Machine type has at least 8 vCPUs with 32 GB memory.
 
