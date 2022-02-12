@@ -130,13 +130,13 @@ To perform an initial setup of CoPilot:
 
     c.  From the controller homepage, click the CoPilot button in the action bar.
 
-3.  When prompted, enter the login and password of a valid Aviatrix Controller user account and the static IP address for your controller.
+3.  When prompted, enter the username and password of a valid Aviatrix Controller user account and click Login. Enter the static IP address of your controller and click Login.
 
     |copilot_login_user_account|
 
 4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account.
 
-    See see `About CoPilot User Accounts <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-copilot-user-accounts>`_. 
+    See `About CoPilot User Accounts <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-copilot-user-accounts>`_. 
 
     |copilot_login_service_account|
 
@@ -146,9 +146,9 @@ To perform an initial setup of CoPilot:
 
     **TIP:** Later, if you decide to terminate your instance of CoPilot and deploy a new instance using the same license key, release the license of the current instance first by clicking **RESET** in Settings > Licensing.
 
-6.  If you are NOT prompted to add a data disk, skip to step 8 to verify connectivity with your controller.
+6.  If a Data Disk Setup dialog does not appear, skip to step 8 to verify connectivity with your controller.
 
-7.  If you are prompted to add a data disk, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
+7.  In Data Disk Setup, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
 
 8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
@@ -293,8 +293,54 @@ System Design Considerations
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network (configured in the controller).
 
-Example - Deploy Aviatrix CoPilot in GCP
-========================================
+Example - Deploy CoPilot in Microsoft Azure
+===========================================
+
+To deploy CoPilot in Azure:
+
+1.  Log in to your Azure account with your Azure account credentials so that you enter your Azure Portal (portal.azure.com).
+
+2.  Go to the Azure Marketplace at https://azuremarketplace.microsoft.com, and in the search field, search for "Aviatrix CoPilot".
+
+3.  For the **Aviatrix CoPilot** Bring your own license offer, click **Get it now**.
+
+    |cplt_azr_get_now|
+
+4.  If prompted, enter the email address you use for acquiring apps on Azure Marketplace.
+
+    |cplt_azr_email|
+
+5.  In the "Create this app in Azure" dialog, click **Continue**.
+
+    |cplt_azr_create_app|
+
+7.  In the Aviatrix CoPilot page, click the blue **Create** button. If you want to view Azure recommended size choices, click "Start with a pre-set configuration". Do not choose the "Deploy programmatically" option.
+
+    |cplt_azr_create|
+
+8.  In Create a virtual machine, complete the provisioning steps for the Basics section> Specify the subscription, resource group, VM name, and size values and other values as needed for the Project details, Instance details, and Administrator account details sections. Click **Next: Disks**.
+
+9.  You must attach at least one data disk to your CoPilot VM to be used for expandable storage. This is in addition to the 25GB root disk that comes with CoPilot. Click **Create and attach a new disk** or **Attach an existing disk** to add and attach an additional disk.
+
+    |cplt_azr_attach_disk|
+
+10. Specify the disk options you want or click **OK** to accept the default disk options.
+
+11. Click **Next: Networking** and specify the network interface details. For Public IP, click **Create new**. In the Create public IP address dialog, for Assignment, select Static and click **OK**.
+
+12. Complete the rest of the provisioning steps for the Management, Advanced, and Tags sections. 
+
+13. Click **Next: Review + create**. If blank, type your phone number in the Preferred phone number field. If the validation passed, review your settings and click **Create**.
+
+    Verify that your instance is up and running in the Azure console.
+
+14. After the instance is created, and you receive a message that your deployment is complete, click on **Go to resource**. Select the copilot instance name and take note of its External IP address.
+
+15. You are ready to launch CoPilot in your web browser and perform initial setup. See `Initial Setup of CoPilot <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#initial-setup-of-copilot>`_.
+
+
+Example - Deploy CoPilot in Google Cloud Platform
+=================================================
 
 - Go to GCP marketplace.
 
@@ -332,15 +378,30 @@ If deploying Pre-1.5.1 image releases:
    :scale: 50%
 
 .. |copilot_login_customer_id| image:: copilot_getting_started_media/copilot_login_customer_id.png
-   :scale: 100%
+   :scale: 70%
 
 .. |copilot_login_service_account| image:: copilot_getting_started_media/copilot_login_service_account.png
-   :scale: 100%
+   :scale: 70%
 
 .. |tree_pane_icon_disk_usage_table| image:: copilot_getting_started_media/tree_pane_icon_disk_usage_table.png
    :scale: 50%
 
 .. |copilot_login_user_account| image:: copilot_getting_started_media/copilot_login_user_account.png
-   :scale: 100%
+   :scale: 70%
+
+.. |cplt_azr_attach_disk| image:: copilot_getting_started_media/cplt_azr_attach_disk.png
+   :scale: 70%
+
+.. |cplt_azr_create| image:: copilot_getting_started_media/cplt_azr_create.png
+   :scale: 70%
+
+.. |cplt_azr_create_app| image:: copilot_getting_started_media/cplt_azr_create_app.png
+   :scale: 70%
+
+.. |cplt_azr_email| image:: copilot_getting_started_media/cplt_azr_email.png
+   :scale: 70%
+
+.. |cplt_azr_get_now| image:: copilot_getting_started_media/cplt_azr_get_now.png
+   :scale: 70%
 
 .. disqus::
