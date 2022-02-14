@@ -169,8 +169,6 @@ Change to the region  where you would like to install the Aviatrix Controller on
 
 Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
-For more information on Controller instance size selection, refer to `Controller sizing recommendations. <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
-
 2.7 Click `Next`
 ------------------
 
@@ -322,8 +320,6 @@ In addition to Metered AMI, we offer a few others, as shown below. Subscribe to 
 
 Additional Information for Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
- - **Controller sizing** `Controller instance sizing and EBS volume selection info  <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
 
  - **Controller backup and restore**  `Controller backup instructions info <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 
