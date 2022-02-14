@@ -137,7 +137,7 @@ Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitg
 
 "Aviatrix Hardware Appliance CloudN" allows you to build a BGP and IPSEC tunnel directly to an on-prem Aviatrix hardware
 appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming both the 
-performance limit and route limit by these native services. Follow the instruction in  `this link <https://docs.aviatrix.com/StartUpGuides/CloudN-Startup-Guide.html?>`_ to complete Step 3. 
+performance limit and route limit by these native services. 
 
 3.3 Azure VNG
 ^^^^^^^^^^^^^^^^
