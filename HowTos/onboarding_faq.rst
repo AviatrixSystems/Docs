@@ -218,6 +218,8 @@ What is Certificate Domain?
 
 Entering Certificate Domain is required for Aviatrix China Solution. The domain is the one that you registered in China and applied for ICP license. For more information, see What is a China ICP License.
 
+   .. important:: Aviatrix recommends that you use the default Certificate Domain and that you do not change the default Certificate Domain. Changing the default Certificate Domain may cause network outages. If you must change the default Certificate Domain, please open a support ticket with `Aviatrix Support <https://support.aviatrix.com>`_ and get assistance before changing the default Certificate Domain.
+
 How to setup Account Name Alias?
 --------------------------------
 
