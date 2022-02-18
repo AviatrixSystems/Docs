@@ -59,6 +59,7 @@ When you initiate an upgrade Aviatrix automatically presents the most recently p
 **Upgrading Build Version Paths**
 
 When you upgrade from one build version of a minor release to another build of the same minor release, the available version may skip over previously released build numbers. For example, you could upgrade from 6.6.100 to the latest build 6.6.900 and the system skips any intermediate builds.
+
 Valid upgrade path to a new build.
 
 |upgrade.build.release|
@@ -66,6 +67,7 @@ Valid upgrade path to a new build.
 **Upgrading Minor Release Version Paths**
 
 When you upgrade from one minor version of a major release to another minor version of the same major release, you cannot skip over minor release versions. You must upgrade each minor release sequentially.  For example, if you are upgrading from 6.5.current to 6.8.latest you must first upgrade to the intermediate releases 6.6.latest and 6.7.latest. 
+
 Valid upgrade paths to a new minor release. The current build is the build you are currently running. The latest build is latest available build available on the Aviatrix server.
 
 |upgrade.minor.release|
@@ -73,6 +75,7 @@ Valid upgrade paths to a new minor release. The current build is the build you a
 **Upgrading Major Release Version Paths**
 
 When you upgrade from one major release to another major release, you cannot skip over major release versions. You must upgrade each major release sequentially.  For example, if you are upgrading from 6.current to 8.latest you must first upgrade to the intermediate release 7.latest. 
+
 Valid upgrade path to a new major release. The current build is the build you are currently running. The latest build available on the Aviatrix server.
 
 |upgrade.major.release|
