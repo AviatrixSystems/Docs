@@ -14,10 +14,10 @@ General license and pricing mapping is as follows:
 
 ::
 
-  1 inter-cloud license = $0.64/hour
-  1 intra-cloud license = 0.21/hour
-  1 security service license = $0.21/hour
-  1 user VPN license = $0.04/hour
+  1 inter-cloud license = $0.70/hour
+  1 intra-cloud license = 0.23/hour
+  1 security service license = $0.23/hour
+  1 user VPN license = $0.045/hour
 
 Some common notions described in the following sessions:
 
