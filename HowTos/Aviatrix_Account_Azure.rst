@@ -19,6 +19,7 @@ to a valid Azure subscription with API credentials. You need to create an access
 This document describes, for a given subscription, how to set up your Azure account so that the Controller can execute APIs on that subscription.
 
 
+
 2. API and Permission Setup 
 ========================================
 
