@@ -232,7 +232,10 @@ To view topology changes in your environment:
     -   Click the AUDIT button to open the Audit tab of the Security section where you can see which users made API calls to Aviatrix Controller during the time period of the change set.
 5.  (**To modify the title of a change set**) To modify the title of a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. The title is displayed over the dates (the default title is the number of changes in the change set). Click the blue pen icon. Select the title and change it, and then click the Save icon. When you search the timeline for change sets, you can now search by your title text.
 
-6.  (**To associate a note with a change set**) To associate a note with a change set that is loaded in the changes details, pane, click on the red notepad icon to open note view. Click the blue pen icon, type your note, and then click the Save icon. When you search the timeline for change sets, you can now search by your note text.
+6.  (**To associate a note with a change set**) To associate a note with a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. Click the blue pen icon, type your note, and then click the Save icon. When you search the timeline for change sets, you can now search by your note text.
+
+7.  (**To delete a change set**) To delete a change set that is loaded, in the time series panel, click on the red X associated with the dark blue box that represents it. It will be permanently deleted from the topology-replay database. You can also choose to delete all previous change sets recorded up to that point.
+
 
 
 Topology Replay Properties
@@ -312,6 +315,8 @@ Properties of the time series panel include:
 
     In the overview timeline (bottom half of the panel), after you zoom into a time period by clicking on the Expand icons or by using your track pad, two time-window control lines (blue vertical lines) display near the current time (the red line). Drag the time-window control lines where needed to focus in on the day or days you want to locate change sets in.
 
+    |time_control_image|
+
 -   **View** controls to load a change set
 
     The View icon indicates a change set at that point in time. Click on a View control to load a change set; this populates the network constructs associated with the changes in the topology map and displays the details for their changes in the changes details pane. The constructs associated with the changes are circled in the map.
@@ -322,14 +327,78 @@ Working with FlowIQ
 
 This section describes the FlowIQ feature of Aviatrix CoPilot.
 
-FlowIQ provides visualization of traffic flows that traverse Aviatrix gateways. In FlowIQ, you can find any network traffic that is moving across any gateway managed by the Aviatrix Controller in your Aviatrix transit network (multi-cloud or single cloud network). CoPilot displays metadata about traffic that flows across each link in your Aviatrix transit network. FlowIQ enables you to identify where data in your network is going to and where it is coming from and you can filter for detailed information about the traffic down to the packet level. 
+FlowIQ provides you with critical visibility capability to the traffic that traverses your network, displaying metadata about traffic that flows across each link. FlowIQ provides visualization of traffic flows, enabling you to inspect any network traffic that is moving across any gateway managed by the Aviatrix Controller in your Aviatrix transit network (multi-cloud or single cloud network). FlowIQ enables you to identify where data in your network is going to and where it is coming from and you can filter for detailed information about the traffic down to the packet level. 
 
-Flows provides you with critical visibility capability to that traffic that traverses your network.
 
 Interacting with the flows
 --------------------------
 FlowIQ provides various views for visualizing traffic records. The views respond to filters that are selected. 
 The filters that you set are carried across all of the views. 
+
+
+FlowIQ overview page
+--------------------------
+In the FlowIQ overview page, CoPilot provides an overview of all the traffic that has traversed across your Aviatrix transit network over the last hour, day, week, month, or over a custom timeframe.
+
+The traffic information is broken down into various categories displayed in pie charts. 
+
+By default, the pie charts show details for all traffic. You can filter the information to show only the traffic you are interested in analyzing.  When you click on any pie-chart slice, CoPilot automatically creates a filter that narrows down the information displayed across all pie charts. Each time you select another slice, CoPilot adds another rule to your filter group.
+
+After you analyze traffic data based on one or more filters, clear the filter(s) so that CoPilot returns to showing data for all traffic.
+
+
+FlowIQ flows page
+--------------------------
+In the Flow IQ flows page, CoPilot shows all the traffic that is currently seen by your multi-cloud transit no matter which cloud the traffic is on.
+
+You can view how much traffic was sent in the last hour, day, week, month, or a custom timeframe. 
+
+The pie charts show which source addresses and destination addresses receive the most and least bytes of data for the top 10 addresses.
+
+Using the Sankey graph, you can easily identify which source and destination hosts have the most traffic being exchanged between them (top talkers) in your network by the thickest colored bars. Hover over each colored bar to see what destination host the source host is sending traffic to based on how much traffic is being sent between them.
+
+
+FlowIQ geolocation page
+--------------------------
+In the Flow IQ geolocation page, CoPilot provides an overview of where traffic is coming from and going to within your cloud fabric over the last hour, day, week, month, or over a custom timeframe. The map shows the approximate location of your Aviatrix managed network constructs across the globe. 
+
+When you set the time period to Last Day, you can more easily see where most of the traffic is coming from and going to.
+
+Security teams can use the geolocation view to easily identify which countries the traffic coming into their network is coming from to help determine if unexpected traffic poses a security vulnerability.
+
+The geolocation traffic information is broken down into various categories displayed in pie charts.
+
+By default, the pie charts show details for all traffic. You can filter the information for the pie charts to show only the traffic you are interested in analyzing.  When you click on any pie-chart slice, CoPilot automatically creates a filter that narrows down the information displayed across all pie charts. Each time you select another slice, CoPilot adds another rule to your filter group.
+
+After you analyze traffic data based on one or more filters, clear the filter(s) so that CoPilot returns to showing data for all traffic.
+
+
+FlowIQ trends page
+--------------------------
+In the FlowIQ trends page, CoPilot shows an overview of traffic as it moves over time for traffic based on: 
+
+- A specified destination port.
+
+- A specified source address.
+
+- A specified destination address.
+
+- Total bandwidth based on direction of traffic, ingress or egress. 
+
+By default, the graphs show details for the top ten results. You can filter the information for the graphs to show only the traffic you are interested in analyzing.  When you click on any pie-chart slice (or listed value), CoPilot automatically creates a filter that narrows down the information displayed across all graphs. Each time you select another slice, CoPilot adds another rule to your filter group.
+
+After you analyze traffic data based on one or more filters, clear the filter(s) so that CoPilot returns to showing data for the top ten results.
+
+
+FlowIQ records page
+--------------------------
+In the FlowIQ records page, CoPilot shows detailed information about all the traffic flows seen by your multi-cloud transit no matter which cloud the traffic is on. 
+
+The Flow Records table shows you the detailed records of the traffic down to the packet level.
+
+You can filter the flow records in the Flow Records table by hovering over any value in the table and selecting the filter icon. 
+
+You can export the flow records data table to CSV if you want to save them for later viewing or import them into your own analytics platform.
 
 
 Working with Performance
@@ -887,8 +956,10 @@ Managing Your Appliance
 ..  |topology_image| image:: CoPilot_reference_guide_media/CoPilot_topology.png
     :width: 200
 
-
 ..  |flowIQ_image| image:: CoPilot_reference_guide_media/CoPilot_flowiq.png
+    :width: 200
+
+..  |time_control_image| image:: copilot_reference_guide_media/topology_replay_time_preview.png
     :width: 200
 
 ..  |webhook_image| image:: copilot_reference_guide_media/webhookImage.png
