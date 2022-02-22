@@ -277,6 +277,7 @@ Once complete, click the `Create` button at the bottom of the form.
 
 |imageCreateAccount|
 
+Occasionally, you may need to update your IAM policy. See `this document <https://docs.aviatrix.com/HowTos/iam_policies.html>`_ to audit your policy to check for updates and update it if necessary.
 
 Next: Start a Use Case 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
