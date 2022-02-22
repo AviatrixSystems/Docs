@@ -110,7 +110,7 @@ Application Key (Client Secret)                          From section 2.3
 #. Enter an Account Name for this Azure subscription. This name labels the account in the Aviatrix Controller and does not need to be a specific value from your Azure account.
 #. In the fields provided, enter your ARM Subscription ID, Directory ID, Application ID, and Application Key you saved in a Notepad file. Then, click **CREATE**.
 
-Your Primary Access Accont for Azure should be successfully onboarded. To troubleshoot onboarding issues, see the `Aviatrix Support website <https://support.aviatrix.com/>_` or `contact Aviatrix Support <https://aviatrix.com/contact/>_`. 
+Your Primary Access Account for Azure should be successfully onboarded. To troubleshoot onboarding issues, see the `Aviatrix support website <http://support.aviatrix.com>`_ or `contact Aviatrix Support <http://https://aviatrix.com/contact>`_.
 
 Additional References
 =======================
