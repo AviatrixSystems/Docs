@@ -43,10 +43,13 @@ What is the smallest recommended Instance/VM size?
 
 The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
 
-For the instance/VM size, CoPilot requires:
-- 4 GB of RAM (or more)
-- 1 attached disk/volume for storage (see “CoPilot Disk (Volume) Management”)
-- 2 vCPUs (or more)
+- For the instance/VM size, CoPilot requires:
+
+  - 4 GB of RAM (or more)
+
+  - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
+
+  - 2 vCPUs (or more)
 
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1. 
 
@@ -100,11 +103,8 @@ Can the data retention be adjusted ?
 
 Today you can set a threshold based on disk space available, so that you can remove the old records.
 
-Can we turn topology tunnels Red/Green based on tunnel status ? 
-===============================================================================
-The tunnels are responsive to the state of the link.
 
-Can we provide bandwidth details of links/tunnels ?
+Can we provide bandwidth details of links ?
 ===============================================================================
 If you can specify source and destination for the two endpoints of the path (gateways), you can obtain this information from FlowIQ by using filters.
 
