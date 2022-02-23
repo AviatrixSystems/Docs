@@ -8,7 +8,7 @@ Release Notes
 **Issues Corrected in Release 6.6**  
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
-- **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long" .
+- **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
 
 
 6.5.3006 (02/09/2022)  
@@ -3360,11 +3360,11 @@ UserConnect-052615
 UserConnect-051515
 ==================
 
--  Support LDAP + Duo multi-factor combined authentication
+-  Support LDAP + Duo multi-factor combined authentication.
 
--  Support configurable base policy for user profiles
+-  Support configurable base policy for user profiles.
 
--  API to change a VPN user’s profile
+-  API to change a VPN user’s profile.
 
 UserConnect-050915
 ==================
