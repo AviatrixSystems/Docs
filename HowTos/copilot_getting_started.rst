@@ -32,6 +32,18 @@ Instance Configuration Details
   You can leverage Aviatrix Controller's security group management to copy the IP addresses of the gateways. 
 
 
+Instance System Requirements
+------------------------------
+The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
+
+For the instance/VM size, CoPilot requires:
+- 4 GB of RAM (or more)
+- 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management.html>`_)
+- 2 vCPUs (or more)
+
+CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1.
+
+
 Subscribe to a CoPilot Offer
 ============================
 
@@ -61,9 +73,8 @@ To subscribe to a CoPilot offer:
 
         When deploying the Aviatrix CoPilot 1.5.1 image release:
 
-        -   During instance creation, you must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage (see CoPilot Disk (Volume) Management). This is in addition to the 25GB root disk that comes with CoPilot. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
-        -   Attach the disk (volume) to your CoPilot instance. Later, when you newly launch CoPilot, CoPilot will format and attach your disks (a logical disk/volume is created from all physical disks) as part of the initial setup.
-        -   CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. The base image will default to these automatic settings. Memory settings are located in CoPilot under Settings > Configuration > Options.
+        -   For the minimum supported instance/VM size for CoPilot, see `Instance System Requirements <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#instance-system-requirements>`_.
+        -   You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
 
         When deploying Pre-1.5.1 image releases:
 
@@ -230,9 +241,9 @@ CoPilot Disk (Volume) Management
 
 Allocate data disks (volumes) to your Aviatrix CoPilot deployment to be used for expandable storage.
 
-When you initially provision CoPilot (from your cloud service provider), you add a disk (volume) to be used for CoPilot storage. You are required to add at least one disk (volume). You create the data disk (volume) in your CSP account and attach it to your CoPilot instance. During instance provisioning, there is no minimum requirement for the disk/volume you add. You can choose the disk type (volume type) you want. You will be able to add more storage after deployment.
+When you initially provision CoPilot (from your cloud service provider), you must add a disk (volume) to be used for CoPilot storage. You are required to add at least one disk (volume) that is an additional disk (on the side) from the 25GB root disk that already comes with CoPilot. You create the data disk (volume) in your CSP account and attach it to your CoPilot instance. During instance provisioning, there is no minimum requirement for the disk/volume you add. You can choose the disk type (volume type) you want. You will be able to add more storage after deployment.
 
-When you newly launch the CoPilot instance, the initial setup process automatically detects the disk/volume you attached during instance provisioning. An add-disk process prompts you to confirm the disk/volume to use and then formats and attaches your disk(s). A logical disk/volume is created from all physical disks (volumes) you added during provisioning. Note that CoPilot comes with a 25GB root disk.
+When you newly launch the CoPilot instance, the initial setup process automatically detects the disk/volume you attached during instance provisioning. An add-disk process prompts you to confirm the disk/volume to use and then formats and attaches your disk(s). A logical disk/volume is created from all physical disks (volumes) you added during provisioning. For example, if you launch Copilot and you added two physical disks that are 8G each, CoPilot will form a 16G volume.
 
 The storage you need for CoPilot can increase based on several factors including the number of Aviatrix gateways launched and the type and volume of traffic in your network. When you need more storage, you can add additional disks (volumes) by using the CoPilot > Settings > Resources page (Add Additional Disks). For instructions, see `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#add-a-disk-volume-for-copilot-storage-after-deployment>`_.
 
@@ -285,6 +296,14 @@ To expand a disk (volume) that is allocated to your CoPilot deployment:
     |tree_pane_icon_disk_usage_table|
 
 6.  Click the enabled RESIZE button. CoPilot resizes the physical volume to match the size of your expanded disk.
+
+
+CoPilot Auto-Scaling Memory Support  
+===================================
+
+CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. 
+
+Auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1. Prior to CoPilot image version 1.5.1, CoPilot required a minimum of 8 vCPUs and 32 GB Memory. Existing deployments will keep their current configuration unless updated. Memory settings are located under Settings > Configuration > Options.
 
 
 System Design Considerations 
