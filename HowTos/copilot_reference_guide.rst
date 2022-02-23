@@ -100,6 +100,10 @@ Objects on the topology maps support drag and drop. You can click, drag and drop
 
 .. tip:: You can multi-select objects for drag and drop by holding control/command key and selecting.
 
+- Toggle filter
+
+  Enable the filter editor page where you can create and save your own topology filters and filter groups, load them in the map, and edit or delete them.
+
 - Search
 
   The search box allows you to filter the objects that are plotted on the topology.
@@ -182,11 +186,64 @@ To perform diagnostics from Topology (from an Aviatrix Gateway):
 
     b.  TRACEROUTE: Run trace route.
 
-    c.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+    c.  TRACEPATH: Discover the MTU on the path if router supports it.
 
-    d.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+    d.  TRACELOG: Upload a gateway's tracelog directly to Aviatrix Support. The controller and gateway tracelog is uploaded and the support team notified.
 
-    e.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
+    e.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+
+    f.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+
+    g.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
+
+    h.  PACKET CAPTURE: Capture packets on any gateway. Filter on host and port number and specify the capture time. Search and filter by time, source address, destination address, source port, destination port, protocol, flags, length, and info. Select the interface on the physical or virtual interface you want to capture on. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. The pcap file can be viewed by Wireshark.
+
+    i.  SERVICE ACTIONS: Check the status of gateway services and restart services.
+
+
+Create and save topology filters
+--------------------------------
+
+Create filters to narrow down the network constructs to include in your topology maps and save the filters to your local system.
+
+To create and save filters for topology:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, select Topology.
+
+3.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
+
+4.  In Select a Key to Filter on, select a key and value to filter on. You can apply any number of filters to a given filter group.
+
+5.  In Filter Group Name, assign a name to your filter/filter group.
+
+6.  Click **Save**.
+
+    The filter is saved to your local system.
+
+    When you want to view the topology layout for this filter, click **Load Filters** and select it from the list. If you load more than one filter, the layout of all of them is displayed in the map.
+
+    After a filter/filter group is loaded, you can edit or delete it.
+
+
+Search and filter for cloud native custom tags
+----------------------------------------------
+
+Search and filter for custom tags you created in your cloud provider environment for your VPCs/VNETs/VCNs and instances.
+
+This feature is available starting from Controller release 6.6. 
+
+To filter for cloud native VPC/VNET/VCN tags and instance tags:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, select Topology.
+
+3.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
+
+4.  From the Select a Key to Filter on list, under the CSP Tags category, select the cloud native tag to filter on.
+
 
 View Topology Changes (Topology Replay)
 ---------------------------------------
@@ -619,6 +676,57 @@ To create an inventory report:
 9.  (Optional) Save, download, or print the report. For printing, select the paper size and page orientation.
 
 10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNETs/VCNs, deselect the regions, and deselect the clouds as needed to report only on the data you want.
+
+Create a Resource Utilization Report
+------------------------------------
+
+Create a report that summarizes the resource utilization (telemetry) data for Aviatrix gateways in a single cloud or across all clouds in your multi-cloud network. CoPilot exposes approximately 80 performance metrics (system and network metrics). You can select from any or all performance metrics to report on for the time period you specify. Per gateway, when reporting on network metrics, CoPilot aggregates the metrics across all interfaces (default), or if specified, reports the metrics for each interface.
+
+CoPilot shows all gateways that are managed by Aviatrix Controller in any of your clouds, regions, and VPCs/VNETs/VCNs. You create a custom report by selecting options that guide you to include only those Aviatrix gateways and performance metrics you want in the report.
+
+To create a resource utilization report:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click Reports.
+
+3.  For Resource Utilization Report, click **Start**.
+
+4.  Select the period of time for which you want to report on resource utilization data. You can set the last hour, last day, last week, last month, or a custom time period.
+
+5.  In **Select gateway(s)**, select the checkboxes for all Aviatrix gateways for which you want to report on telemetry data. You can also choose to report on telemetry data for your controller. Note the following points:
+
+    If you want to report on *network metrics* for any given gateway AND you want to see the network metrics broken down by interface (not gateway aggregate), you must select both the **Show interface options** checkbox and the applicable per-gateway **Show per-interface graphs** checkbox. You can select any or all interfaces.
+
+    You can use the options in the table to do the following:
+
+    -   Search field: Search for gateways based on the following gateway properties:
+        -   Gateway Name
+        -   Gateway Type
+        -   Cloud
+        -   Region
+        -   VPC Name
+        -   VPC ID
+
+    -   Columns: Remove any gateway-property columns from the table that are shown by default.
+    -   Filters: Use custom filters to further narrow down the gateways to include in the report. Use the values for the gateway properties listed above to create your filters.
+    -   Use the menu of each column heading to control how information displays in the table or to hide a column.
+    -   Compact: Select the style of the report you want.
+
+6.  For **Select system metric(s)** and **Select network metric(s)**, select any or all metrics you want to include in the report.
+
+7.  In **Choose report format**, select how you want the information to be organized in the report:
+
+    -   Group by metric (default): Each page in the report is a different metric with all selected gateways listed for that metric. This is useful if you want to compare metrics between gateways.
+    -   Group by gateway: Each page is a gateway with its own metrics listed.
+
+8.  Click **Create Report**.
+
+9.  (Optional) For reports that are grouped by metric, the metric charts use a linear scale by default. Depending on the data you are reporting on, you may choose to use a logarithmic scale. Enable logarithmic scale for charts by clicking on the slider.
+
+10. (Optional) Download the report using the blue download icon.
+
+11. (Optional) To generate another report, at the top of the Resource Utilization Report page, click the arrow to return to the main Reports page and repeat the procedure.
 
 
 CoPilot WebHooks Customization

@@ -41,7 +41,16 @@ Updates are downloaded and applied automatically. The update process runs every 
 What is the smallest recommended Instance/VM size?  
 ===============================================================================
 
-For production deployments, minimum requirement is 8vCPU and 32G of Memory
+The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
+
+For the instance/VM size, CoPilot requires:
+- 4 GB of RAM (or more)
+- 1 attached disk/volume for storage (see “CoPilot Disk (Volume) Management”)
+- 2 vCPUs (or more)
+
+CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1. 
+
+Prior to CoPilot image version 1.5.1, CoPilot required a minimum of 8 vCPUs and 32 GB Memory.
 
 Can I configure flows to be sent over private IPs? 
 ===============================================================================
