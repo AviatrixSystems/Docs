@@ -9,21 +9,18 @@ Multi-cloud Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
 
 .. important::
 
- If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
+ If you intend to deploy a transit network using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
 
-This workflow provides you with step by step instructions to build a Multi-cloud Transit Network. 
+This workflow provides you with step-by-step instructions to build a Multi-cloud Transit Network. 
+This Multi-cloud Transit Network consists of a Transit gateway and a set of Spoke gateways for communications between Spoke VPC or VNet instances and your on-prem network. 
 
 While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit Network is supported. 
 
-For design guide, check out `Multi-cloud Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
+For a design guide, check out `Multi-cloud Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
 For more information, check out `Multi-cloud Transit Network FAQ. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html>`_
 
 For other Aviatrix functions, such as `VPN access for users <http://docs.aviatrix.com/HowTos/uservpn.html>`_ and `VPN access for sites <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_, check out `Aviatrix Overview <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
-
-This Multi-cloud Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
-between Spoke VPC or VNet instances and your on-prem network. 
-
 
 .. note::
    For description purposes, gateway and GW are used interchangeably.
@@ -46,10 +43,11 @@ Planning and Prerequisites
   Use the Aviatrix `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool with the option "Aviatrix Transit VPC" to create a transit VPC that has all infrastructure fully populated. 
 
 Log into the Aviatrix Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, click on `Transit Network` in the left navigation bar.
+-------------------------------------------
 
-The Multi-cloud Transit Network Workflow page opens. Use this page and the four tabs in the top right (Transit, Spoke, Attach/Detach, and External Connection) to set up a Transit Network.
+Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, select **Transit Network** in the left navigation bar.
+
+The Multi-cloud Transit Network Workflow page opens. Use this page and the four tabs in the top right (Transit, Spoke, Attach/Detach, and External Connection) to set up a Multi-cloud Transit Network.
 
 Transit
 -------------------------------------------
@@ -77,7 +75,7 @@ Region                                          One of the AWS regions
 VPC ID                                          The Transit VPC/VNet/VCN ID 
 Public Subnet                                   The public subnet on which Transit GW instance is deployed
 Gateway Size                                    Transit GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
-Allocate New EIP                                If you select this option, the Controller allocates a new EIP and associate it with the gateway instance. If you do not select this option, the Controller looks for an allocated but unassociated EIP in the Transit GW account. 
+Allocate New EIP                                Select this checkbox to have the Controller allocate a new EIP and associate it with the Transit gateway instance. If you do not select this option, the Controller looks for an allocated but unassociated EIP in the Transit GW account. 
 Insane Mode Encryption                          If selected, Transit GW can peer and connect to Spoke with `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_.
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
@@ -87,12 +85,20 @@ Add/Edit Tags                                   `Additional AWS Tags <http://doc
 You can change the Transit GW size later by following `these instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
 
 
-2. (Optionally) Enable/Disable HA to an Aviatrix Transit Gateway
+2. (Optional) Enable/Disable HA to an Aviatrix Transit Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
 
 |HAVPC|
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Aviatrix Transit Gateway                                      Select the Transit GW for which you want to enable HA
+HA Gateway Subnet                                    Select the subnet in which you want to enable HA. A best practice is to select a different public subnet from the original Transit GW in a different AZ.
+Allocate New EIP                                    Select this checkbox to have the Controller allocate a new EIP and associate it with the HA gateway instance. If you do not select this option, the Controller looks for an allocated but unassociated EIP in the Transit GW account.
+==========================================      ==========
 
 To disable Transit GW HA, go to the Gateway page and delete the Transit GW with -hagw in the name extension. Note: If the Transit GW is connected to VGW, you cannot disable Transit GW HA and if there are still Spoke GWs, you cannot disable
 Transit GW HA either. 
@@ -107,7 +113,7 @@ To launch an Aviatrix Spoke Gateway, select the **Spoke** tab in the top right o
 
 .. Note::
 
- If you are building Azure transit solution and do not require traffic encryption between Spoke VNet and Transit VNet, skip Step 4-5 and go to Step 6b to attach Spoke VNet directly. 
+ If you are building Azure transit solution and do not require traffic encryption between Spoke VNet and Transit VNet, go to section "1b. Attach Azure ARM Spoke through Native Peering" section below to attach Spoke VNet directly. 
 
 |launchSpokeGW|
 
@@ -131,8 +137,22 @@ Add/Edit Tags                                   `Additional AWS Tags <http://doc
 You can enable NAT function on the Spoke GW if egress to the Internet is intended to 
 go through the Spoke GW. Once NAT is enabled, you can further configure `FQDN whitelists for egress filter. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
-2. (Optionally) Enable/Disable HA to an Aviatrix Spoke Gateway
+2. (Optional) Enable/Disable HA to an Aviatrix Spoke Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When HA is enabled, a second Spoke GW will be launched. Note both Spoke GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
+
+|HAVPC|
+
+==========================================      ==========
+**Setting**                                     **Value**
+==========================================      ==========
+Aviatrix Spoke Gateway                                      Select the Spoke GW for which you want to enable HA
+HA Gateway Subnet                                    Select the subnet in which you want to enable HA. A best practice is to select a different public subnet from the original Spoke GW in a different AZ.
+Allocate New EIP                                    Select this checkbox to have the Controller allocate a new EIP and associate it with the HA gateway instance. If you do not select this option, the Controller looks for an allocated but unassociated EIP in the Spoke GW account.
+==========================================      ==========
+
+To disable Spoke GW HA, go to the Gateway page and delete the Spoke GW with -hagw in the name extension.
 
 Attach/Detach
 ---------------------------------------
@@ -184,7 +204,11 @@ This step detaches one Aviatrix Spoke VPC from a Transit GW Group.
 The Controller also instructs the Transit GW to stop advertising the Spoke VPC CIDR 
 to VGW. 
 
-Note that the Spoke GW is not deleted and you can go to step 6 to attach the Transit GW group again. 
+#. Click on the Aviatrix Transit Gateway dropdown menu and select the Spoke Gateway.
+#. Click on the Aviatrix Spoke Gateway dropdown menu and select the Spoke Gateway to detach.
+#. Click Detach.
+
+Note that the Spoke GW is not deleted and you can use the top section of this page in the Controller to attach the Transit GW group again. 
 
 To delete a Spoke GW, go to Gateway on the main navigation tab, select the gateway and click Delete. 
 
@@ -192,6 +216,10 @@ To delete a Spoke GW, go to Gateway on the main navigation tab, select the gatew
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step detach an Azure Native Spoke from an Aviatrix Transit Gateway.
+
+#. Click on the Aviatrix Transit Gateway Name dropdown menu and select the Transit Gateway.
+#. Click on the Spoke VNet dropdown menu and select the name of the Spoke VNet to detach.
+#. Click Detach.
 
 Add More Spoke VPCs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -203,10 +231,10 @@ Repeat steps 1a and 1b to add more Spoke VPCs to the Transit GW group.
 External Device
 -------------------------------------
 
+To connect to or disconnect from an AWS VGW, External Device, or Azure VNG, select the **External Device** tab in the top right of the Multi-cloud Transit Network Workflow page in your Aviatrix Controller.
+
 1. Connect: Connect to VGW/External Device/Azure VNG
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To connect to or disconnect from an AWS VGW, External Device, or Azure VNG, select the **External Device** tab in the top right of the Multi-cloud Transit Network Workflow page in your Aviatrix Controller.
 
 .. tip::
 
@@ -305,9 +333,7 @@ To disconnect or detach one of these connections:
 View the Network Topology
 -------------------------------------
 
-After setting up your Multi-cloud Transit Network Workflow, you can view the network topology by going to the Dashboard. Click on the Map View to switch to Logical View. 
-
-In the Logical View, each gateway is represented by a dot. You can rearrange the initial drawing by moving the dot, zooming in or zooming out and moving the graph around. After you are done moving, click the Save icon. 
+After setting up your Multi-cloud Transit Network Workflow, you can view the network topology by going to the Dashboard and reviewing the Map View.
 
 Troubleshoot BGP
 ---------------------
@@ -324,12 +350,13 @@ To troubleshooting connectivity between a Spoke VPC instance and a on-prem host,
 Disable Transit GW HA
 --------------------------
 
-Go to the Gateway page, locate the Transit GW with "-hagw" in the gateway name extension, highlight the 
-gateway and click Delete. 
+If you need to disable a Transit GW HA (for example, if you deployed it in the wrong subnet or AZ), use the Gateway page to do so. A best practice is to make sure there is no traffic going through the backup Transit GW before disabling it.
+
+#. Go to the Gateway page and locate the Transit GW with "-hagw" in the gateway name extension.
+#. Highlight the gateway and click Delete. 
 
 Note that the Transit GW and its backup companion are in an active/active state, that is, both gateways could 
-be forwarding traffic. To disable Transit GW HA, it is the best practice to make sure there is no traffic 
-going through the backup Transit GW. 
+be forwarding traffic. As noted above, a best practice is to make sure there is no traffic going through the backup Transit GW before disabling it.
 
 Transit Network APIs
 -------------------------
