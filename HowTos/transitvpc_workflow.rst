@@ -33,7 +33,7 @@ The Transit Network diagram is described as below.
 Planning and Prerequisites
 ---------------------------
 
- 1. If you have not launched an Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
+ #. If you have not launched an Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
  #. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW (`additional details <./transit_spoke_aws_requirements.html>`__) We recommend you to use the information `here <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ to create a Transit VPC. 
  #. Create a VGW or reuse an existing VGW. The VGW should not be attached to the Transit VPC if you plan to launch Transit GW in the same VPC. This VGW can be attached to a different VPC if this VPC CIDR is different from the Transit VPC where the Transit GW is launched or in a different region and account. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over the Internet.  
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create an Aviatrix account that corresponds to an IAM role. For instructions on how to launch an Aviatrix Controller, check out `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
@@ -152,7 +152,7 @@ HA Gateway Subnet                                    Select the subnet in which 
 Allocate New EIP                                    Select this checkbox to have the Controller allocate a new EIP and associate it with the HA gateway instance. If you do not select this option, the Controller looks for an allocated but unassociated EIP in the Spoke GW account.
 ==========================================      ==========
 
-To disable Spoke GW HA, go to the Gateway page and delete the Spoke GW with -hagw in the name extension.
+To disable Spoke GW HA, go to the Gateway page and delete the Spoke GW with  -hagw in the name extension.
 
 Attach/Detach
 ---------------------------------------
@@ -297,7 +297,7 @@ It takes a few minutes for the VPN connection to come up and routes from VGW
 to be propagated. When the IPSEC tunnel with a VGW is up, the Controller admin should receive an email notification.
 
 If you log in to AWS Console and select "service VPC" in the region where the VGW is, you should see Customer Gateway and VPN Connections have been created. Do not delete or modify them from AWS Console. These resources are deleted 
-when you Disconnect the VGW at step 8. 
+if you Disconnect the VGW. 
 
 You can check if routes are properly propagated by going to Advanced Config at the 
 navigation bar, and selecting BGP. Select the Transit GW, click details. 
