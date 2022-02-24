@@ -12,14 +12,8 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 
-CoPilot Release 1.7.3 (2/24/2022)
-----------------------------------------
-
-Minor bug fixes.
-
-
-CoPilot Release 1.7.1, 1.7.2 (2/23/2022)
-----------------------------------------
+CoPilot Release 1.7.1, 1.7.2 (2/23/2022), 1.7.3 (2/24/2022)
+-----------------------------------------------------------
 
 Minor bug fixes.
 
