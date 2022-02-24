@@ -676,13 +676,16 @@ Q: How to migrate a Standalone CloudN to a Managed CloudN?
 
 Ans:
 
-- `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller and CloudN appliance to at least version 6.2
+- `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller and CloudN appliance to the latest version.
 
-- Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN
+	.. note::
+	
+		From Release 6.6a and onwards, to register CloudN with the Controller as Managed CloudN does not require to upgrade CloudN applicance to the Controller version.
 
-- Follow `Workflow on Aviatrix CloudN <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-cloudn>`_
+- Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit gateway and Standalone CloudN.
 
-- Follow `Workflow on Aviatrix Controller <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#workflow-on-aviatrix-controller>`_
+- Follow `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#managed-cloudn-workflows>`_.
+
 
 .. |managed_cloudn_topology| image:: CloudN_workflow_media/managed_cloudn_topology.png
    :scale: 80%
