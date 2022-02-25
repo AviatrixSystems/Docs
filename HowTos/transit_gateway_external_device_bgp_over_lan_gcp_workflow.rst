@@ -86,13 +86,10 @@ Step 1.3. Attach Spoke Gateways to Transit Network
 Step 2.1. Deploy third-party cloud instances with an interface in the same VPC as the Aviatrix Transit Gateway
 --------------------------------------------------------------------------------------------------------------
 
-- Create a third-party cloud instance and put MGMT interface in public gateway subnet. 
-
-- Create a new WAN subnet and dedicated routing table for WAN interface if needed.
-
-- Create a new LAN subnet and a dedicated routing table for the LAN interface.
-
-- Make sure the function "IP forwarding" is enabled on the third-party cloud instances.
+#. Create a third-party cloud instance and put MGMT interface in public gateway subnet. 
+#. Create a new WAN subnet and dedicated routing table for WAN interface if needed.
+#. Create a new LAN subnet and a dedicated routing table for the LAN interface.
+#. Make sure the function "IP forwarding" is enabled on the third-party cloud instances.
 
 .. important::
 
@@ -104,11 +101,9 @@ Step 2.1. Deploy third-party cloud instances with an interface in the same VPC a
 Step 3.1. Deploy the Aviatrix Transit Gateway with all the required BGP interfaces
 ----------------------------------------------------------------------------------
 
-- Log in to Aviatrix Controller.
-
-- Navigate to Multi-cloud Transit -> Setup -> Transit tab.
-
-- Set the parameters to deploy the Aviatrix Transit Gateway.
+#. Log in to the Aviatrix Controller.
+#. Navigate to Multi-cloud Transit -> Setup -> Transit tab.
+#. Set the parameters to deploy the Aviatrix Transit Gateway.
   
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | Cloud Type                       | Gcloud                                                                                           |
@@ -141,13 +136,10 @@ Enable HA on the Aviatrix Transit Gateway, deploying the HA Gateway in a differe
 Step 3.2. Configure BGP over LAN on Aviatrix Transit Gateway
 ------------------------------------------------------------
 
-- Log in to Aviatrix Controller.
-
-- Navigate to Multi-cloud Transit -> Setup -> Attach tab -> External Connection -> Connect to VGW/External Device/Aviatrix CloudN/ Azure VNG
-
-- Select the options "External Device" -> "BGP" -> "LAN"
-
-- Set the parameters to initiate the BGP over LAN connection(s) to the third-party cloud instance(s)
+1. Log in to the Aviatrix Controller.
+2. Navigate to Multi-cloud Transit -> Setup -> Attach tab -> External Connection -> Connect to VGW/External Device/Aviatrix CloudN/ Azure VNG.
+3. Select the options "External Device" -> "BGP" -> "LAN."
+4. Set the parameters to initiate the BGP over LAN connection(s) to the third-party cloud instance(s).
 
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | VPC Name / Site ID               | Select the Transit VPC ID where the Transit Gateway was deployed.                                                                                                                                                             |
@@ -176,66 +168,52 @@ Step 3.2. Configure BGP over LAN on Aviatrix Transit Gateway
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-- Click the Connect button to generate the BGP sessions. 
+5. Click Connect to generate the BGP sessions. 
 
   |transit_s2c_conn_bgp_peer_gcloud|
 
-- Create a Site2Cloud connection for each BGP peer.
+6. Create a Site2Cloud connection for each BGP peer.
 
 Step 3.3. (Optional) Download the BGP over LAN configuration sample from Aviatrix Controller
 --------------------------------------------------------------------------------------------
 
-- Navigate to Site2Cloud -> Setup.
-
-- Select the previously created connection(s).
-
-- Click “Edit”.
-
-- Select the Vendor, Platform and Software that correspond to the third-party device.
-
-- Click “Download Configuration”.
+#. Navigate to Site2Cloud -> Setup.
+#. Select the previously created connection(s).
+#. Click “Edit.”
+#. Select the Vendor, Platform and Software that correspond to the third-party device.
+#. Click “Download Configuration.”
 
 
 Step 3.4. Configure BGP over LAN on the third-party cloud instance(s)
 ---------------------------------------------------------------------
 
-- (Optional) Open the downloaded BGP over LAN configuration file.
-
-- Configure the relevant BGP over LAN information on the third-party cloud instance(s).
+#. (Optional) Open the downloaded BGP over LAN configuration file.
+#. Configure the relevant BGP over LAN information on the third-party cloud instance(s).
 
 Step 3.5. Verify the connection status on Aviatrix Controller
 -------------------------------------------------------------
 
-- Navigate to Site2Cloud -> Setup.
-
-- Find the previously created connection(s).
-
-- Check the tunnel status.
+#. Navigate to Site2Cloud -> Setup.
+#. Find the previously created connection(s).
+#. Check the tunnel status.
 
   |transit_check_tunnel_gcloud|
 
-- Navigate to Multi-Cloud Transit -> List.
-
-- Select the previously created Aviatrix Transit Gateway.
-
-- Click “Details/Diag”.
-
-- Scroll down to the Connections -> On-prem Connections section.
-
-- Find the previously created connection(s).
-
-- Check the tunnel status.
+#. Navigate to Multi-Cloud Transit -> List.
+#. Select the previously created Aviatrix Transit Gateway.
+#. Click “Details/Diag.”
+#. Scroll down to the Connections -> On-prem Connections section.
+#. Under On-prem Connections, find the previously created connection(s).
+#. Check the tunnel status in the Status column.
 
   |transit_verify_bgp_status_onprem_gcloud|
 
 Step 3.6. Verify the BGP session status on Aviatrix Controller
 --------------------------------------------------------------
 
-- Navigate to Multi-Cloud Transit -> BGP.
-
-- Find the previously created connection(s).
-
-- Check the Neighbor status.
+#. Navigate to Multi-Cloud Transit -> BGP.
+#. Find the previously created connection(s).
+#. Check the Neighbor status.
 
   |transit_verify_bgp_status_gcloud|
 
