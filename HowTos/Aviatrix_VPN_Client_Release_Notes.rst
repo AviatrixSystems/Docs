@@ -1,4 +1,4 @@
-Aviatrix VPN Client Changelog
+Aviatrix VPN Client Release Notes
 -----------------------------
 2.14.14 - April 27 2021
   - Support non-ASCII Windows user login account

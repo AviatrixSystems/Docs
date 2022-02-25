@@ -19,14 +19,15 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Cloud WAN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
+* :ref:`Copilot`
 * :ref:`OpenVPN® <OpenVPN>`
 * :ref:`Security`
 * :ref:`UsefulTools`
 * :ref:`Settings`
 * :ref:`Downloads`
 * :ref:`Release Notes`
-* :ref:`Security Bulletin`
-* :ref:`CoPilot`
+* :ref:`Security Updates`
+* :ref:`Field Notices`
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
 * :ref:`Support Center`
@@ -244,6 +245,16 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/connect_overlap_vpc_via_VGW
    HowTos/periodic_ping
    
+.. _CoPilot:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: CoPilot
+
+   HowTos/copilot_overview
+   HowTos/copilot_getting_started
+   HowTos/copilot_reference_guide.rst
+   HowTos/copilot_faq
 
 .. _OpenVPN:
 
@@ -333,39 +344,35 @@ While all content is searchable, the site is organized into the following sectio
 
    Downloads/samlclient
 
-.. _Release Notes:
+.. _Release Notes
 
 .. toctree::
    :maxdepth: 1
    :caption: Release Notes
 
-   HowTos/UCC_Release_Notes
-   HowTos/changelog
-   HowTos/field_notices
-   HowTos/image_release_notes
+   HowTos/Controller_and_Software_Release_Notes
+   HowTos/CoPilot_Release_Notes
+   HowTos/copilot_Release_Notes_Images
+   HowTos/Aviatrix_VPN_Client_Release_Notes
+   HowTos/Image_Release_Notes
 
-.. _Security Bulletin:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Security Bulletin
-
-   HowTos/security_bulletin_article
-   HowTos/security_bulletin_faq
-
-.. _CoPilot:
+.. _Security Updates:
 
 .. toctree::
    :maxdepth: 1
-   :caption: CoPilot
+   :caption: Security Updates
 
-   HowTos/copilot_release_notes
-   HowTos/copilot_release_notes_images
-   HowTos/copilot_overview
-   HowTos/copilot_getting_started
-   HowTos/copilot_reference_guide.rst
-   HowTos/copilot_faq
+   HowTos/PSIRT_Advisories
+   HowTos/Security_Patches
 
+.. _Field Notes:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Field Notes
+
+   HowTos/Field_Notes
+   
 .. _Tech Notes:
 
 .. toctree::
