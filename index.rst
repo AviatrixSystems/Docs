@@ -251,6 +251,8 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: CoPilot
 
+   HowTos/copilot_release_notes
+   HowTos/copilot_release_notes_images
    HowTos/copilot_overview
    HowTos/copilot_getting_started
    HowTos/copilot_reference_guide.rst
