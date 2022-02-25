@@ -11,7 +11,7 @@ Please note the below Aviatrix Security recommendations and communication plans:
 - Avitrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
 
-20. Aviatrix Controller and Gateways - Privilege Escalation (CVE-2021-4034 and CVE-2022-0185)
+20. Aviatrix Controller and Gateways - Privilege Escalation
 ----------------------------------------
 
 **Date** 02/03/2022
