@@ -351,10 +351,10 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Release Notes
 
    HowTos/Controller_and_Software_Release_Notes
-   HowTos/CoPilot_Release_Notes
-   HowTos/CoPilot_Release_Notes_Images
+   HowTos/copilot_release_notes
+   HowTos/copilot_release_notes_images
    HowTos/Aviatrix_VPN_Client_Release_Notes
-   HowTos/Image_Release_Notes
+   HowTos/image_release_notes
 
 .. _Security Updates:
 
