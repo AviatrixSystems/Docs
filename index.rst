@@ -353,7 +353,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/Controller_and_Software_Release_Notes
    HowTos/CoPilot_Release_Notes
-   HowTos/copilot_Release_Notes_Images
+   HowTos/CoPilot_Release_Notes_Images
    HowTos/Aviatrix_VPN_Client_Release_Notes
    HowTos/Image_Release_Notes
 
