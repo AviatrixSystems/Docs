@@ -63,7 +63,6 @@ Gateway Images: hvm-cloudx-aws-102320 (11/10/2020)
 
 - Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
-=======================================
 Overview
 =======================================
 
