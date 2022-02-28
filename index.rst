@@ -405,7 +405,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_pan_ecmp
    HowTos/tgw_egress_vpc
    HowTos/aws_transit_gateway_orchestrator
-   HowTos/aviatrix_insanemode
    HowTos/transit_snat_dnat
    HowTos/ipv6_peering
    HowTos/nextgentransit_for_azure
