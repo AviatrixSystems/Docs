@@ -245,18 +245,6 @@ This feature allows you to view the services status of the controller and gatewa
 
    <hr width="%80"/>
 
-
-BGP
------
-
-This section provides the ability to view BGP configurations for diagnostics or any purposes.
-
-
-.. raw:: html
-
-   <hr width="%80"/>
-
-
 System Resources
 ------------------
 
