@@ -45,7 +45,7 @@ Planning and Prerequisites
 Log into the Aviatrix Controller
 -------------------------------------------
 
-Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, select **Transit Network** in the left navigation bar.
+Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, select **Multi-Cloud Transit > Setup** in the left navigation bar.
 
 The Multi-cloud Transit Network Workflow page opens. Use this page and the four tabs in the top right (Transit, Spoke, Attach/Detach, and External Connection) to set up a Multi-cloud Transit Network.
 
@@ -160,7 +160,7 @@ Attach/Detach
 To attach or detach a Spoke Gateway to a Transit Network, select the **Attach/Detach** tab in the top right of the Multi-cloud Transit Network Workflow page in your Aviatrix Controller.
 
 1a. Attach: Attach Spoke Gateway to Transit Network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step attaches a Spoke VPC to the Transit GW Group by building an Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertising the Spoke VPC CIDR to VGW via the established BGP session.
 
@@ -198,7 +198,7 @@ Spoke VNet Name: Resource Group                                 The Spoke VNet N
 ==========================================      ==========
 
 2a. Detach: Detach Aviatrix Spoke Gateway
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step detaches one Aviatrix Spoke VPC from a Transit GW Group. 
 The Controller also instructs the Transit GW to stop advertising the Spoke VPC CIDR 
@@ -234,7 +234,7 @@ External Device
 To connect to or disconnect from an AWS VGW, External Device, or Azure VNG, select the **External Device** tab in the top right of the Multi-cloud Transit Network Workflow page in your Aviatrix Controller.
 
 1. Connect: Connect to VGW/External Device/Azure VNG
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tip::
 
@@ -275,7 +275,7 @@ As a result of this step, a Customer Gateway and a Site2Cloud Connection between
 
   We support two patterns of connections: Detached VGW and Attached VGW. The VGW should not be attached to the Transit VPC.
 
-  Currently, only one connection is supported on a specific transit gateway/vpc, regardless of which of the three options above is chosen.
+  Currently, only one connection is supported on a specific Transit Gateway/VPC, regardless of which of the three options above is chosen.
 
 |VGW|
 
@@ -306,8 +306,7 @@ Scroll down to see the total number of learned routes.
 
 External Device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The "External Device" option allows you to build IPSEC tunnel, GRE tunnel or Ethernet LAN directly to on-prem or 
-in the cloud device. It bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming the route limit by these native services. 
+The External Device option allows you to build IPSEC tunnel, GRE tunnel or Ethernet LAN directly to on-prem or in the cloud device. It bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming the route limit by these native services. 
 
 To learn how to leverage External Device to connect to variety of devices, read more about `External Device FAQ. <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ 
 Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_  to complete this Step. 
@@ -321,7 +320,7 @@ Express Route or Internet, and in the meantime, Aviatrix Transit Gateways are in
 See `Multi-cloud Transit Integration with Azure VNG <https://docs.aviatrix.com/HowTos/integrate_transit_gateway_with_expressroute.html>`_. 
 
 Disconnect: Disconnect AWS VGW/External Device/Azure VNG
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use this section to disconnect AWS VGW/External Device/Azure VNG connections. 
 
@@ -336,14 +335,15 @@ View the Network Topology
 After setting up your Multi-cloud Transit Network Workflow, you can view the network topology by going to the Dashboard and reviewing the Map View.
 
 Troubleshoot BGP
----------------------
+--------------------------
 
-Under `Advanced Config` on the main navigation bar, click BGP. The Transit GW will have BGP Mode as Enabled. 
-Click the Transit GW and click Details to see Advertised Networks and Learned Networks. 
+To troubleshoot BGP:
+#. Under `Advanced Config` on the main navigation bar, click BGP. The Transit GW will have BGP Mode as Enabled. 
+#. Click the Transit GW and click Details to see Advertised Networks and Learned Networks. 
+
 Learned Networks are network CIDR blocks that BGP learned from VGW. Advertised Networks are Spoke VPC CIDRs. 
 
-You can also click Diagnostics. Select one of the show commands or type in yourself if you know the commands to 
-see more BGP details. 
+You can also click Diagnostics. Select one of the show commands or type in yourself if you know the commands to see more BGP details. 
 
 To troubleshooting connectivity between a Spoke VPC instance and a on-prem host, follow `these steps. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_
 
@@ -355,8 +355,7 @@ If you need to disable a Transit GW HA (for example, if you deployed it in the w
 #. Go to the Gateway page and locate the Transit GW with "-hagw" in the gateway name extension.
 #. Highlight the gateway and click Delete. 
 
-Note that the Transit GW and its backup companion are in an active/active state, that is, both gateways could 
-be forwarding traffic. As noted above, a best practice is to make sure there is no traffic going through the backup Transit GW before disabling it.
+Note that the Transit GW and its backup companion are in an active/active state, that is, both gateways could be forwarding traffic. As noted above, a best practice is to make sure there is no traffic going through the backup Transit GW before disabling it.
 
 Transit Network APIs
 -------------------------
