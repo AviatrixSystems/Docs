@@ -407,6 +407,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_firenet_workflow_aws
    HowTos/transit_firenet_workflow_aws_gwlb
    HowTos/transit_firenet_workflow_azure
+   HowTos/transit_subnet_inspection_azure
    HowTos/transit_firenet_workflow_gcp
    HowTos/transit_firenet_workflow_oci
    HowTos/cloud_wan_workflow_azure_vwan
