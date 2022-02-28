@@ -103,37 +103,29 @@ Step 1.1. Deploy Cisco Meraki vMX in Transit VPC
 Step 1.2. Check Cisco Meraki vMX status on Meraki Dashboard
 -----------------------------------------------------------
 
-- Login Meraki Dashboard
-
-- Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates
-
-- Go to Security & SD-WAN -> MONITOR -> Appliance status
-
-- Check whether Cisco Meraki vMX displays "Active" status
+#. Log in to the Meraki Dashboard.
+#. Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates.
+#. Go to Security & SD-WAN -> MONITOR -> Appliance status.
+#. Check whether Cisco Meraki vMX displays "Active" status.
 
   |cisco_meraki_aws_vMX_appliance_status|
 
 Step 1.3. Enable Hub (Mesh) type
 -----------------------------------------------------------
 
-- Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN
-
-- Find the panel "Type" on the top
-
-- Select the radio button "Hub (Mesh)" to establish VPN tunnels with all hubs and dependent spokes for this Cisco Meraki vMX
+#. Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN.
+#. Find the panel "Type" on the top.
+#. Select the radio button "Hub (Mesh)" to establish VPN tunnels with all hubs and dependent spokes for this Cisco Meraki vMX.
 
   |cisco_meraki_aws_vMX_s2s_hub_type|
 
 Step 1.4. Enable BGP settings
 -----------------------------------------------------------
 
-- Find the panel "BGP settings"
-
-- Select the option "Enabled" for the field "BGP"
-
-- Adjust the values for the fields "BGP VPN AS" and "IBGP VPN Holdtimer" if needed and write down the BGP ASN
- 
-- Click the button "Save"
+#. Find the panel "BGP settings."
+#. Select the option "Enabled" for the field "BGP"
+#. Adjust the values for the fields "BGP VPN AS" and "IBGP VPN Holdtimer" if needed and write down the BGP ASN
+#. Click "Save."
 
   |cisco_meraki_aws_vMX_s2s_bgp_enable|
 
@@ -170,41 +162,31 @@ Step 2.1. Deploy branch Meraki vMX in Spoke VPC
 Step 2.2. Check branch Meraki vMX status on Meraki Dashboard
 ---------------------------------------------------------------------
 
-- Login Meraki Dashboard
-
-- Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates
-
-- Go to Security & SD-WAN -> MONITOR -> Appliance status
-
-- Check whether branch Cisco Meraki device displays "Active" status 
+#. Log in to the Meraki Dashboard.
+#. Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates.
+#. Go to Security & SD-WAN -> MONITOR -> Appliance status.
+#. Check whether branch Cisco Meraki device displays "Active" status.
 
   |cisco_meraki_aws_branch_vMX_appliance_status|
 
 Step 2.3. Enable Spoke type
 -----------------------------------------------------------
 
-- Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates
-
-- Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN
-
-- Find the panel "Type" on the top
-
-- Select the radio button "Spoke" to establish VPN tunnels with selected hubs
-
-- Click the link "Add a hub" for the field "Hubs"
-
-- Select the "NETWORK" where the Cisco Meraki vMX in Transit VPC locates for Hubs
+#. Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates.
+#. Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN.
+#. Find the panel "Type" on the top.
+#. Select the radio button "Spoke" to establish VPN tunnels with selected hubs.
+#. Click the link "Add a hub" for the field "Hubs."
+#. Select the "NETWORK" where the Cisco Meraki vMX in Transit VPC locates for Hubs.
 
   |cisco_meraki_aws_branch_vMX_s2s_spoke_type|
 
 Step 2.4. Advertise Spoke VPC CIDR
 -----------------------------------------------------------
 
-- Locate "Local networks" in the panel "VPN settings"
-
-- Click the button "Add a local network"
-
-- Fill the parameters to advertise Spoke VPC CIDR
+1. Locate "Local networks" in the panel "VPN settings."
+2. Click the button "Add a local network."
+3. Fill the parameters to advertise Spoke VPC CIDR.
 
 +-------------------+---------------------------------------------------------+
 | Name              | Provide a unique name for the Local networks            |
@@ -214,18 +196,16 @@ Step 2.4. Advertise Spoke VPC CIDR
 | VPN participation | VPN on                                                  |
 +-------------------+---------------------------------------------------------+
 
-- Click the button "Save"
+4. Click "Save."
 
   |cisco_meraki_aws_branch_vMX_s2s_vpn_settings|
 
 Step 2.5. Check VPN status
 -----------------------------------------------------------
 
-- Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates
-
-- Go to Security & SD-WAN -> MONITOR -> VPN status
-
-- Check whether VPN status is Green and VPN Registry is Connected.
+#. Select the "NETWORK" where this Cisco Meraki vMX in Spoke VPC locates.
+#. Go to Security & SD-WAN -> MONITOR -> VPN status.
+#. Check whether VPN status is Green and VPN Registry is Connected.
 
   |cisco_meraki_aws_branch_vMX_s2s_vpn_status|
 	
@@ -266,17 +246,11 @@ Step 3.4. Deploy Spoke VPC through AWS TGW Orchestrator
 
 - Follow Aviatrix TGW Orchestrator workflow `TGW Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_ to:
 	
-  - Create AWS TGW
-  
-  - Create a New Security Domain and Build Your Domain Connection Policies
-  
-  - Prepare Aviatrix Transit GW for TGW Attachment
-  
-  - Attach Aviatrix Transit GW to TGW
-  
-- Follow Aviatrix TGW Orchestrator workflow `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ to:
- 	
-  - Attach VPC to TGW
+#. Create AWS TGW.
+#. Create a New Security Domain and Build Your Domain Connection Policies.
+#. Prepare Aviatrix Transit GW for TGW Attachment.
+# Attach Aviatrix Transit GW to TGW.
+#. Follow Aviatrix TGW Orchestrator workflow `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ to Attach VPC to TGW.
 
 4. Build BGP over LAN
 ================================================
@@ -284,13 +258,10 @@ Step 3.4. Deploy Spoke VPC through AWS TGW Orchestrator
 Step 4.1. Configure BGP over LAN on Aviatrix Transit Gateway
 -------------------------------------------------------------
 
-- Login Aviatrix Controller
-
-- Go to MULTI-CLOUD TRANSIT -> Setup -> 3) Connect to VGW / External Device / Aviatrix CloudN / Azure VNG
-
-- Select option "External Device" -> "BGP" -> "LAN"
-
-- Fill the parameters to set up BGP over LAN to Meraki vMX in Transit VPC
+1. Log in to the Aviatrix Controller.
+2. Go to MULTI-CLOUD TRANSIT -> Setup -> 3) Connect to VGW / External Device / Aviatrix CloudN / Azure VNG.
+3. Select option "External Device" -> "BGP" -> "LAN."
+4. Fill the parameters to set up BGP over LAN to Meraki vMX in Transit VPC.
 
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched                                                                                                                                                     |
@@ -310,39 +281,30 @@ Step 4.1. Configure BGP over LAN on Aviatrix Transit Gateway
 | Local LAN IP                     | Leave it blank and the controller will assign an IP in the same subnet where the Remote LAN IP locates. Optionally configure an IP of your choosing within the same subnet where the Remote LAN IP locates. |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-- Click the button "CONNECT" to generate BGP session over LAN
+5. Click "CONNECT" to generate BGP session over LAN.
 
   |aviatrix_transit_externel_device_lan|
   
 Step 4.2. (Optional) Download the BGP over LAN configuration sample from Aviatrix Controller
 --------------------------------------------------------------------------------------------
 
-- Navigate to SITE2CLOUD -> Setup
-
-- Select the connection that you created with “Connection Name” in the previous step
-
-- Click the button "EDIT"
-
-- Select Vendor type, Platform, and Software
-
-- Click the button "Download Configuration"
+#. Navigate to SITE2CLOUD -> Setup.
+#. Select the connection that you created with “Connection Name” in the previous step.
+#. Click the button "EDIT."
+#. Select Vendor type, Platform, and Software.
+#. Click "Download Configuration."
 
 Step 4.3. Enable and configure BGP over LAN on Cisco Meraki vMX
 ---------------------------------------------------------------
 
 For more Cisco Meraki BGP information, please check this `doc <https://documentation.meraki.com/MX/Networks_and_Routing/BGP>`_
 
-- (Optional) Open the downloaded BGP over LAN configuration file
-
-- Login Meraki Dashboard
-
-- Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates
-
-- Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN
-
-- Find the section "BGP neighbors" in the panel "BGP settings"
-
-- Click the link "Add a BGP neighbor"
+1. (Optional) Open the downloaded BGP over LAN configuration file.
+2. Login Meraki Dashboard.
+3. Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates.
+4. Go to Security & SD-WAN -> CONFIGURE -> Site-to-site VPN.
+5. Find the section "BGP neighbors" in the panel "BGP settings."
+6. Click the link "Add a BGP neighbor."
 
 +----------------+-------------------------------------------------------------------------------------------------------------------+
 | Neighbor IP    | Use Aviatrix Transit gateway's eth4 private IP. This IP belongs to the same subnet where Meraki vMX eth0 locates. |
@@ -358,7 +320,7 @@ For more Cisco Meraki BGP information, please check this `doc <https://documenta
 | EBGP Multihop  | 1 for this example                                                                                                |
 +----------------+-------------------------------------------------------------------------------------------------------------------+
 
-- Click the button "Save"
+ 7. Click "Save."
 
   |cisco_meraki_aws_vMX_bgp_over_lan|
 	
@@ -369,77 +331,58 @@ For more Cisco Meraki BGP information, please check this `doc <https://documenta
 Step 4.4. Verify LAN status on Aviatrix Controller
 ----------------------------------------------------------
 
-- Navigate back to Aviatrix Controller
-
-- Go to SITE2CLOUD -> Setup
-
-- Find the connection that you created with “Connection Name” in the previous step
-
-- Check the Tunnel Status
+#. Navigate back to the Aviatrix Controller.
+#. Go to SITE2CLOUD -> Setup.
+#. Find the connection that you created with “Connection Name” in the previous step.
+#. Check the Tunnel Status.
 
   |aviatrix_bgp_lan_status_1|
 
-- Go to MULTI-CLOUD TRANSIT -> List
-
-- Select the Transit Primary Gateway that was created in the previous step
-
-- Click the button "DETAILS/DIAG"
-
-- Scroll down to the panel "Connections" -> "On-prem Connections"
-
-- Find the connection that you created with “Connection Name” in the previous step
-
-- Check the Tunnel Status
+#. Go to MULTI-CLOUD TRANSIT -> List.
+#. Select the Transit Primary Gateway that was created in the previous step.
+#. Click the button "DETAILS/DIAG."
+#. Scroll down to the panel "Connections" -> "On-prem Connections."
+#. Find the connection that you created with “Connection Name” in the previous step.
+#. Check the Tunnel Status.
 
   |aviatrix_bgp_lan_status_2|
 
 Step 4.5. Verify BGP session status on Aviatrix Controller
 ----------------------------------------------------------
 
-- Go to MULTI-CLOUD TRANSIT -> Advanced Config -> BGP Tab
-
-- Find the connection that you created with “Connection Name” in the previous step
-
-- Check the BGP Status
+#. Go to MULTI-CLOUD TRANSIT -> BGP.
+#. Find the connection that you created with “Connection Name” in the previous step.
+#. Check the BGP Status.
 
   |aviatrix_bgp_status|
 
 Step 4.6. Verify BGP session status on Cisco Meraki vMX
 ----------------------------------------------------------
 
-- Login Meraki Dashboard
-
-- Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates
-
-- Go to Security & SD-WAN -> MONITOR -> Event log
+#. Login Meraki Dashboard.
+#. Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates.
+#. Go to Security & SD-WAN -> MONITOR -> Event log.
 
   |cisco_meraki_aws_vMX_bgp_event_log|
 
 Step 4.7. Verify routing info on Cisco Meraki vMX
 ----------------------------------------------------------
 
-- Login Meraki Dashboard
-
-- Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates
-
-- Go to Security & SD-WAN -> MONITOR -> Route table
-
-- Check whether Cisco Meraki vMX has the routes to branch Cisco Meraki device via VPN
-
-- Check whether Cisco Meraki vMX has the routes to Aviatrix Spoke VPC via BGP on LAN
+#. Login Meraki Dashboard.
+#. Select the "NETWORK" where this Cisco Meraki vMX in Transit VPC locates.
+#. Go to Security & SD-WAN -> MONITOR -> Route table.
+#. Check whether Cisco Meraki vMX has the routes to branch Cisco Meraki device via VPN.
+#. Check whether Cisco Meraki vMX has the routes to Aviatrix Spoke VPC via BGP on LAN.
 
   |cisco_meraki_aws_vMX_routing_info|
 
 Step 4.8. Verify routing info on branch Cisco Meraki device
 -----------------------------------------------------------
 
-- Login Meraki Dashboard
-
-- Select the "NETWORK" where this branch Cisco Meraki locates
-
-- Go to Security & SD-WAN -> MONITOR -> Route table
-
-- Check whether Cisco Meraki vMX has the routes to Aviatrix Spoke VPC via Cisco Meraki vMX in Transit VPC
+#. Log in to the Meraki Dashboard.
+#. Select the "NETWORK" where this branch Cisco Meraki locates.
+#. Go to Security & SD-WAN -> MONITOR -> Route table.
+#. Check whether Cisco Meraki vMX has the routes to Aviatrix Spoke VPC via Cisco Meraki vMX in Transit VPC.
 
   |cisco_meraki_aws_branch_vMX_routing_info|
 
