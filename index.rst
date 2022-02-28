@@ -94,6 +94,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
+   HowTos/bgp
    HowTos/transitgw_external
    HowTos/spokegw_external
    HowTos/transit_approval
