@@ -107,7 +107,7 @@ During resizing, traffic will be switched to the backup Transit GW if HA is enab
 How do I know which Transit GW that a Spoke GW is sending traffic to?
 ----------------------------------------------------------------------
 
-You can tell which Transit GW carries the network traffic from a specific Spoke VPC by going to Advanced Config -> BGP. Select the Transit GW and click Detail. If the list of the Advertised Network includes the Spoke VPC CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW.
+You can tell which Transit GW carries the network traffic from a specific Spoke VPC by going to MULTI-CLOUD TRANSIT -> BGP on the left sidebar. Select the Transit GW and click Detail. If the list of the Advertised Network includes the Spoke VPC CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW.
 
 How can I route VPC egress Internet bound traffic to on-prem to go through the corporate firewall?
 ---------------------------------------------------------------------------------------------------
@@ -126,12 +126,12 @@ On-prem routes are propagated to the VGW which in turn propagates to the Transit
 
 1. Go to Site2Cloud, select the connection you specified at Step 3 during the Transit Network Workflow. Scroll down, you will see the Learned Network. Search for a learned route by typing a specific CIDR.
 #. Go to Peering -> Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC GW. The Learned Routes will be shown and is searchable.
-#. Go to Advanced Config -> BGP -> select a Transit GW, click Detail
+#. Go to MULTI-CLOUD TRANSIT  -> BGP -> select a Transit GW, click Detail
 
 How do I find out BGP information on a Transit GW?
 -------------------------------------------------
 
-Go to Advanced Config -> BGP -> Diagnostics, click the box for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug
+Go to MULTI-CLOUD TRANSIT  -> BGP -> Diagnostics, click the box for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug
 messages. Excessive debug messages reduce throughput.
 
 How do I delete a Spoke GW?
@@ -199,7 +199,7 @@ sent once when a route change event occurs, for example, when BGP routes are fla
 
 The feature is enabled by default. If you wish not to receive the alert email, you can disable it.
 
-Go to Advanced Config -> BGP -> Overlapping Alert Email. Click to disable.
+Go to MULTI-CLOUD TRANSIT  -> BGP -> Overlapping Alert Email. Click to disable.
 
 How to summarize Spoke VPC CIDR ranges?
 -----------------------------------------
