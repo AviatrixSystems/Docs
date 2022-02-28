@@ -131,12 +131,16 @@ to run the Cloudformation script.
 ..
     `CloudFormation for Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
 
-
-For other products, check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
+Other Aviatrix Products
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
+
 Aviatrix Secure Networking Platform - BYOL
+
 Aviatrix Secure Networking Platform - Enterprise Subscription
+
+Check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
 
 2.2 Login to AWS Console
 ---------------------------
