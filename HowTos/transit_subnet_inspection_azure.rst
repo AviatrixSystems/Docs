@@ -157,7 +157,7 @@ Intra-VNET Subnet Inspection
 |Not in subnet group    | In subnet group         | No             | Subnet A needs to be in a subnet group.   |
 |                       |                         |                | See `Important Recommendations <http://doc|
 |                       |                         |                | s.aviatrix.com/HowTos/transit_subnet_inspe|
-|                       |                         |                | ction_azure#important-recommendations>`_. |
+|                       |                         |                | ction_azure.html#important-recommendations>`_. |
 +-----------------------+-------------------------+----------------+-------------------------------------------+
 |In subnet group        | In subnet group         | Yes            | Subnets can either be in the same or      |
 |                       |                         |                | different subnet groups.                  |
@@ -173,13 +173,13 @@ Inter-VNET Subnet Inspection
 |Not in subnet group    | Not in subnet group     | Yes            | Only if VNET B has no subnet groups       |
 |                       |                         |                | configured. See `Important Recommendations|
 |                       |                         |                | <https://docs.aviatrix.com/HowTos/transit_|
-|                       |                         |                | subnet_inspection_azure#important-recommen|
+|                       |                         |                | subnet_inspection_azure.html#important-recommen|
 |                       |                         |                | dations>`__.                              | 
 +-----------------------+-------------------------+----------------+-------------------------------------------+
 |In subnet group        | Not in subnet group     | No             | Only if VNET B has no subnet groups       |
 |                       |                         |                | configured. See `Important Recommendations|
 |                       |                         |                | <https://docs.aviatrix.com/HowTos/transit_|
-|                       |                         |                | subnet_inspection_azure#important-recommen|
+|                       |                         |                | subnet_inspection_azure.html#important-recommen|
 |                       |                         |                | dations>`__.                              |
 +-----------------------+-------------------------+----------------+-------------------------------------------+
 |In subnet group        | In subnet group         | Yes            | Subnets can either be in the same or      |
@@ -197,13 +197,13 @@ The connection behavior is same as the Inter-VNET Subnet Inspection.
 |Not in subnet group    | Not in subnet group     | Yes            | Only if VNET B has no subnet groups       |
 |                       |                         |                | configured. See `Important Recommendations|
 |                       |                         |                | <https://docs.aviatrix.com/HowTos/transit_|
-|                       |                         |                | subnet_inspection_azure#important-recommen|
+|                       |                         |                | subnet_inspection_azure.html#important-recommen|
 |                       |                         |                | dations>`__.                              | 
 +-----------------------+-------------------------+----------------+-------------------------------------------+
 |In subnet group        | Not in subnet group     | No             | Only if VNET B has no subnet groups       |
 |                       |                         |                | configured. See `Important Recommendations|
 |                       |                         |                | <https://docs.aviatrix.com/HowTos/transit_|
-|                       |                         |                | subnet_inspection_azure#important-recommen|
+|                       |                         |                | subnet_inspection_azure.html#important-recommen|
 |                       |                         |                | dations>`__.                              |
 +-----------------------+-------------------------+----------------+-------------------------------------------+
 |In subnet group        | In subnet group         | Yes            | Subnets can either be in the same or      |
