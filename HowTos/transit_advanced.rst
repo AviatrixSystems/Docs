@@ -171,6 +171,12 @@ Refer to `TGW Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#w
 
 TGW Edge Segmentation can be enabled at given time. Select a connection to enable or disable. 
 
+Summarize CIDR(s) to AWS TGW
+------------------------------------------
+
+* Enable this setting to limit routes propagated to TGW to only 3 RFC1918 CIDRs and specific non-RFC1918 CIDRs. Limiting routes saves route propagation time.
+* Leave this setting disabled (the default setting) to maintain better segmentation behavior without improving performance.
+
 .. |Test| image:: transitvpc_workflow_media/SRMC.png
    :width: 5.55625in
    :height: 3.26548in
