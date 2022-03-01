@@ -2,6 +2,30 @@
 Aviatrix Controller and Gateway Release Notes
 ==============================================
 
+6.6.5404 (02/28/2022)  
+====================== 
+
+**Enhanced Features in Release 6.6**
+
+- Azure Subnet-Level Inspection enables inspection by Aviatrix Transit FireNet solution for traffic flowing between subnets within a VNet or in different VNets. For more information, refer to `Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW <https://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
+
+**UI Enhancements in Release 6.6**
+
+- Improved the sub-menu BGP located under Transit FireNet on the left sidebar in the Aviatrix Controller. 
+
+**Known Issues in Release 6.6**
+
+- **AVX-10002** - Firewall's URL inspection rules are dropping packets with controller(or spire).aviatrixnetwork.com and showing failed registration.
+- **AVX-16838** - Release server API showing an error during IP update.
+- **AVX-17650** - CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded.
+
+**Issues Corrected in Release 6.6** 
+
+- **AVX-18803** - Unable to Detach External Device Connection from Transit due to Exception Error.
+- **AVX-18845** - Exception is seen while "adding/deleting" routes on Stand-Alone CloudN.
+- **AVX-18876** - For BGP connections associated with domain, seen routes learned got re-advertised back to same connection when these BGP routes are in BestDB.
+- **AVX-18878** - Sessions may be prevented from getting immediately logged out after certain API calls in the RNE. 
+
 6.6.5230 (02/09/2022)  
 ====================== 
 
@@ -9,7 +33,6 @@ Aviatrix Controller and Gateway Release Notes
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
-
 
 6.5.3006 (02/09/2022)  
 ====================== 
