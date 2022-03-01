@@ -8,14 +8,14 @@ Aviatrix Controller and Gateway Release Notes
 **Enhanced Features in Release 6.6**
 
 - Azure Subnet-Level Inspection enables inspection by Aviatrix Transit FireNet solution for traffic flowing between subnets within a VNet or in different VNets. For more information, refer to `Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW <https://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
-
-**UI Enhancements in Release 6.6**
-
-- Improved the sub-menu BGP located under Transit FireNet on the left sidebar in the Aviatrix Controller.
 - Added support for gateway rollback from 6.6.a to versions 6.6 and 6.5. 
 - Added new option for users to select between preemptive or non-preemptive failover behavior for Active/Standby deployments for S2C connections. 
 - Added support for BGP on Spoke route propagation control to transit. 
 - Added support for BGP MD5 authentication. 
+
+**UI Enhancements in Release 6.6**
+
+- Improved the sub-menu BGP located under Transit FireNet on the left sidebar in the Aviatrix Controller.
 
 **Known Issues in Release 6.6**
 
