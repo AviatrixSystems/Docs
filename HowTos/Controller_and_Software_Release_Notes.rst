@@ -11,7 +11,11 @@ Aviatrix Controller and Gateway Release Notes
 
 **UI Enhancements in Release 6.6**
 
-- Improved the sub-menu BGP located under Transit FireNet on the left sidebar in the Aviatrix Controller. 
+- Improved the sub-menu BGP located under Transit FireNet on the left sidebar in the Aviatrix Controller.
+- Added support for gateway rollback from 6.6.a to versions 6.6 and 6.5. 
+- Added new option for users to select between preemptive or non-preemptive failover behavior for Active/Standby deployments for S2C connections. 
+- Added support for BGP on Spoke route propagation control to transit. 
+- Added support for BGP MD5 authentication. 
 
 **Known Issues in Release 6.6**
 
@@ -21,7 +25,7 @@ Aviatrix Controller and Gateway Release Notes
 
 **Issues Corrected in Release 6.6** 
 
-- **AVX-18803** - Unable to Detach External Device Connection from Transit due to Exception Error.
+- **AVX-18803** - Unable to detach external device connection from Transit due to Exception Error.
 - **AVX-18845** - Exception is seen while "adding/deleting" routes on Stand-Alone CloudN.
 - **AVX-18876** - For BGP connections associated with domain, seen routes learned got re-advertised back to same connection when these BGP routes are in BestDB.
 - **AVX-18878** - Sessions may be prevented from getting immediately logged out after certain API calls in the RNE. 
