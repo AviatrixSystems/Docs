@@ -140,7 +140,7 @@ go through the Spoke GW. Once NAT is enabled, you can further configure `FQDN wh
 2. (Optional) Enable/Disable HA to an Aviatrix Spoke Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When HA is enabled, a second Spoke GW will be launched. Note both Spoke GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
+When HA is enabled, a second Spoke GW will be launched. Note both Spoke GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
 
 |HAVPC|
 
