@@ -61,12 +61,12 @@ In computer networking, the Blast Radius is the area affected by an error, secur
 Brownfield
 ^^^^^^^^^^^^^^^^^^^^^
 	
-In software, brownfield development is building new systems or software where there are already existing codes or legacy components. See greenfield.
+In software, brownfield development is building new systems or software where there are already existing codes or legacy components. See `greenfield <https://docs.aviatrix.com/HowTos/general_glossary.html#greenfield>`.
 
 CIDR (Classless Inter-Domain Routing)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
-Also known as supernetting. CIDR allocates Internet Protocol (IP) addresses by creating unique and detailed addresses for networks and devices. A CIDR is the range of IP addresses a network uses. CIDR’s class system improves the efficiency of allocating IP (Internet Protocol) Addresses by using prefixes of varying lengths (variable-length subnet masking (VLSM)).
+Also known as supernetting. CIDR allocates `Internet Protocol (IP) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` addresses by creating unique and detailed addresses for networks and devices. A CIDR is the range of IP addresses a network uses. CIDR’s class system improves the efficiency of allocating IP (Internet Protocol) Addresses by using prefixes of varying lengths (variable-length subnet masking (VLSM)).
 
 Classless Inter-Domain Routing (CIDR) is a range of IP addresses a network uses. A CIDR address looks like a normal IP address, except that it ends with a slash followed by a number. The number after the slash represents the number of addresses in the range.
 
@@ -136,7 +136,7 @@ The security boundary where a local or private network connects to a third-party
 Egress
 ^^^^^^^^^^^^^^^^^^^^^
 
-The exit of an entity or network boundary; outbound communication from instances in your VPC to the Internet. See ingress. 
+The exit of an entity or network boundary; outbound communication from instances in your VPC to the Internet. See `ingress <https://docs.aviatrix.com/HowTos/general_glossary.html#ingress>`. 
 
 In AWS, an egress can be centralized or distributed. A centralized egress ensures all traffic that is destined for a particular IP address goes through a single VPC in which egress policy enforcement can take place before a connection is allowed to exit. A distributed egress means there would be a gateway in every VPC, and each of those gateways needs egress control.
 
@@ -274,11 +274,11 @@ Physical objects or “things” that have software and other technology that co
 IP (Internet Protocol) Address	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A numeric or alphanumeric address assigned to every device connected to the Internet, from smartphones to computers. See CIDR to learn about how IP addresses are allocated or DNS to learn more about how IP addresses are translated to more-memorable domain names. 
+A numeric or alphanumeric address assigned to every device connected to the Internet, from smartphones to computers. See `CIDR <https://docs.aviatrix.com/HowTos/general_glossary.html#cidr-classless-inter-domain-routing>` to learn about how IP addresses are allocated or DNS to learn more about how IP addresses are translated to more-memorable domain names. 
 
 As the Internet grows bigger and more and more devices, systems, and machines become a part of it, more versions of assigning IP addresses appear. The Internet Engineering Task Force (IETF) created the sixth version, IPv6, in 1998.
 
-IP can be used with several transport protocols, including TCP and UDP.
+IP can be used with several transport protocols, including `TCP <https://docs.aviatrix.com/HowTos/general_glossary.html#tcp-transmission-control-protocol>` and `UDP <https://docs.aviatrix.com/HowTos/general_glossary.html#udp-user-datagram-protocol>`.
 
 IPS (Intrusion Prevention System)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -293,7 +293,7 @@ A set of security protocols for IP (Internet Protocol) networks that are used to
 LAN (Local Area Network)	
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-A group of two or more connected computers in one small geographic area, usually within the same building or campus. LANs can be connected across larger distances by WANs (Wide Area Networks).
+A group of two or more connected computers in one small geographic area, usually within the same building or campus. LANs can be connected across larger distances by `WANs (Wide Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#wan-wide-area-network>`.
 
 Latency	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -313,7 +313,7 @@ The speed at which your router communicates with equipment at the other end of t
 MCNA (Multi-Cloud Networking Architecture)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Architecture that stores and supports multiple cloud computing and storage systems, both public (like Amazon Web Services (AWS)) and private. Multi-Cloud Networking Architecture gives companies greater security, flexibility, and opportunity to use multiple cloud systems instead of being dependent on one or trying to manage data and users across multiple separate systems.
+Architecture that stores and supports multiple cloud computing and storage systems, both public (like `Amazon Web Services (AWS) <https://aws.amazon.com/free/?trk=fce796e8-4ceb-48e0-9767-89f7873fac3d&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Core-Main|Core|US|EN|Text&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&ef_id=CjwKCAiAyPyQBhB6EiwAFUuakhrje2kPR-HnjqbEQ4hlh7IkPdr0wVwk0IV3BD5LYqeumvQ32lNmMhoCYMAQAvD_BwE:G:s&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all>`) and private. Multi-Cloud Networking Architecture gives companies greater security, flexibility, and opportunity to use multiple cloud systems instead of being dependent on one or trying to manage data and users across multiple separate systems.
 
 Multi-Cloud Agility
 ^^^^^^^^^^^^^^^^^^^^^
@@ -323,7 +323,7 @@ The ability to treat the many network capabilities provided by Cloud Service Pro
 MFA (Multi-Factor Authentication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An identification method that requires users to provide at least two “factors” (such as a username & password and a phone number) to log into a system or account. MFA increases the overall security of a system. See IAM. 
+An identification method that requires users to provide at least two “factors” (such as a username & password and a phone number) to log into a system or account. MFA increases the overall security of a system. See `IAM <https://docs.aviatrix.com/HowTos/general_glossary.html#iam-identity-and-access-management>`. 
 
 NAT (Network Address Translation)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -531,7 +531,11 @@ WAN (Wide Area Network)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A network that connects devices and resources over a large geographic area. A WAN can connect multiple LANs (Local Area Networks). Note that now, Aviatrix uses the term “CloudN” instead of “CloudWAN.”
-Webhook	A lightweight API (Application Program Interface) that enables a one-way connection to share data. See API. 
+
+Webhook	
+^^^^^^^^^^^^^^
+
+A lightweight API (Application Program Interface) that enables a one-way connection to share data. See API. 
 
 Zero Trust Model	
 ^^^^^^^^^^^^^^^^^^^^^
