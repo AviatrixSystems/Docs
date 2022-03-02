@@ -1,6 +1,6 @@
 .. meta::
    :description: Geo VPN Reference Design
-   :keywords: Geo VPN, VPN, aviatrix, remote user vpn, openvpn, user vpn
+   :keywords: Geo VPN, VPN, aviatrix, remote user vpn, openvpn, user vpn, aws
 
 
 
@@ -20,10 +20,14 @@ VPN solution with latency based routing to dynamically route VPN users
 to the nearest VPN access gateway based on the latency between the user
 and the gateways.
 
+   .. note::
+
+      GeoVPN service is  currently only available for AWS cloud.
+
 VPN Access Details
 ==================
 
-An example deployment in AWS is shown below.  In this configuration, there are two VPN access gateways: one in us-west-2 and another in eu-central-1.  Each VPN access gateway is fronted by a load balancer in AWS.
+An example deployment in AWS is shown below. In this configuration, there are two VPN access gateways: one in us-west-2 and another in eu-central-1. Each VPN access gateway is fronted by a load balancer in AWS.
 
 |imageArchitecture|
 
@@ -32,7 +36,7 @@ Let's look at the difference between a standard VPN access service and VPN acces
 Standard VPN Service (without geolocation feature enabled)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Without the Geolocation feature enabled, when a user connects to the VPN service, they will connect to one of the two regions' VPN gateway.  Each gateway is independently administered, meaning users need a separate configuration profile for each region they will access.
+Without the Geolocation feature enabled, when a user connects to the VPN service, they will connect to one of the two regions' VPN gateway. Each gateway is independently administered, meaning users need a separate configuration profile for each region they will access.
 
 In this configuration, an EU-based user would be given a configuration profile for the eu-central-1 load balancer.  And, a US-based user will be provided with a us-west-2 configuration profile.  If either user relocates or travels to the opposite region, they will need a separate configuration profile in that region and they will need to manually switch the active configuration profile.
 
@@ -41,7 +45,7 @@ In this configuration, an EU-based user would be given a configuration profile f
 Geolocation VPN Service
 +++++++++++++++++++++++
 
-With the Geolocation feature enabled, when a user connects to the VPN service, they are directed to a Route 53 or Azure DNS entry that uses a latency-based routing policy to choose between the available regions.
+With the Geolocation feature enabled, when a user connects to the VPN service, they are directed to a Route 53 that uses a latency-based routing policy to choose between the available regions.
 
 In this configuration, both the EU-based user and the US-based user would be given the same configuration profile.  This configuration profile will select the closest region automatically using a latency-based routing policy defined on the DNS record.
 
@@ -78,7 +82,7 @@ Configuration Workflow
    |                        |                                              |
    |                        | .. important::                               |
    |                        |    This domain name must be hosted by AWS    |
-   |                        |    Route53 or Azure DNS in the selected      |
+   |                        |    Route53 in the selected      |
    |                        |    account.                                  |
    +------------------------+----------------------------------------------+
    | VPN Service Name       | The hostname that users will connect to.     |
@@ -147,7 +151,7 @@ GeoVPN can use DHCP Setting for DNS name resolution from the cloud private netwo
 
 #. Click the **OpenVPN** navigation menu item
 #. Click **Edit Config**
-#. In the `VPC ID/VNet Name` drop down, select the specific VPC ID/VNet Name and LB/Gateway Name instead of Geo VPN service name
+#. In the `VPC ID/VNet Name` drop down, select the specific VPC ID and LB/Gateway Name instead of Geo VPN service name
 #. Update the supported VPN configuration as below regarding to your requirement in each VPN gateway
    
    - Additional CIDRs
