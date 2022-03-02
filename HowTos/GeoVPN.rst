@@ -73,27 +73,26 @@ Configuration Workflow
 #. Populate the fields:
 
    +-------------------------+---------------------------------------------------------------+
-   | Field                             | Description                                                                         |
-   +========================+===================================+
-   | Account Name           | Select the cloud account where the DNS domain       |
-   |                                      | is hosted.                                                                             |
+   | Field                   | Description                                                   |
+   +========================+================================================================+
+   | Account Name            | Select the cloud account where the DNS domain                 |
+   |                                      | is hosted.                                       |
    +-------------------------+---------------------------------------------------------------+
-   | Domain Name            | The hosted domain name.                                               |
-   |                                      |                                                                                              |
-   |                                      | .. important::                                                                      |
-   |                                      |    This domain name must be hosted by AWS               |
-   |                                      |    Route53 in the selected                                                |
-   |                                      |    account.                                                                            |
-   +-------------------------+----------------------------------------------------------------+
-   | VPN Service Name    | The hostname that users will connect to.                      |
-   |                                      | A DNS record will be created for this name                   |
-   |                                      | in the specified domain name.                                         |
-   +------------------------+-----------------------------------------------------------------+
-   | ELB DNS Name          | Select the first ELB name to attach to this                     |
-   |                                      | Geo VPN name.  You can add others after                      |
-   |                                      | this feature is enabled.                                                       |
-   +------------------------+-----------------------------------------------------------------+
-
+   | Domain Name             | The hosted domain name.                                       |
+   |                         |                                                               |
+   |                         | .. important::                                                |
+   |                         |    This domain name must be hosted by AWS                     |
+   |                         |    Route53 in the selected                                    |
+   |                         |    account.                                                   |
+   +-------------------------+---------------------------------------------------------------+
+   | VPN Service Name        | The hostname that users will connect to.                      |
+   |                         | A DNS record will be created for this name                    |
+   |                         | in the specified domain name.                                 |
+   +-------------------------+---------------------------------------------------------------+
+   | ELB DNS Name            | Select the first ELB name to attach to this                   |
+   |                         | Geo VPN name.  You can add others after                       |
+   |                         | this feature is enabled.                                      |
+   +------------------------+----------------------------------------------------------------+
 
    |imageEnablePopulate|
 
