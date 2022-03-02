@@ -72,7 +72,6 @@ Configuration Workflow
 
 #. Populate the fields:
 
-=======
    +------------------------+----------------------------------------------------------------+
    | Field                  | Description                                                                                    |
    +========================+===================================+
@@ -94,7 +93,6 @@ Configuration Workflow
    |                        | Geo VPN name.  You can add others after                                    |
    |                        | this feature is enabled.                                                                     |
    +------------------------+-----------------------------------------------------------------+
-=======
 
 
    |imageEnablePopulate|
