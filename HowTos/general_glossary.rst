@@ -544,12 +544,12 @@ A software construct (such as a suite) which provides its services only for its 
 WAN (Wide Area Network)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A network that connects devices and resources over a large geographic area. A WAN can connect multiple `LANs (Local Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network`. Note that now, Aviatrix uses the term “CloudN” instead of “CloudWAN.”
+A network that connects devices and resources over a large geographic area. A WAN can connect multiple `LANs (Local Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network`_. Note that now, Aviatrix uses the term “CloudN” instead of “CloudWAN.”
 
 Webhook	
 ^^^^^^^^^^^^^^
 
-A lightweight API (Application Program Interface) that enables a one-way connection to share data. See `API <https://docs.aviatrix.com/HowTos/general_glossary.html#api-application-programming-interface>`. 
+A lightweight API (Application Program Interface) that enables a one-way connection to share data. See `API <https://docs.aviatrix.com/HowTos/general_glossary.html#api-application-programming-interface>`_. 
 
 Zero Trust Model	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -559,6 +559,6 @@ A security framework that assumes there is no traditional network edge and requi
 ZTP (Zero-Touch Provisioning)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ZTP automates repetitive tasks, reduce human touch points, reduce errors and scale the deployment process to any size. ZTP can be found in switches, wireless access points, (`SD-WAN <https://docs.aviatrix.com/HowTos/general_glossary.html#sd-wan>`) routers, NFV (Network Functions Virtualization) platform, and firewalls.
+ZTP automates repetitive tasks, reduce human touch points, reduce errors and scale the deployment process to any size. ZTP can be found in switches, wireless access points, (`SD-WAN <https://docs.aviatrix.com/HowTos/general_glossary.html#sd-wan>`_) routers, NFV (Network Functions Virtualization) platform, and firewalls.
 
 .. disqus::
