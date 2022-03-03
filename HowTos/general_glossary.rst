@@ -91,7 +91,7 @@ The “brain” of almost any device, from a computer to a thermostat. CPUs proc
 CSP (Cloud Service Provider)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A company that sells cloud services: servers, components, platforms, and infrastructure. `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, `Google Cloud Platform (GCP) <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_, and `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_ are all examples of CSPs.
+A company that sells cloud services: servers, components, platforms, and infrastructure. `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, `Google Cloud Platform (GCP) <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_, and `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_ are all examples of CSPs.
 
 Data center
 ^^^^^^^^^^^^^^^^^^^^^
@@ -288,7 +288,7 @@ A numeric or alphanumeric address assigned to every device connected to the Inte
 
 As the Internet grows bigger and more and more devices, systems, and machines become a part of it, more versions of assigning IP addresses appear. The Internet Engineering Task Force (IETF) created the sixth version, IPv6, in 1998.
 
-IP can be used with several transport protocols, including `TCP <https://docs.aviatrix.com/HowTos/general_glossary.html#tcp-transmission-control-protocol>` and `UDP <https://docs.aviatrix.com/HowTos/general_glossary.html#udp-user-datagram-protocol>`_.
+IP can be used with several transport protocols, including `TCP <https://docs.aviatrix.com/HowTos/general_glossary.html#tcp-transmission-control-protocol>`_ and `UDP <https://docs.aviatrix.com/HowTos/general_glossary.html#udp-user-datagram-protocol>`_.
 
 IPS (Intrusion Prevention System)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -544,7 +544,7 @@ A software construct (such as a suite) which provides its services only for its 
 WAN (Wide Area Network)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A network that connects devices and resources over a large geographic area. A WAN can connect multiple `LANs (Local Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network`_. Note that now, Aviatrix uses the term “CloudN” instead of “CloudWAN.”
+A network that connects devices and resources over a large geographic area. A WAN can connect multiple `LANs (Local Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network>`_. Note that now, Aviatrix uses the term “CloudN” instead of “CloudWAN.”
 
 Webhook	
 ^^^^^^^^^^^^^^
