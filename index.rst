@@ -438,6 +438,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/opstools_survey
    HowTos/multi_cloud_region_affinity_and_latency
    HowTos/general_glossary
+   HowTos/aviatrix_glossary
 
 .. _Support Center:
 
