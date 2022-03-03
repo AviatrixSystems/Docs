@@ -7,7 +7,7 @@
 General Glossary
 =================
 
-This Glossary provides definitions for terms related to common software, networking, cloud computing, or the Internet. For words and phrases directly associated with `CSPs (Cloud Service Providers) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_ or Aviatrix, please see the Multi-Cloud Rosetta Stone (coming soon).
+This Glossary provides definitions for terms related to common software, networking, cloud computing, or the Internet. For words and phrases directly associated with `CSPs (Cloud Service Providers) <https://docs.aviatrix.com/HowTos/general_glossary.html#id3>`_ or Aviatrix, please see the Multi-Cloud Rosetta Stone (coming soon).
 
 Abstraction	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -29,17 +29,17 @@ API (Application Programming Interface)
 
 APIs enable systems and applications to exchange data – for example, for a data analysis tool to extract salary data from an accounting program. This data exchange is designed to automate large and complex data transfers securely. 
 
-APIs often work two ways (each system sending and receiving information). See `webhook <https://docs.aviatrix.com/HowTos/general_glossary.html#webhook>`_.
+APIs often work two ways (each system sending and receiving information). See `webhook <https://docs.aviatrix.com/HowTos/general_glossary.html#id30>`_.
 
 Availability Zone (AZ)
 ^^^^^^^^^^^^^^^^^^^^^
 	
-(Used by `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_ and `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_): Highly available data centers within each AWS/Azure region. AZs are locations in different regions that can sustain local failures.
+(Used by `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_ and `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#id1>`_): Highly available data centers within each AWS/Azure region. AZs are locations in different regions that can sustain local failures.
 
 AWS (Amazon Web Services)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Amazon’s `Cloud Service Provider (CSP) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_  offering, the industry leader for cloud platform providers. AWS provides on-demand cloud computing platforms and `APIs <https://docs.aviatrix.com/HowTos/general_glossary.html#api-application-programming-interface>`_.
+Amazon’s `Cloud Service Provider (CSP) <https://docs.aviatrix.com/HowTos/general_glossary.html#id3>`_  offering, the industry leader for cloud platform providers. AWS provides on-demand cloud computing platforms and `APIs <https://docs.aviatrix.com/HowTos/general_glossary.html#api-application-programming-interface>`_.
 
 Automation	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -49,7 +49,7 @@ The practice of designing technology and systems that require minimal work for h
 Azure	
 ^^^^^^^^^^^^^^^^^^^^^
 
-Microsoft Azure is Microsoft’s `CSP (Cloud Service Provider) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_ offering, a cloud computing service operated by Microsoft for application management via Microsoft-managed data center. Azure is behind Amazon’s service, `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, in terms of industry leadership, but is increasing its market share.
+Microsoft Azure is Microsoft’s `CSP (Cloud Service Provider) <https://docs.aviatrix.com/HowTos/general_glossary.html#id3>`_ offering, a cloud computing service operated by Microsoft for application management via Microsoft-managed data center. Azure is behind Amazon’s service, `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, in terms of industry leadership, but is increasing its market share.
 
 BGP (Border Gateway Protocol)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,7 +64,7 @@ In computer networking, the Blast Radius is the area affected by an error, secur
 Brownfield
 ^^^^^^^^^^^^^^^^^^^^^
 	
-In software, brownfield development is building new systems or software where there are already existing codes or legacy components. See `greenfield <https://docs.aviatrix.com/HowTos/general_glossary.html#greenfield>`_.
+In software, brownfield development is building new systems or software where there are already existing codes or legacy components. See `greenfield <https://docs.aviatrix.com/HowTos/general_glossary.html#id8>`_.
 
 CIDR (Classless Inter-Domain Routing)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,7 +91,7 @@ The “brain” of almost any device, from a computer to a thermostat. CPUs proc
 CSP (Cloud Service Provider)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A company that sells cloud services: servers, components, platforms, and infrastructure. `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, `Google Cloud Platform (GCP) <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_, and `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_ are all examples of CSPs.
+A company that sells cloud services: servers, components, platforms, and infrastructure. `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#id1>`_, `Google Cloud Platform (GCP) <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_, and `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_ are all examples of CSPs.
 
 Data center
 ^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ The security boundary where a local or private network connects to a third-party
 Egress
 ^^^^^^^^^^^^^^^^^^^^^
 
-The exit of an entity or network boundary; outbound communication from instances in your VPC to the Internet. See `ingress <https://docs.aviatrix.com/HowTos/general_glossary.html#ingress>`_. 
+The exit of an entity or network boundary; outbound communication from instances in your VPC to the Internet. See `ingress <https://docs.aviatrix.com/HowTos/general_glossary.html#id11>`_. 
 
 In `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, an egress can be centralized or distributed. A centralized egress ensures all traffic that is destined for a particular `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ goes through a single VPC in which egress policy enforcement can take place before a connection is allowed to exit. A distributed egress means there would be a gateway in every VPC, and each of those gateways needs egress control.
 
@@ -162,7 +162,7 @@ Encryption is a process that uses digital keys to encode various components—te
 ESNI (Encrypted Server Name Indication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A tool that keeps your software browsing private by masking the websites you are visiting. ESNI is a part of the TLS (Transport Layer Security) protocol. See `TLS <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`_.
+A tool that keeps your software browsing private by masking the websites you are visiting. ESNI is a part of the TLS (Transport Layer Security) protocol. See `TLS <https://docs.aviatrix.com/HowTos/general_glossary.html#id28>`_.
 
 Firewall	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -202,7 +202,7 @@ A hardware or software appliance that acts as a bridge or tunnel between local n
 GCP (Google Cloud Platform)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Google’s cloud computing service platform, a competitor of `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Microsoft Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_, and other platforms.
+Google’s cloud computing service platform, a competitor of `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Microsoft Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#id1>`_, `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_, and other platforms.
 
 GRE (Generic Routing Encapsulation)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,7 +229,7 @@ A Hub and Spoke Distribution Model can help companies save costs, but it does ha
 IaaS (Infrastructure as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A cloud computing service that includes compute, storage, and networking services that customers can access. Users can rent virtual machines of different configurations, on demand, for the time required. IaaS is often on-demand and pay-as-you-go. IaaS is one of the cloud computing service types along with `PaaS (Platform as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#paas-platform-as-a-service>`_ and `SaaS (Software as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#saas-software-as-a-service>`_. 
+A cloud computing service that includes compute, storage, and networking services that customers can access. Users can rent virtual machines of different configurations, on demand, for the time required. IaaS is often on-demand and pay-as-you-go. IaaS is one of the cloud computing service types along with `PaaS (Platform as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#id20>`_ and `SaaS (Software as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#id22>`_. 
 
 IAM (Identity and Access Management)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -328,7 +328,7 @@ Architecture that stores and supports multiple cloud computing and storage syste
 Multi-Cloud Agility
 ^^^^^^^^^^^^^^^^^^^^^
 
-The ability to treat the many network capabilities provided by `Cloud Service Providers (CSPs) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_ as one. A `Multi-Cloud Networking <https://docs.aviatrix.com/HowTos/general_glossary.html#mcna-multi-cloud-networking-architecture>`_ solution achieves agility when it replaces the unique language of each individual cloud with more general terminology.
+The ability to treat the many network capabilities provided by `Cloud Service Providers (CSPs) <https://docs.aviatrix.com/HowTos/general_glossary.html#id3>`_ as one. A `Multi-Cloud Networking <https://docs.aviatrix.com/HowTos/general_glossary.html#mcna-multi-cloud-networking-architecture>`_ solution achieves agility when it replaces the unique language of each individual cloud with more general terminology.
 
 MFA (Multi-Factor Authentication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -362,7 +362,7 @@ A collection of connected devices and software than share data. The biggest netw
 Network Ossification	
 ^^^^^^^^^^^^^^^^^^^^^
 
-The danger of assuming that something in software, networking, or the Internet in general cannot change because it has not changed. For example, in the Y2K scare of the 1990s, engineers worried that the Internet would stop working when the date change from “19__” to “20__.” Ossification prevents software from upgrading, adapting, or improving over time.
+The danger of assuming that something in software, networking, or the Internet in general cannot change because it has not changed. For example, in the Y2K scare of the 1990s, engineers worried that the Internet would stop working when the date changed from “19__” to “20__.” Ossification prevents software from upgrading, adapting, or improving over time.
 
 Network Visibility	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -384,7 +384,7 @@ On-premise software gives companies complete control over their software resourc
 OCI (Oracle Cloud Infrastructure)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Oracle’s CSP (Cloud Service Provider) offering. Oracle is behind `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, and `GCP <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_ in the market.
+Oracle’s CSP (Cloud Service Provider) offering. Oracle is behind `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#id1>`_, and `GCP <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_ in the market.
 
 OOB (Out of Band)	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -394,7 +394,7 @@ Activity outside a defined telecommunications frequency band, or, metaphorically
 PaaS (Platform as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One of the options for cloud computing services. With PaaS, the company owns the applications and data but pays for the use of servers from a cloud services provider. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>`_ and `SaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#saas-software-as-a-service>`_.
+One of the options for cloud computing services. With PaaS, the company owns the applications and data but pays for the use of servers from a cloud services provider. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>`_ and `SaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#id22>`_.
 
 PBR (Policy-Based Routing)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -429,7 +429,7 @@ In computer networking, a routing table is a data file often formatted as a tabl
 SaaS (Software as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One of the cloud computing service offerings. In SaaS, a company pays another company for use of a software service. SaaS vendors own the servers, applications, and data. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>`_ and `PaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#paas-platform-as-a-service>`_. 
+One of the cloud computing service offerings. In SaaS, a company pays another company for use of a software service. SaaS vendors own the servers, applications, and data. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>`_ and `PaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#id20>`_. 
 
 SAML (Security Assertion Markup Language)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -459,7 +459,7 @@ A networking feature that translates a virtual machine's private `IP <https://do
 SNI (Server Name Indication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An extension of the `TLS (Transport Layer Security) <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`_ protocol that helps clients reach the correct website. SNI allows the server to safely host multiple TLS Certificates for multiple sites, all under a single `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_.
+An extension of the `TLS (Transport Layer Security) <https://docs.aviatrix.com/HowTos/general_glossary.html#id28>`_ protocol that helps clients reach the correct website. SNI allows the server to safely host multiple TLS Certificates for multiple sites, all under a single `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_.
 
 SSH (Secure Shell or Secure Socket Shell)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -469,7 +469,7 @@ A method for secure remote login from one computer to another.
 SSL (Secure Sockets Layer)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A protocol that provides privacy, authentication, and integrity to Internet communications. SSL eventually evolved into `Transport Layer Security (TLS) <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`_.  
+A protocol that provides privacy, authentication, and integrity to Internet communications. SSL eventually evolved into `Transport Layer Security (TLS) <https://docs.aviatrix.com/HowTos/general_glossary.html#id28>`_.  
 
 SSO (Single Sign-On)	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -559,6 +559,6 @@ A security framework that assumes there is no traditional network edge and requi
 ZTP (Zero-Touch Provisioning)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ZTP automates repetitive tasks, reduce human touch points, reduce errors and scale the deployment process to any size. ZTP can be found in switches, wireless access points, (`SD-WAN <https://docs.aviatrix.com/HowTos/general_glossary.html#sd-wan>`_) routers, NFV (Network Functions Virtualization) platform, and firewalls.
+ZTP automates repetitive tasks, reduce human touch points, reduce errors and scale the deployment process to any size. ZTP can be found in switches, wireless access points, (`SD-WAN <https://docs.aviatrix.com/HowTos/general_glossary.html#sd-wan-software-defined-wide-area-network>`_) routers, NFV (Network Functions Virtualization) platform, and firewalls.
 
 .. disqus::
