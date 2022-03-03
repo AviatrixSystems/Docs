@@ -2,11 +2,11 @@
    :description: Aviatrix Glossary
    :keywords: glossary, dictionary, Aviatrix, ACE
 
-This Glossary provides definitions of Aviatrix products, features, tools, and general terminology.
-
 ============================
 Aviatrix Glossary
 =============================
+
+This Glossary provides definitions of Aviatrix products, features, tools, and general terminology.
 
 ACE (Aviatrix Certified Engineer) Training
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
