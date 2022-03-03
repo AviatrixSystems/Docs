@@ -31,8 +31,7 @@ If you would like to build a full mesh network where Spoke VPCs communicate with
 
 .. Note::
 
-  For a Spoke VPC/VNet in a multi-cloud transit to communicate with a Spoke VPC in TGW Orchestrator, Connected
- Transit must be enabled on the Aviatrix Transit Gateway that connects both sides.
+  For a Spoke VPC/VNet in a multi-cloud transit to communicate with a Spoke VPC in TGW Orchestrator, connected Transit must be enabled on the Aviatrix Transit Gateway that connects both sides.
 
 For software version 4.1 and later, you will click Transit Network on the left navigation bar, click the Advanced Config option and browse to the Edit Gateway tab. Select the Transit Gateway you want to enable the Connected Transit.
 
@@ -81,7 +80,11 @@ Preemptive or Non-preemptive Mode
 If you enable Active-Standby mode, you can also select the **Preemptive** or **Non-preemptive** radio buttons to determine the network's behavior when the primary gateway goes down and the network switches to the standby gateway.
 
 * In Preemptive mode, when the primary gateway for a connection is back up, the network automatically switches back to using that primary gateway.
-* In Non-preemptive mode, the network continues to use the standby gateway only even after the primary gateway is up again.
+* In Non-preemptive mode, the network continues to use the standby gateway even after the primary gateway is up again, until you initiate a manual switchover using the Switchover button.
+
+.. Note::
+
+If you enable Preemptive mode, the Switchover button is grayed out and unclickable because in Preemptive mode, there is no need for a manual switchover back to the primary gateway.
 
 Multi-Tier Transit
 -----------------------
