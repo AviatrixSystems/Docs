@@ -7,7 +7,7 @@
 General Glossary
 =================
 
-This Glossary provides definitions for terms related to common software, networking, cloud computing, or the Internet. For words and phrases directly associated with `CSPs (Cloud Service Providers) <https://docs.aviatrix.com/HowTos/general_glossary.html#id3>`_ or Aviatrix, please see the Multi-Cloud Rosetta Stone (coming soon).
+This Glossary provides definitions for terms related to common software, networking, cloud computing, or the Internet. For words and phrases directly associated with Aviatrix products, features, or terminology, please see the `Aviatrix Glossary <https://docs.aviatrix.com/HowTos/aviatrix_glossary.html>`_.
 
 Abstraction	
 ^^^^^^^^^^^^^^^^^^^^^
