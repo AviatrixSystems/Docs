@@ -4,12 +4,12 @@
 
 This Glossary provides definitions of Aviatrix products, features, tools, and general terminology.
 
-======================
+============================
 Aviatrix Glossary
-=======================
+=============================
 
 ACE (Aviatrix Certified Engineer) Training
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Aviatrix Certified Engineer (ACE) program is a multi-cloud networking and security certification available to technical professionals and cloud practitioners. The program offers an overview of the networking industry’s move from on-premise to cloud servers, the main cloud service providers (AWS, Azure, GCP, and OCI) and their platforms, the necessity of multi-cloud networking architecture, and case studies that demonstrate how multi-cloud networking architecture has benefitted specific customers.
 
