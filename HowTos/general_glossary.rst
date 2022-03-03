@@ -7,7 +7,7 @@
 General Glossary
 =================
 
-This Glossary provides definitions for terms related to common software, networking, cloud computing, or the Internet. For words and phrases directly associated with `CSPs (Cloud Service Providers) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>` or Aviatrix, please see the Multi-Cloud Rosetta Stone (coming soon).
+This Glossary provides definitions for terms related to common software, networking, cloud computing, or the Internet. For words and phrases directly associated with `CSPs (Cloud Service Providers) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_ or Aviatrix, please see the Multi-Cloud Rosetta Stone (coming soon).
 
 Abstraction	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -29,17 +29,17 @@ API (Application Programming Interface)
 
 APIs enable systems and applications to exchange data – for example, for a data analysis tool to extract salary data from an accounting program. This data exchange is designed to automate large and complex data transfers securely. 
 
-APIs often work two ways (each system sending and receiving information). See webhook. 
+APIs often work two ways (each system sending and receiving information). See `webhook <https://docs.aviatrix.com/HowTos/general_glossary.html#webhook>`_.
 
 Availability Zone (AZ)
 ^^^^^^^^^^^^^^^^^^^^^
 	
-(Used by AWS and `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`): Highly available data centers within each AWS/Azure region. AZs are locations in different regions that can sustain local failures.
+(Used by `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_ and `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_): Highly available data centers within each AWS/Azure region. AZs are locations in different regions that can sustain local failures.
 
 AWS (Amazon Web Services)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Amazon’s `Cloud Service Provider (CSP) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`  offering, the industry leader for cloud platform providers. AWS provides on-demand cloud computing platforms and `APIs <https://docs.aviatrix.com/HowTos/general_glossary.html#api-application-programming-interface>`.
+Amazon’s `Cloud Service Provider (CSP) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_  offering, the industry leader for cloud platform providers. AWS provides on-demand cloud computing platforms and `APIs <https://docs.aviatrix.com/HowTos/general_glossary.html#api-application-programming-interface>`_.
 
 Automation	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -49,7 +49,7 @@ The practice of designing technology and systems that require minimal work for h
 Azure	
 ^^^^^^^^^^^^^^^^^^^^^
 
-Microsoft Azure is Microsoft’s `CSP (Cloud Service Provider) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>` offering, a cloud computing service operated by Microsoft for application management via Microsoft-managed data center. Azure is behind Amazon’s service, AWS, in terms of industry leadership, but is increasing its market share.
+Microsoft Azure is Microsoft’s `CSP (Cloud Service Provider) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_ offering, a cloud computing service operated by Microsoft for application management via Microsoft-managed data center. Azure is behind Amazon’s service, `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, in terms of industry leadership, but is increasing its market share.
 
 BGP (Border Gateway Protocol)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,12 +64,12 @@ In computer networking, the Blast Radius is the area affected by an error, secur
 Brownfield
 ^^^^^^^^^^^^^^^^^^^^^
 	
-In software, brownfield development is building new systems or software where there are already existing codes or legacy components. See `greenfield <https://docs.aviatrix.com/HowTos/general_glossary.html#greenfield>`.
+In software, brownfield development is building new systems or software where there are already existing codes or legacy components. See `greenfield <https://docs.aviatrix.com/HowTos/general_glossary.html#greenfield>`_.
 
 CIDR (Classless Inter-Domain Routing)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
-Also known as supernetting. CIDR allocates `Internet Protocol (IP) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` addresses by creating unique and detailed addresses for networks and devices. A CIDR is the range of IP addresses a network uses. CIDR’s class system improves the efficiency of allocating IP (Internet Protocol) Addresses by using prefixes of varying lengths (variable-length subnet masking (VLSM)).
+Also known as supernetting. CIDR allocates `Internet Protocol (IP) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ addresses by creating unique and detailed addresses for networks and devices. A CIDR is the range of IP addresses a network uses. CIDR’s class system improves the efficiency of allocating IP (Internet Protocol) Addresses by using prefixes of varying lengths (variable-length subnet masking (VLSM)).
 
 Classless Inter-Domain Routing (CIDR) is a range of IP addresses a network uses. A CIDR address looks like a normal IP address, except that it ends with a slash followed by a number. The number after the slash represents the number of addresses in the range.
 
@@ -91,17 +91,17 @@ The “brain” of almost any device, from a computer to a thermostat. CPUs proc
 CSP (Cloud Service Provider)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A company that sells cloud services: servers, components, platforms, and infrastructure. Amazon Web Services (AWS), `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`, `Google Cloud Platform (GCP) <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`, and `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>` are all examples of CSPs.
+A company that sells cloud services: servers, components, platforms, and infrastructure. `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, `Google Cloud Platform (GCP) <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_, and `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_ are all examples of CSPs.
 
 Data center
 ^^^^^^^^^^^^^^^^^^^^^
 	
-A physical location where companies store important data and applications. These centers are designed to network these resources to customers. Data centers can include switches, routers, firewalls, storage systems, servers, and controllers. Each data center creates its own `Availability Zone <https://docs.aviatrix.com/HowTos/general_glossary.html#availability-zone-az>`.
+A physical location where companies store important data and applications. These centers are designed to network these resources to customers. Data centers can include switches, routers, firewalls, storage systems, servers, and controllers. Each data center creates its own `Availability Zone <https://docs.aviatrix.com/HowTos/general_glossary.html#availability-zone-az>`_.
 
 Day 2 Operations	
 ^^^^^^^^^^^^^^^^^^^^^
 
-(For IT personnel or `DevOps Engineers <https://docs.aviatrix.com/HowTos/general_glossary.html#devops>`): The ability to observe the state of cloud networks across providers and respond to change without disruption, or maintaining the overall stability and health of your platform in production.
+(For IT personnel or `DevOps Engineers <https://docs.aviatrix.com/HowTos/general_glossary.html#devops>`_): The ability to observe the state of cloud networks across providers and respond to change without disruption, or maintaining the overall stability and health of your platform in production.
 
 Deploy/deployment	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +121,7 @@ A two-factor authentication service that provides extra security for user accoun
 DNS (Domain Name System)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
-The Domain Name System translates the domain names that are easier for human to remember, such as www.example.com, to the `IP (Internet Protocol) addresses <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` that distinguish devices, websites, and other Internet entities from each other. DNS removes the need for people to remember complex numeric or alphanumeric IP addresses such as 314.837.1.2. Some websites compare DNS to a phonebook for the Internet. 
+The Domain Name System translates the domain names that are easier for human to remember, such as www.example.com, to the `IP (Internet Protocol) addresses <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ that distinguish devices, websites, and other Internet entities from each other. DNS removes the need for people to remember complex numeric or alphanumeric IP addresses such as 314.837.1.2. Some websites compare DNS to a phonebook for the Internet. 
 
 DPI (Deep Packet Inspection)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,9 +143,9 @@ The security boundary where a local or private network connects to a third-party
 Egress
 ^^^^^^^^^^^^^^^^^^^^^
 
-The exit of an entity or network boundary; outbound communication from instances in your VPC to the Internet. See `ingress <https://docs.aviatrix.com/HowTos/general_glossary.html#ingress>`. 
+The exit of an entity or network boundary; outbound communication from instances in your VPC to the Internet. See `ingress <https://docs.aviatrix.com/HowTos/general_glossary.html#ingress>`_. 
 
-In AWS, an egress can be centralized or distributed. A centralized egress ensures all traffic that is destined for a particular `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` goes through a single VPC in which egress policy enforcement can take place before a connection is allowed to exit. A distributed egress means there would be a gateway in every VPC, and each of those gateways needs egress control.
+In `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, an egress can be centralized or distributed. A centralized egress ensures all traffic that is destined for a particular `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ goes through a single VPC in which egress policy enforcement can take place before a connection is allowed to exit. A distributed egress means there would be a gateway in every VPC, and each of those gateways needs egress control.
 
 EIP (Enterprise Integration Patterns OR Enterprise Information Portal)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,7 +162,7 @@ Encryption is a process that uses digital keys to encode various components—te
 ESNI (Encrypted Server Name Indication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A tool that keeps your software browsing private by masking the websites you are visiting. ESNI is a part of the TLS (Transport Layer Security) protocol. See `TLS <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`.
+A tool that keeps your software browsing private by masking the websites you are visiting. ESNI is a part of the TLS (Transport Layer Security) protocol. See `TLS <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`_.
 
 Firewall	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -202,17 +202,17 @@ A hardware or software appliance that acts as a bridge or tunnel between local n
 GCP (Google Cloud Platform)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Google’s cloud computing service platform, a competitor of Amazon Web Services (AWS), `Microsoft Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`, `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`, and other platforms.
+Google’s cloud computing service platform, a competitor of `Amazon Web Services (AWS) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Microsoft Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, `Oracle Cloud Infrastructure (OCI) <https://docs.aviatrix.com/HowTos/general_glossary.html#oci-oracle-cloud-infrastructure>`_, and other platforms.
 
 GRE (Generic Routing Encapsulation)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A tunneling protocol that enables data packets that are incompatible with the protocols of a network to travel through the network. GRE enables these data packets to travel through the network by encapsulating them in protocols that do fit the network’s settings. GRE is an alternative to `IPSec tunneling <https://docs.aviatrix.com/HowTos/general_glossary.html#ipsec-internal-protocol-security>`. 
+A tunneling protocol that enables data packets that are incompatible with the protocols of a network to travel through the network. GRE enables these data packets to travel through the network by encapsulating them in protocols that do fit the network’s settings. GRE is an alternative to `IPSec tunneling <https://docs.aviatrix.com/HowTos/general_glossary.html#ipsec-internal-protocol-security>`_. 
 
 Greenfield	
 ^^^^^^^^^^^^^^^^^^^^^
 
-In software, greenfield development is building new, with no pre-existing structures or code. See `brownfield <https://docs.aviatrix.com/HowTos/general_glossary.html#brownfield>`.
+In software, greenfield development is building new, with no pre-existing structures or code. See `brownfield <https://docs.aviatrix.com/HowTos/general_glossary.html#brownfield>`_.
 
 HA (High Availability)
 ^^^^^^^^^^^^^^^^^^^^^
@@ -229,7 +229,7 @@ A Hub and Spoke Distribution Model can help companies save costs, but it does ha
 IaaS (Infrastructure as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A cloud computing service that includes compute, storage, and networking services that customers can access. Users can rent virtual machines of different configurations, on demand, for the time required. IaaS is often on-demand and pay-as-you-go. IaaS is one of the cloud computing service types along with `PaaS (Platform as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#paas-platform-as-a-service>` and `SaaS (Software as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#saas-software-as-a-service>`. 
+A cloud computing service that includes compute, storage, and networking services that customers can access. Users can rent virtual machines of different configurations, on demand, for the time required. IaaS is often on-demand and pay-as-you-go. IaaS is one of the cloud computing service types along with `PaaS (Platform as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#paas-platform-as-a-service>`_ and `SaaS (Software as a Service) <https://docs.aviatrix.com/HowTos/general_glossary.html#saas-software-as-a-service>`_. 
 
 IAM (Identity and Access Management)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -249,12 +249,12 @@ A system that monitors a network for suspicious activity or malware.
 IDaaS (Identity as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A subscription service for `IAM (Identity and Access Management) <https://docs.aviatrix.com/HowTos/general_glossary.html#iam-identity-and-access-management>`. IDaaS helps ensure that authorized users can access systems while still keeping those systems secure. Okta and OneLogin are examples of IDaaS companies.  
+A subscription service for `IAM (Identity and Access Management) <https://docs.aviatrix.com/HowTos/general_glossary.html#iam-identity-and-access-management>`_. IDaaS helps ensure that authorized users can access systems while still keeping those systems secure. Okta and OneLogin are examples of IDaaS companies.  
 
 In-Band Management	
 ^^^^^^^^^^^^^^^^^^^^^
 
-In-Band Management is the ability to administer a network via the LAN. See `Out of Band (OOB) <https://docs.aviatrix.com/HowTos/general_glossary.html#oob-out-of-band>`.
+In-Band Management is the ability to administer a network via the LAN. See `Out of Band (OOB) <https://docs.aviatrix.com/HowTos/general_glossary.html#oob-out-of-band>`_.
 
 Infrastructure	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -264,7 +264,7 @@ The components or assets that make up a system. Architecture is the actual desig
 Ingress	
 ^^^^^^^^^^^^^^^^^^^^^
 
-Traffic that enters a network. See `egress <https://docs.aviatrix.com/HowTos/general_glossary.html#egress>`. Firewalls examine ingress traffic for potential malware or other unauthorized access. A firewall permits instances to receive traffic from the Internet or specified IPv4/IPV6 `CIDR <https://docs.aviatrix.com/HowTos/general_glossary.html#cidr-classless-inter-domain-routing>` ranges.
+Traffic that enters a network. See `egress <https://docs.aviatrix.com/HowTos/general_glossary.html#egress>`_. Firewalls examine ingress traffic for potential malware or other unauthorized access. A firewall permits instances to receive traffic from the Internet or specified IPv4/IPV6 `CIDR <https://docs.aviatrix.com/HowTos/general_glossary.html#cidr-classless-inter-domain-routing>`_ ranges.
 
 Investment Cost (in cloud networking)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -284,11 +284,11 @@ Physical objects or “things” that have software and other technology that co
 IP (Internet Protocol) Address	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A numeric or alphanumeric address assigned to every device connected to the Internet, from smartphones to computers. See `CIDR <https://docs.aviatrix.com/HowTos/general_glossary.html#cidr-classless-inter-domain-routing>` to learn about how IP addresses are allocated or DNS to learn more about how IP addresses are translated to more-memorable domain names. 
+A numeric or alphanumeric address assigned to every device connected to the Internet, from smartphones to computers. See `CIDR <https://docs.aviatrix.com/HowTos/general_glossary.html#cidr-classless-inter-domain-routing>`_ to learn about how IP addresses are allocated or DNS to learn more about how IP addresses are translated to more-memorable domain names. 
 
 As the Internet grows bigger and more and more devices, systems, and machines become a part of it, more versions of assigning IP addresses appear. The Internet Engineering Task Force (IETF) created the sixth version, IPv6, in 1998.
 
-IP can be used with several transport protocols, including `TCP <https://docs.aviatrix.com/HowTos/general_glossary.html#tcp-transmission-control-protocol>` and `UDP <https://docs.aviatrix.com/HowTos/general_glossary.html#udp-user-datagram-protocol>`.
+IP can be used with several transport protocols, including `TCP <https://docs.aviatrix.com/HowTos/general_glossary.html#tcp-transmission-control-protocol>` and `UDP <https://docs.aviatrix.com/HowTos/general_glossary.html#udp-user-datagram-protocol>`_.
 
 IPS (Intrusion Prevention System)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -298,12 +298,12 @@ A network security tool that blocks, reports, or blocks threats or intruders in 
 IPsec (Internal Protocol Security)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A set of security protocols for `IP (Internet Protocol) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` networks that are used together to set up encrypted connections between devices.
+A set of security protocols for `IP (Internet Protocol) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ networks that are used together to set up encrypted connections between devices.
 
 LAN (Local Area Network)	
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-A group of two or more connected computers in one small geographic area, usually within the same building or campus. LANs can be connected across larger distances by `WANs (Wide Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#wan-wide-area-network>`.
+A group of two or more connected computers in one small geographic area, usually within the same building or campus. LANs can be connected across larger distances by `WANs (Wide Area Networks) <https://docs.aviatrix.com/HowTos/general_glossary.html#wan-wide-area-network>`_.
 
 Latency	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -323,27 +323,27 @@ The speed at which your router communicates with equipment at the other end of t
 MCNA (Multi-Cloud Networking Architecture)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Architecture that stores and supports multiple cloud computing and storage systems, both public (like `Amazon Web Services (AWS) <https://aws.amazon.com/free/?trk=fce796e8-4ceb-48e0-9767-89f7873fac3d&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Core-Main|Core|US|EN|Text&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&ef_id=CjwKCAiAyPyQBhB6EiwAFUuakhrje2kPR-HnjqbEQ4hlh7IkPdr0wVwk0IV3BD5LYqeumvQ32lNmMhoCYMAQAvD_BwE:G:s&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all>`) and private. Multi-Cloud Networking Architecture gives companies greater security, flexibility, and opportunity to use multiple cloud systems instead of being dependent on one or trying to manage data and users across multiple separate systems.
+Architecture that stores and supports multiple cloud computing and storage systems, both public (like `Amazon Web Services (AWS) <https://aws.amazon.com/free/?trk=fce796e8-4ceb-48e0-9767-89f7873fac3d&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Core-Main|Core|US|EN|Text&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&ef_id=CjwKCAiAyPyQBhB6EiwAFUuakhrje2kPR-HnjqbEQ4hlh7IkPdr0wVwk0IV3BD5LYqeumvQ32lNmMhoCYMAQAvD_BwE:G:s&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all>`_) and private. Multi-Cloud Networking Architecture gives companies greater security, flexibility, and opportunity to use multiple cloud systems instead of being dependent on one or trying to manage data and users across multiple separate systems.
 
 Multi-Cloud Agility
 ^^^^^^^^^^^^^^^^^^^^^
 
-The ability to treat the many network capabilities provided by `Cloud Service Providers (CSPs) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>` as one. A `Multi-Cloud Networking <https://docs.aviatrix.com/HowTos/general_glossary.html#mcna-multi-cloud-networking-architecture>` solution achieves agility when it replaces the unique language of each individual cloud with more general terminology.
+The ability to treat the many network capabilities provided by `Cloud Service Providers (CSPs) <https://docs.aviatrix.com/HowTos/general_glossary.html#csp-cloud-service-provider>`_ as one. A `Multi-Cloud Networking <https://docs.aviatrix.com/HowTos/general_glossary.html#mcna-multi-cloud-networking-architecture>`_ solution achieves agility when it replaces the unique language of each individual cloud with more general terminology.
 
 MFA (Multi-Factor Authentication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An identification method that requires users to provide at least two “factors” (such as a username & password and a phone number) to log into a system or account. MFA increases the overall security of a system. See `IAM <https://docs.aviatrix.com/HowTos/general_glossary.html#iam-identity-and-access-management>`. 
+An identification method that requires users to provide at least two “factors” (such as a username & password and a phone number) to log into a system or account. MFA increases the overall security of a system. See `IAM <https://docs.aviatrix.com/HowTos/general_glossary.html#iam-identity-and-access-management>`_. 
 
 NAT (Network Address Translation)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A security process that enables a local or private network to connect to the Internet but prevents Internet entities from connecting with the local network.
 
-* NAT translates the IP addresses of the local network to their `IP (Internet Protocol) addresses <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` that enable them to connect with resources on the Internet. 
+* NAT translates the IP addresses of the local network to their `IP (Internet Protocol) addresses <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ that enable them to connect with resources on the Internet. 
 * NAT can also mask a group of resources in the private network behind a single IP address so they cannot be distinguished from each other, providing extra security. This second function is sometimes called “NAT-ing” or “natting.” 
 
-See `SNAT <https://docs.aviatrix.com/HowTos/general_glossary.html#snat-source-network-address-translation>`.
+See `SNAT <https://docs.aviatrix.com/HowTos/general_glossary.html#snat-source-network-address-translation>`_.
 
 NACL (Networking and Cryptography Library OR Network Access Control List)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -351,7 +351,7 @@ NACL (Networking and Cryptography Library OR Network Access Control List)
 The acronym NACL has two possible meanings in networking software: 
 
 #. NaCL (“salt”) is a software library of resources for building cryptographic tools. 
-#. NACL (Network Access Control List) is part of the security layer for AWS (Amazon Web Services). This NACL is a layer of security that acts as a firewall for controlling traffic in and out of a subnet.
+#. NACL (Network Access Control List) is part of the security layer for `AWS (Amazon Web Services) <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_. This NACL is a layer of security that acts as a firewall for controlling traffic in and out of a subnet.
 Native (in software)	Software or data formats designed to run on a specific operating system, such as an iPhone or Android. Companies have to decide whether to build native apps and software for each platform (which are more expensive to create and maintain) or use cross-platform software (which is easier to create and maintain but may not have the same quality or speed in each platform).
 
 Network	
@@ -384,17 +384,17 @@ On-premise software gives companies complete control over their software resourc
 OCI (Oracle Cloud Infrastructure)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Oracle’s CSP (Cloud Service Provider) offering. Oracle is behind AWS, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`, and `GCP <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>` in the market.
+Oracle’s CSP (Cloud Service Provider) offering. Oracle is behind `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_, `Azure <https://docs.aviatrix.com/HowTos/general_glossary.html#azure>`_, and `GCP <https://docs.aviatrix.com/HowTos/general_glossary.html#gcp-google-cloud-platform>`_ in the market.
 
 OOB (Out of Band)	
 ^^^^^^^^^^^^^^^^^^^^^
 
-Activity outside a defined telecommunications frequency band, or, metaphorically, outside some other kind of activity. OOB provides a secure dedicated alternate access method into an IT network infrastructure to administer connected devices and IT assets without using the corporate `LAN <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network>`. See `In-Band Management <https://docs.aviatrix.com/HowTos/general_glossary.html#in-band-management>`.
+Activity outside a defined telecommunications frequency band, or, metaphorically, outside some other kind of activity. OOB provides a secure dedicated alternate access method into an IT network infrastructure to administer connected devices and IT assets without using the corporate `LAN <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network>`_. See `In-Band Management <https://docs.aviatrix.com/HowTos/general_glossary.html#in-band-management>`_.
 
 PaaS (Platform as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One of the options for cloud computing services. With PaaS, the company owns the applications and data but pays for the use of servers from a cloud services provider. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>` and `SaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#saas-software-as-a-service>`.
+One of the options for cloud computing services. With PaaS, the company owns the applications and data but pays for the use of servers from a cloud services provider. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>`_ and `SaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#saas-software-as-a-service>`_.
 
 PBR (Policy-Based Routing)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -409,7 +409,7 @@ The process of free data sharing between two providers, services, or other Inter
 Ping	
 ^^^^^^^^^^^^^^^^^^^^^
 
-Ping is a program that helps you test the connectivity and speed between `IP (Internet Protocol) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`-networked devices, such as your computer and the Internet. You can “ping” a website or device to test the latency or speed of the connection. 
+Ping is a program that helps you test the connectivity and speed between `IP (Internet Protocol) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_-networked devices, such as your computer and the Internet. You can “ping” a website or device to test the latency or speed of the connection. 
 
 Protocol	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -424,22 +424,22 @@ A hardware or software device that connects a local network to the Internet. Rou
 Route/Routing Table
 ^^^^^^^^^^^^^^^^^^^^^
 
-In computer networking, a routing table is a data file often formatted as a table. A routing table contains a set of rules that determines where data packets from an `Internet Protocol (IP) address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` should be routed.  
+In computer networking, a routing table is a data file often formatted as a table. A routing table contains a set of rules that determines where data packets from an `Internet Protocol (IP) address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ should be routed.  
 
 SaaS (Software as a Service)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One of the cloud computing service offerings. In SaaS, a company pays another company for use of a software service. SaaS vendors own the servers, applications, and data. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>` and `PaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#paas-platform-as-a-service>`. 
+One of the cloud computing service offerings. In SaaS, a company pays another company for use of a software service. SaaS vendors own the servers, applications, and data. See `IaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#iaas-infrastructure-as-a-service>`_ and `PaaS <https://docs.aviatrix.com/HowTos/general_glossary.html#paas-platform-as-a-service>`_. 
 
 SAML (Security Assertion Markup Language)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-SAML enables SSO (Single Sign-On), which enables a user to access multiple web applications using a single set of login credentials. SAML exchanges information between an identity provider (idP) who verifies the user’s identity, and each web application they can access. See `SSO <https://docs.aviatrix.com/HowTos/general_glossary.html#sso-single-sign-on>`. 
+SAML enables SSO (Single Sign-On), which enables a user to access multiple web applications using a single set of login credentials. SAML exchanges information between an identity provider (idP) who verifies the user’s identity, and each web application they can access. See `SSO <https://docs.aviatrix.com/HowTos/general_glossary.html#sso-single-sign-on>`_. 
 
 SD-WAN (Software-Defined Wide Area Network)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Software-defined `Wide Area Network <https://docs.aviatrix.com/HowTos/general_glossary.html#wan-wide-area-network>`) A software-defined wide area network (SD-WAN) connects local area networks (LANs) across large distances using controlling software that works with a variety of networking hardware.= and it is more flexible WAN architecture that can take advantage of multiple hardware platforms and connectivity option. See `LAN (Local Area Network) <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network>`. 
+(Software-defined `Wide Area Network <https://docs.aviatrix.com/HowTos/general_glossary.html#wan-wide-area-network>`_) A software-defined wide area network (SD-WAN) connects local area networks (LANs) across large distances using controlling software that works with a variety of networking hardware.= and it is more flexible WAN architecture that can take advantage of multiple hardware platforms and connectivity option. See `LAN (Local Area Network) <https://docs.aviatrix.com/HowTos/general_glossary.html#lan-local-area-network>`_. 
 
 Segmentation	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -454,12 +454,12 @@ A software term that refers to a management tool that creates a single, unified 
 SNAT (Source Network Address Translation)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A networking feature that translates a virtual machine's private `IP <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` into Load Balancer's public IP address. SNAT helps keep the private network secure. See `NAT <https://docs.aviatrix.com/HowTos/general_glossary.html#nat-network-address-translation>`.
+A networking feature that translates a virtual machine's private `IP <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ into Load Balancer's public IP address. SNAT helps keep the private network secure. See `NAT <https://docs.aviatrix.com/HowTos/general_glossary.html#nat-network-address-translation>`_.
 
 SNI (Server Name Indication)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An extension of the `TLS (Transport Layer Security) <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>` protocol that helps clients reach the correct website. SNI allows the server to safely host multiple TLS Certificates for multiple sites, all under a single `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`.
+An extension of the `TLS (Transport Layer Security) <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`_ protocol that helps clients reach the correct website. SNI allows the server to safely host multiple TLS Certificates for multiple sites, all under a single `IP address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_.
 
 SSH (Secure Shell or Secure Socket Shell)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -469,7 +469,7 @@ A method for secure remote login from one computer to another.
 SSL (Secure Sockets Layer)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A protocol that provides privacy, authentication, and integrity to Internet communications. SSL eventually evolved into `Transport Layer Security (TLS) <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`.  
+A protocol that provides privacy, authentication, and integrity to Internet communications. SSL eventually evolved into `Transport Layer Security (TLS) <https://docs.aviatrix.com/HowTos/general_glossary.html#tls-transport-layer-security>`_.  
 
 SSO (Single Sign-On)	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -479,12 +479,12 @@ Single Sign-On, a method of access and authentication which enables one user to 
 Subnet	
 ^^^^^^^^^^^^^^^^^^^^^
 
-A division of an `Internet Protocol (IP) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>` network into segments. Dividing networks into subnets helps each smaller network run more efficiently and be more secure. The simplest subnet is a point-to-point subnet which connects two devices. 
+A division of an `Internet Protocol (IP) <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_ network into segments. Dividing networks into subnets helps each smaller network run more efficiently and be more secure. The simplest subnet is a point-to-point subnet which connects two devices. 
 
 Suricata	
 ^^^^^^^^^^^^^^^^^^^^^
 
-The leading open-source threat detection engine. Suricata combines Intrusion Detection (IDS), `Intrusion Prevention (IPS) <https://docs.aviatrix.com/HowTos/general_glossary.html#ips-intrusion-prevention-system>`, and other tools to prevent attacks. 
+The leading open-source threat detection engine. Suricata combines Intrusion Detection (IDS), `Intrusion Prevention (IPS) <https://docs.aviatrix.com/HowTos/general_glossary.html#ips-intrusion-prevention-system>`_, and other tools to prevent attacks. 
 
 Terminate	
 ^^^^^^^^^^^^^^^^^^^^^
@@ -504,12 +504,12 @@ A type of computer system that is full set up and ready to use. A user should be
 TCP (Transmission Control Protocol)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A standard for establishing and continuing network conversations or data exchanges between applications. TCP works with Internet Protocol (IP). See `Internet Protocol (IP) Address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`. 
+A standard for establishing and continuing network conversations or data exchanges between applications. TCP works with Internet Protocol (IP). See `Internet Protocol (IP) Address <https://docs.aviatrix.com/HowTos/general_glossary.html#ip-internet-protocol-address>`_. 
 
 TLS (Transport Layer Security)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A cryptographic protocol that provides end-to-end security for exchanging data over the Internet. TLS is the successor to `SSL <https://docs.aviatrix.com/HowTos/general_glossary.html#ssl-secure-sockets-layer>`. 
+A cryptographic protocol that provides end-to-end security for exchanging data over the Internet. TLS is the successor to `SSL <https://docs.aviatrix.com/HowTos/general_glossary.html#ssl-secure-sockets-layer>`_. 
 
 UDP (User Datagram Protocol)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -529,17 +529,17 @@ A computer resource with its own operating system and functions that can run alo
 VPN (Virtual Private Network)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A network that creates a secure connection between multiple devices and the Internet using encryption. Companies will often have their own VPNs that act as sheltered spaces for their employees and contractors to work in. See `VPN Tunnel <https://docs.aviatrix.com/HowTos/general_glossary.html#vpn-virtual-private-network-tunnel>`.
+A network that creates a secure connection between multiple devices and the Internet using encryption. Companies will often have their own VPNs that act as sheltered spaces for their employees and contractors to work in. See `VPN Tunnel <https://docs.aviatrix.com/HowTos/general_glossary.html#vpn-virtual-private-network-tunnel>`_.
 
 VPN (Virtual Private Network) Tunnel	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An encrypted link between your personal device(s) such as laptops or phones and an outside network. VPN Tunnels are secure connections. See `VPN <https://docs.aviatrix.com/HowTos/general_glossary.html#vpn-virtual-private-network>`.
+An encrypted link between your personal device(s) such as laptops or phones and an outside network. VPN Tunnels are secure connections. See `VPN <https://docs.aviatrix.com/HowTos/general_glossary.html#vpn-virtual-private-network>`_.
 
 Walled garden	
 ^^^^^^^^^^^^^^^^^^^^^
 
-A software construct (such as a suite) which provides its services only for its own users. AWS is an example of a walled garden service: you must subscribe in order to use its resources.
+A software construct (such as a suite) which provides its services only for its own users. `AWS <https://docs.aviatrix.com/HowTos/general_glossary.html#aws-amazon-web-services>`_ is an example of a walled garden service: you must subscribe in order to use its resources.
 
 WAN (Wide Area Network)	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
