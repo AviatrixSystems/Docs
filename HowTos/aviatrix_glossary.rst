@@ -27,7 +27,7 @@ A central console or single pane of glass that provides visibility and control f
 Aviatrix CoPilot	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A read-only solution that provides a global operational view of your multi-cloud network. CoPilot offers the visibility of the Controller without the same control over the network.
+The visibility and analytics companion to Aviatrix Controller that provides a global operational view of your multi-cloud network. CoPilot provides accurate, real-time information about your controller-managed environment from the location and health status of all managed resources to detailed flow records for traffic traversing any gateway. Copilot dynamically renders visualizations (maps, graphs, charts, and reports) to give you deep visibility into your enterprise class network across a single or multiple clouds. CoPilot provides interactive diagnostic tools for locating and troubleshooting network issues and enhanced security features for detecting and blocking threats trying to penetrate the network.
 
 Aviatrix FireNet	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
