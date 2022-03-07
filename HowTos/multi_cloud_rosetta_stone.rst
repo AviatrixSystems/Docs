@@ -11,8 +11,6 @@ While some terms across the cloud computing industry are standard, such as a fir
 +------------------+-----------------------------------------------------+-----------------------+-----------------------+---------------------------+--------------------------+
 | **Aviatrix term**|     **Definition**                                  | **AWS**               | **Azure**             | **GCP**                   | **OCI**                  |
 |                  |                                                     |                       |                       |                           |                          |
-|                  |                                                     | |image-aws-logo|      | |image-azure-logo|    | |image-gcp-logo|          | |image-oracle-logo|      |
-|                  |                                                     |                       |                       |                           |                          |
 +------------------+-----------------------------------------------------+-----------------------+-----------------------+---------------------------+--------------------------+
 | Attachment       |                                                     | Attachment (way to    | Attachment            | Virtual Local Area Network| VCN Attachment/RPC       | 
 |                  |                                                     | connect to a gateway) |                       | (VLAN) Attachment         | attachment               |
