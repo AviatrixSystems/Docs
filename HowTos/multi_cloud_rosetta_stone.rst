@@ -27,7 +27,7 @@ While some terms across the cloud computing industry are standard, such as a fir
 |                  |                                                     |                       |                       |                           | Equipment (CPE)          |
 +------------------+-----------------------------------------------------+-----------------------+-----------------------+---------------------------+--------------------------+
 | Data storage     | Separate components or virtual sites for cloud      | S3 buckets (Simple    | Azure Blob Storage    | Google Cloud Storage      | Object Storage service   |
-| solution         | storage                                             |(Storage Service)      |                       |                           |                          |
+| solution         | storage                                             | Storage Service)      |                       |                           |                          |
 +------------------+-----------------------------------------------------+-----------------------+-----------------------+---------------------------+--------------------------+
 | Domain Name      | The Domain Name System translates the domain names  | Route 53 (DNS)        | Azure DNS             | Cloud DNS                 | Oracle DNS               |
 | System (DNS)     | that are easier for human to remember, such as      |                       |                       |                           |                          |
