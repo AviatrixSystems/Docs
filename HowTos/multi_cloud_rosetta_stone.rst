@@ -29,15 +29,12 @@ While some terms across the cloud computing industry are standard, such as a fir
 | Data storage     | Separate components or virtual sites for cloud      | S3 buckets (Simple    | Azure Blob Storage    | Google Cloud Storage      | Object Storage service   |
 | solution         | storage                                             | Storage Service)      |                       |                           |                          |
 +------------------+-----------------------------------------------------+-----------------------+-----------------------+---------------------------+--------------------------+
-| Domain Name      | The Domain Name System translates the domain names  | Route 53 (DNS)        | Azure DNS             | Cloud DNS                 | Oracle DNS               |
-| System (DNS)     | that are easier for human to remember, such as      |                       |                       |                           |                          |
-|                  | www.example.com, to the  IP (Internet Protocol)     |                       |                       |                           |                          |
-|                  | addresses that distinguish devices, websites,       |                       |                       |                           |                          |
-|                  | and other Internet entities from each other. DNS    |                       |                       |                           |                          |
-|                  | removes the need for people to remember complex     |                       |                       |                           |                          |
-|                  | numeric or alphanumeric IP addresses such as        |                       |                       |                           |                          |
-|                  | 314.837.1.2. Some websites compare DNS to a         |                       |                       |                           |                          |
-|                  | phonebook for the Internet.                         |                       |                       |                           |                          |
+| Domain Name      | The Domain Name System or "phonebook for the        | Route 53 (DNS)        | Azure DNS             | Cloud DNS                 | Oracle DNS               |
+| System (DNS)     | Internet" translate the domain names that are easier|                       |                       |                           |                          |
+|                  | for humans to remember, such as www.example.com,    |                       |                       |                           |                          |
+|                  | to the IP (Internet Protocol) addresses that        |                       |                       |                           |                          |
+|                  | distinguish devices, websites, and other Internet   |                       |                       |                           |                          |
+|                  | entities from each other.                           |                       |                       |                           |                          |
 +------------------+-----------------------------------------------------+-----------------------+-----------------------+---------------------------+--------------------------+
 | Guard Duty +     | A threat detection system that can detect and       | Amazon Guard Duty     | Sentinel              | Google Cloud Armor        | Cloud Access Security    |
 | Guard Duty       | eliminate threats                                   | (detects threats but  |                       |                           | Broker (CABS)            |
