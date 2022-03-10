@@ -37,7 +37,80 @@ Unlike other clouds, today you cannot put a HTTP(S) or other form of load balanc
 Deployment Steps
 ====================
 
+Step 1 Deploy a Transit Firenet in Google Cloud
+-----------------------------------------------------------------
+
+Set up a Transit Firenet in Google Cloud and enable centralized egress.
+
+Step 2 Set up firewall instances for egress
+-----------------------------------------------------------------
+
+Set up the firewall instances (Interfaces, health probes (NAT+Interface mgmt. policy), traffic policy) according to the documentation here:
+
+Step 3 Enable vendor integration with the firewalls
+-----------------------------------------------------------------
+
+Step 4 Verify health probe status
+-----------------------------------------------------------------
+
+Step 5 Set up Palo Alto firewalls for ingress traffic
+-----------------------------------------------------------------
+
+Step 6 Create ingress load balancer in Google Cloud
+-----------------------------------------------------------------
+
+Step 7 Set up firewalls for ingress traffic
+-----------------------------------------------------------------
+
+Step 8 Set up Google Cloud firewall rules for ingress
+-----------------------------------------------------------------
+
+Step 9 Validate the setup
+-----------------------------------------------------------------
+
 .. |gcp_ingress| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_ingress.png
+   :scale: 50% 
+
+.. |enable_egress1| image:: ingress_protection_gcp_transit_firenet_pan_media/enable_egress1.png
+   :scale: 50% 
+
+.. |enable_egress2| image:: ingress_protection_gcp_transit_firenet_pan_media/enable_egress2.png
+   :scale: 50% 
+
+.. |gcp_create_lb_1| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_1.png
+   :scale: 50% 
+
+.. |gcp_create_lb_2| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_2.png
+   :scale: 50% 
+
+.. |gcp_create_lb_3| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_3.png
+   :scale: 50% 
+
+.. |gcp_create_lb_4| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_4.png
+   :scale: 50% 
+
+.. |gcp_create_lb_5| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_5.png
+   :scale: 50% 
+
+.. |gcp_creae_lb_6| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_6.png
+   :scale: 50% 
+
+.. |gcp_fwrule_ingress| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress.png
+   :scale: 50% 
+
+.. |gcp_fwrule_ingress_2| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress2.png
+   :scale: 50% 
+
+.. |gcp_health_check| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_health_check.png
+   :scale: 50% 
+
+.. |palo_alto_dnat_1| image:: ingress_protection_gcp_transit_firenet_pan_media/palo_alto_dnat_1.png
+   :scale: 50% 
+
+.. |palo_alto_mgmt_profile| image:: ingress_protection_gcp_transit_firenet_pan_media/palo_alto_mgmt_profile.png
+   :scale: 50% 
+
+.. |palo_alto_mfmt_profile_details| image:: ingress_protection_gcp_transit_firenet_pan_media/palo_alto_mgmt_profile_details.png
    :scale: 50% 
 
 .. disqus::
