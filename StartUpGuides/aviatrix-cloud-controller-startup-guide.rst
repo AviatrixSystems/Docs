@@ -175,7 +175,7 @@ Change to the region  where you would like to install the Aviatrix Controller on
 2.6 Select instance size
 --------------------------
 
-Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
+Set the `Controller Size` to `t3.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
 
 2.7 Click `Next`
 ------------------
