@@ -32,7 +32,7 @@ Deploy PFsense instance From AWS marketplace
 
 5	Now, choose your instance size. For this deployment we are going to need 2 network interfaces: management/egress and LAN. A 3-interface deployment is possible (separating management from egress) but not required, as it will also require a larger instance (due to the extra ENI)
 
-6	You can start with a t2.small for example. Although, for better network performance you might want to select a different instance type (m5, c5 or c5n) and a larger instance size. For more information on this subject we suggest starting at this AWS `document <https://aws.amazon.com/ec2/instance-types/ >`_ and the pfSense docs `page <https://docs.netgate.com/pfsense/en/latest/solutions/aws-vpn-appliance/launching-an-instance.html>`_ as well
+6	You can start with a t3.large for example, although for better network performance you might want to select a different instance type (m5, c5 or c5n) and a larger instance size. For more information on this subject we suggest starting at this AWS `document <https://aws.amazon.com/ec2/instance-types/ >`_ and the pfSense docs `page <https://docs.netgate.com/pfsense/en/latest/solutions/aws-vpn-appliance/launching-an-instance.html>`_ as well
 
 7	On the instance details page, the most relevant setting for any deployment is the subnet selection for the ENIs eth0 and eth1. If you have followed all the steps on the Firewall page, then your subnet selection should follow this logic:
 
