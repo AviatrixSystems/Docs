@@ -37,3 +37,8 @@ Unlike other clouds, today you cannot put a HTTP(S) or other form of load balanc
 Deployment Steps
 ====================
 
+.. |gcp_ingress| image:: ingress_protection_gcp_transit_firenet_media/gcp_ingress.png
+   :scale: 50% 
+
+.. disqus::
+
