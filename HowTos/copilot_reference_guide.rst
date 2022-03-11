@@ -539,6 +539,121 @@ To configure notifications:
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the alert.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
 
+
+Metrics used for Triggering Notifications
+------------------------------------------
+
+For Aviatrix Controller and Aviatrix gateways, you can configure notifications to be alerted to events that occur in your network such as performance bottlenecks or other problems. You configure alerts and the channels to be notified using the notifications feature in Aviatrix Copilot. This section describes some of the system and network metrics on which notifications can be based. When alert conditions are met for a metric, Copilot sends a notification. How you set a condition threshold to trigger an alert will depend on different factors. For example, for system metrics, the instance size can influence the condition threshold that makes sense. For metrics associated with cloud provider-maintained infrastructure, the desired condition threshold may vary between cloud service providers. Work with your network operations team to determine the metric conditions that will trigger alerts in your environment.
+
+System metrics for triggering notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Aviatrix Controller and Aviatrix gateways, you can configure alerts based on the following system metrics. Aviatrix gateways report live Linux system statistics (such as memory, CPU, I/O, processes, and swap) for the instances/virtual machines on which they run.
+
+cpu_idle
+    Of the total CPU time, the percentage of time the CPU(s) spent idle.
+
+cpu_ks
+    Of the total kernel space memory on the host (VM/instance), the percentage of memory that is free.
+
+cpu_steal
+    Of the average CPU wait time on the host (VM/instance), the percentage of time a virtual CPU waits for a real CPU while the hypervisor services another virtual processor. 
+
+hdisk_free
+    The storage space on the disk (volume) that is free/unused.
+
+io_blk_in
+    The number of blocks received per second from a block device.
+
+io_blk_out
+    The number of blocks sent per second to a block device.
+
+memory_buf
+    The amount of memory used as cache.
+
+memory_free
+    The amount of idle memory.
+
+memory_swpd
+    If swapped is enabled, the amount of virtual memory used.
+
+nproc_non_int_sleep
+    The number of processes blocked waiting for I/O to complete.
+
+nproc_running
+    The number of runnable processes that are running or waiting for a run.
+
+swap_from_disk
+    Memory that is swapped in every second from disk in kilobytes.
+
+swap_to_disk
+    Memory that is swapped out every second to disk in kilobytes.
+
+system_cs
+    The number of context switches per second.
+
+system_int
+    The number of interrupts per second, including the clock.
+   
+
+Network metrics for triggering notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Aviatrix Controller and Aviatrix gateways, you can configure alerts based on the following network metrics.
+
+pkt_rate_total
+    The total (bidirectional) transmission in packet level per second. Instance size impacts how many packets per second the gateway can handle.
+
+pkt_rx_rate
+    The total (received) transmission in packet level per second.
+
+pkt_tx_rate
+    The total (transmitted) transmission in packet level per second.
+
+rate_peak_received
+    The highest bit rate that has been received by the interface on the Aviatrix gateway VM/instance.
+
+rate_peak_sent
+    The highest bit rate that has been transmitted by the interface on the Aviatrix gateway VM/instance.
+
+rate_peak_total
+    The highest bit rate that has been received and transmitted by the interface on the Aviatrix gateway VM/instance.
+
+rate_pps_limit_exceeded
+    The number of packets processed (bidirectional) by the Aviatrix gateway per second.
+
+rate_received
+    The rate of bits the Aviatrix gateway has received per second.
+
+rate_rx_compressed
+    The number of compressed packets received per second.
+
+rate_rx_drop
+    The number of packets dropped per second while receiving the packets.
+
+rate_rx_errs
+    The number of packets received per second that is flagged by the kernel as errored.
+
+rate_sent
+    The rate of bits the Aviatrix gateway has transmitted per second.
+
+rate_total
+    The total (bidirectional) rate of bits processed per second by the interface on the Aviatrix VM/instance.  
+
+rate_tx_drop
+    The number of packets being dropped per second while sending.
+
+GatewayStatus
+    Any gateway status change triggers an alert.
+
+TunnelStatus
+    Any link status change triggers an alert.
+
+BGPpeeringStatus
+    Any BGP peering status change triggers an alert.
+  
+
+
 Working with AppIQ
 ==================
 
