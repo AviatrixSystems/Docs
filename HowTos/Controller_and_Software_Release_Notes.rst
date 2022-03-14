@@ -2,6 +2,23 @@
 Aviatrix Controller and Gateway Release Notes
 ==============================================
 
+6.6.5409 (03/13/2022)  
+====================== 
+
+**Issues Corrected in Release 6.6** 
+
+- **AVX-18796** - Some gateways may start flapping and go down.
+
+**Known Issues in Release 6.6** 
+
+- ** AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6 you cannot use the selective gateways feature.   
+
+1. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
+2. If you see an “Archive is too short“ message during the upgrade, you need to perform step 3. Otherwise, you can skip step 3. 
+3. After Upgrade is done go to Settings > Maintenance > Selective upgrade and select the gateways listed in the “Archive is too short“ message. Perform the upgrade again. 
+
+- **AVX-20201** - Controller sends false alert email about CloundN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email. 
+
 6.6.5404 (02/28/2022)  
 ====================== 
 
