@@ -11,7 +11,7 @@ Aviatrix Controller and Gateway Release Notes
 
 **Known Issues in Release 6.6** 
 
-- ** AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6 you cannot use the selective gateways feature.   
+- **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6 you cannot use the selective gateways feature.   
 
 1. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 2. If you see an “Archive is too short“ message during the upgrade, you need to perform step 3. Otherwise, you can skip step 3. 
