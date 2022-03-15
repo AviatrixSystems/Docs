@@ -102,7 +102,8 @@ If you have already subscribed the Metered AMI on AWS Marketplace, skip this ste
  
    |AMI_24x7_copilot|
 
-3. Click **Accept Terms**. Then, **return to this guide and continue**. (Do not proceed to Continue to Configuration)) 
+
+3. Click **Accept Terms**. Then, **return to this guide and continue**. Do not proceed to Continue to Configuration.
 
 Launching the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
