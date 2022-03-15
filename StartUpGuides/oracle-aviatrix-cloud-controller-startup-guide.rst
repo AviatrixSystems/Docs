@@ -6,9 +6,14 @@ Oracle Cloud Infrastructure (OCI) Startup Guide
 ===============================================
 
 
-The Aviatrix cloud network solution consists of two components, the controller and 
-gateways, both of which are cloud VMs. Gateways are launched from the controller console to specific VCNs. This
-guide helps you to launch the controller in OCI.
+The Aviatrix cloud network solution consists of two components, the Controller and 
+Gateways, both of which are cloud VMs (Virtual Machines). Gateways are launched from the Controller console to specific VCNs. This
+guide helps you to launch the Controller in OCI.
+
+* Preparing Your Account in OCI
+* Subscribing to the Controller
+* Accessing the Controller
+* Onboarding Your OCI Account to your Aviatrix Controller
 
 .. Important::
 
@@ -16,112 +21,92 @@ guide helps you to launch the controller in OCI.
 
 
 
-1. Prepare your account in OCI
+Preparing Your Account in OCI
 ==============================
 
-Create an OCI account
------------------------
+#. Create an OCI account if you do not already have one.
+#. Set up your compartment. Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy.
+For more detail, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_.
+#. Create a VCN that has Internet access by navigating to Networking  > Virtual Cloud Networks in the OCI console. Then, click **Create Virtual Cloud Network** and select **create virtual cloud network plus related resources**.
+#. Alternatively,  if you want to create a VCN with your own CIDR, select **create virtual cloud network only**. Continue to create a subnet and Internet gateway. Then, add a default route in the VCN default routing table to point to the newly created Internet gateway. This is to grant Internet access to the Controller inside of this VCN.
 
-Create an OCI account if you do not already have one.
-
-Set up your compartment
------------------------
-
-Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy.
-For more detail, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_
-
-Create a VCN that has internet access
--------------------------------------
-
-Create a VCN that has internet access by navigating to "Networking -> Virtual Cloud Networks" in the OCI console,
-then click "Create Virtual CLoud Network" button and choose "create virtual cloud network plus related resources".
-
-Alternatively if you want to create a VCN with your own CIDR, choose "create virtual cloud network only". Continue to create subnet, and internet gateway.
-Then add default route in the VCN default routing table to point to the newly created internet gateway. This is to grant internet access to the controller inside of this VCN.
-
-
-
-2. Subscribe to the Controller
+Subscribing to the Controller
 ==============================
 
-Go to `Oracle Cloud Marketplace <https://cloudmarketplace.oracle.com/marketplace/en_US/homePage.jspx>`_ and search for Aviatrix to subscribe to the Aviatrix platform.
-
-* Click "Get App >" at the top of the App page.
-* Select OCI region and click "Launch Image"
+#. Go to `Oracle Cloud Marketplace <https://cloudmarketplace.oracle.com/marketplace/en_US/homePage.jspx>`_ and search for Aviatrix to subscribe to the Aviatrix platform.
+#. Click **Get App** at the top of the App page.
+#. Select an OCI region and click **Launch Image**.
 
  |inst_region|
 
-* Choose the version, compartment and click "Launch Instance"
+#. Choose the version and compartment and click **Launch Instance**.
 
  |inst_launch|
 
-In the "Create Compute Instance" Page
-    a. choose name, availability domain and "virtual Machine" as instance type
-    b. choose Instance Shape. The recommended shape is **Standard2.2**
+On the "Create Compute Instance" page:
+#. Choose name, availability domain, and Virtual Machine as instance type.
+#. Choose Instance Shape. The recommended shape is **Standard2.2**.
 
        |inst_flavor|
 
-    c. choose proper compartment for VCN and subnet
-    d. you could optionally choose "Use network security groups to control traffic" if you have one, otherwise leave it as we will create one later
+#. Choose the proper compartment for VCN and subnet. Optional: you could select **Use network security groups to control traffic** if you have one, otherwise leave it as you can create one later.
 
        |inst_network|
 
-    e. choose ssh public key file
-    f. click "Create" to launch the instance
+#. Choose an ssh public key file.
+ #. Click **Create** to launch the instance.
 
-
-3. Access the Controller
+Accessing the Controller
 =========================
 
-To be able to reach controller public ip via https using browser, you will need to open port 443 in either security list or security group.
+To be able to reach your Controller public IP via https using your browser, you will need to open port 443 in either the Security List or Security Group.
 
-Security List (easy to config)
-------------------------------
-From OCI portal, navigate to Networking -> Virtual Cloud Networks -> your vcn name -> Security Lists -> Default Security List,
-Add an ingress rule to allow port 443. You could further limit the source cidr if you know all your VCN subnets where gateway will be launched.
+Security List (easy to configure)
+----------------------------------------
+
+#. From the OCI portal, navigate to Networking  > Virtual Cloud Networks  > your VCN name  > Security Lists  > Default Security List.
+#. Add an ingress rule to allow port 443. You could further limit the source CIDR if you know all your VCN subnets where the gateway will be launched.
 
  |inst_seclist|
 
-Security Group (recommend to use)
----------------------------------
-From OCI portal, navigate to Networking -> Virtual Cloud Networks -> your vcn name -> Network Security Groups
-Create a new security group. Add an ingress rule to allow port 443. You could further limit the source cidr if you know all your VCN subnets where gateway will be launched.
+Security Group (recommended)
+------------------------------------------
+
+#. From the OCI portal, navigate to Networking  > Virtual Cloud Networks  > your VCN name  > Network Security Groups.
+#. Create a new Security Group. Add an ingress rule to allow port 443. You could further limit the source CIDR if you know all your VCN subnets where gateway will be launched.
 
  |inst_secgroup|
 
-Then navigate to Compute -> Instances -> Controller VM detail page, click the "Edit" link besides the "Network Security Groups" under "Primary VNIC Information".
-Associate the security group you created to the controller VNIC.
+#. Navigate to Compute  > Instances  > Controller VM detail page, select **Edit** besides the Network Security Groups under Primary VNIC Information.
+#. Associate the Security Group you created to the controller VNIC.
 
  |inst_vnic_secgroup|
 
+Opening your Aviatrix Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Controller UI
--------------
-After the Controller instance is in a running state, you can access the Controller
-via a browser by `https://Controller_public_IP`, where Controller_public_IP is the static public IP address of the Controller.
-The initial password is the private IP address of the instance.
+#. After the Aviatrix Controller instance is in a running state, you can access the Controller via a browser by navigating to https://Controller_public_IP, where "Controller_public_IP" is the static public IP address of the Controller. The initial password is the private IP address of the instance.
 
  |startup_first_login|
 
-Follow the steps in browser to go through an initial setup phase to download the latest software. Use "latest" as version if not asked to use other version number.
+#. Follow the steps in your browser to go through an initial setup phase to download the latest software. Use "latest" as version if not asked to use other version number.
 
  |startup_version|
 
-After the latest software is downloaded which takes around 5 mins, UI would redirect you to the login page.
-You could also try to re-login if browser is closed to go through the account onboarding process.
+#. After the latest software is downloaded which takes around 5 mins, UI would redirect you to the login page. You could also try to log in again if browser is closed to go through the account onboarding process.
 
  |startup_login|
 
+Onboarding Your OCI Account to your Aviatrix Controller
+=================================================
 
-4. Onboarding
-==============
 Follow the `onboarding instructions <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to create an Aviatrix account that corresponds to your OCI account credential.
 
-Note: you only need to create a single Aviatrix account that corresponds to many OCI, AWS, Azure and GCloud account credentials. This is a multi-cloud platform.
+.. Note::
 
+You only need to create a single Aviatrix account that corresponds to many OCI, AWS, Azure and GCloud account credentials. This is a multi-cloud platform.
 
-Congratulations on finishing launching your Aviatrix networking platform. Please take a look at our step by step doc site
-`https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_
+Congratulations on finishing launching your Aviatrix networking platform. Please take a look at our `Documentation website <https://docs.aviatrix.com/>`_.
 Enjoy!
 
 
