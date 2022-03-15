@@ -5,56 +5,52 @@
 Oracle Cloud Infrastructure (OCI) Startup Guide
 ===============================================
 
-
 The Aviatrix cloud network solution consists of two components, the Controller and 
 Gateways, both of which are cloud VMs (Virtual Machines). Gateways are launched from the Controller console to specific VCNs. This
 guide helps you to launch the Controller in OCI.
 
-* Preparing Your Account in OCI
-* Subscribing to the Controller
-* Accessing the Controller
-* Onboarding Your OCI Account to your Aviatrix Controller
+* `Preparing Your Account in OCI <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#preparing-your-account-in-oci>`_
+* `Subscribing to the Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#subscribing-to-the-controller>`_
+* `Accessing the Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#accessing-the-controller>`_
+* `Onboarding Your OCI Account to your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#onboarding-your-oci-account-to-your-aviatrix-controller>`_
 
 .. Important::
 
   The Aviatrix Controller is a secure multi-cloud networking platform. Aviatrix recommends you deploy your controller in clouds that offer metered pricing, then deploy your gateways in any supported cloud. Metered pricing offers you a true pay-as-you-go option without any up-front commitments or contract negotiations. The AWS and Azure clouds offer metered pricing for running the Aviatrix Controller image. The GCP and OCI clouds do not offer metered pricing for running the Aviatrix Controller image.
 
-
-
 Preparing Your Account in OCI
 ==============================
 
 #. Create an OCI account if you do not already have one.
-#. Set up your compartment. Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy.
-For more detail, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_.
+#. Set up your compartment. Although you can use default account and root compartment, it is recommended that you follow this doc to create your own user, group, and compartment with the right policy. For more details, refer to  `Setting Up Your Tenancy <https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/settinguptenancy.htm>`_.
 #. Create a VCN that has Internet access by navigating to Networking  > Virtual Cloud Networks in the OCI console. Then, click **Create Virtual Cloud Network** and select **create virtual cloud network plus related resources**.
 #. Alternatively,  if you want to create a VCN with your own CIDR, select **create virtual cloud network only**. Continue to create a subnet and Internet gateway. Then, add a default route in the VCN default routing table to point to the newly created Internet gateway. This is to grant Internet access to the Controller inside of this VCN.
 
 Subscribing to the Controller
 ==============================
 
-#. Go to `Oracle Cloud Marketplace <https://cloudmarketplace.oracle.com/marketplace/en_US/homePage.jspx>`_ and search for Aviatrix to subscribe to the Aviatrix platform.
-#. Click **Get App** at the top of the App page.
-#. Select an OCI region and click **Launch Image**.
+1. Go to `Oracle Cloud Marketplace <https://cloudmarketplace.oracle.com/marketplace/en_US/homePage.jspx>`_ and search for Aviatrix to subscribe to the Aviatrix platform.
+2. Click **Get App** at the top of the App page.
+3. Select an OCI region and click **Launch Image**.
 
  |inst_region|
 
-#. Choose the version and compartment and click **Launch Instance**.
+4. Choose the version and compartment and click **Launch Instance**.
 
  |inst_launch|
 
 On the "Create Compute Instance" page:
-#. Choose name, availability domain, and Virtual Machine as instance type.
-#. Choose Instance Shape. The recommended shape is **Standard2.2**.
+5. Choose name, availability domain, and Virtual Machine as instance type.
+6. Choose an Instance Shape. The recommended shape is **Standard2.2**.
 
        |inst_flavor|
 
-#. Choose the proper compartment for VCN and subnet. Optional: you could select **Use network security groups to control traffic** if you have one, otherwise leave it as you can create one later.
+7. Choose the proper compartment for VCN and subnet. Optional: you could select **Use network security groups to control traffic** if you have one, otherwise leave it as you can create one later.
 
        |inst_network|
 
-#. Choose an ssh public key file.
- #. Click **Create** to launch the instance.
+8. Choose an ssh public key file.
+9. Click **Create** to launch the instance.
 
 Accessing the Controller
 =========================
@@ -86,16 +82,8 @@ Opening your Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. After the Aviatrix Controller instance is in a running state, you can access the Controller via a browser by navigating to https://Controller_public_IP, where "Controller_public_IP" is the static public IP address of the Controller. The initial password is the private IP address of the instance.
-
- |startup_first_login|
-
-#. Follow the steps in your browser to go through an initial setup phase to download the latest software. Use "latest" as version if not asked to use other version number.
-
- |startup_version|
-
+#. Follow the steps in your browser to go through an initial setup phase to download the latest software. Use "latest" as version if you are not asked to use other version number.
 #. After the latest software is downloaded which takes around 5 mins, UI would redirect you to the login page. You could also try to log in again if browser is closed to go through the account onboarding process.
-
- |startup_login|
 
 Onboarding Your OCI Account to your Aviatrix Controller
 =================================================
