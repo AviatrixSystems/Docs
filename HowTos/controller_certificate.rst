@@ -69,6 +69,7 @@ The Gateway Certificate is created when each Gateway is launched thru the Contro
 
 In addition, you can confirm and monitor each Gateway certificate type in the Aviatrix Controller Console > Gateway > reference column Cert Type. Please note, when customizing Gateway Certificates, all existing Gateways will get the custom certificate if the Gateway is on software version 6.0 or higher. If you're on version 14.04-GCP GWs, Gateway certificate is not supported.  
 
+Note: please make sure that all gateways are in green/up state before you proceed.
 
 Setup Custom Gateway Certificate
 -------------------------------------
