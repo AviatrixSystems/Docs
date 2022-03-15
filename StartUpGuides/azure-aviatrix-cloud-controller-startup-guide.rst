@@ -13,10 +13,10 @@ guide helps you to launch the Controller VM in Azure.
 
 Follow the instructions to also subscribe to the Aviatrix Companion Gateway described in this guide:
 
-* `Subscribing to the Aviatrix Metered Offer <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#subscribe-to-the-aviatrix-metered-offer>`_
-* `Subscribing to the Aviatrix Controller BYOL Offer <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#subscribe-to-the-aviatrix-controller-byol-offer>`_
-* `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-the-controller>`_
-* `Onboarding your Azure Account in the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#onboarding>`_
+* `Subscribing to the Aviatrix Metered Offer <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#id1>`_
+* `Subscribing to the Aviatrix Controller BYOL Offer <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#id2>`_
+* `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#id3>`_
+* `Onboarding your Azure Account in the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#id4>`_
 
 Subscribing to the Aviatrix Metered Offer 
 =============================================
@@ -32,7 +32,7 @@ Follow the Azure portal instructions to subscribe.
 Subscribing to the Aviatrix Controller BYOL Offer
 ===================================================
 
-After you subscribe to Aviatrix Meter License offer, you should receive an email from admin@aviatrix.io to inform you with customer ID and a link to subscribe the actual Aviatrix Controller BYOL offer. **More to continue in the `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-the-controller>`_ section below.**
+After you subscribe to Aviatrix Meter License offer, you should receive an email from admin@aviatrix.io to inform you with customer ID and a link to subscribe the actual Aviatrix Controller BYOL offer. More to continue in the `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-the-controller>`_ section below.
 
 (Note with Aviatrix Meter License, you are billed monthly. No upfront cost and pay as you go.)
 
@@ -74,8 +74,7 @@ Launch Controller VM from the Azure Marketplace Portal
     |Azure_Basics|
 
 #. Click **OK**.
-#. At the networking header, this will be preconfigured with a default subnet and security group. You should not need
-    to change anything here. For Public IP, click **Create New**.
+#. At the networking header, this will be preconfigured with a default subnet and security group. You should not need to change anything here. For Public IP, click **Create New**.
 #. At Assignment, select **Static** and click **OK**. 
 
     |static_ip|
@@ -88,12 +87,12 @@ Launch Controller VM from the Azure Marketplace Portal
 
 #.  Use a browser to access the controller VM. In this example, it is
     https://40.77.57.154
-#.  At the login page, enter "admin" as the username. The Initial password is the internal IP address of the VM, as shown below.
+#.  At the login page, enter "admin" as the username. The initial password is the internal IP address of the VM, as shown below.
 
     |login|
 
 #. Go through the login process.
-#. Click on the Onboarding tab at the console.
+#. After logging in, click on the Onboarding tab at the console.
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller console. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
