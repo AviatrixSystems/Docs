@@ -66,8 +66,8 @@ AWS Startup Guide
 Welcome to getting started on AWS! This guide takes you through the 3 steps to launch your Aviatrix Controller instance:
 
 #. `Subscribing to the AMI (Amazon Machine Image) <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#subscribing-to-an-aviatrix-ami>`_.
-#. `Launching the Controller with CloudFormation <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#launching-the-controller-with-cloudformation>`_.
-#. `Onboarding your AWS account in your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#onboarding-your-aws-account-in-your-aviatrix-controller>`_.
+#. `Launching the Controller with CloudFormation <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#id1>`_.
+#. `Onboarding your AWS account in your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#id2>`_.
  
 When complete, you'll be ready to deploy use cases. 
 
@@ -124,9 +124,9 @@ to run the Cloudformation script.
 
 CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
 
-Aviatrix Secure Networking Platform - BYOL
-Aviatrix Secure Networking Platform - Enterprise Subscription
-Check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
+* Aviatrix Secure Networking Platform - BYOL
+* Aviatrix Secure Networking Platform - Enterprise Subscription
+* Check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
 
 2. If you have not logged in, you will be prompted to log in to the AWS console. 
 3. Change to the region where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
