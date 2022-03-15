@@ -15,7 +15,7 @@ Follow the instructions to also subscribe to the Aviatrix Companion Gateway desc
 
 * `Subscribing to the Aviatrix Metered Offer <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#subscribe-to-the-aviatrix-metered-offer>`_
 * `Subscribing to the Aviatrix Controller BYOL Offer <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#subscribe-to-the-aviatrix-controller-byol-offer>`_
-* `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-the-controller>`_
+* `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-controller-vm-from-the-azure-marketplace-portal>`_
 * `Onboarding your Azure Account in the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#onboarding>`_
 
 Subscribing to the Aviatrix Metered Offer 
@@ -61,8 +61,8 @@ link to subscribe the actual Aviatrix Controller BYOL offer, as shown below.
 
 Click the link to return to the Azure Portal to launch the Controller. 
 
-Launch Controller VM from the Azure Marketplace Portal
-------------------------------------------------------------------------
+Launching Controller VM from the Azure Marketplace Portal
+---------------------------------------------------------------------------
 
 #. Get from Azure Marketplace for the actual BYOL Controller. 
 
