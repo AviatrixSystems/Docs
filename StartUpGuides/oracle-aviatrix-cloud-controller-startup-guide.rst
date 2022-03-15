@@ -9,10 +9,10 @@ The Aviatrix cloud network solution consists of two components, the Controller a
 Gateways, both of which are cloud VMs (Virtual Machines). Gateways are launched from the Controller console to specific VCNs. This
 guide helps you to launch the Controller in OCI.
 
-* `Preparing Your Account in OCI <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#preparing-your-account-in-oci>`_
-* `Subscribing to the Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#subscribing-to-the-controller>`_
-* `Accessing the Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#accessing-the-controller>`_
-* `Onboarding Your OCI Account to your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#onboarding-your-oci-account-to-your-aviatrix-controller>`_
+* `Preparing Your Account in OCI <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#id1>`_
+* `Subscribing to the Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#id2>`_
+* `Accessing the Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#id3>`_
+* `Onboarding Your OCI Account to your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html#id4>`_
 
 .. Important::
 
@@ -90,9 +90,7 @@ Onboarding Your OCI Account to your Aviatrix Controller
 
 Follow the `onboarding instructions <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to create an Aviatrix account that corresponds to your OCI account credential.
 
-.. Note::
-
-You only need to create a single Aviatrix account that corresponds to many OCI, AWS, Azure and GCloud account credentials. This is a multi-cloud platform.
+**Note**: You only need to create a single Aviatrix account that corresponds to many OCI, AWS, Azure and GCloud account credentials. This is a multi-cloud platform.
 
 Congratulations on finishing launching your Aviatrix networking platform. Please take a look at our `Documentation website <https://docs.aviatrix.com/>`_.
 Enjoy!
