@@ -559,6 +559,12 @@ cpu_ks
 cpu_steal
     Of the average CPU wait time on the host (VM/instance), the percentage of time a virtual CPU waits for a real CPU while the hypervisor services another virtual processor. 
 
+cpu_us
+    Of the total CPU time, the percentage of time spent running non-kernel code.
+
+cpu_wait
+    Of the total CPU time, the percentage of time spent waiting for IO.
+
 hdisk_free
     The storage space on the disk (volume) that is free/unused.
 
@@ -569,6 +575,9 @@ io_blk_out
     The number of blocks sent per second to a block device.
 
 memory_buf
+    The amount of memory used as buffers.
+
+memory_cached
     The amount of memory used as cache.
 
 memory_free
@@ -581,7 +590,7 @@ nproc_non_int_sleep
     The number of processes blocked waiting for I/O to complete.
 
 nproc_running
-    The number of runnable processes that are running or waiting for a run.
+    The number of processes that are running or waiting for run time.
 
 swap_from_disk
     Memory that is swapped in every second from disk in kilobytes.
@@ -610,6 +619,15 @@ pkt_rx_rate
 pkt_tx_rate
     The total (transmitted) transmission in packet level per second.
 
+rate_bandwidth_egress_limit_exceeded
+    (AWS Only) The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+
+rate_bandwidth_ingress_limit_exceeded
+    (AWS Only) The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+
+rate_conntrack_limit_exceeded
+    (AWS Only) The number of packets dropped because the connection count allowance limit was exceeded.
+
 rate_peak_received
     The highest bit rate that has been received by the interface on the Aviatrix gateway VM/instance.
 
@@ -617,7 +635,7 @@ rate_peak_sent
     The highest bit rate that has been transmitted by the interface on the Aviatrix gateway VM/instance.
 
 rate_peak_total
-    The highest bit rate that has been received and transmitted by the interface on the Aviatrix gateway VM/instance.
+    The highest bit rate that has been received and transmitted or both by the interface on the Aviatrix gateway VM/instance.
 
 rate_pps_limit_exceeded
     The number of packets processed (bidirectional) by the Aviatrix gateway per second.
@@ -634,14 +652,38 @@ rate_rx_drop
 rate_rx_errs
     The number of packets received per second that is flagged by the kernel as errored.
 
+rate_rx_fifo
+    The number of overflow events per second when receiving packets.
+
+rate_rx_frame
+    The number of frame alignment errors per second when receiving packets.
+
+rate_rx_multicast
+    The number of multicast packets per second.
+
 rate_sent
-    The rate of bits the Aviatrix gateway has transmitted per second.
+    The rate of bits per second that has been transmitted by the interface on the Aviatrix gateway VM/instance.
 
 rate_total
     The total (bidirectional) rate of bits processed per second by the interface on the Aviatrix VM/instance.  
 
+rate_tx_carrier
+    The number of frame transmission errors per second due to loss of carrier during transmission.
+
+rate_tx_colls
+    The number of collisions per second during packet transmission.
+
+rate_tx_compressed
+    The number of correctly received compressed packets per second.
+
 rate_tx_drop
     The number of packets being dropped per second while sending.
+
+rate_tx_errs
+    The total number of transmit problems per second.
+
+rate_tx_fifo
+    The number of frame transmission errors per second due to device FIFO underrun/underflow.
 
 GatewayStatus
     Any gateway status change triggers an alert.
