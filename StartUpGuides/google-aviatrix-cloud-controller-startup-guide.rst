@@ -10,10 +10,10 @@ The Aviatrix cloud network solution consists of two components, the Controller a
 Gateway, both of which are GCloud instances. The gateway is launched from the Controller browser console.
 This guide helps you to launch the Controller instance in GCloud:
 
-* Prerequisites
-* Launching the Aviatrix Controller
-* Accessing the Aviatrix Controller
-* Onboarding Your GCP Account to your Aviatrix Controller
+* `Prerequisites <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#prerequisites>`_
+* `Launching the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#option-1-copy-aviatrix-controller-image-to-your-project>`_
+* `Accessing the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#accessing-the-aviatrix-controller>`_
+* `Onboarding Your GCP Account to your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#onboarding>`_
 
 Note that a GCloud project corresponds to an Aviatrix cloud account
 or an AWS (IAM) account with its own credentials. A network in a GCloud
@@ -169,10 +169,10 @@ Follow the initial setup process to set up an admin email address and password a
 .. Note:: Upgrade from 5.3 to 5.4 is not supported Controller needs to be migrated. Look at the GCP controller migration section in the below link.
 https://docs.aviatrix.com/HowTos/controller_migration.html
 
-Onboarding
-================
+Onboarding Your GCP Account to Your Aviatrix Controller
+===============================================
 
-If no GCloud account has been setup, you will be guided through the
+If no GCloud account has been set up, you will be guided through the
 onboarding process. It takes only a few steps. Once that is done, follow
 the quick tour guide to start launching gateways.
 
