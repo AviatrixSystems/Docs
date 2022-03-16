@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
    :description: Aviatrix Cloud Account for Azure
    :keywords: Aviatrix account, Azure, Aviatrix Azure account credential, API credential
 
@@ -65,7 +65,16 @@ After registering your Aviatrix Controller as an app, assign this app a role to 
 
 8. On the Add role assignment page, click **Review + assign** in the bottom left.
 
-Your Aviatrix Controller app is now assigned a Contributer role for this Azure subscription.
+Your Aviatrix Controller app is now assigned a Contributor role for this Azure subscription.
+
+As an alternative to steps 3-8 above, you can run the following PowerShell commands from your Azure AZ PowerShell module, or Azure Cloud Shell, to set up the Contributor role:
+
+
+ .. code-block:: json
+
+        az ad sp create-for-rbac --name "name you want to use here" --role="Contributor" --scopes=/subscriptions/xxxx-xx-xxxx-xxxx (replace Xs with subscription id)
+	az ad sp list --show-mine  --output table
+
 
 2.3 Creating a Secret Identifier
 ------------------------------------------------------------
