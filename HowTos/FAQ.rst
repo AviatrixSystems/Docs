@@ -9,7 +9,7 @@ Frequently Asked Questions
 The Aviatrix product consists of a Controller and Gateways. When the product is deployed in the
 public cloud marketplace, what you launch is the Controller instance. From the Controller console, you launch gateways by using cloud provider APIs.
 
-When the product is deployed as a virtual appliance in a virtualized datacenter environment, the Controller and Gateway are bundled into one virtual image, such as OVF and VHD.
+When the product is deployed as a virtual appliance in a virtualized datacenter environment, the Controller and Gateway are bundled into one virtual image, such as OVF (Open Virtualization Format) and VHD (Virtual Hard Disk).
 
 The following FAQ discusses only the cloud deployment scenario.
 
@@ -17,8 +17,8 @@ Aviatrix Secure Cloud Network Platform
 =======================================
 
 
-What can Aviatrix platform do for me?
------------------------------------------------
+What can the Aviatrix platform do for me?
+-----------------------------------------------------
 
 
 Aviatrix cloud-native networking solution provides an end-to-end secure network solution
@@ -43,7 +43,7 @@ How do I launch the product?
 --------------------------------------------
 
 The product consists of two components: the Controller and one or more
-Gateways. The Gateway is launched from the controller.
+Gateways. The Gateway is launched from the Controller.
 
 The Controller provides a central console for all provisioning,
 monitoring and upgrades of the services.
@@ -58,8 +58,8 @@ Follow `Getting Started on Azure <http://docs.aviatrix.com/StartUpGuides/azure-a
 
 Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on Google.
 
-What are the deployment requirements for Aviatrix product?
---------------------------------------------------------------------------
+What are the deployment requirements for the Aviatrix product?
+--------------------------------------------------------------------------------
 
 Aviatrix Controller and Gateways are deployed on public subnets with public IP addresses for Internet access, as shown below.
 
@@ -75,8 +75,8 @@ If your Controller is launched as a machine image (AMI/VM Image/Custom Image) fr
 
 https://public\_IP\_address\_of\_the\_controller\_instance
 
-Login with the username “admin.” The first-time password is the private IP
-address of the controller instance. You are required to change the
+Log in with the username “admin.” The first-time password is the private IP
+address of the Controller instance. You are required to change the
 password at your first login.
 
 If you are using an Aviatrix Hosted Service (AHS), following the instructions sent to you to access. 
@@ -86,7 +86,7 @@ How do I secure the Controller access?
 
 There are several ways to secure your Controller access, as discussed below. 
 
-1. Enable Controller Security Group Management
+1. Enabling Controller Security Group Management
 ###############################################
 
 Only TCP port 443 needs to be opened for inbound traffic to the
@@ -105,14 +105,14 @@ Go to Settings > Controller > Security Group Management, select the `primary acc
   After this feature is enabled, you can now edit the security rules that are outside gateways public IP addresses to limit the source address range. 
 
 AWS:
-^^^^
+^^^^^^^
 
 AWS Network ACLs are not stateful, so they are not recommended for controlling access to/from Aviatrix Controllers and Gateways.
 
 When this feature is enabled, the Controller will immediately create 4 security groups. Since each security group can support 50 security rules, the Controller can support up to 200 gateways. 
 
 AZURE:
-^^^^^^
+^^^^^^^^
 
 When this feature is enabled, the Controller utilizes the associated network security group which can support up to 1,000 security rules.
 
@@ -120,21 +120,21 @@ When this feature is enabled, the Controller utilizes the associated network sec
 
    If you deploy Aviatrix SAML clients for user VPN access, you can follow `this document <http://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_ to add security to the Controller.
 
-2. Use signed certificate
+2. Using a Signed Certificate
 ##########################
 
-The Aviatrix Controller is shipped with a self-signed certificate, therefore there is a "Note Secure" warning sign shown on your browser console. 
+The Aviatrix Controller is shipped with a self-signed certificate. Therefore, there is a "Note Secure" warning sign shown on your browser console. 
 
 You can change that by importing your own signed certificate. To do so, go to Settings > Advanced > Security. At the panel "CERTIFICATE REQUEST - SEND TO CERTIFICATE AUTHORITY," send a CSR (certificate sign request), then follow the instructions to import CA and the signed Controller certificate. 
 
 You can also use an `ALB in front of the Controller <./controller_ssl_using_elb.html>`__.
 
-3. Remove Less Secure TLS Version(s)
+3. Removing Less Secure TLS Version(s)
 ####################################
 
 You can disable access from a browser that runs TLSv1 and TLSv1.1 and only supports TLSv1.2. To do so, go to Settings > Advanced > Security > TLS VERSIONS SUPPORT. Uncheck TLSv1 and TLSv1.1. 
 
-4. Enable LDAP or DUO second factor to login in
+4. Enabling LDAP or DUO Second Factor to Log in
 ################################################
 
 In addition to username and password login credentials to the Controller, you can also enable LDAP or DUO authentication. 
@@ -143,31 +143,31 @@ To enable LDAP authentication, go to Settings > Controller > LDAP Login and fill
 
 To enable DUO authentication, go to Settings > Controller > 2FA Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to set up DUO. 
 
-5. Create Read-only accounts
+5. Creating Read-Only Accounts
 #############################
 
 You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup.
 
-6. Remove admin account login
+6. Remove Admin Account Login
 ###############################
 
-The "admin" account login can be disabled to instead use account user. 
+The "admin" account login can be disabled to use an account user instead. 
 
-To disable admin login to the Controller, go to Settings > Controller > Login Customization. Click **Disable**.
+To disable the admin login to the Controller, go to Settings > Controller > Login Customization. Click **Disable**.
 
-Please note that you need a local user with admin privileges to be created first, before you can disable the "admin" account.
+Please note that you need a local user with admin privileges to be created before you can disable the "admin" account.
 
-7. Encrypt Controller EBS Volume
+7. Encrypting the Controller EBS Volume
 ##################################
 
 Follow the `instructions here <https://github.com/AviatrixSystems/EBS-encryption>`_ to encrypt the Controller EBS Volume after the Controller is launched. 
 
-8. Encrypt gateway EBS Volume
-###############################
+8. Encrypting the Gateway EBS Volume
+#################################
 
 Aviatrix Gateway EBS volume can be encrypted after it is launched following `the same instructions <https://docs.aviatrix.com/HowTos/encrypt_ebs_volume.html?highlight=volume>`_. In addition, we provide an `open source script <https://github.com/AviatrixSystems/EBS-encryption>`_ to automate the process.
 
-9. Enable Controller SAML Login
+9. Enabling Controller SAML Login
 ################################
 
 You can enable `SAML authentication for Controller login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_
@@ -177,31 +177,29 @@ You can enable `SAML authentication for Controller login. <https://docs.aviatrix
 
 This scenario is explained in detail `here <https://docs.aviatrix.com/HowTos/controller_security_for_SAML.html>`_
 
-11. Enable Login Banner
+11. Enabling Login Banner
 #######################
 
 This function is explained in detail `here <https://docs.aviatrix.com/HowTos/controller_config.html#login-banner>`_
 
-What are the events that the Aviatrix Controller monitors?
---------------------------------------------------------------
+What events does the Aviatrix Controller monitor?
+--------------------------------------------------------------------------
 
  1. **VPN tunnel status** Alert when it goes down and alert when it comes back up.
  #. **Gateway health status** Alert when gateway goes to down state. Alert when it comes back up.
  #. **Overlap network CIDR range** Alert when BGP routes overlap. 
  #. **Route limit** Alert when BGP route limits reach a threshold. 
- #. **TGW Auditor** Monitors the configuration changes, alert when there is inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
+ #. **TGW Auditor** Monitors the configuration changes. Alert when there is an inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
  #. **IAM role and policy** Alert when account IAM policy is not up to date or being deleted. 
  #. **Guard Duty integration** Alert and block malicious IP addresses.
  #. **Black hole route** Alert when VPC route table has inactive routes.  
  #. **Subnet** Alert when there are unwanted instances launched on specific subnets (public subnets in AWS, GCP, and OCI). 
  #. **CPU/Memory/Disk** Alert when gateway memory usage crosses 80% or disk space reaches 90% of its capacity.
- 
 
+How do I ensure my Transit Network is secure when an Aviatrix Gateway is deployed on an AWS public subnet?
+--------------------------------------------------------------------------------------------------------------------------------------
 
-How do I ensure my Transit Network is secure when an Aviatrix gateway is deployed on a public subnet?
-------------------------------------------------------------------------------------------------------------------------------
-
-The customer concerns
+The Customer Concerns
 ######################
 
 Some organizations have concerns about having public subnets in a VPC in AWS. 
@@ -210,7 +208,7 @@ users may find ways to launch an instance on the public subnet and associate the
 public IP address, thus enabling the instance to access the Internet without 
 going through a proper egress firewall (in the cloud or on-prem).
 
-The reality 
+The Reality 
 ##############
 
 However, when deploying a `AWS Global Transit Network solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_, a vendor gateway must be deployed on a public subnet in the Transit VPC. This is true for all vendor appliances on the AWS marketplace. This is
@@ -223,47 +221,37 @@ as IPSEC tunnel endpoints, does not imply that traffic between Transit VPC and S
 Internet. AWS recognizes that it owns these public IP addresses and therefore always
 tries to route the traffic through its own backbone network without ever going out to Internet.   
 
-The Aviatrix solution
+The Aviatrix Solution
 ######################
 
-An Aviatrix gateway instance has strict security groups. It only opens to the Controller on TCP port 443 and port 22 (for Controller to reach the gateway for diagnostics purpose.) 
+An Aviatrix gateway instance has strict security groups. It only opens to the Controller on TCP port 443 and port 22 (for the Controller to reach the Gateway for diagnostics purposes.) 
 
 In addition, Aviatrix provides multiple features to ensure your Transit Network is secure, as described below.
 
- 1. If you use AWS Transit Gateway (TGW) to build a transit network, the Aviatrix gateway is only launched in the transit VPC, all spoke VPCs have no Aviatrix gateway.  
-
+ #. If you use AWS Transit Gateway (TGW) to build a transit network, the Aviatrix Gateway is only launched in the transit VPC. All spoke VPCs have no Aviatrix Gateway.  
  #. Enable `Gateway Subnet Monitoring <http://docs.aviatrix.com/HowTos/gateway.html#monitor-gateway-subnet>`_. When this feature is enabled, the Controller will monitor the selected public subnets periodically. When it detects any instances being launched on these subnets, the Controller will alert the admin and stop the instances. 
-
  #. Enable `VPC Egress Firewall`. If you need to optimize application performance, you should consider allowing instances to access Internet directly, rather than backhauling to on-prem. When this feature is enabled, any traffic initiated from instances on the private subnet must go through the inline and in VPC egress whitelists before going out to the Internet.  
-
  #. Enable `Remote User VPN`. If you need to optimize developer experience (less latency, higher bandwidth), you should consider allowing users to access instances in the VPC directly with SSL VPN. When this feature is enabled, all user traffic is tracked and logged for audit and tracking purposes. 
-
  #. Secure the Controller. Follow the guidelines `here <http://docs.aviatrix.com/HowTos/FAQ.html#how-do-i-secure-the-controller-access>`_ to secure the Controller access. 
-
- #. Log Everything. Enable `Logging` to send all events from gateways, Controllers and user activities to your favorite log service platform for audit and compliance. 
-
+ #. Log everything. Enable `Logging` to send all events from gateways, Controllers and user activities to your favorite log service platform for audit and compliance. 
 
 
 Is Aviatrix Cloud Gateway a SaaS offer?
 ------------------------------------------
 
-
 No. The Aviatrix Controller and gateways are software products that are deployed in
 your own network perimeter.
 
 
-
 Onboarding
-==========
+===============
 
 
 
 Where do I start?
 -------------------
 
-
-The first time when you login, complete the Onboarding process. It takes a
-few steps.
+The first time you login, complete the steps of the Onboarding process.
 
 If you have a BYOL license or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ if you do not have a customer ID.
@@ -284,7 +272,7 @@ How do I upgrade software?
 ------------------------------------
 
 Click Settings > Upgrade. This upgrades to the latest release of the
-controller software.
+Controller software.
 
 When a new release becomes available, an alert message appears on
 Dashboard. An email will also be sent to the admin of the Controller.
@@ -308,7 +296,7 @@ How do I forward syslog events to my Logstash server?
 
 
 Click on Settings > Logging > LogStash logging and input the required
-parameters to enable forwarding of controller syslog events and all
+parameters to enable forwarding of Controller syslog events and all
 gateways syslog and auth log to a Logstash server.
 
 SUMO Logic, Splunk, DataDog and rSyslog are also supported.
@@ -327,7 +315,7 @@ Can alert emails be sent to a different email address?
 -----------------------------------------------------------------
 
 Yes, you can choose an alternative email address to send alert messages.
-This is useful if the controller admin is different from the operation team.
+This is useful if the Controller admin is different from the operation team.
 
 
 Administration
@@ -499,7 +487,7 @@ When attempting to perform centralized logging for AWS Government Cloud, due to
 restrictions with communication inside of Government Cloud, it is not possible to have your 
 Aviatrix Controller hosted in AWS Public Cloud and receive logs from gateways in AWS Gov
 Cloud. In order for the Aviatrix Controller to be able to accept logs from gateways inside of the
-Government Cloud the Aviatrix controller must be hosted within AWS Government Cloud as well.
+Government Cloud, the Aviatrix Controller must be hosted within AWS Government Cloud as well.
 
 How does Aviatrix gateway support high availability in Azure?
 ---------------------------------------------------------------
