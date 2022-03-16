@@ -10,10 +10,10 @@ The Aviatrix cloud network solution consists of two components, the Controller a
 Gateway, both of which are GCloud instances. The gateway is launched from the Controller browser console.
 This guide helps you to launch the Controller instance in GCloud:
 
-* `Prerequisites <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#prerequisites>`_
+* `Prerequisites <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#id1>`_
 * `Launching the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#option-1-copy-aviatrix-controller-image-to-your-project>`_
-* `Accessing the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#accessing-the-aviatrix-controller>`_
-* `Onboarding Your GCP Account to your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#onboarding>`_
+* `Accessing the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#id2>`_
+* `Onboarding Your GCP Account to your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html#id3>`_
 
 Note that a GCloud project corresponds to an Aviatrix cloud account
 or an AWS (IAM) account with its own credentials. A network in a GCloud
