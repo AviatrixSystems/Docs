@@ -11,7 +11,7 @@ Where do I start?
 -------------------------
 
 
-The first time you log in to Aviatrix Controller, complete the onboarding process. It takes a few steps. The onboarding process involves entering the information about your cloud provider account(s) that the Controller requires for launching gateways and building connectivity in the VPCs/VNETs/VCNs of your account(s). The account information required can vary depending on the cloud provider. To complete the onboarding process, click on **Onboarding** from the Aviatrix Controller sidebar, click on the icon of the cloud provider in which your Controller is to launch gateways, and then follow the steps to enter your cloud provider account information.
+The first time you log in to Aviatrix Controller, complete the onboarding process. The onboarding process involves entering the information about your cloud provider account(s) that the Controller requires for launching gateways and building connectivity in the VPCs/VNets/VCNs of your account(s). The account information required can vary depending on the cloud provider. To complete the onboarding process, click on **Onboarding** from the Aviatrix Controller left sidebar, click on the icon of the cloud provider in which your Controller is to launch gateways, and then follow the steps to enter your cloud provider account information.
 
 What is an Aviatrix Customer ID?
 ------------------------------------
