@@ -32,14 +32,14 @@ Unlike other clouds, today you cannot put a HTTP(S) or other form of load balanc
 Deployment Steps
 ====================
 
-Step 1 Deploy a Transit FireNet in Google Cloud
+Step 1. Deploy a Transit FireNet in Google Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set up a Transit FireNet in Google Cloud and enable centralized egress. For details on setting up Transit FireNet see the below document:
 
   `Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html>`_
 
-Step 2 Set up firewall instances for egress
+Step 2. Set up firewall instances for egress
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set up the firewall instances according to the documentation here:
@@ -48,7 +48,7 @@ Set up the firewall instances according to the documentation here:
 
 Enable vendor integration with the firewalls according to the documentation here:
 
-  `Setup API Access to Palo Alto Networks VM-Series https://docs.aviatrix.com/HowTos/paloalto_API_setup.html`_
+  `Setup API Access to Palo Alto Networks VM-Series <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_
 
 Enable egress through the firewalls according to the documentation here: 
 
@@ -60,7 +60,7 @@ Screenshots on enabling egress:
 
 |enable_egress2|
 
-Step 3 Verify health probe status
+Step 3. Verify health probe status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On the Google Cloud console open the Load balancing menu and check the health of the load balancers used by the transit firenet. There will be one UDP and one TCP load balancer to check. Backends should show up as healthy.
@@ -70,7 +70,7 @@ On the Google Cloud console open the Load balancing menu and check the health of
 Step 4 Set up Palo Alto firewalls for ingress load balancing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 4.1 Update management profile
+Step 4.1. Update management profile
 -----------------------------------------------------------------
 
 Edit the management profile to restrict access to firewall management access over WAN and LAN interfaces to only health probes. 
@@ -84,12 +84,12 @@ Add the management profile you have updated to the WAN interface of the firewall
 
 |palo_alto_mgmt_profile|
 
-Step 4.2 Update firewall policy
+Step 4.2. Update firewall policy
 -----------------------------------------------------------------
 
 Update the security policy on the firewall to enable access to the WAN interface of the firewall from the health probe address (169.254.169.254) using HTTP.
 
-Step 5 Create ingress load balancer in Google Cloud
+Step 5. Create ingress load balancer in Google Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a Load Balancer in GCP that point to the WAN interface of your firewalls. In this step we will create a Network Load Balancer as this type of load balancer can terminate any kind of application.
@@ -119,7 +119,7 @@ Click Frontend configuration on the Load Balancer Page and set up a frontend for
 |gcp_create_lb_6|
 
 
-Step 6 Set up firewalls for ingress appliaction traffic
+Step 6. Set up firewalls for ingress appliaction traffic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The load balancer is now created, but health probes will fail as we need to set up a NAT rule for the firewall to answer those probes destined to the frontend IP address of the load balancer.
@@ -138,7 +138,7 @@ This example uses the following parameters:
 
 Set up the firewall's security policy to enable the application ingress traffic.
 
-Step 7 Set up Google Cloud firewall rules for ingress
+Step 7. Set up Google Cloud firewall rules for ingress
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Add an ingress firewall rule to the GCP firewall to allow ingress traffic to the firewall for the application. Use the tag  avx-<egress_vpc_name>-gbl for matching the firewall instances. Allow the application’s port from 0.0.0.0/0 in.
@@ -148,7 +148,7 @@ Use the name of your egress VPC as a parameter in the tag's <egress_vpc_name>. I
 
 |gcp_fwrule_ingress_2|
 
-Step 8 Validate the setup
+Step 8. Validate the setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check that the load balancer in google console shows the backend as healthy for the firewalls. Note that when you reboot a firewall, port 80 might take up to 30 minutes to respond to health checks on port 80.
