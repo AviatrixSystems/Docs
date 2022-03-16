@@ -32,7 +32,7 @@ seamless experience that they enjoy when using the on-prem network.
 
 For an Aviatrix overview, check out `this document. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_ 
 
-In addition, the product interoperates with any third party IPsec capable devices, including AWS VGW and Aviatrix's own on-prem virtual appliance CloudN.
+In addition, the product interoperates with any third-party IPsec capable devices, including AWS VGW and Aviatrix's own on-prem virtual appliance CloudN.
 
 Architecturally, Aviatrix solution is a centrally managed, loosely
 coupled, and globally deployed platform built for the cloud from the
@@ -61,7 +61,7 @@ Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google
 What are the deployment requirements for the Aviatrix product?
 --------------------------------------------------------------------------------
 
-Aviatrix Controller and Gateways are deployed on public subnets with public IP addresses for Internet access, as shown below.
+Aviatrix Controller and Gateways are deployed on subnets (public subnets in AWS, GCP, and OCI) with public IP addresses for Internet access, as shown below.
 
 |deployment|
 
@@ -180,7 +180,7 @@ This scenario is explained in detail `here <https://docs.aviatrix.com/HowTos/con
 11. Enabling Login Banner
 #######################
 
-This function is explained in detail `here <https://docs.aviatrix.com/HowTos/controller_config.html#login-banner>`_
+This function is explained in detail `here <https://docs.aviatrix.com/HowTos/controller_config.html#login-banner>`_.
 
 What events does the Aviatrix Controller monitor?
 --------------------------------------------------------------------------
@@ -192,7 +192,7 @@ What events does the Aviatrix Controller monitor?
  #. **TGW Auditor** Monitors the configuration changes. Alert when there is an inconsistency between AWS console and Aviatrix Controller for resources related to TGW operation.
  #. **IAM role and policy** Alert when account IAM policy is not up to date or being deleted. 
  #. **Guard Duty integration** Alert and block malicious IP addresses.
- #. **Black hole route** Alert when VPC route table has inactive routes.  
+ #. **Black hole route** Alert when VPC/VNet route table has inactive routes.  
  #. **Subnet** Alert when there are unwanted instances launched on specific subnets (public subnets in AWS, GCP, and OCI). 
  #. **CPU/Memory/Disk** Alert when gateway memory usage crosses 80% or disk space reaches 90% of its capacity.
 
@@ -212,12 +212,12 @@ The Reality
 ##############
 
 However, when deploying a `AWS Global Transit Network solution <https://aws.amazon.com/answers/networking/aws-global-transit-network/>`_, a vendor gateway must be deployed on a public subnet in the Transit VPC. This is true for all vendor appliances on the AWS marketplace. This is
-because the vendor gateway in the Transit VPC establishes IPSEC tunnels with Spoke VPC 
+because the vendor gateway in the Transit VPC establishes IPsec tunnels with Spoke VPC 
 over public IP address, whether or not the Spoke VPC deploys a vendor gateway or VGW. Another reason is the vendor
 gateway requires SSH access to configure its VPN tunnels. 
 
 Note that this connectivity between Transit VPC and Spoke VPC, although using public IP addresses 
-as IPSEC tunnel endpoints, does not imply that traffic between Transit VPC and Spoke VPC go through the 
+as IPsec tunnel endpoints, does not imply that traffic between Transit VPC and Spoke VPC go through the 
 Internet. AWS recognizes that it owns these public IP addresses and therefore always
 tries to route the traffic through its own backbone network without ever going out to Internet.   
 
@@ -249,9 +249,9 @@ Onboarding
 
 
 Where do I start?
--------------------
+---------------------------
 
-The first time you login, complete the steps of the Onboarding process.
+The first time you log in, complete the steps of the Onboarding process.
 
 If you have a BYOL license or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ if you do not have a customer ID.
@@ -268,8 +268,8 @@ An Aviatrix Cloud Account can correspond to multiple cloud accounts. For
 example, it can contain credentials for an AWS IAM account, Azure
 account, and GCloud account.
 
-How do I upgrade software?
-------------------------------------
+How do I upgrade the software?
+------------------------------------------
 
 Click Settings > Upgrade. This upgrades to the latest release of the
 Controller software.
@@ -283,7 +283,7 @@ Is there a reference design example?
 Check out docs.aviatrix.com.
 
 What is the support model?
------------------------------
+---------------------------------------
 
 For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ or reach out to your respective Account Executive.
 We also offer `Platinum <https://aviatrix.com/support/>`__ customers with 24x7 support.
@@ -292,7 +292,7 @@ Logging and Monitoring
 ======================
 
 How do I forward syslog events to my Logstash server?
----------------------------------------------------------
+----------------------------------------------------------------------
 
 
 Click on Settings > Logging > LogStash logging and input the required
@@ -331,17 +331,17 @@ multiple users with admin privileges.
 Follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html>`_ to learn more about setting up multiple admin users.
 
 Is there 2FA support to log in to the console?
-------------------------------------------------
+----------------------------------------------------------
 
 
 Yes. In addition to password login, DUO authentication and LDAP are supported.
 
 Starting from Release 4.2, SAML authentication is supported to login to the Controller console. 
 
-Can there be read only account for operation team?
----------------------------------------------------
+Can there be read-only account for operation team?
+-----------------------------------------------------------------
 
-Yes. Accounts > Account Users > Add A NEW USER, at Account Name field, select "read_only" from the dropdown menu. This user account will have views to all pages but cannot make changes to any configurations.
+Yes. Navigate to Accounts > Account Users > Add A NEW USER, at Account Name field and select "read_only" from the dropdown menu. This user account will have views to all pages but cannot make changes to any configurations.
 
 Is Aviatrix FIPS 140-2 compliant?
 -------------------------------------------
@@ -354,7 +354,7 @@ What are the FIPS 140-2 compliant algorithms?
 FIPS 140-2 approved crypto functions can be found in `this link. <https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402annexa.pdf>`_. According to this document, the following algorithms that are supported on Aviatrix are FIPS 140-2 compliant. 
 
 =======================      ==========
-**IPSEC algorithms**         **Value**
+**IPsec algorithms**         **Value**
 =======================      ==========
 Phase 1 Authentication       SHA-1, SHA-512, SHA-384, SHA-256
 Phase 1 DH Groups            2, 1, 5, 14, 15, 16, 17, 18
@@ -385,7 +385,7 @@ establish the security association in IKEv2.
 There are a couple of other differences regarding IKEv2, which has a better support for mobile devices which does not apply to site to site and site to cloud VPN where Aviatrix is being used. 
 
 How to encrypt Aviatrix Controller and gateway EBS volume?
---------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 You can follow the `instructions here <https://www.alienvault.com/documentation/usm-appliance/kb/2017/02/encrypting-root-volumes-for-aws-deployments.html>`_ to encrypt the Controller.
 
@@ -393,18 +393,18 @@ For automation, you can reference our `python script on the Github repository. <
 
 Starting Release 4.2, Aviatrix gateway EBS volume can be encrypted from the Controller console. 
 
-How to launch the Controller by Terraform?
----------------------------------------------
+How do I launch the Controller by Terraform?
+-------------------------------------------------------
 
 Terraform for Controller launch is supported as a community project on Github on `this Aviatrix repo. <https://github.com/AviatrixSystems/terraform-modules>`_
 
-How to migrate a Controller from a Metered license to BYOL license?
------------------------------------------------------------------------
+How do I migrate a Controller from a Metered license to BYOL license?
+-------------------------------------------------------------------------------------
 
 Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
 
-What is the best practice to ensure high availability of Controller?
-------------------------------------------------------------------------------
+What is the best practice to ensure high availability of the Controller?
+---------------------------------------------------------------------------------------
 
 The best practice is to enable `backup and restore function <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
 In the event of Controller being terminated or become non-functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
@@ -415,7 +415,7 @@ For AWS deployment, you can also enable `Controller HA <https://docs.aviatrix.co
 
 
 
-Do you have the CloudFormation source code for launch the Controller?
+Do you have the CloudFormation source code for launching the Controller?
 -------------------------------------------------------------------------------------------
 
 Yes, the source repository for Controller launch can be found on Github at `here. <https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates>`_
@@ -443,38 +443,38 @@ The details are explained in the table below.
 Number of VPC-to-VPC IPSec Tunnel Connections within AWS            $0.19             TGW VPC attachment, Aviatrix Spoke VPC attachment, encrypted peering, Transit Peering
 Number of User or Client SSL VPN Connections                        $0.04             User VPN 
 Number of Gateways running Security Services                        $0.19             Aviatrix gateway with FQDN service
-Number of VPC to Site or Multi cloud IPSec Tunnel Connections       $0.58             Site2Cloud use case
+Number of VPC to Site or Multi-cloud IPSec Tunnel Connections       $0.58             Site2Cloud use case
 =============================================================      ===============    ==============================
 
 How are security updates handled and delivered by Aviatrix?
-------------------------------------------------------------
+----------------------------------------------------------------------------
 
 These are the steps:
 
  1. **Field Notice** All Aviatrix customers are notified when a security update is available. 
  #. **Security Patch** Aviatrix Controller provides a inline software patch to fix vulnerability with the instructions from the Field Notice. The updates do not require reboot of the Controller or gateways most of the time. 
 
-How to recover when a Controller software upgrade fails?
-------------------------------------------------------------------------
+How can an account recover when a Controller software upgrade fails?
+------------------------------------------------------------------------------------------
 
 Here is the best practice procedure to follow:
 
- 1. Before a software upgrade, go to Settings  > Maintenance > Backup & Restore > Backup Now. This will save a copy of the deployment configuration to your S3 bucket. 
+ 1. Before a software upgrade, go to Settings > Maintenance > Backup & Restore > Backup Now. This will save a copy of the deployment configuration to your S3 bucket. 
  #. Do a dry run before upgrading. Go to Settings > Maintenance > Upgrade > UPGRADE TO THE LATEST > Dry Run. If the Dry Run is successful, proceed to the next step. If the Dry Run fails, do not proceed to the upgrade until you determine the root cause of the issue. 
  #. Upgrade. Go to Settings > Maintenance > Upgrade > UPGRADE TO THE LATEST > Upgrade. Wait for the process to finish.
  #. If Controller upgrade is successful and some gateways fail, you can 'force upgrade' the failed gateway again. Go to Troubleshoot > Gateway > FORCE UPGRADE. Select the gateway and click **Upgrade**. 
  #. If Gateway force upgrade fails, proceed to replace the gateway. Go to Troubleshoot > Gateway > GATEWAY REPLACE. Select the failed gateway and click **Replace**. 
  #. If the Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
 
-What IP addresses does Controller need to reach out to?
-----------------------------------------------------------------------
+What IP addresses does the Controller need to reach out to?
+----------------------------------------------------------------------------
 
 Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
 .. note::
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
-What IP addresses does an Aviatrix gateway  need to reach out to?
+What IP addresses does an Aviatrix gateway need to reach out to?
 -----------------------------------------------------------------------------------
 Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
@@ -482,17 +482,17 @@ Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.
 
 Centralized Logging Within AWS Government Cloud
----------------------------------------------------------
+-----------------------------------------------------------------
 When attempting to perform centralized logging for AWS Government Cloud, due to
 restrictions with communication inside of Government Cloud, it is not possible to have your 
 Aviatrix Controller hosted in AWS Public Cloud and receive logs from gateways in AWS Gov
 Cloud. In order for the Aviatrix Controller to be able to accept logs from gateways inside of the
 Government Cloud, the Aviatrix Controller must be hosted within AWS Government Cloud as well.
 
-How does Aviatrix gateway support high availability in Azure?
----------------------------------------------------------------
+How does an Aviatrix Gateway support high availability in Azure?
+---------------------------------------------------------------------------------
 
-Aviatrix support Azure Availability Zet for HA gateway that provides 99.95% of up time. 
+Aviatrix support Azure Availability Set for HA gateway provides 99.95% of up time. 
 
 Azure has started to introduce Availability Zone in some regions. Aviatrix will start to support this option in the future. 
 
