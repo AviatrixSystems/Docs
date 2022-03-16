@@ -63,20 +63,20 @@ Screenshots on enabling egress:
 Step 3. Verify health probe status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On the Google Cloud console open the Load balancing menu and check the health of the load balancers used by the transit firenet. There will be one UDP and one TCP load balancer to check. Backends should show up as healthy.
+On the Google Cloud console open the Load balancing menu and check the health of the load balancers used by the Transit FireNet. There will be one UDP and one TCP load balancer to check. Backends should show up as healthy.
 
 |gcp_be_lb_health|
 
-Step 4 Set up Palo Alto firewalls for ingress load balancing
+Step 4. Set up Palo Alto firewalls for ingress load balancing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Step 4.1. Update management profile
 -----------------------------------------------------------------
 
 Edit the management profile to restrict access to firewall management access over WAN and LAN interfaces to only health probes. 
-Also, enable HTTP access, as the legacy health probes in GCP only support HTTP and not HTTPS. 
+Enable HTTP access since the legacy health probes in GCP only support HTTP and not HTTPS. 
 
-The IP address ranges to add are 169.254.169.254 (legacy health probe for External Load balancer), 35.191.0.0/16 and 130.211.0.0/22 (health probes for Internal Load Balancer)
+The IP address ranges to add are 169.254.169.254 (legacy health probe for External load balancer), 35.191.0.0/16 and 130.211.0.0/22 (health probes for Internal load balancer)
 
 |palo_alto_mfmt_profile_details|
 
@@ -92,7 +92,7 @@ Update the security policy on the firewall to enable access to the WAN interface
 Step 5. Create ingress load balancer in Google Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a Load Balancer in GCP that point to the WAN interface of your firewalls. In this step we will create a Network Load Balancer as this type of load balancer can terminate any kind of application.
+Create a Load Balancer in GCP that point to the WAN interface of your firewalls. We will create a Network Load Balancer as this type of load balancer can terminate any kind of application.
 
 Click create Load balancer on the Google Console/Load balancing menu.
 
@@ -106,7 +106,7 @@ Select Internet facing, single region, target pool based load balancing.
 
 |gcp_create_lb_3|
 
-Set up name, region (must match Transit Firenet’s region), use select existing instances, and select the firewall instances.
+Set up name, region (must match Transit FireNet’s region), use select existing instances and select the firewall instances.
 
 |gcp_create_lb_4|
 
@@ -123,7 +123,7 @@ Step 6. Set up firewalls for ingress appliaction traffic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The load balancer is now created, but health probes will fail as we need to set up a NAT rule for the firewall to answer those probes destined to the frontend IP address of the load balancer.
-on the firewall create a DNAT rule for each frontend IP for the health check to work and create a DNAT/SNAT rule for each application to DNAT/SNAT traffic to the actual application IP in the Spoke. The following screenshot shows an example for these rules.
+On the firewall create a DNAT rule for each frontend IP for the health check to work and create a DNAT/SNAT rule for each application to DNAT/SNAT traffic to the actual application IP in the Spoke. The following screenshot shows an example for these rules.
 
 This example uses the following parameters:
   - Fronted IP: 35.187.7.41
@@ -142,7 +142,7 @@ Step 7. Set up Google Cloud firewall rules for ingress
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Add an ingress firewall rule to the GCP firewall to allow ingress traffic to the firewall for the application. Use the tag  avx-<egress_vpc_name>-gbl for matching the firewall instances. Allow the application’s port from 0.0.0.0/0 in.
-Use the name of your egress VPC as a parameter in the tag's <egress_vpc_name>. In the example below the egress VPC name is "gcp-fw-egress-vpc" reulting in the tag name of avx-gcp-fw-egress-vpc-gbl.
+Use the name of your egress VPC as a parameter in the tag's <egress_vpc_name>. In the example below the egress VPC name is "gcp-fw-egress-vpc" resulting in the tag name of "avx-gcp-fw-egress-vpc-gbl".
 
 |gcp_fwrule_ingress|
 
@@ -151,11 +151,11 @@ Use the name of your egress VPC as a parameter in the tag's <egress_vpc_name>. I
 Step 8. Validate the setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check that the load balancer in google console shows the backend as healthy for the firewalls. Note that when you reboot a firewall, port 80 might take up to 30 minutes to respond to health checks on port 80.
+Check that the load balancer in google console shows the backend as healthy for the firewalls. Note that when you reboot a firewall, it might take up to 30 minutes to respond to health checks on port 80.
 
 |gcp_health_check|
 
-Initiate traffic from the internet towards you application hosted in the spoke VPC. To do so, use the frontend IP address of the load balancer you created and the defined frontend port. Your application should respond as expected.
+Initiate traffic from the internet towards you application hosted in the spoke VPC. To do so, use the frontend IP address of the load balancer you created and the defined frontend port. Your application should respond.
 
 .. |gcp_ingress| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_ingress.png
    :scale: 50% 
@@ -167,7 +167,7 @@ Initiate traffic from the internet towards you application hosted in the spoke V
    :scale: 50% 
 
 .. |gcp_be_lb_health| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_be_lb_health_status.png
-   :scale: 50% 
+   :scale: 60% 
 
 .. |gcp_create_lb_1| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_1.png
    :scale: 50% 
@@ -190,7 +190,7 @@ Initiate traffic from the internet towards you application hosted in the spoke V
 .. |gcp_fwrule_ingress| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress.png
    :scale: 50% 
 
-.. |gcp_fwrule_ingress_2| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress2.png
+.. |gcp_fwrule_ingress_2| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress_2.png
    :scale: 50% 
 
 .. |gcp_health_check| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_health_check.png
