@@ -12,14 +12,9 @@ The solution described below shows how to implement NLB based ingress with Palo 
 
 .. note::
 
-  In this NLB based deployment in GCP the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s wherethe original source IP is lost.
+  In this NLB based deployment in GCP the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s where the original source IP is lost.
 
-This document describes a step-by-step Ingress Protection via Aviatrix Transit FireNet with Palo Alto deployment workflow for R6.6 and later. 
-In this note you learn how to:
-  
-	#. Workflow on GCP Network Load Balancer deployment
-	
-	#. Workflow on Firewall Instances - Palo Alto
+This document describes a step-by-step guide for application ingress protection via Aviatrix Transit FireNet using Palo Alto firewalls for controller version R6.6 and later. 
 
 For more information about Transit FireNet, please check out the below documents:
 
