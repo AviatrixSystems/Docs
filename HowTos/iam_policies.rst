@@ -22,7 +22,7 @@ This document shows you, an Aviatrix user, how to update your AWS IAM policies i
    Please ensure that IAM policies are consistent across all AWS accounts that the Controllers and Gateways are located in.
 
 Auditing and Updating AWS IAM Policies in the Aviatrix Controller
---------------------------------------
+-----------------------------------------------------------------------------------
 
 To update your AWS IAM policies from your Aviatrix Controller, log in to the Controller. 
 
@@ -31,7 +31,7 @@ To update your AWS IAM policies from your Aviatrix Controller, log in to the Con
 #. If the account is not using the latest IAM policy, click **Update Policy**. The latest IAM policy will be updated for this account.
 
 Updating IAM Policies in AWS
----------------------
+-----------------------------------------
 
 This section describes how to update IAM policies from your AWS Console. 
 
