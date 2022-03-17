@@ -17,10 +17,7 @@ steps below to make sure you have the credentials set up for API calls.
 1. Create a GCloud or GCP account (https://cloud.google.com/). Continue to the next
 step if you have already done so.
 
-.. Note:: The Controller supports multiple accounts with each account
-associated with a different GCloud projects, but there needs to be at
-least one account to start with.
-..
+.. Note:: The Controller supports multiple accounts with each account associated with a different GCloud projects, but there needs to be at least one account to start with.
 
 2. Create a GCloud Project. Log in to your GCloud account at https://console.cloud.google.com/project and create a project. Continue to the next step if you have already created
 one. Note the project ID will be used in referencing to the project by the Aviatrix Controller.
