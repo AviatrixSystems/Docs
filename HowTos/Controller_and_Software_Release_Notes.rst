@@ -7,8 +7,8 @@ Aviatrix Controller and Gateway Release Notes
 
 **Issues Corrected in Aviatrix Release 6.5**
 
-**AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
-**AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
+- **AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
+- **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 #. If you see an “Archive is too short” message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
@@ -16,15 +16,15 @@ Aviatrix Controller and Gateway Release Notes
 
 **Known Issues in Aviatrix Release 6.5**
 
-**AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
+- **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 
 6.4.3015 (03/17/2022)  
 =====================================
 
 **Issues Corrected in Aviatrix Release 6.4**
 
-**AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
-**AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
+- **AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
+- **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 #. If you see an “Archive is too short” message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
@@ -32,7 +32,7 @@ Aviatrix Controller and Gateway Release Notes
 
 **Known Issues in Aviatrix Release 6.4**
 
-**AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
+- **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 
 6.6.5409 (03/13/2022)  
 ====================== 
