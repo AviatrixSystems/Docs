@@ -1,13 +1,13 @@
 .. meta::
-  :description: Role Based Access Control
+  :description: Role-Based Access Control
   :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials, RBAC
 
 
 =================================
-Role Based Access Control FAQ
+Role-Based Access Control FAQ
 =================================
 
-What is Aviatrix Role Based Access Control (RBAC)?
+What is Aviatrix Role-Based Access Control (RBAC)?
 ----------------------------------------------------------
 
 The Aviatrix Controller is a multi-cloud and multi-tenant enterprise platform. As such, the Aviatrix Controller manages multiple cloud accounts by requiring access by multiple
