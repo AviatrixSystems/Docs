@@ -19,9 +19,11 @@ step if you have already done so.
 
 .. note::
 
-The controller supports multiple accounts with each account
+The Controller supports multiple accounts with each account
 associated with a different GCloud projects, but there needs to be at
 least one account to start with.
+
+.. note::
 
 2: Create a GCloud Project. Log in to your GCloud account at https://console.cloud.google.com/project and create a project. Continue to the next step if you have already created
 one. Note the project ID will be used in referencing to the project by the Aviatrix Controller.
@@ -68,7 +70,7 @@ credential file from the Google Developer Console.
 6. Click **Create**. The credential file downloads to your local
    computer.
 
-7. Upload the Project Credential file to the Aviatrix controller at the GCloud
+7. Upload the Project Credential file to the Aviatrix Controller at the GCloud
    account create page.
 
 Note: Creating a Service Account with Restricted Access
