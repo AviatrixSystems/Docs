@@ -22,7 +22,7 @@ associated with a different GCloud projects, but there needs to be at
 least one account to start with.
 ..
 
-2: Create a GCloud Project. Log in to your GCloud account at https://console.cloud.google.com/project and create a project. Continue to the next step if you have already created
+2. Create a GCloud Project. Log in to your GCloud account at https://console.cloud.google.com/project and create a project. Continue to the next step if you have already created
 one. Note the project ID will be used in referencing to the project by the Aviatrix Controller.
 
 (As an example, we created a project Aviatrix-UCC. The project ID is
