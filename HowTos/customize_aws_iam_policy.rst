@@ -10,9 +10,9 @@ Customize AWS-IAM-Policy for Aviatrix Controller
 Introduction
 ============
 
-Aviatrix provides the `default Aviatrix-AWS-IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__ for its solution. This document provides examples on how to customize these IAM policies. The customization reduces the scope of resource privileges and helps you meet your organization's security requirements. Please do understand that without the right access and permissions, Aviatrix Controller and Gateways will not be able to function as designed  and any changes you might make could disrupt your network - **we strongly request you to test all changes, thoroughly, in your sandbox/preprod/test environment before you push them to your production environment**. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_, if you have any questions or issues.
+Aviatrix provides the `default Aviatrix-AWS-IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__ for its solution. This document provides examples on how to customize these IAM policies. The customization reduces the scope of resource privileges and helps you meet your organization's security requirements. Please do understand that without the right access and permissions, Aviatrix Controller and Gateways will not be able to function as designed and any changes you might make could disrupt your network - **we strongly request you to test all changes, thoroughly, in your sandbox/preprod/test environment before you push them to your production environment**. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_, if you have any questions or issues.
 
-You can remove some of the policy rules by using this `default IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_Policy_For_Peering.txt>`__ if you only plan on using the following Aviatrix features...
+You can remove some of the policy rules by using this `default IAM-Policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_Policy_For_Peering.txt>`__ if you only plan on using the following Aviatrix features:
   1. Gateway creation without ELB (Elastic Load Balancer)
   2. Encrypted-Peering
   3. Transitive-Peering
@@ -22,7 +22,7 @@ You can remove some of the policy rules by using this `default IAM-Policy <https
 
 
 
-.. Note:: Most features (such as VPN with ELB/NLB, etc) are not stated above, we recommend using the default IAM policy to avoid some issues.
+.. Note:: Most features (such as VPN with ELB/NLB, etc.) are not stated above, we recommend using the default IAM policy to avoid some issues.
 ..
 
 
@@ -43,7 +43,7 @@ IAM Policies Required for Aviatrix Use Cases
 ===========================================================
 
 IAM Policy for Aviatrix Transit Gateway & VGW
---------------------------------------------------
+--------------------------------------------------------------
 
 .. raw:: html
 
@@ -53,8 +53,8 @@ IAM Policy for Aviatrix Transit Gateway & VGW
 |
 
 
-IAM Policy for Aviatrix Transit VPC Spoke gateway
---------------------------------------------------
+IAM Policy for Aviatrix Transit VPC Spoke Gateway
+------------------------------------------------------------
 
 .. raw:: html
 
@@ -71,21 +71,15 @@ When to Modify AWS-IAM-Policy (aviatrix-app-role-policy)
 ========================================================
 
 Before customizing the AWS-IAM-Policy for the Aviatrix Controller, follow
-the steps below...
+the steps below:
 
-Step 01:
-----------------
-
-Use the original/default Aviatrix-AWS-IAM-Policy for every
+1. Use the original/default Aviatrix-AWS-IAM-Policy for every
 Aviatrix-Cloud-Account creation. The following screenshot is the account
-creation during the AVX controller Onboading process.
+creation during the AVX Controller Onboarding process.
 
 |image0|
 
-Step 02: 
----------
-
-After account creation, as an administrator, you can start editing/customizing
+2. After account creation, as an administrator, you can start editing/customizing
 the AWS-IAM-Policy, "aviatrix-app-role-policy" from your AWS-IAM-Policy
 section to increase the security level of your AWS
 environment/resources. Please see the following for more reference.
@@ -93,26 +87,22 @@ environment/resources. Please see the following for more reference.
 How to Modify AWS-IAM-Policy
 ============================
 
-Step 01: Login to your AWS GUI console
---------------------------------------
+1. Log in to your AWS console.
 
 |image1|
 
-Step 02: Go to IAM service
---------------------------
+2. Go to IAM service.
 
 |image2|
 
-Step 03: Click "Policies" and select the policy
------------------------------------------------
+3. Click **Policies** and select the policy. 
 
 If you have not created "aviatrix-app-policy", please see
 `here <http://docs.aviatrix.com/HowTos/HowTo_IAM_role.html>`__.
 
 |image3|
 
-Step 04: Click Edit Policy
---------------------------
+4. Click **Edit Policy**.
 
 |image4|
 
@@ -125,40 +115,40 @@ What Permissions are Required in App Role Policy and Why
 The App role policy
 (`example <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__),
 has different “Actions” to allow on certain resources. Your Aviatrix
-controller needs those policies to function.
+Controller needs those policies to function.
 
-a. ec2 – to create/delete/list/modify VPCs, Aviatrix gateways, security
+a. ec2 – to create/delete/list/modify VPCs, Aviatrix Gateways, security
    groups, route tables, tags, start instance, stop instance, reboot
    instance, associate/de-associate IP address, etc.
 
 b. elasticloadbalancing – to create/configure/delete/modify ELB for
-   Aviatrix VPN gateway
+   Aviatrix VPN Gateway
 
 c. s3 – to create/add/delete s3 buckets for save-and-restore and
    cloudTrail features
 
 d. sqs – to create/delete/list/send/get SQS and SQS messages for
-   controller-to-gateway communication
+   Controller-to-gateway communication
 
 e. sns – to create/delete/list/subscribe/unsubscribe SNS and SNS topic
-   for gateway HA feature
+   for Gateway HA feature
 
 f. route53 – to create/delete/list hosted zone, and change the resource
    record for GeoVPN feature
 
-g. cloudwatch – to put/delete alarm for Aviatrix gateway HA feature
+g. cloudwatch – to put/delete alarm for Aviatrix Gateway HA feature
 
-h. iam – to support role based IAM account
+h. iam – to support role-based IAM account
 
-How to reduce APP Role Policy 
+How to Reduce APP Role Policy 
 ==============================
 
-1. Default APP Role Based Policy
+1. Default APP Role-Based Policy
 --------------------------------
 
 Click
 `here <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__
-to see a default APP role based policy. In the default APP role based
+to see a default APP role-based policy. In the default APP role-based
 policy, it allows actions to apply to all resource. By changing Resource
 field from a wildcard ‘*’ to a more specific resource ARN can limit the
 service the assumed role can do. The examples are described in the later
@@ -206,7 +196,7 @@ policy only allows service requests from IP address 192.0.2.0/24, or
 	  }
 	}
 
-We can also use "Allow" instead of using "Deny" in the "Effect" element/key. Both ways have the same behavior. See the following...
+We can also use "Allow" instead of using "Deny" in the "Effect" element/key. Both ways have the same behavior. See the following:
 
 Syntax:
 ~~~~~~~
@@ -243,7 +233,7 @@ NOTE:
 ~~~~~
 
 The method of specifying the IP address of AWS instance(s) can apply to many
-AWS-API permissions, such as ...
+AWS-API permissions, such as:
 
 | "ec2:Describe*",
 | "elasticloadbalancing:Describe*",
@@ -255,8 +245,8 @@ AWS-API permissions, such as ...
 | etc...
 | not only for "ec2:RunInstances".
 
-4. Launch instances(Aviatrix-Gateway) on a specific subnet only from the Aviatrix Controller
-----------------------------------------------------------------------------------------
+4. Launch Instances(Aviatrix-Gateway) on a Specific Subnet Only from the Aviatrix Controller
+-------------------------------------------------------------------------------------------------------------------
 
 Syntax:
 ~~~~~~~~~
@@ -309,7 +299,7 @@ Example:
     ]
   }
 
-5. Launching instances on specific VPC(s)
+5. Launching Instances on Specific VPC(s)
 -----------------------------------------
 
 The policy can be modified to limit running gateways on certain VPCs
@@ -420,11 +410,11 @@ Example
   }
 
 6. AWS S3 Permissions/Policies
-------------------------------
+---------------------------------------------
 
 The following S3 IAM-Policy examples demonstrate allowing an AWS API to write/PutObject AVX-Controller-Backup configuration file to a
 specified AWS-S3-Bucket. The command is issued only by your AVX
-controller.
+Controller.
 
 Syntax:
 ~~~~~~~
@@ -551,7 +541,7 @@ Example:
   }
 
 7. AWS-Simple-Queue Permissions/Policies
-----------------------------------------
+---------------------------------------------------------
 
 The following example(s) demonstrate allowing the IAM User/Role to
 access AWS-Simple-Queue object(s) only to the queues with names
@@ -621,8 +611,8 @@ Example:
 
 
 
-8. Restricting operations using AWS Resource Tag
-----------------------------------------
+8. Restricting Operations Using the AWS Resource Tag
+--------------------------------------------------------------------
 
 The following example(s) demonstrate using IAM Policy to limit 
 IAM user/role to be able to operate only on instances that have a customized AWS Resource Tag.
@@ -681,7 +671,7 @@ EC2 Role Policy Examples
 ========================
 
 1. Default EC2 Role Policy
---------------------------
+----------------------------------
 
 The Amazon EC2 role allows EC2 instances to call AWS services on your
 behalf.
@@ -715,16 +705,16 @@ EC2 instance’s role.
   }
 
 
-2: Example of EC2 Role Policy with More Specific Resource field
----------------------------------------------------------------
+2: Example of EC2 Role Policy with More Specific Resource Field
+--------------------------------------------------------------------------------
 
 The policy attached to the Amazon EC2 role can limit the role it can
-assume by specifying the 12-digit AWS account number, role name or
+assume by specifying the 12-digit AWS account number, role name, or
 prefix of the role name.
 
 In this example, the EC2 instance can assume role to any 12-digit AWS
-account with role name prefix “HR-“, or AWS account number 177658388888
-with role name prefix “aviatrix-“, or AWS account number 188658399999,
+account with role name prefix “HR-", or AWS account number 177658388888
+with role name prefix “aviatrix-", or AWS account number 188658399999,
 role name developer.
 ::
 
@@ -749,14 +739,14 @@ role name developer.
 NOTE:
 
 Please refer to the policy example below. Aviatrix recommends our
-customers to add the ARN(Amazon Resource Name) of your APP-Role
+customers to add the ARN (Amazon Resource Name) of your APP-Role
 (aviatrix-role-app) into the "Resource" section. However, we do not
 recommend specifying any IP addresses such as your Aviatrix-Controller
-or Aviatrix-Gateway instances under the "Condition" section in order to
+or Aviatrix-Gateway instances under the Condition section in order to
 avoid further unexpected issues. The best practice to specify which of
 your AWS instances are allowed to operate your AWS resources is to
-modify the APP-Role (aviatrix-role-app). Please see the examples under
-"APP Role Examples" section of this document.
+modify the APP-Role (aviatrix-role-app). Please see the examples under the
+`"APP Role Examples" <https://docs.aviatrix.com/HowTos/customize_aws_iam_policy.html#when-to-modify-aws-iam-policy-aviatrix-app-role-policy>`_ section of this document.
 
 Recommended:
 
