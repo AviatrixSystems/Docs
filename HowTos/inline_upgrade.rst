@@ -14,6 +14,8 @@ Inline Software Upgrade for 6.4 and Earlier Releases
 
 When upgrading a controller's software, all gateways are upgraded with the new software at the same time. This is done by the controller pushing new software to gateways directly and automatically once requested.
 
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
+
 .. note::
    
    We strongly recommend that you make a backup before you start the upgrade process. Please follow the directions `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`__.
