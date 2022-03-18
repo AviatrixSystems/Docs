@@ -2,9 +2,9 @@
    :description: launch a gateway and edit it
    :keywords: security policies, Aviatrix, AWS VPC, stateful firewall, UCX, controller, gateway
 
-#######
-Gateway
-#######
+=====================
+Launching a Gateway
+======================
 
 .. raw:: html
 
@@ -15,29 +15,29 @@ Gateway
    }
    </style>
 
-Launch a gateway
------------------
+This document explains how to launch an Aviatrix Gateway from the Aviatrix Controller.
 
-Click "Gateway" on the navigation panel. Click "New" to set up launching a new gateway. To launch a gateway with OpenVPN® capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
+Launching a Gateway
+-------------------------------------
 
-Public Subnet
---------------
+To launch a new gateway in your Controller, click **Gateway** > **New** on the left sidebar. To launch a gateway with OpenVPN® capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
 
-Aviatrix gateways are launched in a public subnet.
+Subnet Information
+---------------------------
 
-A public subnet in AWS VPC is defined as
+Aviatrix Gateways are launched in a public subnet in AWS, GCP, and OCI. A public subnet in AWS VPC is defined as
 a subnet whose associated route table has a default route entry that points to IGW. To learn
-more about VPC and subnets, check out `this link. <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_
+more about VPC and subnets, open `this link. <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`_
 
-If you do not have a VPC with public subnet, you can use our `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool to create a VPC with fully populated public and private subnet in each AZ.
+If you do not have a VPC/VCN with public subnet in AWS, GCP, or OCI, you can use our `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool to create a VPC with fully populated public and private subnet in each AZ.
 
 Select Gateway Size
--------------------
+----------------------------
 
 When selecting the gateway size, note the following guidelines of IPsec performance
 based on IPERF tests conducted between two gateways of the same size:
 
-AWS Performance numbers: 
+AWS Performance Numbers: 
 
 +----------------------------+-------------------------------------------------+
 | AWS Instance Size          | Expected Throughput                             |
@@ -67,7 +67,7 @@ Azure Performance Numbers (without Insane mode):
 | F Series                   | approximately 450Mbps - 1.2Gbps                 |
 +----------------------------+-------------------------------------------------+
 
-GCP Performance numbers (without Insane mode):
+GCP Performance Numbers (without Insane mode):
 
 +--------------------------------------------+-----------------------+
 | GCP Instance Size                          | Expected Throughput   |
@@ -101,48 +101,48 @@ With OCI you can choose a flexible shape to modify the Oracle CPU (OCPU) and mem
 
 .. note::
 
-   If you need IPSec performance beyond 2Gbps, refer to `Aviatrix Insane Mode. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
+   If you need IPsec performance beyond 2Gbps, refer to `Aviatrix Insane Mode. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
-Specify a Reachable DNS Server IP Address
-------------------------------------------
+Specifying a Reachable DNS Server IP Address
+---------------------------------------------------------------
 
 Aviatrix gateways are launched with a default public DNS server IP address 8.8.8.8 to
-ensure the gateway has access to AWS public resources such as SQS for Controller and gateway communication.
-If you want to change to a different DNS server, select the box for "Specify a Reachable DNS Server IP Address"
+ensure the gateway has access to Cloud Service Provider public resources such as SQS for Controller and gateway communication.
+If you want to change to a different DNS server, mark the **Specify a Reachable DNS Server IP Address** checkbox
 to enter an alternative DNS IP address.
 
-Enable NAT
--------------
+Enabling NAT
+--------------------------------------
 
-The Aviatrix gateway performs Source NAT (SNAT) function when this option is selected. All VPC routing tables for
-private subnets are automatically programmed with 0.0.0.0/0 points to the gateway.
+The Aviatrix Gateway performs Source NAT (SNAT) function when this option is selected. All VPC/VCN routing tables for
+private subnets in AWS, GCP, and OCI are automatically programmed with 0.0.0.0/0 points to the gateway.
 
 The function can be enabled at gateway launch time, or any time afterwards.
 
-For example, you may already have a NAT gateway configured for the VPC. To minimize downtime, follow the steps below:
+For example, you may already have a NAT gateway configured for the VPC in AWS. To minimize downtime, follow the steps below:
 
  1. Launch a gateway without the SNAT option selected.
- #. Go to AWS Console to remove the existing 0.0.0.0/0 route entry from the route table.
- #. Go to the Gateway page, highlight the desired gateway, click Edit, Scroll down to SNAT and click Enable.
+ #. Go to your AWS console to remove the existing 0.0.0.0/0 route entry from the route table.
+ #. Go to the Gateway page, highlight the desired gateway, click **Edit** > scroll down to SNAT > click **Enable**.
 
-Enable BGP
-----------
+Enabling BGP
+--------------------------
 
-If this option is selected, the Aviatrix Spoke gateway is enabled with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke gateways created pre-6.6 cannot be enabled with BGP. A Spoke gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_for information about restrictions.
+Select this option to enable the Aviatrix Spoke Gateway with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke Gateways created pre-6.6 cannot be enabled with BGP. A Spoke Gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_for information about restrictions.
 
-Allocate New EIP
------------------
+Allocating a New EIP in AWS
+-------------------------------------
 
-If this option is selected, the Aviatrix gateway allocates a new EIP for the gateway from AWS. When the Aviatrix gateway is deleted, the
+Select this option to have the Aviatrix Gateway allocate a new EIP for the gateway from AWS. When the Aviatrix Gateway is deleted, the
 Controller will release this EIP. If this option is unchecked, the gateway will be allocated an unassociated EIP from the AWS account from which the gateway is launched.
-When the Aviatrix gateway is deleted, the Controller will return this EIP to your AWS account without releasing it.
+When the Aviatrix Gateway is deleted, the Controller will return this EIP to your AWS account without releasing it.
 
 VPN Access
--------------
+-----------------
 
-When this option is selected, the Aviatrix gateway will used for SSL VPN termination. It supports OpenVPN® client and Aviatrix SAML client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
+When this option is selected, the Aviatrix Gateway will used for SSL VPN termination. It supports OpenVPN® client and Aviatrix SAML client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
 
-Enable SAML
+Enabling SAML
 ===================
 
 When SAML is enabled, a VPN client/user authenticates to an identity provider
@@ -150,7 +150,7 @@ When SAML is enabled, a VPN client/user authenticates to an identity provider
 
 In this case, you must use Aviatrix VPN Clients.
 
-Check out the `details <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_  on how to configure and use Aviatrix VPN Clients for SAML.
+Check out the `details <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_ on how to configure and use Aviatrix VPN Clients for SAML.
 
 VPN CIDR Block
 ===============
@@ -175,9 +175,9 @@ You can select either Duo or Okta for the VPN gateway to authenticate to these t
 
 When either option is selected, you can use native OpenVPN® client software such as Tunnelblick for iOS and OpenVPN for Windows.
 
-For how to configure Duo, check out: `How to configure Duo. <http://docs.aviatrix.com/HowTos/duo_auth.html>`_
+To configure Duo, see `How to configure Duo. <http://docs.aviatrix.com/HowTos/duo_auth.html>`_
 
-For how to configure Okta, check out: `How to configure Okta. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`_
+To configure Okta, see `How to configure Okta. <http://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`_
 
 
 Max Connections
@@ -203,27 +203,27 @@ is going through the VPN tunnel when a user is connected to the VPN gateway.
 
 Disabling Split Tunnel Mode should be a deliberate decision. You will be
 charged for all Internet traffic as they are considered egress traffic by
-the cloud provider (AWS/Azure/GCP).
+the Cloud Service Provider (AWS/Azure/GCP/OCI).
 
 
 Additional CIDRs
 ==================
 
-This is an optional parameter. The VPC CIDR where the VPN gateway is
+This is an optional parameter. The VPC/VNet CIDR where the VPN gateway is
 deployed is the default CIDR that VPN gateway pushes to the VPN client. Leave it blank if you do not need it.
 
 When Split Tunnel Mode is enabled, the Additional CIDRs specifies a list of
 destination CIDR ranges that will also go through the VPN tunnel.
 
-This is a useful field when you have `multiple VPCs <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
+This is a useful field when you have `multiple VPC/VNets <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`_ that the VPN user needs to access.
 
 Enter all network ranges in CIDR blocks separated by commas, as shown below:
 
 |additional_cidr|
 
 
-Nameservers
-=============
+Nameservers (Optional) 
+==========================
 
 This is an optional parameter. Leave it blank if you do not need it.
 
@@ -231,8 +231,8 @@ When Split Tunnel Mode is enabled, you can instruct the VPN gateway to push down
 a list of DNS servers to your desktop, so that a VPN user is connected, it will
 use these DNS servers to resolve domain names.
 
-Search Domains
-=================
+Search Domains (Optional)
+==========================
 
 This is an optional parameter. Leave it blank if you do not need it.
 
@@ -243,37 +243,37 @@ Enable ELB
 
 "Enable ELB" is turned on by default.
 
-When ELB is enabled, the domain name of the cloud provider's
-load balancer, such as AWS ELB, will be the connection IP address when a
+When ELB is enabled, the domain name of the CSP's
+load balancer (ELB/ALB/CLB), will be the connection IP address when a
 VPN user connects to the VPN gateway. This connection IP address is part of
 the .ovpn cert file the Controller sends to the VPN client. Even when you
 delete all VPN gateways, you can re-launch them without having to reissue a
 new .ovpn cert file. This helps reduce friction to VPN users.
 
-When ELB is enabled, you can launch multiple VPN gateways behind ELB, thus
+When the ELB option is enabled, you can launch multiple VPN gateways behind ELB, thus
 achieving a scale out VPN solution.
 
 ELB Name
 ==========
 
-ELB Name is generated automatically if it is left blank.
-If it is left blank and there is already a load balancer in the specified VPC, it will choose that load balancer's name.
+The ELB Name is generated automatically if it is left blank.
+If it is left blank and there is already a load balancer in the specified VPC/VNet, the system uses that load balancer's name.
 
-You can set the ELB name if there is no existing ELB in the specified VPC.
+You can set the ELB name if there is no existing ELB in the specified VPC/VNet.
 
 VPN Protocol
 =============
 
-When TCP is checked, the VPN gateway will accept the VPN TCP connection only.
-If UDP is checked, only the VPN UDP connection is allowed.
+When the TCP checkbox is marked, the VPN gateway will accept the VPN TCP connection only.
+If the UDP checkbox is marked, only the VPN UDP connection is allowed.
 These options are only available on the AWS.
 For all cloud types, the VPN protocol is TCP by default if ELB is enabled.
-If the ELB is disabled, the VPN protocol is UDP always.
+If the ELB is disabled, the VPN protocol is always UDP.
 
 Enable Client Certificate Sharing
 ==================================
 
-This is disabled by default.
+This setting is disabled by default.
 
 By enabling the client certificate sharing, all VPN users share one .ovpn file. You must have MFA (such as SAML, DUO + LDAP) configured to make VPN access secure.
 
@@ -281,22 +281,21 @@ By enabling the client certificate sharing, all VPN users share one .ovpn file. 
 Enable Duplicate Connections
 ============================
 
-This was introduced in controller version 4.3. This controls whether users sharing the same common name can connect at the same time to the VPN Gateway.
+This option was introduced in controller version 4.3. This setting controls whether users sharing the same common name can connect at the same time to the VPN Gateway.
 If this is disabled, when a user attempts to connect to the gateway through a different device, his existing VPN connection from the current device gets disconnected.
 
 Note that the users can still land on different VPN Gateways under a load balancer, even though the feature is enabled.
 
-Prior to 4.3, This setting was coupled with Client Certificate Sharing. 
-
+Prior to 4.3, this setting was coupled with Client Certificate Sharing. 
 
 VPN NAT
 =======
-This features was introduced in controller version 4.6 . This controls whether the VPN connection uses NAT(Network Address Translation) while the VPN traffic leaves the Aviatrix VPN Gateway.
+This features was introduced in Controller version 4.6 . This controls whether the VPN connection uses NAT (Network Address Translation) while the VPN traffic leaves the Aviatrix VPN Gateway.
 
-VPN NAT is enabled by default. If you want to disable it, you can do so from OpenVPN->Edit Config->VPN NAT. 
+VPN NAT is enabled by default. If you want to disable it, you can do so from OpenVPN > Edit Config > VPN NAT. 
 
 If NAT is disabled, the traffic would appear to originate from the virtual IP of the VPN user rather than the VPN Gateway itself. Note that you would need to open up the security groups of the target instance to the VPN CIDR for the traffic to flow through. 
-Any peering connection to this VPN gateway would additionally require traffic for the VPN CIDR to be forwarded to the gateway as well
+Any peering connection to this VPN gateway would additionally require traffic for the VPN CIDR to be forwarded to the gateway as well.
 
 If you have multiple gateways under the load balancer, you would also need to ensure that the VPN CIDR of the gateways do not overlap, so that the traffic can be routed back to the respective gateway.
 
@@ -322,14 +321,14 @@ on behalf of the VPN user to authenticate the VPN user to the LDAP server.
 Minimum VPN Client Version
 ============================
 
-Set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
+Set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN > Edit Config > MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
 
 Available for Aviatrix VPN client only.
 
 Add/Edit Tags
----------------
+---------------------
 
-The Aviatrix gateway is launched with a default tag name avx-gateway@private-ip-address-of-the-gateway. This option allows you to add additional AWS/Azure tags at gateway launch time that you
+The Aviatrix Gateway is launched with a default tag name avx-gateway@private-ip-address-of-the-gateway. This option allows you to add additional AWS/Azure tags at gateway launch time that you
 can use for automation scripts.
 
 Designated Gateway
@@ -343,23 +342,23 @@ If a gateway is launched with the **Designated Gateway** feature enabled, the Av
 
 The target of each of these entries will point to the Aviatrix Gateway instance.
 
-Once enabled, Transit VPC, Site2Cloud and Encrypted Peering connections will no longer add additional route entries to the route table if the destination range is within one of these RFC1918 ranges.  Instead, the Aviatrix Gateway will maintain the route table internally and will handle routing for these ranges.
+Once enabled, Transit VPC, Site2Cloud, and Encrypted Peering connections will no longer add additional route entries to the route table if the destination range is within one of these RFC1918 ranges. Instead, the Aviatrix Gateway will maintain the route table internally and will handle routing for these ranges.
 
 .. note::
-   The Designated Gateway feature is automatically enabled on spoke gateways created by the `Transit Network workflow <./transitvpc_workflow.html>`__.
+   The Designated Gateway feature is automatically enabled on Spoke Gateways created by the `Transit Network workflow <./transitvpc_workflow.html>`__.
 
-Starting with `release 3.3 <./UCC_Release_Notes.html#r3-3-6-10-2018>`__, you can configure the CIDR range(s) inserted by the Aviatrix Controller when the Designated Gateway feature is enabled.  To do this, follow these steps:
+Starting with `release 3.3 <./UCC_Release_Notes.html#r3-3-6-10-2018>`__, you can configure the CIDR range(s) inserted by the Aviatrix Controller when the Designated Gateway feature is enabled. To do this, follow these steps:
 
-#. Login to your Aviatrix Controller
-#. Go to the **Gateway** page
-#. Select the designated gateway to modify from the list and click **Edit**
+#. Log in to your Aviatrix Controller.
+#. Go to the **Gateway** page.
+#. Select the designated gateway to modify from the list and click **Edit**.
 
    .. note::
-      You must enable the Designated Gateway feature at gateway creation time
+      You must enable the Designated Gateway feature at the gateway creation time.
 
-#. Scroll down to the section labeled **Edit Designated Gateway**
-#. Enter the list of CIDR range(s) (separate multiple values with a comma) in the **Additional CIDRs** field
-#. Click **Save**
+#. Scroll down to the section labeled **Edit Designated Gateway**.
+#. Enter the list of CIDR range(s) (separate multiple values with a comma) in the **Additional CIDRs** field.
+#. Click **Save**.
 
 |edit-designated-gateway|
 
@@ -368,13 +367,13 @@ Once complete, your route table(s) will be updated with the CIDR range(s) provid
 Security Policy
 --------------------
 
-Starting Release 3.0, gateway security policy page has been moved Security -> Stateful Firewall. Check out `this guide. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_
+Starting Release 3.0, gateway security policy page has been moved Security > Stateful Firewall. See `this guide. <http://docs.aviatrix.com/HowTos/tag_firewall.html>`_
 
 
 High Availability
 ------------------------------
 
-There are 3 types of high availability on Aviatrix: "Gateway for High Availability", "Gateway for High Availability Peering" and Single AZ HA.
+There are 3 types of high availability on Aviatrix: "Gateway for High Availability," "Gateway for High Availability Peering," and Single AZ HA.
 
 Gateway for High Availability
 ------------------------------------------
@@ -399,16 +398,16 @@ When this option is selected, a backup gateway instance will be deployed in a di
 
 If you have built `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_ and need HA function for tunnel down fail over, you can select this option. This backup gateway keeps backup VPN tunnels up, ready for fail over.
 
-If you use Aviatrix gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need HA function, you should select this option. This option will try to load balance the traffic from different route tables to primary and backup gateways.
+If you use Aviatrix Gateway for `Egress Control function <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ and need HA function, you should select this option. This option will try to load balance the traffic from different route tables to primary and backup gateways.
 
-If you consider to deploy `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow, you do not need to come to this page.
+If you consider deploying `Aviatrix Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, high availability is built into the workflow. You do not need to come to this page.
 
 ::
 
   When using Terraform, this option is described by parameter "peering_ha_subnet" by resource gateway.
 
 Gateway Single AZ HA
----------------------
+--------------------------------
 
 When enabled, the Controller monitors the health of the gateway and restart the
 gateway if it becomes unreachable. No secondary gateway is launched in this case.
@@ -418,12 +417,12 @@ gateway if it becomes unreachable. No secondary gateway is launched in this case
   When using Terraform, this option is described by parameter "single_az_ha" by resource gateway.
 
 Gateway Resize
----------------
+-----------------------
 
 You can change Gateway Size if needed to change gateway throughput. The gateway will restart with a different instance size.
 
-To configure, click Gateway on the left navigation panel, select the desired gateway, click Edit. Scroll down to "Gateway Resize" and in the drop down menu,
-select the new gateway instance size. Click "Change". The gateway instance will be stopped and restarted again with the new instance size.
+To configure, click Gateway on the left navigation panel, select the desired gateway, and click **Edit**. Scroll down to Gateway Resize and in the dropdown menu,
+select the new gateway instance size. Click **Change**. The gateway instance will be stopped and restarted again with the new instance size.
 o
 
 ::
@@ -431,11 +430,11 @@ o
   If you use Availability Set when launching Azure gateways, different classes of VM sizes can be resized interchangeably. 
 
 Source NAT
-------------
+-----------------
 
 You can enable and disable NAT function after a gateway is launched.
-NAT function enables instances on private subnet to access the Internet.
-When NAT is enabled, all route tables for private subnets in the VPC
+NAT function enables instances on private subnets in AWS, GCP, or OCI to access the Internet.
+When NAT is enabled, all route tables for private subnets in the VPC/VNet
 are programmed with a route entry that points the gateway as the
 target for route entry 0.0.0.0/0.
 
@@ -444,16 +443,16 @@ Three modes of Source NAT are supported:
 1. Single IP
 ==============
 
-When "Single IP" is selected, the gateway's primary IP address is used as source address for source NAT function. This is the simplest and default mode when you enable NAT at gateway launch time.
+When **Single IP** is selected, the gateway's primary IP address is used as source address for source NAT function. This is the simplest and default mode when you enable NAT at gateway launch time.
 
 2. Multiple IPs
 =================
-When "Multiple IPs" is selected, the gateway translates the source address to the pool of the multiple IPs in a round robin fashion. The multiple IPs are the secondary IP addresses of the gateway that you need to `setup <https://docs.aviatrix.com/HowTos/gateway.html#edit-secondary-ips>`_ first.
+When **Multiple IPs** is selected, the gateway translates the source address to the pool of the multiple IPs in a round robin fashion. The multiple IPs are the secondary IP addresses of the gateway that you need to `setup <https://docs.aviatrix.com/HowTos/gateway.html#edit-secondary-ips>`_ first.
 
 3. Customized SNAT
 ====================
 
-When "Customized SNAT" is selected, the gateway can translate source IP address ranges to different SNAT address and ports, as shown below. Check out `this link <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-4-configure-snat>`_ for an example configuration.
+When **Customized SNAT** is selected, the gateway can translate source IP address ranges to different SNAT address and ports, as shown below. Check out `this link <https://docs.aviatrix.com/Solutions/egress_nat_pool.html#step-4-configure-snat>`_ for an example configuration.
 
 |SNAT-customize|
 
@@ -477,7 +476,7 @@ EXCLUDE ROUTE TABLE                    This field specifies which VPC private ro
 ================================       =======================
 
 Destination NAT
-----------------
+---------------------
 
 Destination NAT (DNAT) allow you to change the destination to a virtual address range.
 
@@ -505,34 +504,35 @@ EXCLUDE ROUTE TABLE                    This field specifies which VPC private ro
 ================================       =======================
 
 Monitor Gateway Subnet
------------------------
+---------------------------------------
 
-This feature allows you to enforce that no unauthorized EC2 instances are being launched on the
-gateway subnet. Since an Aviatrix gateway must be launched on a public subnet, if you have policies that no
-EC2 instances can be launched on public subnets, this feature addresses that concern.
+This feature allows you to enforce that no unauthorized virtual machine (EC2/VM/GCE) instances are being launched on the
+gateway subnet. Since an Aviatrix gateway must be launched on a public subnet in AWS, GCP, or OCI, if you have policies that no
+virtual machine instances can be launched on public subnets, this feature addresses that concern.
 
 When it is enabled, the Controller periodically monitors the selected subnet where
-gateway is launched from. If it detects EC2 instances being launched, the Controller sends an alert email
+gateway is launched from. If it detects virtual machine instances being launched, the Controller sends an alert email
 to admin and immediately stops the instance(s).
 
 You can exclude certain instances by entering instance IDs separated by commas.
 
 To configure:
 
-#. Go to **Gateway** page
-#. Highlight a gateway, click **Edit**.
-#. Scroll down to **Monitor Gateway Subnet**.
+#. Go to the Gateway page.
+#. Highlight a gateway and click **Edit**.
+#. Scroll down to Monitor Gateway Subnet.
 #. Click **Enable** and then optionally enter excluding instance ID(s). Click **OK** when finished.
 
 Click **Disable** to remove all excluding instance ID(s).
 
 Gateway State
---------------
+--------------------
+
 Gateway state is dictated by the following factors.
 
--  State of the gateway as reported by the cloud provider.
--  Connectivity between Controller and gateway over HTTPS (TCP port 443).
--  Status of critical services running on the gateway.
+- State of the gateway as reported by the cloud provider.
+- Connectivity between Controller and gateway over HTTPS (TCP port 443).
+- Status of critical services running on the gateway.
 
 An Aviatrix Gateway could be in any of the following states over its lifetime.
 
@@ -542,9 +542,9 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 
 **DOWN**: A gateway can be down under the following circumstances.
 
--  The Gateway and the controller could not communicate with each other over HTTPS(443).
--  The Gateway instance (VM) is not in running state.
--  Critical services are down on the gateway.
+- The Gateway and the Controller could not communicate with each other over HTTPS (443).
+- The Gateway instance (VM) is not in running state.
+- Critical services are down on the gateway.
 
 **CHECK**: The Controller did not receive expected number of keepalive messages from the gateway during a health check. This is usually caused by the controller security group port 443 not being open to the gateway's EIP.
 
@@ -552,23 +552,24 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 
 ::
 
-  Troubleshoot -> Diagnostics -> Gateway
+  Troubleshoot > Diagnostics > Gateway
 
 
 
-**CONFIG-FAIL**: Gateway could not process a configuration command from the controller successfully. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for assistance.
+**CONFIG-FAIL**: Gateway could not process a configuration command from the Controller successfully. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for assistance.
 
 If a gateway is not in **UP** state, please perform the following steps.
 
--  Examine the security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
--  Examine the security policy of the gateway and make sure that TCP port 443 is opened to traffic originating from controller public IP address. This rule is inserted by the Aviatrix controller during gateway creation. Please restore it if  was removed for some reason.
--  Make sure network ACLs or other firewall rules are not configured to block traffic between controller and gateway over TCP port 443.
+- Examine the security policy of the Aviatrix Controller instance and make sure TCP port 443 is opened to traffic originating from gateway public IP address.
+- Examine the security policy of the gateway and make sure that TCP port 443 is opened to traffic originating from controller public IP address. This rule is inserted by the Aviatrix Controller during gateway creation. Please restore it if was removed for some reason.
+- Make sure network ACLs or other firewall rules are not configured to block traffic between controller and gateway over TCP port 443.
 
 
-Gateway keepalives
-------------------
-As mentioned in the previous section, gateway sends periodic keepalive messages to the Controller. The following templates can be used to control how frequently
-gateways send keepalives and how often the Controller processes these message, which in turn will determine how quickly the Controller can detect gateway state changes.
+Gateway Keepalives
+-----------------------------
+
+As mentioned in the previous section, the gateway sends periodic keepalive messages to the Controller. The following templates can be used to control how frequently
+gateways send keepalives and how often the Controller processes these messages, which in turn will determine how quickly the Controller can detect gateway state changes.
 
 ===========================      =======================   =============================
 **Template name**                Gateway sends keepalive   Controller runs health checks
@@ -588,18 +589,18 @@ detection time is between 7 seconds and 14 seconds.
 
 For example, with medium setting, gateway down detection time is between 1 minute plus 36 seconds to 2 minutes.
 
-The keepalive template is a global configuration on the Controller for all gateways. To change the keep alive template, go to
+The keepalive template is a global configuration on the Controller for all gateways. To change the keep alive template, go to:
 
 ::
 
-  Settings -> Advanced -> Keepalive.
+  Settings > Advanced > Keepalive.
 
-In the drop down menu, select the desired template.
+In the dropdown menu, select the desired template.
 
-Edit Secondary IPs
--------------------
+Edit Secondary IPs (for AWS)
+--------------------------
 
-This feature allows you to add `secondary IP addresses <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html>`_ to the gateway instance. The format to enter the field is, for example,
+This feature allows you to add `secondary IP addresses <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html>`_ to gateway instances for AWS. The format to enter the field is, for example,
 
 ::
 
@@ -613,20 +614,20 @@ EIP <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-ei
 This feature is currently available for AWS.
 
 Use VPC/VNet DNS Server
-------------------------
+------------------------------------
 
-When enabled, this feature removes the default DNS server for the Aviatrix gateway and instructs the gateway to use the VPC DNS server configured in VPC DHCP option.
+When enabled, this feature removes the default DNS server for the Aviatrix Gateway and instructs the gateway to use the VPC/VNet DNS server configured in VPC/VNet DHCP option.
 
-When disabled, the Aviatrix gateway will revert to use its built-in (default) DNS server.
+When disabled, the Aviatrix Gateway will revert to use its built-in (default) DNS server.
 
 Here is one example use case to enable this feature:
 
 If you enable `Logging <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ on the
-Aviatrix Controller, all Aviatrix gateways forward their log information to the
+Aviatrix Controller, all Aviatrix Gateways forward their log information to the
 configured log server. But if the log server is deployed on-prem with a private DNS name,
 the Aviatrix gateway's default DNS server cannot resolve
-the domain name of the private log server. By enabling the VPC DNS server, the gateway will start
-to use the VPC DNS server which should resolve the private DNS name of the log server.
+the domain name of the private log server. By enabling the VPC/VNet DNS server, the gateway will start
+to use the VPC/VNet DNS server which should resolve the private DNS name of the log server.
 
 .. note::
 
@@ -636,88 +637,88 @@ to use the VPC DNS server which should resolve the private DNS name of the log s
 `A caveat is noted <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-does-spoke-gateway-and-vpc-private-dns-work-together>`_ when this feature is applied to a Transit Network.
 
 Insane Mode Encryption
-------------------------
+--------------------------------
 
 When this option is selected, the Aviatrix Controller will look for a spare /26 subnet segment to create a new public 
 subnet "-insane" 
 and launch the gateway on this subnet. The instance sizes that support Insane Mode are c5 series and m5 series.
 
-Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPSEC performance between two single Aviatrix gateway instances or between a single Aviatrix gateway instance and on-prem Aviatrix appliance.
+Insane Mode encryption is an Aviatrix technology that enables 10Gbps and higher IPsec performance between two single Aviatrix Gateway instances or between a single Aviatrix Gateway instance and on-prem Aviatrix appliance.
 
 For more info, read `this document <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn all about Aviatrix Insane Mode
 for high performance Transit Network.
 
-Encrypt EBS Volume
----------------------
+Encrypt EBS Volume (for AWS)
+------------------------------------------
 
-This feature only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, click Edit. Scroll down to Encrypt Volume, click Encrypt. Note the encrypting  action takes up to 15 minutes. `more detail <https://docs.aviatrix.com/HowTos/encrypt_ebs_volume.html>`_
+This feature only applies to AWS gateway. When enabled, the gateway EBS volume is encrypted. To configure, go to Gateway page, select the gateway, and click **Edit**. Scroll down to Encrypt Volume and click **Encrypt**. Note the encrypting action takes up to 15 minutes. For more details, open `this link <https://docs.aviatrix.com/HowTos/encrypt_ebs_volume.html>`_
 
 Customize Spoke VPC Routes
-------------------------------
+-----------------------------------------
 
-This feature allows you to customize Spoke VPC route table entry by specifying a list of comma separated CIDRs. When a CIDR is inserted in this field, automatic route propagation to the Spoke(s) VPC will be disabled, overriding  propagated CIDRs from other spokes, transit gateways and on-prem network. One use case of this feature is for a Spoke VPC that is customer facing and your customer is propagating routes that may conflict with your on-prem routes.
+This feature allows you to customize Spoke VPC/VNet route table entry by specifying a list of comma separated CIDRs. When a CIDR is inserted in this field, automatic route propagation to the Spoke(s) VPC/VNet will be disabled, overriding propagated CIDRs from other spokes, transit gateways and on-prem network. One use case of this feature is for a Spoke VPC/VNet that is customer facing and your customer is propagating routes that may conflict with your on-prem routes.
 
-When this is enabled on an Aviatrix Transit Gateway, all Spoke VPCs route tables are customized.
+When this is enabled on an Aviatrix Transit Gateway, all Spoke VPC/VNets route tables are customized.
 
-When it is enabled on an Spoke gateway, only that gateway VPC route table is applied. This feature does not apply to AWS Transit Gateway (TGW)  attached Spoke VPCs.
+When it is enabled on an Spoke Gateway, only that gateway VPC/VNet route table is applied. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs.
 
-To disable this feature, empty the field and click Save. The on-prem learned routes will be propagated in to the Spoke VPC routes.
+To disable this feature, empty the field and click **Save**. The on-prem learned routes will be propagated in to the Spoke VPC/VNet routes.
 
-Filter Learned Routes to Spoke VPC
-----------------------------------
+Filter Learned Routes to Spoke VPC/VNet
+----------------------------------------------------
 
-This feature allows you to filter on-prem network CIDRs to Spoke VPC route table entry. The unwanted list of CIDRs should be entered as input. This list of
-CIDRs should be comma separated. One use case of this feature is for a Spoke VPC that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
+This feature allows you to filter on-prem network CIDRs to Spoke VPC/VNet route table entry. The unwanted list of CIDRs should be entered as input. This list of
+CIDRs should be comma separated. One use case of this feature is for a Spoke VPC/VNet that is customer facing and you do not wish your customer to access all your on-prem network CIDRs.
 
 The list of the filtered out CIDRs can be a super set of on-prem learned routes. For example, if the on-prem learned routes are 100.10.0.0/24 and 100.10.1.0/24,
 you can enter 100.10.0.0/16 to filter out both routes.
 
 If the filtered out CIDR is a subnet of on-prem learned CIDR, the filtered CIDR won't work.
 
-When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPCs will filter on the configured routes.
+When it is applied to the Aviatrix Transit Gateway, all attached Spoke VPC/VNets will filter on the configured routes.
 
-When it is applied to a specific Spoke VPC, only the Spoke VPC route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs.
+When it is applied to a specific Spoke VPC/VNet, only the Spoke VPC/VNet route table is affected. This feature does not apply to AWS Transit Gateway (TGW) attached Spoke VPCs.
 
 Customize Advertised Spoke VPC CIDRs
---------------------------------------
+---------------------------------------------------
 
-This route policy enables you to selectively exclude some VPC CIDRs from being advertised to on-prem.
+This route policy enables you to selectively exclude some VPC/VNet CIDRs from being advertised to on-prem.
 
-One use case is if you have Spoke VPCs that have multiple CIDR blocks, among which some of them are overlapping. If
-you attach these Spoke VPCs, the Aviatrix Controller will reject them as there are overlapping CIDRs. By excluding the
-overlapping CIDRs, you will be able to attach the Spoke VPCs.
+One use case is if you have Spoke VPC/VNets that have multiple CIDR blocks, among which some of them are overlapping. If
+you attach these Spoke VPC/VNets, the Aviatrix Controller will reject them as there are overlapping CIDRs. By excluding the
+overlapping CIDRs, you will be able to attach the Spoke VPC/VNets.
 
 When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be excluded from advertising to on-prem.
 
-When this policy is applied to an Aviatrix Spoke gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem. In Release 4.7 and later, the "Include list" can be network ranges that are outside of the Spoke VPC CIDR.
+When this policy is applied to an Aviatrix Spoke gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem. In Release 4.7 and later, the "Include list" can be network ranges that are outside of the Spoke VPC/VNet CIDR.
 
-Transit Peers As Backup to Onprem
------------------------------------
+Transit Peers As Backup to On-prem
+------------------------------------------------
 
 When this feature is enabled on a Transit Gateway, every one of its remote Transit Peers does not advertise to its on-prem network all the Spoke VPCs and on-prem routes learned by this Transit Gateway, except when the link to the on-prem
-goes down at which point one of the remote Transit Peers starts to advertise to its on-prem network all the Spoke VPCs
+goes down at which point one of the remote Transit Peers starts to advertise to its on-prem network all the Spoke VPC/VNets
 and on-prem routes learned by this Transit Gateway.
 
-One use case is a connected multi site on-prem network, where each site is connected to the cloud via
+One use case is a connected multi-site on-prem network, where each site is connected to the cloud via
 Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In such case, each Transit Gateway
-learns all Spoke VPCs and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC has a redundant route to on-prem.
+learns all Spoke VPC/VNets and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC/VNet has a redundant route to on-prem.
 
 Jumbo Frame
--------------
+------------------------
 
 Jumbo Frame improves Aviatrix Gateway throughput performance. This feature is enabled by default for AWS and OCI. It is not supported for Azure or GCP.
 
 To enable Jumbo Frame for an Aviatrix Gateway:
 
 #. In Aviatrix Controller, from the left sidebar, select **GATEWAY**.
-#. In Gateways screen, select the gateway for which you want to enable Jumbo Frame and click **Edit**.
+#. On the Gateways page, select the gateway for which you want to enable Jumbo Frame and click **Edit**.
 #. Scroll down to Jumbo Frame and click **Enable**.
 
 
-IPv6
-------
+IPv6 (for AWS)
+------------------------
 
-IPv6 can be enabled on an Aviatrix gateway deployed in AWS. One use case is to use IPv6 to resolve overlapping VPC CIDRs when doing encrypted peering. This use case requires both the VPC and EC2 instances have IPv6 enabled. 
+IPv6 can be enabled on an Aviatrix Gateway deployed in AWS. One use case is to use IPv6 to resolve overlapping VPC CIDRs when doing encrypted peering. This use case requires both the VPC and EC2 instances have IPv6 enabled. 
 
 When this option is enabled, Controller automatically enables IPv6 on the VPC CIDR and the subnet where the gateway is launched. It is your responsibility to enable IPv6 on any other subnets and instances. Use `Migrating to IPv6 <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html>`_ if you need help. 
 
@@ -725,16 +726,16 @@ When building an encrypted tunnel between two identical VPC CIDRs to for network
 
 
 ActiveMesh Mode
-----------------
+-------------------------------
 
 ActiveMesh is officially supported in 5.1 release. If you deploy ActiveMesh gateway in the 5.0 beta code, please upgrade to the latest 5.1 before running it in production environment. 
 
 When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and backup gateway forward packets in ECMP and active/active state.
 
-New and advanced features such as Multi sites Transit solution where the Aviatrix Transit Gateway connects to multiple remote sites is only supported with ActiveMesh mode enabled on the Aviatrix Transit GW. 
+New and advanced features such as Multi-sites Transit solution where the Aviatrix Transit Gateway connects to multiple remote sites is only supported with ActiveMesh mode enabled on the Aviatrix Transit GW. 
 
 To enable ActiveMesh mode after the Transit Gateway or Spoke gateway is enabled, go to Gateway, highlight the gateway
-and click Edit. Scroll down to find ActiveMes Mode, click Enable. 
+and click **Edit**. Scroll down to find ActiveMesh Mode, click **Enable**. 
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
