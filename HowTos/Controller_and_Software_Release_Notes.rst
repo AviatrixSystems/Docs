@@ -7,7 +7,7 @@ Aviatrix Controller and Gateway Release Notes
 
 **Issues Corrected in Aviatrix Release 6.5**
 
-- **AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
+- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
@@ -23,7 +23,7 @@ Aviatrix Controller and Gateway Release Notes
 
 **Issues Corrected in Aviatrix Release 6.4**
 
-- **AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
+- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
@@ -39,7 +39,7 @@ Aviatrix Controller and Gateway Release Notes
 
 **Issues Corrected in Release 6.6** 
 
-- **AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
+- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
