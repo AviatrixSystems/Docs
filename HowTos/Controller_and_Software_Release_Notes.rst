@@ -39,17 +39,16 @@ Aviatrix Controller and Gateway Release Notes
 
 **Issues Corrected in Release 6.6** 
 
-- **AVX-18796** - Some gateways may start flapping and go down.
+- **AVX-18796** – When either the intermediate CA (Certificate Authority) certificate on the Controller or the Gateway CA certificate rotated before the other certificate, some Gateways would start flapping and go down. This issue could occur for any account.
+- **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
-**Known Issues in Release 6.6** 
+#. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
+#. If you see an “Archive is too short” message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
+#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the “Archive is too short” message. Perform the gateway software upgrade again.
 
-- **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6 you cannot use the selective gateways feature.   
+**Known Issues in Aviatrix Release 6.6**
 
-1. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
-2. If you see an “Archive is too short“ message during the upgrade, you need to perform step 3. Otherwise, you can skip step 3. 
-3. After Upgrade is done go to Settings > Maintenance > Selective upgrade and select the gateways listed in the “Archive is too short“ message. Perform the upgrade again. 
-
-- **AVX-20201** - Controller sends false alert email about CloundN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email. 
+- **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 
 6.6.5404 (02/28/2022)  
 ====================== 
