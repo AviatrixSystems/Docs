@@ -119,7 +119,7 @@ Aviatrix preview features offer you the opportunity to experiment with upcoming 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
 
 
-**Issues Corrected in Release 6.6** 
+**Known Issues in Release 6.6** 
 
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
 #. The AWS transit FireNet is enabled.
