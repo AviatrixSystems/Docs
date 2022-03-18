@@ -37,10 +37,10 @@ admin also creates another user, Alice, who has full responsibility to access ac
 Tasks carried out by an Admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. The admin creates an account admin group by logging in and navigates to Accounts > Permission Groups > **+Add New**. Give the group a name, such as "account-admins."
+1. The admin creates an account admin group by logging in and navigating to Accounts > Permission Groups > **+Add New**. The admin gives the group a name, such as "account-admins."
 2. The admin gives this group permission to create Access Accounts by navigating to Accounts > Permission Groups. The admin clicks the 3 skewer dots > **Manage Permission**> **+Add New. 
 3. The admin selects **Accounts** in the list of functions and **OK** to confirm. 
-4. The admin creates user Bob to the account_admins group by navigating to Account Users > **+New User**. The admin enters Bob in the name field and completes the other fields. For the field RBAC Groups, select account-admins created in step 1. 
+4. The admin creates user Bob to the account_admins group by navigating to Account Users > **+New User**. The admin enters Bob in the name field and completes the other fields. For the field RBAC Groups, the admin selects account-admins created in step 1. 
 
 Tasks carried out by Bob
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ Yes. The deployment is shown in the diagram below.
 
 |rbac_example_2|
 
-Bob should perform the following tasks to have it setup. 
+Bob should perform the following tasks to set it up.
 
  1. Bob creates a new permission group, such as "Site2Cloud-ops."
  2. Bob assigns himself to the Site2Cloud-ops group.
@@ -82,7 +82,7 @@ Read_only user has visibility to all pages on the Controller and can perform tro
 In this example, Alice creates a read_only user George. Alice performs the following steps. 
 
  1. Alice logs in and navigates to Accounts > Account Users > **+Add New**.
- #. Alice adds a user named George and adds a User Name, User Email, and Password. For RBAC Groups, select read_only.
+ #. Alice adds a user named George and adds a User Name, User Email, and Password. For RBAC Groups, she selects read_only.
 
 Can there be multiple admin users?
 ----------------------------------------------------------
@@ -95,7 +95,7 @@ In this example, an admin creates a new admin user, Jennifer. The admin performs
 |rbac_example_4|
 
  1. The admin logs in and navigates to Accounts > Account Users > **+Add New**.
- 2. The admin adds a user with the User Name "Jennifer," User Email, Password. For RBAC Groups, select **admin**. 
+ 2. The admin adds a user with the User Name "Jennifer," User Email, Password. For RBAC Groups, the admin selects **admin**. 
 
 Does RBAC support remote authentications?
 ----------------------------------------------------------
