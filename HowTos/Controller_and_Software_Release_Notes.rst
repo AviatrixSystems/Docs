@@ -2,6 +2,24 @@
 Aviatrix Controller and Gateway Release Notes
 ==============================================
 
+.. important::
+
+  Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in ` Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html />`_. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
+
+6.6.5413 (03/18/2022)  
+====================== 
+
+**Issues Corrected in Release 6.6** 
+
+- **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk and better defend against denial of service attacks. Overly restrictive checks allowed concurrent uploads to overwrite each other. This update allows for concurrency without sacrificing the original defensive goals.
+
+- **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit Firenet. The issue occurs when the following conditions are met:
+
+#. The AWS transit FireNet is enabled.
+#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
+#. The AWS transit gateway is added to the Transit FireNet inspection list.
+
 6.5.3012 (03/17/2022)
 ===================================
 
@@ -49,6 +67,10 @@ Aviatrix Controller and Gateway Release Notes
 **Known Issues in Aviatrix Release 6.6**
 
 - **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
+- **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
+#. The AWS transit FireNet is enabled.
+#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
+#. The AWS transit gateway is added to the Transit FireNet inspection list.
 
 6.6.5404 (02/28/2022)  
 ====================== 
@@ -75,6 +97,10 @@ Aviatrix preview features offer you the opportunity to experiment with upcoming 
 - **AVX-10002** - Firewall's URL inspection rules are dropping packets with controller(or spire).aviatrixnetwork.com and showing failed registration.
 - **AVX-16838** - Release server API showing an error during IP update.
 - **AVX-17650** - CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded.
+- **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
+#. The AWS transit FireNet is enabled.
+#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
+#. The AWS transit gateway is added to the Transit FireNet inspection list.
 
 **Issues Corrected in Release 6.6** 
 
@@ -90,6 +116,15 @@ Aviatrix preview features offer you the opportunity to experiment with upcoming 
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
+
+
+**Issues Corrected in Release 6.6** 
+
+- **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
+#. The AWS transit FireNet is enabled.
+#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
+#. The AWS transit gateway is added to the Transit FireNet inspection list.
+
 
 6.5.3006 (02/09/2022)  
 ====================== 

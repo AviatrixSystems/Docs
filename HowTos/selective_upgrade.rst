@@ -6,7 +6,10 @@
 Upgrading the Aviatrix Cloud Network Platform
 =============================================
 
-If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
+.. important::
+
+  Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in ` Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html />`_.  If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
 Aviatrix encourages you to keep your platform controller and gateways up to date to ensure you are operating the most secure and highest performing versions available. To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. 
 
@@ -148,9 +151,9 @@ Aviatrix recommends you perform the tasks in the Operations Checklist before upg
 Understanding the Release Contents
 ----------------------------------
 
-To understand the contents and potential impact of upgrading to specific software release, see https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html.
+To understand the contents and potential impact of upgrading to specific software release, see `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
 
-To understand the contents and potential impact of upgrading to specific image release, see https://docs.aviatrix.com/HowTos/image_release_notes.html.
+To understand the contents and potential impact of upgrading to specific image release, see `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/image_release_notes.html>`_.
 
 **Verify DNS Settings**
 
