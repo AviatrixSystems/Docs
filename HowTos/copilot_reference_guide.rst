@@ -886,10 +886,20 @@ To create a resource utilization report:
 11. (Optional) To generate another report, at the top of the Resource Utilization Report page, click the arrow to return to the main Reports page and repeat the procedure.
 
 
-CoPilot WebHooks Customization
-==============================
+CoPilot WebHooks
+===================
+
+This sections provides the following information:
+
+- How to customize the webhooks Aviatrix CoPilot generates for sending to external systems (such as Slack and PagerDuty). See "CoPilot Webhooks Customization".
+
+- An example for setting up PagerDuty to receive CoPilot alerts via webhooks. See "Example: PagerDuty Webhook Payload URL".
+
+CoPilot Webhooks Customization
+-------------------------------
 
 You can customize the webhooks Aviatrix CoPilot generates for sending to external systems (such as Slack) by using the Handlebars templating language. Examples are provided in this topic for high level variables that are exposed in CoPilot notification alerts.
+
 
 CoPilot alerts expose the following high level variables (objects):
 
@@ -899,8 +909,7 @@ CoPilot alerts expose the following high level variables (objects):
 
 Each object exposes additional variables that can be accessed.
 
-Alert
--------
+**Alert**
 
 The alert object exposes ::
 
@@ -913,8 +922,7 @@ The alert object exposes ::
     "unit": "%"
   }
 
-Event
--------
+**Event**
 
 The event object exposes ::
 
@@ -933,8 +941,8 @@ where:
 - ``recoveredHosts`` represents the hosts that are now recovered.
 - ``receiveSeparateAlert`` is for individual host alerts.
 
-Webhook
----------
+
+**Webhook**
 
 The webhook object exposes ::
 
@@ -945,8 +953,8 @@ The webhook object exposes ::
     "url": ""
   }
 
-Creating a custom webhook and accessing individual fields
------------------------------------------------------------
+**Creating a custom webhook and accessing individual fields**
+
 
 Example 1: If individual alerts for hosts is ON, receive a string. Else receive an array.  ::
 
@@ -1138,6 +1146,95 @@ Custom Slack Webhook example (slack document: https://app.slack.com/block-kit-bu
 |webhook_image|
 
 
+Example: PagerDuty Webhook Payload URL
+---------------------------------------
+
+If you want to set up PagerDuty to receive CoPilot alerts via webhooks, this section provides an overview of the steps including generating the PagerDuty webhook payload URL to which CoPilot will send POST requests. You specify the URL when you configure CoPilot notifications in Settings > Notifications > Webooks. 
+
+For the most current information about receiving HTTP callbacks in your PagerDuty account, always refer to the `PagerDuty support documentation  <https://support.pagerduty.com/docs/webhooks>`_.
+
+**Prerequisite**: Before you begin, create a PagerDuty developer account at the `PagerDuty Developer Platform site  <https://developer.pagerduty.com/sign-up/>`_.
+
+**Summary of Steps**:
+
+-   (In PagerDuty) Log in to your PagerDuty Developer Console.
+-   (In PagerDuty) Create the PagerDuty application service.
+-   (In CoPilot) Configure CoPilot notifications via webhooks to send alerts to your new service.
+
+To set up PagerDuty to receive CoPilot alerts via webhooks:
+
+1.  Log in to your PagerDuty Developer Console and click **Create New App**.
+
+    If you do not see the **Create New App** button after logging in, navigate to Integrations > Developer Mode from the console menu.
+
+    |notifs_pager_create_app|
+
+2.  Fill in the requested fields, such as App Name, Brief Description, and Category (you can specify multiple values for the category field):
+
+    |notifs_pager_build_app|
+
+3.  Click **Save**.
+
+4.  In the next page, locate the Events Integration box, and click **Add**.
+
+    |notifs_pager_event_int|
+
+5.  Fill in the requested fields:
+
+    -   Transform Event Data: Yes
+    -   Debug Mode: Off (or on, if preferred)
+    -   Change Events: Not required
+    -   Redirect URLs: Not required
+6.  For Create a Test Service, modify the pre-populated value if preferred and click **Create**.
+
+    |notifs_pager_create_test|
+
+    After you click Create, your Integration Key and API Endpoint are created but the API Endpoint URL is not correct until you click **Save**. Before you save the service, the endpoint looks like this:
+
+    |notifs_pager_endpoint_before|
+
+7.  Click **Save** to save the test service.
+
+    After saving the service, your endpoint looks like this:
+
+    |notifs_pager_endpoint_correct|
+
+    The page refreshes and reverts back to the main screen for your new application.
+
+8.  Locate the Events Integration box, and click **Manage**.
+
+9.  Copy the Events API Endpoint.
+
+10. Log in to CoPilot.
+
+11. Navigate to Settings > Notifications > Webooks section.
+
+12. Click **+ New** to create a webhook configuration for PagerDuty.
+
+13. In the webhook configuration panel, fill in the fields. For Webhook Payload URL, paste your copied Events API Endpoint URL.
+
+    |notifs_pager_endpoint_paste|
+
+14. Click the **Test** button on the webhook test payload.
+
+    This sends a test to PagerDuty. If the test is successful, you will see a Success message:
+
+    |notifs_pager_webhook_test|
+
+    To see the alert in PagerDuty, follow the next step.
+
+15. (Verify Alert Sent) In PagerDurty, click on your profile icon in the app bar and select **Subscriptions**.
+
+    |notifs_pager_webhook_verify|
+
+16. In the top menu, click **Incidents**.
+
+    You should see your alert. For example:
+
+    |notifs_pager_webhook_verified|
+
+
+
 Settings
 ======================
 
@@ -1208,10 +1305,11 @@ Managing Your Appliance
 ========================================
  
 
-**Backup and recovery**  
-  In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
-  You can configure periodic snapshots
-  ,based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS  
+**Backup and recovery**
+
+In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
+
+You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
 
 
 
@@ -1227,7 +1325,35 @@ Managing Your Appliance
 ..  |time_control_image| image:: copilot_reference_guide_media/topology_replay_time_preview.png
     :width: 200
 
-..  |webhook_image| image:: copilot_reference_guide_media/webhookImage.png
+..  |notifs_pager_create_app| image:: copilot_reference_guide_media/notifs_pager_create_app.png
     :scale: 50%
+
+..  |notifs_pager_build_app| image:: copilot_reference_guide_media/notifs_pager_build_app.png
+    :scale: 70%
+
+..  |notifs_pager_create_test| image:: copilot_reference_guide_media/notifs_pager_create_test.png
+    :scale: 50%
+
+..  |notifs_pager_endpoint_before| image:: copilot_reference_guide_media/notifs_pager_endpoint_before.png
+    :scale: 50%
+
+..  |notifs_pager_endpoint_correct| image:: copilot_reference_guide_media/notifs_pager_endpoint_correct.png
+    :scale: 50%
+
+..  |notifs_pager_endpoint_paste| image:: copilot_reference_guide_media/notifs_pager_endpoint_paste.png
+    :scale: 50%
+
+..  |notifs_pager_event_int| image:: copilot_reference_guide_media/notifs_pager_event_int.png
+    :scale: 50%
+
+..  |notifs_pager_webhook_test| image:: copilot_reference_guide_media/notifs_pager_webhook_test.png
+    :scale: 50%
+
+..  |notifs_pager_webhook_verified| image:: copilot_reference_guide_media/notifs_pager_webhook_verified.png
+    :scale: 70%
+
+..  |notifs_pager_webhook_verify| image:: copilot_reference_guide_media/notifs_pager_webhook_verify.png
+    :scale: 50%
+
 
 
