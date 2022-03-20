@@ -1326,28 +1326,28 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
     :width: 200
 
 ..  |notifs_pager_create_app| image:: copilot_reference_guide_media/notifs_pager_create_app.png
-    :scale: 50%
+    :scale: 70%
 
 ..  |notifs_pager_build_app| image:: copilot_reference_guide_media/notifs_pager_build_app.png
     :scale: 70%
 
 ..  |notifs_pager_create_test| image:: copilot_reference_guide_media/notifs_pager_create_test.png
-    :scale: 50%
+    :scale: 60%
 
 ..  |notifs_pager_endpoint_before| image:: copilot_reference_guide_media/notifs_pager_endpoint_before.png
-    :scale: 50%
+    :scale: 70%
 
 ..  |notifs_pager_endpoint_correct| image:: copilot_reference_guide_media/notifs_pager_endpoint_correct.png
-    :scale: 50%
+    :scale: 70%
 
 ..  |notifs_pager_endpoint_paste| image:: copilot_reference_guide_media/notifs_pager_endpoint_paste.png
-    :scale: 50%
+    :scale: 70%
 
 ..  |notifs_pager_event_int| image:: copilot_reference_guide_media/notifs_pager_event_int.png
-    :scale: 50%
+    :scale: 60%
 
 ..  |notifs_pager_webhook_test| image:: copilot_reference_guide_media/notifs_pager_webhook_test.png
-    :scale: 50%
+    :scale: 60%
 
 ..  |notifs_pager_webhook_verified| image:: copilot_reference_guide_media/notifs_pager_webhook_verified.png
     :scale: 70%
