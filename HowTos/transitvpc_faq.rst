@@ -7,14 +7,14 @@ Multi-Cloud Global Transit FAQ
 ===============================
 
 
-Why Should I Choose Transit Architecture?
+Why should I choose Transit Architecture?
 ----------------------------------------------------------
 
 Transit architecture is about building connectivity between the cloud and on-prem in the most agile manner possible. In the Transit architecture, there is one connection (not including the backup) between on-prem and a Transit VPC/VNet. Everything else (the Spoke VPC/VNets to on-prem traffic) is routed through the Transit VPC/VNet.
 
 The alternative to Transit architecture (often referred to as "flat" architecture) is to build one connection, either IPsec over the Internet or Direct Connect, each time you spin up a new VPC or VNet in the cloud. This requires changes at the on-prem edge, which requires a change control process that takes days to weeks.
 
-How Do I Configure a Global Transit Network with the Aviatrix Solution?
+How do I configure a global Transit Network with the Aviatrix Solution?
 -------------------------------------------------------------------------------------------
 
 
@@ -22,22 +22,22 @@ If you plan to deploy an AWS Transit Gateway (TGW) based transit network, follow
 
 If you plan to deploy in Azure or deploy Aviatrix gateways in the Spoke VPC/VNets, follow the instructions `here. <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ 
 
-Should the Aviatrix Transit Network All be Deployed in ActiveMesh mode?
+Should the Aviatrix Transit Network all be deployed in ActiveMesh mode?
 ------------------------------------------------------------------------------------------
 
 Yes. All Aviatrix Transit Network should be deployed in ActiveMesh mode. To learn more, check out `ActiveMesh FAQ <https://docs.aviatrix.com/HowTos/activemesh_faq.html>`_. 
 
-Should I Deploy One Transit Group for Dev and One for Prod?
+Should I deploy one Transit Group for Dev and one for Prod?
 --------------------------------------------------------------------------
 
 If your reason for two Transit hubs is security and a smaller blast radius, you need not worry about these when using the Aviatrix solution. Simply create two Security Domains in your deployment. 
 
-I Have Two regions and Two Direct Connects. How Do I Build a Multi-Region Transit Solution?
+I have two regions and two Direct Connects. How do I build a Multi-Region Transit solution?
 ------------------------------------------------------------------------------------------------------------------
 
 Starting from release 4.1, `inter region transit network <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#connecting-transit-gateways-in-multi-regions-multi-cloud>`_ can be connected directly. Follow the instructions `here <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#transit-gateway-peering>`_. 
 
-I Have More than 100 VPCs. How Do I Overcome AWS Route Limits (100)?
+I have more than 100 VPCs. How do I overcome AWS Route Limits (100)?
 --------------------------------------------------------------------
 
 When `AWS VGW carries more than 100 routes <https://aws.amazon.com/premiumsupport/knowledge-center/troubleshoot-bgp-vpn/>`_, its BGP session will crash unexpectedly, resulting in your network outage.
@@ -59,13 +59,13 @@ Aviatrix Controller sends out alert/warning messages when it determines that the
 To permanently solve the route limit problem and not have to worry about summarizing routes at all and ever, use `External Device Option <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ to connect to on-prem directly over Direct Connect or the Internet. 
 
 
-I Have a Few High Bandwidth Applications. How Do I Deploy Them in a Transit Solution?
+I have a few high bandwidth applications. How do I deploy them in a Transit solution?
 -------------------------------------------------------------------------------------------------------------
 
 Aviatrix's `Insane Mode solution <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ provides 10Gbps Transit network throughput. 
 
 
-How Can I Fit an Egress Firewall into the Aviatrix Transit Solution?
+How can I fit an Egress Firewall into the Aviatrix Transit solution?
 -----------------------------------------------------------------------------------
 
 There are two types of requirements.
@@ -76,25 +76,25 @@ Egress Control Policies
 If your compliance requires egress policies and you have currently implemented AWS NAT gateways, consider using `Aviatrix Egress Control <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_. Aviatrix Egress Control is the most efficient way to provide a FQDN filter for all TCP/UDP protocols.  
 
 
-What are the Automation Methods for a Transit Network?
+What are the automation methods for a Transit Network?
 -------------------------------------------------------------------------
 
 There are multiple resources to help you automate Transit Network setup. Note that if you are building a Transit Network following the workflow, you should `use Terraform <https://www.terraform.io/docs/providers/aviatrix>`_.
 
 
-Does the Aviatrix Transit Network Support HA?
+Does the Aviatrix Transit Network support HA?
 -------------------------------------------------------------
 
 Yes. Aviatrix Transit Gateways operates in `ActiveMesh mode <https://docs.aviatrix.com/HowTos/activemesh_faq.html>`_. 
 
-Why are AWS t2 series Instance Types Not Recommended for Production Deployment on a Transit GW?
+Why are AWS t2 series instance types not recommended for Production deployment on a Transit GW?
 ------------------------------------------------------------------------------------------------------------------------------
 
 When a t2 series Transit GW communicate with VGW over IPsec, there is a 3% packet drop for packet size less than 150 bytes by Transit GW due to an issue with AWS Xen hypervisor and the kernel version GW is using. This will be fixed in a future release.
 
 Note that this packet drop issue does not affect Spoke Gateways.
 
-How Do I Resize a Transit GW Instance?
+How do I Resize a Transit GW instance?
 ------------------------------------------------------
 
 Go to the Gateway page on the left sidebar > Transit GW and click **Edit**. Scroll up to Gateway Resize. Select the desired size and click **Change**.
@@ -104,22 +104,22 @@ not go through the Transit GW.
 
 During resizing, traffic will be switched to the backup Transit GW if HA is enabled, this will also switch Spoke to Transit traffic if Spoke VPC/VNet has HA enabled. Resizing a Transit GW will cause network downtime.
 
-How Do I Know Which Transit GW a Spoke GW is Sending Traffic to?
+How do I know which Transit GW a Spoke GW is sending traffic to?
 --------------------------------------------------------------------------------------------
 
 You can tell which Transit GW carries the network traffic from a specific Spoke VPC/VNet by selecting MULTI-CLOUD TRANSIT > BGP on the left sidebar. Select the Transit GW and click **Detail**. If the list of the Advertised Networks includes the Spoke VPC/VNet CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW.
 
-How Can I Route VPC/VNet Egress Internet Bound Traffic to On-Prem to Go Through the Corporate Firewall?
+How can I route VPC/VNet Egress Internet-bound traffic to on-prem to go through the corporate firewall?
 -----------------------------------------------------------------------------------------------------------------------------
 
 If you advertise 0.0.0.0/0 to VGW, Spoke VPCs will have that route point to the Transit GW and route egress Internet traffic to VGW and back to on-prem. Make sure you do not have NAT enabled on the Spoke GW or AWS NAT service enabled in the VPC/VNet.
 
-How Do I Know if the Tunnel Between the VGW and the Transit GW is Up?
+How do I know if the tunnel between the VGW and the Transit GW is up?
 -----------------------------------------------------------------------------------------
 
 Go to Site2Cloud on the left sidebar. The tunnel status is displayed for each connection.
 
-How Do I Find Out What Routes Being Propagated from On-Prem?
+How do I find out what routes being propagated from on-prem?
 ----------------------------------------------------------------------------------
 
 On-prem routes are propagated to the VGW which in turn propagates to the Transit GW. There are two ways to see what learned routes are by the Transit GW:
@@ -128,17 +128,17 @@ On-prem routes are propagated to the VGW which in turn propagates to the Transit
 #. Go to Peering > Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC/VNet GW. The Learned Routes are displayed and searchable.
 #. Go to MULTI-CLOUD TRANSIT > BGP > select a Transit GW, and click **Detail**.
 
-How Do I Find Out BGP Information on a Transit GW?
+How do I find out BGP information on a Transit GW?
 ------------------------------------------------------------------
 
 Go to MULTI-CLOUD TRANSIT  > BGP > Diagnostics, mark the checkbox for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug messages. Excessive debug messages reduce throughput.
 
-How Do I Delete a Spoke GW?
+How do I delete a Spoke GW?
 ----------------------------------------
 
-Go to Gateway page, select the gateway you wish to delete, and click **Delete**.
+Go to the Gateway page, select the gateway you wish to delete, and click **Delete**.
 
-An Instance in a Spoke VPC/VNet Cannot Communicate with On-Prem Network, How do I Troubleshoot?
+An instance in a Spoke VPC/VNet cannot communicate with On-Prem Network. How do I troubleshoot?
 ---------------------------------------------------------------------------------------------------------------------------------
 
 There are many reasons why an instance in a Spoke VPC/VNet cannot communicate with an on-prem host or VM.
@@ -156,27 +156,27 @@ The following troubleshooting steps may be helpful.
 
 #. If the above tests pass, you should check security group settings on the instance and the destination VM.
 
-How Do I Build Encryption Over Direct Connect?
+How do I build encryption over Direct Connect?
 ---------------------------------------------------------------
 
 AWS provides native solutions to add VPN capability between VGW and on-prem over Direct Connect. This improves security as data in motion is encrypted. Follow `the instructions here <https://aws.amazon.com/premiumsupport/knowledge-center/create-vpn-direct-connect/>`_ for this capability.
 
 We build an encryption between Aviatrix Transit GW and a VGW and between a Transit GW and a Spoke GW to provide an end-to-end encryption protection.
 
-How Do I Build Redundancy Between VGW and On-Prem?
+How do I build redundancy between VGW and on-prem?
 ----------------------------------------------------------------------------
 
 AWS provides a few native options for redundancy between VGW and on-prem. You can build redundant active/active VPN connections, redundant active/active DX connections and DX with backup VPN connections.
 
 `Read this doc <https://aws.amazon.com/answers/networking/aws-multiple-data-center-ha-network-connectivity/>`_ for implementation details.
 
-How Do I Deploy User VPN Use Case on Transit Network Solution?
+How do I deploy a user VPN Use Case on Transit Network solution?
 -----------------------------------------------------------------------------------
 
 We recommend you to deploy `user VPN <http://docs.aviatrix.com/HowTos/uservpn.html>`_ in a
 shared service VPC/VNet. If this shared service VPC/VNet has connectivity to all other VPC/VNets, a user can reach any instances in these VPC/VNets as long as his/her profile policy allows.
 
-Does Transit Network Support Azure VNet?
+Does Transit Network support Azure VNet?
 ------------------------------------------------------
 
 Starting from Release 3.3, you can launch a Spoke Gateway in Azure VNet. A best practice is to
@@ -189,7 +189,7 @@ set up the Azure VNet the same way you usually do with AWS VPC: two types of sub
 Such separation of subnets and routing tables provides you with the flexibility if you plan
 to use Spoke gateway also for FQDN functions.
 
-Why Do I Receive BGP Overlapping Address Alert Emails?
+Why do I receive BGP Overlapping Address Alert emails?
 -----------------------------------------------------------------------
 
 When Aviatrix Controller detects that on-prem propagated routes overlap or are a superset of Spoke VPC/VNet
@@ -200,7 +200,7 @@ The feature is enabled by default. If you wish not to receive the alert email, y
 
 Go to MULTI-CLOUD TRANSIT  > BGP > Configuration and find the BGP Overlapping Alert Email setting. Click on the toggle switch to change the status to **Disabled**.
 
-How to Summarize Spoke VPC/VNet CIDR Ranges?
+How do I summarize Spoke VPC/VNet CIDR ranges?
 -----------------------------------------------------------------
 
 If you have a large number of Spoke gateways attached to a Transit GW that
@@ -218,7 +218,7 @@ After you select Transit GW, scroll down to "Manual BGP Advertised Network List"
 To disable this feature, simply remove the list to make the entry empty and then click **Change BGP Manual Spoke Advertisement**.
 
 
-How to Move a Spoke Gateway to a Different AZ?
+How to move a Spoke Gateway to a different AZ?
 -------------------------------------------------------------
 
 Follow the steps below:
@@ -228,7 +228,7 @@ Follow the steps below:
  #. Launch a new Spoke Gateway in the desired AZ following the Transit Network solution workflow.
  #. `Attach <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ the Spoke Gateway.
 
-What is the Prerequisite to Summarize Spoke VPC/VNet CIDRs?
+What is the prerequisite to summarize Spoke VPC/VNet CIDRs?
 ---------------------------------------------------------------------------------
 
 If you see the error below when configuring `Spoke VPC/VNet CIDR manual summarization <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-to-summarize-spoke-vpc-cidr-ranges>`_, your
@@ -249,12 +249,12 @@ This inconsistency can be fixed by force switching spoke2 VPC/VNet to use the pr
 
 Before you can summarize Spoke VPC/VNet CIDRs, you must make sure Spoke gateways all use either the primary gateway or all use the backup gateway if backup is enabled. 
 
-How do I Build Spoke-to-Spoke Connectivity via Transit?
+How do I build Spoke-to-Spoke connectivity via Transit?
 ---------------------------------------------------------------------
 
 Starting from release 3.5, Transit network supports `Connected mode. https://docs.aviatrix.com/HowTos/transitvpc_designs.html#connected-transit-design_` where Spoke to Spoke connectivity is built automatically.
 
-How do a Spoke Gateway and VPC/VNet Private DNS Work Together?
+How do a Spoke Gateway and VPC/VNet Private DNS work together?
 ----------------------------------------------------------------------------------------
 
 All Aviatrix Gateways use a well-known public DNS server for their hostname resolutions. This is necessary as the gateway must
@@ -301,12 +301,12 @@ They differ in the following areas:
 
 For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blog/aviatrix-global-transit-solution-differ-csr-solution/>`_
 
-If I Already Have a Transit to External Device Connection Using IKEv1, Could I Create Another One Using IKEv2? 
+If I already have a Transit to External Device connection using IKEv1, could I create another one using IKEv2? 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 Starting from 6.3 release, Aviatrix supports the feature `Transit to External Device Using IKEv2 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#multi-cloud-transit-network>`_. The prerequisite for IKEv2 is that you need to create the first Transit to External Device connection with IKEv2 enabled. If your current Transit gateway already has a connection using IKEv1 either is created by attaching spoke gateway or is built in MULTI-CLOUD TRANSIT step 3, you need to delete it first before creating the Transit to External Device connection with IKEv2. 
 
-How to Troubleshoot Transit to External Device Connection with IKEv2 Issue?
+How do I troubleshoot a Transit to External Device connection with IKEv2 issue?
 -------------------------------------------------------------------------------------------------
 
 Refer to `Troubleshooting IPsec VPN connection with IKEv2 <https://docs.aviatrix.com/HowTos/troubleshooting_ipsec_vpn_connection_with_ikev2.html>`_
