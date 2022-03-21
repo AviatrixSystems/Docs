@@ -7,7 +7,7 @@
 Aviatrix Transit Gateway to External Devices 
 =========================================================
 
-There are four options to connect to Aviatrix Multi-cloud Transit GW:
+There are four options to connect to Aviatrix Multi-Cloud Transit GW:
 
  - AWS VGW
  - Azure VNG
@@ -16,7 +16,7 @@ There are four options to connect to Aviatrix Multi-cloud Transit GW:
 
 This document focuses on the External Device connecting the Aviatrix Transit GW.
 
-What are the Use Cases for Connecting to an External Router?
+What are the use cases for connecting to an external router?
 --------------------------------------------------------------------------
 
  - **Overcoming the AWS VGW 100 route limit** Typically, an Aviatrix Transit GW connects to VGW over IPsec and runs a BGP session with VGW. VGW then connects to on-prem devices. By connecting directly to an external device, the VGW is bypassed. 
@@ -32,12 +32,12 @@ What are the Use Cases for Connecting to an External Router?
  - **All Other Cloud Providers** Use this feature to connect to network of cloud providers such as Alibaba Cloud, Tencent Cloud, VMware Cloud, IBM Cloud and others. 
 
 
-How Does it Work? 
+How does it work? 
 -----------------------------
 
 The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPsec tunnel, GRE tunnel or direct Ethernet to the router for packet forwarding. For IPsec tunneling, static routing option is also supported. 
 
-The mechanism works for AWS Direct Connect, Azure Express Route or Internet. 
+The mechanism works for AWS Direct Connect, Azure Express Route, or the Internet. 
 
 Over Private Network in AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +52,7 @@ Make sure:
   - The external device advertises its IP address to VGW.
   - The external device advertises the on-prem network CIDR list to Aviatrix Transit GW.
 
-Over Private Network in Azure
+Over a Private Network in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the underlying infrastructure is Azure Express Route, the External Device options are IPsec or LAN, as shown below. 
@@ -69,10 +69,10 @@ When connecting over the Internet, as shown below, follow the instructions in th
 |transitgw_internet|
 
 
-How Do I Configure It?
+How do I configure it?
 ----------------------------------
 
-The configuration is the `Step 3 in the Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_, when you select the option **External Device**. We assume you have already completed `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ and `Step 2 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#optionally-enable-ha-for-the-transit-gateway>`_. Follow the instructions below.
+The configuration is the `External Device <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#external-device>`_ section of the Multi-Cloud Transit Network Workflow Instructions article. We assume you have already completed `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-transit-gateway>`_ and `Step 2 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#optional-enable-disable-ha-to-an-aviatrix-transit-gateway>`_. Follow the instructions below.
 
 1. Fill the parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,10 +89,10 @@ Static Remote Policy-Based     Select this option the remote site supports polic
 IPsec                          Select this option to run BGP and build a IPsec connection to a remote site.
 GRE                            Select this option to run BGP and build a GRE connection to a remote site.
 LAN                            Select this option to run BGP and data plane by LAN interface with an instance in the same VPC or VNet.
-Transit VPC Name               The Transit VPC/VNet ID where Transit GW was launched.
+VPC Name/Site ID               The Transit VPC/VNet ID where Transit GW was launched.
 Connection Name                A unique name to identify the connection to external device. 
 Aviatrix Transit GW BGP ASN    The BGP AS number the Transit GW will use to exchange routes with external device.
-Primary Cloud Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
+Primary Aviatrix Gateway          The Transit GW you created in `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_. If Transit DMZ is deployed, select the `Companion gateway <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html#how-does-transit-dmz-actually-work>`_.
 Algorithms                     Optional parameters. Leave it unselected if you don't know.
 IKEv2                          Select the option to connect to the remote site using IKEv2 protocol.
 Enable Remote Gateway HA       Select HA if there are two external devices. 
@@ -108,7 +108,6 @@ Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectC
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit Gateway. Leave it blank.  
 Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
-Enable Edge Segmentation       Check this option to allow this connection to communicate with a Security Domain via `Connection Policy. <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_ For more information, read `Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_
 
 ============================   ==========
 
@@ -117,7 +116,7 @@ Enable Edge Segmentation       Check this option to allow this connection to com
 
 After the configuration is done, a connection is created. Download the configuration file. 
 
-At the left navigation bar, go to Site2Cloud, click on the connection you created with "Connection Name" and click Download Configuration as shown below. Make sure you select Generic as Vendor type. 
+At the left navigation bar, go to Site2Cloud, click on the connection you created with Connection Name and click **Download Configuration** as shown below. Make sure you select the **Generic as Vendor** type. 
 
 |download_config_external|
 
@@ -145,7 +144,7 @@ Use the information provided in the configuration file to configure the on-prem 
 4. Disconnect the external device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To disconnect, go to Transit Network -> Setup, at `Step 8 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#remove-transit-gw-to-vgw-connection>`_, select the Transit GW in the dropdown menu, click Disconnect.
+To disconnect, go to Multi-Cloud Transit > Setup and click on the **External Device** tab. Scroll down to section 2. Disconnect AWS VGW / External Device / Azure VNG, select the Transit GW in the dropdown menu, and click **Detach**.
 
 Appendix 1: Transit Connection to Cisco ISR/ASR Over the Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
