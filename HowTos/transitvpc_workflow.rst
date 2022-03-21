@@ -4,14 +4,14 @@
 
 
 ======================================================================
-Multi-cloud Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
+Multi-Cloud Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
 ======================================================================
 
 .. important::
 
- If you intend to deploy transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
+ If you intend to deploy a transit network by using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building an encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
 
-This workflow provides you with step by step instructions to build a Multi-cloud Transit Network. 
+This workflow provides you with step-by-step instructions to build a Multi-Cloud Transit Network. 
 
 While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit Network is supported. 
 
@@ -21,8 +21,8 @@ For more information, check out `Multi-cloud Transit Network FAQ. <http://docs.a
 
 For other Aviatrix functions, such as `VPN access for users <http://docs.aviatrix.com/HowTos/uservpn.html>`_ and `VPN access for sites <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_, check out `Aviatrix Overview <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_
 
-This Multi-cloud Transit Network consists of a Transit gateway and a set of Spoke gateways for communications 
-between Spoke VPC or VNet instances and your on-prem network. 
+This Multi-Cloud Transit Network consists of a Transit Gateway and a set of Spoke Gateways for communications 
+between a Spoke VPC or VNet instances and your on-prem network. 
 
 
 .. note::
@@ -36,27 +36,26 @@ The Transit Network diagram is described as below.
 Planning and Prerequisites
 ---------------------------
 
- 1. If you have not launched an Aviatrix Controller, start with `Aviatrix startup guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
- #. Identify a VPC, call it Transit VPC, in a region where you want to launch the Transit GW (`additional details <./transit_spoke_aws_requirements.html>`__) We recommend you to use the information `here <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ to create a Transit VPC. 
- #. Create a VGW or reuse an existing VGW. The VGW should not be attached to the Transit VPC if you plan to launch Transit GW in the same VPC. This VGW can be attached to a different VPC if this VPC CIDR is different from the Transit VPC where the Transit GW is launched or in a different region and account. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over the Internet.  
+ 1. If you have not launched an Aviatrix Controller, start with the `Aviatrix Startup Guide <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
+ #. Identify a VPC/VNet, call it Transit VPC, in a region where you want to launch the Transit GW (`additional details <./transit_spoke_aws_requirements.html>`__) We recommend you to use the information `here <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ to create a Transit VPC or VNet. 
+ #. Create a VGW or reuse an existing VGW. The VGW should not be attached to the Transit VPC/VNet if you plan to launch Transit GW in the same VPC/VNet. This VGW can be attached to a different VPC/VNet if this VPC/VNet CIDR is different from the Transit VPC/VNet where the Transit GW is launched or in a different region and account. (see `10Gbps Transit Network use case <http://docs.aviatrix.com/HowTos/transitvpc_designs.html#gbps-transit-vpc-design>`_). This VGW should be connected to on-prem either over Direct Connect or over the Internet.  
  #. If this is your first time using Aviatrix, make sure you go through the Aviatrix Controller on-boarding process to create an Aviatrix account that corresponds to an IAM role. For instructions on how to launch an Aviatrix Controller, check out `this link. <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_
 
 .. tip::
 
-  Use the Aviatrix `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool with the option "Aviatrix Transit VPC" to create a transit VPC that has all infrastructure fully populated. 
+  Use the Aviatrix `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool with the option "Aviatrix Transit VPC" to create a transit VPC/VNet that has all infrastructure fully populated. 
 
-Login to the Aviatrix Controller
+Log in to the Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, click on `Transit Network` in the left navigation bar.
+Open a browser and navigate to https://<Controller Public IP address>/.  Once authenticated, click Multi-Cloud Transit > Setup in the left sidebar.
 
 Follow the steps below to set up a Transit Network.
 
-
-1. Launch a Transit Gateway
+1. Launch an Aviatrix Transit Gateway
 -------------------------------------------
 
-The Transit GW is the hub gateway, it serves to move traffic between a Spoke VPC and an on-prem network.
-The Transit GW must be launched on a public subnet where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
+The Transit GW is the hub gateway, it serves to move traffic between a Spoke VPC/VNet and an on-prem network.
+The Transit GW must be launched on a public subnet in AWS where its associated route table has a route 0.0.0.0/0 that points to AWS IGW. 
 
 |TVPC2|
 
@@ -64,7 +63,7 @@ The Transit GW must be launched on a public subnet where its associated route ta
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Cloud Type                                      Currently Transit GW can launched in AWS, Azure and GCP
+Cloud Type                                      Currently Transit GW can launched in AWS, Azure, and GCP
 Gateway Name                                    A unique name to identify the Transit GW
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
@@ -75,19 +74,19 @@ Allocate New EIP                                If selected, the Controller allo
 Insane Mode Encryption                          If selected, Transit GW can peer and connect to Spoke with `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_.
 Enable ActiveMesh Mode                          `ActiveMesh Mode <https://docs.aviatrix.com/HowTos/gateway.html?#activemesh-mode>`_ is recommended. Non ActiveMesh Mode is deprecated. 
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
-Learned CIDR Approval                            If this option is enabled, dynamically learned routes by the Aviatrix Transit Gateway from remote side requires explicit approval to be propagated to Spoke VPCs. 
+Learned CIDR Approval                            If this option is enabled, dynamically learned routes by the Aviatrix Transit Gateway from remote side requires explicit approval to be propagated to Spoke VPC/VNets. 
 Enable Transit FireNet Function                  This option is for Aviatrix Transit Gateway in Azure only. When this option is enabled, you can specify Spoke VNets to be inspected by firewall instances. 
 ==========================================      ==========
 
 .. Warning:: When selecting Transit GW instance size, choose a t2 series for Proof of Concept (POC) or prototyping only. Transit GW of t2 series instance type has a random packet drop of 3% for packet size less than 150 bytes when interoperating with VGW. This packet drop does not apply to Spoke GW.  
 
-You can change the Transit GW size later by following `these instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_
+You can change the Transit GW size later by following `these instructions. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#how-do-i-resize-transit-gw-instance>`_.
 
 
-2. (Optionally) Enable HA for the Transit Gateway
---------------------------------------------------
+2. (Optionally) Enable/Disable HA to an Aviatrix Transit Gateway
+----------------------------------------------------------------------------
 
-When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC and Transit VPC, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet in a different AZ. 
+When HA is enabled, a second Transit GW will be launched. Note both Transit GWs will be forwarding traffic in an event of tunnel failure between a Spoke VPC/VNet and Transit VPC/VNet, and between the Transit GW and VGW. For best practice, the HA GW should be launched on a different public subnet (in AWS, GCP, or OCI) in a different AZ. 
 
 |HAVPC|
 
@@ -126,17 +125,17 @@ Azure VNG                                       10Gbps            Active/Active 
 3.1 External Device
 ^^^^^^^^^^^^^^^^^^^^^
 
-The "External Device" option allows you to build IPSEC tunnel, GRE tunnel or Ethernet LAN directly to on-prem or 
-in the cloud device. It bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming the route limit by these native services. 
+The "External Device" option allows you to build IPsec tunnel, GRE tunnel, or Ethernet LAN directly to on-prem or 
+in the cloud device. It bypasses the AWS VGW or Azure VPN Gateway for exchanging routes with on-prem, thus overcoming the route limit by these native services. 
 
 To learn how to leverage External Device to connect to variety of devices, read more about `External Device FAQ. <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ 
-Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_  to complete this Step. 
+Follow the instructions in `this link <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_  to complete this step. 
 
 3.2 Aviatrix Appliance CloudN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-"Aviatrix Hardware Appliance CloudN" allows you to build a BGP and IPSEC tunnel directly to an on-prem Aviatrix hardware
-appliance. It achieves 10Gbps IPSEC performance and bypasses the AWS VGW or Azure VPN gateway for exchanging routes with on-prem, thus overcoming both the 
+"Aviatrix Hardware Appliance CloudN" allows you to build a BGP and IPsec tunnel directly to an on-prem Aviatrix hardware
+appliance. It achieves 10Gbps IPsec performance and bypasses the AWS VGW or Azure VPN Gateway for exchanging routes with on-prem, thus overcoming both the 
 performance limit and route limit by these native services. 
 
 3.3 Azure VNG
@@ -155,25 +154,25 @@ Aviatrix automates the process of discovering and connecting to AWS VGW. The ins
 
 Before executing this step, a VGW must have already been created on AWS console. 
 
-Select the VGW ID in the drop down menu. 
+Select the VGW ID in the dropdown menu. 
 
-As a result of this step, a Customer Gateway and a Site2Cloud Connection between the VGW to the Aviatrix Transit GW will be automatically created.  The site2cloud IPSEC tunnel establishes a BGP session to exchange routes between on-prem and the cloud.  You also can view them under Customer Gateways and Site-to-Site VPN Connections of the AWS console.
+As a result of this step, a Customer Gateway and a Site2Cloud Connection between the VGW to the Aviatrix Transit GW will be automatically created. The Site2Cloud IPSEC tunnel establishes a BGP session to exchange routes between on-prem and the cloud.  You also can view them under Customer Gateways and Site-to-Site VPN Connections of the AWS console.
 
 
 .. important::
 
-  You are responsible for building the connection between VGW and on-prem. The connection is either over the Internet, over Direct Connect or both. 
+  You are responsible for building the connection between VGW and on-prem. The connection is either over the Internet, over Direct Connect, or both. 
 
-  We support two patterns of connections: Detached VGW and Attached VGW. The VGW should not be attached to the Transit VPC.
+  We support two patterns of connections: Detached VGW and Attached VGW. The VGW should not be attached to the Transit VPC/VNet.
 
-  Currently, only one connection is supported on a specific transit gateway/vpc, regardless of which of the three options above is chosen.
+  Currently, only one connection is supported on a specific transit gateway/VPC, regardless of which of the three options above is chosen.
 
 |VGW|
 
 ==========================      ==========
 **Setting**                     **Value**
 ==========================      ==========
-VPC ID                          The Transit VPC ID where Transit GW was launched
+VPC ID                          The Transit VPC/VNet ID where Transit GW was launched
 Connection Name                 A unique name to identify the connection to VGW 
 BGP Local AS Number             The BGP AS number the Transit GW will use to exchange routes with VGW
 Primary Cloud Gateway           The Transit GW you created in Step 1
@@ -187,18 +186,17 @@ Enable Edge Segmentation        Check this option to allow this connection to co
 Note that the Aviatrix Transit GW can connect to a VGW that belongs to a different AWS account in a different region. 
 
 It takes a few minutes for the VPN connection to come up and routes from VGW 
-to be propagated. When the IPSEC tunnel with a VGW is up, the Controller admin should receive an email notification.
+to be propagated. When the IPsec tunnel with a VGW is up, the Controller admin should receive an email notification.
 
 If you log in to AWS Console and select "service VPC" in the region where the VGW is, you should see Customer Gateway and VPN Connections have been created. Do not delete or modify them from AWS Console. These resources are deleted 
 when you Disconnect the VGW at step 8. 
 
-You can check if routes are properly propagated by going to Advanced Config at the 
-navigation bar, and selecting BGP. Select the Transit GW, click details. 
+You can check if routes are properly propagated by going to Advanced Config on the left sidebar > BGP. Select the Transit GW and click **Details**. 
 The learned routes should be the list of the routes propagated from VGW. 
 Scroll down to see the total number of learned routes. 
 
 4. Launch a Spoke Gateway
--------------------------
+---------------------------------------------
 
 .. Note::
 
@@ -213,35 +211,35 @@ Cloud Type                                      Spoke GW can be launched in AWS 
 Gateway Name                                    A unique name to identify the Spoke GW
 Account Name                                    An `Aviatrix account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#account>`_ that corresponds to an IAM role or account in AWS
 Region                                          One of the AWS regions
-VPC ID                                          The Spoke VPC-id
+VPC ID                                          The Spoke VPC/VNET ID
 Public Subnet                                   The public subnet where the Spoke GW instance is deployed
 Gateway Size                                    Spoke GW `instance size <http://docs.aviatrix.com/HowTos/gateway.html#select-gateway-size>`_
-Enable SNAT                                     Select the option if the Spoke GW will also be the NAT gateway for the Spoke VPC
+Enable SNAT                                     Select the option if the Spoke GW will also be the NAT Gateway for the Spoke VPC/VNet
 Allocate New EIP                                If selected, the Controller allocates a new EIP and associate it with the gateway instance. If not selected, the Controller looks for an allocated but unassociated EIP in the Transit GW account.
 Insane Mode Encryption                          If selected, Transit GW can peer and connect to Spoke with `Insane Mode Encryption <https://docs.aviatrix.com/HowTos/gateway.html#insane-mode-encryption>`_.
 Add/Edit Tags                                   `Additional AWS Tags <http://docs.aviatrix.com/HowTos/gateway.html#add-edit-tags>`_ for the Transit GW instance
 ==========================================      ==========
 
-You can enable NAT function on the Spoke GW if egress to the Internet is intended to 
+You can enable the NAT function on the Spoke GW if the egress to the Internet is intended to 
 go through the Spoke GW. Once NAT is enabled, you can further configure `FQDN whitelists for egress filter. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
 
 5. (Optionally) Enable HA for the Spoke Gateway
-------------------------------------------------
+-------------------------------------------------------------
 
 
 6. Join a Spoke GW to Transit GW Group
----------------------------------------
+---------------------------------------------------
 
-This step attaches a Spoke VPC to the Transit GW Group by building an Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertising the Spoke VPC CIDR to VGW via the established BGP session.
+This step attaches a Spoke VPC/VNet to the Transit GW Group by building an Aviatrix encrypted peering and transitive peering between the Spoke GW and the Transit GW. The Controller also instructs the Transit GW to start advertising the Spoke VPC/VNet CIDR to VGW via the established BGP session.
 
 |AttachSpokeGW|
 
-To attach more Spoke VPCs to this Transit GW Group, repeat Step 4 to Step 6. 
+To attach more Spoke VPC/VNets to this Transit GW Group, repeat Steps 4-6. 
 
-6b. Attach Azure ARM Spoke VNet via native peering
+6b. Attach Azure ARM Spoke VNet via Native Peering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Available in release 5.0 and later, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet. 
+Available in release 5.0 and later, you can build Azure transit solution without having to launch a gateway in a Spoke VNet. The use case is for building a Azure transit solution without the requirement to encrypt the traffic between the Transit VNet and the Spoke VNet.
 
 |azure_native_transit2|
 
@@ -249,7 +247,7 @@ Available in release 5.0 and later, you can build Azure transit solution without
 
   The Spoke VNet must be in the same subscription or a different subscription but in the same AD as the Transit VNet subscription. If the Spoke VNet is in the different subscription than that of the Transit VNet, follow the instruction `in this link  <https://docs.microsoft.com/en-us/azure/virtual-network/create-peering-different-subscriptions>`_, and complete Step 5 to 10 for each subscription to build trust relationship. 
 
-  Do not perform peering function on the Azure portal.
+  Do not perform the peering function on the Azure portal.
 
 
 ==========================================      ==========
@@ -266,19 +264,19 @@ Spoke VNet Name                                 The Spoke VNet Name
 7. Remove a Spoke GW from a Transit GW Group
 --------------------------------------------
 
-This step detaches one Aviatrix Spoke VPC from a Transit GW Group. 
-The Controller also instructs the Transit GW to stop advertising the Spoke VPC CIDR 
+This step detaches one Aviatrix Spoke VPC/VNet from a Transit GW Group. 
+The Controller also instructs the Transit GW to stop advertising the Spoke VPC/VNet CIDR 
 to VGW. 
 
 Note that the Spoke GW is not deleted and you can go to step 6 to attach the Transit GW group again. 
 
-To delete a Spoke GW, go to Gateway on the main navigation tab, select the gateway and click Delete. 
+To delete a Spoke GW, go to Gateway on the left sidebar, select the gateway, and click **Delete**. 
 
 
-8. Add More Spoke VPCs
+8. Add More Spoke VPC/VNets
 ---------------------------------------
 
-Repeat steps 4 to 6 to add more Spoke VPCs to the Transit GW group.
+Repeat steps 4 to 6 to add more Spoke VPC/VNets to the Transit GW group.
 
 |SpokeVPC|
 
@@ -301,12 +299,12 @@ You can go to Step 3 to build the connection again.
 
 Under `Advanced Config` on the main navigation bar, click BGP. The Transit GW will have BGP Mode as Enabled. 
 Click the Transit GW and click Details to see Advertised Networks and Learned Networks. 
-Learned Networks are network CIDR blocks that BGP learned from VGW. Advertised Networks are Spoke VPC CIDRs. 
+Learned Networks are network CIDR blocks that BGP learned from VGW. Advertised Networks are Spoke VPC/VNet CIDRs. 
 
 You can also click Diagnostics. Select one of the show commands or type in yourself if you know the commands to 
 see more BGP details. 
 
-To troubleshooting connectivity between a Spoke VPC instance and a on-prem host, follow `these steps. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_
+To troubleshooting connectivity between a Spoke VPC/VNet instance and a on-prem host, follow `these steps. <http://docs.aviatrix.com/HowTos/transitvpc_faq.html#an-instance-in-a-spoke-vpc-cannot-communicate-with-on-prem-network-how-do-i-troubleshoot>`_
 
 12. Disable Transit GW HA
 --------------------------
@@ -340,7 +338,7 @@ After you have built the Transit GW and Spokes, you can view the connection betw
 
 .. Important::
 
-  Stay on the Transit Network page for any Spoke gateway and Transit GW actions such as attaching a Spoke, detaching a Spoke, connecting to VGW and disconnecting from a VGW. Do not go to any other pages for these actions. For deleting a Spoke gateway or Transit gateway, go to the Gateway page, select the gateway and delete. 
+  Stay on the Transit Network page for any Spoke Gateway and Transit GW actions such as attaching a Spoke, detaching a Spoke, connecting to VGW and disconnecting from a VGW. Do not go to any other pages for these actions. For deleting a Spoke Gateway or Transit Gateway, go to the Gateway page, select the gateway and delete. 
 
 
 .. |Test| image:: transitvpc_workflow_media/SRMC.png
