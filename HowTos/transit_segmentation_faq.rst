@@ -8,10 +8,10 @@ Transit Network Segmentation FAQ
 ============================================================
 
 What is Multi-Cloud Transit Segmentation?
--------------------------------------------
+--------------------------------------------------------
 
 Aviatrix Multi-Cloud Transit Segmentation provides network isolation through security domains and connection policies to Aviatrix Transit network
-where both Spoke and Transit networks deploy Aviatrix gateways across multi-region and multi-cloud. The concept can be 
+where both Spoke and Transit networks deploy Aviatrix Gateways across multi-region and multi-cloud. The concept can be 
 described in the diagram below, 
 
 |transit_segmentation|
@@ -26,7 +26,7 @@ What is a Security Domain in Multi-Cloud Transit?
 
 A Security Domain is an Aviatrix enforced network of VPC/VNet members, where VPC/VNets in the Security Domain can communicate with each other, and VPC/VNets not in the security domain cannot communicate with VPC/VNets in the Security Domain.
 
-One or more Spoke VPC/VNetss are members in  a security domain.
+One or more Spoke VPC/VNets are members in  a security domain.
 
 Spokes in a security domain can communicate with each other via an Aviatrix Transit Gateway.  
 
@@ -41,13 +41,13 @@ be associated with one Security Domain.
 
 
 What is a Connection Policy?
------------------------------
+------------------------------------------
 
 A connection policy is a rule enforced by Aviatrix for cross Security Domain connectivity. 
 
 
 What are the benefits of using Security Domains and Connection Policies?
---------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
 
 The key use case for building Security Domains is to segment traffic for enhanced security posture.  
 
@@ -60,8 +60,8 @@ Can an Aviatrix Transit Security Domain work with TGW Orchestrator Security Doma
 
 They do not work together at this time, however we have plan to integrate them in the future. 
 
-How do I setup Multi-Cloud Transit Segmentation?
---------------------------------------------------
+How do I set up Multi-Cloud Transit Segmentation?
+-------------------------------------------------------------------
 
 Follow the `Transit Segmentation Workflow. <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html>`_.  
 
