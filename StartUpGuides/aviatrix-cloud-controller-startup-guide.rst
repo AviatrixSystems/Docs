@@ -114,6 +114,7 @@ Launching the Controller with CloudFormation
 **Cloudformation templates for other Aviatrix products**
   * |CFT_link_BYOL|
   * |CFT_link_ENTERPRISE|
+  * |CFT_link_GITHUB|
 
 .. |CFT_link_METERED| raw:: html 
 
@@ -135,6 +136,13 @@ Launching the Controller with CloudFormation
 
 ..
   * `CloudFormation for Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template>`_
+  
+.. |CFT_link_GITHUB| raw:: html 
+
+    <a href="https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates" target="_blank" onclick="getOutboundLinkAndOpen('CFT_launch_GITHUB');">CloudFormation templates on Aviatrix GitHub</a>
+
+..
+  * `CloudFormation templates on Aviatrix GitHub <https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates>`_
 
 2. If you have not logged in, you will be prompted to log in to the AWS console. 
 3. Change to the region where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
