@@ -13,18 +13,18 @@ This document summarizes these design patterns that apply to Azure networks.
 Aviatrix Encrypted Transit Network 
 -------------------------------------
 
-In this design, all packets in flight  between Spoke VNets and Transit to on-prem are encrypted. 
+In this design, all packets in flight between Spoke VNets and Transit to on-prem are encrypted. 
  
 |aviatrix_transit_azure|
 
 .. Tip::
 
-  Aviatrix Transit supports high performance (Insane Mode) IPSEC performance over ExpressRotue and Azure Peering.
+  Aviatrix Transit supports high performance (Insane Mode) IPsec performance over ExpressRotue and Azure Peering.
 
 Aviatrix Transit with Native Spokes
 --------------------------------------
 
-Aviatrix Transit also supports Azure native spoke VNets. 
+Aviatrix Transit also supports Azure native Spoke VNets. 
 
 |aviatrix_transit_native_spoke|
 
@@ -57,18 +57,18 @@ Both options can be described in the diagram below.
 
 |transit_sdwan|
 
-Aviatrix Transit Gateway for Azure Spoke to Spoke Connectivity
+Aviatrix Transit Gateway for Azure Spoke-to-Spoke Connectivity
 ---------------------------------------------------------------
 
-If you use Azure ExpressRoute gateway to connect Spoke VNets to on-prem, you can use Aviatrix Transit Gateway for Spoke to Spoke connectivity, 
+If you use Azure ExpressRoute gateway to connect Spoke VNets to on-prem, you can use Aviatrix Transit Gateway for Spoke-to-Spoke connectivity, 
 as shown in the diagram below. To connect Spoke VNet, follow the `Step 6b in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_.
 
 |transit_azure_native_spoke|
 
 Multi-Cloud Transit with Native Spokes
-----------------------------------------
+------------------------------------------------
 
-Use Aviatrix Transit Gateways to inter-connect transit network for a multi cloud network deployment, as shown in the diagram below. 
+Use Aviatrix Transit Gateways to interconnect transit network for a multi cloud network deployment, as shown in the diagram below. 
 
 |multi_cloud_transit_native|
 
