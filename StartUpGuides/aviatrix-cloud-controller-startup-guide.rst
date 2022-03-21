@@ -109,19 +109,31 @@ Launching the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in the next steps to run the Cloudformation script. 
-  
-.. |CFT_link| raw:: html 
+
+  * |CFT_link_METERED|
+**Cloudformation templates for other Aviatrix products**
+  * |CFT_link_BYOL|
+  * |CFT_link_ENTERPRISE|
+
+.. |CFT_link_METERED| raw:: html 
 
     <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template" target="_blank" onclick="getOutboundLinkAndOpen('CFT_launch');">CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot</a>
 
-
-|CFT_link|
-
 ..
     `CloudFormation for Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_    
-**Cloudformation templates for other Aviatrix products**
 
-  * `CloudFormation for Aviatrix Secure Networking Platform - BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template>`_
+.. |CFT_link_BYOL| raw:: html 
+
+    <a href="https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template" target="_blank" onclick="getOutboundLinkAndOpen('CFT_launch_BYOL');">CloudFormation for Aviatrix Secure Networking Platform - BYOL</a>
+
+..
+   `CloudFormation for Aviatrix Secure Networking Platform - BYOL <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template>`_
+
+.. |CFT_link_ENTERPRISE| raw:: html 
+
+    <a href="https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template" target="_blank" onclick="getOutboundLinkAndOpen('CFT_launch_ENTERPRISE');">CloudFormation for Aviatrix Secure Networking Platform - Enterprise Subscription</a>
+
+..
   * `CloudFormation for Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-5tunnel.template>`_
 
 2. If you have not logged in, you will be prompted to log in to the AWS console. 
