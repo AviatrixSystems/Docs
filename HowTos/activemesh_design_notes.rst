@@ -7,22 +7,22 @@
 ActiveMesh Design Notes 
 =========================================================
 
-ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This tech note documents the supported common design patterns while deploying ActiveMesh gateways. 
+ActiveMesh is the default mode when launching an Aviatrix Transit gateway. This tech note documents the supported common design patterns while deploying ActiveMesh Gateways. 
 
-1. ActiveMesh with TGW for On-prem Connections
--------------------------------------------------------
+1. ActiveMesh with TGW for On-Prem Connections
+---------------------------------------------------------------
 
-While AWS Transit Gateway (TGW) does not propagate routes to Spoke VPCs, TGW Direct Connect via DXGW and TGW
+While AWS Transit Gateway (TGW) does not propagate routes to Spoke VPC/VNets, TGW Direct Connect via DXGW and TGW
 VPN have full functions of failover, multi-path and ECMP in supporting connection to on-prem. This includes:
 
  - TGW prefers DXGW to TGW VPN when both advertising the same network. When DXGW goes down, one of the VPN routes take over. 
  - When there are multiple VPN routes, TGW routing policy selects the shortest AS_PATH length. 
  - When there are multiple VPN routes with identical AS_PATH length, TGW VPN distributes traffic with ECMP when it is enabled. 
 
-In this case, Aviatrix Controller performs the orchestration function in managing route propagation and Aviatrix Transit gateways are used to connect two TGWs. 
+In this case, Aviatrix Controller performs the orchestration function in managing route propagation and Aviatrix Transit Gateways are used to connect two TGWs. 
 
-Design Note: Implementing TGW with VPN backup design could lead to asymmetric routing i.e with traffic from AWS to on-premises 
-traversing the DX as inteneded while traffic from on-premises to AWS traversing the IPSec VPN tunnel instead.
+Design Note: Implementing TGW with VPN backup design could lead to asymmetric routing, that is, with traffic from AWS to on-premises 
+traversing the DX as intended while traffic from on-premises to AWS traversing the IPsec VPN tunnel instead.
 
 Traffic from AWS to on-premise prefers the AWS DXGW over the VPN connection because the TGW effectively sets a higher “local
 preference” (LOCAL_PREF) on the DXGW BGP sessions (refer to Route Evaluation Order as outlined in the AWS Transit Gateway
@@ -39,34 +39,34 @@ manually setting the CIDRs to be announced by the AWS DXGW towards on-premises w
 routes resulting in a reduced path length of one over DX which is the same AS path length as over the VPN link but different
 AS path.
 
-To ensure that the on-premises routers always cosnider the MED value, set the “bgp always-compare-med” knob. This forces the
+To ensure that the on-premises routers always consider the MED value, set the “bgp always-compare-med” knob. This forces the
 router to compare the MED if multiple routes to a destination have the same local preference and AS path length.
 
 The deployment is shown in the diagram below. 
 
 |activemesh_tgw_onprem|
 
-1.1 Advertising different routes
+1.1 Advertising Different Routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If on-prem sites advertise non overlapping network CIDRs to TGWs, Transit gateway peering can proceed without issues. 
+If on-prem sites advertise non overlapping network CIDRs to TGWs, Transit Gateway peering can proceed without issues. 
 
-1.2 Advertising overlapping routes
+1.2 Advertising Overlapping Routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If on-prem sites advertise identical network CIDRs or overlapping CIDRs to TGWs (for example, they all 
-advertise 10.0.0.0/8 to their respective TGWs), you must  enable `<https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ feature on both sides of the Aviatrix Transit Gateways to 
+advertise 10.0.0.0/8 to their respective TGWs), you must enable `<https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ feature on both sides of the Aviatrix Transit Gateways to 
 filter out identical or overlapping CIDRs in order to connect the two regions. 
 
 .. important::
 
   If you use TGW DXGW/VPN for hybrid connection to on-prem, you cannot use Aviatrix Transit Gateway as the backup router for connecting to the same on-prem network. This is because TGW propagated routes do not present themselves in the TGW route table with any BGP information and as such, it is not possible for the Controller to coordinate the dynamic route updates between TGW and Aviatrix Transit Gateway.
 
-1.3 Overlapping Spoke VPC CIDRs
+1.3 Overlapping Spoke VPC/VNet CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If there are overlapping Spoke VPCs CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Peering, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
-Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs. 
+If there are overlapping Spoke VPC/VNets CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Peering, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
+Aviatrix Transit Gateways to exclude these overlapping Spoke VPC/VNet CIDRs. 
 
 
 2. ActiveMesh with Aviatrix Transit GW for on-prem Connection
@@ -74,17 +74,17 @@ Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs.
 
 |activemesh_avx_onprem|
 
-2.1 Redundant Routers on-prem 
+2.1 Redundant Routers On-Prem 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If there are two on-prem routers advertising the same network CIDR and connect to Aviatrix Transit Gateway directly, Aviatrix Transit Gateway automatically enables ECMP for traffic from cloud to on-prem. If this is 
 not desired outcome, you should connect on-prem to the Aviatrix Transit Gateway through VGW. 
 
-2.2 Multi sites
+2.2 Multi-Sites
 ^^^^^^^^^^^^^^^^^^
 
 If Aviatrix Transit Gateways connects to multi sites on-prem directly via BGP, these sites should advertise
-non overlapping CIDRs to the Aviatrix Transit Gateway. .  
+non overlapping CIDRs to the Aviatrix Transit Gateway.
 
 2.3 Route Propagation
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,23 +102,23 @@ propagated to the remote Aviatrix Transit Gateway.
 In another words, there will always be one route advertised to the remote Aviatrix Transit Gateway when identical network CIDRs are 
 learned by the local Aviatrix Transit Gateway. 
 
-2.4 Overlapping Spoke VPC CIDRs
+2.4 Overlapping Spoke VPC/VNet CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If there are overlapping Spoke VPCs CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Peering, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
-Aviatrix Transit Gateways to exclude these overlapping Spoke VPC CIDRs.
+If there are overlapping Spoke VPC/VNets CIDRs attached to the TGWs in two regions and you wish to connect them via Aviatrix Transit Gateway Peering, use `Exclude Network CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#excluded-network-cidrs>`_ on both
+Aviatrix Transit Gateways to exclude these overlapping Spoke VPC/VNet CIDRs.
 
 3. NAT Functions
 --------------------
 
 SNAT function is supported on the individual connection between the Aviatrix Transit Gateway and the remote sites. 
 
-Starting Release 5.4, SNAT and DNAT functions are supported on the Spoke gateway tunnel interface to the Aviatrix Transit Gateway. 
+Starting Release 5.4, SNAT and DNAT functions are supported on the Spoke Gateway tunnel interface to the Aviatrix Transit Gateway. 
 
 4. Egress Routes Propagation Behavior
 ----------------------------------------
 
-If Firewalls are deployed for Internet bound Egress traffic in either FireNet and Transit FireNet deployment, the default routes are propagated 
+If Firewalls are deployed for Internet bound Egress traffic in either FireNet or Transit FireNet deployment, the default routes are propagated 
 to the remote peer by Transit Gateway peering. This allows Firewalls to be shared across regions. 
 
 If you have regional Firewalls for Egress traffic, make sure you apply filter to filter out the default routes. 
@@ -126,7 +126,7 @@ If you have regional Firewalls for Egress traffic, make sure you apply filter to
 4. Configuration Notes
 -----------------------
 
-4.1 One on-prem device
+4.1 One On-prem Device
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this scenario, the on-prem has one device as the diagram below.
@@ -138,7 +138,7 @@ If the backup Aviatrix Transit Gateway is launched and the Transit Gateway is la
 |activemesh_config|
 
 
-4.2 Two on-prem devices
+4.2 Two On-prem Devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this scenario, the on-prem has two devices as the diagram below.
