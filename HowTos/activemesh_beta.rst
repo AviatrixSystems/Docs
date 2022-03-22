@@ -13,8 +13,8 @@ ActiveMesh leverages both primary gateway and backup gateway for packet forwardi
 
 The workflow follows the `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ with one additional step. 
 
- 1. After `Step 1 Launch a Transit Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ is completed, go to Gateway page, highlight the just created Transit gateway, click Edit. At the Gateway Edit page, click Enable for ActiveMesh Mode.
- #. If you like a Spoke gateway to run in ActiveMesh mode, enable ActiveMesh after `Step 4 Launch a Spoke Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
+ 1. After `Step 1 Launch a Transit Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-transit-gateway>`_ is completed, go to the Gateway page, highlight the just-created Transit gateway, and click **Edit**. At the Gateway Edit page, click **Enable for ActiveMesh Mode**.
+ #. If you like a Spoke Gateway to run in ActiveMesh mode, enable ActiveMesh after `Step 1 Launch a Spoke Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-spoke-gateway>`_.
 
 
 .. |secondary_account| image:: adminusers_media/secondary_account.png
