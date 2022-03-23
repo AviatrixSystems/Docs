@@ -1,34 +1,33 @@
 .. meta::
   :description: Global Transit Network
-  :keywords: Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering
+  :keywords: Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, Multi-Cloud Transit Network
 
 
-===================================
-Transit Network Design Patterns
-===================================
+=====================================
+Multi-Cloud Transit Network Design Patterns
+=====================================
 
-`Aviatrix Transit VPC  <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ provides a workflow
-to create a Transit VPC GW with a set of Spoke VPC GWs.
+The `Multi-Cloud Transit Network  <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ provides a workflow
+to create a Transit VPC/VNet GW with a set of Spoke VPC/VNet GWs.
 
-From one Aviatrix Controller, you can setup
-Transit network in a single region or across multiple AWS regions.
+From one Aviatrix Controller, you can set up a Multi-Cloud Transit Network in a single region or across multiple regions.
 
-Single Region Transit VPC Design
-----------------------------------
+Single Region Transit VPC/VNet Design
+---------------------------------------------------------
  
-The use case for this design is if you have one Direct Connect or
-Internet to VPC.
+The use case for this design is if you have one connection from an on-prem network to the cloud (Direct Connect/ExpressRoute/InterConnect/FastConnect) or
+Internet to a VPC/VNet.
 
-Aviatrix Transit VPC solution provides default network segmentation, a Spoke VPC has no connectivity to another
-Spoke VPC via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production Transit
-Transit Group as none of the Spoke VPCs in either group can communicate with each other.
+Aviatrix's Multi-Cloud Transit Network solution provides default network segmentation, a Spoke VPC/VNet has no connectivity to another
+Spoke VPC/VNet via the Transit GW. For example, you do not need to spin up a Dev Transit Group and a Production Transit
+Transit Group as none of the Spoke VPC/VNets in either group can communicate with each other.
 As such, you do not need to spin up multiple Transit Groups for network isolation
-purpose. A diagram is shown below.
+purpose. See the diagram below.
 
-For connectivity between Shared Service VPC and Spoke VPCs, and between Spoke VPCs, choose `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console to setup.
+For connectivity between Shared Service VPC/VNet and Spoke VPC/VNets, and between Spoke VPC/VNets, choose `AWS Peering <http://docs.aviatrix.com/HowTos/peering.html#aws-peering>`_ for AWS or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller to set up.
 
-Notice Transit GW is only used for traffic between on-prem and cloud (Spoke VPCs). Cloud to cloud traffic, such as
-Shared Service VPC to Spoke VPCs does not go through the Transit GW. Decouple the different traffic streams
+Notice Transit GW is only used for traffic between on-prem and cloud (Spoke VPC/VNets). Cloud-to-cloud traffic, such as
+Shared Service VPC/VNet to Spoke VPC/VNets does not go through the Transit GW. Decouple the different traffic streams
 reduces the performance bottleneck and removes the single failure point.
 
 .. Tip::
@@ -37,38 +36,38 @@ reduces the performance bottleneck and removes the single failure point.
 
 |image0|
 
-Multi Regions Transit VPC Design
----------------------------------
+Multi-Regions Transit VPC Design
+------------------------------------------
 
-If you have datacenters in multiple regions and its corresponding AWS regions, you build network redundancy to
-reach cloud by leveraging AWS VGW termination.
+If you have data centers in multiple regions and its corresponding CSP regions, you build network redundancy to
+reach cloud by leveraging VPN Gateway (VGW/VPN Connect) termination.
 
-In the diagram below, there are two Transit Groups, one in each region. The VGW has Direct Connect or Internet to
-one datacenter, the same VGW is also used as a backup connectivity over Internet from the second datacenter. In case a datacenter loses connectivity to VGW, the backup link can take over and route through the alternate route.
+In the diagram below, which uses AWS as an example, there are two Transit Groups, one in each region. The VPN Gateway or VGW has an on-premise to the cloud (Direct Connect/ExpressRoute/InterConnect/FastConnect) or to
+one datacenter, the same VGW is also used as a backup connectivity over Internet from the second datacenter. In case a data center loses connectivity to the VGW, the backup link can take over and route through the alternate route.
 
-Note one Aviatrix Controller manages both Transit Groups. If you need connectivity between any two Spoke VPCs in
-each region, you can build an AWS Peering or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller console.
+Note one Aviatrix Controller manages both Transit Groups. If you need connectivity between any two Spoke VPC/VNets in
+each region, you can build an AWS Peering or `Aviatrix Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html#encrypted-peering>`_ from the Controller.
 
 
 |image1|
 
 Connected Transit Design
--------------------------
+-----------------------------------
 
-If you like to build a Transit network where all Spoke VPCs are connected via Transit GW, you can accomplish that by enabling "Connected Transit" property for the Transit GW. When Connected Transit is enabled, you do not need to build additional tunnels between shared service VPC to other VPCs. The diagram is shown below:
+If you like to build a Transit Network where all Spoke VPC/VNets are connected via Transit GW, you can accomplish that by enabling the Connected Transit property for the Transit GW. When Connected Transit is enabled, you do not need to build additional tunnels between shared service VPC/VNet to other VPC/VNets. See the diagram below:
 
 |image2|
 
-10Gbps Transit VPC Design
+10Gbps Transit VPC/VNet Design
 ---------------------------
 
-If you have applications that need 10Gbps bandwidth, you can place these applications in a VPC
-that terminates on the VGW with the 10Gbps VIF DX. Place the Aviatrix Transit GW in a separate VPC and
-connect it to the VGW through the normal `Transit VPC workflow <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
+If you have applications that need 10Gbps bandwidth, you can place these applications in a VPC/VNet
+that terminates on the VPN Gateway/VGW with the 10Gbps VIF DX. Place the Aviatrix Transit GW in a separate VPC/VNet and
+connect it to the VPN Gateway/VGW through the normal `Multi-Cloud Transit Network <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
 
 |image3|
 
-Alternatively, you can place the high bandwidth application in a separate VPC that terminates directly on a VIF, as shown below.
+Alternatively, you can place the high bandwidth application in a separate VPC/VNet that terminates directly on a VIF or network interface, as shown below.
 
 
 |image4|
@@ -76,17 +75,17 @@ Alternatively, you can place the high bandwidth application in a separate VPC th
 Distributed Egress Control with Aviatrix 
 -------------------------------------------------
 
-If you are using AWS NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control.
+If you are using a NAT Gateway as your egress control for Internet access, consider using Aviatrix FQDN to improve egress control.
 
-Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC need to make API calls.
-The function is embedded in the Aviatrix gateway. It is transparent to user instances and requires no agents nor certs.
+Aviatrix provides `L7 FQDN <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to whitelists and blacklists public sites that applications in a Spoke VPC/VNet need to make API calls.
+The function is embedded in the Aviatrix Gateway. It is transparent to user instances and requires neither agents nor certs.
 
 |image5|
 
-Centralized Third Party Firewall Integration
+Centralized Third-Party Firewall Integration
 -----------------------------------------------------
 
-If you are running AWS Workspace services for your employees and need a full fledged firewall device, centralized third party firewall appliances 
+If you need a full-fledged firewall device, centralized third party firewall appliances 
 can be deployed via `Aviatrix Transit FireNet <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
 |transit_firenet|
@@ -99,8 +98,8 @@ Centralized Egress Control with Aviatrix
 SD-WAN Integration
 --------------------
 
-Aviatrix Multi-cloud Transit integrates with SD-WAN cloud instances with BGP over LAN where both BGP routes and data packets
-are exchanged between Aviatrix Transit Gateways and SD-WAN gateways deployed in the same Transit VPC, as shown in the diagram
+The Aviatrix Multi-Cloud Transit Network integrates with SD-WAN cloud instances with BGP over LAN where both BGP routes and data packets
+are exchanged between Aviatrix Transit Gateways and SD-WAN gateways deployed in the same Transit VPC/VNet, as shown in the diagram
 below. . 
 
 |sd_wan_integ|

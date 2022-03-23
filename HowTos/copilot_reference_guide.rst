@@ -100,6 +100,10 @@ Objects on the topology maps support drag and drop. You can click, drag and drop
 
 .. tip:: You can multi-select objects for drag and drop by holding control/command key and selecting.
 
+- Toggle filter
+
+  Enable the filter editor page where you can create and save your own topology filters and filter groups, load them in the map, and edit or delete them.
+
 - Search
 
   The search box allows you to filter the objects that are plotted on the topology.
@@ -182,11 +186,64 @@ To perform diagnostics from Topology (from an Aviatrix Gateway):
 
     b.  TRACEROUTE: Run trace route.
 
-    c.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+    c.  TRACEPATH: Discover the MTU on the path if router supports it.
 
-    d.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+    d.  TRACELOG: Upload a gateway's tracelog directly to Aviatrix Support. The controller and gateway tracelog is uploaded and the support team notified.
 
-    e.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
+    e.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+
+    f.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+
+    g.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
+
+    h.  PACKET CAPTURE: Capture packets on any gateway. Filter on host and port number and specify the capture time. Search and filter by time, source address, destination address, source port, destination port, protocol, flags, length, and info. Select the interface on the physical or virtual interface you want to capture on. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. The pcap file can be viewed by Wireshark.
+
+    i.  SERVICE ACTIONS: Check the status of gateway services and restart services.
+
+
+Create and save topology filters
+--------------------------------
+
+Create filters to narrow down the network constructs to include in your topology maps and save the filters to your local system.
+
+To create and save filters for topology:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, select Topology.
+
+3.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
+
+4.  In Select a Key to Filter on, select a key and value to filter on. You can apply any number of filters to a given filter group.
+
+5.  In Filter Group Name, assign a name to your filter/filter group.
+
+6.  Click **Save**.
+
+    The filter is saved to your local system.
+
+    When you want to view the topology layout for this filter, click **Load Filters** and select it from the list. If you load more than one filter, the layout of all of them is displayed in the map.
+
+    After a filter/filter group is loaded, you can edit or delete it.
+
+
+Search and filter for cloud native custom tags
+----------------------------------------------
+
+Search and filter for custom tags you created in your cloud provider environment for your VPCs/VNETs/VCNs and instances.
+
+This feature is available starting from Controller release 6.6. 
+
+To filter for cloud native VPC/VNET/VCN tags and instance tags:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, select Topology.
+
+3.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
+
+4.  From the Select a Key to Filter on list, under the CSP Tags category, select the cloud native tag to filter on.
+
 
 View Topology Changes (Topology Replay)
 ---------------------------------------
@@ -232,7 +289,10 @@ To view topology changes in your environment:
     -   Click the AUDIT button to open the Audit tab of the Security section where you can see which users made API calls to Aviatrix Controller during the time period of the change set.
 5.  (**To modify the title of a change set**) To modify the title of a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. The title is displayed over the dates (the default title is the number of changes in the change set). Click the blue pen icon. Select the title and change it, and then click the Save icon. When you search the timeline for change sets, you can now search by your title text.
 
-6.  (**To associate a note with a change set**) To associate a note with a change set that is loaded in the changes details, pane, click on the red notepad icon to open note view. Click the blue pen icon, type your note, and then click the Save icon. When you search the timeline for change sets, you can now search by your note text.
+6.  (**To associate a note with a change set**) To associate a note with a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. Click the blue pen icon, type your note, and then click the Save icon. When you search the timeline for change sets, you can now search by your note text.
+
+7.  (**To delete a change set**) To delete a change set that is loaded, in the time series panel, click on the red X associated with the dark blue box that represents it. It will be permanently deleted from the topology-replay database. You can also choose to delete all previous change sets recorded up to that point.
+
 
 
 Topology Replay Properties
@@ -312,6 +372,8 @@ Properties of the time series panel include:
 
     In the overview timeline (bottom half of the panel), after you zoom into a time period by clicking on the Expand icons or by using your track pad, two time-window control lines (blue vertical lines) display near the current time (the red line). Drag the time-window control lines where needed to focus in on the day or days you want to locate change sets in.
 
+    |time_control_image|
+
 -   **View** controls to load a change set
 
     The View icon indicates a change set at that point in time. Click on a View control to load a change set; this populates the network constructs associated with the changes in the topology map and displays the details for their changes in the changes details pane. The constructs associated with the changes are circled in the map.
@@ -322,14 +384,78 @@ Working with FlowIQ
 
 This section describes the FlowIQ feature of Aviatrix CoPilot.
 
-FlowIQ provides visualization of traffic flows that traverse Aviatrix gateways. In FlowIQ, you can find any network traffic that is moving across any gateway managed by the Aviatrix Controller in your Aviatrix transit network (multi-cloud or single cloud network). CoPilot displays metadata about traffic that flows across each link in your Aviatrix transit network. FlowIQ enables you to identify where data in your network is going to and where it is coming from and you can filter for detailed information about the traffic down to the packet level. 
+FlowIQ provides you with critical visibility capability to the traffic that traverses your network, displaying metadata about traffic that flows across each link. FlowIQ provides visualization of traffic flows, enabling you to inspect any network traffic that is moving across any gateway managed by the Aviatrix Controller in your Aviatrix transit network (multi-cloud or single cloud network). FlowIQ enables you to identify where data in your network is going to and where it is coming from and you can filter for detailed information about the traffic down to the packet level. 
 
-Flows provides you with critical visibility capability to that traffic that traverses your network.
 
 Interacting with the flows
 --------------------------
 FlowIQ provides various views for visualizing traffic records. The views respond to filters that are selected. 
 The filters that you set are carried across all of the views. 
+
+
+FlowIQ overview page
+--------------------------
+In the FlowIQ overview page, CoPilot provides an overview of all the traffic that has traversed across your Aviatrix transit network over the last hour, day, week, month, or over a custom timeframe.
+
+The traffic information is broken down into various categories displayed in pie charts. 
+
+By default, the pie charts show details for all traffic. You can filter the information to show only the traffic you are interested in analyzing.  When you click on any pie-chart slice, CoPilot automatically creates a filter that narrows down the information displayed across all pie charts. Each time you select another slice, CoPilot adds another rule to your filter group.
+
+After you analyze traffic data based on one or more filters, clear the filter(s) so that CoPilot returns to showing data for all traffic.
+
+
+FlowIQ flows page
+--------------------------
+In the Flow IQ flows page, CoPilot shows all the traffic that is currently seen by your multi-cloud transit no matter which cloud the traffic is on.
+
+You can view how much traffic was sent in the last hour, day, week, month, or a custom timeframe. 
+
+The pie charts show which source addresses and destination addresses receive the most and least bytes of data for the top 10 addresses.
+
+Using the Sankey graph, you can easily identify which source and destination hosts have the most traffic being exchanged between them (top talkers) in your network by the thickest colored bars. Hover over each colored bar to see what destination host the source host is sending traffic to based on how much traffic is being sent between them.
+
+
+FlowIQ geolocation page
+--------------------------
+In the Flow IQ geolocation page, CoPilot provides an overview of where traffic is coming from and going to within your cloud fabric over the last hour, day, week, month, or over a custom timeframe. The map shows the approximate location of your Aviatrix managed network constructs across the globe. 
+
+When you set the time period to Last Day, you can more easily see where most of the traffic is coming from and going to.
+
+Security teams can use the geolocation view to easily identify which countries the traffic coming into their network is coming from to help determine if unexpected traffic poses a security vulnerability.
+
+The geolocation traffic information is broken down into various categories displayed in pie charts.
+
+By default, the pie charts show details for all traffic. You can filter the information for the pie charts to show only the traffic you are interested in analyzing.  When you click on any pie-chart slice, CoPilot automatically creates a filter that narrows down the information displayed across all pie charts. Each time you select another slice, CoPilot adds another rule to your filter group.
+
+After you analyze traffic data based on one or more filters, clear the filter(s) so that CoPilot returns to showing data for all traffic.
+
+
+FlowIQ trends page
+--------------------------
+In the FlowIQ trends page, CoPilot shows an overview of traffic as it moves over time for traffic based on: 
+
+- A specified destination port.
+
+- A specified source address.
+
+- A specified destination address.
+
+- Total bandwidth based on direction of traffic, ingress or egress. 
+
+By default, the graphs show details for the top ten results. You can filter the information for the graphs to show only the traffic you are interested in analyzing.  When you click on any pie-chart slice (or listed value), CoPilot automatically creates a filter that narrows down the information displayed across all graphs. Each time you select another slice, CoPilot adds another rule to your filter group.
+
+After you analyze traffic data based on one or more filters, clear the filter(s) so that CoPilot returns to showing data for the top ten results.
+
+
+FlowIQ records page
+--------------------------
+In the FlowIQ records page, CoPilot shows detailed information about all the traffic flows seen by your multi-cloud transit no matter which cloud the traffic is on. 
+
+The Flow Records table shows you the detailed records of the traffic down to the packet level.
+
+You can filter the flow records in the Flow Records table by hovering over any value in the table and selecting the filter icon. 
+
+You can export the flow records data table to CSV if you want to save them for later viewing or import them into your own analytics platform.
 
 
 Working with Performance
@@ -403,7 +529,7 @@ Configure Notifications
 
 Configure notifications in CoPilot so you can be alerted to events that occur in your network.
 
-When configuring notifications, you can choose email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-webhooks-customization>`_.
+When configuring notifications, you can choose email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
 
 To configure notifications:
 
@@ -412,6 +538,163 @@ To configure notifications:
 #. In Condition, select the metric or condition that must be met to trigger the alert.
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the alert.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
+
+
+Metrics used for Triggering Notifications
+------------------------------------------
+
+For Aviatrix Controller and Aviatrix gateways, you can configure notifications to be alerted to events that occur in your network such as performance bottlenecks or other problems. You configure alerts and the channels to be notified using the notifications feature in Aviatrix Copilot. This section describes some of the system and network metrics on which notifications can be based. When alert conditions are met for a metric, Copilot sends a notification. How you set a condition threshold to trigger an alert will depend on different factors. For example, for system metrics, the instance size can influence the condition threshold that makes sense. For metrics associated with cloud provider-maintained infrastructure, the desired condition threshold may vary between cloud service providers. Work with your network operations team to determine the metric conditions that will trigger alerts in your environment.
+
+System metrics for triggering notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Aviatrix Controller and Aviatrix gateways, you can configure alerts based on the following system metrics. Aviatrix gateways report live Linux system statistics (such as memory, CPU, I/O, processes, and swap) for the instances/virtual machines on which they run.
+
+cpu_idle
+    Of the total CPU time, the percentage of time the CPU(s) spent idle.
+
+cpu_ks
+    Of the total kernel space memory on the host (VM/instance), the percentage of memory that is free.
+
+cpu_steal
+    Of the average CPU wait time on the host (VM/instance), the percentage of time a virtual CPU waits for a real CPU while the hypervisor services another virtual processor. 
+
+cpu_us
+    Of the total CPU time, the percentage of time spent running non-kernel code.
+
+cpu_wait
+    Of the total CPU time, the percentage of time spent waiting for IO.
+
+hdisk_free
+    The storage space on the disk (volume) that is free/unused.
+
+io_blk_in
+    The number of blocks received per second from a block device.
+
+io_blk_out
+    The number of blocks sent per second to a block device.
+
+memory_buf
+    The amount of memory used as buffers.
+
+memory_cached
+    The amount of memory used as cache.
+
+memory_free
+    The amount of idle memory.
+
+memory_swpd
+    If swapped is enabled, the amount of virtual memory used.
+
+nproc_non_int_sleep
+    The number of processes blocked waiting for I/O to complete.
+
+nproc_running
+    The number of processes that are running or waiting for run time.
+
+swap_from_disk
+    Memory that is swapped in every second from disk in kilobytes.
+
+swap_to_disk
+    Memory that is swapped out every second to disk in kilobytes.
+
+system_cs
+    The number of context switches per second.
+
+system_int
+    The number of interrupts per second, including the clock.
+   
+
+Network metrics for triggering notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Aviatrix Controller and Aviatrix gateways, you can configure alerts based on the following network metrics.
+
+pkt_rate_total
+    The total (bidirectional) transmission in packet level per second. Instance size impacts how many packets per second the gateway can handle.
+
+pkt_rx_rate
+    The total (received) transmission in packet level per second.
+
+pkt_tx_rate
+    The total (transmitted) transmission in packet level per second.
+
+rate_bandwidth_egress_limit_exceeded
+    (AWS Only) The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+
+rate_bandwidth_ingress_limit_exceeded
+    (AWS Only) The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+
+rate_conntrack_limit_exceeded
+    (AWS Only) The number of packets dropped because the connection count allowance limit was exceeded.
+
+rate_peak_received
+    The highest bit rate that has been received by the interface on the Aviatrix gateway VM/instance.
+
+rate_peak_sent
+    The highest bit rate that has been transmitted by the interface on the Aviatrix gateway VM/instance.
+
+rate_peak_total
+    The highest bit rate that has been received and transmitted or both by the interface on the Aviatrix gateway VM/instance.
+
+rate_pps_limit_exceeded
+    The number of packets processed (bidirectional) by the Aviatrix gateway per second.
+
+rate_received
+    The rate of bits the Aviatrix gateway has received per second.
+
+rate_rx_compressed
+    The number of compressed packets received per second.
+
+rate_rx_drop
+    The number of packets dropped per second while receiving the packets.
+
+rate_rx_errs
+    The number of packets received per second that is flagged by the kernel as errored.
+
+rate_rx_fifo
+    The number of overflow events per second when receiving packets.
+
+rate_rx_frame
+    The number of frame alignment errors per second when receiving packets.
+
+rate_rx_multicast
+    The number of multicast packets per second.
+
+rate_sent
+    The rate of bits per second that has been transmitted by the interface on the Aviatrix gateway VM/instance.
+
+rate_total
+    The total (bidirectional) rate of bits processed per second by the interface on the Aviatrix VM/instance.  
+
+rate_tx_carrier
+    The number of frame transmission errors per second due to loss of carrier during transmission.
+
+rate_tx_colls
+    The number of collisions per second during packet transmission.
+
+rate_tx_compressed
+    The number of correctly received compressed packets per second.
+
+rate_tx_drop
+    The number of packets being dropped per second while sending.
+
+rate_tx_errs
+    The total number of transmit problems per second.
+
+rate_tx_fifo
+    The number of frame transmission errors per second due to device FIFO underrun/underflow.
+
+GatewayStatus
+    Any gateway status change triggers an alert.
+
+TunnelStatus
+    Any link status change triggers an alert.
+
+BGPpeeringStatus
+    Any BGP peering status change triggers an alert.
+  
+
 
 Working with AppIQ
 ==================
@@ -551,11 +834,72 @@ To create an inventory report:
 
 10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNETs/VCNs, deselect the regions, and deselect the clouds as needed to report only on the data you want.
 
+Create a Resource Utilization Report
+------------------------------------
 
-CoPilot WebHooks Customization
-==============================
+Create a report that summarizes the resource utilization (telemetry) data for Aviatrix gateways in a single cloud or across all clouds in your multi-cloud network. CoPilot exposes approximately 80 performance metrics (system and network metrics). You can select from any or all performance metrics to report on for the time period you specify. Per gateway, when reporting on network metrics, CoPilot aggregates the metrics across all interfaces (default), or if specified, reports the metrics for each interface.
+
+CoPilot shows all gateways that are managed by Aviatrix Controller in any of your clouds, regions, and VPCs/VNETs/VCNs. You create a custom report by selecting options that guide you to include only those Aviatrix gateways and performance metrics you want in the report.
+
+To create a resource utilization report:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click Reports.
+
+3.  For Resource Utilization Report, click **Start**.
+
+4.  Select the period of time for which you want to report on resource utilization data. You can set the last hour, last day, last week, last month, or a custom time period.
+
+5.  In **Select gateway(s)**, select the checkboxes for all Aviatrix gateways for which you want to report on telemetry data. You can also choose to report on telemetry data for your controller. Note the following points:
+
+    If you want to report on *network metrics* for any given gateway AND you want to see the network metrics broken down by interface (not gateway aggregate), you must select both the **Show interface options** checkbox and the applicable per-gateway **Show per-interface graphs** checkbox. You can select any or all interfaces.
+
+    You can use the options in the table to do the following:
+
+    -   Search field: Search for gateways based on the following gateway properties:
+        -   Gateway Name
+        -   Gateway Type
+        -   Cloud
+        -   Region
+        -   VPC Name
+        -   VPC ID
+
+    -   Columns: Remove any gateway-property columns from the table that are shown by default.
+    -   Filters: Use custom filters to further narrow down the gateways to include in the report. Use the values for the gateway properties listed above to create your filters.
+    -   Use the menu of each column heading to control how information displays in the table or to hide a column.
+    -   Compact: Select the style of the report you want.
+
+6.  For **Select system metric(s)** and **Select network metric(s)**, select any or all metrics you want to include in the report.
+
+7.  In **Choose report format**, select how you want the information to be organized in the report:
+
+    -   Group by metric (default): Each page in the report is a different metric with all selected gateways listed for that metric. This is useful if you want to compare metrics between gateways.
+    -   Group by gateway: Each page is a gateway with its own metrics listed.
+
+8.  Click **Create Report**.
+
+9.  (Optional) For reports that are grouped by metric, the metric charts use a linear scale by default. Depending on the data you are reporting on, you may choose to use a logarithmic scale. Enable logarithmic scale for charts by clicking on the slider.
+
+10. (Optional) Download the report using the blue download icon.
+
+11. (Optional) To generate another report, at the top of the Resource Utilization Report page, click the arrow to return to the main Reports page and repeat the procedure.
+
+
+CoPilot WebHooks
+===================
+
+This sections provides the following information:
+
+- How to customize the webhooks Aviatrix CoPilot generates for sending to external systems (such as Slack and PagerDuty). See "CoPilot Webhooks Customization".
+
+- An example for setting up PagerDuty to receive CoPilot alerts via webhooks. See "Example: PagerDuty Webhook Payload URL".
+
+CoPilot Webhooks Customization
+-------------------------------
 
 You can customize the webhooks Aviatrix CoPilot generates for sending to external systems (such as Slack) by using the Handlebars templating language. Examples are provided in this topic for high level variables that are exposed in CoPilot notification alerts.
+
 
 CoPilot alerts expose the following high level variables (objects):
 
@@ -565,8 +909,7 @@ CoPilot alerts expose the following high level variables (objects):
 
 Each object exposes additional variables that can be accessed.
 
-Alert
--------
+**Alert**
 
 The alert object exposes ::
 
@@ -579,8 +922,7 @@ The alert object exposes ::
     "unit": "%"
   }
 
-Event
--------
+**Event**
 
 The event object exposes ::
 
@@ -599,8 +941,8 @@ where:
 - ``recoveredHosts`` represents the hosts that are now recovered.
 - ``receiveSeparateAlert`` is for individual host alerts.
 
-Webhook
----------
+
+**Webhook**
 
 The webhook object exposes ::
 
@@ -611,8 +953,8 @@ The webhook object exposes ::
     "url": ""
   }
 
-Creating a custom webhook and accessing individual fields
------------------------------------------------------------
+**Creating a custom webhook and accessing individual fields**
+
 
 Example 1: If individual alerts for hosts is ON, receive a string. Else receive an array.  ::
 
@@ -804,6 +1146,95 @@ Custom Slack Webhook example (slack document: https://app.slack.com/block-kit-bu
 |webhook_image|
 
 
+Example: PagerDuty Webhook Payload URL
+---------------------------------------
+
+If you want to set up PagerDuty to receive CoPilot alerts via webhooks, this section provides an overview of the steps including generating the PagerDuty webhook payload URL to which CoPilot will send POST requests. You specify the URL when you configure CoPilot notifications in Settings > Notifications > Webooks. 
+
+For the most current information about receiving HTTP callbacks in your PagerDuty account, always refer to the `PagerDuty support documentation  <https://support.pagerduty.com/docs/webhooks>`_.
+
+**Prerequisite**: Before you begin, create a PagerDuty developer account at the `PagerDuty Developer Platform site  <https://developer.pagerduty.com/sign-up/>`_.
+
+**Summary of Steps**:
+
+-   (In PagerDuty) Log in to your PagerDuty Developer Console.
+-   (In PagerDuty) Create the PagerDuty application service.
+-   (In CoPilot) Configure CoPilot notifications via webhooks to send alerts to your new service.
+
+To set up PagerDuty to receive CoPilot alerts via webhooks:
+
+1.  Log in to your PagerDuty Developer Console and click **Create New App**.
+
+    If you do not see the **Create New App** button after logging in, navigate to Integrations > Developer Mode from the console menu.
+
+    |notifs_pager_create_app|
+
+2.  Fill in the requested fields, such as App Name, Brief Description, and Category (you can specify multiple values for the category field):
+
+    |notifs_pager_build_app|
+
+3.  Click **Save**.
+
+4.  In the next page, locate the Events Integration box, and click **Add**.
+
+    |notifs_pager_event_int|
+
+5.  Fill in the requested fields:
+
+    -   Transform Event Data: Yes
+    -   Debug Mode: Off (or on, if preferred)
+    -   Change Events: Not required
+    -   Redirect URLs: Not required
+6.  For Create a Test Service, modify the pre-populated value if preferred and click **Create**.
+
+    |notifs_pager_create_test|
+
+    After you click Create, your Integration Key and API Endpoint are created but the API Endpoint URL is not correct until you click **Save**. Before you save the service, the endpoint looks like this:
+
+    |notifs_pager_endpoint_before|
+
+7.  Click **Save** to save the test service.
+
+    After saving the service, your endpoint looks like this:
+
+    |notifs_pager_endpoint_correct|
+
+    The page refreshes and reverts back to the main screen for your new application.
+
+8.  Locate the Events Integration box, and click **Manage**.
+
+9.  Copy the Events API Endpoint.
+
+10. Log in to CoPilot.
+
+11. Navigate to Settings > Notifications > Webooks section.
+
+12. Click **+ New** to create a webhook configuration for PagerDuty.
+
+13. In the webhook configuration panel, fill in the fields. For Webhook Payload URL, paste your copied Events API Endpoint URL.
+
+    |notifs_pager_endpoint_paste|
+
+14. Click the **Test** button on the webhook test payload.
+
+    This sends a test to PagerDuty. If the test is successful, you will see a Success message:
+
+    |notifs_pager_webhook_test|
+
+    To see the alert in PagerDuty, follow the next step.
+
+15. (Verify Alert Sent) In PagerDurty, click on your profile icon in the app bar and select **Subscriptions**.
+
+    |notifs_pager_webhook_verify|
+
+16. In the top menu, click **Incidents**.
+
+    You should see your alert. For example:
+
+    |notifs_pager_webhook_verified|
+
+
+
 Settings
 ======================
 
@@ -874,10 +1305,11 @@ Managing Your Appliance
 ========================================
  
 
-**Backup and recovery**  
-  In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
-  You can configure periodic snapshots
-  ,based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS  
+**Backup and recovery**
+
+In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
+
+You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
 
 
 
@@ -887,11 +1319,41 @@ Managing Your Appliance
 ..  |topology_image| image:: CoPilot_reference_guide_media/CoPilot_topology.png
     :width: 200
 
-
 ..  |flowIQ_image| image:: CoPilot_reference_guide_media/CoPilot_flowiq.png
     :width: 200
 
-..  |webhook_image| image:: copilot_reference_guide_media/webhookImage.png
+..  |time_control_image| image:: copilot_reference_guide_media/topology_replay_time_preview.png
+    :width: 200
+
+..  |notifs_pager_create_app| image:: copilot_reference_guide_media/notifs_pager_create_app.png
+    :scale: 70%
+
+..  |notifs_pager_build_app| image:: copilot_reference_guide_media/notifs_pager_build_app.png
+    :scale: 70%
+
+..  |notifs_pager_create_test| image:: copilot_reference_guide_media/notifs_pager_create_test.png
+    :scale: 60%
+
+..  |notifs_pager_endpoint_before| image:: copilot_reference_guide_media/notifs_pager_endpoint_before.png
+    :scale: 70%
+
+..  |notifs_pager_endpoint_correct| image:: copilot_reference_guide_media/notifs_pager_endpoint_correct.png
+    :scale: 70%
+
+..  |notifs_pager_endpoint_paste| image:: copilot_reference_guide_media/notifs_pager_endpoint_paste.png
+    :scale: 70%
+
+..  |notifs_pager_event_int| image:: copilot_reference_guide_media/notifs_pager_event_int.png
+    :scale: 60%
+
+..  |notifs_pager_webhook_test| image:: copilot_reference_guide_media/notifs_pager_webhook_test.png
+    :scale: 60%
+
+..  |notifs_pager_webhook_verified| image:: copilot_reference_guide_media/notifs_pager_webhook_verified.png
+    :scale: 70%
+
+..  |notifs_pager_webhook_verify| image:: copilot_reference_guide_media/notifs_pager_webhook_verify.png
     :scale: 50%
+
 
 

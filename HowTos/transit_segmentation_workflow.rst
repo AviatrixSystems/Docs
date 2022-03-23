@@ -9,21 +9,15 @@ Aviatrix Transit Network Segmentation Workflow
 
 For questions, refer to `Aviatrix Transit Segmentation FAQ. <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html>`_
 
-1. Enable Aviatrix Transit Gateway for Segmentation
-------------------------------------------------------
-
+1. Enable the Aviatrix Transit Gateway for segmentation.
 
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Aviatrix Transit Gateway Name                   An `Aviatrix Transit Gateway deployed in the Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
+Aviatrix Transit Gateway Name                   An `Aviatrix Transit Gateway deployed in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 ==========================================      ==========
 
-2. Create a Multi-Cloud Security Domain
---------------------------------------------------
-
-
-You can make changes to your network segmentation at any time, simply come back to this page. 
+2. Create a Multi-Cloud Security domain. You can make changes to your network segmentation at any time, simply come back to this page. 
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -31,8 +25,7 @@ You can make changes to your network segmentation at any time, simply come back 
 Security Domain Name                            Specify a unique domain name. For example, Dev_Domain
 ==========================================      ==========
 
-3. Add/Modify Connection Policies
-----------------------------------------------------
+3. Add/modify connection policies. 
 
 This step specifies the connection relationship of one domain to others. Two connected domains imply that Spokes in 
 each domain can communicate with each other despite the fact that they are in different domains. 
@@ -44,9 +37,7 @@ Highlight a domain on the left panel and click Add, the domain will appear to th
 
 This section is to build the network segmentation by associating a Spoke.  
 
-4. Associate Aviatrix Spoke/Edge to Domain   
-------------------------------------------------------------------
-
+1. Associate Aviatrix Spoke/Edge to the domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -57,8 +48,7 @@ Attachment Name                                 The name of a Spoke or edge conn
 ==========================================      ==========
 
 
-5. Disassociate Aviatrix Spoke/Edge to Domain
-------------------------------------------------------------------
+2. Disassociate Aviatrix Spoke/Edge to domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -74,8 +64,7 @@ Attachment Name                                 The name of a Spoke or edge conn
 This section consists of the delete functions. 
 
 
-6. Delete Multi-Cloud Security Domain
-----------------------------------------
+1. Delete Multi-Cloud Security domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -83,13 +72,12 @@ This section consists of the delete functions.
 Security Domain Name                            The name of the Security Domain
 ==========================================      ==========
 
-7. Disable Aviatrix Transit Gateway for Segmentation
---------------------------------------------------------
+2. Disable Aviatrix Transit Gateway for segmentation.
 
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Aviatrix Transit Gateway Name                   An `Aviatrix Transit Gateway deployed in the Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
+Aviatrix Transit Gateway Name                   An `Aviatrix Transit Gateway deployed in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 ==========================================      ==========
 
 

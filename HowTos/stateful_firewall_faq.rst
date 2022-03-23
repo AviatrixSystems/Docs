@@ -19,18 +19,10 @@
 What is Aviatrix Stateful Firewall?
 ---------------------------------------
 
-Aviatrix stateful firewall is feature on the Aviatrix gateway. 
+Aviatrix stateful firewall is a feature on the Aviatrix gateway. 
 It is a L4 stateful firewall that filters network CIDR, protocol and port on the packet forwarding path. 
 
 The stateful firewall allows each individual rule to be defined as Allow, Deny and Force Drop, in addition to a base rule. 
-
-How many rules can be configured on a gateway?
-------------------------------------------------
-
-Currently you can configure up to 500 rules on each gateway. This limitation is not due to the lack of capacity in the gateways, but is 
-because of the implementation of how rules are sent to the gateways. 
-
-In the next release (5.2), the limitation will be removed. 
 
 Is there limitation on the number of tags?
 --------------------------------------------

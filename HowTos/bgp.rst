@@ -1,9 +1,3 @@
-.. meta::
-<<<<<<< Updated upstream:HowTos/bgp.rst
-  :description: Describes the fields on the BGP submenu
-  :keywords: bgp, border gateway patrol, diagnostics, configuration, maximum as limits, quagga, transit network, multi-cloud transit
-
-
 ==================================
 BGP
 ==================================
@@ -14,7 +8,6 @@ BGP
 ============
 BGP Page
 ============
->>>>>>> Stashed changes:HowTos/bgp.txt
 
 Use the BGP page to review your BGP connections and settings. To open this page, in your Aviatrix Controller, go to MULTI-CLOUD TRANSIT > BGP on the left sidebar.
 
@@ -60,8 +53,5 @@ This setting is disabled by default, meaning that the network size is unlimited.
 
 If you wish to limit the size of your network (for example, if you have a complex topology between your on-prem and cloud networks), you can enable this option by entering 1-254 in the field provided. Then, use the up and down arrows to increase or decrease the number.
 
-<<<<<<< Updated upstream:HowTos/bgp.rst
-=======
-
->>>>>>> Stashed changes:HowTos/bgp.txt
 .. disqus::
+

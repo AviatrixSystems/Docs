@@ -11,7 +11,7 @@ This document publishes Aviatrix ActiveMesh Insane Mode encryption performance t
 
 For more information on Aviatrix Insane Mode, check out `this link. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
-1. AWS Performance Test Results
+AWS Performance Test Results
 ----------------------------------------------
 
 Aviatrix High Performance Encryption (HPE), also known as ActiveMesh Insane Mode, achieves line rate performance with encryption in AWS when 
@@ -27,19 +27,19 @@ The test is conducted by using iperf3 tool with TCP 128 streams. The two VPCs ar
 
 
 MTU = 9000 Bytes (AWS default setting)
-============================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |jumbo|
 
 MTU = 1500 Bytes 
-===========================================================================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |1500|
 
 Single Gateway in AWS Performance Test Results
-===================================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This test is done without HA enabled in either Spoke or Transit gateways. The traffic is end-to-end from user instance -> spoke gateway -> Multi-cloud Transit Gateway -> spoke gateway -> instance. 
+This test is done without HA enabled in either Spoke or Transit Gateways. The traffic is end-to-end from user instance > Spoke Gateway > Multi-Cloud Transit Gateway > Spoke Gateway> Instance. 
 
 For MTU = 9000 Bytes, the result is shown in the diagram below. 
 
@@ -50,7 +50,7 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 |single_gateway_350B|
 
 T3 instance series performance
-=================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ==========================      ===============================     ===============================
 **Spoke Gateway**               **Throughput Gbps (MTU 1500B)**     **Throughput Gbps (MTU 9600B)**
@@ -64,12 +64,12 @@ t3.small                        3.35                                9.96
 ==========================      ===============================     ===============================
 
 
-2. Azure Performance Test Results
-------------------------------------
+Azure Performance Test Results
+------------------------------------------------
 
-The performance results below are from tests conducted with the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
-region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke gateways
-or HA Spoke gateways to take advantage of the active-mesh deployment. 
+The performance results below are from tests conducted with the topology of Test VMs > Spoke > Transit > Spoke > Test VMs in the same 
+region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke Gateways
+or HA Spoke Gateways to take advantage of the active-mesh deployment. 
 
 The test topology is shown as below. 
 
@@ -84,8 +84,8 @@ Standard_D32_v3                  20.47Gbps
 Standard_D5_v2                   20.56Gbps                          
 ===========================      ===============================
 
-3. GCP Performance Test Results
---------------------------------
+GCP Performance Test Results
+-------------------------------------------
 
 Topology is shown below where the test is performed with the following conditions:
 
@@ -96,7 +96,7 @@ Topology is shown below where the test is performed with the following condition
 |gcp_test_topology|
 
 n1 series performance
-=================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====================      ===============================
 **Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
@@ -108,7 +108,7 @@ n1-highcpu-32             19.97
 ====================      ===============================
 
 n2 series performance
-=================================
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====================      ===============================
 **Transit Gateway**       **Throughput Gbps (MTU 1500B)**     
@@ -120,7 +120,7 @@ n2-highcpu-32             25.549
 ====================      ===============================
 
 c2 series performance
-=================================
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====================      ===============================
 **Transit Gateway**       **Throughput Gbps (MTU 1500B)**    
@@ -133,15 +133,15 @@ c2-standard-30            25.52
 
 .. note::
 
-  To deploy Aviatrix gateways with n2 or c2 series successfully, users need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
+  To deploy Aviatrix Gateways with n2 or c2 series successfully, users need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
 
 
-4. OCI Performance Test Results
+OCI Performance Test Results
 ------------------------------------
 
-The performance results below are from tests conducted with the topology of `Test VMs -> Spoke -> Transit -> Spoke -> Test VMs` in the same 
-region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke gateways
-or HA Spoke gateways to take advantage of the active-mesh deployment. 
+The performance results below are from tests conducted with the topology of Test VMs > Spoke > Transit > Spoke > Test VMs in the same 
+region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke Gateways
+or HA Spoke Gateways to take advantage of the active-mesh deployment. 
 
 ===========================      ===============================
 **Transit Gateway**              **Throughput with MTU 1500B**    
@@ -168,13 +168,13 @@ VM.Standard2.24                  24.65Gbps
 How to Tune Performance
 --------------------------
 
-1. Check MTU size
-=================
+Check MTU size
+^^^^^^^^^^^^^^^^^^
 
-Use Trace Path. Go to Troubleshoot -> Diagnostics -> Network. Select a gateway and destination IP address, click Trace Path. It should display MTU of the devices along the path. 
+Use Trace Path. Go to Troubleshoot > Diagnostics > Network. Select a gateway and destination IP address and click **Trace Path**. It should display MTU of the devices along the path. 
 
-2. Tune TCP window size
-========================
+Tune TCP window size
+^^^^^^^^^^^^^^^^^^^^^^
 
 For Linux machine, follow the `instructions here <https://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php>`_ to tune TCP  window size.
 

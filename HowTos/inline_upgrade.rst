@@ -6,15 +6,21 @@
 Inline Software Upgrade for 6.4 and Earlier Releases
 ####################################################
 
-If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in this section. If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`__. 
+
+.. important::
+
+  Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+
 
 When upgrading a controller's software, all gateways are upgraded with the new software at the same time. This is done by the controller pushing new software to gateways directly and automatically once requested.
+
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 
 .. note::
    
    We strongly recommend that you make a backup before you start the upgrade process. Please follow the directions `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`__.
    
-   Please also check out our `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_.
+   Please also check out our `release notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
    
 Pre-upgrade Checklist:
 -----------------------

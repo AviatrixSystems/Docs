@@ -2,7 +2,7 @@ Welcome to Aviatrix Docs
 ========================
 
 All Aviatrix product documentation can be found here.
-If you cannot find what you need, please reach out to us via `Aviatrix Support Portal <https://support.aviatrix.com>`_. Hats off to all who helped fix typos and mistakes. You can do that too by clicking the "Edit on GitHub" button on the top right corner of any document. Please also visit our `main website`_ for more information regarding use cases and upcoming events.
+If you cannot find what you need, please reach out to us via `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
@@ -19,14 +19,15 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Cloud WAN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
+* :ref:`Copilot`
 * :ref:`OpenVPN® <OpenVPN>`
 * :ref:`Security`
 * :ref:`UsefulTools`
 * :ref:`Settings`
 * :ref:`Downloads`
 * :ref:`Release Notes`
-* :ref:`Security Bulletin`
-* :ref:`CoPilot`
+* :ref:`Security Updates`
+* :ref:`Field Notices`
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
 * :ref:`Support Center`
@@ -84,7 +85,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/gateway_audit
    HowTos/default_route_faq
    
-
 .. _Transit Network:
 
 .. toctree::
@@ -116,8 +116,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_gateway_external_device_bgp_over_lan_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow
-
-
 
 .. _Transit Gateway Orchestrator:
 
@@ -186,7 +184,6 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 2
    :caption: Security
 
-
    HowTos/stateful_firewall_faq
    HowTos/tag_firewall
    HowTos/fqdn_faq
@@ -213,11 +210,9 @@ While all content is searchable, the site is organized into the following sectio
 
 .. _Site2Cloud:
 
-
 .. toctree::
    :maxdepth: 1
    :caption: Site2Cloud
-
 
    HowTos/site2cloud_faq
    HowTos/site2cloud
@@ -245,6 +240,18 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/connect_overlap_vpc_via_VGW
    HowTos/periodic_ping
    
+.. _CoPilot:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: CoPilot
+
+   HowTos/copilot_release_notes
+   HowTos/copilot_release_notes_images
+   HowTos/copilot_overview
+   HowTos/copilot_getting_started
+   HowTos/copilot_reference_guide.rst
+   HowTos/copilot_faq
 
 .. _OpenVPN:
 
@@ -312,7 +319,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/Migration_From_Marketplace
    HowTos/controller_migration
 
-
 .. _Troubleshoot:
 
 .. toctree::
@@ -334,39 +340,35 @@ While all content is searchable, the site is organized into the following sectio
 
    Downloads/samlclient
 
-.. _Release Notes:
+.. _Release Notes
 
 .. toctree::
    :maxdepth: 1
    :caption: Release Notes
 
-   HowTos/UCC_Release_Notes
-   HowTos/changelog
-   HowTos/field_notices
+   HowTos/Controller_and_Software_Release_Notes
    HowTos/image_release_notes
-
-.. _Security Bulletin:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Security Bulletin
-
-   HowTos/security_bulletin_article
-   HowTos/security_bulletin_faq
-
-.. _CoPilot:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: CoPilot
-
    HowTos/copilot_release_notes
    HowTos/copilot_release_notes_images
-   HowTos/copilot_overview
-   HowTos/copilot_getting_started
-   HowTos/copilot_reference_guide.rst
-   HowTos/copilot_faq
+   HowTos/Aviatrix_VPN_Client_Release_Notes
 
+.. _Security Updates:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Security Updates
+
+   HowTos/PSIRT_Advisories
+   HowTos/Security_Patches
+
+.. _Field Notes:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Field Notes
+
+   HowTos/Field_Notes
+   
 .. _Tech Notes:
 
 .. toctree::
@@ -397,7 +399,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_pan_ecmp
    HowTos/tgw_egress_vpc
    HowTos/aws_transit_gateway_orchestrator
-   HowTos/aviatrix_insanemode
    HowTos/transit_snat_dnat
    HowTos/ipv6_peering
    HowTos/nextgentransit_for_azure
@@ -408,6 +409,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_firenet_workflow_aws
    HowTos/transit_firenet_workflow_aws_gwlb
    HowTos/transit_firenet_workflow_azure
+   HowTos/transit_subnet_inspection_azure
    HowTos/transit_firenet_workflow_gcp
    HowTos/transit_firenet_workflow_oci
    HowTos/cloud_wan_workflow_azure_vwan
@@ -423,14 +425,14 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: Good To Know
 
-   HowTos/inter_region_latency
-   HowTos/arm_inter_region_latency
-   HowTos/gcp_inter_region_latency
    HowTos/cloudformation_condition_howto
    HowTos/aws_network_limits
    HowTos/tgw_limits
    HowTos/opstools_survey
    HowTos/multi_cloud_region_affinity_and_latency
+   HowTos/general_glossary
+   HowTos/aviatrix_glossary
+   HowTos/multi_cloud_rosetta_stone
 
 .. _Support Center:
 

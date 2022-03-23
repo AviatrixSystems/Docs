@@ -331,7 +331,7 @@ Scroll down to Event Triggered HA and click Enable.
 Jumbo Frame
 ------------------
 
-Jumbo Frame improves the performance between Aviatrix Transit gateway and CloudN. This feature is only supported for AWS, other clouds (Azure, GCP etc.) do not support Jumbo frame. To configure, go to Site2Cloud -> select a connection, click Edit. 
+Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure, go to Site2Cloud -> select a connection, click Edit. 
 Scroll down to Jumbo Frame and click Enable. 
 
 Clear Sessions

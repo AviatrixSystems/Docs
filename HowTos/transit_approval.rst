@@ -8,7 +8,7 @@ Encrypted Transit Approval
 ================================================================
 
 Aviatrix Transit Gateway dynamically learns BGP routes from remote site, these learned routes are reported
-to the Controller which in turn programs route entries of Spoke VPCs route table. 
+to the Controller which in turn programs route entries of a Spoke VPC/VNet route table. 
 
 There are scenarios where you require an approval process before these learned CIDRs propagation take place.
 For example, a specific VPN may be
@@ -20,25 +20,24 @@ propagated into your own network and accidentally bring down the network.
 Approval is enabled on an Aviatrix Transit Gateway. When Approval is enabled, dynamically learned routes
 from all remote peers 
 trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
-Transit Network -> Approval, the admin should see not yet approved CIDRs and already approved CIDRs. 
+Transit Network > Approval, the admin should see not yet approved CIDRs and already approved CIDRs. 
 Moving the routes from Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated.
 
 
-To enable Approval, go to Transit Network -> Approval. Select the gateway, 
-click Learned CIDRs Approval to enable.
+To enable Approval, go to Multi-Cloud Transit > Approval. Select the gateway and click **Learned CIDRs Approval** to set it to Enabled.
 
 When Approval is disabled, all dynamically learned routes are automatically propagated to the Spokes.
 
 Mode Gateway
---------------
+----------------------
 
-By default, Learned CIDR Approval applies to all BGP connections configured on the Multi-cloud Transit Gateway. 
+By default, Learned CIDR Approval applies to all BGP connections configured on the Multi-Cloud Transit Gateway. 
 
 Mode Connection
-----------------
+---------------------------
 
 If Connection mode is selected, approval is applied to a selected BGP connection as shown in the 
-drop down menu. A BGP connection that is not configured for Approval learns all routes from its peer automatically. 
+dropdown menu. A BGP connection that is not configured for Approval learns all routes from its peer automatically.
   
 
 .. |Test| image:: transitvpc_workflow_media/SRMC.png
