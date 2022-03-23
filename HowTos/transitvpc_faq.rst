@@ -109,6 +109,7 @@ How do I know which Transit GW a Spoke GW is sending traffic to?
 
 You can tell which Transit GW carries the network traffic from a specific Spoke VPC/VNet by selecting MULTI-CLOUD TRANSIT > BGP on the left sidebar. Select the Transit GW and click **Detail**. If the list of the Advertised Networks includes the Spoke VPC/VNet CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW.
 
+
 How can I route VPC/VNet Egress Internet-bound traffic to on-prem to go through the corporate firewall?
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -128,10 +129,12 @@ On-prem routes are propagated to the VGW which in turn propagates to the Transit
 #. Go to Peering > Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC/VNet GW. The Learned Routes are displayed and searchable.
 #. Go to MULTI-CLOUD TRANSIT > BGP > select a Transit GW, and click **Detail**.
 
+
 How do I find out BGP information on a Transit GW?
 ------------------------------------------------------------------
 
 Go to MULTI-CLOUD TRANSIT  > BGP > Diagnostics, mark the checkbox for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug messages. Excessive debug messages reduce throughput.
+
 
 How do I delete a Spoke GW?
 ----------------------------------------

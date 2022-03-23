@@ -704,19 +704,18 @@ Aviatrix Transit Gateways and the Transit Gateways are full mesh connected. In s
 learns all Spoke VPC/VNets and on-prem network CIDRs. Without enabling this feature, route conflicts happen for the on-prem network. With this feature enabled, there is no route conflict to on-prem and any Spoke VPC/VNet has a redundant route to on-prem.
 
 Jumbo Frame
-------------------------
+===========
 
 Jumbo Frame improves Aviatrix Gateway throughput performance. This feature is enabled by default for AWS and OCI. It is not supported for Azure or GCP.
 
 To enable Jumbo Frame for an Aviatrix Gateway:
 
 #. In Aviatrix Controller, from the left sidebar, select **GATEWAY**.
-#. On the Gateways page, select the gateway for which you want to enable Jumbo Frame and click **Edit**.
-#. Scroll down to Jumbo Frame and click **Enable**.
 
 
 IPv6 (for AWS)
-------------------------
+----------------
+
 
 IPv6 can be enabled on an Aviatrix Gateway deployed in AWS. One use case is to use IPv6 to resolve overlapping VPC CIDRs when doing encrypted peering. This use case requires both the VPC and EC2 instances have IPv6 enabled. 
 
