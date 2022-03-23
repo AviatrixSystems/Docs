@@ -85,7 +85,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/gateway_audit
    HowTos/default_route_faq
    
-
 .. _Transit Network:
 
 .. toctree::
@@ -117,8 +116,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_gateway_external_device_bgp_over_lan_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow
    HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow
-
-
 
 .. _Transit Gateway Orchestrator:
 
@@ -187,7 +184,6 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 2
    :caption: Security
 
-
    HowTos/stateful_firewall_faq
    HowTos/tag_firewall
    HowTos/fqdn_faq
@@ -214,11 +210,9 @@ While all content is searchable, the site is organized into the following sectio
 
 .. _Site2Cloud:
 
-
 .. toctree::
    :maxdepth: 1
    :caption: Site2Cloud
-
 
    HowTos/site2cloud_faq
    HowTos/site2cloud
@@ -324,7 +318,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/controller_config
    HowTos/Migration_From_Marketplace
    HowTos/controller_migration
-
 
 .. _Troubleshoot:
 
