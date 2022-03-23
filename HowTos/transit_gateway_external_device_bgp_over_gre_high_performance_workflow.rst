@@ -3,13 +3,13 @@
   :keywords: Aviatrix Transit network, Private Network, AWS Direct Connect, BGP over GRE, External Device, High Performance
 
 ==========================================================================================
-GRE Tunneling for Multi-cloud Transit Gateway to on-prem Workflow
+GRE Tunneling for Multi-cloud Transit Gateway to On-Prem Workflow
 ==========================================================================================
 
 Introduction
 ============
 
-Connecting to on-prem network over GRE tunneling protocol in AWS is an alternative to IPSec. 
+Connecting to on-prem network over GRE tunneling protocol in AWS is an alternative to IPsec. 
 When GRE tunneling is used, Aviatrix Multi-cloud Transit Gateways interoperate directly with on-prem network devices over AWS Direct Connect.  
 
 When on-prem to cloud encryption is not required, using GRE allows you to achieve high performance throughput (10Gbps) without the need to 
@@ -19,9 +19,9 @@ The solution is shown in the diagram below,
 
 |transit_gateway_external_device_bgp_over_gre_diagram|
 
-where Aviatrix Multi-cloud Transit Gateways connect to an on-prem Edge Router over Direct Connect. 
+where Aviatrix Multi-Cloud Transit Gateways connect to an on-prem Edge Router over Direct Connect. 
 
-This document describes a step-by-step instruction on how to build Aviatrix Transit Gateway to External Device using GRE over AWS Direct Connect. 
+This document gives step-by-step instructions on how to build Aviatrix Transit Gateway to External Device using GRE over AWS Direct Connect. 
 In this Tech Note, you learn the following:
 
 #. Workflow on `building underlay connectivity with AWS Direct Connect 10 Gbps capacity <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-underlay-connectivity-with-aws-direct-connect>`_
@@ -34,7 +34,7 @@ In this Tech Note, you learn the following:
 
 #. Workflow on `enabling ECMP Load Balancing to achieve high performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#configure-ecmp-load-balancing-for-high-performance>`_
 
-For more information about Multi-Cloud Transit Network and External Device, please check out the below documents:
+For more information about Multi-Cloud Transit Network and External Device, please see these documents:
 
 - `Multi Cloud Global Transit FAQ <https://docs.aviatrix.com/HowTos/transitvpc_faq.html#multi-cloud-global-transit-faq>`_
 - `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_
@@ -73,43 +73,33 @@ Prerequisite
 
 - Edge Router has high throughput supported on hardware interface(s) and GRE tunnel(s)
   
-1. Build underlay connectivity with AWS Direct Connect
+Building Underlay Connectivity with AWS Direct Connect
 ===================================================================================
 
-Building AWS Direct Connect is customer's responsibility. For more information about AWS Direct Connect, please check out the below documents:
-
-- Refer to `Connect Your Data Center to AWS <https://aws.amazon.com/getting-started/projects/connect-data-center-to-aws/>`_
+Building AWS Direct Connect is customer's responsibility. For more information about AWS Direct Connect, please see `Connect Your Data Center to AWS <https://aws.amazon.com/getting-started/projects/connect-data-center-to-aws/>`_.
   
 Please adjust the topology depending on your requirements. 
 
-Step 1.1. Build AWS Direct Connect
+Building AWS Direct Connect
 -----------------------------------
 
-- Refer to `Equinix ECX Fabric AWS Direct Connect <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-aws-direct-connect.htm>`_ if users select Equinix solution. This is just an example here.
+See `Equinix ECX Fabric AWS Direct Connect <https://docs.equinix.com/en-us/Content/Interconnection/ECXF/connections/ECXF-aws-direct-connect.htm>`_ if users select Equinix solution. This is just an example here. Make sure to select 10 Gbps capacity.
 
-- Make sure select 10 Gbps capacity
-
-Step 1.2. Associate AWS VGW to AWS Transit VPC
+Associating AWS VGW to AWS Transit VPC
 -----------------------------------------------
 
-- Login AWS VPC Portal
-
-- Click the hyperlink "Virtual Private Gateways" under sidebar "VIRTUAL PRIVATE NETWORK (VPN)"
-
-- Select the Virtual Private Gateway that you have the private virtual interface to AWS Direct Connect
-
-- Click the button "Actions"
-
-- Click the hyperlink "Attach to VPC"
-
-- Select the AWS Transit VPC and click the button "Yes, Attach"
+1. Log in to the AWS VPC Portal and select **Virtual Private Gateways** under the Virtual Private Network (VPN) sidebar. 
+3. Select the Virtual Private Gateway that you have the private virtual interface to AWS Direct Connect
+4. Click **Actions**.
+5. Select **Attach to VPC**.
+6. Select the AWS Transit VPC and click **Yes, Attach**.
 
   |aws_vgw_attach|
 	
-2. Deploy Aviatrix Multi-Cloud Transit Solution
+Deploying the Aviatrix Multi-Cloud Transit Solution
 =================================================
 
-Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ for the below steps. Please adjust the topology depending on your requirements.
+Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ for the steps below. Please adjust the topology depending on your requirements.
 
 Step 2.1. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 -------------------------------------------------------------------
@@ -118,59 +108,51 @@ Step 2.1. Deploy Aviatrix Multi-Cloud Transit Gateway and HA in AWS
 
 - In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
 
-Step 2.2. Enable Route Propagation on the subnet route table where Aviatrix Transit Gateway locates on AWS portal
-------------------------------------------------------------------------------------------------------------------
+Enabling Route Propagation on the Subnet Route Table where Aviatrix Transit Gateway Locates on AWS Portal
+---------------------------------------------------------------------------------------------------------------------------------------
 
-- Login AWS VPC portal
-
-- Locate the subnet route table where Aviatrix Transit Gateway locates
-
-- Select the tab "Route Propagation"
-
-- Click the button "Edit route propagation"
-
-- Locate the AWS VGW that is associated with this Transit VPC and check the checkbox "Propagate"
-
-- Click the button "Save"
-
-- Check whether the Propagate status is Yes
+1. Log in to the AWS VPC portal and locate the subnet route table where Aviatrix Transit Gateway is located.
+2. Select **Route Propagation** tab.
+3. Click **Edit route propagation**.
+4. Locate the AWS VGW that is associated with this Transit VPC and mark the **Propagate** checkbox.
+5. Click **Save**.
+6. Check whether the Propagate status is Yes.
 
   |aws_route_propagation_status_yes|
 	
-Step 2.3. Deploy Spoke Gateway and HA
+Deploying Spoke Gateway and HA
 --------------------------------------
 
-- Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in AWS Spoke VPC
+Follow this step `Deploy Spoke Gateways <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in AWS Spoke VPC.
 
-- In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
+In this example, sizes c5n.2xlarge and c5n.4xlarge are selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_.
 
-Step 2.4. Attach Spoke Gateways to Transit Network
---------------------------------------------------
+Attaching Spoke Gateways to Transit Network
+-----------------------------------------------------------
 
-- Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in AWS
+Follow this step `Attach Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_ to attach Aviatrix Spoke Gateways to Aviatrix Transit Gateways in AWS.
 
-3. Build connectivity between Edge Router and Aviatrix Transit Gateway 
+Building Connectivity between Edge Router and Aviatrix Transit Gateway 
 ==========================================================================================================
 
 Cisco ASR is used as an Edge Router in this example.  
 
-Step 3.1. Check whether Edge Router has learned AWS Transit VPC CIDR via the BGP session between Edge Router and AWS Direct Connect
------------------------------------------------------------------------------------------------------------------------------------
+Checking Whether the Edge Router has Learned AWS Transit VPC CIDR via the BGP Session Between Edge Router and AWS Direct Connect
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Login Edge Router (i.e. Cisco ASR) 
-
-- Check whether Edge Router has learned AWS Transit VPC CIDR via the BGP session between Edge Router and AWS Direct Connect by issuing the related "show ip bgp" command 
+#. Log in to the Edge Router (i.e. Cisco ASR) 
+#. Check whether Edge Router has learned AWS Transit VPC CIDR via the BGP session between Edge Router and AWS Direct Connect by issuing the related "show ip bgp" command 
   
   Simple Cisco IOS example::
 
     #show ip bgp
 
-Step 3.2. Prepare IP for GRE source IP on Edge Router
+Preparing IP for GRE source IP on Edge Router
 -----------------------------------------------------
 
 In this example, we use ASR loopback interface with an unique IP address as a GRE source IP.
 
-- Create a loopback interface and assign an IP to itself as a GRE source IP.
+Create a loopback interface and assign an IP to itself as a GRE source IP.
 
   Simple Cisco IOS example::
 
@@ -180,13 +162,14 @@ In this example, we use ASR loopback interface with an unique IP address as a GR
 
       (config-if)#ip address 192.168.77.1 255.255.255.255
 
-Step 3.3. Advertise that GRE source IP on Edge Router to the BGP session between Edge Router and AWS Direct Connect
--------------------------------------------------------------------------------------------------------------------
+Advertising that GRE source IP on Edge Router to the BGP Session Between Edge Router and AWS Direct Connect
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 The purpose of this step is to let AWS VGW learn the GRE source IP on Edge Router via BGP session between Edge Router and AWS Direct Connect, so that Aviatrix Transit Gateway can reach the GRE source IP on Edge Router to form GRE tunnel over AWS Direct Connect.
+
 To demonstrate this concept in a simple fashion, we utilize IOS "ip prefix-list" function and apply it on BGP neighbor with direction out function to distribute GRE source IP.
 
-- Create a prefix list that defines GRE source IP on Edge Router for BGP advertisement
+Create a prefix list that defines GRE source IP on Edge Router for BGP advertisement.
 
   Simple Cisco IOS example::
 
@@ -196,7 +179,7 @@ To demonstrate this concept in a simple fashion, we utilize IOS "ip prefix-list"
 
     (config)#ip prefix-list Router-to-VGW seq 10 permit 192.168.77.1/32
   
-- Apply this prefix list to outgoing BGP advertisements
+Apply this prefix list to outgoing BGP advertisements
 
   Simple Cisco IOS example::
 
@@ -212,35 +195,27 @@ To demonstrate this concept in a simple fashion, we utilize IOS "ip prefix-list"
 
     The IP 169.254.253.17 in this example here is the AWS Direct Connect BGP Peer IP.
 
-Step 3.4. Check route propagation info on AWS portal
-----------------------------------------------------
+Checking Route Propagation Info on AWS Portal
+-----------------------------------------------------------
 	
-- Login AWS VPC portal
-
-- Locate the subnet route table where Aviatrix Transit Gateway locates
-
-- Select the tab "Routes"
-
-- Check whether there is a route entry "GRE source IP on Edge Router pointing to AWS VGW"
+#. Log in to the AWS VPC portal and locate the subnet route table where Aviatrix Transit Gateway is located.
+#. Select the **Routes** tab.
+#. Check whether there is a route entry "GRE source IP on Edge Router pointing to AWS VGW."
 
   |aws_route_propagation_routing_entry|
     
-Step 3.5. Confirm that Edge Router and Aviatrix Transit Gateway can reach to each other IP for GRE tunnel
-----------------------------------------------------------------------------------------------------------
+Confirming that Edge Router and Aviatrix Transit Gateway can Reach to each other IP for GRE Tunnel
+-------------------------------------------------------------------------------------------------------------------------------
 
-4. Build GRE tunnel and BGP over GRE
+Build GRE tunnel and BGP over GRE
 ================================================
 
-Step 4.1. Configure GRE tunnel and BGP on Aviatrix Transit Gateway
+Configuring GRE tunnel and BGP on Aviatrix Transit Gateway
 --------------------------------------------------------------------
 
-- Login Aviatrix Controller
-
-- Go to MULTI-CLOUD TRANSIT -> Setup -> 3) Connect to VGW / External Device / Aviatrix CloudN / Azure VNG
-
-- Select option "External Device" -> "BGP" -> "GRE"
-
-- Fill the parameters to set up GRE tunnel to Edge Router
+1. Log in to your Aviatrix Controller and navigate to Multi-Cloud Transit > Setup > External Device tab.
+2. Select option External Device > BGP > GRE.
+3. Use the fields below to set up GRE tunnel to Edge Router.
   
   +----------------------------------+-------------------------------------------------------------------------------------------------+
   | Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched.                                        |
@@ -262,39 +237,31 @@ Step 4.1. Configure GRE tunnel and BGP on Aviatrix Transit Gateway
   | Remote Tunnel IP                 | Leave it blank in this example.                                                                 |
   +----------------------------------+-------------------------------------------------------------------------------------------------+
 
-- Click the button "CONNECT" to generate GRE tunnel and BGP session over it
+4. Click **Connect** to generate GRE tunnel and BGP session over it.
 
   |aviatrix_transit_externel_device_gre|
   
-Step 4.2. Download the GRE configuration sample from Aviatrix Controller
----------------------------------------------------------------------------
+Downloading the GRE Configuration Sample from Aviatrix Controller
+---------------------------------------------------------------------------------------
 
-- Navigate to SITE2CLOUD -> Setup
+1. Navigate to Site2Cloud > Setup.
+2. Select the connection that you created with “Connection Name” in the previous step
+3. Click **Edit**.
+4. Select Cisco as Vendor type, ISR, ASR or CSR as Platform, and IOS(XE) as Software for this example.
+5. Click **Download Configuration**.
 
-- Select the connection that you created with “Connection Name” in the previous step
+Configuring GRE tunnel on Edge Router
+-----------------------------------------------------
 
-- Click the button "EDIT"
-
-- Select Cisco as Vendor type, ISR, ASR or CSR as Platform, and IOS(XE) as Software for this example.
-
-- Click the button "Download Configuration".
-
-Step 4.3. Configure GRE tunnel on Edge Router
----------------------------------------------
-
-- Open the downloaded GRE configuration file
-
-- Populate these values as follows based on your setup throughout the Tunnel Interface Configuration
+1. Open the downloaded GRE configuration file.
+2. Populate these values as follows based on your setup throughout the Tunnel Interface Configuration.
 
   - <tunnel_number1>: the primary GRE tunnel interface number connecting Aviatrix Transit Primary Gateway (i.e. 11)
-
   - <tunnel_number2>: the secondary GRE tunnel interface number connecting Aviatrix Transit HA Gateway (i.e. 12)
-
   - <ios_wan_interface1>: the IP which is assigned on the Loopback interface as an GRE source IP (i.e. 192.168.77.1)
-
   - <ios_wan_interface2>: the IP which is assigned on the Loopback interface as an GRE source IP (i.e. 192.168.77.1)
 
-- Copy and paste the updated Tunnel Interface Configuration into Edge Router 
+3. Copy and paste the updated Tunnel Interface Configuration into Edge Router 
 
   Simple Cisco IOS example::
 
@@ -318,12 +285,10 @@ Step 4.3. Configure GRE tunnel on Edge Router
     no keepalive
     exit
    
-Step 4.4. Configure BGP over GRE tunnel on Edge Router
----------------------------------------------------------
+Configuring BGP over GRE tunnel on Edge Router
+---------------------------------------------------------------------
       
-- Open the downloaded GRE configuration file
-
-- Copy and paste the BGP Routing Configuration into Edge Router 
+1. Open the downloaded GRE configuration file and copy and paste the BGP Routing Configuration into Edge Router.
 
   Simple Cisco IOS example::
 
@@ -343,7 +308,7 @@ Step 4.4. Configure BGP over GRE tunnel on Edge Router
     maximum-paths 4
     exit-address-family
   
-- Create a prefix list that defines CIDR where server locates in on-prem/co-location for BGP advertisement
+2. Create a prefix list that defines CIDR where server locates in on-prem/co-location for BGP advertisement.
 
   Simple Cisco IOS example::
 
@@ -353,7 +318,7 @@ Step 4.4. Configure BGP over GRE tunnel on Edge Router
 
     (config)#ip prefix-list Router-To-Transit-GRE seq 10 permit 10.220.5.0/24
 
-- Apply the prefix list to outgoing BGP advertisements
+3. Apply the prefix list to outgoing BGP advertisements.
 
   Simple Cisco IOS example::
 
@@ -367,94 +332,71 @@ Step 4.4. Configure BGP over GRE tunnel on Edge Router
 
     (config-router-af)#neighbor 169.254.173.78 prefix-list Router-To-Transit-GRE out
 
-Step 4.5. Verify GRE tunnel status on Aviatrix Controller
+Verifying GRE Tunnel Status on Aviatrix Controller
 ----------------------------------------------------------
 
-- Navigate back to Aviatrix Controller
-
-- Go to SITE2CLOUD -> Setup
-
-- Find the connection that you created with “Connection Name” in the previous step
-
-- Check the Tunnel Status
+1. Navigate back to Aviatrix Controller and open Site2Cloud > Setup.
+2. Find the connection that you created with Connection Name in the previous step.
+3. Check the Tunnel Status.
 
   |aviatrix_gre_status_1|
 
-- Go to MULTI-CLOUD TRANSIT -> List
-
-- Select the Transit Primary Gateway that was created in the previous step
-
-- Click the button "DETAILS/DIAG"
-
-- Scroll down to the panel "Connections" -> "On-prem Connections"
-
-- Find the connection that you created with “Connection Name” in the previous step
-
-- Check the Tunnel Status
+4. Go to Multi-Cloud Transit > List.
+5. Select the Transit Primary Gateway that was created in the previous step.
+6. Click **Details/Diag**.
+7. Scroll down to Connections > On-prem Connections.
+8. Find the connection that you created with Connection Name in the previous step and check the Tunnel Status.
 
   |aviatrix_gre_status_2|
 
-Step 4.6. Verify BGP session status on Aviatrix Controller
+Verifying BGP session status on Aviatrix Controller
 ----------------------------------------------------------
 
-- Go to MULTI-CLOUD TRANSIT -> Advanced Config -> BGP Tab
-
-- Find the connection that you created with “Connection Name” in the previous step
-
-- Check the BGP Status
+1. Go to Multi-Cloud Transit > BGP.
+2. Find the connection that you created with Connection Name in the previous step and check the BGP Status.
 
   |aviatrix_gre_bgp_status|
 
-5. Configure ECMP Load Balancing for high performance
+Configuring ECMP Load Balancing for High Performance
 =====================================================================
 
-Step 5.1. Build multiple GRE tunnels between Edge Router and Aviatrix Transit Gateway
-----------------------------------------------------------------------------------------
+Building Multiple GRE tunnels between Edge Router and Aviatrix Transit Gateway
+-------------------------------------------------------------------------------------------------------
 
-- Build multiple GRE tunnels by repeating `"Build connectivity between Edge Router and Aviatrix Transit Gateway" <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-connectivity-between-edge-router-and-aviatrix-transit-gateway>`_.
+1. Building multiple GRE tunnels by repeating `"Build connectivity between Edge Router and Aviatrix Transit Gateway" <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-connectivity-between-edge-router-and-aviatrix-transit-gateway>`_.
+2. Build multiple BGP over GRE tunnels by repeating `"Build GRE tunnel and BGP over GRE" <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-gre-tunnel-and-bgp-over-gre>`_.
 
-- Build multiple BGP over GRE tunnels by repeating `"Build GRE tunnel and BGP over GRE" <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#build-gre-tunnel-and-bgp-over-gre>`_.
-
-- In this example, we build up to 4 pairs of GRE connections (total up to 8 tunnels) to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_. 
+In this example, we build up to 4 pairs of GRE connections (total up to 8 tunnels) to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html#performance-benchmark>`_. 
 
   |aviatrix_multiple_gre|
 
-Step 5.2. Enable BGP ECMP feature on Aviatrix Transit Gateway
+Enabling BGP ECMP feature on Aviatrix Transit Gateway
 -------------------------------------------------------------
 
-- Navigate back to Aviatrix Controller
-
-- Go to MULTI-CLOUD TRANSIT -> Advanced Config -> Edit Transit Tab
-
-- Select the Transit Gateway that was created in the previous step
-
-- Scroll down to find the function `"BGP ECMP" <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-ecmp>`_ and enable it
+1. Navigate back to Aviatrix Controller
+2. Go to Multi-Cloud Transit > Advanced Config > Edit Transit Tab. 
+3. Select the Transit Gateway that was created in the previous step.
+4. Scroll down to `BGP ECMP <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-ecmp>`_ and enable it.
 
   |aviatrix_gre_bgp_ecmp_function|
   
-Step 5.3. Verify BGP ECMP feature on Aviatrix Controller
---------------------------------------------------------
+Verifying BGP ECMP feature on Aviatrix Controller
+----------------------------------------------------------------
 
-- Go to MULTI-CLOUD TRANSIT -> List
-
-- Select the Transit Primary Gateway that was created in the previous step
-
-- Click the button "DETAILS/DIAG"
-
-- Scroll down to the panel "Gateway Routing Table"
-
-- Click the button "Refresh"
-
-- Search for the on-prem CIDR on Destination column
-
-- Check whether there are multiple GRE tunnels with same Metric and Weight under the same route entry
+1. Go to Multi-Cloud Transit > List.
+2. Select the Transit Primary Gateway that was created in the previous step.
+3. Click **DETAILS/DIAG**.
+4. Scroll down to Gateway Routing Table.
+5. Click **Refresh**.
+6. Search for the on-prem CIDR in the Destination column.
+7. Check whether there are multiple GRE tunnels with same Metric and Weight under the same route entry.
 
   |aviatrix_gre_bgp_verify_ecmp_function|
 
-Step 5.4. Enable BGP ECMP feature on Edge Router
-------------------------------------------------
+Enabling the BGP ECMP feature on Edge Router
+-----------------------------------------------------------------
 
-- Configure "maximum-paths" with higher number of equal-cost routes in BGP settings so that BGP will install in the routing table. In this example, we configure "maximum-paths 8" to achieve high performance over multiple GRE tunnels. 
+Configure "maximum-paths" with higher number of equal-cost routes in BGP settings so that BGP will install in the routing table. In this example, we configure "maximum-paths 8" to achieve high performance over multiple GRE tunnels. 
 
   Simple Cisco IOS example::
 
@@ -474,19 +416,19 @@ Step 5.4. Enable BGP ECMP feature on Edge Router
 
     (config)#ip cef load-sharing algorithm include-ports source destination
     
-Step 5.4. Verify BGP ECMP feature on Edge Router
-------------------------------------------------
+Verifying the BGP ECMP feature on Edge Router
+-------------------------------------------------------------
 
-- Check whether BGP install equal-cost routes in the routing table by issuing the related command "show ip bgp"
+Check whether BGP install equal-cost routes in the routing table by issuing the related command "show ip bgp."
 
   |asr_gre_bgp_verify_ecmp_function|
 
-6. Ready to go!
+Ready to Go
 =================
 
 At this point, run connectivity and performance test to ensure everything is working correctly. 
 
-7. Performance Benchmark
+Performance Benchmarks
 ===========================
 
 End-to-End traffic via Aviatrix <-> Cisco ASR
