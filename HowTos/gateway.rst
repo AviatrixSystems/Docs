@@ -18,12 +18,12 @@ Launching a Gateway
 This document explains how to launch an Aviatrix Gateway from the Aviatrix Controller.
 
 Launching a Gateway
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 To launch a new gateway in your Controller, click **Gateway** > **New** on the left sidebar. To launch a gateway with OpenVPN® capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
 
 Subnet Information
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Aviatrix Gateways are launched in a public subnet in AWS, GCP, and OCI. A public subnet in AWS VPC is defined as
 a subnet whose associated route table has a default route entry that points to IGW. To learn
@@ -32,7 +32,7 @@ more about VPC and subnets, open `this link. <https://docs.aws.amazon.com/Amazon
 If you do not have a VPC/VCN with public subnet in AWS, GCP, or OCI, you can use our `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool to create a VPC with fully populated public and private subnet in each AZ.
 
 Select Gateway Size
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^6
 
 When selecting the gateway size, note the following guidelines of IPsec performance
 based on IPERF tests conducted between two gateways of the same size:
@@ -104,7 +104,7 @@ With OCI you can choose a flexible shape to modify the Oracle CPU (OCPU) and mem
    If you need IPsec performance beyond 2Gbps, refer to `Aviatrix Insane Mode. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
 Specifying a Reachable DNS Server IP Address
----------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Aviatrix gateways are launched with a default public DNS server IP address 8.8.8.8 to
 ensure the gateway has access to Cloud Service Provider public resources such as SQS for Controller and gateway communication.
@@ -112,8 +112,7 @@ If you want to change to a different DNS server, mark the **Specify a Reachable 
 to enter an alternative DNS IP address.
 
 Enabling NAT
---------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^66
 The Aviatrix Gateway performs Source NAT (SNAT) function when this option is selected. All VPC/VCN routing tables for
 private subnets in AWS, GCP, and OCI are automatically programmed with 0.0.0.0/0 points to the gateway.
 
@@ -126,24 +125,24 @@ For example, you may already have a NAT gateway configured for the VPC in AWS. T
  #. Go to the Gateway page, highlight the desired gateway, click **Edit** > scroll down to SNAT > click **Enable**.
 
 Enabling BGP
---------------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Select this option to enable the Aviatrix Spoke Gateway with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke Gateways created pre-6.6 cannot be enabled with BGP. A Spoke Gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_for information about restrictions.
 
 Allocating a New EIP in AWS
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Select this option to have the Aviatrix Gateway allocate a new EIP for the gateway from AWS. When the Aviatrix Gateway is deleted, the
 Controller will release this EIP. If this option is unchecked, the gateway will be allocated an unassociated EIP from the AWS account from which the gateway is launched.
 When the Aviatrix Gateway is deleted, the Controller will return this EIP to your AWS account without releasing it.
 
 VPN Access
------------------
+--------------------
 
 When this option is selected, the Aviatrix Gateway will used for SSL VPN termination. It supports OpenVPN® client and Aviatrix SAML client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
 
 Enabling SAML
-===================
+^^^^^^^^^^^^^^^^^^^^
 
 When SAML is enabled, a VPN client/user authenticates to an identity provider
 (IDP) directly, instead of the gateway doing it on behalf of the user.
@@ -153,7 +152,7 @@ In this case, you must use Aviatrix VPN Clients.
 Check out the `details <http://docs.aviatrix.com/HowTos/VPN_SAML.html>`_ on how to configure and use Aviatrix VPN Clients for SAML.
 
 VPN CIDR Block
-===============
+^^^^^^^^^^^^^^^^^
 
 When a VPN user connects to the VPN gateway, the user will be assigned a virtual IP address from a pool of IP addresses.
 This pool of IP addresses is defined as the `VPN <https://www.aviatrix.com/learning/glossary/cidr.php>`_ CIDR Block.
@@ -169,7 +168,7 @@ for example, 10.10.0.0/24.
 Note a /24 VPN CIDR block supports about 64 simultaneous VPN clients. This is because for each connected VPN client, VPN gateways reserves 3 virtual addresses. For larger number of clients per VPN gateway, consider making the VPN CIDR block to a /22 or /20 network. 
 
 MFA Authentication
-=====================
+^^^^^^^^^^^^^^^^^^^^^^
 
 You can select either Duo or Okta for the VPN gateway to authenticate to these two services on behalf of a VPN user.
 
@@ -181,7 +180,7 @@ To configure Okta, see `How to configure Okta. <http://docs.aviatrix.com/HowTos/
 
 
 Max Connections
-=================
+^^^^^^^^^^^^^^^^^^^^6
 
 Maximum number of active VPN users allowed to be connected to this gateway. The default is 100.
 
@@ -190,7 +189,7 @@ The OpenVPN® VPN CIDR Block allocates 4 IP addresses for each connected VPN use
 when the VPN CIDR Block is a /24 network, it supports about 60 users.
 
 Split Tunnel Mode
-==================
+^^^^^^^^^^^^^^^^^^^^^
 
 Split Tunnel Mode is enabled by default. When Split Tunnel mode is enabled, only
 traffic that is destined to the VPC/VNet CIDR where the VPN gateway is
@@ -207,7 +206,7 @@ the Cloud Service Provider (AWS/Azure/GCP/OCI).
 
 
 Additional CIDRs
-==================
+^^^^^^^^^^^^^^^^
 
 This is an optional parameter. The VPC/VNet CIDR where the VPN gateway is
 deployed is the default CIDR that VPN gateway pushes to the VPN client. Leave it blank if you do not need it.
@@ -223,7 +222,7 @@ Enter all network ranges in CIDR blocks separated by commas, as shown below:
 
 
 Nameservers (Optional) 
-==========================
+^^^^^^^^^^^^^^^^^^^^^^^^^666
 
 This is an optional parameter. Leave it blank if you do not need it.
 
@@ -232,14 +231,14 @@ a list of DNS servers to your desktop, so that a VPN user is connected, it will
 use these DNS servers to resolve domain names.
 
 Search Domains (Optional)
-==========================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is an optional parameter. Leave it blank if you do not need it.
 
 When Split Tunnel Mode is enabled, Search Domains let you specify a list of domain names that will use the Nameserver when a specific name is not in the destination.
 
 Enable ELB
-============
+^^^^^^^^^^^^^^^^^^^^^
 
 "Enable ELB" is turned on by default.
 
@@ -254,7 +253,7 @@ When the ELB option is enabled, you can launch multiple VPN gateways behind ELB,
 achieving a scale out VPN solution.
 
 ELB Name
-==========
+^^^^^^^^^^^^^^^^^^
 
 The ELB Name is generated automatically if it is left blank.
 If it is left blank and there is already a load balancer in the specified VPC/VNet, the system uses that load balancer's name.
@@ -262,7 +261,7 @@ If it is left blank and there is already a load balancer in the specified VPC/VN
 You can set the ELB name if there is no existing ELB in the specified VPC/VNet.
 
 VPN Protocol
-=============
+^^^^^^^^^^^^^^^^^^^^
 
 When the TCP checkbox is marked, the VPN gateway will accept the VPN TCP connection only.
 If the UDP checkbox is marked, only the VPN UDP connection is allowed.
@@ -271,7 +270,7 @@ For all cloud types, the VPN protocol is TCP by default if ELB is enabled.
 If the ELB is disabled, the VPN protocol is always UDP.
 
 Enable Client Certificate Sharing
-==================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This setting is disabled by default.
 
@@ -279,9 +278,9 @@ By enabling the client certificate sharing, all VPN users share one .ovpn file. 
 
 
 Enable Duplicate Connections
-============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This option was introduced in controller version 4.3. This setting controls whether users sharing the same common name can connect at the same time to the VPN Gateway.
+This option was introduced in Controller version 4.3. This setting controls whether users sharing the same common name can connect at the same time to the VPN Gateway.
 If this is disabled, when a user attempts to connect to the gateway through a different device, his existing VPN connection from the current device gets disconnected.
 
 Note that the users can still land on different VPN Gateways under a load balancer, even though the feature is enabled.
@@ -289,8 +288,8 @@ Note that the users can still land on different VPN Gateways under a load balanc
 Prior to 4.3, this setting was coupled with Client Certificate Sharing. 
 
 VPN NAT
-=======
-This features was introduced in Controller version 4.6 . This controls whether the VPN connection uses NAT (Network Address Translation) while the VPN traffic leaves the Aviatrix VPN Gateway.
+^^^^^^^^^^^^^^^^
+This feature was introduced in Controller version 4.6 . This controls whether the VPN connection uses NAT (Network Address Translation) while the VPN traffic leaves the Aviatrix VPN Gateway.
 
 VPN NAT is enabled by default. If you want to disable it, you can do so from OpenVPN > Edit Config > VPN NAT. 
 
@@ -300,7 +299,7 @@ Any peering connection to this VPN gateway would additionally require traffic fo
 If you have multiple gateways under the load balancer, you would also need to ensure that the VPN CIDR of the gateways do not overlap, so that the traffic can be routed back to the respective gateway.
 
 Enable Policy Based Routing (PBR)
-=====================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 PBR enables you to route VPN traffic to a different subnet with its default
 gateway.
@@ -313,7 +312,7 @@ PBR Default gateway.
 One use case for this feature is `Anonymous Internet Surfing <http://docs.aviatrix.com/HowTos/Anonymous_Browsing.html>`_.
 
 Enable LDAP
-============
+^^^^^^^^^^^^^^^^
 
 When LDAP authentication is enabled, the VPN gateway will act as a LDAP client
 on behalf of the VPN user to authenticate the VPN user to the LDAP server.
