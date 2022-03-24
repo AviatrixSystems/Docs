@@ -100,7 +100,7 @@ Building BGP over LAN
 
 Configure BGP over LAN on the Aviatrix Transit Gateway.
 
-1. Log in Aviatrix Controller and go to Multi-Cloud Transit > Setup > External Device tab.
+1. Log in Aviatrix Controller and go to Multi-Cloud Transit > Setup > External Connection tab.
 2. Select External Device > BGP > LAN.
 3. Enter the following information in the fields below.
   
