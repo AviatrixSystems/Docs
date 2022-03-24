@@ -12,6 +12,7 @@ What is the AWS TGW Orchestrator?
 
 .. note:: The AWS TGW Orchestrator is for AWS users only.
 
+
  1. Orchestrates VPC to VPC and on-prem to VPC connectivity via AWS Transit Gateway. 
  #. Automates AWS Resource Access Manager (RAM) for multi-account support. 
  #. Creates security boundaries between groups of VPCs to achieve network segmentation. 
