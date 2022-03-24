@@ -55,7 +55,7 @@ Make sure:
 Over a Private Network in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the underlying infrastructure is Azure Express Route, the External Device options are IPsec or LAN, as shown below. 
+When the underlying infrastructure is Azure Express Route, the external Device options are IPsec or LAN, as shown below. 
 
 |transitgw_private_azure|
 
@@ -74,7 +74,7 @@ How do I configure it?
 
 The configuration is the `External Device <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#external-device>`_ section of the Multi-Cloud Transit Network Workflow Instructions article. We assume you have already completed `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-transit-gateway>`_ and `Step 2 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#optional-enable-disable-ha-to-an-aviatrix-transit-gateway>`_. Follow the instructions below.
 
-1. Fill the parameters
+Filling the Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fill the parameters and click **OK**. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
@@ -101,17 +101,17 @@ BGP Remote AS Number           When BGP is selected, the BGP AS number the exter
 Remote Gateway IP              IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP                Optional parameter. This field is for the tunnel inside IP address of the Transit Gateway. Leave it blank.  
-Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the external device. Leave it blank. 
 Over DirectConnect (Backup)    Select this option if HA is enabled.
 BGP Remote ASN (Backup)        When BGP is selected, the remote ASN for backup should be the same as the primary remote ASN. 
 Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device.
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit Gateway. Leave it blank.  
-Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the external device. Leave it blank. 
 
 ============================   ==========
 
-2. Download the configuration
+Downloading the Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the configuration is done, a connection is created. Download the configuration file. 
@@ -120,7 +120,7 @@ At the left navigation bar, go to Site2Cloud, click on the connection you create
 
 |download_config_external|
 
-3. Configure the external device
+Configuring the External Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Steps to
@@ -141,10 +141,10 @@ Steps to
 
 Use the information provided in the configuration file to configure the on-prem device with IPsec tunnel and BGP.  
 
-4. Disconnect the external device
+Disconnecting the External Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To disconnect, go to Multi-Cloud Transit > Setup and click on the **External Device** tab. Scroll down to section 2. Disconnect AWS VGW / External Device / Azure VNG, select the Transit GW in the dropdown menu, and click **Detach**.
+To disconnect, go to Multi-Cloud Transit > Setup > **External Connection** tab. Scroll down to section 2. Disconnect AWS VGW / External Device / Azure VNG, select the Transit GW in the dropdown menu, and click **Detach**.
 
 Appendix 1: Transit Connection to Cisco ISR/ASR Over the Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
