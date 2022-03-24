@@ -38,7 +38,7 @@ Tasks carried out by an Admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. The admin creates an account admin group by logging in and navigating to Accounts > Permission Groups > **+Add New**. The admin gives the group a name, such as "account-admins."
-2. The admin gives this group permission to create Access Accounts by navigating to Accounts > Permission Groups. The admin clicks the 3 skewer dots > **Manage Permission**> **+Add New. 
+2. The admin gives this group permission to create Access Accounts by navigating to Accounts > Permission Groups. The admin selects the group in the table > **Manage Permission**> **+Add New**. 
 3. The admin selects **Accounts** in the list of functions and **OK** to confirm. 
 4. The admin creates user Bob to the account_admins group by navigating to Account Users > **+New User**. The admin enters Bob in the name field and completes the other fields. For the field RBAC Groups, the admin selects account-admins created in step 1. 
 
@@ -87,7 +87,7 @@ In this example, Alice creates a read_only user George. Alice performs the follo
 Can there be multiple admin users?
 ----------------------------------------------------------
 
-Yes. Only admin can add more admin users. An admin user has the same privilege as the login admin with full access 
+Yes. Only an admin can add more admin users. An admin user has the same privilege as the login admin with full access 
 to all pages and accounts. 
 
 In this example, an admin creates a new admin user, Jennifer. The admin performs the following steps. 
@@ -106,7 +106,7 @@ For LDAP and Duo, RBAC supports authentication only. The permissions are still v
 
 For other SAML IDPs, you can configure profile attribute associated with the SAML user for permissions and avoid having to add users on the Controller. 
 
-How do I setup SAML login for RBAC?
+How do I set up SAML login for RBAC?
 -------------------------------------------------
 
 The Aviatrix Controller login supports `SAML login. <https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html>`_ 
