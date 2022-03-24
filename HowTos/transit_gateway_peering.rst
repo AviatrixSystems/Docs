@@ -7,20 +7,15 @@
 Aviatrix Transit Gateway Encrypted Peering
 =========================================================
 
-Transit Gateway Peering connects two or more Aviatrix Transit Gateways in a partial or full mesh manner, as shown in the diagram below. The Aviatrix Transit Gateways may be deployed in AWS or Azure, where each Transit GW connects
-a group of Spoke VPC/VNets. As a result of Transit Gateway Peering, two groups of Spoke VPCs can communicate
+Transit Gateway Peering connects two or more Aviatrix Transit Gateways in a partial or full-mesh manner, as shown in the diagram below. The Aviatrix Transit Gateways may be deployed in AWS or Azure, where each Transit GW connects
+a group of Spoke VPC/VNets. As a result of Transit Gateway Peering, two groups of Spoke VPC/VNets can communicate
 with each other via the Transit Gateways. 
 
 |multi-region|
 
 The instructions are as follows. 
 
-1. Launch two Aviatrix Transit Gateways
-------------------------------------------
-
-If you have not done so, follow the instructions `here <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW. 
-
-Repeat to launch more Transit GWs. 
+1. Launch Two Aviatrix Transit Gateways. If you have not done so, follow the instructions `here <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch an Aviatrix Transit GW. Repeat to launch more Transit GWs. 
 
 Starting from Release 4.3, InsaneMode is supported on Transit Gateway Peering. Enable Transit Gateway Peering InsaneMode by launching the gateway with InsaneMode. 
 
@@ -28,12 +23,7 @@ Starting from Release 4.3, InsaneMode is supported on Transit Gateway Peering. E
 
   The Aviatrix Transit GWs are typically launched during the workflow of the TGW Orchestrator and Transit Network. If the transit cluster does not need to connect to on-prem, skip `the step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_ that connects to VGW/CloudN/External Device. 
 
-2. Establish Transit GW Peering
---------------------------------
-
-Go to Transit Network -> Transit Peering -> Add New. 
-
-Select one of each Transit Gateway and click OK. 
+2. Establish Transit GW Peering by navigating to Transit Network > Transit Peering > Add New. Select one of each Transit Gateway and click **OK**. 
 
 There are a few optional and advanced options as described below. 
 
@@ -41,7 +31,7 @@ Excluded Network CIDRs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Excluded Network CIDRs is an optional field. When the field is empty, a Transit Gateway propagates all learned routes from 
-both Spoke VPCs and on-prem. 
+both Spoke VPC/VNets and on-prem. 
 
 The use case for this field is if there are conflicting or identical CIDRs on both sides of the Transit Gateways, 
 the peering action will be 
@@ -49,11 +39,11 @@ rejected. Using the filter option prevents the overlapped CIDRs from being propa
 
 Input a list of CIDRS separated by comma. 
 
-You can edit this field after the Transit Peering took place. Go to Transit Network -> Transit Peering, highlight the peering connection.
-Click the 3 dots skewer and click Edit to modify the Excluded Network CIDR list.
+You can edit this field after the Transit Peering took place. Go to Transit Network > Transit Peering, highlight the peering connection.
+Click the 3 dots skewer and click **Edit** to modify the Excluded Network CIDR list.
 
 The diagram below illustrates how Excluded Network CIDRs can be used in a two region deployment. In this case, 10.20.0.0/16 appears on 
-both sides as VPC CIDR. To allow Transit Peering to proceed, configure on both Transit Gateways Excluded Network CIDRs with 10.20.0.0/16. 
+both sides as VPC/VNet CIDR. To allow Transit Peering to proceed, configure on both Transit Gateways Excluded Network CIDRs with 10.20.0.0/16. 
 
 |excluded_network_cidrs|
 
@@ -70,10 +60,10 @@ problem will occur.
 This feature allows you to not to advertise certain TGW hybrid attachment (DXGW and VPN) to the remote Aviatrix Transit Gateway and therefore
 the remote TGW. 
 
-In the drop down menu, highlight the TGW hybrid connections (The input box is empty if there is no such connection.), multi-select the connections. The selected connections are excluded to advertise to the remote site. 
+In the dropdown menu, highlight the TGW hybrid connections (The input box is empty if there is no such connection.), multi-select the connections. The selected connections are excluded to advertise to the remote site. 
 
-You can edit this field after the Transit Peering took place. Go to Transit Network -> Transit Peering, highlight the peering connection. 
-Click the 3 dots skewer and click Edit to modify the Excluded Connection list. 
+You can edit this field after the Transit Peering took place. Go to Transit Network > Transit Peering, highlight the peering connection. 
+Click the 3 dots skewer and click **Edit** to modify the Excluded Connection list. 
 
 The diagram below illustrate the use case for this feature. In the diagram, both on-prem connects to TGW and advertise 10.0.0.0/8.
 Transit Gateway Peering will fail because there are conflict routes. You solve the problem by configuring on both Transit Gateways to 
@@ -85,12 +75,12 @@ and Site-2 accesses Prod-3/Prod-4 and Dev-3/Dev-4 via its local regional TGW.
 Peering over Private Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This advanced option only appears and applies to when the two Multi-cloud Transit Gateways is each launched in Insane Mode 
-and each is in a different cloud type. For example, one Multi-cloud Transit Gateway in AWS and the other in Azure. 
+This advanced option only appears and applies to when the two Multi-Cloud Transit Gateways is each launched in Insane Mode 
+and each is in a different cloud type. For example, one Multi-Cloud Transit Gateway in AWS and the other in Azure. 
 
 Peering over Private Network function is an optional field. When this checkbox is checked, users are able to build Aviatrix Transit Gateway peering over multi-cloud where there is private network connectivity.
 
-One of the use cases is two Aviatrix Transit Gateways deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
+One of the use cases is two Aviatrix Transit Gateways deployed in two different public clouds where each has its private connectivity such as AWS Direct Connect and Azure ExpressRoute connecting to on-prem or a co-location. By building a Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond.
 
 For example configuration workflow, check out this doc `Aviatrix Transit Gateway Peering over Private Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
 
@@ -106,20 +96,20 @@ Single-tunnel mode
 ^^^^^^^^^^^^^^^^^^^^^
 
 This advanced option only appears and applies to when the 
-two Multi-cloud Transit Gateways is each launched in Insane Mode
-and each is in a different cloud type. For example, one Multi-cloud Transit Gateway in AWS and the other in Azure.
+two Multi-Cloud Transit Gateways is each launched in Insane Mode
+and each is in a different cloud type. For example, one Multi-Cloud Transit Gateway in AWS and the other in Azure.
 
-When this option is selected, instead of building up to 50 IPSec tunnels (as in Insane Mode) between the 
-two Multi-cloud Transit Gateways, 
+When this option is selected, instead of building up to 50 IPsec tunnels (as in Insane Mode) between the 
+two Multi-Cloud Transit Gateways, 
 only a single tunnel connection is established. One use case is if the underlying private network is a low speed 
 (up to 4Gbps) link across the two cloud types. By using the Single-Tunnel mode, you do not pay the Insane Mode 
-license charges. Note when the Multi-cloud Transit Gateways enable HA on both cloud types, the aggregate 
+license charges. Note when the Multi-Cloud Transit Gateways enable HA on both cloud types, the aggregate 
 throughput via Single-Tunnel mode can reach 4Gbps. 
 
 
 
 Default Route Propagation Behavior
--------------------------------------
+--------------------------------------------------
 
 If centralized egress is enabled by local TGW FireNet or Transit FireNet, the default route 0.0.0.0/0 is **not**
 propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
@@ -128,10 +118,10 @@ On the other hand, if on-prem advertise the default route to the Aviatrix Transi
 propagated to the remote Aviatrix Transit Gateway via Transit Peering. 
 
 
-Spoke to Spoke Peering Monitoring
+Spoke-to-Spoke Peering Monitoring
 -------------------------------------
 
-The Peering page is only used only to create and delete peered spoke to spoke connections in activemesh mode. To view the status of the connection, go to the Multi-Cloud Transit > List > Spoke page.
+The Peering page is only used only to create and delete peered spoke-to-spoke connections in ActiveMesh mode. To view the status of the connection, go to the Multi-Cloud Transit > List > Spoke page.
 
 
 .. |multi-region| image:: tgw_design_patterns_media/multi-region.png
