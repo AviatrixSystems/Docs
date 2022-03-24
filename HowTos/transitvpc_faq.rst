@@ -107,7 +107,7 @@ During resizing, traffic will be switched to the backup Transit GW if HA is enab
 How do I know which Transit GW a Spoke GW is sending traffic to?
 --------------------------------------------------------------------------------------------
 
-You can tell which Transit GW carries the network traffic from a specific Spoke VPC/VNet by selecting MULTI-CLOUD TRANSIT > BGP on the left sidebar. Select the Transit GW and click **Detail**. If the list of the Advertised Networks includes the Spoke VPC/VNet CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW.
+You can tell which Transit GW carries the network traffic from a specific Spoke VPC/VNet by selecting Multi-Cloud Transit > BGP on the left sidebar. Select the Transit GW and click **Detail**. If the list of the Advertised Networks includes the Spoke VPC/VNet CIDR, this Transit GW routes traffic from the Spoke to on-prem; if it does not, check out the backup Transit GW.
 
 How can I route VPC/VNet Egress Internet-bound traffic to on-prem to go through the corporate firewall?
 -----------------------------------------------------------------------------------------------------------------------------
@@ -126,12 +126,12 @@ On-prem routes are propagated to the VGW which in turn propagates to the Transit
 
 1. Go to Site2Cloud, select the connection you specified at Step 3 during the Transit Network Workflow. Scroll down, you will see the Learned Network. Search for a learned route by typing a specific CIDR.
 #. Go to Peering > Transitive Peering. Click the box next to Destination CIDR column for a specific Spoke VPC/VNet GW. The Learned Routes are displayed and searchable.
-#. Go to MULTI-CLOUD TRANSIT > BGP > select a Transit GW, and click **Detail**.
+#. Go to Multi-Cloud transit > BGP > select a Transit GW, and click **Detail**.
 
 How do I find out BGP information on a Transit GW?
 ------------------------------------------------------------------
 
-Go to MULTI-CLOUD TRANSIT  > BGP > Diagnostics, mark the checkbox for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug messages. Excessive debug messages reduce throughput.
+Go to Multi-Cloud Transit  > BGP > Diagnostics, mark the checkbox for Predefined Show List. A list of BGP commands will be displayed. If you turn on debug command, make sure to turn it off when debug is finished to ensure the Transit GW is not flooded with debug messages. Excessive debug messages reduce throughput.
 
 How do I delete a Spoke GW?
 ----------------------------------------
@@ -198,7 +198,7 @@ sent once when a route change event occurs, for example, when BGP routes are fla
 
 The feature is enabled by default. If you wish not to receive the alert email, you can disable it.
 
-Go to MULTI-CLOUD TRANSIT  > BGP > Configuration and find the BGP Overlapping Alert Email setting. Click on the toggle switch to change the status to **Disabled**.
+Go to Multi-Cloud Transit  > BGP > Configuration and find the BGP Overlapping Alert Email setting. Click on the toggle switch to change the status to **Disabled**.
 
 How do I summarize Spoke VPC/VNet CIDR ranges?
 -----------------------------------------------------------------
@@ -304,7 +304,7 @@ For a fun read, here is a `blog on the differences <https://www.aviatrix.com/blo
 If I already have a Transit to External Device connection using IKEv1, could I create another one using IKEv2? 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Starting from 6.3 release, Aviatrix supports the feature `Transit to External Device Using IKEv2 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#multi-cloud-transit-network>`_. The prerequisite for IKEv2 is that you need to create the first Transit to External Device connection with IKEv2 enabled. If your current Transit gateway already has a connection using IKEv1 either is created by attaching spoke gateway or is built in MULTI-CLOUD TRANSIT step 3, you need to delete it first before creating the Transit to External Device connection with IKEv2. 
+Starting from 6.3 release, Aviatrix supports the feature `Transit to External Device Using IKEv2 <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html#multi-cloud-transit-network>`_. The prerequisite for IKEv2 is that you need to create the first Transit to External Device connection with IKEv2 enabled. If your current Transit gateway already has a connection using IKEv1 either is created by attaching the Spoke Gateway or is built in Multi-Cloud Transit > Attach/Detach tab, you need to delete it first before creating the Transit to External Device connection with IKEv2. 
 
 How do I troubleshoot a Transit to External Device connection with IKEv2 issue?
 -------------------------------------------------------------------------------------------------
