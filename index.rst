@@ -175,7 +175,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: CloudWAN
 
-   HowTos/cloud_wan_faq
+   HowTos/cloudn_faq
    HowTos/cloud_wan_workflow
 
 .. _Security:
