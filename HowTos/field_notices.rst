@@ -11,6 +11,10 @@ Field Notices
 Field Notice 0037 (2022/03/24)
 --------------------------------
 
+Field Notice 0037 (2022/03/25)
+--------------------------------
+
+
 **High Severity Bug Fix: AVX-18796**
 
 
