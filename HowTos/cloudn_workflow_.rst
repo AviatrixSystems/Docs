@@ -7,7 +7,7 @@
 Aviatrix CloudN Workflow
 ============================================================
 
-To learn CloudN, check out `CloudN FAQ. <https://docs.aviatrix.com/HowTos/cloud_wan_faq.html>`_
+To learn CloudN, see the `CloudN FAQ. <https://docs.aviatrix.com/HowTos/cloudn_faq.html>`_
 
 Registering a Branch Router
 ---------------------------------------
