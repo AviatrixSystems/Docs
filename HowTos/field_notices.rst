@@ -8,6 +8,66 @@ Field Notices
  
 
 
+Field Notice 0037 (2022/03/24)
+--------------------------------
+
+**High Severity Bug Fix: AVX-18796**
+
+
+AVX-18796 fixes a corner case issue with Controller to Gateway control channel and has been addressed recently. The recommended builds with the fix in 6.4, 6.5 and 6.6 releases are 6.4.3015, 6.5.3012, 6.6.5413 or later.  Please refer to `Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ for more information on AVX-18796.  
+
+
+We have published a couple of software patches to help identify if your Controller is at risk and address it: 
+
+ * **Detect AVX-18796**: This patch can be run anytime, and a **maintenance window is not required** as no configuration changes are made and there will be no impact to either the control plane or the data plane on the Controller and the Gateways. The patch will generate an email to the Controller’s admin email and provide a recommendation on next steps. 
+ * **AVX-18796: Check the SSH connectivity to all gateways**: This patch validates the state of the connection between the Controller and the Gateway. This patch can be run anytime, a **maintenance window is not required**. We recommend that you run this before applying the next patch to fix the issue. 
+ * **AVX-18796: Sanitize certificate state on all gateways**: This software patch will extend the lifetime of certs to give you time to upgrade to address AVX-18796. This patch is **recommended to be run in a maintenance window**. This patch should only be run when "AVX-18796-Detect" software patch reports this message "Your network is being affected by a known issue AVX-18796" AND it does not recommend a software upgrade. The patch will generate an email to the Controller’s admin email. It must be followed by an upgrade to a build which has the fix for AVX-18796. 
+
+
+When you apply any of the above patches, you will see a popup message like the one shown below – please ignore it and click on “OK”. Depending on the number of Gateways in your deployment, each of these patches can take a while to complete and for an email report to be sent out. 
+
+|imagefn37|
+
+Aviatrix recommends the following be done, as soon as possible, to avoid any possibility of an outage due to this issue:
+
+ - Check the Controller’s admin email address at "Settings/Controller/Email/ChangeAdminEmail" and make sure that it is correct. Please update this address if needed. 
+ - First, do a backup on your Controller in "Controller/Settings/Maintenance/Backup&Restore/Backup Now"
+ - Make sure that **all your Gateways are in Up/Green state**
+ - Go to "Controller/Settings/Maintenance/Security Patches" and click on "Update Available Patches" to see the three patches listed above. 
+ - Apply **"Detect AVX-18796"** patch first. Check your email for a report.
+
+   - AVX_SW-PATCH_AVX-18796-FIXED: If the report indicates that your system is NOT impacted, no further actions are needed. We recommend that you stay on the latest supported releases 
+   - AVX_SW-PATCH_BEFORE-DANGER-ZONE: If the report informs you that your system IS affected and directs you to upgrade your Controller and Gateways, please proceed to the "Instructions for Upgrade" section below and **complete your upgrade, before the "due date"** as mentioned in the report 
+   - AVX_SW-PATCH_IN-DANGER-ZONE: If the report informs you that your system IS impacted and asks you to follow the instructions in the Field Notice, please do the following: 
+
+      - Please apply **"AVX-18796: Check the SSH connectivity to all gateways"**: If it succeeds, proceed to next step, else reach out to Aviatrix Support 
+      - Please apply **"AVX-18796: Sanitize certificate state on all gateways"** during a maintenance window. If it succeeds, please proceed to the "Instructions for Upgrade" section below and complete an upgrade on your Controller and Gateways and run **"Detect AVX-18796"** software patch again, to validate your network. If it fails, or if you have any questions or need assistance, please open a ticket with Aviatrix Support. 
+   - AVX_SW-PATCH_INACCESSIBLE-GW: If the report informs you that some of the Gateways are inaccessible, please try to fix them and apply this patch again. Reach out to Aviatrix Support if you are unable to fix your Gateways  
+   - AVX_SW-PATCH_UNEXPECTED-STATE: If the report indicates an error, please follow the directions in the email report and upload your Controller tracelogs and reach out to Aviatrix Support 
+   - AVX_SW-PATCH_INAPPLICABLE: If the report says that no additional action is needed. The patch is not applicable to your controller version. We recommend that you stay on the latest supported releases 
+ - Take a backup again at "Controller/Settings/Maintenance/Backup&Restore/Backup Now"
+
+
+
+**Instructions for Upgrade**
+
+ - Take a backup at "Controller/Settings/Maintenance/Backup&Restore/Backup Now"
+ - We request you to upgrade your Controller and Gateways to the latest build in the release you are running  
+     - Please go through the `release notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_
+     - Please review the `field notices <https://docs.aviatrix.com/HowTos/field_notices.html>`_
+     - Please go through the relevant upgrade instructions: `Releases 6.4 and earlier <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ or `Releases 6.5 and later <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_
+     - **Make sure that all Gateways are in “Up/Green” state**
+     - **PLEASE DO NOT upgrade, unless “Settings/Upgrade/Dry Run” is successfully completed.** If “Dry Run” fails, please address the issue or reach out to Aviatrix Support 
+     - Please upgrade to the latest build in the current release by entering the release that the Controller is currently running at “Settings/Upgrade/TargetReleaseVersion”. _(For example, if your Controller is running 6.4.3008, please enter “6.4” for “Settings/Upgrade/TargetReleaseVersion”)_
+     - Take a backup again 
+     - Please apply **"Detect AVX-18796"** software patch again to confirm that your network is free of AVX-18796 
+ 
+If you run into any issues during upgrade, you can reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com  
+
+Please subscribe to the Security Alerts mailing list at securityalerts@aviatrix.com to get notified earlier on any future vulnerabilities. To subscribe, send an email to securityalerts@aviatrix.com with "Subscribe" in subject line. 
+
+
+
 Field Notice 0036 (2022/01/11)
 --------------------------------
 
@@ -705,6 +765,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :width: 600
    
 .. |imagefn14| image:: field_notices_media/fn14.png 
+   :width: 600
+
+.. |imagefn37| image:: field_notices_media/fn37.png 
    :width: 600
    
 .. disqus::
