@@ -39,12 +39,12 @@ communicate with not yet migrated VPCs and also to on-prem.
 
 
 1. `Launch a new AWS Transit Gateway <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-an-aws-tgw>`_.
-2. If you have plans for custom security domains, create new security domains <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-a-new-security-domain>`_ to create them. Then, `build your domain connection policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#building-your-domain-connection-policies>`_. If you do not intend to build custom security domains, skip this section. 
+2. If you have plans for custom security domains, `create new security domains <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-a-new-security-domain>`_. Then, `build your domain connection policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#building-your-domain-connection-policies>`_. If you do not intend to build custom security domains, skip this section. 
 3. `Launch an Aviatrix Transit GW and enable HA in the Transit Hub VPC <https://docs.aviatrix.com/HowTos/tgw_plan.html#setting-up-an-aviatrix-transit-gw>`_. As a best practice, create a new Transit Hub VPC to deploy the Aviatrix Transit GW. 
 
 .. Note::
 
-Make sure you enable `ActiveMesh Mode <https://docs.aviatrix.com/HowTos/gateway.html?#activemesh-mode>`_. This document 
+  Make sure you enable `ActiveMesh Mode <https://docs.aviatrix.com/HowTos/gateway.html?#activemesh-mode>`_. This document 
 is written for Aviatrix Transit GW with ActiveMesh mode enabled.  
 
 ..
@@ -61,7 +61,7 @@ Creating TGW VPN Attachment
 |tgw_vpn_config|
 
 4. After the attachment is created, go to Site-to-Site VPN Connections and click **Download Configuration**. Make sure you select 
-Vendor "**Generic**" and download the configuration text file.  
+Vendor **Generic** and download the configuration text file.  
 
 
 Creating VPN on Aviatrix Transit Gateway
@@ -70,8 +70,8 @@ Creating VPN on Aviatrix Transit Gateway
 This step is to create the other end of the VPN tunnel that terminates on the Aviatrix Transit GW. 
 
 1. Log in to the Aviatrix Controller. 
-2. Navigate to Multi-Cloud Transit > Setup > External Connection tab. 
-3. Select External Device and fill in the parameters from the downloaded configuration text file as shown below, where 
+2. Navigate to Multi-Cloud Transit > Setup > External Connection tab.
+3. Select **External Device** and fill in the parameters from the downloaded configuration text file as shown below, where 
 the right side shows the screen capture of the AWS VPN configuration text file. 
 
 |migrate_tgw_config_vpn|
