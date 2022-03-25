@@ -22,7 +22,7 @@ Field Notice 0037 (2022/03/25)
 AVX-18796 fixes a corner case issue with Controller to Gateway control channel and has been addressed recently. The recommended builds with the fix in 6.4, 6.5 and 6.6 releases are 6.4.3015, 6.5.3012, 6.6.5413 or later.  Please refer to `Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ for more information on AVX-18796.  
 
 
-We have published a couple of software patches to help identify if your Controller is at risk and address it: 
+We have published the following software patches to help identify if your Controller is at risk and address it: 
 
  * **Detect AVX-18796**: This patch can be run anytime, and a **maintenance window is not required** as no configuration changes are made and there will be no impact to either the control plane or the data plane on the Controller and the Gateways. The patch will generate an email to the Controller’s admin email and provide a recommendation on next steps. 
  * **AVX-18796: Check the SSH connectivity to all gateways**: This patch validates the state of the connection between the Controller and the Gateway. This patch can be run anytime, a **maintenance window is not required**. We recommend that you run this before applying the next patch to fix the issue. 
