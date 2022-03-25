@@ -169,14 +169,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_Barracuda.rst
    HowTos/firewall_network_design_patterns
 
-.. _Cloud WAN:
+.. _CloudN:
 
 .. toctree::
    :maxdepth: 1
    :caption: CloudWAN
 
    HowTos/cloud_wan_faq
-   HowTos/cloud_wan_workflow
+   HowTos/cloudn_workflow
 
 .. _Security:
 
