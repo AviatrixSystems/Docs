@@ -768,6 +768,6 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :width: 600
 
 .. |imagefn37| image:: field_notices_media/fn37.png 
-   :width: 600
+   :width: 400
    
 .. disqus::
