@@ -19,7 +19,7 @@ Field Notice 0037 (2022/03/25)
 **High Severity Bug Fix: AVX-18796**
 
 
-AVX-18796 fixes a corner case issue with Controller to Gateway control channel and has been addressed recently. The recommended builds with the fix in 6.4, 6.5 and 6.6 releases are 6.4.3015, 6.5.3012, 6.6.5413 or later.  Please refer to `Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ for more information on AVX-18796.  
+AVX-18796 fixes an issue with Controller to Gateway control channel and has been addressed recently. The recommended builds with the fix in 6.4, 6.5 and 6.6 releases are 6.4.3015, 6.5.3012, 6.6.5413 or later.  Please refer to `Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ for more information on AVX-18796.  
 
 
 We have published the following software patches to help identify if your Controller is at risk and address it: 
