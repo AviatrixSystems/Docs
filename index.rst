@@ -176,7 +176,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: CloudN
 
    HowTos/cloudn_faq
-   HowTos/Cloudn_workflow
+   HowTos/cloudn_workflow_
 
 .. _Security:
 
