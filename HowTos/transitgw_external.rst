@@ -25,7 +25,7 @@ What are the use cases for connecting to an external router?
 
  - **Azure Transit Network** This feature allows an Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
  
- - **High Performance with on-prem** By using GRE tunneling protocol, Aviatrix Multi-cloud Transit Gateway `builds multiple GRE tunnels to on-prem routers <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_ to achieve 10Gbps throughput. 
+ - **High Performance with on-prem** By using GRE tunneling protocol, Aviatrix Multi-Cloud Transit Gateway `builds multiple GRE tunnels to on-prem routers <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_ to achieve 10Gbps throughput. 
 
  - **Integrate with SD-WAN gateways deployed in the cloud** BGP over LAN as part of the External Device option provides an efficient mechanism to connect to SD-WAN cloud gateways by interoperating with them over LAN in the same VPC/VNet while exchanging routes dynamically via BGP. 
 
@@ -35,9 +35,9 @@ What are the use cases for connecting to an external router?
 How does it work? 
 -----------------------------
 
-The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPsec tunnel, GRE tunnel or direct Ethernet to the router for packet forwarding. For IPsec tunneling, static routing option is also supported. 
+The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPsec tunnel, GRE tunnel, or direct Ethernet to the router for packet forwarding. For IPsec tunneling, static routing option is also supported. 
 
-The mechanism works for AWS Direct Connect, Azure Express Route, or the Internet. 
+The mechanism works for AWS Direct Connect, Azure ExpressRoute, or the Internet. 
 
 Over Private Network in AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ The configuration is the `External Device <https://docs.aviatrix.com/HowTos/tran
 Filling the Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fill the parameters and click **OK**. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
+Fill the parameters using the fields below and click **OK**. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
 
 ============================   ==========
 **Setting**                    **Value**
@@ -96,7 +96,7 @@ Primary Aviatrix Gateway          The Transit GW you created in `Step 1 <https:/
 Algorithms                     Optional parameters. Leave it unselected if you don't know.
 IKEv2                          Select the option to connect to the remote site using IKEv2 protocol.
 Enable Remote Gateway HA       Select HA if there are two external devices. 
-Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPsec run over private IP addresses.
+Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure ExpressRoute. See the "How does it work" section for more details. When this option is selected, BGP and IPsec run over private IP addresses.
 BGP Remote AS Number           When BGP is selected, the BGP AS number the external device will use to exchange routes Aviatrix Transit GW.
 Remote Gateway IP              IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
@@ -126,17 +126,11 @@ Configuring the External Device
 Steps to
 
 1. `Configure Cisco Router <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_CiscoRouter.html>`_
-
 2. `Configure Cisco ASA <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_CiscoASA.html>`_
-
 3. `Configure PaloAlto <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_PaloAlto.html>`_
-
 4. `Configure FortiGate <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_FortiGate.html>`_
-
 5. `Configure JuniperSRX <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_JuniperSRX.html>`_
-
 6. `Configure pfSense <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_pfSense.html>`_
-
 
 
 Use the information provided in the configuration file to configure the on-prem device with IPsec tunnel and BGP.  
