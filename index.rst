@@ -16,7 +16,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Transit Gateway Orchestrator`
 * :ref:`Firewall Network`
-* :ref:`Cloud WAN`
+* :ref:`CloudN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`Copilot`
@@ -173,10 +173,10 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: CloudWAN
+   :caption: CloudN
 
-   HowTos/cloud_wan_faq
-   HowTos/cloudn_workflow
+   HowTos/cloudn_faq
+   HowTos/Cloudn_workflow
 
 .. _Security:
 
