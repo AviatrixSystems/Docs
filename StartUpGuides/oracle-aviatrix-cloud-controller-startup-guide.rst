@@ -1,5 +1,6 @@
-﻿
-
+﻿.. meta::
+    :description: Setting up OCI with the Aviatrix Controller
+    :keywords: Aviatrix, AWS, OCI, Oracle, Oracle Cloud Infrastructure, Oracle Gov, onboarding
 
 ===============================================
 Oracle Cloud Infrastructure (OCI) Startup Guide
@@ -93,7 +94,36 @@ Follow the `onboarding instructions <https://docs.aviatrix.com/HowTos/oracle-avi
 **Note**: You only need to create a single Aviatrix account that corresponds to many OCI, AWS, Azure and GCloud account credentials. This is a multi-cloud platform.
 
 Congratulations on finishing launching your Aviatrix networking platform. Please take a look at our `Documentation website <https://docs.aviatrix.com/>`_.
-Enjoy!
+
+OCI Gov (oc2) Support
+=====================
+Aviatrix provides support in OCI Gov (oc2) for customers interested in running workloads in this environment. See `Oracle Cloud Infrastructure US Government Cloud with FedRAMP Authorization <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/govfedramp.htm>`_. 
+
+OCI Gov (oc2) is a separate operating realm comprised of two regions: 
+
+* us-langley-1 (Ashburn) 
+* us-luke-1 (Phoenix)  
+
+Initial OCI Gov support is tailored for customers interested in multi-cloud transit patterns. In future releases, if there is demand, Aviatrix will evaluate adding additional functionality. 
+
+FireNet is not supported in initial release. 
+
+Onboarding OCI Gov Accounts 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You need to subscribe to the Aviatrix image from OCI Marketplace in the same region and compartment used to onboard the OCI Gov account in the OCI Gov tenancy to your Aviatrix Controller. 
+
+.. Note:: 
+
+If you have an OCI Gov tenancy, the workflow for onboarding OCI Gov accounts is identical to commercial OCI. 
+
+.. Important::
+
+There are some limitations to using OCI Commercial (oc1) and OCI Gov (oc2) gateways in the same network. 
+
+OCI Gov and OCI Commercial have different regions, separate accounts, and separate compartments; they are completely isolated from each other. Therefore, you should treat them as two separate clouds. 
+
+HPE peering between OCI Commercial and OCI Gov gateways is not supported because oc2 and oc1 are two completely different environments and there is no native private connectivity between oc2 and oc1. 
 
 
 .. |inst_launch| image:: OCIAviatrixCloudControllerStartupGuide_media/inst_launch.png
@@ -107,4 +137,4 @@ Enjoy!
 .. |startup_first_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_first_login.png
 .. |startup_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_login.png
 
-
+.. disqus::
