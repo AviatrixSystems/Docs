@@ -28,7 +28,7 @@ See `this document <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.htm
 How do I configure encrypted peering?
 ---------------------------------------
 
-1. Gateway > **+New Gateway** in one existing VPC/VNet. VPN access may be disabled.
+1. Navigate to Gateway > **+New Gateway** in one existing VPC/VNet. VPN access may be disabled.
 2. Repeat Step 1 with a different VPC ID or VNet Name.
 3. At Peering > Encrypted Peering > **+New Peering**. Select the two gateway names and click **OK**.
 
