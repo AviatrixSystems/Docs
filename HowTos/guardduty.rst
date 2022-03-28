@@ -9,32 +9,32 @@
 
 The Aviatrix Controller integrates with `Amazon GuardDuty <https://aws.amazon.com/guardduty/>`__ to provide you the IDS protection on a per account and region basis. 
 
-Amazon GuardDuty continuosly monitors an account's AWS environment and reports findings. 
-GuardDuty sifts through CloudTrail logs, VPC Flow logs and DNS logs to assess risk and generate findings. To learn more about GuardDuty, read `Amazon GuardDuty FAQ <https://aws.amazon.com/guardduty/faqs/>`__.
+Amazon GuardDuty continuously monitors an account's AWS environment and reports findings. 
+GuardDuty sifts through CloudTrail logs, VPC Flow logs, and DNS logs to assess risk and generate findings. To learn more about GuardDuty, read `Amazon GuardDuty FAQ <https://aws.amazon.com/guardduty/faqs/>`__.
 
 .. note::
-   While there are no additional Aviatrix charges to use this feature, there are AWS charges associated with using Amazon GuardDuty.  For more information, see `Amazon GuradDuty Pricing <https://aws.amazon.com/guardduty/pricing/>`__.
+   While there are no additional Aviatrix charges to use this feature, there are AWS charges associated with using Amazon GuardDuty.  For more information, see `Amazon GuardDuty Pricing <https://aws.amazon.com/guardduty/pricing/>`__.
 
 Configuration
---------------
+-----------------------
 
-To enable GuardDuty Integration, login to Aviatrix Controller and follow these steps:
+To enable GuardDuty Integration, log in to the Aviatrix Controller and follow these steps:
 
 .. note::
 
    Additional permissions must be granted in the **aviatrix-app-policy** IAM policy for each account where this feature is enabled.  You may need to `update IAM policies <iam_policies.html>`__ prior to enabling this feature.
 
 
-#. Go to **Security** > **AWS GuardDuty**
-#. Click **+ New**
-#. Select the **Account Name** of the AWS account where you would like to enable GuardDuty integration
-#. Select the **AWS Region**
-#. Click **Enable**
+#. Go to **Security** > **AWS GuardDuty**.
+#. Click **+ New**.
+#. Select the **Account Name** of the AWS account where you would like to enable GuardDuty integration.
+#. Select the **AWS Region**.
+#. Click **Enable**.
 
 |guardduty_config|
    
 .. note::
-   If you have already enabled GuardDuty on AWS Console, the Controller will detect, pull the information and proceed.  
+   If you have already enabled GuardDuty on AWS Console, the Controller will detect, pull the information, and proceed.  
 
 Integration and Enforcements
 -------------------------------
@@ -50,9 +50,9 @@ as listed below.
 |public_subnet_filter| 
 
 Polling Time
--------------
+---------------------
 
-Go to Security -> AWS GuardDuty -> Change Scanning Interval. Select a time and click Apply. 
+Go to Security > AWS GuardDuty > Change Scanning Interval. Select a time and click **Apply**. 
 
 
 
