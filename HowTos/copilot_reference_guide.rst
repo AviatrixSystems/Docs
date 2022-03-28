@@ -746,6 +746,25 @@ To enable ThreatGuard alerts:
 6. (Optional) Verify that ThreatGuard alerts are enabled: A) From the sidebar, click Notifications. B) In the Configured Alerts list, locate the entry with the name **ThreatGuard Alert** that has the condition **When Threat IP Detected**. This entry validates that alerts are enabled.
 7. (Optional) Enable ThreatGuard blocking. After alerts are enabled, you can opt to enable ThreatGuard blocking. See Enable ThreatGuard Blocking for instructions. When ThreatGuard blocking is enabled, Aviatrix Controller pushes down firewall policies to block threat-IP associated traffic as soon as it is detected.
 
+About ThreatGuard Firewall Rules
+--------------------------------
+
+ThreatGuard firewall rules are stateful firewall rules that are applied to Aviatrix gateways to block traffic for threats detected by the ThreatIQ with ThreatGuard feature. Threats are either IP addresses from the threat-IP source that Aviatrix Cloud Network Platform communicates with or from your custom ThreatIQ IP List. For information about ThreatIQ, see Working with ThreatIQ.
+
+Aviatrix CoPilot scans flow records for threats. When ThreatGuard blocking is enabled, when CoPilot detects a threat IP in a traffic flow, it calls the controller with the firewall rules to add. The controller instantiates the ThreatGuard firewall rules on all gateways that are within that flow — all gateways within the VPC/VNET — to immediately block the threat-IP associated traffic.
+
+By default, when ThreatGuard blocking is enabled, blocking occurs in all VPCs/VNETs. When configuring ThreatGuard blocking, you have the option to exclude any VPC/VNET in your network from ThreatGuard blocking.
+
+If a threat IP is removed from the database of the threat-IP source or from your custom ThreatIQ IP List, the controller automatically removes the ThreatGuard firewall rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the ThreatGuard firewall rules for that specific threat IP remain enforced.
+
+**Important:** If you disable ThreatGuard blocking, the action removes all existing ThreatGuard firewall rules instantiated by Aviatrix Controller for all threats (all threat IPs) detected up to that point.
+
+When a ThreatGuard firewall rule is newly applied on a gateway that has existing rules applied, note the following:
+
+-   The ThreatGuard firewall-rule drop policies are in addition to the existing firewall policies applied to the same gateways.
+-   By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule.
+-   Firewall rules are followed in order by the first matching condition. The rule that applies first is the action taken and no subsequent rules are used.
+
 Enable ThreatGuard Blocking 
 ---------------------------
 
@@ -791,7 +810,87 @@ To add a custom ThreatIQ IP list:
 
     To delete an IP address from the list, click the trash icon. The IP address is removed from the database of known malicious hosts used by ThreatIQ with ThreatGuard. If ThreatGuard blocking has been applied for this threat IP, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked.
 
+Threats View Properties
+-----------------------
 
+Descriptions of the properties in the CoPilot ThreatIQ Threats view listed in alphabetical order:
+
+-   **All Threats (Total)**
+
+    Since ThreatIQ was turned on, the number of times total an action or event was detected that was correlated with any of the unique threat IPs.
+
+-   **Start Time and End Time**
+
+    (Start Time) Date and time from which you want to view what malicious IPs were occurring in the fabric of your Aviatrix transit network.
+
+    (End Time) Date and time up to which you want to view what malicious IPs were occurring in the fabric of your Aviatrix transit network.
+
+-   **Threat Classifications**
+
+    Of the number of threats in the time period specified (by Start Time and End Time), what number of them is in a specific threat classification.
+
+-   **Threat Count**
+
+    The number of times the unique Threat IPs have been detected across your Aviatrix transit network within the time period specified (by Start Time and End Time).
+
+-   **Threat Details**
+
+    The Threat Details dialog provides a network topology diagram highlighting the location of the compromised host in your network, the flow data and overall netflow, and a summary of the threat severity as defined by the threat-IP source.
+
+-   **Threat Severity**
+
+    Of the number of threats in the time period specified (by Start Time and End Time), what number of them is in the Major threat severity category and Medium (Audit) threat severity category.
+
+-   **Threats Over Time**
+
+    Over the time period specified (by Start and End Time), a graph showing the number of threats that were detected. Spikes in the graph reflect days when more threats were detected.
+
+-   **Total Threats Over Time**
+
+    Over the time period specified (by Start and End Time), a graph showing the total count of threats. The count accumulates as you see more threats over time in that time period.
+
+-   Unique Threat IPs
+
+    The number of unique threat IPs that were detected across your Aviatrix transit network within the time period specified (by the Start Time and End Time). These are malicious IP addresses defined by a well known threat-IP source.
+
+ThreatGuard View Properties
+---------------------------
+
+Descriptions of the properties in the CoPilot ThreatIQ ThreatGuard view listed in alphabetical order:
+
+-   **Blocked Threat IPs**
+
+    The number of unique threat IPs that traffic was blocked for.
+
+-   **Block Traffic**
+
+    Enable Aviatrix Gateways to block traffic that is associated with a threat IP.
+
+-   **Firewall Rules Per Gateway**
+
+    A pie chart showing the percentage of rules that are instantiated on each Aviatrix gateway.
+
+-   **Gateways**
+
+    The number of Aviatrix gateways that have instantiated firewall rules to block threat IP traffic.
+
+-   **Rules**
+
+    The number of firewall rules that were instantiated to block threat IP traffic.
+
+-   **Send Alert**
+
+    Enable CoPilot to send alert notifications (to one or more email/Webhook systems) when traffic that is associated with a threat IP is detected.
+
+-   **Threats Blocked Per Gateway**
+
+    A pie chart showing the percentage of threats that are blocked on each Aviatrix gateway.
+
+-   **View Rules dialog**
+
+    The View Rules dialog shows the ThreatGuard firewall rules that are applied on Aviatrix gateways.
+
+ 
 Working with Reports
 =====================
 
