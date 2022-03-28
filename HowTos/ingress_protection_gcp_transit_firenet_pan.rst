@@ -184,7 +184,7 @@ Initiate traffic from the internet towards you application hosted in the spoke V
 .. |gcp_create_lb_5| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_5.png
    :scale: 50% 
 
-.. |gcp_creae_lb_6| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_6.png
+.. |gcp_create_lb_6| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_6.png
    :scale: 50% 
 
 .. |gcp_fwrule_ingress| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress.png
