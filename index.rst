@@ -24,14 +24,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Security`
 * :ref:`UsefulTools`
 * :ref:`Settings`
-* :ref:`Downloads`
-* :ref:`Release Notes`
-* :ref:`Security Updates`
-* :ref:`Field Notices`
-* :ref:`Tech Notes`
-* :ref:`Good To Know`
-* :ref:`Support Center`
-
+c
 
 .. _Getting Started:
 
@@ -361,7 +354,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/PSIRT_Advisories
    HowTos/Security_Patches
 
-.. _Field Notes:
+.. _Field Notices:
 
 .. toctree::
    :maxdepth: 1
