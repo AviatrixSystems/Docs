@@ -165,6 +165,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_FortiGateAzure
    HowTos/fortigate_bootstrap_example
    HowTos/fortigate_bootstrap_example_azure
+   HowTos/config_FortiGateGCP
    HowTos/config_CheckPointVM
    HowTos/config_CheckPointAzure
    HowTos/checkpoint_bootstrap_azure

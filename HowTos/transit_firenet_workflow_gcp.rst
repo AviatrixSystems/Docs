@@ -16,82 +16,86 @@ If you want to deploy firewall networks in AWS Transit Gateway (TGW) environment
 
 In this example, Transit VPC with Aviatrix Gateways is deployed, and two Spoke Gateways (DEV and PROD) are attached.
 
-A firewall of supported vendors (Checkpoint, Palo Alto Networks and Fortinet etc.) will be deployed within the Transit VPC. See the diagram below for more details.
+A firewall of supported vendors (Checkpoint, Palo Alto Networks, Fortinet etc.) will be deployed within the Transit VPC. See the diagram below for more details.
 
-Once the infrastructure is in place the policy to inspect the east-west and north-south traffic will be created.
+Once the infrastructure is in place the policy to inspect the east-west and north-south traffic is created.
 
 
 |avx_tr_firenet_topology|
 
 
-Step 1 : Create VPCs
+Step 1 : Creating VPCs
 ***************************
 
-VPCs can be created manually on GCP or directly from Aviatrix Controller.
+VPCs can be created manually on GCP or directly from the Aviatrix Controller.
 
 See `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for guidelines on how to use the Aviatrix Controller to create VPCs.
 
 1.	Login to the Aviatrix Controller with username and password.
-#.	Navigate to **Useful Tools -> Create A VPC**
-#.	Add one VPC for Transit FireNet Gateway and provide **Aviatrix FireNet VPC Subnet** as shown below.
+#.	Navigate to **Useful Tools -> Create A VPC**.
+#.	Add one VPC for the. Transit FireNet Gateway and provide **Aviatrix FireNet VPC Subnet** as shown below.
 #.  Add three more VPCs as shown in Topology i.e Egress VPC, LAN VPC and Management VPC.
 #.  Create two more VPCs for Spoke Gateways.
 
 |create_vpc|
 
-Step 2: Deploy the Transit Aviatrix Gateway
+Step 2: Deploying the Transit Aviatrix Gateway
 ***************************************************
 
-Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
+The Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 
 Procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #1 Launch an Aviatrix Transit Gateway**
-#.  Select the Cloud Type **Gcloud**
-#.  Select VPC ID **Transit FireNet VPC**
-#.	Choose instance size **n1-standard-1**
-#.	Enable **ActiveMesh Mode (Mandatory)**
-#.  Check **Enable Transit FireNet Function** checkbox and provide LAN VPC ID **Transit FireNet LAN VPC**
-#.	Enable InsaneMode for higher throughputs (optional)
-#.  Choose correct Account, Public Subnet and click **Create**
-#.	Enable Transit Gateway HA by navigating to **MULTI-CLOUD TRANSIT -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway**
+1.	Navigate to **MULTI-CLOUD TRANSIT > Setup > #1 Launch an Aviatrix Transit Gateway**.
+#.  Select the Gcloud **Cloud Type**.
+#.	Enter an appropriate **Gateway Name**.
+#.	Select the **Access Account Name**.
+#.  Select the Transit FireNet **VPC ID**.
+#.	Select the appropriate **Public Subnet**.
+#.	Select the appropriate **Zone**.
+#.	Select the 'n1-standard-1' **Gateway Size**.
+#.	Enable **Insane Mode Encryption** for higher throughputs (optional).
+#.	Select **Enable ActiveMesh Mode**. (Mandatory)
+#.  Select **Enable Transit FireNet Function**.
+#.  Click **CREATE**.
+#.	If you want to enable High Availability for an Aviatrix Transit Gateway (optional), navigate to **Enable HA to an Aviatrix Transit Gateway** and select the appropriate **Aviatrix Transit Gateway** and **HA Gateway Subnet** and click **Enable**. 
 
-Please see an example below for Transit FireNet GW:
+The below example shows Transit FireNet GW:
 
 |tr_firenet_gw|
 
-Step 3: Deploy Spoke Gateways
+Step 3: Deploying Spoke Gateways
 *************************************
 
 Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #4 Launch an Aviatrix Spoke Gateway**
-#.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs using defaults while choose correct Account and VPC info
-#.	Choose the Public Subnet
-#.	Enable Spoke Gateway HA by navigating to **MULTI-CLOUD TRANSIT -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW**
+1.	Navigate to **MULTI-CLOUD TRANSIT > Setup > #4 Launch an Aviatrix Spoke Gateway**.
+#.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs with the appropriate Account and VPC information.
+#.	Choose the Public Subnet.
+#.	Enable Spoke Gateway HA by navigating to **MULTI-CLOUD TRANSIT > Setup > #5 (Optional) Enable/Disable HA at Spoke GW**.
 
 |launch_spk_gw|
 
-Step 4: Attach Spoke Gateways to Transit Network
+Step 4: Attaching Spoke Gateways to Transit Network
 *******************************************************
 
 The transit and spoke gateways are now deployed. To connect them:
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #6a Attach Spoke Gateway to Transit Network**
-#.	Select one spoke at a time and attach to the Transit Gateway.
+1.	Navigate to **MULTI-CLOUD TRANSIT > Setup > #6a Attach Spoke Gateway to Transit Network**.
+#.	Select one spoke gateway at a time and attach it to the Transit Gateway.
 
 |attach_spk_trgw|
 
 .. note::
- Although the Transit Gateway is now attached to the Spoke Gateways, it will not route traffic between Spoke Gateways.
+ Although the Transit Gateway is now attached to the Spoke Gateways, it will not route traffic between the Spoke Gateways.
 
-Step 5: Enable Connected Transit
+Step 5: Enabling Connected Transit
 **************************************
 
 By default, spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit:
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Advanced Config**, select the right Transit Gateway and enable **“Connected Transit”**
+1.	Navigate to **MULTI-CLOUD TRANSIT > Advanced Config**, select the appropriate Transit Gateway and enable **“Connected Transit”**.
 
 |connected_transit|
 
@@ -102,12 +106,12 @@ Transit and Spoke Gateways have now been deployed. You must now deploy and enabl
 
 To enable the firewall function and configure the FireNet policy:
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #1 Enable Transit FireNet on Aviatrix Transit Gateway**
-#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**
+1.	Navigate to **MULTI-CLOUD TRANSIT > Transit FireNet > #1 Enable Transit FireNet on Aviatrix Transit Gateway**.
+#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**.
 
 .. Note::
 
-  In a GCP deployment, Transit FireNet function is enabled when launching the gateway. You can skip this step.
+  In a GCP deployment, the Transit FireNet function is enabled when launching the gateway. You can skip this step.
 
 
 3.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #2 Manage FireNet Policy**
@@ -119,7 +123,7 @@ To enable the firewall function and configure the FireNet policy:
 |tr_firenet_policy|
 
 
-Step 7a: Launch and Associate Firewall Instance
+Step 7a: Launching and Associating Firewall Instance
 *****************************************************************
 
 This approach is recommended if this is the first Firewall instance being attached to the gateway.
@@ -129,12 +133,12 @@ This step launches a Firewall instance and associates it with one of the FireNet
 
 .. important::
 
-    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ (Availability Zone), and, the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ (Availability Zone) and the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
-7a.1 Launch and Attach
+7a.1 Launching and Attaching
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From the Aviatrix Controller console, navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table. Click **"Launch"**.
+From the Aviatrix Controller, navigate to **Firewall Network > Setup > Step 7a** and provide all the required input as shown in a table. Click **"Launch"**.
 
 .. important::
     The vendor firewall may take some time to become available.
@@ -190,13 +194,13 @@ Note that firewall instance nic2 is on the same subnet as the FireNet gateway ni
 Follow `Palo Alto Network (VM Series) GCP Example <https://docs.aviatrix.com/HowTos/config_paloaltoGCP.html>`_ to launch VM Series firewall in GCP and for more details.
 
 
-3. Fortigate Specifications
+3. FortiGate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For details on how to configure Transit FireNet for GCP see <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_.
+For details on how to configure Fortigate Next Generation Firewall instances for GCP see <https://docs.aviatrix.com/HowTos/config_FortiGateGCP.html>`_.
 
 
-Step 7b: Associate an Existing Firewall Instance
+Step 7b: Associating an Existing Firewall Instance
 *******************************************************
 
 This step is the alternative step to Step 8a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
@@ -253,9 +257,9 @@ Flight Path is a very powerful troubleshooting Aviatrix tool which allows users 
 SSH/Telnet Test for FireNet Data-Plane Verification:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the control plane is established and no problem is found in the security and routing polices, data plane validation needs to be verified to make sure traffic is flowing and not blocked anywhere.
+Once the control plane is established and no problems are found in the security and routing polices, data plane validation needs to be verified to make sure traffic is flowing and not blocked.
 
-There are multiple ways to check the data-plane. One way is to SSH to Spoke instance  (e.g. DEV1-VM) and telnet other Spoke instance (e.g PROD1-VM) to make sure no traffic loss in the path.
+There are multiple ways to check the data plane. One way is to SSH to Spoke instance  (e.g. DEV1-VM) and telnet other Spoke instance (e.g PROD1-VM) to make sure there is no traffic loss in the path.
 
 
 .. |subscribe_firewall| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/subscribe_firewall.png
