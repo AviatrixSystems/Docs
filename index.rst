@@ -365,9 +365,9 @@ While all content is searchable, the site is organized into the following sectio
 
 .. toctree::
    :maxdepth: 1
-   :caption: Field Notes
+   :caption: Field Notices
 
-   HowTos/Field_Notes
+   HowTos/field_notices
    
 .. _Tech Notes:
 
