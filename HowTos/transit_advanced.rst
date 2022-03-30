@@ -63,6 +63,25 @@ process, refer to `ActiveMesh 2.0 next hop. <https://docs.aviatrix.com/HowTos/ac
 
 Click **BGP ECMP** to set it to **Enabled**. 
 
+Site2Cloud RX Balancing
+----------------------------
+.. Note::
+
+  This option is only available for Aviatrix Transit Gateways deployed in AWS on C5 and C5n instance types (except for c5.large and c5n.large). 
+
+The Site2Cloud RX Balancing option can increase forwarding throughput on Aviatrix Transit gateways for BGP-over-GRE `External Device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
+
+* On certain topologies that require high throughput, with External Devices that limit the number of GRE tunnels. 
+* Where maintaining a high number of GRE tunnels increases operational burden.
+
+If enabled, this option ensures that the Aviatrix Transit Gateway(s) are configured to maximize RX capacity and distribute ingress GRE tunnel load to all available vCPUs. This is mainly an alternative to `building a large number of GRE tunnels <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_, but a greater number of tunnels will be needed if the External Device imposes per-tunnel rate limits. A brief (sub-second) period of packet loss may affect the gateway when this setting is enabled or disabled.
+
+To maximize the forwarding throughput increase enabled by this setting, consider the following:
+
+* The number of vCPUs provisioned for the Aviatrix Transit Gateway(s) should be significantly higher than the number of GRE tunnels (for example, four GRE tunnels to a 16 vCPUs c5n.4xlarge instance).
+* High Performance Encryption (HPE) should be enabled between Aviatrix Transit Gateways.
+* BGP ECMP should be enabled, to ensure load balancing of return traffic over multiple tunnels.
+
 Active-Standby
 -------------------
 
