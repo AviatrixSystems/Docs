@@ -341,7 +341,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Downloads/samlclient
 
-.. _Release Notes:
+.. _Release Notes
 
 .. toctree::
    :maxdepth: 1

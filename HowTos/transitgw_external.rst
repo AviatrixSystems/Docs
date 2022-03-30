@@ -39,6 +39,7 @@ The Aviatrix Transit GW runs a BGP session to an external router to dynamically 
 
 The mechanism works for AWS Direct Connect, Azure ExpressRoute, or the Internet. 
 
+
 Over Private Network in AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -108,7 +109,6 @@ Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectC
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit Gateway. Leave it blank.  
 Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the external device. Leave it blank. 
-
 ============================   ==========
 
 Downloading the Configuration

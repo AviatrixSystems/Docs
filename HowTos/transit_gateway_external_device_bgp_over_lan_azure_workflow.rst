@@ -85,7 +85,6 @@ See `this document <https://docs.aviatrix.com/HowTos/transit_gateway_external_de
 
 2. Deploy `Spoke Gateway and HA <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_ to launch Aviatrix Spoke gateway and enable HA with insane mode enabled in Spoke VNet.
 3. Attach `Spoke Gateways to Transit Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-4-attach-spoke-gateways-to-transit-network>`_.
-
 4. (Optional) Attach `Azure ARM Spoke VNet via native peering <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_ if users prefer not to encrypt the traffic between the Transit VNet and the Spoke VNet. In this example, this approach is selected to benchmark `performance <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html#performance-benchmark>`_.
 
 2. Launch Third-Party Cloud Instances
@@ -123,6 +122,7 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 2. Go to Multi-Cloud Transit > Setup > External Connection.
 3. Select option External Device > BGP > LAN.
 4. Enter the following information in the fields provided.
+
 
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | Transit VPC Name                 | Select the Transit VPC ID where Transit GW was launched                                                                     |

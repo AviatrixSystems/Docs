@@ -75,14 +75,42 @@ Once you have your User OCID, Tenancy OCID, Compartment OCID, and API Private Ke
 
  |oci_account|
 
+OCI Gov (oc2) Support
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Congratulations on finishing onboarding your new oci account.
+Aviatrix provides support in OCI Gov (oc2) for customers interested in running workloads in this environment. See `Oracle Cloud Infrastructure US Government Cloud with FedRAMP Authorization <https://docs.oracle.com/en-us/iaas/Content/General/Concepts/govfedramp.htm>`_. 
+
+OCI Gov (oc2) is a separate operating realm comprised of two regions: 
+
+* us-langley-1 (Ashburn) 
+* us-luke-1 (Phoenix)  
+
+Initial OCI Gov support is tailored for customers interested in multi-cloud transit patterns. In future releases, if there is demand, Aviatrix will evaluate adding additional functionality. 
+
+FireNet is not supported in initial release.
+
+Onboarding OCI Gov Accounts 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You need to subscribe to the Aviatrix image from OCI Marketplace in the same region and compartment used to onboard the OCI Gov account in the OCI Gov tenancy to your Aviatrix Controller. 
+
+.. Note:: 
+
+If you have an OCI Gov tenancy, the workflow for onboarding OCI Gov accounts is identical to commercial OCI. 
+
+.. Important::
+
+There are some limitations to using OCI Commercial (oc1) and OCI Gov (oc2) gateways in the same network. 
+
+* OCI Gov and OCI Commercial have different regions, separate accounts, and separate compartments; they are completely isolated from each other. Therefore, you should treat them as two separate clouds. 
+* HPE peering between OCI Commercial and OCI Gov gateways is not supported because oc2 and oc1 are two completely different environments and there is no native private connectivity between oc2 and oc1. 
 
 To create a VCN with all the dependencies, please navigate to the Useful Tools menu at the main menu on the left sidebar and select Create a VPC > **+Create**.
 
 For more info, please see the Aviatrix product documentation at `https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_.
 
-Enjoy!
+
+For more info, please see the Aviatrix product documentation at `https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_.
 
 
 .. |oci_user| image:: OCIAviatrixCloudControllerOnboard_media/oci_user.png

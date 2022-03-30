@@ -20,6 +20,7 @@ This document explains how to launch an Aviatrix Gateway from the Aviatrix Contr
 Launching a Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+
 To launch a new gateway in your Controller, click **Gateway** > **New** on the left sidebar. To launch a gateway with OpenVPN® capability, refer to `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
 
 Subnet Information
@@ -32,7 +33,7 @@ more about VPC and subnets, open `this link. <https://docs.aws.amazon.com/Amazon
 If you do not have a VPC/VCN with public subnet in AWS, GCP, or OCI, you can use our `"Create a VPC" <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ tool to create a VPC with fully populated public and private subnet in each AZ.
 
 Select Gateway Size
-^^^^^^^^^^^^^^^^^^^^^6
+^^^^^^^^^^^^^^^^^^^^
 
 When selecting the gateway size, note the following guidelines of IPsec performance
 based on IPERF tests conducted between two gateways of the same size:
@@ -106,13 +107,15 @@ With OCI you can choose a flexible shape to modify the Oracle CPU (OCPU) and mem
 Specifying a Reachable DNS Server IP Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
 Aviatrix gateways are launched with a default public DNS server IP address 8.8.8.8 to
 ensure the gateway has access to Cloud Service Provider public resources such as SQS for Controller and gateway communication.
 If you want to change to a different DNS server, mark the **Specify a Reachable DNS Server IP Address** checkbox
 to enter an alternative DNS IP address.
 
 Enabling NAT
-^^^^^^^^^^^^^^^^^^^^66
+^^^^^^^^^^^^^^^^^^^^
+
 The Aviatrix Gateway performs Source NAT (SNAT) function when this option is selected. All VPC/VCN routing tables for
 private subnets in AWS, GCP, and OCI are automatically programmed with 0.0.0.0/0 points to the gateway.
 
@@ -127,6 +130,7 @@ For example, you may already have a NAT gateway configured for the VPC in AWS. T
 Enabling BGP
 ^^^^^^^^^^^^^^^^^^^^
 
+
 Select this option to enable the Aviatrix Spoke Gateway with BGP. In the current release (6.6), BGP must be enabled at the creation of the Spoke gateway. Spoke Gateways created pre-6.6 cannot be enabled with BGP. A Spoke Gateway enabled with BGP has a few restrictions compared to a non-BGP Spoke. See `Aviatrix Spoke Gateway to External Devices (BGP-Enabled Spoke) <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_for information about restrictions.
 
 Allocating a New EIP in AWS
@@ -139,10 +143,12 @@ When the Aviatrix Gateway is deleted, the Controller will return this EIP to you
 VPN Access
 --------------------
 
+
 When this option is selected, the Aviatrix Gateway will used for SSL VPN termination. It supports OpenVPN® client and Aviatrix SAML client. For more details, check out `this link. <http://docs.aviatrix.com/HowTos/openvpn_features.html>`_
 
 Enabling SAML
 ^^^^^^^^^^^^^^^^^^^^
+
 
 When SAML is enabled, a VPN client/user authenticates to an identity provider
 (IDP) directly, instead of the gateway doing it on behalf of the user.
@@ -222,7 +228,8 @@ Enter all network ranges in CIDR blocks separated by commas, as shown below:
 
 
 Nameservers (Optional) 
-^^^^^^^^^^^^^^^^^^^^^^^^^666
+^^^^^^^^^^^^^^^^^^^^^^
+
 
 This is an optional parameter. Leave it blank if you do not need it.
 
@@ -232,6 +239,7 @@ use these DNS servers to resolve domain names.
 
 Search Domains (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 This is an optional parameter. Leave it blank if you do not need it.
 
@@ -290,6 +298,7 @@ Prior to 4.3, this setting was coupled with Client Certificate Sharing.
 VPN NAT
 ^^^^^^^^^^^^^^^^
 This feature was introduced in Controller version 4.6 . This controls whether the VPN connection uses NAT (Network Address Translation) while the VPN traffic leaves the Aviatrix VPN Gateway.
+
 
 VPN NAT is enabled by default. If you want to disable it, you can do so from OpenVPN > Edit Config > VPN NAT. 
 

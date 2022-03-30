@@ -361,6 +361,7 @@ See `Force Upgrade doc <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostic
 #. Select the Managed CloudN device on the Gateway dropdown menu.
 #. Click **Upgrade** to force upgrade the Managed CloudN device.
 	
+
 |controller_troubleshooting_tips_force_upgrade|
 
 Upgrade
@@ -549,6 +550,7 @@ Ans:
 		From Release 6.6a and onwards, to register CloudN with the Controller as Managed CloudN does not require to upgrade CloudN applicance to the Controller version.
 
 - Remove/delete any Site2Cloud (IPsec) connection between a Aviatrix Transit Gateway and Standalone CloudN.
+
 
 - Follow `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#managed-cloudn-workflows>`_.
 

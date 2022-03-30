@@ -170,7 +170,6 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 #. Select the Vendor, Platform and Software that correspond to the third-party device.
 #. Click **Download Configuration.**
 
-
 Configuring BGP over LAN on the Third-Party Cloud Instance(s)
 -----------------------------------------------------------------------------------
 

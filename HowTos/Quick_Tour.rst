@@ -9,6 +9,7 @@ Quick Tour
 Scaling Out a Remote User VPN Solution
 ----------------------------------------------------
 
+
 No more bastion stations and jump hosts. Provide your employees with the
 ability to seamlessly access instances with private IP addresses by
 using our user VPN capability. To configure a Cloud VPN:
@@ -55,6 +56,7 @@ feature.
 
 AWS Global Transit Network
 ------------------------------------
+
 
 Follow `these instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to build an AWS Global Transit Network. 
 
