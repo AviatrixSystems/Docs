@@ -77,7 +77,6 @@ Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.co
 
 1. Deploy `Aviatrix Multi-Cloud Transit Gateway and HA <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_ with Insane Mode enabled in Transit VNet.
 
-
 .. Important::
 
 Mark the **BGP Over LAN** checkbox to enable that function.
@@ -97,7 +96,6 @@ Deploy third-party cloud instances in a separate Transit VNet.
 #. Create a new public WAN subnet and a dedicated routing table for WAN interface if needed.
 #. Create a new private LAN subnet and a dedicated routing table for LAN interface.
 #. Make sure the function IP forwarding function on third-party cloud instance's interfaces is enabled.
-
 
 .. important::
 
@@ -121,7 +119,7 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 ---------------------------------------------------------------------
 
 1. Log in to the Aviatrix Controller.
-2. Go to Multi-Cloud Transit > Setup > External Device.
+2. Go to Multi-Cloud Transit > Setup > External Connection.
 3. Select option External Device > BGP > LAN.
 4. Enter the following information in the fields provided.
 
@@ -154,7 +152,6 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 
 4. To generate BGP session over LAN, click **Connect**.
 
-
 S(Optional) Downloading the BGP over LAN configuration sample from Aviatrix Controller
 --------------------------------------------------------------------------------------------
 
@@ -165,7 +162,6 @@ S(Optional) Downloading the BGP over LAN configuration sample from Aviatrix Cont
 #. Click Download Configuration.
 
 Configuring BGP over LAN on Third-Party Cloud Instance
-
 ---------------------------------------------------------------
 
 #. Log in to the Azure portal.

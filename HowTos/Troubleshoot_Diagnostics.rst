@@ -54,9 +54,16 @@ This tool allows the controller to perform a ping test to a specific host in ord
 Controller IP Migration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The Controller IP Migration feature enables you to migrate your Controller’s IP address to a new IP address after you associate a new IP address in AWS, Azure, GCP, or OCI or through API.
+Use this feature if your Controller does not use an EIP (Elastic IP) address, load balancer, or FQDN, and you take one or more of the following actions:
 
-.. important:: The user MUST execute this feature after re-associating a new public IP for the controller through AWS/Azure/GCloud GUI console or API. This feature updates the configurations for the controller and gateways.
-..
+* Restart or reboot your Controller.
+* Restore your Controller from backup.
+* Reassociate your Controller’s IP address.
+
+In these cases, use this feature to migrate the Controller’s IP address so that the gateways managed by this Controller have the correct IP address.
+Most accounts use an EIP or FQDN and therefore do not need to use the Controller IP Migration feature.
+
 
 Remote Support 
 ~~~~~~~~~~~~~~~~~

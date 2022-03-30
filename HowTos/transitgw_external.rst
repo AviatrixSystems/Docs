@@ -25,7 +25,7 @@ What are the use cases for connecting to an external router?
 
  - **Azure Transit Network** This feature allows an Aviatrix Transit GW to connect to on-prem over Azure Express Route or Internet. 
  
- - **High Performance with on-prem** By using GRE tunneling protocol, Aviatrix Multi-cloud Transit Gateway `builds multiple GRE tunnels to on-prem routers <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_ to achieve 10Gbps throughput. 
+ - **High Performance with on-prem** By using GRE tunneling protocol, Aviatrix Multi-Cloud Transit Gateway `builds multiple GRE tunnels to on-prem routers <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_ to achieve 10Gbps throughput. 
 
  - **Integrate with SD-WAN gateways deployed in the cloud** BGP over LAN as part of the External Device option provides an efficient mechanism to connect to SD-WAN cloud gateways by interoperating with them over LAN in the same VPC/VNet while exchanging routes dynamically via BGP. 
 
@@ -35,9 +35,10 @@ What are the use cases for connecting to an external router?
 How does it work? 
 -----------------------------
 
-The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPsec tunnel, GRE tunnel or direct Ethernet to the router for packet forwarding. For IPsec tunneling, static routing option is also supported. 
+The Aviatrix Transit GW runs a BGP session to an external router to dynamically exchange routes. It also establishes an IPsec tunnel, GRE tunnel, or direct Ethernet to the router for packet forwarding. For IPsec tunneling, static routing option is also supported. 
 
-The mechanism works for AWS Direct Connect, Azure Express Route, or the Internet. 
+The mechanism works for AWS Direct Connect, Azure ExpressRoute, or the Internet. 
+
 
 Over Private Network in AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +56,7 @@ Make sure:
 Over a Private Network in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the underlying infrastructure is Azure Express Route, the External Device options are IPsec or LAN, as shown below. 
+When the underlying infrastructure is Azure Express Route, the external Device options are IPsec or LAN, as shown below. 
 
 |transitgw_private_azure|
 
@@ -74,10 +75,10 @@ How do I configure it?
 
 The configuration is the `External Device <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#external-device>`_ section of the Multi-Cloud Transit Network Workflow Instructions article. We assume you have already completed `Step 1 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-transit-gateway>`_ and `Step 2 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#optional-enable-disable-ha-to-an-aviatrix-transit-gateway>`_. Follow the instructions below.
 
-1. Fill the parameters
+Filling the Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fill the parameters and click **OK**. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
+Fill the parameters using the fields below and click **OK**. For ActiveMesh design notes, check out `ActiveMesh Design Notes <https://docs.aviatrix.com/HowTos/activemesh_design_notes.html#configuration-notes>`_.
 
 ============================   ==========
 **Setting**                    **Value**
@@ -96,22 +97,21 @@ Primary Aviatrix Gateway          The Transit GW you created in `Step 1 <https:/
 Algorithms                     Optional parameters. Leave it unselected if you don't know.
 IKEv2                          Select the option to connect to the remote site using IKEv2 protocol.
 Enable Remote Gateway HA       Select HA if there are two external devices. 
-Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure Express Rout. See "How does it work" section for more details. When this option is selected, BGP and IPsec run over private IP addresses.
+Over Private Network           Select this option if your underlying infrastructure is private network, such as AWS Direct Connect and Azure ExpressRoute. See the "How does it work" section for more details. When this option is selected, BGP and IPsec run over private IP addresses.
 BGP Remote AS Number           When BGP is selected, the BGP AS number the external device will use to exchange routes Aviatrix Transit GW.
 Remote Gateway IP              IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device. 
 Pre-shared Key                 Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP                Optional parameter. This field is for the tunnel inside IP address of the Transit Gateway. Leave it blank.  
-Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
+Remote Tunnel IP               Optional parameter. This field is for the tunnel inside IP address of the external device. Leave it blank. 
 Over DirectConnect (Backup)    Select this option if HA is enabled.
 BGP Remote ASN (Backup)        When BGP is selected, the remote ASN for backup should be the same as the primary remote ASN. 
 Remote Gateway IP (Backup)     IP address of the remote device. If "Over DirectConnect" is selected, enter the private IP address of the external device.
 Pre-shared Key (Backup)        Optional parameter. Leave it blank to let the pre-shared key to be auto generated. 
 Local Tunnel IP (Backup)       Optional parameter. This field is for the tunnel inside IP address of the Transit Gateway. Leave it blank.  
-Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the External device. Leave it blank. 
-
+Remote Tunnel IP (Backup)      Optional parameter. This field is for the tunnel inside IP address of the external device. Leave it blank. 
 ============================   ==========
 
-2. Download the configuration
+Downloading the Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the configuration is done, a connection is created. Download the configuration file. 
@@ -120,31 +120,25 @@ At the left navigation bar, go to Site2Cloud, click on the connection you create
 
 |download_config_external|
 
-3. Configure the external device
+Configuring the External Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Steps to
 
 1. `Configure Cisco Router <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_CiscoRouter.html>`_
-
 2. `Configure Cisco ASA <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_CiscoASA.html>`_
-
 3. `Configure PaloAlto <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_PaloAlto.html>`_
-
 4. `Configure FortiGate <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_FortiGate.html>`_
-
 5. `Configure JuniperSRX <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_JuniperSRX.html>`_
-
 6. `Configure pfSense <http://docs.aviatrix.com/HowTos/Transit_ExternalDevice_pfSense.html>`_
-
 
 
 Use the information provided in the configuration file to configure the on-prem device with IPsec tunnel and BGP.  
 
-4. Disconnect the external device
+Disconnecting the External Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To disconnect, go to Multi-Cloud Transit > Setup and click on the **External Device** tab. Scroll down to section 2. Disconnect AWS VGW / External Device / Azure VNG, select the Transit GW in the dropdown menu, and click **Detach**.
+To disconnect, go to Multi-Cloud Transit > Setup > **External Connection** tab. Scroll down to section 2. Disconnect AWS VGW / External Device / Azure VNG, select the Transit GW in the dropdown menu, and click **Detach**.
 
 Appendix 1: Transit Connection to Cisco ISR/ASR Over the Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

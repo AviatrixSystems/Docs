@@ -74,7 +74,6 @@ Launching Third-Party Cloud Instances
 
 Deploy third-party cloud instances with an interface in the same VPC as the Aviatrix Transit Gateway.
 
-
 #. Create a third-party cloud instance and put MGMT interface in public gateway subnet. 
 #. Create a new WAN subnet and dedicated routing table for WAN interface if needed.
 #. Create a new LAN subnet and a dedicated routing table for the LAN interface.
@@ -129,7 +128,6 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 3. Select the options External Device > BGP > LAN.
 4. Enter the following information in the fields below.
 
-
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | VPC Name / Site ID               | Select the Transit VPC ID where the Transit Gateway was deployed.                                                                                                                                                             |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +169,6 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 #. Click **Edit.**
 #. Select the Vendor, Platform and Software that correspond to the third-party device.
 #. Click **Download Configuration.**
-
 
 Configuring BGP over LAN on the Third-Party Cloud Instance(s)
 -----------------------------------------------------------------------------------

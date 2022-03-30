@@ -105,10 +105,10 @@ There are some limitations to using OCI Commercial (oc1) and OCI Gov (oc2) gatew
 * OCI Gov and OCI Commercial have different regions, separate accounts, and separate compartments; they are completely isolated from each other. Therefore, you should treat them as two separate clouds. 
 * HPE peering between OCI Commercial and OCI Gov gateways is not supported because oc2 and oc1 are two completely different environments and there is no native private connectivity between oc2 and oc1. 
 
-
-Congratulations on finishing onboarding your new OCI account.
-
 To create a VCN with all the dependencies, please navigate to the Useful Tools menu at the main menu on the left sidebar and select Create a VPC > **+Create**.
+
+For more info, please see the Aviatrix product documentation at `https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_.
+
 
 For more info, please see the Aviatrix product documentation at `https://docs.aviatrix.com/ <https://docs.aviatrix.com/>`_.
 

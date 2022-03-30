@@ -545,154 +545,154 @@ Metrics used for Triggering Notifications
 
 For Aviatrix Controller and Aviatrix gateways, you can configure notifications to be alerted to events that occur in your network such as performance bottlenecks or other problems. You configure alerts and the channels to be notified using the notifications feature in Aviatrix Copilot. This section describes some of the system and network metrics on which notifications can be based. When alert conditions are met for a metric, Copilot sends a notification. How you set a condition threshold to trigger an alert will depend on different factors. For example, for system metrics, the instance size can influence the condition threshold that makes sense. For metrics associated with cloud provider-maintained infrastructure, the desired condition threshold may vary between cloud service providers. Work with your network operations team to determine the metric conditions that will trigger alerts in your environment.
 
-System metrics for triggering notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**System metrics for triggering notifications**
 
 For Aviatrix Controller and Aviatrix gateways, you can configure alerts based on the following system metrics. Aviatrix gateways report live Linux system statistics (such as memory, CPU, I/O, processes, and swap) for the instances/virtual machines on which they run.
 
 cpu_idle
-    Of the total CPU time, the percentage of time the CPU(s) spent idle.
+    CPU Idle — Of the total CPU time, the percentage of time the CPU(s) spent idle.
 
 cpu_ks
-    Of the total kernel space memory on the host (VM/instance), the percentage of memory that is free.
+    CPU Kernel Space — Of the total kernel space memory on the host (VM/instance), the percentage of memory that is free.
 
 cpu_steal
-    Of the average CPU wait time on the host (VM/instance), the percentage of time a virtual CPU waits for a real CPU while the hypervisor services another virtual processor. 
+    CPU Steal — Of the average CPU wait time on the host (VM/instance), the percentage of time a virtual CPU waits for a real CPU while the hypervisor services another virtual processor. 
 
 cpu_us
-    Of the total CPU time, the percentage of time spent running non-kernel code.
+    CPU User Space — Of the total CPU time, the percentage of time spent running non-kernel code.
 
 cpu_wait
-    Of the total CPU time, the percentage of time spent waiting for IO.
+    CPU Wait — Of the total CPU time, the percentage of time spent waiting for IO.
 
 hdisk_free
-    The storage space on the disk (volume) that is free/unused.
+    Disk Free — The storage space on the disk (volume) that is free/unused.
 
 io_blk_in
-    The number of blocks received per second from a block device.
+    IO Blocks IN — The number of blocks received per second from a block device.
 
 io_blk_out
-    The number of blocks sent per second to a block device.
+    IO Blocks OUT — The number of blocks sent per second to a block device.
 
 memory_buf
-    The amount of memory used as buffers.
+    Memory Buffer — The amount of memory used as buffers.
 
 memory_cached
-    The amount of memory used as cache.
+    Memory Cache — The amount of memory used as cache.
 
 memory_free
-    The amount of idle memory.
+    Memory Free — The amount of idle memory.
 
 memory_swpd
-    If swapped is enabled, the amount of virtual memory used.
+    Memory Swapped — If swapped is enabled, the amount of virtual memory used.
 
 nproc_non_int_sleep
-    The number of processes blocked waiting for I/O to complete.
+    Processes Uninterruptable Sleep — The number of processes blocked waiting for I/O to complete.
 
 nproc_running
-    The number of processes that are running or waiting for run time.
+    Processes Waiting To Be Run — The number of processes that are running or waiting for run time.
 
 swap_from_disk
-    Memory that is swapped in every second from disk in kilobytes.
+    Swaps From Disk — Memory that is swapped in every second from disk in kilobytes.
 
 swap_to_disk
-    Memory that is swapped out every second to disk in kilobytes.
+    Swaps To Disk — Memory that is swapped out every second to disk in kilobytes.
 
 system_cs
-    The number of context switches per second.
+    System Context Switches — The number of context switches per second.
 
 system_int
-    The number of interrupts per second, including the clock.
+    System Interrupts — The number of interrupts per second, including the clock.
    
 
-Network metrics for triggering notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Network metrics for triggering notifications**
 
 For Aviatrix Controller and Aviatrix gateways, you can configure alerts based on the following network metrics.
 
 pkt_rate_total
-    The total (bidirectional) transmission in packet level per second. Instance size impacts how many packets per second the gateway can handle.
+    Total Rate (in packets) — The total (bidirectional) transmission in packet level per second. Instance size impacts how many packets per second the gateway can handle.
 
 pkt_rx_rate
-    The total (received) transmission in packet level per second.
+    Packets Received Rate — The total (received) transmission in packet level per second.
 
 pkt_tx_rate
-    The total (transmitted) transmission in packet level per second.
+    Packets Transmitted Rate — The total (transmitted) transmission in packet level per second.
 
 rate_bandwidth_egress_limit_exceeded
-    (AWS Only) The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+    (AWS Only) Bandwidth Egress Limit Exceeded Rate — The number of tx packets dropped because the bandwidth allowance limit was exceeded.
 
 rate_bandwidth_ingress_limit_exceeded
-    (AWS Only) The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+    (AWS Only) Bandwidth Ingress Limit Exceeded Rate — The number of rx packets dropped because the bandwidth allowance limit was exceeded.
 
 rate_conntrack_limit_exceeded
-    (AWS Only) The number of packets dropped because the connection count allowance limit was exceeded.
+    (AWS Only) Conntrack Limit Exceeded Rate — The number of packets dropped because the connection count allowance limit was exceeded.
 
 rate_peak_received
-    The highest bit rate that has been received by the interface on the Aviatrix gateway VM/instance.
+    Peak Received Rate — The highest bit rate that has been received by the interface on the Aviatrix gateway VM/instance.
 
 rate_peak_sent
-    The highest bit rate that has been transmitted by the interface on the Aviatrix gateway VM/instance.
+    Peak Transmitted Rate — The highest bit rate that has been transmitted by the interface on the Aviatrix gateway VM/instance.
 
 rate_peak_total
-    The highest bit rate that has been received and transmitted or both by the interface on the Aviatrix gateway VM/instance.
+    Peak Total Rate — The highest bit rate that has been received and transmitted or both by the interface on the Aviatrix gateway VM/instance.
 
 rate_pps_limit_exceeded
-    The number of packets processed (bidirectional) by the Aviatrix gateway per second.
+    PPS Limit Exceeded Rate — The number of packets processed (bidirectional) by the Aviatrix gateway per second.
 
 rate_received
-    The rate of bits the Aviatrix gateway has received per second.
+    Received Rate — The rate of bits the Aviatrix gateway has received per second.
 
 rate_rx_compressed
-    The number of compressed packets received per second.
+    Compressed Packets Received Rate — The number of compressed packets received per second.
 
 rate_rx_drop
-    The number of packets dropped per second while receiving the packets.
+    Rate of Packets Dropped While Receiving — The number of packets dropped per second while receiving the packets.
 
 rate_rx_errs
-    The number of packets received per second that is flagged by the kernel as errored.
+    Errored Packets Received Rate — The number of packets received per second that is flagged by the kernel as errored.
 
 rate_rx_fifo
-    The number of overflow events per second when receiving packets.
+    Receiver FIFO Frames Rate — The number of overflow events per second when receiving packets.
 
 rate_rx_frame
-    The number of frame alignment errors per second when receiving packets.
+    Received Frames Rate — The number of frame alignment errors per second when receiving packets.
 
 rate_rx_multicast
-    The number of multicast packets per second.
+    Multicast Packets Received Rate — The number of multicast packets per second.
 
 rate_sent
-    The rate of bits per second that has been transmitted by the interface on the Aviatrix gateway VM/instance.
+    Transmitted Rate — The rate of bits per second that has been transmitted by the interface on the Aviatrix gateway VM/instance.
 
 rate_total
-    The total (bidirectional) rate of bits processed per second by the interface on the Aviatrix VM/instance.  
+    Total Rate — The total (bidirectional) rate of bits processed per second by the interface on the Aviatrix VM/instance.  
 
 rate_tx_carrier
-    The number of frame transmission errors per second due to loss of carrier during transmission.
+    Transmitted Carrier Frames Rate — The number of frame transmission errors per second due to loss of carrier during transmission.
 
 rate_tx_colls
-    The number of collisions per second during packet transmission.
+    Collisions Rate during Transmission — The number of collisions per second during packet transmission.
 
 rate_tx_compressed
-    The number of correctly received compressed packets per second.
+    Compressed Packets Transmitted Rate — The number of correctly received compressed packets per second.
 
 rate_tx_drop
-    The number of packets being dropped per second while sending.
+    Rate of Packets Dropped during Transmission — The number of packets being dropped per second while sending.
 
 rate_tx_errs
-    The total number of transmit problems per second.
+    Errored Packets Transmitted Rate — The total number of transmit problems per second.
 
 rate_tx_fifo
-    The number of frame transmission errors per second due to device FIFO underrun/underflow.
+    Transmission FIFO Frames Rate — The number of frame transmission errors per second due to device FIFO underrun/underflow.
 
 GatewayStatus
-    Any gateway status change triggers an alert.
+    Gateway Status — Any gateway status change triggers an alert.
 
 TunnelStatus
-    Any link status change triggers an alert.
+    Tunnel Status — Any link status change triggers an alert.
 
 BGPpeeringStatus
-    Any BGP peering status change triggers an alert.
+    BGP Peering Status — Any BGP peering status change triggers an alert.
+
   
 
 
@@ -748,6 +748,25 @@ To enable ThreatGuard alerts:
 6. (Optional) Verify that ThreatGuard alerts are enabled: A) From the sidebar, click Notifications. B) In the Configured Alerts list, locate the entry with the name **ThreatGuard Alert** that has the condition **When Threat IP Detected**. This entry validates that alerts are enabled.
 7. (Optional) Enable ThreatGuard blocking. After alerts are enabled, you can opt to enable ThreatGuard blocking. See Enable ThreatGuard Blocking for instructions. When ThreatGuard blocking is enabled, Aviatrix Controller pushes down firewall policies to block threat-IP associated traffic as soon as it is detected.
 
+About ThreatGuard Firewall Rules
+--------------------------------
+
+ThreatGuard firewall rules are stateful firewall rules that are applied to Aviatrix gateways to block traffic for threats detected by the ThreatIQ with ThreatGuard feature. Threats are either IP addresses from the threat-IP source that Aviatrix Cloud Network Platform communicates with or from your custom ThreatIQ IP List. For information about ThreatIQ, see Working with ThreatIQ.
+
+Aviatrix CoPilot scans flow records for threats. When ThreatGuard blocking is enabled, when CoPilot detects a threat IP in a traffic flow, it calls the controller with the firewall rules to add. The controller instantiates the ThreatGuard firewall rules on all gateways that are within that flow — all gateways within the VPC/VNET — to immediately block the threat-IP associated traffic.
+
+By default, when ThreatGuard blocking is enabled, blocking occurs in all VPCs/VNETs. When configuring ThreatGuard blocking, you have the option to exclude any VPC/VNET in your network from ThreatGuard blocking.
+
+If a threat IP is removed from the database of the threat-IP source or from your custom ThreatIQ IP List, the controller automatically removes the ThreatGuard firewall rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the ThreatGuard firewall rules for that specific threat IP remain enforced.
+
+**Important:** If you disable ThreatGuard blocking, the action removes all existing ThreatGuard firewall rules instantiated by Aviatrix Controller for all threats (all threat IPs) detected up to that point.
+
+When a ThreatGuard firewall rule is newly applied on a gateway that has existing rules applied, note the following:
+
+-   The ThreatGuard firewall-rule drop policies are in addition to the existing firewall policies applied to the same gateways.
+-   By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule.
+-   Firewall rules are followed in order by the first matching condition. The rule that applies first is the action taken and no subsequent rules are used.
+
 Enable ThreatGuard Blocking 
 ---------------------------
 
@@ -793,7 +812,87 @@ To add a custom ThreatIQ IP list:
 
     To delete an IP address from the list, click the trash icon. The IP address is removed from the database of known malicious hosts used by ThreatIQ with ThreatGuard. If ThreatGuard blocking has been applied for this threat IP, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked.
 
+Threats View Properties
+-----------------------
 
+Descriptions of the properties in the CoPilot ThreatIQ Threats view listed in alphabetical order:
+
+-   **All Threats (Total)**
+
+    Since ThreatIQ was turned on, the number of times total an action or event was detected that was correlated with any of the unique threat IPs.
+
+-   **Start Time and End Time**
+
+    (Start Time) Date and time from which you want to view what malicious IPs were occurring in the fabric of your Aviatrix transit network.
+
+    (End Time) Date and time up to which you want to view what malicious IPs were occurring in the fabric of your Aviatrix transit network.
+
+-   **Threat Classifications**
+
+    Of the number of threats in the time period specified (by Start Time and End Time), what number of them is in a specific threat classification.
+
+-   **Threat Count**
+
+    The number of times the unique Threat IPs have been detected across your Aviatrix transit network within the time period specified (by Start Time and End Time).
+
+-   **Threat Details**
+
+    The Threat Details dialog provides a network topology diagram highlighting the location of the compromised host in your network, the flow data and overall netflow, and a summary of the threat severity as defined by the threat-IP source.
+
+-   **Threat Severity**
+
+    Of the number of threats in the time period specified (by Start Time and End Time), what number of them is in the Major threat severity category and Medium (Audit) threat severity category.
+
+-   **Threats Over Time**
+
+    Over the time period specified (by Start and End Time), a graph showing the number of threats that were detected. Spikes in the graph reflect days when more threats were detected.
+
+-   **Total Threats Over Time**
+
+    Over the time period specified (by Start and End Time), a graph showing the total count of threats. The count accumulates as you see more threats over time in that time period.
+
+-   Unique Threat IPs
+
+    The number of unique threat IPs that were detected across your Aviatrix transit network within the time period specified (by the Start Time and End Time). These are malicious IP addresses defined by a well known threat-IP source.
+
+ThreatGuard View Properties
+---------------------------
+
+Descriptions of the properties in the CoPilot ThreatIQ ThreatGuard view listed in alphabetical order:
+
+-   **Blocked Threat IPs**
+
+    The number of unique threat IPs that traffic was blocked for.
+
+-   **Block Traffic**
+
+    Enable Aviatrix Gateways to block traffic that is associated with a threat IP.
+
+-   **Firewall Rules Per Gateway**
+
+    A pie chart showing the percentage of rules that are instantiated on each Aviatrix gateway.
+
+-   **Gateways**
+
+    The number of Aviatrix gateways that have instantiated firewall rules to block threat IP traffic.
+
+-   **Rules**
+
+    The number of firewall rules that were instantiated to block threat IP traffic.
+
+-   **Send Alert**
+
+    Enable CoPilot to send alert notifications (to one or more email/Webhook systems) when traffic that is associated with a threat IP is detected.
+
+-   **Threats Blocked Per Gateway**
+
+    A pie chart showing the percentage of threats that are blocked on each Aviatrix gateway.
+
+-   **View Rules dialog**
+
+    The View Rules dialog shows the ThreatGuard firewall rules that are applied on Aviatrix gateways.
+
+ 
 Working with Reports
 =====================
 

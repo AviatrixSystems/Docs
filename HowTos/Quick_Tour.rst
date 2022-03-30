@@ -7,7 +7,8 @@ Quick Tour
 ===========
 
 Scaling Out a Remote User VPN Solution
-""""""""""""""""""""""""""""""""""''''''''''''''''''
+----------------------------------------------------
+
 
 No more bastion stations and jump hosts. Provide your employees with the
 ability to seamlessly access instances with private IP addresses by
@@ -20,12 +21,12 @@ using our user VPN capability. To configure a Cloud VPN:
    access policies for each profile that will be dynamically enforced as
    user connects to the cloud at the network perimeter.
 4. Navigate to OpenVPN® > VPN Users and add VPN users.
-5. For a single VPC user VPN solution, open `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
-6. For a multi-VPC user VPN solution, open this `reference
+5. For a single VPC/VNet user VPN solution, open `this link. <http://docs.aviatrix.com/HowTos/uservpn.html>`__
+6. For a multi-VPC/VNet user VPN solution, open this `reference
    design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
 Encrypted Peering
-""""""""""""""""""''''''''''''''
+----------------------------
 
 1. At the Gateway menu, create a gateway in an
    existing VPC/VNet.
@@ -36,7 +37,7 @@ Encrypted Peering
    design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__.
 
 Geo VPN
-""""""""''''''''''''''''''''
+--------------------
 
 If you have a global workforce and would like to give your employees
 the best user experience in accessing the services in the cloud, Geo VPN is
@@ -45,7 +46,7 @@ See this `reference
 design <http://docs.aviatrix.com/HowTos/GeoVPN.html>`__.
 
 Developer’s Sandbox
-"""""""""""""""""""''''''''''''
+-------------------------------
 
 If keeping your production environment secure while giving your
 developers an isolated environment to learn and experiment with new
@@ -54,12 +55,13 @@ Sandbox <http://docs.aviatrix.com/HowTos/DevSandbox.html>`__
 feature.
 
 AWS Global Transit Network
-"""""""""""""""""""""""""""''''''''
+------------------------------------
+
 
 Follow `these instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to build an AWS Global Transit Network. 
 
 Site2Cloud Solution
-""""""""""""""""""""
+----------------------------
 
 If you need to connect to your partner or customer sites to a VPC/VNet
 but do not want to replace the edge routers or firewalls that is already
@@ -67,7 +69,7 @@ deployed at these sites, check out our `Site2Cloud reference
 design <http://docs.aviatrix.com/HowTos/site2cloud.html>`__.
 
 Help
-"""""
+-----------------
 
 Under the Help menu, check out FAQs and additional implementation guides. Please open a support ticket at the `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get immediate support.
 

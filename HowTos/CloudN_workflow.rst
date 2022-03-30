@@ -361,6 +361,7 @@ See `Force Upgrade doc <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostic
 #. Select the Managed CloudN device on the Gateway dropdown menu.
 #. Click **Upgrade** to force upgrade the Managed CloudN device.
 	
+
 |controller_troubleshooting_tips_force_upgrade|
 
 Upgrade

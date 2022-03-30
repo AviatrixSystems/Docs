@@ -7,39 +7,39 @@
  Egress FQDN View Log 
 =================================
 
-The FQDN View Log allows you to immediately view what hostnames and sites that have been blocked 
+The FQDN View Log allows you to immediately view what hostnames and sites have been blocked 
 or passed on the `FQDN gateway. <http://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ Select the gateway and download the text file for the FQDN log. 
 
-For audit and compliance, we recommend that you to use one of our integrated `logging tools <http://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_
+For audit and compliance, we recommend that you to use one of our integrated `logging tools <http://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_.
 
-Thee are additional functions associated with the FQDN View page. 
+There are additional functions associated with the FQDN View page. 
 
-Detach or Disable FQDN
+Detaching or Disabling FQDN
+----------------------------------------
+
+To disable FQDN function for a specific VPC/VNet, select the gateway, click Actions > **Detach/Disable FQDN**.
+
+Removing a Tag
 --------------------------
 
-To disable FQDN function for a specific VPC, select the gateway, click Actions -> Detach/Disable FQDN.
+If you like to remove a specific tag associated with a FQDN tag, select the gateway, click Actions > **Remove Tag**.
 
-Remove Tag
------------
+Downloading Logs
+---------------------------
 
-If you like to remove a specific tag associated with a FQDN tag, select the gateway, click Actions -> Remove Tag.
+For FQDN log on a specific gateway, select the gateway, click Actions > **Download Logs**. 
 
-Download Logs
---------------
-
-For FQDN log on a specific gateway, select the gateway, click Actions -> Download Logs. 
-
-Edit Pass-through
---------------------
+Editing Pass-through
+--------------------------
 
 This feature allows you to specify traffic originated from certain subnets to only be NATed and bypass FQDN filter function.
 
 This configuration applies to a specific FQDN gateway.
 
-To configure, go to Security -> Egress Control -> Egress FQDN Gateway View. Select a gateway,
-click Actions -> Edit Pass-through. Select subnet or multi select subnets to allow bypass the filter. 
+To configure, go to Security > Egress Control > Egress FQDN Gateway View. Select a gateway and
+click Actions > **Edit Pass-through**. Select a subnet or multi select subnets to allow bypass the filter. 
 
-To configure, select one gateway, click Actions -> Edit Pass-through. Select one or multiple source subnets in the VPC and click Add to allow these subnets to be bypassed. You can also enter IP address range manually. Enter a list of IPs separated by comma.. 
+To configure, select one gateway, click Actions > Edit Pass-through. Select one or multiple source subnets in the VPC/VNet and click **Add** to allow these subnets to be bypassed. You can also enter IP address range manually. Enter a list of IPs separated by comma. 
 
 
 

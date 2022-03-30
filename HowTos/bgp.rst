@@ -1,13 +1,8 @@
-==================================
 BGP
-==================================
-=======
+------------
   :description: Description of fields and settings on the BGP page
   :keywords: bgp, Border Gateway patrol, BGP Diagnostics, BGP Connections, maximum AS limits, AS, transit network, multi-cloud transit
 
-============
-BGP Page
-============
 
 Use the BGP page to review your BGP connections and settings. To open this page, in your Aviatrix Controller, go to MULTI-CLOUD TRANSIT > BGP on the left sidebar.
 
@@ -52,6 +47,7 @@ The BGP Maximum AS Limit sets the maxium number of BGP hops the Controller allow
 This setting is disabled by default, meaning that the network size is unlimited. 
 
 If you wish to limit the size of your network (for example, if you have a complex topology between your on-prem and cloud networks), you can enable this option by entering 1-254 in the field provided. Then, use the up and down arrows to increase or decrease the number.
+=======
 
 .. disqus::
 

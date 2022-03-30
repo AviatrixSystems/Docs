@@ -143,12 +143,12 @@ In this example, 192.168.200.0/25 learned via BGP on Spoke-1-GW is not propagate
 |bgp_spoke_connected_transit|
 
 
-How to configure a BGP spoke gateway and connect it to external router?
------------------------------------------------------------------------
+How do I configure a BGP spoke gateway and connect it to external router?
+----------------------------------------------------------------------------------------------
 
 This section describes how to:
 
--   Create a spoke gateway that is BGP enabled.
+-   Create a Spoke Gateway that is BGP enabled.
 -   Create the S2C BGP tunnel (build a site-to-cloud IPsec BGP attachment for the newly created spoke).
 -   Configure your router with the connection details.
 -   Configure additional settings.
@@ -163,7 +163,7 @@ To create a BGP-enabled spoke gateway:
 
    In the current release (6.6), BGP must be enabled at the creation of the Spoke GW. Spoke GWs created pre-6.6 cannot be enabled with BGP. A Spoke GW enabled with BGP has a few restrictions compared to a non-BGP Spoke. See the section above "How does using a BGP-enabled spoke to an external device work?" for information about restrictions.
 
-1.  Log in to Aviatrix Controller.
+1.  Log in to the Aviatrix Controller.
 
 2.  From the sidebar, expand the Multi-Cloud Transit option, and then select **Setup**.
 
@@ -188,11 +188,9 @@ To create a BGP-enabled spoke gateway:
 
 7.  Scroll back up to the top of the Launch an Aviatrix Spoke Gateway workflow page.
 
-8.  Click on **Attach**.
+8.  Click **External Connection**.
 
-    The Attach Spoke Gateway page opens.
-
-    Now that you've created the spoke gateway, you can connect it to the external device (device in an on-prem network). In this case, you will build a site-to-cloud (S2C) BGP over IPsec connection.
+    Now that you've created the Spoke Gateway, you can connect it to the external device (device in an on-prem network). In this case, you will build a site-to-cloud (S2C) BGP over IPsec connection as instructed in the next section.
 
 
 Step 2: Create the S2C BGP Tunnel
@@ -200,13 +198,13 @@ Step 2: Create the S2C BGP Tunnel
 
 To create the S2C BGP tunnel:
 
-1.  In the Attach Spoke Gateway page, Click **External Device**.
+1.  In the Multi-Cloud Transit Workflow > Setup > External Connection, select **External Device**.
 
-    You use the External Device option on the spoke gateway to build a BGP tunnel directly to the on-prem device for exchanging routes with a remote site.
+    You use the External Device option on the Spoke Gateway to build a BGP tunnel directly to the on-prem device for exchanging routes with a remote site.
 
 2. Select **BGP** so that the Spoke GW runs dynamic routing with remote site.
 
-3. Select **IPsec** to run BGP and build an IPSEC connection to a remote site.
+3. Select **IPsec** to run BGP and build an IPsec connection to a remote site.
 
 4. Specify the rest of the parameters (defined below) and click **Connect**.
 

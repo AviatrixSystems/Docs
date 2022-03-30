@@ -16,7 +16,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Transit Network`
 * :ref:`Transit Gateway Orchestrator`
 * :ref:`Firewall Network`
-* :ref:`Cloud WAN`
+* :ref:`CloudN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
 * :ref:`Copilot`
@@ -31,6 +31,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Tech Notes`
 * :ref:`Good To Know`
 * :ref:`Support Center`
+
 
 
 .. _Getting Started:
@@ -169,14 +170,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/config_Barracuda.rst
    HowTos/firewall_network_design_patterns
 
-.. _Cloud WAN:
+.. _CloudN:
 
 .. toctree::
    :maxdepth: 1
-   :caption: CloudWAN
+   :caption: CloudN
 
-   HowTos/cloud_wan_faq
-   HowTos/cloud_wan_workflow
+   HowTos/cloudn_faq
+   HowTos/cloudn_workflow_
 
 .. _Security:
 
@@ -361,13 +362,13 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/PSIRT_Advisories
    HowTos/Security_Patches
 
-.. _Field Notes:
+.. _Field Notices:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Field Notes
+   :caption: Field Notices
 
-   HowTos/Field_Notes
+   HowTos/field_notices
    
 .. _Tech Notes:
 
