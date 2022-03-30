@@ -141,7 +141,7 @@ For FireNet deployment, follow the `Transit FireNet workflow <https://docs.aviat
 
 Limitations
 ===========
-By design routes advertised to VNG to onprem are limited only to native spoke VNET peering, it does not advertise non-native spoke/transit peerings.
+By design routes advertised to VNG to onprem are limited only to native spoke VNET peering, it does not advertise non-native spoke/transit-to-transit peerings.
 
 
 .. |topology_expressroute| image:: transit_gateway_integration_with_expressroute_media/topology_expressroute.png
