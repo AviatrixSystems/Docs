@@ -39,6 +39,7 @@ Aviatrix recommends the following be done, as soon as possible, to avoid any pos
  - First, do a backup on your Controller in "Controller/Settings/Maintenance/Backup&Restore/Backup Now"
  - Make sure that **all your Gateways are in Up/Green state**
  - Go to "Controller/Settings/Maintenance/Software Patches" and click on "Update Available Patches" to see the three patches listed above. 
+
  - Apply **"Detect AVX-18796"** patch first. Check your email for a report.
 
    - AVX_SW-PATCH_AVX-18796-FIXED: If the report indicates that your system is NOT impacted, no further actions are needed. We recommend that you stay on the latest supported releases 
