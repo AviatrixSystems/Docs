@@ -7,10 +7,14 @@
 Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW
 =======================================================================================================
 
-Aviatrix’s subnet inspection feature lets you use Aviatrix Controller to redirect subnet-level traffic to Aviatrix Transit FireNet for further inspection by a next-generation firewall (NGFW) appliance such as Checkpoint, Palo Alto Firewall, or Fortinet. Previously, traffic inspection policy could only be applied at the VNET level, which meant that traffic from all subnets in a VNET would be inspected by the NGFW. With this feature, you can now assign subnets to a “subnet group” and specify an inspection policy on the subnet group. Traffic from all subnets in the subnet group are redirected to the NGFW for inspection.
+Aviatrix’s subnet inspection feature lets you use Aviatrix Controller to redirect subnet-level traffic to Aviatrix Transit FireNet for further inspection by a next-generation firewall (NGFW) appliance such as Checkpoint, Palo Alto Firewall, or Fortinet. Previously, traffic inspection policy could only be applied at the VNET level, which meant that traffic from all subnets in a VNET would be inspected by the NGFW. With this feature, you can now assign subnets to a “subnet group” and specify an inspection policy on the subnet group. Traffic from all subnets in the subnet group is redirected to the NGFW for inspection.
 
 .. note::
-   Currently, subnet inspection is only available in Azure.
+   * Currently, subnet inspection is only available in Azure.
+   * Aviatrix does not recommend this feature if you require very low latency between any two VMs placed in a subnet group. For example, VMs that are in a proximity placement group. 
+   * VMs within any subnet group will automatically communicate through the closest Aviatrix Transit Gateway. 
+   * VMs within a subnet group with an inspection policy will automatically communicate through the closest Aviatrix Transit FireNet and the associated firewall. 
+   * Aviatrix recommends testing this feature before deploying it to your production workloads. 
 
 What is a Subnet Group?
 =======================
@@ -22,9 +26,9 @@ Supported Features
 
 #. Intra-VNET and Inter-VNET traffic inspection
 #. ActiveMesh 2.0
-#. High Performance Encryption
-#. Transit FireNet HA mode
-#. Supported NGFW: Palo Alto Networks, Checkpoint, Fortinet
+#. High Performance Encryption (HPE)
+#. Transit FireNet High Availability (HA) mode
+#. Supported NGFWs: Palo Alto Networks, Checkpoint, Fortinet
 #. Terraform
 
 Unsupported Features
@@ -36,10 +40,10 @@ The following features are not supported when subnet groups are enabled. If any 
 #. Azure Secondary CIDR not supported
 #. The following advanced features will be disabled:
     a. Customized SNAT on Spoke gateway
-    b. Customized Spoke advertise CIDRs
+    b. Customized Spoke advertised CIDRs
     c. Customized Spoke VPC Route Table
     d. Filter Learned Routes to Spoke VPC
-    e. Auto-advertise Spoke Site2Cloud CIDRs
+    e. Auto-advertised Spoke Site2Cloud CIDRs
     f. BGP on Spoke
 
 Subnet Groups Management Workflow
@@ -95,7 +99,9 @@ Important Recommendations
 
 #. **There is a downtime of 10 – 20 seconds when you add or remove subnets from a subnet group. If this downtime is not acceptable, be sure to add or remove subnet groups during a maintenance window.**  
 
-#. Configure a “Default” Subnet Group in the VNET and add all subnets that do not need an inspection policy to the “Default” group. All other subnets that require traffic inspection can be added to custom subnet groups that have inspection policy set.
+#. Configure a “Default” Subnet Group in the VNET and add all subnets that do not need an inspection policy to the “Default” group. All other subnets that require traffic inspection can be added to custom subnet groups that have an inspection policy set.
+
+#. Only learned and Aviatrix-created routes are carried over from the subnet routing tables to the subnet group routing tables created by Aviatrix. Once a subnet is added to a group, you can manually recreate custom routes in the subnet group route table through the Azure console.
 
 Configuring an Inspection Policy
 --------------------------------
@@ -104,7 +110,7 @@ The workflow for configuring an inspection policy is similar to configuring a Fi
 
 |configure_inspection_policy|
 
-You can select a subnet group and click **ADD** to move it from the Not Inspected list to the Inspected list. In the above figure, the Transit FireNet Gateway will redirect traffic from `SPOKE_SUBNET_GROUP:spoke-east-us-a~~sg-blue` to the NGFW. In the NGFW you can configure the firewall policies to either drop, log, or allow the traffic flow from the subnets in the group.
+You can select a subnet group and click **ADD** to move it from the Not Inspected list to the Inspected list. In the above figure, the Transit FireNet Gateway will redirect traffic from SPOKE_SUBNET_GROUP:spoke-east-us-a~~sg-blue to the NGFW. In the NGFW you can configure the firewall policies to either drop, log, or allow the traffic flow from the subnets in the group.
 
 Traffic Traversal in Subnet Groups
 ----------------------------------
