@@ -94,7 +94,7 @@ Aviatrix releases features in preview mode to offer you the opportunity to exper
 - Aviatrix does not charge for using features in preview mode. You could be charged if the preview feature is promoted to an officially supported feature. If a feature in preview mode is promoted to an officially supported product it is announced in the product release notes. 
 - Preview mode features are clearly marked in the UI.  
 
-**Azure Subnet-Level Inspection**
+**Preview - Azure Subnet-Level Inspection**
 
 - Azure Subnet-Level Inspection enables inspection by Aviatrix Transit FireNet solution for traffic flowing between subnets within a VNet or in different VNets. For more information, refer to `Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW <https://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
 
