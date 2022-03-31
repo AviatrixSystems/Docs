@@ -7,19 +7,19 @@
 ActiveMesh Insane Mode Encryption Performance 
 ===============================================
 
-This document publishes Aviatrix ActiveMesh Insane Mode encryption performance test benchmarks. 
+This document provides Aviatrix ActiveMesh Insane Mode High-Performance Encryption (HPE) test benchmarks. 
 
-For more information on Aviatrix Insane Mode, check out `this link. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
+For more information about Aviatrix Insane Mode, refer to `Insane Mode Encryption FAQ. <https://docs.aviatrix.com/HowTos/insane_mode.html>`_
 
 AWS Performance Test Results
 ----------------------------------------------
 
-Aviatrix High Performance Encryption (HPE), also known as ActiveMesh Insane Mode, achieves line rate performance with encryption in AWS when 
-Jumbo frames are deployed (the default setting for AWS instances). The test benchmark baseline is the native AWS peering  
-where no Aviatrix gateways
+Aviatrix ActiveMesh Insane Mode High-Performance Encryption (HPE) achieves line rate performance with encryption in AWS when 
+Jumbo Frames are deployed (the default setting for AWS instances). The test benchmark baseline is the native AWS peering  
+where no Aviatrix Gateways
 are deployed in the VPCs. Adding 500 stateful firewall rules have little impact to the performance. 
 
-Below are the test topologies.
+The test topologies are shown below.
 
 |test_topologies|
 
@@ -49,7 +49,7 @@ For MTU = 350 Bytes, the result is shown in the diagram below.
 
 |single_gateway_350B|
 
-T3 instance series performance
+T3 Instance Series Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ==========================      ===============================     ===============================
@@ -68,10 +68,12 @@ Azure Performance Test Results
 ------------------------------------------------
 
 The performance results below are from tests conducted with the topology of Test VMs > Spoke > Transit > Spoke > Test VMs in the same 
-region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke Gateways
+region with active-mesh deployment.
+
+Test VMs' route tables are load balanced to point to either primary Spoke Gateways
 or HA Spoke Gateways to take advantage of the active-mesh deployment. 
 
-The test topology is shown as below. 
+The test topology is shown below. 
 
 |azure_test_topology|
 
@@ -87,7 +89,7 @@ Standard_D5_v2                   20.56Gbps
 GCP Performance Test Results
 -------------------------------------------
 
-Topology is shown below where the test is performed with the following conditions:
+The test topology is shown below with the following conditions:
 
     - VM <-> Spoke <-> Transit <-> Spoke <-> VM
     - HA enabled
@@ -95,7 +97,7 @@ Topology is shown below where the test is performed with the following condition
 
 |gcp_test_topology|
 
-n1 series performance
+N1 Series Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====================      ===============================
@@ -107,7 +109,7 @@ n1-highcpu-16             11.58
 n1-highcpu-32             19.97                                          
 ====================      ===============================
 
-n2 series performance
+N2 Series Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====================      ===============================
@@ -119,7 +121,7 @@ n2-highcpu-16             14.98
 n2-highcpu-32             25.549                                          
 ====================      ===============================
 
-c2 series performance
+C2 Series Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====================      ===============================
@@ -128,20 +130,27 @@ c2 series performance
 c2-standard-4             5.792                          
 c2-standard-8             9.44                         
 c2-standard-16            18.48                         
-c2-standard-30            25.52                                           
+c2-standard-30            25.52
+c2-standard-60            32                              
 ====================      ===============================
+
+
 
 .. note::
 
-  To deploy Aviatrix Gateways with n2 or c2 series successfully, users need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
+  To deploy Aviatrix Gateways with  N2 or C2 series successfully, you need to apply `CPU Quota Increase <https://cloud.google.com/compute/quotas#cpu_quota>`_ request to GCP support first.
 
 
 OCI Performance Test Results
 ------------------------------------
 
-The performance results below are from tests conducted with the topology of Test VMs > Spoke > Transit > Spoke > Test VMs in the same 
-region with active-mesh deployment. Note test VMs' route tables are load balanced to point to either primary Spoke Gateways
-or HA Spoke Gateways to take advantage of the active-mesh deployment. 
+The performance results below are from tests conducted with the topology of Test VMs > Spoke > Transit > Spoke > Test VMs in the same region with active-mesh deployment. 
+
+.. note::
+
+Test VMs' route tables are load balanced to point to either primary Spoke Gateways
+or HA Spoke Gateways to take advantage of the active-mesh deployment.
+
 
 ===========================      ===============================
 **Transit Gateway**              **Throughput with MTU 1500B**    
@@ -152,6 +161,7 @@ VM.Standard2.8                   2.471Gbps
 VM.Standard2.16                  4.99Gbps
 VM.Standard2.24                  6.039Gbps                          
 ===========================      ===============================
+
 
 ===========================      ===============================
 **Transit Gateway**              **Throughput with MTU 9000**    
@@ -171,7 +181,11 @@ How to Tune Performance
 Check MTU size
 ^^^^^^^^^^^^^^^^^^
 
-Use Trace Path. Go to Troubleshoot > Diagnostics > Network. Select a gateway and destination IP address and click **Trace Path**. It should display MTU of the devices along the path. 
+To check MTU size, use Trace Path. 
+
+1. In Aviatrix Controller, go to **Troubleshoot** > **Diagnostics** > **Network**.
+2. In Gateway Utility, select a gateway and specify a destination host name or IP address.
+3. Click **Trace Path**. The MTU of the devices along the path is shown. 
 
 Tune TCP window size
 ^^^^^^^^^^^^^^^^^^^^^^
