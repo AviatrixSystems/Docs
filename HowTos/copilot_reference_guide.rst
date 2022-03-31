@@ -18,7 +18,7 @@ CoPilot Dashboard
 
 This section describes the Aviatrix CoPilot dashboard.
 
-The CoPilot Dashboard offers a broad perspective on the inventory and status of your deployment. CoPilot Dashboard shows an inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. The Dashboard shows the number and status of these managed resources as well as a breakdown of each on a per cloud basis. A topology geographic map shows where the managed VPCs/VPNs/VNETs are located across the globe.
+The CoPilot Dashboard offers a broad perspective on the inventory and status of your deployment. CoPilot Dashboard shows an inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. The Dashboard shows the number and status of these managed resources as well as a breakdown of each on a per cloud basis. A topology geographic map shows where the managed VPCs/VPNs/VNets are located across the globe.
 
 First displayed in Dashboard are inventory chips providing information about managed resources across your cloud networks. Inventory chips show the number and status of each managed resource. 
 
@@ -31,7 +31,7 @@ To view the status of a managed resource, click the status marker in its associa
 
 - Virtual Data Center 
 
-  A Virtual Data Centers (VDC) is a logical “walled garden” that binds different resources together using a shared network space. This is synonymous to VPC in AWS and GCP, vNETs in Azure, and so forth 
+  A Virtual Data Centers (VDC) is a logical “walled garden” that binds different resources together using a shared network space. This is synonymous to VPC in AWS and GCP, VNets in Azure, and so forth 
 
 - Gateway by type: 
 
@@ -62,13 +62,13 @@ The Topology feature gives you visibility into your network as follows:
 
 -   **Network Graph - Network View**
 
-    In Network Graph, in Network view, CoPilot displays a network topology map that shows the logical and physical layout of how managed network resources are connected across multiple clouds. Topology provides a visual representation of deployed networks (VPCs/VNETs/VCNs), gateways, instances, and gateway connections. CoPilot automatically draws the map when it connects to Aviatrix Controller.
+    In Network Graph, in Network view, CoPilot displays a network topology map that shows the logical and physical layout of how managed network resources are connected across multiple clouds. Topology provides a visual representation of deployed networks (VPCs/VNets/VCNs), gateways, instances, and gateway connections. CoPilot automatically draws the map when it connects to Aviatrix Controller.
 
     The Aviatrix Gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. When highlighting a gateway, click on the DIAG button to see options available for performing diagnostics from the gateway that is in focus.
 
 -   **Network Graph - Transit View**
 
-    In Network Graph, in Transit view, CoPilot shows the topology of your Aviatrix transit network in relation to your deployed Aviatrix transit gateways. By clicking on the Aviatrix transit icon, you can see all of the transit VPCs/VNETs, VPNs that are managed by Aviatrix Controller. By clicking on a region icon, you can see the spoke VPCs/VNETs/VPNs that the controller currently manages. By clicking on a spoke VPC/VNET/VPN, you can see all network constructs inside of that spoke. You can use the search field to find specific resources.
+    In Network Graph, in Transit view, CoPilot shows the topology of your Aviatrix transit network in relation to your deployed Aviatrix transit gateways. By clicking on the Aviatrix transit icon, you can see all of the transit VPCs/VNets, VPNs that are managed by Aviatrix Controller. By clicking on a region icon, you can see the spoke VPCs/VNets/VPNs that the controller currently manages. By clicking on a spoke VPC/VNet/VPN, you can see all network constructs inside of that spoke. You can use the search field to find specific resources.
 
 -   **Latency Monitor**
 
@@ -230,11 +230,11 @@ To create and save filters for topology:
 Search and filter for cloud native custom tags
 ----------------------------------------------
 
-Search and filter for custom tags you created in your cloud provider environment for your VPCs/VNETs/VCNs and instances.
+Search and filter for custom tags you created in your cloud provider environment for your VPCs/VNets/VCNs and instances.
 
 This feature is available starting from Controller release 6.6. 
 
-To filter for cloud native VPC/VNET/VCN tags and instance tags:
+To filter for cloud native VPC/VNet/VCN tags and instance tags:
 
 1.  Log in to CoPilot.
 
@@ -493,7 +493,7 @@ In Cloud Routes, you can view routing information for:
 
   You can filter routes based on a specific IP address to view all gateways across which a subnet is propagated that includes the specific IP address.
 
-- VPC/VNET/VCN Routes: Routing tables for all virtual data centers (VPC/VNET/VCN) in any cloud provider. 
+- VPC/VNet/VCN Routes: Routing tables for all virtual data centers (VPC/VNet/VCN) in any cloud provider. 
 
   You can filter routing tables based on a specific route table name.
 
@@ -727,7 +727,7 @@ While the ThreatIQ Threats view provides visibility into the threats detected in
 
 - **Enable alerts.** In ThreatGuard view, you can enable alerts so you are notified when threat-IP traffic is first detected. You can configure your preferred communication channel (email) for sending these ThreatGuard alerts. In CoPilot, in the Notifications option, you can view historical information about when the alerts were triggered, including the names of the gateways within the threat-IP traffic flow. ThreatGuard alerts are based on threat-IP data stored in a database that is regularly updated with the most current threats (new or removed). When a threat IP is removed from the threat-IP source (that is, the IP is no longer deemed malicious), the update is automatically pushed to Aviatrix Cloud Network Platform
 
-- **Block threat-IP traffic.** In ThreatGuard, you can enable blocking of threat-IP traffic. To block threat-IP traffic, alerts must first be enabled. When blocking is enabled, the Controller upon first detecting a threat IP in a traffic flow, instantiates security rules (stateful firewall rules) on all gateways that are within that flow (all gateways within the VPC/VNET/VCN) to immediately block the threat-IP associated traffic. If the threat IP is removed from the database of the threat-IP source, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the security rules for that specific threat IP remain enforced. NOTE: If you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats (that is, all threat IPs) detected up to that point.
+- **Block threat-IP traffic.** In ThreatGuard, you can enable blocking of threat-IP traffic. To block threat-IP traffic, alerts must first be enabled. When blocking is enabled, the Controller upon first detecting a threat IP in a traffic flow, instantiates security rules (stateful firewall rules) on all gateways that are within that flow (all gateways within the VPC/VNet/VCN) to immediately block the threat-IP associated traffic. If the threat IP is removed from the database of the threat-IP source, the Controller automatically removes the security rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the security rules for that specific threat IP remain enforced. NOTE: If you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats (that is, all threat IPs) detected up to that point.
 
 You can add a custom list of IP addresses (you consider threat IPs) to the database of known malicious hosts used by ThreatIQ with ThreatGuard. For information, see Add a Custom ThreatIQ IP List.
 
@@ -753,9 +753,9 @@ About ThreatGuard Firewall Rules
 
 ThreatGuard firewall rules are stateful firewall rules that are applied to Aviatrix gateways to block traffic for threats detected by the ThreatIQ with ThreatGuard feature. Threats are either IP addresses from the threat-IP source that Aviatrix Cloud Network Platform communicates with or from your custom ThreatIQ IP List. For information about ThreatIQ, see Working with ThreatIQ.
 
-Aviatrix CoPilot scans flow records for threats. When ThreatGuard blocking is enabled, when CoPilot detects a threat IP in a traffic flow, it calls the controller with the firewall rules to add. The controller instantiates the ThreatGuard firewall rules on all gateways that are within that flow — all gateways within the VPC/VNET — to immediately block the threat-IP associated traffic.
+Aviatrix CoPilot scans flow records for threats. When ThreatGuard blocking is enabled, when CoPilot detects a threat IP in a traffic flow, it calls the controller with the firewall rules to add. The controller instantiates the ThreatGuard firewall rules on all gateways that are within that flow — all gateways within the VPC/VNet — to immediately block the threat-IP associated traffic.
 
-By default, when ThreatGuard blocking is enabled, blocking occurs in all VPCs/VNETs. When configuring ThreatGuard blocking, you have the option to exclude any VPC/VNET in your network from ThreatGuard blocking.
+By default, when ThreatGuard blocking is enabled, blocking occurs in all VPCs/VNets. When configuring ThreatGuard blocking, you have the option to exclude any VPC/VNet in your network from ThreatGuard blocking.
 
 If a threat IP is removed from the database of the threat-IP source or from your custom ThreatIQ IP List, the controller automatically removes the ThreatGuard firewall rules for that specific threat IP from the affected gateways and associated traffic is no longer blocked. Otherwise, the ThreatGuard firewall rules for that specific threat IP remain enforced.
 
@@ -764,23 +764,41 @@ If a threat IP is removed from the database of the threat-IP source or from your
 When a ThreatGuard firewall rule is newly applied on a gateway that has existing rules applied, note the following:
 
 -   The ThreatGuard firewall-rule drop policies are in addition to the existing firewall policies applied to the same gateways.
--   By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule.
+-   If you configure ThreatGuard firewall rules to *append* instantiated rules (default), Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule.
+-   If you configure ThreatGuard firewall rules to *prepend* instantiated rules, Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. **Note**: The prepend feature is available starting from Controller release 6.6.5544.
+-   If you change the append/prepend configuration, the new configuration applies to new rules. The rules instantiated before the configuration change will retain their placement in the rules list.
 -   Firewall rules are followed in order by the first matching condition. The rule that applies first is the action taken and no subsequent rules are used.
 
 Enable ThreatGuard Blocking 
 ---------------------------
 
-Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushed down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNET/VCN will block.
+Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushed down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNet/VCN will block.
 
 To enable ThreatGuard blocking, you must log in to CoPilot with a user account that has ``all_write`` or ``all_security_write`` permissions.
 
 To enable ThreatGuard blocking:
 
-1. Log in to CoPilot.
-2. From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
-3. Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
-4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNET/VCN will block the associated traffic. You can be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled. By default, all VPCs/VNets/VCNs block. You can then use the Allow/Deny List to specify which ones will not block.
-5. (Optional) Disable blocking. **Note:** When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats detected up to that point.   
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
+
+3.  Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark.
+
+    ThreatGuard alerts must be enabled before blocking can be enabled. See `Enable ThreatGuard Alerts <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-threatguard-alerts>`_.
+
+4.  Click the **Block Threats** slider so that it slides to the right.
+
+    ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected.
+
+    Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNET/VCN will block the associated traffic. You can be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled in the next step. By default, all VPCs/VNets/VCNs block.
+
+5.  (Optional) Transfer VPC/VNets to the Not Protected list if you do not want the instances in them to be protected by ThreatGuard blocking and click **Save**.
+
+6.  (Optional) Specify if you want to prepend already instantiated rules on a gateway with ThreatGuard rules and click **Save**. If you configure ThreatGuard firewall rules to *prepend* instantiated rules, Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. **Note**: The prepend feature is available starting from Controller release 6.6.5544. For more information, see `About ThreatGuard Firewall Rules <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-threatguard-firewall-rules>`_.
+
+7.  (Optional) Disable blocking.
+
+    **Note:** When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats detected up to that point.
 
 Add a Custom ThreatIQ IP List 
 -----------------------------
@@ -900,7 +918,7 @@ This section describes the Reports feature of Aviatrix CoPilot.
 
 In Reports, you can create detailed reports showing your inventory of managed resources (resources managed by Aviatrix Controller) in a single cloud or across all clouds in your multi-cloud network.
 
-You can quickly create reports that show on which cloud, region, and VPC/VNET/VCN specific managed resources are running. You can add columns to the report for different properties associated with resource types. You can apply complex filters to customize the data that gets included in the report for each resource type.
+You can quickly create reports that show on which cloud, region, and VPC/VNet/VCN specific managed resources are running. You can add columns to the report for different properties associated with resource types. You can apply complex filters to customize the data that gets included in the report for each resource type.
 
 Create an Inventory Report
 --------------------------
@@ -921,24 +939,24 @@ To create an inventory report:
     -   If the report is to include managed resources for a single cloud, click the icon of the applicable cloud provider.
 4.  In **Select the region(s)**, CoPilot shows the regions in which you have managed resources for the cloud(s) you specified in the previous step. Select each region that includes managed resources you want to include in your report. If the types of managed resources to include are within all regions, click **Select All**.
 
-5.  In **Select the VPC(s)**, CoPilot shows all the VPCs/VNETs/VCNs in which you have managed resources for the region(s) you specified in the previous step. Select each VPC/VNET/VCN that includes managed resources to include in your report. If the types of managed resources to include are within all VPCs/VNETs/VCNs, click **Select All**.
+5.  In **Select the VPC(s)**, CoPilot shows all the VPCs/VNets/VCNs in which you have managed resources for the region(s) you specified in the previous step. Select each VPC/VNet/VCN that includes managed resources to include in your report. If the types of managed resources to include are within all VPCs/VNets/VCNs, click **Select All**.
 
 6.  In **Select resource type(s)**, select the resource type icons to specify the resource types to include in the report.
 
-7.  In **Select the properties**, CoPilot shows various properties that are associated with the resource types you specified in the previous step. Select a property to include it as a column in the report. The report preview pane automatically includes the *name* property of the managed resource and its *cloud*, *region*, and *VPC/VNET/VCN* properties (you can deselect them to remove them from the report). You can use the Search box to locate a property associated with data to include in the report. For example, for the gateway resource type, typing *size* in the search box returns a result `vpc_size`. By including `vpc_size` in the report, you can view what size instance each of those gateways are currently running on (the `vpc_size` property signifies the size of gateways). As another example, typing *trans* in the search box returns properties that include `transit` in the name, such as `transit_vpc`. By including the `transit_vpc` property in the report, you can view which of those gateways are transit gateways.
+7.  In **Select the properties**, CoPilot shows various properties that are associated with the resource types you specified in the previous step. Select a property to include it as a column in the report. The report preview pane automatically includes the *name* property of the managed resource and its *cloud*, *region*, and *VPC/VNet/VCN* properties (you can deselect them to remove them from the report). You can use the Search box to locate a property associated with data to include in the report. For example, for the gateway resource type, typing *size* in the search box returns a result `vpc_size`. By including `vpc_size` in the report, you can view what size instance each of those gateways are currently running on (the `vpc_size` property signifies the size of gateways). As another example, typing *trans* in the search box returns properties that include `transit` in the name, such as `transit_vpc`. By including the `transit_vpc` property in the report, you can view which of those gateways are transit gateways.
 
 8.  In **Add filters**, you can optionally use filters to narrow down the managed resources to include in your report. For any property, you can set a filter using the property's value (TIP: When you include a property in the report, the value of it is listed in its associated report column). For example, if you have hundreds of gateways in your environment and want to narrow down the contents of the report to only transit gateways, add a filter with the rule to show only transit gateways (click ADD FILTERS, click ADD RULE, and then set field `gateway.transit.vpc` with the filter operator ``==`` set to value `yes` and click APPLY FILTERS). If you add a filter on a property you did not previously select to be included (displayed) in the report, the filter is applied but the property is not added to the report. In this case, it may be helpful to take note of your applied filter for future reference. NOTE: Currently, filters cannot be saved.
 
 9.  (Optional) Save, download, or print the report. For printing, select the paper size and page orientation.
 
-10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNETs/VCNs, deselect the regions, and deselect the clouds as needed to report only on the data you want.
+10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNets/VCNs, deselect the regions, and deselect the clouds as needed to report only on the data you want.
 
 Create a Resource Utilization Report
 ------------------------------------
 
 Create a report that summarizes the resource utilization (telemetry) data for Aviatrix gateways in a single cloud or across all clouds in your multi-cloud network. CoPilot exposes approximately 80 performance metrics (system and network metrics). You can select from any or all performance metrics to report on for the time period you specify. Per gateway, when reporting on network metrics, CoPilot aggregates the metrics across all interfaces (default), or if specified, reports the metrics for each interface.
 
-CoPilot shows all gateways that are managed by Aviatrix Controller in any of your clouds, regions, and VPCs/VNETs/VCNs. You create a custom report by selecting options that guide you to include only those Aviatrix gateways and performance metrics you want in the report.
+CoPilot shows all gateways that are managed by Aviatrix Controller in any of your clouds, regions, and VPCs/VNets/VCNs. You create a custom report by selecting options that guide you to include only those Aviatrix gateways and performance metrics you want in the report.
 
 To create a resource utilization report:
 
