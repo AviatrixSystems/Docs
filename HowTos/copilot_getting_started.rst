@@ -20,16 +20,16 @@ Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot wo
 Instance Configuration Details
 ------------------------------
 
-- Configure your CoPilot security group as shown below to allow the following: 
+- Open your CoPilot security group for: 
 
   - 443 from anywhere user access (User Interface)
 
-  - UDP port 5000 from specific gateway IPs
+  - UDP port 5000 from all of your Aviatrix gateway IPs (gateways send Remote Syslog to CoPilot)
 
-  - UDP port 31283 from specific gateway IPs 
+  - UDP port 31283 from all of your Aviatrix gateway IPs (gateways send Netflow to CoPilot)
 
 .. tip::
-  You can leverage Aviatrix Controller's security group management to copy the IP addresses of the gateways. 
+  In Controller you can view the IP addresses of all your gateways from the Gateways page. 
 
 
 Instance System Requirements
@@ -88,23 +88,29 @@ To subscribe to a CoPilot offer:
     -   Copilot requires the following service ports:
 
         -   TCP port 443 for Web UI (to reach CoPilot public IP via HTTPS using your web browser)
-        -   UDP port 31283 for FlowIQ (port is configurable)
-        -   UDP port 5000 for Remote Syslog Service
+        -   UDP port 31283 for CoPilot FlowIQ data (port is configurable)
+        -   UDP port 5000 for CoPilot Security audit data (Remote Syslog Service)
+        
+5.  In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
 
-        For the UDP ports, change the default inbound rule of 0.0.0.0/0 to only the IP addresses of your Aviatrix gateways. For port 443, you can allow only your and other trusted user's IP addresses.
-
-
-5.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
+    -   For the UDP ports, change the default inbound rule of 0.0.0.0/0 to the IP addresses of your Aviatrix gateways: 
+        -   Open your CoPilot Security Group for UDP 31283 from all of your Aviatrix Gateways.
+        -   Open your CoPilot Security Group for UDP 5000 from all of your Aviatrix Gateways.
+        -   For port 443, you can allow only your and other trusted user's IP addresses.
+    .. note::
+        If you launch new gateways from your controller later, you must also add their CIDR entries here. 
+       
+6.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
     For example, in AWS, you select the region and click **Continue to Launch**.
 
     You should receive a message from the cloud provider stating that the instance of CoPilot software is launched/deployed.
 
-6.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section and assign an EIP to the CoPilot instance.
+7.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section and assign an EIP to the CoPilot instance.
 
     Take note of the IP address to use later during initial setup.
 
-7.  Start the CoPilot instance/virtual machine.
+8.  Start the CoPilot instance/virtual machine.
 
     For example, in the AWS EC2 Dashboard, check the instance checkbox and from the Actions menu, choose Start Instance.
 
@@ -164,25 +170,45 @@ To perform an initial setup of CoPilot:
 
 7.  In Data Disk Setup, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
 
+    Note that when you launch CoPilot at first your version number will be based on the version of the image release. Within an hour, the CoPilot version will be updated to the latest software release.
+
 8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
 9.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
     a.  Log in to Aviatrix Controller.
 
-    b.  Go to Settings -> Loggings -> NetFlow Logging.
+    b.  Go to Settings -> Logging -> NetFlow Agent.
 
-    c.  Use the static IP address of CoPilot as the server and UDP port 31283 (default, port is configurable).
+    c.  Use the static IP address of CoPilot as the Netflow server IP and UDP port 31283 (default, port is configurable).
+
+    d.  Use version 9.
+
+    e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    .. note::
+        If you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 31283 from each newly launched gateway.  
+
+    f.  Click **Enable**.
 
     You should start seeing NetFlow in CoPilot after a few minutes.
 
-10. (For remote syslog service) To enable syslog for performance monitoring in CoPilot, ensure that the controller is configured to specify CoPilot as the loghost server.
+10. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
     a.  Log in to Aviatrix Controller.
 
-    b.  Go to Settings -> Loggings -> Remote Syslog.
+    b.  Go to Settings -> Logging -> Remote Syslog.
 
-    c.  Enable the Service, choose a Profile Index (ie. 0), and use the static IP address of CoPilot as the server and UDP port 5000 (default).
+    c.  Choose Profile Index 9.
+
+    d.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default).
+
+    e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    .. note::
+        If you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.  
+
+    f.  Click **Enable**.
 
 
 About CoPilot User Accounts
@@ -194,7 +220,7 @@ You can use any valid user account defined on the controller to log in to CoPilo
 
 During initial setup of CoPilot, you specify a user account defined on the controller to be used as the CoPilot service account. The CoPilot service account is used to run CoPilot services, such as alerts, topology replay, and ThreatGuard (without any user logged in). If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
 
-For a user to enable ThreatGuard alerts or ThreatGuard blocking in CoPilot, they must log in to CoPilot with a user account that has `all_write` or `all_security_write` or `admin` permissions.
+For a user to enable ThreatGuard alerts or ThreatGuard blocking in CoPilot, they must log in to CoPilot with a user account that has `all_write` or `all_security_write` permissions.
 
 Users who will not enable ThreatGuard alerts or blocking can log in to CoPilot with an account that has `read_only` permissions and use all of its other features.
 
@@ -208,7 +234,7 @@ Configure Controller's access for CoPilot
 
 - On Controller security groups, ensure 443 is open to the public IP of the CoPilot instance.
 
-- Configure a dedicate user account on Aviatrix Controller for CoPilot. 
+- Configure a dedicated user account on Aviatrix Controller for CoPilot if desired. 
 
 - You should now be able to log in to CoPilot with the credentials we configured above.
 
@@ -216,28 +242,48 @@ Configure Controller's access for CoPilot
   If you are using RBAC, as of 1.1.5 CoPilot requires read-only access + access to ping and traceroute functions for diagnostic capabilities.
 
 
-Enable Syslog for Performance Monitoring
+Enable Syslog for CoPilot Security Audit Data
 ==============================================
 
-- Log in to Aviatrix Controller. 
+To use audit data of the Security feature in CoPilot, configure syslog to be sent to CoPilot: 
 
-- Go to Settings -> Loggings -> Remote Syslog.
+1.  Log in to Aviatrix Controller.
 
-- Enable the Service, choose a Profile Index (ie. 0), and use the EIP of CoPilot as the server and UDP port 5000 (default). 
+2.  Go to Settings -> Logging -> Remote Syslog.
+
+3.  Choose Profile Index 9.
+
+4.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default).
+
+5.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    .. note::
+        If you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List also. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway. 
+
+6.  Click **Enable**.
 
 
-Enable FlowIQ
-=================
+Enable Netflow for CoPilot FlowIQ Data
+=======================================
 
-- Log in to Aviatrix Controller. 
+To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot: 
 
-- Go to Settings -> Loggings -> NetFlow Logging.
+1.  Log in to Aviatrix Controller.
 
-- Use the EIP of CoPilot as the server and UDP port 31283 (default). 
+2.  Go to Settings -> Logging -> NetFlow Agent.
 
- 
-Deployment is complete. At this point your CoPilot is set up and ready to use. You should start seeing NetFlow in less than 5 minutes. Note that when you launch CoPilot at first your version number will be based on the version in the image. Within an hour, the CoPilot version will be updated.
+3.  Use the static IP address of CoPilot as the Netflow server IP and UDP port 31283 (default, port is configurable).
 
+4.  Use version 9.
+
+5.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    .. note::
+        If you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List also. In addition, in your native cloud console, you must open your CoPilot security group for UDP 31283 from each newly launched gateway. 
+
+6.  Click **Enable**.
+
+    You should start seeing NetFlow in CoPilot after a few minutes.
 
 CoPilot Disk (Volume) Management 
 ================================
