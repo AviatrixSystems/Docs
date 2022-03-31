@@ -24,10 +24,10 @@ This option changes the Aviatrix Transit Gateway ASN number before you setup Avi
 Connected Transit
 ------------------------
 
-By default, Aviatrix Spoke VPC/VNets do not have routing established to communicate 
-with each other via Transit. They are completely segmented.
+By default, Aviatrix Spoke VPCs/VNets do not have routing established to communicate 
+with each other via Transit. They are completely segmented. 
 
-If you would like to build a full mesh network where Spoke VPC/VNets communicate with each other via Transit GW, you can achieve that by enabling Connected Transit mode. All connections are encrypted. 
+If you would like to build a full mesh network where Spoke VPCs/VNets communicate with each other via Transit GW, you can achieve that by enabling Connected Transit mode. All connections are encrypted. 
 
 .. Note::
 
@@ -40,7 +40,7 @@ HA enabled while others don't work in a normal environment, but does not work
 when a failover happens on a HA enabled Spoke. 
 
 Advertise Transit VPC/VNet Network CIDR(s)
-------------------------------------------------
+--------------------------------------
 
 This field is only applicable to Transit GW established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
 
@@ -48,7 +48,7 @@ By default, Aviatrix Transit GW does not advertise Transit VPC/VNet `CIDR <https
 
 When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC/VNet CIDR to VGW. The Controller programs the 3 RFC1918 routes in the AWS route table to point to the Transit GW. It also programs the learned routes from VGW into the AWS route table. 
 
-If you deploy instances in the Transit VPC/VNet, enabling Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and on-prem network, assuming the Spoke VPC/VNets are in the RFC1918 range. 
+If you deploy instances in the Transit VPC/VNet, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and the on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
 
 To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
 Scroll down to Advertise Transit VPC Network CIDR(s) to enable.
@@ -61,7 +61,26 @@ BGP ECMP
 This option is to enable Equal Cost Multi Path (ECMP) routing for the next hop. For the Aviatrix Transit Gateway next hop routing decision
 process, refer to `ActiveMesh 2.0 next hop. <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_.
 
-Click **BGP ECMP** to set it to **Enabled**. 
+Click the Slide Bar to enable BGP ECMP. 
+
+Site2Cloud RX Balancing
+----------------------------
+.. Note::
+
+  This option is only available for Aviatrix Transit Gateways deployed in AWS on C5 and C5n instance types (except for c5.large and c5n.large). 
+
+The Site2Cloud RX Balancing option can increase forwarding throughput on Aviatrix Transit gateways for BGP-over-GRE `External Device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_ traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
+
+* On certain topologies that require high throughput, with External Devices that limit the number of GRE tunnels. 
+* Where maintaining a high number of GRE tunnels increases operational burden.
+
+If enabled, this option ensures that the Aviatrix Transit Gateway(s) are configured to maximize RX capacity and distribute ingress GRE tunnel load to all available vCPUs. This is mainly an alternative to `building a large number of GRE tunnels <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_, but a greater number of tunnels will be needed if the External Device imposes per-tunnel rate limits. A brief (sub-second) period of packet loss may affect the gateway when this setting is enabled or disabled.
+
+To maximize the forwarding throughput increase enabled by this setting, consider the following:
+
+* The number of vCPUs provisioned for the Aviatrix Transit Gateway(s) should be significantly higher than the number of GRE tunnels (for example, four GRE tunnels to a 16 vCPUs c5n.4xlarge instance).
+* High Performance Encryption (HPE) should be enabled between Aviatrix Transit Gateways.
+* BGP ECMP should be enabled, to ensure load balancing of return traffic over multiple tunnels.
 
 Active-Standby
 -------------------
@@ -70,9 +89,9 @@ This option is to provide the flexibility on Aviatrix Transit Gateways and Aviat
 
 The use case is a deployment scenario where on-prem device such as firewall does not support asymmetric routing on two tunnels. When Active-Standby mode is enabled, it applies to both BGP and Static Remote Route Based External Device Connections and for each connection, only one tunnel is active in forwarding traffic at any given time. 
 
-This feature can only be applied to non-HA remote device in the `External Device section <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#external-device>`_ of the Multi-Cloud Transit Network Workflow document.
+This feature can only be applied to non-HA remote devices in the `External Device section <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#external-device>`_.
 
-Click Active-Standby Mode to set it to **Enabled**. 
+Click Active-Standby mode to set it to **Enabled**. 
 
 Preemptive or Non-Preemptive Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,10 +126,10 @@ override that by manually entering the intended CIDR list to advertise to VGW.
 
 This feature is critical to limit the total number of routes carried by VGW (maximum is 100). 
 
-To enable this option in software version prior to 4.1, click Site2Cloud on the left sidebar, select the connection established by `this step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#aws-vgw-vpn-gateway>`_, and click to edit.
+To enable this option in software version prior to 4.1, on the left sidebar, select the connection established by `this step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, and click to edit.
 Scroll down to Manual BGP Advertised Network List to set it to **Enabled**.
 
-For software version 4.1 and later, click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Gateway tab. Select the Transit Gateway you want to enable this feature on, scroll down to the Manual BGP Advertised Network List, and enter the summarized CIDRs that you want to advertise
+For software version 4.1 and later, click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Gateway tab. Select the Transit Gateway you want to enable this feature on, scroll down to the Manual BGP Advertised Network List, and enter the summarized CIDRs that you want to advertise.
 
 To disable the option, leave the field blank and click **Change**.
 
@@ -122,7 +141,7 @@ Manual Advertise Routes per BGP Connection expands the existing gateway based ma
 To enable this option on software version 6.3, 
 
 #. Click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Transit tab.
-#. Select the Transit Gateway.
+#. Select the Transit Gateway. 
 #. Find the Connection Manual BGP Advertised Network List panel, select the connection name and fill the CIDRs to advertise in the Advertised Network List field.
 
 To disable the option, leave the field blank and click **Change**.
@@ -155,7 +174,7 @@ BGP Hold Time (seconds)
 ----------------------------------
 Use the BGP Hold Time option to manually set the BGP holding time for your Aviatrix transit gateway. The hold time specifies how long a router waits for incoming BGP messages before it assumes the neighbor is dead. 
 
-The Aviatrix Transit Gateway hold time is bound to the Aviatrix keep alive message time which is always 1/3 of the hold time. By default, the Hold Time is 180 seconds, and the Keep Alive time is 60 seconds. The supported Hold Time range is 12 to 180 seconds. If the remote site has a shorter hold time, the shorter hold time is used for the gateway.
+The Aviatrix Transit Gateway hold time is bound to the Aviatrix keep alive message time, which is always 1/3 of the hold time. By default, the Hold Time is 180 seconds, and the Keep Alive time is 60 seconds. The supported Hold Time range is 12 to 180 seconds. If the remote site has a shorter hold time, the shorter hold time is used for the gateway.
 
 Refresh BGP Advertised Routes
 ---------------------------------------
