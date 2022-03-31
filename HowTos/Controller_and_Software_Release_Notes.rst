@@ -88,7 +88,13 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 
 **Preview Features in Release 6.6**
 
-Aviatrix preview features offer you the opportunity to experiment with upcoming features and provide valuable feedback on your experience. Preview features should not be deployed in production environments. These features are disabled by default, if you wish to enable a preview feature please open an `Aviatrix Support <https://support.aviatrix.com/>`_ ticket.
+Aviatrix releases features in preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+ 
+- Features in preview mode are fully tested and safe for deployment in production environments.  
+- Aviatrix does not charge for using features in preview mode. You could be charged if the preview feature is promoted to an officially supported feature. If a feature in preview mode is promoted to an officially supported product it is announced in the product release notes. 
+- Preview mode features are clearly marked in the UI.  
+
+**Azure Subnet-Level Inspection**
 
 - Azure Subnet-Level Inspection enables inspection by Aviatrix Transit FireNet solution for traffic flowing between subnets within a VNet or in different VNets. For more information, refer to `Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW <https://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
 
