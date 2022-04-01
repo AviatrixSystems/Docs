@@ -11,8 +11,13 @@ Cluster Peering
 Performance Challenges
 ==============================
 
+<<<<<<< Updated upstream
 Today, encrypted peering (IPsec tunnel) between two VPC/VNets is carried out
 by two gateways (virtual machine, or instance based), one in each VPC/VNet. This limits IPsec
+=======
+Today encrypted peering (an IPsec tunnel) between two VPCs is carried out
+by two gateways (EC2 instance based), one in each VPC. This limits IPSEC
+>>>>>>> Stashed changes
 tunnel packet throughput to the throughput of a single instance. For
 example, AWS C4.4xlarge provides up to 1.5Gbps for an iperf test with
 TCP. There is no solution for use cases that require more than that
