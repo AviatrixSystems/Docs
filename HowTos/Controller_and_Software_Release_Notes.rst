@@ -13,76 +13,54 @@ If you are upgrading from release 6.5.x or later, follow the guidelines and proc
 
 **New Features in Release 6.6**
 
-**AVX-14021** – The Aviatrix Controller now supports OCI Gov Cloud accounts. To onboard these accounts, find the Aviatrix image in the OCI Gov Marketplace and subscribe. Then, open the Onboarding page in your Aviatrix Controller and use the `Oracle Onboarding Guide <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to begin onboarding.
+- **AVX-14021** – The Aviatrix Controller now supports OCI Gov Cloud accounts. To onboard these accounts, find the Aviatrix image in the OCI Gov Marketplace and subscribe. Then, open the Onboarding page in your Aviatrix Controller and use the `Oracle Onboarding Guide <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to begin onboarding.
 
 **Enhanced Features in Release 6.6**
 
-**AVX-14100** – Added support for c2-standard-60 instance type for Aviatrix Insane Mode on GCP. For Insane Mode on GCP performance throughput, refer to `GCP Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html?highlight=gcp%20performance%20test%20results#gcp-performance-test-results>`_.
-
-**AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. 
-
-**AVX-20423** – Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
-
-**AVX-17030** – In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is now supported. This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP address is exposed. For more information, refer to the `Site2Cloud FAQs <https://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
-
-**AVX-19161** – Added New Site2Cloud RX Balancing option to the Multi-Cloud Transit > Advanced Config > Edit Transit page. Enabling this option can increase forwarding throughput on Aviatrix Transit gateways for BGP-over-GRE External Device traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
+- **AVX-14100** – Added support for c2-standard-60 instance type for Aviatrix Insane Mode on GCP. For Insane Mode on GCP performance throughput, refer to `GCP Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html?highlight=gcp%20performance%20test%20results#gcp-performance-test-results>`_.
+- **AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. 
+- **AVX-20423** – Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
+- **AVX-17030** – In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is now supported. This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP address is exposed. For more information, refer to the `Site2Cloud FAQs <https://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+- **AVX-19161** – Added New Site2Cloud RX Balancing option to the Multi-Cloud Transit > Advanced Config > Edit Transit page. Enabling this option can increase forwarding throughput on Aviatrix Transit gateways for BGP-over-GRE External Device traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
 
 * On certain topologies that require high throughput, with External Devices that limit the number of GRE tunnels.
 * Where maintaining a high number of GRE tunnels increases operational burden.
 
 Note: This option is only available for Aviatrix Transit gateways deployed in AWS on C5 and C5n instance types (except for c5.large and c5n.large).
 
-**AVX-20200** – Clarified a confusing error message in an automated exception email that had little context: “AttributeError: 'NoneType' object has no attribute 'resource_guid’”.
-
-**AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO).
-
-**AVX-20383** – Added support for updating the secondary CIDRs in firewall-related VPC route tables for Azure FireNet gateways. The secondary CIDRs are usually added by user OOB (Out of Band) in a CSP. Then, an API needs to be called to manually update the changed CIDR set normally to the gateway route tables. However, for an Azure cloud case, the firewall-related VPC route tables also need to be updated. This product enhancement ensures that update. The API involved is “update_encrypted_spoke_vpc_cidrs”.
+- **AVX-20200** – Clarified a confusing error message in an automated exception email that had little context: “AttributeError: 'NoneType' object has no attribute 'resource_guid’”.
+- **AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO).
+- **AVX-20383** – Added support for updating the secondary CIDRs in firewall-related VPC route tables for Azure FireNet gateways. The secondary CIDRs are usually added by user OOB (Out of Band) in a CSP. Then, an API needs to be called to manually update the changed CIDR set normally to the gateway route tables. However, for an Azure cloud case, the firewall-related VPC route tables also need to be updated. This product enhancement ensures that update. The API involved is “update_encrypted_spoke_vpc_cidrs”.
 
 **UI Enhancements in Release 6.6**
 
-**AVX-15459** – Replaced ‘vpc_id with ‘OCID’ for OCI Gateways to make sure these values are unique. Now, every OCI vpc_id value has been migrated from vpc_name to OCID. For example, “vpc-oracle-test” is migrated to “ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq.”  The Controller UI will display <vpc_id>~~<vpc_name> in the VPC ID field for better readability: for example, “ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq~~vpc-oracle-test.”
-
-**AVX-18941** – Removed the Site2Cloud Standalone CloudN feature to improve routing functionality for Controllers upgraded to release 6.6 or above. Customers running Standalone CloudN in earlier releases (6.4 or below) can upgrade existing CloudN hardware or plan for an upgrade to Aviatrix Edge.
-
-**AVX-20616** – Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have large number of policies.
+- **AVX-15459** – Replaced ‘vpc_id with ‘OCID’ for OCI Gateways to make sure these values are unique. Now, every OCI vpc_id value has been migrated from vpc_name to OCID. For example, “vpc-oracle-test” is migrated to “ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq.”  The Controller UI will display <vpc_id>~~<vpc_name> in the VPC ID field for better readability: for example, “ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq~~vpc-oracle-test.”
+- **AVX-18941** – Removed the Site2Cloud Standalone CloudN feature to improve routing functionality for Controllers upgraded to release 6.6 or above. Customers running Standalone CloudN in earlier releases (6.4 or below) can upgrade existing CloudN hardware or plan for an upgrade to Aviatrix Edge.
+- **AVX-20616** – Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have large number of policies.
 
 **Known Issues**
 
-**AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
+- **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
 If you upgrade while AWS CloudWatch is still enabled, the system will enter a config fail state and the network will go down. You can return the system to sane condition by using Disable/Enable CloudWatch.
 
 **Issues Corrected in Aviatrix Release 6.6**
 
-**AVX-14253** – An Azure Transit Gateway took excessive time to advertise a newly attached Spoke Gateway's CIDRs over BGP.
-
-**AVX-16122** – After successfully enabling packet logging for either allow all or deny all base policy for stateful firewalls, packet logging was automatically removed.
-
-**AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start.
-
-**AVX-17058** – The S2C EIPs of Single IP HA gateways were leaked on gateway deletion after stopping/starting the gateway.
-
-**AVX-19498** – When using S2C Single IP HA, the gateway EIP was not released after the gateway deletion.
-
-**AVX-19811** – You can now insert a stateful firewall policy by specifying the position where they want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed.
-
-**AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table.
-
-**AVX-20109** – Some gateway software upgrades failed with an “Archive is too short” message, but a software upgrade succeeded after retrying.
-
-**AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly
+- **AVX-14253** – An Azure Transit Gateway took excessive time to advertise a newly attached Spoke Gateway's CIDRs over BGP.
+- **AVX-16122** – After successfully enabling packet logging for either allow all or deny all base policy for stateful firewalls, packet logging was automatically removed.
+- **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start.
+- **AVX-17058** – The S2C EIPs of Single IP HA gateways were leaked on gateway deletion after stopping/starting the gateway.
+- **AVX-19498** – When using S2C Single IP HA, the gateway EIP was not released after the gateway deletion.
+- **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where they want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed.
+- **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table.
+- **AVX-20109** – Some gateway software upgrades failed with an “Archive is too short” message, but a software upgrade succeeded after retrying.
+- **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly
 after the upgrade/rollback.
-
-**AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway.
-
-**AVX-20271** – Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
-
-**AVX-20471** – When both Transit Gateways of a transit peering didn’t have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
-
-**AVX-20647** – Performance fix for route processing in multi-domain environment.
-
-**AVX-20765** – If you had a TGW Firewall domain that enabled egress inspection, but this firewall’s domain was not connected to the Aviatrix Edge Domain, this setup enabled management access from the Aviatrix Edge domain. This issue caused the default route 0.0.0.0/0 to be incorrectly propagated to the Transit Gateway in the Aviatrix Edge domain.
-
-**AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables.
+- **AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway.
+- **AVX-20271** – Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
+- **AVX-20471** – When both Transit Gateways of a transit peering didn’t have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
+- **AVX-20647** – Performance fix for route processing in multi-domain environment.
+- **AVX-20765** – If you had a TGW Firewall domain that enabled egress inspection, but this firewall’s domain was not connected to the Aviatrix Edge Domain, this setup enabled management access from the Aviatrix Edge domain. This issue caused the default route 0.0.0.0/0 to be incorrectly propagated to the Transit Gateway in the Aviatrix Edge domain.
+- **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables.
 
 6.6.5413 (03/18/2022)  
 ====================== 
