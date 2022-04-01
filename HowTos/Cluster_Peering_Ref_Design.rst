@@ -40,7 +40,7 @@ cluster peering. In the first case, the encrypted cluster peering is
 over the Internet through an IGW. In the second case, the encrypted cluster
 peering is over native AWS peering.
 
-The deployment diagrams are described below for both cases.
+The deployment diagrams are described below for both cases in AWS.
 
 |image1|
 
@@ -55,7 +55,7 @@ to the peering VPC.
 Performance Benchmark and Analysis (AWS)
 =====================================
 
-Below is the performance benchmark for cluster peering using the iperf tool.
+Below is the performance benchmark for cluster peering using the iperf tool in AWS.
 The results are collected with encryption over AWS peering in the same
 region. The Aviatrix Gateway size is C4.8xlarge. The demux gateway size
 is C4.8xlarge.
@@ -119,7 +119,7 @@ highlighted.
 3. You can create multiple clusters in a VPC. A gateway may also belong
    to different clusters.
 
-For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 
 .. |image1| image:: Cluster_Peering_Reference_Design_files/image002.png
