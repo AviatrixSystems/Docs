@@ -125,7 +125,7 @@ to run the Cloudformation script.
 
 CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
 
-* Aviatrix Secure Networking Platform - BYOL
+* `Aviatrix Secure Networking Platform - BYOL <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/avx-awsmp-BYOL.template>`_
 * Aviatrix Secure Networking Platform - Enterprise Subscription
 * Check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
 
