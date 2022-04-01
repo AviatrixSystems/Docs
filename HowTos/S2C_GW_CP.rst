@@ -7,7 +7,7 @@
 Aviatrix Gateway to Check Point(R77.30)
 ============================================
 
-This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Check Point Firewall. To simulate an on-prem Check Point Firewall, we use a Check Point CloudGuard IaaS firewall VM at AWS VPC.
+This document describes how to build an IPsec tunnel based Site2Cloud connection between Aviatrix Gateway and Check Point Firewall. To simulate an on-prem Check Point Firewall, we use a Check Point CloudGuard IaaS firewall VM at AWS VPC.
 
 Network setup is as following:
 
@@ -27,17 +27,16 @@ Network setup is as following:
     
     *VPC2 Private Subnet CIDR: 10.10.1.0/24*
 
-1. Launch Check Point Security Gateway VM
-=========================================
+Launching Check Point Security Gateway VM
+============================================
 
 Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http://supportcontent.checkpoint.com/documentation_download?ID=45816>`_ to launch a  CheckPoint VM with at least two network interfaces. One interface serves as a WAN port and is in VPC2's public subnet. The other interface serves as a LAN port and is in VPC2's private subnet. Collect the public IP address of the WAN port.
 
-2. Create Site2Cloud Connection at Aviatrix Controller
+Creating Site2Cloud Connection at Aviatrix Controller
 ======================================================
 
- 2.1 Go to **Gateway->New Gateway** to launch an Aviatrix Gateway at VPC1's public subnet. Collect both public and private IP addresses of the Gateway.
-
- 2.2 Go to **site2cloud** and click **Add New** to create a site2cloud connection:
+1. Go to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both public and private IP addresses of the Gateway.
+2. Go to Site2Cloud and click **Add New** to create a Site2Cloud connection:
 
 ===============================     =================================================================
   **Field**                         **Value**
@@ -57,25 +56,24 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
   Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
 ===============================     =================================================================
 
- 2.3 Go to the **site2cloud** page. From the site2cloud connection table, select the connection created above (e.g. avx-cp-s2c). Select **Generic** from **Vendor** drop down list and click the **Download Configuration** button to download the site2cloud configuration. Save the configuration file for configuring CheckPoint-VM.
+3. Go to the Site2Cloud page. From the Site2Cloud connection table, select the connection created above (e.g. avx-cp-s2c). Select **Generic** from the Vendor dropdown list and click **Download Configuration** to download the Site2Cloud configuration. Save the configuration file for configuring CheckPoint-VM.
 
-3. Download and Install SmartConsole
-====================================
+Downloading and Installing SmartConsole
+======================================
 
- 3.1 Using a browser, connect to the Gaia Portal of the CheckPoint-VM at https://CheckPoint-VM_Public-IP:
-  
- 3.2 Click **Overview** at the left navigation bar, click **Download Now!** to download SmartConsole.
+ 1. Using a browser, connect to the Gaia Portal of the CheckPoint-VM at https://CheckPoint-VM_Public-IP:
+2. Click **Overview** at the left navigation bar, and then click **Download Now!** to download SmartConsole.
 
 |image0|
 
- 3.3 Install SmartConsole at your local machine and launch SmartDashboard.
+ 3. Install SmartConsole at your local machine and launch SmartDashboard.
 
-4. Create Network Objects at SmartConsole
+Creating Network Objects at SmartConsole
 =========================================
 
- 4.1 At Check Point SmartDashboard window, select the **Desktop** tab. Right click the **Networks** folder at the left navigation bar and select **Network**. 
+ 1. At Check Point SmartDashboard window, select the **Desktop** tab. Right click the **Networks** folder at the left navigation bar and select **Network**. 
  
- 4.2 Create one network for private subnet of VPC2 (Check Point VPC)
+ 2. Create one network for private subnet of VPC2 (Check Point VPC).
  
 |image1|
 
@@ -87,7 +85,7 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
   IPv4 Net mask                     VPC2 private subnet mask
 ===============================     =================================================================
 
- 4.3 Create one network for private subnet of VPC1 (Aviatrix Gateway VPC)
+ 3. Create one network for private subnet of VPC1 (Aviatrix Gateway VPC).
 
 |image2|
 
@@ -99,16 +97,16 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
   IPv4 Net mask                     VPC1 private subnet mask
 ===============================     =================================================================
 
-5. Configure Check Point Security Gateway with VPN
+Configuring Check Point Security Gateway with VPN
 ==================================================
 
- 5.1 At the SmartDashboard window, select the **Desktop** tab and expand the **Check Point** folder at the left navigation bar. Note that your gateway VM with the name format 'gw-xxxxxx' is automatically created.
+1. At the SmartDashboard window, select the **Desktop** tab and expand the **Check Point** folder at the left navigation bar. Note that your gateway VM with the name format 'gw-xxxxxx' is automatically created.
  
 |image3|
 
- 5.2 Right click the gateway name and select **Edit** from the menu.
+2. Right-click the gateway name and select **Edit** from the menu.
 
- 5.3 At **Check Point Gateway - General Properties** window:
+3. At the Check Point Gateway - General Properties window:
 
 |image4|
 
@@ -117,22 +115,22 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
 ===============================     =================================================================
   IPv4 Address                      Private IP of CheckPoint VM WAN port
   Test SIC Status                   Make sure the status is 'communicating'
-  Network Security                  Select 'IPSec VPN'
+  Network Security                  Select 'IPsec VPN'
 ===============================     =================================================================
 
- 5.4 At **Check Point Gateway - Topology** window, select **Manually defined** for **VPN Domain**. Select the network created at Step 4.2.
+4. At **Check Point Gateway - Topology** window, select **Manually defined** for VPN Domain. Select the network created when you created a network for private subnet of VPC2 (Check Point VPC).
  
 |image5|
  
- 5.5 At **Check Point Gateway - Topology** window, double click "eth0" (Check Point WAN port). Select **External (leads out to the Internet)**.
+5. At **Check Point Gateway - Topology** window, double-click "eth0" (Check Point WAN port). Select **External (leads out to the Internet)**.
 
 |image6|
 
- 5.6 At **Check Point Gateway - Topology** window, double click "eth1" (Check Point LAN port). Select **Internal (leads to the local network)**.
+6. At **Check Point Gateway - Topology** window, double click "eth1" (Check Point LAN port). Select **Internal (leads to the local network)**.
 
 |image7| 
 
- 5.7 At **Check Point Gateway - IPSec VPN - Link Selection** window, configure the parameters as follows:
+7. At **Check Point Gateway - IPsec VPN - Link Selection** window, configure the parameters as follows:
 
 |image8|
 
@@ -143,16 +141,16 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
   Selected address from topology table        Private IP of Check Point WAN port 
 =========================================     =======================================================
 
- 5.8 At **Check Point Gateway - IPSec VPN - VPN Advanced** window, configure the parameters as follows:
+8. At **Check Point Gateway - IPsec VPN - VPN Advanced** window, configure the parameters as follows:
 
 |image9|
 
-6. Configure an Interoperable Device to Represent Aviatrix Gateway
+Configuring an Interoperable Device to Represent Aviatrix Gateway
 ==================================================================
 
- 6.1 At Check Point SmartDashboard window, select the **Desktop** tab. Right click the **Networks** folder at the left navigation bar to create a new interoperable device.
+1. At Check Point SmartDashboard window, select the **Desktop** tab. Right-click the **Networks** folder at the left navigation bar to create a new interoperable device.
 
- 6.2 At **Interoperable Device - General Properties** window:
+2. At the Interoperable Device - General Properties window:
 
 |image10|
 
@@ -163,88 +161,88 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
   IPv4 Address                      Public IP of Aviatrix Gateway
 ===============================     =================================================================
 
- 6.3 At the **Interopable Device - Topology** window, select **Manually defined** for **VPN Domain**. Select the network created at Step 4.3.
+3. At the **Interopable Device - Topology** window, select **Manually defined** for VPN Domain. Select the network private subnet of VPC1 (Aviatrix Gateway VPC) you created above.
 
 |image11|
 
- 6.4 At the **Interopable Device - IPSec VPN - Link Selection** window, select **Always use this IP address->Main Address**
+4. At the **Interopable Device - IPsec VPN - Link Selection** window, select **Always use this IP address > Main Address**.
 
 |image12|
 
- 6.5 At the **Interopable Device - IPSec VPN - VPN Advanced** window, select **Use the community settings**
+5. At the **Interopable Device - IPsec VPN - VPN Advanced** window, select **Use the community settings**.
 
 |image13|
 
-7. Create a VPN Community
+Creating a VPN Community
 ==========================
 
- 7.1 At SmartDashboard **IPSec VPN** tab, select **Overview** from left navigation bar. Click the **New** button to create a Meshed Community.
+1. At SmartDashboard **IPsec VPN** tab, select **Overview** from left navigation bar. Click **New** to create a Meshed Community.
 
 |image14|
 
- 7.2 At **Meshed Community Properties - General** window, create one community with a name (e.g. site2cloud-avx)
+2. At **Meshed Community Properties - General** window, create one community with a name (e.g. Site2Cloud-avx).
 
 |image15|
 
- 7.3 At **Meshed Community Properties - Participating Gateways** window, add both Check Point Security Gateway (e.g. gw-fe024c) and the interopable device created at Step 6 (e.g. AVX-GW) to this community.
+ 3. At **Meshed Community Properties - Participating Gateways** window, add both Check Point Security Gateway (e.g. gw-fe024c) and the interopable device created when you configured an interoperable device to represent the Aviatrix Gateway (e.g. AVX-GW) to this community.
 
 |image16|
 
- 7.4 At **Meshed Community Properties - Encryption** window, select the options according to the site2cloud configuration downloaded at Step 2.3.
+4. At **Meshed Community Properties - Encryption** window, select the options according to the Site2Cloud configuration for configuring CheckPoint-VM you saved and downloaded above.
 
 |image17|
 
- 7.5 At **Meshed Community Properties - Tunnel Management** window, select **One VPN tunnel per Gateway pair** for **VPN Tunnel Sharing**.
+ 5. At **Meshed Community Properties - Tunnel Management** window, select **One VPN tunnel per Gateway pair** for **VPN Tunnel Sharing**.
 
 |image18|
 
- 7.6 At the **Meshed Community Properties - Advanced Settings - Shared Secret** window, enter **Shared Secret** by copying the **Pre-Shared Key** from the site2cloud configuration downloaded at Step 2.3.
+ 6. At the **Meshed Community Properties - Advanced Settings - Shared Secret** window, enter **Shared Secret** by copying the **Pre-Shared Key** from the Site2Cloud configuration downloaded above.
 
 |image19|
 
- 7.7 At the **Meshed Community Properties - Advanced Settings - Advanced VPN Properties** window, enter the Phase1 and Phase2 parameters according to the site2cloud configuration downloaded at Step 2.3.
+7. At the **Meshed Community Properties - Advanced Settings - Advanced VPN Properties** window, enter the Phase1 and Phase2 parameters according to the Site2Cloud configuration downloaded above.
 
 |image20|
 
-8. Create Firewall Rule for VPN Traffic
+Creating Firewall Rule for VPN Traffic
 =======================================
 
- 8.1 At SmartDashboard window, select the **Firewall** tab.
+1. At SmartDashboard window, select the **Firewall** tab.
 
- 8.2 Select **Policy** to add a new rule.
+2. Select **Policy** to add a new rule.
 
 |image21|
 
 ===============================     =================================================================
   **Field**                         **Value**
 ===============================     =================================================================
-  VPN                               Select the Meshed VPN Community created at Step 7
+  VPN                               Select the Meshed VPN Community created above
   Install On		            Select Check Point Security Gateway
 ===============================     =================================================================
  
- 8.3 Click **Install Policy** button to push the firewall policy to the Check Point Security Gateway
+3. Click **Install Policy** button to push the firewall policy to the Check Point Security Gateway.
 
 |image22|
 
-9. Troubleshooting and Verifying at Check Point Security Gateway
+Troubleshooting and Verifying at Check Point Security Gateway
 ================================================================
 
- 9.1 At SmartDashboard window, from **SmartConsole** drop down list, select **SmartView Monitor**
+1. At SmartDashboard window, from **SmartConsole** dropdown list, select **SmartView Monitor**.
 
 |image23|
 
- 9.2 At the SmartView Monitor window, select **VPNs** from *Gateway Status** and verify **Encrypted Traffic**
+2. At the SmartView Monitor window, select **VPNs** from **Gateway Status** and verify **Encrypted Traffic**.
 
 |image24|
 
-10. Troubleshooting and Verifying at Aviatrix Controller
+Troubleshooting and Verifying at Aviatrix Controller
 ========================================================
 
- 10.1 At the Aviatrix Controller, go to the **Site2Cloud** page. Verify that the status of the site2cloud connection is up.
+1. At the Aviatrix Controller, go to the Site2Cloud page. Verify that the status of the Site2Cloud connection is up.
 
 |image25|
 
- 10.2 At the **Site2Cloud - Diagnostics** page, run various diagnostics commands.
+2. At the Site2Cloud - Diagnostics page, run various diagnostics commands.
 
 |image26|
 
@@ -252,13 +250,13 @@ Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http:/
   **Field**                         **Value**
 ===============================     =================================================================
   VPC ID/VNet Name                  VPC1 (Aviatrix Gateway VPC) ID
-  Connection                        Name of site2cloud connection created at Step 2
+  Connection                        Name of Site2Cloud connection created above
   Gateway                           Name of Aviatrix Gateway
   Action                            One of the supported diagnostics commands
 ===============================     =================================================================
 
 
-For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_
+For support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 .. |image0| image:: s2c_gw_cp_media/DownloadSmartConsole.PNG
    :width: 5.55625in
