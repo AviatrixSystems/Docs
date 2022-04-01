@@ -53,8 +53,7 @@ If you upgrade while AWS CloudWatch is still enabled, the system will enter a co
 - **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where they want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed.
 - **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table.
 - **AVX-20109** – Some gateway software upgrades failed with an “Archive is too short” message, but a software upgrade succeeded after retrying.
-- **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly
-after the upgrade/rollback.
+- **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback.
 - **AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway.
 - **AVX-20271** – Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
 - **AVX-20471** – When both Transit Gateways of a transit peering didn’t have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
