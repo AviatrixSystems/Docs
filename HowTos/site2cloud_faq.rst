@@ -7,7 +7,7 @@ Site2Cloud FAQs
 ============================
 
 What does Site2Cloud do?
---------------------------
+----------------------------------
 
 Site2Cloud builds an encrypted connection between two sites over the Internet
 in an easy-to-use and template-driven manner. Its workflow is similar to AWS VGW or Azure VPN.  
@@ -25,19 +25,31 @@ Here are common use cases:
  - **Branch offices to cloud** If you have branch offices that need to access applications hosted in AWS or Azure, using Site2Cloud is the most economical way to build a secure tunnel. You can use your existing Internet connection and not have to pay extra to SD-WAN vendors to go through their cloud.
 
 Why should I consider using Aviatrix Site2Cloud?
+<<<<<<< Updated upstream
 --------------------------------------------------------------
+=======
+-----------------------------------------------------------------
+>>>>>>> Stashed changes
 
 For a comparative analysis of why you should use Aviatrix, refer to `Site to Cloud Connectivity over Internet <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html#site-to-cloud-connectivity-over-internet>`_. 
 
 In addition, Aviatrix provides a simple point-and-click user interface for you to build and manage a large deployment. 
 
 How do I configure Site2Cloud?
+<<<<<<< Updated upstream
 ------------------------------------------
+=======
+----------------------------------------------
+>>>>>>> Stashed changes
 
 To set up a Site2Cloud connection, refer to `Site2Cloud IPsec VPN Instructions <http://docs.aviatrix.com/HowTos/site2cloud.html>`_.
 
 Does Site2Cloud support HA?
+<<<<<<< Updated upstream
 ------------------------------------------
+=======
+-----------------------------------------
+>>>>>>> Stashed changes
 
 Yes. Enable HA when configuring a Site2Cloud connection. 
 
@@ -61,13 +73,17 @@ Is IKEv2 supported?
 
 Yes.
 
-How frequent are keys rotated?
----------------------------------
+How frequently are keys rotated?
+-------------------------------------------
 
 Re-key for IKE phase 1 is every 8 hours. Re-key for IKE phase 2 is every hour. 
 
 Can you configure a Site2Cloud connection using the same public IP address for the remote gateway and the remote subnet?
+<<<<<<< Updated upstream
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+=======
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+>>>>>>> Stashed changes
 
 Yes. In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is supported.  This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP is exposed.
 
