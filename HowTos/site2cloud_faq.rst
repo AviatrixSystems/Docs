@@ -25,19 +25,19 @@ Here are common use cases:
  - **Branch offices to cloud** If you have branch offices that need to access applications hosted in AWS or Azure, using Site2Cloud is the most economical way to build a secure tunnel. You can use your existing Internet connection and not have to pay extra to SD-WAN vendors to go through their cloud.
 
 Why should I consider using Aviatrix Site2Cloud?
---------------------------------------------------
+--------------------------------------------------------------
 
 For a comparative analysis of why you should use Aviatrix, refer to `Site to Cloud Connectivity over Internet <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html#site-to-cloud-connectivity-over-internet>`_. 
 
 In addition, Aviatrix provides a simple point-and-click user interface for you to build and manage a large deployment. 
 
 How do I configure Site2Cloud?
---------------------------------
+------------------------------------------
 
-To set up a Site2Cloud connection, refer to `Site2Cloud IPSec VPN Instructions <http://docs.aviatrix.com/HowTos/site2cloud.html>`_.
+To set up a Site2Cloud connection, refer to `Site2Cloud IPsec VPN Instructions <http://docs.aviatrix.com/HowTos/site2cloud.html>`_.
 
 Does Site2Cloud support HA?
-----------------------------
+------------------------------------------
 
 Yes. Enable HA when configuring a Site2Cloud connection. 
 
@@ -67,14 +67,14 @@ How frequent are keys rotated?
 Re-key for IKE phase 1 is every 8 hours. Re-key for IKE phase 2 is every hour. 
 
 Can you configure a Site2Cloud connection using the same public IP address for the remote gateway and the remote subnet?
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Yes. In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is supported.  This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP is exposed.
 
 This feature is supported only for policy-based unmapped Site2Cloud connections in AWS and GCP for standalone gateways, not ActiveMesh gateways.
 
 Are there configuration examples with other devices?
-----------------------------------------------------
+--------------------------------------------------------------------
 
 Aviatrix Site2Cloud supports all types of on-prem, firewall, and router devices that
 terminate VPN connections. Below are the configuration examples for specific devices.
@@ -92,7 +92,7 @@ terminate VPN connections. Below are the configuration examples for specific dev
     - `Aviatrix Gateway <./site2cloud_aviatrix.html>`_
 
 Are there any Tech Notes on solving overlapping IP addresses?
------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 Below are the Tech Notes that demonstrate how to solve overlapping IP addresses.
 
@@ -105,7 +105,7 @@ Below are the Tech Notes that demonstrate how to solve overlapping IP addresses.
   - `Connect Overlapping VPC to On-prem <https://docs.aviatrix.com/HowTos/connect_overlap_vpc_via_VGW.html>`_
   
 How to troubleshoot Site2Cloud connection with IKEv2?
------------------------------------------------------
+------------------------------------------------------------------------
 
 Refer to `Troubleshooting IPsec VPN connection with IKEv2 <https://docs.aviatrix.com/HowTos/troubleshooting_ipsec_vpn_connection_with_ikev2.html>`_.
 
