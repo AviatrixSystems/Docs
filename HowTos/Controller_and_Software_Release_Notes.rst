@@ -55,6 +55,7 @@ If you upgrade while AWS CloudWatch is still enabled, the system will enter a co
 - **AVX-20109** – Some gateway software upgrades failed with an “Archive is too short” message, but a software upgrade succeeded after retrying.
 - **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback.
 - **AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway.
+- **AVI-2022-0004 ** – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the Controller. This is not known to be exploited.
 - **AVX-20271** – Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
 - **AVX-20471** – When both Transit Gateways of a transit peering didn’t have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
 - **AVX-20647** – Performance fix for route processing in multi-domain environment.
