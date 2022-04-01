@@ -56,8 +56,8 @@ Configure Tunnel from Gateway A to Gateway B
 Configure Tunnel from Gateway B to Gateway A
 ++++++++++++++++++++++++++++++++++++++++++++
 
-#. In the Site2Cloud section, click **+ Add New*.
-#. Click the **Import** button
+#. In the Site2Cloud section, click **+ Add New**.
+#. Click **Import**.
 #. Select the file downloaded in the previous section.
 #. Check the values that are pre-populated.
 #. Click **OK**.
