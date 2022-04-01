@@ -18,7 +18,7 @@ CoPilot Dashboard
 
 This section describes the Aviatrix CoPilot dashboard.
 
-The CoPilot Dashboard offers a broad perspective on the inventory and status of your deployment. CoPilot Dashboard shows an inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. The Dashboard shows the number and status of these managed resources as well as a breakdown of each on a per cloud basis. A topology geographic map shows where the managed VPCs/VPNs/VNets are located across the globe.
+The CoPilot Dashboard offers a broad perspective on the inventory and status of your deployment. CoPilot Dashboard shows an inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. The Dashboard shows the number and status of these managed resources as well as a breakdown of each on a per cloud basis. A topology geographic map shows where the managed VPC/VNets are located across the globe.
 
 First displayed in Dashboard are inventory chips providing information about managed resources across your cloud networks. Inventory chips show the number and status of each managed resource. 
 
@@ -68,7 +68,7 @@ The Topology feature gives you visibility into your network as follows:
 
 -   **Network Graph - Transit View**
 
-    In Network Graph, in Transit view, CoPilot shows the topology of your Aviatrix transit network in relation to your deployed Aviatrix transit gateways. By clicking on the Aviatrix transit icon, you can see all of the transit VPCs/VNets, VPNs that are managed by Aviatrix Controller. By clicking on a region icon, you can see the spoke VPCs/VNets/VPNs that the controller currently manages. By clicking on a spoke VPC/VNet/VPN, you can see all network constructs inside of that spoke. You can use the search field to find specific resources.
+    In Network Graph, in Transit view, CoPilot shows the topology of your Aviatrix transit network in relation to your deployed Aviatrix transit gateways. By clicking on the Aviatrix transit icon, you can see all of the transit VPCs/VNets that are managed by Aviatrix Controller. By clicking on a region icon, you can see the spoke VPC/VNets that the controller currently manages. By clicking on a spoke VPC/VNet, you can see all network constructs inside of that spoke. You can use the search field to find specific resources.
 
 -   **Latency Monitor**
 
@@ -230,11 +230,11 @@ To create and save filters for topology:
 Search and filter for cloud native custom tags
 ----------------------------------------------
 
-Search and filter for custom tags you created in your cloud provider environment for your VPCs/VNets/VCNs and instances.
+Search and filter for custom tags you created in your cloud provider environment for your VPC/VNets and instances.
 
 This feature is available starting from Controller release 6.6. 
 
-To filter for cloud native VPC/VNet/VCN tags and instance tags:
+To filter for cloud native VPC/VNet tags and instance tags:
 
 1.  Log in to CoPilot.
 
@@ -493,7 +493,7 @@ In Cloud Routes, you can view routing information for:
 
   You can filter routes based on a specific IP address to view all gateways across which a subnet is propagated that includes the specific IP address.
 
-- VPC/VNet/VCN Routes: Routing tables for all virtual data centers (VPC/VNet/VCN) in any cloud provider. 
+- VPC/VNet/VCN Routes: Routing tables for all VPC/VNet/VCNs in any cloud provider. 
 
   You can filter routing tables based on a specific route table name.
 
@@ -790,7 +790,7 @@ To enable ThreatGuard blocking:
 
     ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected.
 
-    Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNET/VCN will block the associated traffic. You can be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled in the next step. By default, all VPCs/VNets/VCNs block.
+    Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNet will block the associated traffic. You can be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled in the next step. By default, all VPCs/VNets block.
 
 5.  (Optional) Transfer VPC/VNets to the Not Protected list if you do not want the instances in them to be protected by ThreatGuard blocking and click **Save**.
 
@@ -918,7 +918,7 @@ This section describes the Reports feature of Aviatrix CoPilot.
 
 In Reports, you can create detailed reports showing your inventory of managed resources (resources managed by Aviatrix Controller) in a single cloud or across all clouds in your multi-cloud network.
 
-You can quickly create reports that show on which cloud, region, and VPC/VNet/VCN specific managed resources are running. You can add columns to the report for different properties associated with resource types. You can apply complex filters to customize the data that gets included in the report for each resource type.
+You can quickly create reports that show on which cloud, region, and VPC/VNet specific managed resources are running. You can add columns to the report for different properties associated with resource types. You can apply complex filters to customize the data that gets included in the report for each resource type.
 
 Create an Inventory Report
 --------------------------
@@ -939,24 +939,24 @@ To create an inventory report:
     -   If the report is to include managed resources for a single cloud, click the icon of the applicable cloud provider.
 4.  In **Select the region(s)**, CoPilot shows the regions in which you have managed resources for the cloud(s) you specified in the previous step. Select each region that includes managed resources you want to include in your report. If the types of managed resources to include are within all regions, click **Select All**.
 
-5.  In **Select the VPC(s)**, CoPilot shows all the VPCs/VNets/VCNs in which you have managed resources for the region(s) you specified in the previous step. Select each VPC/VNet/VCN that includes managed resources to include in your report. If the types of managed resources to include are within all VPCs/VNets/VCNs, click **Select All**.
+5.  In **Select the VPC(s)**, CoPilot shows all the VPC/VNets in which you have managed resources for the region(s) you specified in the previous step. Select each VPC/VNet that includes managed resources to include in your report. If the types of managed resources to include are within all VPC/VNets, click **Select All**.
 
 6.  In **Select resource type(s)**, select the resource type icons to specify the resource types to include in the report.
 
-7.  In **Select the properties**, CoPilot shows various properties that are associated with the resource types you specified in the previous step. Select a property to include it as a column in the report. The report preview pane automatically includes the *name* property of the managed resource and its *cloud*, *region*, and *VPC/VNet/VCN* properties (you can deselect them to remove them from the report). You can use the Search box to locate a property associated with data to include in the report. For example, for the gateway resource type, typing *size* in the search box returns a result `vpc_size`. By including `vpc_size` in the report, you can view what size instance each of those gateways are currently running on (the `vpc_size` property signifies the size of gateways). As another example, typing *trans* in the search box returns properties that include `transit` in the name, such as `transit_vpc`. By including the `transit_vpc` property in the report, you can view which of those gateways are transit gateways.
+7.  In **Select the properties**, CoPilot shows various properties that are associated with the resource types you specified in the previous step. Select a property to include it as a column in the report. The report preview pane automatically includes the *name* property of the managed resource and its *cloud*, *region*, and *VPC/VNet* properties (you can deselect them to remove them from the report). You can use the Search box to locate a property associated with data to include in the report. For example, for the gateway resource type, typing *size* in the search box returns a result `vpc_size`. By including `vpc_size` in the report, you can view what size instance each of those gateways are currently running on (the `vpc_size` property signifies the size of gateways). As another example, typing *trans* in the search box returns properties that include `transit` in the name, such as `transit_vpc`. By including the `transit_vpc` property in the report, you can view which of those gateways are transit gateways.
 
 8.  In **Add filters**, you can optionally use filters to narrow down the managed resources to include in your report. For any property, you can set a filter using the property's value (TIP: When you include a property in the report, the value of it is listed in its associated report column). For example, if you have hundreds of gateways in your environment and want to narrow down the contents of the report to only transit gateways, add a filter with the rule to show only transit gateways (click ADD FILTERS, click ADD RULE, and then set field `gateway.transit.vpc` with the filter operator ``==`` set to value `yes` and click APPLY FILTERS). If you add a filter on a property you did not previously select to be included (displayed) in the report, the filter is applied but the property is not added to the report. In this case, it may be helpful to take note of your applied filter for future reference. NOTE: Currently, filters cannot be saved.
 
 9.  (Optional) Save, download, or print the report. For printing, select the paper size and page orientation.
 
-10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNets/VCNs, deselect the regions, and deselect the clouds as needed to report only on the data you want.
+10. (Optional) To generate another report, clear filters (click CLEAR FILTERS if you created filters) and deselect any criteria that does not apply to your next report. Deselect the properties, deselect the resource types, deselect the VPCs/VNets, deselect the regions, and deselect the clouds as needed to report only on the data you want.
 
 Create a Resource Utilization Report
 ------------------------------------
 
 Create a report that summarizes the resource utilization (telemetry) data for Aviatrix gateways in a single cloud or across all clouds in your multi-cloud network. CoPilot exposes approximately 80 performance metrics (system and network metrics). You can select from any or all performance metrics to report on for the time period you specify. Per gateway, when reporting on network metrics, CoPilot aggregates the metrics across all interfaces (default), or if specified, reports the metrics for each interface.
 
-CoPilot shows all gateways that are managed by Aviatrix Controller in any of your clouds, regions, and VPCs/VNets/VCNs. You create a custom report by selecting options that guide you to include only those Aviatrix gateways and performance metrics you want in the report.
+CoPilot shows all gateways that are managed by Aviatrix Controller in any of your clouds, regions, and VPC/VNets. You create a custom report by selecting options that guide you to include only those Aviatrix gateways and performance metrics you want in the report.
 
 To create a resource utilization report:
 
