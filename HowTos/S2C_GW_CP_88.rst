@@ -252,9 +252,9 @@ Troubleshooting and Verifying at Aviatrix Controller
 .. |image2| image:: ./s2c_checkpoint_r88_media/image2.png
     :width: 100%
 .. |image3| image:: ./s2c_checkpoint_r88_media/image3.png
-    :width: 75%
+    :width: 50%
 .. |image4| image:: ./s2c_checkpoint_r88_media/image4.png
-    :width: 75%
+    :width: 50%
 .. |image5| image:: ./s2c_checkpoint_r88_media/image5.png
     :width: 100%
 .. |image6| image:: ./s2c_checkpoint_r88_media/image6.png
@@ -262,13 +262,13 @@ Troubleshooting and Verifying at Aviatrix Controller
 .. |image7| image:: ./s2c_checkpoint_r88_media/image7.png
     :width: 100%
 .. |image8| image:: ./s2c_checkpoint_r88_media/image8.png
-    :width: 75%
+    :width: 50%
 .. |image9| image:: ./s2c_checkpoint_r88_media/image9.png
-    :width: 100%
+    :width: 75%
 .. |image10| image:: ./s2c_checkpoint_r88_media/image10.png
     :width: 75%
 .. |image11| image:: ./s2c_checkpoint_r88_media/image11.png
-    :width: 100%
+    :width: 75%
 .. |image12| image:: ./s2c_checkpoint_r88_media/image12.png
     :width: 75%
 .. |image13| image:: ./s2c_checkpoint_r88_media/image13.png
@@ -286,17 +286,17 @@ Troubleshooting and Verifying at Aviatrix Controller
 .. |image19| image:: ./s2c_checkpoint_r88_media/image19.png
     :width: 100%
 .. |image20| image:: ./s2c_checkpoint_r88_media/image20.png
-    :width: 75%
+    :width: 50%
 .. |image21| image:: ./s2c_checkpoint_r88_media/image21.png
-    :width: 100%
+    :width: 75%
 .. |image22| image:: ./s2c_checkpoint_r88_media/image22.png
-    :width: 100%
+    :width: 75%
 .. |image23| image:: ./s2c_checkpoint_r88_media/image23.png
-    :width: 100%
+    :width: 75%
 .. |image24| image:: ./s2c_checkpoint_r88_media/image24.png
-    :width: 100%
+    :width: 75%
 .. |image25| image:: ./s2c_checkpoint_r88_media/image25.png
-    :width: 100%
+    :width: 75%
 .. |image26| image:: ./s2c_checkpoint_r88_media/image26.png
     :width: 100%
 .. |image27| image:: ./s2c_checkpoint_r88_media/image27.png
