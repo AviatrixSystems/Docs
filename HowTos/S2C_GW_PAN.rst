@@ -9,7 +9,7 @@ Aviatrix Gateway to Palo Alto Firewall
 
 This document describes how to build an IPsec tunnel based Site2Cloud connection between an Aviatrix Gateway and a Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
 
-Network setup is as following:
+The network setup is as follows:
 
 **VPC1 (with Aviatrix Gateway)**
 

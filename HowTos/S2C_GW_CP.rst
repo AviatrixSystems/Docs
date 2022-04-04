@@ -9,7 +9,12 @@ Aviatrix Gateway to Check Point(R77.30)
 
 This document describes how to build an IPsec tunnel based Site2Cloud connection between Aviatrix Gateway and Check Point Firewall. To simulate an on-prem Check Point Firewall, we use a Check Point CloudGuard IaaS firewall VM at AWS VPC.
 
-Network setup is as following:
+.. note::
+
+  If you do not have access to AWS, you can simulate an on-prem Firewall by deploying the Palo Alto Firewall in any other cloud (such as Microsoft Azure, Google Cloud Platform, or Oracle Cloud Infrastructure).
+
+
+The network setup is as follows:
 
 **VPC1 (with Aviatrix Gateway)**
 
@@ -32,7 +37,7 @@ Launching Check Point Security Gateway VM
 
 Refer to the `vSEC Gateway for Amazon Web Services Getting Started Guide <http://supportcontent.checkpoint.com/documentation_download?ID=45816>`_ to launch a  CheckPoint VM with at least two network interfaces. One interface serves as a WAN port and is in VPC2's public subnet. The other interface serves as a LAN port and is in VPC2's private subnet. Collect the public IP address of the WAN port.
 
-Creating Site2Cloud Connection at Aviatrix Controller
+Creating a Site2Cloud Connection at Aviatrix Controller
 ======================================================
 
 1. Go to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both public and private IP addresses of the Gateway.
@@ -46,9 +51,9 @@ Creating Site2Cloud Connection at Aviatrix Controller
   Connection Name                   Arbitrary (e.g. avx-cp-s2c)
   Remote Gateway Type               Generic
   Tunnel Type                       UDP
-  Algorithms                        Uncheck this box
-  Encryption over DirectConnect     Uncheck this box
-  Enable HA                         Uncheck this box
+  Algorithms                        Unmark this checkbox
+  Encryption over DirectConnect     Unmark this checkbox
+  Enable HA                         Unmark this checkbox
   Primary Cloud Gateway             Select Aviatrix Gateway created above
   Remote Gateway IP Address         Public IP of CheckPoint-VM WAN port
   Pre-shared Key                    Optional (auto-generated if not entered)
