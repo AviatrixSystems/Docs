@@ -9,6 +9,11 @@ Aviatrix Gateway to Palo Alto Firewall
 
 This document describes how to build an IPsec tunnel based Site2Cloud connection between an Aviatrix Gateway and a Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
 
+.. note::
+
+  If you do not have access to AWS, you can simulate an on-prem Firewall by deploying the Palo Alto Firewall in any other cloud (such as Microsoft Azure, Google Cloud Platform, or Oracle Cloud Infrastructure).
+
+
 The network setup is as follows:
 
 **VPC1 (with Aviatrix Gateway)**
@@ -46,7 +51,7 @@ Configuration Workflow
      Remote Gateway Type               Generic
      Tunnel Type                       UDP
      Algorithms                        Uncheck this box
-     Encryption over DirectConnect     Uncheck this box
+     Encryption over Direct Connect    Uncheck this box
      Enable HA                         Uncheck this box
      Primary Cloud Gateway             Select Aviatrix Gateway created above
      Remote Gateway IP Address         Public IP of Palo Alto Networks VM Series WAN port
@@ -103,11 +108,11 @@ Configuration Workflow
         IKE Crypto Profile                Select the profile created at Step 5.2
       ===============================     =========================================
 
-   d. Under Network > Network Profiles > IPSec Crypto, click **Add** to create a new profile. Define the IPsec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
+   d. Under Network > Network Profiles > IPsec Crypto, click **Add** to create a new profile. Define the IPsec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
 
       |image4|
 
-   e. Under Network > IPSec Tunnels, click **Add** to create a new IPsec Tunnel. At the **General** window:
+   e. Under Network > IPsec Tunnels, click **Add** to create a new IPsec Tunnel. At the **General** window:
 
       |image5|
 
