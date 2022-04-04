@@ -52,7 +52,8 @@ Creating an IPsec Connection from DRG
          +================================+========================================================+
          | Target Type                    | Dynamic Route Gateway                                  |
          +--------------------------------+--------------------------------------------------------+
-         | Destination CIDR Block         | Aviatrix GW's VPC CIDR (172.19.0.0/16 in this example) |
+         | Destination CIDR Block         | Aviatrix GW's VPC/VNet CIDR (172.19.0.0/16 in this     |
+         |                                | example)                                               |
          +--------------------------------+--------------------------------------------------------+
          | Target Dynamic Routing Gateway | Select the desired existing DRG                        |
          +--------------------------------+--------------------------------------------------------+
@@ -76,7 +77,8 @@ Creating an IPsec Connection from DRG
          +================================+========================================================+
          | Source Type                    | CIDR                                                   |
          +--------------------------------+--------------------------------------------------------+
-         | Source CIDR                    | Aviatrix GW's VPC CIDR (172.19.0.0/16 in this example) |
+         | Source CIDR                    | Aviatrix GW's VPC/VNet CIDR (172.19.0.0/16 in this     |
+         |                                | example)                                               |
          +--------------------------------+--------------------------------------------------------+
          | IP Protocols                   | All Protocols                                          |
          +--------------------------------+--------------------------------------------------------+
@@ -90,7 +92,8 @@ Creating an IPsec Connection from DRG
          +================================+========================================================+
          | Destination Type               | CIDR                                                   |
          +--------------------------------+--------------------------------------------------------+
-         | Destination CIDR               | Aviatrix GW's VPC CIDR (172.19.0.0/16 in this example) |
+         | Destination CIDR               | Aviatrix GW's VPC/VNet CIDR (172.19.0.0/16 in this     |
+         |                                | example)                                               |
          +--------------------------------+--------------------------------------------------------+
          | IP Protocols                   | All Protocols                                          |
          +--------------------------------+--------------------------------------------------------+
@@ -123,7 +126,7 @@ Creating an IPsec Connection from DRG
 
    #. Under **Core Infrastructure**, go to **Networking** and click **Dynamic Routing Gateways**.
    #. Click the DRG created earlier.
-   #. Click **Create IPSec Connection**.
+   #. Click **Create IPsec Connection**.
    #. Enter the following values and click **Create IPsec Connection**.
 
       +-----------------------------------------+--------------------------------------------------------+
@@ -137,7 +140,8 @@ Creating an IPsec Connection from DRG
       +-----------------------------------------+--------------------------------------------------------+
       | Customer-Premises Equipment             | Select the CPE object created earlier                  |
       +-----------------------------------------+--------------------------------------------------------+
-      | Static Route CIDR                       | Aviatrix GW's VPC CIDR (172.19.0.0/16 in this example) |
+      | Static Route CIDR                       | Aviatrix GW's VPC/VNet CIDR (172.19.0.0/16 in this     |
+      |                                         | example)                                               |
       +-----------------------------------------+--------------------------------------------------------+
       | Tags                                    | Optional                                               |
       +-----------------------------------------+--------------------------------------------------------+
@@ -247,7 +251,8 @@ From the Oracle Cloud console, create a second IPsec connection between the same
      +-----------------------------------------+--------------------------------------------------------+
      | Customer-Premises Equipment             | Select the second CPE object created earlier           |
      +-----------------------------------------+--------------------------------------------------------+
-     | Static Route CIDR                       | Aviatrix GW's VPC CIDR (172.19.0.0/16 in this example) |
+     | Static Route CIDR                       | Aviatrix GW's VPC/VNet CIDR (172.19.0.0/16 in this     |
+     |                                         | example)                                               |
      +-----------------------------------------+--------------------------------------------------------+
      | Tags                                    | Optional                                               |
      +-----------------------------------------+--------------------------------------------------------+
@@ -258,7 +263,7 @@ From the Oracle Cloud console, create a second IPsec connection between the same
 Create Aviatrix Site2Cloud Connection with HA
 +++++++++++++++++++++++++++++++++++++++++++++
 
-From the Aviatrix Controller UI > Site2Cloud page, click **+ Add New**. Under **Add a New Connection**, make sure the **Enable HA** checkbox is marked.
+From the Aviatrix Controller > Site2Cloud page, click **+ Add New**. Under **Add a New Connection**, make sure the **Enable HA** checkbox is marked.
 
 Additional fields are displayed when checked. All other fields should have the same values as corresponding ones **without HA**.
 
