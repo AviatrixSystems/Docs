@@ -117,7 +117,7 @@ The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 Rolling Back Gateway Software
 -----------------------------
 
-You can roll back gateway software upgrades to the previous version. However, you cannot roll back platform Controller, CA Aviatrix Gateway, or CloudN upgrades. 
+You can roll back gateway software upgrades to the previous version. However, you cannot roll back platform Controller, CA Access Gateway (CAAG), or CloudN upgrades. 
 
 Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version the system creates a new gateway with the same image and the older software version.
 
