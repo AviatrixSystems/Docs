@@ -10,52 +10,52 @@ Overview
 --------
 This document describes how to configure an IPsec tunnel between an Aviatrix Gateway and a FortiGate firewall using Aviatrix Site2Cloud. This task is divided into two parts:
 
-#. Configure a `Site2Cloud tunnel <#fg-s2c-avtx-start>`__ in Aviatrix Controller
-#. Configure `VPN tunnel <#fg-s2c-fg-start>`__ and related components in the FortiGate Firewall
+#. Configure a `Site2Cloud tunnel <#fg-s2c-avtx-start>`__ in the Aviatrix Controller.
+#. Configure a `VPN tunnel <#fg-s2c-fg-start>`__ and related components in the FortiGate Firewall.
 
 .. _fg_s2c_avtx_start:
 
 Aviatrix Configuration
-----------------------
+-----------------------------
 
-Add a Site2Cloud tunnel in the Aviatrix Controller
+Adding a Site2Cloud tunnel in the Aviatrix Controller
 ++++++++++++++++++++++++++++++++++++++++++++++
 
 Follow the steps in `this </HowTos/site2cloud.html>`__ guide.
 
 .. tip::
 
-   Download the configuration to aid in the creation of the tunnel in FortiGate. The configuration can be downloaded from the **Aviatrix Controller UI > Site2Cloud > Select the connection created earlier> Download Configuration**. Select **Generic** for `Vendor` and `Platform` and **Vendor independent** for `Software`.
+   Download the configuration to aid in the creation of the tunnel in FortiGate. The configuration can be downloaded from the **Aviatrix Controller > Site2Cloud > Select the connection created earlier > Download Configuration**. Select **Generic** for Vendor and Platform and **Vendor independent** for Software.
 
 .. _fg_s2c_fg_start:
 
 |imagedownloadconfiguration|
 
 FortiGate Configuration
------------------------
+-----------------------------------
 
 The configuration and screenshots below make the following three assumptions:
 
 * There are 2 interfaces on the FortiGate:
 
-  * Interface `port1` is an externally facing interface.
-  * Interface `port2` is an internally facing interface.
+  * Interface port1 is an externally facing interface.
+  * Interface port2 is an internally facing interface.
 
-* You have a subnet in AWS, Azure, or GCP in a VPC (or VNet/Project, respectively) that has an Aviatrix Gateway.  This subnet is defined as `10.0.0.0/16` for the examples below but it can be any valid CIDR range.
+* You have a subnet in AWS, Azure, or GCP in a VPC/VNet that has an Aviatrix Gateway. This subnet is defined as "10.0.0.0/16" for the examples below but it can be any valid CIDR range.
 
   .. note::
      In the examples below we refer to this range as **AWS_Cloud**.
 
-* You have a subnet behind your FortiGate firewall that will be accessible in the cloud.  This subnet is defined as `172.16.0.0/20` in the examples below but it can be any valid CIDR range.
+* You have a subnet behind your FortiGate firewall that will be accessible in the cloud.  This subnet is defined as "172.16.0.0/20" in the examples below but it can be any valid CIDR range.
 
   .. note::
-     In the examples below we refer to this range as **Shared_With_AWS**
+     In the examples below, we refer to this range as **Shared_With_AWS**.
 
 
-Configure Named Address Ranges in FortiGate
+Configuring Named Address Ranges in FortiGate
 +++++++++++++++++++++++++++++++++++++++++++
 
-Access the FortiGate Dashboard, then: under **Policy & Objects** > **Addresses**, create two new addresses:
+Access the FortiGate Dashboard, then, under **Policy & Objects** > **Addresses**, create two new addresses:
 
 **AWS_Cloud**
 
@@ -99,14 +99,14 @@ Access the FortiGate Dashboard, then: under **Policy & Objects** > **Addresses**
 
 |imagesharedwithawsconfig|
 
-Create an IPsec tunnel on FortiGate
+Creating an IPsec Tunnel on FortiGate
 +++++++++++++++++++++++++++++++++++
 
 #. Log in to the FortiGate and access the Dashboard.
-#. In the `VPN` menu, select `IPsec Wizard`.
-#. Change the Template Type to `Custom`.
-#. Enter any value as the Name. For this example we are using "ToAviatrixGW"
-#. Click Next >.
+#. In the VPN menu, select **IPsec Wizard**.
+#. Change the Template Type to "Custom."
+#. Enter any value as the Name. For this example, we are using "ToAviatrixGW."
+#. Click **Next >**.
 #. Fill out the Network fields as recommended below: 
 
    **VPN Setup**
@@ -136,7 +136,7 @@ Create an IPsec tunnel on FortiGate
    +-------------------------------+------------------------------------------+
    | Local Gateway                 | Disabled                                 |
    +-------------------------------+------------------------------------------+
-   | Mode Config                   | Unchecked                                |
+   | Mode Config                   | Unmark this checkbox                     |
    +-------------------------------+------------------------------------------+
    | NAT Traversal                 | Enable                                   |
    +-------------------------------+------------------------------------------+
@@ -144,7 +144,7 @@ Create an IPsec tunnel on FortiGate
    +-------------------------------+------------------------------------------+
    | Dead Peer Detection           | On Demand                                |
    +-------------------------------+------------------------------------------+
-   | Forward Error Correction      | Unchecked                                |
+   | Forward Error Correction      | Unmark this checkbox                     |
    +-------------------------------+------------------------------------------+
    | Advanced Options              | Disabled                                 |
    +-------------------------------+------------------------------------------+
@@ -174,8 +174,8 @@ Create an IPsec tunnel on FortiGate
    .. important::
       The following values from the Aviatrix Site2Cloud configuration are needed below:
       
-      #. In the Aviatrix Controller, select the Site2Cloud configuration created earlier
-      #. Click |imageThreeLines| next to `Connect Detail`
+      #. In the Aviatrix Controller, select the Site2Cloud configuration created earlier.
+      #. Click |imageThreeLines| next to Connect Detail.
 
       |imageconnectiondetails|
    
@@ -232,7 +232,7 @@ Create an IPsec tunnel on FortiGate
       The following values from the Aviatrix Site2Cloud configuration are needed below:
       
       #. In the Aviatrix Controller, select the Site2Cloud configuration created earlier.
-      #. Click |imageThreeLines| next to `Connection Detail`.
+      #. Click |imageThreeLines| next to Connection Detail.
 
       |imageconnectiondetails2|
 
@@ -255,46 +255,46 @@ Create an IPsec tunnel on FortiGate
    
    |imagephase2advanced|
    
-#. Click `OK`
+#. Click **OK**.
 
-Configure IPv4 Policy
+Configuring IPv4 Policy
 +++++++++++++++++++++
 
 In **Policy & Objects**, select **IPv4 Policy**.
 Create two new IPv4 policies:
 
-* Outbound traffic from FortiGate (`Shared_With_AWS`) to Aviatrix (`AWS_Cloud`)
+* Outbound traffic from FortiGate (Shared_With_AWS) to Aviatrix (AWS_Cloud)
 
   |imageip4outboundpolicy|
 
 
-* Inbound traffic from Aviatrix (`AWS_Cloud`) to FortiGate (`Shared_With_AWS`)
+* Inbound traffic from Aviatrix (AWS_Cloud) to FortiGate (Shared_With_AWS)
 
   |imageip4inboundpolicy|
 
 .. note::
-   The reference to `port2` in the screenshots should be replaced with your own interface name that represents the internal facing interface.
+   The reference to port2 in the screenshots should be replaced with your own interface name that represents the internal facing interface.
 
 .. note::
 
-   Be sure to select **accept** for `action` and select **all** for `service`!
+   Be sure to select **accept** for "action" and select **all** for "service."
 
-Add a Static Route
+Adding a Static Route
 ++++++++++++++++++
 
-From the FortiGate UI: **Network** > **Static Routes**, add a new static route for traffic destined to `AWS_Cloud` to use the VPN tunnel.
+From the FortiGate UI: navigate to Network > Static Routes , add a new static route for traffic destined to "AWS_Cloud" to use the VPN tunnel.
 
 |imagestaticroute|
 
 .. note::
-   If `Named Address` is disabled, be sure that you enabled `Static Route Configuration` on the Address configuration.
+   If Named Address is disabled, be sure that you enabled Static Route Configuration on the Address configuration.
 
    |imageaddressstaticconfig|
 
-Bring Up IPSec Monitor
-++++++++++++++++++++++
+Bringing Up IPsec Monitor
+++++++++++++++++++++++++++
 
-From the FortiGate UI: In **Monitor** > **IPSec Monitor**, select the Aviatrix tunnel and click **Bring Up**.
+From the FortiGate UI: In **Monitor** > **IPsec Monitor**, select the Aviatrix tunnel and click **Bring Up**.
 
 Test
 ----
