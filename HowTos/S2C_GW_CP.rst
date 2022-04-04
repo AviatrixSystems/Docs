@@ -76,7 +76,7 @@ Downloading and Installing SmartConsole
 Creating Network Objects at SmartConsole
 =========================================
 
- 1. At Check Point SmartDashboard window, select the **Desktop** tab. Right click the **Networks** folder at the left navigation bar and select **Network**. 
+ 1. At the Check Point SmartDashboard window, select the **Desktop** tab. Right click the **Networks** folder at the left navigation bar and select **Network**. 
  
  2. Create one network for private subnet of VPC2 (Check Point VPC).
  
@@ -105,13 +105,13 @@ Creating Network Objects at SmartConsole
 Configuring Check Point Security Gateway with VPN
 ==================================================
 
-1. At the SmartDashboard window, select the **Desktop** tab and expand the **Check Point** folder at the left navigation bar. Note that your gateway VM with the name format 'gw-xxxxxx' is automatically created.
+1. At the SmartDashboard window, select the **Desktop** tab and expand the **Check Point** folder at the left navigation bar. Note that your gateway VM with the name format "gw-xxxxxx" is automatically created.
  
 |image3|
 
 2. Right-click the gateway name and select **Edit** from the menu.
 
-3. At the Check Point Gateway - General Properties window:
+3. At the Check Point Gateway > General Properties window:
 
 |image4|
 
@@ -119,8 +119,8 @@ Configuring Check Point Security Gateway with VPN
   **Field**                         **Value**
 ===============================     =================================================================
   IPv4 Address                      Private IP of CheckPoint VM WAN port
-  Test SIC Status                   Make sure the status is 'communicating'
-  Network Security                  Select 'IPsec VPN'
+  Test SIC Status                   Make sure the status is "communicating"
+  Network Security                  Select **IPsec VPN**
 ===============================     =================================================================
 
 4. At **Check Point Gateway - Topology** window, select **Manually defined** for VPN Domain. Select the network created when you created a network for private subnet of VPC2 (Check Point VPC).
@@ -135,7 +135,7 @@ Configuring Check Point Security Gateway with VPN
 
 |image7| 
 
-7. At **Check Point Gateway - IPsec VPN - Link Selection** window, configure the parameters as follows:
+7. At the **Check Point Gateway - IPsec VPN - Link Selection** window, configure the parameters as follows:
 
 |image8|
 
@@ -146,7 +146,7 @@ Configuring Check Point Security Gateway with VPN
   Selected address from topology table        Private IP of Check Point WAN port 
 =========================================     =======================================================
 
-8. At **Check Point Gateway - IPsec VPN - VPN Advanced** window, configure the parameters as follows:
+8. At the **Check Point Gateway - IPsec VPN - VPN Advanced** window, configure the parameters as follows:
 
 |image9|
 
