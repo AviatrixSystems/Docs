@@ -2,18 +2,18 @@
 
 .. meta::
    :description: Create site2cloud connection with overlap network address ranges
-   :keywords: site2cloud, VGW, SNAT, DNAT, Overlap Network CIDR, overlap CIDRs, Route Based IPSec
+   :keywords: site2cloud, VGW, SNAT, DNAT, Overlap Network CIDR, overlap CIDRs, Route Based IPsec
 
 
 ===========================================================================================
-Solving Overlapping Networks with Network Mapped IPSec 
+Solving Overlapping Networks with Network Mapped IPsec 
 ===========================================================================================
 
 The Scenario
 ------------------
 
-This tech note illustrates an example solution to a specific use case. In this use case, a customer needs to connect certain
-on-prem hosts to certain EC2 instances in a VPC over an IPSEC tunnel over the Internet, but the on-prem network range overlaps with the VPC CIDR range, and the requirement from the customer is that no NAT function will be performed on the customer side. In addition, traffic can be initiated from either side.
+This tech note illustrates an example solution to a specific use case. In this AWS use case, a customer needs to connect certain
+on-prem hosts to certain EC2 instances in a VPC over an IPsec tunnel over the Internet, but the on-prem network range overlaps with the VPC CIDR range, and the requirement from the customer is that no NAT function will be performed on the customer side. In addition, traffic can be initiated from either side.
 
 The scenario is described in the following diagram:
 
@@ -25,7 +25,7 @@ The scenario is described in the following diagram:
   VPC       CIDR = 10.20.0.0/20, instance-1 in VPC-1 has an IP address 10.24.1.4.
   On-Prem   CIDR = 10.20.0.0/20, host-1 in On-Prem has an IP address 10.24.7.101.
 
-The traditional solution is to build IPSEC tunnel between the two networks and use SNAT/DNAT rules to translate each addresses, as
+The traditional solution is to build IPsec tunnel between the two networks and use SNAT/DNAT rules to translate each addresses, as
 demonstrated in this `example. <https://docs.aviatrix.com/HowTos/connect_overlap_cidrs.html>`_. Such solution requires a potentially
 large number of SNAT/DNAT rules which is difficult to configure and maintain.
 
@@ -34,7 +34,7 @@ The Solution
 
 The new solutions uses a new "network mapped" feature in Site2Cloud that removes the need to configure individual SNAT/DNAT rules. 
 
-This solution uses a site2cloud route-based IPSEC tunnel using Virtual Tunnel Interface (VTI) between VPC and On-Prem Router. The packet flow is demonstrated as below:
+This solution uses a Site2Cloud route-based IPsec tunnel using Virtual Tunnel Interface (VTI) between VPC and On-Prem Router. The packet flow is demonstrated as below:
 
  1. instance-1 sends a packet to host-1 with a virtual destination IP address, for example 192.24.7.101. From instance-1's point of view, the destination instance is a virtual address - 192.24.7.101.
  #. When the packet arrives at the VPC-1 gateway, the gateway does DNAT on the packet to translate the virtual destination IP address to 10.24.7.101 which is the host-1 physical IP address.
@@ -46,27 +46,27 @@ This solution uses a site2cloud route-based IPSEC tunnel using Virtual Tunnel In
 
 
 The Configuration Steps
-----------------------------
+--------------------------------
 
-Step 1: Follow the Site2Cloud workflow to launch gateways
+Following the Site2Cloud Workflow to Launch Gateways
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Log in to the Controller console, go to Site2Cloud. Follow step 1 to launch a gateway in the VPC.
+Log in to the Controller and select Site2Cloud from the left sidebar. Follow the Site2Cloud worflow to launch a gateway in the VPC.
 
 (You can follow the `gateway launch instructions in this <http://docs.aviatrix.com/HowTos/gateway.html>`_. Leave optional parameters unchecked.)
 
 
-Step 2: Create a Site2Cloud tunnel
+Creating a Site2Cloud Tunnel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to Controller Console -> Site2Cloud.
+Go to Controller Console > Site2Cloud.
 
-Click "+Add New". Fill the form and click OK. Select "Mapped" for the Connection Type field.
+Click **+Add New**. Fill the form and click **OK**. Select **Mapped** for the Connection Type field.
 
 |s2c_connection|
 
 
-2.1 VPC-1 gateway-1 side
+VPC-1 gateway-1 side
 #########################
 
 For the VPC gateway side, the Local Subnet field should be the subnet of VPC-1 (e.g. 10.24.0.0/20), and the Remote Subnet field should be the subnet of OnPrem Router (e.g. 10.24.0.0/20), as shown below.
@@ -79,8 +79,8 @@ For the VPC gateway side, the Local Subnet field should be the subnet of VPC-1 (
   Connection Name                                                   Arbitrary (e.g. S2C-VPC-OnPrem)
   Remote Gateway Type                                               Generic
   Tunnel Type                                                       Route-based
-  Algorithms                                                        Uncheck this box
-  Encryption over ExpressRoute/DirectConnect                        Uncheck this box
+  Algorithms                                                        Unmark this checkbox
+  Encryption over ExpressRoute/Direct Connect                       Unmark this checkbox
   Enable HA                                                         Check this box if HA is required
   Primary Cloud Gateway                                             Select the Aviatrix Gateway created above
   Remote Gateway IP Address                                         Public IP of IOS Router WAN port (52.40.45.197 in this example)
@@ -97,7 +97,7 @@ For the VPC gateway side, the Local Subnet field should be the subnet of VPC-1 (
 .. important::
     Local & Remote Subnet (virtual) IP range could be anything but subnet should be same as Physical/Real subnet.
 
-2.2 Configure On-Prem Cisco Router
+Configure On-Prem Cisco Router
 ###################################
 
 Go to the **Site2Cloud** page. From the Site2Cloud connection table, select the connection created above (e.g. S2C-VPC-OnPrem) and click "Edit".
@@ -119,13 +119,13 @@ Apply the following IOS configuration to your router:
     !
     ! You need to populate these values throughout the config based on your setup:
     ! <isakmp_policy_number1>: the isakmp policy number
-    ! <tunnel_number1>: the IPSec tunnel interface number
-    ! <ios_wan_interface1>: the source interafce of tunnel packets
+    ! <tunnel_number1>: the IPsec tunnel interface number
+    ! <ios_wan_interface1>: the source interface of tunnel packets
     ! <customer_tunnel_ip1>: any un-used IPv4 address for the tunnel interface
     !                        when static routing is used
     !
     ! --------------------------------------------------------------------------------
-    ! IPSec Tunnel
+    ! IPsec Tunnel
     ! --------------------------------------------------------------------------------
     ! #1: Internet Key Exchange (IKE) Configuration
     ! A policy is established for the supported ISAKMP encryption,
@@ -147,8 +147,8 @@ Apply the following IOS configuration to your router:
        match identity address 20.42.145.156 255.255.255.255
     !
     !---------------------------------------------------------------------------------
-    ! #2: IPSec Configuration
-    ! The IPSec transform set defines the encryption, authentication, and IPSec
+    ! #2: IPsec Configuration
+    ! The IPsec transform set defines the encryption, authentication, and IPsec
     ! mode parameters.
     !
     crypto ipsec transform-set 52.40.45.197-20.42.145.156 esp-aes 256 esp-sha256-hmac
@@ -163,8 +163,8 @@ Apply the following IOS configuration to your router:
     !
     !---------------------------------------------------------------------------------------
     ! #3: Tunnel Interface Configuration
-    ! The virtual tunnel interface is used to communicate with the remote IPSec endpoint
-    ! to establish the IPSec tunnel.
+    ! The virtual tunnel interface is used to communicate with the remote IPsec endpoint
+    ! to establish the IPsec tunnel.
     !
     interface Tunnel1
      ip address 10.10.10.10 255.255.255.255
@@ -188,15 +188,13 @@ Apply the following IOS configuration to your router:
 Wait for the tunnel to come up.
 
 
-Step 3. Test site2cloud Connection
+Testing the Site2Cloud Connection
 ---------------------------------------------------------
 
 Make sure your instance's Security Groups inbound rules are configured properly.
 
 From instance-1, you should be able to ping host-1 by "ping 192.24.7.101".
 From host-1, you should be able to ping instance-1 by "ping 172.24.1.4"
-
-Done.
 
 .. |s2c_connection| image:: connect_overlap_cidrs_media/s2c_connection.png
    :scale: 35%
