@@ -11,9 +11,10 @@ This document describes how to build an IPsec tunnel based Site2Cloud connection
 
 .. note::
 
-If you do not have access to AWS, you can simulate an on-prem Firewall by deploying the Palo Alto Firewall in any other cloud (such as Microsoft Azure, Google Cloud Platform, or Oracle Cloud Infrastructure).
+  If you do not have access to AWS, you can simulate an on-prem Firewall by deploying the Palo Alto Firewall in any other cloud (such as Microsoft Azure, Google Cloud Platform, or Oracle Cloud Infrastructure).
 
-Network setup is as following:
+
+The network setup is as follows:
 
 **VPC1 (with Aviatrix Gateway)**
 

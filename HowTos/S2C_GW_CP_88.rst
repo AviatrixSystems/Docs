@@ -9,7 +9,12 @@ Aviatrix Gateway to Check Point(R80.10)
 
 This document describes how to build an IPSec tunnel based site2cloud connection between Aviatrix Gateway and Check Point Firewall. To simulate an on-prem Check Point Firewall, we use a Check Point CloudGuard IaaS firewall VM at AWS VPC.
 
-Network setup is as following:
+.. note::
+
+  If you do not have access to AWS, you can simulate an on-prem Firewall by deploying the Palo Alto Firewall in any other cloud (such as Microsoft Azure, Google Cloud Platform, or Oracle Cloud Infrastructure).
+
+
+The network setup is as follows:
 
 **VPC1 (with Aviatrix Gateway)**
 
