@@ -186,7 +186,7 @@ To configure Okta, see `How to configure Okta. <http://docs.aviatrix.com/HowTos/
 
 
 Max Connections
-^^^^^^^^^^^^^^^^^^^^6
+^^^^^^^^^^^^^^^
 
 Maximum number of active VPN users allowed to be connected to this gateway. The default is 100.
 
@@ -195,7 +195,7 @@ The OpenVPN® VPN CIDR Block allocates 4 IP addresses for each connected VPN use
 when the VPN CIDR Block is a /24 network, it supports about 60 users.
 
 Split Tunnel Mode
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Split Tunnel Mode is enabled by default. When Split Tunnel mode is enabled, only
 traffic that is destined to the VPC/VNet CIDR where the VPN gateway is
