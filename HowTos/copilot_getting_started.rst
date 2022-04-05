@@ -98,7 +98,7 @@ To subscribe to a CoPilot offer:
         -   Open your CoPilot Security Group for UDP 5000 from all of your Aviatrix Gateways.
         -   For port 443, you can allow only your and other trusted user's IP addresses.
     .. note::
-        If you launch new gateways from your controller later, you must also add their CIDR entries here. 
+        If you launch new gateways from your controller later, you must also add CIDR entries for them here at that time. 
        
 6.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
