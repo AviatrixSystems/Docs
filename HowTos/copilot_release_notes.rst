@@ -11,8 +11,8 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
-CoPilot Releases 1.8.0, 1.8.2, 1.8.3 (4/05/2022)
--------------------------------------------------
+CoPilot Releases 1.8.0, 1.8.1, 1.8.2, 1.8.3 (4/05/2022)
+--------------------------------------------------------
 
 -   (Anomalies - New!) **Network Behavior Analytics** — You can now select any VPC/VNet(s) in your clouds to have CoPilot learn their behaviors based on a group of metrics and alert you when it detects anomalous behavior in them. When configured for network behavior analytics, CoPilot performs continuous network behavior analysis of the VPC/VNet workloads during a configurable learning period. The learned behavior or *fingerprint* is a behavioral baseline against which CoPilot can detect abnormal network operating patterns or *anomalies*. Anomalies could represent threats on your network, systems being down, high traffic for a planned launch, or some other abnormal behavior. For information about enabling network behavior analytics, see `Working with Anomalies <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_.
 
@@ -20,6 +20,7 @@ CoPilot Releases 1.8.0, 1.8.2, 1.8.3 (4/05/2022)
 
     ```
     Source Address is equal to department accounting
+
     Destination Address is equal to department engineering
     ```
 
