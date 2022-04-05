@@ -81,7 +81,7 @@ Creating a Secret Identifier
 
 After registering your Aviatrix Controller as an app and assigning it the Contributor role, create a Secret identifier. Azure Active Directory uses this Secret identifier to authenticate the Aviatrix Controller application.
 
-1. On the page that displays your Aviatrix Controller app, click **Certificates & secrets** on the left. Then, click **+New client secret**.
+1. Navigate back to All services > Azure Active Directory > App registrations and seleect **Certificates & secrets** on the left. Then, click **+New client secret**.
 2. On the right, under Add a client secret, enter:
 
 * **Description**  - Aviatrix
@@ -89,7 +89,7 @@ After registering your Aviatrix Controller as an app and assigning it the Contri
 
 3. Click **Add** towards the bottom. 
 
-4. The page displays your new Client secret. Copy the secret **Value** and **Secret ID** to the Notepad file where you saved your **Account ID**, **Directory ID**, and **Subscription ID**. These four values are necessary to onboard this Azure account in the Aviatrix Controller.
+4. The page displays your new Client secret. Copy the secret **Value** to the Notepad file where you saved your **Account ID**, **Directory ID**, and **Subscription ID**. These four values are necessary to onboard this Azure account in the Aviatrix Controller.
 
 Setting API Permissions for the Aviatrix Controller Application
 ------------------------------------------------------------
@@ -110,7 +110,7 @@ Access Account Setup Input Field                         Value
 Subscription ID                                          From the `"Assigning a Role to the Aviatrix Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#assigning-a-role-to-the-aviatrix-application>`_ section
 Directory ID                                             From the `"Registering Your Aviatrix Controller Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section
 Application ID                                           From From the `"Registering Your Aviatrix Controller Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section
-Application Key (Client Secret)                          From the `"Creating a Secret Identifier" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#creating-a-secret-identifier>`_ section
+Client Secret Value                                      From the `"Creating a Secret Identifier" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#creating-a-secret-identifier>`_ section
 ==========================================               ======================
 
 Onboarding Your Azure Access Account in the Aviatrix Controller
