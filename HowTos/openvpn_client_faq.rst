@@ -59,7 +59,15 @@ Please share the following log files with your support request. For MacOS, you c
  * server.log
  * openvpn1.log
 
+How to restart Aviatrix Windows client background service?
+---------------------------------------------------------------
 
+#. Exit the Aviatrix VPN client from the tray
+#. Use the Task Manager to end all openvpn.exe processes
+#. Open a terminal and "Run as administrator"
+#. Run command "sc stop AVPNC_RP" in the terminal
+#. Run command "sc start AVPNC_RP" in the terminal
+#. Start Aviatrix VPN client again
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
