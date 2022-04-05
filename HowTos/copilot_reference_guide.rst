@@ -764,7 +764,7 @@ Enable ThreatGuard Alerts
 
 Enable ThreatGuard alerts to receive notifications when threat IPs are detected in your network traffic.
 
-To enable ThreatGuard alerts, you must log in to CoPilot with a user account that has ``all_write`` or ``all_security_write`` permissions.
+To enable ThreatGuard alerts, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
 
 To enable ThreatGuard alerts:
 
@@ -802,7 +802,7 @@ Enable ThreatGuard Blocking
 
 Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushed down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNET/VCN will block.
 
-To enable ThreatGuard blocking, you must log in to CoPilot with a user account that has ``all_write`` or ``all_security_write`` permissions.
+To enable ThreatGuard blocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
 
 To enable ThreatGuard blocking:
 
@@ -1041,11 +1041,11 @@ You can set a sensitivity level for detecting anomalies that determines how smal
 
 When detecting anomalies, CoPilot compares active network behavior at one hour intervals against the fixed fingerprinted data set.
 
-For instructions on enabling network behavior analytics, see "Enable Network Behavior Analytics".
+For instructions on enabling network behavior analytics, see `Enable Network Behavior Analytics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-network-behavior-analytics>`_.
 
-For the information CoPilot reports when detecting anomalies, see "Dashboard for Anomaly Detection".
+For the information CoPilot reports when detecting anomalies, see `Dashboard for Anomalies Detected <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#dashboard-for-anomalies-detected>`_.
 
-For the fingerprint metrics that can trigger anomalies, see "Network Behavior Analytics Metrics".
+For the fingerprint metrics that can trigger anomalies, see `Network Behavior Analytics Metrics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#network-behavior-analytics-metrics>`_.
 
 
 Enable Network Behavior Analytics
@@ -1053,9 +1053,11 @@ Enable Network Behavior Analytics
 
 Enable CoPilot to perform network behavior analysis on any VPC/VNet in your multi-cloud network. See "Working with Anomalies" for information about how CoPilot detects anomalies when network behavior analytics is enabled.
 
-After you enable network behavior analytics on a VPC/VNet, the learning period must be completed before CoPilot will start detecting anomalies and (if enabled) sending alerts for the same. To enable network behavior analytics and alerts, your CoPilot user account must have `all_write` or `all_security_write` permissions.
+After you enable network behavior analytics on a VPC/VNet, the learning period must be completed before CoPilot will start detecting anomalies and (if enabled) sending alerts for the same.
 
 **Note:** You must click **Save** on the Anomalies Configuration page to save any and all changes that you make to your network behavior analytics configuration including those made in the Monitor VPC/VNets dialog. When you are done with your configuration, verify the message "Unsaved Changes" is not displayed at the top of the Configuration page.
+
+To enable network behavior analytics, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
 
 To enable network behavior analytics:
 
@@ -1137,7 +1139,7 @@ When you enable network behavior analytics on a VPC/VNet, CoPilot learns its nor
 
 -   **Egress Bytes**
 
-    Total bytes of data for all outbound traffic coming out of all end instances.
+    Total bytes of data for all outbound traffic sent from all end instances.
 
 -   **Egress IPs**
 
@@ -1149,11 +1151,11 @@ When you enable network behavior analytics on a VPC/VNet, CoPilot learns its nor
 
 -   **Ingress Bytes**
 
-    Total bytes of data for all the inbound traffic coming to all end instances.
+    Total bytes of data from all the inbound traffic coming to all end instances.
 
 -   **Ingress IPs**
 
-    Total count of unique IP addresses all end instances are talking to for inbound traffic.
+    Total count of unique IP addresses all end instances are receiving traffic from.
 
 -   **Ingress Ports**
 
@@ -1517,7 +1519,7 @@ To set up PagerDuty to receive CoPilot alerts via webhooks:
 
 
 
-Settings
+CoPilot Settings
 ======================
 
 This section describes the Settings options of Aviatrix CoPilot.
