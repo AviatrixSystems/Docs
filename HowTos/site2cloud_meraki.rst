@@ -13,11 +13,11 @@ This document describes how to create an IPsec tunnel between an Aviatrix Gatewa
 
 The network setup is as follows: 
 
-**VPC1 (with Aviatrix Gateway)**
+**VPC/VNet1 (with Aviatrix Gateway)**
 
-    *VPC1 CIDR: 10.10.0.0/16*
+    *VPC/VNet1 CIDR: 10.10.0.0/16*
     
-    *VPC1 Public Subnet CIDR: 10.10.0.0/24*
+    *VPC/VNet1 Subnet CIDR (public subnet for AWS, GCP, or OCI): 10.10.0.0/24*
     
 **On-prem (with Meraki MX64)**
 
@@ -32,7 +32,7 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
 3. Click on **+ Add New** near the top of the Site2Cloud tab.
 4. Under Add a New Connection, enter the following:
 
-  +-------------------------------+------------------------------------------+
+    +-------------------------------+------------------------------------------+
   | Field                         | Expected Value                           |
   +===============================+==========================================+
   | VPC ID / VNet Name            | Select the VPC/VNet where this tunnel    |
@@ -49,15 +49,15 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
   +-------------------------------+------------------------------------------+
   | Tunnel Type                   | UDP                                      |
   +-------------------------------+------------------------------------------+
-  | Algorithms                    | Unchecked                                |
+  | Algorithms                    | Unmark this checkbox                     |
   +-------------------------------+------------------------------------------+
-  | Encryption over ExpressRoute/ | Unchecked                                |
-  | DirectConnect                 |                                          |
+  | Encryption over ExpressRoute/ | Unmark this checkbox                     |
+  | Direct Connect                 |                                         |
   +-------------------------------+------------------------------------------+
-  | Enable HA                     | Unchecked                                |
+  | Enable HA                     | Unmark this checkbox                     |
   +-------------------------------+------------------------------------------+
   | Primary Cloud Gateway         | Select the Gateway where the tunnel will |
-  |                               | terminate in this VPC.                   |
+  |                               | terminate in this VPC/VNet.              |
   +-------------------------------+------------------------------------------+
   | Remote Gateway IP Address     | IP address of the Meraki M64 device.     |
   +-------------------------------+------------------------------------------+
@@ -71,7 +71,7 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
   +-------------------------------+------------------------------------------+
   | Local Subnet                  | The CIDR block that should be advertised |
   |                               | on Meraki M64 for the cloud network      |
-  |                               | (will default to the VPC CIDR block)     |
+  |                               | (will default to the VPC/VNet CIDR block)|
   +-------------------------------+------------------------------------------+
 
 5. Click **OK**,
@@ -81,7 +81,7 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
 Configuring Site-to-site VPN in Meraki MX64
 ---------------------------------------------------------
 
-1. Login to your Meraki dashboard.
+1. Log in to your Meraki dashboard.
 2. In the Security appliance menu, select **Site-to-site VPN** under the Configure section.
 
    |meraki01|
