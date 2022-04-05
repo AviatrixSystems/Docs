@@ -11,6 +11,26 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
+CoPilot Releases 1.8.0, 1.8.2, 1.8.3 (4/05/2022)
+-------------------------------------------------
+
+-   (Anomalies - New!) **Network Behavior Analytics** — You can now select any VPC/VNet(s) in your clouds to have CoPilot learn their behaviors based on a group of metrics and alert you when it detects anomalous behavior in them. When configured for network behavior analytics, CoPilot performs continuous network behavior analysis of the VPC/VNet workloads during a configurable learning period. The learned behavior or *fingerprint* is a behavioral baseline against which CoPilot can detect abnormal network operating patterns or *anomalies*. Anomalies could represent threats on your network, systems being down, high traffic for a planned launch, or some other abnormal behavior. For information about enabling network behavior analytics, see `Working with Anomalies <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_.
+
+-   (FlowIQ) **FlowIQ Filter by CSP Tags** — You can now search for traffic using your cloud-native instance tags and VPC tags. Use the tags in FlowIQ filters that take an address field like Source Address or Destination Address. For example, to see traffic flows between business units, this filter group with the AND operand will show traffic flows between accounting and engineering resources where the CSP tag associated with each resource is Name = `department` and Value = `accounting` or `engineering` respectively:
+
+    ```
+    Source Address is equal to department accounting
+    Destination Address is equal to department engineering
+    ```
+
+-   (ThreatIQ with ThreatGuard) **Prepend/Append ThreatGuard Rules** — By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. You can now choose to have ThreatGuard firewall rules *prepend* instantiated rules where Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. From the ThreatIQ > ThreatGuard page, select the prepend option when configuring ThreatGuard blocking. For more information, see `About ThreatGuard Firewall Rules <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-threatguard-firewall-rules>`_.
+
+-   (Notifications) **Edit Alerts** — You can now edit alert configurations. From the Notifications > Configure > Configured Alerts list, locate the alert and click on the blue pen icon. Make any changes needed to the name, condition, email recipient, or webhook payload and then click **Update**. For more information, see `Edit Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#edit-notifications>`_. 
+
+-   Performance Improvements.
+
+-   Bug fixes.
+
 
 CoPilot Release 1.7.1, 1.7.2 (2/23/2022), 1.7.3 (2/24/2022)
 -----------------------------------------------------------

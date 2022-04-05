@@ -539,6 +539,34 @@ To configure notifications:
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the alert.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
 
+Edit Notifications 
+--------------------
+
+You can edit notification settings you previously configured.
+
+**Prerequisite**: (**If adding new email recipient/new webhook URL**) If you need to add new email recipients or new webhook payload URLs to receive the alert, add the new recipient's email address or new webhook configuration first in the Settings > Notifications tab.
+
+To edit a previously configured notification:
+
+1.  From the sidebar, click Notifications.
+
+2.  From the Configured Alerts list, locate the alert whose configuration you want to change and click on the blue pen icon.
+
+    The Edit Alert screen opens for that specific alert.
+
+3.  Change any of the following configuration settings as needed:
+
+    -   Name of the Alert.
+    -   Condition threshold for the alert condition.
+    -   Whether you want to receive separate notifications for each host.
+    -   Whether you want to apply the alert condition for all hosts.
+    -   What email recipients or webhook payload URLs you want to receive the alert when conditions are met.
+4.  (Cancel edit) To cancel the edit, click, **Cancel**.
+
+5.  To save your edits, click **Update**.
+
+    Your new configuration is displayed in the Editing Alerts pane. When conditions are met for the alert, your new configuration now applies.
+
 
 Metrics used for Triggering Notifications
 ------------------------------------------
@@ -772,33 +800,19 @@ When a ThreatGuard firewall rule is newly applied on a gateway that has existing
 Enable ThreatGuard Blocking 
 ---------------------------
 
-Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushed down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNet/VCN will block.
+Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushed down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNET/VCN will block.
 
 To enable ThreatGuard blocking, you must log in to CoPilot with a user account that has ``all_write`` or ``all_security_write`` permissions.
 
 To enable ThreatGuard blocking:
 
-1.  Log in to CoPilot.
-
-2.  From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
-
-3.  Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark.
-
-    ThreatGuard alerts must be enabled before blocking can be enabled. See `Enable ThreatGuard Alerts <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-threatguard-alerts>`_.
-
-4.  Click the **Block Threats** slider so that it slides to the right.
-
-    ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected.
-
-    Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. All gateways in a VPC/VNet will block the associated traffic. You can be selective about which VPCs/VNets/VCNs block threat IPs when ThreatGuard blocking is enabled in the next step. By default, all VPCs/VNets block.
-
-5.  (Optional) Transfer VPC/VNets to the Not Protected list if you do not want the instances in them to be protected by ThreatGuard blocking and click **Save**.
-
-6.  (Optional) Specify if you want to prepend already instantiated rules on a gateway with ThreatGuard rules and click **Save**. If you configure ThreatGuard firewall rules to *prepend* instantiated rules, Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. **Note**: The prepend feature is available starting from Controller release 6.6.5544. For more information, see `About ThreatGuard Firewall Rules <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-threatguard-firewall-rules>`_.
-
-7.  (Optional) Disable blocking.
-
-    **Note:** When you disable ThreatGuard blocking, the action removes all existing firewall rules instantiated by Aviatrix Controller for all threats detected up to that point.
+1. Log in to CoPilot.
+2. From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
+3. Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
+4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. By default, all gateways in a VPC/VNet will block the associated traffic. You can be selective about which VPC/VNets block threat IPs in the next step.
+5. (Optional - Deny ThreatGuard protection) Select VPC/VNets for which you do not want ThreatGuard blocking enabled. For Configure Exclusion List for VPCs, click the pen icon. In the Protected with ThreatGuard list, tick the check box of each VPC/VNet for which you do not want ThreatGuard blocking enabled. Transfer the VPC/VNets to the Not Protected list and click **Save**. For any VPC/VNets listed in the Not Protected list, the gateways in them will not block threat IPs when detected.
+6. (Optional - Prepend ThreatGuard rules) By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. If you want Controller to add the ThreatGuard rule to the beginning of the rules list, select the Prepend radio button. For more information, see "About ThreatGuard Firewall Rules". 
+7. (Optional - Disable blocking) **Note:** When you disable ThreatGuard blocking, the action removes all existing ThreatGuard firewall rules instantiated by Aviatrix Controller for all threats detected up to that point. To disable blocking, in ThreatGuard view, click the Block Traffic check and then click the Block Threats slider. Click **Confirm** to disable all ThreatGuard firewall rules and stop ThreatGuard blocking. 
 
 Add a Custom ThreatIQ IP List 
 -----------------------------
@@ -1001,6 +1015,157 @@ To create a resource utilization report:
 10. (Optional) Download the report using the blue download icon.
 
 11. (Optional) To generate another report, at the top of the Resource Utilization Report page, click the arrow to return to the main Reports page and repeat the procedure.
+
+Working with Anomalies
+=======================
+
+This section describes the network behavior analytics feature of Aviatrix CoPilot.
+
+In Anomalies, you can enable CoPilot to perform continuous network behavior analysis on your cloud workloads on a per VPC/VNet basis so that CoPilot can learn the routine behaviors of the VPC/VNets based on a group of metrics. The analysis enables CoPilot to detect any unusual network behaviors (anomalies) that could represent threats on your network, systems being down, high traffic for a planned launch, or some other abnormal behavior. You can choose to be alerted when anomalies are detected so you can carry out any needed network operations activities to secure your workloads.
+
+**How Does Network Behavior Analytics Work?**
+
+When enabling network behavior analytics, CoPilot establishes a VPC/VNet network-behavior *fingerprint* that is custom to your organization's multi-cloud activity. The fingerprint is a collection of data and traffic patterns for traffic going into and coming out of all end instances within a VPC/VNet and is the result of CoPilot's profiling of the VPC/VNet over a configurable period of time or *learning period*. The fingerprint is a learned data set and behavioral baseline against which CoPilot can detect abnormal network operating patterns or *anomalies*.
+
+At the conclusion of the learning period, CoPilot can begin detecting anomalies from the fingerprint of the applicable cloud workloads and begin sending alerts for the same if alerts are enabled. The alerts signify active network behaviors that could represent expected network activity or could represent an active threat such as data exfiltration or lateral movement. When CoPilot sends an alert for anomalies detected, the alert contains the details of the metric(s) whose percentage of deviation was outside of the normal fingerprint.
+
+Anomalies are assigned a low, medium, or high severity. The severity level depends on how much the overall traffic that caused the anomaly deviated from established thresholds derived from fingerprinted operating patterns:
+
+-   Low — Less than 50% deviated from outlier threshold.
+-   Medium — Less than 50 - 75% deviated from outlier threshold.
+-   High — More than 75% deviated from outlier threshold.
+
+CoPilot considers various metric data points when establishing the network-behavior fingerprint. When analyzing active network behavior, CoPilot tracks how many standard deviation points the active network behavior of each metric is from the behavior of the fingerprint. A single anomaly can be associated with one or multiple metrics that have deviated from the behavior of the fingerprint.
+
+You can set a sensitivity level for detecting anomalies that determines how small or large a deviation in normal traffic patterns must be for CoPilot to consider it an anomaly. A higher sensitivity means any small deviation from the fingerprint behavioral baseline is considered an anomaly. High sensitivity could cause alert fatigue when alerts are enabled. A lower sensitivity means an anomaly is detected only when there is a large deviation from the fingerprint behavioral baseline. In this case, anomalies that are greater outliers are detected.
+
+When detecting anomalies, CoPilot compares active network behavior at one hour intervals against the fixed fingerprinted data set.
+
+For instructions on enabling network behavior analytics, see "Enable Network Behavior Analytics".
+
+For the information CoPilot reports when detecting anomalies, see "Dashboard for Anomaly Detection".
+
+For the fingerprint metrics that can trigger anomalies, see "Network Behavior Analytics Metrics".
+
+
+Enable Network Behavior Analytics
+----------------------------------
+
+Enable CoPilot to perform network behavior analysis on any VPC/VNet in your multi-cloud network. See "Working with Anomalies" for information about how CoPilot detects anomalies when network behavior analytics is enabled.
+
+After you enable network behavior analytics on a VPC/VNet, the learning period must be completed before CoPilot will start detecting anomalies and (if enabled) sending alerts for the same. To enable network behavior analytics and alerts, your CoPilot user account must have `all_write` or `all_security_write` permissions.
+
+**Note:** You must click **Save** on the Anomalies Configuration page to save any and all changes that you make to your network behavior analytics configuration including those made in the Monitor VPC/VNets dialog. When you are done with your configuration, verify the message "Unsaved Changes" is not displayed at the top of the Configuration page.
+
+To enable network behavior analytics:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click **Anomalies**.
+
+3.  In the Configuration page, set the sensitivity level for detecting anomalies in your network. The configuration applies across all VPC/VNets for which network behavior analytics is enabled. You can change this global setting later if you decide to use a different sensitvity level later.
+
+    High — Anomaly is detected for any small deviation from the behavioral baseline established in the VPC/VNet fingerprint. High sensitivity can cause alert fatigue when alerts are enabled.
+
+    Low — Anomaly is detected for only the large deviations from the behavioral baseline established in the VPC/VNet fingerprint. In this case, anomalies that are greater outliers are detected the most.
+
+4.  (Optional) Click the Alerts slider to enable CoPilot to send alerts when it detects anomalies. In the Create Alert dialog, click **Add Recipient** and select the channels you want to receive alerts. Click **Save**.
+
+5.  Click the pen icon to open the dialog to specify the VPC/VNets you want enabled for network behavior analytics.
+
+6.  In the Available list, tick the check box of each VPC/VNet you want enabled for network behavior analytics and transfer them to the Monitored list. TIP: The name of the VPC/VNets in the Monitored list that apply to your current configuration turn green.
+
+7.  In Learning Period, set the number of weeks you want CoPilot to spend learning the network behavior of the selected VPC/VNets. The minimum learning period is 2 weeks and the maximum is 52 weeks.
+
+    At the end of the learning period, CoPilot establishes a network-behavior fingerprint for each VPC/VNet. The fingerprint is a collection of data and traffic patterns for traffic going into and coming out of all end instances within your VPC/VNets. The fingerprint is the result of CoPilot’s learning of that data and traffic and cannot be changed after it is established. To detect anomalies, CoPilot compares all future active network behavior at one hour intervals against the fixed fingerprinted data set. You can clear the fingerprint for a VPC/VNet and have CoPilot learn a new fingerprint. See the step below (Relearn network-behavior) for details.
+
+8.  Click **Save** to apply your settings and then click **Save** in the Configuration page to save the settings. After your configuration is saved, you will see the message "Configuration Saved Successfully" at the top of the page.
+
+9.  (View details of monitored VPC/VNets) In the Configuration page, after your configuration is saved, you will see the message "Configuration Saved Successfully" at the top of the page.
+
+    To view details about the VPC/VNets you enabled for network behavior analytics that are still in the learning phase, click the table list icon or *in Learning Phase* label. The status of "Active" in the Learning column means they are still in the network-behavior learning period. The date in the Detection column is the date by which their learning period completes and CoPilot will begin detecting and reporting on anomalies.
+
+10. (Relearn network-behavior of a VPC/VNet) You can clear the fingerprint for a VPC/VNet and have CoPilot learn a new fingerprint for it. If a VPC/VNet is in the active learning state, and you want to learn a new fingerprint, remove the VPC/VNet from the profiling list, and save that change in the Anomalies Configuration page. You can then repeat steps 5 through 8 to re-add the VPC/VNet to the profiling list and begin a new learning period that will establish a new fingerprint.
+
+11. (Add to CoPilot's learning) After CoPilot starts detecting anomalies, it reports the details of each in the Dashboard for Anomaly Detection. In the list of anomalies detected, you can use the thumbs down icon to indicate whether an anomaly reported is not actually an anomaly. In this way, you can add to CoPilot's learning to detect anomalies more accurately for your network.
+
+Dashboard for Anomalies Detected
+---------------------------------
+
+The Anomaly Dashboard shows details about the anomalies CoPilot detected, historically for the last hour, last day, last week (default), and last month, for all VPC/VNets for which network behavior analytics was enabled.
+
+You can use the date picker to view historical anomalies for a custom timeframe.
+
+By default, the latest anomaly detected is listed at the top of the anomaly list table.
+
+For a reported anomaly, you can use the thumbs down icon to indicate whether an anomaly reported is not actually an anomaly. CoPilot will consider the new data point in addition to the existing fingerprinted baseline to improve its identification of anomalies moving forward.
+
+**Total Anomalies** — Total number of anomalies detected within the specified time period.
+
+**VPCs/VNets with Anomalies** — The number of profiled VPC/VNets in which any of the anomalies were detected within the specified time period.
+
+**Metrics causing Anomalies** — Of all the metrics in the fingerprint CoPilot considers for detecting anomalies, the number of metrics whose normal-behavior deviation have caused anomalies within the specified time period.
+
+**Anomalies by Severity** — The number of anomalies that are considered low, medium, or high in severity where the severity level is:
+
+-   Low — The overall traffic that caused the anomaly is less than 50% deviated from outlier thresholds.
+-   Medium — The overall traffic that caused the anomaly is less than 50 - 75% deviated from outlier thresholds.
+-   High — The overall traffic that caused the anomaly is more than 75% deviated from outlier thresholds.
+
+**Anomalies by VPC/VNet** — The number of anomalies that occurred in each VPC/VNet within the specified time period.
+
+**Anomalies by Top Metric** — For the metrics within the VPC/VNet fingerprint, the ones that caused the most anomalies in the specified time period and the number of anomalies they caused.
+
+**Anomalies Over Time** — The number of anomalies that occurred on specific dates with the severity of the anomaly shown as green (Low), yellow (Medium), or red (High).
+
+**Total Anomalies (Cumulative)** — The cumulative number of anomalies that occurred over time from the start of the detection period for all profiled VPC/VNets.
+
+Table of Anomalies — A list of the anomalies that were reported:
+
+-   Detected At — Timestamp of the anomaly. Each row in the table represents an anomaly classified by its timestamp.
+-   VPC/VNet — The VPC/VNet and cloud environment where the anomaly occured.
+-   Cloud — The cloud environment where the VPC/VNet resides.
+-   Metrics — Of the metrics CoPilot used to establish theVPC/VNet fingerprint, the number of metrics that triggered the anomaly. Hover over the number to see the percentage of deviation over the VPC/VNet fingerprint that occurred for the metric(s).
+-   Severity — The severity level of the anomaly.
+-   Thumbs Down icon — Use the thumbs down icon to indicate whether an anomaly reported is not actually an anomaly. CoPilot will consider the new data point in addition to the existing fingerprinted baseline to improve its identification of anomalies moving forward.
+
+
+Network Behavior Analytics Metrics
+-----------------------------------
+
+When you enable network behavior analytics on a VPC/VNet, CoPilot learns its normal behaviors based on the group of metrics described in this section. The metric descriptions apply to all end instances in a VPC/VNet that is being monitored for network behavior analytics.
+
+-   **Egress Bytes**
+
+    Total bytes of data for all outbound traffic coming out of all end instances.
+
+-   **Egress IPs**
+
+    Total count of unique IP addresses all end instances are talking to for outbound traffic.
+
+-   **Egress Ports**
+
+    Total number of unique ports all end instances are sending traffic to for outbound traffic.
+
+-   **Ingress Bytes**
+
+    Total bytes of data for all the inbound traffic coming to all end instances.
+
+-   **Ingress IPs**
+
+    Total count of unique IP addresses all end instances are talking to for inbound traffic.
+
+-   **Ingress Ports**
+
+    Total number of unique ports all end instances are receiving traffic from for inbound traffic.
+
+-   **Total Bytes**
+
+    Total bytes of data for traffic coming out of and traffic going into all end instances.
+
+-   **Total Packets**
+
+    Total number of packets for traffic coming out of and traffic going into all end instances.
 
 
 CoPilot WebHooks
@@ -1406,14 +1571,28 @@ Use **Services Upload Log Bundle to Support** to send your support log bundle di
 
 Resources
 -----------
-The Resources page helps you understand the resource utilization levels in your appliances (to determine if you need to take necessary actions).
+The Resources page provides resource utilization levels about the virtual machine (instance) on which CoPilot runs as well as the storage allocated to the instance.
+
+**Disk Usage:**
+
+The size, used disk space, and free disk space of the attached root disk (volume). The bar chart shows used space in blue.
+
+The size, used disk space, and free disk space of the logical volume CoPilot created for storage. The bar chart shows used space in blue. Note: The logical volume information displays only if you deployed the Aviatrix CoPilot 1.5.1 image version from the marketplace.
+
+**CPU Usage:**
+
+The approximate total CPU usage of all processors. CoPilot fetches the current value at your specified refresh interval. The chart displays data for the last 20 intervals.
+
+**Memory Usage:**
+
+The amount of total memory used. CoPilot fetches the current value at your specified refresh interval. The chart displays data for the last 20 intervals.
 
 
 Licensing 
 -----------
 This page provides functionality for viewing your current license key or releasing the license. 
 
-If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, release the CoPilot licence of the current instance first. To release the license, click the RESET button. 
+If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, copy the Customer ID of the current instance first and save it for reuse later, and then release the CoPilot license of the current instance. To release the license, click the RESET button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID you copied.
 
 Index Management
 -----------------
