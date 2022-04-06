@@ -38,17 +38,17 @@ Aviatrix's `VPN Client <../Downloads/samlclient.html>`__ allows you to load and 
 Load multiple configurations:
 
 #. Open the client
-#. Click on the `Advanced` button
-#. Select the `Profile` tab
-#. Click `Add` button
-#. Enter a name for the new profile
-#. Select the configuration file
+#. Click on the `Advanced` button.
+#. Select the `Profile` tab.
+#. Click `Add` button.
+#. Enter a name for the new profile.
+#. Select the configuration file.
 
 Switch to a different configuration:
 
-#. Open the client
+#. Open the client.
 #. Click `Connect` button.  A drop down will appear.
-#. Select the profile from the list
+#. Select the profile from the list.
    
 Which log files should I share when I open a support ticket?
 ---------------------------------------------------------------
@@ -59,7 +59,15 @@ Please share the following log files with your support request. For MacOS, you c
  * server.log
  * openvpn1.log
 
+How to restart Aviatrix Windows client background service?
+---------------------------------------------------------------
 
+#. Exit the Aviatrix VPN client from the tray
+#. Use the Task Manager to end all openvpn.exe processes
+#. Open a terminal and "Run as administrator"
+#. Run command "sc stop AVPNC_RP" in the terminal
+#. Run command "sc start AVPNC_RP" in the terminal
+#. Start Aviatrix VPN client again
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
