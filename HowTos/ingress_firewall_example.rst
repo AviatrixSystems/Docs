@@ -14,13 +14,13 @@ The deployment is shown as the diagram below.
 
 |ingress_firewall|
 
-The key idea is from FireNet point of view, the ingress inspection is simply a VPC to VPC traffic inspection. This is accomplished by 
+The key idea is from FireNet point of view, the ingress inspection is simply a VPC-to-VPC traffic inspection. This is accomplished by 
 
- a. Placing an Internet facing AWS ALB/NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). 
+ a. Placing an Internet-facing AWS ALB/NLB in a spoke VPC in a separate domain (in the diagram, this domain is called Ingress domain.) from the domains where applications reside (Application domain). 
  #. Build a connection policy to connect the Ingress domain with the Application domain. 
  #. Connect the Application domain traffic that requires inspection with the Aviatrix Firewall Domain.
 
-In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC to VPC filtering. The solution does not need AWS ALB/NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
+In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VPC-to-VPC filtering. The solution does not need AWS ALB/NLB to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
 
 .. Note::
 
@@ -36,7 +36,7 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
  - Follow `Aviatrix Firewall Network workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_ to launch FireNet gateways and firewall instances. Enable `Egress <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ if desired.
 
  - Follow `Aviatrix TGW Orchestrator workflow <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_ to:
-	-  Create an Ingress domain (this domain can be named something else and can be an existing domain, just make sure it is in a different domain than Application domain.). 
+	- Create an Ingress domain (this domain can be named something else and can be an existing domain, just make sure it is in a different domain than Application domain). 
 	- Build Connection policy between the Ingress domain and the Application domain. 
 	- Build Connection policy between Application domain and Firewall domain so that traffic in and out of the domain is inspected. 
  	- Attach the Application domain VPC (Spoke-2 in the diagram) to the TGW. 
@@ -47,8 +47,8 @@ In this unified architecture, firewalls can be used for Ingress, Egress, North-S
 
 In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the following. 
 
- - Select internet-facing
- - Routing Target group should be IP
+ - Select **Internet-facing**.
+ - Routing Target group should be IP.
 
 
 3. Ready to go!
@@ -57,6 +57,7 @@ In Ingress domain VPC (Spoke-1), create an AWS NLB, make sure you select the fol
  - From the AWS Console, make sure NLB target group is in healthy state.
  - Run a https request on the NLB DNS name
 - The application can also reach Internet through firewall instances if you enable Egress on the FireNet.  
+
 4. Capturing Client IP
 -------------------------
 
@@ -72,21 +73,17 @@ follow the instructions in `How to save client IP in access logs <https://aws.am
 4.2 Using AWS NLB
 ^^^^^^^^^^^^^^^^^^^^
 
-When NLB uses IP address as target group, the client IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original client IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Review the section "Enable Proxy Protocol" in the above AWS document or follow the same steps as below to enble this function on NLB using the AWS console.
+When NLB uses IP address as target group, the client IP address of the packet reaching to the application is one of the NLB node private IP address. If you like to get the original client IP address, you need to enable function `proxy_protocol_v2.enabled under Target Group Attributes <https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes>`_ on the NLB. Review the section "Enable Proxy Protocol" in the above AWS document or follow the same steps as below to enable this function on NLB using the AWS console.
 
-	- Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+#. On the navigation pane, under Load Balancing, select **Target Groups**.
+#. Select the target group.
+#. Choose Description > Edit attributes.
+#. Select **Enable proxy protocol v2**, and then click **Save**.
 
-	- On the navigation pane, under LOAD BALANCING, choose Target Groups.
-
-	- Select the target group.
-
-	- Choose Description, Edit attributes.
-
-	- Select Enable proxy protocol v2, and then choose Save.
-
-Also, you need to configure/support Proxy Protocol feature on your web server to retrieve the client original IP address. Please follow the steps below which are refering to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.
+Also, you need to configure/support Proxy Protocol feature on your web server to retrieve the client original IP address. Please follow the steps below which are referring to the AWS document `How do I capture client IP addresses in my ELB access logs? <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_.
  
-	- Take Apache/2.4.41 (Ubuntu) for example
+	- Take Apache/2.4.41 (Ubuntu) for example.
 	
 	- Find and open Apache configuration file.
 	
@@ -138,7 +135,7 @@ Also, you need to configure/support Proxy Protocol feature on your web server to
 		
 			#systemctl reload apache2
 
-	- Open the Apache access logs on your Apache server
+	- Open the Apache access logs on your Apache server.
 
 	- Verify that client IP addresses are now recorded under the X-Forwarded-For header.
 
