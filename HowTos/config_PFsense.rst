@@ -11,14 +11,14 @@
 2. Currently, we do not have a full integration between the Aviatrix dashboard and the Netgate pfSense, which means that you will not be able to dynamically update the firewall routing table, as it is currently possible with the Palo Alto VM-Series.
 
 =========================================================
-Setup Firewall Network(Firenet) for Netgate PFSense
+Setting up Firewall Network (FireNet) for Netgate PFSense
 =========================================================
 
 Complete all steps of the Firewall Network Workflow in the Aviatrix Controller up to `launching and associating a firewall instance <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_ to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your PFsense instance.
 
 
 ==============================================
-Deploy PFsense instance From AWS marketplace
+Deploying a PFsense Instance from the AWS Marketplace
 ==============================================
 
 1. Go to aws.amazon.com/marketplace and search for the pfSense AMI in AWS Marketplace and “Continue to Subscribe”
@@ -51,6 +51,7 @@ Deploy PFsense instance From AWS marketplace
 
 12. Please note that as soon as you attach an EIP to any instance, it will start receiving random hits from the Internet and you should guarantee that unwanted traffic is simply being dropped, so you don’t pay for “rejects/resets” being sent from of your firewall/VPC.
 13. The next page will be a summary containing all of your previous choices, as well as any relevant AWS warning on how you can improve your deployment (e.g: open security groups, AMI usage tier consideration, etc).
+<
 14. Once you click on “Launch” you will be prompted to choose the .pem key – please download the key now if you have not done it already and archive it in a secure location, as you are going to use it to SSH into the instance to enable GUI/web interface access
 15. If you would like to, you can monitor the instance until it is up via the AWS console (see screen shot below). Once the instance passes all the health checks, please open a terminal and SSH into the instance using the proper keys and the user “admin”, so can grep the auto-generated password
 
@@ -107,7 +108,9 @@ You can now to repeat this process to add more instances to talk to the main gat
 
 For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_
 
+Great. You are now good to repeat this process to add more instances to talk to the main gateway and also to the backup gateway. The difference regarding the backup gateway attachment is that the subnets will be in a different AZ.
 
+For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 .. |image1| image:: ./config_PFsense_media/image1.png
     :width: 100%
