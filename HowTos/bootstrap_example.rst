@@ -7,23 +7,23 @@
 Bootstrap Configuration Example for VM-Series in AWS
 =========================================================
 
-Using bootstrap option significantly simplifies VM-Series initial configuration setup. 
+Using the bootstrap option significantly simplifies VM-Series initial configuration setup. 
 
 In this document, we provide a bootstrap example to set up an "Allow All" and Egress NAT policy for the VM-Series to validate 
-that traffic is indeed sent to the VM-Series for VPC to VPC traffic inspection. This example does not use Panorama. 
+that traffic is indeed sent to the VM-Series for VPC-to-VPC traffic inspection. This example does not use Panorama. 
 
 Please use 9.0.3.xfr and above .xfr version for better results. Please refer to `PAN-OS 9.0.3 XFR for VM-Series <https://live.paloaltonetworks.com/t5/Blogs/PAN-OS-9-0-3-XFR-for-VM-Series-Now-Available/ba-p/290908>`_ .
 
 Note that Panorama PAN-OS version should be the same or higher than the firewall VMs when they are added to the Panorama, like, 9.0.3.xfr for both Panorama and VMs.
 
-For a manual setup, follow `manual setup example. <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_
+For a manual setup, follow the `manual setup example <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
 
 
-1. Create IAM Role and Policy
---------------------------------
+Creating an IAM Role and Policy
+----------------------------------------------
 
-Login to AWS console, create an IAM role with the name, for example, "bootstrap-VM-S3-role". 
-Attach an IAM policy with the name, for example, "bootstrap-VM-S3-policy". The policy has the following statements. 
+1. Log in to AWS console and create an IAM role with the name: for example, "bootstrap-VM-S3-role."
+2. Attach an IAM policy with the name: for example, "bootstrap-VM-S3-policy." The policy has the following statements. 
 
 ::
 
@@ -52,10 +52,10 @@ Attach an IAM policy with the name, for example, "bootstrap-VM-S3-policy". The p
     }
 
 
-2. Create bootstrap bucket structure
--------------------------------------
+Creating the bootstrap Bucket Structure
+-------------------------------------------------------
 
-In AWS S3, at the top level create a bucket for bootstrap with a **unique** name, for example "bootstrap-bucket", with the following structure:
+In AWS S3, at the top level create a bucket for bootstrap with a **unique** name, for example "bootstrap-bucket," with the following structure:
 
 ::
 
@@ -69,26 +69,24 @@ In AWS S3, at the top level create a bucket for bootstrap with a **unique** name
 
 |bootstrap_bucket|
 
-3. Upload config files
-------------------------
+Uploading Config Files
+--------------------------------
 
-**3.1** The example bootstrap.xml file contains the "Allow All", Egress and API admin setup. To downloady the file, click :download:`bootstrap.xml <bootstrap_example_media/bootstrap.xml>`. 
-
-**3.2** For the example init-cfg.txt file, click :download:`init-cfg.txt <bootstrap_example_media/init-cfg.txt>`. 
+1. The example bootstrap.xml file contains the "Allow All", Egress and API admin setup. To download the file, click :download:`bootstrap.xml <bootstrap_example_media/bootstrap.xml>`. 
+2. For the example init-cfg.txt file, click :download:`init-cfg.txt <bootstrap_example_media/init-cfg.txt>`. 
 
 .. Note::
 	In the example bootstrap.xml, you must specify custom usernames and passwords for the <https_interface_admin_username> and <api_admin_username>, and generate hash strings for the passwords.
 
+3. Upload these two files to your config folder in the bootstrap-bucket. 
 
-**3.3** upload these two files to your config folder in the bootstrap-bucket. 
-
-4. Launch the VM-Series instance
------------------------------------
+Launching the VM-Series instance
+---------------------------------------------------
 
 Follow the Aviatrix Firewall Network (FireNet) workflow 
-to `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_.
+to `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_.
 
-Fill in the required fields. Click Advanced. Fill in the following parameters.
+Fill in the required fields. Click **Advanced**. Fill in the following parameters.
 
 ================================  ======================
 **Advanced Field**                **Example Value**
@@ -102,8 +100,8 @@ Launch the VM-Series instance. Wait for 15 minutes for it to boot up and initial
 Login to the HTTPS interface of VM-Series management public IP with the username and password specified in the bootstrap.xml file.
 
 
-5. Configure API Vendor Integration
---------------------------------------
+Configuring API Vendor Integration
+----------------------------------------------
 
 In order for the Aviatrix Controller to automatically update firewall instance route tables, monitor the firewall instance health and manage instance failover, you need to setup API access permissions. 
 
@@ -115,29 +113,29 @@ Go to Controller -> Firewall Network -> Vendor Integration -> Firewall. Note the
 If you are manually configuring the firewall from scratch, follow `the instructions here <https://docs.aviatrix.com/HowTos/paloalto_API_setup.html>`_ to enable API access. 
 
 
-6. Ready to go!
----------------
+Ready to Go
+----------------------------
 
-Now your firewall instance is ready to receive packets! 
+Now your firewall instance is ready to receive packets.
 
 The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
-the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
+the firewall domain. This is done by `here <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.  
 
-7. View Traffic Log
-----------------------
+Viewing the Traffic Log
+----------------------------------
 
 You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
 
-8. Additional References
---------------------------
+Additional References
+------------------------------
 
 Following links from Palo Alto Networks for PAN-OS 8.1 and 9.0 provides additional information.
 
-`Create the init-cfg.txt File <https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/bootstrap-the-vm-series-firewall/create-the-init-cfgtxt-file.html#id8770fd72-81ea-48b6-b747-d0274f37860b>`_
+`Create the init-cfg.txt File <https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/bootstrap-the-vm-series-firewall/create-the-init-cfgtxt-file.html#id8770fd72-81ea-48b6-b747-d0274f37860b>`_.
 
 `Bootstrap the VM-Series Firewall on AWS 9.0 <https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws.html>`_
 
