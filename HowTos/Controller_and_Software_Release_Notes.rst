@@ -32,7 +32,7 @@ If you are upgrading from release 6.5.x or later, follow the guidelines and proc
 
 * **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
 * **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
-* **AVI-2022-0004**  – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+* **AVI-2022-0004** – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
 * **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
 
 
