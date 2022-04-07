@@ -8,6 +8,34 @@ Aviatrix Controller and Gateway Release Notes
   
 If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
+6.5.3163 (04/06/2022) 
+=======================
+
+**Enhanced Features in Release 6.5.3163**
+
+* **AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
+* **AVX-16906** – Extended support for AES-256-GCM encryption for Site2Cloud IPsec tunnels. 
+* **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
+
+**UI Enhancements in Release 6.5.3163**
+
+* **AVX-19672** – Added an error message when adding a new Site2Cloud connection to warn users that AES-256-GCM encryption algorithms are not supported on older gateway images. 
+
+**Issues Corrected in Aviatrix Release 6.5.3163**
+
+* **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working.
+* **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
+* **AVX-17650** – CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
+* **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+
+   Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
+
+* **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
+* **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
+* **AVI-2022-0004**  – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+* **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
+
+
 6.6.5545 (03/31/2022)
 =======================
 
