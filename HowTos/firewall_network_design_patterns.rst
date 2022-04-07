@@ -36,17 +36,17 @@ Connect to on-prem with AWS DXGW and use Aviatrix Edge gateway to connect to mul
 
 |multi_region_firewall|
 
-5. Multi Region Transit with Aviatrix Edge
+5. Multi-Region Transit with Aviatrix Edge
 ------------------------------------------------------------------------
 
-Connect to on-prem with an Aviatrix Edge gateway for both hybrid and multi regions.
+Connect to on-prem with an Aviatrix Edge gateway for both hybrid and multi-regions.
 
 |multi_region_aviatrix_edge|
 
 6. Two Firewall Networks 
 --------------------------------------------------------
 
-You can deploy two Firewall Networks, one dedicated for VPC to VPC traffic inspection and another for Egress
+You can deploy two Firewall Networks, one dedicated for VPC-to-VPC traffic inspection and another for egress
 inspection.
 
 Note you must follow the configuration sequence below:
@@ -86,7 +86,7 @@ the application. If you need to preserve source IP address, refer to `this recom
 
 For more information, follow the `FireNet workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#firewall-network-firenet-workflow>`_. 
 
-10. Central Egress in a Multi Region Deployment
+10. Central Egress in a Multi-Region Deployment
 --------------------------------------------------------
 
 Since the default routes are propagated over the Aviatrix Transit Gateway peering, you can consolidate the Internet bound egress traffic to the 
@@ -107,7 +107,7 @@ the Aviatrix Transit Gateway peering, as shown in the diagram below.
 
 This Ingress Protection design pattern is to have the traffic forward to firewall instances directly in Aviatrix Transit FireNet VPC as shown in the diagram below. In this design pattern, each firewall instance must configure (1) SNAT on its LAN interface that connects to the Aviatrix FireNet gateway and (2) DNAT to the IP of application server/load balancer. The draw back of this design is source IP address is not preserved when traffic reaches the application. 
 
-For example configuration workflow, check out `Ingress Protection via Aviatrix Transit FireNet with Fortigate <https://docs.aviatrix.com/HowTos/Ingress_Protection_Transit_FireNet_Fortigate.html>`_. 
+For an example configuration workflow, check out `Ingress Protection via Aviatrix Transit FireNet with Fortigate <https://docs.aviatrix.com/HowTos/Ingress_Protection_Transit_FireNet_Fortigate.html>`_. 
 
 |transit_firenet_ingress|
 
