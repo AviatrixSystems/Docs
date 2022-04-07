@@ -7,9 +7,9 @@
 Example Config for FortiGate VM in AWS 
 =========================================================
 
-In this document, we provide an example to set up the Fortigate Next Generation Firewall instance for you to validate that packets are indeed sent to the Fortigate Next Generation Firewall for VPC to VPC and from VPC to internet traffic inspection.
+In this document, we provide an example to set up the Fortigate Next Generation Firewall instance for you to validate that packets are indeed sent to the Fortigate Next Generation Firewall for VPC-to-VPC and from VPC to Internet traffic inspection.
 
-The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
+The Aviatrix Firewall Network (FireNet) workflow launches a Fortigate Next Generation Firewall instance at `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_. 
 After the launch is complete, the console displays the Fortigate Next Generation Firewall instance with its public IP address of management/egress interface and allows you either to download the .pem file for SSH access to the instance or to access the FortiGate web page.
 
 Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
@@ -20,7 +20,7 @@ Here is the Firewall information in this example for your reference. Please adju
 Firewall Image                                  Fortinet FortiGate Next-Generation Firewall
 Firewall Image Version                          6.2.3
 Firewall Instance Size                          c5.xlarge
-Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress."
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach                                          Check
 ==========================================      ==========
@@ -39,20 +39,20 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Below are the steps for initial setup.
 
-1. Download Fortigate Next Generation Firewall Access Key
-----------------------------------
+Downloading Fortigate Next Generation Firewall Access Key
+------------------------------------------------------------------------------
 
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed, you'll see the Download button as below. Click the button to download the .pem file.
+After `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_ in the workflow is completed, click **Download** to download the .pem file.
 
 If you get a download error, usually it means the Fortigate Next Generation Firewall instance is not ready. Wait until it is ready, refresh the browser and then try again.
 
 |v2_avx_pem_file_download|
 
-2. Login to Fortigate Next Generation Firewall
-----------------------------------
+Logging in to the Fortigate Next Generation Firewall
+--------------------------------------------------------------------
 
-Go back to the Aviatrix Controller Console. 
-Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. Click on the `Management UI`. It takes you to the Fortigate Next Generation Firewall you just launched.
+1. Go back to the Aviatrix Controller. 
+2. Go to `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_ of the Firewall Network workflow. Click on the Management UI. It takes you to the Fortigate Next Generation Firewall you just launched.
 
 |v2_avx_management_UI|
 
@@ -60,104 +60,96 @@ Go to Firewall Network workflow, `Step 7a <https://docs.aviatrix.com/HowTos/fire
 
   Please try to use browser Firefox if the Management UI link is not able to open on your default browser.
 
-3. Reset Fortigate Next Generation Firewall Password
---------------------------------
+Resetting Fortigate Next Generation Firewall Password
+---------------------------------------------------------------------
 
 Once logged in with the default password, it will ask you to set a new password.
 
 .. note::
 
-  Login with Username "admin". Default password is the instance-id.
+  Log in with Username "admin." The default password is the instance-id.
 
-4. Configure Fortigate Next Generation Firewall port1 with WAN
--------------------------------------------------
+Configuring Fortigate Next Generation Firewall port1 with WAN
+---------------------------------------------------------------------------------
 
-Once logged in with the new password, go to the page "Network -> Interfaces" to configure Physical Interface port1 as the following screenshot.
+After logging in with the new password, go to the page "Network -> Interfaces" to configure Physical Interface port1 as the following screenshot.
 
-  - Select the interface with port 1 and click on "Edit"
-  - Enter an Alias (i.e.: WAN) for the interface
-  - Specify appropriate role (WAN)
-  - Enable DHCP to ensure FW retrieve private IP information from AWS console
-  - Enable “Retrieve default gateway from server" 
+1. Select the interface with port 1 and click **Edit**.
+2. Enter an Alias (i.e.: WAN) for the interface.
+3. Specify appropriate role (WAN).
+4. Enable DHCP to ensure FW retrieve private IP information from the AWS console.
+5. Enable **Retrieve default gateway from server**.
   
 |v2_fortigate_interface_wan|
 
-5. Configure Fortigate Next Generation Firewall port2 with LAN
--------------------------------------------------
+Configure Fortigate Next Generation Firewall port2 with LAN
+-------------------------------------------------------------------------------
 
-Go to the page "Network -> Interfaces" to configure Physical Interface port2 as the following screenshot.
+Go to the page Network > Interfaces to configure Physical Interface port2 as the following screenshot.
 
-  - Select the interface with port 2 and click on "Edit"
-  - Enter an Alias (i.e.: LAN) for the interface
-  - Specify appropriate role (LAN)
-  - Enable DHCP to ensure FW retrieve private IP information from AWS console
-  - Enable Administrative Access . IPv4 > HTTPS
-  - Disable “Retrieve default gateway from server" 
+1. Select the interface with port 2 and click **Edit**.
+2. Enter an Alias (i.e.: LAN) for the interface.
+3. Specify appropriate role (LAN).
+4. Enable DHCP to ensure FW retrieve private IP information from AWS console.
+5. Enable Administrative Access: IPv4 > HTTPS.
+6. Disable **Retrieve default gateway from server**. 
   
 |v2_fortigate_interface_lan|
 
-6. Create static routes for routing of traffic VPC to VPC
--------------------------------------------------
+Creating Static Routes for Routing of Traffic VPC to VPC
+--------------------------------------------------------------------
 
 Packets to and from TGW VPCs, as well as on-premises, will be hairpinned off of the LAN interface. As such, we will need to configure appropriate route ranges that you expect traffic for packets that need to be forward back to TGW. 
 For simplicity, you can configure the FW to send all RFC 1918 packets to LAN port, which sends the packets back to the TGW. 
 
 In this example, we configure all traffic for RFC 1918 to be sent out of the LAN interface.
 
-Go to the page "Network -> Static Routes" to create a Static Route as the following screenshot.
+Go to **Network -> Static Routes** to create a Static Route as the following screenshot.
 
-  - Click on the button "Create New"
-  - Enter the destination route in the "Destination" box
-  - In the "Gateway Address" box, you will need to enter the AWS default gateway IP on subnet -dmz-firewall
+1. Click **Create New**.
+2. Enter the destination route in **Destination**.
+3. In **Gateway Address**, you will need to enter the AWS default gateway IP on subnet -dmz-firewall.
   
   .. note::
     
-    i.e. subnet CIDR for -dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97
+    i.e. The subnet CIDR for -dmz-firewall is 10.66.0.96/28, thus the AWS default gateway IP on this subnet is 10.66.0.97.
   
-  - Interface will be the LAN (port2)
-  - Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized
-  - Enter comments as necessary.
-  - Repeat the above steps for RFC 1918 routes
+4. The interface will be the LAN (port2).
+5. Configure an appropriate admin distance if you expect overlapping routes that need to be prioritized.
+6. Enter comments as necessary.
+7. Repeat the steps above for RFC 1918 routes.
     
 |v2_fortigate_static_routes|
 
-Those static routes also could be reviewed on the page "Monitor -> Routing Monitor"
+Those static routes also could be reviewed by navigating to Monitor > Routing Monitor.
 
 |v2_fortigate_static_routes_review|
 
 (Optional) Firewall Vendor Integration
--------------------------------------------------
+------------------------------------------------------
 
-Integrating a FortiGate firewall with the Aviatrix controller enables the controller to make automatic route updates to the FortiGate routing tables. You may also manually enable the integration with your CSP management tools. FortiGate integration is supported in AWS, Azure, and GCP clouds.
+Integrating a FortiGate firewall with the Aviatrix Controller enables the controller to make automatic route updates to the FortiGate routing tables. You may also manually enable the integration with your CSP management tools. FortiGate integration is supported in AWS, Azure, and GCP clouds.
 
-Integrate the FortiGate firewall with the Aviatrix controller.
+Integrate the FortiGate firewall with the Aviatrix Controller.
 
-- Generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the controller.
+1. Generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the Controller.
+2. In the FortiGate GUI, go to System > Admin Profiles > Create New.
+3. Enable the Read/Write option for Network and click **OK**.
+4. Navigate to System > Administrators > Create New > REST API Admin.
+5. Supply a Username and choose the Admin Profile from the previous step, and press **OK**.
+6. Copy the generated token. It will only be displayed once.
+7. Go to Aviatrix Controller > Firewall Network > Vendor Integration.
+8. Enter the vendor firewall information into the Controller.
+9. Click **Save**, then **Show**, then **Sync** to enable the Aviatrix Controller and FortiGate firewall integration. 
 
-  - In the FortiGate GUI, go to System > Admin Profiles > Create New.
+The Aviatrix Controller is now enabled to make automatic route updates to the FortiGate routing tables.
 
-  - Enable the Read/Write option for Network and click OK.
-  
-  - Navigate to System > Administrators > Create New > REST API Admin.
-  
-  - Supply a Username and choose the Admin Profile from the previous step, and press OK.
-  
-  - Copy the generated token. It will only be displayed once.
+Configuring Basic Traffic Policy to Allow Traffic VPC-to-VPC
+----------------------------------------------------------------------------
 
-- Go to Aviatrix Controller > Firewall Network > Vendor Integration.
+In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix Gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in/out of LAN interface.
 
-- Enter the vendor firewall information in the controller.
-
-- Click Save, then Show, then Sync to enable the Aviatrix Controller and FortiGate firewall integration. 
-
-The Aviatrix controller is now enabled to make automatic route updates to the FortiGate routing tables. 
-
-7. Configure basic traffic policy to allow traffic VPC to VPC
--------------------------------------------------
-
-In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in/out of LAN interface.
-
-Go to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configure policy as the following screenshot.
+Navigate to Policy & Objects > IPv4 Policy > Create New / Edit to configure the policy as shown in the following screenshot.
 
 ==================  ===============================================
 **Field**           **Value**
@@ -177,19 +169,24 @@ NAT                 Disabled
 
 After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-8. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
--------------------------------------------------
+[Optional] Configuring Basic Traffic Policy to Allow Traffic VPC to Internet
+---------------------------------------------------------------------------------------------
 
-In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
+In this step, we will configure a basic traffic security policy that allows Internet traffic to pass through the firewall. Given that Aviatrix Gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
 
 .. important::
   Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet
   
-First of all, go back to the Aviatrix Controller Console. Navigate to the page "Firewall Network -> Advanced". Click the skewer/three dot button. Scroll down to “Egress through Firewall” and click Enable. Verify the Egress status on the page "Firewall Network -> Advanced".
+First, go back to the Aviatrix Controller. 
+
+1. Navigate to Firewall Network > Advanced. 
+2. Click the skewer/three dot button. 
+3. Scroll down to Egress through Firewall and click **Enable**. 
+4. Verify the Egress status on the page Firewall Network > Advanced.
 
 |v2_avx_egress_inspection|
 
-Secondly, go back to the Fortigate Next Generation Firewall console and navigate to the page "Policy & Objects -> IPv4 Policy -> Create New / Edit" to configure policy as the following screenshot.
+Second, go back to the Fortigate Next Generation Firewall console and navigate to Policy & Objects > IPv4 Policy > Create New / Edit to configure policy as the following screenshot.
 
 ==================  ===============================================
 **Field**           **Value**
@@ -207,28 +204,28 @@ NAT                 Enable
 
 .. important::
 
-  NAT function needs to be enabled on this VPC to Internet policy
+  NAT function needs to be enabled on this VPC to Internet policy.
 
 |v2_fortigate_policy_vpc_to_internet|
 
 After validating that your TGW traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-9. Ready to go!
-----------------
+Ready to Go
+---------------------
 
-Now your firewall instance is ready to receive packets! 
+Now your firewall instance is ready to receive packets.
 
 The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
-the firewall domain. This operation is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. In addition, attach VPC to TGW by `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#aws-transit-gateway-orchestrator-build>`_ in the TGW Orchestrator Build workflow.
+the firewall domain. This operation is done by `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. In addition, attach VPC to TGW by `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#aws-transit-gateway-orchestrator-build>`_ in the TGW Orchestrator Build workflow.
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
 
-10. View Traffic Log
-----------------------
+Viewing the Traffic Log
+------------------------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the Fortigate Next Generation Firewall console. Go to the page "FortiView -> Destinations". 
+You can view if traffic is forwarded to the firewall instance by logging in to the Fortigate Next Generation Firewall console. Go to FortiView > Destinations. 
 
-For VPC to VPC traffic:
+For VPC-to-VPC traffic:
 ***********************
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. Start ping packets from a instance in Spoke-1 VPC to the private IP of another instance in Spoke-2 VPC where one or both of Security Domains are connected to Firewall Network Security Domain. The ICMP traffic should go through and be inspected on firewall.
