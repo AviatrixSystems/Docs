@@ -151,7 +151,7 @@ Ready to Go
 
 Now your firewall instance is ready to receive packets! 
 
-The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
+The next step is to specify which network domain needs packet inspection by defining a connection policy that connects to
 the firewall domain. This is done by Configuring Allow Outbound Policies (see the section above) in the Firewall Network workflow. 
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
@@ -164,7 +164,7 @@ View Traffic Log
 You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. 
 
 1. Click **Monitor**. 
-2. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain.
+2. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of network domains are connected to Firewall Network domain.
 
 
 .. |access_key| image:: config_paloaltoVM_media/access_key.png
