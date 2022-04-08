@@ -6,22 +6,21 @@
 User VPN Performance Guide for Deployment
 ===========================================
 
-Aviatrix gateway OpenVPN® throughput
+Aviatrix Gateway OpenVPN® throughput
 --------------------------------------------------------
 
-Aviatrix VPN gateways are deployed behind cloud provider's native load balancer, the deployment
-scales to unlimited number of VPN gateways capable of supporting unlimited number of 
-simultaneous VPN client connections. 
+Aviatrix VPN Gateways are deployed behind cloud provider's native load balancer, the deployment
+scales to unlimited number of VPN Gateways capable of supporting unlimited number of simultaneous VPN client connections.
 
-OpenVPNR® is a single process application running on a gateway. The best measured throughput is 1.1Gbps. t3.medium, c5.large and
-c5.xlarge have similar performance.  
+OpenVPN® is a single process application running on a gateway. The best measured throughput is 1.1Gbps. t3.medium, c5.large, and
+c5.xlarge have similar performance.
 
 VPN Client throughput benchmark
 ----------------------------------------------------------------
 
 Aviatrix VPN solution supports both UDP and TCP mode VPN deployments. They have similar performance
 characteristics. The chart below benchmarks a VPN client's single session download and upload speed 
-on one VPN gateway in TCP mode 
+on one VPN gateway in TCP mode. 
 The benchmark provides a reference information on selecting VPN gateway instance size. 
 Note actual VPN client performance also depends on client's Internet ISP speed, packet loss ratio
 and other factors.
@@ -34,14 +33,14 @@ The chart below is measured on a Linux client.
 
 |linux_client|
 
-Simultaneous clients on a given VPN gateway
+Simultaneous Clients on a Given VPN Gateway
 ------------------------------------------------------------------------------
 
-There are several factors to consider when determining the number of clients to support on a given VPN gateway. 
+There are several factors to consider when determining the number of clients to support on a given VPN Gateway. 
 
  1. `VPN virtual address space <https://docs.aviatrix.com/HowTos/gateway.html#vpn-cidr-block>`_. The default is 192.168.43.0/24 which can support 64 simultaneous VPN connection. For large deployment, you should configure this to a /20 network so that address spacing is not an issue. 
- #. `Maximum VPN Connections <https://docs.aviatrix.com/HowTos/gateway.html#max-connections>`_. The default is 100. When the connection number exceeds the configuration, the VPN gateway rejects new connections. The VPN client should auto reconnect and the cloud provider's network load balancer forwards the connection to a different VPN gateway. 
- #. VPN Client performance. If each VPN client sustained average performance is designed to be capped at 1Mbps, then a VPN gateway can support 1000 VPN clients (i.e. connections). Accordingly, if each VPN client sustained average throughput is designed to be capped at 10Mbps, then a VPN gateway can support 100 clients. 
+ #. `Maximum VPN Connections <https://docs.aviatrix.com/HowTos/gateway.html#max-connections>`_. The default is 100. When the connection number exceeds the configuration, the VPN gateway rejects new connections. The VPN client should auto reconnect and the cloud provider's network load balancer forwards the connection to a different VPN Gateway. 
+ #. VPN Client performance. If each VPN client sustained average performance is designed to be capped at 1Mbps, then a VPN Gateway can support 1000 VPN clients (i.e. connections). Accordingly, if each VPN client sustained average throughput is designed to be capped at 10Mbps, then a VPN gateway can support 100 clients. 
 
 In most cases, using VPN gateway of t3.medium instance size is a good option. Launching a few of them behind an ELB provides redundancy and scaling. 
    
