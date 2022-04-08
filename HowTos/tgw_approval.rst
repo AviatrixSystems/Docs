@@ -25,9 +25,15 @@ To enable Approval, go to **TGW Orchestrator > Approval**. Select the TGW and VP
 How does it work?
 ---------------------
 
+<<<<<<< Updated upstream
 When the Approval feature is enabled, TGW route table route propagation to connected network domains is turned
 off. That is, the TGW VPN/DXGW learned routes are statically programmed into the TGW route table of 
 connected network domains after the routes are approved. 
+=======
+When Approval feature is enabled, TGW route table route propagation to the connected network domain is turned
+off. That is, the TGW VPN/DXGW learned routes are statically programmed into the TGW route table of 
+connected network omains after the routes are approved. 
+>>>>>>> Stashed changes
 
 This is illustrated in the following two examples. 
 

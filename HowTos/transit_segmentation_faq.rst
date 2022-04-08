@@ -11,31 +11,54 @@ What is Multi-Cloud Transit Segmentation?
 --------------------------------------------------------
 
 Aviatrix Multi-Cloud Transit Segmentation provides network isolation through network domains and connection policies to Aviatrix Transit network
+<<<<<<< Updated upstream
 where both Spoke and Transit networks deploy Aviatrix Gateways across multi-region and multi-cloud. The concept is 
 described in the below diagram.
 
 |transit_segmentation|
 
 In this diagram, spokes associated with the blue domains can communicate with each other while Spokes associated with the green domains can communicate with each other. However, there is no cross communication between blue domains and green domains unless connection policies are in place. The concept is the same as what is described in `Network Domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-network-domain>`_
+=======
+where both Spoke and Transit networks deploy Aviatrix Gateways across multi-region and multi-cloud. The concept can be 
+described in the diagram below, 
+
+|transit_segmentation|
+
+Where Spokes associated with the blue domain can communicate with each other while Spokes associated with the green domain can communicate with each other. 
+But there is no cross communication between blue domain and green domain unless there is connection policy. The concept is the same as `network domains <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-network-domain>`_
+>>>>>>> Stashed changes
 and `Connection Policies <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_ defined in 
 TGW Orchestrator, except this is implemented with Aviatrix Transit where both Spokes and Transit VPC/VNet deploy Aviatrix gateways. (Note the segmentation works with Azure native Spoke VNets.)
 
 What is a Network Domain in Multi-Cloud Transit?
 -------------------------------------------------------
 
+<<<<<<< Updated upstream
 A network domain is an Aviatrix-enforced network of VPC/VNet members, where VPC/VNets in the network domain can communicate with each other, and VPC/VNets not in the network domain cannot communicate with VPC/VNets that are in the network domain.
 
 One or more Spoke VPC/VNets are members in a network domain.
+=======
+A network domain is an Aviatrix enforced network of VPC/VNet members, where VPC/VNets in the network domain can communicate with each other, and VPC/VNets not in the network domain cannot communicate with VPC/VNets in the network domain.
+
+One or more Spoke VPC/VNets are members in  a network domain.
+>>>>>>> Stashed changes
 
 Spokes in a network domain can communicate with each other via an Aviatrix Transit Gateway.  
 
 The Aviatrix Controller dynamically programs and updates both VPC/VNet route tables so that instances in different 
 Spoke VPC/VNets in the same domain can communicate with each other.  
 
+<<<<<<< Updated upstream
 Two network domains are not automatically connected; for example, a Spoke in one domain has no connectivity to another 
 Spoke in a different domain. A connection policy must be specified so that the Spokes in each domain can communicate with each other. 
 
 The network domain also applies to the hybrid connection from the Aviatrix Transit Gateway to on-prem or remote sites. Each BGP peer or connection can 
+=======
+Two network domains are not connected, i.e., a Spoke in one domain has no connectivity to another 
+Spoke in a different domain. Connection policy must be specified to connect the two domains so that Spokes in each domain can communicate with each other. 
+
+The network domain also applies to the hybrid connection from Aviatrix Transit Gateway to on-prem or remote sites. Each BGP peer or connection can 
+>>>>>>> Stashed changes
 be associated with one network domain. 
 
 
@@ -45,13 +68,22 @@ What is a Connection Policy?
 A connection policy is a rule enforced by Aviatrix for cross network domain connectivity. 
 
 
+<<<<<<< Updated upstream
 What are the benefits of using Network Domains and Connection Policies?
+=======
+What are the benefits of using network domains and connection policies?
+>>>>>>> Stashed changes
 ----------------------------------------------------------------------------------------------
 
 The key use case for building network domains is to segment traffic for enhanced security posture.  
 
+<<<<<<< Updated upstream
 Using network domains and connection policies allows you to identify groups of Spokes and Edges with the same requirements from 
 a networking point of view, and then apply connection policies at the group level. This avoids having to individually 
+=======
+Using network domains and connection policies allow you to identify groups of Spokes and Edges with the same requirements from 
+a networking point of view and then apply connection policies at the group level. This avoids having to individually 
+>>>>>>> Stashed changes
 specify connections at the Spoke level. The Aviatrix Controller takes care of route programming of all route tables. 
 
 Can an Aviatrix Transit Network Domain work with TGW Orchestrator Network Domain?
@@ -67,12 +99,21 @@ Follow the `Transit Segmentation Workflow. <https://docs.aviatrix.com/HowTos/tra
 How many Network Domains are supported in Multi-Cloud Transit Segmentation?
 -------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 The maximum number of Network Domains on each Aviatrix Transit Gateway is 250. 
+=======
+The maximum number of network domains on each Aviatrix Transit Gateway is 250. 
+>>>>>>> Stashed changes
 
 What is the difference in implementation of Segmentation between Release 6.1 and Release 6.0?
 -------------------------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 In Release 6.1 and later, each Network Domain is implemented as an individual route table on the Aviatrix Transit Gateway. This allows for better handling of the default route (0.0.0.0/0) traffic if different domains require different egress/next hop. In addition, duplicate 
+=======
+In Release 6.1 and later, each network domain is implemented as an individual route table on the Aviatrix Transit Gateway. This allows
+better handling for the default route (0.0.0.0/0) traffic if different domains require different egress next hop. In addition, duplicate 
+>>>>>>> Stashed changes
 Spoke CIDRs attached to different Aviatrix Transit Gateways can co-exist if they belong to different domains. 
 
 What is the limitation of Segmentation?

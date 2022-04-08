@@ -52,7 +52,11 @@ This step creates a network domain with a Firewall Domain option.
 
 Go to TGW Orchestrator > Plan > Create an AWS Transit Gateway and then a network domain by selecting **Aviatrix Firewall Domain**. 
 
+<<<<<<< Updated upstream
 For more information, refer to `Create a New Network Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-network-domain>`_. 
+=======
+For more information, refer to `Create a New Network Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
+>>>>>>> Stashed changes
 
 
 Launching Aviatrix FireNet Gateway
@@ -194,7 +198,11 @@ The new subnets created by the Controller at these steps are listed below.
 Attaching Aviatrix FireNet Gateway to TGW Firewall Domain
 ---------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 This step requires you have already created a network domain with the Firewall attribute enabled.
+=======
+This step requires you have already created a network domain with Firewall attribute enabled.
+>>>>>>> Stashed changes
 
 When this step is completed, you have built the network infrastructure for FireNet deployment. This step may take a few minutes.
 
@@ -381,7 +389,13 @@ Attach                                          Attach this FQDN gateway to the 
 
 
 
+<<<<<<< Updated upstream
 Specifying the Network Domain for Firewall Inspection
+=======
+
+
+Specify Network Domain for Firewall Inspection
+>>>>>>> Stashed changes
 -------------------------------------------------------------------
 
 There are two inspection modes. One is Domain-based inspection, which is the default. The other is Connection Policy-based inspection. 
@@ -390,7 +404,12 @@ The Connection Policy based inspection mode (connection based inspection) is ava
 Domain-based inspection
 ###############################
 
+<<<<<<< Updated upstream
 To specify a Spoke VPC/VNet for domain-based inspection, you define a connection policy between the network domain (where the Spoke VPC/VNet is a member) and the Firewall domain.
+=======
+In domain-based inspection, to specify a Spoke VPC/VNet that needs inspection is to define a connection policy of the network domain, where the Spoke VPC/VNet is a member, 
+to the Firewall Domain.
+>>>>>>> Stashed changes
 
 For example, if you wish to inspect traffic between on-prem to VPC/VNet, connect Aviatrix Edge Domain to the 
 Firewall Domain. This means on-prem traffic to any Spoke VPC/VNet is routed to the firewall first and then it is forwarded
@@ -438,7 +457,11 @@ Configuring Egress Inspection
 The Firewall Domain must have `Egress Inspection <https://docs.aviatrix.com/HowTos/firewall_advanced.html#egress-through-firewall>`_ enabled before configuring Egress Inspection. 
 
 #. Go to Controller > TGW Orchestrator > List. 
+<<<<<<< Updated upstream
 #. Click Network Domains which displays all Security Domains configured on the TGW. 
+=======
+#. Click Network Domains which displays all network domains configured on the TGW. 
+>>>>>>> Stashed changes
 #. Select one domain and click Action > Enable Egress Inspection. 
 #. In the popup dropdown menu, select a firewall domain to associate the domain with. 
 #. Click **Update**.

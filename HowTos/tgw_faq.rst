@@ -115,6 +115,7 @@ Learn more about Transit Gateway limitations `here <https://docs.aviatrix.com/Ho
 What is a Network Domain?
 -------------------------------------
 
+<<<<<<< Updated upstream
 A network domain is an Aviatrix-enforced network of VPC members, where VPCs in the network domain can communicate with each other, and VPCs not in the network domain cannot communicate with VPCs that are in the network domain.
 
 An Aviatrix network domain is an abstraction that builds upon the AWS Transit Gateway route table concept. One or more Spoke VPCs are members in a network domain.
@@ -122,20 +123,41 @@ An Aviatrix network domain is an abstraction that builds upon the AWS Transit Ga
 |security_domain|
 
 VPCs in a network domain can communicate with each other via a Transit Gateway. Each network domain has a corresponding route table on the Transit Gateway. 
+=======
+A network domain is an Aviatrix enforced network of VPC members, where VPCs in the network domain can communicate with each other, and VPCs not in the network domain cannot communicate with VPCs in the network domain.
+
+An Aviatrix network domain is an abstraction that builds upon the AWS Transit Gateway route table concept. One or more Spoke VPCs are members in  
+a network domain.
+
+|security_domain|
+
+VPCs in a network domain can communicate with each other via a Transit Gateway. Each network domain has a corresponding route table on Transit Gateway. 
+>>>>>>> Stashed changes
 
 The Aviatrix Controller dynamically programs and updates both VPC route tables so that instances in different 
 Spoke VPCs in the same domain can communicate with each other.  
 
+<<<<<<< Updated upstream
 Network domains are not automatically connected; for example, a Spoke VPC in one domain has no connectivity to another 
 Spoke VPC in a different domain. A connection policy must be specified for the VPCs in the two domains to communicate with each other. 
+=======
+Two network domains are not connected, i.e., a Spoke VPC in one domain has no connectivity to another 
+Spoke VPC in a different domain. Connection policy must be specified to connect the two domains so that VPCs in each domain can communicate with each other. 
+>>>>>>> Stashed changes
 
 
 What is a Connection Policy?
 -------------------------------------
 
+<<<<<<< Updated upstream
 A connection policy is an Aviatrix-enforced cross-network domain connectivity rule. 
 
 A connection policy builds upon the Transit Gateway route table propagation concept. It specifies the 
+=======
+A connection policy is an Aviatrix enforced cross network domain connectivity rule. 
+
+A connection policy builds upon the Transit Gateway route table propagation concept, it specifies the 
+>>>>>>> Stashed changes
 connection relationship of one network domain to others. 
 If there are two network domains connected by policy, instances in Spoke VPCs attached to each domain can communicate with each other via Transit Gateway. 
 
@@ -144,28 +166,49 @@ In the example below, both Dev_Domain and Prod_Domain have connection policy to 
 |domain_policy_diagram|
 
 Aviatrix Controller programs all VPC route tables and Transit Gateway route tables so that two network domains with a 
+<<<<<<< Updated upstream
 connection policy can automatically communicate with each other. 
+=======
+connection policy can communicate with each other automatically. 
+>>>>>>> Stashed changes
 
 What are the benefits of using Network Domains and Connection Policies?
 --------------------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 The key use case for building network domains is to segment traffic between VPCs, sometimes also called east-west traffic. 
+=======
+The key use case for building network domains is to segment traffic between VPCs, sometimes also called east west traffic. 
+>>>>>>> Stashed changes
 
 The benefits are:
 
  - Native Service. It leverages AWS Transit Gateway route domains and route domain propagation constructs.
  - Zero performance impact. Compared to deploying a firewall instance, this approach has zero network performance impact. 
 
+<<<<<<< Updated upstream
 Using network domains and connection policies allows you to identify groups of VPCs with the same requirements from 
+=======
+Using network domains and connection policies allow you to identify groups of VPCs with the same requirements from 
+>>>>>>> Stashed changes
 a networking point of view and then apply connection policies at the group level. This avoids having to individually 
 specify connections at the VPC level. The Aviatrix Controller takes care of route programming for all route tables. 
 
+<<<<<<< Updated upstream
 One way to think of a network domain is as a data center with VLAN/Subnets and hosts connecting to the 
 VLAN/Subnet. 
 
 In the Aviatrix Necurity Domain concept, a network domain is a VLAN, and a host is a VPC plugging in to the VLAN. 
 Hosts in the same VLAN can communicate with each other. If two VLANs are defined by a connection policy, the 
 hosts in different VLANs can communicate with each other. 
+=======
+One analogy to think of a network domain is datacenter VLAN/Subnets and hosts connecting to the 
+VLAN/Subnet. 
+
+In the Aviatrix network domain concept, a network domain is a VLAN, a host is VPC plugging in to the VLAN. 
+Hosts in the same VLAN can communicate with each other. If two VLANs are defined by policy to be connected, the 
+hosts in different VLAN can communicate with each other. 
+>>>>>>> Stashed changes
 
  
 
@@ -380,7 +423,12 @@ What is Edge Segmentation?
 Edge Segmentation allows you to further specify on each edge connection which domain it can communicate with.
 
 At `Setup Aviatrix Transit GW <https://docs.aviatrix.com/HowTos/tgw_plan.html#setup-aviatrix-transit-gw>`_, you can select 
+<<<<<<< Updated upstream
 Edge Segmentation for each connection. When this option is selected, you can then use `Build Your Domain Connection Policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_ to specify which network domain this edge connection can communicate with, as shown in the diagram below. 
+=======
+Edge Segmentation for each connection. When this option is selected, you can then use `Build Your Domain Connection Policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_ to specify which network domain this edge connection can 
+communicate with, as shown in the diagram below. 
+>>>>>>> Stashed changes
 
 |edge_segmentation| 
 

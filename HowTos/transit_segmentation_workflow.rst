@@ -17,12 +17,20 @@ For questions, refer to `Aviatrix Transit Segmentation FAQ. <https://docs.aviatr
 Aviatrix Transit Gateway Name                   An `Aviatrix Transit Gateway deployed in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 ==========================================      ==========
 
+<<<<<<< Updated upstream
 2. Create a Multi-Cloud network domain. You can make changes to your network segmentation at any time by coming back to this page. 
+=======
+2. Create a Multi-Cloud network domain. You can make changes to your network segmentation at any time, simply come back to this page. 
+>>>>>>> Stashed changes
 
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
+<<<<<<< Updated upstream
 Network Domain Name                             Specify a unique domain name. For example, Dev_Domain
+=======
+Network Domain Name                            Specify a unique domain name. For example, Dev_Domain
+>>>>>>> Stashed changes
 ==========================================      ==========
 
 3. Add/modify connection policies. 
@@ -64,7 +72,11 @@ Attachment Name                                 The name of a Spoke or edge conn
 This section consists of the delete functions. 
 
 
+<<<<<<< Updated upstream
 1. On the **MULTI-CLOUD TRANSIT > Segmentation > Delete** page, you can delete the multi-cloud network domain.
+=======
+1. Delete Multi-Cloud network domain.
+>>>>>>> Stashed changes
 
 ==========================================      ==========
 **Setting**                                     **Value**

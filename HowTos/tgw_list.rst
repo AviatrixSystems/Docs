@@ -1,4 +1,4 @@
-.. meta::
+network domain.. meta::
   :description: TGW List
   :keywords: AWS Transit Gateway, Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, TGW Build
 
@@ -7,7 +7,11 @@
 TGW List
 =========================================================
 
+<<<<<<< Updated upstream
 Clicking **List** under TGW Orchestrator List in the left menu provides options for working with your list of Transit Gateway attachments and TGW network domains. It also allows you to make modular changes on attachments and network domains. 
+=======
+TGW List page provides the list of TGW Attachments and TGW network domains. It also allows you to make modular changes on attachments and network domains. 
+>>>>>>> Stashed changes
 
 For background information, refer to the `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
@@ -95,7 +99,11 @@ Switching Network Domain
 
 This feature allows you to switch a Spoke VPC's network domains without having to detach the Spoke VPC first. 
 
+<<<<<<< Updated upstream
 To configure, go to **TGW Orchestrator > List > Attachments**. Select an attachment, and click **Actions > Switch Network Domain**. In the dropdown menu, select the desired network domain and click **Update**. 
+=======
+To configure, go to TGW Orchestrator > List > TGW Attachment. Select one attachment, click **Actions** > **Switch Network Domain**. In the dropdown menu, select the desired network domain, and click **Update**. 
+>>>>>>> Stashed changes
 
 FireNet Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,11 +123,16 @@ Editing Intra Domain Inspection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, traffic between VPCs in the same network domain does not get inspected by firewalls in the FireNet deployment. 
+<<<<<<< Updated upstream
 
 This feature allows you to enable firewall inspection for traffic within network domain. 
 
 Select a network domain and click **Actions > Enable Intra Domain Inspection** to enable intra-domain firewall inspection.
 
+=======
+
+This feature allows you to enable firewall inspection for traffic within one network domain. 
+>>>>>>> Stashed changes
 
 Enabling Edge Inspection
 ~~~~~~~~~~~~~~~~~~~~~~~~

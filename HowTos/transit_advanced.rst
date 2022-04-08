@@ -182,8 +182,13 @@ Refresh BGP Advertised Routes
 
 This option resets the BGP connection to the remote BGP peers. 
 
+<<<<<<< Updated upstream
 Use this option to enable new features such as Segmentation based BGP CIDR Advertisements, where on-prem receives BGP advertisement
 for networks on-prem that have a connection policy or are in the same network domain. <<need someone to review this>>
+=======
+Use this option to enable new features such as Segmentation based BGP CIDR Advertisements where on-prem receives BGP advertisement
+for networks on-prem has connection policy or in the same network domain. 
+>>>>>>> Stashed changes
 
 AWS TGW Edge Segmentation
 ---------------------------------------

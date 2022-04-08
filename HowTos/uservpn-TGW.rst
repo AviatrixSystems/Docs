@@ -26,24 +26,43 @@ To learn more about Transit Gateway deployment:
 
 2. Create a Network Domain
 ----------------------------
+<<<<<<< Updated upstream
 You create a network domain under "Segment your network" on the Plan tab in the TGW Orchestrator. For this design you need to create three network domains:
+=======
+In the same section under Step 2 titled "Segment your network" in the TGW Orchestrator is the "Create a Network Domain" step. 
+Scroll down to see this step. For this design you will need to create three network domains:
+>>>>>>> Stashed changes
 
     1. Shared Service Domain
     2. Dev Domain
     3. Prod Domain 
 
+<<<<<<< Updated upstream
 First select the AWS Transit Gateway Name you created in the previous step from the dropdown list. Next, name the first network domain "Shared Service Domain" and click **Create**. Repeat this process for the other two domains.
+=======
+First select the AWS Transit Gateway Name you created in the previous step from the dropdown list. Next, name the first
+Network Domain Name "Shared Service Domain" and hit "Create". Repeat this process for the other two domains.
+>>>>>>> Stashed changes
 
 |security_domain| <<need to update this screenshot when it is ready>>
 
 3. Build Connection Policies
 -----------------------------
+<<<<<<< Updated upstream
 After creating network domains, you use these domains to define the connection policies.
 
 1. First, make sure you select the AWS Transit Gateway Name created in Step 1. 
 #. For "Network Domain Name" select Shared Services Domain. 
 #. Select the Dev domain from the Domain Connection Policy List under "Not Connected" and add it to the "Connected" list.
 #. Repeat this step for the Prod domain.
+=======
+You now have created network domains. The next step is to use these domains to define the connection policies.
+
+    1. First, make sure you select the AWS Transit Gateway Name created in Step 1. 
+    2. Next, for "Network Domain Name" select the Shared Services Domain. 
+    3. Select the Dev domain from the Domain Connection Policy List under "Not Connected" and add it to the "Connected" list.
+    4. Repeat this step for the Prod domain.
+>>>>>>> Stashed changes
 
 Now you have allowed both the Dev and Prod Domains to connect to the Shared Service Domain.     
 
@@ -55,21 +74,34 @@ Now you have allowed both the Dev and Prod Domains to connect to the Shared Serv
 ----------------------
 The next step is to attach your existing VPCs to the Transit Gateway (TGW) created in Step 1. 
 
+<<<<<<< Updated upstream
 To perform this, in the Aviatrix Controller navigate to the **TGW Orchestrator > Build** tab.
+=======
+To perform this, navigate in the Aviatrix Controller to the "Build" section under the TGW Orchestrator tab.
+>>>>>>> Stashed changes
 In section 1 "Attach VPC to TGW":
 
     a. Select the region of the TGW and your account.
     
+<<<<<<< Updated upstream
     b. Choose your Shared Service VPC and TGW Name.
     
     c. Select Shared Service Domain for the Network Domain Name.
 
     d. Click **Attach**. 
+=======
+    b. Choose you Shared Service VPC and TGW Name.
+    
+    c. Select Shared Service Domain for the network domain name. 
+
+    d. Click "Attach". 
+>>>>>>> Stashed changes
 
 |VPC_to_TGW|
 
 5a. Launch a VPN Gateway
 ----------------------
+<<<<<<< Updated upstream
 Now that you have attached our VPCs to the TGW, you create a VPN Gateway so users can access the instances in the VPCs.
 
 1. In the left sidebar of the Aviatrix Controller, click **Gateway** and then click **Create New**. 
@@ -77,6 +109,15 @@ Now that you have attached our VPCs to the TGW, you create a VPN Gateway so user
 #. Pick the region deployed above and select the Shared Service VPC. 
 #. Select the **Allocate New EIP** and **VPN Access** checkboxes. 
 #. Click **Create**.
+=======
+Now that you have attached our VPCs to the TGW, you should create a VPN Gateway so users can access the instances in the VPCs.
+
+    1. Navigate to to the Gateway tab on the Aviatrix Controller and click "New Gateway". 
+    2. The cloud type is AWS and you can pick your own Gateway name. 
+    3. Next pick the region you deployed above and select the Shared Service VPC. 
+    4. Choose to "Allocate New EIP" and of course select "VPN Access". 
+    5. Lastly, hit "Create" 
+>>>>>>> Stashed changes
 
 A new VPN Gateway is created in the Shared Service VPC.     
 
@@ -88,12 +129,21 @@ See this link for more detailed options for deploying an Aviatrix Gateway: `Gate
 5b. Configure VPN Gateway
 --------------------------
 
+<<<<<<< Updated upstream
 To segment the Development and Production VPCs you must enable Split Tunnel Mode on your VPN Gateway. 
 
 1. In the left sidebar of the Aviatrix Controller, navigate to **OpenVPN® > Edit Config**. 
 #. In VPC ID/VNet Name select the Shared Service VPC you created earlier.
 #. Confirm the proper LB/Gateway Name is selected.
 #.In the Modify Split Tunnel section add the IPv4 CIDR ranges for the Dev and Prod VPCs.
+=======
+Now, in order to segment the Development and Production VPCs you must enable Split Tunnel Mode on our VPN Gateway. 
+
+    1. Under the OpenVPN® tab on the Aviatrix Controller click the "Edit Config" sub-menu. 
+    2. In "VPC ID/VNet Name" select the Shared Service VPC you created earlier. 
+    3. Confirm the proper LB/Gateway Name is selected.
+    4.In the "Modify Split Tunnel" section add the IPv4 CIDR ranges for the Dev and Prod VPCs.
+>>>>>>> Stashed changes
 
 |split_tunnel_CIDR|
 
@@ -105,7 +155,13 @@ These ranges can be found by logging in to the AWS console and navigating to the
 6. Configure Aviatrix VPN Client
 ---------------------------------
 
+<<<<<<< Updated upstream
 1. Add a new VPN User. In the Aviatrix Controller, navigate to **OpenVPN® > VPN Users**. Click **Add New** and input your information. For the VPC ID use the Shared Service VPC ID. 
+=======
+
+The first step is to add a new VPN User. This can be found in the "OpenVPN®" tab under the sub-menu "VPN Users". Click the "Add New"
+button and imput your inofrmation. For the VPC ID you want to use the Shared Service VPC ID. 
+>>>>>>> Stashed changes
 
 |add_VPN_user|
 
@@ -115,6 +171,7 @@ These ranges can be found by logging in to the AWS console and navigating to the
 
 #. Download the latest Aviatrix VPN Client from the Docs page here: `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
 
+<<<<<<< Updated upstream
 #. Once the client is installed, import your OpenVPN® configuration file to the Aviatrix VPN Client. Once the client is open click the "+" button and choose your .ovpn file. Once the configuration file is imported click **Connect**. 
 
 |avtx_VPN_client_setup|
@@ -124,6 +181,23 @@ These ranges can be found by logging in to the AWS console and navigating to the
 |EC2_private_IP|
 
 #. Open a terminal on your computer and see if you can ping the EC2 instance using its private IP address. If you are connected to the Aviatrix VPN Client, you should see a response. As a check, you can disconnect from the Aviatrix VPN Client and you should see no response. 
+=======
+
+Now, you should download the latest Aviatrix VPN Client from the Docs page here: `Aviatrix VPN Client <https://docs.aviatrix.com/Downloads/samlclient.html>`_.
+
+Once the client is installed, import your OpenVPN® configuration file to the Aviatrix VPN Client. Once the client is open 
+click the "+" button and choose your .ovpn file. Once the configuration file is imported click connect. 
+
+|avtx_VPN_client_setup|
+
+Once, you are connected via the Aviatrix VPN Client, you can test that everything has been correctly configured. 
+First, you will need the Private IP address of the EC2 instance running in either Dev or Prod VPCs. These IPs can be found 
+in the AWS Console page under the EC2 banner. 
+
+|EC2_private_IP|
+
+Now you can open a terminal on our computer and see if you can ping the EC2 instance using its private IP address. If you are connected to the Avitrix VPN Client, you should see a response. As a check, you can disconnect from the Aviatrix VPN Client and you should see no response. 
+>>>>>>> Stashed changes
 See below for an example of a proper ping response. 
 
 |ping_test|
@@ -131,7 +205,12 @@ See below for an example of a proper ping response.
 7. Last Steps
 ---------------
 
+<<<<<<< Updated upstream
 One last option you can configure is under Step 3 of this guide "Connection Policies". As a test, you can remove either the Dev or Prod Domain from the "Connected" list. If you remove Dev from the "Connected" list for the Shared Service Policy and run a Ping test, you should receive no response from the EC2 instance in the Development VPC. 
+=======
+One last option you can configure is under Step 3 of this guide "Connection Policies". As a test, you can remove either the Dev or 
+Prod Domain from the "Connected" list. If you remove Dev from the "Connected" list for the Shared Service Policy and run a Ping test, you should receive no response from the EC2 instance in the Development VPC.
+>>>>>>> Stashed changes
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

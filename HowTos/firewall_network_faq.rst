@@ -98,13 +98,22 @@ How Do Aviatrix Network Domains work with FireNet?
 -------------------------------------------------------------------------
 
 Aviatrix `Network Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-network-domain>`_ builds on the 
+<<<<<<< Updated upstream
 AWS Transit Gateway (TGW) route domain concepts. It provides isolation and segmentation between VPC/VNets. With Aviatrix Network Domains, you can create a group of VPC/VNets with similar security requirements.
+=======
+AWS Transit Gateway (TGW) route domain concepts. It provides isolation and segmentation between VPC/VNets. With Aviatrix network domains, you can create a group of VPC/VNets with similar security requirements.
+>>>>>>> Stashed changes
 
 There are situations where additional security measures such as packet inspection are required. That is, you need
 to deploy a firewall for certain VPC/VNets. FireNet provides the network solution that simplifies the scaling and deployment of firewalls. 
 
+<<<<<<< Updated upstream
  1. Deploy the Aviatrix FireNet in a special Network Domain with a Firewall Domain attribute. 
  #. If a network domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC/VNet member in that network domain will first be forwarded to the Firewall for inspection. This means the connection policy specifies which domain (or a group of VPC/VNets) will be inspected by the firewall. See `Domain-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-domain-based-inspection>`_. 
+=======
+ 1. Deploy the Aviatrix FireNet in a special network domain with a Firewall Domain attribute. 
+ #. If a network domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC/VNet member in that network domain will first be forwarded to the Firewall for inspection. In other words, the connection policy specifies which domain (or a group of VPC/VNets) will be inspected by the firewall. See `Domain-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-domain-based-inspection>`_. 
+>>>>>>> Stashed changes
  #. Alternatively, starting in Release 6.3 you can specify inspection based on pairs of Connection Policies. See `Connection-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#b-connection-based-inspection>`_.  
 
 What are the use cases for FireNet?
@@ -114,13 +123,21 @@ Example 1. VPC/VNet with PCI data
 #################################
 
 If you have a VPC/VNet that deploys applications that host Personal Information or PCI data and your compliance requires
+<<<<<<< Updated upstream
 packet inspection, you can create a network domain where this VPC/VNet is attached. Specify a connection policy for this 
 network domain to connect to the Firewall Domain. All packets to and from this VPC/VNet will be inspected. 
+=======
+packet inspection, you can create a network domain where this VPC/VNet is attached. Specify a connection policy for this network domain to connect to the Firewall Domain. All packets to and from this VPC/VNet will be inspected. 
+>>>>>>> Stashed changes
 
 Example 2. Production VPC/VNets
 ###############################
 
+<<<<<<< Updated upstream
 You may decide to inspect all traffic from the production data, which resides in multiple VPC/VNets. In this case you can create a network domain that all of these VPC/VNets are attached to. Then use a connection policy to connect this 
+=======
+You may decide to inspect all traffic from the production data, which resides in multiple VPC/VNets. In this case you can create a network domain that all of these VPC/VNets are attached to. Then use connection policy to connect this 
+>>>>>>> Stashed changes
 domain to the firewall domain. 
 
 What are the limitations of FireNet?
@@ -341,7 +358,11 @@ What are the integration points with Fortinet firewall?
 What is Intra Domain inspection?
 ---------------------------------
 
+<<<<<<< Updated upstream
 Intra Domain inspection allows traffic between VPC/VNets in the same network domain to be redirected to the Firewall Domain for inspection before reaching the destination.
+=======
+Intra Domain inspection allows traffic between VPC/VNets in the same network domain to be redirected to Firewall Domain for inspection before reaching to the destination.
+>>>>>>> Stashed changes
 
 
 How to migrate from FireNet to FireNet with AWS GWLB or vice versa?

@@ -1,4 +1,4 @@
-.. meta::
+network domain.. meta::
   :description: TGW Plan
   :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
@@ -18,9 +18,15 @@ The plan stage consists of 4 sections:
 
  1.  **Create AWS Transit Gateway**. This is the only must-do section in Plan before you start to Build (attach VPCs). See the Creating an AWS TGW section below. In this section, an AWS Transit Gateway and three connected network domains are created.  
 
+<<<<<<< Updated upstream
  #.  **Create Segmented Network** (optional). It consists of the Creating a new Network Domain and Building Your Domain Connection Policies sections below. This section creates your own additional network domains and connection policies. This section is entirely modular and you can modify at any time. 
 
  #.  **Create hybrid, multi-region or multi-cloud Connection** (optional). It consists of the Setting up an Aviatrix Transit GW, Preparing an Aviatrix Transit GW for TGW Attachment, and Attaching an Aviatrix Transit GW to TGW sections below. This section launches an Aviatrix Transit Gateway at the edge VPC, builds a hybrid connection to on-prem or another Aviatrix Transit gateway cluster, or deploys Transit DMZ . If you need hybrid connectivity, setting up an Aviatrix Transit GW, preparing an Aviatrix Transit GW for TGW Attachment, and attaching an Aviatrix ransit GW to TGW must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
+=======
+ #.  **Create Segmented Network**. This is an optional section. It consists of the Creating a New Network Domain and Building Your Domain Connection Policies sections below. This section creates your own additional network domains and connection policies. This section is entirely modular and you can modify at any time. 
+
+ #.  **Create hybrid, multi-region or multi-cloud Connection**. This is an optional section. It consists of the Setting up an Aviatrix Transit GW, Preparing an Aviatrix Transit GW for TGW Attachment, and Attaching an Aviatrix Transit GW to TGW sections below. This section launches an Aviatrix Transit Gateway at the edge VPC, builds a hybrid connection to on-prem or another Aviatrix Transit gateway cluster, or deploys Transit DMZ . If you need hybrid connectivity, setting up an Aviatrix Transit GW, preparing an Aviatrix Transit GW for TGW Attachment, and attaching an Aviatrix Transit GW to TGW must all be executed and in sequence to complete this section. This section is entirely modular and you can modify at any time.
+>>>>>>> Stashed changes
  
  #. **TGW Native Edge Connections** (optional). This creates TGW VPN, TGW DXGW and TGW Inter Region Peering. It consists of the steps described in the Setting up an AWS Transit Gateway VPN Connection and Downloading the VPN Configuration sections below. 
  
@@ -32,7 +38,11 @@ If you have not decided on network segmentation, you can proceed to build a full
 
 .. tip::
 
+<<<<<<< Updated upstream
  You can modify your plan at any time by returning to the Plan page to create network domains and change connection policies.  
+=======
+ You can modify your plan at any time. Simply return to the Plan page and create network domains and change connection policies.  
+>>>>>>> Stashed changes
 
 
 The Transit Gateway Orchestrator Plan workflow provides step-by-step instructions to define and set up your policies.
@@ -71,9 +81,15 @@ Creating a New Network Domain
 
 If you plan to build a `default network (full mesh) <https://docs.aviatrix.com/HowTos/tgw_design_patterns.html#Full-mesh-network-design>`_, skip this section. 
 
+<<<<<<< Updated upstream
 You can make changes to your network segmentation at any time. 
 
 If you plan to build a segmented network, use this section to create a new `network domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Security-Domain>`_ and setup `connection policies <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_. 
+=======
+You can make changes to your network segmentation at any time by coming back to this page. 
+
+If you plan to build a segmented network, use this section to create a new `Network Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#What-is-a-Network-Domain>`_ and set up `connection policies <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-connection-policy>`_. 
+>>>>>>> Stashed changes
 
 
 In the example below, a new domain called prod_domain is created. 
@@ -99,7 +115,11 @@ care of both the VPC route table and AWS Transit Gateway route table programming
 
 On the **TGW Orchestrator > Plan** tab, under Add/Modify Connection Policies, highlight a domain on the left panel and click **Add**. The domain now shows as being Connected. 
 
+<<<<<<< Updated upstream
 In the example shown below, the intention is to connect the newly created prod_domain in the Create a Network Domain section above to the Aviatrix_Edge_Domain so that VPCs in the prod_domain can communicate with on-prem servers and hosts. 
+=======
+In the example shown below, the intention is to connect the newly created prod_domain in the Creating a new Network Domain section above to the Aviatrix_Edge_Domain so that VPCs in the prod_domain can communicate with on-prem servers and hosts. 
+>>>>>>> Stashed changes
 
 |connect_domain_1|
 
@@ -212,7 +232,11 @@ Remote Public IP                                Remote site public IP address
 Dynamic (BGP) or Static                         Use BGP to connect to remote site or static IP
 Remote CIDRs                                    When Static is selected, enter a list of CIDRs separated by comma. 
 Remote AS Number                                When Dynamic is selected, enter the AS number of the remote site. 
+<<<<<<< Updated upstream
 Network Domain Name                             Select a network domain to associate the VPN attachment with
+=======
+Network Domain Name                             Select a network domain to associate the VPN attachment with.
+>>>>>>> Stashed changes
 Learned CIDR Approval                           Select the option to enable `Approval <https://docs.aviatrix.com/HowTos/tgw_approval.html>`_. This option applies to Dynamic (BGP) mode only.
 Global Acceleration                             Select the option to enable AWS Accelerated VPN
 ==========================================      ==========
@@ -261,8 +285,13 @@ Use this step to update the Allowed Prefix to advertise to on-prem.
 TGW Inter Region Peering
 ---------------------------------
 
+<<<<<<< Updated upstream
 TGW inter-region peering is a feature where Aviatrix Controller orchestrates AWS TGW peering. In addition, the 
 Controller programs and propagates network CIDRs of Spoke VPCs and Edge Domains in a network domain to 
+=======
+TGW inter-region peering is a feature where Controller orchestrates AWS TGW peering. In addition, the 
+Controller programs and propagates network CIDR of Spoke VPCs and Edge Domains in a network domain to 
+>>>>>>> Stashed changes
 the remote TGW deployment, thus providing the end-to-end turnkey solution. 
 
 It takes two steps to connect two network domains in two regions. 
@@ -276,7 +305,12 @@ It takes two steps to connect two network domains in two regions.
 Creating a TGW Peering Attachment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<<<<<<< Updated upstream
 This step connects two TGWs in different regions using AWS native TGW Peering. It automatically creates two network domains associated with each TGW and respective attachment ID. 
+=======
+This step connects two TGWs in different regions using AWS native TGW Peering. It automatically creates two network domains associated with each 
+TGW and respective attachment ID. 
+>>>>>>> Stashed changes
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -292,6 +326,7 @@ AWS Transit Gateway Name 2                      Select an AWS TGW Created `here 
 Inspecting Inter Region Traffic 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+<<<<<<< Updated upstream
 Starting from Release 6.1, the network domain associated with each TGW Peering attachment is available for users. The network domain has the
 name `peering_<TGW NAME>`. For example, for the TGW with name tgw-1, the peering network domain is `peering_tgw-1`. 
 
@@ -299,14 +334,26 @@ You can specify FireNet inspection policy on this network domain. When you do so
 is inspected. Use **TGW Orchestrator > Plan > Add/Modify Connection Policies** to connect the peering domain with the FireNet Domain. 
 
 .. note::
+=======
+Starting from Release 6.1, the network domain associated with each TGW Peering attachment is available for user. The network domain has the
+name `peering_<TGW NAME>`. For example, for the TGW with name tgw-1, the peering network domain is `peering_tgw-1`. 
+
+You can specify FireNet inspection policy on this network domain. When you do so, it implies that any cross-region traffic 
+is inspected. Use TGW > Plan > Add/Modify Connection Policies to connect the peering domain with FireNet Domain. 
+>>>>>>> Stashed changes
 
  To avoid double inspections by two FireNet gateways associated with each TGW, configure the connection policy between peering domain and FireNet domain on only one TGW. 
 
 Building Connection Policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
+<<<<<<< Updated upstream
 After step a is completed, go to `Add/Modify Connection Policies  <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. Refresh the page. The peered TGW with its network domains should appear under
 Not connected. Select one remote network domain and click **Add**. Repeat this step for all intended connections, 
+=======
+After step a is completed, go to `Add/Modify Connection Policies  <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. Refresh the page. The peered TGW with its network domains should appear on 
+Not Connected panel. Select one remote network domain and click **Add**. Repeat this step for all intended connections, 
+>>>>>>> Stashed changes
 as shown in the diagram below. 
 
 |tgw_peer|

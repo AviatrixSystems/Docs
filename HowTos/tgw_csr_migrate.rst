@@ -26,10 +26,17 @@ There are a couple of patterns during the migration phase, consider the one that
 
 ..
 
+<<<<<<< Updated upstream
 Before the migration process starts,  plan out what network domains you need to create and which network domains should connect other domains. If you are not sure and need to transition, proceed. The network domains can be added and modified at any time. 
 
 1. `Launch a Transit Gateway <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-an-aws-tgw>`_.
 2. If you have plans for custom network domains, follow `these instructions <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-a-new-network-domain>`_ to create them. Then, `build connection policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#building-your-domain-connection-policies>`_. If you do not intend to build custom network domains, skip this section. 
+=======
+Before the migration process starts,  plan out what network domains you need to create and which network domains should connect other domains. If you are not sure and need to transition, proceed with no worries. The network domains can be added and modified at any time. 
+
+1. `Launch a Transit Gateway <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-an-aws-tgw>`_.
+2. If you have plans for custom network domains, follow `these instructions <https://docs.aviatrix.com/HowTos/tgw_plan.html#creating-a-new-security-domain>`_ to create them. Then, `build connection policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#building-your-domain-connection-policies>`_. If you do not intend to build custom network domains, skip this section. 
+>>>>>>> Stashed changes
 3. `Launch an Aviatrix Transit GW and enable HA in the Transit hub VPC <https://docs.aviatrix.com/HowTos/tgw_plan.html#setting-up-an-aviatrix-transit-gw>`_. As a best practice, create a new Transit hub VPC to deploy the Aviatrix Transit GW. 
 4. This step has two options: 
 

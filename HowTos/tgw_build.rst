@@ -28,7 +28,11 @@ VPC Account                                               An `Aviatrix account <
 VPC Name                                                  Select a VPC in the VPC Account.
 TGW Account                                               Select an access account where AWS Transit Gateway resides. 
 TGW Name                                                  The name of the AWS Transit Gateway in the AWS Transit Gateway Account. 
+<<<<<<< Updated upstream
 Network Domain Name                                       Select domain from dropdown menu. 
+=======
+Network Domain Name                                       Select a domain from the dropdown menu. 
+>>>>>>> Stashed changes
 Advanced (Optional) Select Subnets                        Available in R4.3 and later. When selected, a dropdown menu of VPC subnets appears for you to multi select subnets/AZs should be attached to the VPC. For a MAC keyboard, use Command key and select. For a Window's machine keyboard, use Control key and select. When not selected, Aviatrix Controller automatically select a subnet representing each AZ for the VPC attachment. 
 Advanced (Optional) Customize Spoke VPC Routes            Available in R4.7 and later. When you customize the Spoke VPC route entries, no learned routes are programmed into the VPC route table. If you wish no route to be programmed by Aviatrix Orchestrator, enter 0.0.0.0/32.
 Advanced (Optional) Select Route Tables                   Available in R5.0 and later. Only the selected route tables will participate in TGW Orchestrator, i.e., learned routes will be propagated to these route tables. 
