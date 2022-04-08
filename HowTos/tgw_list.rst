@@ -7,16 +7,16 @@
 TGW List
 =========================================================
 
-TGW List page provides the list of TGW Attachments and TGW Security Domains. It also allows you to make modular changes on attachments and Security Domains. 
+Clicking **List** under TGW Orchestrator List in the left menu provides options for working with your list of Transit Gateway attachments and TGW network domains. It also allows you to make modular changes on attachments and network domains. 
 
 For background information, refer to the `TGW Orchestrator FAQ <https://docs.aviatrix.com/HowTos/tgw_faq.html>`_.
 
-Before you show list, you must have at least completed some `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ in Build page. 
+Before anything displays in the list, you must have completed some tasks on the `TGW Orchestrator Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ page. 
 
 TGW
 ------
 
-TGW lists the TGWs created by the Controller. 
+The TGW tab on the List page shows the TGWs created by the Controller. 
 
 TGW lists also allows you to select a FireNet Inspection Mode. 
 
@@ -26,12 +26,12 @@ TGW Attachments
 Showing Details
 ~~~~~~~~~~~~~~~
 
-Show Details display routing details of TGW attachments, Spoke VPC, or TGW VPN/DXGW. 
-The routing details include Spoke VPC's VPC route table entries, its attached TGW route table entries and Edge 
-Domain VPC route table entries and its TGW route tables entries. The visibility helps to verify the correctness
+You use the Attachments tab on the List page to display routing details of TGW attachments, Spoke VPCs, or TGW VPN/DXGWs. 
+The routing details include the Spoke VPC's VPC route table entries, its attached TGW route table entries and Edge 
+Domain VPC route table entries, and its TGW route tables entries. The visibility helps to verify the correctness
 of route entries.   
 
-To view, go to TGW Orchestrator > List > TGW Attachment. Select the attachment, click **Actions** > **Show Details**. 
+To view, on the TGW Orchestrator > List page, open the  Attachments tab. Select the attachment, and click **Actions > Show Details**. 
 
 Showing Attachment Reachability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,33 +90,36 @@ This feature changes an attached Spoke VPC local route propagation attribute wit
 
 To configure, go to TGW Orchestrator > List > TGW Attachment. Select one attachment, click **Actions** > **Edit Spoke VPC** Local Route Propagation. 
 
-Switching Security Domain
+Switching Network Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This feature allows you to switch a Spoke VPC's Security Domains without having to detach the Spoke VPC first. 
+This feature allows you to switch a Spoke VPC's network domains without having to detach the Spoke VPC first. 
 
-To configure, go to TGW Orchestrator > List > TGW Attachment. Select one attachment, click **Actions** > **Switch Security Domain**. In the dropdown menu, select the desired Security Domain, click **Update**. 
+To configure, go to **TGW Orchestrator > List > Attachments**. Select an attachment, and click **Actions > Switch Network Domain**. In the dropdown menu, select the desired network domain and click **Update**. 
 
 FireNet Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To allow access to the private IP of the MGMT interface of the Firewalls, enable Management Access From Onprem. This feature advertises the Firewalls private MGMT subnet to your Edge domain. This allows administrators and Firewall MGMT servers to connect to the Firewall without having to go over the internet.
 
-To enable, navigate to TGW Orchestrator > List and highlight the FireNet VPC.  Then choose **Actions** > **FireNet Management**.
+To enable, navigate to **TGW Orchestrator > List** and highlight the FireNet VPC.  Then choose **Actions** > **FireNet Management**.
 
-TGW Security Domains
+TGW Network Domains
 ------------------------------
 
 Showing Details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Show Details display the TGW route table entries. 
+Select a network domain and click **Actions > Show Details** to display the TGW route table entries. 
 
 Editing Intra Domain Inspection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, traffic between VPCs in the same Security Domain does not get inspected by firewalls in the FireNet deployment. 
+By default, traffic between VPCs in the same network domain does not get inspected by firewalls in the FireNet deployment. 
 
-This feature allows you to enable firewall inspection for traffic within one Security Domain. 
+This feature allows you to enable firewall inspection for traffic within network domain. 
+
+Select a network domain and click **Actions > Enable Intra Domain Inspection** to enable intra-domain firewall inspection.
+
 
 Enabling Edge Inspection
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,10 +127,13 @@ Enabling Edge Inspection
 This option applies to connection-based inspection mode. When connection-based inspection is enabled, use this option to enable Egress
 inspection for a specific domain. 
 
+Select a network domain and click **Actions > Enable Egress Inspection** to enable egress inspection.
+
+
 TGW Connection
 -----------------------
 
-TGW > List > Connection lists all Connection Policies. Each Connection Policy is represented by two rows. 
+The **TGW Orchestrator > List > Connection** page lists all Connection Policies. Each Connection Policy is represented by two rows. 
 Each row represents one Connection Policy in one direction. 
 
 Enabling Inspection

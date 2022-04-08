@@ -14,7 +14,7 @@ The objectives here are:
  - Minimum downtime during migration.
  - No change to existing VPC infrastructure.
  - Minimum change to on-prem connectivity.   
- - Transferring Security Domains and Connection Policies in TGW to Multi-Cloud Transit. 
+ - Transferring network domains and connection policies in TGW to Multi-Cloud Transit. 
 
 
 The Solution
@@ -27,29 +27,30 @@ The migration architecture is shown as the diagram below. We assume the current 
 Migrating to ActiveMesh 2.0
 ------------------------------------------
 
-If the Aviatrix Transit Gateways was deployed prior to Release 6.0. A migration step to ActiveMesh 2.0 is necessary before 
+If the Aviatrix Transit Gateways was deployed prior to Release 6.0, a migration step to ActiveMesh 2.0 is necessary before 
 migrating to Multi-Cloud Transit. 
 
- 1. Upgrade to Release 6.0. Go to Settings > Maintenance > Upgrade to the Latest. 
- #. After upgrading to 6.0 is complete and successful, go to Settings > Maintenance > Migration > ActiveMesh 2.0 Migration. Click **Migrate**. It should take a few minutes. 
+1. Upgrade to Release 6.0: **Settings > Maintenance > Upgrade to the Latest. 
+#. After upgrading to 6.0 is complete and successful, go to **Settings > Maintenance > Migration > ActiveMesh 2.0 Migration**. 
+#. Click **Migrate**. It takes a few minutes. 
 
 
-(Optional) Creating Multi-Cloud Security Domains 
+(Optional) Creating Multi-Cloud Network Domains 
 --------------------------------------------------------------------
 
-If TGW Orchestrator configured Security Domains and Connection policies other than the default domains, create the corresponding security domains and connection policies. Otherwise skip this step and proceed. (You can always setup security domains for Multi-Cloud Transit later.)
+If you used TGW Orchestrator to configure network domains and connection policies other than the default domains, create the corresponding network domains and connection policies here. Otherwise skip this step and proceed. (You can always setup network domains for Multi-Cloud Transit later.)
 
 Follow the `Multi-Cloud Transit Segmentation workflow <https://docs.aviatrix.com/HowTos/transit_segmentation_workflow.html#aviatrix-transit-network-segmentation-workflow>`_ to plan.
 
 Migrating
 ---------------
 
- 1. Enable `Connected Transit <https://docs.aviatrix.com/HowTos/transit_advanced.html#connected-transit>`_ on the Aviatrix Transit Gateway if it is not already configured. This configuration mode ensures that migrated Spoke VPCs can communicate with Spoke VPCs that are still attached to TGW. 
- #. Launch an Aviatrix Spoke Gateway in Spoke-1 VPC. Enable HA if required. 
- #. Detach Spoke-1 from TGW. Go to TGW Orchestrator > Build > Detach.
- #. Attach Aviatrix Spoke-1 gateway to Aviatrix Transit Gateway. Go to Multi-Cloud Transit -> Attach (Step 6a)
- #. Repeat the steps above for all remaining Spoke VPCs during the migration process. 
- #. (Optional) After all Spoke VPCs have been migrated, set up Multi-Cloud Connection policies. Go to Multi-Cloud Transit > Segmentation > Build to associate each Aviatrix Spoke gateway with a security domain. 
+1. Enable `Connected Transit <https://docs.aviatrix.com/HowTos/transit_advanced.html#connected-transit>`_ on the Aviatrix Transit Gateway if it is not already configured. This configuration mode ensures that migrated Spoke VPCs can communicate with Spoke VPCs that are still attached to TGW. 
+#. Launch an Aviatrix Spoke Gateway in Spoke-1 VPC. Enable HA if required. 
+#. Detach Spoke-1 from TGW. Go to TGW Orchestrator > Build > Detach.
+#. Attach Aviatrix Spoke-1 gateway to Aviatrix Transit Gateway. Go to **Multi-Cloud Transit > Attach (Step 6a)**.
+#. Repeat the steps above for all remaining Spoke VPCs during the migration process. 
+#. (Optional) After all Spoke VPCs have been migrated, set up Multi-Cloud Connection policies. Go to **Multi-Cloud Transit > Segmentation > Build** to associate each Aviatrix Spoke gateway with a network domain. 
 
 Other Components
 -----------------------

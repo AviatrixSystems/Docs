@@ -7,30 +7,27 @@
 TGW Approval
 ============================================================
 
-TGW VPN and TGW DXGW dynamically learns BGP routes from remote peer, Aviatrix Controller periodically pulls the TGW 
-route table and propagate these routes to Spoke VPCs route table that have connection policy to the VPN. 
+TGW VPN and TGW DXGW dynamically learn BGP routes from remote peering. The Aviatrix Controller periodically pulls the TGW 
+route table and propagates these routes to the Spoke VPCs route table that has connection policies to the VPN. 
 
-There are scenarios where you require an approval process before these learned CIDRs propagation take place. 
-For example, a specific TGW VPN may be 
-connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not 
+There may be scenarios where you require an approval process before the learned CIDRs propagation take place. 
+For example, a specific TGW VPN may be connected to a partner network and you need to make sure undesirable routes, such as the default route (0.0.0.0/0) are not 
 propagated into your own network and accidentally bring down the network.  
 
 |tgw_approval|
 
-Approval is enabled on per TGW VPN and TGW DXGW bases. When Approval is enabled on a TGW VPN, 
-dynamically learned routes trigger an email to the Controller admin. Controller admin logins into the Controller and go to
-TGW > Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
-Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated. 
+Approval is enabled on a per TGW VPN and TGW DXGW basis. When Approval is enabled on a TGW VPN, 
+dynamically learned routes trigger an email to the Aviatrix Controller admin. The Controller admin can log in into the Controller and navigate  to
+**TGW Orchestrator > Approval**. Here, the admin sees the unapproved and already approved routes. Moving the routes from the Pending Learned CIDRs list to the Approved Learned CIDRs list allows those routes to be propagated. 
 
-
-To enable Approval, go to TGW > Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
+To enable Approval, go to **TGW Orchestrator > Approval**. Select the TGW and VPN/DXGW, and toggle **Learned CIDRs Approval** to Enabled.
 
 How does it work?
 ---------------------
 
-When Approval feature is enabled, TGW route table route propagation to connected Security Domain is turned
+When the Approval feature is enabled, TGW route table route propagation to connected network domains is turned
 off. That is, the TGW VPN/DXGW learned routes are statically programmed into the TGW route table of 
-connected Security Domains after the routes are approved. 
+connected network domains after the routes are approved. 
 
 This is illustrated in the following two examples. 
 
