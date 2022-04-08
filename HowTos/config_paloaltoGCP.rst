@@ -160,7 +160,7 @@ Next step is to validate your configurations and polices using FlightPath and Di
 12. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
+You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both network domains are connected to the Firewall Network Domain.
 
 
 .. |access_key| image:: config_paloaltoVM_media/gcp/access_key.png

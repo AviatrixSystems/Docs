@@ -70,7 +70,7 @@ AWS Transit Gateway                                    An AWS Transit Gateway.
 Connection Name                                        A unique name for the connection.
 Branch Router's BGP ASN                                Only BGP is supported. Enter BGP ASN number on the branch router.
 Algorithm                                              Default is unchecked. Leave it unchecked.
-Security Domain Name                                   An Aviatrix TGW Orchestrator Security Domain
+Network Domain Name                                    An Aviatrix TGW Orchestrator network domain.
 Enable Global Accelerator                              Check the box to enable AWS Global Accelerator for the branch router to hop onto the nearest AWS edge and traverse the AWS backbone to get to the AWS TGW.
 =========================================              ==========================
 

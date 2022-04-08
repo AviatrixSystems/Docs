@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
   :description: Firewall Network
   :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
@@ -228,7 +228,7 @@ Click Send Changes and Activate.
 
 Now your firewall instance is ready to receive packets!
 
-The next step is specifying which Security Domain needs packet inspection by defining a connection policy that connects to
+The next step is specifying which network domain needs packet inspection by defining a connection policy that connects to
 the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow.
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain.

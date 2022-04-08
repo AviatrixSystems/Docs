@@ -120,17 +120,17 @@ If you are manually configuring the firewall from scratch, follow `the instructi
 
 Now your firewall instance is ready to receive packets! 
 
-The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
-the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
+The next step is to specify which network domain needs packet inspection by defining a connection policy that connects to
+the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-network-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
 
-For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
+For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Network_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.  
 
 7. View Traffic Log
 ----------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of Security Domains are connected to Firewall Network Security Domain
+You can view if traffic is forwarded to the firewall instance by logging in to the VM-Series console. Click Monitor. Start ping packets from one Spoke VPC to another Spoke VPC where one or both of network domains are connected to Firewall Network network domain.
 
 8. Additional References
 --------------------------

@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
   :description: Firewall Network
   :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
@@ -21,7 +21,7 @@ The instance will have to be launched in a Firewall Network VPC and appropriate 
 
 1. Setup Firewall Network (FireNet)
 ---------------------------------------
-Complete steps 1-5 of the Firewall Network Workflow in Aviatrix controller to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your Fortigate instance. 
+Complete steps 1-5 of the Firewall Network Workflow in Aviatrix Controller to prepare your Firewall VPC (FireNet VPC). This will also set up the subnets that you will need for launching your Fortigate instance. 
 
 2. Deploy Fortigate Instance from AWS Marketplace
 ----------------------------------------------------
@@ -149,7 +149,7 @@ After validating that your TGW traffic is being routed through your firewall ins
 
 Now your firewall instance is ready to receive packets! 
 
-The next step is specifying which Security Domain needs packet inspection by defining a connection policy that connects to
+The next step is specifying which network domain needs packet inspection by defining a connection policy that connects to
 the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
 
 For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
