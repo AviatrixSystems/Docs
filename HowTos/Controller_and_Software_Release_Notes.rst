@@ -8,6 +8,19 @@ Aviatrix Controller and Gateway Release Notes
   
 If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
+6.4.3049 (04/08/2022) 
+=======================
+
+**Issues Corrected in Aviatrix Release 6.4.3049**
+
+* **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
+* **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
+* **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed. 
+* **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
+* **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
+* **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
+* **AVI-2022-0004** – Fixed an internally-reported vulnerability that would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+
 6.5.3166 (04/06/2022) 
 =======================
 
@@ -34,7 +47,6 @@ If you are upgrading from release 6.5.x or later, follow the guidelines and proc
 * **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
 * **AVI-2022-0004** – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
 * **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
-
 
 6.6.5545 (03/31/2022)
 =======================
