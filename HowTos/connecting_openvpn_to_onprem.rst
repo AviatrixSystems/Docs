@@ -70,7 +70,7 @@ Troubleshooting
 
 - Confirm the VPN User policy allows for connectivity to the On-prem network
 - Log out of the Aviatrix VPN client and reconnect - this will refresh your device's local routes
-- If this a TGW solution, confirm that the OpenVPN Gateway's Security Domain is connected to the S2C Security Domain
+- If this a TGW solution, confirm that the OpenVPN Gateway's network domain is connected to the S2C network domain
 - If this is a BGP solution confirm that Transit Gateway is advertising the OpenVPN Gateway network (ig, 10.99.245.0/24)
 - On the remote firewall or router check for any ACLs that would block the OpenVPN Gateway Network
 - In AWS confirm there are no NACLs or Security Groups blocking the traffic

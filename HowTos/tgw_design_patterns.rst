@@ -1,4 +1,4 @@
-.. meta::
+network domain.. meta::
   :description: TGW Orchestrator Overview
   :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
@@ -17,15 +17,18 @@ examples.
 Dev & Prod Isolated Design
 -----------------------------------
 
-If you like to build network segmentation between Dev/QA VPCs and Production VPCs, but require shared service VPC and
+If you want to build network segmentation between Dev/QA VPCs and Production VPCs, but require shared service VPC and
 on-prem to reach each VPC, consider the diagram below.
-diagram below.
 
 |dev_prod_design|
 
-In this network design, you need to create two custom Security Domains, Dev_Domain and Prod_Domain.
+In this network design, you need to create two custom network domains, Dev_Domain and Prod_Domain.
 
-At the Plan page Step 2, select **Create Custom Security Domain** and fill in the information. Make sure you multi-select Shared_Service_Domain and Aviatrix_Edge_Domain for Connect to Security Domains. Apply this step for both Dev_Domain and Prod_Domain.
+<<<<<<< Updated upstream
+At the TGW Orchestrator Plan page Step 2, select **Create a Network Domain** and fill in the information. Make sure you select Shared_Service_Domain and Aviatrix_Edge_Domain for Connect to Network Domains. Apply this step for both Dev_Domain and Prod_Domain.
+=======
+At the Plan page Step 2, select **Create Custom Network Domain** and fill in the information. Make sure you multi-select Shared_Service_Domain and Aviatrix_Edge_Domain for Connect to Network Domains. Apply this step for both Dev_Domain and Prod_Domain.
+>>>>>>> Stashed changes
 
 Dev & Prod Isolated Design with TGW Direct Connect or VPN
 ------------------------------------------------------------------------------
@@ -35,7 +38,7 @@ to connect to multiple cloud as Spoke VPCs.
 
 |tgw_hybrid|
 
-All-in-Cloud with Multi Security Domains
+All-in-Cloud with Multi Network Domains
 ------------------------------------------------------------
 
 If you are only concerned about VPC-to-VPC segmentation, you can deploy Aviatrix Controller for 
@@ -61,7 +64,11 @@ cloud.
 Full-Mesh Network Design
 ---------------------------------
 
-If you like to build a full-mesh network that allows all VPCs and on-prem to communicate with each other, you do not need to create any custom Security Domains. Simply use the built-in Default_Domain and Aviatrix_Edge_Domain for the deployment, as shown below. 
+<<<<<<< Updated upstream
+If you want to build a full-mesh network that allows all VPCs and on-prem to communicate with each other, you do not need to create any custom network domains. Use the built-in Default_Domain and Aviatrix_Edge_Domain for the deployment, as shown below. 
+=======
+If you like to build a full-mesh network that allows all VPCs and on-prem to communicate with each other, you do not need to create any custom network domains. Simply use the built-in Default_Domain and Aviatrix_Edge_Domain for the deployment, as shown below. 
+>>>>>>> Stashed changes
 
 |default_domain_design|
 
@@ -71,32 +78,39 @@ At Plan page Step 2, select **Full mesh network**.
 Fully Isolated Network Design - 1
 -----------------------------------------
 
-If you would like to build a fully isolated network where no VPCs can communicate with each other except to the shared service VPC and on-prem, you need to create a Security Domain for each VPC and connect each domain to the Shared_Service_Domain. 
+If you would like to build a fully isolated network where no VPCs can communicate with each other except to the shared service VPC and on-prem, you need to create a network domain for each VPC and connect each domain to the Shared_Service_Domain. 
 
 |fully_isolated_network_design|
 
-In this network design, you need to create a custom Security Domain for each VPC. 
+In this network design, you need to create a custom network domain for each VPC. 
 
 If this design does not scale for you, consider the `Aviatrix Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ where all VPCs are by default isolated to each other. 
 
 Fully Isolated Network Design - 2
 -------------------------------------------
 
-An alternative design for a fully isolated deployment is to have a group of VPCs share one Security Domain but `disabling VPC
+<<<<<<< Updated upstream
+An alternative design for a fully isolated deployment is to have a group of VPCs share one network domain but `disable VPC
+=======
+An alternative design for a fully isolated deployment is to have a group of VPCs share one network domain but `disabling VPC
+>>>>>>> Stashed changes
 route propagation <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ when attaching a VPC, as shown 
 in the diagram below. 
 
 |fully_isolated_2|
 
-The advantage of this design is to keep the Security Domains to minimum. You can specify connection policies for a domain
+The advantage of this design is to keep the network domains to minimum. You can specify connection policies for a domain
 to communicate with another domain, such as Aviatrix Edge Domain or Aviatrix FireNet Domain, without the VPC in the domain 
 being able to talk to each other. 
 
 Fully Isolated Network with Multi-Sites VPN
 --------------------------------------------------------
 
-You can use TGW native VPN capability to connect to multi-sites VPN. Since VPN connection is in Default Security Domain, you need to build connection policy
-for each VPC domain.
+<<<<<<< Updated upstream
+You can use TGW native VPN capability to connect to multi-site VPN. Since the VPN connection is in the default network domain, you need to build a connection policy for each VPC domain.
+=======
+You can use TGW native VPN capability to connect to multi-sites VPN. Since VPN connection is in the default network domain, you need to build a connection policy for each VPC domain.
+>>>>>>> Stashed changes
 
 |tgw_multi_sites|
 
@@ -152,13 +166,17 @@ in the diagram below. On the Aviatrix side, use the option `External Devices <ht
 
 |tgw_other_cloud| 
 
-Extending Security Domains to On-Prem Sites
+Extending Network Domains to On-Prem Sites
 ---------------------------------------------------------
 
-If the Aviatrix Transit Gateway connects to multiple sites over IPsec or GRE tunnels, the Security Domains can be
+If the Aviatrix Transit Gateway connects to multiple sites over IPsec or GRE tunnels, the network domains can be
+<<<<<<< Updated upstream
 extended to each site as shown below, where Blue Domain in the cloud can only communicate with Site 2, Green 
+=======
+extended to each site as shown below, where the Blue Domain in the cloud can only communicate with Site 2, the Green 
+>>>>>>> Stashed changes
 Domain can only communicate with Site 1. Routes are only advertised within the domain and data traffic is segmented
-by the Security Domains. 
+by the network domains. 
 
 |edge_seg|
 

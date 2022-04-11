@@ -110,10 +110,10 @@ Ready to Go
 
 Now your firewall instance is ready to receive packets.
 
-The next step is to specify which Security Domain needs packet inspection by defining a connection policy that connects to
-the firewall domain. This is done by `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-security-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
+The next step is to specify which network dmain needs packet inspection by defining a connection policy that connects to
+the firewall domain. This is done by `Step 8 <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#specify-network-domain-for-firewall-inspection>`_ in the Firewall Network workflow. 
 
-For example, deploy Spoke-1 VPC in Security_Domain_1 and Spoke-2 VPC in Security_Domain_2. Build a connection policy between the two domains. Build a connection between Security_Domain_2 to Firewall Domain. 
+For example, deploy Spoke-1 VPC in Network_Domain_1 and Spoke-2 VPC in Network_Domain_2. Build a connection policy between the two domains. Build a connection between Network_Domain_2 to Firewall Domain. 
 
 Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance, ping the other instance. The ping should go through.  
 

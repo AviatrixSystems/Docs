@@ -22,7 +22,7 @@ Scenario 1: On-prem Overlaps with Spoke VPC/VNet in TGW Deployment
 
 In this scenario, on-prem site-1 overlaps with Spoke-1 VPC/VNet CIDR, they both are 172.32.0.0/16 and wish to communicate with each 
 other. The solution is to deploy an Aviatrix Gateway in Spoke-2 VPC/VNet and build IPsec tunnel
-between Spoke-2 gateway and the on-prem. In the deployment, both Spoke-1 and Spoke-2 are attached to TGW and are in the same Security Domain.  
+between Spoke-2 gateway and the on-prem. In the deployment, both Spoke-1 and Spoke-2 are attached to TGW and are in the same network domain.  
 
 The diagram is shown below. Note one can launch an Aviatrix Gateway in Spoke-1 directly and build the IPsec tunnel. This example
 demonstrates how to use `Spoke VPC Advertised Routes <https://docs.aviatrix.com/HowTos/tgw_list.html#edit-spoke-vpc-advertised-routes>`_ to 

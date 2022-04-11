@@ -48,11 +48,15 @@ Do not launch the firewall instance from the AWS Console as you can launch it on
 Creating a Firewall Domain
 ---------------------------------------
 
-This step creates a Security Domain with a Firewall Domain option. 
+This step creates a network domain with a Firewall Domain option. 
 
-Go to TGW Orchestrator > Plan > Create an AWS Transit Gateway and then a Security Domain by selecting **Aviatrix Firewall Domain**. 
+Go to TGW Orchestrator > Plan > Create an AWS Transit Gateway and then a network domain by selecting **Aviatrix Firewall Domain**. 
 
-For more information, refer to `Create a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
+<<<<<<< Updated upstream
+For more information, refer to `Create a New Network Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-network-domain>`_. 
+=======
+For more information, refer to `Create a New Network Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
+>>>>>>> Stashed changes
 
 
 Launching Aviatrix FireNet Gateway
@@ -194,7 +198,11 @@ The new subnets created by the Controller at these steps are listed below.
 Attaching Aviatrix FireNet Gateway to TGW Firewall Domain
 ---------------------------------------------------------------------------------
 
-This step requires you have already created a Security Domain with Firewall attribute enabled.
+<<<<<<< Updated upstream
+This step requires you have already created a network domain with the Firewall attribute enabled.
+=======
+This step requires you have already created a network domain with Firewall attribute enabled.
+>>>>>>> Stashed changes
 
 When this step is completed, you have built the network infrastructure for FireNet deployment. This step may take a few minutes.
 
@@ -280,7 +288,7 @@ Note that firewall instance eth2 is on the same subnet as FireNet Gateway eth2 i
 2. Fortigate Specifications
 *******************************
     
-Fortigate Next Generation Firewall instance has 2 interfaces as described below.
+Fortigate Next Generation Firewall instance has two interfaces as described below.
 
 ========================================================         ===============================          ================================
 **Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -299,7 +307,7 @@ Note that firewall instance eth1 is on the same subnet as FireNet Gateway eth2 i
 3. CheckPoint Specification
 ******************************
 
-CheckPoint Firewall instance has 2 interfaces as described below. 
+CheckPoint Firewall instance has two interfaces as described below. 
 
 ========================================================         ===============================          ================================
 **CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -315,17 +323,17 @@ Note that firewall instance eth1 is on the same subnet as FireNet Gateway eth2 i
   Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com. 
 
 
-Launch and Associate More
-#################################
+Launching and Associating More Instances
+########################################
 
 Repeat the previous step to launch the second firewall instance to associate with the HA FireNet Gateway. 
-Or repeat this step to launch more firewall instances to associate with the same FireNet Gateway.
+Or, repeat this step to launch more firewall instances to associate with the same FireNet Gateway.
 
 Example Setup for "Allow All" Policy
 ###########################################
 
-After a firewall instance is launched, wait for 15 minutes for it to come up. 
-In addition, please follow example configuration guides as below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to firewall instance. 
+After a firewall instance is launched, wait for 15 minutes for it to be available. 
+In addition, please follow the example configuration guides as below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to firewall instance. 
 
 Palo Alto
 **********
@@ -337,30 +345,30 @@ FortiGate
 **********
 For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html>`_.
 
-CheckPoint
-**********
+Check Point
+***********
 For basic configuration, please refer to `this example configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_
 
 
-Associate an Existing Firewall Instance
+Associating an Existing Firewall Instance
 --------------------------------------------
 
-This step is the alternative step to the previous step. If you already launched VM-Series from the AWS Console, you can still
+This step is the alternative to the previous step. If you already launched VM-Series from the AWS Console, you can still
 associate it with the FireNet Gateway. 
 
-If the firewall instance is by a vendor other than Palo Alto Network, for example, Checkpoint or Fortinet, you should launch the firewall 
+If the firewall instance is by a vendor other than Palo Alto Network (for example, Check Point or Fortinet), you should launch the firewall 
 instances from the AWS Console and associate them to the Aviatrix FireNet Gateway. The Management Interface Subnet may be the same as the Egress Interface Subnet.
 
 Launching & Associating Aviatrix FQDN Gateway
 ------------------------------------------------------------------
 
-If you perform one of the previous two steps, then you must be using a third party firewall instance. Skip this step.
+If you performed one of the previous two steps for setting up third party firewall instances, you can skip this step.
 
 This option is to deploy `Aviatrix FQDN gateway <https://docs.aviatrix.com/HowTos/fqdn_faq.html>`_ in a FireNet environment for a centralized scale out egress whitelist solution, as shown below. 
 
 .. important::
 
-  If a deployed Aviatrix FQDN gateway has no FQDN whitelist attached to it, the FQDN gateway acts as a NAT gateway and it will pass all traffic to all destination sites. To add whitelist policies, follow `how to configure FQDN instructions <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
+  If a deployed Aviatrix FQDN gateway has no FQDN whitelist attached, the FQDN gateway acts as a NAT gateway and it will pass all traffic to all destination sites. To add whitelist policies, follow `how to configure FQDN instructions <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
 
 This option is available in AWS and Azure. It applies to multi-cloud transit, Azure native Spoke transit, and TGW based transit. 
 
@@ -381,19 +389,27 @@ Attach                                          Attach this FQDN gateway to the 
 
 
 
+<<<<<<< Updated upstream
+Specifying the Network Domain for Firewall Inspection
+=======
 
 
-Specify Security Domain for Firewall Inspection
+Specify Network Domain for Firewall Inspection
+>>>>>>> Stashed changes
 -------------------------------------------------------------------
 
-There are two inspection modes. One is Domain-based inspection, which is the default. The other is Connection Policy based inspection. 
+There are two inspection modes. One is Domain-based inspection, which is the default. The other is Connection Policy-based inspection. 
 The Connection Policy based inspection mode (connection based inspection) is available in Release 6.3 and later. 
 
 Domain-based inspection
 ###############################
 
-In domain-based inspection, to specify a Spoke VPC/VNet that needs inspection is to define a connection policy of the Security Domain, where the Spoke VPC/VNet is a member, 
+<<<<<<< Updated upstream
+To specify a Spoke VPC/VNet for domain-based inspection, you define a connection policy between the network domain (where the Spoke VPC/VNet is a member) and the Firewall domain.
+=======
+In domain-based inspection, to specify a Spoke VPC/VNet that needs inspection is to define a connection policy of the network domain, where the Spoke VPC/VNet is a member, 
 to the Firewall Domain.
+>>>>>>> Stashed changes
 
 For example, if you wish to inspect traffic between on-prem to VPC/VNet, connect Aviatrix Edge Domain to the 
 Firewall Domain. This means on-prem traffic to any Spoke VPC/VNet is routed to the firewall first and then it is forwarded
@@ -405,7 +421,7 @@ Connection-based inspection
 Connection-based inspection only applies to TGW-based Transit solution. 
 
 Connection-based inspection is available from Release 6.3 and later. Connection-based inspection allows you to inspect traffic going
-across a specific pair of Security Domains. For example, Domain A has connection policy to Domain B and Domain C, you can specify to
+across a specific pair of network domains. For example, Domain A has connection policy to Domain B and Domain C, you can specify to
 inspect traffic between Domain A and Domain B, but not Domain A and Domain C. This inspection mode reduces the amount of traffic being 
 inspected and reduces the instances size requirements on both FireNet Gateways and firewalls.
 
@@ -425,7 +441,7 @@ Enabling Connection-Based Inspection
 Configuring East-West Inspection
 ******************************************
 
-`A firewall security domain <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#create-a-firewall-domain>`_ must be created first before configuring east-west inspection. 
+`A firewall network domain <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#create-a-firewall-domain>`_ must be created first before configuring east-west inspection. 
 
 #. Go to Controller > TGW Orchestrator > List. 
 #. Click **Connection** to display all Connection Policies in rows. 
@@ -441,7 +457,11 @@ Configuring Egress Inspection
 The Firewall Domain must have `Egress Inspection <https://docs.aviatrix.com/HowTos/firewall_advanced.html#egress-through-firewall>`_ enabled before configuring Egress Inspection. 
 
 #. Go to Controller > TGW Orchestrator > List. 
-#. Click Security Domains which displays all Security Domains configured on the TGW. 
+<<<<<<< Updated upstream
+#. Click Network Domains which displays all Security Domains configured on the TGW. 
+=======
+#. Click Network Domains which displays all network domains configured on the TGW. 
+>>>>>>> Stashed changes
 #. Select one domain and click Action > Enable Egress Inspection. 
 #. In the popup dropdown menu, select a firewall domain to associate the domain with. 
 #. Click **Update**.

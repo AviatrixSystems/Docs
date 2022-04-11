@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
   :description: Firewall Network FAQ	
   :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Firewall, DMZ, Cloud DMZ, Firewall Network, FireNet
 
@@ -23,13 +23,13 @@ In addition, FireNet allows you to scale firewall deployment to multiple AZs and
 How does Aviatrix FireNet compare with the native deployment in AWS Transit Gateway?
 ---------------------------------------------------------------------------------------------------------------
 
-There are two native deployments: TGW VPN to connect to firewall or TGW VPC attachment to connect to firewall. 
+There are two native deployments: TGW VPN to connect to a firewall, or TGW VPC attachment to connect to a firewall. 
 
 The three different deployment models are illustrated in the diagram below. 
 
 |firewall_deploy|
 
-If an AWS Transit Gateway connects to a firewall by using its built in VPN function, it must run IPsec and BGP. If you run more than one firewall instances by using ECMP, each firewall instance must configure SNAT function to
+If an AWS Transit Gateway connects to a firewall by using its built in VPN function, it must run IPsec and BGP. If you run more than one firewall instance by using ECMP, each firewall instance must configure the SNAT function to
 ensure that both source and destination-initiated traffic lands on the same firewall instance. Furthermore, since native deployment requires an IPsec VPN which limits its performance to 1Gbps, in this scenario a single firewall instance can only perform at 500Mbps since the VPN function is traversed twice.
 
 A more detailed functional comparison is described in the table below. 
@@ -50,7 +50,7 @@ Multi-vendor support                            Yes                             
 =========================================       ==================================      ==============================    =================================
 
 
-What are the Benefits of FireNet Deployment Model?
+What are the Benefits of the FireNet Deployment Model?
 ----------------------------------------------------------------------------------------
 
 For enterprises that wish to deploy a firewall in any Cloud Service Provider (CSP) including AWS, Azure, GCP, or OCI, Aviatrix’s FireNet deployment model provides the best performance and automation.
@@ -58,13 +58,13 @@ For enterprises that wish to deploy a firewall in any Cloud Service Provider (CS
  - **Simplicity** The Aviatrix Firewall Network significantly simplifies firewall deployment in the cloud while providing the maximum performance and scale. 
  - **Full Traffic Inspection** With FireNet, North South (on-prem and cloud), East West (VPC/VNet to VPC/VNet) and Internet bound egress traffic can be inspected by firewall instances.
  - **No IPsec Tunnels** There are no IPsec tunnels connecting to firewall instances as opposed to ECMP VPN deployment model, maximizing each firewall instance throughput.
- - **No SNAT** SNAT function is not required to be performed by firewall instances for east west traffic inspection as opposed to the ECMP VPN deployment model, resulting in instances in Spoke VPC/VNets having complete visibility of source traffic.
- - **No BGP** The Firewall does not need to run BGP. All routes programming is done by the Controller through Palo Alto APIs.
+ - **No SNAT** SNAT function is not required by firewall instances for east west traffic inspection as opposed to the ECMP VPN deployment model, resulting in instances in Spoke VPC/VNets having complete visibility of source traffic.
+ - **No BGP** The Firewall does not need to run BGP. All route programming is done by the Controller through Palo Alto APIs.
  - **Scale Out** Multiple firewall instances can be deployed as a group to meet the demand of increasing workload. 
 
  - **Policy Driven** Policy driven workflow allows you to customize which VPC/VNets traffic should be inspected. 
- - **Vendor Integration** Launch Palo Alto Networks VM-Series from the Aviatrix Controller console to simplify deployment. 
- - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when on-prem route changes or VPC/VNet attachment changes. 
+ - **Vendor Integration** Launch Palo Alto Networks VM-Series from the Aviatrix Controller to simplify deployment. 
+ - **Automation** The Aviatrix Controller automatically updates Palo Alto VM-Series route tables when the on-prem route changes or the VPC/VNet attachment changes. 
 
 Does FireNet support other firewalls?
 --------------------------------------------------------------
@@ -83,50 +83,67 @@ Yes. Aviatrix is a technology `partner of Palo Alto Networks. <https://www.paloa
 Does FireNet work with other firewall appliances?
 ----------------------------------------------------------------
 
-Yes. FireNet solution has been validated to work with `Checkpoint <https://docs.aviatrix.com/HowTos/config_Checkpoint.html>`_, 
+Yes. FireNet solution has been validated to work with `Check Point <https://docs.aviatrix.com/HowTos/config_Checkpoint.html>`_, 
 `FortiGate <https://docs.aviatrix.com/HowTos/config_FortiGate.html>`_ and `Barracuda CloudGen Firewall <https://docs.aviatrix.com/HowTos/config_Barracuda.html>`_. 
 
 
 How is Firewall Network different from Transit DMZ?
 --------------------------------------------------------------------
 
-Firewall Network is the new iteration from Transit DMZ. FireNet decouples the firewall deployment from the
+Firewall Network (FireNet) is the new iteration from Transit DMZ. FireNet decouples the firewall deployment from the
 path between on-prem and Aviatrix Transit VPC/VNet, yet provides the same traffic inspection functions and more 
 scale out capabilities. 
 
-How Does Aviatrix Security Domains work with FireNet?
+How Do Aviatrix Network Domains work with FireNet?
 -------------------------------------------------------------------------
 
-Aviatrix `Security Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-security-domain>`_ builds on the 
-AWS Transit Gateway (TGW) route domain concepts. It provides isolation and segmentation between VPC/VNets. With Aviatrix Security Domains, you can create a group of VPC/VNets with similar security requirements.
+Aviatrix `Network Domain <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-a-network-domain>`_ builds on the 
+<<<<<<< Updated upstream
+AWS Transit Gateway (TGW) route domain concepts. It provides isolation and segmentation between VPC/VNets. With Aviatrix Network Domains, you can create a group of VPC/VNets with similar security requirements.
+=======
+AWS Transit Gateway (TGW) route domain concepts. It provides isolation and segmentation between VPC/VNets. With Aviatrix network domains, you can create a group of VPC/VNets with similar security requirements.
+>>>>>>> Stashed changes
 
 There are situations where additional security measures such as packet inspection are required. That is, you need
-to deploy a firewall for certain VPC/VNets. FireNet provides the network solution that simplifies firewall deployment and scale. 
+to deploy a firewall for certain VPC/VNets. FireNet provides the network solution that simplifies the scaling and deployment of firewalls. 
 
- 1. Deploy the Aviatrix FireNet in a special Security Domain with a Firewall Domain attribute. 
- #. If a Security Domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC/VNet member in that Security Domain will first be forwarded to the Firewall for inspection. In other words, the connection policy specifies which domain (or a group of VPC/VNets) will be inspected by the firewall. See `Domain-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-domain-based-inspection>`_. 
+<<<<<<< Updated upstream
+ 1. Deploy the Aviatrix FireNet in a special Network Domain with a Firewall Domain attribute. 
+ #. If a network domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC/VNet member in that network domain will first be forwarded to the Firewall for inspection. This means the connection policy specifies which domain (or a group of VPC/VNets) will be inspected by the firewall. See `Domain-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-domain-based-inspection>`_. 
+=======
+ 1. Deploy the Aviatrix FireNet in a special network domain with a Firewall Domain attribute. 
+ #. If a network domain has a connection policy to the Firewall Domain, then traffic going in and out of each VPC/VNet member in that network domain will first be forwarded to the Firewall for inspection. In other words, the connection policy specifies which domain (or a group of VPC/VNets) will be inspected by the firewall. See `Domain-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-domain-based-inspection>`_. 
+>>>>>>> Stashed changes
  #. Alternatively, starting in Release 6.3 you can specify inspection based on pairs of Connection Policies. See `Connection-based inspection <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#b-connection-based-inspection>`_.  
 
 What are the use cases for FireNet?
 -----------------------------------------------------
 
 Example 1. VPC/VNet with PCI data
-##############################
+#################################
 
 If you have a VPC/VNet that deploys applications that host Personal Information or PCI data and your compliance requires
-packet inspection, you can create a Security Domain where this VPC/VNet is attached. Specify a connection policy for this 
-Security Domain to connect to the Firewall Domain. All packets to and from this VPC/VNet will be inspected. 
+<<<<<<< Updated upstream
+packet inspection, you can create a network domain where this VPC/VNet is attached. Specify a connection policy for this 
+network domain to connect to the Firewall Domain. All packets to and from this VPC/VNet will be inspected. 
+=======
+packet inspection, you can create a network domain where this VPC/VNet is attached. Specify a connection policy for this network domain to connect to the Firewall Domain. All packets to and from this VPC/VNet will be inspected. 
+>>>>>>> Stashed changes
 
 Example 2. Production VPC/VNets
-###########################
+###############################
 
-You may decide to inspect all traffic from the production data, which resides in multiple VPC/VNets. In this case you can create a Security Domain that all of these VPC/VNets are attached to. Then use connection policy to connect this 
+<<<<<<< Updated upstream
+You may decide to inspect all traffic from the production data, which resides in multiple VPC/VNets. In this case you can create a network domain that all of these VPC/VNets are attached to. Then use a connection policy to connect this 
+=======
+You may decide to inspect all traffic from the production data, which resides in multiple VPC/VNets. In this case you can create a network domain that all of these VPC/VNets are attached to. Then use connection policy to connect this 
+>>>>>>> Stashed changes
 domain to the firewall domain. 
 
 What are the limitations of FireNet?
 -------------------------------------------------
 
-You can have multiple Firewall Domains. However, a Security Domain cannot be connected to two 
+You can have multiple Firewall Domains. However, a network domain cannot be connected to two 
 Firewall Domains except the case when one is for Ingress/Egress and another is for East-West and North-South inspection.
 
 
@@ -141,7 +158,7 @@ to be capped at 1Gbps. When this architecture is deployed for VPC/VNet to VPC/VN
 further reducing its throughput to 500Mbps. What this implies is that each firewall instance can only operate at 400Mbps throughput. This is
 much lower than what firewall instances can do without an IPsec tunnel.
 
-Another problem is that for east west traffic inspection, the firewall instance must NAT the source address, otherwise the return traffic is not guaranteed to go through the same firewall instance. This is because ECMP 
+Another problem is that for east-west traffic inspection, the firewall instance must NAT the source address, otherwise the return traffic is not guaranteed to go through the same firewall instance. This is because ECMP 
 makes the independent decision of distributing the traffic of the firewall instances for each direction of
 the traffic.  
 
@@ -163,18 +180,17 @@ The private interfaces on FireNet Gateway are described as below.
 Can TGW send packets to both FireNet Gateways?
 -------------------------------------------------------------------
 
-Yes. Both primary and HA FireNet Gateways attach its eth1 ENI to TGW. When TGW forwards packets to the FireNet VPC/VNet, it
-applies AZ affinity in the best effort manner. That is, packets coming from a source VPC/VNet instance in AZ-a will be
+Yes. Both primary and HA FireNet Gateways attach their eth1 ENI to TGW. When TGW forwards packets to the FireNet VPC/VNet, it
+applies AZ affinity in the "best effort" manner. That is, packets coming from a source VPC/VNet instance in AZ-a will be
 forwarded to the gateway whose ENI is in AZ-a.
 
-For example, two FireNet gateways, gateway-1 and gateway-2, one has eth1 in AZ-a and the other is in AZ-b, respectively.
+For example, you have two FireNet gateways (gateway-1 and gateway-2), with one having eth1 in AZ-a and the other in AZ-b, respectively.
 In a healthy state, both gateways receive traffic from TGW. A Spoke VPC/VNet traffic from AZ-a will be forwarded to gateway-1
 eth1 ENI for processing. Spoke VPC/VNet traffic from AZ-b will be forwarded to gateway-2 for processing.
 
-
-When gateway-1 goes down, the Controller detects the failure, and then the Controller reprograms the default route entry
+When gateway-1 goes down, Aviatrix Controller detects the failure, and then reprograms the default route entry
 (0.0.0.0/0) of the route table that is associated with the gateway-1 eth1 subnet (with the name like -gw-tgw-ingress)
-to point to the ENI of eth1 of the gateway-2 (its subnet should have a name like -gw-hagw-tgw-ingress), thus redirecting all
+to point to the ENI of eth1 of the gateway-2 (its subnet should have a name like -gw-hagw-tgw-ingress). This redirects all
 AZ-a source traffic to the gateway in AZ-b.
 
 How does FireNet work?
@@ -226,7 +242,7 @@ By default, FireNet inspects all East-West (VPC/VNet to VPC/VNet) traffic but yo
 
 Go to Firewall Network > Advanced and put the CIDRs in the field **"Network List Excluded From East-West Inspection"** to exclude from being inspected by the firewall.
 
-**Note:**
+.. Note::
     1. Maximum 20 CIDRs coma-separated are supported.
     2. CIDRs are excluded from East-West inspections only.
     3. In AWS TGW FireNet, if Egress inspection is enabled, Egress traffic originated from an excluded CIDRs will be dropped. If excluded CIDRs needs to be inspected then use a separate FireNet for Egress Traffic and separate FireNet for East-West Traffic.
@@ -243,9 +259,9 @@ How do I test FireNet connectivity without deploying firewall instance?
 You can test connectivity without deploying any firewall instances. When the FireNet gateway has no firewall instance 
 attached to it for the data path, the FireNet gateway loops the received packet and forwards it to its destination.
 
-Follow the FireNet workflow to complete Steps 1, 2, 3, 4, 5, 6 and 8. 
+Follow the FireNet workflow to complete Steps 1-6 and Step 8. 
 
-If you have an instance in VPC/VNet/Domain and another instance in a different VPC/VNet/Domain, and you specify connection policy between the Domains and one Domain to connect to the Firewall Domain, then you should be able to ping the 
+If you have an instance in VPC/VNet/Domain and another instance in a different VPC/VNet/Domain, and you specify a connection policy between the Domains, and one Domain to connect to the Firewall Domain, then you should be able to ping the 
 two instances. 
 
 What is the maximum performance FireNet can achieve?
@@ -265,7 +281,7 @@ Yes, please refer to the `Firewall Network Design Patterns. <https://docs.aviatr
 Can VM-Series be launched with Bootstrap integration?
 ----------------------------------------------------------------------
 
-Yes. When you launch a VM-Series from Aviatrix Controller console, you can select the option to launch the VM-Series instance with `bootstrap information <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#example-configuration-for-bootstrap>`_.
+Yes. When you launch a VM-Series from Aviatrix Controller, you can select the option to launch the VM-Series instance with `bootstrap information <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#example-configuration-for-bootstrap>`_.
 
 Can Firewall Network work with Panorama?
 ------------------------------------------------------------
@@ -283,9 +299,9 @@ Why does the primary gateway send packets to backup gateway instead of sending t
 If the firewall instance is in the same AZ and on the same subnet with the primary gateway, packets are forwarded
 directly from the gateway to the firewall instance. 
 
-However, if the firewall instance is in the different AZ and subnet, forwarding packets directly to the firewall instance
-requires AWS route table to be programmed with target as the firewall instance, and as a result, there cannot be more
-than one firewall instance in the different AZ, thus losing the scale out capability. 
+However, if the firewall instance is in a different AZ and subnet, forwarding packets directly to the firewall instance
+requires the AWS route table to be programmed with the target as the firewall instance, and as a result, there cannot be more
+than one firewall instance in the different AZ (thus losing the scale out capability). 
 
 Does Aviatrix Controller communicate with Palo Alto Panorama to its private IP address?
 ---------------------------------------------------------------------------------------------------------------
@@ -307,18 +323,18 @@ Aviatrix FireNet Security Groups
 
 On firewall LAN interface.
 
-Eth2 on PAN; or Eth1 on Fortigate and Checkpoint. This interface accepts all data traffic to be inspected or going to the Internet (if egress is enabled). The traffic originates from an internal instance, which is destinated to another internal instance or the Internet. Therefore, it is OK to limit this SG to RFC1918 only. But if there are non-RFC1918 CIDR’s inside your network, those may not work.
+Eth2 on PAN; or Eth1 on FortiGate and Check Point. This interface accepts all data traffic to be inspected or that is going to the Internet (if egress is enabled). The traffic originates from an internal instance, which is destined for another internal instance or the Internet. Therefore, it is fine to limit this SG to RFC1918 only. But if there are non-RFC1918 CIDR’s inside your network, those may not work.
 
 
-On a FireNet gateway, there are 4 interfaces.
+On a FireNet gateway, there are four interfaces.
 
-Eth0: this interface is used for all Internet traffic (DNS, NTP, etc), communication with the Controller (TCP, SSH, etc), encrypted tunnels, etc. This interface is under the Aviatrix Controller’s control, it’s SG is already limited to the minimum. User should NOT change it. Even if user changes it, the Aviatrix Controller will always try to change back.
+Eth0: this interface is used for all Internet traffic (DNS, NTP, etc), communication with the Aviatrix Controller (TCP, SSH, etc), encrypted tunnels, etc. This interface is under the Aviatrix Controller’s control; its SG is already limited to the minimum and should not be changed. The Aviatrix Controller will always try to change it back.
 
-Eth1: this interface is used to send/receive traffic to AWS TGW. It accepts data traffic from TGW, so it is OK to limit SG to RFC1918 only.
+Eth1: this interface is used to send/receive traffic to AWS TGW. It accepts data traffic from TGW, so it is fine to limit SG to RFC1918 only.
 
-Eth2: this interface is used to send/receive traffic to firewalls (through firewall’s LAN interface), so it expects traffic originated from both internal and external. It might be OK to limit to RFC1918 since AWS SG is stateful.
+Eth2: this interface is used to send/receive traffic to firewalls (through firewall’s LAN interface), so it expects traffic originated from both internal and external. It is possible to limit to RFC1918 since AWS SG is stateful.
 
-Eth3: this interface is used to exchange traffic between primary and backup gateway, this is part of our uniform hashing algorithm. Like eth2, it expects traffic originated from both internal and external. It might be OK to limit to RFC1918, since AWS SG is stateful.
+Eth3: this interface is used to exchange traffic between the primary and backup gateway; this is part of our uniform hashing algorithm. Like eth2, it expects traffic originated from both internal and external. It it possible to limit to RFC1918, since AWS SG is stateful.
 
 What are the integration points with Fortinet firewall?
 ---------------------------------------------------------------------
@@ -326,30 +342,34 @@ What are the integration points with Fortinet firewall?
  1. Managing Life Cycle of Fortinet firewall instances
 
     a. Aviatrix Controller launches and deletes Fortinet firewall instances. 
-    #. Supports `Fortinet Bootstrap mechanism <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_ to simplifying firewall instance launching and preload any firewall configurations.
+    #. Supports `Fortinet Bootstrap mechanism <https://docs.aviatrix.com/HowTos/fortigate_bootstrap_example.html>`_ to simplify firewall instance launching and preload any firewall configurations.
 
  2. Managing Fortinet firewall instances pool
 
-    a. The Aviatrix Controller monitors individual firewall health by periodically pining the LAN interface of each firewall instances. Ping period is every 5 second with a 20ms ping time out. The failure detection is maximum 5 seconds and 40ms. The Aviatrix Controller automatically detaches a unhealthy firewall instance. When the firewall instance is reachable again, it automatically attaches it back to the pool. 
-    #. You can initiate a new firewall instance to be launched and attached to pool at any given time. 
+    a. The Aviatrix Controller monitors individual firewall health by periodically pining the LAN interface of each firewall instances. Ping period is every 5 seconds with a 20ms ping time out. The failure detection is a maximum 5 seconds and 40ms. The Aviatrix Controller automatically detaches an unhealthy firewall instance. When the firewall instance is reachable again, it automatically attaches it back to the pool. 
+    #. You can initiate a new firewall instance to be launched and attached to the pool at any given time. 
     #. You can initiate to remove a firewall instance from the pool at any given time.
 
  3. Static Route Configuration
 
-    Currently there is no API integration to automatically populate Fortinet route table entries. Customer needs to configure these entries. We recommend configuring the 3 RFC 1918 routes to point to the firewall LAN interface. For FireNet deployment, the RFC 1918 routes should point to the LAN interface subnet cloud provider's default gateways. For Transit FireNet deployment, the RFC 1918 routes should point to the FireNet Gateway LAN interface IP, as shown in this `example. <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#configure-fortigate-next-generation-firewall-port1-with-wan>`_.  
+    Currently there is no API integration to automatically populate Fortinet route table entries. You must configure these entries. Aviatrix recommends configuring the three RFC 1918 routes to point to the firewall LAN interface. For FireNet deployment, the RFC 1918 routes should point to the LAN interface subnet cloud provider's default gateways. For Transit FireNet deployment, the RFC 1918 routes should point to the FireNet Gateway LAN interface IP, as shown in this `example. <https://docs.aviatrix.com/HowTos/config_FortiGateVM.html#configure-fortigate-next-generation-firewall-port1-with-wan>`_.  
     
 
 What is Intra Domain inspection?
 ---------------------------------
 
-Intra Domain inspection allows traffic between VPC/VNets in the same Security Domain to be redirected to Firewall Domain for inspection before reaching to the destination.
+<<<<<<< Updated upstream
+Intra Domain inspection allows traffic between VPC/VNets in the same network domain to be redirected to the Firewall Domain for inspection before reaching the destination.
+=======
+Intra Domain inspection allows traffic between VPC/VNets in the same network domain to be redirected to Firewall Domain for inspection before reaching to the destination.
+>>>>>>> Stashed changes
 
 
 How to migrate from FireNet to FireNet with AWS GWLB or vice versa?
 ---------------------------------------------------------------------------------
 
-Starting from Release 6.3, Multi-Cloud Transit FireNet  added support for AWS Gateway Load Balancer (GWLB). The key
-advantage of this integration is to allow firewalls to be scaled up and down without affecting established sessions
+Starting in Release 6.3, Multi-Cloud Transit FireNet added support for AWS Gateway Load Balancer (GWLB). The key
+advantage of this integration allows firewalls to be scaled up and down without affecting established sessions
 (except sessions associated with the failed firewalls).
 
     1. Save firewall configuration.
@@ -360,7 +380,7 @@ advantage of this integration is to allow firewalls to be scaled up and down wit
     #. Launch and associate firewall > Go to Aviatrix Controller > Firewall Network > Step 7a.
     #. Restore firewall configuration.
 
-Can we migrate from FireNet solution to Native FireNet with GWLB solution ?
+Can I migrate from FireNet solution to Native FireNet with GWLB solution ?
 ----------------------------------------------------------------------------------------------------------------
 
 Native FireNet refers to a deployment scenario where Aviatrix FireNet gateways are not deployed. 
