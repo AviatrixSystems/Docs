@@ -1,6 +1,6 @@
 .. meta::
   :description: Aviatrix CoPilot FAQs
-  :keywords: CoPilot,visibility
+  :keywords: CoPilot,visibility,faq
 
 
 ============================================================
