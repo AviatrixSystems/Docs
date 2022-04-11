@@ -10,6 +10,23 @@ Please note the below Aviatrix Security recommendations and communication plans:
 - All known software vulerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 - Avitrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
+21. Post-Auth Remote Code Execution
+----------------------------------------
+
+**Date** 04/11/2022
+
+**Risk Rating** High
+
+**Description** TLDAP APIs contain functions that are inappropriately sanitized, and would allow an authenticated malicious user to inject arbitrary commands.
+
+**Impact** A local user to the controller UI could execute arbitrary code.
+
+**Affected Products** Aviatrix Controller.
+
+**Solution: Upgrade your controller and gateway software to:** 
+  - 6.4.3049
+  - 6.5.3166
+  - 6.6.5545
 
 20. Aviatrix Controller and Gateways - Privilege Escalation
 ----------------------------------------
