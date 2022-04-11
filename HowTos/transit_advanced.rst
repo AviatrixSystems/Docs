@@ -9,7 +9,7 @@ Transit Advanced Config
 
 .. Note::
 
- The advanced configuration applies to each Aviatrix Transit Gateway. To edit a Transit Gateway's advanced configuration, go to Multi-Cloud Transit > Advanced Config. 
+ The advanced configuration applies to each Aviatrix Transit Gateway. To edit a Transit Gateway's advanced configuration, go to **Multi-Cloud Transit > Advanced Config** in the left sidebar. 
 
 Transit Gateway
 ---------------------------------------
@@ -19,7 +19,7 @@ To edit the advanced configuration for any Transit Gateway, click on this dropdo
 Local AS Number
 ------------------------
 
-This option changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations. 
+This option changes the Aviatrix Transit Gateway ASN number before you set up Aviatrix Transit Gateway connection configurations. 
 
 Connected Transit
 ------------------------
@@ -33,14 +33,15 @@ If you would like to build a full mesh network where Spoke VPCs/VNets communicat
 
   For a Spoke VPC/VNet in a multi-cloud transit to communicate with a Spoke VPC in TGW Orchestrator, connected Transit must be enabled on the Aviatrix Transit Gateway that connects both sides.
 
-For software version 4.1 and later, click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Gateway tab. Select the Transit Gateway for which you want to enable the Connected Transit.
+For software version 4.1 and later, click **Multi-Cloud Transit** on the left sidebar, and then click the **Advanced Config > Edit Transit** tab. Select the Transit Gateway for which you want to enable the Connected Transit, and then enable **Connected Transit**.
 
-Note all Spokes should be either in HA mode or non HA mode. A mixed deployment where some Spokes have 
-HA enabled while others don't work in a normal environment, but does not work
-when a failover happens on a HA enabled Spoke. 
+.. Note::
+
+	Note all Spokes should be either in HA mode or non HA mode. A mixed deployment where some Spokes have 
+HA enabled while others do not works in a normal environment, but does not work when a failover happens on an HA enabled Spoke. 
 
 Advertise Transit VPC/VNet Network CIDR(s)
---------------------------------------
+------------------------------------------
 
 This field is only applicable to Transit GW established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
 
@@ -51,9 +52,9 @@ When this feature is enabled, Aviatrix Transit GW advertises the Transit VPC/VNe
 If you deploy instances in the Transit VPC/VNet, enabling "Advertise Transit VPC CIDR(s) mode allows the instance to communicate both to Spoke VPCs and the on-prem network, assuming the Spoke VPCs are in the RFC1918 range. 
 
 To enable this option in software version prior to 4.1, click Site2Cloud on the left navigation bar, select the connection established by `Step 3 <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, click to edit.
-Scroll down to Advertise Transit VPC Network CIDR(s) to enable.
+Scroll down to Advertise Transit VPC Network CIDR(s) and enable.
 
-For software version 4.1 and later, click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Gateway tab. Select the Transit Gateway you want and scroll down to enable the Advertise Transit VPC Network CIDR(s) option. 
+For software version 4.1 and later, click **Multi-Cloud Transit** on the left sidebar, then click **Advanced Config > Edit Transit**. Select the Transit Gateway you want and scroll down to enable the **Advertise Transit VPC Network CIDR(s)** option. 
 
 BGP ECMP
 ----------------
@@ -91,7 +92,7 @@ The use case is a deployment scenario where on-prem device such as firewall does
 
 This feature can only be applied to non-HA remote devices in the `External Device section <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#external-device>`_.
 
-Click Active-Standby mode to set it to **Enabled**. 
+Click the toggle switch to enable Active-Standby mode. 
 
 Preemptive or Non-Preemptive Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -129,7 +130,7 @@ This feature is critical to limit the total number of routes carried by VGW (max
 To enable this option in software version prior to 4.1, on the left sidebar, select the connection established by `this step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#connect-the-transit-gw-to-aws-vgw>`_, and click to edit.
 Scroll down to Manual BGP Advertised Network List to set it to **Enabled**.
 
-For software version 4.1 and later, click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Gateway tab. Select the Transit Gateway you want to enable this feature on, scroll down to the Manual BGP Advertised Network List, and enter the summarized CIDRs that you want to advertise.
+For software version 4.1 and later, click Multi-Cloud Transit on the left sidebar > Advanced Config > Edit Gateway tab. Select the Transit Gateway you want to enable this feature on, scroll down to the Connection Manual BGP Advertised Network List, and enter the summarized CIDRs that you want to advertise.
 
 To disable the option, leave the field blank and click **Change**.
 
@@ -179,17 +180,22 @@ The Aviatrix Transit Gateway hold time is bound to the Aviatrix keep alive messa
 Refresh BGP Advertised Routes
 ---------------------------------------
 
-This option reset BGP connection to the remote BGP peers. 
+This option resets the BGP connection to the remote BGP peers. 
 
+<<<<<<< Updated upstream
+Use this option to enable new features such as Segmentation based BGP CIDR Advertisements, where on-prem receives BGP advertisement
+for networks on-prem that have a connection policy or are in the same network domain. <<need someone to review this>>
+=======
 Use this option to enable new features such as Segmentation based BGP CIDR Advertisements where on-prem receives BGP advertisement
-for networks on-prem has connection policy or in the same Security Domain. 
+for networks on-prem has connection policy or in the same network domain. 
+>>>>>>> Stashed changes
 
 AWS TGW Edge Segmentation
 ---------------------------------------
 
 Refer to `TGW Edge Segmentation <https://docs.aviatrix.com/HowTos/tgw_faq.html#what-is-edge-segmentation>`_ for details. 
 
-TGW Edge Segmentation can be enabled at given time. Select a connection to enable or disable. 
+TGW Edge Segmentation can be enabled for TGW Orchestrator deployed Spoke VPCs. Select a connection to enable or disable. 
 
 Summarize CIDR(s) to AWS TGW
 ------------------------------------------

@@ -247,7 +247,7 @@ Step 3.4. Deploy Spoke VPC through AWS TGW Orchestrator
 - Follow Aviatrix TGW Orchestrator workflow `TGW Plan <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_ to:
 	
 #. Create AWS TGW.
-#. Create a New Security Domain and Build Your Domain Connection Policies.
+#. Create a New network domain and Build Your Domain Connection Policies.
 #. Prepare Aviatrix Transit GW for TGW Attachment.
 # Attach Aviatrix Transit GW to TGW.
 #. Follow Aviatrix TGW Orchestrator workflow `TGW Build <https://docs.aviatrix.com/HowTos/tgw_build.html>`_ to Attach VPC to TGW.

@@ -18,11 +18,11 @@ The objectives here are:
  - No change to existing VPC infrastructure.
  - Minimum operation downtime.
 
-Prior to migration, you may plan on the `security domains <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_ and their `connection policy <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. If you are not sure and is in need to transition, you can add or modify the security domains at any time later.
+Prior to migration, you may plan on creating the `network domains <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-network-domain>`_ and their `connection policies <https://docs.aviatrix.com/HowTos/tgw_plan.html#build-your-domain-connection-policies>`_. If you do not want to create the network domains right away, you can add or modify the network domains at any time.
 
 1. **Create AWS Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-aws-tgw>`_ in TGW Orchestrator > Plan page.
 
-2. **Create Security Domains** If you have plans for custom security domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-security-domain>`_ to create them. If you do not intend to build custom security domains, skip this step.
+2. **Create Network Domains** If you have plans for custom network domains, follow `Step 2 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-create-a-new-network-domain>`_ to create them. If you do not intend to build custom network domains, skip this step.
 
 3. **Add/modify connection policies** Follow `Step 3 <https://docs.aviatrix.com/HowTos/tgw_plan.html#optional-build-your-domain-connection-policies>`_ to build connection policies.
 
@@ -34,7 +34,7 @@ Prior to migration, you may plan on the `security domains <https://docs.aviatrix
 
 7. **Delete Spoke GW** Go to Gateway on the main navigation tab, select the Spoke gateway and click Delete. If you have HA gateway, you will need to delete it first before the primary Spoke gateway.
 
-8. **Attach Spoke VPC to Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ to attach a VPC to the corresponding security domain. 
+8. **Attach Spoke VPC to Transit Gateway** Follow `Step 1 <https://docs.aviatrix.com/HowTos/tgw_build.html#attach-vpc-to-tgw>`_ to attach a VPC to the corresponding network domain. 
 
 9. Repeat the above step 6-8 for the remaining Spoke gateways. 
 
