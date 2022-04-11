@@ -7,7 +7,7 @@
 Example Config for Check Point VM in AWS 
 =========================================================
 
-In this document, we provide an example to set up the Check Point Security Gateway instance for you to validate that packets are indeed sent to the Check Point Security Gateway for VPC to VPC and from VPC to internet traffic inspection.
+In this document, we provide an example to set up the Check Point Security Gateway instance for you to validate that packets are indeed sent to the Check Point Security Gateway for VPC-to-VPC and from VPC to internet traffic inspection.
 
 .. note::
     Firewall and Security Gateway word will be used interchangeably in this document. Both refers to Check Point Security Gateway product.
@@ -15,13 +15,13 @@ In this document, we provide an example to set up the Check Point Security Gatew
 Prerequisites
 ----------------
 
-Before you start, make sure you meet the basic requirement:
+Before you start, make sure you meet the basic requirements:
 
     - Basic Check Point Architecture Understanding
     - Check Point CloudGuard IaaS product is subscribed in AWS Marketplace
 
 
-The following CheckPoint AMIs and software versions are supported.
+The following Check Point AMIs and software versions are supported.
 
 ==========================================================================             ==========
 **Supported AMI Name**                                                                 **Software Version**
@@ -35,16 +35,16 @@ Basic Check Point architecture is shown below:
 
 |cp_arch_reference|
 
-In this document, we provide an example to set up the CheckPoint Firewall instance for you to validate that packets are indeed sent to the CheckPoint Firewall for VPC to VPC and from VPC to internet traffic inspection.
+In this document, we provide an example to set up the Check Point Firewall instance for you to validate that packets are indeed sent to the Check Point Firewall for VPC-to-VPC and from VPC to internet traffic inspection.
 
-The Aviatrix Firewall Network (FireNet) workflow launches a CheckPoint Firewall instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. 
+The Aviatrix Firewall Network (FireNet) workflow launches a Check Point Firewall instance at `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_. 
 
-After the launch is complete, the console displays the CheckPoint Firewall instance with its public IP address of management/egress interface for you to login to the console.
+After the launch is complete, the console displays the Check Point Firewall instance with its public IP address of management/egress interface for you to log in to the console.
 
 Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
 .. note::
-    Firewall Image other then CheckPoint CloudGuard IaaS All-In-One requires a Check Point Security Management to manage firewall polices. See CheckPoint Azure Example for more information.
+    Firewall Image other then Check Point CloudGuard IaaS All-In-One requires a Check Point Security Management to manage firewall polices. See the `Check Point Azure Example <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html>`_ for more information.
 
 
 ==========================================      ==========
@@ -53,17 +53,17 @@ Here is the Firewall information in this example for your reference. Please adju
 Firewall Image                                  Check Point CloudGuard IaaS All-In-One R80.40
 Firewall Image Version                          R80.40-294.581
 Firewall Instance Size                          m5.large
-Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress".
+Egress Interface Subnet                         Select the subnet whose name contains "FW-ingress-egress."
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
 Attach                                          Check
 ==========================================      ==========
 
 .. note::
 
-  CheckPoint Firewall instance has 2 interfaces as described below. Additionally, firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
+  Check Point Firewall instance has 2 interfaces as described below. Additionally, firewall instance eth1 is on the same subnet as FireNet Gateway eth2 interface.
 
 ========================================================         ===============================          ================================
-**CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
+**Check Point VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
 ========================================================         ===============================          ================================
 eth0 (on subnet -Public-FW-ingress-egress-AZ-a)                  Egress or Untrusted interface            Allow ALL 
 eth1 (on subnet -dmz-firewall)                                   LAN or Trusted interface                 Allow ALL (Do not change)
@@ -71,23 +71,23 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Below are the steps for initial setup.
 
-1. Download CheckPoint Firewall Access Key
-----------------------------------------------
+Downloading Check Point Firewall Access Key
+-------------------------------------------------------
 
-After `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ is completed, you'll see the Download button as shown below. Click the button to download the .pem file.
+After `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_ in the FireNet workflow is completed, click **Download** to download the .pem file.
 
-If you get a download error, usually it means the CheckPoint Firewall instance is not ready. Wait until it is ready, refresh the browser and then try again.
+If you get a download error, usually it means the Check Point Firewall instance is not ready. Wait until it is ready, refresh the browser and then try again.
 
 |v2_avx_pem_file_download|
 
-2. Setup CheckPoint Gateway (Firewall) SSH login using Password
----------------------------------------------------------------------------
+Setting up Check Point Gateway (Firewall) SSH login Using Password
+-----------------------------------------------------------------------------------
 
 For Metered AMI, open a terminal and run the following command.
 
 .. tip ::
 
-  Once you download the .pem file, change the file permission to 600. It usually takes 5 to 10 minutes for the Check Point Gateway to be ready. Once SSH into the Check Point Gateway using the proper keys and the user “admin”, only few commands will be required to enable ssh for user "admin".
+  Once you download the .pem file, change the file permission to 600. It usually takes 5 to 10 minutes for the Check Point Gateway to be ready. Once SSH into the Check Point Gateway using the proper keys and the user “admin,” only few commands will be required to enable ssh for user "admin."
 
 ::
 
@@ -110,92 +110,92 @@ For Metered AMI, open a terminal and run the following command.
 
 Terminate the SSH session.
 
-3. Login to CheckPoint Firewall Gaia Portal
-----------------------------------------------
+Logging in to the Check Point Firewall Gaia Portal
+-------------------------------------------------------------
 
-After launch is completed, go back to the Controller, Firewall Network -> Setup -> `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_ and  Click on the `Management UI` as shown below.
+After launch is completed, go back to the Controller, Firewall Network > Setup > `Step 2a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_ and click on the Management UI as shown below.
 
 |v2_avx_management_UI|
 
-The URL takes you to the CheckPoint Firewall Gaia Portal you just launched.
+The URL takes you to the Check Point Firewall Gaia Portal you just launched.
 
 |v2_cp_login_UI|
 
 .. note::
 
 
-  For initial Checkpoint login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
+  For initial Check Point login information, go to `Credentials for Check Point Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
-Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com. 
+Starting from Release 5.4, launching Check Point firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Check Point Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com. 
 
 
-4. Initialize and Login CheckPoint Firewall via Gaia Portal
--------------------------------------------------------------
+Initializing and Logging in to the Check Point Firewall via Gaia Portal
+--------------------------------------------------------------------------------------
 
 First time login shows the **"Check Point First Time Configuration Wizard"** screen as shown below.
 
 |v2_CheckPoint_Gaia_Portal_Wizard_01|
 
-Click **"Next"**, **"Next"** and continue until the **"Finish"** button, no need to configure anything in the configuration wizard.
+Click **Next**, **Next** and continue until the **Finish** button, no need to configure anything in the configuration wizard.
 
 |v2_CheckPoint_Gaia_Portal_Wizard_02|
 
 |v2_CheckPoint_Gaia_Portal_Wizard_12|
 
 .. important::
-    Aviatrix Controller automatically configures the Checkpoint interfaces and RFC1918 static routes which is required for FireNet feature, so, initialize wizard configurations are no longer required but we need to click Next on each window to initialize the firewall properly.
+    Aviatrix Controller automatically configures the Check Point interfaces and RFC1918 static routes which is required for FireNet feature, so, initialize wizard configurations are no longer required but we need to click **Next** on each window to initialize the firewall properly.
 
-After the initialization is completed, users will be navigated to the CheckPoint Firewall Gaia Portal Overview page as below.
+After the initialization is completed, users will be navigated to the Check Point Firewall Gaia Portal Overview page as below.
 
 |v2_CheckPoint_Gaia_Portal_Overview|
 
-Go to the page “Network Management -> Network Interfaces” to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
+Go to the page Network Management > Network Interfaces to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
 
 |cp_firewall_interfaces_aws|
 
 Review static routes RFC 1918 which is configured on LAN port, the purpose of those static route is to send the packets back to the Gateway (GW).
 
-Those static routes could be reviewed on the page “Network Management -> IPv4 Static Routes”
+Those static routes could be reviewed on the page Network Management -> IPv4 Static Routes.
 
 |cp_firewall_static_routes_aws|
 
-Routes can also be reviewed by clicking the button “Monitoring” on the page “Network Management -> IPv4 Static Routes”
+Routes can also be reviewed by clicking **Monitoring** on the page Network Management > IPv4 Static Routes.
 
 |cp_firewall_routes_monitoring_aws|
 
-5. (Optional) Firewall Vendor Integration
--------------------------------------------
+(Optional) Firewall Vendor Integration
+-----------------------------------------------
 
-Go to Aviatrix Controller –> Firewall Network –> Vendor Integration and complete the step as shown below:
+Go to Aviatrix Controller > Firewall Network > Vendor Integration and complete the step as shown below:
 
 |v2_vendor_integration_AWS|
 
 Click **Save**, **Show** and **Sync** respectively.
 
-This automatically set up  the non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case CheckPoint. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
+This automatically set up  the non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case Check Point. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
 
 
-6. Download and Install the SmartConsole
--------------------------------------------------
+Downloading and Installing the SmartConsole
+--------------------------------------------------------
 
 .. important::
     Check Point Single Gateway 'All-In-One' image is used in this example which do not require Check Point Security Manager. All other Gateway images require Check Point Security Manager. If you are not using 'All-In-One' image then skip this step and follow the `Step 4 & Step 5 <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#download-and-install-the-smartconsole>`_ in a given link.
 
 
-6.1 Download Check Point SmartConsole
+Downloading the Check Point SmartConsole
 ****************************************
 
-Login to the Check Point Gateway and download the SmartConsole with version R80.40 on Windows-based computer
+Log in to the Check Point Gateway and download the SmartConsole with version R80.40 on Windows-based computer.
 
-  Option 1: click on the button "Download Now!" with message "Manage Software Blades using SmartConsole" on the Overview page as below. 
+  Option 1: click **Download Now!** with the message "Manage Software Blades using SmartConsole" on the Overview page as shown below. 
 
 |v2_CheckPoint_Gaia_Portal_SmartConsole_DL|
 
-  Option 2: download it by using this link `R80.40 <https://supportcenter.checkpoint.com/supportcenter/portal?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=101086>`_
+  Option 2: download it by using this link `R80.40 <https://supportcenter.checkpoint.com/supportcenter/portal?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=101086>`_.
 
 
-6.2 Install and Login SmartConsole
+Installing and Logging into the SmartConsole
 ****************************************
 
 Install the SmartConsole and login into it with the Gaia Portal username, password and IP Address of Check Point Gateway.
@@ -206,29 +206,29 @@ Install the SmartConsole and login into it with the Gaia Portal username, passwo
 
 Moreover, execute the function "Get Interfaces With Topology" to sync up the settings that we have configured via Gaia Portal.
 
-- Click on the link "GATEWAYS&SERVERS" on the left side
-- Double click on the CheckPoint Firewall
-- Click on the link "Network Management" on left side
-- Click on the button "Get Interfaces.." to expand options
-- Click on the button "Get Interfaces With Topology"
-- Click on the button "Yes"
-- Review the "Get Topology Results" which should match to the settings that we have configured via Gaia Portal
-- Click on the button "Accept"
+1. Select **Gateways & Servers** on the left.
+2. Double-click on the Check Point Firewall.
+3. Select **Network Management** on left.
+4. Click **Get Interfaces** to expand options.
+5. Click **Get Interfaces With Topology**.
+6. Click **Yes**.
+7. Review the Get Topology Results which should match to the settings that we have configured via Gaia Portal.
+8. Click **Accept**.
 
 |v2_CheckPoint_SmartConsole_syncup_01|
 
 |v2_CheckPoint_SmartConsole_syncup_02|
 
-Go to the page "SECURITY POLICIES -> Access Control -> Policy" and click on the button "Install Policy" and then "Install" to commit the settings.
+Go to Security Policies > Access Control > Policy and click **Install Policy** and then **Install** to commit the settings.
 
 |install_policy_aws|
 
-7. Configure basic traffic policy to allow traffic VPC to VPC
-------------------------------------------------------------------
+Configuring the Basic Traffic Policy to Allow Traffic VPC-to-VPC
+--------------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the firewall.
 
-From the page "SECURITY POLICIES -> Access Control -> Policy", configure a policy by either modifying the default "Cleanup rule" or Add a new rule above the default rule.
+From Security Policies > Access Control > Policy, configure a policy by either modifying the default Cleanup rule or Add a new rule above the default rule.
 
 =======================   ===============================================
 **Field**                 **Value**
@@ -244,36 +244,39 @@ Track                     Log
 
 |v2_CheckPoint_policy_vpc_to_vpc|
 
-Click on the button "Install Policy" and then "Install" to commit the settings.
+Click **Install Policy** and then **Install** to commit the settings.
 
 |v2_CheckPoint_policy_vpc_to_vpc_install|
 
-8. [Optional] Configure basic traffic policy to allow traffic VPC to Internet
-----------------------------------------------------------------------------------
+[Optional] Configuring the Basic Traffic Policy to Allow Traffic VPC to Internet
+-----------------------------------------------------------------------------------------------
 
-In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall. Given that Aviatrix gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
+In this step, we will configure a basic traffic security policy that allows Internet traffic to pass through the firewall. Given that Aviatrix Gateways will only forward traffic from the TGW to the LAN port of the Firewall, we can simply set our policy condition to match any packet that is going in of LAN interface and going out of WAN interface.
 
 .. important::
-  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet
+  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet.
 
-First of all, go back to the Aviatrix Controller Console. Navigate to the page "Firewall Network -> Advanced". Click the skewer/three dot button. Scroll down to “Egress through Firewall” and click "Enable" button. Verify the Egress status on the page "Firewall Network -> Advanced".
+1. First, go back to the Aviatrix Controller. Navigate to Firewall Network > Advanced. 
+2. Click the skewer/three dot button. 
+3. Scroll down to Egress through Firewall and click **Enable** button. 
+4. Verify the Egress status on the page Firewall Network > Advanced.
 
 |cp_egress_inspection_aws|
 
-Secondly, go back to the CheckPoint Firewall SmartConsole. Navigate to the page "GATEWAYS&SERVERS" and then double-click on the gateway itself to enable NAT function as the following screenshot.
+Second, go back to the Check Point Firewall SmartConsole. Navigate to the page "Gateways & Servers" and then double-click on the gateway itself to enable NAT function as the following screenshot.
 
-- Click on the button "NAT"
-- Enable the checkbox "Hide internal networks behind the Gateway's external IP"
-- Click the button "OK"
-- Click the button "Install Policy"
+5. Click **NAT**.
+6. Mark the **Hide internal networks behind the Gateway's external IP** checkbox.
+7. Click **OK**.
+8. Click **Install Policy**.
 
 |v2_CheckPoint_policy_vpc_to_internet_nat_enabled|
 
 .. important::
 
-  NAT function needs to be enabled on the CheckPoint FW interface eth0 for this VPC to Internet policy. Please refer to `Check Point's NAT instruction <https://sc1.checkpoint.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for detail.
+  NAT function needs to be enabled on the Check Point FW interface eth0 for this VPC to Internet policy. Please refer to `Check Point's NAT instruction <https://sc1.checkpoint.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for detail.
 
-**[Optional]** If you have default "Cleanup rule", then navigate to the page "SECURITY POLICIES -> Access Control -> Policy" and inject a new rule for Internet Policy on top of the default "Cleanup rule".
+**[Optional]** If you have default "Cleanup rule", then navigate to Security Policies > Access Control > Policy and inject a new rule for Internet Policy on top of the default Cleanup rule.
 
 =======================   ===============================================
 **Field**                 **Value**
@@ -287,25 +290,25 @@ Action                    Accept
 Track                     Log
 =======================   ===============================================
 
-Click on the button "Install Policy" and then "Install" to commit the settings.
+Click **Install Policy** and then **Install** to commit the settings.
 
 |cp_policy_vpc_to_internet_aws|
 
 After validating that your traffic is being routed through your firewall instances, you can customize the security policy to tailor to your requirements.
 
-9. Ready to go!
-----------------
+Ready to Go
+--------------------
 
-Now your firewall instance is configured and ready to receive packets!
+Now your firewall instance is configured and ready to receive packets.
 
 Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
-10. View Traffic Log
-----------------------
+Viewing Traffic Log
+------------------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the CheckPoint Firewall SmartConsole. Go to the page "LOGS & MONITOR". 
+You can view if traffic is forwarded to the firewall instance by logging in to the Check Point Firewall SmartConsole. Go to the Logs & Monitor page.
 
-For VPC to VPC traffic:
+For VPC-to-VPC traffic:
 ***********************
 
 Launch one instance in PROD Spoke VPC and DEV Spoke VPC. Start ping packets from a instance in DEV Spoke VPC to the private IP of another instance in PROD Spoke VPC. The ICMP traffic should go through the firewall and be inspected in firewall.
@@ -394,4 +397,5 @@ Launch a private instance in the Spoke VPC (i.e. PROD Spoke VPC) and start ping 
    :scale: 30%
 .. |v2_CheckPoint_view_traffic_log_vpc_to_internet| image:: config_Checkpoint_media/v2_CheckPoint_view_traffic_log_vpc_to_internet.png
    :scale: 30%
+
 .. disqus::
