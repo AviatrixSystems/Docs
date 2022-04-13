@@ -1427,7 +1427,7 @@ Custom Slack Webhook example (slack document: https://app.slack.com/block-kit-bu
 
 **Webhook Example**
 
-|webhook_image|
+|webhookImage|
 
 
 Example: PagerDuty Webhook Payload URL
@@ -1622,6 +1622,9 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 
 ..  |time_control_image| image:: copilot_reference_guide_media/topology_replay_time_preview.png
     :width: 200
+
+..  |webhookImage| image:: copilot_reference_guide_media/webhookImage.png
+    :scale: 70%
 
 ..  |notifs_pager_create_app| image:: copilot_reference_guide_media/notifs_pager_create_app.png
     :scale: 70%
