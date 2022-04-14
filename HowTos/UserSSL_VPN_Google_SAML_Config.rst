@@ -10,15 +10,15 @@ OpenVPN® with SAML Authentication on Google IDP
 ==============================================================================
 
 Overview
-------------
+-------------------
 
-This guide provides an example on how to configure Aviatrix to authenticate against a Google IDP.  When SAML client is used, your Aviatrix controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Google) for authentication.
+This guide provides an example on how to configure Aviatrix to authenticate against a Google IDP. When SAML client is used, your Aviatrix Controller acts as the Identity Service Provider (ISP) that redirects browser traffic from client to IDP (e.g., Google) for authentication.
 
 Pre-Deployment Checklist
------------------------------
+-----------------------------------
 Before configuring SAML integration between Aviatrix and Google, make sure the following is completed:
 
-#. `Aviatrix Controller <#gsaml_aviatrix-controller>`__ is setup and running.
+#. `Aviatrix Controller <#gsaml_aviatrix-controller>`__ is set up and running.
 #. Have a valid `Google account <#gsaml_google-account>`__ with admin access.
 #. Download and install the `Aviatrix SAML VPN client <#gsaml_aviatrix-client>`__.
 
@@ -27,7 +27,7 @@ Before configuring SAML integration between Aviatrix and Google, make sure the f
 Aviatrix Controller
 ####################
 
-If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+If you haven’t already deployed the Aviatrix Controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
 
 .. _gsaml_google_account:
 
@@ -41,20 +41,20 @@ A Google account with admin access is required to configure the integration.
 Aviatrix VPN Client
 ###################
 
-All users must use the Aviatrix VPN client to connect to the system.  Download the client for your OS `here <http://docs.aviatrix.com/Downloads/samlclient.html>`__.
+All users must use the Aviatrix VPN client to connect to the system. Download the client for your OS `here <http://docs.aviatrix.com/Downloads/samlclient.html>`__.
 
 
 Configuration Steps
--------------------
+-----------------------------
 
 Follow these steps to configure Aviatrix to authenticate against your Google IDP:
 
-#. Create a custom `Google SAML App <#gsaml_google-saml-app>`__ for Aviatrix
-#. Launch an `Aviatrix Gateway <#gsaml_aviatrix-gateway>`__
-#. Create Aviatrix `SAML SP Endpoint <#gsaml_aviatrix-saml-endpoint>`__
-#. `Test the Integration <#gsaml_test-integration>`__ is Set Up Correctly
-#. Create `Aviatrix VPN User <#gsaml_aviatrix-vpn-user>`__
-#. `Validate <#gsaml_validate-entire-process>`__
+#. Create a custom `Google SAML App <#gsaml_google-saml-app>`__ for Aviatrix.
+#. Launch an `Aviatrix Gateway <#gsaml_aviatrix-gateway>`__.
+#. Create Aviatrix `SAML SP Endpoint <#gsaml_aviatrix-saml-endpoint>`__.
+#. `Test the Integration <#gsaml_test-integration>`__ is Set Up Correctly.
+#. Create `Aviatrix VPN User <#gsaml_aviatrix-vpn-user>`__.
+#. `Validate <#gsaml_validate-entire-process>`__.
 
 .. _gsaml_google_saml_app:
 
@@ -65,14 +65,14 @@ Create a Google SAML App for Aviatrix
 
    This step is usually done by the Google Admin.
 
-#. Login to the Google Admin portal
+#. Log in to the Google Admin portal.
 #. Follow `Google documentation <https://support.google.com/a/answer/6087519?hl=en>`__ to create a new **custom** application.
 
-   Click on the `Setup My Own Custom App`
+   Click **Setup My Own Custom App**.
 
    |imageStep1|
 
-   Scroll down to `Option 2`.  Click the `Download` button next to the `IDP metadata` label.
+   Scroll down to Option 2.  Click **Download** next to the "IDP metadata" label.
 
    |imageStep2|
 
@@ -106,16 +106,15 @@ Create a Google SAML App for Aviatrix
    +----------------------+----------------------------------------------------+
    | Start URL            | ``https://[host]/flask/saml/sso/[SP Name]``        |
    +----------------------+----------------------------------------------------+
-   | Signed Response      | Checked                                            |
+   | Signed Response      | Mark this checkbox                                 |
    +----------------------+----------------------------------------------------+
    | Name ID              | Basic Information / Primary Email (Default)        |
    +----------------------+----------------------------------------------------+
-   | Name ID Format       | UNSPECIFIED                                        |
-   +----------------------+----------------------------------------------------+
+   | Name ID Format       | Unspecified                                        |
 
-   ``[host]`` is the hostname or IP of your Aviatrix controller.  For example, ``https://controller.demo.aviatrix.live``
+   "[host]" is the hostname or IP of your Aviatrix Controller.  For example, "https://controller.demo.aviatrix.live."
 
-   ``[SP Name]`` is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix controller.
+   "[SP Name]" is an arbitrary identifier.  This same value should be used when configuring SAML in the Aviatrix Controller.
 
    |imageStep4|
 
@@ -133,15 +132,15 @@ Create a Google SAML App for Aviatrix
 
      |imageStep5|
 
-#. Disable "Signed Response"
+#. Disable **Signed Response**.
 
-   #. Open the Service Provider Details for the SAML application just created.  Uncheck `Signed Response`.
-   #. Click `Save`
+   #. Open the Service Provider Details for the SAML application just created. Unmark the **Signed Response** checkbox.
+   #. Click **Save**.
 
 .. _gsaml_aviatrix_gateway:
 
-Launch Aviatrix VPN Gateway
-###########################
+Launching an Aviatrix VPN Gateway
+##############################
 
 .. note::
 
@@ -149,35 +148,34 @@ Launch Aviatrix VPN Gateway
 
 .. note::
 
-   This step can be skipped if you already have created a SAML VPN Gateway
+   This step can be skipped if you already have created a SAML VPN Gateway.
 
-#. Log in to the Aviatrix controller
-#. Click `Gateway` in the left navigation menu
-#. Click the `+ New Gateway` button
-#. Enter a `Gateway Name`
-#. Select the appropriate `Account Name`, `Region`, `VPC ID`, `Public Subnet` and `Gateway Size`
-#. Check `VPN Access`
-#. Check `Enable SAML`
+1. Log in to the Aviatrix Controller.
+2. Select **Gateway** on the left sidebar.
+3. Click the **+ New Gateway**.
+4. Enter a Gateway Name.
+5. Select the appropriate Account Name, Region, VPC ID, Public Subnet, and Gateway Size.
+6. Mark the **VPN Access**.
+7. Check **Enable SAML**.
 
 	|imageGwVPNSAML|
 
-#. For information on the other settings, please refer to `this <./uservpn.html>`__ document
-#. Click `OK` to create the Gateway
+8. For information on the other settings, please refer to `this <./uservpn.html>`__ document.
+9. Click **OK** to create the Gateway.
 
 .. _gsaml_aviatrix_saml_endpoint:
 
-Create Aviatrix SAML Endpoint
+Creating an Aviatrix SAML Endpoint
 #############################
 
 .. note::
 
    This step is usually completed by the Aviatrix admin.
 
-#. Login to the Aviatrix Controller
-#. Click `OpenVPN®` in the left navigation menu
-#. Select `Advanced`
-#. Click on the `SAML` tab
-#. Click `+ Add New` button
+1. Log in to the Aviatrix Controller.
+2. Select OpenVPN® > Advanced on the left sidebar.
+3. Select the **SAML** tab.
+4. Click **+ Add New**.
 
    |imageControllerNavOpenVPNAdvanced|
 
@@ -196,29 +194,28 @@ Create Aviatrix SAML Endpoint
    | Entity ID               | Hostname                                        |
    +-------------------------+-------------------------------------------------+
 
-#. Click `OK`
+5. Click **OK**.
 
 .. _gsaml_test_integration:
 
-Test the Integration
+Testing the Integration
 ####################
 
-#. Start the Aviatrix VPN Client
+#. Start the Aviatrix VPN Client.
 
    .. note::
-      If you don't start the client, you will receive a warning from the browser in the last step of this process
+      If you don't start the client, you will receive a warning from the browser in the last step of this process.
 
-#. Login to the Aviatrix Controller
-#. Click `OpenVPN®` in the left navigation menu
-#. Select `Advanced`
-#. Click on the `SAML` tab
-#. Click the `Test` button next to the ``SP Name`` created in the previous step
+1. Log in to the Aviatrix Controller.
+2. Select OpenVPN® > Advanced in the left navigation menu.
+3. Select the **SAML** tab.
+4. Click **Test** next to the "SP Name" created in the previous step.
 
    .. tip::
 
-      You will need to assign the new Google application to a test user's Google account before clicking `Test`.
+      You will need to assign the new Google application to a test user's Google account before clicking **Test**.
 
-#. You should be redirected to Google.  Login with your test user credentials.
+5. You should be redirected to Google. Log in with your test user credentials.
 
    .. important::
 
@@ -227,35 +224,33 @@ Test the Integration
 
 .. _gsaml_create_aviatrix_vpn_user:
 
-Create a VPN User
+Creating a VPN User
 #################
 
-#. Log in to the Aviatrix Controller
-#. Click `OpenVPN®` in the left navigation menu
-#. Select `VPN Users`
-#. Click `+ Add New`
-#. Select the `VPC ID` and `LB/Gateway Name` for your SAML Gateway
-#. Enter the Google username in the `User Name` field
-#. Enter any valid email address in the `User Email` field (this is where the cert file will be sent). Alternatively, you can download the cert if you do not enter an email address.
-#. Select the `SAML Endpoint`
-#. Click `OK`
+1. Log in to the Aviatrix Controller.
+2. Select OpenVPN® > VPN Users in the left navigation menu.
+3. Click **+ Add New**.
+4. Select the **VPC ID** and **LB/Gateway Name** for your SAML Gateway.
+5. Enter the Google username in the User Name field.
+6. Enter any valid email address in the User Email field (this is where the cert file will be sent). Alternatively, you can download the cert if you do not enter an email address.
+7. Select the **SAML Endpoint**.
+8. Click **OK**.
 
 .. _gsaml_validate_entire_process:
 
-Validate
+Validating
 ########
 
-#. Log in to the Aviatrix Controller
-#. Click `OpenVPN®` in the left navigation menu
-#. Select `VPN Users`
-#. Download the configuration for your test user created in the previous step
-#. Open the Aviatrix VPN Client application
-#. Click `Load Conf` and select the file downloaded
-#. Click `Connect`
+#. Log in to the Aviatrix Controller.
+#. Select OpenVPN® > VPN Users in the left navigation menu.
+#. Download the configuration for your test user created in the previous step.
+#. Open the Aviatrix VPN Client application.
+#. Click **Load Conf** and select the file downloaded.
+#. Click **Connect**.
 
 .. note::
 
-   SAML VPN only supports shared certificates. You can share the certificate among VPN users or create more VPN users
+   SAML VPN only supports shared certificates. You can share the certificate among VPN users or create more VPN users.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
