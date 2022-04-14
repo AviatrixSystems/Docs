@@ -14,7 +14,7 @@ to experiment and learn new services offered by AWS is a challenge. In this rega
 are here to help you.
 
 This reference design leverages the multi tenants’ capability of an
-Aviatrix controller to build sandboxes for your developers. While the
+Aviatrix Controller to build sandboxes for your developers. While the
 developer has full administrative authority to her sandbox, the sandbox
 itself is isolated from your main production environments.
 
@@ -22,8 +22,8 @@ The network diagram is shown below,
 
 |image0|
 
-where the Aviatrix controller instance can be in the same or a different
-VPC, and two developer’s sandboxes are shown: John (10.10.0.0/16) and
+where the Aviatrix Controller instance can be in the same or a different
+VPC, and two developers' sandboxes are shown: John (10.10.0.0/16) and
 Sam (10.5.0.0/16).
 
 In this configuration, assume you want the VPN to be in split tunnel
@@ -49,7 +49,7 @@ Configuration Workflow
 ======================
 
 Before you start, make sure you have the latest software by checking the
-Dashboard. If an alert message displays, click Upgrade to download the
+Dashboard. If an alert message displays, click **Upgrade** to download the
 latest software.
 
 We assume here that you have created a management VPC 172.31.0.0/16, its
@@ -60,47 +60,37 @@ design <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cl
 
 The configuration workflow is as follows, with major steps highlighted.
 
-1. Create a Cloud Account for John
+1. Create a Cloud Account for John.
 
-   Go to Accounts -> Cloud Account -> New Account, make sure:
+   Go to Accounts > Cloud Account > New Account, make sure:
 
-	a. The Account Name is unique to the controller, for example, JohnSmith.
-
-	b. The Account Password can be used to login in with Account Name.
-
+	a. The Account Name is unique to the Controller, for example, JohnSmith.
+	b. The Account Password can be used to log in in with Account Name.
 	c. An email will be sent for this account created.
-
 	d. Add AWS credentials for this account.
 
-2. Create a VPC and Gateway for John
+2. Create a VPC and Gateway for John.
 
-   Go to Advanced Config -> Create VPC Pool -> Create:
+   Go to Advanced Config > Create VPC Pool > Create:
 
 	a. Account Name: JohnSmith
-
 	b. Pool Name: John
-
 	c. Number of VPCs: 1
-
 	d. VPC Size: the gateway size. A t2.micro may be all you need. A t2.micro
-	   Aviatrix gateway performance is between 40mbps to 80mbps.
-
-	e. Launch Gateway: check
-
+	   Aviatrix Gateway performance is between 40mbps to 80mbps.
+	e. Launch Gateway: mark this checkbox.
 	f. Custom CloudFormation Script: a URL that points to your custom
 	   CloudFormation script in S3. Note that only VPC ID is taken as input
 	   parameter. After gateway is launched, a CloudFormation stack will be
 	   created. One use case for this script is security groups and policies.
-
 	g. Public Subnets: check. This will create subnets whose default gateway
 	   is IGW.
-
 	h. Enable NAT: check. If this is checked, NAT function is integrated on
 	   the gateway.
 
-3. Build Encrypted Peering
+3. Build Encrypted Peering.
 
-   Go to Peering -> Encrypted Peering -> New Peering
+   Go to Peering > Encrypted Peering > New Peering.
 
    Note that each VPC is represented by one or more gateways. Make sure you
    want to peer between two gateways without VPN capability. In this
@@ -109,13 +99,11 @@ The configuration workflow is as follows, with major steps highlighted.
 
 4. Repeat the above two steps for other developers or projects.
 
-5. Add users
+5. Add users.
 
    If you have not done so, add VPN user John to the cloud network. Go
    to OpenVPN®, Use Profile to control which user can access what cloud
    instance/application/ports.
-
-6. Done. 
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
