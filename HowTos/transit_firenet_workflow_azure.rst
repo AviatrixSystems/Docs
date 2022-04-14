@@ -19,7 +19,7 @@ The transit VNET will have a firewall of supported vendors (Check Point, Palo Al
 
 Once the infra is in-place then the policy will be created to inspect the east-west and north-south traffic.
 
-|avx_tr_firenet_topology_az|
+|avx_tr_firenet_topology_az|       This diagram is incorrect
 
 Step 1 : Create Transit VNet
 *******************************
