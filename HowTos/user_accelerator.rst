@@ -2,14 +2,12 @@
    :description: User Accelerator VPN Reference Design
    :keywords: AWS Global Accelerator, Geo VPN, VPN, aviatrix, remote user vpn, openvpn, user vpn
 
-
-
 ===================================================
 VPN User Accelerator 
 ===================================================
 
 The VPN User Accelerator leverages the `AWS Global Accelerator <https://aws.amazon.com/global-accelerator/>`_ to connect
-VPN users to the nearest AWS Edge location access point and traverse the AWS backbone to the VPN gateway. 
+VPN users to the nearest AWS Edge location access point and traverse the AWS backbone to the VPN Gateway. 
 
 .. Note::
    When this feature is enabled, the VPN user source address is masked out by AWS.
@@ -17,8 +15,8 @@ VPN users to the nearest AWS Edge location access point and traverse the AWS bac
 
 To configure, 
 
- 1. First `launch a VPN gateway <https://docs.aviatrix.com/HowTos/uservpn.html>`_ by following the instructions.
- #. After the VPN is setup, an AWS NLB should be displayed on the left side panel, highlight it and click Add. Then click OK, as shown below.
+ 1. First `launch a VPN Gateway <https://docs.aviatrix.com/HowTos/uservpn.html>`_ by following the instructions.
+ #. After the VPN is setup, an AWS NLB should be displayed on the left side panel, highlight it and click **Add**. Then click **OK**, as shown below.
 
 |user_accelerator|
 
@@ -32,7 +30,6 @@ To configure,
 *OVPN File with User Accelerator OFF*
 
 |ovpn_using_elb|
-
 
 *OVPN File with User Accelerator ON*
 
