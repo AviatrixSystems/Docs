@@ -16,27 +16,27 @@ LDAP Configuration for Authenticating VPN Users
 ===============================================================
 
 Overview
---------
+--------------------
 
 Aviatrix provides integration with an LDAP/AD server for the authentication of users logging into the VPN services.  This guide walks you through the configuration steps.
 
 Configuration Details
----------------------
+--------------------------------
 
 .. note::
-   This step must be done by an existing Aviatrix Controller admin user
+   This step must be done by an existing Aviatrix Controller admin user.
 
 .. tip::
-   This can be done when the gateway is created or after.  These steps assume it is done after creation.
+   This configuration before or after a gateway is created. These steps assume it is done after creation.
 
-#. Login to your Controller
-#. Go to the **OpenVPN** navigation menu item
-#. Select **Edit Config**
-#. In the **Modify Authentication** section, click on the **LDAP** below the `Authentication` label
+#. Log in to your Controller.
+#. Select **OpenVPN** on the left sidebar.
+#. Select **Edit Config**.
+#. In the **Modify Authentication** section, click on the **LDAP** below the Authentication label.
 
    |imageLDAPForm|
 
-#. Enter the values as described in the table below
+#. Enter the values as described in the table below.
 
    +-------------------------+-------------------------------------------------+
    | Field                   | Description                                     |
@@ -44,23 +44,23 @@ Configuration Details
    | LDAP Server             | Enter the public IP or hostname for the LDAP    |
    |                         | / AD server.                                    |
    +-------------------------+-------------------------------------------------+
-   | Use TLS to connect to   | When checked, STARTTLS is used to connect with  |
-   | LDAP server             | the LDAP server. NOTE: LDAP Over SSL is not     |
-   |                         | supported (port 636).                           |
+   | Use TLS to connect to   | When this checkbox is marked, STARTTLS is used  |
+   | LDAP server             | to connect with the LDAP server. NOTE: LDAP Over|
+   |                         | SSL is not supported (port 636).                |
    +-------------------------+-------------------------------------------------+
-   | Client Certificate      | Only visible if `Use TLS to connect ...` is     |
-   |                         | checked.                                        |
+   | Client Certificate      | Only visible if the **Use TLS to connect ...**  |
+   |                         | checkbox is marked.                             |
    |                         | This file must be in PEM format and contain a   |
    |                         | public and private key pair.                    |
    +-------------------------+-------------------------------------------------+
-   | CA Certificate          | Only visible if `Use TLS to connect ...` is     |
-   |                         | checked.                                        |
+   | CA Certificate          | Only visible if the **Use TLS to connect ...**  |
+   |                         | checkbox is marked.                             |
    +-------------------------+-------------------------------------------------+
    | Bind DN                 | DN of the user that the Gateway will use to     |
    |                         | authenticate with the LDAP server to handle     |
    |                         | user authentication.                            |
    +-------------------------+-------------------------------------------------+
-   | Password                | The password of the `Bind DN` user.             |
+   | Password                | The password of the Bind DN user.               |
    +-------------------------+-------------------------------------------------+
    | Base DN for User Entries| Starting point in the directory for searching   |
    |                         | for matching usernames.                         |
@@ -78,14 +78,19 @@ Configuration Details
    |                         | *for Windows Active Directory:\                 |
    |                         | ``cn=vpn_users,DC=example,DC=com``\             |
    +-------------------------+-------------------------------------------------+
-   | LDAP User (Optional)    | This field is only used when clicking on the    |
-   |                         | `Test LDAP Configuration` button.  It will use  |
+   | LDAP User (Optional)    | This field is only used when you click          |
+   |                         | **Test LDAP Configuration**.  It will use       |
+   |                         | this value to search and respond if it was      |
+   |                         | able to connect and find the user.              |
+   +-------------------------+-------------------------------------------------+
+   | LDAP User (Optional)    | This field is only used when you click    |
+   |                         | **Test LDAP Configuration**.  It will use  |
    |                         | this value to search and respond if it was      |
    |                         | able to connect and find the user.              |
    +-------------------------+-------------------------------------------------+
 
-#. Enter a value for `LDAP User` and click **Test LDAP Configuration** to test the configuration
-#. Click **Modify** to save this configuration
+#. Enter a value for **LDAP User** and click **Test LDAP Configuration** to test the configuration.
+#. Click **Modify** to save this configuration.
 
 .. |imageLDAPForm| image:: vpnusers_ldap_media/ldapform.png
    :scale: 50%
