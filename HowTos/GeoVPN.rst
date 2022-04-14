@@ -12,11 +12,11 @@ Overview
 ========
 
 If you have a global workforce that needs to access the cloud with the
-best user experience, building a cloud network with Geo VPN access
+best user experience, building a cloud network with GeoVPN access
 capability is the right solution for you.
 
 The geolocation VPN feature combines the Aviatrix scale out
-VPN solution with latency based routing to dynamically route VPN users
+VPN solution with latency-based routing to dynamically route VPN users
 to the nearest VPN access gateway based on the latency between the user
 and the gateways.
 
@@ -54,23 +54,21 @@ In this configuration, both the EU-based user and the US-based user would be giv
 Configuration Workflow
 ======================
 
-#. Create a `VPN gateway <./uservpn.html>`__ in each region
+1. Create a `VPN gateway <./uservpn.html>`__ in each region.
 
    .. important::
-      Enable ELB on each gateway that will be associated with the Geo VPN feature.
+      Enable ELB on each gateway that will be associated with the GeoVPN feature.
 
    .. tip::
-      You must create at least one gateway to enable Geo VPN.  You can add more gateways to the pool at any time.
+      You must create at least one gateway to enable GeoVPN.  You can add more gateways to the pool at any time.
 
-#. Once you have at least one VPN gateway created with ELB enabled, you are ready to proceed to the enable Geo VPN feature.  Click on **OpenVPN** in the navigation menu and select **Advanced**.
-
-#. Click on the **Geo VPN** tab.
-
-#. Select the `Cloud Type` and click on the `Disabled` status to Enable the Geo VPN feature.
+2. Once you have at least one VPN gateway created with ELB enabled, you are ready to proceed to the enable GeoVPN feature.  Click on **OpenVPN** in the navigation menu and select **Advanced**.
+3. Click the **GeoVPN** tab.
+4. Select the **Cloud Type** and click on the Disabled status to Enable the GeoVPN feature.
 
    |imageEnable|
 
-#. Populate the fields:
+5. Populate the fields:
 
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Field**                        | **Description**                                                                                                                                                                                                               |
@@ -81,28 +79,28 @@ Configuration Workflow
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | VPN Service Name                 | The hostname that users will connect to. A DNS record will be created for this name in the specified domain name.                                                                                                             |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ELB DNS Name                     | Select the first ELB name to attach to this Geo VPN name. You can add others after this feature is enabled                                                                                                                    |
+| ELB DNS Name                     | Select the first ELB name to attach to this GeoVPN name. You can add others after this feature is enabled.                                                                                                                     |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    |imageEnablePopulate|
 
-#. Click `OK`
+6. Click **OK**.
 
    |imageComplete|
 
    .. note::
 
-      If enabling Geo VPN fails, make sure the Domain Name you enter is a
+      If enabling GeoVPN fails, make sure the Domain Name you enter is a
       registered name under AWS Route 53 in a public hosted zone. In addition,
       this Domain name must be hosted in the account that you have access
       privilege. If the domain name is hosted by another account, you will not
       be able to add DNS record.
 
-#. For each additional region, repeat these steps:
+7. For each additional region, repeat these steps:
 
-   #. Click `+ Add New`
-   #. Select the `ELB DNS Name`
-   #. Click `OK`
+* Click **+ Add New**.
+* Select the **ELB DNS Name**.
+* Click **OK**.
 
    |imageAddAdditionalELB|
 
@@ -113,48 +111,46 @@ Configuration Workflow
 Add Users
 +++++++++
 
-Once you have Geo VPN enabled, you can add users.  Follow these steps to add users:
+Once you have GeoVPN enabled, you can add users.  Follow these steps to add users:
 
-#. Click the **OpenVPN** navigation menu item
-#. Click **VPN Users**
-#. Click the **+ Add New** button
-#. In the `VPC ID / DNS Name` drop down, select the Geo VPN VPN service name created in the previous steps
-#. Populate the `User Name` and optionally the `User Email`
-#. Click **OK**
+* Click **OpenVPN** on the left sidebar.
+* Click **VPN Users**.
+* Click **+ Add New**.
+* In the **VPC ID / DNS Name** dropdown menu, select the GeoVPN VPN service name created in the previous steps.
+* Enter the **User Name** and optionally the **User Email**.
+* Click **OK**.
 
    |imageAddVPNUser|
    
-Manage Geo VPN configuration
+Managing the GeoVPN Configuration
 ++++++++++++++++++++++++++++
 
-Once you have Geo VPN feature enabled, you can centrally manage all the VPN gateways' configuration under the Geo VPN service. Follow these steps to configure them:
+Once you have GeoVPN feature enabled, you can centrally manage all the VPN gateways' configuration under the GeoVPN service. Follow these steps to configure them:
 
-#. Click the **OpenVPN** navigation menu item
-#. Click **Edit Config**
-#. In the `VPC ID/VNet Name` drop down, select the Geo VPN service name created in the previous steps
-#. Update the VPN configuration regarding to your requirement
+* Click **OpenVPN** on the left sidebar.
+* Click **Edit Config**.
+* In the **VPC ID/VNet Name** dropdown menu, select the GeoVPN service name created in the previous steps.
+* Update the VPN configuration regarding to your requirements.
 
-Advanced Settings - manage VPN configuration for individual DHCP setup  
+Advanced Settings : Managing VPN Configuration for Individual DHCP Setup  
 ======================================================================
 
 GeoVPN can use DHCP Setting for DNS name resolution from the cloud private network where the VPN gateway is deployed. This reduces latency as DNS service is likely to be closer to the source of the VPN user location. Follow these steps to configure DHCP configuration for individual VPN gateway:
 
-#. Click the **OpenVPN** navigation menu item
-#. Click **Edit Config**
-#. In the `VPC ID/VNet Name` drop down, select the specific VPC ID and LB/Gateway Name instead of Geo VPN service name
-#. Update the supported VPN configuration as below regarding to your requirement in each VPN gateway
+1. Click**OpenVPN** on the left sidebar.
+2. Click **Edit Config**.
+3. In the **VPC ID/VNet Name** dropdown menu, select the specific VPC ID and LB/Gateway Name instead of GeoVPN service name.
+4. Update the supported VPN configuration as below regarding to your requirement in each VPN gateway.
    
-   - Additional CIDRs
-   
-   - Nameservers
-   
-   - Search Domains
+* Additional CIDRs
+* Nameservers
+* Search Domains
    
    .. note::
 
-      The attributes “Additional CIDRs, Nameservers, and Search Domains” are able to be edited for individual LB//Gateway Name only if the split tunnel mode is selected under the Geo VPN service.
+      The attributes “Additional CIDRs, Nameservers, and Search Domains” are able to be edited for individual LB//Gateway Name only if the split tunnel mode is selected under the GeoVPN service.
 
-#. Check this `document <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#how-can-i-resolve-my-private-vpc-instance-s-name-when-connecting-via-remote-vpn>`_ for more info.
+5. Check this `document <https://docs.aviatrix.com/Support/support_center_openvpn_gateway.html#how-can-i-resolve-my-private-vpc-instance-s-name-when-connecting-via-remote-vpn>`_ for more info.
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
