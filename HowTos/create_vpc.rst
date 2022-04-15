@@ -3,7 +3,7 @@
    :keywords: Aviatrix VPC Tracker, AWS VPC, Azure VNet
 
 ###################################
-Creating a VPC/VNet
+Create a VPC/VNet
 ###################################
 
 Use this tool to create a `VPC <https://www.aviatrix.com/learning/glossary/vpc.php>`_ in AWS or a `VNet <https://a.aviatrix.com/learning/glossary/vnet.php>`_ in Azure in the region and account of your choice. In addition, starting from 6.1, this tool creates multiple route tables associated with public and private subnets. One use case is to allow traffic load balancing when Aviatrix Spoke gateways are deployed. 
