@@ -31,26 +31,40 @@ Select the **Aviatrix FireNet VPC** option when creating a security VPC/VNet.
 ==========================================      =================
 
 
-Subscribing to AWS Marketplace
-----------------------------------------------
+Subscribing to a Firewall Instance (AWS Only)
+----------------------------------------------------------
 
-If you have not already done so, follow the `AWS Marketplace <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_ link to subscribe to the VM-Series.
+Before setting up Aviatrix FireNet, AWS customers need to subscribe to a firewall instance from a specific vendor on the AWS Marketplace. 
 
-If you have not already done so, click the following link to subscribe the firewall instance from a specific vendor on AWS
-Marketplace. 
-Do not launch the firewall instance from the AWS Console as you can launch it on the Controller in the later steps.  
+.. note::
 
- - `Palo Alto VM-Series <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=VM-Series+Next-Generation+Firewall>`_
- - `Check Point CloudGuard <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Check+Point+>`_
- - `Fortinet FortiGate <https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=Fortinet>`_
+  This document section applies to AWS customers **only**. Azure, GCP, and OCI customers can launch firewall instances directly from the Aviatrix Controller without subscriptions.
 
+To subscribe to a firewall instance from AWS, use the following steps.
+
+1. In your AWS account, search for **AWS Marketplace Subscriptions**.
+2. On the AWS Marketplace Subscriptions page, select **Discover products**.
+3. In the search bar, enter the type of firewall instance you wish to subscribe to:
+
+* Enter “VM-series” to search for a Palo Alto firewall instance.
+* Enter “CloudGuard” to search for a Check Point firewall instance.
+* Enter “Fortigate” to search for a Fortinet firewall instance.
+
+4. From the results, select a bundle and/or license option for the firewall instance you wish to subscribe to. There are different bundle/license options for each instance type that represent different costs and performance offerings. 
+5. On the next page, click **Continue to subscribe** to subscribe to the instance.
+6. On the next page, click **Accept terms** to accept the license terms. 
+
+After you subscribe to the firewall instance, wait for the Effective date column to change from “Pending” to today’s date. Then, return to the Aviatrix Controller to launch the firewall instance from there.
+
+.. note ::
+  Do not launch a firewall instance from AWS itself, as you can launch it from the Aviatrix Controller in the following steps.
 
 Creating a Firewall Domain
 ---------------------------------------
 
 This step creates a Security Domain with a Firewall Domain option. 
 
-Go to TGW Orchestrator > Plan > Create an AWS Transit Gateway and then a Security Domain by selecting **Aviatrix Firewall Domain**. 
+In your Aviatrix Controller, go to TGW Orchestrator > Plan > Create an AWS Transit Gateway and then a Security Domain by selecting **Aviatrix Firewall Domain**. 
 
 For more information, refer to `Create a New Security Domain <https://docs.aviatrix.com/HowTos/tgw_plan.html#create-a-new-security-domain>`_. 
 
