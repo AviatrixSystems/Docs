@@ -6,6 +6,21 @@
 Advanced Config
 =================
 
+Configuration Updates with the Aviatrix GUI
+--------------------------------------------
+
+To update your Aviatrix gateway configuration, see the `Launching a Gateway <https://docs.aviatrix.com/HowTos/gateway.html>`_. 
+
+To deploy Aviatrix CoPilot, see the `Aviatrix CoPilot Deployment Guide <https://docs.aviatrix.com/HowTos/copilot_getting_started.html>`_. 
+
+To update your Aviatrix Firewall configuration, see the `Firewall Network (FireNet) Workflow <
+https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
+
+Configuration Updates with Terraform
+--------------------------------------------
+
+To update your Aviatrix configuration with Terraform, see the `Aviatrix Terraform Registry <https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest>`_. 
+
 Tunnel
 --------
 
