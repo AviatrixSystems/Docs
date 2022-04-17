@@ -8,6 +8,8 @@ Aviatrix Controller and Gateway Release Notes
   
 If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
 
+If you deploy your Aviatrix platform with Terraform, see the `Aviatrix Terraform Release Notes <https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/guides/release-notes>`_. 
+
 6.4.3049 (04/08/2022) 
 =======================
 
