@@ -13,8 +13,7 @@ To update your Aviatrix gateway configuration, see the `Launching a Gateway <htt
 
 To deploy Aviatrix CoPilot, see the `Aviatrix CoPilot Deployment Guide <https://docs.aviatrix.com/HowTos/copilot_getting_started.html>`_. 
 
-To update your Aviatrix Firewall configuration, see the `Firewall Network (FireNet) Workflow <
-https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
+To update your Aviatrix Firewall configuration, see the `Firewall Network (FireNet) Workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
 
 Configuration Updates with Terraform
 --------------------------------------
