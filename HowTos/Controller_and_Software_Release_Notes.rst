@@ -10,6 +10,16 @@ If you are upgrading from release 6.5.x or later, follow the guidelines and proc
 
 If you deploy your Aviatrix platform with Terraform, see the `Aviatrix Terraform Release Notes <https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/guides/release-notes>`_. 
 
+Preview Features
+=================
+
+Aviatrix releases features in preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+ 
+- Features in preview mode are fully tested and safe for deployment in production environments.  
+- Preview mode feature options, performance, and scaling capabilities may be limited compared to the final feature.
+- Aviatrix does not charge for using features in preview mode. You could be charged if the preview feature is promoted to an officially supported feature. If a feature in preview mode is promoted to an officially supported product it is announced in the product release notes. 
+- Preview mode features are clearly marked in the UI.  
+
 6.4.3049 (04/08/2022) 
 =======================
 
@@ -183,15 +193,6 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 - Added support for BGP MD5 authentication. 
 
 **Preview Features in Release 6.6**
-
-Aviatrix releases features in preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
- 
-- Features in preview mode are fully tested and safe for deployment in production environments.  
-- Preview mode feature options, performance, and scaling capabilities may be limited compared to the final feature.
-- Aviatrix does not charge for using features in preview mode. You could be charged if the preview feature is promoted to an officially supported feature. If a feature in preview mode is promoted to an officially supported product it is announced in the product release notes. 
-- Preview mode features are clearly marked in the UI.  
-
-**Preview - Azure Subnet-Level Inspection**
 
 - Azure Subnet-Level Inspection enables inspection by Aviatrix Transit FireNet solution for traffic flowing between subnets within a VNet or in different VNets. For more information, refer to `Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW <https://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
 
