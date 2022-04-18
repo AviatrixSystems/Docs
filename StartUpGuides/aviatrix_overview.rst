@@ -23,12 +23,12 @@ and visibility that you need.
 
 Some common enterprise use cases are shown below: 
 
-- Datacenter to cloud (`Aviatrix Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
+- Data center to cloud (`Aviatrix Transit Network solution <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_)  
 - Scalable Firewall deployment in the cloud (`Firewall Network <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_)
-- Cloud to cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
-- User to cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
-- Site to cloud VPN (`Branch and customer sites to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_) 
-- Multicloud VPN (`Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_)
+- Cloud-to-cloud VPN (`Encrypted peering <http://docs.aviatrix.com/HowTos/peering.html>`_ connectivity in a cloud and multi cloud ) 
+- User-to-cloud VPN (`Remote user VPN (OpenVPN® based SSL VPN solution) <http://docs.aviatrix.com/HowTos/uservpn.html>`_ for developers) 
+- Site-to-cloud VPN (`Branch and customer sites to cloud <http://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_) 
+- Multi-cloud VPN (`Multicloud Peering <http://docs.aviatrix.com/HowTos/GettingStartedAzureToAWSAndGCP.html>`_)
 
 We also provide security features for workloads/applications in the cloud: 
 
@@ -54,13 +54,13 @@ The complexity of the cloud networking comes from the following areas and they o
 
   - Cloud networks (VPC/VNET/VCNs) are many orders of magnitude in quantity than datacenters, driven by business billing/accounting and variable isolation requirements.
   - Multiple account ownership is a new concept for networking significantly increasing the number of cloud networks.
-  - Multi-cloud strategies are the new industry norm enterprise will eventually require workloads spread across multiple cloud providers where they run best.
+  - Multi-cloud strategies are the new industry norm. Enterprise companies will eventually need to spread workloads across multiple cloud providers, where they run best.
 
 2. Security
 ^^^^^^^^^^^^^^^^
 
   - As mission critical applications move to the cloud, security requirements applied to datacenter are catching up to the cloud.
-  - Security consist of 5 types:
+  - Security consists of five types:
       - Egress to Internet: backend applications require API access to public hosted services.
       - On-prem and cloud: data moving between two security zones. 
       - East and West: data moving between cloud networks.
@@ -301,7 +301,7 @@ To learn more, `follow the PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/sfc_f
 Cloud Migration
 ==================
 
-Current cloud migration practice is complex and time consuming. The root case is the requirements that migrating VM must change its IP address after the migration. Read how Aviatrix solves `this problem. <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ 
+Current cloud migration practice is complex and time consuming. The root cause is the requirements that migrating VM must change its IP address after the migration. Read how Aviatrix solves `this problem. <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ 
 
 Extending Workloads to Cloud
 ==============================
