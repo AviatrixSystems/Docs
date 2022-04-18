@@ -9,13 +9,15 @@ Example Config for Palo Alto Network VM-Series in GCP
 
 In this document, we provide an example to set up the VM-Series for you to validate that packets are indeed sent to the VM-Series for VPC-to-VPC and from VPC to internet traffic inspection.
 
-For using bootstrap method to set up the VM-Series, follow `this document <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_.
+For using the bootstrap method in Azure to set up the VM-Series, follow `this document <https://docs.aviatrix.com/HowTos/bootstrap_example.html>`_.
+
+For using the bootstrap method in GCP to set up the VM-Series, follow `this document <https://docs.aviatrix.com/HowTos/bootstrap_example_paloalto_GCP.html>`_.
 
 VM-Series in AWS can be set up using the guide `Palo Alto Networks VM-Series AWS Example <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#example-config-for-palo-alto-network-vm-series>`_.
 
 VM-Series in Azure can be set up using the guide `Palo Alto Networks VM-Series Azure Example <https://docs.aviatrix.com/HowTos/config_PaloAltoAzure.html#example-config-for-palo-alto-networks-vm-series-in-azure>`_.
 
-The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_. After the launch is complete, the console displays the
+The Aviatrix Firewall Network (FireNet) workflow launches a VM-Series at `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_. After the launch is complete, the Aviatrix Controller displays the
 VM-Series instance with its public IP address of management interface and allows you to download the .pem file for SSH access to the instance.
 
 Below are the steps for initial setup.
@@ -71,7 +73,7 @@ Activating VM License
 Dynamic Updates
 ------------------------------
 
-1. From Device > Dynamic Updates > Click on **Check Now** > download and then install latest versions of a. Applications and Threats b. Wildfire updates.
+1. From Device > Dynamic Updates > click on **Check Now** > download and then install latest versions of a. Applications and Threats b. Wildfire updates.
 2. Click on **Check Now** again > download and then install latest version of Antivirus.
 
 Configuring VM-Series ethernet1/1 with WAN Zone
@@ -109,7 +111,7 @@ Configuring VM-Series ethernet1/2 with LAN Zone
 GCP VM-Series Health Check
 -------------------------------------------
 
-First, configure DNAT rule for Health Check is a mandatory required in GCP. Go to Polices > NAT > Add NAT. See example below for NAT configurations.
+Configuring the DNAT rule for Health Check is a mandatory requirement in GCP. Go to Polices > NAT > Add NAT. See the example below for NAT configurations.
 
 
 |health_check_dnat|
@@ -137,7 +139,8 @@ Configuring NAT for Egress
 
 If you would also like to enable NAT to test egress, follow these steps.
 
-1. Policies > NAT > Click **Add** > Select the **General** tab, give it a name > Click Original Packet. 
+1. Under Policies > NAT > click **Add** and select the **General** tab. Give the policy a name.
+#. Click the Original Packet tab 
 2. At Source Zone, click **Add**, select "LAN". 
 3. At Destination Zone, select WAN. 
 4. At Destination Interface, select Ethernet1/1, as shown below.
@@ -154,7 +157,7 @@ Ready to Go
 
 Now your firewall instance is ready to receive packets.
 
-Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
+The next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
 12. View Traffic Log
 -----------------------------
