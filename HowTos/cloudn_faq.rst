@@ -159,7 +159,7 @@ When BGP is enabled on the branch router, CloudN can route traffic between branc
 How do I configure CloudN?
 ---------------------------------------
 
-Follow the `CloudN workflow to get started. <https://docs.aviatrix.com/HowTos/cloud_wan_workflow.html>`_. 
+Follow the `CloudN workflow to get started <https://docs.aviatrix.com/HowTos/cloudn_workflow_.html>`_. 
 
 How should I secure my IOS router?
 --------------------------------------------------
