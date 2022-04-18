@@ -187,6 +187,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 Aviatrix releases features in preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
  
 - Features in preview mode are fully tested and safe for deployment in production environments.  
+- Preview mode feature options, performance, and scaling capabilities may be limited compared to the final feature.
 - Aviatrix does not charge for using features in preview mode. You could be charged if the preview feature is promoted to an officially supported feature. If a feature in preview mode is promoted to an officially supported product it is announced in the product release notes. 
 - Preview mode features are clearly marked in the UI.  
 
