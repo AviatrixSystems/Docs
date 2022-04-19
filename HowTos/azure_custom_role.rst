@@ -9,14 +9,14 @@ Use Azure IAM Custom Role
 
 When Aviatrix Controller uses Azure API to manage networking and gateway resources, an application must be first created in 
 Azure AD with an identity of Service Principal. This service principal requires an Azure IAM role assignment together with a set of 
-permissions required by the Aviatrix Controller to provide service. By default we use the Azure built-in "Contributor" role. Contributor 
-roles has access to all resources of the subscription. 
+permissions required by the Aviatrix Controller to provide service. By default, we use the Azure built-in "Contributor" role. The Contributor 
+role has access to all resources of the subscription. 
 
 If you wish to limit the Controller access permissions, you can do so by creating a custom role with a set of permissions required 
-by the Controller as shown below. This document describes how to accomplish this task through Azure portal. 
+by the Controller as shown below. This document describes how to accomplish this task through the Azure portal. 
 
-1. Aviatrix required custom role permissions
-------------------------------------------------
+Aviatrix Required Custom Role Permissions
+---------------------------------------------------------
 
 ::
 
@@ -55,66 +55,65 @@ by the Controller as shown below. This document describes how to accomplish this
             ]
         }
     }  
-* For Azure China please remove "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/*" and "Microsoft.Resources/marketplace/purchase/*" from "actions"
+* For Azure China, please remove "Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements/*" and "Microsoft.Resources/marketplace/purchase/*" from "actions".
  
-2. Create a Custom Role
+Creating a Custom Role
 ----------------------------------------------------
 
- a. Login to Azure portal. Go to Subscriptions. Select the subscription whose network already managed by Aviatrix Controller and click in. 
- b. Next click Access control (IAM)
- c. Next click Roles as shown below.
+1. Log in to the Azure portal. Go to Subscriptions. Select the subscription whose network already managed by Aviatrix Controller. 
+2. Click **Access control (IAM)**.
+3. Click **Roles**, as shown below.
 
  |iam_role|
 
- d. Next click +Add Role and select "Add custom role".
- e. Next select Start from scratch and click Next, as shown below. 
+ 4. Click **+Add Role** and select **Add custom role**.
+ 5. Select **Start from scratch** and click **Next**, as shown below. 
 
  |start_from_scratch|  
 
- f. Next click JSON, click Edit. 
+ 6. Click **JSON**, and then click **Edit**. 
 
  |click_json|
 
- g. Next remove the existing JSON template and copy and paste the above Aviatrix required permissions JSON into the Editor box, as shown below. Click Save.
+ 7. Remove the existing JSON template and copy and paste the above Aviatrix required permissions JSON into the Editor box, as shown below. Click **Save**.
  
  |aviatrix_custom_role|
  
- h. Next click Permissions. You should see the permissions have been populated, as shown below. 
+ 8. Click **Permissions**. You should see the permissions have been populated, as shown below. 
 
   |show_permission|
 
- i. Next click Assignable scopes, click Add assignable scopes, select the subscription. 
+ 9. Click **Assignable scopes** and then **Add assignable scopes**. Select the subscription. 
 
- j. Next click JSON, you should say the subscription has been added to the assignableScopes, as shown below. 
+ 10. Click **JSON**. You should say the subscription has been added to the assignable Scopes, as shown below. 
 
  |subscription_scope|
 
- k. Next click Review + create, click Create.
+ 11. Click **Review + create**, and then click **Create**.
 
-3. Replace the Contributor Role
---------------------------------
+Replacing the Contributor Role
+---------------------------------------
 
- a. (This step is optional, it is only applicable if you have already assigned "Contributor" role to the Aviatrix Controller service principal. If not, skip this step and proceed to the next step.)  Now that you have created a custom role called Aviatrix Controller Custom Role, go ahead replace the Contributor role, as shown below.
+This step is optional. It is only applicable if you have already assigned the "Contributor" role to the Aviatrix Controller service principal. If not, skip this step and proceed to the next step.
+
+1. Now that you have created a custom role called Aviatrix Controller Custom Role, go ahead replace the Contributor role, as shown below.
 
  |remove_contributor|
 
- b. Click +Add, select Add role assignment. Fill in the fields as shown below
+ 2. Click **+Add**, select **Add role assignment**. Fill in the fields as shown below.
  
  |replace_role|
 
-Done.
-
-4. Multiple Custom Roles Approach
-----------------------------------
+Multiple Custom Roles Approach
+------------------------------------------------------
 
 The Aviatrix role permissions can be split into multiple custom roles each with a subset of permissions. Subscription permission must 
-be at the subscription scope. The additional permission may have
-the scope of one or more Resource Groups. 
+be at the subscription scope. The additional permission may have the scope of one or more Resource Groups. 
 
 Below is an example where the "Aviatrix Custom Role for subscription" has the scope of subscription and the remaining permissions has the scope of
 Resource Group. 
 
-4.1 Subscription Scope IAM Custom Role
+Subscription Scope IAM Custom Role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -138,17 +137,16 @@ Resource Group.
     }
 
 
-4.2 Resource Group Scope IAM Custom role 
+Resource Group Scope IAM Custom role 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note when creating a custom role for a resource group on Azure portal, start at Subscription -> Resource groups, select one resource group 
-and click "Access Control (IAM). Then follow the role creation process with the permission described in the file below 
-to create the role. When configuring Assignable scopes, select one or more resource groups (it is multi selectable) for this role. After the role is created, assign the role to the Service principal of the Aviatrix Controller application.
+Note when creating a custom role for a resource group on Azure portal, start at Subscription > Resource groups, select one resource group, and click **Access Control (IAM)**. Then, follow the role creation process with the permission described in the file below 
+to create the role. When configuring Assignable scopes, select one or more resource groups (it is multi-selectable) for this role. After the role is created, assign the role to the Service principal of the Aviatrix Controller application.
 
 .. note::
 
   It takes a few minutes for the display to appear for the custom role just created. Once it can be displayed, you can find it by going to
-  Subscription -> Resource groups -> select one resource group assigned to the role, then click Access Control (IAM), then click Roles. 
+  Subscription > Resource groups > select one resource group assigned to the role, then click **Access Control (IAM)**, then click **Roles**. 
   Then search for the role you just created. 
 
 ::
@@ -189,15 +187,14 @@ to create the role. When configuring Assignable scopes, select one or more resou
 
 .. tip ::
 
-   If you wish to use Contributor role for the above part of the permission, ignore the json file listed above. Simply use
-   Azure portal, Resource groups -> select the resource group. Click Access Control (IAM) -> +Add -> Add Role assignment. Then
-   select Contributor as Role and assign the Contributor role to the Aviatrix Controller service principal.
+   If you wish to use Contributor role for the above part of the permission, ignore the JSON file listed above. Simply navigate to the
+   Azure portal > Resource groups > select the resource group. Click **Access Control (IAM)** > **+Add** > **Add Role assignment**. Then,
+   select **Contributor** as the Role and assign the Contributor role to the Aviatrix Controller service principal.
 
-
-5. Additional References
+Additional References
 --------------------------
 
-To learn more on Azure custom role and how to configure it, refer to `Azure Custom Roles. <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>`_
+To learn more on Azure custom role and how to configure it, see `Azure Custom Roles. <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>`_
 
 To view the complete Azure role permissions, refer to `Azure resource provider operations. <https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations>`_. 
 

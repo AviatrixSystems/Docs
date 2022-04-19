@@ -3,31 +3,31 @@
    :keywords: Okta, Profile
 
 =======================================
-Setup Okta SAML with Profile Attribute
+Setting up Okta SAML with Profile Attribute
 =======================================
 
 This guide demonstrates the use of the **Profile** attribute in **Okta** so each SAML user can be assigned a different
 VPN profile.
 
-How VPN profile works
----------------------
+How a VPN Profile Works
+-----------------------------------------
 
-The VPN profiles defined at the **Controller/OpenVPN/Profiles** contain egress control policy.  They are attached
+The VPN profiles defined at the **Controller/OpenVPN/Profiles** contain an egress control policy. They are attached
 to the VPN users defined at **Controller/OpenVPN/VPN Users** for controlling their VPN egress traffic.
 Users without a profile is the same as having a profile with an **allow-all** policy, i.e., their egress traffic are
 unrestricted.
 
 For SAML VPN, the SAML user definition at the IDP has a **Profile** attribute for
 specifying a VPN profile, overriding
-the corresponding user's VPN profile assigned at the controller.
-If unspecified, the corresponding VPN profile assigned at the controller will be used.
+the corresponding user's VPN profile assigned at the Controller.
+If unspecified, the corresponding VPN profile assigned at the Controller will be used.
 
 .. _okta_setup:
 
-Setup Okta Profile attribute
------------------------------
+Setting up the Okta Profile Attribute
+--------------------------------------------------
 
-#. `Define a new attribute <#okta-new-attribute>`__ in the OKta User template for storing the VPN profile name.
+#. `Define a new attribute <#okta-new-attribute>`__ in the Okta User template for storing the VPN profile name.
 #. `Define an attribute mapping <#okta-map-attribute>`__
    for the new attribute using the name **Profile**
    so that the SAML application
@@ -37,33 +37,33 @@ Setup Okta Profile attribute
 
 .. _okta_new_attribute:
 
-Define a new attribute
-----------------------
+Defining a New Attribute
+--------------------------------
 
 At Okta, define a new attribute in the **User** definition template using
 **Okta/Directory/Profile Editor**.  In this example, the new attribute is named **accessprofile** and
 it can store a string of up to 20 characters.
 
-#. Open Profile Editor at **Okta/Directory/Profile Editor**.
+1. Open Profile Editor at **Okta/Directory/Profile Editor**.
 
    |open_profile_editor|
 
-#. Click **Okta** on the left navigation bar to find the **User** definition template and click **Profile** to open.
+2. Click **Okta** on the left navigation bar to find the **User** definition template and click **Profile** to open.
 
    |open_user_template|
 
-#. Click **Add Attribute** to add a new attribute in the user template.
+3. Click **Add Attribute** to add a new attribute in the user template.
 
    |profile_editor_add|
 
-#. Define a string attribute with a name; in this example, we use **accessprofile**.
+4. Define a string attribute with a name; in this example, we use **accessprofile**.
 
    |add_profile_attribute_to_user_template|
 
 .. _okta_map_attribute:
 
-Define an attribute mapping
----------------------------
+Defining an Attribute Mapping
+-----------------------------------------
 
 In the SAML application (**Okta/Applications/<your-vpn-saml-app>/General/SAML Settings/Edit**),
 define a mapping for the new attribute (e.g., **accessprofile**)
@@ -75,11 +75,11 @@ pre-qualified with the keyword **user** for referencing a property in the user t
 
 .. _okta_fill_attribute:
 
-Assign VPN profile to each SAML user
--------------------------------------
+Assigning the VPN Profile to Each SAML User
+---------------------------------------------------------
 
 For each SAML application user, edit the user record in the Okta directory for assigning the VPN profile (**Okta/Directory/People/<your-user>/Profile/Edit**).
-In this example, the VPN profile defined at the controller is named **access-profile**.
+In this example, the VPN profile defined at the Controller is named **access-profile**.
 Currently, only one profile is allowed per SAML user.
 
 |add_profile_attribute_to_user|
@@ -87,13 +87,13 @@ Currently, only one profile is allowed per SAML user.
 .. _okta_validation:
 
 Validation
-----------
+-------------------
 
 The following example illustrates the use of the SAML user's **Profile** attribute explained
 in previous sections:
 
-* It uses an Aviatrix VPN gateway that has **certificate sharing** enabled. That is,
-  only one VPN user is created at the Aviatrix VPN gateway.
+* It uses an Aviatrix VPN Gateway that has **certificate sharing** enabled. That is,
+  only one VPN user is created at the Aviatrix VPN Gateway.
   The corresponding **ovpn** file will be shared by all SAML VPN users defined in Okta.
 
 * Two VPN profiles are created: The **default-profile** contains a base deny-all policy and
@@ -103,14 +103,14 @@ in previous sections:
   As a result, only the SAML users who have his/her **Profile** attribute set to **access-profile** will
   have the right VPN access while others will be restricted by the **default-profile**.
 
-* For testing purpose, create two SAML users in Okta, respectively, with and without setting the
-  **Profile** attribute to **access-profile**.  Verify their VPN connection by
+* For testing purposes, create two SAML users in Okta, respectively, with and without setting the
+  **Profile** attribute to **access-profile**. Verify their VPN connection by
   checking the displayed profile of their VPN sessions at **Controller/Dashboard**.
 
 Here are the steps for setting up the example:
 
 #. Follow the guide `OpenVPN® with SAML Authentication on Okta IDP <https://docs.aviatrix.com/HowTos/UserSSL_VPN_Okta_SAML_Config.html>`__
-   to configure the controller to authenticate against the Okta IDP.  The Aviatrix SAML Endpoint in this
+   to configure the Controller to authenticate against the Okta IDP.  The Aviatrix SAML Endpoint in this
    example is named vpn-5-1-okta (**Controller/OpenVPN/Advanced/SAML**):
 
    |vpn-5-1-okta|
@@ -131,7 +131,7 @@ Here are the steps for setting up the example:
 
    |access-profile|
 
-#. Create one VPN user with the **default-profile** at the Aviatrix VPN gateway (**Controller/OpenVPN/VPN Users/Add new**):
+#. Create one VPN user with the **default-profile** at the Aviatrix VPN Gateway (**Controller/OpenVPN/VPN Users/Add new**):
 
    |vpn-user|
 

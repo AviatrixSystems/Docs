@@ -12,7 +12,7 @@
    </style>
 
 =================================
-Site2Cloud IPSec VPN Instructions
+Site2Cloud IPsec VPN Instructions
 =================================
 
 Overview
@@ -29,10 +29,10 @@ Configuration Workflow
 Create Site2Cloud Connection
 ----------------------------
 
-#. Login to your Aviatrix Controller.
+#. Log in to your Aviatrix Controller.
 #. Select the Site2Cloud navigation item on the left navigation bar.
-#. Click on `+ Add New` near the top of the `Site2Cloud` tab.
-#. Under `Add a New Connection`, enter the following:
+#. Click on **+ Add New** near the top of the Site2Cloud tab.
+#. Under **Add a New Connection**, enter the following:
    
    +-------------------------------+----------------------------------------------+
    | Field                         | Description                                  |
@@ -40,22 +40,22 @@ Create Site2Cloud Connection
    | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel     |
    |                               | will terminate in the cloud.                 |
    +-------------------------------+----------------------------------------------+
-   | Connection Type               | `Unmapped` unless Local Subnet and Remote    |
+   | Connection Type               | Unmapped unless Local Subnet and Remote    |
    |                               |  Subnet are overlapped.                      |
    +-------------------------------+----------------------------------------------+
    | Connection Name               | Name this connection.  This connection       |
    |                               | represents the connectivity to the edge      |
    |                               | device.                                      |
    +-------------------------------+----------------------------------------------+
-   | Remote Gateway Type           | `Generic`, `AWS VGW`, `Azure VPN`,           |
-   |                               | `Aviatrix`, or `SonicWall`.                  |
+   | Remote Gateway Type           | Generic, AWS VGW, Azure VPN,           |
+   |                               | Aviatrix, or SonicWall.                  |
    |                               | See below for additional details.            |
    +-------------------------------+----------------------------------------------+
-   | Tunnel Type                   | `Route-based` or `Policy-based`              |
+   | Tunnel Type                   | Route-based or Policy-based              |
    |                               |                                              |
    |                               | .. note::                                    |
-   |                               |    If Connection Type `Mapped` is selected   |
-   |                               |    only 'Route-based' is supported.          |
+   |                               |    If Connection Type Mapped is selected   |
+   |                               |    only Route-based is supported.          |
    |                               |                                              |
    +-------------------------------+----------------------------------------------+
    | Algorithms                    | Defaults will be used if unchecked. See      |
@@ -68,14 +68,14 @@ Create Site2Cloud Connection
    | DirectConnect                 | checked.                                     |
    +-------------------------------+----------------------------------------------+
    | Route Tables to Modify        | Only displayed if Encrypting over            |
-   |                               | DirectConnect/ExpressRoute is selected.      |
+   |                               | Direct Connect/ExpressRoute is selected.      |
    |                               | Select the specific routes tables to be      |
    |                               | programmed with remote CIDR routes.          |
    +-------------------------------+----------------------------------------------+
    | Enable HA                     | Enable High Availability. Additional fields  |
    |                               | are displayed when checked.                  |
    +-------------------------------+----------------------------------------------+
-   | Enable Single IP HA           | HA gatway failover solution using Single     |
+   | Enable Single IP HA           | HA gateway failover solution using Single     |
    |                               | Public IP on Aviatrix Regular gateway        | 
    |                               | allows you to reuse the same EIP to bring up |
    |                               | the backup tunnel.                           |
@@ -104,7 +104,7 @@ Create Site2Cloud Connection
    |                               | 10.2.0./24                                   |
    +-------------------------------+----------------------------------------------+
    | Remote Subnet (Virtual)       | Only applicable when Connection Type is      |
-   |                               | `Mapped`. Specify a list of virtual remote   |
+   |                               | Mapped. Specify a list of virtual remote   |
    |                               | network                                      |
    |                               | CIDRs that is 1-1 mapped to the Remote       |
    |                               | Subnet Real. For example, if the real        |
@@ -118,7 +118,7 @@ Create Site2Cloud Connection
    |                               | For example, 172.16.1.0/24, 172.16.2.0/24    |
    +-------------------------------+----------------------------------------------+
    | Local Subnet (Virtual)        | Only applicable when Connection Type is      |
-   |                               | `Mapped`. Specify a list of virtual local    |
+   |                               | Mapped. Specify a list of virtual local    |
    |                               | network                                      |
    |                               | CIDRs that are 1-1 mapped to the Local       |
    |                               | Subnet Real. For example, if the real        |
@@ -127,18 +127,18 @@ Create Site2Cloud Connection
    |                               | subnets as                                   |
    |                               | 192.168.7.0/24, 192.168.8.0/24               |
    +-------------------------------+----------------------------------------------+
-   | Backup Gateway                | Only available when 'Enable HA' is selected. |
+   | Backup Gateway                | Only available when Enable HA is selected. |
    |                               | Backup Gateway should be the .hagw created   |
-   |                               | at 'Gateway'->'Edit'->'Gateway for High      |
-   |                               | Availability Peering'                        |
+   |                               | at Gateway > Edit > Gateway for High      |
+   |                               | Availability Peering                        |
    +-------------------------------+----------------------------------------------+
-   | Remote Gateway IP Address     | Only available when 'Enable HA' is selected. |
+   | Remote Gateway IP Address     | Only available when Enable HA is selected. |
    | (Backup)                      | IP address of the backup gateway (.hagw)     |
    +-------------------------------+----------------------------------------------+
    | Same Pre-Shared Key as Primary| Check the option if the backup tunnel uses   |
    |                               | the same pre-shared key as the primary       |
    +-------------------------------+----------------------------------------------+
-   | Pre-shared Key (Backup)       | Only available when 'Enable HA' is selected. |
+   | Pre-shared Key (Backup)       | Only available when Enable HA is selected. |
    |                               | Optional. Enter the pre-shared key for this  |
    |                               | backup connection. If nothing is entered,    |
    |                               | one will be generated for you.               |
@@ -206,7 +206,7 @@ For mapped connections, the following four fields will be displayed:
       | Local Subnet(Real): 10.1.7.15/32
       | Local Subnet(Virtual): 192.168.7.45/32
 
-#. Click `OK`
+#. Click **OK**.
 
 
 Configuration Details
@@ -237,7 +237,7 @@ Remote Gateway Type
 Algorithms
 ++++++++++
 
-If the `Algorithms` checkbox is unchecked, the default values will be used.  If it is checked, you can set any of the fields defined below.
+If the Algorithms checkbox is unmarked, the default values will be used.  If it is checked, you can set any of the fields defined below.
 
    +-------------------------------+
    | Field                         |
@@ -269,34 +269,34 @@ You can change these settings later.
 Edit Connection
 =================
 
-Once a connection is created, you can download the configuration or edit parameters. 
+Once a connection is created, you can download the configuration or edit parameters.
 To do this, select **Site2Cloud** from the navigation menu and select the connection you just created.
 
 Download Configuration
-----------------------
+----------------------------------
 
 You can generate remote site configuration template. 
 
 Select the remote site device from the dropdowns provided.  If your remote site device is not listed in the dropdown menu, simply select an available one in the menu or use the **Generic**/**Vendor Independent** template.
 
-This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to site2cloud and simply import the downloaded configuration file and click OK. 
+This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to Site2Cloud and simply import the downloaded configuration file and click OK. 
 
 Local Identifier
-----------------
+---------------------
 
-By default, Aviatrix configures gateway's public IP as Local Identifier. User can adjust this settings to gateway's private IP.
+By default, Aviatrix configures gateway's public IP as Local Identifier. User can adjust these settings to the gateway's private IP.
 
 Remote Identifier
------------------
+-------------------------
 
-By default, Aviatrix configures public ip of peer device as Remote Identifier. User can adjust this settings to private ip of peer device.
+By default, Aviatrix configures public IP of peer device as Remote Identifier. User can adjust these settings to the private IP of peer device.
 
 Dead Peer Detection
---------------------
+-----------------------------
 
 This field is not applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. 
 
-Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPSEC tunnels to 
+Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPsec tunnels to 
 send periodic messages to ensure the remote site is up. 
 
 By default DPD detection is enabled. 
@@ -304,54 +304,54 @@ By default DPD detection is enabled.
 ================   ===============    ===============        
 Field              Value              Description                 
 ================   ===============    ===============     
-Delay              >= 1               Keealive timer (in seconds)
+Delay              >= 1               Keepalive timer (in seconds)
 Retry Delay        >= 1               How long should the tunnel wait before declaring keep alive failed. (in seconds)
 Maxfail            >= 1               Number of tries before considering the peer is dead. 
 ================   ===============    ===============     
 
 
 Active Active HA
-----------------
+---------------------------
 
-Allow site2cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC route tables. 
+Allow Site2Cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC/VNet route tables. 
 
-To enable this, go to SITE2CLOUD, edit the connection on the Setup page, scroll down to Active Active HA and click the button ENABLE.
+To enable this, go to Site2Cloud, edit the connection on the Setup page, scroll down to Active Active HA, and click **Enable**.
 
 Forward Traffic to Transit Gateway
-----------------------------------
+----------------------------------------------
 
-This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPSec connections. 
+This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPsec connections. 
 
 Event Triggered HA
-------------------
+---------------------------
 
-Event Trigger HA is a new mechanism to reduce the convergence time. To configure, go to Site2Cloud -> select a connection, click Edit. 
-Scroll down to Event Triggered HA and click Enable. 
+Event Trigger HA is a new mechanism to reduce the convergence time. To configure, go to Site2Cloud > select a connection, click **Edit**. 
+Scroll down to Event Triggered HA and click **Enable**. 
 
 Jumbo Frame
-------------------
+-------------------
 
-Jumbo Frame improves the performance between Aviatrix Transit gateway and CloudN. This feature is only supported for AWS, other clouds (Azure, GCP etc.) do not support Jumbo frame. To configure, go to Site2Cloud -> select a connection, click Edit. 
-Scroll down to Jumbo Frame and click Enable. 
+Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure, go to Site2Cloud > select a connection and click **Edit**. 
+Scroll down to Jumbo Frame and click **Enable**. 
 
 Clear Sessions
 -------------------
 
-Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, go to Site2Cloud -> select a connection, click Edit. 
-Scroll down to Clear Sessions and click Clear.
+Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, go to Site2Cloud > select a connection and click **Edit**. 
+Scroll down to Clear Sessions and click **Clear**.
 
 
 Periodic Ping
 --------------------
 
-In very rare cases Site2cloud tunnels may fail to pass traffic if the tunnel is dormant for a long period of time. This is not an issue with the Aviatrix Gateways and can usually be traced to misconfigurations on the remote device. To compensate for this Periodic Ping was developed to maintain a steady flow of traffic across the tunnel. 
+In very rare cases Site2Cloud tunnels may fail to pass traffic if the tunnel is dormant for a long period of time. This is not an issue with the Aviatrix Gateways and can usually be traced to misconfigurations on the remote device. To compensate for this Periodic Ping was developed to maintain a steady flow of traffic across the tunnel. 
 
 For configuration steps read the full article here:  `Periodic Ping <https://docs.aviatrix.com/HowTos/periodic_ping.html>`_
 
 Network Device Support
 ======================
 
-Aviatrix site2cloud supports all types of on-prem firewall and router devices that 
+Aviatrix Site2Cloud supports all types of on-prem firewall and router devices that 
 terminate VPN connection. Below are configuration examples to specific devices. 
 
     - `Azure VPN Gateway <./avxgw_azurevpngw_site2cloud.html>`_
@@ -369,7 +369,7 @@ terminate VPN connection. Below are configuration examples to specific devices.
 Additional Use Cases
 =====================
 
-Real world use cases sometimes require a combination of site2cloud and other features, such as `SNAT <https://docs.aviatrix.com/HowTos/gateway.html#source-nat>`_ and `DNAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_. 
+Real-world use cases sometimes require a combination of Site2Cloud and other features, such as `SNAT <https://docs.aviatrix.com/HowTos/gateway.html#source-nat>`_ and `DNAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_. 
 
 Here are a few documents in the Tech Notes session that demonstrate how you can solve some of them. 
 

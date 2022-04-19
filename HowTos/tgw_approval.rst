@@ -18,12 +18,12 @@ propagated into your own network and accidentally bring down the network.
 |tgw_approval|
 
 Approval is enabled on per TGW VPN and TGW DXGW bases. When Approval is enabled on a TGW VPN, 
-dynamically learned routes trigger an email to the Controller admin. Controller admin logins in to the Controller and go to
-TGW -> Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
+dynamically learned routes trigger an email to the Controller admin. Controller admin logins into the Controller and go to
+TGW > Approval, the admin should see the routes, both unapproved and already approved. Moving the routes from  
 Pending Learned CIDRs panel to Approved Learned CIDRs panel allows those routes to be propagated. 
 
 
-To enable Approval, go to TGW -> Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
+To enable Approval, go to TGW > Approval. Select the TGW and VPN/DXGW, click Learned CIDRs Approval to enable. 
 
 How does it work?
 ---------------------
@@ -39,7 +39,7 @@ Example 1: Two TGW VPN/DXGW in the same domain
 
 |tgw_two_vpn_approval|
 
-In the above example, two identical VPN CIDRs 10.10.1.0/24 are advertised to two TGW VPNs but are in the 
+In the example above, two identical VPN CIDRs 10.10.1.0/24 are advertised to two TGW VPNs but are in the 
 same domain. Both have Approval enabled. 
 Whichever VPN attachment learns the CIDR first and is approved, its attachment is 
 programmed into Spoke associated
@@ -48,7 +48,7 @@ TGW route table. VPN2 CIDR should continue to remain in pending list. If VPN1
 withdraw route 10.10.1.0/24, you can initiate approval by moving the VPN2 pending CIDR to 
 the approved panel, and this time it should be programmed. 
 
-Example 2 One TGW VPN requires approval and another one does not
+Example 2: One TGW VPN requires approval and another one does not
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |tgw_vpn_different_domains|

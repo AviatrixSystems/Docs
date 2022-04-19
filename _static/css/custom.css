@@ -78,3 +78,139 @@ p {
 .rst-versions .rst-current-version {
     color: #2b9d90 !important;
 }
+/* Fonts */
+
+@font-face {
+	font-family: "Interstate Reg";
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+	src: url("https://aviatrix.com/wp-content/themes/aviatrix/dist/fonts/Interstate-Regular.woff2") format("woff2");
+}
+			
+@font-face {
+	font-family: "Interstate Lt";
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+	src: url("https://aviatrix.com/wp-content/themes/aviatrix/dist/fonts/Interstate-Light.woff2") format("woff2");
+}
+			
+@font-face {
+	font-family: "Interstate Bla";
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+    src: url("https://aviatrix.com/wp-content/themes/aviatrix/dist/fonts/Interstate-Bold.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://aviatrix.com/wp-content/themes/aviatrix/dist/fonts/Avenir-Medium.woff2') format('woff2');
+}
+
+/* All Tags */
+
+h1 {
+    font-family: "Interstate Lt";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    color: #16151d;
+}
+
+h2 {
+    font-family: "Interstate Lt";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    color: #16151d;
+}
+
+h3 {
+    font-family: "Avenir";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    color: #16151d;
+}
+
+h4 {
+    font-family: "Interstate Lt";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    color: #16151d;
+}
+
+h5 {
+    font-family: "Interstate Lt";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    color: #16151d;
+}
+
+h6 * {
+    font-family: "Avenir", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: #16151d;
+}
+
+p {
+    font-family: "Avenir";
+    font-size: 15px;
+    color: #16151d;
+}
+
+label {
+    font-family: "Avenir";
+    font-size: 14px;
+    color: #16151d;
+}
+
+a {
+    font-family: "Avenir";
+    font-size: 15px;
+}
+
+/* Button style */
+button {
+    font-family: "Interstate Reg";
+    font-size: 16px;
+    font-style: normal;
+    padding: 10px 30px 10px 30px;
+    border-radius: 3px;
+}
+
+/* Page width and padding */
+.wy-nav-content{
+    max-width: 100%;
+    padding: 0px 50px 0px 50px;
+}
+
+/* Text colors */
+
+/* Menu vertical */
+.wy-menu-vertical p.caption .caption-text{
+    color: #e24402;
+}
+.wy-menu-vertical p.caption:before{
+    color: #e24402;
+}
+
+.wy-menu-vertical li a {
+    color: #212224;
+}
+
+.wy-side-nav-search > div[role="search"] {
+    background: #F1F1F1;
+}
+
+.wy-nav-side {
+    background: #F1F1F1 !important;
+}

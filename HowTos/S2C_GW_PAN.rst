@@ -7,9 +7,14 @@
 Aviatrix Gateway to Palo Alto Firewall
 =============================================
 
-This document describes how to build an IPSec tunnel based Site2Cloud connection between an Aviatrix Gateway and a Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
+This document describes how to build an IPsec tunnel based Site2Cloud connection between an Aviatrix Gateway and a Palo Alto Networks Firewall. To simulate an on-prem Firewall, we use a VM-Series in an AWS VPC.
 
-Network setup is as following:
+.. note::
+
+  If you do not have access to AWS, you can simulate an on-prem Firewall by deploying the Palo Alto Firewall in any other cloud (such as Microsoft Azure, Google Cloud Platform, or Oracle Cloud Infrastructure).
+
+
+The network setup is as follows:
 
 **VPC1 (with Aviatrix Gateway)**
 
@@ -33,9 +38,9 @@ Configuration Workflow
 
 #. Launch a Palo Alto Networks VM-series with at least two network interfaces - One interface serves as a WAN port and is in VPC2's public subnet. The other interface serves as a LAN port and is in VPC2's private subnet. Collect the public IP address of the WAN port.
 
-#. At the Aviatrix Controller, go to **Gateway > New Gateway** to launch an Aviatrix Gateway at VPC1's public subnet. Collect both the public and private IP address of the Gateway.
+#. At the Aviatrix Controller, go to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both the public and private IP address of the Gateway.
 
-#. At the Aviatrix Controller, go to **Site2Cloud** and click **Add New** to create a Site2Cloud connection:
+#. At the Aviatrix Controller, go to Site2Cloud and click **Add New** to create a Site2Cloud connection:
 
    ===============================     =========================================
      **Field**                         **Value**
@@ -46,7 +51,7 @@ Configuration Workflow
      Remote Gateway Type               Generic
      Tunnel Type                       UDP
      Algorithms                        Uncheck this box
-     Encryption over DirectConnect     Uncheck this box
+     Encryption over Direct Connect    Uncheck this box
      Enable HA                         Uncheck this box
      Primary Cloud Gateway             Select Aviatrix Gateway created above
      Remote Gateway IP Address         Public IP of Palo Alto Networks VM Series WAN port
@@ -55,11 +60,11 @@ Configuration Workflow
      Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
    ===============================     =========================================
 
-#. At the Aviatrix Controller, go to the **Site2Cloud** page. From the Site2Cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from the **Vendor** drop down list and click the **Download Configuration** button to download the Site2Cloud configuration. Save the configuration file for configuring a Palo Alto Network VM.
+#. At the Aviatrix Controller, go to the Site2Cloud page. From the Site2Cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from the **Vendor** dropdown list and click the **Download Configuration** button to download the Site2Cloud configuration. Save the configuration file for configuring a Palo Alto Network VM.
 
 #. Log into the Palo Alto Networks VM Series and configure it as following:
 
-   a. Go to **Network > Interface > Tunnel**, click **Add** to create a new tunnel interface and assign the following parameters.
+   a. Go to Network > Interface > Tunnel and click **Add** to create a new tunnel interface and assign the following parameters.
 
       |image0|
 
@@ -76,11 +81,11 @@ Configuration Workflow
 
          If the tunnel interface is in a zone different from the one where the traffic will originate, a policy needs to be created to allow the traffic to flow from the source zone to the zone containing the tunnel interface.
 
-   b. Go to **Network > Network Profiles > IKE Crypto**, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
+   b. Go to Network > Network Profiles > IKE Crypto, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
 
       |image1|
 
-   c. Go to **Network > Network Profiles > IKE Gateways** to configure the IKE Phase-1 Gateway. These parameters should match on the site2cloud configuration downloaded at Step 4.
+   c. Go to Network > Network Profiles > IKE Gateways to configure the IKE Phase-1 Gateway. These parameters should match on the Site2Cloud configuration downloaded at Step 4.
 
       |image2|
 
@@ -93,7 +98,7 @@ Configuration Workflow
         Peer Identification               Peer public IP Address (if the controller version is below 5.0,
 						it should be peer private IP) 
       ===============================     =========================================
-	Note: In Palo Alto Networks official documents, it is not necessary to add the Peer Identification.  However, to make sure the tunnel working, we recommend to add it. In the event that IPSec tunnel is up but traffic is not passing between cloud and on-premises, you may want to enable NAT-T in Palo Alto Networks Firewall.
+	Note: In Palo Alto Networks official documents, it is not necessary to add the Peer Identification.  However, to make sure the tunnel working, we recommend to add it. In the event that IPsec tunnel is up but traffic is not passing between cloud and on-premises, you may want to enable NAT-T in Palo Alto Networks Firewall.
 
       |image3|
 
@@ -103,11 +108,11 @@ Configuration Workflow
         IKE Crypto Profile                Select the profile created at Step 5.2
       ===============================     =========================================
 
-   d. Under **Network > Network Profiles > IPSec Crypto**, click **Add** to create a new profile. Define the IPSec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
+   d. Under Network > Network Profiles > IPsec Crypto, click **Add** to create a new profile. Define the IPsec crypto profile (IKEv1 Phase-2). These parameters should match on the Site2Cloud configuration downloaded at Step 4.
 
       |image4|
 
-   e. Under **Network > IPSec Tunnels**, click **Add** to create a new IPSec Tunnel. At the **General** window:
+   e. Under Network > IPsec Tunnels, click **Add** to create a new IPsec Tunnel. At the **General** window:
 
       |image5|
 
@@ -116,7 +121,7 @@ Configuration Workflow
       ===============================     =========================================
         Tunnel Interface                  Tunnel interface created at Step 5.1
         IKE Gateway                       IKE gateway created at Step 5.3
-        IPSec Crypto Profile              IPSec crypto profile created at Step 5.4
+        IPsec Crypto Profile              IPsec crypto profile created at Step 5.4
       ===============================     =========================================
 
    f. At **Proxy IDs** window:
@@ -131,7 +136,7 @@ Configuration Workflow
         Protocol                          Any
       ===============================     =================================================================
 
-   g. Under **Network > Virtual Routers**, click on the virtual router profile, then click **Static Routes** > default, add a new route destinating to VPC1 private subnet.
+   g. Under Network > Virtual Routers, click on the virtual router profile, then click Static Routes > default, add a new route destinating to VPC1 private subnet.
 
       |image7|
 
@@ -142,18 +147,18 @@ Configuration Workflow
         Interface                         Tunnel interface created at Step 5.1
       ===============================     =================================================================
 
-   h. Commit the configuration.  And, you will see the IPSec tunnel status become green.
+   h. Commit the configuration.  And, you will see the IPsec tunnel status become green.
    
       |image10|
 	  
 #. At the AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1's private subnet with the Palo Alto Networks VM LAN port as the gateway.
 
 
-#. Send traffic between VPC1's and VPC2's private subnets. At the Aviatrix Controller, go to the **Site2Cloud** page to verify the Site2Cloud connection status.
+#. Send traffic between VPC1's and VPC2's private subnets. At the Aviatrix Controller, go to the Site2Cloud page to verify the Site2Cloud connection status.
 
 |image8|
 
-For troubleshooting, go to **Site2Cloud > Diagnostics** and select various commands from **Action** drop down list.
+For troubleshooting, go to Site2Cloud > Diagnostics and select various commands from **Action** drop down list.
 
 |image9|
 

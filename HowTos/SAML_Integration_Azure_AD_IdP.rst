@@ -125,7 +125,7 @@ Click **Single sign-on** below **Manage**
    | Relay State                | (leave blank)                           |
    +----------------------------+-----------------------------------------+
 
-   |imageSAMLSettings|
+ The links for the SAML Identifier, Reply URL, and Sign on URL should point to the Application Gateway domain instead of the Aviatrix controller.
 
 **User Attributes**
 

@@ -11,39 +11,39 @@ Discover what Internet sites your apps visit before you configure `Egress FQDN F
 
 .. tip::
 
- If you already know the sites you apps visit or the FQDN names you need to apply, skip Discovery step. 
+ If you already know the sites you apps visit or the FQDN names you need to apply, skip the Discovery step. 
 
-Go to Security -> Egress Control -> Egress FQDN Discovery. Select a gateway from the drop down menu and click Start. The monitoring will start, click Show at any time to see the captured destination sites. Click Stop to stop the entire Discovery process.
+Go to Security > Egress Control > Egress FQDN Discovery. Select a gateway from the dropdown menu and click **Start**. The monitoring will start, click **Show** at any time to see the captured destination sites. Click **Stop** to stop the entire Discovery process.
 
 Start 
-------
+---------------
 
-When you click the "Start" button, the Controller will automatically enable SNAT function on the gateway. 
-The Controller looks for all private subnets in the VPC and replace any 0.0.0.0/0 -> AWS NAT Gateway to 
-instead points to the Aviatrix gateway. 
+When you click **Start**, the Controller will automatically enable SNAT function on the gateway. 
+The Controller looks for all private subnets in the VPC/VNet and replaces any 0.0.0.0/0 > NAT Gateway to 
+instead point to the Aviatrix Gateway.
 
 .. Important::
 
-  During the Discovery step, the `Exception Rule <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exception-rule>`_ must be enabled (the box should be checked which is the default setting.)
+  During the Discovery step, the `Exception Rule <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#exception-rule>`_ must be enabled (the checkbox should be marked, which is the default setting).
 
 Stop
-------
+----------
 
-When you click the "Stop" button, the VPC private route table entry for the default route (0.0.0.0/0) will be
-restored to its previous setting.  
+When you click **Stop**, the VPC/VNet private route table entry for the default route (0.0.0.0/0) will be
+restored to its previous setting.
 
 Show
------
+----------
 
-While the Discovery is in progress, click "Show" at any time to see the captured destination sites. 
+While the Discovery is in progress, click **Show** at any time to see the captured destination sites.
 
 Download
----------
+------------------
 
-Click the "Download" button during or after the Discovery, the destination list will be downloaded. You can later 
-import the list to configure the `FQDN Filter. <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_
+Click **Download** during or after the Discovery, the destination list will be downloaded. You can later 
+import the list to configure the `FQDN Filter <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_.
 
-Note that if a gateway is already attached to a FQDN tag, you cannot run the Discovery process, but you can view FQDN results immediately by going to Step 4 "Egress FQDN View Log".
+Note that if a gateway is already attached to a FQDN tag, you cannot run the Discovery process, but you can view FQDN results immediately by going to Step 4, Egress FQDN View Log.
 
 
 |discovered_sites|

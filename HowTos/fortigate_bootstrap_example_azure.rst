@@ -7,24 +7,24 @@
 Bootstrap Configuration Example for FortiGate Firewall in Azure
 =================================================================
 
-Using bootstrap option significantly simplifies Fortinet FortiGate initial configuration setup.
+Using the bootstrap option significantly simplifies Fortinet FortiGate initial configuration setup.
 
 In this document, we provide a bootstrap example to set up an "Allow All" firewall policy, firewall health check policy and static routes for the FortiGate to validate
-that traffic is indeed sent to the FortiGate for VNET to VNET traffic inspection.
+that traffic is indeed sent to the FortiGate for VNet-to-VNet traffic inspection.
 
-For a manual setup, follow `manual setup example. <https://docs.aviatrix.com/HowTos/config_FortiGateAzure.html>`_
+For a manual setup, follow `manual setup example <https://docs.aviatrix.com/HowTos/config_FortiGateAzure.html>`_.
 
 There are two ways to configure Fortinet Fortigate via Bootstrap Configuration:
 
-Method 1: Configure Fortigate Firewall via User Data
+Method 1: Configuring Fortigate Firewall via User Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow the Aviatrix Firewall Network (FireNet) workflow
-to `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_. to launch the firewall instance.
+to `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_ to launch the firewall instance.
 
-Go to Aviatrix Controller's console -> Firewall Network  -> Step -> Step 7a Launch & Associate Firewall Instance
+To Configure FortiGate using Custom Data, go to the Aviatrix Controller > Firewall Network  > Setup > Launch & Associate Firewall Instance.
 
-Fill in the required fields. Click Advanced. Fill in the following parameters.
+Fill in the required fields. Click **Advanced**. Fill in the following parameters.
 
 ================================  ======================
 **Advanced Field**                **Example Value**
@@ -37,12 +37,12 @@ Sample Fortigate Bootstrap Configuration to configure firewall "Allow-all" polic
     ::
 
         # Simple Example Fortigate Bootstrap Configuration
-        # Not Necessary Fullfil the Requirement for any Customer
+        # Not Necessary Fulfill the Requirement for any Customer
 
         # Login Username and Password
         config system admin
             edit admin
-                set password Aviatrix123#
+                set password <password>
         end
 
         # System Hostname
@@ -103,15 +103,15 @@ Sample Fortigate Bootstrap Configuration to configure firewall "Allow-all" polic
 
 Launch the instance. Wait for 15 minutes for it to boot up and initialize.
 
-Login to the HTTPS interface of the public IP with username "admin", password "Aviatrix123#"
+Log in to the HTTPS interface of the public IP with username "admin" and the password specified in the example Fortigate Bootstrap Configuration. For initial Fortigate login information, go to `Credentials for FortiGate Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417531104781>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
-Method 2: Configure Fortigate using Azure Blob
+Method 2: Configure Fortigate Using Azure Blob
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Create Storage Account and Private Container
---------------------------------------------------
+Creating Storage Account and Private Container
+------------------------------------------------------------
 
-Login to Azure's console and create a storage account, and private container in the Azure blob for bootstrap with a **unique** name, for example "bootstrap-fortigate", using this `guide <https://docs.fortinet.com/document/fortigate/6.0.0/deploying-fortigate-on-azure/61731/bootstrapping-the-fortigate-cli-and-byol-license-at-initial-boot-up-using-user-data>`_ Step 2 and 3 with the following structure:
+Log in to Azure's console and create a storage account, and private container in the Azure blob for bootstrap with a **unique** name, for example "bootstrap-fortigate", using this `guide <https://docs.fortinet.com/document/fortigate/6.0.0/deploying-fortigate-on-azure/61731/bootstrapping-the-fortigate-cli-and-byol-license-at-initial-boot-up-using-user-data>`_ Step 2 and 3 with the following structure:
 
 ::
 
@@ -122,28 +122,22 @@ Login to Azure's console and create a storage account, and private container in 
                 license.txt
 
 
-2. Upload config files
-------------------------
+Uploading Config Files
+---------------------------------
 
-**2.1** The example init.conf file contains the "Allow All" setup. To download the file, click :download:`init.txt <fortigate_bootstrap_example_media/init-azure.txt>`.
+1. The example init.conf file contains the "Allow All" setup. To download the file, click :download:`init.txt <fortigate_bootstrap_example_media/init-azure.txt>`.
+2. For the example license.lic file (optional), click :download:`license.txt <fortigate_bootstrap_example_media/license.lic>`.
+3. Upload these two files in the blob. Please follow Step 4 in `this <https://docs.fortinet.com/document/fortigate/6.0.0/deploying-fortigate-on-azure/61731/bootstrapping-the-fortigate-cli-and-byol-license-at-initial-boot-up-using-user-data>`_ guide.
 
-**2.2** For the example license.lic file (optional), click :download:`license.txt <fortigate_bootstrap_example_media/license.lic>`.
-
-.. Note::
-
-  In the example, the password is set to Aviatrix123#. You can customize it.
-
-**2.3** upload these two files in the blob. Please follow Step 4 in `this <https://docs.fortinet.com/document/fortigate/6.0.0/deploying-fortigate-on-azure/61731/bootstrapping-the-fortigate-cli-and-byol-license-at-initial-boot-up-using-user-data>`_ guide.
-
-3. Launch the Fortigate instance
------------------------------------
+Launching the Fortigate Instance
+--------------------------------------------
 
 First follow `Step 5 <https://docs.fortinet.com/document/fortigate/6.0.0/deploying-fortigate-on-azure/61731/bootstrapping-the-fortigate-cli-and-byol-license-at-initial-boot-up-using-user-data>`_ to get the SAS URL for Configuration and License.
 
 Follow the Aviatrix Firewall Network (FireNet) workflow
-to `Step 7a. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_
+to `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_.
 
-Fill in the required fields. Click Advanced. Fill in the following parameters.
+Fill in the required fields. Click **Advanced**. Fill in the following parameters.
 
 ================================  ======================
 **Advanced Field**                **Example Value**
@@ -159,17 +153,17 @@ Example Screenshot:
 
 Launch the instance. Wait for 15 minutes for it to boot up and initialize. Please make sure to verify the RFC 1918 and Internet static route in Fortigate firewall.
 
-Login to the HTTPS interface of the public IP with username "admin", password "Aviatrix123#"
+Log in to the HTTPS interface of the public IP with username "admin" and the password specified in the example Fortigate Bootstrap Configuration. For initial Fortigate login information, go to `ZENDESK_TITLE <ZENDESK_TITLE>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
-Ready to go!
+Ready to Go
 ~~~~~~~~~~~~~~~
 
-Now your firewall instance is ready to receive packets!
+Now your firewall instance is ready to receive packets.
 
 Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
-Launch one instance in PROD Spoke VNET and DEV Spoke VNET. Start ping packets from a instance in DEV Spoke VNET to the private IP of another instance in PROD Spoke VNET. The ICMP traffic should go through the firewall and be inspected in firewall.
+Launch one instance in PROD Spoke VNet and DEV Spoke VNet. Start ping packets from a instance in DEV Spoke VNet to the private IP of another instance in PROD Spoke VNet. The ICMP traffic should go through the firewall and be inspected in firewall.
 
 
 .. |fortigate_bootstrap_example| image:: fortigate_bootstrap_example_media/fortigate_bootstrap_example.png

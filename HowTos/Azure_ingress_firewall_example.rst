@@ -14,34 +14,34 @@ The deployment is shown as the diagram below.
 
 |transit_firenet_vnet|
 
-The key idea is from FireNet point of view, the ingress inspection is simply a VNET to VNET traffic inspection. This is accomplished by 
+The key idea is from FireNet point of view, the ingress inspection is simply a VNet-to-VNet traffic inspection. This is accomplished by 
 
- #. Place an Internet facing Azure Application Gateway in a spoke VNET (in the diagram, this spoke VNET is called Ingress Spoke VNET) to load balance traffic to the VNET where applications reside (Application Spoke VNET). 
+ #. Place an Internet facing Azure Application Gateway in a spoke VNet (in the diagram, this spoke VNet is called Ingress Spoke VNet) to load balance traffic to the VNet where applications reside (Application Spoke VNet). 
  
- #. Manage Spoke Inspection Policies for the Application Spoke VNET traffic that requires inspection with the Aviatrix Transit VNET.
+ #. Manage Spoke Inspection Policies for the Application Spoke VNet traffic that requires inspection with the Aviatrix Transit VNet.
 
-In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VNET to VNET filtering. The solution does not need Azure Load Balancers to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
+In this unified architecture, firewalls can be used for Ingress, Egress, North-South and VNet-to-VNet filtering. The solution does not need Azure Load Balancers to directly attach to firewall instances which then requires firewall instances to source NAT the incoming traffic from the Internet. Firewall instances can scale out as applications scale for all traffic types. 
 
 .. Note::
 
-  This architecture works for `Azure Application Gateway <https://docs.microsoft.com/en-us/azure/application-gateway/overview>`_. You can create multiple load balancers in the Ingress Spoke VNET. 
+  This architecture works for `Azure Application Gateway <https://docs.microsoft.com/en-us/azure/application-gateway/overview>`_. You can create multiple load balancers in the Ingress Spoke VNet. 
 
-1. Prerequisite Setup
+Prerequisite Setup
 --------------------------------
 
-First of all, upgrade the Aviatrix Controller to at least version UserConnect-5.3.1428
+First, upgrade the Aviatrix Controller to at least version UserConnect-5.3.1428.
 
   - https://docs.aviatrix.com/HowTos/inline_upgrade.html
   
-In this instruction, we are going to deploy the below topology in Azure
+In this instruction, we are going to deploy the below topology in Azure.
 
-- Azure VNETs
+- Azure VNets
 
-	- Aviatrix Transit VNET (i.e. 192.168.23.0/24)
+	- Aviatrix Transit VNet (i.e. 192.168.23.0/24)
 
-	- Ingress Spoke VNET (i.e. 10.20.0.0/16)
+	- Ingress Spoke VNet (i.e. 10.20.0.0/16)
 
-	- Application Spoke VNET (i.e. 10.21.0.0/16)
+	- Application Spoke VNet (i.e. 10.21.0.0/16)
 
 - Azure Transit with Native Spoke VNets topology
 
@@ -50,30 +50,27 @@ In this instruction, we are going to deploy the below topology in Azure
 	Aviatrix Transit FireNet for Azure Encrypted Transit topology also supports this Azure Ingress Firewall Solution.
 
 Deploy an Aviatrix Transit VNET
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create an Aviatrix Transit VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with Aviatrix FireNet VPC option enabled
+Create an Aviatrix Transit VNet by using the Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ with the Aviatrix FireNet VPC option enabled.
 
-- Go to the Aviatrix Controller Console.
+1. Go to the Aviatrix Controller.
+#. Open Useful Tools on the left sidebar > Create a VPC.
+#. Click **+ Add new** to create a new VPC with Cloud Type Azure ARM.
+#. Enable **Aviatrix FireNet VPC** checkbox.
 
-- Click on the link "Useful Tools -> Create a VPC"
+Deploying an Ingress Spoke VNET
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Click on the button "+ Add new" to create a new VPC with Cloud Type Azure ARM
+Create an Ingress Spoke VNET by using the Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing VNet.
 
-- Enable the checkbox "Aviatrix FireNet VPC"
+Deploying an Application Spoke VNET
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deploy an Ingress Spoke VNET
-^^^^^^^^^^^^^^^^^^^^^
+Create an Application Spoke VNET by utilizing Aviatrix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing Application VNET.
 
-Create an Ingress Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing VNET.
-
-Deploy an Application Spoke VNET
-^^^^^^^^^^^^^^^^^^^^^
-
-Create an Application Spoke VNET by utilizing Aviatrtix feature `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ as the previous step or manually deploying it in Azure portal. Moreover, feel free to use your existing Application VNET.
-
-Deploy Azure Transit with Native Spoke VNets topology
-^^^^^^^^^^^^^^^^^^^^^
+Deploying Azure Transit with Native Spoke VNets Topology
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to deploy Azure Transit with Native Spoke VNets topology.
 
@@ -85,10 +82,10 @@ Follow `Global Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https:
 		
 |azure_avx_transit_gw|
 
-- Attach both Ingress Spoke VNET and Application Spoke VNET via Azure native peering by following the step `Attach Azure ARM Spoke VNet via native peering <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_
+- Attach both Ingress Spoke VNET and Application Spoke VNET via Azure native peering by following the step `Attach Azure ARM Spoke VNet via native peering <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_.
 
-Manage Transit FireNet
-^^^^^^^^^^^^^^^^^^^^^
+Managing Transit FireNet
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#>`_ to deploy manage FireNet policy, and firewall instances.
 
@@ -96,7 +93,7 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 
 |azure_avx_manage_firenet_policy|
 
-- Deploy firewall instance in Aviatrix Transit VNET by following the step `Deploy Firewall Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#deploy-firewall-network>`_ as the following screenshot.
+- Deploy firewall instance in Aviatrix Transit VNet by following the step `Deploy Firewall Network <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#deploy-firewall-network>`_ as the following screenshot.
 	
 	Here is the Firewall information in this example for your reference. Please adjust it depending on your requirements.
 
@@ -114,14 +111,14 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 
 	|azure_avx_deploy_firewall|
 
-- Set up firewall configuration by referring to `Example Config for Palo Alto Network VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_
+- Set up firewall configuration by referring to `Example Config for Palo Alto Network VM-Series <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html>`_.
 
 	.. Note::
 
 		In Azure, instead of using pem file, please use username/password to ssh into firewall instance to reset password if needed. Additionally, use the same username/password to login into firewall website.
 
-2. Launch an Apache2 Web server in Application Spoke VNET 
--------------------------------------
+Launching an Apache2 Web server in Application Spoke VNET 
+------------------------------------------------------------------------------
 
 In Application Spoke VNET, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080.
 
@@ -134,28 +131,28 @@ Port				8080
 
 .. Note::
 
-	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On Ubuntu 16.04 | 17.10 | 18.04 LTS Servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server
+	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On Ubuntu 16.04 | 17.10 | 18.04 LTS Servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server.
 	
-	Refer to `How To Change Apache Default Port To A Custom Port <https://www.ostechnix.com/how-to-change-apache-ftp-and-ssh-default-port-to-a-custom-port-part-1/>`_ to use custom port 8080
+	Refer to `How To Change Apache Default Port To A Custom Port <https://www.ostechnix.com/how-to-change-apache-ftp-and-ssh-default-port-to-a-custom-port-part-1/>`_ to use custom port 8080.
 
-3. Create Azure Application Gateway
--------------------------------------
+Creating Azure Application Gateway
+----------------------------------------------
 
-In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select the following: 
+In Ingress Spoke VNET, create an Azure Application Gateway. Make sure you select the following: 
 
-- Create an Azure Application Gateway in Ingress Spoke VNET
+1. Create an Azure Application Gateway in Ingress Spoke VNET.
 
 	|azure_application_gw_creation|
 
-- Select "Public" for Frontend IP address type in section Frontends
+2. Select "Public" for Frontend IP address type in section Frontends.
 
 	|azure_application_gw_frontend|
 
-- Select "IP address or hostname" for Target type and configure the private IP of Apache2 Web Server for Target in section Backends
+3. Select "IP address or hostname" for Target type and configure the private IP of Apache2 Web Server for Target in section Backends.
  
 	|azure_application_gw_backend|
 
-- Add a routing rule on Listener depending on your requirement
+3. Add a routing rule on Listener depending on your requirement.
 
 
 	========================	==============
@@ -170,11 +167,11 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 	|azure_application_gw_routing_rule_listener|
 
 
-- Add a routing rule on Backend targets and create a HTTP setting depending on your requirement
+4. Add a routing rule on Backend targets and create a HTTP setting depending on your requirement.
 	
 	|azure_application_gw_routing_rule_backend_target|
 
-- Click the button "Create new" on HTTP settings
+5. Click **Create new** on HTTP settings.
 
 
 	|azure_application_gw_routing_rule_http_setting|
@@ -183,7 +180,7 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 	========================	=================
 	**Example setting**        	**Example value**
 	========================    	=================
-	Bankend protocol		HTTP										
+	Backend protocol		HTTP										
 	Backend port			8080					
 	========================	=================
 
@@ -191,23 +188,23 @@ In Ingress Spoke VNET, create an Azure Application Gateway, make sure you select
 	|azure_application_gw_routing_rule_backend_target_02|
 	
 
-- Review the configuration and click the button "Create" at the page "Review + create"
+6. Review the configuration and click **Create** on the Review + create page.
  
 .. note::
 
-	Refer to the instruction `Quickstart: Direct web traffic with Azure Application Gateway - Azure portal <https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal>`_
+	Refer to the instruction `Quickstart: Direct web traffic with Azure Application Gateway - Azure portal <https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal>`_.
 
 
-4. Ready to go!
----------------
+Ready to Go
+-------------------------
 
-Make sure Server (backend pool) status is in Healthy state from the Azure portal page "Application Gateway -> Backend health".
+Make sure Server (backend pool) status is in Healthy state from the Azure portal page Application Gateway > Backend health.
 
 |azure_application_gw_health_check|
 
 Run a http request targeting on the Azure Application Gateway Public IP or DNS name.
 
-- Find the Frontend public IP address of Azure Application Gateway from the Azure portal page "Application Gateway -> Overview"
+- Find the Frontend public IP address of Azure Application Gateway from the Azure portal page Application Gateway > Overview.
 	
 	|azure_application_gw_frontend_public_IP|
 	
@@ -215,7 +212,7 @@ Run a http request targeting on the Azure Application Gateway Public IP or DNS n
 	
 	|azure_browser|
 	
-- Perform tcpdump with port 8080 on Apache2 Web server
+- Perform tcpdump with port 8080 on Apache2 Web server.
 	
 	|azure_application_server_tcpdump|
 	
@@ -232,23 +229,23 @@ Run a http request targeting on the Azure Application Gateway Public IP or DNS n
 	`How do I see X forwarded for in Wireshark? <https://osqa-ask.wireshark.org/questions/13384/display-http-header>`_
 
 
-5. View Traffic Log on Firewall
----------------
+Viewing Traffic Log on Firewall
+-------------------------------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the Palo Alto VM-Series console. Go to the page "Monitor -> Logs -> Traffic". Perform http/https traffic from your laptop/PC to the public IP or domain name of Azure Application Gateway.
+You can view if traffic is forwarded to the firewall instance by logging in to the Palo Alto VM-Series console. Go to Monitor > Logs > Traffic. Perform http/https traffic from your laptop/PC to the public IP or domain name of Azure Application Gateway.
 
-6. Capturing Client IP in logs
--------------------------
+Capturing Client IP in Logs
+-------------------------------------
 
 To view the client IP address in the access log, follow the instructions in `How to save client IP in access logs <https://aws.amazon.com/premiumsupport/knowledge-center/elb-capture-client-ip-addresses/>`_. 
 
-- Find and open Apache configuration file.
+1. Find and open Apache configuration file.
 	
 	::
 
 		#vim /etc/apache2/apache2.conf
 
-- In the LogFormat section, add %{X-Forwarded-For}i as follows:
+2. In the LogFormat section, add %{X-Forwarded-For}i as follows:
 
 	::
 	
@@ -257,15 +254,15 @@ To view the client IP address in the access log, follow the instructions in `How
 		LogFormat "%h %l %u %t \"%r\" %>s %b" common
 		...
 		
-- Save your changes.
+3. Save your changes.
 
-- Reload the Apache service.
+4. Reload the Apache service.
 
 	::
 
 		#systemctl reload apache2
 		
-- Review the public/original client IP on apache2 access log 
+5. Review the public/original client IP on apache2 access log.
 
 |azure_application_server_apache2_accesslog|
 

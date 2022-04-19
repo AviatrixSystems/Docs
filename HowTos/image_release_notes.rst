@@ -1,13 +1,17 @@
-=======================================
-Image Release Notes
-=======================================
+====================================================
+Aviatrix Controller and Gateway Image Release Notes
+====================================================
 
-****Next Controller image is scheduled for November 2021****
+Controller Images: AWS AMI – Version 110421 (11/8/2021)
+======================================================
 
-****Next Gateway image is scheduled for November 2021****
+- Added support for AWS IMDSv2.
+ 
+- Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
 
+- Closed potential vulnerability in Ubuntu.
 
-Controller Images: AWS AMI – Version 100621 (10/13/21)
+Controller Images: AWS AMI – Version 100621 (10/13/2021)
 ======================================================
 
 This release addresses vulnerabilities fixed by Apache version 2.4.51.
@@ -59,7 +63,6 @@ Gateway Images: hvm-cloudx-aws-102320 (11/10/2020)
 
 - Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
-=======================================
 Overview
 =======================================
 

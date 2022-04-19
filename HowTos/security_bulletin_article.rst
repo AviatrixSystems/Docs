@@ -13,6 +13,43 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 Most Recent IR
 ================
+
+20. Aviatrix Controller and Gateways - Privilege Escalation (CVE-2021-4034 and CVE-2022-0185)
+----------------------------------------
+
+**Date** 02/03/2022
+
+**Risk Rating** Medium
+
+**Description** The publicly disclosed CVE-2021-4034 and CVE-2022-0185 are local privilege escalation vulnerabilities disclosed in the past two weeks. 
+When successfully executed, an attack exploiting these vulnerabilities can cause a local privilege escalation giving unprivileged users administrative rights on the target machine. The Aviatrix Gateway, Controller, and Copilot are all running vulnerable versions of the Linux packages. 
+However, in order to successfully exploit these vulnerabilities, an attacker requires local access to our systems and no vulnerability known to us today would allow such attack. 
+
+**Impact** A local user to our appliances can escalate his privileges to root.
+
+**Affected Products** Aviatrix Controller and Gateways.
+
+**Solution** 
+  - Upgrade Copilot to Release 1.6.3.
+  - Apply security patch [AVI-2022-0001 - CVE-2021-4034 and CVE-2022-0185 Privilege Escalation Patches] to controllers.
+
+19. Aviatrix Controller and Gateways - Unauthorized Access
+----------------------------------------
+
+**Date** 01/11/2022
+
+**Risk Rating** High for Gateways, medium for Controller.
+
+**Description** On the Aviatrix Controller, a successful attack would allow an unauthenticated remote attacker partial access to configuration information and allow them to disrupt the service. On the gateway, a successful attack would allow an unauthenticated network-adjacent attacker (i.e.: an attacker present on the gateway's VPC) access to its API.
+
+**Impact** Access to configuration information and disruption of service.
+
+**Affected Products** Aviatrix Controller, Gateways and Copilot.
+
+**Solution** Upgrade your controller and gateway software to:
+  - 6.4.2995 or later.
+  - 6.5.2898 or later.
+
 18. Aviatrix Controller - Remote file execution
 ----------------------------------------
 

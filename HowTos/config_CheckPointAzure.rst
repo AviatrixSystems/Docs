@@ -7,7 +7,7 @@
 Example Config for Check Point VM in Azure
 =========================================================
 
-In this document, we provide an example to set up the Check Point Security Gateway instance for you to validate that packets are indeed sent to the Check Point Security Gateway for VNET to VNET and from VNET to internet traffic inspection.
+In this document, we provide an example to set up the Check Point Security Gateway instance for you to validate that packets are indeed sent to the Check Point Security Gateway for VNet-to-VNet and from VNet to internet traffic inspection.
 
 .. note::
     Firewall and Security Gateway word will be used interchangeably in this document. Both refers to Check Point Security Gateway product.
@@ -15,7 +15,7 @@ In this document, we provide an example to set up the Check Point Security Gatew
 Prerequisites
 ----------------
 
-Before you start, make sure you have understanding on 
+Before you start, make sure you understand on: 
 
     - Basic Check Point Architecture
     - Check Point Security Management 
@@ -34,30 +34,31 @@ CloudGuard IaaS Standalone (Gateway + Management) - BYOL                        
 .. important::
 
   - Check Point Standalone does not require Security Management to manage polices.
-  - Gateway NGTP and NGTX both requires Security Management to configure Security Gateway Polices
+  - Gateway NGTP and NGTX both requires Security Management to configure Security Gateway Polices.
 
 Check Point Reference Architecture
-----------------------------------------
-It is absolutely paramount at this stage to understand the basic Check Point architecture to configure Check Point Security Gateway properly. Please see a reference architure:
+-----------------------------------------------
+
+It is absolutely paramount at this stage to understand the basic Check Point architecture to configure Check Point Security Gateway properly. Please see a reference architecture:
 
 |cp_arch_reference|
 
 As per the reference shown above the following steps will be required to configure security polices successfully:
 
     1. Launch Check Point Security Gateway - Configure Interfaces and Static Routes and other specific Security Gateway configuration.
-    #. Download, install and configure Check Point Security Management (Optional)
-    #. Download, install and configure Check Point Smart Console - Launch Smart Console using Security Manager IP, add/authenticate one or more security gateways, configure security rules/polices, and push it to security gateways.
+    #. Download, install, and configure Check Point Security Management (Optional)
+    #. Download, install, and configure Check Point Smart Console - Launch Smart Console using Security Manager IP, add/authenticate one or more security gateways, configure security rules/polices, and push it to security gateways.
 
 Please follow the below steps to launch and configure Check Point Security Gateway in Azure.
 
 If you are looking to deploy Check Point in AWS environment, your starting point is `here <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html>`_.
 
-1. Launch Check Point Firewall from Aviatrix Controller
-----------------------------------------------------------
+Launching Check Point Firewall from Aviatrix Controller
+-----------------------------------------------------------------------
 
-The Aviatrix Firewall Network (FireNet) workflow launches a Check Point Security Gateway instance at `Step 7a <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#a-launch-and-associate-firewall-instance>`_.
+The Aviatrix Firewall Network (FireNet) workflow launches a Check Point Security Gateway instance at `this step <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#launching-and-associating-firewall-instance>`_.
 
-Go to Aviatrix Controller's console, Firewall Network -> Setup -> Step 7a. Here is the Security Gateway information in this example for your reference. Please adjust it depending on your requirements.
+Go to the Aviatrix Controller > Firewall Network > Setup > Step 2a. Here is the Security Gateway information in this example for your reference. Please adjust it depending on your requirements.
 
 ==========================================      ==========
 **Example setting**                             **Example value**
@@ -89,12 +90,12 @@ eth1 (on subnet -dmz-firewall-lan)                               LAN or Trusted 
 
 After the launch is complete, Aviatrix Controller automatically initiates the Security Gateway on-boarding process, configure interfaces and program RFC 1918 routes in Check Point Security Gateway.
 
-2. Login to Check Point Firewall Gaia Portal
-----------------------------------------------
+Logging in to Check Point Firewall Gaia Portal
+-------------------------------------------------------
 
-After launch is complete, the controller's displays the Check Point Security Gateway with its public IP address of management/egress interface to login to the Check Point Gaia's console.
+After launch is complete, the Controller displays the Check Point Security Gateway with its public IP address of management/egress interface to login to the Check Point Gaia's console.
 
-Go back to the Controller's console, Firewall Network -> Setup -> Step 7a and  Click on the `Management UI` as shown below.
+Go back to the Controller, Firewall Network > Setup > Step 2a and  Click on the Management UI as shown below.
 
 The URL takes you to the Check Point Security Gateway Gaia Portal you just launched.
 
@@ -104,29 +105,29 @@ The URL takes you to the Check Point Security Gateway Gaia Portal you just launc
 
   Please try to use different browser (e.g. Firefox) if the Management UI link is not opening on your default browser.
 
-Login Gaia Portal with admin and password specified at launch time. 
+Log in to the Gaia Portal with admin and password specified at launch time. 
 
-Go to the page “Network Management -> Network Interfaces” to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
+Go to Network Management > Network Interfaces to review eth0 (WAN) and eth1 (LAN) configuration as shown below.
 
 |cp_firewall_interfaces|
 
 Review static routes RFC 1918 which is configured on LAN port, the purpose of those static route is to send the packets back to the Gateway (GW).
 
-Those static routes could be reviewed on the page “Network Management -> IPv4 Static Routes”
+Those static routes could be reviewed on the Network Management > IPv4 Static Routes page.
 
 |cp_firewall_static_routes|
 
-Routes can also be reviewed by clicking the button “Monitoring” on the page “Network Management -> IPv4 Static Routes”
+Routes can also be reviewed by clicking **Monitoring** on the Network Management > IPv4 Static Routes page.
 
 |cp_firewall_routes_monitoring|
 
 .. important::
-    Please make sure HTTPS (TCP 443 port) must be allowed in Check Point Security Gateway. By default, TCP 443 port is enabled in Security Gateay. This port will be used for Security Gateway health check.
+    Please make sure HTTPS (TCP 443 port) must be allowed in Check Point Security Gateway. By default, TCP 443 port is enabled in Security Gateway. This port will be used for Security Gateway health check.
 
 
-3. (Optional) Firewall Vendor Integration
+(Optional) Firewall Vendor Integration
 -------------------------------------------------
-Go to Aviatrix Controller --> Firewall Network --> Vendor Integration and complete the step as shown below:
+Go to the Aviatrix Controller > Firewall Network > Vendor Integration and complete the step as shown below:
 
 |cp_firewall_vendor_integration|
 
@@ -135,10 +136,10 @@ Click **Save**, **Show** and **Sync** respectively.
 This automatically set up the non-RFC 1918 routes between Aviatrix Gateway and Vendor’s firewall instance in this case Check Point. This can also be done manually through Cloud Portal and/or Vendor’s Management tool.
 
 
-4. Download and install the SmartConsole
--------------------------------------------------
+Downloading and Installing the SmartConsole
+-----------------------------------------------------------
 
-4.1 Deploy and Install Check Point Security Management
+Deploying and Installing Check Point Security Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Check Point Security Gateway launched in the step 1 requires a management console (Check Point Security Manager) for managing one or more Security Gateways.
@@ -149,28 +150,28 @@ Deploy and install the **Check Point Security Management** from Azure Marketplac
 
     Check Point Security Management CloudGuard version should be R80.40. Check Point Security Manager deployment and installation steps are not part of this guide, and it has to be done manually.
 
-Login to Check Point Security Manager and download the SmartConsole on Windows-based computer.
+Log in to the Check Point Security Manager and download the SmartConsole on Windows-based computer.
 
-  Option 1: click on the button "Download Now!" with message "Manage Software Blades using SmartConsole" on the Overview page as below.
+  Option 1: Click **Download Now!** with the message Manage Software Blades using SmartConsole on the Overview page as below.
 
 |cp_security_manager|
 
-  Option 2: download it by using this link `R80.40 <https://supportcenter.Check Point.com/supportcenter/portal?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=101086>`_
+  Option 2: Download it by using this link `R80.40 <https://supportcenter.Check Point.com/supportcenter/portal?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=101086>`_
 
-4.2 Install SmartConsole and Login
+Installing SmartConsole and Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check Point's SmartConsole is a Windows-based application used to configure and manage polices. These polices can be applied to one or more Security Gateways.
 
-Install the SmartConsole and login into it with the Gaia Portal username, password and IP Address of **Check Point's Security Manager**.
+Install the SmartConsole and log into it with the Gaia Portal username, password, and IP Address of the Check Point's Security Manager.
 
 |smart_console_login|
 
 
-5. Configure and Add Check Point Gateway in SmartConsole
---------------------------------------------------------
+Configuring and Add Check Point Gateway in SmartConsole
+-------------------------------------------------------------------------
 
-5.1 (Optional) Configure Security Gateway Secure Inter-Communication (SIC) Key
+(Optional) Configure Security Gateway Secure Inter-Communication (SIC) Key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please skip this step if you remember the SIC Key provided during the Security Gateway launch from Aviatrix Controller.
@@ -271,7 +272,7 @@ SSH to Check Point Gateway in order to configure One-time Secure Password.
 
 Terminate SSH session.
 
-5.2 Add Check Point Security Gateway in SmartConsole
+Adding Check Point Security Gateway in SmartConsole
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At this point, we have a One-time secure password (SIC Key) which will be used to add a Gateway inside Check Point Security Manager.
@@ -319,20 +320,20 @@ Click "OK" and "Finish".
 
 |cp_wizard_summary|
 
-Review the Gateway Summary and Click "OK"
+Review the Gateway Summary and click **OK**.
 
 |cp_gw_summary|
 
-At this point if all the steps are followed properly then you should see a Gateway under GATEWAYS & SERVERs tab.
+At this point if all the steps are followed properly then you should see a Gateway under the Gateways & Servers tab.
 
 |cp_gw_added|
 
-6. Configure basic traffic policy to allow traffic VNET to VNET
-------------------------------------------------------------------
+Configuring Basic traffic Policy to Allow Traffic VNet to VNet
+------------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows traffic to pass through the Security Gateway.
 
-Go to the page "SECURITY POLICIES -> Access Control -> Policy" and configure a policy by either modifying the default "Cleanup rule" or Add a new rule above the default rule.
+Go to Security Policies > Access Control > Policy and configure a policy by either modifying the default Cleanup rule or Add a new rule above the default rule.
 
 =======================   ===============================================
 **Field**                 **Value**
@@ -348,7 +349,7 @@ Track                     Log
 
 |basic_allowall_policy|
 
-Click on the button "Install Policy" in Smart Console on top left corner, and then "Install" to commit the settings.
+Click **Install Policy** in Smart Console on top left corner, and then **Install** to commit the settings.
 
 |install_allowall_policy|
 
@@ -356,32 +357,35 @@ Click on the button "Install Policy" in Smart Console on top left corner, and th
 
 After validating that your traffic is being routed through your Security Gateway instances, you can customize the security policy to tailor to your requirements.
 
-7. [Optional] Configure basic traffic policy to allow traffic VNET to Internet
-----------------------------------------------------------------------------------
+[Optional] Configure Basic Traffic Policy to Allow Traffic VNet to Internet
+-----------------------------------------------------------------------------------------
 
 In this step, we will configure a basic traffic security policy that allows internet traffic to pass through the firewall.
 
 .. important::
-  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet
+  Enable `Egress inspection <https://docs.aviatrix.com/HowTos/firewall_network_faq.html#how-do-i-enable-egress-inspection-on-firenet>`_ feature on FireNet.
 
-First of all, go back to the Aviatrix Controller Console. Navigate to the page "Firewall Network -> Advanced". Click the skewer/three dot button. Scroll down to “Egress through Firewall” and click Enable. Verify the Egress status on the page "Firewall Network -> Advanced".
+1. First of all, go back to the Aviatrix Controller. Navigate to Firewall Network > Advanced. 
+2. Click the skewer/three dot button. 
+3. Scroll down to Egress through Firewall and click **Enable**. 
+4. Verify the Egress status on the Firewall Network > Advanced page.
 
 |cp_egress_inspection|
 
-Secondly, go back to the Check Point SmartConsole. Navigate to the page "GATEWAYS&SERVERS" and then double-click on the gateway itself to enable NAT function as the following screenshot.
+Second, go back to the Check Point SmartConsole. Navigate to the Gateways & Servers page and then double-click on the gateway itself to enable NAT function as the following screenshot.
 
-- Click on the button "NAT"
-- Enable the checkbox "Hide internal networks behind the Gateway's external IP"
-- Click the button "OK"
-- Click the button "Install Policy"
+1. Click **NAT**.
+2. Enable **Hide internal networks behind the Gateway's external IP** checkbox.
+3. Click **OK**.
+4. Click **Install Policy**.
 
 |cp_policy_vpc_to_internet_nat_enabled|
 
 .. important::
 
-  NAT function needs to be enabled on the Check Point FW interface eth0 for this VNET to Internet policy. Please refer to `Check Point's NAT instruction <https://sc1.Check Point.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for detail.
+  NAT function needs to be enabled on the Check Point FW interface eth0 for this VNet to Internet policy. Please refer to `Check Point's NAT instruction <https://sc1.Check Point.com/documents/R76/CP_R76_Firewall_WebAdmin/6724.htm>`_ for details.
 
-**[Optional]** If you have default "Cleanup rule", then navigate to the page "SECURITY POLICIES -> Access Control -> Policy" and inject a new rule for Internet Policy on top of the default "Cleanup rule".
+**[Optional]** If you have default Cleanup rule, then navigate to the page Security Policies > Access Control > Policy and inject a new rule for Internet Policy on top of the default Cleanup rule.
 
 =======================   ===============================================
 **Field**                 **Value**
@@ -395,39 +399,39 @@ Action                    Accept
 Track                     Log
 =======================   ===============================================
 
-Click on the button "Install Policy" and then "Install" to commit the settings.
+Click **"Install Policy** and then **Install** to commit the settings.
 
 |cp_policy_vpc_to_internet|
 
 After validating that your traffic is being routed through your Security Gateway instances, you can customize the security policy to tailor to your requirements.
 
-8. Ready to go!
+Ready to Go
 ----------------
 
-Now your Security Gateway instance is configured and ready to receive packets!
+Now your Security Gateway instance is configured and ready to receive packets.
 
 Next step is to validate your configurations and polices using FlightPath and Diagnostic Tools (ping, traceroute etc.).
 
 
-9. View Traffic Log
-----------------------
+Viewing Traffic Log
+--------------------------
 
-You can view if traffic is forwarded to the firewall instance by logging in to the Check Point Firewall SmartConsole. Go to the page "LOGS & MONITOR".
+You can view if traffic is forwarded to the firewall instance by logging in to the Check Point Firewall SmartConsole. Go to the Logs & Monitors page.
 
-For VNET to VNET traffic:
+For VNet to VNet traffic:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Launch one instance in PROD Spoke VNET and DEV Spoke VNET. Start ping packets from a instance in DEV Spoke VPC to the private IP of another instance in PROD Spoke VPC. The ICMP traffic should go through the firewall and be inspected in firewall.
+Launch one instance in PROD Spoke VNet and DEV Spoke VNet. Start ping packets from a instance in DEV Spoke VPC to the private IP of another instance in PROD Spoke VPC. The ICMP traffic should go through the firewall and be inspected in firewall.
 
 |cp_view_traffic_log_vpc_to_vpc|
 
-[Optional] For VNET to Internet traffic:
+[Optional] For VNet to Internet traffic:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Launch a private instance in the Spoke VNET (i.e. PROD Spoke VNET) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
+Launch a private instance in the Spoke VNet (i.e. PROD Spoke VNet) and start ping packets from the private instance towards Internet (e.g 8.8.8.8) to verify the egress function. The ICMP traffic should go through, and get inspected on firewall.
 
 .. important::
-    The Egress Inspection is only applicable to all VNets that deploys non public facing applications. If you have any Spoke VNet that has public facing web services, you should not enable Egress Inspection. This is because Egress Inspection inserts a default route (0.0.0.0/0) towards Transit GW to send the Internet traffic towards firewall to get inspected. Azure's System Default Route pointing towards Internet will be overwritten by User-defined default route inserted by the Controller. 
+    The Egress Inspection is only applicable to all VNets that deploys non-public-facing applications. If you have any Spoke VNet that has public facing web services, you should not enable Egress Inspection. This is because Egress Inspection inserts a default route (0.0.0.0/0) towards Transit GW to send the Internet traffic towards firewall to get inspected. Azure's System Default Route pointing towards Internet will be overwritten by User-defined default route inserted by the Controller. 
 
 |cp_view_traffic_log_vpc_to_internet|
 

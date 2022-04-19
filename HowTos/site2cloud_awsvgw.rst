@@ -16,13 +16,14 @@ Aviatrix Gateway to AWS VGW
 =====================================================================
 
 Overview
---------
+-----------------
+
 This document describes how to configure an IPsec tunnel between an Aviatrix Gateway and an AWS Virtual Private Gateway (VGW).
 
 |gw2vgw|
 
 Deployment Guide
-----------------
+----------------------------
 
 For this use case, we will configure the AWS VGW VPN connection first and then download the configuration from AWS and import it into Aviatrix.
 
@@ -33,11 +34,11 @@ Create the VPN Connection
 
    **Prerequisites**
 
-   #. You have a VGW created and attached to a VPC
+   #. You have a VGW created and attached to a VPC.
    #. You have an Aviatrix Gateway provisioned in a different VPC.  You will need this gateway's public IP address for the steps below.
 
 #. Log in to your AWS `VPC Dashboard <https://console.aws.amazon.com/vpc/home>`__ in the region where your VGW is located
-#. Create a new `Customer Gateway <https://console.aws.amazon.com/vpc/home#CreateCustomerGateway>`__
+#. Create a new `Customer Gateway <https://console.aws.amazon.com/vpc/home#CreateCustomerGateway>`__.
 
    |awscg|
 
@@ -51,7 +52,7 @@ Create the VPN Connection
    | IP Address                   | Enter the Aviatrix Gateway's public IP    |
    +------------------------------+-------------------------------------------+
 
-#. Create a `VPN Connection <https://console.aws.amazon.com/vpc/home#CreateVpnConnection:>`__
+#. Create a `VPN Connection <https://console.aws.amazon.com/vpc/home#CreateVpnConnection:>`__.
 
    |awsvpn|
 
@@ -72,17 +73,17 @@ Create the VPN Connection
    | Tunnel Options               | Leave blank/default                       |
    +------------------------------+-------------------------------------------+
 
-#. Select the VPN you just created and click the **Download Configuration** button along the top.  At the dialog, select **Generic** for the `Vendor`, **Generic** for the `Platform` and **Vendor Agnostic** for the `Software`
+#. Select the VPN you just created and click the **Download Configuration** button along the top.  At the dialog, select **Generic** for the Vendor, **Generic** for the Platform and **Vendor Agnostic** for the Software.
 
 #. Click **Download Configuration**.  You will use this file to create the other side of the tunnel.
 
    |awsdownloadvpnconfig|
 
-Configure Aviatrix
+Configuring Aviatrix
 ++++++++++++++++++
 
-#. Login to your Aviatrix Controller
-#. Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  Use this table for specific field values
+#. Log in to your Aviatrix Controller.
+#. Follow the steps in `this </HowTos/site2cloud.html>`__ guide.  Use this table for specific field values.
 
    +-------------------------------+------------------------------------------+
    | Field                         | Description                              |
@@ -103,7 +104,7 @@ Configure Aviatrix
    | Field                         | Description                              |
    +===============================+==========================================+
    | Remote Gateway IP Address     | Enter the value that matches the value   |
-   |                               | `Tunnel Interface Configuration`         |
+   |                               | Tunnel Interface Configuration           |
    |                               | > **Outside IP Addresses**               |
    |                               | > **Virtual Private Gateway**            |
    +-------------------------------+------------------------------------------+
@@ -120,28 +121,30 @@ Configure Aviatrix
    |tunnelconfig|
 
 Test
-----
+----------
 
-Once complete, test the communication using the tunnel
+Once complete, test the communication using the tunnel.
 
 Troubleshooting
----------------
+-------------------------
 
 Wait 2-3 minutes for the tunnel to come up.  If it does not come up within that time, check the IP addresses to confirm that they are accurate.  Additional troubleshooting is available in the **Diagnostics** tab.
 
 Appendix: Enable HA
--------------------
+-------------------------------
 
-You can enable HA for Aviatrix site2cloud connection to AWS VGW. Please add the following extra steps to the configuration.
+You can enable HA for Aviatrix Site2Cloud connection to AWS VGW. Please add the following extra steps to the configuration.
 
-Create Aviatrix HA Gateway
-++++++++++++++++++++++++++
+Creating an Aviatrix HA Gateway
++++++++++++++++++++++++++++
 
 Before creating a Site2Cloud connection, follow `this <https://docs.aviatrix.com/Solutions/gateway_ha.html>`__ guide's
 **Backup Gateway and Tunnel HA** section to create an Aviatrix HA gateway in the same VPC.
 
-From AWS console, create a new VPN connection between VGW and Aviatrix HA Gateway
+Creating a VPN Connection Between VGW and the Aviatrix HA Gateway
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+From the AWS console, create a new VPN connection between VGW and Aviatrix HA Gateway.
 
 #. Create a new Customer Gateway for Aviatrix HA Gateway:
 
@@ -180,7 +183,7 @@ From AWS console, create a new VPN connection between VGW and Aviatrix HA Gatewa
 Create Aviatrix Site2Cloud Connection with HA
 +++++++++++++++++++++++++++++++++++++++++++++
 
-From Aviatrix Controller UI -> Site2Cloud page, click **+ Add New**, under **Add a New Connection**, make sure **Enable HA** is checked.
+From Aviatrix Controller UI > Site2Cloud page, click **+ Add New**, under **Add a New Connection**, make sure **Enable HA** is checked.
 
 Additional fields are displayed when checked.
 

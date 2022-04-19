@@ -10,20 +10,20 @@ Aviatrix Default Route Handling
 This document explains how Aviatrix handles the default route 0.0.0.0/0 starting from R6.2. 
 
 
-1. Public subnet vs. Private subnet
+Public Subnet vs. Private Subnet
 ================================================================
 
-A public subnet is different from a private subnet in a VPC/VNet by way of how the default route is managed. 
+A public subnet is different from a private subnet in a VPC/VNet in each Cloud Service Provider (CSP) by way of how the default route is managed.
 
-In AWS, a public subnet is well defined. If the subnet associated route table has a route entry 0.0.0.0/0 pointing to IGW, the subnet is a public subnet. On the other hand, if 0.0.0.0/0 does not point to IGW, this is a private subnet. 
+In AWS, a public subnet is well-defined. If the subnet associated route table has a route entry 0.0.0.0/0 pointing to IGW, the subnet is a public subnet. On the other hand, if 0.0.0.0/0 does not point to IGW, this is a private subnet. 
 
 In Azure, such distinction is less defined via explicit route entries. By default any VM in Azure is a public instance 
 with direct Internet access and can be reached 
-from the Internet as long as it has a public IP address. This is because Azure automatically programs a system route entry with 0.0.0.0/0 pointing to Internet, as shown in the screenshot below after a VM is launched. Azure's `system programmed default route` is displayed in Effective Routes.
+from the Internet as long as it has a public IP address. This is because Azure automatically programs a system route entry with 0.0.0.0/0 pointing to Internet, as shown in the screenshot below after a VM is launched. Azure's "system programmed default route" is displayed in Effective Routes.
 
 |system_default_route|
 
-Since Aviatrix Controller programs route table extensively and there are use cases that deal with egress control, it is important that the Controller follow well defined rules when handling different types of subnets.  
+Since Aviatrix Controller programs route table extensively and there are use cases that deal with egress control, it is important that the Controller follow well-defined rules when handling different types of subnets.  
 
 Below are what Aviatrix Controller defines as public or private subnet.  
 
@@ -65,35 +65,33 @@ Below are what Aviatrix Controller defines as public or private subnet.
   In Azure, the rule of thumb of classifying a subnet as private is that the subnet's associated route table has a UDR (User Defined Routes) route entry of 0.0.0.0/0 pointing to None, an NVA appliance, Virtual Network or Virtual Network Gateway. 
 
 
-2. Changes made on **Azure** in R6.2
+Changes Made on **Azure** in R6.2
 =========================================================================
 
-Prior to 6.2, Aviatrix Controller blindly overwrites the default route to point to Aviatrix gateway in every route table whenever egress control is involved. This can bring
+Prior to 6.2, Aviatrix Controller blindly overwrites the default route to point to Aviatrix gateway in every route table whenever egress control is involved. This can cause
 outages if the deployment
 has public facing application or VMs. In 6.2, the rules for Aviatrix Controller to overwrite the default route becomes well defined.
 
 .. tip::
 
-  Use Useful Tool `create a VPC tool` to create an Spoke and Transit Azure VNet. For Spoke VNet, the Controller will program a UDR default route 0.0.0.0 pointing to next hop type "None" to the route table associated with the private subnets. Check `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info.
+  Use the Useful Tool "create a VPC tool" to create an Spoke and Transit Azure VNet. For Spoke VNet, the Controller will program a UDR default route 0.0.0.0 pointing to next hop type "None" to the route table associated with the private subnets. Check `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for more info.
 
-If you created Azure VNet via `create a VPC tool` prior R6.2 or created Azure VNet via your own scrip, make sure you inject a UDR route 0.0.0.0 pointing to next hop type 
+If you created Azure VNet via `create a VPC tool` prior R6.2 or created Azure VNet via your own scrip, make sure you inject a UDR route 0.0.0.0 pointing to the next hop type 
 "None" to signal to the Aviatrix Controller that this is a private subnet and its default route can be overwritten.
 
 If you have already deploy Transit FireNet with Egress Control, upgrading to 6.2 does not impact the existing traffic. However if you detach a Spoke VNet and re-attach it or 
 disable Egress Inspection and re-enable it, the new rules will kick in. 
 
-3. Testing
+Testing
 ===================
 
 When testing egress control from a VM in Azure VNet, make sure this VM is on a private subnet as defined in this document. Since this VM is on a private subnet without a public IP
 address, you cannot directly SSH into the VM. You can use `Azure Bastion Service <https://docs.microsoft.com/en-us/azure/bastion/bastion-overview>`_ or `Aviatrix User VPN gateway <https://docs.aviatrix.com/HowTos/uservpn.html>`_ to connect to the private IP address of the VM via SSH.
 
-
-
-4. Use case: Single SNAT or FQDN in a VPC/VNet
+Use Case: Single SNAT or FQDN in a VPC/VNet
 ========================================================
 
-Users can launch Aviatrix gateways within the network, and enable Single SNAT or FQDN feature on the gateway. Aviatrix gateway will discover 'private' subnets/route tables, then program default route 0.0.0.0/0 pointing to Aviatrix gateway into it. Furthermore, to reduce friction and to shorten downtime when users remove default route in their cloud environment by themselves, Aviatrix performs overwriting default route logic by default. By doing this, private instances/VMs internet traffic will go through Aviatrix gateway, and inspected by FQDN (if enabled).
+Users can launch Aviatrix Gateways within the network, and enable Single SNAT or FQDN feature on the gateway. Aviatrix gateway will discover 'private' subnets/route tables, then program default route 0.0.0.0/0 pointing to Aviatrix gateway into it. Furthermore, to reduce friction and to shorten downtime when users remove default route in their cloud environment by themselves, Aviatrix performs overwriting default route logic by default. By doing this, private instances/VMs internet traffic will go through Aviatrix gateway, and inspected by FQDN (if enabled).
 
 
 Rule 4.1: Overwrite default route entry 0.0.0.0/0 in subnet/route table where Aviatrix defines it as “Private” when the below features are enabled:
@@ -124,15 +122,15 @@ Rule 4.2: Load balance the route entry 0.0.0.0/0 between Aviatrix gateways when 
 
 - Refer to `NAT GW Load-balance with AZ affinity <https://docs.aviatrix.com/HowTos/nat_gw_LoadBalance_AZ.html>`_ for Aviatrix load balance detail
 
-5. Use case: Aviatrix Centralized Egress or on-prem advertising default route 0.0.0.0/0
+Use Case: Aviatrix Centralized Egress or On-Prem Advertising Default Route 0.0.0.0/0
 ========================================================================================
 
-In Aviatrix Transit Network solution, for private instances/VMS in spoke networks, users can choose centralized Egress by using Aviatrix FireNet, or using onprem Egress. In either case, Aviatrix transit gateway propagates 0.0.0.0/0 route to Aviatrix spoke gateways, and program 0.0.0.0/0 route in spoke private subnets/route tables. Thus, all private instances/VMs internet traffic are forwarded to transit gateway, and then forwarded to FireNet or onprem networks.
+In the Aviatrix Transit Network solution, for private instances/VMS in spoke networks, users can choose centralized egress by using Aviatrix FireNet, or using on-prem egress. In either case, Aviatrix transit gateway propagates 0.0.0.0/0 route to Aviatrix spoke gateways, and program 0.0.0.0/0 route in spoke private subnets/route tables. Thus, all private instance/VM's internet traffic are forwarded to transit gateway, and then forwarded to FireNet or on-prem networks.
 
-How Aviatrix defines public or private subnet/route table in each cloud and what are the rules/scenarios for use case 2?
+How does Aviatrix Define a Public or Private Subnet/Route Table in Each Cloud, and What are the Rules/Scenarios for Use Case 2?
 ------------------------------------------------------------------------------------------------------------------------
 
-Here we only discuss AWS and Azure.
+Here, we only discuss AWS and Azure.
 
 .. _aviatrixdefinitiontable2:
 

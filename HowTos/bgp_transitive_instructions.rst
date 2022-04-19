@@ -8,7 +8,7 @@ Transit Network with BGP Setup Instructions
 
 .. Important:: 
 
-  this document is obsolete with 3.1 release. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__ to setup a Transit Network. 
+  This document is obsolete for release 3.1 and later releases. Follow `Transit Network workflow instructions <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`__ to setup a Transit Network. 
 
 Introduction
 =============
@@ -98,7 +98,7 @@ a. At AWS Console create a VGW (the VGW is not attached to a VPC) which we will 
 
    |image5|
 
-#. At Aviatrix Controller console, Advanced Config -> BGP:
+#. At Aviatrix Controller console, open MULTI-CLOUD TRANSIT > BGP:
 
    - Edit "Local AS Num" if required
 
@@ -141,19 +141,19 @@ Best Practice
 
 - **Plan your cloud address space** when designing a Transit VPC network. Best practice is to allocate a network address space from which the spoke VPC CIDRs are created.  Make sure this network address space is unique and not overlapping with any on-prem network.  For example, allocate 172.34.0.0/16 as your cloud address space. The spoke VPC CIDRs would be 172.34.1.0/24, 172.34.2.0/24, etc.  With this approach, you just need advertise one prefix 172.34.0.0/16 once.  When a new spoke VPC come up, you do not need to modify advertise network at the site2cloud page. 
 
-- **Edit BGP Advertise Network** after BGP has learned the on-prem network prefixes. When creating the Site2Cloud connection, leave the "Advertised Networks" blank. After Site2Cloud connection is created, go to Advanced Config to enable BGP. Go back to Site2Cloud connection, if you see list of subnets under Remote Subnet, it implies BGP has come up. At this point, click the connection to Edit BGP Advertised Networks. Enter the entire cloud address space as suggested above. This approach helps you see the list of the on-prem network prefixes to make sure you do not enter overlapping addresses.  
+- **Edit BGP Advertise Network** after BGP has learned the on-prem network prefixes. When creating the Site2Cloud connection, leave the "Advertised Networks" blank. After Site2Cloud connection is created, go to MULTI-CLOUD TRANSIT > BGP to enable BGP. Go back to Site2Cloud connection, if you see list of subnets under Remote Subnet, it implies BGP has come up. At this point, click the connection to Edit BGP Advertised Networks. Enter the entire cloud address space as suggested above. This approach helps you see the list of the on-prem network prefixes to make sure you do not enter overlapping addresses.  
 
 BGP Troubleshooting
 ===================
 
 Aviatrix BGP is implemented based on Quagga open source software. You can get debugging
-information at Controller console. Advanced Config -> BGP -> Diagnostic.
+information at Controller console. MULTI-CLOUD TRANSIT  > BGP > Diagnostics.
 
 
 Release 3.0 Limitations
 ========================
 
-You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller Advanced -> BGP page.
+You need to edit each Spoke VPC Transitive Peering settings when on-prem network is changed. The changed network can be viewed from the Controller: MULTI-CLOUD TRANSIT > BGP.
 
 
 .. |image0| image:: bgp_media/servicearchitecture.png

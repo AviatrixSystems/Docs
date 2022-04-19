@@ -10,87 +10,68 @@ GCP Credentials
 ===================================================================
 
 
-Before creating a cloud account for GCloud/GCP on the Aviatrix controller, go through the
+Before creating a cloud account for GCloud/GCP on the Aviatrix controller, follow the
 steps below to make sure you have the credentials set up for API calls.
 
 
-Step 1: Create a GCloud Account
--------------------------------
-
-Create a GCloud or GCP account (https://cloud.google.com/). Go on to the next
+1. Create a GCloud or GCP account (https://cloud.google.com/). Continue to the next
 step if you have already done so.
 
-Note that the controller supports multiple accounts with each one
-associated with a different GCloud projects, but there needs to be at
-least one to start with.
+.. Note:: The Controller supports multiple accounts with each account associated with a different GCloud projects, but there needs to be at least one account to start with.
 
-Step 2: Create a GCloud Project
----------------------------------
+2. Create a GCloud Project. Log in to your GCloud account at https://console.cloud.google.com/project and create a project. Continue to the next step if you have already created
+one. Note the project ID will be used in referencing to the project by the Aviatrix Controller.
 
-Login to your GCloud account and go to the project page:
-https://console.cloud.google.com/project
+(As an example, we created a project Aviatrix-UCC. The project ID is
+aviatrix-ucc-1214.)
 
-Create a project. Go on to the next step if you have already created
-one. Note the project ID will be used in referencing to the project by
-Aviatrix controller.
+Enabling Compute Engine API on the Selected Project
+----------------------------------------------------------------------
 
-(As an example, we created a project Aviatrix-UCC, the project ID is
-aviatrix-ucc-1214)
-
-Step 3: Enable Compute Engine API
-----------------------------------
-
-Enable Compute Engine API on the selected project,
-
-1. Go to your Google Cloud Platform console, at the upper left corner
-   left to Google Cloud Platform signage, click the 3 bars. A drop down
-   menu will appear.
-
-2. Select APIs and Services, at Dashboard, click on Enable APIs and Services
+1. Go to your Google Cloud Platform console, click on the dropdown menu in the top left, and select **APIs and Services. At the Dashboard, click on **Enable APIs and Services**.
 
 |image3|
 
-3. On the Search box, input Compute Engine API and select it from search result
+2. On the Search box, enter "Compute Engine API" and select it from search results.
 
 |image2|
 
-4. click Enable.
+3. Click **Enable**.
 
 
-Step 4: Create Credential File
+Creating a Credential File
 ----------------------------------
 
 When you create a cloud account Aviatrix Controller for GCloud, you will be asked to upload a
-GCloud Project Credentials file. Below are the steps to download the
+GCloud Project Credentials file. Follow the steps below to download the
 credential file from the Google Developer Console.
 
 1. Open the `Credential
-   page <http://console.developers.google.com/project/_/apiui/credential>`__
-
+   page <http://console.developers.google.com/project/_/apiui/credential>`__.
 2. Select the project you are creating credentials for.
-
-3. At Credentials, Click Create credentials, select Service account,
-   as shown below
+3. At Credentials, Click **Create credentials** and select **Service account** as shown below.
 
    |service_account|
 
-4. At the Service Accounts, enter a Service account name and click Create. For Service account permissions, select Project, Editor, as shown below. 
+4. At the Service Accounts, enter a service account name and click **Create**. For Service account permissions, select Project, Editor, as shown below. 
 
  |iam_credential|
 
-5. Select a service account. Click the 3 skewer bar and select Create Key. Select JSON, click Create.
+5. Select a service account. Select the KEYS tab, click on the **ADD KEY** dropdown menu, and select **Create new key**. 
 
-6. Click Create. The credential file will be downloaded to your local
+6. Select the **JSON** radio button and click **CREATE**.
+
+6. Click **Create**. The credential file downloads to your local
    computer.
 
-7. Upload the Project Credential file to the Aviatrix controller at the GCloud
+7. Upload the Project Credential file to the Aviatrix Controller at the GCloud
    account create page.
 
-Note: Creating Service Account with Restricted Access
------------------------------------------------------
-It is recommended to create the service account with the Editor role as mentioned in Step 5.4 but in some cases an organization might want
+Note: Creating a Service Account with Restricted Access
+-----------------------------------------------------------------------------
+We recommend creating the service account with the Editor role as mentioned, but in some cases an organization might want
 to further restrict permission for the service account. In such a situation Aviatrix recommendation is to have at least following roles assigned
-to service account so that Aviatrix can perform its functions properly. For instance managing the compute resources, route tables, firewall rules, shared service vpc network etc. 
+to service account so that Aviatrix can perform its functions properly, such as managing the compute resources, route tables, firewall rules, shared service VPC network, etc. 
 
 1. Compute Admin
 2. Service Account User
@@ -99,8 +80,8 @@ to service account so that Aviatrix can perform its functions properly. For inst
 
   |restricted_access|
 
-If an organization is currently using GCP Shared VPC or planning to use in future then it is a requirement to enable Organization Administrator 
-and Project IAM Admin as well.
+If an organization is currently using GCP Shared VPC or planning to use in future, then enabling Organization Administrator 
+and Project IAM Admin is also required.
 
 In addition to restricting the GCP roles, you can restrict the rights for those roles. You can grant roles permission to perform the following tasks:
 
@@ -196,8 +177,8 @@ In addition to restricting the GCP roles, you can restrict the rights for those 
 Troubleshooting Tips
 ----------------------
 
-If cloud account creation fails, check the error message at the Aviatrix
-controller console and try again with the steps provided in this
+If the cloud account creation fails, check the error message on your Aviatrix
+Controller and try again with the steps provided in this
 document.
 
 For additional support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_

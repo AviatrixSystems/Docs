@@ -6,7 +6,9 @@
 Upgrading the Aviatrix Cloud Network Platform
 =============================================
 
-If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
+.. important::
+
+  Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
 
 Aviatrix encourages you to keep your platform controller and gateways up to date to ensure you are operating the most secure and highest performing versions available. To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. 
 
@@ -59,6 +61,7 @@ When you initiate an upgrade Aviatrix automatically presents the most recently p
 **Upgrading Build Version Paths**
 
 When you upgrade from one build version of a minor release to another build of the same minor release, the available version may skip over previously released build numbers. For example, you could upgrade from 6.6.100 to the latest build 6.6.900 and the system skips any intermediate builds.
+
 Valid upgrade path to a new build.
 
 |upgrade.build.release|
@@ -66,6 +69,7 @@ Valid upgrade path to a new build.
 **Upgrading Minor Release Version Paths**
 
 When you upgrade from one minor version of a major release to another minor version of the same major release, you cannot skip over minor release versions. You must upgrade each minor release sequentially.  For example, if you are upgrading from 6.5.current to 6.8.latest you must first upgrade to the intermediate releases 6.6.latest and 6.7.latest. 
+
 Valid upgrade paths to a new minor release. The current build is the build you are currently running. The latest build is latest available build available on the Aviatrix server.
 
 |upgrade.minor.release|
@@ -73,6 +77,7 @@ Valid upgrade paths to a new minor release. The current build is the build you a
 **Upgrading Major Release Version Paths**
 
 When you upgrade from one major release to another major release, you cannot skip over major release versions. You must upgrade each major release sequentially.  For example, if you are upgrading from 6.current to 8.latest you must first upgrade to the intermediate release 7.latest. 
+
 Valid upgrade path to a new major release. The current build is the build you are currently running. The latest build available on the Aviatrix server.
 
 |upgrade.major.release|
@@ -112,7 +117,9 @@ The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
 Rolling Back Gateway Software
 -----------------------------
 
-You can roll back gateway software upgrades to the previous version, you cannot roll back platform controller upgrades. Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version the system creates a new gateway with the same image and the older software version.
+You can roll back gateway software upgrades to the previous version. However, you cannot roll back platform Controller, CA Access Gateway (CAAG), or CloudN upgrades. 
+
+Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version the system creates a new gateway with the same image and the older software version.
 
 
 Upgrading OpenVPN Users
@@ -145,9 +152,9 @@ Aviatrix recommends you perform the tasks in the Operations Checklist before upg
 Understanding the Release Contents
 ----------------------------------
 
-To understand the contents and potential impact of upgrading to specific software release, see https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html.
+To understand the contents and potential impact of upgrading to specific software release, see `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
 
-To understand the contents and potential impact of upgrading to specific image release, see https://docs.aviatrix.com/HowTos/image_release_notes.html.
+To understand the contents and potential impact of upgrading to specific image release, see `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/image_release_notes.html>`_.
 
 **Verify DNS Settings**
 
@@ -253,7 +260,7 @@ To perform a platform software upgrade dry run:
 * If there are no errors, you can continue with the upgrade process. 
 * If there are errors, you must resolve them before continuing with the upgrade.
 
-#. Close the Upgrade Result window.
+5. Close the Upgrade Result window.
 
 
 Performing a Gateway Software Upgrade Dry Run

@@ -63,7 +63,12 @@ AWS Startup Guide
     </script>
     
 
-Welcome to getting started on AWS! This guide takes you through the 3 steps to launch the Controller instance. 
+Welcome to getting started on AWS! This guide takes you through the 3 steps to launch your Aviatrix Controller instance:
+
+#. `Subscribing to the AMI (Amazon Machine Image) <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#subscribing-to-an-aviatrix-ami>`_.
+#. `Launching the Controller with CloudFormation <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#id1>`_.
+#. `Onboarding your AWS account in your Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#id2>`_.
+ 
 When complete, you'll be ready to deploy use cases. 
 
   |3-step|
@@ -74,18 +79,15 @@ When complete, you'll be ready to deploy use cases.
 
 .. important::
 
- The Aviatrix Controller must be launched by a cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from AWS Console. 
+ The Aviatrix Controller must be launched by a Cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from the AWS Console. 
 
 
-Step 1. Subscribe to an Aviatrix AMI 
+Subscribing to an Aviatrix AMI 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have already subscribed the Metered AMI on AWS Marketplace, skip this step and proceed to Step 2.
+If you have already subscribed the Metered AMI on AWS Marketplace, skip this step and proceed to the Launch the Controller with CloudFormation section.
 
-1.1 Subscribe to the AMI  
-----------------------------------------------------------------
-
-Click the AMI link below to take you to the AWS Marketplace to complete step 1.1 and 1.2. 
+1. To subscribe to the AMI, click the AMI link below to take you to the AWS Marketplace. 
 
 .. |marketplace_metered_link2| raw:: html
 
@@ -96,29 +98,17 @@ Click the AMI link below to take you to the AWS Marketplace to complete step 1.1
 ..
     `Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://aws.amazon.com/marketplace/pp/B08NTSDHKG?qid=1616801289672&sr=0-2&ref=_ptnr_docs_startup_metered_copilot24x7>`_
 
-
-1.2 Continue to Subscribe 
-----------------------------------------
-
-Click `Continue to Subscribe`. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
+2. Click **Continue to Subscribe**. Subscribing means that you can begin deploying the software in later steps via the CloudFormation template. 
  
    |AMI_24x7_copilot|
 
-1.3 Accept Terms
------------------------------
 
-Click `Accept Terms`. **Return to this guide and continue**. (Do not proceed to Continue to Configuration)) 
+3. Click **Accept Terms**. Then, **return to this guide and continue**. Do not proceed to Continue to Configuration.
 
-    |imageAwsMarketplaceAcceptTerms|
-
-
-Step 2. Launch the Controller with CloudFormation
+Launching the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.1 Click CloudFormation Link
---------------------------------
-
-Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in the next steps 
+1. Click the link below to take you to the CloudFormation page on the AWS Console with the pre-loaded template. Follow the instructions in the next steps 
 to run the Cloudformation script.   
 
 .. |CFT_link| raw:: html
@@ -131,31 +121,27 @@ to run the Cloudformation script.
 ..
     `CloudFormation for Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
 
+**Other Aviatrix Products**
 
-For other products, check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
+CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
 
-2.2 Login to AWS Console
----------------------------
+* `Aviatrix Secure Networking Platform - BYOL <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/avx-awsmp-BYOL.template>`_
+* Aviatrix Secure Networking Platform - Enterprise Subscription
+* Check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
 
-If you have not logged in, you will be prompted to login to AWS console. 
+2. If you have not logged in, you will be prompted to log in to the AWS console. 
+3. Change to the region where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
 
-2.3 Change to the region
----------------------------
-
-Change to the region  where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
-
-2.4 Click `Next` 
-----------------------
+4. Click **Next**.
 
  |cft-next|
 
-2.5 Fill in the following fields 
------------------------------------
+5. Fill in the following fields:
 
-  - the Stack name,
-  - select a VPC in the drop down menu, 
-  - select a **public subnet in that VPC** (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. A public subnet must have a default route point to IGW in its associated VPC route table. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
-  - and a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if this field is blank.)
+  * The Stack name,
+  * Select a VPC in the drop down menu, 
+  * Select a **public subnet in that VPC** (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. A public subnet must have a default route point to IGW in its associated VPC route table. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
+  * And a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if this field is blank.)
 
    |imageCFSpecifyDetails|
 
@@ -164,98 +150,54 @@ Change to the region  where you would like to install the Aviatrix Controller on
    The Aviatrix Controller must be launched on a public subnet. If this is the first time you launch an Aviatrix Controller, select the default setting **New** for IAM Role Creation. If an Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.  The Aviatrix Controller instance is termination protected. 
 ..
 
-2.6 Select instance size
---------------------------
-
-Leave the `Controller Size` at `t2.large` and keep the `IAM role creation` at "New" unless you have already created the Aviatrix IAM roles.
-
-For more information on Controller instance size selection, refer to `Controller sizing recommendations. <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
-
-2.7 Click `Next`
-------------------
-
-Click Next.
-
-2.8 Click acknowledge
--------------------------
-
-Click the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click `Create`.
+6. Select instance size. Set the Controller Size to t3.large and keep the IAM role creation at New unless you have already created the Aviatrix IAM roles.
+7. Click **Next**.
+8. Click **Acknowledge**.
+9. Mark the checkbox next to "I acknowledge that AWS CloudFormation ..." and then click **Create**.
 
    |imageCFCreateFinal|
 
-2.9 Check stack output
--------------------------
-
-Once the stack creation completes (Status change to `CREATE_COMPLETE`), click on the `Outputs` tab.  The values displayed will be needed when configuring primary access account in Aviatrix. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
+10. When the stack creation completes (the status changes to CREATE_COMPLETE), click on the **Outputs** tab. You will need to use the values displayed when you onboard a primary access account for AWS in your Aviatrix Controller. (You might have to refresh your browser window and/or AWS console to see your Stack show up and the Status to be updated).
    
    |imageCFComplete|
-   
 
+Onboarding your AWS account in your Aviatrix Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Step 3. Onboarding 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Now that Aviatrix Controller instance has been launched, let's login and go through the onboarding process. 
+Now that Aviatrix Controller instance has been launched, log in to your Controller and go through the onboarding process. 
 
-3.1 Access the Controller
----------------------------
-
-Open a browser window to https://AviatrixControllerEIP, where AviatrixControllerEIP can be found in the Stack Outputs. You can also find the Controller instance EIP by going to AWS EC2 console, click the Controller instance and locate its public IP address. 
+1. To access the Controller, open a browser window to https://AviatrixControllerEIP, where AviatrixControllerEIP can be found in the Stack Outputs. You can also find the Controller instance EIP by going to AWS EC2 console, click the Controller instance, and locate its public IP address. 
 
 .. tip::
-   You may receive a warning that the connection may not be secure.  This is because the certificate is self-signed by the Controller.  It is safe to continue to the page.
+   You may receive a warning that the connection may not be secure. This is because the certificate is self-signed by the Controller. It is safe to continue to the page.
 
 ..
 
    |imageControllerBrowserWarning|
 
-3.2 Login with the username `admin`
--------------------------------------
+2. Log in to the Controller:
 
-   For the password field, use the `AviatrixControllerPrivateIP`.  The `AviatrixControllerPrivateIP` can be found in the Outputs section of the CloudFormation stack. You can also find the Controller instance's private IP address by going to AWS EC2 console, clicking the Controller instance and locating its private IP address. 
-   
-   |imageCFOutputsWithPassword|
+* Username - admin
+* Password - the AviatrixControllerPrivateIP from your AWS account. You can find this IP address in the Outputs section of the CloudFormation stack or by going to AWS EC2 console, clicking the Controller instance, and locating its private IP address. 
 
-3.3 Enter your email address 
--------------------------------------
-
-This email will be used for alerts as well as password recovery (if needed).
-
-   |imageControllerEnterEmail|
-
-3.4 Change password
------------------------
-
-Next, you will be prompted to change the admin password.
-
-   |imageControllerChangePassword|
-
-3.5 Click Run
-----------------
-
-Finally, the Controller will upgrade itself to the latest software version after you click on `Run`. Wait for a few minutes for the process to finish. 
-
-   |imageControllerUpgrade|
+3. Enter your email address. This email will be used for alerts as well as password recovery if needed.
+4. When prompted, change your password. Make sure this password is secure. 
+5. Click Run. The Controller will upgrade itself to the latest software version. Wait for a few minutes for the process to finish. 
 
 .. tip::
-   The Controller upgrade takes about 3-5 minutes.  Once complete, the login prompt will appear.  Use the username `admin` and your new password to login.
+   The Controller upgrade takes about 3-5 minutes.  Once complete, the login prompt will appear.  Use the username "admin" and your new password to login.
 
 ..
 
-If you wish to run a custom version, consult the Aviatrix support team before attempting it. 
+If you wish to run a custom version, consult the Aviatrix Support team before attempting it. 
 
-3.6  Select AWS
--------------------
-
-Once logged back into the Controller, you should be on the `Onboarding` page. You can also do this by clicking "Onboarding` on the navigation item. Then click the AWS icon. 
+6. When you log into the Controller, the Onboarding page should open. On the Onboarding page, select AWS. 
 
    |imageOnboardAws|
 
-3.7  Setup a primary access account  
---------------------------------------
+7.  Set up a primary access account for AWS using the following information:
 
-The Aviatrix primary access account contains the following information:
-
-  - The Controller instance's AWS 12 digit account ID.
+  * The Controller instance's AWS 12-digit account ID.
 
 Check out `this link <http://docs.aviatrix.com/HowTos/onboarding_faq.html#what-is-an-aviatrix-access-account-on-the-controller>`__ if you have questions regarding Aviatrix access account.
 
@@ -268,17 +210,16 @@ Fill out the fields as follows: (The AWS Account Number can be found at the Stac
   |                               | Controller.                                |
   |                               | Example name: `AWSOpsTeam`.                |
   +-------------------------------+--------------------------------------------+
-  | AWS Account Number            | The Controller instance's 12 digit         |
+  | AWS Account Number            | The Controller instance's 12-digit         |
   |                               | AWS account number. It can be found in the |
   |                               | Stack Outputs section `AccoundId`.         |
   +-------------------------------+--------------------------------------------+
   | IAM role-based                | Check this box.                            |
   +-------------------------------+--------------------------------------------+
 
-Once complete, click the `Create` button at the bottom of the form.
+8. Once complete, click **Create** at the bottom of the form.
 
-|imageCreateAccount|
-
+Occasionally, you may need to update your IAM policy. See `this document <https://docs.aviatrix.com/HowTos/iam_policies.html>`_ to audit your policy to check for updates and update it if necessary.
 
 Next: Start a Use Case 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -304,26 +245,9 @@ For technical support, please open a support ticket at `Aviatrix Support Portal 
 
 Enjoy!
 
-Other Aviatrix Products
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In addition to Metered AMI, we offer a few others, as shown below. Subscribe to them on AWS Marketplace and then proceed to select the CloudFormation launch method to launch the Controller stack directly from AWS console. 
-
- - `Aviatrix Secure Networking Platform Metered - 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-24x7-support.template>`_
-
- - `Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/avx-awsmp-5tunnel.template>`_
-
- - `Aviatrix Secure Networking Platform - BYOL <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/avx-awsmp-BYOL.template>`_
-
- - `Aviatrix Secure Networking Platform - BYOL in AWS China <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3.us-west-2.amazonaws.com/aws-china-cloudformation-templates/aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template>`_
-
- - `Community BYOL (Available only in us-west-2 region) <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-community-byol.template>`_
-
 
 Additional Information for Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
- - **Controller sizing** `Controller instance sizing and EBS volume selection info  <https://docs.aviatrix.com/Support/support_center_controller.html#what-are-the-minimum-requirements-for-an-instance-to-run-the-aviatrix-controller-software>`_.
 
  - **Controller backup and restore**  `Controller backup instructions info <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
 

@@ -19,13 +19,14 @@ Key Benefits
 
 - **Network Health Monitor** – Real-time cloud network resource inventory and status
 - **Dynamic Topology Map** – Accurate, multi-cloud network topology, layout control and search
-- **FlowIQ** – Detailed application traffic flow analysis, global heat map and trends
+- **FlowIQ** – Detailed application traffic flow analysis, global heat map and trends, filter traffic by native CSP tags
 - **Multi-Cloud Tagging** – Tag multi-cloud resources, search by tag, filter traffic data by tag
 - **CloudRoutes** – Detailed searchable routing tables across cloud providers
 - **Notifications** – Alert on resources status/utilization across multi-Cloud
 - **AppIQ** – Comprehensive reports to analyze network path between any two cloud instances
 - **ThreatIQ with ThreatGuard** – Monitor for security threats from malicious sites, set alerts when threats are detected, and block threat-IP associated traffic
-- **Inventory Reports** – Create detailed reports showing your inventory of managed resources in a single cloud or across all clouds in your multi-cloud network 
+- **Inventory Reports** – Create detailed reports showing your inventory of managed resources in a single cloud or across all clouds in your multi-cloud network
+- **Network Behavior Analytics** – Alert on anomalies detected that deviate from the custom routine traffic patterns of your own cloud workloads  
 
 
 Deployment Model

@@ -53,8 +53,6 @@ Problem Statement
 -------------------------------------------------------------------------
 In this use case, a customer needs to connect certain on-prem hosts to certain EC2 instances in a VPC over an IPSEC tunnel over the Internet, but the on-prem network range overlaps with the customer's VPC CIDR range, and the requirement from the customer is that traffic can be initiated from either side.
 
-|scenario1_overlapping_cidr|
-
 ::
 
   VPC       CIDR = 10.10.0.0/16, instance-1 in Client-1 has an IP address 10.10.43.145
@@ -63,6 +61,9 @@ In this use case, a customer needs to connect certain on-prem hosts to certain E
 
 
 Aviatrix offers multiple solutions to this requirement. The solutions uses in this document to solve this scenario is called "custom mapped" feature in Site2Cloud that removes the need to configure individual SNAT/DNAT rules and gives flexibility to map Real CIDRs to small Virtual CIDRs range.
+
+.. note::
+ The maximum number of CIDRs for Site2Cloud network maps is 32.
 
 This solution uses a site2cloud route-based IPSEC tunnel using Virtual Tunnel Interface (VTI) between VPC and On-Prem Router. The packet flow is demonstrated as below:
 
@@ -88,8 +89,6 @@ Traffic initiated from customer's side
 
 Traffic initiated from Client's side means it is a remote initiated traffic from Aviatrix Gateway perspective as shown below.
 
-|scenario1_remote_initiated|
-
 Furthermore, requirement is to map customer's Real CIDR into the smaller Virtual CIDRs of 16 IP addresses range.
 
 SNAT is only required to translate 10.10.0.0/16 to small range of ip address 100.64.0.16/28, 100.64.0.32/28 respectively.
@@ -107,8 +106,6 @@ Traffic initiated from on-prem's side
 ########################################
 
 Traffic initiated from the on-prem's side means it is a local initiated traffic from Aviatrix Gateway perspective as shown below.
-
-|scenario1_local_initiated|
 
 
 ==================================================                =======================================================================
@@ -131,8 +128,6 @@ Traffic initiated from customer's side
 
 Traffic initiated from Client's side means it is a remote initiated traffic from Aviatrix Gateway perspective as shown below.
 
-|scenario2_remote_initiated|
-
 Furthermore, requirement is to map customer's Real CIDR into the smaller Virtual CIDRs of 16 IP addresses range.
 
 
@@ -149,8 +144,6 @@ Traffic initiated from on-prem's side
 ########################################
 
 Traffic initiated from the on-prem's side means it is a local initiated traffic from Aviatrix Gateway perspective as shown below.
-
-|scenario2_local_initiated|
 
 
 ==================================================                =======================================================================
