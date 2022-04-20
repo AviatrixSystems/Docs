@@ -13,7 +13,7 @@ latest software.
 
 The Site2Cloud on CloudN configuration workflow is very simple.  
 
-1. At the Aviatrix Controller, go to Gateway page to create one non-VPN gateway.
+1. In Aviatrix Controller, go to Gateway page to create one non-VPN gateway.
 
 
 #. At the Azure portal, go to the Virtual network gateways page. Fill in the following information to create a new Virtual Network Gateway:
@@ -36,7 +36,7 @@ The Site2Cloud on CloudN configuration workflow is very simple.
 #. Once the virtual network gateway is provisioned, record its public IP address.
 
 
-#. At the Aviatrix Controller, go to the Site2Cloud page. Fill in the following information to create a Site2Cloud connection:
+#. In Aviatrix Controller, go to the Site2Cloud page. Fill in the following information to create a Site2Cloud connection:
 
 +-------------------+----------------------------------------------------------------------------+
 | VPC ID/VNet Name  | Select the VPC/VNet where your Aviatrix gateway is created at Step 1       |
