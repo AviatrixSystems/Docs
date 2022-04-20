@@ -1,0 +1,31 @@
+name: Push to External Docs Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    name: Generate Protobuf Code
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DOCS_PUB_KEY }}
+          known_hosts: ${{ secrets.DOCS_KNOWN_HOSTS }}
+      - uses: actions/checkout@v2
+        with:
+          ref: 'main'
+      - name: Git push
+        run: |
+          echo $KEY_FILE >> ~/gitkey
+          chmod 400 ~/gitkey
+          git remote add prod-doc git@github.com:AviatrixSystems/Docs.git
+          GIT_SSH_COMMAND='ssh -i ~/gitkey -o IdentitiesOnly=yes' git push prod-doc main
+        env:
+          KEY_FILE : ${{secrets.DOCS_PRIVATE_KEY}}
+
+
+
