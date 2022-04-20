@@ -198,7 +198,7 @@ For mapped connections, the following four fields will be displayed:
       If you use multiple values for the real subnets, you must use an equal number of subnets in the virtual field.
 
    .. note::
-      1:1 mapping is supported as long as both sides are configured properly.  For example, you can configure:
+      1:1 mapping is supported if both sides are configured properly.  For example, you can configure:
 
       | Remote Subnet(Real): 10.1.7.10/32      
       | Remote Subnet(Virtual): 172.16.7.10/32
@@ -279,7 +279,7 @@ You can generate remote site configuration template.
 
 Select the remote site device from the dropdowns provided.  If your remote site device is not listed in the dropdown menu, simply select an available one in the menu or use the **Generic**/**Vendor Independent** template.
 
-This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is a Aviatrix CloudN, go to Site2Cloud and simply import the downloaded configuration file and click OK. 
+This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is an Aviatrix CloudN, go to Site2Cloud and simply import the downloaded configuration file and click OK. 
 
 Local Identifier
 ---------------------
@@ -299,7 +299,7 @@ This field is not applicable to Site2Cloud connection established by `Transit Ne
 Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPsec tunnels to 
 send periodic messages to ensure the remote site is up. 
 
-By default DPD detection is enabled. 
+By default, DPD detection is enabled. 
 
 ================   ===============    ===============        
 Field              Value              Description                 
