@@ -25,10 +25,6 @@ Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketpla
 
 Follow the Azure portal instructions to subscribe. 
 
-|subscribe_to_meter|
-
-
-
 Subscribing to the Aviatrix Controller BYOL Offer
 ===================================================
 
@@ -54,21 +50,19 @@ Launching the Controller
 Click the link in the email to launch the Controller.
 --------------------------------------------------------------
 
-Going back to the email received from admin@aviatrix.io. The email informs you with a customer ID and a 
-link to subscribe the actual Aviatrix Controller BYOL offer, as shown below. 
-
-|license_key|
+Go back to the email received from admin@aviatrix.io. The email informs you with a customer ID and a 
+link to subscribe the actual Aviatrix Controller BYOL offer.
 
 Click the link to return to the Azure Portal to launch the Controller. 
 
 Launching the Controller VM from the Azure Marketplace Portal
 -------------------------------------------------------------------------------
 
-#. Get from Azure Marketplace for the actual BYOL Controller. 
+#. Search the Azure Marketplace to find and subscribe to the actual BYOL Controller. 
 
     |click_byol|
 
-#.  At Basics header, create new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For instance size, we recommend at least 8GB of RAM so B2ms should be sufficient. 
+#.  Under Basics, create new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, we recommend at least 8GB of RAM so B2ms should be sufficient. 
 #. Next, enter a username, password, and Resource group. Please do **not** use "ubuntu" as username if you use password as the authentication type.
 
     |Azure_Basics|
