@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'main'
+          fetch-depth: 0
       - name: Git push
         run: |
           git remote add prod-doc git@github.com:AviatrixSystems/Docs.git
