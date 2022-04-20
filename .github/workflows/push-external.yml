@@ -9,6 +9,7 @@ jobs:
   push:
     runs-on: ubuntu-latest
     name: Push to AviatrixSystems Docs
+    if: (${{github.repository}} == "AviatrixDev/Documentation")
     steps:
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
