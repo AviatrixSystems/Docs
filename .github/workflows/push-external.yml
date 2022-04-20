@@ -8,22 +8,20 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
-    name: Generate Protobuf Code
+    name: Push to AviatrixSystems Docs
     steps:
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.DOCS_PUB_KEY }}
+          key: ${{ secrets.DOCS_PRIVATE_KEY }}
           known_hosts: ${{ secrets.DOCS_KNOWN_HOSTS }}
       - uses: actions/checkout@v2
         with:
           ref: 'main'
       - name: Git push
         run: |
-          echo $KEY_FILE >> ~/gitkey
-          chmod 400 ~/gitkey
           git remote add prod-doc git@github.com:AviatrixSystems/Docs.git
-          GIT_SSH_COMMAND='ssh -i ~/gitkey -o IdentitiesOnly=yes' git push prod-doc main
+          git push --force prod-doc main
         env:
           KEY_FILE : ${{secrets.DOCS_PRIVATE_KEY}}
 
