@@ -3470,7 +3470,7 @@ UserConnect-042315
 UserConnect-041715
 ==================
 
--  Support setting the maximum number of connections for each gateway.
+-  Support for setting the maximum number of connections for each gateway.
 
 -  Support NAT capability for each gateway.
 
