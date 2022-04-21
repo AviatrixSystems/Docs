@@ -3470,7 +3470,7 @@ UserConnect-042315
 UserConnect-041715
 ==================
 
--  Support setting the maximum number of connections for each gateway.
+-  Support for setting the maximum number of connections for each gateway.
 
 -  Support NAT capability for each gateway.
 
@@ -3490,7 +3490,7 @@ UserConnect-032315
 
 -  Support LDAP integration.
 
--  Support Windows, MAC OS and Chromebook clients.
+-  Support for Windows, MAC OS and Chromebook clients.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
