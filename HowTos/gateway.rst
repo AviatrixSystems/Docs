@@ -698,7 +698,7 @@ overlapping CIDRs, you will be able to attach the Spoke VPC/VNets.
 
 When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be excluded from advertising to on-prem.
 
-When this policy is applied to an Aviatrix Spoke gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem. In Release 4.7 and later, the "Include list" can be network ranges that are outside of the Spoke VPC/VNet CIDR.
+When this policy is applied to an Aviatrix Spoke Gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem. In Release 4.7 and later, the "Include list" can be network ranges that are outside of the Spoke VPC/VNet CIDR.
 
 Transit Peers As Backup to On-prem
 ------------------------------------------------
