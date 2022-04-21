@@ -742,7 +742,7 @@ When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and b
 
 New and advanced features such as Multi-sites Transit solution where the Aviatrix Transit Gateway connects to multiple remote sites is only supported with ActiveMesh mode enabled on the Aviatrix Transit GW. 
 
-To enable ActiveMesh mode after the Transit Gateway or Spoke gateway is enabled, go to Gateway, highlight the gateway
+To enable ActiveMesh mode after the Transit Gateway or Spoke Gateway is enabled, go to Gateway, highlight the gateway
 and click **Edit**. Scroll down to find ActiveMesh Mode, click **Enable**. 
 
 
