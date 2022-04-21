@@ -73,7 +73,8 @@ When complete, you'll be ready to deploy use cases.
 
   |3-step|
 
-..
+.. Note::
+
     You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
 
 
@@ -126,8 +127,7 @@ to run the Cloudformation script.
 CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
 
 * `Aviatrix Secure Networking Platform - BYOL <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/avx-awsmp-BYOL.template>`_
-* Aviatrix Secure Networking Platform - Enterprise Subscription
-* Check out `Other Aviatrix Products CloudFormation launch scripts  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html#other-aviatrix-products>`_.
+* `Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=avx-awsmp-5tunnel.template>`_
 
 2. If you have not logged in, you will be prompted to log in to the AWS console. 
 3. Change to the region where you would like to install the Aviatrix Controller on the CloudFormation page. Note the CloudFormation is already loaded.
@@ -139,7 +139,7 @@ CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
 5. Fill in the following fields:
 
   * The Stack name,
-  * Select a VPC in the drop down menu, 
+  * Select a VPC in the dropdown menu, 
   * Select a **public subnet in that VPC** (Go to AWS VPC console to make sure the public subnet is indeed in your selected VPC. A public subnet must have a default route point to IGW in its associated VPC route table. Read `this link  <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html>`__ if you do not know what public subnet is.)
   * And a keypair (Read `how to create a keypair <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>`_ to create a keypair in AWS EC2 console if this field is blank.)
 
