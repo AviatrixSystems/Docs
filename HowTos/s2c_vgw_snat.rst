@@ -9,7 +9,8 @@
 Site2Cloud With Customized SNAT 
 ===========================================================================================
 
-This tech note describes how to create a Site2Cloud connection between two VPCs by using a VGW and an Aviatrix gateway. The Aviatrix gateway also serves as a source NAT device and translates source IP of traffic initiated from a peering VPC to an IP address selected by users.
+
+This tech note describes how to create a Site2Cloud connection between two VPCs by using a VGW and an Aviatrix gateway. The Aviatrix gateway also serves as a source NAT device and translates source IP address of traffic initiated from a peering VPC to an IP address selected by users.
 
 |
 
