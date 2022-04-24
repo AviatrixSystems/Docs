@@ -40,13 +40,12 @@ In AWS, you can update IAM policies by replacing them. Follow these steps to upd
 #. Log in to your account on the AWS Console.
 #. Click on the Services dropdown menu in the top left and select **IAM**.
 #. Click **Policies** on the left.
-#. On the Policies page, enter "aviatrix-app-policy" in the Search field.
-#. Click **aviatrix-app-policy** in the table.
-#. On the Summary page for **aviatrix-app-policy**, click **Edit policy**.
-#. Click the **JSON** tab.
+#. On the Policies page, enter "aviatrix-app-policy" in the Search field. Click **aviatrix-app-policy** in the table.
+#. On the Summary page for **aviatrix-app-policy**, click **Edit policy** at the top of the table.
+#. On the Edit aviatrix-app-policy page, select the **JSON** tab.
 #. Replace the entire text by the latest policy in `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`__
 #. Click **Review policy** to make sure there is no syntax error. 
-#. Click **Save changes** to apply the new aviatrix-app-policy.
+#. Click **Save changes** to apply the new "aviatrix-app-policy."
 #. It may take a few minutes for the policy to take effect. 
 
 
