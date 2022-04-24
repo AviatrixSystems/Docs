@@ -698,7 +698,7 @@ overlapping CIDRs, you will be able to attach the Spoke VPC/VNets.
 
 When this policy is applied to an Aviatrix Transit Gateway, the list is an "Exclude list" meaning the CIDRs in the input fields will be excluded from advertising to on-prem.
 
-When this policy is applied to an Aviatrix Spoke gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem. In Release 4.7 and later, the "Include list" can be network ranges that are outside of the Spoke VPC/VNet CIDR.
+When this policy is applied to an Aviatrix Spoke Gateway, the list is an "Include list" meaning only the CIDRs in the input fields are advertised to on-prem. In Release 4.7 and later, the "Include list" can be network ranges that are outside of the Spoke VPC/VNet CIDR.
 
 Transit Peers As Backup to On-prem
 ------------------------------------------------
@@ -742,7 +742,7 @@ When an Aviatrix Transit Gateway has ActiveMesh mode enabled, both primary and b
 
 New and advanced features such as Multi-sites Transit solution where the Aviatrix Transit Gateway connects to multiple remote sites is only supported with ActiveMesh mode enabled on the Aviatrix Transit GW. 
 
-To enable ActiveMesh mode after the Transit Gateway or Spoke gateway is enabled, go to Gateway, highlight the gateway
+To enable ActiveMesh mode after the Transit Gateway or Spoke Gateway is enabled, go to Gateway, highlight the gateway
 and click **Edit**. Scroll down to find ActiveMesh Mode, click **Enable**. 
 
 
