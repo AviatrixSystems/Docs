@@ -57,15 +57,11 @@ To establish transit gateway peering across cloud service providers over the int
 
    |transit_gateway_peering_status|
 
-
-
-.. |transit_gateway_peering_over_internet_topology| image:: transit_gateway_peering_over_internet_topology.png
+.. |transit_gateway_peering_over_internet_topology| image:: transit_gateway_peering_over_public_network_workflow_media/transit_gateway_peering_over_internet_topology.png
    :scale: 30%
 
-.. |transit_gateway_peering_status| image:: transit_gateway_peering_status.png
+.. |transit_gateway_peering_status| image:: transit_gateway_peering_over_public_network_workflow_media/transit_gateway_peering_status.png
    :scale: 30%
-
-
 
 .. disqus::
 
