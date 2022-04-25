@@ -55,7 +55,7 @@ To establish transit gateway peering across cloud service providers over the int
 	
 4. Confirm the transit peering status is Up. This may take a few minutes.
 
-|transit_gateway_peering_status|
+   |transit_gateway_peering_status|
 
 
 
