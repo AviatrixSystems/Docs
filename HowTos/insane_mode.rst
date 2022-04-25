@@ -86,6 +86,21 @@ where virtual machine (EC2/GCE/OC) instances associated route entry to the remot
 
 |insane_routing|
 
+
+What is Aviatrix Insane Mode High-Performance Encryption over the internet?
+---------------------------------------------------------------------------
+
+Aviatrix Insane Mode over the internet builds high-performance encryption (HPE) tunnels over public IP addresses between two intercloud transit peering gateways. For instance, when a transit gateway peering is established between AWS and Azure, the Aviatrix Controller allocates EIP addresses then builds the HPE tunnels over the public IP addresses between the two transit gateways, establishing one-to-one connections.
+
+Insane Mode over the internet for GCP transit gateway peering configuration differs from AWS, Azure, and OCI. Because GCP Ethernet interface supports only one public IP address, HPE tunnels are built to the same public IP address on the GCP transit gateway, establishing one-to-many connections.
+
+
+What are the performance benchmarks for Insane Mode over the internet? 
+----------------------------------------------------------------------
+
+Aviatrix Insane Mode HPE over the internet throughput performance is dependant on the number of HPE tunnels that are configured. The supported range is up to 20 HPE tunnels.
+
+
 What is the Aviatrix hardware appliance CloudN?
 --------------------------------------------------
 

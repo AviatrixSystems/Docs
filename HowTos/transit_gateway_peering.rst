@@ -91,21 +91,32 @@ Peering over Public Network or Internet
 Use the Insane Mode High Performance Encryption (HPE) option to create peered transit connections between Cloud Service Providers (CSPs) over the public internet. The transit gateways must be in Insane Mode to use this option. Currently, only intercloud connections between AWS and Azure are supported.
 By default, the gateways create 4 HPE tunnels. The supported range is 2 to 20 HPE tunnels for each transit gateway.
 
+Peering over Public Network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Single-tunnel mode
+Aviatrix Transit Gateway Peering over the public network expands transit gateway peering across Cloud service providers over the internet by using Aviatrix Insane Mode High Performance Encryption (HPE) tunneling. Aviatrix Insane Mode HPE enables high throughput performance and high performance encrypted peered connections between the intercloud transit gateways. 
+
+For more information about Insane Mode HPE tunneling, refer to `Insane Mode Encryption FAQ  <https://docs.aviatrix.com/HowTos/insane_mode.html>`_.
+
+To establish peered transit gateways over the internet, refer to `Multi-cloud Transit Gateway Peering over Public Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_internet_workflow.html>`_. 	
+
+
+Single-Tunnel mode
 ^^^^^^^^^^^^^^^^^^^^^
 
-This advanced option only appears and applies to when the 
-two Multi-Cloud Transit Gateways is each launched in Insane Mode
-and each is in a different cloud type. For example, one Multi-Cloud Transit Gateway in AWS and the other in Azure.
+Single-Tunnel mode applies to Transit Gateway peering over private network when 
+two multi-cloud Transit Gateways are launched in Insane Mode. For example, one multi-cloud Transit Gateway is in AWS and the other in Azure.
 
-When this option is selected, instead of building up to 50 IPsec tunnels (as in Insane Mode) between the 
-two Multi-Cloud Transit Gateways, 
-only a single tunnel connection is established. One use case is if the underlying private network is a low speed 
+When Single-Tunnel mode is selected, instead of building up to 50 IPSec tunnels (as in Insane Mode) between the 
+two multi-cloud Transit Gateways, 
+only a single tunnel connection is established.
+
+One use case is where the underlying private network is a low speed 
 (up to 4Gbps) link across the two cloud types. By using the Single-Tunnel mode, you do not pay the Insane Mode 
-license charges. Note when the Multi-Cloud Transit Gateways enable HA on both cloud types, the aggregate 
-throughput via Single-Tunnel mode can reach 4Gbps. 
+license charges.
 
+When the multi-cloud Transit Gateways enable HA on both cloud types, the aggregate 
+throughput via Single-Tunnel mode can reach 4Gbps. 
 
 
 Default Route Propagation Behavior
