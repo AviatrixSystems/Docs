@@ -154,7 +154,7 @@ For more information, see “What is a China ICP License?”
    :width: 5.65600in
    :height: 2.39763in
 .. |image03| image:: AviatrixAccountForAzure_media/Image03.png
-   :width: 100%
+   :width: 70%
 .. |image04| image:: AviatrixAccountForAzure_media/Image04.png
    :width: 100%
 .. |image05| image:: AviatrixAccountForAzure_media/az-ad-list-all-apps-05.PNG
