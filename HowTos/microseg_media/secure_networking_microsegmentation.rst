@@ -9,7 +9,7 @@ Secure Networking with Micro-Segmentation
 
 This topic will provide an overview of micro-segmentation and how to enable micro-segmentation in your infrastructure.
 
-Micro-segmentation provides granular network security policy for distributed applications in the Cloud. Micro-segmentation enables multi-cloud network policy enforcement between customer-defined application domains. Users can then configure policies between these application domains to filter L4 traffic between the applications residing in these domains.
+Micro-segmentation provides granular network security policy for distributed applications in the Cloud. Micro-segmentation enables network policy enforcement between application domains you define in a single cloud or across multiple clouds. Users can then configure policies between these application domains to filter traffic between the applications residing in these domains.
 
 |microseg_topology|
 
@@ -27,13 +27,13 @@ Micro-segmentation introduces two important configuration components—-app doma
 
 App Domains
 -------------------------------------
-An app domain is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. For example, all servers running the inventory database (as per the above workload isolation use case) can form an app domain. A Cloud resource can be part of multiple app domains.
+An app domain is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. For example, all servers running the inventory database (as per the above workload isolation use case) can form an app domain. A Cloud resource can be part of multiple app domains. 
 
 When you create your app domains, you can classify them based on:
 
 - CSP resource tags: these tags identify resources you can group. This is the preferred classification method, as this automatically includes new resources created in the Cloud with the same set of tags.
 - Resource attributes: classify by account or region.
-- IP addresses or CIDRs: classify non-Cloud VMs or networks. Traffic across CIDRs between two app domains in the same VPC/VNet is not subject to micro-segmentation policies.
+- IP addresses or CIDRs: you can directly specify IP addresses or CIDRs.
 
   .. note::
 	Aviatrix Gateway IP addresses will not be included in any app domain, even if an app domain filter matches an Aviatrix Gateway IP address. If a subnet or VPC/VNet is added to an app domain, the Aviatrix Gateway IP addresses are removed from the corresponding CIDRs.
@@ -41,16 +41,25 @@ When you create your app domains, you can classify them based on:
 
 Policies
 -------------------------------------
-After creating app domains, you then define policies to define the access control to apply on the traffic between those app domains. In the above workload isolation use case, all traffic (i.e., ports and protocols) between the billing servers and the inventory databases must be blocked (Denied). You can decide which policies to enforce, and if you want to log the actions related a policy so that the information is available in FlowIQ. These policies are enforced (if enabled) on your Spoke gateways, and are executed against the Spoke gateways in the order that they are shown in the policy list. 
+After creating app domains, you then define policies to define the access control to apply on the traffic between those app domains. In the above workload isolation use case, all traffic (i.e., ports and protocols) between the billing servers and the inventory databases must be blocked (Denied). You can decide which policies to enforce, and if you want to log the actions related a policy so that the information is available in FlowIQ. These policies are enforced (if enabled) on your Spoke gateways, and are executed against the Spoke gateways in the order that they are shown in the policy list. You can create up to 64 micro-segmentation policies.
 
 Prerequisites
 -----------------
 Before applying micro-segmentation:
 
 - Your version of Aviatrix Controller must be 6.7 or greater.
-- Gateways must be updated to version 6.7 or greater.
+- Gateways must have their image updated to version 6.7 or greater.
 - Network reachability should be configured between the VPCs that contain applications that require connectivity. You configure network reachability using Connected Transit/MCNS. See `here <https://docs.aviatrix.com/HowTos/transit_advanced.html#connected-transit>`_ for more information.
 - If you plan to use CSP tags in your app domains, Cloud resources must be tagged appropriately.
+
+Limitations
+-----------
+
+-Supported on AWS and Azure.
+-You can configure up to 500 app domains.
+-You can have up to 3000 CIDRs per app domain.
+-You can create up to 64 policies.
+-Up to 10,000 CIDRs can be supported by the Aviatrix Controller.
 
 
 Configuring the Polling Interval
@@ -80,19 +89,16 @@ Creating App Domains
 -------------------------------------
 An app domain contains one or more filters. All resources in your CSPs that match these filters become part of the app domain. A filter specifies resource matching criteria, and matching criteria consists of one or more attributes/tags to be matched against key/value pairs. All match conditions within the filter must be satisfied to be matched. Each filter must be associated with a resource type (VPC/VNet, subnet, or VM). 
 
-  .. note::
-	Resource type-based app domains are only supported for AWS and Azure. For GCP or other Clouds, you can only create app domains that contain IP addresses or CIDR ranges.
-
 1. In CoPilot, navigate to Security > Micro-Segmentation> App Domain.
 2. Click +ADD DOMAIN.
 3. Enter a name for the app domain.
 4. If you want to add a resource type (VPC/VNet, virtual machine, or subnet), follow the below steps. If you want to enter IP addresses or CIDR ranges for your app domain, go to step 5.
 	a. Click +Resource Type and select VPC/VNet, Virtual Machines, or Subnet. 
 	b. Enter the conditions that need to be present on that resource. The available conditions (properties?) are Account Name and Region. The values for the selected condition(s) are populated automatically.
-	c. Possible key tags are: Backup, Controller, Aviatrix-Created-Resource, and Type. These tags come from your Cloud resources.
+	c. All key tags that you have defined for your Cloud resources are present in the list for you to select from. Some examples of key tags are: Backup, Controller, Aviatrix-Created-Resource, and Type.
 	d. If needed, add another resource type. Typically you will only have resources of the same type in an app domain (for example, you can have more than one VM based filter).
-	e. After entering your resource type, you can use the Preview Resources toggle switch to show how the selected resource type appears in your network. All your CSPs are searched to display these resources.
-5. If you don’t want to use specific tags in your resources, or you have resources in/on any Cloud that is not AWS or Azure, enter the VPC/VNet IP addresses or CIDRs in the field provided. 
+	e. After entering your resource type, you can use the Preview Resources toggle switch to show how the selected resource type appears in your network. 
+5. If you don’t want to use specific tags in your resources, or you have resources, enter the VPC/VNet IP addresses or CIDRs in the field provided. Traffic across CIDRs between two app domains in the same VPC/VNet is not subject to micro-segmentation policies.
 6. Click Save. The new app domain is now in the App Domain list.
 
 From here you can:
@@ -113,9 +119,9 @@ An app domain traffic flow can belong to more than one policy. If this occurs, t
 3. Select the Source App Domains (the app domains that originate traffic).
 4. Select the Destination App Domain (the app domains that terminate traffic).
 5. Select if the policy is allowed or denied. This determines the action to be taken on the traffic.
-6. If the Enforcement slider is On (the default), the selected action is applied to the matching traffic. If the Enforcement slider is off, the packets are only watched.
-7. If the Logging slider is On, five-tuple information (such as source, destination, etc.) related to the action is logged and made available in FlowIQ.
-8. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you must enter a port number or port range.
+6. If the Enforcement slider is On (the default), the selected action is applied to the matching traffic. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped without informing the source). 
+7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ.
+8. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
 	
 As per the workload isolation use case above (blocking traffic between billing and inventory), the policy would look like this:
 	- Source app domain: billing application
@@ -132,7 +138,7 @@ As per the workload isolation use case above (blocking traffic between billing a
 Creating a Default Rule
 -----------------------
 
-As a best practice, you should add a rule that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain.
+As a best zero trust security practice, you should add a deny rule that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. 
 
 
 
