@@ -119,7 +119,7 @@ An app domain traffic flow can belong to more than one policy. If this occurs, t
 3. Select the Source App Domains (the app domains that originate traffic).
 4. Select the Destination App Domain (the app domains that terminate traffic).
 5. Select if the policy is allowed or denied. This determines the action to be taken on the traffic.
-6. If the Enforcement slider is On (the default), the selected action is applied to the matching traffic. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped without informing the source). 
+6. If the Enforcement slider is On (the default), the selected action is applied to the matching traffic. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped). 
 7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ.
 8. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
 	
@@ -135,10 +135,10 @@ As per the workload isolation use case above (blocking traffic between billing a
 9. Determine the policy order by selecting to insert the new policy above, below, or at the top or bottom of the rule list. If the policy is not at the top or bottom of the list, you must select the existing policy that is affected by the position of the new policy.
 10. Click Save in Drafts. You can then review, commit, or discard the policy. This view also indicates if the policies are working as expected.
 
-Creating a Default Rule
+Creating a Default Policy
 -----------------------
 
-As a best zero trust security practice, you should add a deny rule that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. 
+As a best zero trust security practice, you should add a deny policy that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. This should be the last policy in the list.
 
 
 
