@@ -417,6 +417,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/cloud_wan_workflow_azure_vwan
    HowTos/using_VPC_Endpoints_w_AVX
    HowTos/transit_gateway_peering_with_private_network_workflow
+   HowTos/transit_gateway_peering_over_public_network_workflow
    HowTos/aviatrix_aws_outposts
    HowTos/s2c_overlapping_cidrs_with_fast_convergence
    HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow
