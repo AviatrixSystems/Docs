@@ -83,57 +83,10 @@ Note: if you plan to have multiple projects, we suggest you plan your
 subnets so that the network addresses do not overlap. Select Custom to
 create subnets.
 
-Option #1: Copy Aviatrix Controller Image to Your Project
-=========================================================
-
-At your GCloud console (https://console.cloud.google.com), select the
-project where you want to launch your controller. Click the 3 bars at
-the top left corner. At the dropdown menu, select Compute Engine, then
-select Images.
-
-At the top screen, click **[+] CREATE IMAGE**. Make sure to:
-
-#.  Select the project where you want to launch your Aviatrix Controller.
-#. Fill in the image name: for example, aviatrix-ucc-083016.
-#. Fill in the description.
-#. At Source, select **Cloud Storage File**.
-#. At Cloud Storage file, paste in the following text string: **aviatrix300/aviatrix-cloud-services-gateway-032020-byol.tar.gz**.
-#. Click **Create**.
-
-   |image1|
-
-Launch the Aviatrix Controller from the Copied Image
------------------------------------------------------------------------
-
-At the GCloud console,
-
-#. Select the project that you just copied the Aviatrix Controller image
-   to. Click the 3 bars.
-#. At the dropdown menu, select the Aviatrix Controller image, click
-   **[+] Create Instance**.
-#. Fill in Name for the instance, Zone and Machine type for the
-   instance.
-#.  Make sure the Machine type is **n1-standard-2** or larger.
-#. For Identity and API access, select **Allow full access to all Cloud
-   APIs**. 
-
-Alternatively,
-
- 1. At Access scopes, select **Set access for each API**, and then
- 2. Select **Enabled** for Cloud Pub/Sub.
- 3. Select **Read Write** for Compute.
-
-.. Important:: 
-
-  Do not check the **Firewall** box to **Allow HTTPS Traffic**. Aviatrix recommends you improve security by removing any 0.0.0.0 entries on port 443 not allowing the Aviatrix Controller to the world. 
-
-4.  Click **Create**.
-
-   
-Option #2: Deploy Aviatrix Controller in GCP Marketplace (Preview mode)
+Deploying the Aviatrix Controller in GCP Marketplace (Preview mode)
 =======================================================================
 
-1. Go to GCP marketplace.
+1. Go to the GCP marketplace.
 2. Find the product "Aviatrix Secured Networking Platform - BYOL".
 3. Click **LAUNCH**.
 
