@@ -34,7 +34,7 @@ Deployment Model
 
 CoPilot is deployed as an all-in-one virtual appliance and is available on AWS, Azure, GCP, and OCI MarketPlaces.
 CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational 
-Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNETs or separate cloud providers (in multi-cloud environments).
+Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments).
 
 Licensing and Trials
 ---------------------

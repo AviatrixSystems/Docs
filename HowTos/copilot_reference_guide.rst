@@ -10,7 +10,7 @@ Aviatrix CoPilot User Reference Guide
 Aviatrix CoPilot is a component of Aviatrix platform offering that extends visibility into complex, multi-cloud networks deployed and managed by Aviatrix Controller. 
 CoPilot delivers, end-to-end, in-depth, historical analytics of multi cloud networks with a single pane of glass that offers application flows, inventory, health, and complete topological view of the network.  
 
-This guide will provide descriptions and definitions of functionalities that are available in Aviatrix CoPilot.
+This guide provides descriptions and definitions of functionalities that are available in Aviatrix CoPilot.
 
 
 CoPilot Dashboard
