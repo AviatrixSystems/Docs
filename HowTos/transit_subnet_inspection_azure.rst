@@ -58,7 +58,7 @@ When you create subnet groups in a VNet, traffic from the subnet groups is redir
 Intra-Vnet Subnet Inspection for Subnets in the same Subnet Group
 -----------------------------------------------------------------
 
-Traffic between VMs in the same subnet or subnet group is not inspected. If you want to inspect traffic between VMs in different subnets in the same VNet, the subnets must be in different subnet groups.
+Traffic between VMs in the same subnet or subnet group is not inspected. If you want to inspect traffic between VMs in different subnets in the same VNet, the subnets must be in different subnet groups. For more information, refer to `Connectivity Scenarios Between VMs in Subnets <http://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html#configuring-scenarios-between-vms-in-subnets>`_.
 
 |intraVNET_vm_segmentation|
 
@@ -99,12 +99,13 @@ Intra-VNet Subnet Inspection
 
 +-----------------------+-------------------------+----------------+------------------------------------------------+
 | VM in Subnet A        | VM in Subnet B          | Connectivity   | Comment                                        |
-|                       |                         | between VMs    |                                                |
+|                       |                         | Between VMs    |                                                |
 +=======================+=========================+================+================================================+
 |Not in a subnet group  | Not in a subnet group   | Yes            |                                                |
 +-----------------------+-------------------------+----------------+------------------------------------------------+
 |Not in a subnet group  | In a subnet group       | No             | Subnet A must to be in a subnet group for      |
-|			|			  |	     	   | connectivity. Configure a default subnet group.| |                       |                         |                | See `Important Recommendations <http://doc     |
+|			|			  |	     	   | connectivity. Configure a default subnet group.|
+|                       |                         |                | See `Important Recommendations <http://doc     |
 |                       |                         |                | s.aviatrix.com/HowTos/transit_subnet_inspe     |
 |                       |                         |                | ction_azure.html#important-recommendations>`_. |
 +-----------------------+-------------------------+----------------+------------------------------------------------+
@@ -117,7 +118,7 @@ Inter-VNet Subnet Inspection
 
 +-----------------------+-------------------------+----------------+------------------------------------------------+
 | Subnet A in VNet A    | Subnet B in VNet B      | Connectivity   | Comment                                        |
-|			|			  | between VMs    |						    |
+|			|			  | Between VMs    |						    |
 +=======================+=========================+================+================================================+
 |Not in a subnet group  | Not in a subnet group   | Yes            | Only if VNet B has no subnet groups            |
 |                       |                         |                | configured.                                    |
@@ -142,7 +143,7 @@ The connection behavior is the same as the Inter-VNet Subnet Inspection.
 
 +-----------------------+-------------------------+----------------+------------------------------------------------+
 | Subnet A in VNet A    | Subnet B in VNet B      | Connectivity   | Comment                                        |
-|			|			  | between VMs    |						    |
+|			|			  | Between VMs    |						    |
 +=======================+=========================+================+================================================+
 |Not in a subnet group  | Not in a subnet group   | Yes            | Only if VNet B has no subnet groups            |
 |                       |                         |                | configured.                                    |
