@@ -94,6 +94,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/transitvpc_faq
    HowTos/transitvpc_workflow
+   HowTos/transit_gateway_peering
    HowTos/bgp
    HowTos/transitgw_external
    HowTos/spokegw_external
@@ -130,7 +131,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/tgw_list
    HowTos/tgw_approval
    HowTos/tgw_design_patterns
-   HowTos/transit_gateway_peering
    HowTos/tgw_csr_migrate
    HowTos/diy_tgw_migrate_to_aviatrix_tgw
    HowTos/transitgw_external
