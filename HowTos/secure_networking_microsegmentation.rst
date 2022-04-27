@@ -15,7 +15,7 @@ Micro-segmentation provides granular network security policy for distributed app
 
 Use cases where you might implement micro-segmentation are:
 
-- Workload isolation: in a typical tiered application, you may want to isolate tiers that do not require access to each other. For example, in a shopping portal application, there could be workloads for billing, an inventory database, an inventory application, and web front end servers. Since the web front end servers do not need to communicate with the inventory database servers, this traffic should be blocked. Also, billing does not need to communicate with the inventory database.
+- Workload isolation: in a typical tiered application, you may want to isolate tiers that do not require access to each other. For example, in a shopping portal application, there could be workloads for product inventory, billing, and logging servers. Since the shopping cart application does not need to communicate with the logging servers, this traffic should be blocked.
 - Quarantine compromised machines: You can isolate a compromised machine by placing it in its own application domain and blocking communication to that domain.
 - On-prem access: If a Cloud resource should only be accessed by specific CIDRs from on-prem, you can create an app domain consisting of the on-prem network CIDR and then apply the appropriate policies.
 
@@ -69,10 +69,10 @@ The Aviatrix Controller periodically polls your CSPs to gather and inventory its
 In CoPilot navigate to Settings> Advanced Settings> Micro-Segmentation Settings and enter the desired polling interval in minutes (default is 60). This can be a value between 1-180.
 
 
-Enabling Micro-Segmentation in Your Infrastructure
-================================================== 
+Configuring Micro-Segmentation in Your Infrastructure
+===================================================== 
 
-You use Aviatrix CoPilot to enable micro-segmentation in your infrastructure. See the `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_ for instructions. 
+You configure micro-segmentation in Aviatrix CoPilot. See the `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_ for instructions. 
 
 
 Working with Micro-Segmentation
@@ -120,7 +120,7 @@ An app domain traffic flow can belong to more than one policy. If this occurs, t
 4. Select the Destination App Domain (the app domains that terminate traffic).
 5. Select if the policy is allowed or denied. This determines the action to be taken on the traffic.
 6. If the Enforcement slider is On (the default), the selected action is applied to the matching traffic. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped). 
-7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ.
+7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ. Be careful when enabling logging on your policies; it uses a lot of disk space.
 8. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
 	
 As per the workload isolation use case above (blocking traffic between billing and inventory), the policy would look like this:
@@ -138,7 +138,7 @@ As per the workload isolation use case above (blocking traffic between billing a
 Creating a Default Policy
 -----------------------
 
-As a best zero trust security practice, you should add a deny policy that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. This should be the last policy in the list.
+As a best zero trust security practice, you should add a deny policy that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. For example, if app domains A and B are configured to talk to each other, you may not want app domain C to be able to talk to app domain A or B. Creating this default policy helps with locking down configured app domains. This should be the last policy in the list.
 
 
 
