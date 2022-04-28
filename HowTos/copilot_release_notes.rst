@@ -11,18 +11,36 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
+
+CoPilot Release 1.9.0, 1.9.1 (4/27/2022)
+---------------------------------------------------------------------------
+
+-   (Topology) **Limit Topology Render** — The Limit Topology Render configuration option is added to Settings > Advanced Settings > Topology Environment Settings. Enable this option if your network infrastructure is large and the full visible topology cannot be rendered in the topology map. In this case, you can still use the topology map feature by using filters to load scaled down portions of your topology. When this option is disabled (default), CoPilot will automatically attempt to load the full topology of your infrastructure in the map when the Topology page is opened. To enable the option, go to Settings > Advanced Settings > Topology Environment Settings, set the option to **Enabled**, and click **Save**.
+
+-   (Security) **Network Segmentation for inter-VPC/VNet connectivity (reachability)** — You can now enable network segmentation in your Aviatrix Transit Network via the CoPilot user interface. Note the following points:
+
+    -   You can still enable network segmentation for inter-VPC/VNet connectivity using Aviatrix Controller (as in prior releases).
+    -   The term *network domain* used in CoPilot is synonymous with *security domain* used in Controller (the term *security domain* will eventually be deprecated).
+    -   The network segmentation configurations you set in Aviatrix Controller can be accessed and modified in Aviatrix CoPilot and vice versa.
+    -   When enabling network segmentation via CoPilot, you navigate to Security > Network Segmentation > Network Domain and click **Transit Gateways** to specify the Aviatrix transit gateways you want enabled for network segmentation. In the same view, you click **+ Network Domain** to create your network domains and specify how the resources you associate with them are allowed to communicate with each other. For detailed instructions, see the discussion about enabling network segmentation using CoPilot in *Aviatrix CoPilot User Reference Guide*.
+
+-   (Performance) Improvements to chart displays.
+
+-   Performance improvements.
+
+-   Minor bug fixes.
+
+
+
 CoPilot Releases 1.8.0, 1.8.1, 1.8.2, 1.8.3 (4/05/2022), 1.8.4 (4/11/2022)
 ---------------------------------------------------------------------------
 
 -   (Anomalies - New!) **Network Behavior Analytics** — You can now select any VPC/VNet(s) in your clouds to have CoPilot learn their behaviors based on a group of metrics and alert you when it detects anomalous behavior in them. When configured for network behavior analytics, CoPilot performs continuous network behavior analysis of the VPC/VNet workloads during a configurable learning period. The learned behavior or *fingerprint* is a behavioral baseline against which CoPilot can detect abnormal network operating patterns or *anomalies*. Anomalies could represent threats on your network, systems being down, high traffic for a planned launch, or some other abnormal behavior. For information about enabling network behavior analytics, see `Working with Anomalies <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_.
 
--   (FlowIQ) **FlowIQ Filter by CSP Tags** — You can now search for traffic using your cloud-native instance tags and VPC tags. Use the tags in FlowIQ filters that take an address field like Source Address or Destination Address. For example, to see traffic flows between business units, this filter group with the AND operand will show traffic flows between accounting and engineering resources where the CSP tag associated with each resource is Name = `department` and Value = `accounting` or `engineering` respectively:
+-   (FlowIQ) **FlowIQ Filter by CSP Tags** — You can now search for traffic using your cloud-native instance tags and VPC tags. Use the tags in FlowIQ filters that take an address field like Source Address or Destination Address. For example, to see traffic flows between business units, this filter group with the AND operand will show traffic flows between accounting and engineering resources where the CSP tag associated with each resource is Name = `department` and Value = `accounting` or `engineering` respectively ::
 
-    ```
-    Source Address is equal to department accounting
-
-    Destination Address is equal to department engineering
-    ```
+  Source Address is equal to department accounting
+  Destination Address is equal to department engineering
 
 -   (ThreatIQ with ThreatGuard) **Prepend/Append ThreatGuard Rules** — By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. You can now choose to have ThreatGuard firewall rules *prepend* instantiated rules where Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. The prepend feature is available starting from Controller release 6.6.5544. From the ThreatIQ > ThreatGuard page, select the prepend option when configuring ThreatGuard blocking. For more information, see `About ThreatGuard Firewall Rules <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-threatguard-firewall-rules>`_.
 
