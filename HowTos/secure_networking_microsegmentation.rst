@@ -120,7 +120,7 @@ An app domain traffic flow can belong to more than one policy. If this occurs, t
 4. Select the Destination App Domain (the app domains that terminate traffic).
 5. Select if the policy is allowed or denied. This determines the action to be taken on the traffic.
 6. If the Enforcement slider is On (the default), the selected action is applied to the matching traffic. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped). 
-7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ. Be careful when enabling logging on your policies; it uses a lot of disk space.
+7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ. Since logging uses a lot of disk space, be careful when enabling logging on your policies.
 8. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
 	
 As per the workload isolation use case above (blocking traffic between billing and inventory), the policy would look like this:
