@@ -110,7 +110,6 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/insane_mode
    HowTos/insane_mode_perf
    HowTos/CloudN_insane_mode
-   HowTos/CloudN_workflow
    HowTos/migrate_tgw_orchestrator_to_aviatrix_transit
    HowTos/integrate_transit_gateway_with_expressroute
    HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow
@@ -176,8 +175,11 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: CloudN
 
+   HowTos/secure_edge_faq
+   HowTos/secure_edge_workflow   
    HowTos/cloudn_faq
    HowTos/cloudn_workflow_
+   HowTos/CloudN_workflow
 
 .. _Security:
 
